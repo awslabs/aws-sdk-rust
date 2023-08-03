@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CertificateAuthorityStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for CertificateAuthorityStatus {
             "EXPIRED" => CertificateAuthorityStatus::Expired,
             "FAILED" => CertificateAuthorityStatus::Failed,
             "PENDING_CERTIFICATE" => CertificateAuthorityStatus::PendingCertificate,
-            other => CertificateAuthorityStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CertificateAuthorityStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl CertificateAuthorityStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "CREATING",
-            "DELETED",
-            "DISABLED",
-            "EXPIRED",
-            "FAILED",
-            "PENDING_CERTIFICATE",
-        ]
+        &["ACTIVE", "CREATING", "DELETED", "DISABLED", "EXPIRED", "FAILED", "PENDING_CERTIFICATE"]
     }
 }
 impl ::std::convert::AsRef<str> for CertificateAuthorityStatus {

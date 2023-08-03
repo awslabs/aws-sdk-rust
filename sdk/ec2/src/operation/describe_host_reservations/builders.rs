@@ -26,7 +26,7 @@ impl DescribeHostReservationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeHostReservationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_host_reservations::builders::DescribeHostReservationsInputBuilder,
+    inner: crate::operation::describe_host_reservations::builders::DescribeHostReservationsInputBuilder,
 }
 impl DescribeHostReservationsFluentBuilder {
     /// Creates a new `DescribeHostReservations`.
@@ -37,10 +37,7 @@ impl DescribeHostReservationsFluentBuilder {
         }
     }
     /// Access the DescribeHostReservations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_host_reservations::builders::DescribeHostReservationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_host_reservations::builders::DescribeHostReservationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeHostReservationsFluentBuilder {
             crate::operation::describe_host_reservations::DescribeHostReservations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_host_reservations::DescribeHostReservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_host_reservations::DescribeHostReservationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeHostReservationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeHostReservationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_host_reservations::DescribeHostReservationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_host_reservations::DescribeHostReservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_host_reservations::DescribeHostReservationsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeHostReservationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_host_reservations::DescribeHostReservationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_host_reservations::DescribeHostReservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_host_reservations::DescribeHostReservationsError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl DescribeHostReservationsFluentBuilder {
             crate::operation::describe_host_reservations::DescribeHostReservations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_host_reservations::DescribeHostReservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_host_reservations::DescribeHostReservationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_host_reservations::paginator::DescribeHostReservationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_host_reservations::paginator::DescribeHostReservationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_host_reservations::paginator::DescribeHostReservationsPaginator {
         crate::operation::describe_host_reservations::paginator::DescribeHostReservationsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filter`.
@@ -158,10 +141,7 @@ impl DescribeHostReservationsFluentBuilder {
     /// <key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -182,25 +162,17 @@ impl DescribeHostReservationsFluentBuilder {
     /// To override the contents of this collection use [`set_host_reservation_id_set`](Self::set_host_reservation_id_set).
     ///
     /// <p>The host reservation IDs.</p>
-    pub fn host_reservation_id_set(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_reservation_id_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host_reservation_id_set(input.into());
         self
     }
     /// <p>The host reservation IDs.</p>
-    pub fn set_host_reservation_id_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_host_reservation_id_set(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_host_reservation_id_set(input);
         self
     }
     /// <p>The host reservation IDs.</p>
-    pub fn get_host_reservation_id_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_host_reservation_id_set(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_host_reservation_id_set()
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>

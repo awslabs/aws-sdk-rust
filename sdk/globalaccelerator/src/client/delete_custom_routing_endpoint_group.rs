@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`endpoint_group_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupFluentBuilder::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
     /// - On success, responds with [`DeleteCustomRoutingEndpointGroupOutput`](crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteCustomRoutingEndpointGroupError>`](crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupError)
-    pub fn delete_custom_routing_endpoint_group(&self) -> crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupFluentBuilder{
+    pub fn delete_custom_routing_endpoint_group(
+        &self,
+    ) -> crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupFluentBuilder {
         crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -53,8 +53,7 @@ pub struct ConnectorDetail {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub supported_data_transfer_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
+    pub supported_data_transfer_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
 }
 impl ConnectorDetail {
     /// <p>A description about the registered connector.</p>
@@ -94,9 +93,7 @@ impl ConnectorDetail {
         self.registered_by.as_deref()
     }
     /// <p>The provisioning type that the connector uses.</p>
-    pub fn connector_provisioning_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectorProvisioningType> {
+    pub fn connector_provisioning_type(&self) -> ::std::option::Option<&crate::types::ConnectorProvisioningType> {
         self.connector_provisioning_type.as_ref()
     }
     /// <p>The connection mode that the connector supports.</p>
@@ -118,9 +115,7 @@ impl ConnectorDetail {
     /// <p>Files or binary data.</p>
     /// </dd>
     /// </dl>
-    pub fn supported_data_transfer_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SupportedDataTransferType]> {
+    pub fn supported_data_transfer_types(&self) -> ::std::option::Option<&[crate::types::SupportedDataTransferType]> {
         self.supported_data_transfer_types.as_deref()
     }
 }
@@ -133,9 +128,7 @@ impl ConnectorDetail {
 
 /// A builder for [`ConnectorDetail`](crate::types::ConnectorDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectorDetailBuilder {
     pub(crate) connector_description: ::std::option::Option<::std::string::String>,
     pub(crate) connector_name: ::std::option::Option<::std::string::String>,
@@ -146,26 +139,18 @@ pub struct ConnectorDetailBuilder {
     pub(crate) connector_label: ::std::option::Option<::std::string::String>,
     pub(crate) registered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) registered_by: ::std::option::Option<::std::string::String>,
-    pub(crate) connector_provisioning_type:
-        ::std::option::Option<crate::types::ConnectorProvisioningType>,
+    pub(crate) connector_provisioning_type: ::std::option::Option<crate::types::ConnectorProvisioningType>,
     pub(crate) connector_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) supported_data_transfer_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
+    pub(crate) supported_data_transfer_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
 }
 impl ConnectorDetailBuilder {
     /// <p>A description about the registered connector.</p>
-    pub fn connector_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description about the registered connector.</p>
-    pub fn set_connector_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_description = input;
         self
     }
@@ -174,18 +159,12 @@ impl ConnectorDetailBuilder {
         &self.connector_description
     }
     /// <p>The name of the connector.</p>
-    pub fn connector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connector.</p>
-    pub fn set_connector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_name = input;
         self
     }
@@ -194,18 +173,12 @@ impl ConnectorDetailBuilder {
         &self.connector_name
     }
     /// <p>The owner of the connector.</p>
-    pub fn connector_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The owner of the connector.</p>
-    pub fn set_connector_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_owner = input;
         self
     }
@@ -214,18 +187,12 @@ impl ConnectorDetailBuilder {
         &self.connector_owner
     }
     /// <p>The connector version.</p>
-    pub fn connector_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The connector version.</p>
-    pub fn set_connector_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_version = input;
         self
     }
@@ -234,18 +201,12 @@ impl ConnectorDetailBuilder {
         &self.connector_version
     }
     /// <p>The application type of the connector.</p>
-    pub fn application_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application type of the connector.</p>
-    pub fn set_application_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_type = input;
         self
     }
@@ -259,10 +220,7 @@ impl ConnectorDetailBuilder {
         self
     }
     /// <p>The connector type.</p>
-    pub fn set_connector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
+    pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.connector_type = input;
         self
     }
@@ -271,18 +229,12 @@ impl ConnectorDetailBuilder {
         &self.connector_type
     }
     /// <p>A label used for the connector.</p>
-    pub fn connector_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A label used for the connector.</p>
-    pub fn set_connector_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_label = input;
         self
     }
@@ -296,10 +248,7 @@ impl ConnectorDetailBuilder {
         self
     }
     /// <p>The time at which the connector was registered.</p>
-    pub fn set_registered_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_registered_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.registered_at = input;
         self
     }
@@ -308,18 +257,12 @@ impl ConnectorDetailBuilder {
         &self.registered_at
     }
     /// <p>The user who registered the connector.</p>
-    pub fn registered_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registered_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registered_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user who registered the connector.</p>
-    pub fn set_registered_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registered_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registered_by = input;
         self
     }
@@ -328,25 +271,17 @@ impl ConnectorDetailBuilder {
         &self.registered_by
     }
     /// <p>The provisioning type that the connector uses.</p>
-    pub fn connector_provisioning_type(
-        mut self,
-        input: crate::types::ConnectorProvisioningType,
-    ) -> Self {
+    pub fn connector_provisioning_type(mut self, input: crate::types::ConnectorProvisioningType) -> Self {
         self.connector_provisioning_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The provisioning type that the connector uses.</p>
-    pub fn set_connector_provisioning_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorProvisioningType>,
-    ) -> Self {
+    pub fn set_connector_provisioning_type(mut self, input: ::std::option::Option<crate::types::ConnectorProvisioningType>) -> Self {
         self.connector_provisioning_type = input;
         self
     }
     /// <p>The provisioning type that the connector uses.</p>
-    pub fn get_connector_provisioning_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorProvisioningType> {
+    pub fn get_connector_provisioning_type(&self) -> &::std::option::Option<crate::types::ConnectorProvisioningType> {
         &self.connector_provisioning_type
     }
     /// Appends an item to `connector_modes`.
@@ -354,27 +289,19 @@ impl ConnectorDetailBuilder {
     /// To override the contents of this collection use [`set_connector_modes`](Self::set_connector_modes).
     ///
     /// <p>The connection mode that the connector supports.</p>
-    pub fn connector_modes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_modes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connector_modes.unwrap_or_default();
         v.push(input.into());
         self.connector_modes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The connection mode that the connector supports.</p>
-    pub fn set_connector_modes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_connector_modes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.connector_modes = input;
         self
     }
     /// <p>The connection mode that the connector supports.</p>
-    pub fn get_connector_modes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connector_modes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.connector_modes
     }
     /// Appends an item to `supported_data_transfer_types`.
@@ -396,10 +323,7 @@ impl ConnectorDetailBuilder {
     /// <p>Files or binary data.</p>
     /// </dd>
     /// </dl>
-    pub fn supported_data_transfer_types(
-        mut self,
-        input: crate::types::SupportedDataTransferType,
-    ) -> Self {
+    pub fn supported_data_transfer_types(mut self, input: crate::types::SupportedDataTransferType) -> Self {
         let mut v = self.supported_data_transfer_types.unwrap_or_default();
         v.push(input);
         self.supported_data_transfer_types = ::std::option::Option::Some(v);
@@ -442,9 +366,7 @@ impl ConnectorDetailBuilder {
     /// <p>Files or binary data.</p>
     /// </dd>
     /// </dl>
-    pub fn get_supported_data_transfer_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>> {
+    pub fn get_supported_data_transfer_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>> {
         &self.supported_data_transfer_types
     }
     /// Consumes the builder and constructs a [`ConnectorDetail`](crate::types::ConnectorDetail).

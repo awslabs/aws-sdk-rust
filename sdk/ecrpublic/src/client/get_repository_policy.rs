@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`repository_name(Option<String>)`](crate::operation::get_repository_policy::GetRepositoryPolicyOutput::repository_name): <p>The repository name that's associated with the request.</p>
     ///   - [`policy_text(Option<String>)`](crate::operation::get_repository_policy::GetRepositoryPolicyOutput::policy_text): <p>The repository policy text that's associated with the repository. The policy text will be in JSON format.</p>
     /// - On failure, responds with [`SdkError<GetRepositoryPolicyError>`](crate::operation::get_repository_policy::GetRepositoryPolicyError)
-    pub fn get_repository_policy(
-        &self,
-    ) -> crate::operation::get_repository_policy::builders::GetRepositoryPolicyFluentBuilder {
-        crate::operation::get_repository_policy::builders::GetRepositoryPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_repository_policy(&self) -> crate::operation::get_repository_policy::builders::GetRepositoryPolicyFluentBuilder {
+        crate::operation::get_repository_policy::builders::GetRepositoryPolicyFluentBuilder::new(self.handle.clone())
     }
 }

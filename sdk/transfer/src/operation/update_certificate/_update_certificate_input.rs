@@ -36,17 +36,14 @@ impl UpdateCertificateInput {
 }
 impl UpdateCertificateInput {
     /// Creates a new builder-style object to manufacture [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
-    pub fn builder() -> crate::operation::update_certificate::builders::UpdateCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_certificate::builders::UpdateCertificateInputBuilder {
         crate::operation::update_certificate::builders::UpdateCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCertificateInputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) active_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -55,18 +52,12 @@ pub struct UpdateCertificateInputBuilder {
 }
 impl UpdateCertificateInputBuilder {
     /// <p>The identifier of the certificate object that you are updating.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the certificate object that you are updating.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -80,10 +71,7 @@ impl UpdateCertificateInputBuilder {
         self
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    pub fn set_active_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_active_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.active_date = input;
         self
     }
@@ -97,10 +85,7 @@ impl UpdateCertificateInputBuilder {
         self
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    pub fn set_inactive_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_inactive_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inactive_date = input;
         self
     }
@@ -125,17 +110,12 @@ impl UpdateCertificateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_certificate::UpdateCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_certificate::UpdateCertificateInput {
-                certificate_id: self.certificate_id,
-                active_date: self.active_date,
-                inactive_date: self.inactive_date,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_certificate::UpdateCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_certificate::UpdateCertificateInput {
+            certificate_id: self.certificate_id,
+            active_date: self.active_date,
+            inactive_date: self.inactive_date,
+            description: self.description,
+        })
     }
 }

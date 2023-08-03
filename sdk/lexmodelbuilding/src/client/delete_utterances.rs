@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`user_id(impl ::std::convert::Into<String>)`](crate::operation::delete_utterances::builders::DeleteUtterancesFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::delete_utterances::builders::DeleteUtterancesFluentBuilder::set_user_id): <p> The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the utterance.</p>
     /// - On success, responds with [`DeleteUtterancesOutput`](crate::operation::delete_utterances::DeleteUtterancesOutput)
     /// - On failure, responds with [`SdkError<DeleteUtterancesError>`](crate::operation::delete_utterances::DeleteUtterancesError)
-    pub fn delete_utterances(
-        &self,
-    ) -> crate::operation::delete_utterances::builders::DeleteUtterancesFluentBuilder {
-        crate::operation::delete_utterances::builders::DeleteUtterancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_utterances(&self) -> crate::operation::delete_utterances::builders::DeleteUtterancesFluentBuilder {
+        crate::operation::delete_utterances::builders::DeleteUtterancesFluentBuilder::new(self.handle.clone())
     }
 }

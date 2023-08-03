@@ -10,9 +10,7 @@ pub struct GetVoiceConnectorStreamingConfigurationOutput {
 }
 impl GetVoiceConnectorStreamingConfigurationOutput {
     /// <p>The details of the streaming configuration.</p>
-    pub fn streaming_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamingConfiguration> {
+    pub fn streaming_configuration(&self) -> ::std::option::Option<&crate::types::StreamingConfiguration> {
         self.streaming_configuration.as_ref()
     }
 }
@@ -23,16 +21,15 @@ impl ::aws_http::request_id::RequestId for GetVoiceConnectorStreamingConfigurati
 }
 impl GetVoiceConnectorStreamingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorStreamingConfigurationOutput`](crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput).
-    pub fn builder() -> crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationOutputBuilder
+    {
         crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceConnectorStreamingConfigurationOutput`](crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorStreamingConfigurationOutputBuilder {
     pub(crate) streaming_configuration: ::std::option::Option<crate::types::StreamingConfiguration>,
     _request_id: Option<String>,
@@ -44,17 +41,12 @@ impl GetVoiceConnectorStreamingConfigurationOutputBuilder {
         self
     }
     /// <p>The details of the streaming configuration.</p>
-    pub fn set_streaming_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingConfiguration>,
-    ) -> Self {
+    pub fn set_streaming_configuration(mut self, input: ::std::option::Option<crate::types::StreamingConfiguration>) -> Self {
         self.streaming_configuration = input;
         self
     }
     /// <p>The details of the streaming configuration.</p>
-    pub fn get_streaming_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamingConfiguration> {
+    pub fn get_streaming_configuration(&self) -> &::std::option::Option<crate::types::StreamingConfiguration> {
         &self.streaming_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,10 +59,9 @@ impl GetVoiceConnectorStreamingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetVoiceConnectorStreamingConfigurationOutput`](crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput{
+    pub fn build(self) -> crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput {
         crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput {
-            streaming_configuration: self.streaming_configuration
-            ,
+            streaming_configuration: self.streaming_configuration,
             _request_id: self._request_id,
         }
     }

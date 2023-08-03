@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`resource_state(ResourceStateType)`](crate::operation::update_document::builders::UpdateDocumentFluentBuilder::resource_state) / [`set_resource_state(Option<ResourceStateType>)`](crate::operation::update_document::builders::UpdateDocumentFluentBuilder::set_resource_state): <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
     /// - On success, responds with [`UpdateDocumentOutput`](crate::operation::update_document::UpdateDocumentOutput)
     /// - On failure, responds with [`SdkError<UpdateDocumentError>`](crate::operation::update_document::UpdateDocumentError)
-    pub fn update_document(
-        &self,
-    ) -> crate::operation::update_document::builders::UpdateDocumentFluentBuilder {
-        crate::operation::update_document::builders::UpdateDocumentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_document(&self) -> crate::operation::update_document::builders::UpdateDocumentFluentBuilder {
+        crate::operation::update_document::builders::UpdateDocumentFluentBuilder::new(self.handle.clone())
     }
 }

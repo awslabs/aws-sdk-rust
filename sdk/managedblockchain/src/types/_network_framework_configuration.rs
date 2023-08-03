@@ -23,9 +23,7 @@ impl NetworkFrameworkConfiguration {
 
 /// A builder for [`NetworkFrameworkConfiguration`](crate::types::NetworkFrameworkConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFrameworkConfigurationBuilder {
     pub(crate) fabric: ::std::option::Option<crate::types::NetworkFabricConfiguration>,
 }
@@ -36,10 +34,7 @@ impl NetworkFrameworkConfigurationBuilder {
         self
     }
     /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
-    pub fn set_fabric(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkFabricConfiguration>,
-    ) -> Self {
+    pub fn set_fabric(mut self, input: ::std::option::Option<crate::types::NetworkFabricConfiguration>) -> Self {
         self.fabric = input;
         self
     }
@@ -49,8 +44,6 @@ impl NetworkFrameworkConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`NetworkFrameworkConfiguration`](crate::types::NetworkFrameworkConfiguration).
     pub fn build(self) -> crate::types::NetworkFrameworkConfiguration {
-        crate::types::NetworkFrameworkConfiguration {
-            fabric: self.fabric,
-        }
+        crate::types::NetworkFrameworkConfiguration { fabric: self.fabric }
     }
 }

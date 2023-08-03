@@ -29,9 +29,7 @@ impl CreateCapacityProviderInput {
         self.name.as_deref()
     }
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
-    pub fn auto_scaling_group_provider(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoScalingGroupProvider> {
+    pub fn auto_scaling_group_provider(&self) -> ::std::option::Option<&crate::types::AutoScalingGroupProvider> {
         self.auto_scaling_group_provider.as_ref()
     }
     /// <p>The metadata that you apply to the capacity provider to categorize and organize them more conveniently. Each tag consists of a key and an optional value. You define both of them.</p>
@@ -51,22 +49,17 @@ impl CreateCapacityProviderInput {
 }
 impl CreateCapacityProviderInput {
     /// Creates a new builder-style object to manufacture [`CreateCapacityProviderInput`](crate::operation::create_capacity_provider::CreateCapacityProviderInput).
-    pub fn builder(
-    ) -> crate::operation::create_capacity_provider::builders::CreateCapacityProviderInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_capacity_provider::builders::CreateCapacityProviderInputBuilder {
         crate::operation::create_capacity_provider::builders::CreateCapacityProviderInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCapacityProviderInput`](crate::operation::create_capacity_provider::CreateCapacityProviderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCapacityProviderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) auto_scaling_group_provider:
-        ::std::option::Option<crate::types::AutoScalingGroupProvider>,
+    pub(crate) auto_scaling_group_provider: ::std::option::Option<crate::types::AutoScalingGroupProvider>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCapacityProviderInputBuilder {
@@ -85,25 +78,17 @@ impl CreateCapacityProviderInputBuilder {
         &self.name
     }
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
-    pub fn auto_scaling_group_provider(
-        mut self,
-        input: crate::types::AutoScalingGroupProvider,
-    ) -> Self {
+    pub fn auto_scaling_group_provider(mut self, input: crate::types::AutoScalingGroupProvider) -> Self {
         self.auto_scaling_group_provider = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
-    pub fn set_auto_scaling_group_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingGroupProvider>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_provider(mut self, input: ::std::option::Option<crate::types::AutoScalingGroupProvider>) -> Self {
         self.auto_scaling_group_provider = input;
         self
     }
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
-    pub fn get_auto_scaling_group_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingGroupProvider> {
+    pub fn get_auto_scaling_group_provider(&self) -> &::std::option::Option<crate::types::AutoScalingGroupProvider> {
         &self.auto_scaling_group_provider
     }
     /// Appends an item to `tags`.
@@ -138,10 +123,7 @@ impl CreateCapacityProviderInputBuilder {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -162,16 +144,12 @@ impl CreateCapacityProviderInputBuilder {
     /// Consumes the builder and constructs a [`CreateCapacityProviderInput`](crate::operation::create_capacity_provider::CreateCapacityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_capacity_provider::CreateCapacityProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_capacity_provider::CreateCapacityProviderInput {
-                name: self.name,
-                auto_scaling_group_provider: self.auto_scaling_group_provider,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_capacity_provider::CreateCapacityProviderInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_capacity_provider::CreateCapacityProviderInput {
+            name: self.name,
+            auto_scaling_group_provider: self.auto_scaling_group_provider,
+            tags: self.tags,
+        })
     }
 }

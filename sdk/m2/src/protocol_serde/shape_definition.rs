@@ -10,13 +10,7 @@ pub fn ser_definition(
         crate::types::Definition::Content(inner) => {
             object_3.key("content").string(inner.as_str());
         }
-        crate::types::Definition::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "Definition",
-                ),
-            )
-        }
+        crate::types::Definition::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Definition")),
     }
     Ok(())
 }

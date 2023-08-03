@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAlarmOutput`](crate::operation::delete_alarm::DeleteAlarmOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_alarm::DeleteAlarmOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteAlarmError>`](crate::operation::delete_alarm::DeleteAlarmError)
-    pub fn delete_alarm(
-        &self,
-    ) -> crate::operation::delete_alarm::builders::DeleteAlarmFluentBuilder {
+    pub fn delete_alarm(&self) -> crate::operation::delete_alarm::builders::DeleteAlarmFluentBuilder {
         crate::operation::delete_alarm::builders::DeleteAlarmFluentBuilder::new(self.handle.clone())
     }
 }

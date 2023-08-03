@@ -10,10 +10,7 @@ impl UpdateAllowListInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_allow_list::UpdateAllowListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_allow_list::UpdateAllowListError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_allow_list::UpdateAllowListError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_allow_list();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateAllowListFluentBuilder {
         }
     }
     /// Access the UpdateAllowList as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_allow_list::builders::UpdateAllowListInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_allow_list::builders::UpdateAllowListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateAllowListFluentBuilder {
             crate::operation::update_allow_list::UpdateAllowList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_allow_list::UpdateAllowListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_allow_list::UpdateAllowListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateAllowListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateAllowListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_allow_list::UpdateAllowListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_allow_list::UpdateAllowListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_allow_list::UpdateAllowListError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateAllowListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_allow_list::UpdateAllowListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_allow_list::UpdateAllowListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_allow_list::UpdateAllowListError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateAllowListFluentBuilder {
             crate::operation::update_allow_list::UpdateAllowList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_allow_list::UpdateAllowListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_allow_list::UpdateAllowListError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +114,7 @@ impl UpdateAllowListFluentBuilder {
     }
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
     /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
-    pub fn set_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowListCriteria>,
-    ) -> Self {
+    pub fn set_criteria(mut self, input: ::std::option::Option<crate::types::AllowListCriteria>) -> Self {
         self.inner = self.inner.set_criteria(input);
         self
     }

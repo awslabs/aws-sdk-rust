@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetUserSettingsOutput`](crate::operation::get_user_settings::GetUserSettingsOutput) with field(s):
     ///   - [`user_settings(Option<UserSettings>)`](crate::operation::get_user_settings::GetUserSettingsOutput::user_settings): <p>The user settings.</p>
     /// - On failure, responds with [`SdkError<GetUserSettingsError>`](crate::operation::get_user_settings::GetUserSettingsError)
-    pub fn get_user_settings(
-        &self,
-    ) -> crate::operation::get_user_settings::builders::GetUserSettingsFluentBuilder {
-        crate::operation::get_user_settings::builders::GetUserSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_user_settings(&self) -> crate::operation::get_user_settings::builders::GetUserSettingsFluentBuilder {
+        crate::operation::get_user_settings::builders::GetUserSettingsFluentBuilder::new(self.handle.clone())
     }
 }

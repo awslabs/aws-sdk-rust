@@ -5,16 +5,16 @@ pub use crate::operation::put_classification_export_configuration::_put_classifi
 
 impl PutClassificationExportConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_classification_export_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl PutClassificationExportConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutClassificationExportConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_classification_export_configuration::builders::PutClassificationExportConfigurationInputBuilder,
+    inner: crate::operation::put_classification_export_configuration::builders::PutClassificationExportConfigurationInputBuilder,
 }
 impl PutClassificationExportConfigurationFluentBuilder {
     /// Creates a new `PutClassificationExportConfiguration`.
@@ -37,15 +37,20 @@ impl PutClassificationExportConfigurationFluentBuilder {
         }
     }
     /// Access the PutClassificationExportConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_classification_export_configuration::builders::PutClassificationExportConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_classification_export_configuration::builders::PutClassificationExportConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_classification_export_configuration::PutClassificationExportConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_classification_export_configuration::PutClassificationExportConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl PutClassificationExportConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl PutClassificationExportConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_classification_export_configuration::PutClassificationExportConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_classification_export_configuration::PutClassificationExportConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
@@ -100,17 +115,12 @@ impl PutClassificationExportConfigurationFluentBuilder {
         self
     }
     /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ClassificationExportConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ClassificationExportConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClassificationExportConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ClassificationExportConfiguration> {
         self.inner.get_configuration()
     }
 }

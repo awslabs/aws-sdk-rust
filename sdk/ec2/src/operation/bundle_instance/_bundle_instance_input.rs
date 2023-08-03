@@ -43,9 +43,7 @@ impl BundleInstanceInput {
 
 /// A builder for [`BundleInstanceInput`](crate::operation::bundle_instance::BundleInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BundleInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage: ::std::option::Option<crate::types::Storage>,
@@ -106,10 +104,7 @@ impl BundleInstanceInputBuilder {
     /// Consumes the builder and constructs a [`BundleInstanceInput`](crate::operation::bundle_instance::BundleInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::bundle_instance::BundleInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::bundle_instance::BundleInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::bundle_instance::BundleInstanceInput {
             instance_id: self.instance_id,
             storage: self.storage,

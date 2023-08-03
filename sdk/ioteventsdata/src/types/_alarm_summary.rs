@@ -74,9 +74,7 @@ impl AlarmSummary {
 
 /// A builder for [`AlarmSummary`](crate::types::AlarmSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmSummaryBuilder {
     pub(crate) alarm_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_model_version: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct AlarmSummaryBuilder {
 }
 impl AlarmSummaryBuilder {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the alarm model.</p>
-    pub fn set_alarm_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_model_name = input;
         self
     }
@@ -107,18 +99,12 @@ impl AlarmSummaryBuilder {
         &self.alarm_model_name
     }
     /// <p>The version of the alarm model.</p>
-    pub fn alarm_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the alarm model.</p>
-    pub fn set_alarm_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_model_version = input;
         self
     }
@@ -162,10 +148,7 @@ impl AlarmSummaryBuilder {
     /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
     /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
     /// </ul>
-    pub fn set_state_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmStateName>,
-    ) -> Self {
+    pub fn set_state_name(mut self, input: ::std::option::Option<crate::types::AlarmStateName>) -> Self {
         self.state_name = input;
         self
     }
@@ -187,10 +170,7 @@ impl AlarmSummaryBuilder {
         self
     }
     /// <p>The time the alarm was created, in the Unix epoch format.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -204,10 +184,7 @@ impl AlarmSummaryBuilder {
         self
     }
     /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }

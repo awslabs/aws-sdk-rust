@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`hosted_zone_id(Option<String>)`](crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput::hosted_zone_id): <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
     ///   - [`vpc(Option<Vpc>)`](crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput::vpc): <p>The VPC that you authorized associating with a hosted zone.</p>
     /// - On failure, responds with [`SdkError<CreateVPCAssociationAuthorizationError>`](crate::operation::create_vpc_association_authorization::CreateVPCAssociationAuthorizationError)
-    pub fn create_vpc_association_authorization(&self) -> crate::operation::create_vpc_association_authorization::builders::CreateVPCAssociationAuthorizationFluentBuilder{
+    pub fn create_vpc_association_authorization(
+        &self,
+    ) -> crate::operation::create_vpc_association_authorization::builders::CreateVPCAssociationAuthorizationFluentBuilder {
         crate::operation::create_vpc_association_authorization::builders::CreateVPCAssociationAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

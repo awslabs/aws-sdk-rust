@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutComplianceItemsOutput {
 }
 impl PutComplianceItemsOutput {
     /// Creates a new builder-style object to manufacture [`PutComplianceItemsOutput`](crate::operation::put_compliance_items::PutComplianceItemsOutput).
-    pub fn builder(
-    ) -> crate::operation::put_compliance_items::builders::PutComplianceItemsOutputBuilder {
+    pub fn builder() -> crate::operation::put_compliance_items::builders::PutComplianceItemsOutputBuilder {
         crate::operation::put_compliance_items::builders::PutComplianceItemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutComplianceItemsOutput`](crate::operation::put_compliance_items::PutComplianceItemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutComplianceItemsOutputBuilder {
     _request_id: Option<String>,
 }

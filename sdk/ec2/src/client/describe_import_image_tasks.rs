@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`import_image_tasks(Option<Vec<ImportImageTask>>)`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput::import_image_tasks): <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput::next_token): <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeImportImageTasksError>`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksError)
-    pub fn describe_import_image_tasks(&self) -> crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder{
+    pub fn describe_import_image_tasks(&self) -> crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder {
         crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksFluentBuilder::new(self.handle.clone())
     }
 }

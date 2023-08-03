@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDirectoryOutput`](crate::operation::create_directory::CreateDirectoryOutput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::operation::create_directory::CreateDirectoryOutput::directory_id): <p>The identifier of the directory that was created.</p>
     /// - On failure, responds with [`SdkError<CreateDirectoryError>`](crate::operation::create_directory::CreateDirectoryError)
-    pub fn create_directory(
-        &self,
-    ) -> crate::operation::create_directory::builders::CreateDirectoryFluentBuilder {
-        crate::operation::create_directory::builders::CreateDirectoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_directory(&self) -> crate::operation::create_directory::builders::CreateDirectoryFluentBuilder {
+        crate::operation::create_directory::builders::CreateDirectoryFluentBuilder::new(self.handle.clone())
     }
 }

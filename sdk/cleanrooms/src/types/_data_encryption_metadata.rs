@@ -44,9 +44,7 @@ impl DataEncryptionMetadata {
 
 /// A builder for [`DataEncryptionMetadata`](crate::types::DataEncryptionMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataEncryptionMetadataBuilder {
     pub(crate) allow_cleartext: ::std::option::Option<bool>,
     pub(crate) allow_duplicates: ::std::option::Option<bool>,
@@ -88,10 +86,7 @@ impl DataEncryptionMetadataBuilder {
         self
     }
     /// <p>Indicates whether Fingerprint columns can be joined on any other Fingerprint column with a different name (true) or can only be joined on Fingerprint columns of the same name (false).</p>
-    pub fn set_allow_joins_on_columns_with_different_names(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_allow_joins_on_columns_with_different_names(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_joins_on_columns_with_different_names = input;
         self
     }
@@ -118,8 +113,7 @@ impl DataEncryptionMetadataBuilder {
         crate::types::DataEncryptionMetadata {
             allow_cleartext: self.allow_cleartext,
             allow_duplicates: self.allow_duplicates,
-            allow_joins_on_columns_with_different_names: self
-                .allow_joins_on_columns_with_different_names,
+            allow_joins_on_columns_with_different_names: self.allow_joins_on_columns_with_different_names,
             preserve_nulls: self.preserve_nulls,
         }
     }

@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SafeguardPolicy {
     #[allow(missing_docs)] // documentation missing in model
@@ -61,13 +55,9 @@ impl ::std::convert::From<&str> for SafeguardPolicy {
     fn from(s: &str) -> Self {
         match s {
             "exclusive-automatic-truncation" => SafeguardPolicy::ExclusiveAutomaticTruncation,
-            "rely-on-sql-server-replication-agent" => {
-                SafeguardPolicy::RelyOnSqlServerReplicationAgent
-            }
+            "rely-on-sql-server-replication-agent" => SafeguardPolicy::RelyOnSqlServerReplicationAgent,
             "shared-automatic-truncation" => SafeguardPolicy::SharedAutomaticTruncation,
-            other => {
-                SafeguardPolicy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SafeguardPolicy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -83,9 +73,7 @@ impl SafeguardPolicy {
     pub fn as_str(&self) -> &str {
         match self {
             SafeguardPolicy::ExclusiveAutomaticTruncation => "exclusive-automatic-truncation",
-            SafeguardPolicy::RelyOnSqlServerReplicationAgent => {
-                "rely-on-sql-server-replication-agent"
-            }
+            SafeguardPolicy::RelyOnSqlServerReplicationAgent => "rely-on-sql-server-replication-agent",
             SafeguardPolicy::SharedAutomaticTruncation => "shared-automatic-truncation",
             SafeguardPolicy::Unknown(value) => value.as_str(),
         }

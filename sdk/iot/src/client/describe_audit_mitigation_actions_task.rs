@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`audit_check_to_actions_mapping(Option<HashMap<String, Vec<String>>>)`](crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput::audit_check_to_actions_mapping): <p>Specifies the mitigation actions that should be applied to specific audit checks.</p>
     ///   - [`actions_definition(Option<Vec<MitigationAction>>)`](crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput::actions_definition): <p>Specifies the mitigation actions and their parameters that are applied as part of this task.</p>
     /// - On failure, responds with [`SdkError<DescribeAuditMitigationActionsTaskError>`](crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskError)
-    pub fn describe_audit_mitigation_actions_task(&self) -> crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskFluentBuilder{
+    pub fn describe_audit_mitigation_actions_task(
+        &self,
+    ) -> crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskFluentBuilder {
         crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskFluentBuilder::new(self.handle.clone())
     }
 }

@@ -17,9 +17,7 @@ pub struct CreateIpAccessSettingsInput {
     pub customer_managed_key: ::std::option::Option<::std::string::String>,
     /// <p>Additional encryption context of the IP access settings.</p>
     #[doc(hidden)]
-    pub additional_encryption_context: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The IP rules of the IP access settings.</p>
     #[doc(hidden)]
     pub ip_rules: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>,
@@ -46,11 +44,7 @@ impl CreateIpAccessSettingsInput {
         self.customer_managed_key.as_deref()
     }
     /// <p>Additional encryption context of the IP access settings.</p>
-    pub fn additional_encryption_context(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn additional_encryption_context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_encryption_context.as_ref()
     }
     /// <p>The IP rules of the IP access settings.</p>
@@ -70,10 +64,7 @@ impl ::std::fmt::Debug for CreateIpAccessSettingsInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.field("customer_managed_key", &self.customer_managed_key);
-        formatter.field(
-            "additional_encryption_context",
-            &self.additional_encryption_context,
-        );
+        formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("ip_rules", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.finish()
@@ -81,9 +72,7 @@ impl ::std::fmt::Debug for CreateIpAccessSettingsInput {
 }
 impl CreateIpAccessSettingsInput {
     /// Creates a new builder-style object to manufacture [`CreateIpAccessSettingsInput`](crate::operation::create_ip_access_settings::CreateIpAccessSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsInputBuilder {
         crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsInputBuilder::default()
     }
 }
@@ -96,9 +85,7 @@ pub struct CreateIpAccessSettingsInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) customer_managed_key: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_encryption_context: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) ip_rules: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -143,10 +130,7 @@ impl CreateIpAccessSettingsInputBuilder {
         self
     }
     /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -155,18 +139,12 @@ impl CreateIpAccessSettingsInputBuilder {
         &self.tags
     }
     /// <p>The custom managed key of the IP access settings.</p>
-    pub fn customer_managed_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_managed_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_managed_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom managed key of the IP access settings.</p>
-    pub fn set_customer_managed_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_managed_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_managed_key = input;
         self
     }
@@ -192,9 +170,7 @@ impl CreateIpAccessSettingsInputBuilder {
     /// <p>Additional encryption context of the IP access settings.</p>
     pub fn set_additional_encryption_context(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.additional_encryption_context = input;
         self
@@ -202,9 +178,7 @@ impl CreateIpAccessSettingsInputBuilder {
     /// <p>Additional encryption context of the IP access settings.</p>
     pub fn get_additional_encryption_context(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_encryption_context
     }
     /// Appends an item to `ip_rules`.
@@ -219,10 +193,7 @@ impl CreateIpAccessSettingsInputBuilder {
         self
     }
     /// <p>The IP rules of the IP access settings.</p>
-    pub fn set_ip_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>,
-    ) -> Self {
+    pub fn set_ip_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>) -> Self {
         self.ip_rules = input;
         self
     }
@@ -254,17 +225,15 @@ impl CreateIpAccessSettingsInputBuilder {
         crate::operation::create_ip_access_settings::CreateIpAccessSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_ip_access_settings::CreateIpAccessSettingsInput {
-                display_name: self.display_name,
-                description: self.description,
-                tags: self.tags,
-                customer_managed_key: self.customer_managed_key,
-                additional_encryption_context: self.additional_encryption_context,
-                ip_rules: self.ip_rules,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_ip_access_settings::CreateIpAccessSettingsInput {
+            display_name: self.display_name,
+            description: self.description,
+            tags: self.tags,
+            customer_managed_key: self.customer_managed_key,
+            additional_encryption_context: self.additional_encryption_context,
+            ip_rules: self.ip_rules,
+            client_token: self.client_token,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateIpAccessSettingsInputBuilder {
@@ -274,10 +243,7 @@ impl ::std::fmt::Debug for CreateIpAccessSettingsInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.field("customer_managed_key", &self.customer_managed_key);
-        formatter.field(
-            "additional_encryption_context",
-            &self.additional_encryption_context,
-        );
+        formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("ip_rules", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.finish()

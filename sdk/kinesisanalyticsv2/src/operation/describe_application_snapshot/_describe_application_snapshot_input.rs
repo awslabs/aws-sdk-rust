@@ -22,34 +22,26 @@ impl DescribeApplicationSnapshotInput {
 }
 impl DescribeApplicationSnapshotInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationSnapshotInput`](crate::operation::describe_application_snapshot::DescribeApplicationSnapshotInput).
-    pub fn builder() -> crate::operation::describe_application_snapshot::builders::DescribeApplicationSnapshotInputBuilder{
+    pub fn builder() -> crate::operation::describe_application_snapshot::builders::DescribeApplicationSnapshotInputBuilder {
         crate::operation::describe_application_snapshot::builders::DescribeApplicationSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationSnapshotInput`](crate::operation::describe_application_snapshot::DescribeApplicationSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationSnapshotInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeApplicationSnapshotInputBuilder {
     /// <p>The name of an existing application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an existing application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -58,18 +50,12 @@ impl DescribeApplicationSnapshotInputBuilder {
         &self.application_name
     }
     /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
@@ -84,11 +70,9 @@ impl DescribeApplicationSnapshotInputBuilder {
         crate::operation::describe_application_snapshot::DescribeApplicationSnapshotInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_application_snapshot::DescribeApplicationSnapshotInput {
-                application_name: self.application_name,
-                snapshot_name: self.snapshot_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_application_snapshot::DescribeApplicationSnapshotInput {
+            application_name: self.application_name,
+            snapshot_name: self.snapshot_name,
+        })
     }
 }

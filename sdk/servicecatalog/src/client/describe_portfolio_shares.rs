@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`next_page_token(Option<String>)`](crate::operation::describe_portfolio_shares::DescribePortfolioSharesOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     ///   - [`portfolio_share_details(Option<Vec<PortfolioShareDetail>>)`](crate::operation::describe_portfolio_shares::DescribePortfolioSharesOutput::portfolio_share_details): <p>Summaries about each of the portfolio shares.</p>
     /// - On failure, responds with [`SdkError<DescribePortfolioSharesError>`](crate::operation::describe_portfolio_shares::DescribePortfolioSharesError)
-    pub fn describe_portfolio_shares(
-        &self,
-    ) -> crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesFluentBuilder
-    {
+    pub fn describe_portfolio_shares(&self) -> crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesFluentBuilder {
         crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesFluentBuilder::new(self.handle.clone())
     }
 }

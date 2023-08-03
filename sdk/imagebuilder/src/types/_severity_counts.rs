@@ -44,9 +44,7 @@ impl SeverityCounts {
 
 /// A builder for [`SeverityCounts`](crate::types::SeverityCounts).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SeverityCountsBuilder {
     pub(crate) all: ::std::option::Option<i64>,
     pub(crate) critical: ::std::option::Option<i64>,

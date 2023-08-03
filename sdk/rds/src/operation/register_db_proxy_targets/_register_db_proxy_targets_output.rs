@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for RegisterDbProxyTargetsOutput {
 }
 impl RegisterDbProxyTargetsOutput {
     /// Creates a new builder-style object to manufacture [`RegisterDbProxyTargetsOutput`](crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput).
-    pub fn builder(
-    ) -> crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsOutputBuilder {
         crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterDbProxyTargetsOutput`](crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterDbProxyTargetsOutputBuilder {
-    pub(crate) db_proxy_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>>,
+    pub(crate) db_proxy_targets: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>>,
     _request_id: Option<String>,
 }
 impl RegisterDbProxyTargetsOutputBuilder {
@@ -51,17 +46,12 @@ impl RegisterDbProxyTargetsOutputBuilder {
         self
     }
     /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
-    pub fn set_db_proxy_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>>,
-    ) -> Self {
+    pub fn set_db_proxy_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>>) -> Self {
         self.db_proxy_targets = input;
         self
     }
     /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
-    pub fn get_db_proxy_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>> {
+    pub fn get_db_proxy_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>> {
         &self.db_proxy_targets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +64,7 @@ impl RegisterDbProxyTargetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterDbProxyTargetsOutput`](crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput {
+    pub fn build(self) -> crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput {
         crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput {
             db_proxy_targets: self.db_proxy_targets,
             _request_id: self._request_id,

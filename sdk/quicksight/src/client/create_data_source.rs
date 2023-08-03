@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::create_data_source::CreateDataSourceOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::create_data_source::CreateDataSourceOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<CreateDataSourceError>`](crate::operation::create_data_source::CreateDataSourceError)
-    pub fn create_data_source(
-        &self,
-    ) -> crate::operation::create_data_source::builders::CreateDataSourceFluentBuilder {
-        crate::operation::create_data_source::builders::CreateDataSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_data_source(&self) -> crate::operation::create_data_source::builders::CreateDataSourceFluentBuilder {
+        crate::operation::create_data_source::builders::CreateDataSourceFluentBuilder::new(self.handle.clone())
     }
 }

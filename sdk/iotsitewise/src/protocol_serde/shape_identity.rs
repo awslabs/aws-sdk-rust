@@ -18,19 +18,13 @@ pub fn ser_identity(
     if let Some(var_5) = &input.iam_user {
         #[allow(unused_mut)]
         let mut object_6 = object.key("iamUser").start_object();
-        crate::protocol_serde::shape_iam_user_identity::ser_iam_user_identity(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_iam_user_identity::ser_iam_user_identity(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.iam_role {
         #[allow(unused_mut)]
         let mut object_8 = object.key("iamRole").start_object();
-        crate::protocol_serde::shape_iam_role_identity::ser_iam_role_identity(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_iam_role_identity::ser_iam_role_identity(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())
@@ -40,12 +34,7 @@ pub(crate) fn de_identity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Identity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -55,50 +44,33 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "user" => {
-                                builder = builder.set_user(
-                                    crate::protocol_serde::shape_user_identity::de_user_identity(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "group" => {
-                                builder = builder.set_group(
-                                    crate::protocol_serde::shape_group_identity::de_group_identity(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "iamUser" => {
-                                builder = builder.set_iam_user(
-                                    crate::protocol_serde::shape_iam_user_identity::de_iam_user_identity(tokens)?
-                                );
-                            }
-                            "iamRole" => {
-                                builder = builder.set_iam_role(
-                                    crate::protocol_serde::shape_iam_role_identity::de_iam_role_identity(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "user" => {
+                            builder = builder.set_user(crate::protocol_serde::shape_user_identity::de_user_identity(tokens)?);
                         }
-                    }
+                        "group" => {
+                            builder = builder.set_group(crate::protocol_serde::shape_group_identity::de_group_identity(tokens)?);
+                        }
+                        "iamUser" => {
+                            builder = builder.set_iam_user(crate::protocol_serde::shape_iam_user_identity::de_iam_user_identity(tokens)?);
+                        }
+                        "iamRole" => {
+                            builder = builder.set_iam_role(crate::protocol_serde::shape_iam_role_identity::de_iam_role_identity(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -30,9 +30,7 @@ impl VisaPinVerification {
 
 /// A builder for [`VisaPinVerification`](crate::types::VisaPinVerification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VisaPinVerificationBuilder {
     pub(crate) pin_verification_key_index: ::std::option::Option<i32>,
     pub(crate) verification_value: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl VisaPinVerificationBuilder {
         &self.pin_verification_key_index
     }
     /// <p>Parameters that are required to generate or verify Visa PVV (PIN Verification Value).</p>
-    pub fn verification_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verification_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Parameters that are required to generate or verify Visa PVV (PIN Verification Value).</p>
-    pub fn set_verification_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verification_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verification_value = input;
         self
     }

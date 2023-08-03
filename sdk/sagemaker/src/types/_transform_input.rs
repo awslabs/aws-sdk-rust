@@ -60,9 +60,7 @@ impl TransformInput {
 
 /// A builder for [`TransformInput`](crate::types::TransformInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransformInputBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::TransformDataSource>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
@@ -76,10 +74,7 @@ impl TransformInputBuilder {
         self
     }
     /// <p>Describes the location of the channel data, which is, the S3 location of the input data that the model can consume.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformDataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::TransformDataSource>) -> Self {
         self.data_source = input;
         self
     }
@@ -107,10 +102,7 @@ impl TransformInputBuilder {
         self
     }
     /// <p>If your transform data is compressed, specify the compression type. Amazon SageMaker automatically decompresses the data for the transform job accordingly. The default value is <code>None</code>.</p>
-    pub fn set_compression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CompressionType>,
-    ) -> Self {
+    pub fn set_compression_type(mut self, input: ::std::option::Option<crate::types::CompressionType>) -> Self {
         self.compression_type = input;
         self
     }

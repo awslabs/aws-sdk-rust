@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for SearchAvailablePhoneNumbersOutput {
 }
 impl SearchAvailablePhoneNumbersOutput {
     /// Creates a new builder-style object to manufacture [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput).
-    pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersOutputBuilder{
+    pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersOutputBuilder {
         crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersOutputBuilder {
     pub(crate) e164_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,27 +47,19 @@ impl SearchAvailablePhoneNumbersOutputBuilder {
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).
     ///
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn e164_phone_numbers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn e164_phone_numbers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.e164_phone_numbers.unwrap_or_default();
         v.push(input.into());
         self.e164_phone_numbers = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn set_e164_phone_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_e164_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.e164_phone_numbers = input;
         self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn get_e164_phone_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_e164_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.e164_phone_numbers
     }
     /// <p>The token used to retrieve the next page of search results.</p>
@@ -96,9 +86,7 @@ impl SearchAvailablePhoneNumbersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput {
+    pub fn build(self) -> crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput {
         crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput {
             e164_phone_numbers: self.e164_phone_numbers,
             next_token: self.next_token,

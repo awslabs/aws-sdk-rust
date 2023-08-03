@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DetachNetworkInterfaceOutput {
 }
 impl DetachNetworkInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`DetachNetworkInterfaceOutput`](crate::operation::detach_network_interface::DetachNetworkInterfaceOutput).
-    pub fn builder(
-    ) -> crate::operation::detach_network_interface::builders::DetachNetworkInterfaceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detach_network_interface::builders::DetachNetworkInterfaceOutputBuilder {
         crate::operation::detach_network_interface::builders::DetachNetworkInterfaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachNetworkInterfaceOutput`](crate::operation::detach_network_interface::DetachNetworkInterfaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachNetworkInterfaceOutputBuilder {
     _request_id: Option<String>,
 }

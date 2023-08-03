@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for GenerateAccessLogsOutput {
 }
 impl GenerateAccessLogsOutput {
     /// Creates a new builder-style object to manufacture [`GenerateAccessLogsOutput`](crate::operation::generate_access_logs::GenerateAccessLogsOutput).
-    pub fn builder(
-    ) -> crate::operation::generate_access_logs::builders::GenerateAccessLogsOutputBuilder {
+    pub fn builder() -> crate::operation::generate_access_logs::builders::GenerateAccessLogsOutputBuilder {
         crate::operation::generate_access_logs::builders::GenerateAccessLogsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateAccessLogsOutput`](crate::operation::generate_access_logs::GenerateAccessLogsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateAccessLogsOutputBuilder {
     pub(crate) log_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

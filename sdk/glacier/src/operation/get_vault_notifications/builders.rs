@@ -40,10 +40,7 @@ impl GetVaultNotificationsFluentBuilder {
         }
     }
     /// Access the GetVaultNotifications as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_vault_notifications::builders::GetVaultNotificationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_vault_notifications::builders::GetVaultNotificationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl GetVaultNotificationsFluentBuilder {
             crate::operation::get_vault_notifications::GetVaultNotifications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vault_notifications::GetVaultNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vault_notifications::GetVaultNotificationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl GetVaultNotificationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl GetVaultNotificationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_vault_notifications::GetVaultNotificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vault_notifications::GetVaultNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vault_notifications::GetVaultNotificationsError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl GetVaultNotificationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_vault_notifications::GetVaultNotificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vault_notifications::GetVaultNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vault_notifications::GetVaultNotificationsError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl GetVaultNotificationsFluentBuilder {
             crate::operation::get_vault_notifications::GetVaultNotifications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vault_notifications::GetVaultNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vault_notifications::GetVaultNotificationsError>,
     > {
         self.customize_middleware().await
     }

@@ -3,10 +3,7 @@
 pub fn de_malformed_certificate_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::MalformedCertificateExceptionBuilder,
-) -> Result<
-    crate::types::error::builders::MalformedCertificateExceptionBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::MalformedCertificateExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

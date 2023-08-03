@@ -5,15 +5,12 @@
 pub struct GetNetworkInsightsAccessScopeContentOutput {
     /// <p>The Network Access Scope content.</p>
     #[doc(hidden)]
-    pub network_insights_access_scope_content:
-        ::std::option::Option<crate::types::NetworkInsightsAccessScopeContent>,
+    pub network_insights_access_scope_content: ::std::option::Option<crate::types::NetworkInsightsAccessScopeContent>,
     _request_id: Option<String>,
 }
 impl GetNetworkInsightsAccessScopeContentOutput {
     /// <p>The Network Access Scope content.</p>
-    pub fn network_insights_access_scope_content(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkInsightsAccessScopeContent> {
+    pub fn network_insights_access_scope_content(&self) -> ::std::option::Option<&crate::types::NetworkInsightsAccessScopeContent> {
         self.network_insights_access_scope_content.as_ref()
     }
 }
@@ -24,27 +21,21 @@ impl ::aws_http::request_id::RequestId for GetNetworkInsightsAccessScopeContentO
 }
 impl GetNetworkInsightsAccessScopeContentOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkInsightsAccessScopeContentOutput`](crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentOutput).
-    pub fn builder() -> crate::operation::get_network_insights_access_scope_content::builders::GetNetworkInsightsAccessScopeContentOutputBuilder{
+    pub fn builder() -> crate::operation::get_network_insights_access_scope_content::builders::GetNetworkInsightsAccessScopeContentOutputBuilder {
         crate::operation::get_network_insights_access_scope_content::builders::GetNetworkInsightsAccessScopeContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetNetworkInsightsAccessScopeContentOutput`](crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNetworkInsightsAccessScopeContentOutputBuilder {
-    pub(crate) network_insights_access_scope_content:
-        ::std::option::Option<crate::types::NetworkInsightsAccessScopeContent>,
+    pub(crate) network_insights_access_scope_content: ::std::option::Option<crate::types::NetworkInsightsAccessScopeContent>,
     _request_id: Option<String>,
 }
 impl GetNetworkInsightsAccessScopeContentOutputBuilder {
     /// <p>The Network Access Scope content.</p>
-    pub fn network_insights_access_scope_content(
-        mut self,
-        input: crate::types::NetworkInsightsAccessScopeContent,
-    ) -> Self {
+    pub fn network_insights_access_scope_content(mut self, input: crate::types::NetworkInsightsAccessScopeContent) -> Self {
         self.network_insights_access_scope_content = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +48,7 @@ impl GetNetworkInsightsAccessScopeContentOutputBuilder {
         self
     }
     /// <p>The Network Access Scope content.</p>
-    pub fn get_network_insights_access_scope_content(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkInsightsAccessScopeContent> {
+    pub fn get_network_insights_access_scope_content(&self) -> &::std::option::Option<crate::types::NetworkInsightsAccessScopeContent> {
         &self.network_insights_access_scope_content
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +61,9 @@ impl GetNetworkInsightsAccessScopeContentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetNetworkInsightsAccessScopeContentOutput`](crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentOutput).
-    pub fn build(self) -> crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentOutput{
+    pub fn build(self) -> crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentOutput {
         crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentOutput {
-            network_insights_access_scope_content: self.network_insights_access_scope_content
-            ,
+            network_insights_access_scope_content: self.network_insights_access_scope_content,
             _request_id: self._request_id,
         }
     }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`folder(Option<Folder>)`](crate::operation::describe_folder::DescribeFolderOutput::folder): <p>Information about the folder.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_folder::DescribeFolderOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeFolderError>`](crate::operation::describe_folder::DescribeFolderError)
-    pub fn describe_folder(
-        &self,
-    ) -> crate::operation::describe_folder::builders::DescribeFolderFluentBuilder {
-        crate::operation::describe_folder::builders::DescribeFolderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_folder(&self) -> crate::operation::describe_folder::builders::DescribeFolderFluentBuilder {
+        crate::operation::describe_folder::builders::DescribeFolderFluentBuilder::new(self.handle.clone())
     }
 }

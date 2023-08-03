@@ -4,14 +4,10 @@ pub fn ser_create_authorizer_input(
     input: &crate::operation::create_authorizer::CreateAuthorizerInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.authorizer_credentials_arn {
-        object
-            .key("authorizerCredentialsArn")
-            .string(var_1.as_str());
+        object.key("authorizerCredentialsArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.authorizer_payload_format_version {
-        object
-            .key("authorizerPayloadFormatVersion")
-            .string(var_2.as_str());
+        object.key("authorizerPayloadFormatVersion").string(var_2.as_str());
     }
     if let Some(var_3) = &input.authorizer_result_ttl_in_seconds {
         object.key("authorizerResultTtlInSeconds").number(
@@ -38,17 +34,12 @@ pub fn ser_create_authorizer_input(
         array_8.finish();
     }
     if let Some(var_10) = &input.identity_validation_expression {
-        object
-            .key("identityValidationExpression")
-            .string(var_10.as_str());
+        object.key("identityValidationExpression").string(var_10.as_str());
     }
     if let Some(var_11) = &input.jwt_configuration {
         #[allow(unused_mut)]
         let mut object_12 = object.key("jwtConfiguration").start_object();
-        crate::protocol_serde::shape_jwt_configuration::ser_jwt_configuration(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_jwt_configuration::ser_jwt_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.name {

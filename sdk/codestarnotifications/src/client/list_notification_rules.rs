@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_notification_rules::ListNotificationRulesOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     ///   - [`notification_rules(Option<Vec<NotificationRuleSummary>>)`](crate::operation::list_notification_rules::ListNotificationRulesOutput::notification_rules): <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
     /// - On failure, responds with [`SdkError<ListNotificationRulesError>`](crate::operation::list_notification_rules::ListNotificationRulesError)
-    pub fn list_notification_rules(
-        &self,
-    ) -> crate::operation::list_notification_rules::builders::ListNotificationRulesFluentBuilder
-    {
-        crate::operation::list_notification_rules::builders::ListNotificationRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_notification_rules(&self) -> crate::operation::list_notification_rules::builders::ListNotificationRulesFluentBuilder {
+        crate::operation::list_notification_rules::builders::ListNotificationRulesFluentBuilder::new(self.handle.clone())
     }
 }

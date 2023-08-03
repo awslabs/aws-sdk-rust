@@ -9,9 +9,7 @@ pub struct RecipeAction {
     pub operation: ::std::option::Option<::std::string::String>,
     /// <p>Contextual parameters for the transformation.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RecipeAction {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
@@ -19,11 +17,7 @@ impl RecipeAction {
         self.operation.as_deref()
     }
     /// <p>Contextual parameters for the transformation.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -36,14 +30,10 @@ impl RecipeAction {
 
 /// A builder for [`RecipeAction`](crate::types::RecipeAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecipeActionBuilder {
     pub(crate) operation: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RecipeActionBuilder {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
@@ -65,32 +55,19 @@ impl RecipeActionBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>Contextual parameters for the transformation.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Contextual parameters for the transformation.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>Contextual parameters for the transformation.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`RecipeAction`](crate::types::RecipeAction).

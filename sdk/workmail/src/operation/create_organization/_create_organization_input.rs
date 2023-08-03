@@ -50,17 +50,14 @@ impl CreateOrganizationInput {
 }
 impl CreateOrganizationInput {
     /// Creates a new builder-style object to manufacture [`CreateOrganizationInput`](crate::operation::create_organization::CreateOrganizationInput).
-    pub fn builder(
-    ) -> crate::operation::create_organization::builders::CreateOrganizationInputBuilder {
+    pub fn builder() -> crate::operation::create_organization::builders::CreateOrganizationInputBuilder {
         crate::operation::create_organization::builders::CreateOrganizationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOrganizationInput`](crate::operation::create_organization::CreateOrganizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOrganizationInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
@@ -124,10 +121,7 @@ impl CreateOrganizationInputBuilder {
         self
     }
     /// <p>The email domains to associate with the organization.</p>
-    pub fn set_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>,
-    ) -> Self {
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>) -> Self {
         self.domains = input;
         self
     }
@@ -166,19 +160,14 @@ impl CreateOrganizationInputBuilder {
     /// Consumes the builder and constructs a [`CreateOrganizationInput`](crate::operation::create_organization::CreateOrganizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_organization::CreateOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_organization::CreateOrganizationInput {
-                directory_id: self.directory_id,
-                alias: self.alias,
-                client_token: self.client_token,
-                domains: self.domains,
-                kms_key_arn: self.kms_key_arn,
-                enable_interoperability: self.enable_interoperability.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_organization::CreateOrganizationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_organization::CreateOrganizationInput {
+            directory_id: self.directory_id,
+            alias: self.alias,
+            client_token: self.client_token,
+            domains: self.domains,
+            kms_key_arn: self.kms_key_arn,
+            enable_interoperability: self.enable_interoperability.unwrap_or_default(),
+        })
     }
 }

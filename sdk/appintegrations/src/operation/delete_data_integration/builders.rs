@@ -39,10 +39,7 @@ impl DeleteDataIntegrationFluentBuilder {
         }
     }
     /// Access the DeleteDataIntegration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_data_integration::builders::DeleteDataIntegrationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_data_integration::builders::DeleteDataIntegrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DeleteDataIntegrationFluentBuilder {
             crate::operation::delete_data_integration::DeleteDataIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_integration::DeleteDataIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_integration::DeleteDataIntegrationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DeleteDataIntegrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DeleteDataIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_data_integration::DeleteDataIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_integration::DeleteDataIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_integration::DeleteDataIntegrationError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DeleteDataIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_data_integration::DeleteDataIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_integration::DeleteDataIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_integration::DeleteDataIntegrationError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl DeleteDataIntegrationFluentBuilder {
             crate::operation::delete_data_integration::DeleteDataIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_integration::DeleteDataIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_integration::DeleteDataIntegrationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the DataIntegration.</p>
-    pub fn data_integration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_integration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_integration_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the DataIntegration.</p>
-    pub fn set_data_integration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_integration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_integration_identifier(input);
         self
     }

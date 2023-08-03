@@ -43,9 +43,7 @@ impl AddPartnerInput {
 
 /// A builder for [`AddPartnerInput`](crate::operation::add_partner::AddPartnerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddPartnerInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl AddPartnerInputBuilder {
         &self.account_id
     }
     /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -88,18 +80,12 @@ impl AddPartnerInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The name of the database that receives data from the partner.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database that receives data from the partner.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -122,12 +108,7 @@ impl AddPartnerInputBuilder {
         &self.partner_name
     }
     /// Consumes the builder and constructs a [`AddPartnerInput`](crate::operation::add_partner::AddPartnerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_partner::AddPartnerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_partner::AddPartnerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_partner::AddPartnerInput {
             account_id: self.account_id,
             cluster_identifier: self.cluster_identifier,

@@ -21,10 +21,7 @@ pub fn ser_create_directory_input(
     if let Some(var_6) = &input.vpc_settings {
         #[allow(unused_mut)]
         let mut object_7 = object.key("VpcSettings").start_object();
-        crate::protocol_serde::shape_directory_vpc_settings::ser_directory_vpc_settings(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_directory_vpc_settings::ser_directory_vpc_settings(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.tags {

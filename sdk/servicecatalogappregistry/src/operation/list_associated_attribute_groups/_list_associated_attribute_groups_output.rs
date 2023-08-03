@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAssociatedAttributeGroupsOutput {
 }
 impl ListAssociatedAttributeGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedAttributeGroupsOutput`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput).
-    pub fn builder() -> crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsOutputBuilder {
         crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociatedAttributeGroupsOutput`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedAttributeGroupsOutputBuilder {
     pub(crate) attribute_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,27 +47,19 @@ impl ListAssociatedAttributeGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_attribute_groups`](Self::set_attribute_groups).
     ///
     /// <p>A list of attribute group IDs.</p>
-    pub fn attribute_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attribute_groups.unwrap_or_default();
         v.push(input.into());
         self.attribute_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of attribute group IDs.</p>
-    pub fn set_attribute_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_attribute_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.attribute_groups = input;
         self
     }
     /// <p>A list of attribute group IDs.</p>
-    pub fn get_attribute_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attribute_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.attribute_groups
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
@@ -96,10 +86,7 @@ impl ListAssociatedAttributeGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssociatedAttributeGroupsOutput`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput
-    {
+    pub fn build(self) -> crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput {
         crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput {
             attribute_groups: self.attribute_groups,
             next_token: self.next_token,

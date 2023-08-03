@@ -8,8 +8,7 @@ pub struct ListCertificatesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of ACM certificates.</p>
     #[doc(hidden)]
-    pub certificate_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
+    pub certificate_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
     _request_id: Option<String>,
 }
 impl ListCertificatesOutput {
@@ -18,9 +17,7 @@ impl ListCertificatesOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of ACM certificates.</p>
-    pub fn certificate_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CertificateSummary]> {
+    pub fn certificate_summary_list(&self) -> ::std::option::Option<&[crate::types::CertificateSummary]> {
         self.certificate_summary_list.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListCertificatesOutput {
 }
 impl ListCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
-    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesOutputBuilder {
         crate::operation::list_certificates::builders::ListCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCertificatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) certificate_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
+    pub(crate) certificate_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
     _request_id: Option<String>,
 }
 impl ListCertificatesOutputBuilder {
@@ -75,17 +68,12 @@ impl ListCertificatesOutputBuilder {
         self
     }
     /// <p>A list of ACM certificates.</p>
-    pub fn set_certificate_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
-    ) -> Self {
+    pub fn set_certificate_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>) -> Self {
         self.certificate_summary_list = input;
         self
     }
     /// <p>A list of ACM certificates.</p>
-    pub fn get_certificate_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>> {
+    pub fn get_certificate_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>> {
         &self.certificate_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

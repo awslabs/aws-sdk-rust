@@ -19,9 +19,7 @@ impl EnableLdapsOutput {
 
 /// A builder for [`EnableLdapsOutput`](crate::operation::enable_ldaps::EnableLdapsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableLdapsOutputBuilder {
     _request_id: Option<String>,
 }

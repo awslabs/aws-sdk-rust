@@ -38,13 +38,7 @@
 /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. It's only used if there is no state persisted for that log stream.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CloudWatchLogsInitialPosition {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for CloudWatchLogsInitialPosition {
         match s {
             "end_of_file" => CloudWatchLogsInitialPosition::EndOfFile,
             "start_of_file" => CloudWatchLogsInitialPosition::StartOfFile,
-            other => CloudWatchLogsInitialPosition::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => CloudWatchLogsInitialPosition::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

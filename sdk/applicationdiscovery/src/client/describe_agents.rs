@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`agents_info(Option<Vec<AgentInfo>>)`](crate::operation::describe_agents::DescribeAgentsOutput::agents_info): <p>Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did not specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access control (MAC) addresses, agent/collector health, host name where the agent/collector resides, and the version number of each agent/collector.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_agents::DescribeAgentsOutput::next_token): <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     /// - On failure, responds with [`SdkError<DescribeAgentsError>`](crate::operation::describe_agents::DescribeAgentsError)
-    pub fn describe_agents(
-        &self,
-    ) -> crate::operation::describe_agents::builders::DescribeAgentsFluentBuilder {
-        crate::operation::describe_agents::builders::DescribeAgentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_agents(&self) -> crate::operation::describe_agents::builders::DescribeAgentsFluentBuilder {
+        crate::operation::describe_agents::builders::DescribeAgentsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -17,17 +17,14 @@ impl AssociateDrtRoleInput {
 }
 impl AssociateDrtRoleInput {
     /// Creates a new builder-style object to manufacture [`AssociateDrtRoleInput`](crate::operation::associate_drt_role::AssociateDrtRoleInput).
-    pub fn builder() -> crate::operation::associate_drt_role::builders::AssociateDrtRoleInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_drt_role::builders::AssociateDrtRoleInputBuilder {
         crate::operation::associate_drt_role::builders::AssociateDrtRoleInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDrtRoleInput`](crate::operation::associate_drt_role::AssociateDrtRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDrtRoleInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,14 +49,7 @@ impl AssociateDrtRoleInputBuilder {
     /// Consumes the builder and constructs a [`AssociateDrtRoleInput`](crate::operation::associate_drt_role::AssociateDrtRoleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_drt_role::AssociateDrtRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_drt_role::AssociateDrtRoleInput {
-                role_arn: self.role_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_drt_role::AssociateDrtRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::associate_drt_role::AssociateDrtRoleInput { role_arn: self.role_arn })
     }
 }

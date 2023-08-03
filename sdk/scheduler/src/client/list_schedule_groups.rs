@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_schedule_groups::ListScheduleGroupsOutput::next_token): <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
     ///   - [`schedule_groups(Option<Vec<ScheduleGroupSummary>>)`](crate::operation::list_schedule_groups::ListScheduleGroupsOutput::schedule_groups): <p>The schedule groups that match the specified criteria.</p>
     /// - On failure, responds with [`SdkError<ListScheduleGroupsError>`](crate::operation::list_schedule_groups::ListScheduleGroupsError)
-    pub fn list_schedule_groups(
-        &self,
-    ) -> crate::operation::list_schedule_groups::builders::ListScheduleGroupsFluentBuilder {
-        crate::operation::list_schedule_groups::builders::ListScheduleGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_schedule_groups(&self) -> crate::operation::list_schedule_groups::builders::ListScheduleGroupsFluentBuilder {
+        crate::operation::list_schedule_groups::builders::ListScheduleGroupsFluentBuilder::new(self.handle.clone())
     }
 }

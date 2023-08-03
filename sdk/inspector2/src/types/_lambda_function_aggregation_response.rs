@@ -15,9 +15,7 @@ pub struct LambdaFunctionAggregationResponse {
     pub runtime: ::std::option::Option<::std::string::String>,
     /// <p>The tags included in the aggregation results.</p>
     #[doc(hidden)]
-    pub lambda_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub lambda_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the AWS account that owns the AWS Lambda function. </p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -42,11 +40,7 @@ impl LambdaFunctionAggregationResponse {
         self.runtime.as_deref()
     }
     /// <p>The tags included in the aggregation results.</p>
-    pub fn lambda_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn lambda_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.lambda_tags.as_ref()
     }
     /// <p>The ID of the AWS account that owns the AWS Lambda function. </p>
@@ -71,16 +65,12 @@ impl LambdaFunctionAggregationResponse {
 
 /// A builder for [`LambdaFunctionAggregationResponse`](crate::types::LambdaFunctionAggregationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaFunctionAggregationResponseBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) runtime: ::std::option::Option<::std::string::String>,
-    pub(crate) lambda_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) lambda_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
     pub(crate) last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -101,18 +91,12 @@ impl LambdaFunctionAggregationResponseBuilder {
         &self.resource_id
     }
     /// <p>The AWS Lambda function names included in the aggregation results.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS Lambda function names included in the aggregation results.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -139,11 +123,7 @@ impl LambdaFunctionAggregationResponseBuilder {
     /// To override the contents of this collection use [`set_lambda_tags`](Self::set_lambda_tags).
     ///
     /// <p>The tags included in the aggregation results.</p>
-    pub fn lambda_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lambda_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.lambda_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.lambda_tags = ::std::option::Option::Some(hash_map);
@@ -152,19 +132,13 @@ impl LambdaFunctionAggregationResponseBuilder {
     /// <p>The tags included in the aggregation results.</p>
     pub fn set_lambda_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.lambda_tags = input;
         self
     }
     /// <p>The tags included in the aggregation results.</p>
-    pub fn get_lambda_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_lambda_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.lambda_tags
     }
     /// <p>The ID of the AWS account that owns the AWS Lambda function. </p>
@@ -187,10 +161,7 @@ impl LambdaFunctionAggregationResponseBuilder {
         self
     }
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
-    pub fn set_severity_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityCounts>,
-    ) -> Self {
+    pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
         self.severity_counts = input;
         self
     }
@@ -204,10 +175,7 @@ impl LambdaFunctionAggregationResponseBuilder {
         self
     }
     /// <p>The date that the AWS Lambda function included in the aggregation results was last changed.</p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_at = input;
         self
     }

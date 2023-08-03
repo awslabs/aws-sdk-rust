@@ -26,14 +26,11 @@ impl DeleteAppInstanceAdminInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceAdmin.html">DeleteAppInstanceAdmin</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by DeleteAppInstanceAdmin in the Amazon Chime SDK Identity Namespace"
-)]
+#[deprecated(note = "Replaced by DeleteAppInstanceAdmin in the Amazon Chime SDK Identity Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAppInstanceAdminFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_app_instance_admin::builders::DeleteAppInstanceAdminInputBuilder,
+    inner: crate::operation::delete_app_instance_admin::builders::DeleteAppInstanceAdminInputBuilder,
 }
 impl DeleteAppInstanceAdminFluentBuilder {
     /// Creates a new `DeleteAppInstanceAdmin`.
@@ -44,10 +41,7 @@ impl DeleteAppInstanceAdminFluentBuilder {
         }
     }
     /// Access the DeleteAppInstanceAdmin as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_app_instance_admin::builders::DeleteAppInstanceAdminInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_app_instance_admin::builders::DeleteAppInstanceAdminInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +53,7 @@ impl DeleteAppInstanceAdminFluentBuilder {
             crate::operation::delete_app_instance_admin::DeleteAppInstanceAdmin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +63,7 @@ impl DeleteAppInstanceAdminFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +72,7 @@ impl DeleteAppInstanceAdminFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError>,
     > {
         let op = self
             .inner
@@ -108,9 +95,7 @@ impl DeleteAppInstanceAdminFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError>,
     > {
         self.send_middleware().await
     }
@@ -124,25 +109,17 @@ impl DeleteAppInstanceAdminFluentBuilder {
             crate::operation::delete_app_instance_admin::DeleteAppInstanceAdmin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
-    pub fn app_instance_admin_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_admin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_admin_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
-    pub fn set_app_instance_admin_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_admin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_admin_arn(input);
         self
     }
@@ -151,18 +128,12 @@ impl DeleteAppInstanceAdminFluentBuilder {
         self.inner.get_app_instance_admin_arn()
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }

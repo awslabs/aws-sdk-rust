@@ -15,35 +15,25 @@ impl DeleteFunctionDefinitionInput {
 }
 impl DeleteFunctionDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionDefinitionInput`](crate::operation::delete_function_definition::DeleteFunctionDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionInputBuilder {
         crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFunctionDefinitionInput`](crate::operation::delete_function_definition::DeleteFunctionDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFunctionDefinitionInputBuilder {
     pub(crate) function_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFunctionDefinitionInputBuilder {
     /// The ID of the Lambda function definition.
-    pub fn function_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the Lambda function definition.
-    pub fn set_function_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_definition_id = input;
         self
     }
@@ -58,10 +48,8 @@ impl DeleteFunctionDefinitionInputBuilder {
         crate::operation::delete_function_definition::DeleteFunctionDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_function_definition::DeleteFunctionDefinitionInput {
-                function_definition_id: self.function_definition_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_function_definition::DeleteFunctionDefinitionInput {
+            function_definition_id: self.function_definition_id,
+        })
     }
 }

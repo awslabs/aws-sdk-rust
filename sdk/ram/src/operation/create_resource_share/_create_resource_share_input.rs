@@ -88,18 +88,14 @@ impl CreateResourceShareInput {
 }
 impl CreateResourceShareInput {
     /// Creates a new builder-style object to manufacture [`CreateResourceShareInput`](crate::operation::create_resource_share::CreateResourceShareInput).
-    pub fn builder(
-    ) -> crate::operation::create_resource_share::builders::CreateResourceShareInputBuilder {
-        crate::operation::create_resource_share::builders::CreateResourceShareInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_resource_share::builders::CreateResourceShareInputBuilder {
+        crate::operation::create_resource_share::builders::CreateResourceShareInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateResourceShareInput`](crate::operation::create_resource_share::CreateResourceShareInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResourceShareInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -130,27 +126,19 @@ impl CreateResourceShareInputBuilder {
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_arns = input;
         self
     }
     /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
-    pub fn get_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_arns
     }
     /// Appends an item to `principals`.
@@ -185,10 +173,7 @@ impl CreateResourceShareInputBuilder {
     /// </ul> <note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.principals = input;
         self
     }
@@ -218,10 +203,7 @@ impl CreateResourceShareInputBuilder {
         self
     }
     /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -268,27 +250,19 @@ impl CreateResourceShareInputBuilder {
     /// To override the contents of this collection use [`set_permission_arns`](Self::set_permission_arns).
     ///
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
-    pub fn permission_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.permission_arns.unwrap_or_default();
         v.push(input.into());
         self.permission_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
-    pub fn set_permission_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_permission_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.permission_arns = input;
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
-    pub fn get_permission_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_permission_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.permission_arns
     }
     /// Appends an item to `sources`.
@@ -303,10 +277,7 @@ impl CreateResourceShareInputBuilder {
         self
     }
     /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sources = input;
         self
     }
@@ -317,21 +288,17 @@ impl CreateResourceShareInputBuilder {
     /// Consumes the builder and constructs a [`CreateResourceShareInput`](crate::operation::create_resource_share::CreateResourceShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_resource_share::CreateResourceShareInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_resource_share::CreateResourceShareInput {
-                name: self.name,
-                resource_arns: self.resource_arns,
-                principals: self.principals,
-                tags: self.tags,
-                allow_external_principals: self.allow_external_principals,
-                client_token: self.client_token,
-                permission_arns: self.permission_arns,
-                sources: self.sources,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_resource_share::CreateResourceShareInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_resource_share::CreateResourceShareInput {
+            name: self.name,
+            resource_arns: self.resource_arns,
+            principals: self.principals,
+            tags: self.tags,
+            allow_external_principals: self.allow_external_principals,
+            client_token: self.client_token,
+            permission_arns: self.permission_arns,
+            sources: self.sources,
+        })
     }
 }

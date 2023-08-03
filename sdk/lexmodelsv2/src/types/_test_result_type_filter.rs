@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TestResultTypeFilter {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,15 +61,11 @@ impl ::std::convert::From<&str> for TestResultTypeFilter {
     fn from(s: &str) -> Self {
         match s {
             "ConversationLevelTestResults" => TestResultTypeFilter::ConversationLevelTestResults,
-            "IntentClassificationTestResults" => {
-                TestResultTypeFilter::IntentClassificationTestResults
-            }
+            "IntentClassificationTestResults" => TestResultTypeFilter::IntentClassificationTestResults,
             "OverallTestResults" => TestResultTypeFilter::OverallTestResults,
             "SlotResolutionTestResults" => TestResultTypeFilter::SlotResolutionTestResults,
             "UtteranceLevelResults" => TestResultTypeFilter::UtteranceLevelResults,
-            other => TestResultTypeFilter::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TestResultTypeFilter::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -91,9 +81,7 @@ impl TestResultTypeFilter {
     pub fn as_str(&self) -> &str {
         match self {
             TestResultTypeFilter::ConversationLevelTestResults => "ConversationLevelTestResults",
-            TestResultTypeFilter::IntentClassificationTestResults => {
-                "IntentClassificationTestResults"
-            }
+            TestResultTypeFilter::IntentClassificationTestResults => "IntentClassificationTestResults",
             TestResultTypeFilter::OverallTestResults => "OverallTestResults",
             TestResultTypeFilter::SlotResolutionTestResults => "SlotResolutionTestResults",
             TestResultTypeFilter::UtteranceLevelResults => "UtteranceLevelResults",

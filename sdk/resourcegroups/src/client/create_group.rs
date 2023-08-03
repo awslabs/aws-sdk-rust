@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_group::CreateGroupOutput::tags): <p>The tags associated with the group.</p>
     ///   - [`group_configuration(Option<GroupConfiguration>)`](crate::operation::create_group::CreateGroupOutput::group_configuration): <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::operation::create_group::CreateGroupError)
-    pub fn create_group(
-        &self,
-    ) -> crate::operation::create_group::builders::CreateGroupFluentBuilder {
+    pub fn create_group(&self) -> crate::operation::create_group::builders::CreateGroupFluentBuilder {
         crate::operation::create_group::builders::CreateGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`execution_details(ExecutionDetails)`](crate::operation::put_third_party_job_success_result::builders::PutThirdPartyJobSuccessResultFluentBuilder::execution_details) / [`set_execution_details(Option<ExecutionDetails>)`](crate::operation::put_third_party_job_success_result::builders::PutThirdPartyJobSuccessResultFluentBuilder::set_execution_details): <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. </p>
     /// - On success, responds with [`PutThirdPartyJobSuccessResultOutput`](crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultOutput)
     /// - On failure, responds with [`SdkError<PutThirdPartyJobSuccessResultError>`](crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultError)
-    pub fn put_third_party_job_success_result(&self) -> crate::operation::put_third_party_job_success_result::builders::PutThirdPartyJobSuccessResultFluentBuilder{
+    pub fn put_third_party_job_success_result(
+        &self,
+    ) -> crate::operation::put_third_party_job_success_result::builders::PutThirdPartyJobSuccessResultFluentBuilder {
         crate::operation::put_third_party_job_success_result::builders::PutThirdPartyJobSuccessResultFluentBuilder::new(self.handle.clone())
     }
 }

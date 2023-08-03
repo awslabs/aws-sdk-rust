@@ -59,9 +59,7 @@ impl Principal {
 
 /// A builder for [`Principal`](crate::types::Principal).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrincipalBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl PrincipalBuilder {
         &self.id
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share the principal is associated with.</p>
-    pub fn resource_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share the principal is associated with.</p>
-    pub fn set_resource_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_share_arn = input;
         self
     }
@@ -110,10 +102,7 @@ impl PrincipalBuilder {
         self
     }
     /// <p>The date and time when the principal was associated with the resource share.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -127,10 +116,7 @@ impl PrincipalBuilder {
         self
     }
     /// <p>The date and time when the association between the resource share and the principal was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

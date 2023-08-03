@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`delete_reports(bool)`](crate::operation::delete_report_group::builders::DeleteReportGroupFluentBuilder::delete_reports) / [`set_delete_reports(bool)`](crate::operation::delete_report_group::builders::DeleteReportGroupFluentBuilder::set_delete_reports): <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>  <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
     /// - On success, responds with [`DeleteReportGroupOutput`](crate::operation::delete_report_group::DeleteReportGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteReportGroupError>`](crate::operation::delete_report_group::DeleteReportGroupError)
-    pub fn delete_report_group(
-        &self,
-    ) -> crate::operation::delete_report_group::builders::DeleteReportGroupFluentBuilder {
-        crate::operation::delete_report_group::builders::DeleteReportGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_report_group(&self) -> crate::operation::delete_report_group::builders::DeleteReportGroupFluentBuilder {
+        crate::operation::delete_report_group::builders::DeleteReportGroupFluentBuilder::new(self.handle.clone())
     }
 }

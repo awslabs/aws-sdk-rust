@@ -26,7 +26,7 @@ impl ListResourceProfileDetectionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourceProfileDetectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsInputBuilder,
+    inner: crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsInputBuilder,
 }
 impl ListResourceProfileDetectionsFluentBuilder {
     /// Creates a new `ListResourceProfileDetections`.
@@ -37,7 +37,7 @@ impl ListResourceProfileDetectionsFluentBuilder {
         }
     }
     /// Access the ListResourceProfileDetections as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListResourceProfileDetectionsFluentBuilder {
             crate::operation::list_resource_profile_detections::ListResourceProfileDetections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListResourceProfileDetectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListResourceProfileDetectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListResourceProfileDetectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListResourceProfileDetectionsFluentBuilder {
             crate::operation::list_resource_profile_detections::ListResourceProfileDetections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resource_profile_detections::paginator::ListResourceProfileDetectionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_resource_profile_detections::paginator::ListResourceProfileDetectionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_resource_profile_detections::paginator::ListResourceProfileDetectionsPaginator {
         crate::operation::list_resource_profile_detections::paginator::ListResourceProfileDetectionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of items to include in each page of a paginated response.</p>

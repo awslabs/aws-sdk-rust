@@ -21,10 +21,7 @@ pub fn ser_update_flow_output_input(
     if let Some(var_6) = &input.encryption {
         #[allow(unused_mut)]
         let mut object_7 = object.key("encryption").start_object();
-        crate::protocol_serde::shape_update_encryption::ser_update_encryption(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_update_encryption::ser_update_encryption(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.max_latency {
@@ -39,7 +36,10 @@ pub fn ser_update_flow_output_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_media_stream_output_configuration_request::ser_media_stream_output_configuration_request(&mut object_12, item_11)?;
+                crate::protocol_serde::shape_media_stream_output_configuration_request::ser_media_stream_output_configuration_request(
+                    &mut object_12,
+                    item_11,
+                )?;
                 object_12.finish();
             }
         }
@@ -84,10 +84,7 @@ pub fn ser_update_flow_output_input(
     if let Some(var_21) = &input.vpc_interface_attachment {
         #[allow(unused_mut)]
         let mut object_22 = object.key("vpcInterfaceAttachment").start_object();
-        crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(&mut object_22, var_21)?;
         object_22.finish();
     }
     Ok(())

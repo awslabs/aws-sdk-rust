@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateChannelFlowOutput {
 }
 impl DisassociateChannelFlowOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateChannelFlowOutput`](crate::operation::disassociate_channel_flow::DisassociateChannelFlowOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_channel_flow::builders::DisassociateChannelFlowOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_channel_flow::builders::DisassociateChannelFlowOutputBuilder {
         crate::operation::disassociate_channel_flow::builders::DisassociateChannelFlowOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateChannelFlowOutput`](crate::operation::disassociate_channel_flow::DisassociateChannelFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateChannelFlowOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DisassociateChannelFlowOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateChannelFlowOutput`](crate::operation::disassociate_channel_flow::DisassociateChannelFlowOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_channel_flow::DisassociateChannelFlowOutput {
+    pub fn build(self) -> crate::operation::disassociate_channel_flow::DisassociateChannelFlowOutput {
         crate::operation::disassociate_channel_flow::DisassociateChannelFlowOutput {
             _request_id: self._request_id,
         }

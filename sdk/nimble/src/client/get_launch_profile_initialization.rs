@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`GetLaunchProfileInitializationOutput`](crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationOutput) with field(s):
     ///   - [`launch_profile_initialization(Option<LaunchProfileInitialization>)`](crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationOutput::launch_profile_initialization): <p>The launch profile initialization.</p>
     /// - On failure, responds with [`SdkError<GetLaunchProfileInitializationError>`](crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationError)
-    pub fn get_launch_profile_initialization(&self) -> crate::operation::get_launch_profile_initialization::builders::GetLaunchProfileInitializationFluentBuilder{
+    pub fn get_launch_profile_initialization(
+        &self,
+    ) -> crate::operation::get_launch_profile_initialization::builders::GetLaunchProfileInitializationFluentBuilder {
         crate::operation::get_launch_profile_initialization::builders::GetLaunchProfileInitializationFluentBuilder::new(self.handle.clone())
     }
 }

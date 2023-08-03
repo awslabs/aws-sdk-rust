@@ -12,8 +12,7 @@ pub struct SourceDocument {
     pub suggestion_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The additional fields/attributes to include in the response. You can use additional fields to provide extra information in the response. Additional fields are not used to based suggestions on.</p>
     #[doc(hidden)]
-    pub additional_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
 }
 impl SourceDocument {
     /// <p>The identifier of the document used for a query suggestion.</p>
@@ -25,9 +24,7 @@ impl SourceDocument {
         self.suggestion_attributes.as_deref()
     }
     /// <p>The additional fields/attributes to include in the response. You can use additional fields to provide extra information in the response. Additional fields are not used to based suggestions on.</p>
-    pub fn additional_attributes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DocumentAttribute]> {
+    pub fn additional_attributes(&self) -> ::std::option::Option<&[crate::types::DocumentAttribute]> {
         self.additional_attributes.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl SourceDocument {
 
 /// A builder for [`SourceDocument`](crate::types::SourceDocument).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceDocumentBuilder {
     pub(crate) document_id: ::std::option::Option<::std::string::String>,
     pub(crate) suggestion_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) additional_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub(crate) additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
 }
 impl SourceDocumentBuilder {
     /// <p>The identifier of the document used for a query suggestion.</p>
@@ -69,27 +63,19 @@ impl SourceDocumentBuilder {
     /// To override the contents of this collection use [`set_suggestion_attributes`](Self::set_suggestion_attributes).
     ///
     /// <p>The document fields/attributes used for a query suggestion.</p>
-    pub fn suggestion_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suggestion_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.suggestion_attributes.unwrap_or_default();
         v.push(input.into());
         self.suggestion_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The document fields/attributes used for a query suggestion.</p>
-    pub fn set_suggestion_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_suggestion_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.suggestion_attributes = input;
         self
     }
     /// <p>The document fields/attributes used for a query suggestion.</p>
-    pub fn get_suggestion_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_suggestion_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.suggestion_attributes
     }
     /// Appends an item to `additional_attributes`.
@@ -104,17 +90,12 @@ impl SourceDocumentBuilder {
         self
     }
     /// <p>The additional fields/attributes to include in the response. You can use additional fields to provide extra information in the response. Additional fields are not used to based suggestions on.</p>
-    pub fn set_additional_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
-    ) -> Self {
+    pub fn set_additional_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>) -> Self {
         self.additional_attributes = input;
         self
     }
     /// <p>The additional fields/attributes to include in the response. You can use additional fields to provide extra information in the response. Additional fields are not used to based suggestions on.</p>
-    pub fn get_additional_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
+    pub fn get_additional_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
         &self.additional_attributes
     }
     /// Consumes the builder and constructs a [`SourceDocument`](crate::types::SourceDocument).

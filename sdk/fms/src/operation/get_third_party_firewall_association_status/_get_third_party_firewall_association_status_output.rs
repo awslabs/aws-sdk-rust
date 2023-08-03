@@ -12,8 +12,7 @@ pub struct GetThirdPartyFirewallAssociationStatusOutput {
     /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub third_party_firewall_status:
-        ::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
+    pub third_party_firewall_status: ::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
     /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
     /// <ul>
     /// <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
@@ -21,8 +20,7 @@ pub struct GetThirdPartyFirewallAssociationStatusOutput {
     /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub marketplace_onboarding_status:
-        ::std::option::Option<crate::types::MarketplaceSubscriptionOnboardingStatus>,
+    pub marketplace_onboarding_status: ::std::option::Option<crate::types::MarketplaceSubscriptionOnboardingStatus>,
     _request_id: Option<String>,
 }
 impl GetThirdPartyFirewallAssociationStatusOutput {
@@ -34,9 +32,7 @@ impl GetThirdPartyFirewallAssociationStatusOutput {
     /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
     /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
     /// </ul>
-    pub fn third_party_firewall_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ThirdPartyFirewallAssociationStatus> {
+    pub fn third_party_firewall_status(&self) -> ::std::option::Option<&crate::types::ThirdPartyFirewallAssociationStatus> {
         self.third_party_firewall_status.as_ref()
     }
     /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
@@ -45,9 +41,7 @@ impl GetThirdPartyFirewallAssociationStatusOutput {
     /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li>
     /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
     /// </ul>
-    pub fn marketplace_onboarding_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MarketplaceSubscriptionOnboardingStatus> {
+    pub fn marketplace_onboarding_status(&self) -> ::std::option::Option<&crate::types::MarketplaceSubscriptionOnboardingStatus> {
         self.marketplace_onboarding_status.as_ref()
     }
 }
@@ -58,21 +52,17 @@ impl ::aws_http::request_id::RequestId for GetThirdPartyFirewallAssociationStatu
 }
 impl GetThirdPartyFirewallAssociationStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetThirdPartyFirewallAssociationStatusOutput`](crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusOutput).
-    pub fn builder() -> crate::operation::get_third_party_firewall_association_status::builders::GetThirdPartyFirewallAssociationStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_third_party_firewall_association_status::builders::GetThirdPartyFirewallAssociationStatusOutputBuilder {
         crate::operation::get_third_party_firewall_association_status::builders::GetThirdPartyFirewallAssociationStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetThirdPartyFirewallAssociationStatusOutput`](crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetThirdPartyFirewallAssociationStatusOutputBuilder {
-    pub(crate) third_party_firewall_status:
-        ::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
-    pub(crate) marketplace_onboarding_status:
-        ::std::option::Option<crate::types::MarketplaceSubscriptionOnboardingStatus>,
+    pub(crate) third_party_firewall_status: ::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
+    pub(crate) marketplace_onboarding_status: ::std::option::Option<crate::types::MarketplaceSubscriptionOnboardingStatus>,
     _request_id: Option<String>,
 }
 impl GetThirdPartyFirewallAssociationStatusOutputBuilder {
@@ -84,10 +74,7 @@ impl GetThirdPartyFirewallAssociationStatusOutputBuilder {
     /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
     /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
     /// </ul>
-    pub fn third_party_firewall_status(
-        mut self,
-        input: crate::types::ThirdPartyFirewallAssociationStatus,
-    ) -> Self {
+    pub fn third_party_firewall_status(mut self, input: crate::types::ThirdPartyFirewallAssociationStatus) -> Self {
         self.third_party_firewall_status = ::std::option::Option::Some(input);
         self
     }
@@ -99,10 +86,7 @@ impl GetThirdPartyFirewallAssociationStatusOutputBuilder {
     /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
     /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
     /// </ul>
-    pub fn set_third_party_firewall_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
-    ) -> Self {
+    pub fn set_third_party_firewall_status(mut self, input: ::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>) -> Self {
         self.third_party_firewall_status = input;
         self
     }
@@ -114,9 +98,7 @@ impl GetThirdPartyFirewallAssociationStatusOutputBuilder {
     /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
     /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
     /// </ul>
-    pub fn get_third_party_firewall_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus> {
+    pub fn get_third_party_firewall_status(&self) -> &::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus> {
         &self.third_party_firewall_status
     }
     /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
@@ -125,10 +107,7 @@ impl GetThirdPartyFirewallAssociationStatusOutputBuilder {
     /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li>
     /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
     /// </ul>
-    pub fn marketplace_onboarding_status(
-        mut self,
-        input: crate::types::MarketplaceSubscriptionOnboardingStatus,
-    ) -> Self {
+    pub fn marketplace_onboarding_status(mut self, input: crate::types::MarketplaceSubscriptionOnboardingStatus) -> Self {
         self.marketplace_onboarding_status = ::std::option::Option::Some(input);
         self
     }
@@ -138,10 +117,7 @@ impl GetThirdPartyFirewallAssociationStatusOutputBuilder {
     /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li>
     /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
     /// </ul>
-    pub fn set_marketplace_onboarding_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MarketplaceSubscriptionOnboardingStatus>,
-    ) -> Self {
+    pub fn set_marketplace_onboarding_status(mut self, input: ::std::option::Option<crate::types::MarketplaceSubscriptionOnboardingStatus>) -> Self {
         self.marketplace_onboarding_status = input;
         self
     }
@@ -151,9 +127,7 @@ impl GetThirdPartyFirewallAssociationStatusOutputBuilder {
     /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li>
     /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
     /// </ul>
-    pub fn get_marketplace_onboarding_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MarketplaceSubscriptionOnboardingStatus> {
+    pub fn get_marketplace_onboarding_status(&self) -> &::std::option::Option<crate::types::MarketplaceSubscriptionOnboardingStatus> {
         &self.marketplace_onboarding_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -166,12 +140,10 @@ impl GetThirdPartyFirewallAssociationStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetThirdPartyFirewallAssociationStatusOutput`](crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusOutput).
-    pub fn build(self) -> crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusOutput{
+    pub fn build(self) -> crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusOutput {
         crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusOutput {
-            third_party_firewall_status: self.third_party_firewall_status
-            ,
-            marketplace_onboarding_status: self.marketplace_onboarding_status
-            ,
+            third_party_firewall_status: self.third_party_firewall_status,
+            marketplace_onboarding_status: self.marketplace_onboarding_status,
             _request_id: self._request_id,
         }
     }

@@ -22,34 +22,26 @@ impl StartOnDemandReplicationRunInput {
 }
 impl StartOnDemandReplicationRunInput {
     /// Creates a new builder-style object to manufacture [`StartOnDemandReplicationRunInput`](crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput).
-    pub fn builder() -> crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunInputBuilder{
+    pub fn builder() -> crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunInputBuilder {
         crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunInputBuilder::default()
     }
 }
 
 /// A builder for [`StartOnDemandReplicationRunInput`](crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartOnDemandReplicationRunInputBuilder {
     pub(crate) replication_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl StartOnDemandReplicationRunInputBuilder {
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the replication job.</p>
-    pub fn set_replication_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_job_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl StartOnDemandReplicationRunInputBuilder {
         crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput {
-                replication_job_id: self.replication_job_id,
-                description: self.description,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput {
+            replication_job_id: self.replication_job_id,
+            description: self.description,
+        })
     }
 }

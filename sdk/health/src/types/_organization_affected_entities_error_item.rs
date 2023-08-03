@@ -50,9 +50,7 @@ impl OrganizationAffectedEntitiesErrorItem {
 
 /// A builder for [`OrganizationAffectedEntitiesErrorItem`](crate::types::OrganizationAffectedEntitiesErrorItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationAffectedEntitiesErrorItemBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ pub struct OrganizationAffectedEntitiesErrorItemBuilder {
 }
 impl OrganizationAffectedEntitiesErrorItemBuilder {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -116,19 +108,13 @@ impl OrganizationAffectedEntitiesErrorItemBuilder {
     }
     /// <p>A message that describes the error. Follow the error message and retry your request.</p>
     /// <p>For example, the <code>InvalidAccountInputError</code> error message appears if you call the <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message that describes the error. Follow the error message and retry your request.</p>
     /// <p>For example, the <code>InvalidAccountInputError</code> error message appears if you call the <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

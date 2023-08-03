@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::put_image_policy::PutImagePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_arn(Option<String>)`](crate::operation::put_image_policy::PutImagePolicyOutput::image_arn): <p>The Amazon Resource Name (ARN) of the image that this policy was applied to.</p>
     /// - On failure, responds with [`SdkError<PutImagePolicyError>`](crate::operation::put_image_policy::PutImagePolicyError)
-    pub fn put_image_policy(
-        &self,
-    ) -> crate::operation::put_image_policy::builders::PutImagePolicyFluentBuilder {
-        crate::operation::put_image_policy::builders::PutImagePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_image_policy(&self) -> crate::operation::put_image_policy::builders::PutImagePolicyFluentBuilder {
+        crate::operation::put_image_policy::builders::PutImagePolicyFluentBuilder::new(self.handle.clone())
     }
 }

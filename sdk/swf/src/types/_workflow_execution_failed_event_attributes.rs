@@ -37,9 +37,7 @@ impl WorkflowExecutionFailedEventAttributes {
 
 /// A builder for [`WorkflowExecutionFailedEventAttributes`](crate::types::WorkflowExecutionFailedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowExecutionFailedEventAttributesBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
     pub(crate) details: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl WorkflowExecutionFailedEventAttributesBuilder {
         self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>FailWorkflowExecution</code> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_decision_task_completed_event_id(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.decision_task_completed_event_id = input;
         self
     }
@@ -96,9 +91,7 @@ impl WorkflowExecutionFailedEventAttributesBuilder {
         crate::types::WorkflowExecutionFailedEventAttributes {
             reason: self.reason,
             details: self.details,
-            decision_task_completed_event_id: self
-                .decision_task_completed_event_id
-                .unwrap_or_default(),
+            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
         }
     }
 }

@@ -18,14 +18,10 @@ pub struct IntegrationResponse {
     pub integration_response_key: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix.</p>
     #[doc(hidden)]
-    pub response_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
     #[doc(hidden)]
-    pub response_templates: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub response_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The template selection expressions for the integration response.</p>
     #[doc(hidden)]
     pub template_selection_expression: ::std::option::Option<::std::string::String>,
@@ -35,9 +31,7 @@ impl IntegrationResponse {
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    pub fn content_handling_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContentHandlingStrategy> {
+    pub fn content_handling_strategy(&self) -> ::std::option::Option<&crate::types::ContentHandlingStrategy> {
         self.content_handling_strategy.as_ref()
     }
     /// <p>The integration response ID.</p>
@@ -49,19 +43,11 @@ impl IntegrationResponse {
         self.integration_response_key.as_deref()
     }
     /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix.</p>
-    pub fn response_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn response_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.response_parameters.as_ref()
     }
     /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
-    pub fn response_templates(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn response_templates(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.response_templates.as_ref()
     }
     /// <p>The template selection expressions for the integration response.</p>
@@ -78,20 +64,13 @@ impl IntegrationResponse {
 
 /// A builder for [`IntegrationResponse`](crate::types::IntegrationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntegrationResponseBuilder {
-    pub(crate) content_handling_strategy:
-        ::std::option::Option<crate::types::ContentHandlingStrategy>,
+    pub(crate) content_handling_strategy: ::std::option::Option<crate::types::ContentHandlingStrategy>,
     pub(crate) integration_response_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_response_key: ::std::option::Option<::std::string::String>,
-    pub(crate) response_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) response_templates: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) response_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) template_selection_expression: ::std::option::Option<::std::string::String>,
 }
 impl IntegrationResponseBuilder {
@@ -99,10 +78,7 @@ impl IntegrationResponseBuilder {
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    pub fn content_handling_strategy(
-        mut self,
-        input: crate::types::ContentHandlingStrategy,
-    ) -> Self {
+    pub fn content_handling_strategy(mut self, input: crate::types::ContentHandlingStrategy) -> Self {
         self.content_handling_strategy = ::std::option::Option::Some(input);
         self
     }
@@ -110,10 +86,7 @@ impl IntegrationResponseBuilder {
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    pub fn set_content_handling_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentHandlingStrategy>,
-    ) -> Self {
+    pub fn set_content_handling_strategy(mut self, input: ::std::option::Option<crate::types::ContentHandlingStrategy>) -> Self {
         self.content_handling_strategy = input;
         self
     }
@@ -121,24 +94,16 @@ impl IntegrationResponseBuilder {
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    pub fn get_content_handling_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
+    pub fn get_content_handling_strategy(&self) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
         &self.content_handling_strategy
     }
     /// <p>The integration response ID.</p>
-    pub fn integration_response_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_response_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_response_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The integration response ID.</p>
-    pub fn set_integration_response_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_response_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_response_id = input;
         self
     }
@@ -147,18 +112,12 @@ impl IntegrationResponseBuilder {
         &self.integration_response_id
     }
     /// <p>The integration response key.</p>
-    pub fn integration_response_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_response_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_response_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The integration response key.</p>
-    pub fn set_integration_response_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_response_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_response_key = input;
         self
     }
@@ -184,19 +143,13 @@ impl IntegrationResponseBuilder {
     /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix.</p>
     pub fn set_response_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.response_parameters = input;
         self
     }
     /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix.</p>
-    pub fn get_response_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.response_parameters
     }
     /// Adds a key-value pair to `response_templates`.
@@ -217,41 +170,27 @@ impl IntegrationResponseBuilder {
     /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
     pub fn set_response_templates(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.response_templates = input;
         self
     }
     /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
-    pub fn get_response_templates(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_response_templates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.response_templates
     }
     /// <p>The template selection expressions for the integration response.</p>
-    pub fn template_selection_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_selection_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The template selection expressions for the integration response.</p>
-    pub fn set_template_selection_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_selection_expression = input;
         self
     }
     /// <p>The template selection expressions for the integration response.</p>
-    pub fn get_template_selection_expression(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_template_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_selection_expression
     }
     /// Consumes the builder and constructs a [`IntegrationResponse`](crate::types::IntegrationResponse).

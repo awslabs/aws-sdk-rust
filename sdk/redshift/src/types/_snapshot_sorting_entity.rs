@@ -30,9 +30,7 @@ impl SnapshotSortingEntity {
 
 /// A builder for [`SnapshotSortingEntity`](crate::types::SnapshotSortingEntity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotSortingEntityBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::SnapshotAttributeToSortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortByOrder>,
@@ -44,10 +42,7 @@ impl SnapshotSortingEntityBuilder {
         self
     }
     /// <p>The category for sorting the snapshots.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotAttributeToSortBy>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::SnapshotAttributeToSortBy>) -> Self {
         self.attribute = input;
         self
     }
@@ -61,10 +56,7 @@ impl SnapshotSortingEntityBuilder {
         self
     }
     /// <p>The order for listing the attributes.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortByOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortByOrder>) -> Self {
         self.sort_order = input;
         self
     }

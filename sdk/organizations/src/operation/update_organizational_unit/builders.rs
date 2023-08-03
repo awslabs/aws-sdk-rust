@@ -27,7 +27,7 @@ impl UpdateOrganizationalUnitInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateOrganizationalUnitFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_organizational_unit::builders::UpdateOrganizationalUnitInputBuilder,
+    inner: crate::operation::update_organizational_unit::builders::UpdateOrganizationalUnitInputBuilder,
 }
 impl UpdateOrganizationalUnitFluentBuilder {
     /// Creates a new `UpdateOrganizationalUnit`.
@@ -38,10 +38,7 @@ impl UpdateOrganizationalUnitFluentBuilder {
         }
     }
     /// Access the UpdateOrganizationalUnit as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_organizational_unit::builders::UpdateOrganizationalUnitInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_organizational_unit::builders::UpdateOrganizationalUnitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UpdateOrganizationalUnitFluentBuilder {
             crate::operation::update_organizational_unit::UpdateOrganizationalUnit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_organizational_unit::UpdateOrganizationalUnitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_organizational_unit::UpdateOrganizationalUnitError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UpdateOrganizationalUnitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UpdateOrganizationalUnitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_organizational_unit::UpdateOrganizationalUnitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_organizational_unit::UpdateOrganizationalUnitError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UpdateOrganizationalUnitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_organizational_unit::UpdateOrganizationalUnitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_organizational_unit::UpdateOrganizationalUnitError>,
     > {
         self.send_middleware().await
     }
@@ -118,27 +106,19 @@ impl UpdateOrganizationalUnitFluentBuilder {
             crate::operation::update_organizational_unit::UpdateOrganizationalUnit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_organizational_unit::UpdateOrganizationalUnitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_organizational_unit::UpdateOrganizationalUnitError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    pub fn organizational_unit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organizational_unit_id(input.into());
         self
     }
     /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    pub fn set_organizational_unit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organizational_unit_id(input);
         self
     }

@@ -27,10 +27,7 @@ pub fn ser_create_resolver_endpoint_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_ip_address_request::ser_ip_address_request(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_ip_address_request::ser_ip_address_request(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

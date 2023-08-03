@@ -10,10 +10,7 @@ impl UpdateWorkloadInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_workload::UpdateWorkloadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workload::UpdateWorkloadError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workload::UpdateWorkloadError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_workload();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateWorkloadFluentBuilder {
         }
     }
     /// Access the UpdateWorkload as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_workload::builders::UpdateWorkloadInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_workload::builders::UpdateWorkloadInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateWorkloadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -130,19 +122,13 @@ impl UpdateWorkloadFluentBuilder {
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workload_name(input.into());
         self
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn set_workload_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workload_name(input);
         self
     }
@@ -171,10 +157,7 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>The environment for the workload.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkloadEnvironment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::WorkloadEnvironment>) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }
@@ -192,17 +175,12 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// Appends an item to `AwsRegions`.
@@ -215,17 +193,12 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn set_aws_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_aws_regions(input);
         self
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn get_aws_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_aws_regions()
     }
     /// Appends an item to `NonAwsRegions`.
@@ -233,25 +206,17 @@ impl UpdateWorkloadFluentBuilder {
     /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
     ///
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn non_aws_regions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn non_aws_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.non_aws_regions(input.into());
         self
     }
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn set_non_aws_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_non_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_non_aws_regions(input);
         self
     }
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn get_non_aws_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_non_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_non_aws_regions()
     }
     /// Appends an item to `PillarPriorities`.
@@ -259,40 +224,26 @@ impl UpdateWorkloadFluentBuilder {
     /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
     ///
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_priorities(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pillar_priorities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pillar_priorities(input.into());
         self
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn set_pillar_priorities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pillar_priorities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pillar_priorities(input);
         self
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn get_pillar_priorities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pillar_priorities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_pillar_priorities()
     }
     /// <p>The URL of the architectural design for the workload.</p>
-    pub fn architectural_design(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn architectural_design(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.architectural_design(input.into());
         self
     }
     /// <p>The URL of the architectural design for the workload.</p>
-    pub fn set_architectural_design(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_architectural_design(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_architectural_design(input);
         self
     }
@@ -322,10 +273,7 @@ impl UpdateWorkloadFluentBuilder {
     }
     /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
     /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
-    pub fn set_is_review_owner_update_acknowledged(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_is_review_owner_update_acknowledged(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_review_owner_update_acknowledged(input);
         self
     }
@@ -365,10 +313,7 @@ impl UpdateWorkloadFluentBuilder {
     /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
     /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
-    pub fn industry_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn industry_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.industry_type(input.into());
         self
     }
@@ -403,10 +348,7 @@ impl UpdateWorkloadFluentBuilder {
     /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
     /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
-    pub fn set_industry_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_industry_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_industry_type(input);
         self
     }
@@ -478,17 +420,12 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>The improvement status for a workload.</p>
-    pub fn set_improvement_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkloadImprovementStatus>,
-    ) -> Self {
+    pub fn set_improvement_status(mut self, input: ::std::option::Option<crate::types::WorkloadImprovementStatus>) -> Self {
         self.inner = self.inner.set_improvement_status(input);
         self
     }
     /// <p>The improvement status for a workload.</p>
-    pub fn get_improvement_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkloadImprovementStatus> {
+    pub fn get_improvement_status(&self) -> &::std::option::Option<crate::types::WorkloadImprovementStatus> {
         self.inner.get_improvement_status()
     }
     /// <p>Well-Architected discovery configuration settings to associate to the workload.</p>
@@ -497,17 +434,12 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>Well-Architected discovery configuration settings to associate to the workload.</p>
-    pub fn set_discovery_config(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
-    ) -> Self {
+    pub fn set_discovery_config(mut self, input: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>) -> Self {
         self.inner = self.inner.set_discovery_config(input);
         self
     }
     /// <p>Well-Architected discovery configuration settings to associate to the workload.</p>
-    pub fn get_discovery_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkloadDiscoveryConfig> {
+    pub fn get_discovery_config(&self) -> &::std::option::Option<crate::types::WorkloadDiscoveryConfig> {
         self.inner.get_discovery_config()
     }
     /// Appends an item to `Applications`.
@@ -520,17 +452,12 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>List of AppRegistry application ARNs to associate to the workload.</p>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_applications(input);
         self
     }
     /// <p>List of AppRegistry application ARNs to associate to the workload.</p>
-    pub fn get_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_applications()
     }
 }

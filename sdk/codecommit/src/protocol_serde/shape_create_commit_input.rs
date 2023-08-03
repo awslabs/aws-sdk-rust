@@ -22,9 +22,7 @@ pub fn ser_create_commit_input(
         object.key("commitMessage").string(var_6.as_str());
     }
     if input.keep_empty_folders {
-        object
-            .key("keepEmptyFolders")
-            .boolean(input.keep_empty_folders);
+        object.key("keepEmptyFolders").boolean(input.keep_empty_folders);
     }
     if let Some(var_7) = &input.put_files {
         let mut array_8 = object.key("putFiles").start_array();
@@ -32,10 +30,7 @@ pub fn ser_create_commit_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_put_file_entry::ser_put_file_entry(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_put_file_entry::ser_put_file_entry(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }
@@ -47,10 +42,7 @@ pub fn ser_create_commit_input(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_delete_file_entry::ser_delete_file_entry(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_delete_file_entry::ser_delete_file_entry(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }
@@ -62,10 +54,7 @@ pub fn ser_create_commit_input(
             {
                 #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_set_file_mode_entry::ser_set_file_mode_entry(
-                    &mut object_18,
-                    item_17,
-                )?;
+                crate::protocol_serde::shape_set_file_mode_entry::ser_set_file_mode_entry(&mut object_18, item_17)?;
                 object_18.finish();
             }
         }

@@ -23,9 +23,7 @@ impl NoiseReducerFilterSettings {
 
 /// A builder for [`NoiseReducerFilterSettings`](crate::types::NoiseReducerFilterSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NoiseReducerFilterSettingsBuilder {
     pub(crate) strength: ::std::option::Option<i32>,
 }
@@ -46,8 +44,6 @@ impl NoiseReducerFilterSettingsBuilder {
     }
     /// Consumes the builder and constructs a [`NoiseReducerFilterSettings`](crate::types::NoiseReducerFilterSettings).
     pub fn build(self) -> crate::types::NoiseReducerFilterSettings {
-        crate::types::NoiseReducerFilterSettings {
-            strength: self.strength,
-        }
+        crate::types::NoiseReducerFilterSettings { strength: self.strength }
     }
 }

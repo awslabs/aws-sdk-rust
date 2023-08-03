@@ -10,10 +10,7 @@ impl GetInstanceStateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_instance_state::GetInstanceStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_state::GetInstanceStateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_state::GetInstanceStateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_instance_state();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetInstanceStateFluentBuilder {
         }
     }
     /// Access the GetInstanceState as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_instance_state::builders::GetInstanceStateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_instance_state::builders::GetInstanceStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetInstanceStateFluentBuilder {
             crate::operation::get_instance_state::GetInstanceState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_state::GetInstanceStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_state::GetInstanceStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetInstanceStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetInstanceStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_instance_state::GetInstanceStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_state::GetInstanceStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_state::GetInstanceStateError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetInstanceStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_instance_state::GetInstanceStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_state::GetInstanceStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_state::GetInstanceStateError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetInstanceStateFluentBuilder {
             crate::operation::get_instance_state::GetInstanceState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_state::GetInstanceStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_state::GetInstanceStateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the instance to get state information about.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_name(input.into());
         self
     }
     /// <p>The name of the instance to get state information about.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
     }

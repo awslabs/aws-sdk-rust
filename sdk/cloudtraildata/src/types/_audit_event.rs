@@ -39,9 +39,7 @@ impl AuditEvent {
 
 /// A builder for [`AuditEvent`](crate::types::AuditEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuditEventBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) event_data: ::std::option::Option<::std::string::String>,
@@ -78,19 +76,13 @@ impl AuditEventBuilder {
     }
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
     /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
-    pub fn event_data_checksum(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
     /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
-    pub fn set_event_data_checksum(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data_checksum = input;
         self
     }

@@ -75,9 +75,7 @@ impl InvalidRequestException {
 
 /// A builder for [`InvalidRequestException`](crate::types::error::InvalidRequestException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidRequestExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::InvalidRequestReason>,
@@ -105,10 +103,7 @@ impl InvalidRequestExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::InvalidRequestReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::InvalidRequestReason>) -> Self {
         self.reason = input;
         self
     }
@@ -134,10 +129,7 @@ impl InvalidRequestExceptionBuilder {
     /// <li> <p>Too many pages in the document - Check the number of pages in your file and resubmit the request.</p> </li>
     /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
     /// </ul>
-    pub fn set_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::InvalidRequestDetail>,
-    ) -> Self {
+    pub fn set_detail(mut self, input: ::std::option::Option<crate::types::InvalidRequestDetail>) -> Self {
         self.detail = input;
         self
     }
@@ -158,10 +150,7 @@ impl InvalidRequestExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

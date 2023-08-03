@@ -30,9 +30,7 @@ impl SystemResourceLimits {
 
 /// A builder for [`SystemResourceLimits`](crate::types::SystemResourceLimits).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SystemResourceLimitsBuilder {
     pub(crate) memory: ::std::option::Option<i64>,
     pub(crate) cpus: ::std::option::Option<f64>,

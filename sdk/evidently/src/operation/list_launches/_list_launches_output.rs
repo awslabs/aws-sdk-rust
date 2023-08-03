@@ -35,9 +35,7 @@ impl ListLaunchesOutput {
 
 /// A builder for [`ListLaunchesOutput`](crate::operation::list_launches::ListLaunchesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLaunchesOutputBuilder {
     pub(crate) launches: ::std::option::Option<::std::vec::Vec<crate::types::Launch>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListLaunchesOutputBuilder {
         self
     }
     /// <p>An array of structures that contain the configuration details of the launches in the specified project.</p>
-    pub fn set_launches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Launch>>,
-    ) -> Self {
+    pub fn set_launches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Launch>>) -> Self {
         self.launches = input;
         self
     }

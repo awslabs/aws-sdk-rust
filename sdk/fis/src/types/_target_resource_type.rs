@@ -12,12 +12,7 @@ pub struct TargetResourceType {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the resource type.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::TargetResourceTypeParameter,
-        >,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TargetResourceTypeParameter>>,
 }
 impl TargetResourceType {
     /// <p>The resource type.</p>
@@ -31,12 +26,7 @@ impl TargetResourceType {
     /// <p>The parameters for the resource type.</p>
     pub fn parameters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::TargetResourceTypeParameter,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::TargetResourceTypeParameter>> {
         self.parameters.as_ref()
     }
 }
@@ -49,33 +39,20 @@ impl TargetResourceType {
 
 /// A builder for [`TargetResourceType`](crate::types::TargetResourceType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetResourceTypeBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::TargetResourceTypeParameter,
-        >,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TargetResourceTypeParameter>>,
 }
 impl TargetResourceTypeBuilder {
     /// <p>The resource type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -102,11 +79,7 @@ impl TargetResourceTypeBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The parameters for the resource type.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::TargetResourceTypeParameter,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::TargetResourceTypeParameter) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.parameters = ::std::option::Option::Some(hash_map);
@@ -115,12 +88,7 @@ impl TargetResourceTypeBuilder {
     /// <p>The parameters for the resource type.</p>
     pub fn set_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::TargetResourceTypeParameter,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TargetResourceTypeParameter>>,
     ) -> Self {
         self.parameters = input;
         self
@@ -128,12 +96,7 @@ impl TargetResourceTypeBuilder {
     /// <p>The parameters for the resource type.</p>
     pub fn get_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::TargetResourceTypeParameter,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TargetResourceTypeParameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`TargetResourceType`](crate::types::TargetResourceType).

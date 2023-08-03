@@ -30,16 +30,14 @@ impl DescribeTapeRecoveryPointsInput {
 }
 impl DescribeTapeRecoveryPointsInput {
     /// Creates a new builder-style object to manufacture [`DescribeTapeRecoveryPointsInput`](crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsInput).
-    pub fn builder() -> crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsInputBuilder{
+    pub fn builder() -> crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsInputBuilder {
         crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTapeRecoveryPointsInput`](crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTapeRecoveryPointsInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -95,12 +93,10 @@ impl DescribeTapeRecoveryPointsInputBuilder {
         crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsInput {
-                gateway_arn: self.gateway_arn,
-                marker: self.marker,
-                limit: self.limit,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsInput {
+            gateway_arn: self.gateway_arn,
+            marker: self.marker,
+            limit: self.limit,
+        })
     }
 }

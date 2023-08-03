@@ -40,9 +40,7 @@ impl MultiRegionAccessPointReport {
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-    pub fn public_access_block(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PublicAccessBlockConfiguration> {
+    pub fn public_access_block(&self) -> ::std::option::Option<&crate::types::PublicAccessBlockConfiguration> {
         self.public_access_block.as_ref()
     }
     /// <p>The current status of the Multi-Region Access Point.</p>
@@ -64,15 +62,12 @@ impl MultiRegionAccessPointReport {
 
 /// A builder for [`MultiRegionAccessPointReport`](crate::types::MultiRegionAccessPointReport).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiRegionAccessPointReportBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) public_access_block:
-        ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
+    pub(crate) public_access_block: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::MultiRegionAccessPointStatus>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<crate::types::RegionReport>>,
 }
@@ -111,10 +106,7 @@ impl MultiRegionAccessPointReportBuilder {
         self
     }
     /// <p>When the Multi-Region Access Point create request was received.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -124,27 +116,19 @@ impl MultiRegionAccessPointReportBuilder {
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-    pub fn public_access_block(
-        mut self,
-        input: crate::types::PublicAccessBlockConfiguration,
-    ) -> Self {
+    pub fn public_access_block(mut self, input: crate::types::PublicAccessBlockConfiguration) -> Self {
         self.public_access_block = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-    pub fn set_public_access_block(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
-    ) -> Self {
+    pub fn set_public_access_block(mut self, input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>) -> Self {
         self.public_access_block = input;
         self
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-    pub fn get_public_access_block(
-        &self,
-    ) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
+    pub fn get_public_access_block(&self) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
         &self.public_access_block
     }
     /// <p>The current status of the Multi-Region Access Point.</p>
@@ -155,10 +139,7 @@ impl MultiRegionAccessPointReportBuilder {
     }
     /// <p>The current status of the Multi-Region Access Point.</p>
     /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiRegionAccessPointStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MultiRegionAccessPointStatus>) -> Self {
         self.status = input;
         self
     }
@@ -179,17 +160,12 @@ impl MultiRegionAccessPointReportBuilder {
         self
     }
     /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegionReport>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionReport>>) -> Self {
         self.regions = input;
         self
     }
     /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
-    pub fn get_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionReport>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionReport>> {
         &self.regions
     }
     /// Consumes the builder and constructs a [`MultiRegionAccessPointReport`](crate::types::MultiRegionAccessPointReport).

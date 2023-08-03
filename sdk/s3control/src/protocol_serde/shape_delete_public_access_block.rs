@@ -2,8 +2,7 @@
 pub fn ser_delete_public_access_block_headers(
     input: &crate::operation::delete_public_access_block::DeletePublicAccessBlockInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.account_id {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_delete_public_access_block_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "account_id",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-account-id", header_value);
@@ -33,21 +29,13 @@ pub fn de_delete_public_access_block_http_error(
     crate::operation::delete_public_access_block::DeletePublicAccessBlockError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::delete_public_access_block::DeletePublicAccessBlockError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_public_access_block::DeletePublicAccessBlockError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(
-        crate::operation::delete_public_access_block::DeletePublicAccessBlockError::generic(
-            generic,
-        ),
-    )
+    Err(crate::operation::delete_public_access_block::DeletePublicAccessBlockError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -62,9 +50,7 @@ pub fn de_delete_public_access_block_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_public_access_block::builders::DeletePublicAccessBlockOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

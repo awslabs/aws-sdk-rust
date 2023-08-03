@@ -38,13 +38,7 @@
 /// Input Loss Action For Rtmp Out
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InputLossActionForRtmpOut {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for InputLossActionForRtmpOut {
         match s {
             "EMIT_OUTPUT" => InputLossActionForRtmpOut::EmitOutput,
             "PAUSE_OUTPUT" => InputLossActionForRtmpOut::PauseOutput,
-            other => InputLossActionForRtmpOut::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InputLossActionForRtmpOut::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RestoreCertificateAuthorityOutput {
 }
 impl RestoreCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`RestoreCertificateAuthorityOutput`](crate::operation::restore_certificate_authority::RestoreCertificateAuthorityOutput).
-    pub fn builder() -> crate::operation::restore_certificate_authority::builders::RestoreCertificateAuthorityOutputBuilder{
+    pub fn builder() -> crate::operation::restore_certificate_authority::builders::RestoreCertificateAuthorityOutputBuilder {
         crate::operation::restore_certificate_authority::builders::RestoreCertificateAuthorityOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreCertificateAuthorityOutput`](crate::operation::restore_certificate_authority::RestoreCertificateAuthorityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreCertificateAuthorityOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RestoreCertificateAuthorityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreCertificateAuthorityOutput`](crate::operation::restore_certificate_authority::RestoreCertificateAuthorityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_certificate_authority::RestoreCertificateAuthorityOutput {
+    pub fn build(self) -> crate::operation::restore_certificate_authority::RestoreCertificateAuthorityOutput {
         crate::operation::restore_certificate_authority::RestoreCertificateAuthorityOutput {
             _request_id: self._request_id,
         }

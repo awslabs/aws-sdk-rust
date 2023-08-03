@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`setting_entries(Option<Vec<SettingEntry>>)`](crate::operation::describe_settings::DescribeSettingsOutput::setting_entries): <p>The list of <code>SettingEntry</code> objects that were retrieved.</p>  <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_settings::DescribeSettingsOutput::next_token): <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSettings</code> to retrieve the next set of items. </p>
     /// - On failure, responds with [`SdkError<DescribeSettingsError>`](crate::operation::describe_settings::DescribeSettingsError)
-    pub fn describe_settings(
-        &self,
-    ) -> crate::operation::describe_settings::builders::DescribeSettingsFluentBuilder {
-        crate::operation::describe_settings::builders::DescribeSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_settings(&self) -> crate::operation::describe_settings::builders::DescribeSettingsFluentBuilder {
+        crate::operation::describe_settings::builders::DescribeSettingsFluentBuilder::new(self.handle.clone())
     }
 }

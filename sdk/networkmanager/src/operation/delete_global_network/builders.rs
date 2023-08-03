@@ -37,9 +37,7 @@ impl DeleteGlobalNetworkFluentBuilder {
         }
     }
     /// Access the DeleteGlobalNetwork as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_global_network::builders::DeleteGlobalNetworkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_global_network::builders::DeleteGlobalNetworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteGlobalNetworkFluentBuilder {
             crate::operation::delete_global_network::DeleteGlobalNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_global_network::DeleteGlobalNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_global_network::DeleteGlobalNetworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteGlobalNetworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteGlobalNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_global_network::DeleteGlobalNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_global_network::DeleteGlobalNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_global_network::DeleteGlobalNetworkError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteGlobalNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_global_network::DeleteGlobalNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_global_network::DeleteGlobalNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_global_network::DeleteGlobalNetworkError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteGlobalNetworkFluentBuilder {
             crate::operation::delete_global_network::DeleteGlobalNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_global_network::DeleteGlobalNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_global_network::DeleteGlobalNetworkError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }

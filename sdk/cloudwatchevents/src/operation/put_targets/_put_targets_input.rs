@@ -36,9 +36,7 @@ impl PutTargetsInput {
 
 /// A builder for [`PutTargetsInput`](crate::operation::put_targets::PutTargetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutTargetsInputBuilder {
     pub(crate) rule: ::std::option::Option<::std::string::String>,
     pub(crate) event_bus_name: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl PutTargetsInputBuilder {
         &self.rule
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    pub fn event_bus_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_bus_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bus_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    pub fn set_event_bus_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_bus_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_bus_name = input;
         self
     }
@@ -91,10 +83,7 @@ impl PutTargetsInputBuilder {
         self
     }
     /// <p>The targets to update or add to the rule.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -103,12 +92,7 @@ impl PutTargetsInputBuilder {
         &self.targets
     }
     /// Consumes the builder and constructs a [`PutTargetsInput`](crate::operation::put_targets::PutTargetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_targets::PutTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_targets::PutTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_targets::PutTargetsInput {
             rule: self.rule,
             event_bus_name: self.event_bus_name,

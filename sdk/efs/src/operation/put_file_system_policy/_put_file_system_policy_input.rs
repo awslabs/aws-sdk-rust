@@ -29,18 +29,14 @@ impl PutFileSystemPolicyInput {
 }
 impl PutFileSystemPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutFileSystemPolicyInput`](crate::operation::put_file_system_policy::PutFileSystemPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_file_system_policy::builders::PutFileSystemPolicyInputBuilder {
-        crate::operation::put_file_system_policy::builders::PutFileSystemPolicyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_file_system_policy::builders::PutFileSystemPolicyInputBuilder {
+        crate::operation::put_file_system_policy::builders::PutFileSystemPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutFileSystemPolicyInput`](crate::operation::put_file_system_policy::PutFileSystemPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutFileSystemPolicyInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct PutFileSystemPolicyInputBuilder {
 }
 impl PutFileSystemPolicyInputBuilder {
     /// <p>The ID of the EFS file system that you want to create or update the <code>FileSystemPolicy</code> for.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the EFS file system that you want to create or update the <code>FileSystemPolicy</code> for.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -87,10 +77,7 @@ impl PutFileSystemPolicyInputBuilder {
         self
     }
     /// <p>(Optional) A boolean that specifies whether or not to bypass the <code>FileSystemPolicy</code> lockout safety check. The lockout safety check determines whether the policy in the request will lock out, or prevent, the IAM principal that is making the request from making future <code>PutFileSystemPolicy</code> requests on this file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the IAM principal that is making the request from making subsequent <code>PutFileSystemPolicy</code> requests on this file system. The default value is <code>False</code>. </p>
-    pub fn set_bypass_policy_lockout_safety_check(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_bypass_policy_lockout_safety_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bypass_policy_lockout_safety_check = input;
         self
     }
@@ -101,16 +88,12 @@ impl PutFileSystemPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutFileSystemPolicyInput`](crate::operation::put_file_system_policy::PutFileSystemPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_file_system_policy::PutFileSystemPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_file_system_policy::PutFileSystemPolicyInput {
-                file_system_id: self.file_system_id,
-                policy: self.policy,
-                bypass_policy_lockout_safety_check: self.bypass_policy_lockout_safety_check,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_file_system_policy::PutFileSystemPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_file_system_policy::PutFileSystemPolicyInput {
+            file_system_id: self.file_system_id,
+            policy: self.policy,
+            bypass_policy_lockout_safety_check: self.bypass_policy_lockout_safety_check,
+        })
     }
 }

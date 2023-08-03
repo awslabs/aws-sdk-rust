@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeliveryStreamEncryptionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for DeliveryStreamEncryptionStatus {
             "ENABLED" => DeliveryStreamEncryptionStatus::Enabled,
             "ENABLING" => DeliveryStreamEncryptionStatus::Enabling,
             "ENABLING_FAILED" => DeliveryStreamEncryptionStatus::EnablingFailed,
-            other => DeliveryStreamEncryptionStatus::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => DeliveryStreamEncryptionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl DeliveryStreamEncryptionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED",
-            "DISABLING",
-            "DISABLING_FAILED",
-            "ENABLED",
-            "ENABLING",
-            "ENABLING_FAILED",
-        ]
+        &["DISABLED", "DISABLING", "DISABLING_FAILED", "ENABLED", "ENABLING", "ENABLING_FAILED"]
     }
 }
 impl ::std::convert::AsRef<str> for DeliveryStreamEncryptionStatus {

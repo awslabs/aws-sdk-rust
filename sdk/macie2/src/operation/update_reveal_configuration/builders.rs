@@ -26,7 +26,7 @@ impl UpdateRevealConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRevealConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationInputBuilder,
+    inner: crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationInputBuilder,
 }
 impl UpdateRevealConfigurationFluentBuilder {
     /// Creates a new `UpdateRevealConfiguration`.
@@ -37,7 +37,7 @@ impl UpdateRevealConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateRevealConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateRevealConfigurationFluentBuilder {
             crate::operation::update_reveal_configuration::UpdateRevealConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_reveal_configuration::UpdateRevealConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_reveal_configuration::UpdateRevealConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateRevealConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateRevealConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_reveal_configuration::UpdateRevealConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_reveal_configuration::UpdateRevealConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateRevealConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_reveal_configuration::UpdateRevealConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_reveal_configuration::UpdateRevealConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateRevealConfigurationFluentBuilder {
             crate::operation::update_reveal_configuration::UpdateRevealConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_reveal_configuration::UpdateRevealConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_reveal_configuration::UpdateRevealConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl UpdateRevealConfigurationFluentBuilder {
         self
     }
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RevealConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RevealConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }

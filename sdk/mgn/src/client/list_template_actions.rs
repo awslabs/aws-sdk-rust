@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<TemplateActionDocument>>)`](crate::operation::list_template_actions::ListTemplateActionsOutput::items): <p>List of template post migration custom actions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_template_actions::ListTemplateActionsOutput::next_token): <p>Next token returned when listing template post migration custom actions.</p>
     /// - On failure, responds with [`SdkError<ListTemplateActionsError>`](crate::operation::list_template_actions::ListTemplateActionsError)
-    pub fn list_template_actions(
-        &self,
-    ) -> crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder {
-        crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_template_actions(&self) -> crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder {
+        crate::operation::list_template_actions::builders::ListTemplateActionsFluentBuilder::new(self.handle.clone())
     }
 }

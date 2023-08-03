@@ -37,9 +37,7 @@ impl Command {
 
 /// A builder for [`Command`](crate::types::Command).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommandBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) script_path: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl CommandBuilder {
         self
     }
     /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
-    pub fn set_args(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.args = input;
         self
     }

@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetApprovalRuleTemplateOutput`](crate::operation::get_approval_rule_template::GetApprovalRuleTemplateOutput) with field(s):
     ///   - [`approval_rule_template(Option<ApprovalRuleTemplate>)`](crate::operation::get_approval_rule_template::GetApprovalRuleTemplateOutput::approval_rule_template): <p>The content and structure of the approval rule template.</p>
     /// - On failure, responds with [`SdkError<GetApprovalRuleTemplateError>`](crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError)
-    pub fn get_approval_rule_template(
-        &self,
-    ) -> crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateFluentBuilder
-    {
+    pub fn get_approval_rule_template(&self) -> crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateFluentBuilder {
         crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateFluentBuilder::new(self.handle.clone())
     }
 }

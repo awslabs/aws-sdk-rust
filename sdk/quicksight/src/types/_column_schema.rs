@@ -37,9 +37,7 @@ impl ColumnSchema {
 
 /// A builder for [`ColumnSchema`](crate::types::ColumnSchema).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnSchemaBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) data_type: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl ColumnSchemaBuilder {
         &self.data_type
     }
     /// <p>The geographic role of the column schema.</p>
-    pub fn geographic_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn geographic_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.geographic_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The geographic role of the column schema.</p>
-    pub fn set_geographic_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_geographic_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.geographic_role = input;
         self
     }

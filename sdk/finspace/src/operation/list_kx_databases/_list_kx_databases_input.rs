@@ -36,9 +36,7 @@ impl ListKxDatabasesInput {
 
 /// A builder for [`ListKxDatabasesInput`](crate::operation::list_kx_databases::ListKxDatabasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKxDatabasesInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListKxDatabasesInputBuilder {
 }
 impl ListKxDatabasesInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -96,10 +88,7 @@ impl ListKxDatabasesInputBuilder {
     /// Consumes the builder and constructs a [`ListKxDatabasesInput`](crate::operation::list_kx_databases::ListKxDatabasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_kx_databases::ListKxDatabasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_kx_databases::ListKxDatabasesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_kx_databases::ListKxDatabasesInput {
             environment_id: self.environment_id,
             next_token: self.next_token,

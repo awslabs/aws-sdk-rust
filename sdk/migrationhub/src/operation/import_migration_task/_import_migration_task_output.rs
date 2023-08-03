@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ImportMigrationTaskOutput {
 }
 impl ImportMigrationTaskOutput {
     /// Creates a new builder-style object to manufacture [`ImportMigrationTaskOutput`](crate::operation::import_migration_task::ImportMigrationTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::import_migration_task::builders::ImportMigrationTaskOutputBuilder {
-        crate::operation::import_migration_task::builders::ImportMigrationTaskOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::import_migration_task::builders::ImportMigrationTaskOutputBuilder {
+        crate::operation::import_migration_task::builders::ImportMigrationTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportMigrationTaskOutput`](crate::operation::import_migration_task::ImportMigrationTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportMigrationTaskOutputBuilder {
     _request_id: Option<String>,
 }

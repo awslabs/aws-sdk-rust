@@ -5,16 +5,16 @@ pub use crate::operation::restore_managed_prefix_list_version::_restore_managed_
 
 impl RestoreManagedPrefixListVersionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.restore_managed_prefix_list_version();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl RestoreManagedPrefixListVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreManagedPrefixListVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionInputBuilder,
+    inner: crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionInputBuilder,
 }
 impl RestoreManagedPrefixListVersionFluentBuilder {
     /// Creates a new `RestoreManagedPrefixListVersion`.
@@ -37,15 +37,20 @@ impl RestoreManagedPrefixListVersionFluentBuilder {
         }
     }
     /// Access the RestoreManagedPrefixListVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl RestoreManagedPrefixListVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl RestoreManagedPrefixListVersionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -109,18 +124,12 @@ impl RestoreManagedPrefixListVersionFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix_list_id(input.into());
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix_list_id(input);
         self
     }

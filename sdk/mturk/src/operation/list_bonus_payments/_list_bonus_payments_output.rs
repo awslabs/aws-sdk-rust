@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for ListBonusPaymentsOutput {
 }
 impl ListBonusPaymentsOutput {
     /// Creates a new builder-style object to manufacture [`ListBonusPaymentsOutput`](crate::operation::list_bonus_payments::ListBonusPaymentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_bonus_payments::builders::ListBonusPaymentsOutputBuilder {
+    pub fn builder() -> crate::operation::list_bonus_payments::builders::ListBonusPaymentsOutputBuilder {
         crate::operation::list_bonus_payments::builders::ListBonusPaymentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBonusPaymentsOutput`](crate::operation::list_bonus_payments::ListBonusPaymentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBonusPaymentsOutputBuilder {
     pub(crate) num_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -93,17 +90,12 @@ impl ListBonusPaymentsOutputBuilder {
         self
     }
     /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
-    pub fn set_bonus_payments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BonusPayment>>,
-    ) -> Self {
+    pub fn set_bonus_payments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BonusPayment>>) -> Self {
         self.bonus_payments = input;
         self
     }
     /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
-    pub fn get_bonus_payments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BonusPayment>> {
+    pub fn get_bonus_payments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BonusPayment>> {
         &self.bonus_payments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

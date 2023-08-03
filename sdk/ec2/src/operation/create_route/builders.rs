@@ -10,10 +10,7 @@ impl CreateRouteInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_route::CreateRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_route::CreateRouteError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_route();
         fluent_builder.inner = self;
@@ -53,10 +50,7 @@ impl CreateRouteFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_route::CreateRoute,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_route::CreateRoute, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>,
     > {
         let handle = self.handle.clone();
@@ -67,10 +61,7 @@ impl CreateRouteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -112,27 +103,18 @@ impl CreateRouteFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_route::CreateRoute,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_route::CreateRoute, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most specific match. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_cidr_block(input.into());
         self
     }
     /// <p>The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most specific match. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
@@ -141,18 +123,12 @@ impl CreateRouteFluentBuilder {
         self.inner.get_destination_cidr_block()
     }
     /// <p>The IPv6 CIDR block used for the destination match. Routing decisions are based on the most specific match.</p>
-    pub fn destination_ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_ipv6_cidr_block(input.into());
         self
     }
     /// <p>The IPv6 CIDR block used for the destination match. Routing decisions are based on the most specific match.</p>
-    pub fn set_destination_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_ipv6_cidr_block(input);
         self
     }
@@ -161,18 +137,12 @@ impl CreateRouteFluentBuilder {
         self.inner.get_destination_ipv6_cidr_block()
     }
     /// <p>The ID of a prefix list used for the destination match.</p>
-    pub fn destination_prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_prefix_list_id(input.into());
         self
     }
     /// <p>The ID of a prefix list used for the destination match.</p>
-    pub fn set_destination_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_prefix_list_id(input);
         self
     }
@@ -195,18 +165,12 @@ impl CreateRouteFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
-    pub fn vpc_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_endpoint_id(input.into());
         self
     }
     /// <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
-    pub fn set_vpc_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_endpoint_id(input);
         self
     }
@@ -215,25 +179,17 @@ impl CreateRouteFluentBuilder {
         self.inner.get_vpc_endpoint_id()
     }
     /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
-    pub fn egress_only_internet_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn egress_only_internet_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.egress_only_internet_gateway_id(input.into());
         self
     }
     /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
-    pub fn set_egress_only_internet_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_egress_only_internet_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_egress_only_internet_gateway_id(input);
         self
     }
     /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
-    pub fn get_egress_only_internet_gateway_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_egress_only_internet_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_egress_only_internet_gateway_id()
     }
     /// <p>The ID of an internet gateway or virtual private gateway attached to your VPC.</p>
@@ -265,18 +221,12 @@ impl CreateRouteFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
-    pub fn nat_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nat_gateway_id(input.into());
         self
     }
     /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
-    pub fn set_nat_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_nat_gateway_id(input);
         self
     }
@@ -285,18 +235,12 @@ impl CreateRouteFluentBuilder {
         self.inner.get_nat_gateway_id()
     }
     /// <p>The ID of a transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_id(input.into());
         self
     }
     /// <p>The ID of a transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_id(input);
         self
     }
@@ -305,18 +249,12 @@ impl CreateRouteFluentBuilder {
         self.inner.get_transit_gateway_id()
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn local_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_gateway_id(input.into());
         self
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn set_local_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_local_gateway_id(input);
         self
     }
@@ -326,19 +264,13 @@ impl CreateRouteFluentBuilder {
     }
     /// <p>The ID of the carrier gateway.</p>
     /// <p>You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.</p>
-    pub fn carrier_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn carrier_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.carrier_gateway_id(input.into());
         self
     }
     /// <p>The ID of the carrier gateway.</p>
     /// <p>You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.</p>
-    pub fn set_carrier_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_carrier_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_carrier_gateway_id(input);
         self
     }
@@ -348,18 +280,12 @@ impl CreateRouteFluentBuilder {
         self.inner.get_carrier_gateway_id()
     }
     /// <p>The ID of a network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_id(input.into());
         self
     }
     /// <p>The ID of a network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
@@ -368,18 +294,12 @@ impl CreateRouteFluentBuilder {
         self.inner.get_network_interface_id()
     }
     /// <p>The ID of the route table for the route.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_table_id(input.into());
         self
     }
     /// <p>The ID of the route table for the route.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_table_id(input);
         self
     }
@@ -388,18 +308,12 @@ impl CreateRouteFluentBuilder {
         self.inner.get_route_table_id()
     }
     /// <p>The ID of a VPC peering connection.</p>
-    pub fn vpc_peering_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_peering_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_peering_connection_id(input.into());
         self
     }
     /// <p>The ID of a VPC peering connection.</p>
-    pub fn set_vpc_peering_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_peering_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_peering_connection_id(input);
         self
     }
@@ -408,18 +322,12 @@ impl CreateRouteFluentBuilder {
         self.inner.get_vpc_peering_connection_id()
     }
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
-    pub fn core_network_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
-    pub fn set_core_network_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_arn(input);
         self
     }

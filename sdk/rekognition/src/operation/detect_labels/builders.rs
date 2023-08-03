@@ -10,10 +10,7 @@ impl DetectLabelsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detect_labels::DetectLabelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_labels::DetectLabelsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_labels::DetectLabelsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.detect_labels();
         fluent_builder.inner = self;
@@ -81,10 +78,7 @@ impl DetectLabelsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::detect_labels::DetectLabels,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::detect_labels::DetectLabels, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::detect_labels::DetectLabelsError>,
     > {
         let handle = self.handle.clone();
@@ -95,10 +89,7 @@ impl DetectLabelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -140,10 +131,7 @@ impl DetectLabelsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::detect_labels::DetectLabels,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::detect_labels::DetectLabels, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::detect_labels::DetectLabelsError>,
     > {
         self.customize_middleware().await
@@ -206,17 +194,12 @@ impl DetectLabelsFluentBuilder {
         self
     }
     /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>>,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>>) -> Self {
         self.inner = self.inner.set_features(input);
         self
     }
     /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>> {
         self.inner.get_features()
     }
     /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
@@ -225,10 +208,7 @@ impl DetectLabelsFluentBuilder {
         self
     }
     /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectLabelsSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::DetectLabelsSettings>) -> Self {
         self.inner = self.inner.set_settings(input);
         self
     }

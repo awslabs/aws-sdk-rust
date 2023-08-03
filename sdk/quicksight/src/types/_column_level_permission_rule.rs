@@ -30,9 +30,7 @@ impl ColumnLevelPermissionRule {
 
 /// A builder for [`ColumnLevelPermissionRule`](crate::types::ColumnLevelPermissionRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnLevelPermissionRuleBuilder {
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -50,10 +48,7 @@ impl ColumnLevelPermissionRuleBuilder {
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.principals = input;
         self
     }
@@ -73,17 +68,12 @@ impl ColumnLevelPermissionRuleBuilder {
         self
     }
     /// <p>An array of column names.</p>
-    pub fn set_column_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_column_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.column_names = input;
         self
     }
     /// <p>An array of column names.</p>
-    pub fn get_column_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_column_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.column_names
     }
     /// Consumes the builder and constructs a [`ColumnLevelPermissionRule`](crate::types::ColumnLevelPermissionRule).

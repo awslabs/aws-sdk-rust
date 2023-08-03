@@ -39,8 +39,7 @@ pub struct AmazonRedshiftNodeData {
     pub iam_role: ::std::option::Option<crate::types::Option>,
     /// <p>Optional values when connecting to the Redshift cluster.</p>
     #[doc(hidden)]
-    pub advanced_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::AmazonRedshiftAdvancedOption>>,
+    pub advanced_options: ::std::option::Option<::std::vec::Vec<crate::types::AmazonRedshiftAdvancedOption>>,
     /// <p>The SQL used to fetch the data from a Redshift sources when the SourceType is 'query'.</p>
     #[doc(hidden)]
     pub sample_query: ::std::option::Option<::std::string::String>,
@@ -130,9 +129,7 @@ impl AmazonRedshiftNodeData {
         self.iam_role.as_ref()
     }
     /// <p>Optional values when connecting to the Redshift cluster.</p>
-    pub fn advanced_options(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AmazonRedshiftAdvancedOption]> {
+    pub fn advanced_options(&self) -> ::std::option::Option<&[crate::types::AmazonRedshiftAdvancedOption]> {
         self.advanced_options.as_deref()
     }
     /// <p>The SQL used to fetch the data from a Redshift sources when the SourceType is 'query'.</p>
@@ -201,9 +198,7 @@ impl AmazonRedshiftNodeData {
 
 /// A builder for [`AmazonRedshiftNodeData`](crate::types::AmazonRedshiftNodeData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmazonRedshiftNodeDataBuilder {
     pub(crate) access_type: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<::std::string::String>,
@@ -216,8 +211,7 @@ pub struct AmazonRedshiftNodeDataBuilder {
     pub(crate) catalog_redshift_table: ::std::option::Option<::std::string::String>,
     pub(crate) temp_dir: ::std::option::Option<::std::string::String>,
     pub(crate) iam_role: ::std::option::Option<crate::types::Option>,
-    pub(crate) advanced_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::AmazonRedshiftAdvancedOption>>,
+    pub(crate) advanced_options: ::std::option::Option<::std::vec::Vec<crate::types::AmazonRedshiftAdvancedOption>>,
     pub(crate) sample_query: ::std::option::Option<::std::string::String>,
     pub(crate) pre_action: ::std::option::Option<::std::string::String>,
     pub(crate) post_action: ::std::option::Option<::std::string::String>,
@@ -310,10 +304,7 @@ impl AmazonRedshiftNodeDataBuilder {
         self
     }
     /// <p>The name of the Glue Data Catalog database when working with a data catalog.</p>
-    pub fn set_catalog_database(
-        mut self,
-        input: ::std::option::Option<crate::types::Option>,
-    ) -> Self {
+    pub fn set_catalog_database(mut self, input: ::std::option::Option<crate::types::Option>) -> Self {
         self.catalog_database = input;
         self
     }
@@ -336,18 +327,12 @@ impl AmazonRedshiftNodeDataBuilder {
         &self.catalog_table
     }
     /// <p>The Redshift schema name when working with a data catalog.</p>
-    pub fn catalog_redshift_schema(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn catalog_redshift_schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_redshift_schema = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Redshift schema name when working with a data catalog.</p>
-    pub fn set_catalog_redshift_schema(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_catalog_redshift_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_redshift_schema = input;
         self
     }
@@ -356,18 +341,12 @@ impl AmazonRedshiftNodeDataBuilder {
         &self.catalog_redshift_schema
     }
     /// <p>The database table to read from.</p>
-    pub fn catalog_redshift_table(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn catalog_redshift_table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_redshift_table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database table to read from.</p>
-    pub fn set_catalog_redshift_table(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_catalog_redshift_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_redshift_table = input;
         self
     }
@@ -415,17 +394,12 @@ impl AmazonRedshiftNodeDataBuilder {
         self
     }
     /// <p>Optional values when connecting to the Redshift cluster.</p>
-    pub fn set_advanced_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AmazonRedshiftAdvancedOption>>,
-    ) -> Self {
+    pub fn set_advanced_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AmazonRedshiftAdvancedOption>>) -> Self {
         self.advanced_options = input;
         self
     }
     /// <p>Optional values when connecting to the Redshift cluster.</p>
-    pub fn get_advanced_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AmazonRedshiftAdvancedOption>> {
+    pub fn get_advanced_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AmazonRedshiftAdvancedOption>> {
         &self.advanced_options
     }
     /// <p>The SQL used to fetch the data from a Redshift sources when the SourceType is 'query'.</p>
@@ -527,18 +501,12 @@ impl AmazonRedshiftNodeDataBuilder {
         &self.merge_action
     }
     /// <p>The action used when to detemine how a MERGE in a Redshift sink will be handled when an existing record matches a new record.</p>
-    pub fn merge_when_matched(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn merge_when_matched(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.merge_when_matched = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action used when to detemine how a MERGE in a Redshift sink will be handled when an existing record matches a new record.</p>
-    pub fn set_merge_when_matched(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_merge_when_matched(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.merge_when_matched = input;
         self
     }
@@ -547,18 +515,12 @@ impl AmazonRedshiftNodeDataBuilder {
         &self.merge_when_matched
     }
     /// <p>The action used when to detemine how a MERGE in a Redshift sink will be handled when an existing record doesn't match a new record.</p>
-    pub fn merge_when_not_matched(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn merge_when_not_matched(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.merge_when_not_matched = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action used when to detemine how a MERGE in a Redshift sink will be handled when an existing record doesn't match a new record.</p>
-    pub fn set_merge_when_not_matched(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_merge_when_not_matched(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.merge_when_not_matched = input;
         self
     }
@@ -581,18 +543,12 @@ impl AmazonRedshiftNodeDataBuilder {
         &self.merge_clause
     }
     /// <p>Specifies the name of the connection that is associated with the catalog table used.</p>
-    pub fn crawler_connection(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn crawler_connection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.crawler_connection = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the connection that is associated with the catalog table used.</p>
-    pub fn set_crawler_connection(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_crawler_connection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.crawler_connection = input;
         self
     }
@@ -612,32 +568,21 @@ impl AmazonRedshiftNodeDataBuilder {
         self
     }
     /// <p>The array of schema output for a given node.</p>
-    pub fn set_table_schema(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Option>>,
-    ) -> Self {
+    pub fn set_table_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Option>>) -> Self {
         self.table_schema = input;
         self
     }
     /// <p>The array of schema output for a given node.</p>
-    pub fn get_table_schema(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Option>> {
+    pub fn get_table_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Option>> {
         &self.table_schema
     }
     /// <p>The name of the temporary staging table that is used when doing a MERGE or APPEND with upsert.</p>
-    pub fn staging_table(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn staging_table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.staging_table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the temporary staging table that is used when doing a MERGE or APPEND with upsert.</p>
-    pub fn set_staging_table(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_staging_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.staging_table = input;
         self
     }
@@ -657,17 +602,12 @@ impl AmazonRedshiftNodeDataBuilder {
         self
     }
     /// <p>The list of column names used to determine a matching record when doing a MERGE or APPEND with upsert.</p>
-    pub fn set_selected_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Option>>,
-    ) -> Self {
+    pub fn set_selected_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Option>>) -> Self {
         self.selected_columns = input;
         self
     }
     /// <p>The list of column names used to determine a matching record when doing a MERGE or APPEND with upsert.</p>
-    pub fn get_selected_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Option>> {
+    pub fn get_selected_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Option>> {
         &self.selected_columns
     }
     /// Consumes the builder and constructs a [`AmazonRedshiftNodeData`](crate::types::AmazonRedshiftNodeData).

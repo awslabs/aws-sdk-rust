@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDeletionProtectionOutput {
 }
 impl UpdateDeletionProtectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDeletionProtectionOutput`](crate::operation::update_deletion_protection::UpdateDeletionProtectionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionOutputBuilder {
         crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDeletionProtectionOutput`](crate::operation::update_deletion_protection::UpdateDeletionProtectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDeletionProtectionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateDeletionProtectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDeletionProtectionOutput`](crate::operation::update_deletion_protection::UpdateDeletionProtectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_deletion_protection::UpdateDeletionProtectionOutput {
+    pub fn build(self) -> crate::operation::update_deletion_protection::UpdateDeletionProtectionOutput {
         crate::operation::update_deletion_protection::UpdateDeletionProtectionOutput {
             _request_id: self._request_id,
         }

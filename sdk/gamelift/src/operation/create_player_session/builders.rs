@@ -42,9 +42,7 @@ impl CreatePlayerSessionFluentBuilder {
         }
     }
     /// Access the CreatePlayerSession as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_player_session::builders::CreatePlayerSessionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_player_session::builders::CreatePlayerSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl CreatePlayerSessionFluentBuilder {
             crate::operation::create_player_session::CreatePlayerSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_player_session::CreatePlayerSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_player_session::CreatePlayerSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl CreatePlayerSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl CreatePlayerSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_player_session::CreatePlayerSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_player_session::CreatePlayerSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_player_session::CreatePlayerSessionError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl CreatePlayerSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_player_session::CreatePlayerSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_player_session::CreatePlayerSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_player_session::CreatePlayerSessionError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +110,17 @@ impl CreatePlayerSessionFluentBuilder {
             crate::operation::create_player_session::CreatePlayerSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_player_session::CreatePlayerSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_player_session::CreatePlayerSessionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the game session to add a player to.</p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_id(input.into());
         self
     }
     /// <p>A unique identifier for the game session to add a player to.</p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_session_id(input);
         self
     }

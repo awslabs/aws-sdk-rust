@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteProvisioningTemplateOutput {
 }
 impl DeleteProvisioningTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProvisioningTemplateOutput`](crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput).
-    pub fn builder() -> crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateOutputBuilder {
         crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProvisioningTemplateOutput`](crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProvisioningTemplateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteProvisioningTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteProvisioningTemplateOutput`](crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput {
+    pub fn build(self) -> crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput {
         crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput {
             _request_id: self._request_id,
         }

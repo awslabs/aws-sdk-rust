@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetBucketCorsOutput`](crate::operation::get_bucket_cors::GetBucketCorsOutput) with field(s):
     ///   - [`cors_rules(Option<Vec<CorsRule>>)`](crate::operation::get_bucket_cors::GetBucketCorsOutput::cors_rules): <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
     /// - On failure, responds with [`SdkError<GetBucketCorsError>`](crate::operation::get_bucket_cors::GetBucketCorsError)
-    pub fn get_bucket_cors(
-        &self,
-    ) -> crate::operation::get_bucket_cors::builders::GetBucketCorsFluentBuilder {
-        crate::operation::get_bucket_cors::builders::GetBucketCorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bucket_cors(&self) -> crate::operation::get_bucket_cors::builders::GetBucketCorsFluentBuilder {
+        crate::operation::get_bucket_cors::builders::GetBucketCorsFluentBuilder::new(self.handle.clone())
     }
 }

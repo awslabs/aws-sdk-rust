@@ -38,9 +38,7 @@ impl DeleteExplainabilityFluentBuilder {
         }
     }
     /// Access the DeleteExplainability as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_explainability::builders::DeleteExplainabilityInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_explainability::builders::DeleteExplainabilityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeleteExplainabilityFluentBuilder {
             crate::operation::delete_explainability::DeleteExplainability,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_explainability::DeleteExplainabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_explainability::DeleteExplainabilityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeleteExplainabilityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeleteExplainabilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_explainability::DeleteExplainabilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_explainability::DeleteExplainabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_explainability::DeleteExplainabilityError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeleteExplainabilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_explainability::DeleteExplainabilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_explainability::DeleteExplainabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_explainability::DeleteExplainabilityError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl DeleteExplainabilityFluentBuilder {
             crate::operation::delete_explainability::DeleteExplainability,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_explainability::DeleteExplainabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_explainability::DeleteExplainabilityError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
-    pub fn explainability_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.explainability_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
-    pub fn set_explainability_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_explainability_arn(input);
         self
     }

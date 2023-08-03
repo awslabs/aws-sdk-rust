@@ -29,16 +29,14 @@ impl ListAssociatedRoute53HealthChecksInput {
 }
 impl ListAssociatedRoute53HealthChecksInput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedRoute53HealthChecksInput`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksInput).
-    pub fn builder() -> crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksInputBuilder{
+    pub fn builder() -> crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksInputBuilder {
         crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociatedRoute53HealthChecksInput`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedRoute53HealthChecksInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl ListAssociatedRoute53HealthChecksInputBuilder {
         &self.next_token
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    pub fn routing_control_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    pub fn set_routing_control_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_control_arn = input;
         self
     }
@@ -94,16 +86,18 @@ impl ListAssociatedRoute53HealthChecksInputBuilder {
         &self.routing_control_arn
     }
     /// Consumes the builder and constructs a [`ListAssociatedRoute53HealthChecksInput`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                routing_control_arn: self.routing_control_arn
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+                routing_control_arn: self.routing_control_arn,
+            },
         )
     }
 }

@@ -5,16 +5,16 @@ pub use crate::operation::delete_media_insights_pipeline_configuration::_delete_
 
 impl DeleteMediaInsightsPipelineConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_media_insights_pipeline_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DeleteMediaInsightsPipelineConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMediaInsightsPipelineConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_media_insights_pipeline_configuration::builders::DeleteMediaInsightsPipelineConfigurationInputBuilder,
+    inner: crate::operation::delete_media_insights_pipeline_configuration::builders::DeleteMediaInsightsPipelineConfigurationInputBuilder,
 }
 impl DeleteMediaInsightsPipelineConfigurationFluentBuilder {
     /// Creates a new `DeleteMediaInsightsPipelineConfiguration`.
@@ -37,15 +37,24 @@ impl DeleteMediaInsightsPipelineConfigurationFluentBuilder {
         }
     }
     /// Access the DeleteMediaInsightsPipelineConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_media_insights_pipeline_configuration::builders::DeleteMediaInsightsPipelineConfigurationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_media_insights_pipeline_configuration::builders::DeleteMediaInsightsPipelineConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl DeleteMediaInsightsPipelineConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl DeleteMediaInsightsPipelineConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the resource to be deleted. Valid values include the name and ARN of the media insights pipeline configuration.</p>

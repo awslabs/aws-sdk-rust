@@ -30,9 +30,7 @@ impl LoadBalancerState {
 
 /// A builder for [`LoadBalancerState`](crate::types::LoadBalancerState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadBalancerStateBuilder {
     pub(crate) code: ::std::option::Option<crate::types::LoadBalancerStateEnum>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl LoadBalancerStateBuilder {
         self
     }
     /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerStateEnum>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::LoadBalancerStateEnum>) -> Self {
         self.code = input;
         self
     }

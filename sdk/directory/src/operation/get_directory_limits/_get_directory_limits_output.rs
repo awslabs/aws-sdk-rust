@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for GetDirectoryLimitsOutput {
 }
 impl GetDirectoryLimitsOutput {
     /// Creates a new builder-style object to manufacture [`GetDirectoryLimitsOutput`](crate::operation::get_directory_limits::GetDirectoryLimitsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_directory_limits::builders::GetDirectoryLimitsOutputBuilder {
+    pub fn builder() -> crate::operation::get_directory_limits::builders::GetDirectoryLimitsOutputBuilder {
         crate::operation::get_directory_limits::builders::GetDirectoryLimitsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDirectoryLimitsOutput`](crate::operation::get_directory_limits::GetDirectoryLimitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDirectoryLimitsOutputBuilder {
     pub(crate) directory_limits: ::std::option::Option<crate::types::DirectoryLimits>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl GetDirectoryLimitsOutputBuilder {
         self
     }
     /// <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
-    pub fn set_directory_limits(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryLimits>,
-    ) -> Self {
+    pub fn set_directory_limits(mut self, input: ::std::option::Option<crate::types::DirectoryLimits>) -> Self {
         self.directory_limits = input;
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeWorkflowOutput`](crate::operation::describe_workflow::DescribeWorkflowOutput) with field(s):
     ///   - [`workflow(Option<DescribedWorkflow>)`](crate::operation::describe_workflow::DescribeWorkflowOutput::workflow): <p>The structure that contains the details of the workflow.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkflowError>`](crate::operation::describe_workflow::DescribeWorkflowError)
-    pub fn describe_workflow(
-        &self,
-    ) -> crate::operation::describe_workflow::builders::DescribeWorkflowFluentBuilder {
-        crate::operation::describe_workflow::builders::DescribeWorkflowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_workflow(&self) -> crate::operation::describe_workflow::builders::DescribeWorkflowFluentBuilder {
+        crate::operation::describe_workflow::builders::DescribeWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

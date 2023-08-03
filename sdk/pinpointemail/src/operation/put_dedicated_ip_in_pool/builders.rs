@@ -40,10 +40,7 @@ impl PutDedicatedIpInPoolFluentBuilder {
         }
     }
     /// Access the PutDedicatedIpInPool as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_dedicated_ip_in_pool::builders::PutDedicatedIpInPoolInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_dedicated_ip_in_pool::builders::PutDedicatedIpInPoolInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl PutDedicatedIpInPoolFluentBuilder {
             crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl PutDedicatedIpInPoolFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl PutDedicatedIpInPoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl PutDedicatedIpInPoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl PutDedicatedIpInPoolFluentBuilder {
             crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError>,
     > {
         self.customize_middleware().await
     }
@@ -141,18 +127,12 @@ impl PutDedicatedIpInPoolFluentBuilder {
         self.inner.get_ip()
     }
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
-    pub fn destination_pool_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_pool_name(input.into());
         self
     }
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
-    pub fn set_destination_pool_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_pool_name(input);
         self
     }

@@ -16,9 +16,7 @@ pub struct FailedCreateAssociation {
 }
 impl FailedCreateAssociation {
     /// <p>The association.</p>
-    pub fn entry(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateAssociationBatchRequestEntry> {
+    pub fn entry(&self) -> ::std::option::Option<&crate::types::CreateAssociationBatchRequestEntry> {
         self.entry.as_ref()
     }
     /// <p>A description of the failure.</p>
@@ -39,9 +37,7 @@ impl FailedCreateAssociation {
 
 /// A builder for [`FailedCreateAssociation`](crate::types::FailedCreateAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedCreateAssociationBuilder {
     pub(crate) entry: ::std::option::Option<crate::types::CreateAssociationBatchRequestEntry>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -54,17 +50,12 @@ impl FailedCreateAssociationBuilder {
         self
     }
     /// <p>The association.</p>
-    pub fn set_entry(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateAssociationBatchRequestEntry>,
-    ) -> Self {
+    pub fn set_entry(mut self, input: ::std::option::Option<crate::types::CreateAssociationBatchRequestEntry>) -> Self {
         self.entry = input;
         self
     }
     /// <p>The association.</p>
-    pub fn get_entry(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateAssociationBatchRequestEntry> {
+    pub fn get_entry(&self) -> &::std::option::Option<crate::types::CreateAssociationBatchRequestEntry> {
         &self.entry
     }
     /// <p>A description of the failure.</p>

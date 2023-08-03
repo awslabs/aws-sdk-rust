@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`descriptions(Option<Vec<EntityDescription>>)`](crate::operation::get_entities::GetEntitiesOutput::descriptions): <p>An array of descriptions for the specified entities.</p>
     /// - On failure, responds with [`SdkError<GetEntitiesError>`](crate::operation::get_entities::GetEntitiesError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn get_entities(
-        &self,
-    ) -> crate::operation::get_entities::builders::GetEntitiesFluentBuilder {
+    pub fn get_entities(&self) -> crate::operation::get_entities::builders::GetEntitiesFluentBuilder {
         crate::operation::get_entities::builders::GetEntitiesFluentBuilder::new(self.handle.clone())
     }
 }

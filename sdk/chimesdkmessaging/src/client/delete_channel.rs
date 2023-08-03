@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`chime_bearer(impl ::std::convert::Into<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::set_chime_bearer): <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     /// - On success, responds with [`DeleteChannelOutput`](crate::operation::delete_channel::DeleteChannelOutput)
     /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::operation::delete_channel::DeleteChannelError)
-    pub fn delete_channel(
-        &self,
-    ) -> crate::operation::delete_channel::builders::DeleteChannelFluentBuilder {
-        crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_channel(&self) -> crate::operation::delete_channel::builders::DeleteChannelFluentBuilder {
+        crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::new(self.handle.clone())
     }
 }

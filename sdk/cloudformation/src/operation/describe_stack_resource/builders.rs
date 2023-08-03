@@ -38,10 +38,7 @@ impl DescribeStackResourceFluentBuilder {
         }
     }
     /// Access the DescribeStackResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_stack_resource::builders::DescribeStackResourceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_stack_resource::builders::DescribeStackResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeStackResourceFluentBuilder {
             crate::operation::describe_stack_resource::DescribeStackResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_resource::DescribeStackResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_resource::DescribeStackResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeStackResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeStackResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_resource::DescribeStackResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_resource::DescribeStackResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_resource::DescribeStackResourceError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeStackResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_resource::DescribeStackResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_resource::DescribeStackResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_resource::DescribeStackResourceError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DescribeStackResourceFluentBuilder {
             crate::operation::describe_stack_resource::DescribeStackResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_resource::DescribeStackResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_resource::DescribeStackResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -155,19 +141,13 @@ impl DescribeStackResourceFluentBuilder {
     }
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
-    pub fn logical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logical_resource_id(input.into());
         self
     }
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
     }

@@ -35,9 +35,7 @@ impl UpdateFirewallEncryptionConfigurationOutput {
         self.update_token.as_deref()
     }
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
@@ -48,22 +46,19 @@ impl ::aws_http::request_id::RequestId for UpdateFirewallEncryptionConfiguration
 }
 impl UpdateFirewallEncryptionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallEncryptionConfigurationOutput`](crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput).
-    pub fn builder() -> crate::operation::update_firewall_encryption_configuration::builders::UpdateFirewallEncryptionConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_firewall_encryption_configuration::builders::UpdateFirewallEncryptionConfigurationOutputBuilder {
         crate::operation::update_firewall_encryption_configuration::builders::UpdateFirewallEncryptionConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFirewallEncryptionConfigurationOutput`](crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFirewallEncryptionConfigurationOutputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     _request_id: Option<String>,
 }
 impl UpdateFirewallEncryptionConfigurationOutputBuilder {
@@ -82,18 +77,12 @@ impl UpdateFirewallEncryptionConfigurationOutputBuilder {
         &self.firewall_arn
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_name = input;
         self
     }
@@ -122,25 +111,17 @@ impl UpdateFirewallEncryptionConfigurationOutputBuilder {
         &self.update_token
     }
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -153,16 +134,12 @@ impl UpdateFirewallEncryptionConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFirewallEncryptionConfigurationOutput`](crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput{
+    pub fn build(self) -> crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput {
         crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput {
-            firewall_arn: self.firewall_arn
-            ,
-            firewall_name: self.firewall_name
-            ,
-            update_token: self.update_token
-            ,
-            encryption_configuration: self.encryption_configuration
-            ,
+            firewall_arn: self.firewall_arn,
+            firewall_name: self.firewall_name,
+            update_token: self.update_token,
+            encryption_configuration: self.encryption_configuration,
             _request_id: self._request_id,
         }
     }

@@ -37,9 +37,7 @@ impl DetectedField {
 
 /// A builder for [`DetectedField`](crate::types::DetectedField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectedFieldBuilder {
     pub(crate) value: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) confidence: ::std::option::Option<crate::types::Confidence>,
@@ -66,10 +64,7 @@ impl DetectedFieldBuilder {
         self
     }
     /// <p>The field's confidence.</p>
-    pub fn set_confidence(
-        mut self,
-        input: ::std::option::Option<crate::types::Confidence>,
-    ) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<crate::types::Confidence>) -> Self {
         self.confidence = input;
         self
     }

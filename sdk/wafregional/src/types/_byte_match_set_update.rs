@@ -34,9 +34,7 @@ impl ByteMatchSetUpdate {
 
 /// A builder for [`ByteMatchSetUpdate`](crate::types::ByteMatchSetUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ByteMatchSetUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) byte_match_tuple: ::std::option::Option<crate::types::ByteMatchTuple>,
@@ -62,10 +60,7 @@ impl ByteMatchSetUpdateBuilder {
         self
     }
     /// <p>Information about the part of a web request that you want AWS WAF to inspect and the value that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>ByteMatchTuple</code> values must exactly match the values in the <code>ByteMatchTuple</code> that you want to delete from the <code>ByteMatchSet</code>.</p>
-    pub fn set_byte_match_tuple(
-        mut self,
-        input: ::std::option::Option<crate::types::ByteMatchTuple>,
-    ) -> Self {
+    pub fn set_byte_match_tuple(mut self, input: ::std::option::Option<crate::types::ByteMatchTuple>) -> Self {
         self.byte_match_tuple = input;
         self
     }

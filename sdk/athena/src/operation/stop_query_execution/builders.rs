@@ -10,10 +10,7 @@ impl StopQueryExecutionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_query_execution::StopQueryExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_query_execution::StopQueryExecutionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_query_execution::StopQueryExecutionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_query_execution();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl StopQueryExecutionFluentBuilder {
         }
     }
     /// Access the StopQueryExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_query_execution::builders::StopQueryExecutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_query_execution::builders::StopQueryExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl StopQueryExecutionFluentBuilder {
             crate::operation::stop_query_execution::StopQueryExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_query_execution::StopQueryExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_query_execution::StopQueryExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl StopQueryExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl StopQueryExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_query_execution::StopQueryExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_query_execution::StopQueryExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_query_execution::StopQueryExecutionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl StopQueryExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_query_execution::StopQueryExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_query_execution::StopQueryExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_query_execution::StopQueryExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl StopQueryExecutionFluentBuilder {
             crate::operation::stop_query_execution::StopQueryExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_query_execution::StopQueryExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_query_execution::StopQueryExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique ID of the query execution to stop.</p>
-    pub fn query_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_execution_id(input.into());
         self
     }
     /// <p>The unique ID of the query execution to stop.</p>
-    pub fn set_query_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_execution_id(input);
         self
     }

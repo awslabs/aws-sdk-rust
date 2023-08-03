@@ -35,20 +35,17 @@ impl ::aws_http::request_id::RequestId for DescribeWorkspaceImagePermissionsOutp
 }
 impl DescribeWorkspaceImagePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceImagePermissionsOutput`](crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput).
-    pub fn builder() -> crate::operation::describe_workspace_image_permissions::builders::DescribeWorkspaceImagePermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_workspace_image_permissions::builders::DescribeWorkspaceImagePermissionsOutputBuilder {
         crate::operation::describe_workspace_image_permissions::builders::DescribeWorkspaceImagePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspaceImagePermissionsOutput`](crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceImagePermissionsOutputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
-    pub(crate) image_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImagePermission>>,
+    pub(crate) image_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ImagePermission>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -79,17 +76,12 @@ impl DescribeWorkspaceImagePermissionsOutputBuilder {
         self
     }
     /// <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
-    pub fn set_image_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImagePermission>>,
-    ) -> Self {
+    pub fn set_image_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImagePermission>>) -> Self {
         self.image_permissions = input;
         self
     }
     /// <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
-    pub fn get_image_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImagePermission>> {
+    pub fn get_image_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImagePermission>> {
         &self.image_permissions
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
@@ -116,14 +108,11 @@ impl DescribeWorkspaceImagePermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceImagePermissionsOutput`](crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput).
-    pub fn build(self) -> crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput{
+    pub fn build(self) -> crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput {
         crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput {
-            image_id: self.image_id
-            ,
-            image_permissions: self.image_permissions
-            ,
-            next_token: self.next_token
-            ,
+            image_id: self.image_id,
+            image_permissions: self.image_permissions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

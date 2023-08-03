@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetTableVersionOutput`](crate::operation::get_table_version::GetTableVersionOutput) with field(s):
     ///   - [`table_version(Option<TableVersion>)`](crate::operation::get_table_version::GetTableVersionOutput::table_version): <p>The requested table version.</p>
     /// - On failure, responds with [`SdkError<GetTableVersionError>`](crate::operation::get_table_version::GetTableVersionError)
-    pub fn get_table_version(
-        &self,
-    ) -> crate::operation::get_table_version::builders::GetTableVersionFluentBuilder {
-        crate::operation::get_table_version::builders::GetTableVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_table_version(&self) -> crate::operation::get_table_version::builders::GetTableVersionFluentBuilder {
+        crate::operation::get_table_version::builders::GetTableVersionFluentBuilder::new(self.handle.clone())
     }
 }

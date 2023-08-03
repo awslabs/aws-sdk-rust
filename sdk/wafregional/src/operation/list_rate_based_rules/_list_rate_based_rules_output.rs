@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListRateBasedRulesOutput {
 }
 impl ListRateBasedRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListRateBasedRulesOutput`](crate::operation::list_rate_based_rules::ListRateBasedRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_rate_based_rules::builders::ListRateBasedRulesOutputBuilder {
-        crate::operation::list_rate_based_rules::builders::ListRateBasedRulesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_rate_based_rules::builders::ListRateBasedRulesOutputBuilder {
+        crate::operation::list_rate_based_rules::builders::ListRateBasedRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRateBasedRulesOutput`](crate::operation::list_rate_based_rules::ListRateBasedRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRateBasedRulesOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>,
@@ -72,10 +68,7 @@ impl ListRateBasedRulesOutputBuilder {
         self
     }
     /// <p>An array of <code>RuleSummary</code> objects.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>) -> Self {
         self.rules = input;
         self
     }

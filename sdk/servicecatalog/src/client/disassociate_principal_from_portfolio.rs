@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`principal_type(PrincipalType)`](crate::operation::disassociate_principal_from_portfolio::builders::DisassociatePrincipalFromPortfolioFluentBuilder::principal_type) / [`set_principal_type(Option<PrincipalType>)`](crate::operation::disassociate_principal_from_portfolio::builders::DisassociatePrincipalFromPortfolioFluentBuilder::set_principal_type): <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters. </p>
     /// - On success, responds with [`DisassociatePrincipalFromPortfolioOutput`](crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioOutput)
     /// - On failure, responds with [`SdkError<DisassociatePrincipalFromPortfolioError>`](crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioError)
-    pub fn disassociate_principal_from_portfolio(&self) -> crate::operation::disassociate_principal_from_portfolio::builders::DisassociatePrincipalFromPortfolioFluentBuilder{
+    pub fn disassociate_principal_from_portfolio(
+        &self,
+    ) -> crate::operation::disassociate_principal_from_portfolio::builders::DisassociatePrincipalFromPortfolioFluentBuilder {
         crate::operation::disassociate_principal_from_portfolio::builders::DisassociatePrincipalFromPortfolioFluentBuilder::new(self.handle.clone())
     }
 }

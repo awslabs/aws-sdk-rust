@@ -28,20 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeMetricCollectionTypesOutput {
 }
 impl DescribeMetricCollectionTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMetricCollectionTypesOutput`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput).
-    pub fn builder() -> crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesOutputBuilder {
         crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMetricCollectionTypesOutput`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMetricCollectionTypesOutputBuilder {
     pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricCollectionType>>,
-    pub(crate) granularities:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricGranularityType>>,
+    pub(crate) granularities: ::std::option::Option<::std::vec::Vec<crate::types::MetricGranularityType>>,
     _request_id: Option<String>,
 }
 impl DescribeMetricCollectionTypesOutputBuilder {
@@ -57,17 +54,12 @@ impl DescribeMetricCollectionTypesOutputBuilder {
         self
     }
     /// <p>The metrics.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricCollectionType>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricCollectionType>>) -> Self {
         self.metrics = input;
         self
     }
     /// <p>The metrics.</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricCollectionType>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricCollectionType>> {
         &self.metrics
     }
     /// Appends an item to `granularities`.
@@ -82,17 +74,12 @@ impl DescribeMetricCollectionTypesOutputBuilder {
         self
     }
     /// <p>The granularities for the metrics.</p>
-    pub fn set_granularities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGranularityType>>,
-    ) -> Self {
+    pub fn set_granularities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGranularityType>>) -> Self {
         self.granularities = input;
         self
     }
     /// <p>The granularities for the metrics.</p>
-    pub fn get_granularities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGranularityType>> {
+    pub fn get_granularities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGranularityType>> {
         &self.granularities
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -105,10 +92,7 @@ impl DescribeMetricCollectionTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMetricCollectionTypesOutput`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput {
         crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput {
             metrics: self.metrics,
             granularities: self.granularities,

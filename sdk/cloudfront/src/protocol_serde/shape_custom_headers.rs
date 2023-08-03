@@ -14,10 +14,7 @@ pub fn ser_custom_headers(
         for list_item_3 in var_2 {
             {
                 let inner_writer = inner_writer.start_el("OriginCustomHeader");
-                crate::protocol_serde::shape_origin_custom_header::ser_origin_custom_header(
-                    list_item_3,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_origin_custom_header::ser_origin_custom_header(list_item_3, inner_writer)?
             }
         }
     }

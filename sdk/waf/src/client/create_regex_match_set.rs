@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`regex_match_set(Option<RegexMatchSet>)`](crate::operation::create_regex_match_set::CreateRegexMatchSetOutput::regex_match_set): <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
     ///   - [`change_token(Option<String>)`](crate::operation::create_regex_match_set::CreateRegexMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<CreateRegexMatchSetError>`](crate::operation::create_regex_match_set::CreateRegexMatchSetError)
-    pub fn create_regex_match_set(
-        &self,
-    ) -> crate::operation::create_regex_match_set::builders::CreateRegexMatchSetFluentBuilder {
-        crate::operation::create_regex_match_set::builders::CreateRegexMatchSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_regex_match_set(&self) -> crate::operation::create_regex_match_set::builders::CreateRegexMatchSetFluentBuilder {
+        crate::operation::create_regex_match_set::builders::CreateRegexMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

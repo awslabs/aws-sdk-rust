@@ -35,9 +35,7 @@ impl ListBridgesOutput {
 
 /// A builder for [`ListBridgesOutput`](crate::operation::list_bridges::ListBridgesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBridgesOutputBuilder {
     pub(crate) bridges: ::std::option::Option<::std::vec::Vec<crate::types::ListedBridge>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListBridgesOutputBuilder {
         self
     }
     /// A list of bridge summaries.
-    pub fn set_bridges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedBridge>>,
-    ) -> Self {
+    pub fn set_bridges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedBridge>>) -> Self {
         self.bridges = input;
         self
     }
     /// A list of bridge summaries.
-    pub fn get_bridges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedBridge>> {
+    pub fn get_bridges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedBridge>> {
         &self.bridges
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.

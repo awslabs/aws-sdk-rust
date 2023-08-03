@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateMembershipOutput {
 }
 impl UpdateMembershipOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMembershipOutput`](crate::operation::update_membership::UpdateMembershipOutput).
-    pub fn builder() -> crate::operation::update_membership::builders::UpdateMembershipOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_membership::builders::UpdateMembershipOutputBuilder {
         crate::operation::update_membership::builders::UpdateMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMembershipOutput`](crate::operation::update_membership::UpdateMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMembershipOutputBuilder {
     pub(crate) membership: ::std::option::Option<crate::types::Membership>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateMembershipOutputBuilder {
         self
     }
     /// <p>The membership object.</p>
-    pub fn set_membership(
-        mut self,
-        input: ::std::option::Option<crate::types::Membership>,
-    ) -> Self {
+    pub fn set_membership(mut self, input: ::std::option::Option<crate::types::Membership>) -> Self {
         self.membership = input;
         self
     }

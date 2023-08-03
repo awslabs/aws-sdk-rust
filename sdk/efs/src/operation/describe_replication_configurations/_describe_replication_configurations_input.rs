@@ -29,16 +29,14 @@ impl DescribeReplicationConfigurationsInput {
 }
 impl DescribeReplicationConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationConfigurationsInput`](crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsInput).
-    pub fn builder() -> crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsInputBuilder {
         crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationConfigurationsInput`](crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationsInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DescribeReplicationConfigurationsInputBuilder {
 }
 impl DescribeReplicationConfigurationsInputBuilder {
     /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -94,16 +86,18 @@ impl DescribeReplicationConfigurationsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeReplicationConfigurationsInput`](crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsInput {
-                file_system_id: self.file_system_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                file_system_id: self.file_system_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

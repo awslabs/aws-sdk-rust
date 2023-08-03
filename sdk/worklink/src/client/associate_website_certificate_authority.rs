@@ -9,10 +9,12 @@ impl super::Client {
     /// - On success, responds with [`AssociateWebsiteCertificateAuthorityOutput`](crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput) with field(s):
     ///   - [`website_ca_id(Option<String>)`](crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput::website_ca_id): <p>A unique identifier for the CA.</p>
     /// - On failure, responds with [`SdkError<AssociateWebsiteCertificateAuthorityError>`](crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn associate_website_certificate_authority(&self) -> crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityFluentBuilder{
-        crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityFluentBuilder::new(self.handle.clone())
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn associate_website_certificate_authority(
+        &self,
+    ) -> crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityFluentBuilder {
+        crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

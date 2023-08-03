@@ -23,24 +23,20 @@ impl SendDataToMulticastGroupInput {
         self.payload_data.as_deref()
     }
     /// <p>Wireless metadata that is to be sent to multicast group.</p>
-    pub fn wireless_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MulticastWirelessMetadata> {
+    pub fn wireless_metadata(&self) -> ::std::option::Option<&crate::types::MulticastWirelessMetadata> {
         self.wireless_metadata.as_ref()
     }
 }
 impl SendDataToMulticastGroupInput {
     /// Creates a new builder-style object to manufacture [`SendDataToMulticastGroupInput`](crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput).
-    pub fn builder() -> crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupInputBuilder{
+    pub fn builder() -> crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupInputBuilder {
         crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`SendDataToMulticastGroupInput`](crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendDataToMulticastGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) payload_data: ::std::option::Option<::std::string::String>,
@@ -81,17 +77,12 @@ impl SendDataToMulticastGroupInputBuilder {
         self
     }
     /// <p>Wireless metadata that is to be sent to multicast group.</p>
-    pub fn set_wireless_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::MulticastWirelessMetadata>,
-    ) -> Self {
+    pub fn set_wireless_metadata(mut self, input: ::std::option::Option<crate::types::MulticastWirelessMetadata>) -> Self {
         self.wireless_metadata = input;
         self
     }
     /// <p>Wireless metadata that is to be sent to multicast group.</p>
-    pub fn get_wireless_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::MulticastWirelessMetadata> {
+    pub fn get_wireless_metadata(&self) -> &::std::option::Option<crate::types::MulticastWirelessMetadata> {
         &self.wireless_metadata
     }
     /// Consumes the builder and constructs a [`SendDataToMulticastGroupInput`](crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput).
@@ -101,12 +92,10 @@ impl SendDataToMulticastGroupInputBuilder {
         crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput {
-                id: self.id,
-                payload_data: self.payload_data,
-                wireless_metadata: self.wireless_metadata,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput {
+            id: self.id,
+            payload_data: self.payload_data,
+            wireless_metadata: self.wireless_metadata,
+        })
     }
 }

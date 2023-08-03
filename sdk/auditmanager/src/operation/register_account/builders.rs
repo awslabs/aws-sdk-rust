@@ -10,10 +10,7 @@ impl RegisterAccountInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_account::RegisterAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_account::RegisterAccountError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_account::RegisterAccountError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_account();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RegisterAccountFluentBuilder {
         }
     }
     /// Access the RegisterAccount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_account::builders::RegisterAccountInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_account::builders::RegisterAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RegisterAccountFluentBuilder {
             crate::operation::register_account::RegisterAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_account::RegisterAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_account::RegisterAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RegisterAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RegisterAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_account::RegisterAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_account::RegisterAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_account::RegisterAccountError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RegisterAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_account::RegisterAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_account::RegisterAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_account::RegisterAccountError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl RegisterAccountFluentBuilder {
             crate::operation::register_account::RegisterAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_account::RegisterAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_account::RegisterAccountError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl RegisterAccountFluentBuilder {
         self.inner.get_kms_key()
     }
     /// <p> The delegated administrator account for Audit Manager. </p>
-    pub fn delegated_admin_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delegated_admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delegated_admin_account(input.into());
         self
     }
     /// <p> The delegated administrator account for Audit Manager. </p>
-    pub fn set_delegated_admin_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delegated_admin_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delegated_admin_account(input);
         self
     }

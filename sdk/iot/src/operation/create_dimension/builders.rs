@@ -10,10 +10,7 @@ impl CreateDimensionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_dimension::CreateDimensionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dimension::CreateDimensionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dimension::CreateDimensionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_dimension();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateDimensionFluentBuilder {
         }
     }
     /// Access the CreateDimension as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_dimension::builders::CreateDimensionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_dimension::builders::CreateDimensionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateDimensionFluentBuilder {
             crate::operation::create_dimension::CreateDimension,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dimension::CreateDimensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dimension::CreateDimensionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateDimensionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateDimensionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dimension::CreateDimensionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dimension::CreateDimensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dimension::CreateDimensionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateDimensionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dimension::CreateDimensionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dimension::CreateDimensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dimension::CreateDimensionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateDimensionFluentBuilder {
             crate::operation::create_dimension::CreateDimension,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dimension::CreateDimensionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dimension::CreateDimensionError>,
     > {
         self.customize_middleware().await
     }
@@ -156,25 +140,17 @@ impl CreateDimensionFluentBuilder {
     /// To override the contents of this collection use [`set_string_values`](Self::set_string_values).
     ///
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
-    pub fn string_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn string_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.string_values(input.into());
         self
     }
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
-    pub fn set_string_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_string_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_string_values(input);
         self
     }
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
-    pub fn get_string_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_string_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_string_values()
     }
     /// Appends an item to `tags`.
@@ -187,10 +163,7 @@ impl CreateDimensionFluentBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the dimension.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -199,18 +172,12 @@ impl CreateDimensionFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

@@ -15,18 +15,14 @@ impl DeleteMatchmakingRuleSetInput {
 }
 impl DeleteMatchmakingRuleSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteMatchmakingRuleSetInput`](crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetInputBuilder {
         crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMatchmakingRuleSetInput`](crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMatchmakingRuleSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DeleteMatchmakingRuleSetInputBuilder {
         crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetInput {
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetInput { name: self.name })
     }
 }

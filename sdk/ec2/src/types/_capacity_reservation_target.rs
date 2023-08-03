@@ -30,28 +30,19 @@ impl CapacityReservationTarget {
 
 /// A builder for [`CapacityReservationTarget`](crate::types::CapacityReservationTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityReservationTargetBuilder {
     pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
-    pub(crate) capacity_reservation_resource_group_arn:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) capacity_reservation_resource_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservationTargetBuilder {
     /// <p>The ID of the Capacity Reservation in which to run the instance.</p>
-    pub fn capacity_reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation in which to run the instance.</p>
-    pub fn set_capacity_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_id = input;
         self
     }
@@ -60,25 +51,17 @@ impl CapacityReservationTargetBuilder {
         &self.capacity_reservation_id
     }
     /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
-    pub fn capacity_reservation_resource_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_resource_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
-    pub fn set_capacity_reservation_resource_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_resource_group_arn = input;
         self
     }
     /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
-    pub fn get_capacity_reservation_resource_group_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_capacity_reservation_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_reservation_resource_group_arn
     }
     /// Consumes the builder and constructs a [`CapacityReservationTarget`](crate::types::CapacityReservationTarget).

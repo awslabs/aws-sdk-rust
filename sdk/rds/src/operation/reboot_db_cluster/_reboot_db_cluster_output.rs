@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for RebootDbClusterOutput {
 }
 impl RebootDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`RebootDbClusterOutput`](crate::operation::reboot_db_cluster::RebootDbClusterOutput).
-    pub fn builder() -> crate::operation::reboot_db_cluster::builders::RebootDbClusterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reboot_db_cluster::builders::RebootDbClusterOutputBuilder {
         crate::operation::reboot_db_cluster::builders::RebootDbClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`RebootDbClusterOutput`](crate::operation::reboot_db_cluster::RebootDbClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebootDbClusterOutputBuilder {
     pub(crate) db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,

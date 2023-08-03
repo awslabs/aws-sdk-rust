@@ -35,18 +35,14 @@ impl ListAccountAssociationsInput {
 }
 impl ListAccountAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListAccountAssociationsInput`](crate::operation::list_account_associations::ListAccountAssociationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_account_associations::builders::ListAccountAssociationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_account_associations::builders::ListAccountAssociationsInputBuilder {
         crate::operation::list_account_associations::builders::ListAccountAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountAssociationsInput`](crate::operation::list_account_associations::ListAccountAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountAssociationsInputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::ListAccountAssociationsFilter>,
@@ -54,18 +50,12 @@ pub struct ListAccountAssociationsInputBuilder {
 }
 impl ListAccountAssociationsInputBuilder {
     /// <p> The preferred billing period to get account associations. </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The preferred billing period to get account associations. </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_period = input;
         self
     }
@@ -85,10 +75,7 @@ impl ListAccountAssociationsInputBuilder {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListAccountAssociationsFilter>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListAccountAssociationsFilter>) -> Self {
         self.filters = input;
         self
     }
@@ -96,9 +83,7 @@ impl ListAccountAssociationsInputBuilder {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListAccountAssociationsFilter> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListAccountAssociationsFilter> {
         &self.filters
     }
     /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
@@ -122,12 +107,10 @@ impl ListAccountAssociationsInputBuilder {
         crate::operation::list_account_associations::ListAccountAssociationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_account_associations::ListAccountAssociationsInput {
-                billing_period: self.billing_period,
-                filters: self.filters,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_account_associations::ListAccountAssociationsInput {
+            billing_period: self.billing_period,
+            filters: self.filters,
+            next_token: self.next_token,
+        })
     }
 }

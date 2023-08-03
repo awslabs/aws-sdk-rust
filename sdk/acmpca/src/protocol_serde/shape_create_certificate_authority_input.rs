@@ -5,33 +5,24 @@ pub fn ser_create_certificate_authority_input(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.certificate_authority_configuration {
         #[allow(unused_mut)]
-        let mut object_2 = object
-            .key("CertificateAuthorityConfiguration")
-            .start_object();
+        let mut object_2 = object.key("CertificateAuthorityConfiguration").start_object();
         crate::protocol_serde::shape_certificate_authority_configuration::ser_certificate_authority_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.revocation_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("RevocationConfiguration").start_object();
-        crate::protocol_serde::shape_revocation_configuration::ser_revocation_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_revocation_configuration::ser_revocation_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.certificate_authority_type {
-        object
-            .key("CertificateAuthorityType")
-            .string(var_5.as_str());
+        object.key("CertificateAuthorityType").string(var_5.as_str());
     }
     if let Some(var_6) = &input.idempotency_token {
         object.key("IdempotencyToken").string(var_6.as_str());
     }
     if let Some(var_7) = &input.key_storage_security_standard {
-        object
-            .key("KeyStorageSecurityStandard")
-            .string(var_7.as_str());
+        object.key("KeyStorageSecurityStandard").string(var_7.as_str());
     }
     if let Some(var_8) = &input.tags {
         let mut array_9 = object.key("Tags").start_array();

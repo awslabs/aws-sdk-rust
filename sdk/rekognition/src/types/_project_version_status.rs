@@ -48,13 +48,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ProjectVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -99,9 +93,7 @@ impl ::std::convert::From<&str> for ProjectVersionStatus {
             "TRAINING_COMPLETED" => ProjectVersionStatus::TrainingCompleted,
             "TRAINING_FAILED" => ProjectVersionStatus::TrainingFailed,
             "TRAINING_IN_PROGRESS" => ProjectVersionStatus::TrainingInProgress,
-            other => ProjectVersionStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ProjectVersionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

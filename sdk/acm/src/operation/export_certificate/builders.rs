@@ -10,10 +10,7 @@ impl ExportCertificateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::export_certificate::ExportCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_certificate::ExportCertificateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_certificate::ExportCertificateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.export_certificate();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ExportCertificateFluentBuilder {
         }
     }
     /// Access the ExportCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::export_certificate::builders::ExportCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::export_certificate::builders::ExportCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ExportCertificateFluentBuilder {
             crate::operation::export_certificate::ExportCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_certificate::ExportCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_certificate::ExportCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ExportCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ExportCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_certificate::ExportCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_certificate::ExportCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_certificate::ExportCertificateError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ExportCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_certificate::ExportCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_certificate::ExportCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_certificate::ExportCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +103,19 @@ impl ExportCertificateFluentBuilder {
             crate::operation::export_certificate::ExportCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_certificate::ExportCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_certificate::ExportCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
@@ -160,10 +138,7 @@ impl ExportCertificateFluentBuilder {
     /// </note>
     /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
     /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
-    pub fn set_passphrase(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_passphrase(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_passphrase(input);
         self
     }

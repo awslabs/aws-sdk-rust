@@ -51,9 +51,7 @@ impl TotalOptions {
 
 /// A builder for [`TotalOptions`](crate::types::TotalOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TotalOptionsBuilder {
     pub(crate) totals_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) placement: ::std::option::Option<crate::types::TableTotalsPlacement>,
@@ -68,10 +66,7 @@ impl TotalOptionsBuilder {
         self
     }
     /// <p>The visibility configuration for the total cells.</p>
-    pub fn set_totals_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_totals_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.totals_visibility = input;
         self
     }
@@ -85,10 +80,7 @@ impl TotalOptionsBuilder {
         self
     }
     /// <p>The placement (start, end) for the total cells.</p>
-    pub fn set_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::TableTotalsPlacement>,
-    ) -> Self {
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::TableTotalsPlacement>) -> Self {
         self.placement = input;
         self
     }
@@ -102,17 +94,12 @@ impl TotalOptionsBuilder {
         self
     }
     /// <p>The scroll status (pinned, scrolled) for the total cells.</p>
-    pub fn set_scroll_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TableTotalsScrollStatus>,
-    ) -> Self {
+    pub fn set_scroll_status(mut self, input: ::std::option::Option<crate::types::TableTotalsScrollStatus>) -> Self {
         self.scroll_status = input;
         self
     }
     /// <p>The scroll status (pinned, scrolled) for the total cells.</p>
-    pub fn get_scroll_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableTotalsScrollStatus> {
+    pub fn get_scroll_status(&self) -> &::std::option::Option<crate::types::TableTotalsScrollStatus> {
         &self.scroll_status
     }
     /// <p>The custom label string for the total cells.</p>
@@ -135,10 +122,7 @@ impl TotalOptionsBuilder {
         self
     }
     /// <p>Cell styling options for the total cells.</p>
-    pub fn set_total_cell_style(
-        mut self,
-        input: ::std::option::Option<crate::types::TableCellStyle>,
-    ) -> Self {
+    pub fn set_total_cell_style(mut self, input: ::std::option::Option<crate::types::TableCellStyle>) -> Self {
         self.total_cell_style = input;
         self
     }

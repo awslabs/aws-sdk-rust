@@ -44,9 +44,7 @@ impl BatchChannelMemberships {
 
 /// A builder for [`BatchChannelMemberships`](crate::types::BatchChannelMemberships).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchChannelMembershipsBuilder {
     pub(crate) invited_by: ::std::option::Option<crate::types::Identity>,
     pub(crate) r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
@@ -74,10 +72,7 @@ impl BatchChannelMembershipsBuilder {
         self
     }
     /// <p>The membership types set for the channel users.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMembershipType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMembershipType>) -> Self {
         self.r#type = input;
         self
     }
@@ -97,10 +92,7 @@ impl BatchChannelMembershipsBuilder {
         self
     }
     /// <p>The users successfully added to the request.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Identity>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Identity>>) -> Self {
         self.members = input;
         self
     }

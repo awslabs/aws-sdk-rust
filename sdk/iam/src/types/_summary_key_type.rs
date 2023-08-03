@@ -62,13 +62,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SummaryKeyType {
     #[allow(missing_docs)] // documentation missing in model
@@ -132,9 +126,7 @@ impl ::std::convert::From<&str> for SummaryKeyType {
             "AccessKeysPerUserQuota" => SummaryKeyType::AccessKeysPerUserQuota,
             "AccountAccessKeysPresent" => SummaryKeyType::AccountAccessKeysPresent,
             "AccountMFAEnabled" => SummaryKeyType::AccountMfaEnabled,
-            "AccountSigningCertificatesPresent" => {
-                SummaryKeyType::AccountSigningCertificatesPresent
-            }
+            "AccountSigningCertificatesPresent" => SummaryKeyType::AccountSigningCertificatesPresent,
             "AttachedPoliciesPerGroupQuota" => SummaryKeyType::AttachedPoliciesPerGroupQuota,
             "AttachedPoliciesPerRoleQuota" => SummaryKeyType::AttachedPoliciesPerRoleQuota,
             "AttachedPoliciesPerUserQuota" => SummaryKeyType::AttachedPoliciesPerUserQuota,
@@ -157,9 +149,7 @@ impl ::std::convert::From<&str> for SummaryKeyType {
             "Users" => SummaryKeyType::Users,
             "UsersQuota" => SummaryKeyType::UsersQuota,
             "VersionsPerPolicyQuota" => SummaryKeyType::VersionsPerPolicyQuota,
-            other => {
-                SummaryKeyType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SummaryKeyType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -177,9 +167,7 @@ impl SummaryKeyType {
             SummaryKeyType::AccessKeysPerUserQuota => "AccessKeysPerUserQuota",
             SummaryKeyType::AccountAccessKeysPresent => "AccountAccessKeysPresent",
             SummaryKeyType::AccountMfaEnabled => "AccountMFAEnabled",
-            SummaryKeyType::AccountSigningCertificatesPresent => {
-                "AccountSigningCertificatesPresent"
-            }
+            SummaryKeyType::AccountSigningCertificatesPresent => "AccountSigningCertificatesPresent",
             SummaryKeyType::AttachedPoliciesPerGroupQuota => "AttachedPoliciesPerGroupQuota",
             SummaryKeyType::AttachedPoliciesPerRoleQuota => "AttachedPoliciesPerRoleQuota",
             SummaryKeyType::AttachedPoliciesPerUserQuota => "AttachedPoliciesPerUserQuota",

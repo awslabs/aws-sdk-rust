@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`topic_rule_payload(TopicRulePayload)`](crate::operation::replace_topic_rule::builders::ReplaceTopicRuleFluentBuilder::topic_rule_payload) / [`set_topic_rule_payload(Option<TopicRulePayload>)`](crate::operation::replace_topic_rule::builders::ReplaceTopicRuleFluentBuilder::set_topic_rule_payload): <p>The rule payload.</p>
     /// - On success, responds with [`ReplaceTopicRuleOutput`](crate::operation::replace_topic_rule::ReplaceTopicRuleOutput)
     /// - On failure, responds with [`SdkError<ReplaceTopicRuleError>`](crate::operation::replace_topic_rule::ReplaceTopicRuleError)
-    pub fn replace_topic_rule(
-        &self,
-    ) -> crate::operation::replace_topic_rule::builders::ReplaceTopicRuleFluentBuilder {
-        crate::operation::replace_topic_rule::builders::ReplaceTopicRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn replace_topic_rule(&self) -> crate::operation::replace_topic_rule::builders::ReplaceTopicRuleFluentBuilder {
+        crate::operation::replace_topic_rule::builders::ReplaceTopicRuleFluentBuilder::new(self.handle.clone())
     }
 }

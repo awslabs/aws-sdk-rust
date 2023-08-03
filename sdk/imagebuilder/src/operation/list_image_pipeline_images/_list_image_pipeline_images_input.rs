@@ -44,18 +44,14 @@ impl ListImagePipelineImagesInput {
 }
 impl ListImagePipelineImagesInput {
     /// Creates a new builder-style object to manufacture [`ListImagePipelineImagesInput`](crate::operation::list_image_pipeline_images::ListImagePipelineImagesInput).
-    pub fn builder(
-    ) -> crate::operation::list_image_pipeline_images::builders::ListImagePipelineImagesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_image_pipeline_images::builders::ListImagePipelineImagesInputBuilder {
         crate::operation::list_image_pipeline_images::builders::ListImagePipelineImagesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListImagePipelineImagesInput`](crate::operation::list_image_pipeline_images::ListImagePipelineImagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImagePipelineImagesInputBuilder {
     pub(crate) image_pipeline_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -64,18 +60,12 @@ pub struct ListImagePipelineImagesInputBuilder {
 }
 impl ListImagePipelineImagesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
-    pub fn image_pipeline_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
-    pub fn set_image_pipeline_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_pipeline_arn = input;
         self
     }
@@ -103,10 +93,7 @@ impl ListImagePipelineImagesInputBuilder {
     /// <li> <p> <code>name</code> </p> </li>
     /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -153,13 +140,11 @@ impl ListImagePipelineImagesInputBuilder {
         crate::operation::list_image_pipeline_images::ListImagePipelineImagesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_image_pipeline_images::ListImagePipelineImagesInput {
-                image_pipeline_arn: self.image_pipeline_arn,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_image_pipeline_images::ListImagePipelineImagesInput {
+            image_pipeline_arn: self.image_pipeline_arn,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

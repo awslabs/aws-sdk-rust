@@ -10,10 +10,7 @@ impl ClassifyDocumentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::classify_document::ClassifyDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::classify_document::ClassifyDocumentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::classify_document::ClassifyDocumentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.classify_document();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl ClassifyDocumentFluentBuilder {
         }
     }
     /// Access the ClassifyDocument as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::classify_document::builders::ClassifyDocumentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::classify_document::builders::ClassifyDocumentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl ClassifyDocumentFluentBuilder {
             crate::operation::classify_document::ClassifyDocument,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::classify_document::ClassifyDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::classify_document::ClassifyDocumentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl ClassifyDocumentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl ClassifyDocumentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::classify_document::ClassifyDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::classify_document::ClassifyDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::classify_document::ClassifyDocumentError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl ClassifyDocumentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::classify_document::ClassifyDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::classify_document::ClassifyDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::classify_document::ClassifyDocumentError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl ClassifyDocumentFluentBuilder {
             crate::operation::classify_document::ClassifyDocument,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::classify_document::ClassifyDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::classify_document::ClassifyDocumentError>,
     > {
         self.customize_middleware().await
     }
@@ -182,17 +166,12 @@ impl ClassifyDocumentFluentBuilder {
         self
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn set_document_reader_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentReaderConfig>,
-    ) -> Self {
+    pub fn set_document_reader_config(mut self, input: ::std::option::Option<crate::types::DocumentReaderConfig>) -> Self {
         self.inner = self.inner.set_document_reader_config(input);
         self
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn get_document_reader_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentReaderConfig> {
+    pub fn get_document_reader_config(&self) -> &::std::option::Option<crate::types::DocumentReaderConfig> {
         self.inner.get_document_reader_config()
     }
 }

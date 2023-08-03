@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`results(Option<Vec<AnalyticsUtteranceResult>>)`](crate::operation::list_utterance_metrics::ListUtteranceMetricsOutput::results): <p>The results for the utterance metrics.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_utterance_metrics::ListUtteranceMetricsOutput::next_token): <p>If the response from the ListUtteranceMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>  <p>Use the returned token in the nextToken parameter of a ListUtteranceMetrics request to return the next page of results. For a complete set of results, call the ListUtteranceMetrics operation until the nextToken returned in the response is null.</p>
     /// - On failure, responds with [`SdkError<ListUtteranceMetricsError>`](crate::operation::list_utterance_metrics::ListUtteranceMetricsError)
-    pub fn list_utterance_metrics(
-        &self,
-    ) -> crate::operation::list_utterance_metrics::builders::ListUtteranceMetricsFluentBuilder {
-        crate::operation::list_utterance_metrics::builders::ListUtteranceMetricsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_utterance_metrics(&self) -> crate::operation::list_utterance_metrics::builders::ListUtteranceMetricsFluentBuilder {
+        crate::operation::list_utterance_metrics::builders::ListUtteranceMetricsFluentBuilder::new(self.handle.clone())
     }
 }

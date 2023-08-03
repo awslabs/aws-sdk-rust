@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeLoggingConfigurationOutput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput) with field(s):
     ///   - [`logging_configuration(Option<LoggingConfigurationMetadata>)`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput::logging_configuration): Metadata object containing information about the logging configuration of a workspace.
     /// - On failure, responds with [`SdkError<DescribeLoggingConfigurationError>`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError)
-    pub fn describe_logging_configuration(&self) -> crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder{
+    pub fn describe_logging_configuration(
+        &self,
+    ) -> crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder {
         crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

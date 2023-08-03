@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`stage_sessions(Option<Vec<StageSessionSummary>>)`](crate::operation::list_stage_sessions::ListStageSessionsOutput::stage_sessions): <p>List of matching stage sessions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stage_sessions::ListStageSessionsOutput::next_token): <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     /// - On failure, responds with [`SdkError<ListStageSessionsError>`](crate::operation::list_stage_sessions::ListStageSessionsError)
-    pub fn list_stage_sessions(
-        &self,
-    ) -> crate::operation::list_stage_sessions::builders::ListStageSessionsFluentBuilder {
-        crate::operation::list_stage_sessions::builders::ListStageSessionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_stage_sessions(&self) -> crate::operation::list_stage_sessions::builders::ListStageSessionsFluentBuilder {
+        crate::operation::list_stage_sessions::builders::ListStageSessionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,7 +6,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeAccountConfigurationOutput`](crate::operation::describe_account_configuration::DescribeAccountConfigurationOutput) with field(s):
     ///   - [`account_configuration(Option<AccountConfiguration>)`](crate::operation::describe_account_configuration::DescribeAccountConfigurationOutput::account_configuration): Placeholder documentation for AccountConfiguration
     /// - On failure, responds with [`SdkError<DescribeAccountConfigurationError>`](crate::operation::describe_account_configuration::DescribeAccountConfigurationError)
-    pub fn describe_account_configuration(&self) -> crate::operation::describe_account_configuration::builders::DescribeAccountConfigurationFluentBuilder{
+    pub fn describe_account_configuration(
+        &self,
+    ) -> crate::operation::describe_account_configuration::builders::DescribeAccountConfigurationFluentBuilder {
         crate::operation::describe_account_configuration::builders::DescribeAccountConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

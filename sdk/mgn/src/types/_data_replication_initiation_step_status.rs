@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DataReplicationInitiationStepStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for DataReplicationInitiationStepStatus {
             "NOT_STARTED" => DataReplicationInitiationStepStatus::NotStarted,
             "SKIPPED" => DataReplicationInitiationStepStatus::Skipped,
             "SUCCEEDED" => DataReplicationInitiationStepStatus::Succeeded,
-            other => DataReplicationInitiationStepStatus::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => DataReplicationInitiationStepStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl DataReplicationInitiationStepStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED",
-            "IN_PROGRESS",
-            "NOT_STARTED",
-            "SKIPPED",
-            "SUCCEEDED",
-        ]
+        &["FAILED", "IN_PROGRESS", "NOT_STARTED", "SKIPPED", "SUCCEEDED"]
     }
 }
 impl ::std::convert::AsRef<str> for DataReplicationInitiationStepStatus {

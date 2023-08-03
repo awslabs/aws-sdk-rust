@@ -19,9 +19,7 @@ impl UpdateFindingsOutput {
 
 /// A builder for [`UpdateFindingsOutput`](crate::operation::update_findings::UpdateFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFindingsOutputBuilder {
     _request_id: Option<String>,
 }

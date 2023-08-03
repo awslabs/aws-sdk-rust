@@ -23,17 +23,14 @@ impl ::aws_http::request_id::RequestId for CreateDbSnapshotOutput {
 }
 impl CreateDbSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbSnapshotOutput`](crate::operation::create_db_snapshot::CreateDbSnapshotOutput).
-    pub fn builder() -> crate::operation::create_db_snapshot::builders::CreateDbSnapshotOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_db_snapshot::builders::CreateDbSnapshotOutputBuilder {
         crate::operation::create_db_snapshot::builders::CreateDbSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDbSnapshotOutput`](crate::operation::create_db_snapshot::CreateDbSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDbSnapshotOutputBuilder {
     pub(crate) db_snapshot: ::std::option::Option<crate::types::DbSnapshot>,
     _request_id: Option<String>,
@@ -47,10 +44,7 @@ impl CreateDbSnapshotOutputBuilder {
     }
     /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
-    pub fn set_db_snapshot(
-        mut self,
-        input: ::std::option::Option<crate::types::DbSnapshot>,
-    ) -> Self {
+    pub fn set_db_snapshot(mut self, input: ::std::option::Option<crate::types::DbSnapshot>) -> Self {
         self.db_snapshot = input;
         self
     }

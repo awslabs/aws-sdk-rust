@@ -37,18 +37,14 @@ impl ListQueryLoggingConfigsInput {
 }
 impl ListQueryLoggingConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListQueryLoggingConfigsInput`](crate::operation::list_query_logging_configs::ListQueryLoggingConfigsInput).
-    pub fn builder(
-    ) -> crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsInputBuilder {
         crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListQueryLoggingConfigsInput`](crate::operation::list_query_logging_configs::ListQueryLoggingConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueryLoggingConfigsInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,19 +53,13 @@ pub struct ListQueryLoggingConfigsInputBuilder {
 impl ListQueryLoggingConfigsInputBuilder {
     /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
     /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations that are associated with the current Amazon Web Services account.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
     /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations that are associated with the current Amazon Web Services account.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
@@ -122,12 +112,10 @@ impl ListQueryLoggingConfigsInputBuilder {
         crate::operation::list_query_logging_configs::ListQueryLoggingConfigsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_query_logging_configs::ListQueryLoggingConfigsInput {
-                hosted_zone_id: self.hosted_zone_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_query_logging_configs::ListQueryLoggingConfigsInput {
+            hosted_zone_id: self.hosted_zone_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

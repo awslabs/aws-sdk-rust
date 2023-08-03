@@ -15,16 +15,14 @@ impl StopInferenceRecommendationsJobInput {
 }
 impl StopInferenceRecommendationsJobInput {
     /// Creates a new builder-style object to manufacture [`StopInferenceRecommendationsJobInput`](crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput).
-    pub fn builder() -> crate::operation::stop_inference_recommendations_job::builders::StopInferenceRecommendationsJobInputBuilder{
+    pub fn builder() -> crate::operation::stop_inference_recommendations_job::builders::StopInferenceRecommendationsJobInputBuilder {
         crate::operation::stop_inference_recommendations_job::builders::StopInferenceRecommendationsJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopInferenceRecommendationsJobInput`](crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopInferenceRecommendationsJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,7 @@ impl StopInferenceRecommendationsJobInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(
-            crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput {
-                job_name: self.job_name
-                ,
-            }
+            crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput { job_name: self.job_name },
         )
     }
 }

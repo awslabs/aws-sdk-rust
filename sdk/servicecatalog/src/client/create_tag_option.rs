@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTagOptionOutput`](crate::operation::create_tag_option::CreateTagOptionOutput) with field(s):
     ///   - [`tag_option_detail(Option<TagOptionDetail>)`](crate::operation::create_tag_option::CreateTagOptionOutput::tag_option_detail): <p>Information about the TagOption.</p>
     /// - On failure, responds with [`SdkError<CreateTagOptionError>`](crate::operation::create_tag_option::CreateTagOptionError)
-    pub fn create_tag_option(
-        &self,
-    ) -> crate::operation::create_tag_option::builders::CreateTagOptionFluentBuilder {
-        crate::operation::create_tag_option::builders::CreateTagOptionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_tag_option(&self) -> crate::operation::create_tag_option::builders::CreateTagOptionFluentBuilder {
+        crate::operation::create_tag_option::builders::CreateTagOptionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,16 +44,14 @@ impl UpdateFirewallDescriptionInput {
 }
 impl UpdateFirewallDescriptionInput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallDescriptionInput`](crate::operation::update_firewall_description::UpdateFirewallDescriptionInput).
-    pub fn builder() -> crate::operation::update_firewall_description::builders::UpdateFirewallDescriptionInputBuilder{
+    pub fn builder() -> crate::operation::update_firewall_description::builders::UpdateFirewallDescriptionInputBuilder {
         crate::operation::update_firewall_description::builders::UpdateFirewallDescriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFirewallDescriptionInput`](crate::operation::update_firewall_description::UpdateFirewallDescriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFirewallDescriptionInputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
@@ -100,19 +98,13 @@ impl UpdateFirewallDescriptionInputBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_name = input;
         self
     }
@@ -142,13 +134,11 @@ impl UpdateFirewallDescriptionInputBuilder {
         crate::operation::update_firewall_description::UpdateFirewallDescriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_firewall_description::UpdateFirewallDescriptionInput {
-                update_token: self.update_token,
-                firewall_arn: self.firewall_arn,
-                firewall_name: self.firewall_name,
-                description: self.description,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_firewall_description::UpdateFirewallDescriptionInput {
+            update_token: self.update_token,
+            firewall_arn: self.firewall_arn,
+            firewall_name: self.firewall_name,
+            description: self.description,
+        })
     }
 }

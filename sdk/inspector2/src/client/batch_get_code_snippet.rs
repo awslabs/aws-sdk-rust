@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`code_snippet_results(Option<Vec<CodeSnippetResult>>)`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetOutput::code_snippet_results): <p>The retrieved code snippets associated with the provided finding ARNs.</p>
     ///   - [`errors(Option<Vec<CodeSnippetError>>)`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetOutput::errors): <p>Any errors Amazon Inspector encountered while trying to retrieve the requested code snippets.</p>
     /// - On failure, responds with [`SdkError<BatchGetCodeSnippetError>`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError)
-    pub fn batch_get_code_snippet(
-        &self,
-    ) -> crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetFluentBuilder {
-        crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_code_snippet(&self) -> crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetFluentBuilder {
+        crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetFluentBuilder::new(self.handle.clone())
     }
 }

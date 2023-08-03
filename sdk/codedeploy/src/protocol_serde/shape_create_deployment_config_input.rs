@@ -9,19 +9,13 @@ pub fn ser_create_deployment_config_input(
     if let Some(var_2) = &input.minimum_healthy_hosts {
         #[allow(unused_mut)]
         let mut object_3 = object.key("minimumHealthyHosts").start_object();
-        crate::protocol_serde::shape_minimum_healthy_hosts::ser_minimum_healthy_hosts(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_minimum_healthy_hosts::ser_minimum_healthy_hosts(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.traffic_routing_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("trafficRoutingConfig").start_object();
-        crate::protocol_serde::shape_traffic_routing_config::ser_traffic_routing_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_traffic_routing_config::ser_traffic_routing_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.compute_platform {

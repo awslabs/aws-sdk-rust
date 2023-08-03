@@ -50,9 +50,7 @@ impl ListChangeSetsInput {
 
 /// A builder for [`ListChangeSetsInput`](crate::operation::list_change_sets::ListChangeSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChangeSetsInputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) filter_list: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -87,10 +85,7 @@ impl ListChangeSetsInputBuilder {
         self
     }
     /// <p>An array of filter objects.</p>
-    pub fn set_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filter_list = input;
         self
     }
@@ -143,10 +138,7 @@ impl ListChangeSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListChangeSetsInput`](crate::operation::list_change_sets::ListChangeSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_change_sets::ListChangeSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_change_sets::ListChangeSetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_change_sets::ListChangeSetsInput {
             catalog: self.catalog,
             filter_list: self.filter_list,

@@ -22,9 +22,7 @@ impl GetUsageTotalsInput {
 
 /// A builder for [`GetUsageTotalsInput`](crate::operation::get_usage_totals::GetUsageTotalsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsageTotalsInputBuilder {
     pub(crate) time_range: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetUsageTotalsInputBuilder {
     /// Consumes the builder and constructs a [`GetUsageTotalsInput`](crate::operation::get_usage_totals::GetUsageTotalsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_usage_totals::GetUsageTotalsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_usage_totals::GetUsageTotalsInput {
-            time_range: self.time_range,
-        })
+    ) -> ::std::result::Result<crate::operation::get_usage_totals::GetUsageTotalsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_usage_totals::GetUsageTotalsInput { time_range: self.time_range })
     }
 }

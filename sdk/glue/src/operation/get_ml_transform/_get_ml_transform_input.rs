@@ -22,9 +22,7 @@ impl GetMlTransformInput {
 
 /// A builder for [`GetMlTransformInput`](crate::operation::get_ml_transform::GetMlTransformInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMlTransformInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl GetMlTransformInputBuilder {
     /// Consumes the builder and constructs a [`GetMlTransformInput`](crate::operation::get_ml_transform::GetMlTransformInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ml_transform::GetMlTransformInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_ml_transform::GetMlTransformInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ml_transform::GetMlTransformInput {
             transform_id: self.transform_id,
         })

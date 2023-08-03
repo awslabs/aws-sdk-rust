@@ -12,10 +12,7 @@ pub fn ser_captions(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_caption_source::ser_caption_source(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_caption_source::ser_caption_source(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -27,10 +24,7 @@ pub fn ser_captions(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_caption_format::ser_caption_format(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_caption_format::ser_caption_format(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }
@@ -43,12 +37,7 @@ pub(crate) fn de_captions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Captions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -58,45 +47,34 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "MergePolicy" => {
-                                builder = builder.set_merge_policy(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "MergePolicy" => {
+                            builder = builder.set_merge_policy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "CaptionSources" => {
-                                builder = builder.set_caption_sources(
-                                    crate::protocol_serde::shape_caption_sources::de_caption_sources(tokens)?
-                                );
-                            }
-                            "CaptionFormats" => {
-                                builder = builder.set_caption_formats(
-                                    crate::protocol_serde::shape_caption_formats::de_caption_formats(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "CaptionSources" => {
+                            builder = builder.set_caption_sources(crate::protocol_serde::shape_caption_sources::de_caption_sources(tokens)?);
+                        }
+                        "CaptionFormats" => {
+                            builder = builder.set_caption_formats(crate::protocol_serde::shape_caption_formats::de_caption_formats(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -15,12 +15,10 @@ pub struct AggregatedUtterancesSummary {
     pub missed_count: ::std::option::Option<i32>,
     /// <p>The date and time that the utterance was first recorded in the time window for aggregation. An utterance may have been sent to Amazon Lex before that time, but only utterances within the time window are counted.</p>
     #[doc(hidden)]
-    pub utterance_first_recorded_in_aggregation_duration:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub utterance_first_recorded_in_aggregation_duration: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last date and time that an utterance was recorded in the time window for aggregation. An utterance may be sent to Amazon Lex after that time, but only utterances within the time window are counted.</p>
     #[doc(hidden)]
-    pub utterance_last_recorded_in_aggregation_duration:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub utterance_last_recorded_in_aggregation_duration: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Aggregated utterance data may contain utterances from versions of your bot that have since been deleted. When the aggregated contains this kind of data, this field is set to true.</p>
     #[doc(hidden)]
     pub contains_data_from_deleted_resources: ::std::option::Option<bool>,
@@ -39,18 +37,12 @@ impl AggregatedUtterancesSummary {
         self.missed_count
     }
     /// <p>The date and time that the utterance was first recorded in the time window for aggregation. An utterance may have been sent to Amazon Lex before that time, but only utterances within the time window are counted.</p>
-    pub fn utterance_first_recorded_in_aggregation_duration(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.utterance_first_recorded_in_aggregation_duration
-            .as_ref()
+    pub fn utterance_first_recorded_in_aggregation_duration(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.utterance_first_recorded_in_aggregation_duration.as_ref()
     }
     /// <p>The last date and time that an utterance was recorded in the time window for aggregation. An utterance may be sent to Amazon Lex after that time, but only utterances within the time window are counted.</p>
-    pub fn utterance_last_recorded_in_aggregation_duration(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.utterance_last_recorded_in_aggregation_duration
-            .as_ref()
+    pub fn utterance_last_recorded_in_aggregation_duration(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.utterance_last_recorded_in_aggregation_duration.as_ref()
     }
     /// <p>Aggregated utterance data may contain utterances from versions of your bot that have since been deleted. When the aggregated contains this kind of data, this field is set to true.</p>
     pub fn contains_data_from_deleted_resources(&self) -> ::std::option::Option<bool> {
@@ -66,17 +58,13 @@ impl AggregatedUtterancesSummary {
 
 /// A builder for [`AggregatedUtterancesSummary`](crate::types::AggregatedUtterancesSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregatedUtterancesSummaryBuilder {
     pub(crate) utterance: ::std::option::Option<::std::string::String>,
     pub(crate) hit_count: ::std::option::Option<i32>,
     pub(crate) missed_count: ::std::option::Option<i32>,
-    pub(crate) utterance_first_recorded_in_aggregation_duration:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) utterance_last_recorded_in_aggregation_duration:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) utterance_first_recorded_in_aggregation_duration: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) utterance_last_recorded_in_aggregation_duration: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) contains_data_from_deleted_resources: ::std::option::Option<bool>,
 }
 impl AggregatedUtterancesSummaryBuilder {
@@ -123,47 +111,31 @@ impl AggregatedUtterancesSummaryBuilder {
         &self.missed_count
     }
     /// <p>The date and time that the utterance was first recorded in the time window for aggregation. An utterance may have been sent to Amazon Lex before that time, but only utterances within the time window are counted.</p>
-    pub fn utterance_first_recorded_in_aggregation_duration(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn utterance_first_recorded_in_aggregation_duration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.utterance_first_recorded_in_aggregation_duration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the utterance was first recorded in the time window for aggregation. An utterance may have been sent to Amazon Lex before that time, but only utterances within the time window are counted.</p>
-    pub fn set_utterance_first_recorded_in_aggregation_duration(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_utterance_first_recorded_in_aggregation_duration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.utterance_first_recorded_in_aggregation_duration = input;
         self
     }
     /// <p>The date and time that the utterance was first recorded in the time window for aggregation. An utterance may have been sent to Amazon Lex before that time, but only utterances within the time window are counted.</p>
-    pub fn get_utterance_first_recorded_in_aggregation_duration(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_utterance_first_recorded_in_aggregation_duration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.utterance_first_recorded_in_aggregation_duration
     }
     /// <p>The last date and time that an utterance was recorded in the time window for aggregation. An utterance may be sent to Amazon Lex after that time, but only utterances within the time window are counted.</p>
-    pub fn utterance_last_recorded_in_aggregation_duration(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn utterance_last_recorded_in_aggregation_duration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.utterance_last_recorded_in_aggregation_duration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last date and time that an utterance was recorded in the time window for aggregation. An utterance may be sent to Amazon Lex after that time, but only utterances within the time window are counted.</p>
-    pub fn set_utterance_last_recorded_in_aggregation_duration(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_utterance_last_recorded_in_aggregation_duration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.utterance_last_recorded_in_aggregation_duration = input;
         self
     }
     /// <p>The last date and time that an utterance was recorded in the time window for aggregation. An utterance may be sent to Amazon Lex after that time, but only utterances within the time window are counted.</p>
-    pub fn get_utterance_last_recorded_in_aggregation_duration(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_utterance_last_recorded_in_aggregation_duration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.utterance_last_recorded_in_aggregation_duration
     }
     /// <p>Aggregated utterance data may contain utterances from versions of your bot that have since been deleted. When the aggregated contains this kind of data, this field is set to true.</p>
@@ -172,10 +144,7 @@ impl AggregatedUtterancesSummaryBuilder {
         self
     }
     /// <p>Aggregated utterance data may contain utterances from versions of your bot that have since been deleted. When the aggregated contains this kind of data, this field is set to true.</p>
-    pub fn set_contains_data_from_deleted_resources(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_contains_data_from_deleted_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.contains_data_from_deleted_resources = input;
         self
     }
@@ -189,10 +158,8 @@ impl AggregatedUtterancesSummaryBuilder {
             utterance: self.utterance,
             hit_count: self.hit_count,
             missed_count: self.missed_count,
-            utterance_first_recorded_in_aggregation_duration: self
-                .utterance_first_recorded_in_aggregation_duration,
-            utterance_last_recorded_in_aggregation_duration: self
-                .utterance_last_recorded_in_aggregation_duration,
+            utterance_first_recorded_in_aggregation_duration: self.utterance_first_recorded_in_aggregation_duration,
+            utterance_last_recorded_in_aggregation_duration: self.utterance_last_recorded_in_aggregation_duration,
             contains_data_from_deleted_resources: self.contains_data_from_deleted_resources,
         }
     }

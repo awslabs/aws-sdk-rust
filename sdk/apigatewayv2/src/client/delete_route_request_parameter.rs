@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`route_id(impl ::std::convert::Into<String>)`](crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterFluentBuilder::route_id) / [`set_route_id(Option<String>)`](crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterFluentBuilder::set_route_id): <p>The route ID.</p>
     /// - On success, responds with [`DeleteRouteRequestParameterOutput`](crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterOutput)
     /// - On failure, responds with [`SdkError<DeleteRouteRequestParameterError>`](crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterError)
-    pub fn delete_route_request_parameter(&self) -> crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterFluentBuilder{
+    pub fn delete_route_request_parameter(
+        &self,
+    ) -> crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterFluentBuilder {
         crate::operation::delete_route_request_parameter::builders::DeleteRouteRequestParameterFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,9 +10,7 @@ pub struct VpnTunnelLogOptions {
 }
 impl VpnTunnelLogOptions {
     /// <p>Options for sending VPN tunnel logs to CloudWatch.</p>
-    pub fn cloud_watch_log_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLogOptions> {
+    pub fn cloud_watch_log_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLogOptions> {
         self.cloud_watch_log_options.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl VpnTunnelLogOptions {
 
 /// A builder for [`VpnTunnelLogOptions`](crate::types::VpnTunnelLogOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpnTunnelLogOptionsBuilder {
     pub(crate) cloud_watch_log_options: ::std::option::Option<crate::types::CloudWatchLogOptions>,
 }
@@ -38,17 +34,12 @@ impl VpnTunnelLogOptionsBuilder {
         self
     }
     /// <p>Options for sending VPN tunnel logs to CloudWatch.</p>
-    pub fn set_cloud_watch_log_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogOptions>,
-    ) -> Self {
+    pub fn set_cloud_watch_log_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLogOptions>) -> Self {
         self.cloud_watch_log_options = input;
         self
     }
     /// <p>Options for sending VPN tunnel logs to CloudWatch.</p>
-    pub fn get_cloud_watch_log_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLogOptions> {
+    pub fn get_cloud_watch_log_options(&self) -> &::std::option::Option<crate::types::CloudWatchLogOptions> {
         &self.cloud_watch_log_options
     }
     /// Consumes the builder and constructs a [`VpnTunnelLogOptions`](crate::types::VpnTunnelLogOptions).

@@ -8,9 +8,7 @@ pub struct UpdateNetworkResourceMetadataOutput {
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated resource metadata.</p>
     #[doc(hidden)]
-    pub metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateNetworkResourceMetadataOutput {
@@ -19,11 +17,7 @@ impl UpdateNetworkResourceMetadataOutput {
         self.resource_arn.as_deref()
     }
     /// <p>The updated resource metadata.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
 }
@@ -34,21 +28,17 @@ impl ::aws_http::request_id::RequestId for UpdateNetworkResourceMetadataOutput {
 }
 impl UpdateNetworkResourceMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkResourceMetadataOutput`](crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataOutput).
-    pub fn builder() -> crate::operation::update_network_resource_metadata::builders::UpdateNetworkResourceMetadataOutputBuilder{
+    pub fn builder() -> crate::operation::update_network_resource_metadata::builders::UpdateNetworkResourceMetadataOutputBuilder {
         crate::operation::update_network_resource_metadata::builders::UpdateNetworkResourceMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNetworkResourceMetadataOutput`](crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNetworkResourceMetadataOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateNetworkResourceMetadataOutputBuilder {
@@ -71,32 +61,19 @@ impl UpdateNetworkResourceMetadataOutputBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>The updated resource metadata.</p>
-    pub fn metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The updated resource metadata.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The updated resource metadata.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -109,10 +86,7 @@ impl UpdateNetworkResourceMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateNetworkResourceMetadataOutput`](crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataOutput
-    {
+    pub fn build(self) -> crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataOutput {
         crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataOutput {
             resource_arn: self.resource_arn,
             metadata: self.metadata,

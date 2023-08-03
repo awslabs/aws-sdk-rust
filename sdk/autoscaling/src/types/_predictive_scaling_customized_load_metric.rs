@@ -23,12 +23,9 @@ impl PredictiveScalingCustomizedLoadMetric {
 
 /// A builder for [`PredictiveScalingCustomizedLoadMetric`](crate::types::PredictiveScalingCustomizedLoadMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictiveScalingCustomizedLoadMetricBuilder {
-    pub(crate) metric_data_queries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
+    pub(crate) metric_data_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
 }
 impl PredictiveScalingCustomizedLoadMetricBuilder {
     /// Appends an item to `metric_data_queries`.
@@ -43,17 +40,12 @@ impl PredictiveScalingCustomizedLoadMetricBuilder {
         self
     }
     /// <p>One or more metric data queries to provide the data points for a load metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
-    pub fn set_metric_data_queries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
-    ) -> Self {
+    pub fn set_metric_data_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>) -> Self {
         self.metric_data_queries = input;
         self
     }
     /// <p>One or more metric data queries to provide the data points for a load metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
-    pub fn get_metric_data_queries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>> {
+    pub fn get_metric_data_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>> {
         &self.metric_data_queries
     }
     /// Consumes the builder and constructs a [`PredictiveScalingCustomizedLoadMetric`](crate::types::PredictiveScalingCustomizedLoadMetric).

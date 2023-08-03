@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateSubnetGroupOutput {
 }
 impl CreateSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubnetGroupOutput`](crate::operation::create_subnet_group::CreateSubnetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_subnet_group::builders::CreateSubnetGroupOutputBuilder {
+    pub fn builder() -> crate::operation::create_subnet_group::builders::CreateSubnetGroupOutputBuilder {
         crate::operation::create_subnet_group::builders::CreateSubnetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSubnetGroupOutput`](crate::operation::create_subnet_group::CreateSubnetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSubnetGroupOutputBuilder {
     pub(crate) subnet_group: ::std::option::Option<crate::types::SubnetGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateSubnetGroupOutputBuilder {
         self
     }
     /// <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
-    pub fn set_subnet_group(
-        mut self,
-        input: ::std::option::Option<crate::types::SubnetGroup>,
-    ) -> Self {
+    pub fn set_subnet_group(mut self, input: ::std::option::Option<crate::types::SubnetGroup>) -> Self {
         self.subnet_group = input;
         self
     }

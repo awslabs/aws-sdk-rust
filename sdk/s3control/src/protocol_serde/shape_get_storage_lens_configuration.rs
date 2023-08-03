@@ -2,8 +2,7 @@
 pub fn ser_get_storage_lens_configuration_headers(
     input: &crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.account_id {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_get_storage_lens_configuration_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "account_id",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-account-id", header_value);
@@ -33,14 +29,11 @@ pub fn de_get_storage_lens_configuration_http_error(
     crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(
-        crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError::generic(
-            generic,
-        ),
-    )
+    Err(crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -56,11 +49,9 @@ pub fn de_get_storage_lens_configuration_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::get_storage_lens_configuration::builders::GetStorageLensConfigurationOutputBuilder::default();
         output = output.set_storage_lens_configuration(
-            crate::protocol_serde::shape_get_storage_lens_configuration_output::de_storage_lens_configuration_payload(_response_body)?
+            crate::protocol_serde::shape_get_storage_lens_configuration_output::de_storage_lens_configuration_payload(_response_body)?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

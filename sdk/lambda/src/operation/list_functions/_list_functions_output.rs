@@ -36,13 +36,10 @@ impl ListFunctionsOutput {
 
 /// A builder for [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFunctionsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) functions:
-        ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
+    pub(crate) functions: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
     _request_id: Option<String>,
 }
 impl ListFunctionsOutputBuilder {
@@ -72,17 +69,12 @@ impl ListFunctionsOutputBuilder {
         self
     }
     /// <p>A list of Lambda functions.</p>
-    pub fn set_functions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
-    ) -> Self {
+    pub fn set_functions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>) -> Self {
         self.functions = input;
         self
     }
     /// <p>A list of Lambda functions.</p>
-    pub fn get_functions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>> {
+    pub fn get_functions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>> {
         &self.functions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

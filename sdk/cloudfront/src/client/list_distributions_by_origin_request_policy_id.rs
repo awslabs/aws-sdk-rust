@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`ListDistributionsByOriginRequestPolicyIdOutput`](crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdOutput) with field(s):
     ///   - [`distribution_id_list(Option<DistributionIdList>)`](crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdOutput::distribution_id_list): <p>A list of distribution IDs.</p>
     /// - On failure, responds with [`SdkError<ListDistributionsByOriginRequestPolicyIdError>`](crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdError)
-    pub fn list_distributions_by_origin_request_policy_id(&self) -> crate::operation::list_distributions_by_origin_request_policy_id::builders::ListDistributionsByOriginRequestPolicyIdFluentBuilder{
-        crate::operation::list_distributions_by_origin_request_policy_id::builders::ListDistributionsByOriginRequestPolicyIdFluentBuilder::new(self.handle.clone())
+    pub fn list_distributions_by_origin_request_policy_id(
+        &self,
+    ) -> crate::operation::list_distributions_by_origin_request_policy_id::builders::ListDistributionsByOriginRequestPolicyIdFluentBuilder {
+        crate::operation::list_distributions_by_origin_request_policy_id::builders::ListDistributionsByOriginRequestPolicyIdFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

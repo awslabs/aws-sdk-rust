@@ -33,10 +33,7 @@ pub fn ser_create_location_s3_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }

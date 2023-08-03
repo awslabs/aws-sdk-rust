@@ -129,18 +129,14 @@ impl DescribeScalableTargetsInput {
 }
 impl DescribeScalableTargetsInput {
     /// Creates a new builder-style object to manufacture [`DescribeScalableTargetsInput`](crate::operation::describe_scalable_targets::DescribeScalableTargetsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsInputBuilder {
         crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScalableTargetsInput`](crate::operation::describe_scalable_targets::DescribeScalableTargetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalableTargetsInputBuilder {
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -155,10 +151,7 @@ impl DescribeScalableTargetsInputBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.service_namespace = input;
         self
     }
@@ -216,10 +209,7 @@ impl DescribeScalableTargetsInputBuilder {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_ids = input;
         self
     }
@@ -243,9 +233,7 @@ impl DescribeScalableTargetsInputBuilder {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn get_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_ids
     }
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property. If you specify a scalable dimension, you must also specify a resource ID.</p>
@@ -300,10 +288,7 @@ impl DescribeScalableTargetsInputBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
         self
     }
@@ -331,9 +316,7 @@ impl DescribeScalableTargetsInputBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
     }
     /// <p>The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
@@ -374,14 +357,12 @@ impl DescribeScalableTargetsInputBuilder {
         crate::operation::describe_scalable_targets::DescribeScalableTargetsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_scalable_targets::DescribeScalableTargetsInput {
-                service_namespace: self.service_namespace,
-                resource_ids: self.resource_ids,
-                scalable_dimension: self.scalable_dimension,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_scalable_targets::DescribeScalableTargetsInput {
+            service_namespace: self.service_namespace,
+            resource_ids: self.resource_ids,
+            scalable_dimension: self.scalable_dimension,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

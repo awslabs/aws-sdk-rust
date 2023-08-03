@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateOrganizationConfigurationOutput
 }
 impl UpdateOrganizationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOrganizationConfigurationOutput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationOutput).
-    pub fn builder() -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationOutputBuilder {
         crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateOrganizationConfigurationOutput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOrganizationConfigurationOutputBuilder {
     pub(crate) auto_enable: ::std::option::Option<crate::types::AutoEnable>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateOrganizationConfigurationOutputBuilder {
         self
     }
     /// <p>The updated status of scan types automatically enabled for new members of your Amazon Inspector organization.</p>
-    pub fn set_auto_enable(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoEnable>,
-    ) -> Self {
+    pub fn set_auto_enable(mut self, input: ::std::option::Option<crate::types::AutoEnable>) -> Self {
         self.auto_enable = input;
         self
     }
@@ -63,10 +58,7 @@ impl UpdateOrganizationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationOutput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_organization_configuration::UpdateOrganizationConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::update_organization_configuration::UpdateOrganizationConfigurationOutput {
         crate::operation::update_organization_configuration::UpdateOrganizationConfigurationOutput {
             auto_enable: self.auto_enable,
             _request_id: self._request_id,

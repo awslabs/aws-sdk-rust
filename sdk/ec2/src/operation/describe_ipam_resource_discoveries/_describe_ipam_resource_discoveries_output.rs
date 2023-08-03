@@ -5,8 +5,7 @@
 pub struct DescribeIpamResourceDiscoveriesOutput {
     /// <p>The resource discoveries.</p>
     #[doc(hidden)]
-    pub ipam_resource_discoveries:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceDiscovery>>,
+    pub ipam_resource_discoveries: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceDiscovery>>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeIpamResourceDiscoveriesOutput {
 }
 impl DescribeIpamResourceDiscoveriesOutput {
     /// <p>The resource discoveries.</p>
-    pub fn ipam_resource_discoveries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IpamResourceDiscovery]> {
+    pub fn ipam_resource_discoveries(&self) -> ::std::option::Option<&[crate::types::IpamResourceDiscovery]> {
         self.ipam_resource_discoveries.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeIpamResourceDiscoveriesOutput
 }
 impl DescribeIpamResourceDiscoveriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIpamResourceDiscoveriesOutput`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput).
-    pub fn builder() -> crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesOutputBuilder {
         crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIpamResourceDiscoveriesOutput`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpamResourceDiscoveriesOutputBuilder {
-    pub(crate) ipam_resource_discoveries:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceDiscovery>>,
+    pub(crate) ipam_resource_discoveries: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceDiscovery>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeIpamResourceDiscoveriesOutputBuilder {
         self
     }
     /// <p>The resource discoveries.</p>
-    pub fn set_ipam_resource_discoveries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceDiscovery>>,
-    ) -> Self {
+    pub fn set_ipam_resource_discoveries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceDiscovery>>) -> Self {
         self.ipam_resource_discoveries = input;
         self
     }
     /// <p>The resource discoveries.</p>
-    pub fn get_ipam_resource_discoveries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamResourceDiscovery>> {
+    pub fn get_ipam_resource_discoveries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamResourceDiscovery>> {
         &self.ipam_resource_discoveries
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -97,15 +86,10 @@ impl DescribeIpamResourceDiscoveriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeIpamResourceDiscoveriesOutput`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput {
         crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesOutput {
-            ipam_resource_discoveries: self.ipam_resource_discoveries
-            ,
-            next_token: self.next_token
-            ,
+            ipam_resource_discoveries: self.ipam_resource_discoveries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

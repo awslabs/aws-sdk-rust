@@ -22,16 +22,14 @@ impl DisableIpamOrganizationAdminAccountInput {
 }
 impl DisableIpamOrganizationAdminAccountInput {
     /// Creates a new builder-style object to manufacture [`DisableIpamOrganizationAdminAccountInput`](crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountInput).
-    pub fn builder() -> crate::operation::disable_ipam_organization_admin_account::builders::DisableIpamOrganizationAdminAccountInputBuilder{
+    pub fn builder() -> crate::operation::disable_ipam_organization_admin_account::builders::DisableIpamOrganizationAdminAccountInputBuilder {
         crate::operation::disable_ipam_organization_admin_account::builders::DisableIpamOrganizationAdminAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableIpamOrganizationAdminAccountInput`](crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableIpamOrganizationAdminAccountInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) delegated_admin_account_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DisableIpamOrganizationAdminAccountInputBuilder {
         &self.dry_run
     }
     /// <p>The Organizations member account ID that you want to disable as IPAM account.</p>
-    pub fn delegated_admin_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delegated_admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegated_admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Organizations member account ID that you want to disable as IPAM account.</p>
-    pub fn set_delegated_admin_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delegated_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delegated_admin_account_id = input;
         self
     }
@@ -72,14 +64,17 @@ impl DisableIpamOrganizationAdminAccountInputBuilder {
         &self.delegated_admin_account_id
     }
     /// Consumes the builder and constructs a [`DisableIpamOrganizationAdminAccountInput`](crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountInput {
-                dry_run: self.dry_run
-                ,
-                delegated_admin_account_id: self.delegated_admin_account_id
-                ,
-            }
+                dry_run: self.dry_run,
+                delegated_admin_account_id: self.delegated_admin_account_id,
+            },
         )
     }
 }

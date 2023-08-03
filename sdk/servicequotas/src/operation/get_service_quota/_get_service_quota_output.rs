@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetServiceQuotaOutput {
 }
 impl GetServiceQuotaOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceQuotaOutput`](crate::operation::get_service_quota::GetServiceQuotaOutput).
-    pub fn builder() -> crate::operation::get_service_quota::builders::GetServiceQuotaOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_service_quota::builders::GetServiceQuotaOutputBuilder {
         crate::operation::get_service_quota::builders::GetServiceQuotaOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceQuotaOutput`](crate::operation::get_service_quota::GetServiceQuotaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceQuotaOutputBuilder {
     pub(crate) quota: ::std::option::Option<crate::types::ServiceQuota>,
     _request_id: Option<String>,

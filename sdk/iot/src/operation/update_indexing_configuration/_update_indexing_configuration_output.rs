@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateIndexingConfigurationOutput {
 }
 impl UpdateIndexingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIndexingConfigurationOutput`](crate::operation::update_indexing_configuration::UpdateIndexingConfigurationOutput).
-    pub fn builder() -> crate::operation::update_indexing_configuration::builders::UpdateIndexingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_indexing_configuration::builders::UpdateIndexingConfigurationOutputBuilder {
         crate::operation::update_indexing_configuration::builders::UpdateIndexingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIndexingConfigurationOutput`](crate::operation::update_indexing_configuration::UpdateIndexingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIndexingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateIndexingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateIndexingConfigurationOutput`](crate::operation::update_indexing_configuration::UpdateIndexingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_indexing_configuration::UpdateIndexingConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_indexing_configuration::UpdateIndexingConfigurationOutput {
         crate::operation::update_indexing_configuration::UpdateIndexingConfigurationOutput {
             _request_id: self._request_id,
         }

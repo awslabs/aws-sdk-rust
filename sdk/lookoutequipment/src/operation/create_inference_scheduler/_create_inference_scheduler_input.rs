@@ -22,8 +22,7 @@ pub struct CreateInferenceSchedulerInput {
     pub data_input_configuration: ::std::option::Option<crate::types::InferenceInputConfiguration>,
     /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
     #[doc(hidden)]
-    pub data_output_configuration:
-        ::std::option::Option<crate::types::InferenceOutputConfiguration>,
+    pub data_output_configuration: ::std::option::Option<crate::types::InferenceOutputConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -53,21 +52,15 @@ impl CreateInferenceSchedulerInput {
     }
     /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
-    pub fn data_upload_frequency(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataUploadFrequency> {
+    pub fn data_upload_frequency(&self) -> ::std::option::Option<&crate::types::DataUploadFrequency> {
         self.data_upload_frequency.as_ref()
     }
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    pub fn data_input_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InferenceInputConfiguration> {
+    pub fn data_input_configuration(&self) -> ::std::option::Option<&crate::types::InferenceInputConfiguration> {
         self.data_input_configuration.as_ref()
     }
     /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
-    pub fn data_output_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InferenceOutputConfiguration> {
+    pub fn data_output_configuration(&self) -> ::std::option::Option<&crate::types::InferenceOutputConfiguration> {
         self.data_output_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
@@ -89,27 +82,21 @@ impl CreateInferenceSchedulerInput {
 }
 impl CreateInferenceSchedulerInput {
     /// Creates a new builder-style object to manufacture [`CreateInferenceSchedulerInput`](crate::operation::create_inference_scheduler::CreateInferenceSchedulerInput).
-    pub fn builder(
-    ) -> crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerInputBuilder {
         crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInferenceSchedulerInput`](crate::operation::create_inference_scheduler::CreateInferenceSchedulerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInferenceSchedulerInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) inference_scheduler_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_delay_offset_in_minutes: ::std::option::Option<i64>,
     pub(crate) data_upload_frequency: ::std::option::Option<crate::types::DataUploadFrequency>,
-    pub(crate) data_input_configuration:
-        ::std::option::Option<crate::types::InferenceInputConfiguration>,
-    pub(crate) data_output_configuration:
-        ::std::option::Option<crate::types::InferenceOutputConfiguration>,
+    pub(crate) data_input_configuration: ::std::option::Option<crate::types::InferenceInputConfiguration>,
+    pub(crate) data_output_configuration: ::std::option::Option<crate::types::InferenceOutputConfiguration>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) server_side_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -131,18 +118,12 @@ impl CreateInferenceSchedulerInputBuilder {
         &self.model_name
     }
     /// <p>The name of the inference scheduler being created. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the inference scheduler being created. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_name = input;
         self
     }
@@ -175,62 +156,41 @@ impl CreateInferenceSchedulerInputBuilder {
     }
     /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
-    pub fn set_data_upload_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::DataUploadFrequency>,
-    ) -> Self {
+    pub fn set_data_upload_frequency(mut self, input: ::std::option::Option<crate::types::DataUploadFrequency>) -> Self {
         self.data_upload_frequency = input;
         self
     }
     /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
-    pub fn get_data_upload_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataUploadFrequency> {
+    pub fn get_data_upload_frequency(&self) -> &::std::option::Option<crate::types::DataUploadFrequency> {
         &self.data_upload_frequency
     }
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    pub fn data_input_configuration(
-        mut self,
-        input: crate::types::InferenceInputConfiguration,
-    ) -> Self {
+    pub fn data_input_configuration(mut self, input: crate::types::InferenceInputConfiguration) -> Self {
         self.data_input_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    pub fn set_data_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceInputConfiguration>,
-    ) -> Self {
+    pub fn set_data_input_configuration(mut self, input: ::std::option::Option<crate::types::InferenceInputConfiguration>) -> Self {
         self.data_input_configuration = input;
         self
     }
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    pub fn get_data_input_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceInputConfiguration> {
+    pub fn get_data_input_configuration(&self) -> &::std::option::Option<crate::types::InferenceInputConfiguration> {
         &self.data_input_configuration
     }
     /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
-    pub fn data_output_configuration(
-        mut self,
-        input: crate::types::InferenceOutputConfiguration,
-    ) -> Self {
+    pub fn data_output_configuration(mut self, input: crate::types::InferenceOutputConfiguration) -> Self {
         self.data_output_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
-    pub fn set_data_output_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceOutputConfiguration>,
-    ) -> Self {
+    pub fn set_data_output_configuration(mut self, input: ::std::option::Option<crate::types::InferenceOutputConfiguration>) -> Self {
         self.data_output_configuration = input;
         self
     }
     /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
-    pub fn get_data_output_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
+    pub fn get_data_output_configuration(&self) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
         &self.data_output_configuration
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
@@ -248,18 +208,12 @@ impl CreateInferenceSchedulerInputBuilder {
         &self.role_arn
     }
     /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_side_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_side_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
-    pub fn set_server_side_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_side_kms_key_id = input;
         self
     }
@@ -293,10 +247,7 @@ impl CreateInferenceSchedulerInputBuilder {
         self
     }
     /// <p>Any tags associated with the inference scheduler. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -311,19 +262,17 @@ impl CreateInferenceSchedulerInputBuilder {
         crate::operation::create_inference_scheduler::CreateInferenceSchedulerInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_inference_scheduler::CreateInferenceSchedulerInput {
-                model_name: self.model_name,
-                inference_scheduler_name: self.inference_scheduler_name,
-                data_delay_offset_in_minutes: self.data_delay_offset_in_minutes,
-                data_upload_frequency: self.data_upload_frequency,
-                data_input_configuration: self.data_input_configuration,
-                data_output_configuration: self.data_output_configuration,
-                role_arn: self.role_arn,
-                server_side_kms_key_id: self.server_side_kms_key_id,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_inference_scheduler::CreateInferenceSchedulerInput {
+            model_name: self.model_name,
+            inference_scheduler_name: self.inference_scheduler_name,
+            data_delay_offset_in_minutes: self.data_delay_offset_in_minutes,
+            data_upload_frequency: self.data_upload_frequency,
+            data_input_configuration: self.data_input_configuration,
+            data_output_configuration: self.data_output_configuration,
+            role_arn: self.role_arn,
+            server_side_kms_key_id: self.server_side_kms_key_id,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TrainingJobSortByOptions {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for TrainingJobSortByOptions {
             "FinalObjectiveMetricValue" => TrainingJobSortByOptions::FinalObjectiveMetricValue,
             "Name" => TrainingJobSortByOptions::Name,
             "Status" => TrainingJobSortByOptions::Status,
-            other => TrainingJobSortByOptions::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TrainingJobSortByOptions::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl TrainingJobSortByOptions {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CreationTime",
-            "FinalObjectiveMetricValue",
-            "Name",
-            "Status",
-        ]
+        &["CreationTime", "FinalObjectiveMetricValue", "Name", "Status"]
     }
 }
 impl ::std::convert::AsRef<str> for TrainingJobSortByOptions {

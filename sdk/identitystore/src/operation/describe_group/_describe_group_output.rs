@@ -118,17 +118,12 @@ impl DescribeGroupOutputBuilder {
         self
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub fn set_external_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>,
-    ) -> Self {
+    pub fn set_external_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>) -> Self {
         self.external_ids = input;
         self
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub fn get_external_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExternalId>> {
+    pub fn get_external_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExternalId>> {
         &self.external_ids
     }
     /// <p>A string containing a description of the group.</p>
@@ -146,18 +141,12 @@ impl DescribeGroupOutputBuilder {
         &self.description
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_store_id = input;
         self
     }

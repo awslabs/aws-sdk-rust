@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribePartnerEventSourceOutput {
 }
 impl DescribePartnerEventSourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribePartnerEventSourceOutput`](crate::operation::describe_partner_event_source::DescribePartnerEventSourceOutput).
-    pub fn builder() -> crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceOutputBuilder{
+    pub fn builder() -> crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceOutputBuilder {
         crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePartnerEventSourceOutput`](crate::operation::describe_partner_event_source::DescribePartnerEventSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePartnerEventSourceOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -82,9 +80,7 @@ impl DescribePartnerEventSourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePartnerEventSourceOutput`](crate::operation::describe_partner_event_source::DescribePartnerEventSourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_partner_event_source::DescribePartnerEventSourceOutput {
+    pub fn build(self) -> crate::operation::describe_partner_event_source::DescribePartnerEventSourceOutput {
         crate::operation::describe_partner_event_source::DescribePartnerEventSourceOutput {
             arn: self.arn,
             name: self.name,

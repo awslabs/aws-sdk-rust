@@ -43,7 +43,10 @@ pub fn ser_update_maintenance_window_task_input(
     if let Some(var_14) = &input.task_invocation_parameters {
         #[allow(unused_mut)]
         let mut object_15 = object.key("TaskInvocationParameters").start_object();
-        crate::protocol_serde::shape_maintenance_window_task_invocation_parameters::ser_maintenance_window_task_invocation_parameters(&mut object_15, var_14)?;
+        crate::protocol_serde::shape_maintenance_window_task_invocation_parameters::ser_maintenance_window_task_invocation_parameters(
+            &mut object_15,
+            var_14,
+        )?;
         object_15.finish();
     }
     if let Some(var_16) = &input.priority {
@@ -79,10 +82,7 @@ pub fn ser_update_maintenance_window_task_input(
     if let Some(var_25) = &input.alarm_configuration {
         #[allow(unused_mut)]
         let mut object_26 = object.key("AlarmConfiguration").start_object();
-        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(
-            &mut object_26,
-            var_25,
-        )?;
+        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_26, var_25)?;
         object_26.finish();
     }
     Ok(())

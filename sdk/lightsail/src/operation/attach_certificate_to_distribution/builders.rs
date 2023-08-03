@@ -5,16 +5,16 @@ pub use crate::operation::attach_certificate_to_distribution::_attach_certificat
 
 impl AttachCertificateToDistributionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.attach_certificate_to_distribution();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -30,7 +30,7 @@ impl AttachCertificateToDistributionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AttachCertificateToDistributionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionInputBuilder,
+    inner: crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionInputBuilder,
 }
 impl AttachCertificateToDistributionFluentBuilder {
     /// Creates a new `AttachCertificateToDistribution`.
@@ -41,15 +41,20 @@ impl AttachCertificateToDistributionFluentBuilder {
         }
     }
     /// Access the AttachCertificateToDistribution as a reference.
-    pub fn as_input(&self) -> &crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistribution, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::attach_certificate_to_distribution::AttachCertificateToDistribution,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -58,16 +63,17 @@ impl AttachCertificateToDistributionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput, ::aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -85,34 +91,37 @@ impl AttachCertificateToDistributionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput, ::aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistribution, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::attach_certificate_to_distribution::AttachCertificateToDistribution,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the distribution that the certificate will be attached to.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_name(input.into());
         self
     }
     /// <p>The name of the distribution that the certificate will be attached to.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_name(input);
         self
     }
@@ -126,10 +135,7 @@ impl AttachCertificateToDistributionFluentBuilder {
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p> <note>
     /// <p>This is the name of the certificate resource type and is used only to reference the certificate in other API actions. It can be different than the domain name of the certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be <code>example.com</code>.</p>
     /// </note>
-    pub fn certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_name(input.into());
         self
     }
@@ -138,10 +144,7 @@ impl AttachCertificateToDistributionFluentBuilder {
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p> <note>
     /// <p>This is the name of the certificate resource type and is used only to reference the certificate in other API actions. It can be different than the domain name of the certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be <code>example.com</code>.</p>
     /// </note>
-    pub fn set_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_name(input);
         self
     }

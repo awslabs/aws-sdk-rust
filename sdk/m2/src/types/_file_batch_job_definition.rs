@@ -30,9 +30,7 @@ impl FileBatchJobDefinition {
 
 /// A builder for [`FileBatchJobDefinition`](crate::types::FileBatchJobDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileBatchJobDefinitionBuilder {
     pub(crate) file_name: ::std::option::Option<::std::string::String>,
     pub(crate) folder_path: ::std::option::Option<::std::string::String>,

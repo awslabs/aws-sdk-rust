@@ -34,9 +34,7 @@ pub fn ser_create_storage_virtual_machine_input(
         array_8.finish();
     }
     if let Some(var_11) = &input.root_volume_security_style {
-        object
-            .key("RootVolumeSecurityStyle")
-            .string(var_11.as_str());
+        object.key("RootVolumeSecurityStyle").string(var_11.as_str());
     }
     Ok(())
 }

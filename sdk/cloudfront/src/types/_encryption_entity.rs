@@ -37,9 +37,7 @@ impl EncryptionEntity {
 
 /// A builder for [`EncryptionEntity`](crate::types::EncryptionEntity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionEntityBuilder {
     pub(crate) public_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) provider_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct EncryptionEntityBuilder {
 }
 impl EncryptionEntityBuilder {
     /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns.</p>
-    pub fn public_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns.</p>
-    pub fn set_public_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_key_id = input;
         self
     }
@@ -86,10 +78,7 @@ impl EncryptionEntityBuilder {
         self
     }
     /// <p>Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have both ABC* and AB*. Note that field patterns are case-sensitive.</p>
-    pub fn set_field_patterns(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldPatterns>,
-    ) -> Self {
+    pub fn set_field_patterns(mut self, input: ::std::option::Option<crate::types::FieldPatterns>) -> Self {
         self.field_patterns = input;
         self
     }

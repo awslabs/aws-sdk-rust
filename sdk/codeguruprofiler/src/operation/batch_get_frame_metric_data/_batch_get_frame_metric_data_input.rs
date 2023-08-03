@@ -61,18 +61,14 @@ impl BatchGetFrameMetricDataInput {
 }
 impl BatchGetFrameMetricDataInput {
     /// Creates a new builder-style object to manufacture [`BatchGetFrameMetricDataInput`](crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataInputBuilder {
         crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetFrameMetricDataInput`](crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetFrameMetricDataInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -83,18 +79,12 @@ pub struct BatchGetFrameMetricDataInputBuilder {
 }
 impl BatchGetFrameMetricDataInputBuilder {
     /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profiling_group_name = input;
         self
     }
@@ -108,10 +98,7 @@ impl BatchGetFrameMetricDataInputBuilder {
         self
     }
     /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -125,10 +112,7 @@ impl BatchGetFrameMetricDataInputBuilder {
         self
     }
     /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -166,10 +150,7 @@ impl BatchGetFrameMetricDataInputBuilder {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
-    pub fn set_target_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationPeriod>,
-    ) -> Self {
+    pub fn set_target_resolution(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.target_resolution = input;
         self
     }
@@ -194,17 +175,12 @@ impl BatchGetFrameMetricDataInputBuilder {
         self
     }
     /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
-    pub fn set_frame_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetric>>,
-    ) -> Self {
+    pub fn set_frame_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetric>>) -> Self {
         self.frame_metrics = input;
         self
     }
     /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
-    pub fn get_frame_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameMetric>> {
+    pub fn get_frame_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameMetric>> {
         &self.frame_metrics
     }
     /// Consumes the builder and constructs a [`BatchGetFrameMetricDataInput`](crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataInput).
@@ -214,15 +190,13 @@ impl BatchGetFrameMetricDataInputBuilder {
         crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataInput {
-                profiling_group_name: self.profiling_group_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                period: self.period,
-                target_resolution: self.target_resolution,
-                frame_metrics: self.frame_metrics,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataInput {
+            profiling_group_name: self.profiling_group_name,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            period: self.period,
+            target_resolution: self.target_resolution,
+            frame_metrics: self.frame_metrics,
+        })
     }
 }

@@ -36,9 +36,7 @@ impl PutEntityTypeInput {
 
 /// A builder for [`PutEntityTypeInput`](crate::operation::put_entity_type::PutEntityTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEntityTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl PutEntityTypeInputBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -99,10 +94,7 @@ impl PutEntityTypeInputBuilder {
     /// Consumes the builder and constructs a [`PutEntityTypeInput`](crate::operation::put_entity_type::PutEntityTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_entity_type::PutEntityTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_entity_type::PutEntityTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_entity_type::PutEntityTypeInput {
             name: self.name,
             description: self.description,

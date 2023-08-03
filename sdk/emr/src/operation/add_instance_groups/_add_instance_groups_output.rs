@@ -36,17 +36,14 @@ impl ::aws_http::request_id::RequestId for AddInstanceGroupsOutput {
 }
 impl AddInstanceGroupsOutput {
     /// Creates a new builder-style object to manufacture [`AddInstanceGroupsOutput`](crate::operation::add_instance_groups::AddInstanceGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::add_instance_groups::builders::AddInstanceGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::add_instance_groups::builders::AddInstanceGroupsOutputBuilder {
         crate::operation::add_instance_groups::builders::AddInstanceGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddInstanceGroupsOutput`](crate::operation::add_instance_groups::AddInstanceGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddInstanceGroupsOutputBuilder {
     pub(crate) job_flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -73,27 +70,19 @@ impl AddInstanceGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_instance_group_ids`](Self::set_instance_group_ids).
     ///
     /// <p>Instance group IDs of the newly created instance groups.</p>
-    pub fn instance_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_group_ids.unwrap_or_default();
         v.push(input.into());
         self.instance_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Instance group IDs of the newly created instance groups.</p>
-    pub fn set_instance_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_group_ids = input;
         self
     }
     /// <p>Instance group IDs of the newly created instance groups.</p>
-    pub fn get_instance_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_group_ids
     }
     /// <p>The Amazon Resource Name of the cluster.</p>

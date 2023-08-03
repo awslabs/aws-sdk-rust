@@ -27,11 +27,7 @@ impl super::Client {
     ///   - [`storage_tier(Option<StorageTier>)`](crate::operation::create_snapshot::CreateSnapshotOutput::storage_tier): <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
     ///   - [`restore_expiry_time(Option<DateTime>)`](crate::operation::create_snapshot::CreateSnapshotOutput::restore_expiry_time): <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
     /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::operation::create_snapshot::CreateSnapshotError)
-    pub fn create_snapshot(
-        &self,
-    ) -> crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder {
-        crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_snapshot(&self) -> crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder {
+        crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

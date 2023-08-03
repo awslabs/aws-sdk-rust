@@ -33,9 +33,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::PolicySizeLimitE
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for PolicySizeLimitExceededException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PolicySizeLimitExceededException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -49,9 +47,7 @@ impl PolicySizeLimitExceededException {
 
 /// A builder for [`PolicySizeLimitExceededException`](crate::types::error::PolicySizeLimitExceededException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicySizeLimitExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -78,10 +74,7 @@ impl PolicySizeLimitExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

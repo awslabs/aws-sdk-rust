@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`elements(Option<Vec<String>>)`](crate::operation::get_list_elements::GetListElementsOutput::elements): <p> The list elements. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_list_elements::GetListElementsOutput::next_token): <p> The next page token. </p>
     /// - On failure, responds with [`SdkError<GetListElementsError>`](crate::operation::get_list_elements::GetListElementsError)
-    pub fn get_list_elements(
-        &self,
-    ) -> crate::operation::get_list_elements::builders::GetListElementsFluentBuilder {
-        crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_list_elements(&self) -> crate::operation::get_list_elements::builders::GetListElementsFluentBuilder {
+        crate::operation::get_list_elements::builders::GetListElementsFluentBuilder::new(self.handle.clone())
     }
 }

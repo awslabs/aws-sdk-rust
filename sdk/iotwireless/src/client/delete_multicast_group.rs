@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_multicast_group::builders::DeleteMulticastGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_multicast_group::builders::DeleteMulticastGroupFluentBuilder::set_id): <p>The ID of the multicast group.</p>
     /// - On success, responds with [`DeleteMulticastGroupOutput`](crate::operation::delete_multicast_group::DeleteMulticastGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteMulticastGroupError>`](crate::operation::delete_multicast_group::DeleteMulticastGroupError)
-    pub fn delete_multicast_group(
-        &self,
-    ) -> crate::operation::delete_multicast_group::builders::DeleteMulticastGroupFluentBuilder {
-        crate::operation::delete_multicast_group::builders::DeleteMulticastGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_multicast_group(&self) -> crate::operation::delete_multicast_group::builders::DeleteMulticastGroupFluentBuilder {
+        crate::operation::delete_multicast_group::builders::DeleteMulticastGroupFluentBuilder::new(self.handle.clone())
     }
 }

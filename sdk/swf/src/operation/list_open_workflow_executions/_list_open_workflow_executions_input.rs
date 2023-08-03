@@ -72,24 +72,20 @@ impl ListOpenWorkflowExecutionsInput {
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn execution_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkflowExecutionFilter> {
+    pub fn execution_filter(&self) -> ::std::option::Option<&crate::types::WorkflowExecutionFilter> {
         self.execution_filter.as_ref()
     }
 }
 impl ListOpenWorkflowExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListOpenWorkflowExecutionsInput`](crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsInput).
-    pub fn builder() -> crate::operation::list_open_workflow_executions::builders::ListOpenWorkflowExecutionsInputBuilder{
+    pub fn builder() -> crate::operation::list_open_workflow_executions::builders::ListOpenWorkflowExecutionsInputBuilder {
         crate::operation::list_open_workflow_executions::builders::ListOpenWorkflowExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListOpenWorkflowExecutionsInput`](crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOpenWorkflowExecutionsInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) start_time_filter: ::std::option::Option<crate::types::ExecutionTimeFilter>,
@@ -121,17 +117,12 @@ impl ListOpenWorkflowExecutionsInputBuilder {
         self
     }
     /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
-    pub fn set_start_time_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionTimeFilter>,
-    ) -> Self {
+    pub fn set_start_time_filter(mut self, input: ::std::option::Option<crate::types::ExecutionTimeFilter>) -> Self {
         self.start_time_filter = input;
         self
     }
     /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
-    pub fn get_start_time_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
+    pub fn get_start_time_filter(&self) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
         &self.start_time_filter
     }
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
@@ -144,10 +135,7 @@ impl ListOpenWorkflowExecutionsInputBuilder {
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_type_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowTypeFilter>,
-    ) -> Self {
+    pub fn set_type_filter(mut self, input: ::std::option::Option<crate::types::WorkflowTypeFilter>) -> Self {
         self.type_filter = input;
         self
     }
@@ -179,19 +167,13 @@ impl ListOpenWorkflowExecutionsInputBuilder {
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -238,19 +220,14 @@ impl ListOpenWorkflowExecutionsInputBuilder {
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_execution_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecutionFilter>,
-    ) -> Self {
+    pub fn set_execution_filter(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionFilter>) -> Self {
         self.execution_filter = input;
         self
     }
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn get_execution_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
+    pub fn get_execution_filter(&self) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
         &self.execution_filter
     }
     /// Consumes the builder and constructs a [`ListOpenWorkflowExecutionsInput`](crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsInput).
@@ -260,17 +237,15 @@ impl ListOpenWorkflowExecutionsInputBuilder {
         crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsInput {
-                domain: self.domain,
-                start_time_filter: self.start_time_filter,
-                type_filter: self.type_filter,
-                tag_filter: self.tag_filter,
-                next_page_token: self.next_page_token,
-                maximum_page_size: self.maximum_page_size,
-                reverse_order: self.reverse_order,
-                execution_filter: self.execution_filter,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsInput {
+            domain: self.domain,
+            start_time_filter: self.start_time_filter,
+            type_filter: self.type_filter,
+            tag_filter: self.tag_filter,
+            next_page_token: self.next_page_token,
+            maximum_page_size: self.maximum_page_size,
+            reverse_order: self.reverse_order,
+            execution_filter: self.execution_filter,
+        })
     }
 }

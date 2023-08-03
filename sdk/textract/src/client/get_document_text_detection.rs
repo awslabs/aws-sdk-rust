@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::get_document_text_detection::GetDocumentTextDetectionOutput::status_message): <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
     ///   - [`detect_document_text_model_version(Option<String>)`](crate::operation::get_document_text_detection::GetDocumentTextDetectionOutput::detect_document_text_model_version): <p></p>
     /// - On failure, responds with [`SdkError<GetDocumentTextDetectionError>`](crate::operation::get_document_text_detection::GetDocumentTextDetectionError)
-    pub fn get_document_text_detection(&self) -> crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionFluentBuilder{
+    pub fn get_document_text_detection(&self) -> crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionFluentBuilder {
         crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionFluentBuilder::new(self.handle.clone())
     }
 }

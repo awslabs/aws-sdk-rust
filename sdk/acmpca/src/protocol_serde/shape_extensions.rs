@@ -9,10 +9,7 @@ pub fn ser_extensions(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_policy_information::ser_policy_information(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_policy_information::ser_policy_information(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_extensions(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_extended_key_usage::ser_extended_key_usage(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_extended_key_usage::ser_extended_key_usage(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -45,10 +39,7 @@ pub fn ser_extensions(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_general_name::ser_general_name(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_general_name::ser_general_name(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }
@@ -60,10 +51,7 @@ pub fn ser_extensions(
             {
                 #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_custom_extension::ser_custom_extension(
-                    &mut object_18,
-                    item_17,
-                )?;
+                crate::protocol_serde::shape_custom_extension::ser_custom_extension(&mut object_18, item_17)?;
                 object_18.finish();
             }
         }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeTunnelOutput`](crate::operation::describe_tunnel::DescribeTunnelOutput) with field(s):
     ///   - [`tunnel(Option<Tunnel>)`](crate::operation::describe_tunnel::DescribeTunnelOutput::tunnel): <p>The tunnel being described.</p>
     /// - On failure, responds with [`SdkError<DescribeTunnelError>`](crate::operation::describe_tunnel::DescribeTunnelError)
-    pub fn describe_tunnel(
-        &self,
-    ) -> crate::operation::describe_tunnel::builders::DescribeTunnelFluentBuilder {
-        crate::operation::describe_tunnel::builders::DescribeTunnelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_tunnel(&self) -> crate::operation::describe_tunnel::builders::DescribeTunnelFluentBuilder {
+        crate::operation::describe_tunnel::builders::DescribeTunnelFluentBuilder::new(self.handle.clone())
     }
 }

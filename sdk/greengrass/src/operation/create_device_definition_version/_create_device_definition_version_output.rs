@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateDeviceDefinitionVersionOutput {
 }
 impl CreateDeviceDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeviceDefinitionVersionOutput`](crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionOutput).
-    pub fn builder() -> crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionOutputBuilder{
+    pub fn builder() -> crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionOutputBuilder {
         crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDeviceDefinitionVersionOutput`](crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeviceDefinitionVersionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl CreateDeviceDefinitionVersionOutputBuilder {
         &self.arn
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -132,10 +124,7 @@ impl CreateDeviceDefinitionVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDeviceDefinitionVersionOutput`](crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionOutput
-    {
+    pub fn build(self) -> crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionOutput {
         crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionOutput {
             arn: self.arn,
             creation_timestamp: self.creation_timestamp,

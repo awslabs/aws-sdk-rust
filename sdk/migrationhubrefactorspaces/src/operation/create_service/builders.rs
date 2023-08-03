@@ -10,10 +10,7 @@ impl CreateServiceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_service::CreateServiceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service::CreateServiceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_service();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateServiceFluentBuilder {
         }
     }
     /// Access the CreateService as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_service::builders::CreateServiceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_service::builders::CreateServiceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl CreateServiceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -145,18 +137,12 @@ impl CreateServiceFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The ID of the environment in which the service is created.</p>
-    pub fn environment_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_identifier(input.into());
         self
     }
     /// <p>The ID of the environment in which the service is created.</p>
-    pub fn set_environment_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
@@ -165,18 +151,12 @@ impl CreateServiceFluentBuilder {
         self.inner.get_environment_identifier()
     }
     /// <p>The ID of the application which the service is created.</p>
-    pub fn application_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_identifier(input.into());
         self
     }
     /// <p>The ID of the application which the service is created.</p>
-    pub fn set_application_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_identifier(input);
         self
     }
@@ -204,10 +184,7 @@ impl CreateServiceFluentBuilder {
         self
     }
     /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
-    pub fn set_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceEndpointType>,
-    ) -> Self {
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::ServiceEndpointType>) -> Self {
         self.inner = self.inner.set_endpoint_type(input);
         self
     }
@@ -221,10 +198,7 @@ impl CreateServiceFluentBuilder {
         self
     }
     /// <p>The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.</p>
-    pub fn set_url_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::UrlEndpointInput>,
-    ) -> Self {
+    pub fn set_url_endpoint(mut self, input: ::std::option::Option<crate::types::UrlEndpointInput>) -> Self {
         self.inner = self.inner.set_url_endpoint(input);
         self
     }
@@ -238,10 +212,7 @@ impl CreateServiceFluentBuilder {
         self
     }
     /// <p>The configuration for the Lambda endpoint type.</p>
-    pub fn set_lambda_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaEndpointInput>,
-    ) -> Self {
+    pub fn set_lambda_endpoint(mut self, input: ::std::option::Option<crate::types::LambdaEndpointInput>) -> Self {
         self.inner = self.inner.set_lambda_endpoint(input);
         self
     }
@@ -254,30 +225,17 @@ impl CreateServiceFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>

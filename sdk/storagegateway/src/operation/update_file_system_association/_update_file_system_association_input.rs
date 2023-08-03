@@ -44,10 +44,7 @@ impl UpdateFileSystemAssociationInput {
 impl ::std::fmt::Debug for UpdateFileSystemAssociationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFileSystemAssociationInput");
-        formatter.field(
-            "file_system_association_arn",
-            &self.file_system_association_arn,
-        );
+        formatter.field("file_system_association_arn", &self.file_system_association_arn);
         formatter.field("user_name", &self.user_name);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("audit_destination_arn", &self.audit_destination_arn);
@@ -57,7 +54,7 @@ impl ::std::fmt::Debug for UpdateFileSystemAssociationInput {
 }
 impl UpdateFileSystemAssociationInput {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemAssociationInput`](crate::operation::update_file_system_association::UpdateFileSystemAssociationInput).
-    pub fn builder() -> crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationInputBuilder{
+    pub fn builder() -> crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationInputBuilder {
         crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationInputBuilder::default()
     }
 }
@@ -74,18 +71,12 @@ pub struct UpdateFileSystemAssociationInputBuilder {
 }
 impl UpdateFileSystemAssociationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file system association that you want to update.</p>
-    pub fn file_system_association_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_association_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file system association that you want to update.</p>
-    pub fn set_file_system_association_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_association_arn = input;
         self
     }
@@ -122,18 +113,12 @@ impl UpdateFileSystemAssociationInputBuilder {
         &self.password
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-    pub fn audit_destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audit_destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-    pub fn set_audit_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audit_destination_arn = input;
         self
     }
@@ -147,10 +132,7 @@ impl UpdateFileSystemAssociationInputBuilder {
         self
     }
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
-    pub fn set_cache_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheAttributes>,
-    ) -> Self {
+    pub fn set_cache_attributes(mut self, input: ::std::option::Option<crate::types::CacheAttributes>) -> Self {
         self.cache_attributes = input;
         self
     }
@@ -165,24 +147,19 @@ impl UpdateFileSystemAssociationInputBuilder {
         crate::operation::update_file_system_association::UpdateFileSystemAssociationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_file_system_association::UpdateFileSystemAssociationInput {
-                file_system_association_arn: self.file_system_association_arn,
-                user_name: self.user_name,
-                password: self.password,
-                audit_destination_arn: self.audit_destination_arn,
-                cache_attributes: self.cache_attributes,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_file_system_association::UpdateFileSystemAssociationInput {
+            file_system_association_arn: self.file_system_association_arn,
+            user_name: self.user_name,
+            password: self.password,
+            audit_destination_arn: self.audit_destination_arn,
+            cache_attributes: self.cache_attributes,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateFileSystemAssociationInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFileSystemAssociationInputBuilder");
-        formatter.field(
-            "file_system_association_arn",
-            &self.file_system_association_arn,
-        );
+        formatter.field("file_system_association_arn", &self.file_system_association_arn);
         formatter.field("user_name", &self.user_name);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("audit_destination_arn", &self.audit_destination_arn);

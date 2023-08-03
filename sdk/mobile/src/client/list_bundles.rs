@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`bundle_list(Option<Vec<BundleDetails>>)`](crate::operation::list_bundles::ListBundlesOutput::bundle_list): <p> A list of bundles. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_bundles::ListBundlesOutput::next_token): <p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>
     /// - On failure, responds with [`SdkError<ListBundlesError>`](crate::operation::list_bundles::ListBundlesError)
-    pub fn list_bundles(
-        &self,
-    ) -> crate::operation::list_bundles::builders::ListBundlesFluentBuilder {
+    pub fn list_bundles(&self) -> crate::operation::list_bundles::builders::ListBundlesFluentBuilder {
         crate::operation::list_bundles::builders::ListBundlesFluentBuilder::new(self.handle.clone())
     }
 }

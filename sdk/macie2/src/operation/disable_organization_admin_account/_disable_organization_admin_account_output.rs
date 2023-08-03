@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisableOrganizationAdminAccountOutput
 }
 impl DisableOrganizationAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisableOrganizationAdminAccountOutput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountOutput).
-    pub fn builder() -> crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountOutputBuilder{
+    pub fn builder() -> crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountOutputBuilder {
         crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableOrganizationAdminAccountOutput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableOrganizationAdminAccountOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DisableOrganizationAdminAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableOrganizationAdminAccountOutput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountOutput
-    {
+    pub fn build(self) -> crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountOutput {
         crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountOutput {
             _request_id: self._request_id,
         }

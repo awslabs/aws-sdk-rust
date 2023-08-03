@@ -28,7 +28,7 @@ impl DescribeGlobalTableSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGlobalTableSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_global_table_settings::builders::DescribeGlobalTableSettingsInputBuilder,
+    inner: crate::operation::describe_global_table_settings::builders::DescribeGlobalTableSettingsInputBuilder,
 }
 impl DescribeGlobalTableSettingsFluentBuilder {
     /// Creates a new `DescribeGlobalTableSettings`.
@@ -39,7 +39,7 @@ impl DescribeGlobalTableSettingsFluentBuilder {
         }
     }
     /// Access the DescribeGlobalTableSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_global_table_settings::builders::DescribeGlobalTableSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_global_table_settings::builders::DescribeGlobalTableSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeGlobalTableSettingsFluentBuilder {
             crate::operation::describe_global_table_settings::DescribeGlobalTableSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeGlobalTableSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeGlobalTableSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeGlobalTableSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl DescribeGlobalTableSettingsFluentBuilder {
             crate::operation::describe_global_table_settings::DescribeGlobalTableSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the global table to describe.</p>
-    pub fn global_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_table_name(input.into());
         self
     }
     /// <p>The name of the global table to describe.</p>
-    pub fn set_global_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_table_name(input);
         self
     }

@@ -23,9 +23,7 @@ impl IssueDetected {
 
 /// A builder for [`IssueDetected`](crate::types::IssueDetected).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IssueDetectedBuilder {
     pub(crate) character_offsets: ::std::option::Option<crate::types::CharacterOffsets>,
 }
@@ -36,10 +34,7 @@ impl IssueDetectedBuilder {
         self
     }
     /// <p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>
-    pub fn set_character_offsets(
-        mut self,
-        input: ::std::option::Option<crate::types::CharacterOffsets>,
-    ) -> Self {
+    pub fn set_character_offsets(mut self, input: ::std::option::Option<crate::types::CharacterOffsets>) -> Self {
         self.character_offsets = input;
         self
     }

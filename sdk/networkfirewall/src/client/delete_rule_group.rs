@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteRuleGroupOutput`](crate::operation::delete_rule_group::DeleteRuleGroupOutput) with field(s):
     ///   - [`rule_group_response(Option<RuleGroupResponse>)`](crate::operation::delete_rule_group::DeleteRuleGroupOutput::rule_group_response): <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     /// - On failure, responds with [`SdkError<DeleteRuleGroupError>`](crate::operation::delete_rule_group::DeleteRuleGroupError)
-    pub fn delete_rule_group(
-        &self,
-    ) -> crate::operation::delete_rule_group::builders::DeleteRuleGroupFluentBuilder {
-        crate::operation::delete_rule_group::builders::DeleteRuleGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_rule_group(&self) -> crate::operation::delete_rule_group::builders::DeleteRuleGroupFluentBuilder {
+        crate::operation::delete_rule_group::builders::DeleteRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

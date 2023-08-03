@@ -35,9 +35,7 @@ impl ListGroupsOutput {
 
 /// A builder for [`ListGroupsOutput`](crate::operation::list_groups::ListGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupsOutputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListGroupsOutputBuilder {
         self
     }
     /// Information about a group.
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupInformation>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupInformation>>) -> Self {
         self.groups = input;
         self
     }
     /// Information about a group.
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupInformation>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupInformation>> {
         &self.groups
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.

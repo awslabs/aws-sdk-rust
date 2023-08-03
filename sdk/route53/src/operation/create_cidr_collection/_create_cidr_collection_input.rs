@@ -22,17 +22,14 @@ impl CreateCidrCollectionInput {
 }
 impl CreateCidrCollectionInput {
     /// Creates a new builder-style object to manufacture [`CreateCidrCollectionInput`](crate::operation::create_cidr_collection::CreateCidrCollectionInput).
-    pub fn builder(
-    ) -> crate::operation::create_cidr_collection::builders::CreateCidrCollectionInputBuilder {
+    pub fn builder() -> crate::operation::create_cidr_collection::builders::CreateCidrCollectionInputBuilder {
         crate::operation::create_cidr_collection::builders::CreateCidrCollectionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCidrCollectionInput`](crate::operation::create_cidr_collection::CreateCidrCollectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCidrCollectionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) caller_reference: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl CreateCidrCollectionInputBuilder {
         &self.name
     }
     /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.caller_reference = input;
         self
     }
@@ -75,15 +66,11 @@ impl CreateCidrCollectionInputBuilder {
     /// Consumes the builder and constructs a [`CreateCidrCollectionInput`](crate::operation::create_cidr_collection::CreateCidrCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cidr_collection::CreateCidrCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_cidr_collection::CreateCidrCollectionInput {
-                name: self.name,
-                caller_reference: self.caller_reference,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_cidr_collection::CreateCidrCollectionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_cidr_collection::CreateCidrCollectionInput {
+            name: self.name,
+            caller_reference: self.caller_reference,
+        })
     }
 }

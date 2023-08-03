@@ -67,18 +67,12 @@ pub struct UpdateModelCardInputBuilder {
 }
 impl UpdateModelCardInputBuilder {
     /// <p>The name of the model card to update.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model card to update.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_name = input;
         self
     }
@@ -121,10 +115,7 @@ impl UpdateModelCardInputBuilder {
     /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
     /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
-    pub fn set_model_card_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardStatus>,
-    ) -> Self {
+    pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
         self.model_card_status = input;
         self
     }
@@ -141,10 +132,7 @@ impl UpdateModelCardInputBuilder {
     /// Consumes the builder and constructs a [`UpdateModelCardInput`](crate::operation::update_model_card::UpdateModelCardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_model_card::UpdateModelCardInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_model_card::UpdateModelCardInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_model_card::UpdateModelCardInput {
             model_card_name: self.model_card_name,
             content: self.content,

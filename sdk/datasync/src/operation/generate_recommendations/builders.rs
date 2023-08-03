@@ -29,8 +29,7 @@ impl GenerateRecommendationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::generate_recommendations::builders::GenerateRecommendationsInputBuilder,
+    inner: crate::operation::generate_recommendations::builders::GenerateRecommendationsInputBuilder,
 }
 impl GenerateRecommendationsFluentBuilder {
     /// Creates a new `GenerateRecommendations`.
@@ -41,10 +40,7 @@ impl GenerateRecommendationsFluentBuilder {
         }
     }
     /// Access the GenerateRecommendations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::generate_recommendations::builders::GenerateRecommendationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::generate_recommendations::builders::GenerateRecommendationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl GenerateRecommendationsFluentBuilder {
             crate::operation::generate_recommendations::GenerateRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_recommendations::GenerateRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_recommendations::GenerateRecommendationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl GenerateRecommendationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl GenerateRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_recommendations::GenerateRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_recommendations::GenerateRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_recommendations::GenerateRecommendationsError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl GenerateRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_recommendations::GenerateRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_recommendations::GenerateRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_recommendations::GenerateRecommendationsError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +108,17 @@ impl GenerateRecommendationsFluentBuilder {
             crate::operation::generate_recommendations::GenerateRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_recommendations::GenerateRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_recommendations::GenerateRecommendationsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p>
-    pub fn discovery_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.discovery_job_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p>
-    pub fn set_discovery_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_discovery_job_arn(input);
         self
     }
@@ -157,17 +136,12 @@ impl GenerateRecommendationsFluentBuilder {
         self
     }
     /// <p>Specifies the universally unique identifiers (UUIDs) of the resources in your storage system that you want recommendations on.</p>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_ids(input);
         self
     }
     /// <p>Specifies the universally unique identifiers (UUIDs) of the resources in your storage system that you want recommendations on.</p>
-    pub fn get_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_ids()
     }
     /// <p>Specifies the type of resource in your storage system that you want recommendations on.</p>
@@ -176,10 +150,7 @@ impl GenerateRecommendationsFluentBuilder {
         self
     }
     /// <p>Specifies the type of resource in your storage system that you want recommendations on.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::DiscoveryResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

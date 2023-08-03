@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListInstanceAttributesOutput {
 }
 impl ListInstanceAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceAttributesOutput`](crate::operation::list_instance_attributes::ListInstanceAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_instance_attributes::builders::ListInstanceAttributesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_instance_attributes::builders::ListInstanceAttributesOutputBuilder {
         crate::operation::list_instance_attributes::builders::ListInstanceAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstanceAttributesOutput`](crate::operation::list_instance_attributes::ListInstanceAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceAttributesOutputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListInstanceAttributesOutputBuilder {
         self
     }
     /// <p>The attribute types.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attribute types.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.attributes
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

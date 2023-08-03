@@ -35,9 +35,7 @@ impl SearchJobsOutput {
 
 /// A builder for [`SearchJobsOutput`](crate::operation::search_jobs::SearchJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchJobsOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl SearchJobsOutputBuilder {
         self
     }
     /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
-    ) -> Self {
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>) -> Self {
         self.jobs = input;
         self
     }

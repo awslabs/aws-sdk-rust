@@ -16,10 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateQualificationTypeOutput`](crate::operation::create_qualification_type::CreateQualificationTypeOutput) with field(s):
     ///   - [`qualification_type(Option<QualificationType>)`](crate::operation::create_qualification_type::CreateQualificationTypeOutput::qualification_type): <p>The created Qualification type, returned as a QualificationType data structure.</p>
     /// - On failure, responds with [`SdkError<CreateQualificationTypeError>`](crate::operation::create_qualification_type::CreateQualificationTypeError)
-    pub fn create_qualification_type(
-        &self,
-    ) -> crate::operation::create_qualification_type::builders::CreateQualificationTypeFluentBuilder
-    {
+    pub fn create_qualification_type(&self) -> crate::operation::create_qualification_type::builders::CreateQualificationTypeFluentBuilder {
         crate::operation::create_qualification_type::builders::CreateQualificationTypeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateNamedQueryOutput`](crate::operation::create_named_query::CreateNamedQueryOutput) with field(s):
     ///   - [`named_query_id(Option<String>)`](crate::operation::create_named_query::CreateNamedQueryOutput::named_query_id): <p>The unique ID of the query.</p>
     /// - On failure, responds with [`SdkError<CreateNamedQueryError>`](crate::operation::create_named_query::CreateNamedQueryError)
-    pub fn create_named_query(
-        &self,
-    ) -> crate::operation::create_named_query::builders::CreateNamedQueryFluentBuilder {
-        crate::operation::create_named_query::builders::CreateNamedQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_named_query(&self) -> crate::operation::create_named_query::builders::CreateNamedQueryFluentBuilder {
+        crate::operation::create_named_query::builders::CreateNamedQueryFluentBuilder::new(self.handle.clone())
     }
 }

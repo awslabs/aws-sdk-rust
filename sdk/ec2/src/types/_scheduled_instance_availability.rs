@@ -107,9 +107,7 @@ impl ScheduledInstanceAvailability {
 
 /// A builder for [`ScheduledInstanceAvailability`](crate::types::ScheduledInstanceAvailability).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledInstanceAvailabilityBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) available_instance_count: ::std::option::Option<i32>,
@@ -127,18 +125,12 @@ pub struct ScheduledInstanceAvailabilityBuilder {
 }
 impl ScheduledInstanceAvailabilityBuilder {
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -166,17 +158,12 @@ impl ScheduledInstanceAvailabilityBuilder {
         self
     }
     /// <p>The time period for the first schedule to start.</p>
-    pub fn set_first_slot_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_first_slot_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.first_slot_start_time = input;
         self
     }
     /// <p>The time period for the first schedule to start.</p>
-    pub fn get_first_slot_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_first_slot_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.first_slot_start_time
     }
     /// <p>The hourly price for a single instance.</p>
@@ -194,18 +181,12 @@ impl ScheduledInstanceAvailabilityBuilder {
         &self.hourly_price
     }
     /// <p>The instance type. You can specify one of the C3, C4, M4, or R3 instance types.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type. You can specify one of the C3, C4, M4, or R3 instance types.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -242,18 +223,12 @@ impl ScheduledInstanceAvailabilityBuilder {
         &self.min_term_duration_in_days
     }
     /// <p>The network platform.</p>
-    pub fn network_platform(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_platform = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The network platform.</p>
-    pub fn set_network_platform(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_platform = input;
         self
     }
@@ -276,18 +251,12 @@ impl ScheduledInstanceAvailabilityBuilder {
         &self.platform
     }
     /// <p>The purchase token. This token expires in two hours.</p>
-    pub fn purchase_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn purchase_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.purchase_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The purchase token. This token expires in two hours.</p>
-    pub fn set_purchase_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_purchase_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.purchase_token = input;
         self
     }
@@ -301,17 +270,12 @@ impl ScheduledInstanceAvailabilityBuilder {
         self
     }
     /// <p>The schedule recurrence.</p>
-    pub fn set_recurrence(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledInstanceRecurrence>,
-    ) -> Self {
+    pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::ScheduledInstanceRecurrence>) -> Self {
         self.recurrence = input;
         self
     }
     /// <p>The schedule recurrence.</p>
-    pub fn get_recurrence(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduledInstanceRecurrence> {
+    pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::ScheduledInstanceRecurrence> {
         &self.recurrence
     }
     /// <p>The number of hours in the schedule.</p>

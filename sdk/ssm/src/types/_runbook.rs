@@ -14,9 +14,7 @@ pub struct Runbook {
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartChangeRequestExecution</code>.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>. </p>
     #[doc(hidden)]
     pub target_parameter_name: ::std::option::Option<::std::string::String>,
@@ -25,14 +23,8 @@ pub struct Runbook {
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>A key-value mapping of runbook parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     #[doc(hidden)]
-    pub target_maps: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    >,
+    pub target_maps:
+        ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the operation started, indicating the maximum number of resources that the runbook operation can run on at the same time.</p>
     #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<::std::string::String>,
@@ -53,11 +45,7 @@ impl Runbook {
         self.document_version.as_deref()
     }
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartChangeRequestExecution</code>.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.parameters.as_ref()
     }
     /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>. </p>
@@ -71,12 +59,7 @@ impl Runbook {
     /// <p>A key-value mapping of runbook parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     pub fn target_maps(
         &self,
-    ) -> ::std::option::Option<
-        &[::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::string::String>,
-        >],
-    > {
+    ) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>]> {
         self.target_maps.as_deref()
     }
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the operation started, indicating the maximum number of resources that the runbook operation can run on at the same time.</p>
@@ -101,44 +84,27 @@ impl Runbook {
 
 /// A builder for [`Runbook`](crate::types::Runbook).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunbookBuilder {
     pub(crate) document_name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) target_parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    pub(crate) target_maps: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    >,
+    pub(crate) target_maps:
+        ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     pub(crate) max_concurrency: ::std::option::Option<::std::string::String>,
     pub(crate) max_errors: ::std::option::Option<::std::string::String>,
-    pub(crate) target_locations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
+    pub(crate) target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
 }
 impl RunbookBuilder {
     /// <p>The name of the Automation runbook used in a runbook workflow.</p>
-    pub fn document_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Automation runbook used in a runbook workflow.</p>
-    pub fn set_document_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_name = input;
         self
     }
@@ -147,18 +113,12 @@ impl RunbookBuilder {
         &self.document_name
     }
     /// <p>The version of the Automation runbook used in a runbook workflow.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the Automation runbook used in a runbook workflow.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -171,11 +131,7 @@ impl RunbookBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartChangeRequestExecution</code>.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.parameters = ::std::option::Option::Some(hash_map);
@@ -184,12 +140,7 @@ impl RunbookBuilder {
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartChangeRequestExecution</code>.</p>
     pub fn set_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.parameters = input;
         self
@@ -197,24 +148,16 @@ impl RunbookBuilder {
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartChangeRequestExecution</code>.</p>
     pub fn get_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.parameters
     }
     /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>. </p>
-    pub fn target_parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>. </p>
-    pub fn set_target_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_parameter_name = input;
         self
     }
@@ -234,10 +177,7 @@ impl RunbookBuilder {
         self
     }
     /// <p>A key-value mapping to target resources that the runbook operation performs tasks on. Required if you specify <code>TargetParameterName</code>.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -250,13 +190,7 @@ impl RunbookBuilder {
     /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
     ///
     /// <p>A key-value mapping of runbook parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn target_maps(
-        mut self,
-        input: ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn target_maps(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>) -> Self {
         let mut v = self.target_maps.unwrap_or_default();
         v.push(input);
         self.target_maps = ::std::option::Option::Some(v);
@@ -265,14 +199,7 @@ impl RunbookBuilder {
     /// <p>A key-value mapping of runbook parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     pub fn set_target_maps(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::vec::Vec<::std::string::String>,
-                >,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     ) -> Self {
         self.target_maps = input;
         self
@@ -280,29 +207,16 @@ impl RunbookBuilder {
     /// <p>A key-value mapping of runbook parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     pub fn get_target_maps(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>> {
         &self.target_maps
     }
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the operation started, indicating the maximum number of resources that the runbook operation can run on at the same time.</p>
-    pub fn max_concurrency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_concurrency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_concurrency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the operation started, indicating the maximum number of resources that the runbook operation can run on at the same time.</p>
-    pub fn set_max_concurrency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_concurrency = input;
         self
     }
@@ -336,17 +250,12 @@ impl RunbookBuilder {
         self
     }
     /// <p>Information about the Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Runbook operation.</p>
-    pub fn set_target_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
-    ) -> Self {
+    pub fn set_target_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>) -> Self {
         self.target_locations = input;
         self
     }
     /// <p>Information about the Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Runbook operation.</p>
-    pub fn get_target_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
+    pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
         &self.target_locations
     }
     /// Consumes the builder and constructs a [`Runbook`](crate::types::Runbook).

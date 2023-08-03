@@ -26,7 +26,7 @@ impl CreateDistributionWithTagsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDistributionWithTagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_distribution_with_tags::builders::CreateDistributionWithTagsInputBuilder,
+    inner: crate::operation::create_distribution_with_tags::builders::CreateDistributionWithTagsInputBuilder,
 }
 impl CreateDistributionWithTagsFluentBuilder {
     /// Creates a new `CreateDistributionWithTags`.
@@ -37,7 +37,7 @@ impl CreateDistributionWithTagsFluentBuilder {
         }
     }
     /// Access the CreateDistributionWithTags as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_distribution_with_tags::builders::CreateDistributionWithTagsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_distribution_with_tags::builders::CreateDistributionWithTagsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateDistributionWithTagsFluentBuilder {
             crate::operation::create_distribution_with_tags::CreateDistributionWithTags,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateDistributionWithTagsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateDistributionWithTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_distribution_with_tags::CreateDistributionWithTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateDistributionWithTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_distribution_with_tags::CreateDistributionWithTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl CreateDistributionWithTagsFluentBuilder {
             crate::operation::create_distribution_with_tags::CreateDistributionWithTags,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The distribution's configuration information.</p>
-    pub fn distribution_config_with_tags(
-        mut self,
-        input: crate::types::DistributionConfigWithTags,
-    ) -> Self {
+    pub fn distribution_config_with_tags(mut self, input: crate::types::DistributionConfigWithTags) -> Self {
         self.inner = self.inner.distribution_config_with_tags(input);
         self
     }
     /// <p>The distribution's configuration information.</p>
-    pub fn set_distribution_config_with_tags(
-        mut self,
-        input: ::std::option::Option<crate::types::DistributionConfigWithTags>,
-    ) -> Self {
+    pub fn set_distribution_config_with_tags(mut self, input: ::std::option::Option<crate::types::DistributionConfigWithTags>) -> Self {
         self.inner = self.inner.set_distribution_config_with_tags(input);
         self
     }
     /// <p>The distribution's configuration information.</p>
-    pub fn get_distribution_config_with_tags(
-        &self,
-    ) -> &::std::option::Option<crate::types::DistributionConfigWithTags> {
+    pub fn get_distribution_config_with_tags(&self) -> &::std::option::Option<crate::types::DistributionConfigWithTags> {
         self.inner.get_distribution_config_with_tags()
     }
 }

@@ -10,10 +10,7 @@ impl StartTextDetectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_text_detection::StartTextDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_text_detection::StartTextDetectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_text_detection::StartTextDetectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_text_detection();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl StartTextDetectionFluentBuilder {
         }
     }
     /// Access the StartTextDetection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_text_detection::builders::StartTextDetectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_text_detection::builders::StartTextDetectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl StartTextDetectionFluentBuilder {
             crate::operation::start_text_detection::StartTextDetection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_text_detection::StartTextDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_text_detection::StartTextDetectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl StartTextDetectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl StartTextDetectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_text_detection::StartTextDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_text_detection::StartTextDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_text_detection::StartTextDetectionError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl StartTextDetectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_text_detection::StartTextDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_text_detection::StartTextDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_text_detection::StartTextDetectionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl StartTextDetectionFluentBuilder {
             crate::operation::start_text_detection::StartTextDetection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_text_detection::StartTextDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_text_detection::StartTextDetectionError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +123,12 @@ impl StartTextDetectionFluentBuilder {
         self.inner.get_video()
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentaly started more than once.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentaly started more than once.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -164,17 +142,12 @@ impl StartTextDetectionFluentBuilder {
         self
     }
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
-    pub fn set_notification_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.inner = self.inner.set_notification_channel(input);
         self
     }
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
-    pub fn get_notification_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+    pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         self.inner.get_notification_channel()
     }
     /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
@@ -197,10 +170,7 @@ impl StartTextDetectionFluentBuilder {
         self
     }
     /// <p>Optional parameters that let you set criteria the text must meet to be included in your response.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::StartTextDetectionFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::StartTextDetectionFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

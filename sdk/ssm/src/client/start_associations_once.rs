@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`association_ids(Vec<String>)`](crate::operation::start_associations_once::builders::StartAssociationsOnceFluentBuilder::association_ids) / [`set_association_ids(Option<Vec<String>>)`](crate::operation::start_associations_once::builders::StartAssociationsOnceFluentBuilder::set_association_ids): <p>The association IDs that you want to run immediately and only one time.</p>
     /// - On success, responds with [`StartAssociationsOnceOutput`](crate::operation::start_associations_once::StartAssociationsOnceOutput)
     /// - On failure, responds with [`SdkError<StartAssociationsOnceError>`](crate::operation::start_associations_once::StartAssociationsOnceError)
-    pub fn start_associations_once(
-        &self,
-    ) -> crate::operation::start_associations_once::builders::StartAssociationsOnceFluentBuilder
-    {
-        crate::operation::start_associations_once::builders::StartAssociationsOnceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_associations_once(&self) -> crate::operation::start_associations_once::builders::StartAssociationsOnceFluentBuilder {
+        crate::operation::start_associations_once::builders::StartAssociationsOnceFluentBuilder::new(self.handle.clone())
     }
 }

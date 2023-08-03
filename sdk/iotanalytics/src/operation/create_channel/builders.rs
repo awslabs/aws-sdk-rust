@@ -10,10 +10,7 @@ impl CreateChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_channel::CreateChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel::CreateChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel::CreateChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_channel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateChannelFluentBuilder {
         }
     }
     /// Access the CreateChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_channel::builders::CreateChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_channel::builders::CreateChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -134,10 +126,7 @@ impl CreateChannelFluentBuilder {
         self
     }
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
-    pub fn set_channel_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelStorage>,
-    ) -> Self {
+    pub fn set_channel_storage(mut self, input: ::std::option::Option<crate::types::ChannelStorage>) -> Self {
         self.inner = self.inner.set_channel_storage(input);
         self
     }
@@ -151,10 +140,7 @@ impl CreateChannelFluentBuilder {
         self
     }
     /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
-    pub fn set_retention_period(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self
     }
@@ -172,10 +158,7 @@ impl CreateChannelFluentBuilder {
         self
     }
     /// <p>Metadata which can be used to manage the channel.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

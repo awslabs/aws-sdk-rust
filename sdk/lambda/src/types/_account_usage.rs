@@ -30,9 +30,7 @@ impl AccountUsage {
 
 /// A builder for [`AccountUsage`](crate::types::AccountUsage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountUsageBuilder {
     pub(crate) total_code_size: ::std::option::Option<i64>,
     pub(crate) function_count: ::std::option::Option<i64>,

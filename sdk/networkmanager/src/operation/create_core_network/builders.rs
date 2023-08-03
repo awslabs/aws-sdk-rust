@@ -10,10 +10,7 @@ impl CreateCoreNetworkInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_core_network::CreateCoreNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_core_network::CreateCoreNetworkError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_core_network::CreateCoreNetworkError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_core_network();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateCoreNetworkFluentBuilder {
         }
     }
     /// Access the CreateCoreNetwork as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_core_network::builders::CreateCoreNetworkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_core_network::builders::CreateCoreNetworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateCoreNetworkFluentBuilder {
             crate::operation::create_core_network::CreateCoreNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_core_network::CreateCoreNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_core_network::CreateCoreNetworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateCoreNetworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateCoreNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_core_network::CreateCoreNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_core_network::CreateCoreNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_core_network::CreateCoreNetworkError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateCoreNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_core_network::CreateCoreNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_core_network::CreateCoreNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_core_network::CreateCoreNetworkError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateCoreNetworkFluentBuilder {
             crate::operation::create_core_network::CreateCoreNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_core_network::CreateCoreNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_core_network::CreateCoreNetworkError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the global network that a core network will be a part of. </p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network that a core network will be a part of. </p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -166,10 +144,7 @@ impl CreateCoreNetworkFluentBuilder {
         self
     }
     /// <p>Key-value tags associated with a core network request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -178,18 +153,12 @@ impl CreateCoreNetworkFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The policy document for creating a core network.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_document(input.into());
         self
     }
     /// <p>The policy document for creating a core network.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
     }

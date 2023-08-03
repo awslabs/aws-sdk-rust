@@ -15,35 +15,25 @@ impl DescribeAutoPredictorInput {
 }
 impl DescribeAutoPredictorInput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoPredictorInput`](crate::operation::describe_auto_predictor::DescribeAutoPredictorInput).
-    pub fn builder(
-    ) -> crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorInputBuilder {
         crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAutoPredictorInput`](crate::operation::describe_auto_predictor::DescribeAutoPredictorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutoPredictorInputBuilder {
     pub(crate) predictor_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAutoPredictorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
-    pub fn predictor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
-    pub fn set_predictor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_arn = input;
         self
     }
@@ -54,14 +44,10 @@ impl DescribeAutoPredictorInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAutoPredictorInput`](crate::operation::describe_auto_predictor::DescribeAutoPredictorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_auto_predictor::DescribeAutoPredictorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_auto_predictor::DescribeAutoPredictorInput {
-                predictor_arn: self.predictor_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_auto_predictor::DescribeAutoPredictorInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_auto_predictor::DescribeAutoPredictorInput {
+            predictor_arn: self.predictor_arn,
+        })
     }
 }

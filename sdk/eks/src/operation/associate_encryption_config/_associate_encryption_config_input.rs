@@ -29,20 +29,17 @@ impl AssociateEncryptionConfigInput {
 }
 impl AssociateEncryptionConfigInput {
     /// Creates a new builder-style object to manufacture [`AssociateEncryptionConfigInput`](crate::operation::associate_encryption_config::AssociateEncryptionConfigInput).
-    pub fn builder() -> crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigInputBuilder{
+    pub fn builder() -> crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigInputBuilder {
         crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateEncryptionConfigInput`](crate::operation::associate_encryption_config::AssociateEncryptionConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateEncryptionConfigInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
-    pub(crate) encryption_config:
-        ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
+    pub(crate) encryption_config: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateEncryptionConfigInputBuilder {
@@ -72,32 +69,21 @@ impl AssociateEncryptionConfigInputBuilder {
         self
     }
     /// <p>The configuration you are using for encryption.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>) -> Self {
         self.encryption_config = input;
         self
     }
     /// <p>The configuration you are using for encryption.</p>
-    pub fn get_encryption_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
+    pub fn get_encryption_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
         &self.encryption_config
     }
     /// <p>The client request token you are using with the encryption configuration.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The client request token you are using with the encryption configuration.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -112,12 +98,10 @@ impl AssociateEncryptionConfigInputBuilder {
         crate::operation::associate_encryption_config::AssociateEncryptionConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_encryption_config::AssociateEncryptionConfigInput {
-                cluster_name: self.cluster_name,
-                encryption_config: self.encryption_config,
-                client_request_token: self.client_request_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_encryption_config::AssociateEncryptionConfigInput {
+            cluster_name: self.cluster_name,
+            encryption_config: self.encryption_config,
+            client_request_token: self.client_request_token,
+        })
     }
 }

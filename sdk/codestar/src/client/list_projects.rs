@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`projects(Option<Vec<ProjectSummary>>)`](crate::operation::list_projects::ListProjectsOutput::projects): <p>A list of projects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_projects::ListProjectsOutput::next_token): <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::operation::list_projects::ListProjectsError)
-    pub fn list_projects(
-        &self,
-    ) -> crate::operation::list_projects::builders::ListProjectsFluentBuilder {
-        crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_projects(&self) -> crate::operation::list_projects::builders::ListProjectsFluentBuilder {
+        crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(self.handle.clone())
     }
 }

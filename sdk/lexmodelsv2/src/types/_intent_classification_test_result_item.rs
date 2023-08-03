@@ -12,8 +12,7 @@ pub struct IntentClassificationTestResultItem {
     pub multi_turn_conversation: bool,
     /// <p>The result of the intent classification test.</p>
     #[doc(hidden)]
-    pub result_counts:
-        ::std::option::Option<crate::types::IntentClassificationTestResultItemCounts>,
+    pub result_counts: ::std::option::Option<crate::types::IntentClassificationTestResultItemCounts>,
 }
 impl IntentClassificationTestResultItem {
     /// <p>The name of the intent.</p>
@@ -25,9 +24,7 @@ impl IntentClassificationTestResultItem {
         self.multi_turn_conversation
     }
     /// <p>The result of the intent classification test.</p>
-    pub fn result_counts(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IntentClassificationTestResultItemCounts> {
+    pub fn result_counts(&self) -> ::std::option::Option<&crate::types::IntentClassificationTestResultItemCounts> {
         self.result_counts.as_ref()
     }
 }
@@ -40,14 +37,11 @@ impl IntentClassificationTestResultItem {
 
 /// A builder for [`IntentClassificationTestResultItem`](crate::types::IntentClassificationTestResultItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentClassificationTestResultItemBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
     pub(crate) multi_turn_conversation: ::std::option::Option<bool>,
-    pub(crate) result_counts:
-        ::std::option::Option<crate::types::IntentClassificationTestResultItemCounts>,
+    pub(crate) result_counts: ::std::option::Option<crate::types::IntentClassificationTestResultItemCounts>,
 }
 impl IntentClassificationTestResultItemBuilder {
     /// <p>The name of the intent.</p>
@@ -79,25 +73,17 @@ impl IntentClassificationTestResultItemBuilder {
         &self.multi_turn_conversation
     }
     /// <p>The result of the intent classification test.</p>
-    pub fn result_counts(
-        mut self,
-        input: crate::types::IntentClassificationTestResultItemCounts,
-    ) -> Self {
+    pub fn result_counts(mut self, input: crate::types::IntentClassificationTestResultItemCounts) -> Self {
         self.result_counts = ::std::option::Option::Some(input);
         self
     }
     /// <p>The result of the intent classification test.</p>
-    pub fn set_result_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::IntentClassificationTestResultItemCounts>,
-    ) -> Self {
+    pub fn set_result_counts(mut self, input: ::std::option::Option<crate::types::IntentClassificationTestResultItemCounts>) -> Self {
         self.result_counts = input;
         self
     }
     /// <p>The result of the intent classification test.</p>
-    pub fn get_result_counts(
-        &self,
-    ) -> &::std::option::Option<crate::types::IntentClassificationTestResultItemCounts> {
+    pub fn get_result_counts(&self) -> &::std::option::Option<crate::types::IntentClassificationTestResultItemCounts> {
         &self.result_counts
     }
     /// Consumes the builder and constructs a [`IntentClassificationTestResultItem`](crate::types::IntentClassificationTestResultItem).

@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::create_device_definition::CreateDeviceDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::create_device_definition::CreateDeviceDefinitionOutput::name): The name of the definition.
     /// - On failure, responds with [`SdkError<CreateDeviceDefinitionError>`](crate::operation::create_device_definition::CreateDeviceDefinitionError)
-    pub fn create_device_definition(
-        &self,
-    ) -> crate::operation::create_device_definition::builders::CreateDeviceDefinitionFluentBuilder
-    {
+    pub fn create_device_definition(&self) -> crate::operation::create_device_definition::builders::CreateDeviceDefinitionFluentBuilder {
         crate::operation::create_device_definition::builders::CreateDeviceDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

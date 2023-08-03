@@ -37,10 +37,7 @@ impl UpdateNetworkSettingsFluentBuilder {
         }
     }
     /// Access the UpdateNetworkSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_network_settings::builders::UpdateNetworkSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_network_settings::builders::UpdateNetworkSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateNetworkSettingsFluentBuilder {
             crate::operation::update_network_settings::UpdateNetworkSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_settings::UpdateNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_settings::UpdateNetworkSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateNetworkSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateNetworkSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_network_settings::UpdateNetworkSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_settings::UpdateNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_settings::UpdateNetworkSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateNetworkSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_network_settings::UpdateNetworkSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_settings::UpdateNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_settings::UpdateNetworkSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateNetworkSettingsFluentBuilder {
             crate::operation::update_network_settings::UpdateNetworkSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_settings::UpdateNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_settings::UpdateNetworkSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_settings_arn(input.into());
         self
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn set_network_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_settings_arn(input);
         self
     }
@@ -167,10 +147,7 @@ impl UpdateNetworkSettingsFluentBuilder {
         self
     }
     /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -183,25 +160,17 @@ impl UpdateNetworkSettingsFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>

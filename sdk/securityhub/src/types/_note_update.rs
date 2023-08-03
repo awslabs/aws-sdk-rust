@@ -30,9 +30,7 @@ impl NoteUpdate {
 
 /// A builder for [`NoteUpdate`](crate::types::NoteUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NoteUpdateBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,

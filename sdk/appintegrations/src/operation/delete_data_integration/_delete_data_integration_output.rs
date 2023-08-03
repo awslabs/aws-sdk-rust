@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDataIntegrationOutput {
 }
 impl DeleteDataIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataIntegrationOutput`](crate::operation::delete_data_integration::DeleteDataIntegrationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_data_integration::builders::DeleteDataIntegrationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_data_integration::builders::DeleteDataIntegrationOutputBuilder {
         crate::operation::delete_data_integration::builders::DeleteDataIntegrationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDataIntegrationOutput`](crate::operation::delete_data_integration::DeleteDataIntegrationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataIntegrationOutputBuilder {
     _request_id: Option<String>,
 }

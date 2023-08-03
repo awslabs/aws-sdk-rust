@@ -39,9 +39,7 @@ impl CreateTransitGatewayConnectPeerInput {
         self.peer_address.as_deref()
     }
     /// <p>The BGP options for the Connect peer.</p>
-    pub fn bgp_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayConnectRequestBgpOptions> {
+    pub fn bgp_options(&self) -> ::std::option::Option<&crate::types::TransitGatewayConnectRequestBgpOptions> {
         self.bgp_options.as_ref()
     }
     /// <p>The range of inside IP addresses that are used for BGP peering. You must specify a size /29 IPv4 CIDR block from the <code>169.254.0.0/16</code> range. The first address from the range must be configured on the appliance as the BGP IP address. You can also optionally specify a size /125 IPv6 CIDR block from the <code>fd00::/8</code> range.</p>
@@ -59,63 +57,45 @@ impl CreateTransitGatewayConnectPeerInput {
 }
 impl CreateTransitGatewayConnectPeerInput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayConnectPeerInput`](crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerInput).
-    pub fn builder() -> crate::operation::create_transit_gateway_connect_peer::builders::CreateTransitGatewayConnectPeerInputBuilder{
+    pub fn builder() -> crate::operation::create_transit_gateway_connect_peer::builders::CreateTransitGatewayConnectPeerInputBuilder {
         crate::operation::create_transit_gateway_connect_peer::builders::CreateTransitGatewayConnectPeerInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTransitGatewayConnectPeerInput`](crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayConnectPeerInputBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_address: ::std::option::Option<::std::string::String>,
     pub(crate) peer_address: ::std::option::Option<::std::string::String>,
-    pub(crate) bgp_options:
-        ::std::option::Option<crate::types::TransitGatewayConnectRequestBgpOptions>,
+    pub(crate) bgp_options: ::std::option::Option<crate::types::TransitGatewayConnectRequestBgpOptions>,
     pub(crate) inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateTransitGatewayConnectPeerInputBuilder {
     /// <p>The ID of the Connect attachment.</p>
-    pub fn transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Connect attachment.</p>
-    pub fn set_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = input;
         self
     }
     /// <p>The ID of the Connect attachment.</p>
-    pub fn get_transit_gateway_attachment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_attachment_id
     }
     /// <p>The peer IP address (GRE outer IP address) on the transit gateway side of the Connect peer, which must be specified from a transit gateway CIDR block. If not specified, Amazon automatically assigns the first available IP address from the transit gateway CIDR block.</p>
-    pub fn transit_gateway_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The peer IP address (GRE outer IP address) on the transit gateway side of the Connect peer, which must be specified from a transit gateway CIDR block. If not specified, Amazon automatically assigns the first available IP address from the transit gateway CIDR block.</p>
-    pub fn set_transit_gateway_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_address = input;
         self
     }
@@ -138,25 +118,17 @@ impl CreateTransitGatewayConnectPeerInputBuilder {
         &self.peer_address
     }
     /// <p>The BGP options for the Connect peer.</p>
-    pub fn bgp_options(
-        mut self,
-        input: crate::types::TransitGatewayConnectRequestBgpOptions,
-    ) -> Self {
+    pub fn bgp_options(mut self, input: crate::types::TransitGatewayConnectRequestBgpOptions) -> Self {
         self.bgp_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The BGP options for the Connect peer.</p>
-    pub fn set_bgp_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayConnectRequestBgpOptions>,
-    ) -> Self {
+    pub fn set_bgp_options(mut self, input: ::std::option::Option<crate::types::TransitGatewayConnectRequestBgpOptions>) -> Self {
         self.bgp_options = input;
         self
     }
     /// <p>The BGP options for the Connect peer.</p>
-    pub fn get_bgp_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayConnectRequestBgpOptions> {
+    pub fn get_bgp_options(&self) -> &::std::option::Option<crate::types::TransitGatewayConnectRequestBgpOptions> {
         &self.bgp_options
     }
     /// Appends an item to `inside_cidr_blocks`.
@@ -164,27 +136,19 @@ impl CreateTransitGatewayConnectPeerInputBuilder {
     /// To override the contents of this collection use [`set_inside_cidr_blocks`](Self::set_inside_cidr_blocks).
     ///
     /// <p>The range of inside IP addresses that are used for BGP peering. You must specify a size /29 IPv4 CIDR block from the <code>169.254.0.0/16</code> range. The first address from the range must be configured on the appliance as the BGP IP address. You can also optionally specify a size /125 IPv6 CIDR block from the <code>fd00::/8</code> range.</p>
-    pub fn inside_cidr_blocks(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inside_cidr_blocks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inside_cidr_blocks.unwrap_or_default();
         v.push(input.into());
         self.inside_cidr_blocks = ::std::option::Option::Some(v);
         self
     }
     /// <p>The range of inside IP addresses that are used for BGP peering. You must specify a size /29 IPv4 CIDR block from the <code>169.254.0.0/16</code> range. The first address from the range must be configured on the appliance as the BGP IP address. You can also optionally specify a size /125 IPv6 CIDR block from the <code>fd00::/8</code> range.</p>
-    pub fn set_inside_cidr_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inside_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inside_cidr_blocks = input;
         self
     }
     /// <p>The range of inside IP addresses that are used for BGP peering. You must specify a size /29 IPv4 CIDR block from the <code>169.254.0.0/16</code> range. The first address from the range must be configured on the appliance as the BGP IP address. You can also optionally specify a size /125 IPv6 CIDR block from the <code>fd00::/8</code> range.</p>
-    pub fn get_inside_cidr_blocks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inside_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.inside_cidr_blocks
     }
     /// Appends an item to `tag_specifications`.
@@ -199,17 +163,12 @@ impl CreateTransitGatewayConnectPeerInputBuilder {
         self
     }
     /// <p>The tags to apply to the Connect peer.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the Connect peer.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -235,21 +194,14 @@ impl CreateTransitGatewayConnectPeerInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerInput {
-                transit_gateway_attachment_id: self.transit_gateway_attachment_id
-                ,
-                transit_gateway_address: self.transit_gateway_address
-                ,
-                peer_address: self.peer_address
-                ,
-                bgp_options: self.bgp_options
-                ,
-                inside_cidr_blocks: self.inside_cidr_blocks
-                ,
-                tag_specifications: self.tag_specifications
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_attachment_id: self.transit_gateway_attachment_id,
+                transit_gateway_address: self.transit_gateway_address,
+                peer_address: self.peer_address,
+                bgp_options: self.bgp_options,
+                inside_cidr_blocks: self.inside_cidr_blocks,
+                tag_specifications: self.tag_specifications,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

@@ -10,9 +10,7 @@ pub fn ser_merge_branches_by_fast_forward_input(
         object.key("sourceCommitSpecifier").string(var_2.as_str());
     }
     if let Some(var_3) = &input.destination_commit_specifier {
-        object
-            .key("destinationCommitSpecifier")
-            .string(var_3.as_str());
+        object.key("destinationCommitSpecifier").string(var_3.as_str());
     }
     if let Some(var_4) = &input.target_branch {
         object.key("targetBranch").string(var_4.as_str());

@@ -48,7 +48,7 @@ impl CreateComputeEnvironmentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateComputeEnvironmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_compute_environment::builders::CreateComputeEnvironmentInputBuilder,
+    inner: crate::operation::create_compute_environment::builders::CreateComputeEnvironmentInputBuilder,
 }
 impl CreateComputeEnvironmentFluentBuilder {
     /// Creates a new `CreateComputeEnvironment`.
@@ -59,10 +59,7 @@ impl CreateComputeEnvironmentFluentBuilder {
         }
     }
     /// Access the CreateComputeEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_compute_environment::builders::CreateComputeEnvironmentInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_compute_environment::builders::CreateComputeEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +71,7 @@ impl CreateComputeEnvironmentFluentBuilder {
             crate::operation::create_compute_environment::CreateComputeEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_compute_environment::CreateComputeEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_compute_environment::CreateComputeEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -86,10 +81,7 @@ impl CreateComputeEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -98,9 +90,7 @@ impl CreateComputeEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_compute_environment::CreateComputeEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_compute_environment::CreateComputeEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_compute_environment::CreateComputeEnvironmentError>,
     > {
         let op = self
             .inner
@@ -123,9 +113,7 @@ impl CreateComputeEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_compute_environment::CreateComputeEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_compute_environment::CreateComputeEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_compute_environment::CreateComputeEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -139,25 +127,17 @@ impl CreateComputeEnvironmentFluentBuilder {
             crate::operation::create_compute_environment::CreateComputeEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_compute_environment::CreateComputeEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_compute_environment::CreateComputeEnvironmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    pub fn compute_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compute_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compute_environment_name(input.into());
         self
     }
     /// <p>The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    pub fn set_compute_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compute_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compute_environment_name(input);
         self
     }
@@ -234,10 +214,7 @@ impl CreateComputeEnvironmentFluentBuilder {
         self
     }
     /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
-    pub fn set_compute_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeResource>,
-    ) -> Self {
+    pub fn set_compute_resources(mut self, input: ::std::option::Option<crate::types::ComputeResource>) -> Self {
         self.inner = self.inner.set_compute_resources(input);
         self
     }
@@ -280,32 +257,19 @@ impl CreateComputeEnvironmentFluentBuilder {
     ///
     /// <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
     /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't propagate to the underlying compute resources.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
     /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't propagate to the underlying compute resources.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
     /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't propagate to the underlying compute resources.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p>
@@ -314,10 +278,7 @@ impl CreateComputeEnvironmentFluentBuilder {
         self
     }
     /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p>
-    pub fn set_eks_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EksConfiguration>,
-    ) -> Self {
+    pub fn set_eks_configuration(mut self, input: ::std::option::Option<crate::types::EksConfiguration>) -> Self {
         self.inner = self.inner.set_eks_configuration(input);
         self
     }

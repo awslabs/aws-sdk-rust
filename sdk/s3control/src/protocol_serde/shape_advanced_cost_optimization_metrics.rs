@@ -15,8 +15,7 @@ pub fn ser_advanced_cost_optimization_metrics(
 
 pub fn de_advanced_cost_optimization_metrics(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AdvancedCostOptimizationMetrics, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::AdvancedCostOptimizationMetrics, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AdvancedCostOptimizationMetrics::builder();
     while let Some(mut tag) = decoder.next_tag() {

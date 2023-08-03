@@ -15,17 +15,14 @@ impl DescribeIdFormatInput {
 }
 impl DescribeIdFormatInput {
     /// Creates a new builder-style object to manufacture [`DescribeIdFormatInput`](crate::operation::describe_id_format::DescribeIdFormatInput).
-    pub fn builder() -> crate::operation::describe_id_format::builders::DescribeIdFormatInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_id_format::builders::DescribeIdFormatInputBuilder {
         crate::operation::describe_id_format::builders::DescribeIdFormatInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIdFormatInput`](crate::operation::describe_id_format::DescribeIdFormatInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIdFormatInputBuilder {
     pub(crate) resource: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl DescribeIdFormatInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIdFormatInput`](crate::operation::describe_id_format::DescribeIdFormatInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_id_format::DescribeIdFormatInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_id_format::DescribeIdFormatInput {
-                resource: self.resource,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_id_format::DescribeIdFormatInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_id_format::DescribeIdFormatInput { resource: self.resource })
     }
 }

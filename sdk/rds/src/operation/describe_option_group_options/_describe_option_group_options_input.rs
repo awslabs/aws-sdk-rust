@@ -76,16 +76,14 @@ impl DescribeOptionGroupOptionsInput {
 }
 impl DescribeOptionGroupOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeOptionGroupOptionsInput`](crate::operation::describe_option_group_options::DescribeOptionGroupOptionsInput).
-    pub fn builder() -> crate::operation::describe_option_group_options::builders::DescribeOptionGroupOptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_option_group_options::builders::DescribeOptionGroupOptionsInputBuilder {
         crate::operation::describe_option_group_options::builders::DescribeOptionGroupOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOptionGroupOptionsInput`](crate::operation::describe_option_group_options::DescribeOptionGroupOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOptionGroupOptionsInputBuilder {
     pub(crate) engine_name: ::std::option::Option<::std::string::String>,
     pub(crate) major_engine_version: ::std::option::Option<::std::string::String>,
@@ -151,18 +149,12 @@ impl DescribeOptionGroupOptionsInputBuilder {
         &self.engine_name
     }
     /// <p>If specified, filters the results to include only options for the specified major engine version.</p>
-    pub fn major_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If specified, filters the results to include only options for the specified major engine version.</p>
-    pub fn set_major_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.major_engine_version = input;
         self
     }
@@ -182,10 +174,7 @@ impl DescribeOptionGroupOptionsInputBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -234,14 +223,12 @@ impl DescribeOptionGroupOptionsInputBuilder {
         crate::operation::describe_option_group_options::DescribeOptionGroupOptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_option_group_options::DescribeOptionGroupOptionsInput {
-                engine_name: self.engine_name,
-                major_engine_version: self.major_engine_version,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_option_group_options::DescribeOptionGroupOptionsInput {
+            engine_name: self.engine_name,
+            major_engine_version: self.major_engine_version,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

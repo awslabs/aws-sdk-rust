@@ -26,8 +26,7 @@ impl ListResolversByFunctionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResolversByFunctionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionInputBuilder,
+    inner: crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionInputBuilder,
 }
 impl ListResolversByFunctionFluentBuilder {
     /// Creates a new `ListResolversByFunction`.
@@ -38,10 +37,7 @@ impl ListResolversByFunctionFluentBuilder {
         }
     }
     /// Access the ListResolversByFunction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListResolversByFunctionFluentBuilder {
             crate::operation::list_resolvers_by_function::ListResolversByFunction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolvers_by_function::ListResolversByFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolvers_by_function::ListResolversByFunctionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListResolversByFunctionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListResolversByFunctionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resolvers_by_function::ListResolversByFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolvers_by_function::ListResolversByFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolvers_by_function::ListResolversByFunctionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListResolversByFunctionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resolvers_by_function::ListResolversByFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolvers_by_function::ListResolversByFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolvers_by_function::ListResolversByFunctionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl ListResolversByFunctionFluentBuilder {
             crate::operation::list_resolvers_by_function::ListResolversByFunction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resolvers_by_function::ListResolversByFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resolvers_by_function::ListResolversByFunctionError>,
     > {
         self.customize_middleware().await
     }

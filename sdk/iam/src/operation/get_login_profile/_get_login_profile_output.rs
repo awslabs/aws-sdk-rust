@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for GetLoginProfileOutput {
 }
 impl GetLoginProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetLoginProfileOutput`](crate::operation::get_login_profile::GetLoginProfileOutput).
-    pub fn builder() -> crate::operation::get_login_profile::builders::GetLoginProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_login_profile::builders::GetLoginProfileOutputBuilder {
         crate::operation::get_login_profile::builders::GetLoginProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoginProfileOutput`](crate::operation::get_login_profile::GetLoginProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoginProfileOutputBuilder {
     pub(crate) login_profile: ::std::option::Option<crate::types::LoginProfile>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl GetLoginProfileOutputBuilder {
         self
     }
     /// <p>A structure containing the user name and the profile creation date for the user.</p>
-    pub fn set_login_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::LoginProfile>,
-    ) -> Self {
+    pub fn set_login_profile(mut self, input: ::std::option::Option<crate::types::LoginProfile>) -> Self {
         self.login_profile = input;
         self
     }

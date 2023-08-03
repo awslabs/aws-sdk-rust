@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::list_group_memberships::ListGroupMembershipsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_group_memberships::ListGroupMembershipsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<ListGroupMembershipsError>`](crate::operation::list_group_memberships::ListGroupMembershipsError)
-    pub fn list_group_memberships(
-        &self,
-    ) -> crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder {
-        crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_group_memberships(&self) -> crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder {
+        crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::new(self.handle.clone())
     }
 }

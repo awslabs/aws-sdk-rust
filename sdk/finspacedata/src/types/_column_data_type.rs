@@ -48,13 +48,7 @@
 /// Data type of a column.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ColumnDataType {
     #[allow(missing_docs)] // documentation missing in model
@@ -99,9 +93,7 @@ impl ::std::convert::From<&str> for ColumnDataType {
             "SMALLINT" => ColumnDataType::Smallint,
             "STRING" => ColumnDataType::String,
             "TINYINT" => ColumnDataType::Tinyint,
-            other => {
-                ColumnDataType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ColumnDataType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -134,8 +126,7 @@ impl ColumnDataType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BIGINT", "BINARY", "BOOLEAN", "CHAR", "DATE", "DATETIME", "DOUBLE", "FLOAT",
-            "INTEGER", "SMALLINT", "STRING", "TINYINT",
+            "BIGINT", "BINARY", "BOOLEAN", "CHAR", "DATE", "DATETIME", "DOUBLE", "FLOAT", "INTEGER", "SMALLINT", "STRING", "TINYINT",
         ]
     }
 }

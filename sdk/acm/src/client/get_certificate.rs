@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`certificate(Option<String>)`](crate::operation::get_certificate::GetCertificateOutput::certificate): <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
     ///   - [`certificate_chain(Option<String>)`](crate::operation::get_certificate::GetCertificateOutput::certificate_chain): <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
     /// - On failure, responds with [`SdkError<GetCertificateError>`](crate::operation::get_certificate::GetCertificateError)
-    pub fn get_certificate(
-        &self,
-    ) -> crate::operation::get_certificate::builders::GetCertificateFluentBuilder {
-        crate::operation::get_certificate::builders::GetCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_certificate(&self) -> crate::operation::get_certificate::builders::GetCertificateFluentBuilder {
+        crate::operation::get_certificate::builders::GetCertificateFluentBuilder::new(self.handle.clone())
     }
 }

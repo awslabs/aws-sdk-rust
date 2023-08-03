@@ -15,16 +15,14 @@ impl ResendContactReachabilityEmailInput {
 }
 impl ResendContactReachabilityEmailInput {
     /// Creates a new builder-style object to manufacture [`ResendContactReachabilityEmailInput`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailInput).
-    pub fn builder() -> crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailInputBuilder{
+    pub fn builder() -> crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailInputBuilder {
         crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailInputBuilder::default()
     }
 }
 
 /// A builder for [`ResendContactReachabilityEmailInput`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResendContactReachabilityEmailInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,8 @@ impl ResendContactReachabilityEmailInputBuilder {
         crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailInput {
-                domain_name: self.domain_name
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailInput {
+            domain_name: self.domain_name,
+        })
     }
 }

@@ -14,8 +14,7 @@ pub struct PolicyDetails {
     /// <p> <b>[Snapshot and AMI policies only]</b> The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>.</p>
     /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
     #[doc(hidden)]
-    pub resource_locations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceLocationValues>>,
+    pub resource_locations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceLocationValues>>,
     /// <p> <b>[Snapshot and AMI policies only]</b> The single tag that identifies targeted resources for this policy.</p>
     #[doc(hidden)]
     pub target_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -46,9 +45,7 @@ impl PolicyDetails {
     }
     /// <p> <b>[Snapshot and AMI policies only]</b> The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>.</p>
     /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
-    pub fn resource_locations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceLocationValues]> {
+    pub fn resource_locations(&self) -> ::std::option::Option<&[crate::types::ResourceLocationValues]> {
         self.resource_locations.as_deref()
     }
     /// <p> <b>[Snapshot and AMI policies only]</b> The single tag that identifies targeted resources for this policy.</p>
@@ -83,15 +80,11 @@ impl PolicyDetails {
 
 /// A builder for [`PolicyDetails`](crate::types::PolicyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyDetailsBuilder {
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyTypeValues>,
-    pub(crate) resource_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>,
-    pub(crate) resource_locations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceLocationValues>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>,
+    pub(crate) resource_locations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceLocationValues>>,
     pub(crate) target_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) schedules: ::std::option::Option<::std::vec::Vec<crate::types::Schedule>>,
     pub(crate) parameters: ::std::option::Option<crate::types::Parameters>,
@@ -107,10 +100,7 @@ impl PolicyDetailsBuilder {
     }
     /// <p> <b>[All policy types]</b> The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
     /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyTypeValues>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyTypeValues>) -> Self {
         self.policy_type = input;
         self
     }
@@ -131,17 +121,12 @@ impl PolicyDetailsBuilder {
         self
     }
     /// <p> <b>[Snapshot policies only]</b> The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an instance.</p>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>) -> Self {
         self.resource_types = input;
         self
     }
     /// <p> <b>[Snapshot policies only]</b> The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an instance.</p>
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>> {
         &self.resource_types
     }
     /// Appends an item to `resource_locations`.
@@ -158,18 +143,13 @@ impl PolicyDetailsBuilder {
     }
     /// <p> <b>[Snapshot and AMI policies only]</b> The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>.</p>
     /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
-    pub fn set_resource_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceLocationValues>>,
-    ) -> Self {
+    pub fn set_resource_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceLocationValues>>) -> Self {
         self.resource_locations = input;
         self
     }
     /// <p> <b>[Snapshot and AMI policies only]</b> The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>.</p>
     /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
-    pub fn get_resource_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceLocationValues>> {
+    pub fn get_resource_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceLocationValues>> {
         &self.resource_locations
     }
     /// Appends an item to `target_tags`.
@@ -184,10 +164,7 @@ impl PolicyDetailsBuilder {
         self
     }
     /// <p> <b>[Snapshot and AMI policies only]</b> The single tag that identifies targeted resources for this policy.</p>
-    pub fn set_target_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_target_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.target_tags = input;
         self
     }
@@ -207,10 +184,7 @@ impl PolicyDetailsBuilder {
         self
     }
     /// <p> <b>[Snapshot and AMI policies only]</b> The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
-    pub fn set_schedules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Schedule>>,
-    ) -> Self {
+    pub fn set_schedules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Schedule>>) -> Self {
         self.schedules = input;
         self
     }
@@ -228,10 +202,7 @@ impl PolicyDetailsBuilder {
     /// <p> <b>[Snapshot and AMI policies only]</b> A set of optional parameters for snapshot and AMI lifecycle policies. </p> <note>
     /// <p>If you are modifying a policy that was created or previously modified using the Amazon Data Lifecycle Manager console, then you must include this parameter and specify either the default values or the new values that you require. You can't omit this parameter or set its values to null.</p>
     /// </note>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::Parameters>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::Parameters>) -> Self {
         self.parameters = input;
         self
     }
@@ -247,10 +218,7 @@ impl PolicyDetailsBuilder {
         self
     }
     /// <p> <b>[Event-based policies only]</b> The event that activates the event-based policy.</p>
-    pub fn set_event_source(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSource>,
-    ) -> Self {
+    pub fn set_event_source(mut self, input: ::std::option::Option<crate::types::EventSource>) -> Self {
         self.event_source = input;
         self
     }
@@ -270,10 +238,7 @@ impl PolicyDetailsBuilder {
         self
     }
     /// <p> <b>[Event-based policies only]</b> The actions to be performed when the event-based policy is activated. You can specify only one action per policy.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.actions = input;
         self
     }

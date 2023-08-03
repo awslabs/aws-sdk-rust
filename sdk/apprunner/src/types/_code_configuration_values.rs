@@ -19,9 +19,7 @@ pub struct CodeConfigurationValues {
     pub port: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
     #[doc(hidden)]
-    pub runtime_environment_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub runtime_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
     /// <ul>
     /// <li> <p> If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services Region as the service that you're launching, you can use either the full ARN or name of the secret. If the parameter exists in a different Region, then the full ARN must be specified. </p> </li>
@@ -29,9 +27,7 @@ pub struct CodeConfigurationValues {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub runtime_environment_secrets: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CodeConfigurationValues {
     /// <p>A runtime environment type for building and running an App Runner service. It represents a programming language runtime.</p>
@@ -52,11 +48,7 @@ impl CodeConfigurationValues {
         self.port.as_deref()
     }
     /// <p>The environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
-    pub fn runtime_environment_variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn runtime_environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.runtime_environment_variables.as_ref()
     }
     /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
@@ -65,11 +57,7 @@ impl CodeConfigurationValues {
     /// <li> <p> Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported. </p> </li>
     /// </ul>
     /// </note>
-    pub fn runtime_environment_secrets(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn runtime_environment_secrets(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.runtime_environment_secrets.as_ref()
     }
 }
@@ -80,14 +68,8 @@ impl ::std::fmt::Debug for CodeConfigurationValues {
         formatter.field("build_command", &"*** Sensitive Data Redacted ***");
         formatter.field("start_command", &"*** Sensitive Data Redacted ***");
         formatter.field("port", &self.port);
-        formatter.field(
-            "runtime_environment_variables",
-            &self.runtime_environment_variables,
-        );
-        formatter.field(
-            "runtime_environment_secrets",
-            &self.runtime_environment_secrets,
-        );
+        formatter.field("runtime_environment_variables", &self.runtime_environment_variables);
+        formatter.field("runtime_environment_secrets", &self.runtime_environment_secrets);
         formatter.finish()
     }
 }
@@ -106,12 +88,8 @@ pub struct CodeConfigurationValuesBuilder {
     pub(crate) build_command: ::std::option::Option<::std::string::String>,
     pub(crate) start_command: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<::std::string::String>,
-    pub(crate) runtime_environment_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) runtime_environment_secrets: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) runtime_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CodeConfigurationValuesBuilder {
     /// <p>A runtime environment type for building and running an App Runner service. It represents a programming language runtime.</p>
@@ -129,18 +107,12 @@ impl CodeConfigurationValuesBuilder {
         &self.runtime
     }
     /// <p>The command App Runner runs to build your application.</p>
-    pub fn build_command(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn build_command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.build_command = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The command App Runner runs to build your application.</p>
-    pub fn set_build_command(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_build_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.build_command = input;
         self
     }
@@ -149,18 +121,12 @@ impl CodeConfigurationValuesBuilder {
         &self.build_command
     }
     /// <p>The command App Runner runs to start your application.</p>
-    pub fn start_command(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_command = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The command App Runner runs to start your application.</p>
-    pub fn set_start_command(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_command = input;
         self
     }
@@ -203,9 +169,7 @@ impl CodeConfigurationValuesBuilder {
     /// <p>The environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
     pub fn set_runtime_environment_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.runtime_environment_variables = input;
         self
@@ -213,9 +177,7 @@ impl CodeConfigurationValuesBuilder {
     /// <p>The environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
     pub fn get_runtime_environment_variables(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.runtime_environment_variables
     }
     /// Adds a key-value pair to `runtime_environment_secrets`.
@@ -246,9 +208,7 @@ impl CodeConfigurationValuesBuilder {
     /// </note>
     pub fn set_runtime_environment_secrets(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.runtime_environment_secrets = input;
         self
@@ -261,9 +221,7 @@ impl CodeConfigurationValuesBuilder {
     /// </note>
     pub fn get_runtime_environment_secrets(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.runtime_environment_secrets
     }
     /// Consumes the builder and constructs a [`CodeConfigurationValues`](crate::types::CodeConfigurationValues).
@@ -285,14 +243,8 @@ impl ::std::fmt::Debug for CodeConfigurationValuesBuilder {
         formatter.field("build_command", &"*** Sensitive Data Redacted ***");
         formatter.field("start_command", &"*** Sensitive Data Redacted ***");
         formatter.field("port", &self.port);
-        formatter.field(
-            "runtime_environment_variables",
-            &self.runtime_environment_variables,
-        );
-        formatter.field(
-            "runtime_environment_secrets",
-            &self.runtime_environment_secrets,
-        );
+        formatter.field("runtime_environment_variables", &self.runtime_environment_variables);
+        formatter.field("runtime_environment_secrets", &self.runtime_environment_secrets);
         formatter.finish()
     }
 }

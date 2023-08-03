@@ -22,34 +22,26 @@ impl AbortMultipartReadSetUploadInput {
 }
 impl AbortMultipartReadSetUploadInput {
     /// Creates a new builder-style object to manufacture [`AbortMultipartReadSetUploadInput`](crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadInput).
-    pub fn builder() -> crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadInputBuilder{
+    pub fn builder() -> crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadInputBuilder {
         crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadInputBuilder::default()
     }
 }
 
 /// A builder for [`AbortMultipartReadSetUploadInput`](crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AbortMultipartReadSetUploadInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
 }
 impl AbortMultipartReadSetUploadInputBuilder {
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl AbortMultipartReadSetUploadInputBuilder {
         crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadInput {
-                sequence_store_id: self.sequence_store_id,
-                upload_id: self.upload_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadInput {
+            sequence_store_id: self.sequence_store_id,
+            upload_id: self.upload_id,
+        })
     }
 }

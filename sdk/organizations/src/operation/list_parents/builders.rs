@@ -10,10 +10,7 @@ impl ListParentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_parents::ListParentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_parents::ListParentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_parents::ListParentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_parents();
         fluent_builder.inner = self;
@@ -50,10 +47,7 @@ impl ListParentsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_parents::ListParents,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_parents::ListParents, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_parents::ListParentsError>,
     > {
         let handle = self.handle.clone();
@@ -64,10 +58,7 @@ impl ListParentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -109,10 +100,7 @@ impl ListParentsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_parents::ListParents,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_parents::ListParents, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_parents::ListParentsError>,
     > {
         self.customize_middleware().await
@@ -121,10 +109,7 @@ impl ListParentsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_parents::paginator::ListParentsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_parents::paginator::ListParentsPaginator {
-        crate::operation::list_parents::paginator::ListParentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_parents::paginator::ListParentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p>

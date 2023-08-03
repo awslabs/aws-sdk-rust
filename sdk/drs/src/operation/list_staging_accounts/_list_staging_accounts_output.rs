@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListStagingAccountsOutput {
 }
 impl ListStagingAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListStagingAccountsOutput`](crate::operation::list_staging_accounts::ListStagingAccountsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_staging_accounts::builders::ListStagingAccountsOutputBuilder {
-        crate::operation::list_staging_accounts::builders::ListStagingAccountsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_staging_accounts::builders::ListStagingAccountsOutputBuilder {
+        crate::operation::list_staging_accounts::builders::ListStagingAccountsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStagingAccountsOutput`](crate::operation::list_staging_accounts::ListStagingAccountsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStagingAccountsOutputBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListStagingAccountsOutputBuilder {
         self
     }
     /// <p>An array of staging AWS Accounts.</p>
-    pub fn set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
-    ) -> Self {
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Account>>) -> Self {
         self.accounts = input;
         self
     }

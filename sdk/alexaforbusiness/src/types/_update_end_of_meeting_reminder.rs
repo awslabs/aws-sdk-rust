@@ -37,9 +37,7 @@ impl UpdateEndOfMeetingReminder {
 
 /// A builder for [`UpdateEndOfMeetingReminder`](crate::types::UpdateEndOfMeetingReminder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEndOfMeetingReminderBuilder {
     pub(crate) reminder_at_minutes: ::std::option::Option<::std::vec::Vec<i32>>,
     pub(crate) reminder_type: ::std::option::Option<crate::types::EndOfMeetingReminderType>,
@@ -58,10 +56,7 @@ impl UpdateEndOfMeetingReminderBuilder {
         self
     }
     /// <p>Updates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
-    pub fn set_reminder_at_minutes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_reminder_at_minutes(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.reminder_at_minutes = input;
         self
     }
@@ -75,17 +70,12 @@ impl UpdateEndOfMeetingReminderBuilder {
         self
     }
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
-    pub fn set_reminder_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EndOfMeetingReminderType>,
-    ) -> Self {
+    pub fn set_reminder_type(mut self, input: ::std::option::Option<crate::types::EndOfMeetingReminderType>) -> Self {
         self.reminder_type = input;
         self
     }
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
-    pub fn get_reminder_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EndOfMeetingReminderType> {
+    pub fn get_reminder_type(&self) -> &::std::option::Option<crate::types::EndOfMeetingReminderType> {
         &self.reminder_type
     }
     /// <p>Whether an end of meeting reminder is enabled or not.</p>

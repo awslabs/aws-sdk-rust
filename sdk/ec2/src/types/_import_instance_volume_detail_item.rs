@@ -65,9 +65,7 @@ impl ImportInstanceVolumeDetailItem {
 
 /// A builder for [`ImportInstanceVolumeDetailItem`](crate::types::ImportInstanceVolumeDetailItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportInstanceVolumeDetailItemBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) bytes_converted: ::std::option::Option<i64>,
@@ -79,18 +77,12 @@ pub struct ImportInstanceVolumeDetailItemBuilder {
 }
 impl ImportInstanceVolumeDetailItemBuilder {
     /// <p>The Availability Zone where the resulting instance will reside.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone where the resulting instance will reside.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -132,10 +124,7 @@ impl ImportInstanceVolumeDetailItemBuilder {
         self
     }
     /// <p>The image.</p>
-    pub fn set_image(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskImageDescription>,
-    ) -> Self {
+    pub fn set_image(mut self, input: ::std::option::Option<crate::types::DiskImageDescription>) -> Self {
         self.image = input;
         self
     }
@@ -158,18 +147,12 @@ impl ImportInstanceVolumeDetailItemBuilder {
         &self.status
     }
     /// <p>The status information or errors related to the disk image.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status information or errors related to the disk image.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -183,10 +166,7 @@ impl ImportInstanceVolumeDetailItemBuilder {
         self
     }
     /// <p>The volume.</p>
-    pub fn set_volume(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskImageVolumeDescription>,
-    ) -> Self {
+    pub fn set_volume(mut self, input: ::std::option::Option<crate::types::DiskImageVolumeDescription>) -> Self {
         self.volume = input;
         self
     }

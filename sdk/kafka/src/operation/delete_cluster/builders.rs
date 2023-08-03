@@ -10,10 +10,7 @@ impl DeleteClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_cluster::DeleteClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cluster::DeleteClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster::DeleteClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_cluster();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteClusterFluentBuilder {
         }
     }
     /// Access the DeleteCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_cluster::builders::DeleteClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_cluster::builders::DeleteClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DeleteClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl DeleteClusterFluentBuilder {
         self.inner.get_cluster_arn()
     }
     /// <p>The current version of the MSK cluster.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
     /// <p>The current version of the MSK cluster.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }

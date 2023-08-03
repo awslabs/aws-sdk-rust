@@ -11,12 +11,7 @@ impl super::Client {
     /// - On success, responds with [`PutCoreNetworkPolicyOutput`](crate::operation::put_core_network_policy::PutCoreNetworkPolicyOutput) with field(s):
     ///   - [`core_network_policy(Option<CoreNetworkPolicy>)`](crate::operation::put_core_network_policy::PutCoreNetworkPolicyOutput::core_network_policy): <p>Describes the changed core network policy.</p>
     /// - On failure, responds with [`SdkError<PutCoreNetworkPolicyError>`](crate::operation::put_core_network_policy::PutCoreNetworkPolicyError)
-    pub fn put_core_network_policy(
-        &self,
-    ) -> crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyFluentBuilder
-    {
-        crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_core_network_policy(&self) -> crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyFluentBuilder {
+        crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -51,9 +51,7 @@ impl GetApiKeysInput {
 
 /// A builder for [`GetApiKeysInput`](crate::operation::get_api_keys::GetApiKeysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApiKeysInputBuilder {
     pub(crate) position: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -133,12 +131,7 @@ impl GetApiKeysInputBuilder {
         &self.include_values
     }
     /// Consumes the builder and constructs a [`GetApiKeysInput`](crate::operation::get_api_keys::GetApiKeysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_api_keys::GetApiKeysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_api_keys::GetApiKeysInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_api_keys::GetApiKeysInput {
             position: self.position,
             limit: self.limit,

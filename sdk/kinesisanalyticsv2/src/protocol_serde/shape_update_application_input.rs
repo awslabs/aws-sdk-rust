@@ -19,17 +19,12 @@ pub fn ser_update_application_input(
         object_4.finish();
     }
     if let Some(var_5) = &input.service_execution_role_update {
-        object
-            .key("ServiceExecutionRoleUpdate")
-            .string(var_5.as_str());
+        object.key("ServiceExecutionRoleUpdate").string(var_5.as_str());
     }
     if let Some(var_6) = &input.run_configuration_update {
         #[allow(unused_mut)]
         let mut object_7 = object.key("RunConfigurationUpdate").start_object();
-        crate::protocol_serde::shape_run_configuration_update::ser_run_configuration_update(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_run_configuration_update::ser_run_configuration_update(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.cloud_watch_logging_option_updates {

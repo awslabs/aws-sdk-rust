@@ -17,11 +17,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyDbInstanceOutput`](crate::operation::modify_db_instance::ModifyDbInstanceOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::operation::modify_db_instance::ModifyDbInstanceOutput::db_instance): <p>Detailed information about an instance. </p>
     /// - On failure, responds with [`SdkError<ModifyDBInstanceError>`](crate::operation::modify_db_instance::ModifyDBInstanceError)
-    pub fn modify_db_instance(
-        &self,
-    ) -> crate::operation::modify_db_instance::builders::ModifyDBInstanceFluentBuilder {
-        crate::operation::modify_db_instance::builders::ModifyDBInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_db_instance(&self) -> crate::operation::modify_db_instance::builders::ModifyDBInstanceFluentBuilder {
+        crate::operation::modify_db_instance::builders::ModifyDBInstanceFluentBuilder::new(self.handle.clone())
     }
 }

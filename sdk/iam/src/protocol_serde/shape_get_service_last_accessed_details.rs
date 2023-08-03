@@ -9,49 +9,48 @@ pub fn de_get_service_last_accessed_details_http_error(
     crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidInput" => crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::InvalidInputException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(_response_body, output).map_err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NoSuchEntity" => crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::NoSuchEntityException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(_response_body, output).map_err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::generic(generic)
+        _ => crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::generic(generic),
     })
 }
 
@@ -67,16 +66,21 @@ pub fn de_get_service_last_accessed_details_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_service_last_accessed_details::builders::GetServiceLastAccessedDetailsOutputBuilder::default();
-        output = crate::protocol_serde::shape_get_service_last_accessed_details::de_get_service_last_accessed_details(_response_body, output).map_err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_get_service_last_accessed_details::de_get_service_last_accessed_details(_response_body, output)
+            .map_err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_get_service_last_accessed_details(inp: &[u8], mut builder: crate::operation::get_service_last_accessed_details::builders::GetServiceLastAccessedDetailsOutputBuilder) -> Result<crate::operation::get_service_last_accessed_details::builders::GetServiceLastAccessedDetailsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_get_service_last_accessed_details(
+    inp: &[u8],
+    mut builder: crate::operation::get_service_last_accessed_details::builders::GetServiceLastAccessedDetailsOutputBuilder,
+) -> Result<
+    crate::operation::get_service_last_accessed_details::builders::GetServiceLastAccessedDetailsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

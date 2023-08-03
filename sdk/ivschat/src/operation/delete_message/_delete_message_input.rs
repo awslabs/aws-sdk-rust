@@ -36,9 +36,7 @@ impl DeleteMessageInput {
 
 /// A builder for [`DeleteMessageInput`](crate::operation::delete_message::DeleteMessageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMessageInputBuilder {
     pub(crate) room_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DeleteMessageInputBuilder {
 }
 impl DeleteMessageInputBuilder {
     /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
-    pub fn room_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn room_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
-    pub fn set_room_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_room_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_identifier = input;
         self
     }
@@ -96,10 +88,7 @@ impl DeleteMessageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMessageInput`](crate::operation::delete_message::DeleteMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_message::DeleteMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_message::DeleteMessageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_message::DeleteMessageInput {
             room_identifier: self.room_identifier,
             id: self.id,

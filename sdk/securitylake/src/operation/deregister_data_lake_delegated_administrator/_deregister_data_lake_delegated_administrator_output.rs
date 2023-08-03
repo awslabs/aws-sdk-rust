@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for DeregisterDataLakeDelegatedAdministra
 }
 impl DeregisterDataLakeDelegatedAdministratorOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterDataLakeDelegatedAdministratorOutput`](crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorOutput).
-    pub fn builder() -> crate::operation::deregister_data_lake_delegated_administrator::builders::DeregisterDataLakeDelegatedAdministratorOutputBuilder{
+    pub fn builder() -> crate::operation::deregister_data_lake_delegated_administrator::builders::DeregisterDataLakeDelegatedAdministratorOutputBuilder
+    {
         crate::operation::deregister_data_lake_delegated_administrator::builders::DeregisterDataLakeDelegatedAdministratorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterDataLakeDelegatedAdministratorOutput`](crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterDataLakeDelegatedAdministratorOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl DeregisterDataLakeDelegatedAdministratorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterDataLakeDelegatedAdministratorOutput`](crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorOutput).
-    pub fn build(self) -> crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorOutput{
+    pub fn build(self) -> crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorOutput {
         crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorOutput {
             _request_id: self._request_id,
         }

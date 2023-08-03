@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_agent::builders::UpdateAgentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_agent::builders::UpdateAgentFluentBuilder::set_name): <p>The name that you want to use to configure the agent.</p>
     /// - On success, responds with [`UpdateAgentOutput`](crate::operation::update_agent::UpdateAgentOutput)
     /// - On failure, responds with [`SdkError<UpdateAgentError>`](crate::operation::update_agent::UpdateAgentError)
-    pub fn update_agent(
-        &self,
-    ) -> crate::operation::update_agent::builders::UpdateAgentFluentBuilder {
+    pub fn update_agent(&self) -> crate::operation::update_agent::builders::UpdateAgentFluentBuilder {
         crate::operation::update_agent::builders::UpdateAgentFluentBuilder::new(self.handle.clone())
     }
 }

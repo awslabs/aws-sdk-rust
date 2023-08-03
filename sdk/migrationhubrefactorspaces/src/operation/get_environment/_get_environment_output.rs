@@ -29,9 +29,7 @@ pub struct GetEnvironmentOutput {
     pub state: ::std::option::Option<crate::types::EnvironmentState>,
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Any error associated with the environment resource. </p>
     #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ErrorResponse>,
@@ -77,11 +75,7 @@ impl GetEnvironmentOutput {
         self.state.as_ref()
     }
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Any error associated with the environment resource. </p>
@@ -140,9 +134,7 @@ pub struct GetEnvironmentOutputBuilder {
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::EnvironmentState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorResponse>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -192,18 +184,12 @@ impl GetEnvironmentOutputBuilder {
         &self.description
     }
     /// <p>The unique identifier of the environment. </p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the environment. </p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -217,32 +203,21 @@ impl GetEnvironmentOutputBuilder {
         self
     }
     /// <p>The network fabric type of the environment. </p>
-    pub fn set_network_fabric_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkFabricType>,
-    ) -> Self {
+    pub fn set_network_fabric_type(mut self, input: ::std::option::Option<crate::types::NetworkFabricType>) -> Self {
         self.network_fabric_type = input;
         self
     }
     /// <p>The network fabric type of the environment. </p>
-    pub fn get_network_fabric_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkFabricType> {
+    pub fn get_network_fabric_type(&self) -> &::std::option::Option<crate::types::NetworkFabricType> {
         &self.network_fabric_type
     }
     /// <p>The Amazon Web Services account ID of the environment owner.</p>
-    pub fn owner_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the environment owner.</p>
-    pub fn set_owner_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account_id = input;
         self
     }
@@ -251,18 +226,12 @@ impl GetEnvironmentOutputBuilder {
         &self.owner_account_id
     }
     /// <p>The ID of the Transit Gateway set up by the environment, if applicable.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Transit Gateway set up by the environment, if applicable.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }
@@ -276,10 +245,7 @@ impl GetEnvironmentOutputBuilder {
         self
     }
     /// <p>The current state of the environment. </p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::EnvironmentState>) -> Self {
         self.state = input;
         self
     }
@@ -292,32 +258,19 @@ impl GetEnvironmentOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Any error associated with the environment resource. </p>
@@ -340,10 +293,7 @@ impl GetEnvironmentOutputBuilder {
         self
     }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -357,10 +307,7 @@ impl GetEnvironmentOutputBuilder {
         self
     }
     /// <p>A timestamp that indicates when the environment is created. </p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }

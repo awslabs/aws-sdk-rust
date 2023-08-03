@@ -40,9 +40,7 @@ impl LocationListEntry {
 
 /// A builder for [`LocationListEntry`](crate::types::LocationListEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocationListEntryBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,

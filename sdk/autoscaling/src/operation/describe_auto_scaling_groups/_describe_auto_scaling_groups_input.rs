@@ -38,19 +38,16 @@ impl DescribeAutoScalingGroupsInput {
 }
 impl DescribeAutoScalingGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoScalingGroupsInput`](crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsInput).
-    pub fn builder() -> crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsInputBuilder {
         crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAutoScalingGroupsInput`](crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutoScalingGroupsInputBuilder {
-    pub(crate) auto_scaling_group_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) auto_scaling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -62,10 +59,7 @@ impl DescribeAutoScalingGroupsInputBuilder {
     ///
     /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>
     /// <p>If you omit this property, all Auto Scaling groups are described.</p>
-    pub fn auto_scaling_group_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.auto_scaling_group_names.unwrap_or_default();
         v.push(input.into());
         self.auto_scaling_group_names = ::std::option::Option::Some(v);
@@ -73,18 +67,13 @@ impl DescribeAutoScalingGroupsInputBuilder {
     }
     /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>
     /// <p>If you omit this property, all Auto Scaling groups are described.</p>
-    pub fn set_auto_scaling_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.auto_scaling_group_names = input;
         self
     }
     /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>
     /// <p>If you omit this property, all Auto Scaling groups are described.</p>
-    pub fn get_auto_scaling_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_auto_scaling_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.auto_scaling_group_names
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -127,10 +116,7 @@ impl DescribeAutoScalingGroupsInputBuilder {
         self
     }
     /// <p>One or more filters to limit the results based on specific tags. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -145,13 +131,11 @@ impl DescribeAutoScalingGroupsInputBuilder {
         crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsInput {
-                auto_scaling_group_names: self.auto_scaling_group_names,
-                next_token: self.next_token,
-                max_records: self.max_records,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsInput {
+            auto_scaling_group_names: self.auto_scaling_group_names,
+            next_token: self.next_token,
+            max_records: self.max_records,
+            filters: self.filters,
+        })
     }
 }

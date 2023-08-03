@@ -23,18 +23,14 @@ impl GetThirdPartyJobDetailsInput {
 }
 impl GetThirdPartyJobDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetThirdPartyJobDetailsInput`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsInput).
-    pub fn builder(
-    ) -> crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsInputBuilder {
         crate::operation::get_third_party_job_details::builders::GetThirdPartyJobDetailsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetThirdPartyJobDetailsInput`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetThirdPartyJobDetailsInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -75,11 +71,9 @@ impl GetThirdPartyJobDetailsInputBuilder {
         crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsInput {
-                job_id: self.job_id,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsInput {
+            job_id: self.job_id,
+            client_token: self.client_token,
+        })
     }
 }

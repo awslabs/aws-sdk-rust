@@ -36,16 +36,16 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
 }
 impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
     /// Creates a new builder-style object to manufacture [`PutServiceQuotaIncreaseRequestIntoTemplateInput`](crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput).
-    pub fn builder() -> crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder{
-        crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
+        crate::operation::put_service_quota_increase_request_into_template::builders::PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`PutServiceQuotaIncreaseRequestIntoTemplateInput`](crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
     pub(crate) quota_code: ::std::option::Option<::std::string::String>,
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
@@ -110,18 +110,19 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
         &self.desired_value
     }
     /// Consumes the builder and constructs a [`PutServiceQuotaIncreaseRequestIntoTemplateInput`](crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput {
-                quota_code: self.quota_code
-                ,
-                service_code: self.service_code
-                ,
-                aws_region: self.aws_region
-                ,
-                desired_value: self.desired_value
-                ,
-            }
+                quota_code: self.quota_code,
+                service_code: self.service_code,
+                aws_region: self.aws_region,
+                desired_value: self.desired_value,
+            },
         )
     }
 }

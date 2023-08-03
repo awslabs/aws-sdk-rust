@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput::job_id): <p>The identification number of the export job.</p>  <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
     ///   - [`s3_destination(Option<S3Destination>)`](crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput::s3_destination): <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
     /// - On failure, responds with [`SdkError<ExportEBSVolumeRecommendationsError>`](crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError)
-    pub fn export_ebs_volume_recommendations(&self) -> crate::operation::export_ebs_volume_recommendations::builders::ExportEBSVolumeRecommendationsFluentBuilder{
+    pub fn export_ebs_volume_recommendations(
+        &self,
+    ) -> crate::operation::export_ebs_volume_recommendations::builders::ExportEBSVolumeRecommendationsFluentBuilder {
         crate::operation::export_ebs_volume_recommendations::builders::ExportEBSVolumeRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

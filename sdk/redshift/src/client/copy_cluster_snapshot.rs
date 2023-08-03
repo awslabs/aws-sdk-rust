@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CopyClusterSnapshotOutput`](crate::operation::copy_cluster_snapshot::CopyClusterSnapshotOutput) with field(s):
     ///   - [`snapshot(Option<Snapshot>)`](crate::operation::copy_cluster_snapshot::CopyClusterSnapshotOutput::snapshot): <p>Describes a snapshot.</p>
     /// - On failure, responds with [`SdkError<CopyClusterSnapshotError>`](crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError)
-    pub fn copy_cluster_snapshot(
-        &self,
-    ) -> crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotFluentBuilder {
-        crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn copy_cluster_snapshot(&self) -> crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotFluentBuilder {
+        crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

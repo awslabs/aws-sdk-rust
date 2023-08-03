@@ -21,9 +21,7 @@ pub struct Command {
     pub expires_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The parameter values to be inserted in the document when running the command.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The managed node IDs against which this command was requested.</p>
     #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -95,8 +93,7 @@ pub struct Command {
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarm that was invoked by the command.</p>
     #[doc(hidden)]
-    pub triggered_alarms:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
 }
 impl Command {
     /// <p>A unique identifier for this command.</p>
@@ -120,11 +117,7 @@ impl Command {
         self.expires_after.as_ref()
     }
     /// <p>The parameter values to be inserted in the document when running the command.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.parameters.as_ref()
     }
     /// <p>The managed node IDs against which this command was requested.</p>
@@ -204,9 +197,7 @@ impl Command {
         self.notification_config.as_ref()
     }
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
-    pub fn cloud_watch_output_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchOutputConfig> {
+    pub fn cloud_watch_output_config(&self) -> ::std::option::Option<&crate::types::CloudWatchOutputConfig> {
         self.cloud_watch_output_config.as_ref()
     }
     /// <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
@@ -218,9 +209,7 @@ impl Command {
         self.alarm_configuration.as_ref()
     }
     /// <p>The CloudWatch alarm that was invoked by the command.</p>
-    pub fn triggered_alarms(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
+    pub fn triggered_alarms(&self) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
         self.triggered_alarms.as_deref()
     }
 }
@@ -272,9 +261,7 @@ pub struct CommandBuilder {
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) expires_after: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     pub(crate) requested_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -291,12 +278,10 @@ pub struct CommandBuilder {
     pub(crate) delivery_timed_out_count: ::std::option::Option<i32>,
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) notification_config: ::std::option::Option<crate::types::NotificationConfig>,
-    pub(crate) cloud_watch_output_config:
-        ::std::option::Option<crate::types::CloudWatchOutputConfig>,
+    pub(crate) cloud_watch_output_config: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
     pub(crate) timeout_seconds: ::std::option::Option<i32>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
-    pub(crate) triggered_alarms:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub(crate) triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
 }
 impl CommandBuilder {
     /// <p>A unique identifier for this command.</p>
@@ -314,18 +299,12 @@ impl CommandBuilder {
         &self.command_id
     }
     /// <p>The name of the document requested for execution.</p>
-    pub fn document_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the document requested for execution.</p>
-    pub fn set_document_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_name = input;
         self
     }
@@ -334,18 +313,12 @@ impl CommandBuilder {
         &self.document_name
     }
     /// <p>The Systems Manager document (SSM document) version.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Systems Manager document (SSM document) version.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -373,10 +346,7 @@ impl CommandBuilder {
         self
     }
     /// <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated based on the total timeout for the overall command. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_expires_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires_after = input;
         self
     }
@@ -389,11 +359,7 @@ impl CommandBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The parameter values to be inserted in the document when running the command.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.parameters = ::std::option::Option::Some(hash_map);
@@ -402,12 +368,7 @@ impl CommandBuilder {
     /// <p>The parameter values to be inserted in the document when running the command.</p>
     pub fn set_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.parameters = input;
         self
@@ -415,9 +376,7 @@ impl CommandBuilder {
     /// <p>The parameter values to be inserted in the document when running the command.</p>
     pub fn get_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.parameters
     }
     /// Appends an item to `instance_ids`.
@@ -432,17 +391,12 @@ impl CommandBuilder {
         self
     }
     /// <p>The managed node IDs against which this command was requested.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The managed node IDs against which this command was requested.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// Appends an item to `targets`.
@@ -457,10 +411,7 @@ impl CommandBuilder {
         self
     }
     /// <p>An array of search criteria that targets managed nodes using a Key,Value combination that you specify. Targets is required if you don't provide one or more managed node IDs in the call.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -474,10 +425,7 @@ impl CommandBuilder {
         self
     }
     /// <p>The date and time the command was requested.</p>
-    pub fn set_requested_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_requested_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.requested_date_time = input;
         self
     }
@@ -512,10 +460,7 @@ impl CommandBuilder {
     /// <li> <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p> </li>
     /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
     /// </ul>
-    pub fn status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_details = ::std::option::Option::Some(input.into());
         self
     }
@@ -532,10 +477,7 @@ impl CommandBuilder {
     /// <li> <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p> </li>
     /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
     /// </ul>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_details = input;
         self
     }
@@ -556,18 +498,12 @@ impl CommandBuilder {
         &self.status_details
     }
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
-    pub fn output_s3_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
-    pub fn set_output_s3_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_region = input;
         self
     }
@@ -576,18 +512,12 @@ impl CommandBuilder {
         &self.output_s3_region
     }
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command.</p>
-    pub fn output_s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command.</p>
-    pub fn set_output_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_bucket_name = input;
         self
     }
@@ -596,18 +526,12 @@ impl CommandBuilder {
         &self.output_s3_bucket_name
     }
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command.</p>
-    pub fn output_s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command.</p>
-    pub fn set_output_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_key_prefix = input;
         self
     }
@@ -616,18 +540,12 @@ impl CommandBuilder {
         &self.output_s3_key_prefix
     }
     /// <p>The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The default value is 50. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn max_concurrency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_concurrency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_concurrency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The default value is 50. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_max_concurrency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_concurrency = input;
         self
     }
@@ -725,39 +643,26 @@ impl CommandBuilder {
         self
     }
     /// <p>Configurations for sending notifications about command status changes. </p>
-    pub fn set_notification_config(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationConfig>,
-    ) -> Self {
+    pub fn set_notification_config(mut self, input: ::std::option::Option<crate::types::NotificationConfig>) -> Self {
         self.notification_config = input;
         self
     }
     /// <p>Configurations for sending notifications about command status changes. </p>
-    pub fn get_notification_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationConfig> {
+    pub fn get_notification_config(&self) -> &::std::option::Option<crate::types::NotificationConfig> {
         &self.notification_config
     }
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
-    pub fn cloud_watch_output_config(
-        mut self,
-        input: crate::types::CloudWatchOutputConfig,
-    ) -> Self {
+    pub fn cloud_watch_output_config(mut self, input: crate::types::CloudWatchOutputConfig) -> Self {
         self.cloud_watch_output_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
-    pub fn set_cloud_watch_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
-    ) -> Self {
+    pub fn set_cloud_watch_output_config(mut self, input: ::std::option::Option<crate::types::CloudWatchOutputConfig>) -> Self {
         self.cloud_watch_output_config = input;
         self
     }
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
-    pub fn get_cloud_watch_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchOutputConfig> {
+    pub fn get_cloud_watch_output_config(&self) -> &::std::option::Option<crate::types::CloudWatchOutputConfig> {
         &self.cloud_watch_output_config
     }
     /// <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
@@ -780,17 +685,12 @@ impl CommandBuilder {
         self
     }
     /// <p>The details for the CloudWatch alarm applied to your command.</p>
-    pub fn set_alarm_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmConfiguration>,
-    ) -> Self {
+    pub fn set_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
         self.alarm_configuration = input;
         self
     }
     /// <p>The details for the CloudWatch alarm applied to your command.</p>
-    pub fn get_alarm_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+    pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.alarm_configuration
     }
     /// Appends an item to `triggered_alarms`.
@@ -805,17 +705,12 @@ impl CommandBuilder {
         self
     }
     /// <p>The CloudWatch alarm that was invoked by the command.</p>
-    pub fn set_triggered_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
-    ) -> Self {
+    pub fn set_triggered_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>) -> Self {
         self.triggered_alarms = input;
         self
     }
     /// <p>The CloudWatch alarm that was invoked by the command.</p>
-    pub fn get_triggered_alarms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
+    pub fn get_triggered_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
         &self.triggered_alarms
     }
     /// Consumes the builder and constructs a [`Command`](crate::types::Command).

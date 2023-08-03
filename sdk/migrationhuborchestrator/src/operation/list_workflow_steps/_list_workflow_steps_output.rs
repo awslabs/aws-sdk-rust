@@ -8,8 +8,7 @@ pub struct ListWorkflowStepsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The summary of steps in a migration workflow.</p>
     #[doc(hidden)]
-    pub workflow_steps_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepSummary>>,
+    pub workflow_steps_summary: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepSummary>>,
     _request_id: Option<String>,
 }
 impl ListWorkflowStepsOutput {
@@ -18,9 +17,7 @@ impl ListWorkflowStepsOutput {
         self.next_token.as_deref()
     }
     /// <p>The summary of steps in a migration workflow.</p>
-    pub fn workflow_steps_summary(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WorkflowStepSummary]> {
+    pub fn workflow_steps_summary(&self) -> ::std::option::Option<&[crate::types::WorkflowStepSummary]> {
         self.workflow_steps_summary.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListWorkflowStepsOutput {
 }
 impl ListWorkflowStepsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowStepsOutput`](crate::operation::list_workflow_steps::ListWorkflowStepsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_workflow_steps::builders::ListWorkflowStepsOutputBuilder {
+    pub fn builder() -> crate::operation::list_workflow_steps::builders::ListWorkflowStepsOutputBuilder {
         crate::operation::list_workflow_steps::builders::ListWorkflowStepsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkflowStepsOutput`](crate::operation::list_workflow_steps::ListWorkflowStepsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowStepsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) workflow_steps_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepSummary>>,
+    pub(crate) workflow_steps_summary: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepSummary>>,
     _request_id: Option<String>,
 }
 impl ListWorkflowStepsOutputBuilder {
@@ -75,17 +68,12 @@ impl ListWorkflowStepsOutputBuilder {
         self
     }
     /// <p>The summary of steps in a migration workflow.</p>
-    pub fn set_workflow_steps_summary(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepSummary>>,
-    ) -> Self {
+    pub fn set_workflow_steps_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepSummary>>) -> Self {
         self.workflow_steps_summary = input;
         self
     }
     /// <p>The summary of steps in a migration workflow.</p>
-    pub fn get_workflow_steps_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepSummary>> {
+    pub fn get_workflow_steps_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepSummary>> {
         &self.workflow_steps_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

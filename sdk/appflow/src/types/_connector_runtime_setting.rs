@@ -24,8 +24,7 @@ pub struct ConnectorRuntimeSetting {
     pub scope: ::std::option::Option<::std::string::String>,
     /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
     #[doc(hidden)]
-    pub connector_supplied_value_options:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub connector_supplied_value_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConnectorRuntimeSetting {
     /// <p>Contains value information about the connector runtime setting.</p>
@@ -53,9 +52,7 @@ impl ConnectorRuntimeSetting {
         self.scope.as_deref()
     }
     /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
-    pub fn connector_supplied_value_options(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn connector_supplied_value_options(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.connector_supplied_value_options.as_deref()
     }
 }
@@ -68,9 +65,7 @@ impl ConnectorRuntimeSetting {
 
 /// A builder for [`ConnectorRuntimeSetting`](crate::types::ConnectorRuntimeSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectorRuntimeSettingBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) data_type: ::std::option::Option<::std::string::String>,
@@ -78,8 +73,7 @@ pub struct ConnectorRuntimeSettingBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,
-    pub(crate) connector_supplied_value_options:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) connector_supplied_value_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConnectorRuntimeSettingBuilder {
     /// <p>Contains value information about the connector runtime setting.</p>
@@ -171,27 +165,19 @@ impl ConnectorRuntimeSettingBuilder {
     /// To override the contents of this collection use [`set_connector_supplied_value_options`](Self::set_connector_supplied_value_options).
     ///
     /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
-    pub fn connector_supplied_value_options(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_supplied_value_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connector_supplied_value_options.unwrap_or_default();
         v.push(input.into());
         self.connector_supplied_value_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
-    pub fn set_connector_supplied_value_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_connector_supplied_value_options(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.connector_supplied_value_options = input;
         self
     }
     /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
-    pub fn get_connector_supplied_value_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connector_supplied_value_options(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.connector_supplied_value_options
     }
     /// Consumes the builder and constructs a [`ConnectorRuntimeSetting`](crate::types::ConnectorRuntimeSetting).

@@ -26,7 +26,7 @@ impl DescribeFpgaImageAttributeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFpgaImageAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeInputBuilder,
+    inner: crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeInputBuilder,
 }
 impl DescribeFpgaImageAttributeFluentBuilder {
     /// Creates a new `DescribeFpgaImageAttribute`.
@@ -37,7 +37,7 @@ impl DescribeFpgaImageAttributeFluentBuilder {
         }
     }
     /// Access the DescribeFpgaImageAttribute as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeFpgaImageAttributeFluentBuilder {
             crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeFpgaImageAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeFpgaImageAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeFpgaImageAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeFpgaImageAttributeFluentBuilder {
             crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DescribeFpgaImageAttributeFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the AFI.</p>
-    pub fn fpga_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fpga_image_id(input.into());
         self
     }
     /// <p>The ID of the AFI.</p>
-    pub fn set_fpga_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fpga_image_id(input);
         self
     }
@@ -160,10 +143,7 @@ impl DescribeFpgaImageAttributeFluentBuilder {
         self
     }
     /// <p>The AFI attribute.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::FpgaImageAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::FpgaImageAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }

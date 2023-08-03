@@ -12,10 +12,7 @@ pub fn ser_s3_resource_classification_update(
     if let Some(var_3) = &input.classification_type_update {
         #[allow(unused_mut)]
         let mut object_4 = object.key("classificationTypeUpdate").start_object();
-        crate::protocol_serde::shape_classification_type_update::ser_classification_type_update(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_classification_type_update::ser_classification_type_update(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

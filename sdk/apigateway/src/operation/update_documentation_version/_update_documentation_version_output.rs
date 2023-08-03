@@ -36,16 +36,14 @@ impl ::aws_http::request_id::RequestId for UpdateDocumentationVersionOutput {
 }
 impl UpdateDocumentationVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentationVersionOutput`](crate::operation::update_documentation_version::UpdateDocumentationVersionOutput).
-    pub fn builder() -> crate::operation::update_documentation_version::builders::UpdateDocumentationVersionOutputBuilder{
+    pub fn builder() -> crate::operation::update_documentation_version::builders::UpdateDocumentationVersionOutputBuilder {
         crate::operation::update_documentation_version::builders::UpdateDocumentationVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDocumentationVersionOutput`](crate::operation::update_documentation_version::UpdateDocumentationVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDocumentationVersionOutputBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -73,10 +71,7 @@ impl UpdateDocumentationVersionOutputBuilder {
         self
     }
     /// <p>The date when the API documentation snapshot is created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -108,9 +103,7 @@ impl UpdateDocumentationVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDocumentationVersionOutput`](crate::operation::update_documentation_version::UpdateDocumentationVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_documentation_version::UpdateDocumentationVersionOutput {
+    pub fn build(self) -> crate::operation::update_documentation_version::UpdateDocumentationVersionOutput {
         crate::operation::update_documentation_version::UpdateDocumentationVersionOutput {
             version: self.version,
             created_date: self.created_date,

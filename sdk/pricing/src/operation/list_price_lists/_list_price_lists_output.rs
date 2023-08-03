@@ -35,9 +35,7 @@ impl ListPriceListsOutput {
 
 /// A builder for [`ListPriceListsOutput`](crate::operation::list_price_lists::ListPriceListsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPriceListsOutputBuilder {
     pub(crate) price_lists: ::std::option::Option<::std::vec::Vec<crate::types::PriceList>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListPriceListsOutputBuilder {
         self
     }
     /// <p>The type of price list references that match your request. </p>
-    pub fn set_price_lists(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PriceList>>,
-    ) -> Self {
+    pub fn set_price_lists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PriceList>>) -> Self {
         self.price_lists = input;
         self
     }
     /// <p>The type of price list references that match your request. </p>
-    pub fn get_price_lists(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PriceList>> {
+    pub fn get_price_lists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PriceList>> {
         &self.price_lists
     }
     /// <p>The pagination token that indicates the next set of results to retrieve. </p>

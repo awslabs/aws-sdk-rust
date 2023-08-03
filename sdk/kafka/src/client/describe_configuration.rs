@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::name): <p>The name of the configuration.</p>
     ///   - [`state(Option<ConfigurationState>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::state): <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationError>`](crate::operation::describe_configuration::DescribeConfigurationError)
-    pub fn describe_configuration(
-        &self,
-    ) -> crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder
-    {
-        crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_configuration(&self) -> crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder {
+        crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

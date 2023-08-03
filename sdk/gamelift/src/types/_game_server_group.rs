@@ -17,8 +17,7 @@ pub struct GameServerGroup {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
     #[doc(hidden)]
-    pub instance_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>,
+    pub instance_definitions: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>,
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
     /// <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>
@@ -29,8 +28,7 @@ pub struct GameServerGroup {
     pub balancing_strategy: ::std::option::Option<crate::types::BalancingStrategy>,
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. </p>
     #[doc(hidden)]
-    pub game_server_protection_policy:
-        ::std::option::Option<crate::types::GameServerProtectionPolicy>,
+    pub game_server_protection_policy: ::std::option::Option<crate::types::GameServerProtectionPolicy>,
     /// <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_arn: ::std::option::Option<::std::string::String>,
@@ -51,8 +49,7 @@ pub struct GameServerGroup {
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>A list of activities that are currently suspended for this game server group. If this property is empty, all activities are occurring.</p>
     #[doc(hidden)]
-    pub suspended_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
+    pub suspended_actions: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -74,9 +71,7 @@ impl GameServerGroup {
         self.role_arn.as_deref()
     }
     /// <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
-    pub fn instance_definitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceDefinition]> {
+    pub fn instance_definitions(&self) -> ::std::option::Option<&[crate::types::InstanceDefinition]> {
         self.instance_definitions.as_deref()
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
@@ -89,9 +84,7 @@ impl GameServerGroup {
         self.balancing_strategy.as_ref()
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. </p>
-    pub fn game_server_protection_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GameServerProtectionPolicy> {
+    pub fn game_server_protection_policy(&self) -> ::std::option::Option<&crate::types::GameServerProtectionPolicy> {
         self.game_server_protection_policy.as_ref()
     }
     /// <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.</p>
@@ -116,9 +109,7 @@ impl GameServerGroup {
         self.status_reason.as_deref()
     }
     /// <p>A list of activities that are currently suspended for this game server group. If this property is empty, all activities are occurring.</p>
-    pub fn suspended_actions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GameServerGroupAction]> {
+    pub fn suspended_actions(&self) -> ::std::option::Option<&[crate::types::GameServerGroupAction]> {
         self.suspended_actions.as_deref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
@@ -139,40 +130,29 @@ impl GameServerGroup {
 
 /// A builder for [`GameServerGroup`](crate::types::GameServerGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GameServerGroupBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) game_server_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>,
+    pub(crate) instance_definitions: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>,
     pub(crate) balancing_strategy: ::std::option::Option<crate::types::BalancingStrategy>,
-    pub(crate) game_server_protection_policy:
-        ::std::option::Option<crate::types::GameServerProtectionPolicy>,
+    pub(crate) game_server_protection_policy: ::std::option::Option<crate::types::GameServerProtectionPolicy>,
     pub(crate) auto_scaling_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::GameServerGroupStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) suspended_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
+    pub(crate) suspended_actions: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GameServerGroupBuilder {
     /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each Amazon Web Services account.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each Amazon Web Services account.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_group_name = input;
         self
     }
@@ -181,18 +161,12 @@ impl GameServerGroupBuilder {
         &self.game_server_group_name
     }
     /// <p>A generated unique ID for the game server group.</p>
-    pub fn game_server_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A generated unique ID for the game server group.</p>
-    pub fn set_game_server_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_group_arn = input;
         self
     }
@@ -226,17 +200,12 @@ impl GameServerGroupBuilder {
         self
     }
     /// <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
-    pub fn set_instance_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>,
-    ) -> Self {
+    pub fn set_instance_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>) -> Self {
         self.instance_definitions = input;
         self
     }
     /// <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
-    pub fn get_instance_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>> {
+    pub fn get_instance_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>> {
         &self.instance_definitions
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
@@ -255,10 +224,7 @@ impl GameServerGroupBuilder {
     /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
     /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
     /// </ul>
-    pub fn set_balancing_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::BalancingStrategy>,
-    ) -> Self {
+    pub fn set_balancing_strategy(mut self, input: ::std::option::Option<crate::types::BalancingStrategy>) -> Self {
         self.balancing_strategy = input;
         self
     }
@@ -268,46 +234,30 @@ impl GameServerGroupBuilder {
     /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
     /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
     /// </ul>
-    pub fn get_balancing_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::BalancingStrategy> {
+    pub fn get_balancing_strategy(&self) -> &::std::option::Option<crate::types::BalancingStrategy> {
         &self.balancing_strategy
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. </p>
-    pub fn game_server_protection_policy(
-        mut self,
-        input: crate::types::GameServerProtectionPolicy,
-    ) -> Self {
+    pub fn game_server_protection_policy(mut self, input: crate::types::GameServerProtectionPolicy) -> Self {
         self.game_server_protection_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. </p>
-    pub fn set_game_server_protection_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServerProtectionPolicy>,
-    ) -> Self {
+    pub fn set_game_server_protection_policy(mut self, input: ::std::option::Option<crate::types::GameServerProtectionPolicy>) -> Self {
         self.game_server_protection_policy = input;
         self
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. </p>
-    pub fn get_game_server_protection_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::GameServerProtectionPolicy> {
+    pub fn get_game_server_protection_policy(&self) -> &::std::option::Option<crate::types::GameServerProtectionPolicy> {
         &self.game_server_protection_policy
     }
     /// <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.</p>
-    pub fn auto_scaling_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.</p>
-    pub fn set_auto_scaling_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_arn = input;
         self
     }
@@ -339,10 +289,7 @@ impl GameServerGroupBuilder {
     /// <li> <p> <code>DELETED</code> - The game server group has been successfully deleted. </p> </li>
     /// <li> <p> <code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServerGroupStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::GameServerGroupStatus>) -> Self {
         self.status = input;
         self
     }
@@ -360,18 +307,12 @@ impl GameServerGroupBuilder {
         &self.status
     }
     /// <p>Additional information about the current game server group status. This information might provide additional insight on groups that are in <code>ERROR</code> status.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional information about the current game server group status. This information might provide additional insight on groups that are in <code>ERROR</code> status.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -391,17 +332,12 @@ impl GameServerGroupBuilder {
         self
     }
     /// <p>A list of activities that are currently suspended for this game server group. If this property is empty, all activities are occurring.</p>
-    pub fn set_suspended_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
-    ) -> Self {
+    pub fn set_suspended_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>) -> Self {
         self.suspended_actions = input;
         self
     }
     /// <p>A list of activities that are currently suspended for this game server group. If this property is empty, all activities are occurring.</p>
-    pub fn get_suspended_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>> {
+    pub fn get_suspended_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>> {
         &self.suspended_actions
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
@@ -410,10 +346,7 @@ impl GameServerGroupBuilder {
         self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -427,10 +360,7 @@ impl GameServerGroupBuilder {
         self
     }
     /// <p>A timestamp that indicates when this game server group was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

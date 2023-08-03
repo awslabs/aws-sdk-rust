@@ -30,17 +30,14 @@ impl DeleteNotificationInput {
 }
 impl DeleteNotificationInput {
     /// Creates a new builder-style object to manufacture [`DeleteNotificationInput`](crate::operation::delete_notification::DeleteNotificationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_notification::builders::DeleteNotificationInputBuilder {
+    pub fn builder() -> crate::operation::delete_notification::builders::DeleteNotificationInputBuilder {
         crate::operation::delete_notification::builders::DeleteNotificationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNotificationInput`](crate::operation::delete_notification::DeleteNotificationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNotificationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -81,10 +78,7 @@ impl DeleteNotificationInputBuilder {
         self
     }
     /// <p>The notification that you want to delete.</p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::Notification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
         self.notification = input;
         self
     }
@@ -95,16 +89,11 @@ impl DeleteNotificationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNotificationInput`](crate::operation::delete_notification::DeleteNotificationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_notification::DeleteNotificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_notification::DeleteNotificationInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                notification: self.notification,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_notification::DeleteNotificationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_notification::DeleteNotificationInput {
+            account_id: self.account_id,
+            budget_name: self.budget_name,
+            notification: self.notification,
+        })
     }
 }

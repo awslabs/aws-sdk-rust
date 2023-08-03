@@ -46,15 +46,11 @@ pub struct TabularJobConfig {
 }
 impl TabularJobConfig {
     /// <p>The configuration information of how model candidates are generated.</p>
-    pub fn candidate_generation_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CandidateGenerationConfig> {
+    pub fn candidate_generation_config(&self) -> ::std::option::Option<&crate::types::CandidateGenerationConfig> {
         self.candidate_generation_config.as_ref()
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    pub fn completion_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoMlJobCompletionCriteria> {
+    pub fn completion_criteria(&self) -> ::std::option::Option<&crate::types::AutoMlJobCompletionCriteria> {
         self.completion_criteria.as_ref()
     }
     /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job V2. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below: </p>
@@ -106,14 +102,10 @@ impl TabularJobConfig {
 
 /// A builder for [`TabularJobConfig`](crate::types::TabularJobConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TabularJobConfigBuilder {
-    pub(crate) candidate_generation_config:
-        ::std::option::Option<crate::types::CandidateGenerationConfig>,
-    pub(crate) completion_criteria:
-        ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
+    pub(crate) candidate_generation_config: ::std::option::Option<crate::types::CandidateGenerationConfig>,
+    pub(crate) completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     pub(crate) feature_specification_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) mode: ::std::option::Option<crate::types::AutoMlMode>,
     pub(crate) generate_candidate_definitions_only: ::std::option::Option<bool>,
@@ -123,25 +115,17 @@ pub struct TabularJobConfigBuilder {
 }
 impl TabularJobConfigBuilder {
     /// <p>The configuration information of how model candidates are generated.</p>
-    pub fn candidate_generation_config(
-        mut self,
-        input: crate::types::CandidateGenerationConfig,
-    ) -> Self {
+    pub fn candidate_generation_config(mut self, input: crate::types::CandidateGenerationConfig) -> Self {
         self.candidate_generation_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration information of how model candidates are generated.</p>
-    pub fn set_candidate_generation_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CandidateGenerationConfig>,
-    ) -> Self {
+    pub fn set_candidate_generation_config(mut self, input: ::std::option::Option<crate::types::CandidateGenerationConfig>) -> Self {
         self.candidate_generation_config = input;
         self
     }
     /// <p>The configuration information of how model candidates are generated.</p>
-    pub fn get_candidate_generation_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CandidateGenerationConfig> {
+    pub fn get_candidate_generation_config(&self) -> &::std::option::Option<crate::types::CandidateGenerationConfig> {
         &self.candidate_generation_config
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
@@ -150,17 +134,12 @@ impl TabularJobConfigBuilder {
         self
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    pub fn set_completion_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
-    ) -> Self {
+    pub fn set_completion_criteria(mut self, input: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>) -> Self {
         self.completion_criteria = input;
         self
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    pub fn get_completion_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlJobCompletionCriteria> {
+    pub fn get_completion_criteria(&self) -> &::std::option::Option<crate::types::AutoMlJobCompletionCriteria> {
         &self.completion_criteria
     }
     /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job V2. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below: </p>
@@ -173,10 +152,7 @@ impl TabularJobConfigBuilder {
     /// <p>If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>, <code>col2</code>,..) should be a subset of the column names in the input data. </p>
     /// <p>If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided, then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>. </p>
     /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
-    pub fn feature_specification_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_specification_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_specification_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
@@ -190,10 +166,7 @@ impl TabularJobConfigBuilder {
     /// <p>If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>, <code>col2</code>,..) should be a subset of the column names in the input data. </p>
     /// <p>If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided, then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>. </p>
     /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
-    pub fn set_feature_specification_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_specification_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_specification_s3_uri = input;
         self
     }
@@ -207,9 +180,7 @@ impl TabularJobConfigBuilder {
     /// <p>If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>, <code>col2</code>,..) should be a subset of the column names in the input data. </p>
     /// <p>If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided, then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>. </p>
     /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
-    pub fn get_feature_specification_s3_uri(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_feature_specification_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_specification_s3_uri
     }
     /// <p>The method that Autopilot uses to train the data. You can either specify the mode manually or let Autopilot choose for you based on the dataset size by selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses <code>ENSEMBLING</code> for datasets smaller than 100 MB, and <code>HYPERPARAMETER_TUNING</code> for larger ones.</p>
@@ -238,10 +209,7 @@ impl TabularJobConfigBuilder {
         self
     }
     /// <p>Generates possible candidates without training the models. A model candidate is a combination of data preprocessors, algorithms, and algorithm parameter settings.</p>
-    pub fn set_generate_candidate_definitions_only(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_generate_candidate_definitions_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.generate_candidate_definitions_only = input;
         self
     }
@@ -259,10 +227,7 @@ impl TabularJobConfigBuilder {
     /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p> <note>
     /// <p>You must either specify the type of supervised learning problem in <code>ProblemType</code> and provide the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a> metric, or none at all.</p>
     /// </note>
-    pub fn set_problem_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProblemType>,
-    ) -> Self {
+    pub fn set_problem_type(mut self, input: ::std::option::Option<crate::types::ProblemType>) -> Self {
         self.problem_type = input;
         self
     }
@@ -273,18 +238,12 @@ impl TabularJobConfigBuilder {
         &self.problem_type
     }
     /// <p>The name of the target variable in supervised learning, usually represented by 'y'.</p>
-    pub fn target_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the target variable in supervised learning, usually represented by 'y'.</p>
-    pub fn set_target_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_attribute_name = input;
         self
     }
@@ -295,29 +254,21 @@ impl TabularJobConfigBuilder {
     /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
     /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
     /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
-    pub fn sample_weight_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sample_weight_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_weight_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
     /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
     /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
-    pub fn set_sample_weight_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sample_weight_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_weight_attribute_name = input;
         self
     }
     /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
     /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
     /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
-    pub fn get_sample_weight_attribute_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_sample_weight_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.sample_weight_attribute_name
     }
     /// Consumes the builder and constructs a [`TabularJobConfig`](crate::types::TabularJobConfig).
@@ -327,9 +278,7 @@ impl TabularJobConfigBuilder {
             completion_criteria: self.completion_criteria,
             feature_specification_s3_uri: self.feature_specification_s3_uri,
             mode: self.mode,
-            generate_candidate_definitions_only: self
-                .generate_candidate_definitions_only
-                .unwrap_or_default(),
+            generate_candidate_definitions_only: self.generate_candidate_definitions_only.unwrap_or_default(),
             problem_type: self.problem_type,
             target_attribute_name: self.target_attribute_name,
             sample_weight_attribute_name: self.sample_weight_attribute_name,

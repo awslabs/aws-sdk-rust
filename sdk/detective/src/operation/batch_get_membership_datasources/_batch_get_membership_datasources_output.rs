@@ -5,8 +5,7 @@
 pub struct BatchGetMembershipDatasourcesOutput {
     /// <p>Details on the data source package history for an member of the behavior graph.</p>
     #[doc(hidden)]
-    pub membership_datasources:
-        ::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>>,
+    pub membership_datasources: ::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>>,
     /// <p>Graphs that data source package information could not be retrieved for.</p>
     #[doc(hidden)]
     pub unprocessed_graphs: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedGraph>>,
@@ -14,9 +13,7 @@ pub struct BatchGetMembershipDatasourcesOutput {
 }
 impl BatchGetMembershipDatasourcesOutput {
     /// <p>Details on the data source package history for an member of the behavior graph.</p>
-    pub fn membership_datasources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MembershipDatasources]> {
+    pub fn membership_datasources(&self) -> ::std::option::Option<&[crate::types::MembershipDatasources]> {
         self.membership_datasources.as_deref()
     }
     /// <p>Graphs that data source package information could not be retrieved for.</p>
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetMembershipDatasourcesOutput {
 }
 impl BatchGetMembershipDatasourcesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetMembershipDatasourcesOutput`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput).
-    pub fn builder() -> crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesOutputBuilder{
+    pub fn builder() -> crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesOutputBuilder {
         crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetMembershipDatasourcesOutput`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetMembershipDatasourcesOutputBuilder {
-    pub(crate) membership_datasources:
-        ::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>>,
-    pub(crate) unprocessed_graphs:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedGraph>>,
+    pub(crate) membership_datasources: ::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>>,
+    pub(crate) unprocessed_graphs: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedGraph>>,
     _request_id: Option<String>,
 }
 impl BatchGetMembershipDatasourcesOutputBuilder {
@@ -61,17 +54,12 @@ impl BatchGetMembershipDatasourcesOutputBuilder {
         self
     }
     /// <p>Details on the data source package history for an member of the behavior graph.</p>
-    pub fn set_membership_datasources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>>,
-    ) -> Self {
+    pub fn set_membership_datasources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>>) -> Self {
         self.membership_datasources = input;
         self
     }
     /// <p>Details on the data source package history for an member of the behavior graph.</p>
-    pub fn get_membership_datasources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>> {
+    pub fn get_membership_datasources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>> {
         &self.membership_datasources
     }
     /// Appends an item to `unprocessed_graphs`.
@@ -86,17 +74,12 @@ impl BatchGetMembershipDatasourcesOutputBuilder {
         self
     }
     /// <p>Graphs that data source package information could not be retrieved for.</p>
-    pub fn set_unprocessed_graphs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedGraph>>,
-    ) -> Self {
+    pub fn set_unprocessed_graphs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedGraph>>) -> Self {
         self.unprocessed_graphs = input;
         self
     }
     /// <p>Graphs that data source package information could not be retrieved for.</p>
-    pub fn get_unprocessed_graphs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedGraph>> {
+    pub fn get_unprocessed_graphs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedGraph>> {
         &self.unprocessed_graphs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -109,10 +92,7 @@ impl BatchGetMembershipDatasourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetMembershipDatasourcesOutput`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput
-    {
+    pub fn build(self) -> crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput {
         crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput {
             membership_datasources: self.membership_datasources,
             unprocessed_graphs: self.unprocessed_graphs,

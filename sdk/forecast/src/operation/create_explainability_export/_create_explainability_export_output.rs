@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateExplainabilityExportOutput {
 }
 impl CreateExplainabilityExportOutput {
     /// Creates a new builder-style object to manufacture [`CreateExplainabilityExportOutput`](crate::operation::create_explainability_export::CreateExplainabilityExportOutput).
-    pub fn builder() -> crate::operation::create_explainability_export::builders::CreateExplainabilityExportOutputBuilder{
+    pub fn builder() -> crate::operation::create_explainability_export::builders::CreateExplainabilityExportOutputBuilder {
         crate::operation::create_explainability_export::builders::CreateExplainabilityExportOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateExplainabilityExportOutput`](crate::operation::create_explainability_export::CreateExplainabilityExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExplainabilityExportOutputBuilder {
     pub(crate) explainability_export_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateExplainabilityExportOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the export.</p>
-    pub fn explainability_export_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_export_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability_export_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the export.</p>
-    pub fn set_explainability_export_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.explainability_export_arn = input;
         self
     }
@@ -66,9 +58,7 @@ impl CreateExplainabilityExportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateExplainabilityExportOutput`](crate::operation::create_explainability_export::CreateExplainabilityExportOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_explainability_export::CreateExplainabilityExportOutput {
+    pub fn build(self) -> crate::operation::create_explainability_export::CreateExplainabilityExportOutput {
         crate::operation::create_explainability_export::CreateExplainabilityExportOutput {
             explainability_export_arn: self.explainability_export_arn,
             _request_id: self._request_id,

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`mfa_options(Vec<MfaOptionType>)`](crate::operation::set_user_settings::builders::SetUserSettingsFluentBuilder::mfa_options) / [`set_mfa_options(Option<Vec<MfaOptionType>>)`](crate::operation::set_user_settings::builders::SetUserSettingsFluentBuilder::set_mfa_options): <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
     /// - On success, responds with [`SetUserSettingsOutput`](crate::operation::set_user_settings::SetUserSettingsOutput)
     /// - On failure, responds with [`SdkError<SetUserSettingsError>`](crate::operation::set_user_settings::SetUserSettingsError)
-    pub fn set_user_settings(
-        &self,
-    ) -> crate::operation::set_user_settings::builders::SetUserSettingsFluentBuilder {
-        crate::operation::set_user_settings::builders::SetUserSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_user_settings(&self) -> crate::operation::set_user_settings::builders::SetUserSettingsFluentBuilder {
+        crate::operation::set_user_settings::builders::SetUserSettingsFluentBuilder::new(self.handle.clone())
     }
 }

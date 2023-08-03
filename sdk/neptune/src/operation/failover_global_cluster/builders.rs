@@ -40,10 +40,7 @@ impl FailoverGlobalClusterFluentBuilder {
         }
     }
     /// Access the FailoverGlobalCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::failover_global_cluster::builders::FailoverGlobalClusterInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::failover_global_cluster::builders::FailoverGlobalClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl FailoverGlobalClusterFluentBuilder {
             crate::operation::failover_global_cluster::FailoverGlobalCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::failover_global_cluster::FailoverGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::failover_global_cluster::FailoverGlobalClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl FailoverGlobalClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl FailoverGlobalClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::failover_global_cluster::FailoverGlobalClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::failover_global_cluster::FailoverGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::failover_global_cluster::FailoverGlobalClusterError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl FailoverGlobalClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::failover_global_cluster::FailoverGlobalClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::failover_global_cluster::FailoverGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::failover_global_cluster::FailoverGlobalClusterError>,
     > {
         self.send_middleware().await
     }
@@ -120,27 +108,19 @@ impl FailoverGlobalClusterFluentBuilder {
             crate::operation::failover_global_cluster::FailoverGlobalCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::failover_global_cluster::FailoverGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::failover_global_cluster::FailoverGlobalClusterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p>
     /// <p>Constraints: Must match the identifier of an existing Neptune global database.</p>
-    pub fn global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
         self
     }
     /// <p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p>
     /// <p>Constraints: Must match the identifier of an existing Neptune global database.</p>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }
@@ -150,25 +130,17 @@ impl FailoverGlobalClusterFluentBuilder {
         self.inner.get_global_cluster_identifier()
     }
     /// <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
-    pub fn target_db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_db_cluster_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
-    pub fn set_target_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_db_cluster_identifier(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</p>
-    pub fn get_target_db_cluster_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_db_cluster_identifier()
     }
 }

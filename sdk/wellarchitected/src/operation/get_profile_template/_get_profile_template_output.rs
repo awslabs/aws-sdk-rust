@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetProfileTemplateOutput {
 }
 impl GetProfileTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetProfileTemplateOutput`](crate::operation::get_profile_template::GetProfileTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::get_profile_template::builders::GetProfileTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::get_profile_template::builders::GetProfileTemplateOutputBuilder {
         crate::operation::get_profile_template::builders::GetProfileTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetProfileTemplateOutput`](crate::operation::get_profile_template::GetProfileTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProfileTemplateOutputBuilder {
     pub(crate) profile_template: ::std::option::Option<crate::types::ProfileTemplate>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetProfileTemplateOutputBuilder {
         self
     }
     /// <p>The profile template.</p>
-    pub fn set_profile_template(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfileTemplate>,
-    ) -> Self {
+    pub fn set_profile_template(mut self, input: ::std::option::Option<crate::types::ProfileTemplate>) -> Self {
         self.profile_template = input;
         self
     }

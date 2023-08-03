@@ -38,13 +38,7 @@
 /// If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AudioNormalizationPeakCalculation {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AudioNormalizationPeakCalculation {
         match s {
             "NONE" => AudioNormalizationPeakCalculation::None,
             "TRUE_PEAK" => AudioNormalizationPeakCalculation::TruePeak,
-            other => AudioNormalizationPeakCalculation::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => AudioNormalizationPeakCalculation::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

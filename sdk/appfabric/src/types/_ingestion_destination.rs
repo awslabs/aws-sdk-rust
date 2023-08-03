@@ -45,15 +45,11 @@ impl IngestionDestination {
         self.ingestion_arn.as_deref()
     }
     /// <p>Contains information about how ingested data is processed.</p>
-    pub fn processing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>Contains information about the destination of ingested data.</p>
-    pub fn destination_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
+    pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
     /// <p>The state of the ingestion destination.</p>
@@ -88,16 +84,12 @@ impl IngestionDestination {
 
 /// A builder for [`IngestionDestination`](crate::types::IngestionDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngestionDestinationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) processing_configuration:
-        ::std::option::Option<crate::types::ProcessingConfiguration>,
-    pub(crate) destination_configuration:
-        ::std::option::Option<crate::types::DestinationConfiguration>,
+    pub(crate) processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
+    pub(crate) destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::IngestionDestinationStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -119,18 +111,12 @@ impl IngestionDestinationBuilder {
         &self.arn
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
-    pub fn ingestion_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingestion_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
-    pub fn set_ingestion_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingestion_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingestion_arn = input;
         self
     }
@@ -139,47 +125,31 @@ impl IngestionDestinationBuilder {
         &self.ingestion_arn
     }
     /// <p>Contains information about how ingested data is processed.</p>
-    pub fn processing_configuration(
-        mut self,
-        input: crate::types::ProcessingConfiguration,
-    ) -> Self {
+    pub fn processing_configuration(mut self, input: crate::types::ProcessingConfiguration) -> Self {
         self.processing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about how ingested data is processed.</p>
-    pub fn set_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
         self.processing_configuration = input;
         self
     }
     /// <p>Contains information about how ingested data is processed.</p>
-    pub fn get_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+    pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
         &self.processing_configuration
     }
     /// <p>Contains information about the destination of ingested data.</p>
-    pub fn destination_configuration(
-        mut self,
-        input: crate::types::DestinationConfiguration,
-    ) -> Self {
+    pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the destination of ingested data.</p>
-    pub fn set_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
         self.destination_configuration = input;
         self
     }
     /// <p>Contains information about the destination of ingested data.</p>
-    pub fn get_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+    pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         &self.destination_configuration
     }
     /// <p>The state of the ingestion destination.</p>
@@ -198,10 +168,7 @@ impl IngestionDestinationBuilder {
     /// <li> <p> <code>Active</code>: The ingestion destination is active and is ready to be used.</p> </li>
     /// <li> <p> <code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionDestinationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionDestinationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -216,19 +183,13 @@ impl IngestionDestinationBuilder {
     }
     /// <p>The reason for the current status of the ingestion destination.</p>
     /// <p>Only present when the <code>status</code> of ingestion destination is <code>Failed</code>.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the current status of the ingestion destination.</p>
     /// <p>Only present when the <code>status</code> of ingestion destination is <code>Failed</code>.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -243,10 +204,7 @@ impl IngestionDestinationBuilder {
         self
     }
     /// <p>The timestamp of when the ingestion destination was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -260,10 +218,7 @@ impl IngestionDestinationBuilder {
         self
     }
     /// <p>The timestamp of when the ingestion destination was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

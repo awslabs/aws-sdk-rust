@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for EstimateTemplateCostOutput {
 }
 impl EstimateTemplateCostOutput {
     /// Creates a new builder-style object to manufacture [`EstimateTemplateCostOutput`](crate::operation::estimate_template_cost::EstimateTemplateCostOutput).
-    pub fn builder(
-    ) -> crate::operation::estimate_template_cost::builders::EstimateTemplateCostOutputBuilder {
+    pub fn builder() -> crate::operation::estimate_template_cost::builders::EstimateTemplateCostOutputBuilder {
         crate::operation::estimate_template_cost::builders::EstimateTemplateCostOutputBuilder::default()
     }
 }
 
 /// A builder for [`EstimateTemplateCostOutput`](crate::operation::estimate_template_cost::EstimateTemplateCostOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EstimateTemplateCostOutputBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

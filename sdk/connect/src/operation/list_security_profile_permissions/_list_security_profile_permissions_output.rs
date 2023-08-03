@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSecurityProfilePermissionsOutput 
 }
 impl ListSecurityProfilePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityProfilePermissionsOutput`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput).
-    pub fn builder() -> crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsOutputBuilder {
         crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityProfilePermissionsOutput`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityProfilePermissionsOutputBuilder {
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListSecurityProfilePermissionsOutputBuilder {
         self
     }
     /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.permissions
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -93,10 +86,7 @@ impl ListSecurityProfilePermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSecurityProfilePermissionsOutput`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput
-    {
+    pub fn build(self) -> crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput {
         crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput {
             permissions: self.permissions,
             next_token: self.next_token,

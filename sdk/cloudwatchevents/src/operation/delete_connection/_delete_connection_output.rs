@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for DeleteConnectionOutput {
 }
 impl DeleteConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput).
-    pub fn builder() -> crate::operation::delete_connection::builders::DeleteConnectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_connection::builders::DeleteConnectionOutputBuilder {
         crate::operation::delete_connection::builders::DeleteConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectionOutputBuilder {
     pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connection_state: ::std::option::Option<crate::types::ConnectionState>,
@@ -70,18 +67,12 @@ pub struct DeleteConnectionOutputBuilder {
 }
 impl DeleteConnectionOutputBuilder {
     /// <p>The ARN of the connection that was deleted.</p>
-    pub fn connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the connection that was deleted.</p>
-    pub fn set_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_arn = input;
         self
     }
@@ -95,10 +86,7 @@ impl DeleteConnectionOutputBuilder {
         self
     }
     /// <p>The state of the connection before it was deleted.</p>
-    pub fn set_connection_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionState>,
-    ) -> Self {
+    pub fn set_connection_state(mut self, input: ::std::option::Option<crate::types::ConnectionState>) -> Self {
         self.connection_state = input;
         self
     }
@@ -112,10 +100,7 @@ impl DeleteConnectionOutputBuilder {
         self
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -129,10 +114,7 @@ impl DeleteConnectionOutputBuilder {
         self
     }
     /// <p>A time stamp for the time that the connection was last modified before it was deleted.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -146,10 +128,7 @@ impl DeleteConnectionOutputBuilder {
         self
     }
     /// <p>A time stamp for the time that the connection was last authorized before it wa deleted.</p>
-    pub fn set_last_authorized_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_authorized_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_authorized_time = input;
         self
     }

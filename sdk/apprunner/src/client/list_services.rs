@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`service_summary_list(Option<Vec<ServiceSummary>>)`](crate::operation::list_services::ListServicesOutput::service_summary_list): <p>A list of service summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_services::ListServicesOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     /// - On failure, responds with [`SdkError<ListServicesError>`](crate::operation::list_services::ListServicesError)
-    pub fn list_services(
-        &self,
-    ) -> crate::operation::list_services::builders::ListServicesFluentBuilder {
-        crate::operation::list_services::builders::ListServicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_services(&self) -> crate::operation::list_services::builders::ListServicesFluentBuilder {
+        crate::operation::list_services::builders::ListServicesFluentBuilder::new(self.handle.clone())
     }
 }

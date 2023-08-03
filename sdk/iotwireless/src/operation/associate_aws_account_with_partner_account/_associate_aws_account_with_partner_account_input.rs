@@ -29,16 +29,14 @@ impl AssociateAwsAccountWithPartnerAccountInput {
 }
 impl AssociateAwsAccountWithPartnerAccountInput {
     /// Creates a new builder-style object to manufacture [`AssociateAwsAccountWithPartnerAccountInput`](crate::operation::associate_aws_account_with_partner_account::AssociateAwsAccountWithPartnerAccountInput).
-    pub fn builder() -> crate::operation::associate_aws_account_with_partner_account::builders::AssociateAwsAccountWithPartnerAccountInputBuilder{
+    pub fn builder() -> crate::operation::associate_aws_account_with_partner_account::builders::AssociateAwsAccountWithPartnerAccountInputBuilder {
         crate::operation::associate_aws_account_with_partner_account::builders::AssociateAwsAccountWithPartnerAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateAwsAccountWithPartnerAccountInput`](crate::operation::associate_aws_account_with_partner_account::AssociateAwsAccountWithPartnerAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateAwsAccountWithPartnerAccountInputBuilder {
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkAccountInfo>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -51,10 +49,7 @@ impl AssociateAwsAccountWithPartnerAccountInputBuilder {
         self
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkAccountInfo>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkAccountInfo>) -> Self {
         self.sidewalk = input;
         self
     }
@@ -63,18 +58,12 @@ impl AssociateAwsAccountWithPartnerAccountInputBuilder {
         &self.sidewalk
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -94,10 +83,7 @@ impl AssociateAwsAccountWithPartnerAccountInputBuilder {
         self
     }
     /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -106,16 +92,18 @@ impl AssociateAwsAccountWithPartnerAccountInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`AssociateAwsAccountWithPartnerAccountInput`](crate::operation::associate_aws_account_with_partner_account::AssociateAwsAccountWithPartnerAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_aws_account_with_partner_account::AssociateAwsAccountWithPartnerAccountInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_aws_account_with_partner_account::AssociateAwsAccountWithPartnerAccountInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::associate_aws_account_with_partner_account::AssociateAwsAccountWithPartnerAccountInput {
-                sidewalk: self.sidewalk
-                ,
-                client_request_token: self.client_request_token
-                ,
-                tags: self.tags
-                ,
-            }
+                sidewalk: self.sidewalk,
+                client_request_token: self.client_request_token,
+                tags: self.tags,
+            },
         )
     }
 }

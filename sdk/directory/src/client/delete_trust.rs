@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteTrustOutput`](crate::operation::delete_trust::DeleteTrustOutput) with field(s):
     ///   - [`trust_id(Option<String>)`](crate::operation::delete_trust::DeleteTrustOutput::trust_id): <p>The Trust ID of the trust relationship that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteTrustError>`](crate::operation::delete_trust::DeleteTrustError)
-    pub fn delete_trust(
-        &self,
-    ) -> crate::operation::delete_trust::builders::DeleteTrustFluentBuilder {
+    pub fn delete_trust(&self) -> crate::operation::delete_trust::builders::DeleteTrustFluentBuilder {
         crate::operation::delete_trust::builders::DeleteTrustFluentBuilder::new(self.handle.clone())
     }
 }

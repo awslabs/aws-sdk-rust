@@ -15,18 +15,14 @@ impl StartInferenceExperimentInput {
 }
 impl StartInferenceExperimentInput {
     /// Creates a new builder-style object to manufacture [`StartInferenceExperimentInput`](crate::operation::start_inference_experiment::StartInferenceExperimentInput).
-    pub fn builder(
-    ) -> crate::operation::start_inference_experiment::builders::StartInferenceExperimentInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_inference_experiment::builders::StartInferenceExperimentInputBuilder {
         crate::operation::start_inference_experiment::builders::StartInferenceExperimentInputBuilder::default()
     }
 }
 
 /// A builder for [`StartInferenceExperimentInput`](crate::operation::start_inference_experiment::StartInferenceExperimentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartInferenceExperimentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl StartInferenceExperimentInputBuilder {
         crate::operation::start_inference_experiment::StartInferenceExperimentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_inference_experiment::StartInferenceExperimentInput {
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_inference_experiment::StartInferenceExperimentInput { name: self.name })
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePartnerInputOutput`](crate::operation::create_partner_input::CreatePartnerInputOutput) with field(s):
     ///   - [`input(Option<Input>)`](crate::operation::create_partner_input::CreatePartnerInputOutput::input): Placeholder documentation for Input
     /// - On failure, responds with [`SdkError<CreatePartnerInputError>`](crate::operation::create_partner_input::CreatePartnerInputError)
-    pub fn create_partner_input(
-        &self,
-    ) -> crate::operation::create_partner_input::builders::CreatePartnerInputFluentBuilder {
-        crate::operation::create_partner_input::builders::CreatePartnerInputFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_partner_input(&self) -> crate::operation::create_partner_input::builders::CreatePartnerInputFluentBuilder {
+        crate::operation::create_partner_input::builders::CreatePartnerInputFluentBuilder::new(self.handle.clone())
     }
 }

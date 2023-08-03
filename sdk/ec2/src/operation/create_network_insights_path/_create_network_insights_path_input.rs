@@ -85,16 +85,14 @@ impl CreateNetworkInsightsPathInput {
 }
 impl CreateNetworkInsightsPathInput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkInsightsPathInput`](crate::operation::create_network_insights_path::CreateNetworkInsightsPathInput).
-    pub fn builder() -> crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathInputBuilder{
+    pub fn builder() -> crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathInputBuilder {
         crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNetworkInsightsPathInput`](crate::operation::create_network_insights_path::CreateNetworkInsightsPathInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkInsightsPathInputBuilder {
     pub(crate) source_ip: ::std::option::Option<::std::string::String>,
     pub(crate) destination_ip: ::std::option::Option<::std::string::String>,
@@ -102,8 +100,7 @@ pub struct CreateNetworkInsightsPathInputBuilder {
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
     pub(crate) destination_port: ::std::option::Option<i32>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) filter_at_source: ::std::option::Option<crate::types::PathRequestFilter>,
@@ -125,18 +122,12 @@ impl CreateNetworkInsightsPathInputBuilder {
         &self.source_ip
     }
     /// <p>The IP address of the destination.</p>
-    pub fn destination_ip(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address of the destination.</p>
-    pub fn set_destination_ip(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_ip = input;
         self
     }
@@ -212,17 +203,12 @@ impl CreateNetworkInsightsPathInputBuilder {
         self
     }
     /// <p>The tags to add to the path.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to add to the path.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -259,10 +245,7 @@ impl CreateNetworkInsightsPathInputBuilder {
         self
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter, you can't specify the parameters for the source IP address or the destination port.</p>
-    pub fn set_filter_at_source(
-        mut self,
-        input: ::std::option::Option<crate::types::PathRequestFilter>,
-    ) -> Self {
+    pub fn set_filter_at_source(mut self, input: ::std::option::Option<crate::types::PathRequestFilter>) -> Self {
         self.filter_at_source = input;
         self
     }
@@ -276,17 +259,12 @@ impl CreateNetworkInsightsPathInputBuilder {
         self
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can't specify the parameter for the destination IP address.</p>
-    pub fn set_filter_at_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::PathRequestFilter>,
-    ) -> Self {
+    pub fn set_filter_at_destination(mut self, input: ::std::option::Option<crate::types::PathRequestFilter>) -> Self {
         self.filter_at_destination = input;
         self
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can't specify the parameter for the destination IP address.</p>
-    pub fn get_filter_at_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::PathRequestFilter> {
+    pub fn get_filter_at_destination(&self) -> &::std::option::Option<crate::types::PathRequestFilter> {
         &self.filter_at_destination
     }
     /// Consumes the builder and constructs a [`CreateNetworkInsightsPathInput`](crate::operation::create_network_insights_path::CreateNetworkInsightsPathInput).
@@ -296,20 +274,18 @@ impl CreateNetworkInsightsPathInputBuilder {
         crate::operation::create_network_insights_path::CreateNetworkInsightsPathInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_network_insights_path::CreateNetworkInsightsPathInput {
-                source_ip: self.source_ip,
-                destination_ip: self.destination_ip,
-                source: self.source,
-                destination: self.destination,
-                protocol: self.protocol,
-                destination_port: self.destination_port,
-                tag_specifications: self.tag_specifications,
-                dry_run: self.dry_run,
-                client_token: self.client_token,
-                filter_at_source: self.filter_at_source,
-                filter_at_destination: self.filter_at_destination,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_network_insights_path::CreateNetworkInsightsPathInput {
+            source_ip: self.source_ip,
+            destination_ip: self.destination_ip,
+            source: self.source,
+            destination: self.destination,
+            protocol: self.protocol,
+            destination_port: self.destination_port,
+            tag_specifications: self.tag_specifications,
+            dry_run: self.dry_run,
+            client_token: self.client_token,
+            filter_at_source: self.filter_at_source,
+            filter_at_destination: self.filter_at_destination,
+        })
     }
 }

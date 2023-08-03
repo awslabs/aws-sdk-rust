@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExperimentResultResponseType {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,18 +60,12 @@ pub enum ExperimentResultResponseType {
 impl ::std::convert::From<&str> for ExperimentResultResponseType {
     fn from(s: &str) -> Self {
         match s {
-            "ConfidenceIntervalLowerBound" => {
-                ExperimentResultResponseType::ConfidenceIntervalLowerbound
-            }
-            "ConfidenceIntervalUpperBound" => {
-                ExperimentResultResponseType::ConfidenceIntervalUpperbound
-            }
+            "ConfidenceIntervalLowerBound" => ExperimentResultResponseType::ConfidenceIntervalLowerbound,
+            "ConfidenceIntervalUpperBound" => ExperimentResultResponseType::ConfidenceIntervalUpperbound,
             "Mean" => ExperimentResultResponseType::Mean,
             "PValue" => ExperimentResultResponseType::PValue,
             "TreatmentEffect" => ExperimentResultResponseType::TreatmentEffect,
-            other => ExperimentResultResponseType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ExperimentResultResponseType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -92,12 +80,8 @@ impl ExperimentResultResponseType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ExperimentResultResponseType::ConfidenceIntervalLowerbound => {
-                "ConfidenceIntervalLowerBound"
-            }
-            ExperimentResultResponseType::ConfidenceIntervalUpperbound => {
-                "ConfidenceIntervalUpperBound"
-            }
+            ExperimentResultResponseType::ConfidenceIntervalLowerbound => "ConfidenceIntervalLowerBound",
+            ExperimentResultResponseType::ConfidenceIntervalUpperbound => "ConfidenceIntervalUpperBound",
             ExperimentResultResponseType::Mean => "Mean",
             ExperimentResultResponseType::PValue => "PValue",
             ExperimentResultResponseType::TreatmentEffect => "TreatmentEffect",

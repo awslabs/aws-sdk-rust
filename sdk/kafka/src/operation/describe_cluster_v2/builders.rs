@@ -10,10 +10,7 @@ impl DescribeClusterV2InputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_v2::DescribeClusterV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_v2::DescribeClusterV2Error,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_v2::DescribeClusterV2Error, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_cluster_v2();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeClusterV2FluentBuilder {
         }
     }
     /// Access the DescribeClusterV2 as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_cluster_v2::builders::DescribeClusterV2InputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_cluster_v2::builders::DescribeClusterV2InputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeClusterV2FluentBuilder {
             crate::operation::describe_cluster_v2::DescribeClusterV2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_v2::DescribeClusterV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_v2::DescribeClusterV2Error>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeClusterV2FluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeClusterV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_v2::DescribeClusterV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_v2::DescribeClusterV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_v2::DescribeClusterV2Error>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeClusterV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_v2::DescribeClusterV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_v2::DescribeClusterV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_v2::DescribeClusterV2Error>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeClusterV2FluentBuilder {
             crate::operation::describe_cluster_v2::DescribeClusterV2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_v2::DescribeClusterV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_v2::DescribeClusterV2Error>,
     > {
         self.customize_middleware().await
     }

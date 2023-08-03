@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeEventTopicsOutput {
 }
 impl DescribeEventTopicsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventTopicsOutput`](crate::operation::describe_event_topics::DescribeEventTopicsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_topics::builders::DescribeEventTopicsOutputBuilder {
-        crate::operation::describe_event_topics::builders::DescribeEventTopicsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_event_topics::builders::DescribeEventTopicsOutputBuilder {
+        crate::operation::describe_event_topics::builders::DescribeEventTopicsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventTopicsOutput`](crate::operation::describe_event_topics::DescribeEventTopicsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventTopicsOutputBuilder {
     pub(crate) event_topics: ::std::option::Option<::std::vec::Vec<crate::types::EventTopic>>,
     _request_id: Option<String>,
@@ -51,17 +47,12 @@ impl DescribeEventTopicsOutputBuilder {
         self
     }
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
-    pub fn set_event_topics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventTopic>>,
-    ) -> Self {
+    pub fn set_event_topics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventTopic>>) -> Self {
         self.event_topics = input;
         self
     }
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
-    pub fn get_event_topics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTopic>> {
+    pub fn get_event_topics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTopic>> {
         &self.event_topics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

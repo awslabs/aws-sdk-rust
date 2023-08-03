@@ -35,9 +35,7 @@ impl ListParentsOutput {
 
 /// A builder for [`ListParentsOutput`](crate::operation::list_parents::ListParentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListParentsOutputBuilder {
     pub(crate) parents: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListParentsOutputBuilder {
         self
     }
     /// <p>A list of parents for the specified child account or OU.</p>
-    pub fn set_parents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>,
-    ) -> Self {
+    pub fn set_parents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>) -> Self {
         self.parents = input;
         self
     }

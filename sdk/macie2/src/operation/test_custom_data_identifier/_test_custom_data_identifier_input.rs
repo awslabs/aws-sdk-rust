@@ -43,18 +43,14 @@ impl TestCustomDataIdentifierInput {
 }
 impl TestCustomDataIdentifierInput {
     /// Creates a new builder-style object to manufacture [`TestCustomDataIdentifierInput`](crate::operation::test_custom_data_identifier::TestCustomDataIdentifierInput).
-    pub fn builder(
-    ) -> crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierInputBuilder
-    {
+    pub fn builder() -> crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierInputBuilder {
         crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierInputBuilder::default()
     }
 }
 
 /// A builder for [`TestCustomDataIdentifierInput`](crate::operation::test_custom_data_identifier::TestCustomDataIdentifierInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestCustomDataIdentifierInputBuilder {
     pub(crate) ignore_words: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -75,17 +71,12 @@ impl TestCustomDataIdentifierInputBuilder {
         self
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    pub fn set_ignore_words(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ignore_words(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ignore_words = input;
         self
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    pub fn get_ignore_words(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ignore_words(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ignore_words
     }
     /// Appends an item to `keywords`.
@@ -100,10 +91,7 @@ impl TestCustomDataIdentifierInputBuilder {
         self
     }
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-    pub fn set_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.keywords = input;
         self
     }
@@ -160,14 +148,12 @@ impl TestCustomDataIdentifierInputBuilder {
         crate::operation::test_custom_data_identifier::TestCustomDataIdentifierInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::test_custom_data_identifier::TestCustomDataIdentifierInput {
-                ignore_words: self.ignore_words,
-                keywords: self.keywords,
-                maximum_match_distance: self.maximum_match_distance,
-                regex: self.regex,
-                sample_text: self.sample_text,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::test_custom_data_identifier::TestCustomDataIdentifierInput {
+            ignore_words: self.ignore_words,
+            keywords: self.keywords,
+            maximum_match_distance: self.maximum_match_distance,
+            regex: self.regex,
+            sample_text: self.sample_text,
+        })
     }
 }

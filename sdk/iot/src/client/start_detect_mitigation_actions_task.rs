@@ -13,7 +13,9 @@ impl super::Client {
     /// - On success, responds with [`StartDetectMitigationActionsTaskOutput`](crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput::task_id): <p> The unique identifier of the task. </p>
     /// - On failure, responds with [`SdkError<StartDetectMitigationActionsTaskError>`](crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskError)
-    pub fn start_detect_mitigation_actions_task(&self) -> crate::operation::start_detect_mitigation_actions_task::builders::StartDetectMitigationActionsTaskFluentBuilder{
+    pub fn start_detect_mitigation_actions_task(
+        &self,
+    ) -> crate::operation::start_detect_mitigation_actions_task::builders::StartDetectMitigationActionsTaskFluentBuilder {
         crate::operation::start_detect_mitigation_actions_task::builders::StartDetectMitigationActionsTaskFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl UntagInstanceProfileFluentBuilder {
         }
     }
     /// Access the UntagInstanceProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::untag_instance_profile::builders::UntagInstanceProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::untag_instance_profile::builders::UntagInstanceProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UntagInstanceProfileFluentBuilder {
             crate::operation::untag_instance_profile::UntagInstanceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_instance_profile::UntagInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_instance_profile::UntagInstanceProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UntagInstanceProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UntagInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::untag_instance_profile::UntagInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_instance_profile::UntagInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_instance_profile::UntagInstanceProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UntagInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::untag_instance_profile::UntagInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_instance_profile::UntagInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_instance_profile::UntagInstanceProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +105,19 @@ impl UntagInstanceProfileFluentBuilder {
             crate::operation::untag_instance_profile::UntagInstanceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_instance_profile::UntagInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_instance_profile::UntagInstanceProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the IAM instance profile from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn instance_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_profile_name(input.into());
         self
     }
     /// <p>The name of the IAM instance profile from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_instance_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_profile_name(input);
         self
     }
@@ -155,10 +136,7 @@ impl UntagInstanceProfileFluentBuilder {
         self
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified instance profile.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }

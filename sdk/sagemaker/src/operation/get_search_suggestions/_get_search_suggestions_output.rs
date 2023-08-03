@@ -5,15 +5,12 @@
 pub struct GetSearchSuggestionsOutput {
     /// <p>A list of property names for a <code>Resource</code> that match a <code>SuggestionQuery</code>.</p>
     #[doc(hidden)]
-    pub property_name_suggestions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PropertyNameSuggestion>>,
+    pub property_name_suggestions: ::std::option::Option<::std::vec::Vec<crate::types::PropertyNameSuggestion>>,
     _request_id: Option<String>,
 }
 impl GetSearchSuggestionsOutput {
     /// <p>A list of property names for a <code>Resource</code> that match a <code>SuggestionQuery</code>.</p>
-    pub fn property_name_suggestions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PropertyNameSuggestion]> {
+    pub fn property_name_suggestions(&self) -> ::std::option::Option<&[crate::types::PropertyNameSuggestion]> {
         self.property_name_suggestions.as_deref()
     }
 }
@@ -24,20 +21,16 @@ impl ::aws_http::request_id::RequestId for GetSearchSuggestionsOutput {
 }
 impl GetSearchSuggestionsOutput {
     /// Creates a new builder-style object to manufacture [`GetSearchSuggestionsOutput`](crate::operation::get_search_suggestions::GetSearchSuggestionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_search_suggestions::builders::GetSearchSuggestionsOutputBuilder {
+    pub fn builder() -> crate::operation::get_search_suggestions::builders::GetSearchSuggestionsOutputBuilder {
         crate::operation::get_search_suggestions::builders::GetSearchSuggestionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSearchSuggestionsOutput`](crate::operation::get_search_suggestions::GetSearchSuggestionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSearchSuggestionsOutputBuilder {
-    pub(crate) property_name_suggestions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PropertyNameSuggestion>>,
+    pub(crate) property_name_suggestions: ::std::option::Option<::std::vec::Vec<crate::types::PropertyNameSuggestion>>,
     _request_id: Option<String>,
 }
 impl GetSearchSuggestionsOutputBuilder {
@@ -46,27 +39,19 @@ impl GetSearchSuggestionsOutputBuilder {
     /// To override the contents of this collection use [`set_property_name_suggestions`](Self::set_property_name_suggestions).
     ///
     /// <p>A list of property names for a <code>Resource</code> that match a <code>SuggestionQuery</code>.</p>
-    pub fn property_name_suggestions(
-        mut self,
-        input: crate::types::PropertyNameSuggestion,
-    ) -> Self {
+    pub fn property_name_suggestions(mut self, input: crate::types::PropertyNameSuggestion) -> Self {
         let mut v = self.property_name_suggestions.unwrap_or_default();
         v.push(input);
         self.property_name_suggestions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of property names for a <code>Resource</code> that match a <code>SuggestionQuery</code>.</p>
-    pub fn set_property_name_suggestions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyNameSuggestion>>,
-    ) -> Self {
+    pub fn set_property_name_suggestions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyNameSuggestion>>) -> Self {
         self.property_name_suggestions = input;
         self
     }
     /// <p>A list of property names for a <code>Resource</code> that match a <code>SuggestionQuery</code>.</p>
-    pub fn get_property_name_suggestions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyNameSuggestion>> {
+    pub fn get_property_name_suggestions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyNameSuggestion>> {
         &self.property_name_suggestions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

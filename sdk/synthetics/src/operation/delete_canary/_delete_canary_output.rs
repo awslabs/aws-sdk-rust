@@ -19,9 +19,7 @@ impl DeleteCanaryOutput {
 
 /// A builder for [`DeleteCanaryOutput`](crate::operation::delete_canary::DeleteCanaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCanaryOutputBuilder {
     _request_id: Option<String>,
 }

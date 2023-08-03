@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::list_dashboard_versions::ListDashboardVersionsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_dashboard_versions::ListDashboardVersionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<ListDashboardVersionsError>`](crate::operation::list_dashboard_versions::ListDashboardVersionsError)
-    pub fn list_dashboard_versions(
-        &self,
-    ) -> crate::operation::list_dashboard_versions::builders::ListDashboardVersionsFluentBuilder
-    {
-        crate::operation::list_dashboard_versions::builders::ListDashboardVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_dashboard_versions(&self) -> crate::operation::list_dashboard_versions::builders::ListDashboardVersionsFluentBuilder {
+        crate::operation::list_dashboard_versions::builders::ListDashboardVersionsFluentBuilder::new(self.handle.clone())
     }
 }

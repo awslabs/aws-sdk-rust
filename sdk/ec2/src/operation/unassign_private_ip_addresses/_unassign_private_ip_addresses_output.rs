@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UnassignPrivateIpAddressesOutput {
 }
 impl UnassignPrivateIpAddressesOutput {
     /// Creates a new builder-style object to manufacture [`UnassignPrivateIpAddressesOutput`](crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesOutput).
-    pub fn builder() -> crate::operation::unassign_private_ip_addresses::builders::UnassignPrivateIpAddressesOutputBuilder{
+    pub fn builder() -> crate::operation::unassign_private_ip_addresses::builders::UnassignPrivateIpAddressesOutputBuilder {
         crate::operation::unassign_private_ip_addresses::builders::UnassignPrivateIpAddressesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UnassignPrivateIpAddressesOutput`](crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnassignPrivateIpAddressesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UnassignPrivateIpAddressesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UnassignPrivateIpAddressesOutput`](crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesOutput {
+    pub fn build(self) -> crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesOutput {
         crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesOutput {
             _request_id: self._request_id,
         }

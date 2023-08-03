@@ -13,7 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDataRepositoryTaskOutput`](crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput) with field(s):
     ///   - [`data_repository_task(Option<DataRepositoryTask>)`](crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput::data_repository_task): <p>The description of the data repository task that you just created.</p>
     /// - On failure, responds with [`SdkError<CreateDataRepositoryTaskError>`](crate::operation::create_data_repository_task::CreateDataRepositoryTaskError)
-    pub fn create_data_repository_task(&self) -> crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskFluentBuilder{
+    pub fn create_data_repository_task(&self) -> crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskFluentBuilder {
         crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskFluentBuilder::new(self.handle.clone())
     }
 }

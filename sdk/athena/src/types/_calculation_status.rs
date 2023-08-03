@@ -60,9 +60,7 @@ impl CalculationStatus {
 
 /// A builder for [`CalculationStatus`](crate::types::CalculationStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CalculationStatusBuilder {
     pub(crate) submission_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completion_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -76,10 +74,7 @@ impl CalculationStatusBuilder {
         self
     }
     /// <p>The date and time the calculation was submitted for processing.</p>
-    pub fn set_submission_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submission_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.submission_date_time = input;
         self
     }
@@ -93,10 +88,7 @@ impl CalculationStatusBuilder {
         self
     }
     /// <p>The date and time the calculation completed processing.</p>
-    pub fn set_completion_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completion_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_date_time = input;
         self
     }
@@ -126,10 +118,7 @@ impl CalculationStatusBuilder {
     /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
     /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
     /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculationExecutionState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CalculationExecutionState>) -> Self {
         self.state = input;
         self
     }
@@ -146,18 +135,12 @@ impl CalculationStatusBuilder {
         &self.state
     }
     /// <p>The reason for the calculation state change (for example, the calculation was canceled because the session was terminated).</p>
-    pub fn state_change_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_change_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_change_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the calculation state change (for example, the calculation was canceled because the session was terminated).</p>
-    pub fn set_state_change_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_change_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_change_reason = input;
         self
     }

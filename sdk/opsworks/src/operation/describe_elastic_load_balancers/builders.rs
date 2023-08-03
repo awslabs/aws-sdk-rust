@@ -29,7 +29,7 @@ impl DescribeElasticLoadBalancersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeElasticLoadBalancersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_elastic_load_balancers::builders::DescribeElasticLoadBalancersInputBuilder,
+    inner: crate::operation::describe_elastic_load_balancers::builders::DescribeElasticLoadBalancersInputBuilder,
 }
 impl DescribeElasticLoadBalancersFluentBuilder {
     /// Creates a new `DescribeElasticLoadBalancers`.
@@ -40,7 +40,7 @@ impl DescribeElasticLoadBalancersFluentBuilder {
         }
     }
     /// Access the DescribeElasticLoadBalancers as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_elastic_load_balancers::builders::DescribeElasticLoadBalancersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_elastic_load_balancers::builders::DescribeElasticLoadBalancersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl DescribeElasticLoadBalancersFluentBuilder {
             crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl DescribeElasticLoadBalancersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl DescribeElasticLoadBalancersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl DescribeElasticLoadBalancersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl DescribeElasticLoadBalancersFluentBuilder {
             crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersError>,
     > {
         self.customize_middleware().await
     }
@@ -147,10 +136,7 @@ impl DescribeElasticLoadBalancersFluentBuilder {
         self
     }
     /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    pub fn set_layer_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_layer_ids(input);
         self
     }

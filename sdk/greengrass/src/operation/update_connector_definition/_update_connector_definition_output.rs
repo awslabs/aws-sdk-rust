@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateConnectorDefinitionOutput {
 }
 impl UpdateConnectorDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectorDefinitionOutput`](crate::operation::update_connector_definition::UpdateConnectorDefinitionOutput).
-    pub fn builder() -> crate::operation::update_connector_definition::builders::UpdateConnectorDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::update_connector_definition::builders::UpdateConnectorDefinitionOutputBuilder {
         crate::operation::update_connector_definition::builders::UpdateConnectorDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConnectorDefinitionOutput`](crate::operation::update_connector_definition::UpdateConnectorDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectorDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateConnectorDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateConnectorDefinitionOutput`](crate::operation::update_connector_definition::UpdateConnectorDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_connector_definition::UpdateConnectorDefinitionOutput {
+    pub fn build(self) -> crate::operation::update_connector_definition::UpdateConnectorDefinitionOutput {
         crate::operation::update_connector_definition::UpdateConnectorDefinitionOutput {
             _request_id: self._request_id,
         }

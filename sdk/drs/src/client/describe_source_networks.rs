@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<SourceNetwork>>)`](crate::operation::describe_source_networks::DescribeSourceNetworksOutput::items): <p>An array of Source Networks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_source_networks::DescribeSourceNetworksOutput::next_token): <p>The token of the next Source Networks to retrieve.</p>
     /// - On failure, responds with [`SdkError<DescribeSourceNetworksError>`](crate::operation::describe_source_networks::DescribeSourceNetworksError)
-    pub fn describe_source_networks(
-        &self,
-    ) -> crate::operation::describe_source_networks::builders::DescribeSourceNetworksFluentBuilder
-    {
+    pub fn describe_source_networks(&self) -> crate::operation::describe_source_networks::builders::DescribeSourceNetworksFluentBuilder {
         crate::operation::describe_source_networks::builders::DescribeSourceNetworksFluentBuilder::new(self.handle.clone())
     }
 }

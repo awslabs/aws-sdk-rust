@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetApnsChannelOutput`](crate::operation::get_apns_channel::GetApnsChannelOutput) with field(s):
     ///   - [`apns_channel_response(Option<ApnsChannelResponse>)`](crate::operation::get_apns_channel::GetApnsChannelOutput::apns_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetApnsChannelError>`](crate::operation::get_apns_channel::GetApnsChannelError)
-    pub fn get_apns_channel(
-        &self,
-    ) -> crate::operation::get_apns_channel::builders::GetApnsChannelFluentBuilder {
-        crate::operation::get_apns_channel::builders::GetApnsChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_apns_channel(&self) -> crate::operation::get_apns_channel::builders::GetApnsChannelFluentBuilder {
+        crate::operation::get_apns_channel::builders::GetApnsChannelFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSecurityProfileOutput`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput) with field(s):
     ///   - [`security_profile(Option<SecurityProfile>)`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput::security_profile): <p>The security profile.</p>
     /// - On failure, responds with [`SdkError<DescribeSecurityProfileError>`](crate::operation::describe_security_profile::DescribeSecurityProfileError)
-    pub fn describe_security_profile(
-        &self,
-    ) -> crate::operation::describe_security_profile::builders::DescribeSecurityProfileFluentBuilder
-    {
+    pub fn describe_security_profile(&self) -> crate::operation::describe_security_profile::builders::DescribeSecurityProfileFluentBuilder {
         crate::operation::describe_security_profile::builders::DescribeSecurityProfileFluentBuilder::new(self.handle.clone())
     }
 }

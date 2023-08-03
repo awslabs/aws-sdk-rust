@@ -9,9 +9,7 @@ pub struct JobExecutionState {
     pub status: ::std::option::Option<crate::types::JobExecutionStatus>,
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
     #[doc(hidden)]
-    pub status_details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub status_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
     #[doc(hidden)]
     pub version_number: i64,
@@ -22,11 +20,7 @@ impl JobExecutionState {
         self.status.as_ref()
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
-    pub fn status_details(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn status_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.status_details.as_ref()
     }
     /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
@@ -43,14 +37,10 @@ impl JobExecutionState {
 
 /// A builder for [`JobExecutionState`](crate::types::JobExecutionState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobExecutionStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::JobExecutionStatus>,
-    pub(crate) status_details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) status_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) version_number: ::std::option::Option<i64>,
 }
 impl JobExecutionStateBuilder {
@@ -60,10 +50,7 @@ impl JobExecutionStateBuilder {
         self
     }
     /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -89,19 +76,13 @@ impl JobExecutionStateBuilder {
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
     pub fn set_status_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.status_details = input;
         self
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
-    pub fn get_status_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_status_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.status_details
     }
     /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>

@@ -26,11 +26,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::create_data_set::CreateDataSetOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::create_data_set::CreateDataSetOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<CreateDataSetError>`](crate::operation::create_data_set::CreateDataSetError)
-    pub fn create_data_set(
-        &self,
-    ) -> crate::operation::create_data_set::builders::CreateDataSetFluentBuilder {
-        crate::operation::create_data_set::builders::CreateDataSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_data_set(&self) -> crate::operation::create_data_set::builders::CreateDataSetFluentBuilder {
+        crate::operation::create_data_set::builders::CreateDataSetFluentBuilder::new(self.handle.clone())
     }
 }

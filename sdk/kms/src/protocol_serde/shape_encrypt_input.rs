@@ -7,9 +7,7 @@ pub fn ser_encrypt_input(
         object.key("KeyId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.plaintext {
-        object
-            .key("Plaintext")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("Plaintext").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     if let Some(var_3) = &input.encryption_context {
         #[allow(unused_mut)]

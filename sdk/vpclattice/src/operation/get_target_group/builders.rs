@@ -10,10 +10,7 @@ impl GetTargetGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_target_group::GetTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_target_group::GetTargetGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_target_group::GetTargetGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_target_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetTargetGroupFluentBuilder {
         }
     }
     /// Access the GetTargetGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_target_group::builders::GetTargetGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_target_group::builders::GetTargetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetTargetGroupFluentBuilder {
             crate::operation::get_target_group::GetTargetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_target_group::GetTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_target_group::GetTargetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetTargetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetTargetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_target_group::GetTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_target_group::GetTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_target_group::GetTargetGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetTargetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_target_group::GetTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_target_group::GetTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_target_group::GetTargetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetTargetGroupFluentBuilder {
             crate::operation::get_target_group::GetTargetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_target_group::GetTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_target_group::GetTargetGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_group_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_group_identifier(input);
         self
     }

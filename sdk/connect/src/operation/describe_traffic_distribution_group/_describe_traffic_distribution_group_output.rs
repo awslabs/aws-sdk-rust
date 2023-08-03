@@ -10,9 +10,7 @@ pub struct DescribeTrafficDistributionGroupOutput {
 }
 impl DescribeTrafficDistributionGroupOutput {
     /// <p>Information about the traffic distribution group.</p>
-    pub fn traffic_distribution_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrafficDistributionGroup> {
+    pub fn traffic_distribution_group(&self) -> ::std::option::Option<&crate::types::TrafficDistributionGroup> {
         self.traffic_distribution_group.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeTrafficDistributionGroupOutpu
 }
 impl DescribeTrafficDistributionGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrafficDistributionGroupOutput`](crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupOutput).
-    pub fn builder() -> crate::operation::describe_traffic_distribution_group::builders::DescribeTrafficDistributionGroupOutputBuilder{
+    pub fn builder() -> crate::operation::describe_traffic_distribution_group::builders::DescribeTrafficDistributionGroupOutputBuilder {
         crate::operation::describe_traffic_distribution_group::builders::DescribeTrafficDistributionGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrafficDistributionGroupOutput`](crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrafficDistributionGroupOutputBuilder {
-    pub(crate) traffic_distribution_group:
-        ::std::option::Option<crate::types::TrafficDistributionGroup>,
+    pub(crate) traffic_distribution_group: ::std::option::Option<crate::types::TrafficDistributionGroup>,
     _request_id: Option<String>,
 }
 impl DescribeTrafficDistributionGroupOutputBuilder {
     /// <p>Information about the traffic distribution group.</p>
-    pub fn traffic_distribution_group(
-        mut self,
-        input: crate::types::TrafficDistributionGroup,
-    ) -> Self {
+    pub fn traffic_distribution_group(mut self, input: crate::types::TrafficDistributionGroup) -> Self {
         self.traffic_distribution_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the traffic distribution group.</p>
-    pub fn set_traffic_distribution_group(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficDistributionGroup>,
-    ) -> Self {
+    pub fn set_traffic_distribution_group(mut self, input: ::std::option::Option<crate::types::TrafficDistributionGroup>) -> Self {
         self.traffic_distribution_group = input;
         self
     }
     /// <p>Information about the traffic distribution group.</p>
-    pub fn get_traffic_distribution_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrafficDistributionGroup> {
+    pub fn get_traffic_distribution_group(&self) -> &::std::option::Option<crate::types::TrafficDistributionGroup> {
         &self.traffic_distribution_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,13 +58,9 @@ impl DescribeTrafficDistributionGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTrafficDistributionGroupOutput`](crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupOutput
-    {
+    pub fn build(self) -> crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupOutput {
         crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupOutput {
-            traffic_distribution_group: self.traffic_distribution_group
-            ,
+            traffic_distribution_group: self.traffic_distribution_group,
             _request_id: self._request_id,
         }
     }

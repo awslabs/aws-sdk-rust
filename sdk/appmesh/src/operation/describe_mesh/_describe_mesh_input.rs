@@ -29,9 +29,7 @@ impl DescribeMeshInput {
 
 /// A builder for [`DescribeMeshInput`](crate::operation::describe_mesh::DescribeMeshInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMeshInputBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_owner: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl DescribeMeshInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`DescribeMeshInput`](crate::operation::describe_mesh::DescribeMeshInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_mesh::DescribeMeshInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_mesh::DescribeMeshInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_mesh::DescribeMeshInput {
             mesh_name: self.mesh_name,
             mesh_owner: self.mesh_owner,

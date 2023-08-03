@@ -12,10 +12,7 @@ pub fn ser_create_explainability_input(
     if let Some(var_3) = &input.explainability_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("ExplainabilityConfig").start_object();
-        crate::protocol_serde::shape_explainability_config::ser_explainability_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_explainability_config::ser_explainability_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.data_source {

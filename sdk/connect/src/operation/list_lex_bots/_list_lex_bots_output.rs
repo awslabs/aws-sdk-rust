@@ -35,9 +35,7 @@ impl ListLexBotsOutput {
 
 /// A builder for [`ListLexBotsOutput`](crate::operation::list_lex_bots::ListLexBotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLexBotsOutputBuilder {
     pub(crate) lex_bots: ::std::option::Option<::std::vec::Vec<crate::types::LexBot>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListLexBotsOutputBuilder {
         self
     }
     /// <p>The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.</p>
-    pub fn set_lex_bots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LexBot>>,
-    ) -> Self {
+    pub fn set_lex_bots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LexBot>>) -> Self {
         self.lex_bots = input;
         self
     }

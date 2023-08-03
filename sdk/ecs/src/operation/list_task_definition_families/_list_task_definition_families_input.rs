@@ -40,16 +40,14 @@ impl ListTaskDefinitionFamiliesInput {
 }
 impl ListTaskDefinitionFamiliesInput {
     /// Creates a new builder-style object to manufacture [`ListTaskDefinitionFamiliesInput`](crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesInput).
-    pub fn builder() -> crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesInputBuilder{
+    pub fn builder() -> crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesInputBuilder {
         crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTaskDefinitionFamiliesInput`](crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTaskDefinitionFamiliesInputBuilder {
     pub(crate) family_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskDefinitionFamilyStatus>,
@@ -58,18 +56,12 @@ pub struct ListTaskDefinitionFamiliesInputBuilder {
 }
 impl ListTaskDefinitionFamiliesInputBuilder {
     /// <p>The <code>familyPrefix</code> is a string that's used to filter the results of <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>, only task definition family names that begin with the <code>familyPrefix</code> string are returned.</p>
-    pub fn family_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn family_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.family_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>familyPrefix</code> is a string that's used to filter the results of <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>, only task definition family names that begin with the <code>familyPrefix</code> string are returned.</p>
-    pub fn set_family_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_family_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.family_prefix = input;
         self
     }
@@ -83,10 +75,7 @@ impl ListTaskDefinitionFamiliesInputBuilder {
         self
     }
     /// <p>The task definition family status to filter the <code>ListTaskDefinitionFamilies</code> results with. By default, both <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are listed. If this parameter is set to <code>ACTIVE</code>, only task definition families that have an <code>ACTIVE</code> task definition revision are returned. If this parameter is set to <code>INACTIVE</code>, only task definition families that do not have any <code>ACTIVE</code> task definition revisions are returned. If you paginate the resulting output, be sure to keep the <code>status</code> value constant in each subsequent request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskDefinitionFamilyStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskDefinitionFamilyStatus>) -> Self {
         self.status = input;
         self
     }
@@ -135,13 +124,11 @@ impl ListTaskDefinitionFamiliesInputBuilder {
         crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesInput {
-                family_prefix: self.family_prefix,
-                status: self.status,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesInput {
+            family_prefix: self.family_prefix,
+            status: self.status,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

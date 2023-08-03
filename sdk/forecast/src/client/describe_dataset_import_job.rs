@@ -23,7 +23,7 @@ impl super::Client {
     ///   - [`format(Option<String>)`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput::format): <p>The format of the imported data, CSV or PARQUET.</p>
     ///   - [`import_mode(Option<ImportMode>)`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput::import_mode): <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetImportJobError>`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobError)
-    pub fn describe_dataset_import_job(&self) -> crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobFluentBuilder{
+    pub fn describe_dataset_import_job(&self) -> crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobFluentBuilder {
         crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -49,9 +49,7 @@ pub struct ImportComponentInput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags of the component.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The idempotency token of the component.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -112,11 +110,7 @@ impl ImportComponentInput {
         self.kms_key_id.as_deref()
     }
     /// <p>The tags of the component.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The idempotency token of the component.</p>
@@ -133,9 +127,7 @@ impl ImportComponentInput {
 
 /// A builder for [`ImportComponentInput`](crate::operation::import_component::ImportComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportComponentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) semantic_version: ::std::option::Option<::std::string::String>,
@@ -147,9 +139,7 @@ pub struct ImportComponentInputBuilder {
     pub(crate) data: ::std::option::Option<::std::string::String>,
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl ImportComponentInputBuilder {
@@ -182,10 +172,7 @@ impl ImportComponentInputBuilder {
     /// </major></p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
@@ -204,10 +191,7 @@ impl ImportComponentInputBuilder {
     /// </major></p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.semantic_version = input;
         self
     }
@@ -244,18 +228,12 @@ impl ImportComponentInputBuilder {
         &self.description
     }
     /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
-    pub fn change_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
-    pub fn set_change_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_description = input;
         self
     }
@@ -283,10 +261,7 @@ impl ImportComponentInputBuilder {
         self
     }
     /// <p>The format of the resource that you want to import as a component.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::ComponentFormat>) -> Self {
         self.format = input;
         self
     }
@@ -355,32 +330,19 @@ impl ImportComponentInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the component.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags of the component.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags of the component.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The idempotency token of the component.</p>
@@ -400,10 +362,7 @@ impl ImportComponentInputBuilder {
     /// Consumes the builder and constructs a [`ImportComponentInput`](crate::operation::import_component::ImportComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_component::ImportComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::import_component::ImportComponentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_component::ImportComponentInput {
             name: self.name,
             semantic_version: self.semantic_version,

@@ -41,13 +41,10 @@ impl LoggingConfiguration {
 
 /// A builder for [`LoggingConfiguration`](crate::types::LoggingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingConfigurationBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) log_destination_configs:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) log_destination_configs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) redacted_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
 }
 impl LoggingConfigurationBuilder {
@@ -70,27 +67,19 @@ impl LoggingConfigurationBuilder {
     /// To override the contents of this collection use [`set_log_destination_configs`](Self::set_log_destination_configs).
     ///
     /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
-    pub fn log_destination_configs(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_destination_configs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_destination_configs.unwrap_or_default();
         v.push(input.into());
         self.log_destination_configs = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
-    pub fn set_log_destination_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_log_destination_configs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_destination_configs = input;
         self
     }
     /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
-    pub fn get_log_destination_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_destination_configs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_destination_configs
     }
     /// Appends an item to `redacted_fields`.
@@ -105,17 +94,12 @@ impl LoggingConfigurationBuilder {
         self
     }
     /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>. </p>
-    pub fn set_redacted_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
-    ) -> Self {
+    pub fn set_redacted_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>) -> Self {
         self.redacted_fields = input;
         self
     }
     /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>. </p>
-    pub fn get_redacted_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>> {
+    pub fn get_redacted_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>> {
         &self.redacted_fields
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).

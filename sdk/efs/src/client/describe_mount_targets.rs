@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`mount_targets(Option<Vec<MountTargetDescription>>)`](crate::operation::describe_mount_targets::DescribeMountTargetsOutput::mount_targets): <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::describe_mount_targets::DescribeMountTargetsOutput::next_marker): <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
     /// - On failure, responds with [`SdkError<DescribeMountTargetsError>`](crate::operation::describe_mount_targets::DescribeMountTargetsError)
-    pub fn describe_mount_targets(
-        &self,
-    ) -> crate::operation::describe_mount_targets::builders::DescribeMountTargetsFluentBuilder {
-        crate::operation::describe_mount_targets::builders::DescribeMountTargetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_mount_targets(&self) -> crate::operation::describe_mount_targets::builders::DescribeMountTargetsFluentBuilder {
+        crate::operation::describe_mount_targets::builders::DescribeMountTargetsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl DeregisterIdentityProviderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterIdentityProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_identity_provider::builders::DeregisterIdentityProviderInputBuilder,
+    inner: crate::operation::deregister_identity_provider::builders::DeregisterIdentityProviderInputBuilder,
 }
 impl DeregisterIdentityProviderFluentBuilder {
     /// Creates a new `DeregisterIdentityProvider`.
@@ -37,7 +37,7 @@ impl DeregisterIdentityProviderFluentBuilder {
         }
     }
     /// Access the DeregisterIdentityProvider as a reference.
-    pub fn as_input(&self) -> &crate::operation::deregister_identity_provider::builders::DeregisterIdentityProviderInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::deregister_identity_provider::builders::DeregisterIdentityProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeregisterIdentityProviderFluentBuilder {
             crate::operation::deregister_identity_provider::DeregisterIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_identity_provider::DeregisterIdentityProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeregisterIdentityProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeregisterIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_identity_provider::DeregisterIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_identity_provider::DeregisterIdentityProviderError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeregisterIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_identity_provider::DeregisterIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_identity_provider::DeregisterIdentityProviderError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeregisterIdentityProviderFluentBuilder {
             crate::operation::deregister_identity_provider::DeregisterIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_identity_provider::DeregisterIdentityProviderError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl DeregisterIdentityProviderFluentBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.inner = self.inner.set_identity_provider(input);
         self
     }

@@ -10,10 +10,7 @@ impl CreateEventBusInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_event_bus::CreateEventBusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_bus::CreateEventBusError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_bus::CreateEventBusError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_event_bus();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateEventBusFluentBuilder {
         }
     }
     /// Access the CreateEventBus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_event_bus::builders::CreateEventBusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_event_bus::builders::CreateEventBusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateEventBusFluentBuilder {
             crate::operation::create_event_bus::CreateEventBus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_bus::CreateEventBusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_bus::CreateEventBusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateEventBusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateEventBusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_bus::CreateEventBusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_bus::CreateEventBusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_bus::CreateEventBusError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateEventBusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_bus::CreateEventBusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_bus::CreateEventBusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_bus::CreateEventBusError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateEventBusFluentBuilder {
             crate::operation::create_event_bus::CreateEventBus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_bus::CreateEventBusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_bus::CreateEventBusError>,
     > {
         self.customize_middleware().await
     }
@@ -143,18 +127,12 @@ impl CreateEventBusFluentBuilder {
         self.inner.get_name()
     }
     /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
-    pub fn event_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_source_name(input.into());
         self
     }
     /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
-    pub fn set_event_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_source_name(input);
         self
     }
@@ -172,10 +150,7 @@ impl CreateEventBusFluentBuilder {
         self
     }
     /// <p>Tags to associate with the event bus.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

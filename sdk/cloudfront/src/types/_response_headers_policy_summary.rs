@@ -17,9 +17,7 @@ impl ResponseHeadersPolicySummary {
         self.r#type.as_ref()
     }
     /// <p>The response headers policy.</p>
-    pub fn response_headers_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicy> {
+    pub fn response_headers_policy(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicy> {
         self.response_headers_policy.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl ResponseHeadersPolicySummary {
 
 /// A builder for [`ResponseHeadersPolicySummary`](crate::types::ResponseHeadersPolicySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicySummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ResponseHeadersPolicyType>,
     pub(crate) response_headers_policy: ::std::option::Option<crate::types::ResponseHeadersPolicy>,
@@ -46,10 +42,7 @@ impl ResponseHeadersPolicySummaryBuilder {
         self
     }
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseHeadersPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyType>) -> Self {
         self.r#type = input;
         self
     }
@@ -63,17 +56,12 @@ impl ResponseHeadersPolicySummaryBuilder {
         self
     }
     /// <p>The response headers policy.</p>
-    pub fn set_response_headers_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseHeadersPolicy>,
-    ) -> Self {
+    pub fn set_response_headers_policy(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicy>) -> Self {
         self.response_headers_policy = input;
         self
     }
     /// <p>The response headers policy.</p>
-    pub fn get_response_headers_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicy> {
+    pub fn get_response_headers_policy(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicy> {
         &self.response_headers_policy
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicySummary`](crate::types::ResponseHeadersPolicySummary).

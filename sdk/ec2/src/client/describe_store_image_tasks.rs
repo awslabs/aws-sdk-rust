@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`store_image_task_results(Option<Vec<StoreImageTaskResult>>)`](crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput::store_image_task_results): <p>The information about the AMI store tasks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeStoreImageTasksError>`](crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError)
-    pub fn describe_store_image_tasks(
-        &self,
-    ) -> crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksFluentBuilder
-    {
+    pub fn describe_store_image_tasks(&self) -> crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksFluentBuilder {
         crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksFluentBuilder::new(self.handle.clone())
     }
 }

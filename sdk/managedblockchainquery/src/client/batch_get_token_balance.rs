@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`token_balances(Option<Vec<BatchGetTokenBalanceOutputItem>>)`](crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput::token_balances): <p>An array of <code>BatchGetTokenBalanceOutputItem</code> objects returned by the response.</p>
     ///   - [`errors(Option<Vec<BatchGetTokenBalanceErrorItem>>)`](crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput::errors): <p>An array of <code>BatchGetTokenBalanceErrorItem</code> objects returned from the request.</p>
     /// - On failure, responds with [`SdkError<BatchGetTokenBalanceError>`](crate::operation::batch_get_token_balance::BatchGetTokenBalanceError)
-    pub fn batch_get_token_balance(
-        &self,
-    ) -> crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceFluentBuilder
-    {
-        crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_token_balance(&self) -> crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceFluentBuilder {
+        crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceFluentBuilder::new(self.handle.clone())
     }
 }

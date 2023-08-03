@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSpeakerOutput`](crate::operation::describe_speaker::DescribeSpeakerOutput) with field(s):
     ///   - [`speaker(Option<Speaker>)`](crate::operation::describe_speaker::DescribeSpeakerOutput::speaker): <p>Information about the specified speaker.</p>
     /// - On failure, responds with [`SdkError<DescribeSpeakerError>`](crate::operation::describe_speaker::DescribeSpeakerError)
-    pub fn describe_speaker(
-        &self,
-    ) -> crate::operation::describe_speaker::builders::DescribeSpeakerFluentBuilder {
-        crate::operation::describe_speaker::builders::DescribeSpeakerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_speaker(&self) -> crate::operation::describe_speaker::builders::DescribeSpeakerFluentBuilder {
+        crate::operation::describe_speaker::builders::DescribeSpeakerFluentBuilder::new(self.handle.clone())
     }
 }

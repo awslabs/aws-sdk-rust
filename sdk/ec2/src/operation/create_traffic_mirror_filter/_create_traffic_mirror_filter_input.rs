@@ -36,20 +36,17 @@ impl CreateTrafficMirrorFilterInput {
 }
 impl CreateTrafficMirrorFilterInput {
     /// Creates a new builder-style object to manufacture [`CreateTrafficMirrorFilterInput`](crate::operation::create_traffic_mirror_filter::CreateTrafficMirrorFilterInput).
-    pub fn builder() -> crate::operation::create_traffic_mirror_filter::builders::CreateTrafficMirrorFilterInputBuilder{
+    pub fn builder() -> crate::operation::create_traffic_mirror_filter::builders::CreateTrafficMirrorFilterInputBuilder {
         crate::operation::create_traffic_mirror_filter::builders::CreateTrafficMirrorFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTrafficMirrorFilterInput`](crate::operation::create_traffic_mirror_filter::CreateTrafficMirrorFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTrafficMirrorFilterInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -80,17 +77,12 @@ impl CreateTrafficMirrorFilterInputBuilder {
         self
     }
     /// <p>The tags to assign to a Traffic Mirror filter.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to assign to a Traffic Mirror filter.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -128,13 +120,11 @@ impl CreateTrafficMirrorFilterInputBuilder {
         crate::operation::create_traffic_mirror_filter::CreateTrafficMirrorFilterInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_traffic_mirror_filter::CreateTrafficMirrorFilterInput {
-                description: self.description,
-                tag_specifications: self.tag_specifications,
-                dry_run: self.dry_run,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_traffic_mirror_filter::CreateTrafficMirrorFilterInput {
+            description: self.description,
+            tag_specifications: self.tag_specifications,
+            dry_run: self.dry_run,
+            client_token: self.client_token,
+        })
     }
 }

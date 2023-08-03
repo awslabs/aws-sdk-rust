@@ -15,17 +15,14 @@ impl GetInsightResultsInput {
 }
 impl GetInsightResultsInput {
     /// Creates a new builder-style object to manufacture [`GetInsightResultsInput`](crate::operation::get_insight_results::GetInsightResultsInput).
-    pub fn builder(
-    ) -> crate::operation::get_insight_results::builders::GetInsightResultsInputBuilder {
+    pub fn builder() -> crate::operation::get_insight_results::builders::GetInsightResultsInputBuilder {
         crate::operation::get_insight_results::builders::GetInsightResultsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInsightResultsInput`](crate::operation::get_insight_results::GetInsightResultsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightResultsInputBuilder {
     pub(crate) insight_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl GetInsightResultsInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightResultsInput`](crate::operation::get_insight_results::GetInsightResultsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_insight_results::GetInsightResultsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_insight_results::GetInsightResultsInput {
-                insight_arn: self.insight_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_insight_results::GetInsightResultsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_insight_results::GetInsightResultsInput {
+            insight_arn: self.insight_arn,
+        })
     }
 }

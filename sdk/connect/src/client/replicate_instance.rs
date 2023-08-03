@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::replicate_instance::ReplicateInstanceOutput::id): <p>The identifier of the replicated instance. You can find the <code>instanceId</code> in the ARN of the instance. The replicated instance has the same identifier as the instance it was replicated from.</p>
     ///   - [`arn(Option<String>)`](crate::operation::replicate_instance::ReplicateInstanceOutput::arn): <p>The Amazon Resource Name (ARN) of the replicated instance.</p>
     /// - On failure, responds with [`SdkError<ReplicateInstanceError>`](crate::operation::replicate_instance::ReplicateInstanceError)
-    pub fn replicate_instance(
-        &self,
-    ) -> crate::operation::replicate_instance::builders::ReplicateInstanceFluentBuilder {
-        crate::operation::replicate_instance::builders::ReplicateInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn replicate_instance(&self) -> crate::operation::replicate_instance::builders::ReplicateInstanceFluentBuilder {
+        crate::operation::replicate_instance::builders::ReplicateInstanceFluentBuilder::new(self.handle.clone())
     }
 }

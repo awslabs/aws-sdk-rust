@@ -10,10 +10,7 @@ impl ListDatabasesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_databases::ListDatabasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_databases::ListDatabasesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_databases::ListDatabasesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_databases();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl ListDatabasesFluentBuilder {
         }
     }
     /// Access the ListDatabases as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_databases::builders::ListDatabasesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_databases::builders::ListDatabasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -71,10 +66,7 @@ impl ListDatabasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -127,27 +119,16 @@ impl ListDatabasesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_databases::paginator::ListDatabasesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_databases::paginator::ListDatabasesPaginator {
-        crate::operation::list_databases::paginator::ListDatabasesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_databases::paginator::ListDatabasesPaginator {
+        crate::operation::list_databases::paginator::ListDatabasesPaginator::new(self.handle, self.inner)
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -226,18 +207,12 @@ impl ListDatabasesFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workgroup_name(input.into());
         self
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
     }

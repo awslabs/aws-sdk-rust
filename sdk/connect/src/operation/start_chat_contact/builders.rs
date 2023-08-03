@@ -10,10 +10,7 @@ impl StartChatContactInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_chat_contact::StartChatContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_chat_contact::StartChatContactError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_chat_contact::StartChatContactError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_chat_contact();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl StartChatContactFluentBuilder {
         }
     }
     /// Access the StartChatContact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_chat_contact::builders::StartChatContactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_chat_contact::builders::StartChatContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl StartChatContactFluentBuilder {
             crate::operation::start_chat_contact::StartChatContact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_chat_contact::StartChatContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_chat_contact::StartChatContactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl StartChatContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl StartChatContactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_chat_contact::StartChatContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_chat_contact::StartChatContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_chat_contact::StartChatContactError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl StartChatContactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_chat_contact::StartChatContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_chat_contact::StartChatContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_chat_contact::StartChatContactError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +110,7 @@ impl StartChatContactFluentBuilder {
             crate::operation::start_chat_contact::StartChatContact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_chat_contact::StartChatContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_chat_contact::StartChatContactError>,
     > {
         self.customize_middleware().await
     }
@@ -146,19 +130,13 @@ impl StartChatContactFluentBuilder {
     }
     /// <p>The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
-    pub fn contact_flow_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_flow_id(input.into());
         self
     }
     /// <p>The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
-    pub fn set_contact_flow_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_flow_id(input);
         self
     }
@@ -173,32 +151,19 @@ impl StartChatContactFluentBuilder {
     ///
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes. </p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes. </p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows just like any other contact attributes. </p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
     /// <p>Information identifying the participant.</p>
@@ -207,17 +172,12 @@ impl StartChatContactFluentBuilder {
         self
     }
     /// <p>Information identifying the participant.</p>
-    pub fn set_participant_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantDetails>,
-    ) -> Self {
+    pub fn set_participant_details(mut self, input: ::std::option::Option<crate::types::ParticipantDetails>) -> Self {
         self.inner = self.inner.set_participant_details(input);
         self
     }
     /// <p>Information identifying the participant.</p>
-    pub fn get_participant_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParticipantDetails> {
+    pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetails> {
         self.inner.get_participant_details()
     }
     /// <p>The initial message to be sent to the newly created chat.</p>
@@ -226,10 +186,7 @@ impl StartChatContactFluentBuilder {
         self
     }
     /// <p>The initial message to be sent to the newly created chat.</p>
-    pub fn set_initial_message(
-        mut self,
-        input: ::std::option::Option<crate::types::ChatMessage>,
-    ) -> Self {
+    pub fn set_initial_message(mut self, input: ::std::option::Option<crate::types::ChatMessage>) -> Self {
         self.inner = self.inner.set_initial_message(input);
         self
     }
@@ -273,10 +230,7 @@ impl StartChatContactFluentBuilder {
     /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>. </p> <note>
     /// <p>The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.</p>
     /// </note>
-    pub fn supported_messaging_content_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_messaging_content_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.supported_messaging_content_types(input.into());
         self
     }
@@ -284,10 +238,7 @@ impl StartChatContactFluentBuilder {
     /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>. </p> <note>
     /// <p>The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.</p>
     /// </note>
-    pub fn set_supported_messaging_content_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_messaging_content_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_supported_messaging_content_types(input);
         self
     }
@@ -295,9 +246,7 @@ impl StartChatContactFluentBuilder {
     /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>. </p> <note>
     /// <p>The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.</p>
     /// </note>
-    pub fn get_supported_messaging_content_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_messaging_content_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_supported_messaging_content_types()
     }
     /// <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
@@ -306,10 +255,7 @@ impl StartChatContactFluentBuilder {
         self
     }
     /// <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
-    pub fn set_persistent_chat(
-        mut self,
-        input: ::std::option::Option<crate::types::PersistentChat>,
-    ) -> Self {
+    pub fn set_persistent_chat(mut self, input: ::std::option::Option<crate::types::PersistentChat>) -> Self {
         self.inner = self.inner.set_persistent_chat(input);
         self
     }
@@ -320,20 +266,14 @@ impl StartChatContactFluentBuilder {
     /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p> <note>
     /// <p>You cannot provide data for both RelatedContactId and PersistentChat. </p>
     /// </note>
-    pub fn related_contact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.related_contact_id(input.into());
         self
     }
     /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p> <note>
     /// <p>You cannot provide data for both RelatedContactId and PersistentChat. </p>
     /// </note>
-    pub fn set_related_contact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_related_contact_id(input);
         self
     }

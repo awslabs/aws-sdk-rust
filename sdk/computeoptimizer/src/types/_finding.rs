@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Finding {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,12 +85,7 @@ impl Finding {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "NotOptimized",
-            "Optimized",
-            "Overprovisioned",
-            "Underprovisioned",
-        ]
+        &["NotOptimized", "Optimized", "Overprovisioned", "Underprovisioned"]
     }
 }
 impl ::std::convert::AsRef<str> for Finding {

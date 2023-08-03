@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`category_name(impl ::std::convert::Into<String>)`](crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryFluentBuilder::category_name) / [`set_category_name(Option<String>)`](crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryFluentBuilder::set_category_name): <p>The name of the Call Analytics category you want to delete. Category names are case sensitive.</p>
     /// - On success, responds with [`DeleteCallAnalyticsCategoryOutput`](crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryOutput)
     /// - On failure, responds with [`SdkError<DeleteCallAnalyticsCategoryError>`](crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError)
-    pub fn delete_call_analytics_category(&self) -> crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryFluentBuilder{
+    pub fn delete_call_analytics_category(
+        &self,
+    ) -> crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryFluentBuilder {
         crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryFluentBuilder::new(self.handle.clone())
     }
 }

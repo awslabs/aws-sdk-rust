@@ -9,49 +9,54 @@ pub fn de_describe_authentication_profiles_http_error(
     crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthenticationProfileNotFoundFault" => crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::AuthenticationProfileNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AuthenticationProfileNotFoundFault" => {
+            crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::AuthenticationProfileNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AuthenticationProfileNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_authentication_profile_not_found_fault::de_authentication_profile_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::unhandled)?;
+                    output = crate::protocol_serde::shape_authentication_profile_not_found_fault::de_authentication_profile_not_found_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidAuthenticationProfileRequestFault" => crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::InvalidAuthenticationProfileRequestFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidAuthenticationProfileRequestFault" => {
+            crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::InvalidAuthenticationProfileRequestFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidAuthenticationProfileRequestFaultBuilder::default();
                     output = crate::protocol_serde::shape_invalid_authentication_profile_request_fault::de_invalid_authentication_profile_request_fault_xml_err(_response_body, output).map_err(crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::generic(generic),
     })
 }
 
@@ -67,16 +72,21 @@ pub fn de_describe_authentication_profiles_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesOutputBuilder::default();
-        output = crate::protocol_serde::shape_describe_authentication_profiles::de_describe_authentication_profiles(_response_body, output).map_err(crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_describe_authentication_profiles::de_describe_authentication_profiles(_response_body, output)
+            .map_err(crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_describe_authentication_profiles(inp: &[u8], mut builder: crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesOutputBuilder) -> Result<crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_describe_authentication_profiles(
+    inp: &[u8],
+    mut builder: crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesOutputBuilder,
+) -> Result<
+    crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

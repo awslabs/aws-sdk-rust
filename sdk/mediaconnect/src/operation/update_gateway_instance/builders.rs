@@ -37,10 +37,7 @@ impl UpdateGatewayInstanceFluentBuilder {
         }
     }
     /// Access the UpdateGatewayInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_gateway_instance::builders::UpdateGatewayInstanceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_gateway_instance::builders::UpdateGatewayInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateGatewayInstanceFluentBuilder {
             crate::operation::update_gateway_instance::UpdateGatewayInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_instance::UpdateGatewayInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_instance::UpdateGatewayInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateGatewayInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateGatewayInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_gateway_instance::UpdateGatewayInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_instance::UpdateGatewayInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_instance::UpdateGatewayInstanceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateGatewayInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_gateway_instance::UpdateGatewayInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_instance::UpdateGatewayInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_instance::UpdateGatewayInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateGatewayInstanceFluentBuilder {
             crate::operation::update_gateway_instance::UpdateGatewayInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_instance::UpdateGatewayInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_instance::UpdateGatewayInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +115,7 @@ impl UpdateGatewayInstanceFluentBuilder {
         self
     }
     /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
-    pub fn set_bridge_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::BridgePlacement>,
-    ) -> Self {
+    pub fn set_bridge_placement(mut self, input: ::std::option::Option<crate::types::BridgePlacement>) -> Self {
         self.inner = self.inner.set_bridge_placement(input);
         self
     }
@@ -141,18 +124,12 @@ impl UpdateGatewayInstanceFluentBuilder {
         self.inner.get_bridge_placement()
     }
     /// The Amazon Resource Name (ARN) of the instance that you want to update.
-    pub fn gateway_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_instance_arn(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the instance that you want to update.
-    pub fn set_gateway_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_instance_arn(input);
         self
     }

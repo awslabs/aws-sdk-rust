@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`membership_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_membership::builders::DeleteMembershipFluentBuilder::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::operation::delete_membership::builders::DeleteMembershipFluentBuilder::set_membership_identifier): <p>The identifier for a membership resource.</p>
     /// - On success, responds with [`DeleteMembershipOutput`](crate::operation::delete_membership::DeleteMembershipOutput)
     /// - On failure, responds with [`SdkError<DeleteMembershipError>`](crate::operation::delete_membership::DeleteMembershipError)
-    pub fn delete_membership(
-        &self,
-    ) -> crate::operation::delete_membership::builders::DeleteMembershipFluentBuilder {
-        crate::operation::delete_membership::builders::DeleteMembershipFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_membership(&self) -> crate::operation::delete_membership::builders::DeleteMembershipFluentBuilder {
+        crate::operation::delete_membership::builders::DeleteMembershipFluentBuilder::new(self.handle.clone())
     }
 }

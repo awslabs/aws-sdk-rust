@@ -53,9 +53,7 @@ impl UpdateSimulationApplicationOutput {
         self.sources.as_deref()
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn simulation_software_suite(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SimulationSoftwareSuite> {
+    pub fn simulation_software_suite(&self) -> ::std::option::Option<&crate::types::SimulationSoftwareSuite> {
         self.simulation_software_suite.as_ref()
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
@@ -86,23 +84,20 @@ impl ::aws_http::request_id::RequestId for UpdateSimulationApplicationOutput {
 }
 impl UpdateSimulationApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSimulationApplicationOutput`](crate::operation::update_simulation_application::UpdateSimulationApplicationOutput).
-    pub fn builder() -> crate::operation::update_simulation_application::builders::UpdateSimulationApplicationOutputBuilder{
+    pub fn builder() -> crate::operation::update_simulation_application::builders::UpdateSimulationApplicationOutputBuilder {
         crate::operation::update_simulation_application::builders::UpdateSimulationApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSimulationApplicationOutput`](crate::operation::update_simulation_application::UpdateSimulationApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSimulationApplicationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
-    pub(crate) simulation_software_suite:
-        ::std::option::Option<crate::types::SimulationSoftwareSuite>,
+    pub(crate) simulation_software_suite: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
     pub(crate) robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     pub(crate) rendering_engine: ::std::option::Option<crate::types::RenderingEngine>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -165,10 +160,7 @@ impl UpdateSimulationApplicationOutputBuilder {
         self
     }
     /// <p>The sources of the simulation application.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Source>>) -> Self {
         self.sources = input;
         self
     }
@@ -177,25 +169,17 @@ impl UpdateSimulationApplicationOutputBuilder {
         &self.sources
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn simulation_software_suite(
-        mut self,
-        input: crate::types::SimulationSoftwareSuite,
-    ) -> Self {
+    pub fn simulation_software_suite(mut self, input: crate::types::SimulationSoftwareSuite) -> Self {
         self.simulation_software_suite = ::std::option::Option::Some(input);
         self
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn set_simulation_software_suite(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
-    ) -> Self {
+    pub fn set_simulation_software_suite(mut self, input: ::std::option::Option<crate::types::SimulationSoftwareSuite>) -> Self {
         self.simulation_software_suite = input;
         self
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn get_simulation_software_suite(
-        &self,
-    ) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
+    pub fn get_simulation_software_suite(&self) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
         &self.simulation_software_suite
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
@@ -204,17 +188,12 @@ impl UpdateSimulationApplicationOutputBuilder {
         self
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
-    pub fn set_robot_software_suite(
-        mut self,
-        input: ::std::option::Option<crate::types::RobotSoftwareSuite>,
-    ) -> Self {
+    pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.robot_software_suite = input;
         self
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
-    pub fn get_robot_software_suite(
-        &self,
-    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+    pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         &self.robot_software_suite
     }
     /// <p>The rendering engine for the simulation application.</p>
@@ -223,10 +202,7 @@ impl UpdateSimulationApplicationOutputBuilder {
         self
     }
     /// <p>The rendering engine for the simulation application.</p>
-    pub fn set_rendering_engine(
-        mut self,
-        input: ::std::option::Option<crate::types::RenderingEngine>,
-    ) -> Self {
+    pub fn set_rendering_engine(mut self, input: ::std::option::Option<crate::types::RenderingEngine>) -> Self {
         self.rendering_engine = input;
         self
     }
@@ -240,10 +216,7 @@ impl UpdateSimulationApplicationOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -271,10 +244,7 @@ impl UpdateSimulationApplicationOutputBuilder {
         self
     }
     /// <p>The object that contains the Docker image URI used for your simulation application.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.environment = input;
         self
     }
@@ -292,9 +262,7 @@ impl UpdateSimulationApplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSimulationApplicationOutput`](crate::operation::update_simulation_application::UpdateSimulationApplicationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_simulation_application::UpdateSimulationApplicationOutput {
+    pub fn build(self) -> crate::operation::update_simulation_application::UpdateSimulationApplicationOutput {
         crate::operation::update_simulation_application::UpdateSimulationApplicationOutput {
             arn: self.arn,
             name: self.name,

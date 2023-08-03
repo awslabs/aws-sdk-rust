@@ -19,9 +19,7 @@ impl DeleteAccountOutput {
 
 /// A builder for [`DeleteAccountOutput`](crate::operation::delete_account::DeleteAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccountOutputBuilder {
     _request_id: Option<String>,
 }

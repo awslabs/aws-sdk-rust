@@ -37,10 +37,7 @@ impl UpdateStudioComponentFluentBuilder {
         }
     }
     /// Access the UpdateStudioComponent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_studio_component::builders::UpdateStudioComponentInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_studio_component::builders::UpdateStudioComponentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateStudioComponentFluentBuilder {
             crate::operation::update_studio_component::UpdateStudioComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_studio_component::UpdateStudioComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_studio_component::UpdateStudioComponentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateStudioComponentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateStudioComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_studio_component::UpdateStudioComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_studio_component::UpdateStudioComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_studio_component::UpdateStudioComponentError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateStudioComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_studio_component::UpdateStudioComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_studio_component::UpdateStudioComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_studio_component::UpdateStudioComponentError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateStudioComponentFluentBuilder {
             crate::operation::update_studio_component::UpdateStudioComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_studio_component::UpdateStudioComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_studio_component::UpdateStudioComponentError>,
     > {
         self.customize_middleware().await
     }
@@ -143,17 +129,12 @@ impl UpdateStudioComponentFluentBuilder {
         self
     }
     /// <p>The configuration of the studio component, based on component type.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioComponentConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::StudioComponentConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>The configuration of the studio component, based on component type.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::StudioComponentConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::StudioComponentConfiguration> {
         self.inner.get_configuration()
     }
     /// <p>The description.</p>
@@ -175,25 +156,17 @@ impl UpdateStudioComponentFluentBuilder {
     /// To override the contents of this collection use [`set_ec2_security_group_ids`](Self::set_ec2_security_group_ids).
     ///
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn ec2_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ec2_security_group_ids(input.into());
         self
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn set_ec2_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ec2_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ec2_security_group_ids(input);
         self
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn get_ec2_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ec2_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ec2_security_group_ids()
     }
     /// Appends an item to `initializationScripts`.
@@ -201,28 +174,20 @@ impl UpdateStudioComponentFluentBuilder {
     /// To override the contents of this collection use [`set_initialization_scripts`](Self::set_initialization_scripts).
     ///
     /// <p>Initialization scripts for studio components.</p>
-    pub fn initialization_scripts(
-        mut self,
-        input: crate::types::StudioComponentInitializationScript,
-    ) -> Self {
+    pub fn initialization_scripts(mut self, input: crate::types::StudioComponentInitializationScript) -> Self {
         self.inner = self.inner.initialization_scripts(input);
         self
     }
     /// <p>Initialization scripts for studio components.</p>
     pub fn set_initialization_scripts(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::StudioComponentInitializationScript>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
     ) -> Self {
         self.inner = self.inner.set_initialization_scripts(input);
         self
     }
     /// <p>Initialization scripts for studio components.</p>
-    pub fn get_initialization_scripts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>
-    {
+    pub fn get_initialization_scripts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>> {
         self.inner.get_initialization_scripts()
     }
     /// <p>The name for the studio component.</p>
@@ -249,32 +214,21 @@ impl UpdateStudioComponentFluentBuilder {
         self
     }
     /// <p>Parameters for the studio component scripts.</p>
-    pub fn set_script_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
-    ) -> Self {
+    pub fn set_script_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>) -> Self {
         self.inner = self.inner.set_script_parameters(input);
         self
     }
     /// <p>Parameters for the studio component scripts.</p>
-    pub fn get_script_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>> {
+    pub fn get_script_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>> {
         self.inner.get_script_parameters()
     }
     /// <p>The studio component ID.</p>
-    pub fn studio_component_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_component_id(input.into());
         self
     }
     /// <p>The studio component ID.</p>
-    pub fn set_studio_component_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_studio_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_component_id(input);
         self
     }
@@ -302,10 +256,7 @@ impl UpdateStudioComponentFluentBuilder {
         self
     }
     /// <p>The specific subtype of a studio component.</p>
-    pub fn set_subtype(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioComponentSubtype>,
-    ) -> Self {
+    pub fn set_subtype(mut self, input: ::std::option::Option<crate::types::StudioComponentSubtype>) -> Self {
         self.inner = self.inner.set_subtype(input);
         self
     }
@@ -319,10 +270,7 @@ impl UpdateStudioComponentFluentBuilder {
         self
     }
     /// <p>The type of the studio component.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioComponentType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::StudioComponentType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -331,40 +279,26 @@ impl UpdateStudioComponentFluentBuilder {
         self.inner.get_type()
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn secure_initialization_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secure_initialization_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secure_initialization_role_arn(input.into());
         self
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn set_secure_initialization_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secure_initialization_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secure_initialization_role_arn(input);
         self
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn get_secure_initialization_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_secure_initialization_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_secure_initialization_role_arn()
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    pub fn runtime_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runtime_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.runtime_role_arn(input.into());
         self
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    pub fn set_runtime_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_runtime_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_runtime_role_arn(input);
         self
     }

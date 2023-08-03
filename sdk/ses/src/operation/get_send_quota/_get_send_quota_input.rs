@@ -12,18 +12,13 @@ impl GetSendQuotaInput {
 
 /// A builder for [`GetSendQuotaInput`](crate::operation::get_send_quota::GetSendQuotaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSendQuotaInputBuilder {}
 impl GetSendQuotaInputBuilder {
     /// Consumes the builder and constructs a [`GetSendQuotaInput`](crate::operation::get_send_quota::GetSendQuotaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_send_quota::GetSendQuotaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_send_quota::GetSendQuotaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_send_quota::GetSendQuotaInput {})
     }
 }

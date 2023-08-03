@@ -8,8 +8,7 @@ pub struct ListTrafficDistributionGroupsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of traffic distribution groups.</p>
     #[doc(hidden)]
-    pub traffic_distribution_group_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficDistributionGroupSummary>>,
+    pub traffic_distribution_group_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::TrafficDistributionGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListTrafficDistributionGroupsOutput {
@@ -18,9 +17,7 @@ impl ListTrafficDistributionGroupsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of traffic distribution groups.</p>
-    pub fn traffic_distribution_group_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrafficDistributionGroupSummary]> {
+    pub fn traffic_distribution_group_summary_list(&self) -> ::std::option::Option<&[crate::types::TrafficDistributionGroupSummary]> {
         self.traffic_distribution_group_summary_list.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListTrafficDistributionGroupsOutput {
 }
 impl ListTrafficDistributionGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListTrafficDistributionGroupsOutput`](crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsOutput).
-    pub fn builder() -> crate::operation::list_traffic_distribution_groups::builders::ListTrafficDistributionGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::list_traffic_distribution_groups::builders::ListTrafficDistributionGroupsOutputBuilder {
         crate::operation::list_traffic_distribution_groups::builders::ListTrafficDistributionGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrafficDistributionGroupsOutput`](crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrafficDistributionGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) traffic_distribution_group_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficDistributionGroupSummary>>,
+    pub(crate) traffic_distribution_group_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::TrafficDistributionGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListTrafficDistributionGroupsOutputBuilder {
@@ -67,13 +61,8 @@ impl ListTrafficDistributionGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_traffic_distribution_group_summary_list`](Self::set_traffic_distribution_group_summary_list).
     ///
     /// <p>A list of traffic distribution groups.</p>
-    pub fn traffic_distribution_group_summary_list(
-        mut self,
-        input: crate::types::TrafficDistributionGroupSummary,
-    ) -> Self {
-        let mut v = self
-            .traffic_distribution_group_summary_list
-            .unwrap_or_default();
+    pub fn traffic_distribution_group_summary_list(mut self, input: crate::types::TrafficDistributionGroupSummary) -> Self {
+        let mut v = self.traffic_distribution_group_summary_list.unwrap_or_default();
         v.push(input);
         self.traffic_distribution_group_summary_list = ::std::option::Option::Some(v);
         self
@@ -81,9 +70,7 @@ impl ListTrafficDistributionGroupsOutputBuilder {
     /// <p>A list of traffic distribution groups.</p>
     pub fn set_traffic_distribution_group_summary_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::TrafficDistributionGroupSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficDistributionGroupSummary>>,
     ) -> Self {
         self.traffic_distribution_group_summary_list = input;
         self
@@ -91,8 +78,7 @@ impl ListTrafficDistributionGroupsOutputBuilder {
     /// <p>A list of traffic distribution groups.</p>
     pub fn get_traffic_distribution_group_summary_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficDistributionGroupSummary>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficDistributionGroupSummary>> {
         &self.traffic_distribution_group_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -105,10 +91,7 @@ impl ListTrafficDistributionGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTrafficDistributionGroupsOutput`](crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsOutput
-    {
+    pub fn build(self) -> crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsOutput {
         crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsOutput {
             next_token: self.next_token,
             traffic_distribution_group_summary_list: self.traffic_distribution_group_summary_list,

@@ -16,17 +16,14 @@ impl AwsElasticsearchDomainNodeToNodeEncryptionOptions {
 }
 impl AwsElasticsearchDomainNodeToNodeEncryptionOptions {
     /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
-    pub fn builder(
-    ) -> crate::types::builders::AwsElasticsearchDomainNodeToNodeEncryptionOptionsBuilder {
+    pub fn builder() -> crate::types::builders::AwsElasticsearchDomainNodeToNodeEncryptionOptionsBuilder {
         crate::types::builders::AwsElasticsearchDomainNodeToNodeEncryptionOptionsBuilder::default()
     }
 }
 
 /// A builder for [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainNodeToNodeEncryptionOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

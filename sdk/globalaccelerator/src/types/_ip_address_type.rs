@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum IpAddressType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for IpAddressType {
         match s {
             "DUAL_STACK" => IpAddressType::DualStack,
             "IPV4" => IpAddressType::Ipv4,
-            other => {
-                IpAddressType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => IpAddressType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -26,7 +26,7 @@ impl DisassociateDrtLogBucketInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateDRTLogBucketFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketInputBuilder,
+    inner: crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketInputBuilder,
 }
 impl DisassociateDRTLogBucketFluentBuilder {
     /// Creates a new `DisassociateDRTLogBucket`.
@@ -37,7 +37,7 @@ impl DisassociateDRTLogBucketFluentBuilder {
         }
     }
     /// Access the DisassociateDRTLogBucket as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisassociateDRTLogBucketFluentBuilder {
             crate::operation::disassociate_drt_log_bucket::DisassociateDRTLogBucket,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_drt_log_bucket::DisassociateDRTLogBucketError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_drt_log_bucket::DisassociateDRTLogBucketError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisassociateDRTLogBucketFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisassociateDRTLogBucketFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_drt_log_bucket::DisassociateDRTLogBucketError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_drt_log_bucket::DisassociateDRTLogBucketError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisassociateDRTLogBucketFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_drt_log_bucket::DisassociateDRTLogBucketError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_drt_log_bucket::DisassociateDRTLogBucketError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DisassociateDRTLogBucketFluentBuilder {
             crate::operation::disassociate_drt_log_bucket::DisassociateDRTLogBucket,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_drt_log_bucket::DisassociateDRTLogBucketError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_drt_log_bucket::DisassociateDRTLogBucketError>,
     > {
         self.customize_middleware().await
     }

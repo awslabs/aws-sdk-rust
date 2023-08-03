@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`enabled_date(Option<DateTime>)`](crate::operation::describe_user::DescribeUserOutput::enabled_date): <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
     ///   - [`disabled_date(Option<DateTime>)`](crate::operation::describe_user::DescribeUserOutput::disabled_date): <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
     /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::operation::describe_user::DescribeUserError)
-    pub fn describe_user(
-        &self,
-    ) -> crate::operation::describe_user::builders::DescribeUserFluentBuilder {
-        crate::operation::describe_user::builders::DescribeUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_user(&self) -> crate::operation::describe_user::builders::DescribeUserFluentBuilder {
+        crate::operation::describe_user::builders::DescribeUserFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`edges(Option<Vec<Edge>>)`](crate::operation::query_lineage::QueryLineageOutput::edges): <p>A list of edges that connect vertices in the response.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::query_lineage::QueryLineageOutput::next_token): <p>Limits the number of vertices in the response. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<QueryLineageError>`](crate::operation::query_lineage::QueryLineageError)
-    pub fn query_lineage(
-        &self,
-    ) -> crate::operation::query_lineage::builders::QueryLineageFluentBuilder {
-        crate::operation::query_lineage::builders::QueryLineageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn query_lineage(&self) -> crate::operation::query_lineage::builders::QueryLineageFluentBuilder {
+        crate::operation::query_lineage::builders::QueryLineageFluentBuilder::new(self.handle.clone())
     }
 }

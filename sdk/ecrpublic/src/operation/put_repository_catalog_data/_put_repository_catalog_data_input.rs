@@ -29,18 +29,14 @@ impl PutRepositoryCatalogDataInput {
 }
 impl PutRepositoryCatalogDataInput {
     /// Creates a new builder-style object to manufacture [`PutRepositoryCatalogDataInput`](crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataInput).
-    pub fn builder(
-    ) -> crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataInputBuilder {
         crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataInputBuilder::default()
     }
 }
 
 /// A builder for [`PutRepositoryCatalogDataInput`](crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRepositoryCatalogDataInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl PutRepositoryCatalogDataInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository to create or update the catalog data for.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository to create or update the catalog data for.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -87,17 +77,12 @@ impl PutRepositoryCatalogDataInputBuilder {
         self
     }
     /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
-    pub fn set_catalog_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryCatalogDataInput>,
-    ) -> Self {
+    pub fn set_catalog_data(mut self, input: ::std::option::Option<crate::types::RepositoryCatalogDataInput>) -> Self {
         self.catalog_data = input;
         self
     }
     /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
-    pub fn get_catalog_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryCatalogDataInput> {
+    pub fn get_catalog_data(&self) -> &::std::option::Option<crate::types::RepositoryCatalogDataInput> {
         &self.catalog_data
     }
     /// Consumes the builder and constructs a [`PutRepositoryCatalogDataInput`](crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataInput).
@@ -107,12 +92,10 @@ impl PutRepositoryCatalogDataInputBuilder {
         crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                catalog_data: self.catalog_data,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            catalog_data: self.catalog_data,
+        })
     }
 }

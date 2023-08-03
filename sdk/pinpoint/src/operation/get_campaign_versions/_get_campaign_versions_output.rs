@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetCampaignVersionsOutput {
 }
 impl GetCampaignVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignVersionsOutput`](crate::operation::get_campaign_versions::GetCampaignVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_campaign_versions::builders::GetCampaignVersionsOutputBuilder {
-        crate::operation::get_campaign_versions::builders::GetCampaignVersionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_campaign_versions::builders::GetCampaignVersionsOutputBuilder {
+        crate::operation::get_campaign_versions::builders::GetCampaignVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCampaignVersionsOutput`](crate::operation::get_campaign_versions::GetCampaignVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCampaignVersionsOutputBuilder {
     pub(crate) campaigns_response: ::std::option::Option<crate::types::CampaignsResponse>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetCampaignVersionsOutputBuilder {
         self
     }
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
-    pub fn set_campaigns_response(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignsResponse>,
-    ) -> Self {
+    pub fn set_campaigns_response(mut self, input: ::std::option::Option<crate::types::CampaignsResponse>) -> Self {
         self.campaigns_response = input;
         self
     }
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
-    pub fn get_campaigns_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::CampaignsResponse> {
+    pub fn get_campaigns_response(&self) -> &::std::option::Option<crate::types::CampaignsResponse> {
         &self.campaigns_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

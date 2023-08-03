@@ -71,9 +71,7 @@ impl ListRestoreJobsInput {
 
 /// A builder for [`ListRestoreJobsInput`](crate::operation::list_restore_jobs::ListRestoreJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRestoreJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -114,18 +112,12 @@ impl ListRestoreJobsInputBuilder {
         &self.max_results
     }
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
-    pub fn by_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
-    pub fn set_by_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_account_id = input;
         self
     }
@@ -139,10 +131,7 @@ impl ListRestoreJobsInputBuilder {
         self
     }
     /// <p>Returns only restore jobs that were created before the specified date.</p>
-    pub fn set_by_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.by_created_before = input;
         self
     }
@@ -156,10 +145,7 @@ impl ListRestoreJobsInputBuilder {
         self
     }
     /// <p>Returns only restore jobs that were created after the specified date.</p>
-    pub fn set_by_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.by_created_after = input;
         self
     }
@@ -173,10 +159,7 @@ impl ListRestoreJobsInputBuilder {
         self
     }
     /// <p>Returns only restore jobs associated with the specified job status.</p>
-    pub fn set_by_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RestoreJobStatus>,
-    ) -> Self {
+    pub fn set_by_status(mut self, input: ::std::option::Option<crate::types::RestoreJobStatus>) -> Self {
         self.by_status = input;
         self
     }
@@ -190,10 +173,7 @@ impl ListRestoreJobsInputBuilder {
         self
     }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_complete_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.by_complete_before = input;
         self
     }
@@ -207,10 +187,7 @@ impl ListRestoreJobsInputBuilder {
         self
     }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_complete_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.by_complete_after = input;
         self
     }
@@ -221,10 +198,7 @@ impl ListRestoreJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListRestoreJobsInput`](crate::operation::list_restore_jobs::ListRestoreJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_restore_jobs::ListRestoreJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_restore_jobs::ListRestoreJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_restore_jobs::ListRestoreJobsInput {
             next_token: self.next_token,
             max_results: self.max_results,

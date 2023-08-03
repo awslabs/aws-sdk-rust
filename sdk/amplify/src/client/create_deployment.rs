@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`file_upload_urls(Option<HashMap<String, String>>)`](crate::operation::create_deployment::CreateDeploymentOutput::file_upload_urls): <p> When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
     ///   - [`zip_upload_url(Option<String>)`](crate::operation::create_deployment::CreateDeploymentOutput::zip_upload_url): <p> When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned. </p>
     /// - On failure, responds with [`SdkError<CreateDeploymentError>`](crate::operation::create_deployment::CreateDeploymentError)
-    pub fn create_deployment(
-        &self,
-    ) -> crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder {
-        crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_deployment(&self) -> crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder {
+        crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

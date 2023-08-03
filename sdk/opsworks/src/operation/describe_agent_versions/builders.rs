@@ -37,10 +37,7 @@ impl DescribeAgentVersionsFluentBuilder {
         }
     }
     /// Access the DescribeAgentVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_agent_versions::builders::DescribeAgentVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_agent_versions::builders::DescribeAgentVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeAgentVersionsFluentBuilder {
             crate::operation::describe_agent_versions::DescribeAgentVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_agent_versions::DescribeAgentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_agent_versions::DescribeAgentVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeAgentVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeAgentVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_agent_versions::DescribeAgentVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_agent_versions::DescribeAgentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_agent_versions::DescribeAgentVersionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeAgentVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_agent_versions::DescribeAgentVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_agent_versions::DescribeAgentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_agent_versions::DescribeAgentVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeAgentVersionsFluentBuilder {
             crate::operation::describe_agent_versions::DescribeAgentVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_agent_versions::DescribeAgentVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_agent_versions::DescribeAgentVersionsError>,
     > {
         self.customize_middleware().await
     }
@@ -143,17 +129,12 @@ impl DescribeAgentVersionsFluentBuilder {
         self
     }
     /// <p>The configuration manager.</p>
-    pub fn set_configuration_manager(
-        mut self,
-        input: ::std::option::Option<crate::types::StackConfigurationManager>,
-    ) -> Self {
+    pub fn set_configuration_manager(mut self, input: ::std::option::Option<crate::types::StackConfigurationManager>) -> Self {
         self.inner = self.inner.set_configuration_manager(input);
         self
     }
     /// <p>The configuration manager.</p>
-    pub fn get_configuration_manager(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackConfigurationManager> {
+    pub fn get_configuration_manager(&self) -> &::std::option::Option<crate::types::StackConfigurationManager> {
         self.inner.get_configuration_manager()
     }
 }

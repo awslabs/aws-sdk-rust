@@ -5,16 +5,16 @@ pub use crate::operation::enable_sharing_with_aws_organization::_enable_sharing_
 
 impl EnableSharingWithAwsOrganizationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.enable_sharing_with_aws_organization();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl EnableSharingWithAwsOrganizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableSharingWithAwsOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationInputBuilder,
+    inner: crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationInputBuilder,
 }
 impl EnableSharingWithAwsOrganizationFluentBuilder {
     /// Creates a new `EnableSharingWithAwsOrganization`.
@@ -39,15 +39,20 @@ impl EnableSharingWithAwsOrganizationFluentBuilder {
         }
     }
     /// Access the EnableSharingWithAwsOrganization as a reference.
-    pub fn as_input(&self) -> &crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganization,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl EnableSharingWithAwsOrganizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,17 +89,26 @@ impl EnableSharingWithAwsOrganizationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganization,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError>,
+    > {
         self.customize_middleware().await
     }
 }

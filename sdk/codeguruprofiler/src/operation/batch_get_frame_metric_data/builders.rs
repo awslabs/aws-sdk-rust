@@ -26,7 +26,7 @@ impl BatchGetFrameMetricDataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetFrameMetricDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataInputBuilder,
+    inner: crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataInputBuilder,
 }
 impl BatchGetFrameMetricDataFluentBuilder {
     /// Creates a new `BatchGetFrameMetricData`.
@@ -37,10 +37,7 @@ impl BatchGetFrameMetricDataFluentBuilder {
         }
     }
     /// Access the BatchGetFrameMetricData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl BatchGetFrameMetricDataFluentBuilder {
             crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl BatchGetFrameMetricDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl BatchGetFrameMetricDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl BatchGetFrameMetricDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl BatchGetFrameMetricDataFluentBuilder {
             crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
@@ -149,10 +129,7 @@ impl BatchGetFrameMetricDataFluentBuilder {
         self
     }
     /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -166,10 +143,7 @@ impl BatchGetFrameMetricDataFluentBuilder {
         self
     }
     /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -207,10 +181,7 @@ impl BatchGetFrameMetricDataFluentBuilder {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
-    pub fn set_target_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationPeriod>,
-    ) -> Self {
+    pub fn set_target_resolution(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.inner = self.inner.set_target_resolution(input);
         self
     }
@@ -233,17 +204,12 @@ impl BatchGetFrameMetricDataFluentBuilder {
         self
     }
     /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
-    pub fn set_frame_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetric>>,
-    ) -> Self {
+    pub fn set_frame_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetric>>) -> Self {
         self.inner = self.inner.set_frame_metrics(input);
         self
     }
     /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
-    pub fn get_frame_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameMetric>> {
+    pub fn get_frame_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameMetric>> {
         self.inner.get_frame_metrics()
     }
 }

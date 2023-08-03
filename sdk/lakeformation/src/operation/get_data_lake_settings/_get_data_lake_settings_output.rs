@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetDataLakeSettingsOutput {
 }
 impl GetDataLakeSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetDataLakeSettingsOutput`](crate::operation::get_data_lake_settings::GetDataLakeSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_data_lake_settings::builders::GetDataLakeSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::get_data_lake_settings::builders::GetDataLakeSettingsOutputBuilder {
         crate::operation::get_data_lake_settings::builders::GetDataLakeSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataLakeSettingsOutput`](crate::operation::get_data_lake_settings::GetDataLakeSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataLakeSettingsOutputBuilder {
     pub(crate) data_lake_settings: ::std::option::Option<crate::types::DataLakeSettings>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetDataLakeSettingsOutputBuilder {
         self
     }
     /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
-    pub fn set_data_lake_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakeSettings>,
-    ) -> Self {
+    pub fn set_data_lake_settings(mut self, input: ::std::option::Option<crate::types::DataLakeSettings>) -> Self {
         self.data_lake_settings = input;
         self
     }

@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDynamicThingGroupOutput`](crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupOutput) with field(s):
     ///   - [`version(i64)`](crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupOutput::version): <p>The dynamic thing group version.</p>
     /// - On failure, responds with [`SdkError<UpdateDynamicThingGroupError>`](crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupError)
-    pub fn update_dynamic_thing_group(
-        &self,
-    ) -> crate::operation::update_dynamic_thing_group::builders::UpdateDynamicThingGroupFluentBuilder
-    {
+    pub fn update_dynamic_thing_group(&self) -> crate::operation::update_dynamic_thing_group::builders::UpdateDynamicThingGroupFluentBuilder {
         crate::operation::update_dynamic_thing_group::builders::UpdateDynamicThingGroupFluentBuilder::new(self.handle.clone())
     }
 }

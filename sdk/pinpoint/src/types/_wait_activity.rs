@@ -30,27 +30,19 @@ impl WaitActivity {
 
 /// A builder for [`WaitActivity`](crate::types::WaitActivity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WaitActivityBuilder {
     pub(crate) next_activity: ::std::option::Option<::std::string::String>,
     pub(crate) wait_time: ::std::option::Option<crate::types::WaitTime>,
 }
 impl WaitActivityBuilder {
     /// <p>The unique identifier for the next activity to perform, after performing the wait activity.</p>
-    pub fn next_activity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_activity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_activity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the next activity to perform, after performing the wait activity.</p>
-    pub fn set_next_activity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_activity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_activity = input;
         self
     }

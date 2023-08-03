@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`connection_id(Option<String>)`](crate::operation::start_connection::StartConnectionOutput::connection_id): <p> The ID of the connection. </p>
     ///   - [`underlay_ip_address(Option<String>)`](crate::operation::start_connection::StartConnectionOutput::underlay_ip_address): <p> The underlay IP address. </p>
     /// - On failure, responds with [`SdkError<StartConnectionError>`](crate::operation::start_connection::StartConnectionError)
-    pub fn start_connection(
-        &self,
-    ) -> crate::operation::start_connection::builders::StartConnectionFluentBuilder {
-        crate::operation::start_connection::builders::StartConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_connection(&self) -> crate::operation::start_connection::builders::StartConnectionFluentBuilder {
+        crate::operation::start_connection::builders::StartConnectionFluentBuilder::new(self.handle.clone())
     }
 }

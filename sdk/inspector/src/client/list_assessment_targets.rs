@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`assessment_target_arns(Option<Vec<String>>)`](crate::operation::list_assessment_targets::ListAssessmentTargetsOutput::assessment_target_arns): <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_assessment_targets::ListAssessmentTargetsOutput::next_token): <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     /// - On failure, responds with [`SdkError<ListAssessmentTargetsError>`](crate::operation::list_assessment_targets::ListAssessmentTargetsError)
-    pub fn list_assessment_targets(
-        &self,
-    ) -> crate::operation::list_assessment_targets::builders::ListAssessmentTargetsFluentBuilder
-    {
-        crate::operation::list_assessment_targets::builders::ListAssessmentTargetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_assessment_targets(&self) -> crate::operation::list_assessment_targets::builders::ListAssessmentTargetsFluentBuilder {
+        crate::operation::list_assessment_targets::builders::ListAssessmentTargetsFluentBuilder::new(self.handle.clone())
     }
 }

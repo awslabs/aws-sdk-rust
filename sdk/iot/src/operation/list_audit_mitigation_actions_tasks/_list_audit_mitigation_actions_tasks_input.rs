@@ -35,9 +35,7 @@ impl ListAuditMitigationActionsTasksInput {
         self.finding_id.as_deref()
     }
     /// <p>Specify this filter to limit results to tasks that are in a specific state.</p>
-    pub fn task_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuditMitigationActionsTaskStatus> {
+    pub fn task_status(&self) -> ::std::option::Option<&crate::types::AuditMitigationActionsTaskStatus> {
         self.task_status.as_ref()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -59,16 +57,14 @@ impl ListAuditMitigationActionsTasksInput {
 }
 impl ListAuditMitigationActionsTasksInput {
     /// Creates a new builder-style object to manufacture [`ListAuditMitigationActionsTasksInput`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksInput).
-    pub fn builder() -> crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksInputBuilder{
+    pub fn builder() -> crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksInputBuilder {
         crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAuditMitigationActionsTasksInput`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAuditMitigationActionsTasksInputBuilder {
     pub(crate) audit_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) finding_id: ::std::option::Option<::std::string::String>,
@@ -80,18 +76,12 @@ pub struct ListAuditMitigationActionsTasksInputBuilder {
 }
 impl ListAuditMitigationActionsTasksInputBuilder {
     /// <p>Specify this filter to limit results to tasks that were applied to results for a specific audit.</p>
-    pub fn audit_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audit_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify this filter to limit results to tasks that were applied to results for a specific audit.</p>
-    pub fn set_audit_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audit_task_id = input;
         self
     }
@@ -119,17 +109,12 @@ impl ListAuditMitigationActionsTasksInputBuilder {
         self
     }
     /// <p>Specify this filter to limit results to tasks that are in a specific state.</p>
-    pub fn set_task_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditMitigationActionsTaskStatus>,
-    ) -> Self {
+    pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::AuditMitigationActionsTaskStatus>) -> Self {
         self.task_status = input;
         self
     }
     /// <p>Specify this filter to limit results to tasks that are in a specific state.</p>
-    pub fn get_task_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskStatus> {
+    pub fn get_task_status(&self) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskStatus> {
         &self.task_status
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -166,10 +151,7 @@ impl ListAuditMitigationActionsTasksInputBuilder {
         self
     }
     /// <p>Specify this filter to limit results to tasks that began on or after a specific date and time.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -183,10 +165,7 @@ impl ListAuditMitigationActionsTasksInputBuilder {
         self
     }
     /// <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -203,21 +182,14 @@ impl ListAuditMitigationActionsTasksInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksInput {
-                audit_task_id: self.audit_task_id
-                ,
-                finding_id: self.finding_id
-                ,
-                task_status: self.task_status
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                start_time: self.start_time
-                ,
-                end_time: self.end_time
-                ,
-            }
+                audit_task_id: self.audit_task_id,
+                finding_id: self.finding_id,
+                task_status: self.task_status,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                start_time: self.start_time,
+                end_time: self.end_time,
+            },
         )
     }
 }

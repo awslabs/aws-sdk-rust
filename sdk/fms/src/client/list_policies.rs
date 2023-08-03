@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`policy_list(Option<Vec<PolicySummary>>)`](crate::operation::list_policies::ListPoliciesOutput::policy_list): <p>An array of <code>PolicySummary</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_policies::ListPoliciesOutput::next_token): <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     /// - On failure, responds with [`SdkError<ListPoliciesError>`](crate::operation::list_policies::ListPoliciesError)
-    pub fn list_policies(
-        &self,
-    ) -> crate::operation::list_policies::builders::ListPoliciesFluentBuilder {
-        crate::operation::list_policies::builders::ListPoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_policies(&self) -> crate::operation::list_policies::builders::ListPoliciesFluentBuilder {
+        crate::operation::list_policies::builders::ListPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,35 +15,25 @@ impl DeleteConformancePackInput {
 }
 impl DeleteConformancePackInput {
     /// Creates a new builder-style object to manufacture [`DeleteConformancePackInput`](crate::operation::delete_conformance_pack::DeleteConformancePackInput).
-    pub fn builder(
-    ) -> crate::operation::delete_conformance_pack::builders::DeleteConformancePackInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_conformance_pack::builders::DeleteConformancePackInputBuilder {
         crate::operation::delete_conformance_pack::builders::DeleteConformancePackInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConformancePackInput`](crate::operation::delete_conformance_pack::DeleteConformancePackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConformancePackInputBuilder {
     pub(crate) conformance_pack_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConformancePackInputBuilder {
     /// <p>Name of the conformance pack you want to delete.</p>
-    pub fn conformance_pack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conformance_pack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the conformance pack you want to delete.</p>
-    pub fn set_conformance_pack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conformance_pack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conformance_pack_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteConformancePackInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConformancePackInput`](crate::operation::delete_conformance_pack::DeleteConformancePackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_conformance_pack::DeleteConformancePackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_conformance_pack::DeleteConformancePackInput {
-                conformance_pack_name: self.conformance_pack_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_conformance_pack::DeleteConformancePackInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_conformance_pack::DeleteConformancePackInput {
+            conformance_pack_name: self.conformance_pack_name,
+        })
     }
 }

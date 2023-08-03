@@ -28,7 +28,7 @@ impl DescribeGameSessionQueuesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGameSessionQueuesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesInputBuilder,
+    inner: crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesInputBuilder,
 }
 impl DescribeGameSessionQueuesFluentBuilder {
     /// Creates a new `DescribeGameSessionQueues`.
@@ -39,7 +39,7 @@ impl DescribeGameSessionQueuesFluentBuilder {
         }
     }
     /// Access the DescribeGameSessionQueues as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeGameSessionQueuesFluentBuilder {
             crate::operation::describe_game_session_queues::DescribeGameSessionQueues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeGameSessionQueuesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeGameSessionQueuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeGameSessionQueuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError>,
     > {
         self.send_middleware().await
     }
@@ -116,19 +107,14 @@ impl DescribeGameSessionQueuesFluentBuilder {
             crate::operation::describe_game_session_queues::DescribeGameSessionQueues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_game_session_queues::paginator::DescribeGameSessionQueuesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_game_session_queues::paginator::DescribeGameSessionQueuesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_game_session_queues::paginator::DescribeGameSessionQueuesPaginator {
         crate::operation::describe_game_session_queues::paginator::DescribeGameSessionQueuesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Names`.
@@ -141,10 +127,7 @@ impl DescribeGameSessionQueuesFluentBuilder {
         self
     }
     /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty. </p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

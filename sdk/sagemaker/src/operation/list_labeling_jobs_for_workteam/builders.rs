@@ -26,7 +26,7 @@ impl ListLabelingJobsForWorkteamInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLabelingJobsForWorkteamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamInputBuilder,
+    inner: crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamInputBuilder,
 }
 impl ListLabelingJobsForWorkteamFluentBuilder {
     /// Creates a new `ListLabelingJobsForWorkteam`.
@@ -37,7 +37,7 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
         }
     }
     /// Access the ListLabelingJobsForWorkteam as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
             crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteam,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
             crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteam,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_labeling_jobs_for_workteam::paginator::ListLabelingJobsForWorkteamPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_labeling_jobs_for_workteam::paginator::ListLabelingJobsForWorkteamPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_labeling_jobs_for_workteam::paginator::ListLabelingJobsForWorkteamPaginator {
         crate::operation::list_labeling_jobs_for_workteam::paginator::ListLabelingJobsForWorkteamPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p>
@@ -174,10 +163,7 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
         self
     }
     /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -191,10 +177,7 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
         self
     }
     /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -203,18 +186,12 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
         self.inner.get_creation_time_before()
     }
     /// <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
-    pub fn job_reference_code_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_reference_code_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_reference_code_contains(input.into());
         self
     }
     /// <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
-    pub fn set_job_reference_code_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_reference_code_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_reference_code_contains(input);
         self
     }
@@ -223,25 +200,17 @@ impl ListLabelingJobsForWorkteamFluentBuilder {
         self.inner.get_job_reference_code_contains()
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(
-        mut self,
-        input: crate::types::ListLabelingJobsForWorkteamSortByOptions,
-    ) -> Self {
+    pub fn sort_by(mut self, input: crate::types::ListLabelingJobsForWorkteamSortByOptions) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListLabelingJobsForWorkteamSortByOptions>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListLabelingJobsForWorkteamSortByOptions>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListLabelingJobsForWorkteamSortByOptions> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListLabelingJobsForWorkteamSortByOptions> {
         self.inner.get_sort_by()
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>

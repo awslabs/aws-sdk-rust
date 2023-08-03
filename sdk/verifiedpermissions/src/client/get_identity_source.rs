@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`policy_store_id(Option<String>)`](crate::operation::get_identity_source::GetIdentitySourceOutput::policy_store_id): <p>The ID of the policy store that contains the identity source.</p>
     ///   - [`principal_entity_type(Option<String>)`](crate::operation::get_identity_source::GetIdentitySourceOutput::principal_entity_type): <p>The data type of principals generated for identities authenticated by this identity source.</p>
     /// - On failure, responds with [`SdkError<GetIdentitySourceError>`](crate::operation::get_identity_source::GetIdentitySourceError)
-    pub fn get_identity_source(
-        &self,
-    ) -> crate::operation::get_identity_source::builders::GetIdentitySourceFluentBuilder {
-        crate::operation::get_identity_source::builders::GetIdentitySourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_identity_source(&self) -> crate::operation::get_identity_source::builders::GetIdentitySourceFluentBuilder {
+        crate::operation::get_identity_source::builders::GetIdentitySourceFluentBuilder::new(self.handle.clone())
     }
 }

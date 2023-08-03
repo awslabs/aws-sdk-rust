@@ -30,9 +30,7 @@ impl NewLaunchProfileMember {
 
 /// A builder for [`NewLaunchProfileMember`](crate::types::NewLaunchProfileMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NewLaunchProfileMemberBuilder {
     pub(crate) persona: ::std::option::Option<crate::types::LaunchProfilePersona>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl NewLaunchProfileMemberBuilder {
         self
     }
     /// <p>The persona.</p>
-    pub fn set_persona(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchProfilePersona>,
-    ) -> Self {
+    pub fn set_persona(mut self, input: ::std::option::Option<crate::types::LaunchProfilePersona>) -> Self {
         self.persona = input;
         self
     }

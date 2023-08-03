@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListMailDomainsOutput {
 }
 impl ListMailDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ListMailDomainsOutput`](crate::operation::list_mail_domains::ListMailDomainsOutput).
-    pub fn builder() -> crate::operation::list_mail_domains::builders::ListMailDomainsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_mail_domains::builders::ListMailDomainsOutputBuilder {
         crate::operation::list_mail_domains::builders::ListMailDomainsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMailDomainsOutput`](crate::operation::list_mail_domains::ListMailDomainsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMailDomainsOutputBuilder {
-    pub(crate) mail_domains:
-        ::std::option::Option<::std::vec::Vec<crate::types::MailDomainSummary>>,
+    pub(crate) mail_domains: ::std::option::Option<::std::vec::Vec<crate::types::MailDomainSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListMailDomainsOutputBuilder {
         self
     }
     /// <p>The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
-    pub fn set_mail_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MailDomainSummary>>,
-    ) -> Self {
+    pub fn set_mail_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MailDomainSummary>>) -> Self {
         self.mail_domains = input;
         self
     }
     /// <p>The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
-    pub fn get_mail_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MailDomainSummary>> {
+    pub fn get_mail_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MailDomainSummary>> {
         &self.mail_domains
     }
     /// <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>

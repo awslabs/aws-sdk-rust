@@ -67,17 +67,14 @@ impl GetShardIteratorInput {
 }
 impl GetShardIteratorInput {
     /// Creates a new builder-style object to manufacture [`GetShardIteratorInput`](crate::operation::get_shard_iterator::GetShardIteratorInput).
-    pub fn builder() -> crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder {
         crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder::default()
     }
 }
 
 /// A builder for [`GetShardIteratorInput`](crate::operation::get_shard_iterator::GetShardIteratorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetShardIteratorInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) shard_id: ::std::option::Option<::std::string::String>,
@@ -137,10 +134,7 @@ impl GetShardIteratorInputBuilder {
     /// <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li>
     /// <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
-    pub fn set_shard_iterator_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ShardIteratorType>,
-    ) -> Self {
+    pub fn set_shard_iterator_type(mut self, input: ::std::option::Option<crate::types::ShardIteratorType>) -> Self {
         self.shard_iterator_type = input;
         self
     }
@@ -153,24 +147,16 @@ impl GetShardIteratorInputBuilder {
     /// <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li>
     /// <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
-    pub fn get_shard_iterator_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ShardIteratorType> {
+    pub fn get_shard_iterator_type(&self) -> &::std::option::Option<crate::types::ShardIteratorType> {
         &self.shard_iterator_type
     }
     /// <p>The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
-    pub fn starting_sequence_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.starting_sequence_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
-    pub fn set_starting_sequence_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_starting_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.starting_sequence_number = input;
         self
     }
@@ -184,10 +170,7 @@ impl GetShardIteratorInputBuilder {
         self
     }
     /// <p>The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -212,19 +195,14 @@ impl GetShardIteratorInputBuilder {
     /// Consumes the builder and constructs a [`GetShardIteratorInput`](crate::operation::get_shard_iterator::GetShardIteratorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_shard_iterator::GetShardIteratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_shard_iterator::GetShardIteratorInput {
-                stream_name: self.stream_name,
-                shard_id: self.shard_id,
-                shard_iterator_type: self.shard_iterator_type,
-                starting_sequence_number: self.starting_sequence_number,
-                timestamp: self.timestamp,
-                stream_arn: self.stream_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_shard_iterator::GetShardIteratorInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_shard_iterator::GetShardIteratorInput {
+            stream_name: self.stream_name,
+            shard_id: self.shard_id,
+            shard_iterator_type: self.shard_iterator_type,
+            starting_sequence_number: self.starting_sequence_number,
+            timestamp: self.timestamp,
+            stream_arn: self.stream_arn,
+        })
     }
 }

@@ -28,7 +28,7 @@ impl SetIdentityNotificationTopicInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetIdentityNotificationTopicFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicInputBuilder,
+    inner: crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicInputBuilder,
 }
 impl SetIdentityNotificationTopicFluentBuilder {
     /// Creates a new `SetIdentityNotificationTopic`.
@@ -39,7 +39,7 @@ impl SetIdentityNotificationTopicFluentBuilder {
         }
     }
     /// Access the SetIdentityNotificationTopic as a reference.
-    pub fn as_input(&self) -> &crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl SetIdentityNotificationTopicFluentBuilder {
             crate::operation::set_identity_notification_topic::SetIdentityNotificationTopic,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl SetIdentityNotificationTopicFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl SetIdentityNotificationTopicFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl SetIdentityNotificationTopicFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl SetIdentityNotificationTopicFluentBuilder {
             crate::operation::set_identity_notification_topic::SetIdentityNotificationTopic,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError>,
     > {
         self.customize_middleware().await
     }
@@ -151,10 +140,7 @@ impl SetIdentityNotificationTopicFluentBuilder {
         self
     }
     /// <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
-    pub fn set_notification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationType>,
-    ) -> Self {
+    pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.inner = self.inner.set_notification_type(input);
         self
     }

@@ -10,10 +10,7 @@ impl ListComponentTypesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_component_types::ListComponentTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_types::ListComponentTypesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_types::ListComponentTypesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_component_types();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListComponentTypesFluentBuilder {
         }
     }
     /// Access the ListComponentTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_component_types::builders::ListComponentTypesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_component_types::builders::ListComponentTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListComponentTypesFluentBuilder {
             crate::operation::list_component_types::ListComponentTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_types::ListComponentTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_types::ListComponentTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListComponentTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListComponentTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_component_types::ListComponentTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_types::ListComponentTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_types::ListComponentTypesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListComponentTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_component_types::ListComponentTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_types::ListComponentTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_types::ListComponentTypesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListComponentTypesFluentBuilder {
             crate::operation::list_component_types::ListComponentTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_types::ListComponentTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_component_types::ListComponentTypesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_component_types::paginator::ListComponentTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_component_types::paginator::ListComponentTypesPaginator {
-        crate::operation::list_component_types::paginator::ListComponentTypesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_component_types::paginator::ListComponentTypesPaginator {
+        crate::operation::list_component_types::paginator::ListComponentTypesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the workspace.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,17 +136,12 @@ impl ListComponentTypesFluentBuilder {
         self
     }
     /// <p>A list of objects that filter the request.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A list of objects that filter the request.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>> {
         self.inner.get_filters()
     }
     /// <p>The string that specifies the next page of results.</p>

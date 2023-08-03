@@ -22,26 +22,18 @@ impl GetNamespaceInput {
 
 /// A builder for [`GetNamespaceInput`](crate::operation::get_namespace::GetNamespaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNamespaceInputBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
 }
 impl GetNamespaceInputBuilder {
     /// <p>The name of the namespace to retrieve information for.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the namespace to retrieve information for.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
@@ -50,12 +42,7 @@ impl GetNamespaceInputBuilder {
         &self.namespace_name
     }
     /// Consumes the builder and constructs a [`GetNamespaceInput`](crate::operation::get_namespace::GetNamespaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_namespace::GetNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_namespace::GetNamespaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_namespace::GetNamespaceInput {
             namespace_name: self.namespace_name,
         })

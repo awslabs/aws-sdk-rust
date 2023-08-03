@@ -22,16 +22,14 @@ impl ListVpcEndpointsForDomainInput {
 }
 impl ListVpcEndpointsForDomainInput {
     /// Creates a new builder-style object to manufacture [`ListVpcEndpointsForDomainInput`](crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput).
-    pub fn builder() -> crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainInputBuilder{
+    pub fn builder() -> crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainInputBuilder {
         crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpcEndpointsForDomainInput`](crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpcEndpointsForDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl ListVpcEndpointsForDomainInputBuilder {
         crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput {
-                domain_name: self.domain_name,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput {
+            domain_name: self.domain_name,
+            next_token: self.next_token,
+        })
     }
 }

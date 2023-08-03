@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<UpdateDataSourcePermissionsError>`](crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsError)
-    pub fn update_data_source_permissions(&self) -> crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsFluentBuilder{
+    pub fn update_data_source_permissions(
+        &self,
+    ) -> crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsFluentBuilder {
         crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

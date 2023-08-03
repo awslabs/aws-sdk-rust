@@ -5,9 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum BadRequestDetails {
     /// <p>One or more specified parameters are not valid for the call.</p>
-    InvalidParameters(
-        ::std::collections::HashMap<::std::string::String, crate::types::InvalidParameterDetail>,
-    ),
+    InvalidParameters(::std::collections::HashMap<::std::string::String, crate::types::InvalidParameterDetail>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -24,10 +22,7 @@ impl BadRequestDetails {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_invalid_parameters(
         &self,
-    ) -> ::std::result::Result<
-        &::std::collections::HashMap<::std::string::String, crate::types::InvalidParameterDetail>,
-        &Self,
-    > {
+    ) -> ::std::result::Result<&::std::collections::HashMap<::std::string::String, crate::types::InvalidParameterDetail>, &Self> {
         if let BadRequestDetails::InvalidParameters(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

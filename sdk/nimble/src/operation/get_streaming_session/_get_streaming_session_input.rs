@@ -22,18 +22,14 @@ impl GetStreamingSessionInput {
 }
 impl GetStreamingSessionInput {
     /// Creates a new builder-style object to manufacture [`GetStreamingSessionInput`](crate::operation::get_streaming_session::GetStreamingSessionInput).
-    pub fn builder(
-    ) -> crate::operation::get_streaming_session::builders::GetStreamingSessionInputBuilder {
-        crate::operation::get_streaming_session::builders::GetStreamingSessionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_streaming_session::builders::GetStreamingSessionInputBuilder {
+        crate::operation::get_streaming_session::builders::GetStreamingSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetStreamingSessionInput`](crate::operation::get_streaming_session::GetStreamingSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStreamingSessionInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl GetStreamingSessionInputBuilder {
     /// Consumes the builder and constructs a [`GetStreamingSessionInput`](crate::operation::get_streaming_session::GetStreamingSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_streaming_session::GetStreamingSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_streaming_session::GetStreamingSessionInput {
-                session_id: self.session_id,
-                studio_id: self.studio_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_streaming_session::GetStreamingSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_streaming_session::GetStreamingSessionInput {
+            session_id: self.session_id,
+            studio_id: self.studio_id,
+        })
     }
 }

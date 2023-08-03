@@ -46,9 +46,7 @@ impl StartDocumentAnalysisInput {
         self.job_tag.as_deref()
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn notification_channel(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationChannel> {
+    pub fn notification_channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
@@ -66,18 +64,14 @@ impl StartDocumentAnalysisInput {
 }
 impl StartDocumentAnalysisInput {
     /// Creates a new builder-style object to manufacture [`StartDocumentAnalysisInput`](crate::operation::start_document_analysis::StartDocumentAnalysisInput).
-    pub fn builder(
-    ) -> crate::operation::start_document_analysis::builders::StartDocumentAnalysisInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_document_analysis::builders::StartDocumentAnalysisInputBuilder {
         crate::operation::start_document_analysis::builders::StartDocumentAnalysisInputBuilder::default()
     }
 }
 
 /// A builder for [`StartDocumentAnalysisInput`](crate::operation::start_document_analysis::StartDocumentAnalysisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDocumentAnalysisInputBuilder {
     pub(crate) document_location: ::std::option::Option<crate::types::DocumentLocation>,
     pub(crate) feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
@@ -95,10 +89,7 @@ impl StartDocumentAnalysisInputBuilder {
         self
     }
     /// <p>The location of the document to be processed.</p>
-    pub fn set_document_location(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentLocation>,
-    ) -> Self {
+    pub fn set_document_location(mut self, input: ::std::option::Option<crate::types::DocumentLocation>) -> Self {
         self.document_location = input;
         self
     }
@@ -118,32 +109,21 @@ impl StartDocumentAnalysisInputBuilder {
         self
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    pub fn set_feature_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
-    ) -> Self {
+    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>) -> Self {
         self.feature_types = input;
         self
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    pub fn get_feature_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
+    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
         &self.feature_types
     }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -171,17 +151,12 @@ impl StartDocumentAnalysisInputBuilder {
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn set_notification_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.notification_channel = input;
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn get_notification_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+    pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         &self.notification_channel
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
@@ -190,10 +165,7 @@ impl StartDocumentAnalysisInputBuilder {
         self
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.output_config = input;
         self
     }
@@ -221,10 +193,7 @@ impl StartDocumentAnalysisInputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_queries_config(
-        mut self,
-        input: ::std::option::Option<crate::types::QueriesConfig>,
-    ) -> Self {
+    pub fn set_queries_config(mut self, input: ::std::option::Option<crate::types::QueriesConfig>) -> Self {
         self.queries_config = input;
         self
     }
@@ -235,21 +204,17 @@ impl StartDocumentAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`StartDocumentAnalysisInput`](crate::operation::start_document_analysis::StartDocumentAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_document_analysis::StartDocumentAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_document_analysis::StartDocumentAnalysisInput {
-                document_location: self.document_location,
-                feature_types: self.feature_types,
-                client_request_token: self.client_request_token,
-                job_tag: self.job_tag,
-                notification_channel: self.notification_channel,
-                output_config: self.output_config,
-                kms_key_id: self.kms_key_id,
-                queries_config: self.queries_config,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_document_analysis::StartDocumentAnalysisInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_document_analysis::StartDocumentAnalysisInput {
+            document_location: self.document_location,
+            feature_types: self.feature_types,
+            client_request_token: self.client_request_token,
+            job_tag: self.job_tag,
+            notification_channel: self.notification_channel,
+            output_config: self.output_config,
+            kms_key_id: self.kms_key_id,
+            queries_config: self.queries_config,
+        })
     }
 }

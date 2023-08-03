@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`groups(Option<Vec<GroupType>>)`](crate::operation::admin_list_groups_for_user::AdminListGroupsForUserOutput::groups): <p>The groups that the user belongs to.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::admin_list_groups_for_user::AdminListGroupsForUserOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<AdminListGroupsForUserError>`](crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError)
-    pub fn admin_list_groups_for_user(
-        &self,
-    ) -> crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder
-    {
+    pub fn admin_list_groups_for_user(&self) -> crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder {
         crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder::new(self.handle.clone())
     }
 }

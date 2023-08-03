@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for GetFindingAggregatorOutput {
 }
 impl GetFindingAggregatorOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingAggregatorOutput`](crate::operation::get_finding_aggregator::GetFindingAggregatorOutput).
-    pub fn builder(
-    ) -> crate::operation::get_finding_aggregator::builders::GetFindingAggregatorOutputBuilder {
+    pub fn builder() -> crate::operation::get_finding_aggregator::builders::GetFindingAggregatorOutputBuilder {
         crate::operation::get_finding_aggregator::builders::GetFindingAggregatorOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFindingAggregatorOutput`](crate::operation::get_finding_aggregator::GetFindingAggregatorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingAggregatorOutputBuilder {
     pub(crate) finding_aggregator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) finding_aggregation_region: ::std::option::Option<::std::string::String>,
@@ -62,18 +59,12 @@ pub struct GetFindingAggregatorOutputBuilder {
 }
 impl GetFindingAggregatorOutputBuilder {
     /// <p>The ARN of the finding aggregator.</p>
-    pub fn finding_aggregator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn finding_aggregator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_aggregator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the finding aggregator.</p>
-    pub fn set_finding_aggregator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_finding_aggregator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.finding_aggregator_arn = input;
         self
     }
@@ -82,18 +73,12 @@ impl GetFindingAggregatorOutputBuilder {
         &self.finding_aggregator_arn
     }
     /// <p>The aggregation Region.</p>
-    pub fn finding_aggregation_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn finding_aggregation_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_aggregation_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The aggregation Region.</p>
-    pub fn set_finding_aggregation_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_finding_aggregation_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.finding_aggregation_region = input;
         self
     }
@@ -102,18 +87,12 @@ impl GetFindingAggregatorOutputBuilder {
         &self.finding_aggregation_region
     }
     /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
-    pub fn region_linking_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn region_linking_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_linking_mode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
-    pub fn set_region_linking_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_region_linking_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_linking_mode = input;
         self
     }
@@ -133,10 +112,7 @@ impl GetFindingAggregatorOutputBuilder {
         self
     }
     /// <p>The list of excluded Regions or included Regions.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }

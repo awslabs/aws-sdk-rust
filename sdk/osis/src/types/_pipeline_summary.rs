@@ -72,9 +72,7 @@ impl PipelineSummary {
 
 /// A builder for [`PipelineSummary`](crate::types::PipelineSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::PipelineStatus>,
     pub(crate) status_reason: ::std::option::Option<crate::types::PipelineStatusReason>,
@@ -92,10 +90,7 @@ impl PipelineSummaryBuilder {
         self
     }
     /// <p>The current status of the pipeline.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PipelineStatus>) -> Self {
         self.status = input;
         self
     }
@@ -109,10 +104,7 @@ impl PipelineSummaryBuilder {
         self
     }
     /// <p>Information about a pipeline's current status.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineStatusReason>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::PipelineStatusReason>) -> Self {
         self.status_reason = input;
         self
     }
@@ -121,18 +113,12 @@ impl PipelineSummaryBuilder {
         &self.status_reason
     }
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -188,10 +174,7 @@ impl PipelineSummaryBuilder {
         self
     }
     /// <p>The date and time when the pipeline was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -205,10 +188,7 @@ impl PipelineSummaryBuilder {
         self
     }
     /// <p>The date and time when the pipeline was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

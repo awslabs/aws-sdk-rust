@@ -16,9 +16,7 @@ pub struct StartChangeRequestExecutionInput {
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The name of the change request associated with the runbook workflow to be run.</p>
     #[doc(hidden)]
     pub change_request_name: ::std::option::Option<::std::string::String>,
@@ -66,11 +64,7 @@ impl StartChangeRequestExecutionInput {
         self.document_version.as_deref()
     }
     /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.parameters.as_ref()
     }
     /// <p>The name of the change request associated with the runbook workflow to be run.</p>
@@ -113,23 +107,19 @@ impl StartChangeRequestExecutionInput {
 }
 impl StartChangeRequestExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartChangeRequestExecutionInput`](crate::operation::start_change_request_execution::StartChangeRequestExecutionInput).
-    pub fn builder() -> crate::operation::start_change_request_execution::builders::StartChangeRequestExecutionInputBuilder{
+    pub fn builder() -> crate::operation::start_change_request_execution::builders::StartChangeRequestExecutionInputBuilder {
         crate::operation::start_change_request_execution::builders::StartChangeRequestExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartChangeRequestExecutionInput`](crate::operation::start_change_request_execution::StartChangeRequestExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartChangeRequestExecutionInputBuilder {
     pub(crate) scheduled_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) document_name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) change_request_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) auto_approve: ::std::option::Option<bool>,
@@ -149,10 +139,7 @@ impl StartChangeRequestExecutionInputBuilder {
     /// <p>The date and time specified in the change request to run the Automation runbooks.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    pub fn set_scheduled_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.scheduled_time = input;
         self
     }
@@ -163,18 +150,12 @@ impl StartChangeRequestExecutionInputBuilder {
         &self.scheduled_time
     }
     /// <p>The name of the change template document to run during the runbook workflow.</p>
-    pub fn document_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the change template document to run during the runbook workflow.</p>
-    pub fn set_document_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_name = input;
         self
     }
@@ -183,18 +164,12 @@ impl StartChangeRequestExecutionInputBuilder {
         &self.document_name
     }
     /// <p>The version of the change template document to run during the runbook workflow.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the change template document to run during the runbook workflow.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -207,11 +182,7 @@ impl StartChangeRequestExecutionInputBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.parameters = ::std::option::Option::Some(hash_map);
@@ -220,12 +191,7 @@ impl StartChangeRequestExecutionInputBuilder {
     /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
     pub fn set_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.parameters = input;
         self
@@ -233,24 +199,16 @@ impl StartChangeRequestExecutionInputBuilder {
     /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
     pub fn get_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.parameters
     }
     /// <p>The name of the change request associated with the runbook workflow to be run.</p>
-    pub fn change_request_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_request_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_request_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the change request associated with the runbook workflow to be run.</p>
-    pub fn set_change_request_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_request_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_request_name = input;
         self
     }
@@ -311,10 +269,7 @@ impl StartChangeRequestExecutionInputBuilder {
     /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    pub fn set_runbooks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>,
-    ) -> Self {
+    pub fn set_runbooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>) -> Self {
         self.runbooks = input;
         self
     }
@@ -344,10 +299,7 @@ impl StartChangeRequestExecutionInputBuilder {
     /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
     /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -365,10 +317,7 @@ impl StartChangeRequestExecutionInputBuilder {
         self
     }
     /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
-    pub fn set_scheduled_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.scheduled_end_time = input;
         self
     }
@@ -377,18 +326,12 @@ impl StartChangeRequestExecutionInputBuilder {
         &self.scheduled_end_time
     }
     /// <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
-    pub fn change_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
-    pub fn set_change_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_details = input;
         self
     }
@@ -403,20 +346,18 @@ impl StartChangeRequestExecutionInputBuilder {
         crate::operation::start_change_request_execution::StartChangeRequestExecutionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_change_request_execution::StartChangeRequestExecutionInput {
-                scheduled_time: self.scheduled_time,
-                document_name: self.document_name,
-                document_version: self.document_version,
-                parameters: self.parameters,
-                change_request_name: self.change_request_name,
-                client_token: self.client_token,
-                auto_approve: self.auto_approve,
-                runbooks: self.runbooks,
-                tags: self.tags,
-                scheduled_end_time: self.scheduled_end_time,
-                change_details: self.change_details,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_change_request_execution::StartChangeRequestExecutionInput {
+            scheduled_time: self.scheduled_time,
+            document_name: self.document_name,
+            document_version: self.document_version,
+            parameters: self.parameters,
+            change_request_name: self.change_request_name,
+            client_token: self.client_token,
+            auto_approve: self.auto_approve,
+            runbooks: self.runbooks,
+            tags: self.tags,
+            scheduled_end_time: self.scheduled_end_time,
+            change_details: self.change_details,
+        })
     }
 }

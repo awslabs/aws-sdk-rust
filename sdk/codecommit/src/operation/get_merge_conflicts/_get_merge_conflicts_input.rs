@@ -23,8 +23,7 @@ pub struct GetMergeConflictsInput {
     pub max_conflict_files: ::std::option::Option<i32>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
     #[doc(hidden)]
-    pub conflict_resolution_strategy:
-        ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
+    pub conflict_resolution_strategy: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -47,9 +46,7 @@ impl GetMergeConflictsInput {
         self.merge_option.as_ref()
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn conflict_detail_level(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConflictDetailLevelTypeEnum> {
+    pub fn conflict_detail_level(&self) -> ::std::option::Option<&crate::types::ConflictDetailLevelTypeEnum> {
         self.conflict_detail_level.as_ref()
     }
     /// <p>The maximum number of files to include in the output.</p>
@@ -57,9 +54,7 @@ impl GetMergeConflictsInput {
         self.max_conflict_files
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn conflict_resolution_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConflictResolutionStrategyTypeEnum> {
+    pub fn conflict_resolution_strategy(&self) -> ::std::option::Option<&crate::types::ConflictResolutionStrategyTypeEnum> {
         self.conflict_resolution_strategy.as_ref()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
@@ -69,43 +64,32 @@ impl GetMergeConflictsInput {
 }
 impl GetMergeConflictsInput {
     /// Creates a new builder-style object to manufacture [`GetMergeConflictsInput`](crate::operation::get_merge_conflicts::GetMergeConflictsInput).
-    pub fn builder(
-    ) -> crate::operation::get_merge_conflicts::builders::GetMergeConflictsInputBuilder {
+    pub fn builder() -> crate::operation::get_merge_conflicts::builders::GetMergeConflictsInputBuilder {
         crate::operation::get_merge_conflicts::builders::GetMergeConflictsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMergeConflictsInput`](crate::operation::get_merge_conflicts::GetMergeConflictsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMergeConflictsInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_commit_specifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_commit_specifier: ::std::option::Option<::std::string::String>,
     pub(crate) merge_option: ::std::option::Option<crate::types::MergeOptionTypeEnum>,
-    pub(crate) conflict_detail_level:
-        ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
+    pub(crate) conflict_detail_level: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
     pub(crate) max_conflict_files: ::std::option::Option<i32>,
-    pub(crate) conflict_resolution_strategy:
-        ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
+    pub(crate) conflict_resolution_strategy: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetMergeConflictsInputBuilder {
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -114,40 +98,26 @@ impl GetMergeConflictsInputBuilder {
         &self.repository_name
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn destination_commit_specifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_commit_specifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn set_destination_commit_specifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_commit_specifier = input;
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn get_destination_commit_specifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_destination_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_commit_specifier
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn source_commit_specifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_commit_specifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn set_source_commit_specifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_commit_specifier = input;
         self
     }
@@ -161,10 +131,7 @@ impl GetMergeConflictsInputBuilder {
         self
     }
     /// <p>The merge option or strategy you want to use to merge the code. </p>
-    pub fn set_merge_option(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeOptionTypeEnum>,
-    ) -> Self {
+    pub fn set_merge_option(mut self, input: ::std::option::Option<crate::types::MergeOptionTypeEnum>) -> Self {
         self.merge_option = input;
         self
     }
@@ -173,25 +140,17 @@ impl GetMergeConflictsInputBuilder {
         &self.merge_option
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn conflict_detail_level(
-        mut self,
-        input: crate::types::ConflictDetailLevelTypeEnum,
-    ) -> Self {
+    pub fn conflict_detail_level(mut self, input: crate::types::ConflictDetailLevelTypeEnum) -> Self {
         self.conflict_detail_level = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn set_conflict_detail_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
-    ) -> Self {
+    pub fn set_conflict_detail_level(mut self, input: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>) -> Self {
         self.conflict_detail_level = input;
         self
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn get_conflict_detail_level(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConflictDetailLevelTypeEnum> {
+    pub fn get_conflict_detail_level(&self) -> &::std::option::Option<crate::types::ConflictDetailLevelTypeEnum> {
         &self.conflict_detail_level
     }
     /// <p>The maximum number of files to include in the output.</p>
@@ -209,25 +168,17 @@ impl GetMergeConflictsInputBuilder {
         &self.max_conflict_files
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn conflict_resolution_strategy(
-        mut self,
-        input: crate::types::ConflictResolutionStrategyTypeEnum,
-    ) -> Self {
+    pub fn conflict_resolution_strategy(mut self, input: crate::types::ConflictResolutionStrategyTypeEnum) -> Self {
         self.conflict_resolution_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn set_conflict_resolution_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
-    ) -> Self {
+    pub fn set_conflict_resolution_strategy(mut self, input: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>) -> Self {
         self.conflict_resolution_strategy = input;
         self
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn get_conflict_resolution_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum> {
+    pub fn get_conflict_resolution_strategy(&self) -> &::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum> {
         &self.conflict_resolution_strategy
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
@@ -247,21 +198,16 @@ impl GetMergeConflictsInputBuilder {
     /// Consumes the builder and constructs a [`GetMergeConflictsInput`](crate::operation::get_merge_conflicts::GetMergeConflictsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_merge_conflicts::GetMergeConflictsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_merge_conflicts::GetMergeConflictsInput {
-                repository_name: self.repository_name,
-                destination_commit_specifier: self.destination_commit_specifier,
-                source_commit_specifier: self.source_commit_specifier,
-                merge_option: self.merge_option,
-                conflict_detail_level: self.conflict_detail_level,
-                max_conflict_files: self.max_conflict_files,
-                conflict_resolution_strategy: self.conflict_resolution_strategy,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_merge_conflicts::GetMergeConflictsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_merge_conflicts::GetMergeConflictsInput {
+            repository_name: self.repository_name,
+            destination_commit_specifier: self.destination_commit_specifier,
+            source_commit_specifier: self.source_commit_specifier,
+            merge_option: self.merge_option,
+            conflict_detail_level: self.conflict_detail_level,
+            max_conflict_files: self.max_conflict_files,
+            conflict_resolution_strategy: self.conflict_resolution_strategy,
+            next_token: self.next_token,
+        })
     }
 }

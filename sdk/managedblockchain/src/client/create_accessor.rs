@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`accessor_id(Option<String>)`](crate::operation::create_accessor::CreateAccessorOutput::accessor_id): <p>The unique identifier of the accessor.</p>
     ///   - [`billing_token(Option<String>)`](crate::operation::create_accessor::CreateAccessorOutput::billing_token): <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
     /// - On failure, responds with [`SdkError<CreateAccessorError>`](crate::operation::create_accessor::CreateAccessorError)
-    pub fn create_accessor(
-        &self,
-    ) -> crate::operation::create_accessor::builders::CreateAccessorFluentBuilder {
-        crate::operation::create_accessor::builders::CreateAccessorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_accessor(&self) -> crate::operation::create_accessor::builders::CreateAccessorFluentBuilder {
+        crate::operation::create_accessor::builders::CreateAccessorFluentBuilder::new(self.handle.clone())
     }
 }

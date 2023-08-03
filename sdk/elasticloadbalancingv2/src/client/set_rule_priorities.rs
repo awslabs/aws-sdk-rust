@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`SetRulePrioritiesOutput`](crate::operation::set_rule_priorities::SetRulePrioritiesOutput) with field(s):
     ///   - [`rules(Option<Vec<Rule>>)`](crate::operation::set_rule_priorities::SetRulePrioritiesOutput::rules): <p>Information about the rules.</p>
     /// - On failure, responds with [`SdkError<SetRulePrioritiesError>`](crate::operation::set_rule_priorities::SetRulePrioritiesError)
-    pub fn set_rule_priorities(
-        &self,
-    ) -> crate::operation::set_rule_priorities::builders::SetRulePrioritiesFluentBuilder {
-        crate::operation::set_rule_priorities::builders::SetRulePrioritiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_rule_priorities(&self) -> crate::operation::set_rule_priorities::builders::SetRulePrioritiesFluentBuilder {
+        crate::operation::set_rule_priorities::builders::SetRulePrioritiesFluentBuilder::new(self.handle.clone())
     }
 }

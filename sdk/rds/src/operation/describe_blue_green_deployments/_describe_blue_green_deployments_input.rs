@@ -70,16 +70,14 @@ impl DescribeBlueGreenDeploymentsInput {
 }
 impl DescribeBlueGreenDeploymentsInput {
     /// Creates a new builder-style object to manufacture [`DescribeBlueGreenDeploymentsInput`](crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsInput).
-    pub fn builder() -> crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsInputBuilder{
+    pub fn builder() -> crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsInputBuilder {
         crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBlueGreenDeploymentsInput`](crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBlueGreenDeploymentsInputBuilder {
     pub(crate) blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -92,10 +90,7 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn blue_green_deployment_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blue_green_deployment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blue_green_deployment_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -104,10 +99,7 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn set_blue_green_deployment_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blue_green_deployment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blue_green_deployment_identifier = input;
         self
     }
@@ -116,9 +108,7 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn get_blue_green_deployment_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_blue_green_deployment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.blue_green_deployment_identifier
     }
     /// Appends an item to `filters`.
@@ -147,10 +137,7 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
     /// <li> <p> <code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p> </li>
     /// <li> <p> <code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -218,13 +205,11 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
         crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsInput {
-                blue_green_deployment_identifier: self.blue_green_deployment_identifier,
-                filters: self.filters,
-                marker: self.marker,
-                max_records: self.max_records,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsInput {
+            blue_green_deployment_identifier: self.blue_green_deployment_identifier,
+            filters: self.filters,
+            marker: self.marker,
+            max_records: self.max_records,
+        })
     }
 }

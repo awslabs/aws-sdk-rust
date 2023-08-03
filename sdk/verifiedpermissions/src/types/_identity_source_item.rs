@@ -59,9 +59,7 @@ impl IdentitySourceItem {
 
 /// A builder for [`IdentitySourceItem`](crate::types::IdentitySourceItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentitySourceItemBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) details: ::std::option::Option<crate::types::IdentitySourceItemDetails>,
@@ -77,10 +75,7 @@ impl IdentitySourceItemBuilder {
         self
     }
     /// <p>The date and time the identity source was originally created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -94,10 +89,7 @@ impl IdentitySourceItemBuilder {
         self
     }
     /// <p>A structure that contains the details of the associated identity provider (IdP).</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentitySourceItemDetails>,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<crate::types::IdentitySourceItemDetails>) -> Self {
         self.details = input;
         self
     }
@@ -106,18 +98,12 @@ impl IdentitySourceItemBuilder {
         &self.details
     }
     /// <p>The unique identifier of the identity source.</p>
-    pub fn identity_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the identity source.</p>
-    pub fn set_identity_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_source_id = input;
         self
     }
@@ -131,10 +117,7 @@ impl IdentitySourceItemBuilder {
         self
     }
     /// <p>The date and time the identity source was most recently updated.</p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }
@@ -143,18 +126,12 @@ impl IdentitySourceItemBuilder {
         &self.last_updated_date
     }
     /// <p>The identifier of the policy store that contains the identity source.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the policy store that contains the identity source.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -163,18 +140,12 @@ impl IdentitySourceItemBuilder {
         &self.policy_store_id
     }
     /// <p>The Cedar entity type of the principals returned from the IdP associated with this identity source.</p>
-    pub fn principal_entity_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_entity_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Cedar entity type of the principals returned from the IdP associated with this identity source.</p>
-    pub fn set_principal_entity_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_entity_type = input;
         self
     }

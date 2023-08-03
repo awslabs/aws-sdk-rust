@@ -28,9 +28,7 @@ impl ImportInstanceOutput {
 
 /// A builder for [`ImportInstanceOutput`](crate::operation::import_instance::ImportInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportInstanceOutputBuilder {
     pub(crate) conversion_task: ::std::option::Option<crate::types::ConversionTask>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl ImportInstanceOutputBuilder {
         self
     }
     /// <p>Information about the conversion task.</p>
-    pub fn set_conversion_task(
-        mut self,
-        input: ::std::option::Option<crate::types::ConversionTask>,
-    ) -> Self {
+    pub fn set_conversion_task(mut self, input: ::std::option::Option<crate::types::ConversionTask>) -> Self {
         self.conversion_task = input;
         self
     }

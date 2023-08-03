@@ -22,17 +22,14 @@ impl ListTrustAnchorsInput {
 }
 impl ListTrustAnchorsInput {
     /// Creates a new builder-style object to manufacture [`ListTrustAnchorsInput`](crate::operation::list_trust_anchors::ListTrustAnchorsInput).
-    pub fn builder() -> crate::operation::list_trust_anchors::builders::ListTrustAnchorsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_trust_anchors::builders::ListTrustAnchorsInputBuilder {
         crate::operation::list_trust_anchors::builders::ListTrustAnchorsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrustAnchorsInput`](crate::operation::list_trust_anchors::ListTrustAnchorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrustAnchorsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,
@@ -69,15 +66,10 @@ impl ListTrustAnchorsInputBuilder {
     /// Consumes the builder and constructs a [`ListTrustAnchorsInput`](crate::operation::list_trust_anchors::ListTrustAnchorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_trust_anchors::ListTrustAnchorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_trust_anchors::ListTrustAnchorsInput {
-                next_token: self.next_token,
-                page_size: self.page_size,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_trust_anchors::ListTrustAnchorsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_trust_anchors::ListTrustAnchorsInput {
+            next_token: self.next_token,
+            page_size: self.page_size,
+        })
     }
 }

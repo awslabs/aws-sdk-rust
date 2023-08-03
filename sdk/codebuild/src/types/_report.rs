@@ -115,9 +115,7 @@ impl Report {
         self.test_summary.as_ref()
     }
     /// <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.</p>
-    pub fn code_coverage_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CodeCoverageReportSummary> {
+    pub fn code_coverage_summary(&self) -> ::std::option::Option<&crate::types::CodeCoverageReportSummary> {
         self.code_coverage_summary.as_ref()
     }
 }
@@ -130,9 +128,7 @@ impl Report {
 
 /// A builder for [`Report`](crate::types::Report).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ReportType>,
@@ -145,8 +141,7 @@ pub struct ReportBuilder {
     pub(crate) export_config: ::std::option::Option<crate::types::ReportExportConfig>,
     pub(crate) truncated: ::std::option::Option<bool>,
     pub(crate) test_summary: ::std::option::Option<crate::types::TestReportSummary>,
-    pub(crate) code_coverage_summary:
-        ::std::option::Option<crate::types::CodeCoverageReportSummary>,
+    pub(crate) code_coverage_summary: ::std::option::Option<crate::types::CodeCoverageReportSummary>,
 }
 impl ReportBuilder {
     /// <p> The ARN of the report run. </p>
@@ -234,18 +229,12 @@ impl ReportBuilder {
         &self.name
     }
     /// <p> The ARN of the report group associated with this report. </p>
-    pub fn report_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of the report group associated with this report. </p>
-    pub fn set_report_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_group_arn = input;
         self
     }
@@ -273,10 +262,7 @@ impl ReportBuilder {
         self
     }
     /// <p> The status of this report. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReportStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -290,10 +276,7 @@ impl ReportBuilder {
         self
     }
     /// <p> The date and time this report run occurred. </p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -307,10 +290,7 @@ impl ReportBuilder {
         self
     }
     /// <p> The date and time a report expires. A report expires 30 days after it is created. An expired report is not available to view in CodeBuild. </p>
-    pub fn set_expired(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expired(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expired = input;
         self
     }
@@ -324,10 +304,7 @@ impl ReportBuilder {
         self
     }
     /// <p> Information about where the raw data used to generate this report was exported. </p>
-    pub fn set_export_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportExportConfig>,
-    ) -> Self {
+    pub fn set_export_config(mut self, input: ::std::option::Option<crate::types::ReportExportConfig>) -> Self {
         self.export_config = input;
         self
     }
@@ -355,10 +332,7 @@ impl ReportBuilder {
         self
     }
     /// <p> A <code>TestReportSummary</code> object that contains information about this test report. </p>
-    pub fn set_test_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::TestReportSummary>,
-    ) -> Self {
+    pub fn set_test_summary(mut self, input: ::std::option::Option<crate::types::TestReportSummary>) -> Self {
         self.test_summary = input;
         self
     }
@@ -372,17 +346,12 @@ impl ReportBuilder {
         self
     }
     /// <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.</p>
-    pub fn set_code_coverage_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeCoverageReportSummary>,
-    ) -> Self {
+    pub fn set_code_coverage_summary(mut self, input: ::std::option::Option<crate::types::CodeCoverageReportSummary>) -> Self {
         self.code_coverage_summary = input;
         self
     }
     /// <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.</p>
-    pub fn get_code_coverage_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodeCoverageReportSummary> {
+    pub fn get_code_coverage_summary(&self) -> &::std::option::Option<crate::types::CodeCoverageReportSummary> {
         &self.code_coverage_summary
     }
     /// Consumes the builder and constructs a [`Report`](crate::types::Report).

@@ -10,10 +10,7 @@ impl DescribePoolsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_pools::DescribePoolsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_pools::DescribePoolsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pools::DescribePoolsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_pools();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DescribePoolsFluentBuilder {
         }
     }
     /// Access the DescribePools as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_pools::builders::DescribePoolsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_pools::builders::DescribePoolsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl DescribePoolsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -120,13 +112,8 @@ impl DescribePoolsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_pools::paginator::DescribePoolsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_pools::paginator::DescribePoolsPaginator {
-        crate::operation::describe_pools::paginator::DescribePoolsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_pools::paginator::DescribePoolsPaginator {
+        crate::operation::describe_pools::paginator::DescribePoolsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `PoolIds`.
     ///
@@ -138,10 +125,7 @@ impl DescribePoolsFluentBuilder {
         self
     }
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p>
-    pub fn set_pool_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pool_ids(input);
         self
     }
@@ -159,10 +143,7 @@ impl DescribePoolsFluentBuilder {
         self
     }
     /// <p>An array of PoolFilter objects to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PoolFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PoolFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

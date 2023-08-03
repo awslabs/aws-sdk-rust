@@ -44,9 +44,7 @@ impl GatewayRouteSpec {
 
 /// A builder for [`GatewayRouteSpec`](crate::types::GatewayRouteSpec).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GatewayRouteSpecBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) http_route: ::std::option::Option<crate::types::HttpGatewayRoute>,
@@ -74,10 +72,7 @@ impl GatewayRouteSpecBuilder {
         self
     }
     /// <p>An object that represents the specification of an HTTP gateway route.</p>
-    pub fn set_http_route(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpGatewayRoute>,
-    ) -> Self {
+    pub fn set_http_route(mut self, input: ::std::option::Option<crate::types::HttpGatewayRoute>) -> Self {
         self.http_route = input;
         self
     }
@@ -91,10 +86,7 @@ impl GatewayRouteSpecBuilder {
         self
     }
     /// <p>An object that represents the specification of an HTTP/2 gateway route.</p>
-    pub fn set_http2_route(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpGatewayRoute>,
-    ) -> Self {
+    pub fn set_http2_route(mut self, input: ::std::option::Option<crate::types::HttpGatewayRoute>) -> Self {
         self.http2_route = input;
         self
     }
@@ -108,10 +100,7 @@ impl GatewayRouteSpecBuilder {
         self
     }
     /// <p>An object that represents the specification of a gRPC gateway route.</p>
-    pub fn set_grpc_route(
-        mut self,
-        input: ::std::option::Option<crate::types::GrpcGatewayRoute>,
-    ) -> Self {
+    pub fn set_grpc_route(mut self, input: ::std::option::Option<crate::types::GrpcGatewayRoute>) -> Self {
         self.grpc_route = input;
         self
     }

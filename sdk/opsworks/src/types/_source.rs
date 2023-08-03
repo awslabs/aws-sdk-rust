@@ -80,9 +80,7 @@ impl Source {
 
 /// A builder for [`Source`](crate::types::Source).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SourceType>,
     pub(crate) url: ::std::option::Option<::std::string::String>,

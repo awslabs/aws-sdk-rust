@@ -10,10 +10,7 @@ impl ListDatasetEntriesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_entries::ListDatasetEntriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_entries::ListDatasetEntriesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_entries::ListDatasetEntriesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_dataset_entries();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListDatasetEntriesFluentBuilder {
         }
     }
     /// Access the ListDatasetEntries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListDatasetEntriesFluentBuilder {
             crate::operation::list_dataset_entries::ListDatasetEntries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_entries::ListDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_entries::ListDatasetEntriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListDatasetEntriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListDatasetEntriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_entries::ListDatasetEntriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_entries::ListDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_entries::ListDatasetEntriesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListDatasetEntriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_entries::ListDatasetEntriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_entries::ListDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_entries::ListDatasetEntriesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListDatasetEntriesFluentBuilder {
             crate::operation::list_dataset_entries::ListDatasetEntries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_entries::ListDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_entries::ListDatasetEntriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator {
-        crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator {
+        crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the project that contains the dataset that you want to list.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -177,18 +156,12 @@ impl ListDatasetEntriesFluentBuilder {
         self.inner.get_labeled()
     }
     /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
-    pub fn anomaly_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_class(input.into());
         self
     }
     /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
-    pub fn set_anomaly_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_class(input);
         self
     }
@@ -202,10 +175,7 @@ impl ListDatasetEntriesFluentBuilder {
         self
     }
     /// <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-    pub fn set_before_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_before_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_before_creation_date(input);
         self
     }
@@ -219,10 +189,7 @@ impl ListDatasetEntriesFluentBuilder {
         self
     }
     /// <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-    pub fn set_after_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_after_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_after_creation_date(input);
         self
     }
@@ -259,18 +226,12 @@ impl ListDatasetEntriesFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
-    pub fn source_ref_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_ref_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_ref_contains(input.into());
         self
     }
     /// <p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
-    pub fn set_source_ref_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_ref_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_ref_contains(input);
         self
     }

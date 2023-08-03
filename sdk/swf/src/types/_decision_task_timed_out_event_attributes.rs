@@ -37,9 +37,7 @@ impl DecisionTaskTimedOutEventAttributes {
 
 /// A builder for [`DecisionTaskTimedOutEventAttributes`](crate::types::DecisionTaskTimedOutEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecisionTaskTimedOutEventAttributesBuilder {
     pub(crate) timeout_type: ::std::option::Option<crate::types::DecisionTaskTimeoutType>,
     pub(crate) scheduled_event_id: ::std::option::Option<i64>,
@@ -52,17 +50,12 @@ impl DecisionTaskTimedOutEventAttributesBuilder {
         self
     }
     /// <p>The type of timeout that expired before the decision task could be completed.</p>
-    pub fn set_timeout_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DecisionTaskTimeoutType>,
-    ) -> Self {
+    pub fn set_timeout_type(mut self, input: ::std::option::Option<crate::types::DecisionTaskTimeoutType>) -> Self {
         self.timeout_type = input;
         self
     }
     /// <p>The type of timeout that expired before the decision task could be completed.</p>
-    pub fn get_timeout_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DecisionTaskTimeoutType> {
+    pub fn get_timeout_type(&self) -> &::std::option::Option<crate::types::DecisionTaskTimeoutType> {
         &self.timeout_type
     }
     /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>

@@ -8,8 +8,7 @@ pub struct DescribeEventSubscriptionsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of EventSubscriptions data types.</p>
     #[doc(hidden)]
-    pub event_subscriptions_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
+    pub event_subscriptions_list: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
     _request_id: Option<String>,
 }
 impl DescribeEventSubscriptionsOutput {
@@ -18,9 +17,7 @@ impl DescribeEventSubscriptionsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of EventSubscriptions data types.</p>
-    pub fn event_subscriptions_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EventSubscription]> {
+    pub fn event_subscriptions_list(&self) -> ::std::option::Option<&[crate::types::EventSubscription]> {
         self.event_subscriptions_list.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeEventSubscriptionsOutput {
 }
 impl DescribeEventSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventSubscriptionsOutput`](crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput).
-    pub fn builder() -> crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsOutputBuilder {
         crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventSubscriptionsOutput`](crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventSubscriptionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) event_subscriptions_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
+    pub(crate) event_subscriptions_list: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
     _request_id: Option<String>,
 }
 impl DescribeEventSubscriptionsOutputBuilder {
@@ -74,17 +68,12 @@ impl DescribeEventSubscriptionsOutputBuilder {
         self
     }
     /// <p>A list of EventSubscriptions data types.</p>
-    pub fn set_event_subscriptions_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
-    ) -> Self {
+    pub fn set_event_subscriptions_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>) -> Self {
         self.event_subscriptions_list = input;
         self
     }
     /// <p>A list of EventSubscriptions data types.</p>
-    pub fn get_event_subscriptions_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>> {
+    pub fn get_event_subscriptions_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>> {
         &self.event_subscriptions_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl DescribeEventSubscriptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEventSubscriptionsOutput`](crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput {
+    pub fn build(self) -> crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput {
         crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput {
             marker: self.marker,
             event_subscriptions_list: self.event_subscriptions_list,

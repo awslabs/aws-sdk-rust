@@ -50,10 +50,7 @@ pub fn ser_replication_configuration(
         for list_item_5 in var_4 {
             {
                 let inner_writer = inner_writer.start_el("Rule");
-                crate::protocol_serde::shape_replication_rule::ser_replication_rule(
-                    list_item_5,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_replication_rule::ser_replication_rule(list_item_5, inner_writer)?
             }
         }
     }

@@ -10,10 +10,7 @@ impl UpdatePricingRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_pricing_rule::UpdatePricingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pricing_rule::UpdatePricingRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pricing_rule::UpdatePricingRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_pricing_rule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdatePricingRuleFluentBuilder {
         }
     }
     /// Access the UpdatePricingRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_pricing_rule::builders::UpdatePricingRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_pricing_rule::builders::UpdatePricingRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdatePricingRuleFluentBuilder {
             crate::operation::update_pricing_rule::UpdatePricingRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pricing_rule::UpdatePricingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pricing_rule::UpdatePricingRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdatePricingRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdatePricingRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pricing_rule::UpdatePricingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pricing_rule::UpdatePricingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pricing_rule::UpdatePricingRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdatePricingRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pricing_rule::UpdatePricingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pricing_rule::UpdatePricingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pricing_rule::UpdatePricingRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdatePricingRuleFluentBuilder {
             crate::operation::update_pricing_rule::UpdatePricingRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pricing_rule::UpdatePricingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pricing_rule::UpdatePricingRuleError>,
     > {
         self.customize_middleware().await
     }
@@ -198,10 +182,7 @@ impl UpdatePricingRuleFluentBuilder {
         self
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    pub fn set_tiering(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateTieringInput>,
-    ) -> Self {
+    pub fn set_tiering(mut self, input: ::std::option::Option<crate::types::UpdateTieringInput>) -> Self {
         self.inner = self.inner.set_tiering(input);
         self
     }

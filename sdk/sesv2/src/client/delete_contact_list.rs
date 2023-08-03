@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`contact_list_name(impl ::std::convert::Into<String>)`](crate::operation::delete_contact_list::builders::DeleteContactListFluentBuilder::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::operation::delete_contact_list::builders::DeleteContactListFluentBuilder::set_contact_list_name): <p>The name of the contact list.</p>
     /// - On success, responds with [`DeleteContactListOutput`](crate::operation::delete_contact_list::DeleteContactListOutput)
     /// - On failure, responds with [`SdkError<DeleteContactListError>`](crate::operation::delete_contact_list::DeleteContactListError)
-    pub fn delete_contact_list(
-        &self,
-    ) -> crate::operation::delete_contact_list::builders::DeleteContactListFluentBuilder {
-        crate::operation::delete_contact_list::builders::DeleteContactListFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_contact_list(&self) -> crate::operation::delete_contact_list::builders::DeleteContactListFluentBuilder {
+        crate::operation::delete_contact_list::builders::DeleteContactListFluentBuilder::new(self.handle.clone())
     }
 }

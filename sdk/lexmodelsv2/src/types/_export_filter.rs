@@ -37,9 +37,7 @@ impl ExportFilter {
 
 /// A builder for [`ExportFilter`](crate::types::ExportFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ExportFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,10 +50,7 @@ impl ExportFilterBuilder {
         self
     }
     /// <p>The name of the field to use for filtering.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ExportFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -75,10 +70,7 @@ impl ExportFilterBuilder {
         self
     }
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -92,10 +84,7 @@ impl ExportFilterBuilder {
         self
     }
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportFilterOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::ExportFilterOperator>) -> Self {
         self.operator = input;
         self
     }

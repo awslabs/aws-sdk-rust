@@ -37,10 +37,7 @@ impl GetInstancePortStatesFluentBuilder {
         }
     }
     /// Access the GetInstancePortStates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_instance_port_states::builders::GetInstancePortStatesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_instance_port_states::builders::GetInstancePortStatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetInstancePortStatesFluentBuilder {
             crate::operation::get_instance_port_states::GetInstancePortStates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_port_states::GetInstancePortStatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_port_states::GetInstancePortStatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetInstancePortStatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetInstancePortStatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_instance_port_states::GetInstancePortStatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_port_states::GetInstancePortStatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_port_states::GetInstancePortStatesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetInstancePortStatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_instance_port_states::GetInstancePortStatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_port_states::GetInstancePortStatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_port_states::GetInstancePortStatesError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetInstancePortStatesFluentBuilder {
             crate::operation::get_instance_port_states::GetInstancePortStates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_instance_port_states::GetInstancePortStatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_instance_port_states::GetInstancePortStatesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the instance for which to return firewall port states.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_name(input.into());
         self
     }
     /// <p>The name of the instance for which to return firewall port states.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
     }

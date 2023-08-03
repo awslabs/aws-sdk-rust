@@ -30,18 +30,14 @@ impl ResetImageAttributeInput {
 }
 impl ResetImageAttributeInput {
     /// Creates a new builder-style object to manufacture [`ResetImageAttributeInput`](crate::operation::reset_image_attribute::ResetImageAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder {
-        crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder {
+        crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetImageAttributeInput`](crate::operation::reset_image_attribute::ResetImageAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetImageAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::ResetImageAttributeName>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
@@ -54,10 +50,7 @@ impl ResetImageAttributeInputBuilder {
         self
     }
     /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::ResetImageAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ResetImageAttributeName>) -> Self {
         self.attribute = input;
         self
     }
@@ -96,16 +89,12 @@ impl ResetImageAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ResetImageAttributeInput`](crate::operation::reset_image_attribute::ResetImageAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_image_attribute::ResetImageAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::reset_image_attribute::ResetImageAttributeInput {
-                attribute: self.attribute,
-                image_id: self.image_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::reset_image_attribute::ResetImageAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::reset_image_attribute::ResetImageAttributeInput {
+            attribute: self.attribute,
+            image_id: self.image_id,
+            dry_run: self.dry_run,
+        })
     }
 }

@@ -27,8 +27,7 @@ impl AssociateApprovedOriginInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateApprovedOriginFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::associate_approved_origin::builders::AssociateApprovedOriginInputBuilder,
+    inner: crate::operation::associate_approved_origin::builders::AssociateApprovedOriginInputBuilder,
 }
 impl AssociateApprovedOriginFluentBuilder {
     /// Creates a new `AssociateApprovedOrigin`.
@@ -39,10 +38,7 @@ impl AssociateApprovedOriginFluentBuilder {
         }
     }
     /// Access the AssociateApprovedOrigin as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_approved_origin::builders::AssociateApprovedOriginInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_approved_origin::builders::AssociateApprovedOriginInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl AssociateApprovedOriginFluentBuilder {
             crate::operation::associate_approved_origin::AssociateApprovedOrigin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_approved_origin::AssociateApprovedOriginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_approved_origin::AssociateApprovedOriginError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl AssociateApprovedOriginFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl AssociateApprovedOriginFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_approved_origin::AssociateApprovedOriginOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_approved_origin::AssociateApprovedOriginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_approved_origin::AssociateApprovedOriginError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl AssociateApprovedOriginFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_approved_origin::AssociateApprovedOriginOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_approved_origin::AssociateApprovedOriginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_approved_origin::AssociateApprovedOriginError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl AssociateApprovedOriginFluentBuilder {
             crate::operation::associate_approved_origin::AssociateApprovedOrigin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_approved_origin::AssociateApprovedOriginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_approved_origin::AssociateApprovedOriginError>,
     > {
         self.customize_middleware().await
     }

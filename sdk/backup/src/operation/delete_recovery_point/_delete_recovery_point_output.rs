@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRecoveryPointOutput {
 }
 impl DeleteRecoveryPointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRecoveryPointOutput`](crate::operation::delete_recovery_point::DeleteRecoveryPointOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_recovery_point::builders::DeleteRecoveryPointOutputBuilder {
-        crate::operation::delete_recovery_point::builders::DeleteRecoveryPointOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_recovery_point::builders::DeleteRecoveryPointOutputBuilder {
+        crate::operation::delete_recovery_point::builders::DeleteRecoveryPointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRecoveryPointOutput`](crate::operation::delete_recovery_point::DeleteRecoveryPointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRecoveryPointOutputBuilder {
     _request_id: Option<String>,
 }

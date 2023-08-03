@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`coip_address_usages(Option<Vec<CoipAddressUsage>>)`](crate::operation::get_coip_pool_usage::GetCoipPoolUsageOutput::coip_address_usages): <p>Information about the address usage.</p>
     ///   - [`local_gateway_route_table_id(Option<String>)`](crate::operation::get_coip_pool_usage::GetCoipPoolUsageOutput::local_gateway_route_table_id): <p>The ID of the local gateway route table.</p>
     /// - On failure, responds with [`SdkError<GetCoipPoolUsageError>`](crate::operation::get_coip_pool_usage::GetCoipPoolUsageError)
-    pub fn get_coip_pool_usage(
-        &self,
-    ) -> crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageFluentBuilder {
-        crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_coip_pool_usage(&self) -> crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageFluentBuilder {
+        crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageFluentBuilder::new(self.handle.clone())
     }
 }

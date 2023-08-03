@@ -37,10 +37,7 @@ impl ListDashboardVersionsFluentBuilder {
         }
     }
     /// Access the ListDashboardVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_dashboard_versions::builders::ListDashboardVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_dashboard_versions::builders::ListDashboardVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListDashboardVersionsFluentBuilder {
             crate::operation::list_dashboard_versions::ListDashboardVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dashboard_versions::ListDashboardVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dashboard_versions::ListDashboardVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListDashboardVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListDashboardVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dashboard_versions::ListDashboardVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dashboard_versions::ListDashboardVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dashboard_versions::ListDashboardVersionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListDashboardVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dashboard_versions::ListDashboardVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dashboard_versions::ListDashboardVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dashboard_versions::ListDashboardVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +105,23 @@ impl ListDashboardVersionsFluentBuilder {
             crate::operation::list_dashboard_versions::ListDashboardVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dashboard_versions::ListDashboardVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dashboard_versions::ListDashboardVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_dashboard_versions::paginator::ListDashboardVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_dashboard_versions::paginator::ListDashboardVersionsPaginator {
-        crate::operation::list_dashboard_versions::paginator::ListDashboardVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_dashboard_versions::paginator::ListDashboardVersionsPaginator {
+        crate::operation::list_dashboard_versions::paginator::ListDashboardVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

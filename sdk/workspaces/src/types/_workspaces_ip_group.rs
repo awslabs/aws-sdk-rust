@@ -44,9 +44,7 @@ impl WorkspacesIpGroup {
 
 /// A builder for [`WorkspacesIpGroup`](crate::types::WorkspacesIpGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkspacesIpGroupBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
@@ -108,17 +106,12 @@ impl WorkspacesIpGroupBuilder {
         self
     }
     /// <p>The rules.</p>
-    pub fn set_user_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,
-    ) -> Self {
+    pub fn set_user_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>) -> Self {
         self.user_rules = input;
         self
     }
     /// <p>The rules.</p>
-    pub fn get_user_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
+    pub fn get_user_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
         &self.user_rules
     }
     /// Consumes the builder and constructs a [`WorkspacesIpGroup`](crate::types::WorkspacesIpGroup).

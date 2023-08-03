@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput::next_token): <p> Next token returned in the response of a previous ListReadSetUploadParts call. Used to get the next page of results. </p>
     ///   - [`parts(Option<Vec<ReadSetUploadPartListItem>>)`](crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput::parts): <p> An array of upload parts. </p>
     /// - On failure, responds with [`SdkError<ListReadSetUploadPartsError>`](crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError)
-    pub fn list_read_set_upload_parts(
-        &self,
-    ) -> crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsFluentBuilder
-    {
+    pub fn list_read_set_upload_parts(&self) -> crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsFluentBuilder {
         crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsFluentBuilder::new(self.handle.clone())
     }
 }

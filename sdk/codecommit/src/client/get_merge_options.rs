@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`destination_commit_id(Option<String>)`](crate::operation::get_merge_options::GetMergeOptionsOutput::destination_commit_id): <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
     ///   - [`base_commit_id(Option<String>)`](crate::operation::get_merge_options::GetMergeOptionsOutput::base_commit_id): <p>The commit ID of the merge base.</p>
     /// - On failure, responds with [`SdkError<GetMergeOptionsError>`](crate::operation::get_merge_options::GetMergeOptionsError)
-    pub fn get_merge_options(
-        &self,
-    ) -> crate::operation::get_merge_options::builders::GetMergeOptionsFluentBuilder {
-        crate::operation::get_merge_options::builders::GetMergeOptionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_merge_options(&self) -> crate::operation::get_merge_options::builders::GetMergeOptionsFluentBuilder {
+        crate::operation::get_merge_options::builders::GetMergeOptionsFluentBuilder::new(self.handle.clone())
     }
 }

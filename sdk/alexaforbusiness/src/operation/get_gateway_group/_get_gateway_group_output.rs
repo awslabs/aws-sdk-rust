@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetGatewayGroupOutput {
 }
 impl GetGatewayGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetGatewayGroupOutput`](crate::operation::get_gateway_group::GetGatewayGroupOutput).
-    pub fn builder() -> crate::operation::get_gateway_group::builders::GetGatewayGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_gateway_group::builders::GetGatewayGroupOutputBuilder {
         crate::operation::get_gateway_group::builders::GetGatewayGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetGatewayGroupOutput`](crate::operation::get_gateway_group::GetGatewayGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGatewayGroupOutputBuilder {
     pub(crate) gateway_group: ::std::option::Option<crate::types::GatewayGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetGatewayGroupOutputBuilder {
         self
     }
     /// <p>The details of the gateway group.</p>
-    pub fn set_gateway_group(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayGroup>,
-    ) -> Self {
+    pub fn set_gateway_group(mut self, input: ::std::option::Option<crate::types::GatewayGroup>) -> Self {
         self.gateway_group = input;
         self
     }

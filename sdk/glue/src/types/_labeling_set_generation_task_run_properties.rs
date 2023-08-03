@@ -23,26 +23,18 @@ impl LabelingSetGenerationTaskRunProperties {
 
 /// A builder for [`LabelingSetGenerationTaskRunProperties`](crate::types::LabelingSetGenerationTaskRunProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelingSetGenerationTaskRunPropertiesBuilder {
     pub(crate) output_s3_path: ::std::option::Option<::std::string::String>,
 }
 impl LabelingSetGenerationTaskRunPropertiesBuilder {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.</p>
-    pub fn output_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.</p>
-    pub fn set_output_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_path = input;
         self
     }

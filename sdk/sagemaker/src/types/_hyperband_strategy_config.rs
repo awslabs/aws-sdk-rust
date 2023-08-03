@@ -46,9 +46,7 @@ impl HyperbandStrategyConfig {
 
 /// A builder for [`HyperbandStrategyConfig`](crate::types::HyperbandStrategyConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HyperbandStrategyConfigBuilder {
     pub(crate) min_resource: ::std::option::Option<i32>,
     pub(crate) max_resource: ::std::option::Option<i32>,

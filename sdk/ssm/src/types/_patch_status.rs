@@ -37,9 +37,7 @@ impl PatchStatus {
 
 /// A builder for [`PatchStatus`](crate::types::PatchStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PatchStatusBuilder {
     pub(crate) deployment_status: ::std::option::Option<crate::types::PatchDeploymentStatus>,
     pub(crate) compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,
@@ -52,17 +50,12 @@ impl PatchStatusBuilder {
         self
     }
     /// <p>The approval status of a patch.</p>
-    pub fn set_deployment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchDeploymentStatus>,
-    ) -> Self {
+    pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::PatchDeploymentStatus>) -> Self {
         self.deployment_status = input;
         self
     }
     /// <p>The approval status of a patch.</p>
-    pub fn get_deployment_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PatchDeploymentStatus> {
+    pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::PatchDeploymentStatus> {
         &self.deployment_status
     }
     /// <p>The compliance severity level for a patch.</p>
@@ -71,17 +64,12 @@ impl PatchStatusBuilder {
         self
     }
     /// <p>The compliance severity level for a patch.</p>
-    pub fn set_compliance_level(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchComplianceLevel>,
-    ) -> Self {
+    pub fn set_compliance_level(mut self, input: ::std::option::Option<crate::types::PatchComplianceLevel>) -> Self {
         self.compliance_level = input;
         self
     }
     /// <p>The compliance severity level for a patch.</p>
-    pub fn get_compliance_level(
-        &self,
-    ) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
+    pub fn get_compliance_level(&self) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
         &self.compliance_level
     }
     /// <p>The date the patch was approved (or will be approved if the status is <code>PENDING_APPROVAL</code>).</p>
@@ -90,10 +78,7 @@ impl PatchStatusBuilder {
         self
     }
     /// <p>The date the patch was approved (or will be approved if the status is <code>PENDING_APPROVAL</code>).</p>
-    pub fn set_approval_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_approval_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.approval_date = input;
         self
     }

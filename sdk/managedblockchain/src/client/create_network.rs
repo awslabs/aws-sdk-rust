@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`network_id(Option<String>)`](crate::operation::create_network::CreateNetworkOutput::network_id): <p>The unique identifier for the network.</p>
     ///   - [`member_id(Option<String>)`](crate::operation::create_network::CreateNetworkOutput::member_id): <p>The unique identifier for the first member within the network.</p>
     /// - On failure, responds with [`SdkError<CreateNetworkError>`](crate::operation::create_network::CreateNetworkError)
-    pub fn create_network(
-        &self,
-    ) -> crate::operation::create_network::builders::CreateNetworkFluentBuilder {
-        crate::operation::create_network::builders::CreateNetworkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_network(&self) -> crate::operation::create_network::builders::CreateNetworkFluentBuilder {
+        crate::operation::create_network::builders::CreateNetworkFluentBuilder::new(self.handle.clone())
     }
 }

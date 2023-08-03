@@ -8,9 +8,7 @@ pub struct CreateAccessPreviewInput {
     pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
     #[doc(hidden)]
-    pub configurations: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
-    >,
+    pub configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
     /// <p>A client token.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -21,11 +19,7 @@ impl CreateAccessPreviewInput {
         self.analyzer_arn.as_deref()
     }
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    pub fn configurations(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
-    > {
+    pub fn configurations(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Configuration>> {
         self.configurations.as_ref()
     }
     /// <p>A client token.</p>
@@ -35,23 +29,17 @@ impl CreateAccessPreviewInput {
 }
 impl CreateAccessPreviewInput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPreviewInput`](crate::operation::create_access_preview::CreateAccessPreviewInput).
-    pub fn builder(
-    ) -> crate::operation::create_access_preview::builders::CreateAccessPreviewInputBuilder {
-        crate::operation::create_access_preview::builders::CreateAccessPreviewInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_access_preview::builders::CreateAccessPreviewInputBuilder {
+        crate::operation::create_access_preview::builders::CreateAccessPreviewInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessPreviewInput`](crate::operation::create_access_preview::CreateAccessPreviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessPreviewInputBuilder {
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) configurations: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
-    >,
+    pub(crate) configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccessPreviewInputBuilder {
@@ -74,11 +62,7 @@ impl CreateAccessPreviewInputBuilder {
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
     ///
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    pub fn configurations(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Configuration,
-    ) -> Self {
+    pub fn configurations(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Configuration) -> Self {
         let mut hash_map = self.configurations.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.configurations = ::std::option::Option::Some(hash_map);
@@ -87,19 +71,13 @@ impl CreateAccessPreviewInputBuilder {
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
     pub fn set_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
     ) -> Self {
         self.configurations = input;
         self
     }
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    pub fn get_configurations(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
-    > {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>> {
         &self.configurations
     }
     /// <p>A client token.</p>
@@ -119,16 +97,12 @@ impl CreateAccessPreviewInputBuilder {
     /// Consumes the builder and constructs a [`CreateAccessPreviewInput`](crate::operation::create_access_preview::CreateAccessPreviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_access_preview::CreateAccessPreviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_access_preview::CreateAccessPreviewInput {
-                analyzer_arn: self.analyzer_arn,
-                configurations: self.configurations,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_access_preview::CreateAccessPreviewInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_access_preview::CreateAccessPreviewInput {
+            analyzer_arn: self.analyzer_arn,
+            configurations: self.configurations,
+            client_token: self.client_token,
+        })
     }
 }

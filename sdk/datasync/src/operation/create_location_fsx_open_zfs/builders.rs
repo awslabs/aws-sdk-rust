@@ -28,7 +28,7 @@ impl CreateLocationFsxOpenZfsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocationFsxOpenZfsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsInputBuilder,
+    inner: crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsInputBuilder,
 }
 impl CreateLocationFsxOpenZfsFluentBuilder {
     /// Creates a new `CreateLocationFsxOpenZfs`.
@@ -39,7 +39,7 @@ impl CreateLocationFsxOpenZfsFluentBuilder {
         }
     }
     /// Access the CreateLocationFsxOpenZfs as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CreateLocationFsxOpenZfsFluentBuilder {
             crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CreateLocationFsxOpenZfsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CreateLocationFsxOpenZfsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CreateLocationFsxOpenZfsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl CreateLocationFsxOpenZfsFluentBuilder {
             crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
-    pub fn fsx_filesystem_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fsx_filesystem_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fsx_filesystem_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
-    pub fn set_fsx_filesystem_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fsx_filesystem_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fsx_filesystem_arn(input);
         self
     }
@@ -161,25 +144,17 @@ impl CreateLocationFsxOpenZfsFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
     ///
     /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
-    pub fn security_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_arns(input.into());
         self
     }
     /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
-    pub fn set_security_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_arns(input);
         self
     }
     /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
-    pub fn get_security_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_arns()
     }
     /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
@@ -206,10 +181,7 @@ impl CreateLocationFsxOpenZfsFluentBuilder {
         self
     }
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

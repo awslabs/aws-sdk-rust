@@ -73,18 +73,14 @@ impl ::aws_http::request_id::RequestId for StartTopicsDetectionJobOutput {
 }
 impl StartTopicsDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartTopicsDetectionJobOutput`](crate::operation::start_topics_detection_job::StartTopicsDetectionJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_topics_detection_job::builders::StartTopicsDetectionJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_topics_detection_job::builders::StartTopicsDetectionJobOutputBuilder {
         crate::operation::start_topics_detection_job::builders::StartTopicsDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartTopicsDetectionJobOutput`](crate::operation::start_topics_detection_job::StartTopicsDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTopicsDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
@@ -201,9 +197,7 @@ impl StartTopicsDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartTopicsDetectionJobOutput`](crate::operation::start_topics_detection_job::StartTopicsDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_topics_detection_job::StartTopicsDetectionJobOutput {
+    pub fn build(self) -> crate::operation::start_topics_detection_job::StartTopicsDetectionJobOutput {
         crate::operation::start_topics_detection_job::StartTopicsDetectionJobOutput {
             job_id: self.job_id,
             job_arn: self.job_arn,

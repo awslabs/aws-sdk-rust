@@ -15,10 +15,7 @@ pub fn ser_s3_job_manifest_generator(
     }
     if let Some(var_3) = &input.manifest_output_location {
         let inner_writer = scope.start_el("ManifestOutputLocation");
-        crate::protocol_serde::shape_s3_manifest_output_location::ser_s3_manifest_output_location(
-            var_3,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_s3_manifest_output_location::ser_s3_manifest_output_location(var_3, inner_writer)?
     }
     if let Some(var_4) = &input.filter {
         let inner_writer = scope.start_el("Filter");
@@ -26,9 +23,7 @@ pub fn ser_s3_job_manifest_generator(
     }
     {
         let mut inner_writer = scope.start_el("EnableManifestOutput").finish();
-        inner_writer.data(
-            ::aws_smithy_types::primitive::Encoder::from(input.enable_manifest_output).encode(),
-        );
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.enable_manifest_output).encode());
     }
     scope.finish();
     Ok(())

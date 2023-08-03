@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<Job>>)`](crate::operation::describe_jobs::DescribeJobsOutput::items): <p>An array of Jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_jobs::DescribeJobsOutput::next_token): <p>The token of the next Job to retrieve.</p>
     /// - On failure, responds with [`SdkError<DescribeJobsError>`](crate::operation::describe_jobs::DescribeJobsError)
-    pub fn describe_jobs(
-        &self,
-    ) -> crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder {
-        crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_jobs(&self) -> crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder {
+        crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::new(self.handle.clone())
     }
 }

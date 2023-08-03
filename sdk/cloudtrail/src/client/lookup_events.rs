@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`events(Option<Vec<Event>>)`](crate::operation::lookup_events::LookupEventsOutput::events): <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::lookup_events::LookupEventsOutput::next_token): <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     /// - On failure, responds with [`SdkError<LookupEventsError>`](crate::operation::lookup_events::LookupEventsError)
-    pub fn lookup_events(
-        &self,
-    ) -> crate::operation::lookup_events::builders::LookupEventsFluentBuilder {
-        crate::operation::lookup_events::builders::LookupEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn lookup_events(&self) -> crate::operation::lookup_events::builders::LookupEventsFluentBuilder {
+        crate::operation::lookup_events::builders::LookupEventsFluentBuilder::new(self.handle.clone())
     }
 }

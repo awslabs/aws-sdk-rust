@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`directory_id(impl ::std::convert::Into<String>)`](crate::operation::delete_log_subscription::builders::DeleteLogSubscriptionFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::delete_log_subscription::builders::DeleteLogSubscriptionFluentBuilder::set_directory_id): <p>Identifier of the directory whose log subscription you want to delete.</p>
     /// - On success, responds with [`DeleteLogSubscriptionOutput`](crate::operation::delete_log_subscription::DeleteLogSubscriptionOutput)
     /// - On failure, responds with [`SdkError<DeleteLogSubscriptionError>`](crate::operation::delete_log_subscription::DeleteLogSubscriptionError)
-    pub fn delete_log_subscription(
-        &self,
-    ) -> crate::operation::delete_log_subscription::builders::DeleteLogSubscriptionFluentBuilder
-    {
-        crate::operation::delete_log_subscription::builders::DeleteLogSubscriptionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_log_subscription(&self) -> crate::operation::delete_log_subscription::builders::DeleteLogSubscriptionFluentBuilder {
+        crate::operation::delete_log_subscription::builders::DeleteLogSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

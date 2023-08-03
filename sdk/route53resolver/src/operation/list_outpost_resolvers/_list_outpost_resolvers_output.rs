@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListOutpostResolversOutput {
 }
 impl ListOutpostResolversOutput {
     /// Creates a new builder-style object to manufacture [`ListOutpostResolversOutput`](crate::operation::list_outpost_resolvers::ListOutpostResolversOutput).
-    pub fn builder(
-    ) -> crate::operation::list_outpost_resolvers::builders::ListOutpostResolversOutputBuilder {
+    pub fn builder() -> crate::operation::list_outpost_resolvers::builders::ListOutpostResolversOutputBuilder {
         crate::operation::list_outpost_resolvers::builders::ListOutpostResolversOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOutpostResolversOutput`](crate::operation::list_outpost_resolvers::ListOutpostResolversOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOutpostResolversOutputBuilder {
-    pub(crate) outpost_resolvers:
-        ::std::option::Option<::std::vec::Vec<crate::types::OutpostResolver>>,
+    pub(crate) outpost_resolvers: ::std::option::Option<::std::vec::Vec<crate::types::OutpostResolver>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListOutpostResolversOutputBuilder {
         self
     }
     /// <p>The Resolvers on Outposts that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn set_outpost_resolvers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutpostResolver>>,
-    ) -> Self {
+    pub fn set_outpost_resolvers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutpostResolver>>) -> Self {
         self.outpost_resolvers = input;
         self
     }
     /// <p>The Resolvers on Outposts that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn get_outpost_resolvers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutpostResolver>> {
+    pub fn get_outpost_resolvers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutpostResolver>> {
         &self.outpost_resolvers
     }
     /// <p>If more than <code>MaxResults</code> Resolvers match the specified criteria, you can submit another <code>ListOutpostResolver</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>

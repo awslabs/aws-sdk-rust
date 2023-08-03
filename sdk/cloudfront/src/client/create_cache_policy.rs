@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_cache_policy::CreateCachePolicyOutput::location): <p>The fully qualified URI of the cache policy just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::create_cache_policy::CreateCachePolicyOutput::e_tag): <p>The current version of the cache policy.</p>
     /// - On failure, responds with [`SdkError<CreateCachePolicyError>`](crate::operation::create_cache_policy::CreateCachePolicyError)
-    pub fn create_cache_policy(
-        &self,
-    ) -> crate::operation::create_cache_policy::builders::CreateCachePolicyFluentBuilder {
-        crate::operation::create_cache_policy::builders::CreateCachePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_cache_policy(&self) -> crate::operation::create_cache_policy::builders::CreateCachePolicyFluentBuilder {
+        crate::operation::create_cache_policy::builders::CreateCachePolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,10 +37,7 @@ impl DescribeLocalGatewaysFluentBuilder {
         }
     }
     /// Access the DescribeLocalGateways as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_local_gateways::builders::DescribeLocalGatewaysInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_local_gateways::builders::DescribeLocalGatewaysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeLocalGatewaysFluentBuilder {
             crate::operation::describe_local_gateways::DescribeLocalGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_local_gateways::DescribeLocalGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateways::DescribeLocalGatewaysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeLocalGatewaysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeLocalGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_local_gateways::DescribeLocalGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_local_gateways::DescribeLocalGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateways::DescribeLocalGatewaysError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeLocalGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_local_gateways::DescribeLocalGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_local_gateways::DescribeLocalGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateways::DescribeLocalGatewaysError>,
     > {
         self.send_middleware().await
     }
@@ -117,47 +105,32 @@ impl DescribeLocalGatewaysFluentBuilder {
             crate::operation::describe_local_gateways::DescribeLocalGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_local_gateways::DescribeLocalGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateways::DescribeLocalGatewaysError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_local_gateways::paginator::DescribeLocalGatewaysPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_local_gateways::paginator::DescribeLocalGatewaysPaginator {
-        crate::operation::describe_local_gateways::paginator::DescribeLocalGatewaysPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_local_gateways::paginator::DescribeLocalGatewaysPaginator {
+        crate::operation::describe_local_gateways::paginator::DescribeLocalGatewaysPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `LocalGatewayIds`.
     ///
     /// To override the contents of this collection use [`set_local_gateway_ids`](Self::set_local_gateway_ids).
     ///
     /// <p>The IDs of the local gateways.</p>
-    pub fn local_gateway_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_gateway_ids(input.into());
         self
     }
     /// <p>The IDs of the local gateways.</p>
-    pub fn set_local_gateway_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_local_gateway_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_local_gateway_ids(input);
         self
     }
     /// <p>The IDs of the local gateways.</p>
-    pub fn get_local_gateway_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_local_gateway_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_local_gateway_ids()
     }
     /// Appends an item to `Filters`.
@@ -182,10 +155,7 @@ impl DescribeLocalGatewaysFluentBuilder {
     /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway.</p> </li>
     /// <li> <p> <code>state</code> - The state of the association.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

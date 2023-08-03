@@ -28,12 +28,9 @@ impl BatchReadOutput {
 
 /// A builder for [`BatchReadOutput`](crate::operation::batch_read::BatchReadOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchReadOutputBuilder {
-    pub(crate) responses:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperationResponse>>,
+    pub(crate) responses: ::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperationResponse>>,
     _request_id: Option<String>,
 }
 impl BatchReadOutputBuilder {
@@ -49,17 +46,12 @@ impl BatchReadOutputBuilder {
         self
     }
     /// <p>A list of all the responses for each batch read.</p>
-    pub fn set_responses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperationResponse>>,
-    ) -> Self {
+    pub fn set_responses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperationResponse>>) -> Self {
         self.responses = input;
         self
     }
     /// <p>A list of all the responses for each batch read.</p>
-    pub fn get_responses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperationResponse>> {
+    pub fn get_responses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperationResponse>> {
         &self.responses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

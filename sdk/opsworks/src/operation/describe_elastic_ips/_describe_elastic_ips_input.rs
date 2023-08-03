@@ -29,17 +29,14 @@ impl DescribeElasticIpsInput {
 }
 impl DescribeElasticIpsInput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticIpsInput`](crate::operation::describe_elastic_ips::DescribeElasticIpsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_elastic_ips::builders::DescribeElasticIpsInputBuilder {
+    pub fn builder() -> crate::operation::describe_elastic_ips::builders::DescribeElasticIpsInputBuilder {
         crate::operation::describe_elastic_ips::builders::DescribeElasticIpsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeElasticIpsInput`](crate::operation::describe_elastic_ips::DescribeElasticIpsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeElasticIpsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
@@ -86,10 +83,7 @@ impl DescribeElasticIpsInputBuilder {
         self
     }
     /// <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
-    pub fn set_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ips = input;
         self
     }
@@ -100,16 +94,11 @@ impl DescribeElasticIpsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeElasticIpsInput`](crate::operation::describe_elastic_ips::DescribeElasticIpsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_elastic_ips::DescribeElasticIpsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_elastic_ips::DescribeElasticIpsInput {
-                instance_id: self.instance_id,
-                stack_id: self.stack_id,
-                ips: self.ips,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_elastic_ips::DescribeElasticIpsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_elastic_ips::DescribeElasticIpsInput {
+            instance_id: self.instance_id,
+            stack_id: self.stack_id,
+            ips: self.ips,
+        })
     }
 }

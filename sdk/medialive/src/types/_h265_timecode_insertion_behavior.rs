@@ -38,13 +38,7 @@
 /// H265 Timecode Insertion Behavior
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H265TimecodeInsertionBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for H265TimecodeInsertionBehavior {
         match s {
             "DISABLED" => H265TimecodeInsertionBehavior::Disabled,
             "PIC_TIMING_SEI" => H265TimecodeInsertionBehavior::PicTimingSei,
-            other => H265TimecodeInsertionBehavior::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => H265TimecodeInsertionBehavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

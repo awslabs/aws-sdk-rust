@@ -12,8 +12,7 @@ pub struct ProtectiveEquipmentBodyPart {
     pub confidence: ::std::option::Option<f32>,
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
     #[doc(hidden)]
-    pub equipment_detections:
-        ::std::option::Option<::std::vec::Vec<crate::types::EquipmentDetection>>,
+    pub equipment_detections: ::std::option::Option<::std::vec::Vec<crate::types::EquipmentDetection>>,
 }
 impl ProtectiveEquipmentBodyPart {
     /// <p>The detected body part.</p>
@@ -25,9 +24,7 @@ impl ProtectiveEquipmentBodyPart {
         self.confidence
     }
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
-    pub fn equipment_detections(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EquipmentDetection]> {
+    pub fn equipment_detections(&self) -> ::std::option::Option<&[crate::types::EquipmentDetection]> {
         self.equipment_detections.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl ProtectiveEquipmentBodyPart {
 
 /// A builder for [`ProtectiveEquipmentBodyPart`](crate::types::ProtectiveEquipmentBodyPart).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectiveEquipmentBodyPartBuilder {
     pub(crate) name: ::std::option::Option<crate::types::BodyPart>,
     pub(crate) confidence: ::std::option::Option<f32>,
-    pub(crate) equipment_detections:
-        ::std::option::Option<::std::vec::Vec<crate::types::EquipmentDetection>>,
+    pub(crate) equipment_detections: ::std::option::Option<::std::vec::Vec<crate::types::EquipmentDetection>>,
 }
 impl ProtectiveEquipmentBodyPartBuilder {
     /// <p>The detected body part.</p>
@@ -90,17 +84,12 @@ impl ProtectiveEquipmentBodyPartBuilder {
         self
     }
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
-    pub fn set_equipment_detections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EquipmentDetection>>,
-    ) -> Self {
+    pub fn set_equipment_detections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EquipmentDetection>>) -> Self {
         self.equipment_detections = input;
         self
     }
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
-    pub fn get_equipment_detections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EquipmentDetection>> {
+    pub fn get_equipment_detections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EquipmentDetection>> {
         &self.equipment_detections
     }
     /// Consumes the builder and constructs a [`ProtectiveEquipmentBodyPart`](crate::types::ProtectiveEquipmentBodyPart).

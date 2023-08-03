@@ -26,7 +26,7 @@ impl NotifyRecommendationsReceivedInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct NotifyRecommendationsReceivedFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder,
+    inner: crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder,
 }
 impl NotifyRecommendationsReceivedFluentBuilder {
     /// Creates a new `NotifyRecommendationsReceived`.
@@ -37,7 +37,7 @@ impl NotifyRecommendationsReceivedFluentBuilder {
         }
     }
     /// Access the NotifyRecommendationsReceived as a reference.
-    pub fn as_input(&self) -> &crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl NotifyRecommendationsReceivedFluentBuilder {
             crate::operation::notify_recommendations_received::NotifyRecommendationsReceived,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl NotifyRecommendationsReceivedFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl NotifyRecommendationsReceivedFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl NotifyRecommendationsReceivedFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl NotifyRecommendationsReceivedFluentBuilder {
             crate::operation::notify_recommendations_received::NotifyRecommendationsReceived,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedError>,
     > {
         self.customize_middleware().await
     }
@@ -153,25 +142,17 @@ impl NotifyRecommendationsReceivedFluentBuilder {
     /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
     ///
     /// <p>The identifiers of the recommendations.</p>
-    pub fn recommendation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommendation_ids(input.into());
         self
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn set_recommendation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_recommendation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_recommendation_ids(input);
         self
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn get_recommendation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recommendation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_recommendation_ids()
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetContactPolicyOutput {
 }
 impl GetContactPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetContactPolicyOutput`](crate::operation::get_contact_policy::GetContactPolicyOutput).
-    pub fn builder() -> crate::operation::get_contact_policy::builders::GetContactPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_contact_policy::builders::GetContactPolicyOutputBuilder {
         crate::operation::get_contact_policy::builders::GetContactPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContactPolicyOutput`](crate::operation::get_contact_policy::GetContactPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContactPolicyOutputBuilder {
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,

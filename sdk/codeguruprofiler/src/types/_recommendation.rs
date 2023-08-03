@@ -58,9 +58,7 @@ impl Recommendation {
 
 /// A builder for [`Recommendation`](crate::types::Recommendation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationBuilder {
     pub(crate) all_matches_count: ::std::option::Option<i32>,
     pub(crate) all_matches_sum: ::std::option::Option<f64>,
@@ -124,10 +122,7 @@ impl RecommendationBuilder {
         self
     }
     /// <p>List of the matches with most impact. </p>
-    pub fn set_top_matches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Match>>,
-    ) -> Self {
+    pub fn set_top_matches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Match>>) -> Self {
         self.top_matches = input;
         self
     }
@@ -141,10 +136,7 @@ impl RecommendationBuilder {
         self
     }
     /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -158,10 +150,7 @@ impl RecommendationBuilder {
         self
     }
     /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }

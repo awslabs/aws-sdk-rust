@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdatePermissionsOutput {
 }
 impl UpdatePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePermissionsOutput`](crate::operation::update_permissions::UpdatePermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_permissions::builders::UpdatePermissionsOutputBuilder {
+    pub fn builder() -> crate::operation::update_permissions::builders::UpdatePermissionsOutputBuilder {
         crate::operation::update_permissions::builders::UpdatePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePermissionsOutput`](crate::operation::update_permissions::UpdatePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePermissionsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateError>>,
     _request_id: Option<String>,
@@ -49,10 +46,7 @@ impl UpdatePermissionsOutputBuilder {
         self
     }
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateError>>) -> Self {
         self.errors = input;
         self
     }

@@ -29,17 +29,14 @@ impl GetResourceLfTagsInput {
 }
 impl GetResourceLfTagsInput {
     /// Creates a new builder-style object to manufacture [`GetResourceLfTagsInput`](crate::operation::get_resource_lf_tags::GetResourceLfTagsInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsInputBuilder {
+    pub fn builder() -> crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsInputBuilder {
         crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceLfTagsInput`](crate::operation::get_resource_lf_tags::GetResourceLfTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceLfTagsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
@@ -91,16 +88,11 @@ impl GetResourceLfTagsInputBuilder {
     /// Consumes the builder and constructs a [`GetResourceLfTagsInput`](crate::operation::get_resource_lf_tags::GetResourceLfTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resource_lf_tags::GetResourceLfTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resource_lf_tags::GetResourceLfTagsInput {
-                catalog_id: self.catalog_id,
-                resource: self.resource,
-                show_assigned_lf_tags: self.show_assigned_lf_tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_resource_lf_tags::GetResourceLfTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_resource_lf_tags::GetResourceLfTagsInput {
+            catalog_id: self.catalog_id,
+            resource: self.resource,
+            show_assigned_lf_tags: self.show_assigned_lf_tags,
+        })
     }
 }

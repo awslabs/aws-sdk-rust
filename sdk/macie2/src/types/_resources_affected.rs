@@ -30,9 +30,7 @@ impl ResourcesAffected {
 
 /// A builder for [`ResourcesAffected`](crate::types::ResourcesAffected).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourcesAffectedBuilder {
     pub(crate) s3_bucket: ::std::option::Option<crate::types::S3Bucket>,
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,

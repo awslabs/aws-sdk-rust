@@ -11,8 +11,7 @@ pub struct DeleteApplicationCloudWatchLoggingOptionOutput {
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
     #[doc(hidden)]
-    pub cloud_watch_logging_option_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
+    pub cloud_watch_logging_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
     _request_id: Option<String>,
 }
 impl DeleteApplicationCloudWatchLoggingOptionOutput {
@@ -25,9 +24,7 @@ impl DeleteApplicationCloudWatchLoggingOptionOutput {
         self.application_version_id
     }
     /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
-    pub fn cloud_watch_logging_option_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CloudWatchLoggingOptionDescription]> {
+    pub fn cloud_watch_logging_option_descriptions(&self) -> ::std::option::Option<&[crate::types::CloudWatchLoggingOptionDescription]> {
         self.cloud_watch_logging_option_descriptions.as_deref()
     }
 }
@@ -38,37 +35,29 @@ impl ::aws_http::request_id::RequestId for DeleteApplicationCloudWatchLoggingOpt
 }
 impl DeleteApplicationCloudWatchLoggingOptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionOutput).
-    pub fn builder() -> crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionOutputBuilder {
         crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationCloudWatchLoggingOptionOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
-    pub(crate) cloud_watch_logging_option_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
+    pub(crate) cloud_watch_logging_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
     _request_id: Option<String>,
 }
 impl DeleteApplicationCloudWatchLoggingOptionOutputBuilder {
     /// <p>The application's Amazon Resource Name (ARN).</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application's Amazon Resource Name (ARN).</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -95,13 +84,8 @@ impl DeleteApplicationCloudWatchLoggingOptionOutputBuilder {
     /// To override the contents of this collection use [`set_cloud_watch_logging_option_descriptions`](Self::set_cloud_watch_logging_option_descriptions).
     ///
     /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
-    pub fn cloud_watch_logging_option_descriptions(
-        mut self,
-        input: crate::types::CloudWatchLoggingOptionDescription,
-    ) -> Self {
-        let mut v = self
-            .cloud_watch_logging_option_descriptions
-            .unwrap_or_default();
+    pub fn cloud_watch_logging_option_descriptions(mut self, input: crate::types::CloudWatchLoggingOptionDescription) -> Self {
+        let mut v = self.cloud_watch_logging_option_descriptions.unwrap_or_default();
         v.push(input);
         self.cloud_watch_logging_option_descriptions = ::std::option::Option::Some(v);
         self
@@ -109,9 +93,7 @@ impl DeleteApplicationCloudWatchLoggingOptionOutputBuilder {
     /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
     pub fn set_cloud_watch_logging_option_descriptions(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
     ) -> Self {
         self.cloud_watch_logging_option_descriptions = input;
         self
@@ -119,8 +101,7 @@ impl DeleteApplicationCloudWatchLoggingOptionOutputBuilder {
     /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
     pub fn get_cloud_watch_logging_option_descriptions(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>> {
         &self.cloud_watch_logging_option_descriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -133,14 +114,11 @@ impl DeleteApplicationCloudWatchLoggingOptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionOutput).
-    pub fn build(self) -> crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionOutput{
+    pub fn build(self) -> crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionOutput {
         crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionOutput {
-            application_arn: self.application_arn
-            ,
-            application_version_id: self.application_version_id
-            ,
-            cloud_watch_logging_option_descriptions: self.cloud_watch_logging_option_descriptions
-            ,
+            application_arn: self.application_arn,
+            application_version_id: self.application_version_id,
+            cloud_watch_logging_option_descriptions: self.cloud_watch_logging_option_descriptions,
             _request_id: self._request_id,
         }
     }

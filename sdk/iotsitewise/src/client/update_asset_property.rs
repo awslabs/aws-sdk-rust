@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`property_unit(impl ::std::convert::Into<String>)`](crate::operation::update_asset_property::builders::UpdateAssetPropertyFluentBuilder::property_unit) / [`set_property_unit(Option<String>)`](crate::operation::update_asset_property::builders::UpdateAssetPropertyFluentBuilder::set_property_unit): <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
     /// - On success, responds with [`UpdateAssetPropertyOutput`](crate::operation::update_asset_property::UpdateAssetPropertyOutput)
     /// - On failure, responds with [`SdkError<UpdateAssetPropertyError>`](crate::operation::update_asset_property::UpdateAssetPropertyError)
-    pub fn update_asset_property(
-        &self,
-    ) -> crate::operation::update_asset_property::builders::UpdateAssetPropertyFluentBuilder {
-        crate::operation::update_asset_property::builders::UpdateAssetPropertyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_asset_property(&self) -> crate::operation::update_asset_property::builders::UpdateAssetPropertyFluentBuilder {
+        crate::operation::update_asset_property::builders::UpdateAssetPropertyFluentBuilder::new(self.handle.clone())
     }
 }

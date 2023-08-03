@@ -37,10 +37,7 @@ impl CreateBrowserSettingsFluentBuilder {
         }
     }
     /// Access the CreateBrowserSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_browser_settings::builders::CreateBrowserSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_browser_settings::builders::CreateBrowserSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateBrowserSettingsFluentBuilder {
             crate::operation::create_browser_settings::CreateBrowserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_browser_settings::CreateBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_browser_settings::CreateBrowserSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateBrowserSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateBrowserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_browser_settings::CreateBrowserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_browser_settings::CreateBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_browser_settings::CreateBrowserSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateBrowserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_browser_settings::CreateBrowserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_browser_settings::CreateBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_browser_settings::CreateBrowserSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateBrowserSettingsFluentBuilder {
             crate::operation::create_browser_settings::CreateBrowserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_browser_settings::CreateBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_browser_settings::CreateBrowserSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +119,7 @@ impl CreateBrowserSettingsFluentBuilder {
         self
     }
     /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -145,18 +128,12 @@ impl CreateBrowserSettingsFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The custom managed key of the browser settings.</p>
-    pub fn customer_managed_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_managed_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_managed_key(input.into());
         self
     }
     /// <p>The custom managed key of the browser settings.</p>
-    pub fn set_customer_managed_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_managed_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_managed_key(input);
         self
     }
@@ -180,9 +157,7 @@ impl CreateBrowserSettingsFluentBuilder {
     /// <p>Additional encryption context of the browser settings.</p>
     pub fn set_additional_encryption_context(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_additional_encryption_context(input);
         self
@@ -190,24 +165,16 @@ impl CreateBrowserSettingsFluentBuilder {
     /// <p>Additional encryption context of the browser settings.</p>
     pub fn get_additional_encryption_context(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_additional_encryption_context()
     }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
-    pub fn browser_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn browser_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.browser_policy(input.into());
         self
     }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
-    pub fn set_browser_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_browser_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_browser_policy(input);
         self
     }

@@ -22,11 +22,7 @@ impl super::Client {
     /// - On success, responds with [`CreateServerOutput`](crate::operation::create_server::CreateServerOutput) with field(s):
     ///   - [`server_id(Option<String>)`](crate::operation::create_server::CreateServerOutput::server_id): <p>The service-assigned identifier of the server that is created.</p>
     /// - On failure, responds with [`SdkError<CreateServerError>`](crate::operation::create_server::CreateServerError)
-    pub fn create_server(
-        &self,
-    ) -> crate::operation::create_server::builders::CreateServerFluentBuilder {
-        crate::operation::create_server::builders::CreateServerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_server(&self) -> crate::operation::create_server::builders::CreateServerFluentBuilder {
+        crate::operation::create_server::builders::CreateServerFluentBuilder::new(self.handle.clone())
     }
 }

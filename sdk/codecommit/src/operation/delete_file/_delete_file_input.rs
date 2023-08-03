@@ -71,9 +71,7 @@ impl DeleteFileInput {
 
 /// A builder for [`DeleteFileInput`](crate::operation::delete_file::DeleteFileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFileInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,
@@ -86,18 +84,12 @@ pub struct DeleteFileInputBuilder {
 }
 impl DeleteFileInputBuilder {
     /// <p>The name of the repository that contains the file to delete.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that contains the file to delete.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -134,18 +126,12 @@ impl DeleteFileInputBuilder {
         &self.file_path
     }
     /// <p>The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.</p>
-    pub fn parent_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.</p>
-    pub fn set_parent_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_commit_id = input;
         self
     }
@@ -168,18 +154,12 @@ impl DeleteFileInputBuilder {
         &self.keep_empty_folders
     }
     /// <p>The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
-    pub fn commit_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn commit_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
-    pub fn set_commit_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_message = input;
         self
     }
@@ -216,12 +196,7 @@ impl DeleteFileInputBuilder {
         &self.email
     }
     /// Consumes the builder and constructs a [`DeleteFileInput`](crate::operation::delete_file::DeleteFileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_file::DeleteFileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_file::DeleteFileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_file::DeleteFileInput {
             repository_name: self.repository_name,
             branch_name: self.branch_name,

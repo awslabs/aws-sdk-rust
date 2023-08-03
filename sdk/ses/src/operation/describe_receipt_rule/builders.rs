@@ -39,9 +39,7 @@ impl DescribeReceiptRuleFluentBuilder {
         }
     }
     /// Access the DescribeReceiptRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_receipt_rule::builders::DescribeReceiptRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_receipt_rule::builders::DescribeReceiptRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DescribeReceiptRuleFluentBuilder {
             crate::operation::describe_receipt_rule::DescribeReceiptRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_receipt_rule::DescribeReceiptRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_receipt_rule::DescribeReceiptRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DescribeReceiptRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DescribeReceiptRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_receipt_rule::DescribeReceiptRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_receipt_rule::DescribeReceiptRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_receipt_rule::DescribeReceiptRuleError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DescribeReceiptRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_receipt_rule::DescribeReceiptRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_receipt_rule::DescribeReceiptRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_receipt_rule::DescribeReceiptRuleError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +107,17 @@ impl DescribeReceiptRuleFluentBuilder {
             crate::operation::describe_receipt_rule::DescribeReceiptRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_receipt_rule::DescribeReceiptRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_receipt_rule::DescribeReceiptRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_set_name(input.into());
         self
     }
     /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }

@@ -17,20 +17,13 @@ pub struct GetComponentTypeOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     #[doc(hidden)]
-    pub property_definitions: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::PropertyDefinitionResponse,
-        >,
-    >,
+    pub property_definitions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionResponse>>,
     /// <p>The name of the parent component type that this component type extends.</p>
     #[doc(hidden)]
     pub extends_from: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     #[doc(hidden)]
-    pub functions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FunctionResponse>,
-    >,
+    pub functions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FunctionResponse>>,
     /// <p>The date and time when the component type was created.</p>
     #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -52,9 +45,7 @@ pub struct GetComponentTypeOutput {
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     #[doc(hidden)]
-    pub property_groups: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupResponse>,
-    >,
+    pub property_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupResponse>>,
     /// <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
     #[doc(hidden)]
     pub sync_source: ::std::option::Option<::std::string::String>,
@@ -83,12 +74,7 @@ impl GetComponentTypeOutput {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn property_definitions(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::PropertyDefinitionResponse,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionResponse>> {
         self.property_definitions.as_ref()
     }
     /// <p>The name of the parent component type that this component type extends.</p>
@@ -96,11 +82,7 @@ impl GetComponentTypeOutput {
         self.extends_from.as_deref()
     }
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn functions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::FunctionResponse>,
-    > {
+    pub fn functions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FunctionResponse>> {
         self.functions.as_ref()
     }
     /// <p>The date and time when the component type was created.</p>
@@ -129,11 +111,7 @@ impl GetComponentTypeOutput {
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
-    pub fn property_groups(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupResponse>,
-    > {
+    pub fn property_groups(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupResponse>> {
         self.property_groups.as_ref()
     }
     /// <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
@@ -152,41 +130,30 @@ impl ::aws_http::request_id::RequestId for GetComponentTypeOutput {
 }
 impl GetComponentTypeOutput {
     /// Creates a new builder-style object to manufacture [`GetComponentTypeOutput`](crate::operation::get_component_type::GetComponentTypeOutput).
-    pub fn builder() -> crate::operation::get_component_type::builders::GetComponentTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_component_type::builders::GetComponentTypeOutputBuilder {
         crate::operation::get_component_type::builders::GetComponentTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetComponentTypeOutput`](crate::operation::get_component_type::GetComponentTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComponentTypeOutputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_singleton: ::std::option::Option<bool>,
     pub(crate) component_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) property_definitions: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::PropertyDefinitionResponse,
-        >,
-    >,
+    pub(crate) property_definitions:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionResponse>>,
     pub(crate) extends_from: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) functions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FunctionResponse>,
-    >,
+    pub(crate) functions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FunctionResponse>>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) is_abstract: ::std::option::Option<bool>,
     pub(crate) is_schema_initialized: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
-    pub(crate) property_groups: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupResponse>,
-    >,
+    pub(crate) property_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupResponse>>,
     pub(crate) sync_source: ::std::option::Option<::std::string::String>,
     pub(crate) component_type_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -221,18 +188,12 @@ impl GetComponentTypeOutputBuilder {
         &self.is_singleton
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the component type.</p>
-    pub fn set_component_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_type_id = input;
         self
     }
@@ -259,11 +220,7 @@ impl GetComponentTypeOutputBuilder {
     /// To override the contents of this collection use [`set_property_definitions`](Self::set_property_definitions).
     ///
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn property_definitions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::PropertyDefinitionResponse,
-    ) -> Self {
+    pub fn property_definitions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PropertyDefinitionResponse) -> Self {
         let mut hash_map = self.property_definitions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.property_definitions = ::std::option::Option::Some(hash_map);
@@ -272,12 +229,7 @@ impl GetComponentTypeOutputBuilder {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn set_property_definitions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::PropertyDefinitionResponse,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionResponse>>,
     ) -> Self {
         self.property_definitions = input;
         self
@@ -285,12 +237,7 @@ impl GetComponentTypeOutputBuilder {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn get_property_definitions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::PropertyDefinitionResponse,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionResponse>> {
         &self.property_definitions
     }
     /// Appends an item to `extends_from`.
@@ -305,17 +252,12 @@ impl GetComponentTypeOutputBuilder {
         self
     }
     /// <p>The name of the parent component type that this component type extends.</p>
-    pub fn set_extends_from(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_extends_from(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.extends_from = input;
         self
     }
     /// <p>The name of the parent component type that this component type extends.</p>
-    pub fn get_extends_from(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_extends_from(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.extends_from
     }
     /// Adds a key-value pair to `functions`.
@@ -323,11 +265,7 @@ impl GetComponentTypeOutputBuilder {
     /// To override the contents of this collection use [`set_functions`](Self::set_functions).
     ///
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn functions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::FunctionResponse,
-    ) -> Self {
+    pub fn functions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FunctionResponse) -> Self {
         let mut hash_map = self.functions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.functions = ::std::option::Option::Some(hash_map);
@@ -336,19 +274,13 @@ impl GetComponentTypeOutputBuilder {
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn set_functions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::FunctionResponse>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FunctionResponse>>,
     ) -> Self {
         self.functions = input;
         self
     }
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn get_functions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FunctionResponse>,
-    > {
+    pub fn get_functions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FunctionResponse>> {
         &self.functions
     }
     /// <p>The date and time when the component type was created.</p>
@@ -357,10 +289,7 @@ impl GetComponentTypeOutputBuilder {
         self
     }
     /// <p>The date and time when the component type was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -374,10 +303,7 @@ impl GetComponentTypeOutputBuilder {
         self
     }
     /// <p>The date and time when the component was last updated.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date_time = input;
         self
     }
@@ -447,11 +373,7 @@ impl GetComponentTypeOutputBuilder {
     ///
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
-    pub fn property_groups(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::PropertyGroupResponse,
-    ) -> Self {
+    pub fn property_groups(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PropertyGroupResponse) -> Self {
         let mut hash_map = self.property_groups.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.property_groups = ::std::option::Option::Some(hash_map);
@@ -461,9 +383,7 @@ impl GetComponentTypeOutputBuilder {
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn set_property_groups(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupResponse>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupResponse>>,
     ) -> Self {
         self.property_groups = input;
         self
@@ -472,9 +392,7 @@ impl GetComponentTypeOutputBuilder {
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn get_property_groups(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupResponse>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupResponse>> {
         &self.property_groups
     }
     /// <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
@@ -492,18 +410,12 @@ impl GetComponentTypeOutputBuilder {
         &self.sync_source
     }
     /// <p>The component type name.</p>
-    pub fn component_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The component type name.</p>
-    pub fn set_component_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_type_name = input;
         self
     }

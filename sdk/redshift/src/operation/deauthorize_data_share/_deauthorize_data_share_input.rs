@@ -22,35 +22,26 @@ impl DeauthorizeDataShareInput {
 }
 impl DeauthorizeDataShareInput {
     /// Creates a new builder-style object to manufacture [`DeauthorizeDataShareInput`](crate::operation::deauthorize_data_share::DeauthorizeDataShareInput).
-    pub fn builder(
-    ) -> crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareInputBuilder {
+    pub fn builder() -> crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareInputBuilder {
         crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareInputBuilder::default()
     }
 }
 
 /// A builder for [`DeauthorizeDataShareInput`](crate::operation::deauthorize_data_share::DeauthorizeDataShareInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeauthorizeDataShareInputBuilder {
     pub(crate) data_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) consumer_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeauthorizeDataShareInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
-    pub fn data_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
-    pub fn set_data_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_share_arn = input;
         self
     }
@@ -59,18 +50,12 @@ impl DeauthorizeDataShareInputBuilder {
         &self.data_share_arn
     }
     /// <p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
-    pub fn consumer_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumer_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
-    pub fn set_consumer_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_consumer_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.consumer_identifier = input;
         self
     }
@@ -81,15 +66,11 @@ impl DeauthorizeDataShareInputBuilder {
     /// Consumes the builder and constructs a [`DeauthorizeDataShareInput`](crate::operation::deauthorize_data_share::DeauthorizeDataShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deauthorize_data_share::DeauthorizeDataShareInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::deauthorize_data_share::DeauthorizeDataShareInput {
-                data_share_arn: self.data_share_arn,
-                consumer_identifier: self.consumer_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::deauthorize_data_share::DeauthorizeDataShareInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::deauthorize_data_share::DeauthorizeDataShareInput {
+            data_share_arn: self.data_share_arn,
+            consumer_identifier: self.consumer_identifier,
+        })
     }
 }

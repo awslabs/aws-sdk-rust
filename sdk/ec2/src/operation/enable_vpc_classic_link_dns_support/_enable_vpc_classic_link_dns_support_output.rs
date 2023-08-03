@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for EnableVpcClassicLinkDnsSupportOutput 
 }
 impl EnableVpcClassicLinkDnsSupportOutput {
     /// Creates a new builder-style object to manufacture [`EnableVpcClassicLinkDnsSupportOutput`](crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportOutput).
-    pub fn builder() -> crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportOutputBuilder{
+    pub fn builder() -> crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportOutputBuilder {
         crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableVpcClassicLinkDnsSupportOutput`](crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableVpcClassicLinkDnsSupportOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,13 +58,9 @@ impl EnableVpcClassicLinkDnsSupportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableVpcClassicLinkDnsSupportOutput`](crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportOutput
-    {
+    pub fn build(self) -> crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportOutput {
         crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportOutput {
-            r#return: self.r#return
-            ,
+            r#return: self.r#return,
             _request_id: self._request_id,
         }
     }

@@ -13,10 +13,7 @@ pub struct DescribeRouteCalculatorOutput {
     #[doc(hidden)]
     pub calculator_arn: ::std::option::Option<::std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>The optional description of the route calculator resource.</p>
@@ -45,9 +42,7 @@ pub struct DescribeRouteCalculatorOutput {
     pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>Tags associated with route calculator resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeRouteCalculatorOutput {
@@ -63,10 +58,7 @@ impl DescribeRouteCalculatorOutput {
         self.calculator_arn.as_deref()
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -99,11 +91,7 @@ impl DescribeRouteCalculatorOutput {
         self.data_source.as_deref()
     }
     /// <p>Tags associated with route calculator resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -114,18 +102,14 @@ impl ::aws_http::request_id::RequestId for DescribeRouteCalculatorOutput {
 }
 impl DescribeRouteCalculatorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRouteCalculatorOutput`](crate::operation::describe_route_calculator::DescribeRouteCalculatorOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorOutputBuilder {
         crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRouteCalculatorOutput`](crate::operation::describe_route_calculator::DescribeRouteCalculatorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRouteCalculatorOutputBuilder {
     pub(crate) calculator_name: ::std::option::Option<::std::string::String>,
     pub(crate) calculator_arn: ::std::option::Option<::std::string::String>,
@@ -134,25 +118,17 @@ pub struct DescribeRouteCalculatorOutputBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_source: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeRouteCalculatorOutputBuilder {
     /// <p>The name of the route calculator resource being described.</p>
-    pub fn calculator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the route calculator resource being described.</p>
-    pub fn set_calculator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculator_name = input;
         self
     }
@@ -164,10 +140,7 @@ impl DescribeRouteCalculatorOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
-    pub fn calculator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -175,10 +148,7 @@ impl DescribeRouteCalculatorOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
-    pub fn set_calculator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculator_arn = input;
         self
     }
@@ -190,31 +160,19 @@ impl DescribeRouteCalculatorOutputBuilder {
         &self.calculator_arn
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.pricing_plan = ::std::option::Option::Some(input);
         self
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn set_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.pricing_plan = input;
         self
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. Always returns RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
         &self.pricing_plan
     }
@@ -244,10 +202,7 @@ impl DescribeRouteCalculatorOutputBuilder {
     /// <ul>
     /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -270,10 +225,7 @@ impl DescribeRouteCalculatorOutputBuilder {
     /// <ul>
     /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -321,32 +273,19 @@ impl DescribeRouteCalculatorOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags associated with route calculator resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags associated with route calculator resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags associated with route calculator resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -359,9 +298,7 @@ impl DescribeRouteCalculatorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRouteCalculatorOutput`](crate::operation::describe_route_calculator::DescribeRouteCalculatorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_route_calculator::DescribeRouteCalculatorOutput {
+    pub fn build(self) -> crate::operation::describe_route_calculator::DescribeRouteCalculatorOutput {
         crate::operation::describe_route_calculator::DescribeRouteCalculatorOutput {
             calculator_name: self.calculator_name,
             calculator_arn: self.calculator_arn,

@@ -19,9 +19,7 @@ pub struct AgentConfiguration {
     /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub agent_parameters: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>,
-    >,
+    pub agent_parameters: ::std::option::Option<::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>>,
 }
 impl AgentConfiguration {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
@@ -40,11 +38,7 @@ impl AgentConfiguration {
     /// <li> <p> <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles. </p> </li>
     /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li>
     /// </ul>
-    pub fn agent_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>,
-    > {
+    pub fn agent_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>> {
         self.agent_parameters.as_ref()
     }
 }
@@ -57,15 +51,11 @@ impl AgentConfiguration {
 
 /// A builder for [`AgentConfiguration`](crate::types::AgentConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentConfigurationBuilder {
     pub(crate) should_profile: ::std::option::Option<bool>,
     pub(crate) period_in_seconds: ::std::option::Option<i32>,
-    pub(crate) agent_parameters: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>,
-    >,
+    pub(crate) agent_parameters: ::std::option::Option<::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>>,
 }
 impl AgentConfigurationBuilder {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
@@ -108,11 +98,7 @@ impl AgentConfigurationBuilder {
     /// <li> <p> <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles. </p> </li>
     /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li>
     /// </ul>
-    pub fn agent_parameters(
-        mut self,
-        k: crate::types::AgentParameterField,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_parameters(mut self, k: crate::types::AgentParameterField, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.agent_parameters.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.agent_parameters = ::std::option::Option::Some(hash_map);
@@ -128,9 +114,7 @@ impl AgentConfigurationBuilder {
     /// </ul>
     pub fn set_agent_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>>,
     ) -> Self {
         self.agent_parameters = input;
         self
@@ -145,9 +129,7 @@ impl AgentConfigurationBuilder {
     /// </ul>
     pub fn get_agent_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>> {
         &self.agent_parameters
     }
     /// Consumes the builder and constructs a [`AgentConfiguration`](crate::types::AgentConfiguration).

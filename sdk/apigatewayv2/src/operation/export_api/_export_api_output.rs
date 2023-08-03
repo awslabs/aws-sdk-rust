@@ -28,9 +28,7 @@ impl ExportApiOutput {
 
 /// A builder for [`ExportApiOutput`](crate::operation::export_api::ExportApiOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportApiOutputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteElasticsearchServiceRoleOutput 
 }
 impl DeleteElasticsearchServiceRoleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteElasticsearchServiceRoleOutput`](crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleOutput).
-    pub fn builder() -> crate::operation::delete_elasticsearch_service_role::builders::DeleteElasticsearchServiceRoleOutputBuilder{
+    pub fn builder() -> crate::operation::delete_elasticsearch_service_role::builders::DeleteElasticsearchServiceRoleOutputBuilder {
         crate::operation::delete_elasticsearch_service_role::builders::DeleteElasticsearchServiceRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteElasticsearchServiceRoleOutput`](crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteElasticsearchServiceRoleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteElasticsearchServiceRoleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteElasticsearchServiceRoleOutput`](crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleOutput
-    {
+    pub fn build(self) -> crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleOutput {
         crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleOutput {
             _request_id: self._request_id,
         }

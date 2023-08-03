@@ -22,37 +22,26 @@ impl CreateStandbyWorkspacesInput {
 }
 impl CreateStandbyWorkspacesInput {
     /// Creates a new builder-style object to manufacture [`CreateStandbyWorkspacesInput`](crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput).
-    pub fn builder(
-    ) -> crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder {
         crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStandbyWorkspacesInput`](crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStandbyWorkspacesInputBuilder {
     pub(crate) primary_region: ::std::option::Option<::std::string::String>,
-    pub(crate) standby_workspaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>>,
+    pub(crate) standby_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>>,
 }
 impl CreateStandbyWorkspacesInputBuilder {
     /// <p>The Region of the primary WorkSpace.</p>
-    pub fn primary_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region of the primary WorkSpace.</p>
-    pub fn set_primary_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_region = input;
         self
     }
@@ -72,17 +61,12 @@ impl CreateStandbyWorkspacesInputBuilder {
         self
     }
     /// <p>Information about the standby WorkSpace to be created.</p>
-    pub fn set_standby_workspaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>>,
-    ) -> Self {
+    pub fn set_standby_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>>) -> Self {
         self.standby_workspaces = input;
         self
     }
     /// <p>Information about the standby WorkSpace to be created.</p>
-    pub fn get_standby_workspaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>> {
+    pub fn get_standby_workspaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>> {
         &self.standby_workspaces
     }
     /// Consumes the builder and constructs a [`CreateStandbyWorkspacesInput`](crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput).
@@ -92,11 +76,9 @@ impl CreateStandbyWorkspacesInputBuilder {
         crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput {
-                primary_region: self.primary_region,
-                standby_workspaces: self.standby_workspaces,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput {
+            primary_region: self.primary_region,
+            standby_workspaces: self.standby_workspaces,
+        })
     }
 }

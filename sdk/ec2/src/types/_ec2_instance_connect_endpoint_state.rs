@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Ec2InstanceConnectEndpointState {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for Ec2InstanceConnectEndpointState {
             "delete-complete" => Ec2InstanceConnectEndpointState::DeleteComplete,
             "delete-failed" => Ec2InstanceConnectEndpointState::DeleteFailed,
             "delete-in-progress" => Ec2InstanceConnectEndpointState::DeleteInProgress,
-            other => Ec2InstanceConnectEndpointState::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => Ec2InstanceConnectEndpointState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

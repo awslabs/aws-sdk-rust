@@ -29,16 +29,14 @@ impl ListAssociatedAttributeGroupsInput {
 }
 impl ListAssociatedAttributeGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedAttributeGroupsInput`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsInput).
-    pub fn builder() -> crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsInputBuilder{
+    pub fn builder() -> crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsInputBuilder {
         crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociatedAttributeGroupsInput`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedAttributeGroupsInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -94,15 +92,10 @@ impl ListAssociatedAttributeGroupsInputBuilder {
         crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsInput {
-                application: self.application
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsInput {
+            application: self.application,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

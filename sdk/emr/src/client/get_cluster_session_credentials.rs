@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`credentials(Option<Credentials>)`](crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsOutput::credentials): <p>The credentials that you can use to connect to cluster endpoints that support username and password authentication.</p>
     ///   - [`expires_at(Option<DateTime>)`](crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsOutput::expires_at): <p>The time when the credentials that are returned by the <code>GetClusterSessionCredentials</code> API expire.</p>
     /// - On failure, responds with [`SdkError<GetClusterSessionCredentialsError>`](crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsError)
-    pub fn get_cluster_session_credentials(&self) -> crate::operation::get_cluster_session_credentials::builders::GetClusterSessionCredentialsFluentBuilder{
+    pub fn get_cluster_session_credentials(
+        &self,
+    ) -> crate::operation::get_cluster_session_credentials::builders::GetClusterSessionCredentialsFluentBuilder {
         crate::operation::get_cluster_session_credentials::builders::GetClusterSessionCredentialsFluentBuilder::new(self.handle.clone())
     }
 }

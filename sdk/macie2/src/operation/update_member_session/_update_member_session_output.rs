@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateMemberSessionOutput {
 }
 impl UpdateMemberSessionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMemberSessionOutput`](crate::operation::update_member_session::UpdateMemberSessionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_member_session::builders::UpdateMemberSessionOutputBuilder {
-        crate::operation::update_member_session::builders::UpdateMemberSessionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_member_session::builders::UpdateMemberSessionOutputBuilder {
+        crate::operation::update_member_session::builders::UpdateMemberSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMemberSessionOutput`](crate::operation::update_member_session::UpdateMemberSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMemberSessionOutputBuilder {
     _request_id: Option<String>,
 }

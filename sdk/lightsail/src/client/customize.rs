@@ -19,10 +19,7 @@ impl<O, Retry> CustomizableOperation<O, Retry> {
         mut self,
         f: impl ::std::ops::FnOnce(
             ::http::Request<::aws_smithy_http::body::SdkBody>,
-        ) -> ::std::result::Result<
-            ::http::Request<::aws_smithy_http::body::SdkBody>,
-            E,
-        >,
+        ) -> ::std::result::Result<::http::Request<::aws_smithy_http::body::SdkBody>, E>,
     ) -> ::std::result::Result<Self, E> {
         let (request, response) = self.operation.into_request_response();
         let request = request.augment(|req, _props| f(req))?;
@@ -31,10 +28,7 @@ impl<O, Retry> CustomizableOperation<O, Retry> {
     }
 
     /// Convenience for `map_request` where infallible direct mutation of request is acceptable
-    pub fn mutate_request(
-        self,
-        f: impl ::std::ops::FnOnce(&mut ::http::Request<::aws_smithy_http::body::SdkBody>),
-    ) -> Self {
+    pub fn mutate_request(self, f: impl ::std::ops::FnOnce(&mut ::http::Request<::aws_smithy_http::body::SdkBody>)) -> Self {
         self.map_request(|mut req| {
             f(&mut req);
             ::std::result::Result::<_, ::std::convert::Infallible>::Ok(req)
@@ -66,18 +60,14 @@ impl<O, Retry> CustomizableOperation<O, Retry> {
     pub fn request_time_for_tests(mut self, request_time: ::std::time::SystemTime) -> Self {
         self.operation
             .properties_mut()
-            .insert(::aws_smithy_async::time::SharedTimeSource::new(
-                request_time,
-            ));
+            .insert(::aws_smithy_async::time::SharedTimeSource::new(request_time));
         self
     }
 
     #[doc(hidden)]
     // This is a temporary method for testing. NEVER use it in production
     pub fn user_agent_for_tests(mut self) -> Self {
-        self.operation
-            .properties_mut()
-            .insert(::aws_http::user_agent::AwsUserAgent::for_tests());
+        self.operation.properties_mut().insert(::aws_http::user_agent::AwsUserAgent::for_tests());
         self
     }
 
@@ -90,9 +80,7 @@ impl<O, Retry> CustomizableOperation<O, Retry> {
 
 impl<O, Retry> CustomizableOperation<O, Retry> {
     /// Sends this operation's request
-    pub async fn send<T, E>(
-        self,
-    ) -> ::std::result::Result<T, ::aws_smithy_http::result::SdkError<E>>
+    pub async fn send<T, E>(self) -> ::std::result::Result<T, ::aws_smithy_http::result::SdkError<E>>
     where
         E: std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
         O: ::aws_smithy_http::response::ParseHttpResponse<Output = ::std::result::Result<T, E>>
@@ -101,10 +89,8 @@ impl<O, Retry> CustomizableOperation<O, Retry> {
             + ::std::clone::Clone
             + 'static,
         Retry: ::std::marker::Send + ::std::marker::Sync + ::std::clone::Clone,
-        Retry: ::aws_smithy_http::retry::ClassifyRetry<
-                ::aws_smithy_http::result::SdkSuccess<T>,
-                ::aws_smithy_http::result::SdkError<E>,
-            > + ::std::marker::Send
+        Retry: ::aws_smithy_http::retry::ClassifyRetry<::aws_smithy_http::result::SdkSuccess<T>, ::aws_smithy_http::result::SdkError<E>>
+            + ::std::marker::Send
             + ::std::marker::Sync
             + ::std::clone::Clone,
     {

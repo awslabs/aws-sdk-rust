@@ -16,9 +16,7 @@ pub fn ser_update_file_system_open_zfs_configuration(
         object.key("CopyTagsToVolumes").boolean(*var_3);
     }
     if let Some(var_4) = &input.daily_automatic_backup_start_time {
-        object
-            .key("DailyAutomaticBackupStartTime")
-            .string(var_4.as_str());
+        object.key("DailyAutomaticBackupStartTime").string(var_4.as_str());
     }
     if let Some(var_5) = &input.throughput_capacity {
         object.key("ThroughputCapacity").number(
@@ -27,17 +25,12 @@ pub fn ser_update_file_system_open_zfs_configuration(
         );
     }
     if let Some(var_6) = &input.weekly_maintenance_start_time {
-        object
-            .key("WeeklyMaintenanceStartTime")
-            .string(var_6.as_str());
+        object.key("WeeklyMaintenanceStartTime").string(var_6.as_str());
     }
     if let Some(var_7) = &input.disk_iops_configuration {
         #[allow(unused_mut)]
         let mut object_8 = object.key("DiskIopsConfiguration").start_object();
-        crate::protocol_serde::shape_disk_iops_configuration::ser_disk_iops_configuration(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_disk_iops_configuration::ser_disk_iops_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())

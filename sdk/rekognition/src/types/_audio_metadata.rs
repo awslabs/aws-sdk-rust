@@ -44,9 +44,7 @@ impl AudioMetadata {
 
 /// A builder for [`AudioMetadata`](crate::types::AudioMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioMetadataBuilder {
     pub(crate) codec: ::std::option::Option<::std::string::String>,
     pub(crate) duration_millis: ::std::option::Option<i64>,

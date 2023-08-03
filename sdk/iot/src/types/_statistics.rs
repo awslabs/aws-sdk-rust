@@ -72,9 +72,7 @@ impl Statistics {
 
 /// A builder for [`Statistics`](crate::types::Statistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatisticsBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) average: ::std::option::Option<f64>,

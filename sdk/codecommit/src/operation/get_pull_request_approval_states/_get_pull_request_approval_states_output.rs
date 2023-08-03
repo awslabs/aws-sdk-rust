@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetPullRequestApprovalStatesOutput {
 }
 impl GetPullRequestApprovalStatesOutput {
     /// Creates a new builder-style object to manufacture [`GetPullRequestApprovalStatesOutput`](crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesOutput).
-    pub fn builder() -> crate::operation::get_pull_request_approval_states::builders::GetPullRequestApprovalStatesOutputBuilder{
+    pub fn builder() -> crate::operation::get_pull_request_approval_states::builders::GetPullRequestApprovalStatesOutputBuilder {
         crate::operation::get_pull_request_approval_states::builders::GetPullRequestApprovalStatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPullRequestApprovalStatesOutput`](crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPullRequestApprovalStatesOutputBuilder {
     pub(crate) approvals: ::std::option::Option<::std::vec::Vec<crate::types::Approval>>,
     _request_id: Option<String>,
@@ -48,10 +46,7 @@ impl GetPullRequestApprovalStatesOutputBuilder {
         self
     }
     /// <p>Information about users who have approved the pull request.</p>
-    pub fn set_approvals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Approval>>,
-    ) -> Self {
+    pub fn set_approvals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Approval>>) -> Self {
         self.approvals = input;
         self
     }
@@ -69,10 +64,7 @@ impl GetPullRequestApprovalStatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPullRequestApprovalStatesOutput`](crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesOutput
-    {
+    pub fn build(self) -> crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesOutput {
         crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesOutput {
             approvals: self.approvals,
             _request_id: self._request_id,

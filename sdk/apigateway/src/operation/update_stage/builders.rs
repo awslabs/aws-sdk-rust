@@ -10,10 +10,7 @@ impl UpdateStageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_stage::UpdateStageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_stage::UpdateStageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_stage::UpdateStageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_stage();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateStageFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_stage::UpdateStage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_stage::UpdateStage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_stage::UpdateStageError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateStageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateStageFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_stage::UpdateStage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_stage::UpdateStage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_stage::UpdateStageError>,
     > {
         self.customize_middleware().await
@@ -150,17 +138,12 @@ impl UpdateStageFluentBuilder {
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
         self.inner.get_patch_operations()
     }
 }

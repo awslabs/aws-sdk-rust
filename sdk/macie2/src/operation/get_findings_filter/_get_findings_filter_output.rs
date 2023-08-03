@@ -26,9 +26,7 @@ pub struct GetFindingsFilterOutput {
     pub position: ::std::option::Option<i32>,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetFindingsFilterOutput {
@@ -61,11 +59,7 @@ impl GetFindingsFilterOutput {
         self.position
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -76,17 +70,14 @@ impl ::aws_http::request_id::RequestId for GetFindingsFilterOutput {
 }
 impl GetFindingsFilterOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingsFilterOutput`](crate::operation::get_findings_filter::GetFindingsFilterOutput).
-    pub fn builder(
-    ) -> crate::operation::get_findings_filter::builders::GetFindingsFilterOutputBuilder {
+    pub fn builder() -> crate::operation::get_findings_filter::builders::GetFindingsFilterOutputBuilder {
         crate::operation::get_findings_filter::builders::GetFindingsFilterOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFindingsFilterOutput`](crate::operation::get_findings_filter::GetFindingsFilterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingsFilterOutputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::FindingsFilterAction>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -95,9 +86,7 @@ pub struct GetFindingsFilterOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetFindingsFilterOutputBuilder {
@@ -107,10 +96,7 @@ impl GetFindingsFilterOutputBuilder {
         self
     }
     /// <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingsFilterAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::FindingsFilterAction>) -> Self {
         self.action = input;
         self
     }
@@ -152,10 +138,7 @@ impl GetFindingsFilterOutputBuilder {
         self
     }
     /// <p>The criteria that's used to filter findings.</p>
-    pub fn set_finding_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
+    pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
         self.finding_criteria = input;
         self
     }
@@ -210,32 +193,19 @@ impl GetFindingsFilterOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

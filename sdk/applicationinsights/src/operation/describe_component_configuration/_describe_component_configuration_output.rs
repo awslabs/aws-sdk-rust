@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeComponentConfigurationOutput 
 }
 impl DescribeComponentConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeComponentConfigurationOutput`](crate::operation::describe_component_configuration::DescribeComponentConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationOutputBuilder {
         crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeComponentConfigurationOutput`](crate::operation::describe_component_configuration::DescribeComponentConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeComponentConfigurationOutputBuilder {
     pub(crate) monitor: ::std::option::Option<bool>,
     pub(crate) tier: ::std::option::Option<crate::types::Tier>,
@@ -81,18 +79,12 @@ impl DescribeComponentConfigurationOutputBuilder {
         &self.tier
     }
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration.</p>
-    pub fn component_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration.</p>
-    pub fn set_component_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_configuration = input;
         self
     }
@@ -110,10 +102,7 @@ impl DescribeComponentConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeComponentConfigurationOutput`](crate::operation::describe_component_configuration::DescribeComponentConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_component_configuration::DescribeComponentConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::describe_component_configuration::DescribeComponentConfigurationOutput {
         crate::operation::describe_component_configuration::DescribeComponentConfigurationOutput {
             monitor: self.monitor,
             tier: self.tier,

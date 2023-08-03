@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetChannelMessageStatusOutput {
 }
 impl GetChannelMessageStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetChannelMessageStatusOutput`](crate::operation::get_channel_message_status::GetChannelMessageStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_channel_message_status::builders::GetChannelMessageStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_channel_message_status::builders::GetChannelMessageStatusOutputBuilder {
         crate::operation::get_channel_message_status::builders::GetChannelMessageStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetChannelMessageStatusOutput`](crate::operation::get_channel_message_status::GetChannelMessageStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChannelMessageStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ChannelMessageStatusStructure>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetChannelMessageStatusOutputBuilder {
         self
     }
     /// <p>The message status and details.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessageStatusStructure>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChannelMessageStatusStructure>) -> Self {
         self.status = input;
         self
     }
     /// <p>The message status and details.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelMessageStatusStructure> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ChannelMessageStatusStructure> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl GetChannelMessageStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetChannelMessageStatusOutput`](crate::operation::get_channel_message_status::GetChannelMessageStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_channel_message_status::GetChannelMessageStatusOutput {
+    pub fn build(self) -> crate::operation::get_channel_message_status::GetChannelMessageStatusOutput {
         crate::operation::get_channel_message_status::GetChannelMessageStatusOutput {
             status: self.status,
             _request_id: self._request_id,

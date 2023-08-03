@@ -44,9 +44,7 @@ impl State {
 
 /// A builder for [`State`](crate::types::State).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StateBuilder {
     pub(crate) state_name: ::std::option::Option<::std::string::String>,
     pub(crate) on_input: ::std::option::Option<crate::types::OnInputLifecycle>,
@@ -74,10 +72,7 @@ impl StateBuilder {
         self
     }
     /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>
-    pub fn set_on_input(
-        mut self,
-        input: ::std::option::Option<crate::types::OnInputLifecycle>,
-    ) -> Self {
+    pub fn set_on_input(mut self, input: ::std::option::Option<crate::types::OnInputLifecycle>) -> Self {
         self.on_input = input;
         self
     }
@@ -91,10 +86,7 @@ impl StateBuilder {
         self
     }
     /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
-    pub fn set_on_enter(
-        mut self,
-        input: ::std::option::Option<crate::types::OnEnterLifecycle>,
-    ) -> Self {
+    pub fn set_on_enter(mut self, input: ::std::option::Option<crate::types::OnEnterLifecycle>) -> Self {
         self.on_enter = input;
         self
     }
@@ -108,10 +100,7 @@ impl StateBuilder {
         self
     }
     /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
-    pub fn set_on_exit(
-        mut self,
-        input: ::std::option::Option<crate::types::OnExitLifecycle>,
-    ) -> Self {
+    pub fn set_on_exit(mut self, input: ::std::option::Option<crate::types::OnExitLifecycle>) -> Self {
         self.on_exit = input;
         self
     }

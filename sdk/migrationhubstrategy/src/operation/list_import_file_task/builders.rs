@@ -10,10 +10,7 @@ impl ListImportFileTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_import_file_task::ListImportFileTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_import_file_task::ListImportFileTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_import_file_task::ListImportFileTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_import_file_task();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListImportFileTaskFluentBuilder {
         }
     }
     /// Access the ListImportFileTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_import_file_task::builders::ListImportFileTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_import_file_task::builders::ListImportFileTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListImportFileTaskFluentBuilder {
             crate::operation::list_import_file_task::ListImportFileTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_import_file_task::ListImportFileTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_import_file_task::ListImportFileTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListImportFileTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListImportFileTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_import_file_task::ListImportFileTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_import_file_task::ListImportFileTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_import_file_task::ListImportFileTaskError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListImportFileTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_import_file_task::ListImportFileTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_import_file_task::ListImportFileTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_import_file_task::ListImportFileTaskError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListImportFileTaskFluentBuilder {
             crate::operation::list_import_file_task::ListImportFileTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_import_file_task::ListImportFileTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_import_file_task::ListImportFileTaskError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_import_file_task::paginator::ListImportFileTaskPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_import_file_task::paginator::ListImportFileTaskPaginator {
-        crate::operation::list_import_file_task::paginator::ListImportFileTaskPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_import_file_task::paginator::ListImportFileTaskPaginator {
+        crate::operation::list_import_file_task::paginator::ListImportFileTaskPaginator::new(self.handle, self.inner)
     }
     /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

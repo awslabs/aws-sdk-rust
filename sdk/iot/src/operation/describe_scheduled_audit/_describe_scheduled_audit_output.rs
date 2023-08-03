@@ -56,18 +56,14 @@ impl ::aws_http::request_id::RequestId for DescribeScheduledAuditOutput {
 }
 impl DescribeScheduledAuditOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledAuditOutput`](crate::operation::describe_scheduled_audit::DescribeScheduledAuditOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_scheduled_audit::builders::DescribeScheduledAuditOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_scheduled_audit::builders::DescribeScheduledAuditOutputBuilder {
         crate::operation::describe_scheduled_audit::builders::DescribeScheduledAuditOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScheduledAuditOutput`](crate::operation::describe_scheduled_audit::DescribeScheduledAuditOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScheduledAuditOutputBuilder {
     pub(crate) frequency: ::std::option::Option<crate::types::AuditFrequency>,
     pub(crate) day_of_month: ::std::option::Option<::std::string::String>,
@@ -84,10 +80,7 @@ impl DescribeScheduledAuditOutputBuilder {
         self
     }
     /// <p>How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
-    pub fn set_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditFrequency>,
-    ) -> Self {
+    pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::AuditFrequency>) -> Self {
         self.frequency = input;
         self
     }
@@ -115,10 +108,7 @@ impl DescribeScheduledAuditOutputBuilder {
         self
     }
     /// <p>The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
-    pub fn set_day_of_week(
-        mut self,
-        input: ::std::option::Option<crate::types::DayOfWeek>,
-    ) -> Self {
+    pub fn set_day_of_week(mut self, input: ::std::option::Option<crate::types::DayOfWeek>) -> Self {
         self.day_of_week = input;
         self
     }
@@ -131,42 +121,28 @@ impl DescribeScheduledAuditOutputBuilder {
     /// To override the contents of this collection use [`set_target_check_names`](Self::set_target_check_names).
     ///
     /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn target_check_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_check_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_check_names.unwrap_or_default();
         v.push(input.into());
         self.target_check_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn set_target_check_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_check_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_check_names = input;
         self
     }
     /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn get_target_check_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_check_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_check_names
     }
     /// <p>The name of the scheduled audit.</p>
-    pub fn scheduled_audit_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_audit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_audit_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scheduled audit.</p>
-    pub fn set_scheduled_audit_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_audit_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_audit_name = input;
         self
     }
@@ -175,18 +151,12 @@ impl DescribeScheduledAuditOutputBuilder {
         &self.scheduled_audit_name
     }
     /// <p>The ARN of the scheduled audit.</p>
-    pub fn scheduled_audit_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_audit_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_audit_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the scheduled audit.</p>
-    pub fn set_scheduled_audit_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_audit_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_audit_arn = input;
         self
     }

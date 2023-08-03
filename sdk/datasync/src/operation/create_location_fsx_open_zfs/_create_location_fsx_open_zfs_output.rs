@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateLocationFsxOpenZfsOutput {
 }
 impl CreateLocationFsxOpenZfsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxOpenZfsOutput`](crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsOutput).
-    pub fn builder() -> crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsOutputBuilder{
+    pub fn builder() -> crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsOutputBuilder {
         crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationFsxOpenZfsOutput`](crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationFsxOpenZfsOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl CreateLocationFsxOpenZfsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLocationFsxOpenZfsOutput`](crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsOutput {
+    pub fn build(self) -> crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsOutput {
         crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsOutput {
             location_arn: self.location_arn,
             _request_id: self._request_id,

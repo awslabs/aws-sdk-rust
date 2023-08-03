@@ -43,18 +43,14 @@ impl StartAttachmentUploadInput {
 }
 impl StartAttachmentUploadInput {
     /// Creates a new builder-style object to manufacture [`StartAttachmentUploadInput`](crate::operation::start_attachment_upload::StartAttachmentUploadInput).
-    pub fn builder(
-    ) -> crate::operation::start_attachment_upload::builders::StartAttachmentUploadInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_attachment_upload::builders::StartAttachmentUploadInputBuilder {
         crate::operation::start_attachment_upload::builders::StartAttachmentUploadInputBuilder::default()
     }
 }
 
 /// A builder for [`StartAttachmentUploadInput`](crate::operation::start_attachment_upload::StartAttachmentUploadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartAttachmentUploadInputBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_size_in_bytes: ::std::option::Option<i64>,
@@ -92,18 +88,12 @@ impl StartAttachmentUploadInputBuilder {
         &self.attachment_size_in_bytes
     }
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
-    pub fn attachment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
-    pub fn set_attachment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_name = input;
         self
     }
@@ -126,18 +116,12 @@ impl StartAttachmentUploadInputBuilder {
         &self.client_token
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn connection_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn set_connection_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_token = input;
         self
     }
@@ -148,18 +132,14 @@ impl StartAttachmentUploadInputBuilder {
     /// Consumes the builder and constructs a [`StartAttachmentUploadInput`](crate::operation::start_attachment_upload::StartAttachmentUploadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_attachment_upload::StartAttachmentUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_attachment_upload::StartAttachmentUploadInput {
-                content_type: self.content_type,
-                attachment_size_in_bytes: self.attachment_size_in_bytes,
-                attachment_name: self.attachment_name,
-                client_token: self.client_token,
-                connection_token: self.connection_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_attachment_upload::StartAttachmentUploadInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_attachment_upload::StartAttachmentUploadInput {
+            content_type: self.content_type,
+            attachment_size_in_bytes: self.attachment_size_in_bytes,
+            attachment_name: self.attachment_name,
+            client_token: self.client_token,
+            connection_token: self.connection_token,
+        })
     }
 }

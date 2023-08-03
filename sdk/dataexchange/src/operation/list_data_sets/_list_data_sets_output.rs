@@ -35,9 +35,7 @@ impl ListDataSetsOutput {
 
 /// A builder for [`ListDataSetsOutput`](crate::operation::list_data_sets::ListDataSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSetsOutputBuilder {
     pub(crate) data_sets: ::std::option::Option<::std::vec::Vec<crate::types::DataSetEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListDataSetsOutputBuilder {
         self
     }
     /// <p>The data set objects listed by the request.</p>
-    pub fn set_data_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetEntry>>,
-    ) -> Self {
+    pub fn set_data_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetEntry>>) -> Self {
         self.data_sets = input;
         self
     }
     /// <p>The data set objects listed by the request.</p>
-    pub fn get_data_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetEntry>> {
+    pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetEntry>> {
         &self.data_sets
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>

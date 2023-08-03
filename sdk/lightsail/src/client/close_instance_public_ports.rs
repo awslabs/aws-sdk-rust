@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CloseInstancePublicPortsOutput`](crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput::operation): <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CloseInstancePublicPortsError>`](crate::operation::close_instance_public_ports::CloseInstancePublicPortsError)
-    pub fn close_instance_public_ports(&self) -> crate::operation::close_instance_public_ports::builders::CloseInstancePublicPortsFluentBuilder{
+    pub fn close_instance_public_ports(&self) -> crate::operation::close_instance_public_ports::builders::CloseInstancePublicPortsFluentBuilder {
         crate::operation::close_instance_public_ports::builders::CloseInstancePublicPortsFluentBuilder::new(self.handle.clone())
     }
 }

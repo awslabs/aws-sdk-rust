@@ -37,9 +37,7 @@ impl TrainingDataResult {
 
 /// A builder for [`TrainingDataResult`](crate::types::TrainingDataResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrainingDataResultBuilder {
     pub(crate) input: ::std::option::Option<crate::types::TrainingData>,
     pub(crate) output: ::std::option::Option<crate::types::TrainingData>,
@@ -80,10 +78,7 @@ impl TrainingDataResultBuilder {
         self
     }
     /// <p>The location of the data validation manifest. The data validation manifest is created for the training dataset during model training.</p>
-    pub fn set_validation(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationData>,
-    ) -> Self {
+    pub fn set_validation(mut self, input: ::std::option::Option<crate::types::ValidationData>) -> Self {
         self.validation = input;
         self
     }

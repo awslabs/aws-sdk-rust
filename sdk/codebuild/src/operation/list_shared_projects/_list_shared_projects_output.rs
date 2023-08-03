@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSharedProjectsOutput {
 }
 impl ListSharedProjectsOutput {
     /// Creates a new builder-style object to manufacture [`ListSharedProjectsOutput`](crate::operation::list_shared_projects::ListSharedProjectsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_shared_projects::builders::ListSharedProjectsOutputBuilder {
+    pub fn builder() -> crate::operation::list_shared_projects::builders::ListSharedProjectsOutputBuilder {
         crate::operation::list_shared_projects::builders::ListSharedProjectsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSharedProjectsOutput`](crate::operation::list_shared_projects::ListSharedProjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSharedProjectsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) projects: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,10 +68,7 @@ impl ListSharedProjectsOutputBuilder {
         self
     }
     /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user. </p>
-    pub fn set_projects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_projects(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.projects = input;
         self
     }

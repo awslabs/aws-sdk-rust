@@ -28,9 +28,7 @@ impl UpdateListenerOutput {
 
 /// A builder for [`UpdateListenerOutput`](crate::operation::update_listener::UpdateListenerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateListenerOutputBuilder {
     pub(crate) listener: ::std::option::Option<crate::types::Listener>,
     _request_id: Option<String>,

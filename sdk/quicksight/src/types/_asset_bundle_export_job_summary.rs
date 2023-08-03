@@ -58,9 +58,7 @@ impl AssetBundleExportJobSummary {
 
 /// A builder for [`AssetBundleExportJobSummary`](crate::types::AssetBundleExportJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleExportJobSummaryBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::AssetBundleExportJobStatus>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -76,17 +74,12 @@ impl AssetBundleExportJobSummaryBuilder {
         self
     }
     /// <p>The current status of the export job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetBundleExportJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::AssetBundleExportJobStatus>) -> Self {
         self.job_status = input;
         self
     }
     /// <p>The current status of the export job.</p>
-    pub fn get_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssetBundleExportJobStatus> {
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::AssetBundleExportJobStatus> {
         &self.job_status
     }
     /// <p>The ARN of the export job.</p>
@@ -109,10 +102,7 @@ impl AssetBundleExportJobSummaryBuilder {
         self
     }
     /// <p>The time that the export job was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -121,18 +111,12 @@ impl AssetBundleExportJobSummaryBuilder {
         &self.created_time
     }
     /// <p>The ID of the export job.</p>
-    pub fn asset_bundle_export_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_bundle_export_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_bundle_export_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the export job.</p>
-    pub fn set_asset_bundle_export_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_bundle_export_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_bundle_export_job_id = input;
         self
     }
@@ -160,17 +144,12 @@ impl AssetBundleExportJobSummaryBuilder {
         self
     }
     /// <p>The format for the export job.</p>
-    pub fn set_export_format(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetBundleExportFormat>,
-    ) -> Self {
+    pub fn set_export_format(mut self, input: ::std::option::Option<crate::types::AssetBundleExportFormat>) -> Self {
         self.export_format = input;
         self
     }
     /// <p>The format for the export job.</p>
-    pub fn get_export_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssetBundleExportFormat> {
+    pub fn get_export_format(&self) -> &::std::option::Option<crate::types::AssetBundleExportFormat> {
         &self.export_format
     }
     /// Consumes the builder and constructs a [`AssetBundleExportJobSummary`](crate::types::AssetBundleExportJobSummary).

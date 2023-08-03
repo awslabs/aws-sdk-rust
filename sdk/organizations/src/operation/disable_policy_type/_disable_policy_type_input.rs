@@ -36,17 +36,14 @@ impl DisablePolicyTypeInput {
 }
 impl DisablePolicyTypeInput {
     /// Creates a new builder-style object to manufacture [`DisablePolicyTypeInput`](crate::operation::disable_policy_type::DisablePolicyTypeInput).
-    pub fn builder(
-    ) -> crate::operation::disable_policy_type::builders::DisablePolicyTypeInputBuilder {
+    pub fn builder() -> crate::operation::disable_policy_type::builders::DisablePolicyTypeInputBuilder {
         crate::operation::disable_policy_type::builders::DisablePolicyTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DisablePolicyTypeInput`](crate::operation::disable_policy_type::DisablePolicyTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisablePolicyTypeInputBuilder {
     pub(crate) root_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,
@@ -87,10 +84,7 @@ impl DisablePolicyTypeInputBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.policy_type = input;
         self
     }
@@ -107,15 +101,10 @@ impl DisablePolicyTypeInputBuilder {
     /// Consumes the builder and constructs a [`DisablePolicyTypeInput`](crate::operation::disable_policy_type::DisablePolicyTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_policy_type::DisablePolicyTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_policy_type::DisablePolicyTypeInput {
-                root_id: self.root_id,
-                policy_type: self.policy_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disable_policy_type::DisablePolicyTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::disable_policy_type::DisablePolicyTypeInput {
+            root_id: self.root_id,
+            policy_type: self.policy_type,
+        })
     }
 }

@@ -45,9 +45,7 @@ impl SecurityControlDefinition {
         self.severity_rating.as_ref()
     }
     /// <p> Specifies whether a security control is available in the current Amazon Web Services Region. </p>
-    pub fn current_region_availability(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RegionAvailabilityStatus> {
+    pub fn current_region_availability(&self) -> ::std::option::Option<&crate::types::RegionAvailabilityStatus> {
         self.current_region_availability.as_ref()
     }
 }
@@ -60,32 +58,23 @@ impl SecurityControlDefinition {
 
 /// A builder for [`SecurityControlDefinition`](crate::types::SecurityControlDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityControlDefinitionBuilder {
     pub(crate) security_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) remediation_url: ::std::option::Option<::std::string::String>,
     pub(crate) severity_rating: ::std::option::Option<crate::types::SeverityRating>,
-    pub(crate) current_region_availability:
-        ::std::option::Option<crate::types::RegionAvailabilityStatus>,
+    pub(crate) current_region_availability: ::std::option::Option<crate::types::RegionAvailabilityStatus>,
 }
 impl SecurityControlDefinitionBuilder {
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3). </p>
-    pub fn security_control_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3). </p>
-    pub fn set_security_control_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_id = input;
         self
     }
@@ -122,18 +111,12 @@ impl SecurityControlDefinitionBuilder {
         &self.description
     }
     /// <p> A link to Security Hub documentation that explains how to remediate a failed finding for a security control. </p>
-    pub fn remediation_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remediation_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remediation_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A link to Security Hub documentation that explains how to remediate a failed finding for a security control. </p>
-    pub fn set_remediation_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remediation_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remediation_url = input;
         self
     }
@@ -147,10 +130,7 @@ impl SecurityControlDefinitionBuilder {
         self
     }
     /// <p> The severity of a security control. For more information about how Security Hub determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub User Guide</i>. </p>
-    pub fn set_severity_rating(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityRating>,
-    ) -> Self {
+    pub fn set_severity_rating(mut self, input: ::std::option::Option<crate::types::SeverityRating>) -> Self {
         self.severity_rating = input;
         self
     }
@@ -159,25 +139,17 @@ impl SecurityControlDefinitionBuilder {
         &self.severity_rating
     }
     /// <p> Specifies whether a security control is available in the current Amazon Web Services Region. </p>
-    pub fn current_region_availability(
-        mut self,
-        input: crate::types::RegionAvailabilityStatus,
-    ) -> Self {
+    pub fn current_region_availability(mut self, input: crate::types::RegionAvailabilityStatus) -> Self {
         self.current_region_availability = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies whether a security control is available in the current Amazon Web Services Region. </p>
-    pub fn set_current_region_availability(
-        mut self,
-        input: ::std::option::Option<crate::types::RegionAvailabilityStatus>,
-    ) -> Self {
+    pub fn set_current_region_availability(mut self, input: ::std::option::Option<crate::types::RegionAvailabilityStatus>) -> Self {
         self.current_region_availability = input;
         self
     }
     /// <p> Specifies whether a security control is available in the current Amazon Web Services Region. </p>
-    pub fn get_current_region_availability(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegionAvailabilityStatus> {
+    pub fn get_current_region_availability(&self) -> &::std::option::Option<crate::types::RegionAvailabilityStatus> {
         &self.current_region_availability
     }
     /// Consumes the builder and constructs a [`SecurityControlDefinition`](crate::types::SecurityControlDefinition).

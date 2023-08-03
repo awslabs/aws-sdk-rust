@@ -5,18 +5,14 @@
 pub struct GetPhoneNumberSettingsInput {}
 impl GetPhoneNumberSettingsInput {
     /// Creates a new builder-style object to manufacture [`GetPhoneNumberSettingsInput`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsInputBuilder {
         crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPhoneNumberSettingsInput`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPhoneNumberSettingsInputBuilder {}
 impl GetPhoneNumberSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetPhoneNumberSettingsInput`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput).
@@ -26,8 +22,6 @@ impl GetPhoneNumberSettingsInputBuilder {
         crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput {})
     }
 }

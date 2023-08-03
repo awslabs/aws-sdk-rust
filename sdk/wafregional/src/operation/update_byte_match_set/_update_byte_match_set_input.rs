@@ -39,17 +39,14 @@ impl UpdateByteMatchSetInput {
 }
 impl UpdateByteMatchSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateByteMatchSetInput`](crate::operation::update_byte_match_set::UpdateByteMatchSetInput).
-    pub fn builder(
-    ) -> crate::operation::update_byte_match_set::builders::UpdateByteMatchSetInputBuilder {
+    pub fn builder() -> crate::operation::update_byte_match_set::builders::UpdateByteMatchSetInputBuilder {
         crate::operation::update_byte_match_set::builders::UpdateByteMatchSetInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateByteMatchSetInput`](crate::operation::update_byte_match_set::UpdateByteMatchSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateByteMatchSetInputBuilder {
     pub(crate) byte_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -57,18 +54,12 @@ pub struct UpdateByteMatchSetInputBuilder {
 }
 impl UpdateByteMatchSetInputBuilder {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn byte_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn byte_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.byte_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn set_byte_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_byte_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.byte_match_set_id = input;
         self
     }
@@ -112,10 +103,7 @@ impl UpdateByteMatchSetInputBuilder {
     /// <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>>) -> Self {
         self.updates = input;
         self
     }
@@ -125,24 +113,18 @@ impl UpdateByteMatchSetInputBuilder {
     /// <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetUpdate>> {
         &self.updates
     }
     /// Consumes the builder and constructs a [`UpdateByteMatchSetInput`](crate::operation::update_byte_match_set::UpdateByteMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_byte_match_set::UpdateByteMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_byte_match_set::UpdateByteMatchSetInput {
-                byte_match_set_id: self.byte_match_set_id,
-                change_token: self.change_token,
-                updates: self.updates,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_byte_match_set::UpdateByteMatchSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_byte_match_set::UpdateByteMatchSetInput {
+            byte_match_set_id: self.byte_match_set_id,
+            change_token: self.change_token,
+            updates: self.updates,
+        })
     }
 }

@@ -15,34 +15,25 @@ impl GetFirewallRuleGroupInput {
 }
 impl GetFirewallRuleGroupInput {
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupInput`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput).
-    pub fn builder(
-    ) -> crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupInputBuilder {
+    pub fn builder() -> crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupInputBuilder {
         crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFirewallRuleGroupInput`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFirewallRuleGroupInputBuilder {
     pub(crate) firewall_rule_group_id: ::std::option::Option<::std::string::String>,
 }
 impl GetFirewallRuleGroupInputBuilder {
     /// <p>The unique identifier of the firewall rule group. </p>
-    pub fn firewall_rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the firewall rule group. </p>
-    pub fn set_firewall_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_rule_group_id = input;
         self
     }
@@ -53,14 +44,10 @@ impl GetFirewallRuleGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetFirewallRuleGroupInput`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput {
-                firewall_rule_group_id: self.firewall_rule_group_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput {
+            firewall_rule_group_id: self.firewall_rule_group_id,
+        })
     }
 }

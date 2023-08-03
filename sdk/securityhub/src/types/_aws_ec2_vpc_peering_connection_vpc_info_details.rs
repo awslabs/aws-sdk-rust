@@ -9,12 +9,10 @@ pub struct AwsEc2VpcPeeringConnectionVpcInfoDetails {
     pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the IPv4 CIDR blocks for the VPC. </p>
     #[doc(hidden)]
-    pub cidr_block_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoCidrBlockSetDetails>>,
+    pub cidr_block_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoCidrBlockSetDetails>>,
     /// <p>The IPv6 CIDR block for the VPC. </p>
     #[doc(hidden)]
-    pub ipv6_cidr_block_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoIpv6CidrBlockSetDetails>>,
+    pub ipv6_cidr_block_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoIpv6CidrBlockSetDetails>>,
     /// <p>The ID of the Amazon Web Services account that owns the VPC. </p>
     #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
@@ -34,15 +32,11 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetails {
         self.cidr_block.as_deref()
     }
     /// <p>Information about the IPv4 CIDR blocks for the VPC. </p>
-    pub fn cidr_block_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VpcInfoCidrBlockSetDetails]> {
+    pub fn cidr_block_set(&self) -> ::std::option::Option<&[crate::types::VpcInfoCidrBlockSetDetails]> {
         self.cidr_block_set.as_deref()
     }
     /// <p>The IPv6 CIDR block for the VPC. </p>
-    pub fn ipv6_cidr_block_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VpcInfoIpv6CidrBlockSetDetails]> {
+    pub fn ipv6_cidr_block_set(&self) -> ::std::option::Option<&[crate::types::VpcInfoIpv6CidrBlockSetDetails]> {
         self.ipv6_cidr_block_set.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the VPC. </p>
@@ -50,9 +44,7 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetails {
         self.owner_id.as_deref()
     }
     /// <p>Information about the VPC peering connection options for the accepter or requester VPC. </p>
-    pub fn peering_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcInfoPeeringOptionsDetails> {
+    pub fn peering_options(&self) -> ::std::option::Option<&crate::types::VpcInfoPeeringOptionsDetails> {
         self.peering_options.as_ref()
     }
     /// <p>The Amazon Web Services Region in which the VPC is located. </p>
@@ -73,15 +65,11 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetails {
 
 /// A builder for [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2VpcPeeringConnectionVpcInfoDetailsBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
-    pub(crate) cidr_block_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoCidrBlockSetDetails>>,
-    pub(crate) ipv6_cidr_block_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoIpv6CidrBlockSetDetails>>,
+    pub(crate) cidr_block_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoCidrBlockSetDetails>>,
+    pub(crate) ipv6_cidr_block_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoIpv6CidrBlockSetDetails>>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) peering_options: ::std::option::Option<crate::types::VpcInfoPeeringOptionsDetails>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
@@ -114,17 +102,12 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetailsBuilder {
         self
     }
     /// <p>Information about the IPv4 CIDR blocks for the VPC. </p>
-    pub fn set_cidr_block_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoCidrBlockSetDetails>>,
-    ) -> Self {
+    pub fn set_cidr_block_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoCidrBlockSetDetails>>) -> Self {
         self.cidr_block_set = input;
         self
     }
     /// <p>Information about the IPv4 CIDR blocks for the VPC. </p>
-    pub fn get_cidr_block_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInfoCidrBlockSetDetails>> {
+    pub fn get_cidr_block_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInfoCidrBlockSetDetails>> {
         &self.cidr_block_set
     }
     /// Appends an item to `ipv6_cidr_block_set`.
@@ -132,27 +115,19 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetailsBuilder {
     /// To override the contents of this collection use [`set_ipv6_cidr_block_set`](Self::set_ipv6_cidr_block_set).
     ///
     /// <p>The IPv6 CIDR block for the VPC. </p>
-    pub fn ipv6_cidr_block_set(
-        mut self,
-        input: crate::types::VpcInfoIpv6CidrBlockSetDetails,
-    ) -> Self {
+    pub fn ipv6_cidr_block_set(mut self, input: crate::types::VpcInfoIpv6CidrBlockSetDetails) -> Self {
         let mut v = self.ipv6_cidr_block_set.unwrap_or_default();
         v.push(input);
         self.ipv6_cidr_block_set = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IPv6 CIDR block for the VPC. </p>
-    pub fn set_ipv6_cidr_block_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoIpv6CidrBlockSetDetails>>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_block_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoIpv6CidrBlockSetDetails>>) -> Self {
         self.ipv6_cidr_block_set = input;
         self
     }
     /// <p>The IPv6 CIDR block for the VPC. </p>
-    pub fn get_ipv6_cidr_block_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInfoIpv6CidrBlockSetDetails>> {
+    pub fn get_ipv6_cidr_block_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInfoIpv6CidrBlockSetDetails>> {
         &self.ipv6_cidr_block_set
     }
     /// <p>The ID of the Amazon Web Services account that owns the VPC. </p>
@@ -175,17 +150,12 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetailsBuilder {
         self
     }
     /// <p>Information about the VPC peering connection options for the accepter or requester VPC. </p>
-    pub fn set_peering_options(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcInfoPeeringOptionsDetails>,
-    ) -> Self {
+    pub fn set_peering_options(mut self, input: ::std::option::Option<crate::types::VpcInfoPeeringOptionsDetails>) -> Self {
         self.peering_options = input;
         self
     }
     /// <p>Information about the VPC peering connection options for the accepter or requester VPC. </p>
-    pub fn get_peering_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcInfoPeeringOptionsDetails> {
+    pub fn get_peering_options(&self) -> &::std::option::Option<crate::types::VpcInfoPeeringOptionsDetails> {
         &self.peering_options
     }
     /// <p>The Amazon Web Services Region in which the VPC is located. </p>

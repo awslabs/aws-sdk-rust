@@ -12,7 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTemplateSyncConfigOutput`](crate::operation::create_template_sync_config::CreateTemplateSyncConfigOutput) with field(s):
     ///   - [`template_sync_config(Option<TemplateSyncConfig>)`](crate::operation::create_template_sync_config::CreateTemplateSyncConfigOutput::template_sync_config): <p>The template sync configuration detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateTemplateSyncConfigError>`](crate::operation::create_template_sync_config::CreateTemplateSyncConfigError)
-    pub fn create_template_sync_config(&self) -> crate::operation::create_template_sync_config::builders::CreateTemplateSyncConfigFluentBuilder{
+    pub fn create_template_sync_config(&self) -> crate::operation::create_template_sync_config::builders::CreateTemplateSyncConfigFluentBuilder {
         crate::operation::create_template_sync_config::builders::CreateTemplateSyncConfigFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl CreateOpsItemInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_ops_item::CreateOpsItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ops_item::CreateOpsItemError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ops_item::CreateOpsItemError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_ops_item();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateOpsItemFluentBuilder {
         }
     }
     /// Access the CreateOpsItem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_ops_item::builders::CreateOpsItemInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_ops_item::builders::CreateOpsItemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl CreateOpsItemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -135,10 +127,7 @@ impl CreateOpsItemFluentBuilder {
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
     /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
-    pub fn ops_item_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ops_item_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ops_item_type(input.into());
         self
     }
@@ -148,10 +137,7 @@ impl CreateOpsItemFluentBuilder {
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
     /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
-    pub fn set_ops_item_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ops_item_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ops_item_type(input);
         self
     }
@@ -173,11 +159,7 @@ impl CreateOpsItemFluentBuilder {
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn operational_data(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::OpsItemDataValue,
-    ) -> Self {
+    pub fn operational_data(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::OpsItemDataValue) -> Self {
         self.inner = self.inner.operational_data(k.into(), v);
         self
     }
@@ -188,9 +170,7 @@ impl CreateOpsItemFluentBuilder {
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_operational_data(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>>,
     ) -> Self {
         self.inner = self.inner.set_operational_data(input);
         self
@@ -200,11 +180,7 @@ impl CreateOpsItemFluentBuilder {
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn get_operational_data(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>,
-    > {
+    pub fn get_operational_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>> {
         self.inner.get_operational_data()
     }
     /// Appends an item to `Notifications`.
@@ -217,17 +193,12 @@ impl CreateOpsItemFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
-    pub fn set_notifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemNotification>>,
-    ) -> Self {
+    pub fn set_notifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemNotification>>) -> Self {
         self.inner = self.inner.set_notifications(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
-    pub fn get_notifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemNotification>> {
+    pub fn get_notifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemNotification>> {
         self.inner.get_notifications()
     }
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
@@ -254,17 +225,12 @@ impl CreateOpsItemFluentBuilder {
         self
     }
     /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
-    pub fn set_related_ops_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedOpsItem>>,
-    ) -> Self {
+    pub fn set_related_ops_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedOpsItem>>) -> Self {
         self.inner = self.inner.set_related_ops_items(input);
         self
     }
     /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
-    pub fn get_related_ops_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedOpsItem>> {
+    pub fn get_related_ops_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedOpsItem>> {
         self.inner.get_related_ops_items()
     }
     /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
@@ -319,10 +285,7 @@ impl CreateOpsItemFluentBuilder {
     /// <p> <code>Key=Department,Value=Finance</code> </p> <important>
     /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the <code>AddTagsToResource</code> operation.</p>
     /// </important>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -368,10 +331,7 @@ impl CreateOpsItemFluentBuilder {
         self
     }
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn set_actual_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_actual_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_actual_start_time(input);
         self
     }
@@ -385,10 +345,7 @@ impl CreateOpsItemFluentBuilder {
         self
     }
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn set_actual_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_actual_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_actual_end_time(input);
         self
     }
@@ -402,10 +359,7 @@ impl CreateOpsItemFluentBuilder {
         self
     }
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn set_planned_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_planned_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_planned_start_time(input);
         self
     }
@@ -419,10 +373,7 @@ impl CreateOpsItemFluentBuilder {
         self
     }
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn set_planned_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_planned_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_planned_end_time(input);
         self
     }

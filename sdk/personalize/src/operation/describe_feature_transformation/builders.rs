@@ -26,7 +26,7 @@ impl DescribeFeatureTransformationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFeatureTransformationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_feature_transformation::builders::DescribeFeatureTransformationInputBuilder,
+    inner: crate::operation::describe_feature_transformation::builders::DescribeFeatureTransformationInputBuilder,
 }
 impl DescribeFeatureTransformationFluentBuilder {
     /// Creates a new `DescribeFeatureTransformation`.
@@ -37,7 +37,7 @@ impl DescribeFeatureTransformationFluentBuilder {
         }
     }
     /// Access the DescribeFeatureTransformation as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_feature_transformation::builders::DescribeFeatureTransformationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_feature_transformation::builders::DescribeFeatureTransformationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeFeatureTransformationFluentBuilder {
             crate::operation::describe_feature_transformation::DescribeFeatureTransformation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_feature_transformation::DescribeFeatureTransformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_feature_transformation::DescribeFeatureTransformationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeFeatureTransformationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeFeatureTransformationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_feature_transformation::DescribeFeatureTransformationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_feature_transformation::DescribeFeatureTransformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_feature_transformation::DescribeFeatureTransformationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeFeatureTransformationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_feature_transformation::DescribeFeatureTransformationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_feature_transformation::DescribeFeatureTransformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_feature_transformation::DescribeFeatureTransformationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeFeatureTransformationFluentBuilder {
             crate::operation::describe_feature_transformation::DescribeFeatureTransformation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_feature_transformation::DescribeFeatureTransformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_feature_transformation::DescribeFeatureTransformationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
-    pub fn feature_transformation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_transformation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_transformation_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
-    pub fn set_feature_transformation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_transformation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature_transformation_arn(input);
         self
     }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCustomDomainAssociationOutput {
 }
 impl DeleteCustomDomainAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomDomainAssociationOutput`](crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationOutput).
-    pub fn builder() -> crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationOutputBuilder {
         crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomDomainAssociationOutput`](crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomDomainAssociationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteCustomDomainAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCustomDomainAssociationOutput`](crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationOutput {
         crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationOutput {
             _request_id: self._request_id,
         }

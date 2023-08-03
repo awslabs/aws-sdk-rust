@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`GenerateDataSetOutput`](crate::operation::generate_data_set::GenerateDataSetOutput) with field(s):
     ///   - [`data_set_request_id(Option<String>)`](crate::operation::generate_data_set::GenerateDataSetOutput::data_set_request_id): A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     /// - On failure, responds with [`SdkError<GenerateDataSetError>`](crate::operation::generate_data_set::GenerateDataSetError)
-    pub fn generate_data_set(
-        &self,
-    ) -> crate::operation::generate_data_set::builders::GenerateDataSetFluentBuilder {
-        crate::operation::generate_data_set::builders::GenerateDataSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn generate_data_set(&self) -> crate::operation::generate_data_set::builders::GenerateDataSetFluentBuilder {
+        crate::operation::generate_data_set::builders::GenerateDataSetFluentBuilder::new(self.handle.clone())
     }
 }

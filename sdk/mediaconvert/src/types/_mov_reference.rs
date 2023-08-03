@@ -38,13 +38,7 @@
 /// Always keep the default value (SELF_CONTAINED) for this setting.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MovReference {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for MovReference {
         match s {
             "EXTERNAL" => MovReference::External,
             "SELF_CONTAINED" => MovReference::SelfContained,
-            other => {
-                MovReference::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => MovReference::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -30,9 +30,7 @@ impl GetAuthorizerInput {
 
 /// A builder for [`GetAuthorizerInput`](crate::operation::get_authorizer::GetAuthorizerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAuthorizerInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl GetAuthorizerInputBuilder {
         &self.rest_api_id
     }
     /// <p>The identifier of the Authorizer resource.</p>
-    pub fn authorizer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Authorizer resource.</p>
-    pub fn set_authorizer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_id = input;
         self
     }
@@ -75,10 +67,7 @@ impl GetAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`GetAuthorizerInput`](crate::operation::get_authorizer::GetAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_authorizer::GetAuthorizerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_authorizer::GetAuthorizerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_authorizer::GetAuthorizerInput {
             rest_api_id: self.rest_api_id,
             authorizer_id: self.authorizer_id,

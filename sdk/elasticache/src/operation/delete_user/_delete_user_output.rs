@@ -84,9 +84,7 @@ impl DeleteUserOutput {
 
 /// A builder for [`DeleteUserOutput`](crate::operation::delete_user::DeleteUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUserOutputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
@@ -157,18 +155,12 @@ impl DeleteUserOutputBuilder {
         &self.engine
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn minimum_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn set_minimum_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum_engine_version = input;
         self
     }
@@ -177,18 +169,12 @@ impl DeleteUserOutputBuilder {
         &self.minimum_engine_version
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn set_access_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_string = input;
         self
     }
@@ -201,27 +187,19 @@ impl DeleteUserOutputBuilder {
     /// To override the contents of this collection use [`set_user_group_ids`](Self::set_user_group_ids).
     ///
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
-    pub fn user_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_group_ids.unwrap_or_default();
         v.push(input.into());
         self.user_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
-    pub fn set_user_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_group_ids = input;
         self
     }
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
-    pub fn get_user_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_group_ids
     }
     /// <p>Denotes whether the user requires a password to authenticate.</p>
@@ -230,10 +208,7 @@ impl DeleteUserOutputBuilder {
         self
     }
     /// <p>Denotes whether the user requires a password to authenticate.</p>
-    pub fn set_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::Authentication>,
-    ) -> Self {
+    pub fn set_authentication(mut self, input: ::std::option::Option<crate::types::Authentication>) -> Self {
         self.authentication = input;
         self
     }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteLaunchTemplateOutput {
 }
 impl DeleteLaunchTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchTemplateOutput`](crate::operation::delete_launch_template::DeleteLaunchTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_launch_template::builders::DeleteLaunchTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::delete_launch_template::builders::DeleteLaunchTemplateOutputBuilder {
         crate::operation::delete_launch_template::builders::DeleteLaunchTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLaunchTemplateOutput`](crate::operation::delete_launch_template::DeleteLaunchTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLaunchTemplateOutputBuilder {
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplate>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteLaunchTemplateOutputBuilder {
         self
     }
     /// <p>Information about the launch template.</p>
-    pub fn set_launch_template(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplate>,
-    ) -> Self {
+    pub fn set_launch_template(mut self, input: ::std::option::Option<crate::types::LaunchTemplate>) -> Self {
         self.launch_template = input;
         self
     }

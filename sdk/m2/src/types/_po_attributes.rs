@@ -37,14 +37,11 @@ impl PoAttributes {
 
 /// A builder for [`PoAttributes`](crate::types::PoAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PoAttributesBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) encoding: ::std::option::Option<::std::string::String>,
-    pub(crate) member_file_extensions:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) member_file_extensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PoAttributesBuilder {
     /// <p>The format of the data set records.</p>
@@ -80,27 +77,19 @@ impl PoAttributesBuilder {
     /// To override the contents of this collection use [`set_member_file_extensions`](Self::set_member_file_extensions).
     ///
     /// <p>An array containing one or more filename extensions, allowing you to specify which files to be included as PDS member.</p>
-    pub fn member_file_extensions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_file_extensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.member_file_extensions.unwrap_or_default();
         v.push(input.into());
         self.member_file_extensions = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array containing one or more filename extensions, allowing you to specify which files to be included as PDS member.</p>
-    pub fn set_member_file_extensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_member_file_extensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.member_file_extensions = input;
         self
     }
     /// <p>An array containing one or more filename extensions, allowing you to specify which files to be included as PDS member.</p>
-    pub fn get_member_file_extensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_member_file_extensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.member_file_extensions
     }
     /// Consumes the builder and constructs a [`PoAttributes`](crate::types::PoAttributes).

@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeCustomerGatewaysOutput`](crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput) with field(s):
     ///   - [`customer_gateways(Option<Vec<CustomerGateway>>)`](crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput::customer_gateways): <p>Information about one or more customer gateways.</p>
     /// - On failure, responds with [`SdkError<DescribeCustomerGatewaysError>`](crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError)
-    pub fn describe_customer_gateways(
-        &self,
-    ) -> crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysFluentBuilder
-    {
+    pub fn describe_customer_gateways(&self) -> crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysFluentBuilder {
         crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysFluentBuilder::new(self.handle.clone())
     }
 }

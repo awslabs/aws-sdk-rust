@@ -10,10 +10,7 @@ impl DescribeElasticIpsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_elastic_ips::DescribeElasticIpsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elastic_ips::DescribeElasticIpsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elastic_ips::DescribeElasticIpsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_elastic_ips();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DescribeElasticIpsFluentBuilder {
         }
     }
     /// Access the DescribeElasticIps as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_elastic_ips::builders::DescribeElasticIpsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_elastic_ips::builders::DescribeElasticIpsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DescribeElasticIpsFluentBuilder {
             crate::operation::describe_elastic_ips::DescribeElasticIps,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elastic_ips::DescribeElasticIpsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elastic_ips::DescribeElasticIpsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DescribeElasticIpsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DescribeElasticIpsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_elastic_ips::DescribeElasticIpsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elastic_ips::DescribeElasticIpsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elastic_ips::DescribeElasticIpsError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DescribeElasticIpsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_elastic_ips::DescribeElasticIpsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elastic_ips::DescribeElasticIpsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elastic_ips::DescribeElasticIpsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl DescribeElasticIpsFluentBuilder {
             crate::operation::describe_elastic_ips::DescribeElasticIps,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elastic_ips::DescribeElasticIpsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elastic_ips::DescribeElasticIpsError>,
     > {
         self.customize_middleware().await
     }
@@ -163,10 +147,7 @@ impl DescribeElasticIpsFluentBuilder {
         self
     }
     /// <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
-    pub fn set_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ips(input);
         self
     }

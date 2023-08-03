@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_export_tasks::DescribeExportTasksOutput::marker): <p>A pagination token that can be used in a later <code>DescribeExportTasks</code> request. A marker is used for pagination to identify the location to begin output for the next response of <code>DescribeExportTasks</code>.</p>
     ///   - [`export_tasks(Option<Vec<ExportTask>>)`](crate::operation::describe_export_tasks::DescribeExportTasksOutput::export_tasks): <p>Information about an export of a snapshot or cluster to Amazon S3.</p>
     /// - On failure, responds with [`SdkError<DescribeExportTasksError>`](crate::operation::describe_export_tasks::DescribeExportTasksError)
-    pub fn describe_export_tasks(
-        &self,
-    ) -> crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder {
-        crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_export_tasks(&self) -> crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder {
+        crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder::new(self.handle.clone())
     }
 }

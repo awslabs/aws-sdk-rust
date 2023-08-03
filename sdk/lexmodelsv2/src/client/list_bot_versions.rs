@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`bot_version_summaries(Option<Vec<BotVersionSummary>>)`](crate::operation::list_bot_versions::ListBotVersionsOutput::bot_version_summaries): <p>Summary information for the bot versions that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more versions available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_bot_versions::ListBotVersionsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListBotVersions</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListBotVersionsError>`](crate::operation::list_bot_versions::ListBotVersionsError)
-    pub fn list_bot_versions(
-        &self,
-    ) -> crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder {
-        crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_bot_versions(&self) -> crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder {
+        crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder::new(self.handle.clone())
     }
 }

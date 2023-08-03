@@ -10,10 +10,7 @@ impl GetServersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_servers::GetServersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_servers::GetServersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_servers::GetServersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_servers();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl GetServersFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_servers::GetServers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_servers::GetServers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_servers::GetServersError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl GetServersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl GetServersFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_servers::GetServers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_servers::GetServers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_servers::GetServersError>,
     > {
         self.customize_middleware().await
@@ -157,17 +145,12 @@ impl GetServersFluentBuilder {
         self
     }
     /// <p>The server addresses.</p>
-    pub fn set_vm_server_address_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VmServerAddress>>,
-    ) -> Self {
+    pub fn set_vm_server_address_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VmServerAddress>>) -> Self {
         self.inner = self.inner.set_vm_server_address_list(input);
         self
     }
     /// <p>The server addresses.</p>
-    pub fn get_vm_server_address_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VmServerAddress>> {
+    pub fn get_vm_server_address_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VmServerAddress>> {
         self.inner.get_vm_server_address_list()
     }
 }

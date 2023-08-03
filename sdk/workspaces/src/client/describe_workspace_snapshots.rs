@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`rebuild_snapshots(Option<Vec<Snapshot>>)`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput::rebuild_snapshots): <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
     ///   - [`restore_snapshots(Option<Vec<Snapshot>>)`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput::restore_snapshots): <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkspaceSnapshotsError>`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsError)
-    pub fn describe_workspace_snapshots(&self) -> crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsFluentBuilder{
+    pub fn describe_workspace_snapshots(&self) -> crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsFluentBuilder {
         crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

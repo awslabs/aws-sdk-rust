@@ -6,10 +6,7 @@ pub fn ser_update_template_input(
     if let Some(var_1) = &input.definition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Definition").start_object();
-        crate::protocol_serde::shape_template_version_definition::ser_template_version_definition(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_template_version_definition::ser_template_version_definition(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.name {
@@ -18,10 +15,7 @@ pub fn ser_update_template_input(
     if let Some(var_4) = &input.source_entity {
         #[allow(unused_mut)]
         let mut object_5 = object.key("SourceEntity").start_object();
-        crate::protocol_serde::shape_template_source_entity::ser_template_source_entity(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_template_source_entity::ser_template_source_entity(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.version_description {

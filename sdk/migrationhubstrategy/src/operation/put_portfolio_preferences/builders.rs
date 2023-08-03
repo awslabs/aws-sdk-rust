@@ -26,8 +26,7 @@ impl PutPortfolioPreferencesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutPortfolioPreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::put_portfolio_preferences::builders::PutPortfolioPreferencesInputBuilder,
+    inner: crate::operation::put_portfolio_preferences::builders::PutPortfolioPreferencesInputBuilder,
 }
 impl PutPortfolioPreferencesFluentBuilder {
     /// Creates a new `PutPortfolioPreferences`.
@@ -38,10 +37,7 @@ impl PutPortfolioPreferencesFluentBuilder {
         }
     }
     /// Access the PutPortfolioPreferences as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_portfolio_preferences::builders::PutPortfolioPreferencesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_portfolio_preferences::builders::PutPortfolioPreferencesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl PutPortfolioPreferencesFluentBuilder {
             crate::operation::put_portfolio_preferences::PutPortfolioPreferences,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl PutPortfolioPreferencesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl PutPortfolioPreferencesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_portfolio_preferences::PutPortfolioPreferencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl PutPortfolioPreferencesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_portfolio_preferences::PutPortfolioPreferencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError>,
     > {
         self.send_middleware().await
     }
@@ -118,32 +105,22 @@ impl PutPortfolioPreferencesFluentBuilder {
             crate::operation::put_portfolio_preferences::PutPortfolioPreferences,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The rank of the business goals based on priority. </p>
-    pub fn prioritize_business_goals(
-        mut self,
-        input: crate::types::PrioritizeBusinessGoals,
-    ) -> Self {
+    pub fn prioritize_business_goals(mut self, input: crate::types::PrioritizeBusinessGoals) -> Self {
         self.inner = self.inner.prioritize_business_goals(input);
         self
     }
     /// <p> The rank of the business goals based on priority. </p>
-    pub fn set_prioritize_business_goals(
-        mut self,
-        input: ::std::option::Option<crate::types::PrioritizeBusinessGoals>,
-    ) -> Self {
+    pub fn set_prioritize_business_goals(mut self, input: ::std::option::Option<crate::types::PrioritizeBusinessGoals>) -> Self {
         self.inner = self.inner.set_prioritize_business_goals(input);
         self
     }
     /// <p> The rank of the business goals based on priority. </p>
-    pub fn get_prioritize_business_goals(
-        &self,
-    ) -> &::std::option::Option<crate::types::PrioritizeBusinessGoals> {
+    pub fn get_prioritize_business_goals(&self) -> &::std::option::Option<crate::types::PrioritizeBusinessGoals> {
         self.inner.get_prioritize_business_goals()
     }
     /// <p> The transformation preferences for non-database applications. </p>
@@ -152,17 +129,12 @@ impl PutPortfolioPreferencesFluentBuilder {
         self
     }
     /// <p> The transformation preferences for non-database applications. </p>
-    pub fn set_application_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationPreferences>,
-    ) -> Self {
+    pub fn set_application_preferences(mut self, input: ::std::option::Option<crate::types::ApplicationPreferences>) -> Self {
         self.inner = self.inner.set_application_preferences(input);
         self
     }
     /// <p> The transformation preferences for non-database applications. </p>
-    pub fn get_application_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationPreferences> {
+    pub fn get_application_preferences(&self) -> &::std::option::Option<crate::types::ApplicationPreferences> {
         self.inner.get_application_preferences()
     }
     /// <p> The transformation preferences for database applications. </p>
@@ -171,17 +143,12 @@ impl PutPortfolioPreferencesFluentBuilder {
         self
     }
     /// <p> The transformation preferences for database applications. </p>
-    pub fn set_database_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabasePreferences>,
-    ) -> Self {
+    pub fn set_database_preferences(mut self, input: ::std::option::Option<crate::types::DatabasePreferences>) -> Self {
         self.inner = self.inner.set_database_preferences(input);
         self
     }
     /// <p> The transformation preferences for database applications. </p>
-    pub fn get_database_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatabasePreferences> {
+    pub fn get_database_preferences(&self) -> &::std::option::Option<crate::types::DatabasePreferences> {
         self.inner.get_database_preferences()
     }
     /// <p>The classification for application component types.</p>
@@ -190,10 +157,7 @@ impl PutPortfolioPreferencesFluentBuilder {
         self
     }
     /// <p>The classification for application component types.</p>
-    pub fn set_application_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationMode>,
-    ) -> Self {
+    pub fn set_application_mode(mut self, input: ::std::option::Option<crate::types::ApplicationMode>) -> Self {
         self.inner = self.inner.set_application_mode(input);
         self
     }

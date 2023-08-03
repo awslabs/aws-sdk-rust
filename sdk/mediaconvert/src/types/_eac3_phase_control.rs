@@ -38,13 +38,7 @@
 /// Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3PhaseControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Eac3PhaseControl {
         match s {
             "NO_SHIFT" => Eac3PhaseControl::NoShift,
             "SHIFT_90_DEGREES" => Eac3PhaseControl::Shift90Degrees,
-            other => {
-                Eac3PhaseControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Eac3PhaseControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

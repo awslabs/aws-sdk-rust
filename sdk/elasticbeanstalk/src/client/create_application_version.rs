@@ -15,10 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateApplicationVersionOutput`](crate::operation::create_application_version::CreateApplicationVersionOutput) with field(s):
     ///   - [`application_version(Option<ApplicationVersionDescription>)`](crate::operation::create_application_version::CreateApplicationVersionOutput::application_version): <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
     /// - On failure, responds with [`SdkError<CreateApplicationVersionError>`](crate::operation::create_application_version::CreateApplicationVersionError)
-    pub fn create_application_version(
-        &self,
-    ) -> crate::operation::create_application_version::builders::CreateApplicationVersionFluentBuilder
-    {
+    pub fn create_application_version(&self) -> crate::operation::create_application_version::builders::CreateApplicationVersionFluentBuilder {
         crate::operation::create_application_version::builders::CreateApplicationVersionFluentBuilder::new(self.handle.clone())
     }
 }

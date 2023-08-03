@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RecommendationPreferenceName {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,14 +54,10 @@ pub enum RecommendationPreferenceName {
 impl ::std::convert::From<&str> for RecommendationPreferenceName {
     fn from(s: &str) -> Self {
         match s {
-            "EnhancedInfrastructureMetrics" => {
-                RecommendationPreferenceName::EnhancedInfrastructureMetrics
-            }
+            "EnhancedInfrastructureMetrics" => RecommendationPreferenceName::EnhancedInfrastructureMetrics,
             "ExternalMetricsPreference" => RecommendationPreferenceName::ExternalMetricsPreference,
             "InferredWorkloadTypes" => RecommendationPreferenceName::InferredWorkloadTypes,
-            other => RecommendationPreferenceName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RecommendationPreferenceName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -82,9 +72,7 @@ impl RecommendationPreferenceName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            RecommendationPreferenceName::EnhancedInfrastructureMetrics => {
-                "EnhancedInfrastructureMetrics"
-            }
+            RecommendationPreferenceName::EnhancedInfrastructureMetrics => "EnhancedInfrastructureMetrics",
             RecommendationPreferenceName::ExternalMetricsPreference => "ExternalMetricsPreference",
             RecommendationPreferenceName::InferredWorkloadTypes => "InferredWorkloadTypes",
             RecommendationPreferenceName::Unknown(value) => value.as_str(),
@@ -92,11 +80,7 @@ impl RecommendationPreferenceName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "EnhancedInfrastructureMetrics",
-            "ExternalMetricsPreference",
-            "InferredWorkloadTypes",
-        ]
+        &["EnhancedInfrastructureMetrics", "ExternalMetricsPreference", "InferredWorkloadTypes"]
     }
 }
 impl ::std::convert::AsRef<str> for RecommendationPreferenceName {

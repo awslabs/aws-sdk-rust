@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetDeleteEventsByEventTypeStatusOutpu
 }
 impl GetDeleteEventsByEventTypeStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetDeleteEventsByEventTypeStatusOutput`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput).
-    pub fn builder() -> crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusOutputBuilder {
         crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeleteEventsByEventTypeStatusOutput`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeleteEventsByEventTypeStatusOutputBuilder {
     pub(crate) event_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) events_deletion_status: ::std::option::Option<crate::types::AsyncJobStatus>,
@@ -45,18 +43,12 @@ pub struct GetDeleteEventsByEventTypeStatusOutputBuilder {
 }
 impl GetDeleteEventsByEventTypeStatusOutputBuilder {
     /// <p>The event type name.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event type name.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type_name = input;
         self
     }
@@ -70,17 +62,12 @@ impl GetDeleteEventsByEventTypeStatusOutputBuilder {
         self
     }
     /// <p>The deletion status.</p>
-    pub fn set_events_deletion_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AsyncJobStatus>,
-    ) -> Self {
+    pub fn set_events_deletion_status(mut self, input: ::std::option::Option<crate::types::AsyncJobStatus>) -> Self {
         self.events_deletion_status = input;
         self
     }
     /// <p>The deletion status.</p>
-    pub fn get_events_deletion_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AsyncJobStatus> {
+    pub fn get_events_deletion_status(&self) -> &::std::option::Option<crate::types::AsyncJobStatus> {
         &self.events_deletion_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,12 +80,10 @@ impl GetDeleteEventsByEventTypeStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDeleteEventsByEventTypeStatusOutput`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput).
-    pub fn build(self) -> crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput{
+    pub fn build(self) -> crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput {
         crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput {
-            event_type_name: self.event_type_name
-            ,
-            events_deletion_status: self.events_deletion_status
-            ,
+            event_type_name: self.event_type_name,
+            events_deletion_status: self.events_deletion_status,
             _request_id: self._request_id,
         }
     }

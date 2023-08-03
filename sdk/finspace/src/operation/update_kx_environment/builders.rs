@@ -37,9 +37,7 @@ impl UpdateKxEnvironmentFluentBuilder {
         }
     }
     /// Access the UpdateKxEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_kx_environment::builders::UpdateKxEnvironmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_kx_environment::builders::UpdateKxEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateKxEnvironmentFluentBuilder {
             crate::operation::update_kx_environment::UpdateKxEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_environment::UpdateKxEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_kx_environment::UpdateKxEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateKxEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateKxEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_kx_environment::UpdateKxEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_environment::UpdateKxEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_kx_environment::UpdateKxEnvironmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateKxEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_kx_environment::UpdateKxEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_environment::UpdateKxEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_kx_environment::UpdateKxEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateKxEnvironmentFluentBuilder {
             crate::operation::update_kx_environment::UpdateKxEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_environment::UpdateKxEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_kx_environment::UpdateKxEnvironmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }

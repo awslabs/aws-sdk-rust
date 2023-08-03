@@ -44,9 +44,7 @@ impl Message {
 
 /// A builder for [`Message`](crate::types::Message).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageBuilder {
     pub(crate) plain_text_message: ::std::option::Option<crate::types::PlainTextMessage>,
     pub(crate) custom_payload: ::std::option::Option<crate::types::CustomPayload>,
@@ -60,10 +58,7 @@ impl MessageBuilder {
         self
     }
     /// <p>A message in plain text format.</p>
-    pub fn set_plain_text_message(
-        mut self,
-        input: ::std::option::Option<crate::types::PlainTextMessage>,
-    ) -> Self {
+    pub fn set_plain_text_message(mut self, input: ::std::option::Option<crate::types::PlainTextMessage>) -> Self {
         self.plain_text_message = input;
         self
     }
@@ -77,10 +72,7 @@ impl MessageBuilder {
         self
     }
     /// <p>A message in a custom format defined by the client application.</p>
-    pub fn set_custom_payload(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomPayload>,
-    ) -> Self {
+    pub fn set_custom_payload(mut self, input: ::std::option::Option<crate::types::CustomPayload>) -> Self {
         self.custom_payload = input;
         self
     }
@@ -94,10 +86,7 @@ impl MessageBuilder {
         self
     }
     /// <p>A message in Speech Synthesis Markup Language (SSML).</p>
-    pub fn set_ssml_message(
-        mut self,
-        input: ::std::option::Option<crate::types::SsmlMessage>,
-    ) -> Self {
+    pub fn set_ssml_message(mut self, input: ::std::option::Option<crate::types::SsmlMessage>) -> Self {
         self.ssml_message = input;
         self
     }
@@ -111,17 +100,12 @@ impl MessageBuilder {
         self
     }
     /// <p>A message that defines a response card that the client application can show to the user.</p>
-    pub fn set_image_response_card(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageResponseCard>,
-    ) -> Self {
+    pub fn set_image_response_card(mut self, input: ::std::option::Option<crate::types::ImageResponseCard>) -> Self {
         self.image_response_card = input;
         self
     }
     /// <p>A message that defines a response card that the client application can show to the user.</p>
-    pub fn get_image_response_card(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageResponseCard> {
+    pub fn get_image_response_card(&self) -> &::std::option::Option<crate::types::ImageResponseCard> {
         &self.image_response_card
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).

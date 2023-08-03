@@ -4,9 +4,7 @@ pub fn ser_custom_auth_credentials(
     input: &crate::types::CustomAuthCredentials,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.custom_authentication_type {
-        object
-            .key("customAuthenticationType")
-            .string(var_1.as_str());
+        object.key("customAuthenticationType").string(var_1.as_str());
     }
     if let Some(var_2) = &input.credentials_map {
         #[allow(unused_mut)]

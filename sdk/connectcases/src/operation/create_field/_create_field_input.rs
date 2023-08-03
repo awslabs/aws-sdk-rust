@@ -43,9 +43,7 @@ impl CreateFieldInput {
 
 /// A builder for [`CreateFieldInput`](crate::operation::create_field::CreateFieldInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFieldInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -110,12 +108,7 @@ impl CreateFieldInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateFieldInput`](crate::operation::create_field::CreateFieldInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_field::CreateFieldInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_field::CreateFieldInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_field::CreateFieldInput {
             domain_id: self.domain_id,
             name: self.name,

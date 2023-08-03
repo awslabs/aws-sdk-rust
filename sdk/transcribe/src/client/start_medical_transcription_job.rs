@@ -20,7 +20,9 @@ impl super::Client {
     /// - On success, responds with [`StartMedicalTranscriptionJobOutput`](crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobOutput) with field(s):
     ///   - [`medical_transcription_job(Option<MedicalTranscriptionJob>)`](crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobOutput::medical_transcription_job): <p>Provides detailed information about the current medical transcription job, including job status and, if applicable, failure reason.</p>
     /// - On failure, responds with [`SdkError<StartMedicalTranscriptionJobError>`](crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError)
-    pub fn start_medical_transcription_job(&self) -> crate::operation::start_medical_transcription_job::builders::StartMedicalTranscriptionJobFluentBuilder{
+    pub fn start_medical_transcription_job(
+        &self,
+    ) -> crate::operation::start_medical_transcription_job::builders::StartMedicalTranscriptionJobFluentBuilder {
         crate::operation::start_medical_transcription_job::builders::StartMedicalTranscriptionJobFluentBuilder::new(self.handle.clone())
     }
 }

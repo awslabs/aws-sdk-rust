@@ -43,16 +43,16 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
 }
 impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
     /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryByQuotaInput`](crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaInput).
-    pub fn builder() -> crate::operation::list_requested_service_quota_change_history_by_quota::builders::ListRequestedServiceQuotaChangeHistoryByQuotaInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::list_requested_service_quota_change_history_by_quota::builders::ListRequestedServiceQuotaChangeHistoryByQuotaInputBuilder
+    {
         crate::operation::list_requested_service_quota_change_history_by_quota::builders::ListRequestedServiceQuotaChangeHistoryByQuotaInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRequestedServiceQuotaChangeHistoryByQuotaInput`](crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRequestedServiceQuotaChangeHistoryByQuotaInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) quota_code: ::std::option::Option<::std::string::String>,
@@ -132,20 +132,20 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRequestedServiceQuotaChangeHistoryByQuotaInput`](crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaInput {
-                service_code: self.service_code
-                ,
-                quota_code: self.quota_code
-                ,
-                status: self.status
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                service_code: self.service_code,
+                quota_code: self.quota_code,
+                status: self.status,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

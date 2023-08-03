@@ -15,16 +15,14 @@ impl GetSolNetworkPackageDescriptorInput {
 }
 impl GetSolNetworkPackageDescriptorInput {
     /// Creates a new builder-style object to manufacture [`GetSolNetworkPackageDescriptorInput`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorInput).
-    pub fn builder() -> crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorInputBuilder{
+    pub fn builder() -> crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorInputBuilder {
         crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSolNetworkPackageDescriptorInput`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolNetworkPackageDescriptorInputBuilder {
     pub(crate) nsd_info_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,9 +50,8 @@ impl GetSolNetworkPackageDescriptorInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorInput {
-                nsd_info_id: self.nsd_info_id
-                ,
-            }
+                nsd_info_id: self.nsd_info_id,
+            },
         )
     }
 }

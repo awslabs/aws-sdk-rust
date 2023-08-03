@@ -10,10 +10,7 @@ impl AddTagsToResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_resource::AddTagsToResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_tags_to_resource();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AddTagsToResourceFluentBuilder {
         }
     }
     /// Access the AddTagsToResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AddTagsToResourceFluentBuilder {
             crate::operation::add_tags_to_resource::AddTagsToResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AddTagsToResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AddTagsToResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_resource::AddTagsToResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AddTagsToResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_resource::AddTagsToResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl AddTagsToResourceFluentBuilder {
             crate::operation::add_tags_to_resource::AddTagsToResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }
@@ -152,10 +130,7 @@ impl AddTagsToResourceFluentBuilder {
         self
     }
     /// <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

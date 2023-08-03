@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::stop_stream_processor::builders::StopStreamProcessorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_stream_processor::builders::StopStreamProcessorFluentBuilder::set_name): <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
     /// - On success, responds with [`StopStreamProcessorOutput`](crate::operation::stop_stream_processor::StopStreamProcessorOutput)
     /// - On failure, responds with [`SdkError<StopStreamProcessorError>`](crate::operation::stop_stream_processor::StopStreamProcessorError)
-    pub fn stop_stream_processor(
-        &self,
-    ) -> crate::operation::stop_stream_processor::builders::StopStreamProcessorFluentBuilder {
-        crate::operation::stop_stream_processor::builders::StopStreamProcessorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_stream_processor(&self) -> crate::operation::stop_stream_processor::builders::StopStreamProcessorFluentBuilder {
+        crate::operation::stop_stream_processor::builders::StopStreamProcessorFluentBuilder::new(self.handle.clone())
     }
 }

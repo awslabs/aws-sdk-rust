@@ -26,8 +26,7 @@ impl CreateLocationFsxOntapInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocationFsxOntapFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapInputBuilder,
+    inner: crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapInputBuilder,
 }
 impl CreateLocationFsxOntapFluentBuilder {
     /// Creates a new `CreateLocationFsxOntap`.
@@ -38,10 +37,7 @@ impl CreateLocationFsxOntapFluentBuilder {
         }
     }
     /// Access the CreateLocationFsxOntap as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateLocationFsxOntapFluentBuilder {
             crate::operation::create_location_fsx_ontap::CreateLocationFsxOntap,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateLocationFsxOntapFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateLocationFsxOntapFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateLocationFsxOntapFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CreateLocationFsxOntapFluentBuilder {
             crate::operation::create_location_fsx_ontap::CreateLocationFsxOntap,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapError>,
     > {
         self.customize_middleware().await
     }
@@ -149,10 +134,7 @@ impl CreateLocationFsxOntapFluentBuilder {
     /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
-    pub fn security_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_arns(input.into());
         self
     }
@@ -163,10 +145,7 @@ impl CreateLocationFsxOntapFluentBuilder {
     /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
-    pub fn set_security_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_arns(input);
         self
     }
@@ -177,24 +156,16 @@ impl CreateLocationFsxOntapFluentBuilder {
     /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
-    pub fn get_security_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_arns()
     }
     /// <p>Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or from.</p>
-    pub fn storage_virtual_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_virtual_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_virtual_machine_arn(input.into());
         self
     }
     /// <p>Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or from.</p>
-    pub fn set_storage_virtual_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_virtual_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_virtual_machine_arn(input);
         self
     }
@@ -235,10 +206,7 @@ impl CreateLocationFsxOntapFluentBuilder {
         self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

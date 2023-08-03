@@ -8,8 +8,7 @@ pub struct ListEventConfigurationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Event configurations of all events for a single resource.</p>
     #[doc(hidden)]
-    pub event_configurations_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventConfigurationItem>>,
+    pub event_configurations_list: ::std::option::Option<::std::vec::Vec<crate::types::EventConfigurationItem>>,
     _request_id: Option<String>,
 }
 impl ListEventConfigurationsOutput {
@@ -18,9 +17,7 @@ impl ListEventConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>Event configurations of all events for a single resource.</p>
-    pub fn event_configurations_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EventConfigurationItem]> {
+    pub fn event_configurations_list(&self) -> ::std::option::Option<&[crate::types::EventConfigurationItem]> {
         self.event_configurations_list.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListEventConfigurationsOutput {
 }
 impl ListEventConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventConfigurationsOutput`](crate::operation::list_event_configurations::ListEventConfigurationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_event_configurations::builders::ListEventConfigurationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_event_configurations::builders::ListEventConfigurationsOutputBuilder {
         crate::operation::list_event_configurations::builders::ListEventConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventConfigurationsOutput`](crate::operation::list_event_configurations::ListEventConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) event_configurations_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventConfigurationItem>>,
+    pub(crate) event_configurations_list: ::std::option::Option<::std::vec::Vec<crate::types::EventConfigurationItem>>,
     _request_id: Option<String>,
 }
 impl ListEventConfigurationsOutputBuilder {
@@ -69,27 +61,19 @@ impl ListEventConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_event_configurations_list`](Self::set_event_configurations_list).
     ///
     /// <p>Event configurations of all events for a single resource.</p>
-    pub fn event_configurations_list(
-        mut self,
-        input: crate::types::EventConfigurationItem,
-    ) -> Self {
+    pub fn event_configurations_list(mut self, input: crate::types::EventConfigurationItem) -> Self {
         let mut v = self.event_configurations_list.unwrap_or_default();
         v.push(input);
         self.event_configurations_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Event configurations of all events for a single resource.</p>
-    pub fn set_event_configurations_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventConfigurationItem>>,
-    ) -> Self {
+    pub fn set_event_configurations_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventConfigurationItem>>) -> Self {
         self.event_configurations_list = input;
         self
     }
     /// <p>Event configurations of all events for a single resource.</p>
-    pub fn get_event_configurations_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventConfigurationItem>> {
+    pub fn get_event_configurations_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventConfigurationItem>> {
         &self.event_configurations_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -102,9 +86,7 @@ impl ListEventConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEventConfigurationsOutput`](crate::operation::list_event_configurations::ListEventConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_event_configurations::ListEventConfigurationsOutput {
+    pub fn build(self) -> crate::operation::list_event_configurations::ListEventConfigurationsOutput {
         crate::operation::list_event_configurations::ListEventConfigurationsOutput {
             next_token: self.next_token,
             event_configurations_list: self.event_configurations_list,

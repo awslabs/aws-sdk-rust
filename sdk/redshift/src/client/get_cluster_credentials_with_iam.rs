@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`expiration(Option<DateTime>)`](crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput::expiration): <p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>
     ///   - [`next_refresh_time(Option<DateTime>)`](crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput::next_refresh_time): <p>Reserved for future use.</p>
     /// - On failure, responds with [`SdkError<GetClusterCredentialsWithIAMError>`](crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError)
-    pub fn get_cluster_credentials_with_iam(&self) -> crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIAMFluentBuilder{
+    pub fn get_cluster_credentials_with_iam(
+        &self,
+    ) -> crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIAMFluentBuilder {
         crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIAMFluentBuilder::new(self.handle.clone())
     }
 }

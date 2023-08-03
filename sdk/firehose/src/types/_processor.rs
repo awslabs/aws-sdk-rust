@@ -30,9 +30,7 @@ impl Processor {
 
 /// A builder for [`Processor`](crate::types::Processor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ProcessorType>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>>,
@@ -64,17 +62,12 @@ impl ProcessorBuilder {
         self
     }
     /// <p>The processor parameters.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The processor parameters.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`Processor`](crate::types::Processor).

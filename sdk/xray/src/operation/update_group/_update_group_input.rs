@@ -38,9 +38,7 @@ impl UpdateGroupInput {
     /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
     /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
-    pub fn insights_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InsightsConfiguration> {
+    pub fn insights_configuration(&self) -> ::std::option::Option<&crate::types::InsightsConfiguration> {
         self.insights_configuration.as_ref()
     }
 }
@@ -53,9 +51,7 @@ impl UpdateGroupInput {
 
 /// A builder for [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGroupInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) group_arn: ::std::option::Option<::std::string::String>,
@@ -92,18 +88,12 @@ impl UpdateGroupInputBuilder {
         &self.group_arn
     }
     /// <p>The updated filter expression defining criteria by which to group traces.</p>
-    pub fn filter_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The updated filter expression defining criteria by which to group traces.</p>
-    pub fn set_filter_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_expression = input;
         self
     }
@@ -125,10 +115,7 @@ impl UpdateGroupInputBuilder {
     /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
     /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
-    pub fn set_insights_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InsightsConfiguration>,
-    ) -> Self {
+    pub fn set_insights_configuration(mut self, input: ::std::option::Option<crate::types::InsightsConfiguration>) -> Self {
         self.insights_configuration = input;
         self
     }
@@ -137,18 +124,11 @@ impl UpdateGroupInputBuilder {
     /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
     /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
-    pub fn get_insights_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InsightsConfiguration> {
+    pub fn get_insights_configuration(&self) -> &::std::option::Option<crate::types::InsightsConfiguration> {
         &self.insights_configuration
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_group::UpdateGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupInput {
             group_name: self.group_name,
             group_arn: self.group_arn,

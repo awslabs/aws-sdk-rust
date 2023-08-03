@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`home_region_controls(Option<Vec<HomeRegionControl>>)`](crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput::home_region_controls): <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput::next_token): <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeHomeRegionControlsError>`](crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError)
-    pub fn describe_home_region_controls(&self) -> crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsFluentBuilder{
+    pub fn describe_home_region_controls(
+        &self,
+    ) -> crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsFluentBuilder {
         crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsFluentBuilder::new(self.handle.clone())
     }
 }

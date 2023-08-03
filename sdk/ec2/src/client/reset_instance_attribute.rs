@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::reset_instance_attribute::builders::ResetInstanceAttributeFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::reset_instance_attribute::builders::ResetInstanceAttributeFluentBuilder::set_instance_id): <p>The ID of the instance.</p>
     /// - On success, responds with [`ResetInstanceAttributeOutput`](crate::operation::reset_instance_attribute::ResetInstanceAttributeOutput)
     /// - On failure, responds with [`SdkError<ResetInstanceAttributeError>`](crate::operation::reset_instance_attribute::ResetInstanceAttributeError)
-    pub fn reset_instance_attribute(
-        &self,
-    ) -> crate::operation::reset_instance_attribute::builders::ResetInstanceAttributeFluentBuilder
-    {
+    pub fn reset_instance_attribute(&self) -> crate::operation::reset_instance_attribute::builders::ResetInstanceAttributeFluentBuilder {
         crate::operation::reset_instance_attribute::builders::ResetInstanceAttributeFluentBuilder::new(self.handle.clone())
     }
 }

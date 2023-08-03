@@ -19,9 +19,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::create_theme::CreateThemeOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::create_theme::CreateThemeOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<CreateThemeError>`](crate::operation::create_theme::CreateThemeError)
-    pub fn create_theme(
-        &self,
-    ) -> crate::operation::create_theme::builders::CreateThemeFluentBuilder {
+    pub fn create_theme(&self) -> crate::operation::create_theme::builders::CreateThemeFluentBuilder {
         crate::operation::create_theme::builders::CreateThemeFluentBuilder::new(self.handle.clone())
     }
 }

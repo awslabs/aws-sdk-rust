@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::create_task_template::CreateTaskTemplateOutput::id): <p>The identifier of the task template resource.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_task_template::CreateTaskTemplateOutput::arn): <p>The Amazon Resource Name (ARN) for the task template resource.</p>
     /// - On failure, responds with [`SdkError<CreateTaskTemplateError>`](crate::operation::create_task_template::CreateTaskTemplateError)
-    pub fn create_task_template(
-        &self,
-    ) -> crate::operation::create_task_template::builders::CreateTaskTemplateFluentBuilder {
-        crate::operation::create_task_template::builders::CreateTaskTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_task_template(&self) -> crate::operation::create_task_template::builders::CreateTaskTemplateFluentBuilder {
+        crate::operation::create_task_template::builders::CreateTaskTemplateFluentBuilder::new(self.handle.clone())
     }
 }

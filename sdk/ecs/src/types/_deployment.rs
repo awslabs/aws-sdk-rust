@@ -55,8 +55,7 @@ pub struct Deployment {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The capacity provider strategy that the deployment is using.</p>
     #[doc(hidden)]
-    pub capacity_provider_strategy:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+    pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The launch type the tasks in the service are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
@@ -83,12 +82,10 @@ pub struct Deployment {
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub service_connect_configuration:
-        ::std::option::Option<crate::types::ServiceConnectConfiguration>,
+    pub service_connect_configuration: ::std::option::Option<crate::types::ServiceConnectConfiguration>,
     /// <p>The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery name to a Cloud Map service name.</p>
     #[doc(hidden)]
-    pub service_connect_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectServiceResource>>,
+    pub service_connect_resources: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectServiceResource>>,
 }
 impl Deployment {
     /// <p>The ID of the deployment.</p>
@@ -150,9 +147,7 @@ impl Deployment {
         self.updated_at.as_ref()
     }
     /// <p>The capacity provider strategy that the deployment is using.</p>
-    pub fn capacity_provider_strategy(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CapacityProviderStrategyItem]> {
+    pub fn capacity_provider_strategy(&self) -> ::std::option::Option<&[crate::types::CapacityProviderStrategyItem]> {
         self.capacity_provider_strategy.as_deref()
     }
     /// <p>The launch type the tasks in the service are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -169,9 +164,7 @@ impl Deployment {
         self.platform_family.as_deref()
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-    pub fn network_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <note>
@@ -188,15 +181,11 @@ impl Deployment {
     /// <p>The details of the Service Connect configuration that's used by this deployment. Compare the configuration between multiple deployments when troubleshooting issues with new deployments.</p>
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn service_connect_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceConnectConfiguration> {
+    pub fn service_connect_configuration(&self) -> ::std::option::Option<&crate::types::ServiceConnectConfiguration> {
         self.service_connect_configuration.as_ref()
     }
     /// <p>The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery name to a Cloud Map service name.</p>
-    pub fn service_connect_resources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServiceConnectServiceResource]> {
+    pub fn service_connect_resources(&self) -> ::std::option::Option<&[crate::types::ServiceConnectServiceResource]> {
         self.service_connect_resources.as_deref()
     }
 }
@@ -209,9 +198,7 @@ impl Deployment {
 
 /// A builder for [`Deployment`](crate::types::Deployment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -222,18 +209,15 @@ pub struct DeploymentBuilder {
     pub(crate) failed_tasks: ::std::option::Option<i32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) capacity_provider_strategy:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+    pub(crate) capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     pub(crate) launch_type: ::std::option::Option<crate::types::LaunchType>,
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) platform_family: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) rollout_state: ::std::option::Option<crate::types::DeploymentRolloutState>,
     pub(crate) rollout_state_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) service_connect_configuration:
-        ::std::option::Option<crate::types::ServiceConnectConfiguration>,
-    pub(crate) service_connect_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectServiceResource>>,
+    pub(crate) service_connect_configuration: ::std::option::Option<crate::types::ServiceConnectConfiguration>,
+    pub(crate) service_connect_resources: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectServiceResource>>,
 }
 impl DeploymentBuilder {
     /// <p>The ID of the deployment.</p>
@@ -325,18 +309,12 @@ impl DeploymentBuilder {
         &self.status
     }
     /// <p>The most recent task definition that was specified for the tasks in the service to use.</p>
-    pub fn task_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The most recent task definition that was specified for the tasks in the service to use.</p>
-    pub fn set_task_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_definition = input;
         self
     }
@@ -412,10 +390,7 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the service deployment was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -429,10 +404,7 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the service deployment was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -445,10 +417,7 @@ impl DeploymentBuilder {
     /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
     ///
     /// <p>The capacity provider strategy that the deployment is using.</p>
-    pub fn capacity_provider_strategy(
-        mut self,
-        input: crate::types::CapacityProviderStrategyItem,
-    ) -> Self {
+    pub fn capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
         let mut v = self.capacity_provider_strategy.unwrap_or_default();
         v.push(input);
         self.capacity_provider_strategy = ::std::option::Option::Some(v);
@@ -463,9 +432,7 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The capacity provider strategy that the deployment is using.</p>
-    pub fn get_capacity_provider_strategy(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
+    pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
         &self.capacity_provider_strategy
     }
     /// <p>The launch type the tasks in the service are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -474,10 +441,7 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The launch type the tasks in the service are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_launch_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchType>,
-    ) -> Self {
+    pub fn set_launch_type(mut self, input: ::std::option::Option<crate::types::LaunchType>) -> Self {
         self.launch_type = input;
         self
     }
@@ -486,18 +450,12 @@ impl DeploymentBuilder {
         &self.launch_type
     }
     /// <p>The platform version that your tasks in the service run on. A platform version is only specified for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn platform_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The platform version that your tasks in the service run on. A platform version is only specified for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_platform_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_version = input;
         self
     }
@@ -507,19 +465,13 @@ impl DeploymentBuilder {
     }
     /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
-    pub fn platform_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
-    pub fn set_platform_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_family = input;
         self
     }
@@ -534,17 +486,12 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-    pub fn set_network_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkConfiguration>,
-    ) -> Self {
+    pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
         self.network_configuration = input;
         self
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-    pub fn get_network_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+    pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
     /// <note>
@@ -559,10 +506,7 @@ impl DeploymentBuilder {
     /// <p>The <code>rolloutState</code> of a service is only returned for services that use the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.</p>
     /// </note>
     /// <p>The rollout state of the deployment. When a service deployment is started, it begins in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is turned on, the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch any new tasks. For more information, see <code>DeploymentCircuitBreaker</code>.</p>
-    pub fn set_rollout_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentRolloutState>,
-    ) -> Self {
+    pub fn set_rollout_state(mut self, input: ::std::option::Option<crate::types::DeploymentRolloutState>) -> Self {
         self.rollout_state = input;
         self
     }
@@ -570,24 +514,16 @@ impl DeploymentBuilder {
     /// <p>The <code>rolloutState</code> of a service is only returned for services that use the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.</p>
     /// </note>
     /// <p>The rollout state of the deployment. When a service deployment is started, it begins in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is turned on, the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch any new tasks. For more information, see <code>DeploymentCircuitBreaker</code>.</p>
-    pub fn get_rollout_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentRolloutState> {
+    pub fn get_rollout_state(&self) -> &::std::option::Option<crate::types::DeploymentRolloutState> {
         &self.rollout_state
     }
     /// <p>A description of the rollout state of a deployment.</p>
-    pub fn rollout_state_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rollout_state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rollout_state_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the rollout state of a deployment.</p>
-    pub fn set_rollout_state_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rollout_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rollout_state_reason = input;
         self
     }
@@ -598,29 +534,21 @@ impl DeploymentBuilder {
     /// <p>The details of the Service Connect configuration that's used by this deployment. Compare the configuration between multiple deployments when troubleshooting issues with new deployments.</p>
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn service_connect_configuration(
-        mut self,
-        input: crate::types::ServiceConnectConfiguration,
-    ) -> Self {
+    pub fn service_connect_configuration(mut self, input: crate::types::ServiceConnectConfiguration) -> Self {
         self.service_connect_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of the Service Connect configuration that's used by this deployment. Compare the configuration between multiple deployments when troubleshooting issues with new deployments.</p>
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_service_connect_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceConnectConfiguration>,
-    ) -> Self {
+    pub fn set_service_connect_configuration(mut self, input: ::std::option::Option<crate::types::ServiceConnectConfiguration>) -> Self {
         self.service_connect_configuration = input;
         self
     }
     /// <p>The details of the Service Connect configuration that's used by this deployment. Compare the configuration between multiple deployments when troubleshooting issues with new deployments.</p>
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn get_service_connect_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceConnectConfiguration> {
+    pub fn get_service_connect_configuration(&self) -> &::std::option::Option<crate::types::ServiceConnectConfiguration> {
         &self.service_connect_configuration
     }
     /// Appends an item to `service_connect_resources`.
@@ -628,10 +556,7 @@ impl DeploymentBuilder {
     /// To override the contents of this collection use [`set_service_connect_resources`](Self::set_service_connect_resources).
     ///
     /// <p>The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery name to a Cloud Map service name.</p>
-    pub fn service_connect_resources(
-        mut self,
-        input: crate::types::ServiceConnectServiceResource,
-    ) -> Self {
+    pub fn service_connect_resources(mut self, input: crate::types::ServiceConnectServiceResource) -> Self {
         let mut v = self.service_connect_resources.unwrap_or_default();
         v.push(input);
         self.service_connect_resources = ::std::option::Option::Some(v);
@@ -646,9 +571,7 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery name to a Cloud Map service name.</p>
-    pub fn get_service_connect_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectServiceResource>> {
+    pub fn get_service_connect_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectServiceResource>> {
         &self.service_connect_resources
     }
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).

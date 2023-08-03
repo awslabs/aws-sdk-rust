@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WorkspaceImageIngestionProcess {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for WorkspaceImageIngestionProcess {
             "BYOL_REGULAR" => WorkspaceImageIngestionProcess::ByolRegular,
             "BYOL_REGULAR_BYOP" => WorkspaceImageIngestionProcess::ByolRegularByop,
             "BYOL_REGULAR_WSP" => WorkspaceImageIngestionProcess::ByolRegularWsp,
-            other => WorkspaceImageIngestionProcess::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => WorkspaceImageIngestionProcess::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

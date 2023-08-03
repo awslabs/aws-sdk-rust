@@ -35,9 +35,7 @@ impl ListKeysOutput {
 
 /// A builder for [`ListKeysOutput`](crate::operation::list_keys::ListKeysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKeysOutputBuilder {
     pub(crate) keys: ::std::option::Option<::std::vec::Vec<crate::types::KeySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListKeysOutputBuilder {
         self
     }
     /// <p>The list of keys created within the caller's Amazon Web Services account and Amazon Web Services Region.</p>
-    pub fn set_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeySummary>>,
-    ) -> Self {
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeySummary>>) -> Self {
         self.keys = input;
         self
     }

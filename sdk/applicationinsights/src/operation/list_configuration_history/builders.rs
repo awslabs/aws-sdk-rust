@@ -31,7 +31,7 @@ impl ListConfigurationHistoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConfigurationHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_configuration_history::builders::ListConfigurationHistoryInputBuilder,
+    inner: crate::operation::list_configuration_history::builders::ListConfigurationHistoryInputBuilder,
 }
 impl ListConfigurationHistoryFluentBuilder {
     /// Creates a new `ListConfigurationHistory`.
@@ -42,10 +42,7 @@ impl ListConfigurationHistoryFluentBuilder {
         }
     }
     /// Access the ListConfigurationHistory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_configuration_history::builders::ListConfigurationHistoryInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_configuration_history::builders::ListConfigurationHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl ListConfigurationHistoryFluentBuilder {
             crate::operation::list_configuration_history::ListConfigurationHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configuration_history::ListConfigurationHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configuration_history::ListConfigurationHistoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl ListConfigurationHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl ListConfigurationHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_configuration_history::ListConfigurationHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configuration_history::ListConfigurationHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configuration_history::ListConfigurationHistoryError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl ListConfigurationHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_configuration_history::ListConfigurationHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configuration_history::ListConfigurationHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configuration_history::ListConfigurationHistoryError>,
     > {
         self.send_middleware().await
     }
@@ -122,34 +110,23 @@ impl ListConfigurationHistoryFluentBuilder {
             crate::operation::list_configuration_history::ListConfigurationHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configuration_history::ListConfigurationHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configuration_history::ListConfigurationHistoryError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_configuration_history::paginator::ListConfigurationHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_configuration_history::paginator::ListConfigurationHistoryPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_configuration_history::paginator::ListConfigurationHistoryPaginator {
         crate::operation::list_configuration_history::paginator::ListConfigurationHistoryPaginator::new(self.handle, self.inner)
     }
     /// <p>Resource group to which the application belongs. </p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_group_name(input.into());
         self
     }
     /// <p>Resource group to which the application belongs. </p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
@@ -163,10 +140,7 @@ impl ListConfigurationHistoryFluentBuilder {
         self
     }
     /// <p>The start time of the event. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -180,10 +154,7 @@ impl ListConfigurationHistoryFluentBuilder {
         self
     }
     /// <p>The end time of the event.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -197,17 +168,12 @@ impl ListConfigurationHistoryFluentBuilder {
         self
     }
     /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
-    pub fn set_event_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationEventStatus>,
-    ) -> Self {
+    pub fn set_event_status(mut self, input: ::std::option::Option<crate::types::ConfigurationEventStatus>) -> Self {
         self.inner = self.inner.set_event_status(input);
         self
     }
     /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
-    pub fn get_event_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationEventStatus> {
+    pub fn get_event_status(&self) -> &::std::option::Option<crate::types::ConfigurationEventStatus> {
         self.inner.get_event_status()
     }
     /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>

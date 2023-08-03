@@ -10,10 +10,7 @@ impl DisableInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disable::DisableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable::DisableError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable::DisableError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disable();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl DisableFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::disable::Disable,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::disable::Disable, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::disable::DisableError>,
     > {
         let handle = self.handle.clone();
@@ -59,20 +53,15 @@ impl DisableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disable::DisableOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::disable::DisableError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::disable::DisableOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable::DisableError>>
+    {
         let op = self
             .inner
             .build()
@@ -92,10 +81,8 @@ impl DisableFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disable::DisableOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::disable::DisableError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::disable::DisableOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable::DisableError>>
+    {
         self.send_middleware().await
     }
 
@@ -104,10 +91,7 @@ impl DisableFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::disable::Disable,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::disable::Disable, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::disable::DisableError>,
     > {
         self.customize_middleware().await
@@ -122,17 +106,12 @@ impl DisableFluentBuilder {
         self
     }
     /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// Appends an item to `resourceTypes`.
@@ -145,17 +124,12 @@ impl DisableFluentBuilder {
         self
     }
     /// <p>The resource scan types you want to disable.</p>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>>) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
     }
     /// <p>The resource scan types you want to disable.</p>
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>> {
         self.inner.get_resource_types()
     }
 }

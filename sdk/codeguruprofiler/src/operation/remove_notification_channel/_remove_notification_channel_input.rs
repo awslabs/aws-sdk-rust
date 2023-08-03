@@ -23,34 +23,26 @@ impl RemoveNotificationChannelInput {
 }
 impl RemoveNotificationChannelInput {
     /// Creates a new builder-style object to manufacture [`RemoveNotificationChannelInput`](crate::operation::remove_notification_channel::RemoveNotificationChannelInput).
-    pub fn builder() -> crate::operation::remove_notification_channel::builders::RemoveNotificationChannelInputBuilder{
+    pub fn builder() -> crate::operation::remove_notification_channel::builders::RemoveNotificationChannelInputBuilder {
         crate::operation::remove_notification_channel::builders::RemoveNotificationChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveNotificationChannelInput`](crate::operation::remove_notification_channel::RemoveNotificationChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveNotificationChannelInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveNotificationChannelInputBuilder {
     /// <p>The name of the profiling group we want to change notification configuration for.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the profiling group we want to change notification configuration for.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profiling_group_name = input;
         self
     }
@@ -79,11 +71,9 @@ impl RemoveNotificationChannelInputBuilder {
         crate::operation::remove_notification_channel::RemoveNotificationChannelInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_notification_channel::RemoveNotificationChannelInput {
-                profiling_group_name: self.profiling_group_name,
-                channel_id: self.channel_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_notification_channel::RemoveNotificationChannelInput {
+            profiling_group_name: self.profiling_group_name,
+            channel_id: self.channel_id,
+        })
     }
 }

@@ -61,9 +61,7 @@ impl AnalyticsIntentMetric {
 
 /// A builder for [`AnalyticsIntentMetric`](crate::types::AnalyticsIntentMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsIntentMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsIntentMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
@@ -90,10 +88,7 @@ impl AnalyticsIntentMetricBuilder {
     /// <li> <p> <code>Switched</code> – The number of times there was a switch to a different intent.</p> </li>
     /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent.</p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsIntentMetricName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentMetricName>) -> Self {
         self.name = input;
         self
     }
@@ -124,10 +119,7 @@ impl AnalyticsIntentMetricBuilder {
     /// <li> <p> <code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p> </li>
     /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
-    ) -> Self {
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>) -> Self {
         self.statistic = input;
         self
     }
@@ -146,10 +138,7 @@ impl AnalyticsIntentMetricBuilder {
         self
     }
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
-    pub fn set_order(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsSortOrder>,
-    ) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<crate::types::AnalyticsSortOrder>) -> Self {
         self.order = input;
         self
     }

@@ -77,14 +77,11 @@ impl CheckoutLicenseOutput {
 
 /// A builder for [`CheckoutLicenseOutput`](crate::operation::checkout_license::CheckoutLicenseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckoutLicenseOutputBuilder {
     pub(crate) checkout_type: ::std::option::Option<crate::types::CheckoutType>,
     pub(crate) license_consumption_token: ::std::option::Option<::std::string::String>,
-    pub(crate) entitlements_allowed:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
+    pub(crate) entitlements_allowed: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
     pub(crate) signed_token: ::std::option::Option<::std::string::String>,
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
     pub(crate) issued_at: ::std::option::Option<::std::string::String>,
@@ -99,10 +96,7 @@ impl CheckoutLicenseOutputBuilder {
         self
     }
     /// <p>Checkout type.</p>
-    pub fn set_checkout_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CheckoutType>,
-    ) -> Self {
+    pub fn set_checkout_type(mut self, input: ::std::option::Option<crate::types::CheckoutType>) -> Self {
         self.checkout_type = input;
         self
     }
@@ -111,18 +105,12 @@ impl CheckoutLicenseOutputBuilder {
         &self.checkout_type
     }
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_consumption_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_consumption_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>License consumption token.</p>
-    pub fn set_license_consumption_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_consumption_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_consumption_token = input;
         self
     }
@@ -142,17 +130,12 @@ impl CheckoutLicenseOutputBuilder {
         self
     }
     /// <p>Allowed license entitlements.</p>
-    pub fn set_entitlements_allowed(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
-    ) -> Self {
+    pub fn set_entitlements_allowed(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>) -> Self {
         self.entitlements_allowed = input;
         self
     }
     /// <p>Allowed license entitlements.</p>
-    pub fn get_entitlements_allowed(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
+    pub fn get_entitlements_allowed(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
         &self.entitlements_allowed
     }
     /// <p>Signed token.</p>

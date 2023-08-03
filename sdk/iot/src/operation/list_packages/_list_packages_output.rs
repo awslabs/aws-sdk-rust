@@ -35,12 +35,9 @@ impl ListPackagesOutput {
 
 /// A builder for [`ListPackagesOutput`](crate::operation::list_packages::ListPackagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackagesOutputBuilder {
-    pub(crate) package_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>>,
+    pub(crate) package_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListPackagesOutputBuilder {
         self
     }
     /// <p>The software package summary.</p>
-    pub fn set_package_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>>,
-    ) -> Self {
+    pub fn set_package_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>>) -> Self {
         self.package_summaries = input;
         self
     }
     /// <p>The software package summary.</p>
-    pub fn get_package_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>> {
+    pub fn get_package_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>> {
         &self.package_summaries
     }
     /// <p>The token for the next set of results.</p>

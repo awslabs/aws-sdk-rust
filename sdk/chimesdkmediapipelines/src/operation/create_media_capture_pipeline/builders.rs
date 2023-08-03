@@ -26,7 +26,7 @@ impl CreateMediaCapturePipelineInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMediaCapturePipelineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_media_capture_pipeline::builders::CreateMediaCapturePipelineInputBuilder,
+    inner: crate::operation::create_media_capture_pipeline::builders::CreateMediaCapturePipelineInputBuilder,
 }
 impl CreateMediaCapturePipelineFluentBuilder {
     /// Creates a new `CreateMediaCapturePipeline`.
@@ -37,7 +37,7 @@ impl CreateMediaCapturePipelineFluentBuilder {
         }
     }
     /// Access the CreateMediaCapturePipeline as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_media_capture_pipeline::builders::CreateMediaCapturePipelineInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_media_capture_pipeline::builders::CreateMediaCapturePipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateMediaCapturePipelineFluentBuilder {
             crate::operation::create_media_capture_pipeline::CreateMediaCapturePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateMediaCapturePipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateMediaCapturePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateMediaCapturePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateMediaCapturePipelineFluentBuilder {
             crate::operation::create_media_capture_pipeline::CreateMediaCapturePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl CreateMediaCapturePipelineFluentBuilder {
         self
     }
     /// <p>Source type from which the media artifacts are captured. A Chime SDK Meeting is the only supported source.</p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaPipelineSourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::MediaPipelineSourceType>) -> Self {
         self.inner = self.inner.set_source_type(input);
         self
     }
@@ -157,10 +143,7 @@ impl CreateMediaCapturePipelineFluentBuilder {
         self
     }
     /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
-    pub fn set_sink_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaPipelineSinkType>,
-    ) -> Self {
+    pub fn set_sink_type(mut self, input: ::std::option::Option<crate::types::MediaPipelineSinkType>) -> Self {
         self.inner = self.inner.set_sink_type(input);
         self
     }
@@ -183,18 +166,12 @@ impl CreateMediaCapturePipelineFluentBuilder {
         self.inner.get_sink_arn()
     }
     /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media pipeline request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media pipeline request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -203,25 +180,17 @@ impl CreateMediaCapturePipelineFluentBuilder {
         self.inner.get_client_request_token()
     }
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
-    pub fn chime_sdk_meeting_configuration(
-        mut self,
-        input: crate::types::ChimeSdkMeetingConfiguration,
-    ) -> Self {
+    pub fn chime_sdk_meeting_configuration(mut self, input: crate::types::ChimeSdkMeetingConfiguration) -> Self {
         self.inner = self.inner.chime_sdk_meeting_configuration(input);
         self
     }
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
-    pub fn set_chime_sdk_meeting_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ChimeSdkMeetingConfiguration>,
-    ) -> Self {
+    pub fn set_chime_sdk_meeting_configuration(mut self, input: ::std::option::Option<crate::types::ChimeSdkMeetingConfiguration>) -> Self {
         self.inner = self.inner.set_chime_sdk_meeting_configuration(input);
         self
     }
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
-    pub fn get_chime_sdk_meeting_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChimeSdkMeetingConfiguration> {
+    pub fn get_chime_sdk_meeting_configuration(&self) -> &::std::option::Option<crate::types::ChimeSdkMeetingConfiguration> {
         self.inner.get_chime_sdk_meeting_configuration()
     }
     /// Appends an item to `Tags`.
@@ -234,10 +203,7 @@ impl CreateMediaCapturePipelineFluentBuilder {
         self
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

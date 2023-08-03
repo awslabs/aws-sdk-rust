@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteEmailChannelOutput`](crate::operation::delete_email_channel::DeleteEmailChannelOutput) with field(s):
     ///   - [`email_channel_response(Option<EmailChannelResponse>)`](crate::operation::delete_email_channel::DeleteEmailChannelOutput::email_channel_response): <p>Provides information about the status and settings of the email channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteEmailChannelError>`](crate::operation::delete_email_channel::DeleteEmailChannelError)
-    pub fn delete_email_channel(
-        &self,
-    ) -> crate::operation::delete_email_channel::builders::DeleteEmailChannelFluentBuilder {
-        crate::operation::delete_email_channel::builders::DeleteEmailChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_email_channel(&self) -> crate::operation::delete_email_channel::builders::DeleteEmailChannelFluentBuilder {
+        crate::operation::delete_email_channel::builders::DeleteEmailChannelFluentBuilder::new(self.handle.clone())
     }
 }

@@ -57,9 +57,7 @@ impl PlatformBranchSummary {
 
 /// A builder for [`PlatformBranchSummary`](crate::types::PlatformBranchSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlatformBranchSummaryBuilder {
     pub(crate) platform_name: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ pub struct PlatformBranchSummaryBuilder {
 }
 impl PlatformBranchSummaryBuilder {
     /// <p>The name of the platform to which this platform branch belongs.</p>
-    pub fn platform_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the platform to which this platform branch belongs.</p>
-    pub fn set_platform_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_name = input;
         self
     }
@@ -104,19 +96,13 @@ impl PlatformBranchSummaryBuilder {
     }
     /// <p>The support life cycle state of the platform branch.</p>
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
-    pub fn lifecycle_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The support life cycle state of the platform branch.</p>
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
-    pub fn set_lifecycle_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_state = input;
         self
     }
@@ -148,10 +134,7 @@ impl PlatformBranchSummaryBuilder {
     ///
     /// <p>The environment tiers that platform versions in this branch support.</p>
     /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
-    pub fn supported_tier_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_tier_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_tier_list.unwrap_or_default();
         v.push(input.into());
         self.supported_tier_list = ::std::option::Option::Some(v);
@@ -159,18 +142,13 @@ impl PlatformBranchSummaryBuilder {
     }
     /// <p>The environment tiers that platform versions in this branch support.</p>
     /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
-    pub fn set_supported_tier_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_tier_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_tier_list = input;
         self
     }
     /// <p>The environment tiers that platform versions in this branch support.</p>
     /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
-    pub fn get_supported_tier_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_tier_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_tier_list
     }
     /// Consumes the builder and constructs a [`PlatformBranchSummary`](crate::types::PlatformBranchSummary).

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`dataset_id(Option<String>)`](crate::operation::create_data_view::CreateDataViewOutput::dataset_id): <p>The unique identifier of the Dataset used for the Dataview.</p>
     ///   - [`data_view_id(Option<String>)`](crate::operation::create_data_view::CreateDataViewOutput::data_view_id): <p>The unique identifier for the created Dataview.</p>
     /// - On failure, responds with [`SdkError<CreateDataViewError>`](crate::operation::create_data_view::CreateDataViewError)
-    pub fn create_data_view(
-        &self,
-    ) -> crate::operation::create_data_view::builders::CreateDataViewFluentBuilder {
-        crate::operation::create_data_view::builders::CreateDataViewFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_data_view(&self) -> crate::operation::create_data_view::builders::CreateDataViewFluentBuilder {
+        crate::operation::create_data_view::builders::CreateDataViewFluentBuilder::new(self.handle.clone())
     }
 }

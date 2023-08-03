@@ -79,9 +79,7 @@ impl UpdateCsvClassifierRequest {
 
 /// A builder for [`UpdateCsvClassifierRequest`](crate::types::UpdateCsvClassifierRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCsvClassifierRequestBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,
@@ -142,10 +140,7 @@ impl UpdateCsvClassifierRequestBuilder {
         self
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
-    pub fn set_contains_header(
-        mut self,
-        input: ::std::option::Option<crate::types::CsvHeaderOption>,
-    ) -> Self {
+    pub fn set_contains_header(mut self, input: ::std::option::Option<crate::types::CsvHeaderOption>) -> Self {
         self.contains_header = input;
         self
     }
@@ -165,10 +160,7 @@ impl UpdateCsvClassifierRequestBuilder {
         self
     }
     /// <p>A list of strings representing column names.</p>
-    pub fn set_header(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_header(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.header = input;
         self
     }
@@ -223,27 +215,19 @@ impl UpdateCsvClassifierRequestBuilder {
     /// To override the contents of this collection use [`set_custom_datatypes`](Self::set_custom_datatypes).
     ///
     /// <p>Specifies a list of supported custom datatypes.</p>
-    pub fn custom_datatypes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_datatypes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.custom_datatypes.unwrap_or_default();
         v.push(input.into());
         self.custom_datatypes = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies a list of supported custom datatypes.</p>
-    pub fn set_custom_datatypes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_custom_datatypes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.custom_datatypes = input;
         self
     }
     /// <p>Specifies a list of supported custom datatypes.</p>
-    pub fn get_custom_datatypes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_custom_datatypes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.custom_datatypes
     }
     /// Consumes the builder and constructs a [`UpdateCsvClassifierRequest`](crate::types::UpdateCsvClassifierRequest).

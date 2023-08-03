@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateFeatureGroupOutput {
 }
 impl CreateFeatureGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateFeatureGroupOutput`](crate::operation::create_feature_group::CreateFeatureGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_feature_group::builders::CreateFeatureGroupOutputBuilder {
+    pub fn builder() -> crate::operation::create_feature_group::builders::CreateFeatureGroupOutputBuilder {
         crate::operation::create_feature_group::builders::CreateFeatureGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFeatureGroupOutput`](crate::operation::create_feature_group::CreateFeatureGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFeatureGroupOutputBuilder {
     pub(crate) feature_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateFeatureGroupOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group. </p>
-    pub fn feature_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group. </p>
-    pub fn set_feature_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_arn = input;
         self
     }

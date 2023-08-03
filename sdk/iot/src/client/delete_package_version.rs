@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_package_version::builders::DeletePackageVersionFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_package_version::builders::DeletePackageVersionFluentBuilder::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DeletePackageVersionOutput`](crate::operation::delete_package_version::DeletePackageVersionOutput)
     /// - On failure, responds with [`SdkError<DeletePackageVersionError>`](crate::operation::delete_package_version::DeletePackageVersionError)
-    pub fn delete_package_version(
-        &self,
-    ) -> crate::operation::delete_package_version::builders::DeletePackageVersionFluentBuilder {
-        crate::operation::delete_package_version::builders::DeletePackageVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_package_version(&self) -> crate::operation::delete_package_version::builders::DeletePackageVersionFluentBuilder {
+        crate::operation::delete_package_version::builders::DeletePackageVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,9 +38,7 @@ impl BuildBotLocaleOutput {
         self.bot_locale_status.as_ref()
     }
     /// <p>A timestamp indicating the date and time that the bot was last built for this locale.</p>
-    pub fn last_build_submitted_date_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_build_submitted_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_build_submitted_date_time.as_ref()
     }
 }
@@ -58,9 +56,7 @@ impl BuildBotLocaleOutput {
 
 /// A builder for [`BuildBotLocaleOutput`](crate::operation::build_bot_locale::BuildBotLocaleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuildBotLocaleOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -118,10 +114,7 @@ impl BuildBotLocaleOutputBuilder {
         self
     }
     /// <p>The bot's build status. When the status is <code>ReadyExpressTesting</code> you can test the bot using the utterances defined for the intents and slot types. When the status is <code>Built</code>, the bot is ready for use and can be tested using any utterance.</p>
-    pub fn set_bot_locale_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BotLocaleStatus>,
-    ) -> Self {
+    pub fn set_bot_locale_status(mut self, input: ::std::option::Option<crate::types::BotLocaleStatus>) -> Self {
         self.bot_locale_status = input;
         self
     }
@@ -135,17 +128,12 @@ impl BuildBotLocaleOutputBuilder {
         self
     }
     /// <p>A timestamp indicating the date and time that the bot was last built for this locale.</p>
-    pub fn set_last_build_submitted_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_build_submitted_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_build_submitted_date_time = input;
         self
     }
     /// <p>A timestamp indicating the date and time that the bot was last built for this locale.</p>
-    pub fn get_last_build_submitted_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_build_submitted_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_build_submitted_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

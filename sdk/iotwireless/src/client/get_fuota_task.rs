@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`fragment_size_bytes(Option<i32>)`](crate::operation::get_fuota_task::GetFuotaTaskOutput::fragment_size_bytes): <p>The size of each fragment in bytes. This parameter is supported only for FUOTA tasks with multicast groups.</p>
     ///   - [`fragment_interval_ms(Option<i32>)`](crate::operation::get_fuota_task::GetFuotaTaskOutput::fragment_interval_ms): <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p> <note>   <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>  </note>
     /// - On failure, responds with [`SdkError<GetFuotaTaskError>`](crate::operation::get_fuota_task::GetFuotaTaskError)
-    pub fn get_fuota_task(
-        &self,
-    ) -> crate::operation::get_fuota_task::builders::GetFuotaTaskFluentBuilder {
-        crate::operation::get_fuota_task::builders::GetFuotaTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_fuota_task(&self) -> crate::operation::get_fuota_task::builders::GetFuotaTaskFluentBuilder {
+        crate::operation::get_fuota_task::builders::GetFuotaTaskFluentBuilder::new(self.handle.clone())
     }
 }

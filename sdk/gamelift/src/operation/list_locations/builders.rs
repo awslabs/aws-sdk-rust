@@ -10,10 +10,7 @@ impl ListLocationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_locations::ListLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_locations::ListLocationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_locations::ListLocationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_locations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListLocationsFluentBuilder {
         }
     }
     /// Access the ListLocations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_locations::builders::ListLocationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_locations::builders::ListLocationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListLocationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListLocationsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_locations::paginator::ListLocationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_locations::paginator::ListLocationsPaginator {
-        crate::operation::list_locations::paginator::ListLocationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_locations::paginator::ListLocationsPaginator {
+        crate::operation::list_locations::paginator::ListLocationsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -135,17 +122,12 @@ impl ListLocationsFluentBuilder {
         self
     }
     /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>

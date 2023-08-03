@@ -23,9 +23,7 @@ impl ErrorReportLocation {
 
 /// A builder for [`ErrorReportLocation`](crate::types::ErrorReportLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorReportLocationBuilder {
     pub(crate) s3_report_location: ::std::option::Option<crate::types::S3ReportLocation>,
 }
@@ -36,10 +34,7 @@ impl ErrorReportLocationBuilder {
         self
     }
     /// <p>The S3 location where error reports are written.</p>
-    pub fn set_s3_report_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ReportLocation>,
-    ) -> Self {
+    pub fn set_s3_report_location(mut self, input: ::std::option::Option<crate::types::S3ReportLocation>) -> Self {
         self.s3_report_location = input;
         self
     }

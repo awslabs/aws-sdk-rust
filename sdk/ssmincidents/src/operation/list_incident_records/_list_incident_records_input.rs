@@ -53,18 +53,14 @@ impl ListIncidentRecordsInput {
 }
 impl ListIncidentRecordsInput {
     /// Creates a new builder-style object to manufacture [`ListIncidentRecordsInput`](crate::operation::list_incident_records::ListIncidentRecordsInput).
-    pub fn builder(
-    ) -> crate::operation::list_incident_records::builders::ListIncidentRecordsInputBuilder {
-        crate::operation::list_incident_records::builders::ListIncidentRecordsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_incident_records::builders::ListIncidentRecordsInputBuilder {
+        crate::operation::list_incident_records::builders::ListIncidentRecordsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIncidentRecordsInput`](crate::operation::list_incident_records::ListIncidentRecordsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIncidentRecordsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -107,10 +103,7 @@ impl ListIncidentRecordsInputBuilder {
     /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
     /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -161,16 +154,12 @@ impl ListIncidentRecordsInputBuilder {
     /// Consumes the builder and constructs a [`ListIncidentRecordsInput`](crate::operation::list_incident_records::ListIncidentRecordsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_incident_records::ListIncidentRecordsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_incident_records::ListIncidentRecordsInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_incident_records::ListIncidentRecordsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_incident_records::ListIncidentRecordsInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

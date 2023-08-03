@@ -10,9 +10,7 @@ pub struct DeleteServiceTemplateVersionOutput {
 }
 impl DeleteServiceTemplateVersionOutput {
     /// <p>The detailed data of the service template version being deleted.</p>
-    pub fn service_template_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceTemplateVersion> {
+    pub fn service_template_version(&self) -> ::std::option::Option<&crate::types::ServiceTemplateVersion> {
         self.service_template_version.as_ref()
     }
 }
@@ -23,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DeleteServiceTemplateVersionOutput {
 }
 impl DeleteServiceTemplateVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceTemplateVersionOutput`](crate::operation::delete_service_template_version::DeleteServiceTemplateVersionOutput).
-    pub fn builder() -> crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionOutputBuilder {
         crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceTemplateVersionOutput`](crate::operation::delete_service_template_version::DeleteServiceTemplateVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceTemplateVersionOutputBuilder {
-    pub(crate) service_template_version:
-        ::std::option::Option<crate::types::ServiceTemplateVersion>,
+    pub(crate) service_template_version: ::std::option::Option<crate::types::ServiceTemplateVersion>,
     _request_id: Option<String>,
 }
 impl DeleteServiceTemplateVersionOutputBuilder {
@@ -45,17 +40,12 @@ impl DeleteServiceTemplateVersionOutputBuilder {
         self
     }
     /// <p>The detailed data of the service template version being deleted.</p>
-    pub fn set_service_template_version(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceTemplateVersion>,
-    ) -> Self {
+    pub fn set_service_template_version(mut self, input: ::std::option::Option<crate::types::ServiceTemplateVersion>) -> Self {
         self.service_template_version = input;
         self
     }
     /// <p>The detailed data of the service template version being deleted.</p>
-    pub fn get_service_template_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceTemplateVersion> {
+    pub fn get_service_template_version(&self) -> &::std::option::Option<crate::types::ServiceTemplateVersion> {
         &self.service_template_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,9 +58,7 @@ impl DeleteServiceTemplateVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteServiceTemplateVersionOutput`](crate::operation::delete_service_template_version::DeleteServiceTemplateVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_service_template_version::DeleteServiceTemplateVersionOutput {
+    pub fn build(self) -> crate::operation::delete_service_template_version::DeleteServiceTemplateVersionOutput {
         crate::operation::delete_service_template_version::DeleteServiceTemplateVersionOutput {
             service_template_version: self.service_template_version,
             _request_id: self._request_id,

@@ -37,10 +37,7 @@ impl CreateServiceTemplateFluentBuilder {
         }
     }
     /// Access the CreateServiceTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_service_template::builders::CreateServiceTemplateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_service_template::builders::CreateServiceTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateServiceTemplateFluentBuilder {
             crate::operation::create_service_template::CreateServiceTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_template::CreateServiceTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_template::CreateServiceTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateServiceTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateServiceTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_template::CreateServiceTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_template::CreateServiceTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_template::CreateServiceTemplateError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateServiceTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_template::CreateServiceTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_template::CreateServiceTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_template::CreateServiceTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateServiceTemplateFluentBuilder {
             crate::operation::create_service_template::CreateServiceTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_template::CreateServiceTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_template::CreateServiceTemplateError>,
     > {
         self.customize_middleware().await
     }
@@ -166,18 +152,12 @@ impl CreateServiceTemplateFluentBuilder {
         self.inner.get_description()
     }
     /// <p>A customer provided encryption key that's used to encrypt data.</p>
-    pub fn encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.encryption_key(input.into());
         self
     }
     /// <p>A customer provided encryption key that's used to encrypt data.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_encryption_key(input);
         self
     }
@@ -191,10 +171,7 @@ impl CreateServiceTemplateFluentBuilder {
         self
     }
     /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_pipeline_provisioning(
-        mut self,
-        input: ::std::option::Option<crate::types::Provisioning>,
-    ) -> Self {
+    pub fn set_pipeline_provisioning(mut self, input: ::std::option::Option<crate::types::Provisioning>) -> Self {
         self.inner = self.inner.set_pipeline_provisioning(input);
         self
     }
@@ -214,10 +191,7 @@ impl CreateServiceTemplateFluentBuilder {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

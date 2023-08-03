@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`summary_items(Option<Vec<PersonasSummary>>)`](crate::operation::list_entity_personas::ListEntityPersonasOutput::summary_items): <p>An array of summary information for one or more users or groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_entity_personas::ListEntityPersonasOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of users or groups.</p>
     /// - On failure, responds with [`SdkError<ListEntityPersonasError>`](crate::operation::list_entity_personas::ListEntityPersonasError)
-    pub fn list_entity_personas(
-        &self,
-    ) -> crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder {
-        crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_entity_personas(&self) -> crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder {
+        crate::operation::list_entity_personas::builders::ListEntityPersonasFluentBuilder::new(self.handle.clone())
     }
 }

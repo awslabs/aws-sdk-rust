@@ -27,34 +27,27 @@ impl ::std::fmt::Display for NoSuchRemediationConfigurationException {
     }
 }
 impl ::std::error::Error for NoSuchRemediationConfigurationException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::NoSuchRemediationConfigurationException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::NoSuchRemediationConfigurationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for NoSuchRemediationConfigurationException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchRemediationConfigurationException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl NoSuchRemediationConfigurationException {
     /// Creates a new builder-style object to manufacture [`NoSuchRemediationConfigurationException`](crate::types::error::NoSuchRemediationConfigurationException).
-    pub fn builder() -> crate::types::error::builders::NoSuchRemediationConfigurationExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::NoSuchRemediationConfigurationExceptionBuilder {
         crate::types::error::builders::NoSuchRemediationConfigurationExceptionBuilder::default()
     }
 }
 
 /// A builder for [`NoSuchRemediationConfigurationException`](crate::types::error::NoSuchRemediationConfigurationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NoSuchRemediationConfigurationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl NoSuchRemediationConfigurationExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

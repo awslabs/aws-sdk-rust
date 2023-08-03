@@ -105,9 +105,7 @@ impl DescribePageOutput {
 
 /// A builder for [`DescribePageOutput`](crate::operation::describe_page::DescribePageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePageOutputBuilder {
     pub(crate) page_arn: ::std::option::Option<::std::string::String>,
     pub(crate) engagement_arn: ::std::option::Option<::std::string::String>,
@@ -139,18 +137,12 @@ impl DescribePageOutputBuilder {
         &self.page_arn
     }
     /// <p>The ARN of the engagement that engaged the contact channel.</p>
-    pub fn engagement_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engagement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the engagement that engaged the contact channel.</p>
-    pub fn set_engagement_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engagement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engagement_arn = input;
         self
     }
@@ -215,18 +207,12 @@ impl DescribePageOutputBuilder {
         &self.content
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_subject(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_subject = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn set_public_subject(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_subject = input;
         self
     }
@@ -235,18 +221,12 @@ impl DescribePageOutputBuilder {
         &self.public_subject
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn set_public_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_content = input;
         self
     }
@@ -274,10 +254,7 @@ impl DescribePageOutputBuilder {
         self
     }
     /// <p>The time the engagement was sent to the contact channel.</p>
-    pub fn set_sent_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_sent_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.sent_time = input;
         self
     }
@@ -291,10 +268,7 @@ impl DescribePageOutputBuilder {
         self
     }
     /// <p>The time that the contact channel acknowledged the engagement.</p>
-    pub fn set_read_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_read_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.read_time = input;
         self
     }
@@ -308,10 +282,7 @@ impl DescribePageOutputBuilder {
         self
     }
     /// <p>The time that the contact channel received the engagement.</p>
-    pub fn set_delivery_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_delivery_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.delivery_time = input;
         self
     }

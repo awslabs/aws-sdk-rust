@@ -34,8 +34,7 @@ pub struct AwsIamPolicyDetails {
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>List of versions of the policy.</p>
     #[doc(hidden)]
-    pub policy_version_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamPolicyVersion>>,
+    pub policy_version_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamPolicyVersion>>,
     /// <p>When the policy was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
@@ -80,9 +79,7 @@ impl AwsIamPolicyDetails {
         self.policy_name.as_deref()
     }
     /// <p>List of versions of the policy.</p>
-    pub fn policy_version_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsIamPolicyVersion]> {
+    pub fn policy_version_list(&self) -> ::std::option::Option<&[crate::types::AwsIamPolicyVersion]> {
         self.policy_version_list.as_deref()
     }
     /// <p>When the policy was most recently updated.</p>
@@ -100,9 +97,7 @@ impl AwsIamPolicyDetails {
 
 /// A builder for [`AwsIamPolicyDetails`](crate::types::AwsIamPolicyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIamPolicyDetailsBuilder {
     pub(crate) attachment_count: ::std::option::Option<i32>,
     pub(crate) create_date: ::std::option::Option<::std::string::String>,
@@ -113,8 +108,7 @@ pub struct AwsIamPolicyDetailsBuilder {
     pub(crate) permissions_boundary_usage_count: ::std::option::Option<i32>,
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_version_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamPolicyVersion>>,
+    pub(crate) policy_version_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamPolicyVersion>>,
     pub(crate) update_date: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamPolicyDetailsBuilder {
@@ -150,18 +144,12 @@ impl AwsIamPolicyDetailsBuilder {
         &self.create_date
     }
     /// <p>The identifier of the default version of the policy.</p>
-    pub fn default_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the default version of the policy.</p>
-    pub fn set_default_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_version_id = input;
         self
     }
@@ -217,10 +205,7 @@ impl AwsIamPolicyDetailsBuilder {
         self
     }
     /// <p>The number of users and roles that use the policy to set the permissions boundary.</p>
-    pub fn set_permissions_boundary_usage_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_permissions_boundary_usage_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.permissions_boundary_usage_count = input;
         self
     }
@@ -268,17 +253,12 @@ impl AwsIamPolicyDetailsBuilder {
         self
     }
     /// <p>List of versions of the policy.</p>
-    pub fn set_policy_version_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamPolicyVersion>>,
-    ) -> Self {
+    pub fn set_policy_version_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamPolicyVersion>>) -> Self {
         self.policy_version_list = input;
         self
     }
     /// <p>List of versions of the policy.</p>
-    pub fn get_policy_version_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamPolicyVersion>> {
+    pub fn get_policy_version_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamPolicyVersion>> {
         &self.policy_version_list
     }
     /// <p>When the policy was most recently updated.</p>
@@ -307,9 +287,7 @@ impl AwsIamPolicyDetailsBuilder {
             description: self.description,
             is_attachable: self.is_attachable.unwrap_or_default(),
             path: self.path,
-            permissions_boundary_usage_count: self
-                .permissions_boundary_usage_count
-                .unwrap_or_default(),
+            permissions_boundary_usage_count: self.permissions_boundary_usage_count.unwrap_or_default(),
             policy_id: self.policy_id,
             policy_name: self.policy_name,
             policy_version_list: self.policy_version_list,

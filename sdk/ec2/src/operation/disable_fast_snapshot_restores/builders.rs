@@ -26,7 +26,7 @@ impl DisableFastSnapshotRestoresInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableFastSnapshotRestoresFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disable_fast_snapshot_restores::builders::DisableFastSnapshotRestoresInputBuilder,
+    inner: crate::operation::disable_fast_snapshot_restores::builders::DisableFastSnapshotRestoresInputBuilder,
 }
 impl DisableFastSnapshotRestoresFluentBuilder {
     /// Creates a new `DisableFastSnapshotRestores`.
@@ -37,7 +37,7 @@ impl DisableFastSnapshotRestoresFluentBuilder {
         }
     }
     /// Access the DisableFastSnapshotRestores as a reference.
-    pub fn as_input(&self) -> &crate::operation::disable_fast_snapshot_restores::builders::DisableFastSnapshotRestoresInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disable_fast_snapshot_restores::builders::DisableFastSnapshotRestoresInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisableFastSnapshotRestoresFluentBuilder {
             crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisableFastSnapshotRestoresFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisableFastSnapshotRestoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisableFastSnapshotRestoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DisableFastSnapshotRestoresFluentBuilder {
             crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresError>,
     > {
         self.customize_middleware().await
     }
@@ -125,25 +114,17 @@ impl DisableFastSnapshotRestoresFluentBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zones(input.into());
         self
     }
     /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_availability_zones(input);
         self
     }
     /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_availability_zones()
     }
     /// Appends an item to `SourceSnapshotIds`.
@@ -151,25 +132,17 @@ impl DisableFastSnapshotRestoresFluentBuilder {
     /// To override the contents of this collection use [`set_source_snapshot_ids`](Self::set_source_snapshot_ids).
     ///
     /// <p>The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>.</p>
-    pub fn source_snapshot_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_snapshot_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_snapshot_ids(input.into());
         self
     }
     /// <p>The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>.</p>
-    pub fn set_source_snapshot_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_source_snapshot_ids(input);
         self
     }
     /// <p>The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>.</p>
-    pub fn get_source_snapshot_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_source_snapshot_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

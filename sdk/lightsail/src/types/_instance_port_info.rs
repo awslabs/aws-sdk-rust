@@ -142,9 +142,7 @@ impl InstancePortInfo {
 
 /// A builder for [`InstancePortInfo`](crate::types::InstancePortInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstancePortInfoBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) to_port: ::std::option::Option<i32>,
@@ -242,10 +240,7 @@ impl InstancePortInfoBuilder {
     /// <li> <p> <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable data stream service, use TCP instead.</p> </li>
     /// <li> <p> <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational information indicating success or failure when communicating with an instance. For example, an error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.</p> </li>
     /// </ul>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::NetworkProtocol>) -> Self {
         self.protocol = input;
         self
     }
@@ -280,10 +275,7 @@ impl InstancePortInfoBuilder {
         self
     }
     /// <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
-    pub fn set_access_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PortAccessType>,
-    ) -> Self {
+    pub fn set_access_type(mut self, input: ::std::option::Option<crate::types::PortAccessType>) -> Self {
         self.access_type = input;
         self
     }
@@ -315,10 +307,7 @@ impl InstancePortInfoBuilder {
     /// <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p> <note>
     /// <p>Lightsail currently supports only <code>inbound</code> access direction.</p>
     /// </note>
-    pub fn set_access_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessDirection>,
-    ) -> Self {
+    pub fn set_access_direction(mut self, input: ::std::option::Option<crate::types::AccessDirection>) -> Self {
         self.access_direction = input;
         self
     }
@@ -346,10 +335,7 @@ impl InstancePortInfoBuilder {
     /// <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to connect to an instance.</p>
     /// </note>
     /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
-    pub fn set_cidrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cidrs = input;
         self
     }
@@ -378,10 +364,7 @@ impl InstancePortInfoBuilder {
     /// <p>The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to an instance.</p>
     /// </note>
     /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
-    pub fn set_ipv6_cidrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ipv6_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ipv6_cidrs = input;
         self
     }
@@ -398,10 +381,7 @@ impl InstancePortInfoBuilder {
     ///
     /// <p>An alias that defines access for a preconfigured range of IP addresses.</p>
     /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your instance.</p>
-    pub fn cidr_list_aliases(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cidr_list_aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cidr_list_aliases.unwrap_or_default();
         v.push(input.into());
         self.cidr_list_aliases = ::std::option::Option::Some(v);
@@ -409,18 +389,13 @@ impl InstancePortInfoBuilder {
     }
     /// <p>An alias that defines access for a preconfigured range of IP addresses.</p>
     /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your instance.</p>
-    pub fn set_cidr_list_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cidr_list_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cidr_list_aliases = input;
         self
     }
     /// <p>An alias that defines access for a preconfigured range of IP addresses.</p>
     /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your instance.</p>
-    pub fn get_cidr_list_aliases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cidr_list_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cidr_list_aliases
     }
     /// Consumes the builder and constructs a [`InstancePortInfo`](crate::types::InstancePortInfo).

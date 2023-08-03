@@ -29,9 +29,7 @@ impl FilledMapConfiguration {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a <code>FilledMapVisual</code>.</p>
-    pub fn sort_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FilledMapSortConfiguration> {
+    pub fn sort_configuration(&self) -> ::std::option::Option<&crate::types::FilledMapSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The legend display setup of the visual.</p>
@@ -47,9 +45,7 @@ impl FilledMapConfiguration {
         self.window_options.as_ref()
     }
     /// <p>The map style options of the filled map visual.</p>
-    pub fn map_style_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GeospatialMapStyleOptions> {
+    pub fn map_style_options(&self) -> ::std::option::Option<&crate::types::GeospatialMapStyleOptions> {
         self.map_style_options.as_ref()
     }
 }
@@ -62,9 +58,7 @@ impl FilledMapConfiguration {
 
 /// A builder for [`FilledMapConfiguration`](crate::types::FilledMapConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilledMapConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::FilledMapFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::FilledMapSortConfiguration>,
@@ -80,10 +74,7 @@ impl FilledMapConfigurationBuilder {
         self
     }
     /// <p>The field wells of the visual.</p>
-    pub fn set_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::FilledMapFieldWells>,
-    ) -> Self {
+    pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::FilledMapFieldWells>) -> Self {
         self.field_wells = input;
         self
     }
@@ -97,17 +88,12 @@ impl FilledMapConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of a <code>FilledMapVisual</code>.</p>
-    pub fn set_sort_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FilledMapSortConfiguration>,
-    ) -> Self {
+    pub fn set_sort_configuration(mut self, input: ::std::option::Option<crate::types::FilledMapSortConfiguration>) -> Self {
         self.sort_configuration = input;
         self
     }
     /// <p>The sort configuration of a <code>FilledMapVisual</code>.</p>
-    pub fn get_sort_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilledMapSortConfiguration> {
+    pub fn get_sort_configuration(&self) -> &::std::option::Option<crate::types::FilledMapSortConfiguration> {
         &self.sort_configuration
     }
     /// <p>The legend display setup of the visual.</p>
@@ -130,10 +116,7 @@ impl FilledMapConfigurationBuilder {
         self
     }
     /// <p>The tooltip display setup of the visual.</p>
-    pub fn set_tooltip(
-        mut self,
-        input: ::std::option::Option<crate::types::TooltipOptions>,
-    ) -> Self {
+    pub fn set_tooltip(mut self, input: ::std::option::Option<crate::types::TooltipOptions>) -> Self {
         self.tooltip = input;
         self
     }
@@ -147,17 +130,12 @@ impl FilledMapConfigurationBuilder {
         self
     }
     /// <p>The window options of the filled map visual.</p>
-    pub fn set_window_options(
-        mut self,
-        input: ::std::option::Option<crate::types::GeospatialWindowOptions>,
-    ) -> Self {
+    pub fn set_window_options(mut self, input: ::std::option::Option<crate::types::GeospatialWindowOptions>) -> Self {
         self.window_options = input;
         self
     }
     /// <p>The window options of the filled map visual.</p>
-    pub fn get_window_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::GeospatialWindowOptions> {
+    pub fn get_window_options(&self) -> &::std::option::Option<crate::types::GeospatialWindowOptions> {
         &self.window_options
     }
     /// <p>The map style options of the filled map visual.</p>
@@ -166,17 +144,12 @@ impl FilledMapConfigurationBuilder {
         self
     }
     /// <p>The map style options of the filled map visual.</p>
-    pub fn set_map_style_options(
-        mut self,
-        input: ::std::option::Option<crate::types::GeospatialMapStyleOptions>,
-    ) -> Self {
+    pub fn set_map_style_options(mut self, input: ::std::option::Option<crate::types::GeospatialMapStyleOptions>) -> Self {
         self.map_style_options = input;
         self
     }
     /// <p>The map style options of the filled map visual.</p>
-    pub fn get_map_style_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::GeospatialMapStyleOptions> {
+    pub fn get_map_style_options(&self) -> &::std::option::Option<crate::types::GeospatialMapStyleOptions> {
         &self.map_style_options
     }
     /// Consumes the builder and constructs a [`FilledMapConfiguration`](crate::types::FilledMapConfiguration).

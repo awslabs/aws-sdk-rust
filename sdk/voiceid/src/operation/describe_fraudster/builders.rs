@@ -10,10 +10,7 @@ impl DescribeFraudsterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_fraudster::DescribeFraudsterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fraudster::DescribeFraudsterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fraudster::DescribeFraudsterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_fraudster();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeFraudsterFluentBuilder {
         }
     }
     /// Access the DescribeFraudster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_fraudster::builders::DescribeFraudsterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_fraudster::builders::DescribeFraudsterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeFraudsterFluentBuilder {
             crate::operation::describe_fraudster::DescribeFraudster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fraudster::DescribeFraudsterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fraudster::DescribeFraudsterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeFraudsterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeFraudsterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fraudster::DescribeFraudsterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fraudster::DescribeFraudsterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fraudster::DescribeFraudsterError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeFraudsterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fraudster::DescribeFraudsterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fraudster::DescribeFraudsterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fraudster::DescribeFraudsterError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeFraudsterFluentBuilder {
             crate::operation::describe_fraudster::DescribeFraudster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fraudster::DescribeFraudsterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fraudster::DescribeFraudsterError>,
     > {
         self.customize_middleware().await
     }

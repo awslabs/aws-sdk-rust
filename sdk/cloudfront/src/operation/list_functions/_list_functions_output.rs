@@ -28,9 +28,7 @@ impl ListFunctionsOutput {
 
 /// A builder for [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFunctionsOutputBuilder {
     pub(crate) function_list: ::std::option::Option<crate::types::FunctionList>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl ListFunctionsOutputBuilder {
         self
     }
     /// <p>A list of CloudFront functions.</p>
-    pub fn set_function_list(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionList>,
-    ) -> Self {
+    pub fn set_function_list(mut self, input: ::std::option::Option<crate::types::FunctionList>) -> Self {
         self.function_list = input;
         self
     }

@@ -37,9 +37,7 @@ impl OpenZfsUserOrGroupQuota {
 
 /// A builder for [`OpenZfsUserOrGroupQuota`](crate::types::OpenZfsUserOrGroupQuota).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpenZfsUserOrGroupQuotaBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::OpenZfsQuotaType>,
     pub(crate) id: ::std::option::Option<i32>,
@@ -52,10 +50,7 @@ impl OpenZfsUserOrGroupQuotaBuilder {
         self
     }
     /// <p>A value that specifies whether the quota applies to a user or group.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenZfsQuotaType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::OpenZfsQuotaType>) -> Self {
         self.r#type = input;
         self
     }

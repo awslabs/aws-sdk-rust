@@ -37,9 +37,7 @@ impl AddRoleToDBClusterFluentBuilder {
         }
     }
     /// Access the AddRoleToDBCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_role_to_db_cluster::builders::AddRoleToDbClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_role_to_db_cluster::builders::AddRoleToDbClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl AddRoleToDBClusterFluentBuilder {
             crate::operation::add_role_to_db_cluster::AddRoleToDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl AddRoleToDBClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl AddRoleToDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_role_to_db_cluster::AddRoleToDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl AddRoleToDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_role_to_db_cluster::AddRoleToDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl AddRoleToDBClusterFluentBuilder {
             crate::operation::add_role_to_db_cluster::AddRoleToDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the DB cluster to associate the IAM role with.</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
     /// <p>The name of the DB cluster to associate the IAM role with.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }

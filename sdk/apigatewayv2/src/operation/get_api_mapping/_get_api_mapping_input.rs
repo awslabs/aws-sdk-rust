@@ -29,27 +29,19 @@ impl GetApiMappingInput {
 
 /// A builder for [`GetApiMappingInput`](crate::operation::get_api_mapping::GetApiMappingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApiMappingInputBuilder {
     pub(crate) api_mapping_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
 impl GetApiMappingInputBuilder {
     /// <p>The API mapping identifier.</p>
-    pub fn api_mapping_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_mapping_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_mapping_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API mapping identifier.</p>
-    pub fn set_api_mapping_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_mapping_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_mapping_id = input;
         self
     }
@@ -74,10 +66,7 @@ impl GetApiMappingInputBuilder {
     /// Consumes the builder and constructs a [`GetApiMappingInput`](crate::operation::get_api_mapping::GetApiMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_api_mapping::GetApiMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_api_mapping::GetApiMappingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_api_mapping::GetApiMappingInput {
             api_mapping_id: self.api_mapping_id,
             domain_name: self.domain_name,

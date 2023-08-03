@@ -22,18 +22,14 @@ impl DisassociateSecurityKeyInput {
 }
 impl DisassociateSecurityKeyInput {
     /// Creates a new builder-style object to manufacture [`DisassociateSecurityKeyInput`](crate::operation::disassociate_security_key::DisassociateSecurityKeyInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyInputBuilder {
         crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateSecurityKeyInput`](crate::operation::disassociate_security_key::DisassociateSecurityKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateSecurityKeyInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DisassociateSecurityKeyInputBuilder {
         &self.instance_id
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl DisassociateSecurityKeyInputBuilder {
         crate::operation::disassociate_security_key::DisassociateSecurityKeyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_security_key::DisassociateSecurityKeyInput {
-                instance_id: self.instance_id,
-                association_id: self.association_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_security_key::DisassociateSecurityKeyInput {
+            instance_id: self.instance_id,
+            association_id: self.association_id,
+        })
     }
 }

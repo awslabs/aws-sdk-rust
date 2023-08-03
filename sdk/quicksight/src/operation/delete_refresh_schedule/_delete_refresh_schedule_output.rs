@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for DeleteRefreshScheduleOutput {
 }
 impl DeleteRefreshScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRefreshScheduleOutput`](crate::operation::delete_refresh_schedule::DeleteRefreshScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleOutputBuilder {
         crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRefreshScheduleOutput`](crate::operation::delete_refresh_schedule::DeleteRefreshScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRefreshScheduleOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`project_summaries(Option<Vec<ProjectSummary>>)`](crate::operation::list_projects::ListProjectsOutput::project_summaries): <p>A list that summarizes each project in the portal.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_projects::ListProjectsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::operation::list_projects::ListProjectsError)
-    pub fn list_projects(
-        &self,
-    ) -> crate::operation::list_projects::builders::ListProjectsFluentBuilder {
-        crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_projects(&self) -> crate::operation::list_projects::builders::ListProjectsFluentBuilder {
+        crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(self.handle.clone())
     }
 }

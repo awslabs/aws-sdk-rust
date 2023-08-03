@@ -49,9 +49,7 @@ impl ListUserGroupsOutput {
 
 /// A builder for [`ListUserGroupsOutput`](crate::operation::list_user_groups::ListUserGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserGroupsOutputBuilder {
     pub(crate) group_list: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,10 +70,7 @@ impl ListUserGroupsOutputBuilder {
         self
     }
     /// <p>The list of groups the user is a member of.</p>
-    pub fn set_group_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
-    ) -> Self {
+    pub fn set_group_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
         self.group_list = input;
         self
     }

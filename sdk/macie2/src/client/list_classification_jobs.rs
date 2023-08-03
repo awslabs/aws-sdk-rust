@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<JobSummary>>)`](crate::operation::list_classification_jobs::ListClassificationJobsOutput::items): <p>An array of objects, one for each job that matches the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_classification_jobs::ListClassificationJobsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListClassificationJobsError>`](crate::operation::list_classification_jobs::ListClassificationJobsError)
-    pub fn list_classification_jobs(
-        &self,
-    ) -> crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder
-    {
+    pub fn list_classification_jobs(&self) -> crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder {
         crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder::new(self.handle.clone())
     }
 }

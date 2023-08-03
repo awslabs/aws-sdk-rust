@@ -30,9 +30,7 @@ impl DescribeProjectInput {
 
 /// A builder for [`DescribeProjectInput`](crate::operation::describe_project::DescribeProjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProjectInputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) sync_from_resources: ::std::option::Option<bool>,
@@ -69,10 +67,7 @@ impl DescribeProjectInputBuilder {
     /// Consumes the builder and constructs a [`DescribeProjectInput`](crate::operation::describe_project::DescribeProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_project::DescribeProjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_project::DescribeProjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_project::DescribeProjectInput {
             project_id: self.project_id,
             sync_from_resources: self.sync_from_resources.unwrap_or_default(),

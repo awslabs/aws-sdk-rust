@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`account_assignments_creation_status(Option<Vec<AccountAssignmentOperationStatusMetadata>>)`](crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput::account_assignments_creation_status): <p>The status object for the account assignment creation operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On failure, responds with [`SdkError<ListAccountAssignmentCreationStatusError>`](crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError)
-    pub fn list_account_assignment_creation_status(&self) -> crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusFluentBuilder{
-        crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusFluentBuilder::new(self.handle.clone())
+    pub fn list_account_assignment_creation_status(
+        &self,
+    ) -> crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusFluentBuilder {
+        crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

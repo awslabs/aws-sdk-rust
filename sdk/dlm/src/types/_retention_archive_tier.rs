@@ -28,9 +28,7 @@ impl RetentionArchiveTier {
         self.interval
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
-    pub fn interval_unit(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RetentionIntervalUnitValues> {
+    pub fn interval_unit(&self) -> ::std::option::Option<&crate::types::RetentionIntervalUnitValues> {
         self.interval_unit.as_ref()
     }
 }
@@ -43,9 +41,7 @@ impl RetentionArchiveTier {
 
 /// A builder for [`RetentionArchiveTier`](crate::types::RetentionArchiveTier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetentionArchiveTierBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) interval: ::std::option::Option<i32>,
@@ -86,17 +82,12 @@ impl RetentionArchiveTierBuilder {
         self
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
-    pub fn set_interval_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
-    ) -> Self {
+    pub fn set_interval_unit(mut self, input: ::std::option::Option<crate::types::RetentionIntervalUnitValues>) -> Self {
         self.interval_unit = input;
         self
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
-    pub fn get_interval_unit(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
+    pub fn get_interval_unit(&self) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
         &self.interval_unit
     }
     /// Consumes the builder and constructs a [`RetentionArchiveTier`](crate::types::RetentionArchiveTier).

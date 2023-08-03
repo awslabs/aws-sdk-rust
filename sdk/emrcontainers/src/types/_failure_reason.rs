@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FailureReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for FailureReason {
             "INTERNAL_ERROR" => FailureReason::InternalError,
             "USER_ERROR" => FailureReason::UserError,
             "VALIDATION_ERROR" => FailureReason::ValidationError,
-            other => {
-                FailureReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => FailureReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl FailureReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLUSTER_UNAVAILABLE",
-            "INTERNAL_ERROR",
-            "USER_ERROR",
-            "VALIDATION_ERROR",
-        ]
+        &["CLUSTER_UNAVAILABLE", "INTERNAL_ERROR", "USER_ERROR", "VALIDATION_ERROR"]
     }
 }
 impl ::std::convert::AsRef<str> for FailureReason {

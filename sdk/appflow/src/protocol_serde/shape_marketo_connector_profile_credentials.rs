@@ -15,10 +15,7 @@ pub fn ser_marketo_connector_profile_credentials(
     if let Some(var_4) = &input.o_auth_request {
         #[allow(unused_mut)]
         let mut object_5 = object.key("oAuthRequest").start_object();
-        crate::protocol_serde::shape_connector_o_auth_request::ser_connector_o_auth_request(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_connector_o_auth_request::ser_connector_o_auth_request(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

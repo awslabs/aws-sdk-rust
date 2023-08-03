@@ -10,10 +10,7 @@ impl UpdateAgreementInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_agreement::UpdateAgreementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_agreement::UpdateAgreementError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_agreement::UpdateAgreementError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_agreement();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateAgreementFluentBuilder {
         }
     }
     /// Access the UpdateAgreement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_agreement::builders::UpdateAgreementInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_agreement::builders::UpdateAgreementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateAgreementFluentBuilder {
             crate::operation::update_agreement::UpdateAgreement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_agreement::UpdateAgreementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_agreement::UpdateAgreementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateAgreementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateAgreementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_agreement::UpdateAgreementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_agreement::UpdateAgreementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_agreement::UpdateAgreementError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateAgreementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_agreement::UpdateAgreementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_agreement::UpdateAgreementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_agreement::UpdateAgreementError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateAgreementFluentBuilder {
             crate::operation::update_agreement::UpdateAgreement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_agreement::UpdateAgreementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_agreement::UpdateAgreementError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +154,7 @@ impl UpdateAgreementFluentBuilder {
         self
     }
     /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AgreementStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementStatusType>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -183,19 +164,13 @@ impl UpdateAgreementFluentBuilder {
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     /// <p>To change the local profile identifier, provide a new value here.</p>
-    pub fn local_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_profile_id(input.into());
         self
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     /// <p>To change the local profile identifier, provide a new value here.</p>
-    pub fn set_local_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_local_profile_id(input);
         self
     }
@@ -205,18 +180,12 @@ impl UpdateAgreementFluentBuilder {
         self.inner.get_local_profile_id()
     }
     /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
-    pub fn partner_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partner_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.partner_profile_id(input.into());
         self
     }
     /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
-    pub fn set_partner_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partner_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_partner_profile_id(input);
         self
     }
@@ -225,18 +194,12 @@ impl UpdateAgreementFluentBuilder {
         self.inner.get_partner_profile_id()
     }
     /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
-    pub fn base_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn base_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.base_directory(input.into());
         self
     }
     /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
-    pub fn set_base_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_base_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_base_directory(input);
         self
     }

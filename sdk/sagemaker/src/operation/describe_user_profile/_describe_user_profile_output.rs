@@ -91,18 +91,14 @@ impl ::aws_http::request_id::RequestId for DescribeUserProfileOutput {
 }
 impl DescribeUserProfileOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserProfileOutput`](crate::operation::describe_user_profile::DescribeUserProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder {
-        crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder {
+        crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUserProfileOutput`](crate::operation::describe_user_profile::DescribeUserProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserProfileOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_profile_arn: ::std::option::Option<::std::string::String>,
@@ -133,18 +129,12 @@ impl DescribeUserProfileOutputBuilder {
         &self.domain_id
     }
     /// <p>The user profile Amazon Resource Name (ARN).</p>
-    pub fn user_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user profile Amazon Resource Name (ARN).</p>
-    pub fn set_user_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_profile_arn = input;
         self
     }
@@ -153,18 +143,12 @@ impl DescribeUserProfileOutputBuilder {
         &self.user_profile_arn
     }
     /// <p>The user profile name.</p>
-    pub fn user_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user profile name.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_profile_name = input;
         self
     }
@@ -173,18 +157,12 @@ impl DescribeUserProfileOutputBuilder {
         &self.user_profile_name
     }
     /// <p>The ID of the user's profile in the Amazon Elastic File System (EFS) volume.</p>
-    pub fn home_efs_file_system_uid(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn home_efs_file_system_uid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_efs_file_system_uid = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the user's profile in the Amazon Elastic File System (EFS) volume.</p>
-    pub fn set_home_efs_file_system_uid(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_home_efs_file_system_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_efs_file_system_uid = input;
         self
     }
@@ -198,10 +176,7 @@ impl DescribeUserProfileOutputBuilder {
         self
     }
     /// <p>The status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UserProfileStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::UserProfileStatus>) -> Self {
         self.status = input;
         self
     }
@@ -215,10 +190,7 @@ impl DescribeUserProfileOutputBuilder {
         self
     }
     /// <p>The last modified time.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -232,10 +204,7 @@ impl DescribeUserProfileOutputBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -244,18 +213,12 @@ impl DescribeUserProfileOutputBuilder {
         &self.creation_time
     }
     /// <p>The failure reason.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure reason.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -264,40 +227,26 @@ impl DescribeUserProfileOutputBuilder {
         &self.failure_reason
     }
     /// <p>The IAM Identity Center user identifier.</p>
-    pub fn single_sign_on_user_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn single_sign_on_user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.single_sign_on_user_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM Identity Center user identifier.</p>
-    pub fn set_single_sign_on_user_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_single_sign_on_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.single_sign_on_user_identifier = input;
         self
     }
     /// <p>The IAM Identity Center user identifier.</p>
-    pub fn get_single_sign_on_user_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_single_sign_on_user_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.single_sign_on_user_identifier
     }
     /// <p>The IAM Identity Center user value.</p>
-    pub fn single_sign_on_user_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn single_sign_on_user_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.single_sign_on_user_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM Identity Center user value.</p>
-    pub fn set_single_sign_on_user_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_single_sign_on_user_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.single_sign_on_user_value = input;
         self
     }
@@ -311,10 +260,7 @@ impl DescribeUserProfileOutputBuilder {
         self
     }
     /// <p>A collection of settings.</p>
-    pub fn set_user_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::UserSettings>,
-    ) -> Self {
+    pub fn set_user_settings(mut self, input: ::std::option::Option<crate::types::UserSettings>) -> Self {
         self.user_settings = input;
         self
     }

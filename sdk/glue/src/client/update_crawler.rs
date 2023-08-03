@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`crawler_security_configuration(impl ::std::convert::Into<String>)`](crate::operation::update_crawler::builders::UpdateCrawlerFluentBuilder::crawler_security_configuration) / [`set_crawler_security_configuration(Option<String>)`](crate::operation::update_crawler::builders::UpdateCrawlerFluentBuilder::set_crawler_security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     /// - On success, responds with [`UpdateCrawlerOutput`](crate::operation::update_crawler::UpdateCrawlerOutput)
     /// - On failure, responds with [`SdkError<UpdateCrawlerError>`](crate::operation::update_crawler::UpdateCrawlerError)
-    pub fn update_crawler(
-        &self,
-    ) -> crate::operation::update_crawler::builders::UpdateCrawlerFluentBuilder {
-        crate::operation::update_crawler::builders::UpdateCrawlerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_crawler(&self) -> crate::operation::update_crawler::builders::UpdateCrawlerFluentBuilder {
+        crate::operation::update_crawler::builders::UpdateCrawlerFluentBuilder::new(self.handle.clone())
     }
 }

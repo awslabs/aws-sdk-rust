@@ -23,9 +23,7 @@ impl Snapshot {
 
 /// A builder for [`Snapshot`](crate::types::Snapshot).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotBuilder {
     pub(crate) snapshot_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -36,10 +34,7 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The time when the snapshot was created.</p>
-    pub fn set_snapshot_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_snapshot_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.snapshot_time = input;
         self
     }

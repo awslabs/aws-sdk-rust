@@ -10,10 +10,7 @@ impl GetSshPublicKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_ssh_public_key::GetSshPublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ssh_public_key::GetSSHPublicKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ssh_public_key::GetSSHPublicKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_ssh_public_key();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetSSHPublicKeyFluentBuilder {
         }
     }
     /// Access the GetSSHPublicKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_ssh_public_key::builders::GetSshPublicKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_ssh_public_key::builders::GetSshPublicKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetSSHPublicKeyFluentBuilder {
             crate::operation::get_ssh_public_key::GetSSHPublicKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ssh_public_key::GetSSHPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ssh_public_key::GetSSHPublicKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetSSHPublicKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetSSHPublicKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ssh_public_key::GetSshPublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ssh_public_key::GetSSHPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ssh_public_key::GetSSHPublicKeyError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetSSHPublicKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ssh_public_key::GetSshPublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ssh_public_key::GetSSHPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ssh_public_key::GetSSHPublicKeyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl GetSSHPublicKeyFluentBuilder {
             crate::operation::get_ssh_public_key::GetSSHPublicKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ssh_public_key::GetSSHPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ssh_public_key::GetSSHPublicKeyError>,
     > {
         self.customize_middleware().await
     }
@@ -142,19 +126,13 @@ impl GetSSHPublicKeyFluentBuilder {
     }
     /// <p>The unique identifier for the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn ssh_public_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ssh_public_key_id(input.into());
         self
     }
     /// <p>The unique identifier for the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn set_ssh_public_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ssh_public_key_id(input);
         self
     }
@@ -169,10 +147,7 @@ impl GetSSHPublicKeyFluentBuilder {
         self
     }
     /// <p>Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format, use <code>PEM</code>.</p>
-    pub fn set_encoding(
-        mut self,
-        input: ::std::option::Option<crate::types::EncodingType>,
-    ) -> Self {
+    pub fn set_encoding(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
         self.inner = self.inner.set_encoding(input);
         self
     }

@@ -28,9 +28,7 @@ impl UpdateFlywheelOutput {
 
 /// A builder for [`UpdateFlywheelOutput`](crate::operation::update_flywheel::UpdateFlywheelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFlywheelOutputBuilder {
     pub(crate) flywheel_properties: ::std::option::Option<crate::types::FlywheelProperties>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl UpdateFlywheelOutputBuilder {
         self
     }
     /// <p>The flywheel properties.</p>
-    pub fn set_flywheel_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::FlywheelProperties>,
-    ) -> Self {
+    pub fn set_flywheel_properties(mut self, input: ::std::option::Option<crate::types::FlywheelProperties>) -> Self {
         self.flywheel_properties = input;
         self
     }
     /// <p>The flywheel properties.</p>
-    pub fn get_flywheel_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::FlywheelProperties> {
+    pub fn get_flywheel_properties(&self) -> &::std::option::Option<crate::types::FlywheelProperties> {
         &self.flywheel_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

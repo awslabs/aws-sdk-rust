@@ -37,9 +37,7 @@ impl ResourceProperty {
 
 /// A builder for [`ResourceProperty`](crate::types::ResourceProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourcePropertyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) last_reported_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -66,10 +64,7 @@ impl ResourcePropertyBuilder {
         self
     }
     /// <p>The date and time that the information about this resource property was last updated.</p>
-    pub fn set_last_reported_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_reported_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_reported_at = input;
         self
     }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`asset_model_summaries(Option<Vec<AssetModelSummary>>)`](crate::operation::list_asset_models::ListAssetModelsOutput::asset_model_summaries): <p>A list that summarizes each asset model.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_asset_models::ListAssetModelsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListAssetModelsError>`](crate::operation::list_asset_models::ListAssetModelsError)
-    pub fn list_asset_models(
-        &self,
-    ) -> crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder {
-        crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_asset_models(&self) -> crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder {
+        crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,34 +22,26 @@ impl GetGroupCertificateAuthorityInput {
 }
 impl GetGroupCertificateAuthorityInput {
     /// Creates a new builder-style object to manufacture [`GetGroupCertificateAuthorityInput`](crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityInput).
-    pub fn builder() -> crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityInputBuilder{
+    pub fn builder() -> crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityInputBuilder {
         crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityInputBuilder::default()
     }
 }
 
 /// A builder for [`GetGroupCertificateAuthorityInput`](crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupCertificateAuthorityInputBuilder {
     pub(crate) certificate_authority_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
 }
 impl GetGroupCertificateAuthorityInputBuilder {
     /// The ID of the certificate authority.
-    pub fn certificate_authority_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the certificate authority.
-    pub fn set_certificate_authority_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl GetGroupCertificateAuthorityInputBuilder {
         crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityInput {
-                certificate_authority_id: self.certificate_authority_id,
-                group_id: self.group_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityInput {
+            certificate_authority_id: self.certificate_authority_id,
+            group_id: self.group_id,
+        })
     }
 }

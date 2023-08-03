@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateMemberAccountOutput {
 }
 impl DisassociateMemberAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateMemberAccountOutput`](crate::operation::disassociate_member_account::DisassociateMemberAccountOutput).
-    pub fn builder() -> crate::operation::disassociate_member_account::builders::DisassociateMemberAccountOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_member_account::builders::DisassociateMemberAccountOutputBuilder {
         crate::operation::disassociate_member_account::builders::DisassociateMemberAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateMemberAccountOutput`](crate::operation::disassociate_member_account::DisassociateMemberAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateMemberAccountOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateMemberAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateMemberAccountOutput`](crate::operation::disassociate_member_account::DisassociateMemberAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_member_account::DisassociateMemberAccountOutput {
+    pub fn build(self) -> crate::operation::disassociate_member_account::DisassociateMemberAccountOutput {
         crate::operation::disassociate_member_account::DisassociateMemberAccountOutput {
             _request_id: self._request_id,
         }

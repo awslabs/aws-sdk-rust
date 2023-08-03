@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteEventStreamOutput {
 }
 impl DeleteEventStreamOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventStreamOutput`](crate::operation::delete_event_stream::DeleteEventStreamOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_event_stream::builders::DeleteEventStreamOutputBuilder {
+    pub fn builder() -> crate::operation::delete_event_stream::builders::DeleteEventStreamOutputBuilder {
         crate::operation::delete_event_stream::builders::DeleteEventStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEventStreamOutput`](crate::operation::delete_event_stream::DeleteEventStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEventStreamOutputBuilder {
     pub(crate) event_stream: ::std::option::Option<crate::types::EventStream>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteEventStreamOutputBuilder {
         self
     }
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
-    pub fn set_event_stream(
-        mut self,
-        input: ::std::option::Option<crate::types::EventStream>,
-    ) -> Self {
+    pub fn set_event_stream(mut self, input: ::std::option::Option<crate::types::EventStream>) -> Self {
         self.event_stream = input;
         self
     }

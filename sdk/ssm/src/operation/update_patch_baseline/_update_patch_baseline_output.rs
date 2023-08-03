@@ -23,8 +23,7 @@ pub struct UpdatePatchBaselineOutput {
     pub approved_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
     #[doc(hidden)]
-    pub approved_patches_compliance_level:
-        ::std::option::Option<crate::types::PatchComplianceLevel>,
+    pub approved_patches_compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     #[doc(hidden)]
     pub approved_patches_enable_non_security: ::std::option::Option<bool>,
@@ -74,9 +73,7 @@ impl UpdatePatchBaselineOutput {
         self.approved_patches.as_deref()
     }
     /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
-    pub fn approved_patches_compliance_level(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PatchComplianceLevel> {
+    pub fn approved_patches_compliance_level(&self) -> ::std::option::Option<&crate::types::PatchComplianceLevel> {
         self.approved_patches_compliance_level.as_ref()
     }
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
@@ -115,18 +112,14 @@ impl ::aws_http::request_id::RequestId for UpdatePatchBaselineOutput {
 }
 impl UpdatePatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePatchBaselineOutput`](crate::operation::update_patch_baseline::UpdatePatchBaselineOutput).
-    pub fn builder(
-    ) -> crate::operation::update_patch_baseline::builders::UpdatePatchBaselineOutputBuilder {
-        crate::operation::update_patch_baseline::builders::UpdatePatchBaselineOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_patch_baseline::builders::UpdatePatchBaselineOutputBuilder {
+        crate::operation::update_patch_baseline::builders::UpdatePatchBaselineOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePatchBaselineOutput`](crate::operation::update_patch_baseline::UpdatePatchBaselineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePatchBaselineOutputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -134,8 +127,7 @@ pub struct UpdatePatchBaselineOutputBuilder {
     pub(crate) global_filters: ::std::option::Option<crate::types::PatchFilterGroup>,
     pub(crate) approval_rules: ::std::option::Option<crate::types::PatchRuleGroup>,
     pub(crate) approved_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) approved_patches_compliance_level:
-        ::std::option::Option<crate::types::PatchComplianceLevel>,
+    pub(crate) approved_patches_compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,
     pub(crate) approved_patches_enable_non_security: ::std::option::Option<bool>,
     pub(crate) rejected_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) rejected_patches_action: ::std::option::Option<crate::types::PatchAction>,
@@ -180,10 +172,7 @@ impl UpdatePatchBaselineOutputBuilder {
         self
     }
     /// <p>The operating system rule used by the updated patch baseline.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
@@ -197,10 +186,7 @@ impl UpdatePatchBaselineOutputBuilder {
         self
     }
     /// <p>A set of global filters used to exclude patches from the baseline.</p>
-    pub fn set_global_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchFilterGroup>,
-    ) -> Self {
+    pub fn set_global_filters(mut self, input: ::std::option::Option<crate::types::PatchFilterGroup>) -> Self {
         self.global_filters = input;
         self
     }
@@ -214,10 +200,7 @@ impl UpdatePatchBaselineOutputBuilder {
         self
     }
     /// <p>A set of rules used to include patches in the baseline.</p>
-    pub fn set_approval_rules(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchRuleGroup>,
-    ) -> Self {
+    pub fn set_approval_rules(mut self, input: ::std::option::Option<crate::types::PatchRuleGroup>) -> Self {
         self.approval_rules = input;
         self
     }
@@ -230,49 +213,33 @@ impl UpdatePatchBaselineOutputBuilder {
     /// To override the contents of this collection use [`set_approved_patches`](Self::set_approved_patches).
     ///
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    pub fn approved_patches(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approved_patches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.approved_patches.unwrap_or_default();
         v.push(input.into());
         self.approved_patches = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    pub fn set_approved_patches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_approved_patches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.approved_patches = input;
         self
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    pub fn get_approved_patches(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_approved_patches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.approved_patches
     }
     /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
-    pub fn approved_patches_compliance_level(
-        mut self,
-        input: crate::types::PatchComplianceLevel,
-    ) -> Self {
+    pub fn approved_patches_compliance_level(mut self, input: crate::types::PatchComplianceLevel) -> Self {
         self.approved_patches_compliance_level = ::std::option::Option::Some(input);
         self
     }
     /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
-    pub fn set_approved_patches_compliance_level(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchComplianceLevel>,
-    ) -> Self {
+    pub fn set_approved_patches_compliance_level(mut self, input: ::std::option::Option<crate::types::PatchComplianceLevel>) -> Self {
         self.approved_patches_compliance_level = input;
         self
     }
     /// <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
-    pub fn get_approved_patches_compliance_level(
-        &self,
-    ) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
+    pub fn get_approved_patches_compliance_level(&self) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
         &self.approved_patches_compliance_level
     }
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
@@ -281,10 +248,7 @@ impl UpdatePatchBaselineOutputBuilder {
         self
     }
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
-    pub fn set_approved_patches_enable_non_security(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_approved_patches_enable_non_security(mut self, input: ::std::option::Option<bool>) -> Self {
         self.approved_patches_enable_non_security = input;
         self
     }
@@ -297,27 +261,19 @@ impl UpdatePatchBaselineOutputBuilder {
     /// To override the contents of this collection use [`set_rejected_patches`](Self::set_rejected_patches).
     ///
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    pub fn rejected_patches(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rejected_patches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rejected_patches.unwrap_or_default();
         v.push(input.into());
         self.rejected_patches = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    pub fn set_rejected_patches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rejected_patches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.rejected_patches = input;
         self
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    pub fn get_rejected_patches(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rejected_patches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.rejected_patches
     }
     /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
@@ -326,10 +282,7 @@ impl UpdatePatchBaselineOutputBuilder {
         self
     }
     /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
-    pub fn set_rejected_patches_action(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchAction>,
-    ) -> Self {
+    pub fn set_rejected_patches_action(mut self, input: ::std::option::Option<crate::types::PatchAction>) -> Self {
         self.rejected_patches_action = input;
         self
     }
@@ -343,10 +296,7 @@ impl UpdatePatchBaselineOutputBuilder {
         self
     }
     /// <p>The date when the patch baseline was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -360,10 +310,7 @@ impl UpdatePatchBaselineOutputBuilder {
         self
     }
     /// <p>The date when the patch baseline was last modified.</p>
-    pub fn set_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_date = input;
         self
     }
@@ -397,17 +344,12 @@ impl UpdatePatchBaselineOutputBuilder {
         self
     }
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchSource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchSource>> {
         &self.sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

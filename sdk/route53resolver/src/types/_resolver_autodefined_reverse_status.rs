@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResolverAutodefinedReverseStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -73,15 +67,9 @@ impl ::std::convert::From<&str> for ResolverAutodefinedReverseStatus {
             "DISABLING" => ResolverAutodefinedReverseStatus::Disabling,
             "ENABLED" => ResolverAutodefinedReverseStatus::Enabled,
             "ENABLING" => ResolverAutodefinedReverseStatus::Enabling,
-            "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING" => {
-                ResolverAutodefinedReverseStatus::UpdatingToUseLocalResourceSetting
-            }
-            "USE_LOCAL_RESOURCE_SETTING" => {
-                ResolverAutodefinedReverseStatus::UseLocalResourceSetting
-            }
-            other => ResolverAutodefinedReverseStatus::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING" => ResolverAutodefinedReverseStatus::UpdatingToUseLocalResourceSetting,
+            "USE_LOCAL_RESOURCE_SETTING" => ResolverAutodefinedReverseStatus::UseLocalResourceSetting,
+            other => ResolverAutodefinedReverseStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -100,12 +88,8 @@ impl ResolverAutodefinedReverseStatus {
             ResolverAutodefinedReverseStatus::Disabling => "DISABLING",
             ResolverAutodefinedReverseStatus::Enabled => "ENABLED",
             ResolverAutodefinedReverseStatus::Enabling => "ENABLING",
-            ResolverAutodefinedReverseStatus::UpdatingToUseLocalResourceSetting => {
-                "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING"
-            }
-            ResolverAutodefinedReverseStatus::UseLocalResourceSetting => {
-                "USE_LOCAL_RESOURCE_SETTING"
-            }
+            ResolverAutodefinedReverseStatus::UpdatingToUseLocalResourceSetting => "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING",
+            ResolverAutodefinedReverseStatus::UseLocalResourceSetting => "USE_LOCAL_RESOURCE_SETTING",
             ResolverAutodefinedReverseStatus::Unknown(value) => value.as_str(),
         }
     }

@@ -30,8 +30,7 @@ impl ::std::fmt::Debug for ListAppInstancesInput {
 }
 impl ListAppInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListAppInstancesInput`](crate::operation::list_app_instances::ListAppInstancesInput).
-    pub fn builder() -> crate::operation::list_app_instances::builders::ListAppInstancesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_app_instances::builders::ListAppInstancesInputBuilder {
         crate::operation::list_app_instances::builders::ListAppInstancesInputBuilder::default()
     }
 }
@@ -75,16 +74,11 @@ impl ListAppInstancesInputBuilder {
     /// Consumes the builder and constructs a [`ListAppInstancesInput`](crate::operation::list_app_instances::ListAppInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_app_instances::ListAppInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_app_instances::ListAppInstancesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_app_instances::ListAppInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_app_instances::ListAppInstancesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
 impl ::std::fmt::Debug for ListAppInstancesInputBuilder {

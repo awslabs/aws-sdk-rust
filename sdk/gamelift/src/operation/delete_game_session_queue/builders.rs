@@ -26,8 +26,7 @@ impl DeleteGameSessionQueueInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGameSessionQueueFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueInputBuilder,
+    inner: crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueInputBuilder,
 }
 impl DeleteGameSessionQueueFluentBuilder {
     /// Creates a new `DeleteGameSessionQueue`.
@@ -38,10 +37,7 @@ impl DeleteGameSessionQueueFluentBuilder {
         }
     }
     /// Access the DeleteGameSessionQueue as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_game_session_queue::builders::DeleteGameSessionQueueInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteGameSessionQueueFluentBuilder {
             crate::operation::delete_game_session_queue::DeleteGameSessionQueue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_game_session_queue::DeleteGameSessionQueueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_game_session_queue::DeleteGameSessionQueueError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteGameSessionQueueFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteGameSessionQueueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_game_session_queue::DeleteGameSessionQueueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_game_session_queue::DeleteGameSessionQueueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_game_session_queue::DeleteGameSessionQueueError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteGameSessionQueueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_game_session_queue::DeleteGameSessionQueueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_game_session_queue::DeleteGameSessionQueueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_game_session_queue::DeleteGameSessionQueueError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DeleteGameSessionQueueFluentBuilder {
             crate::operation::delete_game_session_queue::DeleteGameSessionQueue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_game_session_queue::DeleteGameSessionQueueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_game_session_queue::DeleteGameSessionQueueError>,
     > {
         self.customize_middleware().await
     }

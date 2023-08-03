@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_account_roles::ListAccountRolesOutput::next_token): <p>The page token client that is used to retrieve the list of accounts.</p>
     ///   - [`role_list(Option<Vec<RoleInfo>>)`](crate::operation::list_account_roles::ListAccountRolesOutput::role_list): <p>A paginated response with the list of roles and the next token if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListAccountRolesError>`](crate::operation::list_account_roles::ListAccountRolesError)
-    pub fn list_account_roles(
-        &self,
-    ) -> crate::operation::list_account_roles::builders::ListAccountRolesFluentBuilder {
-        crate::operation::list_account_roles::builders::ListAccountRolesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_account_roles(&self) -> crate::operation::list_account_roles::builders::ListAccountRolesFluentBuilder {
+        crate::operation::list_account_roles::builders::ListAccountRolesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,33 +15,25 @@ impl RemoveKnowledgeBaseTemplateUriInput {
 }
 impl RemoveKnowledgeBaseTemplateUriInput {
     /// Creates a new builder-style object to manufacture [`RemoveKnowledgeBaseTemplateUriInput`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput).
-    pub fn builder() -> crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriInputBuilder{
+    pub fn builder() -> crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriInputBuilder {
         crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveKnowledgeBaseTemplateUriInput`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveKnowledgeBaseTemplateUriInputBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveKnowledgeBaseTemplateUriInputBuilder {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_knowledge_base_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
@@ -58,9 +50,8 @@ impl RemoveKnowledgeBaseTemplateUriInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput {
-                knowledge_base_id: self.knowledge_base_id
-                ,
-            }
+                knowledge_base_id: self.knowledge_base_id,
+            },
         )
     }
 }

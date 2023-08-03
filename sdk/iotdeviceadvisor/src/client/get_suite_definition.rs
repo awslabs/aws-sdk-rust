@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`last_modified_at(Option<DateTime>)`](crate::operation::get_suite_definition::GetSuiteDefinitionOutput::last_modified_at): <p>Date (in Unix epoch time) when the suite definition was last modified.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_suite_definition::GetSuiteDefinitionOutput::tags): <p>Tags attached to the suite definition.</p>
     /// - On failure, responds with [`SdkError<GetSuiteDefinitionError>`](crate::operation::get_suite_definition::GetSuiteDefinitionError)
-    pub fn get_suite_definition(
-        &self,
-    ) -> crate::operation::get_suite_definition::builders::GetSuiteDefinitionFluentBuilder {
-        crate::operation::get_suite_definition::builders::GetSuiteDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_suite_definition(&self) -> crate::operation::get_suite_definition::builders::GetSuiteDefinitionFluentBuilder {
+        crate::operation::get_suite_definition::builders::GetSuiteDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

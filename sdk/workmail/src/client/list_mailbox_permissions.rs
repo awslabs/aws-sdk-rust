@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`permissions(Option<Vec<Permission>>)`](crate::operation::list_mailbox_permissions::ListMailboxPermissionsOutput::permissions): <p>One page of the user, group, or resource mailbox permissions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_mailbox_permissions::ListMailboxPermissionsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListMailboxPermissionsError>`](crate::operation::list_mailbox_permissions::ListMailboxPermissionsError)
-    pub fn list_mailbox_permissions(
-        &self,
-    ) -> crate::operation::list_mailbox_permissions::builders::ListMailboxPermissionsFluentBuilder
-    {
+    pub fn list_mailbox_permissions(&self) -> crate::operation::list_mailbox_permissions::builders::ListMailboxPermissionsFluentBuilder {
         crate::operation::list_mailbox_permissions::builders::ListMailboxPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

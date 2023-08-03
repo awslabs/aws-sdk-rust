@@ -11,10 +11,7 @@ pub struct RuntimeHints {
     /// <p>The intent name and slot name must exist.</p>
     #[doc(hidden)]
     pub slot_hints: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
     >,
 }
 impl RuntimeHints {
@@ -24,10 +21,7 @@ impl RuntimeHints {
     pub fn slot_hints(
         &self,
     ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>,
-        >,
+        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
     > {
         self.slot_hints.as_ref()
     }
@@ -41,15 +35,10 @@ impl RuntimeHints {
 
 /// A builder for [`RuntimeHints`](crate::types::RuntimeHints).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuntimeHintsBuilder {
     pub(crate) slot_hints: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
     >,
 }
 impl RuntimeHintsBuilder {
@@ -76,13 +65,7 @@ impl RuntimeHintsBuilder {
     pub fn set_slot_hints(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    crate::types::RuntimeHintDetails,
-                >,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
         >,
     ) -> Self {
         self.slot_hints = input;
@@ -94,17 +77,12 @@ impl RuntimeHintsBuilder {
     pub fn get_slot_hints(
         &self,
     ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
     > {
         &self.slot_hints
     }
     /// Consumes the builder and constructs a [`RuntimeHints`](crate::types::RuntimeHints).
     pub fn build(self) -> crate::types::RuntimeHints {
-        crate::types::RuntimeHints {
-            slot_hints: self.slot_hints,
-        }
+        crate::types::RuntimeHints { slot_hints: self.slot_hints }
     }
 }

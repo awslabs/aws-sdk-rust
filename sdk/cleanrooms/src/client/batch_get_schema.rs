@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`schemas(Option<Vec<Schema>>)`](crate::operation::batch_get_schema::BatchGetSchemaOutput::schemas): <p>The retrieved list of schemas.</p>
     ///   - [`errors(Option<Vec<BatchGetSchemaError>>)`](crate::operation::batch_get_schema::BatchGetSchemaOutput::errors): <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
     /// - On failure, responds with [`SdkError<BatchGetSchemaError>`](crate::operation::batch_get_schema::BatchGetSchemaError)
-    pub fn batch_get_schema(
-        &self,
-    ) -> crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder {
-        crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_schema(&self) -> crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder {
+        crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder::new(self.handle.clone())
     }
 }

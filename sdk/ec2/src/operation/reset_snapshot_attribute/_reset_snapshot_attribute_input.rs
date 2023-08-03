@@ -29,18 +29,14 @@ impl ResetSnapshotAttributeInput {
 }
 impl ResetSnapshotAttributeInput {
     /// Creates a new builder-style object to manufacture [`ResetSnapshotAttributeInput`](crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::reset_snapshot_attribute::builders::ResetSnapshotAttributeInputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_snapshot_attribute::builders::ResetSnapshotAttributeInputBuilder {
         crate::operation::reset_snapshot_attribute::builders::ResetSnapshotAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetSnapshotAttributeInput`](crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetSnapshotAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::SnapshotAttributeName>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
@@ -53,10 +49,7 @@ impl ResetSnapshotAttributeInputBuilder {
         self
     }
     /// <p>The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::SnapshotAttributeName>) -> Self {
         self.attribute = input;
         self
     }
@@ -95,16 +88,12 @@ impl ResetSnapshotAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ResetSnapshotAttributeInput`](crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput {
-                attribute: self.attribute,
-                snapshot_id: self.snapshot_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeInput {
+            attribute: self.attribute,
+            snapshot_id: self.snapshot_id,
+            dry_run: self.dry_run,
+        })
     }
 }

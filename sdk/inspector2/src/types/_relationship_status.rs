@@ -48,13 +48,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RelationshipStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -88,9 +82,7 @@ impl ::std::convert::From<&str> for RelationshipStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_SUSPENDED" => RelationshipStatus::AccountSuspended,
-            "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER" => {
-                RelationshipStatus::CannotCreateDetectorInOrgMaster
-            }
+            "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER" => RelationshipStatus::CannotCreateDetectorInOrgMaster,
             "CREATED" => RelationshipStatus::Created,
             "DELETED" => RelationshipStatus::Deleted,
             "DISABLED" => RelationshipStatus::Disabled,
@@ -101,9 +93,7 @@ impl ::std::convert::From<&str> for RelationshipStatus {
             "REGION_DISABLED" => RelationshipStatus::RegionDisabled,
             "REMOVED" => RelationshipStatus::Removed,
             "RESIGNED" => RelationshipStatus::Resigned,
-            other => RelationshipStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RelationshipStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -119,9 +109,7 @@ impl RelationshipStatus {
     pub fn as_str(&self) -> &str {
         match self {
             RelationshipStatus::AccountSuspended => "ACCOUNT_SUSPENDED",
-            RelationshipStatus::CannotCreateDetectorInOrgMaster => {
-                "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER"
-            }
+            RelationshipStatus::CannotCreateDetectorInOrgMaster => "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER",
             RelationshipStatus::Created => "CREATED",
             RelationshipStatus::Deleted => "DELETED",
             RelationshipStatus::Disabled => "DISABLED",

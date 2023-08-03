@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OrganizationConfigRuleTriggerType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,16 +54,10 @@ pub enum OrganizationConfigRuleTriggerType {
 impl ::std::convert::From<&str> for OrganizationConfigRuleTriggerType {
     fn from(s: &str) -> Self {
         match s {
-            "ConfigurationItemChangeNotification" => {
-                OrganizationConfigRuleTriggerType::ConfigurationItemChangeNotification
-            }
-            "OversizedConfigurationItemChangeNotification" => {
-                OrganizationConfigRuleTriggerType::OversizedConfigurationItemChangeNotifcation
-            }
+            "ConfigurationItemChangeNotification" => OrganizationConfigRuleTriggerType::ConfigurationItemChangeNotification,
+            "OversizedConfigurationItemChangeNotification" => OrganizationConfigRuleTriggerType::OversizedConfigurationItemChangeNotifcation,
             "ScheduledNotification" => OrganizationConfigRuleTriggerType::ScheduledNotification,
-            other => OrganizationConfigRuleTriggerType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => OrganizationConfigRuleTriggerType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -84,12 +72,8 @@ impl OrganizationConfigRuleTriggerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            OrganizationConfigRuleTriggerType::ConfigurationItemChangeNotification => {
-                "ConfigurationItemChangeNotification"
-            }
-            OrganizationConfigRuleTriggerType::OversizedConfigurationItemChangeNotifcation => {
-                "OversizedConfigurationItemChangeNotification"
-            }
+            OrganizationConfigRuleTriggerType::ConfigurationItemChangeNotification => "ConfigurationItemChangeNotification",
+            OrganizationConfigRuleTriggerType::OversizedConfigurationItemChangeNotifcation => "OversizedConfigurationItemChangeNotification",
             OrganizationConfigRuleTriggerType::ScheduledNotification => "ScheduledNotification",
             OrganizationConfigRuleTriggerType::Unknown(value) => value.as_str(),
         }

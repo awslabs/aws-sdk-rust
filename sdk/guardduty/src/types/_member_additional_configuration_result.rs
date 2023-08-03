@@ -37,9 +37,7 @@ impl MemberAdditionalConfigurationResult {
 
 /// A builder for [`MemberAdditionalConfigurationResult`](crate::types::MemberAdditionalConfigurationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberAdditionalConfigurationResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
@@ -52,17 +50,12 @@ impl MemberAdditionalConfigurationResultBuilder {
         self
     }
     /// <p>Indicates the name of the additional configuration that is set for the member account.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>) -> Self {
         self.name = input;
         self
     }
     /// <p>Indicates the name of the additional configuration that is set for the member account.</p>
-    pub fn get_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
         &self.name
     }
     /// <p>Indicates the status of the additional configuration that is set for the member account.</p>
@@ -85,10 +78,7 @@ impl MemberAdditionalConfigurationResultBuilder {
         self
     }
     /// <p>The timestamp at which the additional configuration was set for the member account. This is in UTC format.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`ipam_discovered_resource_cidrs(Option<Vec<IpamDiscoveredResourceCidr>>)`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput::ipam_discovered_resource_cidrs): <p>Discovered resource CIDRs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetIpamDiscoveredResourceCidrsError>`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsError)
-    pub fn get_ipam_discovered_resource_cidrs(&self) -> crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder{
+    pub fn get_ipam_discovered_resource_cidrs(
+        &self,
+    ) -> crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder {
         crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::new(self.handle.clone())
     }
 }

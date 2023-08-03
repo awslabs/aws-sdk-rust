@@ -10,10 +10,7 @@ impl ListPlacementsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_placements::ListPlacementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_placements::ListPlacementsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_placements::ListPlacementsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_placements();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListPlacementsFluentBuilder {
         }
     }
     /// Access the ListPlacements as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_placements::builders::ListPlacementsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_placements::builders::ListPlacementsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListPlacementsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListPlacementsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_placements::paginator::ListPlacementsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_placements::paginator::ListPlacementsPaginator {
-        crate::operation::list_placements::paginator::ListPlacementsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_placements::paginator::ListPlacementsPaginator {
+        crate::operation::list_placements::paginator::ListPlacementsPaginator::new(self.handle, self.inner)
     }
     /// <p>The project containing the placements to be listed.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -10,9 +10,7 @@ pub struct SheetControlLayout {
 }
 impl SheetControlLayout {
     /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
-    pub fn configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SheetControlLayoutConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::SheetControlLayoutConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl SheetControlLayout {
 
 /// A builder for [`SheetControlLayout`](crate::types::SheetControlLayout).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SheetControlLayoutBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::SheetControlLayoutConfiguration>,
 }
@@ -38,17 +34,12 @@ impl SheetControlLayoutBuilder {
         self
     }
     /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SheetControlLayoutConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::SheetControlLayoutConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SheetControlLayoutConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::SheetControlLayoutConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`SheetControlLayout`](crate::types::SheetControlLayout).

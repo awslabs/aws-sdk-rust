@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeSubscribersForNotificationOut
 }
 impl DescribeSubscribersForNotificationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSubscribersForNotificationOutput`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput).
-    pub fn builder() -> crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationOutputBuilder {
         crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSubscribersForNotificationOutput`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSubscribersForNotificationOutputBuilder {
     pub(crate) subscribers: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl DescribeSubscribersForNotificationOutputBuilder {
         self
     }
     /// <p>A list of subscribers that are associated with a notification.</p>
-    pub fn set_subscribers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
-    ) -> Self {
+    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>) -> Self {
         self.subscribers = input;
         self
     }
     /// <p>A list of subscribers that are associated with a notification.</p>
-    pub fn get_subscribers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
         &self.subscribers
     }
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
@@ -94,12 +87,10 @@ impl DescribeSubscribersForNotificationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSubscribersForNotificationOutput`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput).
-    pub fn build(self) -> crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput{
+    pub fn build(self) -> crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput {
         crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput {
-            subscribers: self.subscribers
-            ,
-            next_token: self.next_token
-            ,
+            subscribers: self.subscribers,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

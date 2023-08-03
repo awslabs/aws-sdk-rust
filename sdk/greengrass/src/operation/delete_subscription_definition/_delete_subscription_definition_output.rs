@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSubscriptionDefinitionOutput {
 }
 impl DeleteSubscriptionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriptionDefinitionOutput`](crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionOutput).
-    pub fn builder() -> crate::operation::delete_subscription_definition::builders::DeleteSubscriptionDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_subscription_definition::builders::DeleteSubscriptionDefinitionOutputBuilder {
         crate::operation::delete_subscription_definition::builders::DeleteSubscriptionDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSubscriptionDefinitionOutput`](crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSubscriptionDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteSubscriptionDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSubscriptionDefinitionOutput`](crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionOutput {
+    pub fn build(self) -> crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionOutput {
         crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionOutput {
             _request_id: self._request_id,
         }

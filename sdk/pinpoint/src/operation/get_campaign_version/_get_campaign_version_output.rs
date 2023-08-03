@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetCampaignVersionOutput {
 }
 impl GetCampaignVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignVersionOutput`](crate::operation::get_campaign_version::GetCampaignVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_campaign_version::builders::GetCampaignVersionOutputBuilder {
+    pub fn builder() -> crate::operation::get_campaign_version::builders::GetCampaignVersionOutputBuilder {
         crate::operation::get_campaign_version::builders::GetCampaignVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCampaignVersionOutput`](crate::operation::get_campaign_version::GetCampaignVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCampaignVersionOutputBuilder {
     pub(crate) campaign_response: ::std::option::Option<crate::types::CampaignResponse>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetCampaignVersionOutputBuilder {
         self
     }
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
-    pub fn set_campaign_response(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignResponse>,
-    ) -> Self {
+    pub fn set_campaign_response(mut self, input: ::std::option::Option<crate::types::CampaignResponse>) -> Self {
         self.campaign_response = input;
         self
     }

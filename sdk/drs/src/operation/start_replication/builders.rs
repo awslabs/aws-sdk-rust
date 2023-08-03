@@ -10,10 +10,7 @@ impl StartReplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_replication::StartReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replication::StartReplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replication::StartReplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_replication();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartReplicationFluentBuilder {
         }
     }
     /// Access the StartReplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_replication::builders::StartReplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_replication::builders::StartReplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartReplicationFluentBuilder {
             crate::operation::start_replication::StartReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replication::StartReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replication::StartReplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartReplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_replication::StartReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replication::StartReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replication::StartReplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_replication::StartReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replication::StartReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replication::StartReplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StartReplicationFluentBuilder {
             crate::operation::start_replication::StartReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replication::StartReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replication::StartReplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Source Server to start replication for.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>The ID of the Source Server to start replication for.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }

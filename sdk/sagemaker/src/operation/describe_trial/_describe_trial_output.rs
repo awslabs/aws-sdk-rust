@@ -91,9 +91,7 @@ impl DescribeTrialOutput {
 
 /// A builder for [`DescribeTrialOutput`](crate::operation::describe_trial::DescribeTrialOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrialOutputBuilder {
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
     pub(crate) trial_arn: ::std::option::Option<::std::string::String>,
@@ -151,18 +149,12 @@ impl DescribeTrialOutputBuilder {
         &self.display_name
     }
     /// <p>The name of the experiment the trial is part of.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the experiment the trial is part of.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment_name = input;
         self
     }
@@ -190,10 +182,7 @@ impl DescribeTrialOutputBuilder {
         self
     }
     /// <p>When the trial was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -207,10 +196,7 @@ impl DescribeTrialOutputBuilder {
         self
     }
     /// <p>Who created the trial.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
@@ -224,10 +210,7 @@ impl DescribeTrialOutputBuilder {
         self
     }
     /// <p>When the trial was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -241,10 +224,7 @@ impl DescribeTrialOutputBuilder {
         self
     }
     /// <p>Who last modified the trial.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -258,17 +238,12 @@ impl DescribeTrialOutputBuilder {
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn set_metadata_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::MetadataProperties>,
-    ) -> Self {
+    pub fn set_metadata_properties(mut self, input: ::std::option::Option<crate::types::MetadataProperties>) -> Self {
         self.metadata_properties = input;
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn get_metadata_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+    pub fn get_metadata_properties(&self) -> &::std::option::Option<crate::types::MetadataProperties> {
         &self.metadata_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

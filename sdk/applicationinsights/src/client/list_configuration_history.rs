@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`event_list(Option<Vec<ConfigurationEvent>>)`](crate::operation::list_configuration_history::ListConfigurationHistoryOutput::event_list): <p> The list of configuration events and their corresponding details. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_configuration_history::ListConfigurationHistoryOutput::next_token): <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListConfigurationHistoryError>`](crate::operation::list_configuration_history::ListConfigurationHistoryError)
-    pub fn list_configuration_history(
-        &self,
-    ) -> crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder
-    {
+    pub fn list_configuration_history(&self) -> crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder {
         crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::new(self.handle.clone())
     }
 }

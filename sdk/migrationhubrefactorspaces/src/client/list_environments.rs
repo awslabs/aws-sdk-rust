@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`environment_summary_list(Option<Vec<EnvironmentSummary>>)`](crate::operation::list_environments::ListEnvironmentsOutput::environment_summary_list): <p>The list of <code>EnvironmentSummary</code> objects. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_environments::ListEnvironmentsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::operation::list_environments::ListEnvironmentsError)
-    pub fn list_environments(
-        &self,
-    ) -> crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder {
-        crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_environments(&self) -> crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder {
+        crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(self.handle.clone())
     }
 }

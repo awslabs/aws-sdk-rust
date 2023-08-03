@@ -49,9 +49,7 @@ impl ListEntitiesInput {
 
 /// A builder for [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntitiesInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ListEntitiesFilter>>,
@@ -89,19 +87,14 @@ impl ListEntitiesInputBuilder {
     /// <p>A list of objects that filter the request.</p> <note>
     /// <p>Only one object is accepted as a valid input.</p>
     /// </note>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListEntitiesFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListEntitiesFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A list of objects that filter the request.</p> <note>
     /// <p>Only one object is accepted as a valid input.</p>
     /// </note>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEntitiesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEntitiesFilter>> {
         &self.filters
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -136,12 +129,7 @@ impl ListEntitiesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_entities::ListEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_entities::ListEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_entities::ListEntitiesInput {
             workspace_id: self.workspace_id,
             filters: self.filters,

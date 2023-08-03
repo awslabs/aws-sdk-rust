@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyGlobalClusterOutput {
 }
 impl ModifyGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`ModifyGlobalClusterOutput`](crate::operation::modify_global_cluster::ModifyGlobalClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_global_cluster::builders::ModifyGlobalClusterOutputBuilder {
-        crate::operation::modify_global_cluster::builders::ModifyGlobalClusterOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::modify_global_cluster::builders::ModifyGlobalClusterOutputBuilder {
+        crate::operation::modify_global_cluster::builders::ModifyGlobalClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyGlobalClusterOutput`](crate::operation::modify_global_cluster::ModifyGlobalClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyGlobalClusterOutputBuilder {
     pub(crate) global_cluster: ::std::option::Option<crate::types::GlobalCluster>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ModifyGlobalClusterOutputBuilder {
         self
     }
     /// <p>A data type representing an Aurora global database.</p>
-    pub fn set_global_cluster(
-        mut self,
-        input: ::std::option::Option<crate::types::GlobalCluster>,
-    ) -> Self {
+    pub fn set_global_cluster(mut self, input: ::std::option::Option<crate::types::GlobalCluster>) -> Self {
         self.global_cluster = input;
         self
     }

@@ -15,16 +15,14 @@ impl GetCompatibleKafkaVersionsInput {
 }
 impl GetCompatibleKafkaVersionsInput {
     /// Creates a new builder-style object to manufacture [`GetCompatibleKafkaVersionsInput`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput).
-    pub fn builder() -> crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsInputBuilder{
+    pub fn builder() -> crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsInputBuilder {
         crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCompatibleKafkaVersionsInput`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCompatibleKafkaVersionsInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl GetCompatibleKafkaVersionsInputBuilder {
         crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput {
-                cluster_arn: self.cluster_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput {
+            cluster_arn: self.cluster_arn,
+        })
     }
 }

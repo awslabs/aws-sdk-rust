@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`created_date(Option<DateTime>)`](crate::operation::get_maintenance_window::GetMaintenanceWindowOutput::created_date): <p>The date the maintenance window was created.</p>
     ///   - [`modified_date(Option<DateTime>)`](crate::operation::get_maintenance_window::GetMaintenanceWindowOutput::modified_date): <p>The date the maintenance window was last modified.</p>
     /// - On failure, responds with [`SdkError<GetMaintenanceWindowError>`](crate::operation::get_maintenance_window::GetMaintenanceWindowError)
-    pub fn get_maintenance_window(
-        &self,
-    ) -> crate::operation::get_maintenance_window::builders::GetMaintenanceWindowFluentBuilder {
-        crate::operation::get_maintenance_window::builders::GetMaintenanceWindowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_maintenance_window(&self) -> crate::operation::get_maintenance_window::builders::GetMaintenanceWindowFluentBuilder {
+        crate::operation::get_maintenance_window::builders::GetMaintenanceWindowFluentBuilder::new(self.handle.clone())
     }
 }

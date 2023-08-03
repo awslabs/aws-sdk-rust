@@ -20,11 +20,7 @@ impl super::Client {
     /// - On success, responds with [`CreateProfileJobOutput`](crate::operation::create_profile_job::CreateProfileJobOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::create_profile_job::CreateProfileJobOutput::name): <p>The name of the job that was created.</p>
     /// - On failure, responds with [`SdkError<CreateProfileJobError>`](crate::operation::create_profile_job::CreateProfileJobError)
-    pub fn create_profile_job(
-        &self,
-    ) -> crate::operation::create_profile_job::builders::CreateProfileJobFluentBuilder {
-        crate::operation::create_profile_job::builders::CreateProfileJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_profile_job(&self) -> crate::operation::create_profile_job::builders::CreateProfileJobFluentBuilder {
+        crate::operation::create_profile_job::builders::CreateProfileJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StopReplicationToReplicaOutput {
 }
 impl StopReplicationToReplicaOutput {
     /// Creates a new builder-style object to manufacture [`StopReplicationToReplicaOutput`](crate::operation::stop_replication_to_replica::StopReplicationToReplicaOutput).
-    pub fn builder() -> crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaOutputBuilder{
+    pub fn builder() -> crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaOutputBuilder {
         crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopReplicationToReplicaOutput`](crate::operation::stop_replication_to_replica::StopReplicationToReplicaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopReplicationToReplicaOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl StopReplicationToReplicaOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopReplicationToReplicaOutput`](crate::operation::stop_replication_to_replica::StopReplicationToReplicaOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_replication_to_replica::StopReplicationToReplicaOutput {
+    pub fn build(self) -> crate::operation::stop_replication_to_replica::StopReplicationToReplicaOutput {
         crate::operation::stop_replication_to_replica::StopReplicationToReplicaOutput {
             arn: self.arn,
             _request_id: self._request_id,

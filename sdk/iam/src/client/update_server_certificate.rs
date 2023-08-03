@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`new_server_certificate_name(impl ::std::convert::Into<String>)`](crate::operation::update_server_certificate::builders::UpdateServerCertificateFluentBuilder::new_server_certificate_name) / [`set_new_server_certificate_name(Option<String>)`](crate::operation::update_server_certificate::builders::UpdateServerCertificateFluentBuilder::set_new_server_certificate_name): <p>The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     /// - On success, responds with [`UpdateServerCertificateOutput`](crate::operation::update_server_certificate::UpdateServerCertificateOutput)
     /// - On failure, responds with [`SdkError<UpdateServerCertificateError>`](crate::operation::update_server_certificate::UpdateServerCertificateError)
-    pub fn update_server_certificate(
-        &self,
-    ) -> crate::operation::update_server_certificate::builders::UpdateServerCertificateFluentBuilder
-    {
+    pub fn update_server_certificate(&self) -> crate::operation::update_server_certificate::builders::UpdateServerCertificateFluentBuilder {
         crate::operation::update_server_certificate::builders::UpdateServerCertificateFluentBuilder::new(self.handle.clone())
     }
 }

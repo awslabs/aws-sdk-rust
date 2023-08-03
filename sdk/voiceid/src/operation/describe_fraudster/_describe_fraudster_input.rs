@@ -30,8 +30,7 @@ impl ::std::fmt::Debug for DescribeFraudsterInput {
 }
 impl DescribeFraudsterInput {
     /// Creates a new builder-style object to manufacture [`DescribeFraudsterInput`](crate::operation::describe_fraudster::DescribeFraudsterInput).
-    pub fn builder() -> crate::operation::describe_fraudster::builders::DescribeFraudsterInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fraudster::builders::DescribeFraudsterInputBuilder {
         crate::operation::describe_fraudster::builders::DescribeFraudsterInputBuilder::default()
     }
 }
@@ -75,16 +74,11 @@ impl DescribeFraudsterInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFraudsterInput`](crate::operation::describe_fraudster::DescribeFraudsterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fraudster::DescribeFraudsterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fraudster::DescribeFraudsterInput {
-                domain_id: self.domain_id,
-                fraudster_id: self.fraudster_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_fraudster::DescribeFraudsterInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_fraudster::DescribeFraudsterInput {
+            domain_id: self.domain_id,
+            fraudster_id: self.fraudster_id,
+        })
     }
 }
 impl ::std::fmt::Debug for DescribeFraudsterInputBuilder {

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteNotebookInstanceOutput {
 }
 impl DeleteNotebookInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNotebookInstanceOutput`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceOutputBuilder {
         crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNotebookInstanceOutput`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNotebookInstanceOutputBuilder {
     _request_id: Option<String>,
 }

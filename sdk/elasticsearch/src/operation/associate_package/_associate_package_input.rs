@@ -23,17 +23,14 @@ impl AssociatePackageInput {
 }
 impl AssociatePackageInput {
     /// Creates a new builder-style object to manufacture [`AssociatePackageInput`](crate::operation::associate_package::AssociatePackageInput).
-    pub fn builder() -> crate::operation::associate_package::builders::AssociatePackageInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_package::builders::AssociatePackageInputBuilder {
         crate::operation::associate_package::builders::AssociatePackageInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociatePackageInput`](crate::operation::associate_package::AssociatePackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatePackageInputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -70,10 +67,7 @@ impl AssociatePackageInputBuilder {
     /// Consumes the builder and constructs a [`AssociatePackageInput`](crate::operation::associate_package::AssociatePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_package::AssociatePackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::associate_package::AssociatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_package::AssociatePackageInput {
             package_id: self.package_id,
             domain_name: self.domain_name,

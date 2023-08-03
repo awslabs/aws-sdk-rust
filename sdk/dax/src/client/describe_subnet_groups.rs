@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`subnet_groups(Option<Vec<SubnetGroup>>)`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsOutput::subnet_groups): <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
     /// - On failure, responds with [`SdkError<DescribeSubnetGroupsError>`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsError)
-    pub fn describe_subnet_groups(
-        &self,
-    ) -> crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsFluentBuilder {
-        crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_subnet_groups(&self) -> crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsFluentBuilder {
+        crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsFluentBuilder::new(self.handle.clone())
     }
 }

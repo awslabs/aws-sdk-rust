@@ -9,10 +9,7 @@ pub fn ser_get_plan_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_mapping_entry::ser_mapping_entry(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_mapping_entry::ser_mapping_entry(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -30,10 +27,7 @@ pub fn ser_get_plan_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_catalog_entry::ser_catalog_entry(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_catalog_entry::ser_catalog_entry(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

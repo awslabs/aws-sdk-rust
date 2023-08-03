@@ -22,26 +22,18 @@ impl GetUsageLimitInput {
 
 /// A builder for [`GetUsageLimitInput`](crate::operation::get_usage_limit::GetUsageLimitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsageLimitInputBuilder {
     pub(crate) usage_limit_id: ::std::option::Option<::std::string::String>,
 }
 impl GetUsageLimitInputBuilder {
     /// <p>The unique identifier of the usage limit to return information for.</p>
-    pub fn usage_limit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_limit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the usage limit to return information for.</p>
-    pub fn set_usage_limit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_limit_id = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetUsageLimitInputBuilder {
     /// Consumes the builder and constructs a [`GetUsageLimitInput`](crate::operation::get_usage_limit::GetUsageLimitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_usage_limit::GetUsageLimitInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_usage_limit::GetUsageLimitInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_usage_limit::GetUsageLimitInput {
             usage_limit_id: self.usage_limit_id,
         })

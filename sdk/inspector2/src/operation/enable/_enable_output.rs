@@ -35,9 +35,7 @@ impl EnableOutput {
 
 /// A builder for [`EnableOutput`](crate::operation::enable::EnableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableOutputBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
     pub(crate) failed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>>,
@@ -56,10 +54,7 @@ impl EnableOutputBuilder {
         self
     }
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
-    pub fn set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
-    ) -> Self {
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Account>>) -> Self {
         self.accounts = input;
         self
     }
@@ -79,17 +74,12 @@ impl EnableOutputBuilder {
         self
     }
     /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
-    pub fn set_failed_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>>,
-    ) -> Self {
+    pub fn set_failed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>>) -> Self {
         self.failed_accounts = input;
         self
     }
     /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
-    pub fn get_failed_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>> {
+    pub fn get_failed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>> {
         &self.failed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

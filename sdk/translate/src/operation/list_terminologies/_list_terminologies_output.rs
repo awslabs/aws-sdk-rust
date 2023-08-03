@@ -5,8 +5,7 @@
 pub struct ListTerminologiesOutput {
     /// <p>The properties list of the custom terminologies returned on the list request.</p>
     #[doc(hidden)]
-    pub terminology_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TerminologyProperties>>,
+    pub terminology_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::TerminologyProperties>>,
     /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListTerminologiesOutput {
 }
 impl ListTerminologiesOutput {
     /// <p>The properties list of the custom terminologies returned on the list request.</p>
-    pub fn terminology_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TerminologyProperties]> {
+    pub fn terminology_properties_list(&self) -> ::std::option::Option<&[crate::types::TerminologyProperties]> {
         self.terminology_properties_list.as_deref()
     }
     /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTerminologiesOutput {
 }
 impl ListTerminologiesOutput {
     /// Creates a new builder-style object to manufacture [`ListTerminologiesOutput`](crate::operation::list_terminologies::ListTerminologiesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_terminologies::builders::ListTerminologiesOutputBuilder {
+    pub fn builder() -> crate::operation::list_terminologies::builders::ListTerminologiesOutputBuilder {
         crate::operation::list_terminologies::builders::ListTerminologiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTerminologiesOutput`](crate::operation::list_terminologies::ListTerminologiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTerminologiesOutputBuilder {
-    pub(crate) terminology_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TerminologyProperties>>,
+    pub(crate) terminology_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::TerminologyProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,27 +47,19 @@ impl ListTerminologiesOutputBuilder {
     /// To override the contents of this collection use [`set_terminology_properties_list`](Self::set_terminology_properties_list).
     ///
     /// <p>The properties list of the custom terminologies returned on the list request.</p>
-    pub fn terminology_properties_list(
-        mut self,
-        input: crate::types::TerminologyProperties,
-    ) -> Self {
+    pub fn terminology_properties_list(mut self, input: crate::types::TerminologyProperties) -> Self {
         let mut v = self.terminology_properties_list.unwrap_or_default();
         v.push(input);
         self.terminology_properties_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The properties list of the custom terminologies returned on the list request.</p>
-    pub fn set_terminology_properties_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TerminologyProperties>>,
-    ) -> Self {
+    pub fn set_terminology_properties_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TerminologyProperties>>) -> Self {
         self.terminology_properties_list = input;
         self
     }
     /// <p>The properties list of the custom terminologies returned on the list request.</p>
-    pub fn get_terminology_properties_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TerminologyProperties>> {
+    pub fn get_terminology_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TerminologyProperties>> {
         &self.terminology_properties_list
     }
     /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>

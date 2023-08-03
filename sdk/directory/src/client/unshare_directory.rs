@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UnshareDirectoryOutput`](crate::operation::unshare_directory::UnshareDirectoryOutput) with field(s):
     ///   - [`shared_directory_id(Option<String>)`](crate::operation::unshare_directory::UnshareDirectoryOutput::shared_directory_id): <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
     /// - On failure, responds with [`SdkError<UnshareDirectoryError>`](crate::operation::unshare_directory::UnshareDirectoryError)
-    pub fn unshare_directory(
-        &self,
-    ) -> crate::operation::unshare_directory::builders::UnshareDirectoryFluentBuilder {
-        crate::operation::unshare_directory::builders::UnshareDirectoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn unshare_directory(&self) -> crate::operation::unshare_directory::builders::UnshareDirectoryFluentBuilder {
+        crate::operation::unshare_directory::builders::UnshareDirectoryFluentBuilder::new(self.handle.clone())
     }
 }

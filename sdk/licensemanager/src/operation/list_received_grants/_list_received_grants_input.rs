@@ -50,17 +50,14 @@ impl ListReceivedGrantsInput {
 }
 impl ListReceivedGrantsInput {
     /// Creates a new builder-style object to manufacture [`ListReceivedGrantsInput`](crate::operation::list_received_grants::ListReceivedGrantsInput).
-    pub fn builder(
-    ) -> crate::operation::list_received_grants::builders::ListReceivedGrantsInputBuilder {
+    pub fn builder() -> crate::operation::list_received_grants::builders::ListReceivedGrantsInputBuilder {
         crate::operation::list_received_grants::builders::ListReceivedGrantsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReceivedGrantsInput`](crate::operation::list_received_grants::ListReceivedGrantsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReceivedGrantsInputBuilder {
     pub(crate) grant_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -80,10 +77,7 @@ impl ListReceivedGrantsInputBuilder {
         self
     }
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
-    pub fn set_grant_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_grant_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.grant_arns = input;
         self
     }
@@ -117,10 +111,7 @@ impl ListReceivedGrantsInputBuilder {
     /// <li> <p> <code>GrantStatus</code> </p> </li>
     /// <li> <p> <code>GranterAccountId</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -166,17 +157,12 @@ impl ListReceivedGrantsInputBuilder {
     /// Consumes the builder and constructs a [`ListReceivedGrantsInput`](crate::operation::list_received_grants::ListReceivedGrantsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_received_grants::ListReceivedGrantsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_received_grants::ListReceivedGrantsInput {
-                grant_arns: self.grant_arns,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_received_grants::ListReceivedGrantsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_received_grants::ListReceivedGrantsInput {
+            grant_arns: self.grant_arns,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

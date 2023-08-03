@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetInstanceAccessDetailsOutput`](crate::operation::get_instance_access_details::GetInstanceAccessDetailsOutput) with field(s):
     ///   - [`access_details(Option<InstanceAccessDetails>)`](crate::operation::get_instance_access_details::GetInstanceAccessDetailsOutput::access_details): <p>An array of key-value pairs containing information about a get instance access request.</p>
     /// - On failure, responds with [`SdkError<GetInstanceAccessDetailsError>`](crate::operation::get_instance_access_details::GetInstanceAccessDetailsError)
-    pub fn get_instance_access_details(&self) -> crate::operation::get_instance_access_details::builders::GetInstanceAccessDetailsFluentBuilder{
+    pub fn get_instance_access_details(&self) -> crate::operation::get_instance_access_details::builders::GetInstanceAccessDetailsFluentBuilder {
         crate::operation::get_instance_access_details::builders::GetInstanceAccessDetailsFluentBuilder::new(self.handle.clone())
     }
 }

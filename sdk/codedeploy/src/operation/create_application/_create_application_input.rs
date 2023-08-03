@@ -30,17 +30,14 @@ impl CreateApplicationInput {
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn builder() -> crate::operation::create_application::builders::CreateApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_application::builders::CreateApplicationInputBuilder {
         crate::operation::create_application::builders::CreateApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApplicationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
@@ -48,18 +45,12 @@ pub struct CreateApplicationInputBuilder {
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -73,10 +64,7 @@ impl CreateApplicationInputBuilder {
         self
     }
     /// <p> The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
-    pub fn set_compute_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputePlatform>,
-    ) -> Self {
+    pub fn set_compute_platform(mut self, input: ::std::option::Option<crate::types::ComputePlatform>) -> Self {
         self.compute_platform = input;
         self
     }
@@ -96,10 +84,7 @@ impl CreateApplicationInputBuilder {
         self
     }
     /// <p> The metadata that you apply to CodeDeploy applications to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -110,16 +95,11 @@ impl CreateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_application::CreateApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_application::CreateApplicationInput {
-                application_name: self.application_name,
-                compute_platform: self.compute_platform,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
+            application_name: self.application_name,
+            compute_platform: self.compute_platform,
+            tags: self.tags,
+        })
     }
 }

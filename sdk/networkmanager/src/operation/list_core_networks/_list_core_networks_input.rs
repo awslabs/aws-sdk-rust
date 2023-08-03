@@ -22,17 +22,14 @@ impl ListCoreNetworksInput {
 }
 impl ListCoreNetworksInput {
     /// Creates a new builder-style object to manufacture [`ListCoreNetworksInput`](crate::operation::list_core_networks::ListCoreNetworksInput).
-    pub fn builder() -> crate::operation::list_core_networks::builders::ListCoreNetworksInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_core_networks::builders::ListCoreNetworksInputBuilder {
         crate::operation::list_core_networks::builders::ListCoreNetworksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCoreNetworksInput`](crate::operation::list_core_networks::ListCoreNetworksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCoreNetworksInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl ListCoreNetworksInputBuilder {
     /// Consumes the builder and constructs a [`ListCoreNetworksInput`](crate::operation::list_core_networks::ListCoreNetworksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_core_networks::ListCoreNetworksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_core_networks::ListCoreNetworksInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_core_networks::ListCoreNetworksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_core_networks::ListCoreNetworksInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

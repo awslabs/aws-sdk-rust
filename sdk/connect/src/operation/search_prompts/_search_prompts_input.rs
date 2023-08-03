@@ -50,9 +50,7 @@ impl SearchPromptsInput {
 
 /// A builder for [`SearchPromptsInput`](crate::operation::search_prompts::SearchPromptsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchPromptsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -109,10 +107,7 @@ impl SearchPromptsInputBuilder {
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn set_search_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::PromptSearchFilter>,
-    ) -> Self {
+    pub fn set_search_filter(mut self, input: ::std::option::Option<crate::types::PromptSearchFilter>) -> Self {
         self.search_filter = input;
         self
     }
@@ -126,26 +121,18 @@ impl SearchPromptsInputBuilder {
         self
     }
     /// <p>The search criteria to be used to return prompts.</p>
-    pub fn set_search_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::PromptSearchCriteria>,
-    ) -> Self {
+    pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::PromptSearchCriteria>) -> Self {
         self.search_criteria = input;
         self
     }
     /// <p>The search criteria to be used to return prompts.</p>
-    pub fn get_search_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::PromptSearchCriteria> {
+    pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::PromptSearchCriteria> {
         &self.search_criteria
     }
     /// Consumes the builder and constructs a [`SearchPromptsInput`](crate::operation::search_prompts::SearchPromptsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_prompts::SearchPromptsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::search_prompts::SearchPromptsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_prompts::SearchPromptsInput {
             instance_id: self.instance_id,
             next_token: self.next_token,

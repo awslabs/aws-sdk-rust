@@ -30,9 +30,7 @@ impl CloudWatchLogsDestination {
 
 /// A builder for [`CloudWatchLogsDestination`](crate::types::CloudWatchLogsDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLogsDestinationBuilder {
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_arn: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl CloudWatchLogsDestinationBuilder {
         &self.iam_role_arn
     }
     /// The name of the Amazon CloudWatch Log Group that you want to record events in.
-    pub fn log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the Amazon CloudWatch Log Group that you want to record events in.
-    pub fn set_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_arn = input;
         self
     }

@@ -10,9 +10,7 @@ pub struct H264FilterSettings {
 }
 impl H264FilterSettings {
     /// Temporal Filter Settings
-    pub fn temporal_filter_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TemporalFilterSettings> {
+    pub fn temporal_filter_settings(&self) -> ::std::option::Option<&crate::types::TemporalFilterSettings> {
         self.temporal_filter_settings.as_ref()
     }
 }
@@ -25,12 +23,9 @@ impl H264FilterSettings {
 
 /// A builder for [`H264FilterSettings`](crate::types::H264FilterSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct H264FilterSettingsBuilder {
-    pub(crate) temporal_filter_settings:
-        ::std::option::Option<crate::types::TemporalFilterSettings>,
+    pub(crate) temporal_filter_settings: ::std::option::Option<crate::types::TemporalFilterSettings>,
 }
 impl H264FilterSettingsBuilder {
     /// Temporal Filter Settings
@@ -39,17 +34,12 @@ impl H264FilterSettingsBuilder {
         self
     }
     /// Temporal Filter Settings
-    pub fn set_temporal_filter_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::TemporalFilterSettings>,
-    ) -> Self {
+    pub fn set_temporal_filter_settings(mut self, input: ::std::option::Option<crate::types::TemporalFilterSettings>) -> Self {
         self.temporal_filter_settings = input;
         self
     }
     /// Temporal Filter Settings
-    pub fn get_temporal_filter_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemporalFilterSettings> {
+    pub fn get_temporal_filter_settings(&self) -> &::std::option::Option<crate::types::TemporalFilterSettings> {
         &self.temporal_filter_settings
     }
     /// Consumes the builder and constructs a [`H264FilterSettings`](crate::types::H264FilterSettings).

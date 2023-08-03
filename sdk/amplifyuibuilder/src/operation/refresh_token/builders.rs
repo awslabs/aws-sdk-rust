@@ -10,10 +10,7 @@ impl RefreshTokenInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::refresh_token::RefreshTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::refresh_token::RefreshTokenError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::refresh_token::RefreshTokenError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.refresh_token();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl RefreshTokenFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::refresh_token::RefreshToken,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::refresh_token::RefreshToken, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::refresh_token::RefreshTokenError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl RefreshTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl RefreshTokenFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::refresh_token::RefreshToken,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::refresh_token::RefreshToken, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::refresh_token::RefreshTokenError>,
     > {
         self.customize_middleware().await
@@ -118,10 +106,7 @@ impl RefreshTokenFluentBuilder {
         self
     }
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::TokenProviders>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::TokenProviders>) -> Self {
         self.inner = self.inner.set_provider(input);
         self
     }
@@ -135,17 +120,12 @@ impl RefreshTokenFluentBuilder {
         self
     }
     /// <p>Information about the refresh token request.</p>
-    pub fn set_refresh_token_body(
-        mut self,
-        input: ::std::option::Option<crate::types::RefreshTokenRequestBody>,
-    ) -> Self {
+    pub fn set_refresh_token_body(mut self, input: ::std::option::Option<crate::types::RefreshTokenRequestBody>) -> Self {
         self.inner = self.inner.set_refresh_token_body(input);
         self
     }
     /// <p>Information about the refresh token request.</p>
-    pub fn get_refresh_token_body(
-        &self,
-    ) -> &::std::option::Option<crate::types::RefreshTokenRequestBody> {
+    pub fn get_refresh_token_body(&self) -> &::std::option::Option<crate::types::RefreshTokenRequestBody> {
         self.inner.get_refresh_token_body()
     }
 }

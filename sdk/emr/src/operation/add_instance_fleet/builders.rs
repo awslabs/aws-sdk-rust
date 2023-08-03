@@ -10,10 +10,7 @@ impl AddInstanceFleetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_instance_fleet::AddInstanceFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_instance_fleet::AddInstanceFleetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_instance_fleet::AddInstanceFleetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_instance_fleet();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl AddInstanceFleetFluentBuilder {
         }
     }
     /// Access the AddInstanceFleet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_instance_fleet::builders::AddInstanceFleetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_instance_fleet::builders::AddInstanceFleetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl AddInstanceFleetFluentBuilder {
             crate::operation::add_instance_fleet::AddInstanceFleet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_instance_fleet::AddInstanceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_instance_fleet::AddInstanceFleetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl AddInstanceFleetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl AddInstanceFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_instance_fleet::AddInstanceFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_instance_fleet::AddInstanceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_instance_fleet::AddInstanceFleetError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl AddInstanceFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_instance_fleet::AddInstanceFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_instance_fleet::AddInstanceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_instance_fleet::AddInstanceFleetError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl AddInstanceFleetFluentBuilder {
             crate::operation::add_instance_fleet::AddInstanceFleet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_instance_fleet::AddInstanceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_instance_fleet::AddInstanceFleetError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +128,7 @@ impl AddInstanceFleetFluentBuilder {
         self
     }
     /// <p>Specifies the configuration of the instance fleet.</p>
-    pub fn set_instance_fleet(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceFleetConfig>,
-    ) -> Self {
+    pub fn set_instance_fleet(mut self, input: ::std::option::Option<crate::types::InstanceFleetConfig>) -> Self {
         self.inner = self.inner.set_instance_fleet(input);
         self
     }

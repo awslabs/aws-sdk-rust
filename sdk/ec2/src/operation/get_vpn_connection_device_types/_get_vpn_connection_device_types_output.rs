@@ -5,8 +5,7 @@
 pub struct GetVpnConnectionDeviceTypesOutput {
     /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
     #[doc(hidden)]
-    pub vpn_connection_device_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpnConnectionDeviceType>>,
+    pub vpn_connection_device_types: ::std::option::Option<::std::vec::Vec<crate::types::VpnConnectionDeviceType>>,
     /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetVpnConnectionDeviceTypesOutput {
 }
 impl GetVpnConnectionDeviceTypesOutput {
     /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
-    pub fn vpn_connection_device_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VpnConnectionDeviceType]> {
+    pub fn vpn_connection_device_types(&self) -> ::std::option::Option<&[crate::types::VpnConnectionDeviceType]> {
         self.vpn_connection_device_types.as_deref()
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetVpnConnectionDeviceTypesOutput {
 }
 impl GetVpnConnectionDeviceTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetVpnConnectionDeviceTypesOutput`](crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesOutput).
-    pub fn builder() -> crate::operation::get_vpn_connection_device_types::builders::GetVpnConnectionDeviceTypesOutputBuilder{
+    pub fn builder() -> crate::operation::get_vpn_connection_device_types::builders::GetVpnConnectionDeviceTypesOutputBuilder {
         crate::operation::get_vpn_connection_device_types::builders::GetVpnConnectionDeviceTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVpnConnectionDeviceTypesOutput`](crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVpnConnectionDeviceTypesOutputBuilder {
-    pub(crate) vpn_connection_device_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpnConnectionDeviceType>>,
+    pub(crate) vpn_connection_device_types: ::std::option::Option<::std::vec::Vec<crate::types::VpnConnectionDeviceType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl GetVpnConnectionDeviceTypesOutputBuilder {
     /// To override the contents of this collection use [`set_vpn_connection_device_types`](Self::set_vpn_connection_device_types).
     ///
     /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
-    pub fn vpn_connection_device_types(
-        mut self,
-        input: crate::types::VpnConnectionDeviceType,
-    ) -> Self {
+    pub fn vpn_connection_device_types(mut self, input: crate::types::VpnConnectionDeviceType) -> Self {
         let mut v = self.vpn_connection_device_types.unwrap_or_default();
         v.push(input);
         self.vpn_connection_device_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
-    pub fn set_vpn_connection_device_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpnConnectionDeviceType>>,
-    ) -> Self {
+    pub fn set_vpn_connection_device_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpnConnectionDeviceType>>) -> Self {
         self.vpn_connection_device_types = input;
         self
     }
     /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
-    pub fn get_vpn_connection_device_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpnConnectionDeviceType>> {
+    pub fn get_vpn_connection_device_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpnConnectionDeviceType>> {
         &self.vpn_connection_device_types
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -100,9 +86,7 @@ impl GetVpnConnectionDeviceTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetVpnConnectionDeviceTypesOutput`](crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesOutput {
+    pub fn build(self) -> crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesOutput {
         crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesOutput {
             vpn_connection_device_types: self.vpn_connection_device_types,
             next_token: self.next_token,

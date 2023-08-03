@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`next_forward_token(Option<String>)`](crate::operation::get_log_events::GetLogEventsOutput::next_forward_token): <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
     ///   - [`next_backward_token(Option<String>)`](crate::operation::get_log_events::GetLogEventsOutput::next_backward_token): <p>The token for the next set of items in the backward direction. The token expires after 24 hours. This token is not null. If you have reached the end of the stream, it returns the same token you passed in.</p>
     /// - On failure, responds with [`SdkError<GetLogEventsError>`](crate::operation::get_log_events::GetLogEventsError)
-    pub fn get_log_events(
-        &self,
-    ) -> crate::operation::get_log_events::builders::GetLogEventsFluentBuilder {
-        crate::operation::get_log_events::builders::GetLogEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_log_events(&self) -> crate::operation::get_log_events::builders::GetLogEventsFluentBuilder {
+        crate::operation::get_log_events::builders::GetLogEventsFluentBuilder::new(self.handle.clone())
     }
 }

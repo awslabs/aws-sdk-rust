@@ -15,10 +15,7 @@ pub fn ser_register_certificate_input(
     if let Some(var_4) = &input.client_cert_auth_settings {
         #[allow(unused_mut)]
         let mut object_5 = object.key("ClientCertAuthSettings").start_object();
-        crate::protocol_serde::shape_client_cert_auth_settings::ser_client_cert_auth_settings(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_client_cert_auth_settings::ser_client_cert_auth_settings(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

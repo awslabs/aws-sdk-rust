@@ -21,10 +21,7 @@ pub fn ser_expected_attribute_value(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_attribute_value::ser_attribute_value(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }

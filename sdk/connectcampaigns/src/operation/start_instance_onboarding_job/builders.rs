@@ -26,7 +26,7 @@ impl StartInstanceOnboardingJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartInstanceOnboardingJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobInputBuilder,
+    inner: crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobInputBuilder,
 }
 impl StartInstanceOnboardingJobFluentBuilder {
     /// Creates a new `StartInstanceOnboardingJob`.
@@ -37,7 +37,7 @@ impl StartInstanceOnboardingJobFluentBuilder {
         }
     }
     /// Access the StartInstanceOnboardingJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartInstanceOnboardingJobFluentBuilder {
             crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartInstanceOnboardingJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartInstanceOnboardingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartInstanceOnboardingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl StartInstanceOnboardingJobFluentBuilder {
             crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError>,
     > {
         self.customize_middleware().await
     }
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connect_instance_id(input.into());
         self
     }
     /// Amazon Connect Instance Id
-    pub fn set_connect_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connect_instance_id(input);
         self
     }
@@ -146,10 +129,7 @@ impl StartInstanceOnboardingJobFluentBuilder {
         self
     }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.inner = self.inner.set_encryption_config(input);
         self
     }

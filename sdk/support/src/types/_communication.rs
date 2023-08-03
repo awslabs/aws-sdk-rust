@@ -55,16 +55,13 @@ impl Communication {
 
 /// A builder for [`Communication`](crate::types::Communication).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommunicationBuilder {
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) submitted_by: ::std::option::Option<::std::string::String>,
     pub(crate) time_created: ::std::option::Option<::std::string::String>,
-    pub(crate) attachment_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>>,
+    pub(crate) attachment_set: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>>,
 }
 impl CommunicationBuilder {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
@@ -141,17 +138,12 @@ impl CommunicationBuilder {
         self
     }
     /// <p>Information about the attachments to the case communication.</p>
-    pub fn set_attachment_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>>,
-    ) -> Self {
+    pub fn set_attachment_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>>) -> Self {
         self.attachment_set = input;
         self
     }
     /// <p>Information about the attachments to the case communication.</p>
-    pub fn get_attachment_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>> {
+    pub fn get_attachment_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>> {
         &self.attachment_set
     }
     /// Consumes the builder and constructs a [`Communication`](crate::types::Communication).

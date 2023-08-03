@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetAnomalyGroupOutput`](crate::operation::get_anomaly_group::GetAnomalyGroupOutput) with field(s):
     ///   - [`anomaly_group(Option<AnomalyGroup>)`](crate::operation::get_anomaly_group::GetAnomalyGroupOutput::anomaly_group): <p>Details about the anomaly group.</p>
     /// - On failure, responds with [`SdkError<GetAnomalyGroupError>`](crate::operation::get_anomaly_group::GetAnomalyGroupError)
-    pub fn get_anomaly_group(
-        &self,
-    ) -> crate::operation::get_anomaly_group::builders::GetAnomalyGroupFluentBuilder {
-        crate::operation::get_anomaly_group::builders::GetAnomalyGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_anomaly_group(&self) -> crate::operation::get_anomaly_group::builders::GetAnomalyGroupFluentBuilder {
+        crate::operation::get_anomaly_group::builders::GetAnomalyGroupFluentBuilder::new(self.handle.clone())
     }
 }

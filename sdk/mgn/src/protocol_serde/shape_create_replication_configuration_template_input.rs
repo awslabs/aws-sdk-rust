@@ -19,9 +19,7 @@ pub fn ser_create_replication_configuration_template_input(
         object.key("dataPlaneRouting").string(var_3.as_str());
     }
     if let Some(var_4) = &input.default_large_staging_disk_type {
-        object
-            .key("defaultLargeStagingDiskType")
-            .string(var_4.as_str());
+        object.key("defaultLargeStagingDiskType").string(var_4.as_str());
     }
     if let Some(var_5) = &input.ebs_encryption {
         object.key("ebsEncryption").string(var_5.as_str());
@@ -30,14 +28,10 @@ pub fn ser_create_replication_configuration_template_input(
         object.key("ebsEncryptionKeyArn").string(var_6.as_str());
     }
     if let Some(var_7) = &input.replication_server_instance_type {
-        object
-            .key("replicationServerInstanceType")
-            .string(var_7.as_str());
+        object.key("replicationServerInstanceType").string(var_7.as_str());
     }
     if let Some(var_8) = &input.replication_servers_security_groups_i_ds {
-        let mut array_9 = object
-            .key("replicationServersSecurityGroupsIDs")
-            .start_array();
+        let mut array_9 = object.key("replicationServersSecurityGroupsIDs").start_array();
         for item_10 in var_8 {
             {
                 array_9.value().string(item_10.as_str());

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DisassociateGatewayFromServerOutput {
 }
 impl DisassociateGatewayFromServerOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateGatewayFromServerOutput`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerOutput).
-    pub fn builder() -> crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerOutputBuilder {
         crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateGatewayFromServerOutput`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateGatewayFromServerOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,7 @@ impl DisassociateGatewayFromServerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateGatewayFromServerOutput`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerOutput {
         crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerOutput {
             gateway_arn: self.gateway_arn,
             _request_id: self._request_id,

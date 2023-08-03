@@ -67,9 +67,7 @@ impl VpcPeeringConnection {
 
 /// A builder for [`VpcPeeringConnection`](crate::types::VpcPeeringConnection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcPeeringConnectionBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
@@ -109,18 +107,12 @@ impl VpcPeeringConnectionBuilder {
         &self.fleet_arn
     }
     /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
-    pub fn ip_v4_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_v4_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_v4_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. </p>
-    pub fn set_ip_v4_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_v4_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_v4_cidr_block = input;
         self
     }
@@ -129,18 +121,12 @@ impl VpcPeeringConnectionBuilder {
         &self.ip_v4_cidr_block
     }
     /// <p>A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering connection events, and is used when deleting a connection.</p>
-    pub fn vpc_peering_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_peering_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering connection events, and is used when deleting a connection.</p>
-    pub fn set_vpc_peering_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_peering_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = input;
         self
     }
@@ -154,10 +140,7 @@ impl VpcPeeringConnectionBuilder {
         self
     }
     /// <p>The status information about the connection. Status indicates if a connection is pending, successful, or failed.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcPeeringConnectionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VpcPeeringConnectionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -180,18 +163,12 @@ impl VpcPeeringConnectionBuilder {
         &self.peer_vpc_id
     }
     /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
-    pub fn game_lift_vpc_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_lift_vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_lift_vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services account. </p>
-    pub fn set_game_lift_vpc_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_lift_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_lift_vpc_id = input;
         self
     }

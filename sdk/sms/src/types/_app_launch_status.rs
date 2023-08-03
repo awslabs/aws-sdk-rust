@@ -51,13 +51,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AppLaunchStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -111,9 +105,7 @@ impl ::std::convert::From<&str> for AppLaunchStatus {
             "TERMINATE_FAILED" => AppLaunchStatus::TerminateFailed,
             "TERMINATE_IN_PROGRESS" => AppLaunchStatus::TerminateInProgress,
             "VALIDATION_IN_PROGRESS" => AppLaunchStatus::ValidationInProgress,
-            other => {
-                AppLaunchStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AppLaunchStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -16,9 +16,7 @@ pub struct StartSigningJobParameter {
 }
 impl StartSigningJobParameter {
     /// <p>Describes the code-signing profile.</p>
-    pub fn signing_profile_parameter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SigningProfileParameter> {
+    pub fn signing_profile_parameter(&self) -> ::std::option::Option<&crate::types::SigningProfileParameter> {
         self.signing_profile_parameter.as_ref()
     }
     /// <p>The code-signing profile name.</p>
@@ -39,51 +37,34 @@ impl StartSigningJobParameter {
 
 /// A builder for [`StartSigningJobParameter`](crate::types::StartSigningJobParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSigningJobParameterBuilder {
-    pub(crate) signing_profile_parameter:
-        ::std::option::Option<crate::types::SigningProfileParameter>,
+    pub(crate) signing_profile_parameter: ::std::option::Option<crate::types::SigningProfileParameter>,
     pub(crate) signing_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
 }
 impl StartSigningJobParameterBuilder {
     /// <p>Describes the code-signing profile.</p>
-    pub fn signing_profile_parameter(
-        mut self,
-        input: crate::types::SigningProfileParameter,
-    ) -> Self {
+    pub fn signing_profile_parameter(mut self, input: crate::types::SigningProfileParameter) -> Self {
         self.signing_profile_parameter = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the code-signing profile.</p>
-    pub fn set_signing_profile_parameter(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningProfileParameter>,
-    ) -> Self {
+    pub fn set_signing_profile_parameter(mut self, input: ::std::option::Option<crate::types::SigningProfileParameter>) -> Self {
         self.signing_profile_parameter = input;
         self
     }
     /// <p>Describes the code-signing profile.</p>
-    pub fn get_signing_profile_parameter(
-        &self,
-    ) -> &::std::option::Option<crate::types::SigningProfileParameter> {
+    pub fn get_signing_profile_parameter(&self) -> &::std::option::Option<crate::types::SigningProfileParameter> {
         &self.signing_profile_parameter
     }
     /// <p>The code-signing profile name.</p>
-    pub fn signing_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signing_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code-signing profile name.</p>
-    pub fn set_signing_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signing_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_profile_name = input;
         self
     }
@@ -97,10 +78,7 @@ impl StartSigningJobParameterBuilder {
         self
     }
     /// <p>The location to write the code-signed file.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.destination = input;
         self
     }

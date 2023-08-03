@@ -37,9 +37,7 @@ impl AddCustomAttributesFluentBuilder {
         }
     }
     /// Access the AddCustomAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_custom_attributes::builders::AddCustomAttributesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_custom_attributes::builders::AddCustomAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl AddCustomAttributesFluentBuilder {
             crate::operation::add_custom_attributes::AddCustomAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_custom_attributes::AddCustomAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_custom_attributes::AddCustomAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl AddCustomAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl AddCustomAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_custom_attributes::AddCustomAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_custom_attributes::AddCustomAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_custom_attributes::AddCustomAttributesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl AddCustomAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_custom_attributes::AddCustomAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_custom_attributes::AddCustomAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_custom_attributes::AddCustomAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl AddCustomAttributesFluentBuilder {
             crate::operation::add_custom_attributes::AddCustomAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_custom_attributes::AddCustomAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_custom_attributes::AddCustomAttributesError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +133,12 @@ impl AddCustomAttributesFluentBuilder {
         self
     }
     /// <p>An array of custom attributes, such as Mutable and Name.</p>
-    pub fn set_custom_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>>,
-    ) -> Self {
+    pub fn set_custom_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>>) -> Self {
         self.inner = self.inner.set_custom_attributes(input);
         self
     }
     /// <p>An array of custom attributes, such as Mutable and Name.</p>
-    pub fn get_custom_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>> {
+    pub fn get_custom_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>> {
         self.inner.get_custom_attributes()
     }
 }

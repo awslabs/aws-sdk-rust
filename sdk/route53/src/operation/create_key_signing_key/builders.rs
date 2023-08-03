@@ -37,9 +37,7 @@ impl CreateKeySigningKeyFluentBuilder {
         }
     }
     /// Access the CreateKeySigningKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_key_signing_key::builders::CreateKeySigningKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_key_signing_key::builders::CreateKeySigningKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateKeySigningKeyFluentBuilder {
             crate::operation::create_key_signing_key::CreateKeySigningKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_key_signing_key::CreateKeySigningKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_key_signing_key::CreateKeySigningKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateKeySigningKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateKeySigningKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_key_signing_key::CreateKeySigningKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_key_signing_key::CreateKeySigningKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_key_signing_key::CreateKeySigningKeyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateKeySigningKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_key_signing_key::CreateKeySigningKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_key_signing_key::CreateKeySigningKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_key_signing_key::CreateKeySigningKeyError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl CreateKeySigningKeyFluentBuilder {
             crate::operation::create_key_signing_key::CreateKeySigningKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_key_signing_key::CreateKeySigningKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_key_signing_key::CreateKeySigningKeyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique string that identifies the request.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.caller_reference(input.into());
         self
     }
     /// <p>A unique string that identifies the request.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_caller_reference(input);
         self
     }
@@ -143,18 +124,12 @@ impl CreateKeySigningKeyFluentBuilder {
         self.inner.get_caller_reference()
     }
     /// <p>The unique string (ID) used to identify a hosted zone.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
         self
     }
     /// <p>The unique string (ID) used to identify a hosted zone.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }
@@ -200,10 +175,7 @@ impl CreateKeySigningKeyFluentBuilder {
     /// </dd>
     /// </dl>
     /// <p>For more information about working with a customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
-    pub fn key_management_service_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_management_service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_management_service_arn(input.into());
         self
     }
@@ -245,10 +217,7 @@ impl CreateKeySigningKeyFluentBuilder {
     /// </dd>
     /// </dl>
     /// <p>For more information about working with a customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
-    pub fn set_key_management_service_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_management_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_management_service_arn(input);
         self
     }

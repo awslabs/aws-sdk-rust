@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeServiceAccessPoliciesOutput {
 }
 impl DescribeServiceAccessPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceAccessPoliciesOutput`](crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesOutput).
-    pub fn builder() -> crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesOutputBuilder {
         crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServiceAccessPoliciesOutput`](crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServiceAccessPoliciesOutputBuilder {
     pub(crate) access_policies: ::std::option::Option<crate::types::AccessPoliciesStatus>,
     _request_id: Option<String>,
@@ -43,17 +41,12 @@ impl DescribeServiceAccessPoliciesOutputBuilder {
         self
     }
     /// <p>The access rules configured for the domain specified in the request.</p>
-    pub fn set_access_policies(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPoliciesStatus>,
-    ) -> Self {
+    pub fn set_access_policies(mut self, input: ::std::option::Option<crate::types::AccessPoliciesStatus>) -> Self {
         self.access_policies = input;
         self
     }
     /// <p>The access rules configured for the domain specified in the request.</p>
-    pub fn get_access_policies(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessPoliciesStatus> {
+    pub fn get_access_policies(&self) -> &::std::option::Option<crate::types::AccessPoliciesStatus> {
         &self.access_policies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -66,10 +59,7 @@ impl DescribeServiceAccessPoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeServiceAccessPoliciesOutput`](crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesOutput {
         crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesOutput {
             access_policies: self.access_policies,
             _request_id: self._request_id,

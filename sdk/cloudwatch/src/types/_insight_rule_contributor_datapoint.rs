@@ -31,9 +31,7 @@ impl InsightRuleContributorDatapoint {
 
 /// A builder for [`InsightRuleContributorDatapoint`](crate::types::InsightRuleContributorDatapoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsightRuleContributorDatapointBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) approximate_value: ::std::option::Option<f64>,
@@ -45,10 +43,7 @@ impl InsightRuleContributorDatapointBuilder {
         self
     }
     /// <p>The timestamp of the data point.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

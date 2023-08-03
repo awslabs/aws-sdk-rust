@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartDataSourceSyncJobOutput`](crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput) with field(s):
     ///   - [`execution_id(Option<String>)`](crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput::execution_id): <p>Identifies a particular synchronization job.</p>
     /// - On failure, responds with [`SdkError<StartDataSourceSyncJobError>`](crate::operation::start_data_source_sync_job::StartDataSourceSyncJobError)
-    pub fn start_data_source_sync_job(
-        &self,
-    ) -> crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobFluentBuilder
-    {
+    pub fn start_data_source_sync_job(&self) -> crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobFluentBuilder {
         crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobFluentBuilder::new(self.handle.clone())
     }
 }

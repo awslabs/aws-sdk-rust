@@ -23,12 +23,7 @@ impl super::Client {
     ///   - [`status(Option<PackageVersionStatus>)`](crate::operation::publish_package_version::PublishPackageVersionOutput::status): <p>A string that contains the status of the package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>.</p>
     ///   - [`asset(Option<AssetSummary>)`](crate::operation::publish_package_version::PublishPackageVersionOutput::asset): <p>An <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> for the published asset.</p>
     /// - On failure, responds with [`SdkError<PublishPackageVersionError>`](crate::operation::publish_package_version::PublishPackageVersionError)
-    pub fn publish_package_version(
-        &self,
-    ) -> crate::operation::publish_package_version::builders::PublishPackageVersionFluentBuilder
-    {
-        crate::operation::publish_package_version::builders::PublishPackageVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn publish_package_version(&self) -> crate::operation::publish_package_version::builders::PublishPackageVersionFluentBuilder {
+        crate::operation::publish_package_version::builders::PublishPackageVersionFluentBuilder::new(self.handle.clone())
     }
 }

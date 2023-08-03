@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeBundleTasksOutput`](crate::operation::describe_bundle_tasks::DescribeBundleTasksOutput) with field(s):
     ///   - [`bundle_tasks(Option<Vec<BundleTask>>)`](crate::operation::describe_bundle_tasks::DescribeBundleTasksOutput::bundle_tasks): <p>Information about the bundle tasks.</p>
     /// - On failure, responds with [`SdkError<DescribeBundleTasksError>`](crate::operation::describe_bundle_tasks::DescribeBundleTasksError)
-    pub fn describe_bundle_tasks(
-        &self,
-    ) -> crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksFluentBuilder {
-        crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_bundle_tasks(&self) -> crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksFluentBuilder {
+        crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksFluentBuilder::new(self.handle.clone())
     }
 }

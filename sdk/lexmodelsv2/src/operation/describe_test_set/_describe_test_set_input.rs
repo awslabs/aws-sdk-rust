@@ -22,9 +22,7 @@ impl DescribeTestSetInput {
 
 /// A builder for [`DescribeTestSetInput`](crate::operation::describe_test_set::DescribeTestSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTestSetInputBuilder {
     pub(crate) test_set_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DescribeTestSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTestSetInput`](crate::operation::describe_test_set::DescribeTestSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_test_set::DescribeTestSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_test_set::DescribeTestSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_test_set::DescribeTestSetInput {
             test_set_id: self.test_set_id,
         })

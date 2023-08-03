@@ -23,9 +23,7 @@ impl VpcConnectivityIam {
 
 /// A builder for [`VpcConnectivityIam`](crate::types::VpcConnectivityIam).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcConnectivityIamBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl VpcConnectivityIamBuilder {
     }
     /// Consumes the builder and constructs a [`VpcConnectivityIam`](crate::types::VpcConnectivityIam).
     pub fn build(self) -> crate::types::VpcConnectivityIam {
-        crate::types::VpcConnectivityIam {
-            enabled: self.enabled,
-        }
+        crate::types::VpcConnectivityIam { enabled: self.enabled }
     }
 }

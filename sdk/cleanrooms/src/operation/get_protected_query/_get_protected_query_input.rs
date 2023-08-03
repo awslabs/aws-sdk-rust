@@ -22,35 +22,26 @@ impl GetProtectedQueryInput {
 }
 impl GetProtectedQueryInput {
     /// Creates a new builder-style object to manufacture [`GetProtectedQueryInput`](crate::operation::get_protected_query::GetProtectedQueryInput).
-    pub fn builder(
-    ) -> crate::operation::get_protected_query::builders::GetProtectedQueryInputBuilder {
+    pub fn builder() -> crate::operation::get_protected_query::builders::GetProtectedQueryInputBuilder {
         crate::operation::get_protected_query::builders::GetProtectedQueryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetProtectedQueryInput`](crate::operation::get_protected_query::GetProtectedQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProtectedQueryInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) protected_query_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetProtectedQueryInputBuilder {
     /// <p>The identifier for a membership in a protected query instance.</p>
-    pub fn membership_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a membership in a protected query instance.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.membership_identifier = input;
         self
     }
@@ -59,18 +50,12 @@ impl GetProtectedQueryInputBuilder {
         &self.membership_identifier
     }
     /// <p>The identifier for a protected query instance.</p>
-    pub fn protected_query_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protected_query_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protected_query_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a protected query instance.</p>
-    pub fn set_protected_query_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protected_query_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protected_query_identifier = input;
         self
     }
@@ -81,15 +66,10 @@ impl GetProtectedQueryInputBuilder {
     /// Consumes the builder and constructs a [`GetProtectedQueryInput`](crate::operation::get_protected_query::GetProtectedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_protected_query::GetProtectedQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_protected_query::GetProtectedQueryInput {
-                membership_identifier: self.membership_identifier,
-                protected_query_identifier: self.protected_query_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_protected_query::GetProtectedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_protected_query::GetProtectedQueryInput {
+            membership_identifier: self.membership_identifier,
+            protected_query_identifier: self.protected_query_identifier,
+        })
     }
 }

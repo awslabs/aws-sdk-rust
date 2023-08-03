@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`transit_gateway_prefix_list_references(Option<Vec<TransitGatewayPrefixListReference>>)`](crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesOutput::transit_gateway_prefix_list_references): <p>Information about the prefix list references.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetTransitGatewayPrefixListReferencesError>`](crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesError)
-    pub fn get_transit_gateway_prefix_list_references(&self) -> crate::operation::get_transit_gateway_prefix_list_references::builders::GetTransitGatewayPrefixListReferencesFluentBuilder{
-        crate::operation::get_transit_gateway_prefix_list_references::builders::GetTransitGatewayPrefixListReferencesFluentBuilder::new(self.handle.clone())
+    pub fn get_transit_gateway_prefix_list_references(
+        &self,
+    ) -> crate::operation::get_transit_gateway_prefix_list_references::builders::GetTransitGatewayPrefixListReferencesFluentBuilder {
+        crate::operation::get_transit_gateway_prefix_list_references::builders::GetTransitGatewayPrefixListReferencesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -5,8 +5,7 @@
 pub struct ListCollectionsOutput {
     /// <p>Details about each collection.</p>
     #[doc(hidden)]
-    pub collection_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>>,
+    pub collection_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListCollectionsOutput {
 }
 impl ListCollectionsOutput {
     /// <p>Details about each collection.</p>
-    pub fn collection_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CollectionSummary]> {
+    pub fn collection_summaries(&self) -> ::std::option::Option<&[crate::types::CollectionSummary]> {
         self.collection_summaries.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -38,12 +35,9 @@ impl ListCollectionsOutput {
 
 /// A builder for [`ListCollectionsOutput`](crate::operation::list_collections::ListCollectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCollectionsOutputBuilder {
-    pub(crate) collection_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>>,
+    pub(crate) collection_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListCollectionsOutputBuilder {
         self
     }
     /// <p>Details about each collection.</p>
-    pub fn set_collection_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>>,
-    ) -> Self {
+    pub fn set_collection_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>>) -> Self {
         self.collection_summaries = input;
         self
     }
     /// <p>Details about each collection.</p>
-    pub fn get_collection_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>> {
+    pub fn get_collection_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>> {
         &self.collection_summaries
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>

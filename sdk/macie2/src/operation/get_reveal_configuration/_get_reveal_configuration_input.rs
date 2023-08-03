@@ -5,29 +5,21 @@
 pub struct GetRevealConfigurationInput {}
 impl GetRevealConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetRevealConfigurationInput`](crate::operation::get_reveal_configuration::GetRevealConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_reveal_configuration::builders::GetRevealConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_reveal_configuration::builders::GetRevealConfigurationInputBuilder {
         crate::operation::get_reveal_configuration::builders::GetRevealConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRevealConfigurationInput`](crate::operation::get_reveal_configuration::GetRevealConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRevealConfigurationInputBuilder {}
 impl GetRevealConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetRevealConfigurationInput`](crate::operation::get_reveal_configuration::GetRevealConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_reveal_configuration::GetRevealConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_reveal_configuration::GetRevealConfigurationInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::get_reveal_configuration::GetRevealConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_reveal_configuration::GetRevealConfigurationInput {})
     }
 }

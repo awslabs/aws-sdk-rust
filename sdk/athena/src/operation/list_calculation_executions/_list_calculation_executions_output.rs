@@ -28,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListCalculationExecutionsOutput {
 }
 impl ListCalculationExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListCalculationExecutionsOutput`](crate::operation::list_calculation_executions::ListCalculationExecutionsOutput).
-    pub fn builder() -> crate::operation::list_calculation_executions::builders::ListCalculationExecutionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_calculation_executions::builders::ListCalculationExecutionsOutputBuilder {
         crate::operation::list_calculation_executions::builders::ListCalculationExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCalculationExecutionsOutput`](crate::operation::list_calculation_executions::ListCalculationExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCalculationExecutionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) calculations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CalculationSummary>>,
+    pub(crate) calculations: ::std::option::Option<::std::vec::Vec<crate::types::CalculationSummary>>,
     _request_id: Option<String>,
 }
 impl ListCalculationExecutionsOutputBuilder {
@@ -71,17 +68,12 @@ impl ListCalculationExecutionsOutputBuilder {
         self
     }
     /// <p>A list of <code>CalculationSummary</code> objects.</p>
-    pub fn set_calculations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CalculationSummary>>,
-    ) -> Self {
+    pub fn set_calculations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CalculationSummary>>) -> Self {
         self.calculations = input;
         self
     }
     /// <p>A list of <code>CalculationSummary</code> objects.</p>
-    pub fn get_calculations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CalculationSummary>> {
+    pub fn get_calculations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CalculationSummary>> {
         &self.calculations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -94,9 +86,7 @@ impl ListCalculationExecutionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCalculationExecutionsOutput`](crate::operation::list_calculation_executions::ListCalculationExecutionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_calculation_executions::ListCalculationExecutionsOutput {
+    pub fn build(self) -> crate::operation::list_calculation_executions::ListCalculationExecutionsOutput {
         crate::operation::list_calculation_executions::ListCalculationExecutionsOutput {
             next_token: self.next_token,
             calculations: self.calculations,

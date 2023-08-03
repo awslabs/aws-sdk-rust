@@ -106,9 +106,7 @@ impl NetAppOntapVolume {
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the volume are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
-    pub fn recommendation_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationStatus> {
+    pub fn recommendation_status(&self) -> ::std::option::Option<&crate::types::RecommendationStatus> {
         self.recommendation_status.as_ref()
     }
     /// <p>The number of LUNs (logical unit numbers) in the volume.</p>
@@ -125,9 +123,7 @@ impl NetAppOntapVolume {
 
 /// A builder for [`NetAppOntapVolume`](crate::types::NetAppOntapVolume).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetAppOntapVolumeBuilder {
     pub(crate) volume_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -141,8 +137,7 @@ pub struct NetAppOntapVolumeBuilder {
     pub(crate) nfs_exported: ::std::option::Option<bool>,
     pub(crate) snapshot_capacity_used: ::std::option::Option<i64>,
     pub(crate) max_p95_performance: ::std::option::Option<crate::types::MaxP95Performance>,
-    pub(crate) recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
     pub(crate) lun_count: ::std::option::Option<i64>,
 }
@@ -190,18 +185,12 @@ impl NetAppOntapVolumeBuilder {
         &self.cifs_share_count
     }
     /// <p>The volume's security style (such as Unix or NTFS).</p>
-    pub fn security_style(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_style(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_style = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume's security style (such as Unix or NTFS).</p>
-    pub fn set_security_style(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_style(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_style = input;
         self
     }
@@ -313,17 +302,12 @@ impl NetAppOntapVolumeBuilder {
         self
     }
     /// <p>The performance data that DataSync Discovery collects about the volume.</p>
-    pub fn set_max_p95_performance(
-        mut self,
-        input: ::std::option::Option<crate::types::MaxP95Performance>,
-    ) -> Self {
+    pub fn set_max_p95_performance(mut self, input: ::std::option::Option<crate::types::MaxP95Performance>) -> Self {
         self.max_p95_performance = input;
         self
     }
     /// <p>The performance data that DataSync Discovery collects about the volume.</p>
-    pub fn get_max_p95_performance(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaxP95Performance> {
+    pub fn get_max_p95_performance(&self) -> &::std::option::Option<crate::types::MaxP95Performance> {
         &self.max_p95_performance
     }
     /// Appends an item to `recommendations`.
@@ -338,17 +322,12 @@ impl NetAppOntapVolumeBuilder {
         self
     }
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the volume. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    pub fn set_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
-    ) -> Self {
+    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>) -> Self {
         self.recommendations = input;
         self
     }
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the volume. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    pub fn get_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
         &self.recommendations
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the volume are ready to view, incomplete, or can't be determined.</p>
@@ -359,18 +338,13 @@ impl NetAppOntapVolumeBuilder {
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the volume are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
-    pub fn set_recommendation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationStatus>,
-    ) -> Self {
+    pub fn set_recommendation_status(mut self, input: ::std::option::Option<crate::types::RecommendationStatus>) -> Self {
         self.recommendation_status = input;
         self
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the volume are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
-    pub fn get_recommendation_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationStatus> {
+    pub fn get_recommendation_status(&self) -> &::std::option::Option<crate::types::RecommendationStatus> {
         &self.recommendation_status
     }
     /// <p>The number of LUNs (logical unit numbers) in the volume.</p>

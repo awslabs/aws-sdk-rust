@@ -10,10 +10,7 @@ impl UpdateClassifierInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_classifier::UpdateClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_classifier::UpdateClassifierError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_classifier::UpdateClassifierError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_classifier();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateClassifierFluentBuilder {
         }
     }
     /// Access the UpdateClassifier as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_classifier::builders::UpdateClassifierInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_classifier::builders::UpdateClassifierInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateClassifierFluentBuilder {
             crate::operation::update_classifier::UpdateClassifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_classifier::UpdateClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_classifier::UpdateClassifierError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateClassifierFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateClassifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_classifier::UpdateClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_classifier::UpdateClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_classifier::UpdateClassifierError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateClassifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_classifier::UpdateClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_classifier::UpdateClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_classifier::UpdateClassifierError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateClassifierFluentBuilder {
             crate::operation::update_classifier::UpdateClassifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_classifier::UpdateClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_classifier::UpdateClassifierError>,
     > {
         self.customize_middleware().await
     }
@@ -128,17 +112,12 @@ impl UpdateClassifierFluentBuilder {
         self
     }
     /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
-    pub fn set_grok_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateGrokClassifierRequest>,
-    ) -> Self {
+    pub fn set_grok_classifier(mut self, input: ::std::option::Option<crate::types::UpdateGrokClassifierRequest>) -> Self {
         self.inner = self.inner.set_grok_classifier(input);
         self
     }
     /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
-    pub fn get_grok_classifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateGrokClassifierRequest> {
+    pub fn get_grok_classifier(&self) -> &::std::option::Option<crate::types::UpdateGrokClassifierRequest> {
         self.inner.get_grok_classifier()
     }
     /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
@@ -147,17 +126,12 @@ impl UpdateClassifierFluentBuilder {
         self
     }
     /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
-    pub fn set_xml_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateXmlClassifierRequest>,
-    ) -> Self {
+    pub fn set_xml_classifier(mut self, input: ::std::option::Option<crate::types::UpdateXmlClassifierRequest>) -> Self {
         self.inner = self.inner.set_xml_classifier(input);
         self
     }
     /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
-    pub fn get_xml_classifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateXmlClassifierRequest> {
+    pub fn get_xml_classifier(&self) -> &::std::option::Option<crate::types::UpdateXmlClassifierRequest> {
         self.inner.get_xml_classifier()
     }
     /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
@@ -166,17 +140,12 @@ impl UpdateClassifierFluentBuilder {
         self
     }
     /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
-    pub fn set_json_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateJsonClassifierRequest>,
-    ) -> Self {
+    pub fn set_json_classifier(mut self, input: ::std::option::Option<crate::types::UpdateJsonClassifierRequest>) -> Self {
         self.inner = self.inner.set_json_classifier(input);
         self
     }
     /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
-    pub fn get_json_classifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateJsonClassifierRequest> {
+    pub fn get_json_classifier(&self) -> &::std::option::Option<crate::types::UpdateJsonClassifierRequest> {
         self.inner.get_json_classifier()
     }
     /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
@@ -185,17 +154,12 @@ impl UpdateClassifierFluentBuilder {
         self
     }
     /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
-    pub fn set_csv_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateCsvClassifierRequest>,
-    ) -> Self {
+    pub fn set_csv_classifier(mut self, input: ::std::option::Option<crate::types::UpdateCsvClassifierRequest>) -> Self {
         self.inner = self.inner.set_csv_classifier(input);
         self
     }
     /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
-    pub fn get_csv_classifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateCsvClassifierRequest> {
+    pub fn get_csv_classifier(&self) -> &::std::option::Option<crate::types::UpdateCsvClassifierRequest> {
         self.inner.get_csv_classifier()
     }
 }

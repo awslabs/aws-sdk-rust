@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ReusableDelegationSetLimitType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,12 +48,8 @@ pub enum ReusableDelegationSetLimitType {
 impl ::std::convert::From<&str> for ReusableDelegationSetLimitType {
     fn from(s: &str) -> Self {
         match s {
-            "MAX_ZONES_BY_REUSABLE_DELEGATION_SET" => {
-                ReusableDelegationSetLimitType::MaxZonesByReusableDelegationSet
-            }
-            other => ReusableDelegationSetLimitType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "MAX_ZONES_BY_REUSABLE_DELEGATION_SET" => ReusableDelegationSetLimitType::MaxZonesByReusableDelegationSet,
+            other => ReusableDelegationSetLimitType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -74,9 +64,7 @@ impl ReusableDelegationSetLimitType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ReusableDelegationSetLimitType::MaxZonesByReusableDelegationSet => {
-                "MAX_ZONES_BY_REUSABLE_DELEGATION_SET"
-            }
+            ReusableDelegationSetLimitType::MaxZonesByReusableDelegationSet => "MAX_ZONES_BY_REUSABLE_DELEGATION_SET",
             ReusableDelegationSetLimitType::Unknown(value) => value.as_str(),
         }
     }

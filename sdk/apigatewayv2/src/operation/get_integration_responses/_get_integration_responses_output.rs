@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetIntegrationResponsesOutput {
 }
 impl GetIntegrationResponsesOutput {
     /// Creates a new builder-style object to manufacture [`GetIntegrationResponsesOutput`](crate::operation::get_integration_responses::GetIntegrationResponsesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_integration_responses::builders::GetIntegrationResponsesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_integration_responses::builders::GetIntegrationResponsesOutputBuilder {
         crate::operation::get_integration_responses::builders::GetIntegrationResponsesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIntegrationResponsesOutput`](crate::operation::get_integration_responses::GetIntegrationResponsesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIntegrationResponsesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl GetIntegrationResponsesOutputBuilder {
         self
     }
     /// <p>The elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationResponse>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationResponse>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The elements from this collection.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegrationResponse>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegrationResponse>> {
         &self.items
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -95,9 +86,7 @@ impl GetIntegrationResponsesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIntegrationResponsesOutput`](crate::operation::get_integration_responses::GetIntegrationResponsesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_integration_responses::GetIntegrationResponsesOutput {
+    pub fn build(self) -> crate::operation::get_integration_responses::GetIntegrationResponsesOutput {
         crate::operation::get_integration_responses::GetIntegrationResponsesOutput {
             items: self.items,
             next_token: self.next_token,

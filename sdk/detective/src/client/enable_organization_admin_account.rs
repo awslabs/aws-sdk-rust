@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder::set_account_id): <p>The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.</p>
     /// - On success, responds with [`EnableOrganizationAdminAccountOutput`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput)
     /// - On failure, responds with [`SdkError<EnableOrganizationAdminAccountError>`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountError)
-    pub fn enable_organization_admin_account(&self) -> crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder{
+    pub fn enable_organization_admin_account(
+        &self,
+    ) -> crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder {
         crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder::new(self.handle.clone())
     }
 }

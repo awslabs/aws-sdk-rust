@@ -37,10 +37,7 @@ impl CreatePermissionGroupFluentBuilder {
         }
     }
     /// Access the CreatePermissionGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_permission_group::builders::CreatePermissionGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_permission_group::builders::CreatePermissionGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreatePermissionGroupFluentBuilder {
             crate::operation::create_permission_group::CreatePermissionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_permission_group::CreatePermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_permission_group::CreatePermissionGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreatePermissionGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreatePermissionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_permission_group::CreatePermissionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_permission_group::CreatePermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_permission_group::CreatePermissionGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreatePermissionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_permission_group::CreatePermissionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_permission_group::CreatePermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_permission_group::CreatePermissionGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreatePermissionGroupFluentBuilder {
             crate::operation::create_permission_group::CreatePermissionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_permission_group::CreatePermissionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_permission_group::CreatePermissionGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -183,10 +169,7 @@ impl CreatePermissionGroupFluentBuilder {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    pub fn set_application_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
-    ) -> Self {
+    pub fn set_application_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>) -> Self {
         self.inner = self.inner.set_application_permissions(input);
         self
     }
@@ -202,9 +185,7 @@ impl CreatePermissionGroupFluentBuilder {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    pub fn get_application_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>> {
+    pub fn get_application_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>> {
         self.inner.get_application_permissions()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>

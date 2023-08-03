@@ -36,9 +36,7 @@ impl ListTagsOutput {
 
 /// A builder for [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsOutputBuilder {
     pub(crate) resource_tag_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListTagsOutputBuilder {
         self
     }
     /// <p>A list of resource tags.</p>
-    pub fn set_resource_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
-    ) -> Self {
+    pub fn set_resource_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.resource_tag_list = input;
         self
     }
     /// <p>A list of resource tags.</p>
-    pub fn get_resource_tag_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_resource_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         &self.resource_tag_list
     }
     /// <p>Reserved for future use.</p>

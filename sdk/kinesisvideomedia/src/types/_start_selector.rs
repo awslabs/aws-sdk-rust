@@ -67,9 +67,7 @@ impl StartSelector {
 
 /// A builder for [`StartSelector`](crate::types::StartSelector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSelectorBuilder {
     pub(crate) start_selector_type: ::std::option::Option<crate::types::StartSelectorType>,
     pub(crate) after_fragment_number: ::std::option::Option<::std::string::String>,
@@ -101,10 +99,7 @@ impl StartSelectorBuilder {
     /// </ul> <note>
     /// <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you don't provide any additional information in the <code>startSelector</code>.</p>
     /// </note>
-    pub fn set_start_selector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StartSelectorType>,
-    ) -> Self {
+    pub fn set_start_selector_type(mut self, input: ::std::option::Option<crate::types::StartSelectorType>) -> Self {
         self.start_selector_type = input;
         self
     }
@@ -118,24 +113,16 @@ impl StartSelectorBuilder {
     /// </ul> <note>
     /// <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you don't provide any additional information in the <code>startSelector</code>.</p>
     /// </note>
-    pub fn get_start_selector_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::StartSelectorType> {
+    pub fn get_start_selector_type(&self) -> &::std::option::Option<crate::types::StartSelectorType> {
         &self.start_selector_type
     }
     /// <p>Specifies the fragment number from where you want the <code>GetMedia</code> API to start returning the fragments. </p>
-    pub fn after_fragment_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_fragment_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_fragment_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the fragment number from where you want the <code>GetMedia</code> API to start returning the fragments. </p>
-    pub fn set_after_fragment_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_fragment_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_fragment_number = input;
         self
     }
@@ -149,10 +136,7 @@ impl StartSelectorBuilder {
         self
     }
     /// <p>A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or the SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code> API then starts with the chunk containing the fragment that has the specified timestamp.</p>
-    pub fn set_start_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_timestamp = input;
         self
     }
@@ -161,18 +145,12 @@ impl StartSelectorBuilder {
         &self.start_timestamp
     }
     /// <p>Continuation token that Kinesis Video Streams returned in the previous <code>GetMedia</code> response. The <code>GetMedia</code> API then starts with the chunk identified by the continuation token.</p>
-    pub fn continuation_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn continuation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continuation_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Continuation token that Kinesis Video Streams returned in the previous <code>GetMedia</code> response. The <code>GetMedia</code> API then starts with the chunk identified by the continuation token.</p>
-    pub fn set_continuation_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continuation_token = input;
         self
     }

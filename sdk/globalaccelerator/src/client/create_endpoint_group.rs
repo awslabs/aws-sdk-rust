@@ -17,11 +17,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEndpointGroupOutput`](crate::operation::create_endpoint_group::CreateEndpointGroupOutput) with field(s):
     ///   - [`endpoint_group(Option<EndpointGroup>)`](crate::operation::create_endpoint_group::CreateEndpointGroupOutput::endpoint_group): <p>The information about the endpoint group that was created.</p>
     /// - On failure, responds with [`SdkError<CreateEndpointGroupError>`](crate::operation::create_endpoint_group::CreateEndpointGroupError)
-    pub fn create_endpoint_group(
-        &self,
-    ) -> crate::operation::create_endpoint_group::builders::CreateEndpointGroupFluentBuilder {
-        crate::operation::create_endpoint_group::builders::CreateEndpointGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_endpoint_group(&self) -> crate::operation::create_endpoint_group::builders::CreateEndpointGroupFluentBuilder {
+        crate::operation::create_endpoint_group::builders::CreateEndpointGroupFluentBuilder::new(self.handle.clone())
     }
 }

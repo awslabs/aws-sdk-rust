@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`header_values(Option<Vec<String>>)`](crate::operation::get_sample_data::GetSampleDataOutput::header_values): <p>A list of header labels for the records.</p>
     ///   - [`sample_rows(Option<Vec<Vec<String>>>)`](crate::operation::get_sample_data::GetSampleDataOutput::sample_rows): <p>A list of records.</p>
     /// - On failure, responds with [`SdkError<GetSampleDataError>`](crate::operation::get_sample_data::GetSampleDataError)
-    pub fn get_sample_data(
-        &self,
-    ) -> crate::operation::get_sample_data::builders::GetSampleDataFluentBuilder {
-        crate::operation::get_sample_data::builders::GetSampleDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_sample_data(&self) -> crate::operation::get_sample_data::builders::GetSampleDataFluentBuilder {
+        crate::operation::get_sample_data::builders::GetSampleDataFluentBuilder::new(self.handle.clone())
     }
 }

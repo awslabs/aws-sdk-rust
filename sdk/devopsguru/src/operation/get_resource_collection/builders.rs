@@ -37,10 +37,7 @@ impl GetResourceCollectionFluentBuilder {
         }
     }
     /// Access the GetResourceCollection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_resource_collection::builders::GetResourceCollectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_resource_collection::builders::GetResourceCollectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetResourceCollectionFluentBuilder {
             crate::operation::get_resource_collection::GetResourceCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_collection::GetResourceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_collection::GetResourceCollectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetResourceCollectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetResourceCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_collection::GetResourceCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_collection::GetResourceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_collection::GetResourceCollectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetResourceCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_collection::GetResourceCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_collection::GetResourceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_collection::GetResourceCollectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl GetResourceCollectionFluentBuilder {
             crate::operation::get_resource_collection::GetResourceCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_collection::GetResourceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_collection::GetResourceCollectionError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_resource_collection::paginator::GetResourceCollectionPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_resource_collection::paginator::GetResourceCollectionPaginator {
-        crate::operation::get_resource_collection::paginator::GetResourceCollectionPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_resource_collection::paginator::GetResourceCollectionPaginator {
+        crate::operation::get_resource_collection::paginator::GetResourceCollectionPaginator::new(self.handle, self.inner)
     }
     /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection_type(mut self, input: crate::types::ResourceCollectionType) -> Self {
@@ -140,17 +121,12 @@ impl GetResourceCollectionFluentBuilder {
         self
     }
     /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
-    pub fn set_resource_collection_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCollectionType>,
-    ) -> Self {
+    pub fn set_resource_collection_type(mut self, input: ::std::option::Option<crate::types::ResourceCollectionType>) -> Self {
         self.inner = self.inner.set_resource_collection_type(input);
         self
     }
     /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
-    pub fn get_resource_collection_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceCollectionType> {
+    pub fn get_resource_collection_type(&self) -> &::std::option::Option<crate::types::ResourceCollectionType> {
         self.inner.get_resource_collection_type()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>

@@ -38,9 +38,7 @@ impl DedicatedIpPool {
 
 /// A builder for [`DedicatedIpPool`](crate::types::DedicatedIpPool).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DedicatedIpPoolBuilder {
     pub(crate) pool_name: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_mode: ::std::option::Option<crate::types::ScalingMode>,
@@ -74,10 +72,7 @@ impl DedicatedIpPoolBuilder {
     /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.</p> </li>
     /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically managed by Amazon SES.</p> </li>
     /// </ul>
-    pub fn set_scaling_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalingMode>,
-    ) -> Self {
+    pub fn set_scaling_mode(mut self, input: ::std::option::Option<crate::types::ScalingMode>) -> Self {
         self.scaling_mode = input;
         self
     }

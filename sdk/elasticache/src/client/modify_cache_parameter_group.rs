@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyCacheParameterGroupOutput`](crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupOutput) with field(s):
     ///   - [`cache_parameter_group_name(Option<String>)`](crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupOutput::cache_parameter_group_name): <p>The name of the cache parameter group.</p>
     /// - On failure, responds with [`SdkError<ModifyCacheParameterGroupError>`](crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError)
-    pub fn modify_cache_parameter_group(&self) -> crate::operation::modify_cache_parameter_group::builders::ModifyCacheParameterGroupFluentBuilder{
+    pub fn modify_cache_parameter_group(&self) -> crate::operation::modify_cache_parameter_group::builders::ModifyCacheParameterGroupFluentBuilder {
         crate::operation::modify_cache_parameter_group::builders::ModifyCacheParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

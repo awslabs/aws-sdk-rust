@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeWatchlistOutput`](crate::operation::describe_watchlist::DescribeWatchlistOutput) with field(s):
     ///   - [`watchlist(Option<Watchlist>)`](crate::operation::describe_watchlist::DescribeWatchlistOutput::watchlist): <p>Information about the specified watchlist.</p>
     /// - On failure, responds with [`SdkError<DescribeWatchlistError>`](crate::operation::describe_watchlist::DescribeWatchlistError)
-    pub fn describe_watchlist(
-        &self,
-    ) -> crate::operation::describe_watchlist::builders::DescribeWatchlistFluentBuilder {
-        crate::operation::describe_watchlist::builders::DescribeWatchlistFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_watchlist(&self) -> crate::operation::describe_watchlist::builders::DescribeWatchlistFluentBuilder {
+        crate::operation::describe_watchlist::builders::DescribeWatchlistFluentBuilder::new(self.handle.clone())
     }
 }

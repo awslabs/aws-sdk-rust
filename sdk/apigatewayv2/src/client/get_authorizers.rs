@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<Authorizer>>)`](crate::operation::get_authorizers::GetAuthorizersOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_authorizers::GetAuthorizersOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On failure, responds with [`SdkError<GetAuthorizersError>`](crate::operation::get_authorizers::GetAuthorizersError)
-    pub fn get_authorizers(
-        &self,
-    ) -> crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder {
-        crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_authorizers(&self) -> crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder {
+        crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder::new(self.handle.clone())
     }
 }

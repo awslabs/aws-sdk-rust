@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateVoiceTemplateOutput {
 }
 impl UpdateVoiceTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVoiceTemplateOutput`](crate::operation::update_voice_template::UpdateVoiceTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::update_voice_template::builders::UpdateVoiceTemplateOutputBuilder {
-        crate::operation::update_voice_template::builders::UpdateVoiceTemplateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_voice_template::builders::UpdateVoiceTemplateOutputBuilder {
+        crate::operation::update_voice_template::builders::UpdateVoiceTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVoiceTemplateOutput`](crate::operation::update_voice_template::UpdateVoiceTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVoiceTemplateOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateVoiceTemplateOutputBuilder {
         self
     }
     /// <p>Provides information about an API request or response.</p>
-    pub fn set_message_body(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageBody>,
-    ) -> Self {
+    pub fn set_message_body(mut self, input: ::std::option::Option<crate::types::MessageBody>) -> Self {
         self.message_body = input;
         self
     }

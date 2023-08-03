@@ -37,9 +37,7 @@ impl DescribeImportTasksFluentBuilder {
         }
     }
     /// Access the DescribeImportTasks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_import_tasks::builders::DescribeImportTasksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_import_tasks::builders::DescribeImportTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeImportTasksFluentBuilder {
             crate::operation::describe_import_tasks::DescribeImportTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_import_tasks::DescribeImportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_import_tasks::DescribeImportTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeImportTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeImportTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_import_tasks::DescribeImportTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_import_tasks::DescribeImportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_import_tasks::DescribeImportTasksError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeImportTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_import_tasks::DescribeImportTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_import_tasks::DescribeImportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_import_tasks::DescribeImportTasksError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl DescribeImportTasksFluentBuilder {
             crate::operation::describe_import_tasks::DescribeImportTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_import_tasks::DescribeImportTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_import_tasks::DescribeImportTasksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_import_tasks::paginator::DescribeImportTasksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_import_tasks::paginator::DescribeImportTasksPaginator {
-        crate::operation::describe_import_tasks::paginator::DescribeImportTasksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_import_tasks::paginator::DescribeImportTasksPaginator {
+        crate::operation::describe_import_tasks::paginator::DescribeImportTasksPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `filters`.
     ///
@@ -143,17 +125,12 @@ impl DescribeImportTasksFluentBuilder {
         self
     }
     /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportTaskFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportTaskFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportTaskFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportTaskFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of results that you want this request to return, up to 100.</p>

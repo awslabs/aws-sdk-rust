@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteCustomEntityTypeOutput {
 }
 impl DeleteCustomEntityTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomEntityTypeOutput`](crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeOutputBuilder {
         crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomEntityTypeOutput`](crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomEntityTypeOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl DeleteCustomEntityTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCustomEntityTypeOutput`](crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput {
+    pub fn build(self) -> crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput {
         crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput {
             name: self.name,
             _request_id: self._request_id,

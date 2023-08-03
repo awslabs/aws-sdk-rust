@@ -22,16 +22,14 @@ impl DeleteStorageLensConfigurationTaggingInput {
 }
 impl DeleteStorageLensConfigurationTaggingInput {
     /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationTaggingInput`](crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingInput).
-    pub fn builder() -> crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingInputBuilder{
+    pub fn builder() -> crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingInputBuilder {
         crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStorageLensConfigurationTaggingInput`](crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStorageLensConfigurationTaggingInputBuilder {
     pub(crate) config_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DeleteStorageLensConfigurationTaggingInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DeleteStorageLensConfigurationTaggingInput`](crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingInput {
-                config_id: self.config_id
-                ,
-                account_id: self.account_id
-                ,
-            }
+                config_id: self.config_id,
+                account_id: self.account_id,
+            },
         )
     }
 }

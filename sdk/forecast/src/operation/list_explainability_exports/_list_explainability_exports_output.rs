@@ -5,8 +5,7 @@
 pub struct ListExplainabilityExportsOutput {
     /// <p>An array of objects that summarize the properties of each Explainability export.</p>
     #[doc(hidden)]
-    pub explainability_exports:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExplainabilityExportSummary>>,
+    pub explainability_exports: ::std::option::Option<::std::vec::Vec<crate::types::ExplainabilityExportSummary>>,
     /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListExplainabilityExportsOutput {
 }
 impl ListExplainabilityExportsOutput {
     /// <p>An array of objects that summarize the properties of each Explainability export.</p>
-    pub fn explainability_exports(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ExplainabilityExportSummary]> {
+    pub fn explainability_exports(&self) -> ::std::option::Option<&[crate::types::ExplainabilityExportSummary]> {
         self.explainability_exports.as_deref()
     }
     /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListExplainabilityExportsOutput {
 }
 impl ListExplainabilityExportsOutput {
     /// Creates a new builder-style object to manufacture [`ListExplainabilityExportsOutput`](crate::operation::list_explainability_exports::ListExplainabilityExportsOutput).
-    pub fn builder() -> crate::operation::list_explainability_exports::builders::ListExplainabilityExportsOutputBuilder{
+    pub fn builder() -> crate::operation::list_explainability_exports::builders::ListExplainabilityExportsOutputBuilder {
         crate::operation::list_explainability_exports::builders::ListExplainabilityExportsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListExplainabilityExportsOutput`](crate::operation::list_explainability_exports::ListExplainabilityExportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExplainabilityExportsOutputBuilder {
-    pub(crate) explainability_exports:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExplainabilityExportSummary>>,
+    pub(crate) explainability_exports: ::std::option::Option<::std::vec::Vec<crate::types::ExplainabilityExportSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListExplainabilityExportsOutputBuilder {
     /// To override the contents of this collection use [`set_explainability_exports`](Self::set_explainability_exports).
     ///
     /// <p>An array of objects that summarize the properties of each Explainability export.</p>
-    pub fn explainability_exports(
-        mut self,
-        input: crate::types::ExplainabilityExportSummary,
-    ) -> Self {
+    pub fn explainability_exports(mut self, input: crate::types::ExplainabilityExportSummary) -> Self {
         let mut v = self.explainability_exports.unwrap_or_default();
         v.push(input);
         self.explainability_exports = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that summarize the properties of each Explainability export.</p>
-    pub fn set_explainability_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExplainabilityExportSummary>>,
-    ) -> Self {
+    pub fn set_explainability_exports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExplainabilityExportSummary>>) -> Self {
         self.explainability_exports = input;
         self
     }
     /// <p>An array of objects that summarize the properties of each Explainability export.</p>
-    pub fn get_explainability_exports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExplainabilityExportSummary>> {
+    pub fn get_explainability_exports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExplainabilityExportSummary>> {
         &self.explainability_exports
     }
     /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
@@ -100,9 +86,7 @@ impl ListExplainabilityExportsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListExplainabilityExportsOutput`](crate::operation::list_explainability_exports::ListExplainabilityExportsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_explainability_exports::ListExplainabilityExportsOutput {
+    pub fn build(self) -> crate::operation::list_explainability_exports::ListExplainabilityExportsOutput {
         crate::operation::list_explainability_exports::ListExplainabilityExportsOutput {
             explainability_exports: self.explainability_exports,
             next_token: self.next_token,

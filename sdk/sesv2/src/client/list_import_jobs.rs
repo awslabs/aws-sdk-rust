@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`import_jobs(Option<Vec<ImportJobSummary>>)`](crate::operation::list_import_jobs::ListImportJobsOutput::import_jobs): <p>A list of the import job summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_import_jobs::ListImportJobsOutput::next_token): <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
     /// - On failure, responds with [`SdkError<ListImportJobsError>`](crate::operation::list_import_jobs::ListImportJobsError)
-    pub fn list_import_jobs(
-        &self,
-    ) -> crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder {
-        crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_import_jobs(&self) -> crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder {
+        crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder::new(self.handle.clone())
     }
 }

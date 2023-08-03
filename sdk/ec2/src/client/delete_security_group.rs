@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::delete_security_group::builders::DeleteSecurityGroupFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::delete_security_group::builders::DeleteSecurityGroupFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`DeleteSecurityGroupOutput`](crate::operation::delete_security_group::DeleteSecurityGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteSecurityGroupError>`](crate::operation::delete_security_group::DeleteSecurityGroupError)
-    pub fn delete_security_group(
-        &self,
-    ) -> crate::operation::delete_security_group::builders::DeleteSecurityGroupFluentBuilder {
-        crate::operation::delete_security_group::builders::DeleteSecurityGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_security_group(&self) -> crate::operation::delete_security_group::builders::DeleteSecurityGroupFluentBuilder {
+        crate::operation::delete_security_group::builders::DeleteSecurityGroupFluentBuilder::new(self.handle.clone())
     }
 }

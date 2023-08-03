@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`evidence_file_name(Option<String>)`](crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlOutput::evidence_file_name): <p>The name of the uploaded manual evidence file that the presigned URL was generated for.</p>
     ///   - [`upload_url(Option<String>)`](crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlOutput::upload_url): <p>The presigned URL that was generated.</p>
     /// - On failure, responds with [`SdkError<GetEvidenceFileUploadUrlError>`](crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError)
-    pub fn get_evidence_file_upload_url(&self) -> crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlFluentBuilder{
+    pub fn get_evidence_file_upload_url(&self) -> crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlFluentBuilder {
         crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlFluentBuilder::new(self.handle.clone())
     }
 }

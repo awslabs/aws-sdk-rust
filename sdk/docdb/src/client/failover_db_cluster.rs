@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`FailoverDbClusterOutput`](crate::operation::failover_db_cluster::FailoverDbClusterOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::failover_db_cluster::FailoverDbClusterOutput::db_cluster): <p>Detailed information about a cluster. </p>
     /// - On failure, responds with [`SdkError<FailoverDBClusterError>`](crate::operation::failover_db_cluster::FailoverDBClusterError)
-    pub fn failover_db_cluster(
-        &self,
-    ) -> crate::operation::failover_db_cluster::builders::FailoverDBClusterFluentBuilder {
-        crate::operation::failover_db_cluster::builders::FailoverDBClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn failover_db_cluster(&self) -> crate::operation::failover_db_cluster::builders::FailoverDBClusterFluentBuilder {
+        crate::operation::failover_db_cluster::builders::FailoverDBClusterFluentBuilder::new(self.handle.clone())
     }
 }

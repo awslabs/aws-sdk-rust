@@ -28,9 +28,7 @@ impl DeleteCoipPoolOutput {
 
 /// A builder for [`DeleteCoipPoolOutput`](crate::operation::delete_coip_pool::DeleteCoipPoolOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCoipPoolOutputBuilder {
     pub(crate) coip_pool: ::std::option::Option<crate::types::CoipPool>,
     _request_id: Option<String>,

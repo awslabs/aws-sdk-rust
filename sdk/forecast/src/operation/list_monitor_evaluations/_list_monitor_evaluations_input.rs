@@ -52,18 +52,14 @@ impl ListMonitorEvaluationsInput {
 }
 impl ListMonitorEvaluationsInput {
     /// Creates a new builder-style object to manufacture [`ListMonitorEvaluationsInput`](crate::operation::list_monitor_evaluations::ListMonitorEvaluationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_monitor_evaluations::builders::ListMonitorEvaluationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_monitor_evaluations::builders::ListMonitorEvaluationsInputBuilder {
         crate::operation::list_monitor_evaluations::builders::ListMonitorEvaluationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMonitorEvaluationsInput`](crate::operation::list_monitor_evaluations::ListMonitorEvaluationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitorEvaluationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -141,10 +137,7 @@ impl ListMonitorEvaluationsInputBuilder {
     /// </ul>
     /// <p>For example, to list only successful monitor evaluations, you would specify:</p>
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -163,17 +156,13 @@ impl ListMonitorEvaluationsInputBuilder {
     /// Consumes the builder and constructs a [`ListMonitorEvaluationsInput`](crate::operation::list_monitor_evaluations::ListMonitorEvaluationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_monitor_evaluations::ListMonitorEvaluationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_monitor_evaluations::ListMonitorEvaluationsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                monitor_arn: self.monitor_arn,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_monitor_evaluations::ListMonitorEvaluationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_monitor_evaluations::ListMonitorEvaluationsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            monitor_arn: self.monitor_arn,
+            filters: self.filters,
+        })
     }
 }

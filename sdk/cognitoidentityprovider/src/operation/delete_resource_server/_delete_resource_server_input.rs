@@ -22,17 +22,14 @@ impl DeleteResourceServerInput {
 }
 impl DeleteResourceServerInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceServerInput`](crate::operation::delete_resource_server::DeleteResourceServerInput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_server::builders::DeleteResourceServerInputBuilder {
+    pub fn builder() -> crate::operation::delete_resource_server::builders::DeleteResourceServerInputBuilder {
         crate::operation::delete_resource_server::builders::DeleteResourceServerInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResourceServerInput`](crate::operation::delete_resource_server::DeleteResourceServerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourceServerInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl DeleteResourceServerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourceServerInput`](crate::operation::delete_resource_server::DeleteResourceServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_resource_server::DeleteResourceServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_resource_server::DeleteResourceServerInput {
-                user_pool_id: self.user_pool_id,
-                identifier: self.identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_resource_server::DeleteResourceServerInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_resource_server::DeleteResourceServerInput {
+            user_pool_id: self.user_pool_id,
+            identifier: self.identifier,
+        })
     }
 }

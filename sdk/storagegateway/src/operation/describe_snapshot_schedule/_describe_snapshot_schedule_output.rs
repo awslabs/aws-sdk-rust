@@ -56,18 +56,14 @@ impl ::aws_http::request_id::RequestId for DescribeSnapshotScheduleOutput {
 }
 impl DescribeSnapshotScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotScheduleOutput`](crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleOutputBuilder {
         crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnapshotScheduleOutput`](crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotScheduleOutputBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_at: ::std::option::Option<i32>,
@@ -160,10 +156,7 @@ impl DescribeSnapshotScheduleOutputBuilder {
         self
     }
     /// <p>A list of up to 50 tags assigned to the snapshot schedule, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -181,9 +174,7 @@ impl DescribeSnapshotScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotScheduleOutput`](crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput {
+    pub fn build(self) -> crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput {
         crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput {
             volume_arn: self.volume_arn,
             start_at: self.start_at,

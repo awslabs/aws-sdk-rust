@@ -57,18 +57,14 @@ impl CreateClusterSnapshotInput {
 }
 impl CreateClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterSnapshotInput`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder {
         crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClusterSnapshotInput`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClusterSnapshotInputBuilder {
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -85,10 +81,7 @@ impl CreateClusterSnapshotInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -101,10 +94,7 @@ impl CreateClusterSnapshotInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_identifier = input;
         self
     }
@@ -121,18 +111,12 @@ impl CreateClusterSnapshotInputBuilder {
         &self.snapshot_identifier
     }
     /// <p>The cluster identifier for which you want a snapshot.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier for which you want a snapshot.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -150,10 +134,7 @@ impl CreateClusterSnapshotInputBuilder {
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
-    pub fn set_manual_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manual_snapshot_retention_period = input;
         self
     }
@@ -175,10 +156,7 @@ impl CreateClusterSnapshotInputBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -189,17 +167,13 @@ impl CreateClusterSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateClusterSnapshotInput`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput {
-                snapshot_identifier: self.snapshot_identifier,
-                cluster_identifier: self.cluster_identifier,
-                manual_snapshot_retention_period: self.manual_snapshot_retention_period,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput {
+            snapshot_identifier: self.snapshot_identifier,
+            cluster_identifier: self.cluster_identifier,
+            manual_snapshot_retention_period: self.manual_snapshot_retention_period,
+            tags: self.tags,
+        })
     }
 }

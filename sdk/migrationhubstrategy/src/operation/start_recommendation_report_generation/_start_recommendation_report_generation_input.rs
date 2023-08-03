@@ -22,16 +22,14 @@ impl StartRecommendationReportGenerationInput {
 }
 impl StartRecommendationReportGenerationInput {
     /// Creates a new builder-style object to manufacture [`StartRecommendationReportGenerationInput`](crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput).
-    pub fn builder() -> crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationInputBuilder{
+    pub fn builder() -> crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationInputBuilder {
         crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartRecommendationReportGenerationInput`](crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRecommendationReportGenerationInputBuilder {
     pub(crate) output_format: ::std::option::Option<crate::types::OutputFormat>,
     pub(crate) group_id_filter: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
@@ -43,10 +41,7 @@ impl StartRecommendationReportGenerationInputBuilder {
         self
     }
     /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputFormat>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.output_format = input;
         self
     }
@@ -66,28 +61,26 @@ impl StartRecommendationReportGenerationInputBuilder {
         self
     }
     /// <p> Groups the resources in the recommendation report with a unique name. </p>
-    pub fn set_group_id_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
-    ) -> Self {
+    pub fn set_group_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
         self.group_id_filter = input;
         self
     }
     /// <p> Groups the resources in the recommendation report with a unique name. </p>
-    pub fn get_group_id_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+    pub fn get_group_id_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
         &self.group_id_filter
     }
     /// Consumes the builder and constructs a [`StartRecommendationReportGenerationInput`](crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput {
-                output_format: self.output_format
-                ,
-                group_id_filter: self.group_id_filter
-                ,
-            }
+                output_format: self.output_format,
+                group_id_filter: self.group_id_filter,
+            },
         )
     }
 }

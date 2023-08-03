@@ -33,7 +33,7 @@ impl InviteAccountToOrganizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InviteAccountToOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationInputBuilder,
+    inner: crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationInputBuilder,
 }
 impl InviteAccountToOrganizationFluentBuilder {
     /// Creates a new `InviteAccountToOrganization`.
@@ -44,7 +44,7 @@ impl InviteAccountToOrganizationFluentBuilder {
         }
     }
     /// Access the InviteAccountToOrganization as a reference.
-    pub fn as_input(&self) -> &crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +56,7 @@ impl InviteAccountToOrganizationFluentBuilder {
             crate::operation::invite_account_to_organization::InviteAccountToOrganization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::invite_account_to_organization::InviteAccountToOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::invite_account_to_organization::InviteAccountToOrganizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +66,7 @@ impl InviteAccountToOrganizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +75,7 @@ impl InviteAccountToOrganizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::invite_account_to_organization::InviteAccountToOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::invite_account_to_organization::InviteAccountToOrganizationError>,
     > {
         let op = self
             .inner
@@ -105,9 +98,7 @@ impl InviteAccountToOrganizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::invite_account_to_organization::InviteAccountToOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::invite_account_to_organization::InviteAccountToOrganizationError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +112,7 @@ impl InviteAccountToOrganizationFluentBuilder {
             crate::operation::invite_account_to_organization::InviteAccountToOrganization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::invite_account_to_organization::InviteAccountToOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::invite_account_to_organization::InviteAccountToOrganizationError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +132,7 @@ impl InviteAccountToOrganizationFluentBuilder {
     /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
     /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
     /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::HandshakeParty>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::HandshakeParty>) -> Self {
         self.inner = self.inner.set_target(input);
         self
     }
@@ -191,10 +177,7 @@ impl InviteAccountToOrganizationFluentBuilder {
     /// </important> <note>
     /// <p>If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the entire request fails and invitations are not sent.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

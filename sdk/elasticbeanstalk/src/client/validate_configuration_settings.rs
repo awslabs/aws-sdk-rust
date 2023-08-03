@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`ValidateConfigurationSettingsOutput`](crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput) with field(s):
     ///   - [`messages(Option<Vec<ValidationMessage>>)`](crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput::messages): <p> A list of <code>ValidationMessage</code>. </p>
     /// - On failure, responds with [`SdkError<ValidateConfigurationSettingsError>`](crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError)
-    pub fn validate_configuration_settings(&self) -> crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsFluentBuilder{
+    pub fn validate_configuration_settings(
+        &self,
+    ) -> crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsFluentBuilder {
         crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsFluentBuilder::new(self.handle.clone())
     }
 }

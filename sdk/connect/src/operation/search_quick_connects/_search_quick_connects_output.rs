@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for SearchQuickConnectsOutput {
 }
 impl SearchQuickConnectsOutput {
     /// Creates a new builder-style object to manufacture [`SearchQuickConnectsOutput`](crate::operation::search_quick_connects::SearchQuickConnectsOutput).
-    pub fn builder(
-    ) -> crate::operation::search_quick_connects::builders::SearchQuickConnectsOutputBuilder {
-        crate::operation::search_quick_connects::builders::SearchQuickConnectsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::search_quick_connects::builders::SearchQuickConnectsOutputBuilder {
+        crate::operation::search_quick_connects::builders::SearchQuickConnectsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchQuickConnectsOutput`](crate::operation::search_quick_connects::SearchQuickConnectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchQuickConnectsOutputBuilder {
     pub(crate) quick_connects: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnect>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,17 +62,12 @@ impl SearchQuickConnectsOutputBuilder {
         self
     }
     /// <p>Information about the quick connects.</p>
-    pub fn set_quick_connects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnect>>,
-    ) -> Self {
+    pub fn set_quick_connects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnect>>) -> Self {
         self.quick_connects = input;
         self
     }
     /// <p>Information about the quick connects.</p>
-    pub fn get_quick_connects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickConnect>> {
+    pub fn get_quick_connects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickConnect>> {
         &self.quick_connects
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

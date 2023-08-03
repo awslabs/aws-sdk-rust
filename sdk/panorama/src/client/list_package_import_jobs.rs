@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`package_import_jobs(Option<Vec<PackageImportJob>>)`](crate::operation::list_package_import_jobs::ListPackageImportJobsOutput::package_import_jobs): <p>A list of package import jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_package_import_jobs::ListPackageImportJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListPackageImportJobsError>`](crate::operation::list_package_import_jobs::ListPackageImportJobsError)
-    pub fn list_package_import_jobs(
-        &self,
-    ) -> crate::operation::list_package_import_jobs::builders::ListPackageImportJobsFluentBuilder
-    {
+    pub fn list_package_import_jobs(&self) -> crate::operation::list_package_import_jobs::builders::ListPackageImportJobsFluentBuilder {
         crate::operation::list_package_import_jobs::builders::ListPackageImportJobsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`notebook_metadata(Option<NotebookMetadata>)`](crate::operation::export_notebook::ExportNotebookOutput::notebook_metadata): <p>The notebook metadata, including notebook ID, notebook name, and workgroup name.</p>
     ///   - [`payload(Option<String>)`](crate::operation::export_notebook::ExportNotebookOutput::payload): <p>The content of the exported notebook.</p>
     /// - On failure, responds with [`SdkError<ExportNotebookError>`](crate::operation::export_notebook::ExportNotebookError)
-    pub fn export_notebook(
-        &self,
-    ) -> crate::operation::export_notebook::builders::ExportNotebookFluentBuilder {
-        crate::operation::export_notebook::builders::ExportNotebookFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn export_notebook(&self) -> crate::operation::export_notebook::builders::ExportNotebookFluentBuilder {
+        crate::operation::export_notebook::builders::ExportNotebookFluentBuilder::new(self.handle.clone())
     }
 }

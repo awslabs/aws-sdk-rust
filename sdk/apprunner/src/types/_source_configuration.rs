@@ -18,8 +18,7 @@ pub struct SourceConfiguration {
     pub auto_deployments_enabled: ::std::option::Option<bool>,
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
     #[doc(hidden)]
-    pub authentication_configuration:
-        ::std::option::Option<crate::types::AuthenticationConfiguration>,
+    pub authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
 }
 impl SourceConfiguration {
     /// <p>The description of a source code repository.</p>
@@ -38,9 +37,7 @@ impl SourceConfiguration {
         self.auto_deployments_enabled
     }
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
-    pub fn authentication_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthenticationConfiguration> {
+    pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::AuthenticationConfiguration> {
         self.authentication_configuration.as_ref()
     }
 }
@@ -53,15 +50,12 @@ impl SourceConfiguration {
 
 /// A builder for [`SourceConfiguration`](crate::types::SourceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceConfigurationBuilder {
     pub(crate) code_repository: ::std::option::Option<crate::types::CodeRepository>,
     pub(crate) image_repository: ::std::option::Option<crate::types::ImageRepository>,
     pub(crate) auto_deployments_enabled: ::std::option::Option<bool>,
-    pub(crate) authentication_configuration:
-        ::std::option::Option<crate::types::AuthenticationConfiguration>,
+    pub(crate) authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
 }
 impl SourceConfigurationBuilder {
     /// <p>The description of a source code repository.</p>
@@ -72,10 +66,7 @@ impl SourceConfigurationBuilder {
     }
     /// <p>The description of a source code repository.</p>
     /// <p>You must provide either this member or <code>ImageRepository</code> (but not both).</p>
-    pub fn set_code_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeRepository>,
-    ) -> Self {
+    pub fn set_code_repository(mut self, input: ::std::option::Option<crate::types::CodeRepository>) -> Self {
         self.code_repository = input;
         self
     }
@@ -92,10 +83,7 @@ impl SourceConfigurationBuilder {
     }
     /// <p>The description of a source image repository.</p>
     /// <p>You must provide either this member or <code>CodeRepository</code> (but not both).</p>
-    pub fn set_image_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageRepository>,
-    ) -> Self {
+    pub fn set_image_repository(mut self, input: ::std::option::Option<crate::types::ImageRepository>) -> Self {
         self.image_repository = input;
         self
     }
@@ -122,25 +110,17 @@ impl SourceConfigurationBuilder {
         &self.auto_deployments_enabled
     }
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
-    pub fn authentication_configuration(
-        mut self,
-        input: crate::types::AuthenticationConfiguration,
-    ) -> Self {
+    pub fn authentication_configuration(mut self, input: crate::types::AuthenticationConfiguration) -> Self {
         self.authentication_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
-    pub fn set_authentication_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationConfiguration>,
-    ) -> Self {
+    pub fn set_authentication_configuration(mut self, input: ::std::option::Option<crate::types::AuthenticationConfiguration>) -> Self {
         self.authentication_configuration = input;
         self
     }
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
-    pub fn get_authentication_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationConfiguration> {
+    pub fn get_authentication_configuration(&self) -> &::std::option::Option<crate::types::AuthenticationConfiguration> {
         &self.authentication_configuration
     }
     /// Consumes the builder and constructs a [`SourceConfiguration`](crate::types::SourceConfiguration).

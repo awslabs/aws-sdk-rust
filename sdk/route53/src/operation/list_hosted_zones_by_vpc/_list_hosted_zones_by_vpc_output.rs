@@ -5,8 +5,7 @@
 pub struct ListHostedZonesByVpcOutput {
     /// <p>A list that contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
     #[doc(hidden)]
-    pub hosted_zone_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::HostedZoneSummary>>,
+    pub hosted_zone_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HostedZoneSummary>>,
     /// <p>The value that you specified for <code>MaxItems</code> in the most recent <code>ListHostedZonesByVPC</code> request.</p>
     #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
@@ -17,9 +16,7 @@ pub struct ListHostedZonesByVpcOutput {
 }
 impl ListHostedZonesByVpcOutput {
     /// <p>A list that contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
-    pub fn hosted_zone_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HostedZoneSummary]> {
+    pub fn hosted_zone_summaries(&self) -> ::std::option::Option<&[crate::types::HostedZoneSummary]> {
         self.hosted_zone_summaries.as_deref()
     }
     /// <p>The value that you specified for <code>MaxItems</code> in the most recent <code>ListHostedZonesByVPC</code> request.</p>
@@ -38,21 +35,16 @@ impl ::aws_http::request_id::RequestId for ListHostedZonesByVpcOutput {
 }
 impl ListHostedZonesByVpcOutput {
     /// Creates a new builder-style object to manufacture [`ListHostedZonesByVpcOutput`](crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput).
-    pub fn builder(
-    ) -> crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVpcOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVpcOutputBuilder {
         crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVpcOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListHostedZonesByVpcOutput`](crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHostedZonesByVpcOutputBuilder {
-    pub(crate) hosted_zone_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::HostedZoneSummary>>,
+    pub(crate) hosted_zone_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HostedZoneSummary>>,
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -70,17 +62,12 @@ impl ListHostedZonesByVpcOutputBuilder {
         self
     }
     /// <p>A list that contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
-    pub fn set_hosted_zone_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HostedZoneSummary>>,
-    ) -> Self {
+    pub fn set_hosted_zone_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HostedZoneSummary>>) -> Self {
         self.hosted_zone_summaries = input;
         self
     }
     /// <p>A list that contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
-    pub fn get_hosted_zone_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HostedZoneSummary>> {
+    pub fn get_hosted_zone_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HostedZoneSummary>> {
         &self.hosted_zone_summaries
     }
     /// <p>The value that you specified for <code>MaxItems</code> in the most recent <code>ListHostedZonesByVPC</code> request.</p>

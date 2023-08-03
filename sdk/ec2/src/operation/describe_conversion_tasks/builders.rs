@@ -27,8 +27,7 @@ impl DescribeConversionTasksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConversionTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksInputBuilder,
+    inner: crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksInputBuilder,
 }
 impl DescribeConversionTasksFluentBuilder {
     /// Creates a new `DescribeConversionTasks`.
@@ -39,10 +38,7 @@ impl DescribeConversionTasksFluentBuilder {
         }
     }
     /// Access the DescribeConversionTasks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DescribeConversionTasksFluentBuilder {
             crate::operation::describe_conversion_tasks::DescribeConversionTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_conversion_tasks::DescribeConversionTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_conversion_tasks::DescribeConversionTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DescribeConversionTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DescribeConversionTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_conversion_tasks::DescribeConversionTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_conversion_tasks::DescribeConversionTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_conversion_tasks::DescribeConversionTasksError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DescribeConversionTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_conversion_tasks::DescribeConversionTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_conversion_tasks::DescribeConversionTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_conversion_tasks::DescribeConversionTasksError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl DescribeConversionTasksFluentBuilder {
             crate::operation::describe_conversion_tasks::DescribeConversionTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_conversion_tasks::DescribeConversionTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_conversion_tasks::DescribeConversionTasksError>,
     > {
         self.customize_middleware().await
     }
@@ -130,25 +115,17 @@ impl DescribeConversionTasksFluentBuilder {
     /// To override the contents of this collection use [`set_conversion_task_ids`](Self::set_conversion_task_ids).
     ///
     /// <p>The conversion task IDs.</p>
-    pub fn conversion_task_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conversion_task_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conversion_task_ids(input.into());
         self
     }
     /// <p>The conversion task IDs.</p>
-    pub fn set_conversion_task_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_conversion_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_conversion_task_ids(input);
         self
     }
     /// <p>The conversion task IDs.</p>
-    pub fn get_conversion_task_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_conversion_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_conversion_task_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

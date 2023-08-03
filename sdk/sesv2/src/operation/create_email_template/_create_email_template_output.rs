@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for CreateEmailTemplateOutput {
 }
 impl CreateEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateEmailTemplateOutput`](crate::operation::create_email_template::CreateEmailTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::create_email_template::builders::CreateEmailTemplateOutputBuilder {
-        crate::operation::create_email_template::builders::CreateEmailTemplateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_email_template::builders::CreateEmailTemplateOutputBuilder {
+        crate::operation::create_email_template::builders::CreateEmailTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEmailTemplateOutput`](crate::operation::create_email_template::CreateEmailTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEmailTemplateOutputBuilder {
     _request_id: Option<String>,
 }

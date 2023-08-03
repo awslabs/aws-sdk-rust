@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListBulkDeploymentDetailedReportsOutp
 }
 impl ListBulkDeploymentDetailedReportsOutput {
     /// Creates a new builder-style object to manufacture [`ListBulkDeploymentDetailedReportsOutput`](crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput).
-    pub fn builder() -> crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsOutputBuilder{
+    pub fn builder() -> crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsOutputBuilder {
         crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBulkDeploymentDetailedReportsOutput`](crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBulkDeploymentDetailedReportsOutputBuilder {
-    pub(crate) deployments:
-        ::std::option::Option<::std::vec::Vec<crate::types::BulkDeploymentResult>>,
+    pub(crate) deployments: ::std::option::Option<::std::vec::Vec<crate::types::BulkDeploymentResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListBulkDeploymentDetailedReportsOutputBuilder {
         self
     }
     /// A list of the individual group deployments in the bulk deployment operation.
-    pub fn set_deployments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BulkDeploymentResult>>,
-    ) -> Self {
+    pub fn set_deployments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BulkDeploymentResult>>) -> Self {
         self.deployments = input;
         self
     }
     /// A list of the individual group deployments in the bulk deployment operation.
-    pub fn get_deployments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BulkDeploymentResult>> {
+    pub fn get_deployments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BulkDeploymentResult>> {
         &self.deployments
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -94,12 +86,10 @@ impl ListBulkDeploymentDetailedReportsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListBulkDeploymentDetailedReportsOutput`](crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput).
-    pub fn build(self) -> crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput{
+    pub fn build(self) -> crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput {
         crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput {
-            deployments: self.deployments
-            ,
-            next_token: self.next_token
-            ,
+            deployments: self.deployments,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

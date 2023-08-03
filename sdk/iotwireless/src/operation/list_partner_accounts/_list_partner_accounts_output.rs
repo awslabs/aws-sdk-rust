@@ -8,8 +8,7 @@ pub struct ListPartnerAccountsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Sidewalk account credentials.</p>
     #[doc(hidden)]
-    pub sidewalk:
-        ::std::option::Option<::std::vec::Vec<crate::types::SidewalkAccountInfoWithFingerprint>>,
+    pub sidewalk: ::std::option::Option<::std::vec::Vec<crate::types::SidewalkAccountInfoWithFingerprint>>,
     _request_id: Option<String>,
 }
 impl ListPartnerAccountsOutput {
@@ -18,9 +17,7 @@ impl ListPartnerAccountsOutput {
         self.next_token.as_deref()
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn sidewalk(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SidewalkAccountInfoWithFingerprint]> {
+    pub fn sidewalk(&self) -> ::std::option::Option<&[crate::types::SidewalkAccountInfoWithFingerprint]> {
         self.sidewalk.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListPartnerAccountsOutput {
 }
 impl ListPartnerAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListPartnerAccountsOutput`](crate::operation::list_partner_accounts::ListPartnerAccountsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_partner_accounts::builders::ListPartnerAccountsOutputBuilder {
-        crate::operation::list_partner_accounts::builders::ListPartnerAccountsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_partner_accounts::builders::ListPartnerAccountsOutputBuilder {
+        crate::operation::list_partner_accounts::builders::ListPartnerAccountsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPartnerAccountsOutput`](crate::operation::list_partner_accounts::ListPartnerAccountsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPartnerAccountsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) sidewalk:
-        ::std::option::Option<::std::vec::Vec<crate::types::SidewalkAccountInfoWithFingerprint>>,
+    pub(crate) sidewalk: ::std::option::Option<::std::vec::Vec<crate::types::SidewalkAccountInfoWithFingerprint>>,
     _request_id: Option<String>,
 }
 impl ListPartnerAccountsOutputBuilder {
@@ -76,20 +68,12 @@ impl ListPartnerAccountsOutputBuilder {
         self
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::SidewalkAccountInfoWithFingerprint>,
-        >,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SidewalkAccountInfoWithFingerprint>>) -> Self {
         self.sidewalk = input;
         self
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn get_sidewalk(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SidewalkAccountInfoWithFingerprint>>
-    {
+    pub fn get_sidewalk(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SidewalkAccountInfoWithFingerprint>> {
         &self.sidewalk
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

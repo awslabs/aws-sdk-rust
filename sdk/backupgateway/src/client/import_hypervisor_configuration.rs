@@ -12,7 +12,9 @@ impl super::Client {
     /// - On success, responds with [`ImportHypervisorConfigurationOutput`](crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationOutput) with field(s):
     ///   - [`hypervisor_arn(Option<String>)`](crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor you disassociated.</p>
     /// - On failure, responds with [`SdkError<ImportHypervisorConfigurationError>`](crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationError)
-    pub fn import_hypervisor_configuration(&self) -> crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationFluentBuilder{
+    pub fn import_hypervisor_configuration(
+        &self,
+    ) -> crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationFluentBuilder {
         crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

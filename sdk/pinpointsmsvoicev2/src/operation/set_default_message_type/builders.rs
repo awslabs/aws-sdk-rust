@@ -38,10 +38,7 @@ impl SetDefaultMessageTypeFluentBuilder {
         }
     }
     /// Access the SetDefaultMessageType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_default_message_type::builders::SetDefaultMessageTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_default_message_type::builders::SetDefaultMessageTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl SetDefaultMessageTypeFluentBuilder {
             crate::operation::set_default_message_type::SetDefaultMessageType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_message_type::SetDefaultMessageTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_message_type::SetDefaultMessageTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl SetDefaultMessageTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl SetDefaultMessageTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_default_message_type::SetDefaultMessageTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_message_type::SetDefaultMessageTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_message_type::SetDefaultMessageTypeError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl SetDefaultMessageTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_default_message_type::SetDefaultMessageTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_message_type::SetDefaultMessageTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_message_type::SetDefaultMessageTypeError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl SetDefaultMessageTypeFluentBuilder {
             crate::operation::set_default_message_type::SetDefaultMessageType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_message_type::SetDefaultMessageTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_message_type::SetDefaultMessageTypeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
@@ -150,10 +130,7 @@ impl SetDefaultMessageTypeFluentBuilder {
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn set_message_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageType>,
-    ) -> Self {
+    pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.inner = self.inner.set_message_type(input);
         self
     }

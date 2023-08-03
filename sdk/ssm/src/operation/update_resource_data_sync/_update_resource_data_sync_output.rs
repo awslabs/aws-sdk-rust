@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateResourceDataSyncOutput {
 }
 impl UpdateResourceDataSyncOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceDataSyncOutput`](crate::operation::update_resource_data_sync::UpdateResourceDataSyncOutput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncOutputBuilder {
         crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourceDataSyncOutput`](crate::operation::update_resource_data_sync::UpdateResourceDataSyncOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceDataSyncOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateResourceDataSyncOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateResourceDataSyncOutput`](crate::operation::update_resource_data_sync::UpdateResourceDataSyncOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_resource_data_sync::UpdateResourceDataSyncOutput {
+    pub fn build(self) -> crate::operation::update_resource_data_sync::UpdateResourceDataSyncOutput {
         crate::operation::update_resource_data_sync::UpdateResourceDataSyncOutput {
             _request_id: self._request_id,
         }

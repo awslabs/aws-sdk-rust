@@ -16,7 +16,7 @@ impl super::Client {
     /// - On success, responds with [`RestoreTableFromSnapshotOutput`](crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotOutput) with field(s):
     ///   - [`table_restore_status(Option<TableRestoreStatus>)`](crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotOutput::table_restore_status): <p>The TableRestoreStatus object that contains the status of the restore operation.</p>
     /// - On failure, responds with [`SdkError<RestoreTableFromSnapshotError>`](crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotError)
-    pub fn restore_table_from_snapshot(&self) -> crate::operation::restore_table_from_snapshot::builders::RestoreTableFromSnapshotFluentBuilder{
+    pub fn restore_table_from_snapshot(&self) -> crate::operation::restore_table_from_snapshot::builders::RestoreTableFromSnapshotFluentBuilder {
         crate::operation::restore_table_from_snapshot::builders::RestoreTableFromSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

@@ -105,18 +105,14 @@ impl CreateGlobalClusterInput {
 }
 impl CreateGlobalClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalClusterInput`](crate::operation::create_global_cluster::CreateGlobalClusterInput).
-    pub fn builder(
-    ) -> crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder {
-        crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder {
+        crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGlobalClusterInput`](crate::operation::create_global_cluster::CreateGlobalClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGlobalClusterInputBuilder {
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -128,18 +124,12 @@ pub struct CreateGlobalClusterInputBuilder {
 }
 impl CreateGlobalClusterInputBuilder {
     /// <p>The cluster identifier for this global database cluster. This parameter is stored as a lowercase string.</p>
-    pub fn global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier for this global database cluster. This parameter is stored as a lowercase string.</p>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_cluster_identifier = input;
         self
     }
@@ -155,10 +145,7 @@ impl CreateGlobalClusterInputBuilder {
     /// <li> <p> <code>EngineVersion</code> </p> </li>
     /// <li> <p> <code>StorageEncrypted</code> </p> </li>
     /// </ul>
-    pub fn source_db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -170,10 +157,7 @@ impl CreateGlobalClusterInputBuilder {
     /// <li> <p> <code>EngineVersion</code> </p> </li>
     /// <li> <p> <code>StorageEncrypted</code> </p> </li>
     /// </ul>
-    pub fn set_source_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_db_cluster_identifier = input;
         self
     }
@@ -185,9 +169,7 @@ impl CreateGlobalClusterInputBuilder {
     /// <li> <p> <code>EngineVersion</code> </p> </li>
     /// <li> <p> <code>StorageEncrypted</code> </p> </li>
     /// </ul>
-    pub fn get_source_db_cluster_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_db_cluster_identifier
     }
     /// <p>The database engine to use for this global database cluster.</p>
@@ -224,10 +206,7 @@ impl CreateGlobalClusterInputBuilder {
     /// <ul>
     /// <li> <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine version of the source DB cluster.</p> </li>
     /// </ul>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
@@ -236,10 +215,7 @@ impl CreateGlobalClusterInputBuilder {
     /// <ul>
     /// <li> <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine version of the source DB cluster.</p> </li>
     /// </ul>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -270,10 +246,7 @@ impl CreateGlobalClusterInputBuilder {
     /// <ul>
     /// <li> <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the database name from the source DB cluster.</p> </li>
     /// </ul>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -282,10 +255,7 @@ impl CreateGlobalClusterInputBuilder {
     /// <ul>
     /// <li> <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the database name from the source DB cluster.</p> </li>
     /// </ul>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -326,20 +296,16 @@ impl CreateGlobalClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateGlobalClusterInput`](crate::operation::create_global_cluster::CreateGlobalClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_global_cluster::CreateGlobalClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_global_cluster::CreateGlobalClusterInput {
-                global_cluster_identifier: self.global_cluster_identifier,
-                source_db_cluster_identifier: self.source_db_cluster_identifier,
-                engine: self.engine,
-                engine_version: self.engine_version,
-                deletion_protection: self.deletion_protection,
-                database_name: self.database_name,
-                storage_encrypted: self.storage_encrypted,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_global_cluster::CreateGlobalClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_global_cluster::CreateGlobalClusterInput {
+            global_cluster_identifier: self.global_cluster_identifier,
+            source_db_cluster_identifier: self.source_db_cluster_identifier,
+            engine: self.engine,
+            engine_version: self.engine_version,
+            deletion_protection: self.deletion_protection,
+            database_name: self.database_name,
+            storage_encrypted: self.storage_encrypted,
+        })
     }
 }

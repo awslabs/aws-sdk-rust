@@ -26,7 +26,7 @@ impl DeleteHsmClientCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteHsmClientCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateInputBuilder,
+    inner: crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateInputBuilder,
 }
 impl DeleteHsmClientCertificateFluentBuilder {
     /// Creates a new `DeleteHsmClientCertificate`.
@@ -37,7 +37,7 @@ impl DeleteHsmClientCertificateFluentBuilder {
         }
     }
     /// Access the DeleteHsmClientCertificate as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteHsmClientCertificateFluentBuilder {
             crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteHsmClientCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteHsmClientCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteHsmClientCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl DeleteHsmClientCertificateFluentBuilder {
             crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the HSM client certificate to be deleted.</p>
-    pub fn hsm_client_certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_client_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hsm_client_certificate_identifier(input.into());
         self
     }
     /// <p>The identifier of the HSM client certificate to be deleted.</p>
-    pub fn set_hsm_client_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_client_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hsm_client_certificate_identifier(input);
         self
     }
     /// <p>The identifier of the HSM client certificate to be deleted.</p>
-    pub fn get_hsm_client_certificate_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hsm_client_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hsm_client_certificate_identifier()
     }
 }

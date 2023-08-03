@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`vpc_connections(Option<Vec<VpcConnection>>)`](crate::operation::list_vpc_connections::ListVpcConnectionsOutput::vpc_connections): <p>List of VPC connections.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vpc_connections::ListVpcConnectionsOutput::next_token): <p>The paginated results marker. When the result of a ListClientVpcConnections operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
     /// - On failure, responds with [`SdkError<ListVpcConnectionsError>`](crate::operation::list_vpc_connections::ListVpcConnectionsError)
-    pub fn list_vpc_connections(
-        &self,
-    ) -> crate::operation::list_vpc_connections::builders::ListVpcConnectionsFluentBuilder {
-        crate::operation::list_vpc_connections::builders::ListVpcConnectionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_vpc_connections(&self) -> crate::operation::list_vpc_connections::builders::ListVpcConnectionsFluentBuilder {
+        crate::operation::list_vpc_connections::builders::ListVpcConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

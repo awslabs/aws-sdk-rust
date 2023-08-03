@@ -26,10 +26,7 @@ impl InvalidLdapsStatusException {
 }
 impl ::std::fmt::Display for InvalidLdapsStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "InvalidLdapsStatusException [InvalidLDAPSStatusException]"
-        )?;
+        ::std::write!(f, "InvalidLdapsStatusException [InvalidLDAPSStatusException]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -59,9 +56,7 @@ impl InvalidLdapsStatusException {
 
 /// A builder for [`InvalidLdapsStatusException`](crate::types::error::InvalidLdapsStatusException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidLdapsStatusExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -103,10 +98,7 @@ impl InvalidLdapsStatusExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

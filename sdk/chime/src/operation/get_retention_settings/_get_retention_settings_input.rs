@@ -15,17 +15,14 @@ impl GetRetentionSettingsInput {
 }
 impl GetRetentionSettingsInput {
     /// Creates a new builder-style object to manufacture [`GetRetentionSettingsInput`](crate::operation::get_retention_settings::GetRetentionSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::get_retention_settings::builders::GetRetentionSettingsInputBuilder {
+    pub fn builder() -> crate::operation::get_retention_settings::builders::GetRetentionSettingsInputBuilder {
         crate::operation::get_retention_settings::builders::GetRetentionSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRetentionSettingsInput`](crate::operation::get_retention_settings::GetRetentionSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRetentionSettingsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,8 @@ impl GetRetentionSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetRetentionSettingsInput`](crate::operation::get_retention_settings::GetRetentionSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_retention_settings::GetRetentionSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_retention_settings::GetRetentionSettingsInput {
-                account_id: self.account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_retention_settings::GetRetentionSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_retention_settings::GetRetentionSettingsInput { account_id: self.account_id })
     }
 }

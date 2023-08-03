@@ -38,9 +38,7 @@ impl DeploymentReadyOption {
 
 /// A builder for [`DeploymentReadyOption`](crate::types::DeploymentReadyOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentReadyOptionBuilder {
     pub(crate) action_on_timeout: ::std::option::Option<crate::types::DeploymentReadyAction>,
     pub(crate) wait_time_in_minutes: ::std::option::Option<i32>,
@@ -60,10 +58,7 @@ impl DeploymentReadyOptionBuilder {
     /// <li> <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p> </li>
     /// <li> <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p> </li>
     /// </ul>
-    pub fn set_action_on_timeout(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentReadyAction>,
-    ) -> Self {
+    pub fn set_action_on_timeout(mut self, input: ::std::option::Option<crate::types::DeploymentReadyAction>) -> Self {
         self.action_on_timeout = input;
         self
     }
@@ -72,9 +67,7 @@ impl DeploymentReadyOptionBuilder {
     /// <li> <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p> </li>
     /// <li> <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p> </li>
     /// </ul>
-    pub fn get_action_on_timeout(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentReadyAction> {
+    pub fn get_action_on_timeout(&self) -> &::std::option::Option<crate::types::DeploymentReadyAction> {
         &self.action_on_timeout
     }
     /// <p>The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if rerouting is not started manually. Applies only to the <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>

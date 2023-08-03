@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`snapshot_id(Option<String>)`](crate::operation::modify_snapshot_tier::ModifySnapshotTierOutput::snapshot_id): <p>The ID of the snapshot.</p>
     ///   - [`tiering_start_time(Option<DateTime>)`](crate::operation::modify_snapshot_tier::ModifySnapshotTierOutput::tiering_start_time): <p>The date and time when the archive process was started.</p>
     /// - On failure, responds with [`SdkError<ModifySnapshotTierError>`](crate::operation::modify_snapshot_tier::ModifySnapshotTierError)
-    pub fn modify_snapshot_tier(
-        &self,
-    ) -> crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierFluentBuilder {
-        crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_snapshot_tier(&self) -> crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierFluentBuilder {
+        crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierFluentBuilder::new(self.handle.clone())
     }
 }

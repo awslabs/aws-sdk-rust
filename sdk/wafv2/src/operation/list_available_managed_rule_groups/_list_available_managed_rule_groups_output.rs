@@ -8,8 +8,7 @@ pub struct ListAvailableManagedRuleGroupsOutput {
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     #[doc(hidden)]
-    pub managed_rule_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupSummary>>,
+    pub managed_rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListAvailableManagedRuleGroupsOutput {
@@ -18,9 +17,7 @@ impl ListAvailableManagedRuleGroupsOutput {
         self.next_marker.as_deref()
     }
     /// <p>Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn managed_rule_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ManagedRuleGroupSummary]> {
+    pub fn managed_rule_groups(&self) -> ::std::option::Option<&[crate::types::ManagedRuleGroupSummary]> {
         self.managed_rule_groups.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListAvailableManagedRuleGroupsOutput 
 }
 impl ListAvailableManagedRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableManagedRuleGroupsOutput`](crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput).
-    pub fn builder() -> crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsOutputBuilder {
         crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAvailableManagedRuleGroupsOutput`](crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) managed_rule_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupSummary>>,
+    pub(crate) managed_rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListAvailableManagedRuleGroupsOutputBuilder {
@@ -74,17 +68,12 @@ impl ListAvailableManagedRuleGroupsOutputBuilder {
         self
     }
     /// <p>Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn set_managed_rule_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupSummary>>,
-    ) -> Self {
+    pub fn set_managed_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupSummary>>) -> Self {
         self.managed_rule_groups = input;
         self
     }
     /// <p>Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn get_managed_rule_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupSummary>> {
+    pub fn get_managed_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupSummary>> {
         &self.managed_rule_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,10 +86,7 @@ impl ListAvailableManagedRuleGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAvailableManagedRuleGroupsOutput`](crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput
-    {
+    pub fn build(self) -> crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput {
         crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput {
             next_marker: self.next_marker,
             managed_rule_groups: self.managed_rule_groups,

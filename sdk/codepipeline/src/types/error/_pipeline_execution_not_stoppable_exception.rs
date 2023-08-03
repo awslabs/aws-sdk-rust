@@ -27,34 +27,27 @@ impl ::std::fmt::Display for PipelineExecutionNotStoppableException {
     }
 }
 impl ::std::error::Error for PipelineExecutionNotStoppableException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::PipelineExecutionNotStoppableException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::PipelineExecutionNotStoppableException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for PipelineExecutionNotStoppableException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PipelineExecutionNotStoppableException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl PipelineExecutionNotStoppableException {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionNotStoppableException`](crate::types::error::PipelineExecutionNotStoppableException).
-    pub fn builder() -> crate::types::error::builders::PipelineExecutionNotStoppableExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::PipelineExecutionNotStoppableExceptionBuilder {
         crate::types::error::builders::PipelineExecutionNotStoppableExceptionBuilder::default()
     }
 }
 
 /// A builder for [`PipelineExecutionNotStoppableException`](crate::types::error::PipelineExecutionNotStoppableException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineExecutionNotStoppableExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl PipelineExecutionNotStoppableExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

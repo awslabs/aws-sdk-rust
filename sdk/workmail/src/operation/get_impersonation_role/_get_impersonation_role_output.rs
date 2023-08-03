@@ -63,17 +63,14 @@ impl ::aws_http::request_id::RequestId for GetImpersonationRoleOutput {
 }
 impl GetImpersonationRoleOutput {
     /// Creates a new builder-style object to manufacture [`GetImpersonationRoleOutput`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput).
-    pub fn builder(
-    ) -> crate::operation::get_impersonation_role::builders::GetImpersonationRoleOutputBuilder {
+    pub fn builder() -> crate::operation::get_impersonation_role::builders::GetImpersonationRoleOutputBuilder {
         crate::operation::get_impersonation_role::builders::GetImpersonationRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetImpersonationRoleOutput`](crate::operation::get_impersonation_role::GetImpersonationRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImpersonationRoleOutputBuilder {
     pub(crate) impersonation_role_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -86,18 +83,12 @@ pub struct GetImpersonationRoleOutputBuilder {
 }
 impl GetImpersonationRoleOutputBuilder {
     /// <p>The impersonation role ID.</p>
-    pub fn impersonation_role_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn impersonation_role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.impersonation_role_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The impersonation role ID.</p>
-    pub fn set_impersonation_role_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_impersonation_role_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.impersonation_role_id = input;
         self
     }
@@ -125,10 +116,7 @@ impl GetImpersonationRoleOutputBuilder {
         self
     }
     /// <p>The impersonation role type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ImpersonationRoleType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ImpersonationRoleType>) -> Self {
         self.r#type = input;
         self
     }
@@ -162,17 +150,12 @@ impl GetImpersonationRoleOutputBuilder {
         self
     }
     /// <p>The list of rules for the given impersonation role.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRule>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>The list of rules for the given impersonation role.</p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRule>> {
         &self.rules
     }
     /// <p>The date when the impersonation role was created.</p>
@@ -181,10 +164,7 @@ impl GetImpersonationRoleOutputBuilder {
         self
     }
     /// <p>The date when the impersonation role was created.</p>
-    pub fn set_date_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_created = input;
         self
     }
@@ -198,10 +178,7 @@ impl GetImpersonationRoleOutputBuilder {
         self
     }
     /// <p>The date when the impersonation role was last modified.</p>
-    pub fn set_date_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_modified = input;
         self
     }

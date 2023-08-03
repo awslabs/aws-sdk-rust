@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for GetComponentVersionArtifactOutput {
 }
 impl GetComponentVersionArtifactOutput {
     /// Creates a new builder-style object to manufacture [`GetComponentVersionArtifactOutput`](crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput).
-    pub fn builder() -> crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactOutputBuilder{
+    pub fn builder() -> crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactOutputBuilder {
         crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetComponentVersionArtifactOutput`](crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComponentVersionArtifactOutputBuilder {
     pub(crate) pre_signed_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetComponentVersionArtifactOutputBuilder {
     /// <p>The URL of the artifact.</p>
-    pub fn pre_signed_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_signed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_signed_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the artifact.</p>
-    pub fn set_pre_signed_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_signed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_signed_url = input;
         self
     }
@@ -66,9 +58,7 @@ impl GetComponentVersionArtifactOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetComponentVersionArtifactOutput`](crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput {
+    pub fn build(self) -> crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput {
         crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput {
             pre_signed_url: self.pre_signed_url,
             _request_id: self._request_id,

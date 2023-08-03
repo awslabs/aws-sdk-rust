@@ -26,7 +26,7 @@ impl GetCoreNetworkChangeEventsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCoreNetworkChangeEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsInputBuilder,
+    inner: crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsInputBuilder,
 }
 impl GetCoreNetworkChangeEventsFluentBuilder {
     /// Creates a new `GetCoreNetworkChangeEvents`.
@@ -37,7 +37,7 @@ impl GetCoreNetworkChangeEventsFluentBuilder {
         }
     }
     /// Access the GetCoreNetworkChangeEvents as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetCoreNetworkChangeEventsFluentBuilder {
             crate::operation::get_core_network_change_events::GetCoreNetworkChangeEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetCoreNetworkChangeEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetCoreNetworkChangeEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetCoreNetworkChangeEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl GetCoreNetworkChangeEventsFluentBuilder {
             crate::operation::get_core_network_change_events::GetCoreNetworkChangeEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_core_network_change_events::paginator::GetCoreNetworkChangeEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_core_network_change_events::paginator::GetCoreNetworkChangeEventsPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_core_network_change_events::paginator::GetCoreNetworkChangeEventsPaginator {
         crate::operation::get_core_network_change_events::paginator::GetCoreNetworkChangeEventsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }

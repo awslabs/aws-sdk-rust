@@ -10,10 +10,7 @@ impl GetEvidenceFolderInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_evidence_folder::GetEvidenceFolderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_evidence_folder::GetEvidenceFolderError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folder::GetEvidenceFolderError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_evidence_folder();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetEvidenceFolderFluentBuilder {
         }
     }
     /// Access the GetEvidenceFolder as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_evidence_folder::builders::GetEvidenceFolderInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_evidence_folder::builders::GetEvidenceFolderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetEvidenceFolderFluentBuilder {
             crate::operation::get_evidence_folder::GetEvidenceFolder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_evidence_folder::GetEvidenceFolderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folder::GetEvidenceFolderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetEvidenceFolderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetEvidenceFolderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_evidence_folder::GetEvidenceFolderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_evidence_folder::GetEvidenceFolderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folder::GetEvidenceFolderError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetEvidenceFolderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_evidence_folder::GetEvidenceFolderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_evidence_folder::GetEvidenceFolderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folder::GetEvidenceFolderError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetEvidenceFolderFluentBuilder {
             crate::operation::get_evidence_folder::GetEvidenceFolder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_evidence_folder::GetEvidenceFolderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folder::GetEvidenceFolderError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl GetEvidenceFolderFluentBuilder {
         self.inner.get_assessment_id()
     }
     /// <p> The unique identifier for the control set. </p>
-    pub fn control_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_set_id(input.into());
         self
     }
     /// <p> The unique identifier for the control set. </p>
-    pub fn set_control_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_set_id(input);
         self
     }
@@ -163,18 +135,12 @@ impl GetEvidenceFolderFluentBuilder {
         self.inner.get_control_set_id()
     }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-    pub fn evidence_folder_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evidence_folder_id(input.into());
         self
     }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-    pub fn set_evidence_folder_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evidence_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evidence_folder_id(input);
         self
     }

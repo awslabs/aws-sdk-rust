@@ -6,15 +6,12 @@
 pub struct ApplyPendingMaintenanceActionOutput {
     /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
     #[doc(hidden)]
-    pub resource_pending_maintenance_actions:
-        ::std::option::Option<crate::types::ResourcePendingMaintenanceActions>,
+    pub resource_pending_maintenance_actions: ::std::option::Option<crate::types::ResourcePendingMaintenanceActions>,
     _request_id: Option<String>,
 }
 impl ApplyPendingMaintenanceActionOutput {
     /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
-    pub fn resource_pending_maintenance_actions(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourcePendingMaintenanceActions> {
+    pub fn resource_pending_maintenance_actions(&self) -> ::std::option::Option<&crate::types::ResourcePendingMaintenanceActions> {
         self.resource_pending_maintenance_actions.as_ref()
     }
 }
@@ -25,42 +22,31 @@ impl ::aws_http::request_id::RequestId for ApplyPendingMaintenanceActionOutput {
 }
 impl ApplyPendingMaintenanceActionOutput {
     /// Creates a new builder-style object to manufacture [`ApplyPendingMaintenanceActionOutput`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput).
-    pub fn builder() -> crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionOutputBuilder{
+    pub fn builder() -> crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionOutputBuilder {
         crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ApplyPendingMaintenanceActionOutput`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplyPendingMaintenanceActionOutputBuilder {
-    pub(crate) resource_pending_maintenance_actions:
-        ::std::option::Option<crate::types::ResourcePendingMaintenanceActions>,
+    pub(crate) resource_pending_maintenance_actions: ::std::option::Option<crate::types::ResourcePendingMaintenanceActions>,
     _request_id: Option<String>,
 }
 impl ApplyPendingMaintenanceActionOutputBuilder {
     /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
-    pub fn resource_pending_maintenance_actions(
-        mut self,
-        input: crate::types::ResourcePendingMaintenanceActions,
-    ) -> Self {
+    pub fn resource_pending_maintenance_actions(mut self, input: crate::types::ResourcePendingMaintenanceActions) -> Self {
         self.resource_pending_maintenance_actions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
-    pub fn set_resource_pending_maintenance_actions(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourcePendingMaintenanceActions>,
-    ) -> Self {
+    pub fn set_resource_pending_maintenance_actions(mut self, input: ::std::option::Option<crate::types::ResourcePendingMaintenanceActions>) -> Self {
         self.resource_pending_maintenance_actions = input;
         self
     }
     /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
-    pub fn get_resource_pending_maintenance_actions(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourcePendingMaintenanceActions> {
+    pub fn get_resource_pending_maintenance_actions(&self) -> &::std::option::Option<crate::types::ResourcePendingMaintenanceActions> {
         &self.resource_pending_maintenance_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,10 +59,7 @@ impl ApplyPendingMaintenanceActionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ApplyPendingMaintenanceActionOutput`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput
-    {
+    pub fn build(self) -> crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput {
         crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput {
             resource_pending_maintenance_actions: self.resource_pending_maintenance_actions,
             _request_id: self._request_id,

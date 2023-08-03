@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`PutResolverQueryLogConfigPolicyOutput`](crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyOutput) with field(s):
     ///   - [`return_value(bool)`](crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyOutput::return_value): <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was successful.</p>
     /// - On failure, responds with [`SdkError<PutResolverQueryLogConfigPolicyError>`](crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError)
-    pub fn put_resolver_query_log_config_policy(&self) -> crate::operation::put_resolver_query_log_config_policy::builders::PutResolverQueryLogConfigPolicyFluentBuilder{
+    pub fn put_resolver_query_log_config_policy(
+        &self,
+    ) -> crate::operation::put_resolver_query_log_config_policy::builders::PutResolverQueryLogConfigPolicyFluentBuilder {
         crate::operation::put_resolver_query_log_config_policy::builders::PutResolverQueryLogConfigPolicyFluentBuilder::new(self.handle.clone())
     }
 }

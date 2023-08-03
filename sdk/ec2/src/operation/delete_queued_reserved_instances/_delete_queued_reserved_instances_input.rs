@@ -22,20 +22,17 @@ impl DeleteQueuedReservedInstancesInput {
 }
 impl DeleteQueuedReservedInstancesInput {
     /// Creates a new builder-style object to manufacture [`DeleteQueuedReservedInstancesInput`](crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput).
-    pub fn builder() -> crate::operation::delete_queued_reserved_instances::builders::DeleteQueuedReservedInstancesInputBuilder{
+    pub fn builder() -> crate::operation::delete_queued_reserved_instances::builders::DeleteQueuedReservedInstancesInputBuilder {
         crate::operation::delete_queued_reserved_instances::builders::DeleteQueuedReservedInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteQueuedReservedInstancesInput`](crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQueuedReservedInstancesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) reserved_instances_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) reserved_instances_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteQueuedReservedInstancesInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -57,27 +54,19 @@ impl DeleteQueuedReservedInstancesInputBuilder {
     /// To override the contents of this collection use [`set_reserved_instances_ids`](Self::set_reserved_instances_ids).
     ///
     /// <p>The IDs of the Reserved Instances.</p>
-    pub fn reserved_instances_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reserved_instances_ids.unwrap_or_default();
         v.push(input.into());
         self.reserved_instances_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Reserved Instances.</p>
-    pub fn set_reserved_instances_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reserved_instances_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.reserved_instances_ids = input;
         self
     }
     /// <p>The IDs of the Reserved Instances.</p>
-    pub fn get_reserved_instances_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reserved_instances_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.reserved_instances_ids
     }
     /// Consumes the builder and constructs a [`DeleteQueuedReservedInstancesInput`](crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput).
@@ -87,13 +76,9 @@ impl DeleteQueuedReservedInstancesInputBuilder {
         crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput {
-                dry_run: self.dry_run
-                ,
-                reserved_instances_ids: self.reserved_instances_ids
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput {
+            dry_run: self.dry_run,
+            reserved_instances_ids: self.reserved_instances_ids,
+        })
     }
 }

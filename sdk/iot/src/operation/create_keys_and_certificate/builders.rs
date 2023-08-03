@@ -28,7 +28,7 @@ impl CreateKeysAndCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateKeysAndCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateInputBuilder,
+    inner: crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateInputBuilder,
 }
 impl CreateKeysAndCertificateFluentBuilder {
     /// Creates a new `CreateKeysAndCertificate`.
@@ -39,7 +39,7 @@ impl CreateKeysAndCertificateFluentBuilder {
         }
     }
     /// Access the CreateKeysAndCertificate as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CreateKeysAndCertificateFluentBuilder {
             crate::operation::create_keys_and_certificate::CreateKeysAndCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CreateKeysAndCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CreateKeysAndCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CreateKeysAndCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl CreateKeysAndCertificateFluentBuilder {
             crate::operation::create_keys_and_certificate::CreateKeysAndCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError>,
     > {
         self.customize_middleware().await
     }

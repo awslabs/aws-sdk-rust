@@ -33,8 +33,7 @@ impl DeleteAccessPointPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccessPointPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_access_point_policy::builders::DeleteAccessPointPolicyInputBuilder,
+    inner: crate::operation::delete_access_point_policy::builders::DeleteAccessPointPolicyInputBuilder,
 }
 impl DeleteAccessPointPolicyFluentBuilder {
     /// Creates a new `DeleteAccessPointPolicy`.
@@ -45,10 +44,7 @@ impl DeleteAccessPointPolicyFluentBuilder {
         }
     }
     /// Access the DeleteAccessPointPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_access_point_policy::builders::DeleteAccessPointPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_access_point_policy::builders::DeleteAccessPointPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +56,7 @@ impl DeleteAccessPointPolicyFluentBuilder {
             crate::operation::delete_access_point_policy::DeleteAccessPointPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_point_policy::DeleteAccessPointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_point_policy::DeleteAccessPointPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +66,7 @@ impl DeleteAccessPointPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +75,7 @@ impl DeleteAccessPointPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_point_policy::DeleteAccessPointPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_point_policy::DeleteAccessPointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_point_policy::DeleteAccessPointPolicyError>,
     > {
         let op = self
             .inner
@@ -109,9 +98,7 @@ impl DeleteAccessPointPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_point_policy::DeleteAccessPointPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_point_policy::DeleteAccessPointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_point_policy::DeleteAccessPointPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +112,7 @@ impl DeleteAccessPointPolicyFluentBuilder {
             crate::operation::delete_access_point_policy::DeleteAccessPointPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_point_policy::DeleteAccessPointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_point_policy::DeleteAccessPointPolicyError>,
     > {
         self.customize_middleware().await
     }

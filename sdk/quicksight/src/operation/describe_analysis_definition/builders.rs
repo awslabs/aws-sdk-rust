@@ -28,7 +28,7 @@ impl DescribeAnalysisDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAnalysisDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionInputBuilder,
+    inner: crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionInputBuilder,
 }
 impl DescribeAnalysisDefinitionFluentBuilder {
     /// Creates a new `DescribeAnalysisDefinition`.
@@ -39,7 +39,7 @@ impl DescribeAnalysisDefinitionFluentBuilder {
         }
     }
     /// Access the DescribeAnalysisDefinition as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeAnalysisDefinitionFluentBuilder {
             crate::operation::describe_analysis_definition::DescribeAnalysisDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeAnalysisDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeAnalysisDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeAnalysisDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl DescribeAnalysisDefinitionFluentBuilder {
             crate::operation::describe_analysis_definition::DescribeAnalysisDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

@@ -10,10 +10,7 @@ impl ListPublicKeysInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_public_keys::ListPublicKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_public_keys::ListPublicKeysError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_public_keys::ListPublicKeysError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_public_keys();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ListPublicKeysFluentBuilder {
         }
     }
     /// Access the ListPublicKeys as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_public_keys::builders::ListPublicKeysInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_public_keys::builders::ListPublicKeysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ListPublicKeysFluentBuilder {
             crate::operation::list_public_keys::ListPublicKeys,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_public_keys::ListPublicKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_public_keys::ListPublicKeysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ListPublicKeysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ListPublicKeysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_public_keys::ListPublicKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_public_keys::ListPublicKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_public_keys::ListPublicKeysError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ListPublicKeysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_public_keys::ListPublicKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_public_keys::ListPublicKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_public_keys::ListPublicKeysError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl ListPublicKeysFluentBuilder {
             crate::operation::list_public_keys::ListPublicKeys,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_public_keys::ListPublicKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_public_keys::ListPublicKeysError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_public_keys::paginator::ListPublicKeysPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_public_keys::paginator::ListPublicKeysPaginator {
-        crate::operation::list_public_keys::paginator::ListPublicKeysPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_public_keys::paginator::ListPublicKeysPaginator {
+        crate::operation::list_public_keys::paginator::ListPublicKeysPaginator::new(self.handle, self.inner)
     }
     /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -141,10 +120,7 @@ impl ListPublicKeysFluentBuilder {
         self
     }
     /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -158,10 +134,7 @@ impl ListPublicKeysFluentBuilder {
         self
     }
     /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

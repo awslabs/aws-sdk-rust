@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being deleted.</p>
     /// - On success, responds with [`DeleteVectorEnrichmentJobOutput`](crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobOutput)
     /// - On failure, responds with [`SdkError<DeleteVectorEnrichmentJobError>`](crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobError)
-    pub fn delete_vector_enrichment_job(&self) -> crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobFluentBuilder{
+    pub fn delete_vector_enrichment_job(&self) -> crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobFluentBuilder {
         crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobFluentBuilder::new(self.handle.clone())
     }
 }

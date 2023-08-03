@@ -134,9 +134,7 @@ impl DominantLanguageDetectionJobProperties {
 
 /// A builder for [`DominantLanguageDetectionJobProperties`](crate::types::DominantLanguageDetectionJobProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DominantLanguageDetectionJobPropertiesBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
@@ -267,10 +265,7 @@ impl DominantLanguageDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The time that the dominant language detection job was submitted for processing.</p>
-    pub fn set_submit_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.submit_time = input;
         self
     }
@@ -284,10 +279,7 @@ impl DominantLanguageDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The time that the dominant language detection job completed.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -301,10 +293,7 @@ impl DominantLanguageDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The input data configuration that you supplied when you created the dominant language detection job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
@@ -318,10 +307,7 @@ impl DominantLanguageDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The output data configuration that you supplied when you created the dominant language detection job.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
@@ -330,18 +316,12 @@ impl DominantLanguageDetectionJobPropertiesBuilder {
         &self.output_data_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -354,10 +334,7 @@ impl DominantLanguageDetectionJobPropertiesBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn volume_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -366,10 +343,7 @@ impl DominantLanguageDetectionJobPropertiesBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_volume_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_kms_key_id = input;
         self
     }

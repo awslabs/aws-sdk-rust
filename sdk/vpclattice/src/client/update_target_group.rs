@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`config(Option<TargetGroupConfig>)`](crate::operation::update_target_group::UpdateTargetGroupOutput::config): <p>The target group configuration.</p>
     ///   - [`status(Option<TargetGroupStatus>)`](crate::operation::update_target_group::UpdateTargetGroupOutput::status): <p>The status.</p>
     /// - On failure, responds with [`SdkError<UpdateTargetGroupError>`](crate::operation::update_target_group::UpdateTargetGroupError)
-    pub fn update_target_group(
-        &self,
-    ) -> crate::operation::update_target_group::builders::UpdateTargetGroupFluentBuilder {
-        crate::operation::update_target_group::builders::UpdateTargetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_target_group(&self) -> crate::operation::update_target_group::builders::UpdateTargetGroupFluentBuilder {
+        crate::operation::update_target_group::builders::UpdateTargetGroupFluentBuilder::new(self.handle.clone())
     }
 }

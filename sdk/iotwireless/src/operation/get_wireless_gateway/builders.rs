@@ -10,10 +10,7 @@ impl GetWirelessGatewayInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_gateway::GetWirelessGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway::GetWirelessGatewayError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway::GetWirelessGatewayError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_wireless_gateway();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetWirelessGatewayFluentBuilder {
         }
     }
     /// Access the GetWirelessGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_wireless_gateway::builders::GetWirelessGatewayInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_wireless_gateway::builders::GetWirelessGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetWirelessGatewayFluentBuilder {
             crate::operation::get_wireless_gateway::GetWirelessGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway::GetWirelessGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway::GetWirelessGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetWirelessGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetWirelessGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_gateway::GetWirelessGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway::GetWirelessGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway::GetWirelessGatewayError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetWirelessGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_gateway::GetWirelessGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway::GetWirelessGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway::GetWirelessGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetWirelessGatewayFluentBuilder {
             crate::operation::get_wireless_gateway::GetWirelessGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway::GetWirelessGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway::GetWirelessGatewayError>,
     > {
         self.customize_middleware().await
     }
@@ -142,17 +126,12 @@ impl GetWirelessGatewayFluentBuilder {
         self
     }
     /// <p>The type of identifier used in <code>identifier</code>.</p>
-    pub fn set_identifier_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessGatewayIdType>,
-    ) -> Self {
+    pub fn set_identifier_type(mut self, input: ::std::option::Option<crate::types::WirelessGatewayIdType>) -> Self {
         self.inner = self.inner.set_identifier_type(input);
         self
     }
     /// <p>The type of identifier used in <code>identifier</code>.</p>
-    pub fn get_identifier_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::WirelessGatewayIdType> {
+    pub fn get_identifier_type(&self) -> &::std::option::Option<crate::types::WirelessGatewayIdType> {
         self.inner.get_identifier_type()
     }
 }

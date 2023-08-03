@@ -38,35 +38,26 @@ impl DeletePushTemplateInput {
 }
 impl DeletePushTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeletePushTemplateInput`](crate::operation::delete_push_template::DeletePushTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_push_template::builders::DeletePushTemplateInputBuilder {
+    pub fn builder() -> crate::operation::delete_push_template::builders::DeletePushTemplateInputBuilder {
         crate::operation::delete_push_template::builders::DeletePushTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePushTemplateInput`](crate::operation::delete_push_template::DeletePushTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePushTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl DeletePushTemplateInputBuilder {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -115,15 +106,10 @@ impl DeletePushTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeletePushTemplateInput`](crate::operation::delete_push_template::DeletePushTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_push_template::DeletePushTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_push_template::DeletePushTemplateInput {
-                template_name: self.template_name,
-                version: self.version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_push_template::DeletePushTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_push_template::DeletePushTemplateInput {
+            template_name: self.template_name,
+            version: self.version,
+        })
     }
 }

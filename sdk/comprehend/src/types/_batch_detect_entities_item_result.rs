@@ -30,9 +30,7 @@ impl BatchDetectEntitiesItemResult {
 
 /// A builder for [`BatchDetectEntitiesItemResult`](crate::types::BatchDetectEntitiesItemResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDetectEntitiesItemResultBuilder {
     pub(crate) index: ::std::option::Option<i32>,
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
@@ -64,10 +62,7 @@ impl BatchDetectEntitiesItemResultBuilder {
         self
     }
     /// <p>One or more <code>Entity</code> objects, one for each entity detected in the document.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>) -> Self {
         self.entities = input;
         self
     }

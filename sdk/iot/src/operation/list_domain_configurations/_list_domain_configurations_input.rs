@@ -29,18 +29,14 @@ impl ListDomainConfigurationsInput {
 }
 impl ListDomainConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListDomainConfigurationsInput`](crate::operation::list_domain_configurations::ListDomainConfigurationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_domain_configurations::builders::ListDomainConfigurationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_domain_configurations::builders::ListDomainConfigurationsInputBuilder {
         crate::operation::list_domain_configurations::builders::ListDomainConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDomainConfigurationsInput`](crate::operation::list_domain_configurations::ListDomainConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainConfigurationsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,
@@ -81,10 +77,7 @@ impl ListDomainConfigurationsInputBuilder {
         self
     }
     /// <p>The type of service delivered by the endpoint.</p>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.service_type = input;
         self
     }
@@ -99,12 +92,10 @@ impl ListDomainConfigurationsInputBuilder {
         crate::operation::list_domain_configurations::ListDomainConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_domain_configurations::ListDomainConfigurationsInput {
-                marker: self.marker,
-                page_size: self.page_size,
-                service_type: self.service_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_domain_configurations::ListDomainConfigurationsInput {
+            marker: self.marker,
+            page_size: self.page_size,
+            service_type: self.service_type,
+        })
     }
 }

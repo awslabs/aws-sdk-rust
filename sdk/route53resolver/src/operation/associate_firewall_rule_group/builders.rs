@@ -26,7 +26,7 @@ impl AssociateFirewallRuleGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateFirewallRuleGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupInputBuilder,
+    inner: crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupInputBuilder,
 }
 impl AssociateFirewallRuleGroupFluentBuilder {
     /// Creates a new `AssociateFirewallRuleGroup`.
@@ -37,7 +37,7 @@ impl AssociateFirewallRuleGroupFluentBuilder {
         }
     }
     /// Access the AssociateFirewallRuleGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateFirewallRuleGroupFluentBuilder {
             crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateFirewallRuleGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateFirewallRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateFirewallRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl AssociateFirewallRuleGroupFluentBuilder {
             crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl AssociateFirewallRuleGroupFluentBuilder {
         self.inner.get_creator_request_id()
     }
     /// <p>The unique identifier of the firewall rule group. </p>
-    pub fn firewall_rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_rule_group_id(input.into());
         self
     }
     /// <p>The unique identifier of the firewall rule group. </p>
-    pub fn set_firewall_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_rule_group_id(input);
         self
     }
@@ -214,17 +191,12 @@ impl AssociateFirewallRuleGroupFluentBuilder {
         self
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>. </p>
-    pub fn set_mutation_protection(
-        mut self,
-        input: ::std::option::Option<crate::types::MutationProtectionStatus>,
-    ) -> Self {
+    pub fn set_mutation_protection(mut self, input: ::std::option::Option<crate::types::MutationProtectionStatus>) -> Self {
         self.inner = self.inner.set_mutation_protection(input);
         self
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>. </p>
-    pub fn get_mutation_protection(
-        &self,
-    ) -> &::std::option::Option<crate::types::MutationProtectionStatus> {
+    pub fn get_mutation_protection(&self) -> &::std::option::Option<crate::types::MutationProtectionStatus> {
         self.inner.get_mutation_protection()
     }
     /// Appends an item to `Tags`.
@@ -237,10 +209,7 @@ impl AssociateFirewallRuleGroupFluentBuilder {
         self
     }
     /// <p>A list of the tag keys and values that you want to associate with the rule group association. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

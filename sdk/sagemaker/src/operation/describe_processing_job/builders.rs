@@ -37,10 +37,7 @@ impl DescribeProcessingJobFluentBuilder {
         }
     }
     /// Access the DescribeProcessingJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_processing_job::builders::DescribeProcessingJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_processing_job::builders::DescribeProcessingJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeProcessingJobFluentBuilder {
             crate::operation::describe_processing_job::DescribeProcessingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_processing_job::DescribeProcessingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_processing_job::DescribeProcessingJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeProcessingJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeProcessingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_processing_job::DescribeProcessingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_processing_job::DescribeProcessingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_processing_job::DescribeProcessingJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeProcessingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_processing_job::DescribeProcessingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_processing_job::DescribeProcessingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_processing_job::DescribeProcessingJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeProcessingJobFluentBuilder {
             crate::operation::describe_processing_job::DescribeProcessingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_processing_job::DescribeProcessingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_processing_job::DescribeProcessingJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn processing_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn processing_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.processing_job_name(input.into());
         self
     }
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn set_processing_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_processing_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_processing_job_name(input);
         self
     }

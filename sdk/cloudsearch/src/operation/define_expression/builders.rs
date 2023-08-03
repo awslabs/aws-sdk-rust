@@ -10,10 +10,7 @@ impl DefineExpressionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::define_expression::DefineExpressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_expression::DefineExpressionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_expression::DefineExpressionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.define_expression();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DefineExpressionFluentBuilder {
         }
     }
     /// Access the DefineExpression as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::define_expression::builders::DefineExpressionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::define_expression::builders::DefineExpressionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DefineExpressionFluentBuilder {
             crate::operation::define_expression::DefineExpression,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_expression::DefineExpressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_expression::DefineExpressionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DefineExpressionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DefineExpressionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::define_expression::DefineExpressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_expression::DefineExpressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_expression::DefineExpressionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DefineExpressionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::define_expression::DefineExpressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_expression::DefineExpressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_expression::DefineExpressionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DefineExpressionFluentBuilder {
             crate::operation::define_expression::DefineExpression,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_expression::DefineExpressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_expression::DefineExpressionError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl DefineExpressionFluentBuilder {
         self
     }
     /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
-    pub fn set_expression(
-        mut self,
-        input: ::std::option::Option<crate::types::Expression>,
-    ) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.inner = self.inner.set_expression(input);
         self
     }

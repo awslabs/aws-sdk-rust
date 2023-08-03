@@ -56,9 +56,7 @@ impl DescribeEntityOutput {
 
 /// A builder for [`DescribeEntityOutput`](crate::operation::describe_entity::DescribeEntityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEntityOutputBuilder {
     pub(crate) entity_type: ::std::option::Option<::std::string::String>,
     pub(crate) entity_identifier: ::std::option::Option<::std::string::String>,
@@ -83,18 +81,12 @@ impl DescribeEntityOutputBuilder {
         &self.entity_type
     }
     /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
-    pub fn entity_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
-    pub fn set_entity_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entity_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_identifier = input;
         self
     }
@@ -117,18 +109,12 @@ impl DescribeEntityOutputBuilder {
         &self.entity_arn
     }
     /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
-    pub fn last_modified_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_date = input;
         self
     }

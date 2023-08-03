@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`segment(impl ::std::convert::Into<String>)`](crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::segment) / [`set_segment(Option<String>)`](crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::set_segment): <p>Specifies the segment to delete.</p>
     /// - On success, responds with [`DeleteSegmentOutput`](crate::operation::delete_segment::DeleteSegmentOutput)
     /// - On failure, responds with [`SdkError<DeleteSegmentError>`](crate::operation::delete_segment::DeleteSegmentError)
-    pub fn delete_segment(
-        &self,
-    ) -> crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder {
-        crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_segment(&self) -> crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder {
+        crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::new(self.handle.clone())
     }
 }

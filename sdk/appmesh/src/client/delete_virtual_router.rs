@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteVirtualRouterOutput`](crate::operation::delete_virtual_router::DeleteVirtualRouterOutput) with field(s):
     ///   - [`virtual_router(Option<VirtualRouterData>)`](crate::operation::delete_virtual_router::DeleteVirtualRouterOutput::virtual_router): <p>The virtual router that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteVirtualRouterError>`](crate::operation::delete_virtual_router::DeleteVirtualRouterError)
-    pub fn delete_virtual_router(
-        &self,
-    ) -> crate::operation::delete_virtual_router::builders::DeleteVirtualRouterFluentBuilder {
-        crate::operation::delete_virtual_router::builders::DeleteVirtualRouterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_virtual_router(&self) -> crate::operation::delete_virtual_router::builders::DeleteVirtualRouterFluentBuilder {
+        crate::operation::delete_virtual_router::builders::DeleteVirtualRouterFluentBuilder::new(self.handle.clone())
     }
 }

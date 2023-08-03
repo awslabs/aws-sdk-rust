@@ -31,18 +31,14 @@ impl DescribeAccountPoliciesInput {
 }
 impl DescribeAccountPoliciesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountPoliciesInput`](crate::operation::describe_account_policies::DescribeAccountPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_policies::builders::DescribeAccountPoliciesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_policies::builders::DescribeAccountPoliciesInputBuilder {
         crate::operation::describe_account_policies::builders::DescribeAccountPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountPoliciesInput`](crate::operation::describe_account_policies::DescribeAccountPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountPoliciesInputBuilder {
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -55,10 +51,7 @@ impl DescribeAccountPoliciesInputBuilder {
         self
     }
     /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.policy_type = input;
         self
     }
@@ -86,10 +79,7 @@ impl DescribeAccountPoliciesInputBuilder {
     ///
     /// <p>If you are using an account that is set up as a monitoring account for CloudWatch unified cross-account observability, you can use this to specify the account ID of a source account. If you do, the operation returns the account policy for the specified account. Currently, you can specify only one account ID in this parameter.</p>
     /// <p>If you omit this parameter, only the policy in the current account is returned.</p>
-    pub fn account_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_identifiers.unwrap_or_default();
         v.push(input.into());
         self.account_identifiers = ::std::option::Option::Some(v);
@@ -97,18 +87,13 @@ impl DescribeAccountPoliciesInputBuilder {
     }
     /// <p>If you are using an account that is set up as a monitoring account for CloudWatch unified cross-account observability, you can use this to specify the account ID of a source account. If you do, the operation returns the account policy for the specified account. Currently, you can specify only one account ID in this parameter.</p>
     /// <p>If you omit this parameter, only the policy in the current account is returned.</p>
-    pub fn set_account_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_identifiers = input;
         self
     }
     /// <p>If you are using an account that is set up as a monitoring account for CloudWatch unified cross-account observability, you can use this to specify the account ID of a source account. If you do, the operation returns the account policy for the specified account. Currently, you can specify only one account ID in this parameter.</p>
     /// <p>If you omit this parameter, only the policy in the current account is returned.</p>
-    pub fn get_account_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_identifiers
     }
     /// Consumes the builder and constructs a [`DescribeAccountPoliciesInput`](crate::operation::describe_account_policies::DescribeAccountPoliciesInput).
@@ -118,12 +103,10 @@ impl DescribeAccountPoliciesInputBuilder {
         crate::operation::describe_account_policies::DescribeAccountPoliciesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_account_policies::DescribeAccountPoliciesInput {
-                policy_type: self.policy_type,
-                policy_name: self.policy_name,
-                account_identifiers: self.account_identifiers,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_account_policies::DescribeAccountPoliciesInput {
+            policy_type: self.policy_type,
+            policy_name: self.policy_name,
+            account_identifiers: self.account_identifiers,
+        })
     }
 }

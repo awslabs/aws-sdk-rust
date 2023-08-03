@@ -23,16 +23,14 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetai
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails {
     /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails).
-    pub fn builder() -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetailsBuilder {
         crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetailsBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -67,15 +65,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetai
         &self.value
     }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails
-    {
+    pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails {
-            key: self.key
-            ,
-            value: self.value
-            ,
+            key: self.key,
+            value: self.value,
         }
     }
 }

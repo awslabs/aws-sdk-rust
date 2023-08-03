@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`count(i32)`](crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput::count): <p>The number of tasks in the task list.</p>
     ///   - [`truncated(bool)`](crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput::truncated): <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     /// - On failure, responds with [`SdkError<CountPendingActivityTasksError>`](crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError)
-    pub fn count_pending_activity_tasks(&self) -> crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksFluentBuilder{
+    pub fn count_pending_activity_tasks(&self) -> crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksFluentBuilder {
         crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksFluentBuilder::new(self.handle.clone())
     }
 }

@@ -45,9 +45,7 @@ impl NameServersUpdateState {
 
 /// A builder for [`NameServersUpdateState`](crate::types::NameServersUpdateState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NameServersUpdateStateBuilder {
     pub(crate) code: ::std::option::Option<crate::types::NameServersUpdateStateCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -73,10 +71,7 @@ impl NameServersUpdateStateBuilder {
     /// <li> <p> <code>FAILED</code> - The name server record update failed.</p> </li>
     /// <li> <p> <code>STARTED</code> - The automatic name server record update started.</p> </li>
     /// </ul>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::NameServersUpdateStateCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::NameServersUpdateStateCode>) -> Self {
         self.code = input;
         self
     }

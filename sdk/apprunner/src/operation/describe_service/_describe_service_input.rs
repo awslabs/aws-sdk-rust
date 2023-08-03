@@ -22,9 +22,7 @@ impl DescribeServiceInput {
 
 /// A builder for [`DescribeServiceInput`](crate::operation::describe_service::DescribeServiceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServiceInputBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DescribeServiceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeServiceInput`](crate::operation::describe_service::DescribeServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_service::DescribeServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_service::DescribeServiceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_service::DescribeServiceInput {
             service_arn: self.service_arn,
         })

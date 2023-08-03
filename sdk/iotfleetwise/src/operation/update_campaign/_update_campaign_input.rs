@@ -57,9 +57,7 @@ impl UpdateCampaignInput {
 
 /// A builder for [`UpdateCampaignInput`](crate::operation::update_campaign::UpdateCampaignInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCampaignInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -101,10 +99,7 @@ impl UpdateCampaignInputBuilder {
     ///
     /// <p> A list of vehicle attributes to associate with a signal. </p>
     /// <p>Default: An empty array</p>
-    pub fn data_extra_dimensions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_extra_dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_extra_dimensions.unwrap_or_default();
         v.push(input.into());
         self.data_extra_dimensions = ::std::option::Option::Some(v);
@@ -112,18 +107,13 @@ impl UpdateCampaignInputBuilder {
     }
     /// <p> A list of vehicle attributes to associate with a signal. </p>
     /// <p>Default: An empty array</p>
-    pub fn set_data_extra_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_data_extra_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.data_extra_dimensions = input;
         self
     }
     /// <p> A list of vehicle attributes to associate with a signal. </p>
     /// <p>Default: An empty array</p>
-    pub fn get_data_extra_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_extra_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.data_extra_dimensions
     }
     /// <p> Specifies how to update a campaign. The action can be one of the following:</p>
@@ -144,10 +134,7 @@ impl UpdateCampaignInputBuilder {
     /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li>
     /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
     /// </ul>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateCampaignAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::UpdateCampaignAction>) -> Self {
         self.action = input;
         self
     }
@@ -164,10 +151,7 @@ impl UpdateCampaignInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCampaignInput`](crate::operation::update_campaign::UpdateCampaignInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_campaign::UpdateCampaignInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_campaign::UpdateCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_campaign::UpdateCampaignInput {
             name: self.name,
             description: self.description,

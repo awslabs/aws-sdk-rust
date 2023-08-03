@@ -48,10 +48,7 @@ impl ::std::fmt::Debug for InvokeEndpointOutput {
         let mut formatter = f.debug_struct("InvokeEndpointOutput");
         formatter.field("body", &"*** Sensitive Data Redacted ***");
         formatter.field("content_type", &self.content_type);
-        formatter.field(
-            "invoked_production_variant",
-            &self.invoked_production_variant,
-        );
+        formatter.field("invoked_production_variant", &self.invoked_production_variant);
         formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -115,18 +112,12 @@ impl InvokeEndpointOutputBuilder {
         &self.content_type
     }
     /// <p>Identifies the production variant that was invoked.</p>
-    pub fn invoked_production_variant(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invoked_production_variant(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invoked_production_variant = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies the production variant that was invoked.</p>
-    pub fn set_invoked_production_variant(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invoked_production_variant(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invoked_production_variant = input;
         self
     }
@@ -137,20 +128,14 @@ impl InvokeEndpointOutputBuilder {
     /// <p>Provides additional information in the response about the inference returned by a model hosted at an Amazon SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for example, to return an ID received in the <code>CustomAttributes</code> header of a request or other metadata that a service endpoint was programmed to produce. The value must consist of no more than 1024 visible US-ASCII characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute returned, the model must set the custom attribute to be included on the way back. </p>
     /// <p>The code in your model is responsible for setting or updating any custom attributes in the response. If your code does not set this value in the response, an empty value is returned. For example, if a custom attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your post-processing function.</p>
     /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
-    pub fn custom_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_attributes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides additional information in the response about the inference returned by a model hosted at an Amazon SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for example, to return an ID received in the <code>CustomAttributes</code> header of a request or other metadata that a service endpoint was programmed to produce. The value must consist of no more than 1024 visible US-ASCII characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute returned, the model must set the custom attribute to be included on the way back. </p>
     /// <p>The code in your model is responsible for setting or updating any custom attributes in the response. If your code does not set this value in the response, an empty value is returned. For example, if a custom attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your post-processing function.</p>
     /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
-    pub fn set_custom_attributes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_attributes = input;
         self
     }
@@ -185,10 +170,7 @@ impl ::std::fmt::Debug for InvokeEndpointOutputBuilder {
         let mut formatter = f.debug_struct("InvokeEndpointOutputBuilder");
         formatter.field("body", &"*** Sensitive Data Redacted ***");
         formatter.field("content_type", &self.content_type);
-        formatter.field(
-            "invoked_production_variant",
-            &self.invoked_production_variant,
-        );
+        formatter.field("invoked_production_variant", &self.invoked_production_variant);
         formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

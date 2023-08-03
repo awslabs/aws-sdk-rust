@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_agreements::ListAgreementsOutput::next_token): <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
     ///   - [`agreements(Option<Vec<ListedAgreement>>)`](crate::operation::list_agreements::ListAgreementsOutput::agreements): <p>Returns an array, where each item contains the details of an agreement.</p>
     /// - On failure, responds with [`SdkError<ListAgreementsError>`](crate::operation::list_agreements::ListAgreementsError)
-    pub fn list_agreements(
-        &self,
-    ) -> crate::operation::list_agreements::builders::ListAgreementsFluentBuilder {
-        crate::operation::list_agreements::builders::ListAgreementsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_agreements(&self) -> crate::operation::list_agreements::builders::ListAgreementsFluentBuilder {
+        crate::operation::list_agreements::builders::ListAgreementsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl FollowModeScheduleActionStartSettings {
 
 /// A builder for [`FollowModeScheduleActionStartSettings`](crate::types::FollowModeScheduleActionStartSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FollowModeScheduleActionStartSettingsBuilder {
     pub(crate) follow_point: ::std::option::Option<crate::types::FollowPoint>,
     pub(crate) reference_action_name: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl FollowModeScheduleActionStartSettingsBuilder {
         self
     }
     /// Identifies whether this action starts relative to the start or relative to the end of the reference action.
-    pub fn set_follow_point(
-        mut self,
-        input: ::std::option::Option<crate::types::FollowPoint>,
-    ) -> Self {
+    pub fn set_follow_point(mut self, input: ::std::option::Option<crate::types::FollowPoint>) -> Self {
         self.follow_point = input;
         self
     }
@@ -56,18 +51,12 @@ impl FollowModeScheduleActionStartSettingsBuilder {
         &self.follow_point
     }
     /// The action name of another action that this one refers to.
-    pub fn reference_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The action name of another action that this one refers to.
-    pub fn set_reference_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_action_name = input;
         self
     }

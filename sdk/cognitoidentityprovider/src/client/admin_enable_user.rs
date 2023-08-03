@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`username(impl ::std::convert::Into<String>)`](crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder::set_username): <p>The user name of the user you want to enable.</p>
     /// - On success, responds with [`AdminEnableUserOutput`](crate::operation::admin_enable_user::AdminEnableUserOutput)
     /// - On failure, responds with [`SdkError<AdminEnableUserError>`](crate::operation::admin_enable_user::AdminEnableUserError)
-    pub fn admin_enable_user(
-        &self,
-    ) -> crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder {
-        crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn admin_enable_user(&self) -> crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder {
+        crate::operation::admin_enable_user::builders::AdminEnableUserFluentBuilder::new(self.handle.clone())
     }
 }

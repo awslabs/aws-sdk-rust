@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetObjectLockConfigurationOutput`](crate::operation::get_object_lock_configuration::GetObjectLockConfigurationOutput) with field(s):
     ///   - [`object_lock_configuration(Option<ObjectLockConfiguration>)`](crate::operation::get_object_lock_configuration::GetObjectLockConfigurationOutput::object_lock_configuration): <p>The specified bucket's Object Lock configuration.</p>
     /// - On failure, responds with [`SdkError<GetObjectLockConfigurationError>`](crate::operation::get_object_lock_configuration::GetObjectLockConfigurationError)
-    pub fn get_object_lock_configuration(&self) -> crate::operation::get_object_lock_configuration::builders::GetObjectLockConfigurationFluentBuilder{
+    pub fn get_object_lock_configuration(
+        &self,
+    ) -> crate::operation::get_object_lock_configuration::builders::GetObjectLockConfigurationFluentBuilder {
         crate::operation::get_object_lock_configuration::builders::GetObjectLockConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

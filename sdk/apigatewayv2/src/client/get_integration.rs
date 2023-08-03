@@ -27,11 +27,7 @@ impl super::Client {
     ///   - [`timeout_in_millis(Option<i32>)`](crate::operation::get_integration::GetIntegrationOutput::timeout_in_millis): <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
     ///   - [`tls_config(Option<TlsConfig>)`](crate::operation::get_integration::GetIntegrationOutput::tls_config): <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
     /// - On failure, responds with [`SdkError<GetIntegrationError>`](crate::operation::get_integration::GetIntegrationError)
-    pub fn get_integration(
-        &self,
-    ) -> crate::operation::get_integration::builders::GetIntegrationFluentBuilder {
-        crate::operation::get_integration::builders::GetIntegrationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_integration(&self) -> crate::operation::get_integration::builders::GetIntegrationFluentBuilder {
+        crate::operation::get_integration::builders::GetIntegrationFluentBuilder::new(self.handle.clone())
     }
 }

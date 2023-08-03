@@ -50,9 +50,7 @@ impl DescribeTapesInput {
 
 /// A builder for [`DescribeTapesInput`](crate::operation::describe_tapes::DescribeTapesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTapesInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tape_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -86,10 +84,7 @@ impl DescribeTapesInputBuilder {
         self
     }
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the specified gateway.</p>
-    pub fn set_tape_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tape_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tape_ar_ns = input;
         self
     }
@@ -137,10 +132,7 @@ impl DescribeTapesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTapesInput`](crate::operation::describe_tapes::DescribeTapesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_tapes::DescribeTapesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_tapes::DescribeTapesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tapes::DescribeTapesInput {
             gateway_arn: self.gateway_arn,
             tape_ar_ns: self.tape_ar_ns,

@@ -14,18 +14,13 @@ pub struct UpdateModelPackageInput {
     pub approval_description: ::std::option::Option<::std::string::String>,
     /// <p>The metadata properties associated with the model package versions.</p>
     #[doc(hidden)]
-    pub customer_metadata_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The metadata properties associated with the model package versions to remove.</p>
     #[doc(hidden)]
-    pub customer_metadata_properties_to_remove:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub customer_metadata_properties_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
     #[doc(hidden)]
-    pub additional_inference_specifications_to_add: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>,
-    >,
+    pub additional_inference_specifications_to_add: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
 }
 impl UpdateModelPackageInput {
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
@@ -33,9 +28,7 @@ impl UpdateModelPackageInput {
         self.model_package_arn.as_deref()
     }
     /// <p>The approval status of the model.</p>
-    pub fn model_approval_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
+    pub fn model_approval_status(&self) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
         self.model_approval_status.as_ref()
     }
     /// <p>A description for the approval status of the model.</p>
@@ -43,66 +36,45 @@ impl UpdateModelPackageInput {
         self.approval_description.as_deref()
     }
     /// <p>The metadata properties associated with the model package versions.</p>
-    pub fn customer_metadata_properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn customer_metadata_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.customer_metadata_properties.as_ref()
     }
     /// <p>The metadata properties associated with the model package versions to remove.</p>
-    pub fn customer_metadata_properties_to_remove(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn customer_metadata_properties_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.customer_metadata_properties_to_remove.as_deref()
     }
     /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
-    pub fn additional_inference_specifications_to_add(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdditionalInferenceSpecificationDefinition]> {
+    pub fn additional_inference_specifications_to_add(&self) -> ::std::option::Option<&[crate::types::AdditionalInferenceSpecificationDefinition]> {
         self.additional_inference_specifications_to_add.as_deref()
     }
 }
 impl UpdateModelPackageInput {
     /// Creates a new builder-style object to manufacture [`UpdateModelPackageInput`](crate::operation::update_model_package::UpdateModelPackageInput).
-    pub fn builder(
-    ) -> crate::operation::update_model_package::builders::UpdateModelPackageInputBuilder {
+    pub fn builder() -> crate::operation::update_model_package::builders::UpdateModelPackageInputBuilder {
         crate::operation::update_model_package::builders::UpdateModelPackageInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateModelPackageInput`](crate::operation::update_model_package::UpdateModelPackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateModelPackageInputBuilder {
     pub(crate) model_package_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
     pub(crate) approval_description: ::std::option::Option<::std::string::String>,
-    pub(crate) customer_metadata_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) customer_metadata_properties_to_remove:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) additional_inference_specifications_to_add: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>,
-    >,
+    pub(crate) customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) customer_metadata_properties_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) additional_inference_specifications_to_add:
+        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
 }
 impl UpdateModelPackageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    pub fn model_package_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    pub fn set_model_package_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_arn = input;
         self
     }
@@ -116,32 +88,21 @@ impl UpdateModelPackageInputBuilder {
         self
     }
     /// <p>The approval status of the model.</p>
-    pub fn set_model_approval_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelApprovalStatus>,
-    ) -> Self {
+    pub fn set_model_approval_status(mut self, input: ::std::option::Option<crate::types::ModelApprovalStatus>) -> Self {
         self.model_approval_status = input;
         self
     }
     /// <p>The approval status of the model.</p>
-    pub fn get_model_approval_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
+    pub fn get_model_approval_status(&self) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
         &self.model_approval_status
     }
     /// <p>A description for the approval status of the model.</p>
-    pub fn approval_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the approval status of the model.</p>
-    pub fn set_approval_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_description = input;
         self
     }
@@ -167,9 +128,7 @@ impl UpdateModelPackageInputBuilder {
     /// <p>The metadata properties associated with the model package versions.</p>
     pub fn set_customer_metadata_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.customer_metadata_properties = input;
         self
@@ -177,9 +136,7 @@ impl UpdateModelPackageInputBuilder {
     /// <p>The metadata properties associated with the model package versions.</p>
     pub fn get_customer_metadata_properties(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.customer_metadata_properties
     }
     /// Appends an item to `customer_metadata_properties_to_remove`.
@@ -187,29 +144,19 @@ impl UpdateModelPackageInputBuilder {
     /// To override the contents of this collection use [`set_customer_metadata_properties_to_remove`](Self::set_customer_metadata_properties_to_remove).
     ///
     /// <p>The metadata properties associated with the model package versions to remove.</p>
-    pub fn customer_metadata_properties_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .customer_metadata_properties_to_remove
-            .unwrap_or_default();
+    pub fn customer_metadata_properties_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.customer_metadata_properties_to_remove.unwrap_or_default();
         v.push(input.into());
         self.customer_metadata_properties_to_remove = ::std::option::Option::Some(v);
         self
     }
     /// <p>The metadata properties associated with the model package versions to remove.</p>
-    pub fn set_customer_metadata_properties_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_customer_metadata_properties_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.customer_metadata_properties_to_remove = input;
         self
     }
     /// <p>The metadata properties associated with the model package versions to remove.</p>
-    pub fn get_customer_metadata_properties_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_customer_metadata_properties_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.customer_metadata_properties_to_remove
     }
     /// Appends an item to `additional_inference_specifications_to_add`.
@@ -217,13 +164,8 @@ impl UpdateModelPackageInputBuilder {
     /// To override the contents of this collection use [`set_additional_inference_specifications_to_add`](Self::set_additional_inference_specifications_to_add).
     ///
     /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
-    pub fn additional_inference_specifications_to_add(
-        mut self,
-        input: crate::types::AdditionalInferenceSpecificationDefinition,
-    ) -> Self {
-        let mut v = self
-            .additional_inference_specifications_to_add
-            .unwrap_or_default();
+    pub fn additional_inference_specifications_to_add(mut self, input: crate::types::AdditionalInferenceSpecificationDefinition) -> Self {
+        let mut v = self.additional_inference_specifications_to_add.unwrap_or_default();
         v.push(input);
         self.additional_inference_specifications_to_add = ::std::option::Option::Some(v);
         self
@@ -231,9 +173,7 @@ impl UpdateModelPackageInputBuilder {
     /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
     pub fn set_additional_inference_specifications_to_add(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     ) -> Self {
         self.additional_inference_specifications_to_add = input;
         self
@@ -241,28 +181,20 @@ impl UpdateModelPackageInputBuilder {
     /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
     pub fn get_additional_inference_specifications_to_add(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>> {
         &self.additional_inference_specifications_to_add
     }
     /// Consumes the builder and constructs a [`UpdateModelPackageInput`](crate::operation::update_model_package::UpdateModelPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_model_package::UpdateModelPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_model_package::UpdateModelPackageInput {
-                model_package_arn: self.model_package_arn,
-                model_approval_status: self.model_approval_status,
-                approval_description: self.approval_description,
-                customer_metadata_properties: self.customer_metadata_properties,
-                customer_metadata_properties_to_remove: self.customer_metadata_properties_to_remove,
-                additional_inference_specifications_to_add: self
-                    .additional_inference_specifications_to_add,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_model_package::UpdateModelPackageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_model_package::UpdateModelPackageInput {
+            model_package_arn: self.model_package_arn,
+            model_approval_status: self.model_approval_status,
+            approval_description: self.approval_description,
+            customer_metadata_properties: self.customer_metadata_properties,
+            customer_metadata_properties_to_remove: self.customer_metadata_properties_to_remove,
+            additional_inference_specifications_to_add: self.additional_inference_specifications_to_add,
+        })
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`parameters(Option<Vec<ParameterMetadata>>)`](crate::operation::describe_parameters::DescribeParametersOutput::parameters): <p>Parameters returned by the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_parameters::DescribeParametersOutput::next_token): <p>The token to use when requesting the next set of items.</p>
     /// - On failure, responds with [`SdkError<DescribeParametersError>`](crate::operation::describe_parameters::DescribeParametersError)
-    pub fn describe_parameters(
-        &self,
-    ) -> crate::operation::describe_parameters::builders::DescribeParametersFluentBuilder {
-        crate::operation::describe_parameters::builders::DescribeParametersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_parameters(&self) -> crate::operation::describe_parameters::builders::DescribeParametersFluentBuilder {
+        crate::operation::describe_parameters::builders::DescribeParametersFluentBuilder::new(self.handle.clone())
     }
 }

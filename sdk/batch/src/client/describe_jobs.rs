@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeJobsOutput`](crate::operation::describe_jobs::DescribeJobsOutput) with field(s):
     ///   - [`jobs(Option<Vec<JobDetail>>)`](crate::operation::describe_jobs::DescribeJobsOutput::jobs): <p>The list of jobs.</p>
     /// - On failure, responds with [`SdkError<DescribeJobsError>`](crate::operation::describe_jobs::DescribeJobsError)
-    pub fn describe_jobs(
-        &self,
-    ) -> crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder {
-        crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_jobs(&self) -> crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder {
+        crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::new(self.handle.clone())
     }
 }

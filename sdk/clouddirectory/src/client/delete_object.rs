@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`object_reference(ObjectReference)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::operation::delete_object::builders::DeleteObjectFluentBuilder::set_object_reference): <p>A reference that identifies the object.</p>
     /// - On success, responds with [`DeleteObjectOutput`](crate::operation::delete_object::DeleteObjectOutput)
     /// - On failure, responds with [`SdkError<DeleteObjectError>`](crate::operation::delete_object::DeleteObjectError)
-    pub fn delete_object(
-        &self,
-    ) -> crate::operation::delete_object::builders::DeleteObjectFluentBuilder {
-        crate::operation::delete_object::builders::DeleteObjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_object(&self) -> crate::operation::delete_object::builders::DeleteObjectFluentBuilder {
+        crate::operation::delete_object::builders::DeleteObjectFluentBuilder::new(self.handle.clone())
     }
 }

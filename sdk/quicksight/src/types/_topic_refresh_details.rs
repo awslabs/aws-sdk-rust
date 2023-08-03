@@ -37,9 +37,7 @@ impl TopicRefreshDetails {
 
 /// A builder for [`TopicRefreshDetails`](crate::types::TopicRefreshDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopicRefreshDetailsBuilder {
     pub(crate) refresh_arn: ::std::option::Option<::std::string::String>,
     pub(crate) refresh_id: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl TopicRefreshDetailsBuilder {
         self
     }
     /// <p>The status of the refresh job that indicates whether the job is still running, completed successfully, or failed.</p>
-    pub fn set_refresh_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRefreshStatus>,
-    ) -> Self {
+    pub fn set_refresh_status(mut self, input: ::std::option::Option<crate::types::TopicRefreshStatus>) -> Self {
         self.refresh_status = input;
         self
     }

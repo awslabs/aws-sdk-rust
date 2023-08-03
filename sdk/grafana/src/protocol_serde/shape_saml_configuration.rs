@@ -12,10 +12,7 @@ pub fn ser_saml_configuration(
     if let Some(var_3) = &input.assertion_attributes {
         #[allow(unused_mut)]
         let mut object_4 = object.key("assertionAttributes").start_object();
-        crate::protocol_serde::shape_assertion_attributes::ser_assertion_attributes(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_assertion_attributes::ser_assertion_attributes(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.role_values {
@@ -44,17 +41,9 @@ pub fn ser_saml_configuration(
 
 pub(crate) fn de_saml_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SamlConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SamlConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -64,56 +53,42 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "idpMetadata" => {
-                            builder = builder.set_idp_metadata(
-                                crate::protocol_serde::shape_idp_metadata::de_idp_metadata(tokens)?,
-                            );
+                            builder = builder.set_idp_metadata(crate::protocol_serde::shape_idp_metadata::de_idp_metadata(tokens)?);
                         }
                         "assertionAttributes" => {
-                            builder = builder.set_assertion_attributes(
-                                    crate::protocol_serde::shape_assertion_attributes::de_assertion_attributes(tokens)?
-                                );
+                            builder =
+                                builder.set_assertion_attributes(crate::protocol_serde::shape_assertion_attributes::de_assertion_attributes(tokens)?);
                         }
                         "roleValues" => {
-                            builder = builder.set_role_values(
-                                crate::protocol_serde::shape_role_values::de_role_values(tokens)?,
-                            );
+                            builder = builder.set_role_values(crate::protocol_serde::shape_role_values::de_role_values(tokens)?);
                         }
                         "allowedOrganizations" => {
-                            builder = builder.set_allowed_organizations(
-                                    crate::protocol_serde::shape_allowed_organizations::de_allowed_organizations(tokens)?
-                                );
+                            builder = builder
+                                .set_allowed_organizations(crate::protocol_serde::shape_allowed_organizations::de_allowed_organizations(tokens)?);
                         }
                         "loginValidityDuration" => {
                             builder = builder.set_login_validity_duration(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -81,16 +81,14 @@ impl ::aws_http::request_id::RequestId for DescribeManagedRuleGroupOutput {
 }
 impl DescribeManagedRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeManagedRuleGroupOutput`](crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupOutput).
-    pub fn builder() -> crate::operation::describe_managed_rule_group::builders::DescribeManagedRuleGroupOutputBuilder{
+    pub fn builder() -> crate::operation::describe_managed_rule_group::builders::DescribeManagedRuleGroupOutputBuilder {
         crate::operation::describe_managed_rule_group::builders::DescribeManagedRuleGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeManagedRuleGroupOutput`](crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeManagedRuleGroupOutputBuilder {
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
@@ -117,18 +115,12 @@ impl DescribeManagedRuleGroupOutputBuilder {
         &self.version_name
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -165,10 +157,7 @@ impl DescribeManagedRuleGroupOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>) -> Self {
         self.rules = input;
         self
     }
@@ -185,10 +174,7 @@ impl DescribeManagedRuleGroupOutputBuilder {
     /// </vendor></code>:</p> </li>
     /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
-    pub fn label_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_namespace = ::std::option::Option::Some(input.into());
         self
     }
@@ -201,10 +187,7 @@ impl DescribeManagedRuleGroupOutputBuilder {
     /// </vendor></code>:</p> </li>
     /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
-    pub fn set_label_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_namespace = input;
         self
     }
@@ -232,17 +215,12 @@ impl DescribeManagedRuleGroupOutputBuilder {
         self
     }
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    pub fn set_available_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
-    ) -> Self {
+    pub fn set_available_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>) -> Self {
         self.available_labels = input;
         self
     }
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    pub fn get_available_labels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
+    pub fn get_available_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
         &self.available_labels
     }
     /// Appends an item to `consumed_labels`.
@@ -257,17 +235,12 @@ impl DescribeManagedRuleGroupOutputBuilder {
         self
     }
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
-    pub fn set_consumed_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
-    ) -> Self {
+    pub fn set_consumed_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>) -> Self {
         self.consumed_labels = input;
         self
     }
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
-    pub fn get_consumed_labels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
+    pub fn get_consumed_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
         &self.consumed_labels
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -280,9 +253,7 @@ impl DescribeManagedRuleGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeManagedRuleGroupOutput`](crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupOutput {
+    pub fn build(self) -> crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupOutput {
         crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupOutput {
             version_name: self.version_name,
             sns_topic_arn: self.sns_topic_arn,

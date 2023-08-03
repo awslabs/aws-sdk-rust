@@ -23,9 +23,7 @@ impl PatchFilterGroup {
 
 /// A builder for [`PatchFilterGroup`](crate::types::PatchFilterGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PatchFilterGroupBuilder {
     pub(crate) patch_filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>>,
 }
@@ -42,17 +40,12 @@ impl PatchFilterGroupBuilder {
         self
     }
     /// <p>The set of patch filters that make up the group.</p>
-    pub fn set_patch_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>>,
-    ) -> Self {
+    pub fn set_patch_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>>) -> Self {
         self.patch_filters = input;
         self
     }
     /// <p>The set of patch filters that make up the group.</p>
-    pub fn get_patch_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>> {
+    pub fn get_patch_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>> {
         &self.patch_filters
     }
     /// Consumes the builder and constructs a [`PatchFilterGroup`](crate::types::PatchFilterGroup).

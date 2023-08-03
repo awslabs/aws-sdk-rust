@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ScalingActivityStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for ScalingActivityStatusCode {
             "Pending" => ScalingActivityStatusCode::Pending,
             "Successful" => ScalingActivityStatusCode::Successful,
             "Unfulfilled" => ScalingActivityStatusCode::Unfulfilled,
-            other => ScalingActivityStatusCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ScalingActivityStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl ScalingActivityStatusCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Failed",
-            "InProgress",
-            "Overridden",
-            "Pending",
-            "Successful",
-            "Unfulfilled",
-        ]
+        &["Failed", "InProgress", "Overridden", "Pending", "Successful", "Unfulfilled"]
     }
 }
 impl ::std::convert::AsRef<str> for ScalingActivityStatusCode {

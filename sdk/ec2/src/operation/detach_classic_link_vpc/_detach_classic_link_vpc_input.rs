@@ -29,17 +29,14 @@ impl DetachClassicLinkVpcInput {
 }
 impl DetachClassicLinkVpcInput {
     /// Creates a new builder-style object to manufacture [`DetachClassicLinkVpcInput`](crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput).
-    pub fn builder(
-    ) -> crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcInputBuilder {
+    pub fn builder() -> crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcInputBuilder {
         crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcInputBuilder::default()
     }
 }
 
 /// A builder for [`DetachClassicLinkVpcInput`](crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachClassicLinkVpcInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl DetachClassicLinkVpcInputBuilder {
     /// Consumes the builder and constructs a [`DetachClassicLinkVpcInput`](crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput {
-                dry_run: self.dry_run,
-                instance_id: self.instance_id,
-                vpc_id: self.vpc_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput {
+            dry_run: self.dry_run,
+            instance_id: self.instance_id,
+            vpc_id: self.vpc_id,
+        })
     }
 }

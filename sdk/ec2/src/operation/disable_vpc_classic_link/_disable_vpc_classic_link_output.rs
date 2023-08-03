@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DisableVpcClassicLinkOutput {
 }
 impl DisableVpcClassicLinkOutput {
     /// Creates a new builder-style object to manufacture [`DisableVpcClassicLinkOutput`](crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkOutput).
-    pub fn builder(
-    ) -> crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkOutputBuilder {
         crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableVpcClassicLinkOutput`](crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableVpcClassicLinkOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

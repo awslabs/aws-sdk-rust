@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociateS3ResourcesOutput`](crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput) with field(s):
     ///   - [`failed_s3_resources(Option<Vec<FailedS3Resource>>)`](crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput::failed_s3_resources): <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
     /// - On failure, responds with [`SdkError<DisassociateS3ResourcesError>`](crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError)
-    pub fn disassociate_s3_resources(
-        &self,
-    ) -> crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesFluentBuilder
-    {
+    pub fn disassociate_s3_resources(&self) -> crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesFluentBuilder {
         crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesFluentBuilder::new(self.handle.clone())
     }
 }

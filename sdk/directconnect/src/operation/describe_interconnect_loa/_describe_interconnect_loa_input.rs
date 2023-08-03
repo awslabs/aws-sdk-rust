@@ -29,18 +29,14 @@ impl DescribeInterconnectLoaInput {
 }
 impl DescribeInterconnectLoaInput {
     /// Creates a new builder-style object to manufacture [`DescribeInterconnectLoaInput`](crate::operation::describe_interconnect_loa::DescribeInterconnectLoaInput).
-    pub fn builder(
-    ) -> crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaInputBuilder {
         crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInterconnectLoaInput`](crate::operation::describe_interconnect_loa::DescribeInterconnectLoaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInterconnectLoaInputBuilder {
     pub(crate) interconnect_id: ::std::option::Option<::std::string::String>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct DescribeInterconnectLoaInputBuilder {
 }
 impl DescribeInterconnectLoaInputBuilder {
     /// <p>The ID of the interconnect.</p>
-    pub fn interconnect_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interconnect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interconnect_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the interconnect.</p>
-    pub fn set_interconnect_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_interconnect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interconnect_id = input;
         self
     }
@@ -68,18 +58,12 @@ impl DescribeInterconnectLoaInputBuilder {
         &self.interconnect_id
     }
     /// <p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_name = input;
         self
     }
@@ -93,10 +77,7 @@ impl DescribeInterconnectLoaInputBuilder {
         self
     }
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
-    pub fn set_loa_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LoaContentType>,
-    ) -> Self {
+    pub fn set_loa_content_type(mut self, input: ::std::option::Option<crate::types::LoaContentType>) -> Self {
         self.loa_content_type = input;
         self
     }
@@ -111,12 +92,10 @@ impl DescribeInterconnectLoaInputBuilder {
         crate::operation::describe_interconnect_loa::DescribeInterconnectLoaInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_interconnect_loa::DescribeInterconnectLoaInput {
-                interconnect_id: self.interconnect_id,
-                provider_name: self.provider_name,
-                loa_content_type: self.loa_content_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_interconnect_loa::DescribeInterconnectLoaInput {
+            interconnect_id: self.interconnect_id,
+            provider_name: self.provider_name,
+            loa_content_type: self.loa_content_type,
+        })
     }
 }

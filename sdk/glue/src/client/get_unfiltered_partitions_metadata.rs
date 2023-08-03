@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`unfiltered_partitions(Option<Vec<UnfilteredPartition>>)`](crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput::unfiltered_partitions): <p>A list of requested partitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput::next_token): <p>A continuation token, if the returned list of partitions does not include the last one.</p>
     /// - On failure, responds with [`SdkError<GetUnfilteredPartitionsMetadataError>`](crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError)
-    pub fn get_unfiltered_partitions_metadata(&self) -> crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataFluentBuilder{
+    pub fn get_unfiltered_partitions_metadata(
+        &self,
+    ) -> crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataFluentBuilder {
         crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,26 +22,18 @@ impl StopTrainingJobInput {
 
 /// A builder for [`StopTrainingJobInput`](crate::operation::stop_training_job::StopTrainingJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopTrainingJobInputBuilder {
     pub(crate) training_job_name: ::std::option::Option<::std::string::String>,
 }
 impl StopTrainingJobInputBuilder {
     /// <p>The name of the training job to stop.</p>
-    pub fn training_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn training_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the training job to stop.</p>
-    pub fn set_training_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_training_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.training_job_name = input;
         self
     }
@@ -52,10 +44,7 @@ impl StopTrainingJobInputBuilder {
     /// Consumes the builder and constructs a [`StopTrainingJobInput`](crate::operation::stop_training_job::StopTrainingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_training_job::StopTrainingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::stop_training_job::StopTrainingJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_training_job::StopTrainingJobInput {
             training_job_name: self.training_job_name,
         })

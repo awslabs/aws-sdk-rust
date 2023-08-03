@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`resource_info_list(Option<Vec<ResourceInfo>>)`](crate::operation::list_resources::ListResourcesOutput::resource_info_list): <p>A summary of the data lake resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resources::ListResourcesOutput::next_token): <p>A continuation token, if this is not the first call to retrieve these resources.</p>
     /// - On failure, responds with [`SdkError<ListResourcesError>`](crate::operation::list_resources::ListResourcesError)
-    pub fn list_resources(
-        &self,
-    ) -> crate::operation::list_resources::builders::ListResourcesFluentBuilder {
-        crate::operation::list_resources::builders::ListResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resources(&self) -> crate::operation::list_resources::builders::ListResourcesFluentBuilder {
+        crate::operation::list_resources::builders::ListResourcesFluentBuilder::new(self.handle.clone())
     }
 }

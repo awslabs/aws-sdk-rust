@@ -26,7 +26,7 @@ impl GetLoggerDefinitionVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLoggerDefinitionVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_logger_definition_version::builders::GetLoggerDefinitionVersionInputBuilder,
+    inner: crate::operation::get_logger_definition_version::builders::GetLoggerDefinitionVersionInputBuilder,
 }
 impl GetLoggerDefinitionVersionFluentBuilder {
     /// Creates a new `GetLoggerDefinitionVersion`.
@@ -37,7 +37,7 @@ impl GetLoggerDefinitionVersionFluentBuilder {
         }
     }
     /// Access the GetLoggerDefinitionVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_logger_definition_version::builders::GetLoggerDefinitionVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_logger_definition_version::builders::GetLoggerDefinitionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetLoggerDefinitionVersionFluentBuilder {
             crate::operation::get_logger_definition_version::GetLoggerDefinitionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetLoggerDefinitionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetLoggerDefinitionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetLoggerDefinitionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetLoggerDefinitionVersionFluentBuilder {
             crate::operation::get_logger_definition_version::GetLoggerDefinitionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the logger definition.
-    pub fn logger_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logger_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logger_definition_id(input.into());
         self
     }
     /// The ID of the logger definition.
-    pub fn set_logger_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logger_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logger_definition_id(input);
         self
     }
@@ -141,25 +124,17 @@ impl GetLoggerDefinitionVersionFluentBuilder {
         self.inner.get_logger_definition_id()
     }
     /// The ID of the logger definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListLoggerDefinitionVersions'' requests. If the version is the last one that was associated with a logger definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn logger_definition_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logger_definition_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logger_definition_version_id(input.into());
         self
     }
     /// The ID of the logger definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListLoggerDefinitionVersions'' requests. If the version is the last one that was associated with a logger definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn set_logger_definition_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logger_definition_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logger_definition_version_id(input);
         self
     }
     /// The ID of the logger definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListLoggerDefinitionVersions'' requests. If the version is the last one that was associated with a logger definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn get_logger_definition_version_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_logger_definition_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_logger_definition_version_id()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.

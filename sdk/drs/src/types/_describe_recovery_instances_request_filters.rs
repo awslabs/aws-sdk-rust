@@ -30,12 +30,9 @@ impl DescribeRecoveryInstancesRequestFilters {
 
 /// A builder for [`DescribeRecoveryInstancesRequestFilters`](crate::types::DescribeRecoveryInstancesRequestFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecoveryInstancesRequestFiltersBuilder {
-    pub(crate) recovery_instance_i_ds:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) recovery_instance_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeRecoveryInstancesRequestFiltersBuilder {
@@ -44,27 +41,19 @@ impl DescribeRecoveryInstancesRequestFiltersBuilder {
     /// To override the contents of this collection use [`set_recovery_instance_i_ds`](Self::set_recovery_instance_i_ds).
     ///
     /// <p>An array of Recovery Instance IDs that should be returned. An empty array means all Recovery Instances.</p>
-    pub fn recovery_instance_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_instance_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recovery_instance_i_ds.unwrap_or_default();
         v.push(input.into());
         self.recovery_instance_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of Recovery Instance IDs that should be returned. An empty array means all Recovery Instances.</p>
-    pub fn set_recovery_instance_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_recovery_instance_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.recovery_instance_i_ds = input;
         self
     }
     /// <p>An array of Recovery Instance IDs that should be returned. An empty array means all Recovery Instances.</p>
-    pub fn get_recovery_instance_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recovery_instance_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.recovery_instance_i_ds
     }
     /// Appends an item to `source_server_i_ds`.
@@ -72,27 +61,19 @@ impl DescribeRecoveryInstancesRequestFiltersBuilder {
     /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
     ///
     /// <p>An array of Source Server IDs for which associated Recovery Instances should be returned.</p>
-    pub fn source_server_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_server_i_ds.unwrap_or_default();
         v.push(input.into());
         self.source_server_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of Source Server IDs for which associated Recovery Instances should be returned.</p>
-    pub fn set_source_server_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_server_i_ds = input;
         self
     }
     /// <p>An array of Source Server IDs for which associated Recovery Instances should be returned.</p>
-    pub fn get_source_server_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_server_i_ds
     }
     /// Consumes the builder and constructs a [`DescribeRecoveryInstancesRequestFilters`](crate::types::DescribeRecoveryInstancesRequestFilters).

@@ -14,7 +14,11 @@ impl super::Client {
     ///   - [`associated_resources(Option<Vec<ListResourcesAssociatedToCustomLineItemResponseElement>>)`](crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput::associated_resources): <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput::next_token): <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
     /// - On failure, responds with [`SdkError<ListResourcesAssociatedToCustomLineItemError>`](crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError)
-    pub fn list_resources_associated_to_custom_line_item(&self) -> crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemFluentBuilder{
-        crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemFluentBuilder::new(self.handle.clone())
+    pub fn list_resources_associated_to_custom_line_item(
+        &self,
+    ) -> crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemFluentBuilder {
+        crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

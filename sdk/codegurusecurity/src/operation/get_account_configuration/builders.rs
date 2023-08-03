@@ -26,8 +26,7 @@ impl GetAccountConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccountConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_account_configuration::builders::GetAccountConfigurationInputBuilder,
+    inner: crate::operation::get_account_configuration::builders::GetAccountConfigurationInputBuilder,
 }
 impl GetAccountConfigurationFluentBuilder {
     /// Creates a new `GetAccountConfiguration`.
@@ -38,10 +37,7 @@ impl GetAccountConfigurationFluentBuilder {
         }
     }
     /// Access the GetAccountConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_account_configuration::builders::GetAccountConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_account_configuration::builders::GetAccountConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetAccountConfigurationFluentBuilder {
             crate::operation::get_account_configuration::GetAccountConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_configuration::GetAccountConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_configuration::GetAccountConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetAccountConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetAccountConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_account_configuration::GetAccountConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_configuration::GetAccountConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_configuration::GetAccountConfigurationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetAccountConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_account_configuration::GetAccountConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_configuration::GetAccountConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_configuration::GetAccountConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetAccountConfigurationFluentBuilder {
             crate::operation::get_account_configuration::GetAccountConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_configuration::GetAccountConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_configuration::GetAccountConfigurationError>,
     > {
         self.customize_middleware().await
     }

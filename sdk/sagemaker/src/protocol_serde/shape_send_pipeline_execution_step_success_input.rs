@@ -12,10 +12,7 @@ pub fn ser_send_pipeline_execution_step_success_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_output_parameter::ser_output_parameter(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_output_parameter::ser_output_parameter(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

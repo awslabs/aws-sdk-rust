@@ -30,17 +30,14 @@ impl ListGroundStationsInput {
 }
 impl ListGroundStationsInput {
     /// Creates a new builder-style object to manufacture [`ListGroundStationsInput`](crate::operation::list_ground_stations::ListGroundStationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_ground_stations::builders::ListGroundStationsInputBuilder {
+    pub fn builder() -> crate::operation::list_ground_stations::builders::ListGroundStationsInputBuilder {
         crate::operation::list_ground_stations::builders::ListGroundStationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroundStationsInput`](crate::operation::list_ground_stations::ListGroundStationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroundStationsInputBuilder {
     pub(crate) satellite_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,16 +89,11 @@ impl ListGroundStationsInputBuilder {
     /// Consumes the builder and constructs a [`ListGroundStationsInput`](crate::operation::list_ground_stations::ListGroundStationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_ground_stations::ListGroundStationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_ground_stations::ListGroundStationsInput {
-                satellite_id: self.satellite_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_ground_stations::ListGroundStationsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_ground_stations::ListGroundStationsInput {
+            satellite_id: self.satellite_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

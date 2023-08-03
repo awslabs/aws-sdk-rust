@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeSubscriptionOutput {
 }
 impl DescribeSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSubscriptionOutput`](crate::operation::describe_subscription::DescribeSubscriptionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_subscription::builders::DescribeSubscriptionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_subscription::builders::DescribeSubscriptionOutputBuilder {
         crate::operation::describe_subscription::builders::DescribeSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSubscriptionOutput`](crate::operation::describe_subscription::DescribeSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSubscriptionOutputBuilder {
     pub(crate) subscription: ::std::option::Option<crate::types::Subscription>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeSubscriptionOutputBuilder {
         self
     }
     /// <p>The Shield Advanced subscription details for an account.</p>
-    pub fn set_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::Subscription>,
-    ) -> Self {
+    pub fn set_subscription(mut self, input: ::std::option::Option<crate::types::Subscription>) -> Self {
         self.subscription = input;
         self
     }

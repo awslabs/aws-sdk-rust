@@ -73,9 +73,7 @@ impl CopyBackupInput {
 
 /// A builder for [`CopyBackupInput`](crate::operation::copy_backup::CopyBackupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyBackupInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) source_backup_id: ::std::option::Option<::std::string::String>,
@@ -86,18 +84,12 @@ pub struct CopyBackupInputBuilder {
 }
 impl CopyBackupInputBuilder {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -106,18 +98,12 @@ impl CopyBackupInputBuilder {
         &self.client_request_token
     }
     /// <p>The ID of the source backup. Specifies the ID of the backup that's being copied.</p>
-    pub fn source_backup_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_backup_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the source backup. Specifies the ID of the backup that's being copied.</p>
-    pub fn set_source_backup_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_backup_id = input;
         self
     }
@@ -126,18 +112,12 @@ impl CopyBackupInputBuilder {
         &self.source_backup_id
     }
     /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which the backup is being copied. The source and destination Regions must be in the same Amazon Web Services partition. If you don't specify a Region, <code>SourceRegion</code> defaults to the Region where the request is sent from (in-Region copy).</p>
-    pub fn source_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which the backup is being copied. The source and destination Regions must be in the same Amazon Web Services partition. If you don't specify a Region, <code>SourceRegion</code> defaults to the Region where the request is sent from (in-Region copy).</p>
-    pub fn set_source_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_region = input;
         self
     }
@@ -209,10 +189,7 @@ impl CopyBackupInputBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -221,12 +198,7 @@ impl CopyBackupInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CopyBackupInput`](crate::operation::copy_backup::CopyBackupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::copy_backup::CopyBackupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_backup::CopyBackupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_backup::CopyBackupInput {
             client_request_token: self.client_request_token,
             source_backup_id: self.source_backup_id,

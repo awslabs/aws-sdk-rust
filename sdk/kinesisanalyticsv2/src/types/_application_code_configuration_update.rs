@@ -13,9 +13,7 @@ pub struct ApplicationCodeConfigurationUpdate {
 }
 impl ApplicationCodeConfigurationUpdate {
     /// <p>Describes updates to the code content type.</p>
-    pub fn code_content_type_update(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CodeContentType> {
+    pub fn code_content_type_update(&self) -> ::std::option::Option<&crate::types::CodeContentType> {
         self.code_content_type_update.as_ref()
     }
     /// <p>Describes updates to the code content of an application.</p>
@@ -32,9 +30,7 @@ impl ApplicationCodeConfigurationUpdate {
 
 /// A builder for [`ApplicationCodeConfigurationUpdate`](crate::types::ApplicationCodeConfigurationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationCodeConfigurationUpdateBuilder {
     pub(crate) code_content_type_update: ::std::option::Option<crate::types::CodeContentType>,
     pub(crate) code_content_update: ::std::option::Option<crate::types::CodeContentUpdate>,
@@ -46,17 +42,12 @@ impl ApplicationCodeConfigurationUpdateBuilder {
         self
     }
     /// <p>Describes updates to the code content type.</p>
-    pub fn set_code_content_type_update(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeContentType>,
-    ) -> Self {
+    pub fn set_code_content_type_update(mut self, input: ::std::option::Option<crate::types::CodeContentType>) -> Self {
         self.code_content_type_update = input;
         self
     }
     /// <p>Describes updates to the code content type.</p>
-    pub fn get_code_content_type_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodeContentType> {
+    pub fn get_code_content_type_update(&self) -> &::std::option::Option<crate::types::CodeContentType> {
         &self.code_content_type_update
     }
     /// <p>Describes updates to the code content of an application.</p>
@@ -65,17 +56,12 @@ impl ApplicationCodeConfigurationUpdateBuilder {
         self
     }
     /// <p>Describes updates to the code content of an application.</p>
-    pub fn set_code_content_update(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeContentUpdate>,
-    ) -> Self {
+    pub fn set_code_content_update(mut self, input: ::std::option::Option<crate::types::CodeContentUpdate>) -> Self {
         self.code_content_update = input;
         self
     }
     /// <p>Describes updates to the code content of an application.</p>
-    pub fn get_code_content_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodeContentUpdate> {
+    pub fn get_code_content_update(&self) -> &::std::option::Option<crate::types::CodeContentUpdate> {
         &self.code_content_update
     }
     /// Consumes the builder and constructs a [`ApplicationCodeConfigurationUpdate`](crate::types::ApplicationCodeConfigurationUpdate).

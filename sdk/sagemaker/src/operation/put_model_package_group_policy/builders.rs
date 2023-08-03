@@ -26,7 +26,7 @@ impl PutModelPackageGroupPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutModelPackageGroupPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_model_package_group_policy::builders::PutModelPackageGroupPolicyInputBuilder,
+    inner: crate::operation::put_model_package_group_policy::builders::PutModelPackageGroupPolicyInputBuilder,
 }
 impl PutModelPackageGroupPolicyFluentBuilder {
     /// Creates a new `PutModelPackageGroupPolicy`.
@@ -37,7 +37,7 @@ impl PutModelPackageGroupPolicyFluentBuilder {
         }
     }
     /// Access the PutModelPackageGroupPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_model_package_group_policy::builders::PutModelPackageGroupPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_model_package_group_policy::builders::PutModelPackageGroupPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutModelPackageGroupPolicyFluentBuilder {
             crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutModelPackageGroupPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutModelPackageGroupPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutModelPackageGroupPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl PutModelPackageGroupPolicyFluentBuilder {
             crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the model group to add a resource policy to.</p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_package_group_name(input.into());
         self
     }
     /// <p>The name of the model group to add a resource policy to.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_package_group_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl PutModelPackageGroupPolicyFluentBuilder {
         self.inner.get_model_package_group_name()
     }
     /// <p>The resource policy for the model group.</p>
-    pub fn resource_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_policy(input.into());
         self
     }
     /// <p>The resource policy for the model group.</p>
-    pub fn set_resource_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_policy(input);
         self
     }

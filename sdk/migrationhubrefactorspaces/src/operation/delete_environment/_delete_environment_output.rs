@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for DeleteEnvironmentOutput {
 }
 impl DeleteEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder {
         crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -98,18 +95,12 @@ impl DeleteEnvironmentOutputBuilder {
         &self.arn
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -123,10 +114,7 @@ impl DeleteEnvironmentOutputBuilder {
         self
     }
     /// <p>The current state of the environment. </p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::EnvironmentState>) -> Self {
         self.state = input;
         self
     }
@@ -140,10 +128,7 @@ impl DeleteEnvironmentOutputBuilder {
         self
     }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

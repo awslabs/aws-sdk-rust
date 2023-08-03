@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDomainOutput`](crate::operation::update_domain::UpdateDomainOutput) with field(s):
     ///   - [`domain_arn(Option<String>)`](crate::operation::update_domain::UpdateDomainOutput::domain_arn): <p>The Amazon Resource Name (ARN) of the domain.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainError>`](crate::operation::update_domain::UpdateDomainError)
-    pub fn update_domain(
-        &self,
-    ) -> crate::operation::update_domain::builders::UpdateDomainFluentBuilder {
-        crate::operation::update_domain::builders::UpdateDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_domain(&self) -> crate::operation::update_domain::builders::UpdateDomainFluentBuilder {
+        crate::operation::update_domain::builders::UpdateDomainFluentBuilder::new(self.handle.clone())
     }
 }

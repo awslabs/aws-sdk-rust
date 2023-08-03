@@ -23,9 +23,7 @@ impl DocumentServiceWarning {
 
 /// A builder for [`DocumentServiceWarning`](crate::types::DocumentServiceWarning).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentServiceWarningBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl DocumentServiceWarningBuilder {
     }
     /// Consumes the builder and constructs a [`DocumentServiceWarning`](crate::types::DocumentServiceWarning).
     pub fn build(self) -> crate::types::DocumentServiceWarning {
-        crate::types::DocumentServiceWarning {
-            message: self.message,
-        }
+        crate::types::DocumentServiceWarning { message: self.message }
     }
 }

@@ -15,10 +15,7 @@ pub fn ser_update_flywheel_input(
     if let Some(var_4) = &input.data_security_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("DataSecurityConfig").start_object();
-        crate::protocol_serde::shape_update_data_security_config::ser_update_data_security_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_update_data_security_config::ser_update_data_security_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

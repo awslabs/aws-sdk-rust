@@ -22,18 +22,14 @@ impl DeleteDeviceUsageDataInput {
 }
 impl DeleteDeviceUsageDataInput {
     /// Creates a new builder-style object to manufacture [`DeleteDeviceUsageDataInput`](crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput).
-    pub fn builder(
-    ) -> crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataInputBuilder {
         crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDeviceUsageDataInput`](crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDeviceUsageDataInputBuilder {
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_usage_type: ::std::option::Option<crate::types::DeviceUsageType>,
@@ -59,10 +55,7 @@ impl DeleteDeviceUsageDataInputBuilder {
         self
     }
     /// <p>The type of usage data to delete.</p>
-    pub fn set_device_usage_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceUsageType>,
-    ) -> Self {
+    pub fn set_device_usage_type(mut self, input: ::std::option::Option<crate::types::DeviceUsageType>) -> Self {
         self.device_usage_type = input;
         self
     }
@@ -73,15 +66,11 @@ impl DeleteDeviceUsageDataInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeviceUsageDataInput`](crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput {
-                device_arn: self.device_arn,
-                device_usage_type: self.device_usage_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput {
+            device_arn: self.device_arn,
+            device_usage_type: self.device_usage_type,
+        })
     }
 }

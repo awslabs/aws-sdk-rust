@@ -294,9 +294,7 @@ impl RestoreFromClusterSnapshotInput {
         self.availability_zone_relocation
     }
     /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn aqua_configuration_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AquaConfigurationStatus> {
+    pub fn aqua_configuration_status(&self) -> ::std::option::Option<&crate::types::AquaConfigurationStatus> {
         self.aqua_configuration_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
@@ -318,16 +316,14 @@ impl RestoreFromClusterSnapshotInput {
 }
 impl RestoreFromClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreFromClusterSnapshotInput`](crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput).
-    pub fn builder() -> crate::operation::restore_from_cluster_snapshot::builders::RestoreFromClusterSnapshotInputBuilder{
+    pub fn builder() -> crate::operation::restore_from_cluster_snapshot::builders::RestoreFromClusterSnapshotInputBuilder {
         crate::operation::restore_from_cluster_snapshot::builders::RestoreFromClusterSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreFromClusterSnapshotInput`](crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreFromClusterSnapshotInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
@@ -343,10 +339,8 @@ pub struct RestoreFromClusterSnapshotInputBuilder {
     pub(crate) hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) elastic_ip: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) cluster_security_groups:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) vpc_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cluster_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) automated_snapshot_retention_period: ::std::option::Option<i32>,
     pub(crate) manual_snapshot_retention_period: ::std::option::Option<i32>,
@@ -359,8 +353,7 @@ pub struct RestoreFromClusterSnapshotInputBuilder {
     pub(crate) snapshot_schedule_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_nodes: ::std::option::Option<i32>,
     pub(crate) availability_zone_relocation: ::std::option::Option<bool>,
-    pub(crate) aqua_configuration_status:
-        ::std::option::Option<crate::types::AquaConfigurationStatus>,
+    pub(crate) aqua_configuration_status: ::std::option::Option<crate::types::AquaConfigurationStatus>,
     pub(crate) default_iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_node_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_reserved_node_offering_id: ::std::option::Option<::std::string::String>,
@@ -376,10 +369,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -392,10 +382,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -413,19 +400,13 @@ impl RestoreFromClusterSnapshotInputBuilder {
     }
     /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not both.</p>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not both.</p>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_identifier = input;
         self
     }
@@ -449,18 +430,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
         &self.snapshot_arn
     }
     /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
-    pub fn snapshot_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
-    pub fn set_snapshot_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_cluster_identifier = input;
         self
     }
@@ -491,20 +466,14 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
     /// <p>Default: A random, system-chosen Availability Zone.</p>
     /// <p>Example: <code>us-east-2a</code> </p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
     /// <p>Default: A random, system-chosen Availability Zone.</p>
     /// <p>Example: <code>us-east-2a</code> </p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -533,19 +502,13 @@ impl RestoreFromClusterSnapshotInputBuilder {
     }
     /// <p>The name of the subnet group where you want to cluster restored.</p>
     /// <p>A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored.</p>
-    pub fn cluster_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the subnet group where you want to cluster restored.</p>
     /// <p>A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored.</p>
-    pub fn set_cluster_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_subnet_group_name = input;
         self
     }
@@ -569,18 +532,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
         &self.publicly_accessible
     }
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -589,47 +546,31 @@ impl RestoreFromClusterSnapshotInputBuilder {
         &self.owner_account
     }
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    pub fn hsm_client_certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_client_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_client_certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    pub fn set_hsm_client_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_client_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_client_certificate_identifier = input;
         self
     }
     /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
-    pub fn get_hsm_client_certificate_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hsm_client_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_client_certificate_identifier
     }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    pub fn hsm_configuration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_configuration_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    pub fn set_hsm_configuration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_configuration_identifier = input;
         self
     }
     /// <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    pub fn get_hsm_configuration_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hsm_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_configuration_identifier
     }
     /// <p>The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned on.</p>
@@ -654,10 +595,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -669,10 +607,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn set_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_parameter_group_name = input;
         self
     }
@@ -684,9 +619,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn get_cluster_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_parameter_group_name
     }
     /// Appends an item to `cluster_security_groups`.
@@ -696,10 +629,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>A list of security groups to be associated with this cluster.</p>
     /// <p>Default: The default cluster security group for Amazon Redshift.</p>
     /// <p>Cluster security groups only apply to clusters outside of VPCs.</p>
-    pub fn cluster_security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cluster_security_groups.unwrap_or_default();
         v.push(input.into());
         self.cluster_security_groups = ::std::option::Option::Some(v);
@@ -708,19 +638,14 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>A list of security groups to be associated with this cluster.</p>
     /// <p>Default: The default cluster security group for Amazon Redshift.</p>
     /// <p>Cluster security groups only apply to clusters outside of VPCs.</p>
-    pub fn set_cluster_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cluster_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cluster_security_groups = input;
         self
     }
     /// <p>A list of security groups to be associated with this cluster.</p>
     /// <p>Default: The default cluster security group for Amazon Redshift.</p>
     /// <p>Cluster security groups only apply to clusters outside of VPCs.</p>
-    pub fn get_cluster_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cluster_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cluster_security_groups
     }
     /// Appends an item to `vpc_security_group_ids`.
@@ -730,10 +655,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>
     /// <p>Default: The default VPC security group is associated with the cluster.</p>
     /// <p>VPC security groups only apply to clusters in VPCs.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_security_group_ids = ::std::option::Option::Some(v);
@@ -742,19 +664,14 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>
     /// <p>Default: The default VPC security group is associated with the cluster.</p>
     /// <p>VPC security groups only apply to clusters in VPCs.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
         self
     }
     /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>
     /// <p>Default: The default VPC security group is associated with the cluster.</p>
     /// <p>VPC security groups only apply to clusters in VPCs.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>
@@ -762,10 +679,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -774,10 +688,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
@@ -786,9 +697,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>
@@ -803,10 +712,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: The value selected for the cluster from which the snapshot was taken.</p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
-    pub fn set_automated_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_automated_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.automated_snapshot_retention_period = input;
         self
     }
@@ -825,10 +731,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
     }
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    pub fn set_manual_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manual_snapshot_retention_period = input;
         self
     }
@@ -889,18 +792,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
         &self.enhanced_vpc_routing
     }
     /// <p>Reserved.</p>
-    pub fn additional_info(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_info = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_additional_info(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.additional_info = input;
         self
     }
@@ -922,10 +819,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
     }
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn set_iam_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.iam_roles = input;
         self
     }
@@ -935,18 +829,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
         &self.iam_roles
     }
     /// <p>The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source cluster are on different tracks.</p>
-    pub fn maintenance_track_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_track_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_track_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source cluster are on different tracks.</p>
-    pub fn set_maintenance_track_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maintenance_track_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_track_name = input;
         self
     }
@@ -955,25 +843,17 @@ impl RestoreFromClusterSnapshotInputBuilder {
         &self.maintenance_track_name
     }
     /// <p>A unique identifier for the snapshot schedule.</p>
-    pub fn snapshot_schedule_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_schedule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_schedule_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the snapshot schedule.</p>
-    pub fn set_snapshot_schedule_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_schedule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_schedule_identifier = input;
         self
     }
     /// <p>A unique identifier for the snapshot schedule.</p>
-    pub fn get_snapshot_schedule_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_snapshot_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_schedule_identifier
     }
     /// <p>The number of nodes specified when provisioning the restored cluster.</p>
@@ -1005,40 +885,26 @@ impl RestoreFromClusterSnapshotInputBuilder {
         &self.availability_zone_relocation
     }
     /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn aqua_configuration_status(
-        mut self,
-        input: crate::types::AquaConfigurationStatus,
-    ) -> Self {
+    pub fn aqua_configuration_status(mut self, input: crate::types::AquaConfigurationStatus) -> Self {
         self.aqua_configuration_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn set_aqua_configuration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AquaConfigurationStatus>,
-    ) -> Self {
+    pub fn set_aqua_configuration_status(mut self, input: ::std::option::Option<crate::types::AquaConfigurationStatus>) -> Self {
         self.aqua_configuration_status = input;
         self
     }
     /// <p>This parameter is retired. It does not set the AQUA configuration status. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn get_aqua_configuration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AquaConfigurationStatus> {
+    pub fn get_aqua_configuration_status(&self) -> &::std::option::Option<crate::types::AquaConfigurationStatus> {
         &self.aqua_configuration_status
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
-    pub fn default_iam_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_iam_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
-    pub fn set_default_iam_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_iam_role_arn = input;
         self
     }
@@ -1047,18 +913,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
         &self.default_iam_role_arn
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn reserved_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn set_reserved_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_node_id = input;
         self
     }
@@ -1067,25 +927,17 @@ impl RestoreFromClusterSnapshotInputBuilder {
         &self.reserved_node_id
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn target_reserved_node_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_reserved_node_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn set_target_reserved_node_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_reserved_node_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_reserved_node_offering_id = input;
         self
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn get_target_reserved_node_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_reserved_node_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_reserved_node_offering_id
     }
     /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>
@@ -1109,42 +961,40 @@ impl RestoreFromClusterSnapshotInputBuilder {
         crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput {
-                cluster_identifier: self.cluster_identifier,
-                snapshot_identifier: self.snapshot_identifier,
-                snapshot_arn: self.snapshot_arn,
-                snapshot_cluster_identifier: self.snapshot_cluster_identifier,
-                port: self.port,
-                availability_zone: self.availability_zone,
-                allow_version_upgrade: self.allow_version_upgrade,
-                cluster_subnet_group_name: self.cluster_subnet_group_name,
-                publicly_accessible: self.publicly_accessible,
-                owner_account: self.owner_account,
-                hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,
-                hsm_configuration_identifier: self.hsm_configuration_identifier,
-                elastic_ip: self.elastic_ip,
-                cluster_parameter_group_name: self.cluster_parameter_group_name,
-                cluster_security_groups: self.cluster_security_groups,
-                vpc_security_group_ids: self.vpc_security_group_ids,
-                preferred_maintenance_window: self.preferred_maintenance_window,
-                automated_snapshot_retention_period: self.automated_snapshot_retention_period,
-                manual_snapshot_retention_period: self.manual_snapshot_retention_period,
-                kms_key_id: self.kms_key_id,
-                node_type: self.node_type,
-                enhanced_vpc_routing: self.enhanced_vpc_routing,
-                additional_info: self.additional_info,
-                iam_roles: self.iam_roles,
-                maintenance_track_name: self.maintenance_track_name,
-                snapshot_schedule_identifier: self.snapshot_schedule_identifier,
-                number_of_nodes: self.number_of_nodes,
-                availability_zone_relocation: self.availability_zone_relocation,
-                aqua_configuration_status: self.aqua_configuration_status,
-                default_iam_role_arn: self.default_iam_role_arn,
-                reserved_node_id: self.reserved_node_id,
-                target_reserved_node_offering_id: self.target_reserved_node_offering_id,
-                encrypted: self.encrypted,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput {
+            cluster_identifier: self.cluster_identifier,
+            snapshot_identifier: self.snapshot_identifier,
+            snapshot_arn: self.snapshot_arn,
+            snapshot_cluster_identifier: self.snapshot_cluster_identifier,
+            port: self.port,
+            availability_zone: self.availability_zone,
+            allow_version_upgrade: self.allow_version_upgrade,
+            cluster_subnet_group_name: self.cluster_subnet_group_name,
+            publicly_accessible: self.publicly_accessible,
+            owner_account: self.owner_account,
+            hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,
+            hsm_configuration_identifier: self.hsm_configuration_identifier,
+            elastic_ip: self.elastic_ip,
+            cluster_parameter_group_name: self.cluster_parameter_group_name,
+            cluster_security_groups: self.cluster_security_groups,
+            vpc_security_group_ids: self.vpc_security_group_ids,
+            preferred_maintenance_window: self.preferred_maintenance_window,
+            automated_snapshot_retention_period: self.automated_snapshot_retention_period,
+            manual_snapshot_retention_period: self.manual_snapshot_retention_period,
+            kms_key_id: self.kms_key_id,
+            node_type: self.node_type,
+            enhanced_vpc_routing: self.enhanced_vpc_routing,
+            additional_info: self.additional_info,
+            iam_roles: self.iam_roles,
+            maintenance_track_name: self.maintenance_track_name,
+            snapshot_schedule_identifier: self.snapshot_schedule_identifier,
+            number_of_nodes: self.number_of_nodes,
+            availability_zone_relocation: self.availability_zone_relocation,
+            aqua_configuration_status: self.aqua_configuration_status,
+            default_iam_role_arn: self.default_iam_role_arn,
+            reserved_node_id: self.reserved_node_id,
+            target_reserved_node_offering_id: self.target_reserved_node_offering_id,
+            encrypted: self.encrypted,
+        })
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`security_keys(Option<Vec<SecurityKey>>)`](crate::operation::list_security_keys::ListSecurityKeysOutput::security_keys): <p>The security keys.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_security_keys::ListSecurityKeysOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListSecurityKeysError>`](crate::operation::list_security_keys::ListSecurityKeysError)
-    pub fn list_security_keys(
-        &self,
-    ) -> crate::operation::list_security_keys::builders::ListSecurityKeysFluentBuilder {
-        crate::operation::list_security_keys::builders::ListSecurityKeysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_security_keys(&self) -> crate::operation::list_security_keys::builders::ListSecurityKeysFluentBuilder {
+        crate::operation::list_security_keys::builders::ListSecurityKeysFluentBuilder::new(self.handle.clone())
     }
 }

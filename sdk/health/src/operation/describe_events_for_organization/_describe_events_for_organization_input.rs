@@ -36,16 +36,14 @@ impl DescribeEventsForOrganizationInput {
 }
 impl DescribeEventsForOrganizationInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventsForOrganizationInput`](crate::operation::describe_events_for_organization::DescribeEventsForOrganizationInput).
-    pub fn builder() -> crate::operation::describe_events_for_organization::builders::DescribeEventsForOrganizationInputBuilder{
+    pub fn builder() -> crate::operation::describe_events_for_organization::builders::DescribeEventsForOrganizationInputBuilder {
         crate::operation::describe_events_for_organization::builders::DescribeEventsForOrganizationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventsForOrganizationInput`](crate::operation::describe_events_for_organization::DescribeEventsForOrganizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventsForOrganizationInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::OrganizationEventFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,10 +57,7 @@ impl DescribeEventsForOrganizationInputBuilder {
         self
     }
     /// <p>Values to narrow the results returned.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationEventFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::OrganizationEventFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -119,17 +114,11 @@ impl DescribeEventsForOrganizationInputBuilder {
         crate::operation::describe_events_for_organization::DescribeEventsForOrganizationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_events_for_organization::DescribeEventsForOrganizationInput {
-                filter: self.filter
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                locale: self.locale
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_events_for_organization::DescribeEventsForOrganizationInput {
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            locale: self.locale,
+        })
     }
 }

@@ -35,9 +35,7 @@ impl ListSpacesOutput {
 
 /// A builder for [`ListSpacesOutput`](crate::operation::list_spaces::ListSpacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSpacesOutputBuilder {
     pub(crate) spaces: ::std::option::Option<::std::vec::Vec<crate::types::SpaceDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListSpacesOutputBuilder {
         self
     }
     /// <p>The list of spaces.</p>
-    pub fn set_spaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpaceDetails>>,
-    ) -> Self {
+    pub fn set_spaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpaceDetails>>) -> Self {
         self.spaces = input;
         self
     }
     /// <p>The list of spaces.</p>
-    pub fn get_spaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpaceDetails>> {
+    pub fn get_spaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpaceDetails>> {
         &self.spaces
     }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>

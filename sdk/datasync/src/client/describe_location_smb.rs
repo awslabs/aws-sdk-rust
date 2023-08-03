@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`mount_options(Option<SmbMountOptions>)`](crate::operation::describe_location_smb::DescribeLocationSmbOutput::mount_options): <p>The mount options that are available for DataSync to use to access an SMB location.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_location_smb::DescribeLocationSmbOutput::creation_time): <p>The time that the SMB location was created.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationSmbError>`](crate::operation::describe_location_smb::DescribeLocationSmbError)
-    pub fn describe_location_smb(
-        &self,
-    ) -> crate::operation::describe_location_smb::builders::DescribeLocationSmbFluentBuilder {
-        crate::operation::describe_location_smb::builders::DescribeLocationSmbFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_location_smb(&self) -> crate::operation::describe_location_smb::builders::DescribeLocationSmbFluentBuilder {
+        crate::operation::describe_location_smb::builders::DescribeLocationSmbFluentBuilder::new(self.handle.clone())
     }
 }

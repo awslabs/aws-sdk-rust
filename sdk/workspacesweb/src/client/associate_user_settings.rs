@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`portal_arn(Option<String>)`](crate::operation::associate_user_settings::AssociateUserSettingsOutput::portal_arn): <p>The ARN of the web portal.</p>
     ///   - [`user_settings_arn(Option<String>)`](crate::operation::associate_user_settings::AssociateUserSettingsOutput::user_settings_arn): <p>The ARN of the user settings.</p>
     /// - On failure, responds with [`SdkError<AssociateUserSettingsError>`](crate::operation::associate_user_settings::AssociateUserSettingsError)
-    pub fn associate_user_settings(
-        &self,
-    ) -> crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder
-    {
-        crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_user_settings(&self) -> crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder {
+        crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder::new(self.handle.clone())
     }
 }

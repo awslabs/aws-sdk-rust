@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl ::std::convert::Into<String>)`](crate::operation::delete_bucket_cors::builders::DeleteBucketCorsFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::delete_bucket_cors::builders::DeleteBucketCorsFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     /// - On success, responds with [`DeleteBucketCorsOutput`](crate::operation::delete_bucket_cors::DeleteBucketCorsOutput)
     /// - On failure, responds with [`SdkError<DeleteBucketCorsError>`](crate::operation::delete_bucket_cors::DeleteBucketCorsError)
-    pub fn delete_bucket_cors(
-        &self,
-    ) -> crate::operation::delete_bucket_cors::builders::DeleteBucketCorsFluentBuilder {
-        crate::operation::delete_bucket_cors::builders::DeleteBucketCorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_bucket_cors(&self) -> crate::operation::delete_bucket_cors::builders::DeleteBucketCorsFluentBuilder {
+        crate::operation::delete_bucket_cors::builders::DeleteBucketCorsFluentBuilder::new(self.handle.clone())
     }
 }

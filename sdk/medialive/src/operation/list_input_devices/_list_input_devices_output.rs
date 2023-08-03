@@ -29,20 +29,16 @@ impl ::aws_http::request_id::RequestId for ListInputDevicesOutput {
 }
 impl ListInputDevicesOutput {
     /// Creates a new builder-style object to manufacture [`ListInputDevicesOutput`](crate::operation::list_input_devices::ListInputDevicesOutput).
-    pub fn builder() -> crate::operation::list_input_devices::builders::ListInputDevicesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_input_devices::builders::ListInputDevicesOutputBuilder {
         crate::operation::list_input_devices::builders::ListInputDevicesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInputDevicesOutput`](crate::operation::list_input_devices::ListInputDevicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInputDevicesOutputBuilder {
-    pub(crate) input_devices:
-        ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSummary>>,
+    pub(crate) input_devices: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +55,12 @@ impl ListInputDevicesOutputBuilder {
         self
     }
     /// The list of input devices.
-    pub fn set_input_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSummary>>,
-    ) -> Self {
+    pub fn set_input_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSummary>>) -> Self {
         self.input_devices = input;
         self
     }
     /// The list of input devices.
-    pub fn get_input_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSummary>> {
+    pub fn get_input_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSummary>> {
         &self.input_devices
     }
     /// A token to get additional list results.

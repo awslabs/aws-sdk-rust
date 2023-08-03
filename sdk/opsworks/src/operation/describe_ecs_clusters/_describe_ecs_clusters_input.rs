@@ -36,18 +36,14 @@ impl DescribeEcsClustersInput {
 }
 impl DescribeEcsClustersInput {
     /// Creates a new builder-style object to manufacture [`DescribeEcsClustersInput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersInputBuilder {
-        crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersInputBuilder {
+        crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEcsClustersInput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEcsClustersInputBuilder {
     pub(crate) ecs_cluster_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
@@ -60,27 +56,19 @@ impl DescribeEcsClustersInputBuilder {
     /// To override the contents of this collection use [`set_ecs_cluster_arns`](Self::set_ecs_cluster_arns).
     ///
     /// <p>A list of ARNs, one for each cluster to be described.</p>
-    pub fn ecs_cluster_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecs_cluster_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ecs_cluster_arns.unwrap_or_default();
         v.push(input.into());
         self.ecs_cluster_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of ARNs, one for each cluster to be described.</p>
-    pub fn set_ecs_cluster_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ecs_cluster_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ecs_cluster_arns = input;
         self
     }
     /// <p>A list of ARNs, one for each cluster to be described.</p>
-    pub fn get_ecs_cluster_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ecs_cluster_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ecs_cluster_arns
     }
     /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
@@ -128,17 +116,13 @@ impl DescribeEcsClustersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEcsClustersInput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ecs_clusters::DescribeEcsClustersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_ecs_clusters::DescribeEcsClustersInput {
-                ecs_cluster_arns: self.ecs_cluster_arns,
-                stack_id: self.stack_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_ecs_clusters::DescribeEcsClustersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_ecs_clusters::DescribeEcsClustersInput {
+            ecs_cluster_arns: self.ecs_cluster_arns,
+            stack_id: self.stack_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -43,9 +43,7 @@ impl ListLfTagsInput {
 
 /// A builder for [`ListLfTagsInput`](crate::operation::list_lf_tags::ListLfTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLfTagsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_share_type: ::std::option::Option<crate::types::ResourceShareType>,
@@ -73,17 +71,12 @@ impl ListLfTagsInputBuilder {
         self
     }
     /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
-    pub fn set_resource_share_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceShareType>,
-    ) -> Self {
+    pub fn set_resource_share_type(mut self, input: ::std::option::Option<crate::types::ResourceShareType>) -> Self {
         self.resource_share_type = input;
         self
     }
     /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
-    pub fn get_resource_share_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceShareType> {
+    pub fn get_resource_share_type(&self) -> &::std::option::Option<crate::types::ResourceShareType> {
         &self.resource_share_type
     }
     /// <p>The maximum number of results to return.</p>
@@ -115,12 +108,7 @@ impl ListLfTagsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLfTagsInput`](crate::operation::list_lf_tags::ListLfTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_lf_tags::ListLfTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_lf_tags::ListLfTagsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_lf_tags::ListLfTagsInput {
             catalog_id: self.catalog_id,
             resource_share_type: self.resource_share_type,

@@ -10,10 +10,7 @@ impl GetAnomaliesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_anomalies::GetAnomaliesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_anomalies::GetAnomaliesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_anomalies::GetAnomaliesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_anomalies();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetAnomaliesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_anomalies::GetAnomalies,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_anomalies::GetAnomalies, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_anomalies::GetAnomaliesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetAnomaliesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetAnomaliesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_anomalies::GetAnomalies,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_anomalies::GetAnomalies, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_anomalies::GetAnomaliesError>,
     > {
         self.customize_middleware().await
@@ -132,10 +120,7 @@ impl GetAnomaliesFluentBuilder {
         self
     }
     /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range. </p>
-    pub fn set_date_interval(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyDateInterval>,
-    ) -> Self {
+    pub fn set_date_interval(mut self, input: ::std::option::Option<crate::types::AnomalyDateInterval>) -> Self {
         self.inner = self.inner.set_date_interval(input);
         self
     }
@@ -149,10 +134,7 @@ impl GetAnomaliesFluentBuilder {
         self
     }
     /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
-    pub fn set_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyFeedbackType>,
-    ) -> Self {
+    pub fn set_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyFeedbackType>) -> Self {
         self.inner = self.inner.set_feedback(input);
         self
     }
@@ -166,10 +148,7 @@ impl GetAnomaliesFluentBuilder {
         self
     }
     /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200. </p>
-    pub fn set_total_impact(
-        mut self,
-        input: ::std::option::Option<crate::types::TotalImpactFilter>,
-    ) -> Self {
+    pub fn set_total_impact(mut self, input: ::std::option::Option<crate::types::TotalImpactFilter>) -> Self {
         self.inner = self.inner.set_total_impact(input);
         self
     }
@@ -178,18 +157,12 @@ impl GetAnomaliesFluentBuilder {
         self.inner.get_total_impact()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }

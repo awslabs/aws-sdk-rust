@@ -29,16 +29,14 @@ impl ListAccessLogSubscriptionsInput {
 }
 impl ListAccessLogSubscriptionsInput {
     /// Creates a new builder-style object to manufacture [`ListAccessLogSubscriptionsInput`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsInput).
-    pub fn builder() -> crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsInputBuilder{
+    pub fn builder() -> crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsInputBuilder {
         crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessLogSubscriptionsInput`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessLogSubscriptionsInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListAccessLogSubscriptionsInputBuilder {
 }
 impl ListAccessLogSubscriptionsInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListAccessLogSubscriptionsInputBuilder {
         crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsInput {
-                resource_identifier: self.resource_identifier,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsInput {
+            resource_identifier: self.resource_identifier,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -37,9 +37,7 @@ impl ListProtectionGroupsFluentBuilder {
         }
     }
     /// Access the ListProtectionGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_protection_groups::builders::ListProtectionGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_protection_groups::builders::ListProtectionGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListProtectionGroupsFluentBuilder {
             crate::operation::list_protection_groups::ListProtectionGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protection_groups::ListProtectionGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protection_groups::ListProtectionGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListProtectionGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListProtectionGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_protection_groups::ListProtectionGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protection_groups::ListProtectionGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protection_groups::ListProtectionGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListProtectionGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_protection_groups::ListProtectionGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protection_groups::ListProtectionGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protection_groups::ListProtectionGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListProtectionGroupsFluentBuilder {
             crate::operation::list_protection_groups::ListProtectionGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protection_groups::ListProtectionGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protection_groups::ListProtectionGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_protection_groups::paginator::ListProtectionGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_protection_groups::paginator::ListProtectionGroupsPaginator {
-        crate::operation::list_protection_groups::paginator::ListProtectionGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_protection_groups::paginator::ListProtectionGroupsPaginator {
+        crate::operation::list_protection_groups::paginator::ListProtectionGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
@@ -174,25 +156,17 @@ impl ListProtectionGroupsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
-    pub fn inclusion_filters(
-        mut self,
-        input: crate::types::InclusionProtectionGroupFilters,
-    ) -> Self {
+    pub fn inclusion_filters(mut self, input: crate::types::InclusionProtectionGroupFilters) -> Self {
         self.inner = self.inner.inclusion_filters(input);
         self
     }
     /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
-    pub fn set_inclusion_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::InclusionProtectionGroupFilters>,
-    ) -> Self {
+    pub fn set_inclusion_filters(mut self, input: ::std::option::Option<crate::types::InclusionProtectionGroupFilters>) -> Self {
         self.inner = self.inner.set_inclusion_filters(input);
         self
     }
     /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
-    pub fn get_inclusion_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::InclusionProtectionGroupFilters> {
+    pub fn get_inclusion_filters(&self) -> &::std::option::Option<crate::types::InclusionProtectionGroupFilters> {
         self.inner.get_inclusion_filters()
     }
 }

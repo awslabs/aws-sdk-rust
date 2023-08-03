@@ -714,17 +714,14 @@ impl GetMetricDataV2Input {
 }
 impl GetMetricDataV2Input {
     /// Creates a new builder-style object to manufacture [`GetMetricDataV2Input`](crate::operation::get_metric_data_v2::GetMetricDataV2Input).
-    pub fn builder() -> crate::operation::get_metric_data_v2::builders::GetMetricDataV2InputBuilder
-    {
+    pub fn builder() -> crate::operation::get_metric_data_v2::builders::GetMetricDataV2InputBuilder {
         crate::operation::get_metric_data_v2::builders::GetMetricDataV2InputBuilder::default()
     }
 }
 
 /// A builder for [`GetMetricDataV2Input`](crate::operation::get_metric_data_v2::GetMetricDataV2Input).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMetricDataV2InputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -756,10 +753,7 @@ impl GetMetricDataV2InputBuilder {
         self
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The time range between the start and end time must be less than 24 hours. The start time cannot be earlier than 35 days before the time of the request. Historical metrics are available for 35 days.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -775,10 +769,7 @@ impl GetMetricDataV2InputBuilder {
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp. It cannot be later than the current timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -829,10 +820,7 @@ impl GetMetricDataV2InputBuilder {
     /// <li> <p> <b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> </p> </li>
     /// <li> <p> <b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterV2>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterV2>>) -> Self {
         self.filters = input;
         self
     }
@@ -871,10 +859,7 @@ impl GetMetricDataV2InputBuilder {
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
     /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> </p>
-    pub fn set_groupings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groupings = input;
         self
     }
@@ -1510,10 +1495,7 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
     /// </dd>
     /// </dl>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricV2>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricV2>>) -> Self {
         self.metrics = input;
         self
     }
@@ -1859,10 +1841,7 @@ impl GetMetricDataV2InputBuilder {
     /// Consumes the builder and constructs a [`GetMetricDataV2Input`](crate::operation::get_metric_data_v2::GetMetricDataV2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_metric_data_v2::GetMetricDataV2Input,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_metric_data_v2::GetMetricDataV2Input, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_metric_data_v2::GetMetricDataV2Input {
             resource_arn: self.resource_arn,
             start_time: self.start_time,

@@ -58,9 +58,7 @@ impl ArtifactRevision {
 
 /// A builder for [`ArtifactRevision`](crate::types::ArtifactRevision).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactRevisionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
@@ -99,18 +97,12 @@ impl ArtifactRevisionBuilder {
         &self.revision_id
     }
     /// <p>An additional identifier for a revision, such as a commit date or, for artifacts stored in Amazon S3 buckets, the ETag value.</p>
-    pub fn revision_change_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn revision_change_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_change_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An additional identifier for a revision, such as a commit date or, for artifacts stored in Amazon S3 buckets, the ETag value.</p>
-    pub fn set_revision_change_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_revision_change_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_change_identifier = input;
         self
     }
@@ -119,18 +111,12 @@ impl ArtifactRevisionBuilder {
         &self.revision_change_identifier
     }
     /// <p>Summary information about the most recent revision of the artifact. For GitHub and CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
-    pub fn revision_summary(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn revision_summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_summary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Summary information about the most recent revision of the artifact. For GitHub and CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
-    pub fn set_revision_summary(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_revision_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_summary = input;
         self
     }
@@ -144,10 +130,7 @@ impl ArtifactRevisionBuilder {
         self
     }
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }

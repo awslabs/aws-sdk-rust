@@ -26,8 +26,7 @@ impl DescribeEventCategoriesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEventCategoriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_event_categories::builders::DescribeEventCategoriesInputBuilder,
+    inner: crate::operation::describe_event_categories::builders::DescribeEventCategoriesInputBuilder,
 }
 impl DescribeEventCategoriesFluentBuilder {
     /// Creates a new `DescribeEventCategories`.
@@ -38,10 +37,7 @@ impl DescribeEventCategoriesFluentBuilder {
         }
     }
     /// Access the DescribeEventCategories as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_event_categories::builders::DescribeEventCategoriesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_event_categories::builders::DescribeEventCategoriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeEventCategoriesFluentBuilder {
             crate::operation::describe_event_categories::DescribeEventCategories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_categories::DescribeEventCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_categories::DescribeEventCategoriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeEventCategoriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeEventCategoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_categories::DescribeEventCategoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_categories::DescribeEventCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_categories::DescribeEventCategoriesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeEventCategoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_categories::DescribeEventCategoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_categories::DescribeEventCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_categories::DescribeEventCategoriesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DescribeEventCategoriesFluentBuilder {
             crate::operation::describe_event_categories::DescribeEventCategories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_categories::DescribeEventCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_categories::DescribeEventCategoriesError>,
     > {
         self.customize_middleware().await
     }
@@ -151,10 +136,7 @@ impl DescribeEventCategoriesFluentBuilder {
         self
     }
     /// <p>Filters applied to the event categories.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CopyOptionGroupOutput`](crate::operation::copy_option_group::CopyOptionGroupOutput) with field(s):
     ///   - [`option_group(Option<OptionGroup>)`](crate::operation::copy_option_group::CopyOptionGroupOutput::option_group): <p></p>
     /// - On failure, responds with [`SdkError<CopyOptionGroupError>`](crate::operation::copy_option_group::CopyOptionGroupError)
-    pub fn copy_option_group(
-        &self,
-    ) -> crate::operation::copy_option_group::builders::CopyOptionGroupFluentBuilder {
-        crate::operation::copy_option_group::builders::CopyOptionGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn copy_option_group(&self) -> crate::operation::copy_option_group::builders::CopyOptionGroupFluentBuilder {
+        crate::operation::copy_option_group::builders::CopyOptionGroupFluentBuilder::new(self.handle.clone())
     }
 }

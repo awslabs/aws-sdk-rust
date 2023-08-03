@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`metric_datum_list(Option<Vec<MetricDatum>>)`](crate::operation::list_metric_values::ListMetricValuesOutput::metric_datum_list): <p>The data the thing reports for the metric during the specified time period.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_metric_values::ListMetricValuesOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListMetricValuesError>`](crate::operation::list_metric_values::ListMetricValuesError)
-    pub fn list_metric_values(
-        &self,
-    ) -> crate::operation::list_metric_values::builders::ListMetricValuesFluentBuilder {
-        crate::operation::list_metric_values::builders::ListMetricValuesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_metric_values(&self) -> crate::operation::list_metric_values::builders::ListMetricValuesFluentBuilder {
+        crate::operation::list_metric_values::builders::ListMetricValuesFluentBuilder::new(self.handle.clone())
     }
 }

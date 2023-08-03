@@ -30,9 +30,7 @@ impl FunctionConfig {
 
 /// A builder for [`FunctionConfig`](crate::types::FunctionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionConfigBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) runtime: ::std::option::Option<crate::types::FunctionRuntime>,
@@ -58,10 +56,7 @@ impl FunctionConfigBuilder {
         self
     }
     /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
-    pub fn set_runtime(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionRuntime>,
-    ) -> Self {
+    pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::FunctionRuntime>) -> Self {
         self.runtime = input;
         self
     }

@@ -7,14 +7,10 @@ pub fn ser_import_certificate_input(
         object.key("CertificateArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.certificate {
-        object
-            .key("Certificate")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("Certificate").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     if let Some(var_3) = &input.private_key {
-        object
-            .key("PrivateKey")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_3));
+        object.key("PrivateKey").string_unchecked(&::aws_smithy_types::base64::encode(var_3));
     }
     if let Some(var_4) = &input.certificate_chain {
         object

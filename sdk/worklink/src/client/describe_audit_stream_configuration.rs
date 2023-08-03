@@ -7,10 +7,10 @@ impl super::Client {
     /// - On success, responds with [`DescribeAuditStreamConfigurationOutput`](crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationOutput) with field(s):
     ///   - [`audit_stream_arn(Option<String>)`](crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationOutput::audit_stream_arn): <p>The ARN of the Amazon Kinesis data stream that will receive the audit events.</p>
     /// - On failure, responds with [`SdkError<DescribeAuditStreamConfigurationError>`](crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_audit_stream_configuration(&self) -> crate::operation::describe_audit_stream_configuration::builders::DescribeAuditStreamConfigurationFluentBuilder{
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn describe_audit_stream_configuration(
+        &self,
+    ) -> crate::operation::describe_audit_stream_configuration::builders::DescribeAuditStreamConfigurationFluentBuilder {
         crate::operation::describe_audit_stream_configuration::builders::DescribeAuditStreamConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

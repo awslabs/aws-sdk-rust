@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListLoggerDefinitionVersionsOutput {
 }
 impl ListLoggerDefinitionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListLoggerDefinitionVersionsOutput`](crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsOutput).
-    pub fn builder() -> crate::operation::list_logger_definition_versions::builders::ListLoggerDefinitionVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_logger_definition_versions::builders::ListLoggerDefinitionVersionsOutputBuilder {
         crate::operation::list_logger_definition_versions::builders::ListLoggerDefinitionVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLoggerDefinitionVersionsOutput`](crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLoggerDefinitionVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>,
@@ -70,17 +68,12 @@ impl ListLoggerDefinitionVersionsOutputBuilder {
         self
     }
     /// Information about a version.
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>) -> Self {
         self.versions = input;
         self
     }
     /// Information about a version.
-    pub fn get_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>> {
         &self.versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,9 +86,7 @@ impl ListLoggerDefinitionVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListLoggerDefinitionVersionsOutput`](crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsOutput {
+    pub fn build(self) -> crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsOutput {
         crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsOutput {
             next_token: self.next_token,
             versions: self.versions,

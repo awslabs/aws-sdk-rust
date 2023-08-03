@@ -15,34 +15,25 @@ impl DeleteSkillGroupInput {
 }
 impl DeleteSkillGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteSkillGroupInput`](crate::operation::delete_skill_group::DeleteSkillGroupInput).
-    pub fn builder() -> crate::operation::delete_skill_group::builders::DeleteSkillGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_skill_group::builders::DeleteSkillGroupInputBuilder {
         crate::operation::delete_skill_group::builders::DeleteSkillGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSkillGroupInput`](crate::operation::delete_skill_group::DeleteSkillGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSkillGroupInputBuilder {
     pub(crate) skill_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSkillGroupInputBuilder {
     /// <p>The ARN of the skill group to delete. Required.</p>
-    pub fn skill_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the skill group to delete. Required.</p>
-    pub fn set_skill_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_group_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteSkillGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSkillGroupInput`](crate::operation::delete_skill_group::DeleteSkillGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_skill_group::DeleteSkillGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_skill_group::DeleteSkillGroupInput {
-                skill_group_arn: self.skill_group_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_skill_group::DeleteSkillGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_skill_group::DeleteSkillGroupInput {
+            skill_group_arn: self.skill_group_arn,
+        })
     }
 }

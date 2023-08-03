@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`app_version(Option<String>)`](crate::operation::describe_app_version::DescribeAppVersionOutput::app_version): <p>The Resilience Hub application version.</p>
     ///   - [`additional_info(Option<HashMap<String, Vec<String>>>)`](crate::operation::describe_app_version::DescribeAppVersionOutput::additional_info): <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>   <p>Currently, this parameter supports only failover region and account.</p>  </note>
     /// - On failure, responds with [`SdkError<DescribeAppVersionError>`](crate::operation::describe_app_version::DescribeAppVersionError)
-    pub fn describe_app_version(
-        &self,
-    ) -> crate::operation::describe_app_version::builders::DescribeAppVersionFluentBuilder {
-        crate::operation::describe_app_version::builders::DescribeAppVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_app_version(&self) -> crate::operation::describe_app_version::builders::DescribeAppVersionFluentBuilder {
+        crate::operation::describe_app_version::builders::DescribeAppVersionFluentBuilder::new(self.handle.clone())
     }
 }

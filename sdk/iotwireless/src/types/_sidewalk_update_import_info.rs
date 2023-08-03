@@ -23,26 +23,18 @@ impl SidewalkUpdateImportInfo {
 
 /// A builder for [`SidewalkUpdateImportInfo`](crate::types::SidewalkUpdateImportInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SidewalkUpdateImportInfoBuilder {
     pub(crate) device_creation_file: ::std::option::Option<::std::string::String>,
 }
 impl SidewalkUpdateImportInfoBuilder {
     /// <p>The CSV file contained in an S3 bucket that's used for appending devices to an existing import task.</p>
-    pub fn device_creation_file(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_creation_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_creation_file = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CSV file contained in an S3 bucket that's used for appending devices to an existing import task.</p>
-    pub fn set_device_creation_file(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_creation_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_creation_file = input;
         self
     }

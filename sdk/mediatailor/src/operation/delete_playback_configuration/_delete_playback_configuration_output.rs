@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePlaybackConfigurationOutput {
 }
 impl DeletePlaybackConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeletePlaybackConfigurationOutput`](crate::operation::delete_playback_configuration::DeletePlaybackConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationOutputBuilder {
         crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePlaybackConfigurationOutput`](crate::operation::delete_playback_configuration::DeletePlaybackConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePlaybackConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeletePlaybackConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeletePlaybackConfigurationOutput`](crate::operation::delete_playback_configuration::DeletePlaybackConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_playback_configuration::DeletePlaybackConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_playback_configuration::DeletePlaybackConfigurationOutput {
         crate::operation::delete_playback_configuration::DeletePlaybackConfigurationOutput {
             _request_id: self._request_id,
         }

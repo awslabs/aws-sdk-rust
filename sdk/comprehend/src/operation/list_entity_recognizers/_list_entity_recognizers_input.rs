@@ -29,18 +29,14 @@ impl ListEntityRecognizersInput {
 }
 impl ListEntityRecognizersInput {
     /// Creates a new builder-style object to manufacture [`ListEntityRecognizersInput`](crate::operation::list_entity_recognizers::ListEntityRecognizersInput).
-    pub fn builder(
-    ) -> crate::operation::list_entity_recognizers::builders::ListEntityRecognizersInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_entity_recognizers::builders::ListEntityRecognizersInputBuilder {
         crate::operation::list_entity_recognizers::builders::ListEntityRecognizersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEntityRecognizersInput`](crate::operation::list_entity_recognizers::ListEntityRecognizersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntityRecognizersInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::EntityRecognizerFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,10 +49,7 @@ impl ListEntityRecognizersInputBuilder {
         self
     }
     /// <p>Filters the list of entities returned. You can filter on <code>Status</code>, <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityRecognizerFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EntityRecognizerFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -95,16 +88,12 @@ impl ListEntityRecognizersInputBuilder {
     /// Consumes the builder and constructs a [`ListEntityRecognizersInput`](crate::operation::list_entity_recognizers::ListEntityRecognizersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_entity_recognizers::ListEntityRecognizersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_entity_recognizers::ListEntityRecognizersInput {
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_entity_recognizers::ListEntityRecognizersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_entity_recognizers::ListEntityRecognizersInput {
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

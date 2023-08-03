@@ -19,9 +19,7 @@ impl DeletePackageOutput {
 
 /// A builder for [`DeletePackageOutput`](crate::operation::delete_package::DeletePackageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePackageOutputBuilder {
     _request_id: Option<String>,
 }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::delete_resource_policy::DeleteResourcePolicyOutput::arn): <p>The ARN of the secret that the resource-based policy was deleted for.</p>
     ///   - [`name(Option<String>)`](crate::operation::delete_resource_policy::DeleteResourcePolicyOutput::name): <p>The name of the secret that the resource-based policy was deleted for.</p>
     /// - On failure, responds with [`SdkError<DeleteResourcePolicyError>`](crate::operation::delete_resource_policy::DeleteResourcePolicyError)
-    pub fn delete_resource_policy(
-        &self,
-    ) -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyFluentBuilder {
-        crate::operation::delete_resource_policy::builders::DeleteResourcePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_resource_policy(&self) -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyFluentBuilder {
+        crate::operation::delete_resource_policy::builders::DeleteResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

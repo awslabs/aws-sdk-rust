@@ -23,9 +23,7 @@ impl LaunchOverrides {
 
 /// A builder for [`LaunchOverrides`](crate::types::LaunchOverrides).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchOverridesBuilder {
     pub(crate) launch_commands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,27 +33,19 @@ impl LaunchOverridesBuilder {
     /// To override the contents of this collection use [`set_launch_commands`](Self::set_launch_commands).
     ///
     /// <p>App launch commands and command line parameters that override the launch command configured in the simulation schema.</p>
-    pub fn launch_commands(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_commands(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.launch_commands.unwrap_or_default();
         v.push(input.into());
         self.launch_commands = ::std::option::Option::Some(v);
         self
     }
     /// <p>App launch commands and command line parameters that override the launch command configured in the simulation schema.</p>
-    pub fn set_launch_commands(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_launch_commands(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.launch_commands = input;
         self
     }
     /// <p>App launch commands and command line parameters that override the launch command configured in the simulation schema.</p>
-    pub fn get_launch_commands(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_launch_commands(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.launch_commands
     }
     /// Consumes the builder and constructs a [`LaunchOverrides`](crate::types::LaunchOverrides).

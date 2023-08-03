@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutPermissionPolicyOutput {
 }
 impl PutPermissionPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutPermissionPolicyOutput`](crate::operation::put_permission_policy::PutPermissionPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_permission_policy::builders::PutPermissionPolicyOutputBuilder {
-        crate::operation::put_permission_policy::builders::PutPermissionPolicyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_permission_policy::builders::PutPermissionPolicyOutputBuilder {
+        crate::operation::put_permission_policy::builders::PutPermissionPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutPermissionPolicyOutput`](crate::operation::put_permission_policy::PutPermissionPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPermissionPolicyOutputBuilder {
     _request_id: Option<String>,
 }

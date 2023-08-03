@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDataQualityResultsOutput {
 }
 impl ListDataQualityResultsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataQualityResultsOutput`](crate::operation::list_data_quality_results::ListDataQualityResultsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_data_quality_results::builders::ListDataQualityResultsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_quality_results::builders::ListDataQualityResultsOutputBuilder {
         crate::operation::list_data_quality_results::builders::ListDataQualityResultsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataQualityResultsOutput`](crate::operation::list_data_quality_results::ListDataQualityResultsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataQualityResultsOutputBuilder {
-    pub(crate) results:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResultDescription>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResultDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListDataQualityResultsOutputBuilder {
         self
     }
     /// <p>A list of <code>DataQualityResultDescription</code> objects.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResultDescription>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResultDescription>>) -> Self {
         self.results = input;
         self
     }
     /// <p>A list of <code>DataQualityResultDescription</code> objects.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityResultDescription>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityResultDescription>> {
         &self.results
     }
     /// <p>A pagination token, if more results are available.</p>
@@ -96,9 +86,7 @@ impl ListDataQualityResultsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDataQualityResultsOutput`](crate::operation::list_data_quality_results::ListDataQualityResultsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_data_quality_results::ListDataQualityResultsOutput {
+    pub fn build(self) -> crate::operation::list_data_quality_results::ListDataQualityResultsOutput {
         crate::operation::list_data_quality_results::ListDataQualityResultsOutput {
             results: self.results,
             next_token: self.next_token,

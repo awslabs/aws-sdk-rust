@@ -23,9 +23,7 @@ impl OnEnterLifecycle {
 
 /// A builder for [`OnEnterLifecycle`](crate::types::OnEnterLifecycle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OnEnterLifecycleBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
 }
@@ -42,10 +40,7 @@ impl OnEnterLifecycleBuilder {
         self
     }
     /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
         self.events = input;
         self
     }
@@ -55,8 +50,6 @@ impl OnEnterLifecycleBuilder {
     }
     /// Consumes the builder and constructs a [`OnEnterLifecycle`](crate::types::OnEnterLifecycle).
     pub fn build(self) -> crate::types::OnEnterLifecycle {
-        crate::types::OnEnterLifecycle {
-            events: self.events,
-        }
+        crate::types::OnEnterLifecycle { events: self.events }
     }
 }

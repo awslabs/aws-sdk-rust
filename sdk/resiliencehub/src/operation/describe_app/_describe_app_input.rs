@@ -22,9 +22,7 @@ impl DescribeAppInput {
 
 /// A builder for [`DescribeAppInput`](crate::operation::describe_app::DescribeAppInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DescribeAppInputBuilder {
         &self.app_arn
     }
     /// Consumes the builder and constructs a [`DescribeAppInput`](crate::operation::describe_app::DescribeAppInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_app::DescribeAppInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_app::DescribeAppInput {
-            app_arn: self.app_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_app::DescribeAppInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_app::DescribeAppInput { app_arn: self.app_arn })
     }
 }

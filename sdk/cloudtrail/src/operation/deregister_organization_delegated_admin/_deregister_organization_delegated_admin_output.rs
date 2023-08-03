@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for DeregisterOrganizationDelegatedAdminO
 }
 impl DeregisterOrganizationDelegatedAdminOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterOrganizationDelegatedAdminOutput`](crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput).
-    pub fn builder() -> crate::operation::deregister_organization_delegated_admin::builders::DeregisterOrganizationDelegatedAdminOutputBuilder{
+    pub fn builder() -> crate::operation::deregister_organization_delegated_admin::builders::DeregisterOrganizationDelegatedAdminOutputBuilder {
         crate::operation::deregister_organization_delegated_admin::builders::DeregisterOrganizationDelegatedAdminOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterOrganizationDelegatedAdminOutput`](crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterOrganizationDelegatedAdminOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +35,7 @@ impl DeregisterOrganizationDelegatedAdminOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterOrganizationDelegatedAdminOutput`](crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput).
-    pub fn build(self) -> crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput{
+    pub fn build(self) -> crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput {
         crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput {
             _request_id: self._request_id,
         }

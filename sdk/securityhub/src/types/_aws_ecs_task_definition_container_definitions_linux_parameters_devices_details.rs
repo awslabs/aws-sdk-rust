@@ -30,16 +30,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsBuilder {
     pub(crate) container_path: ::std::option::Option<::std::string::String>,
     pub(crate) host_path: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsBuilder {
     /// <p>The path inside the container at which to expose the host device.</p>
-    pub fn container_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path inside the container at which to expose the host device.</p>
-    pub fn set_container_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_path = input;
         self
     }
@@ -92,23 +84,16 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsBuilde
         self
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for read, write, and <code>mknod</code> for the device.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for read, write, and <code>mknod</code> for the device.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.permissions
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
             container_path: self.container_path,
             host_path: self.host_path,

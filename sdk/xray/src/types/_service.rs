@@ -48,8 +48,7 @@ pub struct Service {
     pub duration_histogram: ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>,
     /// <p>A histogram that maps the spread of service response times.</p>
     #[doc(hidden)]
-    pub response_time_histogram:
-        ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>,
+    pub response_time_histogram: ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>,
 }
 impl Service {
     /// <p>Identifier for the service. Unique within the service map.</p>
@@ -107,9 +106,7 @@ impl Service {
         self.duration_histogram.as_deref()
     }
     /// <p>A histogram that maps the spread of service response times.</p>
-    pub fn response_time_histogram(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HistogramEntry]> {
+    pub fn response_time_histogram(&self) -> ::std::option::Option<&[crate::types::HistogramEntry]> {
         self.response_time_histogram.as_deref()
     }
 }
@@ -122,9 +119,7 @@ impl Service {
 
 /// A builder for [`Service`](crate::types::Service).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceBuilder {
     pub(crate) reference_id: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -137,10 +132,8 @@ pub struct ServiceBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) edges: ::std::option::Option<::std::vec::Vec<crate::types::Edge>>,
     pub(crate) summary_statistics: ::std::option::Option<crate::types::ServiceStatistics>,
-    pub(crate) duration_histogram:
-        ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>,
-    pub(crate) response_time_histogram:
-        ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>,
+    pub(crate) duration_histogram: ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>,
+    pub(crate) response_time_histogram: ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>,
 }
 impl ServiceBuilder {
     /// <p>Identifier for the service. Unique within the service map.</p>
@@ -183,10 +176,7 @@ impl ServiceBuilder {
         self
     }
     /// <p>A list of names for the service, including the canonical name.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -274,10 +264,7 @@ impl ServiceBuilder {
         self
     }
     /// <p>The start time of the first segment that the service generated.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -291,10 +278,7 @@ impl ServiceBuilder {
         self
     }
     /// <p>The end time of the last segment that the service generated.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -314,10 +298,7 @@ impl ServiceBuilder {
         self
     }
     /// <p>Connections to downstream services.</p>
-    pub fn set_edges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Edge>>,
-    ) -> Self {
+    pub fn set_edges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Edge>>) -> Self {
         self.edges = input;
         self
     }
@@ -331,17 +312,12 @@ impl ServiceBuilder {
         self
     }
     /// <p>Aggregated statistics for the service.</p>
-    pub fn set_summary_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceStatistics>,
-    ) -> Self {
+    pub fn set_summary_statistics(mut self, input: ::std::option::Option<crate::types::ServiceStatistics>) -> Self {
         self.summary_statistics = input;
         self
     }
     /// <p>Aggregated statistics for the service.</p>
-    pub fn get_summary_statistics(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceStatistics> {
+    pub fn get_summary_statistics(&self) -> &::std::option::Option<crate::types::ServiceStatistics> {
         &self.summary_statistics
     }
     /// Appends an item to `duration_histogram`.
@@ -356,17 +332,12 @@ impl ServiceBuilder {
         self
     }
     /// <p>A histogram that maps the spread of service durations.</p>
-    pub fn set_duration_histogram(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>,
-    ) -> Self {
+    pub fn set_duration_histogram(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>) -> Self {
         self.duration_histogram = input;
         self
     }
     /// <p>A histogram that maps the spread of service durations.</p>
-    pub fn get_duration_histogram(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>> {
+    pub fn get_duration_histogram(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>> {
         &self.duration_histogram
     }
     /// Appends an item to `response_time_histogram`.
@@ -381,17 +352,12 @@ impl ServiceBuilder {
         self
     }
     /// <p>A histogram that maps the spread of service response times.</p>
-    pub fn set_response_time_histogram(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>,
-    ) -> Self {
+    pub fn set_response_time_histogram(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>) -> Self {
         self.response_time_histogram = input;
         self
     }
     /// <p>A histogram that maps the spread of service response times.</p>
-    pub fn get_response_time_histogram(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>> {
+    pub fn get_response_time_histogram(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>> {
         &self.response_time_histogram
     }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).

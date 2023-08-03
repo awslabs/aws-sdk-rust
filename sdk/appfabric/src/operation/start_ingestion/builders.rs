@@ -10,10 +10,7 @@ impl StartIngestionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_ingestion::StartIngestionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_ingestion::StartIngestionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_ingestion::StartIngestionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_ingestion();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartIngestionFluentBuilder {
         }
     }
     /// Access the StartIngestion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_ingestion::builders::StartIngestionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_ingestion::builders::StartIngestionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl StartIngestionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl StartIngestionFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn ingestion_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingestion_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ingestion_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn set_ingestion_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingestion_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ingestion_identifier(input);
         self
     }
@@ -135,18 +121,12 @@ impl StartIngestionFluentBuilder {
         self.inner.get_ingestion_identifier()
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_bundle_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }

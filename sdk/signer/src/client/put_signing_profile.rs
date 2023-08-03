@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`profile_version(Option<String>)`](crate::operation::put_signing_profile::PutSigningProfileOutput::profile_version): <p>The version of the signing profile being created.</p>
     ///   - [`profile_version_arn(Option<String>)`](crate::operation::put_signing_profile::PutSigningProfileOutput::profile_version_arn): <p>The signing profile ARN, including the profile version.</p>
     /// - On failure, responds with [`SdkError<PutSigningProfileError>`](crate::operation::put_signing_profile::PutSigningProfileError)
-    pub fn put_signing_profile(
-        &self,
-    ) -> crate::operation::put_signing_profile::builders::PutSigningProfileFluentBuilder {
-        crate::operation::put_signing_profile::builders::PutSigningProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_signing_profile(&self) -> crate::operation::put_signing_profile::builders::PutSigningProfileFluentBuilder {
+        crate::operation::put_signing_profile::builders::PutSigningProfileFluentBuilder::new(self.handle.clone())
     }
 }

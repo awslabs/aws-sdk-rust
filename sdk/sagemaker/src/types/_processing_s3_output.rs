@@ -37,9 +37,7 @@ impl ProcessingS3Output {
 
 /// A builder for [`ProcessingS3Output`](crate::types::ProcessingS3Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessingS3OutputBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) local_path: ::std::option::Option<::std::string::String>,
@@ -80,17 +78,12 @@ impl ProcessingS3OutputBuilder {
         self
     }
     /// <p>Whether to upload the results of the processing job continuously or after the job completes.</p>
-    pub fn set_s3_upload_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingS3UploadMode>,
-    ) -> Self {
+    pub fn set_s3_upload_mode(mut self, input: ::std::option::Option<crate::types::ProcessingS3UploadMode>) -> Self {
         self.s3_upload_mode = input;
         self
     }
     /// <p>Whether to upload the results of the processing job continuously or after the job completes.</p>
-    pub fn get_s3_upload_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingS3UploadMode> {
+    pub fn get_s3_upload_mode(&self) -> &::std::option::Option<crate::types::ProcessingS3UploadMode> {
         &self.s3_upload_mode
     }
     /// Consumes the builder and constructs a [`ProcessingS3Output`](crate::types::ProcessingS3Output).

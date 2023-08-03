@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartWorkflowRunOutput {
 }
 impl StartWorkflowRunOutput {
     /// Creates a new builder-style object to manufacture [`StartWorkflowRunOutput`](crate::operation::start_workflow_run::StartWorkflowRunOutput).
-    pub fn builder() -> crate::operation::start_workflow_run::builders::StartWorkflowRunOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_workflow_run::builders::StartWorkflowRunOutputBuilder {
         crate::operation::start_workflow_run::builders::StartWorkflowRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartWorkflowRunOutput`](crate::operation::start_workflow_run::StartWorkflowRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartWorkflowRunOutputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

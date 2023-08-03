@@ -51,9 +51,7 @@ impl Condition {
 
 /// A builder for [`Condition`](crate::types::Condition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConditionBuilder {
     pub(crate) logical_operator: ::std::option::Option<crate::types::LogicalOperator>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl ConditionBuilder {
         self
     }
     /// <p>A logical operator.</p>
-    pub fn set_logical_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::LogicalOperator>,
-    ) -> Self {
+    pub fn set_logical_operator(mut self, input: ::std::option::Option<crate::types::LogicalOperator>) -> Self {
         self.logical_operator = input;
         self
     }
@@ -127,10 +122,7 @@ impl ConditionBuilder {
         self
     }
     /// <p>The state of the crawler to which this condition applies.</p>
-    pub fn set_crawl_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CrawlState>,
-    ) -> Self {
+    pub fn set_crawl_state(mut self, input: ::std::option::Option<crate::types::CrawlState>) -> Self {
         self.crawl_state = input;
         self
     }

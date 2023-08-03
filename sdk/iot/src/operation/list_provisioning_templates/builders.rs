@@ -27,7 +27,7 @@ impl ListProvisioningTemplatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListProvisioningTemplatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesInputBuilder,
+    inner: crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesInputBuilder,
 }
 impl ListProvisioningTemplatesFluentBuilder {
     /// Creates a new `ListProvisioningTemplates`.
@@ -38,7 +38,7 @@ impl ListProvisioningTemplatesFluentBuilder {
         }
     }
     /// Access the ListProvisioningTemplates as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListProvisioningTemplatesFluentBuilder {
             crate::operation::list_provisioning_templates::ListProvisioningTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioning_templates::ListProvisioningTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioning_templates::ListProvisioningTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListProvisioningTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListProvisioningTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioning_templates::ListProvisioningTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioning_templates::ListProvisioningTemplatesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListProvisioningTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioning_templates::ListProvisioningTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioning_templates::ListProvisioningTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -115,19 +106,14 @@ impl ListProvisioningTemplatesFluentBuilder {
             crate::operation::list_provisioning_templates::ListProvisioningTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioning_templates::ListProvisioningTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioning_templates::ListProvisioningTemplatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_provisioning_templates::paginator::ListProvisioningTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_provisioning_templates::paginator::ListProvisioningTemplatesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_provisioning_templates::paginator::ListProvisioningTemplatesPaginator {
         crate::operation::list_provisioning_templates::paginator::ListProvisioningTemplatesPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to return at one time.</p>

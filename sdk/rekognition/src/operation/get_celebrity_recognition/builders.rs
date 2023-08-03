@@ -36,8 +36,7 @@ impl GetCelebrityRecognitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCelebrityRecognitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionInputBuilder,
+    inner: crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionInputBuilder,
 }
 impl GetCelebrityRecognitionFluentBuilder {
     /// Creates a new `GetCelebrityRecognition`.
@@ -48,10 +47,7 @@ impl GetCelebrityRecognitionFluentBuilder {
         }
     }
     /// Access the GetCelebrityRecognition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +59,7 @@ impl GetCelebrityRecognitionFluentBuilder {
             crate::operation::get_celebrity_recognition::GetCelebrityRecognition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_celebrity_recognition::GetCelebrityRecognitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_celebrity_recognition::GetCelebrityRecognitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +69,7 @@ impl GetCelebrityRecognitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +78,7 @@ impl GetCelebrityRecognitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_celebrity_recognition::GetCelebrityRecognitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_celebrity_recognition::GetCelebrityRecognitionError>,
     > {
         let op = self
             .inner
@@ -112,9 +101,7 @@ impl GetCelebrityRecognitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_celebrity_recognition::GetCelebrityRecognitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_celebrity_recognition::GetCelebrityRecognitionError>,
     > {
         self.send_middleware().await
     }
@@ -128,19 +115,14 @@ impl GetCelebrityRecognitionFluentBuilder {
             crate::operation::get_celebrity_recognition::GetCelebrityRecognition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_celebrity_recognition::GetCelebrityRecognitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_celebrity_recognition::GetCelebrityRecognitionError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_celebrity_recognition::paginator::GetCelebrityRecognitionPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_celebrity_recognition::paginator::GetCelebrityRecognitionPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::get_celebrity_recognition::paginator::GetCelebrityRecognitionPaginator {
         crate::operation::get_celebrity_recognition::paginator::GetCelebrityRecognitionPaginator::new(self.handle, self.inner)
     }
     /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from a call to <code>StartCelebrityRecognition</code>.</p>
@@ -191,10 +173,7 @@ impl GetCelebrityRecognitionFluentBuilder {
         self
     }
     /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier, specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::CelebrityRecognitionSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::CelebrityRecognitionSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

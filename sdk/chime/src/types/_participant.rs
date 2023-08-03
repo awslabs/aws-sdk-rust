@@ -59,18 +59,12 @@ impl ParticipantBuilder {
         &self.phone_number
     }
     /// <p>The participant's proxy phone number.</p>
-    pub fn proxy_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn proxy_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proxy_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The participant's proxy phone number.</p>
-    pub fn set_proxy_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_proxy_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.proxy_phone_number = input;
         self
     }

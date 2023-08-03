@@ -26,7 +26,7 @@ impl DescribeFlywheelIterationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFlywheelIterationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationInputBuilder,
+    inner: crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationInputBuilder,
 }
 impl DescribeFlywheelIterationFluentBuilder {
     /// Creates a new `DescribeFlywheelIteration`.
@@ -37,7 +37,7 @@ impl DescribeFlywheelIterationFluentBuilder {
         }
     }
     /// Access the DescribeFlywheelIteration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeFlywheelIterationFluentBuilder {
             crate::operation::describe_flywheel_iteration::DescribeFlywheelIteration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeFlywheelIterationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeFlywheelIterationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeFlywheelIterationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeFlywheelIterationFluentBuilder {
             crate::operation::describe_flywheel_iteration::DescribeFlywheelIteration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DescribeFlywheelIterationFluentBuilder {
         self.inner.get_flywheel_arn()
     }
     /// <p></p>
-    pub fn flywheel_iteration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flywheel_iteration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flywheel_iteration_id(input.into());
         self
     }
     /// <p></p>
-    pub fn set_flywheel_iteration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flywheel_iteration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flywheel_iteration_id(input);
         self
     }

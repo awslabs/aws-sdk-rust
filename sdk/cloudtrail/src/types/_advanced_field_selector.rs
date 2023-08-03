@@ -673,9 +673,7 @@ impl AdvancedFieldSelector {
 
 /// A builder for [`AdvancedFieldSelector`](crate::types::AdvancedFieldSelector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdvancedFieldSelectorBuilder {
     pub(crate) field: ::std::option::Option<::std::string::String>,
     pub(crate) equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -1624,10 +1622,7 @@ impl AdvancedFieldSelectorBuilder {
         self
     }
     /// <p> An operator that includes events that match the exact value of the event record field specified as the value of <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.</p>
-    pub fn set_equals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_equals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.equals = input;
         self
     }
@@ -1647,17 +1642,12 @@ impl AdvancedFieldSelectorBuilder {
         self
     }
     /// <p>An operator that includes events that match the first few characters of the event record field specified as the value of <code>Field</code>.</p>
-    pub fn set_starts_with(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_starts_with(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.starts_with = input;
         self
     }
     /// <p>An operator that includes events that match the first few characters of the event record field specified as the value of <code>Field</code>.</p>
-    pub fn get_starts_with(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_starts_with(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.starts_with
     }
     /// Appends an item to `ends_with`.
@@ -1672,10 +1662,7 @@ impl AdvancedFieldSelectorBuilder {
         self
     }
     /// <p>An operator that includes events that match the last few characters of the event record field specified as the value of <code>Field</code>.</p>
-    pub fn set_ends_with(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ends_with(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ends_with = input;
         self
     }
@@ -1695,10 +1682,7 @@ impl AdvancedFieldSelectorBuilder {
         self
     }
     /// <p> An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn set_not_equals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_not_equals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.not_equals = input;
         self
     }
@@ -1711,27 +1695,19 @@ impl AdvancedFieldSelectorBuilder {
     /// To override the contents of this collection use [`set_not_starts_with`](Self::set_not_starts_with).
     ///
     /// <p> An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn not_starts_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn not_starts_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.not_starts_with.unwrap_or_default();
         v.push(input.into());
         self.not_starts_with = ::std::option::Option::Some(v);
         self
     }
     /// <p> An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn set_not_starts_with(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_not_starts_with(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.not_starts_with = input;
         self
     }
     /// <p> An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn get_not_starts_with(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_not_starts_with(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.not_starts_with
     }
     /// Appends an item to `not_ends_with`.
@@ -1739,27 +1715,19 @@ impl AdvancedFieldSelectorBuilder {
     /// To override the contents of this collection use [`set_not_ends_with`](Self::set_not_ends_with).
     ///
     /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn not_ends_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn not_ends_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.not_ends_with.unwrap_or_default();
         v.push(input.into());
         self.not_ends_with = ::std::option::Option::Some(v);
         self
     }
     /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn set_not_ends_with(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_not_ends_with(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.not_ends_with = input;
         self
     }
     /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn get_not_ends_with(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_not_ends_with(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.not_ends_with
     }
     /// Consumes the builder and constructs a [`AdvancedFieldSelector`](crate::types::AdvancedFieldSelector).

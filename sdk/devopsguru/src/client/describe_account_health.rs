@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`resource_hours(Option<i64>)`](crate::operation::describe_account_health::DescribeAccountHealthOutput::resource_hours): <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
     ///   - [`analyzed_resource_count(Option<i64>)`](crate::operation::describe_account_health::DescribeAccountHealthOutput::analyzed_resource_count): <p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>
     /// - On failure, responds with [`SdkError<DescribeAccountHealthError>`](crate::operation::describe_account_health::DescribeAccountHealthError)
-    pub fn describe_account_health(
-        &self,
-    ) -> crate::operation::describe_account_health::builders::DescribeAccountHealthFluentBuilder
-    {
-        crate::operation::describe_account_health::builders::DescribeAccountHealthFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_account_health(&self) -> crate::operation::describe_account_health::builders::DescribeAccountHealthFluentBuilder {
+        crate::operation::describe_account_health::builders::DescribeAccountHealthFluentBuilder::new(self.handle.clone())
     }
 }

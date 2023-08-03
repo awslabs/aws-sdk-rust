@@ -10,10 +10,7 @@ impl StartMatchmakingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_matchmaking::StartMatchmakingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_matchmaking::StartMatchmakingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_matchmaking::StartMatchmakingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_matchmaking();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl StartMatchmakingFluentBuilder {
         }
     }
     /// Access the StartMatchmaking as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_matchmaking::builders::StartMatchmakingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_matchmaking::builders::StartMatchmakingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl StartMatchmakingFluentBuilder {
             crate::operation::start_matchmaking::StartMatchmaking,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_matchmaking::StartMatchmakingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_matchmaking::StartMatchmakingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl StartMatchmakingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl StartMatchmakingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_matchmaking::StartMatchmakingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_matchmaking::StartMatchmakingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_matchmaking::StartMatchmakingError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl StartMatchmakingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_matchmaking::StartMatchmakingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_matchmaking::StartMatchmakingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_matchmaking::StartMatchmakingError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +108,7 @@ impl StartMatchmakingFluentBuilder {
             crate::operation::start_matchmaking::StartMatchmaking,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_matchmaking::StartMatchmakingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_matchmaking::StartMatchmakingError>,
     > {
         self.customize_middleware().await
     }
@@ -143,18 +127,12 @@ impl StartMatchmakingFluentBuilder {
         self.inner.get_ticket_id()
     }
     /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
-    pub fn configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_name(input.into());
         self
     }
     /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
-    pub fn set_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_name(input);
         self
     }
@@ -174,10 +152,7 @@ impl StartMatchmakingFluentBuilder {
     }
     /// <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
     /// <p>You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
-    pub fn set_players(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Player>>,
-    ) -> Self {
+    pub fn set_players(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Player>>) -> Self {
         self.inner = self.inner.set_players(input);
         self
     }

@@ -51,9 +51,7 @@ impl TransferData {
 
 /// A builder for [`TransferData`](crate::types::TransferData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransferDataBuilder {
     pub(crate) transfer_message: ::std::option::Option<::std::string::String>,
     pub(crate) reject_reason: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct TransferDataBuilder {
 }
 impl TransferDataBuilder {
     /// <p>The transfer message.</p>
-    pub fn transfer_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transfer_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transfer_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transfer message.</p>
-    pub fn set_transfer_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transfer_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transfer_message = input;
         self
     }
@@ -83,18 +75,12 @@ impl TransferDataBuilder {
         &self.transfer_message
     }
     /// <p>The reason why the transfer was rejected.</p>
-    pub fn reject_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reject_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reject_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason why the transfer was rejected.</p>
-    pub fn set_reject_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reject_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reject_reason = input;
         self
     }
@@ -108,10 +94,7 @@ impl TransferDataBuilder {
         self
     }
     /// <p>The date the transfer took place.</p>
-    pub fn set_transfer_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_transfer_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.transfer_date = input;
         self
     }
@@ -125,10 +108,7 @@ impl TransferDataBuilder {
         self
     }
     /// <p>The date the transfer was accepted.</p>
-    pub fn set_accept_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_accept_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.accept_date = input;
         self
     }
@@ -142,10 +122,7 @@ impl TransferDataBuilder {
         self
     }
     /// <p>The date the transfer was rejected.</p>
-    pub fn set_reject_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_reject_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.reject_date = input;
         self
     }

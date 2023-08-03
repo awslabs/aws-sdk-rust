@@ -22,9 +22,7 @@ impl GetPresetInput {
 
 /// A builder for [`GetPresetInput`](crate::operation::get_preset::GetPresetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPresetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetPresetInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetPresetInput`](crate::operation::get_preset::GetPresetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_preset::GetPresetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_preset::GetPresetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_preset::GetPresetInput { name: self.name })
     }
 }

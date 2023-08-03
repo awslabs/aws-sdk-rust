@@ -55,18 +55,14 @@ impl ContinueUpdateRollbackInput {
 }
 impl ContinueUpdateRollbackInput {
     /// Creates a new builder-style object to manufacture [`ContinueUpdateRollbackInput`](crate::operation::continue_update_rollback::ContinueUpdateRollbackInput).
-    pub fn builder(
-    ) -> crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackInputBuilder
-    {
+    pub fn builder() -> crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackInputBuilder {
         crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackInputBuilder::default()
     }
 }
 
 /// A builder for [`ContinueUpdateRollbackInput`](crate::operation::continue_update_rollback::ContinueUpdateRollbackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContinueUpdateRollbackInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -122,10 +118,7 @@ impl ContinueUpdateRollbackInputBuilder {
     /// <p>To skip resources that are part of nested stacks, use the following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource (<code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its corresponding embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.</p> <note>
     /// <p>Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example of a continue update rollback operation with nested stacks, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using ResourcesToSkip to recover a nested stacks hierarchy</a>.</p>
     /// </note>
-    pub fn resources_to_skip(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resources_to_skip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources_to_skip.unwrap_or_default();
         v.push(input.into());
         self.resources_to_skip = ::std::option::Option::Some(v);
@@ -138,10 +131,7 @@ impl ContinueUpdateRollbackInputBuilder {
     /// <p>To skip resources that are part of nested stacks, use the following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource (<code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its corresponding embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.</p> <note>
     /// <p>Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example of a continue update rollback operation with nested stacks, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using ResourcesToSkip to recover a nested stacks hierarchy</a>.</p>
     /// </note>
-    pub fn set_resources_to_skip(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources_to_skip(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources_to_skip = input;
         self
     }
@@ -152,24 +142,16 @@ impl ContinueUpdateRollbackInputBuilder {
     /// <p>To skip resources that are part of nested stacks, use the following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource (<code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its corresponding embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.</p> <note>
     /// <p>Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example of a continue update rollback operation with nested stacks, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using ResourcesToSkip to recover a nested stacks hierarchy</a>.</p>
     /// </note>
-    pub fn get_resources_to_skip(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources_to_skip(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resources_to_skip
     }
     /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to continue the rollback to a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to continue the rollback to a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -180,17 +162,13 @@ impl ContinueUpdateRollbackInputBuilder {
     /// Consumes the builder and constructs a [`ContinueUpdateRollbackInput`](crate::operation::continue_update_rollback::ContinueUpdateRollbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::continue_update_rollback::ContinueUpdateRollbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::continue_update_rollback::ContinueUpdateRollbackInput {
-                stack_name: self.stack_name,
-                role_arn: self.role_arn,
-                resources_to_skip: self.resources_to_skip,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::continue_update_rollback::ContinueUpdateRollbackInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::continue_update_rollback::ContinueUpdateRollbackInput {
+            stack_name: self.stack_name,
+            role_arn: self.role_arn,
+            resources_to_skip: self.resources_to_skip,
+            client_request_token: self.client_request_token,
+        })
     }
 }

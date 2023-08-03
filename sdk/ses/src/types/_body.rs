@@ -30,9 +30,7 @@ impl Body {
 
 /// A builder for [`Body`](crate::types::Body).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BodyBuilder {
     pub(crate) text: ::std::option::Option<crate::types::Content>,
     pub(crate) html: ::std::option::Option<crate::types::Content>,

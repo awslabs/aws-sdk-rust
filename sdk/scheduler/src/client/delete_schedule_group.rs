@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_schedule_group::builders::DeleteScheduleGroupFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_schedule_group::builders::DeleteScheduleGroupFluentBuilder::set_client_token): <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
     /// - On success, responds with [`DeleteScheduleGroupOutput`](crate::operation::delete_schedule_group::DeleteScheduleGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteScheduleGroupError>`](crate::operation::delete_schedule_group::DeleteScheduleGroupError)
-    pub fn delete_schedule_group(
-        &self,
-    ) -> crate::operation::delete_schedule_group::builders::DeleteScheduleGroupFluentBuilder {
-        crate::operation::delete_schedule_group::builders::DeleteScheduleGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_schedule_group(&self) -> crate::operation::delete_schedule_group::builders::DeleteScheduleGroupFluentBuilder {
+        crate::operation::delete_schedule_group::builders::DeleteScheduleGroupFluentBuilder::new(self.handle.clone())
     }
 }

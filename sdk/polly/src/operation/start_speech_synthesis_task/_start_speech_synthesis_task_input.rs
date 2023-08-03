@@ -98,18 +98,14 @@ impl StartSpeechSynthesisTaskInput {
 }
 impl StartSpeechSynthesisTaskInput {
     /// Creates a new builder-style object to manufacture [`StartSpeechSynthesisTaskInput`](crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskInput).
-    pub fn builder(
-    ) -> crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskInputBuilder {
         crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`StartSpeechSynthesisTaskInput`](crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSpeechSynthesisTaskInputBuilder {
     pub(crate) engine: ::std::option::Option<crate::types::Engine>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
@@ -119,8 +115,7 @@ pub struct StartSpeechSynthesisTaskInputBuilder {
     pub(crate) output_s3_key_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) sample_rate: ::std::option::Option<::std::string::String>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) speech_mark_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>,
+    pub(crate) speech_mark_types: ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) text_type: ::std::option::Option<crate::types::TextType>,
     pub(crate) voice_id: ::std::option::Option<crate::types::VoiceId>,
@@ -148,10 +143,7 @@ impl StartSpeechSynthesisTaskInputBuilder {
     }
     /// <p>Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
     /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -165,27 +157,19 @@ impl StartSpeechSynthesisTaskInputBuilder {
     /// To override the contents of this collection use [`set_lexicon_names`](Self::set_lexicon_names).
     ///
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
-    pub fn lexicon_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lexicon_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lexicon_names.unwrap_or_default();
         v.push(input.into());
         self.lexicon_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
-    pub fn set_lexicon_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_lexicon_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.lexicon_names = input;
         self
     }
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
-    pub fn get_lexicon_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lexicon_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.lexicon_names
     }
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
@@ -194,10 +178,7 @@ impl StartSpeechSynthesisTaskInputBuilder {
         self
     }
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputFormat>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.output_format = input;
         self
     }
@@ -206,18 +187,12 @@ impl StartSpeechSynthesisTaskInputBuilder {
         &self.output_format
     }
     /// <p>Amazon S3 bucket name to which the output file will be saved.</p>
-    pub fn output_s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon S3 bucket name to which the output file will be saved.</p>
-    pub fn set_output_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_bucket_name = input;
         self
     }
@@ -226,18 +201,12 @@ impl StartSpeechSynthesisTaskInputBuilder {
         &self.output_s3_bucket_name
     }
     /// <p>The Amazon S3 key prefix for the output speech file.</p>
-    pub fn output_s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 key prefix for the output speech file.</p>
-    pub fn set_output_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_key_prefix = input;
         self
     }
@@ -266,18 +235,12 @@ impl StartSpeechSynthesisTaskInputBuilder {
         &self.sample_rate
     }
     /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -297,17 +260,12 @@ impl StartSpeechSynthesisTaskInputBuilder {
         self
     }
     /// <p>The type of speech marks returned for the input text.</p>
-    pub fn set_speech_mark_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>,
-    ) -> Self {
+    pub fn set_speech_mark_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>) -> Self {
         self.speech_mark_types = input;
         self
     }
     /// <p>The type of speech marks returned for the input text.</p>
-    pub fn get_speech_mark_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>> {
+    pub fn get_speech_mark_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>> {
         &self.speech_mark_types
     }
     /// <p>The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text. </p>
@@ -359,21 +317,19 @@ impl StartSpeechSynthesisTaskInputBuilder {
         crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskInput {
-                engine: self.engine,
-                language_code: self.language_code,
-                lexicon_names: self.lexicon_names,
-                output_format: self.output_format,
-                output_s3_bucket_name: self.output_s3_bucket_name,
-                output_s3_key_prefix: self.output_s3_key_prefix,
-                sample_rate: self.sample_rate,
-                sns_topic_arn: self.sns_topic_arn,
-                speech_mark_types: self.speech_mark_types,
-                text: self.text,
-                text_type: self.text_type,
-                voice_id: self.voice_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskInput {
+            engine: self.engine,
+            language_code: self.language_code,
+            lexicon_names: self.lexicon_names,
+            output_format: self.output_format,
+            output_s3_bucket_name: self.output_s3_bucket_name,
+            output_s3_key_prefix: self.output_s3_key_prefix,
+            sample_rate: self.sample_rate,
+            sns_topic_arn: self.sns_topic_arn,
+            speech_mark_types: self.speech_mark_types,
+            text: self.text,
+            text_type: self.text_type,
+            voice_id: self.voice_id,
+        })
     }
 }

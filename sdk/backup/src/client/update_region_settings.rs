@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`resource_type_management_preference(HashMap<String, bool>)`](crate::operation::update_region_settings::builders::UpdateRegionSettingsFluentBuilder::resource_type_management_preference) / [`set_resource_type_management_preference(Option<HashMap<String, bool>>)`](crate::operation::update_region_settings::builders::UpdateRegionSettingsFluentBuilder::set_resource_type_management_preference): <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
     /// - On success, responds with [`UpdateRegionSettingsOutput`](crate::operation::update_region_settings::UpdateRegionSettingsOutput)
     /// - On failure, responds with [`SdkError<UpdateRegionSettingsError>`](crate::operation::update_region_settings::UpdateRegionSettingsError)
-    pub fn update_region_settings(
-        &self,
-    ) -> crate::operation::update_region_settings::builders::UpdateRegionSettingsFluentBuilder {
-        crate::operation::update_region_settings::builders::UpdateRegionSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_region_settings(&self) -> crate::operation::update_region_settings::builders::UpdateRegionSettingsFluentBuilder {
+        crate::operation::update_region_settings::builders::UpdateRegionSettingsFluentBuilder::new(self.handle.clone())
     }
 }

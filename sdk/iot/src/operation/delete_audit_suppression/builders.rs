@@ -38,10 +38,7 @@ impl DeleteAuditSuppressionFluentBuilder {
         }
     }
     /// Access the DeleteAuditSuppression as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_audit_suppression::builders::DeleteAuditSuppressionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_audit_suppression::builders::DeleteAuditSuppressionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteAuditSuppressionFluentBuilder {
             crate::operation::delete_audit_suppression::DeleteAuditSuppression,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_audit_suppression::DeleteAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_audit_suppression::DeleteAuditSuppressionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteAuditSuppressionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteAuditSuppressionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_audit_suppression::DeleteAuditSuppressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_audit_suppression::DeleteAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_audit_suppression::DeleteAuditSuppressionError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteAuditSuppressionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_audit_suppression::DeleteAuditSuppressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_audit_suppression::DeleteAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_audit_suppression::DeleteAuditSuppressionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DeleteAuditSuppressionFluentBuilder {
             crate::operation::delete_audit_suppression::DeleteAuditSuppression,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_audit_suppression::DeleteAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_audit_suppression::DeleteAuditSuppressionError>,
     > {
         self.customize_middleware().await
     }
@@ -144,17 +130,12 @@ impl DeleteAuditSuppressionFluentBuilder {
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn get_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         self.inner.get_resource_identifier()
     }
 }

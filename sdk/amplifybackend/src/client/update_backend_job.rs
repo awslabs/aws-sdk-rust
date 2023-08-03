@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`status(Option<String>)`](crate::operation::update_backend_job::UpdateBackendJobOutput::status): <p>The current status of the request.</p>
     ///   - [`update_time(Option<String>)`](crate::operation::update_backend_job::UpdateBackendJobOutput::update_time): <p>The time when the job was last updated.</p>
     /// - On failure, responds with [`SdkError<UpdateBackendJobError>`](crate::operation::update_backend_job::UpdateBackendJobError)
-    pub fn update_backend_job(
-        &self,
-    ) -> crate::operation::update_backend_job::builders::UpdateBackendJobFluentBuilder {
-        crate::operation::update_backend_job::builders::UpdateBackendJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_backend_job(&self) -> crate::operation::update_backend_job::builders::UpdateBackendJobFluentBuilder {
+        crate::operation::update_backend_job::builders::UpdateBackendJobFluentBuilder::new(self.handle.clone())
     }
 }

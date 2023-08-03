@@ -10,10 +10,7 @@ impl EnableSecurityHubInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::enable_security_hub::EnableSecurityHubOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_security_hub::EnableSecurityHubError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_security_hub::EnableSecurityHubError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.enable_security_hub();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl EnableSecurityHubFluentBuilder {
         }
     }
     /// Access the EnableSecurityHub as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_security_hub::builders::EnableSecurityHubInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::enable_security_hub::builders::EnableSecurityHubInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl EnableSecurityHubFluentBuilder {
             crate::operation::enable_security_hub::EnableSecurityHub,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_security_hub::EnableSecurityHubError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_security_hub::EnableSecurityHubError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl EnableSecurityHubFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl EnableSecurityHubFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_security_hub::EnableSecurityHubOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_security_hub::EnableSecurityHubError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_security_hub::EnableSecurityHubError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl EnableSecurityHubFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_security_hub::EnableSecurityHubOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_security_hub::EnableSecurityHubError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_security_hub::EnableSecurityHubError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +112,7 @@ impl EnableSecurityHubFluentBuilder {
             crate::operation::enable_security_hub::EnableSecurityHub,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_security_hub::EnableSecurityHubError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_security_hub::EnableSecurityHubError>,
     > {
         self.customize_middleware().await
     }
@@ -137,30 +121,17 @@ impl EnableSecurityHubFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
@@ -180,29 +151,21 @@ impl EnableSecurityHubFluentBuilder {
     /// <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
     /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
     /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
-    pub fn control_finding_generator(
-        mut self,
-        input: crate::types::ControlFindingGenerator,
-    ) -> Self {
+    pub fn control_finding_generator(mut self, input: crate::types::ControlFindingGenerator) -> Self {
         self.inner = self.inner.control_finding_generator(input);
         self
     }
     /// <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
     /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
     /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
-    pub fn set_control_finding_generator(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlFindingGenerator>,
-    ) -> Self {
+    pub fn set_control_finding_generator(mut self, input: ::std::option::Option<crate::types::ControlFindingGenerator>) -> Self {
         self.inner = self.inner.set_control_finding_generator(input);
         self
     }
     /// <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
     /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
     /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
-    pub fn get_control_finding_generator(
-        &self,
-    ) -> &::std::option::Option<crate::types::ControlFindingGenerator> {
+    pub fn get_control_finding_generator(&self) -> &::std::option::Option<crate::types::ControlFindingGenerator> {
         self.inner.get_control_finding_generator()
     }
 }

@@ -9,9 +9,7 @@ pub struct AssetBundleExportJobRefreshScheduleOverrideProperties {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>RefreshSchedule</code> resource properties to generate variables for in the returned CloudFormation template.</p>
     #[doc(hidden)]
-    pub properties: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride>,
-    >,
+    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride>>,
 }
 impl AssetBundleExportJobRefreshScheduleOverrideProperties {
     /// <p>The ARN of the specific <code>RefreshSchedule</code> resource whose override properties are configured in this structure.</p>
@@ -19,31 +17,23 @@ impl AssetBundleExportJobRefreshScheduleOverrideProperties {
         self.arn.as_deref()
     }
     /// <p>A list of <code>RefreshSchedule</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride]>
-    {
+    pub fn properties(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride]> {
         self.properties.as_deref()
     }
 }
 impl AssetBundleExportJobRefreshScheduleOverrideProperties {
     /// Creates a new builder-style object to manufacture [`AssetBundleExportJobRefreshScheduleOverrideProperties`](crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties).
-    pub fn builder(
-    ) -> crate::types::builders::AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder {
+    pub fn builder() -> crate::types::builders::AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder {
         crate::types::builders::AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder::default()
     }
 }
 
 /// A builder for [`AssetBundleExportJobRefreshScheduleOverrideProperties`](crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride>,
-    >,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride>>,
 }
 impl AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder {
     /// <p>The ARN of the specific <code>RefreshSchedule</code> resource whose override properties are configured in this structure.</p>
@@ -65,10 +55,7 @@ impl AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder {
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>A list of <code>RefreshSchedule</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn properties(
-        mut self,
-        input: crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride,
-    ) -> Self {
+    pub fn properties(mut self, input: crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride) -> Self {
         let mut v = self.properties.unwrap_or_default();
         v.push(input);
         self.properties = ::std::option::Option::Some(v);
@@ -77,19 +64,13 @@ impl AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder {
     /// <p>A list of <code>RefreshSchedule</code> resource properties to generate variables for in the returned CloudFormation template.</p>
     pub fn set_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride>>,
     ) -> Self {
         self.properties = input;
         self
     }
     /// <p>A list of <code>RefreshSchedule</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride>,
-    > {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride>> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`AssetBundleExportJobRefreshScheduleOverrideProperties`](crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties).

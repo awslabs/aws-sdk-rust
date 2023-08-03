@@ -8,8 +8,7 @@ pub struct ListReadSetActivationJobsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of jobs.</p>
     #[doc(hidden)]
-    pub activation_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetJobItem>>,
+    pub activation_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetJobItem>>,
     _request_id: Option<String>,
 }
 impl ListReadSetActivationJobsOutput {
@@ -18,9 +17,7 @@ impl ListReadSetActivationJobsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of jobs.</p>
-    pub fn activation_jobs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ActivateReadSetJobItem]> {
+    pub fn activation_jobs(&self) -> ::std::option::Option<&[crate::types::ActivateReadSetJobItem]> {
         self.activation_jobs.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListReadSetActivationJobsOutput {
 }
 impl ListReadSetActivationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListReadSetActivationJobsOutput`](crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput).
-    pub fn builder() -> crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsOutputBuilder {
         crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReadSetActivationJobsOutput`](crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReadSetActivationJobsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) activation_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetJobItem>>,
+    pub(crate) activation_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetJobItem>>,
     _request_id: Option<String>,
 }
 impl ListReadSetActivationJobsOutputBuilder {
@@ -74,17 +68,12 @@ impl ListReadSetActivationJobsOutputBuilder {
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn set_activation_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetJobItem>>,
-    ) -> Self {
+    pub fn set_activation_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetJobItem>>) -> Self {
         self.activation_jobs = input;
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn get_activation_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetJobItem>> {
+    pub fn get_activation_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetJobItem>> {
         &self.activation_jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl ListReadSetActivationJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListReadSetActivationJobsOutput`](crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput {
+    pub fn build(self) -> crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput {
         crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput {
             next_token: self.next_token,
             activation_jobs: self.activation_jobs,

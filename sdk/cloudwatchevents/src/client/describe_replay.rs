@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`replay_start_time(Option<DateTime>)`](crate::operation::describe_replay::DescribeReplayOutput::replay_start_time): <p>A time stamp for the time that the replay started.</p>
     ///   - [`replay_end_time(Option<DateTime>)`](crate::operation::describe_replay::DescribeReplayOutput::replay_end_time): <p>A time stamp for the time that the replay stopped.</p>
     /// - On failure, responds with [`SdkError<DescribeReplayError>`](crate::operation::describe_replay::DescribeReplayError)
-    pub fn describe_replay(
-        &self,
-    ) -> crate::operation::describe_replay::builders::DescribeReplayFluentBuilder {
-        crate::operation::describe_replay::builders::DescribeReplayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_replay(&self) -> crate::operation::describe_replay::builders::DescribeReplayFluentBuilder {
+        crate::operation::describe_replay::builders::DescribeReplayFluentBuilder::new(self.handle.clone())
     }
 }

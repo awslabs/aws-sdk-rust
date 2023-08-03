@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`tags(Vec<ResourceTag>)`](crate::operation::register_domain::builders::RegisterDomainFluentBuilder::tags) / [`set_tags(Option<Vec<ResourceTag>>)`](crate::operation::register_domain::builders::RegisterDomainFluentBuilder::set_tags): <p>Tags to be added when registering a domain.</p>  <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     /// - On success, responds with [`RegisterDomainOutput`](crate::operation::register_domain::RegisterDomainOutput)
     /// - On failure, responds with [`SdkError<RegisterDomainError>`](crate::operation::register_domain::RegisterDomainError)
-    pub fn register_domain(
-        &self,
-    ) -> crate::operation::register_domain::builders::RegisterDomainFluentBuilder {
-        crate::operation::register_domain::builders::RegisterDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_domain(&self) -> crate::operation::register_domain::builders::RegisterDomainFluentBuilder {
+        crate::operation::register_domain::builders::RegisterDomainFluentBuilder::new(self.handle.clone())
     }
 }

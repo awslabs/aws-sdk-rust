@@ -38,7 +38,7 @@ impl ::std::fmt::Debug for UpdateEnvironmentTemplateInput {
 }
 impl UpdateEnvironmentTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentTemplateInput`](crate::operation::update_environment_template::UpdateEnvironmentTemplateInput).
-    pub fn builder() -> crate::operation::update_environment_template::builders::UpdateEnvironmentTemplateInputBuilder{
+    pub fn builder() -> crate::operation::update_environment_template::builders::UpdateEnvironmentTemplateInputBuilder {
         crate::operation::update_environment_template::builders::UpdateEnvironmentTemplateInputBuilder::default()
     }
 }
@@ -101,13 +101,11 @@ impl UpdateEnvironmentTemplateInputBuilder {
         crate::operation::update_environment_template::UpdateEnvironmentTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_environment_template::UpdateEnvironmentTemplateInput {
-                name: self.name,
-                display_name: self.display_name,
-                description: self.description,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_environment_template::UpdateEnvironmentTemplateInput {
+            name: self.name,
+            display_name: self.display_name,
+            description: self.description,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateEnvironmentTemplateInputBuilder {

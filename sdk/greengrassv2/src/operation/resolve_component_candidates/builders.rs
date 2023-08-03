@@ -30,7 +30,7 @@ impl ResolveComponentCandidatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResolveComponentCandidatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::resolve_component_candidates::builders::ResolveComponentCandidatesInputBuilder,
+    inner: crate::operation::resolve_component_candidates::builders::ResolveComponentCandidatesInputBuilder,
 }
 impl ResolveComponentCandidatesFluentBuilder {
     /// Creates a new `ResolveComponentCandidates`.
@@ -41,7 +41,7 @@ impl ResolveComponentCandidatesFluentBuilder {
         }
     }
     /// Access the ResolveComponentCandidates as a reference.
-    pub fn as_input(&self) -> &crate::operation::resolve_component_candidates::builders::ResolveComponentCandidatesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::resolve_component_candidates::builders::ResolveComponentCandidatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl ResolveComponentCandidatesFluentBuilder {
             crate::operation::resolve_component_candidates::ResolveComponentCandidates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_component_candidates::ResolveComponentCandidatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl ResolveComponentCandidatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl ResolveComponentCandidatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_component_candidates::ResolveComponentCandidatesError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl ResolveComponentCandidatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_component_candidates::ResolveComponentCandidatesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl ResolveComponentCandidatesFluentBuilder {
             crate::operation::resolve_component_candidates::ResolveComponentCandidates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_component_candidates::ResolveComponentCandidatesError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +119,7 @@ impl ResolveComponentCandidatesFluentBuilder {
         self
     }
     /// <p>The platform to use to resolve compatible components.</p>
-    pub fn set_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentPlatform>,
-    ) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::ComponentPlatform>) -> Self {
         self.inner = self.inner.set_platform(input);
         self
     }
@@ -151,17 +137,12 @@ impl ResolveComponentCandidatesFluentBuilder {
         self
     }
     /// <p>The list of components to resolve.</p>
-    pub fn set_component_candidates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>>,
-    ) -> Self {
+    pub fn set_component_candidates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>>) -> Self {
         self.inner = self.inner.set_component_candidates(input);
         self
     }
     /// <p>The list of components to resolve.</p>
-    pub fn get_component_candidates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>> {
+    pub fn get_component_candidates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>> {
         self.inner.get_component_candidates()
     }
 }

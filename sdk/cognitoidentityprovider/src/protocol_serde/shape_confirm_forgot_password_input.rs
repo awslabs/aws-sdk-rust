@@ -21,19 +21,13 @@ pub fn ser_confirm_forgot_password_input(
     if let Some(var_6) = &input.analytics_metadata {
         #[allow(unused_mut)]
         let mut object_7 = object.key("AnalyticsMetadata").start_object();
-        crate::protocol_serde::shape_analytics_metadata_type::ser_analytics_metadata_type(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_analytics_metadata_type::ser_analytics_metadata_type(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.user_context_data {
         #[allow(unused_mut)]
         let mut object_9 = object.key("UserContextData").start_object();
-        crate::protocol_serde::shape_user_context_data_type::ser_user_context_data_type(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_user_context_data_type::ser_user_context_data_type(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.client_metadata {

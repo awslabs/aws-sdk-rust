@@ -30,9 +30,7 @@ impl Code {
 
 /// A builder for [`Code`](crate::types::Code).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeBuilder {
     pub(crate) source: ::std::option::Option<crate::types::CodeSource>,
     pub(crate) destination: ::std::option::Option<crate::types::CodeDestination>,
@@ -58,10 +56,7 @@ impl CodeBuilder {
         self
     }
     /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::CodeDestination>) -> Self {
         self.destination = input;
         self
     }

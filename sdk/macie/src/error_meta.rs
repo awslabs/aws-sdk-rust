@@ -25,32 +25,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_member_account::AssociateMemberAccountError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::associate_member_account::AssociateMemberAccountError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_member_account::AssociateMemberAccountError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::associate_member_account::AssociateMemberAccountError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -61,38 +45,26 @@ impl From<crate::operation::associate_member_account::AssociateMemberAccountErro
     fn from(err: crate::operation::associate_member_account::AssociateMemberAccountError) -> Self {
         match err {
             crate::operation::associate_member_account::AssociateMemberAccountError::InternalException(inner) => Error::InternalException(inner),
-            crate::operation::associate_member_account::AssociateMemberAccountError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::operation::associate_member_account::AssociateMemberAccountError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::associate_member_account::AssociateMemberAccountError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::associate_member_account::AssociateMemberAccountError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::operation::associate_member_account::AssociateMemberAccountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_s3_resources::AssociateS3ResourcesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::associate_s3_resources::AssociateS3ResourcesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_s3_resources::AssociateS3ResourcesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::associate_s3_resources::AssociateS3ResourcesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -105,37 +77,23 @@ impl From<crate::operation::associate_s3_resources::AssociateS3ResourcesError> f
             crate::operation::associate_s3_resources::AssociateS3ResourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::associate_s3_resources::AssociateS3ResourcesError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::associate_s3_resources::AssociateS3ResourcesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::operation::associate_s3_resources::AssociateS3ResourcesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::associate_s3_resources::AssociateS3ResourcesError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::operation::associate_s3_resources::AssociateS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_member_account::DisassociateMemberAccountError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disassociate_member_account::DisassociateMemberAccountError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_member_account::DisassociateMemberAccountError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::disassociate_member_account::DisassociateMemberAccountError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -143,42 +101,28 @@ where
     }
 }
 impl From<crate::operation::disassociate_member_account::DisassociateMemberAccountError> for Error {
-    fn from(
-        err: crate::operation::disassociate_member_account::DisassociateMemberAccountError,
-    ) -> Self {
+    fn from(err: crate::operation::disassociate_member_account::DisassociateMemberAccountError) -> Self {
         match err {
-            crate::operation::disassociate_member_account::DisassociateMemberAccountError::InternalException(inner) => Error::InternalException(inner),
-            crate::operation::disassociate_member_account::DisassociateMemberAccountError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::disassociate_member_account::DisassociateMemberAccountError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::disassociate_member_account::DisassociateMemberAccountError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
             crate::operation::disassociate_member_account::DisassociateMemberAccountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -186,43 +130,29 @@ where
     }
 }
 impl From<crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError> for Error {
-    fn from(
-        err: crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError,
-    ) -> Self {
+    fn from(err: crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError) -> Self {
         match err {
-            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError::InternalException(inner) => Error::InternalException(inner),
-            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
             crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_member_accounts::ListMemberAccountsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_member_accounts::ListMemberAccountsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_member_accounts::ListMemberAccountsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_member_accounts::ListMemberAccountsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -238,32 +168,16 @@ impl From<crate::operation::list_member_accounts::ListMemberAccountsError> for E
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_s3_resources::ListS3ResourcesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_s3_resources::ListS3ResourcesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_s3_resources::ListS3ResourcesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_s3_resources::ListS3ResourcesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -273,47 +187,23 @@ where
 impl From<crate::operation::list_s3_resources::ListS3ResourcesError> for Error {
     fn from(err: crate::operation::list_s3_resources::ListS3ResourcesError) -> Self {
         match err {
-            crate::operation::list_s3_resources::ListS3ResourcesError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::list_s3_resources::ListS3ResourcesError::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::operation::list_s3_resources::ListS3ResourcesError::InvalidInputException(
-                inner,
-            ) => Error::InvalidInputException(inner),
-            crate::operation::list_s3_resources::ListS3ResourcesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_s3_resources::ListS3ResourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_s3_resources::ListS3ResourcesError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::list_s3_resources::ListS3ResourcesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_s3_resources::ListS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_s3_resources::UpdateS3ResourcesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_s3_resources::UpdateS3ResourcesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_s3_resources::UpdateS3ResourcesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_s3_resources::UpdateS3ResourcesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),

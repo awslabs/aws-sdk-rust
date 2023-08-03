@@ -30,9 +30,7 @@ impl DescribeOrganizationConfigurationOutput {
     /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
     /// <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>
     /// <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
-    pub fn auto_enable_standards(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoEnableStandards> {
+    pub fn auto_enable_standards(&self) -> ::std::option::Option<&crate::types::AutoEnableStandards> {
         self.auto_enable_standards.as_ref()
     }
 }
@@ -43,16 +41,14 @@ impl ::aws_http::request_id::RequestId for DescribeOrganizationConfigurationOutp
 }
 impl DescribeOrganizationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder {
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationOutputBuilder {
     pub(crate) auto_enable: ::std::option::Option<bool>,
     pub(crate) member_account_limit_reached: ::std::option::Option<bool>,
@@ -101,19 +97,14 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
     /// <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>
     /// <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
-    pub fn set_auto_enable_standards(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoEnableStandards>,
-    ) -> Self {
+    pub fn set_auto_enable_standards(mut self, input: ::std::option::Option<crate::types::AutoEnableStandards>) -> Self {
         self.auto_enable_standards = input;
         self
     }
     /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
     /// <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>
     /// <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
-    pub fn get_auto_enable_standards(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoEnableStandards> {
+    pub fn get_auto_enable_standards(&self) -> &::std::option::Option<crate::types::AutoEnableStandards> {
         &self.auto_enable_standards
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -126,16 +117,11 @@ impl DescribeOrganizationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput{
+    pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
         crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
-            auto_enable: self.auto_enable
-                .unwrap_or_default()
-            ,
-            member_account_limit_reached: self.member_account_limit_reached
-                .unwrap_or_default()
-            ,
-            auto_enable_standards: self.auto_enable_standards
-            ,
+            auto_enable: self.auto_enable.unwrap_or_default(),
+            member_account_limit_reached: self.member_account_limit_reached.unwrap_or_default(),
+            auto_enable_standards: self.auto_enable_standards,
             _request_id: self._request_id,
         }
     }

@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetRecordingConfigurationOutput`](crate::operation::get_recording_configuration::GetRecordingConfigurationOutput) with field(s):
     ///   - [`recording_configuration(Option<RecordingConfiguration>)`](crate::operation::get_recording_configuration::GetRecordingConfigurationOutput::recording_configuration): (undocumented)
     /// - On failure, responds with [`SdkError<GetRecordingConfigurationError>`](crate::operation::get_recording_configuration::GetRecordingConfigurationError)
-    pub fn get_recording_configuration(&self) -> crate::operation::get_recording_configuration::builders::GetRecordingConfigurationFluentBuilder{
+    pub fn get_recording_configuration(&self) -> crate::operation::get_recording_configuration::builders::GetRecordingConfigurationFluentBuilder {
         crate::operation::get_recording_configuration::builders::GetRecordingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

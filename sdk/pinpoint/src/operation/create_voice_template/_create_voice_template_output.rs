@@ -5,15 +5,12 @@
 pub struct CreateVoiceTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
     #[doc(hidden)]
-    pub create_template_message_body:
-        ::std::option::Option<crate::types::CreateTemplateMessageBody>,
+    pub create_template_message_body: ::std::option::Option<crate::types::CreateTemplateMessageBody>,
     _request_id: Option<String>,
 }
 impl CreateVoiceTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn create_template_message_body(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateTemplateMessageBody> {
+    pub fn create_template_message_body(&self) -> ::std::option::Option<&crate::types::CreateTemplateMessageBody> {
         self.create_template_message_body.as_ref()
     }
 }
@@ -24,44 +21,31 @@ impl ::aws_http::request_id::RequestId for CreateVoiceTemplateOutput {
 }
 impl CreateVoiceTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateVoiceTemplateOutput`](crate::operation::create_voice_template::CreateVoiceTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::create_voice_template::builders::CreateVoiceTemplateOutputBuilder {
-        crate::operation::create_voice_template::builders::CreateVoiceTemplateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_voice_template::builders::CreateVoiceTemplateOutputBuilder {
+        crate::operation::create_voice_template::builders::CreateVoiceTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVoiceTemplateOutput`](crate::operation::create_voice_template::CreateVoiceTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVoiceTemplateOutputBuilder {
-    pub(crate) create_template_message_body:
-        ::std::option::Option<crate::types::CreateTemplateMessageBody>,
+    pub(crate) create_template_message_body: ::std::option::Option<crate::types::CreateTemplateMessageBody>,
     _request_id: Option<String>,
 }
 impl CreateVoiceTemplateOutputBuilder {
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn create_template_message_body(
-        mut self,
-        input: crate::types::CreateTemplateMessageBody,
-    ) -> Self {
+    pub fn create_template_message_body(mut self, input: crate::types::CreateTemplateMessageBody) -> Self {
         self.create_template_message_body = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn set_create_template_message_body(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateTemplateMessageBody>,
-    ) -> Self {
+    pub fn set_create_template_message_body(mut self, input: ::std::option::Option<crate::types::CreateTemplateMessageBody>) -> Self {
         self.create_template_message_body = input;
         self
     }
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn get_create_template_message_body(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateTemplateMessageBody> {
+    pub fn get_create_template_message_body(&self) -> &::std::option::Option<crate::types::CreateTemplateMessageBody> {
         &self.create_template_message_body
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

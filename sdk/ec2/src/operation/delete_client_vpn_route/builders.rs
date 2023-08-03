@@ -37,10 +37,7 @@ impl DeleteClientVpnRouteFluentBuilder {
         }
     }
     /// Access the DeleteClientVpnRoute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_client_vpn_route::builders::DeleteClientVpnRouteInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_client_vpn_route::builders::DeleteClientVpnRouteInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteClientVpnRouteFluentBuilder {
             crate::operation::delete_client_vpn_route::DeleteClientVpnRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteClientVpnRouteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteClientVpnRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_client_vpn_route::DeleteClientVpnRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteClientVpnRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_client_vpn_route::DeleteClientVpnRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteClientVpnRouteFluentBuilder {
             crate::operation::delete_client_vpn_route::DeleteClientVpnRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Client VPN endpoint from which the route is to be deleted.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_vpn_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint from which the route is to be deleted.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_vpn_endpoint_id(input);
         self
     }
@@ -144,18 +124,12 @@ impl DeleteClientVpnRouteFluentBuilder {
         self.inner.get_client_vpn_endpoint_id()
     }
     /// <p>The ID of the target subnet used by the route.</p>
-    pub fn target_vpc_subnet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_vpc_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_vpc_subnet_id(input.into());
         self
     }
     /// <p>The ID of the target subnet used by the route.</p>
-    pub fn set_target_vpc_subnet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_vpc_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_vpc_subnet_id(input);
         self
     }
@@ -164,18 +138,12 @@ impl DeleteClientVpnRouteFluentBuilder {
         self.inner.get_target_vpc_subnet_id()
     }
     /// <p>The IPv4 address range, in CIDR notation, of the route to be deleted.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_cidr_block(input.into());
         self
     }
     /// <p>The IPv4 address range, in CIDR notation, of the route to be deleted.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }

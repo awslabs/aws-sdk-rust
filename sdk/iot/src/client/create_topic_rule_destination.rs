@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`CreateTopicRuleDestinationOutput`](crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationOutput) with field(s):
     ///   - [`topic_rule_destination(Option<TopicRuleDestination>)`](crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationOutput::topic_rule_destination): <p>The topic rule destination.</p>
     /// - On failure, responds with [`SdkError<CreateTopicRuleDestinationError>`](crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationError)
-    pub fn create_topic_rule_destination(&self) -> crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationFluentBuilder{
+    pub fn create_topic_rule_destination(
+        &self,
+    ) -> crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationFluentBuilder {
         crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateStreamOutput`](crate::operation::create_stream::CreateStreamOutput) with field(s):
     ///   - [`stream_arn(Option<String>)`](crate::operation::create_stream::CreateStreamOutput::stream_arn): <p>The Amazon Resource Name (ARN) of the stream.</p>
     /// - On failure, responds with [`SdkError<CreateStreamError>`](crate::operation::create_stream::CreateStreamError)
-    pub fn create_stream(
-        &self,
-    ) -> crate::operation::create_stream::builders::CreateStreamFluentBuilder {
-        crate::operation::create_stream::builders::CreateStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_stream(&self) -> crate::operation::create_stream::builders::CreateStreamFluentBuilder {
+        crate::operation::create_stream::builders::CreateStreamFluentBuilder::new(self.handle.clone())
     }
 }

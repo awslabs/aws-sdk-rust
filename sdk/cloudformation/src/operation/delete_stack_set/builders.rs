@@ -10,10 +10,7 @@ impl DeleteStackSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_stack_set::DeleteStackSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_stack_set::DeleteStackSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_stack_set::DeleteStackSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_stack_set();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteStackSetFluentBuilder {
         }
     }
     /// Access the DeleteStackSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_stack_set::builders::DeleteStackSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_stack_set::builders::DeleteStackSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteStackSetFluentBuilder {
             crate::operation::delete_stack_set::DeleteStackSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_stack_set::DeleteStackSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_stack_set::DeleteStackSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteStackSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteStackSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_stack_set::DeleteStackSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_stack_set::DeleteStackSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_stack_set::DeleteStackSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteStackSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_stack_set::DeleteStackSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_stack_set::DeleteStackSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_stack_set::DeleteStackSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteStackSetFluentBuilder {
             crate::operation::delete_stack_set::DeleteStackSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_stack_set::DeleteStackSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_stack_set::DeleteStackSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this value by running <code>ListStackSets</code>.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this value by running <code>ListStackSets</code>.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }

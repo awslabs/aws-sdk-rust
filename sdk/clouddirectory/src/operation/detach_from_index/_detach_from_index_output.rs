@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for DetachFromIndexOutput {
 }
 impl DetachFromIndexOutput {
     /// Creates a new builder-style object to manufacture [`DetachFromIndexOutput`](crate::operation::detach_from_index::DetachFromIndexOutput).
-    pub fn builder() -> crate::operation::detach_from_index::builders::DetachFromIndexOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detach_from_index::builders::DetachFromIndexOutputBuilder {
         crate::operation::detach_from_index::builders::DetachFromIndexOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachFromIndexOutput`](crate::operation::detach_from_index::DetachFromIndexOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachFromIndexOutputBuilder {
     pub(crate) detached_object_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DetachFromIndexOutputBuilder {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
-    pub fn detached_object_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detached_object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detached_object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
-    pub fn set_detached_object_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detached_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detached_object_identifier = input;
         self
     }

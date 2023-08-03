@@ -16,9 +16,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::start_import::StartImportOutput::tags): <p>A list of tags added to the imported bot.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::operation::start_import::StartImportOutput::created_date): <p>A timestamp for the date and time that the import job was requested.</p>
     /// - On failure, responds with [`SdkError<StartImportError>`](crate::operation::start_import::StartImportError)
-    pub fn start_import(
-        &self,
-    ) -> crate::operation::start_import::builders::StartImportFluentBuilder {
+    pub fn start_import(&self) -> crate::operation::start_import::builders::StartImportFluentBuilder {
         crate::operation::start_import::builders::StartImportFluentBuilder::new(self.handle.clone())
     }
 }

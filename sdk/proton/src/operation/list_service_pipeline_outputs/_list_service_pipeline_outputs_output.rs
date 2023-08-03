@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListServicePipelineOutputsOutput {
 }
 impl ListServicePipelineOutputsOutput {
     /// Creates a new builder-style object to manufacture [`ListServicePipelineOutputsOutput`](crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsOutput).
-    pub fn builder() -> crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsOutputBuilder{
+    pub fn builder() -> crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsOutputBuilder {
         crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServicePipelineOutputsOutput`](crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServicePipelineOutputsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
@@ -70,10 +68,7 @@ impl ListServicePipelineOutputsOutputBuilder {
         self
     }
     /// <p>An array of service pipeline Infrastructure as Code (IaC) outputs.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
         self.outputs = input;
         self
     }
@@ -91,9 +86,7 @@ impl ListServicePipelineOutputsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServicePipelineOutputsOutput`](crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsOutput {
+    pub fn build(self) -> crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsOutput {
         crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsOutput {
             next_token: self.next_token,
             outputs: self.outputs,

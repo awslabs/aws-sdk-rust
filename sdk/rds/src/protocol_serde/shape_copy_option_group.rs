@@ -4,83 +4,70 @@ pub fn de_copy_option_group_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::copy_option_group::CopyOptionGroupOutput,
-    crate::operation::copy_option_group::CopyOptionGroupError,
-> {
+) -> std::result::Result<crate::operation::copy_option_group::CopyOptionGroupOutput, crate::operation::copy_option_group::CopyOptionGroupError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::copy_option_group::CopyOptionGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::copy_option_group::CopyOptionGroupError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::copy_option_group::CopyOptionGroupError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::copy_option_group::CopyOptionGroupError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OptionGroupAlreadyExistsFault" => {
-            crate::operation::copy_option_group::CopyOptionGroupError::OptionGroupAlreadyExistsFault(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::OptionGroupAlreadyExistsFaultBuilder::default();
-                        output = crate::protocol_serde::shape_option_group_already_exists_fault::de_option_group_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::copy_option_group::CopyOptionGroupError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "OptionGroupNotFoundFault" => {
-            crate::operation::copy_option_group::CopyOptionGroupError::OptionGroupNotFoundFault({
+        "OptionGroupAlreadyExistsFault" => crate::operation::copy_option_group::CopyOptionGroupError::OptionGroupAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::OptionGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_option_group_not_found_fault::de_option_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::copy_option_group::CopyOptionGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "OptionGroupQuotaExceededFault" => {
-            crate::operation::copy_option_group::CopyOptionGroupError::OptionGroupQuotaExceededFault(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::OptionGroupQuotaExceededFaultBuilder::default();
-                        output = crate::protocol_serde::shape_option_group_quota_exceeded_fault::de_option_group_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::copy_option_group::CopyOptionGroupError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
+                let mut output = crate::types::error::builders::OptionGroupAlreadyExistsFaultBuilder::default();
+                output = crate::protocol_serde::shape_option_group_already_exists_fault::de_option_group_already_exists_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_option_group::CopyOptionGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "OptionGroupNotFoundFault" => crate::operation::copy_option_group::CopyOptionGroupError::OptionGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OptionGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_option_group_not_found_fault::de_option_group_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_option_group::CopyOptionGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "OptionGroupQuotaExceededFault" => crate::operation::copy_option_group::CopyOptionGroupError::OptionGroupQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OptionGroupQuotaExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_option_group_quota_exceeded_fault::de_option_group_quota_exceeded_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_option_group::CopyOptionGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::copy_option_group::CopyOptionGroupError::generic(generic),
     })
 }
@@ -90,22 +77,13 @@ pub fn de_copy_option_group_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::copy_option_group::CopyOptionGroupOutput,
-    crate::operation::copy_option_group::CopyOptionGroupError,
-> {
+) -> std::result::Result<crate::operation::copy_option_group::CopyOptionGroupOutput, crate::operation::copy_option_group::CopyOptionGroupError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::copy_option_group::builders::CopyOptionGroupOutputBuilder::default();
-        output = crate::protocol_serde::shape_copy_option_group::de_copy_option_group(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::copy_option_group::CopyOptionGroupError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::copy_option_group::builders::CopyOptionGroupOutputBuilder::default();
+        output = crate::protocol_serde::shape_copy_option_group::de_copy_option_group(_response_body, output)
+            .map_err(crate::operation::copy_option_group::CopyOptionGroupError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -114,10 +92,7 @@ pub fn de_copy_option_group_http_response_with_props(
 pub fn de_copy_option_group(
     inp: &[u8],
     mut builder: crate::operation::copy_option_group::builders::CopyOptionGroupOutputBuilder,
-) -> Result<
-    crate::operation::copy_option_group::builders::CopyOptionGroupOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::copy_option_group::builders::CopyOptionGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -154,9 +129,7 @@ pub fn de_copy_option_group(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected CopyOptionGroupResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected CopyOptionGroupResult tag"));
     };
     Ok(builder)
 }

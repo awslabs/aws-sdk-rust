@@ -29,16 +29,14 @@ impl ListIdentityProviderConfigsInput {
 }
 impl ListIdentityProviderConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListIdentityProviderConfigsInput`](crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsInput).
-    pub fn builder() -> crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsInputBuilder{
+    pub fn builder() -> crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsInputBuilder {
         crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentityProviderConfigsInput`](crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityProviderConfigsInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -94,12 +92,10 @@ impl ListIdentityProviderConfigsInputBuilder {
         crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsInput {
-                cluster_name: self.cluster_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsInput {
+            cluster_name: self.cluster_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

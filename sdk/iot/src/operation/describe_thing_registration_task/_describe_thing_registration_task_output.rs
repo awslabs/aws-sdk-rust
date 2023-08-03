@@ -98,16 +98,14 @@ impl ::aws_http::request_id::RequestId for DescribeThingRegistrationTaskOutput {
 }
 impl DescribeThingRegistrationTaskOutput {
     /// Creates a new builder-style object to manufacture [`DescribeThingRegistrationTaskOutput`](crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput).
-    pub fn builder() -> crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskOutputBuilder{
+    pub fn builder() -> crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskOutputBuilder {
         crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeThingRegistrationTaskOutput`](crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeThingRegistrationTaskOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -144,10 +142,7 @@ impl DescribeThingRegistrationTaskOutputBuilder {
         self
     }
     /// <p>The task creation date.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -161,10 +156,7 @@ impl DescribeThingRegistrationTaskOutputBuilder {
         self
     }
     /// <p>The date when the task was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -173,18 +165,12 @@ impl DescribeThingRegistrationTaskOutputBuilder {
         &self.last_modified_date
     }
     /// <p>The task's template.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The task's template.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_body = input;
         self
     }
@@ -193,18 +179,12 @@ impl DescribeThingRegistrationTaskOutputBuilder {
         &self.template_body
     }
     /// <p>The S3 bucket that contains the input file.</p>
-    pub fn input_file_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_file_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_file_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 bucket that contains the input file.</p>
-    pub fn set_input_file_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_file_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_file_bucket = input;
         self
     }
@@ -213,18 +193,12 @@ impl DescribeThingRegistrationTaskOutputBuilder {
         &self.input_file_bucket
     }
     /// <p>The input file key.</p>
-    pub fn input_file_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_file_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_file_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The input file key.</p>
-    pub fn set_input_file_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_file_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_file_key = input;
         self
     }
@@ -326,10 +300,7 @@ impl DescribeThingRegistrationTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeThingRegistrationTaskOutput`](crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput
-    {
+    pub fn build(self) -> crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput {
         crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput {
             task_id: self.task_id,
             creation_date: self.creation_date,

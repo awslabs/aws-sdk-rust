@@ -20,9 +20,7 @@ impl DeletePresetOutput {
 
 /// A builder for [`DeletePresetOutput`](crate::operation::delete_preset::DeletePresetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePresetOutputBuilder {
     _request_id: Option<String>,
 }

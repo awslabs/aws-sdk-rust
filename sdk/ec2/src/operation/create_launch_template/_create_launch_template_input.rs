@@ -44,9 +44,7 @@ impl CreateLaunchTemplateInput {
         self.version_description.as_deref()
     }
     /// <p>The information for the launch template.</p>
-    pub fn launch_template_data(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RequestLaunchTemplateData> {
+    pub fn launch_template_data(&self) -> ::std::option::Option<&crate::types::RequestLaunchTemplateData> {
         self.launch_template_data.as_ref()
     }
     /// <p>The tags to apply to the launch template on creation. To tag the launch template, the resource type must be <code>launch-template</code>.</p> <note>
@@ -58,25 +56,21 @@ impl CreateLaunchTemplateInput {
 }
 impl CreateLaunchTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateLaunchTemplateInput`](crate::operation::create_launch_template::CreateLaunchTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::create_launch_template::builders::CreateLaunchTemplateInputBuilder {
+    pub fn builder() -> crate::operation::create_launch_template::builders::CreateLaunchTemplateInputBuilder {
         crate::operation::create_launch_template::builders::CreateLaunchTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLaunchTemplateInput`](crate::operation::create_launch_template::CreateLaunchTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLaunchTemplateInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) launch_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_description: ::std::option::Option<::std::string::String>,
     pub(crate) launch_template_data: ::std::option::Option<crate::types::RequestLaunchTemplateData>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateLaunchTemplateInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -111,18 +105,12 @@ impl CreateLaunchTemplateInputBuilder {
         &self.client_token
     }
     /// <p>A name for the launch template.</p>
-    pub fn launch_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the launch template.</p>
-    pub fn set_launch_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_template_name = input;
         self
     }
@@ -131,18 +119,12 @@ impl CreateLaunchTemplateInputBuilder {
         &self.launch_template_name
     }
     /// <p>A description for the first version of the launch template.</p>
-    pub fn version_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the first version of the launch template.</p>
-    pub fn set_version_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_description = input;
         self
     }
@@ -156,17 +138,12 @@ impl CreateLaunchTemplateInputBuilder {
         self
     }
     /// <p>The information for the launch template.</p>
-    pub fn set_launch_template_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestLaunchTemplateData>,
-    ) -> Self {
+    pub fn set_launch_template_data(mut self, input: ::std::option::Option<crate::types::RequestLaunchTemplateData>) -> Self {
         self.launch_template_data = input;
         self
     }
     /// <p>The information for the launch template.</p>
-    pub fn get_launch_template_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::RequestLaunchTemplateData> {
+    pub fn get_launch_template_data(&self) -> &::std::option::Option<crate::types::RequestLaunchTemplateData> {
         &self.launch_template_data
     }
     /// Appends an item to `tag_specifications`.
@@ -185,37 +162,28 @@ impl CreateLaunchTemplateInputBuilder {
     /// <p>The tags to apply to the launch template on creation. To tag the launch template, the resource type must be <code>launch-template</code>.</p> <note>
     /// <p>To specify the tags for the resources that are created when an instance is launched, you must use the <code>TagSpecifications</code> parameter in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch template data</a> structure.</p>
     /// </note>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the launch template on creation. To tag the launch template, the resource type must be <code>launch-template</code>.</p> <note>
     /// <p>To specify the tags for the resources that are created when an instance is launched, you must use the <code>TagSpecifications</code> parameter in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch template data</a> structure.</p>
     /// </note>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateLaunchTemplateInput`](crate::operation::create_launch_template::CreateLaunchTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_launch_template::CreateLaunchTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_launch_template::CreateLaunchTemplateInput {
-                dry_run: self.dry_run,
-                client_token: self.client_token,
-                launch_template_name: self.launch_template_name,
-                version_description: self.version_description,
-                launch_template_data: self.launch_template_data,
-                tag_specifications: self.tag_specifications,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_launch_template::CreateLaunchTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_launch_template::CreateLaunchTemplateInput {
+            dry_run: self.dry_run,
+            client_token: self.client_token,
+            launch_template_name: self.launch_template_name,
+            version_description: self.version_description,
+            launch_template_data: self.launch_template_data,
+            tag_specifications: self.tag_specifications,
+        })
     }
 }

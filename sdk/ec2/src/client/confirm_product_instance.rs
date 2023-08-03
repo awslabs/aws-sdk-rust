@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`owner_id(Option<String>)`](crate::operation::confirm_product_instance::ConfirmProductInstanceOutput::owner_id): <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
     ///   - [`r#return(Option<bool>)`](crate::operation::confirm_product_instance::ConfirmProductInstanceOutput::return): <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
     /// - On failure, responds with [`SdkError<ConfirmProductInstanceError>`](crate::operation::confirm_product_instance::ConfirmProductInstanceError)
-    pub fn confirm_product_instance(
-        &self,
-    ) -> crate::operation::confirm_product_instance::builders::ConfirmProductInstanceFluentBuilder
-    {
+    pub fn confirm_product_instance(&self) -> crate::operation::confirm_product_instance::builders::ConfirmProductInstanceFluentBuilder {
         crate::operation::confirm_product_instance::builders::ConfirmProductInstanceFluentBuilder::new(self.handle.clone())
     }
 }

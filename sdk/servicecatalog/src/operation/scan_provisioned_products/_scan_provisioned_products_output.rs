@@ -5,8 +5,7 @@
 pub struct ScanProvisionedProductsOutput {
     /// <p>Information about the provisioned products.</p>
     #[doc(hidden)]
-    pub provisioned_products:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductDetail>>,
+    pub provisioned_products: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductDetail>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ScanProvisionedProductsOutput {
 }
 impl ScanProvisionedProductsOutput {
     /// <p>Information about the provisioned products.</p>
-    pub fn provisioned_products(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProvisionedProductDetail]> {
+    pub fn provisioned_products(&self) -> ::std::option::Option<&[crate::types::ProvisionedProductDetail]> {
         self.provisioned_products.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ScanProvisionedProductsOutput {
 }
 impl ScanProvisionedProductsOutput {
     /// Creates a new builder-style object to manufacture [`ScanProvisionedProductsOutput`](crate::operation::scan_provisioned_products::ScanProvisionedProductsOutput).
-    pub fn builder(
-    ) -> crate::operation::scan_provisioned_products::builders::ScanProvisionedProductsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::scan_provisioned_products::builders::ScanProvisionedProductsOutputBuilder {
         crate::operation::scan_provisioned_products::builders::ScanProvisionedProductsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ScanProvisionedProductsOutput`](crate::operation::scan_provisioned_products::ScanProvisionedProductsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScanProvisionedProductsOutputBuilder {
-    pub(crate) provisioned_products:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductDetail>>,
+    pub(crate) provisioned_products: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductDetail>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,32 +54,21 @@ impl ScanProvisionedProductsOutputBuilder {
         self
     }
     /// <p>Information about the provisioned products.</p>
-    pub fn set_provisioned_products(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductDetail>>,
-    ) -> Self {
+    pub fn set_provisioned_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductDetail>>) -> Self {
         self.provisioned_products = input;
         self
     }
     /// <p>Information about the provisioned products.</p>
-    pub fn get_provisioned_products(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductDetail>> {
+    pub fn get_provisioned_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductDetail>> {
         &self.provisioned_products
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -105,9 +86,7 @@ impl ScanProvisionedProductsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ScanProvisionedProductsOutput`](crate::operation::scan_provisioned_products::ScanProvisionedProductsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::scan_provisioned_products::ScanProvisionedProductsOutput {
+    pub fn build(self) -> crate::operation::scan_provisioned_products::ScanProvisionedProductsOutput {
         crate::operation::scan_provisioned_products::ScanProvisionedProductsOutput {
             provisioned_products: self.provisioned_products,
             next_page_token: self.next_page_token,

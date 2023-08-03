@@ -63,17 +63,14 @@ impl ::aws_http::request_id::RequestId for GetLendingAnalysisOutput {
 }
 impl GetLendingAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`GetLendingAnalysisOutput`](crate::operation::get_lending_analysis::GetLendingAnalysisOutput).
-    pub fn builder(
-    ) -> crate::operation::get_lending_analysis::builders::GetLendingAnalysisOutputBuilder {
+    pub fn builder() -> crate::operation::get_lending_analysis::builders::GetLendingAnalysisOutputBuilder {
         crate::operation::get_lending_analysis::builders::GetLendingAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLendingAnalysisOutput`](crate::operation::get_lending_analysis::GetLendingAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLendingAnalysisOutputBuilder {
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -91,10 +88,7 @@ impl GetLendingAnalysisOutputBuilder {
         self
     }
     /// <p>Information about the input document.</p>
-    pub fn set_document_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
+    pub fn set_document_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
         self.document_metadata = input;
         self
     }
@@ -142,17 +136,12 @@ impl GetLendingAnalysisOutputBuilder {
         self
     }
     /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LendingResult>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LendingResult>>) -> Self {
         self.results = input;
         self
     }
     /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LendingResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LendingResult>> {
         &self.results
     }
     /// Appends an item to `warnings`.
@@ -167,10 +156,7 @@ impl GetLendingAnalysisOutputBuilder {
         self
     }
     /// <p> A list of warnings that occurred during the lending analysis operation. </p>
-    pub fn set_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
-    ) -> Self {
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>) -> Self {
         self.warnings = input;
         self
     }
@@ -179,18 +165,12 @@ impl GetLendingAnalysisOutputBuilder {
         &self.warnings
     }
     /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -199,25 +179,17 @@ impl GetLendingAnalysisOutputBuilder {
         &self.status_message
     }
     /// <p> The current model version of the Analyze Lending API.</p>
-    pub fn analyze_lending_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyze_lending_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyze_lending_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The current model version of the Analyze Lending API.</p>
-    pub fn set_analyze_lending_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analyze_lending_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyze_lending_model_version = input;
         self
     }
     /// <p> The current model version of the Analyze Lending API.</p>
-    pub fn get_analyze_lending_model_version(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_analyze_lending_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.analyze_lending_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

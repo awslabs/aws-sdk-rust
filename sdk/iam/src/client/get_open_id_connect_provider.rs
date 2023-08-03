@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`create_date(Option<DateTime>)`](crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderOutput::create_date): <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderOutput::tags): <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<GetOpenIDConnectProviderError>`](crate::operation::get_open_id_connect_provider::GetOpenIDConnectProviderError)
-    pub fn get_open_id_connect_provider(&self) -> crate::operation::get_open_id_connect_provider::builders::GetOpenIDConnectProviderFluentBuilder{
+    pub fn get_open_id_connect_provider(&self) -> crate::operation::get_open_id_connect_provider::builders::GetOpenIDConnectProviderFluentBuilder {
         crate::operation::get_open_id_connect_provider::builders::GetOpenIDConnectProviderFluentBuilder::new(self.handle.clone())
     }
 }

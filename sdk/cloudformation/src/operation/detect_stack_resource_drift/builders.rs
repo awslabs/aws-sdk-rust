@@ -28,7 +28,7 @@ impl DetectStackResourceDriftInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectStackResourceDriftFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftInputBuilder,
+    inner: crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftInputBuilder,
 }
 impl DetectStackResourceDriftFluentBuilder {
     /// Creates a new `DetectStackResourceDrift`.
@@ -39,7 +39,7 @@ impl DetectStackResourceDriftFluentBuilder {
         }
     }
     /// Access the DetectStackResourceDrift as a reference.
-    pub fn as_input(&self) -> &crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DetectStackResourceDriftFluentBuilder {
             crate::operation::detect_stack_resource_drift::DetectStackResourceDrift,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DetectStackResourceDriftFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DetectStackResourceDriftFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DetectStackResourceDriftFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DetectStackResourceDriftFluentBuilder {
             crate::operation::detect_stack_resource_drift::DetectStackResourceDrift,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +126,12 @@ impl DetectStackResourceDriftFluentBuilder {
         self.inner.get_stack_name()
     }
     /// <p>The logical name of the resource for which to return drift information.</p>
-    pub fn logical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logical_resource_id(input.into());
         self
     }
     /// <p>The logical name of the resource for which to return drift information.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
     }

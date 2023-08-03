@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListSchemaVersionsOutput {
 }
 impl ListSchemaVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSchemaVersionsOutput`](crate::operation::list_schema_versions::ListSchemaVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_schema_versions::builders::ListSchemaVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_schema_versions::builders::ListSchemaVersionsOutputBuilder {
         crate::operation::list_schema_versions::builders::ListSchemaVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSchemaVersionsOutput`](crate::operation::list_schema_versions::ListSchemaVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchemaVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) schema_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionSummary>>,
+    pub(crate) schema_versions: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionSummary>>,
     _request_id: Option<String>,
 }
 impl ListSchemaVersionsOutputBuilder {
@@ -72,17 +68,12 @@ impl ListSchemaVersionsOutputBuilder {
         self
     }
     /// <p>An array of schema version summaries.</p>
-    pub fn set_schema_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionSummary>>,
-    ) -> Self {
+    pub fn set_schema_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionSummary>>) -> Self {
         self.schema_versions = input;
         self
     }
     /// <p>An array of schema version summaries.</p>
-    pub fn get_schema_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionSummary>> {
+    pub fn get_schema_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionSummary>> {
         &self.schema_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

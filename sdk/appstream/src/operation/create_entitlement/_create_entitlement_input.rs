@@ -43,24 +43,20 @@ impl CreateEntitlementInput {
 }
 impl CreateEntitlementInput {
     /// Creates a new builder-style object to manufacture [`CreateEntitlementInput`](crate::operation::create_entitlement::CreateEntitlementInput).
-    pub fn builder() -> crate::operation::create_entitlement::builders::CreateEntitlementInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_entitlement::builders::CreateEntitlementInputBuilder {
         crate::operation::create_entitlement::builders::CreateEntitlementInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEntitlementInput`](crate::operation::create_entitlement::CreateEntitlementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEntitlementInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) app_visibility: ::std::option::Option<crate::types::AppVisibility>,
-    pub(crate) attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>>,
 }
 impl CreateEntitlementInputBuilder {
     /// <p>The name of the entitlement.</p>
@@ -111,10 +107,7 @@ impl CreateEntitlementInputBuilder {
         self
     }
     /// <p>Specifies whether all or selected apps are entitled.</p>
-    pub fn set_app_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::AppVisibility>,
-    ) -> Self {
+    pub fn set_app_visibility(mut self, input: ::std::option::Option<crate::types::AppVisibility>) -> Self {
         self.app_visibility = input;
         self
     }
@@ -134,34 +127,24 @@ impl CreateEntitlementInputBuilder {
         self
     }
     /// <p>The attributes of the entitlement.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes of the entitlement.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`CreateEntitlementInput`](crate::operation::create_entitlement::CreateEntitlementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_entitlement::CreateEntitlementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_entitlement::CreateEntitlementInput {
-                name: self.name,
-                stack_name: self.stack_name,
-                description: self.description,
-                app_visibility: self.app_visibility,
-                attributes: self.attributes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_entitlement::CreateEntitlementInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_entitlement::CreateEntitlementInput {
+            name: self.name,
+            stack_name: self.stack_name,
+            description: self.description,
+            app_visibility: self.app_visibility,
+            attributes: self.attributes,
+        })
     }
 }

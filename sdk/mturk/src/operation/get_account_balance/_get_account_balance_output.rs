@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetAccountBalanceOutput {
 }
 impl GetAccountBalanceOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountBalanceOutput`](crate::operation::get_account_balance::GetAccountBalanceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_account_balance::builders::GetAccountBalanceOutputBuilder {
+    pub fn builder() -> crate::operation::get_account_balance::builders::GetAccountBalanceOutputBuilder {
         crate::operation::get_account_balance::builders::GetAccountBalanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccountBalanceOutput`](crate::operation::get_account_balance::GetAccountBalanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccountBalanceOutputBuilder {
     pub(crate) available_balance: ::std::option::Option<::std::string::String>,
     pub(crate) on_hold_balance: ::std::option::Option<::std::string::String>,
@@ -46,18 +43,12 @@ pub struct GetAccountBalanceOutputBuilder {
 }
 impl GetAccountBalanceOutputBuilder {
     /// <p>A string representing a currency amount.</p>
-    pub fn available_balance(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn available_balance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.available_balance = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string representing a currency amount.</p>
-    pub fn set_available_balance(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_available_balance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.available_balance = input;
         self
     }
@@ -66,18 +57,12 @@ impl GetAccountBalanceOutputBuilder {
         &self.available_balance
     }
     /// <p>A string representing a currency amount.</p>
-    pub fn on_hold_balance(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn on_hold_balance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.on_hold_balance = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string representing a currency amount.</p>
-    pub fn set_on_hold_balance(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_on_hold_balance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.on_hold_balance = input;
         self
     }

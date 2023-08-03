@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`resource_set_name(impl ::std::convert::Into<String>)`](crate::operation::delete_resource_set::builders::DeleteResourceSetFluentBuilder::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::operation::delete_resource_set::builders::DeleteResourceSetFluentBuilder::set_resource_set_name): <p>Name of a resource set.</p>
     /// - On success, responds with [`DeleteResourceSetOutput`](crate::operation::delete_resource_set::DeleteResourceSetOutput)
     /// - On failure, responds with [`SdkError<DeleteResourceSetError>`](crate::operation::delete_resource_set::DeleteResourceSetError)
-    pub fn delete_resource_set(
-        &self,
-    ) -> crate::operation::delete_resource_set::builders::DeleteResourceSetFluentBuilder {
-        crate::operation::delete_resource_set::builders::DeleteResourceSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_resource_set(&self) -> crate::operation::delete_resource_set::builders::DeleteResourceSetFluentBuilder {
+        crate::operation::delete_resource_set::builders::DeleteResourceSetFluentBuilder::new(self.handle.clone())
     }
 }

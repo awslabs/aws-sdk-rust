@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`role_aliases(Option<Vec<String>>)`](crate::operation::list_role_aliases::ListRoleAliasesOutput::role_aliases): <p>The role aliases.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_role_aliases::ListRoleAliasesOutput::next_marker): <p>A marker used to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListRoleAliasesError>`](crate::operation::list_role_aliases::ListRoleAliasesError)
-    pub fn list_role_aliases(
-        &self,
-    ) -> crate::operation::list_role_aliases::builders::ListRoleAliasesFluentBuilder {
-        crate::operation::list_role_aliases::builders::ListRoleAliasesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_role_aliases(&self) -> crate::operation::list_role_aliases::builders::ListRoleAliasesFluentBuilder {
+        crate::operation::list_role_aliases::builders::ListRoleAliasesFluentBuilder::new(self.handle.clone())
     }
 }

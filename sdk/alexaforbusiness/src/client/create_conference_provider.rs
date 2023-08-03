@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`conference_provider_arn(Option<String>)`](crate::operation::create_conference_provider::CreateConferenceProviderOutput::conference_provider_arn): <p>The ARN of the newly-created conference provider.</p>
     /// - On failure, responds with [`SdkError<CreateConferenceProviderError>`](crate::operation::create_conference_provider::CreateConferenceProviderError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn create_conference_provider(
-        &self,
-    ) -> crate::operation::create_conference_provider::builders::CreateConferenceProviderFluentBuilder
-    {
+    pub fn create_conference_provider(&self) -> crate::operation::create_conference_provider::builders::CreateConferenceProviderFluentBuilder {
         crate::operation::create_conference_provider::builders::CreateConferenceProviderFluentBuilder::new(self.handle.clone())
     }
 }

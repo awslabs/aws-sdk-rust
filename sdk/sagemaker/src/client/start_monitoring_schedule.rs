@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`monitoring_schedule_name(impl ::std::convert::Into<String>)`](crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleFluentBuilder::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleFluentBuilder::set_monitoring_schedule_name): <p>The name of the schedule to start.</p>
     /// - On success, responds with [`StartMonitoringScheduleOutput`](crate::operation::start_monitoring_schedule::StartMonitoringScheduleOutput)
     /// - On failure, responds with [`SdkError<StartMonitoringScheduleError>`](crate::operation::start_monitoring_schedule::StartMonitoringScheduleError)
-    pub fn start_monitoring_schedule(
-        &self,
-    ) -> crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleFluentBuilder
-    {
+    pub fn start_monitoring_schedule(&self) -> crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleFluentBuilder {
         crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleFluentBuilder::new(self.handle.clone())
     }
 }

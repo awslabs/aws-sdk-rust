@@ -54,9 +54,7 @@ impl IpSetDescriptor {
 
 /// A builder for [`IpSetDescriptor`](crate::types::IpSetDescriptor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpSetDescriptorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::IpSetDescriptorType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl IpSetDescriptorBuilder {
         self
     }
     /// <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpSetDescriptorType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::IpSetDescriptorType>) -> Self {
         self.r#type = input;
         self
     }

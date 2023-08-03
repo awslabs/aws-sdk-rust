@@ -14,8 +14,7 @@ pub struct AddApplicationInputProcessingConfigurationInput {
     pub input_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
     #[doc(hidden)]
-    pub input_processing_configuration:
-        ::std::option::Option<crate::types::InputProcessingConfiguration>,
+    pub input_processing_configuration: ::std::option::Option<crate::types::InputProcessingConfiguration>,
 }
 impl AddApplicationInputProcessingConfigurationInput {
     /// <p>The name of the application to which you want to add the input processing configuration.</p>
@@ -31,45 +30,35 @@ impl AddApplicationInputProcessingConfigurationInput {
         self.input_id.as_deref()
     }
     /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
-    pub fn input_processing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputProcessingConfiguration> {
+    pub fn input_processing_configuration(&self) -> ::std::option::Option<&crate::types::InputProcessingConfiguration> {
         self.input_processing_configuration.as_ref()
     }
 }
 impl AddApplicationInputProcessingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`AddApplicationInputProcessingConfigurationInput`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput).
-    pub fn builder() -> crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder {
         crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`AddApplicationInputProcessingConfigurationInput`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddApplicationInputProcessingConfigurationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_application_version_id: ::std::option::Option<i64>,
     pub(crate) input_id: ::std::option::Option<::std::string::String>,
-    pub(crate) input_processing_configuration:
-        ::std::option::Option<crate::types::InputProcessingConfiguration>,
+    pub(crate) input_processing_configuration: ::std::option::Option<crate::types::InputProcessingConfiguration>,
 }
 impl AddApplicationInputProcessingConfigurationInputBuilder {
     /// <p>The name of the application to which you want to add the input processing configuration.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application to which you want to add the input processing configuration.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -106,40 +95,33 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
         &self.input_id
     }
     /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
-    pub fn input_processing_configuration(
-        mut self,
-        input: crate::types::InputProcessingConfiguration,
-    ) -> Self {
+    pub fn input_processing_configuration(mut self, input: crate::types::InputProcessingConfiguration) -> Self {
         self.input_processing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
-    pub fn set_input_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InputProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_input_processing_configuration(mut self, input: ::std::option::Option<crate::types::InputProcessingConfiguration>) -> Self {
         self.input_processing_configuration = input;
         self
     }
     /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
-    pub fn get_input_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
+    pub fn get_input_processing_configuration(&self) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
         &self.input_processing_configuration
     }
     /// Consumes the builder and constructs a [`AddApplicationInputProcessingConfigurationInput`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput {
-                application_name: self.application_name
-                ,
-                current_application_version_id: self.current_application_version_id
-                ,
-                input_id: self.input_id
-                ,
-                input_processing_configuration: self.input_processing_configuration
-                ,
-            }
+                application_name: self.application_name,
+                current_application_version_id: self.current_application_version_id,
+                input_id: self.input_id,
+                input_processing_configuration: self.input_processing_configuration,
+            },
         )
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`summary(Option<FlowTemplateSummary>)`](crate::operation::create_flow_template::CreateFlowTemplateOutput::summary): <p>The summary object that describes the created workflow.</p>
     /// - On failure, responds with [`SdkError<CreateFlowTemplateError>`](crate::operation::create_flow_template::CreateFlowTemplateError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn create_flow_template(
-        &self,
-    ) -> crate::operation::create_flow_template::builders::CreateFlowTemplateFluentBuilder {
-        crate::operation::create_flow_template::builders::CreateFlowTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_flow_template(&self) -> crate::operation::create_flow_template::builders::CreateFlowTemplateFluentBuilder {
+        crate::operation::create_flow_template::builders::CreateFlowTemplateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -100,9 +100,7 @@ impl DescribeVolumesInput {
 
 /// A builder for [`DescribeVolumesInput`](crate::operation::describe_volumes::DescribeVolumesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVolumesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) volume_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -173,10 +171,7 @@ impl DescribeVolumesInputBuilder {
     /// <li> <p> <code>volume-id</code> - The volume ID.</p> </li>
     /// <li> <p> <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> | <code>io1</code> | <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -221,10 +216,7 @@ impl DescribeVolumesInputBuilder {
         self
     }
     /// <p>The volume IDs.</p>
-    pub fn set_volume_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_volume_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.volume_ids = input;
         self
     }
@@ -277,10 +269,7 @@ impl DescribeVolumesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVolumesInput`](crate::operation::describe_volumes::DescribeVolumesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_volumes::DescribeVolumesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_volumes::DescribeVolumesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_volumes::DescribeVolumesInput {
             filters: self.filters,
             volume_ids: self.volume_ids,

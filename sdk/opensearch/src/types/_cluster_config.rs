@@ -43,9 +43,7 @@ pub struct ClusterConfig {
 }
 impl ClusterConfig {
     /// <p>Instance type of data nodes in the cluster.</p>
-    pub fn instance_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OpenSearchPartitionInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::OpenSearchPartitionInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>
@@ -61,15 +59,11 @@ impl ClusterConfig {
         self.zone_awareness_enabled
     }
     /// <p>Container for zone awareness configuration options. Only required if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
-    pub fn zone_awareness_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ZoneAwarenessConfig> {
+    pub fn zone_awareness_config(&self) -> ::std::option::Option<&crate::types::ZoneAwarenessConfig> {
         self.zone_awareness_config.as_ref()
     }
     /// <p>OpenSearch Service instance type of the dedicated master nodes in the cluster.</p>
-    pub fn dedicated_master_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OpenSearchPartitionInstanceType> {
+    pub fn dedicated_master_type(&self) -> ::std::option::Option<&crate::types::OpenSearchPartitionInstanceType> {
         self.dedicated_master_type.as_ref()
     }
     /// <p>Number of dedicated master nodes in the cluster. This number must be greater than 2 and not 4, otherwise you receive a validation exception.</p>
@@ -81,9 +75,7 @@ impl ClusterConfig {
         self.warm_enabled
     }
     /// <p>The instance type for the cluster's warm nodes.</p>
-    pub fn warm_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OpenSearchWarmPartitionInstanceType> {
+    pub fn warm_type(&self) -> ::std::option::Option<&crate::types::OpenSearchWarmPartitionInstanceType> {
         self.warm_type.as_ref()
     }
     /// <p>The number of warm nodes in the cluster.</p>
@@ -108,17 +100,14 @@ impl ClusterConfig {
 
 /// A builder for [`ClusterConfig`](crate::types::ClusterConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) dedicated_master_enabled: ::std::option::Option<bool>,
     pub(crate) zone_awareness_enabled: ::std::option::Option<bool>,
     pub(crate) zone_awareness_config: ::std::option::Option<crate::types::ZoneAwarenessConfig>,
-    pub(crate) dedicated_master_type:
-        ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
+    pub(crate) dedicated_master_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
     pub(crate) dedicated_master_count: ::std::option::Option<i32>,
     pub(crate) warm_enabled: ::std::option::Option<bool>,
     pub(crate) warm_type: ::std::option::Option<crate::types::OpenSearchWarmPartitionInstanceType>,
@@ -133,17 +122,12 @@ impl ClusterConfigBuilder {
         self
     }
     /// <p>Instance type of data nodes in the cluster.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>Instance type of data nodes in the cluster.</p>
-    pub fn get_instance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
         &self.instance_type
     }
     /// <p>Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>
@@ -194,39 +178,26 @@ impl ClusterConfigBuilder {
         self
     }
     /// <p>Container for zone awareness configuration options. Only required if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
-    pub fn set_zone_awareness_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ZoneAwarenessConfig>,
-    ) -> Self {
+    pub fn set_zone_awareness_config(mut self, input: ::std::option::Option<crate::types::ZoneAwarenessConfig>) -> Self {
         self.zone_awareness_config = input;
         self
     }
     /// <p>Container for zone awareness configuration options. Only required if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
-    pub fn get_zone_awareness_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ZoneAwarenessConfig> {
+    pub fn get_zone_awareness_config(&self) -> &::std::option::Option<crate::types::ZoneAwarenessConfig> {
         &self.zone_awareness_config
     }
     /// <p>OpenSearch Service instance type of the dedicated master nodes in the cluster.</p>
-    pub fn dedicated_master_type(
-        mut self,
-        input: crate::types::OpenSearchPartitionInstanceType,
-    ) -> Self {
+    pub fn dedicated_master_type(mut self, input: crate::types::OpenSearchPartitionInstanceType) -> Self {
         self.dedicated_master_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>OpenSearch Service instance type of the dedicated master nodes in the cluster.</p>
-    pub fn set_dedicated_master_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
-    ) -> Self {
+    pub fn set_dedicated_master_type(mut self, input: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>) -> Self {
         self.dedicated_master_type = input;
         self
     }
     /// <p>OpenSearch Service instance type of the dedicated master nodes in the cluster.</p>
-    pub fn get_dedicated_master_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
+    pub fn get_dedicated_master_type(&self) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
         &self.dedicated_master_type
     }
     /// <p>Number of dedicated master nodes in the cluster. This number must be greater than 2 and not 4, otherwise you receive a validation exception.</p>
@@ -263,17 +234,12 @@ impl ClusterConfigBuilder {
         self
     }
     /// <p>The instance type for the cluster's warm nodes.</p>
-    pub fn set_warm_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenSearchWarmPartitionInstanceType>,
-    ) -> Self {
+    pub fn set_warm_type(mut self, input: ::std::option::Option<crate::types::OpenSearchWarmPartitionInstanceType>) -> Self {
         self.warm_type = input;
         self
     }
     /// <p>The instance type for the cluster's warm nodes.</p>
-    pub fn get_warm_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OpenSearchWarmPartitionInstanceType> {
+    pub fn get_warm_type(&self) -> &::std::option::Option<crate::types::OpenSearchWarmPartitionInstanceType> {
         &self.warm_type
     }
     /// <p>The number of warm nodes in the cluster.</p>
@@ -296,17 +262,12 @@ impl ClusterConfigBuilder {
         self
     }
     /// <p>Container for cold storage configuration options.</p>
-    pub fn set_cold_storage_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ColdStorageOptions>,
-    ) -> Self {
+    pub fn set_cold_storage_options(mut self, input: ::std::option::Option<crate::types::ColdStorageOptions>) -> Self {
         self.cold_storage_options = input;
         self
     }
     /// <p>Container for cold storage configuration options.</p>
-    pub fn get_cold_storage_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ColdStorageOptions> {
+    pub fn get_cold_storage_options(&self) -> &::std::option::Option<crate::types::ColdStorageOptions> {
         &self.cold_storage_options
     }
     /// <p>A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>. </p>

@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetSystemTemplateRevisionsOutput {
 }
 impl GetSystemTemplateRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`GetSystemTemplateRevisionsOutput`](crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsOutput).
-    pub fn builder() -> crate::operation::get_system_template_revisions::builders::GetSystemTemplateRevisionsOutputBuilder{
+    pub fn builder() -> crate::operation::get_system_template_revisions::builders::GetSystemTemplateRevisionsOutputBuilder {
         crate::operation::get_system_template_revisions::builders::GetSystemTemplateRevisionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSystemTemplateRevisionsOutput`](crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSystemTemplateRevisionsOutputBuilder {
-    pub(crate) summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateSummary>>,
+    pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl GetSystemTemplateRevisionsOutputBuilder {
         self
     }
     /// <p>An array of objects that contain summary data about the system template revisions.</p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateSummary>>,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateSummary>>) -> Self {
         self.summaries = input;
         self
     }
     /// <p>An array of objects that contain summary data about the system template revisions.</p>
-    pub fn get_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateSummary>> {
         &self.summaries
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
@@ -94,9 +86,7 @@ impl GetSystemTemplateRevisionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSystemTemplateRevisionsOutput`](crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsOutput {
+    pub fn build(self) -> crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsOutput {
         crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsOutput {
             summaries: self.summaries,
             next_token: self.next_token,

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`test_passed(bool)`](crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput::test_passed): <p>Boolean indicating whether the test passed or failed.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput::failure_reason): <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
     /// - On failure, responds with [`SdkError<TestAvailabilityConfigurationError>`](crate::operation::test_availability_configuration::TestAvailabilityConfigurationError)
-    pub fn test_availability_configuration(&self) -> crate::operation::test_availability_configuration::builders::TestAvailabilityConfigurationFluentBuilder{
+    pub fn test_availability_configuration(
+        &self,
+    ) -> crate::operation::test_availability_configuration::builders::TestAvailabilityConfigurationFluentBuilder {
         crate::operation::test_availability_configuration::builders::TestAvailabilityConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

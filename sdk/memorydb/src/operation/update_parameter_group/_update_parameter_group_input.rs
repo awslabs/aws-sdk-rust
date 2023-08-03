@@ -8,8 +8,7 @@ pub struct UpdateParameterGroupInput {
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be updated per request.</p>
     #[doc(hidden)]
-    pub parameter_name_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
+    pub parameter_name_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
 }
 impl UpdateParameterGroupInput {
     /// <p>The name of the parameter group to update.</p>
@@ -17,44 +16,32 @@ impl UpdateParameterGroupInput {
         self.parameter_group_name.as_deref()
     }
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be updated per request.</p>
-    pub fn parameter_name_values(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ParameterNameValue]> {
+    pub fn parameter_name_values(&self) -> ::std::option::Option<&[crate::types::ParameterNameValue]> {
         self.parameter_name_values.as_deref()
     }
 }
 impl UpdateParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateParameterGroupInput`](crate::operation::update_parameter_group::UpdateParameterGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_parameter_group::builders::UpdateParameterGroupInputBuilder {
+    pub fn builder() -> crate::operation::update_parameter_group::builders::UpdateParameterGroupInputBuilder {
         crate::operation::update_parameter_group::builders::UpdateParameterGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateParameterGroupInput`](crate::operation::update_parameter_group::UpdateParameterGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateParameterGroupInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) parameter_name_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
+    pub(crate) parameter_name_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
 }
 impl UpdateParameterGroupInputBuilder {
     /// <p>The name of the parameter group to update.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter group to update.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
@@ -74,31 +61,22 @@ impl UpdateParameterGroupInputBuilder {
         self
     }
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be updated per request.</p>
-    pub fn set_parameter_name_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
-    ) -> Self {
+    pub fn set_parameter_name_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>) -> Self {
         self.parameter_name_values = input;
         self
     }
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be updated per request.</p>
-    pub fn get_parameter_name_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>> {
+    pub fn get_parameter_name_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>> {
         &self.parameter_name_values
     }
     /// Consumes the builder and constructs a [`UpdateParameterGroupInput`](crate::operation::update_parameter_group::UpdateParameterGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_parameter_group::UpdateParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_parameter_group::UpdateParameterGroupInput {
-                parameter_group_name: self.parameter_group_name,
-                parameter_name_values: self.parameter_name_values,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_parameter_group::UpdateParameterGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_parameter_group::UpdateParameterGroupInput {
+            parameter_group_name: self.parameter_group_name,
+            parameter_name_values: self.parameter_name_values,
+        })
     }
 }

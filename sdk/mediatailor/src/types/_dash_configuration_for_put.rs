@@ -30,9 +30,7 @@ impl DashConfigurationForPut {
 
 /// A builder for [`DashConfigurationForPut`](crate::types::DashConfigurationForPut).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashConfigurationForPutBuilder {
     pub(crate) mpd_location: ::std::option::Option<::std::string::String>,
     pub(crate) origin_manifest_type: ::std::option::Option<crate::types::OriginManifestType>,
@@ -58,17 +56,12 @@ impl DashConfigurationForPutBuilder {
         self
     }
     /// <p>The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests or single-period manifests. If your origin server produces single-period manifests, set this to <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>. For multi-period manifests, omit this setting or set it to <code>MULTI_PERIOD</code>.</p>
-    pub fn set_origin_manifest_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginManifestType>,
-    ) -> Self {
+    pub fn set_origin_manifest_type(mut self, input: ::std::option::Option<crate::types::OriginManifestType>) -> Self {
         self.origin_manifest_type = input;
         self
     }
     /// <p>The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests or single-period manifests. If your origin server produces single-period manifests, set this to <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>. For multi-period manifests, omit this setting or set it to <code>MULTI_PERIOD</code>.</p>
-    pub fn get_origin_manifest_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginManifestType> {
+    pub fn get_origin_manifest_type(&self) -> &::std::option::Option<crate::types::OriginManifestType> {
         &self.origin_manifest_type
     }
     /// Consumes the builder and constructs a [`DashConfigurationForPut`](crate::types::DashConfigurationForPut).

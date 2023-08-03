@@ -19,12 +19,7 @@ impl super::Client {
     /// - On success, responds with [`CreateReplicationTaskOutput`](crate::operation::create_replication_task::CreateReplicationTaskOutput) with field(s):
     ///   - [`replication_task(Option<ReplicationTask>)`](crate::operation::create_replication_task::CreateReplicationTaskOutput::replication_task): <p>The replication task that was created.</p>
     /// - On failure, responds with [`SdkError<CreateReplicationTaskError>`](crate::operation::create_replication_task::CreateReplicationTaskError)
-    pub fn create_replication_task(
-        &self,
-    ) -> crate::operation::create_replication_task::builders::CreateReplicationTaskFluentBuilder
-    {
-        crate::operation::create_replication_task::builders::CreateReplicationTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_replication_task(&self) -> crate::operation::create_replication_task::builders::CreateReplicationTaskFluentBuilder {
+        crate::operation::create_replication_task::builders::CreateReplicationTaskFluentBuilder::new(self.handle.clone())
     }
 }

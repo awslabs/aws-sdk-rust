@@ -17,36 +17,27 @@ impl StopProjectVersionInput {
 }
 impl StopProjectVersionInput {
     /// Creates a new builder-style object to manufacture [`StopProjectVersionInput`](crate::operation::stop_project_version::StopProjectVersionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_project_version::builders::StopProjectVersionInputBuilder {
+    pub fn builder() -> crate::operation::stop_project_version::builders::StopProjectVersionInputBuilder {
         crate::operation::stop_project_version::builders::StopProjectVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopProjectVersionInput`](crate::operation::stop_project_version::StopProjectVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopProjectVersionInputBuilder {
     pub(crate) project_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl StopProjectVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
-    pub fn project_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
-    pub fn set_project_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_version_arn = input;
         self
     }
@@ -58,14 +49,9 @@ impl StopProjectVersionInputBuilder {
     /// Consumes the builder and constructs a [`StopProjectVersionInput`](crate::operation::stop_project_version::StopProjectVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_project_version::StopProjectVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_project_version::StopProjectVersionInput {
-                project_version_arn: self.project_version_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_project_version::StopProjectVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_project_version::StopProjectVersionInput {
+            project_version_arn: self.project_version_arn,
+        })
     }
 }

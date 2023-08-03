@@ -29,7 +29,7 @@ impl DescribeContinuousBackupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeContinuousBackupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_continuous_backups::builders::DescribeContinuousBackupsInputBuilder,
+    inner: crate::operation::describe_continuous_backups::builders::DescribeContinuousBackupsInputBuilder,
 }
 impl DescribeContinuousBackupsFluentBuilder {
     /// Creates a new `DescribeContinuousBackups`.
@@ -40,7 +40,7 @@ impl DescribeContinuousBackupsFluentBuilder {
         }
     }
     /// Access the DescribeContinuousBackups as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_continuous_backups::builders::DescribeContinuousBackupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_continuous_backups::builders::DescribeContinuousBackupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl DescribeContinuousBackupsFluentBuilder {
             crate::operation::describe_continuous_backups::DescribeContinuousBackups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_continuous_backups::DescribeContinuousBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_continuous_backups::DescribeContinuousBackupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl DescribeContinuousBackupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl DescribeContinuousBackupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_continuous_backups::DescribeContinuousBackupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_continuous_backups::DescribeContinuousBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_continuous_backups::DescribeContinuousBackupsError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl DescribeContinuousBackupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_continuous_backups::DescribeContinuousBackupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_continuous_backups::DescribeContinuousBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_continuous_backups::DescribeContinuousBackupsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl DescribeContinuousBackupsFluentBuilder {
             crate::operation::describe_continuous_backups::DescribeContinuousBackups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_continuous_backups::DescribeContinuousBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_continuous_backups::DescribeContinuousBackupsError>,
     > {
         self.customize_middleware().await
     }

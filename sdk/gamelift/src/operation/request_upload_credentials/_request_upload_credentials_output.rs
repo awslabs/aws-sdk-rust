@@ -37,9 +37,7 @@ impl ::aws_http::request_id::RequestId for RequestUploadCredentialsOutput {
 }
 impl RequestUploadCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`RequestUploadCredentialsOutput`](crate::operation::request_upload_credentials::RequestUploadCredentialsOutput).
-    pub fn builder(
-    ) -> crate::operation::request_upload_credentials::builders::RequestUploadCredentialsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::request_upload_credentials::builders::RequestUploadCredentialsOutputBuilder {
         crate::operation::request_upload_credentials::builders::RequestUploadCredentialsOutputBuilder::default()
     }
 }
@@ -59,10 +57,7 @@ impl RequestUploadCredentialsOutputBuilder {
         self
     }
     /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
-    pub fn set_upload_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsCredentials>,
-    ) -> Self {
+    pub fn set_upload_credentials(mut self, input: ::std::option::Option<crate::types::AwsCredentials>) -> Self {
         self.upload_credentials = input;
         self
     }
@@ -76,10 +71,7 @@ impl RequestUploadCredentialsOutputBuilder {
         self
     }
     /// <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
-    pub fn set_storage_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.storage_location = input;
         self
     }
@@ -97,9 +89,7 @@ impl RequestUploadCredentialsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RequestUploadCredentialsOutput`](crate::operation::request_upload_credentials::RequestUploadCredentialsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::request_upload_credentials::RequestUploadCredentialsOutput {
+    pub fn build(self) -> crate::operation::request_upload_credentials::RequestUploadCredentialsOutput {
         crate::operation::request_upload_credentials::RequestUploadCredentialsOutput {
             upload_credentials: self.upload_credentials,
             storage_location: self.storage_location,

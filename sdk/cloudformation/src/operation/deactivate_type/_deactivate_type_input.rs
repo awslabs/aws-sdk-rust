@@ -42,9 +42,7 @@ impl DeactivateTypeInput {
 
 /// A builder for [`DeactivateTypeInput`](crate::operation::deactivate_type::DeactivateTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeactivateTypeInputBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ThirdPartyType>,
@@ -105,10 +103,7 @@ impl DeactivateTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeactivateTypeInput`](crate::operation::deactivate_type::DeactivateTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deactivate_type::DeactivateTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::deactivate_type::DeactivateTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::deactivate_type::DeactivateTypeInput {
             type_name: self.type_name,
             r#type: self.r#type,

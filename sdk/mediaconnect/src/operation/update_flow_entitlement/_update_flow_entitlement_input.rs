@@ -51,18 +51,14 @@ impl UpdateFlowEntitlementInput {
 }
 impl UpdateFlowEntitlementInput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowEntitlementInput`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput).
-    pub fn builder(
-    ) -> crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementInputBuilder {
         crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFlowEntitlementInput`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFlowEntitlementInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) encryption: ::std::option::Option<crate::types::UpdateEncryption>,
@@ -92,10 +88,7 @@ impl UpdateFlowEntitlementInputBuilder {
         self
     }
     /// The type of encryption that will be used on the output associated with this entitlement. Allowable encryption types: static-key, speke.
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateEncryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::UpdateEncryption>) -> Self {
         self.encryption = input;
         self
     }
@@ -104,18 +97,12 @@ impl UpdateFlowEntitlementInputBuilder {
         &self.encryption
     }
     /// The ARN of the entitlement that you want to update.
-    pub fn entitlement_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entitlement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entitlement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the entitlement that you want to update.
-    pub fn set_entitlement_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entitlement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entitlement_arn = input;
         self
     }
@@ -129,17 +116,12 @@ impl UpdateFlowEntitlementInputBuilder {
         self
     }
     /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
-    pub fn set_entitlement_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EntitlementStatus>,
-    ) -> Self {
+    pub fn set_entitlement_status(mut self, input: ::std::option::Option<crate::types::EntitlementStatus>) -> Self {
         self.entitlement_status = input;
         self
     }
     /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
-    pub fn get_entitlement_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::EntitlementStatus> {
+    pub fn get_entitlement_status(&self) -> &::std::option::Option<crate::types::EntitlementStatus> {
         &self.entitlement_status
     }
     /// The flow that is associated with the entitlement that you want to update.
@@ -168,35 +150,26 @@ impl UpdateFlowEntitlementInputBuilder {
         self
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub fn set_subscribers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subscribers = input;
         self
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub fn get_subscribers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subscribers
     }
     /// Consumes the builder and constructs a [`UpdateFlowEntitlementInput`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput {
-                description: self.description,
-                encryption: self.encryption,
-                entitlement_arn: self.entitlement_arn,
-                entitlement_status: self.entitlement_status,
-                flow_arn: self.flow_arn,
-                subscribers: self.subscribers,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput {
+            description: self.description,
+            encryption: self.encryption,
+            entitlement_arn: self.entitlement_arn,
+            entitlement_status: self.entitlement_status,
+            flow_arn: self.flow_arn,
+            subscribers: self.subscribers,
+        })
     }
 }

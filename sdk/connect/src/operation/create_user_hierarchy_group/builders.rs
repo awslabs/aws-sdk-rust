@@ -26,7 +26,7 @@ impl CreateUserHierarchyGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUserHierarchyGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_user_hierarchy_group::builders::CreateUserHierarchyGroupInputBuilder,
+    inner: crate::operation::create_user_hierarchy_group::builders::CreateUserHierarchyGroupInputBuilder,
 }
 impl CreateUserHierarchyGroupFluentBuilder {
     /// Creates a new `CreateUserHierarchyGroup`.
@@ -37,7 +37,7 @@ impl CreateUserHierarchyGroupFluentBuilder {
         }
     }
     /// Access the CreateUserHierarchyGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_user_hierarchy_group::builders::CreateUserHierarchyGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_user_hierarchy_group::builders::CreateUserHierarchyGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateUserHierarchyGroupFluentBuilder {
             crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateUserHierarchyGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateUserHierarchyGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateUserHierarchyGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateUserHierarchyGroupFluentBuilder {
             crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl CreateUserHierarchyGroupFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
-    pub fn parent_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_group_id(input.into());
         self
     }
     /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
-    pub fn set_parent_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_group_id(input);
         self
     }
@@ -173,30 +156,17 @@ impl CreateUserHierarchyGroupFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

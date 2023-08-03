@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`data_source(Option<String>)`](crate::operation::describe_route_calculator::DescribeRouteCalculatorOutput::data_source): <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>  <ul>   <li> <p> <code>Esri</code> </p> </li>   <li> <p> <code>Grab</code> </p> </li>   <li> <p> <code>Here</code> </p> </li>  </ul>  <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_route_calculator::DescribeRouteCalculatorOutput::tags): <p>Tags associated with route calculator resource.</p>
     /// - On failure, responds with [`SdkError<DescribeRouteCalculatorError>`](crate::operation::describe_route_calculator::DescribeRouteCalculatorError)
-    pub fn describe_route_calculator(
-        &self,
-    ) -> crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorFluentBuilder
-    {
+    pub fn describe_route_calculator(&self) -> crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorFluentBuilder {
         crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorFluentBuilder::new(self.handle.clone())
     }
 }

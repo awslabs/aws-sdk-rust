@@ -10,10 +10,7 @@ impl CreateAgreementInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_agreement::CreateAgreementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_agreement::CreateAgreementError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_agreement::CreateAgreementError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_agreement();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateAgreementFluentBuilder {
         }
     }
     /// Access the CreateAgreement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_agreement::builders::CreateAgreementInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_agreement::builders::CreateAgreementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateAgreementFluentBuilder {
             crate::operation::create_agreement::CreateAgreement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_agreement::CreateAgreementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_agreement::CreateAgreementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateAgreementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateAgreementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_agreement::CreateAgreementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_agreement::CreateAgreementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_agreement::CreateAgreementError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateAgreementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_agreement::CreateAgreementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_agreement::CreateAgreementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_agreement::CreateAgreementError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateAgreementFluentBuilder {
             crate::operation::create_agreement::CreateAgreement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_agreement::CreateAgreementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_agreement::CreateAgreementError>,
     > {
         self.customize_middleware().await
     }
@@ -152,18 +136,12 @@ impl CreateAgreementFluentBuilder {
         self.inner.get_server_id()
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
-    pub fn local_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_profile_id(input.into());
         self
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
-    pub fn set_local_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_local_profile_id(input);
         self
     }
@@ -172,18 +150,12 @@ impl CreateAgreementFluentBuilder {
         self.inner.get_local_profile_id()
     }
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
-    pub fn partner_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partner_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.partner_profile_id(input.into());
         self
     }
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
-    pub fn set_partner_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partner_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_partner_profile_id(input);
         self
     }
@@ -193,19 +165,13 @@ impl CreateAgreementFluentBuilder {
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
     /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
-    pub fn base_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn base_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.base_directory(input.into());
         self
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
     /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
-    pub fn set_base_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_base_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_base_directory(input);
         self
     }
@@ -237,10 +203,7 @@ impl CreateAgreementFluentBuilder {
         self
     }
     /// <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AgreementStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementStatusType>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -258,10 +221,7 @@ impl CreateAgreementFluentBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

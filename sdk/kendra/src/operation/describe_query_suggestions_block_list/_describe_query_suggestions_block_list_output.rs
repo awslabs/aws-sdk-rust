@@ -104,16 +104,14 @@ impl ::aws_http::request_id::RequestId for DescribeQuerySuggestionsBlockListOutp
 }
 impl DescribeQuerySuggestionsBlockListOutput {
     /// Creates a new builder-style object to manufacture [`DescribeQuerySuggestionsBlockListOutput`](crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListOutput).
-    pub fn builder() -> crate::operation::describe_query_suggestions_block_list::builders::DescribeQuerySuggestionsBlockListOutputBuilder{
+    pub fn builder() -> crate::operation::describe_query_suggestions_block_list::builders::DescribeQuerySuggestionsBlockListOutputBuilder {
         crate::operation::describe_query_suggestions_block_list::builders::DescribeQuerySuggestionsBlockListOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeQuerySuggestionsBlockListOutput`](crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeQuerySuggestionsBlockListOutputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -192,32 +190,21 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
         self
     }
     /// <p>The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QuerySuggestionsBlockListStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::QuerySuggestionsBlockListStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::QuerySuggestionsBlockListStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::QuerySuggestionsBlockListStatus> {
         &self.status
     }
     /// <p>The error message containing details if there are issues processing the block list.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message containing details if there are issues processing the block list.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -231,10 +218,7 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
         self
     }
     /// <p>The Unix timestamp when a block list for query suggestions was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -248,10 +232,7 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
         self
     }
     /// <p>The Unix timestamp when a block list for query suggestions was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -269,10 +250,7 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
     /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p>
     /// <p>Each block word or phrase should be on a separate line in a text file.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
-    pub fn set_source_s3_path(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Path>,
-    ) -> Self {
+    pub fn set_source_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
         self.source_s3_path = input;
         self
     }
@@ -337,32 +315,20 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeQuerySuggestionsBlockListOutput`](crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListOutput).
-    pub fn build(self) -> crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListOutput{
+    pub fn build(self) -> crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListOutput {
         crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListOutput {
-            index_id: self.index_id
-            ,
-            id: self.id
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            status: self.status
-            ,
-            error_message: self.error_message
-            ,
-            created_at: self.created_at
-            ,
-            updated_at: self.updated_at
-            ,
-            source_s3_path: self.source_s3_path
-            ,
-            item_count: self.item_count
-            ,
-            file_size_bytes: self.file_size_bytes
-            ,
-            role_arn: self.role_arn
-            ,
+            index_id: self.index_id,
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            status: self.status,
+            error_message: self.error_message,
+            created_at: self.created_at,
+            updated_at: self.updated_at,
+            source_s3_path: self.source_s3_path,
+            item_count: self.item_count,
+            file_size_bytes: self.file_size_bytes,
+            role_arn: self.role_arn,
             _request_id: self._request_id,
         }
     }

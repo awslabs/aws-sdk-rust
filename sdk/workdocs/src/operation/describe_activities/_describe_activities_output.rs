@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeActivitiesOutput {
 }
 impl DescribeActivitiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActivitiesOutput`](crate::operation::describe_activities::DescribeActivitiesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_activities::builders::DescribeActivitiesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_activities::builders::DescribeActivitiesOutputBuilder {
         crate::operation::describe_activities::builders::DescribeActivitiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeActivitiesOutput`](crate::operation::describe_activities::DescribeActivitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeActivitiesOutputBuilder {
     pub(crate) user_activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeActivitiesOutputBuilder {
         self
     }
     /// <p>The list of activities for the specified user and time period.</p>
-    pub fn set_user_activities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
-    ) -> Self {
+    pub fn set_user_activities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>) -> Self {
         self.user_activities = input;
         self
     }
     /// <p>The list of activities for the specified user and time period.</p>
-    pub fn get_user_activities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Activity>> {
+    pub fn get_user_activities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Activity>> {
         &self.user_activities
     }
     /// <p>The marker for the next set of results.</p>

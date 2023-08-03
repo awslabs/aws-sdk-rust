@@ -37,9 +37,7 @@ impl S3ContentLocationUpdate {
 
 /// A builder for [`S3ContentLocationUpdate`](crate::types::S3ContentLocationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ContentLocationUpdateBuilder {
     pub(crate) bucket_arn_update: ::std::option::Option<::std::string::String>,
     pub(crate) file_key_update: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct S3ContentLocationUpdateBuilder {
 }
 impl S3ContentLocationUpdateBuilder {
     /// <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
-    pub fn bucket_arn_update(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_arn_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_arn_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
-    pub fn set_bucket_arn_update(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_arn_update = input;
         self
     }
@@ -67,18 +59,12 @@ impl S3ContentLocationUpdateBuilder {
         &self.bucket_arn_update
     }
     /// <p>The new file key for the object containing the application code.</p>
-    pub fn file_key_update(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_key_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_key_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new file key for the object containing the application code.</p>
-    pub fn set_file_key_update(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_key_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_key_update = input;
         self
     }
@@ -87,18 +73,12 @@ impl S3ContentLocationUpdateBuilder {
         &self.file_key_update
     }
     /// <p>The new version of the object containing the application code.</p>
-    pub fn object_version_update(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_version_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_version_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new version of the object containing the application code.</p>
-    pub fn set_object_version_update(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_version_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_version_update = input;
         self
     }

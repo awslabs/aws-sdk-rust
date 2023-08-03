@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_layer_versions::ListLayerVersionsOutput::next_marker): <p>A pagination token returned when the response doesn't contain all versions.</p>
     ///   - [`layer_versions(Option<Vec<LayerVersionsListItem>>)`](crate::operation::list_layer_versions::ListLayerVersionsOutput::layer_versions): <p>A list of versions.</p>
     /// - On failure, responds with [`SdkError<ListLayerVersionsError>`](crate::operation::list_layer_versions::ListLayerVersionsError)
-    pub fn list_layer_versions(
-        &self,
-    ) -> crate::operation::list_layer_versions::builders::ListLayerVersionsFluentBuilder {
-        crate::operation::list_layer_versions::builders::ListLayerVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_layer_versions(&self) -> crate::operation::list_layer_versions::builders::ListLayerVersionsFluentBuilder {
+        crate::operation::list_layer_versions::builders::ListLayerVersionsFluentBuilder::new(self.handle.clone())
     }
 }

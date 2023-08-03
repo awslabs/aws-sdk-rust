@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`subscribers(Vec<Subscriber>)`](crate::operation::create_notification::builders::CreateNotificationFluentBuilder::subscribers) / [`set_subscribers(Option<Vec<Subscriber>>)`](crate::operation::create_notification::builders::CreateNotificationFluentBuilder::set_subscribers): <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
     /// - On success, responds with [`CreateNotificationOutput`](crate::operation::create_notification::CreateNotificationOutput)
     /// - On failure, responds with [`SdkError<CreateNotificationError>`](crate::operation::create_notification::CreateNotificationError)
-    pub fn create_notification(
-        &self,
-    ) -> crate::operation::create_notification::builders::CreateNotificationFluentBuilder {
-        crate::operation::create_notification::builders::CreateNotificationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_notification(&self) -> crate::operation::create_notification::builders::CreateNotificationFluentBuilder {
+        crate::operation::create_notification::builders::CreateNotificationFluentBuilder::new(self.handle.clone())
     }
 }

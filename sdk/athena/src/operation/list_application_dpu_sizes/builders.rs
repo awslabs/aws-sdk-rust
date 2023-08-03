@@ -26,8 +26,7 @@ impl ListApplicationDpuSizesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationDPUSizesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_application_dpu_sizes::builders::ListApplicationDpuSizesInputBuilder,
+    inner: crate::operation::list_application_dpu_sizes::builders::ListApplicationDpuSizesInputBuilder,
 }
 impl ListApplicationDPUSizesFluentBuilder {
     /// Creates a new `ListApplicationDPUSizes`.
@@ -38,10 +37,7 @@ impl ListApplicationDPUSizesFluentBuilder {
         }
     }
     /// Access the ListApplicationDPUSizes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_application_dpu_sizes::builders::ListApplicationDpuSizesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_application_dpu_sizes::builders::ListApplicationDpuSizesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListApplicationDPUSizesFluentBuilder {
             crate::operation::list_application_dpu_sizes::ListApplicationDPUSizes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_dpu_sizes::ListApplicationDPUSizesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_dpu_sizes::ListApplicationDPUSizesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListApplicationDPUSizesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListApplicationDPUSizesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_dpu_sizes::ListApplicationDpuSizesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_dpu_sizes::ListApplicationDPUSizesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_dpu_sizes::ListApplicationDPUSizesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListApplicationDPUSizesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_dpu_sizes::ListApplicationDpuSizesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_dpu_sizes::ListApplicationDPUSizesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_dpu_sizes::ListApplicationDPUSizesError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListApplicationDPUSizesFluentBuilder {
             crate::operation::list_application_dpu_sizes::ListApplicationDPUSizes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_dpu_sizes::ListApplicationDPUSizesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_dpu_sizes::ListApplicationDPUSizesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_application_dpu_sizes::paginator::ListApplicationDpuSizesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_application_dpu_sizes::paginator::ListApplicationDpuSizesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_application_dpu_sizes::paginator::ListApplicationDpuSizesPaginator {
         crate::operation::list_application_dpu_sizes::paginator::ListApplicationDpuSizesPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies the maximum number of results to return.</p>

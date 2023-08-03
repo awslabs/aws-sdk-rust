@@ -26,7 +26,7 @@ impl DescribeDomainChangeProgressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDomainChangeProgressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressInputBuilder,
+    inner: crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressInputBuilder,
 }
 impl DescribeDomainChangeProgressFluentBuilder {
     /// Creates a new `DescribeDomainChangeProgress`.
@@ -37,7 +37,7 @@ impl DescribeDomainChangeProgressFluentBuilder {
         }
     }
     /// Access the DescribeDomainChangeProgress as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDomainChangeProgressFluentBuilder {
             crate::operation::describe_domain_change_progress::DescribeDomainChangeProgress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDomainChangeProgressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDomainChangeProgressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDomainChangeProgressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeDomainChangeProgressFluentBuilder {
             crate::operation::describe_domain_change_progress::DescribeDomainChangeProgress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError>,
     > {
         self.customize_middleware().await
     }

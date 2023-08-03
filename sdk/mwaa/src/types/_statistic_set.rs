@@ -44,9 +44,7 @@ impl StatisticSet {
 
 /// A builder for [`StatisticSet`](crate::types::StatisticSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatisticSetBuilder {
     pub(crate) sample_count: ::std::option::Option<i32>,
     pub(crate) sum: ::std::option::Option<f64>,

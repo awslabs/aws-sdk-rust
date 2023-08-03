@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`auth_token(Option<String>)`](crate::operation::get_compute_auth_token::GetComputeAuthTokenOutput::auth_token): <p>The authentication token that your game server uses to authenticate with Amazon GameLift.</p>
     ///   - [`expiration_timestamp(Option<DateTime>)`](crate::operation::get_compute_auth_token::GetComputeAuthTokenOutput::expiration_timestamp): <p>The amount of time until the authentication token is no longer valid. To continue using the compute resource for game server hosting, renew the authentication token by using this operation again.</p>
     /// - On failure, responds with [`SdkError<GetComputeAuthTokenError>`](crate::operation::get_compute_auth_token::GetComputeAuthTokenError)
-    pub fn get_compute_auth_token(
-        &self,
-    ) -> crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenFluentBuilder {
-        crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_compute_auth_token(&self) -> crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenFluentBuilder {
+        crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenFluentBuilder::new(self.handle.clone())
     }
 }

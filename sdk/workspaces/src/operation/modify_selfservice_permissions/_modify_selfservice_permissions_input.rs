@@ -16,24 +16,20 @@ impl ModifySelfservicePermissionsInput {
         self.resource_id.as_deref()
     }
     /// <p>The permissions to enable or disable self-service capabilities.</p>
-    pub fn selfservice_permissions(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SelfservicePermissions> {
+    pub fn selfservice_permissions(&self) -> ::std::option::Option<&crate::types::SelfservicePermissions> {
         self.selfservice_permissions.as_ref()
     }
 }
 impl ModifySelfservicePermissionsInput {
     /// Creates a new builder-style object to manufacture [`ModifySelfservicePermissionsInput`](crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput).
-    pub fn builder() -> crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsInputBuilder{
+    pub fn builder() -> crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsInputBuilder {
         crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifySelfservicePermissionsInput`](crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifySelfservicePermissionsInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) selfservice_permissions: ::std::option::Option<crate::types::SelfservicePermissions>,
@@ -59,17 +55,12 @@ impl ModifySelfservicePermissionsInputBuilder {
         self
     }
     /// <p>The permissions to enable or disable self-service capabilities.</p>
-    pub fn set_selfservice_permissions(
-        mut self,
-        input: ::std::option::Option<crate::types::SelfservicePermissions>,
-    ) -> Self {
+    pub fn set_selfservice_permissions(mut self, input: ::std::option::Option<crate::types::SelfservicePermissions>) -> Self {
         self.selfservice_permissions = input;
         self
     }
     /// <p>The permissions to enable or disable self-service capabilities.</p>
-    pub fn get_selfservice_permissions(
-        &self,
-    ) -> &::std::option::Option<crate::types::SelfservicePermissions> {
+    pub fn get_selfservice_permissions(&self) -> &::std::option::Option<crate::types::SelfservicePermissions> {
         &self.selfservice_permissions
     }
     /// Consumes the builder and constructs a [`ModifySelfservicePermissionsInput`](crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput).
@@ -79,11 +70,9 @@ impl ModifySelfservicePermissionsInputBuilder {
         crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput {
-                resource_id: self.resource_id,
-                selfservice_permissions: self.selfservice_permissions,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput {
+            resource_id: self.resource_id,
+            selfservice_permissions: self.selfservice_permissions,
+        })
     }
 }

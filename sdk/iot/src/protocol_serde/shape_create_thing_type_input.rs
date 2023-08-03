@@ -18,10 +18,7 @@ pub fn ser_create_thing_type_input(
     if let Some(var_5) = &input.thing_type_properties {
         #[allow(unused_mut)]
         let mut object_6 = object.key("thingTypeProperties").start_object();
-        crate::protocol_serde::shape_thing_type_properties::ser_thing_type_properties(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_thing_type_properties::ser_thing_type_properties(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

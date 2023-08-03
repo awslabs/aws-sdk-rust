@@ -10,10 +10,7 @@ impl ListReportJobsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_report_jobs::ListReportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_jobs::ListReportJobsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_jobs::ListReportJobsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_report_jobs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListReportJobsFluentBuilder {
         }
     }
     /// Access the ListReportJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_report_jobs::builders::ListReportJobsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_report_jobs::builders::ListReportJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListReportJobsFluentBuilder {
             crate::operation::list_report_jobs::ListReportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_jobs::ListReportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_jobs::ListReportJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListReportJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListReportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_report_jobs::ListReportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_jobs::ListReportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_jobs::ListReportJobsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListReportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_report_jobs::ListReportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_jobs::ListReportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_jobs::ListReportJobsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListReportJobsFluentBuilder {
             crate::operation::list_report_jobs::ListReportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_jobs::ListReportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_jobs::ListReportJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_report_jobs::paginator::ListReportJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_report_jobs::paginator::ListReportJobsPaginator {
-        crate::operation::list_report_jobs::paginator::ListReportJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_report_jobs::paginator::ListReportJobsPaginator {
+        crate::operation::list_report_jobs::paginator::ListReportJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>Returns only report jobs with the specified report plan name.</p>
-    pub fn by_report_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_report_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_report_plan_name(input.into());
         self
     }
     /// <p>Returns only report jobs with the specified report plan name.</p>
-    pub fn set_by_report_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_report_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_report_plan_name(input);
         self
     }
@@ -159,10 +132,7 @@ impl ListReportJobsFluentBuilder {
         self
     }
     /// <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
-    pub fn set_by_creation_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_creation_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_by_creation_before(input);
         self
     }
@@ -176,10 +146,7 @@ impl ListReportJobsFluentBuilder {
         self
     }
     /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
-    pub fn set_by_creation_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_creation_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_by_creation_after(input);
         self
     }

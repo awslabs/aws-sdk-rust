@@ -70,9 +70,7 @@ impl ReceiptRule {
 
 /// A builder for [`ReceiptRule`](crate::types::ReceiptRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReceiptRuleBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
@@ -151,10 +149,7 @@ impl ReceiptRuleBuilder {
         self
     }
     /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule will match all recipients under all verified domains.</p>
-    pub fn set_recipients(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_recipients(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.recipients = input;
         self
     }
@@ -174,17 +169,12 @@ impl ReceiptRuleBuilder {
         self
     }
     /// <p>An ordered list of actions to perform on messages that match at least one of the recipient email addresses or domains specified in the receipt rule.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>An ordered list of actions to perform on messages that match at least one of the recipient email addresses or domains specified in the receipt rule.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReceiptAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReceiptAction>> {
         &self.actions
     }
     /// <p>If <code>true</code>, then messages that this receipt rule applies to are scanned for spam and viruses. The default value is <code>false</code>.</p>

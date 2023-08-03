@@ -38,21 +38,17 @@ impl ListComponentTypesInput {
 }
 impl ListComponentTypesInput {
     /// Creates a new builder-style object to manufacture [`ListComponentTypesInput`](crate::operation::list_component_types::ListComponentTypesInput).
-    pub fn builder(
-    ) -> crate::operation::list_component_types::builders::ListComponentTypesInputBuilder {
+    pub fn builder() -> crate::operation::list_component_types::builders::ListComponentTypesInputBuilder {
         crate::operation::list_component_types::builders::ListComponentTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListComponentTypesInput`](crate::operation::list_component_types::ListComponentTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentTypesInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -83,17 +79,12 @@ impl ListComponentTypesInputBuilder {
         self
     }
     /// <p>A list of objects that filter the request.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A list of objects that filter the request.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>> {
         &self.filters
     }
     /// <p>The string that specifies the next page of results.</p>
@@ -130,17 +121,12 @@ impl ListComponentTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListComponentTypesInput`](crate::operation::list_component_types::ListComponentTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_component_types::ListComponentTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_component_types::ListComponentTypesInput {
-                workspace_id: self.workspace_id,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_component_types::ListComponentTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_component_types::ListComponentTypesInput {
+            workspace_id: self.workspace_id,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

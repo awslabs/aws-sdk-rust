@@ -44,9 +44,7 @@ impl AccessRules {
 
 /// A builder for [`AccessRules`](crate::types::AccessRules).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessRulesBuilder {
     pub(crate) get_object: ::std::option::Option<crate::types::AccessType>,
     pub(crate) allow_public_overrides: ::std::option::Option<bool>,
@@ -68,10 +66,7 @@ impl AccessRulesBuilder {
     /// <li> <p> <code>public</code> - Sets all objects in the bucket to public (read-only), making them readable by anyone in the world.</p> <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in the bucket default to public regardless of the <code>allowPublicOverrides</code> value.</p> </li>
     /// <li> <p> <code>private</code> - Sets all objects in the bucket to private, making them readable only by you or anyone you give access to.</p> <p>If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in the bucket default to private unless they are configured with a <code>public-read</code> ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the world.</p> </li>
     /// </ul>
-    pub fn set_get_object(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessType>,
-    ) -> Self {
+    pub fn set_get_object(mut self, input: ::std::option::Option<crate::types::AccessType>) -> Self {
         self.get_object = input;
         self
     }

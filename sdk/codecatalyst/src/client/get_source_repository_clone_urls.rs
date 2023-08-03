@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`GetSourceRepositoryCloneUrlsOutput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput) with field(s):
     ///   - [`https(Option<String>)`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput::https): <p>The HTTPS URL to use when cloning the source repository.</p>
     /// - On failure, responds with [`SdkError<GetSourceRepositoryCloneUrlsError>`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsError)
-    pub fn get_source_repository_clone_urls(&self) -> crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsFluentBuilder{
+    pub fn get_source_repository_clone_urls(
+        &self,
+    ) -> crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsFluentBuilder {
         crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsFluentBuilder::new(self.handle.clone())
     }
 }

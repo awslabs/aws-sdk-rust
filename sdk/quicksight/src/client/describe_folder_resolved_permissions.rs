@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`permissions(Option<Vec<ResourcePermission>>)`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput::permissions): <p>Information about the permissions for the folder.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeFolderResolvedPermissionsError>`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsError)
-    pub fn describe_folder_resolved_permissions(&self) -> crate::operation::describe_folder_resolved_permissions::builders::DescribeFolderResolvedPermissionsFluentBuilder{
+    pub fn describe_folder_resolved_permissions(
+        &self,
+    ) -> crate::operation::describe_folder_resolved_permissions::builders::DescribeFolderResolvedPermissionsFluentBuilder {
         crate::operation::describe_folder_resolved_permissions::builders::DescribeFolderResolvedPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

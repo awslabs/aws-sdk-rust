@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`user_name(Option<String>)`](crate::operation::get_access_key_last_used::GetAccessKeyLastUsedOutput::user_name): <p>The name of the IAM user that owns this access key.</p>  <p></p>
     ///   - [`access_key_last_used(Option<AccessKeyLastUsed>)`](crate::operation::get_access_key_last_used::GetAccessKeyLastUsedOutput::access_key_last_used): <p>Contains information about the last time the access key was used.</p>
     /// - On failure, responds with [`SdkError<GetAccessKeyLastUsedError>`](crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError)
-    pub fn get_access_key_last_used(
-        &self,
-    ) -> crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedFluentBuilder
-    {
-        crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_access_key_last_used(&self) -> crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedFluentBuilder {
+        crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedFluentBuilder::new(self.handle.clone())
     }
 }

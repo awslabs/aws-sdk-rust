@@ -15,35 +15,25 @@ impl DeleteGlobalNetworkInput {
 }
 impl DeleteGlobalNetworkInput {
     /// Creates a new builder-style object to manufacture [`DeleteGlobalNetworkInput`](crate::operation::delete_global_network::DeleteGlobalNetworkInput).
-    pub fn builder(
-    ) -> crate::operation::delete_global_network::builders::DeleteGlobalNetworkInputBuilder {
-        crate::operation::delete_global_network::builders::DeleteGlobalNetworkInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_global_network::builders::DeleteGlobalNetworkInputBuilder {
+        crate::operation::delete_global_network::builders::DeleteGlobalNetworkInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGlobalNetworkInput`](crate::operation::delete_global_network::DeleteGlobalNetworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGlobalNetworkInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGlobalNetworkInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteGlobalNetworkInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGlobalNetworkInput`](crate::operation::delete_global_network::DeleteGlobalNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_global_network::DeleteGlobalNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_global_network::DeleteGlobalNetworkInput {
-                global_network_id: self.global_network_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_global_network::DeleteGlobalNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_global_network::DeleteGlobalNetworkInput {
+            global_network_id: self.global_network_id,
+        })
     }
 }

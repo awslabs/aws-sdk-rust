@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateProfileJobOutput {
 }
 impl CreateProfileJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateProfileJobOutput`](crate::operation::create_profile_job::CreateProfileJobOutput).
-    pub fn builder() -> crate::operation::create_profile_job::builders::CreateProfileJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_profile_job::builders::CreateProfileJobOutputBuilder {
         crate::operation::create_profile_job::builders::CreateProfileJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProfileJobOutput`](crate::operation::create_profile_job::CreateProfileJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProfileJobOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

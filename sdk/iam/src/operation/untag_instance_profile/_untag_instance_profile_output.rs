@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UntagInstanceProfileOutput {
 }
 impl UntagInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`UntagInstanceProfileOutput`](crate::operation::untag_instance_profile::UntagInstanceProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::untag_instance_profile::builders::UntagInstanceProfileOutputBuilder {
+    pub fn builder() -> crate::operation::untag_instance_profile::builders::UntagInstanceProfileOutputBuilder {
         crate::operation::untag_instance_profile::builders::UntagInstanceProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`UntagInstanceProfileOutput`](crate::operation::untag_instance_profile::UntagInstanceProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagInstanceProfileOutputBuilder {
     _request_id: Option<String>,
 }

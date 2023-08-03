@@ -10,10 +10,7 @@ impl GetShardIteratorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_shard_iterator::GetShardIteratorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_shard_iterator::GetShardIteratorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_shard_iterator::GetShardIteratorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_shard_iterator();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetShardIteratorFluentBuilder {
         }
     }
     /// Access the GetShardIterator as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl GetShardIteratorFluentBuilder {
             crate::operation::get_shard_iterator::GetShardIterator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_shard_iterator::GetShardIteratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_shard_iterator::GetShardIteratorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl GetShardIteratorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl GetShardIteratorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_shard_iterator::GetShardIteratorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_shard_iterator::GetShardIteratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_shard_iterator::GetShardIteratorError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl GetShardIteratorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_shard_iterator::GetShardIteratorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_shard_iterator::GetShardIteratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_shard_iterator::GetShardIteratorError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl GetShardIteratorFluentBuilder {
             crate::operation::get_shard_iterator::GetShardIterator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_shard_iterator::GetShardIteratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_shard_iterator::GetShardIteratorError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +154,7 @@ impl GetShardIteratorFluentBuilder {
     /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
     /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
-    pub fn set_shard_iterator_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ShardIteratorType>,
-    ) -> Self {
+    pub fn set_shard_iterator_type(mut self, input: ::std::option::Option<crate::types::ShardIteratorType>) -> Self {
         self.inner = self.inner.set_shard_iterator_type(input);
         self
     }
@@ -184,24 +165,16 @@ impl GetShardIteratorFluentBuilder {
     /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
     /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
-    pub fn get_shard_iterator_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ShardIteratorType> {
+    pub fn get_shard_iterator_type(&self) -> &::std::option::Option<crate::types::ShardIteratorType> {
         self.inner.get_shard_iterator_type()
     }
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
-    pub fn sequence_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_number(input.into());
         self
     }
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
-    pub fn set_sequence_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_number(input);
         self
     }

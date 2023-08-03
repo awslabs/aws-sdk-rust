@@ -24,17 +24,14 @@ impl TerminateInstancesInput {
 }
 impl TerminateInstancesInput {
     /// Creates a new builder-style object to manufacture [`TerminateInstancesInput`](crate::operation::terminate_instances::TerminateInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::terminate_instances::builders::TerminateInstancesInputBuilder {
+    pub fn builder() -> crate::operation::terminate_instances::builders::TerminateInstancesInputBuilder {
         crate::operation::terminate_instances::builders::TerminateInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateInstancesInput`](crate::operation::terminate_instances::TerminateInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateInstancesInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -54,18 +51,13 @@ impl TerminateInstancesInputBuilder {
     }
     /// <p>The IDs of the instances.</p>
     /// <p>Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The IDs of the instances.</p>
     /// <p>Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -85,15 +77,10 @@ impl TerminateInstancesInputBuilder {
     /// Consumes the builder and constructs a [`TerminateInstancesInput`](crate::operation::terminate_instances::TerminateInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_instances::TerminateInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::terminate_instances::TerminateInstancesInput {
-                instance_ids: self.instance_ids,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::terminate_instances::TerminateInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::terminate_instances::TerminateInstancesInput {
+            instance_ids: self.instance_ids,
+            dry_run: self.dry_run,
+        })
     }
 }

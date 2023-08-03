@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`DeleteTransitGatewayMulticastDomainOutput`](crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainOutput) with field(s):
     ///   - [`transit_gateway_multicast_domain(Option<TransitGatewayMulticastDomain>)`](crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainOutput::transit_gateway_multicast_domain): <p>Information about the deleted transit gateway multicast domain.</p>
     /// - On failure, responds with [`SdkError<DeleteTransitGatewayMulticastDomainError>`](crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainError)
-    pub fn delete_transit_gateway_multicast_domain(&self) -> crate::operation::delete_transit_gateway_multicast_domain::builders::DeleteTransitGatewayMulticastDomainFluentBuilder{
-        crate::operation::delete_transit_gateway_multicast_domain::builders::DeleteTransitGatewayMulticastDomainFluentBuilder::new(self.handle.clone())
+    pub fn delete_transit_gateway_multicast_domain(
+        &self,
+    ) -> crate::operation::delete_transit_gateway_multicast_domain::builders::DeleteTransitGatewayMulticastDomainFluentBuilder {
+        crate::operation::delete_transit_gateway_multicast_domain::builders::DeleteTransitGatewayMulticastDomainFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

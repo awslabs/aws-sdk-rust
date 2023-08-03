@@ -36,9 +36,7 @@ impl SearchSchemaVersionSummary {
 
 /// A builder for [`SearchSchemaVersionSummary`](crate::types::SearchSchemaVersionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchSchemaVersionSummaryBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) schema_version: ::std::option::Option<::std::string::String>,
@@ -51,10 +49,7 @@ impl SearchSchemaVersionSummaryBuilder {
         self
     }
     /// <p>The date the schema version was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -63,18 +58,12 @@ impl SearchSchemaVersionSummaryBuilder {
         &self.created_date
     }
     /// <p>The version number of the schema</p>
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the schema</p>
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version = input;
         self
     }

@@ -42,10 +42,7 @@ impl PutGroupConfigurationFluentBuilder {
         }
     }
     /// Access the PutGroupConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_group_configuration::builders::PutGroupConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_group_configuration::builders::PutGroupConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl PutGroupConfigurationFluentBuilder {
             crate::operation::put_group_configuration::PutGroupConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_group_configuration::PutGroupConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_group_configuration::PutGroupConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl PutGroupConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl PutGroupConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_group_configuration::PutGroupConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_group_configuration::PutGroupConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_group_configuration::PutGroupConfigurationError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl PutGroupConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_group_configuration::PutGroupConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_group_configuration::PutGroupConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_group_configuration::PutGroupConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +110,7 @@ impl PutGroupConfigurationFluentBuilder {
             crate::operation::put_group_configuration::PutGroupConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_group_configuration::PutGroupConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_group_configuration::PutGroupConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -158,10 +144,7 @@ impl PutGroupConfigurationFluentBuilder {
     /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
@@ -169,9 +152,7 @@ impl PutGroupConfigurationFluentBuilder {
     /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>> {
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>> {
         self.inner.get_configuration()
     }
 }

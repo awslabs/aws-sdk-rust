@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteUserAccessLoggingSettingsOutput
 }
 impl DeleteUserAccessLoggingSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserAccessLoggingSettingsOutput`](crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsOutput).
-    pub fn builder() -> crate::operation::delete_user_access_logging_settings::builders::DeleteUserAccessLoggingSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::delete_user_access_logging_settings::builders::DeleteUserAccessLoggingSettingsOutputBuilder {
         crate::operation::delete_user_access_logging_settings::builders::DeleteUserAccessLoggingSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUserAccessLoggingSettingsOutput`](crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUserAccessLoggingSettingsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteUserAccessLoggingSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteUserAccessLoggingSettingsOutput`](crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsOutput
-    {
+    pub fn build(self) -> crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsOutput {
         crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsOutput {
             _request_id: self._request_id,
         }

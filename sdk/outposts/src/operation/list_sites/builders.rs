@@ -10,10 +10,7 @@ impl ListSitesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_sites::ListSitesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sites::ListSitesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sites::ListSitesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_sites();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ListSitesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_sites::ListSites,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_sites::ListSites, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_sites::ListSitesError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ListSitesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ListSitesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_sites::ListSites,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_sites::ListSites, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_sites::ListSitesError>,
     > {
         self.customize_middleware().await
@@ -152,27 +140,17 @@ impl ListSitesFluentBuilder {
     /// To override the contents of this collection use [`set_operating_address_country_code_filter`](Self::set_operating_address_country_code_filter).
     ///
     /// <p>Filters the results by country code.</p>
-    pub fn operating_address_country_code_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .operating_address_country_code_filter(input.into());
+    pub fn operating_address_country_code_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.operating_address_country_code_filter(input.into());
         self
     }
     /// <p>Filters the results by country code.</p>
-    pub fn set_operating_address_country_code_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_operating_address_country_code_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_operating_address_country_code_filter(input);
         self
     }
     /// <p>Filters the results by country code.</p>
-    pub fn get_operating_address_country_code_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_operating_address_country_code_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_operating_address_country_code_filter()
     }
     /// Appends an item to `OperatingAddressStateOrRegionFilter`.
@@ -180,29 +158,17 @@ impl ListSitesFluentBuilder {
     /// To override the contents of this collection use [`set_operating_address_state_or_region_filter`](Self::set_operating_address_state_or_region_filter).
     ///
     /// <p>Filters the results by state or region.</p>
-    pub fn operating_address_state_or_region_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .operating_address_state_or_region_filter(input.into());
+    pub fn operating_address_state_or_region_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.operating_address_state_or_region_filter(input.into());
         self
     }
     /// <p>Filters the results by state or region.</p>
-    pub fn set_operating_address_state_or_region_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_operating_address_state_or_region_filter(input);
+    pub fn set_operating_address_state_or_region_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_operating_address_state_or_region_filter(input);
         self
     }
     /// <p>Filters the results by state or region.</p>
-    pub fn get_operating_address_state_or_region_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_operating_address_state_or_region_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_operating_address_state_or_region_filter()
     }
     /// Appends an item to `OperatingAddressCityFilter`.
@@ -210,25 +176,17 @@ impl ListSitesFluentBuilder {
     /// To override the contents of this collection use [`set_operating_address_city_filter`](Self::set_operating_address_city_filter).
     ///
     /// <p>Filters the results by city.</p>
-    pub fn operating_address_city_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operating_address_city_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operating_address_city_filter(input.into());
         self
     }
     /// <p>Filters the results by city.</p>
-    pub fn set_operating_address_city_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_operating_address_city_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_operating_address_city_filter(input);
         self
     }
     /// <p>Filters the results by city.</p>
-    pub fn get_operating_address_city_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_operating_address_city_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_operating_address_city_filter()
     }
 }

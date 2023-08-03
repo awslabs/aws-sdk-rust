@@ -53,17 +53,14 @@ impl GetSampledRequestsInput {
 }
 impl GetSampledRequestsInput {
     /// Creates a new builder-style object to manufacture [`GetSampledRequestsInput`](crate::operation::get_sampled_requests::GetSampledRequestsInput).
-    pub fn builder(
-    ) -> crate::operation::get_sampled_requests::builders::GetSampledRequestsInputBuilder {
+    pub fn builder() -> crate::operation::get_sampled_requests::builders::GetSampledRequestsInputBuilder {
         crate::operation::get_sampled_requests::builders::GetSampledRequestsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSampledRequestsInput`](crate::operation::get_sampled_requests::GetSampledRequestsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSampledRequestsInputBuilder {
     pub(crate) web_acl_arn: ::std::option::Option<::std::string::String>,
     pub(crate) rule_metric_name: ::std::option::Option<::std::string::String>,
@@ -87,18 +84,12 @@ impl GetSampledRequestsInputBuilder {
         &self.web_acl_arn
     }
     /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
-    pub fn rule_metric_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
-    pub fn set_rule_metric_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_metric_name = input;
         self
     }
@@ -141,10 +132,7 @@ impl GetSampledRequestsInputBuilder {
         self
     }
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
-    pub fn set_time_window(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeWindow>,
-    ) -> Self {
+    pub fn set_time_window(mut self, input: ::std::option::Option<crate::types::TimeWindow>) -> Self {
         self.time_window = input;
         self
     }
@@ -169,18 +157,13 @@ impl GetSampledRequestsInputBuilder {
     /// Consumes the builder and constructs a [`GetSampledRequestsInput`](crate::operation::get_sampled_requests::GetSampledRequestsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sampled_requests::GetSampledRequestsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_sampled_requests::GetSampledRequestsInput {
-                web_acl_arn: self.web_acl_arn,
-                rule_metric_name: self.rule_metric_name,
-                scope: self.scope,
-                time_window: self.time_window,
-                max_items: self.max_items,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_sampled_requests::GetSampledRequestsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_sampled_requests::GetSampledRequestsInput {
+            web_acl_arn: self.web_acl_arn,
+            rule_metric_name: self.rule_metric_name,
+            scope: self.scope,
+            time_window: self.time_window,
+            max_items: self.max_items,
+        })
     }
 }

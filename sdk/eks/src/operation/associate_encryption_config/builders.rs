@@ -27,7 +27,7 @@ impl AssociateEncryptionConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateEncryptionConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigInputBuilder,
+    inner: crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigInputBuilder,
 }
 impl AssociateEncryptionConfigFluentBuilder {
     /// Creates a new `AssociateEncryptionConfig`.
@@ -38,7 +38,7 @@ impl AssociateEncryptionConfigFluentBuilder {
         }
     }
     /// Access the AssociateEncryptionConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl AssociateEncryptionConfigFluentBuilder {
             crate::operation::associate_encryption_config::AssociateEncryptionConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_encryption_config::AssociateEncryptionConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_encryption_config::AssociateEncryptionConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl AssociateEncryptionConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl AssociateEncryptionConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_encryption_config::AssociateEncryptionConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_encryption_config::AssociateEncryptionConfigError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl AssociateEncryptionConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_encryption_config::AssociateEncryptionConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_encryption_config::AssociateEncryptionConfigError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl AssociateEncryptionConfigFluentBuilder {
             crate::operation::associate_encryption_config::AssociateEncryptionConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_encryption_config::AssociateEncryptionConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_encryption_config::AssociateEncryptionConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -145,32 +134,21 @@ impl AssociateEncryptionConfigFluentBuilder {
         self
     }
     /// <p>The configuration you are using for encryption.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>) -> Self {
         self.inner = self.inner.set_encryption_config(input);
         self
     }
     /// <p>The configuration you are using for encryption.</p>
-    pub fn get_encryption_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
+    pub fn get_encryption_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
         self.inner.get_encryption_config()
     }
     /// <p>The client request token you are using with the encryption configuration.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The client request token you are using with the encryption configuration.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

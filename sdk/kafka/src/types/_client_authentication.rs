@@ -37,9 +37,7 @@ impl ClientAuthentication {
 
 /// A builder for [`ClientAuthentication`](crate::types::ClientAuthentication).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientAuthenticationBuilder {
     pub(crate) sasl: ::std::option::Option<crate::types::Sasl>,
     pub(crate) tls: ::std::option::Option<crate::types::Tls>,
@@ -80,10 +78,7 @@ impl ClientAuthenticationBuilder {
         self
     }
     /// <p>Contains information about unauthenticated traffic to the cluster.</p>
-    pub fn set_unauthenticated(
-        mut self,
-        input: ::std::option::Option<crate::types::Unauthenticated>,
-    ) -> Self {
+    pub fn set_unauthenticated(mut self, input: ::std::option::Option<crate::types::Unauthenticated>) -> Self {
         self.unauthenticated = input;
         self
     }

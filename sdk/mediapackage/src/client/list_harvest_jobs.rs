@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`harvest_jobs(Option<Vec<HarvestJob>>)`](crate::operation::list_harvest_jobs::ListHarvestJobsOutput::harvest_jobs): A list of HarvestJob records.
     ///   - [`next_token(Option<String>)`](crate::operation::list_harvest_jobs::ListHarvestJobsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     /// - On failure, responds with [`SdkError<ListHarvestJobsError>`](crate::operation::list_harvest_jobs::ListHarvestJobsError)
-    pub fn list_harvest_jobs(
-        &self,
-    ) -> crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder {
-        crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_harvest_jobs(&self) -> crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder {
+        crate::operation::list_harvest_jobs::builders::ListHarvestJobsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -135,17 +135,14 @@ impl ::aws_http::request_id::RequestId for CreateBotVersionOutput {
 }
 impl CreateBotVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateBotVersionOutput`](crate::operation::create_bot_version::CreateBotVersionOutput).
-    pub fn builder() -> crate::operation::create_bot_version::builders::CreateBotVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_bot_version::builders::CreateBotVersionOutputBuilder {
         crate::operation::create_bot_version::builders::CreateBotVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBotVersionOutput`](crate::operation::create_bot_version::CreateBotVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBotVersionOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -207,10 +204,7 @@ impl CreateBotVersionOutputBuilder {
         self
     }
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    pub fn set_intents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>,
-    ) -> Self {
+    pub fn set_intents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>) -> Self {
         self.intents = input;
         self
     }
@@ -224,10 +218,7 @@ impl CreateBotVersionOutputBuilder {
         self
     }
     /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
-    pub fn set_clarification_prompt(
-        mut self,
-        input: ::std::option::Option<crate::types::Prompt>,
-    ) -> Self {
+    pub fn set_clarification_prompt(mut self, input: ::std::option::Option<crate::types::Prompt>) -> Self {
         self.clarification_prompt = input;
         self
     }
@@ -241,10 +232,7 @@ impl CreateBotVersionOutputBuilder {
         self
     }
     /// <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
-    pub fn set_abort_statement(
-        mut self,
-        input: ::std::option::Option<crate::types::Statement>,
-    ) -> Self {
+    pub fn set_abort_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
         self.abort_statement = input;
         self
     }
@@ -267,18 +255,12 @@ impl CreateBotVersionOutputBuilder {
         &self.status
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -292,10 +274,7 @@ impl CreateBotVersionOutputBuilder {
         self
     }
     /// <p>The date when the <code>$LATEST</code> version of this bot was updated. </p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }
@@ -309,10 +288,7 @@ impl CreateBotVersionOutputBuilder {
         self
     }
     /// <p>The date when the bot version was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }

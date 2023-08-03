@@ -22,18 +22,14 @@ impl ConfigureLogsForChannelInput {
 }
 impl ConfigureLogsForChannelInput {
     /// Creates a new builder-style object to manufacture [`ConfigureLogsForChannelInput`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput).
-    pub fn builder(
-    ) -> crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder
-    {
+    pub fn builder() -> crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder {
         crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`ConfigureLogsForChannelInput`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigureLogsForChannelInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
@@ -65,10 +61,7 @@ impl ConfigureLogsForChannelInputBuilder {
         self
     }
     /// <p>The types of logs to collect.</p>
-    pub fn set_log_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
-    ) -> Self {
+    pub fn set_log_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>) -> Self {
         self.log_types = input;
         self
     }
@@ -83,11 +76,9 @@ impl ConfigureLogsForChannelInputBuilder {
         crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput {
-                channel_name: self.channel_name,
-                log_types: self.log_types,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput {
+            channel_name: self.channel_name,
+            log_types: self.log_types,
+        })
     }
 }

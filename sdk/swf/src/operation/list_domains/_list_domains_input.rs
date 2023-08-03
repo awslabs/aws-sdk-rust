@@ -45,9 +45,7 @@ impl ListDomainsInput {
 
 /// A builder for [`ListDomainsInput`](crate::operation::list_domains::ListDomainsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainsInputBuilder {
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     pub(crate) registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
@@ -57,19 +55,13 @@ pub struct ListDomainsInputBuilder {
 impl ListDomainsInputBuilder {
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -84,17 +76,12 @@ impl ListDomainsInputBuilder {
         self
     }
     /// <p>Specifies the registration status of the domains to list.</p>
-    pub fn set_registration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationStatus>,
-    ) -> Self {
+    pub fn set_registration_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.registration_status = input;
         self
     }
     /// <p>Specifies the registration status of the domains to list.</p>
-    pub fn get_registration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+    pub fn get_registration_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         &self.registration_status
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
@@ -126,12 +113,7 @@ impl ListDomainsInputBuilder {
         &self.reverse_order
     }
     /// Consumes the builder and constructs a [`ListDomainsInput`](crate::operation::list_domains::ListDomainsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_domains::ListDomainsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_domains::ListDomainsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_domains::ListDomainsInput {
             next_page_token: self.next_page_token,
             registration_status: self.registration_status,

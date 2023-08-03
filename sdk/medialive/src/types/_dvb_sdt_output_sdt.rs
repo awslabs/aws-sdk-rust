@@ -40,13 +40,7 @@
 /// Dvb Sdt Output Sdt
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DvbSdtOutputSdt {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for DvbSdtOutputSdt {
             "SDT_FOLLOW_IF_PRESENT" => DvbSdtOutputSdt::SdtFollowIfPresent,
             "SDT_MANUAL" => DvbSdtOutputSdt::SdtManual,
             "SDT_NONE" => DvbSdtOutputSdt::SdtNone,
-            other => {
-                DvbSdtOutputSdt::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DvbSdtOutputSdt::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl DvbSdtOutputSdt {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "SDT_FOLLOW",
-            "SDT_FOLLOW_IF_PRESENT",
-            "SDT_MANUAL",
-            "SDT_NONE",
-        ]
+        &["SDT_FOLLOW", "SDT_FOLLOW_IF_PRESENT", "SDT_MANUAL", "SDT_NONE"]
     }
 }
 impl ::std::convert::AsRef<str> for DvbSdtOutputSdt {

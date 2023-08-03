@@ -15,35 +15,25 @@ impl GetApprovalRuleTemplateInput {
 }
 impl GetApprovalRuleTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetApprovalRuleTemplateInput`](crate::operation::get_approval_rule_template::GetApprovalRuleTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateInputBuilder {
         crate::operation::get_approval_rule_template::builders::GetApprovalRuleTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetApprovalRuleTemplateInput`](crate::operation::get_approval_rule_template::GetApprovalRuleTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApprovalRuleTemplateInputBuilder {
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
 }
 impl GetApprovalRuleTemplateInputBuilder {
     /// <p>The name of the approval rule template for which you want to get information.</p>
-    pub fn approval_rule_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the approval rule template for which you want to get information.</p>
-    pub fn set_approval_rule_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl GetApprovalRuleTemplateInputBuilder {
         crate::operation::get_approval_rule_template::GetApprovalRuleTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_approval_rule_template::GetApprovalRuleTemplateInput {
-                approval_rule_template_name: self.approval_rule_template_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_approval_rule_template::GetApprovalRuleTemplateInput {
+            approval_rule_template_name: self.approval_rule_template_name,
+        })
     }
 }

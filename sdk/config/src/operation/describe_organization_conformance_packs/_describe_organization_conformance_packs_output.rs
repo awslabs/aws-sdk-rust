@@ -5,8 +5,7 @@
 pub struct DescribeOrganizationConformancePacksOutput {
     /// <p>Returns a list of OrganizationConformancePacks objects.</p>
     #[doc(hidden)]
-    pub organization_conformance_packs:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConformancePack>>,
+    pub organization_conformance_packs: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConformancePack>>,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeOrganizationConformancePacksOutput {
 }
 impl DescribeOrganizationConformancePacksOutput {
     /// <p>Returns a list of OrganizationConformancePacks objects.</p>
-    pub fn organization_conformance_packs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OrganizationConformancePack]> {
+    pub fn organization_conformance_packs(&self) -> ::std::option::Option<&[crate::types::OrganizationConformancePack]> {
         self.organization_conformance_packs.as_deref()
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeOrganizationConformancePacksO
 }
 impl DescribeOrganizationConformancePacksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConformancePacksOutput`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksOutput).
-    pub fn builder() -> crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksOutputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksOutputBuilder {
         crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationConformancePacksOutput`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConformancePacksOutputBuilder {
-    pub(crate) organization_conformance_packs:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConformancePack>>,
+    pub(crate) organization_conformance_packs: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConformancePack>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeOrganizationConformancePacksOutputBuilder {
     /// To override the contents of this collection use [`set_organization_conformance_packs`](Self::set_organization_conformance_packs).
     ///
     /// <p>Returns a list of OrganizationConformancePacks objects.</p>
-    pub fn organization_conformance_packs(
-        mut self,
-        input: crate::types::OrganizationConformancePack,
-    ) -> Self {
+    pub fn organization_conformance_packs(mut self, input: crate::types::OrganizationConformancePack) -> Self {
         let mut v = self.organization_conformance_packs.unwrap_or_default();
         v.push(input);
         self.organization_conformance_packs = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeOrganizationConformancePacksOutputBuilder {
         self
     }
     /// <p>Returns a list of OrganizationConformancePacks objects.</p>
-    pub fn get_organization_conformance_packs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationConformancePack>> {
+    pub fn get_organization_conformance_packs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationConformancePack>> {
         &self.organization_conformance_packs
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -100,12 +89,10 @@ impl DescribeOrganizationConformancePacksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationConformancePacksOutput`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksOutput).
-    pub fn build(self) -> crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksOutput{
+    pub fn build(self) -> crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksOutput {
         crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksOutput {
-            organization_conformance_packs: self.organization_conformance_packs
-            ,
-            next_token: self.next_token
-            ,
+            organization_conformance_packs: self.organization_conformance_packs,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

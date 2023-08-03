@@ -43,9 +43,7 @@ impl ListJobsInput {
 
 /// A builder for [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_statuses: ::std::option::Option<::std::vec::Vec<crate::types::JobStatus>>,
@@ -79,17 +77,12 @@ impl ListJobsInputBuilder {
         self
     }
     /// <p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p>
-    pub fn set_job_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobStatus>>,
-    ) -> Self {
+    pub fn set_job_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobStatus>>) -> Self {
         self.job_statuses = input;
         self
     }
     /// <p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p>
-    pub fn get_job_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobStatus>> {
+    pub fn get_job_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobStatus>> {
         &self.job_statuses
     }
     /// <p>A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.</p>
@@ -121,12 +114,7 @@ impl ListJobsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_jobs::ListJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_jobs::ListJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_jobs::ListJobsInput {
             account_id: self.account_id,
             job_statuses: self.job_statuses,

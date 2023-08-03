@@ -65,9 +65,7 @@ impl MonitoringAlertSummary {
 
 /// A builder for [`MonitoringAlertSummary`](crate::types::MonitoringAlertSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringAlertSummaryBuilder {
     pub(crate) monitoring_alert_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -79,18 +77,12 @@ pub struct MonitoringAlertSummaryBuilder {
 }
 impl MonitoringAlertSummaryBuilder {
     /// <p>The name of a monitoring alert.</p>
-    pub fn monitoring_alert_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_alert_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_alert_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn set_monitoring_alert_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_alert_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_alert_name = input;
         self
     }
@@ -104,10 +96,7 @@ impl MonitoringAlertSummaryBuilder {
         self
     }
     /// <p>A timestamp that indicates when a monitor alert was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -121,10 +110,7 @@ impl MonitoringAlertSummaryBuilder {
         self
     }
     /// <p>A timestamp that indicates when a monitor alert was last updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -138,10 +124,7 @@ impl MonitoringAlertSummaryBuilder {
         self
     }
     /// <p>The current status of an alert.</p>
-    pub fn set_alert_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringAlertStatus>,
-    ) -> Self {
+    pub fn set_alert_status(mut self, input: ::std::option::Option<crate::types::MonitoringAlertStatus>) -> Self {
         self.alert_status = input;
         self
     }
@@ -183,10 +166,7 @@ impl MonitoringAlertSummaryBuilder {
         self
     }
     /// <p>A list of alert actions taken in response to an alert going into <code>InAlert</code> status.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringAlertActions>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<crate::types::MonitoringAlertActions>) -> Self {
         self.actions = input;
         self
     }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`solution_stacks(Option<Vec<String>>)`](crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksOutput::solution_stacks): <p>A list of available solution stacks.</p>
     ///   - [`solution_stack_details(Option<Vec<SolutionStackDescription>>)`](crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksOutput::solution_stack_details): <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
     /// - On failure, responds with [`SdkError<ListAvailableSolutionStacksError>`](crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksError)
-    pub fn list_available_solution_stacks(&self) -> crate::operation::list_available_solution_stacks::builders::ListAvailableSolutionStacksFluentBuilder{
+    pub fn list_available_solution_stacks(
+        &self,
+    ) -> crate::operation::list_available_solution_stacks::builders::ListAvailableSolutionStacksFluentBuilder {
         crate::operation::list_available_solution_stacks::builders::ListAvailableSolutionStacksFluentBuilder::new(self.handle.clone())
     }
 }

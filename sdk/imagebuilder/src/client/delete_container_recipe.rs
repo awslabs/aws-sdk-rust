@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::delete_container_recipe::DeleteContainerRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`container_recipe_arn(Option<String>)`](crate::operation::delete_container_recipe::DeleteContainerRecipeOutput::container_recipe_arn): <p>The Amazon Resource Name (ARN) of the container recipe that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteContainerRecipeError>`](crate::operation::delete_container_recipe::DeleteContainerRecipeError)
-    pub fn delete_container_recipe(
-        &self,
-    ) -> crate::operation::delete_container_recipe::builders::DeleteContainerRecipeFluentBuilder
-    {
-        crate::operation::delete_container_recipe::builders::DeleteContainerRecipeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_container_recipe(&self) -> crate::operation::delete_container_recipe::builders::DeleteContainerRecipeFluentBuilder {
+        crate::operation::delete_container_recipe::builders::DeleteContainerRecipeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_portfolio::builders::DeletePortfolioFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_portfolio::builders::DeletePortfolioFluentBuilder::set_id): <p>The portfolio identifier.</p>
     /// - On success, responds with [`DeletePortfolioOutput`](crate::operation::delete_portfolio::DeletePortfolioOutput)
     /// - On failure, responds with [`SdkError<DeletePortfolioError>`](crate::operation::delete_portfolio::DeletePortfolioError)
-    pub fn delete_portfolio(
-        &self,
-    ) -> crate::operation::delete_portfolio::builders::DeletePortfolioFluentBuilder {
-        crate::operation::delete_portfolio::builders::DeletePortfolioFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_portfolio(&self) -> crate::operation::delete_portfolio::builders::DeletePortfolioFluentBuilder {
+        crate::operation::delete_portfolio::builders::DeletePortfolioFluentBuilder::new(self.handle.clone())
     }
 }

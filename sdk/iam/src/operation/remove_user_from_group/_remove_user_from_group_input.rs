@@ -26,18 +26,14 @@ impl RemoveUserFromGroupInput {
 }
 impl RemoveUserFromGroupInput {
     /// Creates a new builder-style object to manufacture [`RemoveUserFromGroupInput`](crate::operation::remove_user_from_group::RemoveUserFromGroupInput).
-    pub fn builder(
-    ) -> crate::operation::remove_user_from_group::builders::RemoveUserFromGroupInputBuilder {
-        crate::operation::remove_user_from_group::builders::RemoveUserFromGroupInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::remove_user_from_group::builders::RemoveUserFromGroupInputBuilder {
+        crate::operation::remove_user_from_group::builders::RemoveUserFromGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveUserFromGroupInput`](crate::operation::remove_user_from_group::RemoveUserFromGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveUserFromGroupInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
@@ -80,15 +76,11 @@ impl RemoveUserFromGroupInputBuilder {
     /// Consumes the builder and constructs a [`RemoveUserFromGroupInput`](crate::operation::remove_user_from_group::RemoveUserFromGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_user_from_group::RemoveUserFromGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_user_from_group::RemoveUserFromGroupInput {
-                group_name: self.group_name,
-                user_name: self.user_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::remove_user_from_group::RemoveUserFromGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::remove_user_from_group::RemoveUserFromGroupInput {
+            group_name: self.group_name,
+            user_name: self.user_name,
+        })
     }
 }

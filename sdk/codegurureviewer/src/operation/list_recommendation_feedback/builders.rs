@@ -26,7 +26,7 @@ impl ListRecommendationFeedbackInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRecommendationFeedbackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackInputBuilder,
+    inner: crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackInputBuilder,
 }
 impl ListRecommendationFeedbackFluentBuilder {
     /// Creates a new `ListRecommendationFeedback`.
@@ -37,7 +37,7 @@ impl ListRecommendationFeedbackFluentBuilder {
         }
     }
     /// Access the ListRecommendationFeedback as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListRecommendationFeedbackFluentBuilder {
             crate::operation::list_recommendation_feedback::ListRecommendationFeedback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommendation_feedback::ListRecommendationFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommendation_feedback::ListRecommendationFeedbackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListRecommendationFeedbackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListRecommendationFeedbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recommendation_feedback::ListRecommendationFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommendation_feedback::ListRecommendationFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommendation_feedback::ListRecommendationFeedbackError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListRecommendationFeedbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recommendation_feedback::ListRecommendationFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommendation_feedback::ListRecommendationFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommendation_feedback::ListRecommendationFeedbackError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListRecommendationFeedbackFluentBuilder {
             crate::operation::list_recommendation_feedback::ListRecommendationFeedback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommendation_feedback::ListRecommendationFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommendation_feedback::ListRecommendationFeedbackError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_recommendation_feedback::paginator::ListRecommendationFeedbackPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_recommendation_feedback::paginator::ListRecommendationFeedbackPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_recommendation_feedback::paginator::ListRecommendationFeedbackPaginator {
         crate::operation::list_recommendation_feedback::paginator::ListRecommendationFeedbackPaginator::new(self.handle, self.inner)
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
@@ -155,18 +144,12 @@ impl ListRecommendationFeedbackFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_review_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_review_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn set_code_review_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_review_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code_review_arn(input);
         self
     }
@@ -186,10 +169,7 @@ impl ListRecommendationFeedbackFluentBuilder {
     }
     /// <p>An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.</p>
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-    pub fn set_user_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_ids(input);
         self
     }
@@ -203,25 +183,17 @@ impl ListRecommendationFeedbackFluentBuilder {
     /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
     ///
     /// <p>Used to query the recommendation feedback for a given recommendation.</p>
-    pub fn recommendation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommendation_ids(input.into());
         self
     }
     /// <p>Used to query the recommendation feedback for a given recommendation.</p>
-    pub fn set_recommendation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_recommendation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_recommendation_ids(input);
         self
     }
     /// <p>Used to query the recommendation feedback for a given recommendation.</p>
-    pub fn get_recommendation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recommendation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_recommendation_ids()
     }
 }

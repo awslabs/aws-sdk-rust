@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`session_summaries(Option<Vec<SessionSummary>>)`](crate::operation::search_sessions::SearchSessionsOutput::session_summaries): <p>Summary information about the sessions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_sessions::SearchSessionsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<SearchSessionsError>`](crate::operation::search_sessions::SearchSessionsError)
-    pub fn search_sessions(
-        &self,
-    ) -> crate::operation::search_sessions::builders::SearchSessionsFluentBuilder {
-        crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_sessions(&self) -> crate::operation::search_sessions::builders::SearchSessionsFluentBuilder {
+        crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::new(self.handle.clone())
     }
 }

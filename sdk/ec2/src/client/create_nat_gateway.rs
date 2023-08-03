@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`client_token(Option<String>)`](crate::operation::create_nat_gateway::CreateNatGatewayOutput::client_token): <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
     ///   - [`nat_gateway(Option<NatGateway>)`](crate::operation::create_nat_gateway::CreateNatGatewayOutput::nat_gateway): <p>Information about the NAT gateway.</p>
     /// - On failure, responds with [`SdkError<CreateNatGatewayError>`](crate::operation::create_nat_gateway::CreateNatGatewayError)
-    pub fn create_nat_gateway(
-        &self,
-    ) -> crate::operation::create_nat_gateway::builders::CreateNatGatewayFluentBuilder {
-        crate::operation::create_nat_gateway::builders::CreateNatGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_nat_gateway(&self) -> crate::operation::create_nat_gateway::builders::CreateNatGatewayFluentBuilder {
+        crate::operation::create_nat_gateway::builders::CreateNatGatewayFluentBuilder::new(self.handle.clone())
     }
 }

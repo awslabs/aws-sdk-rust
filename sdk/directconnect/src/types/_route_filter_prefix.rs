@@ -23,9 +23,7 @@ impl RouteFilterPrefix {
 
 /// A builder for [`RouteFilterPrefix`](crate::types::RouteFilterPrefix).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteFilterPrefixBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
 }

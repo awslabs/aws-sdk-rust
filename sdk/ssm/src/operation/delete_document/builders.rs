@@ -10,10 +10,7 @@ impl DeleteDocumentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_document::DeleteDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_document::DeleteDocumentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_document::DeleteDocumentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_document();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteDocumentFluentBuilder {
         }
     }
     /// Access the DeleteDocument as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_document::builders::DeleteDocumentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_document::builders::DeleteDocumentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DeleteDocumentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -130,18 +122,12 @@ impl DeleteDocumentFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_version(input.into());
         self
     }
     /// <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_version(input);
         self
     }

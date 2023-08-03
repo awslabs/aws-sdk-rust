@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`package_version_history_list(Option<Vec<PackageVersionHistory>>)`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput::package_version_history_list): <p>List of <code>PackageVersionHistory</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput::next_token): (undocumented)
     /// - On failure, responds with [`SdkError<GetPackageVersionHistoryError>`](crate::operation::get_package_version_history::GetPackageVersionHistoryError)
-    pub fn get_package_version_history(&self) -> crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder{
+    pub fn get_package_version_history(&self) -> crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder {
         crate::operation::get_package_version_history::builders::GetPackageVersionHistoryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -63,18 +63,14 @@ impl ::aws_http::request_id::RequestId for CreateSequenceStoreOutput {
 }
 impl CreateSequenceStoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateSequenceStoreOutput`](crate::operation::create_sequence_store::CreateSequenceStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::create_sequence_store::builders::CreateSequenceStoreOutputBuilder {
-        crate::operation::create_sequence_store::builders::CreateSequenceStoreOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_sequence_store::builders::CreateSequenceStoreOutputBuilder {
+        crate::operation::create_sequence_store::builders::CreateSequenceStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSequenceStoreOutput`](crate::operation::create_sequence_store::CreateSequenceStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSequenceStoreOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -162,10 +158,7 @@ impl CreateSequenceStoreOutputBuilder {
         self
     }
     /// <p>When the store was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -174,18 +167,12 @@ impl CreateSequenceStoreOutputBuilder {
         &self.creation_time
     }
     /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
-    pub fn fallback_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fallback_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fallback_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
-    pub fn set_fallback_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fallback_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fallback_location = input;
         self
     }

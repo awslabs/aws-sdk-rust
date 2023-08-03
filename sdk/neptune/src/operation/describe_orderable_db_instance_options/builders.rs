@@ -5,16 +5,16 @@ pub use crate::operation::describe_orderable_db_instance_options::_describe_orde
 
 impl DescribeOrderableDbInstanceOptionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptionsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_orderable_db_instance_options();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOrderableDBInstanceOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder,
+    inner: crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder,
 }
 impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     /// Creates a new `DescribeOrderableDBInstanceOptions`.
@@ -37,15 +37,20 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         }
     }
     /// Access the DescribeOrderableDBInstanceOptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptionsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptionsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptionsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptionsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptionsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptionsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptionsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptionsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator {
         crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the engine to retrieve DB instance options for.</p>
@@ -115,18 +130,12 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner.get_engine()
     }
     /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -135,18 +144,12 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner.get_engine_version()
     }
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-    pub fn db_instance_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_class(input.into());
         self
     }
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-    pub fn set_db_instance_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_class(input);
         self
     }
@@ -155,18 +158,12 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner.get_db_instance_class()
     }
     /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
-    pub fn license_model(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_model(input.into());
         self
     }
     /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
-    pub fn set_license_model(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_model(input);
         self
     }
@@ -198,10 +195,7 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

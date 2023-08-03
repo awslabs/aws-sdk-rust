@@ -70,9 +70,7 @@ impl ServiceSetting {
 
 /// A builder for [`ServiceSetting`](crate::types::ServiceSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceSettingBuilder {
     pub(crate) setting_id: ::std::option::Option<::std::string::String>,
     pub(crate) setting_value: ::std::option::Option<::std::string::String>,
@@ -97,18 +95,12 @@ impl ServiceSettingBuilder {
         &self.setting_id
     }
     /// <p>The value of the service setting.</p>
-    pub fn setting_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn setting_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.setting_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the service setting.</p>
-    pub fn set_setting_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_setting_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.setting_value = input;
         self
     }
@@ -122,10 +114,7 @@ impl ServiceSettingBuilder {
         self
     }
     /// <p>The last time the service setting was modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -134,18 +123,12 @@ impl ServiceSettingBuilder {
         &self.last_modified_date
     }
     /// <p>The ARN of the last modified user. This field is populated only if the setting value was overwritten.</p>
-    pub fn last_modified_user(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the last modified user. This field is populated only if the setting value was overwritten.</p>
-    pub fn set_last_modified_user(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_user = input;
         self
     }

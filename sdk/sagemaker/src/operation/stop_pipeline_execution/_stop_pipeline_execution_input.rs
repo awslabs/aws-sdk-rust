@@ -22,36 +22,26 @@ impl StopPipelineExecutionInput {
 }
 impl StopPipelineExecutionInput {
     /// Creates a new builder-style object to manufacture [`StopPipelineExecutionInput`](crate::operation::stop_pipeline_execution::StopPipelineExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionInputBuilder {
         crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopPipelineExecutionInput`](crate::operation::stop_pipeline_execution::StopPipelineExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopPipelineExecutionInputBuilder {
     pub(crate) pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl StopPipelineExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn set_pipeline_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_arn = input;
         self
     }
@@ -60,18 +50,12 @@ impl StopPipelineExecutionInputBuilder {
         &self.pipeline_execution_arn
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -82,15 +66,11 @@ impl StopPipelineExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StopPipelineExecutionInput`](crate::operation::stop_pipeline_execution::StopPipelineExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_pipeline_execution::StopPipelineExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_pipeline_execution::StopPipelineExecutionInput {
-                pipeline_execution_arn: self.pipeline_execution_arn,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_pipeline_execution::StopPipelineExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_pipeline_execution::StopPipelineExecutionInput {
+            pipeline_execution_arn: self.pipeline_execution_arn,
+            client_request_token: self.client_request_token,
+        })
     }
 }

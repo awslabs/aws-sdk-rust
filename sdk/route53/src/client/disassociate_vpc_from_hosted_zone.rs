@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateVpcFromHostedZoneOutput`](crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneOutput) with field(s):
     ///   - [`change_info(Option<ChangeInfo>)`](crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneOutput::change_info): <p>A complex type that describes the changes made to the specified private hosted zone.</p>
     /// - On failure, responds with [`SdkError<DisassociateVPCFromHostedZoneError>`](crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVPCFromHostedZoneError)
-    pub fn disassociate_vpc_from_hosted_zone(&self) -> crate::operation::disassociate_vpc_from_hosted_zone::builders::DisassociateVPCFromHostedZoneFluentBuilder{
+    pub fn disassociate_vpc_from_hosted_zone(
+        &self,
+    ) -> crate::operation::disassociate_vpc_from_hosted_zone::builders::DisassociateVPCFromHostedZoneFluentBuilder {
         crate::operation::disassociate_vpc_from_hosted_zone::builders::DisassociateVPCFromHostedZoneFluentBuilder::new(self.handle.clone())
     }
 }

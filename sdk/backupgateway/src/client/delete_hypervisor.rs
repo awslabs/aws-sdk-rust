@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteHypervisorOutput`](crate::operation::delete_hypervisor::DeleteHypervisorOutput) with field(s):
     ///   - [`hypervisor_arn(Option<String>)`](crate::operation::delete_hypervisor::DeleteHypervisorOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteHypervisorError>`](crate::operation::delete_hypervisor::DeleteHypervisorError)
-    pub fn delete_hypervisor(
-        &self,
-    ) -> crate::operation::delete_hypervisor::builders::DeleteHypervisorFluentBuilder {
-        crate::operation::delete_hypervisor::builders::DeleteHypervisorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_hypervisor(&self) -> crate::operation::delete_hypervisor::builders::DeleteHypervisorFluentBuilder {
+        crate::operation::delete_hypervisor::builders::DeleteHypervisorFluentBuilder::new(self.handle.clone())
     }
 }

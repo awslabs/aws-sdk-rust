@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLocationSmbOutput`](crate::operation::create_location_smb::CreateLocationSmbOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::create_location_smb::CreateLocationSmbOutput::location_arn): <p>The ARN of the SMB location that you created.</p>
     /// - On failure, responds with [`SdkError<CreateLocationSmbError>`](crate::operation::create_location_smb::CreateLocationSmbError)
-    pub fn create_location_smb(
-        &self,
-    ) -> crate::operation::create_location_smb::builders::CreateLocationSmbFluentBuilder {
-        crate::operation::create_location_smb::builders::CreateLocationSmbFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_location_smb(&self) -> crate::operation::create_location_smb::builders::CreateLocationSmbFluentBuilder {
+        crate::operation::create_location_smb::builders::CreateLocationSmbFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,10 +37,7 @@ impl GetDataSetImportTaskFluentBuilder {
         }
     }
     /// Access the GetDataSetImportTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetDataSetImportTaskFluentBuilder {
             crate::operation::get_data_set_import_task::GetDataSetImportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_set_import_task::GetDataSetImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_set_import_task::GetDataSetImportTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetDataSetImportTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetDataSetImportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_set_import_task::GetDataSetImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_set_import_task::GetDataSetImportTaskError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetDataSetImportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_set_import_task::GetDataSetImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_set_import_task::GetDataSetImportTaskError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetDataSetImportTaskFluentBuilder {
             crate::operation::get_data_set_import_task::GetDataSetImportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_set_import_task::GetDataSetImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_set_import_task::GetDataSetImportTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The application identifier.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The application identifier.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

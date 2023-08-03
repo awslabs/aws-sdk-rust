@@ -15,35 +15,25 @@ impl StopNotebookExecutionInput {
 }
 impl StopNotebookExecutionInput {
     /// Creates a new builder-style object to manufacture [`StopNotebookExecutionInput`](crate::operation::stop_notebook_execution::StopNotebookExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_notebook_execution::builders::StopNotebookExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_notebook_execution::builders::StopNotebookExecutionInputBuilder {
         crate::operation::stop_notebook_execution::builders::StopNotebookExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopNotebookExecutionInput`](crate::operation::stop_notebook_execution::StopNotebookExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopNotebookExecutionInputBuilder {
     pub(crate) notebook_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl StopNotebookExecutionInputBuilder {
     /// <p>The unique identifier of the notebook execution.</p>
-    pub fn notebook_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the notebook execution.</p>
-    pub fn set_notebook_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_execution_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl StopNotebookExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StopNotebookExecutionInput`](crate::operation::stop_notebook_execution::StopNotebookExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_notebook_execution::StopNotebookExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_notebook_execution::StopNotebookExecutionInput {
-                notebook_execution_id: self.notebook_execution_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_notebook_execution::StopNotebookExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_notebook_execution::StopNotebookExecutionInput {
+            notebook_execution_id: self.notebook_execution_id,
+        })
     }
 }

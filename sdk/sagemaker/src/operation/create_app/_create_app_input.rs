@@ -68,9 +68,7 @@ impl CreateAppInput {
 
 /// A builder for [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_profile_name: ::std::option::Option<::std::string::String>,
@@ -96,18 +94,12 @@ impl CreateAppInputBuilder {
         &self.domain_id
     }
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
-    pub fn user_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_profile_name = input;
         self
     }
@@ -155,10 +147,7 @@ impl CreateAppInputBuilder {
         self
     }
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -176,10 +165,7 @@ impl CreateAppInputBuilder {
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
-    pub fn set_resource_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSpec>,
-    ) -> Self {
+    pub fn set_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
         self.resource_spec = input;
         self
     }
@@ -204,12 +190,7 @@ impl CreateAppInputBuilder {
         &self.space_name
     }
     /// Consumes the builder and constructs a [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_app::CreateAppInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_app::CreateAppInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app::CreateAppInput {
             domain_id: self.domain_id,
             user_profile_name: self.user_profile_name,

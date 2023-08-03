@@ -18,9 +18,7 @@ impl super::Client {
     ///   - [`log_stream(Option<String>)`](crate::operation::get_run_task::GetRunTaskOutput::log_stream): <p>The task's log stream.</p>
     ///   - [`gpus(Option<i32>)`](crate::operation::get_run_task::GetRunTaskOutput::gpus): <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
     /// - On failure, responds with [`SdkError<GetRunTaskError>`](crate::operation::get_run_task::GetRunTaskError)
-    pub fn get_run_task(
-        &self,
-    ) -> crate::operation::get_run_task::builders::GetRunTaskFluentBuilder {
+    pub fn get_run_task(&self) -> crate::operation::get_run_task::builders::GetRunTaskFluentBuilder {
         crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::new(self.handle.clone())
     }
 }

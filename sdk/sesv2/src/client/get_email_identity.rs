@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`configuration_set_name(Option<String>)`](crate::operation::get_email_identity::GetEmailIdentityOutput::configuration_set_name): <p>The configuration set used by default when sending from this identity.</p>
     ///   - [`verification_status(Option<VerificationStatus>)`](crate::operation::get_email_identity::GetEmailIdentityOutput::verification_status): <p>The verification status of the identity. The status can be one of the following:</p>  <ul>   <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>   <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>   <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>   <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>   <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetEmailIdentityError>`](crate::operation::get_email_identity::GetEmailIdentityError)
-    pub fn get_email_identity(
-        &self,
-    ) -> crate::operation::get_email_identity::builders::GetEmailIdentityFluentBuilder {
-        crate::operation::get_email_identity::builders::GetEmailIdentityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_email_identity(&self) -> crate::operation::get_email_identity::builders::GetEmailIdentityFluentBuilder {
+        crate::operation::get_email_identity::builders::GetEmailIdentityFluentBuilder::new(self.handle.clone())
     }
 }

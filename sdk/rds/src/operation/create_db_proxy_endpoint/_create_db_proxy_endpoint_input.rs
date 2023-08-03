@@ -50,41 +50,30 @@ impl CreateDbProxyEndpointInput {
 }
 impl CreateDbProxyEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateDbProxyEndpointInput`](crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::create_db_proxy_endpoint::builders::CreateDbProxyEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_db_proxy_endpoint::builders::CreateDbProxyEndpointInputBuilder {
         crate::operation::create_db_proxy_endpoint::builders::CreateDbProxyEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDbProxyEndpointInput`](crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDbProxyEndpointInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) vpc_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) target_role: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbProxyEndpointInputBuilder {
     /// <p>The name of the DB proxy associated with the DB proxy endpoint that you create.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB proxy associated with the DB proxy endpoint that you create.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_proxy_name = input;
         self
     }
@@ -93,18 +82,12 @@ impl CreateDbProxyEndpointInputBuilder {
         &self.db_proxy_name
     }
     /// <p>The name of the DB proxy endpoint to create.</p>
-    pub fn db_proxy_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB proxy endpoint to create.</p>
-    pub fn set_db_proxy_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_proxy_endpoint_name = input;
         self
     }
@@ -117,27 +100,19 @@ impl CreateDbProxyEndpointInputBuilder {
     /// To override the contents of this collection use [`set_vpc_subnet_ids`](Self::set_vpc_subnet_ids).
     ///
     /// <p>The VPC subnet IDs for the DB proxy endpoint that you create. You can specify a different set of subnet IDs than for the original DB proxy.</p>
-    pub fn vpc_subnet_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_subnet_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The VPC subnet IDs for the DB proxy endpoint that you create. You can specify a different set of subnet IDs than for the original DB proxy.</p>
-    pub fn set_vpc_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_subnet_ids = input;
         self
     }
     /// <p>The VPC subnet IDs for the DB proxy endpoint that you create. You can specify a different set of subnet IDs than for the original DB proxy.</p>
-    pub fn get_vpc_subnet_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_subnet_ids
     }
     /// Appends an item to `vpc_security_group_ids`.
@@ -145,27 +120,19 @@ impl CreateDbProxyEndpointInputBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>The VPC security group IDs for the DB proxy endpoint that you create. You can specify a different set of security group IDs than for the original DB proxy. The default is the default security group for the VPC.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The VPC security group IDs for the DB proxy endpoint that you create. You can specify a different set of security group IDs than for the original DB proxy. The default is the default security group for the VPC.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
         self
     }
     /// <p>The VPC security group IDs for the DB proxy endpoint that you create. You can specify a different set of security group IDs than for the original DB proxy. The default is the default security group for the VPC.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
@@ -174,17 +141,12 @@ impl CreateDbProxyEndpointInputBuilder {
         self
     }
     /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
-    pub fn set_target_role(
-        mut self,
-        input: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>,
-    ) -> Self {
+    pub fn set_target_role(mut self, input: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>) -> Self {
         self.target_role = input;
         self
     }
     /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
-    pub fn get_target_role(
-        &self,
-    ) -> &::std::option::Option<crate::types::DbProxyEndpointTargetRole> {
+    pub fn get_target_role(&self) -> &::std::option::Option<crate::types::DbProxyEndpointTargetRole> {
         &self.target_role
     }
     /// Appends an item to `tags`.
@@ -199,10 +161,7 @@ impl CreateDbProxyEndpointInputBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -213,19 +172,15 @@ impl CreateDbProxyEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateDbProxyEndpointInput`](crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput {
-                db_proxy_name: self.db_proxy_name,
-                db_proxy_endpoint_name: self.db_proxy_endpoint_name,
-                vpc_subnet_ids: self.vpc_subnet_ids,
-                vpc_security_group_ids: self.vpc_security_group_ids,
-                target_role: self.target_role,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput {
+            db_proxy_name: self.db_proxy_name,
+            db_proxy_endpoint_name: self.db_proxy_endpoint_name,
+            vpc_subnet_ids: self.vpc_subnet_ids,
+            vpc_security_group_ids: self.vpc_security_group_ids,
+            target_role: self.target_role,
+            tags: self.tags,
+        })
     }
 }

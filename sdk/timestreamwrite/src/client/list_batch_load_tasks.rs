@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput::next_token): <p>A token to specify where to start paginating. Provide the next ListBatchLoadTasksRequest.</p>
     ///   - [`batch_load_tasks(Option<Vec<BatchLoadTask>>)`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput::batch_load_tasks): <p>A list of batch load task details.</p>
     /// - On failure, responds with [`SdkError<ListBatchLoadTasksError>`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksError)
-    pub fn list_batch_load_tasks(
-        &self,
-    ) -> crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder {
-        crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_batch_load_tasks(&self) -> crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder {
+        crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksFluentBuilder::new(self.handle.clone())
     }
 }

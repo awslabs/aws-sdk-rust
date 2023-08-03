@@ -10,10 +10,7 @@ impl StopActivityStreamInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_activity_stream::StopActivityStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_activity_stream::StopActivityStreamError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_activity_stream::StopActivityStreamError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_activity_stream();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl StopActivityStreamFluentBuilder {
         }
     }
     /// Access the StopActivityStream as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_activity_stream::builders::StopActivityStreamInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_activity_stream::builders::StopActivityStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl StopActivityStreamFluentBuilder {
             crate::operation::stop_activity_stream::StopActivityStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_activity_stream::StopActivityStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_activity_stream::StopActivityStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl StopActivityStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl StopActivityStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_activity_stream::StopActivityStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_activity_stream::StopActivityStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_activity_stream::StopActivityStreamError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl StopActivityStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_activity_stream::StopActivityStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_activity_stream::StopActivityStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_activity_stream::StopActivityStreamError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl StopActivityStreamFluentBuilder {
             crate::operation::stop_activity_stream::StopActivityStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_activity_stream::StopActivityStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_activity_stream::StopActivityStreamError>,
     > {
         self.customize_middleware().await
     }

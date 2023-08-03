@@ -39,9 +39,7 @@ impl DescribeStackEventsFluentBuilder {
         }
     }
     /// Access the DescribeStackEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_stack_events::builders::DescribeStackEventsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_stack_events::builders::DescribeStackEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DescribeStackEventsFluentBuilder {
             crate::operation::describe_stack_events::DescribeStackEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_events::DescribeStackEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_events::DescribeStackEventsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DescribeStackEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DescribeStackEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_events::DescribeStackEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_events::DescribeStackEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_events::DescribeStackEventsError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DescribeStackEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_events::DescribeStackEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_events::DescribeStackEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_events::DescribeStackEventsError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +107,15 @@ impl DescribeStackEventsFluentBuilder {
             crate::operation::describe_stack_events::DescribeStackEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_events::DescribeStackEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_events::DescribeStackEventsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_stack_events::paginator::DescribeStackEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_stack_events::paginator::DescribeStackEventsPaginator {
-        crate::operation::describe_stack_events::paginator::DescribeStackEventsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_stack_events::paginator::DescribeStackEventsPaginator {
+        crate::operation::describe_stack_events::paginator::DescribeStackEventsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>

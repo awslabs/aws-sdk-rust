@@ -41,9 +41,7 @@ impl DescribeSchemasInput {
 
 /// A builder for [`DescribeSchemasInput`](crate::operation::describe_schemas::DescribeSchemasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSchemasInputBuilder {
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -101,10 +99,7 @@ impl DescribeSchemasInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSchemasInput`](crate::operation::describe_schemas::DescribeSchemasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_schemas::DescribeSchemasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_schemas::DescribeSchemasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_schemas::DescribeSchemasInput {
             endpoint_arn: self.endpoint_arn,
             max_records: self.max_records,

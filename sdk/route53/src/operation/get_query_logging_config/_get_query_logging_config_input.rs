@@ -15,18 +15,14 @@ impl GetQueryLoggingConfigInput {
 }
 impl GetQueryLoggingConfigInput {
     /// Creates a new builder-style object to manufacture [`GetQueryLoggingConfigInput`](crate::operation::get_query_logging_config::GetQueryLoggingConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_query_logging_config::builders::GetQueryLoggingConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_query_logging_config::builders::GetQueryLoggingConfigInputBuilder {
         crate::operation::get_query_logging_config::builders::GetQueryLoggingConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetQueryLoggingConfigInput`](crate::operation::get_query_logging_config::GetQueryLoggingConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryLoggingConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl GetQueryLoggingConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetQueryLoggingConfigInput`](crate::operation::get_query_logging_config::GetQueryLoggingConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_query_logging_config::GetQueryLoggingConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_query_logging_config::GetQueryLoggingConfigInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::get_query_logging_config::GetQueryLoggingConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_query_logging_config::GetQueryLoggingConfigInput { id: self.id })
     }
 }

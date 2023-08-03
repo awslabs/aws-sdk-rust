@@ -24,10 +24,7 @@ pub fn ser_create_domain_name_input(
     if let Some(var_7) = &input.endpoint_configuration {
         #[allow(unused_mut)]
         let mut object_8 = object.key("endpointConfiguration").start_object();
-        crate::protocol_serde::shape_endpoint_configuration::ser_endpoint_configuration(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_endpoint_configuration::ser_endpoint_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.mutual_tls_authentication {
@@ -37,17 +34,13 @@ pub fn ser_create_domain_name_input(
         object_10.finish();
     }
     if let Some(var_11) = &input.ownership_verification_certificate_arn {
-        object
-            .key("ownershipVerificationCertificateArn")
-            .string(var_11.as_str());
+        object.key("ownershipVerificationCertificateArn").string(var_11.as_str());
     }
     if let Some(var_12) = &input.regional_certificate_arn {
         object.key("regionalCertificateArn").string(var_12.as_str());
     }
     if let Some(var_13) = &input.regional_certificate_name {
-        object
-            .key("regionalCertificateName")
-            .string(var_13.as_str());
+        object.key("regionalCertificateName").string(var_13.as_str());
     }
     if let Some(var_14) = &input.security_policy {
         object.key("securityPolicy").string(var_14.as_str());

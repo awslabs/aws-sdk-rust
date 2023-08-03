@@ -23,9 +23,7 @@ impl AnalyticsSessionGroupBySpecification {
 
 /// A builder for [`AnalyticsSessionGroupBySpecification`](crate::types::AnalyticsSessionGroupBySpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsSessionGroupBySpecificationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsSessionField>,
 }
@@ -36,10 +34,7 @@ impl AnalyticsSessionGroupBySpecificationBuilder {
         self
     }
     /// <p>Specifies whether to group the session by their end state or their locale.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsSessionField>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsSessionField>) -> Self {
         self.name = input;
         self
     }

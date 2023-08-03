@@ -26,10 +26,7 @@ pub fn ser_list_intent_metrics_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_analytics_intent_filter::ser_analytics_intent_filter(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_analytics_intent_filter::ser_analytics_intent_filter(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }
@@ -41,7 +38,10 @@ pub fn ser_list_intent_metrics_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_analytics_intent_group_by_specification::ser_analytics_intent_group_by_specification(&mut object_13, item_12)?;
+                crate::protocol_serde::shape_analytics_intent_group_by_specification::ser_analytics_intent_group_by_specification(
+                    &mut object_13,
+                    item_12,
+                )?;
                 object_13.finish();
             }
         }
@@ -59,10 +59,7 @@ pub fn ser_list_intent_metrics_input(
             {
                 #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_analytics_intent_metric::ser_analytics_intent_metric(
-                    &mut object_18,
-                    item_17,
-                )?;
+                crate::protocol_serde::shape_analytics_intent_metric::ser_analytics_intent_metric(&mut object_18, item_17)?;
                 object_18.finish();
             }
         }

@@ -44,9 +44,7 @@ impl DefaultVocabulary {
 
 /// A builder for [`DefaultVocabulary`](crate::types::DefaultVocabulary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultVocabularyBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::VocabularyLanguageCode>,
@@ -74,32 +72,21 @@ impl DefaultVocabularyBuilder {
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::VocabularyLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn get_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
         &self.language_code
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn vocabulary_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn set_vocabulary_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_id = input;
         self
     }
@@ -108,18 +95,12 @@ impl DefaultVocabularyBuilder {
         &self.vocabulary_id
     }
     /// <p>A unique name of the custom vocabulary.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique name of the custom vocabulary.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_name = input;
         self
     }

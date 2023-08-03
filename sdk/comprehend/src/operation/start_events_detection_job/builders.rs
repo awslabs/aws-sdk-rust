@@ -26,8 +26,7 @@ impl StartEventsDetectionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartEventsDetectionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::start_events_detection_job::builders::StartEventsDetectionJobInputBuilder,
+    inner: crate::operation::start_events_detection_job::builders::StartEventsDetectionJobInputBuilder,
 }
 impl StartEventsDetectionJobFluentBuilder {
     /// Creates a new `StartEventsDetectionJob`.
@@ -38,10 +37,7 @@ impl StartEventsDetectionJobFluentBuilder {
         }
     }
     /// Access the StartEventsDetectionJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_events_detection_job::builders::StartEventsDetectionJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_events_detection_job::builders::StartEventsDetectionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl StartEventsDetectionJobFluentBuilder {
             crate::operation::start_events_detection_job::StartEventsDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_events_detection_job::StartEventsDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_events_detection_job::StartEventsDetectionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl StartEventsDetectionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl StartEventsDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_events_detection_job::StartEventsDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_events_detection_job::StartEventsDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_events_detection_job::StartEventsDetectionJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl StartEventsDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_events_detection_job::StartEventsDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_events_detection_job::StartEventsDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_events_detection_job::StartEventsDetectionJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl StartEventsDetectionJobFluentBuilder {
             crate::operation::start_events_detection_job::StartEventsDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_events_detection_job::StartEventsDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_events_detection_job::StartEventsDetectionJobError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +115,7 @@ impl StartEventsDetectionJobFluentBuilder {
         self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
@@ -147,10 +129,7 @@ impl StartEventsDetectionJobFluentBuilder {
         self
     }
     /// <p>Specifies where to send the output files.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
@@ -159,18 +138,12 @@ impl StartEventsDetectionJobFluentBuilder {
         self.inner.get_output_data_config()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
@@ -198,10 +171,7 @@ impl StartEventsDetectionJobFluentBuilder {
         self
     }
     /// <p>The language code of the input documents.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -210,18 +180,12 @@ impl StartEventsDetectionJobFluentBuilder {
         self.inner.get_language_code()
     }
     /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -234,25 +198,17 @@ impl StartEventsDetectionJobFluentBuilder {
     /// To override the contents of this collection use [`set_target_event_types`](Self::set_target_event_types).
     ///
     /// <p>The types of events to detect in the input documents.</p>
-    pub fn target_event_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_event_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_event_types(input.into());
         self
     }
     /// <p>The types of events to detect in the input documents.</p>
-    pub fn set_target_event_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_target_event_types(input);
         self
     }
     /// <p>The types of events to detect in the input documents.</p>
-    pub fn get_target_event_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_event_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_event_types()
     }
     /// Appends an item to `Tags`.
@@ -265,10 +221,7 @@ impl StartEventsDetectionJobFluentBuilder {
         self
     }
     /// <p>Tags to associate with the events detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

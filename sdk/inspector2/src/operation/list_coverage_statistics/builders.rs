@@ -37,10 +37,7 @@ impl ListCoverageStatisticsFluentBuilder {
         }
     }
     /// Access the ListCoverageStatistics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListCoverageStatisticsFluentBuilder {
             crate::operation::list_coverage_statistics::ListCoverageStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_coverage_statistics::ListCoverageStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_coverage_statistics::ListCoverageStatisticsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListCoverageStatisticsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListCoverageStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_coverage_statistics::ListCoverageStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_coverage_statistics::ListCoverageStatisticsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListCoverageStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_coverage_statistics::ListCoverageStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_coverage_statistics::ListCoverageStatisticsError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListCoverageStatisticsFluentBuilder {
             crate::operation::list_coverage_statistics::ListCoverageStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_coverage_statistics::ListCoverageStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_coverage_statistics::ListCoverageStatisticsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator
-    {
-        crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator {
+        crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator::new(self.handle, self.inner)
     }
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     pub fn filter_criteria(mut self, input: crate::types::CoverageFilterCriteria) -> Self {
@@ -141,17 +121,12 @@ impl ListCoverageStatisticsFluentBuilder {
         self
     }
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::CoverageFilterCriteria>) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
-    pub fn get_filter_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
         self.inner.get_filter_criteria()
     }
     /// <p>The value to group the results by.</p>

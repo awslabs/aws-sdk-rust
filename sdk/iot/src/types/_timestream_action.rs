@@ -55,15 +55,12 @@ impl TimestreamAction {
 
 /// A builder for [`TimestreamAction`](crate::types::TimestreamAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimestreamActionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) dimensions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TimestreamDimension>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::TimestreamDimension>>,
     pub(crate) timestamp: ::std::option::Option<crate::types::TimestreamTimestamp>,
 }
 impl TimestreamActionBuilder {
@@ -82,18 +79,12 @@ impl TimestreamActionBuilder {
         &self.role_arn
     }
     /// <p>The name of an Amazon Timestream database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an Amazon Timestream database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -127,17 +118,12 @@ impl TimestreamActionBuilder {
         self
     }
     /// <p>Metadata attributes of the time series that are written in each measure record.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TimestreamDimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimestreamDimension>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>Metadata attributes of the time series that are written in each measure record.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimestreamDimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimestreamDimension>> {
         &self.dimensions
     }
     /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
@@ -150,10 +136,7 @@ impl TimestreamActionBuilder {
     /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
     /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
     /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestreamTimestamp>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<crate::types::TimestreamTimestamp>) -> Self {
         self.timestamp = input;
         self
     }

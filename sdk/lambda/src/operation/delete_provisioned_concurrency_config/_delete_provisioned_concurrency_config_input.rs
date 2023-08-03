@@ -36,16 +36,14 @@ impl DeleteProvisionedConcurrencyConfigInput {
 }
 impl DeleteProvisionedConcurrencyConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteProvisionedConcurrencyConfigInput`](crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigInput).
-    pub fn builder() -> crate::operation::delete_provisioned_concurrency_config::builders::DeleteProvisionedConcurrencyConfigInputBuilder{
+    pub fn builder() -> crate::operation::delete_provisioned_concurrency_config::builders::DeleteProvisionedConcurrencyConfigInputBuilder {
         crate::operation::delete_provisioned_concurrency_config::builders::DeleteProvisionedConcurrencyConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProvisionedConcurrencyConfigInput`](crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProvisionedConcurrencyConfigInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,
@@ -59,10 +57,7 @@ impl DeleteProvisionedConcurrencyConfigInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -74,10 +69,7 @@ impl DeleteProvisionedConcurrencyConfigInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -107,14 +99,17 @@ impl DeleteProvisionedConcurrencyConfigInputBuilder {
         &self.qualifier
     }
     /// Consumes the builder and constructs a [`DeleteProvisionedConcurrencyConfigInput`](crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigInput {
-                function_name: self.function_name
-                ,
-                qualifier: self.qualifier
-                ,
-            }
+                function_name: self.function_name,
+                qualifier: self.qualifier,
+            },
         )
     }
 }

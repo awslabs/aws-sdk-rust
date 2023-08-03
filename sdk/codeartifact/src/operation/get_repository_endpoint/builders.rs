@@ -43,10 +43,7 @@ impl GetRepositoryEndpointFluentBuilder {
         }
     }
     /// Access the GetRepositoryEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +55,7 @@ impl GetRepositoryEndpointFluentBuilder {
             crate::operation::get_repository_endpoint::GetRepositoryEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_endpoint::GetRepositoryEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_endpoint::GetRepositoryEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +65,7 @@ impl GetRepositoryEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +74,7 @@ impl GetRepositoryEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_repository_endpoint::GetRepositoryEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_endpoint::GetRepositoryEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_endpoint::GetRepositoryEndpointError>,
     > {
         let op = self
             .inner
@@ -107,9 +97,7 @@ impl GetRepositoryEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_repository_endpoint::GetRepositoryEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_endpoint::GetRepositoryEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_endpoint::GetRepositoryEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +111,7 @@ impl GetRepositoryEndpointFluentBuilder {
             crate::operation::get_repository_endpoint::GetRepositoryEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_endpoint::GetRepositoryEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_endpoint::GetRepositoryEndpointError>,
     > {
         self.customize_middleware().await
     }

@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSettingsOutput`](crate::operation::update_settings::UpdateSettingsOutput) with field(s):
     ///   - [`settings(Option<Settings>)`](crate::operation::update_settings::UpdateSettingsOutput::settings): <p> The current list of settings. </p>
     /// - On failure, responds with [`SdkError<UpdateSettingsError>`](crate::operation::update_settings::UpdateSettingsError)
-    pub fn update_settings(
-        &self,
-    ) -> crate::operation::update_settings::builders::UpdateSettingsFluentBuilder {
-        crate::operation::update_settings::builders::UpdateSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_settings(&self) -> crate::operation::update_settings::builders::UpdateSettingsFluentBuilder {
+        crate::operation::update_settings::builders::UpdateSettingsFluentBuilder::new(self.handle.clone())
     }
 }

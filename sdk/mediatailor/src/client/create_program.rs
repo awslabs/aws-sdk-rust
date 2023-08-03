@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`clip_range(Option<ClipRange>)`](crate::operation::create_program::CreateProgramOutput::clip_range): <p>The clip range configuration settings.</p>
     ///   - [`duration_millis(i64)`](crate::operation::create_program::CreateProgramOutput::duration_millis): <p>The duration of the live program in milliseconds.</p>
     /// - On failure, responds with [`SdkError<CreateProgramError>`](crate::operation::create_program::CreateProgramError)
-    pub fn create_program(
-        &self,
-    ) -> crate::operation::create_program::builders::CreateProgramFluentBuilder {
-        crate::operation::create_program::builders::CreateProgramFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_program(&self) -> crate::operation::create_program::builders::CreateProgramFluentBuilder {
+        crate::operation::create_program::builders::CreateProgramFluentBuilder::new(self.handle.clone())
     }
 }

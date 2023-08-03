@@ -5,15 +5,12 @@
 pub struct GetApplicationDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
     #[doc(hidden)]
-    pub application_date_range_kpi_response:
-        ::std::option::Option<crate::types::ApplicationDateRangeKpiResponse>,
+    pub application_date_range_kpi_response: ::std::option::Option<crate::types::ApplicationDateRangeKpiResponse>,
     _request_id: Option<String>,
 }
 impl GetApplicationDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
-    pub fn application_date_range_kpi_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationDateRangeKpiResponse> {
+    pub fn application_date_range_kpi_response(&self) -> ::std::option::Option<&crate::types::ApplicationDateRangeKpiResponse> {
         self.application_date_range_kpi_response.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for GetApplicationDateRangeKpiOutput {
 }
 impl GetApplicationDateRangeKpiOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationDateRangeKpiOutput`](crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiOutput).
-    pub fn builder() -> crate::operation::get_application_date_range_kpi::builders::GetApplicationDateRangeKpiOutputBuilder{
+    pub fn builder() -> crate::operation::get_application_date_range_kpi::builders::GetApplicationDateRangeKpiOutputBuilder {
         crate::operation::get_application_date_range_kpi::builders::GetApplicationDateRangeKpiOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetApplicationDateRangeKpiOutput`](crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApplicationDateRangeKpiOutputBuilder {
-    pub(crate) application_date_range_kpi_response:
-        ::std::option::Option<crate::types::ApplicationDateRangeKpiResponse>,
+    pub(crate) application_date_range_kpi_response: ::std::option::Option<crate::types::ApplicationDateRangeKpiResponse>,
     _request_id: Option<String>,
 }
 impl GetApplicationDateRangeKpiOutputBuilder {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
-    pub fn application_date_range_kpi_response(
-        mut self,
-        input: crate::types::ApplicationDateRangeKpiResponse,
-    ) -> Self {
+    pub fn application_date_range_kpi_response(mut self, input: crate::types::ApplicationDateRangeKpiResponse) -> Self {
         self.application_date_range_kpi_response = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
-    pub fn set_application_date_range_kpi_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationDateRangeKpiResponse>,
-    ) -> Self {
+    pub fn set_application_date_range_kpi_response(mut self, input: ::std::option::Option<crate::types::ApplicationDateRangeKpiResponse>) -> Self {
         self.application_date_range_kpi_response = input;
         self
     }
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
-    pub fn get_application_date_range_kpi_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationDateRangeKpiResponse> {
+    pub fn get_application_date_range_kpi_response(&self) -> &::std::option::Option<crate::types::ApplicationDateRangeKpiResponse> {
         &self.application_date_range_kpi_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +58,7 @@ impl GetApplicationDateRangeKpiOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetApplicationDateRangeKpiOutput`](crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiOutput {
+    pub fn build(self) -> crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiOutput {
         crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiOutput {
             application_date_range_kpi_response: self.application_date_range_kpi_response,
             _request_id: self._request_id,

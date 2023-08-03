@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::update_dashboard::builders::UpdateDashboardFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::update_dashboard::builders::UpdateDashboardFluentBuilder::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`UpdateDashboardOutput`](crate::operation::update_dashboard::UpdateDashboardOutput)
     /// - On failure, responds with [`SdkError<UpdateDashboardError>`](crate::operation::update_dashboard::UpdateDashboardError)
-    pub fn update_dashboard(
-        &self,
-    ) -> crate::operation::update_dashboard::builders::UpdateDashboardFluentBuilder {
-        crate::operation::update_dashboard::builders::UpdateDashboardFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_dashboard(&self) -> crate::operation::update_dashboard::builders::UpdateDashboardFluentBuilder {
+        crate::operation::update_dashboard::builders::UpdateDashboardFluentBuilder::new(self.handle.clone())
     }
 }

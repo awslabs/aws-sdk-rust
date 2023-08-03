@@ -15,17 +15,14 @@ impl GetFederationTokenInput {
 }
 impl GetFederationTokenInput {
     /// Creates a new builder-style object to manufacture [`GetFederationTokenInput`](crate::operation::get_federation_token::GetFederationTokenInput).
-    pub fn builder(
-    ) -> crate::operation::get_federation_token::builders::GetFederationTokenInputBuilder {
+    pub fn builder() -> crate::operation::get_federation_token::builders::GetFederationTokenInputBuilder {
         crate::operation::get_federation_token::builders::GetFederationTokenInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFederationTokenInput`](crate::operation::get_federation_token::GetFederationTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFederationTokenInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl GetFederationTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetFederationTokenInput`](crate::operation::get_federation_token::GetFederationTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_federation_token::GetFederationTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_federation_token::GetFederationTokenInput {
-                instance_id: self.instance_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_federation_token::GetFederationTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_federation_token::GetFederationTokenInput {
+            instance_id: self.instance_id,
+        })
     }
 }

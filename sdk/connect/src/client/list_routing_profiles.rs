@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`routing_profile_summary_list(Option<Vec<RoutingProfileSummary>>)`](crate::operation::list_routing_profiles::ListRoutingProfilesOutput::routing_profile_summary_list): <p>Information about the routing profiles.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_routing_profiles::ListRoutingProfilesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListRoutingProfilesError>`](crate::operation::list_routing_profiles::ListRoutingProfilesError)
-    pub fn list_routing_profiles(
-        &self,
-    ) -> crate::operation::list_routing_profiles::builders::ListRoutingProfilesFluentBuilder {
-        crate::operation::list_routing_profiles::builders::ListRoutingProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_routing_profiles(&self) -> crate::operation::list_routing_profiles::builders::ListRoutingProfilesFluentBuilder {
+        crate::operation::list_routing_profiles::builders::ListRoutingProfilesFluentBuilder::new(self.handle.clone())
     }
 }

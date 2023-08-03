@@ -40,10 +40,7 @@ pub fn ser_create_job_input(
     if let Some(var_13) = &input.job_executions_retry_config {
         #[allow(unused_mut)]
         let mut object_14 = object.key("jobExecutionsRetryConfig").start_object();
-        crate::protocol_serde::shape_job_executions_retry_config::ser_job_executions_retry_config(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_job_executions_retry_config::ser_job_executions_retry_config(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.job_executions_rollout_config {
@@ -61,19 +58,13 @@ pub fn ser_create_job_input(
     if let Some(var_19) = &input.presigned_url_config {
         #[allow(unused_mut)]
         let mut object_20 = object.key("presignedUrlConfig").start_object();
-        crate::protocol_serde::shape_presigned_url_config::ser_presigned_url_config(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_presigned_url_config::ser_presigned_url_config(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.scheduling_config {
         #[allow(unused_mut)]
         let mut object_22 = object.key("schedulingConfig").start_object();
-        crate::protocol_serde::shape_scheduling_config::ser_scheduling_config(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_scheduling_config::ser_scheduling_config(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.tags {

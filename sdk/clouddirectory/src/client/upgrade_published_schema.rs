@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpgradePublishedSchemaOutput`](crate::operation::upgrade_published_schema::UpgradePublishedSchemaOutput) with field(s):
     ///   - [`upgraded_schema_arn(Option<String>)`](crate::operation::upgrade_published_schema::UpgradePublishedSchemaOutput::upgraded_schema_arn): <p>The ARN of the upgraded schema that is returned as part of the response.</p>
     /// - On failure, responds with [`SdkError<UpgradePublishedSchemaError>`](crate::operation::upgrade_published_schema::UpgradePublishedSchemaError)
-    pub fn upgrade_published_schema(
-        &self,
-    ) -> crate::operation::upgrade_published_schema::builders::UpgradePublishedSchemaFluentBuilder
-    {
+    pub fn upgrade_published_schema(&self) -> crate::operation::upgrade_published_schema::builders::UpgradePublishedSchemaFluentBuilder {
         crate::operation::upgrade_published_schema::builders::UpgradePublishedSchemaFluentBuilder::new(self.handle.clone())
     }
 }

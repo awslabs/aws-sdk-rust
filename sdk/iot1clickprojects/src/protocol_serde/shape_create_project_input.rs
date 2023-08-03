@@ -9,10 +9,7 @@ pub fn ser_create_project_input(
     if let Some(var_2) = &input.placement_template {
         #[allow(unused_mut)]
         let mut object_3 = object.key("placementTemplate").start_object();
-        crate::protocol_serde::shape_placement_template::ser_placement_template(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_placement_template::ser_placement_template(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.project_name {

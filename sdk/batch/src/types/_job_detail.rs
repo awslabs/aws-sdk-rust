@@ -53,9 +53,7 @@ pub struct JobDetail {
     pub job_definition: ::std::option::Option<::std::string::String>,
     /// <p>Additional parameters that are passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An object that represents the details for the container that's associated with the job.</p>
     #[doc(hidden)]
     pub container: ::std::option::Option<crate::types::ContainerDetail>,
@@ -75,16 +73,13 @@ pub struct JobDetail {
     pub timeout: ::std::option::Option<crate::types::JobTimeout>,
     /// <p>The tags that are applied to the job.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
     #[doc(hidden)]
     pub propagate_tags: ::std::option::Option<bool>,
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
     #[doc(hidden)]
-    pub platform_capabilities:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
+    pub platform_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
     /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
     #[doc(hidden)]
     pub eks_properties: ::std::option::Option<crate::types::EksPropertiesDetail>,
@@ -162,11 +157,7 @@ impl JobDetail {
         self.job_definition.as_deref()
     }
     /// <p>Additional parameters that are passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>An object that represents the details for the container that's associated with the job.</p>
@@ -192,11 +183,7 @@ impl JobDetail {
         self.timeout.as_ref()
     }
     /// <p>The tags that are applied to the job.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
@@ -204,9 +191,7 @@ impl JobDetail {
         self.propagate_tags
     }
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
-    pub fn platform_capabilities(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PlatformCapability]> {
+    pub fn platform_capabilities(&self) -> ::std::option::Option<&[crate::types::PlatformCapability]> {
         self.platform_capabilities.as_deref()
     }
     /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
@@ -235,9 +220,7 @@ impl JobDetail {
 
 /// A builder for [`JobDetail`](crate::types::JobDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobDetailBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
@@ -254,20 +237,15 @@ pub struct JobDetailBuilder {
     pub(crate) stopped_at: ::std::option::Option<i64>,
     pub(crate) depends_on: ::std::option::Option<::std::vec::Vec<crate::types::JobDependency>>,
     pub(crate) job_definition: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) container: ::std::option::Option<crate::types::ContainerDetail>,
     pub(crate) node_details: ::std::option::Option<crate::types::NodeDetails>,
     pub(crate) node_properties: ::std::option::Option<crate::types::NodeProperties>,
     pub(crate) array_properties: ::std::option::Option<crate::types::ArrayPropertiesDetail>,
     pub(crate) timeout: ::std::option::Option<crate::types::JobTimeout>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) propagate_tags: ::std::option::Option<bool>,
-    pub(crate) platform_capabilities:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
+    pub(crate) platform_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
     pub(crate) eks_properties: ::std::option::Option<crate::types::EksPropertiesDetail>,
     pub(crate) eks_attempts: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptDetail>>,
     pub(crate) is_cancelled: ::std::option::Option<bool>,
@@ -351,18 +329,12 @@ impl JobDetailBuilder {
         &self.status
     }
     /// <p>The share identifier for the job.</p>
-    pub fn share_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn share_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The share identifier for the job.</p>
-    pub fn set_share_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_identifier = input;
         self
     }
@@ -396,32 +368,21 @@ impl JobDetailBuilder {
         self
     }
     /// <p>A list of job attempts that are associated with this job.</p>
-    pub fn set_attempts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttemptDetail>>,
-    ) -> Self {
+    pub fn set_attempts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttemptDetail>>) -> Self {
         self.attempts = input;
         self
     }
     /// <p>A list of job attempts that are associated with this job.</p>
-    pub fn get_attempts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttemptDetail>> {
+    pub fn get_attempts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttemptDetail>> {
         &self.attempts
     }
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -449,10 +410,7 @@ impl JobDetailBuilder {
         self
     }
     /// <p>The retry strategy to use for this job if an attempt fails.</p>
-    pub fn set_retry_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::RetryStrategy>,
-    ) -> Self {
+    pub fn set_retry_strategy(mut self, input: ::std::option::Option<crate::types::RetryStrategy>) -> Self {
         self.retry_strategy = input;
         self
     }
@@ -500,32 +458,21 @@ impl JobDetailBuilder {
         self
     }
     /// <p>A list of job IDs that this job depends on.</p>
-    pub fn set_depends_on(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobDependency>>,
-    ) -> Self {
+    pub fn set_depends_on(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobDependency>>) -> Self {
         self.depends_on = input;
         self
     }
     /// <p>A list of job IDs that this job depends on.</p>
-    pub fn get_depends_on(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobDependency>> {
+    pub fn get_depends_on(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobDependency>> {
         &self.depends_on
     }
     /// <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
-    pub fn job_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
-    pub fn set_job_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_definition = input;
         self
     }
@@ -538,32 +485,19 @@ impl JobDetailBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>Additional parameters that are passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Additional parameters that are passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>Additional parameters that are passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// <p>An object that represents the details for the container that's associated with the job.</p>
@@ -572,10 +506,7 @@ impl JobDetailBuilder {
         self
     }
     /// <p>An object that represents the details for the container that's associated with the job.</p>
-    pub fn set_container(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerDetail>,
-    ) -> Self {
+    pub fn set_container(mut self, input: ::std::option::Option<crate::types::ContainerDetail>) -> Self {
         self.container = input;
         self
     }
@@ -589,10 +520,7 @@ impl JobDetailBuilder {
         self
     }
     /// <p>An object that represents the details of a node that's associated with a multi-node parallel job.</p>
-    pub fn set_node_details(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeDetails>,
-    ) -> Self {
+    pub fn set_node_details(mut self, input: ::std::option::Option<crate::types::NodeDetails>) -> Self {
         self.node_details = input;
         self
     }
@@ -610,10 +538,7 @@ impl JobDetailBuilder {
     /// <p>An object that represents the node properties of a multi-node parallel job.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
-    pub fn set_node_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeProperties>,
-    ) -> Self {
+    pub fn set_node_properties(mut self, input: ::std::option::Option<crate::types::NodeProperties>) -> Self {
         self.node_properties = input;
         self
     }
@@ -629,17 +554,12 @@ impl JobDetailBuilder {
         self
     }
     /// <p>The array properties of the job, if it's an array job.</p>
-    pub fn set_array_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ArrayPropertiesDetail>,
-    ) -> Self {
+    pub fn set_array_properties(mut self, input: ::std::option::Option<crate::types::ArrayPropertiesDetail>) -> Self {
         self.array_properties = input;
         self
     }
     /// <p>The array properties of the job, if it's an array job.</p>
-    pub fn get_array_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ArrayPropertiesDetail> {
+    pub fn get_array_properties(&self) -> &::std::option::Option<crate::types::ArrayPropertiesDetail> {
         &self.array_properties
     }
     /// <p>The timeout configuration for the job.</p>
@@ -661,32 +581,19 @@ impl JobDetailBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags that are applied to the job.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags that are applied to the job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags that are applied to the job.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
@@ -715,17 +622,12 @@ impl JobDetailBuilder {
         self
     }
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
-    pub fn set_platform_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
-    ) -> Self {
+    pub fn set_platform_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>) -> Self {
         self.platform_capabilities = input;
         self
     }
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
-    pub fn get_platform_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>> {
+    pub fn get_platform_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>> {
         &self.platform_capabilities
     }
     /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
@@ -734,10 +636,7 @@ impl JobDetailBuilder {
         self
     }
     /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
-    pub fn set_eks_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::EksPropertiesDetail>,
-    ) -> Self {
+    pub fn set_eks_properties(mut self, input: ::std::option::Option<crate::types::EksPropertiesDetail>) -> Self {
         self.eks_properties = input;
         self
     }
@@ -757,17 +656,12 @@ impl JobDetailBuilder {
         self
     }
     /// <p>A list of job attempts that are associated with this job.</p>
-    pub fn set_eks_attempts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptDetail>>,
-    ) -> Self {
+    pub fn set_eks_attempts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptDetail>>) -> Self {
         self.eks_attempts = input;
         self
     }
     /// <p>A list of job attempts that are associated with this job.</p>
-    pub fn get_eks_attempts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EksAttemptDetail>> {
+    pub fn get_eks_attempts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksAttemptDetail>> {
         &self.eks_attempts
     }
     /// <p>Indicates whether the job is canceled.</p>

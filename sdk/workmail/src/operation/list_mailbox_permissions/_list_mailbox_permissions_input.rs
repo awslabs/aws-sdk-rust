@@ -36,18 +36,14 @@ impl ListMailboxPermissionsInput {
 }
 impl ListMailboxPermissionsInput {
     /// Creates a new builder-style object to manufacture [`ListMailboxPermissionsInput`](crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_mailbox_permissions::builders::ListMailboxPermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_mailbox_permissions::builders::ListMailboxPermissionsInputBuilder {
         crate::operation::list_mailbox_permissions::builders::ListMailboxPermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMailboxPermissionsInput`](crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMailboxPermissionsInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct ListMailboxPermissionsInputBuilder {
 }
 impl ListMailboxPermissionsInputBuilder {
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -120,17 +110,13 @@ impl ListMailboxPermissionsInputBuilder {
     /// Consumes the builder and constructs a [`ListMailboxPermissionsInput`](crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput {
-                organization_id: self.organization_id,
-                entity_id: self.entity_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput {
+            organization_id: self.organization_id,
+            entity_id: self.entity_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`lens_arn(Option<String>)`](crate::operation::create_lens_version::CreateLensVersionOutput::lens_arn): <p>The ARN for the lens.</p>
     ///   - [`lens_version(Option<String>)`](crate::operation::create_lens_version::CreateLensVersionOutput::lens_version): <p>The version of the lens.</p>
     /// - On failure, responds with [`SdkError<CreateLensVersionError>`](crate::operation::create_lens_version::CreateLensVersionError)
-    pub fn create_lens_version(
-        &self,
-    ) -> crate::operation::create_lens_version::builders::CreateLensVersionFluentBuilder {
-        crate::operation::create_lens_version::builders::CreateLensVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_lens_version(&self) -> crate::operation::create_lens_version::builders::CreateLensVersionFluentBuilder {
+        crate::operation::create_lens_version::builders::CreateLensVersionFluentBuilder::new(self.handle.clone())
     }
 }

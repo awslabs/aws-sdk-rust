@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`BatchAssociateClientDeviceWithCoreDeviceOutput`](crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput) with field(s):
     ///   - [`error_entries(Option<Vec<AssociateClientDeviceWithCoreDeviceErrorEntry>>)`](crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput::error_entries): <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to associate.</p>
     /// - On failure, responds with [`SdkError<BatchAssociateClientDeviceWithCoreDeviceError>`](crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError)
-    pub fn batch_associate_client_device_with_core_device(&self) -> crate::operation::batch_associate_client_device_with_core_device::builders::BatchAssociateClientDeviceWithCoreDeviceFluentBuilder{
-        crate::operation::batch_associate_client_device_with_core_device::builders::BatchAssociateClientDeviceWithCoreDeviceFluentBuilder::new(self.handle.clone())
+    pub fn batch_associate_client_device_with_core_device(
+        &self,
+    ) -> crate::operation::batch_associate_client_device_with_core_device::builders::BatchAssociateClientDeviceWithCoreDeviceFluentBuilder {
+        crate::operation::batch_associate_client_device_with_core_device::builders::BatchAssociateClientDeviceWithCoreDeviceFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

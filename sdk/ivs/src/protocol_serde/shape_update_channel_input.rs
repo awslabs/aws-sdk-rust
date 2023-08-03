@@ -22,9 +22,7 @@ pub fn ser_update_channel_input(
         object.key("preset").string(var_4.as_str());
     }
     if let Some(var_5) = &input.recording_configuration_arn {
-        object
-            .key("recordingConfigurationArn")
-            .string(var_5.as_str());
+        object.key("recordingConfigurationArn").string(var_5.as_str());
     }
     if let Some(var_6) = &input.r#type {
         object.key("type").string(var_6.as_str());

@@ -10,10 +10,7 @@ impl CreateBillingGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_billing_group::CreateBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_billing_group::CreateBillingGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_billing_group::CreateBillingGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_billing_group();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateBillingGroupFluentBuilder {
         }
     }
     /// Access the CreateBillingGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_billing_group::builders::CreateBillingGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_billing_group::builders::CreateBillingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateBillingGroupFluentBuilder {
             crate::operation::create_billing_group::CreateBillingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_billing_group::CreateBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_billing_group::CreateBillingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateBillingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateBillingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_billing_group::CreateBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_billing_group::CreateBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_billing_group::CreateBillingGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateBillingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_billing_group::CreateBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_billing_group::CreateBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_billing_group::CreateBillingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl CreateBillingGroupFluentBuilder {
             crate::operation::create_billing_group::CreateBillingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_billing_group::CreateBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_billing_group::CreateBillingGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name you wish to give to the billing group.</p>
-    pub fn billing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_group_name(input.into());
         self
     }
     /// <p>The name you wish to give to the billing group.</p>
-    pub fn set_billing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_group_name(input);
         self
     }
@@ -149,17 +127,12 @@ impl CreateBillingGroupFluentBuilder {
         self
     }
     /// <p>The properties of the billing group.</p>
-    pub fn set_billing_group_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::BillingGroupProperties>,
-    ) -> Self {
+    pub fn set_billing_group_properties(mut self, input: ::std::option::Option<crate::types::BillingGroupProperties>) -> Self {
         self.inner = self.inner.set_billing_group_properties(input);
         self
     }
     /// <p>The properties of the billing group.</p>
-    pub fn get_billing_group_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::BillingGroupProperties> {
+    pub fn get_billing_group_properties(&self) -> &::std::option::Option<crate::types::BillingGroupProperties> {
         self.inner.get_billing_group_properties()
     }
     /// Appends an item to `tags`.
@@ -172,10 +145,7 @@ impl CreateBillingGroupFluentBuilder {
         self
     }
     /// <p>Metadata which can be used to manage the billing group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

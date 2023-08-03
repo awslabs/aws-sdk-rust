@@ -41,8 +41,7 @@ impl CreateDatasetImportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDatasetImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_dataset_import_job::builders::CreateDatasetImportJobInputBuilder,
+    inner: crate::operation::create_dataset_import_job::builders::CreateDatasetImportJobInputBuilder,
 }
 impl CreateDatasetImportJobFluentBuilder {
     /// Creates a new `CreateDatasetImportJob`.
@@ -53,10 +52,7 @@ impl CreateDatasetImportJobFluentBuilder {
         }
     }
     /// Access the CreateDatasetImportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_dataset_import_job::builders::CreateDatasetImportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_dataset_import_job::builders::CreateDatasetImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -68,9 +64,7 @@ impl CreateDatasetImportJobFluentBuilder {
             crate::operation::create_dataset_import_job::CreateDatasetImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_import_job::CreateDatasetImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_import_job::CreateDatasetImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -80,10 +74,7 @@ impl CreateDatasetImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -92,9 +83,7 @@ impl CreateDatasetImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_import_job::CreateDatasetImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_import_job::CreateDatasetImportJobError>,
     > {
         let op = self
             .inner
@@ -117,9 +106,7 @@ impl CreateDatasetImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_import_job::CreateDatasetImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_import_job::CreateDatasetImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -133,9 +120,7 @@ impl CreateDatasetImportJobFluentBuilder {
             crate::operation::create_dataset_import_job::CreateDatasetImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset_import_job::CreateDatasetImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset_import_job::CreateDatasetImportJobError>,
     > {
         self.customize_middleware().await
     }
@@ -173,10 +158,7 @@ impl CreateDatasetImportJobFluentBuilder {
         self
     }
     /// <p>The Amazon S3 bucket that contains the training data to import.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.inner = self.inner.set_data_source(input);
         self
     }
@@ -208,10 +190,7 @@ impl CreateDatasetImportJobFluentBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset import job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -233,10 +212,7 @@ impl CreateDatasetImportJobFluentBuilder {
     /// <li> <p>Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported individually is not replaced.</p> </li>
     /// <li> <p>Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon Personalize replaces any record with the same ID with the new one.</p> </li>
     /// </ul>
-    pub fn set_import_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportMode>,
-    ) -> Self {
+    pub fn set_import_mode(mut self, input: ::std::option::Option<crate::types::ImportMode>) -> Self {
         self.inner = self.inner.set_import_mode(input);
         self
     }
@@ -254,10 +230,7 @@ impl CreateDatasetImportJobFluentBuilder {
         self
     }
     /// <p>If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3</p>
-    pub fn set_publish_attribution_metrics_to_s3(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_publish_attribution_metrics_to_s3(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_publish_attribution_metrics_to_s3(input);
         self
     }

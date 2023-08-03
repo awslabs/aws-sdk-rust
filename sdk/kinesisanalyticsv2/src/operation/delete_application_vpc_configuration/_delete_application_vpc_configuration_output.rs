@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteApplicationVpcConfigurationOutp
 }
 impl DeleteApplicationVpcConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationVpcConfigurationOutput`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_application_vpc_configuration::builders::DeleteApplicationVpcConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_application_vpc_configuration::builders::DeleteApplicationVpcConfigurationOutputBuilder {
         crate::operation::delete_application_vpc_configuration::builders::DeleteApplicationVpcConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationVpcConfigurationOutput`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationVpcConfigurationOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
@@ -45,18 +43,12 @@ pub struct DeleteApplicationVpcConfigurationOutputBuilder {
 }
 impl DeleteApplicationVpcConfigurationOutputBuilder {
     /// <p>The ARN of the Kinesis Data Analytics application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Kinesis Data Analytics application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -88,12 +80,10 @@ impl DeleteApplicationVpcConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteApplicationVpcConfigurationOutput`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput{
+    pub fn build(self) -> crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput {
         crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput {
-            application_arn: self.application_arn
-            ,
-            application_version_id: self.application_version_id
-            ,
+            application_arn: self.application_arn,
+            application_version_id: self.application_version_id,
             _request_id: self._request_id,
         }
     }

@@ -13,9 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTrustOutput`](crate::operation::create_trust::CreateTrustOutput) with field(s):
     ///   - [`trust_id(Option<String>)`](crate::operation::create_trust::CreateTrustOutput::trust_id): <p>A unique identifier for the trust relationship that was created.</p>
     /// - On failure, responds with [`SdkError<CreateTrustError>`](crate::operation::create_trust::CreateTrustError)
-    pub fn create_trust(
-        &self,
-    ) -> crate::operation::create_trust::builders::CreateTrustFluentBuilder {
+    pub fn create_trust(&self) -> crate::operation::create_trust::builders::CreateTrustFluentBuilder {
         crate::operation::create_trust::builders::CreateTrustFluentBuilder::new(self.handle.clone())
     }
 }

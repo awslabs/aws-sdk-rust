@@ -128,21 +128,18 @@ impl DescribeSpotInstanceRequestsInput {
 }
 impl DescribeSpotInstanceRequestsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSpotInstanceRequestsInput`](crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsInput).
-    pub fn builder() -> crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsInputBuilder{
+    pub fn builder() -> crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsInputBuilder {
         crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSpotInstanceRequestsInput`](crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpotInstanceRequestsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) spot_instance_request_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) spot_instance_request_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -243,10 +240,7 @@ impl DescribeSpotInstanceRequestsInputBuilder {
     /// <li> <p> <code>valid-from</code> - The start date of the request.</p> </li>
     /// <li> <p> <code>valid-until</code> - The end date of the request.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -315,27 +309,19 @@ impl DescribeSpotInstanceRequestsInputBuilder {
     /// To override the contents of this collection use [`set_spot_instance_request_ids`](Self::set_spot_instance_request_ids).
     ///
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn spot_instance_request_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_instance_request_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.spot_instance_request_ids.unwrap_or_default();
         v.push(input.into());
         self.spot_instance_request_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn set_spot_instance_request_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_spot_instance_request_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.spot_instance_request_ids = input;
         self
     }
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn get_spot_instance_request_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_spot_instance_request_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.spot_instance_request_ids
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
@@ -373,14 +359,12 @@ impl DescribeSpotInstanceRequestsInputBuilder {
         crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsInput {
-                filters: self.filters,
-                dry_run: self.dry_run,
-                spot_instance_request_ids: self.spot_instance_request_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsInput {
+            filters: self.filters,
+            dry_run: self.dry_run,
+            spot_instance_request_ids: self.spot_instance_request_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

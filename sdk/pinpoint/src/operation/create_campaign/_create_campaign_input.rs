@@ -16,9 +16,7 @@ impl CreateCampaignInput {
         self.application_id.as_deref()
     }
     /// <p>Specifies the configuration and other settings for a campaign.</p>
-    pub fn write_campaign_request(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WriteCampaignRequest> {
+    pub fn write_campaign_request(&self) -> ::std::option::Option<&crate::types::WriteCampaignRequest> {
         self.write_campaign_request.as_ref()
     }
 }
@@ -31,27 +29,19 @@ impl CreateCampaignInput {
 
 /// A builder for [`CreateCampaignInput`](crate::operation::create_campaign::CreateCampaignInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCampaignInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) write_campaign_request: ::std::option::Option<crate::types::WriteCampaignRequest>,
 }
 impl CreateCampaignInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -65,26 +55,18 @@ impl CreateCampaignInputBuilder {
         self
     }
     /// <p>Specifies the configuration and other settings for a campaign.</p>
-    pub fn set_write_campaign_request(
-        mut self,
-        input: ::std::option::Option<crate::types::WriteCampaignRequest>,
-    ) -> Self {
+    pub fn set_write_campaign_request(mut self, input: ::std::option::Option<crate::types::WriteCampaignRequest>) -> Self {
         self.write_campaign_request = input;
         self
     }
     /// <p>Specifies the configuration and other settings for a campaign.</p>
-    pub fn get_write_campaign_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::WriteCampaignRequest> {
+    pub fn get_write_campaign_request(&self) -> &::std::option::Option<crate::types::WriteCampaignRequest> {
         &self.write_campaign_request
     }
     /// Consumes the builder and constructs a [`CreateCampaignInput`](crate::operation::create_campaign::CreateCampaignInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_campaign::CreateCampaignInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_campaign::CreateCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_campaign::CreateCampaignInput {
             application_id: self.application_id,
             write_campaign_request: self.write_campaign_request,

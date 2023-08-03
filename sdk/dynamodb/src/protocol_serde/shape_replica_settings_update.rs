@@ -14,21 +14,20 @@ pub fn ser_replica_settings_update(
     }
     if let Some(var_3) = &input.replica_provisioned_read_capacity_auto_scaling_settings_update {
         #[allow(unused_mut)]
-        let mut object_4 = object
-            .key("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate")
-            .start_object();
+        let mut object_4 = object.key("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate").start_object();
         crate::protocol_serde::shape_auto_scaling_settings_update::ser_auto_scaling_settings_update(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.replica_global_secondary_index_settings_update {
-        let mut array_6 = object
-            .key("ReplicaGlobalSecondaryIndexSettingsUpdate")
-            .start_array();
+        let mut array_6 = object.key("ReplicaGlobalSecondaryIndexSettingsUpdate").start_array();
         for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_replica_global_secondary_index_settings_update::ser_replica_global_secondary_index_settings_update(&mut object_8, item_7)?;
+                crate::protocol_serde::shape_replica_global_secondary_index_settings_update::ser_replica_global_secondary_index_settings_update(
+                    &mut object_8,
+                    item_7,
+                )?;
                 object_8.finish();
             }
         }

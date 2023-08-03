@@ -26,7 +26,7 @@ impl GetReservationUtilizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReservationUtilizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_reservation_utilization::builders::GetReservationUtilizationInputBuilder,
+    inner: crate::operation::get_reservation_utilization::builders::GetReservationUtilizationInputBuilder,
 }
 impl GetReservationUtilizationFluentBuilder {
     /// Creates a new `GetReservationUtilization`.
@@ -37,7 +37,7 @@ impl GetReservationUtilizationFluentBuilder {
         }
     }
     /// Access the GetReservationUtilization as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_reservation_utilization::builders::GetReservationUtilizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_reservation_utilization::builders::GetReservationUtilizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetReservationUtilizationFluentBuilder {
             crate::operation::get_reservation_utilization::GetReservationUtilization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reservation_utilization::GetReservationUtilizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reservation_utilization::GetReservationUtilizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetReservationUtilizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetReservationUtilizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reservation_utilization::GetReservationUtilizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reservation_utilization::GetReservationUtilizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reservation_utilization::GetReservationUtilizationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetReservationUtilizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reservation_utilization::GetReservationUtilizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reservation_utilization::GetReservationUtilizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reservation_utilization::GetReservationUtilizationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetReservationUtilizationFluentBuilder {
             crate::operation::get_reservation_utilization::GetReservationUtilization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reservation_utilization::GetReservationUtilizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reservation_utilization::GetReservationUtilizationError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl GetReservationUtilizationFluentBuilder {
         self
     }
     /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }
@@ -147,17 +133,12 @@ impl GetReservationUtilizationFluentBuilder {
         self
     }
     /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
     /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
-    pub fn get_group_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
         self.inner.get_group_by()
     }
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
@@ -168,10 +149,7 @@ impl GetReservationUtilizationFluentBuilder {
     }
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
     /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn set_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::Granularity>,
-    ) -> Self {
+    pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
         self.inner = self.inner.set_granularity(input);
         self
     }
@@ -284,10 +262,7 @@ impl GetReservationUtilizationFluentBuilder {
     /// <li> <p> <code>UnrealizedSavings</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortDefinition>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -317,18 +292,12 @@ impl GetReservationUtilizationFluentBuilder {
         self.inner.get_sort_by()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }

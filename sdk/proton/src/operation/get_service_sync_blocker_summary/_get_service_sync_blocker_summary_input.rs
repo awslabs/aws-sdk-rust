@@ -22,16 +22,14 @@ impl GetServiceSyncBlockerSummaryInput {
 }
 impl GetServiceSyncBlockerSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetServiceSyncBlockerSummaryInput`](crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput).
-    pub fn builder() -> crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryInputBuilder{
+    pub fn builder() -> crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryInputBuilder {
         crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceSyncBlockerSummaryInput`](crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceSyncBlockerSummaryInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_instance_name: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl GetServiceSyncBlockerSummaryInputBuilder {
         &self.service_name
     }
     /// <p>The name of the service instance that you want to get the service sync blocker summary for. If given bothe the instance name and the service name, only the instance is blocked.</p>
-    pub fn service_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service instance that you want to get the service sync blocker summary for. If given bothe the instance name and the service name, only the instance is blocked.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_instance_name = input;
         self
     }
@@ -78,11 +70,9 @@ impl GetServiceSyncBlockerSummaryInputBuilder {
         crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput {
-                service_name: self.service_name,
-                service_instance_name: self.service_instance_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput {
+            service_name: self.service_name,
+            service_instance_name: self.service_instance_name,
+        })
     }
 }

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput::next_token): <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
     ///   - [`uploads(Option<Vec<MultipartReadSetUploadListItem>>)`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput::uploads): <p> An array of multipart uploads. </p>
     /// - On failure, responds with [`SdkError<ListMultipartReadSetUploadsError>`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError)
-    pub fn list_multipart_read_set_uploads(&self) -> crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsFluentBuilder{
+    pub fn list_multipart_read_set_uploads(
+        &self,
+    ) -> crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsFluentBuilder {
         crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsFluentBuilder::new(self.handle.clone())
     }
 }

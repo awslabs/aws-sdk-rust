@@ -70,18 +70,14 @@ impl ::aws_http::request_id::RequestId for UpdateWorkflowStepGroupOutput {
 }
 impl UpdateWorkflowStepGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkflowStepGroupOutput`](crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_workflow_step_group::builders::UpdateWorkflowStepGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_workflow_step_group::builders::UpdateWorkflowStepGroupOutputBuilder {
         crate::operation::update_workflow_step_group::builders::UpdateWorkflowStepGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkflowStepGroupOutput`](crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkflowStepGroupOutputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -162,10 +158,7 @@ impl UpdateWorkflowStepGroupOutputBuilder {
         self
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub fn set_tools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
-    ) -> Self {
+    pub fn set_tools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>) -> Self {
         self.tools = input;
         self
     }
@@ -185,10 +178,7 @@ impl UpdateWorkflowStepGroupOutputBuilder {
         self
     }
     /// <p>The next step group.</p>
-    pub fn set_next(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.next = input;
         self
     }
@@ -208,10 +198,7 @@ impl UpdateWorkflowStepGroupOutputBuilder {
         self
     }
     /// <p>The previous step group.</p>
-    pub fn set_previous(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.previous = input;
         self
     }
@@ -225,10 +212,7 @@ impl UpdateWorkflowStepGroupOutputBuilder {
         self
     }
     /// <p>The time at which the step group was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -246,9 +230,7 @@ impl UpdateWorkflowStepGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateWorkflowStepGroupOutput`](crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupOutput {
+    pub fn build(self) -> crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupOutput {
         crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupOutput {
             workflow_id: self.workflow_id,
             name: self.name,

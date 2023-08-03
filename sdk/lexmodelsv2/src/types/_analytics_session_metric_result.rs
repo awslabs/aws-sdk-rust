@@ -65,9 +65,7 @@ impl AnalyticsSessionMetricResult {
 
 /// A builder for [`AnalyticsSessionMetricResult`](crate::types::AnalyticsSessionMetricResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsSessionMetricResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsSessionMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
@@ -98,10 +96,7 @@ impl AnalyticsSessionMetricResultBuilder {
     /// <li> <p> <code>TurnPersession</code> – The number of turns in the sessions.</p> </li>
     /// <li> <p> <code>Concurrency</code> – The number of sessions occurring in the same period of time.</p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsSessionMetricName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsSessionMetricName>) -> Self {
         self.name = input;
         self
     }
@@ -134,10 +129,7 @@ impl AnalyticsSessionMetricResultBuilder {
     /// <li> <p> <code>Average</code> – The total count divided by the number of sessions in the category you provide in <code>name</code>.</p> </li>
     /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
-    ) -> Self {
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>) -> Self {
         self.statistic = input;
         self
     }

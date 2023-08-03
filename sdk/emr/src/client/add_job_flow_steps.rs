@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AddJobFlowStepsOutput`](crate::operation::add_job_flow_steps::AddJobFlowStepsOutput) with field(s):
     ///   - [`step_ids(Option<Vec<String>>)`](crate::operation::add_job_flow_steps::AddJobFlowStepsOutput::step_ids): <p>The identifiers of the list of steps added to the job flow.</p>
     /// - On failure, responds with [`SdkError<AddJobFlowStepsError>`](crate::operation::add_job_flow_steps::AddJobFlowStepsError)
-    pub fn add_job_flow_steps(
-        &self,
-    ) -> crate::operation::add_job_flow_steps::builders::AddJobFlowStepsFluentBuilder {
-        crate::operation::add_job_flow_steps::builders::AddJobFlowStepsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_job_flow_steps(&self) -> crate::operation::add_job_flow_steps::builders::AddJobFlowStepsFluentBuilder {
+        crate::operation::add_job_flow_steps::builders::AddJobFlowStepsFluentBuilder::new(self.handle.clone())
     }
 }

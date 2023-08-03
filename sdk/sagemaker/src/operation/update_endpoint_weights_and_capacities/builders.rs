@@ -5,16 +5,16 @@ pub use crate::operation::update_endpoint_weights_and_capacities::_update_endpoi
 
 impl UpdateEndpointWeightsAndCapacitiesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_endpoint_weights_and_capacities();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateEndpointWeightsAndCapacitiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEndpointWeightsAndCapacitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesInputBuilder,
+    inner: crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesInputBuilder,
 }
 impl UpdateEndpointWeightsAndCapacitiesFluentBuilder {
     /// Creates a new `UpdateEndpointWeightsAndCapacities`.
@@ -37,15 +37,20 @@ impl UpdateEndpointWeightsAndCapacitiesFluentBuilder {
         }
     }
     /// Access the UpdateEndpointWeightsAndCapacities as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacities, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacities,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl UpdateEndpointWeightsAndCapacitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl UpdateEndpointWeightsAndCapacitiesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacities, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacities,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of an existing SageMaker endpoint.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
     /// <p>The name of an existing SageMaker endpoint.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
@@ -119,10 +128,7 @@ impl UpdateEndpointWeightsAndCapacitiesFluentBuilder {
     /// To override the contents of this collection use [`set_desired_weights_and_capacities`](Self::set_desired_weights_and_capacities).
     ///
     /// <p>An object that provides new capacity and weight values for a variant.</p>
-    pub fn desired_weights_and_capacities(
-        mut self,
-        input: crate::types::DesiredWeightAndCapacity,
-    ) -> Self {
+    pub fn desired_weights_and_capacities(mut self, input: crate::types::DesiredWeightAndCapacity) -> Self {
         self.inner = self.inner.desired_weights_and_capacities(input);
         self
     }
@@ -135,9 +141,7 @@ impl UpdateEndpointWeightsAndCapacitiesFluentBuilder {
         self
     }
     /// <p>An object that provides new capacity and weight values for a variant.</p>
-    pub fn get_desired_weights_and_capacities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DesiredWeightAndCapacity>> {
+    pub fn get_desired_weights_and_capacities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DesiredWeightAndCapacity>> {
         self.inner.get_desired_weights_and_capacities()
     }
 }

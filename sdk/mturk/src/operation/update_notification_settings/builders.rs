@@ -26,7 +26,7 @@ impl UpdateNotificationSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateNotificationSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_notification_settings::builders::UpdateNotificationSettingsInputBuilder,
+    inner: crate::operation::update_notification_settings::builders::UpdateNotificationSettingsInputBuilder,
 }
 impl UpdateNotificationSettingsFluentBuilder {
     /// Creates a new `UpdateNotificationSettings`.
@@ -37,7 +37,7 @@ impl UpdateNotificationSettingsFluentBuilder {
         }
     }
     /// Access the UpdateNotificationSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_notification_settings::builders::UpdateNotificationSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_notification_settings::builders::UpdateNotificationSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateNotificationSettingsFluentBuilder {
             crate::operation::update_notification_settings::UpdateNotificationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notification_settings::UpdateNotificationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_notification_settings::UpdateNotificationSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateNotificationSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateNotificationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_notification_settings::UpdateNotificationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notification_settings::UpdateNotificationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_notification_settings::UpdateNotificationSettingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateNotificationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_notification_settings::UpdateNotificationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notification_settings::UpdateNotificationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_notification_settings::UpdateNotificationSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateNotificationSettingsFluentBuilder {
             crate::operation::update_notification_settings::UpdateNotificationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notification_settings::UpdateNotificationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_notification_settings::UpdateNotificationSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -140,17 +129,12 @@ impl UpdateNotificationSettingsFluentBuilder {
         self
     }
     /// <p> The notification specification for the HIT type. </p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationSpecification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::NotificationSpecification>) -> Self {
         self.inner = self.inner.set_notification(input);
         self
     }
     /// <p> The notification specification for the HIT type. </p>
-    pub fn get_notification(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationSpecification> {
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::NotificationSpecification> {
         self.inner.get_notification()
     }
     /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>

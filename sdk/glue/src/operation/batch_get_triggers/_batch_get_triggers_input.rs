@@ -15,17 +15,14 @@ impl BatchGetTriggersInput {
 }
 impl BatchGetTriggersInput {
     /// Creates a new builder-style object to manufacture [`BatchGetTriggersInput`](crate::operation::batch_get_triggers::BatchGetTriggersInput).
-    pub fn builder() -> crate::operation::batch_get_triggers::builders::BatchGetTriggersInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_triggers::builders::BatchGetTriggersInputBuilder {
         crate::operation::batch_get_triggers::builders::BatchGetTriggersInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetTriggersInput`](crate::operation::batch_get_triggers::BatchGetTriggersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetTriggersInputBuilder {
     pub(crate) trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,40 +32,27 @@ impl BatchGetTriggersInputBuilder {
     /// To override the contents of this collection use [`set_trigger_names`](Self::set_trigger_names).
     ///
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-    pub fn trigger_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trigger_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.trigger_names.unwrap_or_default();
         v.push(input.into());
         self.trigger_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-    pub fn set_trigger_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trigger_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.trigger_names = input;
         self
     }
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-    pub fn get_trigger_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_trigger_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.trigger_names
     }
     /// Consumes the builder and constructs a [`BatchGetTriggersInput`](crate::operation::batch_get_triggers::BatchGetTriggersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_triggers::BatchGetTriggersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_triggers::BatchGetTriggersInput {
-                trigger_names: self.trigger_names,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_triggers::BatchGetTriggersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_triggers::BatchGetTriggersInput {
+            trigger_names: self.trigger_names,
+        })
     }
 }

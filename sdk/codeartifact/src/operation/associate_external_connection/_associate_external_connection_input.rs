@@ -56,16 +56,14 @@ impl AssociateExternalConnectionInput {
 }
 impl AssociateExternalConnectionInput {
     /// Creates a new builder-style object to manufacture [`AssociateExternalConnectionInput`](crate::operation::associate_external_connection::AssociateExternalConnectionInput).
-    pub fn builder() -> crate::operation::associate_external_connection::builders::AssociateExternalConnectionInputBuilder{
+    pub fn builder() -> crate::operation::associate_external_connection::builders::AssociateExternalConnectionInputBuilder {
         crate::operation::associate_external_connection::builders::AssociateExternalConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateExternalConnectionInput`](crate::operation::associate_external_connection::AssociateExternalConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateExternalConnectionInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,
@@ -126,10 +124,7 @@ impl AssociateExternalConnectionInputBuilder {
     /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
     /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
-    pub fn external_connection(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_connection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_connection = ::std::option::Option::Some(input.into());
         self
     }
@@ -144,10 +139,7 @@ impl AssociateExternalConnectionInputBuilder {
     /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
     /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
-    pub fn set_external_connection(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_connection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_connection = input;
         self
     }
@@ -172,13 +164,11 @@ impl AssociateExternalConnectionInputBuilder {
         crate::operation::associate_external_connection::AssociateExternalConnectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_external_connection::AssociateExternalConnectionInput {
-                domain: self.domain,
-                domain_owner: self.domain_owner,
-                repository: self.repository,
-                external_connection: self.external_connection,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_external_connection::AssociateExternalConnectionInput {
+            domain: self.domain,
+            domain_owner: self.domain_owner,
+            repository: self.repository,
+            external_connection: self.external_connection,
+        })
     }
 }

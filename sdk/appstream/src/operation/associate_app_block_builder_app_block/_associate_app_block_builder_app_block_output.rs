@@ -5,15 +5,12 @@
 pub struct AssociateAppBlockBuilderAppBlockOutput {
     /// <p>The list of app block builders associated with app blocks.</p>
     #[doc(hidden)]
-    pub app_block_builder_app_block_association:
-        ::std::option::Option<crate::types::AppBlockBuilderAppBlockAssociation>,
+    pub app_block_builder_app_block_association: ::std::option::Option<crate::types::AppBlockBuilderAppBlockAssociation>,
     _request_id: Option<String>,
 }
 impl AssociateAppBlockBuilderAppBlockOutput {
     /// <p>The list of app block builders associated with app blocks.</p>
-    pub fn app_block_builder_app_block_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppBlockBuilderAppBlockAssociation> {
+    pub fn app_block_builder_app_block_association(&self) -> ::std::option::Option<&crate::types::AppBlockBuilderAppBlockAssociation> {
         self.app_block_builder_app_block_association.as_ref()
     }
 }
@@ -24,27 +21,21 @@ impl ::aws_http::request_id::RequestId for AssociateAppBlockBuilderAppBlockOutpu
 }
 impl AssociateAppBlockBuilderAppBlockOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAppBlockBuilderAppBlockOutput`](crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput).
-    pub fn builder() -> crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockOutputBuilder{
+    pub fn builder() -> crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockOutputBuilder {
         crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateAppBlockBuilderAppBlockOutput`](crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateAppBlockBuilderAppBlockOutputBuilder {
-    pub(crate) app_block_builder_app_block_association:
-        ::std::option::Option<crate::types::AppBlockBuilderAppBlockAssociation>,
+    pub(crate) app_block_builder_app_block_association: ::std::option::Option<crate::types::AppBlockBuilderAppBlockAssociation>,
     _request_id: Option<String>,
 }
 impl AssociateAppBlockBuilderAppBlockOutputBuilder {
     /// <p>The list of app block builders associated with app blocks.</p>
-    pub fn app_block_builder_app_block_association(
-        mut self,
-        input: crate::types::AppBlockBuilderAppBlockAssociation,
-    ) -> Self {
+    pub fn app_block_builder_app_block_association(mut self, input: crate::types::AppBlockBuilderAppBlockAssociation) -> Self {
         self.app_block_builder_app_block_association = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +48,7 @@ impl AssociateAppBlockBuilderAppBlockOutputBuilder {
         self
     }
     /// <p>The list of app block builders associated with app blocks.</p>
-    pub fn get_app_block_builder_app_block_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppBlockBuilderAppBlockAssociation> {
+    pub fn get_app_block_builder_app_block_association(&self) -> &::std::option::Option<crate::types::AppBlockBuilderAppBlockAssociation> {
         &self.app_block_builder_app_block_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +61,9 @@ impl AssociateAppBlockBuilderAppBlockOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateAppBlockBuilderAppBlockOutput`](crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput).
-    pub fn build(self) -> crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput{
+    pub fn build(self) -> crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput {
         crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput {
-            app_block_builder_app_block_association: self.app_block_builder_app_block_association
-            ,
+            app_block_builder_app_block_association: self.app_block_builder_app_block_association,
             _request_id: self._request_id,
         }
     }

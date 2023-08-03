@@ -48,15 +48,11 @@ impl CatalogKinesisSource {
         self.database.as_deref()
     }
     /// <p>Additional options for the Kinesis streaming data source.</p>
-    pub fn streaming_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisStreamingSourceOptions> {
+    pub fn streaming_options(&self) -> ::std::option::Option<&crate::types::KinesisStreamingSourceOptions> {
         self.streaming_options.as_ref()
     }
     /// <p>Additional options for data preview.</p>
-    pub fn data_preview_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamingDataPreviewOptions> {
+    pub fn data_preview_options(&self) -> ::std::option::Option<&crate::types::StreamingDataPreviewOptions> {
         self.data_preview_options.as_ref()
     }
 }
@@ -69,19 +65,15 @@ impl CatalogKinesisSource {
 
 /// A builder for [`CatalogKinesisSource`](crate::types::CatalogKinesisSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CatalogKinesisSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) window_size: ::std::option::Option<i32>,
     pub(crate) detect_schema: ::std::option::Option<bool>,
     pub(crate) table: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
-    pub(crate) streaming_options:
-        ::std::option::Option<crate::types::KinesisStreamingSourceOptions>,
-    pub(crate) data_preview_options:
-        ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
+    pub(crate) streaming_options: ::std::option::Option<crate::types::KinesisStreamingSourceOptions>,
+    pub(crate) data_preview_options: ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
 }
 impl CatalogKinesisSourceBuilder {
     /// <p>The name of the data source.</p>
@@ -160,39 +152,26 @@ impl CatalogKinesisSourceBuilder {
         self
     }
     /// <p>Additional options for the Kinesis streaming data source.</p>
-    pub fn set_streaming_options(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisStreamingSourceOptions>,
-    ) -> Self {
+    pub fn set_streaming_options(mut self, input: ::std::option::Option<crate::types::KinesisStreamingSourceOptions>) -> Self {
         self.streaming_options = input;
         self
     }
     /// <p>Additional options for the Kinesis streaming data source.</p>
-    pub fn get_streaming_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisStreamingSourceOptions> {
+    pub fn get_streaming_options(&self) -> &::std::option::Option<crate::types::KinesisStreamingSourceOptions> {
         &self.streaming_options
     }
     /// <p>Additional options for data preview.</p>
-    pub fn data_preview_options(
-        mut self,
-        input: crate::types::StreamingDataPreviewOptions,
-    ) -> Self {
+    pub fn data_preview_options(mut self, input: crate::types::StreamingDataPreviewOptions) -> Self {
         self.data_preview_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Additional options for data preview.</p>
-    pub fn set_data_preview_options(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
-    ) -> Self {
+    pub fn set_data_preview_options(mut self, input: ::std::option::Option<crate::types::StreamingDataPreviewOptions>) -> Self {
         self.data_preview_options = input;
         self
     }
     /// <p>Additional options for data preview.</p>
-    pub fn get_data_preview_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamingDataPreviewOptions> {
+    pub fn get_data_preview_options(&self) -> &::std::option::Option<crate::types::StreamingDataPreviewOptions> {
         &self.data_preview_options
     }
     /// Consumes the builder and constructs a [`CatalogKinesisSource`](crate::types::CatalogKinesisSource).

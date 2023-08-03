@@ -37,9 +37,7 @@ impl Difference {
 
 /// A builder for [`Difference`](crate::types::Difference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DifferenceBuilder {
     pub(crate) before_blob: ::std::option::Option<crate::types::BlobMetadata>,
     pub(crate) after_blob: ::std::option::Option<crate::types::BlobMetadata>,
@@ -52,10 +50,7 @@ impl DifferenceBuilder {
         self
     }
     /// <p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
-    pub fn set_before_blob(
-        mut self,
-        input: ::std::option::Option<crate::types::BlobMetadata>,
-    ) -> Self {
+    pub fn set_before_blob(mut self, input: ::std::option::Option<crate::types::BlobMetadata>) -> Self {
         self.before_blob = input;
         self
     }
@@ -69,10 +64,7 @@ impl DifferenceBuilder {
         self
     }
     /// <p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
-    pub fn set_after_blob(
-        mut self,
-        input: ::std::option::Option<crate::types::BlobMetadata>,
-    ) -> Self {
+    pub fn set_after_blob(mut self, input: ::std::option::Option<crate::types::BlobMetadata>) -> Self {
         self.after_blob = input;
         self
     }
@@ -86,10 +78,7 @@ impl DifferenceBuilder {
         self
     }
     /// <p>Whether the change type of the difference is an addition (A), deletion (D), or modification (M).</p>
-    pub fn set_change_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeTypeEnum>,
-    ) -> Self {
+    pub fn set_change_type(mut self, input: ::std::option::Option<crate::types::ChangeTypeEnum>) -> Self {
         self.change_type = input;
         self
     }

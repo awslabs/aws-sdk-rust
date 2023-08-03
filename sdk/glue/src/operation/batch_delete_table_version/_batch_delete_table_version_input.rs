@@ -36,18 +36,14 @@ impl BatchDeleteTableVersionInput {
 }
 impl BatchDeleteTableVersionInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteTableVersionInput`](crate::operation::batch_delete_table_version::BatchDeleteTableVersionInput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_table_version::builders::BatchDeleteTableVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_delete_table_version::builders::BatchDeleteTableVersionInputBuilder {
         crate::operation::batch_delete_table_version::builders::BatchDeleteTableVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteTableVersionInput`](crate::operation::batch_delete_table_version::BatchDeleteTableVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteTableVersionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl BatchDeleteTableVersionInputBuilder {
         &self.catalog_id
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -115,17 +105,12 @@ impl BatchDeleteTableVersionInputBuilder {
         self
     }
     /// <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
-    pub fn set_version_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_version_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.version_ids = input;
         self
     }
     /// <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
-    pub fn get_version_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_version_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.version_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteTableVersionInput`](crate::operation::batch_delete_table_version::BatchDeleteTableVersionInput).
@@ -135,13 +120,11 @@ impl BatchDeleteTableVersionInputBuilder {
         crate::operation::batch_delete_table_version::BatchDeleteTableVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_delete_table_version::BatchDeleteTableVersionInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                version_ids: self.version_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_delete_table_version::BatchDeleteTableVersionInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            version_ids: self.version_ids,
+        })
     }
 }

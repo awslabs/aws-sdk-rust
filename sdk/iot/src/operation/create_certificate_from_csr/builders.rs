@@ -41,7 +41,7 @@ impl CreateCertificateFromCsrInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCertificateFromCsrFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrInputBuilder,
+    inner: crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrInputBuilder,
 }
 impl CreateCertificateFromCsrFluentBuilder {
     /// Creates a new `CreateCertificateFromCsr`.
@@ -52,7 +52,7 @@ impl CreateCertificateFromCsrFluentBuilder {
         }
     }
     /// Access the CreateCertificateFromCsr as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +64,7 @@ impl CreateCertificateFromCsrFluentBuilder {
             crate::operation::create_certificate_from_csr::CreateCertificateFromCsr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +74,7 @@ impl CreateCertificateFromCsrFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +83,7 @@ impl CreateCertificateFromCsrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError>,
     > {
         let op = self
             .inner
@@ -113,9 +106,7 @@ impl CreateCertificateFromCsrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError>,
     > {
         self.send_middleware().await
     }
@@ -129,25 +120,17 @@ impl CreateCertificateFromCsrFluentBuilder {
             crate::operation::create_certificate_from_csr::CreateCertificateFromCsr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The certificate signing request (CSR).</p>
-    pub fn certificate_signing_request(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_signing_request(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_signing_request(input.into());
         self
     }
     /// <p>The certificate signing request (CSR).</p>
-    pub fn set_certificate_signing_request(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_signing_request(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_signing_request(input);
         self
     }

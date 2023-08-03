@@ -22,9 +22,7 @@ impl DeleteListenerInput {
 
 /// A builder for [`DeleteListenerInput`](crate::operation::delete_listener::DeleteListenerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteListenerInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteListenerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteListenerInput`](crate::operation::delete_listener::DeleteListenerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_listener::DeleteListenerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_listener::DeleteListenerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_listener::DeleteListenerInput {
             listener_arn: self.listener_arn,
         })

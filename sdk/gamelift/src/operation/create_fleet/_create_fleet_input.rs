@@ -44,8 +44,7 @@ pub struct CreateFleetInput {
     pub runtime_configuration: ::std::option::Option<crate::types::RuntimeConfiguration>,
     /// <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
     #[doc(hidden)]
-    pub resource_creation_limit_policy:
-        ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
+    pub resource_creation_limit_policy: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
     /// <p>The name of an Amazon Web Services CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
     #[doc(hidden)]
     pub metric_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -123,23 +122,17 @@ impl CreateFleetInput {
     /// <li> <p> <b>NoProtection</b> - Game sessions can be terminated during active gameplay as a result of a scale-down event. </p> </li>
     /// <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn new_game_session_protection_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
+    pub fn new_game_session_protection_policy(&self) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
         self.new_game_session_protection_policy.as_ref()
     }
     /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently. </p> <note>
     /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
     /// </note>
-    pub fn runtime_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RuntimeConfiguration> {
+    pub fn runtime_configuration(&self) -> ::std::option::Option<&crate::types::RuntimeConfiguration> {
         self.runtime_configuration.as_ref()
     }
     /// <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
-    pub fn resource_creation_limit_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceCreationLimitPolicy> {
+    pub fn resource_creation_limit_policy(&self) -> ::std::option::Option<&crate::types::ResourceCreationLimitPolicy> {
         self.resource_creation_limit_policy.as_ref()
     }
     /// <p>The name of an Amazon Web Services CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
@@ -166,9 +159,7 @@ impl CreateFleetInput {
     /// <p>Certificate Manager (ACM) certificates expire after 13 months. Certificate expiration can cause fleets to fail, preventing players from connecting to instances in the fleet. We recommend you replace fleets before 13 months, consider using fleet aliases for a smooth transition.</p> <note>
     /// <p>ACM isn't available in all Amazon Web Services regions. A fleet creation request with certificate generation enabled in an unsupported Region, fails with a 4xx error. For more information about the supported Regions, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported Regions</a> in the <i>Certificate Manager User Guide</i>.</p>
     /// </note>
-    pub fn certificate_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CertificateConfiguration> {
+    pub fn certificate_configuration(&self) -> ::std::option::Option<&crate::types::CertificateConfiguration> {
         self.certificate_configuration.as_ref()
     }
     /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, don't use this parameter. </p>
@@ -185,9 +176,7 @@ impl CreateFleetInput {
         self.compute_type.as_ref()
     }
     /// <p>Amazon GameLift Anywhere configuration options.</p>
-    pub fn anywhere_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnywhereConfiguration> {
+    pub fn anywhere_configuration(&self) -> ::std::option::Option<&crate::types::AnywhereConfiguration> {
         self.anywhere_configuration.as_ref()
     }
 }
@@ -200,9 +189,7 @@ impl CreateFleetInput {
 
 /// A builder for [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFleetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -212,22 +199,17 @@ pub struct CreateFleetInputBuilder {
     pub(crate) server_launch_parameters: ::std::option::Option<::std::string::String>,
     pub(crate) log_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ec2_instance_type: ::std::option::Option<crate::types::Ec2InstanceType>,
-    pub(crate) ec2_inbound_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
-    pub(crate) new_game_session_protection_policy:
-        ::std::option::Option<crate::types::ProtectionPolicy>,
+    pub(crate) ec2_inbound_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
+    pub(crate) new_game_session_protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
     pub(crate) runtime_configuration: ::std::option::Option<crate::types::RuntimeConfiguration>,
-    pub(crate) resource_creation_limit_policy:
-        ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
+    pub(crate) resource_creation_limit_policy: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
     pub(crate) metric_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) peer_vpc_aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_type: ::std::option::Option<crate::types::FleetType>,
     pub(crate) instance_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) certificate_configuration:
-        ::std::option::Option<crate::types::CertificateConfiguration>,
-    pub(crate) locations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
+    pub(crate) certificate_configuration: ::std::option::Option<crate::types::CertificateConfiguration>,
+    pub(crate) locations: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) compute_type: ::std::option::Option<crate::types::ComputeType>,
     pub(crate) anywhere_configuration: ::std::option::Option<crate::types::AnywhereConfiguration>,
@@ -290,18 +272,12 @@ impl CreateFleetInputBuilder {
         &self.script_id
     }
     /// <p> <b>This parameter is no longer used.</b> Specify a server launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
-    pub fn server_launch_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_launch_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_launch_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <b>This parameter is no longer used.</b> Specify a server launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
-    pub fn set_server_launch_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_launch_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_launch_path = input;
         self
     }
@@ -310,18 +286,12 @@ impl CreateFleetInputBuilder {
         &self.server_launch_path
     }
     /// <p> <b>This parameter is no longer used.</b> Specify server launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
-    pub fn server_launch_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_launch_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_launch_parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <b>This parameter is no longer used.</b> Specify server launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
-    pub fn set_server_launch_parameters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_launch_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_launch_parameters = input;
         self
     }
@@ -341,10 +311,7 @@ impl CreateFleetInputBuilder {
         self
     }
     /// <p> <b>This parameter is no longer used.</b> To specify where Amazon GameLift should store log files once a server process shuts down, use the Amazon GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in <code>logParameters</code>. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize the server process</a> in the <i>Amazon GameLift Developer Guide</i>. </p>
-    pub fn set_log_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_log_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_paths = input;
         self
     }
@@ -358,10 +325,7 @@ impl CreateFleetInputBuilder {
         self
     }
     /// <p>The Amazon GameLift-supported Amazon EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
-    pub fn set_ec2_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2InstanceType>,
-    ) -> Self {
+    pub fn set_ec2_instance_type(mut self, input: ::std::option::Option<crate::types::Ec2InstanceType>) -> Self {
         self.ec2_instance_type = input;
         self
     }
@@ -381,17 +345,12 @@ impl CreateFleetInputBuilder {
         self
     }
     /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges. </p>
-    pub fn set_ec2_inbound_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
-    ) -> Self {
+    pub fn set_ec2_inbound_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.ec2_inbound_permissions = input;
         self
     }
     /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges. </p>
-    pub fn get_ec2_inbound_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+    pub fn get_ec2_inbound_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         &self.ec2_inbound_permissions
     }
     /// <p>The status of termination protection for active game sessions on the fleet. By default, this property is set to <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
@@ -399,10 +358,7 @@ impl CreateFleetInputBuilder {
     /// <li> <p> <b>NoProtection</b> - Game sessions can be terminated during active gameplay as a result of a scale-down event. </p> </li>
     /// <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn new_game_session_protection_policy(
-        mut self,
-        input: crate::types::ProtectionPolicy,
-    ) -> Self {
+    pub fn new_game_session_protection_policy(mut self, input: crate::types::ProtectionPolicy) -> Self {
         self.new_game_session_protection_policy = ::std::option::Option::Some(input);
         self
     }
@@ -411,10 +367,7 @@ impl CreateFleetInputBuilder {
     /// <li> <p> <b>NoProtection</b> - Game sessions can be terminated during active gameplay as a result of a scale-down event. </p> </li>
     /// <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn set_new_game_session_protection_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectionPolicy>,
-    ) -> Self {
+    pub fn set_new_game_session_protection_policy(mut self, input: ::std::option::Option<crate::types::ProtectionPolicy>) -> Self {
         self.new_game_session_protection_policy = input;
         self
     }
@@ -423,9 +376,7 @@ impl CreateFleetInputBuilder {
     /// <li> <p> <b>NoProtection</b> - Game sessions can be terminated during active gameplay as a result of a scale-down event. </p> </li>
     /// <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn get_new_game_session_protection_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProtectionPolicy> {
+    pub fn get_new_game_session_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         &self.new_game_session_protection_policy
     }
     /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently. </p> <note>
@@ -438,41 +389,28 @@ impl CreateFleetInputBuilder {
     /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently. </p> <note>
     /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
     /// </note>
-    pub fn set_runtime_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RuntimeConfiguration>,
-    ) -> Self {
+    pub fn set_runtime_configuration(mut self, input: ::std::option::Option<crate::types::RuntimeConfiguration>) -> Self {
         self.runtime_configuration = input;
         self
     }
     /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently. </p> <note>
     /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
     /// </note>
-    pub fn get_runtime_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
+    pub fn get_runtime_configuration(&self) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
         &self.runtime_configuration
     }
     /// <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
-    pub fn resource_creation_limit_policy(
-        mut self,
-        input: crate::types::ResourceCreationLimitPolicy,
-    ) -> Self {
+    pub fn resource_creation_limit_policy(mut self, input: crate::types::ResourceCreationLimitPolicy) -> Self {
         self.resource_creation_limit_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
-    pub fn set_resource_creation_limit_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
-    ) -> Self {
+    pub fn set_resource_creation_limit_policy(mut self, input: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>) -> Self {
         self.resource_creation_limit_policy = input;
         self
     }
     /// <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
-    pub fn get_resource_creation_limit_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
+    pub fn get_resource_creation_limit_policy(&self) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
         &self.resource_creation_limit_policy
     }
     /// Appends an item to `metric_groups`.
@@ -480,42 +418,28 @@ impl CreateFleetInputBuilder {
     /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
     ///
     /// <p>The name of an Amazon Web Services CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
-    pub fn metric_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metric_groups.unwrap_or_default();
         v.push(input.into());
         self.metric_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The name of an Amazon Web Services CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
-    pub fn set_metric_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metric_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metric_groups = input;
         self
     }
     /// <p>The name of an Amazon Web Services CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
-    pub fn get_metric_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_groups
     }
     /// <p>Used when peering your Amazon GameLift fleet with a VPC, the unique identifier for the Amazon Web Services account that owns the VPC. You can find your account ID in the Amazon Web Services Management Console under account settings. </p>
-    pub fn peer_vpc_aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn peer_vpc_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_vpc_aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Used when peering your Amazon GameLift fleet with a VPC, the unique identifier for the Amazon Web Services account that owns the VPC. You can find your account ID in the Amazon Web Services Management Console under account settings. </p>
-    pub fn set_peer_vpc_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_peer_vpc_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_vpc_aws_account_id = input;
         self
     }
@@ -552,18 +476,12 @@ impl CreateFleetInputBuilder {
         &self.fleet_type
     }
     /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
-    pub fn instance_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
-    pub fn set_instance_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_role_arn = input;
         self
     }
@@ -575,10 +493,7 @@ impl CreateFleetInputBuilder {
     /// <p>Certificate Manager (ACM) certificates expire after 13 months. Certificate expiration can cause fleets to fail, preventing players from connecting to instances in the fleet. We recommend you replace fleets before 13 months, consider using fleet aliases for a smooth transition.</p> <note>
     /// <p>ACM isn't available in all Amazon Web Services regions. A fleet creation request with certificate generation enabled in an unsupported Region, fails with a 4xx error. For more information about the supported Regions, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported Regions</a> in the <i>Certificate Manager User Guide</i>.</p>
     /// </note>
-    pub fn certificate_configuration(
-        mut self,
-        input: crate::types::CertificateConfiguration,
-    ) -> Self {
+    pub fn certificate_configuration(mut self, input: crate::types::CertificateConfiguration) -> Self {
         self.certificate_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -586,10 +501,7 @@ impl CreateFleetInputBuilder {
     /// <p>Certificate Manager (ACM) certificates expire after 13 months. Certificate expiration can cause fleets to fail, preventing players from connecting to instances in the fleet. We recommend you replace fleets before 13 months, consider using fleet aliases for a smooth transition.</p> <note>
     /// <p>ACM isn't available in all Amazon Web Services regions. A fleet creation request with certificate generation enabled in an unsupported Region, fails with a 4xx error. For more information about the supported Regions, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported Regions</a> in the <i>Certificate Manager User Guide</i>.</p>
     /// </note>
-    pub fn set_certificate_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateConfiguration>,
-    ) -> Self {
+    pub fn set_certificate_configuration(mut self, input: ::std::option::Option<crate::types::CertificateConfiguration>) -> Self {
         self.certificate_configuration = input;
         self
     }
@@ -597,9 +509,7 @@ impl CreateFleetInputBuilder {
     /// <p>Certificate Manager (ACM) certificates expire after 13 months. Certificate expiration can cause fleets to fail, preventing players from connecting to instances in the fleet. We recommend you replace fleets before 13 months, consider using fleet aliases for a smooth transition.</p> <note>
     /// <p>ACM isn't available in all Amazon Web Services regions. A fleet creation request with certificate generation enabled in an unsupported Region, fails with a 4xx error. For more information about the supported Regions, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported Regions</a> in the <i>Certificate Manager User Guide</i>.</p>
     /// </note>
-    pub fn get_certificate_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CertificateConfiguration> {
+    pub fn get_certificate_configuration(&self) -> &::std::option::Option<crate::types::CertificateConfiguration> {
         &self.certificate_configuration
     }
     /// Appends an item to `locations`.
@@ -616,18 +526,13 @@ impl CreateFleetInputBuilder {
     }
     /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, don't use this parameter. </p>
     /// <p>To use this parameter, Amazon GameLift requires you to use your home location in the request.</p>
-    pub fn set_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
-    ) -> Self {
+    pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>) -> Self {
         self.locations = input;
         self
     }
     /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, don't use this parameter. </p>
     /// <p>To use this parameter, Amazon GameLift requires you to use your home location in the request.</p>
-    pub fn get_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>> {
+    pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>> {
         &self.locations
     }
     /// Appends an item to `tags`.
@@ -642,10 +547,7 @@ impl CreateFleetInputBuilder {
         self
     }
     /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -659,10 +561,7 @@ impl CreateFleetInputBuilder {
         self
     }
     /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift. By default, this property is set to <code>EC2</code>.</p>
-    pub fn set_compute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeType>,
-    ) -> Self {
+    pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.compute_type = input;
         self
     }
@@ -676,26 +575,16 @@ impl CreateFleetInputBuilder {
         self
     }
     /// <p>Amazon GameLift Anywhere configuration options.</p>
-    pub fn set_anywhere_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AnywhereConfiguration>,
-    ) -> Self {
+    pub fn set_anywhere_configuration(mut self, input: ::std::option::Option<crate::types::AnywhereConfiguration>) -> Self {
         self.anywhere_configuration = input;
         self
     }
     /// <p>Amazon GameLift Anywhere configuration options.</p>
-    pub fn get_anywhere_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnywhereConfiguration> {
+    pub fn get_anywhere_configuration(&self) -> &::std::option::Option<crate::types::AnywhereConfiguration> {
         &self.anywhere_configuration
     }
     /// Consumes the builder and constructs a [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_fleet::CreateFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_fleet::CreateFleetInput {
             name: self.name,
             description: self.description,

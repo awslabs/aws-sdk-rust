@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeLocationsOutput`](crate::operation::describe_locations::DescribeLocationsOutput) with field(s):
     ///   - [`locations(Option<Vec<Location>>)`](crate::operation::describe_locations::DescribeLocationsOutput::locations): <p>The locations.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationsError>`](crate::operation::describe_locations::DescribeLocationsError)
-    pub fn describe_locations(
-        &self,
-    ) -> crate::operation::describe_locations::builders::DescribeLocationsFluentBuilder {
-        crate::operation::describe_locations::builders::DescribeLocationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_locations(&self) -> crate::operation::describe_locations::builders::DescribeLocationsFluentBuilder {
+        crate::operation::describe_locations::builders::DescribeLocationsFluentBuilder::new(self.handle.clone())
     }
 }

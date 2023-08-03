@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`definitions(Option<Vec<DefinitionInformation>>)`](crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsOutput::definitions): Information about a definition.
     ///   - [`next_token(Option<String>)`](crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     /// - On failure, responds with [`SdkError<ListSubscriptionDefinitionsError>`](crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsError)
-    pub fn list_subscription_definitions(&self) -> crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsFluentBuilder{
+    pub fn list_subscription_definitions(
+        &self,
+    ) -> crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsFluentBuilder {
         crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

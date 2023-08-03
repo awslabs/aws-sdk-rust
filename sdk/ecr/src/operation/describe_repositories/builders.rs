@@ -37,9 +37,7 @@ impl DescribeRepositoriesFluentBuilder {
         }
     }
     /// Access the DescribeRepositories as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_repositories::builders::DescribeRepositoriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_repositories::builders::DescribeRepositoriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeRepositoriesFluentBuilder {
             crate::operation::describe_repositories::DescribeRepositories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_repositories::DescribeRepositoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_repositories::DescribeRepositoriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeRepositoriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeRepositoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_repositories::DescribeRepositoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_repositories::DescribeRepositoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_repositories::DescribeRepositoriesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeRepositoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_repositories::DescribeRepositoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_repositories::DescribeRepositoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_repositories::DescribeRepositoriesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl DescribeRepositoriesFluentBuilder {
             crate::operation::describe_repositories::DescribeRepositories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_repositories::DescribeRepositoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_repositories::DescribeRepositoriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_repositories::paginator::DescribeRepositoriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_repositories::paginator::DescribeRepositoriesPaginator {
-        crate::operation::describe_repositories::paginator::DescribeRepositoriesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_repositories::paginator::DescribeRepositoriesPaginator {
+        crate::operation::describe_repositories::paginator::DescribeRepositoriesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,25 +134,17 @@ impl DescribeRepositoriesFluentBuilder {
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
     ///
     /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
-    pub fn repository_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_names(input.into());
         self
     }
     /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
-    pub fn set_repository_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_repository_names(input);
         self
     }
     /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
-    pub fn get_repository_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_repository_names()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p> <note>

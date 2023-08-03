@@ -15,35 +15,25 @@ impl GetFirewallDomainListInput {
 }
 impl GetFirewallDomainListInput {
     /// Creates a new builder-style object to manufacture [`GetFirewallDomainListInput`](crate::operation::get_firewall_domain_list::GetFirewallDomainListInput).
-    pub fn builder(
-    ) -> crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListInputBuilder {
         crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFirewallDomainListInput`](crate::operation::get_firewall_domain_list::GetFirewallDomainListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFirewallDomainListInputBuilder {
     pub(crate) firewall_domain_list_id: ::std::option::Option<::std::string::String>,
 }
 impl GetFirewallDomainListInputBuilder {
     /// <p>The ID of the domain list. </p>
-    pub fn firewall_domain_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_domain_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the domain list. </p>
-    pub fn set_firewall_domain_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_domain_list_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetFirewallDomainListInputBuilder {
     /// Consumes the builder and constructs a [`GetFirewallDomainListInput`](crate::operation::get_firewall_domain_list::GetFirewallDomainListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_firewall_domain_list::GetFirewallDomainListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_firewall_domain_list::GetFirewallDomainListInput {
-                firewall_domain_list_id: self.firewall_domain_list_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_firewall_domain_list::GetFirewallDomainListInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_firewall_domain_list::GetFirewallDomainListInput {
+            firewall_domain_list_id: self.firewall_domain_list_id,
+        })
     }
 }

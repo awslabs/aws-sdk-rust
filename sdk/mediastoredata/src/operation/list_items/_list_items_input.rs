@@ -52,9 +52,7 @@ impl ListItemsInput {
 
 /// A builder for [`ListItemsInput`](crate::operation::list_items::ListItemsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListItemsInputBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -128,12 +126,7 @@ impl ListItemsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListItemsInput`](crate::operation::list_items::ListItemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_items::ListItemsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_items::ListItemsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_items::ListItemsInput {
             path: self.path,
             max_results: self.max_results,

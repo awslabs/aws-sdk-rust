@@ -64,9 +64,7 @@ impl CreateRouteInput {
 
 /// A builder for [`CreateRouteInput`](crate::operation::create_route::CreateRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRouteInputBuilder {
     pub(crate) route_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -106,18 +104,12 @@ impl CreateRouteInputBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.</p>
-    pub fn virtual_router_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.</p>
-    pub fn set_virtual_router_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_router_name = input;
         self
     }
@@ -151,10 +143,7 @@ impl CreateRouteInputBuilder {
         self
     }
     /// <p>Optional metadata that you can apply to the route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagRef>>) -> Self {
         self.tags = input;
         self
     }
@@ -191,12 +180,7 @@ impl CreateRouteInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`CreateRouteInput`](crate::operation::create_route::CreateRouteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_route::CreateRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_route::CreateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_route::CreateRouteInput {
             route_name: self.route_name,
             mesh_name: self.mesh_name,

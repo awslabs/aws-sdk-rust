@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateRulesOfIpGroupOutput {
 }
 impl UpdateRulesOfIpGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRulesOfIpGroupOutput`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupOutputBuilder {
         crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRulesOfIpGroupOutput`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRulesOfIpGroupOutputBuilder {
     _request_id: Option<String>,
 }

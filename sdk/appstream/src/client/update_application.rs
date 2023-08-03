@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateApplicationOutput`](crate::operation::update_application::UpdateApplicationOutput) with field(s):
     ///   - [`application(Option<Application>)`](crate::operation::update_application::UpdateApplicationOutput::application): <p>Describes an application in the application catalog.</p>
     /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::operation::update_application::UpdateApplicationError)
-    pub fn update_application(
-        &self,
-    ) -> crate::operation::update_application::builders::UpdateApplicationFluentBuilder {
-        crate::operation::update_application::builders::UpdateApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_application(&self) -> crate::operation::update_application::builders::UpdateApplicationFluentBuilder {
+        crate::operation::update_application::builders::UpdateApplicationFluentBuilder::new(self.handle.clone())
     }
 }

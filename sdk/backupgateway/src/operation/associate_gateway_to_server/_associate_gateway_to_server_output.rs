@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for AssociateGatewayToServerOutput {
 }
 impl AssociateGatewayToServerOutput {
     /// Creates a new builder-style object to manufacture [`AssociateGatewayToServerOutput`](crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput).
-    pub fn builder() -> crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerOutputBuilder{
+    pub fn builder() -> crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerOutputBuilder {
         crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateGatewayToServerOutput`](crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateGatewayToServerOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl AssociateGatewayToServerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateGatewayToServerOutput`](crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput {
+    pub fn build(self) -> crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput {
         crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput {
             gateway_arn: self.gateway_arn,
             _request_id: self._request_id,

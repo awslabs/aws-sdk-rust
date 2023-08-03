@@ -46,8 +46,7 @@ impl ::std::fmt::Debug for ReplicateInstanceInput {
 }
 impl ReplicateInstanceInput {
     /// Creates a new builder-style object to manufacture [`ReplicateInstanceInput`](crate::operation::replicate_instance::ReplicateInstanceInput).
-    pub fn builder() -> crate::operation::replicate_instance::builders::ReplicateInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::replicate_instance::builders::ReplicateInstanceInputBuilder {
         crate::operation::replicate_instance::builders::ReplicateInstanceInputBuilder::default()
     }
 }
@@ -77,18 +76,12 @@ impl ReplicateInstanceInputBuilder {
         &self.instance_id
     }
     /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
-    pub fn replica_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replica_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replica_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
-    pub fn set_replica_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replica_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replica_region = input;
         self
     }
@@ -111,18 +104,12 @@ impl ReplicateInstanceInputBuilder {
         &self.client_token
     }
     /// <p>The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.</p>
-    pub fn replica_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replica_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replica_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.</p>
-    pub fn set_replica_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replica_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replica_alias = input;
         self
     }
@@ -133,18 +120,13 @@ impl ReplicateInstanceInputBuilder {
     /// Consumes the builder and constructs a [`ReplicateInstanceInput`](crate::operation::replicate_instance::ReplicateInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::replicate_instance::ReplicateInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::replicate_instance::ReplicateInstanceInput {
-                instance_id: self.instance_id,
-                replica_region: self.replica_region,
-                client_token: self.client_token,
-                replica_alias: self.replica_alias,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::replicate_instance::ReplicateInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::replicate_instance::ReplicateInstanceInput {
+            instance_id: self.instance_id,
+            replica_region: self.replica_region,
+            client_token: self.client_token,
+            replica_alias: self.replica_alias,
+        })
     }
 }
 impl ::std::fmt::Debug for ReplicateInstanceInputBuilder {

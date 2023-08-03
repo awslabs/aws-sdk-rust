@@ -20,9 +20,7 @@ impl NielsenCbet {
         self.cbet_check_digit_string.as_deref()
     }
     /// Determines the method of CBET insertion mode when prior encoding is detected on the same layer.
-    pub fn cbet_stepaside(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NielsenWatermarksCbetStepaside> {
+    pub fn cbet_stepaside(&self) -> ::std::option::Option<&crate::types::NielsenWatermarksCbetStepaside> {
         self.cbet_stepaside.as_ref()
     }
     /// Enter the CBET Source ID (CSID) to use in the watermark
@@ -39,9 +37,7 @@ impl NielsenCbet {
 
 /// A builder for [`NielsenCbet`](crate::types::NielsenCbet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NielsenCbetBuilder {
     pub(crate) cbet_check_digit_string: ::std::option::Option<::std::string::String>,
     pub(crate) cbet_stepaside: ::std::option::Option<crate::types::NielsenWatermarksCbetStepaside>,
@@ -49,18 +45,12 @@ pub struct NielsenCbetBuilder {
 }
 impl NielsenCbetBuilder {
     /// Enter the CBET check digits to use in the watermark.
-    pub fn cbet_check_digit_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cbet_check_digit_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cbet_check_digit_string = ::std::option::Option::Some(input.into());
         self
     }
     /// Enter the CBET check digits to use in the watermark.
-    pub fn set_cbet_check_digit_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cbet_check_digit_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cbet_check_digit_string = input;
         self
     }
@@ -74,17 +64,12 @@ impl NielsenCbetBuilder {
         self
     }
     /// Determines the method of CBET insertion mode when prior encoding is detected on the same layer.
-    pub fn set_cbet_stepaside(
-        mut self,
-        input: ::std::option::Option<crate::types::NielsenWatermarksCbetStepaside>,
-    ) -> Self {
+    pub fn set_cbet_stepaside(mut self, input: ::std::option::Option<crate::types::NielsenWatermarksCbetStepaside>) -> Self {
         self.cbet_stepaside = input;
         self
     }
     /// Determines the method of CBET insertion mode when prior encoding is detected on the same layer.
-    pub fn get_cbet_stepaside(
-        &self,
-    ) -> &::std::option::Option<crate::types::NielsenWatermarksCbetStepaside> {
+    pub fn get_cbet_stepaside(&self) -> &::std::option::Option<crate::types::NielsenWatermarksCbetStepaside> {
         &self.cbet_stepaside
     }
     /// Enter the CBET Source ID (CSID) to use in the watermark

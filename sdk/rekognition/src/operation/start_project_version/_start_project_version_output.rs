@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartProjectVersionOutput {
 }
 impl StartProjectVersionOutput {
     /// Creates a new builder-style object to manufacture [`StartProjectVersionOutput`](crate::operation::start_project_version::StartProjectVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::start_project_version::builders::StartProjectVersionOutputBuilder {
-        crate::operation::start_project_version::builders::StartProjectVersionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_project_version::builders::StartProjectVersionOutputBuilder {
+        crate::operation::start_project_version::builders::StartProjectVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartProjectVersionOutput`](crate::operation::start_project_version::StartProjectVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartProjectVersionOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ProjectVersionStatus>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl StartProjectVersionOutputBuilder {
         self
     }
     /// <p>The current running status of the model. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProjectVersionStatus>) -> Self {
         self.status = input;
         self
     }

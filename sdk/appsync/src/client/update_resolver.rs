@@ -19,11 +19,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateResolverOutput`](crate::operation::update_resolver::UpdateResolverOutput) with field(s):
     ///   - [`resolver(Option<Resolver>)`](crate::operation::update_resolver::UpdateResolverOutput::resolver): <p>The updated <code>Resolver</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateResolverError>`](crate::operation::update_resolver::UpdateResolverError)
-    pub fn update_resolver(
-        &self,
-    ) -> crate::operation::update_resolver::builders::UpdateResolverFluentBuilder {
-        crate::operation::update_resolver::builders::UpdateResolverFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_resolver(&self) -> crate::operation::update_resolver::builders::UpdateResolverFluentBuilder {
+        crate::operation::update_resolver::builders::UpdateResolverFluentBuilder::new(self.handle.clone())
     }
 }

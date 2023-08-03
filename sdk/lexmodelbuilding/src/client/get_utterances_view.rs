@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`bot_name(Option<String>)`](crate::operation::get_utterances_view::GetUtterancesViewOutput::bot_name): <p>The name of the bot for which utterance information was returned.</p>
     ///   - [`utterances(Option<Vec<UtteranceList>>)`](crate::operation::get_utterances_view::GetUtterancesViewOutput::utterances): <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
     /// - On failure, responds with [`SdkError<GetUtterancesViewError>`](crate::operation::get_utterances_view::GetUtterancesViewError)
-    pub fn get_utterances_view(
-        &self,
-    ) -> crate::operation::get_utterances_view::builders::GetUtterancesViewFluentBuilder {
-        crate::operation::get_utterances_view::builders::GetUtterancesViewFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_utterances_view(&self) -> crate::operation::get_utterances_view::builders::GetUtterancesViewFluentBuilder {
+        crate::operation::get_utterances_view::builders::GetUtterancesViewFluentBuilder::new(self.handle.clone())
     }
 }

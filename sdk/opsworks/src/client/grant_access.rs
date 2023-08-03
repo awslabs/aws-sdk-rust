@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GrantAccessOutput`](crate::operation::grant_access::GrantAccessOutput) with field(s):
     ///   - [`temporary_credential(Option<TemporaryCredential>)`](crate::operation::grant_access::GrantAccessOutput::temporary_credential): <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
     /// - On failure, responds with [`SdkError<GrantAccessError>`](crate::operation::grant_access::GrantAccessError)
-    pub fn grant_access(
-        &self,
-    ) -> crate::operation::grant_access::builders::GrantAccessFluentBuilder {
+    pub fn grant_access(&self) -> crate::operation::grant_access::builders::GrantAccessFluentBuilder {
         crate::operation::grant_access::builders::GrantAccessFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,7 +16,11 @@ impl super::Client {
     /// - On success, responds with [`CreateModelExplainabilityJobDefinitionOutput`](crate::operation::create_model_explainability_job_definition::CreateModelExplainabilityJobDefinitionOutput) with field(s):
     ///   - [`job_definition_arn(Option<String>)`](crate::operation::create_model_explainability_job_definition::CreateModelExplainabilityJobDefinitionOutput::job_definition_arn): <p>The Amazon Resource Name (ARN) of the model explainability job.</p>
     /// - On failure, responds with [`SdkError<CreateModelExplainabilityJobDefinitionError>`](crate::operation::create_model_explainability_job_definition::CreateModelExplainabilityJobDefinitionError)
-    pub fn create_model_explainability_job_definition(&self) -> crate::operation::create_model_explainability_job_definition::builders::CreateModelExplainabilityJobDefinitionFluentBuilder{
-        crate::operation::create_model_explainability_job_definition::builders::CreateModelExplainabilityJobDefinitionFluentBuilder::new(self.handle.clone())
+    pub fn create_model_explainability_job_definition(
+        &self,
+    ) -> crate::operation::create_model_explainability_job_definition::builders::CreateModelExplainabilityJobDefinitionFluentBuilder {
+        crate::operation::create_model_explainability_job_definition::builders::CreateModelExplainabilityJobDefinitionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

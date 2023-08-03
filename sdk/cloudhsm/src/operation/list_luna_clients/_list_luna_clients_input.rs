@@ -22,9 +22,7 @@ impl ListLunaClientsInput {
 
 /// A builder for [`ListLunaClientsInput`](crate::operation::list_luna_clients::ListLunaClientsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLunaClientsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl ListLunaClientsInputBuilder {
     /// Consumes the builder and constructs a [`ListLunaClientsInput`](crate::operation::list_luna_clients::ListLunaClientsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_luna_clients::ListLunaClientsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_luna_clients::ListLunaClientsInput {
-            next_token: self.next_token,
-        })
+    ) -> ::std::result::Result<crate::operation::list_luna_clients::ListLunaClientsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_luna_clients::ListLunaClientsInput { next_token: self.next_token })
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`certificates(Option<Vec<CaCertificate>>)`](crate::operation::list_ca_certificates::ListCaCertificatesOutput::certificates): <p>The CA certificates registered in your Amazon Web Services account.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_ca_certificates::ListCaCertificatesOutput::next_marker): <p>The current position within the list of CA certificates.</p>
     /// - On failure, responds with [`SdkError<ListCACertificatesError>`](crate::operation::list_ca_certificates::ListCACertificatesError)
-    pub fn list_ca_certificates(
-        &self,
-    ) -> crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder {
-        crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_ca_certificates(&self) -> crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder {
+        crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::new(self.handle.clone())
     }
 }

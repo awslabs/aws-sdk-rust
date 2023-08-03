@@ -5,8 +5,7 @@
 pub struct ListEnvironmentAccountConnectionsOutput {
     /// <p>An array of environment account connections with details that's returned by Proton. </p>
     #[doc(hidden)]
-    pub environment_account_connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>>,
+    pub environment_account_connections: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>>,
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEnvironmentAccountConnectionsOutput {
 }
 impl ListEnvironmentAccountConnectionsOutput {
     /// <p>An array of environment account connections with details that's returned by Proton. </p>
-    pub fn environment_account_connections(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EnvironmentAccountConnectionSummary]> {
+    pub fn environment_account_connections(&self) -> ::std::option::Option<&[crate::types::EnvironmentAccountConnectionSummary]> {
         self.environment_account_connections.as_deref()
     }
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEnvironmentAccountConnectionsOutp
 }
 impl ListEnvironmentAccountConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentAccountConnectionsOutput`](crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput).
-    pub fn builder() -> crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsOutputBuilder {
         crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEnvironmentAccountConnectionsOutput`](crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentAccountConnectionsOutputBuilder {
-    pub(crate) environment_account_connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>>,
+    pub(crate) environment_account_connections: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListEnvironmentAccountConnectionsOutputBuilder {
     /// To override the contents of this collection use [`set_environment_account_connections`](Self::set_environment_account_connections).
     ///
     /// <p>An array of environment account connections with details that's returned by Proton. </p>
-    pub fn environment_account_connections(
-        mut self,
-        input: crate::types::EnvironmentAccountConnectionSummary,
-    ) -> Self {
+    pub fn environment_account_connections(mut self, input: crate::types::EnvironmentAccountConnectionSummary) -> Self {
         let mut v = self.environment_account_connections.unwrap_or_default();
         v.push(input);
         self.environment_account_connections = ::std::option::Option::Some(v);
@@ -65,18 +56,13 @@ impl ListEnvironmentAccountConnectionsOutputBuilder {
     /// <p>An array of environment account connections with details that's returned by Proton. </p>
     pub fn set_environment_account_connections(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>>,
     ) -> Self {
         self.environment_account_connections = input;
         self
     }
     /// <p>An array of environment account connections with details that's returned by Proton. </p>
-    pub fn get_environment_account_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>>
-    {
+    pub fn get_environment_account_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>> {
         &self.environment_account_connections
     }
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
@@ -103,12 +89,10 @@ impl ListEnvironmentAccountConnectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentAccountConnectionsOutput`](crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput).
-    pub fn build(self) -> crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput{
+    pub fn build(self) -> crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput {
         crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput {
-            environment_account_connections: self.environment_account_connections
-            ,
-            next_token: self.next_token
-            ,
+            environment_account_connections: self.environment_account_connections,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

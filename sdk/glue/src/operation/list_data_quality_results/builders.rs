@@ -26,8 +26,7 @@ impl ListDataQualityResultsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDataQualityResultsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_data_quality_results::builders::ListDataQualityResultsInputBuilder,
+    inner: crate::operation::list_data_quality_results::builders::ListDataQualityResultsInputBuilder,
 }
 impl ListDataQualityResultsFluentBuilder {
     /// Creates a new `ListDataQualityResults`.
@@ -38,10 +37,7 @@ impl ListDataQualityResultsFluentBuilder {
         }
     }
     /// Access the ListDataQualityResults as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_data_quality_results::builders::ListDataQualityResultsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_data_quality_results::builders::ListDataQualityResultsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListDataQualityResultsFluentBuilder {
             crate::operation::list_data_quality_results::ListDataQualityResults,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_quality_results::ListDataQualityResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_quality_results::ListDataQualityResultsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListDataQualityResultsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListDataQualityResultsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_quality_results::ListDataQualityResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_quality_results::ListDataQualityResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_quality_results::ListDataQualityResultsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListDataQualityResultsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_quality_results::ListDataQualityResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_quality_results::ListDataQualityResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_quality_results::ListDataQualityResultsError>,
     > {
         self.send_middleware().await
     }
@@ -118,23 +105,15 @@ impl ListDataQualityResultsFluentBuilder {
             crate::operation::list_data_quality_results::ListDataQualityResults,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_quality_results::ListDataQualityResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_quality_results::ListDataQualityResultsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_data_quality_results::paginator::ListDataQualityResultsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_data_quality_results::paginator::ListDataQualityResultsPaginator
-    {
-        crate::operation::list_data_quality_results::paginator::ListDataQualityResultsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_data_quality_results::paginator::ListDataQualityResultsPaginator {
+        crate::operation::list_data_quality_results::paginator::ListDataQualityResultsPaginator::new(self.handle, self.inner)
     }
     /// <p>The filter criteria.</p>
     pub fn filter(mut self, input: crate::types::DataQualityResultFilterCriteria) -> Self {
@@ -142,17 +121,12 @@ impl ListDataQualityResultsFluentBuilder {
         self
     }
     /// <p>The filter criteria.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualityResultFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DataQualityResultFilterCriteria>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>The filter criteria.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataQualityResultFilterCriteria> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::DataQualityResultFilterCriteria> {
         self.inner.get_filter()
     }
     /// <p>A paginated token to offset the results.</p>

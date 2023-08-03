@@ -86,8 +86,7 @@ pub struct GetUnfilteredPartitionsMetadataInput {
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>A list of supported permission types. </p>
     #[doc(hidden)]
-    pub supported_permission_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
     /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -186,9 +185,7 @@ impl GetUnfilteredPartitionsMetadataInput {
         self.audit_context.as_ref()
     }
     /// <p>A list of supported permission types. </p>
-    pub fn supported_permission_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PermissionType]> {
+    pub fn supported_permission_types(&self) -> ::std::option::Option<&[crate::types::PermissionType]> {
         self.supported_permission_types.as_deref()
     }
     /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
@@ -206,24 +203,21 @@ impl GetUnfilteredPartitionsMetadataInput {
 }
 impl GetUnfilteredPartitionsMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetUnfilteredPartitionsMetadataInput`](crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataInput).
-    pub fn builder() -> crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataInputBuilder{
+    pub fn builder() -> crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataInputBuilder {
         crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetUnfilteredPartitionsMetadataInput`](crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUnfilteredPartitionsMetadataInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
-    pub(crate) supported_permission_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub(crate) supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) segment: ::std::option::Option<crate::types::Segment>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -244,18 +238,12 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -495,10 +483,7 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
         self
     }
     /// <p>A structure containing Lake Formation audit context information.</p>
-    pub fn set_audit_context(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditContext>,
-    ) -> Self {
+    pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
         self.audit_context = input;
         self
     }
@@ -518,17 +503,12 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
         self
     }
     /// <p>A list of supported permission types. </p>
-    pub fn set_supported_permission_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
-    ) -> Self {
+    pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.supported_permission_types = input;
         self
     }
     /// <p>A list of supported permission types. </p>
-    pub fn get_supported_permission_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+    pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         &self.supported_permission_types
     }
     /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
@@ -582,25 +562,16 @@ impl GetUnfilteredPartitionsMetadataInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataInput {
-                catalog_id: self.catalog_id
-                ,
-                database_name: self.database_name
-                ,
-                table_name: self.table_name
-                ,
-                expression: self.expression
-                ,
-                audit_context: self.audit_context
-                ,
-                supported_permission_types: self.supported_permission_types
-                ,
-                next_token: self.next_token
-                ,
-                segment: self.segment
-                ,
-                max_results: self.max_results
-                ,
-            }
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                table_name: self.table_name,
+                expression: self.expression,
+                audit_context: self.audit_context,
+                supported_permission_types: self.supported_permission_types,
+                next_token: self.next_token,
+                segment: self.segment,
+                max_results: self.max_results,
+            },
         )
     }
 }

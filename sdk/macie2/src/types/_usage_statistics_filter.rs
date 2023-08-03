@@ -23,9 +23,7 @@ pub struct UsageStatisticsFilter {
 }
 impl UsageStatisticsFilter {
     /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
-    pub fn comparator(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UsageStatisticsFilterComparator> {
+    pub fn comparator(&self) -> ::std::option::Option<&crate::types::UsageStatisticsFilterComparator> {
         self.comparator.as_ref()
     }
     /// <p>The field to use in the condition.</p>
@@ -53,9 +51,7 @@ impl UsageStatisticsFilter {
 
 /// A builder for [`UsageStatisticsFilter`](crate::types::UsageStatisticsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageStatisticsFilterBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::UsageStatisticsFilterComparator>,
     pub(crate) key: ::std::option::Option<crate::types::UsageStatisticsFilterKey>,
@@ -68,17 +64,12 @@ impl UsageStatisticsFilterBuilder {
         self
     }
     /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
-    pub fn set_comparator(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageStatisticsFilterComparator>,
-    ) -> Self {
+    pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::UsageStatisticsFilterComparator>) -> Self {
         self.comparator = input;
         self
     }
     /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
-    pub fn get_comparator(
-        &self,
-    ) -> &::std::option::Option<crate::types::UsageStatisticsFilterComparator> {
+    pub fn get_comparator(&self) -> &::std::option::Option<crate::types::UsageStatisticsFilterComparator> {
         &self.comparator
     }
     /// <p>The field to use in the condition.</p>
@@ -87,10 +78,7 @@ impl UsageStatisticsFilterBuilder {
         self
     }
     /// <p>The field to use in the condition.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageStatisticsFilterKey>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::UsageStatisticsFilterKey>) -> Self {
         self.key = input;
         self
     }
@@ -124,10 +112,7 @@ impl UsageStatisticsFilterBuilder {
     /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
     /// <li><p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

@@ -26,7 +26,7 @@ impl DescribeMetricAttributionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMetricAttributionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionInputBuilder,
+    inner: crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionInputBuilder,
 }
 impl DescribeMetricAttributionFluentBuilder {
     /// Creates a new `DescribeMetricAttribution`.
@@ -37,7 +37,7 @@ impl DescribeMetricAttributionFluentBuilder {
         }
     }
     /// Access the DescribeMetricAttribution as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeMetricAttributionFluentBuilder {
             crate::operation::describe_metric_attribution::DescribeMetricAttribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_attribution::DescribeMetricAttributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_attribution::DescribeMetricAttributionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeMetricAttributionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeMetricAttributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_attribution::DescribeMetricAttributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_attribution::DescribeMetricAttributionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeMetricAttributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_attribution::DescribeMetricAttributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_attribution::DescribeMetricAttributionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeMetricAttributionFluentBuilder {
             crate::operation::describe_metric_attribution::DescribeMetricAttribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_attribution::DescribeMetricAttributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_attribution::DescribeMetricAttributionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
-    pub fn metric_attribution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_attribution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_attribution_arn(input.into());
         self
     }
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
-    pub fn set_metric_attribution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_attribution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_attribution_arn(input);
         self
     }

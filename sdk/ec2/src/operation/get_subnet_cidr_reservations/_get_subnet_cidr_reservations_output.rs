@@ -5,12 +5,10 @@
 pub struct GetSubnetCidrReservationsOutput {
     /// <p>Information about the IPv4 subnet CIDR reservations.</p>
     #[doc(hidden)]
-    pub subnet_ipv4_cidr_reservations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>,
+    pub subnet_ipv4_cidr_reservations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>,
     /// <p>Information about the IPv6 subnet CIDR reservations.</p>
     #[doc(hidden)]
-    pub subnet_ipv6_cidr_reservations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>,
+    pub subnet_ipv6_cidr_reservations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -18,15 +16,11 @@ pub struct GetSubnetCidrReservationsOutput {
 }
 impl GetSubnetCidrReservationsOutput {
     /// <p>Information about the IPv4 subnet CIDR reservations.</p>
-    pub fn subnet_ipv4_cidr_reservations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SubnetCidrReservation]> {
+    pub fn subnet_ipv4_cidr_reservations(&self) -> ::std::option::Option<&[crate::types::SubnetCidrReservation]> {
         self.subnet_ipv4_cidr_reservations.as_deref()
     }
     /// <p>Information about the IPv6 subnet CIDR reservations.</p>
-    pub fn subnet_ipv6_cidr_reservations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SubnetCidrReservation]> {
+    pub fn subnet_ipv6_cidr_reservations(&self) -> ::std::option::Option<&[crate::types::SubnetCidrReservation]> {
         self.subnet_ipv6_cidr_reservations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -41,21 +35,17 @@ impl ::aws_http::request_id::RequestId for GetSubnetCidrReservationsOutput {
 }
 impl GetSubnetCidrReservationsOutput {
     /// Creates a new builder-style object to manufacture [`GetSubnetCidrReservationsOutput`](crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsOutput).
-    pub fn builder() -> crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsOutputBuilder {
         crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSubnetCidrReservationsOutput`](crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSubnetCidrReservationsOutputBuilder {
-    pub(crate) subnet_ipv4_cidr_reservations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>,
-    pub(crate) subnet_ipv6_cidr_reservations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>,
+    pub(crate) subnet_ipv4_cidr_reservations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>,
+    pub(crate) subnet_ipv6_cidr_reservations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -65,27 +55,19 @@ impl GetSubnetCidrReservationsOutputBuilder {
     /// To override the contents of this collection use [`set_subnet_ipv4_cidr_reservations`](Self::set_subnet_ipv4_cidr_reservations).
     ///
     /// <p>Information about the IPv4 subnet CIDR reservations.</p>
-    pub fn subnet_ipv4_cidr_reservations(
-        mut self,
-        input: crate::types::SubnetCidrReservation,
-    ) -> Self {
+    pub fn subnet_ipv4_cidr_reservations(mut self, input: crate::types::SubnetCidrReservation) -> Self {
         let mut v = self.subnet_ipv4_cidr_reservations.unwrap_or_default();
         v.push(input);
         self.subnet_ipv4_cidr_reservations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the IPv4 subnet CIDR reservations.</p>
-    pub fn set_subnet_ipv4_cidr_reservations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>,
-    ) -> Self {
+    pub fn set_subnet_ipv4_cidr_reservations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>) -> Self {
         self.subnet_ipv4_cidr_reservations = input;
         self
     }
     /// <p>Information about the IPv4 subnet CIDR reservations.</p>
-    pub fn get_subnet_ipv4_cidr_reservations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>> {
+    pub fn get_subnet_ipv4_cidr_reservations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>> {
         &self.subnet_ipv4_cidr_reservations
     }
     /// Appends an item to `subnet_ipv6_cidr_reservations`.
@@ -93,27 +75,19 @@ impl GetSubnetCidrReservationsOutputBuilder {
     /// To override the contents of this collection use [`set_subnet_ipv6_cidr_reservations`](Self::set_subnet_ipv6_cidr_reservations).
     ///
     /// <p>Information about the IPv6 subnet CIDR reservations.</p>
-    pub fn subnet_ipv6_cidr_reservations(
-        mut self,
-        input: crate::types::SubnetCidrReservation,
-    ) -> Self {
+    pub fn subnet_ipv6_cidr_reservations(mut self, input: crate::types::SubnetCidrReservation) -> Self {
         let mut v = self.subnet_ipv6_cidr_reservations.unwrap_or_default();
         v.push(input);
         self.subnet_ipv6_cidr_reservations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the IPv6 subnet CIDR reservations.</p>
-    pub fn set_subnet_ipv6_cidr_reservations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>,
-    ) -> Self {
+    pub fn set_subnet_ipv6_cidr_reservations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>) -> Self {
         self.subnet_ipv6_cidr_reservations = input;
         self
     }
     /// <p>Information about the IPv6 subnet CIDR reservations.</p>
-    pub fn get_subnet_ipv6_cidr_reservations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>> {
+    pub fn get_subnet_ipv6_cidr_reservations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>> {
         &self.subnet_ipv6_cidr_reservations
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -140,9 +114,7 @@ impl GetSubnetCidrReservationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSubnetCidrReservationsOutput`](crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsOutput {
+    pub fn build(self) -> crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsOutput {
         crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsOutput {
             subnet_ipv4_cidr_reservations: self.subnet_ipv4_cidr_reservations,
             subnet_ipv6_cidr_reservations: self.subnet_ipv6_cidr_reservations,

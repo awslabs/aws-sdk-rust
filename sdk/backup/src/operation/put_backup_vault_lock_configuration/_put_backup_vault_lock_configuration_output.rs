@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutBackupVaultLockConfigurationOutput
 }
 impl PutBackupVaultLockConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutBackupVaultLockConfigurationOutput`](crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationOutput).
-    pub fn builder() -> crate::operation::put_backup_vault_lock_configuration::builders::PutBackupVaultLockConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_backup_vault_lock_configuration::builders::PutBackupVaultLockConfigurationOutputBuilder {
         crate::operation::put_backup_vault_lock_configuration::builders::PutBackupVaultLockConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutBackupVaultLockConfigurationOutput`](crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBackupVaultLockConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl PutBackupVaultLockConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutBackupVaultLockConfigurationOutput`](crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationOutput {
         crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationOutput {
             _request_id: self._request_id,
         }

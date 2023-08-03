@@ -36,16 +36,15 @@ impl CreateTransitGatewayRouteTableAttachmentInput {
 }
 impl CreateTransitGatewayRouteTableAttachmentInput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteTableAttachmentInput`](crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput).
-    pub fn builder() -> crate::operation::create_transit_gateway_route_table_attachment::builders::CreateTransitGatewayRouteTableAttachmentInputBuilder{
+    pub fn builder() -> crate::operation::create_transit_gateway_route_table_attachment::builders::CreateTransitGatewayRouteTableAttachmentInputBuilder
+    {
         crate::operation::create_transit_gateway_route_table_attachment::builders::CreateTransitGatewayRouteTableAttachmentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTransitGatewayRouteTableAttachmentInput`](crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayRouteTableAttachmentInputBuilder {
     pub(crate) peering_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_route_table_arn: ::std::option::Option<::std::string::String>,
@@ -68,25 +67,17 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
         &self.peering_id
     }
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-    pub fn transit_gateway_route_table_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_route_table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-    pub fn set_transit_gateway_route_table_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_route_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_route_table_arn = input;
         self
     }
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-    pub fn get_transit_gateway_route_table_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_route_table_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_route_table_arn
     }
     /// Appends an item to `tags`.
@@ -101,10 +92,7 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
         self
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -127,18 +115,19 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayRouteTableAttachmentInput`](crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput {
-                peering_id: self.peering_id
-                ,
-                transit_gateway_route_table_arn: self.transit_gateway_route_table_arn
-                ,
-                tags: self.tags
-                ,
-                client_token: self.client_token
-                ,
-            }
+                peering_id: self.peering_id,
+                transit_gateway_route_table_arn: self.transit_gateway_route_table_arn,
+                tags: self.tags,
+                client_token: self.client_token,
+            },
         )
     }
 }

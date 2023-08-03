@@ -38,9 +38,7 @@ impl InlineCustomDocumentEnrichmentConfiguration {
 
 /// A builder for [`InlineCustomDocumentEnrichmentConfiguration`](crate::types::InlineCustomDocumentEnrichmentConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InlineCustomDocumentEnrichmentConfigurationBuilder {
     pub(crate) condition: ::std::option::Option<crate::types::DocumentAttributeCondition>,
     pub(crate) target: ::std::option::Option<crate::types::DocumentAttributeTarget>,
@@ -53,17 +51,12 @@ impl InlineCustomDocumentEnrichmentConfigurationBuilder {
         self
     }
     /// <p>Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra.</p>
-    pub fn set_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentAttributeCondition>,
-    ) -> Self {
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::DocumentAttributeCondition>) -> Self {
         self.condition = input;
         self
     }
     /// <p>Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra.</p>
-    pub fn get_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentAttributeCondition> {
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::DocumentAttributeCondition> {
         &self.condition
     }
     /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
@@ -72,10 +65,7 @@ impl InlineCustomDocumentEnrichmentConfigurationBuilder {
         self
     }
     /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentAttributeTarget>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::DocumentAttributeTarget>) -> Self {
         self.target = input;
         self
     }

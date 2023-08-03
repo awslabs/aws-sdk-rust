@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`packages(Option<Vec<PackageListItem>>)`](crate::operation::list_packages::ListPackagesOutput::packages): <p>A list of packages.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_packages::ListPackagesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListPackagesError>`](crate::operation::list_packages::ListPackagesError)
-    pub fn list_packages(
-        &self,
-    ) -> crate::operation::list_packages::builders::ListPackagesFluentBuilder {
-        crate::operation::list_packages::builders::ListPackagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_packages(&self) -> crate::operation::list_packages::builders::ListPackagesFluentBuilder {
+        crate::operation::list_packages::builders::ListPackagesFluentBuilder::new(self.handle.clone())
     }
 }

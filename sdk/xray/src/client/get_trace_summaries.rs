@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`traces_processed_count(Option<i64>)`](crate::operation::get_trace_summaries::GetTraceSummariesOutput::traces_processed_count): <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_trace_summaries::GetTraceSummariesOutput::next_token): <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
     /// - On failure, responds with [`SdkError<GetTraceSummariesError>`](crate::operation::get_trace_summaries::GetTraceSummariesError)
-    pub fn get_trace_summaries(
-        &self,
-    ) -> crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder {
-        crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_trace_summaries(&self) -> crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder {
+        crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::new(self.handle.clone())
     }
 }

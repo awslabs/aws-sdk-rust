@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`resource_types(Option<Vec<SupportedResourceType>>)`](crate::operation::list_supported_resource_types::ListSupportedResourceTypesOutput::resource_types): <p>The list of resource types supported by Resource Explorer.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_supported_resource_types::ListSupportedResourceTypesOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListSupportedResourceTypesError>`](crate::operation::list_supported_resource_types::ListSupportedResourceTypesError)
-    pub fn list_supported_resource_types(&self) -> crate::operation::list_supported_resource_types::builders::ListSupportedResourceTypesFluentBuilder{
+    pub fn list_supported_resource_types(
+        &self,
+    ) -> crate::operation::list_supported_resource_types::builders::ListSupportedResourceTypesFluentBuilder {
         crate::operation::list_supported_resource_types::builders::ListSupportedResourceTypesFluentBuilder::new(self.handle.clone())
     }
 }

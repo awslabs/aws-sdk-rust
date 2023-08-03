@@ -36,9 +36,7 @@ impl ListProjectsOutput {
 
 /// A builder for [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProjectsOutputBuilder {
     pub(crate) projects: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListProjectsOutputBuilder {
         self
     }
     /// <p> List of projects. </p>
-    pub fn set_projects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
-    ) -> Self {
+    pub fn set_projects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>) -> Self {
         self.projects = input;
         self
     }
     /// <p> List of projects. </p>
-    pub fn get_projects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
+    pub fn get_projects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
         &self.projects
     }
     /// <p> Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. </p>

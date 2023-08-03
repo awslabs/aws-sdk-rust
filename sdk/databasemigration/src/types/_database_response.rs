@@ -21,12 +21,10 @@ pub struct DatabaseResponse {
     pub server: ::std::option::Option<crate::types::ServerShortInfoResponse>,
     /// <p>The software details of a database in a Fleet Advisor collector inventory, such as database engine and version.</p>
     #[doc(hidden)]
-    pub software_details:
-        ::std::option::Option<crate::types::DatabaseInstanceSoftwareDetailsResponse>,
+    pub software_details: ::std::option::Option<crate::types::DatabaseInstanceSoftwareDetailsResponse>,
     /// <p>A list of collectors associated with the database.</p>
     #[doc(hidden)]
-    pub collectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::CollectorShortInfoResponse>>,
+    pub collectors: ::std::option::Option<::std::vec::Vec<crate::types::CollectorShortInfoResponse>>,
 }
 impl DatabaseResponse {
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
@@ -50,9 +48,7 @@ impl DatabaseResponse {
         self.server.as_ref()
     }
     /// <p>The software details of a database in a Fleet Advisor collector inventory, such as database engine and version.</p>
-    pub fn software_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DatabaseInstanceSoftwareDetailsResponse> {
+    pub fn software_details(&self) -> ::std::option::Option<&crate::types::DatabaseInstanceSoftwareDetailsResponse> {
         self.software_details.as_ref()
     }
     /// <p>A list of collectors associated with the database.</p>
@@ -69,19 +65,15 @@ impl DatabaseResponse {
 
 /// A builder for [`DatabaseResponse`](crate::types::DatabaseResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatabaseResponseBuilder {
     pub(crate) database_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_schemas: ::std::option::Option<i64>,
     pub(crate) server: ::std::option::Option<crate::types::ServerShortInfoResponse>,
-    pub(crate) software_details:
-        ::std::option::Option<crate::types::DatabaseInstanceSoftwareDetailsResponse>,
-    pub(crate) collectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::CollectorShortInfoResponse>>,
+    pub(crate) software_details: ::std::option::Option<crate::types::DatabaseInstanceSoftwareDetailsResponse>,
+    pub(crate) collectors: ::std::option::Option<::std::vec::Vec<crate::types::CollectorShortInfoResponse>>,
 }
 impl DatabaseResponseBuilder {
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
@@ -99,18 +91,12 @@ impl DatabaseResponseBuilder {
         &self.database_id
     }
     /// <p>The name of a database in a Fleet Advisor collector inventory. </p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a database in a Fleet Advisor collector inventory. </p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -152,10 +138,7 @@ impl DatabaseResponseBuilder {
         self
     }
     /// <p>The server name of a database in a Fleet Advisor collector inventory. </p>
-    pub fn set_server(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerShortInfoResponse>,
-    ) -> Self {
+    pub fn set_server(mut self, input: ::std::option::Option<crate::types::ServerShortInfoResponse>) -> Self {
         self.server = input;
         self
     }
@@ -164,25 +147,17 @@ impl DatabaseResponseBuilder {
         &self.server
     }
     /// <p>The software details of a database in a Fleet Advisor collector inventory, such as database engine and version.</p>
-    pub fn software_details(
-        mut self,
-        input: crate::types::DatabaseInstanceSoftwareDetailsResponse,
-    ) -> Self {
+    pub fn software_details(mut self, input: crate::types::DatabaseInstanceSoftwareDetailsResponse) -> Self {
         self.software_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The software details of a database in a Fleet Advisor collector inventory, such as database engine and version.</p>
-    pub fn set_software_details(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseInstanceSoftwareDetailsResponse>,
-    ) -> Self {
+    pub fn set_software_details(mut self, input: ::std::option::Option<crate::types::DatabaseInstanceSoftwareDetailsResponse>) -> Self {
         self.software_details = input;
         self
     }
     /// <p>The software details of a database in a Fleet Advisor collector inventory, such as database engine and version.</p>
-    pub fn get_software_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatabaseInstanceSoftwareDetailsResponse> {
+    pub fn get_software_details(&self) -> &::std::option::Option<crate::types::DatabaseInstanceSoftwareDetailsResponse> {
         &self.software_details
     }
     /// Appends an item to `collectors`.
@@ -197,17 +172,12 @@ impl DatabaseResponseBuilder {
         self
     }
     /// <p>A list of collectors associated with the database.</p>
-    pub fn set_collectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CollectorShortInfoResponse>>,
-    ) -> Self {
+    pub fn set_collectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CollectorShortInfoResponse>>) -> Self {
         self.collectors = input;
         self
     }
     /// <p>A list of collectors associated with the database.</p>
-    pub fn get_collectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectorShortInfoResponse>> {
+    pub fn get_collectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectorShortInfoResponse>> {
         &self.collectors
     }
     /// Consumes the builder and constructs a [`DatabaseResponse`](crate::types::DatabaseResponse).

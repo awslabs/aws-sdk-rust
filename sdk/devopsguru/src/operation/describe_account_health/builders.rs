@@ -37,10 +37,7 @@ impl DescribeAccountHealthFluentBuilder {
         }
     }
     /// Access the DescribeAccountHealth as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_account_health::builders::DescribeAccountHealthInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_account_health::builders::DescribeAccountHealthInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeAccountHealthFluentBuilder {
             crate::operation::describe_account_health::DescribeAccountHealth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_health::DescribeAccountHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_health::DescribeAccountHealthError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeAccountHealthFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeAccountHealthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_health::DescribeAccountHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_health::DescribeAccountHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_health::DescribeAccountHealthError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeAccountHealthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_health::DescribeAccountHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_health::DescribeAccountHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_health::DescribeAccountHealthError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeAccountHealthFluentBuilder {
             crate::operation::describe_account_health::DescribeAccountHealth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_health::DescribeAccountHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_health::DescribeAccountHealthError>,
     > {
         self.customize_middleware().await
     }

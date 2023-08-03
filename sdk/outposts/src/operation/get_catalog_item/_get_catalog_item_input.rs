@@ -22,26 +22,18 @@ impl GetCatalogItemInput {
 
 /// A builder for [`GetCatalogItemInput`](crate::operation::get_catalog_item::GetCatalogItemInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCatalogItemInputBuilder {
     pub(crate) catalog_item_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCatalogItemInputBuilder {
     /// <p>The ID of the catalog item.</p>
-    pub fn catalog_item_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn catalog_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_item_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the catalog item.</p>
-    pub fn set_catalog_item_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_catalog_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_item_id = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetCatalogItemInputBuilder {
     /// Consumes the builder and constructs a [`GetCatalogItemInput`](crate::operation::get_catalog_item::GetCatalogItemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_catalog_item::GetCatalogItemInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_catalog_item::GetCatalogItemInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_catalog_item::GetCatalogItemInput {
             catalog_item_id: self.catalog_item_id,
         })

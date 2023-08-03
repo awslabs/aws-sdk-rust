@@ -37,9 +37,7 @@ impl GetBasePathMappingsFluentBuilder {
         }
     }
     /// Access the GetBasePathMappings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_base_path_mappings::builders::GetBasePathMappingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_base_path_mappings::builders::GetBasePathMappingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetBasePathMappingsFluentBuilder {
             crate::operation::get_base_path_mappings::GetBasePathMappings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_base_path_mappings::GetBasePathMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_base_path_mappings::GetBasePathMappingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetBasePathMappingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetBasePathMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_base_path_mappings::GetBasePathMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_base_path_mappings::GetBasePathMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_base_path_mappings::GetBasePathMappingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetBasePathMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_base_path_mappings::GetBasePathMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_base_path_mappings::GetBasePathMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_base_path_mappings::GetBasePathMappingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl GetBasePathMappingsFluentBuilder {
             crate::operation::get_base_path_mappings::GetBasePathMappings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_base_path_mappings::GetBasePathMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_base_path_mappings::GetBasePathMappingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_base_path_mappings::paginator::GetBasePathMappingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_base_path_mappings::paginator::GetBasePathMappingsPaginator {
-        crate::operation::get_base_path_mappings::paginator::GetBasePathMappingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_base_path_mappings::paginator::GetBasePathMappingsPaginator {
+        crate::operation::get_base_path_mappings::paginator::GetBasePathMappingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The domain name of a BasePathMapping resource.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

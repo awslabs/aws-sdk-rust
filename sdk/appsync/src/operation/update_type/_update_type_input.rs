@@ -43,9 +43,7 @@ impl UpdateTypeInput {
 
 /// A builder for [`UpdateTypeInput`](crate::operation::update_type::UpdateTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTypeInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -101,10 +99,7 @@ impl UpdateTypeInputBuilder {
         self
     }
     /// <p>The new type format: SDL or JSON.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::TypeDefinitionFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::TypeDefinitionFormat>) -> Self {
         self.format = input;
         self
     }
@@ -113,12 +108,7 @@ impl UpdateTypeInputBuilder {
         &self.format
     }
     /// Consumes the builder and constructs a [`UpdateTypeInput`](crate::operation::update_type::UpdateTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_type::UpdateTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_type::UpdateTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_type::UpdateTypeInput {
             api_id: self.api_id,
             type_name: self.type_name,

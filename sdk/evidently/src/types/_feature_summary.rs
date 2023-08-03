@@ -33,9 +33,7 @@ pub struct FeatureSummary {
     pub default_variation: ::std::option::Option<::std::string::String>,
     /// <p>The list of tag keys and values associated with this feature.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FeatureSummary {
     /// <p>The ARN of the feature.</p>
@@ -63,9 +61,7 @@ impl FeatureSummary {
         self.last_updated_time.as_ref()
     }
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
-    pub fn evaluation_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FeatureEvaluationStrategy> {
+    pub fn evaluation_strategy(&self) -> ::std::option::Option<&crate::types::FeatureEvaluationStrategy> {
         self.evaluation_strategy.as_ref()
     }
     /// <p>An array of structures that define</p>
@@ -77,11 +73,7 @@ impl FeatureSummary {
         self.default_variation.as_deref()
     }
     /// <p>The list of tag keys and values associated with this feature.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -94,9 +86,7 @@ impl FeatureSummary {
 
 /// A builder for [`FeatureSummary`](crate::types::FeatureSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeatureSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -105,12 +95,9 @@ pub struct FeatureSummaryBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) evaluation_strategy: ::std::option::Option<crate::types::FeatureEvaluationStrategy>,
-    pub(crate) evaluation_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRule>>,
+    pub(crate) evaluation_rules: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRule>>,
     pub(crate) default_variation: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FeatureSummaryBuilder {
     /// <p>The ARN of the feature.</p>
@@ -175,10 +162,7 @@ impl FeatureSummaryBuilder {
         self
     }
     /// <p>The date and time that the feature is created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -192,10 +176,7 @@ impl FeatureSummaryBuilder {
         self
     }
     /// <p>The date and time that the feature was most recently updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -209,17 +190,12 @@ impl FeatureSummaryBuilder {
         self
     }
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
-    pub fn set_evaluation_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::FeatureEvaluationStrategy>,
-    ) -> Self {
+    pub fn set_evaluation_strategy(mut self, input: ::std::option::Option<crate::types::FeatureEvaluationStrategy>) -> Self {
         self.evaluation_strategy = input;
         self
     }
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
-    pub fn get_evaluation_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::FeatureEvaluationStrategy> {
+    pub fn get_evaluation_strategy(&self) -> &::std::option::Option<crate::types::FeatureEvaluationStrategy> {
         &self.evaluation_strategy
     }
     /// Appends an item to `evaluation_rules`.
@@ -234,32 +210,21 @@ impl FeatureSummaryBuilder {
         self
     }
     /// <p>An array of structures that define</p>
-    pub fn set_evaluation_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRule>>,
-    ) -> Self {
+    pub fn set_evaluation_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRule>>) -> Self {
         self.evaluation_rules = input;
         self
     }
     /// <p>An array of structures that define</p>
-    pub fn get_evaluation_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationRule>> {
+    pub fn get_evaluation_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationRule>> {
         &self.evaluation_rules
     }
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
-    pub fn default_variation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_variation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_variation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
-    pub fn set_default_variation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_variation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_variation = input;
         self
     }
@@ -272,32 +237,19 @@ impl FeatureSummaryBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of tag keys and values associated with this feature.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of tag keys and values associated with this feature.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The list of tag keys and values associated with this feature.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`FeatureSummary`](crate::types::FeatureSummary).

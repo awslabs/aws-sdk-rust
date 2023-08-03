@@ -23,9 +23,7 @@ impl AudioArtifactsConfiguration {
 
 /// A builder for [`AudioArtifactsConfiguration`](crate::types::AudioArtifactsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioArtifactsConfigurationBuilder {
     pub(crate) mux_type: ::std::option::Option<crate::types::AudioMuxType>,
 }
@@ -36,10 +34,7 @@ impl AudioArtifactsConfigurationBuilder {
         self
     }
     /// <p>The MUX type of the audio artifact configuration object.</p>
-    pub fn set_mux_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioMuxType>,
-    ) -> Self {
+    pub fn set_mux_type(mut self, input: ::std::option::Option<crate::types::AudioMuxType>) -> Self {
         self.mux_type = input;
         self
     }
@@ -49,8 +44,6 @@ impl AudioArtifactsConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`AudioArtifactsConfiguration`](crate::types::AudioArtifactsConfiguration).
     pub fn build(self) -> crate::types::AudioArtifactsConfiguration {
-        crate::types::AudioArtifactsConfiguration {
-            mux_type: self.mux_type,
-        }
+        crate::types::AudioArtifactsConfiguration { mux_type: self.mux_type }
     }
 }

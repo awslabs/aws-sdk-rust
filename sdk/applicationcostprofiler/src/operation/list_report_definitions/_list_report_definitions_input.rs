@@ -22,18 +22,14 @@ impl ListReportDefinitionsInput {
 }
 impl ListReportDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListReportDefinitionsInput`](crate::operation::list_report_definitions::ListReportDefinitionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_report_definitions::builders::ListReportDefinitionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_report_definitions::builders::ListReportDefinitionsInputBuilder {
         crate::operation::list_report_definitions::builders::ListReportDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReportDefinitionsInput`](crate::operation::list_report_definitions::ListReportDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReportDefinitionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,15 +66,11 @@ impl ListReportDefinitionsInputBuilder {
     /// Consumes the builder and constructs a [`ListReportDefinitionsInput`](crate::operation::list_report_definitions::ListReportDefinitionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_report_definitions::ListReportDefinitionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_report_definitions::ListReportDefinitionsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_report_definitions::ListReportDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_report_definitions::ListReportDefinitionsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

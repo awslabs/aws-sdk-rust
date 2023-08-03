@@ -16,18 +16,14 @@ impl GetCompatibleVersionsInput {
 }
 impl GetCompatibleVersionsInput {
     /// Creates a new builder-style object to manufacture [`GetCompatibleVersionsInput`](crate::operation::get_compatible_versions::GetCompatibleVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_compatible_versions::builders::GetCompatibleVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_compatible_versions::builders::GetCompatibleVersionsInputBuilder {
         crate::operation::get_compatible_versions::builders::GetCompatibleVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCompatibleVersionsInput`](crate::operation::get_compatible_versions::GetCompatibleVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCompatibleVersionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -49,14 +45,10 @@ impl GetCompatibleVersionsInputBuilder {
     /// Consumes the builder and constructs a [`GetCompatibleVersionsInput`](crate::operation::get_compatible_versions::GetCompatibleVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_compatible_versions::GetCompatibleVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_compatible_versions::GetCompatibleVersionsInput {
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_compatible_versions::GetCompatibleVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_compatible_versions::GetCompatibleVersionsInput {
+            domain_name: self.domain_name,
+        })
     }
 }

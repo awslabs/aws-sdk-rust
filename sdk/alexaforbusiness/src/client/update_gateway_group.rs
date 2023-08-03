@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateGatewayGroupOutput`](crate::operation::update_gateway_group::UpdateGatewayGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateGatewayGroupError>`](crate::operation::update_gateway_group::UpdateGatewayGroupError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn update_gateway_group(
-        &self,
-    ) -> crate::operation::update_gateway_group::builders::UpdateGatewayGroupFluentBuilder {
-        crate::operation::update_gateway_group::builders::UpdateGatewayGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_gateway_group(&self) -> crate::operation::update_gateway_group::builders::UpdateGatewayGroupFluentBuilder {
+        crate::operation::update_gateway_group::builders::UpdateGatewayGroupFluentBuilder::new(self.handle.clone())
     }
 }

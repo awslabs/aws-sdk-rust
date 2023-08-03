@@ -5,8 +5,7 @@
 pub struct ListStudioSessionMappingsOutput {
     /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
     #[doc(hidden)]
-    pub session_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::SessionMappingSummary>>,
+    pub session_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SessionMappingSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListStudioSessionMappingsOutput {
 }
 impl ListStudioSessionMappingsOutput {
     /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
-    pub fn session_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SessionMappingSummary]> {
+    pub fn session_mappings(&self) -> ::std::option::Option<&[crate::types::SessionMappingSummary]> {
         self.session_mappings.as_deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListStudioSessionMappingsOutput {
 }
 impl ListStudioSessionMappingsOutput {
     /// Creates a new builder-style object to manufacture [`ListStudioSessionMappingsOutput`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput).
-    pub fn builder() -> crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsOutputBuilder{
+    pub fn builder() -> crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsOutputBuilder {
         crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStudioSessionMappingsOutput`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStudioSessionMappingsOutputBuilder {
-    pub(crate) session_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::SessionMappingSummary>>,
+    pub(crate) session_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SessionMappingSummary>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListStudioSessionMappingsOutputBuilder {
         self
     }
     /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
-    pub fn set_session_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SessionMappingSummary>>,
-    ) -> Self {
+    pub fn set_session_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SessionMappingSummary>>) -> Self {
         self.session_mappings = input;
         self
     }
     /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
-    pub fn get_session_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionMappingSummary>> {
+    pub fn get_session_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionMappingSummary>> {
         &self.session_mappings
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -97,9 +86,7 @@ impl ListStudioSessionMappingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStudioSessionMappingsOutput`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput {
+    pub fn build(self) -> crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput {
         crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput {
             session_mappings: self.session_mappings,
             marker: self.marker,

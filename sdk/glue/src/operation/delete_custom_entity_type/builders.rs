@@ -26,8 +26,7 @@ impl DeleteCustomEntityTypeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCustomEntityTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeInputBuilder,
+    inner: crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeInputBuilder,
 }
 impl DeleteCustomEntityTypeFluentBuilder {
     /// Creates a new `DeleteCustomEntityType`.
@@ -38,10 +37,7 @@ impl DeleteCustomEntityTypeFluentBuilder {
         }
     }
     /// Access the DeleteCustomEntityType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteCustomEntityTypeFluentBuilder {
             crate::operation::delete_custom_entity_type::DeleteCustomEntityType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteCustomEntityTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteCustomEntityTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteCustomEntityTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DeleteCustomEntityTypeFluentBuilder {
             crate::operation::delete_custom_entity_type::DeleteCustomEntityType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeError>,
     > {
         self.customize_middleware().await
     }

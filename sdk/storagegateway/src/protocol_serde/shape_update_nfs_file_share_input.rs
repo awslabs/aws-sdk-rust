@@ -15,10 +15,7 @@ pub fn ser_update_nfs_file_share_input(
     if let Some(var_4) = &input.nfs_file_share_defaults {
         #[allow(unused_mut)]
         let mut object_5 = object.key("NFSFileShareDefaults").start_object();
-        crate::protocol_serde::shape_nfs_file_share_defaults::ser_nfs_file_share_defaults(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_nfs_file_share_defaults::ser_nfs_file_share_defaults(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.default_storage_class {
@@ -54,10 +51,7 @@ pub fn ser_update_nfs_file_share_input(
     if let Some(var_16) = &input.cache_attributes {
         #[allow(unused_mut)]
         let mut object_17 = object.key("CacheAttributes").start_object();
-        crate::protocol_serde::shape_cache_attributes::ser_cache_attributes(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_cache_attributes::ser_cache_attributes(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.notification_policy {

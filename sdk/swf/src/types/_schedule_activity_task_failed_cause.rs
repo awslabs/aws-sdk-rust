@@ -47,13 +47,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ScheduleActivityTaskFailedCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -84,36 +78,18 @@ pub enum ScheduleActivityTaskFailedCause {
 impl ::std::convert::From<&str> for ScheduleActivityTaskFailedCause {
     fn from(s: &str) -> Self {
         match s {
-            "ACTIVITY_CREATION_RATE_EXCEEDED" => {
-                ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded
-            }
+            "ACTIVITY_CREATION_RATE_EXCEEDED" => ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded,
             "ACTIVITY_ID_ALREADY_IN_USE" => ScheduleActivityTaskFailedCause::ActivityIdAlreadyInUse,
             "ACTIVITY_TYPE_DEPRECATED" => ScheduleActivityTaskFailedCause::ActivityTypeDeprecated,
-            "ACTIVITY_TYPE_DOES_NOT_EXIST" => {
-                ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist
-            }
-            "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED" => {
-                ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined
-            }
-            "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED" => {
-                ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined
-            }
-            "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED" => {
-                ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined
-            }
-            "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED" => {
-                ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined
-            }
-            "DEFAULT_TASK_LIST_UNDEFINED" => {
-                ScheduleActivityTaskFailedCause::DefaultTaskListUndefined
-            }
-            "OPEN_ACTIVITIES_LIMIT_EXCEEDED" => {
-                ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded
-            }
+            "ACTIVITY_TYPE_DOES_NOT_EXIST" => ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist,
+            "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined,
+            "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined,
+            "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined,
+            "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined,
+            "DEFAULT_TASK_LIST_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultTaskListUndefined,
+            "OPEN_ACTIVITIES_LIMIT_EXCEEDED" => ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded,
             "OPERATION_NOT_PERMITTED" => ScheduleActivityTaskFailedCause::OperationNotPermitted,
-            other => ScheduleActivityTaskFailedCause::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ScheduleActivityTaskFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -128,32 +104,16 @@ impl ScheduleActivityTaskFailedCause {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded => {
-                "ACTIVITY_CREATION_RATE_EXCEEDED"
-            }
+            ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded => "ACTIVITY_CREATION_RATE_EXCEEDED",
             ScheduleActivityTaskFailedCause::ActivityIdAlreadyInUse => "ACTIVITY_ID_ALREADY_IN_USE",
             ScheduleActivityTaskFailedCause::ActivityTypeDeprecated => "ACTIVITY_TYPE_DEPRECATED",
-            ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist => {
-                "ACTIVITY_TYPE_DOES_NOT_EXIST"
-            }
-            ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined => {
-                "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED"
-            }
-            ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined => {
-                "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED"
-            }
-            ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined => {
-                "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED"
-            }
-            ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined => {
-                "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED"
-            }
-            ScheduleActivityTaskFailedCause::DefaultTaskListUndefined => {
-                "DEFAULT_TASK_LIST_UNDEFINED"
-            }
-            ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded => {
-                "OPEN_ACTIVITIES_LIMIT_EXCEEDED"
-            }
+            ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist => "ACTIVITY_TYPE_DOES_NOT_EXIST",
+            ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined => "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED",
+            ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined => "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED",
+            ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined => "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED",
+            ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined => "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED",
+            ScheduleActivityTaskFailedCause::DefaultTaskListUndefined => "DEFAULT_TASK_LIST_UNDEFINED",
+            ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded => "OPEN_ACTIVITIES_LIMIT_EXCEEDED",
             ScheduleActivityTaskFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
             ScheduleActivityTaskFailedCause::Unknown(value) => value.as_str(),
         }

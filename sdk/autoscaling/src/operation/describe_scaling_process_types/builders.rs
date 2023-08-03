@@ -26,7 +26,7 @@ impl DescribeScalingProcessTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeScalingProcessTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesInputBuilder,
+    inner: crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesInputBuilder,
 }
 impl DescribeScalingProcessTypesFluentBuilder {
     /// Creates a new `DescribeScalingProcessTypes`.
@@ -37,7 +37,7 @@ impl DescribeScalingProcessTypesFluentBuilder {
         }
     }
     /// Access the DescribeScalingProcessTypes as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeScalingProcessTypesFluentBuilder {
             crate::operation::describe_scaling_process_types::DescribeScalingProcessTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeScalingProcessTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeScalingProcessTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeScalingProcessTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeScalingProcessTypesFluentBuilder {
             crate::operation::describe_scaling_process_types::DescribeScalingProcessTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesError>,
     > {
         self.customize_middleware().await
     }

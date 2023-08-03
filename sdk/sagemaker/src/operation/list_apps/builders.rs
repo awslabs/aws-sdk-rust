@@ -10,10 +10,7 @@ impl ListAppsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_apps::ListAppsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_apps::ListAppsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_apps::ListAppsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_apps();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListAppsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_apps::ListApps,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_apps::ListApps, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_apps::ListAppsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListAppsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListAppsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_apps::ListApps,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_apps::ListApps, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_apps::ListAppsError>,
     > {
         self.customize_middleware().await
@@ -175,18 +163,12 @@ impl ListAppsFluentBuilder {
         self.inner.get_sort_by()
     }
     /// <p>A parameter to search for the domain ID.</p>
-    pub fn domain_id_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_id_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id_equals(input.into());
         self
     }
     /// <p>A parameter to search for the domain ID.</p>
-    pub fn set_domain_id_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_id_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id_equals(input);
         self
     }
@@ -195,18 +177,12 @@ impl ListAppsFluentBuilder {
         self.inner.get_domain_id_equals()
     }
     /// <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be set.</p>
-    pub fn user_profile_name_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_profile_name_equals(input.into());
         self
     }
     /// <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be set.</p>
-    pub fn set_user_profile_name_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_profile_name_equals(input);
         self
     }
@@ -215,18 +191,12 @@ impl ListAppsFluentBuilder {
         self.inner.get_user_profile_name_equals()
     }
     /// <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.</p>
-    pub fn space_name_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn space_name_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.space_name_equals(input.into());
         self
     }
     /// <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.</p>
-    pub fn set_space_name_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_space_name_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_space_name_equals(input);
         self
     }

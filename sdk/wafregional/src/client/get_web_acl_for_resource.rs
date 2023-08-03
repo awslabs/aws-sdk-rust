@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetWebAclForResourceOutput`](crate::operation::get_web_acl_for_resource::GetWebAclForResourceOutput) with field(s):
     ///   - [`web_acl_summary(Option<WebAclSummary>)`](crate::operation::get_web_acl_for_resource::GetWebAclForResourceOutput::web_acl_summary): <p>Information about the web ACL that you specified in the <code>GetWebACLForResource</code> request. If there is no associated resource, a null WebACLSummary is returned.</p>
     /// - On failure, responds with [`SdkError<GetWebACLForResourceError>`](crate::operation::get_web_acl_for_resource::GetWebACLForResourceError)
-    pub fn get_web_acl_for_resource(
-        &self,
-    ) -> crate::operation::get_web_acl_for_resource::builders::GetWebACLForResourceFluentBuilder
-    {
-        crate::operation::get_web_acl_for_resource::builders::GetWebACLForResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_web_acl_for_resource(&self) -> crate::operation::get_web_acl_for_resource::builders::GetWebACLForResourceFluentBuilder {
+        crate::operation::get_web_acl_for_resource::builders::GetWebACLForResourceFluentBuilder::new(self.handle.clone())
     }
 }

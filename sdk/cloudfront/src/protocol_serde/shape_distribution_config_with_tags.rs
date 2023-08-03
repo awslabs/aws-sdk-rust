@@ -7,10 +7,7 @@ pub fn ser_distribution_config_with_tags(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.distribution_config {
         let inner_writer = scope.start_el("DistributionConfig");
-        crate::protocol_serde::shape_distribution_config::ser_distribution_config(
-            var_1,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_distribution_config::ser_distribution_config(var_1, inner_writer)?
     }
     if let Some(var_2) = &input.tags {
         let inner_writer = scope.start_el("Tags");

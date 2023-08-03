@@ -242,10 +242,7 @@ impl UploadBuilder {
         self
     }
     /// <p>When the upload was created.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -477,10 +474,7 @@ impl UploadBuilder {
     /// <li> <p>CURATED: An upload managed by AWS Device Farm.</p> </li>
     /// <li> <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p> </li>
     /// </ul>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::UploadCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::UploadCategory>) -> Self {
         self.category = input;
         self
     }

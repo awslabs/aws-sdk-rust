@@ -22,16 +22,14 @@ impl GetAwsDefaultServiceQuotaInput {
 }
 impl GetAwsDefaultServiceQuotaInput {
     /// Creates a new builder-style object to manufacture [`GetAwsDefaultServiceQuotaInput`](crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaInput).
-    pub fn builder() -> crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaInputBuilder{
+    pub fn builder() -> crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaInputBuilder {
         crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAwsDefaultServiceQuotaInput`](crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAwsDefaultServiceQuotaInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) quota_code: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl GetAwsDefaultServiceQuotaInputBuilder {
         crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaInput {
-                service_code: self.service_code,
-                quota_code: self.quota_code,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaInput {
+            service_code: self.service_code,
+            quota_code: self.quota_code,
+        })
     }
 }

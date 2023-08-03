@@ -41,9 +41,7 @@ impl GetCallAnalyticsJobFluentBuilder {
         }
     }
     /// Access the GetCallAnalyticsJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_call_analytics_job::builders::GetCallAnalyticsJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_call_analytics_job::builders::GetCallAnalyticsJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl GetCallAnalyticsJobFluentBuilder {
             crate::operation::get_call_analytics_job::GetCallAnalyticsJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_call_analytics_job::GetCallAnalyticsJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_call_analytics_job::GetCallAnalyticsJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl GetCallAnalyticsJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl GetCallAnalyticsJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_call_analytics_job::GetCallAnalyticsJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_call_analytics_job::GetCallAnalyticsJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_call_analytics_job::GetCallAnalyticsJobError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl GetCallAnalyticsJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_call_analytics_job::GetCallAnalyticsJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_call_analytics_job::GetCallAnalyticsJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_call_analytics_job::GetCallAnalyticsJobError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +109,17 @@ impl GetCallAnalyticsJobFluentBuilder {
             crate::operation::get_call_analytics_job::GetCallAnalyticsJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_call_analytics_job::GetCallAnalyticsJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_call_analytics_job::GetCallAnalyticsJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Call Analytics job you want information about. Job names are case sensitive.</p>
-    pub fn call_analytics_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn call_analytics_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.call_analytics_job_name(input.into());
         self
     }
     /// <p>The name of the Call Analytics job you want information about. Job names are case sensitive.</p>
-    pub fn set_call_analytics_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_call_analytics_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_call_analytics_job_name(input);
         self
     }

@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateFileSystemOutput {
 }
 impl CreateFileSystemOutput {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemOutput`](crate::operation::create_file_system::CreateFileSystemOutput).
-    pub fn builder() -> crate::operation::create_file_system::builders::CreateFileSystemOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_file_system::builders::CreateFileSystemOutputBuilder {
         crate::operation::create_file_system::builders::CreateFileSystemOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFileSystemOutput`](crate::operation::create_file_system::CreateFileSystemOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFileSystemOutputBuilder {
     pub(crate) file_system: ::std::option::Option<crate::types::FileSystem>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl CreateFileSystemOutputBuilder {
         self
     }
     /// <p>The configuration of the file system that was created.</p>
-    pub fn set_file_system(
-        mut self,
-        input: ::std::option::Option<crate::types::FileSystem>,
-    ) -> Self {
+    pub fn set_file_system(mut self, input: ::std::option::Option<crate::types::FileSystem>) -> Self {
         self.file_system = input;
         self
     }

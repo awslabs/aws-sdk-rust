@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`mac_algorithm(Option<MacAlgorithmSpec>)`](crate::operation::generate_mac::GenerateMacOutput::mac_algorithm): <p>The MAC algorithm that was used to generate the HMAC.</p>
     ///   - [`key_id(Option<String>)`](crate::operation::generate_mac::GenerateMacOutput::key_id): <p>The HMAC KMS key used in the operation.</p>
     /// - On failure, responds with [`SdkError<GenerateMacError>`](crate::operation::generate_mac::GenerateMacError)
-    pub fn generate_mac(
-        &self,
-    ) -> crate::operation::generate_mac::builders::GenerateMacFluentBuilder {
+    pub fn generate_mac(&self) -> crate::operation::generate_mac::builders::GenerateMacFluentBuilder {
         crate::operation::generate_mac::builders::GenerateMacFluentBuilder::new(self.handle.clone())
     }
 }

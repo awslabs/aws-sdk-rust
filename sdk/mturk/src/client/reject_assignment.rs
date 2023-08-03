@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`requester_feedback(impl ::std::convert::Into<String>)`](crate::operation::reject_assignment::builders::RejectAssignmentFluentBuilder::requester_feedback) / [`set_requester_feedback(Option<String>)`](crate::operation::reject_assignment::builders::RejectAssignmentFluentBuilder::set_requester_feedback): <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
     /// - On success, responds with [`RejectAssignmentOutput`](crate::operation::reject_assignment::RejectAssignmentOutput)
     /// - On failure, responds with [`SdkError<RejectAssignmentError>`](crate::operation::reject_assignment::RejectAssignmentError)
-    pub fn reject_assignment(
-        &self,
-    ) -> crate::operation::reject_assignment::builders::RejectAssignmentFluentBuilder {
-        crate::operation::reject_assignment::builders::RejectAssignmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reject_assignment(&self) -> crate::operation::reject_assignment::builders::RejectAssignmentFluentBuilder {
+        crate::operation::reject_assignment::builders::RejectAssignmentFluentBuilder::new(self.handle.clone())
     }
 }

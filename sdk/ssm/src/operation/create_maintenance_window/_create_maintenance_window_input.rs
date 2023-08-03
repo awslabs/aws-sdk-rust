@@ -124,10 +124,7 @@ impl ::std::fmt::Debug for CreateMaintenanceWindowInput {
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("duration", &self.duration);
         formatter.field("cutoff", &self.cutoff);
-        formatter.field(
-            "allow_unassociated_targets",
-            &self.allow_unassociated_targets,
-        );
+        formatter.field("allow_unassociated_targets", &self.allow_unassociated_targets);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -135,9 +132,7 @@ impl ::std::fmt::Debug for CreateMaintenanceWindowInput {
 }
 impl CreateMaintenanceWindowInput {
     /// Creates a new builder-style object to manufacture [`CreateMaintenanceWindowInput`](crate::operation::create_maintenance_window::CreateMaintenanceWindowInput).
-    pub fn builder(
-    ) -> crate::operation::create_maintenance_window::builders::CreateMaintenanceWindowInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_maintenance_window::builders::CreateMaintenanceWindowInputBuilder {
         crate::operation::create_maintenance_window::builders::CreateMaintenanceWindowInputBuilder::default()
     }
 }
@@ -231,18 +226,12 @@ impl CreateMaintenanceWindowInputBuilder {
         &self.schedule
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn schedule_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn set_schedule_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_timezone = input;
         self
     }
@@ -358,10 +347,7 @@ impl CreateMaintenanceWindowInputBuilder {
     /// </ul> <note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -383,22 +369,20 @@ impl CreateMaintenanceWindowInputBuilder {
         crate::operation::create_maintenance_window::CreateMaintenanceWindowInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_maintenance_window::CreateMaintenanceWindowInput {
-                name: self.name,
-                description: self.description,
-                start_date: self.start_date,
-                end_date: self.end_date,
-                schedule: self.schedule,
-                schedule_timezone: self.schedule_timezone,
-                schedule_offset: self.schedule_offset,
-                duration: self.duration,
-                cutoff: self.cutoff,
-                allow_unassociated_targets: self.allow_unassociated_targets,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_maintenance_window::CreateMaintenanceWindowInput {
+            name: self.name,
+            description: self.description,
+            start_date: self.start_date,
+            end_date: self.end_date,
+            schedule: self.schedule,
+            schedule_timezone: self.schedule_timezone,
+            schedule_offset: self.schedule_offset,
+            duration: self.duration,
+            cutoff: self.cutoff,
+            allow_unassociated_targets: self.allow_unassociated_targets,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateMaintenanceWindowInputBuilder {
@@ -413,10 +397,7 @@ impl ::std::fmt::Debug for CreateMaintenanceWindowInputBuilder {
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("duration", &self.duration);
         formatter.field("cutoff", &self.cutoff);
-        formatter.field(
-            "allow_unassociated_targets",
-            &self.allow_unassociated_targets,
-        );
+        formatter.field("allow_unassociated_targets", &self.allow_unassociated_targets);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.finish()

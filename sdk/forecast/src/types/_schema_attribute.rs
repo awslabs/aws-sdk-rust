@@ -32,27 +32,19 @@ impl SchemaAttribute {
 
 /// A builder for [`SchemaAttribute`](crate::types::SchemaAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaAttributeBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_type: ::std::option::Option<crate::types::AttributeType>,
 }
 impl SchemaAttributeBuilder {
     /// <p>The name of the dataset field.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dataset field.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }
@@ -68,10 +60,7 @@ impl SchemaAttributeBuilder {
     }
     /// <p>The data type of the field.</p>
     /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
-    pub fn set_attribute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeType>,
-    ) -> Self {
+    pub fn set_attribute_type(mut self, input: ::std::option::Option<crate::types::AttributeType>) -> Self {
         self.attribute_type = input;
         self
     }

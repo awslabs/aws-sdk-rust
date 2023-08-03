@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeEventTrackerOutput`](crate::operation::describe_event_tracker::DescribeEventTrackerOutput) with field(s):
     ///   - [`event_tracker(Option<EventTracker>)`](crate::operation::describe_event_tracker::DescribeEventTrackerOutput::event_tracker): <p>An object that describes the event tracker.</p>
     /// - On failure, responds with [`SdkError<DescribeEventTrackerError>`](crate::operation::describe_event_tracker::DescribeEventTrackerError)
-    pub fn describe_event_tracker(
-        &self,
-    ) -> crate::operation::describe_event_tracker::builders::DescribeEventTrackerFluentBuilder {
-        crate::operation::describe_event_tracker::builders::DescribeEventTrackerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_event_tracker(&self) -> crate::operation::describe_event_tracker::builders::DescribeEventTrackerFluentBuilder {
+        crate::operation::describe_event_tracker::builders::DescribeEventTrackerFluentBuilder::new(self.handle.clone())
     }
 }

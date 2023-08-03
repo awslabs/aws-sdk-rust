@@ -37,10 +37,7 @@ impl CreateMultiplexProgramFluentBuilder {
         }
     }
     /// Access the CreateMultiplexProgram as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_multiplex_program::builders::CreateMultiplexProgramInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_multiplex_program::builders::CreateMultiplexProgramInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateMultiplexProgramFluentBuilder {
             crate::operation::create_multiplex_program::CreateMultiplexProgram,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multiplex_program::CreateMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multiplex_program::CreateMultiplexProgramError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateMultiplexProgramFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateMultiplexProgramFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_multiplex_program::CreateMultiplexProgramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multiplex_program::CreateMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multiplex_program::CreateMultiplexProgramError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateMultiplexProgramFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_multiplex_program::CreateMultiplexProgramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multiplex_program::CreateMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multiplex_program::CreateMultiplexProgramError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateMultiplexProgramFluentBuilder {
             crate::operation::create_multiplex_program::CreateMultiplexProgram,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multiplex_program::CreateMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multiplex_program::CreateMultiplexProgramError>,
     > {
         self.customize_middleware().await
     }
@@ -138,25 +124,17 @@ impl CreateMultiplexProgramFluentBuilder {
         self.inner.get_multiplex_id()
     }
     /// The settings for this multiplex program.
-    pub fn multiplex_program_settings(
-        mut self,
-        input: crate::types::MultiplexProgramSettings,
-    ) -> Self {
+    pub fn multiplex_program_settings(mut self, input: crate::types::MultiplexProgramSettings) -> Self {
         self.inner = self.inner.multiplex_program_settings(input);
         self
     }
     /// The settings for this multiplex program.
-    pub fn set_multiplex_program_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexProgramSettings>,
-    ) -> Self {
+    pub fn set_multiplex_program_settings(mut self, input: ::std::option::Option<crate::types::MultiplexProgramSettings>) -> Self {
         self.inner = self.inner.set_multiplex_program_settings(input);
         self
     }
     /// The settings for this multiplex program.
-    pub fn get_multiplex_program_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiplexProgramSettings> {
+    pub fn get_multiplex_program_settings(&self) -> &::std::option::Option<crate::types::MultiplexProgramSettings> {
         self.inner.get_multiplex_program_settings()
     }
     /// Name of multiplex program.

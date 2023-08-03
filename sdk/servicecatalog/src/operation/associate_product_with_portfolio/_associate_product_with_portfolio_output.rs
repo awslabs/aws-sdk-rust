@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateProductWithPortfolioOutput {
 }
 impl AssociateProductWithPortfolioOutput {
     /// Creates a new builder-style object to manufacture [`AssociateProductWithPortfolioOutput`](crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioOutput).
-    pub fn builder() -> crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioOutputBuilder{
+    pub fn builder() -> crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioOutputBuilder {
         crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateProductWithPortfolioOutput`](crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateProductWithPortfolioOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl AssociateProductWithPortfolioOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateProductWithPortfolioOutput`](crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioOutput
-    {
+    pub fn build(self) -> crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioOutput {
         crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioOutput {
             _request_id: self._request_id,
         }

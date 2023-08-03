@@ -30,7 +30,7 @@ impl DeleteEmailIdentityPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEmailIdentityPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_email_identity_policy::builders::DeleteEmailIdentityPolicyInputBuilder,
+    inner: crate::operation::delete_email_identity_policy::builders::DeleteEmailIdentityPolicyInputBuilder,
 }
 impl DeleteEmailIdentityPolicyFluentBuilder {
     /// Creates a new `DeleteEmailIdentityPolicy`.
@@ -41,7 +41,7 @@ impl DeleteEmailIdentityPolicyFluentBuilder {
         }
     }
     /// Access the DeleteEmailIdentityPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_email_identity_policy::builders::DeleteEmailIdentityPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_email_identity_policy::builders::DeleteEmailIdentityPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl DeleteEmailIdentityPolicyFluentBuilder {
             crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl DeleteEmailIdentityPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl DeleteEmailIdentityPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl DeleteEmailIdentityPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +109,17 @@ impl DeleteEmailIdentityPolicyFluentBuilder {
             crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The email identity.</p>
-    pub fn email_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_identity(input.into());
         self
     }
     /// <p>The email identity.</p>
-    pub fn set_email_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_identity(input);
         self
     }

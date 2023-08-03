@@ -6,14 +6,11 @@
 pub struct FeatureActivations {
     /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled. If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
     #[doc(hidden)]
-    pub input_prepare_schedule_actions:
-        ::std::option::Option<crate::types::FeatureActivationsInputPrepareScheduleActions>,
+    pub input_prepare_schedule_actions: ::std::option::Option<crate::types::FeatureActivationsInputPrepareScheduleActions>,
 }
 impl FeatureActivations {
     /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled. If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
-    pub fn input_prepare_schedule_actions(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FeatureActivationsInputPrepareScheduleActions> {
+    pub fn input_prepare_schedule_actions(&self) -> ::std::option::Option<&crate::types::FeatureActivationsInputPrepareScheduleActions> {
         self.input_prepare_schedule_actions.as_ref()
     }
 }
@@ -26,19 +23,13 @@ impl FeatureActivations {
 
 /// A builder for [`FeatureActivations`](crate::types::FeatureActivations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeatureActivationsBuilder {
-    pub(crate) input_prepare_schedule_actions:
-        ::std::option::Option<crate::types::FeatureActivationsInputPrepareScheduleActions>,
+    pub(crate) input_prepare_schedule_actions: ::std::option::Option<crate::types::FeatureActivationsInputPrepareScheduleActions>,
 }
 impl FeatureActivationsBuilder {
     /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled. If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
-    pub fn input_prepare_schedule_actions(
-        mut self,
-        input: crate::types::FeatureActivationsInputPrepareScheduleActions,
-    ) -> Self {
+    pub fn input_prepare_schedule_actions(mut self, input: crate::types::FeatureActivationsInputPrepareScheduleActions) -> Self {
         self.input_prepare_schedule_actions = ::std::option::Option::Some(input);
         self
     }
@@ -51,9 +42,7 @@ impl FeatureActivationsBuilder {
         self
     }
     /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled. If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
-    pub fn get_input_prepare_schedule_actions(
-        &self,
-    ) -> &::std::option::Option<crate::types::FeatureActivationsInputPrepareScheduleActions> {
+    pub fn get_input_prepare_schedule_actions(&self) -> &::std::option::Option<crate::types::FeatureActivationsInputPrepareScheduleActions> {
         &self.input_prepare_schedule_actions
     }
     /// Consumes the builder and constructs a [`FeatureActivations`](crate::types::FeatureActivations).

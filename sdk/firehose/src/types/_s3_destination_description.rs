@@ -55,15 +55,11 @@ impl S3DestinationDescription {
         self.compression_format.as_ref()
     }
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
 }
@@ -76,9 +72,7 @@ impl S3DestinationDescription {
 
 /// A builder for [`S3DestinationDescription`](crate::types::S3DestinationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3DestinationDescriptionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
@@ -86,10 +80,8 @@ pub struct S3DestinationDescriptionBuilder {
     pub(crate) error_output_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) buffering_hints: ::std::option::Option<crate::types::BufferingHints>,
     pub(crate) compression_format: ::std::option::Option<crate::types::CompressionFormat>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::EncryptionConfiguration>,
-    pub(crate) cloud_watch_logging_options:
-        ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
 }
 impl S3DestinationDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -135,18 +127,12 @@ impl S3DestinationDescriptionBuilder {
         &self.prefix
     }
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
-    pub fn error_output_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_output_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_output_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
-    pub fn set_error_output_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_output_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_output_prefix = input;
         self
     }
@@ -160,10 +146,7 @@ impl S3DestinationDescriptionBuilder {
         self
     }
     /// <p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>
-    pub fn set_buffering_hints(
-        mut self,
-        input: ::std::option::Option<crate::types::BufferingHints>,
-    ) -> Self {
+    pub fn set_buffering_hints(mut self, input: ::std::option::Option<crate::types::BufferingHints>) -> Self {
         self.buffering_hints = input;
         self
     }
@@ -177,61 +160,40 @@ impl S3DestinationDescriptionBuilder {
         self
     }
     /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
-    pub fn set_compression_format(
-        mut self,
-        input: ::std::option::Option<crate::types::CompressionFormat>,
-    ) -> Self {
+    pub fn set_compression_format(mut self, input: ::std::option::Option<crate::types::CompressionFormat>) -> Self {
         self.compression_format = input;
         self
     }
     /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
-    pub fn get_compression_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::CompressionFormat> {
+    pub fn get_compression_format(&self) -> &::std::option::Option<crate::types::CompressionFormat> {
         &self.compression_format
     }
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(
-        mut self,
-        input: crate::types::CloudWatchLoggingOptions,
-    ) -> Self {
+    pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOptions) -> Self {
         self.cloud_watch_logging_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn set_cloud_watch_logging_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    ) -> Self {
+    pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
         self.cloud_watch_logging_options = input;
         self
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn get_cloud_watch_logging_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
+    pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
     /// Consumes the builder and constructs a [`S3DestinationDescription`](crate::types::S3DestinationDescription).

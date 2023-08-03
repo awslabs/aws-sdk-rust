@@ -15,35 +15,25 @@ impl DescribeEndpointConfigInput {
 }
 impl DescribeEndpointConfigInput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointConfigInput`](crate::operation::describe_endpoint_config::DescribeEndpointConfigInput).
-    pub fn builder(
-    ) -> crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigInputBuilder {
         crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointConfigInput`](crate::operation::describe_endpoint_config::DescribeEndpointConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointConfigInputBuilder {
     pub(crate) endpoint_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEndpointConfigInputBuilder {
     /// <p>The name of the endpoint configuration.</p>
-    pub fn endpoint_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the endpoint configuration.</p>
-    pub fn set_endpoint_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_config_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DescribeEndpointConfigInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEndpointConfigInput`](crate::operation::describe_endpoint_config::DescribeEndpointConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_endpoint_config::DescribeEndpointConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_endpoint_config::DescribeEndpointConfigInput {
-                endpoint_config_name: self.endpoint_config_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_endpoint_config::DescribeEndpointConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_endpoint_config::DescribeEndpointConfigInput {
+            endpoint_config_name: self.endpoint_config_name,
+        })
     }
 }

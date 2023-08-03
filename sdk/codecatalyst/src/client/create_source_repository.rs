@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_source_repository::CreateSourceRepositoryOutput::name): <p>The name of the source repository.</p>
     ///   - [`description(Option<String>)`](crate::operation::create_source_repository::CreateSourceRepositoryOutput::description): <p>The description of the source repository.</p>
     /// - On failure, responds with [`SdkError<CreateSourceRepositoryError>`](crate::operation::create_source_repository::CreateSourceRepositoryError)
-    pub fn create_source_repository(
-        &self,
-    ) -> crate::operation::create_source_repository::builders::CreateSourceRepositoryFluentBuilder
-    {
+    pub fn create_source_repository(&self) -> crate::operation::create_source_repository::builders::CreateSourceRepositoryFluentBuilder {
         crate::operation::create_source_repository::builders::CreateSourceRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

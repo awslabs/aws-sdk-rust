@@ -36,9 +36,7 @@ impl ClassifyDocumentInput {
         self.bytes.as_ref()
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn document_reader_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentReaderConfig> {
+    pub fn document_reader_config(&self) -> ::std::option::Option<&crate::types::DocumentReaderConfig> {
         self.document_reader_config.as_ref()
     }
 }
@@ -54,8 +52,7 @@ impl ::std::fmt::Debug for ClassifyDocumentInput {
 }
 impl ClassifyDocumentInput {
     /// Creates a new builder-style object to manufacture [`ClassifyDocumentInput`](crate::operation::classify_document::ClassifyDocumentInput).
-    pub fn builder() -> crate::operation::classify_document::builders::ClassifyDocumentInputBuilder
-    {
+    pub fn builder() -> crate::operation::classify_document::builders::ClassifyDocumentInputBuilder {
         crate::operation::classify_document::builders::ClassifyDocumentInputBuilder::default()
     }
 }
@@ -127,26 +124,18 @@ impl ClassifyDocumentInputBuilder {
         self
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn set_document_reader_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentReaderConfig>,
-    ) -> Self {
+    pub fn set_document_reader_config(mut self, input: ::std::option::Option<crate::types::DocumentReaderConfig>) -> Self {
         self.document_reader_config = input;
         self
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn get_document_reader_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentReaderConfig> {
+    pub fn get_document_reader_config(&self) -> &::std::option::Option<crate::types::DocumentReaderConfig> {
         &self.document_reader_config
     }
     /// Consumes the builder and constructs a [`ClassifyDocumentInput`](crate::operation::classify_document::ClassifyDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::classify_document::ClassifyDocumentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::classify_document::ClassifyDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::classify_document::ClassifyDocumentInput {
             text: self.text,
             endpoint_arn: self.endpoint_arn,

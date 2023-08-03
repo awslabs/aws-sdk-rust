@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`RegisterDefaultPatchBaselineOutput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput) with field(s):
     ///   - [`baseline_id(Option<String>)`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput::baseline_id): <p>The ID of the default patch baseline.</p>
     /// - On failure, responds with [`SdkError<RegisterDefaultPatchBaselineError>`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineError)
-    pub fn register_default_patch_baseline(&self) -> crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineFluentBuilder{
+    pub fn register_default_patch_baseline(
+        &self,
+    ) -> crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineFluentBuilder {
         crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineFluentBuilder::new(self.handle.clone())
     }
 }

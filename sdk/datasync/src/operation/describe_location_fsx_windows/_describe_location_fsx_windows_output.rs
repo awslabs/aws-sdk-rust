@@ -56,16 +56,14 @@ impl ::aws_http::request_id::RequestId for DescribeLocationFsxWindowsOutput {
 }
 impl DescribeLocationFsxWindowsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxWindowsOutput`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput).
-    pub fn builder() -> crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsOutputBuilder {
         crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationFsxWindowsOutput`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationFsxWindowsOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,
@@ -109,27 +107,19 @@ impl DescribeLocationFsxWindowsOutputBuilder {
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
-    pub fn security_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
         v.push(input.into());
         self.security_group_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
-    pub fn set_security_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
-    pub fn get_security_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_arns
     }
     /// <p>The time that the FSx for Windows File Server location was created.</p>
@@ -138,10 +128,7 @@ impl DescribeLocationFsxWindowsOutputBuilder {
         self
     }
     /// <p>The time that the FSx for Windows File Server location was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -187,9 +174,7 @@ impl DescribeLocationFsxWindowsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLocationFsxWindowsOutput`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput {
+    pub fn build(self) -> crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput {
         crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput {
             location_arn: self.location_arn,
             location_uri: self.location_uri,

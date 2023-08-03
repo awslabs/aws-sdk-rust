@@ -45,9 +45,7 @@ impl RouteTableAssociation {
         self.gateway_id.as_deref()
     }
     /// <p>The state of the association.</p>
-    pub fn association_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RouteTableAssociationState> {
+    pub fn association_state(&self) -> ::std::option::Option<&crate::types::RouteTableAssociationState> {
         self.association_state.as_ref()
     }
 }
@@ -60,9 +58,7 @@ impl RouteTableAssociation {
 
 /// A builder for [`RouteTableAssociation`](crate::types::RouteTableAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteTableAssociationBuilder {
     pub(crate) main: ::std::option::Option<bool>,
     pub(crate) route_table_association_id: ::std::option::Option<::std::string::String>,
@@ -87,18 +83,12 @@ impl RouteTableAssociationBuilder {
         &self.main
     }
     /// <p>The ID of the association.</p>
-    pub fn route_table_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the association.</p>
-    pub fn set_route_table_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_table_association_id = input;
         self
     }
@@ -107,18 +97,12 @@ impl RouteTableAssociationBuilder {
         &self.route_table_association_id
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_table_id = input;
         self
     }
@@ -160,17 +144,12 @@ impl RouteTableAssociationBuilder {
         self
     }
     /// <p>The state of the association.</p>
-    pub fn set_association_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteTableAssociationState>,
-    ) -> Self {
+    pub fn set_association_state(mut self, input: ::std::option::Option<crate::types::RouteTableAssociationState>) -> Self {
         self.association_state = input;
         self
     }
     /// <p>The state of the association.</p>
-    pub fn get_association_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::RouteTableAssociationState> {
+    pub fn get_association_state(&self) -> &::std::option::Option<crate::types::RouteTableAssociationState> {
         &self.association_state
     }
     /// Consumes the builder and constructs a [`RouteTableAssociation`](crate::types::RouteTableAssociation).

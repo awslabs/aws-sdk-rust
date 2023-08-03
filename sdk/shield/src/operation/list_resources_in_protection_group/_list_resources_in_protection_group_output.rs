@@ -32,16 +32,14 @@ impl ::aws_http::request_id::RequestId for ListResourcesInProtectionGroupOutput 
 }
 impl ListResourcesInProtectionGroupOutput {
     /// Creates a new builder-style object to manufacture [`ListResourcesInProtectionGroupOutput`](crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput).
-    pub fn builder() -> crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupOutputBuilder{
+    pub fn builder() -> crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupOutputBuilder {
         crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourcesInProtectionGroupOutput`](crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourcesInProtectionGroupOutputBuilder {
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,27 +51,19 @@ impl ListResourcesInProtectionGroupOutputBuilder {
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
-    pub fn get_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_arns
     }
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
@@ -106,10 +96,7 @@ impl ListResourcesInProtectionGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResourcesInProtectionGroupOutput`](crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput
-    {
+    pub fn build(self) -> crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput {
         crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput {
             resource_arns: self.resource_arns,
             next_token: self.next_token,

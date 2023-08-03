@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateQuerySuggestionsConfigOutput {
 }
 impl UpdateQuerySuggestionsConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateQuerySuggestionsConfigOutput`](crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigOutput).
-    pub fn builder() -> crate::operation::update_query_suggestions_config::builders::UpdateQuerySuggestionsConfigOutputBuilder{
+    pub fn builder() -> crate::operation::update_query_suggestions_config::builders::UpdateQuerySuggestionsConfigOutputBuilder {
         crate::operation::update_query_suggestions_config::builders::UpdateQuerySuggestionsConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateQuerySuggestionsConfigOutput`](crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQuerySuggestionsConfigOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateQuerySuggestionsConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateQuerySuggestionsConfigOutput`](crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigOutput {
+    pub fn build(self) -> crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigOutput {
         crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigOutput {
             _request_id: self._request_id,
         }

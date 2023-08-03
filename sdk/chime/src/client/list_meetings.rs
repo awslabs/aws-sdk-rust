@@ -13,11 +13,7 @@ impl super::Client {
     #[deprecated(
         note = "ListMeetings is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API."
     )]
-    pub fn list_meetings(
-        &self,
-    ) -> crate::operation::list_meetings::builders::ListMeetingsFluentBuilder {
-        crate::operation::list_meetings::builders::ListMeetingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_meetings(&self) -> crate::operation::list_meetings::builders::ListMeetingsFluentBuilder {
+        crate::operation::list_meetings::builders::ListMeetingsFluentBuilder::new(self.handle.clone())
     }
 }

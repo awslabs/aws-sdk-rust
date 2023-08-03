@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AccessMethodType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for AccessMethodType {
             "CA_REPOSITORY" => AccessMethodType::CaRepository,
             "RESOURCE_PKI_MANIFEST" => AccessMethodType::ResourcePkiManifest,
             "RESOURCE_PKI_NOTIFY" => AccessMethodType::ResourcePkiNotify,
-            other => {
-                AccessMethodType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AccessMethodType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl AccessMethodType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CA_REPOSITORY",
-            "RESOURCE_PKI_MANIFEST",
-            "RESOURCE_PKI_NOTIFY",
-        ]
+        &["CA_REPOSITORY", "RESOURCE_PKI_MANIFEST", "RESOURCE_PKI_NOTIFY"]
     }
 }
 impl ::std::convert::AsRef<str> for AccessMethodType {

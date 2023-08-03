@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeUpdateActionsOutput {
 }
 impl DescribeUpdateActionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUpdateActionsOutput`](crate::operation::describe_update_actions::DescribeUpdateActionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_update_actions::builders::DescribeUpdateActionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_update_actions::builders::DescribeUpdateActionsOutputBuilder {
         crate::operation::describe_update_actions::builders::DescribeUpdateActionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUpdateActionsOutput`](crate::operation::describe_update_actions::DescribeUpdateActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUpdateActionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) update_actions: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAction>>,
@@ -72,17 +68,12 @@ impl DescribeUpdateActionsOutputBuilder {
         self
     }
     /// <p>Returns a list of update actions</p>
-    pub fn set_update_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAction>>,
-    ) -> Self {
+    pub fn set_update_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAction>>) -> Self {
         self.update_actions = input;
         self
     }
     /// <p>Returns a list of update actions</p>
-    pub fn get_update_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateAction>> {
+    pub fn get_update_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateAction>> {
         &self.update_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

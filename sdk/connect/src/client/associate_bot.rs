@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`lex_v2_bot(LexV2Bot)`](crate::operation::associate_bot::builders::AssociateBotFluentBuilder::lex_v2_bot) / [`set_lex_v2_bot(Option<LexV2Bot>)`](crate::operation::associate_bot::builders::AssociateBotFluentBuilder::set_lex_v2_bot): <p>The Amazon Lex V2 bot to associate with the instance.</p>
     /// - On success, responds with [`AssociateBotOutput`](crate::operation::associate_bot::AssociateBotOutput)
     /// - On failure, responds with [`SdkError<AssociateBotError>`](crate::operation::associate_bot::AssociateBotError)
-    pub fn associate_bot(
-        &self,
-    ) -> crate::operation::associate_bot::builders::AssociateBotFluentBuilder {
-        crate::operation::associate_bot::builders::AssociateBotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_bot(&self) -> crate::operation::associate_bot::builders::AssociateBotFluentBuilder {
+        crate::operation::associate_bot::builders::AssociateBotFluentBuilder::new(self.handle.clone())
     }
 }

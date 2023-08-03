@@ -37,9 +37,7 @@ impl ImageFailure {
 
 /// A builder for [`ImageFailure`](crate::types::ImageFailure).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageFailureBuilder {
     pub(crate) image_id: ::std::option::Option<crate::types::ImageIdentifier>,
     pub(crate) failure_code: ::std::option::Option<crate::types::ImageFailureCode>,
@@ -52,10 +50,7 @@ impl ImageFailureBuilder {
         self
     }
     /// <p>The image ID associated with the failure.</p>
-    pub fn set_image_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageIdentifier>,
-    ) -> Self {
+    pub fn set_image_id(mut self, input: ::std::option::Option<crate::types::ImageIdentifier>) -> Self {
         self.image_id = input;
         self
     }
@@ -69,10 +64,7 @@ impl ImageFailureBuilder {
         self
     }
     /// <p>The code associated with the failure.</p>
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageFailureCode>,
-    ) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::ImageFailureCode>) -> Self {
         self.failure_code = input;
         self
     }
@@ -81,18 +73,12 @@ impl ImageFailureBuilder {
         &self.failure_code
     }
     /// <p>The reason for the failure.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the failure.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

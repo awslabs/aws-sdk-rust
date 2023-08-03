@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeObservationOutput`](crate::operation::describe_observation::DescribeObservationOutput) with field(s):
     ///   - [`observation(Option<Observation>)`](crate::operation::describe_observation::DescribeObservationOutput::observation): <p>Information about the observation.</p>
     /// - On failure, responds with [`SdkError<DescribeObservationError>`](crate::operation::describe_observation::DescribeObservationError)
-    pub fn describe_observation(
-        &self,
-    ) -> crate::operation::describe_observation::builders::DescribeObservationFluentBuilder {
-        crate::operation::describe_observation::builders::DescribeObservationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_observation(&self) -> crate::operation::describe_observation::builders::DescribeObservationFluentBuilder {
+        crate::operation::describe_observation::builders::DescribeObservationFluentBuilder::new(self.handle.clone())
     }
 }

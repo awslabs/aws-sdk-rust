@@ -30,16 +30,14 @@ impl CreateAppCookieStickinessPolicyInput {
 }
 impl CreateAppCookieStickinessPolicyInput {
     /// Creates a new builder-style object to manufacture [`CreateAppCookieStickinessPolicyInput`](crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyInput).
-    pub fn builder() -> crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyInputBuilder{
+    pub fn builder() -> crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyInputBuilder {
         crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppCookieStickinessPolicyInput`](crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppCookieStickinessPolicyInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct CreateAppCookieStickinessPolicyInputBuilder {
 }
 impl CreateAppCookieStickinessPolicyInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -103,13 +95,10 @@ impl CreateAppCookieStickinessPolicyInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyInput {
-                load_balancer_name: self.load_balancer_name
-                ,
-                policy_name: self.policy_name
-                ,
-                cookie_name: self.cookie_name
-                ,
-            }
+                load_balancer_name: self.load_balancer_name,
+                policy_name: self.policy_name,
+                cookie_name: self.cookie_name,
+            },
         )
     }
 }

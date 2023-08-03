@@ -24,9 +24,7 @@ pub struct CreateDeploymentInput {
     pub cache_cluster_size: ::std::option::Option<crate::types::CacheClusterSize>,
     /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
     #[doc(hidden)]
-    pub variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
     #[doc(hidden)]
     pub canary_settings: ::std::option::Option<crate::types::DeploymentCanarySettings>,
@@ -60,17 +58,11 @@ impl CreateDeploymentInput {
         self.cache_cluster_size.as_ref()
     }
     /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
-    pub fn variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.variables.as_ref()
     }
     /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
-    pub fn canary_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeploymentCanarySettings> {
+    pub fn canary_settings(&self) -> ::std::option::Option<&crate::types::DeploymentCanarySettings> {
         self.canary_settings.as_ref()
     }
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
@@ -80,17 +72,14 @@ impl CreateDeploymentInput {
 }
 impl CreateDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
-    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
         crate::operation::create_deployment::builders::CreateDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeploymentInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
@@ -98,9 +87,7 @@ pub struct CreateDeploymentInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) cache_cluster_enabled: ::std::option::Option<bool>,
     pub(crate) cache_cluster_size: ::std::option::Option<crate::types::CacheClusterSize>,
-    pub(crate) variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) canary_settings: ::std::option::Option<crate::types::DeploymentCanarySettings>,
     pub(crate) tracing_enabled: ::std::option::Option<bool>,
 }
@@ -134,18 +121,12 @@ impl CreateDeploymentInputBuilder {
         &self.stage_name
     }
     /// <p>The description of the Stage resource for the Deployment resource to create.</p>
-    pub fn stage_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stage_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the Stage resource for the Deployment resource to create.</p>
-    pub fn set_stage_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stage_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_description = input;
         self
     }
@@ -187,10 +168,7 @@ impl CreateDeploymentInputBuilder {
         self
     }
     /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
-    pub fn set_cache_cluster_size(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheClusterSize>,
-    ) -> Self {
+    pub fn set_cache_cluster_size(mut self, input: ::std::option::Option<crate::types::CacheClusterSize>) -> Self {
         self.cache_cluster_size = input;
         self
     }
@@ -203,32 +181,19 @@ impl CreateDeploymentInputBuilder {
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
     /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
-    pub fn variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.variables = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
-    pub fn set_variables(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.variables = input;
         self
     }
     /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
-    pub fn get_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.variables
     }
     /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
@@ -237,17 +202,12 @@ impl CreateDeploymentInputBuilder {
         self
     }
     /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
-    pub fn set_canary_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentCanarySettings>,
-    ) -> Self {
+    pub fn set_canary_settings(mut self, input: ::std::option::Option<crate::types::DeploymentCanarySettings>) -> Self {
         self.canary_settings = input;
         self
     }
     /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
-    pub fn get_canary_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentCanarySettings> {
+    pub fn get_canary_settings(&self) -> &::std::option::Option<crate::types::DeploymentCanarySettings> {
         &self.canary_settings
     }
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
@@ -267,10 +227,7 @@ impl CreateDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_deployment::CreateDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentInput {
             rest_api_id: self.rest_api_id,
             stage_name: self.stage_name,

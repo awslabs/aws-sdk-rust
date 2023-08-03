@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`compatible_images(Option<Vec<CompatibleImage>>)`](crate::operation::list_compatible_images::ListCompatibleImagesOutput::compatible_images): <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_compatible_images::ListCompatibleImagesOutput::next_token): <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>
     /// - On failure, responds with [`SdkError<ListCompatibleImagesError>`](crate::operation::list_compatible_images::ListCompatibleImagesError)
-    pub fn list_compatible_images(
-        &self,
-    ) -> crate::operation::list_compatible_images::builders::ListCompatibleImagesFluentBuilder {
-        crate::operation::list_compatible_images::builders::ListCompatibleImagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_compatible_images(&self) -> crate::operation::list_compatible_images::builders::ListCompatibleImagesFluentBuilder {
+        crate::operation::list_compatible_images::builders::ListCompatibleImagesFluentBuilder::new(self.handle.clone())
     }
 }

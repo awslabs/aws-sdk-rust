@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for ImportCertificateOutput {
 }
 impl ImportCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ImportCertificateOutput`](crate::operation::import_certificate::ImportCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::import_certificate::builders::ImportCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::import_certificate::builders::ImportCertificateOutputBuilder {
         crate::operation::import_certificate::builders::ImportCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportCertificateOutput`](crate::operation::import_certificate::ImportCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportCertificateOutputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ImportCertificateOutputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }

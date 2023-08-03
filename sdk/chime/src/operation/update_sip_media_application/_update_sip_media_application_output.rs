@@ -10,9 +10,7 @@ pub struct UpdateSipMediaApplicationOutput {
 }
 impl UpdateSipMediaApplicationOutput {
     /// <p>The updated SIP media application details.</p>
-    pub fn sip_media_application(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SipMediaApplication> {
+    pub fn sip_media_application(&self) -> ::std::option::Option<&crate::types::SipMediaApplication> {
         self.sip_media_application.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateSipMediaApplicationOutput {
 }
 impl UpdateSipMediaApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSipMediaApplicationOutput`](crate::operation::update_sip_media_application::UpdateSipMediaApplicationOutput).
-    pub fn builder() -> crate::operation::update_sip_media_application::builders::UpdateSipMediaApplicationOutputBuilder{
+    pub fn builder() -> crate::operation::update_sip_media_application::builders::UpdateSipMediaApplicationOutputBuilder {
         crate::operation::update_sip_media_application::builders::UpdateSipMediaApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSipMediaApplicationOutput`](crate::operation::update_sip_media_application::UpdateSipMediaApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSipMediaApplicationOutputBuilder {
     pub(crate) sip_media_application: ::std::option::Option<crate::types::SipMediaApplication>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl UpdateSipMediaApplicationOutputBuilder {
         self
     }
     /// <p>The updated SIP media application details.</p>
-    pub fn set_sip_media_application(
-        mut self,
-        input: ::std::option::Option<crate::types::SipMediaApplication>,
-    ) -> Self {
+    pub fn set_sip_media_application(mut self, input: ::std::option::Option<crate::types::SipMediaApplication>) -> Self {
         self.sip_media_application = input;
         self
     }
     /// <p>The updated SIP media application details.</p>
-    pub fn get_sip_media_application(
-        &self,
-    ) -> &::std::option::Option<crate::types::SipMediaApplication> {
+    pub fn get_sip_media_application(&self) -> &::std::option::Option<crate::types::SipMediaApplication> {
         &self.sip_media_application
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl UpdateSipMediaApplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSipMediaApplicationOutput`](crate::operation::update_sip_media_application::UpdateSipMediaApplicationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_sip_media_application::UpdateSipMediaApplicationOutput {
+    pub fn build(self) -> crate::operation::update_sip_media_application::UpdateSipMediaApplicationOutput {
         crate::operation::update_sip_media_application::UpdateSipMediaApplicationOutput {
             sip_media_application: self.sip_media_application,
             _request_id: self._request_id,

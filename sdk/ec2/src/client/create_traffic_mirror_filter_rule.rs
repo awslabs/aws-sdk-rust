@@ -19,7 +19,9 @@ impl super::Client {
     ///   - [`traffic_mirror_filter_rule(Option<TrafficMirrorFilterRule>)`](crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleOutput::traffic_mirror_filter_rule): <p>The Traffic Mirror rule.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleOutput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     /// - On failure, responds with [`SdkError<CreateTrafficMirrorFilterRuleError>`](crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleError)
-    pub fn create_traffic_mirror_filter_rule(&self) -> crate::operation::create_traffic_mirror_filter_rule::builders::CreateTrafficMirrorFilterRuleFluentBuilder{
+    pub fn create_traffic_mirror_filter_rule(
+        &self,
+    ) -> crate::operation::create_traffic_mirror_filter_rule::builders::CreateTrafficMirrorFilterRuleFluentBuilder {
         crate::operation::create_traffic_mirror_filter_rule::builders::CreateTrafficMirrorFilterRuleFluentBuilder::new(self.handle.clone())
     }
 }

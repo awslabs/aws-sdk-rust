@@ -51,9 +51,7 @@ impl HostProperties {
 
 /// A builder for [`HostProperties`](crate::types::HostProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HostPropertiesBuilder {
     pub(crate) cores: ::std::option::Option<i32>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl HostPropertiesBuilder {
         &self.cores
     }
     /// <p>The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports multiple instance types, no <b>instanceType</b> is returned.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports multiple instance types, no <b>instanceType</b> is returned.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -97,18 +89,12 @@ impl HostPropertiesBuilder {
         &self.instance_type
     }
     /// <p>The instance family supported by the Dedicated Host. For example, <code>m5</code>.</p>
-    pub fn instance_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance family supported by the Dedicated Host. For example, <code>m5</code>.</p>
-    pub fn set_instance_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_family = input;
         self
     }

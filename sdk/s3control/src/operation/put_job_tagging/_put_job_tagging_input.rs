@@ -36,9 +36,7 @@ impl PutJobTaggingInput {
 
 /// A builder for [`PutJobTaggingInput`](crate::operation::put_job_tagging::PutJobTaggingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutJobTaggingInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl PutJobTaggingInputBuilder {
         self
     }
     /// <p>The set of tags to associate with the S3 Batch Operations job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -99,10 +94,7 @@ impl PutJobTaggingInputBuilder {
     /// Consumes the builder and constructs a [`PutJobTaggingInput`](crate::operation::put_job_tagging::PutJobTaggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_job_tagging::PutJobTaggingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_job_tagging::PutJobTaggingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_job_tagging::PutJobTaggingInput {
             account_id: self.account_id,
             job_id: self.job_id,

@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`organization_conformance_packs(Option<Vec<OrganizationConformancePack>>)`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksOutput::organization_conformance_packs): <p>Returns a list of OrganizationConformancePacks objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksOutput::next_token): <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationConformancePacksError>`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksError)
-    pub fn describe_organization_conformance_packs(&self) -> crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder{
-        crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder::new(self.handle.clone())
+    pub fn describe_organization_conformance_packs(
+        &self,
+    ) -> crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder {
+        crate::operation::describe_organization_conformance_packs::builders::DescribeOrganizationConformancePacksFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

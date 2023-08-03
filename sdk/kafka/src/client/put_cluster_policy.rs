@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`PutClusterPolicyOutput`](crate::operation::put_cluster_policy::PutClusterPolicyOutput) with field(s):
     ///   - [`current_version(Option<String>)`](crate::operation::put_cluster_policy::PutClusterPolicyOutput::current_version): <p>The policy version.</p>
     /// - On failure, responds with [`SdkError<PutClusterPolicyError>`](crate::operation::put_cluster_policy::PutClusterPolicyError)
-    pub fn put_cluster_policy(
-        &self,
-    ) -> crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder {
-        crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_cluster_policy(&self) -> crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder {
+        crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder::new(self.handle.clone())
     }
 }

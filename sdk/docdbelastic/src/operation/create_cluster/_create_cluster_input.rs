@@ -62,9 +62,7 @@ pub struct CreateClusterInput {
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be assigned to the new Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateClusterInput {
     /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p>
@@ -136,11 +134,7 @@ impl CreateClusterInput {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The tags to be assigned to the new Elastic DocumentDB cluster.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -157,10 +151,7 @@ impl ::std::fmt::Debug for CreateClusterInput {
         formatter.field("subnet_ids", &self.subnet_ids);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("client_token", &self.client_token);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -182,15 +173,12 @@ pub struct CreateClusterInputBuilder {
     pub(crate) admin_user_password: ::std::option::Option<::std::string::String>,
     pub(crate) shard_capacity: ::std::option::Option<i32>,
     pub(crate) shard_count: ::std::option::Option<i32>,
-    pub(crate) vpc_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p>
@@ -249,10 +237,7 @@ impl CreateClusterInputBuilder {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>Cannot be a reserved word.</p> </li>
     /// </ul>
-    pub fn admin_user_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_user_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -263,10 +248,7 @@ impl CreateClusterInputBuilder {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>Cannot be a reserved word.</p> </li>
     /// </ul>
-    pub fn set_admin_user_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_user_name = input;
         self
     }
@@ -286,10 +268,7 @@ impl CreateClusterInputBuilder {
     /// <li> <p>Must contain from 8 to 100 characters.</p> </li>
     /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li>
     /// </ul>
-    pub fn admin_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_user_password = ::std::option::Option::Some(input.into());
         self
     }
@@ -299,10 +278,7 @@ impl CreateClusterInputBuilder {
     /// <li> <p>Must contain from 8 to 100 characters.</p> </li>
     /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li>
     /// </ul>
-    pub fn set_admin_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_user_password = input;
         self
     }
@@ -348,27 +324,19 @@ impl CreateClusterInputBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
         self
     }
     /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// Appends an item to `subnet_ids`.
@@ -383,10 +351,7 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>The Amazon EC2 subnet IDs for the new Elastic DocumentDB cluster.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -433,10 +398,7 @@ impl CreateClusterInputBuilder {
     /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -445,10 +407,7 @@ impl CreateClusterInputBuilder {
     /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
@@ -457,9 +416,7 @@ impl CreateClusterInputBuilder {
     /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// Adds a key-value pair to `tags`.
@@ -467,41 +424,25 @@ impl CreateClusterInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be assigned to the new Elastic DocumentDB cluster.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to be assigned to the new Elastic DocumentDB cluster.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to be assigned to the new Elastic DocumentDB cluster.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cluster::CreateClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
             cluster_name: self.cluster_name,
             auth_type: self.auth_type,
@@ -531,10 +472,7 @@ impl ::std::fmt::Debug for CreateClusterInputBuilder {
         formatter.field("subnet_ids", &self.subnet_ids);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("client_token", &self.client_token);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

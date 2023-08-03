@@ -16,8 +16,7 @@ pub struct CreateIndexInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration:
-        ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>A description for the index.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -29,8 +28,7 @@ pub struct CreateIndexInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The user token configuration.</p>
     #[doc(hidden)]
-    pub user_token_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
+    pub user_token_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
     /// <p>The user context policy.</p>
     /// <dl>
     /// <dt>
@@ -50,8 +48,7 @@ pub struct CreateIndexInput {
     pub user_context_policy: ::std::option::Option<crate::types::UserContextPolicy>,
     /// <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     #[doc(hidden)]
-    pub user_group_resolution_configuration:
-        ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
+    pub user_group_resolution_configuration: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
 }
 impl CreateIndexInput {
     /// <p>A name for the index.</p>
@@ -69,9 +66,7 @@ impl CreateIndexInput {
         self.role_arn.as_deref()
     }
     /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    pub fn server_side_encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>A description for the index.</p>
@@ -87,9 +82,7 @@ impl CreateIndexInput {
         self.tags.as_deref()
     }
     /// <p>The user token configuration.</p>
-    pub fn user_token_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UserTokenConfiguration]> {
+    pub fn user_token_configurations(&self) -> ::std::option::Option<&[crate::types::UserTokenConfiguration]> {
         self.user_token_configurations.as_deref()
     }
     /// <p>The user context policy.</p>
@@ -111,9 +104,7 @@ impl CreateIndexInput {
         self.user_context_policy.as_ref()
     }
     /// <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn user_group_resolution_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UserGroupResolutionConfiguration> {
+    pub fn user_group_resolution_configuration(&self) -> ::std::option::Option<&crate::types::UserGroupResolutionConfiguration> {
         self.user_group_resolution_configuration.as_ref()
     }
 }
@@ -126,23 +117,18 @@ impl CreateIndexInput {
 
 /// A builder for [`CreateIndexInput`](crate::operation::create_index::CreateIndexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIndexInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) edition: ::std::option::Option<crate::types::IndexEdition>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) server_side_encryption_configuration:
-        ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) user_token_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
+    pub(crate) user_token_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
     pub(crate) user_context_policy: ::std::option::Option<crate::types::UserContextPolicy>,
-    pub(crate) user_group_resolution_configuration:
-        ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
+    pub(crate) user_group_resolution_configuration: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
 }
 impl CreateIndexInputBuilder {
     /// <p>A name for the index.</p>
@@ -194,25 +180,17 @@ impl CreateIndexInputBuilder {
         &self.role_arn
     }
     /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    pub fn server_side_encryption_configuration(
-        mut self,
-        input: crate::types::ServerSideEncryptionConfiguration,
-    ) -> Self {
+    pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.server_side_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    pub fn set_server_side_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
         self.server_side_encryption_configuration = input;
         self
     }
     /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    pub fn get_server_side_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+    pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
         &self.server_side_encryption_configuration
     }
     /// <p>A description for the index.</p>
@@ -255,10 +233,7 @@ impl CreateIndexInputBuilder {
         self
     }
     /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -271,27 +246,19 @@ impl CreateIndexInputBuilder {
     /// To override the contents of this collection use [`set_user_token_configurations`](Self::set_user_token_configurations).
     ///
     /// <p>The user token configuration.</p>
-    pub fn user_token_configurations(
-        mut self,
-        input: crate::types::UserTokenConfiguration,
-    ) -> Self {
+    pub fn user_token_configurations(mut self, input: crate::types::UserTokenConfiguration) -> Self {
         let mut v = self.user_token_configurations.unwrap_or_default();
         v.push(input);
         self.user_token_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The user token configuration.</p>
-    pub fn set_user_token_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
-    ) -> Self {
+    pub fn set_user_token_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>) -> Self {
         self.user_token_configurations = input;
         self
     }
     /// <p>The user token configuration.</p>
-    pub fn get_user_token_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>> {
+    pub fn get_user_token_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>> {
         &self.user_token_configurations
     }
     /// <p>The user context policy.</p>
@@ -328,10 +295,7 @@ impl CreateIndexInputBuilder {
     /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
     /// </dd>
     /// </dl>
-    pub fn set_user_context_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContextPolicy>,
-    ) -> Self {
+    pub fn set_user_context_policy(mut self, input: ::std::option::Option<crate::types::UserContextPolicy>) -> Self {
         self.user_context_policy = input;
         self
     }
@@ -350,40 +314,25 @@ impl CreateIndexInputBuilder {
     /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
     /// </dd>
     /// </dl>
-    pub fn get_user_context_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserContextPolicy> {
+    pub fn get_user_context_policy(&self) -> &::std::option::Option<crate::types::UserContextPolicy> {
         &self.user_context_policy
     }
     /// <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn user_group_resolution_configuration(
-        mut self,
-        input: crate::types::UserGroupResolutionConfiguration,
-    ) -> Self {
+    pub fn user_group_resolution_configuration(mut self, input: crate::types::UserGroupResolutionConfiguration) -> Self {
         self.user_group_resolution_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn set_user_group_resolution_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
-    ) -> Self {
+    pub fn set_user_group_resolution_configuration(mut self, input: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>) -> Self {
         self.user_group_resolution_configuration = input;
         self
     }
     /// <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn get_user_group_resolution_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserGroupResolutionConfiguration> {
+    pub fn get_user_group_resolution_configuration(&self) -> &::std::option::Option<crate::types::UserGroupResolutionConfiguration> {
         &self.user_group_resolution_configuration
     }
     /// Consumes the builder and constructs a [`CreateIndexInput`](crate::operation::create_index::CreateIndexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_index::CreateIndexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_index::CreateIndexInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_index::CreateIndexInput {
             name: self.name,
             edition: self.edition,

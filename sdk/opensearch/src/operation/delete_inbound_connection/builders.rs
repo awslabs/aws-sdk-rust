@@ -26,8 +26,7 @@ impl DeleteInboundConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteInboundConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionInputBuilder,
+    inner: crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionInputBuilder,
 }
 impl DeleteInboundConnectionFluentBuilder {
     /// Creates a new `DeleteInboundConnection`.
@@ -38,10 +37,7 @@ impl DeleteInboundConnectionFluentBuilder {
         }
     }
     /// Access the DeleteInboundConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteInboundConnectionFluentBuilder {
             crate::operation::delete_inbound_connection::DeleteInboundConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inbound_connection::DeleteInboundConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inbound_connection::DeleteInboundConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteInboundConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteInboundConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_inbound_connection::DeleteInboundConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inbound_connection::DeleteInboundConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inbound_connection::DeleteInboundConnectionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteInboundConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_inbound_connection::DeleteInboundConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inbound_connection::DeleteInboundConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inbound_connection::DeleteInboundConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeleteInboundConnectionFluentBuilder {
             crate::operation::delete_inbound_connection::DeleteInboundConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_inbound_connection::DeleteInboundConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_inbound_connection::DeleteInboundConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the inbound connection to permanently delete.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the inbound connection to permanently delete.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }

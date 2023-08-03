@@ -8,9 +8,7 @@ pub struct StartTestInput {
     pub source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Start Test by Tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Start Test for Account ID.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -21,11 +19,7 @@ impl StartTestInput {
         self.source_server_i_ds.as_deref()
     }
     /// <p>Start Test by Tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Start Test for Account ID.</p>
@@ -54,9 +48,7 @@ impl StartTestInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StartTestInputBuilder {
     pub(crate) source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartTestInputBuilder {
@@ -65,27 +57,19 @@ impl StartTestInputBuilder {
     /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
     ///
     /// <p>Start Test for Source Server IDs.</p>
-    pub fn source_server_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_server_i_ds.unwrap_or_default();
         v.push(input.into());
         self.source_server_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>Start Test for Source Server IDs.</p>
-    pub fn set_source_server_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_server_i_ds = input;
         self
     }
     /// <p>Start Test for Source Server IDs.</p>
-    pub fn get_source_server_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_server_i_ds
     }
     /// Adds a key-value pair to `tags`.
@@ -93,32 +77,19 @@ impl StartTestInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Start Test by Tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Start Test by Tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Start Test by Tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Start Test for Account ID.</p>
@@ -136,12 +107,7 @@ impl StartTestInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`StartTestInput`](crate::operation::start_test::StartTestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_test::StartTestInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_test::StartTestInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_test::StartTestInput {
             source_server_i_ds: self.source_server_i_ds,
             tags: self.tags,

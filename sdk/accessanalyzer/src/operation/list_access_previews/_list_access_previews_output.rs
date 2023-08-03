@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAccessPreviewsOutput {
 }
 impl ListAccessPreviewsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPreviewsOutput`](crate::operation::list_access_previews::ListAccessPreviewsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_access_previews::builders::ListAccessPreviewsOutputBuilder {
+    pub fn builder() -> crate::operation::list_access_previews::builders::ListAccessPreviewsOutputBuilder {
         crate::operation::list_access_previews::builders::ListAccessPreviewsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessPreviewsOutput`](crate::operation::list_access_previews::ListAccessPreviewsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessPreviewsOutputBuilder {
-    pub(crate) access_previews:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewSummary>>,
+    pub(crate) access_previews: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListAccessPreviewsOutputBuilder {
         self
     }
     /// <p>A list of access previews retrieved for the analyzer.</p>
-    pub fn set_access_previews(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewSummary>>,
-    ) -> Self {
+    pub fn set_access_previews(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewSummary>>) -> Self {
         self.access_previews = input;
         self
     }
     /// <p>A list of access previews retrieved for the analyzer.</p>
-    pub fn get_access_previews(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewSummary>> {
+    pub fn get_access_previews(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewSummary>> {
         &self.access_previews
     }
     /// <p>A token used for pagination of results returned.</p>

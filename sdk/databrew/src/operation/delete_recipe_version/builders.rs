@@ -37,9 +37,7 @@ impl DeleteRecipeVersionFluentBuilder {
         }
     }
     /// Access the DeleteRecipeVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_recipe_version::builders::DeleteRecipeVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_recipe_version::builders::DeleteRecipeVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteRecipeVersionFluentBuilder {
             crate::operation::delete_recipe_version::DeleteRecipeVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recipe_version::DeleteRecipeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recipe_version::DeleteRecipeVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteRecipeVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteRecipeVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_recipe_version::DeleteRecipeVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recipe_version::DeleteRecipeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recipe_version::DeleteRecipeVersionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteRecipeVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_recipe_version::DeleteRecipeVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recipe_version::DeleteRecipeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recipe_version::DeleteRecipeVersionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteRecipeVersionFluentBuilder {
             crate::operation::delete_recipe_version::DeleteRecipeVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recipe_version::DeleteRecipeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recipe_version::DeleteRecipeVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl DeleteRecipeVersionFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
-    pub fn recipe_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recipe_version(input.into());
         self
     }
     /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
-    pub fn set_recipe_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recipe_version(input);
         self
     }

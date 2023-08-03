@@ -30,18 +30,14 @@ impl ListMultiplexProgramsInput {
 }
 impl ListMultiplexProgramsInput {
     /// Creates a new builder-style object to manufacture [`ListMultiplexProgramsInput`](crate::operation::list_multiplex_programs::ListMultiplexProgramsInput).
-    pub fn builder(
-    ) -> crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsInputBuilder {
         crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMultiplexProgramsInput`](crate::operation::list_multiplex_programs::ListMultiplexProgramsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMultiplexProgramsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
@@ -93,16 +89,12 @@ impl ListMultiplexProgramsInputBuilder {
     /// Consumes the builder and constructs a [`ListMultiplexProgramsInput`](crate::operation::list_multiplex_programs::ListMultiplexProgramsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_multiplex_programs::ListMultiplexProgramsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_multiplex_programs::ListMultiplexProgramsInput {
-                max_results: self.max_results,
-                multiplex_id: self.multiplex_id,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_multiplex_programs::ListMultiplexProgramsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_multiplex_programs::ListMultiplexProgramsInput {
+            max_results: self.max_results,
+            multiplex_id: self.multiplex_id,
+            next_token: self.next_token,
+        })
     }
 }

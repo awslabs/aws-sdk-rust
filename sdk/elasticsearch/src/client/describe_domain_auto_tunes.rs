@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`auto_tunes(Option<Vec<AutoTune>>)`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput::auto_tunes): <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput::next_token): <p>Specifies an identifier to allow retrieval of paginated results.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainAutoTunesError>`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesError)
-    pub fn describe_domain_auto_tunes(
-        &self,
-    ) -> crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder
-    {
+    pub fn describe_domain_auto_tunes(&self) -> crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder {
         crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder::new(self.handle.clone())
     }
 }

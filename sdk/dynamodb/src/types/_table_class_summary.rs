@@ -30,9 +30,7 @@ impl TableClassSummary {
 
 /// A builder for [`TableClassSummary`](crate::types::TableClassSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableClassSummaryBuilder {
     pub(crate) table_class: ::std::option::Option<crate::types::TableClass>,
     pub(crate) last_update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,10 +42,7 @@ impl TableClassSummaryBuilder {
         self
     }
     /// <p>The table class of the specified table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
-    pub fn set_table_class(
-        mut self,
-        input: ::std::option::Option<crate::types::TableClass>,
-    ) -> Self {
+    pub fn set_table_class(mut self, input: ::std::option::Option<crate::types::TableClass>) -> Self {
         self.table_class = input;
         self
     }
@@ -61,17 +56,12 @@ impl TableClassSummaryBuilder {
         self
     }
     /// <p>The date and time at which the table class was last updated.</p>
-    pub fn set_last_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_date_time = input;
         self
     }
     /// <p>The date and time at which the table class was last updated.</p>
-    pub fn get_last_update_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_date_time
     }
     /// Consumes the builder and constructs a [`TableClassSummary`](crate::types::TableClassSummary).

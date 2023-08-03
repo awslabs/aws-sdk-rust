@@ -28,11 +28,7 @@ impl super::Client {
     ///   - [`broker_arn(Option<String>)`](crate::operation::create_broker::CreateBrokerOutput::broker_arn): <p>The broker's Amazon Resource Name (ARN).</p>
     ///   - [`broker_id(Option<String>)`](crate::operation::create_broker::CreateBrokerOutput::broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
     /// - On failure, responds with [`SdkError<CreateBrokerError>`](crate::operation::create_broker::CreateBrokerError)
-    pub fn create_broker(
-        &self,
-    ) -> crate::operation::create_broker::builders::CreateBrokerFluentBuilder {
-        crate::operation::create_broker::builders::CreateBrokerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_broker(&self) -> crate::operation::create_broker::builders::CreateBrokerFluentBuilder {
+        crate::operation::create_broker::builders::CreateBrokerFluentBuilder::new(self.handle.clone())
     }
 }

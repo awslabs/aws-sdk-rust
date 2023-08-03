@@ -75,13 +75,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BackupLifecycle {
     #[allow(missing_docs)] // documentation missing in model
@@ -111,9 +105,7 @@ impl ::std::convert::From<&str> for BackupLifecycle {
             "FAILED" => BackupLifecycle::Failed,
             "PENDING" => BackupLifecycle::Pending,
             "TRANSFERRING" => BackupLifecycle::Transferring,
-            other => {
-                BackupLifecycle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => BackupLifecycle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -140,15 +132,7 @@ impl BackupLifecycle {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE",
-            "COPYING",
-            "CREATING",
-            "DELETED",
-            "FAILED",
-            "PENDING",
-            "TRANSFERRING",
-        ]
+        &["AVAILABLE", "COPYING", "CREATING", "DELETED", "FAILED", "PENDING", "TRANSFERRING"]
     }
 }
 impl ::std::convert::AsRef<str> for BackupLifecycle {

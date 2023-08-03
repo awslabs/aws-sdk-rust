@@ -9,81 +9,83 @@ pub fn de_create_monitoring_subscription_http_error(
     crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::AccessDenied({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output).map_err(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
+                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "MonitoringSubscriptionAlreadyExists" => crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::MonitoringSubscriptionAlreadyExists({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "MonitoringSubscriptionAlreadyExists" => {
+            crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::MonitoringSubscriptionAlreadyExists({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MonitoringSubscriptionAlreadyExistsBuilder::default();
-                    output = crate::protocol_serde::shape_monitoring_subscription_already_exists::de_monitoring_subscription_already_exists_xml_err(_response_body, output).map_err(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_monitoring_subscription_already_exists::de_monitoring_subscription_already_exists_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "NoSuchDistribution" => crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::NoSuchDistribution({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchDistributionBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(_response_body, output).map_err(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchDistributionBuilder::default();
+                output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnsupportedOperation" => crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::UnsupportedOperation({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnsupportedOperationBuilder::default();
-                    output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(_response_body, output).map_err(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::generic(generic)
+        _ => crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::generic(generic),
     })
 }
 
@@ -100,11 +102,9 @@ pub fn de_create_monitoring_subscription_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::create_monitoring_subscription::builders::CreateMonitoringSubscriptionOutputBuilder::default();
         output = output.set_monitoring_subscription(
-            crate::protocol_serde::shape_create_monitoring_subscription_output::de_monitoring_subscription_payload(_response_body)?
+            crate::protocol_serde::shape_create_monitoring_subscription_output::de_monitoring_subscription_payload(_response_body)?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

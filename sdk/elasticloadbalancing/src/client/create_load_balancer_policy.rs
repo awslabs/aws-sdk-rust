@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`policy_attributes(Vec<PolicyAttribute>)`](crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyFluentBuilder::policy_attributes) / [`set_policy_attributes(Option<Vec<PolicyAttribute>>)`](crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyFluentBuilder::set_policy_attributes): <p>The policy attributes.</p>
     /// - On success, responds with [`CreateLoadBalancerPolicyOutput`](crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput)
     /// - On failure, responds with [`SdkError<CreateLoadBalancerPolicyError>`](crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError)
-    pub fn create_load_balancer_policy(&self) -> crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyFluentBuilder{
+    pub fn create_load_balancer_policy(&self) -> crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyFluentBuilder {
         crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyFluentBuilder::new(self.handle.clone())
     }
 }

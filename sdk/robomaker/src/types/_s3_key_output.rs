@@ -30,9 +30,7 @@ impl S3KeyOutput {
 
 /// A builder for [`S3KeyOutput`](crate::types::S3KeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3KeyOutputBuilder {
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,
     pub(crate) etag: ::std::option::Option<::std::string::String>,

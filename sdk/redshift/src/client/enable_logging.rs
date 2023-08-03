@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`log_destination_type(Option<LogDestinationType>)`](crate::operation::enable_logging::EnableLoggingOutput::log_destination_type): <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
     ///   - [`log_exports(Option<Vec<String>>)`](crate::operation::enable_logging::EnableLoggingOutput::log_exports): <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
     /// - On failure, responds with [`SdkError<EnableLoggingError>`](crate::operation::enable_logging::EnableLoggingError)
-    pub fn enable_logging(
-        &self,
-    ) -> crate::operation::enable_logging::builders::EnableLoggingFluentBuilder {
-        crate::operation::enable_logging::builders::EnableLoggingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn enable_logging(&self) -> crate::operation::enable_logging::builders::EnableLoggingFluentBuilder {
+        crate::operation::enable_logging::builders::EnableLoggingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl RebootCacheClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::reboot_cache_cluster::RebootCacheClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_cache_cluster::RebootCacheClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_cache_cluster::RebootCacheClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.reboot_cache_cluster();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl RebootCacheClusterFluentBuilder {
         }
     }
     /// Access the RebootCacheCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reboot_cache_cluster::builders::RebootCacheClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::reboot_cache_cluster::builders::RebootCacheClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl RebootCacheClusterFluentBuilder {
             crate::operation::reboot_cache_cluster::RebootCacheCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_cache_cluster::RebootCacheClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_cache_cluster::RebootCacheClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl RebootCacheClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl RebootCacheClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_cache_cluster::RebootCacheClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_cache_cluster::RebootCacheClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_cache_cluster::RebootCacheClusterError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl RebootCacheClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_cache_cluster::RebootCacheClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_cache_cluster::RebootCacheClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_cache_cluster::RebootCacheClusterError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl RebootCacheClusterFluentBuilder {
             crate::operation::reboot_cache_cluster::RebootCacheCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_cache_cluster::RebootCacheClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_cache_cluster::RebootCacheClusterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    pub fn cache_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_cluster_id(input.into());
         self
     }
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    pub fn set_cache_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_cluster_id(input);
         self
     }
@@ -151,25 +129,17 @@ impl RebootCacheClusterFluentBuilder {
     /// To override the contents of this collection use [`set_cache_node_ids_to_reboot`](Self::set_cache_node_ids_to_reboot).
     ///
     /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
-    pub fn cache_node_ids_to_reboot(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_node_ids_to_reboot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_node_ids_to_reboot(input.into());
         self
     }
     /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
-    pub fn set_cache_node_ids_to_reboot(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cache_node_ids_to_reboot(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cache_node_ids_to_reboot(input);
         self
     }
     /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
-    pub fn get_cache_node_ids_to_reboot(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cache_node_ids_to_reboot(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cache_node_ids_to_reboot()
     }
 }

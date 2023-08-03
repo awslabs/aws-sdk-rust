@@ -37,10 +37,7 @@ impl DeleteRobotApplicationFluentBuilder {
         }
     }
     /// Access the DeleteRobotApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_robot_application::builders::DeleteRobotApplicationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_robot_application::builders::DeleteRobotApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteRobotApplicationFluentBuilder {
             crate::operation::delete_robot_application::DeleteRobotApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_robot_application::DeleteRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_robot_application::DeleteRobotApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteRobotApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteRobotApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_robot_application::DeleteRobotApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_robot_application::DeleteRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_robot_application::DeleteRobotApplicationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteRobotApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_robot_application::DeleteRobotApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_robot_application::DeleteRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_robot_application::DeleteRobotApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteRobotApplicationFluentBuilder {
             crate::operation::delete_robot_application::DeleteRobotApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_robot_application::DeleteRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_robot_application::DeleteRobotApplicationError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DeleteRobotApplicationFluentBuilder {
         self.inner.get_application()
     }
     /// <p>The version of the robot application to delete.</p>
-    pub fn application_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_version(input.into());
         self
     }
     /// <p>The version of the robot application to delete.</p>
-    pub fn set_application_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_version(input);
         self
     }

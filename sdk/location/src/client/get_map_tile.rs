@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`content_type(Option<String>)`](crate::operation::get_map_tile::GetMapTileOutput::content_type): <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
     ///   - [`cache_control(Option<String>)`](crate::operation::get_map_tile::GetMapTileOutput::cache_control): <p>The HTTP Cache-Control directive for the value.</p>
     /// - On failure, responds with [`SdkError<GetMapTileError>`](crate::operation::get_map_tile::GetMapTileError)
-    pub fn get_map_tile(
-        &self,
-    ) -> crate::operation::get_map_tile::builders::GetMapTileFluentBuilder {
+    pub fn get_map_tile(&self) -> crate::operation::get_map_tile::builders::GetMapTileFluentBuilder {
         crate::operation::get_map_tile::builders::GetMapTileFluentBuilder::new(self.handle.clone())
     }
 }

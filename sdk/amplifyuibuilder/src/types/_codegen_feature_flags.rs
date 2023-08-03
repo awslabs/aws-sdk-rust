@@ -30,9 +30,7 @@ impl CodegenFeatureFlags {
 
 /// A builder for [`CodegenFeatureFlags`](crate::types::CodegenFeatureFlags).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodegenFeatureFlagsBuilder {
     pub(crate) is_relationship_supported: ::std::option::Option<bool>,
     pub(crate) is_non_model_supported: ::std::option::Option<bool>,

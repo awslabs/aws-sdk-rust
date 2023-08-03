@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteDbProxyEndpointOutput {
 }
 impl DeleteDbProxyEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbProxyEndpointOutput`](crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointOutputBuilder {
         crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbProxyEndpointOutput`](crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbProxyEndpointOutputBuilder {
     pub(crate) db_proxy_endpoint: ::std::option::Option<crate::types::DbProxyEndpoint>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteDbProxyEndpointOutputBuilder {
         self
     }
     /// <p>The data structure representing the details of the DB proxy endpoint that you delete.</p>
-    pub fn set_db_proxy_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::DbProxyEndpoint>,
-    ) -> Self {
+    pub fn set_db_proxy_endpoint(mut self, input: ::std::option::Option<crate::types::DbProxyEndpoint>) -> Self {
         self.db_proxy_endpoint = input;
         self
     }

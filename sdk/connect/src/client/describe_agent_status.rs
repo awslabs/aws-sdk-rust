@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAgentStatusOutput`](crate::operation::describe_agent_status::DescribeAgentStatusOutput) with field(s):
     ///   - [`agent_status(Option<AgentStatus>)`](crate::operation::describe_agent_status::DescribeAgentStatusOutput::agent_status): <p>The agent status.</p>
     /// - On failure, responds with [`SdkError<DescribeAgentStatusError>`](crate::operation::describe_agent_status::DescribeAgentStatusError)
-    pub fn describe_agent_status(
-        &self,
-    ) -> crate::operation::describe_agent_status::builders::DescribeAgentStatusFluentBuilder {
-        crate::operation::describe_agent_status::builders::DescribeAgentStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_agent_status(&self) -> crate::operation::describe_agent_status::builders::DescribeAgentStatusFluentBuilder {
+        crate::operation::describe_agent_status::builders::DescribeAgentStatusFluentBuilder::new(self.handle.clone())
     }
 }

@@ -24,10 +24,7 @@ pub fn ser_object_lambda_transformation_configuration(
 
 pub fn de_object_lambda_transformation_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::ObjectLambdaTransformationConfiguration,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::ObjectLambdaTransformationConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ObjectLambdaTransformationConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {

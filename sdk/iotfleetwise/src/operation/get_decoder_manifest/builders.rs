@@ -10,10 +10,7 @@ impl GetDecoderManifestInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_decoder_manifest::GetDecoderManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_decoder_manifest::GetDecoderManifestError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_decoder_manifest::GetDecoderManifestError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_decoder_manifest();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetDecoderManifestFluentBuilder {
         }
     }
     /// Access the GetDecoderManifest as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_decoder_manifest::builders::GetDecoderManifestInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_decoder_manifest::builders::GetDecoderManifestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetDecoderManifestFluentBuilder {
             crate::operation::get_decoder_manifest::GetDecoderManifest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_decoder_manifest::GetDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_decoder_manifest::GetDecoderManifestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetDecoderManifestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetDecoderManifestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_decoder_manifest::GetDecoderManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_decoder_manifest::GetDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_decoder_manifest::GetDecoderManifestError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetDecoderManifestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_decoder_manifest::GetDecoderManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_decoder_manifest::GetDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_decoder_manifest::GetDecoderManifestError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetDecoderManifestFluentBuilder {
             crate::operation::get_decoder_manifest::GetDecoderManifest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_decoder_manifest::GetDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_decoder_manifest::GetDecoderManifestError>,
     > {
         self.customize_middleware().await
     }

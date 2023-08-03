@@ -65,9 +65,7 @@ impl JobListEntry {
 
 /// A builder for [`JobListEntry`](crate::types::JobListEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobListEntryBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_state: ::std::option::Option<crate::types::JobState>,
@@ -140,10 +138,7 @@ impl JobListEntryBuilder {
         self
     }
     /// <p>The type of device used with this job.</p>
-    pub fn set_snowball_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SnowballType>,
-    ) -> Self {
+    pub fn set_snowball_type(mut self, input: ::std::option::Option<crate::types::SnowballType>) -> Self {
         self.snowball_type = input;
         self
     }
@@ -157,10 +152,7 @@ impl JobListEntryBuilder {
         self
     }
     /// <p>The creation date for this job.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

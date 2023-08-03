@@ -6,10 +6,7 @@ pub fn ser_batch_detach_typed_link(
     if let Some(var_1) = &input.typed_link_specifier {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TypedLinkSpecifier").start_object();
-        crate::protocol_serde::shape_typed_link_specifier::ser_typed_link_specifier(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_typed_link_specifier::ser_typed_link_specifier(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

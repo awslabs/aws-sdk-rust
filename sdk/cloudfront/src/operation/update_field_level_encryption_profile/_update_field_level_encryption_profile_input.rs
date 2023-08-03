@@ -5,8 +5,7 @@
 pub struct UpdateFieldLevelEncryptionProfileInput {
     /// <p>Request to update a field-level encryption profile.</p>
     #[doc(hidden)]
-    pub field_level_encryption_profile_config:
-        ::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig>,
+    pub field_level_encryption_profile_config: ::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig>,
     /// <p>The ID of the field-level encryption profile request.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,9 +15,7 @@ pub struct UpdateFieldLevelEncryptionProfileInput {
 }
 impl UpdateFieldLevelEncryptionProfileInput {
     /// <p>Request to update a field-level encryption profile.</p>
-    pub fn field_level_encryption_profile_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FieldLevelEncryptionProfileConfig> {
+    pub fn field_level_encryption_profile_config(&self) -> ::std::option::Option<&crate::types::FieldLevelEncryptionProfileConfig> {
         self.field_level_encryption_profile_config.as_ref()
     }
     /// <p>The ID of the field-level encryption profile request.</p>
@@ -32,28 +29,22 @@ impl UpdateFieldLevelEncryptionProfileInput {
 }
 impl UpdateFieldLevelEncryptionProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateFieldLevelEncryptionProfileInput`](crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileInput).
-    pub fn builder() -> crate::operation::update_field_level_encryption_profile::builders::UpdateFieldLevelEncryptionProfileInputBuilder{
+    pub fn builder() -> crate::operation::update_field_level_encryption_profile::builders::UpdateFieldLevelEncryptionProfileInputBuilder {
         crate::operation::update_field_level_encryption_profile::builders::UpdateFieldLevelEncryptionProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFieldLevelEncryptionProfileInput`](crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionProfileInputBuilder {
-    pub(crate) field_level_encryption_profile_config:
-        ::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig>,
+    pub(crate) field_level_encryption_profile_config: ::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFieldLevelEncryptionProfileInputBuilder {
     /// <p>Request to update a field-level encryption profile.</p>
-    pub fn field_level_encryption_profile_config(
-        mut self,
-        input: crate::types::FieldLevelEncryptionProfileConfig,
-    ) -> Self {
+    pub fn field_level_encryption_profile_config(mut self, input: crate::types::FieldLevelEncryptionProfileConfig) -> Self {
         self.field_level_encryption_profile_config = ::std::option::Option::Some(input);
         self
     }
@@ -66,9 +57,7 @@ impl UpdateFieldLevelEncryptionProfileInputBuilder {
         self
     }
     /// <p>Request to update a field-level encryption profile.</p>
-    pub fn get_field_level_encryption_profile_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig> {
+    pub fn get_field_level_encryption_profile_config(&self) -> &::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig> {
         &self.field_level_encryption_profile_config
     }
     /// <p>The ID of the field-level encryption profile request.</p>
@@ -100,16 +89,18 @@ impl UpdateFieldLevelEncryptionProfileInputBuilder {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateFieldLevelEncryptionProfileInput`](crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileInput {
-                field_level_encryption_profile_config: self.field_level_encryption_profile_config
-                ,
-                id: self.id
-                ,
-                if_match: self.if_match
-                ,
-            }
+                field_level_encryption_profile_config: self.field_level_encryption_profile_config,
+                id: self.id,
+                if_match: self.if_match,
+            },
         )
     }
 }

@@ -28,9 +28,7 @@ impl UpdateSiteOutput {
 
 /// A builder for [`UpdateSiteOutput`](crate::operation::update_site::UpdateSiteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSiteOutputBuilder {
     pub(crate) site: ::std::option::Option<crate::types::Site>,
     _request_id: Option<String>,

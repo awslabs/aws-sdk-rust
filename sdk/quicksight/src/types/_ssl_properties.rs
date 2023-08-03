@@ -23,9 +23,7 @@ impl SslProperties {
 
 /// A builder for [`SslProperties`](crate::types::SslProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SslPropertiesBuilder {
     pub(crate) disable_ssl: ::std::option::Option<bool>,
 }

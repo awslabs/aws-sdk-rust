@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`distribution_configuration_summary_list(Option<Vec<DistributionConfigurationSummary>>)`](crate::operation::list_distribution_configurations::ListDistributionConfigurationsOutput::distribution_configuration_summary_list): <p>The list of distributions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_distribution_configurations::ListDistributionConfigurationsOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListDistributionConfigurationsError>`](crate::operation::list_distribution_configurations::ListDistributionConfigurationsError)
-    pub fn list_distribution_configurations(&self) -> crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsFluentBuilder{
+    pub fn list_distribution_configurations(
+        &self,
+    ) -> crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsFluentBuilder {
         crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

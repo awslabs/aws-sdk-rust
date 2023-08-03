@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for TagCertificateAuthorityOutput {
 }
 impl TagCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`TagCertificateAuthorityOutput`](crate::operation::tag_certificate_authority::TagCertificateAuthorityOutput).
-    pub fn builder(
-    ) -> crate::operation::tag_certificate_authority::builders::TagCertificateAuthorityOutputBuilder
-    {
+    pub fn builder() -> crate::operation::tag_certificate_authority::builders::TagCertificateAuthorityOutputBuilder {
         crate::operation::tag_certificate_authority::builders::TagCertificateAuthorityOutputBuilder::default()
     }
 }
 
 /// A builder for [`TagCertificateAuthorityOutput`](crate::operation::tag_certificate_authority::TagCertificateAuthorityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagCertificateAuthorityOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl TagCertificateAuthorityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`TagCertificateAuthorityOutput`](crate::operation::tag_certificate_authority::TagCertificateAuthorityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::tag_certificate_authority::TagCertificateAuthorityOutput {
+    pub fn build(self) -> crate::operation::tag_certificate_authority::TagCertificateAuthorityOutput {
         crate::operation::tag_certificate_authority::TagCertificateAuthorityOutput {
             _request_id: self._request_id,
         }

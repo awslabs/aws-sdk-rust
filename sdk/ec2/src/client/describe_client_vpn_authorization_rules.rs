@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`authorization_rules(Option<Vec<AuthorizationRule>>)`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesOutput::authorization_rules): <p>Information about the authorization rules.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeClientVpnAuthorizationRulesError>`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesError)
-    pub fn describe_client_vpn_authorization_rules(&self) -> crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder{
-        crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::new(self.handle.clone())
+    pub fn describe_client_vpn_authorization_rules(
+        &self,
+    ) -> crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder {
+        crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

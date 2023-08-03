@@ -38,9 +38,7 @@ impl AutoScalingSettingsUpdate {
         self.auto_scaling_role_arn.as_deref()
     }
     /// <p>The scaling policy to apply for scaling target global table or global secondary index capacity units.</p>
-    pub fn scaling_policy_update(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoScalingPolicyUpdate> {
+    pub fn scaling_policy_update(&self) -> ::std::option::Option<&crate::types::AutoScalingPolicyUpdate> {
         self.scaling_policy_update.as_ref()
     }
 }
@@ -53,9 +51,7 @@ impl AutoScalingSettingsUpdate {
 
 /// A builder for [`AutoScalingSettingsUpdate`](crate::types::AutoScalingSettingsUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoScalingSettingsUpdateBuilder {
     pub(crate) minimum_units: ::std::option::Option<i64>,
     pub(crate) maximum_units: ::std::option::Option<i64>,
@@ -107,18 +103,12 @@ impl AutoScalingSettingsUpdateBuilder {
         &self.auto_scaling_disabled
     }
     /// <p>Role ARN used for configuring auto scaling policy.</p>
-    pub fn auto_scaling_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Role ARN used for configuring auto scaling policy.</p>
-    pub fn set_auto_scaling_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_role_arn = input;
         self
     }
@@ -132,17 +122,12 @@ impl AutoScalingSettingsUpdateBuilder {
         self
     }
     /// <p>The scaling policy to apply for scaling target global table or global secondary index capacity units.</p>
-    pub fn set_scaling_policy_update(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingPolicyUpdate>,
-    ) -> Self {
+    pub fn set_scaling_policy_update(mut self, input: ::std::option::Option<crate::types::AutoScalingPolicyUpdate>) -> Self {
         self.scaling_policy_update = input;
         self
     }
     /// <p>The scaling policy to apply for scaling target global table or global secondary index capacity units.</p>
-    pub fn get_scaling_policy_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingPolicyUpdate> {
+    pub fn get_scaling_policy_update(&self) -> &::std::option::Option<crate::types::AutoScalingPolicyUpdate> {
         &self.scaling_policy_update
     }
     /// Consumes the builder and constructs a [`AutoScalingSettingsUpdate`](crate::types::AutoScalingSettingsUpdate).

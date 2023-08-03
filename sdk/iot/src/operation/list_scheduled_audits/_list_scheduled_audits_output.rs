@@ -5,8 +5,7 @@
 pub struct ListScheduledAuditsOutput {
     /// <p>The list of scheduled audits.</p>
     #[doc(hidden)]
-    pub scheduled_audits:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAuditMetadata>>,
+    pub scheduled_audits: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAuditMetadata>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListScheduledAuditsOutput {
 }
 impl ListScheduledAuditsOutput {
     /// <p>The list of scheduled audits.</p>
-    pub fn scheduled_audits(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ScheduledAuditMetadata]> {
+    pub fn scheduled_audits(&self) -> ::std::option::Option<&[crate::types::ScheduledAuditMetadata]> {
         self.scheduled_audits.as_deref()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListScheduledAuditsOutput {
 }
 impl ListScheduledAuditsOutput {
     /// Creates a new builder-style object to manufacture [`ListScheduledAuditsOutput`](crate::operation::list_scheduled_audits::ListScheduledAuditsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_scheduled_audits::builders::ListScheduledAuditsOutputBuilder {
-        crate::operation::list_scheduled_audits::builders::ListScheduledAuditsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_scheduled_audits::builders::ListScheduledAuditsOutputBuilder {
+        crate::operation::list_scheduled_audits::builders::ListScheduledAuditsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListScheduledAuditsOutput`](crate::operation::list_scheduled_audits::ListScheduledAuditsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScheduledAuditsOutputBuilder {
-    pub(crate) scheduled_audits:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAuditMetadata>>,
+    pub(crate) scheduled_audits: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAuditMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListScheduledAuditsOutputBuilder {
         self
     }
     /// <p>The list of scheduled audits.</p>
-    pub fn set_scheduled_audits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAuditMetadata>>,
-    ) -> Self {
+    pub fn set_scheduled_audits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAuditMetadata>>) -> Self {
         self.scheduled_audits = input;
         self
     }
     /// <p>The list of scheduled audits.</p>
-    pub fn get_scheduled_audits(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledAuditMetadata>> {
+    pub fn get_scheduled_audits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledAuditMetadata>> {
         &self.scheduled_audits
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>

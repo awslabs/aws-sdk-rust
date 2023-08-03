@@ -30,9 +30,7 @@ impl TransformSortCriteria {
 
 /// A builder for [`TransformSortCriteria`](crate::types::TransformSortCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransformSortCriteriaBuilder {
     pub(crate) column: ::std::option::Option<crate::types::TransformSortColumnType>,
     pub(crate) sort_direction: ::std::option::Option<crate::types::SortDirectionType>,
@@ -44,10 +42,7 @@ impl TransformSortCriteriaBuilder {
         self
     }
     /// <p>The column to be used in the sorting criteria that are associated with the machine learning transform.</p>
-    pub fn set_column(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformSortColumnType>,
-    ) -> Self {
+    pub fn set_column(mut self, input: ::std::option::Option<crate::types::TransformSortColumnType>) -> Self {
         self.column = input;
         self
     }
@@ -61,10 +56,7 @@ impl TransformSortCriteriaBuilder {
         self
     }
     /// <p>The sort direction to be used in the sorting criteria that are associated with the machine learning transform.</p>
-    pub fn set_sort_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::SortDirectionType>,
-    ) -> Self {
+    pub fn set_sort_direction(mut self, input: ::std::option::Option<crate::types::SortDirectionType>) -> Self {
         self.sort_direction = input;
         self
     }

@@ -22,17 +22,14 @@ impl AssociateRoleToGroupInput {
 }
 impl AssociateRoleToGroupInput {
     /// Creates a new builder-style object to manufacture [`AssociateRoleToGroupInput`](crate::operation::associate_role_to_group::AssociateRoleToGroupInput).
-    pub fn builder(
-    ) -> crate::operation::associate_role_to_group::builders::AssociateRoleToGroupInputBuilder {
+    pub fn builder() -> crate::operation::associate_role_to_group::builders::AssociateRoleToGroupInputBuilder {
         crate::operation::associate_role_to_group::builders::AssociateRoleToGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateRoleToGroupInput`](crate::operation::associate_role_to_group::AssociateRoleToGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateRoleToGroupInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl AssociateRoleToGroupInputBuilder {
     /// Consumes the builder and constructs a [`AssociateRoleToGroupInput`](crate::operation::associate_role_to_group::AssociateRoleToGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_role_to_group::AssociateRoleToGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_role_to_group::AssociateRoleToGroupInput {
-                group_id: self.group_id,
-                role_arn: self.role_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_role_to_group::AssociateRoleToGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_role_to_group::AssociateRoleToGroupInput {
+            group_id: self.group_id,
+            role_arn: self.role_arn,
+        })
     }
 }

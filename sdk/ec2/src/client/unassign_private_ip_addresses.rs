@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`ipv4_prefixes(Vec<String>)`](crate::operation::unassign_private_ip_addresses::builders::UnassignPrivateIpAddressesFluentBuilder::ipv4_prefixes) / [`set_ipv4_prefixes(Option<Vec<String>>)`](crate::operation::unassign_private_ip_addresses::builders::UnassignPrivateIpAddressesFluentBuilder::set_ipv4_prefixes): <p>The IPv4 prefixes to unassign from the network interface.</p>
     /// - On success, responds with [`UnassignPrivateIpAddressesOutput`](crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesOutput)
     /// - On failure, responds with [`SdkError<UnassignPrivateIpAddressesError>`](crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesError)
-    pub fn unassign_private_ip_addresses(&self) -> crate::operation::unassign_private_ip_addresses::builders::UnassignPrivateIpAddressesFluentBuilder{
+    pub fn unassign_private_ip_addresses(
+        &self,
+    ) -> crate::operation::unassign_private_ip_addresses::builders::UnassignPrivateIpAddressesFluentBuilder {
         crate::operation::unassign_private_ip_addresses::builders::UnassignPrivateIpAddressesFluentBuilder::new(self.handle.clone())
     }
 }

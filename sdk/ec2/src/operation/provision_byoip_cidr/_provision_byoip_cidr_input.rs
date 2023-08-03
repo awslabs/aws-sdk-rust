@@ -21,8 +21,7 @@ pub struct ProvisionByoipCidrInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The tags to apply to the address pool.</p>
     #[doc(hidden)]
-    pub pool_tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub pool_tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Reserved.</p>
     #[doc(hidden)]
     pub multi_region: ::std::option::Option<bool>,
@@ -33,9 +32,7 @@ impl ProvisionByoipCidrInput {
         self.cidr.as_deref()
     }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
-    pub fn cidr_authorization_context(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CidrAuthorizationContext> {
+    pub fn cidr_authorization_context(&self) -> ::std::option::Option<&crate::types::CidrAuthorizationContext> {
         self.cidr_authorization_context.as_ref()
     }
     /// <p>(IPv6 only) Indicate whether the address range will be publicly advertised to the internet.</p>
@@ -52,9 +49,7 @@ impl ProvisionByoipCidrInput {
         self.dry_run
     }
     /// <p>The tags to apply to the address pool.</p>
-    pub fn pool_tag_specifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TagSpecification]> {
+    pub fn pool_tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
         self.pool_tag_specifications.as_deref()
     }
     /// <p>Reserved.</p>
@@ -64,26 +59,21 @@ impl ProvisionByoipCidrInput {
 }
 impl ProvisionByoipCidrInput {
     /// Creates a new builder-style object to manufacture [`ProvisionByoipCidrInput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput).
-    pub fn builder(
-    ) -> crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder {
+    pub fn builder() -> crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder {
         crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder::default()
     }
 }
 
 /// A builder for [`ProvisionByoipCidrInput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionByoipCidrInputBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
-    pub(crate) cidr_authorization_context:
-        ::std::option::Option<crate::types::CidrAuthorizationContext>,
+    pub(crate) cidr_authorization_context: ::std::option::Option<crate::types::CidrAuthorizationContext>,
     pub(crate) publicly_advertisable: ::std::option::Option<bool>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) pool_tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) pool_tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) multi_region: ::std::option::Option<bool>,
 }
 impl ProvisionByoipCidrInputBuilder {
@@ -102,25 +92,17 @@ impl ProvisionByoipCidrInputBuilder {
         &self.cidr
     }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
-    pub fn cidr_authorization_context(
-        mut self,
-        input: crate::types::CidrAuthorizationContext,
-    ) -> Self {
+    pub fn cidr_authorization_context(mut self, input: crate::types::CidrAuthorizationContext) -> Self {
         self.cidr_authorization_context = ::std::option::Option::Some(input);
         self
     }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
-    pub fn set_cidr_authorization_context(
-        mut self,
-        input: ::std::option::Option<crate::types::CidrAuthorizationContext>,
-    ) -> Self {
+    pub fn set_cidr_authorization_context(mut self, input: ::std::option::Option<crate::types::CidrAuthorizationContext>) -> Self {
         self.cidr_authorization_context = input;
         self
     }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
-    pub fn get_cidr_authorization_context(
-        &self,
-    ) -> &::std::option::Option<crate::types::CidrAuthorizationContext> {
+    pub fn get_cidr_authorization_context(&self) -> &::std::option::Option<crate::types::CidrAuthorizationContext> {
         &self.cidr_authorization_context
     }
     /// <p>(IPv6 only) Indicate whether the address range will be publicly advertised to the internet.</p>
@@ -180,17 +162,12 @@ impl ProvisionByoipCidrInputBuilder {
         self
     }
     /// <p>The tags to apply to the address pool.</p>
-    pub fn set_pool_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_pool_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.pool_tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the address pool.</p>
-    pub fn get_pool_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_pool_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.pool_tag_specifications
     }
     /// <p>Reserved.</p>
@@ -210,20 +187,15 @@ impl ProvisionByoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`ProvisionByoipCidrInput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput {
-                cidr: self.cidr,
-                cidr_authorization_context: self.cidr_authorization_context,
-                publicly_advertisable: self.publicly_advertisable,
-                description: self.description,
-                dry_run: self.dry_run,
-                pool_tag_specifications: self.pool_tag_specifications,
-                multi_region: self.multi_region,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput {
+            cidr: self.cidr,
+            cidr_authorization_context: self.cidr_authorization_context,
+            publicly_advertisable: self.publicly_advertisable,
+            description: self.description,
+            dry_run: self.dry_run,
+            pool_tag_specifications: self.pool_tag_specifications,
+            multi_region: self.multi_region,
+        })
     }
 }

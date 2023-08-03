@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteResolverRuleOutput {
 }
 impl DeleteResolverRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResolverRuleOutput`](crate::operation::delete_resolver_rule::DeleteResolverRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_resolver_rule::builders::DeleteResolverRuleOutputBuilder {
+    pub fn builder() -> crate::operation::delete_resolver_rule::builders::DeleteResolverRuleOutputBuilder {
         crate::operation::delete_resolver_rule::builders::DeleteResolverRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResolverRuleOutput`](crate::operation::delete_resolver_rule::DeleteResolverRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResolverRuleOutputBuilder {
     pub(crate) resolver_rule: ::std::option::Option<crate::types::ResolverRule>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteResolverRuleOutputBuilder {
         self
     }
     /// <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
-    pub fn set_resolver_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverRule>,
-    ) -> Self {
+    pub fn set_resolver_rule(mut self, input: ::std::option::Option<crate::types::ResolverRule>) -> Self {
         self.resolver_rule = input;
         self
     }

@@ -15,14 +15,10 @@ pub struct PutGatewayResponseInput {
     pub status_code: ::std::option::Option<::std::string::String>,
     /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
     #[doc(hidden)]
-    pub response_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
     #[doc(hidden)]
-    pub response_templates: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub response_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutGatewayResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -38,45 +34,30 @@ impl PutGatewayResponseInput {
         self.status_code.as_deref()
     }
     /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
-    pub fn response_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn response_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.response_parameters.as_ref()
     }
     /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
-    pub fn response_templates(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn response_templates(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.response_templates.as_ref()
     }
 }
 impl PutGatewayResponseInput {
     /// Creates a new builder-style object to manufacture [`PutGatewayResponseInput`](crate::operation::put_gateway_response::PutGatewayResponseInput).
-    pub fn builder(
-    ) -> crate::operation::put_gateway_response::builders::PutGatewayResponseInputBuilder {
+    pub fn builder() -> crate::operation::put_gateway_response::builders::PutGatewayResponseInputBuilder {
         crate::operation::put_gateway_response::builders::PutGatewayResponseInputBuilder::default()
     }
 }
 
 /// A builder for [`PutGatewayResponseInput`](crate::operation::put_gateway_response::PutGatewayResponseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutGatewayResponseInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) response_type: ::std::option::Option<crate::types::GatewayResponseType>,
     pub(crate) status_code: ::std::option::Option<::std::string::String>,
-    pub(crate) response_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) response_templates: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) response_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutGatewayResponseInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -99,10 +80,7 @@ impl PutGatewayResponseInputBuilder {
         self
     }
     /// <p>The response type of the associated GatewayResponse</p>
-    pub fn set_response_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayResponseType>,
-    ) -> Self {
+    pub fn set_response_type(mut self, input: ::std::option::Option<crate::types::GatewayResponseType>) -> Self {
         self.response_type = input;
         self
     }
@@ -142,19 +120,13 @@ impl PutGatewayResponseInputBuilder {
     /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
     pub fn set_response_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.response_parameters = input;
         self
     }
     /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
-    pub fn get_response_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.response_parameters
     }
     /// Adds a key-value pair to `response_templates`.
@@ -175,36 +147,25 @@ impl PutGatewayResponseInputBuilder {
     /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
     pub fn set_response_templates(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.response_templates = input;
         self
     }
     /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
-    pub fn get_response_templates(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_response_templates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.response_templates
     }
     /// Consumes the builder and constructs a [`PutGatewayResponseInput`](crate::operation::put_gateway_response::PutGatewayResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_gateway_response::PutGatewayResponseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_gateway_response::PutGatewayResponseInput {
-                rest_api_id: self.rest_api_id,
-                response_type: self.response_type,
-                status_code: self.status_code,
-                response_parameters: self.response_parameters,
-                response_templates: self.response_templates,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_gateway_response::PutGatewayResponseInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_gateway_response::PutGatewayResponseInput {
+            rest_api_id: self.rest_api_id,
+            response_type: self.response_type,
+            status_code: self.status_code,
+            response_parameters: self.response_parameters,
+            response_templates: self.response_templates,
+        })
     }
 }

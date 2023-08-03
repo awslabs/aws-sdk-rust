@@ -15,9 +15,7 @@ pub struct EntityRecognizerMetadata {
     pub evaluation_metrics: ::std::option::Option<crate::types::EntityRecognizerEvaluationMetrics>,
     /// <p>Entity types from the metadata of an entity recognizer.</p>
     #[doc(hidden)]
-    pub entity_types: ::std::option::Option<
-        ::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>,
-    >,
+    pub entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>>,
 }
 impl EntityRecognizerMetadata {
     /// <p> The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
@@ -29,29 +27,19 @@ impl EntityRecognizerMetadata {
         self.number_of_test_documents
     }
     /// <p>Detailed information about the accuracy of an entity recognizer.</p>
-    pub fn evaluation_metrics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EntityRecognizerEvaluationMetrics> {
+    pub fn evaluation_metrics(&self) -> ::std::option::Option<&crate::types::EntityRecognizerEvaluationMetrics> {
         self.evaluation_metrics.as_ref()
     }
     /// <p>Entity types from the metadata of an entity recognizer.</p>
-    pub fn entity_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EntityRecognizerMetadataEntityTypesListItem]> {
+    pub fn entity_types(&self) -> ::std::option::Option<&[crate::types::EntityRecognizerMetadataEntityTypesListItem]> {
         self.entity_types.as_deref()
     }
 }
 impl ::std::fmt::Debug for EntityRecognizerMetadata {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EntityRecognizerMetadata");
-        formatter.field(
-            "number_of_trained_documents",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "number_of_test_documents",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("number_of_trained_documents", &"*** Sensitive Data Redacted ***");
+        formatter.field("number_of_test_documents", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluation_metrics", &"*** Sensitive Data Redacted ***");
         formatter.field("entity_types", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -70,11 +58,8 @@ impl EntityRecognizerMetadata {
 pub struct EntityRecognizerMetadataBuilder {
     pub(crate) number_of_trained_documents: ::std::option::Option<i32>,
     pub(crate) number_of_test_documents: ::std::option::Option<i32>,
-    pub(crate) evaluation_metrics:
-        ::std::option::Option<crate::types::EntityRecognizerEvaluationMetrics>,
-    pub(crate) entity_types: ::std::option::Option<
-        ::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>,
-    >,
+    pub(crate) evaluation_metrics: ::std::option::Option<crate::types::EntityRecognizerEvaluationMetrics>,
+    pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>>,
 }
 impl EntityRecognizerMetadataBuilder {
     /// <p> The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
@@ -106,25 +91,17 @@ impl EntityRecognizerMetadataBuilder {
         &self.number_of_test_documents
     }
     /// <p>Detailed information about the accuracy of an entity recognizer.</p>
-    pub fn evaluation_metrics(
-        mut self,
-        input: crate::types::EntityRecognizerEvaluationMetrics,
-    ) -> Self {
+    pub fn evaluation_metrics(mut self, input: crate::types::EntityRecognizerEvaluationMetrics) -> Self {
         self.evaluation_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Detailed information about the accuracy of an entity recognizer.</p>
-    pub fn set_evaluation_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityRecognizerEvaluationMetrics>,
-    ) -> Self {
+    pub fn set_evaluation_metrics(mut self, input: ::std::option::Option<crate::types::EntityRecognizerEvaluationMetrics>) -> Self {
         self.evaluation_metrics = input;
         self
     }
     /// <p>Detailed information about the accuracy of an entity recognizer.</p>
-    pub fn get_evaluation_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::EntityRecognizerEvaluationMetrics> {
+    pub fn get_evaluation_metrics(&self) -> &::std::option::Option<crate::types::EntityRecognizerEvaluationMetrics> {
         &self.evaluation_metrics
     }
     /// Appends an item to `entity_types`.
@@ -132,10 +109,7 @@ impl EntityRecognizerMetadataBuilder {
     /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
     ///
     /// <p>Entity types from the metadata of an entity recognizer.</p>
-    pub fn entity_types(
-        mut self,
-        input: crate::types::EntityRecognizerMetadataEntityTypesListItem,
-    ) -> Self {
+    pub fn entity_types(mut self, input: crate::types::EntityRecognizerMetadataEntityTypesListItem) -> Self {
         let mut v = self.entity_types.unwrap_or_default();
         v.push(input);
         self.entity_types = ::std::option::Option::Some(v);
@@ -144,19 +118,13 @@ impl EntityRecognizerMetadataBuilder {
     /// <p>Entity types from the metadata of an entity recognizer.</p>
     pub fn set_entity_types(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>>,
     ) -> Self {
         self.entity_types = input;
         self
     }
     /// <p>Entity types from the metadata of an entity recognizer.</p>
-    pub fn get_entity_types(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>,
-    > {
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>> {
         &self.entity_types
     }
     /// Consumes the builder and constructs a [`EntityRecognizerMetadata`](crate::types::EntityRecognizerMetadata).
@@ -172,14 +140,8 @@ impl EntityRecognizerMetadataBuilder {
 impl ::std::fmt::Debug for EntityRecognizerMetadataBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EntityRecognizerMetadataBuilder");
-        formatter.field(
-            "number_of_trained_documents",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "number_of_test_documents",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("number_of_trained_documents", &"*** Sensitive Data Redacted ***");
+        formatter.field("number_of_test_documents", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluation_metrics", &"*** Sensitive Data Redacted ***");
         formatter.field("entity_types", &"*** Sensitive Data Redacted ***");
         formatter.finish()

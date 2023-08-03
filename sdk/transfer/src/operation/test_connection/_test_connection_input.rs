@@ -22,9 +22,7 @@ impl TestConnectionInput {
 
 /// A builder for [`TestConnectionInput`](crate::operation::test_connection::TestConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestConnectionInputBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl TestConnectionInputBuilder {
     /// Consumes the builder and constructs a [`TestConnectionInput`](crate::operation::test_connection::TestConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::test_connection::TestConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::test_connection::TestConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_connection::TestConnectionInput {
             connector_id: self.connector_id,
         })

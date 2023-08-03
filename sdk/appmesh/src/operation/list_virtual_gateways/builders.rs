@@ -37,9 +37,7 @@ impl ListVirtualGatewaysFluentBuilder {
         }
     }
     /// Access the ListVirtualGateways as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_virtual_gateways::builders::ListVirtualGatewaysInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_virtual_gateways::builders::ListVirtualGatewaysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListVirtualGatewaysFluentBuilder {
             crate::operation::list_virtual_gateways::ListVirtualGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_virtual_gateways::ListVirtualGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_virtual_gateways::ListVirtualGatewaysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListVirtualGatewaysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListVirtualGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_virtual_gateways::ListVirtualGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_virtual_gateways::ListVirtualGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_virtual_gateways::ListVirtualGatewaysError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListVirtualGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_virtual_gateways::ListVirtualGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_virtual_gateways::ListVirtualGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_virtual_gateways::ListVirtualGatewaysError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListVirtualGatewaysFluentBuilder {
             crate::operation::list_virtual_gateways::ListVirtualGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_virtual_gateways::ListVirtualGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_virtual_gateways::ListVirtualGatewaysError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_virtual_gateways::paginator::ListVirtualGatewaysPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_virtual_gateways::paginator::ListVirtualGatewaysPaginator {
-        crate::operation::list_virtual_gateways::paginator::ListVirtualGatewaysPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_virtual_gateways::paginator::ListVirtualGatewaysPaginator {
+        crate::operation::list_virtual_gateways::paginator::ListVirtualGatewaysPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the service mesh to list virtual gateways in.</p>
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

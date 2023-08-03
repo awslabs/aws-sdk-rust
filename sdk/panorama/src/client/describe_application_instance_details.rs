@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`created_time(Option<DateTime>)`](crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsOutput::created_time): <p>When the application instance was created.</p>
     ///   - [`application_instance_id(Option<String>)`](crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsOutput::application_instance_id): <p>The application instance's ID.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationInstanceDetailsError>`](crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError)
-    pub fn describe_application_instance_details(&self) -> crate::operation::describe_application_instance_details::builders::DescribeApplicationInstanceDetailsFluentBuilder{
+    pub fn describe_application_instance_details(
+        &self,
+    ) -> crate::operation::describe_application_instance_details::builders::DescribeApplicationInstanceDetailsFluentBuilder {
         crate::operation::describe_application_instance_details::builders::DescribeApplicationInstanceDetailsFluentBuilder::new(self.handle.clone())
     }
 }

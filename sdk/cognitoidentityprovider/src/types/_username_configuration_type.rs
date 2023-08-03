@@ -53,9 +53,7 @@ impl UsernameConfigurationType {
 
 /// A builder for [`UsernameConfigurationType`](crate::types::UsernameConfigurationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsernameConfigurationTypeBuilder {
     pub(crate) case_sensitive: ::std::option::Option<bool>,
 }

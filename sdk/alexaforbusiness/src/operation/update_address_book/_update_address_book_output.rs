@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateAddressBookOutput {
 }
 impl UpdateAddressBookOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAddressBookOutput`](crate::operation::update_address_book::UpdateAddressBookOutput).
-    pub fn builder(
-    ) -> crate::operation::update_address_book::builders::UpdateAddressBookOutputBuilder {
+    pub fn builder() -> crate::operation::update_address_book::builders::UpdateAddressBookOutputBuilder {
         crate::operation::update_address_book::builders::UpdateAddressBookOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAddressBookOutput`](crate::operation::update_address_book::UpdateAddressBookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAddressBookOutputBuilder {
     _request_id: Option<String>,
 }

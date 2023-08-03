@@ -49,9 +49,7 @@ impl DescribeAnomalyDetectorOutput {
         self.anomaly_detector_description.as_deref()
     }
     /// <p>Contains information about the detector's configuration.</p>
-    pub fn anomaly_detector_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnomalyDetectorConfigSummary> {
+    pub fn anomaly_detector_config(&self) -> ::std::option::Option<&crate::types::AnomalyDetectorConfigSummary> {
         self.anomaly_detector_config.as_ref()
     }
     /// <p>The time at which the detector was created.</p>
@@ -86,24 +84,19 @@ impl ::aws_http::request_id::RequestId for DescribeAnomalyDetectorOutput {
 }
 impl DescribeAnomalyDetectorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectorOutput`](crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorOutputBuilder {
         crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAnomalyDetectorOutput`](crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnomalyDetectorOutputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_detector_name: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_detector_description: ::std::option::Option<::std::string::String>,
-    pub(crate) anomaly_detector_config:
-        ::std::option::Option<crate::types::AnomalyDetectorConfigSummary>,
+    pub(crate) anomaly_detector_config: ::std::option::Option<crate::types::AnomalyDetectorConfigSummary>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::AnomalyDetectorStatus>,
@@ -114,18 +107,12 @@ pub struct DescribeAnomalyDetectorOutputBuilder {
 }
 impl DescribeAnomalyDetectorOutputBuilder {
     /// <p>The ARN of the detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_detector_arn = input;
         self
     }
@@ -134,18 +121,12 @@ impl DescribeAnomalyDetectorOutputBuilder {
         &self.anomaly_detector_arn
     }
     /// <p>The name of the detector.</p>
-    pub fn anomaly_detector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the detector.</p>
-    pub fn set_anomaly_detector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_detector_name = input;
         self
     }
@@ -154,47 +135,31 @@ impl DescribeAnomalyDetectorOutputBuilder {
         &self.anomaly_detector_name
     }
     /// <p>A description of the detector.</p>
-    pub fn anomaly_detector_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the detector.</p>
-    pub fn set_anomaly_detector_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_detector_description = input;
         self
     }
     /// <p>A description of the detector.</p>
-    pub fn get_anomaly_detector_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_anomaly_detector_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.anomaly_detector_description
     }
     /// <p>Contains information about the detector's configuration.</p>
-    pub fn anomaly_detector_config(
-        mut self,
-        input: crate::types::AnomalyDetectorConfigSummary,
-    ) -> Self {
+    pub fn anomaly_detector_config(mut self, input: crate::types::AnomalyDetectorConfigSummary) -> Self {
         self.anomaly_detector_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the detector's configuration.</p>
-    pub fn set_anomaly_detector_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyDetectorConfigSummary>,
-    ) -> Self {
+    pub fn set_anomaly_detector_config(mut self, input: ::std::option::Option<crate::types::AnomalyDetectorConfigSummary>) -> Self {
         self.anomaly_detector_config = input;
         self
     }
     /// <p>Contains information about the detector's configuration.</p>
-    pub fn get_anomaly_detector_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalyDetectorConfigSummary> {
+    pub fn get_anomaly_detector_config(&self) -> &::std::option::Option<crate::types::AnomalyDetectorConfigSummary> {
         &self.anomaly_detector_config
     }
     /// <p>The time at which the detector was created.</p>
@@ -203,10 +168,7 @@ impl DescribeAnomalyDetectorOutputBuilder {
         self
     }
     /// <p>The time at which the detector was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -220,17 +182,12 @@ impl DescribeAnomalyDetectorOutputBuilder {
         self
     }
     /// <p>The time at which the detector was last modified.</p>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
     /// <p>The time at which the detector was last modified.</p>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// <p>The status of the detector.</p>
@@ -239,10 +196,7 @@ impl DescribeAnomalyDetectorOutputBuilder {
         self
     }
     /// <p>The status of the detector.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyDetectorStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AnomalyDetectorStatus>) -> Self {
         self.status = input;
         self
     }
@@ -251,18 +205,12 @@ impl DescribeAnomalyDetectorOutputBuilder {
         &self.status
     }
     /// <p>The reason that the detector failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason that the detector failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -290,17 +238,12 @@ impl DescribeAnomalyDetectorOutputBuilder {
         self
     }
     /// <p>The process that caused the detector to fail.</p>
-    pub fn set_failure_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyDetectorFailureType>,
-    ) -> Self {
+    pub fn set_failure_type(mut self, input: ::std::option::Option<crate::types::AnomalyDetectorFailureType>) -> Self {
         self.failure_type = input;
         self
     }
     /// <p>The process that caused the detector to fail.</p>
-    pub fn get_failure_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalyDetectorFailureType> {
+    pub fn get_failure_type(&self) -> &::std::option::Option<crate::types::AnomalyDetectorFailureType> {
         &self.failure_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -313,9 +256,7 @@ impl DescribeAnomalyDetectorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAnomalyDetectorOutput`](crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorOutput {
+    pub fn build(self) -> crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorOutput {
         crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorOutput {
             anomaly_detector_arn: self.anomaly_detector_arn,
             anomaly_detector_name: self.anomaly_detector_name,

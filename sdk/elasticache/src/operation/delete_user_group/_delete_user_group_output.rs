@@ -70,17 +70,14 @@ impl ::aws_http::request_id::RequestId for DeleteUserGroupOutput {
 }
 impl DeleteUserGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserGroupOutput`](crate::operation::delete_user_group::DeleteUserGroupOutput).
-    pub fn builder() -> crate::operation::delete_user_group::builders::DeleteUserGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_user_group::builders::DeleteUserGroupOutputBuilder {
         crate::operation::delete_user_group::builders::DeleteUserGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUserGroupOutput`](crate::operation::delete_user_group::DeleteUserGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUserGroupOutputBuilder {
     pub(crate) user_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -94,18 +91,12 @@ pub struct DeleteUserGroupOutputBuilder {
 }
 impl DeleteUserGroupOutputBuilder {
     /// <p>The ID of the user group.</p>
-    pub fn user_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the user group.</p>
-    pub fn set_user_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_group_id = input;
         self
     }
@@ -153,10 +144,7 @@ impl DeleteUserGroupOutputBuilder {
         self
     }
     /// <p>The list of user IDs that belong to the user group.</p>
-    pub fn set_user_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_ids = input;
         self
     }
@@ -165,18 +153,12 @@ impl DeleteUserGroupOutputBuilder {
         &self.user_ids
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn minimum_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn set_minimum_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum_engine_version = input;
         self
     }
@@ -190,17 +172,12 @@ impl DeleteUserGroupOutputBuilder {
         self
     }
     /// <p>A list of updates being applied to the user group.</p>
-    pub fn set_pending_changes(
-        mut self,
-        input: ::std::option::Option<crate::types::UserGroupPendingChanges>,
-    ) -> Self {
+    pub fn set_pending_changes(mut self, input: ::std::option::Option<crate::types::UserGroupPendingChanges>) -> Self {
         self.pending_changes = input;
         self
     }
     /// <p>A list of updates being applied to the user group.</p>
-    pub fn get_pending_changes(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserGroupPendingChanges> {
+    pub fn get_pending_changes(&self) -> &::std::option::Option<crate::types::UserGroupPendingChanges> {
         &self.pending_changes
     }
     /// Appends an item to `replication_groups`.
@@ -208,27 +185,19 @@ impl DeleteUserGroupOutputBuilder {
     /// To override the contents of this collection use [`set_replication_groups`](Self::set_replication_groups).
     ///
     /// <p>A list of replication groups that the user group can access.</p>
-    pub fn replication_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replication_groups.unwrap_or_default();
         v.push(input.into());
         self.replication_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of replication groups that the user group can access.</p>
-    pub fn set_replication_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replication_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replication_groups = input;
         self
     }
     /// <p>A list of replication groups that the user group can access.</p>
-    pub fn get_replication_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replication_groups
     }
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>

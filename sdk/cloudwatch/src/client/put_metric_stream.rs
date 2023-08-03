@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`PutMetricStreamOutput`](crate::operation::put_metric_stream::PutMetricStreamOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::put_metric_stream::PutMetricStreamOutput::arn): <p>The ARN of the metric stream.</p>
     /// - On failure, responds with [`SdkError<PutMetricStreamError>`](crate::operation::put_metric_stream::PutMetricStreamError)
-    pub fn put_metric_stream(
-        &self,
-    ) -> crate::operation::put_metric_stream::builders::PutMetricStreamFluentBuilder {
-        crate::operation::put_metric_stream::builders::PutMetricStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_metric_stream(&self) -> crate::operation::put_metric_stream::builders::PutMetricStreamFluentBuilder {
+        crate::operation::put_metric_stream::builders::PutMetricStreamFluentBuilder::new(self.handle.clone())
     }
 }

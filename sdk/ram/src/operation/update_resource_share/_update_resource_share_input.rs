@@ -40,18 +40,14 @@ impl UpdateResourceShareInput {
 }
 impl UpdateResourceShareInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceShareInput`](crate::operation::update_resource_share::UpdateResourceShareInput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_share::builders::UpdateResourceShareInputBuilder {
-        crate::operation::update_resource_share::builders::UpdateResourceShareInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_resource_share::builders::UpdateResourceShareInputBuilder {
+        crate::operation::update_resource_share::builders::UpdateResourceShareInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourceShareInput`](crate::operation::update_resource_share::UpdateResourceShareInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceShareInputBuilder {
     pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -60,18 +56,12 @@ pub struct UpdateResourceShareInputBuilder {
 }
 impl UpdateResourceShareInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to modify.</p>
-    pub fn resource_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to modify.</p>
-    pub fn set_resource_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_share_arn = input;
         self
     }
@@ -130,17 +120,13 @@ impl UpdateResourceShareInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourceShareInput`](crate::operation::update_resource_share::UpdateResourceShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resource_share::UpdateResourceShareInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_resource_share::UpdateResourceShareInput {
-                resource_share_arn: self.resource_share_arn,
-                name: self.name,
-                allow_external_principals: self.allow_external_principals,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_resource_share::UpdateResourceShareInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_resource_share::UpdateResourceShareInput {
+            resource_share_arn: self.resource_share_arn,
+            name: self.name,
+            allow_external_principals: self.allow_external_principals,
+            client_token: self.client_token,
+        })
     }
 }

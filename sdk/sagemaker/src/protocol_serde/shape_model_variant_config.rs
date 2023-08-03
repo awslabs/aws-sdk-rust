@@ -12,10 +12,7 @@ pub fn ser_model_variant_config(
     if let Some(var_3) = &input.infrastructure_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("InfrastructureConfig").start_object();
-        crate::protocol_serde::shape_model_infrastructure_config::ser_model_infrastructure_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_model_infrastructure_config::ser_model_infrastructure_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

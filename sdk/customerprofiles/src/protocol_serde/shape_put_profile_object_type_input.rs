@@ -25,10 +25,7 @@ pub fn ser_put_profile_object_type_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = object_6.key(key_7.as_str()).start_object();
-                crate::protocol_serde::shape_object_type_field::ser_object_type_field(
-                    &mut object_9,
-                    value_8,
-                )?;
+                crate::protocol_serde::shape_object_type_field::ser_object_type_field(&mut object_9, value_8)?;
                 object_9.finish();
             }
         }
@@ -44,10 +41,7 @@ pub fn ser_put_profile_object_type_input(
                     {
                         #[allow(unused_mut)]
                         let mut object_16 = array_14.value().start_object();
-                        crate::protocol_serde::shape_object_type_key::ser_object_type_key(
-                            &mut object_16,
-                            item_15,
-                        )?;
+                        crate::protocol_serde::shape_object_type_key::ser_object_type_key(&mut object_16, item_15)?;
                         object_16.finish();
                     }
                 }
@@ -57,9 +51,7 @@ pub fn ser_put_profile_object_type_input(
         object_11.finish();
     }
     if let Some(var_17) = &input.source_last_updated_timestamp_format {
-        object
-            .key("SourceLastUpdatedTimestampFormat")
-            .string(var_17.as_str());
+        object.key("SourceLastUpdatedTimestampFormat").string(var_17.as_str());
     }
     if let Some(var_18) = &input.tags {
         #[allow(unused_mut)]

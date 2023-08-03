@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`cluster_arn(Option<String>)`](crate::operation::delete_cluster::DeleteClusterOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`state(Option<ClusterState>)`](crate::operation::delete_cluster::DeleteClusterOutput::state): <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
     /// - On failure, responds with [`SdkError<DeleteClusterError>`](crate::operation::delete_cluster::DeleteClusterError)
-    pub fn delete_cluster(
-        &self,
-    ) -> crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder {
-        crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_cluster(&self) -> crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder {
+        crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::new(self.handle.clone())
     }
 }

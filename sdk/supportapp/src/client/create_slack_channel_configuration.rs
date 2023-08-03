@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`channel_role_arn(impl ::std::convert::Into<String>)`](crate::operation::create_slack_channel_configuration::builders::CreateSlackChannelConfigurationFluentBuilder::channel_role_arn) / [`set_channel_role_arn(Option<String>)`](crate::operation::create_slack_channel_configuration::builders::CreateSlackChannelConfigurationFluentBuilder::set_channel_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     /// - On success, responds with [`CreateSlackChannelConfigurationOutput`](crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationOutput)
     /// - On failure, responds with [`SdkError<CreateSlackChannelConfigurationError>`](crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError)
-    pub fn create_slack_channel_configuration(&self) -> crate::operation::create_slack_channel_configuration::builders::CreateSlackChannelConfigurationFluentBuilder{
+    pub fn create_slack_channel_configuration(
+        &self,
+    ) -> crate::operation::create_slack_channel_configuration::builders::CreateSlackChannelConfigurationFluentBuilder {
         crate::operation::create_slack_channel_configuration::builders::CreateSlackChannelConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

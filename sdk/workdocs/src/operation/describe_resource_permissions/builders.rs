@@ -26,7 +26,7 @@ impl DescribeResourcePermissionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeResourcePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsInputBuilder,
+    inner: crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsInputBuilder,
 }
 impl DescribeResourcePermissionsFluentBuilder {
     /// Creates a new `DescribeResourcePermissions`.
@@ -37,7 +37,7 @@ impl DescribeResourcePermissionsFluentBuilder {
         }
     }
     /// Access the DescribeResourcePermissions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeResourcePermissionsFluentBuilder {
             crate::operation::describe_resource_permissions::DescribeResourcePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resource_permissions::DescribeResourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_permissions::DescribeResourcePermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeResourcePermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeResourcePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resource_permissions::DescribeResourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_permissions::DescribeResourcePermissionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeResourcePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resource_permissions::DescribeResourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_permissions::DescribeResourcePermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl DescribeResourcePermissionsFluentBuilder {
             crate::operation::describe_resource_permissions::DescribeResourcePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resource_permissions::DescribeResourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_permissions::DescribeResourcePermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_resource_permissions::paginator::DescribeResourcePermissionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_resource_permissions::paginator::DescribeResourcePermissionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_resource_permissions::paginator::DescribeResourcePermissionsPaginator {
         crate::operation::describe_resource_permissions::paginator::DescribeResourcePermissionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }

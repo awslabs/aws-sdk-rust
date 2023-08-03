@@ -9,10 +9,7 @@ pub fn ser_image_scanning_configuration(
     if let Some(var_2) = &input.ecr_configuration {
         #[allow(unused_mut)]
         let mut object_3 = object.key("ecrConfiguration").start_object();
-        crate::protocol_serde::shape_ecr_configuration::ser_ecr_configuration(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_ecr_configuration::ser_ecr_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())
@@ -20,17 +17,9 @@ pub fn ser_image_scanning_configuration(
 
 pub(crate) fn de_image_scanning_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ImageScanningConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ImageScanningConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -40,38 +29,27 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "imageScanningEnabled" => {
-                                builder = builder.set_image_scanning_enabled(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "ecrConfiguration" => {
-                                builder = builder.set_ecr_configuration(
-                                    crate::protocol_serde::shape_ecr_configuration::de_ecr_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "imageScanningEnabled" => {
+                            builder = builder.set_image_scanning_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
-                    }
+                        "ecrConfiguration" => {
+                            builder = builder.set_ecr_configuration(crate::protocol_serde::shape_ecr_configuration::de_ecr_configuration(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

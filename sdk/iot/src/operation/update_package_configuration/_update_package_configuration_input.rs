@@ -5,17 +5,14 @@
 pub struct UpdatePackageConfigurationInput {
     /// <p>Configuration to manage job's package version reporting. This updates the thing's reserved named shadow that the job targets.</p>
     #[doc(hidden)]
-    pub version_update_by_jobs_config:
-        ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
+    pub version_update_by_jobs_config: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePackageConfigurationInput {
     /// <p>Configuration to manage job's package version reporting. This updates the thing's reserved named shadow that the job targets.</p>
-    pub fn version_update_by_jobs_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VersionUpdateByJobsConfig> {
+    pub fn version_update_by_jobs_config(&self) -> ::std::option::Option<&crate::types::VersionUpdateByJobsConfig> {
         self.version_update_by_jobs_config.as_ref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -25,42 +22,31 @@ impl UpdatePackageConfigurationInput {
 }
 impl UpdatePackageConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdatePackageConfigurationInput`](crate::operation::update_package_configuration::UpdatePackageConfigurationInput).
-    pub fn builder() -> crate::operation::update_package_configuration::builders::UpdatePackageConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_package_configuration::builders::UpdatePackageConfigurationInputBuilder {
         crate::operation::update_package_configuration::builders::UpdatePackageConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePackageConfigurationInput`](crate::operation::update_package_configuration::UpdatePackageConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePackageConfigurationInputBuilder {
-    pub(crate) version_update_by_jobs_config:
-        ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
+    pub(crate) version_update_by_jobs_config: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePackageConfigurationInputBuilder {
     /// <p>Configuration to manage job's package version reporting. This updates the thing's reserved named shadow that the job targets.</p>
-    pub fn version_update_by_jobs_config(
-        mut self,
-        input: crate::types::VersionUpdateByJobsConfig,
-    ) -> Self {
+    pub fn version_update_by_jobs_config(mut self, input: crate::types::VersionUpdateByJobsConfig) -> Self {
         self.version_update_by_jobs_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration to manage job's package version reporting. This updates the thing's reserved named shadow that the job targets.</p>
-    pub fn set_version_update_by_jobs_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
-    ) -> Self {
+    pub fn set_version_update_by_jobs_config(mut self, input: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>) -> Self {
         self.version_update_by_jobs_config = input;
         self
     }
     /// <p>Configuration to manage job's package version reporting. This updates the thing's reserved named shadow that the job targets.</p>
-    pub fn get_version_update_by_jobs_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::VersionUpdateByJobsConfig> {
+    pub fn get_version_update_by_jobs_config(&self) -> &::std::option::Option<crate::types::VersionUpdateByJobsConfig> {
         &self.version_update_by_jobs_config
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -84,11 +70,9 @@ impl UpdatePackageConfigurationInputBuilder {
         crate::operation::update_package_configuration::UpdatePackageConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_package_configuration::UpdatePackageConfigurationInput {
-                version_update_by_jobs_config: self.version_update_by_jobs_config,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_package_configuration::UpdatePackageConfigurationInput {
+            version_update_by_jobs_config: self.version_update_by_jobs_config,
+            client_token: self.client_token,
+        })
     }
 }

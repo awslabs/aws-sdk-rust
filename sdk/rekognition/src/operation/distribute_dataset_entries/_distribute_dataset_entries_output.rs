@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DistributeDatasetEntriesOutput {
 }
 impl DistributeDatasetEntriesOutput {
     /// Creates a new builder-style object to manufacture [`DistributeDatasetEntriesOutput`](crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput).
-    pub fn builder(
-    ) -> crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesOutputBuilder {
         crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DistributeDatasetEntriesOutput`](crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DistributeDatasetEntriesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DistributeDatasetEntriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DistributeDatasetEntriesOutput`](crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput {
+    pub fn build(self) -> crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput {
         crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput {
             _request_id: self._request_id,
         }

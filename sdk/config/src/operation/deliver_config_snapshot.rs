@@ -27,27 +27,16 @@ impl DeliverConfigSnapshotInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -56,20 +45,13 @@ impl DeliverConfigSnapshotInput {
             fn update_http_builder(
                 input: &crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
-            builder = ::aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                ::http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = ::aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 ::http::header::HeaderName::from_static("x-amz-target"),
@@ -79,15 +61,11 @@ impl DeliverConfigSnapshotInput {
         };
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = ::aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_deliver_config_snapshot::ser_deliver_config_snapshot_input(&self)?
-        );
+        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_deliver_config_snapshot::ser_deliver_config_snapshot_input(
+            &self,
+        )?);
         if let ::std::option::Option::Some(content_length) = body.content_length() {
-            request = ::aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                ::http::header::CONTENT_LENGTH,
-                content_length,
-            );
+            request = ::aws_smithy_http::header::set_request_header_if_absent(request, ::http::header::CONTENT_LENGTH, content_length);
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -99,10 +77,8 @@ impl DeliverConfigSnapshotInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -111,29 +87,16 @@ impl DeliverConfigSnapshotInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::deliver_config_snapshot::DeliverConfigSnapshot::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "DeliverConfigSnapshot",
-            "configservice",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::deliver_config_snapshot::DeliverConfigSnapshot::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("DeliverConfigSnapshot", "configservice"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -179,13 +142,9 @@ pub type DeliverConfigSnapshotErrorKind = DeliverConfigSnapshotError;
 #[derive(::std::fmt::Debug)]
 pub enum DeliverConfigSnapshotError {
     /// <p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>
-    NoAvailableConfigurationRecorderException(
-        crate::types::error::NoAvailableConfigurationRecorderException,
-    ),
+    NoAvailableConfigurationRecorderException(crate::types::error::NoAvailableConfigurationRecorderException),
     /// <p>There is no configuration recorder running.</p>
-    NoRunningConfigurationRecorderException(
-        crate::types::error::NoRunningConfigurationRecorderException,
-    ),
+    NoRunningConfigurationRecorderException(crate::types::error::NoRunningConfigurationRecorderException),
     /// <p>You have specified a delivery channel that does not exist.</p>
     NoSuchDeliveryChannelException(crate::types::error::NoSuchDeliveryChannelException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -193,9 +152,7 @@ pub enum DeliverConfigSnapshotError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for DeliverConfigSnapshotError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -218,24 +175,14 @@ impl ::std::fmt::Display for DeliverConfigSnapshotError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeliverConfigSnapshotError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::NoAvailableConfigurationRecorderException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NoRunningConfigurationRecorderException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NoSuchDeliveryChannelException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::NoAvailableConfigurationRecorderException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NoRunningConfigurationRecorderException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NoSuchDeliveryChannelException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -251,27 +198,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeliverConfigSnapshotError 
 impl DeliverConfigSnapshotError {
     /// Creates the `DeliverConfigSnapshotError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `DeliverConfigSnapshotError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,
@@ -302,12 +236,8 @@ impl DeliverConfigSnapshotError {
 impl ::std::error::Error for DeliverConfigSnapshotError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::NoAvailableConfigurationRecorderException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::NoRunningConfigurationRecorderException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::NoAvailableConfigurationRecorderException(_inner) => ::std::option::Option::Some(_inner),
+            Self::NoRunningConfigurationRecorderException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoSuchDeliveryChannelException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }

@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateHitTypeOutput`](crate::operation::create_hit_type::CreateHitTypeOutput) with field(s):
     ///   - [`hit_type_id(Option<String>)`](crate::operation::create_hit_type::CreateHitTypeOutput::hit_type_id): <p> The ID of the newly registered HIT type.</p>
     /// - On failure, responds with [`SdkError<CreateHITTypeError>`](crate::operation::create_hit_type::CreateHITTypeError)
-    pub fn create_hit_type(
-        &self,
-    ) -> crate::operation::create_hit_type::builders::CreateHITTypeFluentBuilder {
-        crate::operation::create_hit_type::builders::CreateHITTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_hit_type(&self) -> crate::operation::create_hit_type::builders::CreateHITTypeFluentBuilder {
+        crate::operation::create_hit_type::builders::CreateHITTypeFluentBuilder::new(self.handle.clone())
     }
 }

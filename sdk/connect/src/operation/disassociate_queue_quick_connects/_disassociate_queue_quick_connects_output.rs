@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateQueueQuickConnectsOutput 
 }
 impl DisassociateQueueQuickConnectsOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateQueueQuickConnectsOutput`](crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsOutput).
-    pub fn builder() -> crate::operation::disassociate_queue_quick_connects::builders::DisassociateQueueQuickConnectsOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_queue_quick_connects::builders::DisassociateQueueQuickConnectsOutputBuilder {
         crate::operation::disassociate_queue_quick_connects::builders::DisassociateQueueQuickConnectsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateQueueQuickConnectsOutput`](crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateQueueQuickConnectsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DisassociateQueueQuickConnectsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateQueueQuickConnectsOutput`](crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsOutput {
         crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsOutput {
             _request_id: self._request_id,
         }

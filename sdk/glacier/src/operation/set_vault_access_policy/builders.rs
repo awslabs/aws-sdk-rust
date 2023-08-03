@@ -37,10 +37,7 @@ impl SetVaultAccessPolicyFluentBuilder {
         }
     }
     /// Access the SetVaultAccessPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_vault_access_policy::builders::SetVaultAccessPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_vault_access_policy::builders::SetVaultAccessPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl SetVaultAccessPolicyFluentBuilder {
             crate::operation::set_vault_access_policy::SetVaultAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_vault_access_policy::SetVaultAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_vault_access_policy::SetVaultAccessPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl SetVaultAccessPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl SetVaultAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_vault_access_policy::SetVaultAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_vault_access_policy::SetVaultAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_vault_access_policy::SetVaultAccessPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl SetVaultAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_vault_access_policy::SetVaultAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_vault_access_policy::SetVaultAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_vault_access_policy::SetVaultAccessPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl SetVaultAccessPolicyFluentBuilder {
             crate::operation::set_vault_access_policy::SetVaultAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_vault_access_policy::SetVaultAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_vault_access_policy::SetVaultAccessPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +143,7 @@ impl SetVaultAccessPolicyFluentBuilder {
         self
     }
     /// <p>The vault access policy as a JSON string.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::VaultAccessPolicy>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::VaultAccessPolicy>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
     }

@@ -41,10 +41,7 @@ pub fn ser_create_feature_input(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_variation_config::ser_variation_config(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_variation_config::ser_variation_config(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }

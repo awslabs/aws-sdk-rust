@@ -18,17 +18,14 @@ impl ListIdentityPoliciesInput {
 }
 impl ListIdentityPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListIdentityPoliciesInput`](crate::operation::list_identity_policies::ListIdentityPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_identity_policies::builders::ListIdentityPoliciesInputBuilder {
+    pub fn builder() -> crate::operation::list_identity_policies::builders::ListIdentityPoliciesInputBuilder {
         crate::operation::list_identity_policies::builders::ListIdentityPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentityPoliciesInput`](crate::operation::list_identity_policies::ListIdentityPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityPoliciesInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
 }
@@ -53,14 +50,8 @@ impl ListIdentityPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListIdentityPoliciesInput`](crate::operation::list_identity_policies::ListIdentityPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_identity_policies::ListIdentityPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_identity_policies::ListIdentityPoliciesInput {
-                identity: self.identity,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_identity_policies::ListIdentityPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_identity_policies::ListIdentityPoliciesInput { identity: self.identity })
     }
 }

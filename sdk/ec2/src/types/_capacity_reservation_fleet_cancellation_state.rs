@@ -16,15 +16,11 @@ pub struct CapacityReservationFleetCancellationState {
 }
 impl CapacityReservationFleetCancellationState {
     /// <p>The current state of the Capacity Reservation Fleet.</p>
-    pub fn current_fleet_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityReservationFleetState> {
+    pub fn current_fleet_state(&self) -> ::std::option::Option<&crate::types::CapacityReservationFleetState> {
         self.current_fleet_state.as_ref()
     }
     /// <p>The previous state of the Capacity Reservation Fleet.</p>
-    pub fn previous_fleet_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityReservationFleetState> {
+    pub fn previous_fleet_state(&self) -> ::std::option::Option<&crate::types::CapacityReservationFleetState> {
         self.previous_fleet_state.as_ref()
     }
     /// <p>The ID of the Capacity Reservation Fleet that was successfully cancelled.</p>
@@ -41,81 +37,53 @@ impl CapacityReservationFleetCancellationState {
 
 /// A builder for [`CapacityReservationFleetCancellationState`](crate::types::CapacityReservationFleetCancellationState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityReservationFleetCancellationStateBuilder {
-    pub(crate) current_fleet_state:
-        ::std::option::Option<crate::types::CapacityReservationFleetState>,
-    pub(crate) previous_fleet_state:
-        ::std::option::Option<crate::types::CapacityReservationFleetState>,
+    pub(crate) current_fleet_state: ::std::option::Option<crate::types::CapacityReservationFleetState>,
+    pub(crate) previous_fleet_state: ::std::option::Option<crate::types::CapacityReservationFleetState>,
     pub(crate) capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservationFleetCancellationStateBuilder {
     /// <p>The current state of the Capacity Reservation Fleet.</p>
-    pub fn current_fleet_state(
-        mut self,
-        input: crate::types::CapacityReservationFleetState,
-    ) -> Self {
+    pub fn current_fleet_state(mut self, input: crate::types::CapacityReservationFleetState) -> Self {
         self.current_fleet_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the Capacity Reservation Fleet.</p>
-    pub fn set_current_fleet_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationFleetState>,
-    ) -> Self {
+    pub fn set_current_fleet_state(mut self, input: ::std::option::Option<crate::types::CapacityReservationFleetState>) -> Self {
         self.current_fleet_state = input;
         self
     }
     /// <p>The current state of the Capacity Reservation Fleet.</p>
-    pub fn get_current_fleet_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityReservationFleetState> {
+    pub fn get_current_fleet_state(&self) -> &::std::option::Option<crate::types::CapacityReservationFleetState> {
         &self.current_fleet_state
     }
     /// <p>The previous state of the Capacity Reservation Fleet.</p>
-    pub fn previous_fleet_state(
-        mut self,
-        input: crate::types::CapacityReservationFleetState,
-    ) -> Self {
+    pub fn previous_fleet_state(mut self, input: crate::types::CapacityReservationFleetState) -> Self {
         self.previous_fleet_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The previous state of the Capacity Reservation Fleet.</p>
-    pub fn set_previous_fleet_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationFleetState>,
-    ) -> Self {
+    pub fn set_previous_fleet_state(mut self, input: ::std::option::Option<crate::types::CapacityReservationFleetState>) -> Self {
         self.previous_fleet_state = input;
         self
     }
     /// <p>The previous state of the Capacity Reservation Fleet.</p>
-    pub fn get_previous_fleet_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityReservationFleetState> {
+    pub fn get_previous_fleet_state(&self) -> &::std::option::Option<crate::types::CapacityReservationFleetState> {
         &self.previous_fleet_state
     }
     /// <p>The ID of the Capacity Reservation Fleet that was successfully cancelled.</p>
-    pub fn capacity_reservation_fleet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_fleet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation Fleet that was successfully cancelled.</p>
-    pub fn set_capacity_reservation_fleet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_fleet_id = input;
         self
     }
     /// <p>The ID of the Capacity Reservation Fleet that was successfully cancelled.</p>
-    pub fn get_capacity_reservation_fleet_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_capacity_reservation_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_reservation_fleet_id
     }
     /// Consumes the builder and constructs a [`CapacityReservationFleetCancellationState`](crate::types::CapacityReservationFleetCancellationState).

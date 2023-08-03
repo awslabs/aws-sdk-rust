@@ -10,10 +10,7 @@ impl CreateActivationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_activation::CreateActivationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_activation::CreateActivationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_activation::CreateActivationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_activation();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateActivationFluentBuilder {
         }
     }
     /// Access the CreateActivation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_activation::builders::CreateActivationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_activation::builders::CreateActivationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CreateActivationFluentBuilder {
             crate::operation::create_activation::CreateActivation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_activation::CreateActivationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_activation::CreateActivationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CreateActivationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CreateActivationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_activation::CreateActivationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_activation::CreateActivationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_activation::CreateActivationError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CreateActivationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_activation::CreateActivationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_activation::CreateActivationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_activation::CreateActivationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl CreateActivationFluentBuilder {
             crate::operation::create_activation::CreateActivation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_activation::CreateActivationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_activation::CreateActivationError>,
     > {
         self.customize_middleware().await
     }
@@ -147,20 +131,14 @@ impl CreateActivationFluentBuilder {
     /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
-    pub fn default_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_instance_name(input.into());
         self
     }
     /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
-    pub fn set_default_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_instance_name(input);
         self
     }
@@ -210,10 +188,7 @@ impl CreateActivationFluentBuilder {
         self
     }
     /// <p>The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
-    pub fn set_expiration_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_expiration_date(input);
         self
     }
@@ -245,10 +220,7 @@ impl CreateActivationFluentBuilder {
     /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
     /// </important>
     /// <p>You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is prefixed with "mi-". For information about how to add tags to your managed nodes, see <code>AddTagsToResource</code>. For information about how to remove tags from your managed nodes, see <code>RemoveTagsFromResource</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -273,17 +245,12 @@ impl CreateActivationFluentBuilder {
         self
     }
     /// <p>Reserved for internal use.</p>
-    pub fn set_registration_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationMetadataItem>>,
-    ) -> Self {
+    pub fn set_registration_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationMetadataItem>>) -> Self {
         self.inner = self.inner.set_registration_metadata(input);
         self
     }
     /// <p>Reserved for internal use.</p>
-    pub fn get_registration_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationMetadataItem>> {
+    pub fn get_registration_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationMetadataItem>> {
         self.inner.get_registration_metadata()
     }
 }

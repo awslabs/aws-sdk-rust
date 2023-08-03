@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`resource_compliance_summary_items(Option<Vec<ResourceComplianceSummaryItem>>)`](crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesOutput::resource_compliance_summary_items): <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListResourceComplianceSummariesError>`](crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesError)
-    pub fn list_resource_compliance_summaries(&self) -> crate::operation::list_resource_compliance_summaries::builders::ListResourceComplianceSummariesFluentBuilder{
+    pub fn list_resource_compliance_summaries(
+        &self,
+    ) -> crate::operation::list_resource_compliance_summaries::builders::ListResourceComplianceSummariesFluentBuilder {
         crate::operation::list_resource_compliance_summaries::builders::ListResourceComplianceSummariesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -58,9 +58,7 @@ impl ProcessingClusterConfig {
 
 /// A builder for [`ProcessingClusterConfig`](crate::types::ProcessingClusterConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessingClusterConfigBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ProcessingInstanceType>,
@@ -88,17 +86,12 @@ impl ProcessingClusterConfigBuilder {
         self
     }
     /// <p>The ML compute instance type for the processing job.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::ProcessingInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The ML compute instance type for the processing job.</p>
-    pub fn get_instance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingInstanceType> {
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ProcessingInstanceType> {
         &self.instance_type
     }
     /// <p>The size of the ML storage volume in gigabytes that you want to provision. You must specify sufficient ML storage for your scenario.</p> <note>
@@ -129,10 +122,7 @@ impl ProcessingClusterConfigBuilder {
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
-    pub fn volume_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -141,10 +131,7 @@ impl ProcessingClusterConfigBuilder {
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
-    pub fn set_volume_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_kms_key_id = input;
         self
     }

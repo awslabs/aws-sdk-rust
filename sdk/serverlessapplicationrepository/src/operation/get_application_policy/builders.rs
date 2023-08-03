@@ -37,9 +37,7 @@ impl GetApplicationPolicyFluentBuilder {
         }
     }
     /// Access the GetApplicationPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_application_policy::builders::GetApplicationPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_application_policy::builders::GetApplicationPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetApplicationPolicyFluentBuilder {
             crate::operation::get_application_policy::GetApplicationPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_application_policy::GetApplicationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_application_policy::GetApplicationPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetApplicationPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetApplicationPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_application_policy::GetApplicationPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_application_policy::GetApplicationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_application_policy::GetApplicationPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetApplicationPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_application_policy::GetApplicationPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_application_policy::GetApplicationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_application_policy::GetApplicationPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetApplicationPolicyFluentBuilder {
             crate::operation::get_application_policy::GetApplicationPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_application_policy::GetApplicationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_application_policy::GetApplicationPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

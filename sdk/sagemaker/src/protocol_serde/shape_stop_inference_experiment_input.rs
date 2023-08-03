@@ -22,10 +22,7 @@ pub fn ser_stop_inference_experiment_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_model_variant_config::ser_model_variant_config(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_model_variant_config::ser_model_variant_config(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }

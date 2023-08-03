@@ -58,17 +58,14 @@ impl CreateLocationNfsInput {
 }
 impl CreateLocationNfsInput {
     /// Creates a new builder-style object to manufacture [`CreateLocationNfsInput`](crate::operation::create_location_nfs::CreateLocationNfsInput).
-    pub fn builder(
-    ) -> crate::operation::create_location_nfs::builders::CreateLocationNfsInputBuilder {
+    pub fn builder() -> crate::operation::create_location_nfs::builders::CreateLocationNfsInputBuilder {
         crate::operation::create_location_nfs::builders::CreateLocationNfsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationNfsInput`](crate::operation::create_location_nfs::CreateLocationNfsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationNfsInputBuilder {
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
     pub(crate) server_hostname: ::std::option::Option<::std::string::String>,
@@ -104,10 +101,7 @@ impl CreateLocationNfsInputBuilder {
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
     /// <p>You must specify be an IP version 4 address or Domain Name System (DNS)-compliant name.</p>
     /// </note>
-    pub fn server_hostname(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_hostname = ::std::option::Option::Some(input.into());
         self
     }
@@ -115,10 +109,7 @@ impl CreateLocationNfsInputBuilder {
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
     /// <p>You must specify be an IP version 4 address or Domain Name System (DNS)-compliant name.</p>
     /// </note>
-    pub fn set_server_hostname(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_hostname = input;
         self
     }
@@ -137,10 +128,7 @@ impl CreateLocationNfsInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Names (ARNs) of agents that DataSync uses to connect to your NFS file server. </p>
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
-    pub fn set_on_prem_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OnPremConfig>,
-    ) -> Self {
+    pub fn set_on_prem_config(mut self, input: ::std::option::Option<crate::types::OnPremConfig>) -> Self {
         self.on_prem_config = input;
         self
     }
@@ -155,10 +143,7 @@ impl CreateLocationNfsInputBuilder {
         self
     }
     /// <p>Specifies the mount options that DataSync can use to mount your NFS share.</p>
-    pub fn set_mount_options(
-        mut self,
-        input: ::std::option::Option<crate::types::NfsMountOptions>,
-    ) -> Self {
+    pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::NfsMountOptions>) -> Self {
         self.mount_options = input;
         self
     }
@@ -178,10 +163,7 @@ impl CreateLocationNfsInputBuilder {
         self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.tags = input;
         self
     }
@@ -192,18 +174,13 @@ impl CreateLocationNfsInputBuilder {
     /// Consumes the builder and constructs a [`CreateLocationNfsInput`](crate::operation::create_location_nfs::CreateLocationNfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_location_nfs::CreateLocationNfsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_location_nfs::CreateLocationNfsInput {
-                subdirectory: self.subdirectory,
-                server_hostname: self.server_hostname,
-                on_prem_config: self.on_prem_config,
-                mount_options: self.mount_options,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_location_nfs::CreateLocationNfsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_location_nfs::CreateLocationNfsInput {
+            subdirectory: self.subdirectory,
+            server_hostname: self.server_hostname,
+            on_prem_config: self.on_prem_config,
+            mount_options: self.mount_options,
+            tags: self.tags,
+        })
     }
 }

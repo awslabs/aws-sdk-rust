@@ -10,10 +10,7 @@ impl StopMetricStreamsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_metric_streams::StopMetricStreamsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_metric_streams::StopMetricStreamsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_metric_streams::StopMetricStreamsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_metric_streams();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StopMetricStreamsFluentBuilder {
         }
     }
     /// Access the StopMetricStreams as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_metric_streams::builders::StopMetricStreamsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_metric_streams::builders::StopMetricStreamsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StopMetricStreamsFluentBuilder {
             crate::operation::stop_metric_streams::StopMetricStreams,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_metric_streams::StopMetricStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_metric_streams::StopMetricStreamsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StopMetricStreamsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StopMetricStreamsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_metric_streams::StopMetricStreamsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_metric_streams::StopMetricStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_metric_streams::StopMetricStreamsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StopMetricStreamsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_metric_streams::StopMetricStreamsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_metric_streams::StopMetricStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_metric_streams::StopMetricStreamsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StopMetricStreamsFluentBuilder {
             crate::operation::stop_metric_streams::StopMetricStreams,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_metric_streams::StopMetricStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_metric_streams::StopMetricStreamsError>,
     > {
         self.customize_middleware().await
     }
@@ -134,10 +118,7 @@ impl StopMetricStreamsFluentBuilder {
     }
     /// <p>The array of the names of metric streams to stop streaming.</p>
     /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

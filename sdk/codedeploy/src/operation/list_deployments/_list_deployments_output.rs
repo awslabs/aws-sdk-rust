@@ -36,9 +36,7 @@ impl ListDeploymentsOutput {
 
 /// A builder for [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentsOutputBuilder {
     pub(crate) deployments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListDeploymentsOutputBuilder {
         self
     }
     /// <p>A list of deployment IDs.</p>
-    pub fn set_deployments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_deployments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.deployments = input;
         self
     }
     /// <p>A list of deployment IDs.</p>
-    pub fn get_deployments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_deployments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.deployments
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>

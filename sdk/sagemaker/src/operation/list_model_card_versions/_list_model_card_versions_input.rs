@@ -64,18 +64,14 @@ impl ListModelCardVersionsInput {
 }
 impl ListModelCardVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListModelCardVersionsInput`](crate::operation::list_model_card_versions::ListModelCardVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_model_card_versions::builders::ListModelCardVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_model_card_versions::builders::ListModelCardVersionsInputBuilder {
         crate::operation::list_model_card_versions::builders::ListModelCardVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelCardVersionsInput`](crate::operation::list_model_card_versions::ListModelCardVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelCardVersionsInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -93,10 +89,7 @@ impl ListModelCardVersionsInputBuilder {
         self
     }
     /// <p>Only list model card versions that were created after the time specified.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -110,10 +103,7 @@ impl ListModelCardVersionsInputBuilder {
         self
     }
     /// <p>Only list model card versions that were created before the time specified.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -136,18 +126,12 @@ impl ListModelCardVersionsInputBuilder {
         &self.max_results
     }
     /// <p>List model card versions for the model card with the specified name.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>List model card versions for the model card with the specified name.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_name = input;
         self
     }
@@ -161,10 +145,7 @@ impl ListModelCardVersionsInputBuilder {
         self
     }
     /// <p>Only list model card versions with the specified approval status.</p>
-    pub fn set_model_card_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardStatus>,
-    ) -> Self {
+    pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
         self.model_card_status = input;
         self
     }
@@ -192,10 +173,7 @@ impl ListModelCardVersionsInputBuilder {
         self
     }
     /// <p>Sort listed model card versions by version. Sorts by version by default.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardVersionSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ModelCardVersionSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -209,10 +187,7 @@ impl ListModelCardVersionsInputBuilder {
         self
     }
     /// <p>Sort model card versions by ascending or descending order.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::ModelCardSortOrder>) -> Self {
         self.sort_order = input;
         self
     }
@@ -223,21 +198,17 @@ impl ListModelCardVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListModelCardVersionsInput`](crate::operation::list_model_card_versions::ListModelCardVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_model_card_versions::ListModelCardVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_model_card_versions::ListModelCardVersionsInput {
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                max_results: self.max_results,
-                model_card_name: self.model_card_name,
-                model_card_status: self.model_card_status,
-                next_token: self.next_token,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_model_card_versions::ListModelCardVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_model_card_versions::ListModelCardVersionsInput {
+            creation_time_after: self.creation_time_after,
+            creation_time_before: self.creation_time_before,
+            max_results: self.max_results,
+            model_card_name: self.model_card_name,
+            model_card_status: self.model_card_status,
+            next_token: self.next_token,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+        })
     }
 }

@@ -6,7 +6,10 @@ pub fn ser_gauge_chart_conditional_formatting_option(
     if let Some(var_1) = &input.primary_value {
         #[allow(unused_mut)]
         let mut object_2 = object.key("PrimaryValue").start_object();
-        crate::protocol_serde::shape_gauge_chart_primary_value_conditional_formatting::ser_gauge_chart_primary_value_conditional_formatting(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_gauge_chart_primary_value_conditional_formatting::ser_gauge_chart_primary_value_conditional_formatting(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     if let Some(var_3) = &input.arc {
@@ -20,57 +23,45 @@ pub fn ser_gauge_chart_conditional_formatting_option(
 
 pub(crate) fn de_gauge_chart_conditional_formatting_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::GaugeChartConditionalFormattingOption>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::GaugeChartConditionalFormattingOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::GaugeChartConditionalFormattingOptionBuilder::default();
+            let mut builder = crate::types::builders::GaugeChartConditionalFormattingOptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "PrimaryValue" => {
-                                builder = builder.set_primary_value(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "PrimaryValue" => {
+                            builder = builder.set_primary_value(
                                     crate::protocol_serde::shape_gauge_chart_primary_value_conditional_formatting::de_gauge_chart_primary_value_conditional_formatting(tokens)?
                                 );
-                            }
-                            "Arc" => {
-                                builder = builder.set_arc(
-                                    crate::protocol_serde::shape_gauge_chart_arc_conditional_formatting::de_gauge_chart_arc_conditional_formatting(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        "Arc" => {
+                            builder = builder.set_arc(
+                                crate::protocol_serde::shape_gauge_chart_arc_conditional_formatting::de_gauge_chart_arc_conditional_formatting(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -28,9 +28,7 @@ impl ExitStandbyOutput {
 
 /// A builder for [`ExitStandbyOutput`](crate::operation::exit_standby::ExitStandbyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExitStandbyOutputBuilder {
     pub(crate) activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl ExitStandbyOutputBuilder {
         self
     }
     /// <p>The activities related to moving instances out of <code>Standby</code> mode.</p>
-    pub fn set_activities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
-    ) -> Self {
+    pub fn set_activities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>) -> Self {
         self.activities = input;
         self
     }
     /// <p>The activities related to moving instances out of <code>Standby</code> mode.</p>
-    pub fn get_activities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Activity>> {
+    pub fn get_activities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Activity>> {
         &self.activities
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

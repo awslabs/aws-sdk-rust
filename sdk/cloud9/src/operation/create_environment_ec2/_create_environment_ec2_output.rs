@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateEnvironmentEc2Output {
 }
 impl CreateEnvironmentEc2Output {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentEc2Output`](crate::operation::create_environment_ec2::CreateEnvironmentEc2Output).
-    pub fn builder(
-    ) -> crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2OutputBuilder {
+    pub fn builder() -> crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2OutputBuilder {
         crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2OutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEnvironmentEc2Output`](crate::operation::create_environment_ec2::CreateEnvironmentEc2Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEnvironmentEc2OutputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateEnvironmentEc2OutputBuilder {
     /// <p>The ID of the environment that was created.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the environment that was created.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }

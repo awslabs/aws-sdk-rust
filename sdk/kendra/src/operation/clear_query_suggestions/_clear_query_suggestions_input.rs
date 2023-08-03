@@ -15,18 +15,14 @@ impl ClearQuerySuggestionsInput {
 }
 impl ClearQuerySuggestionsInput {
     /// Creates a new builder-style object to manufacture [`ClearQuerySuggestionsInput`](crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput).
-    pub fn builder(
-    ) -> crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsInputBuilder {
         crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ClearQuerySuggestionsInput`](crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClearQuerySuggestionsInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl ClearQuerySuggestionsInputBuilder {
     /// Consumes the builder and constructs a [`ClearQuerySuggestionsInput`](crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput {
-                index_id: self.index_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput { index_id: self.index_id })
     }
 }

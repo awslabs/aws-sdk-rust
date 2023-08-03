@@ -27,7 +27,7 @@ impl AssociateProductWithPortfolioInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateProductWithPortfolioFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioInputBuilder,
+    inner: crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioInputBuilder,
 }
 impl AssociateProductWithPortfolioFluentBuilder {
     /// Creates a new `AssociateProductWithPortfolio`.
@@ -38,7 +38,7 @@ impl AssociateProductWithPortfolioFluentBuilder {
         }
     }
     /// Access the AssociateProductWithPortfolio as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl AssociateProductWithPortfolioFluentBuilder {
             crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolio,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl AssociateProductWithPortfolioFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl AssociateProductWithPortfolioFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl AssociateProductWithPortfolioFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl AssociateProductWithPortfolioFluentBuilder {
             crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolio,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl AssociateProductWithPortfolioFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -138,10 +124,7 @@ impl AssociateProductWithPortfolioFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -182,18 +165,12 @@ impl AssociateProductWithPortfolioFluentBuilder {
         self.inner.get_portfolio_id()
     }
     /// <p>The identifier of the source portfolio.</p>
-    pub fn source_portfolio_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_portfolio_id(input.into());
         self
     }
     /// <p>The identifier of the source portfolio.</p>
-    pub fn set_source_portfolio_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_portfolio_id(input);
         self
     }

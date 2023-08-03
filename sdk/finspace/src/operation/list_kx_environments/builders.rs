@@ -10,10 +10,7 @@ impl ListKxEnvironmentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_kx_environments::ListKxEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_environments::ListKxEnvironmentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_environments::ListKxEnvironmentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_kx_environments();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListKxEnvironmentsFluentBuilder {
         }
     }
     /// Access the ListKxEnvironments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_kx_environments::builders::ListKxEnvironmentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_kx_environments::builders::ListKxEnvironmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListKxEnvironmentsFluentBuilder {
             crate::operation::list_kx_environments::ListKxEnvironments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_environments::ListKxEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_environments::ListKxEnvironmentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListKxEnvironmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListKxEnvironmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_kx_environments::ListKxEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_environments::ListKxEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_environments::ListKxEnvironmentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListKxEnvironmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_kx_environments::ListKxEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_environments::ListKxEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_environments::ListKxEnvironmentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListKxEnvironmentsFluentBuilder {
             crate::operation::list_kx_environments::ListKxEnvironments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_environments::ListKxEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_environments::ListKxEnvironmentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_kx_environments::paginator::ListKxEnvironmentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_kx_environments::paginator::ListKxEnvironmentsPaginator {
-        crate::operation::list_kx_environments::paginator::ListKxEnvironmentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_kx_environments::paginator::ListKxEnvironmentsPaginator {
+        crate::operation::list_kx_environments::paginator::ListKxEnvironmentsPaginator::new(self.handle, self.inner)
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

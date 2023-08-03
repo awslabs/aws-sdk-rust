@@ -23,9 +23,7 @@ impl CloseStatusFilter {
 
 /// A builder for [`CloseStatusFilter`](crate::types::CloseStatusFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloseStatusFilterBuilder {
     pub(crate) status: ::std::option::Option<crate::types::CloseStatus>,
 }
@@ -46,8 +44,6 @@ impl CloseStatusFilterBuilder {
     }
     /// Consumes the builder and constructs a [`CloseStatusFilter`](crate::types::CloseStatusFilter).
     pub fn build(self) -> crate::types::CloseStatusFilter {
-        crate::types::CloseStatusFilter {
-            status: self.status,
-        }
+        crate::types::CloseStatusFilter { status: self.status }
     }
 }

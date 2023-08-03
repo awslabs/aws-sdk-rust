@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ServiceNetworkVpcAssociationStatus {
     /// ServiceNetwork and Vpc association is active
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for ServiceNetworkVpcAssociationStatus {
             "DELETE_IN_PROGRESS" => ServiceNetworkVpcAssociationStatus::DeleteInProgress,
             "UPDATE_FAILED" => ServiceNetworkVpcAssociationStatus::UpdateFailed,
             "UPDATE_IN_PROGRESS" => ServiceNetworkVpcAssociationStatus::UpdateInProgress,
-            other => ServiceNetworkVpcAssociationStatus::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ServiceNetworkVpcAssociationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

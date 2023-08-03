@@ -22,17 +22,14 @@ impl EnableVpcClassicLinkInput {
 }
 impl EnableVpcClassicLinkInput {
     /// Creates a new builder-style object to manufacture [`EnableVpcClassicLinkInput`](crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput).
-    pub fn builder(
-    ) -> crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkInputBuilder {
+    pub fn builder() -> crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkInputBuilder {
         crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableVpcClassicLinkInput`](crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableVpcClassicLinkInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl EnableVpcClassicLinkInputBuilder {
     /// Consumes the builder and constructs a [`EnableVpcClassicLinkInput`](crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput {
-                dry_run: self.dry_run,
-                vpc_id: self.vpc_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput {
+            dry_run: self.dry_run,
+            vpc_id: self.vpc_id,
+        })
     }
 }

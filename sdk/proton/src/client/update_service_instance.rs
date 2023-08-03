@@ -13,12 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateServiceInstanceOutput`](crate::operation::update_service_instance::UpdateServiceInstanceOutput) with field(s):
     ///   - [`service_instance(Option<ServiceInstance>)`](crate::operation::update_service_instance::UpdateServiceInstanceOutput::service_instance): <p>The service instance summary data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateServiceInstanceError>`](crate::operation::update_service_instance::UpdateServiceInstanceError)
-    pub fn update_service_instance(
-        &self,
-    ) -> crate::operation::update_service_instance::builders::UpdateServiceInstanceFluentBuilder
-    {
-        crate::operation::update_service_instance::builders::UpdateServiceInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_service_instance(&self) -> crate::operation::update_service_instance::builders::UpdateServiceInstanceFluentBuilder {
+        crate::operation::update_service_instance::builders::UpdateServiceInstanceFluentBuilder::new(self.handle.clone())
     }
 }

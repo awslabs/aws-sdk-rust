@@ -23,36 +23,26 @@ impl CreateEmailIdentityInput {
 }
 impl CreateEmailIdentityInput {
     /// Creates a new builder-style object to manufacture [`CreateEmailIdentityInput`](crate::operation::create_email_identity::CreateEmailIdentityInput).
-    pub fn builder(
-    ) -> crate::operation::create_email_identity::builders::CreateEmailIdentityInputBuilder {
-        crate::operation::create_email_identity::builders::CreateEmailIdentityInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_email_identity::builders::CreateEmailIdentityInputBuilder {
+        crate::operation::create_email_identity::builders::CreateEmailIdentityInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEmailIdentityInput`](crate::operation::create_email_identity::CreateEmailIdentityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEmailIdentityInputBuilder {
     pub(crate) email_identity: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateEmailIdentityInputBuilder {
     /// <p>The email address or domain that you want to verify.</p>
-    pub fn email_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address or domain that you want to verify.</p>
-    pub fn set_email_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_identity = input;
         self
     }
@@ -72,10 +62,7 @@ impl CreateEmailIdentityInputBuilder {
         self
     }
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -86,15 +73,11 @@ impl CreateEmailIdentityInputBuilder {
     /// Consumes the builder and constructs a [`CreateEmailIdentityInput`](crate::operation::create_email_identity::CreateEmailIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_email_identity::CreateEmailIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_email_identity::CreateEmailIdentityInput {
-                email_identity: self.email_identity,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_email_identity::CreateEmailIdentityInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_email_identity::CreateEmailIdentityInput {
+            email_identity: self.email_identity,
+            tags: self.tags,
+        })
     }
 }

@@ -33,18 +33,14 @@ impl ListFirewallDomainsInput {
 }
 impl ListFirewallDomainsInput {
     /// Creates a new builder-style object to manufacture [`ListFirewallDomainsInput`](crate::operation::list_firewall_domains::ListFirewallDomainsInput).
-    pub fn builder(
-    ) -> crate::operation::list_firewall_domains::builders::ListFirewallDomainsInputBuilder {
-        crate::operation::list_firewall_domains::builders::ListFirewallDomainsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_firewall_domains::builders::ListFirewallDomainsInputBuilder {
+        crate::operation::list_firewall_domains::builders::ListFirewallDomainsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFirewallDomainsInput`](crate::operation::list_firewall_domains::ListFirewallDomainsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallDomainsInputBuilder {
     pub(crate) firewall_domain_list_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -52,18 +48,12 @@ pub struct ListFirewallDomainsInputBuilder {
 }
 impl ListFirewallDomainsInputBuilder {
     /// <p>The ID of the domain list whose domains you want to retrieve. </p>
-    pub fn firewall_domain_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_domain_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the domain list whose domains you want to retrieve. </p>
-    pub fn set_firewall_domain_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_domain_list_id = input;
         self
     }
@@ -108,16 +98,12 @@ impl ListFirewallDomainsInputBuilder {
     /// Consumes the builder and constructs a [`ListFirewallDomainsInput`](crate::operation::list_firewall_domains::ListFirewallDomainsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_firewall_domains::ListFirewallDomainsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_firewall_domains::ListFirewallDomainsInput {
-                firewall_domain_list_id: self.firewall_domain_list_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_firewall_domains::ListFirewallDomainsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_firewall_domains::ListFirewallDomainsInput {
+            firewall_domain_list_id: self.firewall_domain_list_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

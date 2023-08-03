@@ -35,9 +35,7 @@ impl ListSchemasOutput {
 
 /// A builder for [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchemasOutputBuilder {
     pub(crate) schemas: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListSchemasOutputBuilder {
         self
     }
     /// <p>The schemas that match the request pattern. </p>
-    pub fn set_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.schemas = input;
         self
     }

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     ///   - [`reserved_instance_offerings(Option<Vec<ReservedInstanceOffering>>)`](crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput::reserved_instance_offerings): <p>List of Reserved Instance offerings.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedInstanceOfferingsError>`](crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError)
-    pub fn describe_reserved_instance_offerings(&self) -> crate::operation::describe_reserved_instance_offerings::builders::DescribeReservedInstanceOfferingsFluentBuilder{
+    pub fn describe_reserved_instance_offerings(
+        &self,
+    ) -> crate::operation::describe_reserved_instance_offerings::builders::DescribeReservedInstanceOfferingsFluentBuilder {
         crate::operation::describe_reserved_instance_offerings::builders::DescribeReservedInstanceOfferingsFluentBuilder::new(self.handle.clone())
     }
 }

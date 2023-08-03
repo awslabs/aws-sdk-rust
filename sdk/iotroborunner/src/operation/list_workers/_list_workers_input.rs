@@ -43,9 +43,7 @@ impl ListWorkersInput {
 
 /// A builder for [`ListWorkersInput`](crate::operation::list_workers::ListWorkersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkersInputBuilder {
     pub(crate) site: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -110,12 +108,7 @@ impl ListWorkersInputBuilder {
         &self.fleet
     }
     /// Consumes the builder and constructs a [`ListWorkersInput`](crate::operation::list_workers::ListWorkersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_workers::ListWorkersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_workers::ListWorkersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workers::ListWorkersInput {
             site: self.site,
             max_results: self.max_results,

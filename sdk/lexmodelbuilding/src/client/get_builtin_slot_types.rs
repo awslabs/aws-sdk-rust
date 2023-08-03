@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`slot_types(Option<Vec<BuiltinSlotTypeMetadata>>)`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesOutput::slot_types): <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each slot type returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesOutput::next_token): <p>If the response is truncated, the response includes a pagination token that you can use in your next request to fetch the next page of slot types.</p>
     /// - On failure, responds with [`SdkError<GetBuiltinSlotTypesError>`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError)
-    pub fn get_builtin_slot_types(
-        &self,
-    ) -> crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder {
-        crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_builtin_slot_types(&self) -> crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder {
+        crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder::new(self.handle.clone())
     }
 }

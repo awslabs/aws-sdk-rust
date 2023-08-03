@@ -44,14 +44,11 @@ impl AwsDynamoDbTableLocalSecondaryIndex {
 
 /// A builder for [`AwsDynamoDbTableLocalSecondaryIndex`](crate::types::AwsDynamoDbTableLocalSecondaryIndex).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableLocalSecondaryIndexBuilder {
     pub(crate) index_arn: ::std::option::Option<::std::string::String>,
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
-    pub(crate) key_schema:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
+    pub(crate) key_schema: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
     pub(crate) projection: ::std::option::Option<crate::types::AwsDynamoDbTableProjection>,
 }
 impl AwsDynamoDbTableLocalSecondaryIndexBuilder {
@@ -95,17 +92,12 @@ impl AwsDynamoDbTableLocalSecondaryIndexBuilder {
         self
     }
     /// <p>The complete key schema for the index.</p>
-    pub fn set_key_schema(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
-    ) -> Self {
+    pub fn set_key_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>) -> Self {
         self.key_schema = input;
         self
     }
     /// <p>The complete key schema for the index.</p>
-    pub fn get_key_schema(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>> {
+    pub fn get_key_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>> {
         &self.key_schema
     }
     /// <p>Attributes that are copied from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
@@ -114,17 +106,12 @@ impl AwsDynamoDbTableLocalSecondaryIndexBuilder {
         self
     }
     /// <p>Attributes that are copied from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
-    pub fn set_projection(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsDynamoDbTableProjection>,
-    ) -> Self {
+    pub fn set_projection(mut self, input: ::std::option::Option<crate::types::AwsDynamoDbTableProjection>) -> Self {
         self.projection = input;
         self
     }
     /// <p>Attributes that are copied from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
-    pub fn get_projection(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsDynamoDbTableProjection> {
+    pub fn get_projection(&self) -> &::std::option::Option<crate::types::AwsDynamoDbTableProjection> {
         &self.projection
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableLocalSecondaryIndex`](crate::types::AwsDynamoDbTableLocalSecondaryIndex).

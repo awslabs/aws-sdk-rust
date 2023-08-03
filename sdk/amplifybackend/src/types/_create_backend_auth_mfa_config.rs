@@ -30,9 +30,7 @@ impl CreateBackendAuthMfaConfig {
 
 /// A builder for [`CreateBackendAuthMfaConfig`](crate::types::CreateBackendAuthMfaConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBackendAuthMfaConfigBuilder {
     pub(crate) mfa_mode: ::std::option::Option<crate::types::MfaMode>,
     pub(crate) settings: ::std::option::Option<crate::types::Settings>,

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeploymentTargetResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for DeploymentTargetResourceType {
             "ENVIRONMENT" => DeploymentTargetResourceType::Environment,
             "SERVICE_INSTANCE" => DeploymentTargetResourceType::ServiceInstance,
             "SERVICE_PIPELINE" => DeploymentTargetResourceType::ServicePipeline,
-            other => DeploymentTargetResourceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DeploymentTargetResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl DeploymentTargetResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPONENT",
-            "ENVIRONMENT",
-            "SERVICE_INSTANCE",
-            "SERVICE_PIPELINE",
-        ]
+        &["COMPONENT", "ENVIRONMENT", "SERVICE_INSTANCE", "SERVICE_PIPELINE"]
     }
 }
 impl ::std::convert::AsRef<str> for DeploymentTargetResourceType {

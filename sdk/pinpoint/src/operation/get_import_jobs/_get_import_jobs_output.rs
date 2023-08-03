@@ -28,9 +28,7 @@ impl GetImportJobsOutput {
 
 /// A builder for [`GetImportJobsOutput`](crate::operation::get_import_jobs::GetImportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImportJobsOutputBuilder {
     pub(crate) import_jobs_response: ::std::option::Option<crate::types::ImportJobsResponse>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl GetImportJobsOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
-    pub fn set_import_jobs_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportJobsResponse>,
-    ) -> Self {
+    pub fn set_import_jobs_response(mut self, input: ::std::option::Option<crate::types::ImportJobsResponse>) -> Self {
         self.import_jobs_response = input;
         self
     }
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
-    pub fn get_import_jobs_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportJobsResponse> {
+    pub fn get_import_jobs_response(&self) -> &::std::option::Option<crate::types::ImportJobsResponse> {
         &self.import_jobs_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

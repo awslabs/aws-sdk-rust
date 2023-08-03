@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetEvidenceFileUploadUrlOutput {
 }
 impl GetEvidenceFileUploadUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetEvidenceFileUploadUrlOutput`](crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlOutput).
-    pub fn builder() -> crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlOutputBuilder{
+    pub fn builder() -> crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlOutputBuilder {
         crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEvidenceFileUploadUrlOutput`](crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEvidenceFileUploadUrlOutputBuilder {
     pub(crate) evidence_file_name: ::std::option::Option<::std::string::String>,
     pub(crate) upload_url: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct GetEvidenceFileUploadUrlOutputBuilder {
 }
 impl GetEvidenceFileUploadUrlOutputBuilder {
     /// <p>The name of the uploaded manual evidence file that the presigned URL was generated for.</p>
-    pub fn evidence_file_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evidence_file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_file_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the uploaded manual evidence file that the presigned URL was generated for.</p>
-    pub fn set_evidence_file_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evidence_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evidence_file_name = input;
         self
     }
@@ -88,9 +80,7 @@ impl GetEvidenceFileUploadUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEvidenceFileUploadUrlOutput`](crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlOutput {
+    pub fn build(self) -> crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlOutput {
         crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlOutput {
             evidence_file_name: self.evidence_file_name,
             upload_url: self.upload_url,

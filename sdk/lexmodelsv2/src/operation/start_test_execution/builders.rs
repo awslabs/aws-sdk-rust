@@ -10,10 +10,7 @@ impl StartTestExecutionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_test_execution::StartTestExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_test_execution::StartTestExecutionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_test_execution::StartTestExecutionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_test_execution();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartTestExecutionFluentBuilder {
         }
     }
     /// Access the StartTestExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_test_execution::builders::StartTestExecutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_test_execution::builders::StartTestExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartTestExecutionFluentBuilder {
             crate::operation::start_test_execution::StartTestExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_test_execution::StartTestExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_test_execution::StartTestExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartTestExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartTestExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_test_execution::StartTestExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_test_execution::StartTestExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_test_execution::StartTestExecutionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartTestExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_test_execution::StartTestExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_test_execution::StartTestExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_test_execution::StartTestExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StartTestExecutionFluentBuilder {
             crate::operation::start_test_execution::StartTestExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_test_execution::StartTestExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_test_execution::StartTestExecutionError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl StartTestExecutionFluentBuilder {
         self
     }
     /// <p>The target bot for the test set execution.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionTarget>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::TestExecutionTarget>) -> Self {
         self.inner = self.inner.set_target(input);
         self
     }
@@ -159,10 +140,7 @@ impl StartTestExecutionFluentBuilder {
         self
     }
     /// <p>Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Runtime API is used. Whereas, for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.</p>
-    pub fn set_api_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionApiMode>,
-    ) -> Self {
+    pub fn set_api_mode(mut self, input: ::std::option::Option<crate::types::TestExecutionApiMode>) -> Self {
         self.inner = self.inner.set_api_mode(input);
         self
     }
@@ -176,17 +154,12 @@ impl StartTestExecutionFluentBuilder {
         self
     }
     /// <p>Indicates whether audio or text is used.</p>
-    pub fn set_test_execution_modality(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionModality>,
-    ) -> Self {
+    pub fn set_test_execution_modality(mut self, input: ::std::option::Option<crate::types::TestExecutionModality>) -> Self {
         self.inner = self.inner.set_test_execution_modality(input);
         self
     }
     /// <p>Indicates whether audio or text is used.</p>
-    pub fn get_test_execution_modality(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestExecutionModality> {
+    pub fn get_test_execution_modality(&self) -> &::std::option::Option<crate::types::TestExecutionModality> {
         self.inner.get_test_execution_modality()
     }
 }

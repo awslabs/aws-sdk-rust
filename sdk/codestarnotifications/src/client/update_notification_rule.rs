@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`detail_type(DetailType)`](crate::operation::update_notification_rule::builders::UpdateNotificationRuleFluentBuilder::detail_type) / [`set_detail_type(Option<DetailType>)`](crate::operation::update_notification_rule::builders::UpdateNotificationRuleFluentBuilder::set_detail_type): <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     /// - On success, responds with [`UpdateNotificationRuleOutput`](crate::operation::update_notification_rule::UpdateNotificationRuleOutput)
     /// - On failure, responds with [`SdkError<UpdateNotificationRuleError>`](crate::operation::update_notification_rule::UpdateNotificationRuleError)
-    pub fn update_notification_rule(
-        &self,
-    ) -> crate::operation::update_notification_rule::builders::UpdateNotificationRuleFluentBuilder
-    {
+    pub fn update_notification_rule(&self) -> crate::operation::update_notification_rule::builders::UpdateNotificationRuleFluentBuilder {
         crate::operation::update_notification_rule::builders::UpdateNotificationRuleFluentBuilder::new(self.handle.clone())
     }
 }

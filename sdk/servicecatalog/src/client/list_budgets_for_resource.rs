@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`budgets(Option<Vec<BudgetDetail>>)`](crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput::budgets): <p>Information about the associated budgets.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListBudgetsForResourceError>`](crate::operation::list_budgets_for_resource::ListBudgetsForResourceError)
-    pub fn list_budgets_for_resource(
-        &self,
-    ) -> crate::operation::list_budgets_for_resource::builders::ListBudgetsForResourceFluentBuilder
-    {
+    pub fn list_budgets_for_resource(&self) -> crate::operation::list_budgets_for_resource::builders::ListBudgetsForResourceFluentBuilder {
         crate::operation::list_budgets_for_resource::builders::ListBudgetsForResourceFluentBuilder::new(self.handle.clone())
     }
 }

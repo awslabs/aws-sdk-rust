@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`nodegroups(Option<Vec<String>>)`](crate::operation::list_nodegroups::ListNodegroupsOutput::nodegroups): <p>A list of all of the node groups associated with the specified cluster.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_nodegroups::ListNodegroupsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListNodegroups</code> request. When the results of a <code>ListNodegroups</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListNodegroupsError>`](crate::operation::list_nodegroups::ListNodegroupsError)
-    pub fn list_nodegroups(
-        &self,
-    ) -> crate::operation::list_nodegroups::builders::ListNodegroupsFluentBuilder {
-        crate::operation::list_nodegroups::builders::ListNodegroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_nodegroups(&self) -> crate::operation::list_nodegroups::builders::ListNodegroupsFluentBuilder {
+        crate::operation::list_nodegroups::builders::ListNodegroupsFluentBuilder::new(self.handle.clone())
     }
 }

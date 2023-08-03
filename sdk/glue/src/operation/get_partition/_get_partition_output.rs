@@ -28,9 +28,7 @@ impl GetPartitionOutput {
 
 /// A builder for [`GetPartitionOutput`](crate::operation::get_partition::GetPartitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPartitionOutputBuilder {
     pub(crate) partition: ::std::option::Option<crate::types::Partition>,
     _request_id: Option<String>,

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`outpost_id(impl ::std::convert::Into<String>)`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::outpost_id) / [`set_outpost_id(Option<String>)`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::set_outpost_id): <p>The ID of the Outposts. </p>
     /// - On success, responds with [`DeleteEndpointOutput`](crate::operation::delete_endpoint::DeleteEndpointOutput)
     /// - On failure, responds with [`SdkError<DeleteEndpointError>`](crate::operation::delete_endpoint::DeleteEndpointError)
-    pub fn delete_endpoint(
-        &self,
-    ) -> crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder {
-        crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_endpoint(&self) -> crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder {
+        crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::new(self.handle.clone())
     }
 }

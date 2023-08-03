@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVpcAttachmentOutput`](crate::operation::create_vpc_attachment::CreateVpcAttachmentOutput) with field(s):
     ///   - [`vpc_attachment(Option<VpcAttachment>)`](crate::operation::create_vpc_attachment::CreateVpcAttachmentOutput::vpc_attachment): <p>Provides details about the VPC attachment.</p>
     /// - On failure, responds with [`SdkError<CreateVpcAttachmentError>`](crate::operation::create_vpc_attachment::CreateVpcAttachmentError)
-    pub fn create_vpc_attachment(
-        &self,
-    ) -> crate::operation::create_vpc_attachment::builders::CreateVpcAttachmentFluentBuilder {
-        crate::operation::create_vpc_attachment::builders::CreateVpcAttachmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_vpc_attachment(&self) -> crate::operation::create_vpc_attachment::builders::CreateVpcAttachmentFluentBuilder {
+        crate::operation::create_vpc_attachment::builders::CreateVpcAttachmentFluentBuilder::new(self.handle.clone())
     }
 }

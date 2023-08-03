@@ -30,7 +30,7 @@ impl ListHandshakesForOrganizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListHandshakesForOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_handshakes_for_organization::builders::ListHandshakesForOrganizationInputBuilder,
+    inner: crate::operation::list_handshakes_for_organization::builders::ListHandshakesForOrganizationInputBuilder,
 }
 impl ListHandshakesForOrganizationFluentBuilder {
     /// Creates a new `ListHandshakesForOrganization`.
@@ -41,7 +41,7 @@ impl ListHandshakesForOrganizationFluentBuilder {
         }
     }
     /// Access the ListHandshakesForOrganization as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_handshakes_for_organization::builders::ListHandshakesForOrganizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_handshakes_for_organization::builders::ListHandshakesForOrganizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl ListHandshakesForOrganizationFluentBuilder {
             crate::operation::list_handshakes_for_organization::ListHandshakesForOrganization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl ListHandshakesForOrganizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl ListHandshakesForOrganizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl ListHandshakesForOrganizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError>,
     > {
         self.send_middleware().await
     }
@@ -118,16 +109,14 @@ impl ListHandshakesForOrganizationFluentBuilder {
             crate::operation::list_handshakes_for_organization::ListHandshakesForOrganization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_handshakes_for_organization::paginator::ListHandshakesForOrganizationPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_handshakes_for_organization::paginator::ListHandshakesForOrganizationPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_handshakes_for_organization::paginator::ListHandshakesForOrganizationPaginator {
         crate::operation::list_handshakes_for_organization::paginator::ListHandshakesForOrganizationPaginator::new(self.handle, self.inner)
     }
     /// <p>A filter of the handshakes that you want included in the response. The default is all types. Use the <code>ActionType</code> element to limit the output to only a specified type, such as <code>INVITE</code>, <code>ENABLE-ALL-FEATURES</code>, or <code>APPROVE-ALL-FEATURES</code>. Alternatively, for the <code>ENABLE-ALL-FEATURES</code> handshake that generates a separate child handshake for each member account, you can specify the <code>ParentHandshakeId</code> to see only the handshakes that were generated by that parent request.</p>
@@ -136,10 +125,7 @@ impl ListHandshakesForOrganizationFluentBuilder {
         self
     }
     /// <p>A filter of the handshakes that you want included in the response. The default is all types. Use the <code>ActionType</code> element to limit the output to only a specified type, such as <code>INVITE</code>, <code>ENABLE-ALL-FEATURES</code>, or <code>APPROVE-ALL-FEATURES</code>. Alternatively, for the <code>ENABLE-ALL-FEATURES</code> handshake that generates a separate child handshake for each member account, you can specify the <code>ParentHandshakeId</code> to see only the handshakes that were generated by that parent request.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::HandshakeFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::HandshakeFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

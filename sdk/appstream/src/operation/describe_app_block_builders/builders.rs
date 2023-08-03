@@ -26,7 +26,7 @@ impl DescribeAppBlockBuildersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAppBlockBuildersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_app_block_builders::builders::DescribeAppBlockBuildersInputBuilder,
+    inner: crate::operation::describe_app_block_builders::builders::DescribeAppBlockBuildersInputBuilder,
 }
 impl DescribeAppBlockBuildersFluentBuilder {
     /// Creates a new `DescribeAppBlockBuilders`.
@@ -37,7 +37,7 @@ impl DescribeAppBlockBuildersFluentBuilder {
         }
     }
     /// Access the DescribeAppBlockBuilders as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_app_block_builders::builders::DescribeAppBlockBuildersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_app_block_builders::builders::DescribeAppBlockBuildersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAppBlockBuildersFluentBuilder {
             crate::operation::describe_app_block_builders::DescribeAppBlockBuilders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAppBlockBuildersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAppBlockBuildersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_block_builders::DescribeAppBlockBuildersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAppBlockBuildersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_block_builders::DescribeAppBlockBuildersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl DescribeAppBlockBuildersFluentBuilder {
             crate::operation::describe_app_block_builders::DescribeAppBlockBuilders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_app_block_builders::paginator::DescribeAppBlockBuildersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_app_block_builders::paginator::DescribeAppBlockBuildersPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_app_block_builders::paginator::DescribeAppBlockBuildersPaginator {
         crate::operation::describe_app_block_builders::paginator::DescribeAppBlockBuildersPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Names`.
@@ -139,10 +125,7 @@ impl DescribeAppBlockBuildersFluentBuilder {
         self
     }
     /// <p>The names of the app block builders.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

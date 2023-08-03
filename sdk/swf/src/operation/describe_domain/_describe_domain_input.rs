@@ -22,9 +22,7 @@ impl DescribeDomainInput {
 
 /// A builder for [`DescribeDomainInput`](crate::operation::describe_domain::DescribeDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeDomainInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDomainInput`](crate::operation::describe_domain::DescribeDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_domain::DescribeDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_domain::DescribeDomainInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_domain::DescribeDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_domain::DescribeDomainInput { name: self.name })
     }
 }

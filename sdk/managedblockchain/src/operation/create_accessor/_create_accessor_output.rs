@@ -35,9 +35,7 @@ impl CreateAccessorOutput {
 
 /// A builder for [`CreateAccessorOutput`](crate::operation::create_accessor::CreateAccessorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessorOutputBuilder {
     pub(crate) accessor_id: ::std::option::Option<::std::string::String>,
     pub(crate) billing_token: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ impl CreateAccessorOutputBuilder {
         &self.accessor_id
     }
     /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
-    pub fn billing_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
-    pub fn set_billing_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_token = input;
         self
     }

@@ -29,16 +29,14 @@ impl RemoveLfTagsFromResourceInput {
 }
 impl RemoveLfTagsFromResourceInput {
     /// Creates a new builder-style object to manufacture [`RemoveLfTagsFromResourceInput`](crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput).
-    pub fn builder() -> crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceInputBuilder{
+    pub fn builder() -> crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceInputBuilder {
         crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveLfTagsFromResourceInput`](crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveLfTagsFromResourceInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
@@ -85,10 +83,7 @@ impl RemoveLfTagsFromResourceInputBuilder {
         self
     }
     /// <p>The LF-tags to be removed from the resource.</p>
-    pub fn set_lf_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
-    ) -> Self {
+    pub fn set_lf_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
         self.lf_tags = input;
         self
     }
@@ -103,12 +98,10 @@ impl RemoveLfTagsFromResourceInputBuilder {
         crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput {
-                catalog_id: self.catalog_id,
-                resource: self.resource,
-                lf_tags: self.lf_tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput {
+            catalog_id: self.catalog_id,
+            resource: self.resource,
+            lf_tags: self.lf_tags,
+        })
     }
 }

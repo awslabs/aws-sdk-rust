@@ -80,9 +80,7 @@ pub fn ser_create_notebook_instance_input(
     }
     if let Some(var_25) = &input.instance_metadata_service_configuration {
         #[allow(unused_mut)]
-        let mut object_26 = object
-            .key("InstanceMetadataServiceConfiguration")
-            .start_object();
+        let mut object_26 = object.key("InstanceMetadataServiceConfiguration").start_object();
         crate::protocol_serde::shape_instance_metadata_service_configuration::ser_instance_metadata_service_configuration(&mut object_26, var_25)?;
         object_26.finish();
     }

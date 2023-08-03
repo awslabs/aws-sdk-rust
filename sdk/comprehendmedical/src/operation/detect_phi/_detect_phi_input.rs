@@ -22,9 +22,7 @@ impl DetectPhiInput {
 
 /// A builder for [`DetectPhiInput`](crate::operation::detect_phi::DetectPhiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectPhiInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl DetectPhiInputBuilder {
         &self.text
     }
     /// Consumes the builder and constructs a [`DetectPhiInput`](crate::operation::detect_phi::DetectPhiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_phi::DetectPhiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_phi::DetectPhiInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_phi::DetectPhiInput { text: self.text })
     }
 }

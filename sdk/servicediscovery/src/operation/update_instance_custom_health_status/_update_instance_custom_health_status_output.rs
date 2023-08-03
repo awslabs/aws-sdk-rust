@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateInstanceCustomHealthStatusOutpu
 }
 impl UpdateInstanceCustomHealthStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceCustomHealthStatusOutput`](crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput).
-    pub fn builder() -> crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusOutputBuilder{
+    pub fn builder() -> crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusOutputBuilder {
         crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateInstanceCustomHealthStatusOutput`](crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInstanceCustomHealthStatusOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl UpdateInstanceCustomHealthStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateInstanceCustomHealthStatusOutput`](crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput).
-    pub fn build(self) -> crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput{
+    pub fn build(self) -> crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput {
         crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput {
             _request_id: self._request_id,
         }

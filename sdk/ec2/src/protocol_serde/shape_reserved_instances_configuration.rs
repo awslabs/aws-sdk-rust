@@ -37,8 +37,7 @@ pub fn ser_reserved_instances_configuration(
 
 pub fn de_reserved_instances_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ReservedInstancesConfiguration, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::ReservedInstancesConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ReservedInstancesConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -15,34 +15,25 @@ impl GetContainerRecipeInput {
 }
 impl GetContainerRecipeInput {
     /// Creates a new builder-style object to manufacture [`GetContainerRecipeInput`](crate::operation::get_container_recipe::GetContainerRecipeInput).
-    pub fn builder(
-    ) -> crate::operation::get_container_recipe::builders::GetContainerRecipeInputBuilder {
+    pub fn builder() -> crate::operation::get_container_recipe::builders::GetContainerRecipeInputBuilder {
         crate::operation::get_container_recipe::builders::GetContainerRecipeInputBuilder::default()
     }
 }
 
 /// A builder for [`GetContainerRecipeInput`](crate::operation::get_container_recipe::GetContainerRecipeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerRecipeInputBuilder {
     pub(crate) container_recipe_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetContainerRecipeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
-    pub fn container_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
-    pub fn set_container_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_recipe_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetContainerRecipeInputBuilder {
     /// Consumes the builder and constructs a [`GetContainerRecipeInput`](crate::operation::get_container_recipe::GetContainerRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_container_recipe::GetContainerRecipeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_container_recipe::GetContainerRecipeInput {
-                container_recipe_arn: self.container_recipe_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_container_recipe::GetContainerRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_container_recipe::GetContainerRecipeInput {
+            container_recipe_arn: self.container_recipe_arn,
+        })
     }
 }

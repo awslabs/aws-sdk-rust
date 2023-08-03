@@ -101,9 +101,7 @@ impl GetMigrationOutput {
 
 /// A builder for [`GetMigrationOutput`](crate::operation::get_migration::GetMigrationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMigrationOutputBuilder {
     pub(crate) migration_id: ::std::option::Option<::std::string::String>,
     pub(crate) v1_bot_name: ::std::option::Option<::std::string::String>,
@@ -147,18 +145,12 @@ impl GetMigrationOutputBuilder {
         &self.v1_bot_name
     }
     /// <p>The version of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
-    pub fn v1_bot_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn v1_bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.v1_bot_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
-    pub fn set_v1_bot_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_v1_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.v1_bot_version = input;
         self
     }
@@ -214,10 +206,7 @@ impl GetMigrationOutputBuilder {
         self
     }
     /// <p>Indicates the status of the migration. When the status is <code>COMPLETE</code> the migration is finished and the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
-    pub fn set_migration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationStatus>,
-    ) -> Self {
+    pub fn set_migration_status(mut self, input: ::std::option::Option<crate::types::MigrationStatus>) -> Self {
         self.migration_status = input;
         self
     }
@@ -239,10 +228,7 @@ impl GetMigrationOutputBuilder {
     /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
     /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
     /// </ul>
-    pub fn set_migration_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationStrategy>,
-    ) -> Self {
+    pub fn set_migration_strategy(mut self, input: ::std::option::Option<crate::types::MigrationStrategy>) -> Self {
         self.migration_strategy = input;
         self
     }
@@ -251,9 +237,7 @@ impl GetMigrationOutputBuilder {
     /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
     /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
     /// </ul>
-    pub fn get_migration_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::MigrationStrategy> {
+    pub fn get_migration_strategy(&self) -> &::std::option::Option<crate::types::MigrationStrategy> {
         &self.migration_strategy
     }
     /// <p>The date and time that the migration started.</p>
@@ -262,10 +246,7 @@ impl GetMigrationOutputBuilder {
         self
     }
     /// <p>The date and time that the migration started.</p>
-    pub fn set_migration_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_migration_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.migration_timestamp = input;
         self
     }
@@ -287,18 +268,13 @@ impl GetMigrationOutputBuilder {
     }
     /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2 developer guide</i>.</p>
-    pub fn set_alerts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MigrationAlert>>,
-    ) -> Self {
+    pub fn set_alerts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MigrationAlert>>) -> Self {
         self.alerts = input;
         self
     }
     /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2 developer guide</i>.</p>
-    pub fn get_alerts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MigrationAlert>> {
+    pub fn get_alerts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MigrationAlert>> {
         &self.alerts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

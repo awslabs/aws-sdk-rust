@@ -36,9 +36,7 @@ impl GetQueryResultsInput {
 
 /// A builder for [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryResultsInputBuilder {
     pub(crate) query_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct GetQueryResultsInputBuilder {
 }
 impl GetQueryResultsInputBuilder {
     /// <p>The unique ID of the query execution.</p>
-    pub fn query_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the query execution.</p>
-    pub fn set_query_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_execution_id = input;
         self
     }
@@ -96,10 +88,7 @@ impl GetQueryResultsInputBuilder {
     /// Consumes the builder and constructs a [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_query_results::GetQueryResultsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_query_results::GetQueryResultsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_query_results::GetQueryResultsInput {
             query_execution_id: self.query_execution_id,
             next_token: self.next_token,

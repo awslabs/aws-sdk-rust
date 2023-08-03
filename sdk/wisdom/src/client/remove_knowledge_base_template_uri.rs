@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`knowledge_base_id(impl ::std::convert::Into<String>)`](crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriFluentBuilder::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// - On success, responds with [`RemoveKnowledgeBaseTemplateUriOutput`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriOutput)
     /// - On failure, responds with [`SdkError<RemoveKnowledgeBaseTemplateUriError>`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError)
-    pub fn remove_knowledge_base_template_uri(&self) -> crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriFluentBuilder{
+    pub fn remove_knowledge_base_template_uri(
+        &self,
+    ) -> crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriFluentBuilder {
         crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriFluentBuilder::new(self.handle.clone())
     }
 }

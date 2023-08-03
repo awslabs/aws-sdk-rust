@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`processed_input_records(Option<Vec<String>>)`](crate::operation::discover_input_schema::DiscoverInputSchemaOutput::processed_input_records): <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
     ///   - [`raw_input_records(Option<Vec<String>>)`](crate::operation::discover_input_schema::DiscoverInputSchemaOutput::raw_input_records): <p>The raw stream data that was sampled to infer the schema.</p>
     /// - On failure, responds with [`SdkError<DiscoverInputSchemaError>`](crate::operation::discover_input_schema::DiscoverInputSchemaError)
-    pub fn discover_input_schema(
-        &self,
-    ) -> crate::operation::discover_input_schema::builders::DiscoverInputSchemaFluentBuilder {
-        crate::operation::discover_input_schema::builders::DiscoverInputSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn discover_input_schema(&self) -> crate::operation::discover_input_schema::builders::DiscoverInputSchemaFluentBuilder {
+        crate::operation::discover_input_schema::builders::DiscoverInputSchemaFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,10 +37,7 @@ impl AssociateUserSettingsFluentBuilder {
         }
     }
     /// Access the AssociateUserSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_user_settings::builders::AssociateUserSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_user_settings::builders::AssociateUserSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AssociateUserSettingsFluentBuilder {
             crate::operation::associate_user_settings::AssociateUserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_user_settings::AssociateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_user_settings::AssociateUserSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AssociateUserSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AssociateUserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_user_settings::AssociateUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_user_settings::AssociateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_user_settings::AssociateUserSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AssociateUserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_user_settings::AssociateUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_user_settings::AssociateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_user_settings::AssociateUserSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl AssociateUserSettingsFluentBuilder {
             crate::operation::associate_user_settings::AssociateUserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_user_settings::AssociateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_user_settings::AssociateUserSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl AssociateUserSettingsFluentBuilder {
         self.inner.get_portal_arn()
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_settings_arn(input.into());
         self
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn set_user_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_settings_arn(input);
         self
     }

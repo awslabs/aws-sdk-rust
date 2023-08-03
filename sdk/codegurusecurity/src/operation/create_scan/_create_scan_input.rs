@@ -25,9 +25,7 @@ pub struct CreateScanInput {
     /// <li> <p>An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateScanInput {
     /// <p>The idempotency token for the request. Amazon CodeGuru Security uses this value to prevent the accidental creation of duplicate scans if there are failures and retries.</p>
@@ -56,11 +54,7 @@ impl CreateScanInput {
     /// <li> <p>A tag key. For example, <code>CostCenter</code>, <code>Environment</code>, or <code>Secret</code>. Tag keys are case sensitive.</p> </li>
     /// <li> <p>An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.</p> </li>
     /// </ul>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -73,18 +67,14 @@ impl CreateScanInput {
 
 /// A builder for [`CreateScanInput`](crate::operation::create_scan::CreateScanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateScanInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<crate::types::ResourceId>,
     pub(crate) scan_name: ::std::option::Option<::std::string::String>,
     pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
     pub(crate) analysis_type: ::std::option::Option<crate::types::AnalysisType>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateScanInputBuilder {
     /// <p>The idempotency token for the request. Amazon CodeGuru Security uses this value to prevent the accidental creation of duplicate scans if there are failures and retries.</p>
@@ -107,10 +97,7 @@ impl CreateScanInputBuilder {
         self
     }
     /// <p>The identifier for an input resource used to create a scan.</p>
-    pub fn set_resource_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceId>,
-    ) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<crate::types::ResourceId>) -> Self {
         self.resource_id = input;
         self
     }
@@ -155,10 +142,7 @@ impl CreateScanInputBuilder {
         self
     }
     /// <p>The type of analysis you want CodeGuru Security to perform in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings. Defaults to <code>Security</code> type if missing.</p>
-    pub fn set_analysis_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisType>,
-    ) -> Self {
+    pub fn set_analysis_type(mut self, input: ::std::option::Option<crate::types::AnalysisType>) -> Self {
         self.analysis_type = input;
         self
     }
@@ -175,11 +159,7 @@ impl CreateScanInputBuilder {
     /// <li> <p>A tag key. For example, <code>CostCenter</code>, <code>Environment</code>, or <code>Secret</code>. Tag keys are case sensitive.</p> </li>
     /// <li> <p>An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.</p> </li>
     /// </ul>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -190,12 +170,7 @@ impl CreateScanInputBuilder {
     /// <li> <p>A tag key. For example, <code>CostCenter</code>, <code>Environment</code>, or <code>Secret</code>. Tag keys are case sensitive.</p> </li>
     /// <li> <p>An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
@@ -204,20 +179,11 @@ impl CreateScanInputBuilder {
     /// <li> <p>A tag key. For example, <code>CostCenter</code>, <code>Environment</code>, or <code>Secret</code>. Tag keys are case sensitive.</p> </li>
     /// <li> <p>An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.</p> </li>
     /// </ul>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateScanInput`](crate::operation::create_scan::CreateScanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_scan::CreateScanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_scan::CreateScanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_scan::CreateScanInput {
             client_token: self.client_token,
             resource_id: self.resource_id,

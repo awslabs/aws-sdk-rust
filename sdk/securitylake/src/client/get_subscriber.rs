@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSubscriberOutput`](crate::operation::get_subscriber::GetSubscriberOutput) with field(s):
     ///   - [`subscriber(Option<SubscriberResource>)`](crate::operation::get_subscriber::GetSubscriberOutput::subscriber): <p>The subscriber information for the specified subscriber ID.</p>
     /// - On failure, responds with [`SdkError<GetSubscriberError>`](crate::operation::get_subscriber::GetSubscriberError)
-    pub fn get_subscriber(
-        &self,
-    ) -> crate::operation::get_subscriber::builders::GetSubscriberFluentBuilder {
-        crate::operation::get_subscriber::builders::GetSubscriberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_subscriber(&self) -> crate::operation::get_subscriber::builders::GetSubscriberFluentBuilder {
+        crate::operation::get_subscriber::builders::GetSubscriberFluentBuilder::new(self.handle.clone())
     }
 }

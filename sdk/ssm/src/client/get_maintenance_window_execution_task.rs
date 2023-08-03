@@ -22,7 +22,9 @@ impl super::Client {
     ///   - [`alarm_configuration(Option<AlarmConfiguration>)`](crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput::alarm_configuration): <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
     ///   - [`triggered_alarms(Option<Vec<AlarmStateInformation>>)`](crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput::triggered_alarms): <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
     /// - On failure, responds with [`SdkError<GetMaintenanceWindowExecutionTaskError>`](crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskError)
-    pub fn get_maintenance_window_execution_task(&self) -> crate::operation::get_maintenance_window_execution_task::builders::GetMaintenanceWindowExecutionTaskFluentBuilder{
+    pub fn get_maintenance_window_execution_task(
+        &self,
+    ) -> crate::operation::get_maintenance_window_execution_task::builders::GetMaintenanceWindowExecutionTaskFluentBuilder {
         crate::operation::get_maintenance_window_execution_task::builders::GetMaintenanceWindowExecutionTaskFluentBuilder::new(self.handle.clone())
     }
 }

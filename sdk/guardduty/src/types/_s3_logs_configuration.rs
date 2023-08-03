@@ -23,9 +23,7 @@ impl S3LogsConfiguration {
 
 /// A builder for [`S3LogsConfiguration`](crate::types::S3LogsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3LogsConfigurationBuilder {
     pub(crate) enable: ::std::option::Option<bool>,
 }

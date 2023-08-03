@@ -29,9 +29,7 @@ impl StopContactInput {
 
 /// A builder for [`StopContactInput`](crate::operation::stop_contact::StopContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopContactInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl StopContactInputBuilder {
         &self.instance_id
     }
     /// Consumes the builder and constructs a [`StopContactInput`](crate::operation::stop_contact::StopContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_contact::StopContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_contact::StopContactInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_contact::StopContactInput {
             contact_id: self.contact_id,
             instance_id: self.instance_id,

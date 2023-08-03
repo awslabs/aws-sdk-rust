@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BackfillErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -70,12 +64,8 @@ impl ::std::convert::From<&str> for BackfillErrorCode {
             "INTERNAL_ERROR" => BackfillErrorCode::InternalError,
             "INVALID_PARTITION_TYPE_DATA_ERROR" => BackfillErrorCode::InvalidPartitionTypeDataError,
             "MISSING_PARTITION_VALUE_ERROR" => BackfillErrorCode::MissingPartitionValueError,
-            "UNSUPPORTED_PARTITION_CHARACTER_ERROR" => {
-                BackfillErrorCode::UnsupportedPartitionCharacterError
-            }
-            other => {
-                BackfillErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "UNSUPPORTED_PARTITION_CHARACTER_ERROR" => BackfillErrorCode::UnsupportedPartitionCharacterError,
+            other => BackfillErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -94,9 +84,7 @@ impl BackfillErrorCode {
             BackfillErrorCode::InternalError => "INTERNAL_ERROR",
             BackfillErrorCode::InvalidPartitionTypeDataError => "INVALID_PARTITION_TYPE_DATA_ERROR",
             BackfillErrorCode::MissingPartitionValueError => "MISSING_PARTITION_VALUE_ERROR",
-            BackfillErrorCode::UnsupportedPartitionCharacterError => {
-                "UNSUPPORTED_PARTITION_CHARACTER_ERROR"
-            }
+            BackfillErrorCode::UnsupportedPartitionCharacterError => "UNSUPPORTED_PARTITION_CHARACTER_ERROR",
             BackfillErrorCode::Unknown(value) => value.as_str(),
         }
     }

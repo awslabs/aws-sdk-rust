@@ -58,9 +58,7 @@ impl AuthorizationRule {
 
 /// A builder for [`AuthorizationRule`](crate::types::AuthorizationRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizationRuleBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct AuthorizationRuleBuilder {
 }
 impl AuthorizationRuleBuilder {
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -133,18 +125,12 @@ impl AuthorizationRuleBuilder {
         &self.access_all
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network to which the authorization rule applies.</p>
-    pub fn destination_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network to which the authorization rule applies.</p>
-    pub fn set_destination_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_cidr = input;
         self
     }
@@ -158,17 +144,12 @@ impl AuthorizationRuleBuilder {
         self
     }
     /// <p>The current state of the authorization rule.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The current state of the authorization rule.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`AuthorizationRule`](crate::types::AuthorizationRule).

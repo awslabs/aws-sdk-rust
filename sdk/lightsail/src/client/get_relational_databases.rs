@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`relational_databases(Option<Vec<RelationalDatabase>>)`](crate::operation::get_relational_databases::GetRelationalDatabasesOutput::relational_databases): <p>An object describing the result of your get relational databases request.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_relational_databases::GetRelationalDatabasesOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetRelationalDatabases</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetRelationalDatabasesError>`](crate::operation::get_relational_databases::GetRelationalDatabasesError)
-    pub fn get_relational_databases(
-        &self,
-    ) -> crate::operation::get_relational_databases::builders::GetRelationalDatabasesFluentBuilder
-    {
+    pub fn get_relational_databases(&self) -> crate::operation::get_relational_databases::builders::GetRelationalDatabasesFluentBuilder {
         crate::operation::get_relational_databases::builders::GetRelationalDatabasesFluentBuilder::new(self.handle.clone())
     }
 }

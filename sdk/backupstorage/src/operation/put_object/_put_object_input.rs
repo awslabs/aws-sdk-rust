@@ -67,9 +67,7 @@ impl PutObjectInput {
         self.object_checksum.as_deref()
     }
     /// object checksum algorithm
-    pub fn object_checksum_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SummaryChecksumAlgorithm> {
+    pub fn object_checksum_algorithm(&self) -> ::std::option::Option<&crate::types::SummaryChecksumAlgorithm> {
         self.object_checksum_algorithm.as_ref()
     }
     /// Throw an exception if Object name is already exist.
@@ -96,24 +94,17 @@ pub struct PutObjectInputBuilder {
     pub(crate) inline_chunk_checksum: ::std::option::Option<::std::string::String>,
     pub(crate) inline_chunk_checksum_algorithm: ::std::option::Option<::std::string::String>,
     pub(crate) object_checksum: ::std::option::Option<::std::string::String>,
-    pub(crate) object_checksum_algorithm:
-        ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
+    pub(crate) object_checksum_algorithm: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
     pub(crate) throw_on_duplicate: ::std::option::Option<bool>,
 }
 impl PutObjectInputBuilder {
     /// Backup job Id for the in-progress backup.
-    pub fn backup_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Backup job Id for the in-progress backup.
-    pub fn set_backup_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_job_id = input;
         self
     }
@@ -136,18 +127,12 @@ impl PutObjectInputBuilder {
         &self.object_name
     }
     /// Store user defined metadata like backup checksum, disk ids, restore metadata etc.
-    pub fn metadata_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata_string = ::std::option::Option::Some(input.into());
         self
     }
     /// Store user defined metadata like backup checksum, disk ids, restore metadata etc.
-    pub fn set_metadata_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metadata_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata_string = input;
         self
     }
@@ -161,17 +146,12 @@ impl PutObjectInputBuilder {
         self
     }
     /// Inline chunk data to be uploaded.
-    pub fn set_inline_chunk(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_inline_chunk(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.inline_chunk = input;
         self
     }
     /// Inline chunk data to be uploaded.
-    pub fn get_inline_chunk(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_inline_chunk(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.inline_chunk
     }
     /// Length of the inline chunk data.
@@ -189,18 +169,12 @@ impl PutObjectInputBuilder {
         &self.inline_chunk_length
     }
     /// Inline chunk checksum
-    pub fn inline_chunk_checksum(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inline_chunk_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inline_chunk_checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// Inline chunk checksum
-    pub fn set_inline_chunk_checksum(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inline_chunk_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inline_chunk_checksum = input;
         self
     }
@@ -209,40 +183,26 @@ impl PutObjectInputBuilder {
         &self.inline_chunk_checksum
     }
     /// Inline chunk checksum algorithm
-    pub fn inline_chunk_checksum_algorithm(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inline_chunk_checksum_algorithm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inline_chunk_checksum_algorithm = ::std::option::Option::Some(input.into());
         self
     }
     /// Inline chunk checksum algorithm
-    pub fn set_inline_chunk_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inline_chunk_checksum_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inline_chunk_checksum_algorithm = input;
         self
     }
     /// Inline chunk checksum algorithm
-    pub fn get_inline_chunk_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_inline_chunk_checksum_algorithm(&self) -> &::std::option::Option<::std::string::String> {
         &self.inline_chunk_checksum_algorithm
     }
     /// object checksum
-    pub fn object_checksum(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// object checksum
-    pub fn set_object_checksum(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_checksum = input;
         self
     }
@@ -251,25 +211,17 @@ impl PutObjectInputBuilder {
         &self.object_checksum
     }
     /// object checksum algorithm
-    pub fn object_checksum_algorithm(
-        mut self,
-        input: crate::types::SummaryChecksumAlgorithm,
-    ) -> Self {
+    pub fn object_checksum_algorithm(mut self, input: crate::types::SummaryChecksumAlgorithm) -> Self {
         self.object_checksum_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// object checksum algorithm
-    pub fn set_object_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_object_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>) -> Self {
         self.object_checksum_algorithm = input;
         self
     }
     /// object checksum algorithm
-    pub fn get_object_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
+    pub fn get_object_checksum_algorithm(&self) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
         &self.object_checksum_algorithm
     }
     /// Throw an exception if Object name is already exist.
@@ -287,12 +239,7 @@ impl PutObjectInputBuilder {
         &self.throw_on_duplicate
     }
     /// Consumes the builder and constructs a [`PutObjectInput`](crate::operation::put_object::PutObjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_object::PutObjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_object::PutObjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_object::PutObjectInput {
             backup_job_id: self.backup_job_id,
             object_name: self.object_name,

@@ -29,18 +29,14 @@ impl DeleteProjectPolicyInput {
 }
 impl DeleteProjectPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteProjectPolicyInput`](crate::operation::delete_project_policy::DeleteProjectPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_project_policy::builders::DeleteProjectPolicyInputBuilder {
-        crate::operation::delete_project_policy::builders::DeleteProjectPolicyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_project_policy::builders::DeleteProjectPolicyInputBuilder {
+        crate::operation::delete_project_policy::builders::DeleteProjectPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProjectPolicyInput`](crate::operation::delete_project_policy::DeleteProjectPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProjectPolicyInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -76,18 +72,12 @@ impl DeleteProjectPolicyInputBuilder {
         &self.policy_name
     }
     /// <p>The ID of the project policy revision that you want to delete.</p>
-    pub fn policy_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_revision_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the project policy revision that you want to delete.</p>
-    pub fn set_policy_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_revision_id = input;
         self
     }
@@ -98,16 +88,12 @@ impl DeleteProjectPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProjectPolicyInput`](crate::operation::delete_project_policy::DeleteProjectPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_project_policy::DeleteProjectPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_project_policy::DeleteProjectPolicyInput {
-                project_arn: self.project_arn,
-                policy_name: self.policy_name,
-                policy_revision_id: self.policy_revision_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_project_policy::DeleteProjectPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_project_policy::DeleteProjectPolicyInput {
+            project_arn: self.project_arn,
+            policy_name: self.policy_name,
+            policy_revision_id: self.policy_revision_id,
+        })
     }
 }

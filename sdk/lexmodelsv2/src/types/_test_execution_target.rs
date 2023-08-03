@@ -10,9 +10,7 @@ pub struct TestExecutionTarget {
 }
 impl TestExecutionTarget {
     /// <p>Contains information about the bot alias used for the test execution.</p>
-    pub fn bot_alias_target(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BotAliasTestExecutionTarget> {
+    pub fn bot_alias_target(&self) -> ::std::option::Option<&crate::types::BotAliasTestExecutionTarget> {
         self.bot_alias_target.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl TestExecutionTarget {
 
 /// A builder for [`TestExecutionTarget`](crate::types::TestExecutionTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestExecutionTargetBuilder {
     pub(crate) bot_alias_target: ::std::option::Option<crate::types::BotAliasTestExecutionTarget>,
 }
@@ -38,17 +34,12 @@ impl TestExecutionTargetBuilder {
         self
     }
     /// <p>Contains information about the bot alias used for the test execution.</p>
-    pub fn set_bot_alias_target(
-        mut self,
-        input: ::std::option::Option<crate::types::BotAliasTestExecutionTarget>,
-    ) -> Self {
+    pub fn set_bot_alias_target(mut self, input: ::std::option::Option<crate::types::BotAliasTestExecutionTarget>) -> Self {
         self.bot_alias_target = input;
         self
     }
     /// <p>Contains information about the bot alias used for the test execution.</p>
-    pub fn get_bot_alias_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::BotAliasTestExecutionTarget> {
+    pub fn get_bot_alias_target(&self) -> &::std::option::Option<crate::types::BotAliasTestExecutionTarget> {
         &self.bot_alias_target
     }
     /// Consumes the builder and constructs a [`TestExecutionTarget`](crate::types::TestExecutionTarget).

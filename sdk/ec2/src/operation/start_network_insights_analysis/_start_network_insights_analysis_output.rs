@@ -10,9 +10,7 @@ pub struct StartNetworkInsightsAnalysisOutput {
 }
 impl StartNetworkInsightsAnalysisOutput {
     /// <p>Information about the network insights analysis.</p>
-    pub fn network_insights_analysis(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkInsightsAnalysis> {
+    pub fn network_insights_analysis(&self) -> ::std::option::Option<&crate::types::NetworkInsightsAnalysis> {
         self.network_insights_analysis.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for StartNetworkInsightsAnalysisOutput {
 }
 impl StartNetworkInsightsAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartNetworkInsightsAnalysisOutput`](crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisOutput).
-    pub fn builder() -> crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisOutputBuilder{
+    pub fn builder() -> crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisOutputBuilder {
         crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartNetworkInsightsAnalysisOutput`](crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartNetworkInsightsAnalysisOutputBuilder {
-    pub(crate) network_insights_analysis:
-        ::std::option::Option<crate::types::NetworkInsightsAnalysis>,
+    pub(crate) network_insights_analysis: ::std::option::Option<crate::types::NetworkInsightsAnalysis>,
     _request_id: Option<String>,
 }
 impl StartNetworkInsightsAnalysisOutputBuilder {
     /// <p>Information about the network insights analysis.</p>
-    pub fn network_insights_analysis(
-        mut self,
-        input: crate::types::NetworkInsightsAnalysis,
-    ) -> Self {
+    pub fn network_insights_analysis(mut self, input: crate::types::NetworkInsightsAnalysis) -> Self {
         self.network_insights_analysis = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the network insights analysis.</p>
-    pub fn set_network_insights_analysis(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInsightsAnalysis>,
-    ) -> Self {
+    pub fn set_network_insights_analysis(mut self, input: ::std::option::Option<crate::types::NetworkInsightsAnalysis>) -> Self {
         self.network_insights_analysis = input;
         self
     }
     /// <p>Information about the network insights analysis.</p>
-    pub fn get_network_insights_analysis(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkInsightsAnalysis> {
+    pub fn get_network_insights_analysis(&self) -> &::std::option::Option<crate::types::NetworkInsightsAnalysis> {
         &self.network_insights_analysis
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +58,7 @@ impl StartNetworkInsightsAnalysisOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartNetworkInsightsAnalysisOutput`](crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisOutput {
+    pub fn build(self) -> crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisOutput {
         crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisOutput {
             network_insights_analysis: self.network_insights_analysis,
             _request_id: self._request_id,

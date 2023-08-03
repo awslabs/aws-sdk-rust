@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateKmsKeyOutput {
 }
 impl DisassociateKmsKeyOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateKmsKeyOutput`](crate::operation::disassociate_kms_key::DisassociateKmsKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_kms_key::builders::DisassociateKmsKeyOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_kms_key::builders::DisassociateKmsKeyOutputBuilder {
         crate::operation::disassociate_kms_key::builders::DisassociateKmsKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateKmsKeyOutput`](crate::operation::disassociate_kms_key::DisassociateKmsKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateKmsKeyOutputBuilder {
     _request_id: Option<String>,
 }

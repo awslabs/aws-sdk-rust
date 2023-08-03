@@ -10,10 +10,7 @@ impl GetConfigurationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_configuration::GetConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configuration::GetConfigurationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configuration::GetConfigurationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_configuration();
         fluent_builder.inner = self;
@@ -29,9 +26,7 @@ impl GetConfigurationInputBuilder {
 /// <li> <p> <code>GetConfiguration</code> is a priced call. For more information, see <a href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.</p> </li>
 /// </ul>
 /// </important>
-#[deprecated(
-    note = "This API has been deprecated in favor of the GetLatestConfiguration API used in conjunction with StartConfigurationSession."
-)]
+#[deprecated(note = "This API has been deprecated in favor of the GetLatestConfiguration API used in conjunction with StartConfigurationSession.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -46,9 +41,7 @@ impl GetConfigurationFluentBuilder {
         }
     }
     /// Access the GetConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_configuration::builders::GetConfigurationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_configuration::builders::GetConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +53,7 @@ impl GetConfigurationFluentBuilder {
             crate::operation::get_configuration::GetConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configuration::GetConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configuration::GetConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +63,7 @@ impl GetConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +72,7 @@ impl GetConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configuration::GetConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configuration::GetConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configuration::GetConfigurationError>,
     > {
         let op = self
             .inner
@@ -109,9 +95,7 @@ impl GetConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configuration::GetConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configuration::GetConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configuration::GetConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +109,7 @@ impl GetConfigurationFluentBuilder {
             crate::operation::get_configuration::GetConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configuration::GetConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configuration::GetConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -160,18 +142,12 @@ impl GetConfigurationFluentBuilder {
         self.inner.get_environment()
     }
     /// <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
-    pub fn configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration(input.into());
         self
     }
     /// <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
@@ -198,10 +174,7 @@ impl GetConfigurationFluentBuilder {
     /// <p>To avoid excess charges, we recommend you use the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html">StartConfigurationSession</a> and <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html">GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you choose to continue using <code>GetConfiguration</code>, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value to use for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code> attribute returned by <code>GetConfiguration</code> when there is new or updated data, and should be saved for subsequent calls to <code>GetConfiguration</code>.</p>
     /// </important>
     /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn client_configuration_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_configuration_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_configuration_version(input.into());
         self
     }
@@ -210,10 +183,7 @@ impl GetConfigurationFluentBuilder {
     /// <p>To avoid excess charges, we recommend you use the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html">StartConfigurationSession</a> and <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html">GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you choose to continue using <code>GetConfiguration</code>, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value to use for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code> attribute returned by <code>GetConfiguration</code> when there is new or updated data, and should be saved for subsequent calls to <code>GetConfiguration</code>.</p>
     /// </important>
     /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn set_client_configuration_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_configuration_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_configuration_version(input);
         self
     }
@@ -222,9 +192,7 @@ impl GetConfigurationFluentBuilder {
     /// <p>To avoid excess charges, we recommend you use the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html">StartConfigurationSession</a> and <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html">GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you choose to continue using <code>GetConfiguration</code>, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value to use for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code> attribute returned by <code>GetConfiguration</code> when there is new or updated data, and should be saved for subsequent calls to <code>GetConfiguration</code>.</p>
     /// </important>
     /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn get_client_configuration_version(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_client_configuration_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_configuration_version()
     }
 }

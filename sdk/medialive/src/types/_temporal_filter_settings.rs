@@ -6,17 +6,14 @@
 pub struct TemporalFilterSettings {
     /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
     #[doc(hidden)]
-    pub post_filter_sharpening:
-        ::std::option::Option<crate::types::TemporalFilterPostFilterSharpening>,
+    pub post_filter_sharpening: ::std::option::Option<crate::types::TemporalFilterPostFilterSharpening>,
     /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
     #[doc(hidden)]
     pub strength: ::std::option::Option<crate::types::TemporalFilterStrength>,
 }
 impl TemporalFilterSettings {
     /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
-    pub fn post_filter_sharpening(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TemporalFilterPostFilterSharpening> {
+    pub fn post_filter_sharpening(&self) -> ::std::option::Option<&crate::types::TemporalFilterPostFilterSharpening> {
         self.post_filter_sharpening.as_ref()
     }
     /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
@@ -33,35 +30,24 @@ impl TemporalFilterSettings {
 
 /// A builder for [`TemporalFilterSettings`](crate::types::TemporalFilterSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemporalFilterSettingsBuilder {
-    pub(crate) post_filter_sharpening:
-        ::std::option::Option<crate::types::TemporalFilterPostFilterSharpening>,
+    pub(crate) post_filter_sharpening: ::std::option::Option<crate::types::TemporalFilterPostFilterSharpening>,
     pub(crate) strength: ::std::option::Option<crate::types::TemporalFilterStrength>,
 }
 impl TemporalFilterSettingsBuilder {
     /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
-    pub fn post_filter_sharpening(
-        mut self,
-        input: crate::types::TemporalFilterPostFilterSharpening,
-    ) -> Self {
+    pub fn post_filter_sharpening(mut self, input: crate::types::TemporalFilterPostFilterSharpening) -> Self {
         self.post_filter_sharpening = ::std::option::Option::Some(input);
         self
     }
     /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
-    pub fn set_post_filter_sharpening(
-        mut self,
-        input: ::std::option::Option<crate::types::TemporalFilterPostFilterSharpening>,
-    ) -> Self {
+    pub fn set_post_filter_sharpening(mut self, input: ::std::option::Option<crate::types::TemporalFilterPostFilterSharpening>) -> Self {
         self.post_filter_sharpening = input;
         self
     }
     /// If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
-    pub fn get_post_filter_sharpening(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemporalFilterPostFilterSharpening> {
+    pub fn get_post_filter_sharpening(&self) -> &::std::option::Option<crate::types::TemporalFilterPostFilterSharpening> {
         &self.post_filter_sharpening
     }
     /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
@@ -70,10 +56,7 @@ impl TemporalFilterSettingsBuilder {
         self
     }
     /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
-    pub fn set_strength(
-        mut self,
-        input: ::std::option::Option<crate::types::TemporalFilterStrength>,
-    ) -> Self {
+    pub fn set_strength(mut self, input: ::std::option::Option<crate::types::TemporalFilterStrength>) -> Self {
         self.strength = input;
         self
     }

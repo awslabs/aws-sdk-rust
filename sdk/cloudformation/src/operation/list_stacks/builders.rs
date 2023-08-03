@@ -10,10 +10,7 @@ impl ListStacksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_stacks::ListStacksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stacks::ListStacksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stacks::ListStacksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_stacks();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListStacksFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_stacks::ListStacks,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_stacks::ListStacks, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_stacks::ListStacksError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListStacksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListStacksFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_stacks::ListStacks,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_stacks::ListStacks, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_stacks::ListStacksError>,
     > {
         self.customize_middleware().await
@@ -142,17 +130,12 @@ impl ListStacksFluentBuilder {
         self
     }
     /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <code>Stack</code> data type.</p>
-    pub fn set_stack_status_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackStatus>>,
-    ) -> Self {
+    pub fn set_stack_status_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackStatus>>) -> Self {
         self.inner = self.inner.set_stack_status_filter(input);
         self
     }
     /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <code>Stack</code> data type.</p>
-    pub fn get_stack_status_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackStatus>> {
+    pub fn get_stack_status_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackStatus>> {
         self.inner.get_stack_status_filter()
     }
 }

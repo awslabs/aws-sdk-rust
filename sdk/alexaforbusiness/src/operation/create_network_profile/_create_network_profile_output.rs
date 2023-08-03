@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateNetworkProfileOutput {
 }
 impl CreateNetworkProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkProfileOutput`](crate::operation::create_network_profile::CreateNetworkProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::create_network_profile::builders::CreateNetworkProfileOutputBuilder {
+    pub fn builder() -> crate::operation::create_network_profile::builders::CreateNetworkProfileOutputBuilder {
         crate::operation::create_network_profile::builders::CreateNetworkProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNetworkProfileOutput`](crate::operation::create_network_profile::CreateNetworkProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkProfileOutputBuilder {
     pub(crate) network_profile_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateNetworkProfileOutputBuilder {
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn set_network_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_profile_arn = input;
         self
     }

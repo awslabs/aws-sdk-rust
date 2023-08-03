@@ -30,17 +30,14 @@ impl DescribeExpressionsInput {
 }
 impl DescribeExpressionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeExpressionsInput`](crate::operation::describe_expressions::DescribeExpressionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_expressions::builders::DescribeExpressionsInputBuilder {
+    pub fn builder() -> crate::operation::describe_expressions::builders::DescribeExpressionsInputBuilder {
         crate::operation::describe_expressions::builders::DescribeExpressionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExpressionsInput`](crate::operation::describe_expressions::DescribeExpressionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExpressionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) expression_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -66,27 +63,19 @@ impl DescribeExpressionsInputBuilder {
     /// To override the contents of this collection use [`set_expression_names`](Self::set_expression_names).
     ///
     /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
-    pub fn expression_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expression_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.expression_names.unwrap_or_default();
         v.push(input.into());
         self.expression_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
-    pub fn set_expression_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_expression_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.expression_names = input;
         self
     }
     /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
-    pub fn get_expression_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_expression_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.expression_names
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -106,16 +95,12 @@ impl DescribeExpressionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExpressionsInput`](crate::operation::describe_expressions::DescribeExpressionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_expressions::DescribeExpressionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_expressions::DescribeExpressionsInput {
-                domain_name: self.domain_name,
-                expression_names: self.expression_names,
-                deployed: self.deployed,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_expressions::DescribeExpressionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_expressions::DescribeExpressionsInput {
+            domain_name: self.domain_name,
+            expression_names: self.expression_names,
+            deployed: self.deployed,
+        })
     }
 }

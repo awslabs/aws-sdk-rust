@@ -37,9 +37,7 @@ impl MedicalAlternative {
 
 /// A builder for [`MedicalAlternative`](crate::types::MedicalAlternative).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MedicalAlternativeBuilder {
     pub(crate) transcript: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::MedicalItem>>,
@@ -72,10 +70,7 @@ impl MedicalAlternativeBuilder {
         self
     }
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalItem>>) -> Self {
         self.items = input;
         self
     }
@@ -95,17 +90,12 @@ impl MedicalAlternativeBuilder {
         self
     }
     /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalEntity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalEntity>>) -> Self {
         self.entities = input;
         self
     }
     /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
-    pub fn get_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalEntity>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalEntity>> {
         &self.entities
     }
     /// Consumes the builder and constructs a [`MedicalAlternative`](crate::types::MedicalAlternative).

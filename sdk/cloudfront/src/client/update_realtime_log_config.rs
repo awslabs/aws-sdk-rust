@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRealtimeLogConfigOutput`](crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput) with field(s):
     ///   - [`realtime_log_config(Option<RealtimeLogConfig>)`](crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput::realtime_log_config): <p>A real-time log configuration.</p>
     /// - On failure, responds with [`SdkError<UpdateRealtimeLogConfigError>`](crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError)
-    pub fn update_realtime_log_config(
-        &self,
-    ) -> crate::operation::update_realtime_log_config::builders::UpdateRealtimeLogConfigFluentBuilder
-    {
+    pub fn update_realtime_log_config(&self) -> crate::operation::update_realtime_log_config::builders::UpdateRealtimeLogConfigFluentBuilder {
         crate::operation::update_realtime_log_config::builders::UpdateRealtimeLogConfigFluentBuilder::new(self.handle.clone())
     }
 }

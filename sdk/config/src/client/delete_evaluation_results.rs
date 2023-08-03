@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`config_rule_name(impl ::std::convert::Into<String>)`](crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsFluentBuilder::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsFluentBuilder::set_config_rule_name): <p>The name of the Config rule for which you want to delete the evaluation results.</p>
     /// - On success, responds with [`DeleteEvaluationResultsOutput`](crate::operation::delete_evaluation_results::DeleteEvaluationResultsOutput)
     /// - On failure, responds with [`SdkError<DeleteEvaluationResultsError>`](crate::operation::delete_evaluation_results::DeleteEvaluationResultsError)
-    pub fn delete_evaluation_results(
-        &self,
-    ) -> crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsFluentBuilder
-    {
+    pub fn delete_evaluation_results(&self) -> crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsFluentBuilder {
         crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,9 +38,7 @@ impl UpdateMlModelInput {
 
 /// A builder for [`UpdateMlModelInput`](crate::operation::update_ml_model::UpdateMlModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMlModelInputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) ml_model_name: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ impl UpdateMlModelInputBuilder {
         &self.ml_model_id
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    pub fn ml_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ml_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    pub fn set_ml_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ml_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ml_model_name = input;
         self
     }
@@ -101,10 +93,7 @@ impl UpdateMlModelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMlModelInput`](crate::operation::update_ml_model::UpdateMlModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_ml_model::UpdateMlModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_ml_model::UpdateMlModelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ml_model::UpdateMlModelInput {
             ml_model_id: self.ml_model_id,
             ml_model_name: self.ml_model_name,

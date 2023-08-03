@@ -73,18 +73,14 @@ impl DescribeInternetGatewaysInput {
 }
 impl DescribeInternetGatewaysInput {
     /// Creates a new builder-style object to manufacture [`DescribeInternetGatewaysInput`](crate::operation::describe_internet_gateways::DescribeInternetGatewaysInput).
-    pub fn builder(
-    ) -> crate::operation::describe_internet_gateways::builders::DescribeInternetGatewaysInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_internet_gateways::builders::DescribeInternetGatewaysInputBuilder {
         crate::operation::describe_internet_gateways::builders::DescribeInternetGatewaysInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInternetGatewaysInput`](crate::operation::describe_internet_gateways::DescribeInternetGatewaysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInternetGatewaysInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -133,10 +129,7 @@ impl DescribeInternetGatewaysInputBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -178,10 +171,7 @@ impl DescribeInternetGatewaysInputBuilder {
     ///
     /// <p>The IDs of the internet gateways.</p>
     /// <p>Default: Describes all your internet gateways.</p>
-    pub fn internet_gateway_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn internet_gateway_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.internet_gateway_ids.unwrap_or_default();
         v.push(input.into());
         self.internet_gateway_ids = ::std::option::Option::Some(v);
@@ -189,18 +179,13 @@ impl DescribeInternetGatewaysInputBuilder {
     }
     /// <p>The IDs of the internet gateways.</p>
     /// <p>Default: Describes all your internet gateways.</p>
-    pub fn set_internet_gateway_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_internet_gateway_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.internet_gateway_ids = input;
         self
     }
     /// <p>The IDs of the internet gateways.</p>
     /// <p>Default: Describes all your internet gateways.</p>
-    pub fn get_internet_gateway_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_internet_gateway_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.internet_gateway_ids
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
@@ -238,14 +223,12 @@ impl DescribeInternetGatewaysInputBuilder {
         crate::operation::describe_internet_gateways::DescribeInternetGatewaysInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_internet_gateways::DescribeInternetGatewaysInput {
-                filters: self.filters,
-                dry_run: self.dry_run,
-                internet_gateway_ids: self.internet_gateway_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_internet_gateways::DescribeInternetGatewaysInput {
+            filters: self.filters,
+            dry_run: self.dry_run,
+            internet_gateway_ids: self.internet_gateway_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -31,32 +31,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_services::DescribeServicesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_services::DescribeServicesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_services::DescribeServicesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_services::DescribeServicesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -75,32 +59,16 @@ impl From<crate::operation::describe_services::DescribeServicesError> for Error 
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_attribute_values::GetAttributeValuesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_attribute_values::GetAttributeValuesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_attribute_values::GetAttributeValuesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_attribute_values::GetAttributeValuesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -110,41 +78,31 @@ where
 impl From<crate::operation::get_attribute_values::GetAttributeValuesError> for Error {
     fn from(err: crate::operation::get_attribute_values::GetAttributeValuesError) -> Self {
         match err {
-            crate::operation::get_attribute_values::GetAttributeValuesError::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
+            crate::operation::get_attribute_values::GetAttributeValuesError::ExpiredNextTokenException(inner) => {
+                Error::ExpiredNextTokenException(inner)
+            }
             crate::operation::get_attribute_values::GetAttributeValuesError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::get_attribute_values::GetAttributeValuesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::operation::get_attribute_values::GetAttributeValuesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_attribute_values::GetAttributeValuesError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::get_attribute_values::GetAttributeValuesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::get_attribute_values::GetAttributeValuesError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_attribute_values::GetAttributeValuesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_price_list_file_url::GetPriceListFileUrlError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_price_list_file_url::GetPriceListFileUrlError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_price_list_file_url::GetPriceListFileUrlError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_price_list_file_url::GetPriceListFileUrlError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -155,35 +113,27 @@ impl From<crate::operation::get_price_list_file_url::GetPriceListFileUrlError> f
     fn from(err: crate::operation::get_price_list_file_url::GetPriceListFileUrlError) -> Self {
         match err {
             crate::operation::get_price_list_file_url::GetPriceListFileUrlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_price_list_file_url::GetPriceListFileUrlError::InternalErrorException(inner) => Error::InternalErrorException(inner),
-            crate::operation::get_price_list_file_url::GetPriceListFileUrlError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_price_list_file_url::GetPriceListFileUrlError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::get_price_list_file_url::GetPriceListFileUrlError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::get_price_list_file_url::GetPriceListFileUrlError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_price_list_file_url::GetPriceListFileUrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::get_products::GetProductsError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_products::GetProductsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_products::GetProductsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_products::GetProductsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -193,53 +143,25 @@ where
 impl From<crate::operation::get_products::GetProductsError> for Error {
     fn from(err: crate::operation::get_products::GetProductsError) -> Self {
         match err {
-            crate::operation::get_products::GetProductsError::ExpiredNextTokenException(inner) => {
-                Error::ExpiredNextTokenException(inner)
-            }
-            crate::operation::get_products::GetProductsError::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::operation::get_products::GetProductsError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::operation::get_products::GetProductsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_products::GetProductsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::operation::get_products::GetProductsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_products::GetProductsError::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
+            crate::operation::get_products::GetProductsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_products::GetProductsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_products::GetProductsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_products::GetProductsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_products::GetProductsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_price_lists::ListPriceListsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_price_lists::ListPriceListsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_price_lists::ListPriceListsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_price_lists::ListPriceListsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -249,27 +171,13 @@ where
 impl From<crate::operation::list_price_lists::ListPriceListsError> for Error {
     fn from(err: crate::operation::list_price_lists::ListPriceListsError) -> Self {
         match err {
-            crate::operation::list_price_lists::ListPriceListsError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::list_price_lists::ListPriceListsError::ExpiredNextTokenException(
-                inner,
-            ) => Error::ExpiredNextTokenException(inner),
-            crate::operation::list_price_lists::ListPriceListsError::InternalErrorException(
-                inner,
-            ) => Error::InternalErrorException(inner),
-            crate::operation::list_price_lists::ListPriceListsError::InvalidNextTokenException(
-                inner,
-            ) => Error::InvalidNextTokenException(inner),
-            crate::operation::list_price_lists::ListPriceListsError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::list_price_lists::ListPriceListsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::operation::list_price_lists::ListPriceListsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_price_lists::ListPriceListsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_price_lists::ListPriceListsError::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
+            crate::operation::list_price_lists::ListPriceListsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::list_price_lists::ListPriceListsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_price_lists::ListPriceListsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_price_lists::ListPriceListsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_price_lists::ListPriceListsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

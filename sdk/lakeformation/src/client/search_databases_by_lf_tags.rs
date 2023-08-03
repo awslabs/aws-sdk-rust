@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsOutput::next_token): <p>A continuation token, present if the current list segment is not the last.</p>
     ///   - [`database_list(Option<Vec<TaggedDatabase>>)`](crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsOutput::database_list): <p>A list of databases that meet the LF-tag conditions.</p>
     /// - On failure, responds with [`SdkError<SearchDatabasesByLFTagsError>`](crate::operation::search_databases_by_lf_tags::SearchDatabasesByLFTagsError)
-    pub fn search_databases_by_lf_tags(
-        &self,
-    ) -> crate::operation::search_databases_by_lf_tags::builders::SearchDatabasesByLFTagsFluentBuilder
-    {
+    pub fn search_databases_by_lf_tags(&self) -> crate::operation::search_databases_by_lf_tags::builders::SearchDatabasesByLFTagsFluentBuilder {
         crate::operation::search_databases_by_lf_tags::builders::SearchDatabasesByLFTagsFluentBuilder::new(self.handle.clone())
     }
 }

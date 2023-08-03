@@ -73,16 +73,14 @@ impl ::aws_http::request_id::RequestId for ListPackageVersionAssetsOutput {
 }
 impl ListPackageVersionAssetsOutput {
     /// Creates a new builder-style object to manufacture [`ListPackageVersionAssetsOutput`](crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput).
-    pub fn builder() -> crate::operation::list_package_version_assets::builders::ListPackageVersionAssetsOutputBuilder{
+    pub fn builder() -> crate::operation::list_package_version_assets::builders::ListPackageVersionAssetsOutputBuilder {
         crate::operation::list_package_version_assets::builders::ListPackageVersionAssetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPackageVersionAssetsOutput`](crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackageVersionAssetsOutputBuilder {
     pub(crate) format: ::std::option::Option<crate::types::PackageFormat>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
@@ -166,18 +164,12 @@ impl ListPackageVersionAssetsOutputBuilder {
         &self.version
     }
     /// <p> The current revision associated with the package version. </p>
-    pub fn version_revision(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_revision = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The current revision associated with the package version. </p>
-    pub fn set_version_revision(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_revision = input;
         self
     }
@@ -211,17 +203,12 @@ impl ListPackageVersionAssetsOutputBuilder {
         self
     }
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
-    pub fn set_assets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>>,
-    ) -> Self {
+    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>>) -> Self {
         self.assets = input;
         self
     }
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
-    pub fn get_assets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>> {
+    pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>> {
         &self.assets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -234,9 +221,7 @@ impl ListPackageVersionAssetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPackageVersionAssetsOutput`](crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput {
+    pub fn build(self) -> crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput {
         crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput {
             format: self.format,
             namespace: self.namespace,

@@ -58,9 +58,7 @@ pub fn ser_list_monitoring_executions_input(
         object.key("StatusEquals").string(var_13.as_str());
     }
     if let Some(var_14) = &input.monitoring_job_definition_name {
-        object
-            .key("MonitoringJobDefinitionName")
-            .string(var_14.as_str());
+        object.key("MonitoringJobDefinitionName").string(var_14.as_str());
     }
     if let Some(var_15) = &input.monitoring_type_equals {
         object.key("MonitoringTypeEquals").string(var_15.as_str());

@@ -10,10 +10,7 @@ impl ListBackupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_backups::ListBackupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backups::ListBackupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backups::ListBackupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_backups();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl ListBackupsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_backups::ListBackups,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_backups::ListBackups, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_backups::ListBackupsError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl ListBackupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl ListBackupsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_backups::ListBackups,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_backups::ListBackups, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_backups::ListBackupsError>,
     > {
         self.customize_middleware().await
@@ -148,17 +136,12 @@ impl ListBackupsFluentBuilder {
         self
     }
     /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is inclusive.</p>
-    pub fn set_time_range_lower_bound(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_time_range_lower_bound(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_time_range_lower_bound(input);
         self
     }
     /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is inclusive.</p>
-    pub fn get_time_range_lower_bound(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_time_range_lower_bound(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_time_range_lower_bound()
     }
     /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
@@ -167,32 +150,21 @@ impl ListBackupsFluentBuilder {
         self
     }
     /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
-    pub fn set_time_range_upper_bound(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_time_range_upper_bound(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_time_range_upper_bound(input);
         self
     }
     /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
-    pub fn get_time_range_upper_bound(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_time_range_upper_bound(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_time_range_upper_bound()
     }
     /// <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
-    pub fn exclusive_start_backup_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusive_start_backup_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.exclusive_start_backup_arn(input.into());
         self
     }
     /// <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
-    pub fn set_exclusive_start_backup_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exclusive_start_backup_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_exclusive_start_backup_arn(input);
         self
     }
@@ -218,10 +190,7 @@ impl ListBackupsFluentBuilder {
     /// <li> <p> <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p> </li>
     /// <li> <p> <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
     /// </ul>
-    pub fn set_backup_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupTypeFilter>,
-    ) -> Self {
+    pub fn set_backup_type(mut self, input: ::std::option::Option<crate::types::BackupTypeFilter>) -> Self {
         self.inner = self.inner.set_backup_type(input);
         self
     }

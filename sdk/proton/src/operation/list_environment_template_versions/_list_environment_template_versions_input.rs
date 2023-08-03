@@ -38,16 +38,14 @@ impl ListEnvironmentTemplateVersionsInput {
 }
 impl ListEnvironmentTemplateVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentTemplateVersionsInput`](crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsInput).
-    pub fn builder() -> crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsInputBuilder {
         crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEnvironmentTemplateVersionsInput`](crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentTemplateVersionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -84,18 +82,12 @@ impl ListEnvironmentTemplateVersionsInputBuilder {
         &self.max_results
     }
     /// <p>The name of the environment template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -105,19 +97,13 @@ impl ListEnvironmentTemplateVersionsInputBuilder {
     }
     /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
     /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
-    pub fn major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
     /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
-    pub fn set_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.major_version = input;
         self
     }
@@ -135,15 +121,11 @@ impl ListEnvironmentTemplateVersionsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                template_name: self.template_name
-                ,
-                major_version: self.major_version
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+                template_name: self.template_name,
+                major_version: self.major_version,
+            },
         )
     }
 }

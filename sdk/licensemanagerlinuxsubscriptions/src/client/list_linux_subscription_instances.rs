@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`instances(Option<Vec<Instance>>)`](crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesOutput::instances): <p>An array that contains instance objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLinuxSubscriptionInstancesError>`](crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError)
-    pub fn list_linux_subscription_instances(&self) -> crate::operation::list_linux_subscription_instances::builders::ListLinuxSubscriptionInstancesFluentBuilder{
+    pub fn list_linux_subscription_instances(
+        &self,
+    ) -> crate::operation::list_linux_subscription_instances::builders::ListLinuxSubscriptionInstancesFluentBuilder {
         crate::operation::list_linux_subscription_instances::builders::ListLinuxSubscriptionInstancesFluentBuilder::new(self.handle.clone())
     }
 }

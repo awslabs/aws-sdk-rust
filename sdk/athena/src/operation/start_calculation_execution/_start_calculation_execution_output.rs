@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for StartCalculationExecutionOutput {
 }
 impl StartCalculationExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartCalculationExecutionOutput`](crate::operation::start_calculation_execution::StartCalculationExecutionOutput).
-    pub fn builder() -> crate::operation::start_calculation_execution::builders::StartCalculationExecutionOutputBuilder{
+    pub fn builder() -> crate::operation::start_calculation_execution::builders::StartCalculationExecutionOutputBuilder {
         crate::operation::start_calculation_execution::builders::StartCalculationExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartCalculationExecutionOutput`](crate::operation::start_calculation_execution::StartCalculationExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartCalculationExecutionOutputBuilder {
     pub(crate) calculation_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::CalculationExecutionState>,
@@ -59,18 +57,12 @@ pub struct StartCalculationExecutionOutputBuilder {
 }
 impl StartCalculationExecutionOutputBuilder {
     /// <p>The calculation execution UUID.</p>
-    pub fn calculation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculation_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The calculation execution UUID.</p>
-    pub fn set_calculation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculation_execution_id = input;
         self
     }
@@ -98,10 +90,7 @@ impl StartCalculationExecutionOutputBuilder {
     /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
     /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
     /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculationExecutionState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CalculationExecutionState>) -> Self {
         self.state = input;
         self
     }
@@ -126,9 +115,7 @@ impl StartCalculationExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartCalculationExecutionOutput`](crate::operation::start_calculation_execution::StartCalculationExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_calculation_execution::StartCalculationExecutionOutput {
+    pub fn build(self) -> crate::operation::start_calculation_execution::StartCalculationExecutionOutput {
         crate::operation::start_calculation_execution::StartCalculationExecutionOutput {
             calculation_execution_id: self.calculation_execution_id,
             state: self.state,

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`unsuccessful_face_associations(Option<Vec<UnsuccessfulFaceAssociation>>)`](crate::operation::associate_faces::AssociateFacesOutput::unsuccessful_face_associations): <p>An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully associated along with the reasons. Returned if the AssociateFaces action is successful.</p>
     ///   - [`user_status(Option<UserStatus>)`](crate::operation::associate_faces::AssociateFacesOutput::user_status): <p>The status of an update made to a UserID. Reflects if the UserID has been updated for every requested change.</p>
     /// - On failure, responds with [`SdkError<AssociateFacesError>`](crate::operation::associate_faces::AssociateFacesError)
-    pub fn associate_faces(
-        &self,
-    ) -> crate::operation::associate_faces::builders::AssociateFacesFluentBuilder {
-        crate::operation::associate_faces::builders::AssociateFacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_faces(&self) -> crate::operation::associate_faces::builders::AssociateFacesFluentBuilder {
+        crate::operation::associate_faces::builders::AssociateFacesFluentBuilder::new(self.handle.clone())
     }
 }

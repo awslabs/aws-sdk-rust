@@ -10,10 +10,7 @@ impl CreateInsightInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_insight::CreateInsightOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_insight::CreateInsightError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_insight::CreateInsightError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_insight();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateInsightFluentBuilder {
         }
     }
     /// Access the CreateInsight as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_insight::builders::CreateInsightInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_insight::builders::CreateInsightInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl CreateInsightFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -135,10 +127,7 @@ impl CreateInsightFluentBuilder {
         self
     }
     /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -147,18 +136,12 @@ impl CreateInsightFluentBuilder {
         self.inner.get_filters()
     }
     /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
-    pub fn group_by_attribute(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_by_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_by_attribute(input.into());
         self
     }
     /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
-    pub fn set_group_by_attribute(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_by_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_by_attribute(input);
         self
     }

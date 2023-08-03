@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`automation_execution_metadata_list(Option<Vec<AutomationExecutionMetadata>>)`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput::automation_execution_metadata_list): <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeAutomationExecutionsError>`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsError)
-    pub fn describe_automation_executions(&self) -> crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder{
+    pub fn describe_automation_executions(
+        &self,
+    ) -> crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder {
         crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

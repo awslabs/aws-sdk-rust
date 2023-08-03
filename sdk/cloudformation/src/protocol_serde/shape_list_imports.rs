@@ -4,22 +4,13 @@ pub fn de_list_imports_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::list_imports::ListImportsOutput,
-    crate::operation::list_imports::ListImportsError,
-> {
+) -> std::result::Result<crate::operation::list_imports::ListImportsOutput, crate::operation::list_imports::ListImportsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::list_imports::ListImportsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_imports::ListImportsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::list_imports::ListImportsError::generic(
-        generic,
-    ))
+    Err(crate::operation::list_imports::ListImportsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -27,19 +18,13 @@ pub fn de_list_imports_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::list_imports::ListImportsOutput,
-    crate::operation::list_imports::ListImportsError,
-> {
+) -> std::result::Result<crate::operation::list_imports::ListImportsOutput, crate::operation::list_imports::ListImportsError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::list_imports::builders::ListImportsOutputBuilder::default();
+        let mut output = crate::operation::list_imports::builders::ListImportsOutputBuilder::default();
         output = crate::protocol_serde::shape_list_imports::de_list_imports(_response_body, output)
             .map_err(crate::operation::list_imports::ListImportsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -48,10 +33,7 @@ pub fn de_list_imports_http_response_with_props(
 pub fn de_list_imports(
     inp: &[u8],
     mut builder: crate::operation::list_imports::builders::ListImportsOutputBuilder,
-) -> Result<
-    crate::operation::list_imports::builders::ListImportsOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::list_imports::builders::ListImportsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -101,9 +83,7 @@ pub fn de_list_imports(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected ListImportsResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected ListImportsResult tag"));
     };
     Ok(builder)
 }

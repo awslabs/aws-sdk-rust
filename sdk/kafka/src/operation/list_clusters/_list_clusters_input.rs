@@ -36,9 +36,7 @@ impl ListClustersInput {
 
 /// A builder for [`ListClustersInput`](crate::operation::list_clusters::ListClustersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClustersInputBuilder {
     pub(crate) cluster_name_filter: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListClustersInputBuilder {
 }
 impl ListClustersInputBuilder {
     /// <p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
-    pub fn cluster_name_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_name_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name_filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
-    pub fn set_cluster_name_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_name_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name_filter = input;
         self
     }
@@ -94,12 +86,7 @@ impl ListClustersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListClustersInput`](crate::operation::list_clusters::ListClustersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_clusters::ListClustersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_clusters::ListClustersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_clusters::ListClustersInput {
             cluster_name_filter: self.cluster_name_filter,
             max_results: self.max_results,

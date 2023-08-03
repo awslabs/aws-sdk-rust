@@ -10,9 +10,7 @@ pub fn ser_get_hls_streaming_session_url_input(
         object.key("DiscontinuityMode").string(var_2.as_str());
     }
     if let Some(var_3) = &input.display_fragment_timestamp {
-        object
-            .key("DisplayFragmentTimestamp")
-            .string(var_3.as_str());
+        object.key("DisplayFragmentTimestamp").string(var_3.as_str());
     }
     if let Some(var_4) = &input.expires {
         object.key("Expires").number(
@@ -23,10 +21,7 @@ pub fn ser_get_hls_streaming_session_url_input(
     if let Some(var_5) = &input.hls_fragment_selector {
         #[allow(unused_mut)]
         let mut object_6 = object.key("HLSFragmentSelector").start_object();
-        crate::protocol_serde::shape_hls_fragment_selector::ser_hls_fragment_selector(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_hls_fragment_selector::ser_hls_fragment_selector(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.max_media_playlist_fragment_results {

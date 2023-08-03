@@ -6,8 +6,7 @@ pub struct DescribeStackResourceDriftsOutput {
     /// <p>Drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects drift.</p>
     /// <p>For a given stack, there will be one <code>StackResourceDrift</code> for each stack resource that has been checked for drift. Resources that haven't yet been checked for drift aren't included. Resources that do not currently support drift detection aren't checked, and so not included. For a list of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
     #[doc(hidden)]
-    pub stack_resource_drifts:
-        ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDrift>>,
+    pub stack_resource_drifts: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDrift>>,
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>DescribeStackResourceDrifts</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -16,9 +15,7 @@ pub struct DescribeStackResourceDriftsOutput {
 impl DescribeStackResourceDriftsOutput {
     /// <p>Drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects drift.</p>
     /// <p>For a given stack, there will be one <code>StackResourceDrift</code> for each stack resource that has been checked for drift. Resources that haven't yet been checked for drift aren't included. Resources that do not currently support drift detection aren't checked, and so not included. For a list of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
-    pub fn stack_resource_drifts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StackResourceDrift]> {
+    pub fn stack_resource_drifts(&self) -> ::std::option::Option<&[crate::types::StackResourceDrift]> {
         self.stack_resource_drifts.as_deref()
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>DescribeStackResourceDrifts</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
@@ -33,19 +30,16 @@ impl ::aws_http::request_id::RequestId for DescribeStackResourceDriftsOutput {
 }
 impl DescribeStackResourceDriftsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackResourceDriftsOutput`](crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsOutput).
-    pub fn builder() -> crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsOutputBuilder {
         crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackResourceDriftsOutput`](crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackResourceDriftsOutputBuilder {
-    pub(crate) stack_resource_drifts:
-        ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDrift>>,
+    pub(crate) stack_resource_drifts: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDrift>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -64,18 +58,13 @@ impl DescribeStackResourceDriftsOutputBuilder {
     }
     /// <p>Drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects drift.</p>
     /// <p>For a given stack, there will be one <code>StackResourceDrift</code> for each stack resource that has been checked for drift. Resources that haven't yet been checked for drift aren't included. Resources that do not currently support drift detection aren't checked, and so not included. For a list of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
-    pub fn set_stack_resource_drifts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDrift>>,
-    ) -> Self {
+    pub fn set_stack_resource_drifts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDrift>>) -> Self {
         self.stack_resource_drifts = input;
         self
     }
     /// <p>Drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects drift.</p>
     /// <p>For a given stack, there will be one <code>StackResourceDrift</code> for each stack resource that has been checked for drift. Resources that haven't yet been checked for drift aren't included. Resources that do not currently support drift detection aren't checked, and so not included. For a list of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
-    pub fn get_stack_resource_drifts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceDrift>> {
+    pub fn get_stack_resource_drifts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceDrift>> {
         &self.stack_resource_drifts
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>DescribeStackResourceDrifts</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
@@ -102,9 +91,7 @@ impl DescribeStackResourceDriftsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeStackResourceDriftsOutput`](crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsOutput {
+    pub fn build(self) -> crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsOutput {
         crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsOutput {
             stack_resource_drifts: self.stack_resource_drifts,
             next_token: self.next_token,

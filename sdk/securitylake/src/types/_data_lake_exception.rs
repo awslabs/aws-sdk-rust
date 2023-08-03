@@ -44,9 +44,7 @@ impl DataLakeException {
 
 /// A builder for [`DataLakeException`](crate::types::DataLakeException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataLakeExceptionBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) exception: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl DataLakeExceptionBuilder {
         self
     }
     /// <p>This error can occur if you configure the wrong timestamp format, or if the subset of entries used for validation had errors or missing values.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

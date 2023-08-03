@@ -12,10 +12,7 @@ pub fn ser_create_cluster_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_encryption_config::ser_encryption_config(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_encryption_config::ser_encryption_config(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -39,19 +36,13 @@ pub fn ser_create_cluster_input(
     if let Some(var_11) = &input.outpost_config {
         #[allow(unused_mut)]
         let mut object_12 = object.key("outpostConfig").start_object();
-        crate::protocol_serde::shape_outpost_config_request::ser_outpost_config_request(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_outpost_config_request::ser_outpost_config_request(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.resources_vpc_config {
         #[allow(unused_mut)]
         let mut object_14 = object.key("resourcesVpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config_request::ser_vpc_config_request(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_vpc_config_request::ser_vpc_config_request(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.role_arn {

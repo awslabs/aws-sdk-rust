@@ -39,8 +39,7 @@ pub struct Trial {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of the components associated with the trial. For each component, a summary of the component's properties is included.</p>
     #[doc(hidden)]
-    pub trial_component_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSimpleSummary>>,
+    pub trial_component_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSimpleSummary>>,
 }
 impl Trial {
     /// <p>The name of the trial.</p>
@@ -88,9 +87,7 @@ impl Trial {
         self.tags.as_deref()
     }
     /// <p>A list of the components associated with the trial. For each component, a summary of the component's properties is included.</p>
-    pub fn trial_component_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrialComponentSimpleSummary]> {
+    pub fn trial_component_summaries(&self) -> ::std::option::Option<&[crate::types::TrialComponentSimpleSummary]> {
         self.trial_component_summaries.as_deref()
     }
 }
@@ -103,9 +100,7 @@ impl Trial {
 
 /// A builder for [`Trial`](crate::types::Trial).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrialBuilder {
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
     pub(crate) trial_arn: ::std::option::Option<::std::string::String>,
@@ -118,8 +113,7 @@ pub struct TrialBuilder {
     pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) trial_component_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSimpleSummary>>,
+    pub(crate) trial_component_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSimpleSummary>>,
 }
 impl TrialBuilder {
     /// <p>The name of the trial.</p>
@@ -165,18 +159,12 @@ impl TrialBuilder {
         &self.display_name
     }
     /// <p>The name of the experiment the trial is part of.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the experiment the trial is part of.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment_name = input;
         self
     }
@@ -204,10 +192,7 @@ impl TrialBuilder {
         self
     }
     /// <p>When the trial was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -221,10 +206,7 @@ impl TrialBuilder {
         self
     }
     /// <p>Who created the trial.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
@@ -238,10 +220,7 @@ impl TrialBuilder {
         self
     }
     /// <p>Who last modified the trial.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -255,10 +234,7 @@ impl TrialBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -272,17 +248,12 @@ impl TrialBuilder {
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn set_metadata_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::MetadataProperties>,
-    ) -> Self {
+    pub fn set_metadata_properties(mut self, input: ::std::option::Option<crate::types::MetadataProperties>) -> Self {
         self.metadata_properties = input;
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn get_metadata_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+    pub fn get_metadata_properties(&self) -> &::std::option::Option<crate::types::MetadataProperties> {
         &self.metadata_properties
     }
     /// Appends an item to `tags`.
@@ -297,10 +268,7 @@ impl TrialBuilder {
         self
     }
     /// <p>The list of tags that are associated with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -313,27 +281,19 @@ impl TrialBuilder {
     /// To override the contents of this collection use [`set_trial_component_summaries`](Self::set_trial_component_summaries).
     ///
     /// <p>A list of the components associated with the trial. For each component, a summary of the component's properties is included.</p>
-    pub fn trial_component_summaries(
-        mut self,
-        input: crate::types::TrialComponentSimpleSummary,
-    ) -> Self {
+    pub fn trial_component_summaries(mut self, input: crate::types::TrialComponentSimpleSummary) -> Self {
         let mut v = self.trial_component_summaries.unwrap_or_default();
         v.push(input);
         self.trial_component_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the components associated with the trial. For each component, a summary of the component's properties is included.</p>
-    pub fn set_trial_component_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSimpleSummary>>,
-    ) -> Self {
+    pub fn set_trial_component_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSimpleSummary>>) -> Self {
         self.trial_component_summaries = input;
         self
     }
     /// <p>A list of the components associated with the trial. For each component, a summary of the component's properties is included.</p>
-    pub fn get_trial_component_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSimpleSummary>> {
+    pub fn get_trial_component_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSimpleSummary>> {
         &self.trial_component_summaries
     }
     /// Consumes the builder and constructs a [`Trial`](crate::types::Trial).

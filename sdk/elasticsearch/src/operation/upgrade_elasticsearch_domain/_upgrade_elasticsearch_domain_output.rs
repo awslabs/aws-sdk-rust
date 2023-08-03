@@ -32,9 +32,7 @@ impl UpgradeElasticsearchDomainOutput {
         self.perform_check_only
     }
     /// <p>Specifies change details of the domain configuration change.</p>
-    pub fn change_progress_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChangeProgressDetails> {
+    pub fn change_progress_details(&self) -> ::std::option::Option<&crate::types::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
     }
 }
@@ -45,16 +43,14 @@ impl ::aws_http::request_id::RequestId for UpgradeElasticsearchDomainOutput {
 }
 impl UpgradeElasticsearchDomainOutput {
     /// Creates a new builder-style object to manufacture [`UpgradeElasticsearchDomainOutput`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainOutput).
-    pub fn builder() -> crate::operation::upgrade_elasticsearch_domain::builders::UpgradeElasticsearchDomainOutputBuilder{
+    pub fn builder() -> crate::operation::upgrade_elasticsearch_domain::builders::UpgradeElasticsearchDomainOutputBuilder {
         crate::operation::upgrade_elasticsearch_domain::builders::UpgradeElasticsearchDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpgradeElasticsearchDomainOutput`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpgradeElasticsearchDomainOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_version: ::std::option::Option<::std::string::String>,
@@ -78,18 +74,12 @@ impl UpgradeElasticsearchDomainOutputBuilder {
         &self.domain_name
     }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-    pub fn target_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-    pub fn set_target_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_version = input;
         self
     }
@@ -117,17 +107,12 @@ impl UpgradeElasticsearchDomainOutputBuilder {
         self
     }
     /// <p>Specifies change details of the domain configuration change.</p>
-    pub fn set_change_progress_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeProgressDetails>,
-    ) -> Self {
+    pub fn set_change_progress_details(mut self, input: ::std::option::Option<crate::types::ChangeProgressDetails>) -> Self {
         self.change_progress_details = input;
         self
     }
     /// <p>Specifies change details of the domain configuration change.</p>
-    pub fn get_change_progress_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChangeProgressDetails> {
+    pub fn get_change_progress_details(&self) -> &::std::option::Option<crate::types::ChangeProgressDetails> {
         &self.change_progress_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -140,9 +125,7 @@ impl UpgradeElasticsearchDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpgradeElasticsearchDomainOutput`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainOutput {
+    pub fn build(self) -> crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainOutput {
         crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainOutput {
             domain_name: self.domain_name,
             target_version: self.target_version,

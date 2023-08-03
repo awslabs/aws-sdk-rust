@@ -56,9 +56,7 @@ impl PutKeywordOutput {
 
 /// A builder for [`PutKeywordOutput`](crate::operation::put_keyword::PutKeywordOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutKeywordOutputBuilder {
     pub(crate) origination_identity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) origination_identity: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ pub struct PutKeywordOutputBuilder {
 }
 impl PutKeywordOutputBuilder {
     /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
-    pub fn origination_identity_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
-    pub fn set_origination_identity_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_identity_arn = input;
         self
     }
@@ -89,18 +81,12 @@ impl PutKeywordOutputBuilder {
         &self.origination_identity_arn
     }
     /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
-    pub fn origination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_identity = input;
         self
     }
@@ -123,18 +109,12 @@ impl PutKeywordOutputBuilder {
         &self.keyword
     }
     /// <p>The message associated with the keyword.</p>
-    pub fn keyword_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyword_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message associated with the keyword.</p>
-    pub fn set_keyword_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_keyword_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyword_message = input;
         self
     }
@@ -148,10 +128,7 @@ impl PutKeywordOutputBuilder {
         self
     }
     /// <p>The action to perform when the keyword is used.</p>
-    pub fn set_keyword_action(
-        mut self,
-        input: ::std::option::Option<crate::types::KeywordAction>,
-    ) -> Self {
+    pub fn set_keyword_action(mut self, input: ::std::option::Option<crate::types::KeywordAction>) -> Self {
         self.keyword_action = input;
         self
     }

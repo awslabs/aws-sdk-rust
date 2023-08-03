@@ -26,8 +26,7 @@ impl GetReadinessCheckStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReadinessCheckStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusInputBuilder,
+    inner: crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusInputBuilder,
 }
 impl GetReadinessCheckStatusFluentBuilder {
     /// Creates a new `GetReadinessCheckStatus`.
@@ -38,10 +37,7 @@ impl GetReadinessCheckStatusFluentBuilder {
         }
     }
     /// Access the GetReadinessCheckStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetReadinessCheckStatusFluentBuilder {
             crate::operation::get_readiness_check_status::GetReadinessCheckStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_readiness_check_status::GetReadinessCheckStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_readiness_check_status::GetReadinessCheckStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetReadinessCheckStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetReadinessCheckStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_readiness_check_status::GetReadinessCheckStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_readiness_check_status::GetReadinessCheckStatusError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetReadinessCheckStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_readiness_check_status::GetReadinessCheckStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_readiness_check_status::GetReadinessCheckStatusError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl GetReadinessCheckStatusFluentBuilder {
             crate::operation::get_readiness_check_status::GetReadinessCheckStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_readiness_check_status::GetReadinessCheckStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_readiness_check_status::GetReadinessCheckStatusError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_readiness_check_status::paginator::GetReadinessCheckStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_readiness_check_status::paginator::GetReadinessCheckStatusPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::get_readiness_check_status::paginator::GetReadinessCheckStatusPaginator {
         crate::operation::get_readiness_check_status::paginator::GetReadinessCheckStatusPaginator::new(self.handle, self.inner)
     }
     /// <p>The number of objects that you want to return with this call.</p>
@@ -162,18 +144,12 @@ impl GetReadinessCheckStatusFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.readiness_check_name(input.into());
         self
     }
     /// <p>Name of a readiness check.</p>
-    pub fn set_readiness_check_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_readiness_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_readiness_check_name(input);
         self
     }

@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`ingestion_destinations(Option<Vec<IngestionDestinationSummary>>)`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput::ingestion_destinations): <p>Contains a list of ingestion destination summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
     /// - On failure, responds with [`SdkError<ListIngestionDestinationsError>`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsError)
-    pub fn list_ingestion_destinations(&self) -> crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder{
+    pub fn list_ingestion_destinations(&self) -> crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder {
         crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsFluentBuilder::new(self.handle.clone())
     }
 }

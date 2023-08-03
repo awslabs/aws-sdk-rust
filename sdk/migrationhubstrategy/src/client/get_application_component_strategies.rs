@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetApplicationComponentStrategiesOutput`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput) with field(s):
     ///   - [`application_component_strategies(Option<Vec<ApplicationComponentStrategy>>)`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput::application_component_strategies): <p> A list of application component strategy recommendations. </p>
     /// - On failure, responds with [`SdkError<GetApplicationComponentStrategiesError>`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesError)
-    pub fn get_application_component_strategies(&self) -> crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesFluentBuilder{
+    pub fn get_application_component_strategies(
+        &self,
+    ) -> crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesFluentBuilder {
         crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesFluentBuilder::new(self.handle.clone())
     }
 }

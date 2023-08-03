@@ -9,10 +9,7 @@ pub fn ser_create_rule_input(
     if let Some(var_2) = &input.lock_configuration {
         #[allow(unused_mut)]
         let mut object_3 = object.key("LockConfiguration").start_object();
-        crate::protocol_serde::shape_lock_configuration::ser_lock_configuration(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_lock_configuration::ser_lock_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.resource_tags {

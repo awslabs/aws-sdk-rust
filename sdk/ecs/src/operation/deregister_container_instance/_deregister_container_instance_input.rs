@@ -31,16 +31,14 @@ impl DeregisterContainerInstanceInput {
 }
 impl DeregisterContainerInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeregisterContainerInstanceInput`](crate::operation::deregister_container_instance::DeregisterContainerInstanceInput).
-    pub fn builder() -> crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceInputBuilder{
+    pub fn builder() -> crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceInputBuilder {
         crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterContainerInstanceInput`](crate::operation::deregister_container_instance::DeregisterContainerInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterContainerInstanceInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) container_instance: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ impl DeregisterContainerInstanceInputBuilder {
         &self.cluster
     }
     /// <p>The container instance ID or full ARN of the container instance to deregister. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn container_instance(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_instance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_instance = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The container instance ID or full ARN of the container instance to deregister. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn set_container_instance(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_instance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_instance = input;
         self
     }
@@ -105,12 +97,10 @@ impl DeregisterContainerInstanceInputBuilder {
         crate::operation::deregister_container_instance::DeregisterContainerInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::deregister_container_instance::DeregisterContainerInstanceInput {
-                cluster: self.cluster,
-                container_instance: self.container_instance,
-                force: self.force,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::deregister_container_instance::DeregisterContainerInstanceInput {
+            cluster: self.cluster,
+            container_instance: self.container_instance,
+            force: self.force,
+        })
     }
 }

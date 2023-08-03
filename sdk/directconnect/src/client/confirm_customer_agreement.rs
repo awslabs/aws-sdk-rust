@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ConfirmCustomerAgreementOutput`](crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput) with field(s):
     ///   - [`status(Option<String>)`](crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput::status): <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
     /// - On failure, responds with [`SdkError<ConfirmCustomerAgreementError>`](crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError)
-    pub fn confirm_customer_agreement(
-        &self,
-    ) -> crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementFluentBuilder
-    {
+    pub fn confirm_customer_agreement(&self) -> crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementFluentBuilder {
         crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementFluentBuilder::new(self.handle.clone())
     }
 }

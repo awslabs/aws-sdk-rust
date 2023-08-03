@@ -9,10 +9,7 @@ pub fn ser_put_auto_termination_policy_input(
     if let Some(var_2) = &input.auto_termination_policy {
         #[allow(unused_mut)]
         let mut object_3 = object.key("AutoTerminationPolicy").start_object();
-        crate::protocol_serde::shape_auto_termination_policy::ser_auto_termination_policy(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_auto_termination_policy::ser_auto_termination_policy(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

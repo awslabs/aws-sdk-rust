@@ -58,9 +58,7 @@ impl DirectJdbcSource {
 
 /// A builder for [`DirectJdbcSource`](crate::types::DirectJdbcSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DirectJdbcSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
@@ -113,18 +111,12 @@ impl DirectJdbcSourceBuilder {
         &self.table
     }
     /// <p>The connection name of the JDBC source.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The connection name of the JDBC source.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_name = input;
         self
     }
@@ -138,10 +130,7 @@ impl DirectJdbcSourceBuilder {
         self
     }
     /// <p>The connection type of the JDBC source.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: ::std::option::Option<crate::types::JdbcConnectionType>,
-    ) -> Self {
+    pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::JdbcConnectionType>) -> Self {
         self.connection_type = input;
         self
     }
@@ -150,18 +139,12 @@ impl DirectJdbcSourceBuilder {
         &self.connection_type
     }
     /// <p>The temp directory of the JDBC Redshift source.</p>
-    pub fn redshift_tmp_dir(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn redshift_tmp_dir(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.redshift_tmp_dir = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The temp directory of the JDBC Redshift source.</p>
-    pub fn set_redshift_tmp_dir(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_redshift_tmp_dir(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.redshift_tmp_dir = input;
         self
     }

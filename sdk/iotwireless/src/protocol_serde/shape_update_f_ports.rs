@@ -15,10 +15,7 @@ pub fn ser_update_f_ports(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_application_config::ser_application_config(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_application_config::ser_application_config(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

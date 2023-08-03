@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`authentication_code2(impl ::std::convert::Into<String>)`](crate::operation::resync_mfa_device::builders::ResyncMFADeviceFluentBuilder::authentication_code2) / [`set_authentication_code2(Option<String>)`](crate::operation::resync_mfa_device::builders::ResyncMFADeviceFluentBuilder::set_authentication_code2): <p>A subsequent authentication code emitted by the device.</p>  <p>The format for this parameter is a sequence of six digits.</p>
     /// - On success, responds with [`ResyncMfaDeviceOutput`](crate::operation::resync_mfa_device::ResyncMfaDeviceOutput)
     /// - On failure, responds with [`SdkError<ResyncMFADeviceError>`](crate::operation::resync_mfa_device::ResyncMFADeviceError)
-    pub fn resync_mfa_device(
-        &self,
-    ) -> crate::operation::resync_mfa_device::builders::ResyncMFADeviceFluentBuilder {
-        crate::operation::resync_mfa_device::builders::ResyncMFADeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn resync_mfa_device(&self) -> crate::operation::resync_mfa_device::builders::ResyncMFADeviceFluentBuilder {
+        crate::operation::resync_mfa_device::builders::ResyncMFADeviceFluentBuilder::new(self.handle.clone())
     }
 }

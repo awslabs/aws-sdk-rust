@@ -26,7 +26,7 @@ impl ListCandidatesForAutoMlJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCandidatesForAutoMLJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMlJobInputBuilder,
+    inner: crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMlJobInputBuilder,
 }
 impl ListCandidatesForAutoMLJobFluentBuilder {
     /// Creates a new `ListCandidatesForAutoMLJob`.
@@ -37,7 +37,7 @@ impl ListCandidatesForAutoMLJobFluentBuilder {
         }
     }
     /// Access the ListCandidatesForAutoMLJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMlJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMlJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListCandidatesForAutoMLJobFluentBuilder {
             crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListCandidatesForAutoMLJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListCandidatesForAutoMLJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListCandidatesForAutoMLJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListCandidatesForAutoMLJobFluentBuilder {
             crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJobError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_candidates_for_auto_ml_job::paginator::ListCandidatesForAutoMlJobPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_candidates_for_auto_ml_job::paginator::ListCandidatesForAutoMlJobPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_candidates_for_auto_ml_job::paginator::ListCandidatesForAutoMlJobPaginator {
         crate::operation::list_candidates_for_auto_ml_job::paginator::ListCandidatesForAutoMlJobPaginator::new(self.handle, self.inner)
     }
     /// <p>List the candidates created for the job by providing the job's name.</p>
-    pub fn auto_ml_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_ml_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_ml_job_name(input.into());
         self
     }
     /// <p>List the candidates created for the job by providing the job's name.</p>
-    pub fn set_auto_ml_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_ml_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_ml_job_name(input);
         self
     }
@@ -152,10 +135,7 @@ impl ListCandidatesForAutoMLJobFluentBuilder {
         self
     }
     /// <p>List the candidates for the job and filter by status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::CandidateStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::CandidateStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
@@ -164,18 +144,12 @@ impl ListCandidatesForAutoMLJobFluentBuilder {
         self.inner.get_status_equals()
     }
     /// <p>List the candidates for the job and filter by candidate name.</p>
-    pub fn candidate_name_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn candidate_name_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.candidate_name_equals(input.into());
         self
     }
     /// <p>List the candidates for the job and filter by candidate name.</p>
-    pub fn set_candidate_name_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_candidate_name_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_candidate_name_equals(input);
         self
     }
@@ -189,10 +163,7 @@ impl ListCandidatesForAutoMLJobFluentBuilder {
         self
     }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::AutoMlSortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -206,10 +177,7 @@ impl ListCandidatesForAutoMLJobFluentBuilder {
         self
     }
     /// <p>The parameter by which to sort the results. The default is <code>Descending</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::CandidateSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::CandidateSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

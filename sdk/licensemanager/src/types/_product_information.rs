@@ -26,8 +26,7 @@ pub struct ProductInformation {
     /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub product_information_filter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProductInformationFilter>>,
+    pub product_information_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformationFilter>>,
 }
 impl ProductInformation {
     /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
@@ -52,9 +51,7 @@ impl ProductInformation {
     /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li>
     /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li>
     /// </ul>
-    pub fn product_information_filter_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProductInformationFilter]> {
+    pub fn product_information_filter_list(&self) -> ::std::option::Option<&[crate::types::ProductInformationFilter]> {
         self.product_information_filter_list.as_deref()
     }
 }
@@ -67,28 +64,19 @@ impl ProductInformation {
 
 /// A builder for [`ProductInformation`](crate::types::ProductInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProductInformationBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
-    pub(crate) product_information_filter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProductInformationFilter>>,
+    pub(crate) product_information_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformationFilter>>,
 }
 impl ProductInformationBuilder {
     /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -118,10 +106,7 @@ impl ProductInformationBuilder {
     /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li>
     /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li>
     /// </ul>
-    pub fn product_information_filter_list(
-        mut self,
-        input: crate::types::ProductInformationFilter,
-    ) -> Self {
+    pub fn product_information_filter_list(mut self, input: crate::types::ProductInformationFilter) -> Self {
         let mut v = self.product_information_filter_list.unwrap_or_default();
         v.push(input);
         self.product_information_filter_list = ::std::option::Option::Some(v);
@@ -170,9 +155,7 @@ impl ProductInformationBuilder {
     /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li>
     /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li>
     /// </ul>
-    pub fn get_product_information_filter_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductInformationFilter>> {
+    pub fn get_product_information_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductInformationFilter>> {
         &self.product_information_filter_list
     }
     /// Consumes the builder and constructs a [`ProductInformation`](crate::types::ProductInformation).

@@ -8,8 +8,7 @@ pub struct BatchDisassociateScramSecretOutput {
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>List of errors when disassociating secrets to cluster.</p>
     #[doc(hidden)]
-    pub unprocessed_scram_secrets:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedScramSecret>>,
+    pub unprocessed_scram_secrets: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedScramSecret>>,
     _request_id: Option<String>,
 }
 impl BatchDisassociateScramSecretOutput {
@@ -18,9 +17,7 @@ impl BatchDisassociateScramSecretOutput {
         self.cluster_arn.as_deref()
     }
     /// <p>List of errors when disassociating secrets to cluster.</p>
-    pub fn unprocessed_scram_secrets(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedScramSecret]> {
+    pub fn unprocessed_scram_secrets(&self) -> ::std::option::Option<&[crate::types::UnprocessedScramSecret]> {
         self.unprocessed_scram_secrets.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchDisassociateScramSecretOutput {
 }
 impl BatchDisassociateScramSecretOutput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateScramSecretOutput`](crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretOutput).
-    pub fn builder() -> crate::operation::batch_disassociate_scram_secret::builders::BatchDisassociateScramSecretOutputBuilder{
+    pub fn builder() -> crate::operation::batch_disassociate_scram_secret::builders::BatchDisassociateScramSecretOutputBuilder {
         crate::operation::batch_disassociate_scram_secret::builders::BatchDisassociateScramSecretOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDisassociateScramSecretOutput`](crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDisassociateScramSecretOutputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) unprocessed_scram_secrets:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedScramSecret>>,
+    pub(crate) unprocessed_scram_secrets: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedScramSecret>>,
     _request_id: Option<String>,
 }
 impl BatchDisassociateScramSecretOutputBuilder {
@@ -67,27 +61,19 @@ impl BatchDisassociateScramSecretOutputBuilder {
     /// To override the contents of this collection use [`set_unprocessed_scram_secrets`](Self::set_unprocessed_scram_secrets).
     ///
     /// <p>List of errors when disassociating secrets to cluster.</p>
-    pub fn unprocessed_scram_secrets(
-        mut self,
-        input: crate::types::UnprocessedScramSecret,
-    ) -> Self {
+    pub fn unprocessed_scram_secrets(mut self, input: crate::types::UnprocessedScramSecret) -> Self {
         let mut v = self.unprocessed_scram_secrets.unwrap_or_default();
         v.push(input);
         self.unprocessed_scram_secrets = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of errors when disassociating secrets to cluster.</p>
-    pub fn set_unprocessed_scram_secrets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedScramSecret>>,
-    ) -> Self {
+    pub fn set_unprocessed_scram_secrets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedScramSecret>>) -> Self {
         self.unprocessed_scram_secrets = input;
         self
     }
     /// <p>List of errors when disassociating secrets to cluster.</p>
-    pub fn get_unprocessed_scram_secrets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedScramSecret>> {
+    pub fn get_unprocessed_scram_secrets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedScramSecret>> {
         &self.unprocessed_scram_secrets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -100,9 +86,7 @@ impl BatchDisassociateScramSecretOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDisassociateScramSecretOutput`](crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretOutput {
+    pub fn build(self) -> crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretOutput {
         crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretOutput {
             cluster_arn: self.cluster_arn,
             unprocessed_scram_secrets: self.unprocessed_scram_secrets,

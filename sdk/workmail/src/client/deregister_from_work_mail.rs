@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`entity_id(impl ::std::convert::Into<String>)`](crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailFluentBuilder::entity_id) / [`set_entity_id(Option<String>)`](crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailFluentBuilder::set_entity_id): <p>The identifier for the member (user or group) to be updated.</p>
     /// - On success, responds with [`DeregisterFromWorkMailOutput`](crate::operation::deregister_from_work_mail::DeregisterFromWorkMailOutput)
     /// - On failure, responds with [`SdkError<DeregisterFromWorkMailError>`](crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError)
-    pub fn deregister_from_work_mail(
-        &self,
-    ) -> crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailFluentBuilder
-    {
+    pub fn deregister_from_work_mail(&self) -> crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailFluentBuilder {
         crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailFluentBuilder::new(self.handle.clone())
     }
 }

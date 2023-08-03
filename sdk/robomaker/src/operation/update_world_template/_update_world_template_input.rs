@@ -36,18 +36,14 @@ impl UpdateWorldTemplateInput {
 }
 impl UpdateWorldTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorldTemplateInput`](crate::operation::update_world_template::UpdateWorldTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::update_world_template::builders::UpdateWorldTemplateInputBuilder {
-        crate::operation::update_world_template::builders::UpdateWorldTemplateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_world_template::builders::UpdateWorldTemplateInputBuilder {
+        crate::operation::update_world_template::builders::UpdateWorldTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorldTemplateInput`](crate::operation::update_world_template::UpdateWorldTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorldTemplateInputBuilder {
     pub(crate) template: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -84,18 +80,12 @@ impl UpdateWorldTemplateInputBuilder {
         &self.name
     }
     /// <p>The world template body.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The world template body.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_body = input;
         self
     }
@@ -109,10 +99,7 @@ impl UpdateWorldTemplateInputBuilder {
         self
     }
     /// <p>The location of the world template.</p>
-    pub fn set_template_location(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateLocation>,
-    ) -> Self {
+    pub fn set_template_location(mut self, input: ::std::option::Option<crate::types::TemplateLocation>) -> Self {
         self.template_location = input;
         self
     }
@@ -123,17 +110,13 @@ impl UpdateWorldTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorldTemplateInput`](crate::operation::update_world_template::UpdateWorldTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_world_template::UpdateWorldTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_world_template::UpdateWorldTemplateInput {
-                template: self.template,
-                name: self.name,
-                template_body: self.template_body,
-                template_location: self.template_location,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_world_template::UpdateWorldTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_world_template::UpdateWorldTemplateInput {
+            template: self.template,
+            name: self.name,
+            template_body: self.template_body,
+            template_location: self.template_location,
+        })
     }
 }

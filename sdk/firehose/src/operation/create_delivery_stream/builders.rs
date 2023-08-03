@@ -51,9 +51,7 @@ impl CreateDeliveryStreamFluentBuilder {
         }
     }
     /// Access the CreateDeliveryStream as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_delivery_stream::builders::CreateDeliveryStreamInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_delivery_stream::builders::CreateDeliveryStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +63,7 @@ impl CreateDeliveryStreamFluentBuilder {
             crate::operation::create_delivery_stream::CreateDeliveryStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_delivery_stream::CreateDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_delivery_stream::CreateDeliveryStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +73,7 @@ impl CreateDeliveryStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +82,7 @@ impl CreateDeliveryStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_delivery_stream::CreateDeliveryStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_delivery_stream::CreateDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_delivery_stream::CreateDeliveryStreamError>,
     > {
         let op = self
             .inner
@@ -114,9 +105,7 @@ impl CreateDeliveryStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_delivery_stream::CreateDeliveryStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_delivery_stream::CreateDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_delivery_stream::CreateDeliveryStreamError>,
     > {
         self.send_middleware().await
     }
@@ -130,25 +119,17 @@ impl CreateDeliveryStreamFluentBuilder {
             crate::operation::create_delivery_stream::CreateDeliveryStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_delivery_stream::CreateDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_delivery_stream::CreateDeliveryStreamError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
-    pub fn delivery_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_stream_name(input.into());
         self
     }
     /// <p>The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
@@ -170,10 +151,7 @@ impl CreateDeliveryStreamFluentBuilder {
     /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
     /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
-    pub fn set_delivery_stream_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryStreamType>,
-    ) -> Self {
+    pub fn set_delivery_stream_type(mut self, input: ::std::option::Option<crate::types::DeliveryStreamType>) -> Self {
         self.inner = self.inner.set_delivery_stream_type(input);
         self
     }
@@ -182,41 +160,26 @@ impl CreateDeliveryStreamFluentBuilder {
     /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
     /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
-    pub fn get_delivery_stream_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeliveryStreamType> {
+    pub fn get_delivery_stream_type(&self) -> &::std::option::Option<crate::types::DeliveryStreamType> {
         self.inner.get_delivery_stream_type()
     }
     /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
-    pub fn kinesis_stream_source_configuration(
-        mut self,
-        input: crate::types::KinesisStreamSourceConfiguration,
-    ) -> Self {
+    pub fn kinesis_stream_source_configuration(mut self, input: crate::types::KinesisStreamSourceConfiguration) -> Self {
         self.inner = self.inner.kinesis_stream_source_configuration(input);
         self
     }
     /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
-    pub fn set_kinesis_stream_source_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisStreamSourceConfiguration>,
-    ) -> Self {
+    pub fn set_kinesis_stream_source_configuration(mut self, input: ::std::option::Option<crate::types::KinesisStreamSourceConfiguration>) -> Self {
         self.inner = self.inner.set_kinesis_stream_source_configuration(input);
         self
     }
     /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
-    pub fn get_kinesis_stream_source_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisStreamSourceConfiguration> {
+    pub fn get_kinesis_stream_source_configuration(&self) -> &::std::option::Option<crate::types::KinesisStreamSourceConfiguration> {
         self.inner.get_kinesis_stream_source_configuration()
     }
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    pub fn delivery_stream_encryption_configuration_input(
-        mut self,
-        input: crate::types::DeliveryStreamEncryptionConfigurationInput,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .delivery_stream_encryption_configuration_input(input);
+    pub fn delivery_stream_encryption_configuration_input(mut self, input: crate::types::DeliveryStreamEncryptionConfigurationInput) -> Self {
+        self.inner = self.inner.delivery_stream_encryption_configuration_input(input);
         self
     }
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
@@ -224,48 +187,34 @@ impl CreateDeliveryStreamFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_delivery_stream_encryption_configuration_input(input);
+        self.inner = self.inner.set_delivery_stream_encryption_configuration_input(input);
         self
     }
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
     pub fn get_delivery_stream_encryption_configuration_input(
         &self,
     ) -> &::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput> {
-        self.inner
-            .get_delivery_stream_encryption_configuration_input()
+        self.inner.get_delivery_stream_encryption_configuration_input()
     }
     /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
     #[deprecated]
-    pub fn s3_destination_configuration(
-        mut self,
-        input: crate::types::S3DestinationConfiguration,
-    ) -> Self {
+    pub fn s3_destination_configuration(mut self, input: crate::types::S3DestinationConfiguration) -> Self {
         self.inner = self.inner.s3_destination_configuration(input);
         self
     }
     /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
     #[deprecated]
-    pub fn set_s3_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_s3_destination_configuration(mut self, input: ::std::option::Option<crate::types::S3DestinationConfiguration>) -> Self {
         self.inner = self.inner.set_s3_destination_configuration(input);
         self
     }
     /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
     #[deprecated]
-    pub fn get_s3_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
+    pub fn get_s3_destination_configuration(&self) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
         self.inner.get_s3_destination_configuration()
     }
     /// <p>The destination in Amazon S3. You can specify only one destination.</p>
-    pub fn extended_s3_destination_configuration(
-        mut self,
-        input: crate::types::ExtendedS3DestinationConfiguration,
-    ) -> Self {
+    pub fn extended_s3_destination_configuration(mut self, input: crate::types::ExtendedS3DestinationConfiguration) -> Self {
         self.inner = self.inner.extended_s3_destination_configuration(input);
         self
     }
@@ -278,38 +227,25 @@ impl CreateDeliveryStreamFluentBuilder {
         self
     }
     /// <p>The destination in Amazon S3. You can specify only one destination.</p>
-    pub fn get_extended_s3_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExtendedS3DestinationConfiguration> {
+    pub fn get_extended_s3_destination_configuration(&self) -> &::std::option::Option<crate::types::ExtendedS3DestinationConfiguration> {
         self.inner.get_extended_s3_destination_configuration()
     }
     /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
-    pub fn redshift_destination_configuration(
-        mut self,
-        input: crate::types::RedshiftDestinationConfiguration,
-    ) -> Self {
+    pub fn redshift_destination_configuration(mut self, input: crate::types::RedshiftDestinationConfiguration) -> Self {
         self.inner = self.inner.redshift_destination_configuration(input);
         self
     }
     /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
-    pub fn set_redshift_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RedshiftDestinationConfiguration>,
-    ) -> Self {
+    pub fn set_redshift_destination_configuration(mut self, input: ::std::option::Option<crate::types::RedshiftDestinationConfiguration>) -> Self {
         self.inner = self.inner.set_redshift_destination_configuration(input);
         self
     }
     /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
-    pub fn get_redshift_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RedshiftDestinationConfiguration> {
+    pub fn get_redshift_destination_configuration(&self) -> &::std::option::Option<crate::types::RedshiftDestinationConfiguration> {
         self.inner.get_redshift_destination_configuration()
     }
     /// <p>The destination in Amazon ES. You can specify only one destination.</p>
-    pub fn elasticsearch_destination_configuration(
-        mut self,
-        input: crate::types::ElasticsearchDestinationConfiguration,
-    ) -> Self {
+    pub fn elasticsearch_destination_configuration(mut self, input: crate::types::ElasticsearchDestinationConfiguration) -> Self {
         self.inner = self.inner.elasticsearch_destination_configuration(input);
         self
     }
@@ -318,25 +254,16 @@ impl CreateDeliveryStreamFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::ElasticsearchDestinationConfiguration>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_elasticsearch_destination_configuration(input);
+        self.inner = self.inner.set_elasticsearch_destination_configuration(input);
         self
     }
     /// <p>The destination in Amazon ES. You can specify only one destination.</p>
-    pub fn get_elasticsearch_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticsearchDestinationConfiguration> {
+    pub fn get_elasticsearch_destination_configuration(&self) -> &::std::option::Option<crate::types::ElasticsearchDestinationConfiguration> {
         self.inner.get_elasticsearch_destination_configuration()
     }
     /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
-    pub fn amazonopensearchservice_destination_configuration(
-        mut self,
-        input: crate::types::AmazonopensearchserviceDestinationConfiguration,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .amazonopensearchservice_destination_configuration(input);
+    pub fn amazonopensearchservice_destination_configuration(mut self, input: crate::types::AmazonopensearchserviceDestinationConfiguration) -> Self {
+        self.inner = self.inner.amazonopensearchservice_destination_configuration(input);
         self
     }
     /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
@@ -344,45 +271,31 @@ impl CreateDeliveryStreamFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::AmazonopensearchserviceDestinationConfiguration>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_amazonopensearchservice_destination_configuration(input);
+        self.inner = self.inner.set_amazonopensearchservice_destination_configuration(input);
         self
     }
     /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
     pub fn get_amazonopensearchservice_destination_configuration(
         &self,
     ) -> &::std::option::Option<crate::types::AmazonopensearchserviceDestinationConfiguration> {
-        self.inner
-            .get_amazonopensearchservice_destination_configuration()
+        self.inner.get_amazonopensearchservice_destination_configuration()
     }
     /// <p>The destination in Splunk. You can specify only one destination.</p>
-    pub fn splunk_destination_configuration(
-        mut self,
-        input: crate::types::SplunkDestinationConfiguration,
-    ) -> Self {
+    pub fn splunk_destination_configuration(mut self, input: crate::types::SplunkDestinationConfiguration) -> Self {
         self.inner = self.inner.splunk_destination_configuration(input);
         self
     }
     /// <p>The destination in Splunk. You can specify only one destination.</p>
-    pub fn set_splunk_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SplunkDestinationConfiguration>,
-    ) -> Self {
+    pub fn set_splunk_destination_configuration(mut self, input: ::std::option::Option<crate::types::SplunkDestinationConfiguration>) -> Self {
         self.inner = self.inner.set_splunk_destination_configuration(input);
         self
     }
     /// <p>The destination in Splunk. You can specify only one destination.</p>
-    pub fn get_splunk_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SplunkDestinationConfiguration> {
+    pub fn get_splunk_destination_configuration(&self) -> &::std::option::Option<crate::types::SplunkDestinationConfiguration> {
         self.inner.get_splunk_destination_configuration()
     }
     /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
-    pub fn http_endpoint_destination_configuration(
-        mut self,
-        input: crate::types::HttpEndpointDestinationConfiguration,
-    ) -> Self {
+    pub fn http_endpoint_destination_configuration(mut self, input: crate::types::HttpEndpointDestinationConfiguration) -> Self {
         self.inner = self.inner.http_endpoint_destination_configuration(input);
         self
     }
@@ -391,15 +304,11 @@ impl CreateDeliveryStreamFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::HttpEndpointDestinationConfiguration>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_http_endpoint_destination_configuration(input);
+        self.inner = self.inner.set_http_endpoint_destination_configuration(input);
         self
     }
     /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
-    pub fn get_http_endpoint_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::HttpEndpointDestinationConfiguration> {
+    pub fn get_http_endpoint_destination_configuration(&self) -> &::std::option::Option<crate::types::HttpEndpointDestinationConfiguration> {
         self.inner.get_http_endpoint_destination_configuration()
     }
     /// Appends an item to `Tags`.
@@ -414,10 +323,7 @@ impl CreateDeliveryStreamFluentBuilder {
     }
     /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
     /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -431,29 +337,21 @@ impl CreateDeliveryStreamFluentBuilder {
         mut self,
         input: crate::types::AmazonOpenSearchServerlessDestinationConfiguration,
     ) -> Self {
-        self.inner = self
-            .inner
-            .amazon_open_search_serverless_destination_configuration(input);
+        self.inner = self.inner.amazon_open_search_serverless_destination_configuration(input);
         self
     }
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.</p>
     pub fn set_amazon_open_search_serverless_destination_configuration(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AmazonOpenSearchServerlessDestinationConfiguration,
-        >,
+        input: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_amazon_open_search_serverless_destination_configuration(input);
+        self.inner = self.inner.set_amazon_open_search_serverless_destination_configuration(input);
         self
     }
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.</p>
     pub fn get_amazon_open_search_serverless_destination_configuration(
         &self,
-    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration>
-    {
-        self.inner
-            .get_amazon_open_search_serverless_destination_configuration()
+    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration> {
+        self.inner.get_amazon_open_search_serverless_destination_configuration()
     }
 }

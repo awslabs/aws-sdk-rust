@@ -22,18 +22,14 @@ impl ContainsPiiEntitiesInput {
 }
 impl ContainsPiiEntitiesInput {
     /// Creates a new builder-style object to manufacture [`ContainsPiiEntitiesInput`](crate::operation::contains_pii_entities::ContainsPiiEntitiesInput).
-    pub fn builder(
-    ) -> crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesInputBuilder {
-        crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesInputBuilder {
+        crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ContainsPiiEntitiesInput`](crate::operation::contains_pii_entities::ContainsPiiEntitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainsPiiEntitiesInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
@@ -59,10 +55,7 @@ impl ContainsPiiEntitiesInputBuilder {
         self
     }
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -73,15 +66,11 @@ impl ContainsPiiEntitiesInputBuilder {
     /// Consumes the builder and constructs a [`ContainsPiiEntitiesInput`](crate::operation::contains_pii_entities::ContainsPiiEntitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::contains_pii_entities::ContainsPiiEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::contains_pii_entities::ContainsPiiEntitiesInput {
-                text: self.text,
-                language_code: self.language_code,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::contains_pii_entities::ContainsPiiEntitiesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::contains_pii_entities::ContainsPiiEntitiesInput {
+            text: self.text,
+            language_code: self.language_code,
+        })
     }
 }

@@ -8,8 +8,7 @@ pub struct UpdateRelationalDatabaseParametersInput {
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The database parameters to update.</p>
     #[doc(hidden)]
-    pub parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>>,
 }
 impl UpdateRelationalDatabaseParametersInput {
     /// <p>The name of your database for which to update parameters.</p>
@@ -17,43 +16,32 @@ impl UpdateRelationalDatabaseParametersInput {
         self.relational_database_name.as_deref()
     }
     /// <p>The database parameters to update.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RelationalDatabaseParameter]> {
+    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::RelationalDatabaseParameter]> {
         self.parameters.as_deref()
     }
 }
 impl UpdateRelationalDatabaseParametersInput {
     /// Creates a new builder-style object to manufacture [`UpdateRelationalDatabaseParametersInput`](crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput).
-    pub fn builder() -> crate::operation::update_relational_database_parameters::builders::UpdateRelationalDatabaseParametersInputBuilder{
+    pub fn builder() -> crate::operation::update_relational_database_parameters::builders::UpdateRelationalDatabaseParametersInputBuilder {
         crate::operation::update_relational_database_parameters::builders::UpdateRelationalDatabaseParametersInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRelationalDatabaseParametersInput`](crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRelationalDatabaseParametersInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>>,
 }
 impl UpdateRelationalDatabaseParametersInputBuilder {
     /// <p>The name of your database for which to update parameters.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your database for which to update parameters.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
         self
     }
@@ -73,28 +61,26 @@ impl UpdateRelationalDatabaseParametersInputBuilder {
         self
     }
     /// <p>The database parameters to update.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The database parameters to update.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`UpdateRelationalDatabaseParametersInput`](crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput {
-                relational_database_name: self.relational_database_name
-                ,
-                parameters: self.parameters
-                ,
-            }
+                relational_database_name: self.relational_database_name,
+                parameters: self.parameters,
+            },
         )
     }
 }

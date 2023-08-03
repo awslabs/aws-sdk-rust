@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdatePrivateDnsNamespaceOutput`](crate::operation::update_private_dns_namespace::UpdatePrivateDnsNamespaceOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::update_private_dns_namespace::UpdatePrivateDnsNamespaceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     /// - On failure, responds with [`SdkError<UpdatePrivateDnsNamespaceError>`](crate::operation::update_private_dns_namespace::UpdatePrivateDnsNamespaceError)
-    pub fn update_private_dns_namespace(&self) -> crate::operation::update_private_dns_namespace::builders::UpdatePrivateDnsNamespaceFluentBuilder{
+    pub fn update_private_dns_namespace(&self) -> crate::operation::update_private_dns_namespace::builders::UpdatePrivateDnsNamespaceFluentBuilder {
         crate::operation::update_private_dns_namespace::builders::UpdatePrivateDnsNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

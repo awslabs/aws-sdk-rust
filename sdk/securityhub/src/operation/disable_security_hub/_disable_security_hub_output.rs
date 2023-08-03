@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DisableSecurityHubOutput {
 }
 impl DisableSecurityHubOutput {
     /// Creates a new builder-style object to manufacture [`DisableSecurityHubOutput`](crate::operation::disable_security_hub::DisableSecurityHubOutput).
-    pub fn builder(
-    ) -> crate::operation::disable_security_hub::builders::DisableSecurityHubOutputBuilder {
+    pub fn builder() -> crate::operation::disable_security_hub::builders::DisableSecurityHubOutputBuilder {
         crate::operation::disable_security_hub::builders::DisableSecurityHubOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableSecurityHubOutput`](crate::operation::disable_security_hub::DisableSecurityHubOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableSecurityHubOutputBuilder {
     _request_id: Option<String>,
 }

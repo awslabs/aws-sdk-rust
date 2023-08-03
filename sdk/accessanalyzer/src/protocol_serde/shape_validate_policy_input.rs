@@ -13,9 +13,7 @@ pub fn ser_validate_policy_input(
         object.key("policyType").string(var_3.as_str());
     }
     if let Some(var_4) = &input.validate_policy_resource_type {
-        object
-            .key("validatePolicyResourceType")
-            .string(var_4.as_str());
+        object.key("validatePolicyResourceType").string(var_4.as_str());
     }
     Ok(())
 }

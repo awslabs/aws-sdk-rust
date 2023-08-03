@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteLocalGatewayRouteTableOutput`](crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableOutput) with field(s):
     ///   - [`local_gateway_route_table(Option<LocalGatewayRouteTable>)`](crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableOutput::local_gateway_route_table): <p>Information about the local gateway route table.</p>
     /// - On failure, responds with [`SdkError<DeleteLocalGatewayRouteTableError>`](crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableError)
-    pub fn delete_local_gateway_route_table(&self) -> crate::operation::delete_local_gateway_route_table::builders::DeleteLocalGatewayRouteTableFluentBuilder{
+    pub fn delete_local_gateway_route_table(
+        &self,
+    ) -> crate::operation::delete_local_gateway_route_table::builders::DeleteLocalGatewayRouteTableFluentBuilder {
         crate::operation::delete_local_gateway_route_table::builders::DeleteLocalGatewayRouteTableFluentBuilder::new(self.handle.clone())
     }
 }

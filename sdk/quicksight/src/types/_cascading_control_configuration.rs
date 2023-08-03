@@ -6,14 +6,11 @@
 pub struct CascadingControlConfiguration {
     /// <p>A list of source controls that determine the values that are used in the current control.</p>
     #[doc(hidden)]
-    pub source_controls:
-        ::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>>,
+    pub source_controls: ::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>>,
 }
 impl CascadingControlConfiguration {
     /// <p>A list of source controls that determine the values that are used in the current control.</p>
-    pub fn source_controls(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CascadingControlSource]> {
+    pub fn source_controls(&self) -> ::std::option::Option<&[crate::types::CascadingControlSource]> {
         self.source_controls.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl CascadingControlConfiguration {
 
 /// A builder for [`CascadingControlConfiguration`](crate::types::CascadingControlConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CascadingControlConfigurationBuilder {
-    pub(crate) source_controls:
-        ::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>>,
+    pub(crate) source_controls: ::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>>,
 }
 impl CascadingControlConfigurationBuilder {
     /// Appends an item to `source_controls`.
@@ -46,17 +40,12 @@ impl CascadingControlConfigurationBuilder {
         self
     }
     /// <p>A list of source controls that determine the values that are used in the current control.</p>
-    pub fn set_source_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>>,
-    ) -> Self {
+    pub fn set_source_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>>) -> Self {
         self.source_controls = input;
         self
     }
     /// <p>A list of source controls that determine the values that are used in the current control.</p>
-    pub fn get_source_controls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>> {
+    pub fn get_source_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>> {
         &self.source_controls
     }
     /// Consumes the builder and constructs a [`CascadingControlConfiguration`](crate::types::CascadingControlConfiguration).

@@ -19,9 +19,7 @@ impl DeleteBuildOutput {
 
 /// A builder for [`DeleteBuildOutput`](crate::operation::delete_build::DeleteBuildOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBuildOutputBuilder {
     _request_id: Option<String>,
 }

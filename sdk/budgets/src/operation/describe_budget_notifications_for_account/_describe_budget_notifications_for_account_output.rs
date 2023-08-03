@@ -5,8 +5,7 @@
 pub struct DescribeBudgetNotificationsForAccountOutput {
     /// <p> A list of budget names and associated notifications for an account. </p>
     #[doc(hidden)]
-    pub budget_notifications_for_account:
-        ::std::option::Option<::std::vec::Vec<crate::types::BudgetNotificationsForAccount>>,
+    pub budget_notifications_for_account: ::std::option::Option<::std::vec::Vec<crate::types::BudgetNotificationsForAccount>>,
     /// <p> A generic string.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeBudgetNotificationsForAccountOutput {
 }
 impl DescribeBudgetNotificationsForAccountOutput {
     /// <p> A list of budget names and associated notifications for an account. </p>
-    pub fn budget_notifications_for_account(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BudgetNotificationsForAccount]> {
+    pub fn budget_notifications_for_account(&self) -> ::std::option::Option<&[crate::types::BudgetNotificationsForAccount]> {
         self.budget_notifications_for_account.as_deref()
     }
     /// <p> A generic string.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeBudgetNotificationsForAccount
 }
 impl DescribeBudgetNotificationsForAccountOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetNotificationsForAccountOutput`](crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput).
-    pub fn builder() -> crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountOutputBuilder{
+    pub fn builder() -> crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountOutputBuilder {
         crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBudgetNotificationsForAccountOutput`](crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetNotificationsForAccountOutputBuilder {
-    pub(crate) budget_notifications_for_account:
-        ::std::option::Option<::std::vec::Vec<crate::types::BudgetNotificationsForAccount>>,
+    pub(crate) budget_notifications_for_account: ::std::option::Option<::std::vec::Vec<crate::types::BudgetNotificationsForAccount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeBudgetNotificationsForAccountOutputBuilder {
     /// To override the contents of this collection use [`set_budget_notifications_for_account`](Self::set_budget_notifications_for_account).
     ///
     /// <p> A list of budget names and associated notifications for an account. </p>
-    pub fn budget_notifications_for_account(
-        mut self,
-        input: crate::types::BudgetNotificationsForAccount,
-    ) -> Self {
+    pub fn budget_notifications_for_account(mut self, input: crate::types::BudgetNotificationsForAccount) -> Self {
         let mut v = self.budget_notifications_for_account.unwrap_or_default();
         v.push(input);
         self.budget_notifications_for_account = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeBudgetNotificationsForAccountOutputBuilder {
         self
     }
     /// <p> A list of budget names and associated notifications for an account. </p>
-    pub fn get_budget_notifications_for_account(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetNotificationsForAccount>> {
+    pub fn get_budget_notifications_for_account(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetNotificationsForAccount>> {
         &self.budget_notifications_for_account
     }
     /// <p> A generic string.</p>
@@ -100,12 +89,10 @@ impl DescribeBudgetNotificationsForAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeBudgetNotificationsForAccountOutput`](crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput).
-    pub fn build(self) -> crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput{
+    pub fn build(self) -> crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput {
         crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput {
-            budget_notifications_for_account: self.budget_notifications_for_account
-            ,
-            next_token: self.next_token
-            ,
+            budget_notifications_for_account: self.budget_notifications_for_account,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

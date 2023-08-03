@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetMembershipOutput`](crate::operation::get_membership::GetMembershipOutput) with field(s):
     ///   - [`membership(Option<Membership>)`](crate::operation::get_membership::GetMembershipOutput::membership): <p>The membership retrieved for the provided identifier.</p>
     /// - On failure, responds with [`SdkError<GetMembershipError>`](crate::operation::get_membership::GetMembershipError)
-    pub fn get_membership(
-        &self,
-    ) -> crate::operation::get_membership::builders::GetMembershipFluentBuilder {
-        crate::operation::get_membership::builders::GetMembershipFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_membership(&self) -> crate::operation::get_membership::builders::GetMembershipFluentBuilder {
+        crate::operation::get_membership::builders::GetMembershipFluentBuilder::new(self.handle.clone())
     }
 }

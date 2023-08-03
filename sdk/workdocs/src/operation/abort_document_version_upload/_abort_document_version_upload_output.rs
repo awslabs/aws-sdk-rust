@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AbortDocumentVersionUploadOutput {
 }
 impl AbortDocumentVersionUploadOutput {
     /// Creates a new builder-style object to manufacture [`AbortDocumentVersionUploadOutput`](crate::operation::abort_document_version_upload::AbortDocumentVersionUploadOutput).
-    pub fn builder() -> crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadOutputBuilder{
+    pub fn builder() -> crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadOutputBuilder {
         crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadOutputBuilder::default()
     }
 }
 
 /// A builder for [`AbortDocumentVersionUploadOutput`](crate::operation::abort_document_version_upload::AbortDocumentVersionUploadOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AbortDocumentVersionUploadOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl AbortDocumentVersionUploadOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AbortDocumentVersionUploadOutput`](crate::operation::abort_document_version_upload::AbortDocumentVersionUploadOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::abort_document_version_upload::AbortDocumentVersionUploadOutput {
+    pub fn build(self) -> crate::operation::abort_document_version_upload::AbortDocumentVersionUploadOutput {
         crate::operation::abort_document_version_upload::AbortDocumentVersionUploadOutput {
             _request_id: self._request_id,
         }

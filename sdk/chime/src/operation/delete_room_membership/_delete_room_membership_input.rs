@@ -29,17 +29,14 @@ impl DeleteRoomMembershipInput {
 }
 impl DeleteRoomMembershipInput {
     /// Creates a new builder-style object to manufacture [`DeleteRoomMembershipInput`](crate::operation::delete_room_membership::DeleteRoomMembershipInput).
-    pub fn builder(
-    ) -> crate::operation::delete_room_membership::builders::DeleteRoomMembershipInputBuilder {
+    pub fn builder() -> crate::operation::delete_room_membership::builders::DeleteRoomMembershipInputBuilder {
         crate::operation::delete_room_membership::builders::DeleteRoomMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRoomMembershipInput`](crate::operation::delete_room_membership::DeleteRoomMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRoomMembershipInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) room_id: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl DeleteRoomMembershipInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRoomMembershipInput`](crate::operation::delete_room_membership::DeleteRoomMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_room_membership::DeleteRoomMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_room_membership::DeleteRoomMembershipInput {
-                account_id: self.account_id,
-                room_id: self.room_id,
-                member_id: self.member_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_room_membership::DeleteRoomMembershipInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_room_membership::DeleteRoomMembershipInput {
+            account_id: self.account_id,
+            room_id: self.room_id,
+            member_id: self.member_id,
+        })
     }
 }

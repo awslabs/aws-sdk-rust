@@ -21,127 +21,119 @@ pub fn de_get_package_version_asset_http_error(
     crate::operation::get_package_version_asset::GetPackageVersionAssetError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code =
-        match generic.code() {
-            Some(code) => code,
-            None => return Err(
-                crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled(
-                    generic,
-                ),
-            ),
-        };
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled(
+                generic,
+            ))
+        }
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::operation::get_package_version_asset::GetPackageVersionAssetError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ConflictException" => crate::operation::get_package_version_asset::GetPackageVersionAssetError::ConflictException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerException" => crate::operation::get_package_version_asset::GetPackageVersionAssetError::InternalServerException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::get_package_version_asset::GetPackageVersionAssetError::ResourceNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ThrottlingException" => crate::operation::get_package_version_asset::GetPackageVersionAssetError::ThrottlingException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled(
+                            "Failed to parse retryAfterSeconds from header `Retry-After",
+                        )
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::get_package_version_asset::GetPackageVersionAssetError::ValidationException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::get_package_version_asset::GetPackageVersionAssetError::generic(generic)
+        _ => crate::operation::get_package_version_asset::GetPackageVersionAssetError::generic(generic),
     })
 }
 
@@ -163,32 +155,31 @@ pub fn de_get_package_version_asset_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_package_version_asset::builders::GetPackageVersionAssetOutputBuilder::default();
-        output = output.set_asset(Some(
-            crate::protocol_serde::shape_get_package_version_asset_output::de_asset_payload(
-                _response_body,
-            )?,
-        ));
+        output = output.set_asset(Some(crate::protocol_serde::shape_get_package_version_asset_output::de_asset_payload(
+            _response_body,
+        )?));
         output = output.set_asset_name(
-            crate::protocol_serde::shape_get_package_version_asset_output::de_asset_name_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_get_package_version_asset_output::de_asset_name_header(_response_headers).map_err(|_| {
                 crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled(
                     "Failed to parse assetName from header `X-AssetName",
                 )
             })?,
         );
         output = output.set_package_version(
-            crate::protocol_serde::shape_get_package_version_asset_output::de_package_version_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled("Failed to parse packageVersion from header `X-PackageVersion"))?
+            crate::protocol_serde::shape_get_package_version_asset_output::de_package_version_header(_response_headers).map_err(|_| {
+                crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled(
+                    "Failed to parse packageVersion from header `X-PackageVersion",
+                )
+            })?,
         );
         output = output.set_package_version_revision(
-            crate::protocol_serde::shape_get_package_version_asset_output::de_package_version_revision_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled("Failed to parse packageVersionRevision from header `X-PackageVersionRevision"))?
+            crate::protocol_serde::shape_get_package_version_asset_output::de_package_version_revision_header(_response_headers).map_err(|_| {
+                crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled(
+                    "Failed to parse packageVersionRevision from header `X-PackageVersionRevision",
+                )
+            })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

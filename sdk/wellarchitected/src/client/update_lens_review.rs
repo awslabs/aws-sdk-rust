@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`workload_id(Option<String>)`](crate::operation::update_lens_review::UpdateLensReviewOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`lens_review(Option<LensReview>)`](crate::operation::update_lens_review::UpdateLensReviewOutput::lens_review): <p>A lens review of a question.</p>
     /// - On failure, responds with [`SdkError<UpdateLensReviewError>`](crate::operation::update_lens_review::UpdateLensReviewError)
-    pub fn update_lens_review(
-        &self,
-    ) -> crate::operation::update_lens_review::builders::UpdateLensReviewFluentBuilder {
-        crate::operation::update_lens_review::builders::UpdateLensReviewFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_lens_review(&self) -> crate::operation::update_lens_review::builders::UpdateLensReviewFluentBuilder {
+        crate::operation::update_lens_review::builders::UpdateLensReviewFluentBuilder::new(self.handle.clone())
     }
 }

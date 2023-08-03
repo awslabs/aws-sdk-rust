@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDataSourceSyncJobsOutput {
 }
 impl ListDataSourceSyncJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSourceSyncJobsOutput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsOutputBuilder {
         crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataSourceSyncJobsOutput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSourceSyncJobsOutputBuilder {
     pub(crate) history: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSyncJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListDataSourceSyncJobsOutputBuilder {
         self
     }
     /// <p>A history of synchronization jobs for the data source connector.</p>
-    pub fn set_history(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSyncJob>>,
-    ) -> Self {
+    pub fn set_history(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSyncJob>>) -> Self {
         self.history = input;
         self
     }
     /// <p>A history of synchronization jobs for the data source connector.</p>
-    pub fn get_history(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceSyncJob>> {
+    pub fn get_history(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceSyncJob>> {
         &self.history
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of jobs.</p>
@@ -95,9 +86,7 @@ impl ListDataSourceSyncJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDataSourceSyncJobsOutput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput {
+    pub fn build(self) -> crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput {
         crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput {
             history: self.history,
             next_token: self.next_token,

@@ -5,16 +5,16 @@ pub use crate::operation::delete_backup_vault_notifications::_delete_backup_vaul
 
 impl DeleteBackupVaultNotificationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_backup_vault_notifications();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DeleteBackupVaultNotificationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBackupVaultNotificationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_backup_vault_notifications::builders::DeleteBackupVaultNotificationsInputBuilder,
+    inner: crate::operation::delete_backup_vault_notifications::builders::DeleteBackupVaultNotificationsInputBuilder,
 }
 impl DeleteBackupVaultNotificationsFluentBuilder {
     /// Creates a new `DeleteBackupVaultNotifications`.
@@ -37,15 +37,20 @@ impl DeleteBackupVaultNotificationsFluentBuilder {
         }
     }
     /// Access the DeleteBackupVaultNotifications as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_backup_vault_notifications::builders::DeleteBackupVaultNotificationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_backup_vault_notifications::builders::DeleteBackupVaultNotificationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotifications, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotifications,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DeleteBackupVaultNotificationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl DeleteBackupVaultNotificationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotifications, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotifications,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }

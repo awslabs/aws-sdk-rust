@@ -14,8 +14,7 @@ pub struct AccessConfiguration {
     pub access_type: ::std::option::Option<crate::types::AccessType>,
     /// <p>AWS Secrets Manager access token configuration parameters.</p>
     #[doc(hidden)]
-    pub secrets_manager_access_token_configuration:
-        ::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>,
+    pub secrets_manager_access_token_configuration: ::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>,
 }
 impl AccessConfiguration {
     /// <p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value: <code>S3_SIGV4</code>.</p>
@@ -28,9 +27,7 @@ impl AccessConfiguration {
         self.access_type.as_ref()
     }
     /// <p>AWS Secrets Manager access token configuration parameters.</p>
-    pub fn secrets_manager_access_token_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SecretsManagerAccessTokenConfiguration> {
+    pub fn secrets_manager_access_token_configuration(&self) -> ::std::option::Option<&crate::types::SecretsManagerAccessTokenConfiguration> {
         self.secrets_manager_access_token_configuration.as_ref()
     }
 }
@@ -43,13 +40,10 @@ impl AccessConfiguration {
 
 /// A builder for [`AccessConfiguration`](crate::types::AccessConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessConfigurationBuilder {
     pub(crate) access_type: ::std::option::Option<crate::types::AccessType>,
-    pub(crate) secrets_manager_access_token_configuration:
-        ::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>,
+    pub(crate) secrets_manager_access_token_configuration: ::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>,
 }
 impl AccessConfigurationBuilder {
     /// <p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value: <code>S3_SIGV4</code>.</p>
@@ -68,10 +62,7 @@ impl AccessConfigurationBuilder {
     /// <p>• You must allow MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com principal access in IAM. For information about configuring access in IAM, see Access management in the IAM User Guide.</p>
     /// <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p>
     /// <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>
-    pub fn set_access_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessType>,
-    ) -> Self {
+    pub fn set_access_type(mut self, input: ::std::option::Option<crate::types::AccessType>) -> Self {
         self.access_type = input;
         self
     }
@@ -85,10 +76,7 @@ impl AccessConfigurationBuilder {
         &self.access_type
     }
     /// <p>AWS Secrets Manager access token configuration parameters.</p>
-    pub fn secrets_manager_access_token_configuration(
-        mut self,
-        input: crate::types::SecretsManagerAccessTokenConfiguration,
-    ) -> Self {
+    pub fn secrets_manager_access_token_configuration(mut self, input: crate::types::SecretsManagerAccessTokenConfiguration) -> Self {
         self.secrets_manager_access_token_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -101,17 +89,14 @@ impl AccessConfigurationBuilder {
         self
     }
     /// <p>AWS Secrets Manager access token configuration parameters.</p>
-    pub fn get_secrets_manager_access_token_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration> {
+    pub fn get_secrets_manager_access_token_configuration(&self) -> &::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration> {
         &self.secrets_manager_access_token_configuration
     }
     /// Consumes the builder and constructs a [`AccessConfiguration`](crate::types::AccessConfiguration).
     pub fn build(self) -> crate::types::AccessConfiguration {
         crate::types::AccessConfiguration {
             access_type: self.access_type,
-            secrets_manager_access_token_configuration: self
-                .secrets_manager_access_token_configuration,
+            secrets_manager_access_token_configuration: self.secrets_manager_access_token_configuration,
         }
     }
 }

@@ -33,9 +33,7 @@ impl CacheBehavior {
 
 /// A builder for [`CacheBehavior`](crate::types::CacheBehavior).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CacheBehaviorBuilder {
     pub(crate) behavior: ::std::option::Option<crate::types::BehaviorEnum>,
 }
@@ -56,10 +54,7 @@ impl CacheBehaviorBuilder {
     /// <li> <p> <b> <code>cache</code> </b> - This option is best for static sites. When specified, your distribution caches and serves your entire website as static content. This behavior is ideal for websites with static content that doesn't change depending on who views it, or for websites that don't use cookies, headers, or query strings to personalize content.</p> </li>
     /// <li> <p> <b> <code>dont-cache</code> </b> - This option is best for sites that serve a mix of static and dynamic content. When specified, your distribution caches and serve only the content that is specified in the distribution's <code>CacheBehaviorPerPath</code> parameter. This behavior is ideal for websites or web applications that use cookies, headers, and query strings to personalize content for individual users.</p> </li>
     /// </ul>
-    pub fn set_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::BehaviorEnum>,
-    ) -> Self {
+    pub fn set_behavior(mut self, input: ::std::option::Option<crate::types::BehaviorEnum>) -> Self {
         self.behavior = input;
         self
     }
@@ -74,8 +69,6 @@ impl CacheBehaviorBuilder {
     }
     /// Consumes the builder and constructs a [`CacheBehavior`](crate::types::CacheBehavior).
     pub fn build(self) -> crate::types::CacheBehavior {
-        crate::types::CacheBehavior {
-            behavior: self.behavior,
-        }
+        crate::types::CacheBehavior { behavior: self.behavior }
     }
 }

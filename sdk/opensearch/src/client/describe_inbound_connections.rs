@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`connections(Option<Vec<InboundConnection>>)`](crate::operation::describe_inbound_connections::DescribeInboundConnectionsOutput::connections): <p>List of inbound connections.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_inbound_connections::DescribeInboundConnectionsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<DescribeInboundConnectionsError>`](crate::operation::describe_inbound_connections::DescribeInboundConnectionsError)
-    pub fn describe_inbound_connections(&self) -> crate::operation::describe_inbound_connections::builders::DescribeInboundConnectionsFluentBuilder{
+    pub fn describe_inbound_connections(&self) -> crate::operation::describe_inbound_connections::builders::DescribeInboundConnectionsFluentBuilder {
         crate::operation::describe_inbound_connections::builders::DescribeInboundConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

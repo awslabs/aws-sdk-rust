@@ -5,16 +5,16 @@ pub use crate::operation::batch_update_member_ec2_deep_inspection_status::_batch
 
 impl BatchUpdateMemberEc2DeepInspectionStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.batch_update_member_ec2_deep_inspection_status();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl BatchUpdateMemberEc2DeepInspectionStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdateMemberEc2DeepInspectionStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_update_member_ec2_deep_inspection_status::builders::BatchUpdateMemberEc2DeepInspectionStatusInputBuilder,
+    inner: crate::operation::batch_update_member_ec2_deep_inspection_status::builders::BatchUpdateMemberEc2DeepInspectionStatusInputBuilder,
 }
 impl BatchUpdateMemberEc2DeepInspectionStatusFluentBuilder {
     /// Creates a new `BatchUpdateMemberEc2DeepInspectionStatus`.
@@ -37,15 +37,24 @@ impl BatchUpdateMemberEc2DeepInspectionStatusFluentBuilder {
         }
     }
     /// Access the BatchUpdateMemberEc2DeepInspectionStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_update_member_ec2_deep_inspection_status::builders::BatchUpdateMemberEc2DeepInspectionStatusInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_update_member_ec2_deep_inspection_status::builders::BatchUpdateMemberEc2DeepInspectionStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl BatchUpdateMemberEc2DeepInspectionStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl BatchUpdateMemberEc2DeepInspectionStatusFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `accountIds`.
@@ -99,28 +124,17 @@ impl BatchUpdateMemberEc2DeepInspectionStatusFluentBuilder {
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
     /// <p>The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for.</p>
-    pub fn account_ids(
-        mut self,
-        input: crate::types::MemberAccountEc2DeepInspectionStatus,
-    ) -> Self {
+    pub fn account_ids(mut self, input: crate::types::MemberAccountEc2DeepInspectionStatus) -> Self {
         self.inner = self.inner.account_ids(input);
         self
     }
     /// <p>The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatus>,
-        >,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatus>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatus>>
-    {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatus>> {
         self.inner.get_account_ids()
     }
 }

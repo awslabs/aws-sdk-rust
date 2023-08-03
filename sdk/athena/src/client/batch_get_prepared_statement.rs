@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`prepared_statements(Option<Vec<PreparedStatement>>)`](crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementOutput::prepared_statements): <p>The list of prepared statements returned.</p>
     ///   - [`unprocessed_prepared_statement_names(Option<Vec<UnprocessedPreparedStatementName>>)`](crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementOutput::unprocessed_prepared_statement_names): <p>A list of one or more prepared statements that were requested but could not be returned.</p>
     /// - On failure, responds with [`SdkError<BatchGetPreparedStatementError>`](crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementError)
-    pub fn batch_get_prepared_statement(&self) -> crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementFluentBuilder{
+    pub fn batch_get_prepared_statement(&self) -> crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementFluentBuilder {
         crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementFluentBuilder::new(self.handle.clone())
     }
 }

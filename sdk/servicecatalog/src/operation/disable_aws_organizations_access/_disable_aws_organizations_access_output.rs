@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisableAwsOrganizationsAccessOutput {
 }
 impl DisableAwsOrganizationsAccessOutput {
     /// Creates a new builder-style object to manufacture [`DisableAwsOrganizationsAccessOutput`](crate::operation::disable_aws_organizations_access::DisableAwsOrganizationsAccessOutput).
-    pub fn builder() -> crate::operation::disable_aws_organizations_access::builders::DisableAwsOrganizationsAccessOutputBuilder{
+    pub fn builder() -> crate::operation::disable_aws_organizations_access::builders::DisableAwsOrganizationsAccessOutputBuilder {
         crate::operation::disable_aws_organizations_access::builders::DisableAwsOrganizationsAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableAwsOrganizationsAccessOutput`](crate::operation::disable_aws_organizations_access::DisableAwsOrganizationsAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableAwsOrganizationsAccessOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DisableAwsOrganizationsAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableAwsOrganizationsAccessOutput`](crate::operation::disable_aws_organizations_access::DisableAwsOrganizationsAccessOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disable_aws_organizations_access::DisableAwsOrganizationsAccessOutput
-    {
+    pub fn build(self) -> crate::operation::disable_aws_organizations_access::DisableAwsOrganizationsAccessOutput {
         crate::operation::disable_aws_organizations_access::DisableAwsOrganizationsAccessOutput {
             _request_id: self._request_id,
         }

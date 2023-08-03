@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`attributes(Option<Vec<Attribute>>)`](crate::operation::list_instance_attributes::ListInstanceAttributesOutput::attributes): <p>The attribute types.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_instance_attributes::ListInstanceAttributesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListInstanceAttributesError>`](crate::operation::list_instance_attributes::ListInstanceAttributesError)
-    pub fn list_instance_attributes(
-        &self,
-    ) -> crate::operation::list_instance_attributes::builders::ListInstanceAttributesFluentBuilder
-    {
+    pub fn list_instance_attributes(&self) -> crate::operation::list_instance_attributes::builders::ListInstanceAttributesFluentBuilder {
         crate::operation::list_instance_attributes::builders::ListInstanceAttributesFluentBuilder::new(self.handle.clone())
     }
 }

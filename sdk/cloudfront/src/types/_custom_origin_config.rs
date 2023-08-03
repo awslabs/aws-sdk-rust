@@ -46,9 +46,7 @@ impl CustomOriginConfig {
     /// <li> <p> <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p> </li>
     /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
     /// </ul>
-    pub fn origin_protocol_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginProtocolPolicy> {
+    pub fn origin_protocol_policy(&self) -> ::std::option::Option<&crate::types::OriginProtocolPolicy> {
         self.origin_protocol_policy.as_ref()
     }
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
@@ -76,9 +74,7 @@ impl CustomOriginConfig {
 
 /// A builder for [`CustomOriginConfig`](crate::types::CustomOriginConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomOriginConfigBuilder {
     pub(crate) http_port: ::std::option::Option<i32>,
     pub(crate) https_port: ::std::option::Option<i32>,
@@ -132,10 +128,7 @@ impl CustomOriginConfigBuilder {
     /// <li> <p> <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p> </li>
     /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
     /// </ul>
-    pub fn set_origin_protocol_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginProtocolPolicy>,
-    ) -> Self {
+    pub fn set_origin_protocol_policy(mut self, input: ::std::option::Option<crate::types::OriginProtocolPolicy>) -> Self {
         self.origin_protocol_policy = input;
         self
     }
@@ -145,9 +138,7 @@ impl CustomOriginConfigBuilder {
     /// <li> <p> <code>match-viewer</code> – CloudFront connects to the origin using the same protocol that the viewer used to connect to CloudFront.</p> </li>
     /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
     /// </ul>
-    pub fn get_origin_protocol_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginProtocolPolicy> {
+    pub fn get_origin_protocol_policy(&self) -> &::std::option::Option<crate::types::OriginProtocolPolicy> {
         &self.origin_protocol_policy
     }
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
@@ -158,18 +149,13 @@ impl CustomOriginConfigBuilder {
     }
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_origin_ssl_protocols(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginSslProtocols>,
-    ) -> Self {
+    pub fn set_origin_ssl_protocols(mut self, input: ::std::option::Option<crate::types::OriginSslProtocols>) -> Self {
         self.origin_ssl_protocols = input;
         self
     }
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn get_origin_ssl_protocols(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginSslProtocols> {
+    pub fn get_origin_ssl_protocols(&self) -> &::std::option::Option<crate::types::OriginSslProtocols> {
         &self.origin_ssl_protocols
     }
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>

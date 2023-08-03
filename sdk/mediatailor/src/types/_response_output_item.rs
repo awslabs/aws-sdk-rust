@@ -22,15 +22,11 @@ pub struct ResponseOutputItem {
 }
 impl ResponseOutputItem {
     /// <p>DASH manifest configuration settings.</p>
-    pub fn dash_playlist_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DashPlaylistSettings> {
+    pub fn dash_playlist_settings(&self) -> ::std::option::Option<&crate::types::DashPlaylistSettings> {
         self.dash_playlist_settings.as_ref()
     }
     /// <p>HLS manifest configuration settings.</p>
-    pub fn hls_playlist_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsPlaylistSettings> {
+    pub fn hls_playlist_settings(&self) -> ::std::option::Option<&crate::types::HlsPlaylistSettings> {
         self.hls_playlist_settings.as_ref()
     }
     /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
@@ -55,9 +51,7 @@ impl ResponseOutputItem {
 
 /// A builder for [`ResponseOutputItem`](crate::types::ResponseOutputItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseOutputItemBuilder {
     pub(crate) dash_playlist_settings: ::std::option::Option<crate::types::DashPlaylistSettings>,
     pub(crate) hls_playlist_settings: ::std::option::Option<crate::types::HlsPlaylistSettings>,
@@ -72,17 +66,12 @@ impl ResponseOutputItemBuilder {
         self
     }
     /// <p>DASH manifest configuration settings.</p>
-    pub fn set_dash_playlist_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DashPlaylistSettings>,
-    ) -> Self {
+    pub fn set_dash_playlist_settings(mut self, input: ::std::option::Option<crate::types::DashPlaylistSettings>) -> Self {
         self.dash_playlist_settings = input;
         self
     }
     /// <p>DASH manifest configuration settings.</p>
-    pub fn get_dash_playlist_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DashPlaylistSettings> {
+    pub fn get_dash_playlist_settings(&self) -> &::std::option::Option<crate::types::DashPlaylistSettings> {
         &self.dash_playlist_settings
     }
     /// <p>HLS manifest configuration settings.</p>
@@ -91,32 +80,21 @@ impl ResponseOutputItemBuilder {
         self
     }
     /// <p>HLS manifest configuration settings.</p>
-    pub fn set_hls_playlist_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsPlaylistSettings>,
-    ) -> Self {
+    pub fn set_hls_playlist_settings(mut self, input: ::std::option::Option<crate::types::HlsPlaylistSettings>) -> Self {
         self.hls_playlist_settings = input;
         self
     }
     /// <p>HLS manifest configuration settings.</p>
-    pub fn get_hls_playlist_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsPlaylistSettings> {
+    pub fn get_hls_playlist_settings(&self) -> &::std::option::Option<crate::types::HlsPlaylistSettings> {
         &self.hls_playlist_settings
     }
     /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
-    pub fn manifest_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn manifest_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
-    pub fn set_manifest_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_manifest_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manifest_name = input;
         self
     }

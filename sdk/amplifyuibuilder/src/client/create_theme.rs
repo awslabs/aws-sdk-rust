@@ -10,9 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateThemeOutput`](crate::operation::create_theme::CreateThemeOutput) with field(s):
     ///   - [`entity(Option<Theme>)`](crate::operation::create_theme::CreateThemeOutput::entity): <p>Describes the configuration of the new theme.</p>
     /// - On failure, responds with [`SdkError<CreateThemeError>`](crate::operation::create_theme::CreateThemeError)
-    pub fn create_theme(
-        &self,
-    ) -> crate::operation::create_theme::builders::CreateThemeFluentBuilder {
+    pub fn create_theme(&self) -> crate::operation::create_theme::builders::CreateThemeFluentBuilder {
         crate::operation::create_theme::builders::CreateThemeFluentBuilder::new(self.handle.clone())
     }
 }

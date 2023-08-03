@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeStackSetOperationOutput`](crate::operation::describe_stack_set_operation::DescribeStackSetOperationOutput) with field(s):
     ///   - [`stack_set_operation(Option<StackSetOperation>)`](crate::operation::describe_stack_set_operation::DescribeStackSetOperationOutput::stack_set_operation): <p>The specified stack set operation.</p>
     /// - On failure, responds with [`SdkError<DescribeStackSetOperationError>`](crate::operation::describe_stack_set_operation::DescribeStackSetOperationError)
-    pub fn describe_stack_set_operation(&self) -> crate::operation::describe_stack_set_operation::builders::DescribeStackSetOperationFluentBuilder{
+    pub fn describe_stack_set_operation(&self) -> crate::operation::describe_stack_set_operation::builders::DescribeStackSetOperationFluentBuilder {
         crate::operation::describe_stack_set_operation::builders::DescribeStackSetOperationFluentBuilder::new(self.handle.clone())
     }
 }

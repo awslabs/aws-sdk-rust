@@ -15,17 +15,14 @@ impl DisassociateConnectorInput {
 }
 impl DisassociateConnectorInput {
     /// Creates a new builder-style object to manufacture [`DisassociateConnectorInput`](crate::operation::disassociate_connector::DisassociateConnectorInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_connector::builders::DisassociateConnectorInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_connector::builders::DisassociateConnectorInputBuilder {
         crate::operation::disassociate_connector::builders::DisassociateConnectorInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateConnectorInput`](crate::operation::disassociate_connector::DisassociateConnectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateConnectorInputBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,10 @@ impl DisassociateConnectorInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateConnectorInput`](crate::operation::disassociate_connector::DisassociateConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_connector::DisassociateConnectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_connector::DisassociateConnectorInput {
-                connector_id: self.connector_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_connector::DisassociateConnectorInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disassociate_connector::DisassociateConnectorInput {
+            connector_id: self.connector_id,
+        })
     }
 }

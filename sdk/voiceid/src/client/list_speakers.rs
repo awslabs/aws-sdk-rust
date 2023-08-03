@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`speaker_summaries(Option<Vec<SpeakerSummary>>)`](crate::operation::list_speakers::ListSpeakersOutput::speaker_summaries): <p>A list containing details about each speaker in the Amazon Web Services account. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_speakers::ListSpeakersOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     /// - On failure, responds with [`SdkError<ListSpeakersError>`](crate::operation::list_speakers::ListSpeakersError)
-    pub fn list_speakers(
-        &self,
-    ) -> crate::operation::list_speakers::builders::ListSpeakersFluentBuilder {
-        crate::operation::list_speakers::builders::ListSpeakersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_speakers(&self) -> crate::operation::list_speakers::builders::ListSpeakersFluentBuilder {
+        crate::operation::list_speakers::builders::ListSpeakersFluentBuilder::new(self.handle.clone())
     }
 }

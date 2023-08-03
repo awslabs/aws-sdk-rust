@@ -22,9 +22,7 @@ impl BatchGetBuildsInput {
 
 /// A builder for [`BatchGetBuildsInput`](crate::operation::batch_get_builds::BatchGetBuildsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetBuildsInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,10 +39,7 @@ impl BatchGetBuildsInputBuilder {
         self
     }
     /// <p>The IDs of the builds.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
@@ -55,12 +50,7 @@ impl BatchGetBuildsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetBuildsInput`](crate::operation::batch_get_builds::BatchGetBuildsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_builds::BatchGetBuildsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_builds::BatchGetBuildsInput {
-            ids: self.ids,
-        })
+    ) -> ::std::result::Result<crate::operation::batch_get_builds::BatchGetBuildsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_builds::BatchGetBuildsInput { ids: self.ids })
     }
 }

@@ -80,9 +80,7 @@ impl TopBottomMoversComputation {
 
 /// A builder for [`TopBottomMoversComputation`](crate::types::TopBottomMoversComputation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopBottomMoversComputationBuilder {
     pub(crate) computation_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -95,18 +93,12 @@ pub struct TopBottomMoversComputationBuilder {
 }
 impl TopBottomMoversComputationBuilder {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn computation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.computation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for a computation.</p>
-    pub fn set_computation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_computation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.computation_id = input;
         self
     }
@@ -148,10 +140,7 @@ impl TopBottomMoversComputationBuilder {
         self
     }
     /// <p>The category field that is used in a computation.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::DimensionField>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::DimensionField>) -> Self {
         self.category = input;
         self
     }
@@ -193,10 +182,7 @@ impl TopBottomMoversComputationBuilder {
         self
     }
     /// <p>The sort order setup of the top and bottom movers computation.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::TopBottomSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::TopBottomSortOrder>) -> Self {
         self.sort_order = input;
         self
     }
@@ -218,10 +204,7 @@ impl TopBottomMoversComputationBuilder {
     /// <li> <p>TOP: Top movers computation.</p> </li>
     /// <li> <p>BOTTOM: Bottom movers computation.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TopBottomComputationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TopBottomComputationType>) -> Self {
         self.r#type = input;
         self
     }

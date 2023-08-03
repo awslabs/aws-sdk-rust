@@ -30,17 +30,14 @@ impl UpdateThingShadowInput {
 }
 impl UpdateThingShadowInput {
     /// Creates a new builder-style object to manufacture [`UpdateThingShadowInput`](crate::operation::update_thing_shadow::UpdateThingShadowInput).
-    pub fn builder(
-    ) -> crate::operation::update_thing_shadow::builders::UpdateThingShadowInputBuilder {
+    pub fn builder() -> crate::operation::update_thing_shadow::builders::UpdateThingShadowInputBuilder {
         crate::operation::update_thing_shadow::builders::UpdateThingShadowInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateThingShadowInput`](crate::operation::update_thing_shadow::UpdateThingShadowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThingShadowInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) shadow_name: ::std::option::Option<::std::string::String>,
@@ -92,16 +89,11 @@ impl UpdateThingShadowInputBuilder {
     /// Consumes the builder and constructs a [`UpdateThingShadowInput`](crate::operation::update_thing_shadow::UpdateThingShadowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_thing_shadow::UpdateThingShadowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_thing_shadow::UpdateThingShadowInput {
-                thing_name: self.thing_name,
-                shadow_name: self.shadow_name,
-                payload: self.payload,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_thing_shadow::UpdateThingShadowInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_thing_shadow::UpdateThingShadowInput {
+            thing_name: self.thing_name,
+            shadow_name: self.shadow_name,
+            payload: self.payload,
+        })
     }
 }

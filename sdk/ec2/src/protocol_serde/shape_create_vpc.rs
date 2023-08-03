@@ -4,22 +4,13 @@ pub fn de_create_vpc_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_vpc::CreateVpcOutput,
-    crate::operation::create_vpc::CreateVpcError,
-> {
+) -> std::result::Result<crate::operation::create_vpc::CreateVpcOutput, crate::operation::create_vpc::CreateVpcError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_vpc::CreateVpcError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_vpc::CreateVpcError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::create_vpc::CreateVpcError::generic(
-        generic,
-    ))
+    Err(crate::operation::create_vpc::CreateVpcError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -27,18 +18,13 @@ pub fn de_create_vpc_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_vpc::CreateVpcOutput,
-    crate::operation::create_vpc::CreateVpcError,
-> {
+) -> std::result::Result<crate::operation::create_vpc::CreateVpcOutput, crate::operation::create_vpc::CreateVpcError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_vpc::builders::CreateVpcOutputBuilder::default();
         output = crate::protocol_serde::shape_create_vpc::de_create_vpc(_response_body, output)
             .map_err(crate::operation::create_vpc::CreateVpcError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -47,10 +33,7 @@ pub fn de_create_vpc_http_response_with_props(
 pub fn de_create_vpc(
     inp: &[u8],
     mut builder: crate::operation::create_vpc::builders::CreateVpcOutputBuilder,
-) -> Result<
-    crate::operation::create_vpc::builders::CreateVpcOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::create_vpc::builders::CreateVpcOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

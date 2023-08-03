@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`controls(Option<Vec<StandardsControl>>)`](crate::operation::describe_standards_controls::DescribeStandardsControlsOutput::controls): <p>A list of security standards controls.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_standards_controls::DescribeStandardsControlsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
     /// - On failure, responds with [`SdkError<DescribeStandardsControlsError>`](crate::operation::describe_standards_controls::DescribeStandardsControlsError)
-    pub fn describe_standards_controls(&self) -> crate::operation::describe_standards_controls::builders::DescribeStandardsControlsFluentBuilder{
+    pub fn describe_standards_controls(&self) -> crate::operation::describe_standards_controls::builders::DescribeStandardsControlsFluentBuilder {
         crate::operation::describe_standards_controls::builders::DescribeStandardsControlsFluentBuilder::new(self.handle.clone())
     }
 }

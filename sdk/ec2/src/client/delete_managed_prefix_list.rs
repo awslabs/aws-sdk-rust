@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteManagedPrefixListOutput`](crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListOutput) with field(s):
     ///   - [`prefix_list(Option<ManagedPrefixList>)`](crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListOutput::prefix_list): <p>Information about the prefix list.</p>
     /// - On failure, responds with [`SdkError<DeleteManagedPrefixListError>`](crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListError)
-    pub fn delete_managed_prefix_list(
-        &self,
-    ) -> crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListFluentBuilder
-    {
+    pub fn delete_managed_prefix_list(&self) -> crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListFluentBuilder {
         crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListFluentBuilder::new(self.handle.clone())
     }
 }

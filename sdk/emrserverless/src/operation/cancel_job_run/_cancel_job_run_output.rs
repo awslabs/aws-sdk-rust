@@ -35,9 +35,7 @@ impl CancelJobRunOutput {
 
 /// A builder for [`CancelJobRunOutput`](crate::operation::cancel_job_run::CancelJobRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelJobRunOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_run_id: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct CancelJobRunOutputBuilder {
 }
 impl CancelJobRunOutputBuilder {
     /// <p>The output contains the application ID on which the job run is cancelled.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The output contains the application ID on which the job run is cancelled.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::set_application_id): <p>The ID of the application to start.</p>
     /// - On success, responds with [`StartApplicationOutput`](crate::operation::start_application::StartApplicationOutput)
     /// - On failure, responds with [`SdkError<StartApplicationError>`](crate::operation::start_application::StartApplicationError)
-    pub fn start_application(
-        &self,
-    ) -> crate::operation::start_application::builders::StartApplicationFluentBuilder {
-        crate::operation::start_application::builders::StartApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_application(&self) -> crate::operation::start_application::builders::StartApplicationFluentBuilder {
+        crate::operation::start_application::builders::StartApplicationFluentBuilder::new(self.handle.clone())
     }
 }

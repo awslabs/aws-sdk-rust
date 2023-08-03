@@ -8,8 +8,7 @@ pub struct ChangeServerLifeCycleStateInput {
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The request to change the source server migration lifecycle state.</p>
     #[doc(hidden)]
-    pub life_cycle:
-        ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle>,
+    pub life_cycle: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle>,
     /// <p>The request to change the source server migration account ID.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ impl ChangeServerLifeCycleStateInput {
         self.source_server_id.as_deref()
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub fn life_cycle(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChangeServerLifeCycleStateSourceServerLifecycle> {
+    pub fn life_cycle(&self) -> ::std::option::Option<&crate::types::ChangeServerLifeCycleStateSourceServerLifecycle> {
         self.life_cycle.as_ref()
     }
     /// <p>The request to change the source server migration account ID.</p>
@@ -32,36 +29,27 @@ impl ChangeServerLifeCycleStateInput {
 }
 impl ChangeServerLifeCycleStateInput {
     /// Creates a new builder-style object to manufacture [`ChangeServerLifeCycleStateInput`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput).
-    pub fn builder() -> crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateInputBuilder{
+    pub fn builder() -> crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateInputBuilder {
         crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateInputBuilder::default()
     }
 }
 
 /// A builder for [`ChangeServerLifeCycleStateInput`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeServerLifeCycleStateInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
-    pub(crate) life_cycle:
-        ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle>,
+    pub(crate) life_cycle: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl ChangeServerLifeCycleStateInputBuilder {
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -70,25 +58,17 @@ impl ChangeServerLifeCycleStateInputBuilder {
         &self.source_server_id
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub fn life_cycle(
-        mut self,
-        input: crate::types::ChangeServerLifeCycleStateSourceServerLifecycle,
-    ) -> Self {
+    pub fn life_cycle(mut self, input: crate::types::ChangeServerLifeCycleStateSourceServerLifecycle) -> Self {
         self.life_cycle = ::std::option::Option::Some(input);
         self
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub fn set_life_cycle(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle>,
-    ) -> Self {
+    pub fn set_life_cycle(mut self, input: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle>) -> Self {
         self.life_cycle = input;
         self
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub fn get_life_cycle(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle> {
+    pub fn get_life_cycle(&self) -> &::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle> {
         &self.life_cycle
     }
     /// <p>The request to change the source server migration account ID.</p>
@@ -112,12 +92,10 @@ impl ChangeServerLifeCycleStateInputBuilder {
         crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput {
-                source_server_id: self.source_server_id,
-                life_cycle: self.life_cycle,
-                account_id: self.account_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput {
+            source_server_id: self.source_server_id,
+            life_cycle: self.life_cycle,
+            account_id: self.account_id,
+        })
     }
 }

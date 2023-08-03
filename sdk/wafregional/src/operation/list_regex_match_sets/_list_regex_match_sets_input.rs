@@ -22,17 +22,14 @@ impl ListRegexMatchSetsInput {
 }
 impl ListRegexMatchSetsInput {
     /// Creates a new builder-style object to manufacture [`ListRegexMatchSetsInput`](crate::operation::list_regex_match_sets::ListRegexMatchSetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_regex_match_sets::builders::ListRegexMatchSetsInputBuilder {
+    pub fn builder() -> crate::operation::list_regex_match_sets::builders::ListRegexMatchSetsInputBuilder {
         crate::operation::list_regex_match_sets::builders::ListRegexMatchSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRegexMatchSetsInput`](crate::operation::list_regex_match_sets::ListRegexMatchSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRegexMatchSetsInputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -69,15 +66,11 @@ impl ListRegexMatchSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListRegexMatchSetsInput`](crate::operation::list_regex_match_sets::ListRegexMatchSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_regex_match_sets::ListRegexMatchSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_regex_match_sets::ListRegexMatchSetsInput {
-                next_marker: self.next_marker,
-                limit: self.limit.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_regex_match_sets::ListRegexMatchSetsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_regex_match_sets::ListRegexMatchSetsInput {
+            next_marker: self.next_marker,
+            limit: self.limit.unwrap_or_default(),
+        })
     }
 }

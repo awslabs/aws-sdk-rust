@@ -6,10 +6,7 @@ pub fn ser_update_pipeline_input(
     if let Some(var_1) = &input.log_publishing_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("LogPublishingOptions").start_object();
-        crate::protocol_serde::shape_log_publishing_options::ser_log_publishing_options(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_log_publishing_options::ser_log_publishing_options(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.max_units {
@@ -25,9 +22,7 @@ pub fn ser_update_pipeline_input(
         );
     }
     if let Some(var_5) = &input.pipeline_configuration_body {
-        object
-            .key("PipelineConfigurationBody")
-            .string(var_5.as_str());
+        object.key("PipelineConfigurationBody").string(var_5.as_str());
     }
     Ok(())
 }

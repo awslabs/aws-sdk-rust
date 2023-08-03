@@ -37,9 +37,7 @@ impl DeleteAssessmentRunFluentBuilder {
         }
     }
     /// Access the DeleteAssessmentRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_assessment_run::builders::DeleteAssessmentRunInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_assessment_run::builders::DeleteAssessmentRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteAssessmentRunFluentBuilder {
             crate::operation::delete_assessment_run::DeleteAssessmentRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_assessment_run::DeleteAssessmentRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_assessment_run::DeleteAssessmentRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteAssessmentRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteAssessmentRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_assessment_run::DeleteAssessmentRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_assessment_run::DeleteAssessmentRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_assessment_run::DeleteAssessmentRunError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteAssessmentRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_assessment_run::DeleteAssessmentRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_assessment_run::DeleteAssessmentRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_assessment_run::DeleteAssessmentRunError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteAssessmentRunFluentBuilder {
             crate::operation::delete_assessment_run::DeleteAssessmentRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_assessment_run::DeleteAssessmentRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_assessment_run::DeleteAssessmentRunError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN that specifies the assessment run that you want to delete.</p>
-    pub fn assessment_run_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_run_arn(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment run that you want to delete.</p>
-    pub fn set_assessment_run_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_run_arn(input);
         self
     }

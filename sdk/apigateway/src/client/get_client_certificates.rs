@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ClientCertificate>>)`](crate::operation::get_client_certificates::GetClientCertificatesOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_client_certificates::GetClientCertificatesOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetClientCertificatesError>`](crate::operation::get_client_certificates::GetClientCertificatesError)
-    pub fn get_client_certificates(
-        &self,
-    ) -> crate::operation::get_client_certificates::builders::GetClientCertificatesFluentBuilder
-    {
-        crate::operation::get_client_certificates::builders::GetClientCertificatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_client_certificates(&self) -> crate::operation::get_client_certificates::builders::GetClientCertificatesFluentBuilder {
+        crate::operation::get_client_certificates::builders::GetClientCertificatesFluentBuilder::new(self.handle.clone())
     }
 }

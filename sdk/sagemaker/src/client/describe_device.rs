@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
     ///   - [`agent_version(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::agent_version): <p>Edge Manager agent version.</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::operation::describe_device::DescribeDeviceError)
-    pub fn describe_device(
-        &self,
-    ) -> crate::operation::describe_device::builders::DescribeDeviceFluentBuilder {
-        crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_device(&self) -> crate::operation::describe_device::builders::DescribeDeviceFluentBuilder {
+        crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -34,9 +34,7 @@ impl KmsKeyDetails {
 
 /// A builder for [`KmsKeyDetails`](crate::types::KmsKeyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KmsKeyDetailsBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_option: ::std::option::Option<crate::types::EncryptionOption>,
@@ -62,10 +60,7 @@ impl KmsKeyDetailsBuilder {
         self
     }
     /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
-    pub fn set_encryption_option(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionOption>,
-    ) -> Self {
+    pub fn set_encryption_option(mut self, input: ::std::option::Option<crate::types::EncryptionOption>) -> Self {
         self.encryption_option = input;
         self
     }

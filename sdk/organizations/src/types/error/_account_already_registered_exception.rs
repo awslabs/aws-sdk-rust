@@ -33,9 +33,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::AccountAlreadyRe
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for AccountAlreadyRegisteredException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AccountAlreadyRegisteredException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -49,9 +47,7 @@ impl AccountAlreadyRegisteredException {
 
 /// A builder for [`AccountAlreadyRegisteredException`](crate::types::error::AccountAlreadyRegisteredException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountAlreadyRegisteredExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -78,10 +74,7 @@ impl AccountAlreadyRegisteredExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

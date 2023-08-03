@@ -35,9 +35,7 @@ impl ListListenersOutput {
 
 /// A builder for [`ListListenersOutput`](crate::operation::list_listeners::ListListenersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListListenersOutputBuilder {
     pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListListenersOutputBuilder {
         self
     }
     /// <p>The list of listeners for an accelerator.</p>
-    pub fn set_listeners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
-    ) -> Self {
+    pub fn set_listeners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>) -> Self {
         self.listeners = input;
         self
     }

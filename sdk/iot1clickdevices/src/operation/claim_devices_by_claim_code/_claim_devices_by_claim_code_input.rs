@@ -15,18 +15,14 @@ impl ClaimDevicesByClaimCodeInput {
 }
 impl ClaimDevicesByClaimCodeInput {
     /// Creates a new builder-style object to manufacture [`ClaimDevicesByClaimCodeInput`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput).
-    pub fn builder(
-    ) -> crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeInputBuilder
-    {
+    pub fn builder() -> crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeInputBuilder {
         crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeInputBuilder::default()
     }
 }
 
 /// A builder for [`ClaimDevicesByClaimCodeInput`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClaimDevicesByClaimCodeInputBuilder {
     pub(crate) claim_code: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl ClaimDevicesByClaimCodeInputBuilder {
         crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput {
-                claim_code: self.claim_code,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput { claim_code: self.claim_code })
     }
 }

@@ -28,17 +28,14 @@ impl DeleteContainerImageInput {
 }
 impl DeleteContainerImageInput {
     /// Creates a new builder-style object to manufacture [`DeleteContainerImageInput`](crate::operation::delete_container_image::DeleteContainerImageInput).
-    pub fn builder(
-    ) -> crate::operation::delete_container_image::builders::DeleteContainerImageInputBuilder {
+    pub fn builder() -> crate::operation::delete_container_image::builders::DeleteContainerImageInputBuilder {
         crate::operation::delete_container_image::builders::DeleteContainerImageInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteContainerImageInput`](crate::operation::delete_container_image::DeleteContainerImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteContainerImageInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<::std::string::String>,
@@ -84,15 +81,11 @@ impl DeleteContainerImageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContainerImageInput`](crate::operation::delete_container_image::DeleteContainerImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_container_image::DeleteContainerImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_container_image::DeleteContainerImageInput {
-                service_name: self.service_name,
-                image: self.image,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_container_image::DeleteContainerImageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_container_image::DeleteContainerImageInput {
+            service_name: self.service_name,
+            image: self.image,
+        })
     }
 }

@@ -57,9 +57,7 @@ impl UpdateThesaurusInput {
 
 /// A builder for [`UpdateThesaurusInput`](crate::operation::update_thesaurus::UpdateThesaurusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThesaurusInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -145,10 +143,7 @@ impl UpdateThesaurusInputBuilder {
         self
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
-    pub fn set_source_s3_path(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Path>,
-    ) -> Self {
+    pub fn set_source_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
         self.source_s3_path = input;
         self
     }
@@ -159,10 +154,7 @@ impl UpdateThesaurusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateThesaurusInput`](crate::operation::update_thesaurus::UpdateThesaurusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_thesaurus::UpdateThesaurusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_thesaurus::UpdateThesaurusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_thesaurus::UpdateThesaurusInput {
             id: self.id,
             name: self.name,

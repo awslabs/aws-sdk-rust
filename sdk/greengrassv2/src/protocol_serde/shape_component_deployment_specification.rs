@@ -15,10 +15,7 @@ pub fn ser_component_deployment_specification(
     if let Some(var_4) = &input.run_with {
         #[allow(unused_mut)]
         let mut object_5 = object.key("runWith").start_object();
-        crate::protocol_serde::shape_component_run_with::ser_component_run_with(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_component_run_with::ser_component_run_with(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())
@@ -26,66 +23,48 @@ pub fn ser_component_deployment_specification(
 
 pub(crate) fn de_component_deployment_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ComponentDeploymentSpecification>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ComponentDeploymentSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::ComponentDeploymentSpecificationBuilder::default();
+            let mut builder = crate::types::builders::ComponentDeploymentSpecificationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "componentVersion" => {
-                                builder = builder.set_component_version(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "componentVersion" => {
+                            builder = builder.set_component_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "configurationUpdate" => {
-                                builder = builder.set_configuration_update(
-                                    crate::protocol_serde::shape_component_configuration_update::de_component_configuration_update(tokens)?
-                                );
-                            }
-                            "runWith" => {
-                                builder = builder.set_run_with(
-                                    crate::protocol_serde::shape_component_run_with::de_component_run_with(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "configurationUpdate" => {
+                            builder = builder.set_configuration_update(
+                                crate::protocol_serde::shape_component_configuration_update::de_component_configuration_update(tokens)?,
+                            );
+                        }
+                        "runWith" => {
+                            builder = builder.set_run_with(crate::protocol_serde::shape_component_run_with::de_component_run_with(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

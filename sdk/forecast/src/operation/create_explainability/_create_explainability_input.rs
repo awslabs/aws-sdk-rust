@@ -52,9 +52,7 @@ impl CreateExplainabilityInput {
         self.resource_arn.as_deref()
     }
     /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
-    pub fn explainability_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExplainabilityConfig> {
+    pub fn explainability_config(&self) -> ::std::option::Option<&crate::types::ExplainabilityConfig> {
         self.explainability_config.as_ref()
     }
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
@@ -95,18 +93,14 @@ impl CreateExplainabilityInput {
 }
 impl CreateExplainabilityInput {
     /// Creates a new builder-style object to manufacture [`CreateExplainabilityInput`](crate::operation::create_explainability::CreateExplainabilityInput).
-    pub fn builder(
-    ) -> crate::operation::create_explainability::builders::CreateExplainabilityInputBuilder {
-        crate::operation::create_explainability::builders::CreateExplainabilityInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_explainability::builders::CreateExplainabilityInputBuilder {
+        crate::operation::create_explainability::builders::CreateExplainabilityInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateExplainabilityInput`](crate::operation::create_explainability::CreateExplainabilityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExplainabilityInputBuilder {
     pub(crate) explainability_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -120,18 +114,12 @@ pub struct CreateExplainabilityInputBuilder {
 }
 impl CreateExplainabilityInputBuilder {
     /// <p>A unique name for the Explainability.</p>
-    pub fn explainability_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique name for the Explainability.</p>
-    pub fn set_explainability_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.explainability_name = input;
         self
     }
@@ -159,17 +147,12 @@ impl CreateExplainabilityInputBuilder {
         self
     }
     /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
-    pub fn set_explainability_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ExplainabilityConfig>,
-    ) -> Self {
+    pub fn set_explainability_config(mut self, input: ::std::option::Option<crate::types::ExplainabilityConfig>) -> Self {
         self.explainability_config = input;
         self
     }
     /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
-    pub fn get_explainability_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExplainabilityConfig> {
+    pub fn get_explainability_config(&self) -> &::std::option::Option<crate::types::ExplainabilityConfig> {
         &self.explainability_config
     }
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
@@ -178,10 +161,7 @@ impl CreateExplainabilityInputBuilder {
         self
     }
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }
@@ -219,19 +199,13 @@ impl CreateExplainabilityInputBuilder {
     }
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    pub fn start_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_date_time = input;
         self
     }
@@ -242,19 +216,13 @@ impl CreateExplainabilityInputBuilder {
     }
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    pub fn end_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn end_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_date_time = input;
         self
     }
@@ -293,10 +261,7 @@ impl CreateExplainabilityInputBuilder {
     /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
     /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -316,22 +281,18 @@ impl CreateExplainabilityInputBuilder {
     /// Consumes the builder and constructs a [`CreateExplainabilityInput`](crate::operation::create_explainability::CreateExplainabilityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_explainability::CreateExplainabilityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_explainability::CreateExplainabilityInput {
-                explainability_name: self.explainability_name,
-                resource_arn: self.resource_arn,
-                explainability_config: self.explainability_config,
-                data_source: self.data_source,
-                schema: self.schema,
-                enable_visualization: self.enable_visualization,
-                start_date_time: self.start_date_time,
-                end_date_time: self.end_date_time,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_explainability::CreateExplainabilityInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_explainability::CreateExplainabilityInput {
+            explainability_name: self.explainability_name,
+            resource_arn: self.resource_arn,
+            explainability_config: self.explainability_config,
+            data_source: self.data_source,
+            schema: self.schema,
+            enable_visualization: self.enable_visualization,
+            start_date_time: self.start_date_time,
+            end_date_time: self.end_date_time,
+            tags: self.tags,
+        })
     }
 }

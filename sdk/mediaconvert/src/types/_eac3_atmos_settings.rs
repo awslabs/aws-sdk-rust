@@ -21,12 +21,10 @@ pub struct Eac3AtmosSettings {
     pub downmix_control: ::std::option::Option<crate::types::Eac3AtmosDownmixControl>,
     /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the line operating mode. Default value: Film light Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores Dynamic range compression line. For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
     #[doc(hidden)]
-    pub dynamic_range_compression_line:
-        ::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionLine>,
+    pub dynamic_range_compression_line: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionLine>,
     /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the RF operating mode. Default value: Film light Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
     #[doc(hidden)]
-    pub dynamic_range_compression_rf:
-        ::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionRf>,
+    pub dynamic_range_compression_rf: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionRf>,
     /// Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default value, Custom, to provide dynamic range control values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your dynamic range control values: Dynamic range compression line and Dynamic range compression RF. When you keep the value Custom for Dynamic range control and you don't specify values for the related settings, MediaConvert uses default values for those settings.
     #[doc(hidden)]
     pub dynamic_range_control: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeControl>,
@@ -72,9 +70,7 @@ impl Eac3AtmosSettings {
         self.coding_mode.as_ref()
     }
     /// Enable Dolby Dialogue Intelligence to adjust loudness based on dialogue analysis.
-    pub fn dialogue_intelligence(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Eac3AtmosDialogueIntelligence> {
+    pub fn dialogue_intelligence(&self) -> ::std::option::Option<&crate::types::Eac3AtmosDialogueIntelligence> {
         self.dialogue_intelligence.as_ref()
     }
     /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom to provide downmix values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround, Left total/Right total surround, Left total/Right total center, Left only/Right only center, and Stereo downmix. When you keep Custom for Downmix control and you don't specify values for the related settings, MediaConvert uses default values for those settings.
@@ -82,21 +78,15 @@ impl Eac3AtmosSettings {
         self.downmix_control.as_ref()
     }
     /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the line operating mode. Default value: Film light Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores Dynamic range compression line. For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn dynamic_range_compression_line(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Eac3AtmosDynamicRangeCompressionLine> {
+    pub fn dynamic_range_compression_line(&self) -> ::std::option::Option<&crate::types::Eac3AtmosDynamicRangeCompressionLine> {
         self.dynamic_range_compression_line.as_ref()
     }
     /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the RF operating mode. Default value: Film light Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn dynamic_range_compression_rf(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Eac3AtmosDynamicRangeCompressionRf> {
+    pub fn dynamic_range_compression_rf(&self) -> ::std::option::Option<&crate::types::Eac3AtmosDynamicRangeCompressionRf> {
         self.dynamic_range_compression_rf.as_ref()
     }
     /// Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default value, Custom, to provide dynamic range control values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your dynamic range control values: Dynamic range compression line and Dynamic range compression RF. When you keep the value Custom for Dynamic range control and you don't specify values for the related settings, MediaConvert uses default values for those settings.
-    pub fn dynamic_range_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Eac3AtmosDynamicRangeControl> {
+    pub fn dynamic_range_control(&self) -> ::std::option::Option<&crate::types::Eac3AtmosDynamicRangeControl> {
         self.dynamic_range_control.as_ref()
     }
     /// Specify a value for the following Dolby Atmos setting: Left only/Right only center mix (Lo/Ro center). MediaConvert uses this value for downmixing. Default value: -3 dB. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores Left only/Right only center.
@@ -132,9 +122,7 @@ impl Eac3AtmosSettings {
         self.stereo_downmix.as_ref()
     }
     /// Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels.
-    pub fn surround_ex_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Eac3AtmosSurroundExMode> {
+    pub fn surround_ex_mode(&self) -> ::std::option::Option<&crate::types::Eac3AtmosSurroundExMode> {
         self.surround_ex_mode.as_ref()
     }
 }
@@ -147,22 +135,16 @@ impl Eac3AtmosSettings {
 
 /// A builder for [`Eac3AtmosSettings`](crate::types::Eac3AtmosSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Eac3AtmosSettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) bitstream_mode: ::std::option::Option<crate::types::Eac3AtmosBitstreamMode>,
     pub(crate) coding_mode: ::std::option::Option<crate::types::Eac3AtmosCodingMode>,
-    pub(crate) dialogue_intelligence:
-        ::std::option::Option<crate::types::Eac3AtmosDialogueIntelligence>,
+    pub(crate) dialogue_intelligence: ::std::option::Option<crate::types::Eac3AtmosDialogueIntelligence>,
     pub(crate) downmix_control: ::std::option::Option<crate::types::Eac3AtmosDownmixControl>,
-    pub(crate) dynamic_range_compression_line:
-        ::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionLine>,
-    pub(crate) dynamic_range_compression_rf:
-        ::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionRf>,
-    pub(crate) dynamic_range_control:
-        ::std::option::Option<crate::types::Eac3AtmosDynamicRangeControl>,
+    pub(crate) dynamic_range_compression_line: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionLine>,
+    pub(crate) dynamic_range_compression_rf: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionRf>,
+    pub(crate) dynamic_range_control: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeControl>,
     pub(crate) lo_ro_center_mix_level: ::std::option::Option<f64>,
     pub(crate) lo_ro_surround_mix_level: ::std::option::Option<f64>,
     pub(crate) lt_rt_center_mix_level: ::std::option::Option<f64>,
@@ -194,17 +176,12 @@ impl Eac3AtmosSettingsBuilder {
         self
     }
     /// Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
-    pub fn set_bitstream_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AtmosBitstreamMode>,
-    ) -> Self {
+    pub fn set_bitstream_mode(mut self, input: ::std::option::Option<crate::types::Eac3AtmosBitstreamMode>) -> Self {
         self.bitstream_mode = input;
         self
     }
     /// Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
-    pub fn get_bitstream_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3AtmosBitstreamMode> {
+    pub fn get_bitstream_mode(&self) -> &::std::option::Option<crate::types::Eac3AtmosBitstreamMode> {
         &self.bitstream_mode
     }
     /// The coding mode for Dolby Digital Plus JOC (Atmos).
@@ -213,10 +190,7 @@ impl Eac3AtmosSettingsBuilder {
         self
     }
     /// The coding mode for Dolby Digital Plus JOC (Atmos).
-    pub fn set_coding_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AtmosCodingMode>,
-    ) -> Self {
+    pub fn set_coding_mode(mut self, input: ::std::option::Option<crate::types::Eac3AtmosCodingMode>) -> Self {
         self.coding_mode = input;
         self
     }
@@ -225,25 +199,17 @@ impl Eac3AtmosSettingsBuilder {
         &self.coding_mode
     }
     /// Enable Dolby Dialogue Intelligence to adjust loudness based on dialogue analysis.
-    pub fn dialogue_intelligence(
-        mut self,
-        input: crate::types::Eac3AtmosDialogueIntelligence,
-    ) -> Self {
+    pub fn dialogue_intelligence(mut self, input: crate::types::Eac3AtmosDialogueIntelligence) -> Self {
         self.dialogue_intelligence = ::std::option::Option::Some(input);
         self
     }
     /// Enable Dolby Dialogue Intelligence to adjust loudness based on dialogue analysis.
-    pub fn set_dialogue_intelligence(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AtmosDialogueIntelligence>,
-    ) -> Self {
+    pub fn set_dialogue_intelligence(mut self, input: ::std::option::Option<crate::types::Eac3AtmosDialogueIntelligence>) -> Self {
         self.dialogue_intelligence = input;
         self
     }
     /// Enable Dolby Dialogue Intelligence to adjust loudness based on dialogue analysis.
-    pub fn get_dialogue_intelligence(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3AtmosDialogueIntelligence> {
+    pub fn get_dialogue_intelligence(&self) -> &::std::option::Option<crate::types::Eac3AtmosDialogueIntelligence> {
         &self.dialogue_intelligence
     }
     /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom to provide downmix values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround, Left total/Right total surround, Left total/Right total center, Left only/Right only center, and Stereo downmix. When you keep Custom for Downmix control and you don't specify values for the related settings, MediaConvert uses default values for those settings.
@@ -252,83 +218,54 @@ impl Eac3AtmosSettingsBuilder {
         self
     }
     /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom to provide downmix values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround, Left total/Right total surround, Left total/Right total center, Left only/Right only center, and Stereo downmix. When you keep Custom for Downmix control and you don't specify values for the related settings, MediaConvert uses default values for those settings.
-    pub fn set_downmix_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AtmosDownmixControl>,
-    ) -> Self {
+    pub fn set_downmix_control(mut self, input: ::std::option::Option<crate::types::Eac3AtmosDownmixControl>) -> Self {
         self.downmix_control = input;
         self
     }
     /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom to provide downmix values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround, Left total/Right total surround, Left total/Right total center, Left only/Right only center, and Stereo downmix. When you keep Custom for Downmix control and you don't specify values for the related settings, MediaConvert uses default values for those settings.
-    pub fn get_downmix_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3AtmosDownmixControl> {
+    pub fn get_downmix_control(&self) -> &::std::option::Option<crate::types::Eac3AtmosDownmixControl> {
         &self.downmix_control
     }
     /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the line operating mode. Default value: Film light Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores Dynamic range compression line. For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn dynamic_range_compression_line(
-        mut self,
-        input: crate::types::Eac3AtmosDynamicRangeCompressionLine,
-    ) -> Self {
+    pub fn dynamic_range_compression_line(mut self, input: crate::types::Eac3AtmosDynamicRangeCompressionLine) -> Self {
         self.dynamic_range_compression_line = ::std::option::Option::Some(input);
         self
     }
     /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the line operating mode. Default value: Film light Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores Dynamic range compression line. For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn set_dynamic_range_compression_line(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionLine>,
-    ) -> Self {
+    pub fn set_dynamic_range_compression_line(mut self, input: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionLine>) -> Self {
         self.dynamic_range_compression_line = input;
         self
     }
     /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the line operating mode. Default value: Film light Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores Dynamic range compression line. For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn get_dynamic_range_compression_line(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionLine> {
+    pub fn get_dynamic_range_compression_line(&self) -> &::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionLine> {
         &self.dynamic_range_compression_line
     }
     /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the RF operating mode. Default value: Film light Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn dynamic_range_compression_rf(
-        mut self,
-        input: crate::types::Eac3AtmosDynamicRangeCompressionRf,
-    ) -> Self {
+    pub fn dynamic_range_compression_rf(mut self, input: crate::types::Eac3AtmosDynamicRangeCompressionRf) -> Self {
         self.dynamic_range_compression_rf = ::std::option::Option::Some(input);
         self
     }
     /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the RF operating mode. Default value: Film light Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn set_dynamic_range_compression_rf(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionRf>,
-    ) -> Self {
+    pub fn set_dynamic_range_compression_rf(mut self, input: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionRf>) -> Self {
         self.dynamic_range_compression_rf = input;
         self
     }
     /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the RF operating mode. Default value: Film light Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn get_dynamic_range_compression_rf(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionRf> {
+    pub fn get_dynamic_range_compression_rf(&self) -> &::std::option::Option<crate::types::Eac3AtmosDynamicRangeCompressionRf> {
         &self.dynamic_range_compression_rf
     }
     /// Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default value, Custom, to provide dynamic range control values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your dynamic range control values: Dynamic range compression line and Dynamic range compression RF. When you keep the value Custom for Dynamic range control and you don't specify values for the related settings, MediaConvert uses default values for those settings.
-    pub fn dynamic_range_control(
-        mut self,
-        input: crate::types::Eac3AtmosDynamicRangeControl,
-    ) -> Self {
+    pub fn dynamic_range_control(mut self, input: crate::types::Eac3AtmosDynamicRangeControl) -> Self {
         self.dynamic_range_control = ::std::option::Option::Some(input);
         self
     }
     /// Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default value, Custom, to provide dynamic range control values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your dynamic range control values: Dynamic range compression line and Dynamic range compression RF. When you keep the value Custom for Dynamic range control and you don't specify values for the related settings, MediaConvert uses default values for those settings.
-    pub fn set_dynamic_range_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeControl>,
-    ) -> Self {
+    pub fn set_dynamic_range_control(mut self, input: ::std::option::Option<crate::types::Eac3AtmosDynamicRangeControl>) -> Self {
         self.dynamic_range_control = input;
         self
     }
     /// Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default value, Custom, to provide dynamic range control values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your dynamic range control values: Dynamic range compression line and Dynamic range compression RF. When you keep the value Custom for Dynamic range control and you don't specify values for the related settings, MediaConvert uses default values for those settings.
-    pub fn get_dynamic_range_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3AtmosDynamicRangeControl> {
+    pub fn get_dynamic_range_control(&self) -> &::std::option::Option<crate::types::Eac3AtmosDynamicRangeControl> {
         &self.dynamic_range_control
     }
     /// Specify a value for the following Dolby Atmos setting: Left only/Right only center mix (Lo/Ro center). MediaConvert uses this value for downmixing. Default value: -3 dB. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores Left only/Right only center.
@@ -393,10 +330,7 @@ impl Eac3AtmosSettingsBuilder {
         self
     }
     /// Choose how the service meters the loudness of your audio.
-    pub fn set_metering_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AtmosMeteringMode>,
-    ) -> Self {
+    pub fn set_metering_mode(mut self, input: ::std::option::Option<crate::types::Eac3AtmosMeteringMode>) -> Self {
         self.metering_mode = input;
         self
     }
@@ -438,17 +372,12 @@ impl Eac3AtmosSettingsBuilder {
         self
     }
     /// Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores Stereo downmix.
-    pub fn set_stereo_downmix(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AtmosStereoDownmix>,
-    ) -> Self {
+    pub fn set_stereo_downmix(mut self, input: ::std::option::Option<crate::types::Eac3AtmosStereoDownmix>) -> Self {
         self.stereo_downmix = input;
         self
     }
     /// Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores Stereo downmix.
-    pub fn get_stereo_downmix(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3AtmosStereoDownmix> {
+    pub fn get_stereo_downmix(&self) -> &::std::option::Option<crate::types::Eac3AtmosStereoDownmix> {
         &self.stereo_downmix
     }
     /// Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels.
@@ -457,17 +386,12 @@ impl Eac3AtmosSettingsBuilder {
         self
     }
     /// Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels.
-    pub fn set_surround_ex_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AtmosSurroundExMode>,
-    ) -> Self {
+    pub fn set_surround_ex_mode(mut self, input: ::std::option::Option<crate::types::Eac3AtmosSurroundExMode>) -> Self {
         self.surround_ex_mode = input;
         self
     }
     /// Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels.
-    pub fn get_surround_ex_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3AtmosSurroundExMode> {
+    pub fn get_surround_ex_mode(&self) -> &::std::option::Option<crate::types::Eac3AtmosSurroundExMode> {
         &self.surround_ex_mode
     }
     /// Consumes the builder and constructs a [`Eac3AtmosSettings`](crate::types::Eac3AtmosSettings).

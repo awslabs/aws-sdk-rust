@@ -25,9 +25,7 @@ impl EmailRecipients {
 
 /// A builder for [`EmailRecipients`](crate::types::EmailRecipients).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EmailRecipientsBuilder {
     pub(crate) to: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>,
 }
@@ -44,10 +42,7 @@ impl EmailRecipientsBuilder {
         self
     }
     /// <p>Specifies one or more recipients who receive the email.</p>
-    pub fn set_to(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>,
-    ) -> Self {
+    pub fn set_to(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>) -> Self {
         self.to = input;
         self
     }

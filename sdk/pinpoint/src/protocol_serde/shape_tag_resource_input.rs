@@ -11,8 +11,7 @@ pub fn ser_tags_model_http_payload(
 
 pub fn ser_tags_model_payload(
     input: &crate::types::TagsModel,
-) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_tags_model::ser_tags_model(&mut object, input)?;

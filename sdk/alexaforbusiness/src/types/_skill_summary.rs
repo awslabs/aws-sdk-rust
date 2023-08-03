@@ -51,9 +51,7 @@ impl SkillSummary {
 
 /// A builder for [`SkillSummary`](crate::types::SkillSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SkillSummaryBuilder {
     pub(crate) skill_id: ::std::option::Option<::std::string::String>,
     pub(crate) skill_name: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl SkillSummaryBuilder {
         self
     }
     /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>
-    pub fn set_enablement_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EnablementType>,
-    ) -> Self {
+    pub fn set_enablement_type(mut self, input: ::std::option::Option<crate::types::EnablementType>) -> Self {
         self.enablement_type = input;
         self
     }

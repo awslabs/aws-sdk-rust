@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::delete_space::DeleteSpaceOutput::name): <p>The name of the space.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::delete_space::DeleteSpaceOutput::display_name): <p>The friendly name of the space displayed to users of the space in Amazon CodeCatalyst.</p>
     /// - On failure, responds with [`SdkError<DeleteSpaceError>`](crate::operation::delete_space::DeleteSpaceError)
-    pub fn delete_space(
-        &self,
-    ) -> crate::operation::delete_space::builders::DeleteSpaceFluentBuilder {
+    pub fn delete_space(&self) -> crate::operation::delete_space::builders::DeleteSpaceFluentBuilder {
         crate::operation::delete_space::builders::DeleteSpaceFluentBuilder::new(self.handle.clone())
     }
 }

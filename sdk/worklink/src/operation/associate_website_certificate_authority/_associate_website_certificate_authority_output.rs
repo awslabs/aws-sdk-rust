@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for AssociateWebsiteCertificateAuthorityO
 }
 impl AssociateWebsiteCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWebsiteCertificateAuthorityOutput`](crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput).
-    pub fn builder() -> crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityOutputBuilder{
+    pub fn builder() -> crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityOutputBuilder {
         crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateWebsiteCertificateAuthorityOutput`](crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateWebsiteCertificateAuthorityOutputBuilder {
     pub(crate) website_ca_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateWebsiteCertificateAuthorityOutputBuilder {
     /// <p>A unique identifier for the CA.</p>
-    pub fn website_ca_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn website_ca_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.website_ca_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the CA.</p>
-    pub fn set_website_ca_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_website_ca_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.website_ca_id = input;
         self
     }
@@ -66,10 +58,9 @@ impl AssociateWebsiteCertificateAuthorityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateWebsiteCertificateAuthorityOutput`](crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput).
-    pub fn build(self) -> crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput{
+    pub fn build(self) -> crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput {
         crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput {
-            website_ca_id: self.website_ca_id
-            ,
+            website_ca_id: self.website_ca_id,
             _request_id: self._request_id,
         }
     }

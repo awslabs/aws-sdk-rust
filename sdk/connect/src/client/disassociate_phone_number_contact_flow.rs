@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     /// - On success, responds with [`DisassociatePhoneNumberContactFlowOutput`](crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowOutput)
     /// - On failure, responds with [`SdkError<DisassociatePhoneNumberContactFlowError>`](crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowError)
-    pub fn disassociate_phone_number_contact_flow(&self) -> crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowFluentBuilder{
+    pub fn disassociate_phone_number_contact_flow(
+        &self,
+    ) -> crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowFluentBuilder {
         crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowFluentBuilder::new(self.handle.clone())
     }
 }

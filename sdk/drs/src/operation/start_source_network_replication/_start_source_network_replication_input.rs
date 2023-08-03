@@ -15,33 +15,25 @@ impl StartSourceNetworkReplicationInput {
 }
 impl StartSourceNetworkReplicationInput {
     /// Creates a new builder-style object to manufacture [`StartSourceNetworkReplicationInput`](crate::operation::start_source_network_replication::StartSourceNetworkReplicationInput).
-    pub fn builder() -> crate::operation::start_source_network_replication::builders::StartSourceNetworkReplicationInputBuilder{
+    pub fn builder() -> crate::operation::start_source_network_replication::builders::StartSourceNetworkReplicationInputBuilder {
         crate::operation::start_source_network_replication::builders::StartSourceNetworkReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartSourceNetworkReplicationInput`](crate::operation::start_source_network_replication::StartSourceNetworkReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSourceNetworkReplicationInputBuilder {
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
 }
 impl StartSourceNetworkReplicationInputBuilder {
     /// <p>ID of the Source Network to replicate.</p>
-    pub fn source_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the Source Network to replicate.</p>
-    pub fn set_source_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_network_id = input;
         self
     }
@@ -56,11 +48,8 @@ impl StartSourceNetworkReplicationInputBuilder {
         crate::operation::start_source_network_replication::StartSourceNetworkReplicationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_source_network_replication::StartSourceNetworkReplicationInput {
-                source_network_id: self.source_network_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::start_source_network_replication::StartSourceNetworkReplicationInput {
+            source_network_id: self.source_network_id,
+        })
     }
 }

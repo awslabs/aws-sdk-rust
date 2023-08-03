@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutStudioMembersOutput {
 }
 impl PutStudioMembersOutput {
     /// Creates a new builder-style object to manufacture [`PutStudioMembersOutput`](crate::operation::put_studio_members::PutStudioMembersOutput).
-    pub fn builder() -> crate::operation::put_studio_members::builders::PutStudioMembersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_studio_members::builders::PutStudioMembersOutputBuilder {
         crate::operation::put_studio_members::builders::PutStudioMembersOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutStudioMembersOutput`](crate::operation::put_studio_members::PutStudioMembersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutStudioMembersOutputBuilder {
     _request_id: Option<String>,
 }

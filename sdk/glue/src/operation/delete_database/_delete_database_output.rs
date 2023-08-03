@@ -19,9 +19,7 @@ impl DeleteDatabaseOutput {
 
 /// A builder for [`DeleteDatabaseOutput`](crate::operation::delete_database::DeleteDatabaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDatabaseOutputBuilder {
     _request_id: Option<String>,
 }

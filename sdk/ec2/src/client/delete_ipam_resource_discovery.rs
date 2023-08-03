@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteIpamResourceDiscoveryOutput`](crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryOutput) with field(s):
     ///   - [`ipam_resource_discovery(Option<IpamResourceDiscovery>)`](crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryOutput::ipam_resource_discovery): <p>The IPAM resource discovery.</p>
     /// - On failure, responds with [`SdkError<DeleteIpamResourceDiscoveryError>`](crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError)
-    pub fn delete_ipam_resource_discovery(&self) -> crate::operation::delete_ipam_resource_discovery::builders::DeleteIpamResourceDiscoveryFluentBuilder{
+    pub fn delete_ipam_resource_discovery(
+        &self,
+    ) -> crate::operation::delete_ipam_resource_discovery::builders::DeleteIpamResourceDiscoveryFluentBuilder {
         crate::operation::delete_ipam_resource_discovery::builders::DeleteIpamResourceDiscoveryFluentBuilder::new(self.handle.clone())
     }
 }

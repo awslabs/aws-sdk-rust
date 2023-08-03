@@ -58,9 +58,7 @@ impl Certificate {
 
 /// A builder for [`Certificate`](crate::types::Certificate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateBuilder {
     pub(crate) thumbprint: ::std::option::Option<::std::string::String>,
     pub(crate) subject: ::std::option::Option<::std::string::String>,
@@ -118,10 +116,7 @@ impl CertificateBuilder {
         self
     }
     /// <p>The certificate is not valid before this date.</p>
-    pub fn set_not_valid_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_valid_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_valid_before = input;
         self
     }
@@ -135,10 +130,7 @@ impl CertificateBuilder {
         self
     }
     /// <p>The certificate is not valid after this date.</p>
-    pub fn set_not_valid_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_valid_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_valid_after = input;
         self
     }

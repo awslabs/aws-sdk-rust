@@ -5,23 +5,23 @@
 pub struct EnableSagemakerServicecatalogPortfolioInput {}
 impl EnableSagemakerServicecatalogPortfolioInput {
     /// Creates a new builder-style object to manufacture [`EnableSagemakerServicecatalogPortfolioInput`](crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioInput).
-    pub fn builder() -> crate::operation::enable_sagemaker_servicecatalog_portfolio::builders::EnableSagemakerServicecatalogPortfolioInputBuilder{
+    pub fn builder() -> crate::operation::enable_sagemaker_servicecatalog_portfolio::builders::EnableSagemakerServicecatalogPortfolioInputBuilder {
         crate::operation::enable_sagemaker_servicecatalog_portfolio::builders::EnableSagemakerServicecatalogPortfolioInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableSagemakerServicecatalogPortfolioInput`](crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableSagemakerServicecatalogPortfolioInputBuilder {}
 impl EnableSagemakerServicecatalogPortfolioInputBuilder {
     /// Consumes the builder and constructs a [`EnableSagemakerServicecatalogPortfolioInput`](crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioInput {})
     }
 }

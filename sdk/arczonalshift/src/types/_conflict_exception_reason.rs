@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,14 +54,10 @@ pub enum ConflictExceptionReason {
 impl ::std::convert::From<&str> for ConflictExceptionReason {
     fn from(s: &str) -> Self {
         match s {
-            "SimultaneousZonalShiftsConflict" => {
-                ConflictExceptionReason::SimultaneousZonalShiftsConflict
-            }
+            "SimultaneousZonalShiftsConflict" => ConflictExceptionReason::SimultaneousZonalShiftsConflict,
             "ZonalShiftAlreadyExists" => ConflictExceptionReason::ZonalShiftAlreadyExists,
             "ZonalShiftStatusNotActive" => ConflictExceptionReason::ZonalShiftStatusNotActive,
-            other => ConflictExceptionReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConflictExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -82,9 +72,7 @@ impl ConflictExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ConflictExceptionReason::SimultaneousZonalShiftsConflict => {
-                "SimultaneousZonalShiftsConflict"
-            }
+            ConflictExceptionReason::SimultaneousZonalShiftsConflict => "SimultaneousZonalShiftsConflict",
             ConflictExceptionReason::ZonalShiftAlreadyExists => "ZonalShiftAlreadyExists",
             ConflictExceptionReason::ZonalShiftStatusNotActive => "ZonalShiftStatusNotActive",
             ConflictExceptionReason::Unknown(value) => value.as_str(),
@@ -92,11 +80,7 @@ impl ConflictExceptionReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "SimultaneousZonalShiftsConflict",
-            "ZonalShiftAlreadyExists",
-            "ZonalShiftStatusNotActive",
-        ]
+        &["SimultaneousZonalShiftsConflict", "ZonalShiftAlreadyExists", "ZonalShiftStatusNotActive"]
     }
 }
 impl ::std::convert::AsRef<str> for ConflictExceptionReason {

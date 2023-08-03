@@ -12,10 +12,7 @@ pub fn ser_h265_color_space_settings(
     if let Some(var_3) = &input.dolby_vision81_settings {
         #[allow(unused_mut)]
         let mut object_4 = object.key("dolbyVision81Settings").start_object();
-        crate::protocol_serde::shape_dolby_vision81_settings::ser_dolby_vision81_settings(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_dolby_vision81_settings::ser_dolby_vision81_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.hdr10_settings {
@@ -41,17 +38,9 @@ pub fn ser_h265_color_space_settings(
 
 pub(crate) fn de_h265_color_space_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::H265ColorSpaceSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::H265ColorSpaceSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -61,53 +50,40 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "colorSpacePassthroughSettings" => {
-                                builder = builder.set_color_space_passthrough_settings(
-                                    crate::protocol_serde::shape_color_space_passthrough_settings::de_color_space_passthrough_settings(tokens)?
-                                );
-                            }
-                            "dolbyVision81Settings" => {
-                                builder = builder.set_dolby_vision81_settings(
-                                    crate::protocol_serde::shape_dolby_vision81_settings::de_dolby_vision81_settings(tokens)?
-                                );
-                            }
-                            "hdr10Settings" => {
-                                builder = builder.set_hdr10_settings(
-                                    crate::protocol_serde::shape_hdr10_settings::de_hdr10_settings(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "rec601Settings" => {
-                                builder = builder.set_rec601_settings(
-                                    crate::protocol_serde::shape_rec601_settings::de_rec601_settings(tokens)?
-                                );
-                            }
-                            "rec709Settings" => {
-                                builder = builder.set_rec709_settings(
-                                    crate::protocol_serde::shape_rec709_settings::de_rec709_settings(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "colorSpacePassthroughSettings" => {
+                            builder = builder.set_color_space_passthrough_settings(
+                                crate::protocol_serde::shape_color_space_passthrough_settings::de_color_space_passthrough_settings(tokens)?,
+                            );
                         }
-                    }
+                        "dolbyVision81Settings" => {
+                            builder = builder.set_dolby_vision81_settings(
+                                crate::protocol_serde::shape_dolby_vision81_settings::de_dolby_vision81_settings(tokens)?,
+                            );
+                        }
+                        "hdr10Settings" => {
+                            builder = builder.set_hdr10_settings(crate::protocol_serde::shape_hdr10_settings::de_hdr10_settings(tokens)?);
+                        }
+                        "rec601Settings" => {
+                            builder = builder.set_rec601_settings(crate::protocol_serde::shape_rec601_settings::de_rec601_settings(tokens)?);
+                        }
+                        "rec709Settings" => {
+                            builder = builder.set_rec709_settings(crate::protocol_serde::shape_rec709_settings::de_rec709_settings(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

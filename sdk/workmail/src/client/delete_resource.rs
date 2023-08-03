@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::set_resource_id): <p>The identifier of the resource to be deleted.</p>
     /// - On success, responds with [`DeleteResourceOutput`](crate::operation::delete_resource::DeleteResourceOutput)
     /// - On failure, responds with [`SdkError<DeleteResourceError>`](crate::operation::delete_resource::DeleteResourceError)
-    pub fn delete_resource(
-        &self,
-    ) -> crate::operation::delete_resource::builders::DeleteResourceFluentBuilder {
-        crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_resource(&self) -> crate::operation::delete_resource::builders::DeleteResourceFluentBuilder {
+        crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::new(self.handle.clone())
     }
 }

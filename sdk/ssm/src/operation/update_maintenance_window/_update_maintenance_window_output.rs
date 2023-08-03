@@ -104,10 +104,7 @@ impl ::std::fmt::Debug for UpdateMaintenanceWindowOutput {
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("duration", &self.duration);
         formatter.field("cutoff", &self.cutoff);
-        formatter.field(
-            "allow_unassociated_targets",
-            &self.allow_unassociated_targets,
-        );
+        formatter.field("allow_unassociated_targets", &self.allow_unassociated_targets);
         formatter.field("enabled", &self.enabled);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -120,9 +117,7 @@ impl ::aws_http::request_id::RequestId for UpdateMaintenanceWindowOutput {
 }
 impl UpdateMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenanceWindowOutput`](crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput).
-    pub fn builder(
-    ) -> crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowOutputBuilder {
         crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowOutputBuilder::default()
     }
 }
@@ -231,18 +226,12 @@ impl UpdateMaintenanceWindowOutputBuilder {
         &self.schedule
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn schedule_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn set_schedule_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_timezone = input;
         self
     }
@@ -330,9 +319,7 @@ impl UpdateMaintenanceWindowOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateMaintenanceWindowOutput`](crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput {
+    pub fn build(self) -> crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput {
         crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput {
             window_id: self.window_id,
             name: self.name,
@@ -363,10 +350,7 @@ impl ::std::fmt::Debug for UpdateMaintenanceWindowOutputBuilder {
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("duration", &self.duration);
         formatter.field("cutoff", &self.cutoff);
-        formatter.field(
-            "allow_unassociated_targets",
-            &self.allow_unassociated_targets,
-        );
+        formatter.field("allow_unassociated_targets", &self.allow_unassociated_targets);
         formatter.field("enabled", &self.enabled);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

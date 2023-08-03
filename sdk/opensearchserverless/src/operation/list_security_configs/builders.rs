@@ -37,9 +37,7 @@ impl ListSecurityConfigsFluentBuilder {
         }
     }
     /// Access the ListSecurityConfigs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_security_configs::builders::ListSecurityConfigsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_security_configs::builders::ListSecurityConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListSecurityConfigsFluentBuilder {
             crate::operation::list_security_configs::ListSecurityConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_configs::ListSecurityConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_configs::ListSecurityConfigsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListSecurityConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListSecurityConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_security_configs::ListSecurityConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_configs::ListSecurityConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_configs::ListSecurityConfigsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListSecurityConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_security_configs::ListSecurityConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_configs::ListSecurityConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_configs::ListSecurityConfigsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListSecurityConfigsFluentBuilder {
             crate::operation::list_security_configs::ListSecurityConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_configs::ListSecurityConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_configs::ListSecurityConfigsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_security_configs::paginator::ListSecurityConfigsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_security_configs::paginator::ListSecurityConfigsPaginator {
-        crate::operation::list_security_configs::paginator::ListSecurityConfigsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_security_configs::paginator::ListSecurityConfigsPaginator {
+        crate::operation::list_security_configs::paginator::ListSecurityConfigsPaginator::new(self.handle, self.inner)
     }
     /// <p>The type of security configuration.</p>
     pub fn r#type(mut self, input: crate::types::SecurityConfigType) -> Self {
@@ -139,10 +121,7 @@ impl ListSecurityConfigsFluentBuilder {
         self
     }
     /// <p>The type of security configuration.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityConfigType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityConfigType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

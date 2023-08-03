@@ -24,36 +24,26 @@ impl UpdateVtlDeviceTypeInput {
 }
 impl UpdateVtlDeviceTypeInput {
     /// Creates a new builder-style object to manufacture [`UpdateVtlDeviceTypeInput`](crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput).
-    pub fn builder(
-    ) -> crate::operation::update_vtl_device_type::builders::UpdateVtlDeviceTypeInputBuilder {
-        crate::operation::update_vtl_device_type::builders::UpdateVtlDeviceTypeInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_vtl_device_type::builders::UpdateVtlDeviceTypeInputBuilder {
+        crate::operation::update_vtl_device_type::builders::UpdateVtlDeviceTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVtlDeviceTypeInput`](crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVtlDeviceTypeInputBuilder {
     pub(crate) vtl_device_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_type: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVtlDeviceTypeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the medium changer you want to select.</p>
-    pub fn vtl_device_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vtl_device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vtl_device_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the medium changer you want to select.</p>
-    pub fn set_vtl_device_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vtl_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vtl_device_arn = input;
         self
     }
@@ -81,15 +71,11 @@ impl UpdateVtlDeviceTypeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVtlDeviceTypeInput`](crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput {
-                vtl_device_arn: self.vtl_device_arn,
-                device_type: self.device_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput {
+            vtl_device_arn: self.vtl_device_arn,
+            device_type: self.device_type,
+        })
     }
 }

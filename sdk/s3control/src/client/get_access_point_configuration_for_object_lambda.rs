@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaOutput) with field(s):
     ///   - [`configuration(Option<ObjectLambdaConfiguration>)`](crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaOutput::configuration): <p>Object Lambda Access Point configuration document.</p>
     /// - On failure, responds with [`SdkError<GetAccessPointConfigurationForObjectLambdaError>`](crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaError)
-    pub fn get_access_point_configuration_for_object_lambda(&self) -> crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaFluentBuilder{
-        crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaFluentBuilder::new(self.handle.clone())
+    pub fn get_access_point_configuration_for_object_lambda(
+        &self,
+    ) -> crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaFluentBuilder {
+        crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

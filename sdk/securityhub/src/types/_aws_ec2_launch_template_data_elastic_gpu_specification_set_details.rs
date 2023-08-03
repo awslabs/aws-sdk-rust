@@ -16,18 +16,14 @@ impl AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
 }
 impl AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
@@ -48,8 +44,6 @@ impl AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
-        crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
-            r#type: self.r#type,
-        }
+        crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails { r#type: self.r#type }
     }
 }

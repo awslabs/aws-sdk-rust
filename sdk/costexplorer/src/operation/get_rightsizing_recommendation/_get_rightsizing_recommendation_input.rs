@@ -97,9 +97,7 @@ impl GetRightsizingRecommendationInput {
         self.filter.as_ref()
     }
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
-    pub fn configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RightsizingRecommendationConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::RightsizingRecommendationConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
@@ -117,20 +115,17 @@ impl GetRightsizingRecommendationInput {
 }
 impl GetRightsizingRecommendationInput {
     /// Creates a new builder-style object to manufacture [`GetRightsizingRecommendationInput`](crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationInput).
-    pub fn builder() -> crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationInputBuilder{
+    pub fn builder() -> crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationInputBuilder {
         crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRightsizingRecommendationInput`](crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRightsizingRecommendationInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::Expression>,
-    pub(crate) configuration:
-        ::std::option::Option<crate::types::RightsizingRecommendationConfiguration>,
+    pub(crate) configuration: ::std::option::Option<crate::types::RightsizingRecommendationConfiguration>,
     pub(crate) service: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -259,25 +254,17 @@ impl GetRightsizingRecommendationInputBuilder {
         &self.filter
     }
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
-    pub fn configuration(
-        mut self,
-        input: crate::types::RightsizingRecommendationConfiguration,
-    ) -> Self {
+    pub fn configuration(mut self, input: crate::types::RightsizingRecommendationConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RightsizingRecommendationConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RightsizingRecommendationConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RightsizingRecommendationConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RightsizingRecommendationConfiguration> {
         &self.configuration
     }
     /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
@@ -309,18 +296,12 @@ impl GetRightsizingRecommendationInputBuilder {
         &self.page_size
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -335,14 +316,12 @@ impl GetRightsizingRecommendationInputBuilder {
         crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationInput {
-                filter: self.filter,
-                configuration: self.configuration,
-                service: self.service,
-                page_size: self.page_size,
-                next_page_token: self.next_page_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationInput {
+            filter: self.filter,
+            configuration: self.configuration,
+            service: self.service,
+            page_size: self.page_size,
+            next_page_token: self.next_page_token,
+        })
     }
 }

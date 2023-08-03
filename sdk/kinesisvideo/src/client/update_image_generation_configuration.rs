@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`image_generation_configuration(ImageGenerationConfiguration)`](crate::operation::update_image_generation_configuration::builders::UpdateImageGenerationConfigurationFluentBuilder::image_generation_configuration) / [`set_image_generation_configuration(Option<ImageGenerationConfiguration>)`](crate::operation::update_image_generation_configuration::builders::UpdateImageGenerationConfigurationFluentBuilder::set_image_generation_configuration): <p>The structure that contains the information required for the KVS images delivery. If the structure is null, the configuration will be deleted from the stream.</p>
     /// - On success, responds with [`UpdateImageGenerationConfigurationOutput`](crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateImageGenerationConfigurationError>`](crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationError)
-    pub fn update_image_generation_configuration(&self) -> crate::operation::update_image_generation_configuration::builders::UpdateImageGenerationConfigurationFluentBuilder{
+    pub fn update_image_generation_configuration(
+        &self,
+    ) -> crate::operation::update_image_generation_configuration::builders::UpdateImageGenerationConfigurationFluentBuilder {
         crate::operation::update_image_generation_configuration::builders::UpdateImageGenerationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

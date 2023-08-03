@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ListDomainItem>>)`](crate::operation::list_domains::ListDomainsOutput::items): <p>The list of ListDomains instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domains::ListDomainsOutput::next_token): <p>The pagination token from the previous ListDomains API call.</p>
     /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
-    pub fn list_domains(
-        &self,
-    ) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
+    pub fn list_domains(&self) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
         crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
     }
 }

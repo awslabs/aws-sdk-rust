@@ -10,10 +10,7 @@ impl UpdateBrokerCountInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_broker_count::UpdateBrokerCountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_broker_count::UpdateBrokerCountError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_broker_count::UpdateBrokerCountError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_broker_count();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateBrokerCountFluentBuilder {
         }
     }
     /// Access the UpdateBrokerCount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_broker_count::builders::UpdateBrokerCountInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_broker_count::builders::UpdateBrokerCountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateBrokerCountFluentBuilder {
             crate::operation::update_broker_count::UpdateBrokerCount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_broker_count::UpdateBrokerCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_broker_count::UpdateBrokerCountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateBrokerCountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateBrokerCountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_broker_count::UpdateBrokerCountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_broker_count::UpdateBrokerCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_broker_count::UpdateBrokerCountError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateBrokerCountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_broker_count::UpdateBrokerCountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_broker_count::UpdateBrokerCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_broker_count::UpdateBrokerCountError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateBrokerCountFluentBuilder {
             crate::operation::update_broker_count::UpdateBrokerCount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_broker_count::UpdateBrokerCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_broker_count::UpdateBrokerCountError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl UpdateBrokerCountFluentBuilder {
         self.inner.get_cluster_arn()
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }

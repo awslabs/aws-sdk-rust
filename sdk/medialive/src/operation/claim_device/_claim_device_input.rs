@@ -23,9 +23,7 @@ impl ClaimDeviceInput {
 
 /// A builder for [`ClaimDeviceInput`](crate::operation::claim_device::ClaimDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClaimDeviceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,7 @@ impl ClaimDeviceInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`ClaimDeviceInput`](crate::operation::claim_device::ClaimDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::claim_device::ClaimDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::claim_device::ClaimDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::claim_device::ClaimDeviceInput { id: self.id })
     }
 }

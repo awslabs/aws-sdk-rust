@@ -10,10 +10,7 @@ impl AssociateResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_resource::AssociateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resource::AssociateResourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resource::AssociateResourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_resource();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AssociateResourceFluentBuilder {
         }
     }
     /// Access the AssociateResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_resource::builders::AssociateResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_resource::builders::AssociateResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AssociateResourceFluentBuilder {
             crate::operation::associate_resource::AssociateResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resource::AssociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resource::AssociateResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AssociateResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AssociateResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_resource::AssociateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resource::AssociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resource::AssociateResourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AssociateResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_resource::AssociateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resource::AssociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resource::AssociateResourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl AssociateResourceFluentBuilder {
             crate::operation::associate_resource::AssociateResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resource::AssociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resource::AssociateResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl AssociateResourceFluentBuilder {
         self
     }
     /// <p>The type of resource of which the application will be associated.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

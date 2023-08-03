@@ -22,9 +22,7 @@ impl DeleteAccessorInput {
 
 /// A builder for [`DeleteAccessorInput`](crate::operation::delete_accessor::DeleteAccessorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessorInputBuilder {
     pub(crate) accessor_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteAccessorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccessorInput`](crate::operation::delete_accessor::DeleteAccessorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_accessor::DeleteAccessorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_accessor::DeleteAccessorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_accessor::DeleteAccessorInput {
             accessor_id: self.accessor_id,
         })

@@ -10,10 +10,7 @@ impl UpdateNfsFileShareInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_nfs_file_share::UpdateNfsFileShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_nfs_file_share::UpdateNFSFileShareError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_nfs_file_share::UpdateNFSFileShareError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_nfs_file_share();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl UpdateNFSFileShareFluentBuilder {
         }
     }
     /// Access the UpdateNFSFileShare as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_nfs_file_share::builders::UpdateNfsFileShareInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_nfs_file_share::builders::UpdateNfsFileShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl UpdateNFSFileShareFluentBuilder {
             crate::operation::update_nfs_file_share::UpdateNFSFileShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_nfs_file_share::UpdateNFSFileShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_nfs_file_share::UpdateNFSFileShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl UpdateNFSFileShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl UpdateNFSFileShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_nfs_file_share::UpdateNfsFileShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_nfs_file_share::UpdateNFSFileShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_nfs_file_share::UpdateNFSFileShareError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl UpdateNFSFileShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_nfs_file_share::UpdateNfsFileShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_nfs_file_share::UpdateNFSFileShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_nfs_file_share::UpdateNFSFileShareError>,
     > {
         self.send_middleware().await
     }
@@ -126,25 +112,17 @@ impl UpdateNFSFileShareFluentBuilder {
             crate::operation::update_nfs_file_share::UpdateNFSFileShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_nfs_file_share::UpdateNFSFileShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_nfs_file_share::UpdateNFSFileShareError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the file share to be updated.</p>
-    pub fn file_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_share_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file share to be updated.</p>
-    pub fn set_file_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_share_arn(input);
         self
     }
@@ -189,34 +167,23 @@ impl UpdateNFSFileShareFluentBuilder {
         self
     }
     /// <p>The default values for the file share. Optional.</p>
-    pub fn set_nfs_file_share_defaults(
-        mut self,
-        input: ::std::option::Option<crate::types::NfsFileShareDefaults>,
-    ) -> Self {
+    pub fn set_nfs_file_share_defaults(mut self, input: ::std::option::Option<crate::types::NfsFileShareDefaults>) -> Self {
         self.inner = self.inner.set_nfs_file_share_defaults(input);
         self
     }
     /// <p>The default values for the file share. Optional.</p>
-    pub fn get_nfs_file_share_defaults(
-        &self,
-    ) -> &::std::option::Option<crate::types::NfsFileShareDefaults> {
+    pub fn get_nfs_file_share_defaults(&self) -> &::std::option::Option<crate::types::NfsFileShareDefaults> {
         self.inner.get_nfs_file_share_defaults()
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    pub fn default_storage_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_storage_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_storage_class(input.into());
         self
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    pub fn set_default_storage_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_storage_class(input);
         self
     }
@@ -249,17 +216,12 @@ impl UpdateNFSFileShareFluentBuilder {
         self
     }
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    pub fn set_client_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_client_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_client_list(input);
         self
     }
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    pub fn get_client_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_client_list()
     }
     /// <p>The user mapped to anonymous user.</p>
@@ -354,20 +316,14 @@ impl UpdateNFSFileShareFluentBuilder {
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    pub fn file_share_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_share_name(input.into());
         self
     }
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    pub fn set_file_share_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_share_name(input);
         self
     }
@@ -383,10 +339,7 @@ impl UpdateNFSFileShareFluentBuilder {
         self
     }
     /// <p>Specifies refresh cache information for the file share.</p>
-    pub fn set_cache_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheAttributes>,
-    ) -> Self {
+    pub fn set_cache_attributes(mut self, input: ::std::option::Option<crate::types::CacheAttributes>) -> Self {
         self.inner = self.inner.set_cache_attributes(input);
         self
     }
@@ -401,10 +354,7 @@ impl UpdateNFSFileShareFluentBuilder {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
-    pub fn notification_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_policy(input.into());
         self
     }
@@ -415,10 +365,7 @@ impl UpdateNFSFileShareFluentBuilder {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
-    pub fn set_notification_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_policy(input);
         self
     }
@@ -433,18 +380,12 @@ impl UpdateNFSFileShareFluentBuilder {
         self.inner.get_notification_policy()
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    pub fn audit_destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.audit_destination_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    pub fn set_audit_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_audit_destination_arn(input);
         self
     }

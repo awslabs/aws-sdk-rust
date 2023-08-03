@@ -30,9 +30,7 @@ impl SubnetMapping {
 
 /// A builder for [`SubnetMapping`](crate::types::SubnetMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubnetMappingBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
@@ -58,10 +56,7 @@ impl SubnetMappingBuilder {
         self
     }
     /// <p>The subnet's IP address type. You can't change the IP address type after you create the subnet.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }

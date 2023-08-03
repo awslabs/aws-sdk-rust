@@ -10,10 +10,7 @@ impl UpdateConfigurationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_configuration::UpdateConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_configuration::UpdateConfigurationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_configuration::UpdateConfigurationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_configuration();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateConfigurationFluentBuilder {
             crate::operation::update_configuration::UpdateConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_configuration::UpdateConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_configuration::UpdateConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_configuration::UpdateConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_configuration::UpdateConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_configuration::UpdateConfigurationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_configuration::UpdateConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_configuration::UpdateConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_configuration::UpdateConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateConfigurationFluentBuilder {
             crate::operation::update_configuration::UpdateConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_configuration::UpdateConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_configuration::UpdateConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -164,10 +148,7 @@ impl UpdateConfigurationFluentBuilder {
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
-    pub fn set_server_properties(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_server_properties(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_server_properties(input);
         self
     }

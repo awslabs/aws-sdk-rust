@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDetectorModelOutput`](crate::operation::create_detector_model::CreateDetectorModelOutput) with field(s):
     ///   - [`detector_model_configuration(Option<DetectorModelConfiguration>)`](crate::operation::create_detector_model::CreateDetectorModelOutput::detector_model_configuration): <p>Information about how the detector model is configured.</p>
     /// - On failure, responds with [`SdkError<CreateDetectorModelError>`](crate::operation::create_detector_model::CreateDetectorModelError)
-    pub fn create_detector_model(
-        &self,
-    ) -> crate::operation::create_detector_model::builders::CreateDetectorModelFluentBuilder {
-        crate::operation::create_detector_model::builders::CreateDetectorModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_detector_model(&self) -> crate::operation::create_detector_model::builders::CreateDetectorModelFluentBuilder {
+        crate::operation::create_detector_model::builders::CreateDetectorModelFluentBuilder::new(self.handle.clone())
     }
 }

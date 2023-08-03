@@ -16,34 +16,25 @@ impl MultiplexMediaConnectOutputDestinationSettings {
 }
 impl MultiplexMediaConnectOutputDestinationSettings {
     /// Creates a new builder-style object to manufacture [`MultiplexMediaConnectOutputDestinationSettings`](crate::types::MultiplexMediaConnectOutputDestinationSettings).
-    pub fn builder() -> crate::types::builders::MultiplexMediaConnectOutputDestinationSettingsBuilder
-    {
+    pub fn builder() -> crate::types::builders::MultiplexMediaConnectOutputDestinationSettingsBuilder {
         crate::types::builders::MultiplexMediaConnectOutputDestinationSettingsBuilder::default()
     }
 }
 
 /// A builder for [`MultiplexMediaConnectOutputDestinationSettings`](crate::types::MultiplexMediaConnectOutputDestinationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiplexMediaConnectOutputDestinationSettingsBuilder {
     pub(crate) entitlement_arn: ::std::option::Option<::std::string::String>,
 }
 impl MultiplexMediaConnectOutputDestinationSettingsBuilder {
     /// The MediaConnect entitlement ARN available as a Flow source.
-    pub fn entitlement_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entitlement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entitlement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The MediaConnect entitlement ARN available as a Flow source.
-    pub fn set_entitlement_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entitlement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entitlement_arn = input;
         self
     }

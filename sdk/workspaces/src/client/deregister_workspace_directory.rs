@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`directory_id(impl ::std::convert::Into<String>)`](crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryFluentBuilder::set_directory_id): <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
     /// - On success, responds with [`DeregisterWorkspaceDirectoryOutput`](crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryOutput)
     /// - On failure, responds with [`SdkError<DeregisterWorkspaceDirectoryError>`](crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryError)
-    pub fn deregister_workspace_directory(&self) -> crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryFluentBuilder{
+    pub fn deregister_workspace_directory(
+        &self,
+    ) -> crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryFluentBuilder {
         crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryFluentBuilder::new(self.handle.clone())
     }
 }

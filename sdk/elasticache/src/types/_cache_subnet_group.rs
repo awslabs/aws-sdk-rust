@@ -62,32 +62,23 @@ impl CacheSubnetGroup {
 
 /// A builder for [`CacheSubnetGroup`](crate::types::CacheSubnetGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CacheSubnetGroupBuilder {
     pub(crate) cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cache_subnet_group_description: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_network_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>,
+    pub(crate) supported_network_types: ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>,
 }
 impl CacheSubnetGroupBuilder {
     /// <p>The name of the cache subnet group.</p>
-    pub fn cache_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache subnet group.</p>
-    pub fn set_cache_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_subnet_group_name = input;
         self
     }
@@ -96,25 +87,17 @@ impl CacheSubnetGroupBuilder {
         &self.cache_subnet_group_name
     }
     /// <p>The description of the cache subnet group.</p>
-    pub fn cache_subnet_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_subnet_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_subnet_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the cache subnet group.</p>
-    pub fn set_cache_subnet_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_subnet_group_description = input;
         self
     }
     /// <p>The description of the cache subnet group.</p>
-    pub fn get_cache_subnet_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cache_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_subnet_group_description
     }
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
@@ -143,10 +126,7 @@ impl CacheSubnetGroupBuilder {
         self
     }
     /// <p>A list of subnets associated with the cache subnet group.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>) -> Self {
         self.subnets = input;
         self
     }
@@ -180,17 +160,12 @@ impl CacheSubnetGroupBuilder {
         self
     }
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub fn set_supported_network_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>,
-    ) -> Self {
+    pub fn set_supported_network_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>) -> Self {
         self.supported_network_types = input;
         self
     }
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub fn get_supported_network_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkType>> {
+    pub fn get_supported_network_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkType>> {
         &self.supported_network_types
     }
     /// Consumes the builder and constructs a [`CacheSubnetGroup`](crate::types::CacheSubnetGroup).

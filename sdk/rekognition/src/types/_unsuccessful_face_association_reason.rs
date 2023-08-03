@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UnsuccessfulFaceAssociationReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,14 +54,10 @@ pub enum UnsuccessfulFaceAssociationReason {
 impl ::std::convert::From<&str> for UnsuccessfulFaceAssociationReason {
     fn from(s: &str) -> Self {
         match s {
-            "ASSOCIATED_TO_A_DIFFERENT_USER" => {
-                UnsuccessfulFaceAssociationReason::AssociatedToADifferentUser
-            }
+            "ASSOCIATED_TO_A_DIFFERENT_USER" => UnsuccessfulFaceAssociationReason::AssociatedToADifferentUser,
             "FACE_NOT_FOUND" => UnsuccessfulFaceAssociationReason::FaceNotFound,
             "LOW_MATCH_CONFIDENCE" => UnsuccessfulFaceAssociationReason::LowMatchConfidence,
-            other => UnsuccessfulFaceAssociationReason::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => UnsuccessfulFaceAssociationReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -82,9 +72,7 @@ impl UnsuccessfulFaceAssociationReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            UnsuccessfulFaceAssociationReason::AssociatedToADifferentUser => {
-                "ASSOCIATED_TO_A_DIFFERENT_USER"
-            }
+            UnsuccessfulFaceAssociationReason::AssociatedToADifferentUser => "ASSOCIATED_TO_A_DIFFERENT_USER",
             UnsuccessfulFaceAssociationReason::FaceNotFound => "FACE_NOT_FOUND",
             UnsuccessfulFaceAssociationReason::LowMatchConfidence => "LOW_MATCH_CONFIDENCE",
             UnsuccessfulFaceAssociationReason::Unknown(value) => value.as_str(),
@@ -92,11 +80,7 @@ impl UnsuccessfulFaceAssociationReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSOCIATED_TO_A_DIFFERENT_USER",
-            "FACE_NOT_FOUND",
-            "LOW_MATCH_CONFIDENCE",
-        ]
+        &["ASSOCIATED_TO_A_DIFFERENT_USER", "FACE_NOT_FOUND", "LOW_MATCH_CONFIDENCE"]
     }
 }
 impl ::std::convert::AsRef<str> for UnsuccessfulFaceAssociationReason {

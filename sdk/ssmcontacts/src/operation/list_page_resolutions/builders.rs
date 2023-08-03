@@ -37,9 +37,7 @@ impl ListPageResolutionsFluentBuilder {
         }
     }
     /// Access the ListPageResolutions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_page_resolutions::builders::ListPageResolutionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_page_resolutions::builders::ListPageResolutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListPageResolutionsFluentBuilder {
             crate::operation::list_page_resolutions::ListPageResolutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_page_resolutions::ListPageResolutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_page_resolutions::ListPageResolutionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListPageResolutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListPageResolutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_page_resolutions::ListPageResolutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_page_resolutions::ListPageResolutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_page_resolutions::ListPageResolutionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListPageResolutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_page_resolutions::ListPageResolutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_page_resolutions::ListPageResolutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_page_resolutions::ListPageResolutionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListPageResolutionsFluentBuilder {
             crate::operation::list_page_resolutions::ListPageResolutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_page_resolutions::ListPageResolutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_page_resolutions::ListPageResolutionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_page_resolutions::paginator::ListPageResolutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_page_resolutions::paginator::ListPageResolutionsPaginator {
-        crate::operation::list_page_resolutions::paginator::ListPageResolutionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_page_resolutions::paginator::ListPageResolutionsPaginator {
+        crate::operation::list_page_resolutions::paginator::ListPageResolutionsPaginator::new(self.handle, self.inner)
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

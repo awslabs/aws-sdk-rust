@@ -30,9 +30,7 @@ impl UserSetting {
 
 /// A builder for [`UserSetting`](crate::types::UserSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserSettingBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) permission: ::std::option::Option<crate::types::Permission>,
@@ -58,10 +56,7 @@ impl UserSettingBuilder {
         self
     }
     /// <p>Indicates whether the action is enabled or disabled.</p>
-    pub fn set_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::Permission>,
-    ) -> Self {
+    pub fn set_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
         self.permission = input;
         self
     }

@@ -22,17 +22,14 @@ impl ListPermissionGroupsInput {
 }
 impl ListPermissionGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListPermissionGroupsInput`](crate::operation::list_permission_groups::ListPermissionGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_permission_groups::builders::ListPermissionGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_permission_groups::builders::ListPermissionGroupsInputBuilder {
         crate::operation::list_permission_groups::builders::ListPermissionGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPermissionGroupsInput`](crate::operation::list_permission_groups::ListPermissionGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,15 +66,11 @@ impl ListPermissionGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListPermissionGroupsInput`](crate::operation::list_permission_groups::ListPermissionGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_permission_groups::ListPermissionGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_permission_groups::ListPermissionGroupsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_permission_groups::ListPermissionGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_permission_groups::ListPermissionGroupsInput {
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+        })
     }
 }

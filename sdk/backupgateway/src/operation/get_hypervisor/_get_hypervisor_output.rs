@@ -28,9 +28,7 @@ impl GetHypervisorOutput {
 
 /// A builder for [`GetHypervisorOutput`](crate::operation::get_hypervisor::GetHypervisorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHypervisorOutputBuilder {
     pub(crate) hypervisor: ::std::option::Option<crate::types::HypervisorDetails>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetHypervisorOutputBuilder {
         self
     }
     /// <p>Details about the requested hypervisor.</p>
-    pub fn set_hypervisor(
-        mut self,
-        input: ::std::option::Option<crate::types::HypervisorDetails>,
-    ) -> Self {
+    pub fn set_hypervisor(mut self, input: ::std::option::Option<crate::types::HypervisorDetails>) -> Self {
         self.hypervisor = input;
         self
     }

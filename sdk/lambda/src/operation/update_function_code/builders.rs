@@ -10,10 +10,7 @@ impl UpdateFunctionCodeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_function_code::UpdateFunctionCodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_function_code::UpdateFunctionCodeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_function_code::UpdateFunctionCodeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_function_code();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl UpdateFunctionCodeFluentBuilder {
         }
     }
     /// Access the UpdateFunctionCode as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_function_code::builders::UpdateFunctionCodeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_function_code::builders::UpdateFunctionCodeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl UpdateFunctionCodeFluentBuilder {
             crate::operation::update_function_code::UpdateFunctionCode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_function_code::UpdateFunctionCodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_function_code::UpdateFunctionCodeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl UpdateFunctionCodeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl UpdateFunctionCodeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_function_code::UpdateFunctionCodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_function_code::UpdateFunctionCodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_function_code::UpdateFunctionCodeError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl UpdateFunctionCodeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_function_code::UpdateFunctionCodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_function_code::UpdateFunctionCodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_function_code::UpdateFunctionCodeError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +108,7 @@ impl UpdateFunctionCodeFluentBuilder {
             crate::operation::update_function_code::UpdateFunctionCode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_function_code::UpdateFunctionCodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_function_code::UpdateFunctionCodeError>,
     > {
         self.customize_middleware().await
     }
@@ -136,10 +120,7 @@ impl UpdateFunctionCodeFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -151,10 +132,7 @@ impl UpdateFunctionCodeFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }
@@ -212,18 +190,12 @@ impl UpdateFunctionCodeFluentBuilder {
         self.inner.get_s3_key()
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
-    pub fn s3_object_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_object_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_object_version(input.into());
         self
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
-    pub fn set_s3_object_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_object_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_object_version(input);
         self
     }
@@ -297,17 +269,12 @@ impl UpdateFunctionCodeFluentBuilder {
         self
     }
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn set_architectures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
-    ) -> Self {
+    pub fn set_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>) -> Self {
         self.inner = self.inner.set_architectures(input);
         self
     }
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn get_architectures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
+    pub fn get_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
         self.inner.get_architectures()
     }
 }

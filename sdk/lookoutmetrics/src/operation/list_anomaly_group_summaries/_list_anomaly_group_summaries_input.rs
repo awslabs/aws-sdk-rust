@@ -36,16 +36,14 @@ impl ListAnomalyGroupSummariesInput {
 }
 impl ListAnomalyGroupSummariesInput {
     /// Creates a new builder-style object to manufacture [`ListAnomalyGroupSummariesInput`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesInput).
-    pub fn builder() -> crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesInputBuilder{
+    pub fn builder() -> crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesInputBuilder {
         crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAnomalyGroupSummariesInput`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnomalyGroupSummariesInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sensitivity_threshold: ::std::option::Option<i32>,
@@ -54,18 +52,12 @@ pub struct ListAnomalyGroupSummariesInputBuilder {
 }
 impl ListAnomalyGroupSummariesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_detector_arn = input;
         self
     }
@@ -122,13 +114,11 @@ impl ListAnomalyGroupSummariesInputBuilder {
         crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesInput {
-                anomaly_detector_arn: self.anomaly_detector_arn,
-                sensitivity_threshold: self.sensitivity_threshold.unwrap_or_default(),
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesInput {
+            anomaly_detector_arn: self.anomaly_detector_arn,
+            sensitivity_threshold: self.sensitivity_threshold.unwrap_or_default(),
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

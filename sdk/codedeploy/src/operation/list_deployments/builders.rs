@@ -10,10 +10,7 @@ impl ListDeploymentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_deployments::ListDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_deployments();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDeploymentsFluentBuilder {
         }
     }
     /// Access the ListDeployments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_deployments::builders::ListDeploymentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_deployments::builders::ListDeploymentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListDeploymentsFluentBuilder {
             crate::operation::list_deployments::ListDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListDeploymentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployments::ListDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployments::ListDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,40 +102,27 @@ impl ListDeploymentsFluentBuilder {
             crate::operation::list_deployments::ListDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_deployments::paginator::ListDeploymentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
-        crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
+        crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -162,20 +135,14 @@ impl ListDeploymentsFluentBuilder {
     /// <p>The name of a deployment group for the specified application.</p> <note>
     /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
     /// </note>
-    pub fn deployment_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_group_name(input.into());
         self
     }
     /// <p>The name of a deployment group for the specified application.</p> <note>
     /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
     /// </note>
-    pub fn set_deployment_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_group_name(input);
         self
     }
@@ -225,10 +192,7 @@ impl ListDeploymentsFluentBuilder {
     /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
     /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
-    pub fn set_include_only_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>,
-    ) -> Self {
+    pub fn set_include_only_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>) -> Self {
         self.inner = self.inner.set_include_only_statuses(input);
         self
     }
@@ -241,9 +205,7 @@ impl ListDeploymentsFluentBuilder {
     /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
     /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
-    pub fn get_include_only_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>> {
+    pub fn get_include_only_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>> {
         self.inner.get_include_only_statuses()
     }
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
@@ -252,10 +214,7 @@ impl ListDeploymentsFluentBuilder {
         self
     }
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
-    pub fn set_create_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeRange>,
-    ) -> Self {
+    pub fn set_create_time_range(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
         self.inner = self.inner.set_create_time_range(input);
         self
     }

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateResourceOutput`](crate::operation::create_resource::CreateResourceOutput) with field(s):
     ///   - [`progress_event(Option<ProgressEvent>)`](crate::operation::create_resource::CreateResourceOutput::progress_event): <p>Represents the current status of the resource creation request.</p>  <p>After you have initiated a resource creation request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>CreateResource</code>.</p>
     /// - On failure, responds with [`SdkError<CreateResourceError>`](crate::operation::create_resource::CreateResourceError)
-    pub fn create_resource(
-        &self,
-    ) -> crate::operation::create_resource::builders::CreateResourceFluentBuilder {
-        crate::operation::create_resource::builders::CreateResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_resource(&self) -> crate::operation::create_resource::builders::CreateResourceFluentBuilder {
+        crate::operation::create_resource::builders::CreateResourceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`external_id(impl ::std::convert::Into<String>)`](crate::operation::delete_resources_by_external_id::builders::DeleteResourcesByExternalIdFluentBuilder::external_id) / [`set_external_id(Option<String>)`](crate::operation::delete_resources_by_external_id::builders::DeleteResourcesByExternalIdFluentBuilder::set_external_id): <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
     /// - On success, responds with [`DeleteResourcesByExternalIdOutput`](crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdOutput)
     /// - On failure, responds with [`SdkError<DeleteResourcesByExternalIdError>`](crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdError)
-    pub fn delete_resources_by_external_id(&self) -> crate::operation::delete_resources_by_external_id::builders::DeleteResourcesByExternalIdFluentBuilder{
+    pub fn delete_resources_by_external_id(
+        &self,
+    ) -> crate::operation::delete_resources_by_external_id::builders::DeleteResourcesByExternalIdFluentBuilder {
         crate::operation::delete_resources_by_external_id::builders::DeleteResourcesByExternalIdFluentBuilder::new(self.handle.clone())
     }
 }

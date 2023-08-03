@@ -29,18 +29,14 @@ impl ListWorkflowExecutionsInput {
 }
 impl ListWorkflowExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowExecutionsInput`](crate::operation::list_workflow_executions::ListWorkflowExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_workflow_executions::builders::ListWorkflowExecutionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_workflow_executions::builders::ListWorkflowExecutionsInputBuilder {
         crate::operation::list_workflow_executions::builders::ListWorkflowExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkflowExecutionsInput`](crate::operation::list_workflow_executions::ListWorkflowExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowExecutionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -76,18 +72,12 @@ impl ListWorkflowExecutionsInputBuilder {
         &self.next_token
     }
     /// <p>List all workflow runtime instances for the specified image build version resource ARN.</p>
-    pub fn image_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>List all workflow runtime instances for the specified image build version resource ARN.</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
@@ -98,16 +88,12 @@ impl ListWorkflowExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkflowExecutionsInput`](crate::operation::list_workflow_executions::ListWorkflowExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_workflow_executions::ListWorkflowExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_workflow_executions::ListWorkflowExecutionsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                image_build_version_arn: self.image_build_version_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_workflow_executions::ListWorkflowExecutionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_workflow_executions::ListWorkflowExecutionsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            image_build_version_arn: self.image_build_version_arn,
+        })
     }
 }

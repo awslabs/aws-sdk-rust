@@ -13,9 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CopyProductOutput`](crate::operation::copy_product::CopyProductOutput) with field(s):
     ///   - [`copy_product_token(Option<String>)`](crate::operation::copy_product::CopyProductOutput::copy_product_token): <p>The token to use to track the progress of the operation.</p>
     /// - On failure, responds with [`SdkError<CopyProductError>`](crate::operation::copy_product::CopyProductError)
-    pub fn copy_product(
-        &self,
-    ) -> crate::operation::copy_product::builders::CopyProductFluentBuilder {
+    pub fn copy_product(&self) -> crate::operation::copy_product::builders::CopyProductFluentBuilder {
         crate::operation::copy_product::builders::CopyProductFluentBuilder::new(self.handle.clone())
     }
 }

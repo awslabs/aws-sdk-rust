@@ -86,9 +86,7 @@ impl StatementData {
 
 /// A builder for [`StatementData`](crate::types::StatementData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatementDataBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
@@ -135,27 +133,19 @@ impl StatementDataBuilder {
     /// To override the contents of this collection use [`set_query_strings`](Self::set_query_strings).
     ///
     /// <p>One or more SQL statements. Each query string in the array corresponds to one of the queries in a batch query request.</p>
-    pub fn query_strings(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_strings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.query_strings.unwrap_or_default();
         v.push(input.into());
         self.query_strings = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more SQL statements. Each query string in the array corresponds to one of the queries in a batch query request.</p>
-    pub fn set_query_strings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_query_strings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.query_strings = input;
         self
     }
     /// <p>One or more SQL statements. Each query string in the array corresponds to one of the queries in a batch query request.</p>
-    pub fn get_query_strings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_query_strings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.query_strings
     }
     /// <p>The name or Amazon Resource Name (ARN) of the secret that enables access to the database. </p>
@@ -187,18 +177,12 @@ impl StatementDataBuilder {
         &self.status
     }
     /// <p>The name of the SQL statement. </p>
-    pub fn statement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SQL statement. </p>
-    pub fn set_statement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement_name = input;
         self
     }
@@ -212,10 +196,7 @@ impl StatementDataBuilder {
         self
     }
     /// <p>The date and time (UTC) the statement was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -229,10 +210,7 @@ impl StatementDataBuilder {
         self
     }
     /// <p>The date and time (UTC) that the statement metadata was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -252,17 +230,12 @@ impl StatementDataBuilder {
         self
     }
     /// <p>The parameters used in a SQL statement.</p>
-    pub fn set_query_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
-    ) -> Self {
+    pub fn set_query_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>) -> Self {
         self.query_parameters = input;
         self
     }
     /// <p>The parameters used in a SQL statement.</p>
-    pub fn get_query_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
+    pub fn get_query_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
         &self.query_parameters
     }
     /// <p>A value that indicates whether the statement is a batch query request.</p>

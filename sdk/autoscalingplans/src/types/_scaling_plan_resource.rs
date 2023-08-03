@@ -118,34 +118,25 @@ impl ScalingPlanResource {
 
 /// A builder for [`ScalingPlanResource`](crate::types::ScalingPlanResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScalingPlanResourceBuilder {
     pub(crate) scaling_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_plan_version: ::std::option::Option<i64>,
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
-    pub(crate) scaling_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
+    pub(crate) scaling_policies: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
     pub(crate) scaling_status_code: ::std::option::Option<crate::types::ScalingStatusCode>,
     pub(crate) scaling_status_message: ::std::option::Option<::std::string::String>,
 }
 impl ScalingPlanResourceBuilder {
     /// <p>The name of the scaling plan.</p>
-    pub fn scaling_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scaling_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scaling_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scaling plan.</p>
-    pub fn set_scaling_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scaling_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scaling_plan_name = input;
         self
     }
@@ -173,10 +164,7 @@ impl ScalingPlanResourceBuilder {
         self
     }
     /// <p>The namespace of the AWS service.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.service_namespace = input;
         self
     }
@@ -248,10 +236,7 @@ impl ScalingPlanResourceBuilder {
     /// <li> <p> <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p> </li>
     /// <li> <p> <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
         self
     }
@@ -266,9 +251,7 @@ impl ScalingPlanResourceBuilder {
     /// <li> <p> <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p> </li>
     /// <li> <p> <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
     }
     /// Appends an item to `scaling_policies`.
@@ -283,17 +266,12 @@ impl ScalingPlanResourceBuilder {
         self
     }
     /// <p>The scaling policies.</p>
-    pub fn set_scaling_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
-    ) -> Self {
+    pub fn set_scaling_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>) -> Self {
         self.scaling_policies = input;
         self
     }
     /// <p>The scaling policies.</p>
-    pub fn get_scaling_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>> {
+    pub fn get_scaling_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>> {
         &self.scaling_policies
     }
     /// <p>The scaling status of the resource.</p>
@@ -312,10 +290,7 @@ impl ScalingPlanResourceBuilder {
     /// <li> <p> <code>Inactive</code> - The scaling configuration is not active because the scaling plan is being created or the scaling configuration could not be applied. Check the status message for more information.</p> </li>
     /// <li> <p> <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is being created or deleted or the scaling configuration could not be fully applied. Check the status message for more information.</p> </li>
     /// </ul>
-    pub fn set_scaling_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalingStatusCode>,
-    ) -> Self {
+    pub fn set_scaling_status_code(mut self, input: ::std::option::Option<crate::types::ScalingStatusCode>) -> Self {
         self.scaling_status_code = input;
         self
     }
@@ -325,24 +300,16 @@ impl ScalingPlanResourceBuilder {
     /// <li> <p> <code>Inactive</code> - The scaling configuration is not active because the scaling plan is being created or the scaling configuration could not be applied. Check the status message for more information.</p> </li>
     /// <li> <p> <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is being created or deleted or the scaling configuration could not be fully applied. Check the status message for more information.</p> </li>
     /// </ul>
-    pub fn get_scaling_status_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalingStatusCode> {
+    pub fn get_scaling_status_code(&self) -> &::std::option::Option<crate::types::ScalingStatusCode> {
         &self.scaling_status_code
     }
     /// <p>A simple message about the current scaling status of the resource.</p>
-    pub fn scaling_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scaling_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scaling_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A simple message about the current scaling status of the resource.</p>
-    pub fn set_scaling_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scaling_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scaling_status_message = input;
         self
     }

@@ -126,9 +126,7 @@ impl Command {
 
 /// A builder for [`Command`](crate::types::Command).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommandBuilder {
     pub(crate) command_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -171,18 +169,12 @@ impl CommandBuilder {
         &self.instance_id
     }
     /// <p>The command deployment ID.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The command deployment ID.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -205,18 +197,12 @@ impl CommandBuilder {
         &self.created_at
     }
     /// <p>Date and time when the command was acknowledged.</p>
-    pub fn acknowledged_at(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn acknowledged_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acknowledged_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Date and time when the command was acknowledged.</p>
-    pub fn set_acknowledged_at(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_acknowledged_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acknowledged_at = input;
         self
     }

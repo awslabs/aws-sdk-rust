@@ -26,8 +26,7 @@ impl GetPackageVersionAssetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPackageVersionAssetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_package_version_asset::builders::GetPackageVersionAssetInputBuilder,
+    inner: crate::operation::get_package_version_asset::builders::GetPackageVersionAssetInputBuilder,
 }
 impl GetPackageVersionAssetFluentBuilder {
     /// Creates a new `GetPackageVersionAsset`.
@@ -38,10 +37,7 @@ impl GetPackageVersionAssetFluentBuilder {
         }
     }
     /// Access the GetPackageVersionAsset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_package_version_asset::builders::GetPackageVersionAssetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_package_version_asset::builders::GetPackageVersionAssetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetPackageVersionAssetFluentBuilder {
             crate::operation::get_package_version_asset::GetPackageVersionAsset,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_package_version_asset::GetPackageVersionAssetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_package_version_asset::GetPackageVersionAssetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetPackageVersionAssetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetPackageVersionAssetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_package_version_asset::GetPackageVersionAssetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_package_version_asset::GetPackageVersionAssetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_package_version_asset::GetPackageVersionAssetError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetPackageVersionAssetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_package_version_asset::GetPackageVersionAssetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_package_version_asset::GetPackageVersionAssetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_package_version_asset::GetPackageVersionAssetError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetPackageVersionAssetFluentBuilder {
             crate::operation::get_package_version_asset::GetPackageVersionAsset,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_package_version_asset::GetPackageVersionAssetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_package_version_asset::GetPackageVersionAssetError>,
     > {
         self.customize_middleware().await
     }
@@ -227,18 +212,12 @@ impl GetPackageVersionAssetFluentBuilder {
         self.inner.get_package()
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_version(input.into());
         self
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_version(input);
         self
     }
@@ -261,18 +240,12 @@ impl GetPackageVersionAssetFluentBuilder {
         self.inner.get_asset()
     }
     /// <p> The name of the package version revision that contains the requested asset. </p>
-    pub fn package_version_revision(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_version_revision(input.into());
         self
     }
     /// <p> The name of the package version revision that contains the requested asset. </p>
-    pub fn set_package_version_revision(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_version_revision(input);
         self
     }

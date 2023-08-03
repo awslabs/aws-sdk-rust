@@ -51,9 +51,7 @@ impl VirtualServiceData {
 
 /// A builder for [`VirtualServiceData`](crate::types::VirtualServiceData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualServiceDataBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_service_name: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl VirtualServiceDataBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual service.</p>
-    pub fn virtual_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual service.</p>
-    pub fn set_virtual_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_service_name = input;
         self
     }
@@ -102,10 +94,7 @@ impl VirtualServiceDataBuilder {
         self
     }
     /// <p>The specifications of the virtual service.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualServiceSpec>,
-    ) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualServiceSpec>) -> Self {
         self.spec = input;
         self
     }
@@ -119,10 +108,7 @@ impl VirtualServiceDataBuilder {
         self
     }
     /// <p>An object that represents metadata for a resource.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ResourceMetadata>) -> Self {
         self.metadata = input;
         self
     }
@@ -136,10 +122,7 @@ impl VirtualServiceDataBuilder {
         self
     }
     /// <p>The current status of the virtual service.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualServiceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VirtualServiceStatus>) -> Self {
         self.status = input;
         self
     }

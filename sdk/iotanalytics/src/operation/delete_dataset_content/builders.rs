@@ -37,9 +37,7 @@ impl DeleteDatasetContentFluentBuilder {
         }
     }
     /// Access the DeleteDatasetContent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_dataset_content::builders::DeleteDatasetContentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_dataset_content::builders::DeleteDatasetContentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteDatasetContentFluentBuilder {
             crate::operation::delete_dataset_content::DeleteDatasetContent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataset_content::DeleteDatasetContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataset_content::DeleteDatasetContentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteDatasetContentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteDatasetContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dataset_content::DeleteDatasetContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataset_content::DeleteDatasetContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataset_content::DeleteDatasetContentError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteDatasetContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dataset_content::DeleteDatasetContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataset_content::DeleteDatasetContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataset_content::DeleteDatasetContentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteDatasetContentFluentBuilder {
             crate::operation::delete_dataset_content::DeleteDatasetContent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataset_content::DeleteDatasetContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dataset_content::DeleteDatasetContentError>,
     > {
         self.customize_middleware().await
     }

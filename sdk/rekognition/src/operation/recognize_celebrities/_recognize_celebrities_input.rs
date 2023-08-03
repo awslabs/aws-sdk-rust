@@ -17,18 +17,14 @@ impl RecognizeCelebritiesInput {
 }
 impl RecognizeCelebritiesInput {
     /// Creates a new builder-style object to manufacture [`RecognizeCelebritiesInput`](crate::operation::recognize_celebrities::RecognizeCelebritiesInput).
-    pub fn builder(
-    ) -> crate::operation::recognize_celebrities::builders::RecognizeCelebritiesInputBuilder {
-        crate::operation::recognize_celebrities::builders::RecognizeCelebritiesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::recognize_celebrities::builders::RecognizeCelebritiesInputBuilder {
+        crate::operation::recognize_celebrities::builders::RecognizeCelebritiesInputBuilder::default()
     }
 }
 
 /// A builder for [`RecognizeCelebritiesInput`](crate::operation::recognize_celebrities::RecognizeCelebritiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecognizeCelebritiesInputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
 }
@@ -53,14 +49,8 @@ impl RecognizeCelebritiesInputBuilder {
     /// Consumes the builder and constructs a [`RecognizeCelebritiesInput`](crate::operation::recognize_celebrities::RecognizeCelebritiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::recognize_celebrities::RecognizeCelebritiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::recognize_celebrities::RecognizeCelebritiesInput {
-                image: self.image,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::recognize_celebrities::RecognizeCelebritiesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::recognize_celebrities::RecognizeCelebritiesInput { image: self.image })
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`stack_name(impl ::std::convert::Into<String>)`](crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder::stack_name) / [`set_stack_name(Option<String>)`](crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder::set_stack_name): <p>The name of the stack.</p>
     /// - On success, responds with [`AssociateFleetOutput`](crate::operation::associate_fleet::AssociateFleetOutput)
     /// - On failure, responds with [`SdkError<AssociateFleetError>`](crate::operation::associate_fleet::AssociateFleetError)
-    pub fn associate_fleet(
-        &self,
-    ) -> crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder {
-        crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_fleet(&self) -> crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder {
+        crate::operation::associate_fleet::builders::AssociateFleetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeRegionsOutput`](crate::operation::describe_regions::DescribeRegionsOutput) with field(s):
     ///   - [`regions(Option<Vec<Region>>)`](crate::operation::describe_regions::DescribeRegionsOutput::regions): <p>Information about the Regions.</p>
     /// - On failure, responds with [`SdkError<DescribeRegionsError>`](crate::operation::describe_regions::DescribeRegionsError)
-    pub fn describe_regions(
-        &self,
-    ) -> crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder {
-        crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_regions(&self) -> crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder {
+        crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateEmergencyContactSettingsOutput 
 }
 impl UpdateEmergencyContactSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEmergencyContactSettingsOutput`](crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsOutput).
-    pub fn builder() -> crate::operation::update_emergency_contact_settings::builders::UpdateEmergencyContactSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::update_emergency_contact_settings::builders::UpdateEmergencyContactSettingsOutputBuilder {
         crate::operation::update_emergency_contact_settings::builders::UpdateEmergencyContactSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEmergencyContactSettingsOutput`](crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEmergencyContactSettingsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateEmergencyContactSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateEmergencyContactSettingsOutput`](crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsOutput
-    {
+    pub fn build(self) -> crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsOutput {
         crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsOutput {
             _request_id: self._request_id,
         }

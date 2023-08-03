@@ -10,10 +10,7 @@ impl DeleteReportPlanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_report_plan::DeleteReportPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_report_plan::DeleteReportPlanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_report_plan::DeleteReportPlanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_report_plan();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteReportPlanFluentBuilder {
         }
     }
     /// Access the DeleteReportPlan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_report_plan::builders::DeleteReportPlanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_report_plan::builders::DeleteReportPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteReportPlanFluentBuilder {
             crate::operation::delete_report_plan::DeleteReportPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_report_plan::DeleteReportPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_report_plan::DeleteReportPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteReportPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteReportPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_report_plan::DeleteReportPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_report_plan::DeleteReportPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_report_plan::DeleteReportPlanError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteReportPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_report_plan::DeleteReportPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_report_plan::DeleteReportPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_report_plan::DeleteReportPlanError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteReportPlanFluentBuilder {
             crate::operation::delete_report_plan::DeleteReportPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_report_plan::DeleteReportPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_report_plan::DeleteReportPlanError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique name of a report plan.</p>
-    pub fn report_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_plan_name(input.into());
         self
     }
     /// <p>The unique name of a report plan.</p>
-    pub fn set_report_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_report_plan_name(input);
         self
     }

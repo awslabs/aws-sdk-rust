@@ -16,19 +16,16 @@ impl DescribeDeliveryChannelStatusInput {
 }
 impl DescribeDeliveryChannelStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeDeliveryChannelStatusInput`](crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusInput).
-    pub fn builder() -> crate::operation::describe_delivery_channel_status::builders::DescribeDeliveryChannelStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_delivery_channel_status::builders::DescribeDeliveryChannelStatusInputBuilder {
         crate::operation::describe_delivery_channel_status::builders::DescribeDeliveryChannelStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDeliveryChannelStatusInput`](crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeliveryChannelStatusInputBuilder {
-    pub(crate) delivery_channel_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) delivery_channel_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeDeliveryChannelStatusInputBuilder {
     /// Appends an item to `delivery_channel_names`.
@@ -36,27 +33,19 @@ impl DescribeDeliveryChannelStatusInputBuilder {
     /// To override the contents of this collection use [`set_delivery_channel_names`](Self::set_delivery_channel_names).
     ///
     /// <p>A list of delivery channel names.</p>
-    pub fn delivery_channel_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_channel_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.delivery_channel_names.unwrap_or_default();
         v.push(input.into());
         self.delivery_channel_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of delivery channel names.</p>
-    pub fn set_delivery_channel_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_delivery_channel_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.delivery_channel_names = input;
         self
     }
     /// <p>A list of delivery channel names.</p>
-    pub fn get_delivery_channel_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_delivery_channel_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.delivery_channel_names
     }
     /// Consumes the builder and constructs a [`DescribeDeliveryChannelStatusInput`](crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusInput).
@@ -66,11 +55,8 @@ impl DescribeDeliveryChannelStatusInputBuilder {
         crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusInput {
-                delivery_channel_names: self.delivery_channel_names
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusInput {
+            delivery_channel_names: self.delivery_channel_names,
+        })
     }
 }

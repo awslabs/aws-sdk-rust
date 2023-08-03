@@ -9,21 +9,21 @@ async fn operation_input_test_get_access_point_1() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -42,21 +42,21 @@ async fn operation_input_test_delete_access_point_2() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -75,21 +75,21 @@ async fn operation_input_test_get_access_point_3() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -108,21 +108,21 @@ async fn operation_input_test_delete_access_point_4() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -141,21 +141,21 @@ async fn operation_input_test_get_access_point_5() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -174,21 +174,21 @@ async fn operation_input_test_delete_access_point_6() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -207,24 +207,28 @@ async fn operation_input_test_get_access_point_7() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts.cn-north-1.amazonaws.com.cn"), "expected URI to start with `https://s3-outposts.cn-north-1.amazonaws.com.cn` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3-outposts.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -236,24 +240,28 @@ async fn operation_input_test_delete_access_point_8() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts.cn-north-1.amazonaws.com.cn"), "expected URI to start with `https://s3-outposts.cn-north-1.amazonaws.com.cn` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3-outposts.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -265,21 +273,21 @@ async fn operation_input_test_get_access_point_9() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -298,21 +306,21 @@ async fn operation_input_test_delete_access_point_10() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -332,25 +340,29 @@ async fn operation_input_test_get_access_point_11() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-west-2.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-west-2.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-west-2.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-west-2.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -363,25 +375,29 @@ async fn operation_input_test_delete_access_point_12() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-west-2.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-west-2.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-west-2.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-west-2.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -394,25 +410,29 @@ async fn operation_input_test_get_access_point_13() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-gov-west-1"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-gov-east-1.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-gov-east-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -425,25 +445,29 @@ async fn operation_input_test_delete_access_point_14() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-gov-west-1"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-gov-east-1.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-gov-east-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -455,24 +479,28 @@ async fn operation_input_test_get_access_point_15() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts.cn-north-1.amazonaws.com.cn"), "expected URI to start with `https://s3-outposts.cn-north-1.amazonaws.com.cn` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3-outposts.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -484,24 +512,28 @@ async fn operation_input_test_delete_access_point_16() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts.cn-north-1.amazonaws.com.cn"), "expected URI to start with `https://s3-outposts.cn-north-1.amazonaws.com.cn` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3-outposts.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -514,25 +546,29 @@ async fn operation_input_test_get_access_point_17() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.cn-north-1.amazonaws.com.cn"), "expected URI to start with `https://s3-outposts-fips.cn-north-1.amazonaws.com.cn` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3-outposts-fips.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -545,25 +581,29 @@ async fn operation_input_test_delete_access_point_18() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.cn-north-1.amazonaws.com.cn"), "expected URI to start with `https://s3-outposts-fips.cn-north-1.amazonaws.com.cn` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3-outposts-fips.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -576,25 +616,29 @@ async fn operation_input_test_get_access_point_19() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-gov-west-1"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-gov-east-1.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-gov-east-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -607,25 +651,29 @@ async fn operation_input_test_delete_access_point_20() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-gov-west-1"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-gov-east-1.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-gov-east-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -637,21 +685,21 @@ async fn operation_input_test_get_access_point_21() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("af-south-1"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -670,21 +718,21 @@ async fn operation_input_test_delete_access_point_22() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("af-south-1"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -704,25 +752,29 @@ async fn operation_input_test_get_access_point_23() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("af-south-1"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.af-south-1.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.af-south-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.af-south-1.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.af-south-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -735,25 +787,29 @@ async fn operation_input_test_delete_access_point_24() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("af-south-1"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.af-south-1.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.af-south-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.af-south-1.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.af-south-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -766,25 +822,29 @@ async fn operation_input_test_get_access_point_25() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-gov-west-1"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-gov-east-1.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-gov-east-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -797,25 +857,29 @@ async fn operation_input_test_delete_access_point_26() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-gov-west-1"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-gov-east-1.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-gov-east-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -827,9 +891,7 @@ async fn operation_input_test_create_bucket_27() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
         builder.build()
     };
@@ -861,9 +923,7 @@ async fn operation_input_test_create_bucket_28() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
         let builder = builder.use_fips(true);
         builder.build()
@@ -879,7 +939,11 @@ async fn operation_input_test_create_bucket_28() {
     );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-east-2.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-east-2.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-east-2.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-east-2.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -891,9 +955,7 @@ async fn operation_input_test_create_bucket_29() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
         builder.build()
     };
@@ -923,9 +985,7 @@ async fn operation_input_test_list_regional_buckets_30() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
         builder.build()
     };
@@ -956,9 +1016,7 @@ async fn operation_input_test_list_regional_buckets_31() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
         builder.build()
     };
@@ -972,7 +1030,11 @@ async fn operation_input_test_list_regional_buckets_31() {
     );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://123.s3-control.us-east-2.amazonaws.com"), "expected URI to start with `https://123.s3-control.us-east-2.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://123.s3-control.us-east-2.amazonaws.com"),
+        "expected URI to start with `https://123.s3-control.us-east-2.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -985,9 +1047,7 @@ async fn operation_input_test_list_regional_buckets_32() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
         let builder = builder.use_fips(true);
         builder.build()
@@ -1003,7 +1063,11 @@ async fn operation_input_test_list_regional_buckets_32() {
     );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-east-2.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-east-2.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-east-2.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-east-2.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1016,22 +1080,22 @@ async fn operation_input_test_get_access_point_33() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.use_arn_region(false);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -1051,22 +1115,22 @@ async fn operation_input_test_get_access_point_34() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.use_arn_region(false);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_account_id(::std::option::Option::Some(
-        "9999999".to_owned()
-    ))
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_account_id(::std::option::Option::Some("9999999".to_owned()))
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .send()
+            .await
+    );
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`9999999`) [Account ID set inline and in ARN and they do not match@us-west-2]");
     assert!(
@@ -1085,12 +1149,9 @@ async fn operation_input_test_get_access_point_35() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
-        let builder = builder
-            .endpoint_url("https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com");
+        let builder = builder.endpoint_url("https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com");
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
@@ -1104,7 +1165,11 @@ async fn operation_input_test_get_access_point_35() {
     );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://123456789012.control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"), "expected URI to start with `https://123456789012.control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://123456789012.control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
+        "expected URI to start with `https://123456789012.control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1117,22 +1182,22 @@ async fn operation_input_test_get_access_point_36() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.endpoint_url("https://beta.example.com");
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -1152,19 +1217,21 @@ async fn operation_input_test_get_bucket_37() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.endpoint_url("https://beta.example.com");
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -1184,9 +1251,7 @@ async fn operation_input_test_list_regional_buckets_38() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
         let builder = builder.endpoint_url("https://beta.example.com");
         builder.build()
@@ -1220,9 +1285,7 @@ async fn operation_input_test_list_regional_buckets_39() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
         let builder = builder.use_fips(true);
         let builder = builder.endpoint_url("https://beta.example.com");
@@ -1257,9 +1320,7 @@ async fn operation_input_test_create_bucket_40() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
         let builder = builder.use_fips(true);
         let builder = builder.endpoint_url("https://beta.example.com");
@@ -1292,21 +1353,21 @@ async fn operation_input_test_create_access_point_41() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.create_access_point()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .set_name(::std::option::Option::Some(
-        "apname".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .create_access_point()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .set_name(::std::option::Option::Some("apname".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -1325,18 +1386,20 @@ async fn operation_input_test_get_bucket_42() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -1355,21 +1418,27 @@ async fn operation_input_test_get_bucket_43() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts.us-gov-east-1.amazonaws.com"), "expected URI to start with `https://s3-outposts.us-gov-east-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1382,22 +1451,28 @@ async fn operation_input_test_get_bucket_44() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-gov-west-1"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-gov-west-1.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-gov-west-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-gov-west-1.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-gov-west-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1410,22 +1485,28 @@ async fn operation_input_test_get_bucket_45() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-east-2.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-east-2.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-east-2.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-east-2.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1437,24 +1518,28 @@ async fn operation_input_test_create_access_point_46() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.create_access_point()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .set_name(::std::option::Option::Some(
-        "apname".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .create_access_point()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .set_name(::std::option::Option::Some("apname".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts.cn-north-1.amazonaws.com.cn"), "expected URI to start with `https://s3-outposts.cn-north-1.amazonaws.com.cn` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3-outposts.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1466,18 +1551,20 @@ async fn operation_input_test_get_bucket_47() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -1496,21 +1583,27 @@ async fn operation_input_test_get_bucket_48() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts.us-gov-east-1.amazonaws.com"), "expected URI to start with `https://s3-outposts.us-gov-east-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1523,22 +1616,28 @@ async fn operation_input_test_get_bucket_49() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-gov-west-1"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-gov-west-1.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-gov-west-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-gov-west-1.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-gov-west-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1551,22 +1650,28 @@ async fn operation_input_test_get_bucket_50() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-east-2.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-east-2.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-east-2.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-east-2.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1578,21 +1683,21 @@ async fn operation_input_test_create_access_point_51() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("af-south-1"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.create_access_point()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .set_name(::std::option::Option::Some(
-        "apname".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .create_access_point()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .set_name(::std::option::Option::Some("apname".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -1611,18 +1716,20 @@ async fn operation_input_test_get_bucket_52() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -1641,21 +1748,27 @@ async fn operation_input_test_get_bucket_53() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts.us-gov-east-1.amazonaws.com"), "expected URI to start with `https://s3-outposts.us-gov-east-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1668,22 +1781,28 @@ async fn operation_input_test_get_bucket_54() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-gov-west-1"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-gov-west-1.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-gov-west-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-gov-west-1.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-gov-west-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1696,22 +1815,28 @@ async fn operation_input_test_get_bucket_55() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
         let builder = builder.use_fips(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://s3-outposts-fips.us-east-2.amazonaws.com"), "expected URI to start with `https://s3-outposts-fips.us-east-2.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-east-2.amazonaws.com"),
+        "expected URI to start with `https://s3-outposts-fips.us-east-2.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1723,9 +1848,7 @@ async fn operation_input_test_list_regional_buckets_56() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         builder.build()
     };
@@ -1739,7 +1862,11 @@ async fn operation_input_test_list_regional_buckets_56() {
     );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://1234567890-aBC.s3-control.us-east-1.amazonaws.com"), "expected URI to start with `https://1234567890-aBC.s3-control.us-east-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://1234567890-aBC.s3-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://1234567890-aBC.s3-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1751,9 +1878,7 @@ async fn operation_input_test_list_regional_buckets_57() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         builder.build()
     };
@@ -1761,18 +1886,17 @@ async fn operation_input_test_list_regional_buckets_57() {
     let _result = dbg!(
         client
             .list_regional_buckets()
-            .set_account_id(::std::option::Option::Some(
-                "/?invalid&not-host*label".to_owned()
-            ))
+            .set_account_id(::std::option::Option::Some("/?invalid&not-host*label".to_owned()))
             .send()
             .await
     );
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: AccountId must only contain a-z, A-Z, 0-9 and `-`. [invalid account id prefix @us-east-1]");
     assert!(
-                                    format!("{:?}", error).contains("AccountId must only contain a-z, A-Z, 0-9 and `-`."),
-                                    "expected error to contain `AccountId must only contain a-z, A-Z, 0-9 and `-`.` but it was {:?}", error
-                                );
+        format!("{:?}", error).contains("AccountId must only contain a-z, A-Z, 0-9 and `-`."),
+        "expected error to contain `AccountId must only contain a-z, A-Z, 0-9 and `-`.` but it was {:?}",
+        error
+    );
 }
 
 #[::tokio::test]
@@ -1785,9 +1909,7 @@ async fn operation_input_test_list_regional_buckets_58() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         builder.build()
@@ -1802,7 +1924,11 @@ async fn operation_input_test_list_regional_buckets_58() {
     );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://1234567890-aBC.s3-control-fips.us-east-1.amazonaws.com"), "expected URI to start with `https://1234567890-aBC.s3-control-fips.us-east-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://1234567890-aBC.s3-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://1234567890-aBC.s3-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1816,9 +1942,7 @@ async fn operation_input_test_list_regional_buckets_59() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.use_dual_stack(true);
@@ -1834,7 +1958,11 @@ async fn operation_input_test_list_regional_buckets_59() {
     );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
-    assert!(uri.starts_with("https://1234567890-aBC.s3-control-fips.dualstack.us-east-1.amazonaws.com"), "expected URI to start with `https://1234567890-aBC.s3-control-fips.dualstack.us-east-1.amazonaws.com` but it was `{}`", uri);
+    assert!(
+        uri.starts_with("https://1234567890-aBC.s3-control-fips.dualstack.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://1234567890-aBC.s3-control-fips.dualstack.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
 }
 
 #[::tokio::test]
@@ -1847,9 +1975,7 @@ async fn operation_input_test_list_regional_buckets_60() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.endpoint_url("https://example.com");
         builder.build()
@@ -1881,9 +2007,7 @@ async fn operation_input_test_list_regional_buckets_61() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.endpoint_url("https://beta.example.com");
         builder.build()
@@ -1892,18 +2016,19 @@ async fn operation_input_test_list_regional_buckets_61() {
     let _result = dbg!(
         client
             .list_regional_buckets()
-            .set_account_id(::std::option::Option::Some(
-                "/?invalid&not-host*label".to_owned()
-            ))
+            .set_account_id(::std::option::Option::Some("/?invalid&not-host*label".to_owned()))
             .send()
             .await
     );
     rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: AccountId must only contain a-z, A-Z, 0-9 and `-`. [RequiresAccountId with invalid AccountId and custom endpoint]");
+    let error = _result.expect_err(
+        "expected error: AccountId must only contain a-z, A-Z, 0-9 and `-`. [RequiresAccountId with invalid AccountId and custom endpoint]",
+    );
     assert!(
-                                    format!("{:?}", error).contains("AccountId must only contain a-z, A-Z, 0-9 and `-`."),
-                                    "expected error to contain `AccountId must only contain a-z, A-Z, 0-9 and `-`.` but it was {:?}", error
-                                );
+        format!("{:?}", error).contains("AccountId must only contain a-z, A-Z, 0-9 and `-`."),
+        "expected error to contain `AccountId must only contain a-z, A-Z, 0-9 and `-`.` but it was {:?}",
+        error
+    );
 }
 
 #[::tokio::test]
@@ -1917,9 +2042,7 @@ async fn operation_input_test_list_regional_buckets_62() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
         let builder = builder.use_fips(true);
         let builder = builder.endpoint_url("https://example.com");
@@ -1951,9 +2074,7 @@ async fn operation_input_test_list_regional_buckets_63() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
         builder.build()
     };
@@ -1962,18 +2083,19 @@ async fn operation_input_test_list_regional_buckets_63() {
         client
             .list_regional_buckets()
             .set_outpost_id(::std::option::Option::Some("op-123".to_owned()))
-            .set_account_id(::std::option::Option::Some(
-                "/?invalid&not-host*label".to_owned()
-            ))
+            .set_account_id(::std::option::Option::Some("/?invalid&not-host*label".to_owned()))
             .send()
             .await
     );
     rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: AccountId must only contain a-z, A-Z, 0-9 and `-`. [ListRegionalBuckets + OutpostId with invalid accountId set.]");
+    let error = _result.expect_err(
+        "expected error: AccountId must only contain a-z, A-Z, 0-9 and `-`. [ListRegionalBuckets + OutpostId with invalid accountId set.]",
+    );
     assert!(
-                                    format!("{:?}", error).contains("AccountId must only contain a-z, A-Z, 0-9 and `-`."),
-                                    "expected error to contain `AccountId must only contain a-z, A-Z, 0-9 and `-`.` but it was {:?}", error
-                                );
+        format!("{:?}", error).contains("AccountId must only contain a-z, A-Z, 0-9 and `-`."),
+        "expected error to contain `AccountId must only contain a-z, A-Z, 0-9 and `-`.` but it was {:?}",
+        error
+    );
 }
 
 #[::tokio::test]
@@ -1986,9 +2108,7 @@ async fn operation_input_test_get_access_point_64() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.endpoint_url("https://beta.example.com");
         builder.build()
@@ -2022,9 +2142,7 @@ async fn operation_input_test_get_access_point_65() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.use_dual_stack(true);
         let builder = builder.endpoint_url("https://beta.example.com");
@@ -2042,9 +2160,10 @@ async fn operation_input_test_get_access_point_65() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [Dualstack + Custom endpoint is not supported(non-arn)]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid Configuration: Dualstack and custom endpoint are not supported"),
-                                    "expected error to contain `Invalid Configuration: Dualstack and custom endpoint are not supported` but it was {:?}", error
-                                );
+        format!("{:?}", error).contains("Invalid Configuration: Dualstack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: Dualstack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
 }
 
 #[::tokio::test]
@@ -2058,26 +2177,29 @@ async fn operation_input_test_get_bucket_66() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.use_dual_stack(true);
         let builder = builder.endpoint_url("https://beta.example.com");
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid configuration: Outpost buckets do not support dual-stack [get bucket with endpoint_url and dualstack is not supported@us-west-2]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid configuration: Outpost buckets do not support dual-stack"),
-                                    "expected error to contain `Invalid configuration: Outpost buckets do not support dual-stack` but it was {:?}", error
-                                );
+        format!("{:?}", error).contains("Invalid configuration: Outpost buckets do not support dual-stack"),
+        "expected error to contain `Invalid configuration: Outpost buckets do not support dual-stack` but it was {:?}",
+        error
+    );
 }
 
 #[::tokio::test]
@@ -2090,9 +2212,7 @@ async fn operation_input_test_list_regional_buckets_67() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
         let builder = builder.use_fips(true);
         builder.build()
@@ -2124,9 +2244,7 @@ async fn operation_input_test_list_regional_buckets_68() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-1"));
         builder.build()
     };
@@ -2142,9 +2260,10 @@ async fn operation_input_test_list_regional_buckets_68() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: OutpostId must only contain a-z, A-Z, 0-9 and `-`. [ListRegionalBuckets + invalid OutpostId.]");
     assert!(
-                                    format!("{:?}", error).contains("OutpostId must only contain a-z, A-Z, 0-9 and `-`."),
-                                    "expected error to contain `OutpostId must only contain a-z, A-Z, 0-9 and `-`.` but it was {:?}", error
-                                );
+        format!("{:?}", error).contains("OutpostId must only contain a-z, A-Z, 0-9 and `-`."),
+        "expected error to contain `OutpostId must only contain a-z, A-Z, 0-9 and `-`.` but it was {:?}",
+        error
+    );
 }
 
 #[::tokio::test]
@@ -2157,22 +2276,22 @@ async fn operation_input_test_get_access_point_69() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.use_arn_region(false);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` [Outpost Accesspoint ARN with arn region and client region mismatch with UseArnRegion=false]");
     assert!(
@@ -2191,22 +2310,22 @@ async fn operation_input_test_delete_access_point_70() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.use_arn_region(false);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` [Outpost Accesspoint ARN with arn region and client region mismatch with UseArnRegion=false]");
     assert!(
@@ -2226,20 +2345,22 @@ async fn operation_input_test_get_bucket_71() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.endpoint_url("https://beta.example.com");
         let builder = builder.use_arn_region(false);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` [Outpost Bucket ARN with arn region and client region mismatch with UseArnRegion=false]");
     assert!(
@@ -2257,21 +2378,21 @@ async fn operation_input_test_get_access_point_72() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -2290,21 +2411,21 @@ async fn operation_input_test_delete_access_point_73() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -2323,18 +2444,20 @@ async fn operation_input_test_get_bucket_74() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -2354,25 +2477,28 @@ async fn operation_input_test_get_bucket_75() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.use_arn_region(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .send()
+            .await
+    );
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Client was configured for partition `aws` but ARN has `aws-cn` [Outpost Bucket ARN with partition mismatch with UseArnRegion=true]");
     assert!(
-                                    format!("{:?}", error).contains("Client was configured for partition `aws` but ARN has `aws-cn`"),
-                                    "expected error to contain `Client was configured for partition `aws` but ARN has `aws-cn`` but it was {:?}", error
-                                );
+        format!("{:?}", error).contains("Client was configured for partition `aws` but ARN has `aws-cn`"),
+        "expected error to contain `Client was configured for partition `aws` but ARN has `aws-cn`` but it was {:?}",
+        error
+    );
 }
 
 #[::tokio::test]
@@ -2385,28 +2511,29 @@ async fn operation_input_test_get_access_point_76() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.use_arn_region(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Client was configured for partition `aws` but ARN has `aws-cn` [Accesspoint ARN with partition mismatch and UseArnRegion=true]");
     assert!(
-                                    format!("{:?}", error).contains("Client was configured for partition `aws` but ARN has `aws-cn`"),
-                                    "expected error to contain `Client was configured for partition `aws` but ARN has `aws-cn`` but it was {:?}", error
-                                );
+        format!("{:?}", error).contains("Client was configured for partition `aws` but ARN has `aws-cn`"),
+        "expected error to contain `Client was configured for partition `aws` but ARN has `aws-cn`` but it was {:?}",
+        error
+    );
 }
 
 #[::tokio::test]
@@ -2419,28 +2546,29 @@ async fn operation_input_test_delete_access_point_77() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.use_arn_region(true);
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.delete_access_point()
-    .set_name(::std::option::Option::Some(
-        "arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Client was configured for partition `aws` but ARN has `aws-cn` [Accesspoint ARN with partition mismatch and UseArnRegion=true]");
     assert!(
-                                    format!("{:?}", error).contains("Client was configured for partition `aws` but ARN has `aws-cn`"),
-                                    "expected error to contain `Client was configured for partition `aws` but ARN has `aws-cn`` but it was {:?}", error
-                                );
+        format!("{:?}", error).contains("Client was configured for partition `aws` but ARN has `aws-cn`"),
+        "expected error to contain `Client was configured for partition `aws` but ARN has `aws-cn`` but it was {:?}",
+        error
+    );
 }
 
 #[::tokio::test]
@@ -2452,21 +2580,21 @@ async fn operation_input_test_get_bucket_versioning_78() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.get_bucket_versioning()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .get_bucket_versioning()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
@@ -2485,30 +2613,28 @@ async fn operation_input_test_put_bucket_versioning_79() {
     let (conn, rcvr) = ::aws_smithy_client::test_connection::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_s3control::Config::builder()
-            .with_test_defaults()
-            .http_connector(conn);
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_connector(conn);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
-    let _result = dbg!(client.put_bucket_versioning()
-    .set_bucket(::std::option::Option::Some(
-        "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
-    ))
-    .set_account_id(::std::option::Option::Some(
-        "123456789012".to_owned()
-    ))
-    .set_versioning_configuration(::std::option::Option::Some(
-        aws_sdk_s3control::types::VersioningConfiguration::builder()
-        .set_status(
-            ::std::option::Option::Some(
-                aws_sdk_s3control::types::BucketVersioningStatus::from("Enabled")
-            )
-        )
-        .build()
-    ))
-    .send().await);
+    let _result = dbg!(
+        client
+            .put_bucket_versioning()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .set_versioning_configuration(::std::option::Option::Some(
+                aws_sdk_s3control::types::VersioningConfiguration::builder()
+                    .set_status(::std::option::Option::Some(aws_sdk_s3control::types::BucketVersioningStatus::from(
+                        "Enabled"
+                    )))
+                    .build()
+            ))
+            .send()
+            .await
+    );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(

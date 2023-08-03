@@ -37,17 +37,14 @@ impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {
 }
 impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {
     /// Creates a new builder-style object to manufacture [`AwsAppSyncGraphQlApiOpenIdConnectConfigDetails`](crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails).
-    pub fn builder() -> crate::types::builders::AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder {
         crate::types::builders::AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsAppSyncGraphQlApiOpenIdConnectConfigDetails`](crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder {
     pub(crate) auth_tt_l: ::std::option::Option<i64>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,

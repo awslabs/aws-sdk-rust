@@ -42,10 +42,7 @@ pub fn ser_create_workload_input(
     if let Some(var_13) = &input.discovery_config {
         #[allow(unused_mut)]
         let mut object_14 = object.key("DiscoveryConfig").start_object();
-        crate::protocol_serde::shape_workload_discovery_config::ser_workload_discovery_config(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_workload_discovery_config::ser_workload_discovery_config(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.environment {

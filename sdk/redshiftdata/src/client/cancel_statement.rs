@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CancelStatementOutput`](crate::operation::cancel_statement::CancelStatementOutput) with field(s):
     ///   - [`status(Option<bool>)`](crate::operation::cancel_statement::CancelStatementOutput::status): <p>A value that indicates whether the cancel statement succeeded (true). </p>
     /// - On failure, responds with [`SdkError<CancelStatementError>`](crate::operation::cancel_statement::CancelStatementError)
-    pub fn cancel_statement(
-        &self,
-    ) -> crate::operation::cancel_statement::builders::CancelStatementFluentBuilder {
-        crate::operation::cancel_statement::builders::CancelStatementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_statement(&self) -> crate::operation::cancel_statement::builders::CancelStatementFluentBuilder {
+        crate::operation::cancel_statement::builders::CancelStatementFluentBuilder::new(self.handle.clone())
     }
 }

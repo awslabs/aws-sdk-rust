@@ -7,19 +7,10 @@ pub fn ser_access_log(
         crate::types::AccessLog::File(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_2.key("file").start_object();
-            crate::protocol_serde::shape_file_access_log::ser_file_access_log(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_file_access_log::ser_file_access_log(&mut object_1, inner)?;
             object_1.finish();
         }
-        crate::types::AccessLog::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "AccessLog",
-                ),
-            )
-        }
+        crate::types::AccessLog::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("AccessLog")),
     }
     Ok(())
 }
@@ -28,12 +19,7 @@ pub(crate) fn de_access_log<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::AccessLog>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -43,22 +29,14 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                         "file" => Some(crate::types::AccessLog::File(
-                            crate::protocol_serde::shape_file_access_log::de_file_access_log(
-                                tokens,
-                            )?
-                            .ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                    "value for 'file' cannot be null",
-                                )
-                            })?,
+                            crate::protocol_serde::shape_file_access_log::de_file_access_log(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'file' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
@@ -67,21 +45,17 @@ where
                     };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

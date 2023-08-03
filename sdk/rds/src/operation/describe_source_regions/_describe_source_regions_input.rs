@@ -49,18 +49,14 @@ impl DescribeSourceRegionsInput {
 }
 impl DescribeSourceRegionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSourceRegionsInput`](crate::operation::describe_source_regions::DescribeSourceRegionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_source_regions::builders::DescribeSourceRegionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_source_regions::builders::DescribeSourceRegionsInputBuilder {
         crate::operation::describe_source_regions::builders::DescribeSourceRegionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSourceRegionsInput`](crate::operation::describe_source_regions::DescribeSourceRegionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSourceRegionsInputBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -140,10 +136,7 @@ impl DescribeSourceRegionsInputBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -154,17 +147,13 @@ impl DescribeSourceRegionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSourceRegionsInput`](crate::operation::describe_source_regions::DescribeSourceRegionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_source_regions::DescribeSourceRegionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_source_regions::DescribeSourceRegionsInput {
-                region_name: self.region_name,
-                max_records: self.max_records,
-                marker: self.marker,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_source_regions::DescribeSourceRegionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_source_regions::DescribeSourceRegionsInput {
+            region_name: self.region_name,
+            max_records: self.max_records,
+            marker: self.marker,
+            filters: self.filters,
+        })
     }
 }

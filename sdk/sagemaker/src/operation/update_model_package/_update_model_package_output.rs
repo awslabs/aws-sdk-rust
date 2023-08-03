@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateModelPackageOutput {
 }
 impl UpdateModelPackageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateModelPackageOutput`](crate::operation::update_model_package::UpdateModelPackageOutput).
-    pub fn builder(
-    ) -> crate::operation::update_model_package::builders::UpdateModelPackageOutputBuilder {
+    pub fn builder() -> crate::operation::update_model_package::builders::UpdateModelPackageOutputBuilder {
         crate::operation::update_model_package::builders::UpdateModelPackageOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateModelPackageOutput`](crate::operation::update_model_package::UpdateModelPackageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateModelPackageOutputBuilder {
     pub(crate) model_package_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateModelPackageOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
-    pub fn model_package_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
-    pub fn set_model_package_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_arn = input;
         self
     }

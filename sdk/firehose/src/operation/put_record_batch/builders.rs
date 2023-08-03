@@ -10,10 +10,7 @@ impl PutRecordBatchInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_record_batch::PutRecordBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_record_batch::PutRecordBatchError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_record_batch::PutRecordBatchError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_record_batch();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl PutRecordBatchFluentBuilder {
         }
     }
     /// Access the PutRecordBatch as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_record_batch::builders::PutRecordBatchInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_record_batch::builders::PutRecordBatchInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +57,7 @@ impl PutRecordBatchFluentBuilder {
             crate::operation::put_record_batch::PutRecordBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_record_batch::PutRecordBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_record_batch::PutRecordBatchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +67,7 @@ impl PutRecordBatchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +76,7 @@ impl PutRecordBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_record_batch::PutRecordBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_record_batch::PutRecordBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_record_batch::PutRecordBatchError>,
     > {
         let op = self
             .inner
@@ -111,9 +99,7 @@ impl PutRecordBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_record_batch::PutRecordBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_record_batch::PutRecordBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_record_batch::PutRecordBatchError>,
     > {
         self.send_middleware().await
     }
@@ -127,25 +113,17 @@ impl PutRecordBatchFluentBuilder {
             crate::operation::put_record_batch::PutRecordBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_record_batch::PutRecordBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_record_batch::PutRecordBatchError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_stream_name(input.into());
         self
     }
     /// <p>The name of the delivery stream.</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
@@ -163,10 +141,7 @@ impl PutRecordBatchFluentBuilder {
         self
     }
     /// <p>One or more records.</p>
-    pub fn set_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
-    ) -> Self {
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>) -> Self {
         self.inner = self.inner.set_records(input);
         self
     }

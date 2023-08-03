@@ -13,9 +13,7 @@ pub struct HttpGatewayRoutePrefixRewrite {
 }
 impl HttpGatewayRoutePrefixRewrite {
     /// <p>The default prefix used to replace the incoming route prefix when rewritten.</p>
-    pub fn default_prefix(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DefaultGatewayRouteRewrite> {
+    pub fn default_prefix(&self) -> ::std::option::Option<&crate::types::DefaultGatewayRouteRewrite> {
         self.default_prefix.as_ref()
     }
     /// <p>The value used to replace the incoming route prefix when rewritten.</p>
@@ -32,9 +30,7 @@ impl HttpGatewayRoutePrefixRewrite {
 
 /// A builder for [`HttpGatewayRoutePrefixRewrite`](crate::types::HttpGatewayRoutePrefixRewrite).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpGatewayRoutePrefixRewriteBuilder {
     pub(crate) default_prefix: ::std::option::Option<crate::types::DefaultGatewayRouteRewrite>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -46,17 +42,12 @@ impl HttpGatewayRoutePrefixRewriteBuilder {
         self
     }
     /// <p>The default prefix used to replace the incoming route prefix when rewritten.</p>
-    pub fn set_default_prefix(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultGatewayRouteRewrite>,
-    ) -> Self {
+    pub fn set_default_prefix(mut self, input: ::std::option::Option<crate::types::DefaultGatewayRouteRewrite>) -> Self {
         self.default_prefix = input;
         self
     }
     /// <p>The default prefix used to replace the incoming route prefix when rewritten.</p>
-    pub fn get_default_prefix(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultGatewayRouteRewrite> {
+    pub fn get_default_prefix(&self) -> &::std::option::Option<crate::types::DefaultGatewayRouteRewrite> {
         &self.default_prefix
     }
     /// <p>The value used to replace the incoming route prefix when rewritten.</p>

@@ -10,10 +10,7 @@ impl CreateContainerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_container::CreateContainerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_container::CreateContainerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_container::CreateContainerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_container();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateContainerFluentBuilder {
         }
     }
     /// Access the CreateContainer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_container::builders::CreateContainerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_container::builders::CreateContainerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateContainerFluentBuilder {
             crate::operation::create_container::CreateContainer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_container::CreateContainerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_container::CreateContainerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateContainerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateContainerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_container::CreateContainerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_container::CreateContainerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_container::CreateContainerError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateContainerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_container::CreateContainerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_container::CreateContainerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_container::CreateContainerError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateContainerFluentBuilder {
             crate::operation::create_container::CreateContainer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_container::CreateContainerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_container::CreateContainerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_name(input.into());
         self
     }
     /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_name(input);
         self
     }
@@ -152,10 +130,7 @@ impl CreateContainerFluentBuilder {
         self
     }
     /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

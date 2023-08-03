@@ -22,9 +22,7 @@ impl StopSimulationInput {
 
 /// A builder for [`StopSimulationInput`](crate::operation::stop_simulation::StopSimulationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopSimulationInputBuilder {
     pub(crate) simulation: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl StopSimulationInputBuilder {
     /// Consumes the builder and constructs a [`StopSimulationInput`](crate::operation::stop_simulation::StopSimulationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_simulation::StopSimulationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_simulation::StopSimulationInput {
-            simulation: self.simulation,
-        })
+    ) -> ::std::result::Result<crate::operation::stop_simulation::StopSimulationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_simulation::StopSimulationInput { simulation: self.simulation })
     }
 }

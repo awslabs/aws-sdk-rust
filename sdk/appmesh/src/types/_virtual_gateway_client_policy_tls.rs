@@ -27,15 +27,11 @@ impl VirtualGatewayClientPolicyTls {
         self.ports.as_deref()
     }
     /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
-    pub fn certificate(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VirtualGatewayClientTlsCertificate> {
+    pub fn certificate(&self) -> ::std::option::Option<&crate::types::VirtualGatewayClientTlsCertificate> {
         self.certificate.as_ref()
     }
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
-    pub fn validation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VirtualGatewayTlsValidationContext> {
+    pub fn validation(&self) -> ::std::option::Option<&crate::types::VirtualGatewayTlsValidationContext> {
         self.validation.as_ref()
     }
 }
@@ -48,9 +44,7 @@ impl VirtualGatewayClientPolicyTls {
 
 /// A builder for [`VirtualGatewayClientPolicyTls`](crate::types::VirtualGatewayClientPolicyTls).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualGatewayClientPolicyTlsBuilder {
     pub(crate) enforce: ::std::option::Option<bool>,
     pub(crate) ports: ::std::option::Option<::std::vec::Vec<i32>>,
@@ -98,17 +92,12 @@ impl VirtualGatewayClientPolicyTlsBuilder {
         self
     }
     /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
-    pub fn set_certificate(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewayClientTlsCertificate>,
-    ) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<crate::types::VirtualGatewayClientTlsCertificate>) -> Self {
         self.certificate = input;
         self
     }
     /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
-    pub fn get_certificate(
-        &self,
-    ) -> &::std::option::Option<crate::types::VirtualGatewayClientTlsCertificate> {
+    pub fn get_certificate(&self) -> &::std::option::Option<crate::types::VirtualGatewayClientTlsCertificate> {
         &self.certificate
     }
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
@@ -117,17 +106,12 @@ impl VirtualGatewayClientPolicyTlsBuilder {
         self
     }
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
-    pub fn set_validation(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewayTlsValidationContext>,
-    ) -> Self {
+    pub fn set_validation(mut self, input: ::std::option::Option<crate::types::VirtualGatewayTlsValidationContext>) -> Self {
         self.validation = input;
         self
     }
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
-    pub fn get_validation(
-        &self,
-    ) -> &::std::option::Option<crate::types::VirtualGatewayTlsValidationContext> {
+    pub fn get_validation(&self) -> &::std::option::Option<crate::types::VirtualGatewayTlsValidationContext> {
         &self.validation
     }
     /// Consumes the builder and constructs a [`VirtualGatewayClientPolicyTls`](crate::types::VirtualGatewayClientPolicyTls).

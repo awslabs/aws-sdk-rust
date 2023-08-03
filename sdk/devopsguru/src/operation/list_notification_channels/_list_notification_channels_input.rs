@@ -15,18 +15,14 @@ impl ListNotificationChannelsInput {
 }
 impl ListNotificationChannelsInput {
     /// Creates a new builder-style object to manufacture [`ListNotificationChannelsInput`](crate::operation::list_notification_channels::ListNotificationChannelsInput).
-    pub fn builder(
-    ) -> crate::operation::list_notification_channels::builders::ListNotificationChannelsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_notification_channels::builders::ListNotificationChannelsInputBuilder {
         crate::operation::list_notification_channels::builders::ListNotificationChannelsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListNotificationChannelsInput`](crate::operation::list_notification_channels::ListNotificationChannelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotificationChannelsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl ListNotificationChannelsInputBuilder {
         crate::operation::list_notification_channels::ListNotificationChannelsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_notification_channels::ListNotificationChannelsInput {
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_notification_channels::ListNotificationChannelsInput { next_token: self.next_token })
     }
 }

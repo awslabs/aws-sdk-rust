@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OptimizationMetric {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for OptimizationMetric {
             "MASE" => OptimizationMetric::Mase,
             "RMSE" => OptimizationMetric::Rmse,
             "WAPE" => OptimizationMetric::Wape,
-            other => OptimizationMetric::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => OptimizationMetric::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl OptimizationMetric {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AverageWeightedQuantileLoss",
-            "MAPE",
-            "MASE",
-            "RMSE",
-            "WAPE",
-        ]
+        &["AverageWeightedQuantileLoss", "MAPE", "MASE", "RMSE", "WAPE"]
     }
 }
 impl ::std::convert::AsRef<str> for OptimizationMetric {

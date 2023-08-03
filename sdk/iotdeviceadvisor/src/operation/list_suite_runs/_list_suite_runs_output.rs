@@ -35,12 +35,9 @@ impl ListSuiteRunsOutput {
 
 /// A builder for [`ListSuiteRunsOutput`](crate::operation::list_suite_runs::ListSuiteRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSuiteRunsOutputBuilder {
-    pub(crate) suite_runs_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::SuiteRunInformation>>,
+    pub(crate) suite_runs_list: ::std::option::Option<::std::vec::Vec<crate::types::SuiteRunInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListSuiteRunsOutputBuilder {
         self
     }
     /// <p>An array of objects that provide summaries of information about the suite runs in the list.</p>
-    pub fn set_suite_runs_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuiteRunInformation>>,
-    ) -> Self {
+    pub fn set_suite_runs_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuiteRunInformation>>) -> Self {
         self.suite_runs_list = input;
         self
     }
     /// <p>An array of objects that provide summaries of information about the suite runs in the list.</p>
-    pub fn get_suite_runs_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuiteRunInformation>> {
+    pub fn get_suite_runs_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuiteRunInformation>> {
         &self.suite_runs_list
     }
     /// <p>A token to retrieve the next set of results.</p>

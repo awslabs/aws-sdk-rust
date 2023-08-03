@@ -35,9 +35,7 @@ impl ListGatewaysOutput {
 
 /// A builder for [`ListGatewaysOutput`](crate::operation::list_gateways::ListGatewaysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGatewaysOutputBuilder {
     pub(crate) gateways: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInfo>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListGatewaysOutputBuilder {
         self
     }
     /// <p>An array of <code>GatewayInfo</code> objects.</p>
-    pub fn set_gateways(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInfo>>,
-    ) -> Self {
+    pub fn set_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInfo>>) -> Self {
         self.gateways = input;
         self
     }
     /// <p>An array of <code>GatewayInfo</code> objects.</p>
-    pub fn get_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayInfo>> {
+    pub fn get_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayInfo>> {
         &self.gateways
     }
     /// <p>Use the marker in your next request to fetch the next set of gateways in the list. If there are no more gateways to list, this field does not appear in the response.</p>

@@ -15,8 +15,7 @@ pub struct ServiceCatalogProvisioningDetails {
     pub path_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
     #[doc(hidden)]
-    pub provisioning_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>,
+    pub provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>,
 }
 impl ServiceCatalogProvisioningDetails {
     /// <p>The ID of the product to provision.</p>
@@ -32,9 +31,7 @@ impl ServiceCatalogProvisioningDetails {
         self.path_id.as_deref()
     }
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
-    pub fn provisioning_parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProvisioningParameter]> {
+    pub fn provisioning_parameters(&self) -> ::std::option::Option<&[crate::types::ProvisioningParameter]> {
         self.provisioning_parameters.as_deref()
     }
 }
@@ -47,15 +44,12 @@ impl ServiceCatalogProvisioningDetails {
 
 /// A builder for [`ServiceCatalogProvisioningDetails`](crate::types::ServiceCatalogProvisioningDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceCatalogProvisioningDetailsBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     pub(crate) path_id: ::std::option::Option<::std::string::String>,
-    pub(crate) provisioning_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>,
+    pub(crate) provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>,
 }
 impl ServiceCatalogProvisioningDetailsBuilder {
     /// <p>The ID of the product to provision.</p>
@@ -73,18 +67,12 @@ impl ServiceCatalogProvisioningDetailsBuilder {
         &self.product_id
     }
     /// <p>The ID of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioning_artifact_id = input;
         self
     }
@@ -118,17 +106,12 @@ impl ServiceCatalogProvisioningDetailsBuilder {
         self
     }
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
-    pub fn set_provisioning_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>,
-    ) -> Self {
+    pub fn set_provisioning_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>) -> Self {
         self.provisioning_parameters = input;
         self
     }
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
-    pub fn get_provisioning_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>> {
+    pub fn get_provisioning_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>> {
         &self.provisioning_parameters
     }
     /// Consumes the builder and constructs a [`ServiceCatalogProvisioningDetails`](crate::types::ServiceCatalogProvisioningDetails).

@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`index_id(impl ::std::convert::Into<String>)`](crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder::set_index_id): <p>The identifier of the index used with the data source connector.</p>
     /// - On success, responds with [`StopDataSourceSyncJobOutput`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobOutput)
     /// - On failure, responds with [`SdkError<StopDataSourceSyncJobError>`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobError)
-    pub fn stop_data_source_sync_job(
-        &self,
-    ) -> crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder
-    {
+    pub fn stop_data_source_sync_job(&self) -> crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder {
         crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobFluentBuilder::new(self.handle.clone())
     }
 }

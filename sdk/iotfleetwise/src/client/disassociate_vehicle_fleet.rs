@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`fleet_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder::set_fleet_id): <p> The unique ID of a fleet. </p>
     /// - On success, responds with [`DisassociateVehicleFleetOutput`](crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput)
     /// - On failure, responds with [`SdkError<DisassociateVehicleFleetError>`](crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError)
-    pub fn disassociate_vehicle_fleet(
-        &self,
-    ) -> crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder
-    {
+    pub fn disassociate_vehicle_fleet(&self) -> crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder {
         crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetFluentBuilder::new(self.handle.clone())
     }
 }

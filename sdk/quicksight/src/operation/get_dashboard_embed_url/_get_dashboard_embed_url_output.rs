@@ -46,9 +46,7 @@ impl ::aws_http::request_id::RequestId for GetDashboardEmbedUrlOutput {
 }
 impl GetDashboardEmbedUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetDashboardEmbedUrlOutput`](crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlOutput).
-    pub fn builder(
-    ) -> crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlOutputBuilder {
         crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlOutputBuilder::default()
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy_arn(impl ::std::convert::Into<String>)`](crate::operation::detach_role_policy::builders::DetachRolePolicyFluentBuilder::policy_arn) / [`set_policy_arn(Option<String>)`](crate::operation::detach_role_policy::builders::DetachRolePolicyFluentBuilder::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// - On success, responds with [`DetachRolePolicyOutput`](crate::operation::detach_role_policy::DetachRolePolicyOutput)
     /// - On failure, responds with [`SdkError<DetachRolePolicyError>`](crate::operation::detach_role_policy::DetachRolePolicyError)
-    pub fn detach_role_policy(
-        &self,
-    ) -> crate::operation::detach_role_policy::builders::DetachRolePolicyFluentBuilder {
-        crate::operation::detach_role_policy::builders::DetachRolePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_role_policy(&self) -> crate::operation::detach_role_policy::builders::DetachRolePolicyFluentBuilder {
+        crate::operation::detach_role_policy::builders::DetachRolePolicyFluentBuilder::new(self.handle.clone())
     }
 }

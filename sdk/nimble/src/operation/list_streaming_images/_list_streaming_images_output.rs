@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListStreamingImagesOutput {
 }
 impl ListStreamingImagesOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamingImagesOutput`](crate::operation::list_streaming_images::ListStreamingImagesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_streaming_images::builders::ListStreamingImagesOutputBuilder {
-        crate::operation::list_streaming_images::builders::ListStreamingImagesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_streaming_images::builders::ListStreamingImagesOutputBuilder {
+        crate::operation::list_streaming_images::builders::ListStreamingImagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStreamingImagesOutput`](crate::operation::list_streaming_images::ListStreamingImagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamingImagesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) streaming_images:
-        ::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>>,
+    pub(crate) streaming_images: ::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>>,
     _request_id: Option<String>,
 }
 impl ListStreamingImagesOutputBuilder {
@@ -73,17 +68,12 @@ impl ListStreamingImagesOutputBuilder {
         self
     }
     /// <p>A collection of streaming images.</p>
-    pub fn set_streaming_images(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>>,
-    ) -> Self {
+    pub fn set_streaming_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>>) -> Self {
         self.streaming_images = input;
         self
     }
     /// <p>A collection of streaming images.</p>
-    pub fn get_streaming_images(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>> {
+    pub fn get_streaming_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>> {
         &self.streaming_images
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

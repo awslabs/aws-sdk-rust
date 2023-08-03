@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`schedules(Option<Vec<Schedule>>)`](crate::operation::list_schedules::ListSchedulesOutput::schedules): <p>A list of schedules that are defined.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schedules::ListSchedulesOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListSchedulesError>`](crate::operation::list_schedules::ListSchedulesError)
-    pub fn list_schedules(
-        &self,
-    ) -> crate::operation::list_schedules::builders::ListSchedulesFluentBuilder {
-        crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_schedules(&self) -> crate::operation::list_schedules::builders::ListSchedulesFluentBuilder {
+        crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::new(self.handle.clone())
     }
 }

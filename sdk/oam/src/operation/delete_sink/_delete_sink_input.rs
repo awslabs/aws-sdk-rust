@@ -22,9 +22,7 @@ impl DeleteSinkInput {
 
 /// A builder for [`DeleteSinkInput`](crate::operation::delete_sink::DeleteSinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSinkInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteSinkInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteSinkInput`](crate::operation::delete_sink::DeleteSinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_sink::DeleteSinkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_sink::DeleteSinkInput {
-            identifier: self.identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_sink::DeleteSinkInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_sink::DeleteSinkInput { identifier: self.identifier })
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDomainOutput`](crate::operation::create_domain::CreateDomainOutput) with field(s):
     ///   - [`domain(Option<Domain>)`](crate::operation::create_domain::CreateDomainOutput::domain): <p>Information about the newly created domain.</p>
     /// - On failure, responds with [`SdkError<CreateDomainError>`](crate::operation::create_domain::CreateDomainError)
-    pub fn create_domain(
-        &self,
-    ) -> crate::operation::create_domain::builders::CreateDomainFluentBuilder {
-        crate::operation::create_domain::builders::CreateDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_domain(&self) -> crate::operation::create_domain::builders::CreateDomainFluentBuilder {
+        crate::operation::create_domain::builders::CreateDomainFluentBuilder::new(self.handle.clone())
     }
 }

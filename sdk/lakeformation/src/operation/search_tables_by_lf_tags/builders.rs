@@ -37,10 +37,7 @@ impl SearchTablesByLFTagsFluentBuilder {
         }
     }
     /// Access the SearchTablesByLFTags as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLfTagsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLfTagsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl SearchTablesByLFTagsFluentBuilder {
             crate::operation::search_tables_by_lf_tags::SearchTablesByLFTags,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_tables_by_lf_tags::SearchTablesByLFTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_tables_by_lf_tags::SearchTablesByLFTagsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl SearchTablesByLFTagsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl SearchTablesByLFTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_tables_by_lf_tags::SearchTablesByLFTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_tables_by_lf_tags::SearchTablesByLFTagsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl SearchTablesByLFTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_tables_by_lf_tags::SearchTablesByLFTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_tables_by_lf_tags::SearchTablesByLFTagsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl SearchTablesByLFTagsFluentBuilder {
             crate::operation::search_tables_by_lf_tags::SearchTablesByLFTags,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_tables_by_lf_tags::SearchTablesByLFTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_tables_by_lf_tags::SearchTablesByLFTagsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_tables_by_lf_tags::paginator::SearchTablesByLfTagsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_tables_by_lf_tags::paginator::SearchTablesByLfTagsPaginator {
-        crate::operation::search_tables_by_lf_tags::paginator::SearchTablesByLfTagsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_tables_by_lf_tags::paginator::SearchTablesByLfTagsPaginator {
+        crate::operation::search_tables_by_lf_tags::paginator::SearchTablesByLfTagsPaginator::new(self.handle, self.inner)
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -186,10 +167,7 @@ impl SearchTablesByLFTagsFluentBuilder {
         self
     }
     /// <p>A list of conditions (<code>LFTag</code> structures) to search for in table resources.</p>
-    pub fn set_expression(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
-    ) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>) -> Self {
         self.inner = self.inner.set_expression(input);
         self
     }

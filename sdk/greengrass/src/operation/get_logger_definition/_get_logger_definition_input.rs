@@ -15,35 +15,25 @@ impl GetLoggerDefinitionInput {
 }
 impl GetLoggerDefinitionInput {
     /// Creates a new builder-style object to manufacture [`GetLoggerDefinitionInput`](crate::operation::get_logger_definition::GetLoggerDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::get_logger_definition::builders::GetLoggerDefinitionInputBuilder {
-        crate::operation::get_logger_definition::builders::GetLoggerDefinitionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_logger_definition::builders::GetLoggerDefinitionInputBuilder {
+        crate::operation::get_logger_definition::builders::GetLoggerDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoggerDefinitionInput`](crate::operation::get_logger_definition::GetLoggerDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoggerDefinitionInputBuilder {
     pub(crate) logger_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLoggerDefinitionInputBuilder {
     /// The ID of the logger definition.
-    pub fn logger_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logger_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logger_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the logger definition.
-    pub fn set_logger_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logger_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logger_definition_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetLoggerDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`GetLoggerDefinitionInput`](crate::operation::get_logger_definition::GetLoggerDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_logger_definition::GetLoggerDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_logger_definition::GetLoggerDefinitionInput {
-                logger_definition_id: self.logger_definition_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_logger_definition::GetLoggerDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_logger_definition::GetLoggerDefinitionInput {
+            logger_definition_id: self.logger_definition_id,
+        })
     }
 }

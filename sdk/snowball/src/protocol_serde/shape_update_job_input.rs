@@ -37,9 +37,7 @@ pub fn ser_update_job_input(
         object.key("Description").string(var_11.as_str());
     }
     if let Some(var_12) = &input.snowball_capacity_preference {
-        object
-            .key("SnowballCapacityPreference")
-            .string(var_12.as_str());
+        object.key("SnowballCapacityPreference").string(var_12.as_str());
     }
     if let Some(var_13) = &input.forwarding_address_id {
         object.key("ForwardingAddressId").string(var_13.as_str());

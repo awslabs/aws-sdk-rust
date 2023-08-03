@@ -44,9 +44,7 @@ impl SourceRegion {
 
 /// A builder for [`SourceRegion`](crate::types::SourceRegion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceRegionBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
@@ -98,22 +96,16 @@ impl SourceRegionBuilder {
     }
     /// <p>Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
     pub fn supports_db_instance_automated_backups_replication(mut self, input: bool) -> Self {
-        self.supports_db_instance_automated_backups_replication =
-            ::std::option::Option::Some(input);
+        self.supports_db_instance_automated_backups_replication = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
-    pub fn set_supports_db_instance_automated_backups_replication(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_supports_db_instance_automated_backups_replication(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_db_instance_automated_backups_replication = input;
         self
     }
     /// <p>Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
-    pub fn get_supports_db_instance_automated_backups_replication(
-        &self,
-    ) -> &::std::option::Option<bool> {
+    pub fn get_supports_db_instance_automated_backups_replication(&self) -> &::std::option::Option<bool> {
         &self.supports_db_instance_automated_backups_replication
     }
     /// Consumes the builder and constructs a [`SourceRegion`](crate::types::SourceRegion).
@@ -122,9 +114,7 @@ impl SourceRegionBuilder {
             region_name: self.region_name,
             endpoint: self.endpoint,
             status: self.status,
-            supports_db_instance_automated_backups_replication: self
-                .supports_db_instance_automated_backups_replication
-                .unwrap_or_default(),
+            supports_db_instance_automated_backups_replication: self.supports_db_instance_automated_backups_replication.unwrap_or_default(),
         }
     }
 }

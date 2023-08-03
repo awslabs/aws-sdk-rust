@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`node_from_template_jobs(Option<Vec<NodeFromTemplateJob>>)`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput::node_from_template_jobs): <p>A list of jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListNodeFromTemplateJobsError>`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError)
-    pub fn list_node_from_template_jobs(&self) -> crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsFluentBuilder{
+    pub fn list_node_from_template_jobs(&self) -> crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsFluentBuilder {
         crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsFluentBuilder::new(self.handle.clone())
     }
 }

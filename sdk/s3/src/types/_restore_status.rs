@@ -40,9 +40,7 @@ impl RestoreStatus {
 
 /// A builder for [`RestoreStatus`](crate::types::RestoreStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreStatusBuilder {
     pub(crate) is_restore_in_progress: ::std::option::Option<bool>,
     pub(crate) restore_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -82,10 +80,7 @@ impl RestoreStatusBuilder {
     }
     /// <p>Indicates when the restored copy will expire. This value is populated only if the object has already been restored. For example:</p>
     /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
-    pub fn set_restore_expiry_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_restore_expiry_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.restore_expiry_date = input;
         self
     }

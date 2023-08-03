@@ -30,9 +30,7 @@ impl StartImportInput {
 
 /// A builder for [`StartImportInput`](crate::operation::start_import::StartImportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImportInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_source: ::std::option::Option<crate::types::S3BucketSource>,
@@ -58,10 +56,7 @@ impl StartImportInputBuilder {
         self
     }
     /// <p>Start import request s3 bucket source.</p>
-    pub fn set_s3_bucket_source(
-        mut self,
-        input: ::std::option::Option<crate::types::S3BucketSource>,
-    ) -> Self {
+    pub fn set_s3_bucket_source(mut self, input: ::std::option::Option<crate::types::S3BucketSource>) -> Self {
         self.s3_bucket_source = input;
         self
     }
@@ -70,12 +65,7 @@ impl StartImportInputBuilder {
         &self.s3_bucket_source
     }
     /// Consumes the builder and constructs a [`StartImportInput`](crate::operation::start_import::StartImportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_import::StartImportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_import::StartImportInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_import::StartImportInput {
             client_token: self.client_token,
             s3_bucket_source: self.s3_bucket_source,

@@ -20,9 +20,7 @@ pub struct GetBucketWebsiteOutput {
 }
 impl GetBucketWebsiteOutput {
     /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
-    pub fn redirect_all_requests_to(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RedirectAllRequestsTo> {
+    pub fn redirect_all_requests_to(&self) -> ::std::option::Option<&crate::types::RedirectAllRequestsTo> {
         self.redirect_all_requests_to.as_ref()
     }
     /// <p>The name of the index document for the website (for example <code>index.html</code>).</p>
@@ -50,17 +48,14 @@ impl ::aws_http::request_id::RequestId for GetBucketWebsiteOutput {
 }
 impl GetBucketWebsiteOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketWebsiteOutput`](crate::operation::get_bucket_website::GetBucketWebsiteOutput).
-    pub fn builder() -> crate::operation::get_bucket_website::builders::GetBucketWebsiteOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_bucket_website::builders::GetBucketWebsiteOutputBuilder {
         crate::operation::get_bucket_website::builders::GetBucketWebsiteOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketWebsiteOutput`](crate::operation::get_bucket_website::GetBucketWebsiteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketWebsiteOutputBuilder {
     pub(crate) redirect_all_requests_to: ::std::option::Option<crate::types::RedirectAllRequestsTo>,
     pub(crate) index_document: ::std::option::Option<crate::types::IndexDocument>,
@@ -76,17 +71,12 @@ impl GetBucketWebsiteOutputBuilder {
         self
     }
     /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
-    pub fn set_redirect_all_requests_to(
-        mut self,
-        input: ::std::option::Option<crate::types::RedirectAllRequestsTo>,
-    ) -> Self {
+    pub fn set_redirect_all_requests_to(mut self, input: ::std::option::Option<crate::types::RedirectAllRequestsTo>) -> Self {
         self.redirect_all_requests_to = input;
         self
     }
     /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
-    pub fn get_redirect_all_requests_to(
-        &self,
-    ) -> &::std::option::Option<crate::types::RedirectAllRequestsTo> {
+    pub fn get_redirect_all_requests_to(&self) -> &::std::option::Option<crate::types::RedirectAllRequestsTo> {
         &self.redirect_all_requests_to
     }
     /// <p>The name of the index document for the website (for example <code>index.html</code>).</p>
@@ -95,10 +85,7 @@ impl GetBucketWebsiteOutputBuilder {
         self
     }
     /// <p>The name of the index document for the website (for example <code>index.html</code>).</p>
-    pub fn set_index_document(
-        mut self,
-        input: ::std::option::Option<crate::types::IndexDocument>,
-    ) -> Self {
+    pub fn set_index_document(mut self, input: ::std::option::Option<crate::types::IndexDocument>) -> Self {
         self.index_document = input;
         self
     }
@@ -112,10 +99,7 @@ impl GetBucketWebsiteOutputBuilder {
         self
     }
     /// <p>The object key name of the website error document to use for 4XX class errors.</p>
-    pub fn set_error_document(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorDocument>,
-    ) -> Self {
+    pub fn set_error_document(mut self, input: ::std::option::Option<crate::types::ErrorDocument>) -> Self {
         self.error_document = input;
         self
     }
@@ -135,17 +119,12 @@ impl GetBucketWebsiteOutputBuilder {
         self
     }
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
-    pub fn set_routing_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingRule>>,
-    ) -> Self {
+    pub fn set_routing_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingRule>>) -> Self {
         self.routing_rules = input;
         self
     }
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
-    pub fn get_routing_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingRule>> {
+    pub fn get_routing_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingRule>> {
         &self.routing_rules
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
@@ -153,10 +132,7 @@ impl GetBucketWebsiteOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }

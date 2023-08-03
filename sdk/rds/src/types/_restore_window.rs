@@ -30,9 +30,7 @@ impl RestoreWindow {
 
 /// A builder for [`RestoreWindow`](crate::types::RestoreWindow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreWindowBuilder {
     pub(crate) earliest_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,10 +42,7 @@ impl RestoreWindowBuilder {
         self
     }
     /// <p>The earliest time you can restore an instance to.</p>
-    pub fn set_earliest_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_earliest_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.earliest_time = input;
         self
     }
@@ -61,10 +56,7 @@ impl RestoreWindowBuilder {
         self
     }
     /// <p>The latest time you can restore an instance to.</p>
-    pub fn set_latest_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_time = input;
         self
     }

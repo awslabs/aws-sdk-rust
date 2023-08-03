@@ -26,7 +26,7 @@ impl AdminListUserAuthEventsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminListUserAuthEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsInputBuilder,
+    inner: crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsInputBuilder,
 }
 impl AdminListUserAuthEventsFluentBuilder {
     /// Creates a new `AdminListUserAuthEvents`.
@@ -37,10 +37,7 @@ impl AdminListUserAuthEventsFluentBuilder {
         }
     }
     /// Access the AdminListUserAuthEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AdminListUserAuthEventsFluentBuilder {
             crate::operation::admin_list_user_auth_events::AdminListUserAuthEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AdminListUserAuthEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AdminListUserAuthEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AdminListUserAuthEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl AdminListUserAuthEventsFluentBuilder {
             crate::operation::admin_list_user_auth_events::AdminListUserAuthEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::admin_list_user_auth_events::paginator::AdminListUserAuthEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::admin_list_user_auth_events::paginator::AdminListUserAuthEventsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::admin_list_user_auth_events::paginator::AdminListUserAuthEventsPaginator {
         crate::operation::admin_list_user_auth_events::paginator::AdminListUserAuthEventsPaginator::new(self.handle, self.inner)
     }
     /// <p>The user pool ID.</p>

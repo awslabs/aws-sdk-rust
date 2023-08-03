@@ -44,9 +44,7 @@ impl UpdateQualificationTypeInput {
         self.description.as_deref()
     }
     /// <p>The new status of the Qualification type - Active | Inactive</p>
-    pub fn qualification_type_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::QualificationTypeStatus> {
+    pub fn qualification_type_status(&self) -> ::std::option::Option<&crate::types::QualificationTypeStatus> {
         self.qualification_type_status.as_ref()
     }
     /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
@@ -79,23 +77,18 @@ impl UpdateQualificationTypeInput {
 }
 impl UpdateQualificationTypeInput {
     /// Creates a new builder-style object to manufacture [`UpdateQualificationTypeInput`](crate::operation::update_qualification_type::UpdateQualificationTypeInput).
-    pub fn builder(
-    ) -> crate::operation::update_qualification_type::builders::UpdateQualificationTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_qualification_type::builders::UpdateQualificationTypeInputBuilder {
         crate::operation::update_qualification_type::builders::UpdateQualificationTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateQualificationTypeInput`](crate::operation::update_qualification_type::UpdateQualificationTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQualificationTypeInputBuilder {
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) qualification_type_status:
-        ::std::option::Option<crate::types::QualificationTypeStatus>,
+    pub(crate) qualification_type_status: ::std::option::Option<crate::types::QualificationTypeStatus>,
     pub(crate) test: ::std::option::Option<::std::string::String>,
     pub(crate) answer_key: ::std::option::Option<::std::string::String>,
     pub(crate) test_duration_in_seconds: ::std::option::Option<i64>,
@@ -105,18 +98,12 @@ pub struct UpdateQualificationTypeInputBuilder {
 }
 impl UpdateQualificationTypeInputBuilder {
     /// <p>The ID of the Qualification type to update.</p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Qualification type to update.</p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualification_type_id = input;
         self
     }
@@ -139,25 +126,17 @@ impl UpdateQualificationTypeInputBuilder {
         &self.description
     }
     /// <p>The new status of the Qualification type - Active | Inactive</p>
-    pub fn qualification_type_status(
-        mut self,
-        input: crate::types::QualificationTypeStatus,
-    ) -> Self {
+    pub fn qualification_type_status(mut self, input: crate::types::QualificationTypeStatus) -> Self {
         self.qualification_type_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The new status of the Qualification type - Active | Inactive</p>
-    pub fn set_qualification_type_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QualificationTypeStatus>,
-    ) -> Self {
+    pub fn set_qualification_type_status(mut self, input: ::std::option::Option<crate::types::QualificationTypeStatus>) -> Self {
         self.qualification_type_status = input;
         self
     }
     /// <p>The new status of the Qualification type - Active | Inactive</p>
-    pub fn get_qualification_type_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::QualificationTypeStatus> {
+    pub fn get_qualification_type_status(&self) -> &::std::option::Option<crate::types::QualificationTypeStatus> {
         &self.qualification_type_status
     }
     /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
@@ -260,18 +239,16 @@ impl UpdateQualificationTypeInputBuilder {
         crate::operation::update_qualification_type::UpdateQualificationTypeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_qualification_type::UpdateQualificationTypeInput {
-                qualification_type_id: self.qualification_type_id,
-                description: self.description,
-                qualification_type_status: self.qualification_type_status,
-                test: self.test,
-                answer_key: self.answer_key,
-                test_duration_in_seconds: self.test_duration_in_seconds,
-                retry_delay_in_seconds: self.retry_delay_in_seconds,
-                auto_granted: self.auto_granted,
-                auto_granted_value: self.auto_granted_value,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_qualification_type::UpdateQualificationTypeInput {
+            qualification_type_id: self.qualification_type_id,
+            description: self.description,
+            qualification_type_status: self.qualification_type_status,
+            test: self.test,
+            answer_key: self.answer_key,
+            test_duration_in_seconds: self.test_duration_in_seconds,
+            retry_delay_in_seconds: self.retry_delay_in_seconds,
+            auto_granted: self.auto_granted,
+            auto_granted_value: self.auto_granted_value,
+        })
     }
 }

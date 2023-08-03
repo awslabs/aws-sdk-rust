@@ -16,16 +16,14 @@ impl ListGitHubAccountTokenNamesInput {
 }
 impl ListGitHubAccountTokenNamesInput {
     /// Creates a new builder-style object to manufacture [`ListGitHubAccountTokenNamesInput`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesInput).
-    pub fn builder() -> crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesInputBuilder{
+    pub fn builder() -> crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesInputBuilder {
         crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGitHubAccountTokenNamesInput`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGitHubAccountTokenNamesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,8 @@ impl ListGitHubAccountTokenNamesInputBuilder {
         crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesInput {
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesInput {
+            next_token: self.next_token,
+        })
     }
 }

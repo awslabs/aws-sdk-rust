@@ -36,9 +36,7 @@ impl ListStreamsInput {
 
 /// A builder for [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamsInputBuilder {
     pub(crate) filter_by: ::std::option::Option<crate::types::StreamFilters>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,10 +49,7 @@ impl ListStreamsInputBuilder {
         self
     }
     /// <p>Filters the stream list to match the specified criterion.</p>
-    pub fn set_filter_by(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamFilters>,
-    ) -> Self {
+    pub fn set_filter_by(mut self, input: ::std::option::Option<crate::types::StreamFilters>) -> Self {
         self.filter_by = input;
         self
     }
@@ -91,12 +86,7 @@ impl ListStreamsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_streams::ListStreamsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_streams::ListStreamsInput {
             filter_by: self.filter_by,
             next_token: self.next_token,

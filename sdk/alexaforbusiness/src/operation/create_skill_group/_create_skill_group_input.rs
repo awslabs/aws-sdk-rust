@@ -36,17 +36,14 @@ impl CreateSkillGroupInput {
 }
 impl CreateSkillGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateSkillGroupInput`](crate::operation::create_skill_group::CreateSkillGroupInput).
-    pub fn builder() -> crate::operation::create_skill_group::builders::CreateSkillGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_skill_group::builders::CreateSkillGroupInputBuilder {
         crate::operation::create_skill_group::builders::CreateSkillGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSkillGroupInput`](crate::operation::create_skill_group::CreateSkillGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSkillGroupInputBuilder {
     pub(crate) skill_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct CreateSkillGroupInputBuilder {
 }
 impl CreateSkillGroupInputBuilder {
     /// <p>The name for the skill group.</p>
-    pub fn skill_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the skill group.</p>
-    pub fn set_skill_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_skill_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_group_name = input;
         self
     }
@@ -89,18 +80,12 @@ impl CreateSkillGroupInputBuilder {
         &self.description
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -120,10 +105,7 @@ impl CreateSkillGroupInputBuilder {
         self
     }
     /// <p>The tags for the skill group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -134,17 +116,12 @@ impl CreateSkillGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateSkillGroupInput`](crate::operation::create_skill_group::CreateSkillGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_skill_group::CreateSkillGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_skill_group::CreateSkillGroupInput {
-                skill_group_name: self.skill_group_name,
-                description: self.description,
-                client_request_token: self.client_request_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_skill_group::CreateSkillGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_skill_group::CreateSkillGroupInput {
+            skill_group_name: self.skill_group_name,
+            description: self.description,
+            client_request_token: self.client_request_token,
+            tags: self.tags,
+        })
     }
 }

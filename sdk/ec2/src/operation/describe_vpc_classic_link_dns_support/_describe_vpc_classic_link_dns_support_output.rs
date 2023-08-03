@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeVpcClassicLinkDnsSupportOutpu
 }
 impl DescribeVpcClassicLinkDnsSupportOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcClassicLinkDnsSupportOutput`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportOutput).
-    pub fn builder() -> crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportOutputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportOutputBuilder {
         crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcClassicLinkDnsSupportOutput`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcClassicLinkDnsSupportOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) vpcs: ::std::option::Option<::std::vec::Vec<crate::types::ClassicLinkDnsSupport>>,
@@ -70,17 +68,12 @@ impl DescribeVpcClassicLinkDnsSupportOutputBuilder {
         self
     }
     /// <p>Information about the ClassicLink DNS support status of the VPCs.</p>
-    pub fn set_vpcs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClassicLinkDnsSupport>>,
-    ) -> Self {
+    pub fn set_vpcs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClassicLinkDnsSupport>>) -> Self {
         self.vpcs = input;
         self
     }
     /// <p>Information about the ClassicLink DNS support status of the VPCs.</p>
-    pub fn get_vpcs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClassicLinkDnsSupport>> {
+    pub fn get_vpcs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClassicLinkDnsSupport>> {
         &self.vpcs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,12 +86,10 @@ impl DescribeVpcClassicLinkDnsSupportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVpcClassicLinkDnsSupportOutput`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportOutput).
-    pub fn build(self) -> crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportOutput{
+    pub fn build(self) -> crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportOutput {
         crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportOutput {
-            next_token: self.next_token
-            ,
-            vpcs: self.vpcs
-            ,
+            next_token: self.next_token,
+            vpcs: self.vpcs,
             _request_id: self._request_id,
         }
     }

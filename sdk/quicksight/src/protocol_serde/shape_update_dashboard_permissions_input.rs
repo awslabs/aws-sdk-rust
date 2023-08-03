@@ -9,10 +9,7 @@ pub fn ser_update_dashboard_permissions_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_resource_permission::ser_resource_permission(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_update_dashboard_permissions_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_resource_permission::ser_resource_permission(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -39,10 +33,7 @@ pub fn ser_update_dashboard_permissions_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_resource_permission::ser_resource_permission(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -54,10 +45,7 @@ pub fn ser_update_dashboard_permissions_input(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_resource_permission::ser_resource_permission(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }

@@ -33,7 +33,7 @@ impl ListStateMachineVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStateMachineVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_state_machine_versions::builders::ListStateMachineVersionsInputBuilder,
+    inner: crate::operation::list_state_machine_versions::builders::ListStateMachineVersionsInputBuilder,
 }
 impl ListStateMachineVersionsFluentBuilder {
     /// Creates a new `ListStateMachineVersions`.
@@ -44,7 +44,7 @@ impl ListStateMachineVersionsFluentBuilder {
         }
     }
     /// Access the ListStateMachineVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_state_machine_versions::builders::ListStateMachineVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_state_machine_versions::builders::ListStateMachineVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +56,7 @@ impl ListStateMachineVersionsFluentBuilder {
             crate::operation::list_state_machine_versions::ListStateMachineVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_state_machine_versions::ListStateMachineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_state_machine_versions::ListStateMachineVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +66,7 @@ impl ListStateMachineVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +75,7 @@ impl ListStateMachineVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_state_machine_versions::ListStateMachineVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_state_machine_versions::ListStateMachineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_state_machine_versions::ListStateMachineVersionsError>,
     > {
         let op = self
             .inner
@@ -105,9 +98,7 @@ impl ListStateMachineVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_state_machine_versions::ListStateMachineVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_state_machine_versions::ListStateMachineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_state_machine_versions::ListStateMachineVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +112,17 @@ impl ListStateMachineVersionsFluentBuilder {
             crate::operation::list_state_machine_versions::ListStateMachineVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_state_machine_versions::ListStateMachineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_state_machine_versions::ListStateMachineVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state_machine_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state_machine_arn(input);
         self
     }

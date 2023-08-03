@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateResourceOutput {
 }
 impl AssociateResourceOutput {
     /// Creates a new builder-style object to manufacture [`AssociateResourceOutput`](crate::operation::associate_resource::AssociateResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_resource::builders::AssociateResourceOutputBuilder {
+    pub fn builder() -> crate::operation::associate_resource::builders::AssociateResourceOutputBuilder {
         crate::operation::associate_resource::builders::AssociateResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateResourceOutput`](crate::operation::associate_resource::AssociateResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateResourceOutputBuilder {
     _request_id: Option<String>,
 }

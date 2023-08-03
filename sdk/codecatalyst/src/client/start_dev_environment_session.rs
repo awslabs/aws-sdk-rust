@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`project_name(Option<String>)`](crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput::project_name): <p>The name of the project in the space.</p>
     ///   - [`id(Option<String>)`](crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput::id): <p>The system-generated unique ID of the Dev Environment.</p>
     /// - On failure, responds with [`SdkError<StartDevEnvironmentSessionError>`](crate::operation::start_dev_environment_session::StartDevEnvironmentSessionError)
-    pub fn start_dev_environment_session(&self) -> crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionFluentBuilder{
+    pub fn start_dev_environment_session(
+        &self,
+    ) -> crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionFluentBuilder {
         crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionFluentBuilder::new(self.handle.clone())
     }
 }

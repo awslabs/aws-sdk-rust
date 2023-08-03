@@ -51,9 +51,7 @@ impl VmServer {
 
 /// A builder for [`VmServer`](crate::types::VmServer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VmServerBuilder {
     pub(crate) vm_server_address: ::std::option::Option<crate::types::VmServerAddress>,
     pub(crate) vm_name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl VmServerBuilder {
         self
     }
     /// <p>The VM server location.</p>
-    pub fn set_vm_server_address(
-        mut self,
-        input: ::std::option::Option<crate::types::VmServerAddress>,
-    ) -> Self {
+    pub fn set_vm_server_address(mut self, input: ::std::option::Option<crate::types::VmServerAddress>) -> Self {
         self.vm_server_address = input;
         self
     }
@@ -94,18 +89,12 @@ impl VmServerBuilder {
         &self.vm_name
     }
     /// <p>The name of the VM manager.</p>
-    pub fn vm_manager_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vm_manager_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vm_manager_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the VM manager.</p>
-    pub fn set_vm_manager_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vm_manager_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vm_manager_name = input;
         self
     }
@@ -119,10 +108,7 @@ impl VmServerBuilder {
         self
     }
     /// <p>The type of VM management product.</p>
-    pub fn set_vm_manager_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VmManagerType>,
-    ) -> Self {
+    pub fn set_vm_manager_type(mut self, input: ::std::option::Option<crate::types::VmManagerType>) -> Self {
         self.vm_manager_type = input;
         self
     }

@@ -83,9 +83,7 @@ impl BackupSelection {
 
 /// A builder for [`BackupSelection`](crate::types::BackupSelection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackupSelectionBuilder {
     pub(crate) selection_name: ::std::option::Option<::std::string::String>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
@@ -96,18 +94,12 @@ pub struct BackupSelectionBuilder {
 }
 impl BackupSelectionBuilder {
     /// <p>The display name of a resource selection document. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn selection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of a resource selection document. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn set_selection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_selection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selection_name = input;
         self
     }
@@ -143,10 +135,7 @@ impl BackupSelectionBuilder {
     }
     /// <p>A list of Amazon Resource Names (ARNs) to assign to a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to assign many resources to a backup plan, consider a different resource selection strategy, such as assigning all resources of a resource type or refining your resource selection using tags.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources = input;
         self
     }
@@ -177,10 +166,7 @@ impl BackupSelectionBuilder {
     /// <li> <p>When you specify more than one condition, you assign all resources that match AT LEAST ONE condition (using OR logic).</p> </li>
     /// <li> <p> <code>ListOfTags</code> only supports <code>StringEquals</code>. <code>Conditions</code> supports <code>StringEquals</code>, <code>StringLike</code>, <code>StringNotEquals</code>, and <code>StringNotLike</code>. </p> </li>
     /// </ul>
-    pub fn set_list_of_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
-    ) -> Self {
+    pub fn set_list_of_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>) -> Self {
         self.list_of_tags = input;
         self
     }
@@ -190,9 +176,7 @@ impl BackupSelectionBuilder {
     /// <li> <p>When you specify more than one condition, you assign all resources that match AT LEAST ONE condition (using OR logic).</p> </li>
     /// <li> <p> <code>ListOfTags</code> only supports <code>StringEquals</code>. <code>Conditions</code> supports <code>StringEquals</code>, <code>StringLike</code>, <code>StringNotEquals</code>, and <code>StringNotLike</code>. </p> </li>
     /// </ul>
-    pub fn get_list_of_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Condition>> {
+    pub fn get_list_of_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Condition>> {
         &self.list_of_tags
     }
     /// Appends an item to `not_resources`.
@@ -201,10 +185,7 @@ impl BackupSelectionBuilder {
     ///
     /// <p>A list of Amazon Resource Names (ARNs) to exclude from a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to exclude many resources from a backup plan, consider a different resource selection strategy, such as assigning only one or a few resource types or refining your resource selection using tags.</p>
-    pub fn not_resources(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn not_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.not_resources.unwrap_or_default();
         v.push(input.into());
         self.not_resources = ::std::option::Option::Some(v);
@@ -212,18 +193,13 @@ impl BackupSelectionBuilder {
     }
     /// <p>A list of Amazon Resource Names (ARNs) to exclude from a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to exclude many resources from a backup plan, consider a different resource selection strategy, such as assigning only one or a few resource types or refining your resource selection using tags.</p>
-    pub fn set_not_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_not_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.not_resources = input;
         self
     }
     /// <p>A list of Amazon Resource Names (ARNs) to exclude from a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to exclude many resources from a backup plan, consider a different resource selection strategy, such as assigning only one or a few resource types or refining your resource selection using tags.</p>
-    pub fn get_not_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_not_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.not_resources
     }
     /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
@@ -242,10 +218,7 @@ impl BackupSelectionBuilder {
     /// <li> <p>When you specify more than one condition, you only assign the resources that match ALL conditions (using AND logic).</p> </li>
     /// <li> <p> <code>Conditions</code> supports <code>StringEquals</code>, <code>StringLike</code>, <code>StringNotEquals</code>, and <code>StringNotLike</code>. <code>ListOfTags</code> only supports <code>StringEquals</code>.</p> </li>
     /// </ul>
-    pub fn set_conditions(
-        mut self,
-        input: ::std::option::Option<crate::types::Conditions>,
-    ) -> Self {
+    pub fn set_conditions(mut self, input: ::std::option::Option<crate::types::Conditions>) -> Self {
         self.conditions = input;
         self
     }

@@ -37,9 +37,7 @@ impl AmiAggregation {
 
 /// A builder for [`AmiAggregation`](crate::types::AmiAggregation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmiAggregationBuilder {
     pub(crate) amis: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -58,10 +56,7 @@ impl AmiAggregationBuilder {
         self
     }
     /// <p>The IDs of AMIs to aggregate findings for.</p>
-    pub fn set_amis(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_amis(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.amis = input;
         self
     }

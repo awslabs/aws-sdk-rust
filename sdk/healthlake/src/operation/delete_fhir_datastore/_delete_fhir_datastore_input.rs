@@ -15,18 +15,14 @@ impl DeleteFhirDatastoreInput {
 }
 impl DeleteFhirDatastoreInput {
     /// Creates a new builder-style object to manufacture [`DeleteFhirDatastoreInput`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput).
-    pub fn builder(
-    ) -> crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreInputBuilder {
-        crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreInputBuilder {
+        crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFhirDatastoreInput`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFhirDatastoreInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl DeleteFhirDatastoreInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFhirDatastoreInput`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput {
-                datastore_id: self.datastore_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput {
+            datastore_id: self.datastore_id,
+        })
     }
 }

@@ -35,9 +35,7 @@ impl ListExportsOutput {
 
 /// A builder for [`ListExportsOutput`](crate::operation::list_exports::ListExportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExportsOutputBuilder {
     pub(crate) exports: ::std::option::Option<::std::vec::Vec<crate::types::Export>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListExportsOutputBuilder {
         self
     }
     /// <p>The output for the <code>ListExports</code> action.</p>
-    pub fn set_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Export>>,
-    ) -> Self {
+    pub fn set_exports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Export>>) -> Self {
         self.exports = input;
         self
     }

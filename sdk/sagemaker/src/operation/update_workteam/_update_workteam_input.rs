@@ -36,9 +36,7 @@ impl UpdateWorkteamInput {
         self.description.as_deref()
     }
     /// <p>Configures SNS topic notifications for available or expiring work items</p>
-    pub fn notification_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
 }
@@ -51,31 +49,21 @@ impl UpdateWorkteamInput {
 
 /// A builder for [`UpdateWorkteamInput`](crate::operation::update_workteam::UpdateWorkteamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkteamInputBuilder {
     pub(crate) workteam_name: ::std::option::Option<::std::string::String>,
-    pub(crate) member_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
+    pub(crate) member_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) notification_configuration:
-        ::std::option::Option<crate::types::NotificationConfiguration>,
+    pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
 }
 impl UpdateWorkteamInputBuilder {
     /// <p>The name of the work team to update.</p>
-    pub fn workteam_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workteam_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the work team to update.</p>
-    pub fn set_workteam_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workteam_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workteam_name = input;
         self
     }
@@ -101,10 +89,7 @@ impl UpdateWorkteamInputBuilder {
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input for both of these parameters in a single request.</p>
     /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>. Be aware that user groups that are already in the work team must also be listed in <code>Groups</code> when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update. </p>
-    pub fn set_member_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
-    ) -> Self {
+    pub fn set_member_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>) -> Self {
         self.member_definitions = input;
         self
     }
@@ -112,9 +97,7 @@ impl UpdateWorkteamInputBuilder {
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input for both of these parameters in a single request.</p>
     /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>. Be aware that user groups that are already in the work team must also be listed in <code>Groups</code> when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update. </p>
-    pub fn get_member_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>> {
+    pub fn get_member_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>> {
         &self.member_definitions
     }
     /// <p>An updated description for the work team.</p>
@@ -132,34 +115,23 @@ impl UpdateWorkteamInputBuilder {
         &self.description
     }
     /// <p>Configures SNS topic notifications for available or expiring work items</p>
-    pub fn notification_configuration(
-        mut self,
-        input: crate::types::NotificationConfiguration,
-    ) -> Self {
+    pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.notification_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures SNS topic notifications for available or expiring work items</p>
-    pub fn set_notification_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationConfiguration>,
-    ) -> Self {
+    pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
         self.notification_configuration = input;
         self
     }
     /// <p>Configures SNS topic notifications for available or expiring work items</p>
-    pub fn get_notification_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+    pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
     /// Consumes the builder and constructs a [`UpdateWorkteamInput`](crate::operation::update_workteam::UpdateWorkteamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_workteam::UpdateWorkteamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_workteam::UpdateWorkteamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workteam::UpdateWorkteamInput {
             workteam_name: self.workteam_name,
             member_definitions: self.member_definitions,

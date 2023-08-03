@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateCallAnalyticsCategoryOutput {
 }
 impl UpdateCallAnalyticsCategoryOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCallAnalyticsCategoryOutput`](crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryOutput).
-    pub fn builder() -> crate::operation::update_call_analytics_category::builders::UpdateCallAnalyticsCategoryOutputBuilder{
+    pub fn builder() -> crate::operation::update_call_analytics_category::builders::UpdateCallAnalyticsCategoryOutputBuilder {
         crate::operation::update_call_analytics_category::builders::UpdateCallAnalyticsCategoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCallAnalyticsCategoryOutput`](crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCallAnalyticsCategoryOutputBuilder {
     pub(crate) category_properties: ::std::option::Option<crate::types::CategoryProperties>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl UpdateCallAnalyticsCategoryOutputBuilder {
         self
     }
     /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>UpdateCallAnalyticsCategory</code> request.</p>
-    pub fn set_category_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::CategoryProperties>,
-    ) -> Self {
+    pub fn set_category_properties(mut self, input: ::std::option::Option<crate::types::CategoryProperties>) -> Self {
         self.category_properties = input;
         self
     }
     /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>UpdateCallAnalyticsCategory</code> request.</p>
-    pub fn get_category_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::CategoryProperties> {
+    pub fn get_category_properties(&self) -> &::std::option::Option<crate::types::CategoryProperties> {
         &self.category_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl UpdateCallAnalyticsCategoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateCallAnalyticsCategoryOutput`](crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryOutput {
+    pub fn build(self) -> crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryOutput {
         crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryOutput {
             category_properties: self.category_properties,
             _request_id: self._request_id,

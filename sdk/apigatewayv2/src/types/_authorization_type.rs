@@ -40,13 +40,7 @@
 /// <p>The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AuthorizationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for AuthorizationType {
             "CUSTOM" => AuthorizationType::Custom,
             "JWT" => AuthorizationType::Jwt,
             "NONE" => AuthorizationType::None,
-            other => {
-                AuthorizationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AuthorizationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

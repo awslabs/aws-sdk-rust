@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`metric_name(Option<String>)`](crate::operation::create_fleet_metric::CreateFleetMetricOutput::metric_name): <p>The name of the fleet metric to create.</p>
     ///   - [`metric_arn(Option<String>)`](crate::operation::create_fleet_metric::CreateFleetMetricOutput::metric_arn): <p>The Amazon Resource Name (ARN) of the new fleet metric.</p>
     /// - On failure, responds with [`SdkError<CreateFleetMetricError>`](crate::operation::create_fleet_metric::CreateFleetMetricError)
-    pub fn create_fleet_metric(
-        &self,
-    ) -> crate::operation::create_fleet_metric::builders::CreateFleetMetricFluentBuilder {
-        crate::operation::create_fleet_metric::builders::CreateFleetMetricFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_fleet_metric(&self) -> crate::operation::create_fleet_metric::builders::CreateFleetMetricFluentBuilder {
+        crate::operation::create_fleet_metric::builders::CreateFleetMetricFluentBuilder::new(self.handle.clone())
     }
 }

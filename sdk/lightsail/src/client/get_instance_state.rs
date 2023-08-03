@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetInstanceStateOutput`](crate::operation::get_instance_state::GetInstanceStateOutput) with field(s):
     ///   - [`state(Option<InstanceState>)`](crate::operation::get_instance_state::GetInstanceStateOutput::state): <p>The state of the instance.</p>
     /// - On failure, responds with [`SdkError<GetInstanceStateError>`](crate::operation::get_instance_state::GetInstanceStateError)
-    pub fn get_instance_state(
-        &self,
-    ) -> crate::operation::get_instance_state::builders::GetInstanceStateFluentBuilder {
-        crate::operation::get_instance_state::builders::GetInstanceStateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_instance_state(&self) -> crate::operation::get_instance_state::builders::GetInstanceStateFluentBuilder {
+        crate::operation::get_instance_state::builders::GetInstanceStateFluentBuilder::new(self.handle.clone())
     }
 }

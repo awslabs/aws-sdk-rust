@@ -48,18 +48,14 @@ impl CreateDataSourceFromS3Input {
 }
 impl CreateDataSourceFromS3Input {
     /// Creates a new builder-style object to manufacture [`CreateDataSourceFromS3Input`](crate::operation::create_data_source_from_s3::CreateDataSourceFromS3Input).
-    pub fn builder(
-    ) -> crate::operation::create_data_source_from_s3::builders::CreateDataSourceFromS3InputBuilder
-    {
+    pub fn builder() -> crate::operation::create_data_source_from_s3::builders::CreateDataSourceFromS3InputBuilder {
         crate::operation::create_data_source_from_s3::builders::CreateDataSourceFromS3InputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataSourceFromS3Input`](crate::operation::create_data_source_from_s3::CreateDataSourceFromS3Input).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataSourceFromS3InputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_name: ::std::option::Option<::std::string::String>,
@@ -68,18 +64,12 @@ pub struct CreateDataSourceFromS3InputBuilder {
 }
 impl CreateDataSourceFromS3InputBuilder {
     /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -88,18 +78,12 @@ impl CreateDataSourceFromS3InputBuilder {
         &self.data_source_id
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-    pub fn data_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-    pub fn set_data_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_name = input;
         self
     }
@@ -160,13 +144,11 @@ impl CreateDataSourceFromS3InputBuilder {
         crate::operation::create_data_source_from_s3::CreateDataSourceFromS3Input,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_data_source_from_s3::CreateDataSourceFromS3Input {
-                data_source_id: self.data_source_id,
-                data_source_name: self.data_source_name,
-                data_spec: self.data_spec,
-                compute_statistics: self.compute_statistics.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_data_source_from_s3::CreateDataSourceFromS3Input {
+            data_source_id: self.data_source_id,
+            data_source_name: self.data_source_name,
+            data_spec: self.data_spec,
+            compute_statistics: self.compute_statistics.unwrap_or_default(),
+        })
     }
 }

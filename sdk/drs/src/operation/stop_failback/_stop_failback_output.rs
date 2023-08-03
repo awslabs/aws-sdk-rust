@@ -19,9 +19,7 @@ impl StopFailbackOutput {
 
 /// A builder for [`StopFailbackOutput`](crate::operation::stop_failback::StopFailbackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopFailbackOutputBuilder {
     _request_id: Option<String>,
 }

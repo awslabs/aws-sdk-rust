@@ -10,9 +10,7 @@ pub struct GetEnvironmentTemplateOutput {
 }
 impl GetEnvironmentTemplateOutput {
     /// <p>The detailed data of the requested environment template.</p>
-    pub fn environment_template(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EnvironmentTemplate> {
+    pub fn environment_template(&self) -> ::std::option::Option<&crate::types::EnvironmentTemplate> {
         self.environment_template.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetEnvironmentTemplateOutput {
 }
 impl GetEnvironmentTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetEnvironmentTemplateOutput`](crate::operation::get_environment_template::GetEnvironmentTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::get_environment_template::builders::GetEnvironmentTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_environment_template::builders::GetEnvironmentTemplateOutputBuilder {
         crate::operation::get_environment_template::builders::GetEnvironmentTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEnvironmentTemplateOutput`](crate::operation::get_environment_template::GetEnvironmentTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnvironmentTemplateOutputBuilder {
     pub(crate) environment_template: ::std::option::Option<crate::types::EnvironmentTemplate>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl GetEnvironmentTemplateOutputBuilder {
         self
     }
     /// <p>The detailed data of the requested environment template.</p>
-    pub fn set_environment_template(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentTemplate>,
-    ) -> Self {
+    pub fn set_environment_template(mut self, input: ::std::option::Option<crate::types::EnvironmentTemplate>) -> Self {
         self.environment_template = input;
         self
     }
     /// <p>The detailed data of the requested environment template.</p>
-    pub fn get_environment_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnvironmentTemplate> {
+    pub fn get_environment_template(&self) -> &::std::option::Option<crate::types::EnvironmentTemplate> {
         &self.environment_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

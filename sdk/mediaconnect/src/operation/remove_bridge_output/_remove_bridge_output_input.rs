@@ -22,17 +22,14 @@ impl RemoveBridgeOutputInput {
 }
 impl RemoveBridgeOutputInput {
     /// Creates a new builder-style object to manufacture [`RemoveBridgeOutputInput`](crate::operation::remove_bridge_output::RemoveBridgeOutputInput).
-    pub fn builder(
-    ) -> crate::operation::remove_bridge_output::builders::RemoveBridgeOutputInputBuilder {
+    pub fn builder() -> crate::operation::remove_bridge_output::builders::RemoveBridgeOutputInputBuilder {
         crate::operation::remove_bridge_output::builders::RemoveBridgeOutputInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveBridgeOutputInput`](crate::operation::remove_bridge_output::RemoveBridgeOutputInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveBridgeOutputInputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) output_name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl RemoveBridgeOutputInputBuilder {
     /// Consumes the builder and constructs a [`RemoveBridgeOutputInput`](crate::operation::remove_bridge_output::RemoveBridgeOutputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_bridge_output::RemoveBridgeOutputInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_bridge_output::RemoveBridgeOutputInput {
-                bridge_arn: self.bridge_arn,
-                output_name: self.output_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::remove_bridge_output::RemoveBridgeOutputInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::remove_bridge_output::RemoveBridgeOutputInput {
+            bridge_arn: self.bridge_arn,
+            output_name: self.output_name,
+        })
     }
 }

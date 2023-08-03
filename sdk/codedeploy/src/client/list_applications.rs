@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`applications(Option<Vec<String>>)`](crate::operation::list_applications::ListApplicationsOutput::applications): <p>A list of application names.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_applications::ListApplicationsOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list applications call to return the next set of applications in the list.</p>
     /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
-    pub fn list_applications(
-        &self,
-    ) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
-        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_applications(&self) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
+        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

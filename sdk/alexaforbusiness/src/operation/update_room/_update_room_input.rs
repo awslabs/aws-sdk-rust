@@ -50,9 +50,7 @@ impl UpdateRoomInput {
 
 /// A builder for [`UpdateRoomInput`](crate::operation::update_room::UpdateRoomInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRoomInputBuilder {
     pub(crate) room_arn: ::std::option::Option<::std::string::String>,
     pub(crate) room_name: ::std::option::Option<::std::string::String>,
@@ -104,18 +102,12 @@ impl UpdateRoomInputBuilder {
         &self.description
     }
     /// <p>The updated provider calendar ARN for the room.</p>
-    pub fn provider_calendar_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_calendar_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_calendar_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The updated provider calendar ARN for the room.</p>
-    pub fn set_provider_calendar_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_calendar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_calendar_id = input;
         self
     }
@@ -138,12 +130,7 @@ impl UpdateRoomInputBuilder {
         &self.profile_arn
     }
     /// Consumes the builder and constructs a [`UpdateRoomInput`](crate::operation::update_room::UpdateRoomInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_room::UpdateRoomInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_room::UpdateRoomInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_room::UpdateRoomInput {
             room_arn: self.room_arn,
             room_name: self.room_name,

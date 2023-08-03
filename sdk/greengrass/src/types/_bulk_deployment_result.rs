@@ -72,9 +72,7 @@ impl BulkDeploymentResult {
 
 /// A builder for [`BulkDeploymentResult`](crate::types::BulkDeploymentResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BulkDeploymentResultBuilder {
     pub(crate) created_at: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_arn: ::std::option::Option<::std::string::String>,
@@ -101,18 +99,12 @@ impl BulkDeploymentResultBuilder {
         &self.created_at
     }
     /// The ARN of the group deployment.
-    pub fn deployment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the group deployment.
-    pub fn set_deployment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_arn = input;
         self
     }
@@ -121,18 +113,12 @@ impl BulkDeploymentResultBuilder {
         &self.deployment_arn
     }
     /// The ID of the group deployment.
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the group deployment.
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -141,18 +127,12 @@ impl BulkDeploymentResultBuilder {
         &self.deployment_id
     }
     /// The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
-    pub fn deployment_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_status = ::std::option::Option::Some(input.into());
         self
     }
     /// The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
-    pub fn set_deployment_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_status = input;
         self
     }
@@ -166,10 +146,7 @@ impl BulkDeploymentResultBuilder {
         self
     }
     /// The type of the deployment.
-    pub fn set_deployment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentType>,
-    ) -> Self {
+    pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentType>) -> Self {
         self.deployment_type = input;
         self
     }
@@ -189,32 +166,21 @@ impl BulkDeploymentResultBuilder {
         self
     }
     /// Details about the error.
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
-    ) -> Self {
+    pub fn set_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>) -> Self {
         self.error_details = input;
         self
     }
     /// Details about the error.
-    pub fn get_error_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+    pub fn get_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
         &self.error_details
     }
     /// The error message for a failed deployment
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// The error message for a failed deployment
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

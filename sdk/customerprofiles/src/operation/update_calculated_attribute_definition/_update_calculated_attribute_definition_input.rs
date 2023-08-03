@@ -43,16 +43,14 @@ impl UpdateCalculatedAttributeDefinitionInput {
 }
 impl UpdateCalculatedAttributeDefinitionInput {
     /// Creates a new builder-style object to manufacture [`UpdateCalculatedAttributeDefinitionInput`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionInput).
-    pub fn builder() -> crate::operation::update_calculated_attribute_definition::builders::UpdateCalculatedAttributeDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::update_calculated_attribute_definition::builders::UpdateCalculatedAttributeDefinitionInputBuilder {
         crate::operation::update_calculated_attribute_definition::builders::UpdateCalculatedAttributeDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCalculatedAttributeDefinitionInput`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCalculatedAttributeDefinitionInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) calculated_attribute_name: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl UpdateCalculatedAttributeDefinitionInputBuilder {
         &self.domain_name
     }
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn calculated_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculated_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculated_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn set_calculated_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculated_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculated_attribute_name = input;
         self
     }
@@ -129,10 +121,7 @@ impl UpdateCalculatedAttributeDefinitionInputBuilder {
         self
     }
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
-    pub fn set_conditions(
-        mut self,
-        input: ::std::option::Option<crate::types::Conditions>,
-    ) -> Self {
+    pub fn set_conditions(mut self, input: ::std::option::Option<crate::types::Conditions>) -> Self {
         self.conditions = input;
         self
     }
@@ -141,20 +130,20 @@ impl UpdateCalculatedAttributeDefinitionInputBuilder {
         &self.conditions
     }
     /// Consumes the builder and constructs a [`UpdateCalculatedAttributeDefinitionInput`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionInput {
-                domain_name: self.domain_name
-                ,
-                calculated_attribute_name: self.calculated_attribute_name
-                ,
-                display_name: self.display_name
-                ,
-                description: self.description
-                ,
-                conditions: self.conditions
-                ,
-            }
+                domain_name: self.domain_name,
+                calculated_attribute_name: self.calculated_attribute_name,
+                display_name: self.display_name,
+                description: self.description,
+                conditions: self.conditions,
+            },
         )
     }
 }

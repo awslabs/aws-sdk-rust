@@ -49,8 +49,7 @@ pub struct DescribeModelCardOutput {
     /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub model_card_processing_status:
-        ::std::option::Option<crate::types::ModelCardProcessingStatus>,
+    pub model_card_processing_status: ::std::option::Option<crate::types::ModelCardProcessingStatus>,
     _request_id: Option<String>,
 }
 impl DescribeModelCardOutput {
@@ -109,9 +108,7 @@ impl DescribeModelCardOutput {
     /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
     /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
     /// </ul>
-    pub fn model_card_processing_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelCardProcessingStatus> {
+    pub fn model_card_processing_status(&self) -> ::std::option::Option<&crate::types::ModelCardProcessingStatus> {
         self.model_card_processing_status.as_ref()
     }
 }
@@ -128,10 +125,7 @@ impl ::std::fmt::Debug for DescribeModelCardOutput {
         formatter.field("created_by", &self.created_by);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field(
-            "model_card_processing_status",
-            &self.model_card_processing_status,
-        );
+        formatter.field("model_card_processing_status", &self.model_card_processing_status);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -143,8 +137,7 @@ impl ::aws_http::request_id::RequestId for DescribeModelCardOutput {
 }
 impl DescribeModelCardOutput {
     /// Creates a new builder-style object to manufacture [`DescribeModelCardOutput`](crate::operation::describe_model_card::DescribeModelCardOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_model_card::builders::DescribeModelCardOutputBuilder {
+    pub fn builder() -> crate::operation::describe_model_card::builders::DescribeModelCardOutputBuilder {
         crate::operation::describe_model_card::builders::DescribeModelCardOutputBuilder::default()
     }
 }
@@ -163,24 +156,17 @@ pub struct DescribeModelCardOutputBuilder {
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
-    pub(crate) model_card_processing_status:
-        ::std::option::Option<crate::types::ModelCardProcessingStatus>,
+    pub(crate) model_card_processing_status: ::std::option::Option<crate::types::ModelCardProcessingStatus>,
     _request_id: Option<String>,
 }
 impl DescribeModelCardOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
-    pub fn model_card_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
-    pub fn set_model_card_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_arn = input;
         self
     }
@@ -189,18 +175,12 @@ impl DescribeModelCardOutputBuilder {
         &self.model_card_arn
     }
     /// <p>The name of the model card.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model card.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_name = input;
         self
     }
@@ -254,10 +234,7 @@ impl DescribeModelCardOutputBuilder {
     /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
     /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
-    pub fn set_model_card_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardStatus>,
-    ) -> Self {
+    pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
         self.model_card_status = input;
         self
     }
@@ -277,17 +254,12 @@ impl DescribeModelCardOutputBuilder {
         self
     }
     /// <p>The security configuration used to protect model card content.</p>
-    pub fn set_security_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardSecurityConfig>,
-    ) -> Self {
+    pub fn set_security_config(mut self, input: ::std::option::Option<crate::types::ModelCardSecurityConfig>) -> Self {
         self.security_config = input;
         self
     }
     /// <p>The security configuration used to protect model card content.</p>
-    pub fn get_security_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelCardSecurityConfig> {
+    pub fn get_security_config(&self) -> &::std::option::Option<crate::types::ModelCardSecurityConfig> {
         &self.security_config
     }
     /// <p>The date and time the model card was created.</p>
@@ -296,10 +268,7 @@ impl DescribeModelCardOutputBuilder {
         self
     }
     /// <p>The date and time the model card was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -313,10 +282,7 @@ impl DescribeModelCardOutputBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
@@ -330,10 +296,7 @@ impl DescribeModelCardOutputBuilder {
         self
     }
     /// <p>The date and time the model card was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -347,10 +310,7 @@ impl DescribeModelCardOutputBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -367,10 +327,7 @@ impl DescribeModelCardOutputBuilder {
     /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
     /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
     /// </ul>
-    pub fn model_card_processing_status(
-        mut self,
-        input: crate::types::ModelCardProcessingStatus,
-    ) -> Self {
+    pub fn model_card_processing_status(mut self, input: crate::types::ModelCardProcessingStatus) -> Self {
         self.model_card_processing_status = ::std::option::Option::Some(input);
         self
     }
@@ -383,10 +340,7 @@ impl DescribeModelCardOutputBuilder {
     /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
     /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
     /// </ul>
-    pub fn set_model_card_processing_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardProcessingStatus>,
-    ) -> Self {
+    pub fn set_model_card_processing_status(mut self, input: ::std::option::Option<crate::types::ModelCardProcessingStatus>) -> Self {
         self.model_card_processing_status = input;
         self
     }
@@ -399,9 +353,7 @@ impl DescribeModelCardOutputBuilder {
     /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
     /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
     /// </ul>
-    pub fn get_model_card_processing_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelCardProcessingStatus> {
+    pub fn get_model_card_processing_status(&self) -> &::std::option::Option<crate::types::ModelCardProcessingStatus> {
         &self.model_card_processing_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -444,10 +396,7 @@ impl ::std::fmt::Debug for DescribeModelCardOutputBuilder {
         formatter.field("created_by", &self.created_by);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field(
-            "model_card_processing_status",
-            &self.model_card_processing_status,
-        );
+        formatter.field("model_card_processing_status", &self.model_card_processing_status);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

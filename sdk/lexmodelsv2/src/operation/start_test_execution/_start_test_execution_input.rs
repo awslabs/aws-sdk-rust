@@ -30,25 +30,20 @@ impl StartTestExecutionInput {
         self.api_mode.as_ref()
     }
     /// <p>Indicates whether audio or text is used.</p>
-    pub fn test_execution_modality(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TestExecutionModality> {
+    pub fn test_execution_modality(&self) -> ::std::option::Option<&crate::types::TestExecutionModality> {
         self.test_execution_modality.as_ref()
     }
 }
 impl StartTestExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartTestExecutionInput`](crate::operation::start_test_execution::StartTestExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::start_test_execution::builders::StartTestExecutionInputBuilder {
+    pub fn builder() -> crate::operation::start_test_execution::builders::StartTestExecutionInputBuilder {
         crate::operation::start_test_execution::builders::StartTestExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartTestExecutionInput`](crate::operation::start_test_execution::StartTestExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTestExecutionInputBuilder {
     pub(crate) test_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<crate::types::TestExecutionTarget>,
@@ -76,10 +71,7 @@ impl StartTestExecutionInputBuilder {
         self
     }
     /// <p>The target bot for the test set execution.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionTarget>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::TestExecutionTarget>) -> Self {
         self.target = input;
         self
     }
@@ -93,10 +85,7 @@ impl StartTestExecutionInputBuilder {
         self
     }
     /// <p>Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Runtime API is used. Whereas, for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.</p>
-    pub fn set_api_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionApiMode>,
-    ) -> Self {
+    pub fn set_api_mode(mut self, input: ::std::option::Option<crate::types::TestExecutionApiMode>) -> Self {
         self.api_mode = input;
         self
     }
@@ -110,33 +99,23 @@ impl StartTestExecutionInputBuilder {
         self
     }
     /// <p>Indicates whether audio or text is used.</p>
-    pub fn set_test_execution_modality(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionModality>,
-    ) -> Self {
+    pub fn set_test_execution_modality(mut self, input: ::std::option::Option<crate::types::TestExecutionModality>) -> Self {
         self.test_execution_modality = input;
         self
     }
     /// <p>Indicates whether audio or text is used.</p>
-    pub fn get_test_execution_modality(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestExecutionModality> {
+    pub fn get_test_execution_modality(&self) -> &::std::option::Option<crate::types::TestExecutionModality> {
         &self.test_execution_modality
     }
     /// Consumes the builder and constructs a [`StartTestExecutionInput`](crate::operation::start_test_execution::StartTestExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_test_execution::StartTestExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_test_execution::StartTestExecutionInput {
-                test_set_id: self.test_set_id,
-                target: self.target,
-                api_mode: self.api_mode,
-                test_execution_modality: self.test_execution_modality,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_test_execution::StartTestExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_test_execution::StartTestExecutionInput {
+            test_set_id: self.test_set_id,
+            target: self.target,
+            api_mode: self.api_mode,
+            test_execution_modality: self.test_execution_modality,
+        })
     }
 }

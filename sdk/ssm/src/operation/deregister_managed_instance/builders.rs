@@ -26,7 +26,7 @@ impl DeregisterManagedInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterManagedInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_managed_instance::builders::DeregisterManagedInstanceInputBuilder,
+    inner: crate::operation::deregister_managed_instance::builders::DeregisterManagedInstanceInputBuilder,
 }
 impl DeregisterManagedInstanceFluentBuilder {
     /// Creates a new `DeregisterManagedInstance`.
@@ -37,7 +37,7 @@ impl DeregisterManagedInstanceFluentBuilder {
         }
     }
     /// Access the DeregisterManagedInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::deregister_managed_instance::builders::DeregisterManagedInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::deregister_managed_instance::builders::DeregisterManagedInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeregisterManagedInstanceFluentBuilder {
             crate::operation::deregister_managed_instance::DeregisterManagedInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_managed_instance::DeregisterManagedInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_managed_instance::DeregisterManagedInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeregisterManagedInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeregisterManagedInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_managed_instance::DeregisterManagedInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_managed_instance::DeregisterManagedInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_managed_instance::DeregisterManagedInstanceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeregisterManagedInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_managed_instance::DeregisterManagedInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_managed_instance::DeregisterManagedInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_managed_instance::DeregisterManagedInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeregisterManagedInstanceFluentBuilder {
             crate::operation::deregister_managed_instance::DeregisterManagedInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_managed_instance::DeregisterManagedInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_managed_instance::DeregisterManagedInstanceError>,
     > {
         self.customize_middleware().await
     }

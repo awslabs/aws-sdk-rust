@@ -11,11 +11,9 @@ pub fn ser_update_policy_definition(
             object_1.finish();
         }
         crate::types::UpdatePolicyDefinition::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "UpdatePolicyDefinition",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "UpdatePolicyDefinition",
+            ))
         }
     }
     Ok(())

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`network_analyzer_configuration_list(Option<Vec<NetworkAnalyzerConfigurations>>)`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsOutput::network_analyzer_configuration_list): <p>The list of network analyzer configurations.</p>
     /// - On failure, responds with [`SdkError<ListNetworkAnalyzerConfigurationsError>`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsError)
-    pub fn list_network_analyzer_configurations(&self) -> crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsFluentBuilder{
+    pub fn list_network_analyzer_configurations(
+        &self,
+    ) -> crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsFluentBuilder {
         crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RebuildEnvironmentOutput {
 }
 impl RebuildEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`RebuildEnvironmentOutput`](crate::operation::rebuild_environment::RebuildEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::rebuild_environment::builders::RebuildEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::rebuild_environment::builders::RebuildEnvironmentOutputBuilder {
         crate::operation::rebuild_environment::builders::RebuildEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`RebuildEnvironmentOutput`](crate::operation::rebuild_environment::RebuildEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebuildEnvironmentOutputBuilder {
     _request_id: Option<String>,
 }

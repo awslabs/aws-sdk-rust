@@ -37,10 +37,7 @@ impl ListSourceCredentialsFluentBuilder {
         }
     }
     /// Access the ListSourceCredentials as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_source_credentials::builders::ListSourceCredentialsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_source_credentials::builders::ListSourceCredentialsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListSourceCredentialsFluentBuilder {
             crate::operation::list_source_credentials::ListSourceCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_credentials::ListSourceCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_credentials::ListSourceCredentialsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListSourceCredentialsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListSourceCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_source_credentials::ListSourceCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_credentials::ListSourceCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_credentials::ListSourceCredentialsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListSourceCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_source_credentials::ListSourceCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_credentials::ListSourceCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_credentials::ListSourceCredentialsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ListSourceCredentialsFluentBuilder {
             crate::operation::list_source_credentials::ListSourceCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_credentials::ListSourceCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_credentials::ListSourceCredentialsError>,
     > {
         self.customize_middleware().await
     }

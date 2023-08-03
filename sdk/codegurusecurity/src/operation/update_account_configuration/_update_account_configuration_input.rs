@@ -15,16 +15,14 @@ impl UpdateAccountConfigurationInput {
 }
 impl UpdateAccountConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountConfigurationInput`](crate::operation::update_account_configuration::UpdateAccountConfigurationInput).
-    pub fn builder() -> crate::operation::update_account_configuration::builders::UpdateAccountConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_account_configuration::builders::UpdateAccountConfigurationInputBuilder {
         crate::operation::update_account_configuration::builders::UpdateAccountConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccountConfigurationInput`](crate::operation::update_account_configuration::UpdateAccountConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccountConfigurationInputBuilder {
     pub(crate) encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
@@ -35,10 +33,7 @@ impl UpdateAccountConfigurationInputBuilder {
         self
     }
     /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.encryption_config = input;
         self
     }
@@ -53,10 +48,8 @@ impl UpdateAccountConfigurationInputBuilder {
         crate::operation::update_account_configuration::UpdateAccountConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_account_configuration::UpdateAccountConfigurationInput {
-                encryption_config: self.encryption_config,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_account_configuration::UpdateAccountConfigurationInput {
+            encryption_config: self.encryption_config,
+        })
     }
 }

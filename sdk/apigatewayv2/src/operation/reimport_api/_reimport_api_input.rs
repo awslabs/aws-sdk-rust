@@ -44,9 +44,7 @@ impl ReimportApiInput {
 
 /// A builder for [`ReimportApiInput`](crate::operation::reimport_api::ReimportApiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReimportApiInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) basepath: ::std::option::Option<::std::string::String>,
@@ -111,12 +109,7 @@ impl ReimportApiInputBuilder {
         &self.fail_on_warnings
     }
     /// Consumes the builder and constructs a [`ReimportApiInput`](crate::operation::reimport_api::ReimportApiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reimport_api::ReimportApiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::reimport_api::ReimportApiInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::reimport_api::ReimportApiInput {
             api_id: self.api_id,
             basepath: self.basepath,

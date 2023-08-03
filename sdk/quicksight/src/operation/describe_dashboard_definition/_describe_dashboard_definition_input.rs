@@ -36,16 +36,14 @@ impl DescribeDashboardDefinitionInput {
 }
 impl DescribeDashboardDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardDefinitionInput`](crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionInput).
-    pub fn builder() -> crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionInputBuilder {
         crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDashboardDefinitionInput`](crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDashboardDefinitionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct DescribeDashboardDefinitionInputBuilder {
 }
 impl DescribeDashboardDefinitionInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -122,13 +114,11 @@ impl DescribeDashboardDefinitionInputBuilder {
         crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionInput {
-                aws_account_id: self.aws_account_id,
-                dashboard_id: self.dashboard_id,
-                version_number: self.version_number,
-                alias_name: self.alias_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionInput {
+            aws_account_id: self.aws_account_id,
+            dashboard_id: self.dashboard_id,
+            version_number: self.version_number,
+            alias_name: self.alias_name,
+        })
     }
 }

@@ -35,9 +35,7 @@ impl ListExecutionsOutput {
 
 /// A builder for [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExecutionsOutputBuilder {
     pub(crate) executions: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListExecutionsOutputBuilder {
         self
     }
     /// <p>The list of matching executions.</p>
-    pub fn set_executions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionListItem>>,
-    ) -> Self {
+    pub fn set_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionListItem>>) -> Self {
         self.executions = input;
         self
     }
     /// <p>The list of matching executions.</p>
-    pub fn get_executions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionListItem>> {
+    pub fn get_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionListItem>> {
         &self.executions
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>

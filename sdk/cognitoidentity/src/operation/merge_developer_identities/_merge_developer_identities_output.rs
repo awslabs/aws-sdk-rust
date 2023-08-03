@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for MergeDeveloperIdentitiesOutput {
 }
 impl MergeDeveloperIdentitiesOutput {
     /// Creates a new builder-style object to manufacture [`MergeDeveloperIdentitiesOutput`](crate::operation::merge_developer_identities::MergeDeveloperIdentitiesOutput).
-    pub fn builder(
-    ) -> crate::operation::merge_developer_identities::builders::MergeDeveloperIdentitiesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::merge_developer_identities::builders::MergeDeveloperIdentitiesOutputBuilder {
         crate::operation::merge_developer_identities::builders::MergeDeveloperIdentitiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`MergeDeveloperIdentitiesOutput`](crate::operation::merge_developer_identities::MergeDeveloperIdentitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MergeDeveloperIdentitiesOutputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -63,9 +59,7 @@ impl MergeDeveloperIdentitiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`MergeDeveloperIdentitiesOutput`](crate::operation::merge_developer_identities::MergeDeveloperIdentitiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::merge_developer_identities::MergeDeveloperIdentitiesOutput {
+    pub fn build(self) -> crate::operation::merge_developer_identities::MergeDeveloperIdentitiesOutput {
         crate::operation::merge_developer_identities::MergeDeveloperIdentitiesOutput {
             identity_id: self.identity_id,
             _request_id: self._request_id,

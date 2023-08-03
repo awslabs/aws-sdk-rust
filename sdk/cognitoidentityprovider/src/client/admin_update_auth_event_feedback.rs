@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`feedback_value(FeedbackValueType)`](crate::operation::admin_update_auth_event_feedback::builders::AdminUpdateAuthEventFeedbackFluentBuilder::feedback_value) / [`set_feedback_value(Option<FeedbackValueType>)`](crate::operation::admin_update_auth_event_feedback::builders::AdminUpdateAuthEventFeedbackFluentBuilder::set_feedback_value): <p>The authentication event feedback value.</p>
     /// - On success, responds with [`AdminUpdateAuthEventFeedbackOutput`](crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackOutput)
     /// - On failure, responds with [`SdkError<AdminUpdateAuthEventFeedbackError>`](crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError)
-    pub fn admin_update_auth_event_feedback(&self) -> crate::operation::admin_update_auth_event_feedback::builders::AdminUpdateAuthEventFeedbackFluentBuilder{
+    pub fn admin_update_auth_event_feedback(
+        &self,
+    ) -> crate::operation::admin_update_auth_event_feedback::builders::AdminUpdateAuthEventFeedbackFluentBuilder {
         crate::operation::admin_update_auth_event_feedback::builders::AdminUpdateAuthEventFeedbackFluentBuilder::new(self.handle.clone())
     }
 }

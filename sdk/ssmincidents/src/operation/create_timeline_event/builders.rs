@@ -37,9 +37,7 @@ impl CreateTimelineEventFluentBuilder {
         }
     }
     /// Access the CreateTimelineEvent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_timeline_event::builders::CreateTimelineEventInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_timeline_event::builders::CreateTimelineEventInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateTimelineEventFluentBuilder {
             crate::operation::create_timeline_event::CreateTimelineEvent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_timeline_event::CreateTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_timeline_event::CreateTimelineEventError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateTimelineEventFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateTimelineEventFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_timeline_event::CreateTimelineEventOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_timeline_event::CreateTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_timeline_event::CreateTimelineEventError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateTimelineEventFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_timeline_event::CreateTimelineEventOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_timeline_event::CreateTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_timeline_event::CreateTimelineEventError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateTimelineEventFluentBuilder {
             crate::operation::create_timeline_event::CreateTimelineEvent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_timeline_event::CreateTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_timeline_event::CreateTimelineEventError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl CreateTimelineEventFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.</p>
-    pub fn incident_record_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.incident_record_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.</p>
-    pub fn set_incident_record_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }
@@ -162,10 +143,7 @@ impl CreateTimelineEventFluentBuilder {
         self
     }
     /// <p>The time that the event occurred.</p>
-    pub fn set_event_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_event_time(input);
         self
     }
@@ -211,17 +189,12 @@ impl CreateTimelineEventFluentBuilder {
         self
     }
     /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with a resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use the table's ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p>
-    pub fn set_event_references(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
-    ) -> Self {
+    pub fn set_event_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>) -> Self {
         self.inner = self.inner.set_event_references(input);
         self
     }
     /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with a resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use the table's ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p>
-    pub fn get_event_references(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
+    pub fn get_event_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
         self.inner.get_event_references()
     }
 }

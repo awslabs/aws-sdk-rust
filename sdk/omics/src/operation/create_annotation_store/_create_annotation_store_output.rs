@@ -63,18 +63,14 @@ impl ::aws_http::request_id::RequestId for CreateAnnotationStoreOutput {
 }
 impl CreateAnnotationStoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateAnnotationStoreOutput`](crate::operation::create_annotation_store::CreateAnnotationStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::create_annotation_store::builders::CreateAnnotationStoreOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_annotation_store::builders::CreateAnnotationStoreOutputBuilder {
         crate::operation::create_annotation_store::builders::CreateAnnotationStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAnnotationStoreOutput`](crate::operation::create_annotation_store::CreateAnnotationStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAnnotationStoreOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,
@@ -106,10 +102,7 @@ impl CreateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>The store's genome reference. Required for all stores except TSV format with generic annotations.</p>
-    pub fn set_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceItem>,
-    ) -> Self {
+    pub fn set_reference(mut self, input: ::std::option::Option<crate::types::ReferenceItem>) -> Self {
         self.reference = input;
         self
     }
@@ -123,10 +116,7 @@ impl CreateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>The annotation file format of the store.</p>
-    pub fn set_store_format(
-        mut self,
-        input: ::std::option::Option<crate::types::StoreFormat>,
-    ) -> Self {
+    pub fn set_store_format(mut self, input: ::std::option::Option<crate::types::StoreFormat>) -> Self {
         self.store_format = input;
         self
     }
@@ -140,10 +130,7 @@ impl CreateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>The store's file parsing options.</p>
-    pub fn set_store_options(
-        mut self,
-        input: ::std::option::Option<crate::types::StoreOptions>,
-    ) -> Self {
+    pub fn set_store_options(mut self, input: ::std::option::Option<crate::types::StoreOptions>) -> Self {
         self.store_options = input;
         self
     }
@@ -185,10 +172,7 @@ impl CreateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>When the store was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

@@ -24,10 +24,7 @@ pub fn ser_create_job_input(
     if let Some(var_7) = &input.output {
         #[allow(unused_mut)]
         let mut object_8 = object.key("Output").start_object();
-        crate::protocol_serde::shape_create_job_output::ser_create_job_output(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_create_job_output::ser_create_job_output(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.output_key_prefix {
@@ -39,10 +36,7 @@ pub fn ser_create_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_create_job_output::ser_create_job_output(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_create_job_output::ser_create_job_output(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }
@@ -57,10 +51,7 @@ pub fn ser_create_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_create_job_playlist::ser_create_job_playlist(
-                    &mut object_18,
-                    item_17,
-                )?;
+                crate::protocol_serde::shape_create_job_playlist::ser_create_job_playlist(&mut object_18, item_17)?;
                 object_18.finish();
             }
         }

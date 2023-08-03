@@ -5,15 +5,12 @@
 pub struct IsMemberInGroupsOutput {
     /// <p>A list containing the results of membership existence checks.</p>
     #[doc(hidden)]
-    pub results:
-        ::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>>,
+    pub results: ::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>>,
     _request_id: Option<String>,
 }
 impl IsMemberInGroupsOutput {
     /// <p>A list containing the results of membership existence checks.</p>
-    pub fn results(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GroupMembershipExistenceResult]> {
+    pub fn results(&self) -> ::std::option::Option<&[crate::types::GroupMembershipExistenceResult]> {
         self.results.as_deref()
     }
 }
@@ -24,20 +21,16 @@ impl ::aws_http::request_id::RequestId for IsMemberInGroupsOutput {
 }
 impl IsMemberInGroupsOutput {
     /// Creates a new builder-style object to manufacture [`IsMemberInGroupsOutput`](crate::operation::is_member_in_groups::IsMemberInGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::is_member_in_groups::builders::IsMemberInGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::is_member_in_groups::builders::IsMemberInGroupsOutputBuilder {
         crate::operation::is_member_in_groups::builders::IsMemberInGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`IsMemberInGroupsOutput`](crate::operation::is_member_in_groups::IsMemberInGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IsMemberInGroupsOutputBuilder {
-    pub(crate) results:
-        ::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>>,
     _request_id: Option<String>,
 }
 impl IsMemberInGroupsOutputBuilder {
@@ -53,17 +46,12 @@ impl IsMemberInGroupsOutputBuilder {
         self
     }
     /// <p>A list containing the results of membership existence checks.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>>) -> Self {
         self.results = input;
         self
     }
     /// <p>A list containing the results of membership existence checks.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>> {
         &self.results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

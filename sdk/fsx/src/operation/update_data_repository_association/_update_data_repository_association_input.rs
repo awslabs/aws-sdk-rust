@@ -38,16 +38,14 @@ impl UpdateDataRepositoryAssociationInput {
 }
 impl UpdateDataRepositoryAssociationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataRepositoryAssociationInput`](crate::operation::update_data_repository_association::UpdateDataRepositoryAssociationInput).
-    pub fn builder() -> crate::operation::update_data_repository_association::builders::UpdateDataRepositoryAssociationInputBuilder{
+    pub fn builder() -> crate::operation::update_data_repository_association::builders::UpdateDataRepositoryAssociationInputBuilder {
         crate::operation::update_data_repository_association::builders::UpdateDataRepositoryAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDataRepositoryAssociationInput`](crate::operation::update_data_repository_association::UpdateDataRepositoryAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataRepositoryAssociationInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -56,18 +54,12 @@ pub struct UpdateDataRepositoryAssociationInputBuilder {
 }
 impl UpdateDataRepositoryAssociationInputBuilder {
     /// <p>The ID of the data repository association that you are updating.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the data repository association that you are updating.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -76,18 +68,12 @@ impl UpdateDataRepositoryAssociationInputBuilder {
         &self.association_id
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -118,10 +104,7 @@ impl UpdateDataRepositoryAssociationInputBuilder {
         self
     }
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
-    pub fn set_s3(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DataRepositoryConfiguration>,
-    ) -> Self {
+    pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3DataRepositoryConfiguration>) -> Self {
         self.s3 = input;
         self
     }
@@ -138,15 +121,11 @@ impl UpdateDataRepositoryAssociationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_data_repository_association::UpdateDataRepositoryAssociationInput {
-                association_id: self.association_id
-                ,
-                client_request_token: self.client_request_token
-                ,
-                imported_file_chunk_size: self.imported_file_chunk_size
-                ,
-                s3: self.s3
-                ,
-            }
+                association_id: self.association_id,
+                client_request_token: self.client_request_token,
+                imported_file_chunk_size: self.imported_file_chunk_size,
+                s3: self.s3,
+            },
         )
     }
 }

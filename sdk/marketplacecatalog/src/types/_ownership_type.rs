@@ -38,13 +38,7 @@
 /// _Note: `OwnershipType::Self` has been renamed to `::SelfValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OwnershipType {
     /// _Note: `::Self` has been renamed to `::SelfValue`._
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for OwnershipType {
         match s {
             "SELF" => OwnershipType::SelfValue,
             "SHARED" => OwnershipType::Shared,
-            other => {
-                OwnershipType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => OwnershipType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

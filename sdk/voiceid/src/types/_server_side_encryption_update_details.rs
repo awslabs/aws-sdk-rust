@@ -20,9 +20,7 @@ impl ServerSideEncryptionUpdateDetails {
         self.old_kms_key_id.as_deref()
     }
     /// <p>Status of the server-side encryption update. During an update, if there is an issue with the domain's current or old KMS key ID, such as an inaccessible or disabled key, then the status is FAILED. In order to resolve this, the key needs to be made accessible, and then an UpdateDomain call with the existing server-side encryption configuration will re-attempt this update process.</p>
-    pub fn update_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServerSideEncryptionUpdateStatus> {
+    pub fn update_status(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionUpdateStatus> {
         self.update_status.as_ref()
     }
     /// <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED, this message explains the cause of the failure.</p>
@@ -39,9 +37,7 @@ impl ServerSideEncryptionUpdateDetails {
 
 /// A builder for [`ServerSideEncryptionUpdateDetails`](crate::types::ServerSideEncryptionUpdateDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerSideEncryptionUpdateDetailsBuilder {
     pub(crate) old_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) update_status: ::std::option::Option<crate::types::ServerSideEncryptionUpdateStatus>,
@@ -49,18 +45,12 @@ pub struct ServerSideEncryptionUpdateDetailsBuilder {
 }
 impl ServerSideEncryptionUpdateDetailsBuilder {
     /// <p>The previous KMS key ID the domain was encrypted with, before ServerSideEncryptionConfiguration was updated to a new KMS key ID.</p>
-    pub fn old_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn old_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.old_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The previous KMS key ID the domain was encrypted with, before ServerSideEncryptionConfiguration was updated to a new KMS key ID.</p>
-    pub fn set_old_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_old_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.old_kms_key_id = input;
         self
     }
@@ -74,17 +64,12 @@ impl ServerSideEncryptionUpdateDetailsBuilder {
         self
     }
     /// <p>Status of the server-side encryption update. During an update, if there is an issue with the domain's current or old KMS key ID, such as an inaccessible or disabled key, then the status is FAILED. In order to resolve this, the key needs to be made accessible, and then an UpdateDomain call with the existing server-side encryption configuration will re-attempt this update process.</p>
-    pub fn set_update_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerSideEncryptionUpdateStatus>,
-    ) -> Self {
+    pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionUpdateStatus>) -> Self {
         self.update_status = input;
         self
     }
     /// <p>Status of the server-side encryption update. During an update, if there is an issue with the domain's current or old KMS key ID, such as an inaccessible or disabled key, then the status is FAILED. In order to resolve this, the key needs to be made accessible, and then an UpdateDomain call with the existing server-side encryption configuration will re-attempt this update process.</p>
-    pub fn get_update_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerSideEncryptionUpdateStatus> {
+    pub fn get_update_status(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionUpdateStatus> {
         &self.update_status
     }
     /// <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED, this message explains the cause of the failure.</p>

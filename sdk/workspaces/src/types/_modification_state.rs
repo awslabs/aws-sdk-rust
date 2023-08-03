@@ -30,9 +30,7 @@ impl ModificationState {
 
 /// A builder for [`ModificationState`](crate::types::ModificationState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModificationStateBuilder {
     pub(crate) resource: ::std::option::Option<crate::types::ModificationResourceEnum>,
     pub(crate) state: ::std::option::Option<crate::types::ModificationStateEnum>,
@@ -44,10 +42,7 @@ impl ModificationStateBuilder {
         self
     }
     /// <p>The resource.</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::ModificationResourceEnum>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::ModificationResourceEnum>) -> Self {
         self.resource = input;
         self
     }
@@ -61,10 +56,7 @@ impl ModificationStateBuilder {
         self
     }
     /// <p>The modification state.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ModificationStateEnum>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ModificationStateEnum>) -> Self {
         self.state = input;
         self
     }

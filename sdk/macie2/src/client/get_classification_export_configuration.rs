@@ -6,7 +6,11 @@ impl super::Client {
     /// - On success, responds with [`GetClassificationExportConfigurationOutput`](crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationOutput) with field(s):
     ///   - [`configuration(Option<ClassificationExportConfiguration>)`](crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationOutput::configuration): <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
     /// - On failure, responds with [`SdkError<GetClassificationExportConfigurationError>`](crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationError)
-    pub fn get_classification_export_configuration(&self) -> crate::operation::get_classification_export_configuration::builders::GetClassificationExportConfigurationFluentBuilder{
-        crate::operation::get_classification_export_configuration::builders::GetClassificationExportConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn get_classification_export_configuration(
+        &self,
+    ) -> crate::operation::get_classification_export_configuration::builders::GetClassificationExportConfigurationFluentBuilder {
+        crate::operation::get_classification_export_configuration::builders::GetClassificationExportConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

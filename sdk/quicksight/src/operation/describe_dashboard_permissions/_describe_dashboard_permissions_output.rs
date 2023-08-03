@@ -45,9 +45,7 @@ impl DescribeDashboardPermissionsOutput {
         self.request_id.as_deref()
     }
     /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
-    pub fn link_sharing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LinkSharingConfiguration> {
+    pub fn link_sharing_configuration(&self) -> ::std::option::Option<&crate::types::LinkSharingConfiguration> {
         self.link_sharing_configuration.as_ref()
     }
 }
@@ -58,25 +56,21 @@ impl ::aws_http::request_id::RequestId for DescribeDashboardPermissionsOutput {
 }
 impl DescribeDashboardPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardPermissionsOutput`](crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput).
-    pub fn builder() -> crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsOutputBuilder {
         crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDashboardPermissionsOutput`](crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDashboardPermissionsOutputBuilder {
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) link_sharing_configuration:
-        ::std::option::Option<crate::types::LinkSharingConfiguration>,
+    pub(crate) link_sharing_configuration: ::std::option::Option<crate::types::LinkSharingConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeDashboardPermissionsOutputBuilder {
@@ -95,18 +89,12 @@ impl DescribeDashboardPermissionsOutputBuilder {
         &self.dashboard_id
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    pub fn dashboard_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    pub fn set_dashboard_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dashboard_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_arn = input;
         self
     }
@@ -126,17 +114,12 @@ impl DescribeDashboardPermissionsOutputBuilder {
         self
     }
     /// <p>A structure that contains the permissions for the dashboard.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>A structure that contains the permissions for the dashboard.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }
     /// <p>The HTTP status of the request.</p>
@@ -168,25 +151,17 @@ impl DescribeDashboardPermissionsOutputBuilder {
         &self.request_id
     }
     /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
-    pub fn link_sharing_configuration(
-        mut self,
-        input: crate::types::LinkSharingConfiguration,
-    ) -> Self {
+    pub fn link_sharing_configuration(mut self, input: crate::types::LinkSharingConfiguration) -> Self {
         self.link_sharing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
-    pub fn set_link_sharing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LinkSharingConfiguration>,
-    ) -> Self {
+    pub fn set_link_sharing_configuration(mut self, input: ::std::option::Option<crate::types::LinkSharingConfiguration>) -> Self {
         self.link_sharing_configuration = input;
         self
     }
     /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
-    pub fn get_link_sharing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LinkSharingConfiguration> {
+    pub fn get_link_sharing_configuration(&self) -> &::std::option::Option<crate::types::LinkSharingConfiguration> {
         &self.link_sharing_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -199,9 +174,7 @@ impl DescribeDashboardPermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDashboardPermissionsOutput`](crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput {
+    pub fn build(self) -> crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput {
         crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput {
             dashboard_id: self.dashboard_id,
             dashboard_arn: self.dashboard_arn,

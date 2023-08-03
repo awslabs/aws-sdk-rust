@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`event_sources(Option<Vec<EventSource>>)`](crate::operation::list_event_sources::ListEventSourcesOutput::event_sources): <p>The list of event sources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_sources::ListEventSourcesOutput::next_token): <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListEventSourcesError>`](crate::operation::list_event_sources::ListEventSourcesError)
-    pub fn list_event_sources(
-        &self,
-    ) -> crate::operation::list_event_sources::builders::ListEventSourcesFluentBuilder {
-        crate::operation::list_event_sources::builders::ListEventSourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_event_sources(&self) -> crate::operation::list_event_sources::builders::ListEventSourcesFluentBuilder {
+        crate::operation::list_event_sources::builders::ListEventSourcesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,9 +44,7 @@ impl PublicKey {
 
 /// A builder for [`PublicKey`](crate::types::PublicKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublicKeyBuilder {
     pub(crate) value: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) validity_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -74,10 +72,7 @@ impl PublicKeyBuilder {
         self
     }
     /// <p>The starting time of validity of the public key.</p>
-    pub fn set_validity_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_validity_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.validity_start_time = input;
         self
     }
@@ -91,10 +86,7 @@ impl PublicKeyBuilder {
         self
     }
     /// <p>The ending time of validity of the public key.</p>
-    pub fn set_validity_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_validity_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.validity_end_time = input;
         self
     }

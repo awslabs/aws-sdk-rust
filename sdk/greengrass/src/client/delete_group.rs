@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`group_id(impl ::std::convert::Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_group_id): The ID of the Greengrass group.
     /// - On success, responds with [`DeleteGroupOutput`](crate::operation::delete_group::DeleteGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::operation::delete_group::DeleteGroupError)
-    pub fn delete_group(
-        &self,
-    ) -> crate::operation::delete_group::builders::DeleteGroupFluentBuilder {
+    pub fn delete_group(&self) -> crate::operation::delete_group::builders::DeleteGroupFluentBuilder {
         crate::operation::delete_group::builders::DeleteGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -78,22 +78,18 @@ impl RequestPhoneNumberInput {
 }
 impl RequestPhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`RequestPhoneNumberInput`](crate::operation::request_phone_number::RequestPhoneNumberInput).
-    pub fn builder(
-    ) -> crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder {
+    pub fn builder() -> crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder {
         crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder::default()
     }
 }
 
 /// A builder for [`RequestPhoneNumberInput`](crate::operation::request_phone_number::RequestPhoneNumberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestPhoneNumberInputBuilder {
     pub(crate) iso_country_code: ::std::option::Option<::std::string::String>,
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,
-    pub(crate) number_capabilities:
-        ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
+    pub(crate) number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
     pub(crate) number_type: ::std::option::Option<crate::types::RequestableNumberType>,
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
@@ -104,18 +100,12 @@ pub struct RequestPhoneNumberInputBuilder {
 }
 impl RequestPhoneNumberInputBuilder {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn set_iso_country_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso_country_code = input;
         self
     }
@@ -129,10 +119,7 @@ impl RequestPhoneNumberInputBuilder {
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn set_message_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageType>,
-    ) -> Self {
+    pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.message_type = input;
         self
     }
@@ -152,17 +139,12 @@ impl RequestPhoneNumberInputBuilder {
         self
     }
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
-    pub fn set_number_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
-    ) -> Self {
+    pub fn set_number_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>) -> Self {
         self.number_capabilities = input;
         self
     }
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
-    pub fn get_number_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
+    pub fn get_number_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
         &self.number_capabilities
     }
     /// <p>The type of phone number to request.</p>
@@ -171,10 +153,7 @@ impl RequestPhoneNumberInputBuilder {
         self
     }
     /// <p>The type of phone number to request.</p>
-    pub fn set_number_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestableNumberType>,
-    ) -> Self {
+    pub fn set_number_type(mut self, input: ::std::option::Option<crate::types::RequestableNumberType>) -> Self {
         self.number_type = input;
         self
     }
@@ -183,18 +162,12 @@ impl RequestPhoneNumberInputBuilder {
         &self.number_type
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_name = input;
         self
     }
@@ -217,18 +190,12 @@ impl RequestPhoneNumberInputBuilder {
         &self.pool_id
     }
     /// <p>Use this field to attach your phone number for an external registration process.</p>
-    pub fn registration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Use this field to attach your phone number for an external registration process.</p>
-    pub fn set_registration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registration_id = input;
         self
     }
@@ -262,10 +229,7 @@ impl RequestPhoneNumberInputBuilder {
         self
     }
     /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -290,23 +254,18 @@ impl RequestPhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`RequestPhoneNumberInput`](crate::operation::request_phone_number::RequestPhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::request_phone_number::RequestPhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::request_phone_number::RequestPhoneNumberInput {
-                iso_country_code: self.iso_country_code,
-                message_type: self.message_type,
-                number_capabilities: self.number_capabilities,
-                number_type: self.number_type,
-                opt_out_list_name: self.opt_out_list_name,
-                pool_id: self.pool_id,
-                registration_id: self.registration_id,
-                deletion_protection_enabled: self.deletion_protection_enabled,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::request_phone_number::RequestPhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::request_phone_number::RequestPhoneNumberInput {
+            iso_country_code: self.iso_country_code,
+            message_type: self.message_type,
+            number_capabilities: self.number_capabilities,
+            number_type: self.number_type,
+            opt_out_list_name: self.opt_out_list_name,
+            pool_id: self.pool_id,
+            registration_id: self.registration_id,
+            deletion_protection_enabled: self.deletion_protection_enabled,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }

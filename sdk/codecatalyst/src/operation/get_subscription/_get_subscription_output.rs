@@ -35,9 +35,7 @@ impl GetSubscriptionOutput {
 
 /// A builder for [`GetSubscriptionOutput`](crate::operation::get_subscription::GetSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSubscriptionOutputBuilder {
     pub(crate) subscription_type: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_name: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct GetSubscriptionOutputBuilder {
 }
 impl GetSubscriptionOutputBuilder {
     /// <p>The type of the billing plan for the space.</p>
-    pub fn subscription_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the billing plan for the space.</p>
-    pub fn set_subscription_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_type = input;
         self
     }
@@ -65,18 +57,12 @@ impl GetSubscriptionOutputBuilder {
         &self.subscription_type
     }
     /// <p>The display name of the Amazon Web Services account used for billing for the space.</p>
-    pub fn aws_account_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the Amazon Web Services account used for billing for the space.</p>
-    pub fn set_aws_account_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_name = input;
         self
     }

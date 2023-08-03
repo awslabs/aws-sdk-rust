@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeRaidArraysOutput {
 }
 impl DescribeRaidArraysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRaidArraysOutput`](crate::operation::describe_raid_arrays::DescribeRaidArraysOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_raid_arrays::builders::DescribeRaidArraysOutputBuilder {
+    pub fn builder() -> crate::operation::describe_raid_arrays::builders::DescribeRaidArraysOutputBuilder {
         crate::operation::describe_raid_arrays::builders::DescribeRaidArraysOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRaidArraysOutput`](crate::operation::describe_raid_arrays::DescribeRaidArraysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRaidArraysOutputBuilder {
     pub(crate) raid_arrays: ::std::option::Option<::std::vec::Vec<crate::types::RaidArray>>,
     _request_id: Option<String>,
@@ -50,17 +47,12 @@ impl DescribeRaidArraysOutputBuilder {
         self
     }
     /// <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
-    pub fn set_raid_arrays(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RaidArray>>,
-    ) -> Self {
+    pub fn set_raid_arrays(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RaidArray>>) -> Self {
         self.raid_arrays = input;
         self
     }
     /// <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
-    pub fn get_raid_arrays(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RaidArray>> {
+    pub fn get_raid_arrays(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RaidArray>> {
         &self.raid_arrays
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

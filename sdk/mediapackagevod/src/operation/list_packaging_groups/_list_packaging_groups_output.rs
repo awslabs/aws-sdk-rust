@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListPackagingGroupsOutput {
 }
 impl ListPackagingGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListPackagingGroupsOutput`](crate::operation::list_packaging_groups::ListPackagingGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_packaging_groups::builders::ListPackagingGroupsOutputBuilder {
-        crate::operation::list_packaging_groups::builders::ListPackagingGroupsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_packaging_groups::builders::ListPackagingGroupsOutputBuilder {
+        crate::operation::list_packaging_groups::builders::ListPackagingGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPackagingGroupsOutput`](crate::operation::list_packaging_groups::ListPackagingGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackagingGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) packaging_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::PackagingGroup>>,
+    pub(crate) packaging_groups: ::std::option::Option<::std::vec::Vec<crate::types::PackagingGroup>>,
     _request_id: Option<String>,
 }
 impl ListPackagingGroupsOutputBuilder {
@@ -73,17 +68,12 @@ impl ListPackagingGroupsOutputBuilder {
         self
     }
     /// A list of MediaPackage VOD PackagingGroup resources.
-    pub fn set_packaging_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PackagingGroup>>,
-    ) -> Self {
+    pub fn set_packaging_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackagingGroup>>) -> Self {
         self.packaging_groups = input;
         self
     }
     /// A list of MediaPackage VOD PackagingGroup resources.
-    pub fn get_packaging_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackagingGroup>> {
+    pub fn get_packaging_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackagingGroup>> {
         &self.packaging_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

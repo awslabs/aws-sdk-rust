@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSnapshotOutput`](crate::operation::create_snapshot::CreateSnapshotOutput) with field(s):
     ///   - [`snapshot_id(Option<String>)`](crate::operation::create_snapshot::CreateSnapshotOutput::snapshot_id): <p>The identifier of the snapshot that was created.</p>
     /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::operation::create_snapshot::CreateSnapshotError)
-    pub fn create_snapshot(
-        &self,
-    ) -> crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder {
-        crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_snapshot(&self) -> crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder {
+        crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

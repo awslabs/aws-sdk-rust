@@ -10,10 +10,7 @@ impl DescribeReportJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_report_job::DescribeReportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_job::DescribeReportJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_report_job::DescribeReportJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_report_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeReportJobFluentBuilder {
         }
     }
     /// Access the DescribeReportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_report_job::builders::DescribeReportJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_report_job::builders::DescribeReportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeReportJobFluentBuilder {
             crate::operation::describe_report_job::DescribeReportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_job::DescribeReportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_report_job::DescribeReportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeReportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeReportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_report_job::DescribeReportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_job::DescribeReportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_report_job::DescribeReportJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeReportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_report_job::DescribeReportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_job::DescribeReportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_report_job::DescribeReportJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribeReportJobFluentBuilder {
             crate::operation::describe_report_job::DescribeReportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_report_job::DescribeReportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_report_job::DescribeReportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
-    pub fn report_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_job_id(input.into());
         self
     }
     /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
-    pub fn set_report_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_report_job_id(input);
         self
     }

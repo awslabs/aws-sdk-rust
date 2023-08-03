@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`action_types(Option<Vec<ActionType>>)`](crate::operation::list_action_types::ListActionTypesOutput::action_types): <p>Provides details of the action types.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_action_types::ListActionTypesOutput::next_token): <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
     /// - On failure, responds with [`SdkError<ListActionTypesError>`](crate::operation::list_action_types::ListActionTypesError)
-    pub fn list_action_types(
-        &self,
-    ) -> crate::operation::list_action_types::builders::ListActionTypesFluentBuilder {
-        crate::operation::list_action_types::builders::ListActionTypesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_action_types(&self) -> crate::operation::list_action_types::builders::ListActionTypesFluentBuilder {
+        crate::operation::list_action_types::builders::ListActionTypesFluentBuilder::new(self.handle.clone())
     }
 }

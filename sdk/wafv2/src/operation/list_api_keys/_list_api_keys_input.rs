@@ -46,9 +46,7 @@ impl ListApiKeysInput {
 
 /// A builder for [`ListApiKeysInput`](crate::operation::list_api_keys::ListApiKeysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApiKeysInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -113,12 +111,7 @@ impl ListApiKeysInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListApiKeysInput`](crate::operation::list_api_keys::ListApiKeysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_api_keys::ListApiKeysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_api_keys::ListApiKeysInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_api_keys::ListApiKeysInput {
             scope: self.scope,
             next_marker: self.next_marker,

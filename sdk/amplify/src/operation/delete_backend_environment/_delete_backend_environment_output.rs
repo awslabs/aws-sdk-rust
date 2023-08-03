@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteBackendEnvironmentOutput {
 }
 impl DeleteBackendEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBackendEnvironmentOutput`](crate::operation::delete_backend_environment::DeleteBackendEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_backend_environment::builders::DeleteBackendEnvironmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_backend_environment::builders::DeleteBackendEnvironmentOutputBuilder {
         crate::operation::delete_backend_environment::builders::DeleteBackendEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBackendEnvironmentOutput`](crate::operation::delete_backend_environment::DeleteBackendEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBackendEnvironmentOutputBuilder {
     pub(crate) backend_environment: ::std::option::Option<crate::types::BackendEnvironment>,
     _request_id: Option<String>,
@@ -45,17 +41,12 @@ impl DeleteBackendEnvironmentOutputBuilder {
         self
     }
     /// <p> Describes the backend environment for an Amplify app. </p>
-    pub fn set_backend_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::BackendEnvironment>,
-    ) -> Self {
+    pub fn set_backend_environment(mut self, input: ::std::option::Option<crate::types::BackendEnvironment>) -> Self {
         self.backend_environment = input;
         self
     }
     /// <p> Describes the backend environment for an Amplify app. </p>
-    pub fn get_backend_environment(
-        &self,
-    ) -> &::std::option::Option<crate::types::BackendEnvironment> {
+    pub fn get_backend_environment(&self) -> &::std::option::Option<crate::types::BackendEnvironment> {
         &self.backend_environment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,9 +59,7 @@ impl DeleteBackendEnvironmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteBackendEnvironmentOutput`](crate::operation::delete_backend_environment::DeleteBackendEnvironmentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_backend_environment::DeleteBackendEnvironmentOutput {
+    pub fn build(self) -> crate::operation::delete_backend_environment::DeleteBackendEnvironmentOutput {
         crate::operation::delete_backend_environment::DeleteBackendEnvironmentOutput {
             backend_environment: self.backend_environment,
             _request_id: self._request_id,

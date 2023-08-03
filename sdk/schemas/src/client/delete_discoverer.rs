@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`discoverer_id(impl ::std::convert::Into<String>)`](crate::operation::delete_discoverer::builders::DeleteDiscovererFluentBuilder::discoverer_id) / [`set_discoverer_id(Option<String>)`](crate::operation::delete_discoverer::builders::DeleteDiscovererFluentBuilder::set_discoverer_id): <p>The ID of the discoverer.</p>
     /// - On success, responds with [`DeleteDiscovererOutput`](crate::operation::delete_discoverer::DeleteDiscovererOutput)
     /// - On failure, responds with [`SdkError<DeleteDiscovererError>`](crate::operation::delete_discoverer::DeleteDiscovererError)
-    pub fn delete_discoverer(
-        &self,
-    ) -> crate::operation::delete_discoverer::builders::DeleteDiscovererFluentBuilder {
-        crate::operation::delete_discoverer::builders::DeleteDiscovererFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_discoverer(&self) -> crate::operation::delete_discoverer::builders::DeleteDiscovererFluentBuilder {
+        crate::operation::delete_discoverer::builders::DeleteDiscovererFluentBuilder::new(self.handle.clone())
     }
 }

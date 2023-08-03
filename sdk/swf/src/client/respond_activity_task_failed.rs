@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`details(impl ::std::convert::Into<String>)`](crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedFluentBuilder::details) / [`set_details(Option<String>)`](crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedFluentBuilder::set_details): <p> Detailed information about the failure.</p>
     /// - On success, responds with [`RespondActivityTaskFailedOutput`](crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput)
     /// - On failure, responds with [`SdkError<RespondActivityTaskFailedError>`](crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError)
-    pub fn respond_activity_task_failed(&self) -> crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedFluentBuilder{
+    pub fn respond_activity_task_failed(&self) -> crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedFluentBuilder {
         crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedFluentBuilder::new(self.handle.clone())
     }
 }

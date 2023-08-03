@@ -13,9 +13,7 @@ pub fn ser_layer_version_content_input(
         object.key("S3ObjectVersion").string(var_3.as_str());
     }
     if let Some(var_4) = &input.zip_file {
-        object
-            .key("ZipFile")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_4));
+        object.key("ZipFile").string_unchecked(&::aws_smithy_types::base64::encode(var_4));
     }
     Ok(())
 }

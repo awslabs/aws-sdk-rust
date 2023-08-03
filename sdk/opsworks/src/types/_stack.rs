@@ -21,9 +21,7 @@ pub struct Stack {
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The stack's attributes.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>>,
     /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
     #[doc(hidden)]
     pub service_role_arn: ::std::option::Option<::std::string::String>,
@@ -97,11 +95,7 @@ impl Stack {
         self.vpc_id.as_deref()
     }
     /// <p>The stack's attributes.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
@@ -135,9 +129,7 @@ impl Stack {
         self.custom_json.as_deref()
     }
     /// <p>The configuration manager.</p>
-    pub fn configuration_manager(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackConfigurationManager> {
+    pub fn configuration_manager(&self) -> ::std::option::Option<&crate::types::StackConfigurationManager> {
         self.configuration_manager.as_ref()
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
@@ -182,18 +174,14 @@ impl Stack {
 
 /// A builder for [`Stack`](crate::types::Stack).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>>,
     pub(crate) service_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_instance_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_os: ::std::option::Option<::std::string::String>,
@@ -201,8 +189,7 @@ pub struct StackBuilder {
     pub(crate) default_availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) default_subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) custom_json: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration_manager:
-        ::std::option::Option<crate::types::StackConfigurationManager>,
+    pub(crate) configuration_manager: ::std::option::Option<crate::types::StackConfigurationManager>,
     pub(crate) chef_configuration: ::std::option::Option<crate::types::ChefConfiguration>,
     pub(crate) use_custom_cookbooks: ::std::option::Option<bool>,
     pub(crate) use_opsworks_security_groups: ::std::option::Option<bool>,
@@ -288,11 +275,7 @@ impl StackBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>The stack's attributes.</p>
-    pub fn attributes(
-        mut self,
-        k: crate::types::StackAttributesKeys,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: crate::types::StackAttributesKeys, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
@@ -301,34 +284,22 @@ impl StackBuilder {
     /// <p>The stack's attributes.</p>
     pub fn set_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>>,
     ) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The stack's attributes.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
-    pub fn service_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
-    pub fn set_service_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_role_arn = input;
         self
     }
@@ -337,25 +308,17 @@ impl StackBuilder {
         &self.service_role_arn
     }
     /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn default_instance_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_instance_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_instance_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn set_default_instance_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_instance_profile_arn = input;
         self
     }
     /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn get_default_instance_profile_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_default_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_instance_profile_arn
     }
     /// <p>The stack's default operating system.</p>
@@ -373,18 +336,12 @@ impl StackBuilder {
         &self.default_os
     }
     /// <p>The stack host name theme, with spaces replaced by underscores.</p>
-    pub fn hostname_theme(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hostname_theme(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname_theme = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The stack host name theme, with spaces replaced by underscores.</p>
-    pub fn set_hostname_theme(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hostname_theme(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname_theme = input;
         self
     }
@@ -393,18 +350,12 @@ impl StackBuilder {
         &self.hostname_theme
     }
     /// <p>The stack's default Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn default_availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The stack's default Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn set_default_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_availability_zone = input;
         self
     }
@@ -413,18 +364,12 @@ impl StackBuilder {
         &self.default_availability_zone
     }
     /// <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
-    pub fn default_subnet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
-    pub fn set_default_subnet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_subnet_id = input;
         self
     }
@@ -458,17 +403,12 @@ impl StackBuilder {
         self
     }
     /// <p>The configuration manager.</p>
-    pub fn set_configuration_manager(
-        mut self,
-        input: ::std::option::Option<crate::types::StackConfigurationManager>,
-    ) -> Self {
+    pub fn set_configuration_manager(mut self, input: ::std::option::Option<crate::types::StackConfigurationManager>) -> Self {
         self.configuration_manager = input;
         self
     }
     /// <p>The configuration manager.</p>
-    pub fn get_configuration_manager(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackConfigurationManager> {
+    pub fn get_configuration_manager(&self) -> &::std::option::Option<crate::types::StackConfigurationManager> {
         &self.configuration_manager
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
@@ -477,17 +417,12 @@ impl StackBuilder {
         self
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-    pub fn set_chef_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ChefConfiguration>,
-    ) -> Self {
+    pub fn set_chef_configuration(mut self, input: ::std::option::Option<crate::types::ChefConfiguration>) -> Self {
         self.chef_configuration = input;
         self
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-    pub fn get_chef_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChefConfiguration> {
+    pub fn get_chef_configuration(&self) -> &::std::option::Option<crate::types::ChefConfiguration> {
         &self.chef_configuration
     }
     /// <p>Whether the stack uses custom cookbooks.</p>
@@ -524,10 +459,7 @@ impl StackBuilder {
         self
     }
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
-    pub fn set_custom_cookbooks_source(
-        mut self,
-        input: ::std::option::Option<crate::types::Source>,
-    ) -> Self {
+    pub fn set_custom_cookbooks_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.custom_cookbooks_source = input;
         self
     }
@@ -536,18 +468,12 @@ impl StackBuilder {
         &self.custom_cookbooks_source
     }
     /// <p>A default Amazon EC2 key pair for the stack's instances. You can override this value when you create or update an instance.</p>
-    pub fn default_ssh_key_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_ssh_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_ssh_key_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A default Amazon EC2 key pair for the stack's instances. You can override this value when you create or update an instance.</p>
-    pub fn set_default_ssh_key_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_ssh_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_ssh_key_name = input;
         self
     }
@@ -575,32 +501,21 @@ impl StackBuilder {
         self
     }
     /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-    pub fn set_default_root_device_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RootDeviceType>,
-    ) -> Self {
+    pub fn set_default_root_device_type(mut self, input: ::std::option::Option<crate::types::RootDeviceType>) -> Self {
         self.default_root_device_type = input;
         self
     }
     /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-    pub fn get_default_root_device_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::RootDeviceType> {
+    pub fn get_default_root_device_type(&self) -> &::std::option::Option<crate::types::RootDeviceType> {
         &self.default_root_device_type
     }
     /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
-    pub fn agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
-    pub fn set_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_version = input;
         self
     }

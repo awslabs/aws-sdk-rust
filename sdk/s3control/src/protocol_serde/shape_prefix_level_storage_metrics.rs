@@ -11,10 +11,7 @@ pub fn ser_prefix_level_storage_metrics(
     }
     if let Some(var_1) = &input.selection_criteria {
         let inner_writer = scope.start_el("SelectionCriteria");
-        crate::protocol_serde::shape_selection_criteria::ser_selection_criteria(
-            var_1,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_selection_criteria::ser_selection_criteria(var_1, inner_writer)?
     }
     scope.finish();
     Ok(())

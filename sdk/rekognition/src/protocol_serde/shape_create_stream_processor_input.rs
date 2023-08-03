@@ -6,19 +6,13 @@ pub fn ser_create_stream_processor_input(
     if let Some(var_1) = &input.input {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Input").start_object();
-        crate::protocol_serde::shape_stream_processor_input::ser_stream_processor_input(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_stream_processor_input::ser_stream_processor_input(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.output {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Output").start_object();
-        crate::protocol_serde::shape_stream_processor_output::ser_stream_processor_output(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_stream_processor_output::ser_stream_processor_output(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.name {
@@ -27,10 +21,7 @@ pub fn ser_create_stream_processor_input(
     if let Some(var_6) = &input.settings {
         #[allow(unused_mut)]
         let mut object_7 = object.key("Settings").start_object();
-        crate::protocol_serde::shape_stream_processor_settings::ser_stream_processor_settings(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_stream_processor_settings::ser_stream_processor_settings(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.role_arn {
@@ -61,10 +52,7 @@ pub fn ser_create_stream_processor_input(
             {
                 #[allow(unused_mut)]
                 let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_region_of_interest::ser_region_of_interest(
-                    &mut object_19,
-                    item_18,
-                )?;
+                crate::protocol_serde::shape_region_of_interest::ser_region_of_interest(&mut object_19, item_18)?;
                 object_19.finish();
             }
         }

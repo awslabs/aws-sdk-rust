@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`user_data_list(Option<Vec<UserData>>)`](crate::operation::get_current_user_data::GetCurrentUserDataOutput::user_data_list): <p>A list of the user data that is returned.</p>
     ///   - [`approximate_total_count(Option<i64>)`](crate::operation::get_current_user_data::GetCurrentUserDataOutput::approximate_total_count): <p>The total count of the result, regardless of the current page size.</p>
     /// - On failure, responds with [`SdkError<GetCurrentUserDataError>`](crate::operation::get_current_user_data::GetCurrentUserDataError)
-    pub fn get_current_user_data(
-        &self,
-    ) -> crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder {
-        crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_current_user_data(&self) -> crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder {
+        crate::operation::get_current_user_data::builders::GetCurrentUserDataFluentBuilder::new(self.handle.clone())
     }
 }

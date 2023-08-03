@@ -18,8 +18,7 @@ pub struct StringParameterDeclaration {
     pub value_when_unset: ::std::option::Option<crate::types::StringValueWhenUnsetConfiguration>,
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
     #[doc(hidden)]
-    pub mapped_data_set_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
+    pub mapped_data_set_parameters: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
 }
 impl StringParameterDeclaration {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
@@ -35,15 +34,11 @@ impl StringParameterDeclaration {
         self.default_values.as_ref()
     }
     /// <p>The configuration that defines the default value of a <code>String</code> parameter when a value has not been set.</p>
-    pub fn value_when_unset(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StringValueWhenUnsetConfiguration> {
+    pub fn value_when_unset(&self) -> ::std::option::Option<&crate::types::StringValueWhenUnsetConfiguration> {
         self.value_when_unset.as_ref()
     }
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub fn mapped_data_set_parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MappedDataSetParameter]> {
+    pub fn mapped_data_set_parameters(&self) -> ::std::option::Option<&[crate::types::MappedDataSetParameter]> {
         self.mapped_data_set_parameters.as_deref()
     }
 }
@@ -56,17 +51,13 @@ impl StringParameterDeclaration {
 
 /// A builder for [`StringParameterDeclaration`](crate::types::StringParameterDeclaration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StringParameterDeclarationBuilder {
     pub(crate) parameter_value_type: ::std::option::Option<crate::types::ParameterValueType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) default_values: ::std::option::Option<crate::types::StringDefaultValues>,
-    pub(crate) value_when_unset:
-        ::std::option::Option<crate::types::StringValueWhenUnsetConfiguration>,
-    pub(crate) mapped_data_set_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
+    pub(crate) value_when_unset: ::std::option::Option<crate::types::StringValueWhenUnsetConfiguration>,
+    pub(crate) mapped_data_set_parameters: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
 }
 impl StringParameterDeclarationBuilder {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
@@ -75,17 +66,12 @@ impl StringParameterDeclarationBuilder {
         self
     }
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
-    pub fn set_parameter_value_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ParameterValueType>,
-    ) -> Self {
+    pub fn set_parameter_value_type(mut self, input: ::std::option::Option<crate::types::ParameterValueType>) -> Self {
         self.parameter_value_type = input;
         self
     }
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
-    pub fn get_parameter_value_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParameterValueType> {
+    pub fn get_parameter_value_type(&self) -> &::std::option::Option<crate::types::ParameterValueType> {
         &self.parameter_value_type
     }
     /// <p>The name of the parameter that is being declared.</p>
@@ -108,10 +94,7 @@ impl StringParameterDeclarationBuilder {
         self
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
-    pub fn set_default_values(
-        mut self,
-        input: ::std::option::Option<crate::types::StringDefaultValues>,
-    ) -> Self {
+    pub fn set_default_values(mut self, input: ::std::option::Option<crate::types::StringDefaultValues>) -> Self {
         self.default_values = input;
         self
     }
@@ -120,25 +103,17 @@ impl StringParameterDeclarationBuilder {
         &self.default_values
     }
     /// <p>The configuration that defines the default value of a <code>String</code> parameter when a value has not been set.</p>
-    pub fn value_when_unset(
-        mut self,
-        input: crate::types::StringValueWhenUnsetConfiguration,
-    ) -> Self {
+    pub fn value_when_unset(mut self, input: crate::types::StringValueWhenUnsetConfiguration) -> Self {
         self.value_when_unset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration that defines the default value of a <code>String</code> parameter when a value has not been set.</p>
-    pub fn set_value_when_unset(
-        mut self,
-        input: ::std::option::Option<crate::types::StringValueWhenUnsetConfiguration>,
-    ) -> Self {
+    pub fn set_value_when_unset(mut self, input: ::std::option::Option<crate::types::StringValueWhenUnsetConfiguration>) -> Self {
         self.value_when_unset = input;
         self
     }
     /// <p>The configuration that defines the default value of a <code>String</code> parameter when a value has not been set.</p>
-    pub fn get_value_when_unset(
-        &self,
-    ) -> &::std::option::Option<crate::types::StringValueWhenUnsetConfiguration> {
+    pub fn get_value_when_unset(&self) -> &::std::option::Option<crate::types::StringValueWhenUnsetConfiguration> {
         &self.value_when_unset
     }
     /// Appends an item to `mapped_data_set_parameters`.
@@ -146,27 +121,19 @@ impl StringParameterDeclarationBuilder {
     /// To override the contents of this collection use [`set_mapped_data_set_parameters`](Self::set_mapped_data_set_parameters).
     ///
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub fn mapped_data_set_parameters(
-        mut self,
-        input: crate::types::MappedDataSetParameter,
-    ) -> Self {
+    pub fn mapped_data_set_parameters(mut self, input: crate::types::MappedDataSetParameter) -> Self {
         let mut v = self.mapped_data_set_parameters.unwrap_or_default();
         v.push(input);
         self.mapped_data_set_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub fn set_mapped_data_set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
-    ) -> Self {
+    pub fn set_mapped_data_set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>) -> Self {
         self.mapped_data_set_parameters = input;
         self
     }
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub fn get_mapped_data_set_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>> {
+    pub fn get_mapped_data_set_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>> {
         &self.mapped_data_set_parameters
     }
     /// Consumes the builder and constructs a [`StringParameterDeclaration`](crate::types::StringParameterDeclaration).

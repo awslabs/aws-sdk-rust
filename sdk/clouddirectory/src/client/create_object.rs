@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateObjectOutput`](crate::operation::create_object::CreateObjectOutput) with field(s):
     ///   - [`object_identifier(Option<String>)`](crate::operation::create_object::CreateObjectOutput::object_identifier): <p>The identifier that is associated with the object.</p>
     /// - On failure, responds with [`SdkError<CreateObjectError>`](crate::operation::create_object::CreateObjectError)
-    pub fn create_object(
-        &self,
-    ) -> crate::operation::create_object::builders::CreateObjectFluentBuilder {
-        crate::operation::create_object::builders::CreateObjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_object(&self) -> crate::operation::create_object::builders::CreateObjectFluentBuilder {
+        crate::operation::create_object::builders::CreateObjectFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,9 +38,7 @@ impl UpdateScheduledAuditFluentBuilder {
         }
     }
     /// Access the UpdateScheduledAudit as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_scheduled_audit::builders::UpdateScheduledAuditInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_scheduled_audit::builders::UpdateScheduledAuditInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl UpdateScheduledAuditFluentBuilder {
             crate::operation::update_scheduled_audit::UpdateScheduledAudit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduled_audit::UpdateScheduledAuditError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduled_audit::UpdateScheduledAuditError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl UpdateScheduledAuditFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl UpdateScheduledAuditFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_scheduled_audit::UpdateScheduledAuditOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduled_audit::UpdateScheduledAuditError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduled_audit::UpdateScheduledAuditError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl UpdateScheduledAuditFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_scheduled_audit::UpdateScheduledAuditOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduled_audit::UpdateScheduledAuditError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduled_audit::UpdateScheduledAuditError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl UpdateScheduledAuditFluentBuilder {
             crate::operation::update_scheduled_audit::UpdateScheduledAudit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduled_audit::UpdateScheduledAuditError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduled_audit::UpdateScheduledAuditError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +116,7 @@ impl UpdateScheduledAuditFluentBuilder {
         self
     }
     /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
-    pub fn set_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditFrequency>,
-    ) -> Self {
+    pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::AuditFrequency>) -> Self {
         self.inner = self.inner.set_frequency(input);
         self
     }
@@ -160,10 +144,7 @@ impl UpdateScheduledAuditFluentBuilder {
         self
     }
     /// <p>The day of the week on which the scheduled audit takes place. This can be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
-    pub fn set_day_of_week(
-        mut self,
-        input: ::std::option::Option<crate::types::DayOfWeek>,
-    ) -> Self {
+    pub fn set_day_of_week(mut self, input: ::std::option::Option<crate::types::DayOfWeek>) -> Self {
         self.inner = self.inner.set_day_of_week(input);
         self
     }
@@ -176,40 +157,26 @@ impl UpdateScheduledAuditFluentBuilder {
     /// To override the contents of this collection use [`set_target_check_names`](Self::set_target_check_names).
     ///
     /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn target_check_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_check_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_check_names(input.into());
         self
     }
     /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn set_target_check_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_check_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_target_check_names(input);
         self
     }
     /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn get_target_check_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_check_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_check_names()
     }
     /// <p>The name of the scheduled audit. (Max. 128 chars)</p>
-    pub fn scheduled_audit_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_audit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_audit_name(input.into());
         self
     }
     /// <p>The name of the scheduled audit. (Max. 128 chars)</p>
-    pub fn set_scheduled_audit_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_audit_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_audit_name(input);
         self
     }

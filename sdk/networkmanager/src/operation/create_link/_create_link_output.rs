@@ -28,9 +28,7 @@ impl CreateLinkOutput {
 
 /// A builder for [`CreateLinkOutput`](crate::operation::create_link::CreateLinkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLinkOutputBuilder {
     pub(crate) link: ::std::option::Option<crate::types::Link>,
     _request_id: Option<String>,

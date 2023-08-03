@@ -22,16 +22,15 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
 }
 impl GetAccessPointPolicyStatusForObjectLambdaInput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusForObjectLambdaInput`](crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaInput).
-    pub fn builder() -> crate::operation::get_access_point_policy_status_for_object_lambda::builders::GetAccessPointPolicyStatusForObjectLambdaInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::get_access_point_policy_status_for_object_lambda::builders::GetAccessPointPolicyStatusForObjectLambdaInputBuilder {
         crate::operation::get_access_point_policy_status_for_object_lambda::builders::GetAccessPointPolicyStatusForObjectLambdaInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccessPointPolicyStatusForObjectLambdaInput`](crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessPointPolicyStatusForObjectLambdaInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -66,14 +65,17 @@ impl GetAccessPointPolicyStatusForObjectLambdaInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetAccessPointPolicyStatusForObjectLambdaInput`](crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaInput {
-                account_id: self.account_id
-                ,
-                name: self.name
-                ,
-            }
+                account_id: self.account_id,
+                name: self.name,
+            },
         )
     }
 }

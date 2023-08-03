@@ -9,12 +9,7 @@ pub struct ValueMappings {
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::ValueMapping>>,
     /// <p>The information to bind fields to data at runtime.</p>
     #[doc(hidden)]
-    pub binding_properties: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::FormInputBindingPropertiesValue,
-        >,
-    >,
+    pub binding_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormInputBindingPropertiesValue>>,
 }
 impl ValueMappings {
     /// <p>The value and display value pairs.</p>
@@ -24,12 +19,7 @@ impl ValueMappings {
     /// <p>The information to bind fields to data at runtime.</p>
     pub fn binding_properties(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::FormInputBindingPropertiesValue,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FormInputBindingPropertiesValue>> {
         self.binding_properties.as_ref()
     }
 }
@@ -42,17 +32,11 @@ impl ValueMappings {
 
 /// A builder for [`ValueMappings`](crate::types::ValueMappings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValueMappingsBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::ValueMapping>>,
-    pub(crate) binding_properties: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::FormInputBindingPropertiesValue,
-        >,
-    >,
+    pub(crate) binding_properties:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormInputBindingPropertiesValue>>,
 }
 impl ValueMappingsBuilder {
     /// Appends an item to `values`.
@@ -67,17 +51,12 @@ impl ValueMappingsBuilder {
         self
     }
     /// <p>The value and display value pairs.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValueMapping>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValueMapping>>) -> Self {
         self.values = input;
         self
     }
     /// <p>The value and display value pairs.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValueMapping>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValueMapping>> {
         &self.values
     }
     /// Adds a key-value pair to `binding_properties`.
@@ -98,12 +77,7 @@ impl ValueMappingsBuilder {
     /// <p>The information to bind fields to data at runtime.</p>
     pub fn set_binding_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::FormInputBindingPropertiesValue,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormInputBindingPropertiesValue>>,
     ) -> Self {
         self.binding_properties = input;
         self
@@ -111,12 +85,7 @@ impl ValueMappingsBuilder {
     /// <p>The information to bind fields to data at runtime.</p>
     pub fn get_binding_properties(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::FormInputBindingPropertiesValue,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormInputBindingPropertiesValue>> {
         &self.binding_properties
     }
     /// Consumes the builder and constructs a [`ValueMappings`](crate::types::ValueMappings).

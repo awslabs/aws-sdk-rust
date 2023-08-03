@@ -26,7 +26,7 @@ impl DeactivateOrganizationsAccessInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeactivateOrganizationsAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deactivate_organizations_access::builders::DeactivateOrganizationsAccessInputBuilder,
+    inner: crate::operation::deactivate_organizations_access::builders::DeactivateOrganizationsAccessInputBuilder,
 }
 impl DeactivateOrganizationsAccessFluentBuilder {
     /// Creates a new `DeactivateOrganizationsAccess`.
@@ -37,7 +37,7 @@ impl DeactivateOrganizationsAccessFluentBuilder {
         }
     }
     /// Access the DeactivateOrganizationsAccess as a reference.
-    pub fn as_input(&self) -> &crate::operation::deactivate_organizations_access::builders::DeactivateOrganizationsAccessInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::deactivate_organizations_access::builders::DeactivateOrganizationsAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeactivateOrganizationsAccessFluentBuilder {
             crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeactivateOrganizationsAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeactivateOrganizationsAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeactivateOrganizationsAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeactivateOrganizationsAccessFluentBuilder {
             crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError>,
     > {
         self.customize_middleware().await
     }

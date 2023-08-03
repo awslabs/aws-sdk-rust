@@ -44,9 +44,7 @@ impl ImageReplicationStatus {
 
 /// A builder for [`ImageReplicationStatus`](crate::types::ImageReplicationStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageReplicationStatusBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl ImageReplicationStatusBuilder {
         self
     }
     /// <p>The image replication status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReplicationStatus>) -> Self {
         self.status = input;
         self
     }

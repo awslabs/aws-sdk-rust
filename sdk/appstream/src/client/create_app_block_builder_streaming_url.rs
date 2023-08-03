@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`streaming_url(Option<String>)`](crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlOutput::streaming_url): <p>The URL to start the streaming session.</p>
     ///   - [`expires(Option<DateTime>)`](crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlOutput::expires): <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
     /// - On failure, responds with [`SdkError<CreateAppBlockBuilderStreamingURLError>`](crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingURLError)
-    pub fn create_app_block_builder_streaming_url(&self) -> crate::operation::create_app_block_builder_streaming_url::builders::CreateAppBlockBuilderStreamingURLFluentBuilder{
+    pub fn create_app_block_builder_streaming_url(
+        &self,
+    ) -> crate::operation::create_app_block_builder_streaming_url::builders::CreateAppBlockBuilderStreamingURLFluentBuilder {
         crate::operation::create_app_block_builder_streaming_url::builders::CreateAppBlockBuilderStreamingURLFluentBuilder::new(self.handle.clone())
     }
 }

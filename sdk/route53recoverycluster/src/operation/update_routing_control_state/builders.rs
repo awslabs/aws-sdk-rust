@@ -34,7 +34,7 @@ impl UpdateRoutingControlStateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRoutingControlStateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_routing_control_state::builders::UpdateRoutingControlStateInputBuilder,
+    inner: crate::operation::update_routing_control_state::builders::UpdateRoutingControlStateInputBuilder,
 }
 impl UpdateRoutingControlStateFluentBuilder {
     /// Creates a new `UpdateRoutingControlState`.
@@ -45,7 +45,7 @@ impl UpdateRoutingControlStateFluentBuilder {
         }
     }
     /// Access the UpdateRoutingControlState as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_routing_control_state::builders::UpdateRoutingControlStateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_routing_control_state::builders::UpdateRoutingControlStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl UpdateRoutingControlStateFluentBuilder {
             crate::operation::update_routing_control_state::UpdateRoutingControlState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_control_state::UpdateRoutingControlStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_control_state::UpdateRoutingControlStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl UpdateRoutingControlStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl UpdateRoutingControlStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_routing_control_state::UpdateRoutingControlStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_control_state::UpdateRoutingControlStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_control_state::UpdateRoutingControlStateError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl UpdateRoutingControlStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_routing_control_state::UpdateRoutingControlStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_control_state::UpdateRoutingControlStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_control_state::UpdateRoutingControlStateError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +113,17 @@ impl UpdateRoutingControlStateFluentBuilder {
             crate::operation::update_routing_control_state::UpdateRoutingControlState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_control_state::UpdateRoutingControlStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_routing_control_state::UpdateRoutingControlStateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
-    pub fn routing_control_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.routing_control_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
-    pub fn set_routing_control_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_routing_control_arn(input);
         self
     }
@@ -154,17 +137,12 @@ impl UpdateRoutingControlStateFluentBuilder {
         self
     }
     /// <p>The state of the routing control. You can set the value to be On or Off.</p>
-    pub fn set_routing_control_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingControlState>,
-    ) -> Self {
+    pub fn set_routing_control_state(mut self, input: ::std::option::Option<crate::types::RoutingControlState>) -> Self {
         self.inner = self.inner.set_routing_control_state(input);
         self
     }
     /// <p>The state of the routing control. You can set the value to be On or Off.</p>
-    pub fn get_routing_control_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoutingControlState> {
+    pub fn get_routing_control_state(&self) -> &::std::option::Option<crate::types::RoutingControlState> {
         self.inner.get_routing_control_state()
     }
     /// Appends an item to `SafetyRulesToOverride`.
@@ -173,27 +151,19 @@ impl UpdateRoutingControlStateFluentBuilder {
     ///
     /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    pub fn safety_rules_to_override(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn safety_rules_to_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.safety_rules_to_override(input.into());
         self
     }
     /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    pub fn set_safety_rules_to_override(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_safety_rules_to_override(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_safety_rules_to_override(input);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    pub fn get_safety_rules_to_override(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_safety_rules_to_override(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_safety_rules_to_override()
     }
 }

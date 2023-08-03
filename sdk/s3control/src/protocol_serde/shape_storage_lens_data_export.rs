@@ -7,17 +7,11 @@ pub fn ser_storage_lens_data_export(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.s3_bucket_destination {
         let inner_writer = scope.start_el("S3BucketDestination");
-        crate::protocol_serde::shape_s3_bucket_destination::ser_s3_bucket_destination(
-            var_1,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_s3_bucket_destination::ser_s3_bucket_destination(var_1, inner_writer)?
     }
     if let Some(var_2) = &input.cloud_watch_metrics {
         let inner_writer = scope.start_el("CloudWatchMetrics");
-        crate::protocol_serde::shape_cloud_watch_metrics::ser_cloud_watch_metrics(
-            var_2,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_cloud_watch_metrics::ser_cloud_watch_metrics(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())

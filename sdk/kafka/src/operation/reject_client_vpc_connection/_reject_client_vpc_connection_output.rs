@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RejectClientVpcConnectionOutput {
 }
 impl RejectClientVpcConnectionOutput {
     /// Creates a new builder-style object to manufacture [`RejectClientVpcConnectionOutput`](crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionOutput).
-    pub fn builder() -> crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionOutputBuilder{
+    pub fn builder() -> crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionOutputBuilder {
         crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RejectClientVpcConnectionOutput`](crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectClientVpcConnectionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RejectClientVpcConnectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RejectClientVpcConnectionOutput`](crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionOutput {
+    pub fn build(self) -> crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionOutput {
         crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionOutput {
             _request_id: self._request_id,
         }

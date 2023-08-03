@@ -29,9 +29,7 @@ impl GetDomainNamesInput {
 
 /// A builder for [`GetDomainNamesInput`](crate::operation::get_domain_names::GetDomainNamesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainNamesInputBuilder {
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl GetDomainNamesInputBuilder {
     /// Consumes the builder and constructs a [`GetDomainNamesInput`](crate::operation::get_domain_names::GetDomainNamesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_domain_names::GetDomainNamesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_domain_names::GetDomainNamesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_domain_names::GetDomainNamesInput {
             max_results: self.max_results,
             next_token: self.next_token,

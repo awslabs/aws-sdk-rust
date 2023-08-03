@@ -18,10 +18,7 @@ pub fn ser_create_dataset_export_job_input(
     if let Some(var_5) = &input.job_output {
         #[allow(unused_mut)]
         let mut object_6 = object.key("jobOutput").start_object();
-        crate::protocol_serde::shape_dataset_export_job_output::ser_dataset_export_job_output(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_dataset_export_job_output::ser_dataset_export_job_output(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.tags {

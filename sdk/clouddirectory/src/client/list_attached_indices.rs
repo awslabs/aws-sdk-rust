@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`index_attachments(Option<Vec<IndexAttachment>>)`](crate::operation::list_attached_indices::ListAttachedIndicesOutput::index_attachments): <p>The indices attached to the specified object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_attached_indices::ListAttachedIndicesOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListAttachedIndicesError>`](crate::operation::list_attached_indices::ListAttachedIndicesError)
-    pub fn list_attached_indices(
-        &self,
-    ) -> crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder {
-        crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_attached_indices(&self) -> crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder {
+        crate::operation::list_attached_indices::builders::ListAttachedIndicesFluentBuilder::new(self.handle.clone())
     }
 }

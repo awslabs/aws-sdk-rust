@@ -10,10 +10,7 @@ pub fn ser_update_contact_evaluation_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = object_2.key(key_3.as_str()).start_object();
-                crate::protocol_serde::shape_evaluation_answer_input::ser_evaluation_answer_input(
-                    &mut object_5,
-                    value_4,
-                )?;
+                crate::protocol_serde::shape_evaluation_answer_input::ser_evaluation_answer_input(&mut object_5, value_4)?;
                 object_5.finish();
             }
         }
@@ -26,10 +23,7 @@ pub fn ser_update_contact_evaluation_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = object_7.key(key_8.as_str()).start_object();
-                crate::protocol_serde::shape_evaluation_note::ser_evaluation_note(
-                    &mut object_10,
-                    value_9,
-                )?;
+                crate::protocol_serde::shape_evaluation_note::ser_evaluation_note(&mut object_10, value_9)?;
                 object_10.finish();
             }
         }

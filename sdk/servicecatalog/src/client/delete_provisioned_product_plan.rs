@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`ignore_errors(bool)`](crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanFluentBuilder::ignore_errors) / [`set_ignore_errors(Option<bool>)`](crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanFluentBuilder::set_ignore_errors): <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     /// - On success, responds with [`DeleteProvisionedProductPlanOutput`](crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanOutput)
     /// - On failure, responds with [`SdkError<DeleteProvisionedProductPlanError>`](crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanError)
-    pub fn delete_provisioned_product_plan(&self) -> crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanFluentBuilder{
+    pub fn delete_provisioned_product_plan(
+        &self,
+    ) -> crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanFluentBuilder {
         crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanFluentBuilder::new(self.handle.clone())
     }
 }

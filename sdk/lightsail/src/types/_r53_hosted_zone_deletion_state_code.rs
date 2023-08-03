@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum R53HostedZoneDeletionStateCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for R53HostedZoneDeletionStateCode {
             "PENDING" => R53HostedZoneDeletionStateCode::Pending,
             "STARTED" => R53HostedZoneDeletionStateCode::Started,
             "SUCCEEDED" => R53HostedZoneDeletionStateCode::Succeeded,
-            other => R53HostedZoneDeletionStateCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => R53HostedZoneDeletionStateCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

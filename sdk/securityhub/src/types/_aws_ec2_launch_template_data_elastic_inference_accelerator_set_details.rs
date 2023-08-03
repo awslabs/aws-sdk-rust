@@ -23,18 +23,14 @@ impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
 }
 impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -69,9 +65,7 @@ impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
+    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
         crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
             count: self.count.unwrap_or_default(),
             r#type: self.r#type,

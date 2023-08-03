@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCidrCollectionOutput {
 }
 impl DeleteCidrCollectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCidrCollectionOutput`](crate::operation::delete_cidr_collection::DeleteCidrCollectionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionOutputBuilder {
         crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCidrCollectionOutput`](crate::operation::delete_cidr_collection::DeleteCidrCollectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCidrCollectionOutputBuilder {
     _request_id: Option<String>,
 }

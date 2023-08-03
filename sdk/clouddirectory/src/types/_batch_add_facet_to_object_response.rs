@@ -13,9 +13,7 @@ impl BatchAddFacetToObjectResponse {
 
 /// A builder for [`BatchAddFacetToObjectResponse`](crate::types::BatchAddFacetToObjectResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAddFacetToObjectResponseBuilder {}
 impl BatchAddFacetToObjectResponseBuilder {
     /// Consumes the builder and constructs a [`BatchAddFacetToObjectResponse`](crate::types::BatchAddFacetToObjectResponse).

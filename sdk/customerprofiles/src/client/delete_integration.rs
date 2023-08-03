@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteIntegrationOutput`](crate::operation::delete_integration::DeleteIntegrationOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::operation::delete_integration::DeleteIntegrationOutput::message): <p>A message that indicates the delete request is done.</p>
     /// - On failure, responds with [`SdkError<DeleteIntegrationError>`](crate::operation::delete_integration::DeleteIntegrationError)
-    pub fn delete_integration(
-        &self,
-    ) -> crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder {
-        crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_integration(&self) -> crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder {
+        crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::new(self.handle.clone())
     }
 }

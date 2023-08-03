@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`expires_time(Option<DateTime>)`](crate::operation::create_access_token::CreateAccessTokenOutput::expires_time): <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
     ///   - [`access_token_id(Option<String>)`](crate::operation::create_access_token::CreateAccessTokenOutput::access_token_id): <p>The system-generated unique ID of the access token.</p>
     /// - On failure, responds with [`SdkError<CreateAccessTokenError>`](crate::operation::create_access_token::CreateAccessTokenError)
-    pub fn create_access_token(
-        &self,
-    ) -> crate::operation::create_access_token::builders::CreateAccessTokenFluentBuilder {
-        crate::operation::create_access_token::builders::CreateAccessTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_access_token(&self) -> crate::operation::create_access_token::builders::CreateAccessTokenFluentBuilder {
+        crate::operation::create_access_token::builders::CreateAccessTokenFluentBuilder::new(self.handle.clone())
     }
 }

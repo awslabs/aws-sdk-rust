@@ -16,8 +16,7 @@ pub struct TargetCapacitySpecificationRequest {
     pub spot_target_capacity: ::std::option::Option<i32>,
     /// <p>The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.</p>
     #[doc(hidden)]
-    pub default_target_capacity_type:
-        ::std::option::Option<crate::types::DefaultTargetCapacityType>,
+    pub default_target_capacity_type: ::std::option::Option<crate::types::DefaultTargetCapacityType>,
     /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
     #[doc(hidden)]
@@ -37,16 +36,12 @@ impl TargetCapacitySpecificationRequest {
         self.spot_target_capacity
     }
     /// <p>The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.</p>
-    pub fn default_target_capacity_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DefaultTargetCapacityType> {
+    pub fn default_target_capacity_type(&self) -> ::std::option::Option<&crate::types::DefaultTargetCapacityType> {
         self.default_target_capacity_type.as_ref()
     }
     /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn target_capacity_unit_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetCapacityUnitType> {
+    pub fn target_capacity_unit_type(&self) -> ::std::option::Option<&crate::types::TargetCapacityUnitType> {
         self.target_capacity_unit_type.as_ref()
     }
 }
@@ -59,17 +54,13 @@ impl TargetCapacitySpecificationRequest {
 
 /// A builder for [`TargetCapacitySpecificationRequest`](crate::types::TargetCapacitySpecificationRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetCapacitySpecificationRequestBuilder {
     pub(crate) total_target_capacity: ::std::option::Option<i32>,
     pub(crate) on_demand_target_capacity: ::std::option::Option<i32>,
     pub(crate) spot_target_capacity: ::std::option::Option<i32>,
-    pub(crate) default_target_capacity_type:
-        ::std::option::Option<crate::types::DefaultTargetCapacityType>,
-    pub(crate) target_capacity_unit_type:
-        ::std::option::Option<crate::types::TargetCapacityUnitType>,
+    pub(crate) default_target_capacity_type: ::std::option::Option<crate::types::DefaultTargetCapacityType>,
+    pub(crate) target_capacity_unit_type: ::std::option::Option<crate::types::TargetCapacityUnitType>,
 }
 impl TargetCapacitySpecificationRequestBuilder {
     /// <p>The number of units to request, filled using <code>DefaultTargetCapacityType</code>.</p>
@@ -115,50 +106,34 @@ impl TargetCapacitySpecificationRequestBuilder {
         &self.spot_target_capacity
     }
     /// <p>The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.</p>
-    pub fn default_target_capacity_type(
-        mut self,
-        input: crate::types::DefaultTargetCapacityType,
-    ) -> Self {
+    pub fn default_target_capacity_type(mut self, input: crate::types::DefaultTargetCapacityType) -> Self {
         self.default_target_capacity_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.</p>
-    pub fn set_default_target_capacity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultTargetCapacityType>,
-    ) -> Self {
+    pub fn set_default_target_capacity_type(mut self, input: ::std::option::Option<crate::types::DefaultTargetCapacityType>) -> Self {
         self.default_target_capacity_type = input;
         self
     }
     /// <p>The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.</p>
-    pub fn get_default_target_capacity_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultTargetCapacityType> {
+    pub fn get_default_target_capacity_type(&self) -> &::std::option::Option<crate::types::DefaultTargetCapacityType> {
         &self.default_target_capacity_type
     }
     /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn target_capacity_unit_type(
-        mut self,
-        input: crate::types::TargetCapacityUnitType,
-    ) -> Self {
+    pub fn target_capacity_unit_type(mut self, input: crate::types::TargetCapacityUnitType) -> Self {
         self.target_capacity_unit_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn set_target_capacity_unit_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetCapacityUnitType>,
-    ) -> Self {
+    pub fn set_target_capacity_unit_type(mut self, input: ::std::option::Option<crate::types::TargetCapacityUnitType>) -> Self {
         self.target_capacity_unit_type = input;
         self
     }
     /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn get_target_capacity_unit_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetCapacityUnitType> {
+    pub fn get_target_capacity_unit_type(&self) -> &::std::option::Option<crate::types::TargetCapacityUnitType> {
         &self.target_capacity_unit_type
     }
     /// Consumes the builder and constructs a [`TargetCapacitySpecificationRequest`](crate::types::TargetCapacitySpecificationRequest).

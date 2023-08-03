@@ -86,10 +86,7 @@ impl ::std::fmt::Debug for DescribeActivitiesInput {
         formatter.field("activity_types", &self.activity_types);
         formatter.field("resource_id", &self.resource_id);
         formatter.field("user_id", &self.user_id);
-        formatter.field(
-            "include_indirect_activities",
-            &self.include_indirect_activities,
-        );
+        formatter.field("include_indirect_activities", &self.include_indirect_activities);
         formatter.field("limit", &self.limit);
         formatter.field("marker", &self.marker);
         formatter.finish()
@@ -97,8 +94,7 @@ impl ::std::fmt::Debug for DescribeActivitiesInput {
 }
 impl DescribeActivitiesInput {
     /// Creates a new builder-style object to manufacture [`DescribeActivitiesInput`](crate::operation::describe_activities::DescribeActivitiesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_activities::builders::DescribeActivitiesInputBuilder {
+    pub fn builder() -> crate::operation::describe_activities::builders::DescribeActivitiesInputBuilder {
         crate::operation::describe_activities::builders::DescribeActivitiesInputBuilder::default()
     }
 }
@@ -120,18 +116,12 @@ pub struct DescribeActivitiesInputBuilder {
 }
 impl DescribeActivitiesInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -145,10 +135,7 @@ impl DescribeActivitiesInputBuilder {
         self
     }
     /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -162,10 +149,7 @@ impl DescribeActivitiesInputBuilder {
         self
     }
     /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -174,18 +158,12 @@ impl DescribeActivitiesInputBuilder {
         &self.end_time
     }
     /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -194,18 +172,12 @@ impl DescribeActivitiesInputBuilder {
         &self.organization_id
     }
     /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
-    pub fn activity_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn activity_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activity_types = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
-    pub fn set_activity_types(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_activity_types(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.activity_types = input;
         self
     }
@@ -286,24 +258,19 @@ impl DescribeActivitiesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeActivitiesInput`](crate::operation::describe_activities::DescribeActivitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_activities::DescribeActivitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_activities::DescribeActivitiesInput {
-                authentication_token: self.authentication_token,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                organization_id: self.organization_id,
-                activity_types: self.activity_types,
-                resource_id: self.resource_id,
-                user_id: self.user_id,
-                include_indirect_activities: self.include_indirect_activities,
-                limit: self.limit,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_activities::DescribeActivitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_activities::DescribeActivitiesInput {
+            authentication_token: self.authentication_token,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            organization_id: self.organization_id,
+            activity_types: self.activity_types,
+            resource_id: self.resource_id,
+            user_id: self.user_id,
+            include_indirect_activities: self.include_indirect_activities,
+            limit: self.limit,
+            marker: self.marker,
+        })
     }
 }
 impl ::std::fmt::Debug for DescribeActivitiesInputBuilder {
@@ -316,10 +283,7 @@ impl ::std::fmt::Debug for DescribeActivitiesInputBuilder {
         formatter.field("activity_types", &self.activity_types);
         formatter.field("resource_id", &self.resource_id);
         formatter.field("user_id", &self.user_id);
-        formatter.field(
-            "include_indirect_activities",
-            &self.include_indirect_activities,
-        );
+        formatter.field("include_indirect_activities", &self.include_indirect_activities);
         formatter.field("limit", &self.limit);
         formatter.field("marker", &self.marker);
         formatter.finish()

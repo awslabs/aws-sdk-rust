@@ -118,9 +118,7 @@ impl DescribeSubnetsInput {
 
 /// A builder for [`DescribeSubnetsInput`](crate::operation::describe_subnets::DescribeSubnetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSubnetsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -207,10 +205,7 @@ impl DescribeSubnetsInputBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC for the subnet.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -265,10 +260,7 @@ impl DescribeSubnetsInputBuilder {
     }
     /// <p>The IDs of the subnets.</p>
     /// <p>Default: Describes all your subnets.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -322,10 +314,7 @@ impl DescribeSubnetsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSubnetsInput`](crate::operation::describe_subnets::DescribeSubnetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_subnets::DescribeSubnetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_subnets::DescribeSubnetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_subnets::DescribeSubnetsInput {
             filters: self.filters,
             subnet_ids: self.subnet_ids,

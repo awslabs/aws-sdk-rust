@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`job_definition_name(impl ::std::convert::Into<String>)`](crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionFluentBuilder::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionFluentBuilder::set_job_definition_name): <p>The name of the model quality monitoring job definition to delete.</p>
     /// - On success, responds with [`DeleteModelQualityJobDefinitionOutput`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteModelQualityJobDefinitionError>`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionError)
-    pub fn delete_model_quality_job_definition(&self) -> crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionFluentBuilder{
+    pub fn delete_model_quality_job_definition(
+        &self,
+    ) -> crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionFluentBuilder {
         crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

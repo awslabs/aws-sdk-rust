@@ -30,9 +30,7 @@ impl JobExecutionsRolloutConfig {
 
 /// A builder for [`JobExecutionsRolloutConfig`](crate::types::JobExecutionsRolloutConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobExecutionsRolloutConfigBuilder {
     pub(crate) maximum_per_minute: ::std::option::Option<i32>,
     pub(crate) exponential_rate: ::std::option::Option<crate::types::ExponentialRolloutRate>,
@@ -58,17 +56,12 @@ impl JobExecutionsRolloutConfigBuilder {
         self
     }
     /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job rollout.</p>
-    pub fn set_exponential_rate(
-        mut self,
-        input: ::std::option::Option<crate::types::ExponentialRolloutRate>,
-    ) -> Self {
+    pub fn set_exponential_rate(mut self, input: ::std::option::Option<crate::types::ExponentialRolloutRate>) -> Self {
         self.exponential_rate = input;
         self
     }
     /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job rollout.</p>
-    pub fn get_exponential_rate(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExponentialRolloutRate> {
+    pub fn get_exponential_rate(&self) -> &::std::option::Option<crate::types::ExponentialRolloutRate> {
         &self.exponential_rate
     }
     /// Consumes the builder and constructs a [`JobExecutionsRolloutConfig`](crate::types::JobExecutionsRolloutConfig).

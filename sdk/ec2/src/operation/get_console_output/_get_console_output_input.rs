@@ -31,17 +31,14 @@ impl GetConsoleOutputInput {
 }
 impl GetConsoleOutputInput {
     /// Creates a new builder-style object to manufacture [`GetConsoleOutputInput`](crate::operation::get_console_output::GetConsoleOutputInput).
-    pub fn builder() -> crate::operation::get_console_output::builders::GetConsoleOutputInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_console_output::builders::GetConsoleOutputInputBuilder {
         crate::operation::get_console_output::builders::GetConsoleOutputInputBuilder::default()
     }
 }
 
 /// A builder for [`GetConsoleOutputInput`](crate::operation::get_console_output::GetConsoleOutputInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConsoleOutputInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -96,16 +93,11 @@ impl GetConsoleOutputInputBuilder {
     /// Consumes the builder and constructs a [`GetConsoleOutputInput`](crate::operation::get_console_output::GetConsoleOutputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_console_output::GetConsoleOutputInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_console_output::GetConsoleOutputInput {
-                instance_id: self.instance_id,
-                dry_run: self.dry_run,
-                latest: self.latest,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_console_output::GetConsoleOutputInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_console_output::GetConsoleOutputInput {
+            instance_id: self.instance_id,
+            dry_run: self.dry_run,
+            latest: self.latest,
+        })
     }
 }

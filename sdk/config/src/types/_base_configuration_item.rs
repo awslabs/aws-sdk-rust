@@ -54,9 +54,7 @@ pub struct BaseConfigurationItem {
     pub configuration: ::std::option::Option<::std::string::String>,
     /// <p>Configuration attributes that Config returns for certain resource types to supplement the information returned for the configuration parameter.</p>
     #[doc(hidden)]
-    pub supplementary_configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub supplementary_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl BaseConfigurationItem {
     /// <p>The version number of the resource configuration.</p>
@@ -68,9 +66,7 @@ impl BaseConfigurationItem {
         self.account_id.as_deref()
     }
     /// <p>The time when the configuration recording was initiated.</p>
-    pub fn configuration_item_capture_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn configuration_item_capture_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.configuration_item_capture_time.as_ref()
     }
     /// <p>The configuration item status. The valid values are:</p>
@@ -83,9 +79,7 @@ impl BaseConfigurationItem {
     /// </ul> <note>
     /// <p>The CIs do not incur any cost.</p>
     /// </note>
-    pub fn configuration_item_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfigurationItemStatus> {
+    pub fn configuration_item_status(&self) -> ::std::option::Option<&crate::types::ConfigurationItemStatus> {
         self.configuration_item_status.as_ref()
     }
     /// <p>An identifier that indicates the ordering of the configuration items of a resource.</p>
@@ -125,11 +119,7 @@ impl BaseConfigurationItem {
         self.configuration.as_deref()
     }
     /// <p>Configuration attributes that Config returns for certain resource types to supplement the information returned for the configuration parameter.</p>
-    pub fn supplementary_configuration(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn supplementary_configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.supplementary_configuration.as_ref()
     }
 }
@@ -142,15 +132,12 @@ impl BaseConfigurationItem {
 
 /// A builder for [`BaseConfigurationItem`](crate::types::BaseConfigurationItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BaseConfigurationItemBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_item_capture_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) configuration_item_status:
-        ::std::option::Option<crate::types::ConfigurationItemStatus>,
+    pub(crate) configuration_item_status: ::std::option::Option<crate::types::ConfigurationItemStatus>,
     pub(crate) configuration_state_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -160,9 +147,7 @@ pub struct BaseConfigurationItemBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) resource_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
-    pub(crate) supplementary_configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) supplementary_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl BaseConfigurationItemBuilder {
     /// <p>The version number of the resource configuration.</p>
@@ -199,17 +184,12 @@ impl BaseConfigurationItemBuilder {
         self
     }
     /// <p>The time when the configuration recording was initiated.</p>
-    pub fn set_configuration_item_capture_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_configuration_item_capture_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.configuration_item_capture_time = input;
         self
     }
     /// <p>The time when the configuration recording was initiated.</p>
-    pub fn get_configuration_item_capture_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_configuration_item_capture_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.configuration_item_capture_time
     }
     /// <p>The configuration item status. The valid values are:</p>
@@ -222,10 +202,7 @@ impl BaseConfigurationItemBuilder {
     /// </ul> <note>
     /// <p>The CIs do not incur any cost.</p>
     /// </note>
-    pub fn configuration_item_status(
-        mut self,
-        input: crate::types::ConfigurationItemStatus,
-    ) -> Self {
+    pub fn configuration_item_status(mut self, input: crate::types::ConfigurationItemStatus) -> Self {
         self.configuration_item_status = ::std::option::Option::Some(input);
         self
     }
@@ -239,10 +216,7 @@ impl BaseConfigurationItemBuilder {
     /// </ul> <note>
     /// <p>The CIs do not incur any cost.</p>
     /// </note>
-    pub fn set_configuration_item_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationItemStatus>,
-    ) -> Self {
+    pub fn set_configuration_item_status(mut self, input: ::std::option::Option<crate::types::ConfigurationItemStatus>) -> Self {
         self.configuration_item_status = input;
         self
     }
@@ -256,24 +230,16 @@ impl BaseConfigurationItemBuilder {
     /// </ul> <note>
     /// <p>The CIs do not incur any cost.</p>
     /// </note>
-    pub fn get_configuration_item_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationItemStatus> {
+    pub fn get_configuration_item_status(&self) -> &::std::option::Option<crate::types::ConfigurationItemStatus> {
         &self.configuration_item_status
     }
     /// <p>An identifier that indicates the ordering of the configuration items of a resource.</p>
-    pub fn configuration_state_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_state_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_state_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier that indicates the ordering of the configuration items of a resource.</p>
-    pub fn set_configuration_state_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_state_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_state_id = input;
         self
     }
@@ -301,10 +267,7 @@ impl BaseConfigurationItemBuilder {
         self
     }
     /// <p>The type of Amazon Web Services resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -327,18 +290,12 @@ impl BaseConfigurationItemBuilder {
         &self.resource_id
     }
     /// <p>The custom name of the resource, if available.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom name of the resource, if available.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -361,18 +318,12 @@ impl BaseConfigurationItemBuilder {
         &self.aws_region
     }
     /// <p>The Availability Zone associated with the resource.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone associated with the resource.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -386,32 +337,21 @@ impl BaseConfigurationItemBuilder {
         self
     }
     /// <p>The time stamp when the resource was created.</p>
-    pub fn set_resource_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_resource_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.resource_creation_time = input;
         self
     }
     /// <p>The time stamp when the resource was created.</p>
-    pub fn get_resource_creation_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_resource_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.resource_creation_time
     }
     /// <p>The description of the resource configuration.</p>
-    pub fn configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the resource configuration.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration = input;
         self
     }
@@ -437,9 +377,7 @@ impl BaseConfigurationItemBuilder {
     /// <p>Configuration attributes that Config returns for certain resource types to supplement the information returned for the configuration parameter.</p>
     pub fn set_supplementary_configuration(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.supplementary_configuration = input;
         self
@@ -447,9 +385,7 @@ impl BaseConfigurationItemBuilder {
     /// <p>Configuration attributes that Config returns for certain resource types to supplement the information returned for the configuration parameter.</p>
     pub fn get_supplementary_configuration(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.supplementary_configuration
     }
     /// Consumes the builder and constructs a [`BaseConfigurationItem`](crate::types::BaseConfigurationItem).

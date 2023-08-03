@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateHttpNamespaceOutput {
 }
 impl UpdateHttpNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHttpNamespaceOutput`](crate::operation::update_http_namespace::UpdateHttpNamespaceOutput).
-    pub fn builder(
-    ) -> crate::operation::update_http_namespace::builders::UpdateHttpNamespaceOutputBuilder {
-        crate::operation::update_http_namespace::builders::UpdateHttpNamespaceOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_http_namespace::builders::UpdateHttpNamespaceOutputBuilder {
+        crate::operation::update_http_namespace::builders::UpdateHttpNamespaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateHttpNamespaceOutput`](crate::operation::update_http_namespace::UpdateHttpNamespaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHttpNamespaceOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

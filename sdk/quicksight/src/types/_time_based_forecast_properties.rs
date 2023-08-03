@@ -66,9 +66,7 @@ impl TimeBasedForecastProperties {
 
 /// A builder for [`TimeBasedForecastProperties`](crate::types::TimeBasedForecastProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeBasedForecastPropertiesBuilder {
     pub(crate) periods_forward: ::std::option::Option<i32>,
     pub(crate) periods_backward: ::std::option::Option<i32>,

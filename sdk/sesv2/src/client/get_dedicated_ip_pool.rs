@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetDedicatedIpPoolOutput`](crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolOutput) with field(s):
     ///   - [`dedicated_ip_pool(Option<DedicatedIpPool>)`](crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolOutput::dedicated_ip_pool): <p>An object that contains information about a dedicated IP pool.</p>
     /// - On failure, responds with [`SdkError<GetDedicatedIpPoolError>`](crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolError)
-    pub fn get_dedicated_ip_pool(
-        &self,
-    ) -> crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolFluentBuilder {
-        crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_dedicated_ip_pool(&self) -> crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolFluentBuilder {
+        crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolFluentBuilder::new(self.handle.clone())
     }
 }

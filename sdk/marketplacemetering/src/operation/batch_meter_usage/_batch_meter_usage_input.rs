@@ -30,9 +30,7 @@ impl BatchMeterUsageInput {
 
 /// A builder for [`BatchMeterUsageInput`](crate::operation::batch_meter_usage::BatchMeterUsageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchMeterUsageInputBuilder {
     pub(crate) usage_records: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
     pub(crate) product_code: ::std::option::Option<::std::string::String>,
@@ -50,17 +48,12 @@ impl BatchMeterUsageInputBuilder {
         self
     }
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
-    pub fn set_usage_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
-    ) -> Self {
+    pub fn set_usage_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>) -> Self {
         self.usage_records = input;
         self
     }
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
-    pub fn get_usage_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>> {
+    pub fn get_usage_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>> {
         &self.usage_records
     }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
@@ -80,10 +73,7 @@ impl BatchMeterUsageInputBuilder {
     /// Consumes the builder and constructs a [`BatchMeterUsageInput`](crate::operation::batch_meter_usage::BatchMeterUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_meter_usage::BatchMeterUsageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::batch_meter_usage::BatchMeterUsageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_meter_usage::BatchMeterUsageInput {
             usage_records: self.usage_records,
             product_code: self.product_code,

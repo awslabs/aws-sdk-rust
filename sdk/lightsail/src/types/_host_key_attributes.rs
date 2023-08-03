@@ -87,9 +87,7 @@ impl HostKeyAttributes {
 
 /// A builder for [`HostKeyAttributes`](crate::types::HostKeyAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HostKeyAttributesBuilder {
     pub(crate) algorithm: ::std::option::Option<::std::string::String>,
     pub(crate) public_key: ::std::option::Option<::std::string::String>,
@@ -137,10 +135,7 @@ impl HostKeyAttributesBuilder {
         self
     }
     /// <p>The time that the SSH host key or RDP certificate was recorded by Lightsail.</p>
-    pub fn set_witnessed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_witnessed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.witnessed_at = input;
         self
     }
@@ -153,10 +148,7 @@ impl HostKeyAttributesBuilder {
     /// <li> <p>Example of an SHA-1 SSH fingerprint:</p> <p> <code>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</code> </p> </li>
     /// <li> <p>Example of an SHA-1 RDP fingerprint:</p> <p> <code>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</code> </p> </li>
     /// </ul>
-    pub fn fingerprint_sha1(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fingerprint_sha1(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fingerprint_sha1 = ::std::option::Option::Some(input.into());
         self
     }
@@ -165,10 +157,7 @@ impl HostKeyAttributesBuilder {
     /// <li> <p>Example of an SHA-1 SSH fingerprint:</p> <p> <code>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</code> </p> </li>
     /// <li> <p>Example of an SHA-1 RDP fingerprint:</p> <p> <code>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</code> </p> </li>
     /// </ul>
-    pub fn set_fingerprint_sha1(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fingerprint_sha1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fingerprint_sha1 = input;
         self
     }
@@ -185,10 +174,7 @@ impl HostKeyAttributesBuilder {
     /// <li> <p>Example of an SHA-256 SSH fingerprint:</p> <p> <code>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</code> </p> </li>
     /// <li> <p>Example of an SHA-256 RDP fingerprint:</p> <p> <code>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</code> </p> </li>
     /// </ul>
-    pub fn fingerprint_sha256(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fingerprint_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fingerprint_sha256 = ::std::option::Option::Some(input.into());
         self
     }
@@ -197,10 +183,7 @@ impl HostKeyAttributesBuilder {
     /// <li> <p>Example of an SHA-256 SSH fingerprint:</p> <p> <code>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</code> </p> </li>
     /// <li> <p>Example of an SHA-256 RDP fingerprint:</p> <p> <code>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</code> </p> </li>
     /// </ul>
-    pub fn set_fingerprint_sha256(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fingerprint_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fingerprint_sha256 = input;
         self
     }
@@ -220,10 +203,7 @@ impl HostKeyAttributesBuilder {
     }
     /// <p>The returned RDP certificate is valid after this point in time.</p>
     /// <p>This value is listed only for RDP certificates.</p>
-    pub fn set_not_valid_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_valid_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_valid_before = input;
         self
     }
@@ -240,10 +220,7 @@ impl HostKeyAttributesBuilder {
     }
     /// <p>The returned RDP certificate is not valid after this point in time.</p>
     /// <p>This value is listed only for RDP certificates.</p>
-    pub fn set_not_valid_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_valid_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_valid_after = input;
         self
     }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`number_of_associated_vp_cs(Option<i64>)`](crate::operation::get_service_network::GetServiceNetworkOutput::number_of_associated_vp_cs): <p>The number of VPCs associated with the service network.</p>
     ///   - [`number_of_associated_services(Option<i64>)`](crate::operation::get_service_network::GetServiceNetworkOutput::number_of_associated_services): <p>The number of services associated with the service network.</p>
     /// - On failure, responds with [`SdkError<GetServiceNetworkError>`](crate::operation::get_service_network::GetServiceNetworkError)
-    pub fn get_service_network(
-        &self,
-    ) -> crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder {
-        crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_service_network(&self) -> crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder {
+        crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder::new(self.handle.clone())
     }
 }

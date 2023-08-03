@@ -10,10 +10,7 @@ impl PutBucketPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_policy::PutBucketPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_policy::PutBucketPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_policy::PutBucketPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_bucket_policy();
         fluent_builder.inner = self;
@@ -51,9 +48,7 @@ impl PutBucketPolicyFluentBuilder {
         }
     }
     /// Access the PutBucketPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_bucket_policy::builders::PutBucketPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_bucket_policy::builders::PutBucketPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +60,7 @@ impl PutBucketPolicyFluentBuilder {
             crate::operation::put_bucket_policy::PutBucketPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_policy::PutBucketPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_policy::PutBucketPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +70,7 @@ impl PutBucketPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +79,7 @@ impl PutBucketPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_policy::PutBucketPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_policy::PutBucketPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_policy::PutBucketPolicyError>,
     > {
         let op = self
             .inner
@@ -114,9 +102,7 @@ impl PutBucketPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_policy::PutBucketPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_policy::PutBucketPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_policy::PutBucketPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -130,9 +116,7 @@ impl PutBucketPolicyFluentBuilder {
             crate::operation::put_bucket_policy::PutBucketPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_policy::PutBucketPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_policy::PutBucketPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -210,10 +194,7 @@ impl PutBucketPolicyFluentBuilder {
     /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn set_confirm_remove_self_bucket_access(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_confirm_remove_self_bucket_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_confirm_remove_self_bucket_access(input);
         self
     }

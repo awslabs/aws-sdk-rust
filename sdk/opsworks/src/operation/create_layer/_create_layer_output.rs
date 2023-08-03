@@ -29,9 +29,7 @@ impl CreateLayerOutput {
 
 /// A builder for [`CreateLayerOutput`](crate::operation::create_layer::CreateLayerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLayerOutputBuilder {
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

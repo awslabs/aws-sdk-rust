@@ -65,9 +65,7 @@ impl Property {
 
 /// A builder for [`Property`](crate::types::Property).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -126,10 +124,7 @@ impl PropertyBuilder {
         self
     }
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyNotification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::PropertyNotification>) -> Self {
         self.notification = input;
         self
     }
@@ -143,10 +138,7 @@ impl PropertyBuilder {
         self
     }
     /// <p>The property data type.</p>
-    pub fn set_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyDataType>,
-    ) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::PropertyDataType>) -> Self {
         self.data_type = input;
         self
     }

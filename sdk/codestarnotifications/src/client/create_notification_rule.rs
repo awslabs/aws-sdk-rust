@@ -14,10 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateNotificationRuleOutput`](crate::operation::create_notification_rule::CreateNotificationRuleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_notification_rule::CreateNotificationRuleOutput::arn): <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     /// - On failure, responds with [`SdkError<CreateNotificationRuleError>`](crate::operation::create_notification_rule::CreateNotificationRuleError)
-    pub fn create_notification_rule(
-        &self,
-    ) -> crate::operation::create_notification_rule::builders::CreateNotificationRuleFluentBuilder
-    {
+    pub fn create_notification_rule(&self) -> crate::operation::create_notification_rule::builders::CreateNotificationRuleFluentBuilder {
         crate::operation::create_notification_rule::builders::CreateNotificationRuleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`log_events(Option<Vec<ContainerServiceLogEvent>>)`](crate::operation::get_container_log::GetContainerLogOutput::log_events): <p>An array of objects that describe the log events of a container.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_container_log::GetContainerLogOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetContainerLog</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetContainerLogError>`](crate::operation::get_container_log::GetContainerLogError)
-    pub fn get_container_log(
-        &self,
-    ) -> crate::operation::get_container_log::builders::GetContainerLogFluentBuilder {
-        crate::operation::get_container_log::builders::GetContainerLogFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_container_log(&self) -> crate::operation::get_container_log::builders::GetContainerLogFluentBuilder {
+        crate::operation::get_container_log::builders::GetContainerLogFluentBuilder::new(self.handle.clone())
     }
 }

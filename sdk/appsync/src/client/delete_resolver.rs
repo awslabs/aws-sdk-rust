@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`field_name(impl ::std::convert::Into<String>)`](crate::operation::delete_resolver::builders::DeleteResolverFluentBuilder::field_name) / [`set_field_name(Option<String>)`](crate::operation::delete_resolver::builders::DeleteResolverFluentBuilder::set_field_name): <p>The resolver field name.</p>
     /// - On success, responds with [`DeleteResolverOutput`](crate::operation::delete_resolver::DeleteResolverOutput)
     /// - On failure, responds with [`SdkError<DeleteResolverError>`](crate::operation::delete_resolver::DeleteResolverError)
-    pub fn delete_resolver(
-        &self,
-    ) -> crate::operation::delete_resolver::builders::DeleteResolverFluentBuilder {
-        crate::operation::delete_resolver::builders::DeleteResolverFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_resolver(&self) -> crate::operation::delete_resolver::builders::DeleteResolverFluentBuilder {
+        crate::operation::delete_resolver::builders::DeleteResolverFluentBuilder::new(self.handle.clone())
     }
 }

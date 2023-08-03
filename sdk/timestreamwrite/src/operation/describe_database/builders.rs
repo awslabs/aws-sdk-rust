@@ -10,10 +10,7 @@ impl DescribeDatabaseInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_database::DescribeDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_database::DescribeDatabaseError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_database::DescribeDatabaseError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_database();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeDatabaseFluentBuilder {
         }
     }
     /// Access the DescribeDatabase as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_database::builders::DescribeDatabaseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_database::builders::DescribeDatabaseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeDatabaseFluentBuilder {
             crate::operation::describe_database::DescribeDatabase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_database::DescribeDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_database::DescribeDatabaseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeDatabaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeDatabaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_database::DescribeDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_database::DescribeDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_database::DescribeDatabaseError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeDatabaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_database::DescribeDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_database::DescribeDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_database::DescribeDatabaseError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribeDatabaseFluentBuilder {
             crate::operation::describe_database::DescribeDatabase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_database::DescribeDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_database::DescribeDatabaseError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Timestream database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the Timestream database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }

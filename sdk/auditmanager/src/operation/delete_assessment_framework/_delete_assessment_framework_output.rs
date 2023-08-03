@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAssessmentFrameworkOutput {
 }
 impl DeleteAssessmentFrameworkOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAssessmentFrameworkOutput`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput).
-    pub fn builder() -> crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkOutputBuilder{
+    pub fn builder() -> crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkOutputBuilder {
         crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAssessmentFrameworkOutput`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssessmentFrameworkOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteAssessmentFrameworkOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAssessmentFrameworkOutput`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput {
+    pub fn build(self) -> crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput {
         crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput {
             _request_id: self._request_id,
         }

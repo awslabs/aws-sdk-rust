@@ -26,11 +26,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAssociationOutput`](crate::operation::update_association::UpdateAssociationOutput) with field(s):
     ///   - [`association_description(Option<AssociationDescription>)`](crate::operation::update_association::UpdateAssociationOutput::association_description): <p>The description of the association that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateAssociationError>`](crate::operation::update_association::UpdateAssociationError)
-    pub fn update_association(
-        &self,
-    ) -> crate::operation::update_association::builders::UpdateAssociationFluentBuilder {
-        crate::operation::update_association::builders::UpdateAssociationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_association(&self) -> crate::operation::update_association::builders::UpdateAssociationFluentBuilder {
+        crate::operation::update_association::builders::UpdateAssociationFluentBuilder::new(self.handle.clone())
     }
 }

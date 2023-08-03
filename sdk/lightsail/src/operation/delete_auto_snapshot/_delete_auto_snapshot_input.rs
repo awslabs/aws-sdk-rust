@@ -22,35 +22,26 @@ impl DeleteAutoSnapshotInput {
 }
 impl DeleteAutoSnapshotInput {
     /// Creates a new builder-style object to manufacture [`DeleteAutoSnapshotInput`](crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::delete_auto_snapshot::builders::DeleteAutoSnapshotInputBuilder {
+    pub fn builder() -> crate::operation::delete_auto_snapshot::builders::DeleteAutoSnapshotInputBuilder {
         crate::operation::delete_auto_snapshot::builders::DeleteAutoSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAutoSnapshotInput`](crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAutoSnapshotInputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) date: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAutoSnapshotInputBuilder {
     /// <p>The name of the source instance or disk from which to delete the automatic snapshot.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source instance or disk from which to delete the automatic snapshot.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -75,15 +66,10 @@ impl DeleteAutoSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAutoSnapshotInput`](crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput {
-                resource_name: self.resource_name,
-                date: self.date,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput {
+            resource_name: self.resource_name,
+            date: self.date,
+        })
     }
 }

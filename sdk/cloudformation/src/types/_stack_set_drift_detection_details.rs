@@ -69,15 +69,11 @@ impl StackSetDriftDetectionDetails {
     /// <li> <p> <code>IN_PROGRESS</code>: The drift detection operation is currently being performed.</p> </li>
     /// <li> <p> <code>STOPPED</code>: The user has canceled the drift detection operation.</p> </li>
     /// </ul>
-    pub fn drift_detection_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackSetDriftDetectionStatus> {
+    pub fn drift_detection_status(&self) -> ::std::option::Option<&crate::types::StackSetDriftDetectionStatus> {
         self.drift_detection_status.as_ref()
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
-    pub fn last_drift_check_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_drift_check_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
     /// <p>The total number of stack instances belonging to this stack set.</p>
@@ -117,13 +113,10 @@ impl StackSetDriftDetectionDetails {
 
 /// A builder for [`StackSetDriftDetectionDetails`](crate::types::StackSetDriftDetectionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackSetDriftDetectionDetailsBuilder {
     pub(crate) drift_status: ::std::option::Option<crate::types::StackSetDriftStatus>,
-    pub(crate) drift_detection_status:
-        ::std::option::Option<crate::types::StackSetDriftDetectionStatus>,
+    pub(crate) drift_detection_status: ::std::option::Option<crate::types::StackSetDriftDetectionStatus>,
     pub(crate) last_drift_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) total_stack_instances_count: ::std::option::Option<i32>,
     pub(crate) drifted_stack_instances_count: ::std::option::Option<i32>,
@@ -148,10 +141,7 @@ impl StackSetDriftDetectionDetailsBuilder {
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.</p> </li>
     /// <li> <p> <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
     /// </ul>
-    pub fn set_drift_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetDriftStatus>,
-    ) -> Self {
+    pub fn set_drift_status(mut self, input: ::std::option::Option<crate::types::StackSetDriftStatus>) -> Self {
         self.drift_status = input;
         self
     }
@@ -172,10 +162,7 @@ impl StackSetDriftDetectionDetailsBuilder {
     /// <li> <p> <code>IN_PROGRESS</code>: The drift detection operation is currently being performed.</p> </li>
     /// <li> <p> <code>STOPPED</code>: The user has canceled the drift detection operation.</p> </li>
     /// </ul>
-    pub fn drift_detection_status(
-        mut self,
-        input: crate::types::StackSetDriftDetectionStatus,
-    ) -> Self {
+    pub fn drift_detection_status(mut self, input: crate::types::StackSetDriftDetectionStatus) -> Self {
         self.drift_detection_status = ::std::option::Option::Some(input);
         self
     }
@@ -187,10 +174,7 @@ impl StackSetDriftDetectionDetailsBuilder {
     /// <li> <p> <code>IN_PROGRESS</code>: The drift detection operation is currently being performed.</p> </li>
     /// <li> <p> <code>STOPPED</code>: The user has canceled the drift detection operation.</p> </li>
     /// </ul>
-    pub fn set_drift_detection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetDriftDetectionStatus>,
-    ) -> Self {
+    pub fn set_drift_detection_status(mut self, input: ::std::option::Option<crate::types::StackSetDriftDetectionStatus>) -> Self {
         self.drift_detection_status = input;
         self
     }
@@ -202,9 +186,7 @@ impl StackSetDriftDetectionDetailsBuilder {
     /// <li> <p> <code>IN_PROGRESS</code>: The drift detection operation is currently being performed.</p> </li>
     /// <li> <p> <code>STOPPED</code>: The user has canceled the drift detection operation.</p> </li>
     /// </ul>
-    pub fn get_drift_detection_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackSetDriftDetectionStatus> {
+    pub fn get_drift_detection_status(&self) -> &::std::option::Option<crate::types::StackSetDriftDetectionStatus> {
         &self.drift_detection_status
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
@@ -213,17 +195,12 @@ impl StackSetDriftDetectionDetailsBuilder {
         self
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
-    pub fn set_last_drift_check_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_drift_check_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_drift_check_timestamp = input;
         self
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
-    pub fn get_last_drift_check_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_drift_check_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_drift_check_timestamp
     }
     /// <p>The total number of stack instances belonging to this stack set.</p>
@@ -295,10 +272,7 @@ impl StackSetDriftDetectionDetailsBuilder {
         self
     }
     /// <p>The number of stack instances that are currently being checked for drift.</p>
-    pub fn set_in_progress_stack_instances_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_in_progress_stack_instances_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.in_progress_stack_instances_count = input;
         self
     }
@@ -329,9 +303,7 @@ impl StackSetDriftDetectionDetailsBuilder {
             total_stack_instances_count: self.total_stack_instances_count.unwrap_or_default(),
             drifted_stack_instances_count: self.drifted_stack_instances_count.unwrap_or_default(),
             in_sync_stack_instances_count: self.in_sync_stack_instances_count.unwrap_or_default(),
-            in_progress_stack_instances_count: self
-                .in_progress_stack_instances_count
-                .unwrap_or_default(),
+            in_progress_stack_instances_count: self.in_progress_stack_instances_count.unwrap_or_default(),
             failed_stack_instances_count: self.failed_stack_instances_count.unwrap_or_default(),
         }
     }

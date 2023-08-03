@@ -27,7 +27,7 @@ impl CreateBusinessReportScheduleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBusinessReportScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleInputBuilder,
+    inner: crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleInputBuilder,
 }
 impl CreateBusinessReportScheduleFluentBuilder {
     /// Creates a new `CreateBusinessReportSchedule`.
@@ -38,7 +38,7 @@ impl CreateBusinessReportScheduleFluentBuilder {
         }
     }
     /// Access the CreateBusinessReportSchedule as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateBusinessReportScheduleFluentBuilder {
             crate::operation::create_business_report_schedule::CreateBusinessReportSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_business_report_schedule::CreateBusinessReportScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_business_report_schedule::CreateBusinessReportScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateBusinessReportScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateBusinessReportScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_business_report_schedule::CreateBusinessReportScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_business_report_schedule::CreateBusinessReportScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_business_report_schedule::CreateBusinessReportScheduleError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateBusinessReportScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_business_report_schedule::CreateBusinessReportScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_business_report_schedule::CreateBusinessReportScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_business_report_schedule::CreateBusinessReportScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl CreateBusinessReportScheduleFluentBuilder {
             crate::operation::create_business_report_schedule::CreateBusinessReportSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_business_report_schedule::CreateBusinessReportScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_business_report_schedule::CreateBusinessReportScheduleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name identifier of the schedule.</p>
-    pub fn schedule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_name(input.into());
         self
     }
     /// <p>The name identifier of the schedule.</p>
-    pub fn set_schedule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_name(input);
         self
     }
@@ -142,18 +125,12 @@ impl CreateBusinessReportScheduleFluentBuilder {
         self.inner.get_schedule_name()
     }
     /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket_name(input.into());
         self
     }
     /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }
@@ -162,18 +139,12 @@ impl CreateBusinessReportScheduleFluentBuilder {
         self.inner.get_s3_bucket_name()
     }
     /// <p>The S3 key where the report is delivered.</p>
-    pub fn s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_key_prefix(input.into());
         self
     }
     /// <p>The S3 key where the report is delivered.</p>
-    pub fn set_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_key_prefix(input);
         self
     }
@@ -187,10 +158,7 @@ impl CreateBusinessReportScheduleFluentBuilder {
         self
     }
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::BusinessReportFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::BusinessReportFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }
@@ -204,17 +172,12 @@ impl CreateBusinessReportScheduleFluentBuilder {
         self
     }
     /// <p>The content range of the reports.</p>
-    pub fn set_content_range(
-        mut self,
-        input: ::std::option::Option<crate::types::BusinessReportContentRange>,
-    ) -> Self {
+    pub fn set_content_range(mut self, input: ::std::option::Option<crate::types::BusinessReportContentRange>) -> Self {
         self.inner = self.inner.set_content_range(input);
         self
     }
     /// <p>The content range of the reports.</p>
-    pub fn get_content_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::BusinessReportContentRange> {
+    pub fn get_content_range(&self) -> &::std::option::Option<crate::types::BusinessReportContentRange> {
         self.inner.get_content_range()
     }
     /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
@@ -223,10 +186,7 @@ impl CreateBusinessReportScheduleFluentBuilder {
         self
     }
     /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
-    pub fn set_recurrence(
-        mut self,
-        input: ::std::option::Option<crate::types::BusinessReportRecurrence>,
-    ) -> Self {
+    pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::BusinessReportRecurrence>) -> Self {
         self.inner = self.inner.set_recurrence(input);
         self
     }
@@ -235,18 +195,12 @@ impl CreateBusinessReportScheduleFluentBuilder {
         self.inner.get_recurrence()
     }
     /// <p>The client request token.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The client request token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -264,10 +218,7 @@ impl CreateBusinessReportScheduleFluentBuilder {
         self
     }
     /// <p>The tags for the business report schedule.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

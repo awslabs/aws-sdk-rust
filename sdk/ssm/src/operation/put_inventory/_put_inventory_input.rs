@@ -29,9 +29,7 @@ impl PutInventoryInput {
 
 /// A builder for [`PutInventoryInput`](crate::operation::put_inventory::PutInventoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutInventoryInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItem>>,
@@ -63,26 +61,16 @@ impl PutInventoryInputBuilder {
         self
     }
     /// <p>The inventory items that you want to add or update on managed nodes.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The inventory items that you want to add or update on managed nodes.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryItem>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`PutInventoryInput`](crate::operation::put_inventory::PutInventoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_inventory::PutInventoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_inventory::PutInventoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_inventory::PutInventoryInput {
             instance_id: self.instance_id,
             items: self.items,

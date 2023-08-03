@@ -30,9 +30,7 @@ impl Disk {
 
 /// A builder for [`Disk`](crate::types::Disk).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiskBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) bytes: ::std::option::Option<i64>,

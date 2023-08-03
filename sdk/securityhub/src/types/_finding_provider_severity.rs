@@ -30,9 +30,7 @@ impl FindingProviderSeverity {
 
 /// A builder for [`FindingProviderSeverity`](crate::types::FindingProviderSeverity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingProviderSeverityBuilder {
     pub(crate) label: ::std::option::Option<crate::types::SeverityLabel>,
     pub(crate) original: ::std::option::Option<::std::string::String>,

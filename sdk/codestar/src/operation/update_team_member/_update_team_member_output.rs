@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for UpdateTeamMemberOutput {
 }
 impl UpdateTeamMemberOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTeamMemberOutput`](crate::operation::update_team_member::UpdateTeamMemberOutput).
-    pub fn builder() -> crate::operation::update_team_member::builders::UpdateTeamMemberOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_team_member::builders::UpdateTeamMemberOutputBuilder {
         crate::operation::update_team_member::builders::UpdateTeamMemberOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTeamMemberOutput`](crate::operation::update_team_member::UpdateTeamMemberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTeamMemberOutputBuilder {
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) project_role: ::std::option::Option<::std::string::String>,

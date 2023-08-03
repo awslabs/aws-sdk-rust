@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`sync_source(Option<String>)`](crate::operation::get_component_type::GetComponentTypeOutput::sync_source): <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
     ///   - [`component_type_name(Option<String>)`](crate::operation::get_component_type::GetComponentTypeOutput::component_type_name): <p>The component type name.</p>
     /// - On failure, responds with [`SdkError<GetComponentTypeError>`](crate::operation::get_component_type::GetComponentTypeError)
-    pub fn get_component_type(
-        &self,
-    ) -> crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder {
-        crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_component_type(&self) -> crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder {
+        crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder::new(self.handle.clone())
     }
 }

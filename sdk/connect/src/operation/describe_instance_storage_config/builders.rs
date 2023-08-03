@@ -27,7 +27,7 @@ impl DescribeInstanceStorageConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceStorageConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_instance_storage_config::builders::DescribeInstanceStorageConfigInputBuilder,
+    inner: crate::operation::describe_instance_storage_config::builders::DescribeInstanceStorageConfigInputBuilder,
 }
 impl DescribeInstanceStorageConfigFluentBuilder {
     /// Creates a new `DescribeInstanceStorageConfig`.
@@ -38,7 +38,7 @@ impl DescribeInstanceStorageConfigFluentBuilder {
         }
     }
     /// Access the DescribeInstanceStorageConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_instance_storage_config::builders::DescribeInstanceStorageConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_instance_storage_config::builders::DescribeInstanceStorageConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeInstanceStorageConfigFluentBuilder {
             crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeInstanceStorageConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeInstanceStorageConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeInstanceStorageConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DescribeInstanceStorageConfigFluentBuilder {
             crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -136,18 +125,12 @@ impl DescribeInstanceStorageConfigFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }
@@ -161,17 +144,12 @@ impl DescribeInstanceStorageConfigFluentBuilder {
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStorageResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::InstanceStorageResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
         self.inner.get_resource_type()
     }
 }

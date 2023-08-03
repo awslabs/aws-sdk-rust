@@ -37,9 +37,7 @@ impl ErrorDetails {
 
 /// A builder for [`ErrorDetails`](crate::types::ErrorDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorDetailsBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -86,17 +84,12 @@ impl ErrorDetailsBuilder {
         self
     }
     /// <p> A list of detailed errors. </p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DetailedError>>,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetailedError>>) -> Self {
         self.details = input;
         self
     }
     /// <p> A list of detailed errors. </p>
-    pub fn get_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetailedError>> {
+    pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetailedError>> {
         &self.details
     }
     /// Consumes the builder and constructs a [`ErrorDetails`](crate::types::ErrorDetails).

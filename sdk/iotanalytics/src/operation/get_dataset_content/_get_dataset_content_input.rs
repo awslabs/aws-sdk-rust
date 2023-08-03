@@ -22,17 +22,14 @@ impl GetDatasetContentInput {
 }
 impl GetDatasetContentInput {
     /// Creates a new builder-style object to manufacture [`GetDatasetContentInput`](crate::operation::get_dataset_content::GetDatasetContentInput).
-    pub fn builder(
-    ) -> crate::operation::get_dataset_content::builders::GetDatasetContentInputBuilder {
+    pub fn builder() -> crate::operation::get_dataset_content::builders::GetDatasetContentInputBuilder {
         crate::operation::get_dataset_content::builders::GetDatasetContentInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDatasetContentInput`](crate::operation::get_dataset_content::GetDatasetContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDatasetContentInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl GetDatasetContentInputBuilder {
     /// Consumes the builder and constructs a [`GetDatasetContentInput`](crate::operation::get_dataset_content::GetDatasetContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_dataset_content::GetDatasetContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_dataset_content::GetDatasetContentInput {
-                dataset_name: self.dataset_name,
-                version_id: self.version_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_dataset_content::GetDatasetContentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_dataset_content::GetDatasetContentInput {
+            dataset_name: self.dataset_name,
+            version_id: self.version_id,
+        })
     }
 }

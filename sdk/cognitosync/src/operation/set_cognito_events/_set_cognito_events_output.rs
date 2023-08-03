@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for SetCognitoEventsOutput {
 }
 impl SetCognitoEventsOutput {
     /// Creates a new builder-style object to manufacture [`SetCognitoEventsOutput`](crate::operation::set_cognito_events::SetCognitoEventsOutput).
-    pub fn builder() -> crate::operation::set_cognito_events::builders::SetCognitoEventsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_cognito_events::builders::SetCognitoEventsOutputBuilder {
         crate::operation::set_cognito_events::builders::SetCognitoEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetCognitoEventsOutput`](crate::operation::set_cognito_events::SetCognitoEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetCognitoEventsOutputBuilder {
     _request_id: Option<String>,
 }

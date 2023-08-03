@@ -50,10 +50,7 @@ impl super::Client {
     ///   - [`vocabulary_names(Option<String>)`](crate::operation::start_stream_transcription::StartStreamTranscriptionOutput::vocabulary_names): <p>Provides the names of the custom vocabularies that you specified in your request.</p>
     ///   - [`vocabulary_filter_names(Option<String>)`](crate::operation::start_stream_transcription::StartStreamTranscriptionOutput::vocabulary_filter_names): <p>Provides the names of the custom vocabulary filters that you specified in your request.</p>
     /// - On failure, responds with [`SdkError<StartStreamTranscriptionError>`](crate::operation::start_stream_transcription::StartStreamTranscriptionError)
-    pub fn start_stream_transcription(
-        &self,
-    ) -> crate::operation::start_stream_transcription::builders::StartStreamTranscriptionFluentBuilder
-    {
+    pub fn start_stream_transcription(&self) -> crate::operation::start_stream_transcription::builders::StartStreamTranscriptionFluentBuilder {
         crate::operation::start_stream_transcription::builders::StartStreamTranscriptionFluentBuilder::new(self.handle.clone())
     }
 }

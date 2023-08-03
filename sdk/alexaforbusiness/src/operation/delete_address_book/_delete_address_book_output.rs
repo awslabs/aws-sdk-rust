@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAddressBookOutput {
 }
 impl DeleteAddressBookOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAddressBookOutput`](crate::operation::delete_address_book::DeleteAddressBookOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_address_book::builders::DeleteAddressBookOutputBuilder {
+    pub fn builder() -> crate::operation::delete_address_book::builders::DeleteAddressBookOutputBuilder {
         crate::operation::delete_address_book::builders::DeleteAddressBookOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAddressBookOutput`](crate::operation::delete_address_book::DeleteAddressBookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAddressBookOutputBuilder {
     _request_id: Option<String>,
 }

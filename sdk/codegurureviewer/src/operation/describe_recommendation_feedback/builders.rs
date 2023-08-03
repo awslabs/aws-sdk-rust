@@ -26,7 +26,7 @@ impl DescribeRecommendationFeedbackInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRecommendationFeedbackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackInputBuilder,
+    inner: crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackInputBuilder,
 }
 impl DescribeRecommendationFeedbackFluentBuilder {
     /// Creates a new `DescribeRecommendationFeedback`.
@@ -37,7 +37,7 @@ impl DescribeRecommendationFeedbackFluentBuilder {
         }
     }
     /// Access the DescribeRecommendationFeedback as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeRecommendationFeedbackFluentBuilder {
             crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeRecommendationFeedbackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeRecommendationFeedbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeRecommendationFeedbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeRecommendationFeedbackFluentBuilder {
             crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_review_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_review_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn set_code_review_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_review_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code_review_arn(input);
         self
     }
@@ -141,18 +124,12 @@ impl DescribeRecommendationFeedbackFluentBuilder {
         self.inner.get_code_review_arn()
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommendation_id(input.into());
         self
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recommendation_id(input);
         self
     }

@@ -11,10 +11,7 @@ pub fn ser_restore_request(
     }
     if let Some(var_1) = &input.glacier_job_parameters {
         let inner_writer = scope.start_el("GlacierJobParameters");
-        crate::protocol_serde::shape_glacier_job_parameters::ser_glacier_job_parameters(
-            var_1,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_glacier_job_parameters::ser_glacier_job_parameters(var_1, inner_writer)?
     }
     if let Some(var_2) = &input.r#type {
         let mut inner_writer = scope.start_el("Type").finish();

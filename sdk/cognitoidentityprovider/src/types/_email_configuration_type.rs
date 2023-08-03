@@ -93,9 +93,7 @@ impl EmailConfigurationType {
     /// <p>Before Amazon Cognito can email your users, it requires additional permissions to call Amazon SES on your behalf. When you update your user pool with this option, Amazon Cognito creates a <i>service-linked role</i>, which is a type of role in your Amazon Web Services account. This role contains the permissions that allow you to access Amazon SES and send email messages from your email address. For more information about the service-linked role that Amazon Cognito creates, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn email_sending_account(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EmailSendingAccountType> {
+    pub fn email_sending_account(&self) -> ::std::option::Option<&crate::types::EmailSendingAccountType> {
         self.email_sending_account.as_ref()
     }
     /// <p>Either the sender’s email address or the sender’s name with their email address. For example, <code>testuser@example.com</code> or <code>Test User
@@ -131,9 +129,7 @@ impl EmailConfigurationType {
 
 /// A builder for [`EmailConfigurationType`](crate::types::EmailConfigurationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EmailConfigurationTypeBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) reply_to_email_address: ::std::option::Option<::std::string::String>,
@@ -172,18 +168,12 @@ impl EmailConfigurationTypeBuilder {
         &self.source_arn
     }
     /// <p>The destination to which the receiver of the email should reply.</p>
-    pub fn reply_to_email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reply_to_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reply_to_email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination to which the receiver of the email should reply.</p>
-    pub fn set_reply_to_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reply_to_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reply_to_email_address = input;
         self
     }
@@ -233,10 +223,7 @@ impl EmailConfigurationTypeBuilder {
     /// <p>Before Amazon Cognito can email your users, it requires additional permissions to call Amazon SES on your behalf. When you update your user pool with this option, Amazon Cognito creates a <i>service-linked role</i>, which is a type of role in your Amazon Web Services account. This role contains the permissions that allow you to access Amazon SES and send email messages from your email address. For more information about the service-linked role that Amazon Cognito creates, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn set_email_sending_account(
-        mut self,
-        input: ::std::option::Option<crate::types::EmailSendingAccountType>,
-    ) -> Self {
+    pub fn set_email_sending_account(mut self, input: ::std::option::Option<crate::types::EmailSendingAccountType>) -> Self {
         self.email_sending_account = input;
         self
     }
@@ -259,9 +246,7 @@ impl EmailConfigurationTypeBuilder {
     /// <p>Before Amazon Cognito can email your users, it requires additional permissions to call Amazon SES on your behalf. When you update your user pool with this option, Amazon Cognito creates a <i>service-linked role</i>, which is a type of role in your Amazon Web Services account. This role contains the permissions that allow you to access Amazon SES and send email messages from your email address. For more information about the service-linked role that Amazon Cognito creates, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn get_email_sending_account(
-        &self,
-    ) -> &::std::option::Option<crate::types::EmailSendingAccountType> {
+    pub fn get_email_sending_account(&self) -> &::std::option::Option<crate::types::EmailSendingAccountType> {
         &self.email_sending_account
     }
     /// <p>Either the sender’s email address or the sender’s name with their email address. For example, <code>testuser@example.com</code> or <code>Test User
@@ -296,10 +281,7 @@ impl EmailConfigurationTypeBuilder {
     /// <p>When leasing dedicated IP addresses with Amazon Simple Email Service, you can create groups of IP addresses, called dedicated IP pools. You can then associate the dedicated IP pools with configuration sets.</p>
     /// </dd>
     /// </dl>
-    pub fn configuration_set(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set = ::std::option::Option::Some(input.into());
         self
     }
@@ -318,10 +300,7 @@ impl EmailConfigurationTypeBuilder {
     /// <p>When leasing dedicated IP addresses with Amazon Simple Email Service, you can create groups of IP addresses, called dedicated IP pools. You can then associate the dedicated IP pools with configuration sets.</p>
     /// </dd>
     /// </dl>
-    pub fn set_configuration_set(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set = input;
         self
     }

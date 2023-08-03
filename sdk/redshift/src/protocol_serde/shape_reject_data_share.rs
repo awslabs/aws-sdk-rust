@@ -4,47 +4,34 @@ pub fn de_reject_data_share_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::reject_data_share::RejectDataShareOutput,
-    crate::operation::reject_data_share::RejectDataShareError,
-> {
+) -> std::result::Result<crate::operation::reject_data_share::RejectDataShareOutput, crate::operation::reject_data_share::RejectDataShareError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::reject_data_share::RejectDataShareError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::reject_data_share::RejectDataShareError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::reject_data_share::RejectDataShareError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::reject_data_share::RejectDataShareError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidDataShareFault" => {
-            crate::operation::reject_data_share::RejectDataShareError::InvalidDataShareFault({
+        "InvalidDataShareFault" => crate::operation::reject_data_share::RejectDataShareError::InvalidDataShareFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidDataShareFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_data_share_fault::de_invalid_data_share_fault_xml_err(_response_body, output).map_err(crate::operation::reject_data_share::RejectDataShareError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::InvalidDataShareFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_data_share_fault::de_invalid_data_share_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::reject_data_share::RejectDataShareError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::reject_data_share::RejectDataShareError::generic(generic),
     })
 }
@@ -54,22 +41,13 @@ pub fn de_reject_data_share_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::reject_data_share::RejectDataShareOutput,
-    crate::operation::reject_data_share::RejectDataShareError,
-> {
+) -> std::result::Result<crate::operation::reject_data_share::RejectDataShareOutput, crate::operation::reject_data_share::RejectDataShareError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::reject_data_share::builders::RejectDataShareOutputBuilder::default();
-        output = crate::protocol_serde::shape_reject_data_share::de_reject_data_share(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::reject_data_share::RejectDataShareError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::reject_data_share::builders::RejectDataShareOutputBuilder::default();
+        output = crate::protocol_serde::shape_reject_data_share::de_reject_data_share(_response_body, output)
+            .map_err(crate::operation::reject_data_share::RejectDataShareError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -78,10 +56,7 @@ pub fn de_reject_data_share_http_response_with_props(
 pub fn de_reject_data_share(
     inp: &[u8],
     mut builder: crate::operation::reject_data_share::builders::RejectDataShareOutputBuilder,
-) -> Result<
-    crate::operation::reject_data_share::builders::RejectDataShareOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::reject_data_share::builders::RejectDataShareOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -172,9 +147,7 @@ pub fn de_reject_data_share(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected RejectDataShareResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected RejectDataShareResult tag"));
     };
     Ok(builder)
 }

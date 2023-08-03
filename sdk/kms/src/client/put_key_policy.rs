@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`bypass_policy_lockout_safety_check(bool)`](crate::operation::put_key_policy::builders::PutKeyPolicyFluentBuilder::bypass_policy_lockout_safety_check) / [`set_bypass_policy_lockout_safety_check(Option<bool>)`](crate::operation::put_key_policy::builders::PutKeyPolicyFluentBuilder::set_bypass_policy_lockout_safety_check): <p>Skips ("bypasses") the key policy lockout safety check. The default value is false.</p> <important>   <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this value to true indiscriminately.</p>   <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>  </important>  <p>Use this parameter only when you intend to prevent the principal that is making the request from making a subsequent <code>PutKeyPolicy</code> request on the KMS key.</p>
     /// - On success, responds with [`PutKeyPolicyOutput`](crate::operation::put_key_policy::PutKeyPolicyOutput)
     /// - On failure, responds with [`SdkError<PutKeyPolicyError>`](crate::operation::put_key_policy::PutKeyPolicyError)
-    pub fn put_key_policy(
-        &self,
-    ) -> crate::operation::put_key_policy::builders::PutKeyPolicyFluentBuilder {
-        crate::operation::put_key_policy::builders::PutKeyPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_key_policy(&self) -> crate::operation::put_key_policy::builders::PutKeyPolicyFluentBuilder {
+        crate::operation::put_key_policy::builders::PutKeyPolicyFluentBuilder::new(self.handle.clone())
     }
 }

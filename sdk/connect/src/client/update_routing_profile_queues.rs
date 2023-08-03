@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`queue_configs(Vec<RoutingProfileQueueConfig>)`](crate::operation::update_routing_profile_queues::builders::UpdateRoutingProfileQueuesFluentBuilder::queue_configs) / [`set_queue_configs(Option<Vec<RoutingProfileQueueConfig>>)`](crate::operation::update_routing_profile_queues::builders::UpdateRoutingProfileQueuesFluentBuilder::set_queue_configs): <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
     /// - On success, responds with [`UpdateRoutingProfileQueuesOutput`](crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesOutput)
     /// - On failure, responds with [`SdkError<UpdateRoutingProfileQueuesError>`](crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesError)
-    pub fn update_routing_profile_queues(&self) -> crate::operation::update_routing_profile_queues::builders::UpdateRoutingProfileQueuesFluentBuilder{
+    pub fn update_routing_profile_queues(
+        &self,
+    ) -> crate::operation::update_routing_profile_queues::builders::UpdateRoutingProfileQueuesFluentBuilder {
         crate::operation::update_routing_profile_queues::builders::UpdateRoutingProfileQueuesFluentBuilder::new(self.handle.clone())
     }
 }

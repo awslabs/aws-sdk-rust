@@ -50,39 +50,30 @@ impl StartNetworkInsightsAnalysisInput {
 }
 impl StartNetworkInsightsAnalysisInput {
     /// Creates a new builder-style object to manufacture [`StartNetworkInsightsAnalysisInput`](crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisInput).
-    pub fn builder() -> crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisInputBuilder{
+    pub fn builder() -> crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisInputBuilder {
         crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisInputBuilder::default()
     }
 }
 
 /// A builder for [`StartNetworkInsightsAnalysisInput`](crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartNetworkInsightsAnalysisInputBuilder {
     pub(crate) network_insights_path_id: ::std::option::Option<::std::string::String>,
     pub(crate) additional_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filter_in_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartNetworkInsightsAnalysisInputBuilder {
     /// <p>The ID of the path.</p>
-    pub fn network_insights_path_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_path_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the path.</p>
-    pub fn set_network_insights_path_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_insights_path_id = input;
         self
     }
@@ -95,27 +86,19 @@ impl StartNetworkInsightsAnalysisInputBuilder {
     /// To override the contents of this collection use [`set_additional_accounts`](Self::set_additional_accounts).
     ///
     /// <p>The member accounts that contain resources that the path can traverse.</p>
-    pub fn additional_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.additional_accounts.unwrap_or_default();
         v.push(input.into());
         self.additional_accounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>The member accounts that contain resources that the path can traverse.</p>
-    pub fn set_additional_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.additional_accounts = input;
         self
     }
     /// <p>The member accounts that contain resources that the path can traverse.</p>
-    pub fn get_additional_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_accounts
     }
     /// Appends an item to `filter_in_arns`.
@@ -123,27 +106,19 @@ impl StartNetworkInsightsAnalysisInputBuilder {
     /// To override the contents of this collection use [`set_filter_in_arns`](Self::set_filter_in_arns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
-    pub fn filter_in_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_in_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_in_arns.unwrap_or_default();
         v.push(input.into());
         self.filter_in_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
-    pub fn set_filter_in_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_in_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_in_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
-    pub fn get_filter_in_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_in_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_in_arns
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -172,17 +147,12 @@ impl StartNetworkInsightsAnalysisInputBuilder {
         self
     }
     /// <p>The tags to apply.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
@@ -206,15 +176,13 @@ impl StartNetworkInsightsAnalysisInputBuilder {
         crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisInput {
-                network_insights_path_id: self.network_insights_path_id,
-                additional_accounts: self.additional_accounts,
-                filter_in_arns: self.filter_in_arns,
-                dry_run: self.dry_run,
-                tag_specifications: self.tag_specifications,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisInput {
+            network_insights_path_id: self.network_insights_path_id,
+            additional_accounts: self.additional_accounts,
+            filter_in_arns: self.filter_in_arns,
+            dry_run: self.dry_run,
+            tag_specifications: self.tag_specifications,
+            client_token: self.client_token,
+        })
     }
 }

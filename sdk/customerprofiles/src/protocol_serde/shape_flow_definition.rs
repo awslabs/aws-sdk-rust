@@ -15,10 +15,7 @@ pub fn ser_flow_definition(
     if let Some(var_4) = &input.source_flow_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("SourceFlowConfig").start_object();
-        crate::protocol_serde::shape_source_flow_config::ser_source_flow_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_source_flow_config::ser_source_flow_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.tasks {

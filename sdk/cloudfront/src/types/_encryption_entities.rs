@@ -30,9 +30,7 @@ impl EncryptionEntities {
 
 /// A builder for [`EncryptionEntities`](crate::types::EncryptionEntities).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionEntitiesBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionEntity>>,
@@ -64,17 +62,12 @@ impl EncryptionEntitiesBuilder {
         self
     }
     /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionEntity>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionEntity>>) -> Self {
         self.items = input;
         self
     }
     /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionEntity>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionEntity>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`EncryptionEntities`](crate::types::EncryptionEntities).

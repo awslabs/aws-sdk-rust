@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeAnomalyDetectorsOutput {
 }
 impl DescribeAnomalyDetectorsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectorsOutput`](crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsOutputBuilder {
         crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAnomalyDetectorsOutput`](crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnomalyDetectorsOutputBuilder {
-    pub(crate) anomaly_detectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetector>>,
+    pub(crate) anomaly_detectors: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetector>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeAnomalyDetectorsOutputBuilder {
         self
     }
     /// <p>The list of anomaly detection models returned by the operation.</p>
-    pub fn set_anomaly_detectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetector>>,
-    ) -> Self {
+    pub fn set_anomaly_detectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetector>>) -> Self {
         self.anomaly_detectors = input;
         self
     }
     /// <p>The list of anomaly detection models returned by the operation.</p>
-    pub fn get_anomaly_detectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetector>> {
+    pub fn get_anomaly_detectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetector>> {
         &self.anomaly_detectors
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
@@ -96,9 +86,7 @@ impl DescribeAnomalyDetectorsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAnomalyDetectorsOutput`](crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput {
+    pub fn build(self) -> crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput {
         crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput {
             anomaly_detectors: self.anomaly_detectors,
             next_token: self.next_token,

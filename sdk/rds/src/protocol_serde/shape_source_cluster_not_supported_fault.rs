@@ -3,10 +3,7 @@
 pub fn de_source_cluster_not_supported_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::SourceClusterNotSupportedFaultBuilder,
-) -> Result<
-    crate::types::error::builders::SourceClusterNotSupportedFaultBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::SourceClusterNotSupportedFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

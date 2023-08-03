@@ -37,17 +37,14 @@ impl ::aws_http::request_id::RequestId for UpdateStateMachineOutput {
 }
 impl UpdateStateMachineOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStateMachineOutput`](crate::operation::update_state_machine::UpdateStateMachineOutput).
-    pub fn builder(
-    ) -> crate::operation::update_state_machine::builders::UpdateStateMachineOutputBuilder {
+    pub fn builder() -> crate::operation::update_state_machine::builders::UpdateStateMachineOutputBuilder {
         crate::operation::update_state_machine::builders::UpdateStateMachineOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateStateMachineOutput`](crate::operation::update_state_machine::UpdateStateMachineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStateMachineOutputBuilder {
     pub(crate) update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
@@ -61,10 +58,7 @@ impl UpdateStateMachineOutputBuilder {
         self
     }
     /// <p>The date and time the state machine was updated.</p>
-    pub fn set_update_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date = input;
         self
     }
@@ -88,19 +82,13 @@ impl UpdateStateMachineOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the published state machine version.</p>
     /// <p>If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.</p>
-    pub fn state_machine_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the published state machine version.</p>
     /// <p>If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.</p>
-    pub fn set_state_machine_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_version_arn = input;
         self
     }

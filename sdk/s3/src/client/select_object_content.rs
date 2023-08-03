@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`SelectObjectContentOutput`](crate::operation::select_object_content::SelectObjectContentOutput) with field(s):
     ///   - [`payload(Receiver<SelectObjectContentEventStream, SelectObjectContentEventStreamError>)`](crate::operation::select_object_content::SelectObjectContentOutput::payload): <p>The array of results.</p>
     /// - On failure, responds with [`SdkError<SelectObjectContentError>`](crate::operation::select_object_content::SelectObjectContentError)
-    pub fn select_object_content(
-        &self,
-    ) -> crate::operation::select_object_content::builders::SelectObjectContentFluentBuilder {
-        crate::operation::select_object_content::builders::SelectObjectContentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn select_object_content(&self) -> crate::operation::select_object_content::builders::SelectObjectContentFluentBuilder {
+        crate::operation::select_object_content::builders::SelectObjectContentFluentBuilder::new(self.handle.clone())
     }
 }

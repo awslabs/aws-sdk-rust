@@ -29,9 +29,7 @@ impl DeleteDomainOutput {
 
 /// A builder for [`DeleteDomainOutput`](crate::operation::delete_domain::DeleteDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDomainOutputBuilder {
     pub(crate) domain_status: ::std::option::Option<crate::types::DomainStatus>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl DeleteDomainOutputBuilder {
         self
     }
     /// <p>The current status of the search domain.</p>
-    pub fn set_domain_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainStatus>,
-    ) -> Self {
+    pub fn set_domain_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
         self.domain_status = input;
         self
     }

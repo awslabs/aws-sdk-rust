@@ -44,9 +44,7 @@ impl UpdateConfigInput {
 
 /// A builder for [`UpdateConfigInput`](crate::operation::update_config::UpdateConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfigInputBuilder {
     pub(crate) config_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl UpdateConfigInputBuilder {
         self
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn set_config_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigCapabilityType>,
-    ) -> Self {
+    pub fn set_config_type(mut self, input: ::std::option::Option<crate::types::ConfigCapabilityType>) -> Self {
         self.config_type = input;
         self
     }
@@ -105,10 +100,7 @@ impl UpdateConfigInputBuilder {
         self
     }
     /// <p>Parameters of a <code>Config</code>.</p>
-    pub fn set_config_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigTypeData>,
-    ) -> Self {
+    pub fn set_config_data(mut self, input: ::std::option::Option<crate::types::ConfigTypeData>) -> Self {
         self.config_data = input;
         self
     }
@@ -117,12 +109,7 @@ impl UpdateConfigInputBuilder {
         &self.config_data
     }
     /// Consumes the builder and constructs a [`UpdateConfigInput`](crate::operation::update_config::UpdateConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_config::UpdateConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_config::UpdateConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_config::UpdateConfigInput {
             config_id: self.config_id,
             name: self.name,

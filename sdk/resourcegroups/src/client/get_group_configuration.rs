@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetGroupConfigurationOutput`](crate::operation::get_group_configuration::GetGroupConfigurationOutput) with field(s):
     ///   - [`group_configuration(Option<GroupConfiguration>)`](crate::operation::get_group_configuration::GetGroupConfigurationOutput::group_configuration): <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     /// - On failure, responds with [`SdkError<GetGroupConfigurationError>`](crate::operation::get_group_configuration::GetGroupConfigurationError)
-    pub fn get_group_configuration(
-        &self,
-    ) -> crate::operation::get_group_configuration::builders::GetGroupConfigurationFluentBuilder
-    {
-        crate::operation::get_group_configuration::builders::GetGroupConfigurationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_group_configuration(&self) -> crate::operation::get_group_configuration::builders::GetGroupConfigurationFluentBuilder {
+        crate::operation::get_group_configuration::builders::GetGroupConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

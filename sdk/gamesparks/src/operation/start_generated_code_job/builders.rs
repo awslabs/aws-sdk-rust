@@ -37,10 +37,7 @@ impl StartGeneratedCodeJobFluentBuilder {
         }
     }
     /// Access the StartGeneratedCodeJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartGeneratedCodeJobFluentBuilder {
             crate::operation::start_generated_code_job::StartGeneratedCodeJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_generated_code_job::StartGeneratedCodeJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_generated_code_job::StartGeneratedCodeJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartGeneratedCodeJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartGeneratedCodeJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_generated_code_job::StartGeneratedCodeJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_generated_code_job::StartGeneratedCodeJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_generated_code_job::StartGeneratedCodeJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartGeneratedCodeJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_generated_code_job::StartGeneratedCodeJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_generated_code_job::StartGeneratedCodeJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_generated_code_job::StartGeneratedCodeJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl StartGeneratedCodeJobFluentBuilder {
             crate::operation::start_generated_code_job::StartGeneratedCodeJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_generated_code_job::StartGeneratedCodeJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_generated_code_job::StartGeneratedCodeJobError>,
     > {
         self.customize_middleware().await
     }

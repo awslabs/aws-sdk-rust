@@ -23,9 +23,7 @@ impl IssueDetectionConfiguration {
 
 /// A builder for [`IssueDetectionConfiguration`](crate::types::IssueDetectionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IssueDetectionConfigurationBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl IssueDetectionConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`IssueDetectionConfiguration`](crate::types::IssueDetectionConfiguration).
     pub fn build(self) -> crate::types::IssueDetectionConfiguration {
-        crate::types::IssueDetectionConfiguration {
-            rule_name: self.rule_name,
-        }
+        crate::types::IssueDetectionConfiguration { rule_name: self.rule_name }
     }
 }

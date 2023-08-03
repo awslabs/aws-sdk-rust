@@ -78,22 +78,19 @@ impl RevokeSecurityGroupEgressInput {
 }
 impl RevokeSecurityGroupEgressInput {
     /// Creates a new builder-style object to manufacture [`RevokeSecurityGroupEgressInput`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressInput).
-    pub fn builder() -> crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressInputBuilder{
+    pub fn builder() -> crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressInputBuilder {
         crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressInputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeSecurityGroupEgressInput`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeSecurityGroupEgressInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
-    pub(crate) security_group_rule_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cidr_ip: ::std::option::Option<::std::string::String>,
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) ip_protocol: ::std::option::Option<::std::string::String>,
@@ -142,17 +139,12 @@ impl RevokeSecurityGroupEgressInputBuilder {
         self
     }
     /// <p>The sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in the same set of permissions.</p>
-    pub fn set_ip_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
-    ) -> Self {
+    pub fn set_ip_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.ip_permissions = input;
         self
     }
     /// <p>The sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in the same set of permissions.</p>
-    pub fn get_ip_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+    pub fn get_ip_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         &self.ip_permissions
     }
     /// Appends an item to `security_group_rule_ids`.
@@ -160,27 +152,19 @@ impl RevokeSecurityGroupEgressInputBuilder {
     /// To override the contents of this collection use [`set_security_group_rule_ids`](Self::set_security_group_rule_ids).
     ///
     /// <p>The IDs of the security group rules.</p>
-    pub fn security_group_rule_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_rule_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_rule_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_rule_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security group rules.</p>
-    pub fn set_security_group_rule_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_rule_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_rule_ids = input;
         self
     }
     /// <p>The IDs of the security group rules.</p>
-    pub fn get_security_group_rule_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_rule_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_rule_ids
     }
     /// <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
@@ -240,18 +224,12 @@ impl RevokeSecurityGroupEgressInputBuilder {
         &self.to_port
     }
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
-    pub fn source_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
-    pub fn set_source_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_security_group_name = input;
         self
     }
@@ -260,25 +238,17 @@ impl RevokeSecurityGroupEgressInputBuilder {
         &self.source_security_group_name
     }
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
-    pub fn source_security_group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
-    pub fn set_source_security_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_security_group_owner_id = input;
         self
     }
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
-    pub fn get_source_security_group_owner_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_security_group_owner_id
     }
     /// Consumes the builder and constructs a [`RevokeSecurityGroupEgressInput`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressInput).
@@ -288,19 +258,17 @@ impl RevokeSecurityGroupEgressInputBuilder {
         crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressInput {
-                dry_run: self.dry_run,
-                group_id: self.group_id,
-                ip_permissions: self.ip_permissions,
-                security_group_rule_ids: self.security_group_rule_ids,
-                cidr_ip: self.cidr_ip,
-                from_port: self.from_port,
-                ip_protocol: self.ip_protocol,
-                to_port: self.to_port,
-                source_security_group_name: self.source_security_group_name,
-                source_security_group_owner_id: self.source_security_group_owner_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressInput {
+            dry_run: self.dry_run,
+            group_id: self.group_id,
+            ip_permissions: self.ip_permissions,
+            security_group_rule_ids: self.security_group_rule_ids,
+            cidr_ip: self.cidr_ip,
+            from_port: self.from_port,
+            ip_protocol: self.ip_protocol,
+            to_port: self.to_port,
+            source_security_group_name: self.source_security_group_name,
+            source_security_group_owner_id: self.source_security_group_owner_id,
+        })
     }
 }

@@ -26,7 +26,7 @@ impl DeleteAssessmentFrameworkInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAssessmentFrameworkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkInputBuilder,
+    inner: crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkInputBuilder,
 }
 impl DeleteAssessmentFrameworkFluentBuilder {
     /// Creates a new `DeleteAssessmentFramework`.
@@ -37,7 +37,7 @@ impl DeleteAssessmentFrameworkFluentBuilder {
         }
     }
     /// Access the DeleteAssessmentFramework as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteAssessmentFrameworkFluentBuilder {
             crate::operation::delete_assessment_framework::DeleteAssessmentFramework,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteAssessmentFrameworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteAssessmentFrameworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteAssessmentFrameworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteAssessmentFrameworkFluentBuilder {
             crate::operation::delete_assessment_framework::DeleteAssessmentFramework,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError>,
     > {
         self.customize_middleware().await
     }

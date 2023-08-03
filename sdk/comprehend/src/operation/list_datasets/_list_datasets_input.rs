@@ -43,9 +43,7 @@ impl ListDatasetsInput {
 
 /// A builder for [`ListDatasetsInput`](crate::operation::list_datasets::ListDatasetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetsInputBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::DatasetFilter>,
@@ -110,12 +108,7 @@ impl ListDatasetsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDatasetsInput`](crate::operation::list_datasets::ListDatasetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_datasets::ListDatasetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_datasets::ListDatasetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_datasets::ListDatasetsInput {
             flywheel_arn: self.flywheel_arn,
             filter: self.filter,

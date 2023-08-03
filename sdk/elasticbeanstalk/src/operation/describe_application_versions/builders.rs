@@ -26,7 +26,7 @@ impl DescribeApplicationVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeApplicationVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_application_versions::builders::DescribeApplicationVersionsInputBuilder,
+    inner: crate::operation::describe_application_versions::builders::DescribeApplicationVersionsInputBuilder,
 }
 impl DescribeApplicationVersionsFluentBuilder {
     /// Creates a new `DescribeApplicationVersions`.
@@ -37,7 +37,7 @@ impl DescribeApplicationVersionsFluentBuilder {
         }
     }
     /// Access the DescribeApplicationVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_application_versions::builders::DescribeApplicationVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_application_versions::builders::DescribeApplicationVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeApplicationVersionsFluentBuilder {
             crate::operation::describe_application_versions::DescribeApplicationVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_application_versions::DescribeApplicationVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_application_versions::DescribeApplicationVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeApplicationVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeApplicationVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_application_versions::DescribeApplicationVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_application_versions::DescribeApplicationVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_application_versions::DescribeApplicationVersionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeApplicationVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_application_versions::DescribeApplicationVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_application_versions::DescribeApplicationVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_application_versions::DescribeApplicationVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeApplicationVersionsFluentBuilder {
             crate::operation::describe_application_versions::DescribeApplicationVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_application_versions::DescribeApplicationVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_application_versions::DescribeApplicationVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specify an application name to show only application versions for that application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>Specify an application name to show only application versions for that application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -145,25 +128,17 @@ impl DescribeApplicationVersionsFluentBuilder {
     /// To override the contents of this collection use [`set_version_labels`](Self::set_version_labels).
     ///
     /// <p>Specify a version label to show a specific application version.</p>
-    pub fn version_labels(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_labels(input.into());
         self
     }
     /// <p>Specify a version label to show a specific application version.</p>
-    pub fn set_version_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_version_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_version_labels(input);
         self
     }
     /// <p>Specify a version label to show a specific application version.</p>
-    pub fn get_version_labels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_version_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_version_labels()
     }
     /// <p>For a paginated request. Specify a maximum number of application versions to include in each response.</p>

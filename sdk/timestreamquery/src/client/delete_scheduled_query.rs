@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`scheduled_query_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryFluentBuilder::scheduled_query_arn) / [`set_scheduled_query_arn(Option<String>)`](crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryFluentBuilder::set_scheduled_query_arn): <p>The ARN of the scheduled query. </p>
     /// - On success, responds with [`DeleteScheduledQueryOutput`](crate::operation::delete_scheduled_query::DeleteScheduledQueryOutput)
     /// - On failure, responds with [`SdkError<DeleteScheduledQueryError>`](crate::operation::delete_scheduled_query::DeleteScheduledQueryError)
-    pub fn delete_scheduled_query(
-        &self,
-    ) -> crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryFluentBuilder {
-        crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_scheduled_query(&self) -> crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryFluentBuilder {
+        crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryFluentBuilder::new(self.handle.clone())
     }
 }

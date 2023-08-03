@@ -32,7 +32,7 @@ impl AdminUpdateUserAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminUpdateUserAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::admin_update_user_attributes::builders::AdminUpdateUserAttributesInputBuilder,
+    inner: crate::operation::admin_update_user_attributes::builders::AdminUpdateUserAttributesInputBuilder,
 }
 impl AdminUpdateUserAttributesFluentBuilder {
     /// Creates a new `AdminUpdateUserAttributes`.
@@ -43,7 +43,7 @@ impl AdminUpdateUserAttributesFluentBuilder {
         }
     }
     /// Access the AdminUpdateUserAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::admin_update_user_attributes::builders::AdminUpdateUserAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::admin_update_user_attributes::builders::AdminUpdateUserAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl AdminUpdateUserAttributesFluentBuilder {
             crate::operation::admin_update_user_attributes::AdminUpdateUserAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl AdminUpdateUserAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl AdminUpdateUserAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl AdminUpdateUserAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +111,7 @@ impl AdminUpdateUserAttributesFluentBuilder {
             crate::operation::admin_update_user_attributes::AdminUpdateUserAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +159,7 @@ impl AdminUpdateUserAttributesFluentBuilder {
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     /// <p>If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
     /// <p>To update the value of an attribute that requires verification in the same API request, include the <code>email_verified</code> or <code>phone_number_verified</code> attribute, with a value of <code>true</code>. If you set the <code>email_verified</code> or <code>phone_number_verified</code> value for an <code>email</code> or <code>phone_number</code> attribute that requires verification to <code>true</code>, Amazon Cognito doesn’t send a verification message to your user.</p>
-    pub fn set_user_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
-    ) -> Self {
+    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>) -> Self {
         self.inner = self.inner.set_user_attributes(input);
         self
     }
@@ -181,9 +167,7 @@ impl AdminUpdateUserAttributesFluentBuilder {
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     /// <p>If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
     /// <p>To update the value of an attribute that requires verification in the same API request, include the <code>email_verified</code> or <code>phone_number_verified</code> attribute, with a value of <code>true</code>. If you set the <code>email_verified</code> or <code>phone_number_verified</code> value for an <code>email</code> or <code>phone_number</code> attribute that requires verification to <code>true</code>, Amazon Cognito doesn’t send a verification message to your user.</p>
-    pub fn get_user_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
+    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
         self.inner.get_user_attributes()
     }
     /// Adds a key-value pair to `ClientMetadata`.
@@ -220,9 +204,7 @@ impl AdminUpdateUserAttributesFluentBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_client_metadata(input);
         self
@@ -237,11 +219,7 @@ impl AdminUpdateUserAttributesFluentBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_client_metadata()
     }
 }

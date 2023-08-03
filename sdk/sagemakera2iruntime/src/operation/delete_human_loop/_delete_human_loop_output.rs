@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteHumanLoopOutput {
 }
 impl DeleteHumanLoopOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHumanLoopOutput`](crate::operation::delete_human_loop::DeleteHumanLoopOutput).
-    pub fn builder() -> crate::operation::delete_human_loop::builders::DeleteHumanLoopOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_human_loop::builders::DeleteHumanLoopOutputBuilder {
         crate::operation::delete_human_loop::builders::DeleteHumanLoopOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteHumanLoopOutput`](crate::operation::delete_human_loop::DeleteHumanLoopOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHumanLoopOutputBuilder {
     _request_id: Option<String>,
 }

@@ -5,8 +5,7 @@
 pub struct ListFunctionUrlConfigsOutput {
     /// <p>A list of function URL configurations.</p>
     #[doc(hidden)]
-    pub function_url_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>>,
+    pub function_url_configs: ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>>,
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListFunctionUrlConfigsOutput {
 }
 impl ListFunctionUrlConfigsOutput {
     /// <p>A list of function URL configurations.</p>
-    pub fn function_url_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FunctionUrlConfig]> {
+    pub fn function_url_configs(&self) -> ::std::option::Option<&[crate::types::FunctionUrlConfig]> {
         self.function_url_configs.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListFunctionUrlConfigsOutput {
 }
 impl ListFunctionUrlConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListFunctionUrlConfigsOutput`](crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_function_url_configs::builders::ListFunctionUrlConfigsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_function_url_configs::builders::ListFunctionUrlConfigsOutputBuilder {
         crate::operation::list_function_url_configs::builders::ListFunctionUrlConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFunctionUrlConfigsOutput`](crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFunctionUrlConfigsOutputBuilder {
-    pub(crate) function_url_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>>,
+    pub(crate) function_url_configs: ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListFunctionUrlConfigsOutputBuilder {
         self
     }
     /// <p>A list of function URL configurations.</p>
-    pub fn set_function_url_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>>,
-    ) -> Self {
+    pub fn set_function_url_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>>) -> Self {
         self.function_url_configs = input;
         self
     }
     /// <p>A list of function URL configurations.</p>
-    pub fn get_function_url_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>> {
+    pub fn get_function_url_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>> {
         &self.function_url_configs
     }
     /// <p>The pagination token that's included if more results are available.</p>
@@ -99,9 +86,7 @@ impl ListFunctionUrlConfigsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFunctionUrlConfigsOutput`](crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput {
+    pub fn build(self) -> crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput {
         crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput {
             function_url_configs: self.function_url_configs,
             next_marker: self.next_marker,

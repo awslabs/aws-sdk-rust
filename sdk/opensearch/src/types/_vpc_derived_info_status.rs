@@ -30,9 +30,7 @@ impl VpcDerivedInfoStatus {
 
 /// A builder for [`VpcDerivedInfoStatus`](crate::types::VpcDerivedInfoStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcDerivedInfoStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::VpcDerivedInfo>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
@@ -44,10 +42,7 @@ impl VpcDerivedInfoStatusBuilder {
         self
     }
     /// <p>The VPC options for the specified domain.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcDerivedInfo>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::VpcDerivedInfo>) -> Self {
         self.options = input;
         self
     }

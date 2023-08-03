@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::update_custom_metric::UpdateCustomMetricOutput::creation_date): <p> The creation date of the custom metric in milliseconds since epoch. </p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::update_custom_metric::UpdateCustomMetricOutput::last_modified_date): <p> The time the custom metric was last modified in milliseconds since epoch. </p>
     /// - On failure, responds with [`SdkError<UpdateCustomMetricError>`](crate::operation::update_custom_metric::UpdateCustomMetricError)
-    pub fn update_custom_metric(
-        &self,
-    ) -> crate::operation::update_custom_metric::builders::UpdateCustomMetricFluentBuilder {
-        crate::operation::update_custom_metric::builders::UpdateCustomMetricFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_custom_metric(&self) -> crate::operation::update_custom_metric::builders::UpdateCustomMetricFluentBuilder {
+        crate::operation::update_custom_metric::builders::UpdateCustomMetricFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl CreateExportTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_export_task::CreateExportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_export_task::CreateExportTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_export_task::CreateExportTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_export_task();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl CreateExportTaskFluentBuilder {
         }
     }
     /// Access the CreateExportTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_export_task::builders::CreateExportTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_export_task::builders::CreateExportTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl CreateExportTaskFluentBuilder {
             crate::operation::create_export_task::CreateExportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_export_task::CreateExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_export_task::CreateExportTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl CreateExportTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl CreateExportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_export_task::CreateExportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_export_task::CreateExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_export_task::CreateExportTaskError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl CreateExportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_export_task::CreateExportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_export_task::CreateExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_export_task::CreateExportTaskError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +108,7 @@ impl CreateExportTaskFluentBuilder {
             crate::operation::create_export_task::CreateExportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_export_task::CreateExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_export_task::CreateExportTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -143,18 +127,12 @@ impl CreateExportTaskFluentBuilder {
         self.inner.get_task_name()
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
@@ -163,18 +141,12 @@ impl CreateExportTaskFluentBuilder {
         self.inner.get_log_group_name()
     }
     /// <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
-    pub fn log_stream_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_stream_name_prefix(input.into());
         self
     }
     /// <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
-    pub fn set_log_stream_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_stream_name_prefix(input);
         self
     }
@@ -228,18 +200,12 @@ impl CreateExportTaskFluentBuilder {
         self.inner.get_destination()
     }
     /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
-    pub fn destination_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_prefix(input.into());
         self
     }
     /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
-    pub fn set_destination_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_prefix(input);
         self
     }

@@ -23,9 +23,7 @@ impl AthenaIntegration {
         self.integration_result_s3_destination_arn.as_deref()
     }
     /// <p>The schedule for adding new partitions to the table.</p>
-    pub fn partition_load_frequency(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PartitionLoadFrequency> {
+    pub fn partition_load_frequency(&self) -> ::std::option::Option<&crate::types::PartitionLoadFrequency> {
         self.partition_load_frequency.as_ref()
     }
     /// <p>The start date for the partition.</p>
@@ -46,37 +44,26 @@ impl AthenaIntegration {
 
 /// A builder for [`AthenaIntegration`](crate::types::AthenaIntegration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AthenaIntegrationBuilder {
     pub(crate) integration_result_s3_destination_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) partition_load_frequency:
-        ::std::option::Option<crate::types::PartitionLoadFrequency>,
+    pub(crate) partition_load_frequency: ::std::option::Option<crate::types::PartitionLoadFrequency>,
     pub(crate) partition_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) partition_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AthenaIntegrationBuilder {
     /// <p>The location in Amazon S3 to store the generated CloudFormation template.</p>
-    pub fn integration_result_s3_destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_result_s3_destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_result_s3_destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location in Amazon S3 to store the generated CloudFormation template.</p>
-    pub fn set_integration_result_s3_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_result_s3_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_result_s3_destination_arn = input;
         self
     }
     /// <p>The location in Amazon S3 to store the generated CloudFormation template.</p>
-    pub fn get_integration_result_s3_destination_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_integration_result_s3_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.integration_result_s3_destination_arn
     }
     /// <p>The schedule for adding new partitions to the table.</p>
@@ -85,17 +72,12 @@ impl AthenaIntegrationBuilder {
         self
     }
     /// <p>The schedule for adding new partitions to the table.</p>
-    pub fn set_partition_load_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::PartitionLoadFrequency>,
-    ) -> Self {
+    pub fn set_partition_load_frequency(mut self, input: ::std::option::Option<crate::types::PartitionLoadFrequency>) -> Self {
         self.partition_load_frequency = input;
         self
     }
     /// <p>The schedule for adding new partitions to the table.</p>
-    pub fn get_partition_load_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::PartitionLoadFrequency> {
+    pub fn get_partition_load_frequency(&self) -> &::std::option::Option<crate::types::PartitionLoadFrequency> {
         &self.partition_load_frequency
     }
     /// <p>The start date for the partition.</p>
@@ -104,10 +86,7 @@ impl AthenaIntegrationBuilder {
         self
     }
     /// <p>The start date for the partition.</p>
-    pub fn set_partition_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_partition_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.partition_start_date = input;
         self
     }
@@ -121,10 +100,7 @@ impl AthenaIntegrationBuilder {
         self
     }
     /// <p>The end date for the partition.</p>
-    pub fn set_partition_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_partition_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.partition_end_date = input;
         self
     }

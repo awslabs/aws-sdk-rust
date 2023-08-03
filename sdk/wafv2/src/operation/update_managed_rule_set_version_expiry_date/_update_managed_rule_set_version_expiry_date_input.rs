@@ -64,16 +64,14 @@ impl UpdateManagedRuleSetVersionExpiryDateInput {
 }
 impl UpdateManagedRuleSetVersionExpiryDateInput {
     /// Creates a new builder-style object to manufacture [`UpdateManagedRuleSetVersionExpiryDateInput`](crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateInput).
-    pub fn builder() -> crate::operation::update_managed_rule_set_version_expiry_date::builders::UpdateManagedRuleSetVersionExpiryDateInputBuilder{
+    pub fn builder() -> crate::operation::update_managed_rule_set_version_expiry_date::builders::UpdateManagedRuleSetVersionExpiryDateInputBuilder {
         crate::operation::update_managed_rule_set_version_expiry_date::builders::UpdateManagedRuleSetVersionExpiryDateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateManagedRuleSetVersionExpiryDateInput`](crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateManagedRuleSetVersionExpiryDateInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
@@ -158,18 +156,12 @@ impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
         &self.lock_token
     }
     /// <p>The version that you want to remove from your list of offerings for the named managed rule group. </p>
-    pub fn version_to_expire(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_to_expire(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_to_expire = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version that you want to remove from your list of offerings for the named managed rule group. </p>
-    pub fn set_version_to_expire(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_to_expire(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_to_expire = input;
         self
     }
@@ -185,10 +177,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
     }
     /// <p>The time that you want the version to expire.</p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub fn set_expiry_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiry_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiry_timestamp = input;
         self
     }
@@ -198,22 +187,21 @@ impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
         &self.expiry_timestamp
     }
     /// Consumes the builder and constructs a [`UpdateManagedRuleSetVersionExpiryDateInput`](crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateInput {
-                name: self.name
-                ,
-                scope: self.scope
-                ,
-                id: self.id
-                ,
-                lock_token: self.lock_token
-                ,
-                version_to_expire: self.version_to_expire
-                ,
-                expiry_timestamp: self.expiry_timestamp
-                ,
-            }
+                name: self.name,
+                scope: self.scope,
+                id: self.id,
+                lock_token: self.lock_token,
+                version_to_expire: self.version_to_expire,
+                expiry_timestamp: self.expiry_timestamp,
+            },
         )
     }
 }

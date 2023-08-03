@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteInstanceOnboardingJobOutput {
 }
 impl DeleteInstanceOnboardingJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInstanceOnboardingJobOutput`](crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobOutput).
-    pub fn builder() -> crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobOutputBuilder{
+    pub fn builder() -> crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobOutputBuilder {
         crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInstanceOnboardingJobOutput`](crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInstanceOnboardingJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteInstanceOnboardingJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteInstanceOnboardingJobOutput`](crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobOutput {
+    pub fn build(self) -> crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobOutput {
         crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobOutput {
             _request_id: self._request_id,
         }

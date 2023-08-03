@@ -35,13 +35,10 @@ impl GetSampleDataOutput {
 
 /// A builder for [`GetSampleDataOutput`](crate::operation::get_sample_data::GetSampleDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSampleDataOutputBuilder {
     pub(crate) header_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) sample_rows:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) sample_rows: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl GetSampleDataOutputBuilder {
@@ -50,27 +47,19 @@ impl GetSampleDataOutputBuilder {
     /// To override the contents of this collection use [`set_header_values`](Self::set_header_values).
     ///
     /// <p>A list of header labels for the records.</p>
-    pub fn header_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn header_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.header_values.unwrap_or_default();
         v.push(input.into());
         self.header_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of header labels for the records.</p>
-    pub fn set_header_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_header_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.header_values = input;
         self
     }
     /// <p>A list of header labels for the records.</p>
-    pub fn get_header_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_header_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.header_values
     }
     /// Appends an item to `sample_rows`.
@@ -85,17 +74,12 @@ impl GetSampleDataOutputBuilder {
         self
     }
     /// <p>A list of records.</p>
-    pub fn set_sample_rows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_sample_rows(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
         self.sample_rows = input;
         self
     }
     /// <p>A list of records.</p>
-    pub fn get_sample_rows(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_sample_rows(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
         &self.sample_rows
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

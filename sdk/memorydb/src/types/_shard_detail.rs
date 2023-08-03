@@ -44,9 +44,7 @@ impl ShardDetail {
 
 /// A builder for [`ShardDetail`](crate::types::ShardDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShardDetailBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::ShardConfiguration>,
@@ -74,10 +72,7 @@ impl ShardDetailBuilder {
         self
     }
     /// <p>The configuration details of the shard</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ShardConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ShardConfiguration>) -> Self {
         self.configuration = input;
         self
     }
@@ -105,17 +100,12 @@ impl ShardDetailBuilder {
         self
     }
     /// <p>The date and time that the shard's snapshot was created</p>
-    pub fn set_snapshot_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_snapshot_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.snapshot_creation_time = input;
         self
     }
     /// <p>The date and time that the shard's snapshot was created</p>
-    pub fn get_snapshot_creation_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_snapshot_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.snapshot_creation_time
     }
     /// Consumes the builder and constructs a [`ShardDetail`](crate::types::ShardDetail).

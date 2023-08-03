@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`targets(Option<Vec<DbProxyTarget>>)`](crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput::targets): <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeDBProxyTargetsError>`](crate::operation::describe_db_proxy_targets::DescribeDBProxyTargetsError)
-    pub fn describe_db_proxy_targets(
-        &self,
-    ) -> crate::operation::describe_db_proxy_targets::builders::DescribeDBProxyTargetsFluentBuilder
-    {
+    pub fn describe_db_proxy_targets(&self) -> crate::operation::describe_db_proxy_targets::builders::DescribeDBProxyTargetsFluentBuilder {
         crate::operation::describe_db_proxy_targets::builders::DescribeDBProxyTargetsFluentBuilder::new(self.handle.clone())
     }
 }

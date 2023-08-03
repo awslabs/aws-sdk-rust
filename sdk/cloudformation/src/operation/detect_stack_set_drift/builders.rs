@@ -47,9 +47,7 @@ impl DetectStackSetDriftFluentBuilder {
         }
     }
     /// Access the DetectStackSetDrift as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +59,7 @@ impl DetectStackSetDriftFluentBuilder {
             crate::operation::detect_stack_set_drift::DetectStackSetDrift,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_stack_set_drift::DetectStackSetDriftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_stack_set_drift::DetectStackSetDriftError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +69,7 @@ impl DetectStackSetDriftFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +78,7 @@ impl DetectStackSetDriftFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_stack_set_drift::DetectStackSetDriftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_stack_set_drift::DetectStackSetDriftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_stack_set_drift::DetectStackSetDriftError>,
     > {
         let op = self
             .inner
@@ -110,9 +101,7 @@ impl DetectStackSetDriftFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_stack_set_drift::DetectStackSetDriftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_stack_set_drift::DetectStackSetDriftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_stack_set_drift::DetectStackSetDriftError>,
     > {
         self.send_middleware().await
     }
@@ -126,25 +115,17 @@ impl DetectStackSetDriftFluentBuilder {
             crate::operation::detect_stack_set_drift::DetectStackSetDrift,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_stack_set_drift::DetectStackSetDriftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_stack_set_drift::DetectStackSetDriftError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the stack set on which to perform the drift detection operation.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
     /// <p>The name of the stack set on which to perform the drift detection operation.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
@@ -154,27 +135,19 @@ impl DetectStackSetDriftFluentBuilder {
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn operation_preferences(
-        mut self,
-        input: crate::types::StackSetOperationPreferences,
-    ) -> Self {
+    pub fn operation_preferences(mut self, input: crate::types::StackSetOperationPreferences) -> Self {
         self.inner = self.inner.operation_preferences(input);
         self
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn set_operation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationPreferences>,
-    ) -> Self {
+    pub fn set_operation_preferences(mut self, input: ::std::option::Option<crate::types::StackSetOperationPreferences>) -> Self {
         self.inner = self.inner.set_operation_preferences(input);
         self
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn get_operation_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
+    pub fn get_operation_preferences(&self) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
         self.inner.get_operation_preferences()
     }
     /// <p> <i>The ID of the stack set operation.</i> </p>

@@ -43,9 +43,7 @@ impl CreatePortfolioShareFluentBuilder {
         }
     }
     /// Access the CreatePortfolioShare as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_portfolio_share::builders::CreatePortfolioShareInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_portfolio_share::builders::CreatePortfolioShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +55,7 @@ impl CreatePortfolioShareFluentBuilder {
             crate::operation::create_portfolio_share::CreatePortfolioShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_portfolio_share::CreatePortfolioShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_portfolio_share::CreatePortfolioShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +65,7 @@ impl CreatePortfolioShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +74,7 @@ impl CreatePortfolioShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_portfolio_share::CreatePortfolioShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_portfolio_share::CreatePortfolioShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_portfolio_share::CreatePortfolioShareError>,
     > {
         let op = self
             .inner
@@ -106,9 +97,7 @@ impl CreatePortfolioShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_portfolio_share::CreatePortfolioShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_portfolio_share::CreatePortfolioShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_portfolio_share::CreatePortfolioShareError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +111,7 @@ impl CreatePortfolioShareFluentBuilder {
             crate::operation::create_portfolio_share::CreatePortfolioShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_portfolio_share::CreatePortfolioShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_portfolio_share::CreatePortfolioShareError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +120,7 @@ impl CreatePortfolioShareFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -145,10 +129,7 @@ impl CreatePortfolioShareFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -194,10 +175,7 @@ impl CreatePortfolioShareFluentBuilder {
         self
     }
     /// <p>The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
-    pub fn set_organization_node(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationNode>,
-    ) -> Self {
+    pub fn set_organization_node(mut self, input: ::std::option::Option<crate::types::OrganizationNode>) -> Self {
         self.inner = self.inner.set_organization_node(input);
         self
     }

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ComparisonOperatorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,15 +57,11 @@ pub enum ComparisonOperatorType {
 impl ::std::convert::From<&str> for ComparisonOperatorType {
     fn from(s: &str) -> Self {
         match s {
-            "GreaterThanOrEqualToThreshold" => {
-                ComparisonOperatorType::GreaterThanOrEqualToThreshold
-            }
+            "GreaterThanOrEqualToThreshold" => ComparisonOperatorType::GreaterThanOrEqualToThreshold,
             "GreaterThanThreshold" => ComparisonOperatorType::GreaterThanThreshold,
             "LessThanOrEqualToThreshold" => ComparisonOperatorType::LessThanOrEqualToThreshold,
             "LessThanThreshold" => ComparisonOperatorType::LessThanThreshold,
-            other => ComparisonOperatorType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ComparisonOperatorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -86,9 +76,7 @@ impl ComparisonOperatorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ComparisonOperatorType::GreaterThanOrEqualToThreshold => {
-                "GreaterThanOrEqualToThreshold"
-            }
+            ComparisonOperatorType::GreaterThanOrEqualToThreshold => "GreaterThanOrEqualToThreshold",
             ComparisonOperatorType::GreaterThanThreshold => "GreaterThanThreshold",
             ComparisonOperatorType::LessThanOrEqualToThreshold => "LessThanOrEqualToThreshold",
             ComparisonOperatorType::LessThanThreshold => "LessThanThreshold",

@@ -10,10 +10,7 @@ impl RemoveFlowOutputInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::remove_flow_output::RemoveFlowOutputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_flow_output::RemoveFlowOutputError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_flow_output::RemoveFlowOutputError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.remove_flow_output();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RemoveFlowOutputFluentBuilder {
         }
     }
     /// Access the RemoveFlowOutput as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_flow_output::builders::RemoveFlowOutputInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::remove_flow_output::builders::RemoveFlowOutputInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RemoveFlowOutputFluentBuilder {
             crate::operation::remove_flow_output::RemoveFlowOutput,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_flow_output::RemoveFlowOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_flow_output::RemoveFlowOutputError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RemoveFlowOutputFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RemoveFlowOutputFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_flow_output::RemoveFlowOutputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_flow_output::RemoveFlowOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_flow_output::RemoveFlowOutputError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RemoveFlowOutputFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_flow_output::RemoveFlowOutputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_flow_output::RemoveFlowOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_flow_output::RemoveFlowOutputError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl RemoveFlowOutputFluentBuilder {
             crate::operation::remove_flow_output::RemoveFlowOutput,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_flow_output::RemoveFlowOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_flow_output::RemoveFlowOutputError>,
     > {
         self.customize_middleware().await
     }

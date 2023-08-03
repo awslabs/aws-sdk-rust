@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for PutRegistryPolicyOutput {
 }
 impl PutRegistryPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutRegistryPolicyOutput`](crate::operation::put_registry_policy::PutRegistryPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_registry_policy::builders::PutRegistryPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::put_registry_policy::builders::PutRegistryPolicyOutputBuilder {
         crate::operation::put_registry_policy::builders::PutRegistryPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutRegistryPolicyOutput`](crate::operation::put_registry_policy::PutRegistryPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRegistryPolicyOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_text: ::std::option::Option<::std::string::String>,

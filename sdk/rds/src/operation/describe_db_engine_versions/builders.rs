@@ -26,7 +26,7 @@ impl DescribeDbEngineVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBEngineVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder,
+    inner: crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder,
 }
 impl DescribeDBEngineVersionsFluentBuilder {
     /// Creates a new `DescribeDBEngineVersions`.
@@ -37,7 +37,7 @@ impl DescribeDBEngineVersionsFluentBuilder {
         }
     }
     /// Access the DescribeDBEngineVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDBEngineVersionsFluentBuilder {
             crate::operation::describe_db_engine_versions::DescribeDBEngineVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDBEngineVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDBEngineVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDBEngineVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl DescribeDBEngineVersionsFluentBuilder {
             crate::operation::describe_db_engine_versions::DescribeDBEngineVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator {
         crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The database engine to return.</p>
@@ -196,19 +182,13 @@ impl DescribeDBEngineVersionsFluentBuilder {
     }
     /// <p>The database engine version to return.</p>
     /// <p>Example: <code>5.1.49</code> </p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The database engine version to return.</p>
     /// <p>Example: <code>5.1.49</code> </p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -222,10 +202,7 @@ impl DescribeDBEngineVersionsFluentBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_family(input.into());
         self
     }
@@ -234,10 +211,7 @@ impl DescribeDBEngineVersionsFluentBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
     /// </ul>
-    pub fn set_db_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_family(input);
         self
     }
@@ -297,10 +271,7 @@ impl DescribeDBEngineVersionsFluentBuilder {
     /// <li> <p> <code>deprecated</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -37,10 +37,7 @@ impl CreateRegexPatternSetFluentBuilder {
         }
     }
     /// Access the CreateRegexPatternSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateRegexPatternSetFluentBuilder {
             crate::operation::create_regex_pattern_set::CreateRegexPatternSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_regex_pattern_set::CreateRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_regex_pattern_set::CreateRegexPatternSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateRegexPatternSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateRegexPatternSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_regex_pattern_set::CreateRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_regex_pattern_set::CreateRegexPatternSetError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateRegexPatternSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_regex_pattern_set::CreateRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_regex_pattern_set::CreateRegexPatternSetError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateRegexPatternSetFluentBuilder {
             crate::operation::create_regex_pattern_set::CreateRegexPatternSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_regex_pattern_set::CreateRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_regex_pattern_set::CreateRegexPatternSetError>,
     > {
         self.customize_middleware().await
     }
@@ -190,17 +176,12 @@ impl CreateRegexPatternSetFluentBuilder {
         self
     }
     /// <p>Array of regular expression strings. </p>
-    pub fn set_regular_expression_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>,
-    ) -> Self {
+    pub fn set_regular_expression_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>) -> Self {
         self.inner = self.inner.set_regular_expression_list(input);
         self
     }
     /// <p>Array of regular expression strings. </p>
-    pub fn get_regular_expression_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
+    pub fn get_regular_expression_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
         self.inner.get_regular_expression_list()
     }
     /// Appends an item to `Tags`.
@@ -213,10 +194,7 @@ impl CreateRegexPatternSetFluentBuilder {
         self
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

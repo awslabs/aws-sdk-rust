@@ -26,9 +26,7 @@ pub struct CreateApplicationInstanceInput {
     pub default_runtime_context_device: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the application instance.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApplicationInstanceInput {
     /// <p>A name for the application instance.</p>
@@ -44,9 +42,7 @@ impl CreateApplicationInstanceInput {
         self.manifest_payload.as_ref()
     }
     /// <p>Setting overrides for the application manifest.</p>
-    pub fn manifest_overrides_payload(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ManifestOverridesPayload> {
+    pub fn manifest_overrides_payload(&self) -> ::std::option::Option<&crate::types::ManifestOverridesPayload> {
         self.manifest_overrides_payload.as_ref()
     }
     /// <p>The ID of an application instance to replace with the new instance.</p>
@@ -62,38 +58,29 @@ impl CreateApplicationInstanceInput {
         self.default_runtime_context_device.as_deref()
     }
     /// <p>Tags for the application instance.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateApplicationInstanceInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInstanceInput`](crate::operation::create_application_instance::CreateApplicationInstanceInput).
-    pub fn builder() -> crate::operation::create_application_instance::builders::CreateApplicationInstanceInputBuilder{
+    pub fn builder() -> crate::operation::create_application_instance::builders::CreateApplicationInstanceInputBuilder {
         crate::operation::create_application_instance::builders::CreateApplicationInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateApplicationInstanceInput`](crate::operation::create_application_instance::CreateApplicationInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApplicationInstanceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) manifest_payload: ::std::option::Option<crate::types::ManifestPayload>,
-    pub(crate) manifest_overrides_payload:
-        ::std::option::Option<crate::types::ManifestOverridesPayload>,
+    pub(crate) manifest_overrides_payload: ::std::option::Option<crate::types::ManifestOverridesPayload>,
     pub(crate) application_instance_id_to_replace: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_runtime_context_device: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApplicationInstanceInputBuilder {
     /// <p>A name for the application instance.</p>
@@ -130,10 +117,7 @@ impl CreateApplicationInstanceInputBuilder {
         self
     }
     /// <p>The application's manifest document.</p>
-    pub fn set_manifest_payload(
-        mut self,
-        input: ::std::option::Option<crate::types::ManifestPayload>,
-    ) -> Self {
+    pub fn set_manifest_payload(mut self, input: ::std::option::Option<crate::types::ManifestPayload>) -> Self {
         self.manifest_payload = input;
         self
     }
@@ -142,62 +126,40 @@ impl CreateApplicationInstanceInputBuilder {
         &self.manifest_payload
     }
     /// <p>Setting overrides for the application manifest.</p>
-    pub fn manifest_overrides_payload(
-        mut self,
-        input: crate::types::ManifestOverridesPayload,
-    ) -> Self {
+    pub fn manifest_overrides_payload(mut self, input: crate::types::ManifestOverridesPayload) -> Self {
         self.manifest_overrides_payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>Setting overrides for the application manifest.</p>
-    pub fn set_manifest_overrides_payload(
-        mut self,
-        input: ::std::option::Option<crate::types::ManifestOverridesPayload>,
-    ) -> Self {
+    pub fn set_manifest_overrides_payload(mut self, input: ::std::option::Option<crate::types::ManifestOverridesPayload>) -> Self {
         self.manifest_overrides_payload = input;
         self
     }
     /// <p>Setting overrides for the application manifest.</p>
-    pub fn get_manifest_overrides_payload(
-        &self,
-    ) -> &::std::option::Option<crate::types::ManifestOverridesPayload> {
+    pub fn get_manifest_overrides_payload(&self) -> &::std::option::Option<crate::types::ManifestOverridesPayload> {
         &self.manifest_overrides_payload
     }
     /// <p>The ID of an application instance to replace with the new instance.</p>
-    pub fn application_instance_id_to_replace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_instance_id_to_replace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_instance_id_to_replace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an application instance to replace with the new instance.</p>
-    pub fn set_application_instance_id_to_replace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_instance_id_to_replace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_instance_id_to_replace = input;
         self
     }
     /// <p>The ID of an application instance to replace with the new instance.</p>
-    pub fn get_application_instance_id_to_replace(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_application_instance_id_to_replace(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_instance_id_to_replace
     }
     /// <p>The ARN of a runtime role for the application instance.</p>
-    pub fn runtime_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runtime_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a runtime role for the application instance.</p>
-    pub fn set_runtime_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_runtime_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime_role_arn = input;
         self
     }
@@ -206,25 +168,17 @@ impl CreateApplicationInstanceInputBuilder {
         &self.runtime_role_arn
     }
     /// <p>A device's ID.</p>
-    pub fn default_runtime_context_device(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_runtime_context_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_runtime_context_device = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A device's ID.</p>
-    pub fn set_default_runtime_context_device(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_runtime_context_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_runtime_context_device = input;
         self
     }
     /// <p>A device's ID.</p>
-    pub fn get_default_runtime_context_device(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_default_runtime_context_device(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_runtime_context_device
     }
     /// Adds a key-value pair to `tags`.
@@ -232,32 +186,19 @@ impl CreateApplicationInstanceInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags for the application instance.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags for the application instance.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags for the application instance.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateApplicationInstanceInput`](crate::operation::create_application_instance::CreateApplicationInstanceInput).
@@ -267,17 +208,15 @@ impl CreateApplicationInstanceInputBuilder {
         crate::operation::create_application_instance::CreateApplicationInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_application_instance::CreateApplicationInstanceInput {
-                name: self.name,
-                description: self.description,
-                manifest_payload: self.manifest_payload,
-                manifest_overrides_payload: self.manifest_overrides_payload,
-                application_instance_id_to_replace: self.application_instance_id_to_replace,
-                runtime_role_arn: self.runtime_role_arn,
-                default_runtime_context_device: self.default_runtime_context_device,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_application_instance::CreateApplicationInstanceInput {
+            name: self.name,
+            description: self.description,
+            manifest_payload: self.manifest_payload,
+            manifest_overrides_payload: self.manifest_overrides_payload,
+            application_instance_id_to_replace: self.application_instance_id_to_replace,
+            runtime_role_arn: self.runtime_role_arn,
+            default_runtime_context_device: self.default_runtime_context_device,
+            tags: self.tags,
+        })
     }
 }

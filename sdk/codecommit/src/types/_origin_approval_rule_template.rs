@@ -30,27 +30,19 @@ impl OriginApprovalRuleTemplate {
 
 /// A builder for [`OriginApprovalRuleTemplate`](crate::types::OriginApprovalRuleTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginApprovalRuleTemplateBuilder {
     pub(crate) approval_rule_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
 }
 impl OriginApprovalRuleTemplateBuilder {
     /// <p>The ID of the template that created the approval rule.</p>
-    pub fn approval_rule_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the template that created the approval rule.</p>
-    pub fn set_approval_rule_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl OriginApprovalRuleTemplateBuilder {
         &self.approval_rule_template_id
     }
     /// <p>The name of the template that created the approval rule.</p>
-    pub fn approval_rule_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the template that created the approval rule.</p>
-    pub fn set_approval_rule_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_name = input;
         self
     }

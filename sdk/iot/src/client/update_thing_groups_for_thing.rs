@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`override_dynamic_groups(bool)`](crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingFluentBuilder::override_dynamic_groups) / [`set_override_dynamic_groups(Option<bool>)`](crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingFluentBuilder::set_override_dynamic_groups): <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     /// - On success, responds with [`UpdateThingGroupsForThingOutput`](crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingOutput)
     /// - On failure, responds with [`SdkError<UpdateThingGroupsForThingError>`](crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingError)
-    pub fn update_thing_groups_for_thing(&self) -> crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingFluentBuilder{
+    pub fn update_thing_groups_for_thing(&self) -> crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingFluentBuilder {
         crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingFluentBuilder::new(self.handle.clone())
     }
 }

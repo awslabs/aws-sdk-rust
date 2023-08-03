@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for GenerateCardValidationDataOutput {
 }
 impl GenerateCardValidationDataOutput {
     /// Creates a new builder-style object to manufacture [`GenerateCardValidationDataOutput`](crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput).
-    pub fn builder() -> crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataOutputBuilder{
+    pub fn builder() -> crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataOutputBuilder {
         crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateCardValidationDataOutput`](crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateCardValidationDataOutputBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key_check_value: ::std::option::Option<::std::string::String>,
@@ -67,18 +65,12 @@ impl GenerateCardValidationDataOutputBuilder {
         &self.key_arn
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn key_check_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_check_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn set_key_check_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_check_value = input;
         self
     }
@@ -87,18 +79,12 @@ impl GenerateCardValidationDataOutputBuilder {
         &self.key_check_value
     }
     /// <p>The CVV or CSC value that Amazon Web Services Payment Cryptography generates for the card.</p>
-    pub fn validation_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CVV or CSC value that Amazon Web Services Payment Cryptography generates for the card.</p>
-    pub fn set_validation_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_data = input;
         self
     }
@@ -116,9 +102,7 @@ impl GenerateCardValidationDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GenerateCardValidationDataOutput`](crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput {
+    pub fn build(self) -> crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput {
         crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput {
             key_arn: self.key_arn,
             key_check_value: self.key_check_value,

@@ -29,27 +29,19 @@ impl PutEventStreamInput {
 
 /// A builder for [`PutEventStreamInput`](crate::operation::put_event_stream::PutEventStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEventStreamInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) write_event_stream: ::std::option::Option<crate::types::WriteEventStream>,
 }
 impl PutEventStreamInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -63,10 +55,7 @@ impl PutEventStreamInputBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
-    pub fn set_write_event_stream(
-        mut self,
-        input: ::std::option::Option<crate::types::WriteEventStream>,
-    ) -> Self {
+    pub fn set_write_event_stream(mut self, input: ::std::option::Option<crate::types::WriteEventStream>) -> Self {
         self.write_event_stream = input;
         self
     }
@@ -77,10 +66,7 @@ impl PutEventStreamInputBuilder {
     /// Consumes the builder and constructs a [`PutEventStreamInput`](crate::operation::put_event_stream::PutEventStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_event_stream::PutEventStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_event_stream::PutEventStreamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_event_stream::PutEventStreamInput {
             application_id: self.application_id,
             write_event_stream: self.write_event_stream,

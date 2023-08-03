@@ -30,9 +30,7 @@ impl ResourceTag {
 
 /// A builder for [`ResourceTag`](crate::types::ResourceTag).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceTagBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -64,10 +62,7 @@ impl ResourceTagBuilder {
         self
     }
     /// <p>A list of tags.</p>
-    pub fn set_tags_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags_list = input;
         self
     }

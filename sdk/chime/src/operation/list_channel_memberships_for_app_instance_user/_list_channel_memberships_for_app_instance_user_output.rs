@@ -5,9 +5,7 @@
 pub struct ListChannelMembershipsForAppInstanceUserOutput {
     /// <p>The information for the requested channel memberships.</p>
     #[doc(hidden)]
-    pub channel_memberships: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ChannelMembershipForAppInstanceUserSummary>,
-    >,
+    pub channel_memberships: ::std::option::Option<::std::vec::Vec<crate::types::ChannelMembershipForAppInstanceUserSummary>>,
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +13,7 @@ pub struct ListChannelMembershipsForAppInstanceUserOutput {
 }
 impl ListChannelMembershipsForAppInstanceUserOutput {
     /// <p>The information for the requested channel memberships.</p>
-    pub fn channel_memberships(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChannelMembershipForAppInstanceUserSummary]> {
+    pub fn channel_memberships(&self) -> ::std::option::Option<&[crate::types::ChannelMembershipForAppInstanceUserSummary]> {
         self.channel_memberships.as_deref()
     }
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
@@ -41,7 +37,8 @@ impl ::aws_http::request_id::RequestId for ListChannelMembershipsForAppInstanceU
 }
 impl ListChannelMembershipsForAppInstanceUserOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelMembershipsForAppInstanceUserOutput`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput).
-    pub fn builder() -> crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserOutputBuilder {
         crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserOutputBuilder::default()
     }
 }
@@ -50,9 +47,7 @@ impl ListChannelMembershipsForAppInstanceUserOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListChannelMembershipsForAppInstanceUserOutputBuilder {
-    pub(crate) channel_memberships: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ChannelMembershipForAppInstanceUserSummary>,
-    >,
+    pub(crate) channel_memberships: ::std::option::Option<::std::vec::Vec<crate::types::ChannelMembershipForAppInstanceUserSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,10 +57,7 @@ impl ListChannelMembershipsForAppInstanceUserOutputBuilder {
     /// To override the contents of this collection use [`set_channel_memberships`](Self::set_channel_memberships).
     ///
     /// <p>The information for the requested channel memberships.</p>
-    pub fn channel_memberships(
-        mut self,
-        input: crate::types::ChannelMembershipForAppInstanceUserSummary,
-    ) -> Self {
+    pub fn channel_memberships(mut self, input: crate::types::ChannelMembershipForAppInstanceUserSummary) -> Self {
         let mut v = self.channel_memberships.unwrap_or_default();
         v.push(input);
         self.channel_memberships = ::std::option::Option::Some(v);
@@ -74,19 +66,13 @@ impl ListChannelMembershipsForAppInstanceUserOutputBuilder {
     /// <p>The information for the requested channel memberships.</p>
     pub fn set_channel_memberships(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ChannelMembershipForAppInstanceUserSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelMembershipForAppInstanceUserSummary>>,
     ) -> Self {
         self.channel_memberships = input;
         self
     }
     /// <p>The information for the requested channel memberships.</p>
-    pub fn get_channel_memberships(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::ChannelMembershipForAppInstanceUserSummary>,
-    > {
+    pub fn get_channel_memberships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelMembershipForAppInstanceUserSummary>> {
         &self.channel_memberships
     }
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
@@ -113,12 +99,10 @@ impl ListChannelMembershipsForAppInstanceUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListChannelMembershipsForAppInstanceUserOutput`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput).
-    pub fn build(self) -> crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput{
+    pub fn build(self) -> crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput {
         crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput {
-            channel_memberships: self.channel_memberships
-            ,
-            next_token: self.next_token
-            ,
+            channel_memberships: self.channel_memberships,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

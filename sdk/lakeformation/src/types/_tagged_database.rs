@@ -30,9 +30,7 @@ impl TaggedDatabase {
 
 /// A builder for [`TaggedDatabase`](crate::types::TaggedDatabase).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaggedDatabaseBuilder {
     pub(crate) database: ::std::option::Option<crate::types::DatabaseResource>,
     pub(crate) lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
@@ -44,10 +42,7 @@ impl TaggedDatabaseBuilder {
         self
     }
     /// <p>A database that has LF-tags attached to it.</p>
-    pub fn set_database(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseResource>,
-    ) -> Self {
+    pub fn set_database(mut self, input: ::std::option::Option<crate::types::DatabaseResource>) -> Self {
         self.database = input;
         self
     }
@@ -67,10 +62,7 @@ impl TaggedDatabaseBuilder {
         self
     }
     /// <p>A list of LF-tags attached to the database.</p>
-    pub fn set_lf_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
-    ) -> Self {
+    pub fn set_lf_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
         self.lf_tags = input;
         self
     }

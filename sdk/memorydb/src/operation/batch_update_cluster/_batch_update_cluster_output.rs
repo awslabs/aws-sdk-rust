@@ -8,8 +8,7 @@ pub struct BatchUpdateClusterOutput {
     pub processed_clusters: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
     /// <p>The list of clusters where updates have not been applied.</p>
     #[doc(hidden)]
-    pub unprocessed_clusters:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedCluster>>,
+    pub unprocessed_clusters: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedCluster>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateClusterOutput {
@@ -18,9 +17,7 @@ impl BatchUpdateClusterOutput {
         self.processed_clusters.as_deref()
     }
     /// <p>The list of clusters where updates have not been applied.</p>
-    pub fn unprocessed_clusters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedCluster]> {
+    pub fn unprocessed_clusters(&self) -> ::std::option::Option<&[crate::types::UnprocessedCluster]> {
         self.unprocessed_clusters.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchUpdateClusterOutput {
 }
 impl BatchUpdateClusterOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateClusterOutput`](crate::operation::batch_update_cluster::BatchUpdateClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_cluster::builders::BatchUpdateClusterOutputBuilder {
+    pub fn builder() -> crate::operation::batch_update_cluster::builders::BatchUpdateClusterOutputBuilder {
         crate::operation::batch_update_cluster::builders::BatchUpdateClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateClusterOutput`](crate::operation::batch_update_cluster::BatchUpdateClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateClusterOutputBuilder {
     pub(crate) processed_clusters: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
-    pub(crate) unprocessed_clusters:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedCluster>>,
+    pub(crate) unprocessed_clusters: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedCluster>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateClusterOutputBuilder {
@@ -61,17 +54,12 @@ impl BatchUpdateClusterOutputBuilder {
         self
     }
     /// <p>The list of clusters that have been updated.</p>
-    pub fn set_processed_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
-    ) -> Self {
+    pub fn set_processed_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>) -> Self {
         self.processed_clusters = input;
         self
     }
     /// <p>The list of clusters that have been updated.</p>
-    pub fn get_processed_clusters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Cluster>> {
+    pub fn get_processed_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cluster>> {
         &self.processed_clusters
     }
     /// Appends an item to `unprocessed_clusters`.
@@ -86,17 +74,12 @@ impl BatchUpdateClusterOutputBuilder {
         self
     }
     /// <p>The list of clusters where updates have not been applied.</p>
-    pub fn set_unprocessed_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedCluster>>,
-    ) -> Self {
+    pub fn set_unprocessed_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedCluster>>) -> Self {
         self.unprocessed_clusters = input;
         self
     }
     /// <p>The list of clusters where updates have not been applied.</p>
-    pub fn get_unprocessed_clusters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedCluster>> {
+    pub fn get_unprocessed_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedCluster>> {
         &self.unprocessed_clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

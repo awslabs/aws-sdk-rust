@@ -10,9 +10,7 @@ pub struct GetCapacityReservationOutput {
 }
 impl GetCapacityReservationOutput {
     /// <p>The requested capacity reservation structure.</p>
-    pub fn capacity_reservation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityReservation> {
+    pub fn capacity_reservation(&self) -> ::std::option::Option<&crate::types::CapacityReservation> {
         self.capacity_reservation.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetCapacityReservationOutput {
 }
 impl GetCapacityReservationOutput {
     /// Creates a new builder-style object to manufacture [`GetCapacityReservationOutput`](crate::operation::get_capacity_reservation::GetCapacityReservationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_capacity_reservation::builders::GetCapacityReservationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_capacity_reservation::builders::GetCapacityReservationOutputBuilder {
         crate::operation::get_capacity_reservation::builders::GetCapacityReservationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCapacityReservationOutput`](crate::operation::get_capacity_reservation::GetCapacityReservationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCapacityReservationOutputBuilder {
     pub(crate) capacity_reservation: ::std::option::Option<crate::types::CapacityReservation>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl GetCapacityReservationOutputBuilder {
         self
     }
     /// <p>The requested capacity reservation structure.</p>
-    pub fn set_capacity_reservation(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservation>,
-    ) -> Self {
+    pub fn set_capacity_reservation(mut self, input: ::std::option::Option<crate::types::CapacityReservation>) -> Self {
         self.capacity_reservation = input;
         self
     }
     /// <p>The requested capacity reservation structure.</p>
-    pub fn get_capacity_reservation(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityReservation> {
+    pub fn get_capacity_reservation(&self) -> &::std::option::Option<crate::types::CapacityReservation> {
         &self.capacity_reservation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

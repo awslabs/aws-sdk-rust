@@ -69,17 +69,14 @@ impl ImportKeyMaterialInput {
 }
 impl ImportKeyMaterialInput {
     /// Creates a new builder-style object to manufacture [`ImportKeyMaterialInput`](crate::operation::import_key_material::ImportKeyMaterialInput).
-    pub fn builder(
-    ) -> crate::operation::import_key_material::builders::ImportKeyMaterialInputBuilder {
+    pub fn builder() -> crate::operation::import_key_material::builders::ImportKeyMaterialInputBuilder {
         crate::operation::import_key_material::builders::ImportKeyMaterialInputBuilder::default()
     }
 }
 
 /// A builder for [`ImportKeyMaterialInput`](crate::operation::import_key_material::ImportKeyMaterialInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportKeyMaterialInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) import_token: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -132,10 +129,7 @@ impl ImportKeyMaterialInputBuilder {
         self
     }
     /// <p>The import token that you received in the response to a previous <code>GetParametersForImport</code> request. It must be from the same response that contained the public key that you used to encrypt the key material.</p>
-    pub fn set_import_token(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_import_token(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.import_token = input;
         self
     }
@@ -149,10 +143,7 @@ impl ImportKeyMaterialInputBuilder {
         self
     }
     /// <p>The encrypted key material to import. The key material must be encrypted under the public wrapping key that <code>GetParametersForImport</code> returned, using the wrapping algorithm that you specified in the same <code>GetParametersForImport</code> request.</p>
-    pub fn set_encrypted_key_material(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_encrypted_key_material(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.encrypted_key_material = input;
         self
     }
@@ -172,10 +163,7 @@ impl ImportKeyMaterialInputBuilder {
     /// <p>The value of this parameter must be a future date and time. The maximum value is 365 days from the request date.</p>
     /// <p>When the key material expires, KMS deletes the key material from the KMS key. Without its key material, the KMS key is unusable. To use the KMS key in cryptographic operations, you must reimport the same key material.</p>
     /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must delete (<code>DeleteImportedKeyMaterial</code>) and reimport the key material.</p>
-    pub fn set_valid_to(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_to(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_to = input;
         self
     }
@@ -196,36 +184,26 @@ impl ImportKeyMaterialInputBuilder {
     /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.</p>
     /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must reimport the key material.</p>
-    pub fn set_expiration_model(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpirationModelType>,
-    ) -> Self {
+    pub fn set_expiration_model(mut self, input: ::std::option::Option<crate::types::ExpirationModelType>) -> Self {
         self.expiration_model = input;
         self
     }
     /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.</p>
     /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must reimport the key material.</p>
-    pub fn get_expiration_model(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExpirationModelType> {
+    pub fn get_expiration_model(&self) -> &::std::option::Option<crate::types::ExpirationModelType> {
         &self.expiration_model
     }
     /// Consumes the builder and constructs a [`ImportKeyMaterialInput`](crate::operation::import_key_material::ImportKeyMaterialInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_key_material::ImportKeyMaterialInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::import_key_material::ImportKeyMaterialInput {
-                key_id: self.key_id,
-                import_token: self.import_token,
-                encrypted_key_material: self.encrypted_key_material,
-                valid_to: self.valid_to,
-                expiration_model: self.expiration_model,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::import_key_material::ImportKeyMaterialInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::import_key_material::ImportKeyMaterialInput {
+            key_id: self.key_id,
+            import_token: self.import_token,
+            encrypted_key_material: self.encrypted_key_material,
+            valid_to: self.valid_to,
+            expiration_model: self.expiration_model,
+        })
     }
 }

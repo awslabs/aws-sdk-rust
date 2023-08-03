@@ -23,9 +23,7 @@ impl AsymmetricEncryptionAttributes {
 
 /// A builder for [`AsymmetricEncryptionAttributes`](crate::types::AsymmetricEncryptionAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AsymmetricEncryptionAttributesBuilder {
     pub(crate) padding_type: ::std::option::Option<crate::types::PaddingType>,
 }
@@ -36,10 +34,7 @@ impl AsymmetricEncryptionAttributesBuilder {
         self
     }
     /// <p>The padding to be included with the data.</p>
-    pub fn set_padding_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PaddingType>,
-    ) -> Self {
+    pub fn set_padding_type(mut self, input: ::std::option::Option<crate::types::PaddingType>) -> Self {
         self.padding_type = input;
         self
     }

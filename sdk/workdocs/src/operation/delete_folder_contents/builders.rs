@@ -37,9 +37,7 @@ impl DeleteFolderContentsFluentBuilder {
         }
     }
     /// Access the DeleteFolderContents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_folder_contents::builders::DeleteFolderContentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_folder_contents::builders::DeleteFolderContentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteFolderContentsFluentBuilder {
             crate::operation::delete_folder_contents::DeleteFolderContents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_folder_contents::DeleteFolderContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_folder_contents::DeleteFolderContentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteFolderContentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteFolderContentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_folder_contents::DeleteFolderContentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_folder_contents::DeleteFolderContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_folder_contents::DeleteFolderContentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteFolderContentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_folder_contents::DeleteFolderContentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_folder_contents::DeleteFolderContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_folder_contents::DeleteFolderContentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteFolderContentsFluentBuilder {
             crate::operation::delete_folder_contents::DeleteFolderContents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_folder_contents::DeleteFolderContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_folder_contents::DeleteFolderContentsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }

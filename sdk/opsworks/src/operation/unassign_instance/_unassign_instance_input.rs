@@ -15,17 +15,14 @@ impl UnassignInstanceInput {
 }
 impl UnassignInstanceInput {
     /// Creates a new builder-style object to manufacture [`UnassignInstanceInput`](crate::operation::unassign_instance::UnassignInstanceInput).
-    pub fn builder() -> crate::operation::unassign_instance::builders::UnassignInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::unassign_instance::builders::UnassignInstanceInputBuilder {
         crate::operation::unassign_instance::builders::UnassignInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`UnassignInstanceInput`](crate::operation::unassign_instance::UnassignInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnassignInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +44,7 @@ impl UnassignInstanceInputBuilder {
     /// Consumes the builder and constructs a [`UnassignInstanceInput`](crate::operation::unassign_instance::UnassignInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::unassign_instance::UnassignInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::unassign_instance::UnassignInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::unassign_instance::UnassignInstanceInput {
             instance_id: self.instance_id,
         })

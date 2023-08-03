@@ -21,9 +21,7 @@ pub enum ServiceDiscovery {
 impl ServiceDiscovery {
     /// Tries to convert the enum instance into [`AwsCloudMap`](crate::types::ServiceDiscovery::AwsCloudMap), extracting the inner [`AwsCloudMapServiceDiscovery`](crate::types::AwsCloudMapServiceDiscovery).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aws_cloud_map(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AwsCloudMapServiceDiscovery, &Self> {
+    pub fn as_aws_cloud_map(&self) -> ::std::result::Result<&crate::types::AwsCloudMapServiceDiscovery, &Self> {
         if let ServiceDiscovery::AwsCloudMap(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

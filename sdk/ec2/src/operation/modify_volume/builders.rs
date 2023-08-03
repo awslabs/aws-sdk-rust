@@ -10,10 +10,7 @@ impl ModifyVolumeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_volume::ModifyVolumeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_volume::ModifyVolumeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_volume::ModifyVolumeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_volume();
         fluent_builder.inner = self;
@@ -49,10 +46,7 @@ impl ModifyVolumeFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_volume::ModifyVolume,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::modify_volume::ModifyVolume, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::modify_volume::ModifyVolumeError>,
     > {
         let handle = self.handle.clone();
@@ -63,10 +57,7 @@ impl ModifyVolumeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -108,10 +99,7 @@ impl ModifyVolumeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_volume::ModifyVolume,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::modify_volume::ModifyVolume, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::modify_volume::ModifyVolumeError>,
     > {
         self.customize_middleware().await
@@ -190,10 +178,7 @@ impl ModifyVolumeFluentBuilder {
     }
     /// <p>The target EBS volume type of the volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>Default: The existing type is retained.</p>
-    pub fn set_volume_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeType>,
-    ) -> Self {
+    pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
         self.inner = self.inner.set_volume_type(input);
         self
     }

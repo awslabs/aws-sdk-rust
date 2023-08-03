@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<RunGroupListItem>>)`](crate::operation::list_run_groups::ListRunGroupsOutput::items): <p>A list of groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_run_groups::ListRunGroupsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListRunGroupsError>`](crate::operation::list_run_groups::ListRunGroupsError)
-    pub fn list_run_groups(
-        &self,
-    ) -> crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder {
-        crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_run_groups(&self) -> crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder {
+        crate::operation::list_run_groups::builders::ListRunGroupsFluentBuilder::new(self.handle.clone())
     }
 }

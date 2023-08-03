@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`medical_transcription_job_name(impl ::std::convert::Into<String>)`](crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobFluentBuilder::medical_transcription_job_name) / [`set_medical_transcription_job_name(Option<String>)`](crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobFluentBuilder::set_medical_transcription_job_name): <p>The name of the medical transcription job you want to delete. Job names are case sensitive.</p>
     /// - On success, responds with [`DeleteMedicalTranscriptionJobOutput`](crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobOutput)
     /// - On failure, responds with [`SdkError<DeleteMedicalTranscriptionJobError>`](crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobError)
-    pub fn delete_medical_transcription_job(&self) -> crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobFluentBuilder{
+    pub fn delete_medical_transcription_job(
+        &self,
+    ) -> crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobFluentBuilder {
         crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -35,9 +35,7 @@ impl CachedMethods {
 
 /// A builder for [`CachedMethods`](crate::types::CachedMethods).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CachedMethodsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Method>>,
@@ -69,10 +67,7 @@ impl CachedMethodsBuilder {
         self
     }
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Method>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Method>>) -> Self {
         self.items = input;
         self
     }

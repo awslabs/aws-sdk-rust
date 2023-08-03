@@ -10,10 +10,7 @@ impl ImportCrlInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::import_crl::ImportCrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_crl::ImportCrlError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_crl::ImportCrlError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.import_crl();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ImportCrlFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::import_crl::ImportCrl,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::import_crl::ImportCrl, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::import_crl::ImportCrlError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ImportCrlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ImportCrlFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::import_crl::ImportCrl,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::import_crl::ImportCrl, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::import_crl::ImportCrlError>,
     > {
         self.customize_middleware().await
@@ -165,10 +153,7 @@ impl ImportCrlFluentBuilder {
         self
     }
     /// <p>A list of tags to attach to the certificate revocation list (CRL).</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -177,18 +162,12 @@ impl ImportCrlFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
-    pub fn trust_anchor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_anchor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_anchor_arn(input.into());
         self
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
-    pub fn set_trust_anchor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_anchor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_anchor_arn(input);
         self
     }

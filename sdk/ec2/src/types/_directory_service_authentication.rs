@@ -23,9 +23,7 @@ impl DirectoryServiceAuthentication {
 
 /// A builder for [`DirectoryServiceAuthentication`](crate::types::DirectoryServiceAuthentication).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DirectoryServiceAuthenticationBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
 }

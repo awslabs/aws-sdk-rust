@@ -37,9 +37,7 @@ impl CancelSimulationJobFluentBuilder {
         }
     }
     /// Access the CancelSimulationJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_simulation_job::builders::CancelSimulationJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_simulation_job::builders::CancelSimulationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CancelSimulationJobFluentBuilder {
             crate::operation::cancel_simulation_job::CancelSimulationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_simulation_job::CancelSimulationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_simulation_job::CancelSimulationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CancelSimulationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CancelSimulationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_simulation_job::CancelSimulationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_simulation_job::CancelSimulationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_simulation_job::CancelSimulationJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CancelSimulationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_simulation_job::CancelSimulationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_simulation_job::CancelSimulationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_simulation_job::CancelSimulationJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CancelSimulationJobFluentBuilder {
             crate::operation::cancel_simulation_job::CancelSimulationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_simulation_job::CancelSimulationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_simulation_job::CancelSimulationJobError>,
     > {
         self.customize_middleware().await
     }

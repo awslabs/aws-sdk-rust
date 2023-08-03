@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetJobDocumentOutput`](crate::operation::get_job_document::GetJobDocumentOutput) with field(s):
     ///   - [`document(Option<String>)`](crate::operation::get_job_document::GetJobDocumentOutput::document): <p>The job document content.</p>
     /// - On failure, responds with [`SdkError<GetJobDocumentError>`](crate::operation::get_job_document::GetJobDocumentError)
-    pub fn get_job_document(
-        &self,
-    ) -> crate::operation::get_job_document::builders::GetJobDocumentFluentBuilder {
-        crate::operation::get_job_document::builders::GetJobDocumentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_job_document(&self) -> crate::operation::get_job_document::builders::GetJobDocumentFluentBuilder {
+        crate::operation::get_job_document::builders::GetJobDocumentFluentBuilder::new(self.handle.clone())
     }
 }

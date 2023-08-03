@@ -19,10 +19,7 @@ impl super::Client {
     ///   - [`previous(Option<Vec<String>>)`](crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupOutput::previous): <p>The previous step group.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupOutput::last_modified_time): <p>The time at which the step group was last modified.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkflowStepGroupError>`](crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupError)
-    pub fn update_workflow_step_group(
-        &self,
-    ) -> crate::operation::update_workflow_step_group::builders::UpdateWorkflowStepGroupFluentBuilder
-    {
+    pub fn update_workflow_step_group(&self) -> crate::operation::update_workflow_step_group::builders::UpdateWorkflowStepGroupFluentBuilder {
         crate::operation::update_workflow_step_group::builders::UpdateWorkflowStepGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -24,9 +24,7 @@ impl CaptionSelector {
         self.name.as_deref()
     }
     /// Caption selector settings.
-    pub fn selector_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CaptionSelectorSettings> {
+    pub fn selector_settings(&self) -> ::std::option::Option<&crate::types::CaptionSelectorSettings> {
         self.selector_settings.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl CaptionSelector {
 
 /// A builder for [`CaptionSelector`](crate::types::CaptionSelector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaptionSelectorBuilder {
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -49,18 +45,12 @@ pub struct CaptionSelectorBuilder {
 }
 impl CaptionSelectorBuilder {
     /// When specified this field indicates the three letter language code of the caption track to extract from the source.
-    pub fn language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// When specified this field indicates the three letter language code of the caption track to extract from the source.
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_code = input;
         self
     }
@@ -88,17 +78,12 @@ impl CaptionSelectorBuilder {
         self
     }
     /// Caption selector settings.
-    pub fn set_selector_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptionSelectorSettings>,
-    ) -> Self {
+    pub fn set_selector_settings(mut self, input: ::std::option::Option<crate::types::CaptionSelectorSettings>) -> Self {
         self.selector_settings = input;
         self
     }
     /// Caption selector settings.
-    pub fn get_selector_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::CaptionSelectorSettings> {
+    pub fn get_selector_settings(&self) -> &::std::option::Option<crate::types::CaptionSelectorSettings> {
         &self.selector_settings
     }
     /// Consumes the builder and constructs a [`CaptionSelector`](crate::types::CaptionSelector).

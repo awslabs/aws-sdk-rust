@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteOpsMetadataOutput {
 }
 impl DeleteOpsMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOpsMetadataOutput`](crate::operation::delete_ops_metadata::DeleteOpsMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataOutputBuilder {
         crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOpsMetadataOutput`](crate::operation::delete_ops_metadata::DeleteOpsMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOpsMetadataOutputBuilder {
     _request_id: Option<String>,
 }

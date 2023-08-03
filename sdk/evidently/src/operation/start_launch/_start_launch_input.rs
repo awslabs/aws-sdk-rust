@@ -29,9 +29,7 @@ impl StartLaunchInput {
 
 /// A builder for [`StartLaunchInput`](crate::operation::start_launch::StartLaunchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartLaunchInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) launch: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl StartLaunchInputBuilder {
         &self.launch
     }
     /// Consumes the builder and constructs a [`StartLaunchInput`](crate::operation::start_launch::StartLaunchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_launch::StartLaunchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_launch::StartLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_launch::StartLaunchInput {
             project: self.project,
             launch: self.launch,

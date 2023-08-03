@@ -22,17 +22,14 @@ impl GetRealtimeLogConfigInput {
 }
 impl GetRealtimeLogConfigInput {
     /// Creates a new builder-style object to manufacture [`GetRealtimeLogConfigInput`](crate::operation::get_realtime_log_config::GetRealtimeLogConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigInputBuilder {
+    pub fn builder() -> crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigInputBuilder {
         crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRealtimeLogConfigInput`](crate::operation::get_realtime_log_config::GetRealtimeLogConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRealtimeLogConfigInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl GetRealtimeLogConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetRealtimeLogConfigInput`](crate::operation::get_realtime_log_config::GetRealtimeLogConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_realtime_log_config::GetRealtimeLogConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_realtime_log_config::GetRealtimeLogConfigInput {
-                name: self.name,
-                arn: self.arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_realtime_log_config::GetRealtimeLogConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_realtime_log_config::GetRealtimeLogConfigInput {
+            name: self.name,
+            arn: self.arn,
+        })
     }
 }

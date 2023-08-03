@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`tag_options(Option<Vec<TagOptionDetail>>)`](crate::operation::describe_portfolio::DescribePortfolioOutput::tag_options): <p>Information about the TagOptions associated with the portfolio.</p>
     ///   - [`budgets(Option<Vec<BudgetDetail>>)`](crate::operation::describe_portfolio::DescribePortfolioOutput::budgets): <p>Information about the associated budgets.</p>
     /// - On failure, responds with [`SdkError<DescribePortfolioError>`](crate::operation::describe_portfolio::DescribePortfolioError)
-    pub fn describe_portfolio(
-        &self,
-    ) -> crate::operation::describe_portfolio::builders::DescribePortfolioFluentBuilder {
-        crate::operation::describe_portfolio::builders::DescribePortfolioFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_portfolio(&self) -> crate::operation::describe_portfolio::builders::DescribePortfolioFluentBuilder {
+        crate::operation::describe_portfolio::builders::DescribePortfolioFluentBuilder::new(self.handle.clone())
     }
 }

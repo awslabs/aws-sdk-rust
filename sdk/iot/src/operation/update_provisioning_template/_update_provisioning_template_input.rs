@@ -57,16 +57,14 @@ impl UpdateProvisioningTemplateInput {
 }
 impl UpdateProvisioningTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateProvisioningTemplateInput`](crate::operation::update_provisioning_template::UpdateProvisioningTemplateInput).
-    pub fn builder() -> crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateInputBuilder{
+    pub fn builder() -> crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateInputBuilder {
         crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateProvisioningTemplateInput`](crate::operation::update_provisioning_template::UpdateProvisioningTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProvisioningTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -78,18 +76,12 @@ pub struct UpdateProvisioningTemplateInputBuilder {
 }
 impl UpdateProvisioningTemplateInputBuilder {
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -140,18 +132,12 @@ impl UpdateProvisioningTemplateInputBuilder {
         &self.default_version_id
     }
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    pub fn provisioning_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    pub fn set_provisioning_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioning_role_arn = input;
         self
     }
@@ -165,17 +151,12 @@ impl UpdateProvisioningTemplateInputBuilder {
         self
     }
     /// <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
-    pub fn set_pre_provisioning_hook(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningHook>,
-    ) -> Self {
+    pub fn set_pre_provisioning_hook(mut self, input: ::std::option::Option<crate::types::ProvisioningHook>) -> Self {
         self.pre_provisioning_hook = input;
         self
     }
     /// <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
-    pub fn get_pre_provisioning_hook(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisioningHook> {
+    pub fn get_pre_provisioning_hook(&self) -> &::std::option::Option<crate::types::ProvisioningHook> {
         &self.pre_provisioning_hook
     }
     /// <p>Removes pre-provisioning hook template.</p>
@@ -199,16 +180,14 @@ impl UpdateProvisioningTemplateInputBuilder {
         crate::operation::update_provisioning_template::UpdateProvisioningTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_provisioning_template::UpdateProvisioningTemplateInput {
-                template_name: self.template_name,
-                description: self.description,
-                enabled: self.enabled,
-                default_version_id: self.default_version_id,
-                provisioning_role_arn: self.provisioning_role_arn,
-                pre_provisioning_hook: self.pre_provisioning_hook,
-                remove_pre_provisioning_hook: self.remove_pre_provisioning_hook,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_provisioning_template::UpdateProvisioningTemplateInput {
+            template_name: self.template_name,
+            description: self.description,
+            enabled: self.enabled,
+            default_version_id: self.default_version_id,
+            provisioning_role_arn: self.provisioning_role_arn,
+            pre_provisioning_hook: self.pre_provisioning_hook,
+            remove_pre_provisioning_hook: self.remove_pre_provisioning_hook,
+        })
     }
 }

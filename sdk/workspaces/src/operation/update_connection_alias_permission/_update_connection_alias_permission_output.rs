@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateConnectionAliasPermissionOutput
 }
 impl UpdateConnectionAliasPermissionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionAliasPermissionOutput`](crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput).
-    pub fn builder() -> crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionOutputBuilder{
+    pub fn builder() -> crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionOutputBuilder {
         crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConnectionAliasPermissionOutput`](crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectionAliasPermissionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateConnectionAliasPermissionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateConnectionAliasPermissionOutput`](crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput
-    {
+    pub fn build(self) -> crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput {
         crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput {
             _request_id: self._request_id,
         }

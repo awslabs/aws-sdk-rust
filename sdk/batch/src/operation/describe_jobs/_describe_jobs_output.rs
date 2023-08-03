@@ -28,9 +28,7 @@ impl DescribeJobsOutput {
 
 /// A builder for [`DescribeJobsOutput`](crate::operation::describe_jobs::DescribeJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobsOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobDetail>>,
     _request_id: Option<String>,
@@ -48,10 +46,7 @@ impl DescribeJobsOutputBuilder {
         self
     }
     /// <p>The list of jobs.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobDetail>>,
-    ) -> Self {
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobDetail>>) -> Self {
         self.jobs = input;
         self
     }

@@ -10,10 +10,7 @@ impl UpdateBotAliasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_bot_alias::UpdateBotAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_alias::UpdateBotAliasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bot_alias::UpdateBotAliasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_bot_alias();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateBotAliasFluentBuilder {
         }
     }
     /// Access the UpdateBotAlias as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_bot_alias::builders::UpdateBotAliasInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_bot_alias::builders::UpdateBotAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateBotAliasFluentBuilder {
             crate::operation::update_bot_alias::UpdateBotAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_alias::UpdateBotAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bot_alias::UpdateBotAliasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateBotAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateBotAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bot_alias::UpdateBotAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_alias::UpdateBotAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bot_alias::UpdateBotAliasError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateBotAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bot_alias::UpdateBotAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_alias::UpdateBotAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bot_alias::UpdateBotAliasError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateBotAliasFluentBuilder {
             crate::operation::update_bot_alias::UpdateBotAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_alias::UpdateBotAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bot_alias::UpdateBotAliasError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl UpdateBotAliasFluentBuilder {
         self.inner.get_bot_alias_id()
     }
     /// <p>The new name to assign to the bot alias.</p>
-    pub fn bot_alias_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_alias_name(input.into());
         self
     }
     /// <p>The new name to assign to the bot alias.</p>
-    pub fn set_bot_alias_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_alias_name(input);
         self
     }
@@ -189,23 +167,14 @@ impl UpdateBotAliasFluentBuilder {
     /// To override the contents of this collection use [`set_bot_alias_locale_settings`](Self::set_bot_alias_locale_settings).
     ///
     /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
-    pub fn bot_alias_locale_settings(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::BotAliasLocaleSettings,
-    ) -> Self {
+    pub fn bot_alias_locale_settings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::BotAliasLocaleSettings) -> Self {
         self.inner = self.inner.bot_alias_locale_settings(k.into(), v);
         self
     }
     /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
     pub fn set_bot_alias_locale_settings(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::BotAliasLocaleSettings,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>>,
     ) -> Self {
         self.inner = self.inner.set_bot_alias_locale_settings(input);
         self
@@ -213,53 +182,35 @@ impl UpdateBotAliasFluentBuilder {
     /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
     pub fn get_bot_alias_locale_settings(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotAliasLocaleSettings>> {
         self.inner.get_bot_alias_locale_settings()
     }
     /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
-    pub fn conversation_log_settings(
-        mut self,
-        input: crate::types::ConversationLogSettings,
-    ) -> Self {
+    pub fn conversation_log_settings(mut self, input: crate::types::ConversationLogSettings) -> Self {
         self.inner = self.inner.conversation_log_settings(input);
         self
     }
     /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
-    pub fn set_conversation_log_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ConversationLogSettings>,
-    ) -> Self {
+    pub fn set_conversation_log_settings(mut self, input: ::std::option::Option<crate::types::ConversationLogSettings>) -> Self {
         self.inner = self.inner.set_conversation_log_settings(input);
         self
     }
     /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
-    pub fn get_conversation_log_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConversationLogSettings> {
+    pub fn get_conversation_log_settings(&self) -> &::std::option::Option<crate::types::ConversationLogSettings> {
         self.inner.get_conversation_log_settings()
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn sentiment_analysis_settings(
-        mut self,
-        input: crate::types::SentimentAnalysisSettings,
-    ) -> Self {
+    pub fn sentiment_analysis_settings(mut self, input: crate::types::SentimentAnalysisSettings) -> Self {
         self.inner = self.inner.sentiment_analysis_settings(input);
         self
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn set_sentiment_analysis_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentAnalysisSettings>,
-    ) -> Self {
+    pub fn set_sentiment_analysis_settings(mut self, input: ::std::option::Option<crate::types::SentimentAnalysisSettings>) -> Self {
         self.inner = self.inner.set_sentiment_analysis_settings(input);
         self
     }
     /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn get_sentiment_analysis_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::SentimentAnalysisSettings> {
+    pub fn get_sentiment_analysis_settings(&self) -> &::std::option::Option<crate::types::SentimentAnalysisSettings> {
         self.inner.get_sentiment_analysis_settings()
     }
     /// <p>The identifier of the bot with the updated alias.</p>

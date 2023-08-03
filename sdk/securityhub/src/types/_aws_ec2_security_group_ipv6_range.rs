@@ -23,9 +23,7 @@ impl AwsEc2SecurityGroupIpv6Range {
 
 /// A builder for [`AwsEc2SecurityGroupIpv6Range`](crate::types::AwsEc2SecurityGroupIpv6Range).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2SecurityGroupIpv6RangeBuilder {
     pub(crate) cidr_ipv6: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AwsEc2SecurityGroupIpv6RangeBuilder {
     }
     /// Consumes the builder and constructs a [`AwsEc2SecurityGroupIpv6Range`](crate::types::AwsEc2SecurityGroupIpv6Range).
     pub fn build(self) -> crate::types::AwsEc2SecurityGroupIpv6Range {
-        crate::types::AwsEc2SecurityGroupIpv6Range {
-            cidr_ipv6: self.cidr_ipv6,
-        }
+        crate::types::AwsEc2SecurityGroupIpv6Range { cidr_ipv6: self.cidr_ipv6 }
     }
 }

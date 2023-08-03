@@ -17,9 +17,7 @@ pub struct GetAlternateContactInput {
 }
 impl GetAlternateContactInput {
     /// <p>Specifies which alternate contact you want to retrieve.</p>
-    pub fn alternate_contact_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AlternateContactType> {
+    pub fn alternate_contact_type(&self) -> ::std::option::Option<&crate::types::AlternateContactType> {
         self.alternate_contact_type.as_ref()
     }
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
@@ -34,18 +32,14 @@ impl GetAlternateContactInput {
 }
 impl GetAlternateContactInput {
     /// Creates a new builder-style object to manufacture [`GetAlternateContactInput`](crate::operation::get_alternate_contact::GetAlternateContactInput).
-    pub fn builder(
-    ) -> crate::operation::get_alternate_contact::builders::GetAlternateContactInputBuilder {
-        crate::operation::get_alternate_contact::builders::GetAlternateContactInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_alternate_contact::builders::GetAlternateContactInputBuilder {
+        crate::operation::get_alternate_contact::builders::GetAlternateContactInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAlternateContactInput`](crate::operation::get_alternate_contact::GetAlternateContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAlternateContactInputBuilder {
     pub(crate) alternate_contact_type: ::std::option::Option<crate::types::AlternateContactType>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -57,17 +51,12 @@ impl GetAlternateContactInputBuilder {
         self
     }
     /// <p>Specifies which alternate contact you want to retrieve.</p>
-    pub fn set_alternate_contact_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AlternateContactType>,
-    ) -> Self {
+    pub fn set_alternate_contact_type(mut self, input: ::std::option::Option<crate::types::AlternateContactType>) -> Self {
         self.alternate_contact_type = input;
         self
     }
     /// <p>Specifies which alternate contact you want to retrieve.</p>
-    pub fn get_alternate_contact_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlternateContactType> {
+    pub fn get_alternate_contact_type(&self) -> &::std::option::Option<crate::types::AlternateContactType> {
         &self.alternate_contact_type
     }
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
@@ -102,15 +91,11 @@ impl GetAlternateContactInputBuilder {
     /// Consumes the builder and constructs a [`GetAlternateContactInput`](crate::operation::get_alternate_contact::GetAlternateContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_alternate_contact::GetAlternateContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_alternate_contact::GetAlternateContactInput {
-                alternate_contact_type: self.alternate_contact_type,
-                account_id: self.account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_alternate_contact::GetAlternateContactInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_alternate_contact::GetAlternateContactInput {
+            alternate_contact_type: self.alternate_contact_type,
+            account_id: self.account_id,
+        })
     }
 }

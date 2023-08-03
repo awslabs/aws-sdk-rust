@@ -36,9 +36,7 @@ pub struct App {
     pub last_resiliency_score_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     #[doc(hidden)]
     pub assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
@@ -69,15 +67,11 @@ impl App {
         self.status.as_ref()
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn compliance_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppComplianceStatusType> {
+    pub fn compliance_status(&self) -> ::std::option::Option<&crate::types::AppComplianceStatusType> {
         self.compliance_status.as_ref()
     }
     /// <p>The timestamp for the most recent compliance evaluation.</p>
-    pub fn last_app_compliance_evaluation_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_app_compliance_evaluation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_app_compliance_evaluation_time.as_ref()
     }
     /// <p>The current resiliency score for the application.</p>
@@ -85,23 +79,15 @@ impl App {
         self.resiliency_score
     }
     /// <p>The timestamp for the most recent resiliency score evaluation.</p>
-    pub fn last_resiliency_score_evaluation_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_resiliency_score_evaluation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_resiliency_score_evaluation_time.as_ref()
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-    pub fn assessment_schedule(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppAssessmentScheduleType> {
+    pub fn assessment_schedule(&self) -> ::std::option::Option<&crate::types::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
     }
 }
@@ -115,15 +101,9 @@ impl ::std::fmt::Debug for App {
         formatter.field("creation_time", &self.creation_time);
         formatter.field("status", &self.status);
         formatter.field("compliance_status", &self.compliance_status);
-        formatter.field(
-            "last_app_compliance_evaluation_time",
-            &self.last_app_compliance_evaluation_time,
-        );
+        formatter.field("last_app_compliance_evaluation_time", &self.last_app_compliance_evaluation_time);
         formatter.field("resiliency_score", &self.resiliency_score);
-        formatter.field(
-            "last_resiliency_score_evaluation_time",
-            &self.last_resiliency_score_evaluation_time,
-        );
+        formatter.field("last_resiliency_score_evaluation_time", &self.last_resiliency_score_evaluation_time);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("assessment_schedule", &self.assessment_schedule);
         formatter.finish()
@@ -147,14 +127,10 @@ pub struct AppBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::AppStatusType>,
     pub(crate) compliance_status: ::std::option::Option<crate::types::AppComplianceStatusType>,
-    pub(crate) last_app_compliance_evaluation_time:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_app_compliance_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) resiliency_score: ::std::option::Option<f64>,
-    pub(crate) last_resiliency_score_evaluation_time:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) last_resiliency_score_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
 }
 impl AppBuilder {
@@ -220,10 +196,7 @@ impl AppBuilder {
         self
     }
     /// <p>The timestamp for when the app was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -251,39 +224,26 @@ impl AppBuilder {
         self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn set_compliance_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AppComplianceStatusType>,
-    ) -> Self {
+    pub fn set_compliance_status(mut self, input: ::std::option::Option<crate::types::AppComplianceStatusType>) -> Self {
         self.compliance_status = input;
         self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn get_compliance_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppComplianceStatusType> {
+    pub fn get_compliance_status(&self) -> &::std::option::Option<crate::types::AppComplianceStatusType> {
         &self.compliance_status
     }
     /// <p>The timestamp for the most recent compliance evaluation.</p>
-    pub fn last_app_compliance_evaluation_time(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn last_app_compliance_evaluation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_app_compliance_evaluation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp for the most recent compliance evaluation.</p>
-    pub fn set_last_app_compliance_evaluation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_app_compliance_evaluation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_app_compliance_evaluation_time = input;
         self
     }
     /// <p>The timestamp for the most recent compliance evaluation.</p>
-    pub fn get_last_app_compliance_evaluation_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_app_compliance_evaluation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_app_compliance_evaluation_time
     }
     /// <p>The current resiliency score for the application.</p>
@@ -301,25 +261,17 @@ impl AppBuilder {
         &self.resiliency_score
     }
     /// <p>The timestamp for the most recent resiliency score evaluation.</p>
-    pub fn last_resiliency_score_evaluation_time(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn last_resiliency_score_evaluation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_resiliency_score_evaluation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp for the most recent resiliency score evaluation.</p>
-    pub fn set_last_resiliency_score_evaluation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_resiliency_score_evaluation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_resiliency_score_evaluation_time = input;
         self
     }
     /// <p>The timestamp for the most recent resiliency score evaluation.</p>
-    pub fn get_last_resiliency_score_evaluation_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_resiliency_score_evaluation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_resiliency_score_evaluation_time
     }
     /// Adds a key-value pair to `tags`.
@@ -327,32 +279,19 @@ impl AppBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
@@ -361,17 +300,12 @@ impl AppBuilder {
         self
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-    pub fn set_assessment_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
-    ) -> Self {
+    pub fn set_assessment_schedule(mut self, input: ::std::option::Option<crate::types::AppAssessmentScheduleType>) -> Self {
         self.assessment_schedule = input;
         self
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-    pub fn get_assessment_schedule(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
+    pub fn get_assessment_schedule(&self) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
         &self.assessment_schedule
     }
     /// Consumes the builder and constructs a [`App`](crate::types::App).
@@ -402,15 +336,9 @@ impl ::std::fmt::Debug for AppBuilder {
         formatter.field("creation_time", &self.creation_time);
         formatter.field("status", &self.status);
         formatter.field("compliance_status", &self.compliance_status);
-        formatter.field(
-            "last_app_compliance_evaluation_time",
-            &self.last_app_compliance_evaluation_time,
-        );
+        formatter.field("last_app_compliance_evaluation_time", &self.last_app_compliance_evaluation_time);
         formatter.field("resiliency_score", &self.resiliency_score);
-        formatter.field(
-            "last_resiliency_score_evaluation_time",
-            &self.last_resiliency_score_evaluation_time,
-        );
+        formatter.field("last_resiliency_score_evaluation_time", &self.last_resiliency_score_evaluation_time);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("assessment_schedule", &self.assessment_schedule);
         formatter.finish()

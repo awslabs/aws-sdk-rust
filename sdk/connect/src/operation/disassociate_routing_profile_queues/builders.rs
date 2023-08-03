@@ -5,16 +5,16 @@ pub use crate::operation::disassociate_routing_profile_queues::_disassociate_rou
 
 impl DisassociateRoutingProfileQueuesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.disassociate_routing_profile_queues();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DisassociateRoutingProfileQueuesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateRoutingProfileQueuesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesInputBuilder,
+    inner: crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesInputBuilder,
 }
 impl DisassociateRoutingProfileQueuesFluentBuilder {
     /// Creates a new `DisassociateRoutingProfileQueues`.
@@ -37,15 +37,20 @@ impl DisassociateRoutingProfileQueuesFluentBuilder {
         }
     }
     /// Access the DisassociateRoutingProfileQueues as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueues, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueues,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DisassociateRoutingProfileQueuesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl DisassociateRoutingProfileQueuesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueues, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueues,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -109,18 +124,12 @@ impl DisassociateRoutingProfileQueuesFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.routing_profile_id(input.into());
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_routing_profile_id(input);
         self
     }
@@ -138,17 +147,12 @@ impl DisassociateRoutingProfileQueuesFluentBuilder {
         self
     }
     /// <p>The queues to disassociate from this routing profile.</p>
-    pub fn set_queue_references(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>>,
-    ) -> Self {
+    pub fn set_queue_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>>) -> Self {
         self.inner = self.inner.set_queue_references(input);
         self
     }
     /// <p>The queues to disassociate from this routing profile.</p>
-    pub fn get_queue_references(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>> {
+    pub fn get_queue_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>> {
         self.inner.get_queue_references()
     }
 }

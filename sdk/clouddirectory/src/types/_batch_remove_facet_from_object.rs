@@ -30,9 +30,7 @@ impl BatchRemoveFacetFromObject {
 
 /// A builder for [`BatchRemoveFacetFromObject`](crate::types::BatchRemoveFacetFromObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchRemoveFacetFromObjectBuilder {
     pub(crate) schema_facet: ::std::option::Option<crate::types::SchemaFacet>,
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -44,10 +42,7 @@ impl BatchRemoveFacetFromObjectBuilder {
         self
     }
     /// <p>The facet to remove from the object.</p>
-    pub fn set_schema_facet(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaFacet>,
-    ) -> Self {
+    pub fn set_schema_facet(mut self, input: ::std::option::Option<crate::types::SchemaFacet>) -> Self {
         self.schema_facet = input;
         self
     }
@@ -61,10 +56,7 @@ impl BatchRemoveFacetFromObjectBuilder {
         self
     }
     /// <p>A reference to the object whose facet will be removed.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.object_reference = input;
         self
     }

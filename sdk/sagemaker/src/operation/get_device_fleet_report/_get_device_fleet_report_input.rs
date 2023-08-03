@@ -15,34 +15,25 @@ impl GetDeviceFleetReportInput {
 }
 impl GetDeviceFleetReportInput {
     /// Creates a new builder-style object to manufacture [`GetDeviceFleetReportInput`](crate::operation::get_device_fleet_report::GetDeviceFleetReportInput).
-    pub fn builder(
-    ) -> crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportInputBuilder {
+    pub fn builder() -> crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportInputBuilder {
         crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeviceFleetReportInput`](crate::operation::get_device_fleet_report::GetDeviceFleetReportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeviceFleetReportInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDeviceFleetReportInputBuilder {
     /// <p>The name of the fleet.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -53,14 +44,10 @@ impl GetDeviceFleetReportInputBuilder {
     /// Consumes the builder and constructs a [`GetDeviceFleetReportInput`](crate::operation::get_device_fleet_report::GetDeviceFleetReportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_device_fleet_report::GetDeviceFleetReportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_device_fleet_report::GetDeviceFleetReportInput {
-                device_fleet_name: self.device_fleet_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_device_fleet_report::GetDeviceFleetReportInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_device_fleet_report::GetDeviceFleetReportInput {
+            device_fleet_name: self.device_fleet_name,
+        })
     }
 }

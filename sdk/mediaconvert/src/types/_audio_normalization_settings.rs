@@ -32,9 +32,7 @@ impl AudioNormalizationSettings {
         self.algorithm.as_ref()
     }
     /// When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured but not adjusted.
-    pub fn algorithm_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AudioNormalizationAlgorithmControl> {
+    pub fn algorithm_control(&self) -> ::std::option::Option<&crate::types::AudioNormalizationAlgorithmControl> {
         self.algorithm_control.as_ref()
     }
     /// Content measuring above this level will be corrected to the target level. Content measuring below this level will not be corrected.
@@ -42,15 +40,11 @@ impl AudioNormalizationSettings {
         self.correction_gate_level
     }
     /// If set to LOG, log each output's audio track loudness to a CSV file.
-    pub fn loudness_logging(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AudioNormalizationLoudnessLogging> {
+    pub fn loudness_logging(&self) -> ::std::option::Option<&crate::types::AudioNormalizationLoudnessLogging> {
         self.loudness_logging.as_ref()
     }
     /// If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
-    pub fn peak_calculation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AudioNormalizationPeakCalculation> {
+    pub fn peak_calculation(&self) -> ::std::option::Option<&crate::types::AudioNormalizationPeakCalculation> {
         self.peak_calculation.as_ref()
     }
     /// When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm. If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
@@ -71,18 +65,13 @@ impl AudioNormalizationSettings {
 
 /// A builder for [`AudioNormalizationSettings`](crate::types::AudioNormalizationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioNormalizationSettingsBuilder {
     pub(crate) algorithm: ::std::option::Option<crate::types::AudioNormalizationAlgorithm>,
-    pub(crate) algorithm_control:
-        ::std::option::Option<crate::types::AudioNormalizationAlgorithmControl>,
+    pub(crate) algorithm_control: ::std::option::Option<crate::types::AudioNormalizationAlgorithmControl>,
     pub(crate) correction_gate_level: ::std::option::Option<i32>,
-    pub(crate) loudness_logging:
-        ::std::option::Option<crate::types::AudioNormalizationLoudnessLogging>,
-    pub(crate) peak_calculation:
-        ::std::option::Option<crate::types::AudioNormalizationPeakCalculation>,
+    pub(crate) loudness_logging: ::std::option::Option<crate::types::AudioNormalizationLoudnessLogging>,
+    pub(crate) peak_calculation: ::std::option::Option<crate::types::AudioNormalizationPeakCalculation>,
     pub(crate) target_lkfs: ::std::option::Option<f64>,
     pub(crate) true_peak_limiter_threshold: ::std::option::Option<f64>,
 }
@@ -93,39 +82,26 @@ impl AudioNormalizationSettingsBuilder {
         self
     }
     /// Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of ungated average loudness for an entire piece of content, suitable for measurement of short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms, including configurations such as 7.1.
-    pub fn set_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioNormalizationAlgorithm>,
-    ) -> Self {
+    pub fn set_algorithm(mut self, input: ::std::option::Option<crate::types::AudioNormalizationAlgorithm>) -> Self {
         self.algorithm = input;
         self
     }
     /// Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of ungated average loudness for an entire piece of content, suitable for measurement of short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms, including configurations such as 7.1.
-    pub fn get_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioNormalizationAlgorithm> {
+    pub fn get_algorithm(&self) -> &::std::option::Option<crate::types::AudioNormalizationAlgorithm> {
         &self.algorithm
     }
     /// When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured but not adjusted.
-    pub fn algorithm_control(
-        mut self,
-        input: crate::types::AudioNormalizationAlgorithmControl,
-    ) -> Self {
+    pub fn algorithm_control(mut self, input: crate::types::AudioNormalizationAlgorithmControl) -> Self {
         self.algorithm_control = ::std::option::Option::Some(input);
         self
     }
     /// When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured but not adjusted.
-    pub fn set_algorithm_control(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioNormalizationAlgorithmControl>,
-    ) -> Self {
+    pub fn set_algorithm_control(mut self, input: ::std::option::Option<crate::types::AudioNormalizationAlgorithmControl>) -> Self {
         self.algorithm_control = input;
         self
     }
     /// When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured but not adjusted.
-    pub fn get_algorithm_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioNormalizationAlgorithmControl> {
+    pub fn get_algorithm_control(&self) -> &::std::option::Option<crate::types::AudioNormalizationAlgorithmControl> {
         &self.algorithm_control
     }
     /// Content measuring above this level will be corrected to the target level. Content measuring below this level will not be corrected.
@@ -143,47 +119,31 @@ impl AudioNormalizationSettingsBuilder {
         &self.correction_gate_level
     }
     /// If set to LOG, log each output's audio track loudness to a CSV file.
-    pub fn loudness_logging(
-        mut self,
-        input: crate::types::AudioNormalizationLoudnessLogging,
-    ) -> Self {
+    pub fn loudness_logging(mut self, input: crate::types::AudioNormalizationLoudnessLogging) -> Self {
         self.loudness_logging = ::std::option::Option::Some(input);
         self
     }
     /// If set to LOG, log each output's audio track loudness to a CSV file.
-    pub fn set_loudness_logging(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioNormalizationLoudnessLogging>,
-    ) -> Self {
+    pub fn set_loudness_logging(mut self, input: ::std::option::Option<crate::types::AudioNormalizationLoudnessLogging>) -> Self {
         self.loudness_logging = input;
         self
     }
     /// If set to LOG, log each output's audio track loudness to a CSV file.
-    pub fn get_loudness_logging(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioNormalizationLoudnessLogging> {
+    pub fn get_loudness_logging(&self) -> &::std::option::Option<crate::types::AudioNormalizationLoudnessLogging> {
         &self.loudness_logging
     }
     /// If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
-    pub fn peak_calculation(
-        mut self,
-        input: crate::types::AudioNormalizationPeakCalculation,
-    ) -> Self {
+    pub fn peak_calculation(mut self, input: crate::types::AudioNormalizationPeakCalculation) -> Self {
         self.peak_calculation = ::std::option::Option::Some(input);
         self
     }
     /// If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
-    pub fn set_peak_calculation(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioNormalizationPeakCalculation>,
-    ) -> Self {
+    pub fn set_peak_calculation(mut self, input: ::std::option::Option<crate::types::AudioNormalizationPeakCalculation>) -> Self {
         self.peak_calculation = input;
         self
     }
     /// If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
-    pub fn get_peak_calculation(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioNormalizationPeakCalculation> {
+    pub fn get_peak_calculation(&self) -> &::std::option::Option<crate::types::AudioNormalizationPeakCalculation> {
         &self.peak_calculation
     }
     /// When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm. If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.

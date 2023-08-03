@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdatePartnerAccountOutput {
 }
 impl UpdatePartnerAccountOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePartnerAccountOutput`](crate::operation::update_partner_account::UpdatePartnerAccountOutput).
-    pub fn builder(
-    ) -> crate::operation::update_partner_account::builders::UpdatePartnerAccountOutputBuilder {
+    pub fn builder() -> crate::operation::update_partner_account::builders::UpdatePartnerAccountOutputBuilder {
         crate::operation::update_partner_account::builders::UpdatePartnerAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePartnerAccountOutput`](crate::operation::update_partner_account::UpdatePartnerAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePartnerAccountOutputBuilder {
     _request_id: Option<String>,
 }

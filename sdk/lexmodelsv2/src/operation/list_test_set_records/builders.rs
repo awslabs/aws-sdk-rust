@@ -10,10 +10,7 @@ impl ListTestSetRecordsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_test_set_records::ListTestSetRecordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_set_records::ListTestSetRecordsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_set_records::ListTestSetRecordsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_test_set_records();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListTestSetRecordsFluentBuilder {
         }
     }
     /// Access the ListTestSetRecords as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_test_set_records::builders::ListTestSetRecordsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_test_set_records::builders::ListTestSetRecordsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListTestSetRecordsFluentBuilder {
             crate::operation::list_test_set_records::ListTestSetRecords,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_set_records::ListTestSetRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_set_records::ListTestSetRecordsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListTestSetRecordsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListTestSetRecordsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_set_records::ListTestSetRecordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_set_records::ListTestSetRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_set_records::ListTestSetRecordsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListTestSetRecordsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_set_records::ListTestSetRecordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_set_records::ListTestSetRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_set_records::ListTestSetRecordsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListTestSetRecordsFluentBuilder {
             crate::operation::list_test_set_records::ListTestSetRecords,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_set_records::ListTestSetRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_set_records::ListTestSetRecordsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_test_set_records::paginator::ListTestSetRecordsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_test_set_records::paginator::ListTestSetRecordsPaginator {
-        crate::operation::list_test_set_records::paginator::ListTestSetRecordsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_test_set_records::paginator::ListTestSetRecordsPaginator {
+        crate::operation::list_test_set_records::paginator::ListTestSetRecordsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the test set to list its test set records.</p>
     pub fn test_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -26,10 +26,11 @@ pub fn ser_put_scaling_policy_input(
     }
     if let Some(var_8) = &input.target_tracking_scaling_policy_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object
-            .key("TargetTrackingScalingPolicyConfiguration")
-            .start_object();
-        crate::protocol_serde::shape_target_tracking_scaling_policy_configuration::ser_target_tracking_scaling_policy_configuration(&mut object_9, var_8)?;
+        let mut object_9 = object.key("TargetTrackingScalingPolicyConfiguration").start_object();
+        crate::protocol_serde::shape_target_tracking_scaling_policy_configuration::ser_target_tracking_scaling_policy_configuration(
+            &mut object_9,
+            var_8,
+        )?;
         object_9.finish();
     }
     Ok(())

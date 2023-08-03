@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetSolNetworkPackageDescriptorOutput 
 }
 impl GetSolNetworkPackageDescriptorOutput {
     /// Creates a new builder-style object to manufacture [`GetSolNetworkPackageDescriptorOutput`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput).
-    pub fn builder() -> crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorOutputBuilder{
+    pub fn builder() -> crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorOutputBuilder {
         crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSolNetworkPackageDescriptorOutput`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolNetworkPackageDescriptorOutputBuilder {
     pub(crate) content_type: ::std::option::Option<crate::types::DescriptorContentType>,
     pub(crate) nsd: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -50,10 +48,7 @@ impl GetSolNetworkPackageDescriptorOutputBuilder {
         self
     }
     /// <p>Indicates the media type of the resource.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DescriptorContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::DescriptorContentType>) -> Self {
         self.content_type = input;
         self
     }
@@ -85,10 +80,7 @@ impl GetSolNetworkPackageDescriptorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSolNetworkPackageDescriptorOutput`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput
-    {
+    pub fn build(self) -> crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput {
         crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput {
             content_type: self.content_type,
             nsd: self.nsd,

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePresetOutput`](crate::operation::create_preset::CreatePresetOutput) with field(s):
     ///   - [`preset(Option<Preset>)`](crate::operation::create_preset::CreatePresetOutput::preset): A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     /// - On failure, responds with [`SdkError<CreatePresetError>`](crate::operation::create_preset::CreatePresetError)
-    pub fn create_preset(
-        &self,
-    ) -> crate::operation::create_preset::builders::CreatePresetFluentBuilder {
-        crate::operation::create_preset::builders::CreatePresetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_preset(&self) -> crate::operation::create_preset::builders::CreatePresetFluentBuilder {
+        crate::operation::create_preset::builders::CreatePresetFluentBuilder::new(self.handle.clone())
     }
 }

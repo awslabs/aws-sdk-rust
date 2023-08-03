@@ -58,9 +58,7 @@ impl LineChartMarkerStyleSettings {
 
 /// A builder for [`LineChartMarkerStyleSettings`](crate::types::LineChartMarkerStyleSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LineChartMarkerStyleSettingsBuilder {
     pub(crate) marker_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) marker_shape: ::std::option::Option<crate::types::LineChartMarkerShape>,
@@ -74,10 +72,7 @@ impl LineChartMarkerStyleSettingsBuilder {
         self
     }
     /// <p>Configuration option that determines whether to show the markers in the series.</p>
-    pub fn set_marker_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_marker_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.marker_visibility = input;
         self
     }
@@ -105,10 +100,7 @@ impl LineChartMarkerStyleSettingsBuilder {
     /// <li> <p> <code>DIAMOND</code>: Show marker as a diamond.</p> </li>
     /// <li> <p> <code>ROUNDED_SQUARE</code>: Show marker as a rounded square.</p> </li>
     /// </ul>
-    pub fn set_marker_shape(
-        mut self,
-        input: ::std::option::Option<crate::types::LineChartMarkerShape>,
-    ) -> Self {
+    pub fn set_marker_shape(mut self, input: ::std::option::Option<crate::types::LineChartMarkerShape>) -> Self {
         self.marker_shape = input;
         self
     }

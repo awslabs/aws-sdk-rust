@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`resources(Option<Vec<ResourceInfo>>)`](crate::operation::list_associated_resources::ListAssociatedResourcesOutput::resources): <p>Information about the resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_associated_resources::ListAssociatedResourcesOutput::next_token): <p>The token to use to get the next page of results after a previous API call. </p>
     /// - On failure, responds with [`SdkError<ListAssociatedResourcesError>`](crate::operation::list_associated_resources::ListAssociatedResourcesError)
-    pub fn list_associated_resources(
-        &self,
-    ) -> crate::operation::list_associated_resources::builders::ListAssociatedResourcesFluentBuilder
-    {
+    pub fn list_associated_resources(&self) -> crate::operation::list_associated_resources::builders::ListAssociatedResourcesFluentBuilder {
         crate::operation::list_associated_resources::builders::ListAssociatedResourcesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteExplainabilityOutput {
 }
 impl DeleteExplainabilityOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExplainabilityOutput`](crate::operation::delete_explainability::DeleteExplainabilityOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_explainability::builders::DeleteExplainabilityOutputBuilder {
+    pub fn builder() -> crate::operation::delete_explainability::builders::DeleteExplainabilityOutputBuilder {
         crate::operation::delete_explainability::builders::DeleteExplainabilityOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteExplainabilityOutput`](crate::operation::delete_explainability::DeleteExplainabilityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteExplainabilityOutputBuilder {
     _request_id: Option<String>,
 }

@@ -37,9 +37,7 @@ impl ListAssociatedStacksFluentBuilder {
         }
     }
     /// Access the ListAssociatedStacks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_associated_stacks::builders::ListAssociatedStacksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_associated_stacks::builders::ListAssociatedStacksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListAssociatedStacksFluentBuilder {
             crate::operation::list_associated_stacks::ListAssociatedStacks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_stacks::ListAssociatedStacksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_stacks::ListAssociatedStacksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListAssociatedStacksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListAssociatedStacksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_associated_stacks::ListAssociatedStacksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_stacks::ListAssociatedStacksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_stacks::ListAssociatedStacksError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListAssociatedStacksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_associated_stacks::ListAssociatedStacksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_stacks::ListAssociatedStacksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_stacks::ListAssociatedStacksError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ListAssociatedStacksFluentBuilder {
             crate::operation::list_associated_stacks::ListAssociatedStacks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_stacks::ListAssociatedStacksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_stacks::ListAssociatedStacksError>,
     > {
         self.customize_middleware().await
     }

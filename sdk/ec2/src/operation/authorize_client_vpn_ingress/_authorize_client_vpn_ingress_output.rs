@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for AuthorizeClientVpnIngressOutput {
 }
 impl AuthorizeClientVpnIngressOutput {
     /// Creates a new builder-style object to manufacture [`AuthorizeClientVpnIngressOutput`](crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressOutput).
-    pub fn builder() -> crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressOutputBuilder{
+    pub fn builder() -> crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressOutputBuilder {
         crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressOutputBuilder::default()
     }
 }
 
 /// A builder for [`AuthorizeClientVpnIngressOutput`](crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeClientVpnIngressOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl AuthorizeClientVpnIngressOutputBuilder {
         self
     }
     /// <p>The current state of the authorization rule.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The current state of the authorization rule.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl AuthorizeClientVpnIngressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AuthorizeClientVpnIngressOutput`](crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressOutput {
+    pub fn build(self) -> crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressOutput {
         crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressOutput {
             status: self.status,
             _request_id: self._request_id,

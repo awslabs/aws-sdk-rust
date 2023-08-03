@@ -9,8 +9,7 @@ pub struct AwsGuardDutyDetectorDetails {
     pub data_sources: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesDetails>,
     /// <p> Describes which features are activated for the detector. </p>
     #[doc(hidden)]
-    pub features:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsGuardDutyDetectorFeaturesDetails>>,
+    pub features: ::std::option::Option<::std::vec::Vec<crate::types::AwsGuardDutyDetectorFeaturesDetails>>,
     /// <p> The publishing frequency of the finding. </p>
     #[doc(hidden)]
     pub finding_publishing_frequency: ::std::option::Option<::std::string::String>,
@@ -23,15 +22,11 @@ pub struct AwsGuardDutyDetectorDetails {
 }
 impl AwsGuardDutyDetectorDetails {
     /// <p> Describes which data sources are activated for the detector. </p>
-    pub fn data_sources(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsGuardDutyDetectorDataSourcesDetails> {
+    pub fn data_sources(&self) -> ::std::option::Option<&crate::types::AwsGuardDutyDetectorDataSourcesDetails> {
         self.data_sources.as_ref()
     }
     /// <p> Describes which features are activated for the detector. </p>
-    pub fn features(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsGuardDutyDetectorFeaturesDetails]> {
+    pub fn features(&self) -> ::std::option::Option<&[crate::types::AwsGuardDutyDetectorFeaturesDetails]> {
         self.features.as_deref()
     }
     /// <p> The publishing frequency of the finding. </p>
@@ -56,39 +51,27 @@ impl AwsGuardDutyDetectorDetails {
 
 /// A builder for [`AwsGuardDutyDetectorDetails`](crate::types::AwsGuardDutyDetectorDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsGuardDutyDetectorDetailsBuilder {
-    pub(crate) data_sources:
-        ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesDetails>,
-    pub(crate) features:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsGuardDutyDetectorFeaturesDetails>>,
+    pub(crate) data_sources: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesDetails>,
+    pub(crate) features: ::std::option::Option<::std::vec::Vec<crate::types::AwsGuardDutyDetectorFeaturesDetails>>,
     pub(crate) finding_publishing_frequency: ::std::option::Option<::std::string::String>,
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl AwsGuardDutyDetectorDetailsBuilder {
     /// <p> Describes which data sources are activated for the detector. </p>
-    pub fn data_sources(
-        mut self,
-        input: crate::types::AwsGuardDutyDetectorDataSourcesDetails,
-    ) -> Self {
+    pub fn data_sources(mut self, input: crate::types::AwsGuardDutyDetectorDataSourcesDetails) -> Self {
         self.data_sources = ::std::option::Option::Some(input);
         self
     }
     /// <p> Describes which data sources are activated for the detector. </p>
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesDetails>,
-    ) -> Self {
+    pub fn set_data_sources(mut self, input: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesDetails>) -> Self {
         self.data_sources = input;
         self
     }
     /// <p> Describes which data sources are activated for the detector. </p>
-    pub fn get_data_sources(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesDetails> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesDetails> {
         &self.data_sources
     }
     /// Appends an item to `features`.
@@ -103,42 +86,26 @@ impl AwsGuardDutyDetectorDetailsBuilder {
         self
     }
     /// <p> Describes which features are activated for the detector. </p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsGuardDutyDetectorFeaturesDetails>,
-        >,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsGuardDutyDetectorFeaturesDetails>>) -> Self {
         self.features = input;
         self
     }
     /// <p> Describes which features are activated for the detector. </p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsGuardDutyDetectorFeaturesDetails>>
-    {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsGuardDutyDetectorFeaturesDetails>> {
         &self.features
     }
     /// <p> The publishing frequency of the finding. </p>
-    pub fn finding_publishing_frequency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn finding_publishing_frequency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_publishing_frequency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The publishing frequency of the finding. </p>
-    pub fn set_finding_publishing_frequency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_finding_publishing_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.finding_publishing_frequency = input;
         self
     }
     /// <p> The publishing frequency of the finding. </p>
-    pub fn get_finding_publishing_frequency(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_finding_publishing_frequency(&self) -> &::std::option::Option<::std::string::String> {
         &self.finding_publishing_frequency
     }
     /// <p> The GuardDuty service role. </p>

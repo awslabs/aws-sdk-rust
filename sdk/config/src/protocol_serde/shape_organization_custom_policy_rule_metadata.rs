@@ -7,9 +7,7 @@ pub fn ser_organization_custom_policy_rule_metadata(
         object.key("Description").string(var_1.as_str());
     }
     if let Some(var_2) = &input.organization_config_rule_trigger_types {
-        let mut array_3 = object
-            .key("OrganizationConfigRuleTriggerTypes")
-            .start_array();
+        let mut array_3 = object.key("OrganizationConfigRuleTriggerTypes").start_array();
         for item_4 in var_2 {
             {
                 array_3.value().string(item_4.as_str());
@@ -21,9 +19,7 @@ pub fn ser_organization_custom_policy_rule_metadata(
         object.key("InputParameters").string(var_5.as_str());
     }
     if let Some(var_6) = &input.maximum_execution_frequency {
-        object
-            .key("MaximumExecutionFrequency")
-            .string(var_6.as_str());
+        object.key("MaximumExecutionFrequency").string(var_6.as_str());
     }
     if let Some(var_7) = &input.resource_types_scope {
         let mut array_8 = object.key("ResourceTypesScope").start_array();

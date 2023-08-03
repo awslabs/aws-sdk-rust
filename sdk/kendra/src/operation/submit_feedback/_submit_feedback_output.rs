@@ -19,9 +19,7 @@ impl SubmitFeedbackOutput {
 
 /// A builder for [`SubmitFeedbackOutput`](crate::operation::submit_feedback::SubmitFeedbackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubmitFeedbackOutputBuilder {
     _request_id: Option<String>,
 }

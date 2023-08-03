@@ -7,9 +7,7 @@ pub fn ser_update_organization_configuration_input(
         object.key("autoEnable").boolean(*var_1);
     }
     if let Some(var_2) = &input.auto_enable_organization_members {
-        object
-            .key("autoEnableOrganizationMembers")
-            .string(var_2.as_str());
+        object.key("autoEnableOrganizationMembers").string(var_2.as_str());
     }
     if let Some(var_3) = &input.data_sources {
         #[allow(unused_mut)]

@@ -22,35 +22,26 @@ impl UpdateSmsChannelInput {
 }
 impl UpdateSmsChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateSmsChannelInput`](crate::operation::update_sms_channel::UpdateSmsChannelInput).
-    pub fn builder() -> crate::operation::update_sms_channel::builders::UpdateSmsChannelInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_sms_channel::builders::UpdateSmsChannelInputBuilder {
         crate::operation::update_sms_channel::builders::UpdateSmsChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSmsChannelInput`](crate::operation::update_sms_channel::UpdateSmsChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSmsChannelInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) sms_channel_request: ::std::option::Option<crate::types::SmsChannelRequest>,
 }
 impl UpdateSmsChannelInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -64,31 +55,21 @@ impl UpdateSmsChannelInputBuilder {
         self
     }
     /// <p>Specifies the status and settings of the SMS channel for an application.</p>
-    pub fn set_sms_channel_request(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsChannelRequest>,
-    ) -> Self {
+    pub fn set_sms_channel_request(mut self, input: ::std::option::Option<crate::types::SmsChannelRequest>) -> Self {
         self.sms_channel_request = input;
         self
     }
     /// <p>Specifies the status and settings of the SMS channel for an application.</p>
-    pub fn get_sms_channel_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmsChannelRequest> {
+    pub fn get_sms_channel_request(&self) -> &::std::option::Option<crate::types::SmsChannelRequest> {
         &self.sms_channel_request
     }
     /// Consumes the builder and constructs a [`UpdateSmsChannelInput`](crate::operation::update_sms_channel::UpdateSmsChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_sms_channel::UpdateSmsChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_sms_channel::UpdateSmsChannelInput {
-                application_id: self.application_id,
-                sms_channel_request: self.sms_channel_request,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_sms_channel::UpdateSmsChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_sms_channel::UpdateSmsChannelInput {
+            application_id: self.application_id,
+            sms_channel_request: self.sms_channel_request,
+        })
     }
 }

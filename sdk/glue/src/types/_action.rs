@@ -12,9 +12,7 @@ pub struct Action {
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     #[doc(hidden)]
-    pub arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
     #[doc(hidden)]
     pub timeout: ::std::option::Option<i32>,
@@ -37,11 +35,7 @@ impl Action {
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
-    pub fn arguments(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn arguments(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.arguments.as_ref()
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
@@ -53,9 +47,7 @@ impl Action {
         self.security_configuration.as_deref()
     }
     /// <p>Specifies configuration properties of a job run notification.</p>
-    pub fn notification_property(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationProperty> {
+    pub fn notification_property(&self) -> ::std::option::Option<&crate::types::NotificationProperty> {
         self.notification_property.as_ref()
     }
     /// <p>The name of the crawler to be used with this action.</p>
@@ -72,14 +64,10 @@ impl Action {
 
 /// A builder for [`Action`](crate::types::Action).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
-    pub(crate) arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) timeout: ::std::option::Option<i32>,
     pub(crate) security_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) notification_property: ::std::option::Option<crate::types::NotificationProperty>,
@@ -108,11 +96,7 @@ impl ActionBuilder {
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
-    pub fn arguments(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn arguments(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.arguments.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.arguments = ::std::option::Option::Some(hash_map);
@@ -122,12 +106,7 @@ impl ActionBuilder {
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
-    pub fn set_arguments(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_arguments(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.arguments = input;
         self
     }
@@ -135,11 +114,7 @@ impl ActionBuilder {
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
-    pub fn get_arguments(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.arguments
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
@@ -157,18 +132,12 @@ impl ActionBuilder {
         &self.timeout
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this action.</p>
-    pub fn security_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this action.</p>
-    pub fn set_security_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_configuration = input;
         self
     }
@@ -182,17 +151,12 @@ impl ActionBuilder {
         self
     }
     /// <p>Specifies configuration properties of a job run notification.</p>
-    pub fn set_notification_property(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationProperty>,
-    ) -> Self {
+    pub fn set_notification_property(mut self, input: ::std::option::Option<crate::types::NotificationProperty>) -> Self {
         self.notification_property = input;
         self
     }
     /// <p>Specifies configuration properties of a job run notification.</p>
-    pub fn get_notification_property(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationProperty> {
+    pub fn get_notification_property(&self) -> &::std::option::Option<crate::types::NotificationProperty> {
         &self.notification_property
     }
     /// <p>The name of the crawler to be used with this action.</p>

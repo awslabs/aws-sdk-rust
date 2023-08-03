@@ -10,10 +10,7 @@ impl PublishAppVersionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::publish_app_version::PublishAppVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::publish_app_version::PublishAppVersionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_app_version::PublishAppVersionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.publish_app_version();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PublishAppVersionFluentBuilder {
         }
     }
     /// Access the PublishAppVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::publish_app_version::builders::PublishAppVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::publish_app_version::builders::PublishAppVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PublishAppVersionFluentBuilder {
             crate::operation::publish_app_version::PublishAppVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::publish_app_version::PublishAppVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_app_version::PublishAppVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PublishAppVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PublishAppVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::publish_app_version::PublishAppVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::publish_app_version::PublishAppVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_app_version::PublishAppVersionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PublishAppVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::publish_app_version::PublishAppVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::publish_app_version::PublishAppVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_app_version::PublishAppVersionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PublishAppVersionFluentBuilder {
             crate::operation::publish_app_version::PublishAppVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::publish_app_version::PublishAppVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_app_version::PublishAppVersionError>,
     > {
         self.customize_middleware().await
     }

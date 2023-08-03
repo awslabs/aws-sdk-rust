@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`beneficiary(impl ::std::convert::Into<String>)`](crate::operation::check_in_license::builders::CheckInLicenseFluentBuilder::beneficiary) / [`set_beneficiary(Option<String>)`](crate::operation::check_in_license::builders::CheckInLicenseFluentBuilder::set_beneficiary): <p>License beneficiary.</p>
     /// - On success, responds with [`CheckInLicenseOutput`](crate::operation::check_in_license::CheckInLicenseOutput)
     /// - On failure, responds with [`SdkError<CheckInLicenseError>`](crate::operation::check_in_license::CheckInLicenseError)
-    pub fn check_in_license(
-        &self,
-    ) -> crate::operation::check_in_license::builders::CheckInLicenseFluentBuilder {
-        crate::operation::check_in_license::builders::CheckInLicenseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn check_in_license(&self) -> crate::operation::check_in_license::builders::CheckInLicenseFluentBuilder {
+        crate::operation::check_in_license::builders::CheckInLicenseFluentBuilder::new(self.handle.clone())
     }
 }

@@ -31,9 +31,7 @@ impl ListHealthChecksPaginator {
     ///
     /// This paginator automatically flattens results using `health_checks`. Queries to the underlying service
     /// are dispatched lazily.
-    pub fn items(
-        self,
-    ) -> crate::operation::list_health_checks::paginator::ListHealthChecksPaginatorItems {
+    pub fn items(self) -> crate::operation::list_health_checks::paginator::ListHealthChecksPaginatorItems {
         crate::operation::list_health_checks::paginator::ListHealthChecksPaginatorItems(self)
     }
 
@@ -57,9 +55,7 @@ impl ListHealthChecksPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::list_health_checks::ListHealthChecksOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_health_checks::ListHealthChecksError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_health_checks::ListHealthChecksError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -69,10 +65,7 @@ impl ListHealthChecksPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -97,13 +90,9 @@ impl ListHealthChecksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_list_health_checks_output_next_marker(resp);
+                            let new_token = crate::lens::reflens_list_health_checks_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.marker.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.marker = new_token.cloned();
@@ -141,9 +130,7 @@ impl ListHealthChecksPaginatorItems {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::types::HealthCheck,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_health_checks::ListHealthChecksError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_health_checks::ListHealthChecksError>,
         >,
     > + ::std::marker::Unpin {
         ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {

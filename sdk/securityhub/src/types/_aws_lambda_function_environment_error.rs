@@ -30,9 +30,7 @@ impl AwsLambdaFunctionEnvironmentError {
 
 /// A builder for [`AwsLambdaFunctionEnvironmentError`](crate::types::AwsLambdaFunctionEnvironmentError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionEnvironmentErrorBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

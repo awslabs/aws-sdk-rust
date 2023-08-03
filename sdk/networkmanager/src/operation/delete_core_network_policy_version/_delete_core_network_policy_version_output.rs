@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteCoreNetworkPolicyVersionOutput 
 }
 impl DeleteCoreNetworkPolicyVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCoreNetworkPolicyVersionOutput`](crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput).
-    pub fn builder() -> crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionOutputBuilder {
         crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCoreNetworkPolicyVersionOutput`](crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCoreNetworkPolicyVersionOutputBuilder {
     pub(crate) core_network_policy: ::std::option::Option<crate::types::CoreNetworkPolicy>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DeleteCoreNetworkPolicyVersionOutputBuilder {
         self
     }
     /// <p>Returns information about the deleted policy version. </p>
-    pub fn set_core_network_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::CoreNetworkPolicy>,
-    ) -> Self {
+    pub fn set_core_network_policy(mut self, input: ::std::option::Option<crate::types::CoreNetworkPolicy>) -> Self {
         self.core_network_policy = input;
         self
     }
     /// <p>Returns information about the deleted policy version. </p>
-    pub fn get_core_network_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoreNetworkPolicy> {
+    pub fn get_core_network_policy(&self) -> &::std::option::Option<crate::types::CoreNetworkPolicy> {
         &self.core_network_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,10 +58,7 @@ impl DeleteCoreNetworkPolicyVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCoreNetworkPolicyVersionOutput`](crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput
-    {
+    pub fn build(self) -> crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput {
         crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput {
             core_network_policy: self.core_network_policy,
             _request_id: self._request_id,

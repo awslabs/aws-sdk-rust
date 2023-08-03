@@ -26,7 +26,7 @@ impl BatchCreateRoomMembershipInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchCreateRoomMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipInputBuilder,
+    inner: crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipInputBuilder,
 }
 impl BatchCreateRoomMembershipFluentBuilder {
     /// Creates a new `BatchCreateRoomMembership`.
@@ -37,7 +37,7 @@ impl BatchCreateRoomMembershipFluentBuilder {
         }
     }
     /// Access the BatchCreateRoomMembership as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchCreateRoomMembershipFluentBuilder {
             crate::operation::batch_create_room_membership::BatchCreateRoomMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_room_membership::BatchCreateRoomMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_room_membership::BatchCreateRoomMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchCreateRoomMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchCreateRoomMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_room_membership::BatchCreateRoomMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_room_membership::BatchCreateRoomMembershipError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchCreateRoomMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_room_membership::BatchCreateRoomMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_room_membership::BatchCreateRoomMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchCreateRoomMembershipFluentBuilder {
             crate::operation::batch_create_room_membership::BatchCreateRoomMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_create_room_membership::BatchCreateRoomMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_create_room_membership::BatchCreateRoomMembershipError>,
     > {
         self.customize_middleware().await
     }
@@ -158,17 +147,12 @@ impl BatchCreateRoomMembershipFluentBuilder {
         self
     }
     /// <p>The list of membership items.</p>
-    pub fn set_membership_item_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MembershipItem>>,
-    ) -> Self {
+    pub fn set_membership_item_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MembershipItem>>) -> Self {
         self.inner = self.inner.set_membership_item_list(input);
         self
     }
     /// <p>The list of membership items.</p>
-    pub fn get_membership_item_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MembershipItem>> {
+    pub fn get_membership_item_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MembershipItem>> {
         self.inner.get_membership_item_list()
     }
 }

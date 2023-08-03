@@ -27,7 +27,7 @@ impl DeleteSkillAuthorizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSkillAuthorizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationInputBuilder,
+    inner: crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationInputBuilder,
 }
 impl DeleteSkillAuthorizationFluentBuilder {
     /// Creates a new `DeleteSkillAuthorization`.
@@ -38,10 +38,7 @@ impl DeleteSkillAuthorizationFluentBuilder {
         }
     }
     /// Access the DeleteSkillAuthorization as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteSkillAuthorizationFluentBuilder {
             crate::operation::delete_skill_authorization::DeleteSkillAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_skill_authorization::DeleteSkillAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_skill_authorization::DeleteSkillAuthorizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteSkillAuthorizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteSkillAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_skill_authorization::DeleteSkillAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_skill_authorization::DeleteSkillAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_skill_authorization::DeleteSkillAuthorizationError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteSkillAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_skill_authorization::DeleteSkillAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_skill_authorization::DeleteSkillAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_skill_authorization::DeleteSkillAuthorizationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DeleteSkillAuthorizationFluentBuilder {
             crate::operation::delete_skill_authorization::DeleteSkillAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_skill_authorization::DeleteSkillAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_skill_authorization::DeleteSkillAuthorizationError>,
     > {
         self.customize_middleware().await
     }

@@ -22,16 +22,14 @@ impl AssociateContactWithAddressBookInput {
 }
 impl AssociateContactWithAddressBookInput {
     /// Creates a new builder-style object to manufacture [`AssociateContactWithAddressBookInput`](crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookInput).
-    pub fn builder() -> crate::operation::associate_contact_with_address_book::builders::AssociateContactWithAddressBookInputBuilder{
+    pub fn builder() -> crate::operation::associate_contact_with_address_book::builders::AssociateContactWithAddressBookInputBuilder {
         crate::operation::associate_contact_with_address_book::builders::AssociateContactWithAddressBookInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateContactWithAddressBookInput`](crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateContactWithAddressBookInputBuilder {
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
     pub(crate) address_book_arn: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl AssociateContactWithAddressBookInputBuilder {
         &self.contact_arn
     }
     /// <p>The ARN of the address book with which to associate the contact.</p>
-    pub fn address_book_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_book_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_book_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the address book with which to associate the contact.</p>
-    pub fn set_address_book_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_book_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_book_arn = input;
         self
     }
@@ -80,11 +72,9 @@ impl AssociateContactWithAddressBookInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookInput {
-                contact_arn: self.contact_arn
-                ,
-                address_book_arn: self.address_book_arn
-                ,
-            }
+                contact_arn: self.contact_arn,
+                address_book_arn: self.address_book_arn,
+            },
         )
     }
 }

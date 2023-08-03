@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeEndpointGroupOutput {
 }
 impl DescribeEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointGroupOutput`](crate::operation::describe_endpoint_group::DescribeEndpointGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupOutputBuilder {
         crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointGroupOutput`](crate::operation::describe_endpoint_group::DescribeEndpointGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointGroupOutputBuilder {
     pub(crate) endpoint_group: ::std::option::Option<crate::types::EndpointGroup>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeEndpointGroupOutputBuilder {
         self
     }
     /// <p>The description of an endpoint group.</p>
-    pub fn set_endpoint_group(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointGroup>,
-    ) -> Self {
+    pub fn set_endpoint_group(mut self, input: ::std::option::Option<crate::types::EndpointGroup>) -> Self {
         self.endpoint_group = input;
         self
     }

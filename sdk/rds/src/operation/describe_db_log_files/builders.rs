@@ -10,10 +10,7 @@ impl DescribeDbLogFilesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_db_log_files::DescribeDbLogFilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_log_files::DescribeDBLogFilesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_log_files::DescribeDBLogFilesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_db_log_files();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeDBLogFilesFluentBuilder {
         }
     }
     /// Access the DescribeDBLogFiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_db_log_files::builders::DescribeDbLogFilesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_db_log_files::builders::DescribeDbLogFilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeDBLogFilesFluentBuilder {
             crate::operation::describe_db_log_files::DescribeDBLogFiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_log_files::DescribeDBLogFilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_log_files::DescribeDBLogFilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeDBLogFilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeDBLogFilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_log_files::DescribeDbLogFilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_log_files::DescribeDBLogFilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_log_files::DescribeDBLogFilesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeDBLogFilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_log_files::DescribeDbLogFilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_log_files::DescribeDBLogFilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_log_files::DescribeDBLogFilesError>,
     > {
         self.send_middleware().await
     }
@@ -117,32 +103,22 @@ impl DescribeDBLogFilesFluentBuilder {
             crate::operation::describe_db_log_files::DescribeDBLogFiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_log_files::DescribeDBLogFilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_log_files::DescribeDBLogFilesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator {
-        crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator {
+        crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator::new(self.handle, self.inner)
     }
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
@@ -151,10 +127,7 @@ impl DescribeDBLogFilesFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
@@ -167,18 +140,12 @@ impl DescribeDBLogFilesFluentBuilder {
         self.inner.get_db_instance_identifier()
     }
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
-    pub fn filename_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filename_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filename_contains(input.into());
         self
     }
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
-    pub fn set_filename_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filename_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filename_contains(input);
         self
     }
@@ -224,10 +191,7 @@ impl DescribeDBLogFilesFluentBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

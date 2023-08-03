@@ -9,8 +9,7 @@ pub struct FrameworkControl {
     pub control_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
     #[doc(hidden)]
-    pub control_input_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>,
+    pub control_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>,
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a> </p>
     #[doc(hidden)]
     pub control_scope: ::std::option::Option<crate::types::ControlScope>,
@@ -21,9 +20,7 @@ impl FrameworkControl {
         self.control_name.as_deref()
     }
     /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
-    pub fn control_input_parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ControlInputParameter]> {
+    pub fn control_input_parameters(&self) -> ::std::option::Option<&[crate::types::ControlInputParameter]> {
         self.control_input_parameters.as_deref()
     }
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a> </p>
@@ -40,13 +37,10 @@ impl FrameworkControl {
 
 /// A builder for [`FrameworkControl`](crate::types::FrameworkControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FrameworkControlBuilder {
     pub(crate) control_name: ::std::option::Option<::std::string::String>,
-    pub(crate) control_input_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>,
+    pub(crate) control_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>,
     pub(crate) control_scope: ::std::option::Option<crate::types::ControlScope>,
 }
 impl FrameworkControlBuilder {
@@ -76,17 +70,12 @@ impl FrameworkControlBuilder {
         self
     }
     /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
-    pub fn set_control_input_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>,
-    ) -> Self {
+    pub fn set_control_input_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>) -> Self {
         self.control_input_parameters = input;
         self
     }
     /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
-    pub fn get_control_input_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>> {
+    pub fn get_control_input_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>> {
         &self.control_input_parameters
     }
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a> </p>
@@ -95,10 +84,7 @@ impl FrameworkControlBuilder {
         self
     }
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a> </p>
-    pub fn set_control_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlScope>,
-    ) -> Self {
+    pub fn set_control_scope(mut self, input: ::std::option::Option<crate::types::ControlScope>) -> Self {
         self.control_scope = input;
         self
     }

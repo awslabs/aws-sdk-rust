@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteKeySigningKeyOutput {
 }
 impl DeleteKeySigningKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKeySigningKeyOutput`](crate::operation::delete_key_signing_key::DeleteKeySigningKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_key_signing_key::builders::DeleteKeySigningKeyOutputBuilder {
+    pub fn builder() -> crate::operation::delete_key_signing_key::builders::DeleteKeySigningKeyOutputBuilder {
         crate::operation::delete_key_signing_key::builders::DeleteKeySigningKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteKeySigningKeyOutput`](crate::operation::delete_key_signing_key::DeleteKeySigningKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteKeySigningKeyOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteKeySigningKeyOutputBuilder {
         self
     }
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
-    pub fn set_change_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeInfo>,
-    ) -> Self {
+    pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
         self.change_info = input;
         self
     }

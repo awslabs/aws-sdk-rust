@@ -36,17 +36,14 @@ impl ListVocabulariesInput {
 }
 impl ListVocabulariesInput {
     /// Creates a new builder-style object to manufacture [`ListVocabulariesInput`](crate::operation::list_vocabularies::ListVocabulariesInput).
-    pub fn builder() -> crate::operation::list_vocabularies::builders::ListVocabulariesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_vocabularies::builders::ListVocabulariesInputBuilder {
         crate::operation::list_vocabularies::builders::ListVocabulariesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVocabulariesInput`](crate::operation::list_vocabularies::ListVocabulariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVocabulariesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,10 +85,7 @@ impl ListVocabulariesInputBuilder {
         self
     }
     /// <p>Returns only custom vocabularies with the specified state. Vocabularies are ordered by creation date, with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies are returned.</p>
-    pub fn set_state_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyState>,
-    ) -> Self {
+    pub fn set_state_equals(mut self, input: ::std::option::Option<crate::types::VocabularyState>) -> Self {
         self.state_equals = input;
         self
     }
@@ -100,18 +94,12 @@ impl ListVocabulariesInputBuilder {
         &self.state_equals
     }
     /// <p>Returns only the custom vocabularies that contain the specified string. The search is not case sensitive.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns only the custom vocabularies that contain the specified string. The search is not case sensitive.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -122,10 +110,7 @@ impl ListVocabulariesInputBuilder {
     /// Consumes the builder and constructs a [`ListVocabulariesInput`](crate::operation::list_vocabularies::ListVocabulariesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_vocabularies::ListVocabulariesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_vocabularies::ListVocabulariesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_vocabularies::ListVocabulariesInput {
             next_token: self.next_token,
             max_results: self.max_results,

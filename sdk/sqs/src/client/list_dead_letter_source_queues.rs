@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`queue_urls(Option<Vec<String>>)`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput::queue_urls): <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput::next_token): <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
     /// - On failure, responds with [`SdkError<ListDeadLetterSourceQueuesError>`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError)
-    pub fn list_dead_letter_source_queues(&self) -> crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder{
+    pub fn list_dead_letter_source_queues(
+        &self,
+    ) -> crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder {
         crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder::new(self.handle.clone())
     }
 }

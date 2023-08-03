@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`document_identifiers(Option<Vec<DocumentIdentifier>>)`](crate::operation::list_documents::ListDocumentsOutput::document_identifiers): <p>The names of the SSM documents.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_documents::ListDocumentsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<ListDocumentsError>`](crate::operation::list_documents::ListDocumentsError)
-    pub fn list_documents(
-        &self,
-    ) -> crate::operation::list_documents::builders::ListDocumentsFluentBuilder {
-        crate::operation::list_documents::builders::ListDocumentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_documents(&self) -> crate::operation::list_documents::builders::ListDocumentsFluentBuilder {
+        crate::operation::list_documents::builders::ListDocumentsFluentBuilder::new(self.handle.clone())
     }
 }

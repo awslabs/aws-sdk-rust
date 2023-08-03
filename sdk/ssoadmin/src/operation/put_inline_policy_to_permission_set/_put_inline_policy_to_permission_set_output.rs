@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutInlinePolicyToPermissionSetOutput 
 }
 impl PutInlinePolicyToPermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`PutInlinePolicyToPermissionSetOutput`](crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetOutput).
-    pub fn builder() -> crate::operation::put_inline_policy_to_permission_set::builders::PutInlinePolicyToPermissionSetOutputBuilder{
+    pub fn builder() -> crate::operation::put_inline_policy_to_permission_set::builders::PutInlinePolicyToPermissionSetOutputBuilder {
         crate::operation::put_inline_policy_to_permission_set::builders::PutInlinePolicyToPermissionSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutInlinePolicyToPermissionSetOutput`](crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutInlinePolicyToPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl PutInlinePolicyToPermissionSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutInlinePolicyToPermissionSetOutput`](crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetOutput
-    {
+    pub fn build(self) -> crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetOutput {
         crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetOutput {
             _request_id: self._request_id,
         }

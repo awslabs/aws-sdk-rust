@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`addresses(Option<Vec<Address>>)`](crate::operation::list_pickup_locations::ListPickupLocationsOutput::addresses): <p>Information about the address of pickup locations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pickup_locations::ListPickupLocationsOutput::next_token): <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ListPickupLocationsResult</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
     /// - On failure, responds with [`SdkError<ListPickupLocationsError>`](crate::operation::list_pickup_locations::ListPickupLocationsError)
-    pub fn list_pickup_locations(
-        &self,
-    ) -> crate::operation::list_pickup_locations::builders::ListPickupLocationsFluentBuilder {
-        crate::operation::list_pickup_locations::builders::ListPickupLocationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_pickup_locations(&self) -> crate::operation::list_pickup_locations::builders::ListPickupLocationsFluentBuilder {
+        crate::operation::list_pickup_locations::builders::ListPickupLocationsFluentBuilder::new(self.handle.clone())
     }
 }

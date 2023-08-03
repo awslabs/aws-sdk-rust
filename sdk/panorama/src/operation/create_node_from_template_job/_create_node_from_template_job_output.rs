@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateNodeFromTemplateJobOutput {
 }
 impl CreateNodeFromTemplateJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateNodeFromTemplateJobOutput`](crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput).
-    pub fn builder() -> crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobOutputBuilder{
+    pub fn builder() -> crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobOutputBuilder {
         crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNodeFromTemplateJobOutput`](crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNodeFromTemplateJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl CreateNodeFromTemplateJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateNodeFromTemplateJobOutput`](crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput {
+    pub fn build(self) -> crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput {
         crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput {
             job_id: self.job_id,
             _request_id: self._request_id,

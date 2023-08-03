@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_health_checks::ListHealthChecksOutput::next_marker): <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first health check that Amazon Route 53 returns if you submit another <code>ListHealthChecks</code> request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
     ///   - [`max_items(Option<i32>)`](crate::operation::list_health_checks::ListHealthChecksOutput::max_items): <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHealthChecks</code> that produced the current response.</p>
     /// - On failure, responds with [`SdkError<ListHealthChecksError>`](crate::operation::list_health_checks::ListHealthChecksError)
-    pub fn list_health_checks(
-        &self,
-    ) -> crate::operation::list_health_checks::builders::ListHealthChecksFluentBuilder {
-        crate::operation::list_health_checks::builders::ListHealthChecksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_health_checks(&self) -> crate::operation::list_health_checks::builders::ListHealthChecksFluentBuilder {
+        crate::operation::list_health_checks::builders::ListHealthChecksFluentBuilder::new(self.handle.clone())
     }
 }

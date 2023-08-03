@@ -7,9 +7,7 @@ pub fn ser_put_record_input(
         object.key("StreamName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.data {
-        object
-            .key("Data")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("Data").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     if let Some(var_3) = &input.partition_key {
         object.key("PartitionKey").string(var_3.as_str());
@@ -18,9 +16,7 @@ pub fn ser_put_record_input(
         object.key("ExplicitHashKey").string(var_4.as_str());
     }
     if let Some(var_5) = &input.sequence_number_for_ordering {
-        object
-            .key("SequenceNumberForOrdering")
-            .string(var_5.as_str());
+        object.key("SequenceNumberForOrdering").string(var_5.as_str());
     }
     if let Some(var_6) = &input.stream_arn {
         object.key("StreamARN").string(var_6.as_str());

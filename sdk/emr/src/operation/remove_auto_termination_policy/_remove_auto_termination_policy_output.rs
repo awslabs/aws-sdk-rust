@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveAutoTerminationPolicyOutput {
 }
 impl RemoveAutoTerminationPolicyOutput {
     /// Creates a new builder-style object to manufacture [`RemoveAutoTerminationPolicyOutput`](crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput).
-    pub fn builder() -> crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyOutputBuilder {
         crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveAutoTerminationPolicyOutput`](crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveAutoTerminationPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RemoveAutoTerminationPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveAutoTerminationPolicyOutput`](crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput {
+    pub fn build(self) -> crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput {
         crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput {
             _request_id: self._request_id,
         }

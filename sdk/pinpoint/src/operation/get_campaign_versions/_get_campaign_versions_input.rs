@@ -36,18 +36,14 @@ impl GetCampaignVersionsInput {
 }
 impl GetCampaignVersionsInput {
     /// Creates a new builder-style object to manufacture [`GetCampaignVersionsInput`](crate::operation::get_campaign_versions::GetCampaignVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_campaign_versions::builders::GetCampaignVersionsInputBuilder {
-        crate::operation::get_campaign_versions::builders::GetCampaignVersionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_campaign_versions::builders::GetCampaignVersionsInputBuilder {
+        crate::operation::get_campaign_versions::builders::GetCampaignVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCampaignVersionsInput`](crate::operation::get_campaign_versions::GetCampaignVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCampaignVersionsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct GetCampaignVersionsInputBuilder {
 }
 impl GetCampaignVersionsInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -120,17 +110,13 @@ impl GetCampaignVersionsInputBuilder {
     /// Consumes the builder and constructs a [`GetCampaignVersionsInput`](crate::operation::get_campaign_versions::GetCampaignVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_campaign_versions::GetCampaignVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_campaign_versions::GetCampaignVersionsInput {
-                application_id: self.application_id,
-                campaign_id: self.campaign_id,
-                page_size: self.page_size,
-                token: self.token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_campaign_versions::GetCampaignVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_campaign_versions::GetCampaignVersionsInput {
+            application_id: self.application_id,
+            campaign_id: self.campaign_id,
+            page_size: self.page_size,
+            token: self.token,
+        })
     }
 }

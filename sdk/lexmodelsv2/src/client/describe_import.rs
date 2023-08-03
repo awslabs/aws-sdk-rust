@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::describe_import::DescribeImportOutput::creation_date_time): <p>The date and time that the import was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::describe_import::DescribeImportOutput::last_updated_date_time): <p>The date and time that the import was last updated.</p>
     /// - On failure, responds with [`SdkError<DescribeImportError>`](crate::operation::describe_import::DescribeImportError)
-    pub fn describe_import(
-        &self,
-    ) -> crate::operation::describe_import::builders::DescribeImportFluentBuilder {
-        crate::operation::describe_import::builders::DescribeImportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_import(&self) -> crate::operation::describe_import::builders::DescribeImportFluentBuilder {
+        crate::operation::describe_import::builders::DescribeImportFluentBuilder::new(self.handle.clone())
     }
 }

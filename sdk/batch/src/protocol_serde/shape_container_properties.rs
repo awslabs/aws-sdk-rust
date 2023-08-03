@@ -51,10 +51,7 @@ pub fn ser_container_properties(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_key_value_pair::ser_key_value_pair(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_key_value_pair::ser_key_value_pair(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }
@@ -102,10 +99,7 @@ pub fn ser_container_properties(
             {
                 #[allow(unused_mut)]
                 let mut object_32 = array_30.value().start_object();
-                crate::protocol_serde::shape_resource_requirement::ser_resource_requirement(
-                    &mut object_32,
-                    item_31,
-                )?;
+                crate::protocol_serde::shape_resource_requirement::ser_resource_requirement(&mut object_32, item_31)?;
                 object_32.finish();
             }
         }
@@ -114,19 +108,13 @@ pub fn ser_container_properties(
     if let Some(var_33) = &input.linux_parameters {
         #[allow(unused_mut)]
         let mut object_34 = object.key("linuxParameters").start_object();
-        crate::protocol_serde::shape_linux_parameters::ser_linux_parameters(
-            &mut object_34,
-            var_33,
-        )?;
+        crate::protocol_serde::shape_linux_parameters::ser_linux_parameters(&mut object_34, var_33)?;
         object_34.finish();
     }
     if let Some(var_35) = &input.log_configuration {
         #[allow(unused_mut)]
         let mut object_36 = object.key("logConfiguration").start_object();
-        crate::protocol_serde::shape_log_configuration::ser_log_configuration(
-            &mut object_36,
-            var_35,
-        )?;
+        crate::protocol_serde::shape_log_configuration::ser_log_configuration(&mut object_36, var_35)?;
         object_36.finish();
     }
     if let Some(var_37) = &input.secrets {
@@ -144,10 +132,7 @@ pub fn ser_container_properties(
     if let Some(var_41) = &input.network_configuration {
         #[allow(unused_mut)]
         let mut object_42 = object.key("networkConfiguration").start_object();
-        crate::protocol_serde::shape_network_configuration::ser_network_configuration(
-            &mut object_42,
-            var_41,
-        )?;
+        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_42, var_41)?;
         object_42.finish();
     }
     if let Some(var_43) = &input.fargate_platform_configuration {
@@ -159,19 +144,13 @@ pub fn ser_container_properties(
     if let Some(var_45) = &input.ephemeral_storage {
         #[allow(unused_mut)]
         let mut object_46 = object.key("ephemeralStorage").start_object();
-        crate::protocol_serde::shape_ephemeral_storage::ser_ephemeral_storage(
-            &mut object_46,
-            var_45,
-        )?;
+        crate::protocol_serde::shape_ephemeral_storage::ser_ephemeral_storage(&mut object_46, var_45)?;
         object_46.finish();
     }
     if let Some(var_47) = &input.runtime_platform {
         #[allow(unused_mut)]
         let mut object_48 = object.key("runtimePlatform").start_object();
-        crate::protocol_serde::shape_runtime_platform::ser_runtime_platform(
-            &mut object_48,
-            var_47,
-        )?;
+        crate::protocol_serde::shape_runtime_platform::ser_runtime_platform(&mut object_48, var_47)?;
         object_48.finish();
     }
     Ok(())
@@ -179,17 +158,9 @@ pub fn ser_container_properties(
 
 pub(crate) fn de_container_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ContainerProperties>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ContainerProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -199,173 +170,120 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "image" => {
                             builder = builder.set_image(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "vcpus" => {
                             builder = builder.set_vcpus(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "memory" => {
                             builder = builder.set_memory(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "command" => {
-                            builder = builder.set_command(
-                                crate::protocol_serde::shape_string_list::de_string_list(tokens)?,
-                            );
+                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
                         }
                         "jobRoleArn" => {
                             builder = builder.set_job_role_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "executionRoleArn" => {
                             builder = builder.set_execution_role_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "volumes" => {
-                            builder = builder.set_volumes(
-                                crate::protocol_serde::shape_volumes::de_volumes(tokens)?,
-                            );
+                            builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens)?);
                         }
                         "environment" => {
-                            builder = builder.set_environment(
-                                    crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens)?
-                                );
+                            builder = builder.set_environment(crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens)?);
                         }
                         "mountPoints" => {
-                            builder = builder.set_mount_points(
-                                crate::protocol_serde::shape_mount_points::de_mount_points(tokens)?,
-                            );
+                            builder = builder.set_mount_points(crate::protocol_serde::shape_mount_points::de_mount_points(tokens)?);
                         }
                         "readonlyRootFilesystem" => {
-                            builder = builder.set_readonly_root_filesystem(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder =
+                                builder.set_readonly_root_filesystem(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "privileged" => {
-                            builder = builder.set_privileged(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_privileged(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ulimits" => {
-                            builder = builder.set_ulimits(
-                                crate::protocol_serde::shape_ulimits::de_ulimits(tokens)?,
-                            );
+                            builder = builder.set_ulimits(crate::protocol_serde::shape_ulimits::de_ulimits(tokens)?);
                         }
                         "user" => {
                             builder = builder.set_user(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "instanceType" => {
                             builder = builder.set_instance_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "resourceRequirements" => {
-                            builder = builder.set_resource_requirements(
-                                    crate::protocol_serde::shape_resource_requirements::de_resource_requirements(tokens)?
-                                );
+                            builder = builder
+                                .set_resource_requirements(crate::protocol_serde::shape_resource_requirements::de_resource_requirements(tokens)?);
                         }
                         "linuxParameters" => {
-                            builder = builder.set_linux_parameters(
-                                crate::protocol_serde::shape_linux_parameters::de_linux_parameters(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_linux_parameters(crate::protocol_serde::shape_linux_parameters::de_linux_parameters(tokens)?);
                         }
                         "logConfiguration" => {
-                            builder = builder.set_log_configuration(
-                                    crate::protocol_serde::shape_log_configuration::de_log_configuration(tokens)?
-                                );
+                            builder = builder.set_log_configuration(crate::protocol_serde::shape_log_configuration::de_log_configuration(tokens)?);
                         }
                         "secrets" => {
-                            builder = builder.set_secrets(
-                                crate::protocol_serde::shape_secret_list::de_secret_list(tokens)?,
-                            );
+                            builder = builder.set_secrets(crate::protocol_serde::shape_secret_list::de_secret_list(tokens)?);
                         }
                         "networkConfiguration" => {
-                            builder = builder.set_network_configuration(
-                                    crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens)?
-                                );
+                            builder = builder
+                                .set_network_configuration(crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens)?);
                         }
                         "fargatePlatformConfiguration" => {
                             builder = builder.set_fargate_platform_configuration(
-                                    crate::protocol_serde::shape_fargate_platform_configuration::de_fargate_platform_configuration(tokens)?
-                                );
+                                crate::protocol_serde::shape_fargate_platform_configuration::de_fargate_platform_configuration(tokens)?,
+                            );
                         }
                         "ephemeralStorage" => {
-                            builder = builder.set_ephemeral_storage(
-                                    crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?
-                                );
+                            builder = builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?);
                         }
                         "runtimePlatform" => {
-                            builder = builder.set_runtime_platform(
-                                crate::protocol_serde::shape_runtime_platform::de_runtime_platform(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_runtime_platform(crate::protocol_serde::shape_runtime_platform::de_runtime_platform(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

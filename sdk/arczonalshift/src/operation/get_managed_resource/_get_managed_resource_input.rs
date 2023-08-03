@@ -17,36 +17,27 @@ impl GetManagedResourceInput {
 }
 impl GetManagedResourceInput {
     /// Creates a new builder-style object to manufacture [`GetManagedResourceInput`](crate::operation::get_managed_resource::GetManagedResourceInput).
-    pub fn builder(
-    ) -> crate::operation::get_managed_resource::builders::GetManagedResourceInputBuilder {
+    pub fn builder() -> crate::operation::get_managed_resource::builders::GetManagedResourceInputBuilder {
         crate::operation::get_managed_resource::builders::GetManagedResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetManagedResourceInput`](crate::operation::get_managed_resource::GetManagedResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetManagedResourceInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetManagedResourceInputBuilder {
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -58,14 +49,9 @@ impl GetManagedResourceInputBuilder {
     /// Consumes the builder and constructs a [`GetManagedResourceInput`](crate::operation::get_managed_resource::GetManagedResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_managed_resource::GetManagedResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_managed_resource::GetManagedResourceInput {
-                resource_identifier: self.resource_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_managed_resource::GetManagedResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_managed_resource::GetManagedResourceInput {
+            resource_identifier: self.resource_identifier,
+        })
     }
 }

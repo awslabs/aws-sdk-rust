@@ -22,16 +22,14 @@ impl GetStorageLensConfigurationInput {
 }
 impl GetStorageLensConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationInput`](crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationInput).
-    pub fn builder() -> crate::operation::get_storage_lens_configuration::builders::GetStorageLensConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_storage_lens_configuration::builders::GetStorageLensConfigurationInputBuilder {
         crate::operation::get_storage_lens_configuration::builders::GetStorageLensConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetStorageLensConfigurationInput`](crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStorageLensConfigurationInputBuilder {
     pub(crate) config_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl GetStorageLensConfigurationInputBuilder {
         crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationInput {
-                config_id: self.config_id,
-                account_id: self.account_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationInput {
+            config_id: self.config_id,
+            account_id: self.account_id,
+        })
     }
 }

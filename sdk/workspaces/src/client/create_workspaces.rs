@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`failed_requests(Option<Vec<FailedCreateWorkspaceRequest>>)`](crate::operation::create_workspaces::CreateWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be created.</p>
     ///   - [`pending_requests(Option<Vec<Workspace>>)`](crate::operation::create_workspaces::CreateWorkspacesOutput::pending_requests): <p>Information about the WorkSpaces that were created.</p>  <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <code>DescribeWorkspaces</code> before the WorkSpace is created, the information returned can be incomplete.</p>
     /// - On failure, responds with [`SdkError<CreateWorkspacesError>`](crate::operation::create_workspaces::CreateWorkspacesError)
-    pub fn create_workspaces(
-        &self,
-    ) -> crate::operation::create_workspaces::builders::CreateWorkspacesFluentBuilder {
-        crate::operation::create_workspaces::builders::CreateWorkspacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_workspaces(&self) -> crate::operation::create_workspaces::builders::CreateWorkspacesFluentBuilder {
+        crate::operation::create_workspaces::builders::CreateWorkspacesFluentBuilder::new(self.handle.clone())
     }
 }

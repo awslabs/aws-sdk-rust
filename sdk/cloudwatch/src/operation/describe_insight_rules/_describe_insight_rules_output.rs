@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeInsightRulesOutput {
 }
 impl DescribeInsightRulesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInsightRulesOutput`](crate::operation::describe_insight_rules::DescribeInsightRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_insight_rules::builders::DescribeInsightRulesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_insight_rules::builders::DescribeInsightRulesOutputBuilder {
         crate::operation::describe_insight_rules::builders::DescribeInsightRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInsightRulesOutput`](crate::operation::describe_insight_rules::DescribeInsightRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInsightRulesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) insight_rules: ::std::option::Option<::std::vec::Vec<crate::types::InsightRule>>,
@@ -71,17 +68,12 @@ impl DescribeInsightRulesOutputBuilder {
         self
     }
     /// <p>The rules returned by the operation.</p>
-    pub fn set_insight_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightRule>>,
-    ) -> Self {
+    pub fn set_insight_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightRule>>) -> Self {
         self.insight_rules = input;
         self
     }
     /// <p>The rules returned by the operation.</p>
-    pub fn get_insight_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightRule>> {
+    pub fn get_insight_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightRule>> {
         &self.insight_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

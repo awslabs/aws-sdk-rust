@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobOutput::job_id): <p>The identifier of the targeted sentiment detection job to stop.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobOutput::job_status): <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
     /// - On failure, responds with [`SdkError<StopTargetedSentimentDetectionJobError>`](crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobError)
-    pub fn stop_targeted_sentiment_detection_job(&self) -> crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobFluentBuilder{
+    pub fn stop_targeted_sentiment_detection_job(
+        &self,
+    ) -> crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobFluentBuilder {
         crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

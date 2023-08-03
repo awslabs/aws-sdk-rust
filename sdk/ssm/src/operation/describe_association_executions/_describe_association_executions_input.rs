@@ -42,37 +42,28 @@ impl DescribeAssociationExecutionsInput {
 }
 impl DescribeAssociationExecutionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAssociationExecutionsInput`](crate::operation::describe_association_executions::DescribeAssociationExecutionsInput).
-    pub fn builder() -> crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsInputBuilder {
         crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAssociationExecutionsInput`](crate::operation::describe_association_executions::DescribeAssociationExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssociationExecutionsInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAssociationExecutionsInputBuilder {
     /// <p>The association ID for which you want to view execution history details.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID for which you want to view execution history details.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -98,10 +89,7 @@ impl DescribeAssociationExecutionsInputBuilder {
     /// <p>ExecutionId (EQUAL)</p>
     /// <p>Status (EQUAL)</p>
     /// <p>CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -109,9 +97,7 @@ impl DescribeAssociationExecutionsInputBuilder {
     /// <p>ExecutionId (EQUAL)</p>
     /// <p>Status (EQUAL)</p>
     /// <p>CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -149,13 +135,11 @@ impl DescribeAssociationExecutionsInputBuilder {
         crate::operation::describe_association_executions::DescribeAssociationExecutionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_association_executions::DescribeAssociationExecutionsInput {
-                association_id: self.association_id,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_association_executions::DescribeAssociationExecutionsInput {
+            association_id: self.association_id,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`failure_description(Option<String>)`](crate::operation::describe_change_set::DescribeChangeSetOutput::failure_description): <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
     ///   - [`change_set(Option<Vec<ChangeSummary>>)`](crate::operation::describe_change_set::DescribeChangeSetOutput::change_set): <p>An array of <code>ChangeSummary</code> objects.</p>
     /// - On failure, responds with [`SdkError<DescribeChangeSetError>`](crate::operation::describe_change_set::DescribeChangeSetError)
-    pub fn describe_change_set(
-        &self,
-    ) -> crate::operation::describe_change_set::builders::DescribeChangeSetFluentBuilder {
-        crate::operation::describe_change_set::builders::DescribeChangeSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_change_set(&self) -> crate::operation::describe_change_set::builders::DescribeChangeSetFluentBuilder {
+        crate::operation::describe_change_set::builders::DescribeChangeSetFluentBuilder::new(self.handle.clone())
     }
 }

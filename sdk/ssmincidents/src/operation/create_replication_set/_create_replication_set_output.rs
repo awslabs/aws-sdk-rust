@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateReplicationSetOutput {
 }
 impl CreateReplicationSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationSetOutput`](crate::operation::create_replication_set::CreateReplicationSetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_replication_set::builders::CreateReplicationSetOutputBuilder {
+    pub fn builder() -> crate::operation::create_replication_set::builders::CreateReplicationSetOutputBuilder {
         crate::operation::create_replication_set::builders::CreateReplicationSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReplicationSetOutput`](crate::operation::create_replication_set::CreateReplicationSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReplicationSetOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

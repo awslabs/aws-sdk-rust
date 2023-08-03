@@ -43,17 +43,14 @@ impl CreateVpcEndpointInput {
 }
 impl CreateVpcEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder {
+    pub fn builder() -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder {
         crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -102,10 +99,7 @@ impl CreateVpcEndpointInputBuilder {
         self
     }
     /// <p>The ID of one or more subnets from which you'll access OpenSearch Serverless.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -118,27 +112,19 @@ impl CreateVpcEndpointInputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
@@ -158,18 +144,13 @@ impl CreateVpcEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_vpc_endpoint::CreateVpcEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_vpc_endpoint::CreateVpcEndpointInput {
-                name: self.name,
-                vpc_id: self.vpc_id,
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_vpc_endpoint::CreateVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_vpc_endpoint::CreateVpcEndpointInput {
+            name: self.name,
+            vpc_id: self.vpc_id,
+            subnet_ids: self.subnet_ids,
+            security_group_ids: self.security_group_ids,
+            client_token: self.client_token,
+        })
     }
 }

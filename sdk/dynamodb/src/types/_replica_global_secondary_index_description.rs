@@ -9,8 +9,7 @@ pub struct ReplicaGlobalSecondaryIndexDescription {
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>If not described, uses the source table GSI's read capacity settings.</p>
     #[doc(hidden)]
-    pub provisioned_throughput_override:
-        ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
+    pub provisioned_throughput_override: ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
 }
 impl ReplicaGlobalSecondaryIndexDescription {
     /// <p>The name of the global secondary index.</p>
@@ -18,9 +17,7 @@ impl ReplicaGlobalSecondaryIndexDescription {
         self.index_name.as_deref()
     }
     /// <p>If not described, uses the source table GSI's read capacity settings.</p>
-    pub fn provisioned_throughput_override(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProvisionedThroughputOverride> {
+    pub fn provisioned_throughput_override(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughputOverride> {
         self.provisioned_throughput_override.as_ref()
     }
 }
@@ -33,13 +30,10 @@ impl ReplicaGlobalSecondaryIndexDescription {
 
 /// A builder for [`ReplicaGlobalSecondaryIndexDescription`](crate::types::ReplicaGlobalSecondaryIndexDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndexDescriptionBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
-    pub(crate) provisioned_throughput_override:
-        ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
+    pub(crate) provisioned_throughput_override: ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
 }
 impl ReplicaGlobalSecondaryIndexDescriptionBuilder {
     /// <p>The name of the global secondary index.</p>
@@ -57,25 +51,17 @@ impl ReplicaGlobalSecondaryIndexDescriptionBuilder {
         &self.index_name
     }
     /// <p>If not described, uses the source table GSI's read capacity settings.</p>
-    pub fn provisioned_throughput_override(
-        mut self,
-        input: crate::types::ProvisionedThroughputOverride,
-    ) -> Self {
+    pub fn provisioned_throughput_override(mut self, input: crate::types::ProvisionedThroughputOverride) -> Self {
         self.provisioned_throughput_override = ::std::option::Option::Some(input);
         self
     }
     /// <p>If not described, uses the source table GSI's read capacity settings.</p>
-    pub fn set_provisioned_throughput_override(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
-    ) -> Self {
+    pub fn set_provisioned_throughput_override(mut self, input: ::std::option::Option<crate::types::ProvisionedThroughputOverride>) -> Self {
         self.provisioned_throughput_override = input;
         self
     }
     /// <p>If not described, uses the source table GSI's read capacity settings.</p>
-    pub fn get_provisioned_throughput_override(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisionedThroughputOverride> {
+    pub fn get_provisioned_throughput_override(&self) -> &::std::option::Option<crate::types::ProvisionedThroughputOverride> {
         &self.provisioned_throughput_override
     }
     /// Consumes the builder and constructs a [`ReplicaGlobalSecondaryIndexDescription`](crate::types::ReplicaGlobalSecondaryIndexDescription).

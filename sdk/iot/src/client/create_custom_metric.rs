@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`metric_name(Option<String>)`](crate::operation::create_custom_metric::CreateCustomMetricOutput::metric_name): <p> The name of the custom metric to be used in the metric report. </p>
     ///   - [`metric_arn(Option<String>)`](crate::operation::create_custom_metric::CreateCustomMetricOutput::metric_arn): <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
     /// - On failure, responds with [`SdkError<CreateCustomMetricError>`](crate::operation::create_custom_metric::CreateCustomMetricError)
-    pub fn create_custom_metric(
-        &self,
-    ) -> crate::operation::create_custom_metric::builders::CreateCustomMetricFluentBuilder {
-        crate::operation::create_custom_metric::builders::CreateCustomMetricFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_custom_metric(&self) -> crate::operation::create_custom_metric::builders::CreateCustomMetricFluentBuilder {
+        crate::operation::create_custom_metric::builders::CreateCustomMetricFluentBuilder::new(self.handle.clone())
     }
 }

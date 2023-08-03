@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput::location): <p>The fully qualified URI of the new streaming distribution resource just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput::e_tag): <p>The current version of the distribution created.</p>
     /// - On failure, responds with [`SdkError<CreateStreamingDistributionWithTagsError>`](crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError)
-    pub fn create_streaming_distribution_with_tags(&self) -> crate::operation::create_streaming_distribution_with_tags::builders::CreateStreamingDistributionWithTagsFluentBuilder{
-        crate::operation::create_streaming_distribution_with_tags::builders::CreateStreamingDistributionWithTagsFluentBuilder::new(self.handle.clone())
+    pub fn create_streaming_distribution_with_tags(
+        &self,
+    ) -> crate::operation::create_streaming_distribution_with_tags::builders::CreateStreamingDistributionWithTagsFluentBuilder {
+        crate::operation::create_streaming_distribution_with_tags::builders::CreateStreamingDistributionWithTagsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

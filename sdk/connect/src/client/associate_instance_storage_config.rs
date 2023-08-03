@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateInstanceStorageConfigOutput`](crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigOutput) with field(s):
     ///   - [`association_id(Option<String>)`](crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigOutput::association_id): <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     /// - On failure, responds with [`SdkError<AssociateInstanceStorageConfigError>`](crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigError)
-    pub fn associate_instance_storage_config(&self) -> crate::operation::associate_instance_storage_config::builders::AssociateInstanceStorageConfigFluentBuilder{
+    pub fn associate_instance_storage_config(
+        &self,
+    ) -> crate::operation::associate_instance_storage_config::builders::AssociateInstanceStorageConfigFluentBuilder {
         crate::operation::associate_instance_storage_config::builders::AssociateInstanceStorageConfigFluentBuilder::new(self.handle.clone())
     }
 }

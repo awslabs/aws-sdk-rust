@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PredictiveScalingMaxCapacityBreachBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -58,12 +52,8 @@ impl ::std::convert::From<&str> for PredictiveScalingMaxCapacityBreachBehavior {
     fn from(s: &str) -> Self {
         match s {
             "HonorMaxCapacity" => PredictiveScalingMaxCapacityBreachBehavior::HonorMaxCapacity,
-            "IncreaseMaxCapacity" => {
-                PredictiveScalingMaxCapacityBreachBehavior::IncreaseMaxCapacity
-            }
-            other => PredictiveScalingMaxCapacityBreachBehavior::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "IncreaseMaxCapacity" => PredictiveScalingMaxCapacityBreachBehavior::IncreaseMaxCapacity,
+            other => PredictiveScalingMaxCapacityBreachBehavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -79,9 +69,7 @@ impl PredictiveScalingMaxCapacityBreachBehavior {
     pub fn as_str(&self) -> &str {
         match self {
             PredictiveScalingMaxCapacityBreachBehavior::HonorMaxCapacity => "HonorMaxCapacity",
-            PredictiveScalingMaxCapacityBreachBehavior::IncreaseMaxCapacity => {
-                "IncreaseMaxCapacity"
-            }
+            PredictiveScalingMaxCapacityBreachBehavior::IncreaseMaxCapacity => "IncreaseMaxCapacity",
             PredictiveScalingMaxCapacityBreachBehavior::Unknown(value) => value.as_str(),
         }
     }

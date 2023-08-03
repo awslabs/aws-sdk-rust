@@ -6,10 +6,7 @@ pub fn ser_logs_config(
     if let Some(var_1) = &input.cloud_watch_logs {
         #[allow(unused_mut)]
         let mut object_2 = object.key("cloudWatchLogs").start_object();
-        crate::protocol_serde::shape_cloud_watch_logs_config::ser_cloud_watch_logs_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_cloud_watch_logs_config::ser_cloud_watch_logs_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.s3_logs {
@@ -25,12 +22,7 @@ pub(crate) fn de_logs_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::LogsConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -40,38 +32,28 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "cloudWatchLogs" => {
-                                builder = builder.set_cloud_watch_logs(
-                                    crate::protocol_serde::shape_cloud_watch_logs_config::de_cloud_watch_logs_config(tokens)?
-                                );
-                            }
-                            "s3Logs" => {
-                                builder = builder.set_s3_logs(
-                                    crate::protocol_serde::shape_s3_logs_config::de_s3_logs_config(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "cloudWatchLogs" => {
+                            builder = builder
+                                .set_cloud_watch_logs(crate::protocol_serde::shape_cloud_watch_logs_config::de_cloud_watch_logs_config(tokens)?);
                         }
-                    }
+                        "s3Logs" => {
+                            builder = builder.set_s3_logs(crate::protocol_serde::shape_s3_logs_config::de_s3_logs_config(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

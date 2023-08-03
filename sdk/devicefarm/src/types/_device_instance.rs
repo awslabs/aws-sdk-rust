@@ -58,9 +58,7 @@ impl DeviceInstance {
 
 /// A builder for [`DeviceInstance`](crate::types::DeviceInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceInstanceBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl DeviceInstanceBuilder {
         self
     }
     /// <p>An array of strings that describe the device instance.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
@@ -127,10 +122,7 @@ impl DeviceInstanceBuilder {
         self
     }
     /// <p>The status of the device instance. Valid values are listed here.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::InstanceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -158,10 +150,7 @@ impl DeviceInstanceBuilder {
         self
     }
     /// <p>A object that contains information about the instance profile.</p>
-    pub fn set_instance_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceProfile>,
-    ) -> Self {
+    pub fn set_instance_profile(mut self, input: ::std::option::Option<crate::types::InstanceProfile>) -> Self {
         self.instance_profile = input;
         self
     }

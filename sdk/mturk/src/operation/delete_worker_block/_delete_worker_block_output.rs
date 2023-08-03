@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteWorkerBlockOutput {
 }
 impl DeleteWorkerBlockOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkerBlockOutput`](crate::operation::delete_worker_block::DeleteWorkerBlockOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_worker_block::builders::DeleteWorkerBlockOutputBuilder {
+    pub fn builder() -> crate::operation::delete_worker_block::builders::DeleteWorkerBlockOutputBuilder {
         crate::operation::delete_worker_block::builders::DeleteWorkerBlockOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorkerBlockOutput`](crate::operation::delete_worker_block::DeleteWorkerBlockOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkerBlockOutputBuilder {
     _request_id: Option<String>,
 }

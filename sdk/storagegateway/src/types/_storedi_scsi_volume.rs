@@ -97,9 +97,7 @@ impl StorediScsiVolume {
         self.preserved_existing_data
     }
     /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
-    pub fn volumei_scsi_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VolumeiScsiAttributes> {
+    pub fn volumei_scsi_attributes(&self) -> ::std::option::Option<&crate::types::VolumeiScsiAttributes> {
         self.volumei_scsi_attributes.as_ref()
     }
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
@@ -131,9 +129,7 @@ impl StorediScsiVolume {
 
 /// A builder for [`StorediScsiVolume`](crate::types::StorediScsiVolume).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorediScsiVolumeBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
@@ -195,18 +191,12 @@ impl StorediScsiVolumeBuilder {
         &self.volume_type
     }
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
-    pub fn volume_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
-    pub fn set_volume_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_status = input;
         self
     }
@@ -215,18 +205,12 @@ impl StorediScsiVolumeBuilder {
         &self.volume_status
     }
     /// <p>A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching from a gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving your volumes to a different gateway</a>.</p>
-    pub fn volume_attachment_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_attachment_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_attachment_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching from a gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving your volumes to a different gateway</a>.</p>
-    pub fn set_volume_attachment_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_attachment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_attachment_status = input;
         self
     }
@@ -263,18 +247,12 @@ impl StorediScsiVolumeBuilder {
         &self.volume_progress
     }
     /// <p>The ID of the local disk that was specified in the <code>CreateStorediSCSIVolume</code> operation.</p>
-    pub fn volume_disk_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_disk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_disk_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local disk that was specified in the <code>CreateStorediSCSIVolume</code> operation.</p>
-    pub fn set_volume_disk_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_disk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_disk_id = input;
         self
     }
@@ -283,18 +261,12 @@ impl StorediScsiVolumeBuilder {
         &self.volume_disk_id
     }
     /// <p>If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
-    pub fn source_snapshot_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
-    pub fn set_source_snapshot_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_snapshot_id = input;
         self
     }
@@ -325,17 +297,12 @@ impl StorediScsiVolumeBuilder {
         self
     }
     /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
-    pub fn set_volumei_scsi_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeiScsiAttributes>,
-    ) -> Self {
+    pub fn set_volumei_scsi_attributes(mut self, input: ::std::option::Option<crate::types::VolumeiScsiAttributes>) -> Self {
         self.volumei_scsi_attributes = input;
         self
     }
     /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
-    pub fn get_volumei_scsi_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::VolumeiScsiAttributes> {
+    pub fn get_volumei_scsi_attributes(&self) -> &::std::option::Option<crate::types::VolumeiScsiAttributes> {
         &self.volumei_scsi_attributes
     }
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
@@ -344,10 +311,7 @@ impl StorediScsiVolumeBuilder {
         self
     }
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }

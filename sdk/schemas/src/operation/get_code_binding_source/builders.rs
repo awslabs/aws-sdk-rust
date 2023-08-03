@@ -37,10 +37,7 @@ impl GetCodeBindingSourceFluentBuilder {
         }
     }
     /// Access the GetCodeBindingSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_code_binding_source::builders::GetCodeBindingSourceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_code_binding_source::builders::GetCodeBindingSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetCodeBindingSourceFluentBuilder {
             crate::operation::get_code_binding_source::GetCodeBindingSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_code_binding_source::GetCodeBindingSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_code_binding_source::GetCodeBindingSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetCodeBindingSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetCodeBindingSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_code_binding_source::GetCodeBindingSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_code_binding_source::GetCodeBindingSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_code_binding_source::GetCodeBindingSourceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetCodeBindingSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_code_binding_source::GetCodeBindingSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_code_binding_source::GetCodeBindingSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_code_binding_source::GetCodeBindingSourceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetCodeBindingSourceFluentBuilder {
             crate::operation::get_code_binding_source::GetCodeBindingSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_code_binding_source::GetCodeBindingSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_code_binding_source::GetCodeBindingSourceError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl GetCodeBindingSourceFluentBuilder {
         self.inner.get_language()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registry_name(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registry_name(input);
         self
     }
@@ -172,18 +152,12 @@ impl GetCodeBindingSourceFluentBuilder {
         self.inner.get_schema_name()
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_version(input.into());
         self
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_version(input);
         self
     }

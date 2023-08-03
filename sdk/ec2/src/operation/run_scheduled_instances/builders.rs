@@ -39,10 +39,7 @@ impl RunScheduledInstancesFluentBuilder {
         }
     }
     /// Access the RunScheduledInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::run_scheduled_instances::builders::RunScheduledInstancesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::run_scheduled_instances::builders::RunScheduledInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl RunScheduledInstancesFluentBuilder {
             crate::operation::run_scheduled_instances::RunScheduledInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::run_scheduled_instances::RunScheduledInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::run_scheduled_instances::RunScheduledInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl RunScheduledInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl RunScheduledInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::run_scheduled_instances::RunScheduledInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::run_scheduled_instances::RunScheduledInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::run_scheduled_instances::RunScheduledInstancesError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl RunScheduledInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::run_scheduled_instances::RunScheduledInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::run_scheduled_instances::RunScheduledInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::run_scheduled_instances::RunScheduledInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl RunScheduledInstancesFluentBuilder {
             crate::operation::run_scheduled_instances::RunScheduledInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::run_scheduled_instances::RunScheduledInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::run_scheduled_instances::RunScheduledInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -171,40 +157,26 @@ impl RunScheduledInstancesFluentBuilder {
         self.inner.get_instance_count()
     }
     /// <p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>
-    pub fn launch_specification(
-        mut self,
-        input: crate::types::ScheduledInstancesLaunchSpecification,
-    ) -> Self {
+    pub fn launch_specification(mut self, input: crate::types::ScheduledInstancesLaunchSpecification) -> Self {
         self.inner = self.inner.launch_specification(input);
         self
     }
     /// <p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>
-    pub fn set_launch_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification>,
-    ) -> Self {
+    pub fn set_launch_specification(mut self, input: ::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification>) -> Self {
         self.inner = self.inner.set_launch_specification(input);
         self
     }
     /// <p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>
-    pub fn get_launch_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification> {
+    pub fn get_launch_specification(&self) -> &::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification> {
         self.inner.get_launch_specification()
     }
     /// <p>The Scheduled Instance ID.</p>
-    pub fn scheduled_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_instance_id(input.into());
         self
     }
     /// <p>The Scheduled Instance ID.</p>
-    pub fn set_scheduled_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_instance_id(input);
         self
     }

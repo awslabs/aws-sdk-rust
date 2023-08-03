@@ -12,18 +12,14 @@ pub fn ser_collection_scheme(
         }
         crate::types::CollectionScheme::ConditionBasedCollectionScheme(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_17
-                .key("conditionBasedCollectionScheme")
-                .start_object();
+            let mut object_2 = object_17.key("conditionBasedCollectionScheme").start_object();
             crate::protocol_serde::shape_condition_based_collection_scheme::ser_condition_based_collection_scheme(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::CollectionScheme::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "CollectionScheme",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "CollectionScheme",
+            ))
         }
     }
     Ok(())
@@ -31,17 +27,9 @@ pub fn ser_collection_scheme(
 
 pub(crate) fn de_collection_scheme<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CollectionScheme>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CollectionScheme>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -51,47 +39,44 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "timeBasedCollectionScheme" => {
-                                Some(crate::types::CollectionScheme::TimeBasedCollectionScheme(
-                                    crate::protocol_serde::shape_time_based_collection_scheme::de_time_based_collection_scheme(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'timeBasedCollectionScheme' cannot be null"))?
-                                ))
-                            }
-                            "conditionBasedCollectionScheme" => {
-                                Some(crate::types::CollectionScheme::ConditionBasedCollectionScheme(
-                                    crate::protocol_serde::shape_condition_based_collection_scheme::de_condition_based_collection_scheme(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'conditionBasedCollectionScheme' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::CollectionScheme::Unknown)
-                                                                    }
-                        };
+                        "timeBasedCollectionScheme" => Some(crate::types::CollectionScheme::TimeBasedCollectionScheme(
+                            crate::protocol_serde::shape_time_based_collection_scheme::de_time_based_collection_scheme(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'timeBasedCollectionScheme' cannot be null",
+                                )
+                            })?,
+                        )),
+                        "conditionBasedCollectionScheme" => Some(crate::types::CollectionScheme::ConditionBasedCollectionScheme(
+                            crate::protocol_serde::shape_condition_based_collection_scheme::de_condition_based_collection_scheme(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'conditionBasedCollectionScheme' cannot be null",
+                                    )
+                                })?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::CollectionScheme::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

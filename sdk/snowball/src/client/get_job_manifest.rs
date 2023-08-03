@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetJobManifestOutput`](crate::operation::get_job_manifest::GetJobManifestOutput) with field(s):
     ///   - [`manifest_uri(Option<String>)`](crate::operation::get_job_manifest::GetJobManifestOutput::manifest_uri): <p>The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value.</p>
     /// - On failure, responds with [`SdkError<GetJobManifestError>`](crate::operation::get_job_manifest::GetJobManifestError)
-    pub fn get_job_manifest(
-        &self,
-    ) -> crate::operation::get_job_manifest::builders::GetJobManifestFluentBuilder {
-        crate::operation::get_job_manifest::builders::GetJobManifestFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_job_manifest(&self) -> crate::operation::get_job_manifest::builders::GetJobManifestFluentBuilder {
+        crate::operation::get_job_manifest::builders::GetJobManifestFluentBuilder::new(self.handle.clone())
     }
 }

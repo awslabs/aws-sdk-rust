@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_backup_plans::ListBackupPlansOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     ///   - [`backup_plans_list(Option<Vec<BackupPlansListMember>>)`](crate::operation::list_backup_plans::ListBackupPlansOutput::backup_plans_list): <p>An array of backup plan list items containing metadata about your saved backup plans.</p>
     /// - On failure, responds with [`SdkError<ListBackupPlansError>`](crate::operation::list_backup_plans::ListBackupPlansError)
-    pub fn list_backup_plans(
-        &self,
-    ) -> crate::operation::list_backup_plans::builders::ListBackupPlansFluentBuilder {
-        crate::operation::list_backup_plans::builders::ListBackupPlansFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_backup_plans(&self) -> crate::operation::list_backup_plans::builders::ListBackupPlansFluentBuilder {
+        crate::operation::list_backup_plans::builders::ListBackupPlansFluentBuilder::new(self.handle.clone())
     }
 }

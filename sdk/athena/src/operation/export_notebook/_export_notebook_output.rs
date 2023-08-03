@@ -35,9 +35,7 @@ impl ExportNotebookOutput {
 
 /// A builder for [`ExportNotebookOutput`](crate::operation::export_notebook::ExportNotebookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportNotebookOutputBuilder {
     pub(crate) notebook_metadata: ::std::option::Option<crate::types::NotebookMetadata>,
     pub(crate) payload: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl ExportNotebookOutputBuilder {
         self
     }
     /// <p>The notebook metadata, including notebook ID, notebook name, and workgroup name.</p>
-    pub fn set_notebook_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::NotebookMetadata>,
-    ) -> Self {
+    pub fn set_notebook_metadata(mut self, input: ::std::option::Option<crate::types::NotebookMetadata>) -> Self {
         self.notebook_metadata = input;
         self
     }

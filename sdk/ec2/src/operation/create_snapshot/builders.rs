@@ -10,10 +10,7 @@ impl CreateSnapshotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_snapshot::CreateSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot::CreateSnapshotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot::CreateSnapshotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_snapshot();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl CreateSnapshotFluentBuilder {
         }
     }
     /// Access the CreateSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_snapshot::builders::CreateSnapshotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_snapshot::builders::CreateSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -68,10 +63,7 @@ impl CreateSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -191,17 +183,12 @@ impl CreateSnapshotFluentBuilder {
         self
     }
     /// <p>The tags to apply to the snapshot during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the snapshot during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

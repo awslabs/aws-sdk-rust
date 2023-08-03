@@ -23,8 +23,7 @@ pub struct DescribeStorediScsiVolumesOutput {
     /// <li> <p> <code>VolumeType</code>: One of the enumeration values describing the type of the volume. Currently, only <code>STORED</code> volumes are supported.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub storedi_scsi_volumes:
-        ::std::option::Option<::std::vec::Vec<crate::types::StorediScsiVolume>>,
+    pub storedi_scsi_volumes: ::std::option::Option<::std::vec::Vec<crate::types::StorediScsiVolume>>,
     _request_id: Option<String>,
 }
 impl DescribeStorediScsiVolumesOutput {
@@ -47,9 +46,7 @@ impl DescribeStorediScsiVolumesOutput {
     /// <li> <p> <code>VolumeStatus</code>: One of the <code>VolumeStatus</code> values that indicates the state of the volume.</p> </li>
     /// <li> <p> <code>VolumeType</code>: One of the enumeration values describing the type of the volume. Currently, only <code>STORED</code> volumes are supported.</p> </li>
     /// </ul>
-    pub fn storedi_scsi_volumes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StorediScsiVolume]> {
+    pub fn storedi_scsi_volumes(&self) -> ::std::option::Option<&[crate::types::StorediScsiVolume]> {
         self.storedi_scsi_volumes.as_deref()
     }
 }
@@ -60,19 +57,16 @@ impl ::aws_http::request_id::RequestId for DescribeStorediScsiVolumesOutput {
 }
 impl DescribeStorediScsiVolumesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStorediScsiVolumesOutput`](crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesOutput).
-    pub fn builder() -> crate::operation::describe_storedi_scsi_volumes::builders::DescribeStorediScsiVolumesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_storedi_scsi_volumes::builders::DescribeStorediScsiVolumesOutputBuilder {
         crate::operation::describe_storedi_scsi_volumes::builders::DescribeStorediScsiVolumesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStorediScsiVolumesOutput`](crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStorediScsiVolumesOutputBuilder {
-    pub(crate) storedi_scsi_volumes:
-        ::std::option::Option<::std::vec::Vec<crate::types::StorediScsiVolume>>,
+    pub(crate) storedi_scsi_volumes: ::std::option::Option<::std::vec::Vec<crate::types::StorediScsiVolume>>,
     _request_id: Option<String>,
 }
 impl DescribeStorediScsiVolumesOutputBuilder {
@@ -124,10 +118,7 @@ impl DescribeStorediScsiVolumesOutputBuilder {
     /// <li> <p> <code>VolumeStatus</code>: One of the <code>VolumeStatus</code> values that indicates the state of the volume.</p> </li>
     /// <li> <p> <code>VolumeType</code>: One of the enumeration values describing the type of the volume. Currently, only <code>STORED</code> volumes are supported.</p> </li>
     /// </ul>
-    pub fn set_storedi_scsi_volumes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorediScsiVolume>>,
-    ) -> Self {
+    pub fn set_storedi_scsi_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorediScsiVolume>>) -> Self {
         self.storedi_scsi_volumes = input;
         self
     }
@@ -150,9 +141,7 @@ impl DescribeStorediScsiVolumesOutputBuilder {
     /// <li> <p> <code>VolumeStatus</code>: One of the <code>VolumeStatus</code> values that indicates the state of the volume.</p> </li>
     /// <li> <p> <code>VolumeType</code>: One of the enumeration values describing the type of the volume. Currently, only <code>STORED</code> volumes are supported.</p> </li>
     /// </ul>
-    pub fn get_storedi_scsi_volumes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorediScsiVolume>> {
+    pub fn get_storedi_scsi_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorediScsiVolume>> {
         &self.storedi_scsi_volumes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -165,9 +154,7 @@ impl DescribeStorediScsiVolumesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeStorediScsiVolumesOutput`](crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesOutput {
+    pub fn build(self) -> crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesOutput {
         crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesOutput {
             storedi_scsi_volumes: self.storedi_scsi_volumes,
             _request_id: self._request_id,

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateApplicationsOutput {
 }
 impl DisassociateApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateApplicationsOutput`](crate::operation::disassociate_applications::DisassociateApplicationsOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_applications::builders::DisassociateApplicationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_applications::builders::DisassociateApplicationsOutputBuilder {
         crate::operation::disassociate_applications::builders::DisassociateApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateApplicationsOutput`](crate::operation::disassociate_applications::DisassociateApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateApplicationsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DisassociateApplicationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateApplicationsOutput`](crate::operation::disassociate_applications::DisassociateApplicationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_applications::DisassociateApplicationsOutput {
+    pub fn build(self) -> crate::operation::disassociate_applications::DisassociateApplicationsOutput {
         crate::operation::disassociate_applications::DisassociateApplicationsOutput {
             _request_id: self._request_id,
         }

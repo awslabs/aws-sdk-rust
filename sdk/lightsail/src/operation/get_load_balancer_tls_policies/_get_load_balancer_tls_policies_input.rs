@@ -17,16 +17,14 @@ impl GetLoadBalancerTlsPoliciesInput {
 }
 impl GetLoadBalancerTlsPoliciesInput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsPoliciesInput`](crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesInput).
-    pub fn builder() -> crate::operation::get_load_balancer_tls_policies::builders::GetLoadBalancerTlsPoliciesInputBuilder{
+    pub fn builder() -> crate::operation::get_load_balancer_tls_policies::builders::GetLoadBalancerTlsPoliciesInputBuilder {
         crate::operation::get_load_balancer_tls_policies::builders::GetLoadBalancerTlsPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoadBalancerTlsPoliciesInput`](crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoadBalancerTlsPoliciesInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }
@@ -55,10 +53,6 @@ impl GetLoadBalancerTlsPoliciesInputBuilder {
         crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesInput {
-                page_token: self.page_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesInput { page_token: self.page_token })
     }
 }

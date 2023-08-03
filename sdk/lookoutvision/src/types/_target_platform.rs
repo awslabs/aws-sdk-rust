@@ -45,9 +45,7 @@ impl TargetPlatform {
 
 /// A builder for [`TargetPlatform`](crate::types::TargetPlatform).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetPlatformBuilder {
     pub(crate) os: ::std::option::Option<crate::types::TargetPlatformOs>,
     pub(crate) arch: ::std::option::Option<crate::types::TargetPlatformArch>,
@@ -74,10 +72,7 @@ impl TargetPlatformBuilder {
         self
     }
     /// <p>The target architecture for the model. The currently supported architectures are X86_64 (64-bit version of the x86 instruction set) and ARM_64 (ARMv8 64-bit CPU). </p>
-    pub fn set_arch(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetPlatformArch>,
-    ) -> Self {
+    pub fn set_arch(mut self, input: ::std::option::Option<crate::types::TargetPlatformArch>) -> Self {
         self.arch = input;
         self
     }
@@ -99,10 +94,7 @@ impl TargetPlatformBuilder {
     /// <li> <p> <code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li>
     /// <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code> </p> </li>
     /// </ul>
-    pub fn set_accelerator(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetPlatformAccelerator>,
-    ) -> Self {
+    pub fn set_accelerator(mut self, input: ::std::option::Option<crate::types::TargetPlatformAccelerator>) -> Self {
         self.accelerator = input;
         self
     }
@@ -111,9 +103,7 @@ impl TargetPlatformBuilder {
     /// <li> <p> <code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li>
     /// <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code> </p> </li>
     /// </ul>
-    pub fn get_accelerator(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetPlatformAccelerator> {
+    pub fn get_accelerator(&self) -> &::std::option::Option<crate::types::TargetPlatformAccelerator> {
         &self.accelerator
     }
     /// Consumes the builder and constructs a [`TargetPlatform`](crate::types::TargetPlatform).

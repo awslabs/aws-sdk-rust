@@ -40,7 +40,7 @@ impl CreateOpenIdConnectProviderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOpenIDConnectProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_open_id_connect_provider::builders::CreateOpenIdConnectProviderInputBuilder,
+    inner: crate::operation::create_open_id_connect_provider::builders::CreateOpenIdConnectProviderInputBuilder,
 }
 impl CreateOpenIDConnectProviderFluentBuilder {
     /// Creates a new `CreateOpenIDConnectProvider`.
@@ -51,7 +51,7 @@ impl CreateOpenIDConnectProviderFluentBuilder {
         }
     }
     /// Access the CreateOpenIDConnectProvider as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_open_id_connect_provider::builders::CreateOpenIdConnectProviderInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_open_id_connect_provider::builders::CreateOpenIdConnectProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +63,7 @@ impl CreateOpenIDConnectProviderFluentBuilder {
             crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +73,7 @@ impl CreateOpenIDConnectProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +82,7 @@ impl CreateOpenIDConnectProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_open_id_connect_provider::CreateOpenIdConnectProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProviderError>,
     > {
         let op = self
             .inner
@@ -112,9 +105,7 @@ impl CreateOpenIDConnectProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_open_id_connect_provider::CreateOpenIdConnectProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProviderError>,
     > {
         self.send_middleware().await
     }
@@ -128,9 +119,7 @@ impl CreateOpenIDConnectProviderFluentBuilder {
             crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProviderError>,
     > {
         self.customize_middleware().await
     }
@@ -158,29 +147,21 @@ impl CreateOpenIDConnectProviderFluentBuilder {
     /// <p>Provides a list of client IDs, also known as audiences. When a mobile or web app registers with an OpenID Connect provider, they establish a value that identifies the application. This is the value that's sent as the <code>client_id</code> parameter on OAuth requests.</p>
     /// <p>You can register multiple client IDs with the same provider. For example, you might have multiple applications that use the same OIDC provider. You cannot register more than 100 client IDs with a single IAM OIDC provider.</p>
     /// <p>There is no defined format for a client ID. The <code>CreateOpenIDConnectProviderRequest</code> operation accepts client IDs up to 255 characters long.</p>
-    pub fn client_id_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id_list(input.into());
         self
     }
     /// <p>Provides a list of client IDs, also known as audiences. When a mobile or web app registers with an OpenID Connect provider, they establish a value that identifies the application. This is the value that's sent as the <code>client_id</code> parameter on OAuth requests.</p>
     /// <p>You can register multiple client IDs with the same provider. For example, you might have multiple applications that use the same OIDC provider. You cannot register more than 100 client IDs with a single IAM OIDC provider.</p>
     /// <p>There is no defined format for a client ID. The <code>CreateOpenIDConnectProviderRequest</code> operation accepts client IDs up to 255 characters long.</p>
-    pub fn set_client_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_client_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_client_id_list(input);
         self
     }
     /// <p>Provides a list of client IDs, also known as audiences. When a mobile or web app registers with an OpenID Connect provider, they establish a value that identifies the application. This is the value that's sent as the <code>client_id</code> parameter on OAuth requests.</p>
     /// <p>You can register multiple client IDs with the same provider. For example, you might have multiple applications that use the same OIDC provider. You cannot register more than 100 client IDs with a single IAM OIDC provider.</p>
     /// <p>There is no defined format for a client ID. The <code>CreateOpenIDConnectProviderRequest</code> operation accepts client IDs up to 255 characters long.</p>
-    pub fn get_client_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_client_id_list()
     }
     /// Appends an item to `ThumbprintList`.
@@ -191,10 +172,7 @@ impl CreateOpenIDConnectProviderFluentBuilder {
     /// <p>The server certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509 certificate used by the domain where the OpenID Connect provider makes its keys available. It is always a 40-character string.</p>
     /// <p>You must provide at least one thumbprint when creating an IAM OIDC provider. For example, assume that the OIDC provider is <code>server.example.com</code> and the provider stores its keys at https://keys.server.example.com/openid-connect. In that case, the thumbprint string would be the hex-encoded SHA-1 hash value of the certificate used by <code>https://keys.server.example.com.</code> </p>
     /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.</p>
-    pub fn thumbprint_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thumbprint_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thumbprint_list(input.into());
         self
     }
@@ -202,10 +180,7 @@ impl CreateOpenIDConnectProviderFluentBuilder {
     /// <p>The server certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509 certificate used by the domain where the OpenID Connect provider makes its keys available. It is always a 40-character string.</p>
     /// <p>You must provide at least one thumbprint when creating an IAM OIDC provider. For example, assume that the OIDC provider is <code>server.example.com</code> and the provider stores its keys at https://keys.server.example.com/openid-connect. In that case, the thumbprint string would be the hex-encoded SHA-1 hash value of the certificate used by <code>https://keys.server.example.com.</code> </p>
     /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.</p>
-    pub fn set_thumbprint_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_thumbprint_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_thumbprint_list(input);
         self
     }
@@ -213,9 +188,7 @@ impl CreateOpenIDConnectProviderFluentBuilder {
     /// <p>The server certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509 certificate used by the domain where the OpenID Connect provider makes its keys available. It is always a 40-character string.</p>
     /// <p>You must provide at least one thumbprint when creating an IAM OIDC provider. For example, assume that the OIDC provider is <code>server.example.com</code> and the provider stores its keys at https://keys.server.example.com/openid-connect. In that case, the thumbprint string would be the hex-encoded SHA-1 hash value of the certificate used by <code>https://keys.server.example.com.</code> </p>
     /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.</p>
-    pub fn get_thumbprint_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_thumbprint_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_thumbprint_list()
     }
     /// Appends an item to `Tags`.
@@ -232,10 +205,7 @@ impl CreateOpenIDConnectProviderFluentBuilder {
     /// <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>
     /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

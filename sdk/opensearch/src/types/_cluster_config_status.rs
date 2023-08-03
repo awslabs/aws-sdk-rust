@@ -30,9 +30,7 @@ impl ClusterConfigStatus {
 
 /// A builder for [`ClusterConfigStatus`](crate::types::ClusterConfigStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterConfigStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::ClusterConfig>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
@@ -44,10 +42,7 @@ impl ClusterConfigStatusBuilder {
         self
     }
     /// <p>Cluster configuration options for the specified domain.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterConfig>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::ClusterConfig>) -> Self {
         self.options = input;
         self
     }

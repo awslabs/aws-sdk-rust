@@ -3,33 +3,33 @@
 /// <p> The location in Amazon Simple Storage Service (Amazon S3) where query and calculation results are stored and the encryption option, if any, used for query and calculation results. These are known as client-side settings. If workgroup settings override client-side settings, then the query uses the workgroup settings. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAthenaWorkGroupConfigurationResultConfigurationDetails  {
+pub struct AwsAthenaWorkGroupConfigurationResultConfigurationDetails {
     /// <p> Specifies the method used to encrypt the user’s data stores in the Athena workgroup. </p>
     #[doc(hidden)]
-    pub encryption_configuration: ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails>,
+    pub encryption_configuration:
+        ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails>,
 }
 impl AwsAthenaWorkGroupConfigurationResultConfigurationDetails {
     /// <p> Specifies the method used to encrypt the user’s data stores in the Athena workgroup. </p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails>{
+    pub fn encryption_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails> {
         self.encryption_configuration.as_ref()
     }
 }
 impl AwsAthenaWorkGroupConfigurationResultConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`AwsAthenaWorkGroupConfigurationResultConfigurationDetails`](crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsAthenaWorkGroupConfigurationResultConfigurationDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsAthenaWorkGroupConfigurationResultConfigurationDetailsBuilder {
         crate::types::builders::AwsAthenaWorkGroupConfigurationResultConfigurationDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsAthenaWorkGroupConfigurationResultConfigurationDetails`](crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAthenaWorkGroupConfigurationResultConfigurationDetailsBuilder {
-    pub(crate) encryption_configuration: ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails>,
+    pub(crate) encryption_configuration:
+        ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails>,
 }
 impl AwsAthenaWorkGroupConfigurationResultConfigurationDetailsBuilder {
     /// <p> Specifies the method used to encrypt the user’s data stores in the Athena workgroup. </p>
@@ -49,7 +49,9 @@ impl AwsAthenaWorkGroupConfigurationResultConfigurationDetailsBuilder {
         self
     }
     /// <p> Specifies the method used to encrypt the user’s data stores in the Athena workgroup. </p>
-    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails>{
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails> {
         &self.encryption_configuration
     }
     /// Consumes the builder and constructs a [`AwsAthenaWorkGroupConfigurationResultConfigurationDetails`](crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails).

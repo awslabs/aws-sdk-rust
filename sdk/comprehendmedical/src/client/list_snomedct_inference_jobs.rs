@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`comprehend_medical_async_job_properties_list(Option<Vec<ComprehendMedicalAsyncJobProperties>>)`](crate::operation::list_snomedct_inference_jobs::ListSnomedctInferenceJobsOutput::comprehend_medical_async_job_properties_list): <p> A list containing the properties of each job that is returned. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_snomedct_inference_jobs::ListSnomedctInferenceJobsOutput::next_token): <p> Identifies the next page of results to return. </p>
     /// - On failure, responds with [`SdkError<ListSNOMEDCTInferenceJobsError>`](crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError)
-    pub fn list_snomedct_inference_jobs(&self) -> crate::operation::list_snomedct_inference_jobs::builders::ListSNOMEDCTInferenceJobsFluentBuilder{
+    pub fn list_snomedct_inference_jobs(&self) -> crate::operation::list_snomedct_inference_jobs::builders::ListSNOMEDCTInferenceJobsFluentBuilder {
         crate::operation::list_snomedct_inference_jobs::builders::ListSNOMEDCTInferenceJobsFluentBuilder::new(self.handle.clone())
     }
 }

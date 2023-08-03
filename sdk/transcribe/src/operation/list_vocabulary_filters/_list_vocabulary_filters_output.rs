@@ -8,8 +8,7 @@ pub struct ListVocabularyFiltersOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the custom vocabulary filters that match the criteria specified in your request.</p>
     #[doc(hidden)]
-    pub vocabulary_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::VocabularyFilterInfo>>,
+    pub vocabulary_filters: ::std::option::Option<::std::vec::Vec<crate::types::VocabularyFilterInfo>>,
     _request_id: Option<String>,
 }
 impl ListVocabularyFiltersOutput {
@@ -18,9 +17,7 @@ impl ListVocabularyFiltersOutput {
         self.next_token.as_deref()
     }
     /// <p>Provides information about the custom vocabulary filters that match the criteria specified in your request.</p>
-    pub fn vocabulary_filters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VocabularyFilterInfo]> {
+    pub fn vocabulary_filters(&self) -> ::std::option::Option<&[crate::types::VocabularyFilterInfo]> {
         self.vocabulary_filters.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListVocabularyFiltersOutput {
 }
 impl ListVocabularyFiltersOutput {
     /// Creates a new builder-style object to manufacture [`ListVocabularyFiltersOutput`](crate::operation::list_vocabulary_filters::ListVocabularyFiltersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_vocabulary_filters::builders::ListVocabularyFiltersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_vocabulary_filters::builders::ListVocabularyFiltersOutputBuilder {
         crate::operation::list_vocabulary_filters::builders::ListVocabularyFiltersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVocabularyFiltersOutput`](crate::operation::list_vocabulary_filters::ListVocabularyFiltersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVocabularyFiltersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) vocabulary_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::VocabularyFilterInfo>>,
+    pub(crate) vocabulary_filters: ::std::option::Option<::std::vec::Vec<crate::types::VocabularyFilterInfo>>,
     _request_id: Option<String>,
 }
 impl ListVocabularyFiltersOutputBuilder {
@@ -76,17 +68,12 @@ impl ListVocabularyFiltersOutputBuilder {
         self
     }
     /// <p>Provides information about the custom vocabulary filters that match the criteria specified in your request.</p>
-    pub fn set_vocabulary_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VocabularyFilterInfo>>,
-    ) -> Self {
+    pub fn set_vocabulary_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VocabularyFilterInfo>>) -> Self {
         self.vocabulary_filters = input;
         self
     }
     /// <p>Provides information about the custom vocabulary filters that match the criteria specified in your request.</p>
-    pub fn get_vocabulary_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VocabularyFilterInfo>> {
+    pub fn get_vocabulary_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VocabularyFilterInfo>> {
         &self.vocabulary_filters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

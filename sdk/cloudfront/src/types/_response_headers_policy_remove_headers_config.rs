@@ -9,8 +9,7 @@ pub struct ResponseHeadersPolicyRemoveHeadersConfig {
     pub quantity: ::std::option::Option<i32>,
     /// <p>The list of HTTP header names.</p>
     #[doc(hidden)]
-    pub items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>>,
 }
 impl ResponseHeadersPolicyRemoveHeadersConfig {
     /// <p>The number of HTTP header names in the list.</p>
@@ -18,9 +17,7 @@ impl ResponseHeadersPolicyRemoveHeadersConfig {
         self.quantity
     }
     /// <p>The list of HTTP header names.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResponseHeadersPolicyRemoveHeader]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::ResponseHeadersPolicyRemoveHeader]> {
         self.items.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl ResponseHeadersPolicyRemoveHeadersConfig {
 
 /// A builder for [`ResponseHeadersPolicyRemoveHeadersConfig`](crate::types::ResponseHeadersPolicyRemoveHeadersConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyRemoveHeadersConfigBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>>,
 }
 impl ResponseHeadersPolicyRemoveHeadersConfigBuilder {
     /// <p>The number of HTTP header names in the list.</p>
@@ -68,20 +62,12 @@ impl ResponseHeadersPolicyRemoveHeadersConfigBuilder {
         self
     }
     /// <p>The list of HTTP header names.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>,
-        >,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The list of HTTP header names.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>>
-    {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyRemoveHeader>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyRemoveHeadersConfig`](crate::types::ResponseHeadersPolicyRemoveHeadersConfig).

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateActionTypeOutput {
 }
 impl UpdateActionTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateActionTypeOutput`](crate::operation::update_action_type::UpdateActionTypeOutput).
-    pub fn builder() -> crate::operation::update_action_type::builders::UpdateActionTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_action_type::builders::UpdateActionTypeOutputBuilder {
         crate::operation::update_action_type::builders::UpdateActionTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateActionTypeOutput`](crate::operation::update_action_type::UpdateActionTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateActionTypeOutputBuilder {
     _request_id: Option<String>,
 }

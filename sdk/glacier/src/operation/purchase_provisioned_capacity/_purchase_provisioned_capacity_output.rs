@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for PurchaseProvisionedCapacityOutput {
 }
 impl PurchaseProvisionedCapacityOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseProvisionedCapacityOutput`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput).
-    pub fn builder() -> crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityOutputBuilder{
+    pub fn builder() -> crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityOutputBuilder {
         crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityOutputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseProvisionedCapacityOutput`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseProvisionedCapacityOutputBuilder {
     pub(crate) capacity_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl PurchaseProvisionedCapacityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PurchaseProvisionedCapacityOutput`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput {
+    pub fn build(self) -> crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput {
         crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput {
             capacity_id: self.capacity_id,
             _request_id: self._request_id,

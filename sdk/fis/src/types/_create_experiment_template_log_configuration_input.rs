@@ -6,28 +6,21 @@
 pub struct CreateExperimentTemplateLogConfigurationInput {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_configuration:
-        ::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
+    pub cloud_watch_logs_configuration: ::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_configuration:
-        ::std::option::Option<crate::types::ExperimentTemplateS3LogConfigurationInput>,
+    pub s3_configuration: ::std::option::Option<crate::types::ExperimentTemplateS3LogConfigurationInput>,
     /// <p>The schema version.</p>
     #[doc(hidden)]
     pub log_schema_version: ::std::option::Option<i32>,
 }
 impl CreateExperimentTemplateLogConfigurationInput {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_logs_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput>
-    {
+    pub fn cloud_watch_logs_configuration(&self) -> ::std::option::Option<&crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput> {
         self.cloud_watch_logs_configuration.as_ref()
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
-    pub fn s3_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExperimentTemplateS3LogConfigurationInput> {
+    pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::ExperimentTemplateS3LogConfigurationInput> {
         self.s3_configuration.as_ref()
     }
     /// <p>The schema version.</p>
@@ -37,70 +30,49 @@ impl CreateExperimentTemplateLogConfigurationInput {
 }
 impl CreateExperimentTemplateLogConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateLogConfigurationInput`](crate::types::CreateExperimentTemplateLogConfigurationInput).
-    pub fn builder() -> crate::types::builders::CreateExperimentTemplateLogConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::types::builders::CreateExperimentTemplateLogConfigurationInputBuilder {
         crate::types::builders::CreateExperimentTemplateLogConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateExperimentTemplateLogConfigurationInput`](crate::types::CreateExperimentTemplateLogConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExperimentTemplateLogConfigurationInputBuilder {
-    pub(crate) cloud_watch_logs_configuration:
-        ::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
-    pub(crate) s3_configuration:
-        ::std::option::Option<crate::types::ExperimentTemplateS3LogConfigurationInput>,
+    pub(crate) cloud_watch_logs_configuration: ::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
+    pub(crate) s3_configuration: ::std::option::Option<crate::types::ExperimentTemplateS3LogConfigurationInput>,
     pub(crate) log_schema_version: ::std::option::Option<i32>,
 }
 impl CreateExperimentTemplateLogConfigurationInputBuilder {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_logs_configuration(
-        mut self,
-        input: crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
-    ) -> Self {
+    pub fn cloud_watch_logs_configuration(mut self, input: crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput) -> Self {
         self.cloud_watch_logs_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     pub fn set_cloud_watch_logs_configuration(
         mut self,
-        input: ::std::option::Option<
-            crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
-        >,
+        input: ::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
     ) -> Self {
         self.cloud_watch_logs_configuration = input;
         self
     }
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-    pub fn get_cloud_watch_logs_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput>
-    {
+    pub fn get_cloud_watch_logs_configuration(&self) -> &::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput> {
         &self.cloud_watch_logs_configuration
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
-    pub fn s3_configuration(
-        mut self,
-        input: crate::types::ExperimentTemplateS3LogConfigurationInput,
-    ) -> Self {
+    pub fn s3_configuration(mut self, input: crate::types::ExperimentTemplateS3LogConfigurationInput) -> Self {
         self.s3_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
-    pub fn set_s3_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentTemplateS3LogConfigurationInput>,
-    ) -> Self {
+    pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::ExperimentTemplateS3LogConfigurationInput>) -> Self {
         self.s3_configuration = input;
         self
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
-    pub fn get_s3_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExperimentTemplateS3LogConfigurationInput> {
+    pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::ExperimentTemplateS3LogConfigurationInput> {
         &self.s3_configuration
     }
     /// <p>The schema version.</p>

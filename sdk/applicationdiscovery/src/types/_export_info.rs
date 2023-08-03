@@ -72,9 +72,7 @@ impl ExportInfo {
 
 /// A builder for [`ExportInfo`](crate::types::ExportInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportInfoBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     pub(crate) export_status: ::std::option::Option<crate::types::ExportStatus>,
@@ -106,10 +104,7 @@ impl ExportInfoBuilder {
         self
     }
     /// <p>The status of the data export job.</p>
-    pub fn set_export_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportStatus>,
-    ) -> Self {
+    pub fn set_export_status(mut self, input: ::std::option::Option<crate::types::ExportStatus>) -> Self {
         self.export_status = input;
         self
     }
@@ -118,18 +113,12 @@ impl ExportInfoBuilder {
         &self.export_status
     }
     /// <p>A status message provided for API callers.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A status message provided for API callers.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -138,18 +127,12 @@ impl ExportInfoBuilder {
         &self.status_message
     }
     /// <p>A URL for an Amazon S3 bucket where you can review the exported data. The URL is displayed only if the export succeeded.</p>
-    pub fn configurations_download_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configurations_download_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configurations_download_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A URL for an Amazon S3 bucket where you can review the exported data. The URL is displayed only if the export succeeded.</p>
-    pub fn set_configurations_download_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configurations_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configurations_download_url = input;
         self
     }
@@ -163,10 +146,7 @@ impl ExportInfoBuilder {
         self
     }
     /// <p>The time that the data export was initiated.</p>
-    pub fn set_export_request_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_export_request_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.export_request_time = input;
         self
     }
@@ -194,10 +174,7 @@ impl ExportInfoBuilder {
         self
     }
     /// <p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code> request. If no <code>startTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>
-    pub fn set_requested_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_requested_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.requested_start_time = input;
         self
     }
@@ -211,10 +188,7 @@ impl ExportInfoBuilder {
         self
     }
     /// <p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no <code>endTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>
-    pub fn set_requested_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_requested_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.requested_end_time = input;
         self
     }

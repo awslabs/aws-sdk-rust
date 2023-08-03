@@ -37,9 +37,7 @@ impl Value {
 
 /// A builder for [`Value`](crate::types::Value).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValueBuilder {
     pub(crate) original_value: ::std::option::Option<::std::string::String>,
     pub(crate) interpreted_value: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct ValueBuilder {
 }
 impl ValueBuilder {
     /// <p>The text of the utterance from the user that was entered for the slot.</p>
-    pub fn original_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn original_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the utterance from the user that was entered for the slot.</p>
-    pub fn set_original_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_original_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original_value = input;
         self
     }
@@ -67,18 +59,12 @@ impl ValueBuilder {
         &self.original_value
     }
     /// <p>The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
-    pub fn interpreted_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interpreted_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interpreted_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
-    pub fn set_interpreted_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_interpreted_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interpreted_value = input;
         self
     }
@@ -91,27 +77,19 @@ impl ValueBuilder {
     /// To override the contents of this collection use [`set_resolved_values`](Self::set_resolved_values).
     ///
     /// <p>A list of additional values that have been recognized for the slot.</p>
-    pub fn resolved_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolved_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resolved_values.unwrap_or_default();
         v.push(input.into());
         self.resolved_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of additional values that have been recognized for the slot.</p>
-    pub fn set_resolved_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resolved_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resolved_values = input;
         self
     }
     /// <p>A list of additional values that have been recognized for the slot.</p>
-    pub fn get_resolved_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resolved_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resolved_values
     }
     /// Consumes the builder and constructs a [`Value`](crate::types::Value).

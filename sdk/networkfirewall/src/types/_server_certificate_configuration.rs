@@ -8,8 +8,7 @@
 pub struct ServerCertificateConfiguration {
     /// <p>The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.</p>
     #[doc(hidden)]
-    pub server_certificates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>>,
+    pub server_certificates: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>>,
     /// <p>A list of a server certificate configuration's scopes.</p>
     #[doc(hidden)]
     pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>>,
@@ -33,12 +32,9 @@ impl ServerCertificateConfiguration {
 
 /// A builder for [`ServerCertificateConfiguration`](crate::types::ServerCertificateConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerCertificateConfigurationBuilder {
-    pub(crate) server_certificates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>>,
+    pub(crate) server_certificates: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>>,
     pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>>,
 }
 impl ServerCertificateConfigurationBuilder {
@@ -54,17 +50,12 @@ impl ServerCertificateConfigurationBuilder {
         self
     }
     /// <p>The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.</p>
-    pub fn set_server_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>>,
-    ) -> Self {
+    pub fn set_server_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>>) -> Self {
         self.server_certificates = input;
         self
     }
     /// <p>The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.</p>
-    pub fn get_server_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>> {
+    pub fn get_server_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>> {
         &self.server_certificates
     }
     /// Appends an item to `scopes`.
@@ -79,17 +70,12 @@ impl ServerCertificateConfigurationBuilder {
         self
     }
     /// <p>A list of a server certificate configuration's scopes.</p>
-    pub fn set_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>>,
-    ) -> Self {
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>>) -> Self {
         self.scopes = input;
         self
     }
     /// <p>A list of a server certificate configuration's scopes.</p>
-    pub fn get_scopes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>> {
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>> {
         &self.scopes
     }
     /// Consumes the builder and constructs a [`ServerCertificateConfiguration`](crate::types::ServerCertificateConfiguration).

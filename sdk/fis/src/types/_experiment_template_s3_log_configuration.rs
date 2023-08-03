@@ -30,9 +30,7 @@ impl ExperimentTemplateS3LogConfiguration {
 
 /// A builder for [`ExperimentTemplateS3LogConfiguration`](crate::types::ExperimentTemplateS3LogConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentTemplateS3LogConfigurationBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,

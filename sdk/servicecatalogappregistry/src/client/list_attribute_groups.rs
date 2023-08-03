@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`attribute_groups(Option<Vec<AttributeGroupSummary>>)`](crate::operation::list_attribute_groups::ListAttributeGroupsOutput::attribute_groups): <p>This list of attribute groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_attribute_groups::ListAttributeGroupsOutput::next_token): <p>The token to use to get the next page of results after a previous API call. </p>
     /// - On failure, responds with [`SdkError<ListAttributeGroupsError>`](crate::operation::list_attribute_groups::ListAttributeGroupsError)
-    pub fn list_attribute_groups(
-        &self,
-    ) -> crate::operation::list_attribute_groups::builders::ListAttributeGroupsFluentBuilder {
-        crate::operation::list_attribute_groups::builders::ListAttributeGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_attribute_groups(&self) -> crate::operation::list_attribute_groups::builders::ListAttributeGroupsFluentBuilder {
+        crate::operation::list_attribute_groups::builders::ListAttributeGroupsFluentBuilder::new(self.handle.clone())
     }
 }

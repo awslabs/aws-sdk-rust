@@ -10,10 +10,7 @@ impl CreateChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_channel::CreateChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel::CreateChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel::CreateChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_channel();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl CreateChannelFluentBuilder {
         }
     }
     /// Access the CreateChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_channel::builders::CreateChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_channel::builders::CreateChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -68,10 +63,7 @@ impl CreateChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -122,18 +114,12 @@ impl CreateChannelFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ARN of the channel request.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the channel request.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }
@@ -175,10 +161,7 @@ impl CreateChannelFluentBuilder {
         self
     }
     /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
-    pub fn set_privacy(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelPrivacy>,
-    ) -> Self {
+    pub fn set_privacy(mut self, input: ::std::option::Option<crate::types::ChannelPrivacy>) -> Self {
         self.inner = self.inner.set_privacy(input);
         self
     }
@@ -201,18 +184,12 @@ impl CreateChannelFluentBuilder {
         self.inner.get_metadata()
     }
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -230,10 +207,7 @@ impl CreateChannelFluentBuilder {
         self
     }
     /// <p>The tags for the creation request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

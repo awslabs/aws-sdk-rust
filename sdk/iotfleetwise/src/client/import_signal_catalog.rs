@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::import_signal_catalog::ImportSignalCatalogOutput::name): <p> The name of the imported signal catalog. </p>
     ///   - [`arn(Option<String>)`](crate::operation::import_signal_catalog::ImportSignalCatalogOutput::arn): <p> The Amazon Resource Name (ARN) of the imported signal catalog.</p>
     /// - On failure, responds with [`SdkError<ImportSignalCatalogError>`](crate::operation::import_signal_catalog::ImportSignalCatalogError)
-    pub fn import_signal_catalog(
-        &self,
-    ) -> crate::operation::import_signal_catalog::builders::ImportSignalCatalogFluentBuilder {
-        crate::operation::import_signal_catalog::builders::ImportSignalCatalogFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_signal_catalog(&self) -> crate::operation::import_signal_catalog::builders::ImportSignalCatalogFluentBuilder {
+        crate::operation::import_signal_catalog::builders::ImportSignalCatalogFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ListEntitiesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_entities::ListEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entities::ListEntitiesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entities::ListEntitiesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_entities();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListEntitiesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_entities::ListEntities,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_entities::ListEntities, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_entities::ListEntitiesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListEntitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListEntitiesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_entities::ListEntities,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_entities::ListEntities, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_entities::ListEntitiesError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListEntitiesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_entities::paginator::ListEntitiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_entities::paginator::ListEntitiesPaginator {
-        crate::operation::list_entities::paginator::ListEntitiesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_entities::paginator::ListEntitiesPaginator {
+        crate::operation::list_entities::paginator::ListEntitiesPaginator::new(self.handle, self.inner)
     }
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,10 +144,7 @@ impl ListEntitiesFluentBuilder {
         self
     }
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-    pub fn set_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filter_list(input);
         self
     }
@@ -220,10 +200,7 @@ impl ListEntitiesFluentBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_ownership_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OwnershipType>,
-    ) -> Self {
+    pub fn set_ownership_type(mut self, input: ::std::option::Option<crate::types::OwnershipType>) -> Self {
         self.inner = self.inner.set_ownership_type(input);
         self
     }

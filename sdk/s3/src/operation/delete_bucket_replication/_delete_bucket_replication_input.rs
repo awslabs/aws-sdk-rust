@@ -22,18 +22,14 @@ impl DeleteBucketReplicationInput {
 }
 impl DeleteBucketReplicationInput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketReplicationInput`](crate::operation::delete_bucket_replication::DeleteBucketReplicationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_bucket_replication::builders::DeleteBucketReplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_bucket_replication::builders::DeleteBucketReplicationInputBuilder {
         crate::operation::delete_bucket_replication::builders::DeleteBucketReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBucketReplicationInput`](crate::operation::delete_bucket_replication::DeleteBucketReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBucketReplicationInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DeleteBucketReplicationInputBuilder {
         &self.bucket
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -80,11 +70,9 @@ impl DeleteBucketReplicationInputBuilder {
         crate::operation::delete_bucket_replication::DeleteBucketReplicationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_bucket_replication::DeleteBucketReplicationInput {
-                bucket: self.bucket,
-                expected_bucket_owner: self.expected_bucket_owner,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_bucket_replication::DeleteBucketReplicationInput {
+            bucket: self.bucket,
+            expected_bucket_owner: self.expected_bucket_owner,
+        })
     }
 }

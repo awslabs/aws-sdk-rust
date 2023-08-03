@@ -45,13 +45,7 @@
 /// <p>Specifies the Auto-Tune state for the Elasticsearch domain. For valid states see the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AutoTuneState {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,9 +81,7 @@ impl ::std::convert::From<&str> for AutoTuneState {
             "ENABLED" => AutoTuneState::Enabled,
             "ENABLE_IN_PROGRESS" => AutoTuneState::EnableInProgress,
             "ERROR" => AutoTuneState::Error,
-            other => {
-                AutoTuneState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AutoTuneState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

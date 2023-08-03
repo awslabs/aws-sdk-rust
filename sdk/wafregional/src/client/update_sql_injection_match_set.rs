@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateSqlInjectionMatchSetOutput`](crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateSqlInjectionMatchSetError>`](crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError)
-    pub fn update_sql_injection_match_set(&self) -> crate::operation::update_sql_injection_match_set::builders::UpdateSqlInjectionMatchSetFluentBuilder{
+    pub fn update_sql_injection_match_set(
+        &self,
+    ) -> crate::operation::update_sql_injection_match_set::builders::UpdateSqlInjectionMatchSetFluentBuilder {
         crate::operation::update_sql_injection_match_set::builders::UpdateSqlInjectionMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -53,9 +53,7 @@ impl AllowedMethods {
 
 /// A builder for [`AllowedMethods`](crate::types::AllowedMethods).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllowedMethodsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Method>>,
@@ -88,10 +86,7 @@ impl AllowedMethodsBuilder {
         self
     }
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Method>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Method>>) -> Self {
         self.items = input;
         self
     }
@@ -115,10 +110,7 @@ impl AllowedMethodsBuilder {
     /// <li> <p>CloudFront caches responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li>
     /// </ul>
     /// <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly.</p>
-    pub fn set_cached_methods(
-        mut self,
-        input: ::std::option::Option<crate::types::CachedMethods>,
-    ) -> Self {
+    pub fn set_cached_methods(mut self, input: ::std::option::Option<crate::types::CachedMethods>) -> Self {
         self.cached_methods = input;
         self
     }

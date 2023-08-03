@@ -30,9 +30,7 @@ impl IntelligentTieringAndOperator {
 
 /// A builder for [`IntelligentTieringAndOperator`](crate::types::IntelligentTieringAndOperator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntelligentTieringAndOperatorBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -64,10 +62,7 @@ impl IntelligentTieringAndOperatorBuilder {
         self
     }
     /// <p>All of these tags must exist in the object's tag set in order for the configuration to apply.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

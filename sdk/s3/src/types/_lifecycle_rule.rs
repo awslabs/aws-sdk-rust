@@ -28,16 +28,13 @@ pub struct LifecycleRule {
     pub transitions: ::std::option::Option<::std::vec::Vec<crate::types::Transition>>,
     /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
     #[doc(hidden)]
-    pub noncurrent_version_transitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::NoncurrentVersionTransition>>,
+    pub noncurrent_version_transitions: ::std::option::Option<::std::vec::Vec<crate::types::NoncurrentVersionTransition>>,
     /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
     #[doc(hidden)]
-    pub noncurrent_version_expiration:
-        ::std::option::Option<crate::types::NoncurrentVersionExpiration>,
+    pub noncurrent_version_expiration: ::std::option::Option<crate::types::NoncurrentVersionExpiration>,
     /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
-    pub abort_incomplete_multipart_upload:
-        ::std::option::Option<crate::types::AbortIncompleteMultipartUpload>,
+    pub abort_incomplete_multipart_upload: ::std::option::Option<crate::types::AbortIncompleteMultipartUpload>,
 }
 impl LifecycleRule {
     /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
@@ -68,21 +65,15 @@ impl LifecycleRule {
         self.transitions.as_deref()
     }
     /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
-    pub fn noncurrent_version_transitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NoncurrentVersionTransition]> {
+    pub fn noncurrent_version_transitions(&self) -> ::std::option::Option<&[crate::types::NoncurrentVersionTransition]> {
         self.noncurrent_version_transitions.as_deref()
     }
     /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
-    pub fn noncurrent_version_expiration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NoncurrentVersionExpiration> {
+    pub fn noncurrent_version_expiration(&self) -> ::std::option::Option<&crate::types::NoncurrentVersionExpiration> {
         self.noncurrent_version_expiration.as_ref()
     }
     /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn abort_incomplete_multipart_upload(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AbortIncompleteMultipartUpload> {
+    pub fn abort_incomplete_multipart_upload(&self) -> ::std::option::Option<&crate::types::AbortIncompleteMultipartUpload> {
         self.abort_incomplete_multipart_upload.as_ref()
     }
 }
@@ -95,9 +86,7 @@ impl LifecycleRule {
 
 /// A builder for [`LifecycleRule`](crate::types::LifecycleRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifecycleRuleBuilder {
     pub(crate) expiration: ::std::option::Option<crate::types::LifecycleExpiration>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -105,12 +94,9 @@ pub struct LifecycleRuleBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::LifecycleRuleFilter>,
     pub(crate) status: ::std::option::Option<crate::types::ExpirationStatus>,
     pub(crate) transitions: ::std::option::Option<::std::vec::Vec<crate::types::Transition>>,
-    pub(crate) noncurrent_version_transitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::NoncurrentVersionTransition>>,
-    pub(crate) noncurrent_version_expiration:
-        ::std::option::Option<crate::types::NoncurrentVersionExpiration>,
-    pub(crate) abort_incomplete_multipart_upload:
-        ::std::option::Option<crate::types::AbortIncompleteMultipartUpload>,
+    pub(crate) noncurrent_version_transitions: ::std::option::Option<::std::vec::Vec<crate::types::NoncurrentVersionTransition>>,
+    pub(crate) noncurrent_version_expiration: ::std::option::Option<crate::types::NoncurrentVersionExpiration>,
+    pub(crate) abort_incomplete_multipart_upload: ::std::option::Option<crate::types::AbortIncompleteMultipartUpload>,
 }
 impl LifecycleRuleBuilder {
     /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
@@ -119,10 +105,7 @@ impl LifecycleRuleBuilder {
         self
     }
     /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
-    pub fn set_expiration(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecycleExpiration>,
-    ) -> Self {
+    pub fn set_expiration(mut self, input: ::std::option::Option<crate::types::LifecycleExpiration>) -> Self {
         self.expiration = input;
         self
     }
@@ -173,10 +156,7 @@ impl LifecycleRuleBuilder {
         self
     }
     /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not contain a <code>Prefix</code> element.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecycleRuleFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::LifecycleRuleFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -190,10 +170,7 @@ impl LifecycleRuleBuilder {
         self
     }
     /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpirationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExpirationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -213,17 +190,12 @@ impl LifecycleRuleBuilder {
         self
     }
     /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p>
-    pub fn set_transitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Transition>>,
-    ) -> Self {
+    pub fn set_transitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Transition>>) -> Self {
         self.transitions = input;
         self
     }
     /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p>
-    pub fn get_transitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Transition>> {
+    pub fn get_transitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Transition>> {
         &self.transitions
     }
     /// Appends an item to `noncurrent_version_transitions`.
@@ -231,10 +203,7 @@ impl LifecycleRuleBuilder {
     /// To override the contents of this collection use [`set_noncurrent_version_transitions`](Self::set_noncurrent_version_transitions).
     ///
     /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
-    pub fn noncurrent_version_transitions(
-        mut self,
-        input: crate::types::NoncurrentVersionTransition,
-    ) -> Self {
+    pub fn noncurrent_version_transitions(mut self, input: crate::types::NoncurrentVersionTransition) -> Self {
         let mut v = self.noncurrent_version_transitions.unwrap_or_default();
         v.push(input);
         self.noncurrent_version_transitions = ::std::option::Option::Some(v);
@@ -249,53 +218,35 @@ impl LifecycleRuleBuilder {
         self
     }
     /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
-    pub fn get_noncurrent_version_transitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NoncurrentVersionTransition>> {
+    pub fn get_noncurrent_version_transitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NoncurrentVersionTransition>> {
         &self.noncurrent_version_transitions
     }
     /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
-    pub fn noncurrent_version_expiration(
-        mut self,
-        input: crate::types::NoncurrentVersionExpiration,
-    ) -> Self {
+    pub fn noncurrent_version_expiration(mut self, input: crate::types::NoncurrentVersionExpiration) -> Self {
         self.noncurrent_version_expiration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
-    pub fn set_noncurrent_version_expiration(
-        mut self,
-        input: ::std::option::Option<crate::types::NoncurrentVersionExpiration>,
-    ) -> Self {
+    pub fn set_noncurrent_version_expiration(mut self, input: ::std::option::Option<crate::types::NoncurrentVersionExpiration>) -> Self {
         self.noncurrent_version_expiration = input;
         self
     }
     /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
-    pub fn get_noncurrent_version_expiration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NoncurrentVersionExpiration> {
+    pub fn get_noncurrent_version_expiration(&self) -> &::std::option::Option<crate::types::NoncurrentVersionExpiration> {
         &self.noncurrent_version_expiration
     }
     /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn abort_incomplete_multipart_upload(
-        mut self,
-        input: crate::types::AbortIncompleteMultipartUpload,
-    ) -> Self {
+    pub fn abort_incomplete_multipart_upload(mut self, input: crate::types::AbortIncompleteMultipartUpload) -> Self {
         self.abort_incomplete_multipart_upload = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_abort_incomplete_multipart_upload(
-        mut self,
-        input: ::std::option::Option<crate::types::AbortIncompleteMultipartUpload>,
-    ) -> Self {
+    pub fn set_abort_incomplete_multipart_upload(mut self, input: ::std::option::Option<crate::types::AbortIncompleteMultipartUpload>) -> Self {
         self.abort_incomplete_multipart_upload = input;
         self
     }
     /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn get_abort_incomplete_multipart_upload(
-        &self,
-    ) -> &::std::option::Option<crate::types::AbortIncompleteMultipartUpload> {
+    pub fn get_abort_incomplete_multipart_upload(&self) -> &::std::option::Option<crate::types::AbortIncompleteMultipartUpload> {
         &self.abort_incomplete_multipart_upload
     }
     /// Consumes the builder and constructs a [`LifecycleRule`](crate::types::LifecycleRule).

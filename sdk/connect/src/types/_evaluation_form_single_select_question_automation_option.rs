@@ -20,10 +20,7 @@ impl EvaluationFormSingleSelectQuestionAutomationOption {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`RuleCategory`](crate::types::EvaluationFormSingleSelectQuestionAutomationOption::RuleCategory), extracting the inner [`SingleSelectQuestionRuleCategoryAutomation`](crate::types::SingleSelectQuestionRuleCategoryAutomation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_rule_category(
-        &self,
-    ) -> ::std::result::Result<&crate::types::SingleSelectQuestionRuleCategoryAutomation, &Self>
-    {
+    pub fn as_rule_category(&self) -> ::std::result::Result<&crate::types::SingleSelectQuestionRuleCategoryAutomation, &Self> {
         if let EvaluationFormSingleSelectQuestionAutomationOption::RuleCategory(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

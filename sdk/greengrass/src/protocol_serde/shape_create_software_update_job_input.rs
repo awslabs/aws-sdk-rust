@@ -22,14 +22,10 @@ pub fn ser_create_software_update_job_input(
         array_5.finish();
     }
     if let Some(var_7) = &input.update_targets_architecture {
-        object
-            .key("UpdateTargetsArchitecture")
-            .string(var_7.as_str());
+        object.key("UpdateTargetsArchitecture").string(var_7.as_str());
     }
     if let Some(var_8) = &input.update_targets_operating_system {
-        object
-            .key("UpdateTargetsOperatingSystem")
-            .string(var_8.as_str());
+        object.key("UpdateTargetsOperatingSystem").string(var_8.as_str());
     }
     Ok(())
 }

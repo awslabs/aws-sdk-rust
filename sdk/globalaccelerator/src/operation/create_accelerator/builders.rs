@@ -10,10 +10,7 @@ impl CreateAcceleratorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_accelerator::CreateAcceleratorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_accelerator::CreateAcceleratorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_accelerator::CreateAcceleratorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_accelerator();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateAcceleratorFluentBuilder {
         }
     }
     /// Access the CreateAccelerator as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_accelerator::builders::CreateAcceleratorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_accelerator::builders::CreateAcceleratorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CreateAcceleratorFluentBuilder {
             crate::operation::create_accelerator::CreateAccelerator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_accelerator::CreateAcceleratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_accelerator::CreateAcceleratorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CreateAcceleratorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CreateAcceleratorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_accelerator::CreateAcceleratorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_accelerator::CreateAcceleratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_accelerator::CreateAcceleratorError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CreateAcceleratorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_accelerator::CreateAcceleratorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_accelerator::CreateAcceleratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_accelerator::CreateAcceleratorError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl CreateAcceleratorFluentBuilder {
             crate::operation::create_accelerator::CreateAccelerator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_accelerator::CreateAcceleratorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_accelerator::CreateAcceleratorError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +128,7 @@ impl CreateAcceleratorFluentBuilder {
         self
     }
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
@@ -173,10 +154,7 @@ impl CreateAcceleratorFluentBuilder {
     /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
     /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ip_addresses(input);
         self
     }
@@ -185,9 +163,7 @@ impl CreateAcceleratorFluentBuilder {
     /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
     /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn get_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ip_addresses()
     }
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
@@ -208,18 +184,12 @@ impl CreateAcceleratorFluentBuilder {
         self.inner.get_enabled()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
@@ -239,10 +209,7 @@ impl CreateAcceleratorFluentBuilder {
     }
     /// <p>Create tags for an accelerator.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -22,9 +22,7 @@ pub struct IngestionStatus {
 }
 impl IngestionStatus {
     /// <p>The time stamp of the most recent successful ingestion of events for the channel.</p>
-    pub fn latest_ingestion_success_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_ingestion_success_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.latest_ingestion_success_time.as_ref()
     }
     /// <p>The event ID of the most recent successful ingestion of events.</p>
@@ -36,9 +34,7 @@ impl IngestionStatus {
         self.latest_ingestion_error_code.as_deref()
     }
     /// <p>The time stamp of the most recent attempt to ingest events on the channel.</p>
-    pub fn latest_ingestion_attempt_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_ingestion_attempt_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.latest_ingestion_attempt_time.as_ref()
     }
     /// <p>The event ID of the most recent attempt to ingest events.</p>
@@ -55,9 +51,7 @@ impl IngestionStatus {
 
 /// A builder for [`IngestionStatus`](crate::types::IngestionStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngestionStatusBuilder {
     pub(crate) latest_ingestion_success_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_ingestion_success_event_id: ::std::option::Option<::std::string::String>,
@@ -72,54 +66,35 @@ impl IngestionStatusBuilder {
         self
     }
     /// <p>The time stamp of the most recent successful ingestion of events for the channel.</p>
-    pub fn set_latest_ingestion_success_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_ingestion_success_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_ingestion_success_time = input;
         self
     }
     /// <p>The time stamp of the most recent successful ingestion of events for the channel.</p>
-    pub fn get_latest_ingestion_success_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_latest_ingestion_success_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.latest_ingestion_success_time
     }
     /// <p>The event ID of the most recent successful ingestion of events.</p>
-    pub fn latest_ingestion_success_event_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_ingestion_success_event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_ingestion_success_event_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event ID of the most recent successful ingestion of events.</p>
-    pub fn set_latest_ingestion_success_event_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_ingestion_success_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_ingestion_success_event_id = input;
         self
     }
     /// <p>The event ID of the most recent successful ingestion of events.</p>
-    pub fn get_latest_ingestion_success_event_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_latest_ingestion_success_event_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_ingestion_success_event_id
     }
     /// <p>The error code for the most recent failure to ingest events.</p>
-    pub fn latest_ingestion_error_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_ingestion_error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_ingestion_error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error code for the most recent failure to ingest events.</p>
-    pub fn set_latest_ingestion_error_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_ingestion_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_ingestion_error_code = input;
         self
     }
@@ -133,39 +108,26 @@ impl IngestionStatusBuilder {
         self
     }
     /// <p>The time stamp of the most recent attempt to ingest events on the channel.</p>
-    pub fn set_latest_ingestion_attempt_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_ingestion_attempt_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_ingestion_attempt_time = input;
         self
     }
     /// <p>The time stamp of the most recent attempt to ingest events on the channel.</p>
-    pub fn get_latest_ingestion_attempt_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_latest_ingestion_attempt_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.latest_ingestion_attempt_time
     }
     /// <p>The event ID of the most recent attempt to ingest events.</p>
-    pub fn latest_ingestion_attempt_event_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_ingestion_attempt_event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_ingestion_attempt_event_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event ID of the most recent attempt to ingest events.</p>
-    pub fn set_latest_ingestion_attempt_event_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_ingestion_attempt_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_ingestion_attempt_event_id = input;
         self
     }
     /// <p>The event ID of the most recent attempt to ingest events.</p>
-    pub fn get_latest_ingestion_attempt_event_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_latest_ingestion_attempt_event_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_ingestion_attempt_event_id
     }
     /// Consumes the builder and constructs a [`IngestionStatus`](crate::types::IngestionStatus).

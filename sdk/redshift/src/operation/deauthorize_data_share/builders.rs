@@ -37,9 +37,7 @@ impl DeauthorizeDataShareFluentBuilder {
         }
     }
     /// Access the DeauthorizeDataShare as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeauthorizeDataShareFluentBuilder {
             crate::operation::deauthorize_data_share::DeauthorizeDataShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deauthorize_data_share::DeauthorizeDataShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deauthorize_data_share::DeauthorizeDataShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeauthorizeDataShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeauthorizeDataShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deauthorize_data_share::DeauthorizeDataShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deauthorize_data_share::DeauthorizeDataShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deauthorize_data_share::DeauthorizeDataShareError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeauthorizeDataShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deauthorize_data_share::DeauthorizeDataShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deauthorize_data_share::DeauthorizeDataShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deauthorize_data_share::DeauthorizeDataShareError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeauthorizeDataShareFluentBuilder {
             crate::operation::deauthorize_data_share::DeauthorizeDataShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deauthorize_data_share::DeauthorizeDataShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deauthorize_data_share::DeauthorizeDataShareError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
-    pub fn data_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_share_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
-    pub fn set_data_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_share_arn(input);
         self
     }
@@ -143,18 +124,12 @@ impl DeauthorizeDataShareFluentBuilder {
         self.inner.get_data_share_arn()
     }
     /// <p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
-    pub fn consumer_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumer_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.consumer_identifier(input.into());
         self
     }
     /// <p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
-    pub fn set_consumer_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_consumer_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_consumer_identifier(input);
         self
     }

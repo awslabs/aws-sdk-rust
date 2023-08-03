@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MacAlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for MacAlgorithmSpec {
             "HMAC_SHA_256" => MacAlgorithmSpec::HmacSha256,
             "HMAC_SHA_384" => MacAlgorithmSpec::HmacSha384,
             "HMAC_SHA_512" => MacAlgorithmSpec::HmacSha512,
-            other => {
-                MacAlgorithmSpec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => MacAlgorithmSpec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl MacAlgorithmSpec {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "HMAC_SHA_224",
-            "HMAC_SHA_256",
-            "HMAC_SHA_384",
-            "HMAC_SHA_512",
-        ]
+        &["HMAC_SHA_224", "HMAC_SHA_256", "HMAC_SHA_384", "HMAC_SHA_512"]
     }
 }
 impl ::std::convert::AsRef<str> for MacAlgorithmSpec {

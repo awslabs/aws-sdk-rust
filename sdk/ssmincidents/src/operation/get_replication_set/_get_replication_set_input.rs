@@ -15,17 +15,14 @@ impl GetReplicationSetInput {
 }
 impl GetReplicationSetInput {
     /// Creates a new builder-style object to manufacture [`GetReplicationSetInput`](crate::operation::get_replication_set::GetReplicationSetInput).
-    pub fn builder(
-    ) -> crate::operation::get_replication_set::builders::GetReplicationSetInputBuilder {
+    pub fn builder() -> crate::operation::get_replication_set::builders::GetReplicationSetInputBuilder {
         crate::operation::get_replication_set::builders::GetReplicationSetInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReplicationSetInput`](crate::operation::get_replication_set::GetReplicationSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReplicationSetInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl GetReplicationSetInputBuilder {
     /// Consumes the builder and constructs a [`GetReplicationSetInput`](crate::operation::get_replication_set::GetReplicationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_replication_set::GetReplicationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_replication_set::GetReplicationSetInput { arn: self.arn },
-        )
+    ) -> ::std::result::Result<crate::operation::get_replication_set::GetReplicationSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_replication_set::GetReplicationSetInput { arn: self.arn })
     }
 }

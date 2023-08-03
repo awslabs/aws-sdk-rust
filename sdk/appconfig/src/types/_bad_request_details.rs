@@ -20,10 +20,7 @@ impl BadRequestDetails {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`InvalidConfiguration`](crate::types::BadRequestDetails::InvalidConfiguration), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_invalid_configuration(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<crate::types::InvalidConfigurationDetail>, &Self>
-    {
+    pub fn as_invalid_configuration(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::InvalidConfigurationDetail>, &Self> {
         if let BadRequestDetails::InvalidConfiguration(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

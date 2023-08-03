@@ -27,7 +27,7 @@ impl UpdateKxClusterDatabasesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateKxClusterDatabasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesInputBuilder,
+    inner: crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesInputBuilder,
 }
 impl UpdateKxClusterDatabasesFluentBuilder {
     /// Creates a new `UpdateKxClusterDatabases`.
@@ -38,7 +38,7 @@ impl UpdateKxClusterDatabasesFluentBuilder {
         }
     }
     /// Access the UpdateKxClusterDatabases as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateKxClusterDatabasesFluentBuilder {
             crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateKxClusterDatabasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateKxClusterDatabasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateKxClusterDatabasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl UpdateKxClusterDatabasesFluentBuilder {
             crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of a kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>The unique identifier of a kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -179,17 +162,12 @@ impl UpdateKxClusterDatabasesFluentBuilder {
         self
     }
     /// <p> The structure of databases mounted on the cluster.</p>
-    pub fn set_databases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>,
-    ) -> Self {
+    pub fn set_databases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>) -> Self {
         self.inner = self.inner.set_databases(input);
         self
     }
     /// <p> The structure of databases mounted on the cluster.</p>
-    pub fn get_databases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
+    pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
         self.inner.get_databases()
     }
 }

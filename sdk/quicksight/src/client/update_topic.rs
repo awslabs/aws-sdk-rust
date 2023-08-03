@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::update_topic::UpdateTopicOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::update_topic::UpdateTopicOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<UpdateTopicError>`](crate::operation::update_topic::UpdateTopicError)
-    pub fn update_topic(
-        &self,
-    ) -> crate::operation::update_topic::builders::UpdateTopicFluentBuilder {
+    pub fn update_topic(&self) -> crate::operation::update_topic::builders::UpdateTopicFluentBuilder {
         crate::operation::update_topic::builders::UpdateTopicFluentBuilder::new(self.handle.clone())
     }
 }

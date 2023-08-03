@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`download_url(Option<String>)`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput::download_url): <p>The pre-signed Amazon S3 download URL for the requested layer.</p>
     ///   - [`layer_digest(Option<String>)`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput::layer_digest): <p>The digest of the image layer to download.</p>
     /// - On failure, responds with [`SdkError<GetDownloadUrlForLayerError>`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError)
-    pub fn get_download_url_for_layer(
-        &self,
-    ) -> crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerFluentBuilder
-    {
+    pub fn get_download_url_for_layer(&self) -> crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerFluentBuilder {
         crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerFluentBuilder::new(self.handle.clone())
     }
 }

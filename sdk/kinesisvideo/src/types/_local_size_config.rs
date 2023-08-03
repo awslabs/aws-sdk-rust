@@ -17,9 +17,7 @@ impl LocalSizeConfig {
         self.max_local_media_size_in_mb
     }
     /// <p>The strategy to perform when a stream’s <code>MaxLocalMediaSizeInMB</code> limit is reached.</p>
-    pub fn strategy_on_full_size(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StrategyOnFullSize> {
+    pub fn strategy_on_full_size(&self) -> ::std::option::Option<&crate::types::StrategyOnFullSize> {
         self.strategy_on_full_size.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl LocalSizeConfig {
 
 /// A builder for [`LocalSizeConfig`](crate::types::LocalSizeConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocalSizeConfigBuilder {
     pub(crate) max_local_media_size_in_mb: ::std::option::Option<i32>,
     pub(crate) strategy_on_full_size: ::std::option::Option<crate::types::StrategyOnFullSize>,
@@ -60,17 +56,12 @@ impl LocalSizeConfigBuilder {
         self
     }
     /// <p>The strategy to perform when a stream’s <code>MaxLocalMediaSizeInMB</code> limit is reached.</p>
-    pub fn set_strategy_on_full_size(
-        mut self,
-        input: ::std::option::Option<crate::types::StrategyOnFullSize>,
-    ) -> Self {
+    pub fn set_strategy_on_full_size(mut self, input: ::std::option::Option<crate::types::StrategyOnFullSize>) -> Self {
         self.strategy_on_full_size = input;
         self
     }
     /// <p>The strategy to perform when a stream’s <code>MaxLocalMediaSizeInMB</code> limit is reached.</p>
-    pub fn get_strategy_on_full_size(
-        &self,
-    ) -> &::std::option::Option<crate::types::StrategyOnFullSize> {
+    pub fn get_strategy_on_full_size(&self) -> &::std::option::Option<crate::types::StrategyOnFullSize> {
         &self.strategy_on_full_size
     }
     /// Consumes the builder and constructs a [`LocalSizeConfig`](crate::types::LocalSizeConfig).

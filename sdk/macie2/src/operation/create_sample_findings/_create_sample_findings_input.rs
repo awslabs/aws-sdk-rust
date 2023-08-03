@@ -15,17 +15,14 @@ impl CreateSampleFindingsInput {
 }
 impl CreateSampleFindingsInput {
     /// Creates a new builder-style object to manufacture [`CreateSampleFindingsInput`](crate::operation::create_sample_findings::CreateSampleFindingsInput).
-    pub fn builder(
-    ) -> crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder {
+    pub fn builder() -> crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder {
         crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSampleFindingsInput`](crate::operation::create_sample_findings::CreateSampleFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSampleFindingsInputBuilder {
     pub(crate) finding_types: ::std::option::Option<::std::vec::Vec<crate::types::FindingType>>,
 }
@@ -42,30 +39,21 @@ impl CreateSampleFindingsInputBuilder {
         self
     }
     /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
-    pub fn set_finding_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FindingType>>,
-    ) -> Self {
+    pub fn set_finding_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingType>>) -> Self {
         self.finding_types = input;
         self
     }
     /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
-    pub fn get_finding_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingType>> {
+    pub fn get_finding_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingType>> {
         &self.finding_types
     }
     /// Consumes the builder and constructs a [`CreateSampleFindingsInput`](crate::operation::create_sample_findings::CreateSampleFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_sample_findings::CreateSampleFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_sample_findings::CreateSampleFindingsInput {
-                finding_types: self.finding_types,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_sample_findings::CreateSampleFindingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_sample_findings::CreateSampleFindingsInput {
+            finding_types: self.finding_types,
+        })
     }
 }

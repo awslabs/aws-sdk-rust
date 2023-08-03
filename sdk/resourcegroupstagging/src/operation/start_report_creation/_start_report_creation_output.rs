@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StartReportCreationOutput {
 }
 impl StartReportCreationOutput {
     /// Creates a new builder-style object to manufacture [`StartReportCreationOutput`](crate::operation::start_report_creation::StartReportCreationOutput).
-    pub fn builder(
-    ) -> crate::operation::start_report_creation::builders::StartReportCreationOutputBuilder {
-        crate::operation::start_report_creation::builders::StartReportCreationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_report_creation::builders::StartReportCreationOutputBuilder {
+        crate::operation::start_report_creation::builders::StartReportCreationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartReportCreationOutput`](crate::operation::start_report_creation::StartReportCreationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReportCreationOutputBuilder {
     _request_id: Option<String>,
 }

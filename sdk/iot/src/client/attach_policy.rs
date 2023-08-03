@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`target(impl ::std::convert::Into<String>)`](crate::operation::attach_policy::builders::AttachPolicyFluentBuilder::target) / [`set_target(Option<String>)`](crate::operation::attach_policy::builders::AttachPolicyFluentBuilder::set_target): <p>The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the policy is attached. For example, a thing group or a certificate.</p>
     /// - On success, responds with [`AttachPolicyOutput`](crate::operation::attach_policy::AttachPolicyOutput)
     /// - On failure, responds with [`SdkError<AttachPolicyError>`](crate::operation::attach_policy::AttachPolicyError)
-    pub fn attach_policy(
-        &self,
-    ) -> crate::operation::attach_policy::builders::AttachPolicyFluentBuilder {
-        crate::operation::attach_policy::builders::AttachPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_policy(&self) -> crate::operation::attach_policy::builders::AttachPolicyFluentBuilder {
+        crate::operation::attach_policy::builders::AttachPolicyFluentBuilder::new(self.handle.clone())
     }
 }

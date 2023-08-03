@@ -10,10 +10,7 @@ impl UpdateBridgeSourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_bridge_source::UpdateBridgeSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_source::UpdateBridgeSourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_source::UpdateBridgeSourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_bridge_source();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateBridgeSourceFluentBuilder {
         }
     }
     /// Access the UpdateBridgeSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_bridge_source::builders::UpdateBridgeSourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_bridge_source::builders::UpdateBridgeSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateBridgeSourceFluentBuilder {
             crate::operation::update_bridge_source::UpdateBridgeSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_source::UpdateBridgeSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_source::UpdateBridgeSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateBridgeSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateBridgeSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bridge_source::UpdateBridgeSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_source::UpdateBridgeSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_source::UpdateBridgeSourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateBridgeSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bridge_source::UpdateBridgeSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_source::UpdateBridgeSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_source::UpdateBridgeSourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateBridgeSourceFluentBuilder {
             crate::operation::update_bridge_source::UpdateBridgeSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_source::UpdateBridgeSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_source::UpdateBridgeSourceError>,
     > {
         self.customize_middleware().await
     }
@@ -142,17 +126,12 @@ impl UpdateBridgeSourceFluentBuilder {
         self
     }
     /// Update the flow source of the bridge.
-    pub fn set_flow_source(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateBridgeFlowSourceRequest>,
-    ) -> Self {
+    pub fn set_flow_source(mut self, input: ::std::option::Option<crate::types::UpdateBridgeFlowSourceRequest>) -> Self {
         self.inner = self.inner.set_flow_source(input);
         self
     }
     /// Update the flow source of the bridge.
-    pub fn get_flow_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateBridgeFlowSourceRequest> {
+    pub fn get_flow_source(&self) -> &::std::option::Option<crate::types::UpdateBridgeFlowSourceRequest> {
         self.inner.get_flow_source()
     }
     /// Update the network source of the bridge.
@@ -161,17 +140,12 @@ impl UpdateBridgeSourceFluentBuilder {
         self
     }
     /// Update the network source of the bridge.
-    pub fn set_network_source(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateBridgeNetworkSourceRequest>,
-    ) -> Self {
+    pub fn set_network_source(mut self, input: ::std::option::Option<crate::types::UpdateBridgeNetworkSourceRequest>) -> Self {
         self.inner = self.inner.set_network_source(input);
         self
     }
     /// Update the network source of the bridge.
-    pub fn get_network_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateBridgeNetworkSourceRequest> {
+    pub fn get_network_source(&self) -> &::std::option::Option<crate::types::UpdateBridgeNetworkSourceRequest> {
         self.inner.get_network_source()
     }
     /// The name of the source that you want to update.

@@ -10,10 +10,7 @@ impl GetPartnerAccountInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_partner_account::GetPartnerAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_partner_account::GetPartnerAccountError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_partner_account::GetPartnerAccountError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_partner_account();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetPartnerAccountFluentBuilder {
         }
     }
     /// Access the GetPartnerAccount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_partner_account::builders::GetPartnerAccountInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_partner_account::builders::GetPartnerAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetPartnerAccountFluentBuilder {
             crate::operation::get_partner_account::GetPartnerAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_partner_account::GetPartnerAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_partner_account::GetPartnerAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetPartnerAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetPartnerAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_partner_account::GetPartnerAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_partner_account::GetPartnerAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_partner_account::GetPartnerAccountError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetPartnerAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_partner_account::GetPartnerAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_partner_account::GetPartnerAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_partner_account::GetPartnerAccountError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetPartnerAccountFluentBuilder {
             crate::operation::get_partner_account::GetPartnerAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_partner_account::GetPartnerAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_partner_account::GetPartnerAccountError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The partner account ID to disassociate from the AWS account.</p>
-    pub fn partner_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.partner_account_id(input.into());
         self
     }
     /// <p>The partner account ID to disassociate from the AWS account.</p>
-    pub fn set_partner_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_partner_account_id(input);
         self
     }
@@ -148,10 +126,7 @@ impl GetPartnerAccountFluentBuilder {
         self
     }
     /// <p>The partner type.</p>
-    pub fn set_partner_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PartnerType>,
-    ) -> Self {
+    pub fn set_partner_type(mut self, input: ::std::option::Option<crate::types::PartnerType>) -> Self {
         self.inner = self.inner.set_partner_type(input);
         self
     }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::list_templates::ListTemplatesOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_templates::ListTemplatesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<ListTemplatesError>`](crate::operation::list_templates::ListTemplatesError)
-    pub fn list_templates(
-        &self,
-    ) -> crate::operation::list_templates::builders::ListTemplatesFluentBuilder {
-        crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_templates(&self) -> crate::operation::list_templates::builders::ListTemplatesFluentBuilder {
+        crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

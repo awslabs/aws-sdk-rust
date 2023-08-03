@@ -100,9 +100,7 @@ impl EndpointProperties {
 
 /// A builder for [`EndpointProperties`](crate::types::EndpointProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointPropertiesBuilder {
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EndpointStatus>,
@@ -138,10 +136,7 @@ impl EndpointPropertiesBuilder {
         self
     }
     /// <p>Specifies the status of the endpoint. Because the endpoint updates and creation are asynchronous, so customers will need to wait for the endpoint to be <code>Ready</code> status before making inference requests.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EndpointStatus>) -> Self {
         self.status = input;
         self
     }
@@ -178,18 +173,12 @@ impl EndpointPropertiesBuilder {
         &self.model_arn
     }
     /// <p>ARN of the new model to use for updating an existing endpoint. This ARN is going to be different from the model ARN when the update is in progress</p>
-    pub fn desired_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn desired_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the new model to use for updating an existing endpoint. This ARN is going to be different from the model ARN when the update is in progress</p>
-    pub fn set_desired_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_desired_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.desired_model_arn = input;
         self
     }
@@ -231,10 +220,7 @@ impl EndpointPropertiesBuilder {
         self
     }
     /// <p>The creation date and time of the endpoint.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -248,10 +234,7 @@ impl EndpointPropertiesBuilder {
         self
     }
     /// <p>The date and time that the endpoint was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -260,18 +243,12 @@ impl EndpointPropertiesBuilder {
         &self.last_modified_time
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -280,25 +257,17 @@ impl EndpointPropertiesBuilder {
         &self.data_access_role_arn
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
-    pub fn desired_data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn desired_data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
-    pub fn set_desired_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_desired_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.desired_data_access_role_arn = input;
         self
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
-    pub fn get_desired_data_access_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_desired_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_data_access_role_arn
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>

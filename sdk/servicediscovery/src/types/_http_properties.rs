@@ -23,9 +23,7 @@ impl HttpProperties {
 
 /// A builder for [`HttpProperties`](crate::types::HttpProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpPropertiesBuilder {
     pub(crate) http_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl HttpPropertiesBuilder {
     }
     /// Consumes the builder and constructs a [`HttpProperties`](crate::types::HttpProperties).
     pub fn build(self) -> crate::types::HttpProperties {
-        crate::types::HttpProperties {
-            http_name: self.http_name,
-        }
+        crate::types::HttpProperties { http_name: self.http_name }
     }
 }

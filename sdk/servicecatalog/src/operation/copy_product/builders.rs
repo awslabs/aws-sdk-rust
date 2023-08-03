@@ -10,10 +10,7 @@ impl CopyProductInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::copy_product::CopyProductOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_product::CopyProductError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_product::CopyProductError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.copy_product();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl CopyProductFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::copy_product::CopyProduct,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::copy_product::CopyProduct, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::copy_product::CopyProductError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl CopyProductFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl CopyProductFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::copy_product::CopyProduct,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::copy_product::CopyProduct, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::copy_product::CopyProductError>,
     > {
         self.customize_middleware().await
@@ -119,10 +107,7 @@ impl CopyProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -131,10 +116,7 @@ impl CopyProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -147,18 +129,12 @@ impl CopyProductFluentBuilder {
         self.inner.get_accept_language()
     }
     /// <p>The Amazon Resource Name (ARN) of the source product.</p>
-    pub fn source_product_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_product_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_product_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source product.</p>
-    pub fn set_source_product_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_product_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_product_arn(input);
         self
     }
@@ -167,18 +143,12 @@ impl CopyProductFluentBuilder {
         self.inner.get_source_product_arn()
     }
     /// <p>The identifier of the target product. By default, a new product is created.</p>
-    pub fn target_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_product_id(input.into());
         self
     }
     /// <p>The identifier of the target product. By default, a new product is created.</p>
-    pub fn set_target_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_product_id(input);
         self
     }
@@ -187,18 +157,12 @@ impl CopyProductFluentBuilder {
         self.inner.get_target_product_id()
     }
     /// <p>A name for the target product. The default is the name of the source product.</p>
-    pub fn target_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_product_name(input.into());
         self
     }
     /// <p>A name for the target product. The default is the name of the source product.</p>
-    pub fn set_target_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_product_name(input);
         self
     }
@@ -213,10 +177,7 @@ impl CopyProductFluentBuilder {
     /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
     pub fn source_provisioning_artifact_identifiers(
         mut self,
-        input: ::std::collections::HashMap<
-            crate::types::ProvisioningArtifactPropertyName,
-            ::std::string::String,
-        >,
+        input: ::std::collections::HashMap<crate::types::ProvisioningArtifactPropertyName, ::std::string::String>,
     ) -> Self {
         self.inner = self.inner.source_provisioning_artifact_identifiers(input);
         self
@@ -225,30 +186,17 @@ impl CopyProductFluentBuilder {
     pub fn set_source_provisioning_artifact_identifiers(
         mut self,
         input: ::std::option::Option<
-            ::std::vec::Vec<
-                ::std::collections::HashMap<
-                    crate::types::ProvisioningArtifactPropertyName,
-                    ::std::string::String,
-                >,
-            >,
+            ::std::vec::Vec<::std::collections::HashMap<crate::types::ProvisioningArtifactPropertyName, ::std::string::String>>,
         >,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_source_provisioning_artifact_identifiers(input);
+        self.inner = self.inner.set_source_provisioning_artifact_identifiers(input);
         self
     }
     /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
     pub fn get_source_provisioning_artifact_identifiers(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                crate::types::ProvisioningArtifactPropertyName,
-                ::std::string::String,
-            >,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<crate::types::ProvisioningArtifactPropertyName, ::std::string::String>>>
+    {
         self.inner.get_source_provisioning_artifact_identifiers()
     }
     /// Appends an item to `CopyOptions`.
@@ -261,32 +209,21 @@ impl CopyProductFluentBuilder {
         self
     }
     /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
-    pub fn set_copy_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CopyOption>>,
-    ) -> Self {
+    pub fn set_copy_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CopyOption>>) -> Self {
         self.inner = self.inner.set_copy_options(input);
         self
     }
     /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
-    pub fn get_copy_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CopyOption>> {
+    pub fn get_copy_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CopyOption>> {
         self.inner.get_copy_options()
     }
     /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

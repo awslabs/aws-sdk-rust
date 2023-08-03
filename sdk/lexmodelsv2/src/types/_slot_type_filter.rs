@@ -37,9 +37,7 @@ impl SlotTypeFilter {
 
 /// A builder for [`SlotTypeFilter`](crate::types::SlotTypeFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotTypeFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SlotTypeFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,10 +50,7 @@ impl SlotTypeFilterBuilder {
         self
     }
     /// <p>The name of the field to use for filtering.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotTypeFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::SlotTypeFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -75,10 +70,7 @@ impl SlotTypeFilterBuilder {
         self
     }
     /// <p>The value to use to filter the response.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -92,10 +84,7 @@ impl SlotTypeFilterBuilder {
         self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlotTypes</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlotTypes</code> operation should return aliases that contain the specified value.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotTypeFilterOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::SlotTypeFilterOperator>) -> Self {
         self.operator = input;
         self
     }

@@ -26,7 +26,7 @@ impl DescribeElasticsearchDomainsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsInputBuilder,
+    inner: crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsInputBuilder,
 }
 impl DescribeElasticsearchDomainsFluentBuilder {
     /// Creates a new `DescribeElasticsearchDomains`.
@@ -37,7 +37,7 @@ impl DescribeElasticsearchDomainsFluentBuilder {
         }
     }
     /// Access the DescribeElasticsearchDomains as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeElasticsearchDomainsFluentBuilder {
             crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomains,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeElasticsearchDomainsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeElasticsearchDomainsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeElasticsearchDomainsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeElasticsearchDomainsFluentBuilder {
             crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomains,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsError>,
     > {
         self.customize_middleware().await
     }
@@ -130,17 +119,12 @@ impl DescribeElasticsearchDomainsFluentBuilder {
         self
     }
     /// <p>The Elasticsearch domains for which you want information.</p>
-    pub fn set_domain_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_domain_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_domain_names(input);
         self
     }
     /// <p>The Elasticsearch domains for which you want information.</p>
-    pub fn get_domain_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domain_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_domain_names()
     }
 }

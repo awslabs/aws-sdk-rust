@@ -14,8 +14,7 @@ pub struct GetDefaultRetentionPolicyOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The retention policy folder configurations.</p>
     #[doc(hidden)]
-    pub folder_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>>,
+    pub folder_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetDefaultRetentionPolicyOutput {
@@ -32,9 +31,7 @@ impl GetDefaultRetentionPolicyOutput {
         self.description.as_deref()
     }
     /// <p>The retention policy folder configurations.</p>
-    pub fn folder_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FolderConfiguration]> {
+    pub fn folder_configurations(&self) -> ::std::option::Option<&[crate::types::FolderConfiguration]> {
         self.folder_configurations.as_deref()
     }
 }
@@ -45,22 +42,19 @@ impl ::aws_http::request_id::RequestId for GetDefaultRetentionPolicyOutput {
 }
 impl GetDefaultRetentionPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetDefaultRetentionPolicyOutput`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput).
-    pub fn builder() -> crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyOutputBuilder {
         crate::operation::get_default_retention_policy::builders::GetDefaultRetentionPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDefaultRetentionPolicyOutput`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDefaultRetentionPolicyOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) folder_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>>,
+    pub(crate) folder_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetDefaultRetentionPolicyOutputBuilder {
@@ -118,17 +112,12 @@ impl GetDefaultRetentionPolicyOutputBuilder {
         self
     }
     /// <p>The retention policy folder configurations.</p>
-    pub fn set_folder_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>>,
-    ) -> Self {
+    pub fn set_folder_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>>) -> Self {
         self.folder_configurations = input;
         self
     }
     /// <p>The retention policy folder configurations.</p>
-    pub fn get_folder_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>> {
+    pub fn get_folder_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>> {
         &self.folder_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -141,9 +130,7 @@ impl GetDefaultRetentionPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDefaultRetentionPolicyOutput`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput {
+    pub fn build(self) -> crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput {
         crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput {
             id: self.id,
             name: self.name,

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetPositionEstimateOutput`](crate::operation::get_position_estimate::GetPositionEstimateOutput) with field(s):
     ///   - [`geo_json_payload(Option<Blob>)`](crate::operation::get_position_estimate::GetPositionEstimateOutput::geo_json_payload): <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
     /// - On failure, responds with [`SdkError<GetPositionEstimateError>`](crate::operation::get_position_estimate::GetPositionEstimateError)
-    pub fn get_position_estimate(
-        &self,
-    ) -> crate::operation::get_position_estimate::builders::GetPositionEstimateFluentBuilder {
-        crate::operation::get_position_estimate::builders::GetPositionEstimateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_position_estimate(&self) -> crate::operation::get_position_estimate::builders::GetPositionEstimateFluentBuilder {
+        crate::operation::get_position_estimate::builders::GetPositionEstimateFluentBuilder::new(self.handle.clone())
     }
 }

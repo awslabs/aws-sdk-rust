@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyClusterSubnetGroupOutput`](crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupOutput) with field(s):
     ///   - [`cluster_subnet_group(Option<ClusterSubnetGroup>)`](crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupOutput::cluster_subnet_group): <p>Describes a subnet group.</p>
     /// - On failure, responds with [`SdkError<ModifyClusterSubnetGroupError>`](crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupError)
-    pub fn modify_cluster_subnet_group(&self) -> crate::operation::modify_cluster_subnet_group::builders::ModifyClusterSubnetGroupFluentBuilder{
+    pub fn modify_cluster_subnet_group(&self) -> crate::operation::modify_cluster_subnet_group::builders::ModifyClusterSubnetGroupFluentBuilder {
         crate::operation::modify_cluster_subnet_group::builders::ModifyClusterSubnetGroupFluentBuilder::new(self.handle.clone())
     }
 }

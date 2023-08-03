@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`sensor_statistics_summaries(Option<Vec<SensorStatisticsSummary>>)`](crate::operation::list_sensor_statistics::ListSensorStatisticsOutput::sensor_statistics_summaries): <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sensor_statistics::ListSensorStatisticsOutput::next_token): <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     /// - On failure, responds with [`SdkError<ListSensorStatisticsError>`](crate::operation::list_sensor_statistics::ListSensorStatisticsError)
-    pub fn list_sensor_statistics(
-        &self,
-    ) -> crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder {
-        crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_sensor_statistics(&self) -> crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder {
+        crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

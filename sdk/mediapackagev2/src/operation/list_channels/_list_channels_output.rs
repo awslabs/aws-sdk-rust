@@ -35,12 +35,9 @@ impl ListChannelsOutput {
 
 /// A builder for [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChannelsOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelListConfiguration>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ChannelListConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListChannelsOutputBuilder {
         self
     }
     /// <p>The objects being returned.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelListConfiguration>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelListConfiguration>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The objects being returned.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelListConfiguration>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelListConfiguration>> {
         &self.items
     }
     /// <p>The pagination token from the GET list request.</p>

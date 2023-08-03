@@ -47,13 +47,7 @@
 /// <p>The status of a wireless device in a FUOTA task.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FuotaDeviceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -95,9 +89,7 @@ impl ::std::convert::From<&str> for FuotaDeviceStatus {
             "SessionCnt_replay" => FuotaDeviceStatus::SessionCntReplay,
             "Successful" => FuotaDeviceStatus::Successful,
             "Wrong_descriptor" => FuotaDeviceStatus::WrongDescriptor,
-            other => {
-                FuotaDeviceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => FuotaDeviceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

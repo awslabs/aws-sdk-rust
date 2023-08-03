@@ -65,9 +65,7 @@ impl User {
 
 /// A builder for [`User`](crate::types::User).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -107,18 +105,12 @@ impl UserBuilder {
         &self.status
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn set_access_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_string = input;
         self
     }
@@ -138,10 +130,7 @@ impl UserBuilder {
         self
     }
     /// <p>The names of the Access Control Lists to which the user belongs</p>
-    pub fn set_acl_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_acl_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.acl_names = input;
         self
     }
@@ -150,18 +139,12 @@ impl UserBuilder {
         &self.acl_names
     }
     /// <p>The minimum engine version supported for the user</p>
-    pub fn minimum_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minimum engine version supported for the user</p>
-    pub fn set_minimum_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum_engine_version = input;
         self
     }
@@ -175,10 +158,7 @@ impl UserBuilder {
         self
     }
     /// <p>Denotes whether the user requires a password to authenticate.</p>
-    pub fn set_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::Authentication>,
-    ) -> Self {
+    pub fn set_authentication(mut self, input: ::std::option::Option<crate::types::Authentication>) -> Self {
         self.authentication = input;
         self
     }

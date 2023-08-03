@@ -30,9 +30,7 @@ impl UserDataValidationParameters {
 
 /// A builder for [`UserDataValidationParameters`](crate::types::UserDataValidationParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserDataValidationParametersBuilder {
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) script_type: ::std::option::Option<crate::types::ScriptType>,
@@ -58,10 +56,7 @@ impl UserDataValidationParametersBuilder {
         self
     }
     /// <p>The type of validation script.</p>
-    pub fn set_script_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ScriptType>,
-    ) -> Self {
+    pub fn set_script_type(mut self, input: ::std::option::Option<crate::types::ScriptType>) -> Self {
         self.script_type = input;
         self
     }

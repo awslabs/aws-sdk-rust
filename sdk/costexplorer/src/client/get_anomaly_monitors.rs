@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`anomaly_monitors(Option<Vec<AnomalyMonitor>>)`](crate::operation::get_anomaly_monitors::GetAnomalyMonitorsOutput::anomaly_monitors): <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_anomaly_monitors::GetAnomalyMonitorsOutput::next_page_token): <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     /// - On failure, responds with [`SdkError<GetAnomalyMonitorsError>`](crate::operation::get_anomaly_monitors::GetAnomalyMonitorsError)
-    pub fn get_anomaly_monitors(
-        &self,
-    ) -> crate::operation::get_anomaly_monitors::builders::GetAnomalyMonitorsFluentBuilder {
-        crate::operation::get_anomaly_monitors::builders::GetAnomalyMonitorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_anomaly_monitors(&self) -> crate::operation::get_anomaly_monitors::builders::GetAnomalyMonitorsFluentBuilder {
+        crate::operation::get_anomaly_monitors::builders::GetAnomalyMonitorsFluentBuilder::new(self.handle.clone())
     }
 }

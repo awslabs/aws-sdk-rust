@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterWorkspaceDirectoryOutput {
 }
 impl DeregisterWorkspaceDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterWorkspaceDirectoryOutput`](crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryOutput).
-    pub fn builder() -> crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryOutputBuilder{
+    pub fn builder() -> crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryOutputBuilder {
         crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterWorkspaceDirectoryOutput`](crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterWorkspaceDirectoryOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeregisterWorkspaceDirectoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterWorkspaceDirectoryOutput`](crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryOutput {
+    pub fn build(self) -> crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryOutput {
         crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryOutput {
             _request_id: self._request_id,
         }

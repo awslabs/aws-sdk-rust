@@ -26,7 +26,7 @@ impl GetAwsDefaultServiceQuotaInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAWSDefaultServiceQuotaFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaInputBuilder,
+    inner: crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaInputBuilder,
 }
 impl GetAWSDefaultServiceQuotaFluentBuilder {
     /// Creates a new `GetAWSDefaultServiceQuota`.
@@ -37,7 +37,7 @@ impl GetAWSDefaultServiceQuotaFluentBuilder {
         }
     }
     /// Access the GetAWSDefaultServiceQuota as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetAWSDefaultServiceQuotaFluentBuilder {
             crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQuota,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQuotaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQuotaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetAWSDefaultServiceQuotaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetAWSDefaultServiceQuotaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQuotaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQuotaError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetAWSDefaultServiceQuotaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQuotaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQuotaError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetAWSDefaultServiceQuotaFluentBuilder {
             crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQuota,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQuotaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQuotaError>,
     > {
         self.customize_middleware().await
     }

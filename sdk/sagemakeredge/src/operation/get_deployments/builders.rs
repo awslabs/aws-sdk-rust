@@ -10,10 +10,7 @@ impl GetDeploymentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_deployments::GetDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployments::GetDeploymentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployments::GetDeploymentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_deployments();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetDeploymentsFluentBuilder {
         }
     }
     /// Access the GetDeployments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_deployments::builders::GetDeploymentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_deployments::builders::GetDeploymentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetDeploymentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl GetDeploymentsFluentBuilder {
         self.inner.get_device_name()
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_fleet_name(input.into());
         self
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_fleet_name(input);
         self
     }

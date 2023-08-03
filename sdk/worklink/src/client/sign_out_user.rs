@@ -7,14 +7,8 @@ impl super::Client {
     ///   - [`username(impl ::std::convert::Into<String>)`](crate::operation::sign_out_user::builders::SignOutUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::sign_out_user::builders::SignOutUserFluentBuilder::set_username): <p>The name of the user.</p>
     /// - On success, responds with [`SignOutUserOutput`](crate::operation::sign_out_user::SignOutUserOutput)
     /// - On failure, responds with [`SdkError<SignOutUserError>`](crate::operation::sign_out_user::SignOutUserError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn sign_out_user(
-        &self,
-    ) -> crate::operation::sign_out_user::builders::SignOutUserFluentBuilder {
-        crate::operation::sign_out_user::builders::SignOutUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn sign_out_user(&self) -> crate::operation::sign_out_user::builders::SignOutUserFluentBuilder {
+        crate::operation::sign_out_user::builders::SignOutUserFluentBuilder::new(self.handle.clone())
     }
 }

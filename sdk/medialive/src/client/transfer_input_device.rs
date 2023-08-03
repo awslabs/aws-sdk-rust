@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`transfer_message(impl ::std::convert::Into<String>)`](crate::operation::transfer_input_device::builders::TransferInputDeviceFluentBuilder::transfer_message) / [`set_transfer_message(Option<String>)`](crate::operation::transfer_input_device::builders::TransferInputDeviceFluentBuilder::set_transfer_message): An optional message for the recipient. Maximum 280 characters.
     /// - On success, responds with [`TransferInputDeviceOutput`](crate::operation::transfer_input_device::TransferInputDeviceOutput)
     /// - On failure, responds with [`SdkError<TransferInputDeviceError>`](crate::operation::transfer_input_device::TransferInputDeviceError)
-    pub fn transfer_input_device(
-        &self,
-    ) -> crate::operation::transfer_input_device::builders::TransferInputDeviceFluentBuilder {
-        crate::operation::transfer_input_device::builders::TransferInputDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn transfer_input_device(&self) -> crate::operation::transfer_input_device::builders::TransferInputDeviceFluentBuilder {
+        crate::operation::transfer_input_device::builders::TransferInputDeviceFluentBuilder::new(self.handle.clone())
     }
 }

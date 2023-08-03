@@ -32,7 +32,7 @@ impl DeleteGlobalReplicationGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGlobalReplicationGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_global_replication_group::builders::DeleteGlobalReplicationGroupInputBuilder,
+    inner: crate::operation::delete_global_replication_group::builders::DeleteGlobalReplicationGroupInputBuilder,
 }
 impl DeleteGlobalReplicationGroupFluentBuilder {
     /// Creates a new `DeleteGlobalReplicationGroup`.
@@ -43,7 +43,7 @@ impl DeleteGlobalReplicationGroupFluentBuilder {
         }
     }
     /// Access the DeleteGlobalReplicationGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_global_replication_group::builders::DeleteGlobalReplicationGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_global_replication_group::builders::DeleteGlobalReplicationGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl DeleteGlobalReplicationGroupFluentBuilder {
             crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl DeleteGlobalReplicationGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl DeleteGlobalReplicationGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl DeleteGlobalReplicationGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +111,17 @@ impl DeleteGlobalReplicationGroupFluentBuilder {
             crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_replication_group_id(input.into());
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_replication_group_id(input);
         self
     }
@@ -152,10 +135,7 @@ impl DeleteGlobalReplicationGroupFluentBuilder {
         self
     }
     /// <p>The primary replication group is retained as a standalone replication group. </p>
-    pub fn set_retain_primary_replication_group(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_retain_primary_replication_group(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_retain_primary_replication_group(input);
         self
     }

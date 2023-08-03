@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`bot_locale_history_events(Option<Vec<BotLocaleHistoryEvent>>)`](crate::operation::describe_bot_locale::DescribeBotLocaleOutput::bot_locale_history_events): <p>History of changes, such as when a locale is used in an alias, that have taken place for the locale.</p>
     ///   - [`recommended_actions(Option<Vec<String>>)`](crate::operation::describe_bot_locale::DescribeBotLocaleOutput::recommended_actions): <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
     /// - On failure, responds with [`SdkError<DescribeBotLocaleError>`](crate::operation::describe_bot_locale::DescribeBotLocaleError)
-    pub fn describe_bot_locale(
-        &self,
-    ) -> crate::operation::describe_bot_locale::builders::DescribeBotLocaleFluentBuilder {
-        crate::operation::describe_bot_locale::builders::DescribeBotLocaleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_bot_locale(&self) -> crate::operation::describe_bot_locale::builders::DescribeBotLocaleFluentBuilder {
+        crate::operation::describe_bot_locale::builders::DescribeBotLocaleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::set_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     /// - On success, responds with [`DeleteComponentOutput`](crate::operation::delete_component::DeleteComponentOutput)
     /// - On failure, responds with [`SdkError<DeleteComponentError>`](crate::operation::delete_component::DeleteComponentError)
-    pub fn delete_component(
-        &self,
-    ) -> crate::operation::delete_component::builders::DeleteComponentFluentBuilder {
-        crate::operation::delete_component::builders::DeleteComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_component(&self) -> crate::operation::delete_component::builders::DeleteComponentFluentBuilder {
+        crate::operation::delete_component::builders::DeleteComponentFluentBuilder::new(self.handle.clone())
     }
 }

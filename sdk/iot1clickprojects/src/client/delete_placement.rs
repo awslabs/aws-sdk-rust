@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`project_name(impl ::std::convert::Into<String>)`](crate::operation::delete_placement::builders::DeletePlacementFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::delete_placement::builders::DeletePlacementFluentBuilder::set_project_name): <p>The project containing the empty placement to delete.</p>
     /// - On success, responds with [`DeletePlacementOutput`](crate::operation::delete_placement::DeletePlacementOutput)
     /// - On failure, responds with [`SdkError<DeletePlacementError>`](crate::operation::delete_placement::DeletePlacementError)
-    pub fn delete_placement(
-        &self,
-    ) -> crate::operation::delete_placement::builders::DeletePlacementFluentBuilder {
-        crate::operation::delete_placement::builders::DeletePlacementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_placement(&self) -> crate::operation::delete_placement::builders::DeletePlacementFluentBuilder {
+        crate::operation::delete_placement::builders::DeletePlacementFluentBuilder::new(self.handle.clone())
     }
 }

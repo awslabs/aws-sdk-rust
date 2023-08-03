@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateStreamKeyOutput`](crate::operation::create_stream_key::CreateStreamKeyOutput) with field(s):
     ///   - [`stream_key(Option<StreamKey>)`](crate::operation::create_stream_key::CreateStreamKeyOutput::stream_key): <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
     /// - On failure, responds with [`SdkError<CreateStreamKeyError>`](crate::operation::create_stream_key::CreateStreamKeyError)
-    pub fn create_stream_key(
-        &self,
-    ) -> crate::operation::create_stream_key::builders::CreateStreamKeyFluentBuilder {
-        crate::operation::create_stream_key::builders::CreateStreamKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_stream_key(&self) -> crate::operation::create_stream_key::builders::CreateStreamKeyFluentBuilder {
+        crate::operation::create_stream_key::builders::CreateStreamKeyFluentBuilder::new(self.handle.clone())
     }
 }

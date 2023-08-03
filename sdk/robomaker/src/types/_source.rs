@@ -44,9 +44,7 @@ impl Source {
 
 /// A builder for [`Source`](crate::types::Source).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl SourceBuilder {
         self
     }
     /// <p>The taget processor architecture for the application.</p>
-    pub fn set_architecture(
-        mut self,
-        input: ::std::option::Option<crate::types::Architecture>,
-    ) -> Self {
+    pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
         self.architecture = input;
         self
     }

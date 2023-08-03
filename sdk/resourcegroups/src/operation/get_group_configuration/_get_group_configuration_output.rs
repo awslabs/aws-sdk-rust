@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetGroupConfigurationOutput {
 }
 impl GetGroupConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupConfigurationOutput`](crate::operation::get_group_configuration::GetGroupConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_group_configuration::builders::GetGroupConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_group_configuration::builders::GetGroupConfigurationOutputBuilder {
         crate::operation::get_group_configuration::builders::GetGroupConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetGroupConfigurationOutput`](crate::operation::get_group_configuration::GetGroupConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupConfigurationOutputBuilder {
     pub(crate) group_configuration: ::std::option::Option<crate::types::GroupConfiguration>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetGroupConfigurationOutputBuilder {
         self
     }
     /// <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
-    pub fn set_group_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupConfiguration>,
-    ) -> Self {
+    pub fn set_group_configuration(mut self, input: ::std::option::Option<crate::types::GroupConfiguration>) -> Self {
         self.group_configuration = input;
         self
     }
     /// <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
-    pub fn get_group_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::GroupConfiguration> {
+    pub fn get_group_configuration(&self) -> &::std::option::Option<crate::types::GroupConfiguration> {
         &self.group_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

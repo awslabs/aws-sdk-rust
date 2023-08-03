@@ -31,16 +31,14 @@ impl ListAllowedNodeTypeModificationsInput {
 }
 impl ListAllowedNodeTypeModificationsInput {
     /// Creates a new builder-style object to manufacture [`ListAllowedNodeTypeModificationsInput`](crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsInput).
-    pub fn builder() -> crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsInputBuilder{
+    pub fn builder() -> crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsInputBuilder {
         crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAllowedNodeTypeModificationsInput`](crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAllowedNodeTypeModificationsInputBuilder {
     pub(crate) cache_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
@@ -49,20 +47,14 @@ impl ListAllowedNodeTypeModificationsInputBuilder {
     /// <p>The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster id to identify the current node type of this cluster and from that to create a list of node types you can scale up to.</p> <important>
     /// <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
     /// </important>
-    pub fn cache_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster id to identify the current node type of this cluster and from that to create a list of node types you can scale up to.</p> <important>
     /// <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
     /// </important>
-    pub fn set_cache_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_cluster_id = input;
         self
     }
@@ -75,20 +67,14 @@ impl ListAllowedNodeTypeModificationsInputBuilder {
     /// <p>The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication group id to identify the current node type being used by this replication group, and from that to create a list of node types you can scale up to.</p> <important>
     /// <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
     /// </important>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication group id to identify the current node type being used by this replication group, and from that to create a list of node types you can scale up to.</p> <important>
     /// <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
     /// </important>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_group_id = input;
         self
     }
@@ -99,14 +85,17 @@ impl ListAllowedNodeTypeModificationsInputBuilder {
         &self.replication_group_id
     }
     /// Consumes the builder and constructs a [`ListAllowedNodeTypeModificationsInput`](crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsInput {
-                cache_cluster_id: self.cache_cluster_id
-                ,
-                replication_group_id: self.replication_group_id
-                ,
-            }
+                cache_cluster_id: self.cache_cluster_id,
+                replication_group_id: self.replication_group_id,
+            },
         )
     }
 }

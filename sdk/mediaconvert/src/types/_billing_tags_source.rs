@@ -40,13 +40,7 @@
 /// The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BillingTagsSource {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for BillingTagsSource {
             "JOB_TEMPLATE" => BillingTagsSource::JobTemplate,
             "PRESET" => BillingTagsSource::Preset,
             "QUEUE" => BillingTagsSource::Queue,
-            other => {
-                BillingTagsSource::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => BillingTagsSource::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

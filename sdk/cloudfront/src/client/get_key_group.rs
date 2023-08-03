@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`key_group(Option<KeyGroup>)`](crate::operation::get_key_group::GetKeyGroupOutput::key_group): <p>The key group.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_key_group::GetKeyGroupOutput::e_tag): <p>The identifier for this version of the key group.</p>
     /// - On failure, responds with [`SdkError<GetKeyGroupError>`](crate::operation::get_key_group::GetKeyGroupError)
-    pub fn get_key_group(
-        &self,
-    ) -> crate::operation::get_key_group::builders::GetKeyGroupFluentBuilder {
-        crate::operation::get_key_group::builders::GetKeyGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_key_group(&self) -> crate::operation::get_key_group::builders::GetKeyGroupFluentBuilder {
+        crate::operation::get_key_group::builders::GetKeyGroupFluentBuilder::new(self.handle.clone())
     }
 }

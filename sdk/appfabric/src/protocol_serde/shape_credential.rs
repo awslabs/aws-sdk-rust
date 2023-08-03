@@ -7,28 +7,16 @@ pub fn ser_credential(
         crate::types::Credential::Oauth2Credential(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_5.key("oauth2Credential").start_object();
-            crate::protocol_serde::shape_oauth2_credential::ser_oauth2_credential(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_oauth2_credential::ser_oauth2_credential(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::Credential::ApiKeyCredential(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_5.key("apiKeyCredential").start_object();
-            crate::protocol_serde::shape_api_key_credential::ser_api_key_credential(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_api_key_credential::ser_api_key_credential(&mut object_2, inner)?;
             object_2.finish();
         }
-        crate::types::Credential::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "Credential",
-                ),
-            )
-        }
+        crate::types::Credential::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Credential")),
     }
     Ok(())
 }

@@ -23,9 +23,7 @@ impl LocationConfiguration {
 
 /// A builder for [`LocationConfiguration`](crate::types::LocationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocationConfigurationBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl LocationConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`LocationConfiguration`](crate::types::LocationConfiguration).
     pub fn build(self) -> crate::types::LocationConfiguration {
-        crate::types::LocationConfiguration {
-            location: self.location,
-        }
+        crate::types::LocationConfiguration { location: self.location }
     }
 }

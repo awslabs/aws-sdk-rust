@@ -42,9 +42,7 @@ impl StartFlowOutput {
 
 /// A builder for [`StartFlowOutput`](crate::operation::start_flow::StartFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFlowOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flow_status: ::std::option::Option<crate::types::FlowStatus>,
@@ -72,10 +70,7 @@ impl StartFlowOutputBuilder {
         self
     }
     /// <p> Indicates the current status of the flow. </p>
-    pub fn set_flow_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FlowStatus>,
-    ) -> Self {
+    pub fn set_flow_status(mut self, input: ::std::option::Option<crate::types::FlowStatus>) -> Self {
         self.flow_status = input;
         self
     }

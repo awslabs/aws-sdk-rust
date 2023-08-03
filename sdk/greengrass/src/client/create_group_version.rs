@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::create_group_version::CreateGroupVersionOutput::id): The ID of the parent definition that the version is associated with.
     ///   - [`version(Option<String>)`](crate::operation::create_group_version::CreateGroupVersionOutput::version): The ID of the version.
     /// - On failure, responds with [`SdkError<CreateGroupVersionError>`](crate::operation::create_group_version::CreateGroupVersionError)
-    pub fn create_group_version(
-        &self,
-    ) -> crate::operation::create_group_version::builders::CreateGroupVersionFluentBuilder {
-        crate::operation::create_group_version::builders::CreateGroupVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_group_version(&self) -> crate::operation::create_group_version::builders::CreateGroupVersionFluentBuilder {
+        crate::operation::create_group_version::builders::CreateGroupVersionFluentBuilder::new(self.handle.clone())
     }
 }

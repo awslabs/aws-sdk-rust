@@ -120,9 +120,7 @@ impl CopyImageInput {
 
 /// A builder for [`CopyImageInput`](crate::operation::copy_image::CopyImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyImageInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -237,18 +235,12 @@ impl CopyImageInputBuilder {
         &self.name
     }
     /// <p>The ID of the AMI to copy.</p>
-    pub fn source_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the AMI to copy.</p>
-    pub fn set_source_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_image_id = input;
         self
     }
@@ -257,18 +249,12 @@ impl CopyImageInputBuilder {
         &self.source_image_id
     }
     /// <p>The name of the Region that contains the AMI to copy.</p>
-    pub fn source_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Region that contains the AMI to copy.</p>
-    pub fn set_source_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_region = input;
         self
     }
@@ -278,19 +264,13 @@ impl CopyImageInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when copying an AMI from an Amazon Web Services Region to an Outpost. The AMI must be in the Region of the destination Outpost. You cannot copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis"> Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn destination_outpost_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when copying an AMI from an Amazon Web Services Region to an Outpost. The AMI must be in the Region of the destination Outpost. You cannot copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis"> Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_destination_outpost_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_outpost_arn = input;
         self
     }
@@ -346,12 +326,7 @@ impl CopyImageInputBuilder {
         &self.copy_image_tags
     }
     /// Consumes the builder and constructs a [`CopyImageInput`](crate::operation::copy_image::CopyImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::copy_image::CopyImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_image::CopyImageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_image::CopyImageInput {
             client_token: self.client_token,
             description: self.description,

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteReplicationTaskAssessmentRunOutput`](crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunOutput) with field(s):
     ///   - [`replication_task_assessment_run(Option<ReplicationTaskAssessmentRun>)`](crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunOutput::replication_task_assessment_run): <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.</p>
     /// - On failure, responds with [`SdkError<DeleteReplicationTaskAssessmentRunError>`](crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunError)
-    pub fn delete_replication_task_assessment_run(&self) -> crate::operation::delete_replication_task_assessment_run::builders::DeleteReplicationTaskAssessmentRunFluentBuilder{
+    pub fn delete_replication_task_assessment_run(
+        &self,
+    ) -> crate::operation::delete_replication_task_assessment_run::builders::DeleteReplicationTaskAssessmentRunFluentBuilder {
         crate::operation::delete_replication_task_assessment_run::builders::DeleteReplicationTaskAssessmentRunFluentBuilder::new(self.handle.clone())
     }
 }

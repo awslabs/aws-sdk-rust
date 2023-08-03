@@ -26,7 +26,7 @@ impl CreateWirelessGatewayTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWirelessGatewayTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_wireless_gateway_task::builders::CreateWirelessGatewayTaskInputBuilder,
+    inner: crate::operation::create_wireless_gateway_task::builders::CreateWirelessGatewayTaskInputBuilder,
 }
 impl CreateWirelessGatewayTaskFluentBuilder {
     /// Creates a new `CreateWirelessGatewayTask`.
@@ -37,7 +37,7 @@ impl CreateWirelessGatewayTaskFluentBuilder {
         }
     }
     /// Access the CreateWirelessGatewayTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_wireless_gateway_task::builders::CreateWirelessGatewayTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_wireless_gateway_task::builders::CreateWirelessGatewayTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateWirelessGatewayTaskFluentBuilder {
             crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateWirelessGatewayTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateWirelessGatewayTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateWirelessGatewayTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateWirelessGatewayTaskFluentBuilder {
             crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -135,25 +124,17 @@ impl CreateWirelessGatewayTaskFluentBuilder {
         self.inner.get_id()
     }
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
-    pub fn wireless_gateway_task_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wireless_gateway_task_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.wireless_gateway_task_definition_id(input.into());
         self
     }
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
-    pub fn set_wireless_gateway_task_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_wireless_gateway_task_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_wireless_gateway_task_definition_id(input);
         self
     }
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
-    pub fn get_wireless_gateway_task_definition_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_wireless_gateway_task_definition_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_wireless_gateway_task_definition_id()
     }
 }

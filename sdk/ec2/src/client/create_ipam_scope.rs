@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateIpamScopeOutput`](crate::operation::create_ipam_scope::CreateIpamScopeOutput) with field(s):
     ///   - [`ipam_scope(Option<IpamScope>)`](crate::operation::create_ipam_scope::CreateIpamScopeOutput::ipam_scope): <p>Information about the created scope.</p>
     /// - On failure, responds with [`SdkError<CreateIpamScopeError>`](crate::operation::create_ipam_scope::CreateIpamScopeError)
-    pub fn create_ipam_scope(
-        &self,
-    ) -> crate::operation::create_ipam_scope::builders::CreateIpamScopeFluentBuilder {
-        crate::operation::create_ipam_scope::builders::CreateIpamScopeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_ipam_scope(&self) -> crate::operation::create_ipam_scope::builders::CreateIpamScopeFluentBuilder {
+        crate::operation::create_ipam_scope::builders::CreateIpamScopeFluentBuilder::new(self.handle.clone())
     }
 }

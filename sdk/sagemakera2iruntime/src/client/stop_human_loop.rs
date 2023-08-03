@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`human_loop_name(impl ::std::convert::Into<String>)`](crate::operation::stop_human_loop::builders::StopHumanLoopFluentBuilder::human_loop_name) / [`set_human_loop_name(Option<String>)`](crate::operation::stop_human_loop::builders::StopHumanLoopFluentBuilder::set_human_loop_name): <p>The name of the human loop that you want to stop.</p>
     /// - On success, responds with [`StopHumanLoopOutput`](crate::operation::stop_human_loop::StopHumanLoopOutput)
     /// - On failure, responds with [`SdkError<StopHumanLoopError>`](crate::operation::stop_human_loop::StopHumanLoopError)
-    pub fn stop_human_loop(
-        &self,
-    ) -> crate::operation::stop_human_loop::builders::StopHumanLoopFluentBuilder {
-        crate::operation::stop_human_loop::builders::StopHumanLoopFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_human_loop(&self) -> crate::operation::stop_human_loop::builders::StopHumanLoopFluentBuilder {
+        crate::operation::stop_human_loop::builders::StopHumanLoopFluentBuilder::new(self.handle.clone())
     }
 }

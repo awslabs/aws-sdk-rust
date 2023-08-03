@@ -36,17 +36,14 @@ impl ListDeviceEventsInput {
 }
 impl ListDeviceEventsInput {
     /// Creates a new builder-style object to manufacture [`ListDeviceEventsInput`](crate::operation::list_device_events::ListDeviceEventsInput).
-    pub fn builder() -> crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder {
         crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceEventsInput`](crate::operation::list_device_events::ListDeviceEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceEventsInputBuilder {
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_type: ::std::option::Option<crate::types::DeviceEventType>,
@@ -74,10 +71,7 @@ impl ListDeviceEventsInputBuilder {
         self
     }
     /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
-    pub fn set_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceEventType>,
-    ) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::DeviceEventType>) -> Self {
         self.event_type = input;
         self
     }
@@ -116,17 +110,12 @@ impl ListDeviceEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeviceEventsInput`](crate::operation::list_device_events::ListDeviceEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_device_events::ListDeviceEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_device_events::ListDeviceEventsInput {
-                device_arn: self.device_arn,
-                event_type: self.event_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_device_events::ListDeviceEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_device_events::ListDeviceEventsInput {
+            device_arn: self.device_arn,
+            event_type: self.event_type,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

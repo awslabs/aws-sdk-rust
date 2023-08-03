@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetInstanceAccessDetailsOutput {
 }
 impl GetInstanceAccessDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceAccessDetailsOutput`](crate::operation::get_instance_access_details::GetInstanceAccessDetailsOutput).
-    pub fn builder() -> crate::operation::get_instance_access_details::builders::GetInstanceAccessDetailsOutputBuilder{
+    pub fn builder() -> crate::operation::get_instance_access_details::builders::GetInstanceAccessDetailsOutputBuilder {
         crate::operation::get_instance_access_details::builders::GetInstanceAccessDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceAccessDetailsOutput`](crate::operation::get_instance_access_details::GetInstanceAccessDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceAccessDetailsOutputBuilder {
     pub(crate) access_details: ::std::option::Option<crate::types::InstanceAccessDetails>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl GetInstanceAccessDetailsOutputBuilder {
         self
     }
     /// <p>An array of key-value pairs containing information about a get instance access request.</p>
-    pub fn set_access_details(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAccessDetails>,
-    ) -> Self {
+    pub fn set_access_details(mut self, input: ::std::option::Option<crate::types::InstanceAccessDetails>) -> Self {
         self.access_details = input;
         self
     }
     /// <p>An array of key-value pairs containing information about a get instance access request.</p>
-    pub fn get_access_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceAccessDetails> {
+    pub fn get_access_details(&self) -> &::std::option::Option<crate::types::InstanceAccessDetails> {
         &self.access_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl GetInstanceAccessDetailsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetInstanceAccessDetailsOutput`](crate::operation::get_instance_access_details::GetInstanceAccessDetailsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_instance_access_details::GetInstanceAccessDetailsOutput {
+    pub fn build(self) -> crate::operation::get_instance_access_details::GetInstanceAccessDetailsOutput {
         crate::operation::get_instance_access_details::GetInstanceAccessDetailsOutput {
             access_details: self.access_details,
             _request_id: self._request_id,

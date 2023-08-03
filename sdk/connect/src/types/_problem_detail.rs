@@ -23,9 +23,7 @@ impl ProblemDetail {
 
 /// A builder for [`ProblemDetail`](crate::types::ProblemDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProblemDetailBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ProblemDetailBuilder {
     }
     /// Consumes the builder and constructs a [`ProblemDetail`](crate::types::ProblemDetail).
     pub fn build(self) -> crate::types::ProblemDetail {
-        crate::types::ProblemDetail {
-            message: self.message,
-        }
+        crate::types::ProblemDetail { message: self.message }
     }
 }

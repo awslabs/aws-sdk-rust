@@ -44,9 +44,7 @@ impl RuleUpdate {
 
 /// A builder for [`RuleUpdate`](crate::types::RuleUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleUpdateBuilder {
     pub(crate) rule_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) r#match: ::std::option::Option<crate::types::RuleMatch>,
@@ -55,18 +53,12 @@ pub struct RuleUpdateBuilder {
 }
 impl RuleUpdateBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub fn set_rule_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_identifier = input;
         self
     }

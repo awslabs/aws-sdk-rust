@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ListDataLakesOutput`](crate::operation::list_data_lakes::ListDataLakesOutput) with field(s):
     ///   - [`data_lakes(Option<Vec<DataLakeResource>>)`](crate::operation::list_data_lakes::ListDataLakesOutput::data_lakes): <p>Retrieves the Security Lake configuration object.</p>
     /// - On failure, responds with [`SdkError<ListDataLakesError>`](crate::operation::list_data_lakes::ListDataLakesError)
-    pub fn list_data_lakes(
-        &self,
-    ) -> crate::operation::list_data_lakes::builders::ListDataLakesFluentBuilder {
-        crate::operation::list_data_lakes::builders::ListDataLakesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_data_lakes(&self) -> crate::operation::list_data_lakes::builders::ListDataLakesFluentBuilder {
+        crate::operation::list_data_lakes::builders::ListDataLakesFluentBuilder::new(self.handle.clone())
     }
 }

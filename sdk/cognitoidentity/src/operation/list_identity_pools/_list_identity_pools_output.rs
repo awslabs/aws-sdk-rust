@@ -6,8 +6,7 @@
 pub struct ListIdentityPoolsOutput {
     /// <p>The identity pools returned by the ListIdentityPools action.</p>
     #[doc(hidden)]
-    pub identity_pools:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolShortDescription>>,
+    pub identity_pools: ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolShortDescription>>,
     /// <p>A pagination token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListIdentityPoolsOutput {
 }
 impl ListIdentityPoolsOutput {
     /// <p>The identity pools returned by the ListIdentityPools action.</p>
-    pub fn identity_pools(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IdentityPoolShortDescription]> {
+    pub fn identity_pools(&self) -> ::std::option::Option<&[crate::types::IdentityPoolShortDescription]> {
         self.identity_pools.as_deref()
     }
     /// <p>A pagination token.</p>
@@ -32,20 +29,16 @@ impl ::aws_http::request_id::RequestId for ListIdentityPoolsOutput {
 }
 impl ListIdentityPoolsOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentityPoolsOutput`](crate::operation::list_identity_pools::ListIdentityPoolsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_identity_pools::builders::ListIdentityPoolsOutputBuilder {
+    pub fn builder() -> crate::operation::list_identity_pools::builders::ListIdentityPoolsOutputBuilder {
         crate::operation::list_identity_pools::builders::ListIdentityPoolsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentityPoolsOutput`](crate::operation::list_identity_pools::ListIdentityPoolsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityPoolsOutputBuilder {
-    pub(crate) identity_pools:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolShortDescription>>,
+    pub(crate) identity_pools: ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolShortDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +55,12 @@ impl ListIdentityPoolsOutputBuilder {
         self
     }
     /// <p>The identity pools returned by the ListIdentityPools action.</p>
-    pub fn set_identity_pools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolShortDescription>>,
-    ) -> Self {
+    pub fn set_identity_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolShortDescription>>) -> Self {
         self.identity_pools = input;
         self
     }
     /// <p>The identity pools returned by the ListIdentityPools action.</p>
-    pub fn get_identity_pools(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolShortDescription>> {
+    pub fn get_identity_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolShortDescription>> {
         &self.identity_pools
     }
     /// <p>A pagination token.</p>

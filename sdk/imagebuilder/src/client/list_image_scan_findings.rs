@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`findings(Option<Vec<ImageScanFinding>>)`](crate::operation::list_image_scan_findings::ListImageScanFindingsOutput::findings): <p>The image scan findings for your account that meet your request filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_image_scan_findings::ListImageScanFindingsOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListImageScanFindingsError>`](crate::operation::list_image_scan_findings::ListImageScanFindingsError)
-    pub fn list_image_scan_findings(
-        &self,
-    ) -> crate::operation::list_image_scan_findings::builders::ListImageScanFindingsFluentBuilder
-    {
+    pub fn list_image_scan_findings(&self) -> crate::operation::list_image_scan_findings::builders::ListImageScanFindingsFluentBuilder {
         crate::operation::list_image_scan_findings::builders::ListImageScanFindingsFluentBuilder::new(self.handle.clone())
     }
 }

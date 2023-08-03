@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetBlacklistReportsOutput`](crate::operation::get_blacklist_reports::GetBlacklistReportsOutput) with field(s):
     ///   - [`blacklist_report(Option<HashMap<String, Vec<BlacklistEntry>>>)`](crate::operation::get_blacklist_reports::GetBlacklistReportsOutput::blacklist_report): <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
     /// - On failure, responds with [`SdkError<GetBlacklistReportsError>`](crate::operation::get_blacklist_reports::GetBlacklistReportsError)
-    pub fn get_blacklist_reports(
-        &self,
-    ) -> crate::operation::get_blacklist_reports::builders::GetBlacklistReportsFluentBuilder {
-        crate::operation::get_blacklist_reports::builders::GetBlacklistReportsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_blacklist_reports(&self) -> crate::operation::get_blacklist_reports::builders::GetBlacklistReportsFluentBuilder {
+        crate::operation::get_blacklist_reports::builders::GetBlacklistReportsFluentBuilder::new(self.handle.clone())
     }
 }

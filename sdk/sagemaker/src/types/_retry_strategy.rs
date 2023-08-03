@@ -23,9 +23,7 @@ impl RetryStrategy {
 
 /// A builder for [`RetryStrategy`](crate::types::RetryStrategy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetryStrategyBuilder {
     pub(crate) maximum_retry_attempts: ::std::option::Option<i32>,
 }

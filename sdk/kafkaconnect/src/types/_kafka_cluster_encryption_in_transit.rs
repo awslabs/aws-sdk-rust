@@ -10,9 +10,7 @@ pub struct KafkaClusterEncryptionInTransit {
 }
 impl KafkaClusterEncryptionInTransit {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-    pub fn encryption_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KafkaClusterEncryptionInTransitType> {
+    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::KafkaClusterEncryptionInTransitType> {
         self.encryption_type.as_ref()
     }
 }
@@ -25,34 +23,23 @@ impl KafkaClusterEncryptionInTransit {
 
 /// A builder for [`KafkaClusterEncryptionInTransit`](crate::types::KafkaClusterEncryptionInTransit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KafkaClusterEncryptionInTransitBuilder {
-    pub(crate) encryption_type:
-        ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>,
+    pub(crate) encryption_type: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>,
 }
 impl KafkaClusterEncryptionInTransitBuilder {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-    pub fn encryption_type(
-        mut self,
-        input: crate::types::KafkaClusterEncryptionInTransitType,
-    ) -> Self {
+    pub fn encryption_type(mut self, input: crate::types::KafkaClusterEncryptionInTransitType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>) -> Self {
         self.encryption_type = input;
         self
     }
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-    pub fn get_encryption_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType> {
+    pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType> {
         &self.encryption_type
     }
     /// Consumes the builder and constructs a [`KafkaClusterEncryptionInTransit`](crate::types::KafkaClusterEncryptionInTransit).

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteProfileKeyOutput`](crate::operation::delete_profile_key::DeleteProfileKeyOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::operation::delete_profile_key::DeleteProfileKeyOutput::message): <p>A message that indicates the delete request is done.</p>
     /// - On failure, responds with [`SdkError<DeleteProfileKeyError>`](crate::operation::delete_profile_key::DeleteProfileKeyError)
-    pub fn delete_profile_key(
-        &self,
-    ) -> crate::operation::delete_profile_key::builders::DeleteProfileKeyFluentBuilder {
-        crate::operation::delete_profile_key::builders::DeleteProfileKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_profile_key(&self) -> crate::operation::delete_profile_key::builders::DeleteProfileKeyFluentBuilder {
+        crate::operation::delete_profile_key::builders::DeleteProfileKeyFluentBuilder::new(self.handle.clone())
     }
 }

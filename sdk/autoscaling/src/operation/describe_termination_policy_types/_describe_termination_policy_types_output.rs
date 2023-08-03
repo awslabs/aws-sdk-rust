@@ -21,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeTerminationPolicyTypesOutput 
 }
 impl DescribeTerminationPolicyTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTerminationPolicyTypesOutput`](crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesOutput).
-    pub fn builder() -> crate::operation::describe_termination_policy_types::builders::DescribeTerminationPolicyTypesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_termination_policy_types::builders::DescribeTerminationPolicyTypesOutputBuilder {
         crate::operation::describe_termination_policy_types::builders::DescribeTerminationPolicyTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTerminationPolicyTypesOutput`](crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTerminationPolicyTypesOutputBuilder {
-    pub(crate) termination_policy_types:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) termination_policy_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeTerminationPolicyTypesOutputBuilder {
@@ -42,27 +39,19 @@ impl DescribeTerminationPolicyTypesOutputBuilder {
     /// To override the contents of this collection use [`set_termination_policy_types`](Self::set_termination_policy_types).
     ///
     /// <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
-    pub fn termination_policy_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn termination_policy_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.termination_policy_types.unwrap_or_default();
         v.push(input.into());
         self.termination_policy_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
-    pub fn set_termination_policy_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_termination_policy_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.termination_policy_types = input;
         self
     }
     /// <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
-    pub fn get_termination_policy_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_termination_policy_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.termination_policy_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,10 +64,7 @@ impl DescribeTerminationPolicyTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTerminationPolicyTypesOutput`](crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesOutput {
         crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesOutput {
             termination_policy_types: self.termination_policy_types,
             _request_id: self._request_id,

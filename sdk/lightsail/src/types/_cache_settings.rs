@@ -92,9 +92,7 @@ impl CacheSettings {
         self.forwarded_headers.as_ref()
     }
     /// <p>An object that describes the query strings that are forwarded to the origin. Your content is cached based on the query strings that are forwarded.</p>
-    pub fn forwarded_query_strings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::QueryStringObject> {
+    pub fn forwarded_query_strings(&self) -> ::std::option::Option<&crate::types::QueryStringObject> {
         self.forwarded_query_strings.as_ref()
     }
 }
@@ -107,9 +105,7 @@ impl CacheSettings {
 
 /// A builder for [`CacheSettings`](crate::types::CacheSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CacheSettingsBuilder {
     pub(crate) default_ttl: ::std::option::Option<i64>,
     pub(crate) minimum_ttl: ::std::option::Option<i64>,
@@ -183,10 +179,7 @@ impl CacheSettingsBuilder {
     /// <li> <p> <code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p> </li>
     /// </ul>
     /// <p>If you specify the third option, you might need to restrict access to your distribution's origin so users can't perform operations that you don't want them to. For example, you might not want users to have permission to delete objects from your origin.</p>
-    pub fn allowed_http_methods(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_http_methods(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_http_methods = ::std::option::Option::Some(input.into());
         self
     }
@@ -198,10 +191,7 @@ impl CacheSettingsBuilder {
     /// <li> <p> <code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p> </li>
     /// </ul>
     /// <p>If you specify the third option, you might need to restrict access to your distribution's origin so users can't perform operations that you don't want them to. For example, you might not want users to have permission to delete objects from your origin.</p>
-    pub fn set_allowed_http_methods(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_http_methods(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_http_methods = input;
         self
     }
@@ -222,10 +212,7 @@ impl CacheSettingsBuilder {
     /// <li> <p> <code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code> and <code>HEAD</code> methods.</p> </li>
     /// <li> <p> <code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p> </li>
     /// </ul>
-    pub fn cached_http_methods(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cached_http_methods(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cached_http_methods = ::std::option::Option::Some(input.into());
         self
     }
@@ -235,10 +222,7 @@ impl CacheSettingsBuilder {
     /// <li> <p> <code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code> and <code>HEAD</code> methods.</p> </li>
     /// <li> <p> <code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p> </li>
     /// </ul>
-    pub fn set_cached_http_methods(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cached_http_methods(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cached_http_methods = input;
         self
     }
@@ -257,10 +241,7 @@ impl CacheSettingsBuilder {
         self
     }
     /// <p>An object that describes the cookies that are forwarded to the origin. Your content is cached based on the cookies that are forwarded.</p>
-    pub fn set_forwarded_cookies(
-        mut self,
-        input: ::std::option::Option<crate::types::CookieObject>,
-    ) -> Self {
+    pub fn set_forwarded_cookies(mut self, input: ::std::option::Option<crate::types::CookieObject>) -> Self {
         self.forwarded_cookies = input;
         self
     }
@@ -274,10 +255,7 @@ impl CacheSettingsBuilder {
         self
     }
     /// <p>An object that describes the headers that are forwarded to the origin. Your content is cached based on the headers that are forwarded.</p>
-    pub fn set_forwarded_headers(
-        mut self,
-        input: ::std::option::Option<crate::types::HeaderObject>,
-    ) -> Self {
+    pub fn set_forwarded_headers(mut self, input: ::std::option::Option<crate::types::HeaderObject>) -> Self {
         self.forwarded_headers = input;
         self
     }
@@ -291,17 +269,12 @@ impl CacheSettingsBuilder {
         self
     }
     /// <p>An object that describes the query strings that are forwarded to the origin. Your content is cached based on the query strings that are forwarded.</p>
-    pub fn set_forwarded_query_strings(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryStringObject>,
-    ) -> Self {
+    pub fn set_forwarded_query_strings(mut self, input: ::std::option::Option<crate::types::QueryStringObject>) -> Self {
         self.forwarded_query_strings = input;
         self
     }
     /// <p>An object that describes the query strings that are forwarded to the origin. Your content is cached based on the query strings that are forwarded.</p>
-    pub fn get_forwarded_query_strings(
-        &self,
-    ) -> &::std::option::Option<crate::types::QueryStringObject> {
+    pub fn get_forwarded_query_strings(&self) -> &::std::option::Option<crate::types::QueryStringObject> {
         &self.forwarded_query_strings
     }
     /// Consumes the builder and constructs a [`CacheSettings`](crate::types::CacheSettings).

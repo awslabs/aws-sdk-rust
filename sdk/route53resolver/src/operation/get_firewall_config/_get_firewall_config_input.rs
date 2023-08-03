@@ -15,17 +15,14 @@ impl GetFirewallConfigInput {
 }
 impl GetFirewallConfigInput {
     /// Creates a new builder-style object to manufacture [`GetFirewallConfigInput`](crate::operation::get_firewall_config::GetFirewallConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_firewall_config::builders::GetFirewallConfigInputBuilder {
+    pub fn builder() -> crate::operation::get_firewall_config::builders::GetFirewallConfigInputBuilder {
         crate::operation::get_firewall_config::builders::GetFirewallConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFirewallConfigInput`](crate::operation::get_firewall_config::GetFirewallConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFirewallConfigInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl GetFirewallConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetFirewallConfigInput`](crate::operation::get_firewall_config::GetFirewallConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_firewall_config::GetFirewallConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_firewall_config::GetFirewallConfigInput {
-                resource_id: self.resource_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_firewall_config::GetFirewallConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_firewall_config::GetFirewallConfigInput {
+            resource_id: self.resource_id,
+        })
     }
 }

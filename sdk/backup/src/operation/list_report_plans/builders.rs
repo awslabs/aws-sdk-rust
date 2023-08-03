@@ -10,10 +10,7 @@ impl ListReportPlansInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_report_plans::ListReportPlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_plans::ListReportPlansError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_plans::ListReportPlansError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_report_plans();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListReportPlansFluentBuilder {
         }
     }
     /// Access the ListReportPlans as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_report_plans::builders::ListReportPlansInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_report_plans::builders::ListReportPlansInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListReportPlansFluentBuilder {
             crate::operation::list_report_plans::ListReportPlans,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_plans::ListReportPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_plans::ListReportPlansError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListReportPlansFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListReportPlansFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_report_plans::ListReportPlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_plans::ListReportPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_plans::ListReportPlansError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListReportPlansFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_report_plans::ListReportPlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_plans::ListReportPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_plans::ListReportPlansError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListReportPlansFluentBuilder {
             crate::operation::list_report_plans::ListReportPlans,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_plans::ListReportPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_plans::ListReportPlansError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_report_plans::paginator::ListReportPlansPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_report_plans::paginator::ListReportPlansPaginator {
-        crate::operation::list_report_plans::paginator::ListReportPlansPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_report_plans::paginator::ListReportPlansPaginator {
+        crate::operation::list_report_plans::paginator::ListReportPlansPaginator::new(self.handle, self.inner)
     }
     /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
     pub fn max_results(mut self, input: i32) -> Self {

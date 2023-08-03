@@ -27,8 +27,7 @@ impl DownloadDefaultKeyPairInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DownloadDefaultKeyPairFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairInputBuilder,
+    inner: crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairInputBuilder,
 }
 impl DownloadDefaultKeyPairFluentBuilder {
     /// Creates a new `DownloadDefaultKeyPair`.
@@ -39,10 +38,7 @@ impl DownloadDefaultKeyPairFluentBuilder {
         }
     }
     /// Access the DownloadDefaultKeyPair as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DownloadDefaultKeyPairFluentBuilder {
             crate::operation::download_default_key_pair::DownloadDefaultKeyPair,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::download_default_key_pair::DownloadDefaultKeyPairError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::download_default_key_pair::DownloadDefaultKeyPairError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DownloadDefaultKeyPairFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DownloadDefaultKeyPairFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::download_default_key_pair::DownloadDefaultKeyPairError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::download_default_key_pair::DownloadDefaultKeyPairError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DownloadDefaultKeyPairFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::download_default_key_pair::DownloadDefaultKeyPairError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::download_default_key_pair::DownloadDefaultKeyPairError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl DownloadDefaultKeyPairFluentBuilder {
             crate::operation::download_default_key_pair::DownloadDefaultKeyPair,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::download_default_key_pair::DownloadDefaultKeyPairError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::download_default_key_pair::DownloadDefaultKeyPairError>,
     > {
         self.customize_middleware().await
     }

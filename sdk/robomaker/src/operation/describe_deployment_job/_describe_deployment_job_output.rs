@@ -20,8 +20,7 @@ pub struct DescribeDeploymentJobOutput {
     pub deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
     /// <p>The deployment application configuration.</p>
     #[doc(hidden)]
-    pub deployment_application_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
+    pub deployment_application_configs: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
     /// <p>A short description of the reason why the deployment job failed.</p>
     #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
@@ -33,13 +32,10 @@ pub struct DescribeDeploymentJobOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of robot deployment summaries.</p>
     #[doc(hidden)]
-    pub robot_deployment_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::RobotDeployment>>,
+    pub robot_deployment_summary: ::std::option::Option<::std::vec::Vec<crate::types::RobotDeployment>>,
     /// <p>The list of all tags added to the specified deployment job.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeDeploymentJobOutput {
@@ -60,9 +56,7 @@ impl DescribeDeploymentJobOutput {
         self.deployment_config.as_ref()
     }
     /// <p>The deployment application configuration.</p>
-    pub fn deployment_application_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeploymentApplicationConfig]> {
+    pub fn deployment_application_configs(&self) -> ::std::option::Option<&[crate::types::DeploymentApplicationConfig]> {
         self.deployment_application_configs.as_deref()
     }
     /// <p>A short description of the reason why the deployment job failed.</p>
@@ -78,17 +72,11 @@ impl DescribeDeploymentJobOutput {
         self.created_at.as_ref()
     }
     /// <p>A list of robot deployment summaries.</p>
-    pub fn robot_deployment_summary(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RobotDeployment]> {
+    pub fn robot_deployment_summary(&self) -> ::std::option::Option<&[crate::types::RobotDeployment]> {
         self.robot_deployment_summary.as_deref()
     }
     /// <p>The list of all tags added to the specified deployment job.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -99,33 +87,25 @@ impl ::aws_http::request_id::RequestId for DescribeDeploymentJobOutput {
 }
 impl DescribeDeploymentJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDeploymentJobOutput`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_deployment_job::builders::DescribeDeploymentJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_deployment_job::builders::DescribeDeploymentJobOutputBuilder {
         crate::operation::describe_deployment_job::builders::DescribeDeploymentJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDeploymentJobOutput`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeploymentJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) fleet: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DeploymentStatus>,
     pub(crate) deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
-    pub(crate) deployment_application_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
+    pub(crate) deployment_application_configs: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) failure_code: ::std::option::Option<crate::types::DeploymentJobErrorCode>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) robot_deployment_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::RobotDeployment>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) robot_deployment_summary: ::std::option::Option<::std::vec::Vec<crate::types::RobotDeployment>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeDeploymentJobOutputBuilder {
@@ -163,10 +143,7 @@ impl DescribeDeploymentJobOutputBuilder {
         self
     }
     /// <p>The status of the deployment job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -180,10 +157,7 @@ impl DescribeDeploymentJobOutputBuilder {
         self
     }
     /// <p>The deployment configuration.</p>
-    pub fn set_deployment_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentConfig>,
-    ) -> Self {
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
         self.deployment_config = input;
         self
     }
@@ -196,10 +170,7 @@ impl DescribeDeploymentJobOutputBuilder {
     /// To override the contents of this collection use [`set_deployment_application_configs`](Self::set_deployment_application_configs).
     ///
     /// <p>The deployment application configuration.</p>
-    pub fn deployment_application_configs(
-        mut self,
-        input: crate::types::DeploymentApplicationConfig,
-    ) -> Self {
+    pub fn deployment_application_configs(mut self, input: crate::types::DeploymentApplicationConfig) -> Self {
         let mut v = self.deployment_application_configs.unwrap_or_default();
         v.push(input);
         self.deployment_application_configs = ::std::option::Option::Some(v);
@@ -214,24 +185,16 @@ impl DescribeDeploymentJobOutputBuilder {
         self
     }
     /// <p>The deployment application configuration.</p>
-    pub fn get_deployment_application_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>> {
+    pub fn get_deployment_application_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>> {
         &self.deployment_application_configs
     }
     /// <p>A short description of the reason why the deployment job failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short description of the reason why the deployment job failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -245,10 +208,7 @@ impl DescribeDeploymentJobOutputBuilder {
         self
     }
     /// <p>The deployment job failure code.</p>
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentJobErrorCode>,
-    ) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::DeploymentJobErrorCode>) -> Self {
         self.failure_code = input;
         self
     }
@@ -262,10 +222,7 @@ impl DescribeDeploymentJobOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -285,17 +242,12 @@ impl DescribeDeploymentJobOutputBuilder {
         self
     }
     /// <p>A list of robot deployment summaries.</p>
-    pub fn set_robot_deployment_summary(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RobotDeployment>>,
-    ) -> Self {
+    pub fn set_robot_deployment_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RobotDeployment>>) -> Self {
         self.robot_deployment_summary = input;
         self
     }
     /// <p>A list of robot deployment summaries.</p>
-    pub fn get_robot_deployment_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RobotDeployment>> {
+    pub fn get_robot_deployment_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RobotDeployment>> {
         &self.robot_deployment_summary
     }
     /// Adds a key-value pair to `tags`.
@@ -303,32 +255,19 @@ impl DescribeDeploymentJobOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of all tags added to the specified deployment job.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of all tags added to the specified deployment job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The list of all tags added to the specified deployment job.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

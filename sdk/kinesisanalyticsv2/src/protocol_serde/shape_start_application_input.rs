@@ -9,10 +9,7 @@ pub fn ser_start_application_input(
     if let Some(var_2) = &input.run_configuration {
         #[allow(unused_mut)]
         let mut object_3 = object.key("RunConfiguration").start_object();
-        crate::protocol_serde::shape_run_configuration::ser_run_configuration(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_run_configuration::ser_run_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

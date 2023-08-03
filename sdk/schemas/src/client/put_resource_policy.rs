@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`policy(Option<String>)`](crate::operation::put_resource_policy::PutResourcePolicyOutput::policy): <p>The resource-based policy.</p>
     ///   - [`revision_id(Option<String>)`](crate::operation::put_resource_policy::PutResourcePolicyOutput::revision_id): <p>The revision ID of the policy.</p>
     /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::operation::put_resource_policy::PutResourcePolicyError)
-    pub fn put_resource_policy(
-        &self,
-    ) -> crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder {
-        crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_resource_policy(&self) -> crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder {
+        crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

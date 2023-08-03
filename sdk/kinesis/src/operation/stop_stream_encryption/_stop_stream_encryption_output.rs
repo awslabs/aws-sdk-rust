@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StopStreamEncryptionOutput {
 }
 impl StopStreamEncryptionOutput {
     /// Creates a new builder-style object to manufacture [`StopStreamEncryptionOutput`](crate::operation::stop_stream_encryption::StopStreamEncryptionOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_stream_encryption::builders::StopStreamEncryptionOutputBuilder {
+    pub fn builder() -> crate::operation::stop_stream_encryption::builders::StopStreamEncryptionOutputBuilder {
         crate::operation::stop_stream_encryption::builders::StopStreamEncryptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopStreamEncryptionOutput`](crate::operation::stop_stream_encryption::StopStreamEncryptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopStreamEncryptionOutputBuilder {
     _request_id: Option<String>,
 }

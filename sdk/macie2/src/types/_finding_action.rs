@@ -30,9 +30,7 @@ impl FindingAction {
 
 /// A builder for [`FindingAction`](crate::types::FindingAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingActionBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::FindingActionType>,
     pub(crate) api_call_details: ::std::option::Option<crate::types::ApiCallDetails>,
@@ -44,10 +42,7 @@ impl FindingActionBuilder {
         self
     }
     /// <p>The type of action that occurred for the affected resource. This value is typically AWS_API_CALL, which indicates that an entity invoked an API operation for the resource.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::FindingActionType>) -> Self {
         self.action_type = input;
         self
     }
@@ -61,10 +56,7 @@ impl FindingActionBuilder {
         self
     }
     /// <p>The invocation details of the API operation that an entity invoked for the affected resource, if the value for the actionType property is AWS_API_CALL.</p>
-    pub fn set_api_call_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiCallDetails>,
-    ) -> Self {
+    pub fn set_api_call_details(mut self, input: ::std::option::Option<crate::types::ApiCallDetails>) -> Self {
         self.api_call_details = input;
         self
     }

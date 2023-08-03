@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`permission_sets(Option<Vec<String>>)`](crate::operation::list_permission_sets::ListPermissionSetsOutput::permission_sets): <p>Defines the level of access on an AWS account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_permission_sets::ListPermissionSetsOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On failure, responds with [`SdkError<ListPermissionSetsError>`](crate::operation::list_permission_sets::ListPermissionSetsError)
-    pub fn list_permission_sets(
-        &self,
-    ) -> crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder {
-        crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_permission_sets(&self) -> crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder {
+        crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder::new(self.handle.clone())
     }
 }

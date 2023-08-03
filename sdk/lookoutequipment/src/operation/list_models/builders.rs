@@ -10,10 +10,7 @@ impl ListModelsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_models::ListModelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_models::ListModelsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_models::ListModelsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_models();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListModelsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_models::ListModels,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_models::ListModels, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_models::ListModelsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListModelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListModelsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_models::ListModels,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_models::ListModels, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_models::ListModelsError>,
     > {
         self.customize_middleware().await
@@ -161,18 +149,12 @@ impl ListModelsFluentBuilder {
         self.inner.get_status()
     }
     /// <p>The beginning of the name of the ML models being listed. </p>
-    pub fn model_name_begins_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name_begins_with(input.into());
         self
     }
     /// <p>The beginning of the name of the ML models being listed. </p>
-    pub fn set_model_name_begins_with(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_name_begins_with(input);
         self
     }
@@ -181,18 +163,12 @@ impl ListModelsFluentBuilder {
         self.inner.get_model_name_begins_with()
     }
     /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
-    pub fn dataset_name_begins_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_name_begins_with(input.into());
         self
     }
     /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
-    pub fn set_dataset_name_begins_with(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_name_begins_with(input);
         self
     }

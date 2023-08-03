@@ -27,8 +27,7 @@ impl UpdateAssociationStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssociationStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_association_status::builders::UpdateAssociationStatusInputBuilder,
+    inner: crate::operation::update_association_status::builders::UpdateAssociationStatusInputBuilder,
 }
 impl UpdateAssociationStatusFluentBuilder {
     /// Creates a new `UpdateAssociationStatus`.
@@ -39,10 +38,7 @@ impl UpdateAssociationStatusFluentBuilder {
         }
     }
     /// Access the UpdateAssociationStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_association_status::builders::UpdateAssociationStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_association_status::builders::UpdateAssociationStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl UpdateAssociationStatusFluentBuilder {
             crate::operation::update_association_status::UpdateAssociationStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_association_status::UpdateAssociationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_association_status::UpdateAssociationStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl UpdateAssociationStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl UpdateAssociationStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_association_status::UpdateAssociationStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_association_status::UpdateAssociationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_association_status::UpdateAssociationStatusError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl UpdateAssociationStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_association_status::UpdateAssociationStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_association_status::UpdateAssociationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_association_status::UpdateAssociationStatusError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl UpdateAssociationStatusFluentBuilder {
             crate::operation::update_association_status::UpdateAssociationStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_association_status::UpdateAssociationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_association_status::UpdateAssociationStatusError>,
     > {
         self.customize_middleware().await
     }
@@ -159,17 +144,12 @@ impl UpdateAssociationStatusFluentBuilder {
         self
     }
     /// <p>The association status.</p>
-    pub fn set_association_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationStatus>,
-    ) -> Self {
+    pub fn set_association_status(mut self, input: ::std::option::Option<crate::types::AssociationStatus>) -> Self {
         self.inner = self.inner.set_association_status(input);
         self
     }
     /// <p>The association status.</p>
-    pub fn get_association_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssociationStatus> {
+    pub fn get_association_status(&self) -> &::std::option::Option<crate::types::AssociationStatus> {
         self.inner.get_association_status()
     }
 }

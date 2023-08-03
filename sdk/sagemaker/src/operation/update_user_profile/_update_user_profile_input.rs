@@ -29,17 +29,14 @@ impl UpdateUserProfileInput {
 }
 impl UpdateUserProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
-    pub fn builder(
-    ) -> crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder {
+    pub fn builder() -> crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder {
         crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserProfileInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_profile_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl UpdateUserProfileInputBuilder {
         &self.domain_id
     }
     /// <p>The user profile name.</p>
-    pub fn user_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user profile name.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_profile_name = input;
         self
     }
@@ -86,10 +77,7 @@ impl UpdateUserProfileInputBuilder {
         self
     }
     /// <p>A collection of settings.</p>
-    pub fn set_user_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::UserSettings>,
-    ) -> Self {
+    pub fn set_user_settings(mut self, input: ::std::option::Option<crate::types::UserSettings>) -> Self {
         self.user_settings = input;
         self
     }
@@ -100,16 +88,11 @@ impl UpdateUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_user_profile::UpdateUserProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_user_profile::UpdateUserProfileInput {
-                domain_id: self.domain_id,
-                user_profile_name: self.user_profile_name,
-                user_settings: self.user_settings,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_user_profile::UpdateUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_user_profile::UpdateUserProfileInput {
+            domain_id: self.domain_id,
+            user_profile_name: self.user_profile_name,
+            user_settings: self.user_settings,
+        })
     }
 }

@@ -48,17 +48,14 @@ impl CreateWhatIfAnalysisInput {
 }
 impl CreateWhatIfAnalysisInput {
     /// Creates a new builder-style object to manufacture [`CreateWhatIfAnalysisInput`](crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput).
-    pub fn builder(
-    ) -> crate::operation::create_what_if_analysis::builders::CreateWhatIfAnalysisInputBuilder {
+    pub fn builder() -> crate::operation::create_what_if_analysis::builders::CreateWhatIfAnalysisInputBuilder {
         crate::operation::create_what_if_analysis::builders::CreateWhatIfAnalysisInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWhatIfAnalysisInput`](crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWhatIfAnalysisInputBuilder {
     pub(crate) what_if_analysis_name: ::std::option::Option<::std::string::String>,
     pub(crate) forecast_arn: ::std::option::Option<::std::string::String>,
@@ -67,18 +64,12 @@ pub struct CreateWhatIfAnalysisInputBuilder {
 }
 impl CreateWhatIfAnalysisInputBuilder {
     /// <p>The name of the what-if analysis. Each name must be unique.</p>
-    pub fn what_if_analysis_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_analysis_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_analysis_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the what-if analysis. Each name must be unique.</p>
-    pub fn set_what_if_analysis_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_analysis_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.what_if_analysis_name = input;
         self
     }
@@ -118,10 +109,7 @@ impl CreateWhatIfAnalysisInputBuilder {
     /// <li> <p> <code>Format</code> </p> </li>
     /// <li> <p> <code>Schema</code> </p> </li>
     /// </ul>
-    pub fn set_time_series_selector(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeSeriesSelector>,
-    ) -> Self {
+    pub fn set_time_series_selector(mut self, input: ::std::option::Option<crate::types::TimeSeriesSelector>) -> Self {
         self.time_series_selector = input;
         self
     }
@@ -132,9 +120,7 @@ impl CreateWhatIfAnalysisInputBuilder {
     /// <li> <p> <code>Format</code> </p> </li>
     /// <li> <p> <code>Schema</code> </p> </li>
     /// </ul>
-    pub fn get_time_series_selector(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeSeriesSelector> {
+    pub fn get_time_series_selector(&self) -> &::std::option::Option<crate::types::TimeSeriesSelector> {
         &self.time_series_selector
     }
     /// Appends an item to `tags`.
@@ -149,10 +135,7 @@ impl CreateWhatIfAnalysisInputBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -163,17 +146,13 @@ impl CreateWhatIfAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`CreateWhatIfAnalysisInput`](crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput {
-                what_if_analysis_name: self.what_if_analysis_name,
-                forecast_arn: self.forecast_arn,
-                time_series_selector: self.time_series_selector,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput {
+            what_if_analysis_name: self.what_if_analysis_name,
+            forecast_arn: self.forecast_arn,
+            time_series_selector: self.time_series_selector,
+            tags: self.tags,
+        })
     }
 }

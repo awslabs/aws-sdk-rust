@@ -5,8 +5,7 @@
 pub struct ListThemeVersionsOutput {
     /// <p>A structure containing a list of all the versions of the specified theme.</p>
     #[doc(hidden)]
-    pub theme_version_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ThemeVersionSummary>>,
+    pub theme_version_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ThemeVersionSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ pub struct ListThemeVersionsOutput {
 }
 impl ListThemeVersionsOutput {
     /// <p>A structure containing a list of all the versions of the specified theme.</p>
-    pub fn theme_version_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ThemeVersionSummary]> {
+    pub fn theme_version_summary_list(&self) -> ::std::option::Option<&[crate::types::ThemeVersionSummary]> {
         self.theme_version_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -45,20 +42,16 @@ impl ::aws_http::request_id::RequestId for ListThemeVersionsOutput {
 }
 impl ListThemeVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListThemeVersionsOutput`](crate::operation::list_theme_versions::ListThemeVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_theme_versions::builders::ListThemeVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_theme_versions::builders::ListThemeVersionsOutputBuilder {
         crate::operation::list_theme_versions::builders::ListThemeVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListThemeVersionsOutput`](crate::operation::list_theme_versions::ListThemeVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThemeVersionsOutputBuilder {
-    pub(crate) theme_version_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ThemeVersionSummary>>,
+    pub(crate) theme_version_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ThemeVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -77,17 +70,12 @@ impl ListThemeVersionsOutputBuilder {
         self
     }
     /// <p>A structure containing a list of all the versions of the specified theme.</p>
-    pub fn set_theme_version_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeVersionSummary>>,
-    ) -> Self {
+    pub fn set_theme_version_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeVersionSummary>>) -> Self {
         self.theme_version_summary_list = input;
         self
     }
     /// <p>A structure containing a list of all the versions of the specified theme.</p>
-    pub fn get_theme_version_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeVersionSummary>> {
+    pub fn get_theme_version_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeVersionSummary>> {
         &self.theme_version_summary_list
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

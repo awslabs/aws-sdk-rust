@@ -28,7 +28,7 @@ impl CreateAccountCustomizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAccountCustomizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_account_customization::builders::CreateAccountCustomizationInputBuilder,
+    inner: crate::operation::create_account_customization::builders::CreateAccountCustomizationInputBuilder,
 }
 impl CreateAccountCustomizationFluentBuilder {
     /// Creates a new `CreateAccountCustomization`.
@@ -39,7 +39,7 @@ impl CreateAccountCustomizationFluentBuilder {
         }
     }
     /// Access the CreateAccountCustomization as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_account_customization::builders::CreateAccountCustomizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_account_customization::builders::CreateAccountCustomizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CreateAccountCustomizationFluentBuilder {
             crate::operation::create_account_customization::CreateAccountCustomization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_customization::CreateAccountCustomizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_customization::CreateAccountCustomizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CreateAccountCustomizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CreateAccountCustomizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_account_customization::CreateAccountCustomizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_customization::CreateAccountCustomizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_customization::CreateAccountCustomizationError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CreateAccountCustomizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_account_customization::CreateAccountCustomizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_customization::CreateAccountCustomizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_customization::CreateAccountCustomizationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl CreateAccountCustomizationFluentBuilder {
             crate::operation::create_account_customization::CreateAccountCustomization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_account_customization::CreateAccountCustomizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_account_customization::CreateAccountCustomizationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -164,18 +147,13 @@ impl CreateAccountCustomizationFluentBuilder {
     }
     /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add these to an Amazon Web Services account and a QuickSight namespace. </p>
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>. </p>
-    pub fn set_account_customization(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountCustomization>,
-    ) -> Self {
+    pub fn set_account_customization(mut self, input: ::std::option::Option<crate::types::AccountCustomization>) -> Self {
         self.inner = self.inner.set_account_customization(input);
         self
     }
     /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add these to an Amazon Web Services account and a QuickSight namespace. </p>
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>. </p>
-    pub fn get_account_customization(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountCustomization> {
+    pub fn get_account_customization(&self) -> &::std::option::Option<crate::types::AccountCustomization> {
         self.inner.get_account_customization()
     }
     /// Appends an item to `Tags`.
@@ -188,10 +166,7 @@ impl CreateAccountCustomizationFluentBuilder {
         self
     }
     /// <p>A list of the tags that you want to attach to this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

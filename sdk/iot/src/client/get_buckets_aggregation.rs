@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`total_count(i32)`](crate::operation::get_buckets_aggregation::GetBucketsAggregationOutput::total_count): <p>The total number of things that fit the query string criteria.</p>
     ///   - [`buckets(Option<Vec<Bucket>>)`](crate::operation::get_buckets_aggregation::GetBucketsAggregationOutput::buckets): <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>  <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>  <p> <code>count</code>: The number of documents that have that value.</p>
     /// - On failure, responds with [`SdkError<GetBucketsAggregationError>`](crate::operation::get_buckets_aggregation::GetBucketsAggregationError)
-    pub fn get_buckets_aggregation(
-        &self,
-    ) -> crate::operation::get_buckets_aggregation::builders::GetBucketsAggregationFluentBuilder
-    {
-        crate::operation::get_buckets_aggregation::builders::GetBucketsAggregationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_buckets_aggregation(&self) -> crate::operation::get_buckets_aggregation::builders::GetBucketsAggregationFluentBuilder {
+        crate::operation::get_buckets_aggregation::builders::GetBucketsAggregationFluentBuilder::new(self.handle.clone())
     }
 }

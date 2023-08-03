@@ -28,9 +28,7 @@ impl DeleteTaskSetOutput {
 
 /// A builder for [`DeleteTaskSetOutput`](crate::operation::delete_task_set::DeleteTaskSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTaskSetOutputBuilder {
     pub(crate) task_set: ::std::option::Option<crate::types::TaskSet>,
     _request_id: Option<String>,

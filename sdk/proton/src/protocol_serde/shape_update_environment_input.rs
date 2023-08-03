@@ -25,17 +25,12 @@ pub fn ser_update_environment_input(
         object.key("deploymentType").string(var_7.as_str());
     }
     if let Some(var_8) = &input.environment_account_connection_id {
-        object
-            .key("environmentAccountConnectionId")
-            .string(var_8.as_str());
+        object.key("environmentAccountConnectionId").string(var_8.as_str());
     }
     if let Some(var_9) = &input.provisioning_repository {
         #[allow(unused_mut)]
         let mut object_10 = object.key("provisioningRepository").start_object();
-        crate::protocol_serde::shape_repository_branch_input::ser_repository_branch_input(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_repository_branch_input::ser_repository_branch_input(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.component_role_arn {

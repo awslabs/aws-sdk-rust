@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_connection::DescribeConnectionOutput::last_modified_time): <p>A time stamp for the time that the connection was last modified.</p>
     ///   - [`last_authorized_time(Option<DateTime>)`](crate::operation::describe_connection::DescribeConnectionOutput::last_authorized_time): <p>A time stamp for the time that the connection was last authorized.</p>
     /// - On failure, responds with [`SdkError<DescribeConnectionError>`](crate::operation::describe_connection::DescribeConnectionError)
-    pub fn describe_connection(
-        &self,
-    ) -> crate::operation::describe_connection::builders::DescribeConnectionFluentBuilder {
-        crate::operation::describe_connection::builders::DescribeConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_connection(&self) -> crate::operation::describe_connection::builders::DescribeConnectionFluentBuilder {
+        crate::operation::describe_connection::builders::DescribeConnectionFluentBuilder::new(self.handle.clone())
     }
 }

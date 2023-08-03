@@ -22,36 +22,26 @@ impl GetResourceLogLevelInput {
 }
 impl GetResourceLogLevelInput {
     /// Creates a new builder-style object to manufacture [`GetResourceLogLevelInput`](crate::operation::get_resource_log_level::GetResourceLogLevelInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_log_level::builders::GetResourceLogLevelInputBuilder {
-        crate::operation::get_resource_log_level::builders::GetResourceLogLevelInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resource_log_level::builders::GetResourceLogLevelInputBuilder {
+        crate::operation::get_resource_log_level::builders::GetResourceLogLevelInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceLogLevelInput`](crate::operation::get_resource_log_level::GetResourceLogLevelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceLogLevelInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
 }
 impl GetResourceLogLevelInputBuilder {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -60,18 +50,12 @@ impl GetResourceLogLevelInputBuilder {
         &self.resource_identifier
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -82,15 +66,11 @@ impl GetResourceLogLevelInputBuilder {
     /// Consumes the builder and constructs a [`GetResourceLogLevelInput`](crate::operation::get_resource_log_level::GetResourceLogLevelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resource_log_level::GetResourceLogLevelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resource_log_level::GetResourceLogLevelInput {
-                resource_identifier: self.resource_identifier,
-                resource_type: self.resource_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_resource_log_level::GetResourceLogLevelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_resource_log_level::GetResourceLogLevelInput {
+            resource_identifier: self.resource_identifier,
+            resource_type: self.resource_type,
+        })
     }
 }

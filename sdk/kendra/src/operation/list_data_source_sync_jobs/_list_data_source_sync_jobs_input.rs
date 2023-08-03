@@ -50,18 +50,14 @@ impl ListDataSourceSyncJobsInput {
 }
 impl ListDataSourceSyncJobsInput {
     /// Creates a new builder-style object to manufacture [`ListDataSourceSyncJobsInput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsInputBuilder {
         crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataSourceSyncJobsInput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSourceSyncJobsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
@@ -133,10 +129,7 @@ impl ListDataSourceSyncJobsInputBuilder {
         self
     }
     /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
-    pub fn set_start_time_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeRange>,
-    ) -> Self {
+    pub fn set_start_time_filter(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
         self.start_time_filter = input;
         self
     }
@@ -150,17 +143,12 @@ impl ListDataSourceSyncJobsInputBuilder {
         self
     }
     /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
-    pub fn set_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceSyncJobStatus>,
-    ) -> Self {
+    pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::DataSourceSyncJobStatus>) -> Self {
         self.status_filter = input;
         self
     }
     /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
-    pub fn get_status_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceSyncJobStatus> {
+    pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::DataSourceSyncJobStatus> {
         &self.status_filter
     }
     /// Consumes the builder and constructs a [`ListDataSourceSyncJobsInput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput).
@@ -170,15 +158,13 @@ impl ListDataSourceSyncJobsInputBuilder {
         crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput {
-                id: self.id,
-                index_id: self.index_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                start_time_filter: self.start_time_filter,
-                status_filter: self.status_filter,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput {
+            id: self.id,
+            index_id: self.index_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            start_time_filter: self.start_time_filter,
+            status_filter: self.status_filter,
+        })
     }
 }

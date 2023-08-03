@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`regex_pattern_set(Option<RegexPatternSet>)`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput::regex_pattern_set): <p>A <code>RegexPatternSet</code> that contains no objects.</p>
     ///   - [`change_token(Option<String>)`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<CreateRegexPatternSetError>`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetError)
-    pub fn create_regex_pattern_set(
-        &self,
-    ) -> crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetFluentBuilder
-    {
+    pub fn create_regex_pattern_set(&self) -> crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetFluentBuilder {
         crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetFluentBuilder::new(self.handle.clone())
     }
 }

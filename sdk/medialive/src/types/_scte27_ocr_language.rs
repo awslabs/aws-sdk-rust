@@ -42,13 +42,7 @@
 /// Scte27 Ocr Language
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Scte27OcrLanguage {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for Scte27OcrLanguage {
             "NLD" => Scte27OcrLanguage::Nld,
             "POR" => Scte27OcrLanguage::Por,
             "SPA" => Scte27OcrLanguage::Spa,
-            other => {
-                Scte27OcrLanguage::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Scte27OcrLanguage::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

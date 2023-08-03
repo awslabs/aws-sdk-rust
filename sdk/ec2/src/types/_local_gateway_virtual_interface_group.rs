@@ -9,8 +9,7 @@ pub struct LocalGatewayVirtualInterfaceGroup {
     pub local_gateway_virtual_interface_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the virtual interfaces.</p>
     #[doc(hidden)]
-    pub local_gateway_virtual_interface_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub local_gateway_virtual_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the local gateway.</p>
     #[doc(hidden)]
     pub local_gateway_id: ::std::option::Option<::std::string::String>,
@@ -27,9 +26,7 @@ impl LocalGatewayVirtualInterfaceGroup {
         self.local_gateway_virtual_interface_group_id.as_deref()
     }
     /// <p>The IDs of the virtual interfaces.</p>
-    pub fn local_gateway_virtual_interface_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn local_gateway_virtual_interface_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.local_gateway_virtual_interface_ids.as_deref()
     }
     /// <p>The ID of the local gateway.</p>
@@ -54,39 +51,27 @@ impl LocalGatewayVirtualInterfaceGroup {
 
 /// A builder for [`LocalGatewayVirtualInterfaceGroup`](crate::types::LocalGatewayVirtualInterfaceGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocalGatewayVirtualInterfaceGroupBuilder {
-    pub(crate) local_gateway_virtual_interface_group_id:
-        ::std::option::Option<::std::string::String>,
-    pub(crate) local_gateway_virtual_interface_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) local_gateway_virtual_interface_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) local_gateway_virtual_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) local_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LocalGatewayVirtualInterfaceGroupBuilder {
     /// <p>The ID of the virtual interface group.</p>
-    pub fn local_gateway_virtual_interface_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_virtual_interface_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_virtual_interface_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn set_local_gateway_virtual_interface_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_virtual_interface_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_virtual_interface_group_id = input;
         self
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn get_local_gateway_virtual_interface_group_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_virtual_interface_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_virtual_interface_group_id
     }
     /// Appends an item to `local_gateway_virtual_interface_ids`.
@@ -94,42 +79,28 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
     /// To override the contents of this collection use [`set_local_gateway_virtual_interface_ids`](Self::set_local_gateway_virtual_interface_ids).
     ///
     /// <p>The IDs of the virtual interfaces.</p>
-    pub fn local_gateway_virtual_interface_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_virtual_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.local_gateway_virtual_interface_ids.unwrap_or_default();
         v.push(input.into());
         self.local_gateway_virtual_interface_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the virtual interfaces.</p>
-    pub fn set_local_gateway_virtual_interface_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_local_gateway_virtual_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.local_gateway_virtual_interface_ids = input;
         self
     }
     /// <p>The IDs of the virtual interfaces.</p>
-    pub fn get_local_gateway_virtual_interface_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_local_gateway_virtual_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.local_gateway_virtual_interface_ids
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn local_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn set_local_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_id = input;
         self
     }
@@ -163,10 +134,7 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
         self
     }
     /// <p>The tags assigned to the virtual interface group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

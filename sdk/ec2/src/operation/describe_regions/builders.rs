@@ -10,10 +10,7 @@ impl DescribeRegionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_regions::DescribeRegionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_regions::DescribeRegionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_regions::DescribeRegionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_regions();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeRegionsFluentBuilder {
         }
     }
     /// Access the DescribeRegions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_regions::builders::DescribeRegionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_regions::builders::DescribeRegionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DescribeRegionsFluentBuilder {
             crate::operation::describe_regions::DescribeRegions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_regions::DescribeRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_regions::DescribeRegionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DescribeRegionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DescribeRegionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_regions::DescribeRegionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_regions::DescribeRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_regions::DescribeRegionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DescribeRegionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_regions::DescribeRegionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_regions::DescribeRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_regions::DescribeRegionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl DescribeRegionsFluentBuilder {
             crate::operation::describe_regions::DescribeRegions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_regions::DescribeRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_regions::DescribeRegionsError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +128,7 @@ impl DescribeRegionsFluentBuilder {
     /// <li> <p> <code>opt-in-status</code> - The opt-in status of the Region (<code>opt-in-not-required</code> | <code>opted-in</code> | <code>not-opted-in</code>).</p> </li>
     /// <li> <p> <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -170,17 +151,12 @@ impl DescribeRegionsFluentBuilder {
         self
     }
     /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    pub fn set_region_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_region_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_region_names(input);
         self
     }
     /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    pub fn get_region_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_region_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_region_names()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

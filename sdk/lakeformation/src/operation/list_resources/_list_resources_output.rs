@@ -35,12 +35,9 @@ impl ListResourcesOutput {
 
 /// A builder for [`ListResourcesOutput`](crate::operation::list_resources::ListResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourcesOutputBuilder {
-    pub(crate) resource_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceInfo>>,
+    pub(crate) resource_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListResourcesOutputBuilder {
         self
     }
     /// <p>A summary of the data lake resources.</p>
-    pub fn set_resource_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInfo>>,
-    ) -> Self {
+    pub fn set_resource_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInfo>>) -> Self {
         self.resource_info_list = input;
         self
     }
     /// <p>A summary of the data lake resources.</p>
-    pub fn get_resource_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceInfo>> {
+    pub fn get_resource_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceInfo>> {
         &self.resource_info_list
     }
     /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>

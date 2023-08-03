@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateQuerySuggestionsBlockListOutput
 }
 impl UpdateQuerySuggestionsBlockListOutput {
     /// Creates a new builder-style object to manufacture [`UpdateQuerySuggestionsBlockListOutput`](crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListOutput).
-    pub fn builder() -> crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListOutputBuilder{
+    pub fn builder() -> crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListOutputBuilder {
         crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateQuerySuggestionsBlockListOutput`](crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQuerySuggestionsBlockListOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateQuerySuggestionsBlockListOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateQuerySuggestionsBlockListOutput`](crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListOutput
-    {
+    pub fn build(self) -> crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListOutput {
         crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListOutput {
             _request_id: self._request_id,
         }

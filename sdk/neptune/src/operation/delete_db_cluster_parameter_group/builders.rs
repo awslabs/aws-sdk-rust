@@ -26,7 +26,7 @@ impl DeleteDbClusterParameterGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDBClusterParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_db_cluster_parameter_group::builders::DeleteDbClusterParameterGroupInputBuilder,
+    inner: crate::operation::delete_db_cluster_parameter_group::builders::DeleteDbClusterParameterGroupInputBuilder,
 }
 impl DeleteDBClusterParameterGroupFluentBuilder {
     /// Creates a new `DeleteDBClusterParameterGroup`.
@@ -37,7 +37,7 @@ impl DeleteDBClusterParameterGroupFluentBuilder {
         }
     }
     /// Access the DeleteDBClusterParameterGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_db_cluster_parameter_group::builders::DeleteDbClusterParameterGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_db_cluster_parameter_group::builders::DeleteDbClusterParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteDBClusterParameterGroupFluentBuilder {
             crate::operation::delete_db_cluster_parameter_group::DeleteDBClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_cluster_parameter_group::DeleteDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_cluster_parameter_group::DeleteDBClusterParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteDBClusterParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteDBClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_cluster_parameter_group::DeleteDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_cluster_parameter_group::DeleteDBClusterParameterGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteDBClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_cluster_parameter_group::DeleteDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_cluster_parameter_group::DeleteDBClusterParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteDBClusterParameterGroupFluentBuilder {
             crate::operation::delete_db_cluster_parameter_group::DeleteDBClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_cluster_parameter_group::DeleteDBClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_cluster_parameter_group::DeleteDBClusterParameterGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -127,10 +116,7 @@ impl DeleteDBClusterParameterGroupFluentBuilder {
     /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
     /// <li> <p>Cannot be associated with any DB clusters.</p> </li>
     /// </ul>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_parameter_group_name(input.into());
         self
     }
@@ -141,10 +127,7 @@ impl DeleteDBClusterParameterGroupFluentBuilder {
     /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
     /// <li> <p>Cannot be associated with any DB clusters.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
         self
     }
@@ -155,9 +138,7 @@ impl DeleteDBClusterParameterGroupFluentBuilder {
     /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
     /// <li> <p>Cannot be associated with any DB clusters.</p> </li>
     /// </ul>
-    pub fn get_db_cluster_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_parameter_group_name()
     }
 }

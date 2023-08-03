@@ -5,8 +5,7 @@
 pub struct DescribeDirectConnectGatewayAttachmentsOutput {
     /// <p>The attachments.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_attachments:
-        ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGatewayAttachment>>,
+    pub direct_connect_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGatewayAttachment>>,
     /// <p>The token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeDirectConnectGatewayAttachmentsOutput {
 }
 impl DescribeDirectConnectGatewayAttachmentsOutput {
     /// <p>The attachments.</p>
-    pub fn direct_connect_gateway_attachments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DirectConnectGatewayAttachment]> {
+    pub fn direct_connect_gateway_attachments(&self) -> ::std::option::Option<&[crate::types::DirectConnectGatewayAttachment]> {
         self.direct_connect_gateway_attachments.as_deref()
     }
     /// <p>The token to retrieve the next page.</p>
@@ -31,19 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeDirectConnectGatewayAttachmen
 }
 impl DescribeDirectConnectGatewayAttachmentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput).
-    pub fn builder() -> crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsOutputBuilder
+    {
         crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAttachmentsOutputBuilder {
-    pub(crate) direct_connect_gateway_attachments:
-        ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGatewayAttachment>>,
+    pub(crate) direct_connect_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGatewayAttachment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +48,7 @@ impl DescribeDirectConnectGatewayAttachmentsOutputBuilder {
     /// To override the contents of this collection use [`set_direct_connect_gateway_attachments`](Self::set_direct_connect_gateway_attachments).
     ///
     /// <p>The attachments.</p>
-    pub fn direct_connect_gateway_attachments(
-        mut self,
-        input: crate::types::DirectConnectGatewayAttachment,
-    ) -> Self {
+    pub fn direct_connect_gateway_attachments(mut self, input: crate::types::DirectConnectGatewayAttachment) -> Self {
         let mut v = self.direct_connect_gateway_attachments.unwrap_or_default();
         v.push(input);
         self.direct_connect_gateway_attachments = ::std::option::Option::Some(v);
@@ -71,9 +63,7 @@ impl DescribeDirectConnectGatewayAttachmentsOutputBuilder {
         self
     }
     /// <p>The attachments.</p>
-    pub fn get_direct_connect_gateway_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGatewayAttachment>> {
+    pub fn get_direct_connect_gateway_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGatewayAttachment>> {
         &self.direct_connect_gateway_attachments
     }
     /// <p>The token to retrieve the next page.</p>
@@ -100,12 +90,10 @@ impl DescribeDirectConnectGatewayAttachmentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput).
-    pub fn build(self) -> crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput{
+    pub fn build(self) -> crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput {
         crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput {
-            direct_connect_gateway_attachments: self.direct_connect_gateway_attachments
-            ,
-            next_token: self.next_token
-            ,
+            direct_connect_gateway_attachments: self.direct_connect_gateway_attachments,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

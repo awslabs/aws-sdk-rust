@@ -100,9 +100,7 @@ impl AppAssessmentSummary {
 
 /// A builder for [`AppAssessmentSummary`](crate::types::AppAssessmentSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppAssessmentSummaryBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -152,10 +150,7 @@ impl AppAssessmentSummaryBuilder {
         self
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn set_assessment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentStatus>,
-    ) -> Self {
+    pub fn set_assessment_status(mut self, input: ::std::option::Option<crate::types::AssessmentStatus>) -> Self {
         self.assessment_status = input;
         self
     }
@@ -169,10 +164,7 @@ impl AppAssessmentSummaryBuilder {
         self
     }
     /// <p>The entity that invoked the assessment.</p>
-    pub fn set_invoker(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentInvoker>,
-    ) -> Self {
+    pub fn set_invoker(mut self, input: ::std::option::Option<crate::types::AssessmentInvoker>) -> Self {
         self.invoker = input;
         self
     }
@@ -186,10 +178,7 @@ impl AppAssessmentSummaryBuilder {
         self
     }
     /// <p>The starting time for the action.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -203,10 +192,7 @@ impl AppAssessmentSummaryBuilder {
         self
     }
     /// <p>The end time for the action.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -229,18 +215,12 @@ impl AppAssessmentSummaryBuilder {
         &self.message
     }
     /// <p>The name of the assessment.</p>
-    pub fn assessment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the assessment.</p>
-    pub fn set_assessment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_name = input;
         self
     }
@@ -249,18 +229,12 @@ impl AppAssessmentSummaryBuilder {
         &self.assessment_name
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_assessment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_arn = input;
         self
     }
@@ -274,10 +248,7 @@ impl AppAssessmentSummaryBuilder {
         self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn set_compliance_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceStatus>,
-    ) -> Self {
+    pub fn set_compliance_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
         self.compliance_status = input;
         self
     }

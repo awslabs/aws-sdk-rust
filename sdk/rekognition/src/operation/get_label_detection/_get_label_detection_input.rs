@@ -43,17 +43,14 @@ impl GetLabelDetectionInput {
 }
 impl GetLabelDetectionInput {
     /// Creates a new builder-style object to manufacture [`GetLabelDetectionInput`](crate::operation::get_label_detection::GetLabelDetectionInput).
-    pub fn builder(
-    ) -> crate::operation::get_label_detection::builders::GetLabelDetectionInputBuilder {
+    pub fn builder() -> crate::operation::get_label_detection::builders::GetLabelDetectionInputBuilder {
         crate::operation::get_label_detection::builders::GetLabelDetectionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLabelDetectionInput`](crate::operation::get_label_detection::GetLabelDetectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLabelDetectionInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -110,10 +107,7 @@ impl GetLabelDetectionInputBuilder {
         self
     }
     /// <p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelDetectionSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::LabelDetectionSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -127,34 +121,24 @@ impl GetLabelDetectionInputBuilder {
         self
     }
     /// <p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p>
-    pub fn set_aggregate_by(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelDetectionAggregateBy>,
-    ) -> Self {
+    pub fn set_aggregate_by(mut self, input: ::std::option::Option<crate::types::LabelDetectionAggregateBy>) -> Self {
         self.aggregate_by = input;
         self
     }
     /// <p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p>
-    pub fn get_aggregate_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::LabelDetectionAggregateBy> {
+    pub fn get_aggregate_by(&self) -> &::std::option::Option<crate::types::LabelDetectionAggregateBy> {
         &self.aggregate_by
     }
     /// Consumes the builder and constructs a [`GetLabelDetectionInput`](crate::operation::get_label_detection::GetLabelDetectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_label_detection::GetLabelDetectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_label_detection::GetLabelDetectionInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                sort_by: self.sort_by,
-                aggregate_by: self.aggregate_by,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_label_detection::GetLabelDetectionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_label_detection::GetLabelDetectionInput {
+            job_id: self.job_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            sort_by: self.sort_by,
+            aggregate_by: self.aggregate_by,
+        })
     }
 }

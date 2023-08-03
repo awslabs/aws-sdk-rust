@@ -30,9 +30,7 @@ impl InsightFeedback {
 
 /// A builder for [`InsightFeedback`](crate::types::InsightFeedback).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsightFeedbackBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) feedback: ::std::option::Option<crate::types::InsightFeedbackOption>,
@@ -58,10 +56,7 @@ impl InsightFeedbackBuilder {
         self
     }
     /// <p> The feedback provided by the customer. </p>
-    pub fn set_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::InsightFeedbackOption>,
-    ) -> Self {
+    pub fn set_feedback(mut self, input: ::std::option::Option<crate::types::InsightFeedbackOption>) -> Self {
         self.feedback = input;
         self
     }

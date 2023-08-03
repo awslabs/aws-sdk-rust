@@ -35,12 +35,9 @@ impl ListTemplatesOutput {
 
 /// A builder for [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplatesOutputBuilder {
-    pub(crate) templates_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::TemplateMetadata>>,
+    pub(crate) templates_metadata: ::std::option::Option<::std::vec::Vec<crate::types::TemplateMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListTemplatesOutputBuilder {
         self
     }
     /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
-    pub fn set_templates_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateMetadata>>,
-    ) -> Self {
+    pub fn set_templates_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateMetadata>>) -> Self {
         self.templates_metadata = input;
         self
     }
     /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
-    pub fn get_templates_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateMetadata>> {
+    pub fn get_templates_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateMetadata>> {
         &self.templates_metadata
     }
     /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.</p>

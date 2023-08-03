@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSubscribedWorkteamOutput`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamOutput) with field(s):
     ///   - [`subscribed_workteam(Option<SubscribedWorkteam>)`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamOutput::subscribed_workteam): <p>A <code>Workteam</code> instance that contains information about the work team.</p>
     /// - On failure, responds with [`SdkError<DescribeSubscribedWorkteamError>`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamError)
-    pub fn describe_subscribed_workteam(&self) -> crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamFluentBuilder{
+    pub fn describe_subscribed_workteam(&self) -> crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamFluentBuilder {
         crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamFluentBuilder::new(self.handle.clone())
     }
 }

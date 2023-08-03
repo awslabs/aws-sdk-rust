@@ -51,9 +51,7 @@ impl DetectedProperties {
 
 /// A builder for [`DetectedProperties`](crate::types::DetectedProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectedPropertiesBuilder {
     pub(crate) width: ::std::option::Option<i32>,
     pub(crate) height: ::std::option::Option<i32>,

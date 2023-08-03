@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`data_sets(Option<Vec<DataSetEntry>>)`](crate::operation::list_data_sets::ListDataSetsOutput::data_sets): <p>The data set objects listed by the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_sets::ListDataSetsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListDataSetsError>`](crate::operation::list_data_sets::ListDataSetsError)
-    pub fn list_data_sets(
-        &self,
-    ) -> crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder {
-        crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_data_sets(&self) -> crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder {
+        crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::new(self.handle.clone())
     }
 }

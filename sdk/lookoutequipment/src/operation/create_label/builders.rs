@@ -10,10 +10,7 @@ impl CreateLabelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_label::CreateLabelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_label::CreateLabelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_label::CreateLabelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_label();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateLabelFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_label::CreateLabel,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_label::CreateLabel, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_label::CreateLabelError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateLabelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,29 +95,20 @@ impl CreateLabelFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_label::CreateLabel,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_label::CreateLabel, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_label::CreateLabelError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The name of a group of labels. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn label_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_group_name(input.into());
         self
     }
     /// <p> The name of a group of labels. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn set_label_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
@@ -141,10 +123,7 @@ impl CreateLabelFluentBuilder {
         self
     }
     /// <p> The start time of the labeled event. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -158,10 +137,7 @@ impl CreateLabelFluentBuilder {
         self
     }
     /// <p> The end time of the labeled event. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

@@ -37,9 +37,7 @@ impl PutRecordsRequestEntry {
 
 /// A builder for [`PutRecordsRequestEntry`](crate::types::PutRecordsRequestEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRecordsRequestEntryBuilder {
     pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) explicit_hash_key: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl PutRecordsRequestEntryBuilder {
         &self.data
     }
     /// <p>The hash value used to determine explicitly the shard that the data record is assigned to by overriding the partition key hash.</p>
-    pub fn explicit_hash_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explicit_hash_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explicit_hash_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hash value used to determine explicitly the shard that the data record is assigned to by overriding the partition key hash.</p>
-    pub fn set_explicit_hash_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explicit_hash_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.explicit_hash_key = input;
         self
     }
@@ -81,18 +73,12 @@ impl PutRecordsRequestEntryBuilder {
         &self.explicit_hash_key
     }
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
-    pub fn partition_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partition_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
-    pub fn set_partition_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partition_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partition_key = input;
         self
     }

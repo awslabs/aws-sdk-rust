@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`analysis_results(Option<Vec<AnalysisResult>>)`](crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsOutput::analysis_results): <p>Contains information about one or more analysis results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     /// - On failure, responds with [`SdkError<GetDetectorModelAnalysisResultsError>`](crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsError)
-    pub fn get_detector_model_analysis_results(&self) -> crate::operation::get_detector_model_analysis_results::builders::GetDetectorModelAnalysisResultsFluentBuilder{
+    pub fn get_detector_model_analysis_results(
+        &self,
+    ) -> crate::operation::get_detector_model_analysis_results::builders::GetDetectorModelAnalysisResultsFluentBuilder {
         crate::operation::get_detector_model_analysis_results::builders::GetDetectorModelAnalysisResultsFluentBuilder::new(self.handle.clone())
     }
 }

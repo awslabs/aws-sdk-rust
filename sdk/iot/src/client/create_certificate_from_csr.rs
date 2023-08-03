@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`certificate_id(Option<String>)`](crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput::certificate_id): <p>The ID of the certificate. Certificate management operations only take a certificateId.</p>
     ///   - [`certificate_pem(Option<String>)`](crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput::certificate_pem): <p>The certificate data, in PEM format.</p>
     /// - On failure, responds with [`SdkError<CreateCertificateFromCsrError>`](crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError)
-    pub fn create_certificate_from_csr(&self) -> crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrFluentBuilder{
+    pub fn create_certificate_from_csr(&self) -> crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrFluentBuilder {
         crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrFluentBuilder::new(self.handle.clone())
     }
 }

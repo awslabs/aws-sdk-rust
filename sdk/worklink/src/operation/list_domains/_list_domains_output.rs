@@ -35,9 +35,7 @@ impl ListDomainsOutput {
 
 /// A builder for [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainsOutputBuilder {
     pub(crate) domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListDomainsOutputBuilder {
         self
     }
     /// <p>Information about the domains.</p>
-    pub fn set_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>,
-    ) -> Self {
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>) -> Self {
         self.domains = input;
         self
     }
     /// <p>Information about the domains.</p>
-    pub fn get_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>> {
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>> {
         &self.domains
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>

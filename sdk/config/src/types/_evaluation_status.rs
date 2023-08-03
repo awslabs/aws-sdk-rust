@@ -30,9 +30,7 @@ impl EvaluationStatus {
 
 /// A builder for [`EvaluationStatus`](crate::types::EvaluationStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ResourceEvaluationStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl EvaluationStatusBuilder {
         self
     }
     /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceEvaluationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceEvaluationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -56,18 +51,12 @@ impl EvaluationStatusBuilder {
         &self.status
     }
     /// <p>An explanation for failed execution status.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An explanation for failed execution status.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

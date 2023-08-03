@@ -10,10 +10,7 @@ impl AddTagsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_tags::AddTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags::AddTagsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags::AddTagsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_tags();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl AddTagsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::add_tags::AddTags,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::add_tags::AddTags, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::add_tags::AddTagsError>,
     > {
         let handle = self.handle.clone();
@@ -60,20 +54,15 @@ impl AddTagsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_tags::AddTagsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::add_tags::AddTagsError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::add_tags::AddTagsOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_tags::AddTagsError>>
+    {
         let op = self
             .inner
             .build()
@@ -93,10 +82,8 @@ impl AddTagsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_tags::AddTagsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::add_tags::AddTagsError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::add_tags::AddTagsOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_tags::AddTagsError>>
+    {
         self.send_middleware().await
     }
 
@@ -105,10 +92,7 @@ impl AddTagsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::add_tags::AddTags,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::add_tags::AddTags, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::add_tags::AddTagsError>,
     > {
         self.customize_middleware().await
@@ -118,25 +102,17 @@ impl AddTagsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arns(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn get_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_arns()
     }
     /// Appends an item to `Tags`.
@@ -149,10 +125,7 @@ impl AddTagsFluentBuilder {
         self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -38,13 +38,7 @@
 /// When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured but not adjusted.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AudioNormalizationAlgorithmControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AudioNormalizationAlgorithmControl {
         match s {
             "CORRECT_AUDIO" => AudioNormalizationAlgorithmControl::CorrectAudio,
             "MEASURE_ONLY" => AudioNormalizationAlgorithmControl::MeasureOnly,
-            other => AudioNormalizationAlgorithmControl::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => AudioNormalizationAlgorithmControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -22,18 +22,14 @@ impl DeleteAccessLogSettingsInput {
 }
 impl DeleteAccessLogSettingsInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessLogSettingsInput`](crate::operation::delete_access_log_settings::DeleteAccessLogSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsInputBuilder {
         crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessLogSettingsInput`](crate::operation::delete_access_log_settings::DeleteAccessLogSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessLogSettingsInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl DeleteAccessLogSettingsInputBuilder {
         crate::operation::delete_access_log_settings::DeleteAccessLogSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_access_log_settings::DeleteAccessLogSettingsInput {
-                api_id: self.api_id,
-                stage_name: self.stage_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_access_log_settings::DeleteAccessLogSettingsInput {
+            api_id: self.api_id,
+            stage_name: self.stage_name,
+        })
     }
 }

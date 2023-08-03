@@ -44,9 +44,7 @@ impl Threat {
 
 /// A builder for [`Threat`](crate::types::Threat).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThreatBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) severity: ::std::option::Option<::std::string::String>,
@@ -108,17 +106,12 @@ impl ThreatBuilder {
         self
     }
     /// <p>Provides information about the file paths that were affected by the threat. </p>
-    pub fn set_file_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilePaths>>,
-    ) -> Self {
+    pub fn set_file_paths(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilePaths>>) -> Self {
         self.file_paths = input;
         self
     }
     /// <p>Provides information about the file paths that were affected by the threat. </p>
-    pub fn get_file_paths(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilePaths>> {
+    pub fn get_file_paths(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilePaths>> {
         &self.file_paths
     }
     /// Consumes the builder and constructs a [`Threat`](crate::types::Threat).

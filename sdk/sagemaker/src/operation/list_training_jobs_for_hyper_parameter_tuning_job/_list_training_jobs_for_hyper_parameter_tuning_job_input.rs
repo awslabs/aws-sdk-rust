@@ -52,16 +52,16 @@ impl ListTrainingJobsForHyperParameterTuningJobInput {
 }
 impl ListTrainingJobsForHyperParameterTuningJobInput {
     /// Creates a new builder-style object to manufacture [`ListTrainingJobsForHyperParameterTuningJobInput`](crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobInput).
-    pub fn builder() -> crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::builders::ListTrainingJobsForHyperParameterTuningJobInputBuilder{
-        crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::builders::ListTrainingJobsForHyperParameterTuningJobInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::builders::ListTrainingJobsForHyperParameterTuningJobInputBuilder {
+        crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::builders::ListTrainingJobsForHyperParameterTuningJobInputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`ListTrainingJobsForHyperParameterTuningJobInput`](crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrainingJobsForHyperParameterTuningJobInputBuilder {
     pub(crate) hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,25 +72,17 @@ pub struct ListTrainingJobsForHyperParameterTuningJobInputBuilder {
 }
 impl ListTrainingJobsForHyperParameterTuningJobInputBuilder {
     /// <p>The name of the tuning job whose training jobs you want to list.</p>
-    pub fn hyper_parameter_tuning_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hyper_parameter_tuning_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the tuning job whose training jobs you want to list.</p>
-    pub fn set_hyper_parameter_tuning_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hyper_parameter_tuning_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_name = input;
         self
     }
     /// <p>The name of the tuning job whose training jobs you want to list.</p>
-    pub fn get_hyper_parameter_tuning_job_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hyper_parameter_tuning_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.hyper_parameter_tuning_job_name
     }
     /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
@@ -127,10 +119,7 @@ impl ListTrainingJobsForHyperParameterTuningJobInputBuilder {
         self
     }
     /// <p>A filter that returns only training jobs with the specified status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingJobStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::TrainingJobStatus>) -> Self {
         self.status_equals = input;
         self
     }
@@ -146,10 +135,7 @@ impl ListTrainingJobsForHyperParameterTuningJobInputBuilder {
     }
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
     /// <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an objective metric are not listed.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingJobSortByOptions>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::TrainingJobSortByOptions>) -> Self {
         self.sort_by = input;
         self
     }
@@ -173,22 +159,21 @@ impl ListTrainingJobsForHyperParameterTuningJobInputBuilder {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListTrainingJobsForHyperParameterTuningJobInput`](crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobInput {
-                hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                status_equals: self.status_equals
-                ,
-                sort_by: self.sort_by
-                ,
-                sort_order: self.sort_order
-                ,
-            }
+                hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                status_equals: self.status_equals,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+            },
         )
     }
 }

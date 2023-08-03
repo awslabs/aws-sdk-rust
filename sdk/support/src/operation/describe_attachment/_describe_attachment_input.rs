@@ -15,34 +15,25 @@ impl DescribeAttachmentInput {
 }
 impl DescribeAttachmentInput {
     /// Creates a new builder-style object to manufacture [`DescribeAttachmentInput`](crate::operation::describe_attachment::DescribeAttachmentInput).
-    pub fn builder(
-    ) -> crate::operation::describe_attachment::builders::DescribeAttachmentInputBuilder {
+    pub fn builder() -> crate::operation::describe_attachment::builders::DescribeAttachmentInputBuilder {
         crate::operation::describe_attachment::builders::DescribeAttachmentInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAttachmentInput`](crate::operation::describe_attachment::DescribeAttachmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAttachmentInputBuilder {
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl DescribeAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAttachmentInput`](crate::operation::describe_attachment::DescribeAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_attachment::DescribeAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_attachment::DescribeAttachmentInput {
-                attachment_id: self.attachment_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_attachment::DescribeAttachmentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_attachment::DescribeAttachmentInput {
+            attachment_id: self.attachment_id,
+        })
     }
 }

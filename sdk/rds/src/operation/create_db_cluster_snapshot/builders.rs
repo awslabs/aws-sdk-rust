@@ -28,8 +28,7 @@ impl CreateDbClusterSnapshotInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDBClusterSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_db_cluster_snapshot::builders::CreateDbClusterSnapshotInputBuilder,
+    inner: crate::operation::create_db_cluster_snapshot::builders::CreateDbClusterSnapshotInputBuilder,
 }
 impl CreateDBClusterSnapshotFluentBuilder {
     /// Creates a new `CreateDBClusterSnapshot`.
@@ -40,10 +39,7 @@ impl CreateDBClusterSnapshotFluentBuilder {
         }
     }
     /// Access the CreateDBClusterSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_db_cluster_snapshot::builders::CreateDbClusterSnapshotInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_db_cluster_snapshot::builders::CreateDbClusterSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl CreateDBClusterSnapshotFluentBuilder {
             crate::operation::create_db_cluster_snapshot::CreateDBClusterSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_cluster_snapshot::CreateDBClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_cluster_snapshot::CreateDBClusterSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl CreateDBClusterSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl CreateDBClusterSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_cluster_snapshot::CreateDBClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_cluster_snapshot::CreateDBClusterSnapshotError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl CreateDBClusterSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_cluster_snapshot::CreateDBClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_cluster_snapshot::CreateDBClusterSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl CreateDBClusterSnapshotFluentBuilder {
             crate::operation::create_db_cluster_snapshot::CreateDBClusterSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_cluster_snapshot::CreateDBClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_cluster_snapshot::CreateDBClusterSnapshotError>,
     > {
         self.customize_middleware().await
     }
@@ -134,10 +119,7 @@ impl CreateDBClusterSnapshotFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1-snapshot1</code> </p>
-    pub fn db_cluster_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_snapshot_identifier(input.into());
         self
     }
@@ -149,10 +131,7 @@ impl CreateDBClusterSnapshotFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1-snapshot1</code> </p>
-    pub fn set_db_cluster_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
         self
     }
@@ -164,9 +143,7 @@ impl CreateDBClusterSnapshotFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1-snapshot1</code> </p>
-    pub fn get_db_cluster_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_snapshot_identifier()
     }
     /// <p>The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.</p>
@@ -175,10 +152,7 @@ impl CreateDBClusterSnapshotFluentBuilder {
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -188,10 +162,7 @@ impl CreateDBClusterSnapshotFluentBuilder {
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
@@ -214,10 +185,7 @@ impl CreateDBClusterSnapshotFluentBuilder {
         self
     }
     /// <p>The tags to be assigned to the DB cluster snapshot.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

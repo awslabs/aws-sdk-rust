@@ -9,10 +9,7 @@ pub fn ser_update_connection_alias_permission_input(
     if let Some(var_2) = &input.connection_alias_permission {
         #[allow(unused_mut)]
         let mut object_3 = object.key("ConnectionAliasPermission").start_object();
-        crate::protocol_serde::shape_connection_alias_permission::ser_connection_alias_permission(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_connection_alias_permission::ser_connection_alias_permission(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`max_results(Option<i32>)`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsOutput::max_results): <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     ///   - [`resolver_rule_associations(Option<Vec<ResolverRuleAssociation>>)`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsOutput::resolver_rule_associations): <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
     /// - On failure, responds with [`SdkError<ListResolverRuleAssociationsError>`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError)
-    pub fn list_resolver_rule_associations(&self) -> crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder{
+    pub fn list_resolver_rule_associations(
+        &self,
+    ) -> crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder {
         crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

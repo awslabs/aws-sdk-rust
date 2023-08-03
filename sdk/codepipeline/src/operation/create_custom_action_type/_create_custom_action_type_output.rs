@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for CreateCustomActionTypeOutput {
 }
 impl CreateCustomActionTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomActionTypeOutput`](crate::operation::create_custom_action_type::CreateCustomActionTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::create_custom_action_type::builders::CreateCustomActionTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_custom_action_type::builders::CreateCustomActionTypeOutputBuilder {
         crate::operation::create_custom_action_type::builders::CreateCustomActionTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomActionTypeOutput`](crate::operation::create_custom_action_type::CreateCustomActionTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomActionTypeOutputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ActionType>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -53,10 +49,7 @@ impl CreateCustomActionTypeOutputBuilder {
         self
     }
     /// <p>Returns information about the details of an action type.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
         self.action_type = input;
         self
     }
@@ -76,10 +69,7 @@ impl CreateCustomActionTypeOutputBuilder {
         self
     }
     /// <p>Specifies the tags applied to the custom action.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -97,9 +87,7 @@ impl CreateCustomActionTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateCustomActionTypeOutput`](crate::operation::create_custom_action_type::CreateCustomActionTypeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_custom_action_type::CreateCustomActionTypeOutput {
+    pub fn build(self) -> crate::operation::create_custom_action_type::CreateCustomActionTypeOutput {
         crate::operation::create_custom_action_type::CreateCustomActionTypeOutput {
             action_type: self.action_type,
             tags: self.tags,

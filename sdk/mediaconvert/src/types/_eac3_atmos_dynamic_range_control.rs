@@ -38,13 +38,7 @@
 /// Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default value, Custom, to provide dynamic range control values in your job settings. Choose Follow source to use the metadata from your input. Related settings--Use these settings to specify your dynamic range control values: Dynamic range compression line and Dynamic range compression RF. When you keep the value Custom for Dynamic range control and you don't specify values for the related settings, MediaConvert uses default values for those settings.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3AtmosDynamicRangeControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Eac3AtmosDynamicRangeControl {
         match s {
             "INITIALIZE_FROM_SOURCE" => Eac3AtmosDynamicRangeControl::InitializeFromSource,
             "SPECIFIED" => Eac3AtmosDynamicRangeControl::Specified,
-            other => Eac3AtmosDynamicRangeControl::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Eac3AtmosDynamicRangeControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

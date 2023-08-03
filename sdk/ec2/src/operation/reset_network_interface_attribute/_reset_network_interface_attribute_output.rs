@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ResetNetworkInterfaceAttributeOutput 
 }
 impl ResetNetworkInterfaceAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ResetNetworkInterfaceAttributeOutput`](crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeOutput).
-    pub fn builder() -> crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeOutputBuilder{
+    pub fn builder() -> crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeOutputBuilder {
         crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetNetworkInterfaceAttributeOutput`](crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetNetworkInterfaceAttributeOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl ResetNetworkInterfaceAttributeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResetNetworkInterfaceAttributeOutput`](crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeOutput
-    {
+    pub fn build(self) -> crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeOutput {
         crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeOutput {
             _request_id: self._request_id,
         }

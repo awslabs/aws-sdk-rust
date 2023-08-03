@@ -37,9 +37,7 @@ impl FilterCondition {
 
 /// A builder for [`FilterCondition`](crate::types::FilterCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterConditionBuilder {
     pub(crate) equals_value: ::std::option::Option<::std::string::String>,
     pub(crate) greater_than: ::std::option::Option<i64>,

@@ -15,34 +15,25 @@ impl DeleteCustomPluginInput {
 }
 impl DeleteCustomPluginInput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomPluginInput`](crate::operation::delete_custom_plugin::DeleteCustomPluginInput).
-    pub fn builder(
-    ) -> crate::operation::delete_custom_plugin::builders::DeleteCustomPluginInputBuilder {
+    pub fn builder() -> crate::operation::delete_custom_plugin::builders::DeleteCustomPluginInputBuilder {
         crate::operation::delete_custom_plugin::builders::DeleteCustomPluginInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomPluginInput`](crate::operation::delete_custom_plugin::DeleteCustomPluginInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomPluginInputBuilder {
     pub(crate) custom_plugin_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomPluginInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
-    pub fn custom_plugin_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_plugin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_plugin_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
-    pub fn set_custom_plugin_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_plugin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_plugin_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteCustomPluginInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomPluginInput`](crate::operation::delete_custom_plugin::DeleteCustomPluginInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_custom_plugin::DeleteCustomPluginInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_custom_plugin::DeleteCustomPluginInput {
-                custom_plugin_arn: self.custom_plugin_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_custom_plugin::DeleteCustomPluginInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_custom_plugin::DeleteCustomPluginInput {
+            custom_plugin_arn: self.custom_plugin_arn,
+        })
     }
 }

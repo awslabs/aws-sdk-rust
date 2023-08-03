@@ -37,9 +37,7 @@ impl ExcelOptions {
 
 /// A builder for [`ExcelOptions`](crate::types::ExcelOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExcelOptionsBuilder {
     pub(crate) sheet_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) sheet_indexes: ::std::option::Option<::std::vec::Vec<i32>>,
@@ -58,17 +56,12 @@ impl ExcelOptionsBuilder {
         self
     }
     /// <p>One or more named sheets in the Excel file that will be included in the dataset.</p>
-    pub fn set_sheet_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sheet_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sheet_names = input;
         self
     }
     /// <p>One or more named sheets in the Excel file that will be included in the dataset.</p>
-    pub fn get_sheet_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_sheet_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sheet_names
     }
     /// Appends an item to `sheet_indexes`.

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`buckets(Option<Vec<S3BucketInfo>>)`](crate::operation::list_s3_buckets::ListS3BucketsOutput::buckets): <p>The list of S3 buckets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_s3_buckets::ListS3BucketsOutput::next_token): <p>Reserved for future use.</p>
     /// - On failure, responds with [`SdkError<ListS3BucketsError>`](crate::operation::list_s3_buckets::ListS3BucketsError)
-    pub fn list_s3_buckets(
-        &self,
-    ) -> crate::operation::list_s3_buckets::builders::ListS3BucketsFluentBuilder {
-        crate::operation::list_s3_buckets::builders::ListS3BucketsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_s3_buckets(&self) -> crate::operation::list_s3_buckets::builders::ListS3BucketsFluentBuilder {
+        crate::operation::list_s3_buckets::builders::ListS3BucketsFluentBuilder::new(self.handle.clone())
     }
 }

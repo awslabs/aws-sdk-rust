@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder::set_arn): <p>The ARN of the network profile to delete.</p>
     /// - On success, responds with [`DeleteNetworkProfileOutput`](crate::operation::delete_network_profile::DeleteNetworkProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteNetworkProfileError>`](crate::operation::delete_network_profile::DeleteNetworkProfileError)
-    pub fn delete_network_profile(
-        &self,
-    ) -> crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder {
-        crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_network_profile(&self) -> crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder {
+        crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder::new(self.handle.clone())
     }
 }

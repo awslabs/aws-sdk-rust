@@ -37,10 +37,7 @@ impl DescribeCodeCoveragesFluentBuilder {
         }
     }
     /// Access the DescribeCodeCoverages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeCodeCoveragesFluentBuilder {
             crate::operation::describe_code_coverages::DescribeCodeCoverages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_code_coverages::DescribeCodeCoveragesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_code_coverages::DescribeCodeCoveragesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeCodeCoveragesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeCodeCoveragesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_code_coverages::DescribeCodeCoveragesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_code_coverages::DescribeCodeCoveragesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_code_coverages::DescribeCodeCoveragesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeCodeCoveragesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_code_coverages::DescribeCodeCoveragesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_code_coverages::DescribeCodeCoveragesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_code_coverages::DescribeCodeCoveragesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl DescribeCodeCoveragesFluentBuilder {
             crate::operation::describe_code_coverages::DescribeCodeCoverages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_code_coverages::DescribeCodeCoveragesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_code_coverages::DescribeCodeCoveragesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_code_coverages::paginator::DescribeCodeCoveragesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_code_coverages::paginator::DescribeCodeCoveragesPaginator {
-        crate::operation::describe_code_coverages::paginator::DescribeCodeCoveragesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_code_coverages::paginator::DescribeCodeCoveragesPaginator {
+        crate::operation::describe_code_coverages::paginator::DescribeCodeCoveragesPaginator::new(self.handle, self.inner)
     }
     /// <p> The ARN of the report for which test cases are returned. </p>
     pub fn report_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -182,10 +163,7 @@ impl DescribeCodeCoveragesFluentBuilder {
         self
     }
     /// <p>Specifies if the results are sorted in ascending or descending order.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -227,10 +205,7 @@ impl DescribeCodeCoveragesFluentBuilder {
     /// <p>The results are sorted by the percentage of lines that are covered.</p>
     /// </dd>
     /// </dl>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportCodeCoverageSortByType>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ReportCodeCoverageSortByType>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -249,9 +224,7 @@ impl DescribeCodeCoveragesFluentBuilder {
     /// <p>The results are sorted by the percentage of lines that are covered.</p>
     /// </dd>
     /// </dl>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReportCodeCoverageSortByType> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ReportCodeCoverageSortByType> {
         self.inner.get_sort_by()
     }
     /// <p>The minimum line coverage percentage to report.</p>

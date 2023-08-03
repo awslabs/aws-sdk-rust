@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DefineIndexFieldOutput`](crate::operation::define_index_field::DefineIndexFieldOutput) with field(s):
     ///   - [`index_field(Option<IndexFieldStatus>)`](crate::operation::define_index_field::DefineIndexFieldOutput::index_field): <p>The value of an <code>IndexField</code> and its current status.</p>
     /// - On failure, responds with [`SdkError<DefineIndexFieldError>`](crate::operation::define_index_field::DefineIndexFieldError)
-    pub fn define_index_field(
-        &self,
-    ) -> crate::operation::define_index_field::builders::DefineIndexFieldFluentBuilder {
-        crate::operation::define_index_field::builders::DefineIndexFieldFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn define_index_field(&self) -> crate::operation::define_index_field::builders::DefineIndexFieldFluentBuilder {
+        crate::operation::define_index_field::builders::DefineIndexFieldFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`datasource_packages(Option<HashMap<DatasourcePackage, DatasourcePackageIngestDetail>>)`](crate::operation::list_datasource_packages::ListDatasourcePackagesOutput::datasource_packages): <p>Details on the data source packages active in the behavior graph.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_datasource_packages::ListDatasourcePackagesOutput::next_token): <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
     /// - On failure, responds with [`SdkError<ListDatasourcePackagesError>`](crate::operation::list_datasource_packages::ListDatasourcePackagesError)
-    pub fn list_datasource_packages(
-        &self,
-    ) -> crate::operation::list_datasource_packages::builders::ListDatasourcePackagesFluentBuilder
-    {
+    pub fn list_datasource_packages(&self) -> crate::operation::list_datasource_packages::builders::ListDatasourcePackagesFluentBuilder {
         crate::operation::list_datasource_packages::builders::ListDatasourcePackagesFluentBuilder::new(self.handle.clone())
     }
 }

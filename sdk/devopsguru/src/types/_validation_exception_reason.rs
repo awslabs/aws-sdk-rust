@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,17 +65,11 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
         match s {
             "CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
-            "INVALID_PARAMETER_COMBINATION" => {
-                ValidationExceptionReason::InvalidParameterCombination
-            }
+            "INVALID_PARAMETER_COMBINATION" => ValidationExceptionReason::InvalidParameterCombination,
             "OTHER" => ValidationExceptionReason::Other,
-            "PARAMETER_INCONSISTENT_WITH_SERVICE_STATE" => {
-                ValidationExceptionReason::ParameterInconsistentWithServiceState
-            }
+            "PARAMETER_INCONSISTENT_WITH_SERVICE_STATE" => ValidationExceptionReason::ParameterInconsistentWithServiceState,
             "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +86,9 @@ impl ValidationExceptionReason {
         match self {
             ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
-            ValidationExceptionReason::InvalidParameterCombination => {
-                "INVALID_PARAMETER_COMBINATION"
-            }
+            ValidationExceptionReason::InvalidParameterCombination => "INVALID_PARAMETER_COMBINATION",
             ValidationExceptionReason::Other => "OTHER",
-            ValidationExceptionReason::ParameterInconsistentWithServiceState => {
-                "PARAMETER_INCONSISTENT_WITH_SERVICE_STATE"
-            }
+            ValidationExceptionReason::ParameterInconsistentWithServiceState => "PARAMETER_INCONSISTENT_WITH_SERVICE_STATE",
             ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }

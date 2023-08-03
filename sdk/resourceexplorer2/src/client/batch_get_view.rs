@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`views(Option<Vec<View>>)`](crate::operation::batch_get_view::BatchGetViewOutput::views): <p>A structure with a list of objects with details for each of the specified views.</p>
     ///   - [`errors(Option<Vec<BatchGetViewError>>)`](crate::operation::batch_get_view::BatchGetViewOutput::errors): <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
     /// - On failure, responds with [`SdkError<BatchGetViewError>`](crate::operation::batch_get_view::BatchGetViewError)
-    pub fn batch_get_view(
-        &self,
-    ) -> crate::operation::batch_get_view::builders::BatchGetViewFluentBuilder {
-        crate::operation::batch_get_view::builders::BatchGetViewFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_view(&self) -> crate::operation::batch_get_view::builders::BatchGetViewFluentBuilder {
+        crate::operation::batch_get_view::builders::BatchGetViewFluentBuilder::new(self.handle.clone())
     }
 }

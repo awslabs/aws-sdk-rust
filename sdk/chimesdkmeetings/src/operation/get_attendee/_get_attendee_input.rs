@@ -29,9 +29,7 @@ impl GetAttendeeInput {
 
 /// A builder for [`GetAttendeeInput`](crate::operation::get_attendee::GetAttendeeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAttendeeInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
     pub(crate) attendee_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetAttendeeInputBuilder {
         &self.attendee_id
     }
     /// Consumes the builder and constructs a [`GetAttendeeInput`](crate::operation::get_attendee::GetAttendeeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_attendee::GetAttendeeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_attendee::GetAttendeeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_attendee::GetAttendeeInput {
             meeting_id: self.meeting_id,
             attendee_id: self.attendee_id,

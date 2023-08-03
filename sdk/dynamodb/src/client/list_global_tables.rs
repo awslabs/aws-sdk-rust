@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`global_tables(Option<Vec<GlobalTable>>)`](crate::operation::list_global_tables::ListGlobalTablesOutput::global_tables): <p>List of global table names.</p>
     ///   - [`last_evaluated_global_table_name(Option<String>)`](crate::operation::list_global_tables::ListGlobalTablesOutput::last_evaluated_global_table_name): <p>Last evaluated global table name.</p>
     /// - On failure, responds with [`SdkError<ListGlobalTablesError>`](crate::operation::list_global_tables::ListGlobalTablesError)
-    pub fn list_global_tables(
-        &self,
-    ) -> crate::operation::list_global_tables::builders::ListGlobalTablesFluentBuilder {
-        crate::operation::list_global_tables::builders::ListGlobalTablesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_global_tables(&self) -> crate::operation::list_global_tables::builders::ListGlobalTablesFluentBuilder {
+        crate::operation::list_global_tables::builders::ListGlobalTablesFluentBuilder::new(self.handle.clone())
     }
 }

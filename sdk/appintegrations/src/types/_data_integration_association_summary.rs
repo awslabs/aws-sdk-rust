@@ -37,9 +37,7 @@ impl DataIntegrationAssociationSummary {
 
 /// A builder for [`DataIntegrationAssociationSummary`](crate::types::DataIntegrationAssociationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataIntegrationAssociationSummaryBuilder {
     pub(crate) data_integration_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_integration_arn: ::std::option::Option<::std::string::String>,
@@ -47,40 +45,26 @@ pub struct DataIntegrationAssociationSummaryBuilder {
 }
 impl DataIntegrationAssociationSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
-    pub fn data_integration_association_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_integration_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_integration_association_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
-    pub fn set_data_integration_association_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_integration_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_integration_association_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
-    pub fn get_data_integration_association_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_data_integration_association_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_integration_association_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
-    pub fn data_integration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_integration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_integration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
-    pub fn set_data_integration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_integration_arn = input;
         self
     }

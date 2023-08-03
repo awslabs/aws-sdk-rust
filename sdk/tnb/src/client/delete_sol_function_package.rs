@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`vnf_pkg_id(impl ::std::convert::Into<String>)`](crate::operation::delete_sol_function_package::builders::DeleteSolFunctionPackageFluentBuilder::vnf_pkg_id) / [`set_vnf_pkg_id(Option<String>)`](crate::operation::delete_sol_function_package::builders::DeleteSolFunctionPackageFluentBuilder::set_vnf_pkg_id): <p>ID of the function package.</p>
     /// - On success, responds with [`DeleteSolFunctionPackageOutput`](crate::operation::delete_sol_function_package::DeleteSolFunctionPackageOutput)
     /// - On failure, responds with [`SdkError<DeleteSolFunctionPackageError>`](crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError)
-    pub fn delete_sol_function_package(&self) -> crate::operation::delete_sol_function_package::builders::DeleteSolFunctionPackageFluentBuilder{
+    pub fn delete_sol_function_package(&self) -> crate::operation::delete_sol_function_package::builders::DeleteSolFunctionPackageFluentBuilder {
         crate::operation::delete_sol_function_package::builders::DeleteSolFunctionPackageFluentBuilder::new(self.handle.clone())
     }
 }

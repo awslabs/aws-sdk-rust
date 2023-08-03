@@ -17,9 +17,7 @@ impl ObjectLambdaAccessPointAlias {
         self.value.as_deref()
     }
     /// <p>The status of the Object Lambda Access Point alias. If the status is <code>PROVISIONING</code>, the Object Lambda Access Point is provisioning the alias and the alias is not ready for use yet. If the status is <code>READY</code>, the Object Lambda Access Point alias is successfully provisioned and ready for use.</p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ObjectLambdaAccessPointAliasStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ObjectLambdaAccessPointAliasStatus> {
         self.status.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl ObjectLambdaAccessPointAlias {
 
 /// A builder for [`ObjectLambdaAccessPointAlias`](crate::types::ObjectLambdaAccessPointAlias).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ObjectLambdaAccessPointAliasBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ObjectLambdaAccessPointAliasStatus>,
@@ -60,17 +56,12 @@ impl ObjectLambdaAccessPointAliasBuilder {
         self
     }
     /// <p>The status of the Object Lambda Access Point alias. If the status is <code>PROVISIONING</code>, the Object Lambda Access Point is provisioning the alias and the alias is not ready for use yet. If the status is <code>READY</code>, the Object Lambda Access Point alias is successfully provisioned and ready for use.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLambdaAccessPointAliasStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ObjectLambdaAccessPointAliasStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the Object Lambda Access Point alias. If the status is <code>PROVISIONING</code>, the Object Lambda Access Point is provisioning the alias and the alias is not ready for use yet. If the status is <code>READY</code>, the Object Lambda Access Point alias is successfully provisioned and ready for use.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectLambdaAccessPointAliasStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ObjectLambdaAccessPointAliasStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`ObjectLambdaAccessPointAlias`](crate::types::ObjectLambdaAccessPointAlias).

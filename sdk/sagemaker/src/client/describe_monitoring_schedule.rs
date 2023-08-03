@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`endpoint_name(Option<String>)`](crate::operation::describe_monitoring_schedule::DescribeMonitoringScheduleOutput::endpoint_name): <p> The name of the endpoint for the monitoring job.</p>
     ///   - [`last_monitoring_execution_summary(Option<MonitoringExecutionSummary>)`](crate::operation::describe_monitoring_schedule::DescribeMonitoringScheduleOutput::last_monitoring_execution_summary): <p>Describes metadata on the last execution to run, if there was one.</p>
     /// - On failure, responds with [`SdkError<DescribeMonitoringScheduleError>`](crate::operation::describe_monitoring_schedule::DescribeMonitoringScheduleError)
-    pub fn describe_monitoring_schedule(&self) -> crate::operation::describe_monitoring_schedule::builders::DescribeMonitoringScheduleFluentBuilder{
+    pub fn describe_monitoring_schedule(&self) -> crate::operation::describe_monitoring_schedule::builders::DescribeMonitoringScheduleFluentBuilder {
         crate::operation::describe_monitoring_schedule::builders::DescribeMonitoringScheduleFluentBuilder::new(self.handle.clone())
     }
 }

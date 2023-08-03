@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_ip_sets::ListIpSetsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     ///   - [`ip_sets(Option<Vec<IpSetSummary>>)`](crate::operation::list_ip_sets::ListIpSetsOutput::ip_sets): <p>Array of IPSets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     /// - On failure, responds with [`SdkError<ListIPSetsError>`](crate::operation::list_ip_sets::ListIPSetsError)
-    pub fn list_ip_sets(
-        &self,
-    ) -> crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder {
+    pub fn list_ip_sets(&self) -> crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder {
         crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder::new(self.handle.clone())
     }
 }

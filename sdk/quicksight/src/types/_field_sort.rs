@@ -38,9 +38,7 @@ impl FieldSort {
 
 /// A builder for [`FieldSort`](crate::types::FieldSort).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldSortBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) direction: ::std::option::Option<crate::types::SortDirection>,
@@ -74,10 +72,7 @@ impl FieldSortBuilder {
     /// <li> <p> <code>ASC</code>: Ascending</p> </li>
     /// <li> <p> <code>DESC</code>: Descending</p> </li>
     /// </ul>
-    pub fn set_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::SortDirection>,
-    ) -> Self {
+    pub fn set_direction(mut self, input: ::std::option::Option<crate::types::SortDirection>) -> Self {
         self.direction = input;
         self
     }

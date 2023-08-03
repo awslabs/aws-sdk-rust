@@ -167,18 +167,12 @@ impl DescribedCertificateBuilder {
         &self.arn
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -192,10 +186,7 @@ impl DescribedCertificateBuilder {
         self
     }
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
-    pub fn set_usage(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateUsageType>,
-    ) -> Self {
+    pub fn set_usage(mut self, input: ::std::option::Option<crate::types::CertificateUsageType>) -> Self {
         self.usage = input;
         self
     }
@@ -209,10 +200,7 @@ impl DescribedCertificateBuilder {
         self
     }
     /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -235,18 +223,12 @@ impl DescribedCertificateBuilder {
         &self.certificate
     }
     /// <p>The list of certificates that make up the chain for the certificate.</p>
-    pub fn certificate_chain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The list of certificates that make up the chain for the certificate.</p>
-    pub fn set_certificate_chain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_chain = input;
         self
     }
@@ -260,10 +242,7 @@ impl DescribedCertificateBuilder {
         self
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    pub fn set_active_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_active_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.active_date = input;
         self
     }
@@ -277,10 +256,7 @@ impl DescribedCertificateBuilder {
         self
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    pub fn set_inactive_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_inactive_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inactive_date = input;
         self
     }
@@ -308,10 +284,7 @@ impl DescribedCertificateBuilder {
         self
     }
     /// <p>The earliest date that the certificate is valid.</p>
-    pub fn set_not_before_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_before_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_before_date = input;
         self
     }
@@ -325,10 +298,7 @@ impl DescribedCertificateBuilder {
         self
     }
     /// <p>The final date that the certificate is valid.</p>
-    pub fn set_not_after_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_after_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_after_date = input;
         self
     }
@@ -376,10 +346,7 @@ impl DescribedCertificateBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

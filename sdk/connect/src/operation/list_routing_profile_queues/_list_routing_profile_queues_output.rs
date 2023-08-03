@@ -8,8 +8,7 @@ pub struct ListRoutingProfileQueuesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the routing profiles.</p>
     #[doc(hidden)]
-    pub routing_profile_queue_config_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfigSummary>>,
+    pub routing_profile_queue_config_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfigSummary>>,
     _request_id: Option<String>,
 }
 impl ListRoutingProfileQueuesOutput {
@@ -18,9 +17,7 @@ impl ListRoutingProfileQueuesOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the routing profiles.</p>
-    pub fn routing_profile_queue_config_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RoutingProfileQueueConfigSummary]> {
+    pub fn routing_profile_queue_config_summary_list(&self) -> ::std::option::Option<&[crate::types::RoutingProfileQueueConfigSummary]> {
         self.routing_profile_queue_config_summary_list.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListRoutingProfileQueuesOutput {
 }
 impl ListRoutingProfileQueuesOutput {
     /// Creates a new builder-style object to manufacture [`ListRoutingProfileQueuesOutput`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput).
-    pub fn builder() -> crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesOutputBuilder{
+    pub fn builder() -> crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesOutputBuilder {
         crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRoutingProfileQueuesOutput`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoutingProfileQueuesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) routing_profile_queue_config_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfigSummary>>,
+    pub(crate) routing_profile_queue_config_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfigSummary>>,
     _request_id: Option<String>,
 }
 impl ListRoutingProfileQueuesOutputBuilder {
@@ -67,13 +61,8 @@ impl ListRoutingProfileQueuesOutputBuilder {
     /// To override the contents of this collection use [`set_routing_profile_queue_config_summary_list`](Self::set_routing_profile_queue_config_summary_list).
     ///
     /// <p>Information about the routing profiles.</p>
-    pub fn routing_profile_queue_config_summary_list(
-        mut self,
-        input: crate::types::RoutingProfileQueueConfigSummary,
-    ) -> Self {
-        let mut v = self
-            .routing_profile_queue_config_summary_list
-            .unwrap_or_default();
+    pub fn routing_profile_queue_config_summary_list(mut self, input: crate::types::RoutingProfileQueueConfigSummary) -> Self {
+        let mut v = self.routing_profile_queue_config_summary_list.unwrap_or_default();
         v.push(input);
         self.routing_profile_queue_config_summary_list = ::std::option::Option::Some(v);
         self
@@ -81,9 +70,7 @@ impl ListRoutingProfileQueuesOutputBuilder {
     /// <p>Information about the routing profiles.</p>
     pub fn set_routing_profile_queue_config_summary_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::RoutingProfileQueueConfigSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfigSummary>>,
     ) -> Self {
         self.routing_profile_queue_config_summary_list = input;
         self
@@ -91,8 +78,7 @@ impl ListRoutingProfileQueuesOutputBuilder {
     /// <p>Information about the routing profiles.</p>
     pub fn get_routing_profile_queue_config_summary_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfigSummary>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfigSummary>> {
         &self.routing_profile_queue_config_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -105,13 +91,10 @@ impl ListRoutingProfileQueuesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRoutingProfileQueuesOutput`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput {
+    pub fn build(self) -> crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput {
         crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput {
             next_token: self.next_token,
-            routing_profile_queue_config_summary_list: self
-                .routing_profile_queue_config_summary_list,
+            routing_profile_queue_config_summary_list: self.routing_profile_queue_config_summary_list,
             _request_id: self._request_id,
         }
     }

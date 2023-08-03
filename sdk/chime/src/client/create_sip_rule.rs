@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`sip_rule(Option<SipRule>)`](crate::operation::create_sip_rule::CreateSipRuleOutput::sip_rule): <p>Returns the SIP rule information, including the rule ID, triggers, and target applications.</p>
     /// - On failure, responds with [`SdkError<CreateSipRuleError>`](crate::operation::create_sip_rule::CreateSipRuleError)
     #[deprecated(note = "Replaced by CreateSipRule in the Amazon Chime SDK Voice Namespace")]
-    pub fn create_sip_rule(
-        &self,
-    ) -> crate::operation::create_sip_rule::builders::CreateSipRuleFluentBuilder {
-        crate::operation::create_sip_rule::builders::CreateSipRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_sip_rule(&self) -> crate::operation::create_sip_rule::builders::CreateSipRuleFluentBuilder {
+        crate::operation::create_sip_rule::builders::CreateSipRuleFluentBuilder::new(self.handle.clone())
     }
 }

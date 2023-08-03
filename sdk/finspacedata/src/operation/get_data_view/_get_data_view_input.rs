@@ -30,9 +30,7 @@ impl GetDataViewInput {
 
 /// A builder for [`GetDataViewInput`](crate::operation::get_data_view::GetDataViewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataViewInputBuilder {
     pub(crate) data_view_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
@@ -67,12 +65,7 @@ impl GetDataViewInputBuilder {
         &self.dataset_id
     }
     /// Consumes the builder and constructs a [`GetDataViewInput`](crate::operation::get_data_view::GetDataViewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_view::GetDataViewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_view::GetDataViewInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_data_view::GetDataViewInput {
             data_view_id: self.data_view_id,
             dataset_id: self.dataset_id,

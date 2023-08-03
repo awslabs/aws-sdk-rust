@@ -11,12 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLifecyclePolicyOutput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyOutput) with field(s):
     ///   - [`policy_id(Option<String>)`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyOutput::policy_id): <p>The identifier of the lifecycle policy.</p>
     /// - On failure, responds with [`SdkError<CreateLifecyclePolicyError>`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError)
-    pub fn create_lifecycle_policy(
-        &self,
-    ) -> crate::operation::create_lifecycle_policy::builders::CreateLifecyclePolicyFluentBuilder
-    {
-        crate::operation::create_lifecycle_policy::builders::CreateLifecyclePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_lifecycle_policy(&self) -> crate::operation::create_lifecycle_policy::builders::CreateLifecyclePolicyFluentBuilder {
+        crate::operation::create_lifecycle_policy::builders::CreateLifecyclePolicyFluentBuilder::new(self.handle.clone())
     }
 }

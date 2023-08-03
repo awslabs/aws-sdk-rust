@@ -26,8 +26,7 @@ impl UpdateLocationAzureBlobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLocationAzureBlobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobInputBuilder,
+    inner: crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobInputBuilder,
 }
 impl UpdateLocationAzureBlobFluentBuilder {
     /// Creates a new `UpdateLocationAzureBlob`.
@@ -38,10 +37,7 @@ impl UpdateLocationAzureBlobFluentBuilder {
         }
     }
     /// Access the UpdateLocationAzureBlob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateLocationAzureBlobFluentBuilder {
             crate::operation::update_location_azure_blob::UpdateLocationAzureBlob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateLocationAzureBlobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateLocationAzureBlobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_location_azure_blob::UpdateLocationAzureBlobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateLocationAzureBlobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_location_azure_blob::UpdateLocationAzureBlobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl UpdateLocationAzureBlobFluentBuilder {
             crate::operation::update_location_azure_blob::UpdateLocationAzureBlob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError>,
     > {
         self.customize_middleware().await
     }
@@ -158,17 +143,12 @@ impl UpdateLocationAzureBlobFluentBuilder {
         self
     }
     /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AzureBlobAuthenticationType>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AzureBlobAuthenticationType>) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
     /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
-    pub fn get_authentication_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AzureBlobAuthenticationType> {
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AzureBlobAuthenticationType> {
         self.inner.get_authentication_type()
     }
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
@@ -177,17 +157,12 @@ impl UpdateLocationAzureBlobFluentBuilder {
         self
     }
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
-    pub fn set_sas_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AzureBlobSasConfiguration>,
-    ) -> Self {
+    pub fn set_sas_configuration(mut self, input: ::std::option::Option<crate::types::AzureBlobSasConfiguration>) -> Self {
         self.inner = self.inner.set_sas_configuration(input);
         self
     }
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
-    pub fn get_sas_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AzureBlobSasConfiguration> {
+    pub fn get_sas_configuration(&self) -> &::std::option::Option<crate::types::AzureBlobSasConfiguration> {
         self.inner.get_sas_configuration()
     }
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
@@ -196,10 +171,7 @@ impl UpdateLocationAzureBlobFluentBuilder {
         self
     }
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
-    pub fn set_blob_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AzureBlobType>,
-    ) -> Self {
+    pub fn set_blob_type(mut self, input: ::std::option::Option<crate::types::AzureBlobType>) -> Self {
         self.inner = self.inner.set_blob_type(input);
         self
     }
@@ -213,10 +185,7 @@ impl UpdateLocationAzureBlobFluentBuilder {
         self
     }
     /// <p>Specifies the access tier that you want your objects or files transferred into. This only applies when using the location as a transfer destination. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">Access tiers</a>.</p>
-    pub fn set_access_tier(
-        mut self,
-        input: ::std::option::Option<crate::types::AzureAccessTier>,
-    ) -> Self {
+    pub fn set_access_tier(mut self, input: ::std::option::Option<crate::types::AzureAccessTier>) -> Self {
         self.inner = self.inner.set_access_tier(input);
         self
     }
@@ -236,10 +205,7 @@ impl UpdateLocationAzureBlobFluentBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
     /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
     }

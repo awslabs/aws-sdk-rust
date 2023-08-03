@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetUserAccessLoggingSettingsOutput`](crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsOutput) with field(s):
     ///   - [`user_access_logging_settings(Option<UserAccessLoggingSettings>)`](crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsOutput::user_access_logging_settings): <p>The user access logging settings.</p>
     /// - On failure, responds with [`SdkError<GetUserAccessLoggingSettingsError>`](crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsError)
-    pub fn get_user_access_logging_settings(&self) -> crate::operation::get_user_access_logging_settings::builders::GetUserAccessLoggingSettingsFluentBuilder{
+    pub fn get_user_access_logging_settings(
+        &self,
+    ) -> crate::operation::get_user_access_logging_settings::builders::GetUserAccessLoggingSettingsFluentBuilder {
         crate::operation::get_user_access_logging_settings::builders::GetUserAccessLoggingSettingsFluentBuilder::new(self.handle.clone())
     }
 }

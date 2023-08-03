@@ -27,9 +27,7 @@ pub struct BackupRuleInput {
     pub lifecycle: ::std::option::Option<crate::types::Lifecycle>,
     /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
     #[doc(hidden)]
-    pub recovery_point_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub recovery_point_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy operation.</p>
     #[doc(hidden)]
     pub copy_actions: ::std::option::Option<::std::vec::Vec<crate::types::CopyAction>>,
@@ -66,11 +64,7 @@ impl BackupRuleInput {
         self.lifecycle.as_ref()
     }
     /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
-    pub fn recovery_point_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn recovery_point_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.recovery_point_tags.as_ref()
     }
     /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy operation.</p>
@@ -114,9 +108,7 @@ pub struct BackupRuleInputBuilder {
     pub(crate) start_window_minutes: ::std::option::Option<i64>,
     pub(crate) completion_window_minutes: ::std::option::Option<i64>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::Lifecycle>,
-    pub(crate) recovery_point_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) recovery_point_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) copy_actions: ::std::option::Option<::std::vec::Vec<crate::types::CopyAction>>,
     pub(crate) enable_continuous_backup: ::std::option::Option<bool>,
 }
@@ -136,18 +128,12 @@ impl BackupRuleInputBuilder {
         &self.rule_name
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn target_backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_target_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_backup_vault_name = input;
         self
     }
@@ -156,18 +142,12 @@ impl BackupRuleInputBuilder {
         &self.target_backup_vault_name
     }
     /// <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
-    pub fn schedule_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
-    pub fn set_schedule_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
@@ -244,19 +224,13 @@ impl BackupRuleInputBuilder {
     /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
     pub fn set_recovery_point_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.recovery_point_tags = input;
         self
     }
     /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
-    pub fn get_recovery_point_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_recovery_point_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.recovery_point_tags
     }
     /// Appends an item to `copy_actions`.
@@ -271,17 +245,12 @@ impl BackupRuleInputBuilder {
         self
     }
     /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy operation.</p>
-    pub fn set_copy_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CopyAction>>,
-    ) -> Self {
+    pub fn set_copy_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CopyAction>>) -> Self {
         self.copy_actions = input;
         self
     }
     /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy operation.</p>
-    pub fn get_copy_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CopyAction>> {
+    pub fn get_copy_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CopyAction>> {
         &self.copy_actions
     }
     /// <p>Specifies whether Backup creates continuous backups. True causes Backup to create continuous backups capable of point-in-time restore (PITR). False (or not specified) causes Backup to create snapshot backups.</p>

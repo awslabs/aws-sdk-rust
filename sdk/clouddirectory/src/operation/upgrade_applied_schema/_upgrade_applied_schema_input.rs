@@ -29,17 +29,14 @@ impl UpgradeAppliedSchemaInput {
 }
 impl UpgradeAppliedSchemaInput {
     /// Creates a new builder-style object to manufacture [`UpgradeAppliedSchemaInput`](crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput).
-    pub fn builder(
-    ) -> crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaInputBuilder {
+    pub fn builder() -> crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaInputBuilder {
         crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaInputBuilder::default()
     }
 }
 
 /// A builder for [`UpgradeAppliedSchemaInput`](crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpgradeAppliedSchemaInputBuilder {
     pub(crate) published_schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct UpgradeAppliedSchemaInputBuilder {
 }
 impl UpgradeAppliedSchemaInputBuilder {
     /// <p>The revision of the published schema to upgrade the directory to.</p>
-    pub fn published_schema_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn published_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.published_schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The revision of the published schema to upgrade the directory to.</p>
-    pub fn set_published_schema_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_published_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.published_schema_arn = input;
         self
     }
@@ -67,18 +58,12 @@ impl UpgradeAppliedSchemaInputBuilder {
         &self.published_schema_arn
     }
     /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }
@@ -103,16 +88,12 @@ impl UpgradeAppliedSchemaInputBuilder {
     /// Consumes the builder and constructs a [`UpgradeAppliedSchemaInput`](crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput {
-                published_schema_arn: self.published_schema_arn,
-                directory_arn: self.directory_arn,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput {
+            published_schema_arn: self.published_schema_arn,
+            directory_arn: self.directory_arn,
+            dry_run: self.dry_run,
+        })
     }
 }

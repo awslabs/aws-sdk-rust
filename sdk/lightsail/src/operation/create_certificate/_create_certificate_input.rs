@@ -42,38 +42,28 @@ impl CreateCertificateInput {
 }
 impl CreateCertificateInput {
     /// Creates a new builder-style object to manufacture [`CreateCertificateInput`](crate::operation::create_certificate::CreateCertificateInput).
-    pub fn builder() -> crate::operation::create_certificate::builders::CreateCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_certificate::builders::CreateCertificateInputBuilder {
         crate::operation::create_certificate::builders::CreateCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCertificateInput`](crate::operation::create_certificate::CreateCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCertificateInputBuilder {
     pub(crate) certificate_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) subject_alternative_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCertificateInputBuilder {
     /// <p>The name for the certificate.</p>
-    pub fn certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the certificate.</p>
-    pub fn set_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_name = input;
         self
     }
@@ -102,10 +92,7 @@ impl CreateCertificateInputBuilder {
     /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
     /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
     /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
-    pub fn subject_alternative_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subject_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subject_alternative_names.unwrap_or_default();
         v.push(input.into());
         self.subject_alternative_names = ::std::option::Option::Some(v);
@@ -114,19 +101,14 @@ impl CreateCertificateInputBuilder {
     /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
     /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
     /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
-    pub fn set_subject_alternative_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subject_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subject_alternative_names = input;
         self
     }
     /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
     /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
     /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
-    pub fn get_subject_alternative_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subject_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subject_alternative_names
     }
     /// Appends an item to `tags`.
@@ -143,10 +125,7 @@ impl CreateCertificateInputBuilder {
     }
     /// <p>The tag keys and optional values to add to the certificate during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -158,17 +137,12 @@ impl CreateCertificateInputBuilder {
     /// Consumes the builder and constructs a [`CreateCertificateInput`](crate::operation::create_certificate::CreateCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_certificate::CreateCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_certificate::CreateCertificateInput {
-                certificate_name: self.certificate_name,
-                domain_name: self.domain_name,
-                subject_alternative_names: self.subject_alternative_names,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_certificate::CreateCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_certificate::CreateCertificateInput {
+            certificate_name: self.certificate_name,
+            domain_name: self.domain_name,
+            subject_alternative_names: self.subject_alternative_names,
+            tags: self.tags,
+        })
     }
 }

@@ -29,18 +29,14 @@ impl ListVirtualMachinesInput {
 }
 impl ListVirtualMachinesInput {
     /// Creates a new builder-style object to manufacture [`ListVirtualMachinesInput`](crate::operation::list_virtual_machines::ListVirtualMachinesInput).
-    pub fn builder(
-    ) -> crate::operation::list_virtual_machines::builders::ListVirtualMachinesInputBuilder {
-        crate::operation::list_virtual_machines::builders::ListVirtualMachinesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_virtual_machines::builders::ListVirtualMachinesInputBuilder {
+        crate::operation::list_virtual_machines::builders::ListVirtualMachinesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVirtualMachinesInput`](crate::operation::list_virtual_machines::ListVirtualMachinesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVirtualMachinesInputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -48,18 +44,12 @@ pub struct ListVirtualMachinesInputBuilder {
 }
 impl ListVirtualMachinesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.</p>
-    pub fn hypervisor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.</p>
-    pub fn set_hypervisor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hypervisor_arn = input;
         self
     }
@@ -98,16 +88,12 @@ impl ListVirtualMachinesInputBuilder {
     /// Consumes the builder and constructs a [`ListVirtualMachinesInput`](crate::operation::list_virtual_machines::ListVirtualMachinesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_virtual_machines::ListVirtualMachinesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_virtual_machines::ListVirtualMachinesInput {
-                hypervisor_arn: self.hypervisor_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_virtual_machines::ListVirtualMachinesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_virtual_machines::ListVirtualMachinesInput {
+            hypervisor_arn: self.hypervisor_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

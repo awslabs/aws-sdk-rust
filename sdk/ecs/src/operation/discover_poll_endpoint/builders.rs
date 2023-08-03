@@ -40,9 +40,7 @@ impl DiscoverPollEndpointFluentBuilder {
         }
     }
     /// Access the DiscoverPollEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl DiscoverPollEndpointFluentBuilder {
             crate::operation::discover_poll_endpoint::DiscoverPollEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::discover_poll_endpoint::DiscoverPollEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::discover_poll_endpoint::DiscoverPollEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl DiscoverPollEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl DiscoverPollEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::discover_poll_endpoint::DiscoverPollEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::discover_poll_endpoint::DiscoverPollEndpointError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl DiscoverPollEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::discover_poll_endpoint::DiscoverPollEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::discover_poll_endpoint::DiscoverPollEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +108,17 @@ impl DiscoverPollEndpointFluentBuilder {
             crate::operation::discover_poll_endpoint::DiscoverPollEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::discover_poll_endpoint::DiscoverPollEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::discover_poll_endpoint::DiscoverPollEndpointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The container instance ID or full ARN of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn container_instance(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_instance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_instance(input.into());
         self
     }
     /// <p>The container instance ID or full ARN of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn set_container_instance(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_instance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_instance(input);
         self
     }

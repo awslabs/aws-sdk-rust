@@ -38,9 +38,7 @@ impl ListAppsListsInput {
 
 /// A builder for [`ListAppsListsInput`](crate::operation::list_apps_lists::ListAppsListsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppsListsInputBuilder {
     pub(crate) default_lists: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -95,10 +93,7 @@ impl ListAppsListsInputBuilder {
     /// Consumes the builder and constructs a [`ListAppsListsInput`](crate::operation::list_apps_lists::ListAppsListsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_apps_lists::ListAppsListsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_apps_lists::ListAppsListsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_apps_lists::ListAppsListsInput {
             default_lists: self.default_lists,
             next_token: self.next_token,

@@ -12,10 +12,7 @@ pub fn ser_create_user_input(
     if let Some(var_3) = &input.identity_info {
         #[allow(unused_mut)]
         let mut object_4 = object.key("IdentityInfo").start_object();
-        crate::protocol_serde::shape_user_identity_info::ser_user_identity_info(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_user_identity_info::ser_user_identity_info(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.password {
@@ -24,10 +21,7 @@ pub fn ser_create_user_input(
     if let Some(var_6) = &input.phone_config {
         #[allow(unused_mut)]
         let mut object_7 = object.key("PhoneConfig").start_object();
-        crate::protocol_serde::shape_user_phone_config::ser_user_phone_config(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_user_phone_config::ser_user_phone_config(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.routing_profile_id {

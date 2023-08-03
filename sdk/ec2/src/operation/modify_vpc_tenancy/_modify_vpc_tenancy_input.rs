@@ -29,17 +29,14 @@ impl ModifyVpcTenancyInput {
 }
 impl ModifyVpcTenancyInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcTenancyInput`](crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput).
-    pub fn builder() -> crate::operation::modify_vpc_tenancy::builders::ModifyVpcTenancyInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_vpc_tenancy::builders::ModifyVpcTenancyInputBuilder {
         crate::operation::modify_vpc_tenancy::builders::ModifyVpcTenancyInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpcTenancyInput`](crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcTenancyInputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_tenancy: ::std::option::Option<crate::types::VpcTenancy>,
@@ -66,10 +63,7 @@ impl ModifyVpcTenancyInputBuilder {
         self
     }
     /// <p>The instance tenancy attribute for the VPC. </p>
-    pub fn set_instance_tenancy(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcTenancy>,
-    ) -> Self {
+    pub fn set_instance_tenancy(mut self, input: ::std::option::Option<crate::types::VpcTenancy>) -> Self {
         self.instance_tenancy = input;
         self
     }
@@ -94,16 +88,11 @@ impl ModifyVpcTenancyInputBuilder {
     /// Consumes the builder and constructs a [`ModifyVpcTenancyInput`](crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput {
-                vpc_id: self.vpc_id,
-                instance_tenancy: self.instance_tenancy,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput {
+            vpc_id: self.vpc_id,
+            instance_tenancy: self.instance_tenancy,
+            dry_run: self.dry_run,
+        })
     }
 }

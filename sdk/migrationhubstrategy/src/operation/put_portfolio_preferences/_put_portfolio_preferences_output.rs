@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutPortfolioPreferencesOutput {
 }
 impl PutPortfolioPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`PutPortfolioPreferencesOutput`](crate::operation::put_portfolio_preferences::PutPortfolioPreferencesOutput).
-    pub fn builder(
-    ) -> crate::operation::put_portfolio_preferences::builders::PutPortfolioPreferencesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_portfolio_preferences::builders::PutPortfolioPreferencesOutputBuilder {
         crate::operation::put_portfolio_preferences::builders::PutPortfolioPreferencesOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutPortfolioPreferencesOutput`](crate::operation::put_portfolio_preferences::PutPortfolioPreferencesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPortfolioPreferencesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl PutPortfolioPreferencesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutPortfolioPreferencesOutput`](crate::operation::put_portfolio_preferences::PutPortfolioPreferencesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_portfolio_preferences::PutPortfolioPreferencesOutput {
+    pub fn build(self) -> crate::operation::put_portfolio_preferences::PutPortfolioPreferencesOutput {
         crate::operation::put_portfolio_preferences::PutPortfolioPreferencesOutput {
             _request_id: self._request_id,
         }

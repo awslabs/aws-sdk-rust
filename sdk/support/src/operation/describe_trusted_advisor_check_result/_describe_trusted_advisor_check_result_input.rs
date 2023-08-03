@@ -51,16 +51,14 @@ impl DescribeTrustedAdvisorCheckResultInput {
 }
 impl DescribeTrustedAdvisorCheckResultInput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckResultInput`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput).
-    pub fn builder() -> crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultInputBuilder{
+    pub fn builder() -> crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultInputBuilder {
         crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrustedAdvisorCheckResultInput`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckResultInputBuilder {
     pub(crate) check_id: ::std::option::Option<::std::string::String>,
     pub(crate) language: ::std::option::Option<::std::string::String>,
@@ -137,14 +135,17 @@ impl DescribeTrustedAdvisorCheckResultInputBuilder {
         &self.language
     }
     /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckResultInput`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput {
-                check_id: self.check_id
-                ,
-                language: self.language
-                ,
-            }
+                check_id: self.check_id,
+                language: self.language,
+            },
         )
     }
 }

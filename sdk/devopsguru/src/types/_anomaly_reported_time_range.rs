@@ -30,9 +30,7 @@ impl AnomalyReportedTimeRange {
 
 /// A builder for [`AnomalyReportedTimeRange`](crate::types::AnomalyReportedTimeRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyReportedTimeRangeBuilder {
     pub(crate) open_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) close_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,10 +42,7 @@ impl AnomalyReportedTimeRangeBuilder {
         self
     }
     /// <p> The time when an anomaly is opened. </p>
-    pub fn set_open_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_open_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.open_time = input;
         self
     }
@@ -61,10 +56,7 @@ impl AnomalyReportedTimeRangeBuilder {
         self
     }
     /// <p> The time when an anomaly is closed. </p>
-    pub fn set_close_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_close_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.close_time = input;
         self
     }

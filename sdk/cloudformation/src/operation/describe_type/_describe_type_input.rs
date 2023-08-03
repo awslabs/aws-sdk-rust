@@ -67,9 +67,7 @@ impl DescribeTypeInput {
 
 /// A builder for [`DescribeTypeInput`](crate::operation::describe_type::DescribeTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTypeInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RegistryType>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -165,18 +163,12 @@ impl DescribeTypeInputBuilder {
         &self.publisher_id
     }
     /// <p>The version number of a public third-party extension.</p>
-    pub fn public_version_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_version_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of a public third-party extension.</p>
-    pub fn set_public_version_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_version_number = input;
         self
     }
@@ -185,12 +177,7 @@ impl DescribeTypeInputBuilder {
         &self.public_version_number
     }
     /// Consumes the builder and constructs a [`DescribeTypeInput`](crate::operation::describe_type::DescribeTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_type::DescribeTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_type::DescribeTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_type::DescribeTypeInput {
             r#type: self.r#type,
             type_name: self.type_name,

@@ -9,19 +9,14 @@ pub fn ser_attribute_suggestions_update_config(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_suggestable_config::ser_suggestable_config(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_suggestable_config::ser_suggestable_config(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
         array_2.finish();
     }
     if let Some(var_5) = &input.attribute_suggestions_mode {
-        object
-            .key("AttributeSuggestionsMode")
-            .string(var_5.as_str());
+        object.key("AttributeSuggestionsMode").string(var_5.as_str());
     }
     Ok(())
 }

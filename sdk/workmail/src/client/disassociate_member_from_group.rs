@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`member_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupFluentBuilder::member_id) / [`set_member_id(Option<String>)`](crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupFluentBuilder::set_member_id): <p>The identifier for the member to be removed to the group.</p>
     /// - On success, responds with [`DisassociateMemberFromGroupOutput`](crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput)
     /// - On failure, responds with [`SdkError<DisassociateMemberFromGroupError>`](crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError)
-    pub fn disassociate_member_from_group(&self) -> crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupFluentBuilder{
+    pub fn disassociate_member_from_group(
+        &self,
+    ) -> crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupFluentBuilder {
         crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupFluentBuilder::new(self.handle.clone())
     }
 }

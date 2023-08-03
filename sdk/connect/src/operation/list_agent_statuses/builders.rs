@@ -10,10 +10,7 @@ impl ListAgentStatusesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_agent_statuses::ListAgentStatusesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_agent_statuses::ListAgentStatusesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_agent_statuses::ListAgentStatusesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_agent_statuses();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListAgentStatusesFluentBuilder {
         }
     }
     /// Access the ListAgentStatuses as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_agent_statuses::builders::ListAgentStatusesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_agent_statuses::builders::ListAgentStatusesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListAgentStatusesFluentBuilder {
             crate::operation::list_agent_statuses::ListAgentStatuses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_agent_statuses::ListAgentStatusesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_agent_statuses::ListAgentStatusesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListAgentStatusesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListAgentStatusesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_agent_statuses::ListAgentStatusesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_agent_statuses::ListAgentStatusesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_agent_statuses::ListAgentStatusesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListAgentStatusesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_agent_statuses::ListAgentStatusesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_agent_statuses::ListAgentStatusesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_agent_statuses::ListAgentStatusesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListAgentStatusesFluentBuilder {
             crate::operation::list_agent_statuses::ListAgentStatuses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_agent_statuses::ListAgentStatusesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_agent_statuses::ListAgentStatusesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_agent_statuses::paginator::ListAgentStatusesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_agent_statuses::paginator::ListAgentStatusesPaginator {
-        crate::operation::list_agent_statuses::paginator::ListAgentStatusesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_agent_statuses::paginator::ListAgentStatusesPaginator {
+        crate::operation::list_agent_statuses::paginator::ListAgentStatusesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -186,17 +165,12 @@ impl ListAgentStatusesFluentBuilder {
         self
     }
     /// <p>Available agent status types.</p>
-    pub fn set_agent_status_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusType>>,
-    ) -> Self {
+    pub fn set_agent_status_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusType>>) -> Self {
         self.inner = self.inner.set_agent_status_types(input);
         self
     }
     /// <p>Available agent status types.</p>
-    pub fn get_agent_status_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentStatusType>> {
+    pub fn get_agent_status_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentStatusType>> {
         self.inner.get_agent_status_types()
     }
 }

@@ -37,10 +37,7 @@ impl CreateContainerRecipeFluentBuilder {
         }
     }
     /// Access the CreateContainerRecipe as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_container_recipe::builders::CreateContainerRecipeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_container_recipe::builders::CreateContainerRecipeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateContainerRecipeFluentBuilder {
             crate::operation::create_container_recipe::CreateContainerRecipe,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_container_recipe::CreateContainerRecipeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_container_recipe::CreateContainerRecipeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateContainerRecipeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateContainerRecipeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_container_recipe::CreateContainerRecipeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_container_recipe::CreateContainerRecipeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_container_recipe::CreateContainerRecipeError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateContainerRecipeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_container_recipe::CreateContainerRecipeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_container_recipe::CreateContainerRecipeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_container_recipe::CreateContainerRecipeError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateContainerRecipeFluentBuilder {
             crate::operation::create_container_recipe::CreateContainerRecipe,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_container_recipe::CreateContainerRecipeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_container_recipe::CreateContainerRecipeError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +115,7 @@ impl CreateContainerRecipeFluentBuilder {
         self
     }
     /// <p>The type of container to create.</p>
-    pub fn set_container_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerType>,
-    ) -> Self {
+    pub fn set_container_type(mut self, input: ::std::option::Option<crate::types::ContainerType>) -> Self {
         self.inner = self.inner.set_container_type(input);
         self
     }
@@ -184,10 +167,7 @@ impl CreateContainerRecipeFluentBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
@@ -207,10 +187,7 @@ impl CreateContainerRecipeFluentBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
@@ -243,17 +220,12 @@ impl CreateContainerRecipeFluentBuilder {
         self
     }
     /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn set_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
-    ) -> Self {
+    pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>) -> Self {
         self.inner = self.inner.set_components(input);
         self
     }
     /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn get_components(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
+    pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
         self.inner.get_components()
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
@@ -262,32 +234,21 @@ impl CreateContainerRecipeFluentBuilder {
         self
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    pub fn set_instance_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceConfiguration>,
-    ) -> Self {
+    pub fn set_instance_configuration(mut self, input: ::std::option::Option<crate::types::InstanceConfiguration>) -> Self {
         self.inner = self.inner.set_instance_configuration(input);
         self
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    pub fn get_instance_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceConfiguration> {
+    pub fn get_instance_configuration(&self) -> &::std::option::Option<crate::types::InstanceConfiguration> {
         self.inner.get_instance_configuration()
     }
     /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
-    pub fn dockerfile_template_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dockerfile_template_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dockerfile_template_data(input.into());
         self
     }
     /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
-    pub fn set_dockerfile_template_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dockerfile_template_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dockerfile_template_data(input);
         self
     }
@@ -296,18 +257,12 @@ impl CreateContainerRecipeFluentBuilder {
         self.inner.get_dockerfile_template_data()
     }
     /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
-    pub fn dockerfile_template_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dockerfile_template_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dockerfile_template_uri(input.into());
         self
     }
     /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
-    pub fn set_dockerfile_template_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dockerfile_template_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dockerfile_template_uri(input);
         self
     }
@@ -321,10 +276,7 @@ impl CreateContainerRecipeFluentBuilder {
         self
     }
     /// <p>Specifies the operating system platform when you use a custom base image.</p>
-    pub fn set_platform_override(
-        mut self,
-        input: ::std::option::Option<crate::types::Platform>,
-    ) -> Self {
+    pub fn set_platform_override(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
         self.inner = self.inner.set_platform_override(input);
         self
     }
@@ -333,18 +285,12 @@ impl CreateContainerRecipeFluentBuilder {
         self.inner.get_platform_override()
     }
     /// <p>Specifies the operating system version for the base image.</p>
-    pub fn image_os_version_override(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_os_version_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_os_version_override(input.into());
         self
     }
     /// <p>Specifies the operating system version for the base image.</p>
-    pub fn set_image_os_version_override(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_os_version_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_os_version_override(input);
         self
     }
@@ -371,45 +317,26 @@ impl CreateContainerRecipeFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The working directory for use during build and test workflows.</p>
-    pub fn working_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn working_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.working_directory(input.into());
         self
     }
     /// <p>The working directory for use during build and test workflows.</p>
-    pub fn set_working_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_working_directory(input);
         self
     }
@@ -423,17 +350,12 @@ impl CreateContainerRecipeFluentBuilder {
         self
     }
     /// <p>The destination repository for the container image.</p>
-    pub fn set_target_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetContainerRepository>,
-    ) -> Self {
+    pub fn set_target_repository(mut self, input: ::std::option::Option<crate::types::TargetContainerRepository>) -> Self {
         self.inner = self.inner.set_target_repository(input);
         self
     }
     /// <p>The destination repository for the container image.</p>
-    pub fn get_target_repository(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetContainerRepository> {
+    pub fn get_target_repository(&self) -> &::std::option::Option<crate::types::TargetContainerRepository> {
         self.inner.get_target_repository()
     }
     /// <p>Identifies which KMS key is used to encrypt the container image.</p>

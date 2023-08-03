@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`portfolio_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_product_from_portfolio::builders::DisassociateProductFromPortfolioFluentBuilder::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::operation::disassociate_product_from_portfolio::builders::DisassociateProductFromPortfolioFluentBuilder::set_portfolio_id): <p>The portfolio identifier.</p>
     /// - On success, responds with [`DisassociateProductFromPortfolioOutput`](crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioOutput)
     /// - On failure, responds with [`SdkError<DisassociateProductFromPortfolioError>`](crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioError)
-    pub fn disassociate_product_from_portfolio(&self) -> crate::operation::disassociate_product_from_portfolio::builders::DisassociateProductFromPortfolioFluentBuilder{
+    pub fn disassociate_product_from_portfolio(
+        &self,
+    ) -> crate::operation::disassociate_product_from_portfolio::builders::DisassociateProductFromPortfolioFluentBuilder {
         crate::operation::disassociate_product_from_portfolio::builders::DisassociateProductFromPortfolioFluentBuilder::new(self.handle.clone())
     }
 }

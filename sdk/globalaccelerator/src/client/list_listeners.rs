@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`listeners(Option<Vec<Listener>>)`](crate::operation::list_listeners::ListListenersOutput::listeners): <p>The list of listeners for an accelerator.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_listeners::ListListenersOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
     /// - On failure, responds with [`SdkError<ListListenersError>`](crate::operation::list_listeners::ListListenersError)
-    pub fn list_listeners(
-        &self,
-    ) -> crate::operation::list_listeners::builders::ListListenersFluentBuilder {
-        crate::operation::list_listeners::builders::ListListenersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_listeners(&self) -> crate::operation::list_listeners::builders::ListListenersFluentBuilder {
+        crate::operation::list_listeners::builders::ListListenersFluentBuilder::new(self.handle.clone())
     }
 }

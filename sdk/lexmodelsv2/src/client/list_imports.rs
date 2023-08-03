@@ -18,9 +18,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_imports::ListImportsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListImports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListImports</code> operation request to get the next page of results.</p>
     ///   - [`locale_id(Option<String>)`](crate::operation::list_imports::ListImportsOutput::locale_id): <p>The locale specified in the request.</p>
     /// - On failure, responds with [`SdkError<ListImportsError>`](crate::operation::list_imports::ListImportsError)
-    pub fn list_imports(
-        &self,
-    ) -> crate::operation::list_imports::builders::ListImportsFluentBuilder {
+    pub fn list_imports(&self) -> crate::operation::list_imports::builders::ListImportsFluentBuilder {
         crate::operation::list_imports::builders::ListImportsFluentBuilder::new(self.handle.clone())
     }
 }

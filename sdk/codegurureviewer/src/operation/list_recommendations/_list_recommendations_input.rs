@@ -29,17 +29,14 @@ impl ListRecommendationsInput {
 }
 impl ListRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_recommendations::builders::ListRecommendationsInputBuilder {
+    pub fn builder() -> crate::operation::list_recommendations::builders::ListRecommendationsInputBuilder {
         crate::operation::list_recommendations::builders::ListRecommendationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommendationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -75,18 +72,12 @@ impl ListRecommendationsInputBuilder {
         &self.max_results
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_review_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_review_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn set_code_review_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_review_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_review_arn = input;
         self
     }
@@ -97,16 +88,12 @@ impl ListRecommendationsInputBuilder {
     /// Consumes the builder and constructs a [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_recommendations::ListRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_recommendations::ListRecommendationsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                code_review_arn: self.code_review_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_recommendations::ListRecommendationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_recommendations::ListRecommendationsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            code_review_arn: self.code_review_arn,
+        })
     }
 }

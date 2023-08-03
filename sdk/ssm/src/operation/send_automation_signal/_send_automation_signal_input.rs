@@ -17,9 +17,7 @@ pub struct SendAutomationSignalInput {
     /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
     /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
     #[doc(hidden)]
-    pub payload: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub payload: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl SendAutomationSignalInput {
     /// <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
@@ -37,48 +35,33 @@ impl SendAutomationSignalInput {
     /// <p> <code>StepName="step1"</code> </p>
     /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
     /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
-    pub fn payload(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn payload(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.payload.as_ref()
     }
 }
 impl SendAutomationSignalInput {
     /// Creates a new builder-style object to manufacture [`SendAutomationSignalInput`](crate::operation::send_automation_signal::SendAutomationSignalInput).
-    pub fn builder(
-    ) -> crate::operation::send_automation_signal::builders::SendAutomationSignalInputBuilder {
+    pub fn builder() -> crate::operation::send_automation_signal::builders::SendAutomationSignalInputBuilder {
         crate::operation::send_automation_signal::builders::SendAutomationSignalInputBuilder::default()
     }
 }
 
 /// A builder for [`SendAutomationSignalInput`](crate::operation::send_automation_signal::SendAutomationSignalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendAutomationSignalInputBuilder {
     pub(crate) automation_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) signal_type: ::std::option::Option<crate::types::SignalType>,
-    pub(crate) payload: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) payload: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl SendAutomationSignalInputBuilder {
     /// <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
-    pub fn automation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
-    pub fn set_automation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_automation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.automation_execution_id = input;
         self
     }
@@ -92,10 +75,7 @@ impl SendAutomationSignalInputBuilder {
         self
     }
     /// <p>The type of signal to send to an Automation execution. </p>
-    pub fn set_signal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SignalType>,
-    ) -> Self {
+    pub fn set_signal_type(mut self, input: ::std::option::Option<crate::types::SignalType>) -> Self {
         self.signal_type = input;
         self
     }
@@ -114,11 +94,7 @@ impl SendAutomationSignalInputBuilder {
     /// <p> <code>StepName="step1"</code> </p>
     /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
     /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
-    pub fn payload(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn payload(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.payload.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.payload = ::std::option::Option::Some(hash_map);
@@ -133,12 +109,7 @@ impl SendAutomationSignalInputBuilder {
     /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
     pub fn set_payload(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.payload = input;
         self
@@ -150,26 +121,18 @@ impl SendAutomationSignalInputBuilder {
     /// <p> <code>StepName="step1"</code> </p>
     /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
     /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
-    pub fn get_payload(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn get_payload(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.payload
     }
     /// Consumes the builder and constructs a [`SendAutomationSignalInput`](crate::operation::send_automation_signal::SendAutomationSignalInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::send_automation_signal::SendAutomationSignalInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::send_automation_signal::SendAutomationSignalInput {
-                automation_execution_id: self.automation_execution_id,
-                signal_type: self.signal_type,
-                payload: self.payload,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::send_automation_signal::SendAutomationSignalInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::send_automation_signal::SendAutomationSignalInput {
+            automation_execution_id: self.automation_execution_id,
+            signal_type: self.signal_type,
+            payload: self.payload,
+        })
     }
 }

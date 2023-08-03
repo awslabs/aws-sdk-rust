@@ -50,17 +50,14 @@ impl CreateInterconnectInput {
 }
 impl CreateInterconnectInput {
     /// Creates a new builder-style object to manufacture [`CreateInterconnectInput`](crate::operation::create_interconnect::CreateInterconnectInput).
-    pub fn builder(
-    ) -> crate::operation::create_interconnect::builders::CreateInterconnectInputBuilder {
+    pub fn builder() -> crate::operation::create_interconnect::builders::CreateInterconnectInputBuilder {
         crate::operation::create_interconnect::builders::CreateInterconnectInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInterconnectInput`](crate::operation::create_interconnect::CreateInterconnectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInterconnectInputBuilder {
     pub(crate) interconnect_name: ::std::option::Option<::std::string::String>,
     pub(crate) bandwidth: ::std::option::Option<::std::string::String>,
@@ -71,18 +68,12 @@ pub struct CreateInterconnectInputBuilder {
 }
 impl CreateInterconnectInputBuilder {
     /// <p>The name of the interconnect.</p>
-    pub fn interconnect_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interconnect_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interconnect_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the interconnect.</p>
-    pub fn set_interconnect_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_interconnect_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interconnect_name = input;
         self
     }
@@ -144,10 +135,7 @@ impl CreateInterconnectInputBuilder {
         self
     }
     /// <p>The tags to associate with the interconnect.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -156,18 +144,12 @@ impl CreateInterconnectInputBuilder {
         &self.tags
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_name = input;
         self
     }
@@ -178,19 +160,14 @@ impl CreateInterconnectInputBuilder {
     /// Consumes the builder and constructs a [`CreateInterconnectInput`](crate::operation::create_interconnect::CreateInterconnectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_interconnect::CreateInterconnectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_interconnect::CreateInterconnectInput {
-                interconnect_name: self.interconnect_name,
-                bandwidth: self.bandwidth,
-                location: self.location,
-                lag_id: self.lag_id,
-                tags: self.tags,
-                provider_name: self.provider_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_interconnect::CreateInterconnectInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_interconnect::CreateInterconnectInput {
+            interconnect_name: self.interconnect_name,
+            bandwidth: self.bandwidth,
+            location: self.location,
+            lag_id: self.lag_id,
+            tags: self.tags,
+            provider_name: self.provider_name,
+        })
     }
 }

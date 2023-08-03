@@ -18,9 +18,7 @@ pub struct ComputeEnvironmentDetail {
     pub ecs_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags applied to the compute environment.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CeType>,
@@ -75,11 +73,7 @@ impl ComputeEnvironmentDetail {
         self.ecs_cluster_arn.as_deref()
     }
     /// <p>The tags applied to the compute environment.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
@@ -120,9 +114,7 @@ impl ComputeEnvironmentDetail {
         self.eks_configuration.as_ref()
     }
     /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
-    pub fn container_orchestration_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrchestrationType> {
+    pub fn container_orchestration_type(&self) -> ::std::option::Option<&crate::types::OrchestrationType> {
         self.container_orchestration_type.as_ref()
     }
     /// <p>Unique identifier for the compute environment.</p>
@@ -139,17 +131,13 @@ impl ComputeEnvironmentDetail {
 
 /// A builder for [`ComputeEnvironmentDetail`](crate::types::ComputeEnvironmentDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComputeEnvironmentDetailBuilder {
     pub(crate) compute_environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) compute_environment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) unmanagedv_cpus: ::std::option::Option<i32>,
     pub(crate) ecs_cluster_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::CeType>,
     pub(crate) state: ::std::option::Option<crate::types::CeState>,
     pub(crate) status: ::std::option::Option<crate::types::CeStatus>,
@@ -163,18 +151,12 @@ pub struct ComputeEnvironmentDetailBuilder {
 }
 impl ComputeEnvironmentDetailBuilder {
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    pub fn compute_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compute_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    pub fn set_compute_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compute_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compute_environment_name = input;
         self
     }
@@ -183,18 +165,12 @@ impl ComputeEnvironmentDetailBuilder {
         &self.compute_environment_name
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    pub fn compute_environment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compute_environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_environment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    pub fn set_compute_environment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compute_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compute_environment_arn = input;
         self
     }
@@ -217,18 +193,12 @@ impl ComputeEnvironmentDetailBuilder {
         &self.unmanagedv_cpus
     }
     /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.</p>
-    pub fn ecs_cluster_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecs_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecs_cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute environment uses.</p>
-    pub fn set_ecs_cluster_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ecs_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ecs_cluster_arn = input;
         self
     }
@@ -241,32 +211,19 @@ impl ComputeEnvironmentDetailBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags applied to the compute environment.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags applied to the compute environment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags applied to the compute environment.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
@@ -327,18 +284,12 @@ impl ComputeEnvironmentDetailBuilder {
         &self.status
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the compute environment.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the compute environment.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -352,10 +303,7 @@ impl ComputeEnvironmentDetailBuilder {
         self
     }
     /// <p>The compute resources defined for the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    pub fn set_compute_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeResource>,
-    ) -> Self {
+    pub fn set_compute_resources(mut self, input: ::std::option::Option<crate::types::ComputeResource>) -> Self {
         self.compute_resources = input;
         self
     }
@@ -383,10 +331,7 @@ impl ComputeEnvironmentDetailBuilder {
         self
     }
     /// <p>Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
-    pub fn set_update_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdatePolicy>,
-    ) -> Self {
+    pub fn set_update_policy(mut self, input: ::std::option::Option<crate::types::UpdatePolicy>) -> Self {
         self.update_policy = input;
         self
     }
@@ -400,10 +345,7 @@ impl ComputeEnvironmentDetailBuilder {
         self
     }
     /// <p>The configuration for the Amazon EKS cluster that supports the Batch compute environment. Only specify this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.</p>
-    pub fn set_eks_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EksConfiguration>,
-    ) -> Self {
+    pub fn set_eks_configuration(mut self, input: ::std::option::Option<crate::types::EksConfiguration>) -> Self {
         self.eks_configuration = input;
         self
     }
@@ -417,17 +359,12 @@ impl ComputeEnvironmentDetailBuilder {
         self
     }
     /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
-    pub fn set_container_orchestration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OrchestrationType>,
-    ) -> Self {
+    pub fn set_container_orchestration_type(mut self, input: ::std::option::Option<crate::types::OrchestrationType>) -> Self {
         self.container_orchestration_type = input;
         self
     }
     /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
-    pub fn get_container_orchestration_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrchestrationType> {
+    pub fn get_container_orchestration_type(&self) -> &::std::option::Option<crate::types::OrchestrationType> {
         &self.container_orchestration_type
     }
     /// <p>Unique identifier for the compute environment.</p>

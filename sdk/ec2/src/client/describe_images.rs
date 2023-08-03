@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`images(Option<Vec<Image>>)`](crate::operation::describe_images::DescribeImagesOutput::images): <p>Information about the images.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_images::DescribeImagesOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeImagesError>`](crate::operation::describe_images::DescribeImagesError)
-    pub fn describe_images(
-        &self,
-    ) -> crate::operation::describe_images::builders::DescribeImagesFluentBuilder {
-        crate::operation::describe_images::builders::DescribeImagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_images(&self) -> crate::operation::describe_images::builders::DescribeImagesFluentBuilder {
+        crate::operation::describe_images::builders::DescribeImagesFluentBuilder::new(self.handle.clone())
     }
 }

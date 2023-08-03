@@ -22,35 +22,26 @@ impl DeleteLiveSourceInput {
 }
 impl DeleteLiveSourceInput {
     /// Creates a new builder-style object to manufacture [`DeleteLiveSourceInput`](crate::operation::delete_live_source::DeleteLiveSourceInput).
-    pub fn builder() -> crate::operation::delete_live_source::builders::DeleteLiveSourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_live_source::builders::DeleteLiveSourceInputBuilder {
         crate::operation::delete_live_source::builders::DeleteLiveSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLiveSourceInput`](crate::operation::delete_live_source::DeleteLiveSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLiveSourceInputBuilder {
     pub(crate) live_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLiveSourceInputBuilder {
     /// <p>The name of the live source.</p>
-    pub fn live_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn live_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.live_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the live source.</p>
-    pub fn set_live_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_live_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.live_source_name = input;
         self
     }
@@ -59,18 +50,12 @@ impl DeleteLiveSourceInputBuilder {
         &self.live_source_name
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_location_name = input;
         self
     }
@@ -81,15 +66,10 @@ impl DeleteLiveSourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLiveSourceInput`](crate::operation::delete_live_source::DeleteLiveSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_live_source::DeleteLiveSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_live_source::DeleteLiveSourceInput {
-                live_source_name: self.live_source_name,
-                source_location_name: self.source_location_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_live_source::DeleteLiveSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_live_source::DeleteLiveSourceInput {
+            live_source_name: self.live_source_name,
+            source_location_name: self.source_location_name,
+        })
     }
 }

@@ -2,8 +2,7 @@
 pub fn ser_complete_multipart_upload_headers(
     input: &crate::operation::complete_multipart_upload::CompleteMultipartUploadInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.checksum_crc32 {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_complete_multipart_upload_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_crc32",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-checksum-crc32", header_value);
@@ -27,10 +23,7 @@ pub fn ser_complete_multipart_upload_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_crc32_c",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-checksum-crc32c", header_value);
@@ -43,10 +36,7 @@ pub fn ser_complete_multipart_upload_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_sha1",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-checksum-sha1", header_value);
@@ -59,10 +49,7 @@ pub fn ser_complete_multipart_upload_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_sha256",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-checksum-sha256", header_value);
@@ -75,10 +62,7 @@ pub fn ser_complete_multipart_upload_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_payer",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-request-payer", header_value);
@@ -91,10 +75,7 @@ pub fn ser_complete_multipart_upload_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
@@ -107,16 +88,10 @@ pub fn ser_complete_multipart_upload_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_algorithm",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
-            builder = builder.header(
-                "x-amz-server-side-encryption-customer-algorithm",
-                header_value,
-            );
+            builder = builder.header("x-amz-server-side-encryption-customer-algorithm", header_value);
         }
     }
     if let ::std::option::Option::Some(inner_15) = &input.sse_customer_key {
@@ -126,10 +101,7 @@ pub fn ser_complete_multipart_upload_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_key",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
@@ -142,16 +114,10 @@ pub fn ser_complete_multipart_upload_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "sse_customer_key_md5",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
-            builder = builder.header(
-                "x-amz-server-side-encryption-customer-key-MD5",
-                header_value,
-            );
+            builder = builder.header("x-amz-server-side-encryption-customer-key-MD5", header_value);
         }
     }
     Ok(builder)
@@ -167,19 +133,14 @@ pub fn de_complete_multipart_upload_http_error(
     crate::operation::complete_multipart_upload::CompleteMultipartUploadError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled,
-    )?;
-    generic_builder =
-        crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::complete_multipart_upload::CompleteMultipartUploadError::generic(generic))
+    Err(crate::operation::complete_multipart_upload::CompleteMultipartUploadError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -194,38 +155,52 @@ pub fn de_complete_multipart_upload_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadOutputBuilder::default();
-        output = crate::protocol_serde::shape_complete_multipart_upload::de_complete_multipart_upload(_response_body, output).map_err(crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled)?;
+        output = crate::protocol_serde::shape_complete_multipart_upload::de_complete_multipart_upload(_response_body, output)
+            .map_err(crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled)?;
         output = output.set_bucket_key_enabled(
-            crate::protocol_serde::shape_complete_multipart_upload_output::de_bucket_key_enabled_header(_response_headers)
-                                    .map_err(|_|crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
+            crate::protocol_serde::shape_complete_multipart_upload_output::de_bucket_key_enabled_header(_response_headers).map_err(|_| {
+                crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled(
+                    "Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled",
+                )
+            })?,
         );
         output = output.set_expiration(
-            crate::protocol_serde::shape_complete_multipart_upload_output::de_expiration_header(_response_headers)
-                                    .map_err(|_|crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled("Failed to parse Expiration from header `x-amz-expiration"))?
+            crate::protocol_serde::shape_complete_multipart_upload_output::de_expiration_header(_response_headers).map_err(|_| {
+                crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled(
+                    "Failed to parse Expiration from header `x-amz-expiration",
+                )
+            })?,
         );
         output = output.set_request_charged(
-            crate::protocol_serde::shape_complete_multipart_upload_output::de_request_charged_header(_response_headers)
-                                    .map_err(|_|crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
+            crate::protocol_serde::shape_complete_multipart_upload_output::de_request_charged_header(_response_headers).map_err(|_| {
+                crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
         );
         output = output.set_ssekms_key_id(
-            crate::protocol_serde::shape_complete_multipart_upload_output::de_ssekms_key_id_header(_response_headers)
-                                    .map_err(|_|crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
+            crate::protocol_serde::shape_complete_multipart_upload_output::de_ssekms_key_id_header(_response_headers).map_err(|_| {
+                crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled(
+                    "Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id",
+                )
+            })?,
         );
         output = output.set_server_side_encryption(
-            crate::protocol_serde::shape_complete_multipart_upload_output::de_server_side_encryption_header(_response_headers)
-                                    .map_err(|_|crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
+            crate::protocol_serde::shape_complete_multipart_upload_output::de_server_side_encryption_header(_response_headers).map_err(|_| {
+                crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled(
+                    "Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption",
+                )
+            })?,
         );
         output = output.set_version_id(
-            crate::protocol_serde::shape_complete_multipart_upload_output::de_version_id_header(_response_headers)
-                                    .map_err(|_|crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled("Failed to parse VersionId from header `x-amz-version-id"))?
+            crate::protocol_serde::shape_complete_multipart_upload_output::de_version_id_header(_response_headers).map_err(|_| {
+                crate::operation::complete_multipart_upload::CompleteMultipartUploadError::unhandled(
+                    "Failed to parse VersionId from header `x-amz-version-id",
+                )
+            })?,
         );
-        output._set_extended_request_id(
-            crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
-                .map(str::to_string),
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -234,10 +209,7 @@ pub fn de_complete_multipart_upload_http_response_with_props(
 pub fn de_complete_multipart_upload(
     inp: &[u8],
     mut builder: crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadOutputBuilder,
-) -> Result<
-    crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -245,11 +217,10 @@ pub fn de_complete_multipart_upload(
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !start_el.matches("CompleteMultipartUploadResult") {
-        return Err(
-                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
-                                    format!("encountered invalid XML root: expected CompleteMultipartUploadResult but got {:?}. This is likely a bug in the SDK.", start_el)
-                                )
-                            );
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "encountered invalid XML root: expected CompleteMultipartUploadResult but got {:?}. This is likely a bug in the SDK.",
+            start_el
+        )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

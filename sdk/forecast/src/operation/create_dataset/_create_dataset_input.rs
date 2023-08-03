@@ -106,9 +106,7 @@ impl CreateDatasetInput {
 
 /// A builder for [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDatasetInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<crate::types::Domain>,
@@ -156,10 +154,7 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p>The dataset type. Valid values depend on the chosen <code>Domain</code>.</p>
-    pub fn set_dataset_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetType>,
-    ) -> Self {
+    pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
         self.dataset_type = input;
         self
     }
@@ -178,10 +173,7 @@ impl CreateDatasetInputBuilder {
     /// <li> <p>Year - 1</p> </li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
-    pub fn data_frequency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_frequency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_frequency = ::std::option::Option::Some(input.into());
         self
     }
@@ -196,10 +188,7 @@ impl CreateDatasetInputBuilder {
     /// <li> <p>Year - 1</p> </li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
-    pub fn set_data_frequency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_frequency = input;
         self
     }
@@ -237,10 +226,7 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.encryption_config = input;
         self
     }
@@ -280,10 +266,7 @@ impl CreateDatasetInputBuilder {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -304,10 +287,7 @@ impl CreateDatasetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_dataset::CreateDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_dataset::CreateDatasetInput {
             dataset_name: self.dataset_name,
             domain: self.domain,

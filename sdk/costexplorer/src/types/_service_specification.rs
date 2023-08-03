@@ -23,9 +23,7 @@ impl ServiceSpecification {
 
 /// A builder for [`ServiceSpecification`](crate::types::ServiceSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceSpecificationBuilder {
     pub(crate) ec2_specification: ::std::option::Option<crate::types::Ec2Specification>,
 }
@@ -36,10 +34,7 @@ impl ServiceSpecificationBuilder {
         self
     }
     /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
-    pub fn set_ec2_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2Specification>,
-    ) -> Self {
+    pub fn set_ec2_specification(mut self, input: ::std::option::Option<crate::types::Ec2Specification>) -> Self {
         self.ec2_specification = input;
         self
     }

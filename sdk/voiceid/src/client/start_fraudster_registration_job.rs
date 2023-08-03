@@ -13,7 +13,9 @@ impl super::Client {
     /// - On success, responds with [`StartFraudsterRegistrationJobOutput`](crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput) with field(s):
     ///   - [`job(Option<FraudsterRegistrationJob>)`](crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput::job): <p>Details about the started fraudster registration job.</p>
     /// - On failure, responds with [`SdkError<StartFraudsterRegistrationJobError>`](crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError)
-    pub fn start_fraudster_registration_job(&self) -> crate::operation::start_fraudster_registration_job::builders::StartFraudsterRegistrationJobFluentBuilder{
+    pub fn start_fraudster_registration_job(
+        &self,
+    ) -> crate::operation::start_fraudster_registration_job::builders::StartFraudsterRegistrationJobFluentBuilder {
         crate::operation::start_fraudster_registration_job::builders::StartFraudsterRegistrationJobFluentBuilder::new(self.handle.clone())
     }
 }

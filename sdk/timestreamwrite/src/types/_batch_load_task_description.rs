@@ -54,9 +54,7 @@ impl BatchLoadTaskDescription {
         self.error_message.as_deref()
     }
     /// <p>Configuration details about the data source for a batch load task.</p>
-    pub fn data_source_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSourceConfiguration> {
+    pub fn data_source_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfiguration> {
         self.data_source_configuration.as_ref()
     }
     /// <p></p>
@@ -64,15 +62,11 @@ impl BatchLoadTaskDescription {
         self.progress_report.as_ref()
     }
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
-    pub fn report_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReportConfiguration> {
+    pub fn report_configuration(&self) -> ::std::option::Option<&crate::types::ReportConfiguration> {
         self.report_configuration.as_ref()
     }
     /// <p>Data model configuration for a batch load task. This contains details about where a data model for a batch load task is stored.</p>
-    pub fn data_model_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataModelConfiguration> {
+    pub fn data_model_configuration(&self) -> ::std::option::Option<&crate::types::DataModelConfiguration> {
         self.data_model_configuration.as_ref()
     }
     /// <p></p>
@@ -113,18 +107,14 @@ impl BatchLoadTaskDescription {
 
 /// A builder for [`BatchLoadTaskDescription`](crate::types::BatchLoadTaskDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchLoadTaskDescriptionBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
-    pub(crate) data_source_configuration:
-        ::std::option::Option<crate::types::DataSourceConfiguration>,
+    pub(crate) data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
     pub(crate) progress_report: ::std::option::Option<crate::types::BatchLoadProgressReport>,
     pub(crate) report_configuration: ::std::option::Option<crate::types::ReportConfiguration>,
-    pub(crate) data_model_configuration:
-        ::std::option::Option<crate::types::DataModelConfiguration>,
+    pub(crate) data_model_configuration: ::std::option::Option<crate::types::DataModelConfiguration>,
     pub(crate) target_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_table_name: ::std::option::Option<::std::string::String>,
     pub(crate) task_status: ::std::option::Option<crate::types::BatchLoadStatus>,
@@ -149,18 +139,12 @@ impl BatchLoadTaskDescriptionBuilder {
         &self.task_id
     }
     /// <p></p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -169,25 +153,17 @@ impl BatchLoadTaskDescriptionBuilder {
         &self.error_message
     }
     /// <p>Configuration details about the data source for a batch load task.</p>
-    pub fn data_source_configuration(
-        mut self,
-        input: crate::types::DataSourceConfiguration,
-    ) -> Self {
+    pub fn data_source_configuration(mut self, input: crate::types::DataSourceConfiguration) -> Self {
         self.data_source_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration details about the data source for a batch load task.</p>
-    pub fn set_data_source_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceConfiguration>,
-    ) -> Self {
+    pub fn set_data_source_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
         self.data_source_configuration = input;
         self
     }
     /// <p>Configuration details about the data source for a batch load task.</p>
-    pub fn get_data_source_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
+    pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
         &self.data_source_configuration
     }
     /// <p></p>
@@ -196,17 +172,12 @@ impl BatchLoadTaskDescriptionBuilder {
         self
     }
     /// <p></p>
-    pub fn set_progress_report(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchLoadProgressReport>,
-    ) -> Self {
+    pub fn set_progress_report(mut self, input: ::std::option::Option<crate::types::BatchLoadProgressReport>) -> Self {
         self.progress_report = input;
         self
     }
     /// <p></p>
-    pub fn get_progress_report(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchLoadProgressReport> {
+    pub fn get_progress_report(&self) -> &::std::option::Option<crate::types::BatchLoadProgressReport> {
         &self.progress_report
     }
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
@@ -215,17 +186,12 @@ impl BatchLoadTaskDescriptionBuilder {
         self
     }
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
-    pub fn set_report_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportConfiguration>,
-    ) -> Self {
+    pub fn set_report_configuration(mut self, input: ::std::option::Option<crate::types::ReportConfiguration>) -> Self {
         self.report_configuration = input;
         self
     }
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
-    pub fn get_report_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReportConfiguration> {
+    pub fn get_report_configuration(&self) -> &::std::option::Option<crate::types::ReportConfiguration> {
         &self.report_configuration
     }
     /// <p>Data model configuration for a batch load task. This contains details about where a data model for a batch load task is stored.</p>
@@ -234,32 +200,21 @@ impl BatchLoadTaskDescriptionBuilder {
         self
     }
     /// <p>Data model configuration for a batch load task. This contains details about where a data model for a batch load task is stored.</p>
-    pub fn set_data_model_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataModelConfiguration>,
-    ) -> Self {
+    pub fn set_data_model_configuration(mut self, input: ::std::option::Option<crate::types::DataModelConfiguration>) -> Self {
         self.data_model_configuration = input;
         self
     }
     /// <p>Data model configuration for a batch load task. This contains details about where a data model for a batch load task is stored.</p>
-    pub fn get_data_model_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataModelConfiguration> {
+    pub fn get_data_model_configuration(&self) -> &::std::option::Option<crate::types::DataModelConfiguration> {
         &self.data_model_configuration
     }
     /// <p></p>
-    pub fn target_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_target_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_database_name = input;
         self
     }
@@ -268,18 +223,12 @@ impl BatchLoadTaskDescriptionBuilder {
         &self.target_database_name
     }
     /// <p></p>
-    pub fn target_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_target_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_table_name = input;
         self
     }
@@ -293,10 +242,7 @@ impl BatchLoadTaskDescriptionBuilder {
         self
     }
     /// <p>Status of the batch load task.</p>
-    pub fn set_task_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchLoadStatus>,
-    ) -> Self {
+    pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::BatchLoadStatus>) -> Self {
         self.task_status = input;
         self
     }
@@ -324,10 +270,7 @@ impl BatchLoadTaskDescriptionBuilder {
         self
     }
     /// <p>The time when the Timestream batch load task was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -341,10 +284,7 @@ impl BatchLoadTaskDescriptionBuilder {
         self
     }
     /// <p>The time when the Timestream batch load task was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -358,10 +298,7 @@ impl BatchLoadTaskDescriptionBuilder {
         self
     }
     /// <p> </p>
-    pub fn set_resumable_until(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_resumable_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.resumable_until = input;
         self
     }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAutoScalingGroupOutput {
 }
 impl DeleteAutoScalingGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAutoScalingGroupOutput`](crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupOutputBuilder {
         crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAutoScalingGroupOutput`](crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAutoScalingGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteAutoScalingGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAutoScalingGroupOutput`](crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupOutput {
+    pub fn build(self) -> crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupOutput {
         crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupOutput {
             _request_id: self._request_id,
         }

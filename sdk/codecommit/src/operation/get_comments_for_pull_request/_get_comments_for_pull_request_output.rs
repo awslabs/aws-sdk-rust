@@ -5,8 +5,7 @@
 pub struct GetCommentsForPullRequestOutput {
     /// <p>An array of comment objects on the pull request.</p>
     #[doc(hidden)]
-    pub comments_for_pull_request_data:
-        ::std::option::Option<::std::vec::Vec<crate::types::CommentsForPullRequest>>,
+    pub comments_for_pull_request_data: ::std::option::Option<::std::vec::Vec<crate::types::CommentsForPullRequest>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetCommentsForPullRequestOutput {
 }
 impl GetCommentsForPullRequestOutput {
     /// <p>An array of comment objects on the pull request.</p>
-    pub fn comments_for_pull_request_data(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CommentsForPullRequest]> {
+    pub fn comments_for_pull_request_data(&self) -> ::std::option::Option<&[crate::types::CommentsForPullRequest]> {
         self.comments_for_pull_request_data.as_deref()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetCommentsForPullRequestOutput {
 }
 impl GetCommentsForPullRequestOutput {
     /// Creates a new builder-style object to manufacture [`GetCommentsForPullRequestOutput`](crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestOutput).
-    pub fn builder() -> crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestOutputBuilder{
+    pub fn builder() -> crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestOutputBuilder {
         crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCommentsForPullRequestOutput`](crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCommentsForPullRequestOutputBuilder {
-    pub(crate) comments_for_pull_request_data:
-        ::std::option::Option<::std::vec::Vec<crate::types::CommentsForPullRequest>>,
+    pub(crate) comments_for_pull_request_data: ::std::option::Option<::std::vec::Vec<crate::types::CommentsForPullRequest>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl GetCommentsForPullRequestOutputBuilder {
     /// To override the contents of this collection use [`set_comments_for_pull_request_data`](Self::set_comments_for_pull_request_data).
     ///
     /// <p>An array of comment objects on the pull request.</p>
-    pub fn comments_for_pull_request_data(
-        mut self,
-        input: crate::types::CommentsForPullRequest,
-    ) -> Self {
+    pub fn comments_for_pull_request_data(mut self, input: crate::types::CommentsForPullRequest) -> Self {
         let mut v = self.comments_for_pull_request_data.unwrap_or_default();
         v.push(input);
         self.comments_for_pull_request_data = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of comment objects on the pull request.</p>
-    pub fn set_comments_for_pull_request_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CommentsForPullRequest>>,
-    ) -> Self {
+    pub fn set_comments_for_pull_request_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommentsForPullRequest>>) -> Self {
         self.comments_for_pull_request_data = input;
         self
     }
     /// <p>An array of comment objects on the pull request.</p>
-    pub fn get_comments_for_pull_request_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CommentsForPullRequest>> {
+    pub fn get_comments_for_pull_request_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommentsForPullRequest>> {
         &self.comments_for_pull_request_data
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
@@ -100,9 +86,7 @@ impl GetCommentsForPullRequestOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCommentsForPullRequestOutput`](crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestOutput {
+    pub fn build(self) -> crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestOutput {
         crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestOutput {
             comments_for_pull_request_data: self.comments_for_pull_request_data,
             next_token: self.next_token,

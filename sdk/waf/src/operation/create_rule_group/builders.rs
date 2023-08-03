@@ -10,10 +10,7 @@ impl CreateRuleGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_rule_group::CreateRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rule_group::CreateRuleGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule_group::CreateRuleGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_rule_group();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl CreateRuleGroupFluentBuilder {
         }
     }
     /// Access the CreateRuleGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_rule_group::builders::CreateRuleGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_rule_group::builders::CreateRuleGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +57,7 @@ impl CreateRuleGroupFluentBuilder {
             crate::operation::create_rule_group::CreateRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rule_group::CreateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule_group::CreateRuleGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +67,7 @@ impl CreateRuleGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +76,7 @@ impl CreateRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_rule_group::CreateRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rule_group::CreateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule_group::CreateRuleGroupError>,
     > {
         let op = self
             .inner
@@ -111,9 +99,7 @@ impl CreateRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_rule_group::CreateRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rule_group::CreateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule_group::CreateRuleGroupError>,
     > {
         self.send_middleware().await
     }
@@ -127,9 +113,7 @@ impl CreateRuleGroupFluentBuilder {
             crate::operation::create_rule_group::CreateRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rule_group::CreateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule_group::CreateRuleGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -185,10 +169,7 @@ impl CreateRuleGroupFluentBuilder {
         self
     }
     /// <p></p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

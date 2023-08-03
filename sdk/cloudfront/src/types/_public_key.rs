@@ -37,9 +37,7 @@ impl PublicKey {
 
 /// A builder for [`PublicKey`](crate::types::PublicKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublicKeyBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -66,10 +64,7 @@ impl PublicKeyBuilder {
         self
     }
     /// <p>The date and time when the public key was uploaded.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -83,10 +78,7 @@ impl PublicKeyBuilder {
         self
     }
     /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
-    pub fn set_public_key_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicKeyConfig>,
-    ) -> Self {
+    pub fn set_public_key_config(mut self, input: ::std::option::Option<crate::types::PublicKeyConfig>) -> Self {
         self.public_key_config = input;
         self
     }

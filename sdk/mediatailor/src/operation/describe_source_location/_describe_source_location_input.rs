@@ -15,35 +15,25 @@ impl DescribeSourceLocationInput {
 }
 impl DescribeSourceLocationInput {
     /// Creates a new builder-style object to manufacture [`DescribeSourceLocationInput`](crate::operation::describe_source_location::DescribeSourceLocationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_source_location::builders::DescribeSourceLocationInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_source_location::builders::DescribeSourceLocationInputBuilder {
         crate::operation::describe_source_location::builders::DescribeSourceLocationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSourceLocationInput`](crate::operation::describe_source_location::DescribeSourceLocationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSourceLocationInputBuilder {
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSourceLocationInputBuilder {
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source location.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_location_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DescribeSourceLocationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSourceLocationInput`](crate::operation::describe_source_location::DescribeSourceLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_source_location::DescribeSourceLocationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_source_location::DescribeSourceLocationInput {
-                source_location_name: self.source_location_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_source_location::DescribeSourceLocationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_source_location::DescribeSourceLocationInput {
+            source_location_name: self.source_location_name,
+        })
     }
 }

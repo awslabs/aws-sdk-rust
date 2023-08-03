@@ -10,10 +10,7 @@ impl PutWarmPoolInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_warm_pool::PutWarmPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_warm_pool::PutWarmPoolError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_warm_pool::PutWarmPoolError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_warm_pool();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl PutWarmPoolFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_warm_pool::PutWarmPool,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_warm_pool::PutWarmPool, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_warm_pool::PutWarmPoolError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl PutWarmPoolFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,27 +97,18 @@ impl PutWarmPoolFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_warm_pool::PutWarmPool,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_warm_pool::PutWarmPool, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_warm_pool::PutWarmPoolError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -180,10 +162,7 @@ impl PutWarmPoolFluentBuilder {
         self
     }
     /// <p>Sets the instance state to transition to after the lifecycle actions are complete. Default is <code>Stopped</code>.</p>
-    pub fn set_pool_state(
-        mut self,
-        input: ::std::option::Option<crate::types::WarmPoolState>,
-    ) -> Self {
+    pub fn set_pool_state(mut self, input: ::std::option::Option<crate::types::WarmPoolState>) -> Self {
         self.inner = self.inner.set_pool_state(input);
         self
     }
@@ -197,17 +176,12 @@ impl PutWarmPoolFluentBuilder {
         self
     }
     /// <p>Indicates whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.</p>
-    pub fn set_instance_reuse_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceReusePolicy>,
-    ) -> Self {
+    pub fn set_instance_reuse_policy(mut self, input: ::std::option::Option<crate::types::InstanceReusePolicy>) -> Self {
         self.inner = self.inner.set_instance_reuse_policy(input);
         self
     }
     /// <p>Indicates whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.</p>
-    pub fn get_instance_reuse_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceReusePolicy> {
+    pub fn get_instance_reuse_policy(&self) -> &::std::option::Option<crate::types::InstanceReusePolicy> {
         self.inner.get_instance_reuse_policy()
     }
 }

@@ -53,16 +53,14 @@ impl UpdateInstanceMetadataOptionsInput {
 }
 impl UpdateInstanceMetadataOptionsInput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceMetadataOptionsInput`](crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsInput).
-    pub fn builder() -> crate::operation::update_instance_metadata_options::builders::UpdateInstanceMetadataOptionsInputBuilder{
+    pub fn builder() -> crate::operation::update_instance_metadata_options::builders::UpdateInstanceMetadataOptionsInputBuilder {
         crate::operation::update_instance_metadata_options::builders::UpdateInstanceMetadataOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateInstanceMetadataOptionsInput`](crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInstanceMetadataOptionsInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) http_tokens: ::std::option::Option<crate::types::HttpTokens>,
@@ -72,18 +70,12 @@ pub struct UpdateInstanceMetadataOptionsInputBuilder {
 }
 impl UpdateInstanceMetadataOptionsInputBuilder {
     /// <p>The name of the instance for which to update metadata parameters.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance for which to update metadata parameters.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -101,10 +93,7 @@ impl UpdateInstanceMetadataOptionsInputBuilder {
     /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
     /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
     /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p>
-    pub fn set_http_tokens(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpTokens>,
-    ) -> Self {
+    pub fn set_http_tokens(mut self, input: ::std::option::Option<crate::types::HttpTokens>) -> Self {
         self.http_tokens = input;
         self
     }
@@ -122,10 +111,7 @@ impl UpdateInstanceMetadataOptionsInputBuilder {
     }
     /// <p>Enables or disables the HTTP metadata endpoint on your instances. If this parameter is not specified, the existing state is maintained.</p>
     /// <p>If you specify a value of <code>disabled</code>, you cannot access your instance metadata.</p>
-    pub fn set_http_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpEndpoint>,
-    ) -> Self {
+    pub fn set_http_endpoint(mut self, input: ::std::option::Option<crate::types::HttpEndpoint>) -> Self {
         self.http_endpoint = input;
         self
     }
@@ -158,10 +144,7 @@ impl UpdateInstanceMetadataOptionsInputBuilder {
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. This setting applies only when the HTTP metadata endpoint is enabled.</p> <note>
     /// <p>This parameter is available only for instances in the Europe (Stockholm) Amazon Web Services Region (<code>eu-north-1</code>).</p>
     /// </note>
-    pub fn set_http_protocol_ipv6(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpProtocolIpv6>,
-    ) -> Self {
+    pub fn set_http_protocol_ipv6(mut self, input: ::std::option::Option<crate::types::HttpProtocolIpv6>) -> Self {
         self.http_protocol_ipv6 = input;
         self
     }
@@ -178,19 +161,12 @@ impl UpdateInstanceMetadataOptionsInputBuilder {
         crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsInput {
-                instance_name: self.instance_name
-                ,
-                http_tokens: self.http_tokens
-                ,
-                http_endpoint: self.http_endpoint
-                ,
-                http_put_response_hop_limit: self.http_put_response_hop_limit
-                ,
-                http_protocol_ipv6: self.http_protocol_ipv6
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsInput {
+            instance_name: self.instance_name,
+            http_tokens: self.http_tokens,
+            http_endpoint: self.http_endpoint,
+            http_put_response_hop_limit: self.http_put_response_hop_limit,
+            http_protocol_ipv6: self.http_protocol_ipv6,
+        })
     }
 }

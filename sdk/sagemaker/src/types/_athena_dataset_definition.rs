@@ -59,9 +59,7 @@ impl AthenaDatasetDefinition {
         self.output_format.as_ref()
     }
     /// <p>The compression used for Athena query results.</p>
-    pub fn output_compression(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AthenaResultCompressionType> {
+    pub fn output_compression(&self) -> ::std::option::Option<&crate::types::AthenaResultCompressionType> {
         self.output_compression.as_ref()
     }
 }
@@ -74,9 +72,7 @@ impl AthenaDatasetDefinition {
 
 /// A builder for [`AthenaDatasetDefinition`](crate::types::AthenaDatasetDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AthenaDatasetDefinitionBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
@@ -145,18 +141,12 @@ impl AthenaDatasetDefinitionBuilder {
         &self.work_group
     }
     /// <p>The location in Amazon S3 where Athena query results are stored.</p>
-    pub fn output_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location in Amazon S3 where Athena query results are stored.</p>
-    pub fn set_output_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_uri = input;
         self
     }
@@ -184,10 +174,7 @@ impl AthenaDatasetDefinitionBuilder {
         self
     }
     /// <p>The data storage format for Athena query results.</p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<crate::types::AthenaResultFormat>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::AthenaResultFormat>) -> Self {
         self.output_format = input;
         self
     }
@@ -201,17 +188,12 @@ impl AthenaDatasetDefinitionBuilder {
         self
     }
     /// <p>The compression used for Athena query results.</p>
-    pub fn set_output_compression(
-        mut self,
-        input: ::std::option::Option<crate::types::AthenaResultCompressionType>,
-    ) -> Self {
+    pub fn set_output_compression(mut self, input: ::std::option::Option<crate::types::AthenaResultCompressionType>) -> Self {
         self.output_compression = input;
         self
     }
     /// <p>The compression used for Athena query results.</p>
-    pub fn get_output_compression(
-        &self,
-    ) -> &::std::option::Option<crate::types::AthenaResultCompressionType> {
+    pub fn get_output_compression(&self) -> &::std::option::Option<crate::types::AthenaResultCompressionType> {
         &self.output_compression
     }
     /// Consumes the builder and constructs a [`AthenaDatasetDefinition`](crate::types::AthenaDatasetDefinition).

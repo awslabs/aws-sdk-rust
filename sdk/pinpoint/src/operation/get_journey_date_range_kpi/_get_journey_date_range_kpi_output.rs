@@ -5,15 +5,12 @@
 pub struct GetJourneyDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
     #[doc(hidden)]
-    pub journey_date_range_kpi_response:
-        ::std::option::Option<crate::types::JourneyDateRangeKpiResponse>,
+    pub journey_date_range_kpi_response: ::std::option::Option<crate::types::JourneyDateRangeKpiResponse>,
     _request_id: Option<String>,
 }
 impl GetJourneyDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
-    pub fn journey_date_range_kpi_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JourneyDateRangeKpiResponse> {
+    pub fn journey_date_range_kpi_response(&self) -> ::std::option::Option<&crate::types::JourneyDateRangeKpiResponse> {
         self.journey_date_range_kpi_response.as_ref()
     }
 }
@@ -24,44 +21,31 @@ impl ::aws_http::request_id::RequestId for GetJourneyDateRangeKpiOutput {
 }
 impl GetJourneyDateRangeKpiOutput {
     /// Creates a new builder-style object to manufacture [`GetJourneyDateRangeKpiOutput`](crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiOutput).
-    pub fn builder(
-    ) -> crate::operation::get_journey_date_range_kpi::builders::GetJourneyDateRangeKpiOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_journey_date_range_kpi::builders::GetJourneyDateRangeKpiOutputBuilder {
         crate::operation::get_journey_date_range_kpi::builders::GetJourneyDateRangeKpiOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetJourneyDateRangeKpiOutput`](crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJourneyDateRangeKpiOutputBuilder {
-    pub(crate) journey_date_range_kpi_response:
-        ::std::option::Option<crate::types::JourneyDateRangeKpiResponse>,
+    pub(crate) journey_date_range_kpi_response: ::std::option::Option<crate::types::JourneyDateRangeKpiResponse>,
     _request_id: Option<String>,
 }
 impl GetJourneyDateRangeKpiOutputBuilder {
     /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
-    pub fn journey_date_range_kpi_response(
-        mut self,
-        input: crate::types::JourneyDateRangeKpiResponse,
-    ) -> Self {
+    pub fn journey_date_range_kpi_response(mut self, input: crate::types::JourneyDateRangeKpiResponse) -> Self {
         self.journey_date_range_kpi_response = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
-    pub fn set_journey_date_range_kpi_response(
-        mut self,
-        input: ::std::option::Option<crate::types::JourneyDateRangeKpiResponse>,
-    ) -> Self {
+    pub fn set_journey_date_range_kpi_response(mut self, input: ::std::option::Option<crate::types::JourneyDateRangeKpiResponse>) -> Self {
         self.journey_date_range_kpi_response = input;
         self
     }
     /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
-    pub fn get_journey_date_range_kpi_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::JourneyDateRangeKpiResponse> {
+    pub fn get_journey_date_range_kpi_response(&self) -> &::std::option::Option<crate::types::JourneyDateRangeKpiResponse> {
         &self.journey_date_range_kpi_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +58,7 @@ impl GetJourneyDateRangeKpiOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetJourneyDateRangeKpiOutput`](crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiOutput {
+    pub fn build(self) -> crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiOutput {
         crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiOutput {
             journey_date_range_kpi_response: self.journey_date_range_kpi_response,
             _request_id: self._request_id,

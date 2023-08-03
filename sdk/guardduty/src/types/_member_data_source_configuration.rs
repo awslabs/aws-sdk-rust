@@ -13,8 +13,7 @@ pub struct MemberDataSourceConfiguration {
     pub data_sources: ::std::option::Option<crate::types::DataSourceConfigurationsResult>,
     /// <p>Contains information about the status of the features for the member account.</p>
     #[doc(hidden)]
-    pub features:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfigurationResult>>,
+    pub features: ::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfigurationResult>>,
 }
 impl MemberDataSourceConfiguration {
     /// <p>The account ID for the member account.</p>
@@ -23,15 +22,11 @@ impl MemberDataSourceConfiguration {
     }
     /// <p>Contains information on the status of data sources for the account.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn data_sources(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSourceConfigurationsResult> {
+    pub fn data_sources(&self) -> ::std::option::Option<&crate::types::DataSourceConfigurationsResult> {
         self.data_sources.as_ref()
     }
     /// <p>Contains information about the status of the features for the member account.</p>
-    pub fn features(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MemberFeaturesConfigurationResult]> {
+    pub fn features(&self) -> ::std::option::Option<&[crate::types::MemberFeaturesConfigurationResult]> {
         self.features.as_deref()
     }
 }
@@ -44,14 +39,11 @@ impl MemberDataSourceConfiguration {
 
 /// A builder for [`MemberDataSourceConfiguration`](crate::types::MemberDataSourceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberDataSourceConfigurationBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_sources: ::std::option::Option<crate::types::DataSourceConfigurationsResult>,
-    pub(crate) features:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfigurationResult>>,
+    pub(crate) features: ::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfigurationResult>>,
 }
 impl MemberDataSourceConfigurationBuilder {
     /// <p>The account ID for the member account.</p>
@@ -76,18 +68,13 @@ impl MemberDataSourceConfigurationBuilder {
     }
     /// <p>Contains information on the status of data sources for the account.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceConfigurationsResult>,
-    ) -> Self {
+    pub fn set_data_sources(mut self, input: ::std::option::Option<crate::types::DataSourceConfigurationsResult>) -> Self {
         self.data_sources = input;
         self
     }
     /// <p>Contains information on the status of data sources for the account.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn get_data_sources(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceConfigurationsResult> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<crate::types::DataSourceConfigurationsResult> {
         &self.data_sources
     }
     /// Appends an item to `features`.
@@ -102,20 +89,12 @@ impl MemberDataSourceConfigurationBuilder {
         self
     }
     /// <p>Contains information about the status of the features for the member account.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::MemberFeaturesConfigurationResult>,
-        >,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfigurationResult>>) -> Self {
         self.features = input;
         self
     }
     /// <p>Contains information about the status of the features for the member account.</p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfigurationResult>>
-    {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfigurationResult>> {
         &self.features
     }
     /// Consumes the builder and constructs a [`MemberDataSourceConfiguration`](crate::types::MemberDataSourceConfiguration).

@@ -50,13 +50,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TrendmicroConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
@@ -107,9 +101,7 @@ impl ::std::convert::From<&str> for TrendmicroConnectorOperator {
             "VALIDATE_NON_NULL" => TrendmicroConnectorOperator::ValidateNonNull,
             "VALIDATE_NON_ZERO" => TrendmicroConnectorOperator::ValidateNonZero,
             "VALIDATE_NUMERIC" => TrendmicroConnectorOperator::ValidateNumeric,
-            other => TrendmicroConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TrendmicroConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

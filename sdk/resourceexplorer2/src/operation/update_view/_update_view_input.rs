@@ -56,8 +56,7 @@ impl UpdateViewInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateViewInputBuilder {
     pub(crate) view_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) included_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,
+    pub(crate) included_properties: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,
     pub(crate) filters: ::std::option::Option<crate::types::SearchFilter>,
 }
 impl UpdateViewInputBuilder {
@@ -89,18 +88,13 @@ impl UpdateViewInputBuilder {
     }
     /// <p>Specifies optional fields that you want included in search results from this view. It is a list of objects that each describe a field to include.</p>
     /// <p>The default is an empty list, with no optional fields included in the results.</p>
-    pub fn set_included_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,
-    ) -> Self {
+    pub fn set_included_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>) -> Self {
         self.included_properties = input;
         self
     }
     /// <p>Specifies optional fields that you want included in search results from this view. It is a list of objects that each describe a field to include.</p>
     /// <p>The default is an empty list, with no optional fields included in the results.</p>
-    pub fn get_included_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>> {
+    pub fn get_included_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>> {
         &self.included_properties
     }
     /// <p>An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a <code>Search</code> operation, the filter string is combined with the search's <code>QueryString</code> parameter using a logical <code>AND</code> operator.</p>
@@ -127,12 +121,7 @@ impl UpdateViewInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`UpdateViewInput`](crate::operation::update_view::UpdateViewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_view::UpdateViewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_view::UpdateViewInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_view::UpdateViewInput {
             view_arn: self.view_arn,
             included_properties: self.included_properties,

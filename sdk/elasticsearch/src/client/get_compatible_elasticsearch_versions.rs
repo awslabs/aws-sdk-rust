@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetCompatibleElasticsearchVersionsOutput`](crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsOutput) with field(s):
     ///   - [`compatible_elasticsearch_versions(Option<Vec<CompatibleVersionsMap>>)`](crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsOutput::compatible_elasticsearch_versions): <p> A map of compatible Elasticsearch versions returned as part of the <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
     /// - On failure, responds with [`SdkError<GetCompatibleElasticsearchVersionsError>`](crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsError)
-    pub fn get_compatible_elasticsearch_versions(&self) -> crate::operation::get_compatible_elasticsearch_versions::builders::GetCompatibleElasticsearchVersionsFluentBuilder{
+    pub fn get_compatible_elasticsearch_versions(
+        &self,
+    ) -> crate::operation::get_compatible_elasticsearch_versions::builders::GetCompatibleElasticsearchVersionsFluentBuilder {
         crate::operation::get_compatible_elasticsearch_versions::builders::GetCompatibleElasticsearchVersionsFluentBuilder::new(self.handle.clone())
     }
 }

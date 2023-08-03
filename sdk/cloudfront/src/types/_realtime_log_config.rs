@@ -53,9 +53,7 @@ impl RealtimeLogConfig {
 
 /// A builder for [`RealtimeLogConfig`](crate::types::RealtimeLogConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RealtimeLogConfigBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -118,17 +116,12 @@ impl RealtimeLogConfigBuilder {
         self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data for this real-time log configuration.</p>
-    pub fn set_end_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>,
-    ) -> Self {
+    pub fn set_end_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>) -> Self {
         self.end_points = input;
         self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data for this real-time log configuration.</p>
-    pub fn get_end_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndPoint>> {
+    pub fn get_end_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndPoint>> {
         &self.end_points
     }
     /// Appends an item to `fields`.
@@ -145,10 +138,7 @@ impl RealtimeLogConfigBuilder {
     }
     /// <p>A list of fields that are included in each real-time log record. In an API response, the fields are provided in the same order in which they are sent to the Amazon Kinesis data stream.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.fields = input;
         self
     }

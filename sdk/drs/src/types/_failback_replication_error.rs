@@ -57,13 +57,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FailbackReplicationError {
     #[allow(missing_docs)] // documentation missing in model
@@ -116,58 +110,30 @@ impl ::std::convert::From<&str> for FailbackReplicationError {
         match s {
             "AGENT_NOT_SEEN" => FailbackReplicationError::AgentNotSeen,
             "FAILBACK_CLIENT_NOT_SEEN" => FailbackReplicationError::FailbackClientNotSeen,
-            "FAILED_GETTING_REPLICATION_STATE" => {
-                FailbackReplicationError::FailedGettingReplicationState
-            }
-            "FAILED_TO_ATTACH_STAGING_DISKS" => {
-                FailbackReplicationError::FailedToAttachStagingDisks
-            }
-            "FAILED_TO_AUTHENTICATE_WITH_SERVICE" => {
-                FailbackReplicationError::FailedToAuthenticateWithService
-            }
-            "FAILED_TO_BOOT_REPLICATION_SERVER" => {
-                FailbackReplicationError::FailedToBootReplicationServer
-            }
-            "FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE" => {
-                FailbackReplicationError::FailedToConfigureReplicationSoftware
-            }
-            "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER" => {
-                FailbackReplicationError::FailedToConnectAgentToReplicationServer
-            }
-            "FAILED_TO_CREATE_SECURITY_GROUP" => {
-                FailbackReplicationError::FailedToCreateSecurityGroup
-            }
-            "FAILED_TO_CREATE_STAGING_DISKS" => {
-                FailbackReplicationError::FailedToCreateStagingDisks
-            }
-            "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE" => {
-                FailbackReplicationError::FailedToDownloadReplicationSoftware
-            }
+            "FAILED_GETTING_REPLICATION_STATE" => FailbackReplicationError::FailedGettingReplicationState,
+            "FAILED_TO_ATTACH_STAGING_DISKS" => FailbackReplicationError::FailedToAttachStagingDisks,
+            "FAILED_TO_AUTHENTICATE_WITH_SERVICE" => FailbackReplicationError::FailedToAuthenticateWithService,
+            "FAILED_TO_BOOT_REPLICATION_SERVER" => FailbackReplicationError::FailedToBootReplicationServer,
+            "FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE" => FailbackReplicationError::FailedToConfigureReplicationSoftware,
+            "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER" => FailbackReplicationError::FailedToConnectAgentToReplicationServer,
+            "FAILED_TO_CREATE_SECURITY_GROUP" => FailbackReplicationError::FailedToCreateSecurityGroup,
+            "FAILED_TO_CREATE_STAGING_DISKS" => FailbackReplicationError::FailedToCreateStagingDisks,
+            "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE" => FailbackReplicationError::FailedToDownloadReplicationSoftware,
             "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT" => {
                 FailbackReplicationError::FailedToDownloadReplicationSoftwareToFailbackClient
             }
             "FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION" => {
                 FailbackReplicationError::FailedToEstablishAgentReplicatorSoftwareCommunication
             }
-            "FAILED_TO_ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION" => {
-                FailbackReplicationError::FailedToEstablishRecoveryInstanceCommunication
-            }
-            "FAILED_TO_LAUNCH_REPLICATION_SERVER" => {
-                FailbackReplicationError::FailedToLaunchReplicationServer
-            }
-            "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE" => {
-                FailbackReplicationError::FailedToPairAgentWithReplicationSoftware
-            }
-            "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT" => {
-                FailbackReplicationError::FailedToPairReplicationServerWithAgent
-            }
+            "FAILED_TO_ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION" => FailbackReplicationError::FailedToEstablishRecoveryInstanceCommunication,
+            "FAILED_TO_LAUNCH_REPLICATION_SERVER" => FailbackReplicationError::FailedToLaunchReplicationServer,
+            "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE" => FailbackReplicationError::FailedToPairAgentWithReplicationSoftware,
+            "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT" => FailbackReplicationError::FailedToPairReplicationServerWithAgent,
             "FAILED_TO_START_DATA_TRANSFER" => FailbackReplicationError::FailedToStartDataTransfer,
             "NOT_CONVERGING" => FailbackReplicationError::NotConverging,
             "SNAPSHOTS_FAILURE" => FailbackReplicationError::SnapshotsFailure,
             "UNSTABLE_NETWORK" => FailbackReplicationError::UnstableNetwork,
-            other => FailbackReplicationError::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => FailbackReplicationError::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -184,51 +150,25 @@ impl FailbackReplicationError {
         match self {
             FailbackReplicationError::AgentNotSeen => "AGENT_NOT_SEEN",
             FailbackReplicationError::FailbackClientNotSeen => "FAILBACK_CLIENT_NOT_SEEN",
-            FailbackReplicationError::FailedGettingReplicationState => {
-                "FAILED_GETTING_REPLICATION_STATE"
-            }
-            FailbackReplicationError::FailedToAttachStagingDisks => {
-                "FAILED_TO_ATTACH_STAGING_DISKS"
-            }
-            FailbackReplicationError::FailedToAuthenticateWithService => {
-                "FAILED_TO_AUTHENTICATE_WITH_SERVICE"
-            }
-            FailbackReplicationError::FailedToBootReplicationServer => {
-                "FAILED_TO_BOOT_REPLICATION_SERVER"
-            }
-            FailbackReplicationError::FailedToConfigureReplicationSoftware => {
-                "FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE"
-            }
-            FailbackReplicationError::FailedToConnectAgentToReplicationServer => {
-                "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER"
-            }
-            FailbackReplicationError::FailedToCreateSecurityGroup => {
-                "FAILED_TO_CREATE_SECURITY_GROUP"
-            }
-            FailbackReplicationError::FailedToCreateStagingDisks => {
-                "FAILED_TO_CREATE_STAGING_DISKS"
-            }
-            FailbackReplicationError::FailedToDownloadReplicationSoftware => {
-                "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE"
-            }
+            FailbackReplicationError::FailedGettingReplicationState => "FAILED_GETTING_REPLICATION_STATE",
+            FailbackReplicationError::FailedToAttachStagingDisks => "FAILED_TO_ATTACH_STAGING_DISKS",
+            FailbackReplicationError::FailedToAuthenticateWithService => "FAILED_TO_AUTHENTICATE_WITH_SERVICE",
+            FailbackReplicationError::FailedToBootReplicationServer => "FAILED_TO_BOOT_REPLICATION_SERVER",
+            FailbackReplicationError::FailedToConfigureReplicationSoftware => "FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE",
+            FailbackReplicationError::FailedToConnectAgentToReplicationServer => "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER",
+            FailbackReplicationError::FailedToCreateSecurityGroup => "FAILED_TO_CREATE_SECURITY_GROUP",
+            FailbackReplicationError::FailedToCreateStagingDisks => "FAILED_TO_CREATE_STAGING_DISKS",
+            FailbackReplicationError::FailedToDownloadReplicationSoftware => "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE",
             FailbackReplicationError::FailedToDownloadReplicationSoftwareToFailbackClient => {
                 "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT"
             }
             FailbackReplicationError::FailedToEstablishAgentReplicatorSoftwareCommunication => {
                 "FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION"
             }
-            FailbackReplicationError::FailedToEstablishRecoveryInstanceCommunication => {
-                "FAILED_TO_ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION"
-            }
-            FailbackReplicationError::FailedToLaunchReplicationServer => {
-                "FAILED_TO_LAUNCH_REPLICATION_SERVER"
-            }
-            FailbackReplicationError::FailedToPairAgentWithReplicationSoftware => {
-                "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE"
-            }
-            FailbackReplicationError::FailedToPairReplicationServerWithAgent => {
-                "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT"
-            }
+            FailbackReplicationError::FailedToEstablishRecoveryInstanceCommunication => "FAILED_TO_ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION",
+            FailbackReplicationError::FailedToLaunchReplicationServer => "FAILED_TO_LAUNCH_REPLICATION_SERVER",
+            FailbackReplicationError::FailedToPairAgentWithReplicationSoftware => "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE",
+            FailbackReplicationError::FailedToPairReplicationServerWithAgent => "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT",
             FailbackReplicationError::FailedToStartDataTransfer => "FAILED_TO_START_DATA_TRANSFER",
             FailbackReplicationError::NotConverging => "NOT_CONVERGING",
             FailbackReplicationError::SnapshotsFailure => "SNAPSHOTS_FAILURE",

@@ -91,9 +91,7 @@ impl StartCallAnalyticsStreamTranscriptionOutput {
         self.vocabulary_filter_name.as_deref()
     }
     /// <p>Provides the vocabulary filtering method used in your Call Analytics transcription.</p>
-    pub fn vocabulary_filter_method(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VocabularyFilterMethod> {
+    pub fn vocabulary_filter_method(&self) -> ::std::option::Option<&crate::types::VocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
     /// <p>Provides the name of the custom language model that you specified in your Call Analytics request.</p>
@@ -105,21 +103,15 @@ impl StartCallAnalyticsStreamTranscriptionOutput {
         self.enable_partial_results_stabilization
     }
     /// <p>Provides the stabilization level used for your transcription.</p>
-    pub fn partial_results_stability(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PartialResultsStability> {
+    pub fn partial_results_stability(&self) -> ::std::option::Option<&crate::types::PartialResultsStability> {
         self.partial_results_stability.as_ref()
     }
     /// <p>Shows whether content identification was enabled for your Call Analytics transcription.</p>
-    pub fn content_identification_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContentIdentificationType> {
+    pub fn content_identification_type(&self) -> ::std::option::Option<&crate::types::ContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
     /// <p>Shows whether content redaction was enabled for your Call Analytics transcription.</p>
-    pub fn content_redaction_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContentRedactionType> {
+    pub fn content_redaction_type(&self) -> ::std::option::Option<&crate::types::ContentRedactionType> {
         self.content_redaction_type.as_ref()
     }
     /// <p>Lists the PII entity types you specified in your Call Analytics request.</p>
@@ -134,7 +126,7 @@ impl ::aws_http::request_id::RequestId for StartCallAnalyticsStreamTranscription
 }
 impl StartCallAnalyticsStreamTranscriptionOutput {
     /// Creates a new builder-style object to manufacture [`StartCallAnalyticsStreamTranscriptionOutput`](crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput).
-    pub fn builder() -> crate::operation::start_call_analytics_stream_transcription::builders::StartCallAnalyticsStreamTranscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::start_call_analytics_stream_transcription::builders::StartCallAnalyticsStreamTranscriptionOutputBuilder {
         crate::operation::start_call_analytics_stream_transcription::builders::StartCallAnalyticsStreamTranscriptionOutputBuilder::default()
     }
 }
@@ -156,14 +148,11 @@ pub struct StartCallAnalyticsStreamTranscriptionOutputBuilder {
         >,
     >,
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,
-    pub(crate) vocabulary_filter_method:
-        ::std::option::Option<crate::types::VocabularyFilterMethod>,
+    pub(crate) vocabulary_filter_method: ::std::option::Option<crate::types::VocabularyFilterMethod>,
     pub(crate) language_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) enable_partial_results_stabilization: ::std::option::Option<bool>,
-    pub(crate) partial_results_stability:
-        ::std::option::Option<crate::types::PartialResultsStability>,
-    pub(crate) content_identification_type:
-        ::std::option::Option<crate::types::ContentIdentificationType>,
+    pub(crate) partial_results_stability: ::std::option::Option<crate::types::PartialResultsStability>,
+    pub(crate) content_identification_type: ::std::option::Option<crate::types::ContentIdentificationType>,
     pub(crate) content_redaction_type: ::std::option::Option<crate::types::ContentRedactionType>,
     pub(crate) pii_entity_types: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -189,17 +178,12 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Provides the language code that you specified in your Call Analytics request.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
     /// <p>Provides the language code that you specified in your Call Analytics request.</p>
-    pub fn get_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::CallAnalyticsLanguageCode> {
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::CallAnalyticsLanguageCode> {
         &self.language_code
     }
     /// <p>Provides the sample rate that you specified in your Call Analytics request.</p>
@@ -222,10 +206,7 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Provides the media encoding you specified in your Call Analytics request.</p>
-    pub fn set_media_encoding(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaEncoding>,
-    ) -> Self {
+    pub fn set_media_encoding(mut self, input: ::std::option::Option<crate::types::MediaEncoding>) -> Self {
         self.media_encoding = input;
         self
     }
@@ -234,18 +215,12 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
         &self.media_encoding
     }
     /// <p>Provides the name of the custom vocabulary that you specified in your Call Analytics request.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the name of the custom vocabulary that you specified in your Call Analytics request.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_name = input;
         self
     }
@@ -303,18 +278,12 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
         &self.call_analytics_transcript_result_stream
     }
     /// <p>Provides the name of the custom vocabulary filter that you specified in your Call Analytics request.</p>
-    pub fn vocabulary_filter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the name of the custom vocabulary filter that you specified in your Call Analytics request.</p>
-    pub fn set_vocabulary_filter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_filter_name = input;
         self
     }
@@ -328,32 +297,21 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Provides the vocabulary filtering method used in your Call Analytics transcription.</p>
-    pub fn set_vocabulary_filter_method(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyFilterMethod>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_method(mut self, input: ::std::option::Option<crate::types::VocabularyFilterMethod>) -> Self {
         self.vocabulary_filter_method = input;
         self
     }
     /// <p>Provides the vocabulary filtering method used in your Call Analytics transcription.</p>
-    pub fn get_vocabulary_filter_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::VocabularyFilterMethod> {
+    pub fn get_vocabulary_filter_method(&self) -> &::std::option::Option<crate::types::VocabularyFilterMethod> {
         &self.vocabulary_filter_method
     }
     /// <p>Provides the name of the custom language model that you specified in your Call Analytics request.</p>
-    pub fn language_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the name of the custom language model that you specified in your Call Analytics request.</p>
-    pub fn set_language_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_model_name = input;
         self
     }
@@ -367,10 +325,7 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Shows whether partial results stabilization was enabled for your Call Analytics transcription.</p>
-    pub fn set_enable_partial_results_stabilization(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_partial_results_stabilization(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_partial_results_stabilization = input;
         self
     }
@@ -379,47 +334,31 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
         &self.enable_partial_results_stabilization
     }
     /// <p>Provides the stabilization level used for your transcription.</p>
-    pub fn partial_results_stability(
-        mut self,
-        input: crate::types::PartialResultsStability,
-    ) -> Self {
+    pub fn partial_results_stability(mut self, input: crate::types::PartialResultsStability) -> Self {
         self.partial_results_stability = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the stabilization level used for your transcription.</p>
-    pub fn set_partial_results_stability(
-        mut self,
-        input: ::std::option::Option<crate::types::PartialResultsStability>,
-    ) -> Self {
+    pub fn set_partial_results_stability(mut self, input: ::std::option::Option<crate::types::PartialResultsStability>) -> Self {
         self.partial_results_stability = input;
         self
     }
     /// <p>Provides the stabilization level used for your transcription.</p>
-    pub fn get_partial_results_stability(
-        &self,
-    ) -> &::std::option::Option<crate::types::PartialResultsStability> {
+    pub fn get_partial_results_stability(&self) -> &::std::option::Option<crate::types::PartialResultsStability> {
         &self.partial_results_stability
     }
     /// <p>Shows whether content identification was enabled for your Call Analytics transcription.</p>
-    pub fn content_identification_type(
-        mut self,
-        input: crate::types::ContentIdentificationType,
-    ) -> Self {
+    pub fn content_identification_type(mut self, input: crate::types::ContentIdentificationType) -> Self {
         self.content_identification_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Shows whether content identification was enabled for your Call Analytics transcription.</p>
-    pub fn set_content_identification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentIdentificationType>,
-    ) -> Self {
+    pub fn set_content_identification_type(mut self, input: ::std::option::Option<crate::types::ContentIdentificationType>) -> Self {
         self.content_identification_type = input;
         self
     }
     /// <p>Shows whether content identification was enabled for your Call Analytics transcription.</p>
-    pub fn get_content_identification_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentIdentificationType> {
+    pub fn get_content_identification_type(&self) -> &::std::option::Option<crate::types::ContentIdentificationType> {
         &self.content_identification_type
     }
     /// <p>Shows whether content redaction was enabled for your Call Analytics transcription.</p>
@@ -428,32 +367,21 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Shows whether content redaction was enabled for your Call Analytics transcription.</p>
-    pub fn set_content_redaction_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentRedactionType>,
-    ) -> Self {
+    pub fn set_content_redaction_type(mut self, input: ::std::option::Option<crate::types::ContentRedactionType>) -> Self {
         self.content_redaction_type = input;
         self
     }
     /// <p>Shows whether content redaction was enabled for your Call Analytics transcription.</p>
-    pub fn get_content_redaction_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentRedactionType> {
+    pub fn get_content_redaction_type(&self) -> &::std::option::Option<crate::types::ContentRedactionType> {
         &self.content_redaction_type
     }
     /// <p>Lists the PII entity types you specified in your Call Analytics request.</p>
-    pub fn pii_entity_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pii_entity_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pii_entity_types = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lists the PII entity types you specified in your Call Analytics request.</p>
-    pub fn set_pii_entity_types(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pii_entity_types(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pii_entity_types = input;
         self
     }
@@ -471,7 +399,12 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartCallAnalyticsStreamTranscriptionOutput`](crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput {
                 request_id: self.request_id

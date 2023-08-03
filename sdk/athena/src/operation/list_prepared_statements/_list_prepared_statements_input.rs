@@ -29,18 +29,14 @@ impl ListPreparedStatementsInput {
 }
 impl ListPreparedStatementsInput {
     /// Creates a new builder-style object to manufacture [`ListPreparedStatementsInput`](crate::operation::list_prepared_statements::ListPreparedStatementsInput).
-    pub fn builder(
-    ) -> crate::operation::list_prepared_statements::builders::ListPreparedStatementsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_prepared_statements::builders::ListPreparedStatementsInputBuilder {
         crate::operation::list_prepared_statements::builders::ListPreparedStatementsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPreparedStatementsInput`](crate::operation::list_prepared_statements::ListPreparedStatementsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPreparedStatementsInputBuilder {
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListPreparedStatementsInputBuilder {
     /// Consumes the builder and constructs a [`ListPreparedStatementsInput`](crate::operation::list_prepared_statements::ListPreparedStatementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_prepared_statements::ListPreparedStatementsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_prepared_statements::ListPreparedStatementsInput {
-                work_group: self.work_group,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_prepared_statements::ListPreparedStatementsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_prepared_statements::ListPreparedStatementsInput {
+            work_group: self.work_group,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

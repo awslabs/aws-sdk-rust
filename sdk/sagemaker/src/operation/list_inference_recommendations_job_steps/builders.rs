@@ -5,16 +5,16 @@ pub use crate::operation::list_inference_recommendations_job_steps::_list_infere
 
 impl ListInferenceRecommendationsJobStepsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_inference_recommendations_job_steps();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ListInferenceRecommendationsJobStepsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInferenceRecommendationsJobStepsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsInputBuilder,
+    inner: crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsInputBuilder,
 }
 impl ListInferenceRecommendationsJobStepsFluentBuilder {
     /// Creates a new `ListInferenceRecommendationsJobSteps`.
@@ -38,15 +38,22 @@ impl ListInferenceRecommendationsJobStepsFluentBuilder {
         }
     }
     /// Access the ListInferenceRecommendationsJobSteps as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobSteps, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobSteps,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +62,17 @@ impl ListInferenceRecommendationsJobStepsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,24 +90,38 @@ impl ListInferenceRecommendationsJobStepsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobSteps, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobSteps,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_inference_recommendations_job_steps::paginator::ListInferenceRecommendationsJobStepsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_inference_recommendations_job_steps::paginator::ListInferenceRecommendationsJobStepsPaginator{
-        crate::operation::list_inference_recommendations_job_steps::paginator::ListInferenceRecommendationsJobStepsPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_inference_recommendations_job_steps::paginator::ListInferenceRecommendationsJobStepsPaginator {
+        crate::operation::list_inference_recommendations_job_steps::paginator::ListInferenceRecommendationsJobStepsPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>The name for the Inference Recommender job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,10 +143,7 @@ impl ListInferenceRecommendationsJobStepsFluentBuilder {
         self
     }
     /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecommendationJobStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -140,10 +159,7 @@ impl ListInferenceRecommendationsJobStepsFluentBuilder {
     }
     /// <p>A filter to return details about the specified type of subtask.</p>
     /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
-    pub fn set_step_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationStepType>,
-    ) -> Self {
+    pub fn set_step_type(mut self, input: ::std::option::Option<crate::types::RecommendationStepType>) -> Self {
         self.inner = self.inner.set_step_type(input);
         self
     }

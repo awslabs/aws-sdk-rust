@@ -133,9 +133,7 @@ impl CreateOntapVolumeConfiguration {
         self.copy_tags_to_backups
     }
     /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
-    pub fn snaplock_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateSnaplockConfiguration> {
+    pub fn snaplock_configuration(&self) -> ::std::option::Option<&crate::types::CreateSnaplockConfiguration> {
         self.snaplock_configuration.as_ref()
     }
 }
@@ -148,9 +146,7 @@ impl CreateOntapVolumeConfiguration {
 
 /// A builder for [`CreateOntapVolumeConfiguration`](crate::types::CreateOntapVolumeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOntapVolumeConfigurationBuilder {
     pub(crate) junction_path: ::std::option::Option<::std::string::String>,
     pub(crate) security_style: ::std::option::Option<crate::types::SecurityStyle>,
@@ -161,23 +157,16 @@ pub struct CreateOntapVolumeConfigurationBuilder {
     pub(crate) ontap_volume_type: ::std::option::Option<crate::types::InputOntapVolumeType>,
     pub(crate) snapshot_policy: ::std::option::Option<::std::string::String>,
     pub(crate) copy_tags_to_backups: ::std::option::Option<bool>,
-    pub(crate) snaplock_configuration:
-        ::std::option::Option<crate::types::CreateSnaplockConfiguration>,
+    pub(crate) snaplock_configuration: ::std::option::Option<crate::types::CreateSnaplockConfiguration>,
 }
 impl CreateOntapVolumeConfigurationBuilder {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
-    pub fn junction_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn junction_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.junction_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
-    pub fn set_junction_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_junction_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.junction_path = input;
         self
     }
@@ -201,10 +190,7 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
     /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
     /// </ul>
-    pub fn set_security_style(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityStyle>,
-    ) -> Self {
+    pub fn set_security_style(mut self, input: ::std::option::Option<crate::types::SecurityStyle>) -> Self {
         self.security_style = input;
         self
     }
@@ -246,18 +232,12 @@ impl CreateOntapVolumeConfigurationBuilder {
         &self.storage_efficiency_enabled
     }
     /// <p>Specifies the ONTAP SVM in which to create the volume.</p>
-    pub fn storage_virtual_machine_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_virtual_machine_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_virtual_machine_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ONTAP SVM in which to create the volume.</p>
-    pub fn set_storage_virtual_machine_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_virtual_machine_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_virtual_machine_id = input;
         self
     }
@@ -297,10 +277,7 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// <ul>
     /// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
     /// </ul>
-    pub fn set_tiering_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::TieringPolicy>,
-    ) -> Self {
+    pub fn set_tiering_policy(mut self, input: ::std::option::Option<crate::types::TieringPolicy>) -> Self {
         self.tiering_policy = input;
         self
     }
@@ -337,10 +314,7 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// <li> <p> <code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    pub fn set_ontap_volume_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InputOntapVolumeType>,
-    ) -> Self {
+    pub fn set_ontap_volume_type(mut self, input: ::std::option::Option<crate::types::InputOntapVolumeType>) -> Self {
         self.ontap_volume_type = input;
         self
     }
@@ -350,9 +324,7 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// <li> <p> <code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    pub fn get_ontap_volume_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputOntapVolumeType> {
+    pub fn get_ontap_volume_type(&self) -> &::std::option::Option<crate::types::InputOntapVolumeType> {
         &self.ontap_volume_type
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
@@ -363,10 +335,7 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    pub fn snapshot_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_policy = ::std::option::Option::Some(input.into());
         self
     }
@@ -378,10 +347,7 @@ impl CreateOntapVolumeConfigurationBuilder {
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    pub fn set_snapshot_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_policy = input;
         self
     }
@@ -411,25 +377,17 @@ impl CreateOntapVolumeConfigurationBuilder {
         &self.copy_tags_to_backups
     }
     /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
-    pub fn snaplock_configuration(
-        mut self,
-        input: crate::types::CreateSnaplockConfiguration,
-    ) -> Self {
+    pub fn snaplock_configuration(mut self, input: crate::types::CreateSnaplockConfiguration) -> Self {
         self.snaplock_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
-    pub fn set_snaplock_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateSnaplockConfiguration>,
-    ) -> Self {
+    pub fn set_snaplock_configuration(mut self, input: ::std::option::Option<crate::types::CreateSnaplockConfiguration>) -> Self {
         self.snaplock_configuration = input;
         self
     }
     /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
-    pub fn get_snaplock_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateSnaplockConfiguration> {
+    pub fn get_snaplock_configuration(&self) -> &::std::option::Option<crate::types::CreateSnaplockConfiguration> {
         &self.snaplock_configuration
     }
     /// Consumes the builder and constructs a [`CreateOntapVolumeConfiguration`](crate::types::CreateOntapVolumeConfiguration).

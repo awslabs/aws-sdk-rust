@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetTransactionOutput`](crate::operation::get_transaction::GetTransactionOutput) with field(s):
     ///   - [`transaction(Option<Transaction>)`](crate::operation::get_transaction::GetTransactionOutput::transaction): <p>Contains the details of the transaction.</p>
     /// - On failure, responds with [`SdkError<GetTransactionError>`](crate::operation::get_transaction::GetTransactionError)
-    pub fn get_transaction(
-        &self,
-    ) -> crate::operation::get_transaction::builders::GetTransactionFluentBuilder {
-        crate::operation::get_transaction::builders::GetTransactionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_transaction(&self) -> crate::operation::get_transaction::builders::GetTransactionFluentBuilder {
+        crate::operation::get_transaction::builders::GetTransactionFluentBuilder::new(self.handle.clone())
     }
 }

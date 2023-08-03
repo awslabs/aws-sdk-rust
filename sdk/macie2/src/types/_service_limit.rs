@@ -37,9 +37,7 @@ impl ServiceLimit {
 
 /// A builder for [`ServiceLimit`](crate::types::ServiceLimit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceLimitBuilder {
     pub(crate) is_service_limited: ::std::option::Option<bool>,
     pub(crate) unit: ::std::option::Option<crate::types::Unit>,

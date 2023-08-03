@@ -10,10 +10,7 @@ impl WriteRecordsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::write_records::WriteRecordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::write_records::WriteRecordsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::write_records::WriteRecordsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.write_records();
         fluent_builder.inner = self;
@@ -51,10 +48,7 @@ impl WriteRecordsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::write_records::WriteRecords,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::write_records::WriteRecords, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::write_records::WriteRecordsError>,
     > {
         let handle = self.handle.clone();
@@ -65,10 +59,7 @@ impl WriteRecordsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -110,27 +101,18 @@ impl WriteRecordsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::write_records::WriteRecords,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::write_records::WriteRecords, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::write_records::WriteRecordsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Timestream database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the Timestream database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -158,10 +140,7 @@ impl WriteRecordsFluentBuilder {
         self
     }
     /// <p>A record that contains the common measure, dimension, time, and version attributes shared across all the records in the request. The measure and dimension attributes specified will be merged with the measure and dimension attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a <code>ValidationException</code> will be thrown. In other words, a record must contain dimensions with unique names. </p>
-    pub fn set_common_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::Record>,
-    ) -> Self {
+    pub fn set_common_attributes(mut self, input: ::std::option::Option<crate::types::Record>) -> Self {
         self.inner = self.inner.set_common_attributes(input);
         self
     }
@@ -179,10 +158,7 @@ impl WriteRecordsFluentBuilder {
         self
     }
     /// <p>An array of records that contain the unique measure, dimension, time, and version attributes for each time-series data point. </p>
-    pub fn set_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
-    ) -> Self {
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>) -> Self {
         self.inner = self.inner.set_records(input);
         self
     }

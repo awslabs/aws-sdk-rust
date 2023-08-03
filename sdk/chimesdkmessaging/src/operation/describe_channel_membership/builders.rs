@@ -28,7 +28,7 @@ impl DescribeChannelMembershipInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeChannelMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_channel_membership::builders::DescribeChannelMembershipInputBuilder,
+    inner: crate::operation::describe_channel_membership::builders::DescribeChannelMembershipInputBuilder,
 }
 impl DescribeChannelMembershipFluentBuilder {
     /// Creates a new `DescribeChannelMembership`.
@@ -39,7 +39,7 @@ impl DescribeChannelMembershipFluentBuilder {
         }
     }
     /// Access the DescribeChannelMembership as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_channel_membership::builders::DescribeChannelMembershipInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_channel_membership::builders::DescribeChannelMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeChannelMembershipFluentBuilder {
             crate::operation::describe_channel_membership::DescribeChannelMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_membership::DescribeChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_membership::DescribeChannelMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeChannelMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeChannelMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_channel_membership::DescribeChannelMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_membership::DescribeChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_membership::DescribeChannelMembershipError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeChannelMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_channel_membership::DescribeChannelMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_membership::DescribeChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_membership::DescribeChannelMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DescribeChannelMembershipFluentBuilder {
             crate::operation::describe_channel_membership::DescribeChannelMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_membership::DescribeChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_membership::DescribeChannelMembershipError>,
     > {
         self.customize_middleware().await
     }
@@ -167,20 +156,14 @@ impl DescribeChannelMembershipFluentBuilder {
     /// <p>The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code> object.</p> <note>
     /// <p>Only required to get a user’s SubChannel membership details.</p>
     /// </note>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code> object.</p> <note>
     /// <p>Only required to get a user’s SubChannel membership details.</p>
     /// </note>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }

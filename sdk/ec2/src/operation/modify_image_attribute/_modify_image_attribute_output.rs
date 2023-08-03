@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifyImageAttributeOutput {
 }
 impl ModifyImageAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyImageAttributeOutput`](crate::operation::modify_image_attribute::ModifyImageAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_image_attribute::builders::ModifyImageAttributeOutputBuilder {
+    pub fn builder() -> crate::operation::modify_image_attribute::builders::ModifyImageAttributeOutputBuilder {
         crate::operation::modify_image_attribute::builders::ModifyImageAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyImageAttributeOutput`](crate::operation::modify_image_attribute::ModifyImageAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyImageAttributeOutputBuilder {
     _request_id: Option<String>,
 }

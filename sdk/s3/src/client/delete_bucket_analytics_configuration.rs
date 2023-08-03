@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl ::std::convert::Into<String>)`](crate::operation::delete_bucket_analytics_configuration::builders::DeleteBucketAnalyticsConfigurationFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::delete_bucket_analytics_configuration::builders::DeleteBucketAnalyticsConfigurationFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     /// - On success, responds with [`DeleteBucketAnalyticsConfigurationOutput`](crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteBucketAnalyticsConfigurationError>`](crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationError)
-    pub fn delete_bucket_analytics_configuration(&self) -> crate::operation::delete_bucket_analytics_configuration::builders::DeleteBucketAnalyticsConfigurationFluentBuilder{
+    pub fn delete_bucket_analytics_configuration(
+        &self,
+    ) -> crate::operation::delete_bucket_analytics_configuration::builders::DeleteBucketAnalyticsConfigurationFluentBuilder {
         crate::operation::delete_bucket_analytics_configuration::builders::DeleteBucketAnalyticsConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

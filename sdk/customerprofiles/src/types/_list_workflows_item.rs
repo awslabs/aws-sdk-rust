@@ -58,9 +58,7 @@ impl ListWorkflowsItem {
 
 /// A builder for [`ListWorkflowsItem`](crate::types::ListWorkflowsItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowsItemBuilder {
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
@@ -76,10 +74,7 @@ impl ListWorkflowsItemBuilder {
         self
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -116,18 +111,12 @@ impl ListWorkflowsItemBuilder {
         &self.status
     }
     /// <p>Description for workflow execution status.</p>
-    pub fn status_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description for workflow execution status.</p>
-    pub fn set_status_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_description = input;
         self
     }
@@ -141,10 +130,7 @@ impl ListWorkflowsItemBuilder {
         self
     }
     /// <p>Creation timestamp for workflow.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -158,10 +144,7 @@ impl ListWorkflowsItemBuilder {
         self
     }
     /// <p>Last updated timestamp for workflow.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

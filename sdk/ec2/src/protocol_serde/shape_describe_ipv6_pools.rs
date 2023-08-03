@@ -4,17 +4,11 @@ pub fn de_describe_ipv6_pools_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput,
-    crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
-> {
+) -> std::result::Result<crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput, crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError>
+{
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError::generic(generic))
@@ -25,21 +19,14 @@ pub fn de_describe_ipv6_pools_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput,
-    crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
-> {
+) -> std::result::Result<crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput, crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsOutputBuilder::default();
-        output = crate::protocol_serde::shape_describe_ipv6_pools::de_describe_ipv6_pools(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_describe_ipv6_pools::de_describe_ipv6_pools(_response_body, output)
+            .map_err(crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -48,10 +35,7 @@ pub fn de_describe_ipv6_pools_http_response_with_props(
 pub fn de_describe_ipv6_pools(
     inp: &[u8],
     mut builder: crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsOutputBuilder,
-) -> Result<
-    crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

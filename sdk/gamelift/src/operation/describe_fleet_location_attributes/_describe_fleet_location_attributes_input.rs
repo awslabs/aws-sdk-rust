@@ -36,16 +36,14 @@ impl DescribeFleetLocationAttributesInput {
 }
 impl DescribeFleetLocationAttributesInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationAttributesInput`](crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesInput).
-    pub fn builder() -> crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesInputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesInputBuilder {
         crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetLocationAttributesInput`](crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationAttributesInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -79,10 +77,7 @@ impl DescribeFleetLocationAttributesInputBuilder {
         self
     }
     /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn set_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.locations = input;
         self
     }
@@ -127,15 +122,11 @@ impl DescribeFleetLocationAttributesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesInput {
-                fleet_id: self.fleet_id
-                ,
-                locations: self.locations
-                ,
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
+                fleet_id: self.fleet_id,
+                locations: self.locations,
+                limit: self.limit,
+                next_token: self.next_token,
+            },
         )
     }
 }

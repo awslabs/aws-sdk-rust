@@ -36,7 +36,7 @@ impl PutOrganizationConfigRuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutOrganizationConfigRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_organization_config_rule::builders::PutOrganizationConfigRuleInputBuilder,
+    inner: crate::operation::put_organization_config_rule::builders::PutOrganizationConfigRuleInputBuilder,
 }
 impl PutOrganizationConfigRuleFluentBuilder {
     /// Creates a new `PutOrganizationConfigRule`.
@@ -47,7 +47,7 @@ impl PutOrganizationConfigRuleFluentBuilder {
         }
     }
     /// Access the PutOrganizationConfigRule as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_organization_config_rule::builders::PutOrganizationConfigRuleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_organization_config_rule::builders::PutOrganizationConfigRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +59,7 @@ impl PutOrganizationConfigRuleFluentBuilder {
             crate::operation::put_organization_config_rule::PutOrganizationConfigRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +69,7 @@ impl PutOrganizationConfigRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +78,7 @@ impl PutOrganizationConfigRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_organization_config_rule::PutOrganizationConfigRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError>,
     > {
         let op = self
             .inner
@@ -108,9 +101,7 @@ impl PutOrganizationConfigRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_organization_config_rule::PutOrganizationConfigRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError>,
     > {
         self.send_middleware().await
     }
@@ -124,76 +115,50 @@ impl PutOrganizationConfigRuleFluentBuilder {
             crate::operation::put_organization_config_rule::PutOrganizationConfigRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name that you assign to an organization Config rule.</p>
-    pub fn organization_config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_config_rule_name(input.into());
         self
     }
     /// <p>The name that you assign to an organization Config rule.</p>
-    pub fn set_organization_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_config_rule_name(input);
         self
     }
     /// <p>The name that you assign to an organization Config rule.</p>
-    pub fn get_organization_config_rule_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_organization_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_organization_config_rule_name()
     }
     /// <p>An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
-    pub fn organization_managed_rule_metadata(
-        mut self,
-        input: crate::types::OrganizationManagedRuleMetadata,
-    ) -> Self {
+    pub fn organization_managed_rule_metadata(mut self, input: crate::types::OrganizationManagedRuleMetadata) -> Self {
         self.inner = self.inner.organization_managed_rule_metadata(input);
         self
     }
     /// <p>An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
-    pub fn set_organization_managed_rule_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationManagedRuleMetadata>,
-    ) -> Self {
+    pub fn set_organization_managed_rule_metadata(mut self, input: ::std::option::Option<crate::types::OrganizationManagedRuleMetadata>) -> Self {
         self.inner = self.inner.set_organization_managed_rule_metadata(input);
         self
     }
     /// <p>An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
-    pub fn get_organization_managed_rule_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationManagedRuleMetadata> {
+    pub fn get_organization_managed_rule_metadata(&self) -> &::std::option::Option<crate::types::OrganizationManagedRuleMetadata> {
         self.inner.get_organization_managed_rule_metadata()
     }
     /// <p>An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
-    pub fn organization_custom_rule_metadata(
-        mut self,
-        input: crate::types::OrganizationCustomRuleMetadata,
-    ) -> Self {
+    pub fn organization_custom_rule_metadata(mut self, input: crate::types::OrganizationCustomRuleMetadata) -> Self {
         self.inner = self.inner.organization_custom_rule_metadata(input);
         self
     }
     /// <p>An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
-    pub fn set_organization_custom_rule_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationCustomRuleMetadata>,
-    ) -> Self {
+    pub fn set_organization_custom_rule_metadata(mut self, input: ::std::option::Option<crate::types::OrganizationCustomRuleMetadata>) -> Self {
         self.inner = self.inner.set_organization_custom_rule_metadata(input);
         self
     }
     /// <p>An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
-    pub fn get_organization_custom_rule_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationCustomRuleMetadata> {
+    pub fn get_organization_custom_rule_metadata(&self) -> &::std::option::Option<crate::types::OrganizationCustomRuleMetadata> {
         self.inner.get_organization_custom_rule_metadata()
     }
     /// Appends an item to `ExcludedAccounts`.
@@ -201,32 +166,21 @@ impl PutOrganizationConfigRuleFluentBuilder {
     /// To override the contents of this collection use [`set_excluded_accounts`](Self::set_excluded_accounts).
     ///
     /// <p>A comma-separated list of accounts that you want to exclude from an organization Config rule.</p>
-    pub fn excluded_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn excluded_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.excluded_accounts(input.into());
         self
     }
     /// <p>A comma-separated list of accounts that you want to exclude from an organization Config rule.</p>
-    pub fn set_excluded_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_excluded_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_excluded_accounts(input);
         self
     }
     /// <p>A comma-separated list of accounts that you want to exclude from an organization Config rule.</p>
-    pub fn get_excluded_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_excluded_accounts()
     }
     /// <p>An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
-    pub fn organization_custom_policy_rule_metadata(
-        mut self,
-        input: crate::types::OrganizationCustomPolicyRuleMetadata,
-    ) -> Self {
+    pub fn organization_custom_policy_rule_metadata(mut self, input: crate::types::OrganizationCustomPolicyRuleMetadata) -> Self {
         self.inner = self.inner.organization_custom_policy_rule_metadata(input);
         self
     }
@@ -235,15 +189,11 @@ impl PutOrganizationConfigRuleFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::OrganizationCustomPolicyRuleMetadata>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_organization_custom_policy_rule_metadata(input);
+        self.inner = self.inner.set_organization_custom_policy_rule_metadata(input);
         self
     }
     /// <p>An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
-    pub fn get_organization_custom_policy_rule_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationCustomPolicyRuleMetadata> {
+    pub fn get_organization_custom_policy_rule_metadata(&self) -> &::std::option::Option<crate::types::OrganizationCustomPolicyRuleMetadata> {
         self.inner.get_organization_custom_policy_rule_metadata()
     }
 }

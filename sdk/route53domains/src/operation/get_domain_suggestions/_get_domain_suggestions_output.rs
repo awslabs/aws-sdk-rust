@@ -21,20 +21,16 @@ impl ::aws_http::request_id::RequestId for GetDomainSuggestionsOutput {
 }
 impl GetDomainSuggestionsOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainSuggestionsOutput`](crate::operation::get_domain_suggestions::GetDomainSuggestionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_domain_suggestions::builders::GetDomainSuggestionsOutputBuilder {
+    pub fn builder() -> crate::operation::get_domain_suggestions::builders::GetDomainSuggestionsOutputBuilder {
         crate::operation::get_domain_suggestions::builders::GetDomainSuggestionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDomainSuggestionsOutput`](crate::operation::get_domain_suggestions::GetDomainSuggestionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainSuggestionsOutputBuilder {
-    pub(crate) suggestions_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DomainSuggestion>>,
+    pub(crate) suggestions_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainSuggestion>>,
     _request_id: Option<String>,
 }
 impl GetDomainSuggestionsOutputBuilder {
@@ -50,17 +46,12 @@ impl GetDomainSuggestionsOutputBuilder {
         self
     }
     /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
-    pub fn set_suggestions_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainSuggestion>>,
-    ) -> Self {
+    pub fn set_suggestions_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainSuggestion>>) -> Self {
         self.suggestions_list = input;
         self
     }
     /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
-    pub fn get_suggestions_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainSuggestion>> {
+    pub fn get_suggestions_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainSuggestion>> {
         &self.suggestions_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -22,18 +22,14 @@ impl GetResourceMetadataInput {
 }
 impl GetResourceMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetResourceMetadataInput`](crate::operation::get_resource_metadata::GetResourceMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_metadata::builders::GetResourceMetadataInputBuilder {
-        crate::operation::get_resource_metadata::builders::GetResourceMetadataInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resource_metadata::builders::GetResourceMetadataInputBuilder {
+        crate::operation::get_resource_metadata::builders::GetResourceMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceMetadataInput`](crate::operation::get_resource_metadata::GetResourceMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceMetadataInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
@@ -45,10 +41,7 @@ impl GetResourceMetadataInputBuilder {
         self
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.service_type = input;
         self
     }
@@ -73,15 +66,11 @@ impl GetResourceMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetResourceMetadataInput`](crate::operation::get_resource_metadata::GetResourceMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resource_metadata::GetResourceMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resource_metadata::GetResourceMetadataInput {
-                service_type: self.service_type,
-                identifier: self.identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_resource_metadata::GetResourceMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_resource_metadata::GetResourceMetadataInput {
+            service_type: self.service_type,
+            identifier: self.identifier,
+        })
     }
 }

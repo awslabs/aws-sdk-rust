@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetRelationalDatabaseLogStreamsOutput
 }
 impl GetRelationalDatabaseLogStreamsOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseLogStreamsOutput`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput).
-    pub fn builder() -> crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsOutputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsOutputBuilder {
         crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseLogStreamsOutput`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseLogStreamsOutputBuilder {
     pub(crate) log_streams: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl GetRelationalDatabaseLogStreamsOutputBuilder {
         self
     }
     /// <p>An object describing the result of your get relational database log streams request.</p>
-    pub fn set_log_streams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_log_streams(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_streams = input;
         self
     }
     /// <p>An object describing the result of your get relational database log streams request.</p>
-    pub fn get_log_streams(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_streams(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_streams
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,13 +64,9 @@ impl GetRelationalDatabaseLogStreamsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseLogStreamsOutput`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput
-    {
+    pub fn build(self) -> crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput {
         crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput {
-            log_streams: self.log_streams
-            ,
+            log_streams: self.log_streams,
             _request_id: self._request_id,
         }
     }

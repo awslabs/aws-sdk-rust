@@ -4,139 +4,109 @@ pub fn de_define_index_field_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::define_index_field::DefineIndexFieldOutput,
-    crate::operation::define_index_field::DefineIndexFieldError,
-> {
+) -> std::result::Result<crate::operation::define_index_field::DefineIndexFieldOutput, crate::operation::define_index_field::DefineIndexFieldError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::define_index_field::DefineIndexFieldError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::define_index_field::DefineIndexFieldError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BaseException" => {
-            crate::operation::define_index_field::DefineIndexFieldError::BaseException({
+        "BaseException" => crate::operation::define_index_field::DefineIndexFieldError::BaseException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
-                    output =
-                        crate::protocol_serde::shape_base_exception::de_base_exception_xml_err(
-                            _response_body,
-                            output,
-                        )
-                        .map_err(
-                            crate::operation::define_index_field::DefineIndexFieldError::unhandled,
-                        )?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalException" => {
-            crate::operation::define_index_field::DefineIndexFieldError::InternalException({
+                let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_base_exception::de_base_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalException" => crate::operation::define_index_field::DefineIndexFieldError::InternalException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_xml_err(_response_body, output).map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidType" => {
-            crate::operation::define_index_field::DefineIndexFieldError::InvalidTypeException({
+                let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidType" => crate::operation::define_index_field::DefineIndexFieldError::InvalidTypeException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidTypeExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_type_exception::de_invalid_type_exception_xml_err(_response_body, output).map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "LimitExceeded" => {
-            crate::operation::define_index_field::DefineIndexFieldError::LimitExceededException({
+                let mut output = crate::types::error::builders::InvalidTypeExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_type_exception::de_invalid_type_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => crate::operation::define_index_field::DefineIndexFieldError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output).map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFound" => {
-            crate::operation::define_index_field::DefineIndexFieldError::ResourceNotFoundException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                        output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "ValidationException" => {
-            crate::operation::define_index_field::DefineIndexFieldError::ValidationException({
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFound" => crate::operation::define_index_field::DefineIndexFieldError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_xml_err(_response_body, output).map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => crate::operation::define_index_field::DefineIndexFieldError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::define_index_field::DefineIndexFieldError::generic(generic),
     })
 }
@@ -146,23 +116,13 @@ pub fn de_define_index_field_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::define_index_field::DefineIndexFieldOutput,
-    crate::operation::define_index_field::DefineIndexFieldError,
-> {
+) -> std::result::Result<crate::operation::define_index_field::DefineIndexFieldOutput, crate::operation::define_index_field::DefineIndexFieldError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::define_index_field::builders::DefineIndexFieldOutputBuilder::default(
-            );
-        output = crate::protocol_serde::shape_define_index_field::de_define_index_field(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::define_index_field::builders::DefineIndexFieldOutputBuilder::default();
+        output = crate::protocol_serde::shape_define_index_field::de_define_index_field(_response_body, output)
+            .map_err(crate::operation::define_index_field::DefineIndexFieldError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -171,10 +131,7 @@ pub fn de_define_index_field_http_response_with_props(
 pub fn de_define_index_field(
     inp: &[u8],
     mut builder: crate::operation::define_index_field::builders::DefineIndexFieldOutputBuilder,
-) -> Result<
-    crate::operation::define_index_field::builders::DefineIndexFieldOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::define_index_field::builders::DefineIndexFieldOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -211,9 +168,7 @@ pub fn de_define_index_field(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected DefineIndexFieldResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected DefineIndexFieldResult tag"));
     };
     Ok(builder)
 }

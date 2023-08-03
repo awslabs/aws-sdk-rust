@@ -44,9 +44,7 @@ impl ThirdPartyFirewallMissingFirewallViolation {
 
 /// A builder for [`ThirdPartyFirewallMissingFirewallViolation`](crate::types::ThirdPartyFirewallMissingFirewallViolation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThirdPartyFirewallMissingFirewallViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
     pub(crate) vpc: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct ThirdPartyFirewallMissingFirewallViolationBuilder {
 }
 impl ThirdPartyFirewallMissingFirewallViolationBuilder {
     /// <p>The ID of the third-party firewall that's causing the violation.</p>
-    pub fn violation_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn violation_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.violation_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the third-party firewall that's causing the violation.</p>
-    pub fn set_violation_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_violation_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.violation_target = input;
         self
     }
@@ -89,18 +81,12 @@ impl ThirdPartyFirewallMissingFirewallViolationBuilder {
         &self.vpc
     }
     /// <p>The Availability Zone of the third-party firewall that's causing the violation.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone of the third-party firewall that's causing the violation.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -109,18 +95,12 @@ impl ThirdPartyFirewallMissingFirewallViolationBuilder {
         &self.availability_zone
     }
     /// <p>The reason the resource is causing this violation, if a reason is available.</p>
-    pub fn target_violation_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_violation_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_violation_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason the resource is causing this violation, if a reason is available.</p>
-    pub fn set_target_violation_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_violation_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_violation_reason = input;
         self
     }

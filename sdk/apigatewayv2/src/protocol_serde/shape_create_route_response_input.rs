@@ -4,9 +4,7 @@ pub fn ser_create_route_response_input(
     input: &crate::operation::create_route_response::CreateRouteResponseInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.model_selection_expression {
-        object
-            .key("modelSelectionExpression")
-            .string(var_1.as_str());
+        object.key("modelSelectionExpression").string(var_1.as_str());
     }
     if let Some(var_2) = &input.response_models {
         #[allow(unused_mut)]
@@ -25,10 +23,7 @@ pub fn ser_create_route_response_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = object_7.key(key_8.as_str()).start_object();
-                crate::protocol_serde::shape_parameter_constraints::ser_parameter_constraints(
-                    &mut object_10,
-                    value_9,
-                )?;
+                crate::protocol_serde::shape_parameter_constraints::ser_parameter_constraints(&mut object_10, value_9)?;
                 object_10.finish();
             }
         }

@@ -45,10 +45,7 @@ pub fn ser_create_flow_input(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_add_output_request::ser_add_output_request(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_add_output_request::ser_add_output_request(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }
@@ -57,10 +54,7 @@ pub fn ser_create_flow_input(
     if let Some(var_17) = &input.source {
         #[allow(unused_mut)]
         let mut object_18 = object.key("source").start_object();
-        crate::protocol_serde::shape_set_source_request::ser_set_source_request(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_set_source_request::ser_set_source_request(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.source_failover_config {
@@ -75,10 +69,7 @@ pub fn ser_create_flow_input(
             {
                 #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
-                crate::protocol_serde::shape_set_source_request::ser_set_source_request(
-                    &mut object_24,
-                    item_23,
-                )?;
+                crate::protocol_serde::shape_set_source_request::ser_set_source_request(&mut object_24, item_23)?;
                 object_24.finish();
             }
         }
@@ -90,10 +81,7 @@ pub fn ser_create_flow_input(
             {
                 #[allow(unused_mut)]
                 let mut object_28 = array_26.value().start_object();
-                crate::protocol_serde::shape_vpc_interface_request::ser_vpc_interface_request(
-                    &mut object_28,
-                    item_27,
-                )?;
+                crate::protocol_serde::shape_vpc_interface_request::ser_vpc_interface_request(&mut object_28, item_27)?;
                 object_28.finish();
             }
         }

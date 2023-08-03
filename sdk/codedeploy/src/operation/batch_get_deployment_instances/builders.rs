@@ -30,7 +30,7 @@ impl BatchGetDeploymentInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesInputBuilder,
+    inner: crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesInputBuilder,
 }
 impl BatchGetDeploymentInstancesFluentBuilder {
     /// Creates a new `BatchGetDeploymentInstances`.
@@ -41,7 +41,7 @@ impl BatchGetDeploymentInstancesFluentBuilder {
         }
     }
     /// Access the BatchGetDeploymentInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl BatchGetDeploymentInstancesFluentBuilder {
             crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl BatchGetDeploymentInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl BatchGetDeploymentInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl BatchGetDeploymentInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +109,17 @@ impl BatchGetDeploymentInstancesFluentBuilder {
             crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
@@ -154,17 +137,12 @@ impl BatchGetDeploymentInstancesFluentBuilder {
         self
     }
     /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
 }

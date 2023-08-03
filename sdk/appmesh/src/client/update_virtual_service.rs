@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateVirtualServiceOutput`](crate::operation::update_virtual_service::UpdateVirtualServiceOutput) with field(s):
     ///   - [`virtual_service(Option<VirtualServiceData>)`](crate::operation::update_virtual_service::UpdateVirtualServiceOutput::virtual_service): <p>A full description of the virtual service that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateVirtualServiceError>`](crate::operation::update_virtual_service::UpdateVirtualServiceError)
-    pub fn update_virtual_service(
-        &self,
-    ) -> crate::operation::update_virtual_service::builders::UpdateVirtualServiceFluentBuilder {
-        crate::operation::update_virtual_service::builders::UpdateVirtualServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_virtual_service(&self) -> crate::operation::update_virtual_service::builders::UpdateVirtualServiceFluentBuilder {
+        crate::operation::update_virtual_service::builders::UpdateVirtualServiceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl AutoStopConfig {
 
 /// A builder for [`AutoStopConfig`](crate::types::AutoStopConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoStopConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) idle_timeout_minutes: ::std::option::Option<i32>,

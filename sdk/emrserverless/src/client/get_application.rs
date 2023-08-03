@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput) with field(s):
     ///   - [`application(Option<Application>)`](crate::operation::get_application::GetApplicationOutput::application): <p>The output displays information about the specified application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
-    pub fn get_application(
-        &self,
-    ) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
-        crate::operation::get_application::builders::GetApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
+        crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())
     }
 }

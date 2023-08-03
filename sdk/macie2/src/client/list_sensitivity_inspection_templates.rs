@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     ///   - [`sensitivity_inspection_templates(Option<Vec<SensitivityInspectionTemplatesEntry>>)`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput::sensitivity_inspection_templates): <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
     /// - On failure, responds with [`SdkError<ListSensitivityInspectionTemplatesError>`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesError)
-    pub fn list_sensitivity_inspection_templates(&self) -> crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesFluentBuilder{
+    pub fn list_sensitivity_inspection_templates(
+        &self,
+    ) -> crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesFluentBuilder {
         crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

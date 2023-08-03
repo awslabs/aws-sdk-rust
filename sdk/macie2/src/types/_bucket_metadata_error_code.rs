@@ -37,13 +37,7 @@
 /// <p>The error code for an error that prevented Amazon Macie from retrieving and processing metadata from Amazon S3 for an S3 bucket and the bucket's objects.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BucketMetadataErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -55,9 +49,7 @@ impl ::std::convert::From<&str> for BucketMetadataErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_DENIED" => BucketMetadataErrorCode::AccessDenied,
-            other => BucketMetadataErrorCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BucketMetadataErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

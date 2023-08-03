@@ -15,17 +15,14 @@ impl BatchGetProjectsInput {
 }
 impl BatchGetProjectsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetProjectsInput`](crate::operation::batch_get_projects::BatchGetProjectsInput).
-    pub fn builder() -> crate::operation::batch_get_projects::builders::BatchGetProjectsInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_projects::builders::BatchGetProjectsInputBuilder {
         crate::operation::batch_get_projects::builders::BatchGetProjectsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetProjectsInput`](crate::operation::batch_get_projects::BatchGetProjectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetProjectsInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +39,7 @@ impl BatchGetProjectsInputBuilder {
         self
     }
     /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -56,12 +50,7 @@ impl BatchGetProjectsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetProjectsInput`](crate::operation::batch_get_projects::BatchGetProjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_projects::BatchGetProjectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_projects::BatchGetProjectsInput { names: self.names },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_projects::BatchGetProjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_projects::BatchGetProjectsInput { names: self.names })
     }
 }

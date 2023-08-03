@@ -72,8 +72,7 @@ pub struct GameSession {
     pub port: ::std::option::Option<i32>,
     /// <p>Indicates whether or not the game session is accepting new players.</p>
     #[doc(hidden)]
-    pub player_session_creation_policy:
-        ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
+    pub player_session_creation_policy: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
     /// <p>A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that limits the number of game sessions a player can create.</p>
     #[doc(hidden)]
     pub creator_id: ::std::option::Option<::std::string::String>,
@@ -166,9 +165,7 @@ impl GameSession {
         self.port
     }
     /// <p>Indicates whether or not the game session is accepting new players.</p>
-    pub fn player_session_creation_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PlayerSessionCreationPolicy> {
+    pub fn player_session_creation_policy(&self) -> ::std::option::Option<&crate::types::PlayerSessionCreationPolicy> {
         self.player_session_creation_policy.as_ref()
     }
     /// <p>A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that limits the number of game sessions a player can create.</p>
@@ -197,9 +194,7 @@ impl GameSession {
 
 /// A builder for [`GameSession`](crate::types::GameSession).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GameSessionBuilder {
     pub(crate) game_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -215,8 +210,7 @@ pub struct GameSessionBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
-    pub(crate) player_session_creation_policy:
-        ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
+    pub(crate) player_session_creation_policy: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
     pub(crate) creator_id: ::std::option::Option<::std::string::String>,
     pub(crate) game_session_data: ::std::option::Option<::std::string::String>,
     pub(crate) matchmaker_data: ::std::option::Option<::std::string::String>,
@@ -231,10 +225,7 @@ impl GameSessionBuilder {
     /// <custom id string or idempotency token></custom>
     /// </fleet>
     /// </region></code>.</p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -246,10 +237,7 @@ impl GameSessionBuilder {
     /// <custom id string or idempotency token></custom>
     /// </fleet>
     /// </region></code>.</p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
@@ -312,10 +300,7 @@ impl GameSessionBuilder {
         self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -329,10 +314,7 @@ impl GameSessionBuilder {
         self
     }
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn set_termination_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_termination_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.termination_time = input;
         self
     }
@@ -374,10 +356,7 @@ impl GameSessionBuilder {
         self
     }
     /// <p>Current status of the game session. A game session must have an <code>ACTIVE</code> status to have player sessions.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::GameSessionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::GameSessionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -391,17 +370,12 @@ impl GameSessionBuilder {
         self
     }
     /// <p>Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::GameSessionStatusReason>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::GameSessionStatusReason>) -> Self {
         self.status_reason = input;
         self
     }
     /// <p>Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.</p>
-    pub fn get_status_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::GameSessionStatusReason> {
+    pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::GameSessionStatusReason> {
         &self.status_reason
     }
     /// Appends an item to `game_properties`.
@@ -416,17 +390,12 @@ impl GameSessionBuilder {
         self
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn set_game_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
-    ) -> Self {
+    pub fn set_game_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>) -> Self {
         self.game_properties = input;
         self
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn get_game_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
+    pub fn get_game_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
         &self.game_properties
     }
     /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
@@ -514,25 +483,17 @@ impl GameSessionBuilder {
         &self.port
     }
     /// <p>Indicates whether or not the game session is accepting new players.</p>
-    pub fn player_session_creation_policy(
-        mut self,
-        input: crate::types::PlayerSessionCreationPolicy,
-    ) -> Self {
+    pub fn player_session_creation_policy(mut self, input: crate::types::PlayerSessionCreationPolicy) -> Self {
         self.player_session_creation_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not the game session is accepting new players.</p>
-    pub fn set_player_session_creation_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
-    ) -> Self {
+    pub fn set_player_session_creation_policy(mut self, input: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>) -> Self {
         self.player_session_creation_policy = input;
         self
     }
     /// <p>Indicates whether or not the game session is accepting new players.</p>
-    pub fn get_player_session_creation_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::PlayerSessionCreationPolicy> {
+    pub fn get_player_session_creation_policy(&self) -> &::std::option::Option<crate::types::PlayerSessionCreationPolicy> {
         &self.player_session_creation_policy
     }
     /// <p>A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that limits the number of game sessions a player can create.</p>
@@ -550,18 +511,12 @@ impl GameSessionBuilder {
         &self.creator_id
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn game_session_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn set_game_session_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_data = input;
         self
     }
@@ -570,18 +525,12 @@ impl GameSessionBuilder {
         &self.game_session_data
     }
     /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>). </p>
-    pub fn matchmaker_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn matchmaker_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.matchmaker_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>). </p>
-    pub fn set_matchmaker_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_matchmaker_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.matchmaker_data = input;
         self
     }

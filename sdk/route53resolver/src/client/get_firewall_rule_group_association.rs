@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetFirewallRuleGroupAssociationOutput`](crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationOutput) with field(s):
     ///   - [`firewall_rule_group_association(Option<FirewallRuleGroupAssociation>)`](crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationOutput::firewall_rule_group_association): <p>The association that you requested. </p>
     /// - On failure, responds with [`SdkError<GetFirewallRuleGroupAssociationError>`](crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationError)
-    pub fn get_firewall_rule_group_association(&self) -> crate::operation::get_firewall_rule_group_association::builders::GetFirewallRuleGroupAssociationFluentBuilder{
+    pub fn get_firewall_rule_group_association(
+        &self,
+    ) -> crate::operation::get_firewall_rule_group_association::builders::GetFirewallRuleGroupAssociationFluentBuilder {
         crate::operation::get_firewall_rule_group_association::builders::GetFirewallRuleGroupAssociationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateAppBlockBuilderStreamingUrlOutp
 }
 impl CreateAppBlockBuilderStreamingUrlOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppBlockBuilderStreamingUrlOutput`](crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlOutput).
-    pub fn builder() -> crate::operation::create_app_block_builder_streaming_url::builders::CreateAppBlockBuilderStreamingUrlOutputBuilder{
+    pub fn builder() -> crate::operation::create_app_block_builder_streaming_url::builders::CreateAppBlockBuilderStreamingUrlOutputBuilder {
         crate::operation::create_app_block_builder_streaming_url::builders::CreateAppBlockBuilderStreamingUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppBlockBuilderStreamingUrlOutput`](crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppBlockBuilderStreamingUrlOutputBuilder {
     pub(crate) streaming_url: ::std::option::Option<::std::string::String>,
     pub(crate) expires: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -45,18 +43,12 @@ pub struct CreateAppBlockBuilderStreamingUrlOutputBuilder {
 }
 impl CreateAppBlockBuilderStreamingUrlOutputBuilder {
     /// <p>The URL to start the streaming session.</p>
-    pub fn streaming_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn streaming_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to start the streaming session.</p>
-    pub fn set_streaming_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_streaming_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.streaming_url = input;
         self
     }
@@ -70,10 +62,7 @@ impl CreateAppBlockBuilderStreamingUrlOutputBuilder {
         self
     }
     /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
-    pub fn set_expires(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires = input;
         self
     }
@@ -91,12 +80,10 @@ impl CreateAppBlockBuilderStreamingUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAppBlockBuilderStreamingUrlOutput`](crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlOutput).
-    pub fn build(self) -> crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlOutput{
+    pub fn build(self) -> crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlOutput {
         crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlOutput {
-            streaming_url: self.streaming_url
-            ,
-            expires: self.expires
-            ,
+            streaming_url: self.streaming_url,
+            expires: self.expires,
             _request_id: self._request_id,
         }
     }

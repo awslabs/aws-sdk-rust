@@ -43,18 +43,14 @@ impl ListFindingAggregationsInput {
 }
 impl ListFindingAggregationsInput {
     /// Creates a new builder-style object to manufacture [`ListFindingAggregationsInput`](crate::operation::list_finding_aggregations::ListFindingAggregationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_finding_aggregations::builders::ListFindingAggregationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_finding_aggregations::builders::ListFindingAggregationsInputBuilder {
         crate::operation::list_finding_aggregations::builders::ListFindingAggregationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFindingAggregationsInput`](crate::operation::list_finding_aggregations::ListFindingAggregationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingAggregationsInputBuilder {
     pub(crate) aggregation_type: ::std::option::Option<crate::types::AggregationType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,10 +65,7 @@ impl ListFindingAggregationsInputBuilder {
         self
     }
     /// <p>The type of the aggregation request.</p>
-    pub fn set_aggregation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationType>,
-    ) -> Self {
+    pub fn set_aggregation_type(mut self, input: ::std::option::Option<crate::types::AggregationType>) -> Self {
         self.aggregation_type = input;
         self
     }
@@ -120,17 +113,12 @@ impl ListFindingAggregationsInputBuilder {
         self
     }
     /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.account_ids
     }
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
@@ -139,17 +127,12 @@ impl ListFindingAggregationsInputBuilder {
         self
     }
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
-    pub fn set_aggregation_request(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationRequest>,
-    ) -> Self {
+    pub fn set_aggregation_request(mut self, input: ::std::option::Option<crate::types::AggregationRequest>) -> Self {
         self.aggregation_request = input;
         self
     }
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
-    pub fn get_aggregation_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregationRequest> {
+    pub fn get_aggregation_request(&self) -> &::std::option::Option<crate::types::AggregationRequest> {
         &self.aggregation_request
     }
     /// Consumes the builder and constructs a [`ListFindingAggregationsInput`](crate::operation::list_finding_aggregations::ListFindingAggregationsInput).
@@ -159,14 +142,12 @@ impl ListFindingAggregationsInputBuilder {
         crate::operation::list_finding_aggregations::ListFindingAggregationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_finding_aggregations::ListFindingAggregationsInput {
-                aggregation_type: self.aggregation_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                account_ids: self.account_ids,
-                aggregation_request: self.aggregation_request,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_finding_aggregations::ListFindingAggregationsInput {
+            aggregation_type: self.aggregation_type,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            account_ids: self.account_ids,
+            aggregation_request: self.aggregation_request,
+        })
     }
 }

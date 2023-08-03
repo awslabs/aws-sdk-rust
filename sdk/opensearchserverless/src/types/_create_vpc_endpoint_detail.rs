@@ -37,9 +37,7 @@ impl CreateVpcEndpointDetail {
 
 /// A builder for [`CreateVpcEndpointDetail`](crate::types::CreateVpcEndpointDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointDetailBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl CreateVpcEndpointDetailBuilder {
         self
     }
     /// <p>The current status in the endpoint creation process.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcEndpointStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VpcEndpointStatus>) -> Self {
         self.status = input;
         self
     }

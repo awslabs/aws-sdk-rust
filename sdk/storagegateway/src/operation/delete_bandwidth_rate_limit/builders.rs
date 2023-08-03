@@ -26,7 +26,7 @@ impl DeleteBandwidthRateLimitInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBandwidthRateLimitFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_bandwidth_rate_limit::builders::DeleteBandwidthRateLimitInputBuilder,
+    inner: crate::operation::delete_bandwidth_rate_limit::builders::DeleteBandwidthRateLimitInputBuilder,
 }
 impl DeleteBandwidthRateLimitFluentBuilder {
     /// Creates a new `DeleteBandwidthRateLimit`.
@@ -37,7 +37,7 @@ impl DeleteBandwidthRateLimitFluentBuilder {
         }
     }
     /// Access the DeleteBandwidthRateLimit as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_bandwidth_rate_limit::builders::DeleteBandwidthRateLimitInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_bandwidth_rate_limit::builders::DeleteBandwidthRateLimitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteBandwidthRateLimitFluentBuilder {
             crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteBandwidthRateLimitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteBandwidthRateLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteBandwidthRateLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteBandwidthRateLimitFluentBuilder {
             crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitError>,
     > {
         self.customize_middleware().await
     }
@@ -136,19 +125,13 @@ impl DeleteBandwidthRateLimitFluentBuilder {
     }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
     /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
-    pub fn bandwidth_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bandwidth_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bandwidth_type(input.into());
         self
     }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
     /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
-    pub fn set_bandwidth_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bandwidth_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bandwidth_type(input);
         self
     }

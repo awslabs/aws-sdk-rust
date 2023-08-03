@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteApnsVoipSandboxChannelOutput`](crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelOutput) with field(s):
     ///   - [`apns_voip_sandbox_channel_response(Option<ApnsVoipSandboxChannelResponse>)`](crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelOutput::apns_voip_sandbox_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteApnsVoipSandboxChannelError>`](crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelError)
-    pub fn delete_apns_voip_sandbox_channel(&self) -> crate::operation::delete_apns_voip_sandbox_channel::builders::DeleteApnsVoipSandboxChannelFluentBuilder{
+    pub fn delete_apns_voip_sandbox_channel(
+        &self,
+    ) -> crate::operation::delete_apns_voip_sandbox_channel::builders::DeleteApnsVoipSandboxChannelFluentBuilder {
         crate::operation::delete_apns_voip_sandbox_channel::builders::DeleteApnsVoipSandboxChannelFluentBuilder::new(self.handle.clone())
     }
 }

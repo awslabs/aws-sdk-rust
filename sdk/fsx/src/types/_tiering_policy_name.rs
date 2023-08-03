@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TieringPolicyName {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for TieringPolicyName {
             "AUTO" => TieringPolicyName::Auto,
             "NONE" => TieringPolicyName::None,
             "SNAPSHOT_ONLY" => TieringPolicyName::SnapshotOnly,
-            other => {
-                TieringPolicyName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => TieringPolicyName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -11,7 +11,11 @@ impl super::Client {
     /// - On success, responds with [`CreateTransitGatewayPrefixListReferenceOutput`](crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceOutput) with field(s):
     ///   - [`transit_gateway_prefix_list_reference(Option<TransitGatewayPrefixListReference>)`](crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceOutput::transit_gateway_prefix_list_reference): <p>Information about the prefix list reference.</p>
     /// - On failure, responds with [`SdkError<CreateTransitGatewayPrefixListReferenceError>`](crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceError)
-    pub fn create_transit_gateway_prefix_list_reference(&self) -> crate::operation::create_transit_gateway_prefix_list_reference::builders::CreateTransitGatewayPrefixListReferenceFluentBuilder{
-        crate::operation::create_transit_gateway_prefix_list_reference::builders::CreateTransitGatewayPrefixListReferenceFluentBuilder::new(self.handle.clone())
+    pub fn create_transit_gateway_prefix_list_reference(
+        &self,
+    ) -> crate::operation::create_transit_gateway_prefix_list_reference::builders::CreateTransitGatewayPrefixListReferenceFluentBuilder {
+        crate::operation::create_transit_gateway_prefix_list_reference::builders::CreateTransitGatewayPrefixListReferenceFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

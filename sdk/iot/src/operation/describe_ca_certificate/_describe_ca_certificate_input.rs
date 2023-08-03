@@ -16,35 +16,25 @@ impl DescribeCaCertificateInput {
 }
 impl DescribeCaCertificateInput {
     /// Creates a new builder-style object to manufacture [`DescribeCaCertificateInput`](crate::operation::describe_ca_certificate::DescribeCaCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::describe_ca_certificate::builders::DescribeCaCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_ca_certificate::builders::DescribeCaCertificateInputBuilder {
         crate::operation::describe_ca_certificate::builders::DescribeCaCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCaCertificateInput`](crate::operation::describe_ca_certificate::DescribeCaCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCaCertificateInputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCaCertificateInputBuilder {
     /// <p>The CA certificate identifier.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CA certificate identifier.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -55,14 +45,10 @@ impl DescribeCaCertificateInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCaCertificateInput`](crate::operation::describe_ca_certificate::DescribeCaCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ca_certificate::DescribeCaCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_ca_certificate::DescribeCaCertificateInput {
-                certificate_id: self.certificate_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_ca_certificate::DescribeCaCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_ca_certificate::DescribeCaCertificateInput {
+            certificate_id: self.certificate_id,
+        })
     }
 }

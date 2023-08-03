@@ -48,48 +48,36 @@ impl CreateFirewallPolicyInput {
         self.dry_run
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
 impl CreateFirewallPolicyInput {
     /// Creates a new builder-style object to manufacture [`CreateFirewallPolicyInput`](crate::operation::create_firewall_policy::CreateFirewallPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::create_firewall_policy::builders::CreateFirewallPolicyInputBuilder {
+    pub fn builder() -> crate::operation::create_firewall_policy::builders::CreateFirewallPolicyInputBuilder {
         crate::operation::create_firewall_policy::builders::CreateFirewallPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFirewallPolicyInput`](crate::operation::create_firewall_policy::CreateFirewallPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFirewallPolicyInputBuilder {
     pub(crate) firewall_policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_policy: ::std::option::Option<crate::types::FirewallPolicy>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl CreateFirewallPolicyInputBuilder {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    pub fn firewall_policy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    pub fn set_firewall_policy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_name = input;
         self
     }
@@ -103,10 +91,7 @@ impl CreateFirewallPolicyInputBuilder {
         self
     }
     /// <p>The rule groups and policy actions to use in the firewall policy.</p>
-    pub fn set_firewall_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallPolicy>,
-    ) -> Self {
+    pub fn set_firewall_policy(mut self, input: ::std::option::Option<crate::types::FirewallPolicy>) -> Self {
         self.firewall_policy = input;
         self
     }
@@ -140,10 +125,7 @@ impl CreateFirewallPolicyInputBuilder {
         self
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -172,43 +154,31 @@ impl CreateFirewallPolicyInputBuilder {
         &self.dry_run
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// Consumes the builder and constructs a [`CreateFirewallPolicyInput`](crate::operation::create_firewall_policy::CreateFirewallPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_firewall_policy::CreateFirewallPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_firewall_policy::CreateFirewallPolicyInput {
-                firewall_policy_name: self.firewall_policy_name,
-                firewall_policy: self.firewall_policy,
-                description: self.description,
-                tags: self.tags,
-                dry_run: self.dry_run,
-                encryption_configuration: self.encryption_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_firewall_policy::CreateFirewallPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_firewall_policy::CreateFirewallPolicyInput {
+            firewall_policy_name: self.firewall_policy_name,
+            firewall_policy: self.firewall_policy,
+            description: self.description,
+            tags: self.tags,
+            dry_run: self.dry_run,
+            encryption_configuration: self.encryption_configuration,
+        })
     }
 }

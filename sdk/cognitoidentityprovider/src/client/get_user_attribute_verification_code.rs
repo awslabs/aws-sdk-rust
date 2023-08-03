@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`GetUserAttributeVerificationCodeOutput`](crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeOutput) with field(s):
     ///   - [`code_delivery_details(Option<CodeDeliveryDetailsType>)`](crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeOutput::code_delivery_details): <p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>
     /// - On failure, responds with [`SdkError<GetUserAttributeVerificationCodeError>`](crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError)
-    pub fn get_user_attribute_verification_code(&self) -> crate::operation::get_user_attribute_verification_code::builders::GetUserAttributeVerificationCodeFluentBuilder{
+    pub fn get_user_attribute_verification_code(
+        &self,
+    ) -> crate::operation::get_user_attribute_verification_code::builders::GetUserAttributeVerificationCodeFluentBuilder {
         crate::operation::get_user_attribute_verification_code::builders::GetUserAttributeVerificationCodeFluentBuilder::new(self.handle.clone())
     }
 }

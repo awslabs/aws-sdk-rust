@@ -38,13 +38,7 @@
 /// Video Selector Color Space Usage
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum VideoSelectorColorSpaceUsage {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for VideoSelectorColorSpaceUsage {
         match s {
             "FALLBACK" => VideoSelectorColorSpaceUsage::Fallback,
             "FORCE" => VideoSelectorColorSpaceUsage::Force,
-            other => VideoSelectorColorSpaceUsage::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VideoSelectorColorSpaceUsage::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

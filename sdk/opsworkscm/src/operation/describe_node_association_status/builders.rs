@@ -27,7 +27,7 @@ impl DescribeNodeAssociationStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNodeAssociationStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_node_association_status::builders::DescribeNodeAssociationStatusInputBuilder,
+    inner: crate::operation::describe_node_association_status::builders::DescribeNodeAssociationStatusInputBuilder,
 }
 impl DescribeNodeAssociationStatusFluentBuilder {
     /// Creates a new `DescribeNodeAssociationStatus`.
@@ -38,7 +38,7 @@ impl DescribeNodeAssociationStatusFluentBuilder {
         }
     }
     /// Access the DescribeNodeAssociationStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_node_association_status::builders::DescribeNodeAssociationStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_node_association_status::builders::DescribeNodeAssociationStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeNodeAssociationStatusFluentBuilder {
             crate::operation::describe_node_association_status::DescribeNodeAssociationStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_node_association_status::DescribeNodeAssociationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_node_association_status::DescribeNodeAssociationStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeNodeAssociationStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeNodeAssociationStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_node_association_status::DescribeNodeAssociationStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_node_association_status::DescribeNodeAssociationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_node_association_status::DescribeNodeAssociationStatusError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeNodeAssociationStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_node_association_status::DescribeNodeAssociationStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_node_association_status::DescribeNodeAssociationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_node_association_status::DescribeNodeAssociationStatusError>,
     > {
         self.send_middleware().await
     }
@@ -115,32 +106,22 @@ impl DescribeNodeAssociationStatusFluentBuilder {
             crate::operation::describe_node_association_status::DescribeNodeAssociationStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_node_association_status::DescribeNodeAssociationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_node_association_status::DescribeNodeAssociationStatusError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
-    pub fn node_association_status_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn node_association_status_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_association_status_token(input.into());
         self
     }
     /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
-    pub fn set_node_association_status_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_node_association_status_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_association_status_token(input);
         self
     }
     /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
-    pub fn get_node_association_status_token(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_node_association_status_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_association_status_token()
     }
     /// <p>The name of the server from which to disassociate the node. </p>

@@ -23,9 +23,7 @@ impl S3ClassificationScopeExclusion {
 
 /// A builder for [`S3ClassificationScopeExclusion`](crate::types::S3ClassificationScopeExclusion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ClassificationScopeExclusionBuilder {
     pub(crate) bucket_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,17 +40,12 @@ impl S3ClassificationScopeExclusionBuilder {
         self
     }
     /// <p>An array of strings, one for each S3 bucket that is excluded. Each string is the full name of an excluded bucket.</p>
-    pub fn set_bucket_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bucket_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.bucket_names = input;
         self
     }
     /// <p>An array of strings, one for each S3 bucket that is excluded. Each string is the full name of an excluded bucket.</p>
-    pub fn get_bucket_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bucket_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.bucket_names
     }
     /// Consumes the builder and constructs a [`S3ClassificationScopeExclusion`](crate::types::S3ClassificationScopeExclusion).

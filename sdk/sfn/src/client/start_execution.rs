@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`execution_arn(Option<String>)`](crate::operation::start_execution::StartExecutionOutput::execution_arn): <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     ///   - [`start_date(Option<DateTime>)`](crate::operation::start_execution::StartExecutionOutput::start_date): <p>The date the execution is started.</p>
     /// - On failure, responds with [`SdkError<StartExecutionError>`](crate::operation::start_execution::StartExecutionError)
-    pub fn start_execution(
-        &self,
-    ) -> crate::operation::start_execution::builders::StartExecutionFluentBuilder {
-        crate::operation::start_execution::builders::StartExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_execution(&self) -> crate::operation::start_execution::builders::StartExecutionFluentBuilder {
+        crate::operation::start_execution::builders::StartExecutionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetInstanceOutput`](crate::operation::get_instance::GetInstanceOutput) with field(s):
     ///   - [`instance(Option<Instance>)`](crate::operation::get_instance::GetInstanceOutput::instance): <p>A complex type that contains information about a specified instance.</p>
     /// - On failure, responds with [`SdkError<GetInstanceError>`](crate::operation::get_instance::GetInstanceError)
-    pub fn get_instance(
-        &self,
-    ) -> crate::operation::get_instance::builders::GetInstanceFluentBuilder {
+    pub fn get_instance(&self) -> crate::operation::get_instance::builders::GetInstanceFluentBuilder {
         crate::operation::get_instance::builders::GetInstanceFluentBuilder::new(self.handle.clone())
     }
 }

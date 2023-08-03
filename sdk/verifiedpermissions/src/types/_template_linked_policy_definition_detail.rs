@@ -40,9 +40,7 @@ impl TemplateLinkedPolicyDefinitionDetail {
 
 /// A builder for [`TemplateLinkedPolicyDefinitionDetail`](crate::types::TemplateLinkedPolicyDefinitionDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateLinkedPolicyDefinitionDetailBuilder {
     pub(crate) policy_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<crate::types::EntityIdentifier>,
@@ -50,18 +48,12 @@ pub struct TemplateLinkedPolicyDefinitionDetailBuilder {
 }
 impl TemplateLinkedPolicyDefinitionDetailBuilder {
     /// <p>The unique identifier of the policy template used to create this policy.</p>
-    pub fn policy_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the policy template used to create this policy.</p>
-    pub fn set_policy_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_template_id = input;
         self
     }
@@ -75,10 +67,7 @@ impl TemplateLinkedPolicyDefinitionDetailBuilder {
         self
     }
     /// <p>The principal associated with this template-linked policy. Verified Permissions substitutes this principal for the <code>?principal</code> placeholder in the policy template when it evaluates an authorization request.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityIdentifier>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
         self.principal = input;
         self
     }
@@ -92,10 +81,7 @@ impl TemplateLinkedPolicyDefinitionDetailBuilder {
         self
     }
     /// <p>The resource associated with this template-linked policy. Verified Permissions substitutes this resource for the <code>?resource</code> placeholder in the policy template when it evaluates an authorization request.</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityIdentifier>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
         self.resource = input;
         self
     }

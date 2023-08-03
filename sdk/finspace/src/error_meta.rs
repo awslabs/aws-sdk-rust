@@ -43,32 +43,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -81,39 +65,25 @@ impl From<crate::operation::create_environment::CreateEnvironmentError> for Erro
             crate::operation::create_environment::CreateEnvironmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_environment::CreateEnvironmentError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::create_environment::CreateEnvironmentError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::create_environment::CreateEnvironmentError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_environment::CreateEnvironmentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::create_environment::CreateEnvironmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_environment::CreateEnvironmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_environment::CreateEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_kx_changeset::CreateKxChangesetError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_kx_changeset::CreateKxChangesetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_kx_changeset::CreateKxChangesetError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_kx_changeset::CreateKxChangesetError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -127,39 +97,25 @@ impl From<crate::operation::create_kx_changeset::CreateKxChangesetError> for Err
             crate::operation::create_kx_changeset::CreateKxChangesetError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_kx_changeset::CreateKxChangesetError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::create_kx_changeset::CreateKxChangesetError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::create_kx_changeset::CreateKxChangesetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_kx_changeset::CreateKxChangesetError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::create_kx_changeset::CreateKxChangesetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_kx_changeset::CreateKxChangesetError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_kx_changeset::CreateKxChangesetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_kx_cluster::CreateKxClusterError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_kx_cluster::CreateKxClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_kx_cluster::CreateKxClusterError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_kx_cluster::CreateKxClusterError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -180,32 +136,16 @@ impl From<crate::operation::create_kx_cluster::CreateKxClusterError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_kx_database::CreateKxDatabaseError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_kx_database::CreateKxDatabaseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_kx_database::CreateKxDatabaseError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_kx_database::CreateKxDatabaseError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -219,7 +159,9 @@ impl From<crate::operation::create_kx_database::CreateKxDatabaseError> for Error
             crate::operation::create_kx_database::CreateKxDatabaseError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_kx_database::CreateKxDatabaseError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::create_kx_database::CreateKxDatabaseError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::create_kx_database::CreateKxDatabaseError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::operation::create_kx_database::CreateKxDatabaseError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
             crate::operation::create_kx_database::CreateKxDatabaseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_kx_database::CreateKxDatabaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_kx_database::CreateKxDatabaseError::ValidationException(inner) => Error::ValidationException(inner),
@@ -227,32 +169,16 @@ impl From<crate::operation::create_kx_database::CreateKxDatabaseError> for Error
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_kx_environment::CreateKxEnvironmentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_kx_environment::CreateKxEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_kx_environment::CreateKxEnvironmentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_kx_environment::CreateKxEnvironmentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -264,38 +190,29 @@ impl From<crate::operation::create_kx_environment::CreateKxEnvironmentError> for
         match err {
             crate::operation::create_kx_environment::CreateKxEnvironmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_kx_environment::CreateKxEnvironmentError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::create_kx_environment::CreateKxEnvironmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_kx_environment::CreateKxEnvironmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::create_kx_environment::CreateKxEnvironmentError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::create_kx_environment::CreateKxEnvironmentError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_kx_environment::CreateKxEnvironmentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::create_kx_environment::CreateKxEnvironmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_kx_environment::CreateKxEnvironmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_kx_environment::CreateKxEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<crate::operation::create_kx_user::CreateKxUserError, R>,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_kx_user::CreateKxUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_kx_user::CreateKxUserError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_kx_user::CreateKxUserError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -305,62 +222,30 @@ where
 impl From<crate::operation::create_kx_user::CreateKxUserError> for Error {
     fn from(err: crate::operation::create_kx_user::CreateKxUserError) -> Self {
         match err {
-            crate::operation::create_kx_user::CreateKxUserError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
+            crate::operation::create_kx_user::CreateKxUserError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_kx_user::CreateKxUserError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_kx_user::CreateKxUserError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_kx_user::CreateKxUserError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_kx_user::CreateKxUserError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
             }
-            crate::operation::create_kx_user::CreateKxUserError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::create_kx_user::CreateKxUserError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::create_kx_user::CreateKxUserError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::create_kx_user::CreateKxUserError::ResourceAlreadyExistsException(
-                inner,
-            ) => Error::ResourceAlreadyExistsException(inner),
-            crate::operation::create_kx_user::CreateKxUserError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::create_kx_user::CreateKxUserError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::create_kx_user::CreateKxUserError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::create_kx_user::CreateKxUserError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::create_kx_user::CreateKxUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_kx_user::CreateKxUserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_kx_user::CreateKxUserError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_kx_user::CreateKxUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_environment::DeleteEnvironmentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_environment::DeleteEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_environment::DeleteEnvironmentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_environment::DeleteEnvironmentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -379,32 +264,16 @@ impl From<crate::operation::delete_environment::DeleteEnvironmentError> for Erro
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_cluster::DeleteKxClusterError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_kx_cluster::DeleteKxClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_cluster::DeleteKxClusterError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_cluster::DeleteKxClusterError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -425,32 +294,16 @@ impl From<crate::operation::delete_kx_cluster::DeleteKxClusterError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_database::DeleteKxDatabaseError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_kx_database::DeleteKxDatabaseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_database::DeleteKxDatabaseError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_database::DeleteKxDatabaseError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -470,32 +323,16 @@ impl From<crate::operation::delete_kx_database::DeleteKxDatabaseError> for Error
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_environment::DeleteKxEnvironmentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_kx_environment::DeleteKxEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_environment::DeleteKxEnvironmentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_environment::DeleteKxEnvironmentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -506,37 +343,28 @@ impl From<crate::operation::delete_kx_environment::DeleteKxEnvironmentError> for
     fn from(err: crate::operation::delete_kx_environment::DeleteKxEnvironmentError) -> Self {
         match err {
             crate::operation::delete_kx_environment::DeleteKxEnvironmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::delete_kx_environment::DeleteKxEnvironmentError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::delete_kx_environment::DeleteKxEnvironmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_kx_environment::DeleteKxEnvironmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_kx_environment::DeleteKxEnvironmentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_kx_environment::DeleteKxEnvironmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_kx_environment::DeleteKxEnvironmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_kx_environment::DeleteKxEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_user::DeleteKxUserError, R>,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_kx_user::DeleteKxUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_kx_user::DeleteKxUserError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_kx_user::DeleteKxUserError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -546,53 +374,25 @@ where
 impl From<crate::operation::delete_kx_user::DeleteKxUserError> for Error {
     fn from(err: crate::operation::delete_kx_user::DeleteKxUserError) -> Self {
         match err {
-            crate::operation::delete_kx_user::DeleteKxUserError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_kx_user::DeleteKxUserError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::delete_kx_user::DeleteKxUserError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_kx_user::DeleteKxUserError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::delete_kx_user::DeleteKxUserError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::delete_kx_user::DeleteKxUserError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_kx_user::DeleteKxUserError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_kx_user::DeleteKxUserError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_kx_user::DeleteKxUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_kx_user::DeleteKxUserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_kx_user::DeleteKxUserError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_kx_user::DeleteKxUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_environment::GetEnvironmentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_environment::GetEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_environment::GetEnvironmentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_environment::GetEnvironmentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -602,50 +402,24 @@ where
 impl From<crate::operation::get_environment::GetEnvironmentError> for Error {
     fn from(err: crate::operation::get_environment::GetEnvironmentError) -> Self {
         match err {
-            crate::operation::get_environment::GetEnvironmentError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::get_environment::GetEnvironmentError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::get_environment::GetEnvironmentError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_environment::GetEnvironmentError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::get_environment::GetEnvironmentError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_environment::GetEnvironmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_environment::GetEnvironmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_environment::GetEnvironmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_environment::GetEnvironmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_environment::GetEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_changeset::GetKxChangesetError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_kx_changeset::GetKxChangesetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_changeset::GetKxChangesetError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_kx_changeset::GetKxChangesetError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -655,50 +429,25 @@ where
 impl From<crate::operation::get_kx_changeset::GetKxChangesetError> for Error {
     fn from(err: crate::operation::get_kx_changeset::GetKxChangesetError) -> Self {
         match err {
-            crate::operation::get_kx_changeset::GetKxChangesetError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::get_kx_changeset::GetKxChangesetError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::get_kx_changeset::GetKxChangesetError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_kx_changeset::GetKxChangesetError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::get_kx_changeset::GetKxChangesetError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::get_kx_changeset::GetKxChangesetError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_kx_changeset::GetKxChangesetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_kx_changeset::GetKxChangesetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_kx_changeset::GetKxChangesetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_kx_changeset::GetKxChangesetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_kx_changeset::GetKxChangesetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_kx_changeset::GetKxChangesetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<crate::operation::get_kx_cluster::GetKxClusterError, R>,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_kx_cluster::GetKxClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_cluster::GetKxClusterError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_kx_cluster::GetKxClusterError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -708,59 +457,27 @@ where
 impl From<crate::operation::get_kx_cluster::GetKxClusterError> for Error {
     fn from(err: crate::operation::get_kx_cluster::GetKxClusterError) -> Self {
         match err {
-            crate::operation::get_kx_cluster::GetKxClusterError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_kx_cluster::GetKxClusterError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::get_kx_cluster::GetKxClusterError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::get_kx_cluster::GetKxClusterError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::get_kx_cluster::GetKxClusterError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_kx_cluster::GetKxClusterError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::get_kx_cluster::GetKxClusterError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::get_kx_cluster::GetKxClusterError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_kx_cluster::GetKxClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_kx_cluster::GetKxClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_kx_cluster::GetKxClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_kx_cluster::GetKxClusterError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_kx_cluster::GetKxClusterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_kx_cluster::GetKxClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_kx_cluster::GetKxClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_kx_cluster::GetKxClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_connection_string::GetKxConnectionStringError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_kx_connection_string::GetKxConnectionStringError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_connection_string::GetKxConnectionStringError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_kx_connection_string::GetKxConnectionStringError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -770,41 +487,31 @@ where
 impl From<crate::operation::get_kx_connection_string::GetKxConnectionStringError> for Error {
     fn from(err: crate::operation::get_kx_connection_string::GetKxConnectionStringError) -> Self {
         match err {
-            crate::operation::get_kx_connection_string::GetKxConnectionStringError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_kx_connection_string::GetKxConnectionStringError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_kx_connection_string::GetKxConnectionStringError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_kx_connection_string::GetKxConnectionStringError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_kx_connection_string::GetKxConnectionStringError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_kx_connection_string::GetKxConnectionStringError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_kx_connection_string::GetKxConnectionStringError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_kx_connection_string::GetKxConnectionStringError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_kx_connection_string::GetKxConnectionStringError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_database::GetKxDatabaseError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_kx_database::GetKxDatabaseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_database::GetKxDatabaseError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_kx_database::GetKxDatabaseError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -814,53 +521,25 @@ where
 impl From<crate::operation::get_kx_database::GetKxDatabaseError> for Error {
     fn from(err: crate::operation::get_kx_database::GetKxDatabaseError) -> Self {
         match err {
-            crate::operation::get_kx_database::GetKxDatabaseError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_kx_database::GetKxDatabaseError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::get_kx_database::GetKxDatabaseError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_kx_database::GetKxDatabaseError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::get_kx_database::GetKxDatabaseError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::get_kx_database::GetKxDatabaseError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_kx_database::GetKxDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_kx_database::GetKxDatabaseError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_kx_database::GetKxDatabaseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_kx_database::GetKxDatabaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_kx_database::GetKxDatabaseError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_kx_database::GetKxDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_environment::GetKxEnvironmentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_kx_environment::GetKxEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_environment::GetKxEnvironmentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_kx_environment::GetKxEnvironmentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -878,24 +557,16 @@ impl From<crate::operation::get_kx_environment::GetKxEnvironmentError> for Error
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_kx_user::GetKxUserError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_kx_user::GetKxUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::get_kx_user::GetKxUserError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_kx_user::GetKxUserError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -905,53 +576,25 @@ where
 impl From<crate::operation::get_kx_user::GetKxUserError> for Error {
     fn from(err: crate::operation::get_kx_user::GetKxUserError) -> Self {
         match err {
-            crate::operation::get_kx_user::GetKxUserError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_kx_user::GetKxUserError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::get_kx_user::GetKxUserError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_kx_user::GetKxUserError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::get_kx_user::GetKxUserError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::get_kx_user::GetKxUserError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_kx_user::GetKxUserError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_kx_user::GetKxUserError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_kx_user::GetKxUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_kx_user::GetKxUserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_kx_user::GetKxUserError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_kx_user::GetKxUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environments::ListEnvironmentsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_environments::ListEnvironmentsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_environments::ListEnvironmentsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_environments::ListEnvironmentsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -961,44 +604,22 @@ where
 impl From<crate::operation::list_environments::ListEnvironmentsError> for Error {
     fn from(err: crate::operation::list_environments::ListEnvironmentsError) -> Self {
         match err {
-            crate::operation::list_environments::ListEnvironmentsError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::list_environments::ListEnvironmentsError::ValidationException(
-                inner,
-            ) => Error::ValidationException(inner),
-            crate::operation::list_environments::ListEnvironmentsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_environments::ListEnvironmentsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_environments::ListEnvironmentsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_environments::ListEnvironmentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_changesets::ListKxChangesetsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_kx_changesets::ListKxChangesetsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_changesets::ListKxChangesetsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_kx_changesets::ListKxChangesetsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1017,32 +638,16 @@ impl From<crate::operation::list_kx_changesets::ListKxChangesetsError> for Error
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1055,39 +660,25 @@ impl From<crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError> for 
             crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_clusters::ListKxClustersError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_kx_clusters::ListKxClustersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_clusters::ListKxClustersError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_kx_clusters::ListKxClustersError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1097,59 +688,27 @@ where
 impl From<crate::operation::list_kx_clusters::ListKxClustersError> for Error {
     fn from(err: crate::operation::list_kx_clusters::ListKxClustersError) -> Self {
         match err {
-            crate::operation::list_kx_clusters::ListKxClustersError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::list_kx_clusters::ListKxClustersError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::list_kx_clusters::ListKxClustersError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::list_kx_clusters::ListKxClustersError::LimitExceededException(
-                inner,
-            ) => Error::LimitExceededException(inner),
-            crate::operation::list_kx_clusters::ListKxClustersError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_kx_clusters::ListKxClustersError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::list_kx_clusters::ListKxClustersError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::list_kx_clusters::ListKxClustersError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_kx_clusters::ListKxClustersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_kx_clusters::ListKxClustersError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_kx_clusters::ListKxClustersError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_kx_clusters::ListKxClustersError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_kx_clusters::ListKxClustersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_kx_clusters::ListKxClustersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_kx_clusters::ListKxClustersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_kx_clusters::ListKxClustersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_databases::ListKxDatabasesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_kx_databases::ListKxDatabasesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_databases::ListKxDatabasesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_kx_databases::ListKxDatabasesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1168,32 +727,16 @@ impl From<crate::operation::list_kx_databases::ListKxDatabasesError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_environments::ListKxEnvironmentsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_kx_environments::ListKxEnvironmentsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_environments::ListKxEnvironmentsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_kx_environments::ListKxEnvironmentsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1209,28 +752,16 @@ impl From<crate::operation::list_kx_environments::ListKxEnvironmentsError> for E
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::list_kx_users::ListKxUsersError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_kx_users::ListKxUsersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_users::ListKxUsersError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_kx_users::ListKxUsersError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1240,53 +771,25 @@ where
 impl From<crate::operation::list_kx_users::ListKxUsersError> for Error {
     fn from(err: crate::operation::list_kx_users::ListKxUsersError) -> Self {
         match err {
-            crate::operation::list_kx_users::ListKxUsersError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_kx_users::ListKxUsersError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_kx_users::ListKxUsersError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::list_kx_users::ListKxUsersError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::list_kx_users::ListKxUsersError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::list_kx_users::ListKxUsersError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_kx_users::ListKxUsersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_kx_users::ListKxUsersError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_kx_users::ListKxUsersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_kx_users::ListKxUsersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_kx_users::ListKxUsersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_kx_users::ListKxUsersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1296,35 +799,29 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_resource::TagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1334,47 +831,23 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::tag_resource::TagResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1384,47 +857,23 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::untag_resource::UntagResourceError::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment::UpdateEnvironmentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment::UpdateEnvironmentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1443,32 +892,16 @@ impl From<crate::operation::update_environment::UpdateEnvironmentError> for Erro
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1476,46 +909,40 @@ where
     }
 }
 impl From<crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError> for Error {
-    fn from(
-        err: crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError,
-    ) -> Self {
+    fn from(err: crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError) -> Self {
         match err {
-            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_database::UpdateKxDatabaseError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_kx_database::UpdateKxDatabaseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_database::UpdateKxDatabaseError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_kx_database::UpdateKxDatabaseError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1535,32 +962,16 @@ impl From<crate::operation::update_kx_database::UpdateKxDatabaseError> for Error
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_environment::UpdateKxEnvironmentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_kx_environment::UpdateKxEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_environment::UpdateKxEnvironmentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_kx_environment::UpdateKxEnvironmentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1572,86 +983,69 @@ impl From<crate::operation::update_kx_environment::UpdateKxEnvironmentError> for
         match err {
             crate::operation::update_kx_environment::UpdateKxEnvironmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_kx_environment::UpdateKxEnvironmentError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::update_kx_environment::UpdateKxEnvironmentError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_kx_environment::UpdateKxEnvironmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_kx_environment::UpdateKxEnvironmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_kx_environment::UpdateKxEnvironmentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::update_kx_environment::UpdateKxEnvironmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_kx_environment::UpdateKxEnvironmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_kx_environment::UpdateKxEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError>
-    for Error
-{
-    fn from(
-        err: crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError,
-    ) -> Self {
+impl From<crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError> for Error {
+    fn from(err: crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError) -> Self {
         match err {
-            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<crate::operation::update_kx_user::UpdateKxUserError, R>,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_kx_user::UpdateKxUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_kx_user::UpdateKxUserError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_kx_user::UpdateKxUserError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1661,30 +1055,14 @@ where
 impl From<crate::operation::update_kx_user::UpdateKxUserError> for Error {
     fn from(err: crate::operation::update_kx_user::UpdateKxUserError) -> Self {
         match err {
-            crate::operation::update_kx_user::UpdateKxUserError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::update_kx_user::UpdateKxUserError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::update_kx_user::UpdateKxUserError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::update_kx_user::UpdateKxUserError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::update_kx_user::UpdateKxUserError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_kx_user::UpdateKxUserError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::update_kx_user::UpdateKxUserError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::update_kx_user::UpdateKxUserError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::update_kx_user::UpdateKxUserError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_kx_user::UpdateKxUserError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_kx_user::UpdateKxUserError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_kx_user::UpdateKxUserError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_kx_user::UpdateKxUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_kx_user::UpdateKxUserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_kx_user::UpdateKxUserError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_kx_user::UpdateKxUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

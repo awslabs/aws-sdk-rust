@@ -10,10 +10,7 @@ impl UpdatePolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_policy::UpdatePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_policy::UpdatePolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_policy::UpdatePolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_policy();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl UpdatePolicyFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_policy::UpdatePolicy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_policy::UpdatePolicy, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_policy::UpdatePolicyError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl UpdatePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,27 +97,18 @@ impl UpdatePolicyFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_policy::UpdatePolicy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_policy::UpdatePolicy, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_policy::UpdatePolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the ID of the policy store that contains the policy that you want to update.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the policy that you want to update.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
@@ -178,10 +160,7 @@ impl UpdatePolicyFluentBuilder {
     /// <li> <p>The <code>principal</code> referenced by the policy.</p> </li>
     /// <li> <p>The <code>resource</code> referenced by the policy.</p> </li>
     /// </ul>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdatePolicyDefinition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::UpdatePolicyDefinition>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }

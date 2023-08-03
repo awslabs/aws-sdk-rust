@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSeverityLevelsOutput`](crate::operation::describe_severity_levels::DescribeSeverityLevelsOutput) with field(s):
     ///   - [`severity_levels(Option<Vec<SeverityLevel>>)`](crate::operation::describe_severity_levels::DescribeSeverityLevelsOutput::severity_levels): <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
     /// - On failure, responds with [`SdkError<DescribeSeverityLevelsError>`](crate::operation::describe_severity_levels::DescribeSeverityLevelsError)
-    pub fn describe_severity_levels(
-        &self,
-    ) -> crate::operation::describe_severity_levels::builders::DescribeSeverityLevelsFluentBuilder
-    {
+    pub fn describe_severity_levels(&self) -> crate::operation::describe_severity_levels::builders::DescribeSeverityLevelsFluentBuilder {
         crate::operation::describe_severity_levels::builders::DescribeSeverityLevelsFluentBuilder::new(self.handle.clone())
     }
 }

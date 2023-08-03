@@ -33,10 +33,7 @@ pub fn ser_crawler_targets(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_mongo_db_target::ser_mongo_db_target(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_mongo_db_target::ser_mongo_db_target(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -48,10 +45,7 @@ pub fn ser_crawler_targets(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_dynamo_db_target::ser_dynamo_db_target(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_dynamo_db_target::ser_dynamo_db_target(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }
@@ -63,10 +57,7 @@ pub fn ser_crawler_targets(
             {
                 #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_catalog_target::ser_catalog_target(
-                    &mut object_20,
-                    item_19,
-                )?;
+                crate::protocol_serde::shape_catalog_target::ser_catalog_target(&mut object_20, item_19)?;
                 object_20.finish();
             }
         }
@@ -78,10 +69,7 @@ pub fn ser_crawler_targets(
             {
                 #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
-                crate::protocol_serde::shape_delta_target::ser_delta_target(
-                    &mut object_24,
-                    item_23,
-                )?;
+                crate::protocol_serde::shape_delta_target::ser_delta_target(&mut object_24, item_23)?;
                 object_24.finish();
             }
         }
@@ -93,10 +81,7 @@ pub fn ser_crawler_targets(
             {
                 #[allow(unused_mut)]
                 let mut object_28 = array_26.value().start_object();
-                crate::protocol_serde::shape_iceberg_target::ser_iceberg_target(
-                    &mut object_28,
-                    item_27,
-                )?;
+                crate::protocol_serde::shape_iceberg_target::ser_iceberg_target(&mut object_28, item_27)?;
                 object_28.finish();
             }
         }
@@ -119,17 +104,9 @@ pub fn ser_crawler_targets(
 
 pub(crate) fn de_crawler_targets<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CrawlerTargets>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CrawlerTargets>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -139,68 +116,47 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "S3Targets" => {
-                                builder = builder.set_s3_targets(
-                                    crate::protocol_serde::shape_s3_target_list::de_s3_target_list(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "JdbcTargets" => {
-                                builder = builder.set_jdbc_targets(
-                                    crate::protocol_serde::shape_jdbc_target_list::de_jdbc_target_list(tokens)?
-                                );
-                            }
-                            "MongoDBTargets" => {
-                                builder = builder.set_mongo_db_targets(
-                                    crate::protocol_serde::shape_mongo_db_target_list::de_mongo_db_target_list(tokens)?
-                                );
-                            }
-                            "DynamoDBTargets" => {
-                                builder = builder.set_dynamo_db_targets(
-                                    crate::protocol_serde::shape_dynamo_db_target_list::de_dynamo_db_target_list(tokens)?
-                                );
-                            }
-                            "CatalogTargets" => {
-                                builder = builder.set_catalog_targets(
-                                    crate::protocol_serde::shape_catalog_target_list::de_catalog_target_list(tokens)?
-                                );
-                            }
-                            "DeltaTargets" => {
-                                builder = builder.set_delta_targets(
-                                    crate::protocol_serde::shape_delta_target_list::de_delta_target_list(tokens)?
-                                );
-                            }
-                            "IcebergTargets" => {
-                                builder = builder.set_iceberg_targets(
-                                    crate::protocol_serde::shape_iceberg_target_list::de_iceberg_target_list(tokens)?
-                                );
-                            }
-                            "HudiTargets" => {
-                                builder = builder.set_hudi_targets(
-                                    crate::protocol_serde::shape_hudi_target_list::de_hudi_target_list(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "S3Targets" => {
+                            builder = builder.set_s3_targets(crate::protocol_serde::shape_s3_target_list::de_s3_target_list(tokens)?);
                         }
-                    }
+                        "JdbcTargets" => {
+                            builder = builder.set_jdbc_targets(crate::protocol_serde::shape_jdbc_target_list::de_jdbc_target_list(tokens)?);
+                        }
+                        "MongoDBTargets" => {
+                            builder =
+                                builder.set_mongo_db_targets(crate::protocol_serde::shape_mongo_db_target_list::de_mongo_db_target_list(tokens)?);
+                        }
+                        "DynamoDBTargets" => {
+                            builder =
+                                builder.set_dynamo_db_targets(crate::protocol_serde::shape_dynamo_db_target_list::de_dynamo_db_target_list(tokens)?);
+                        }
+                        "CatalogTargets" => {
+                            builder = builder.set_catalog_targets(crate::protocol_serde::shape_catalog_target_list::de_catalog_target_list(tokens)?);
+                        }
+                        "DeltaTargets" => {
+                            builder = builder.set_delta_targets(crate::protocol_serde::shape_delta_target_list::de_delta_target_list(tokens)?);
+                        }
+                        "IcebergTargets" => {
+                            builder = builder.set_iceberg_targets(crate::protocol_serde::shape_iceberg_target_list::de_iceberg_target_list(tokens)?);
+                        }
+                        "HudiTargets" => {
+                            builder = builder.set_hudi_targets(crate::protocol_serde::shape_hudi_target_list::de_hudi_target_list(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

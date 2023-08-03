@@ -23,8 +23,7 @@ pub struct AnswerSummary {
     pub selected_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of selected choices to a question in your workload.</p>
     #[doc(hidden)]
-    pub choice_answer_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>,
+    pub choice_answer_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>,
     /// <p>Defines whether this question is applicable to a lens review.</p>
     #[doc(hidden)]
     pub is_applicable: bool,
@@ -62,9 +61,7 @@ impl AnswerSummary {
         self.selected_choices.as_deref()
     }
     /// <p>A list of selected choices to a question in your workload.</p>
-    pub fn choice_answer_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChoiceAnswerSummary]> {
+    pub fn choice_answer_summaries(&self) -> ::std::option::Option<&[crate::types::ChoiceAnswerSummary]> {
         self.choice_answer_summaries.as_deref()
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
@@ -93,17 +90,14 @@ impl AnswerSummary {
 
 /// A builder for [`AnswerSummary`](crate::types::AnswerSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnswerSummaryBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) pillar_id: ::std::option::Option<::std::string::String>,
     pub(crate) question_title: ::std::option::Option<::std::string::String>,
     pub(crate) choices: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>,
     pub(crate) selected_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) choice_answer_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>,
+    pub(crate) choice_answer_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>,
     pub(crate) is_applicable: ::std::option::Option<bool>,
     pub(crate) risk: ::std::option::Option<crate::types::Risk>,
     pub(crate) reason: ::std::option::Option<crate::types::AnswerReason>,
@@ -142,18 +136,12 @@ impl AnswerSummaryBuilder {
         &self.pillar_id
     }
     /// <p>The title of the question.</p>
-    pub fn question_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn question_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the question.</p>
-    pub fn set_question_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_question_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_title = input;
         self
     }
@@ -173,10 +161,7 @@ impl AnswerSummaryBuilder {
         self
     }
     /// <p>List of choices available for a question.</p>
-    pub fn set_choices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>,
-    ) -> Self {
+    pub fn set_choices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>) -> Self {
         self.choices = input;
         self
     }
@@ -190,10 +175,7 @@ impl AnswerSummaryBuilder {
     ///
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn selected_choices(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selected_choices(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.selected_choices.unwrap_or_default();
         v.push(input.into());
         self.selected_choices = ::std::option::Option::Some(v);
@@ -201,18 +183,13 @@ impl AnswerSummaryBuilder {
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn set_selected_choices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_selected_choices(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.selected_choices = input;
         self
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn get_selected_choices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_choices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.selected_choices
     }
     /// Appends an item to `choice_answer_summaries`.
@@ -227,17 +204,12 @@ impl AnswerSummaryBuilder {
         self
     }
     /// <p>A list of selected choices to a question in your workload.</p>
-    pub fn set_choice_answer_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>,
-    ) -> Self {
+    pub fn set_choice_answer_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>) -> Self {
         self.choice_answer_summaries = input;
         self
     }
     /// <p>A list of selected choices to a question in your workload.</p>
-    pub fn get_choice_answer_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>> {
+    pub fn get_choice_answer_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>> {
         &self.choice_answer_summaries
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
@@ -288,10 +260,7 @@ impl AnswerSummaryBuilder {
         self
     }
     /// <p>The type of the question.</p>
-    pub fn set_question_type(
-        mut self,
-        input: ::std::option::Option<crate::types::QuestionType>,
-    ) -> Self {
+    pub fn set_question_type(mut self, input: ::std::option::Option<crate::types::QuestionType>) -> Self {
         self.question_type = input;
         self
     }

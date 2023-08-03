@@ -95,9 +95,7 @@ impl ParameterMetadata {
 
 /// A builder for [`ParameterMetadata`](crate::types::ParameterMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ParameterType>,
@@ -108,8 +106,7 @@ pub struct ParameterMetadataBuilder {
     pub(crate) allowed_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i64>,
     pub(crate) tier: ::std::option::Option<crate::types::ParameterTier>,
-    pub(crate) policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>,
+    pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>,
     pub(crate) data_type: ::std::option::Option<::std::string::String>,
 }
 impl ParameterMetadataBuilder {
@@ -161,10 +158,7 @@ impl ParameterMetadataBuilder {
         self
     }
     /// <p>Date the parameter was last changed or updated.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -173,18 +167,12 @@ impl ParameterMetadataBuilder {
         &self.last_modified_date
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
-    pub fn last_modified_user(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
-    pub fn set_last_modified_user(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_user = input;
         self
     }
@@ -208,19 +196,13 @@ impl ParameterMetadataBuilder {
     }
     /// <p>A parameter name can include only the following letters and symbols.</p>
     /// <p>a-zA-Z0-9_.-</p>
-    pub fn allowed_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A parameter name can include only the following letters and symbols.</p>
     /// <p>a-zA-Z0-9_.-</p>
-    pub fn set_allowed_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_pattern = input;
         self
     }
@@ -269,17 +251,12 @@ impl ParameterMetadataBuilder {
         self
     }
     /// <p>A list of policies associated with a parameter.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>) -> Self {
         self.policies = input;
         self
     }
     /// <p>A list of policies associated with a parameter.</p>
-    pub fn get_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>> {
+    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>> {
         &self.policies
     }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>

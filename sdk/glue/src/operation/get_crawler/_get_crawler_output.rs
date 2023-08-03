@@ -28,9 +28,7 @@ impl GetCrawlerOutput {
 
 /// A builder for [`GetCrawlerOutput`](crate::operation::get_crawler::GetCrawlerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCrawlerOutputBuilder {
     pub(crate) crawler: ::std::option::Option<crate::types::Crawler>,
     _request_id: Option<String>,

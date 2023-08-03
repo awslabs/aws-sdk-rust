@@ -37,9 +37,7 @@ impl DeleteDevEnvironmentFluentBuilder {
         }
     }
     /// Access the DeleteDevEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteDevEnvironmentFluentBuilder {
             crate::operation::delete_dev_environment::DeleteDevEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dev_environment::DeleteDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dev_environment::DeleteDevEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteDevEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteDevEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dev_environment::DeleteDevEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dev_environment::DeleteDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dev_environment::DeleteDevEnvironmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteDevEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dev_environment::DeleteDevEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dev_environment::DeleteDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dev_environment::DeleteDevEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteDevEnvironmentFluentBuilder {
             crate::operation::delete_dev_environment::DeleteDevEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dev_environment::DeleteDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dev_environment::DeleteDevEnvironmentError>,
     > {
         self.customize_middleware().await
     }

@@ -50,18 +50,14 @@ impl ::aws_http::request_id::RequestId for ListEntitiesForPolicyOutput {
 }
 impl ListEntitiesForPolicyOutput {
     /// Creates a new builder-style object to manufacture [`ListEntitiesForPolicyOutput`](crate::operation::list_entities_for_policy::ListEntitiesForPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::list_entities_for_policy::builders::ListEntitiesForPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_entities_for_policy::builders::ListEntitiesForPolicyOutputBuilder {
         crate::operation::list_entities_for_policy::builders::ListEntitiesForPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEntitiesForPolicyOutput`](crate::operation::list_entities_for_policy::ListEntitiesForPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntitiesForPolicyOutputBuilder {
     pub(crate) policy_groups: ::std::option::Option<::std::vec::Vec<crate::types::PolicyGroup>>,
     pub(crate) policy_users: ::std::option::Option<::std::vec::Vec<crate::types::PolicyUser>>,
@@ -83,17 +79,12 @@ impl ListEntitiesForPolicyOutputBuilder {
         self
     }
     /// <p>A list of IAM groups that the policy is attached to.</p>
-    pub fn set_policy_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyGroup>>,
-    ) -> Self {
+    pub fn set_policy_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyGroup>>) -> Self {
         self.policy_groups = input;
         self
     }
     /// <p>A list of IAM groups that the policy is attached to.</p>
-    pub fn get_policy_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyGroup>> {
+    pub fn get_policy_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyGroup>> {
         &self.policy_groups
     }
     /// Appends an item to `policy_users`.
@@ -108,17 +99,12 @@ impl ListEntitiesForPolicyOutputBuilder {
         self
     }
     /// <p>A list of IAM users that the policy is attached to.</p>
-    pub fn set_policy_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyUser>>,
-    ) -> Self {
+    pub fn set_policy_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyUser>>) -> Self {
         self.policy_users = input;
         self
     }
     /// <p>A list of IAM users that the policy is attached to.</p>
-    pub fn get_policy_users(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyUser>> {
+    pub fn get_policy_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyUser>> {
         &self.policy_users
     }
     /// Appends an item to `policy_roles`.
@@ -133,17 +119,12 @@ impl ListEntitiesForPolicyOutputBuilder {
         self
     }
     /// <p>A list of IAM roles that the policy is attached to.</p>
-    pub fn set_policy_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyRole>>,
-    ) -> Self {
+    pub fn set_policy_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyRole>>) -> Self {
         self.policy_roles = input;
         self
     }
     /// <p>A list of IAM roles that the policy is attached to.</p>
-    pub fn get_policy_roles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyRole>> {
+    pub fn get_policy_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyRole>> {
         &self.policy_roles
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>

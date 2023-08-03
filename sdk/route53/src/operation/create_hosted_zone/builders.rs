@@ -10,10 +10,7 @@ impl CreateHostedZoneInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_hosted_zone::CreateHostedZoneOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hosted_zone::CreateHostedZoneError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hosted_zone::CreateHostedZoneError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_hosted_zone();
         fluent_builder.inner = self;
@@ -57,9 +54,7 @@ impl CreateHostedZoneFluentBuilder {
         }
     }
     /// Access the CreateHostedZone as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_hosted_zone::builders::CreateHostedZoneInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_hosted_zone::builders::CreateHostedZoneInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -71,9 +66,7 @@ impl CreateHostedZoneFluentBuilder {
             crate::operation::create_hosted_zone::CreateHostedZone,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hosted_zone::CreateHostedZoneError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hosted_zone::CreateHostedZoneError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -83,10 +76,7 @@ impl CreateHostedZoneFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -95,9 +85,7 @@ impl CreateHostedZoneFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_hosted_zone::CreateHostedZoneOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hosted_zone::CreateHostedZoneError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hosted_zone::CreateHostedZoneError>,
     > {
         let op = self
             .inner
@@ -120,9 +108,7 @@ impl CreateHostedZoneFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_hosted_zone::CreateHostedZoneOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hosted_zone::CreateHostedZoneError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hosted_zone::CreateHostedZoneError>,
     > {
         self.send_middleware().await
     }
@@ -136,9 +122,7 @@ impl CreateHostedZoneFluentBuilder {
             crate::operation::create_hosted_zone::CreateHostedZone,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hosted_zone::CreateHostedZoneError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hosted_zone::CreateHostedZoneError>,
     > {
         self.customize_middleware().await
     }
@@ -180,18 +164,12 @@ impl CreateHostedZoneFluentBuilder {
         self.inner.get_vpc()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.caller_reference(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_caller_reference(input);
         self
     }
@@ -215,10 +193,7 @@ impl CreateHostedZoneFluentBuilder {
     /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>
     /// </ul>
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
-    pub fn set_hosted_zone_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HostedZoneConfig>,
-    ) -> Self {
+    pub fn set_hosted_zone_config(mut self, input: ::std::option::Option<crate::types::HostedZoneConfig>) -> Self {
         self.inner = self.inner.set_hosted_zone_config(input);
         self
     }
@@ -233,19 +208,13 @@ impl CreateHostedZoneFluentBuilder {
     }
     /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route&nbsp;53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
     /// <p>If you are using a reusable delegation set to create a public hosted zone for a subdomain, make sure that the parent hosted zone doesn't use one or more of the same name servers. If you have overlapping nameservers, the operation will cause a <code>ConflictingDomainsExist</code> error.</p>
-    pub fn delegation_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delegation_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delegation_set_id(input.into());
         self
     }
     /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route&nbsp;53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
     /// <p>If you are using a reusable delegation set to create a public hosted zone for a subdomain, make sure that the parent hosted zone doesn't use one or more of the same name servers. If you have overlapping nameservers, the operation will cause a <code>ConflictingDomainsExist</code> error.</p>
-    pub fn set_delegation_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delegation_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delegation_set_id(input);
         self
     }

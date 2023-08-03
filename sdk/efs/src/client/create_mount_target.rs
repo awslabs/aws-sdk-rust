@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`availability_zone_name(Option<String>)`](crate::operation::create_mount_target::CreateMountTargetOutput::availability_zone_name): <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
     ///   - [`vpc_id(Option<String>)`](crate::operation::create_mount_target::CreateMountTargetOutput::vpc_id): <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
     /// - On failure, responds with [`SdkError<CreateMountTargetError>`](crate::operation::create_mount_target::CreateMountTargetError)
-    pub fn create_mount_target(
-        &self,
-    ) -> crate::operation::create_mount_target::builders::CreateMountTargetFluentBuilder {
-        crate::operation::create_mount_target::builders::CreateMountTargetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_mount_target(&self) -> crate::operation::create_mount_target::builders::CreateMountTargetFluentBuilder {
+        crate::operation::create_mount_target::builders::CreateMountTargetFluentBuilder::new(self.handle.clone())
     }
 }

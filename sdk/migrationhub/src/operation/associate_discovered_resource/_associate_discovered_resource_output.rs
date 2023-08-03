@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateDiscoveredResourceOutput {
 }
 impl AssociateDiscoveredResourceOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDiscoveredResourceOutput`](crate::operation::associate_discovered_resource::AssociateDiscoveredResourceOutput).
-    pub fn builder() -> crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceOutputBuilder{
+    pub fn builder() -> crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceOutputBuilder {
         crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDiscoveredResourceOutput`](crate::operation::associate_discovered_resource::AssociateDiscoveredResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDiscoveredResourceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl AssociateDiscoveredResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateDiscoveredResourceOutput`](crate::operation::associate_discovered_resource::AssociateDiscoveredResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_discovered_resource::AssociateDiscoveredResourceOutput {
+    pub fn build(self) -> crate::operation::associate_discovered_resource::AssociateDiscoveredResourceOutput {
         crate::operation::associate_discovered_resource::AssociateDiscoveredResourceOutput {
             _request_id: self._request_id,
         }

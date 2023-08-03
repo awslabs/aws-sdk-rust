@@ -171,25 +171,20 @@ impl PutScheduledActionInput {
         self.end_time.as_ref()
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
-    pub fn scalable_target_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScalableTargetAction> {
+    pub fn scalable_target_action(&self) -> ::std::option::Option<&crate::types::ScalableTargetAction> {
         self.scalable_target_action.as_ref()
     }
 }
 impl PutScheduledActionInput {
     /// Creates a new builder-style object to manufacture [`PutScheduledActionInput`](crate::operation::put_scheduled_action::PutScheduledActionInput).
-    pub fn builder(
-    ) -> crate::operation::put_scheduled_action::builders::PutScheduledActionInputBuilder {
+    pub fn builder() -> crate::operation::put_scheduled_action::builders::PutScheduledActionInputBuilder {
         crate::operation::put_scheduled_action::builders::PutScheduledActionInputBuilder::default()
     }
 }
 
 /// A builder for [`PutScheduledActionInput`](crate::operation::put_scheduled_action::PutScheduledActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutScheduledActionInputBuilder {
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     pub(crate) schedule: ::std::option::Option<::std::string::String>,
@@ -208,10 +203,7 @@ impl PutScheduledActionInputBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.service_namespace = input;
         self
     }
@@ -281,18 +273,12 @@ impl PutScheduledActionInputBuilder {
         &self.timezone
     }
     /// <p>The name of the scheduled action. This name must be unique among all other scheduled actions on the specified scalable target. </p>
-    pub fn scheduled_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scheduled action. This name must be unique among all other scheduled actions on the specified scalable target. </p>
-    pub fn set_scheduled_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_action_name = input;
         self
     }
@@ -423,10 +409,7 @@ impl PutScheduledActionInputBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
         self
     }
@@ -454,9 +437,7 @@ impl PutScheduledActionInputBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
     }
     /// <p>The date and time for this scheduled action to start, in UTC.</p>
@@ -465,10 +446,7 @@ impl PutScheduledActionInputBuilder {
         self
     }
     /// <p>The date and time for this scheduled action to start, in UTC.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -482,10 +460,7 @@ impl PutScheduledActionInputBuilder {
         self
     }
     /// <p>The date and time for the recurring schedule to end, in UTC.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -499,38 +474,28 @@ impl PutScheduledActionInputBuilder {
         self
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
-    pub fn set_scalable_target_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableTargetAction>,
-    ) -> Self {
+    pub fn set_scalable_target_action(mut self, input: ::std::option::Option<crate::types::ScalableTargetAction>) -> Self {
         self.scalable_target_action = input;
         self
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
-    pub fn get_scalable_target_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableTargetAction> {
+    pub fn get_scalable_target_action(&self) -> &::std::option::Option<crate::types::ScalableTargetAction> {
         &self.scalable_target_action
     }
     /// Consumes the builder and constructs a [`PutScheduledActionInput`](crate::operation::put_scheduled_action::PutScheduledActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_scheduled_action::PutScheduledActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_scheduled_action::PutScheduledActionInput {
-                service_namespace: self.service_namespace,
-                schedule: self.schedule,
-                timezone: self.timezone,
-                scheduled_action_name: self.scheduled_action_name,
-                resource_id: self.resource_id,
-                scalable_dimension: self.scalable_dimension,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                scalable_target_action: self.scalable_target_action,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_scheduled_action::PutScheduledActionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_scheduled_action::PutScheduledActionInput {
+            service_namespace: self.service_namespace,
+            schedule: self.schedule,
+            timezone: self.timezone,
+            scheduled_action_name: self.scheduled_action_name,
+            resource_id: self.resource_id,
+            scalable_dimension: self.scalable_dimension,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            scalable_target_action: self.scalable_target_action,
+        })
     }
 }

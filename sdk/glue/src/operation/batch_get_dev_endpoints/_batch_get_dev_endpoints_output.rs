@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetDevEndpointsOutput {
 }
 impl BatchGetDevEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDevEndpointsOutput`](crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsOutputBuilder {
         crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetDevEndpointsOutput`](crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDevEndpointsOutputBuilder {
     pub(crate) dev_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>>,
-    pub(crate) dev_endpoints_not_found:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dev_endpoints_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetDevEndpointsOutputBuilder {
@@ -59,17 +54,12 @@ impl BatchGetDevEndpointsOutputBuilder {
         self
     }
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-    pub fn set_dev_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>>,
-    ) -> Self {
+    pub fn set_dev_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>>) -> Self {
         self.dev_endpoints = input;
         self
     }
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-    pub fn get_dev_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>> {
+    pub fn get_dev_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>> {
         &self.dev_endpoints
     }
     /// Appends an item to `dev_endpoints_not_found`.
@@ -77,27 +67,19 @@ impl BatchGetDevEndpointsOutputBuilder {
     /// To override the contents of this collection use [`set_dev_endpoints_not_found`](Self::set_dev_endpoints_not_found).
     ///
     /// <p>A list of <code>DevEndpoints</code> not found.</p>
-    pub fn dev_endpoints_not_found(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dev_endpoints_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dev_endpoints_not_found.unwrap_or_default();
         v.push(input.into());
         self.dev_endpoints_not_found = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>DevEndpoints</code> not found.</p>
-    pub fn set_dev_endpoints_not_found(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dev_endpoints_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dev_endpoints_not_found = input;
         self
     }
     /// <p>A list of <code>DevEndpoints</code> not found.</p>
-    pub fn get_dev_endpoints_not_found(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dev_endpoints_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dev_endpoints_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

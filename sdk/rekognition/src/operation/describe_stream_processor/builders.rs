@@ -26,8 +26,7 @@ impl DescribeStreamProcessorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStreamProcessorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_stream_processor::builders::DescribeStreamProcessorInputBuilder,
+    inner: crate::operation::describe_stream_processor::builders::DescribeStreamProcessorInputBuilder,
 }
 impl DescribeStreamProcessorFluentBuilder {
     /// Creates a new `DescribeStreamProcessor`.
@@ -38,10 +37,7 @@ impl DescribeStreamProcessorFluentBuilder {
         }
     }
     /// Access the DescribeStreamProcessor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_stream_processor::builders::DescribeStreamProcessorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_stream_processor::builders::DescribeStreamProcessorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeStreamProcessorFluentBuilder {
             crate::operation::describe_stream_processor::DescribeStreamProcessor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stream_processor::DescribeStreamProcessorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream_processor::DescribeStreamProcessorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeStreamProcessorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeStreamProcessorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stream_processor::DescribeStreamProcessorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stream_processor::DescribeStreamProcessorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream_processor::DescribeStreamProcessorError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeStreamProcessorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stream_processor::DescribeStreamProcessorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stream_processor::DescribeStreamProcessorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream_processor::DescribeStreamProcessorError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DescribeStreamProcessorFluentBuilder {
             crate::operation::describe_stream_processor::DescribeStreamProcessor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stream_processor::DescribeStreamProcessorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream_processor::DescribeStreamProcessorError>,
     > {
         self.customize_middleware().await
     }

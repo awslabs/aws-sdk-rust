@@ -10,10 +10,7 @@ impl DescribeAssetModelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_asset_model::DescribeAssetModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_model::DescribeAssetModelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_model::DescribeAssetModelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_asset_model();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeAssetModelFluentBuilder {
         }
     }
     /// Access the DescribeAssetModel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_asset_model::builders::DescribeAssetModelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_asset_model::builders::DescribeAssetModelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeAssetModelFluentBuilder {
             crate::operation::describe_asset_model::DescribeAssetModel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_model::DescribeAssetModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_model::DescribeAssetModelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeAssetModelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeAssetModelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_asset_model::DescribeAssetModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_model::DescribeAssetModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_model::DescribeAssetModelError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeAssetModelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_asset_model::DescribeAssetModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_model::DescribeAssetModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_model::DescribeAssetModelError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribeAssetModelFluentBuilder {
             crate::operation::describe_asset_model::DescribeAssetModel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_model::DescribeAssetModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_model::DescribeAssetModelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the asset model.</p>
-    pub fn asset_model_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_model_id(input.into());
         self
     }
     /// <p>The ID of the asset model.</p>
-    pub fn set_asset_model_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_model_id(input);
         self
     }

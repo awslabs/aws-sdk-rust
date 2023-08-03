@@ -79,9 +79,7 @@ impl OpsItemRelatedItemSummary {
 
 /// A builder for [`OpsItemRelatedItemSummary`](crate::types::OpsItemRelatedItemSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsItemRelatedItemSummaryBuilder {
     pub(crate) ops_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
@@ -109,18 +107,12 @@ impl OpsItemRelatedItemSummaryBuilder {
         &self.ops_item_id
     }
     /// <p>The association ID.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -129,18 +121,12 @@ impl OpsItemRelatedItemSummaryBuilder {
         &self.association_id
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -149,18 +135,12 @@ impl OpsItemRelatedItemSummaryBuilder {
         &self.resource_type
     }
     /// <p>The association type.</p>
-    pub fn association_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association type.</p>
-    pub fn set_association_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_type = input;
         self
     }
@@ -188,10 +168,7 @@ impl OpsItemRelatedItemSummaryBuilder {
         self
     }
     /// <p>Information about the user or resource that created an OpsItem event.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::OpsItemIdentity>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::OpsItemIdentity>) -> Self {
         self.created_by = input;
         self
     }
@@ -205,10 +182,7 @@ impl OpsItemRelatedItemSummaryBuilder {
         self
     }
     /// <p>The time the related-item association was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -222,10 +196,7 @@ impl OpsItemRelatedItemSummaryBuilder {
         self
     }
     /// <p>Information about the user or resource that created an OpsItem event.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<crate::types::OpsItemIdentity>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::OpsItemIdentity>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -239,10 +210,7 @@ impl OpsItemRelatedItemSummaryBuilder {
         self
     }
     /// <p>The time the related-item association was last updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

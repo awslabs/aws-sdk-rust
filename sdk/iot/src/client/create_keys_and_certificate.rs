@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`certificate_pem(Option<String>)`](crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput::certificate_pem): <p>The certificate data, in PEM format.</p>
     ///   - [`key_pair(Option<KeyPair>)`](crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput::key_pair): <p>The generated key pair.</p>
     /// - On failure, responds with [`SdkError<CreateKeysAndCertificateError>`](crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError)
-    pub fn create_keys_and_certificate(&self) -> crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateFluentBuilder{
+    pub fn create_keys_and_certificate(&self) -> crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateFluentBuilder {
         crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -72,9 +72,7 @@ impl AwsIamAccessKeyDetails {
         self.access_key_id.as_deref()
     }
     /// <p>Information about the session that the key was used for.</p>
-    pub fn session_context(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsIamAccessKeySessionContext> {
+    pub fn session_context(&self) -> ::std::option::Option<&crate::types::AwsIamAccessKeySessionContext> {
         self.session_context.as_ref()
     }
 }
@@ -87,9 +85,7 @@ impl AwsIamAccessKeyDetails {
 
 /// A builder for [`AwsIamAccessKeyDetails`](crate::types::AwsIamAccessKeyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIamAccessKeyDetailsBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AwsIamAccessKeyStatus>,
@@ -128,10 +124,7 @@ impl AwsIamAccessKeyDetailsBuilder {
         self
     }
     /// <p>The status of the IAM access key related to a finding.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsIamAccessKeyStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AwsIamAccessKeyStatus>) -> Self {
         self.status = input;
         self
     }
@@ -171,18 +164,12 @@ impl AwsIamAccessKeyDetailsBuilder {
         &self.principal_id
     }
     /// <p>The type of principal associated with an access key.</p>
-    pub fn principal_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of principal associated with an access key.</p>
-    pub fn set_principal_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_type = input;
         self
     }
@@ -191,18 +178,12 @@ impl AwsIamAccessKeyDetailsBuilder {
         &self.principal_type
     }
     /// <p>The name of the principal.</p>
-    pub fn principal_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the principal.</p>
-    pub fn set_principal_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_name = input;
         self
     }
@@ -225,18 +206,12 @@ impl AwsIamAccessKeyDetailsBuilder {
         &self.account_id
     }
     /// <p>The identifier of the access key.</p>
-    pub fn access_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the access key.</p>
-    pub fn set_access_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_key_id = input;
         self
     }
@@ -250,17 +225,12 @@ impl AwsIamAccessKeyDetailsBuilder {
         self
     }
     /// <p>Information about the session that the key was used for.</p>
-    pub fn set_session_context(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsIamAccessKeySessionContext>,
-    ) -> Self {
+    pub fn set_session_context(mut self, input: ::std::option::Option<crate::types::AwsIamAccessKeySessionContext>) -> Self {
         self.session_context = input;
         self
     }
     /// <p>Information about the session that the key was used for.</p>
-    pub fn get_session_context(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsIamAccessKeySessionContext> {
+    pub fn get_session_context(&self) -> &::std::option::Option<crate::types::AwsIamAccessKeySessionContext> {
         &self.session_context
     }
     /// Consumes the builder and constructs a [`AwsIamAccessKeyDetails`](crate::types::AwsIamAccessKeyDetails).

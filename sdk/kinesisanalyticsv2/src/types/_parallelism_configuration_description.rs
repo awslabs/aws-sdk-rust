@@ -51,9 +51,7 @@ impl ParallelismConfigurationDescription {
 
 /// A builder for [`ParallelismConfigurationDescription`](crate::types::ParallelismConfigurationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParallelismConfigurationDescriptionBuilder {
     pub(crate) configuration_type: ::std::option::Option<crate::types::ConfigurationType>,
     pub(crate) parallelism: ::std::option::Option<i32>,
@@ -68,17 +66,12 @@ impl ParallelismConfigurationDescriptionBuilder {
         self
     }
     /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. </p>
-    pub fn set_configuration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationType>,
-    ) -> Self {
+    pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::ConfigurationType>) -> Self {
         self.configuration_type = input;
         self
     }
     /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. </p>
-    pub fn get_configuration_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationType> {
+    pub fn get_configuration_type(&self) -> &::std::option::Option<crate::types::ConfigurationType> {
         &self.configuration_type
     }
     /// <p>Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the <code>CurrentParallelism</code> value in response to application load. The service can increase <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>

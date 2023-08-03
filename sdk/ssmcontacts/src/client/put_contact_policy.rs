@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder::set_policy): <p>Details of the resource policy.</p>
     /// - On success, responds with [`PutContactPolicyOutput`](crate::operation::put_contact_policy::PutContactPolicyOutput)
     /// - On failure, responds with [`SdkError<PutContactPolicyError>`](crate::operation::put_contact_policy::PutContactPolicyError)
-    pub fn put_contact_policy(
-        &self,
-    ) -> crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder {
-        crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_contact_policy(&self) -> crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder {
+        crate::operation::put_contact_policy::builders::PutContactPolicyFluentBuilder::new(self.handle.clone())
     }
 }

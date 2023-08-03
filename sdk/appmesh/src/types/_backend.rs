@@ -20,9 +20,7 @@ impl Backend {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`VirtualService`](crate::types::Backend::VirtualService), extracting the inner [`VirtualServiceBackend`](crate::types::VirtualServiceBackend).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_virtual_service(
-        &self,
-    ) -> ::std::result::Result<&crate::types::VirtualServiceBackend, &Self> {
+    pub fn as_virtual_service(&self) -> ::std::result::Result<&crate::types::VirtualServiceBackend, &Self> {
         if let Backend::VirtualService(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

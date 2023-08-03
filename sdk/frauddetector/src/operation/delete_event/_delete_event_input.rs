@@ -36,9 +36,7 @@ impl DeleteEventInput {
 
 /// A builder for [`DeleteEventInput`](crate::operation::delete_event::DeleteEventInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEventInputBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_type_name: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl DeleteEventInputBuilder {
         &self.event_id
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type_name = input;
         self
     }
@@ -94,12 +86,7 @@ impl DeleteEventInputBuilder {
         &self.delete_audit_history
     }
     /// Consumes the builder and constructs a [`DeleteEventInput`](crate::operation::delete_event::DeleteEventInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_event::DeleteEventInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_event::DeleteEventInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_event::DeleteEventInput {
             event_id: self.event_id,
             event_type_name: self.event_type_name,

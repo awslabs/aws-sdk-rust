@@ -30,9 +30,7 @@ impl JobMessages {
 
 /// A builder for [`JobMessages`](crate::types::JobMessages).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobMessagesBuilder {
     pub(crate) info: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) warning: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -50,10 +48,7 @@ impl JobMessagesBuilder {
         self
     }
     /// List of messages that are informational only and don't indicate a problem with your job.
-    pub fn set_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_info(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.info = input;
         self
     }
@@ -73,10 +68,7 @@ impl JobMessagesBuilder {
         self
     }
     /// List of messages that warn about conditions that might cause your job not to run or to fail.
-    pub fn set_warning(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_warning(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.warning = input;
         self
     }

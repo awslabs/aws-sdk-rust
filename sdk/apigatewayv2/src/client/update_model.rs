@@ -16,9 +16,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::update_model::UpdateModelOutput::name): <p>The name of the model. Must be alphanumeric.</p>
     ///   - [`schema(Option<String>)`](crate::operation::update_model::UpdateModelOutput::schema): <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     /// - On failure, responds with [`SdkError<UpdateModelError>`](crate::operation::update_model::UpdateModelError)
-    pub fn update_model(
-        &self,
-    ) -> crate::operation::update_model::builders::UpdateModelFluentBuilder {
+    pub fn update_model(&self) -> crate::operation::update_model::builders::UpdateModelFluentBuilder {
         crate::operation::update_model::builders::UpdateModelFluentBuilder::new(self.handle.clone())
     }
 }

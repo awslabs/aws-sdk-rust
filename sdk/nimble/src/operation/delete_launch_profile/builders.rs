@@ -37,9 +37,7 @@ impl DeleteLaunchProfileFluentBuilder {
         }
     }
     /// Access the DeleteLaunchProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_launch_profile::builders::DeleteLaunchProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_launch_profile::builders::DeleteLaunchProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteLaunchProfileFluentBuilder {
             crate::operation::delete_launch_profile::DeleteLaunchProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_launch_profile::DeleteLaunchProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_launch_profile::DeleteLaunchProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteLaunchProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteLaunchProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_launch_profile::DeleteLaunchProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_launch_profile::DeleteLaunchProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_launch_profile::DeleteLaunchProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteLaunchProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_launch_profile::DeleteLaunchProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_launch_profile::DeleteLaunchProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_launch_profile::DeleteLaunchProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteLaunchProfileFluentBuilder {
             crate::operation::delete_launch_profile::DeleteLaunchProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_launch_profile::DeleteLaunchProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_launch_profile::DeleteLaunchProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl DeleteLaunchProfileFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_profile_id(input.into());
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_profile_id(input);
         self
     }

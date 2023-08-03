@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`RegisterInstanceEventNotificationAttributesOutput`](crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput) with field(s):
     ///   - [`instance_tag_attribute(Option<InstanceTagNotificationAttribute>)`](crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput::instance_tag_attribute): <p>The resulting set of tag keys.</p>
     /// - On failure, responds with [`SdkError<RegisterInstanceEventNotificationAttributesError>`](crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError)
-    pub fn register_instance_event_notification_attributes(&self) -> crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesFluentBuilder{
-        crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesFluentBuilder::new(self.handle.clone())
+    pub fn register_instance_event_notification_attributes(
+        &self,
+    ) -> crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesFluentBuilder {
+        crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

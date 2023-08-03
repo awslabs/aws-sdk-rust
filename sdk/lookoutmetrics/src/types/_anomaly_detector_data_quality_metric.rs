@@ -9,8 +9,7 @@ pub struct AnomalyDetectorDataQualityMetric {
     pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
     #[doc(hidden)]
-    pub metric_set_data_quality_metric_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDataQualityMetric>>,
+    pub metric_set_data_quality_metric_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDataQualityMetric>>,
 }
 impl AnomalyDetectorDataQualityMetric {
     /// <p>The start time for the data quality metrics collection.</p>
@@ -18,9 +17,7 @@ impl AnomalyDetectorDataQualityMetric {
         self.start_timestamp.as_ref()
     }
     /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
-    pub fn metric_set_data_quality_metric_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MetricSetDataQualityMetric]> {
+    pub fn metric_set_data_quality_metric_list(&self) -> ::std::option::Option<&[crate::types::MetricSetDataQualityMetric]> {
         self.metric_set_data_quality_metric_list.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl AnomalyDetectorDataQualityMetric {
 
 /// A builder for [`AnomalyDetectorDataQualityMetric`](crate::types::AnomalyDetectorDataQualityMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyDetectorDataQualityMetricBuilder {
     pub(crate) start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) metric_set_data_quality_metric_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDataQualityMetric>>,
+    pub(crate) metric_set_data_quality_metric_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDataQualityMetric>>,
 }
 impl AnomalyDetectorDataQualityMetricBuilder {
     /// <p>The start time for the data quality metrics collection.</p>
@@ -48,10 +42,7 @@ impl AnomalyDetectorDataQualityMetricBuilder {
         self
     }
     /// <p>The start time for the data quality metrics collection.</p>
-    pub fn set_start_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_timestamp = input;
         self
     }
@@ -64,10 +55,7 @@ impl AnomalyDetectorDataQualityMetricBuilder {
     /// To override the contents of this collection use [`set_metric_set_data_quality_metric_list`](Self::set_metric_set_data_quality_metric_list).
     ///
     /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
-    pub fn metric_set_data_quality_metric_list(
-        mut self,
-        input: crate::types::MetricSetDataQualityMetric,
-    ) -> Self {
+    pub fn metric_set_data_quality_metric_list(mut self, input: crate::types::MetricSetDataQualityMetric) -> Self {
         let mut v = self.metric_set_data_quality_metric_list.unwrap_or_default();
         v.push(input);
         self.metric_set_data_quality_metric_list = ::std::option::Option::Some(v);
@@ -82,9 +70,7 @@ impl AnomalyDetectorDataQualityMetricBuilder {
         self
     }
     /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
-    pub fn get_metric_set_data_quality_metric_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetDataQualityMetric>> {
+    pub fn get_metric_set_data_quality_metric_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetDataQualityMetric>> {
         &self.metric_set_data_quality_metric_list
     }
     /// Consumes the builder and constructs a [`AnomalyDetectorDataQualityMetric`](crate::types::AnomalyDetectorDataQualityMetric).

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`components(Option<Vec<Component>>)`](crate::operation::list_components::ListComponentsOutput::components): <p>A list that summarizes each component.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_components::ListComponentsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::operation::list_components::ListComponentsError)
-    pub fn list_components(
-        &self,
-    ) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {
-        crate::operation::list_components::builders::ListComponentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_components(&self) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {
+        crate::operation::list_components::builders::ListComponentsFluentBuilder::new(self.handle.clone())
     }
 }

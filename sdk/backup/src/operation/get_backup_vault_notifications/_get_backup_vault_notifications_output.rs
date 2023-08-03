@@ -42,38 +42,29 @@ impl ::aws_http::request_id::RequestId for GetBackupVaultNotificationsOutput {
 }
 impl GetBackupVaultNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`GetBackupVaultNotificationsOutput`](crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsOutput).
-    pub fn builder() -> crate::operation::get_backup_vault_notifications::builders::GetBackupVaultNotificationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_backup_vault_notifications::builders::GetBackupVaultNotificationsOutputBuilder {
         crate::operation::get_backup_vault_notifications::builders::GetBackupVaultNotificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBackupVaultNotificationsOutput`](crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBackupVaultNotificationsOutputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) backup_vault_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) backup_vault_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>>,
+    pub(crate) backup_vault_events: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>>,
     _request_id: Option<String>,
 }
 impl GetBackupVaultNotificationsOutputBuilder {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_name = input;
         self
     }
@@ -82,18 +73,12 @@ impl GetBackupVaultNotificationsOutputBuilder {
         &self.backup_vault_name
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn backup_vault_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn set_backup_vault_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_arn = input;
         self
     }
@@ -102,18 +87,12 @@ impl GetBackupVaultNotificationsOutputBuilder {
         &self.backup_vault_arn
     }
     /// <p>An ARN that uniquely identifies an Amazon Simple Notification Service (Amazon SNS) topic; for example, <code>arn:aws:sns:us-west-2:111122223333:MyTopic</code>.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An ARN that uniquely identifies an Amazon Simple Notification Service (Amazon SNS) topic; for example, <code>arn:aws:sns:us-west-2:111122223333:MyTopic</code>.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -133,17 +112,12 @@ impl GetBackupVaultNotificationsOutputBuilder {
         self
     }
     /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
-    pub fn set_backup_vault_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>>,
-    ) -> Self {
+    pub fn set_backup_vault_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>>) -> Self {
         self.backup_vault_events = input;
         self
     }
     /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
-    pub fn get_backup_vault_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>> {
+    pub fn get_backup_vault_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>> {
         &self.backup_vault_events
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -156,9 +130,7 @@ impl GetBackupVaultNotificationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetBackupVaultNotificationsOutput`](crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsOutput {
+    pub fn build(self) -> crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsOutput {
         crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsOutput {
             backup_vault_name: self.backup_vault_name,
             backup_vault_arn: self.backup_vault_arn,

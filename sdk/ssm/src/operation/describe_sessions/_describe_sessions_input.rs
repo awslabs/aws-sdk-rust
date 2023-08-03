@@ -36,17 +36,14 @@ impl DescribeSessionsInput {
 }
 impl DescribeSessionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSessionsInput`](crate::operation::describe_sessions::DescribeSessionsInput).
-    pub fn builder() -> crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder {
         crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSessionsInput`](crate::operation::describe_sessions::DescribeSessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSessionsInputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::SessionState>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -108,26 +105,18 @@ impl DescribeSessionsInputBuilder {
         self
     }
     /// <p>One or more filters to limit the type of sessions returned by the request.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SessionFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SessionFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>One or more filters to limit the type of sessions returned by the request.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeSessionsInput`](crate::operation::describe_sessions::DescribeSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_sessions::DescribeSessionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_sessions::DescribeSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_sessions::DescribeSessionsInput {
             state: self.state,
             max_results: self.max_results,

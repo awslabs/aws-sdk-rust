@@ -18,10 +18,7 @@ pub fn ser_create_collaboration_input(
     if let Some(var_5) = &input.data_encryption_metadata {
         #[allow(unused_mut)]
         let mut object_6 = object.key("dataEncryptionMetadata").start_object();
-        crate::protocol_serde::shape_data_encryption_metadata::ser_data_encryption_metadata(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_data_encryption_metadata::ser_data_encryption_metadata(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.description {
@@ -33,10 +30,7 @@ pub fn ser_create_collaboration_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_member_specification::ser_member_specification(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_member_specification::ser_member_specification(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }

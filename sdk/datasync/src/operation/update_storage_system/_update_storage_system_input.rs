@@ -28,9 +28,7 @@ impl UpdateStorageSystemInput {
         self.storage_system_arn.as_deref()
     }
     /// <p>Specifies the server name and network port required to connect with your on-premises storage system's management interface.</p>
-    pub fn server_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DiscoveryServerConfiguration> {
+    pub fn server_configuration(&self) -> ::std::option::Option<&crate::types::DiscoveryServerConfiguration> {
         self.server_configuration.as_ref()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads your on-premises storage system. You can only specify one ARN.</p>
@@ -52,22 +50,17 @@ impl UpdateStorageSystemInput {
 }
 impl UpdateStorageSystemInput {
     /// Creates a new builder-style object to manufacture [`UpdateStorageSystemInput`](crate::operation::update_storage_system::UpdateStorageSystemInput).
-    pub fn builder(
-    ) -> crate::operation::update_storage_system::builders::UpdateStorageSystemInputBuilder {
-        crate::operation::update_storage_system::builders::UpdateStorageSystemInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_storage_system::builders::UpdateStorageSystemInputBuilder {
+        crate::operation::update_storage_system::builders::UpdateStorageSystemInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateStorageSystemInput`](crate::operation::update_storage_system::UpdateStorageSystemInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStorageSystemInputBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) server_configuration:
-        ::std::option::Option<crate::types::DiscoveryServerConfiguration>,
+    pub(crate) server_configuration: ::std::option::Option<crate::types::DiscoveryServerConfiguration>,
     pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
@@ -75,18 +68,12 @@ pub struct UpdateStorageSystemInputBuilder {
 }
 impl UpdateStorageSystemInputBuilder {
     /// <p>Specifies the ARN of the on-premises storage system that you want reconfigure.</p>
-    pub fn storage_system_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_system_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ARN of the on-premises storage system that you want reconfigure.</p>
-    pub fn set_storage_system_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_system_arn = input;
         self
     }
@@ -95,25 +82,17 @@ impl UpdateStorageSystemInputBuilder {
         &self.storage_system_arn
     }
     /// <p>Specifies the server name and network port required to connect with your on-premises storage system's management interface.</p>
-    pub fn server_configuration(
-        mut self,
-        input: crate::types::DiscoveryServerConfiguration,
-    ) -> Self {
+    pub fn server_configuration(mut self, input: crate::types::DiscoveryServerConfiguration) -> Self {
         self.server_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the server name and network port required to connect with your on-premises storage system's management interface.</p>
-    pub fn set_server_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryServerConfiguration>,
-    ) -> Self {
+    pub fn set_server_configuration(mut self, input: ::std::option::Option<crate::types::DiscoveryServerConfiguration>) -> Self {
         self.server_configuration = input;
         self
     }
     /// <p>Specifies the server name and network port required to connect with your on-premises storage system's management interface.</p>
-    pub fn get_server_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DiscoveryServerConfiguration> {
+    pub fn get_server_configuration(&self) -> &::std::option::Option<crate::types::DiscoveryServerConfiguration> {
         &self.server_configuration
     }
     /// Appends an item to `agent_arns`.
@@ -128,10 +107,7 @@ impl UpdateStorageSystemInputBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads your on-premises storage system. You can only specify one ARN.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
@@ -154,18 +130,12 @@ impl UpdateStorageSystemInputBuilder {
         &self.name
     }
     /// <p>Specifies the ARN of the Amazon CloudWatch log group for monitoring and logging discovery job events.</p>
-    pub fn cloud_watch_log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ARN of the Amazon CloudWatch log group for monitoring and logging discovery job events.</p>
-    pub fn set_cloud_watch_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = input;
         self
     }
@@ -179,10 +149,7 @@ impl UpdateStorageSystemInputBuilder {
         self
     }
     /// <p>Specifies the user name and password for accessing your on-premises storage system's management interface.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::Credentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
         self.credentials = input;
         self
     }
@@ -193,19 +160,15 @@ impl UpdateStorageSystemInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStorageSystemInput`](crate::operation::update_storage_system::UpdateStorageSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_storage_system::UpdateStorageSystemInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_storage_system::UpdateStorageSystemInput {
-                storage_system_arn: self.storage_system_arn,
-                server_configuration: self.server_configuration,
-                agent_arns: self.agent_arns,
-                name: self.name,
-                cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
-                credentials: self.credentials,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_storage_system::UpdateStorageSystemInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_storage_system::UpdateStorageSystemInput {
+            storage_system_arn: self.storage_system_arn,
+            server_configuration: self.server_configuration,
+            agent_arns: self.agent_arns,
+            name: self.name,
+            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
+            credentials: self.credentials,
+        })
     }
 }

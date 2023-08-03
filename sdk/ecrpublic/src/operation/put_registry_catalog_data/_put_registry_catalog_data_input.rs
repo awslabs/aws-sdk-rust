@@ -19,18 +19,14 @@ impl PutRegistryCatalogDataInput {
 }
 impl PutRegistryCatalogDataInput {
     /// Creates a new builder-style object to manufacture [`PutRegistryCatalogDataInput`](crate::operation::put_registry_catalog_data::PutRegistryCatalogDataInput).
-    pub fn builder(
-    ) -> crate::operation::put_registry_catalog_data::builders::PutRegistryCatalogDataInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_registry_catalog_data::builders::PutRegistryCatalogDataInputBuilder {
         crate::operation::put_registry_catalog_data::builders::PutRegistryCatalogDataInputBuilder::default()
     }
 }
 
 /// A builder for [`PutRegistryCatalogDataInput`](crate::operation::put_registry_catalog_data::PutRegistryCatalogDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRegistryCatalogDataInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }
@@ -62,10 +58,8 @@ impl PutRegistryCatalogDataInputBuilder {
         crate::operation::put_registry_catalog_data::PutRegistryCatalogDataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_registry_catalog_data::PutRegistryCatalogDataInput {
-                display_name: self.display_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_registry_catalog_data::PutRegistryCatalogDataInput {
+            display_name: self.display_name,
+        })
     }
 }

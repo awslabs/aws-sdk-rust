@@ -12,10 +12,7 @@ pub fn ser_associate_encryption_config_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_encryption_config::ser_encryption_config(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_encryption_config::ser_encryption_config(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

@@ -41,13 +41,7 @@
 /// Status of the ingestion process returned from scheduler service.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum IngestionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for IngestionStatus {
             "RUNNING" => IngestionStatus::Running,
             "STOP_REQUESTED" => IngestionStatus::StopRequested,
             "SUCCESS" => IngestionStatus::Success,
-            other => {
-                IngestionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => IngestionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

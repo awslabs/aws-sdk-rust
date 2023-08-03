@@ -23,16 +23,14 @@ impl TransferDomainToAnotherAwsAccountInput {
 }
 impl TransferDomainToAnotherAwsAccountInput {
     /// Creates a new builder-style object to manufacture [`TransferDomainToAnotherAwsAccountInput`](crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountInput).
-    pub fn builder() -> crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountInputBuilder{
+    pub fn builder() -> crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountInputBuilder {
         crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`TransferDomainToAnotherAwsAccountInput`](crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransferDomainToAnotherAwsAccountInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -67,14 +65,17 @@ impl TransferDomainToAnotherAwsAccountInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`TransferDomainToAnotherAwsAccountInput`](crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountInput {
-                domain_name: self.domain_name
-                ,
-                account_id: self.account_id
-                ,
-            }
+                domain_name: self.domain_name,
+                account_id: self.account_id,
+            },
         )
     }
 }

@@ -10,10 +10,7 @@ impl CreateHitInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_hit::CreateHitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hit::CreateHITError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hit::CreateHITError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_hit();
         fluent_builder.inner = self;
@@ -50,10 +47,7 @@ impl CreateHITFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_hit::CreateHIT,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_hit::CreateHIT, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_hit::CreateHITError>,
     > {
         let handle = self.handle.clone();
@@ -64,10 +58,7 @@ impl CreateHITFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -109,10 +100,7 @@ impl CreateHITFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_hit::CreateHIT,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_hit::CreateHIT, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_hit::CreateHITError>,
     > {
         self.customize_middleware().await
@@ -252,20 +240,14 @@ impl CreateHITFluentBuilder {
     /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
     /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
     /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
-    pub fn requester_annotation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requester_annotation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.requester_annotation(input.into());
         self
     }
     /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
     /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
     /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
-    pub fn set_requester_annotation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_requester_annotation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_requester_annotation(input);
         self
     }
@@ -280,44 +262,30 @@ impl CreateHITFluentBuilder {
     /// To override the contents of this collection use [`set_qualification_requirements`](Self::set_qualification_requirements).
     ///
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn qualification_requirements(
-        mut self,
-        input: crate::types::QualificationRequirement,
-    ) -> Self {
+    pub fn qualification_requirements(mut self, input: crate::types::QualificationRequirement) -> Self {
         self.inner = self.inner.qualification_requirements(input);
         self
     }
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn set_qualification_requirements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
-    ) -> Self {
+    pub fn set_qualification_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>) -> Self {
         self.inner = self.inner.set_qualification_requirements(input);
         self
     }
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn get_qualification_requirements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>> {
+    pub fn get_qualification_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>> {
         self.inner.get_qualification_requirements()
     }
     /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
     /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
     /// </note>
-    pub fn unique_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn unique_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.unique_request_token(input.into());
         self
     }
     /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
     /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
     /// </note>
-    pub fn set_unique_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_unique_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_unique_request_token(input);
         self
     }
@@ -333,17 +301,12 @@ impl CreateHITFluentBuilder {
         self
     }
     /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
-    pub fn set_assignment_review_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewPolicy>,
-    ) -> Self {
+    pub fn set_assignment_review_policy(mut self, input: ::std::option::Option<crate::types::ReviewPolicy>) -> Self {
         self.inner = self.inner.set_assignment_review_policy(input);
         self
     }
     /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
-    pub fn get_assignment_review_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReviewPolicy> {
+    pub fn get_assignment_review_policy(&self) -> &::std::option::Option<crate::types::ReviewPolicy> {
         self.inner.get_assignment_review_policy()
     }
     /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
@@ -352,10 +315,7 @@ impl CreateHITFluentBuilder {
         self
     }
     /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
-    pub fn set_hit_review_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewPolicy>,
-    ) -> Self {
+    pub fn set_hit_review_policy(mut self, input: ::std::option::Option<crate::types::ReviewPolicy>) -> Self {
         self.inner = self.inner.set_hit_review_policy(input);
         self
     }
@@ -365,19 +325,13 @@ impl CreateHITFluentBuilder {
     }
     /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
     /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
-    pub fn hit_layout_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hit_layout_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hit_layout_id(input.into());
         self
     }
     /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
     /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
-    pub fn set_hit_layout_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hit_layout_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hit_layout_id(input);
         self
     }
@@ -396,17 +350,12 @@ impl CreateHITFluentBuilder {
         self
     }
     /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
-    pub fn set_hit_layout_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>>,
-    ) -> Self {
+    pub fn set_hit_layout_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>>) -> Self {
         self.inner = self.inner.set_hit_layout_parameters(input);
         self
     }
     /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
-    pub fn get_hit_layout_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>> {
+    pub fn get_hit_layout_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>> {
         self.inner.get_hit_layout_parameters()
     }
 }

@@ -27,9 +27,7 @@ impl ConformancePackEvaluationFilters {
     }
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
-    pub fn compliance_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConformancePackComplianceType> {
+    pub fn compliance_type(&self) -> ::std::option::Option<&crate::types::ConformancePackComplianceType> {
         self.compliance_type.as_ref()
     }
     /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
@@ -52,9 +50,7 @@ impl ConformancePackEvaluationFilters {
 
 /// A builder for [`ConformancePackEvaluationFilters`](crate::types::ConformancePackEvaluationFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConformancePackEvaluationFiltersBuilder {
     pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,
@@ -67,27 +63,19 @@ impl ConformancePackEvaluationFiltersBuilder {
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
     ///
     /// <p>Filters the results by Config rule names.</p>
-    pub fn config_rule_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.config_rule_names.unwrap_or_default();
         v.push(input.into());
         self.config_rule_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filters the results by Config rule names.</p>
-    pub fn set_config_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.config_rule_names = input;
         self
     }
     /// <p>Filters the results by Config rule names.</p>
-    pub fn get_config_rule_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.config_rule_names
     }
     /// <p>Filters the results by compliance.</p>
@@ -98,33 +86,22 @@ impl ConformancePackEvaluationFiltersBuilder {
     }
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
-    pub fn set_compliance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConformancePackComplianceType>,
-    ) -> Self {
+    pub fn set_compliance_type(mut self, input: ::std::option::Option<crate::types::ConformancePackComplianceType>) -> Self {
         self.compliance_type = input;
         self
     }
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
-    pub fn get_compliance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConformancePackComplianceType> {
+    pub fn get_compliance_type(&self) -> &::std::option::Option<crate::types::ConformancePackComplianceType> {
         &self.compliance_type
     }
     /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -148,19 +125,14 @@ impl ConformancePackEvaluationFiltersBuilder {
     /// <p>Filters the results by resource IDs.</p> <note>
     /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
     /// </note>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_ids = input;
         self
     }
     /// <p>Filters the results by resource IDs.</p> <note>
     /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
     /// </note>
-    pub fn get_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_ids
     }
     /// Consumes the builder and constructs a [`ConformancePackEvaluationFilters`](crate::types::ConformancePackEvaluationFilters).

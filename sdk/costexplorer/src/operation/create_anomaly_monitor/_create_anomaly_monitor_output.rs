@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateAnomalyMonitorOutput {
 }
 impl CreateAnomalyMonitorOutput {
     /// Creates a new builder-style object to manufacture [`CreateAnomalyMonitorOutput`](crate::operation::create_anomaly_monitor::CreateAnomalyMonitorOutput).
-    pub fn builder(
-    ) -> crate::operation::create_anomaly_monitor::builders::CreateAnomalyMonitorOutputBuilder {
+    pub fn builder() -> crate::operation::create_anomaly_monitor::builders::CreateAnomalyMonitorOutputBuilder {
         crate::operation::create_anomaly_monitor::builders::CreateAnomalyMonitorOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAnomalyMonitorOutput`](crate::operation::create_anomaly_monitor::CreateAnomalyMonitorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAnomalyMonitorOutputBuilder {
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -33,9 +33,7 @@ impl VpcInterface {
         self.network_interface_ids.as_deref()
     }
     /// The type of network interface.
-    pub fn network_interface_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkInterfaceType> {
+    pub fn network_interface_type(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceType> {
         self.network_interface_type.as_ref()
     }
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
@@ -60,9 +58,7 @@ impl VpcInterface {
 
 /// A builder for [`VpcInterface`](crate::types::VpcInterface).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcInterfaceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -91,27 +87,19 @@ impl VpcInterfaceBuilder {
     /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
     ///
     /// IDs of the network interfaces created in customer's account by MediaConnect.
-    pub fn network_interface_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_interface_ids.unwrap_or_default();
         v.push(input.into());
         self.network_interface_ids = ::std::option::Option::Some(v);
         self
     }
     /// IDs of the network interfaces created in customer's account by MediaConnect.
-    pub fn set_network_interface_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_interface_ids = input;
         self
     }
     /// IDs of the network interfaces created in customer's account by MediaConnect.
-    pub fn get_network_interface_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_interface_ids
     }
     /// The type of network interface.
@@ -120,17 +108,12 @@ impl VpcInterfaceBuilder {
         self
     }
     /// The type of network interface.
-    pub fn set_network_interface_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInterfaceType>,
-    ) -> Self {
+    pub fn set_network_interface_type(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceType>) -> Self {
         self.network_interface_type = input;
         self
     }
     /// The type of network interface.
-    pub fn get_network_interface_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkInterfaceType> {
+    pub fn get_network_interface_type(&self) -> &::std::option::Option<crate::types::NetworkInterfaceType> {
         &self.network_interface_type
     }
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
@@ -152,27 +135,19 @@ impl VpcInterfaceBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// Security Group IDs to be used on ENI.
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// Security Group IDs to be used on ENI.
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// Security Group IDs to be used on ENI.
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// Subnet must be in the AZ of the Flow

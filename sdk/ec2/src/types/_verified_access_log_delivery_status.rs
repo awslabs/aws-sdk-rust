@@ -13,9 +13,7 @@ pub struct VerifiedAccessLogDeliveryStatus {
 }
 impl VerifiedAccessLogDeliveryStatus {
     /// <p>The status code.</p>
-    pub fn code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VerifiedAccessLogDeliveryStatusCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::VerifiedAccessLogDeliveryStatusCode> {
         self.code.as_ref()
     }
     /// <p>The status message.</p>
@@ -32,9 +30,7 @@ impl VerifiedAccessLogDeliveryStatus {
 
 /// A builder for [`VerifiedAccessLogDeliveryStatus`](crate::types::VerifiedAccessLogDeliveryStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogDeliveryStatusBuilder {
     pub(crate) code: ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -46,17 +42,12 @@ impl VerifiedAccessLogDeliveryStatusBuilder {
         self
     }
     /// <p>The status code.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatusCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatusCode>) -> Self {
         self.code = input;
         self
     }
     /// <p>The status code.</p>
-    pub fn get_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatusCode> {
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatusCode> {
         &self.code
     }
     /// <p>The status message.</p>

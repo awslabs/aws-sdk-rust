@@ -37,9 +37,7 @@ impl UpdateServiceActionFluentBuilder {
         }
     }
     /// Access the UpdateServiceAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_service_action::builders::UpdateServiceActionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_service_action::builders::UpdateServiceActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateServiceActionFluentBuilder {
             crate::operation::update_service_action::UpdateServiceAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_action::UpdateServiceActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_action::UpdateServiceActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateServiceActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateServiceActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_action::UpdateServiceActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_action::UpdateServiceActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_action::UpdateServiceActionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateServiceActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_action::UpdateServiceActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_action::UpdateServiceActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_action::UpdateServiceActionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateServiceActionFluentBuilder {
             crate::operation::update_service_action::UpdateServiceAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_action::UpdateServiceActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_action::UpdateServiceActionError>,
     > {
         self.customize_middleware().await
     }
@@ -155,23 +142,14 @@ impl UpdateServiceActionFluentBuilder {
     /// To override the contents of this collection use [`set_definition`](Self::set_definition).
     ///
     /// <p>A map that defines the self-service action.</p>
-    pub fn definition(
-        mut self,
-        k: crate::types::ServiceActionDefinitionKey,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn definition(mut self, k: crate::types::ServiceActionDefinitionKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.definition(k, v.into());
         self
     }
     /// <p>A map that defines the self-service action.</p>
     pub fn set_definition(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::ServiceActionDefinitionKey,
-                ::std::string::String,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_definition(input);
         self
@@ -179,12 +157,7 @@ impl UpdateServiceActionFluentBuilder {
     /// <p>A map that defines the self-service action.</p>
     pub fn get_definition(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ServiceActionDefinitionKey,
-            ::std::string::String,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>> {
         self.inner.get_definition()
     }
     /// <p>The self-service action description.</p>
@@ -206,10 +179,7 @@ impl UpdateServiceActionFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -218,10 +188,7 @@ impl UpdateServiceActionFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }

@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::create_legal_hold::CreateLegalHoldOutput::creation_date): <p>Time in number format when legal hold was created.</p>
     ///   - [`recovery_point_selection(Option<RecoveryPointSelection>)`](crate::operation::create_legal_hold::CreateLegalHoldOutput::recovery_point_selection): <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
     /// - On failure, responds with [`SdkError<CreateLegalHoldError>`](crate::operation::create_legal_hold::CreateLegalHoldError)
-    pub fn create_legal_hold(
-        &self,
-    ) -> crate::operation::create_legal_hold::builders::CreateLegalHoldFluentBuilder {
-        crate::operation::create_legal_hold::builders::CreateLegalHoldFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_legal_hold(&self) -> crate::operation::create_legal_hold::builders::CreateLegalHoldFluentBuilder {
+        crate::operation::create_legal_hold::builders::CreateLegalHoldFluentBuilder::new(self.handle.clone())
     }
 }

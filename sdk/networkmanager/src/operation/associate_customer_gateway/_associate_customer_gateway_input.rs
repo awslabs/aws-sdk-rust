@@ -36,18 +36,14 @@ impl AssociateCustomerGatewayInput {
 }
 impl AssociateCustomerGatewayInput {
     /// Creates a new builder-style object to manufacture [`AssociateCustomerGatewayInput`](crate::operation::associate_customer_gateway::AssociateCustomerGatewayInput).
-    pub fn builder(
-    ) -> crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayInputBuilder {
         crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateCustomerGatewayInput`](crate::operation::associate_customer_gateway::AssociateCustomerGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateCustomerGatewayInputBuilder {
     pub(crate) customer_gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct AssociateCustomerGatewayInputBuilder {
 }
 impl AssociateCustomerGatewayInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-    pub fn customer_gateway_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-    pub fn set_customer_gateway_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_gateway_arn = input;
         self
     }
@@ -76,18 +66,12 @@ impl AssociateCustomerGatewayInputBuilder {
         &self.customer_gateway_arn
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -130,13 +114,11 @@ impl AssociateCustomerGatewayInputBuilder {
         crate::operation::associate_customer_gateway::AssociateCustomerGatewayInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_customer_gateway::AssociateCustomerGatewayInput {
-                customer_gateway_arn: self.customer_gateway_arn,
-                global_network_id: self.global_network_id,
-                device_id: self.device_id,
-                link_id: self.link_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_customer_gateway::AssociateCustomerGatewayInput {
+            customer_gateway_arn: self.customer_gateway_arn,
+            global_network_id: self.global_network_id,
+            device_id: self.device_id,
+            link_id: self.link_id,
+        })
     }
 }

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeMountTargetSecurityGroupsOutput`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput) with field(s):
     ///   - [`security_groups(Option<Vec<String>>)`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput::security_groups): <p>An array of security groups.</p>
     /// - On failure, responds with [`SdkError<DescribeMountTargetSecurityGroupsError>`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError)
-    pub fn describe_mount_target_security_groups(&self) -> crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsFluentBuilder{
+    pub fn describe_mount_target_security_groups(
+        &self,
+    ) -> crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsFluentBuilder {
         crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsFluentBuilder::new(self.handle.clone())
     }
 }

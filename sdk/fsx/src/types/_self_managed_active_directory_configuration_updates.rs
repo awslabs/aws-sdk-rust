@@ -58,21 +58,14 @@ impl ::std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdates {
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("dns_ips", &self.dns_ips);
         formatter.field("domain_name", &self.domain_name);
-        formatter.field(
-            "organizational_unit_distinguished_name",
-            &self.organizational_unit_distinguished_name,
-        );
-        formatter.field(
-            "file_system_administrators_group",
-            &self.file_system_administrators_group,
-        );
+        formatter.field("organizational_unit_distinguished_name", &self.organizational_unit_distinguished_name);
+        formatter.field("file_system_administrators_group", &self.file_system_administrators_group);
         formatter.finish()
     }
 }
 impl SelfManagedActiveDirectoryConfigurationUpdates {
     /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::types::SelfManagedActiveDirectoryConfigurationUpdates).
-    pub fn builder() -> crate::types::builders::SelfManagedActiveDirectoryConfigurationUpdatesBuilder
-    {
+    pub fn builder() -> crate::types::builders::SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
         crate::types::builders::SelfManagedActiveDirectoryConfigurationUpdatesBuilder::default()
     }
 }
@@ -132,10 +125,7 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
         self
     }
     /// <p>A list of up to three DNS server or domain controller IP addresses in your self-managed AD domain.</p>
-    pub fn set_dns_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ips = input;
         self
     }
@@ -158,47 +148,31 @@ impl SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
         &self.domain_name
     }
     /// <p>Specifies an updated fully qualified distinguished name of the organization unit within your self-managed AD.</p>
-    pub fn organizational_unit_distinguished_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_distinguished_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organizational_unit_distinguished_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies an updated fully qualified distinguished name of the organization unit within your self-managed AD.</p>
-    pub fn set_organizational_unit_distinguished_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organizational_unit_distinguished_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organizational_unit_distinguished_name = input;
         self
     }
     /// <p>Specifies an updated fully qualified distinguished name of the organization unit within your self-managed AD.</p>
-    pub fn get_organizational_unit_distinguished_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_organizational_unit_distinguished_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.organizational_unit_distinguished_name
     }
     /// <p>Specifies the updated name of the self-managed AD domain group whose members are granted administrative privileges for the Amazon FSx resource.</p>
-    pub fn file_system_administrators_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_administrators_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_administrators_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the updated name of the self-managed AD domain group whose members are granted administrative privileges for the Amazon FSx resource.</p>
-    pub fn set_file_system_administrators_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_administrators_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_administrators_group = input;
         self
     }
     /// <p>Specifies the updated name of the self-managed AD domain group whose members are granted administrative privileges for the Amazon FSx resource.</p>
-    pub fn get_file_system_administrators_group(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_file_system_administrators_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_administrators_group
     }
     /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::types::SelfManagedActiveDirectoryConfigurationUpdates).
@@ -220,14 +194,8 @@ impl ::std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdatesBuilder
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("dns_ips", &self.dns_ips);
         formatter.field("domain_name", &self.domain_name);
-        formatter.field(
-            "organizational_unit_distinguished_name",
-            &self.organizational_unit_distinguished_name,
-        );
-        formatter.field(
-            "file_system_administrators_group",
-            &self.file_system_administrators_group,
-        );
+        formatter.field("organizational_unit_distinguished_name", &self.organizational_unit_distinguished_name);
+        formatter.field("file_system_administrators_group", &self.file_system_administrators_group);
         formatter.finish()
     }
 }

@@ -58,9 +58,7 @@ impl NetworkResourceSummary {
 
 /// A builder for [`NetworkResourceSummary`](crate::types::NetworkResourceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkResourceSummaryBuilder {
     pub(crate) registered_gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct NetworkResourceSummaryBuilder {
 }
 impl NetworkResourceSummaryBuilder {
     /// <p>The ARN of the gateway.</p>
-    pub fn registered_gateway_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registered_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registered_gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the gateway.</p>
-    pub fn set_registered_gateway_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registered_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registered_gateway_arn = input;
         self
     }
@@ -105,18 +97,12 @@ impl NetworkResourceSummaryBuilder {
         &self.resource_arn
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }

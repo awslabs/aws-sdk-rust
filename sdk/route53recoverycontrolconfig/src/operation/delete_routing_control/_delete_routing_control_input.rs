@@ -15,34 +15,25 @@ impl DeleteRoutingControlInput {
 }
 impl DeleteRoutingControlInput {
     /// Creates a new builder-style object to manufacture [`DeleteRoutingControlInput`](crate::operation::delete_routing_control::DeleteRoutingControlInput).
-    pub fn builder(
-    ) -> crate::operation::delete_routing_control::builders::DeleteRoutingControlInputBuilder {
+    pub fn builder() -> crate::operation::delete_routing_control::builders::DeleteRoutingControlInputBuilder {
         crate::operation::delete_routing_control::builders::DeleteRoutingControlInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRoutingControlInput`](crate::operation::delete_routing_control::DeleteRoutingControlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRoutingControlInputBuilder {
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRoutingControlInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
-    pub fn routing_control_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
-    pub fn set_routing_control_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_control_arn = input;
         self
     }
@@ -53,14 +44,10 @@ impl DeleteRoutingControlInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRoutingControlInput`](crate::operation::delete_routing_control::DeleteRoutingControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_routing_control::DeleteRoutingControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_routing_control::DeleteRoutingControlInput {
-                routing_control_arn: self.routing_control_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_routing_control::DeleteRoutingControlInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_routing_control::DeleteRoutingControlInput {
+            routing_control_arn: self.routing_control_arn,
+        })
     }
 }

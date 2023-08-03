@@ -28,8 +28,7 @@ impl ListModelPackagingJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListModelPackagingJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsInputBuilder,
+    inner: crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsInputBuilder,
 }
 impl ListModelPackagingJobsFluentBuilder {
     /// Creates a new `ListModelPackagingJobs`.
@@ -40,10 +39,7 @@ impl ListModelPackagingJobsFluentBuilder {
         }
     }
     /// Access the ListModelPackagingJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl ListModelPackagingJobsFluentBuilder {
             crate::operation::list_model_packaging_jobs::ListModelPackagingJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_packaging_jobs::ListModelPackagingJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_packaging_jobs::ListModelPackagingJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl ListModelPackagingJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl ListModelPackagingJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_packaging_jobs::ListModelPackagingJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_packaging_jobs::ListModelPackagingJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_packaging_jobs::ListModelPackagingJobsError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl ListModelPackagingJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_packaging_jobs::ListModelPackagingJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_packaging_jobs::ListModelPackagingJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_packaging_jobs::ListModelPackagingJobsError>,
     > {
         self.send_middleware().await
     }
@@ -120,23 +107,15 @@ impl ListModelPackagingJobsFluentBuilder {
             crate::operation::list_model_packaging_jobs::ListModelPackagingJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_packaging_jobs::ListModelPackagingJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_packaging_jobs::ListModelPackagingJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_model_packaging_jobs::paginator::ListModelPackagingJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_model_packaging_jobs::paginator::ListModelPackagingJobsPaginator
-    {
-        crate::operation::list_model_packaging_jobs::paginator::ListModelPackagingJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_model_packaging_jobs::paginator::ListModelPackagingJobsPaginator {
+        crate::operation::list_model_packaging_jobs::paginator::ListModelPackagingJobsPaginator::new(self.handle, self.inner)
     }
     /// <p> The name of the project for which you want to list the model packaging jobs. </p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

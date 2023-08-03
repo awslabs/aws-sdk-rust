@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`force_unsubscribe_all(bool)`](crate::operation::delete_target::builders::DeleteTargetFluentBuilder::force_unsubscribe_all) / [`set_force_unsubscribe_all(bool)`](crate::operation::delete_target::builders::DeleteTargetFluentBuilder::set_force_unsubscribe_all): <p>A Boolean value that can be used to delete all associations with this Chatbot topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your Amazon Web Services account are deleted.</p>
     /// - On success, responds with [`DeleteTargetOutput`](crate::operation::delete_target::DeleteTargetOutput)
     /// - On failure, responds with [`SdkError<DeleteTargetError>`](crate::operation::delete_target::DeleteTargetError)
-    pub fn delete_target(
-        &self,
-    ) -> crate::operation::delete_target::builders::DeleteTargetFluentBuilder {
-        crate::operation::delete_target::builders::DeleteTargetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_target(&self) -> crate::operation::delete_target::builders::DeleteTargetFluentBuilder {
+        crate::operation::delete_target::builders::DeleteTargetFluentBuilder::new(self.handle.clone())
     }
 }

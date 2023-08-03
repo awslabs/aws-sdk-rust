@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateCustomEntityTypeOutput {
 }
 impl CreateCustomEntityTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomEntityTypeOutput`](crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeOutputBuilder {
         crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomEntityTypeOutput`](crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomEntityTypeOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl CreateCustomEntityTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateCustomEntityTypeOutput`](crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput {
+    pub fn build(self) -> crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput {
         crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput {
             name: self.name,
             _request_id: self._request_id,

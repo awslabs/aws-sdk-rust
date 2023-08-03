@@ -33,9 +33,7 @@ impl GetGroupPolicyInput {
 
 /// A builder for [`GetGroupPolicyInput`](crate::operation::get_group_policy::GetGroupPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupPolicyInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -78,10 +76,7 @@ impl GetGroupPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetGroupPolicyInput`](crate::operation::get_group_policy::GetGroupPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_group_policy::GetGroupPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_group_policy::GetGroupPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_group_policy::GetGroupPolicyInput {
             group_name: self.group_name,
             policy_name: self.policy_name,

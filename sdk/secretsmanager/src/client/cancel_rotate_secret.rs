@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::cancel_rotate_secret::CancelRotateSecretOutput::name): <p>The name of the secret.</p>
     ///   - [`version_id(Option<String>)`](crate::operation::cancel_rotate_secret::CancelRotateSecretOutput::version_id): <p>The unique identifier of the version of the secret created during the rotation. This version might not be complete, and should be evaluated for possible deletion. We recommend that you remove the <code>VersionStage</code> value <code>AWSPENDING</code> from this version so that Secrets Manager can delete it. Failing to clean up a cancelled rotation can block you from starting future rotations.</p>
     /// - On failure, responds with [`SdkError<CancelRotateSecretError>`](crate::operation::cancel_rotate_secret::CancelRotateSecretError)
-    pub fn cancel_rotate_secret(
-        &self,
-    ) -> crate::operation::cancel_rotate_secret::builders::CancelRotateSecretFluentBuilder {
-        crate::operation::cancel_rotate_secret::builders::CancelRotateSecretFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_rotate_secret(&self) -> crate::operation::cancel_rotate_secret::builders::CancelRotateSecretFluentBuilder {
+        crate::operation::cancel_rotate_secret::builders::CancelRotateSecretFluentBuilder::new(self.handle.clone())
     }
 }

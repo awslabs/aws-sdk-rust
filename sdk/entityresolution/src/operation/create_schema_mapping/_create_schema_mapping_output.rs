@@ -14,8 +14,7 @@ pub struct CreateSchemaMappingOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
     #[doc(hidden)]
-    pub mapped_input_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
+    pub mapped_input_fields: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
     _request_id: Option<String>,
 }
 impl CreateSchemaMappingOutput {
@@ -32,9 +31,7 @@ impl CreateSchemaMappingOutput {
         self.description.as_deref()
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    pub fn mapped_input_fields(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SchemaInputAttribute]> {
+    pub fn mapped_input_fields(&self) -> ::std::option::Option<&[crate::types::SchemaInputAttribute]> {
         self.mapped_input_fields.as_deref()
     }
 }
@@ -45,24 +42,19 @@ impl ::aws_http::request_id::RequestId for CreateSchemaMappingOutput {
 }
 impl CreateSchemaMappingOutput {
     /// Creates a new builder-style object to manufacture [`CreateSchemaMappingOutput`](crate::operation::create_schema_mapping::CreateSchemaMappingOutput).
-    pub fn builder(
-    ) -> crate::operation::create_schema_mapping::builders::CreateSchemaMappingOutputBuilder {
-        crate::operation::create_schema_mapping::builders::CreateSchemaMappingOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_schema_mapping::builders::CreateSchemaMappingOutputBuilder {
+        crate::operation::create_schema_mapping::builders::CreateSchemaMappingOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSchemaMappingOutput`](crate::operation::create_schema_mapping::CreateSchemaMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSchemaMappingOutputBuilder {
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) mapped_input_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
+    pub(crate) mapped_input_fields: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
     _request_id: Option<String>,
 }
 impl CreateSchemaMappingOutputBuilder {
@@ -120,17 +112,12 @@ impl CreateSchemaMappingOutputBuilder {
         self
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    pub fn set_mapped_input_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
-    ) -> Self {
+    pub fn set_mapped_input_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>) -> Self {
         self.mapped_input_fields = input;
         self
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    pub fn get_mapped_input_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>> {
+    pub fn get_mapped_input_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>> {
         &self.mapped_input_fields
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

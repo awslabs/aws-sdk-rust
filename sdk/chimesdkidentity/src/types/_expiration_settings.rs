@@ -17,9 +17,7 @@ impl ExpirationSettings {
         self.expiration_days
     }
     /// <p>Specifies the conditions under which an <code>AppInstanceUser</code> will expire.</p>
-    pub fn expiration_criterion(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExpirationCriterion> {
+    pub fn expiration_criterion(&self) -> ::std::option::Option<&crate::types::ExpirationCriterion> {
         self.expiration_criterion.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl ExpirationSettings {
 
 /// A builder for [`ExpirationSettings`](crate::types::ExpirationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExpirationSettingsBuilder {
     pub(crate) expiration_days: ::std::option::Option<i32>,
     pub(crate) expiration_criterion: ::std::option::Option<crate::types::ExpirationCriterion>,
@@ -60,17 +56,12 @@ impl ExpirationSettingsBuilder {
         self
     }
     /// <p>Specifies the conditions under which an <code>AppInstanceUser</code> will expire.</p>
-    pub fn set_expiration_criterion(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpirationCriterion>,
-    ) -> Self {
+    pub fn set_expiration_criterion(mut self, input: ::std::option::Option<crate::types::ExpirationCriterion>) -> Self {
         self.expiration_criterion = input;
         self
     }
     /// <p>Specifies the conditions under which an <code>AppInstanceUser</code> will expire.</p>
-    pub fn get_expiration_criterion(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExpirationCriterion> {
+    pub fn get_expiration_criterion(&self) -> &::std::option::Option<crate::types::ExpirationCriterion> {
         &self.expiration_criterion
     }
     /// Consumes the builder and constructs a [`ExpirationSettings`](crate::types::ExpirationSettings).

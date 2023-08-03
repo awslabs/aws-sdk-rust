@@ -5,8 +5,7 @@
 pub struct DescribeAppBlockBuilderAppBlockAssociationsOutput {
     /// <p>This list of app block builders associated with app blocks.</p>
     #[doc(hidden)]
-    pub app_block_builder_app_block_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAppBlockAssociation>>,
+    pub app_block_builder_app_block_associations: ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAppBlockAssociation>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeAppBlockBuilderAppBlockAssociationsOutput {
 }
 impl DescribeAppBlockBuilderAppBlockAssociationsOutput {
     /// <p>This list of app block builders associated with app blocks.</p>
-    pub fn app_block_builder_app_block_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppBlockBuilderAppBlockAssociation]> {
+    pub fn app_block_builder_app_block_associations(&self) -> ::std::option::Option<&[crate::types::AppBlockBuilderAppBlockAssociation]> {
         self.app_block_builder_app_block_associations.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -31,19 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeAppBlockBuilderAppBlockAssoci
 }
 impl DescribeAppBlockBuilderAppBlockAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppBlockBuilderAppBlockAssociationsOutput`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsOutput).
-    pub fn builder() -> crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsOutputBuilder {
         crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppBlockBuilderAppBlockAssociationsOutput`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppBlockBuilderAppBlockAssociationsOutputBuilder {
-    pub(crate) app_block_builder_app_block_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAppBlockAssociation>>,
+    pub(crate) app_block_builder_app_block_associations: ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAppBlockAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +48,8 @@ impl DescribeAppBlockBuilderAppBlockAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_app_block_builder_app_block_associations`](Self::set_app_block_builder_app_block_associations).
     ///
     /// <p>This list of app block builders associated with app blocks.</p>
-    pub fn app_block_builder_app_block_associations(
-        mut self,
-        input: crate::types::AppBlockBuilderAppBlockAssociation,
-    ) -> Self {
-        let mut v = self
-            .app_block_builder_app_block_associations
-            .unwrap_or_default();
+    pub fn app_block_builder_app_block_associations(mut self, input: crate::types::AppBlockBuilderAppBlockAssociation) -> Self {
+        let mut v = self.app_block_builder_app_block_associations.unwrap_or_default();
         v.push(input);
         self.app_block_builder_app_block_associations = ::std::option::Option::Some(v);
         self
@@ -67,9 +57,7 @@ impl DescribeAppBlockBuilderAppBlockAssociationsOutputBuilder {
     /// <p>This list of app block builders associated with app blocks.</p>
     pub fn set_app_block_builder_app_block_associations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AppBlockBuilderAppBlockAssociation>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAppBlockAssociation>>,
     ) -> Self {
         self.app_block_builder_app_block_associations = input;
         self
@@ -77,8 +65,7 @@ impl DescribeAppBlockBuilderAppBlockAssociationsOutputBuilder {
     /// <p>This list of app block builders associated with app blocks.</p>
     pub fn get_app_block_builder_app_block_associations(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAppBlockAssociation>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAppBlockAssociation>> {
         &self.app_block_builder_app_block_associations
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -105,12 +92,10 @@ impl DescribeAppBlockBuilderAppBlockAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAppBlockBuilderAppBlockAssociationsOutput`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsOutput).
-    pub fn build(self) -> crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsOutput{
+    pub fn build(self) -> crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsOutput {
         crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsOutput {
-            app_block_builder_app_block_associations: self.app_block_builder_app_block_associations
-            ,
-            next_token: self.next_token
-            ,
+            app_block_builder_app_block_associations: self.app_block_builder_app_block_associations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

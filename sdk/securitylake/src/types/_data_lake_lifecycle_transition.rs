@@ -30,27 +30,19 @@ impl DataLakeLifecycleTransition {
 
 /// A builder for [`DataLakeLifecycleTransition`](crate::types::DataLakeLifecycleTransition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataLakeLifecycleTransitionBuilder {
     pub(crate) storage_class: ::std::option::Option<::std::string::String>,
     pub(crate) days: ::std::option::Option<i32>,
 }
 impl DataLakeLifecycleTransitionBuilder {
     /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
-    pub fn storage_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
-    pub fn set_storage_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_class = input;
         self
     }

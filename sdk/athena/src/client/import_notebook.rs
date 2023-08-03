@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`ImportNotebookOutput`](crate::operation::import_notebook::ImportNotebookOutput) with field(s):
     ///   - [`notebook_id(Option<String>)`](crate::operation::import_notebook::ImportNotebookOutput::notebook_id): <p>The ID assigned to the imported notebook.</p>
     /// - On failure, responds with [`SdkError<ImportNotebookError>`](crate::operation::import_notebook::ImportNotebookError)
-    pub fn import_notebook(
-        &self,
-    ) -> crate::operation::import_notebook::builders::ImportNotebookFluentBuilder {
-        crate::operation::import_notebook::builders::ImportNotebookFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_notebook(&self) -> crate::operation::import_notebook::builders::ImportNotebookFluentBuilder {
+        crate::operation::import_notebook::builders::ImportNotebookFluentBuilder::new(self.handle.clone())
     }
 }

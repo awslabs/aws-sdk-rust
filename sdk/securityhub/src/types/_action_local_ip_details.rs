@@ -23,26 +23,18 @@ impl ActionLocalIpDetails {
 
 /// A builder for [`ActionLocalIpDetails`](crate::types::ActionLocalIpDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionLocalIpDetailsBuilder {
     pub(crate) ip_address_v4: ::std::option::Option<::std::string::String>,
 }
 impl ActionLocalIpDetailsBuilder {
     /// <p>The IP address.</p>
-    pub fn ip_address_v4(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_address_v4(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address_v4 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address.</p>
-    pub fn set_ip_address_v4(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_address_v4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address_v4 = input;
         self
     }

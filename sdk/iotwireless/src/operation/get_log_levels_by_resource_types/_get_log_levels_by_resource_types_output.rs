@@ -8,12 +8,10 @@ pub struct GetLogLevelsByResourceTypesOutput {
     pub default_log_level: ::std::option::Option<crate::types::LogLevel>,
     /// <p>The list of wireless gateway log options.</p>
     #[doc(hidden)]
-    pub wireless_gateway_log_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>>,
+    pub wireless_gateway_log_options: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>>,
     /// <p>The list of wireless device log options.</p>
     #[doc(hidden)]
-    pub wireless_device_log_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>>,
+    pub wireless_device_log_options: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>>,
     _request_id: Option<String>,
 }
 impl GetLogLevelsByResourceTypesOutput {
@@ -22,15 +20,11 @@ impl GetLogLevelsByResourceTypesOutput {
         self.default_log_level.as_ref()
     }
     /// <p>The list of wireless gateway log options.</p>
-    pub fn wireless_gateway_log_options(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WirelessGatewayLogOption]> {
+    pub fn wireless_gateway_log_options(&self) -> ::std::option::Option<&[crate::types::WirelessGatewayLogOption]> {
         self.wireless_gateway_log_options.as_deref()
     }
     /// <p>The list of wireless device log options.</p>
-    pub fn wireless_device_log_options(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WirelessDeviceLogOption]> {
+    pub fn wireless_device_log_options(&self) -> ::std::option::Option<&[crate::types::WirelessDeviceLogOption]> {
         self.wireless_device_log_options.as_deref()
     }
 }
@@ -41,22 +35,18 @@ impl ::aws_http::request_id::RequestId for GetLogLevelsByResourceTypesOutput {
 }
 impl GetLogLevelsByResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetLogLevelsByResourceTypesOutput`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput).
-    pub fn builder() -> crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesOutputBuilder{
+    pub fn builder() -> crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesOutputBuilder {
         crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLogLevelsByResourceTypesOutput`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLogLevelsByResourceTypesOutputBuilder {
     pub(crate) default_log_level: ::std::option::Option<crate::types::LogLevel>,
-    pub(crate) wireless_gateway_log_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>>,
-    pub(crate) wireless_device_log_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>>,
+    pub(crate) wireless_gateway_log_options: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>>,
+    pub(crate) wireless_device_log_options: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>>,
     _request_id: Option<String>,
 }
 impl GetLogLevelsByResourceTypesOutputBuilder {
@@ -66,10 +56,7 @@ impl GetLogLevelsByResourceTypesOutputBuilder {
         self
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub fn set_default_log_level(
-        mut self,
-        input: ::std::option::Option<crate::types::LogLevel>,
-    ) -> Self {
+    pub fn set_default_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.default_log_level = input;
         self
     }
@@ -82,27 +69,19 @@ impl GetLogLevelsByResourceTypesOutputBuilder {
     /// To override the contents of this collection use [`set_wireless_gateway_log_options`](Self::set_wireless_gateway_log_options).
     ///
     /// <p>The list of wireless gateway log options.</p>
-    pub fn wireless_gateway_log_options(
-        mut self,
-        input: crate::types::WirelessGatewayLogOption,
-    ) -> Self {
+    pub fn wireless_gateway_log_options(mut self, input: crate::types::WirelessGatewayLogOption) -> Self {
         let mut v = self.wireless_gateway_log_options.unwrap_or_default();
         v.push(input);
         self.wireless_gateway_log_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of wireless gateway log options.</p>
-    pub fn set_wireless_gateway_log_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>>,
-    ) -> Self {
+    pub fn set_wireless_gateway_log_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>>) -> Self {
         self.wireless_gateway_log_options = input;
         self
     }
     /// <p>The list of wireless gateway log options.</p>
-    pub fn get_wireless_gateway_log_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>> {
+    pub fn get_wireless_gateway_log_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>> {
         &self.wireless_gateway_log_options
     }
     /// Appends an item to `wireless_device_log_options`.
@@ -110,27 +89,19 @@ impl GetLogLevelsByResourceTypesOutputBuilder {
     /// To override the contents of this collection use [`set_wireless_device_log_options`](Self::set_wireless_device_log_options).
     ///
     /// <p>The list of wireless device log options.</p>
-    pub fn wireless_device_log_options(
-        mut self,
-        input: crate::types::WirelessDeviceLogOption,
-    ) -> Self {
+    pub fn wireless_device_log_options(mut self, input: crate::types::WirelessDeviceLogOption) -> Self {
         let mut v = self.wireless_device_log_options.unwrap_or_default();
         v.push(input);
         self.wireless_device_log_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of wireless device log options.</p>
-    pub fn set_wireless_device_log_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>>,
-    ) -> Self {
+    pub fn set_wireless_device_log_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>>) -> Self {
         self.wireless_device_log_options = input;
         self
     }
     /// <p>The list of wireless device log options.</p>
-    pub fn get_wireless_device_log_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>> {
+    pub fn get_wireless_device_log_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>> {
         &self.wireless_device_log_options
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -143,9 +114,7 @@ impl GetLogLevelsByResourceTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetLogLevelsByResourceTypesOutput`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput {
+    pub fn build(self) -> crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput {
         crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput {
             default_log_level: self.default_log_level,
             wireless_gateway_log_options: self.wireless_gateway_log_options,

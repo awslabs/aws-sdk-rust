@@ -49,9 +49,7 @@ impl UpdateListenerInput {
 
 /// A builder for [`UpdateListenerInput`](crate::operation::update_listener::UpdateListenerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateListenerInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
@@ -85,17 +83,12 @@ impl UpdateListenerInputBuilder {
         self
     }
     /// <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
-    pub fn set_port_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    ) -> Self {
+    pub fn set_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
         self.port_ranges = input;
         self
     }
     /// <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
-    pub fn get_port_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
         &self.port_ranges
     }
     /// <p>The updated protocol for the connections from clients to the accelerator.</p>
@@ -124,10 +117,7 @@ impl UpdateListenerInputBuilder {
     /// <p>Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
     /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
     /// <p>The default value is <code>NONE</code>.</p>
-    pub fn set_client_affinity(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientAffinity>,
-    ) -> Self {
+    pub fn set_client_affinity(mut self, input: ::std::option::Option<crate::types::ClientAffinity>) -> Self {
         self.client_affinity = input;
         self
     }
@@ -141,10 +131,7 @@ impl UpdateListenerInputBuilder {
     /// Consumes the builder and constructs a [`UpdateListenerInput`](crate::operation::update_listener::UpdateListenerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_listener::UpdateListenerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_listener::UpdateListenerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_listener::UpdateListenerInput {
             listener_arn: self.listener_arn,
             port_ranges: self.port_ranges,

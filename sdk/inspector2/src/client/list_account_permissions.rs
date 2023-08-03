@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`permissions(Option<Vec<Permission>>)`](crate::operation::list_account_permissions::ListAccountPermissionsOutput::permissions): <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_account_permissions::ListAccountPermissionsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     /// - On failure, responds with [`SdkError<ListAccountPermissionsError>`](crate::operation::list_account_permissions::ListAccountPermissionsError)
-    pub fn list_account_permissions(
-        &self,
-    ) -> crate::operation::list_account_permissions::builders::ListAccountPermissionsFluentBuilder
-    {
+    pub fn list_account_permissions(&self) -> crate::operation::list_account_permissions::builders::ListAccountPermissionsFluentBuilder {
         crate::operation::list_account_permissions::builders::ListAccountPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

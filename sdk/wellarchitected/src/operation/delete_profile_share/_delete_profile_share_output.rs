@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteProfileShareOutput {
 }
 impl DeleteProfileShareOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProfileShareOutput`](crate::operation::delete_profile_share::DeleteProfileShareOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_profile_share::builders::DeleteProfileShareOutputBuilder {
+    pub fn builder() -> crate::operation::delete_profile_share::builders::DeleteProfileShareOutputBuilder {
         crate::operation::delete_profile_share::builders::DeleteProfileShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProfileShareOutput`](crate::operation::delete_profile_share::DeleteProfileShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProfileShareOutputBuilder {
     _request_id: Option<String>,
 }

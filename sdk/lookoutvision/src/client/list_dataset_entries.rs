@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`dataset_entries(Option<Vec<String>>)`](crate::operation::list_dataset_entries::ListDatasetEntriesOutput::dataset_entries): <p>A list of the entries (JSON Lines) within the dataset.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataset_entries::ListDatasetEntriesOutput::next_token): <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
     /// - On failure, responds with [`SdkError<ListDatasetEntriesError>`](crate::operation::list_dataset_entries::ListDatasetEntriesError)
-    pub fn list_dataset_entries(
-        &self,
-    ) -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder {
-        crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_dataset_entries(&self) -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder {
+        crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::new(self.handle.clone())
     }
 }

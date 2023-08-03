@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum GeneratedManifestFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,12 +48,8 @@ pub enum GeneratedManifestFormat {
 impl ::std::convert::From<&str> for GeneratedManifestFormat {
     fn from(s: &str) -> Self {
         match s {
-            "S3InventoryReport_CSV_20211130" => {
-                GeneratedManifestFormat::S3InventoryReportCsv20211130
-            }
-            other => GeneratedManifestFormat::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "S3InventoryReport_CSV_20211130" => GeneratedManifestFormat::S3InventoryReportCsv20211130,
+            other => GeneratedManifestFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -74,9 +64,7 @@ impl GeneratedManifestFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            GeneratedManifestFormat::S3InventoryReportCsv20211130 => {
-                "S3InventoryReport_CSV_20211130"
-            }
+            GeneratedManifestFormat::S3InventoryReportCsv20211130 => "S3InventoryReport_CSV_20211130",
             GeneratedManifestFormat::Unknown(value) => value.as_str(),
         }
     }

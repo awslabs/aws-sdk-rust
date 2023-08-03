@@ -15,18 +15,14 @@ impl DeleteVpceConfigurationInput {
 }
 impl DeleteVpceConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteVpceConfigurationInput`](crate::operation::delete_vpce_configuration::DeleteVpceConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationInputBuilder {
         crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpceConfigurationInput`](crate::operation::delete_vpce_configuration::DeleteVpceConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpceConfigurationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DeleteVpceConfigurationInputBuilder {
         crate::operation::delete_vpce_configuration::DeleteVpceConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_vpce_configuration::DeleteVpceConfigurationInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_vpce_configuration::DeleteVpceConfigurationInput { arn: self.arn })
     }
 }

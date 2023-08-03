@@ -10,10 +10,7 @@ impl DescribeUsersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_users::DescribeUsersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_users::DescribeUsersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_users::DescribeUsersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_users();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeUsersFluentBuilder {
         }
     }
     /// Access the DescribeUsers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_users::builders::DescribeUsersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_users::builders::DescribeUsersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DescribeUsersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl DescribeUsersFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_users::paginator::DescribeUsersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_users::paginator::DescribeUsersPaginator {
-        crate::operation::describe_users::paginator::DescribeUsersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_users::paginator::DescribeUsersPaginator {
+        crate::operation::describe_users::paginator::DescribeUsersPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the user</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,10 +136,7 @@ impl DescribeUsersFluentBuilder {
         self
     }
     /// <p>Filter to determine the list of users to return.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteNamespaceOutput`](crate::operation::delete_namespace::DeleteNamespaceOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::delete_namespace::DeleteNamespaceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     /// - On failure, responds with [`SdkError<DeleteNamespaceError>`](crate::operation::delete_namespace::DeleteNamespaceError)
-    pub fn delete_namespace(
-        &self,
-    ) -> crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder {
-        crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_namespace(&self) -> crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder {
+        crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`recommendations(Option<Vec<Recommendation>>)`](crate::operation::get_recommendations::GetRecommendationsOutput::recommendations): <p>The list of recommendations that the analysis found for this profile.</p>
     ///   - [`anomalies(Option<Vec<Anomaly>>)`](crate::operation::get_recommendations::GetRecommendationsOutput::anomalies): <p> The list of anomalies that the analysis has found for this profile. </p>
     /// - On failure, responds with [`SdkError<GetRecommendationsError>`](crate::operation::get_recommendations::GetRecommendationsError)
-    pub fn get_recommendations(
-        &self,
-    ) -> crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder {
-        crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_recommendations(&self) -> crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder {
+        crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`version_id(Option<String>)`](crate::operation::put_secret_value::PutSecretValueOutput::version_id): <p>The unique identifier of the version of the secret.</p>
     ///   - [`version_stages(Option<Vec<String>>)`](crate::operation::put_secret_value::PutSecretValueOutput::version_stages): <p>The list of staging labels that are currently attached to this version of the secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process.</p>
     /// - On failure, responds with [`SdkError<PutSecretValueError>`](crate::operation::put_secret_value::PutSecretValueError)
-    pub fn put_secret_value(
-        &self,
-    ) -> crate::operation::put_secret_value::builders::PutSecretValueFluentBuilder {
-        crate::operation::put_secret_value::builders::PutSecretValueFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_secret_value(&self) -> crate::operation::put_secret_value::builders::PutSecretValueFluentBuilder {
+        crate::operation::put_secret_value::builders::PutSecretValueFluentBuilder::new(self.handle.clone())
     }
 }

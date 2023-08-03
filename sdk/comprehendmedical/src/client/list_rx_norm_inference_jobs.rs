@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`comprehend_medical_async_job_properties_list(Option<Vec<ComprehendMedicalAsyncJobProperties>>)`](crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsOutput::comprehend_medical_async_job_properties_list): <p>The maximum number of results to return in each page. The default is 100.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListRxNormInferenceJobsError>`](crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError)
-    pub fn list_rx_norm_inference_jobs(
-        &self,
-    ) -> crate::operation::list_rx_norm_inference_jobs::builders::ListRxNormInferenceJobsFluentBuilder
-    {
+    pub fn list_rx_norm_inference_jobs(&self) -> crate::operation::list_rx_norm_inference_jobs::builders::ListRxNormInferenceJobsFluentBuilder {
         crate::operation::list_rx_norm_inference_jobs::builders::ListRxNormInferenceJobsFluentBuilder::new(self.handle.clone())
     }
 }

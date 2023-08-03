@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateApplicationOutput`](crate::operation::create_application::CreateApplicationOutput) with field(s):
     ///   - [`configuration_id(Option<String>)`](crate::operation::create_application::CreateApplicationOutput::configuration_id): <p>Configuration ID of an application to be created.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::operation::create_application::CreateApplicationError)
-    pub fn create_application(
-        &self,
-    ) -> crate::operation::create_application::builders::CreateApplicationFluentBuilder {
-        crate::operation::create_application::builders::CreateApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_application(&self) -> crate::operation::create_application::builders::CreateApplicationFluentBuilder {
+        crate::operation::create_application::builders::CreateApplicationFluentBuilder::new(self.handle.clone())
     }
 }

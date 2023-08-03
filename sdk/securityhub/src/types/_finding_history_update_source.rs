@@ -30,9 +30,7 @@ impl FindingHistoryUpdateSource {
 
 /// A builder for [`FindingHistoryUpdateSource`](crate::types::FindingHistoryUpdateSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingHistoryUpdateSourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FindingHistoryUpdateSourceType>,
     pub(crate) identity: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl FindingHistoryUpdateSourceBuilder {
         self
     }
     /// <p> Describes the type of finding change event, such as a call to <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a> (by an integrated Amazon Web Service or third party partner integration) or <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a> (by a Security Hub customer). </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingHistoryUpdateSourceType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::FindingHistoryUpdateSourceType>) -> Self {
         self.r#type = input;
         self
     }

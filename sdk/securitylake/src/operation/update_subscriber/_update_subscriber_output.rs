@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateSubscriberOutput {
 }
 impl UpdateSubscriberOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriberOutput`](crate::operation::update_subscriber::UpdateSubscriberOutput).
-    pub fn builder() -> crate::operation::update_subscriber::builders::UpdateSubscriberOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_subscriber::builders::UpdateSubscriberOutputBuilder {
         crate::operation::update_subscriber::builders::UpdateSubscriberOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSubscriberOutput`](crate::operation::update_subscriber::UpdateSubscriberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSubscriberOutputBuilder {
     pub(crate) subscriber: ::std::option::Option<crate::types::SubscriberResource>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateSubscriberOutputBuilder {
         self
     }
     /// <p>The updated subscriber information.</p>
-    pub fn set_subscriber(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriberResource>,
-    ) -> Self {
+    pub fn set_subscriber(mut self, input: ::std::option::Option<crate::types::SubscriberResource>) -> Self {
         self.subscriber = input;
         self
     }

@@ -26,7 +26,7 @@ impl DescribeLocationObjectStorageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLocationObjectStorageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageInputBuilder,
+    inner: crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageInputBuilder,
 }
 impl DescribeLocationObjectStorageFluentBuilder {
     /// Creates a new `DescribeLocationObjectStorage`.
@@ -37,7 +37,7 @@ impl DescribeLocationObjectStorageFluentBuilder {
         }
     }
     /// Access the DescribeLocationObjectStorage as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeLocationObjectStorageFluentBuilder {
             crate::operation::describe_location_object_storage::DescribeLocationObjectStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_object_storage::DescribeLocationObjectStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_object_storage::DescribeLocationObjectStorageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeLocationObjectStorageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeLocationObjectStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_object_storage::DescribeLocationObjectStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_object_storage::DescribeLocationObjectStorageError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeLocationObjectStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_object_storage::DescribeLocationObjectStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_object_storage::DescribeLocationObjectStorageError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeLocationObjectStorageFluentBuilder {
             crate::operation::describe_location_object_storage::DescribeLocationObjectStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_object_storage::DescribeLocationObjectStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_object_storage::DescribeLocationObjectStorageError>,
     > {
         self.customize_middleware().await
     }

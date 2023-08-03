@@ -40,9 +40,7 @@ pub fn ser_query_input(
         object.key("QueryResultTypeFilter").string(var_12.as_str());
     }
     if let Some(var_13) = &input.document_relevance_override_configurations {
-        let mut array_14 = object
-            .key("DocumentRelevanceOverrideConfigurations")
-            .start_array();
+        let mut array_14 = object.key("DocumentRelevanceOverrideConfigurations").start_array();
         for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
@@ -68,10 +66,7 @@ pub fn ser_query_input(
     if let Some(var_19) = &input.sorting_configuration {
         #[allow(unused_mut)]
         let mut object_20 = object.key("SortingConfiguration").start_object();
-        crate::protocol_serde::shape_sorting_configuration::ser_sorting_configuration(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_sorting_configuration::ser_sorting_configuration(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.user_context {

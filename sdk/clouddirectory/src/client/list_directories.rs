@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`directories(Option<Vec<Directory>>)`](crate::operation::list_directories::ListDirectoriesOutput::directories): <p>Lists all directories that are associated with your account in pagination fashion.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_directories::ListDirectoriesOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListDirectoriesError>`](crate::operation::list_directories::ListDirectoriesError)
-    pub fn list_directories(
-        &self,
-    ) -> crate::operation::list_directories::builders::ListDirectoriesFluentBuilder {
-        crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_directories(&self) -> crate::operation::list_directories::builders::ListDirectoriesFluentBuilder {
+        crate::operation::list_directories::builders::ListDirectoriesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,9 +22,7 @@ impl DeleteJobInput {
 
 /// A builder for [`DeleteJobInput`](crate::operation::delete_job::DeleteJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DeleteJobInput`](crate::operation::delete_job::DeleteJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_job::DeleteJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_job::DeleteJobInput {
-            job_id: self.job_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_job::DeleteJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_job::DeleteJobInput { job_id: self.job_id })
     }
 }

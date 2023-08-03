@@ -30,9 +30,7 @@ impl TimeBasedCanary {
 
 /// A builder for [`TimeBasedCanary`](crate::types::TimeBasedCanary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeBasedCanaryBuilder {
     pub(crate) canary_percentage: ::std::option::Option<i32>,
     pub(crate) canary_interval: ::std::option::Option<i32>,

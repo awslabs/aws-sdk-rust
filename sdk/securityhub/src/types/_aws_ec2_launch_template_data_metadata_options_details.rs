@@ -44,17 +44,14 @@ impl AwsEc2LaunchTemplateDataMetadataOptionsDetails {
 }
 impl AwsEc2LaunchTemplateDataMetadataOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataMetadataOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails).
-    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataMetadataOptionsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataMetadataOptionsDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataMetadataOptionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataMetadataOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataMetadataOptionsDetailsBuilder {
     pub(crate) http_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) http_protocol_ipv6: ::std::option::Option<::std::string::String>,
@@ -64,18 +61,12 @@ pub struct AwsEc2LaunchTemplateDataMetadataOptionsDetailsBuilder {
 }
 impl AwsEc2LaunchTemplateDataMetadataOptionsDetailsBuilder {
     /// <p> Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is enabled, and you won't be able to access your instance metadata. </p>
-    pub fn http_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn http_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is enabled, and you won't be able to access your instance metadata. </p>
-    pub fn set_http_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_http_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_endpoint = input;
         self
     }
@@ -84,18 +75,12 @@ impl AwsEc2LaunchTemplateDataMetadataOptionsDetailsBuilder {
         &self.http_endpoint
     }
     /// <p> Enables or disables the IPv6 endpoint for the instance metadata service. </p>
-    pub fn http_protocol_ipv6(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn http_protocol_ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_protocol_ipv6 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Enables or disables the IPv6 endpoint for the instance metadata service. </p>
-    pub fn set_http_protocol_ipv6(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_http_protocol_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_protocol_ipv6 = input;
         self
     }
@@ -132,18 +117,12 @@ impl AwsEc2LaunchTemplateDataMetadataOptionsDetailsBuilder {
         &self.http_put_response_hop_limit
     }
     /// <p> When set to <code>enabled</code>, this parameter allows access to instance tags from the instance metadata. When set to <code>disabled</code>, it turns off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    pub fn instance_metadata_tags(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_metadata_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_metadata_tags = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> When set to <code>enabled</code>, this parameter allows access to instance tags from the instance metadata. When set to <code>disabled</code>, it turns off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    pub fn set_instance_metadata_tags(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_metadata_tags(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_metadata_tags = input;
         self
     }

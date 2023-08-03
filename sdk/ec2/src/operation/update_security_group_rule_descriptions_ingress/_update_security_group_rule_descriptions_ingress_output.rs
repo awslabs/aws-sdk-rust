@@ -21,16 +21,16 @@ impl ::aws_http::request_id::RequestId for UpdateSecurityGroupRuleDescriptionsIn
 }
 impl UpdateSecurityGroupRuleDescriptionsIngressOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityGroupRuleDescriptionsIngressOutput`](crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput).
-    pub fn builder() -> crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressOutputBuilder{
-        crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressOutputBuilder {
+        crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`UpdateSecurityGroupRuleDescriptionsIngressOutput`](crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSecurityGroupRuleDescriptionsIngressOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +60,9 @@ impl UpdateSecurityGroupRuleDescriptionsIngressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSecurityGroupRuleDescriptionsIngressOutput`](crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput).
-    pub fn build(self) -> crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput{
+    pub fn build(self) -> crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput {
         crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput {
-            r#return: self.r#return
-            ,
+            r#return: self.r#return,
             _request_id: self._request_id,
         }
     }

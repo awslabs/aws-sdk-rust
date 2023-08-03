@@ -37,10 +37,7 @@ impl RetryPipelineExecutionFluentBuilder {
         }
     }
     /// Access the RetryPipelineExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::retry_pipeline_execution::builders::RetryPipelineExecutionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::retry_pipeline_execution::builders::RetryPipelineExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl RetryPipelineExecutionFluentBuilder {
             crate::operation::retry_pipeline_execution::RetryPipelineExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_pipeline_execution::RetryPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retry_pipeline_execution::RetryPipelineExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl RetryPipelineExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl RetryPipelineExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retry_pipeline_execution::RetryPipelineExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_pipeline_execution::RetryPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retry_pipeline_execution::RetryPipelineExecutionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl RetryPipelineExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retry_pipeline_execution::RetryPipelineExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_pipeline_execution::RetryPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retry_pipeline_execution::RetryPipelineExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl RetryPipelineExecutionFluentBuilder {
             crate::operation::retry_pipeline_execution::RetryPipelineExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_pipeline_execution::RetryPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retry_pipeline_execution::RetryPipelineExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_execution_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn set_pipeline_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_execution_arn(input);
         self
     }
@@ -144,18 +124,12 @@ impl RetryPipelineExecutionFluentBuilder {
         self.inner.get_pipeline_execution_arn()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -164,25 +138,17 @@ impl RetryPipelineExecutionFluentBuilder {
         self.inner.get_client_request_token()
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline.</p>
-    pub fn parallelism_configuration(
-        mut self,
-        input: crate::types::ParallelismConfiguration,
-    ) -> Self {
+    pub fn parallelism_configuration(mut self, input: crate::types::ParallelismConfiguration) -> Self {
         self.inner = self.inner.parallelism_configuration(input);
         self
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline.</p>
-    pub fn set_parallelism_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelismConfiguration>,
-    ) -> Self {
+    pub fn set_parallelism_configuration(mut self, input: ::std::option::Option<crate::types::ParallelismConfiguration>) -> Self {
         self.inner = self.inner.set_parallelism_configuration(input);
         self
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline.</p>
-    pub fn get_parallelism_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
+    pub fn get_parallelism_configuration(&self) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
         self.inner.get_parallelism_configuration()
     }
 }

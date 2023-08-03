@@ -74,8 +74,7 @@ impl ::std::fmt::Debug for UpdateChannelMessageInput {
 }
 impl UpdateChannelMessageInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelMessageInput`](crate::operation::update_channel_message::UpdateChannelMessageInput).
-    pub fn builder(
-    ) -> crate::operation::update_channel_message::builders::UpdateChannelMessageInputBuilder {
+    pub fn builder() -> crate::operation::update_channel_message::builders::UpdateChannelMessageInputBuilder {
         crate::operation::update_channel_message::builders::UpdateChannelMessageInputBuilder::default()
     }
 }
@@ -166,20 +165,14 @@ impl UpdateChannelMessageInputBuilder {
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when updating messages in a SubChannel that the user belongs to.</p>
     /// </note>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when updating messages in a SubChannel that the user belongs to.</p>
     /// </note>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_channel_id = input;
         self
     }
@@ -206,21 +199,17 @@ impl UpdateChannelMessageInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelMessageInput`](crate::operation::update_channel_message::UpdateChannelMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_channel_message::UpdateChannelMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_channel_message::UpdateChannelMessageInput {
-                channel_arn: self.channel_arn,
-                message_id: self.message_id,
-                content: self.content,
-                metadata: self.metadata,
-                chime_bearer: self.chime_bearer,
-                sub_channel_id: self.sub_channel_id,
-                content_type: self.content_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_channel_message::UpdateChannelMessageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_channel_message::UpdateChannelMessageInput {
+            channel_arn: self.channel_arn,
+            message_id: self.message_id,
+            content: self.content,
+            metadata: self.metadata,
+            chime_bearer: self.chime_bearer,
+            sub_channel_id: self.sub_channel_id,
+            content_type: self.content_type,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateChannelMessageInputBuilder {

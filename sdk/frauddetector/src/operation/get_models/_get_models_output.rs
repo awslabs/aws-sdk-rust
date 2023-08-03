@@ -35,9 +35,7 @@ impl GetModelsOutput {
 
 /// A builder for [`GetModelsOutput`](crate::operation::get_models::GetModelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetModelsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) models: ::std::option::Option<::std::vec::Vec<crate::types::Model>>,
@@ -70,10 +68,7 @@ impl GetModelsOutputBuilder {
         self
     }
     /// <p>The array of models.</p>
-    pub fn set_models(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Model>>,
-    ) -> Self {
+    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Model>>) -> Self {
         self.models = input;
         self
     }

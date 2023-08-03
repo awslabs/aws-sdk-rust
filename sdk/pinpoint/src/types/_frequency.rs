@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Frequency {
     #[allow(missing_docs)] // documentation missing in model
@@ -106,15 +100,7 @@ impl Frequency {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DAILY",
-            "EVENT",
-            "HOURLY",
-            "IN_APP_EVENT",
-            "MONTHLY",
-            "ONCE",
-            "WEEKLY",
-        ]
+        &["DAILY", "EVENT", "HOURLY", "IN_APP_EVENT", "MONTHLY", "ONCE", "WEEKLY"]
     }
 }
 impl ::std::convert::AsRef<str> for Frequency {

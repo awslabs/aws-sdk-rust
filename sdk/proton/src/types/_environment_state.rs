@@ -77,18 +77,12 @@ impl EnvironmentStateBuilder {
         &self.spec
     }
     /// <p>The name of the environment template that was used to create the environment.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment template that was used to create the environment.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -97,18 +91,12 @@ impl EnvironmentStateBuilder {
         &self.template_name
     }
     /// <p>The major version of the environment template that was used to create the environment.</p>
-    pub fn template_major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_major_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The major version of the environment template that was used to create the environment.</p>
-    pub fn set_template_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_major_version = input;
         self
     }
@@ -117,18 +105,12 @@ impl EnvironmentStateBuilder {
         &self.template_major_version
     }
     /// <p>The minor version of the environment template that was used to create the environment.</p>
-    pub fn template_minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_minor_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minor version of the environment template that was used to create the environment.</p>
-    pub fn set_template_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_minor_version = input;
         self
     }

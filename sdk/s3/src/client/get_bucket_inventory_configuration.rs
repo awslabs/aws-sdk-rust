@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`GetBucketInventoryConfigurationOutput`](crate::operation::get_bucket_inventory_configuration::GetBucketInventoryConfigurationOutput) with field(s):
     ///   - [`inventory_configuration(Option<InventoryConfiguration>)`](crate::operation::get_bucket_inventory_configuration::GetBucketInventoryConfigurationOutput::inventory_configuration): <p>Specifies the inventory configuration.</p>
     /// - On failure, responds with [`SdkError<GetBucketInventoryConfigurationError>`](crate::operation::get_bucket_inventory_configuration::GetBucketInventoryConfigurationError)
-    pub fn get_bucket_inventory_configuration(&self) -> crate::operation::get_bucket_inventory_configuration::builders::GetBucketInventoryConfigurationFluentBuilder{
+    pub fn get_bucket_inventory_configuration(
+        &self,
+    ) -> crate::operation::get_bucket_inventory_configuration::builders::GetBucketInventoryConfigurationFluentBuilder {
         crate::operation::get_bucket_inventory_configuration::builders::GetBucketInventoryConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,8 +5,7 @@
 pub struct ListUsageForLicenseConfigurationOutput {
     /// <p>Information about the license configurations.</p>
     #[doc(hidden)]
-    pub license_configuration_usage_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationUsage>>,
+    pub license_configuration_usage_list: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationUsage>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListUsageForLicenseConfigurationOutput {
 }
 impl ListUsageForLicenseConfigurationOutput {
     /// <p>Information about the license configurations.</p>
-    pub fn license_configuration_usage_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LicenseConfigurationUsage]> {
+    pub fn license_configuration_usage_list(&self) -> ::std::option::Option<&[crate::types::LicenseConfigurationUsage]> {
         self.license_configuration_usage_list.as_deref()
     }
     /// <p>Token for the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListUsageForLicenseConfigurationOutpu
 }
 impl ListUsageForLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ListUsageForLicenseConfigurationOutput`](crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput).
-    pub fn builder() -> crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationOutputBuilder {
         crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUsageForLicenseConfigurationOutput`](crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUsageForLicenseConfigurationOutputBuilder {
-    pub(crate) license_configuration_usage_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationUsage>>,
+    pub(crate) license_configuration_usage_list: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationUsage>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListUsageForLicenseConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_license_configuration_usage_list`](Self::set_license_configuration_usage_list).
     ///
     /// <p>Information about the license configurations.</p>
-    pub fn license_configuration_usage_list(
-        mut self,
-        input: crate::types::LicenseConfigurationUsage,
-    ) -> Self {
+    pub fn license_configuration_usage_list(mut self, input: crate::types::LicenseConfigurationUsage) -> Self {
         let mut v = self.license_configuration_usage_list.unwrap_or_default();
         v.push(input);
         self.license_configuration_usage_list = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListUsageForLicenseConfigurationOutputBuilder {
         self
     }
     /// <p>Information about the license configurations.</p>
-    pub fn get_license_configuration_usage_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationUsage>> {
+    pub fn get_license_configuration_usage_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationUsage>> {
         &self.license_configuration_usage_list
     }
     /// <p>Token for the next set of results.</p>
@@ -100,12 +89,10 @@ impl ListUsageForLicenseConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListUsageForLicenseConfigurationOutput`](crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput).
-    pub fn build(self) -> crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput{
+    pub fn build(self) -> crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput {
         crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput {
-            license_configuration_usage_list: self.license_configuration_usage_list
-            ,
-            next_token: self.next_token
-            ,
+            license_configuration_usage_list: self.license_configuration_usage_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

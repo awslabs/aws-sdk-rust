@@ -6,11 +6,7 @@
 pub struct AwsStepFunctionStateMachineLoggingConfigurationDetails {
     /// <p> An array of objects that describes where your execution history events will be logged. </p>
     #[doc(hidden)]
-    pub destinations: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails,
-        >,
-    >,
+    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>>,
     /// <p> Determines whether execution data is included in your log. When set to false, data is excluded. </p>
     #[doc(hidden)]
     pub include_execution_data: bool,
@@ -20,11 +16,7 @@ pub struct AwsStepFunctionStateMachineLoggingConfigurationDetails {
 }
 impl AwsStepFunctionStateMachineLoggingConfigurationDetails {
     /// <p> An array of objects that describes where your execution history events will be logged. </p>
-    pub fn destinations(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails],
-    > {
+    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails]> {
         self.destinations.as_deref()
     }
     /// <p> Determines whether execution data is included in your log. When set to false, data is excluded. </p>
@@ -38,23 +30,16 @@ impl AwsStepFunctionStateMachineLoggingConfigurationDetails {
 }
 impl AwsStepFunctionStateMachineLoggingConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`AwsStepFunctionStateMachineLoggingConfigurationDetails`](crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsStepFunctionStateMachineLoggingConfigurationDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsStepFunctionStateMachineLoggingConfigurationDetailsBuilder {
         crate::types::builders::AwsStepFunctionStateMachineLoggingConfigurationDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsStepFunctionStateMachineLoggingConfigurationDetails`](crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsStepFunctionStateMachineLoggingConfigurationDetailsBuilder {
-    pub(crate) destinations: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails,
-        >,
-    >,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>>,
     pub(crate) include_execution_data: ::std::option::Option<bool>,
     pub(crate) level: ::std::option::Option<::std::string::String>,
 }
@@ -64,10 +49,7 @@ impl AwsStepFunctionStateMachineLoggingConfigurationDetailsBuilder {
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
     ///
     /// <p> An array of objects that describes where your execution history events will be logged. </p>
-    pub fn destinations(
-        mut self,
-        input: crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails,
-    ) -> Self {
+    pub fn destinations(mut self, input: crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails) -> Self {
         let mut v = self.destinations.unwrap_or_default();
         v.push(input);
         self.destinations = ::std::option::Option::Some(v);
@@ -76,11 +58,7 @@ impl AwsStepFunctionStateMachineLoggingConfigurationDetailsBuilder {
     /// <p> An array of objects that describes where your execution history events will be logged. </p>
     pub fn set_destinations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>>,
     ) -> Self {
         self.destinations = input;
         self
@@ -88,11 +66,7 @@ impl AwsStepFunctionStateMachineLoggingConfigurationDetailsBuilder {
     /// <p> An array of objects that describes where your execution history events will be logged. </p>
     pub fn get_destinations(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>> {
         &self.destinations
     }
     /// <p> Determines whether execution data is included in your log. When set to false, data is excluded. </p>

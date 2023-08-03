@@ -37,9 +37,7 @@ impl EstimateTemplateCostFluentBuilder {
         }
     }
     /// Access the EstimateTemplateCost as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::estimate_template_cost::builders::EstimateTemplateCostInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::estimate_template_cost::builders::EstimateTemplateCostInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl EstimateTemplateCostFluentBuilder {
             crate::operation::estimate_template_cost::EstimateTemplateCost,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::estimate_template_cost::EstimateTemplateCostError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::estimate_template_cost::EstimateTemplateCostError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl EstimateTemplateCostFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl EstimateTemplateCostFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::estimate_template_cost::EstimateTemplateCostOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::estimate_template_cost::EstimateTemplateCostError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::estimate_template_cost::EstimateTemplateCostError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl EstimateTemplateCostFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::estimate_template_cost::EstimateTemplateCostOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::estimate_template_cost::EstimateTemplateCostError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::estimate_template_cost::EstimateTemplateCostError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +105,19 @@ impl EstimateTemplateCostFluentBuilder {
             crate::operation::estimate_template_cost::EstimateTemplateCost,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::estimate_template_cost::EstimateTemplateCostError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::estimate_template_cost::EstimateTemplateCostError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
     /// <p>Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are passed, only <code>TemplateBody</code> is used.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_body(input.into());
         self
     }
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
     /// <p>Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are passed, only <code>TemplateBody</code> is used.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_body(input);
         self
     }
@@ -172,17 +153,12 @@ impl EstimateTemplateCostFluentBuilder {
         self
     }
     /// <p>A list of <code>Parameter</code> structures that specify input parameters.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>A list of <code>Parameter</code> structures that specify input parameters.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_parameters()
     }
 }

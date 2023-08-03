@@ -37,10 +37,7 @@ impl GetRepositoryTriggersFluentBuilder {
         }
     }
     /// Access the GetRepositoryTriggers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_repository_triggers::builders::GetRepositoryTriggersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_repository_triggers::builders::GetRepositoryTriggersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetRepositoryTriggersFluentBuilder {
             crate::operation::get_repository_triggers::GetRepositoryTriggers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_triggers::GetRepositoryTriggersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_triggers::GetRepositoryTriggersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetRepositoryTriggersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetRepositoryTriggersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_repository_triggers::GetRepositoryTriggersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_triggers::GetRepositoryTriggersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_triggers::GetRepositoryTriggersError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetRepositoryTriggersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_repository_triggers::GetRepositoryTriggersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_triggers::GetRepositoryTriggersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_triggers::GetRepositoryTriggersError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetRepositoryTriggersFluentBuilder {
             crate::operation::get_repository_triggers::GetRepositoryTriggers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_triggers::GetRepositoryTriggersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_triggers::GetRepositoryTriggersError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the repository for which the trigger is configured.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository for which the trigger is configured.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }

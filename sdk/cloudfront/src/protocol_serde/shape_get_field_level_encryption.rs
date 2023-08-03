@@ -9,60 +9,57 @@ pub fn de_get_field_level_encryption_http_error(
     crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(
-            crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::unhandled(
+        None => {
+            return Err(crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::unhandled(
                 generic,
-            ),
-        ),
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::AccessDenied({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output).map_err(crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
+                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "NoSuchFieldLevelEncryptionConfig" => crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::NoSuchFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "NoSuchFieldLevelEncryptionConfig" => {
+            crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::NoSuchFieldLevelEncryptionConfig({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchFieldLevelEncryptionConfigBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_field_level_encryption_config::de_no_such_field_level_encryption_config_xml_err(_response_body, output).map_err(crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_field_level_encryption_config::de_no_such_field_level_encryption_config_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::generic(generic),
     })
 }
 
@@ -79,15 +76,14 @@ pub fn de_get_field_level_encryption_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::get_field_level_encryption::builders::GetFieldLevelEncryptionOutputBuilder::default();
         output = output.set_e_tag(
-            crate::protocol_serde::shape_get_field_level_encryption_output::de_e_tag_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::unhandled("Failed to parse ETag from header `ETag"))?
+            crate::protocol_serde::shape_get_field_level_encryption_output::de_e_tag_header(_response_headers).map_err(|_| {
+                crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::unhandled("Failed to parse ETag from header `ETag")
+            })?,
         );
         output = output.set_field_level_encryption(
-            crate::protocol_serde::shape_get_field_level_encryption_output::de_field_level_encryption_payload(_response_body)?
+            crate::protocol_serde::shape_get_field_level_encryption_output::de_field_level_encryption_payload(_response_body)?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

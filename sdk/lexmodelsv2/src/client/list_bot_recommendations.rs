@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`bot_recommendation_summaries(Option<Vec<BotRecommendationSummary>>)`](crate::operation::list_bot_recommendations::ListBotRecommendationsOutput::bot_recommendation_summaries): <p>Summary information for the bot recommendations that meet the filter specified in this request. The length of the list is specified in the maxResults parameter of the request. If there are more bot recommendations available, the nextToken field contains a token to get the next page of results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_bot_recommendations::ListBotRecommendationsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the ListBotRecommendations operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListBotRecommendations operation request to get the next page of results. </p>
     /// - On failure, responds with [`SdkError<ListBotRecommendationsError>`](crate::operation::list_bot_recommendations::ListBotRecommendationsError)
-    pub fn list_bot_recommendations(
-        &self,
-    ) -> crate::operation::list_bot_recommendations::builders::ListBotRecommendationsFluentBuilder
-    {
+    pub fn list_bot_recommendations(&self) -> crate::operation::list_bot_recommendations::builders::ListBotRecommendationsFluentBuilder {
         crate::operation::list_bot_recommendations::builders::ListBotRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

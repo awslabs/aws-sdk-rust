@@ -50,9 +50,7 @@ impl StartSigningJobInput {
 
 /// A builder for [`StartSigningJobInput`](crate::operation::start_signing_job::StartSigningJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSigningJobInputBuilder {
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
@@ -81,10 +79,7 @@ impl StartSigningJobInputBuilder {
         self
     }
     /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.destination = input;
         self
     }
@@ -107,18 +102,12 @@ impl StartSigningJobInputBuilder {
         &self.profile_name
     }
     /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -127,18 +116,12 @@ impl StartSigningJobInputBuilder {
         &self.client_request_token
     }
     /// <p>The AWS account ID of the signing profile owner.</p>
-    pub fn profile_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS account ID of the signing profile owner.</p>
-    pub fn set_profile_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_owner = input;
         self
     }
@@ -149,10 +132,7 @@ impl StartSigningJobInputBuilder {
     /// Consumes the builder and constructs a [`StartSigningJobInput`](crate::operation::start_signing_job::StartSigningJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_signing_job::StartSigningJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_signing_job::StartSigningJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_signing_job::StartSigningJobInput {
             source: self.source,
             destination: self.destination,

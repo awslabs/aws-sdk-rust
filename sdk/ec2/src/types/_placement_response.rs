@@ -23,9 +23,7 @@ impl PlacementResponse {
 
 /// A builder for [`PlacementResponse`](crate::types::PlacementResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlacementResponseBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl PlacementResponseBuilder {
     }
     /// Consumes the builder and constructs a [`PlacementResponse`](crate::types::PlacementResponse).
     pub fn build(self) -> crate::types::PlacementResponse {
-        crate::types::PlacementResponse {
-            group_name: self.group_name,
-        }
+        crate::types::PlacementResponse { group_name: self.group_name }
     }
 }

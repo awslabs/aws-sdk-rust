@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateFlowTemplateOutput {
 }
 impl UpdateFlowTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowTemplateOutput`](crate::operation::update_flow_template::UpdateFlowTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::update_flow_template::builders::UpdateFlowTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::update_flow_template::builders::UpdateFlowTemplateOutputBuilder {
         crate::operation::update_flow_template::builders::UpdateFlowTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFlowTemplateOutput`](crate::operation::update_flow_template::UpdateFlowTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFlowTemplateOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::FlowTemplateSummary>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateFlowTemplateOutputBuilder {
         self
     }
     /// <p>An object containing summary information about the updated workflow.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::FlowTemplateSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::FlowTemplateSummary>) -> Self {
         self.summary = input;
         self
     }

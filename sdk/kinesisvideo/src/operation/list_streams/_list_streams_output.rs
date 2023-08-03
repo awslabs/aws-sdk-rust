@@ -35,9 +35,7 @@ impl ListStreamsOutput {
 
 /// A builder for [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamsOutputBuilder {
     pub(crate) stream_info_list: ::std::option::Option<::std::vec::Vec<crate::types::StreamInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListStreamsOutputBuilder {
         self
     }
     /// <p>An array of <code>StreamInfo</code> objects.</p>
-    pub fn set_stream_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamInfo>>,
-    ) -> Self {
+    pub fn set_stream_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamInfo>>) -> Self {
         self.stream_info_list = input;
         self
     }
     /// <p>An array of <code>StreamInfo</code> objects.</p>
-    pub fn get_stream_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamInfo>> {
+    pub fn get_stream_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamInfo>> {
         &self.stream_info_list
     }
     /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>

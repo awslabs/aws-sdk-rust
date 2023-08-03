@@ -7,9 +7,7 @@ pub fn ser_aws_eks_cluster_details(
         object.key("Arn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.certificate_authority_data {
-        object
-            .key("CertificateAuthorityData")
-            .string(var_2.as_str());
+        object.key("CertificateAuthorityData").string(var_2.as_str());
     }
     if let Some(var_3) = &input.cluster_status {
         object.key("ClusterStatus").string(var_3.as_str());
@@ -23,7 +21,10 @@ pub fn ser_aws_eks_cluster_details(
     if let Some(var_6) = &input.resources_vpc_config {
         #[allow(unused_mut)]
         let mut object_7 = object.key("ResourcesVpcConfig").start_object();
-        crate::protocol_serde::shape_aws_eks_cluster_resources_vpc_config_details::ser_aws_eks_cluster_resources_vpc_config_details(&mut object_7, var_6)?;
+        crate::protocol_serde::shape_aws_eks_cluster_resources_vpc_config_details::ser_aws_eks_cluster_resources_vpc_config_details(
+            &mut object_7,
+            var_6,
+        )?;
         object_7.finish();
     }
     if let Some(var_8) = &input.role_arn {
@@ -43,17 +44,9 @@ pub fn ser_aws_eks_cluster_details(
 
 pub(crate) fn de_aws_eks_cluster_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsEksClusterDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsEksClusterDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -63,99 +56,80 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Arn" => {
-                                builder = builder.set_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Arn" => {
+                            builder = builder.set_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "CertificateAuthorityData" => {
-                                builder = builder.set_certificate_authority_data(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "CertificateAuthorityData" => {
+                            builder = builder.set_certificate_authority_data(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "ClusterStatus" => {
-                                builder = builder.set_cluster_status(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "ClusterStatus" => {
+                            builder = builder.set_cluster_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Endpoint" => {
-                                builder = builder.set_endpoint(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "Endpoint" => {
+                            builder = builder.set_endpoint(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Name" => {
-                                builder = builder.set_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "Name" => {
+                            builder = builder.set_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "ResourcesVpcConfig" => {
-                                builder = builder.set_resources_vpc_config(
+                            );
+                        }
+                        "ResourcesVpcConfig" => {
+                            builder = builder.set_resources_vpc_config(
                                     crate::protocol_serde::shape_aws_eks_cluster_resources_vpc_config_details::de_aws_eks_cluster_resources_vpc_config_details(tokens)?
                                 );
-                            }
-                            "RoleArn" => {
-                                builder = builder.set_role_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "Version" => {
-                                builder = builder.set_version(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "Logging" => {
-                                builder = builder.set_logging(
-                                    crate::protocol_serde::shape_aws_eks_cluster_logging_details::de_aws_eks_cluster_logging_details(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        "RoleArn" => {
+                            builder = builder.set_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Version" => {
+                            builder = builder.set_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Logging" => {
+                            builder = builder.set_logging(
+                                crate::protocol_serde::shape_aws_eks_cluster_logging_details::de_aws_eks_cluster_logging_details(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

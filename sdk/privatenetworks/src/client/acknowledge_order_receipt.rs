@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`AcknowledgeOrderReceiptOutput`](crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptOutput) with field(s):
     ///   - [`order(Option<Order>)`](crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptOutput::order): <p>Information about the order.</p>
     /// - On failure, responds with [`SdkError<AcknowledgeOrderReceiptError>`](crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptError)
-    pub fn acknowledge_order_receipt(
-        &self,
-    ) -> crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptFluentBuilder
-    {
+    pub fn acknowledge_order_receipt(&self) -> crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptFluentBuilder {
         crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl CreateVpnGatewayInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_vpn_gateway::CreateVpnGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpn_gateway::CreateVpnGatewayError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpn_gateway::CreateVpnGatewayError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_vpn_gateway();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateVpnGatewayFluentBuilder {
         }
     }
     /// Access the CreateVpnGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_vpn_gateway::builders::CreateVpnGatewayInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_vpn_gateway::builders::CreateVpnGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateVpnGatewayFluentBuilder {
             crate::operation::create_vpn_gateway::CreateVpnGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpn_gateway::CreateVpnGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpn_gateway::CreateVpnGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateVpnGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateVpnGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpn_gateway::CreateVpnGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpn_gateway::CreateVpnGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpn_gateway::CreateVpnGatewayError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateVpnGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpn_gateway::CreateVpnGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpn_gateway::CreateVpnGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpn_gateway::CreateVpnGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl CreateVpnGatewayFluentBuilder {
             crate::operation::create_vpn_gateway::CreateVpnGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpn_gateway::CreateVpnGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpn_gateway::CreateVpnGatewayError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Availability Zone for the virtual private gateway.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// <p>The Availability Zone for the virtual private gateway.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
@@ -167,17 +145,12 @@ impl CreateVpnGatewayFluentBuilder {
         self
     }
     /// <p>The tags to apply to the virtual private gateway.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the virtual private gateway.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p>

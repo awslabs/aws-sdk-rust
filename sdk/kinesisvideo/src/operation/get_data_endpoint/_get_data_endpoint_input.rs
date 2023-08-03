@@ -36,9 +36,7 @@ impl GetDataEndpointInput {
 
 /// A builder for [`GetDataEndpointInput`](crate::operation::get_data_endpoint::GetDataEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataEndpointInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl GetDataEndpointInputBuilder {
     /// Consumes the builder and constructs a [`GetDataEndpointInput`](crate::operation::get_data_endpoint::GetDataEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_endpoint::GetDataEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_data_endpoint::GetDataEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_data_endpoint::GetDataEndpointInput {
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,

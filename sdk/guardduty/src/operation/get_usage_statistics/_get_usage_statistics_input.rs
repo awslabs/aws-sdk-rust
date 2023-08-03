@@ -50,17 +50,14 @@ impl GetUsageStatisticsInput {
 }
 impl GetUsageStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetUsageStatisticsInput`](crate::operation::get_usage_statistics::GetUsageStatisticsInput).
-    pub fn builder(
-    ) -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder {
+    pub fn builder() -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder {
         crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetUsageStatisticsInput`](crate::operation::get_usage_statistics::GetUsageStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsageStatisticsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) usage_statistic_type: ::std::option::Option<crate::types::UsageStatisticType>,
@@ -90,17 +87,12 @@ impl GetUsageStatisticsInputBuilder {
         self
     }
     /// <p>The type of usage statistics to retrieve.</p>
-    pub fn set_usage_statistic_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageStatisticType>,
-    ) -> Self {
+    pub fn set_usage_statistic_type(mut self, input: ::std::option::Option<crate::types::UsageStatisticType>) -> Self {
         self.usage_statistic_type = input;
         self
     }
     /// <p>The type of usage statistics to retrieve.</p>
-    pub fn get_usage_statistic_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::UsageStatisticType> {
+    pub fn get_usage_statistic_type(&self) -> &::std::option::Option<crate::types::UsageStatisticType> {
         &self.usage_statistic_type
     }
     /// <p>Represents the criteria used for querying usage.</p>
@@ -109,10 +101,7 @@ impl GetUsageStatisticsInputBuilder {
         self
     }
     /// <p>Represents the criteria used for querying usage.</p>
-    pub fn set_usage_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageCriteria>,
-    ) -> Self {
+    pub fn set_usage_criteria(mut self, input: ::std::option::Option<crate::types::UsageCriteria>) -> Self {
         self.usage_criteria = input;
         self
     }
@@ -165,19 +154,14 @@ impl GetUsageStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetUsageStatisticsInput`](crate::operation::get_usage_statistics::GetUsageStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_usage_statistics::GetUsageStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_usage_statistics::GetUsageStatisticsInput {
-                detector_id: self.detector_id,
-                usage_statistic_type: self.usage_statistic_type,
-                usage_criteria: self.usage_criteria,
-                unit: self.unit,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_usage_statistics::GetUsageStatisticsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_usage_statistics::GetUsageStatisticsInput {
+            detector_id: self.detector_id,
+            usage_statistic_type: self.usage_statistic_type,
+            usage_criteria: self.usage_criteria,
+            unit: self.unit,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -13,18 +13,13 @@ pub fn ser_related_item_input_content(
         crate::types::RelatedItemInputContent::Comment(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_2.key("comment").start_object();
-            crate::protocol_serde::shape_comment_content::ser_comment_content(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_comment_content::ser_comment_content(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::RelatedItemInputContent::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "RelatedItemInputContent",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "RelatedItemInputContent",
+            ))
         }
     }
     Ok(())

@@ -28,9 +28,7 @@ impl GetHitOutput {
 
 /// A builder for [`GetHitOutput`](crate::operation::get_hit::GetHitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHitOutputBuilder {
     pub(crate) hit: ::std::option::Option<crate::types::Hit>,
     _request_id: Option<String>,

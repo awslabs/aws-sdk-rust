@@ -10,10 +10,7 @@ impl UpdateFileSystemInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_file_system::UpdateFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_system::UpdateFileSystemError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_system::UpdateFileSystemError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_file_system();
         fluent_builder.inner = self;
@@ -81,9 +78,7 @@ impl UpdateFileSystemFluentBuilder {
         }
     }
     /// Access the UpdateFileSystem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_file_system::builders::UpdateFileSystemInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_file_system::builders::UpdateFileSystemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -95,9 +90,7 @@ impl UpdateFileSystemFluentBuilder {
             crate::operation::update_file_system::UpdateFileSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_system::UpdateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_system::UpdateFileSystemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -107,10 +100,7 @@ impl UpdateFileSystemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -119,9 +109,7 @@ impl UpdateFileSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_file_system::UpdateFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_system::UpdateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_system::UpdateFileSystemError>,
     > {
         let op = self
             .inner
@@ -144,9 +132,7 @@ impl UpdateFileSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_file_system::UpdateFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_system::UpdateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_system::UpdateFileSystemError>,
     > {
         self.send_middleware().await
     }
@@ -160,25 +146,17 @@ impl UpdateFileSystemFluentBuilder {
             crate::operation::update_file_system::UpdateFileSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_system::UpdateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_system::UpdateFileSystemError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the file system that you are updating.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>The ID of the file system that you are updating.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
@@ -187,18 +165,12 @@ impl UpdateFileSystemFluentBuilder {
         self.inner.get_file_system_id()
     }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -257,91 +229,59 @@ impl UpdateFileSystemFluentBuilder {
         self.inner.get_storage_capacity()
     }
     /// <p>The configuration updates for an Amazon FSx for Windows File Server file system.</p>
-    pub fn windows_configuration(
-        mut self,
-        input: crate::types::UpdateFileSystemWindowsConfiguration,
-    ) -> Self {
+    pub fn windows_configuration(mut self, input: crate::types::UpdateFileSystemWindowsConfiguration) -> Self {
         self.inner = self.inner.windows_configuration(input);
         self
     }
     /// <p>The configuration updates for an Amazon FSx for Windows File Server file system.</p>
-    pub fn set_windows_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateFileSystemWindowsConfiguration>,
-    ) -> Self {
+    pub fn set_windows_configuration(mut self, input: ::std::option::Option<crate::types::UpdateFileSystemWindowsConfiguration>) -> Self {
         self.inner = self.inner.set_windows_configuration(input);
         self
     }
     /// <p>The configuration updates for an Amazon FSx for Windows File Server file system.</p>
-    pub fn get_windows_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateFileSystemWindowsConfiguration> {
+    pub fn get_windows_configuration(&self) -> &::std::option::Option<crate::types::UpdateFileSystemWindowsConfiguration> {
         self.inner.get_windows_configuration()
     }
     /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
-    pub fn lustre_configuration(
-        mut self,
-        input: crate::types::UpdateFileSystemLustreConfiguration,
-    ) -> Self {
+    pub fn lustre_configuration(mut self, input: crate::types::UpdateFileSystemLustreConfiguration) -> Self {
         self.inner = self.inner.lustre_configuration(input);
         self
     }
     /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
-    pub fn set_lustre_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateFileSystemLustreConfiguration>,
-    ) -> Self {
+    pub fn set_lustre_configuration(mut self, input: ::std::option::Option<crate::types::UpdateFileSystemLustreConfiguration>) -> Self {
         self.inner = self.inner.set_lustre_configuration(input);
         self
     }
     /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
-    pub fn get_lustre_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateFileSystemLustreConfiguration> {
+    pub fn get_lustre_configuration(&self) -> &::std::option::Option<crate::types::UpdateFileSystemLustreConfiguration> {
         self.inner.get_lustre_configuration()
     }
     /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
-    pub fn ontap_configuration(
-        mut self,
-        input: crate::types::UpdateFileSystemOntapConfiguration,
-    ) -> Self {
+    pub fn ontap_configuration(mut self, input: crate::types::UpdateFileSystemOntapConfiguration) -> Self {
         self.inner = self.inner.ontap_configuration(input);
         self
     }
     /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
-    pub fn set_ontap_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateFileSystemOntapConfiguration>,
-    ) -> Self {
+    pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::UpdateFileSystemOntapConfiguration>) -> Self {
         self.inner = self.inner.set_ontap_configuration(input);
         self
     }
     /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
-    pub fn get_ontap_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateFileSystemOntapConfiguration> {
+    pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::UpdateFileSystemOntapConfiguration> {
         self.inner.get_ontap_configuration()
     }
     /// <p>The configuration updates for an FSx for OpenZFS file system.</p>
-    pub fn open_zfs_configuration(
-        mut self,
-        input: crate::types::UpdateFileSystemOpenZfsConfiguration,
-    ) -> Self {
+    pub fn open_zfs_configuration(mut self, input: crate::types::UpdateFileSystemOpenZfsConfiguration) -> Self {
         self.inner = self.inner.open_zfs_configuration(input);
         self
     }
     /// <p>The configuration updates for an FSx for OpenZFS file system.</p>
-    pub fn set_open_zfs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration>,
-    ) -> Self {
+    pub fn set_open_zfs_configuration(mut self, input: ::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration>) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self
     }
     /// <p>The configuration updates for an FSx for OpenZFS file system.</p>
-    pub fn get_open_zfs_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration> {
+    pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration> {
         self.inner.get_open_zfs_configuration()
     }
 }

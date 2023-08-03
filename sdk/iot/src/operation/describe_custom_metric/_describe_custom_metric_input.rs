@@ -15,17 +15,14 @@ impl DescribeCustomMetricInput {
 }
 impl DescribeCustomMetricInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomMetricInput`](crate::operation::describe_custom_metric::DescribeCustomMetricInput).
-    pub fn builder(
-    ) -> crate::operation::describe_custom_metric::builders::DescribeCustomMetricInputBuilder {
+    pub fn builder() -> crate::operation::describe_custom_metric::builders::DescribeCustomMetricInputBuilder {
         crate::operation::describe_custom_metric::builders::DescribeCustomMetricInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCustomMetricInput`](crate::operation::describe_custom_metric::DescribeCustomMetricInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomMetricInputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,10 @@ impl DescribeCustomMetricInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCustomMetricInput`](crate::operation::describe_custom_metric::DescribeCustomMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_custom_metric::DescribeCustomMetricInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_custom_metric::DescribeCustomMetricInput {
-                metric_name: self.metric_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_custom_metric::DescribeCustomMetricInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_custom_metric::DescribeCustomMetricInput {
+            metric_name: self.metric_name,
+        })
     }
 }

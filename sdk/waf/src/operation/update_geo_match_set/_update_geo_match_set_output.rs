@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateGeoMatchSetOutput {
 }
 impl UpdateGeoMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGeoMatchSetOutput`](crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput).
-    pub fn builder(
-    ) -> crate::operation::update_geo_match_set::builders::UpdateGeoMatchSetOutputBuilder {
+    pub fn builder() -> crate::operation::update_geo_match_set::builders::UpdateGeoMatchSetOutputBuilder {
         crate::operation::update_geo_match_set::builders::UpdateGeoMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGeoMatchSetOutput`](crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGeoMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

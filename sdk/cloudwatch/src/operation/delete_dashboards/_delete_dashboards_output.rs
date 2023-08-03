@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDashboardsOutput {
 }
 impl DeleteDashboardsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDashboardsOutput`](crate::operation::delete_dashboards::DeleteDashboardsOutput).
-    pub fn builder() -> crate::operation::delete_dashboards::builders::DeleteDashboardsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_dashboards::builders::DeleteDashboardsOutputBuilder {
         crate::operation::delete_dashboards::builders::DeleteDashboardsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDashboardsOutput`](crate::operation::delete_dashboards::DeleteDashboardsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDashboardsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -37,9 +37,7 @@ impl ListCodeRepositoriesFluentBuilder {
         }
     }
     /// Access the ListCodeRepositories as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_code_repositories::builders::ListCodeRepositoriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_code_repositories::builders::ListCodeRepositoriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListCodeRepositoriesFluentBuilder {
             crate::operation::list_code_repositories::ListCodeRepositories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_code_repositories::ListCodeRepositoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_code_repositories::ListCodeRepositoriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListCodeRepositoriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListCodeRepositoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_code_repositories::ListCodeRepositoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_code_repositories::ListCodeRepositoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_code_repositories::ListCodeRepositoriesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListCodeRepositoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_code_repositories::ListCodeRepositoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_code_repositories::ListCodeRepositoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_code_repositories::ListCodeRepositoriesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListCodeRepositoriesFluentBuilder {
             crate::operation::list_code_repositories::ListCodeRepositories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_code_repositories::ListCodeRepositoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_code_repositories::ListCodeRepositoriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator {
-        crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator {
+        crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator::new(self.handle, self.inner)
     }
     /// <p>A filter that returns only Git repositories that were created after the specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -139,10 +121,7 @@ impl ListCodeRepositoriesFluentBuilder {
         self
     }
     /// <p>A filter that returns only Git repositories that were created after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -156,10 +135,7 @@ impl ListCodeRepositoriesFluentBuilder {
         self
     }
     /// <p>A filter that returns only Git repositories that were created before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -173,17 +149,12 @@ impl ListCodeRepositoriesFluentBuilder {
         self
     }
     /// <p>A filter that returns only Git repositories that were last modified after the specified time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
     /// <p>A filter that returns only Git repositories that were last modified after the specified time.</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_after()
     }
     /// <p>A filter that returns only Git repositories that were last modified before the specified time.</p>
@@ -192,17 +163,12 @@ impl ListCodeRepositoriesFluentBuilder {
         self
     }
     /// <p>A filter that returns only Git repositories that were last modified before the specified time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
     /// <p>A filter that returns only Git repositories that were last modified before the specified time.</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_before()
     }
     /// <p>The maximum number of Git repositories to return in the response.</p>
@@ -220,18 +186,12 @@ impl ListCodeRepositoriesFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>A string in the Git repositories name. This filter returns only repositories whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A string in the Git repositories name. This filter returns only repositories whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -259,10 +219,7 @@ impl ListCodeRepositoriesFluentBuilder {
         self
     }
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeRepositorySortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::CodeRepositorySortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -276,10 +233,7 @@ impl ListCodeRepositoriesFluentBuilder {
         self
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeRepositorySortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::CodeRepositorySortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }

@@ -47,8 +47,7 @@ pub struct DescribeReservedInstancesOfferingsInput {
     pub product_description: ::std::option::Option<crate::types::RiProductDescription>,
     /// <p>One or more Reserved Instances offering IDs.</p>
     #[doc(hidden)]
-    pub reserved_instances_offering_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub reserved_instances_offering_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
@@ -116,15 +115,11 @@ impl DescribeReservedInstancesOfferingsInput {
         self.offering_class.as_ref()
     }
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
-    pub fn product_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RiProductDescription> {
+    pub fn product_description(&self) -> ::std::option::Option<&crate::types::RiProductDescription> {
         self.product_description.as_ref()
     }
     /// <p>One or more Reserved Instances offering IDs.</p>
-    pub fn reserved_instances_offering_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn reserved_instances_offering_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.reserved_instances_offering_ids.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -153,16 +148,14 @@ impl DescribeReservedInstancesOfferingsInput {
 }
 impl DescribeReservedInstancesOfferingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedInstancesOfferingsInput`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput).
-    pub fn builder() -> crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsInputBuilder {
         crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedInstancesOfferingsInput`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesOfferingsInputBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -173,8 +166,7 @@ pub struct DescribeReservedInstancesOfferingsInputBuilder {
     pub(crate) min_duration: ::std::option::Option<i64>,
     pub(crate) offering_class: ::std::option::Option<crate::types::OfferingClassType>,
     pub(crate) product_description: ::std::option::Option<crate::types::RiProductDescription>,
-    pub(crate) reserved_instances_offering_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) reserved_instances_offering_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_tenancy: ::std::option::Option<crate::types::Tenancy>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -183,18 +175,12 @@ pub struct DescribeReservedInstancesOfferingsInputBuilder {
 }
 impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -236,10 +222,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <li> <p> <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li>
     /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -278,10 +261,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
         self
     }
     /// <p>The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -346,10 +326,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
         self
     }
     /// <p>The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.</p>
-    pub fn set_offering_class(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingClassType>,
-    ) -> Self {
+    pub fn set_offering_class(mut self, input: ::std::option::Option<crate::types::OfferingClassType>) -> Self {
         self.offering_class = input;
         self
     }
@@ -363,17 +340,12 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
         self
     }
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
-    pub fn set_product_description(
-        mut self,
-        input: ::std::option::Option<crate::types::RiProductDescription>,
-    ) -> Self {
+    pub fn set_product_description(mut self, input: ::std::option::Option<crate::types::RiProductDescription>) -> Self {
         self.product_description = input;
         self
     }
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
-    pub fn get_product_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::RiProductDescription> {
+    pub fn get_product_description(&self) -> &::std::option::Option<crate::types::RiProductDescription> {
         &self.product_description
     }
     /// Appends an item to `reserved_instances_offering_ids`.
@@ -381,27 +353,19 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// To override the contents of this collection use [`set_reserved_instances_offering_ids`](Self::set_reserved_instances_offering_ids).
     ///
     /// <p>One or more Reserved Instances offering IDs.</p>
-    pub fn reserved_instances_offering_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_offering_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reserved_instances_offering_ids.unwrap_or_default();
         v.push(input.into());
         self.reserved_instances_offering_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more Reserved Instances offering IDs.</p>
-    pub fn set_reserved_instances_offering_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reserved_instances_offering_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.reserved_instances_offering_ids = input;
         self
     }
     /// <p>One or more Reserved Instances offering IDs.</p>
-    pub fn get_reserved_instances_offering_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reserved_instances_offering_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.reserved_instances_offering_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -428,10 +392,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p>
     /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
     /// <p>Default: <code>default</code> </p>
-    pub fn set_instance_tenancy(
-        mut self,
-        input: ::std::option::Option<crate::types::Tenancy>,
-    ) -> Self {
+    pub fn set_instance_tenancy(mut self, input: ::std::option::Option<crate::types::Tenancy>) -> Self {
         self.instance_tenancy = input;
         self
     }
@@ -478,10 +439,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
         self
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type. </p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingTypeValues>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<crate::types::OfferingTypeValues>) -> Self {
         self.offering_type = input;
         self
     }
@@ -490,40 +448,30 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
         &self.offering_type
     }
     /// Consumes the builder and constructs a [`DescribeReservedInstancesOfferingsInput`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput {
-                availability_zone: self.availability_zone
-                ,
-                filters: self.filters
-                ,
-                include_marketplace: self.include_marketplace
-                ,
-                instance_type: self.instance_type
-                ,
-                max_duration: self.max_duration
-                ,
-                max_instance_count: self.max_instance_count
-                ,
-                min_duration: self.min_duration
-                ,
-                offering_class: self.offering_class
-                ,
-                product_description: self.product_description
-                ,
-                reserved_instances_offering_ids: self.reserved_instances_offering_ids
-                ,
-                dry_run: self.dry_run
-                ,
-                instance_tenancy: self.instance_tenancy
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                offering_type: self.offering_type
-                ,
-            }
+                availability_zone: self.availability_zone,
+                filters: self.filters,
+                include_marketplace: self.include_marketplace,
+                instance_type: self.instance_type,
+                max_duration: self.max_duration,
+                max_instance_count: self.max_instance_count,
+                min_duration: self.min_duration,
+                offering_class: self.offering_class,
+                product_description: self.product_description,
+                reserved_instances_offering_ids: self.reserved_instances_offering_ids,
+                dry_run: self.dry_run,
+                instance_tenancy: self.instance_tenancy,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                offering_type: self.offering_type,
+            },
         )
     }
 }

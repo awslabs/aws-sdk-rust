@@ -5,15 +5,12 @@
 pub struct PutVoiceConnectorEmergencyCallingConfigurationOutput {
     /// <p>The updated configuration.</p>
     #[doc(hidden)]
-    pub emergency_calling_configuration:
-        ::std::option::Option<crate::types::EmergencyCallingConfiguration>,
+    pub emergency_calling_configuration: ::std::option::Option<crate::types::EmergencyCallingConfiguration>,
     _request_id: Option<String>,
 }
 impl PutVoiceConnectorEmergencyCallingConfigurationOutput {
     /// <p>The updated configuration.</p>
-    pub fn emergency_calling_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EmergencyCallingConfiguration> {
+    pub fn emergency_calling_configuration(&self) -> ::std::option::Option<&crate::types::EmergencyCallingConfiguration> {
         self.emergency_calling_configuration.as_ref()
     }
 }
@@ -24,42 +21,33 @@ impl ::aws_http::request_id::RequestId for PutVoiceConnectorEmergencyCallingConf
 }
 impl PutVoiceConnectorEmergencyCallingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutVoiceConnectorEmergencyCallingConfigurationOutput`](crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationOutput).
-    pub fn builder() -> crate::operation::put_voice_connector_emergency_calling_configuration::builders::PutVoiceConnectorEmergencyCallingConfigurationOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::put_voice_connector_emergency_calling_configuration::builders::PutVoiceConnectorEmergencyCallingConfigurationOutputBuilder
+    {
         crate::operation::put_voice_connector_emergency_calling_configuration::builders::PutVoiceConnectorEmergencyCallingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutVoiceConnectorEmergencyCallingConfigurationOutput`](crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
-    pub(crate) emergency_calling_configuration:
-        ::std::option::Option<crate::types::EmergencyCallingConfiguration>,
+    pub(crate) emergency_calling_configuration: ::std::option::Option<crate::types::EmergencyCallingConfiguration>,
     _request_id: Option<String>,
 }
 impl PutVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
     /// <p>The updated configuration.</p>
-    pub fn emergency_calling_configuration(
-        mut self,
-        input: crate::types::EmergencyCallingConfiguration,
-    ) -> Self {
+    pub fn emergency_calling_configuration(mut self, input: crate::types::EmergencyCallingConfiguration) -> Self {
         self.emergency_calling_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The updated configuration.</p>
-    pub fn set_emergency_calling_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EmergencyCallingConfiguration>,
-    ) -> Self {
+    pub fn set_emergency_calling_configuration(mut self, input: ::std::option::Option<crate::types::EmergencyCallingConfiguration>) -> Self {
         self.emergency_calling_configuration = input;
         self
     }
     /// <p>The updated configuration.</p>
-    pub fn get_emergency_calling_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EmergencyCallingConfiguration> {
+    pub fn get_emergency_calling_configuration(&self) -> &::std::option::Option<crate::types::EmergencyCallingConfiguration> {
         &self.emergency_calling_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +60,11 @@ impl PutVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorEmergencyCallingConfigurationOutput`](crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationOutput).
-    pub fn build(self) -> crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationOutput {
         crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationOutput {
-            emergency_calling_configuration: self.emergency_calling_configuration
-            ,
+            emergency_calling_configuration: self.emergency_calling_configuration,
             _request_id: self._request_id,
         }
     }

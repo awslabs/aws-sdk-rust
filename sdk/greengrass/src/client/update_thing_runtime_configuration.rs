@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`thing_name(impl ::std::convert::Into<String>)`](crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationFluentBuilder::set_thing_name): The thing name.
     /// - On success, responds with [`UpdateThingRuntimeConfigurationOutput`](crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateThingRuntimeConfigurationError>`](crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationError)
-    pub fn update_thing_runtime_configuration(&self) -> crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationFluentBuilder{
+    pub fn update_thing_runtime_configuration(
+        &self,
+    ) -> crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationFluentBuilder {
         crate::operation::update_thing_runtime_configuration::builders::UpdateThingRuntimeConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

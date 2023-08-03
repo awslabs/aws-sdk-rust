@@ -9,92 +9,94 @@ pub fn de_delete_application_version_http_error(
     crate::operation::delete_application_version::DeleteApplicationVersionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::delete_application_version::DeleteApplicationVersionError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_application_version::DeleteApplicationVersionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(
-            crate::operation::delete_application_version::DeleteApplicationVersionError::unhandled(
+        None => {
+            return Err(crate::operation::delete_application_version::DeleteApplicationVersionError::unhandled(
                 generic,
-            ),
-        ),
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::operation::delete_application_version::DeleteApplicationVersionError::InsufficientPrivilegesException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InsufficientPrivilegesException" => {
+            crate::operation::delete_application_version::DeleteApplicationVersionError::InsufficientPrivilegesException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(_response_body, output).map_err(crate::operation::delete_application_version::DeleteApplicationVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_application_version::DeleteApplicationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "OperationInProgressFailure" => crate::operation::delete_application_version::DeleteApplicationVersionError::OperationInProgressException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::OperationInProgressExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_operation_in_progress_exception::de_operation_in_progress_exception_xml_err(_response_body, output).map_err(crate::operation::delete_application_version::DeleteApplicationVersionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationInProgressExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_operation_in_progress_exception::de_operation_in_progress_exception_xml_err(_response_body, output)
+                        .map_err(crate::operation::delete_application_version::DeleteApplicationVersionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "S3LocationNotInServiceRegionException" => crate::operation::delete_application_version::DeleteApplicationVersionError::S3LocationNotInServiceRegionException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "S3LocationNotInServiceRegionException" => {
+            crate::operation::delete_application_version::DeleteApplicationVersionError::S3LocationNotInServiceRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::S3LocationNotInServiceRegionExceptionBuilder::default();
                     output = crate::protocol_serde::shape_s3_location_not_in_service_region_exception::de_s3_location_not_in_service_region_exception_xml_err(_response_body, output).map_err(crate::operation::delete_application_version::DeleteApplicationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "SourceBundleDeletionFailure" => crate::operation::delete_application_version::DeleteApplicationVersionError::SourceBundleDeletionException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "SourceBundleDeletionFailure" => {
+            crate::operation::delete_application_version::DeleteApplicationVersionError::SourceBundleDeletionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SourceBundleDeletionExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_source_bundle_deletion_exception::de_source_bundle_deletion_exception_xml_err(_response_body, output).map_err(crate::operation::delete_application_version::DeleteApplicationVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_source_bundle_deletion_exception::de_source_bundle_deletion_exception_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_application_version::DeleteApplicationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::delete_application_version::DeleteApplicationVersionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::delete_application_version::DeleteApplicationVersionError::generic(generic),
     })
 }
 
@@ -110,9 +112,7 @@ pub fn de_delete_application_version_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_application_version::builders::DeleteApplicationVersionOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -30,9 +30,7 @@ impl NodeFabricLogPublishingConfiguration {
 
 /// A builder for [`NodeFabricLogPublishingConfiguration`](crate::types::NodeFabricLogPublishingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeFabricLogPublishingConfigurationBuilder {
     pub(crate) chaincode_logs: ::std::option::Option<crate::types::LogConfigurations>,
     pub(crate) peer_logs: ::std::option::Option<crate::types::LogConfigurations>,
@@ -44,10 +42,7 @@ impl NodeFabricLogPublishingConfigurationBuilder {
         self
     }
     /// <p>Configuration properties for logging events associated with chaincode execution on a peer node. Chaincode logs contain the results of instantiating, invoking, and querying the chaincode. A peer can run multiple instances of chaincode. When enabled, a log stream is created for all chaincodes, with an individual log stream for each chaincode.</p>
-    pub fn set_chaincode_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::LogConfigurations>,
-    ) -> Self {
+    pub fn set_chaincode_logs(mut self, input: ::std::option::Option<crate::types::LogConfigurations>) -> Self {
         self.chaincode_logs = input;
         self
     }
@@ -61,10 +56,7 @@ impl NodeFabricLogPublishingConfigurationBuilder {
         self
     }
     /// <p>Configuration properties for a peer node log. Peer node logs contain messages generated when your client submits transaction proposals to peer nodes, requests to join channels, enrolls an admin peer, and lists the chaincode instances on a peer node. </p>
-    pub fn set_peer_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::LogConfigurations>,
-    ) -> Self {
+    pub fn set_peer_logs(mut self, input: ::std::option::Option<crate::types::LogConfigurations>) -> Self {
         self.peer_logs = input;
         self
     }

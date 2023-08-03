@@ -67,13 +67,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SimulationJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -145,27 +139,17 @@ impl ::std::convert::From<&str> for SimulationJobErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "BadPermissionsCloudwatchLogs" => SimulationJobErrorCode::BadPermissionsCloudwatchLogs,
-            "BadPermissionsRobotApplication" => {
-                SimulationJobErrorCode::BadPermissionsRobotApplication
-            }
+            "BadPermissionsRobotApplication" => SimulationJobErrorCode::BadPermissionsRobotApplication,
             "BadPermissionsS3Object" => SimulationJobErrorCode::BadPermissionsS3Object,
             "BadPermissionsS3Output" => SimulationJobErrorCode::BadPermissionsS3Output,
-            "BadPermissionsSimulationApplication" => {
-                SimulationJobErrorCode::BadPermissionsSimulationApplication
-            }
-            "BadPermissionsUserCredentials" => {
-                SimulationJobErrorCode::BadPermissionsUserCredentials
-            }
+            "BadPermissionsSimulationApplication" => SimulationJobErrorCode::BadPermissionsSimulationApplication,
+            "BadPermissionsUserCredentials" => SimulationJobErrorCode::BadPermissionsUserCredentials,
             "BatchCanceled" => SimulationJobErrorCode::BatchCanceled,
             "BatchTimedOut" => SimulationJobErrorCode::BatchTimedOut,
             "ENILimitExceeded" => SimulationJobErrorCode::EniLimitExceeded,
             "InternalServiceError" => SimulationJobErrorCode::InternalServiceError,
-            "InvalidBundleRobotApplication" => {
-                SimulationJobErrorCode::InvalidBundleRobotApplication
-            }
-            "InvalidBundleSimulationApplication" => {
-                SimulationJobErrorCode::InvalidBundleSimulationApplication
-            }
+            "InvalidBundleRobotApplication" => SimulationJobErrorCode::InvalidBundleRobotApplication,
+            "InvalidBundleSimulationApplication" => SimulationJobErrorCode::InvalidBundleSimulationApplication,
             "InvalidInput" => SimulationJobErrorCode::InvalidInput,
             "InvalidS3Resource" => SimulationJobErrorCode::InvalidS3Resource,
             "LimitExceeded" => SimulationJobErrorCode::LimitExceeded,
@@ -173,31 +157,19 @@ impl ::std::convert::From<&str> for SimulationJobErrorCode {
             "RequestThrottled" => SimulationJobErrorCode::RequestThrottled,
             "ResourceNotFound" => SimulationJobErrorCode::ResourceNotFound,
             "RobotApplicationCrash" => SimulationJobErrorCode::RobotApplicationCrash,
-            "RobotApplicationHealthCheckFailure" => {
-                SimulationJobErrorCode::RobotApplicationHealthCheckFailure
-            }
-            "RobotApplicationVersionMismatchedEtag" => {
-                SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag
-            }
+            "RobotApplicationHealthCheckFailure" => SimulationJobErrorCode::RobotApplicationHealthCheckFailure,
+            "RobotApplicationVersionMismatchedEtag" => SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag,
             "SimulationApplicationCrash" => SimulationJobErrorCode::SimulationApplicationCrash,
-            "SimulationApplicationHealthCheckFailure" => {
-                SimulationJobErrorCode::SimulationApplicationHealthCheckFailure
-            }
-            "SimulationApplicationVersionMismatchedEtag" => {
-                SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag
-            }
+            "SimulationApplicationHealthCheckFailure" => SimulationJobErrorCode::SimulationApplicationHealthCheckFailure,
+            "SimulationApplicationVersionMismatchedEtag" => SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag,
             "SubnetIpLimitExceeded" => SimulationJobErrorCode::SubnetIpLimitExceeded,
             "ThrottlingError" => SimulationJobErrorCode::ThrottlingError,
             "UploadContentMismatchError" => SimulationJobErrorCode::UploadContentMismatchError,
             "WrongRegionRobotApplication" => SimulationJobErrorCode::WrongRegionRobotApplication,
             "WrongRegionS3Bucket" => SimulationJobErrorCode::WrongRegionS3Bucket,
             "WrongRegionS3Output" => SimulationJobErrorCode::WrongRegionS3Output,
-            "WrongRegionSimulationApplication" => {
-                SimulationJobErrorCode::WrongRegionSimulationApplication
-            }
-            other => SimulationJobErrorCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "WrongRegionSimulationApplication" => SimulationJobErrorCode::WrongRegionSimulationApplication,
+            other => SimulationJobErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -213,27 +185,17 @@ impl SimulationJobErrorCode {
     pub fn as_str(&self) -> &str {
         match self {
             SimulationJobErrorCode::BadPermissionsCloudwatchLogs => "BadPermissionsCloudwatchLogs",
-            SimulationJobErrorCode::BadPermissionsRobotApplication => {
-                "BadPermissionsRobotApplication"
-            }
+            SimulationJobErrorCode::BadPermissionsRobotApplication => "BadPermissionsRobotApplication",
             SimulationJobErrorCode::BadPermissionsS3Object => "BadPermissionsS3Object",
             SimulationJobErrorCode::BadPermissionsS3Output => "BadPermissionsS3Output",
-            SimulationJobErrorCode::BadPermissionsSimulationApplication => {
-                "BadPermissionsSimulationApplication"
-            }
-            SimulationJobErrorCode::BadPermissionsUserCredentials => {
-                "BadPermissionsUserCredentials"
-            }
+            SimulationJobErrorCode::BadPermissionsSimulationApplication => "BadPermissionsSimulationApplication",
+            SimulationJobErrorCode::BadPermissionsUserCredentials => "BadPermissionsUserCredentials",
             SimulationJobErrorCode::BatchCanceled => "BatchCanceled",
             SimulationJobErrorCode::BatchTimedOut => "BatchTimedOut",
             SimulationJobErrorCode::EniLimitExceeded => "ENILimitExceeded",
             SimulationJobErrorCode::InternalServiceError => "InternalServiceError",
-            SimulationJobErrorCode::InvalidBundleRobotApplication => {
-                "InvalidBundleRobotApplication"
-            }
-            SimulationJobErrorCode::InvalidBundleSimulationApplication => {
-                "InvalidBundleSimulationApplication"
-            }
+            SimulationJobErrorCode::InvalidBundleRobotApplication => "InvalidBundleRobotApplication",
+            SimulationJobErrorCode::InvalidBundleSimulationApplication => "InvalidBundleSimulationApplication",
             SimulationJobErrorCode::InvalidInput => "InvalidInput",
             SimulationJobErrorCode::InvalidS3Resource => "InvalidS3Resource",
             SimulationJobErrorCode::LimitExceeded => "LimitExceeded",
@@ -241,28 +203,18 @@ impl SimulationJobErrorCode {
             SimulationJobErrorCode::RequestThrottled => "RequestThrottled",
             SimulationJobErrorCode::ResourceNotFound => "ResourceNotFound",
             SimulationJobErrorCode::RobotApplicationCrash => "RobotApplicationCrash",
-            SimulationJobErrorCode::RobotApplicationHealthCheckFailure => {
-                "RobotApplicationHealthCheckFailure"
-            }
-            SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag => {
-                "RobotApplicationVersionMismatchedEtag"
-            }
+            SimulationJobErrorCode::RobotApplicationHealthCheckFailure => "RobotApplicationHealthCheckFailure",
+            SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag => "RobotApplicationVersionMismatchedEtag",
             SimulationJobErrorCode::SimulationApplicationCrash => "SimulationApplicationCrash",
-            SimulationJobErrorCode::SimulationApplicationHealthCheckFailure => {
-                "SimulationApplicationHealthCheckFailure"
-            }
-            SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag => {
-                "SimulationApplicationVersionMismatchedEtag"
-            }
+            SimulationJobErrorCode::SimulationApplicationHealthCheckFailure => "SimulationApplicationHealthCheckFailure",
+            SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag => "SimulationApplicationVersionMismatchedEtag",
             SimulationJobErrorCode::SubnetIpLimitExceeded => "SubnetIpLimitExceeded",
             SimulationJobErrorCode::ThrottlingError => "ThrottlingError",
             SimulationJobErrorCode::UploadContentMismatchError => "UploadContentMismatchError",
             SimulationJobErrorCode::WrongRegionRobotApplication => "WrongRegionRobotApplication",
             SimulationJobErrorCode::WrongRegionS3Bucket => "WrongRegionS3Bucket",
             SimulationJobErrorCode::WrongRegionS3Output => "WrongRegionS3Output",
-            SimulationJobErrorCode::WrongRegionSimulationApplication => {
-                "WrongRegionSimulationApplication"
-            }
+            SimulationJobErrorCode::WrongRegionSimulationApplication => "WrongRegionSimulationApplication",
             SimulationJobErrorCode::Unknown(value) => value.as_str(),
         }
     }

@@ -26,7 +26,7 @@ impl GetBandwidthRateLimitScheduleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBandwidthRateLimitScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_bandwidth_rate_limit_schedule::builders::GetBandwidthRateLimitScheduleInputBuilder,
+    inner: crate::operation::get_bandwidth_rate_limit_schedule::builders::GetBandwidthRateLimitScheduleInputBuilder,
 }
 impl GetBandwidthRateLimitScheduleFluentBuilder {
     /// Creates a new `GetBandwidthRateLimitSchedule`.
@@ -37,7 +37,7 @@ impl GetBandwidthRateLimitScheduleFluentBuilder {
         }
     }
     /// Access the GetBandwidthRateLimitSchedule as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_bandwidth_rate_limit_schedule::builders::GetBandwidthRateLimitScheduleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_bandwidth_rate_limit_schedule::builders::GetBandwidthRateLimitScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetBandwidthRateLimitScheduleFluentBuilder {
             crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetBandwidthRateLimitScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetBandwidthRateLimitScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetBandwidthRateLimitScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetBandwidthRateLimitScheduleFluentBuilder {
             crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleError>,
     > {
         self.customize_middleware().await
     }

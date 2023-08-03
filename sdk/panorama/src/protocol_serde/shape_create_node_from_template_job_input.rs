@@ -9,10 +9,7 @@ pub fn ser_create_node_from_template_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_job_resource_tags::ser_job_resource_tags(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_job_resource_tags::ser_job_resource_tags(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

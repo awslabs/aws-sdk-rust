@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeFpgaImageAttributeOutput {
 }
 impl DescribeFpgaImageAttributeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFpgaImageAttributeOutput`](crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeOutput).
-    pub fn builder() -> crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeOutputBuilder{
+    pub fn builder() -> crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeOutputBuilder {
         crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFpgaImageAttributeOutput`](crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFpgaImageAttributeOutputBuilder {
     pub(crate) fpga_image_attribute: ::std::option::Option<crate::types::FpgaImageAttribute>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DescribeFpgaImageAttributeOutputBuilder {
         self
     }
     /// <p>Information about the attribute.</p>
-    pub fn set_fpga_image_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::FpgaImageAttribute>,
-    ) -> Self {
+    pub fn set_fpga_image_attribute(mut self, input: ::std::option::Option<crate::types::FpgaImageAttribute>) -> Self {
         self.fpga_image_attribute = input;
         self
     }
     /// <p>Information about the attribute.</p>
-    pub fn get_fpga_image_attribute(
-        &self,
-    ) -> &::std::option::Option<crate::types::FpgaImageAttribute> {
+    pub fn get_fpga_image_attribute(&self) -> &::std::option::Option<crate::types::FpgaImageAttribute> {
         &self.fpga_image_attribute
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl DescribeFpgaImageAttributeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFpgaImageAttributeOutput`](crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeOutput {
+    pub fn build(self) -> crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeOutput {
         crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeOutput {
             fpga_image_attribute: self.fpga_image_attribute,
             _request_id: self._request_id,

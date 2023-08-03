@@ -18,17 +18,14 @@ impl ::aws_http::request_id::RequestId for PutBucketTaggingOutput {
 }
 impl PutBucketTaggingOutput {
     /// Creates a new builder-style object to manufacture [`PutBucketTaggingOutput`](crate::operation::put_bucket_tagging::PutBucketTaggingOutput).
-    pub fn builder() -> crate::operation::put_bucket_tagging::builders::PutBucketTaggingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_bucket_tagging::builders::PutBucketTaggingOutputBuilder {
         crate::operation::put_bucket_tagging::builders::PutBucketTaggingOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutBucketTaggingOutput`](crate::operation::put_bucket_tagging::PutBucketTaggingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketTaggingOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
@@ -39,10 +36,7 @@ impl PutBucketTaggingOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }

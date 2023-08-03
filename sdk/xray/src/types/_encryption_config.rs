@@ -37,9 +37,7 @@ impl EncryptionConfig {
 
 /// A builder for [`EncryptionConfig`](crate::types::EncryptionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionConfigBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EncryptionStatus>,
@@ -66,10 +64,7 @@ impl EncryptionConfigBuilder {
         self
     }
     /// <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EncryptionStatus>) -> Self {
         self.status = input;
         self
     }

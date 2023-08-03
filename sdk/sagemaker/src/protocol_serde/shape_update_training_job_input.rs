@@ -9,10 +9,7 @@ pub fn ser_update_training_job_input(
     if let Some(var_2) = &input.profiler_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("ProfilerConfig").start_object();
-        crate::protocol_serde::shape_profiler_config_for_update::ser_profiler_config_for_update(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_profiler_config_for_update::ser_profiler_config_for_update(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.profiler_rule_configurations {
@@ -30,10 +27,7 @@ pub fn ser_update_training_job_input(
     if let Some(var_8) = &input.resource_config {
         #[allow(unused_mut)]
         let mut object_9 = object.key("ResourceConfig").start_object();
-        crate::protocol_serde::shape_resource_config_for_update::ser_resource_config_for_update(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_resource_config_for_update::ser_resource_config_for_update(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())

@@ -9,129 +9,141 @@ pub fn de_delete_provisioning_template_version_http_error(
     crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictingResourceUpdateException" => crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::ConflictingResourceUpdateException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ConflictingResourceUpdateException" => {
+            crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::ConflictingResourceUpdateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConflictingResourceUpdateExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflicting_resource_update_exception::de_conflicting_resource_update_exception_json_err(_response_body, output).map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflicting_resource_update_exception::de_conflicting_resource_update_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "DeleteConflictException" => crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::DeleteConflictException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DeleteConflictException" => {
+            crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::DeleteConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DeleteConflictExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_delete_conflict_exception::de_delete_conflict_exception_json_err(_response_body, output).map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_delete_conflict_exception::de_delete_conflict_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InternalFailureException" => crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InternalFailureException" => {
+            crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output).map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidRequestException" => crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::InvalidRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidRequestException" => {
+            crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ThrottlingException" => crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ThrottlingException" => {
+            crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "UnauthorizedException" => crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedException" => {
+            crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::UnauthorizedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output).map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError::generic(generic),
     })
 }
 
@@ -147,9 +159,7 @@ pub fn de_delete_provisioning_template_version_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_provisioning_template_version::builders::DeleteProvisioningTemplateVersionOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

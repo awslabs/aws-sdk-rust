@@ -27,7 +27,7 @@ impl DeleteDefaultMessageTypeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDefaultMessageTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeInputBuilder,
+    inner: crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeInputBuilder,
 }
 impl DeleteDefaultMessageTypeFluentBuilder {
     /// Creates a new `DeleteDefaultMessageType`.
@@ -38,7 +38,7 @@ impl DeleteDefaultMessageTypeFluentBuilder {
         }
     }
     /// Access the DeleteDefaultMessageType as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteDefaultMessageTypeFluentBuilder {
             crate::operation::delete_default_message_type::DeleteDefaultMessageType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_default_message_type::DeleteDefaultMessageTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_default_message_type::DeleteDefaultMessageTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteDefaultMessageTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteDefaultMessageTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_default_message_type::DeleteDefaultMessageTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_default_message_type::DeleteDefaultMessageTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_default_message_type::DeleteDefaultMessageTypeError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteDefaultMessageTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_default_message_type::DeleteDefaultMessageTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_default_message_type::DeleteDefaultMessageTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_default_message_type::DeleteDefaultMessageTypeError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DeleteDefaultMessageTypeFluentBuilder {
             crate::operation::delete_default_message_type::DeleteDefaultMessageType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_default_message_type::DeleteDefaultMessageTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_default_message_type::DeleteDefaultMessageTypeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default message type from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default message type from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }

@@ -45,9 +45,7 @@ impl UpdateKeyDescriptionFluentBuilder {
         }
     }
     /// Access the UpdateKeyDescription as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_key_description::builders::UpdateKeyDescriptionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_key_description::builders::UpdateKeyDescriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +57,7 @@ impl UpdateKeyDescriptionFluentBuilder {
             crate::operation::update_key_description::UpdateKeyDescription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_key_description::UpdateKeyDescriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_key_description::UpdateKeyDescriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +67,7 @@ impl UpdateKeyDescriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +76,7 @@ impl UpdateKeyDescriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_key_description::UpdateKeyDescriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_key_description::UpdateKeyDescriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_key_description::UpdateKeyDescriptionError>,
     > {
         let op = self
             .inner
@@ -108,9 +99,7 @@ impl UpdateKeyDescriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_key_description::UpdateKeyDescriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_key_description::UpdateKeyDescriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_key_description::UpdateKeyDescriptionError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +113,7 @@ impl UpdateKeyDescriptionFluentBuilder {
             crate::operation::update_key_description::UpdateKeyDescription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_key_description::UpdateKeyDescriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_key_description::UpdateKeyDescriptionError>,
     > {
         self.customize_middleware().await
     }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetPreparedStatementOutput`](crate::operation::get_prepared_statement::GetPreparedStatementOutput) with field(s):
     ///   - [`prepared_statement(Option<PreparedStatement>)`](crate::operation::get_prepared_statement::GetPreparedStatementOutput::prepared_statement): <p>The name of the prepared statement that was retrieved.</p>
     /// - On failure, responds with [`SdkError<GetPreparedStatementError>`](crate::operation::get_prepared_statement::GetPreparedStatementError)
-    pub fn get_prepared_statement(
-        &self,
-    ) -> crate::operation::get_prepared_statement::builders::GetPreparedStatementFluentBuilder {
-        crate::operation::get_prepared_statement::builders::GetPreparedStatementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_prepared_statement(&self) -> crate::operation::get_prepared_statement::builders::GetPreparedStatementFluentBuilder {
+        crate::operation::get_prepared_statement::builders::GetPreparedStatementFluentBuilder::new(self.handle.clone())
     }
 }

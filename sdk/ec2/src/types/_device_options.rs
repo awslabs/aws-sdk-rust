@@ -23,9 +23,7 @@ impl DeviceOptions {
 
 /// A builder for [`DeviceOptions`](crate::types::DeviceOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceOptionsBuilder {
     pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl DeviceOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`DeviceOptions`](crate::types::DeviceOptions).
     pub fn build(self) -> crate::types::DeviceOptions {
-        crate::types::DeviceOptions {
-            tenant_id: self.tenant_id,
-        }
+        crate::types::DeviceOptions { tenant_id: self.tenant_id }
     }
 }

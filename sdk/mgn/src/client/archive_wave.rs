@@ -16,9 +16,7 @@ impl super::Client {
     ///   - [`last_modified_date_time(Option<String>)`](crate::operation::archive_wave::ArchiveWaveOutput::last_modified_date_time): <p>Wave last modified dateTime.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::archive_wave::ArchiveWaveOutput::tags): <p>Wave tags.</p>
     /// - On failure, responds with [`SdkError<ArchiveWaveError>`](crate::operation::archive_wave::ArchiveWaveError)
-    pub fn archive_wave(
-        &self,
-    ) -> crate::operation::archive_wave::builders::ArchiveWaveFluentBuilder {
+    pub fn archive_wave(&self) -> crate::operation::archive_wave::builders::ArchiveWaveFluentBuilder {
         crate::operation::archive_wave::builders::ArchiveWaveFluentBuilder::new(self.handle.clone())
     }
 }

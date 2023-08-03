@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`record_outputs(Option<Vec<RecordOutput>>)`](crate::operation::describe_record::DescribeRecordOutput::record_outputs): <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::describe_record::DescribeRecordOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeRecordError>`](crate::operation::describe_record::DescribeRecordError)
-    pub fn describe_record(
-        &self,
-    ) -> crate::operation::describe_record::builders::DescribeRecordFluentBuilder {
-        crate::operation::describe_record::builders::DescribeRecordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_record(&self) -> crate::operation::describe_record::builders::DescribeRecordFluentBuilder {
+        crate::operation::describe_record::builders::DescribeRecordFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`stream_arn(impl ::std::convert::Into<String>)`](crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamFluentBuilder::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`RemoveTagsFromStreamOutput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamOutput)
     /// - On failure, responds with [`SdkError<RemoveTagsFromStreamError>`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError)
-    pub fn remove_tags_from_stream(
-        &self,
-    ) -> crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamFluentBuilder
-    {
-        crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_tags_from_stream(&self) -> crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamFluentBuilder {
+        crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamFluentBuilder::new(self.handle.clone())
     }
 }

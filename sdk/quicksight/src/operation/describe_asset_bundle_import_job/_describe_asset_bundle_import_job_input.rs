@@ -22,34 +22,26 @@ impl DescribeAssetBundleImportJobInput {
 }
 impl DescribeAssetBundleImportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeAssetBundleImportJobInput`](crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobInput).
-    pub fn builder() -> crate::operation::describe_asset_bundle_import_job::builders::DescribeAssetBundleImportJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_asset_bundle_import_job::builders::DescribeAssetBundleImportJobInputBuilder {
         crate::operation::describe_asset_bundle_import_job::builders::DescribeAssetBundleImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAssetBundleImportJobInput`](crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssetBundleImportJobInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_bundle_import_job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAssetBundleImportJobInputBuilder {
     /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -58,18 +50,12 @@ impl DescribeAssetBundleImportJobInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code> API call.</p>
-    pub fn asset_bundle_import_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_bundle_import_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_bundle_import_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code> API call.</p>
-    pub fn set_asset_bundle_import_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_bundle_import_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_bundle_import_job_id = input;
         self
     }
@@ -84,11 +70,9 @@ impl DescribeAssetBundleImportJobInputBuilder {
         crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobInput {
-                aws_account_id: self.aws_account_id,
-                asset_bundle_import_job_id: self.asset_bundle_import_job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobInput {
+            aws_account_id: self.aws_account_id,
+            asset_bundle_import_job_id: self.asset_bundle_import_job_id,
+        })
     }
 }

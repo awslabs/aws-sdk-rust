@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`journal_s3_exports(Option<Vec<JournalS3ExportDescription>>)`](crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerOutput::journal_s3_exports): <p>The journal export jobs that are currently associated with the specified ledger.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerOutput::next_token): <ul>   <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>   <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3ExportsForLedger</code> call.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<ListJournalS3ExportsForLedgerError>`](crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerError)
-    pub fn list_journal_s3_exports_for_ledger(&self) -> crate::operation::list_journal_s3_exports_for_ledger::builders::ListJournalS3ExportsForLedgerFluentBuilder{
+    pub fn list_journal_s3_exports_for_ledger(
+        &self,
+    ) -> crate::operation::list_journal_s3_exports_for_ledger::builders::ListJournalS3ExportsForLedgerFluentBuilder {
         crate::operation::list_journal_s3_exports_for_ledger::builders::ListJournalS3ExportsForLedgerFluentBuilder::new(self.handle.clone())
     }
 }

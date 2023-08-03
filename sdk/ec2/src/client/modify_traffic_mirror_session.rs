@@ -15,7 +15,9 @@ impl super::Client {
     /// - On success, responds with [`ModifyTrafficMirrorSessionOutput`](crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionOutput) with field(s):
     ///   - [`traffic_mirror_session(Option<TrafficMirrorSession>)`](crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionOutput::traffic_mirror_session): <p>Information about the Traffic Mirror session.</p>
     /// - On failure, responds with [`SdkError<ModifyTrafficMirrorSessionError>`](crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionError)
-    pub fn modify_traffic_mirror_session(&self) -> crate::operation::modify_traffic_mirror_session::builders::ModifyTrafficMirrorSessionFluentBuilder{
+    pub fn modify_traffic_mirror_session(
+        &self,
+    ) -> crate::operation::modify_traffic_mirror_session::builders::ModifyTrafficMirrorSessionFluentBuilder {
         crate::operation::modify_traffic_mirror_session::builders::ModifyTrafficMirrorSessionFluentBuilder::new(self.handle.clone())
     }
 }

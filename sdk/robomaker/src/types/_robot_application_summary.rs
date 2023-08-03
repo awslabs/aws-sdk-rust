@@ -51,9 +51,7 @@ impl RobotApplicationSummary {
 
 /// A builder for [`RobotApplicationSummary`](crate::types::RobotApplicationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RobotApplicationSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl RobotApplicationSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -127,17 +122,12 @@ impl RobotApplicationSummaryBuilder {
         self
     }
     /// <p>Information about a robot software suite (ROS distribution).</p>
-    pub fn set_robot_software_suite(
-        mut self,
-        input: ::std::option::Option<crate::types::RobotSoftwareSuite>,
-    ) -> Self {
+    pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.robot_software_suite = input;
         self
     }
     /// <p>Information about a robot software suite (ROS distribution).</p>
-    pub fn get_robot_software_suite(
-        &self,
-    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+    pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         &self.robot_software_suite
     }
     /// Consumes the builder and constructs a [`RobotApplicationSummary`](crate::types::RobotApplicationSummary).

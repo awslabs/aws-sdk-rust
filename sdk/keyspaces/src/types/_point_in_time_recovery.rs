@@ -32,9 +32,7 @@ impl PointInTimeRecovery {
 
 /// A builder for [`PointInTimeRecovery`](crate::types::PointInTimeRecovery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PointInTimeRecoveryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
 }
@@ -53,10 +51,7 @@ impl PointInTimeRecoveryBuilder {
     /// <li> <p> <code>status=ENABLED</code> </p> </li>
     /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>) -> Self {
         self.status = input;
         self
     }
@@ -70,8 +65,6 @@ impl PointInTimeRecoveryBuilder {
     }
     /// Consumes the builder and constructs a [`PointInTimeRecovery`](crate::types::PointInTimeRecovery).
     pub fn build(self) -> crate::types::PointInTimeRecovery {
-        crate::types::PointInTimeRecovery {
-            status: self.status,
-        }
+        crate::types::PointInTimeRecovery { status: self.status }
     }
 }

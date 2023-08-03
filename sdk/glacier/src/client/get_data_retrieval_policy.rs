@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetDataRetrievalPolicyOutput`](crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyOutput) with field(s):
     ///   - [`policy(Option<DataRetrievalPolicy>)`](crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyOutput::policy): <p>Contains the returned data retrieval policy in JSON format.</p>
     /// - On failure, responds with [`SdkError<GetDataRetrievalPolicyError>`](crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError)
-    pub fn get_data_retrieval_policy(
-        &self,
-    ) -> crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyFluentBuilder
-    {
+    pub fn get_data_retrieval_policy(&self) -> crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyFluentBuilder {
         crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyFluentBuilder::new(self.handle.clone())
     }
 }

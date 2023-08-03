@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateBucketOutput`](crate::operation::create_bucket::CreateBucketOutput) with field(s):
     ///   - [`location(Option<String>)`](crate::operation::create_bucket::CreateBucketOutput::location): <p>A forward slash followed by the name of the bucket.</p>
     /// - On failure, responds with [`SdkError<CreateBucketError>`](crate::operation::create_bucket::CreateBucketError)
-    pub fn create_bucket(
-        &self,
-    ) -> crate::operation::create_bucket::builders::CreateBucketFluentBuilder {
-        crate::operation::create_bucket::builders::CreateBucketFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_bucket(&self) -> crate::operation::create_bucket::builders::CreateBucketFluentBuilder {
+        crate::operation::create_bucket::builders::CreateBucketFluentBuilder::new(self.handle.clone())
     }
 }

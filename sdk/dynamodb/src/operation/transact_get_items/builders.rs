@@ -10,10 +10,7 @@ impl TransactGetItemsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::transact_get_items::TransactGetItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transact_get_items::TransactGetItemsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transact_get_items::TransactGetItemsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.transact_get_items();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl TransactGetItemsFluentBuilder {
         }
     }
     /// Access the TransactGetItems as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::transact_get_items::builders::TransactGetItemsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::transact_get_items::builders::TransactGetItemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl TransactGetItemsFluentBuilder {
             crate::operation::transact_get_items::TransactGetItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transact_get_items::TransactGetItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transact_get_items::TransactGetItemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl TransactGetItemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl TransactGetItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::transact_get_items::TransactGetItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transact_get_items::TransactGetItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transact_get_items::TransactGetItemsError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl TransactGetItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::transact_get_items::TransactGetItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transact_get_items::TransactGetItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transact_get_items::TransactGetItemsError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl TransactGetItemsFluentBuilder {
             crate::operation::transact_get_items::TransactGetItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transact_get_items::TransactGetItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transact_get_items::TransactGetItemsError>,
     > {
         self.customize_middleware().await
     }
@@ -139,17 +123,12 @@ impl TransactGetItemsFluentBuilder {
         self
     }
     /// <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
-    pub fn set_transact_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransactGetItem>>,
-    ) -> Self {
+    pub fn set_transact_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransactGetItem>>) -> Self {
         self.inner = self.inner.set_transact_items(input);
         self
     }
     /// <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
-    pub fn get_transact_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransactGetItem>> {
+    pub fn get_transact_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransactGetItem>> {
         self.inner.get_transact_items()
     }
     /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and a value of <code>NONE</code> prevents that information from being returned. No other value is valid.</p>
@@ -158,17 +137,12 @@ impl TransactGetItemsFluentBuilder {
         self
     }
     /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and a value of <code>NONE</code> prevents that information from being returned. No other value is valid.</p>
-    pub fn set_return_consumed_capacity(
-        mut self,
-        input: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
-    ) -> Self {
+    pub fn set_return_consumed_capacity(mut self, input: ::std::option::Option<crate::types::ReturnConsumedCapacity>) -> Self {
         self.inner = self.inner.set_return_consumed_capacity(input);
         self
     }
     /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and a value of <code>NONE</code> prevents that information from being returned. No other value is valid.</p>
-    pub fn get_return_consumed_capacity(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReturnConsumedCapacity> {
+    pub fn get_return_consumed_capacity(&self) -> &::std::option::Option<crate::types::ReturnConsumedCapacity> {
         self.inner.get_return_consumed_capacity()
     }
 }

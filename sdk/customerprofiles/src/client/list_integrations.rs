@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ListIntegrationItem>>)`](crate::operation::list_integrations::ListIntegrationsOutput::items): <p>The list of ListIntegrations instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_integrations::ListIntegrationsOutput::next_token): <p>The pagination token from the previous ListIntegrations API call.</p>
     /// - On failure, responds with [`SdkError<ListIntegrationsError>`](crate::operation::list_integrations::ListIntegrationsError)
-    pub fn list_integrations(
-        &self,
-    ) -> crate::operation::list_integrations::builders::ListIntegrationsFluentBuilder {
-        crate::operation::list_integrations::builders::ListIntegrationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_integrations(&self) -> crate::operation::list_integrations::builders::ListIntegrationsFluentBuilder {
+        crate::operation::list_integrations::builders::ListIntegrationsFluentBuilder::new(self.handle.clone())
     }
 }

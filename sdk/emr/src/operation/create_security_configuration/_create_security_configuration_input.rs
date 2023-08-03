@@ -22,16 +22,14 @@ impl CreateSecurityConfigurationInput {
 }
 impl CreateSecurityConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateSecurityConfigurationInput`](crate::operation::create_security_configuration::CreateSecurityConfigurationInput).
-    pub fn builder() -> crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder {
         crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSecurityConfigurationInput`](crate::operation::create_security_configuration::CreateSecurityConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSecurityConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) security_configuration: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl CreateSecurityConfigurationInputBuilder {
         &self.name
     }
     /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    pub fn security_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    pub fn set_security_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_configuration = input;
         self
     }
@@ -78,11 +70,9 @@ impl CreateSecurityConfigurationInputBuilder {
         crate::operation::create_security_configuration::CreateSecurityConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_security_configuration::CreateSecurityConfigurationInput {
-                name: self.name,
-                security_configuration: self.security_configuration,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_security_configuration::CreateSecurityConfigurationInput {
+            name: self.name,
+            security_configuration: self.security_configuration,
+        })
     }
 }

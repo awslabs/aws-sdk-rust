@@ -5,16 +5,16 @@ pub use crate::operation::put_voice_connector_logging_configuration::_put_voice_
 
 impl PutVoiceConnectorLoggingConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_voice_connector_logging_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl PutVoiceConnectorLoggingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_voice_connector_logging_configuration::builders::PutVoiceConnectorLoggingConfigurationInputBuilder,
+    inner: crate::operation::put_voice_connector_logging_configuration::builders::PutVoiceConnectorLoggingConfigurationInputBuilder,
 }
 impl PutVoiceConnectorLoggingConfigurationFluentBuilder {
     /// Creates a new `PutVoiceConnectorLoggingConfiguration`.
@@ -37,15 +37,22 @@ impl PutVoiceConnectorLoggingConfigurationFluentBuilder {
         }
     }
     /// Access the PutVoiceConnectorLoggingConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_voice_connector_logging_configuration::builders::PutVoiceConnectorLoggingConfigurationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_voice_connector_logging_configuration::builders::PutVoiceConnectorLoggingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl PutVoiceConnectorLoggingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +89,35 @@ impl PutVoiceConnectorLoggingConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
@@ -120,17 +131,12 @@ impl PutVoiceConnectorLoggingConfigurationFluentBuilder {
         self
     }
     /// <p>The logging configuration being updated.</p>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.inner = self.inner.set_logging_configuration(input);
         self
     }
     /// <p>The logging configuration being updated.</p>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         self.inner.get_logging_configuration()
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateCertificateOutput {
 }
 impl DisassociateCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateCertificateOutput`](crate::operation::disassociate_certificate::DisassociateCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_certificate::builders::DisassociateCertificateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_certificate::builders::DisassociateCertificateOutputBuilder {
         crate::operation::disassociate_certificate::builders::DisassociateCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateCertificateOutput`](crate::operation::disassociate_certificate::DisassociateCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateCertificateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DisassociateCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateCertificateOutput`](crate::operation::disassociate_certificate::DisassociateCertificateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_certificate::DisassociateCertificateOutput {
+    pub fn build(self) -> crate::operation::disassociate_certificate::DisassociateCertificateOutput {
         crate::operation::disassociate_certificate::DisassociateCertificateOutput {
             _request_id: self._request_id,
         }

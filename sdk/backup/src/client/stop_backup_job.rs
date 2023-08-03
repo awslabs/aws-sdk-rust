@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`backup_job_id(impl ::std::convert::Into<String>)`](crate::operation::stop_backup_job::builders::StopBackupJobFluentBuilder::backup_job_id) / [`set_backup_job_id(Option<String>)`](crate::operation::stop_backup_job::builders::StopBackupJobFluentBuilder::set_backup_job_id): <p>Uniquely identifies a request to Backup to back up a resource.</p>
     /// - On success, responds with [`StopBackupJobOutput`](crate::operation::stop_backup_job::StopBackupJobOutput)
     /// - On failure, responds with [`SdkError<StopBackupJobError>`](crate::operation::stop_backup_job::StopBackupJobError)
-    pub fn stop_backup_job(
-        &self,
-    ) -> crate::operation::stop_backup_job::builders::StopBackupJobFluentBuilder {
-        crate::operation::stop_backup_job::builders::StopBackupJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_backup_job(&self) -> crate::operation::stop_backup_job::builders::StopBackupJobFluentBuilder {
+        crate::operation::stop_backup_job::builders::StopBackupJobFluentBuilder::new(self.handle.clone())
     }
 }

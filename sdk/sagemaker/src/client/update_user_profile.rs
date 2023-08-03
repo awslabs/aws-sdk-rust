@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateUserProfileOutput`](crate::operation::update_user_profile::UpdateUserProfileOutput) with field(s):
     ///   - [`user_profile_arn(Option<String>)`](crate::operation::update_user_profile::UpdateUserProfileOutput::user_profile_arn): <p>The user profile Amazon Resource Name (ARN).</p>
     /// - On failure, responds with [`SdkError<UpdateUserProfileError>`](crate::operation::update_user_profile::UpdateUserProfileError)
-    pub fn update_user_profile(
-        &self,
-    ) -> crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder {
-        crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_user_profile(&self) -> crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder {
+        crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::new(self.handle.clone())
     }
 }

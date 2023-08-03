@@ -43,18 +43,14 @@ impl UpdateBotRecommendationInput {
 }
 impl UpdateBotRecommendationInput {
     /// Creates a new builder-style object to manufacture [`UpdateBotRecommendationInput`](crate::operation::update_bot_recommendation::UpdateBotRecommendationInput).
-    pub fn builder(
-    ) -> crate::operation::update_bot_recommendation::builders::UpdateBotRecommendationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_bot_recommendation::builders::UpdateBotRecommendationInputBuilder {
         crate::operation::update_bot_recommendation::builders::UpdateBotRecommendationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBotRecommendationInput`](crate::operation::update_bot_recommendation::UpdateBotRecommendationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBotRecommendationInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -106,18 +102,12 @@ impl UpdateBotRecommendationInputBuilder {
         &self.locale_id
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_recommendation_id = input;
         self
     }
@@ -131,17 +121,12 @@ impl UpdateBotRecommendationInputBuilder {
         self
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn set_encryption_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionSetting>,
-    ) -> Self {
+    pub fn set_encryption_setting(mut self, input: ::std::option::Option<crate::types::EncryptionSetting>) -> Self {
         self.encryption_setting = input;
         self
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn get_encryption_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionSetting> {
+    pub fn get_encryption_setting(&self) -> &::std::option::Option<crate::types::EncryptionSetting> {
         &self.encryption_setting
     }
     /// Consumes the builder and constructs a [`UpdateBotRecommendationInput`](crate::operation::update_bot_recommendation::UpdateBotRecommendationInput).
@@ -151,14 +136,12 @@ impl UpdateBotRecommendationInputBuilder {
         crate::operation::update_bot_recommendation::UpdateBotRecommendationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_bot_recommendation::UpdateBotRecommendationInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_recommendation_id: self.bot_recommendation_id,
-                encryption_setting: self.encryption_setting,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_bot_recommendation::UpdateBotRecommendationInput {
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+            bot_recommendation_id: self.bot_recommendation_id,
+            encryption_setting: self.encryption_setting,
+        })
     }
 }

@@ -102,9 +102,7 @@ impl Item {
 
 /// A builder for [`Item`](crate::types::Item).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ItemBuilder {
     pub(crate) absolute_time: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
@@ -122,19 +120,13 @@ pub struct ItemBuilder {
 impl ItemBuilder {
     /// <p>The time when the message or event was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn absolute_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn absolute_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.absolute_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time when the message or event was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn set_absolute_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_absolute_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.absolute_time = input;
         self
     }
@@ -200,18 +192,12 @@ impl ItemBuilder {
         &self.r#type
     }
     /// <p>The ID of the sender in the session.</p>
-    pub fn participant_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the sender in the session.</p>
-    pub fn set_participant_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.participant_id = input;
         self
     }
@@ -239,10 +225,7 @@ impl ItemBuilder {
         self
     }
     /// <p>The role of the sender. For example, is it a customer, agent, or system.</p>
-    pub fn set_participant_role(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantRole>,
-    ) -> Self {
+    pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
         self.participant_role = input;
         self
     }
@@ -262,17 +245,12 @@ impl ItemBuilder {
         self
     }
     /// <p>Provides information about the attachments.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentItem>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentItem>>) -> Self {
         self.attachments = input;
         self
     }
     /// <p>Provides information about the attachments.</p>
-    pub fn get_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentItem>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentItem>> {
         &self.attachments
     }
     /// <p>The metadata related to the message. Currently this supports only information related to message receipts.</p>
@@ -281,10 +259,7 @@ impl ItemBuilder {
         self
     }
     /// <p>The metadata related to the message. Currently this supports only information related to message receipts.</p>
-    pub fn set_message_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageMetadata>,
-    ) -> Self {
+    pub fn set_message_metadata(mut self, input: ::std::option::Option<crate::types::MessageMetadata>) -> Self {
         self.message_metadata = input;
         self
     }
@@ -293,18 +268,12 @@ impl ItemBuilder {
         &self.message_metadata
     }
     /// <p>The contactId on which the transcript item was originally sent. This field is only populated for persistent chats when the transcript item is from the past chat session. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
-    pub fn related_contact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_contact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contactId on which the transcript item was originally sent. This field is only populated for persistent chats when the transcript item is from the past chat session. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
-    pub fn set_related_contact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_contact_id = input;
         self
     }

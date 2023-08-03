@@ -26,7 +26,7 @@ impl GetSecurityConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSecurityConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_security_configuration::builders::GetSecurityConfigurationInputBuilder,
+    inner: crate::operation::get_security_configuration::builders::GetSecurityConfigurationInputBuilder,
 }
 impl GetSecurityConfigurationFluentBuilder {
     /// Creates a new `GetSecurityConfiguration`.
@@ -37,10 +37,7 @@ impl GetSecurityConfigurationFluentBuilder {
         }
     }
     /// Access the GetSecurityConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_security_configuration::builders::GetSecurityConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_security_configuration::builders::GetSecurityConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetSecurityConfigurationFluentBuilder {
             crate::operation::get_security_configuration::GetSecurityConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_security_configuration::GetSecurityConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_security_configuration::GetSecurityConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetSecurityConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetSecurityConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_security_configuration::GetSecurityConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_security_configuration::GetSecurityConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_security_configuration::GetSecurityConfigurationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetSecurityConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_security_configuration::GetSecurityConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_security_configuration::GetSecurityConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_security_configuration::GetSecurityConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetSecurityConfigurationFluentBuilder {
             crate::operation::get_security_configuration::GetSecurityConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_security_configuration::GetSecurityConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_security_configuration::GetSecurityConfigurationError>,
     > {
         self.customize_middleware().await
     }

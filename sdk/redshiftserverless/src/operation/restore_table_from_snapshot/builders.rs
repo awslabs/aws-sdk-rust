@@ -26,7 +26,7 @@ impl RestoreTableFromSnapshotInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreTableFromSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::restore_table_from_snapshot::builders::RestoreTableFromSnapshotInputBuilder,
+    inner: crate::operation::restore_table_from_snapshot::builders::RestoreTableFromSnapshotInputBuilder,
 }
 impl RestoreTableFromSnapshotFluentBuilder {
     /// Creates a new `RestoreTableFromSnapshot`.
@@ -37,7 +37,7 @@ impl RestoreTableFromSnapshotFluentBuilder {
         }
     }
     /// Access the RestoreTableFromSnapshot as a reference.
-    pub fn as_input(&self) -> &crate::operation::restore_table_from_snapshot::builders::RestoreTableFromSnapshotInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::restore_table_from_snapshot::builders::RestoreTableFromSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RestoreTableFromSnapshotFluentBuilder {
             crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RestoreTableFromSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RestoreTableFromSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RestoreTableFromSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl RestoreTableFromSnapshotFluentBuilder {
             crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The namespace of the snapshot to restore from.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_name(input.into());
         self
     }
     /// <p>The namespace of the snapshot to restore from.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl RestoreTableFromSnapshotFluentBuilder {
         self.inner.get_namespace_name()
     }
     /// <p>The workgroup to restore the table to.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workgroup_name(input.into());
         self
     }
     /// <p>The workgroup to restore the table to.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
     }
@@ -161,18 +138,12 @@ impl RestoreTableFromSnapshotFluentBuilder {
         self.inner.get_workgroup_name()
     }
     /// <p>The name of the snapshot to restore the table from.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_name(input.into());
         self
     }
     /// <p>The name of the snapshot to restore the table from.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_name(input);
         self
     }
@@ -181,18 +152,12 @@ impl RestoreTableFromSnapshotFluentBuilder {
         self.inner.get_snapshot_name()
     }
     /// <p>The name of the source database that contains the table being restored.</p>
-    pub fn source_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_database_name(input.into());
         self
     }
     /// <p>The name of the source database that contains the table being restored.</p>
-    pub fn set_source_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_database_name(input);
         self
     }
@@ -201,18 +166,12 @@ impl RestoreTableFromSnapshotFluentBuilder {
         self.inner.get_source_database_name()
     }
     /// <p>The name of the source schema that contains the table being restored.</p>
-    pub fn source_schema_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_schema_name(input.into());
         self
     }
     /// <p>The name of the source schema that contains the table being restored.</p>
-    pub fn set_source_schema_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_schema_name(input);
         self
     }
@@ -221,18 +180,12 @@ impl RestoreTableFromSnapshotFluentBuilder {
         self.inner.get_source_schema_name()
     }
     /// <p>The name of the source table being restored.</p>
-    pub fn source_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_table_name(input.into());
         self
     }
     /// <p>The name of the source table being restored.</p>
-    pub fn set_source_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_table_name(input);
         self
     }
@@ -241,18 +194,12 @@ impl RestoreTableFromSnapshotFluentBuilder {
         self.inner.get_source_table_name()
     }
     /// <p>The name of the database to restore the table to.</p>
-    pub fn target_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_database_name(input.into());
         self
     }
     /// <p>The name of the database to restore the table to.</p>
-    pub fn set_target_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_database_name(input);
         self
     }
@@ -261,18 +208,12 @@ impl RestoreTableFromSnapshotFluentBuilder {
         self.inner.get_target_database_name()
     }
     /// <p>The name of the schema to restore the table to.</p>
-    pub fn target_schema_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_schema_name(input.into());
         self
     }
     /// <p>The name of the schema to restore the table to.</p>
-    pub fn set_target_schema_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_schema_name(input);
         self
     }
@@ -281,18 +222,12 @@ impl RestoreTableFromSnapshotFluentBuilder {
         self.inner.get_target_schema_name()
     }
     /// <p>The name of the table to create from the restore operation.</p>
-    pub fn new_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_table_name(input.into());
         self
     }
     /// <p>The name of the table to create from the restore operation.</p>
-    pub fn set_new_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_table_name(input);
         self
     }
@@ -306,10 +241,7 @@ impl RestoreTableFromSnapshotFluentBuilder {
         self
     }
     /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false.</p>
-    pub fn set_activate_case_sensitive_identifier(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_activate_case_sensitive_identifier(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_activate_case_sensitive_identifier(input);
         self
     }

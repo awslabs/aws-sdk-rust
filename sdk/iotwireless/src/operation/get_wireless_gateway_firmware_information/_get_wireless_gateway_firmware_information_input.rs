@@ -15,16 +15,14 @@ impl GetWirelessGatewayFirmwareInformationInput {
 }
 impl GetWirelessGatewayFirmwareInformationInput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayFirmwareInformationInput`](crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput).
-    pub fn builder() -> crate::operation::get_wireless_gateway_firmware_information::builders::GetWirelessGatewayFirmwareInformationInputBuilder{
+    pub fn builder() -> crate::operation::get_wireless_gateway_firmware_information::builders::GetWirelessGatewayFirmwareInformationInputBuilder {
         crate::operation::get_wireless_gateway_firmware_information::builders::GetWirelessGatewayFirmwareInformationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessGatewayFirmwareInformationInput`](crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayFirmwareInformationInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl GetWirelessGatewayFirmwareInformationInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetWirelessGatewayFirmwareInformationInput`](crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput {
-                id: self.id
-                ,
-            }
+            crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput { id: self.id },
         )
     }
 }

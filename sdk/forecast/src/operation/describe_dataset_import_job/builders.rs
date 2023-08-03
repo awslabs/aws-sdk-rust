@@ -35,7 +35,7 @@ impl DescribeDatasetImportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDatasetImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobInputBuilder,
+    inner: crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobInputBuilder,
 }
 impl DescribeDatasetImportJobFluentBuilder {
     /// Creates a new `DescribeDatasetImportJob`.
@@ -46,7 +46,7 @@ impl DescribeDatasetImportJobFluentBuilder {
         }
     }
     /// Access the DescribeDatasetImportJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +58,7 @@ impl DescribeDatasetImportJobFluentBuilder {
             crate::operation::describe_dataset_import_job::DescribeDatasetImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dataset_import_job::DescribeDatasetImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dataset_import_job::DescribeDatasetImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +68,7 @@ impl DescribeDatasetImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +77,7 @@ impl DescribeDatasetImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dataset_import_job::DescribeDatasetImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dataset_import_job::DescribeDatasetImportJobError>,
     > {
         let op = self
             .inner
@@ -107,9 +100,7 @@ impl DescribeDatasetImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dataset_import_job::DescribeDatasetImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dataset_import_job::DescribeDatasetImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -123,25 +114,17 @@ impl DescribeDatasetImportJobFluentBuilder {
             crate::operation::describe_dataset_import_job::DescribeDatasetImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dataset_import_job::DescribeDatasetImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dataset_import_job::DescribeDatasetImportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    pub fn dataset_import_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_import_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_import_job_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    pub fn set_dataset_import_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_import_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_import_job_arn(input);
         self
     }

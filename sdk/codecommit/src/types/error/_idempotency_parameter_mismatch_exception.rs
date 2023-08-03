@@ -27,34 +27,27 @@ impl ::std::fmt::Display for IdempotencyParameterMismatchException {
     }
 }
 impl ::std::error::Error for IdempotencyParameterMismatchException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::IdempotencyParameterMismatchException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::IdempotencyParameterMismatchException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for IdempotencyParameterMismatchException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for IdempotencyParameterMismatchException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl IdempotencyParameterMismatchException {
     /// Creates a new builder-style object to manufacture [`IdempotencyParameterMismatchException`](crate::types::error::IdempotencyParameterMismatchException).
-    pub fn builder() -> crate::types::error::builders::IdempotencyParameterMismatchExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::IdempotencyParameterMismatchExceptionBuilder {
         crate::types::error::builders::IdempotencyParameterMismatchExceptionBuilder::default()
     }
 }
 
 /// A builder for [`IdempotencyParameterMismatchException`](crate::types::error::IdempotencyParameterMismatchException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdempotencyParameterMismatchExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl IdempotencyParameterMismatchExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

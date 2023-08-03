@@ -5,15 +5,12 @@
 pub struct DescribeEventCategoriesOutput {
     /// <p>A list of EventCategoriesMap data types.</p>
     #[doc(hidden)]
-    pub event_categories_map_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventCategoriesMap>>,
+    pub event_categories_map_list: ::std::option::Option<::std::vec::Vec<crate::types::EventCategoriesMap>>,
     _request_id: Option<String>,
 }
 impl DescribeEventCategoriesOutput {
     /// <p>A list of EventCategoriesMap data types.</p>
-    pub fn event_categories_map_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EventCategoriesMap]> {
+    pub fn event_categories_map_list(&self) -> ::std::option::Option<&[crate::types::EventCategoriesMap]> {
         self.event_categories_map_list.as_deref()
     }
 }
@@ -24,21 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeEventCategoriesOutput {
 }
 impl DescribeEventCategoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventCategoriesOutput`](crate::operation::describe_event_categories::DescribeEventCategoriesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_categories::builders::DescribeEventCategoriesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_event_categories::builders::DescribeEventCategoriesOutputBuilder {
         crate::operation::describe_event_categories::builders::DescribeEventCategoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventCategoriesOutput`](crate::operation::describe_event_categories::DescribeEventCategoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventCategoriesOutputBuilder {
-    pub(crate) event_categories_map_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventCategoriesMap>>,
+    pub(crate) event_categories_map_list: ::std::option::Option<::std::vec::Vec<crate::types::EventCategoriesMap>>,
     _request_id: Option<String>,
 }
 impl DescribeEventCategoriesOutputBuilder {
@@ -54,17 +46,12 @@ impl DescribeEventCategoriesOutputBuilder {
         self
     }
     /// <p>A list of EventCategoriesMap data types.</p>
-    pub fn set_event_categories_map_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventCategoriesMap>>,
-    ) -> Self {
+    pub fn set_event_categories_map_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventCategoriesMap>>) -> Self {
         self.event_categories_map_list = input;
         self
     }
     /// <p>A list of EventCategoriesMap data types.</p>
-    pub fn get_event_categories_map_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventCategoriesMap>> {
+    pub fn get_event_categories_map_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventCategoriesMap>> {
         &self.event_categories_map_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -77,9 +64,7 @@ impl DescribeEventCategoriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEventCategoriesOutput`](crate::operation::describe_event_categories::DescribeEventCategoriesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_event_categories::DescribeEventCategoriesOutput {
+    pub fn build(self) -> crate::operation::describe_event_categories::DescribeEventCategoriesOutput {
         crate::operation::describe_event_categories::DescribeEventCategoriesOutput {
             event_categories_map_list: self.event_categories_map_list,
             _request_id: self._request_id,

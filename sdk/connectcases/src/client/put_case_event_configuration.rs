@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`event_bridge(EventBridgeConfiguration)`](crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationFluentBuilder::event_bridge) / [`set_event_bridge(Option<EventBridgeConfiguration>)`](crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationFluentBuilder::set_event_bridge): <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
     /// - On success, responds with [`PutCaseEventConfigurationOutput`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutCaseEventConfigurationError>`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationError)
-    pub fn put_case_event_configuration(&self) -> crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationFluentBuilder{
+    pub fn put_case_event_configuration(&self) -> crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationFluentBuilder {
         crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

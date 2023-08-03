@@ -38,9 +38,7 @@ impl DescribeTapesOutput {
 
 /// A builder for [`DescribeTapesOutput`](crate::operation::describe_tapes::DescribeTapesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTapesOutputBuilder {
     pub(crate) tapes: ::std::option::Option<::std::vec::Vec<crate::types::Tape>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -59,10 +57,7 @@ impl DescribeTapesOutputBuilder {
         self
     }
     /// <p>An array of virtual tape descriptions.</p>
-    pub fn set_tapes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tape>>,
-    ) -> Self {
+    pub fn set_tapes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tape>>) -> Self {
         self.tapes = input;
         self
     }

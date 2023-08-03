@@ -97,10 +97,7 @@ impl SendTaskFailureInputBuilder {
     /// Consumes the builder and constructs a [`SendTaskFailureInput`](crate::operation::send_task_failure::SendTaskFailureInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::send_task_failure::SendTaskFailureInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::send_task_failure::SendTaskFailureInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_task_failure::SendTaskFailureInput {
             task_token: self.task_token,
             error: self.error,

@@ -10,10 +10,7 @@ impl UpdateAdmChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_adm_channel::UpdateAdmChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_adm_channel::UpdateAdmChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_adm_channel::UpdateAdmChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_adm_channel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateAdmChannelFluentBuilder {
         }
     }
     /// Access the UpdateAdmChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_adm_channel::builders::UpdateAdmChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_adm_channel::builders::UpdateAdmChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateAdmChannelFluentBuilder {
             crate::operation::update_adm_channel::UpdateAdmChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_adm_channel::UpdateAdmChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_adm_channel::UpdateAdmChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateAdmChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateAdmChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_adm_channel::UpdateAdmChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_adm_channel::UpdateAdmChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_adm_channel::UpdateAdmChannelError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateAdmChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_adm_channel::UpdateAdmChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_adm_channel::UpdateAdmChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_adm_channel::UpdateAdmChannelError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateAdmChannelFluentBuilder {
             crate::operation::update_adm_channel::UpdateAdmChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_adm_channel::UpdateAdmChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_adm_channel::UpdateAdmChannelError>,
     > {
         self.customize_middleware().await
     }
@@ -128,32 +112,21 @@ impl UpdateAdmChannelFluentBuilder {
         self
     }
     /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    pub fn set_adm_channel_request(
-        mut self,
-        input: ::std::option::Option<crate::types::AdmChannelRequest>,
-    ) -> Self {
+    pub fn set_adm_channel_request(mut self, input: ::std::option::Option<crate::types::AdmChannelRequest>) -> Self {
         self.inner = self.inner.set_adm_channel_request(input);
         self
     }
     /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    pub fn get_adm_channel_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdmChannelRequest> {
+    pub fn get_adm_channel_request(&self) -> &::std::option::Option<crate::types::AdmChannelRequest> {
         self.inner.get_adm_channel_request()
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

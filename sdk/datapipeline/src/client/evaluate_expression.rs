@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`EvaluateExpressionOutput`](crate::operation::evaluate_expression::EvaluateExpressionOutput) with field(s):
     ///   - [`evaluated_expression(Option<String>)`](crate::operation::evaluate_expression::EvaluateExpressionOutput::evaluated_expression): <p>The evaluated expression.</p>
     /// - On failure, responds with [`SdkError<EvaluateExpressionError>`](crate::operation::evaluate_expression::EvaluateExpressionError)
-    pub fn evaluate_expression(
-        &self,
-    ) -> crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder {
-        crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn evaluate_expression(&self) -> crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder {
+        crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::new(self.handle.clone())
     }
 }

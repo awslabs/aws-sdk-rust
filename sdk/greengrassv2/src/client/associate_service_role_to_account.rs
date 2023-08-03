@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateServiceRoleToAccountOutput`](crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountOutput) with field(s):
     ///   - [`associated_at(Option<String>)`](crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountOutput::associated_at): <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<AssociateServiceRoleToAccountError>`](crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountError)
-    pub fn associate_service_role_to_account(&self) -> crate::operation::associate_service_role_to_account::builders::AssociateServiceRoleToAccountFluentBuilder{
+    pub fn associate_service_role_to_account(
+        &self,
+    ) -> crate::operation::associate_service_role_to_account::builders::AssociateServiceRoleToAccountFluentBuilder {
         crate::operation::associate_service_role_to_account::builders::AssociateServiceRoleToAccountFluentBuilder::new(self.handle.clone())
     }
 }

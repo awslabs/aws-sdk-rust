@@ -27,7 +27,7 @@ impl AssociateFileSystemAliasesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateFileSystemAliasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_file_system_aliases::builders::AssociateFileSystemAliasesInputBuilder,
+    inner: crate::operation::associate_file_system_aliases::builders::AssociateFileSystemAliasesInputBuilder,
 }
 impl AssociateFileSystemAliasesFluentBuilder {
     /// Creates a new `AssociateFileSystemAliases`.
@@ -38,7 +38,7 @@ impl AssociateFileSystemAliasesFluentBuilder {
         }
     }
     /// Access the AssociateFileSystemAliases as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_file_system_aliases::builders::AssociateFileSystemAliasesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_file_system_aliases::builders::AssociateFileSystemAliasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl AssociateFileSystemAliasesFluentBuilder {
             crate::operation::associate_file_system_aliases::AssociateFileSystemAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl AssociateFileSystemAliasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl AssociateFileSystemAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl AssociateFileSystemAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl AssociateFileSystemAliasesFluentBuilder {
             crate::operation::associate_file_system_aliases::AssociateFileSystemAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -142,18 +125,12 @@ impl AssociateFileSystemAliasesFluentBuilder {
         self.inner.get_client_request_token()
     }
     /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
@@ -185,10 +162,7 @@ impl AssociateFileSystemAliasesFluentBuilder {
     /// <li> <p>Can start with a numeric.</p> </li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
-    pub fn set_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_aliases(input);
         self
     }

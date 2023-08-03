@@ -40,13 +40,7 @@
 /// Specify the color of the rectangle behind the captions. Leave background color blank and set Style passthrough to enabled to use the background color data from your input captions, if present.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DvbSubtitleBackgroundColor {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for DvbSubtitleBackgroundColor {
             "BLACK" => DvbSubtitleBackgroundColor::Black,
             "NONE" => DvbSubtitleBackgroundColor::None,
             "WHITE" => DvbSubtitleBackgroundColor::White,
-            other => DvbSubtitleBackgroundColor::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DvbSubtitleBackgroundColor::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

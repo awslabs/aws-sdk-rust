@@ -10,10 +10,7 @@ impl CreateFunctionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_function::CreateFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_function::CreateFunctionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_function::CreateFunctionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_function();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl CreateFunctionFluentBuilder {
         }
     }
     /// Access the CreateFunction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_function::builders::CreateFunctionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_function::builders::CreateFunctionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -69,10 +64,7 @@ impl CreateFunctionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -130,10 +122,7 @@ impl CreateFunctionFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -145,10 +134,7 @@ impl CreateFunctionFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }
@@ -298,10 +284,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code> for .zip file archive.</p>
-    pub fn set_package_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageType>,
-    ) -> Self {
+    pub fn set_package_type(mut self, input: ::std::option::Option<crate::types::PackageType>) -> Self {
         self.inner = self.inner.set_package_type(input);
         self
     }
@@ -315,10 +298,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>A dead-letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">Dead-letter queues</a>.</p>
-    pub fn set_dead_letter_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeadLetterConfig>,
-    ) -> Self {
+    pub fn set_dead_letter_config(mut self, input: ::std::option::Option<crate::types::DeadLetterConfig>) -> Self {
         self.inner = self.inner.set_dead_letter_config(input);
         self
     }
@@ -332,10 +312,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>Environment variables that are accessible from function code during execution.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }
@@ -363,10 +340,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
-    pub fn set_tracing_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TracingConfig>,
-    ) -> Self {
+    pub fn set_tracing_config(mut self, input: ::std::option::Option<crate::types::TracingConfig>) -> Self {
         self.inner = self.inner.set_tracing_config(input);
         self
     }
@@ -379,30 +353,17 @@ impl CreateFunctionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// Appends an item to `Layers`.
@@ -415,10 +376,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
-    pub fn set_layers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_layers(input);
         self
     }
@@ -436,17 +394,12 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>Connection settings for an Amazon EFS file system.</p>
-    pub fn set_file_system_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>,
-    ) -> Self {
+    pub fn set_file_system_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>) -> Self {
         self.inner = self.inner.set_file_system_configs(input);
         self
     }
     /// <p>Connection settings for an Amazon EFS file system.</p>
-    pub fn get_file_system_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>> {
+    pub fn get_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>> {
         self.inner.get_file_system_configs()
     }
     /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
@@ -455,10 +408,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
-    pub fn set_image_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageConfig>,
-    ) -> Self {
+    pub fn set_image_config(mut self, input: ::std::option::Option<crate::types::ImageConfig>) -> Self {
         self.inner = self.inner.set_image_config(input);
         self
     }
@@ -467,18 +417,12 @@ impl CreateFunctionFluentBuilder {
         self.inner.get_image_config()
     }
     /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
-    pub fn code_signing_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_signing_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_signing_config_arn(input.into());
         self
     }
     /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
-    pub fn set_code_signing_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_signing_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code_signing_config_arn(input);
         self
     }
@@ -496,17 +440,12 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn set_architectures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
-    ) -> Self {
+    pub fn set_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>) -> Self {
         self.inner = self.inner.set_architectures(input);
         self
     }
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn get_architectures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
+    pub fn get_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
         self.inner.get_architectures()
     }
     /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
@@ -515,10 +454,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
-    pub fn set_ephemeral_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::EphemeralStorage>,
-    ) -> Self {
+    pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::EphemeralStorage>) -> Self {
         self.inner = self.inner.set_ephemeral_storage(input);
         self
     }

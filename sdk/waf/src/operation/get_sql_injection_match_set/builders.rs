@@ -30,7 +30,7 @@ impl GetSqlInjectionMatchSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSqlInjectionMatchSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_sql_injection_match_set::builders::GetSqlInjectionMatchSetInputBuilder,
+    inner: crate::operation::get_sql_injection_match_set::builders::GetSqlInjectionMatchSetInputBuilder,
 }
 impl GetSqlInjectionMatchSetFluentBuilder {
     /// Creates a new `GetSqlInjectionMatchSet`.
@@ -41,10 +41,7 @@ impl GetSqlInjectionMatchSetFluentBuilder {
         }
     }
     /// Access the GetSqlInjectionMatchSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_sql_injection_match_set::builders::GetSqlInjectionMatchSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_sql_injection_match_set::builders::GetSqlInjectionMatchSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl GetSqlInjectionMatchSetFluentBuilder {
             crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl GetSqlInjectionMatchSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl GetSqlInjectionMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl GetSqlInjectionMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +109,17 @@ impl GetSqlInjectionMatchSetFluentBuilder {
             crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sql_injection_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sql_injection_match_set_id(input.into());
         self
     }
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn set_sql_injection_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sql_injection_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sql_injection_match_set_id(input);
         self
     }

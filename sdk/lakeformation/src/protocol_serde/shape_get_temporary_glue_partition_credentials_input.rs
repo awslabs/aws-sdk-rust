@@ -18,10 +18,7 @@ pub fn ser_get_temporary_glue_partition_credentials_input(
     if let Some(var_4) = &input.partition {
         #[allow(unused_mut)]
         let mut object_5 = object.key("Partition").start_object();
-        crate::protocol_serde::shape_partition_value_list::ser_partition_value_list(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_partition_value_list::ser_partition_value_list(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.permissions {

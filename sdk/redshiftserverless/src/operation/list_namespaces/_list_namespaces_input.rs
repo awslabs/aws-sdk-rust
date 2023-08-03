@@ -29,9 +29,7 @@ impl ListNamespacesInput {
 
 /// A builder for [`ListNamespacesInput`](crate::operation::list_namespaces::ListNamespacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNamespacesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -68,10 +66,7 @@ impl ListNamespacesInputBuilder {
     /// Consumes the builder and constructs a [`ListNamespacesInput`](crate::operation::list_namespaces::ListNamespacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_namespaces::ListNamespacesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_namespaces::ListNamespacesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_namespaces::ListNamespacesInput {
             next_token: self.next_token,
             max_results: self.max_results,

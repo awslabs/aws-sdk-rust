@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`server_certificate(Blob)`](crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageFluentBuilder::server_certificate) / [`set_server_certificate(Option<Blob>)`](crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageFluentBuilder::set_server_certificate): <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>  <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>  <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
     /// - On success, responds with [`UpdateLocationObjectStorageOutput`](crate::operation::update_location_object_storage::UpdateLocationObjectStorageOutput)
     /// - On failure, responds with [`SdkError<UpdateLocationObjectStorageError>`](crate::operation::update_location_object_storage::UpdateLocationObjectStorageError)
-    pub fn update_location_object_storage(&self) -> crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageFluentBuilder{
+    pub fn update_location_object_storage(
+        &self,
+    ) -> crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageFluentBuilder {
         crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageFluentBuilder::new(self.handle.clone())
     }
 }

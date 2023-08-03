@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`organization_config_rule_statuses(Option<Vec<OrganizationConfigRuleStatus>>)`](crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput::organization_config_rule_statuses): <p>A list of <code>OrganizationConfigRuleStatus</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationConfigRuleStatusesError>`](crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError)
-    pub fn describe_organization_config_rule_statuses(&self) -> crate::operation::describe_organization_config_rule_statuses::builders::DescribeOrganizationConfigRuleStatusesFluentBuilder{
-        crate::operation::describe_organization_config_rule_statuses::builders::DescribeOrganizationConfigRuleStatusesFluentBuilder::new(self.handle.clone())
+    pub fn describe_organization_config_rule_statuses(
+        &self,
+    ) -> crate::operation::describe_organization_config_rule_statuses::builders::DescribeOrganizationConfigRuleStatusesFluentBuilder {
+        crate::operation::describe_organization_config_rule_statuses::builders::DescribeOrganizationConfigRuleStatusesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

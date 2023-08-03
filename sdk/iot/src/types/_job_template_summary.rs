@@ -44,9 +44,7 @@ impl JobTemplateSummary {
 
 /// A builder for [`JobTemplateSummary`](crate::types::JobTemplateSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobTemplateSummaryBuilder {
     pub(crate) job_template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_template_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct JobTemplateSummaryBuilder {
 }
 impl JobTemplateSummaryBuilder {
     /// <p>The ARN of the job template.</p>
-    pub fn job_template_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_template_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the job template.</p>
-    pub fn set_job_template_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_template_arn = input;
         self
     }
@@ -75,18 +67,12 @@ impl JobTemplateSummaryBuilder {
         &self.job_template_arn
     }
     /// <p>The unique identifier of the job template.</p>
-    pub fn job_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the job template.</p>
-    pub fn set_job_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_template_id = input;
         self
     }
@@ -114,10 +100,7 @@ impl JobTemplateSummaryBuilder {
         self
     }
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

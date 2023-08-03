@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`key_pair_id(Option<String>)`](crate::operation::import_key_pair::ImportKeyPairOutput::key_pair_id): <p>The ID of the resulting key pair.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::import_key_pair::ImportKeyPairOutput::tags): <p>The tags applied to the imported key pair.</p>
     /// - On failure, responds with [`SdkError<ImportKeyPairError>`](crate::operation::import_key_pair::ImportKeyPairError)
-    pub fn import_key_pair(
-        &self,
-    ) -> crate::operation::import_key_pair::builders::ImportKeyPairFluentBuilder {
-        crate::operation::import_key_pair::builders::ImportKeyPairFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_key_pair(&self) -> crate::operation::import_key_pair::builders::ImportKeyPairFluentBuilder {
+        crate::operation::import_key_pair::builders::ImportKeyPairFluentBuilder::new(self.handle.clone())
     }
 }

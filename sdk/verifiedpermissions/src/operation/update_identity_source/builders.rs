@@ -37,9 +37,7 @@ impl UpdateIdentitySourceFluentBuilder {
         }
     }
     /// Access the UpdateIdentitySource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_identity_source::builders::UpdateIdentitySourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_identity_source::builders::UpdateIdentitySourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateIdentitySourceFluentBuilder {
             crate::operation::update_identity_source::UpdateIdentitySource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_identity_source::UpdateIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_identity_source::UpdateIdentitySourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateIdentitySourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateIdentitySourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_identity_source::UpdateIdentitySourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_identity_source::UpdateIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_identity_source::UpdateIdentitySourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateIdentitySourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_identity_source::UpdateIdentitySourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_identity_source::UpdateIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_identity_source::UpdateIdentitySourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateIdentitySourceFluentBuilder {
             crate::operation::update_identity_source::UpdateIdentitySource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_identity_source::UpdateIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_identity_source::UpdateIdentitySourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to update.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to update.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
@@ -143,18 +124,12 @@ impl UpdateIdentitySourceFluentBuilder {
         self.inner.get_policy_store_id()
     }
     /// <p>Specifies the ID of the identity source that you want to update.</p>
-    pub fn identity_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_source_id(input.into());
         self
     }
     /// <p>Specifies the ID of the identity source that you want to update.</p>
-    pub fn set_identity_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_source_id(input);
         self
     }
@@ -174,10 +149,7 @@ impl UpdateIdentitySourceFluentBuilder {
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
-    pub fn set_update_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateConfiguration>,
-    ) -> Self {
+    pub fn set_update_configuration(mut self, input: ::std::option::Option<crate::types::UpdateConfiguration>) -> Self {
         self.inner = self.inner.set_update_configuration(input);
         self
     }
@@ -185,24 +157,16 @@ impl UpdateIdentitySourceFluentBuilder {
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
-    pub fn get_update_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateConfiguration> {
+    pub fn get_update_configuration(&self) -> &::std::option::Option<crate::types::UpdateConfiguration> {
         self.inner.get_update_configuration()
     }
     /// <p>Specifies the data type of principals generated for identities authenticated by the identity source.</p>
-    pub fn principal_entity_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_entity_type(input.into());
         self
     }
     /// <p>Specifies the data type of principals generated for identities authenticated by the identity source.</p>
-    pub fn set_principal_entity_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_entity_type(input);
         self
     }

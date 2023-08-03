@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAttachedIndicesOutput {
 }
 impl ListAttachedIndicesOutput {
     /// Creates a new builder-style object to manufacture [`ListAttachedIndicesOutput`](crate::operation::list_attached_indices::ListAttachedIndicesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_attached_indices::builders::ListAttachedIndicesOutputBuilder {
-        crate::operation::list_attached_indices::builders::ListAttachedIndicesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_attached_indices::builders::ListAttachedIndicesOutputBuilder {
+        crate::operation::list_attached_indices::builders::ListAttachedIndicesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAttachedIndicesOutput`](crate::operation::list_attached_indices::ListAttachedIndicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttachedIndicesOutputBuilder {
-    pub(crate) index_attachments:
-        ::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>>,
+    pub(crate) index_attachments: ::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListAttachedIndicesOutputBuilder {
         self
     }
     /// <p>The indices attached to the specified object.</p>
-    pub fn set_index_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>>,
-    ) -> Self {
+    pub fn set_index_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>>) -> Self {
         self.index_attachments = input;
         self
     }
     /// <p>The indices attached to the specified object.</p>
-    pub fn get_index_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>> {
+    pub fn get_index_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>> {
         &self.index_attachments
     }
     /// <p>The pagination token.</p>

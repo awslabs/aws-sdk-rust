@@ -10,9 +10,7 @@ pub struct ListOriginAccessControlsOutput {
 }
 impl ListOriginAccessControlsOutput {
     /// <p>A list of origin access controls.</p>
-    pub fn origin_access_control_list(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginAccessControlList> {
+    pub fn origin_access_control_list(&self) -> ::std::option::Option<&crate::types::OriginAccessControlList> {
         self.origin_access_control_list.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for ListOriginAccessControlsOutput {
 }
 impl ListOriginAccessControlsOutput {
     /// Creates a new builder-style object to manufacture [`ListOriginAccessControlsOutput`](crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput).
-    pub fn builder() -> crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsOutputBuilder{
+    pub fn builder() -> crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsOutputBuilder {
         crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOriginAccessControlsOutput`](crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOriginAccessControlsOutputBuilder {
-    pub(crate) origin_access_control_list:
-        ::std::option::Option<crate::types::OriginAccessControlList>,
+    pub(crate) origin_access_control_list: ::std::option::Option<crate::types::OriginAccessControlList>,
     _request_id: Option<String>,
 }
 impl ListOriginAccessControlsOutputBuilder {
     /// <p>A list of origin access controls.</p>
-    pub fn origin_access_control_list(
-        mut self,
-        input: crate::types::OriginAccessControlList,
-    ) -> Self {
+    pub fn origin_access_control_list(mut self, input: crate::types::OriginAccessControlList) -> Self {
         self.origin_access_control_list = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of origin access controls.</p>
-    pub fn set_origin_access_control_list(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginAccessControlList>,
-    ) -> Self {
+    pub fn set_origin_access_control_list(mut self, input: ::std::option::Option<crate::types::OriginAccessControlList>) -> Self {
         self.origin_access_control_list = input;
         self
     }
     /// <p>A list of origin access controls.</p>
-    pub fn get_origin_access_control_list(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginAccessControlList> {
+    pub fn get_origin_access_control_list(&self) -> &::std::option::Option<crate::types::OriginAccessControlList> {
         &self.origin_access_control_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +58,7 @@ impl ListOriginAccessControlsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListOriginAccessControlsOutput`](crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput {
+    pub fn build(self) -> crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput {
         crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput {
             origin_access_control_list: self.origin_access_control_list,
             _request_id: self._request_id,

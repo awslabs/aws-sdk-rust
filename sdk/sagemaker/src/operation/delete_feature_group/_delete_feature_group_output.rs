@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteFeatureGroupOutput {
 }
 impl DeleteFeatureGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFeatureGroupOutput`](crate::operation::delete_feature_group::DeleteFeatureGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_feature_group::builders::DeleteFeatureGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_feature_group::builders::DeleteFeatureGroupOutputBuilder {
         crate::operation::delete_feature_group::builders::DeleteFeatureGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFeatureGroupOutput`](crate::operation::delete_feature_group::DeleteFeatureGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFeatureGroupOutputBuilder {
     _request_id: Option<String>,
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BatchDeleteDetectorOutput`](crate::operation::batch_delete_detector::BatchDeleteDetectorOutput) with field(s):
     ///   - [`batch_delete_detector_error_entries(Option<Vec<BatchDeleteDetectorErrorEntry>>)`](crate::operation::batch_delete_detector::BatchDeleteDetectorOutput::batch_delete_detector_error_entries): <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteDetectorError>`](crate::operation::batch_delete_detector::BatchDeleteDetectorError)
-    pub fn batch_delete_detector(
-        &self,
-    ) -> crate::operation::batch_delete_detector::builders::BatchDeleteDetectorFluentBuilder {
-        crate::operation::batch_delete_detector::builders::BatchDeleteDetectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_delete_detector(&self) -> crate::operation::batch_delete_detector::builders::BatchDeleteDetectorFluentBuilder {
+        crate::operation::batch_delete_detector::builders::BatchDeleteDetectorFluentBuilder::new(self.handle.clone())
     }
 }

@@ -27,35 +27,27 @@ impl ::std::fmt::Display for InvalidBlueGreenDeploymentConfigurationException {
     }
 }
 impl ::std::error::Error for InvalidBlueGreenDeploymentConfigurationException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidBlueGreenDeploymentConfigurationException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidBlueGreenDeploymentConfigurationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidBlueGreenDeploymentConfigurationException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidBlueGreenDeploymentConfigurationException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidBlueGreenDeploymentConfigurationException {
     /// Creates a new builder-style object to manufacture [`InvalidBlueGreenDeploymentConfigurationException`](crate::types::error::InvalidBlueGreenDeploymentConfigurationException).
-    pub fn builder(
-    ) -> crate::types::error::builders::InvalidBlueGreenDeploymentConfigurationExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::InvalidBlueGreenDeploymentConfigurationExceptionBuilder {
         crate::types::error::builders::InvalidBlueGreenDeploymentConfigurationExceptionBuilder::default()
     }
 }
 
 /// A builder for [`InvalidBlueGreenDeploymentConfigurationException`](crate::types::error::InvalidBlueGreenDeploymentConfigurationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidBlueGreenDeploymentConfigurationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,10 +74,7 @@ impl InvalidBlueGreenDeploymentConfigurationExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

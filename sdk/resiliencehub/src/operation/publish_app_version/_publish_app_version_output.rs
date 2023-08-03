@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for PublishAppVersionOutput {
 }
 impl PublishAppVersionOutput {
     /// Creates a new builder-style object to manufacture [`PublishAppVersionOutput`](crate::operation::publish_app_version::PublishAppVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::publish_app_version::builders::PublishAppVersionOutputBuilder {
+    pub fn builder() -> crate::operation::publish_app_version::builders::PublishAppVersionOutputBuilder {
         crate::operation::publish_app_version::builders::PublishAppVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`PublishAppVersionOutput`](crate::operation::publish_app_version::PublishAppVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishAppVersionOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,

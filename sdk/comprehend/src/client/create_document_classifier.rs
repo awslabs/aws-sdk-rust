@@ -19,10 +19,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDocumentClassifierOutput`](crate::operation::create_document_classifier::CreateDocumentClassifierOutput) with field(s):
     ///   - [`document_classifier_arn(Option<String>)`](crate::operation::create_document_classifier::CreateDocumentClassifierOutput::document_classifier_arn): <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
     /// - On failure, responds with [`SdkError<CreateDocumentClassifierError>`](crate::operation::create_document_classifier::CreateDocumentClassifierError)
-    pub fn create_document_classifier(
-        &self,
-    ) -> crate::operation::create_document_classifier::builders::CreateDocumentClassifierFluentBuilder
-    {
+    pub fn create_document_classifier(&self) -> crate::operation::create_document_classifier::builders::CreateDocumentClassifierFluentBuilder {
         crate::operation::create_document_classifier::builders::CreateDocumentClassifierFluentBuilder::new(self.handle.clone())
     }
 }

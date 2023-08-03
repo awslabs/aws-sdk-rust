@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`SignalApplicationInstanceNodeInstancesOutput`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput) with field(s):
     ///   - [`application_instance_id(Option<String>)`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput::application_instance_id): <p>An application instance ID.</p>
     /// - On failure, responds with [`SdkError<SignalApplicationInstanceNodeInstancesError>`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError)
-    pub fn signal_application_instance_node_instances(&self) -> crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesFluentBuilder{
-        crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesFluentBuilder::new(self.handle.clone())
+    pub fn signal_application_instance_node_instances(
+        &self,
+    ) -> crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesFluentBuilder {
+        crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

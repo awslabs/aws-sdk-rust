@@ -37,9 +37,7 @@ impl ListLogSubscriptionsFluentBuilder {
         }
     }
     /// Access the ListLogSubscriptions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListLogSubscriptionsFluentBuilder {
             crate::operation::list_log_subscriptions::ListLogSubscriptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_log_subscriptions::ListLogSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_log_subscriptions::ListLogSubscriptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListLogSubscriptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListLogSubscriptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_log_subscriptions::ListLogSubscriptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_log_subscriptions::ListLogSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_log_subscriptions::ListLogSubscriptionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListLogSubscriptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_log_subscriptions::ListLogSubscriptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_log_subscriptions::ListLogSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_log_subscriptions::ListLogSubscriptionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListLogSubscriptionsFluentBuilder {
             crate::operation::list_log_subscriptions::ListLogSubscriptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_log_subscriptions::ListLogSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_log_subscriptions::ListLogSubscriptionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_log_subscriptions::paginator::ListLogSubscriptionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_log_subscriptions::paginator::ListLogSubscriptionsPaginator {
-        crate::operation::list_log_subscriptions::paginator::ListLogSubscriptionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_log_subscriptions::paginator::ListLogSubscriptionsPaginator {
+        crate::operation::list_log_subscriptions::paginator::ListLogSubscriptionsPaginator::new(self.handle, self.inner)
     }
     /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

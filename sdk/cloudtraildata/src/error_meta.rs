@@ -31,32 +31,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_audit_events::PutAuditEventsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_audit_events::PutAuditEventsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::put_audit_events::PutAuditEventsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_audit_events::PutAuditEventsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -66,12 +50,16 @@ where
 impl From<crate::operation::put_audit_events::PutAuditEventsError> for Error {
     fn from(err: crate::operation::put_audit_events::PutAuditEventsError) -> Self {
         match err {
-            crate::operation::put_audit_events::PutAuditEventsError::ChannelInsufficientPermission(inner) => Error::ChannelInsufficientPermission(inner),
+            crate::operation::put_audit_events::PutAuditEventsError::ChannelInsufficientPermission(inner) => {
+                Error::ChannelInsufficientPermission(inner)
+            }
             crate::operation::put_audit_events::PutAuditEventsError::ChannelNotFound(inner) => Error::ChannelNotFound(inner),
             crate::operation::put_audit_events::PutAuditEventsError::ChannelUnsupportedSchema(inner) => Error::ChannelUnsupportedSchema(inner),
             crate::operation::put_audit_events::PutAuditEventsError::DuplicatedAuditEventId(inner) => Error::DuplicatedAuditEventId(inner),
             crate::operation::put_audit_events::PutAuditEventsError::InvalidChannelArn(inner) => Error::InvalidChannelArn(inner),
-            crate::operation::put_audit_events::PutAuditEventsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::put_audit_events::PutAuditEventsError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
             crate::operation::put_audit_events::PutAuditEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

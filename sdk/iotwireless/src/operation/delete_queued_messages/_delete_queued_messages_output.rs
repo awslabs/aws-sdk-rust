@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteQueuedMessagesOutput {
 }
 impl DeleteQueuedMessagesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteQueuedMessagesOutput`](crate::operation::delete_queued_messages::DeleteQueuedMessagesOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesOutputBuilder {
+    pub fn builder() -> crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesOutputBuilder {
         crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteQueuedMessagesOutput`](crate::operation::delete_queued_messages::DeleteQueuedMessagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQueuedMessagesOutputBuilder {
     _request_id: Option<String>,
 }

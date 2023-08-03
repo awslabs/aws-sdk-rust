@@ -35,9 +35,7 @@ impl DescribeUserOutput {
 
 /// A builder for [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserOutputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) user: ::std::option::Option<crate::types::DescribedUser>,

@@ -27,8 +27,7 @@ impl StartOnDemandAuditTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartOnDemandAuditTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskInputBuilder,
+    inner: crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskInputBuilder,
 }
 impl StartOnDemandAuditTaskFluentBuilder {
     /// Creates a new `StartOnDemandAuditTask`.
@@ -39,10 +38,7 @@ impl StartOnDemandAuditTaskFluentBuilder {
         }
     }
     /// Access the StartOnDemandAuditTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl StartOnDemandAuditTaskFluentBuilder {
             crate::operation::start_on_demand_audit_task::StartOnDemandAuditTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl StartOnDemandAuditTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl StartOnDemandAuditTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl StartOnDemandAuditTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl StartOnDemandAuditTaskFluentBuilder {
             crate::operation::start_on_demand_audit_task::StartOnDemandAuditTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -130,25 +115,17 @@ impl StartOnDemandAuditTaskFluentBuilder {
     /// To override the contents of this collection use [`set_target_check_names`](Self::set_target_check_names).
     ///
     /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
-    pub fn target_check_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_check_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_check_names(input.into());
         self
     }
     /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
-    pub fn set_target_check_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_check_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_target_check_names(input);
         self
     }
     /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
-    pub fn get_target_check_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_check_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_check_names()
     }
 }

@@ -65,33 +65,24 @@ impl ContainerStateChange {
 
 /// A builder for [`ContainerStateChange`](crate::types::ContainerStateChange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerStateChangeBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
     pub(crate) image_digest: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_id: ::std::option::Option<::std::string::String>,
     pub(crate) exit_code: ::std::option::Option<i32>,
-    pub(crate) network_bindings:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
+    pub(crate) network_bindings: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl ContainerStateChangeBuilder {
     /// <p>The name of the container.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -153,17 +144,12 @@ impl ContainerStateChangeBuilder {
         self
     }
     /// <p>Any network bindings that are associated with the container.</p>
-    pub fn set_network_bindings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
-    ) -> Self {
+    pub fn set_network_bindings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>) -> Self {
         self.network_bindings = input;
         self
     }
     /// <p>Any network bindings that are associated with the container.</p>
-    pub fn get_network_bindings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>> {
+    pub fn get_network_bindings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>> {
         &self.network_bindings
     }
     /// <p>The reason for the state change.</p>

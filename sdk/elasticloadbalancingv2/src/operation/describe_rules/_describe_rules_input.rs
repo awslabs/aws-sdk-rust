@@ -43,9 +43,7 @@ impl DescribeRulesInput {
 
 /// A builder for [`DescribeRulesInput`](crate::operation::describe_rules::DescribeRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRulesInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) rule_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -79,10 +77,7 @@ impl DescribeRulesInputBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the rules.</p>
-    pub fn set_rule_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rule_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.rule_arns = input;
         self
     }
@@ -121,10 +116,7 @@ impl DescribeRulesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRulesInput`](crate::operation::describe_rules::DescribeRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_rules::DescribeRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_rules::DescribeRulesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_rules::DescribeRulesInput {
             listener_arn: self.listener_arn,
             rule_arns: self.rule_arns,

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeAgentStatusOutput {
 }
 impl DescribeAgentStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAgentStatusOutput`](crate::operation::describe_agent_status::DescribeAgentStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_agent_status::builders::DescribeAgentStatusOutputBuilder {
-        crate::operation::describe_agent_status::builders::DescribeAgentStatusOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_agent_status::builders::DescribeAgentStatusOutputBuilder {
+        crate::operation::describe_agent_status::builders::DescribeAgentStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAgentStatusOutput`](crate::operation::describe_agent_status::DescribeAgentStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAgentStatusOutputBuilder {
     pub(crate) agent_status: ::std::option::Option<crate::types::AgentStatus>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeAgentStatusOutputBuilder {
         self
     }
     /// <p>The agent status.</p>
-    pub fn set_agent_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentStatus>,
-    ) -> Self {
+    pub fn set_agent_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
         self.agent_status = input;
         self
     }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`crawler_metrics_list(Option<Vec<CrawlerMetrics>>)`](crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput::crawler_metrics_list): <p>A list of metrics for the specified crawler.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>
     /// - On failure, responds with [`SdkError<GetCrawlerMetricsError>`](crate::operation::get_crawler_metrics::GetCrawlerMetricsError)
-    pub fn get_crawler_metrics(
-        &self,
-    ) -> crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder {
-        crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_crawler_metrics(&self) -> crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder {
+        crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder::new(self.handle.clone())
     }
 }

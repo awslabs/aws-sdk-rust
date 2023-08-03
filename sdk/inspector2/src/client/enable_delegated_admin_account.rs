@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`EnableDelegatedAdminAccountOutput`](crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountOutput) with field(s):
     ///   - [`delegated_admin_account_id(Option<String>)`](crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountOutput::delegated_admin_account_id): <p>The Amazon Web Services account ID of the successfully Amazon Inspector delegated administrator.</p>
     /// - On failure, responds with [`SdkError<EnableDelegatedAdminAccountError>`](crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountError)
-    pub fn enable_delegated_admin_account(&self) -> crate::operation::enable_delegated_admin_account::builders::EnableDelegatedAdminAccountFluentBuilder{
+    pub fn enable_delegated_admin_account(
+        &self,
+    ) -> crate::operation::enable_delegated_admin_account::builders::EnableDelegatedAdminAccountFluentBuilder {
         crate::operation::enable_delegated_admin_account::builders::EnableDelegatedAdminAccountFluentBuilder::new(self.handle.clone())
     }
 }

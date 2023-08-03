@@ -26,7 +26,7 @@ impl ListAppInstanceUserEndpointsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAppInstanceUserEndpointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsInputBuilder,
+    inner: crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsInputBuilder,
 }
 impl ListAppInstanceUserEndpointsFluentBuilder {
     /// Creates a new `ListAppInstanceUserEndpoints`.
@@ -37,7 +37,7 @@ impl ListAppInstanceUserEndpointsFluentBuilder {
         }
     }
     /// Access the ListAppInstanceUserEndpoints as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListAppInstanceUserEndpointsFluentBuilder {
             crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListAppInstanceUserEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListAppInstanceUserEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListAppInstanceUserEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListAppInstanceUserEndpointsFluentBuilder {
             crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_app_instance_user_endpoints::paginator::ListAppInstanceUserEndpointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_app_instance_user_endpoints::paginator::ListAppInstanceUserEndpointsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_app_instance_user_endpoints::paginator::ListAppInstanceUserEndpointsPaginator {
         crate::operation::list_app_instance_user_endpoints::paginator::ListAppInstanceUserEndpointsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_user_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_user_arn(input);
         self
     }

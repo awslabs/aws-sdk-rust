@@ -37,9 +37,7 @@ impl AssociateTeamMemberFluentBuilder {
         }
     }
     /// Access the AssociateTeamMember as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_team_member::builders::AssociateTeamMemberInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_team_member::builders::AssociateTeamMemberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl AssociateTeamMemberFluentBuilder {
             crate::operation::associate_team_member::AssociateTeamMember,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_team_member::AssociateTeamMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_team_member::AssociateTeamMemberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl AssociateTeamMemberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl AssociateTeamMemberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_team_member::AssociateTeamMemberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_team_member::AssociateTeamMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_team_member::AssociateTeamMemberError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl AssociateTeamMemberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_team_member::AssociateTeamMemberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_team_member::AssociateTeamMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_team_member::AssociateTeamMemberError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl AssociateTeamMemberFluentBuilder {
             crate::operation::associate_team_member::AssociateTeamMember,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_team_member::AssociateTeamMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_team_member::AssociateTeamMemberError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl AssociateTeamMemberFluentBuilder {
         self.inner.get_project_id()
     }
     /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

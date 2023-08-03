@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CheckFailureReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for CheckFailureReason {
             "ASSUME_ROLE_ERROR" => CheckFailureReason::AssumeRoleError,
             "PREMIUM_SUPPORT_REQUIRED" => CheckFailureReason::PremiumSupportRequired,
             "UNKNOWN_ERROR" => CheckFailureReason::UnknownError,
-            other => CheckFailureReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CheckFailureReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl CheckFailureReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED",
-            "ASSUME_ROLE_ERROR",
-            "PREMIUM_SUPPORT_REQUIRED",
-            "UNKNOWN_ERROR",
-        ]
+        &["ACCESS_DENIED", "ASSUME_ROLE_ERROR", "PREMIUM_SUPPORT_REQUIRED", "UNKNOWN_ERROR"]
     }
 }
 impl ::std::convert::AsRef<str> for CheckFailureReason {

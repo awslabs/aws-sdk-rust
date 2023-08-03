@@ -43,16 +43,14 @@ impl DescribeTrustedAdvisorChecksInput {
 }
 impl DescribeTrustedAdvisorChecksInput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorChecksInput`](crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksInput).
-    pub fn builder() -> crate::operation::describe_trusted_advisor_checks::builders::DescribeTrustedAdvisorChecksInputBuilder{
+    pub fn builder() -> crate::operation::describe_trusted_advisor_checks::builders::DescribeTrustedAdvisorChecksInputBuilder {
         crate::operation::describe_trusted_advisor_checks::builders::DescribeTrustedAdvisorChecksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrustedAdvisorChecksInput`](crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorChecksInputBuilder {
     pub(crate) language: ::std::option::Option<::std::string::String>,
 }
@@ -120,10 +118,6 @@ impl DescribeTrustedAdvisorChecksInputBuilder {
         crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksInput {
-                language: self.language,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksInput { language: self.language })
     }
 }

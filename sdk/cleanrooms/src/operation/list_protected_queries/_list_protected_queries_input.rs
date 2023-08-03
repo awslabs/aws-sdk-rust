@@ -36,17 +36,14 @@ impl ListProtectedQueriesInput {
 }
 impl ListProtectedQueriesInput {
     /// Creates a new builder-style object to manufacture [`ListProtectedQueriesInput`](crate::operation::list_protected_queries::ListProtectedQueriesInput).
-    pub fn builder(
-    ) -> crate::operation::list_protected_queries::builders::ListProtectedQueriesInputBuilder {
+    pub fn builder() -> crate::operation::list_protected_queries::builders::ListProtectedQueriesInputBuilder {
         crate::operation::list_protected_queries::builders::ListProtectedQueriesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProtectedQueriesInput`](crate::operation::list_protected_queries::ListProtectedQueriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProtectedQueriesInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ProtectedQueryStatus>,
@@ -55,18 +52,12 @@ pub struct ListProtectedQueriesInputBuilder {
 }
 impl ListProtectedQueriesInputBuilder {
     /// <p>The identifier for the membership in the collaboration.</p>
-    pub fn membership_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the membership in the collaboration.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.membership_identifier = input;
         self
     }
@@ -80,10 +71,7 @@ impl ListProtectedQueriesInputBuilder {
         self
     }
     /// <p>A filter on the status of the protected query.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQueryStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProtectedQueryStatus>) -> Self {
         self.status = input;
         self
     }
@@ -122,17 +110,13 @@ impl ListProtectedQueriesInputBuilder {
     /// Consumes the builder and constructs a [`ListProtectedQueriesInput`](crate::operation::list_protected_queries::ListProtectedQueriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_protected_queries::ListProtectedQueriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_protected_queries::ListProtectedQueriesInput {
-                membership_identifier: self.membership_identifier,
-                status: self.status,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_protected_queries::ListProtectedQueriesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_protected_queries::ListProtectedQueriesInput {
+            membership_identifier: self.membership_identifier,
+            status: self.status,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

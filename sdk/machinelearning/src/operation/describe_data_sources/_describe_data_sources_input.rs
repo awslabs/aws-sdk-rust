@@ -64,9 +64,7 @@ impl DescribeDataSourcesInput {
     /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
     /// </ul>
-    pub fn filter_variable(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSourceFilterVariable> {
+    pub fn filter_variable(&self) -> ::std::option::Option<&crate::types::DataSourceFilterVariable> {
         self.filter_variable.as_ref()
     }
     /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
@@ -123,18 +121,14 @@ impl DescribeDataSourcesInput {
 }
 impl DescribeDataSourcesInput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSourcesInput`](crate::operation::describe_data_sources::DescribeDataSourcesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_data_sources::builders::DescribeDataSourcesInputBuilder {
-        crate::operation::describe_data_sources::builders::DescribeDataSourcesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_data_sources::builders::DescribeDataSourcesInputBuilder {
+        crate::operation::describe_data_sources::builders::DescribeDataSourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataSourcesInput`](crate::operation::describe_data_sources::DescribeDataSourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataSourcesInputBuilder {
     pub(crate) filter_variable: ::std::option::Option<crate::types::DataSourceFilterVariable>,
     pub(crate) eq: ::std::option::Option<::std::string::String>,
@@ -169,10 +163,7 @@ impl DescribeDataSourcesInputBuilder {
     /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
     /// </ul>
-    pub fn set_filter_variable(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceFilterVariable>,
-    ) -> Self {
+    pub fn set_filter_variable(mut self, input: ::std::option::Option<crate::types::DataSourceFilterVariable>) -> Self {
         self.filter_variable = input;
         self
     }
@@ -184,9 +175,7 @@ impl DescribeDataSourcesInputBuilder {
     /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
     /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
     /// </ul>
-    pub fn get_filter_variable(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceFilterVariable> {
+    pub fn get_filter_variable(&self) -> &::std::option::Option<crate::types::DataSourceFilterVariable> {
         &self.filter_variable
     }
     /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
@@ -365,24 +354,20 @@ impl DescribeDataSourcesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDataSourcesInput`](crate::operation::describe_data_sources::DescribeDataSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_data_sources::DescribeDataSourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_data_sources::DescribeDataSourcesInput {
-                filter_variable: self.filter_variable,
-                eq: self.eq,
-                gt: self.gt,
-                lt: self.lt,
-                ge: self.ge,
-                le: self.le,
-                ne: self.ne,
-                prefix: self.prefix,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_data_sources::DescribeDataSourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_data_sources::DescribeDataSourcesInput {
+            filter_variable: self.filter_variable,
+            eq: self.eq,
+            gt: self.gt,
+            lt: self.lt,
+            ge: self.ge,
+            le: self.le,
+            ne: self.ne,
+            prefix: self.prefix,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }

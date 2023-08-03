@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetKnowledgeBaseOutput {
 }
 impl GetKnowledgeBaseOutput {
     /// Creates a new builder-style object to manufacture [`GetKnowledgeBaseOutput`](crate::operation::get_knowledge_base::GetKnowledgeBaseOutput).
-    pub fn builder() -> crate::operation::get_knowledge_base::builders::GetKnowledgeBaseOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_knowledge_base::builders::GetKnowledgeBaseOutputBuilder {
         crate::operation::get_knowledge_base::builders::GetKnowledgeBaseOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetKnowledgeBaseOutput`](crate::operation::get_knowledge_base::GetKnowledgeBaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKnowledgeBaseOutputBuilder {
     pub(crate) knowledge_base: ::std::option::Option<crate::types::KnowledgeBaseData>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetKnowledgeBaseOutputBuilder {
         self
     }
     /// <p>The knowledge base.</p>
-    pub fn set_knowledge_base(
-        mut self,
-        input: ::std::option::Option<crate::types::KnowledgeBaseData>,
-    ) -> Self {
+    pub fn set_knowledge_base(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseData>) -> Self {
         self.knowledge_base = input;
         self
     }

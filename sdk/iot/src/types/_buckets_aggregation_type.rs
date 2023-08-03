@@ -23,9 +23,7 @@ impl BucketsAggregationType {
 
 /// A builder for [`BucketsAggregationType`](crate::types::BucketsAggregationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketsAggregationTypeBuilder {
     pub(crate) terms_aggregation: ::std::option::Option<crate::types::TermsAggregation>,
 }
@@ -36,10 +34,7 @@ impl BucketsAggregationTypeBuilder {
         self
     }
     /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
-    pub fn set_terms_aggregation(
-        mut self,
-        input: ::std::option::Option<crate::types::TermsAggregation>,
-    ) -> Self {
+    pub fn set_terms_aggregation(mut self, input: ::std::option::Option<crate::types::TermsAggregation>) -> Self {
         self.terms_aggregation = input;
         self
     }

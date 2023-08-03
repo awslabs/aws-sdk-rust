@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StopEarthObservationJobOutput {
 }
 impl StopEarthObservationJobOutput {
     /// Creates a new builder-style object to manufacture [`StopEarthObservationJobOutput`](crate::operation::stop_earth_observation_job::StopEarthObservationJobOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobOutputBuilder {
         crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopEarthObservationJobOutput`](crate::operation::stop_earth_observation_job::StopEarthObservationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopEarthObservationJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl StopEarthObservationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopEarthObservationJobOutput`](crate::operation::stop_earth_observation_job::StopEarthObservationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_earth_observation_job::StopEarthObservationJobOutput {
+    pub fn build(self) -> crate::operation::stop_earth_observation_job::StopEarthObservationJobOutput {
         crate::operation::stop_earth_observation_job::StopEarthObservationJobOutput {
             _request_id: self._request_id,
         }

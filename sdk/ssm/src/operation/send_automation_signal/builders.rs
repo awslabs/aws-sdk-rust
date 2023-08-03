@@ -37,9 +37,7 @@ impl SendAutomationSignalFluentBuilder {
         }
     }
     /// Access the SendAutomationSignal as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_automation_signal::builders::SendAutomationSignalInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_automation_signal::builders::SendAutomationSignalInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl SendAutomationSignalFluentBuilder {
             crate::operation::send_automation_signal::SendAutomationSignal,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_automation_signal::SendAutomationSignalError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_automation_signal::SendAutomationSignalError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl SendAutomationSignalFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl SendAutomationSignalFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_automation_signal::SendAutomationSignalOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_automation_signal::SendAutomationSignalError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_automation_signal::SendAutomationSignalError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl SendAutomationSignalFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_automation_signal::SendAutomationSignalOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_automation_signal::SendAutomationSignalError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_automation_signal::SendAutomationSignalError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl SendAutomationSignalFluentBuilder {
             crate::operation::send_automation_signal::SendAutomationSignal,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_automation_signal::SendAutomationSignalError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_automation_signal::SendAutomationSignalError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
-    pub fn automation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.automation_execution_id(input.into());
         self
     }
     /// <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
-    pub fn set_automation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_automation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_automation_execution_id(input);
         self
     }
@@ -148,10 +129,7 @@ impl SendAutomationSignalFluentBuilder {
         self
     }
     /// <p>The type of signal to send to an Automation execution. </p>
-    pub fn set_signal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SignalType>,
-    ) -> Self {
+    pub fn set_signal_type(mut self, input: ::std::option::Option<crate::types::SignalType>) -> Self {
         self.inner = self.inner.set_signal_type(input);
         self
     }
@@ -170,11 +148,7 @@ impl SendAutomationSignalFluentBuilder {
     /// <p> <code>StepName="step1"</code> </p>
     /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
     /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
-    pub fn payload(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn payload(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.payload(k.into(), v);
         self
     }
@@ -187,12 +161,7 @@ impl SendAutomationSignalFluentBuilder {
     /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
     pub fn set_payload(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_payload(input);
         self
@@ -204,11 +173,7 @@ impl SendAutomationSignalFluentBuilder {
     /// <p> <code>StepName="step1"</code> </p>
     /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
     /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
-    pub fn get_payload(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn get_payload(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_payload()
     }
 }

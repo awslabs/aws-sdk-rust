@@ -22,26 +22,18 @@ impl StopPipelineInput {
 
 /// A builder for [`StopPipelineInput`](crate::operation::stop_pipeline::StopPipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopPipelineInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
 }
 impl StopPipelineInputBuilder {
     /// <p>The name of the pipeline to stop.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline to stop.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -50,12 +42,7 @@ impl StopPipelineInputBuilder {
         &self.pipeline_name
     }
     /// Consumes the builder and constructs a [`StopPipelineInput`](crate::operation::stop_pipeline::StopPipelineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_pipeline::StopPipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_pipeline::StopPipelineInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_pipeline::StopPipelineInput {
             pipeline_name: self.pipeline_name,
         })

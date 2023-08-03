@@ -51,9 +51,7 @@ impl DataRepositoryTaskStatus {
 
 /// A builder for [`DataRepositoryTaskStatus`](crate::types::DataRepositoryTaskStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataRepositoryTaskStatusBuilder {
     pub(crate) total_count: ::std::option::Option<i64>,
     pub(crate) succeeded_count: ::std::option::Option<i64>,
@@ -110,10 +108,7 @@ impl DataRepositoryTaskStatusBuilder {
         self
     }
     /// <p>The time at which the task status was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

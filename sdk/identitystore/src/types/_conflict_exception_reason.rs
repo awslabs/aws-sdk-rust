@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -58,12 +52,8 @@ impl ::std::convert::From<&str> for ConflictExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "CONCURRENT_MODIFICATION" => ConflictExceptionReason::ConcurrentModification,
-            "UNIQUENESS_CONSTRAINT_VIOLATION" => {
-                ConflictExceptionReason::UniquenessConstraintViolation
-            }
-            other => ConflictExceptionReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "UNIQUENESS_CONSTRAINT_VIOLATION" => ConflictExceptionReason::UniquenessConstraintViolation,
+            other => ConflictExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -79,9 +69,7 @@ impl ConflictExceptionReason {
     pub fn as_str(&self) -> &str {
         match self {
             ConflictExceptionReason::ConcurrentModification => "CONCURRENT_MODIFICATION",
-            ConflictExceptionReason::UniquenessConstraintViolation => {
-                "UNIQUENESS_CONSTRAINT_VIOLATION"
-            }
+            ConflictExceptionReason::UniquenessConstraintViolation => "UNIQUENESS_CONSTRAINT_VIOLATION",
             ConflictExceptionReason::Unknown(value) => value.as_str(),
         }
     }

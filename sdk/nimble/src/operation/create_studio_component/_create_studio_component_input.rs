@@ -17,15 +17,13 @@ pub struct CreateStudioComponentInput {
     pub ec2_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Initialization scripts for studio components.</p>
     #[doc(hidden)]
-    pub initialization_scripts:
-        ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
+    pub initialization_scripts: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
     /// <p>The name for the studio component.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters for the studio component scripts.</p>
     #[doc(hidden)]
-    pub script_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
+    pub script_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
     /// <p>The studio ID. </p>
     #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
@@ -34,9 +32,7 @@ pub struct CreateStudioComponentInput {
     pub subtype: ::std::option::Option<crate::types::StudioComponentSubtype>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The type of the studio component.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::StudioComponentType>,
@@ -53,9 +49,7 @@ impl CreateStudioComponentInput {
         self.client_token.as_deref()
     }
     /// <p>The configuration of the studio component, based on component type.</p>
-    pub fn configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StudioComponentConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::StudioComponentConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The description.</p>
@@ -67,9 +61,7 @@ impl CreateStudioComponentInput {
         self.ec2_security_group_ids.as_deref()
     }
     /// <p>Initialization scripts for studio components.</p>
-    pub fn initialization_scripts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StudioComponentInitializationScript]> {
+    pub fn initialization_scripts(&self) -> ::std::option::Option<&[crate::types::StudioComponentInitializationScript]> {
         self.initialization_scripts.as_deref()
     }
     /// <p>The name for the studio component.</p>
@@ -77,9 +69,7 @@ impl CreateStudioComponentInput {
         self.name.as_deref()
     }
     /// <p>Parameters for the studio component scripts.</p>
-    pub fn script_parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ScriptParameterKeyValue]> {
+    pub fn script_parameters(&self) -> ::std::option::Option<&[crate::types::ScriptParameterKeyValue]> {
         self.script_parameters.as_deref()
     }
     /// <p>The studio ID. </p>
@@ -91,11 +81,7 @@ impl CreateStudioComponentInput {
         self.subtype.as_ref()
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The type of the studio component.</p>
@@ -125,19 +111,14 @@ impl ::std::fmt::Debug for CreateStudioComponentInput {
         formatter.field("subtype", &self.subtype);
         formatter.field("tags", &self.tags);
         formatter.field("r#type", &self.r#type);
-        formatter.field(
-            "secure_initialization_role_arn",
-            &self.secure_initialization_role_arn,
-        );
+        formatter.field("secure_initialization_role_arn", &self.secure_initialization_role_arn);
         formatter.field("runtime_role_arn", &self.runtime_role_arn);
         formatter.finish()
     }
 }
 impl CreateStudioComponentInput {
     /// Creates a new builder-style object to manufacture [`CreateStudioComponentInput`](crate::operation::create_studio_component::CreateStudioComponentInput).
-    pub fn builder(
-    ) -> crate::operation::create_studio_component::builders::CreateStudioComponentInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_studio_component::builders::CreateStudioComponentInputBuilder {
         crate::operation::create_studio_component::builders::CreateStudioComponentInputBuilder::default()
     }
 }
@@ -149,18 +130,13 @@ pub struct CreateStudioComponentInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::StudioComponentConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) ec2_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) initialization_scripts:
-        ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
+    pub(crate) ec2_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) initialization_scripts: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) script_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
+    pub(crate) script_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
     pub(crate) subtype: ::std::option::Option<crate::types::StudioComponentSubtype>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::StudioComponentType>,
     pub(crate) secure_initialization_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_role_arn: ::std::option::Option<::std::string::String>,
@@ -186,17 +162,12 @@ impl CreateStudioComponentInputBuilder {
         self
     }
     /// <p>The configuration of the studio component, based on component type.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioComponentConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::StudioComponentConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>The configuration of the studio component, based on component type.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::StudioComponentConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::StudioComponentConfiguration> {
         &self.configuration
     }
     /// <p>The description.</p>
@@ -218,27 +189,19 @@ impl CreateStudioComponentInputBuilder {
     /// To override the contents of this collection use [`set_ec2_security_group_ids`](Self::set_ec2_security_group_ids).
     ///
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn ec2_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ec2_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.ec2_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn set_ec2_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ec2_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ec2_security_group_ids = input;
         self
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn get_ec2_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ec2_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ec2_security_group_ids
     }
     /// Appends an item to `initialization_scripts`.
@@ -246,10 +209,7 @@ impl CreateStudioComponentInputBuilder {
     /// To override the contents of this collection use [`set_initialization_scripts`](Self::set_initialization_scripts).
     ///
     /// <p>Initialization scripts for studio components.</p>
-    pub fn initialization_scripts(
-        mut self,
-        input: crate::types::StudioComponentInitializationScript,
-    ) -> Self {
+    pub fn initialization_scripts(mut self, input: crate::types::StudioComponentInitializationScript) -> Self {
         let mut v = self.initialization_scripts.unwrap_or_default();
         v.push(input);
         self.initialization_scripts = ::std::option::Option::Some(v);
@@ -258,18 +218,13 @@ impl CreateStudioComponentInputBuilder {
     /// <p>Initialization scripts for studio components.</p>
     pub fn set_initialization_scripts(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::StudioComponentInitializationScript>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
     ) -> Self {
         self.initialization_scripts = input;
         self
     }
     /// <p>Initialization scripts for studio components.</p>
-    pub fn get_initialization_scripts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>
-    {
+    pub fn get_initialization_scripts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>> {
         &self.initialization_scripts
     }
     /// <p>The name for the studio component.</p>
@@ -298,17 +253,12 @@ impl CreateStudioComponentInputBuilder {
         self
     }
     /// <p>Parameters for the studio component scripts.</p>
-    pub fn set_script_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
-    ) -> Self {
+    pub fn set_script_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>) -> Self {
         self.script_parameters = input;
         self
     }
     /// <p>Parameters for the studio component scripts.</p>
-    pub fn get_script_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>> {
+    pub fn get_script_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>> {
         &self.script_parameters
     }
     /// <p>The studio ID. </p>
@@ -331,10 +281,7 @@ impl CreateStudioComponentInputBuilder {
         self
     }
     /// <p>The specific subtype of a studio component.</p>
-    pub fn set_subtype(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioComponentSubtype>,
-    ) -> Self {
+    pub fn set_subtype(mut self, input: ::std::option::Option<crate::types::StudioComponentSubtype>) -> Self {
         self.subtype = input;
         self
     }
@@ -347,32 +294,19 @@ impl CreateStudioComponentInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The type of the studio component.</p>
@@ -381,10 +315,7 @@ impl CreateStudioComponentInputBuilder {
         self
     }
     /// <p>The type of the studio component.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioComponentType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::StudioComponentType>) -> Self {
         self.r#type = input;
         self
     }
@@ -393,40 +324,26 @@ impl CreateStudioComponentInputBuilder {
         &self.r#type
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn secure_initialization_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secure_initialization_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secure_initialization_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn set_secure_initialization_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secure_initialization_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secure_initialization_role_arn = input;
         self
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn get_secure_initialization_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_secure_initialization_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secure_initialization_role_arn
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    pub fn runtime_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runtime_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    pub fn set_runtime_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_runtime_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime_role_arn = input;
         self
     }
@@ -437,27 +354,23 @@ impl CreateStudioComponentInputBuilder {
     /// Consumes the builder and constructs a [`CreateStudioComponentInput`](crate::operation::create_studio_component::CreateStudioComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_studio_component::CreateStudioComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_studio_component::CreateStudioComponentInput {
-                client_token: self.client_token,
-                configuration: self.configuration,
-                description: self.description,
-                ec2_security_group_ids: self.ec2_security_group_ids,
-                initialization_scripts: self.initialization_scripts,
-                name: self.name,
-                script_parameters: self.script_parameters,
-                studio_id: self.studio_id,
-                subtype: self.subtype,
-                tags: self.tags,
-                r#type: self.r#type,
-                secure_initialization_role_arn: self.secure_initialization_role_arn,
-                runtime_role_arn: self.runtime_role_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_studio_component::CreateStudioComponentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_studio_component::CreateStudioComponentInput {
+            client_token: self.client_token,
+            configuration: self.configuration,
+            description: self.description,
+            ec2_security_group_ids: self.ec2_security_group_ids,
+            initialization_scripts: self.initialization_scripts,
+            name: self.name,
+            script_parameters: self.script_parameters,
+            studio_id: self.studio_id,
+            subtype: self.subtype,
+            tags: self.tags,
+            r#type: self.r#type,
+            secure_initialization_role_arn: self.secure_initialization_role_arn,
+            runtime_role_arn: self.runtime_role_arn,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateStudioComponentInputBuilder {
@@ -474,10 +387,7 @@ impl ::std::fmt::Debug for CreateStudioComponentInputBuilder {
         formatter.field("subtype", &self.subtype);
         formatter.field("tags", &self.tags);
         formatter.field("r#type", &self.r#type);
-        formatter.field(
-            "secure_initialization_role_arn",
-            &self.secure_initialization_role_arn,
-        );
+        formatter.field("secure_initialization_role_arn", &self.secure_initialization_role_arn);
         formatter.field("runtime_role_arn", &self.runtime_role_arn);
         formatter.finish()
     }

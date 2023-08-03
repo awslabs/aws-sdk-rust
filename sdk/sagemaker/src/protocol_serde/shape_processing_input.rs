@@ -12,19 +12,13 @@ pub fn ser_processing_input(
     if let Some(var_2) = &input.s3_input {
         #[allow(unused_mut)]
         let mut object_3 = object.key("S3Input").start_object();
-        crate::protocol_serde::shape_processing_s3_input::ser_processing_s3_input(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_processing_s3_input::ser_processing_s3_input(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.dataset_definition {
         #[allow(unused_mut)]
         let mut object_5 = object.key("DatasetDefinition").start_object();
-        crate::protocol_serde::shape_dataset_definition::ser_dataset_definition(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_dataset_definition::ser_dataset_definition(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())
@@ -32,17 +26,9 @@ pub fn ser_processing_input(
 
 pub(crate) fn de_processing_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ProcessingInput>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ProcessingInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -52,52 +38,37 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "InputName" => {
-                                builder = builder.set_input_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "InputName" => {
+                            builder = builder.set_input_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "AppManaged" => {
-                                builder = builder.set_app_managed(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "S3Input" => {
-                                builder = builder.set_s3_input(
-                                    crate::protocol_serde::shape_processing_s3_input::de_processing_s3_input(tokens)?
-                                );
-                            }
-                            "DatasetDefinition" => {
-                                builder = builder.set_dataset_definition(
-                                    crate::protocol_serde::shape_dataset_definition::de_dataset_definition(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "AppManaged" => {
+                            builder = builder.set_app_managed(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "S3Input" => {
+                            builder = builder.set_s3_input(crate::protocol_serde::shape_processing_s3_input::de_processing_s3_input(tokens)?);
+                        }
+                        "DatasetDefinition" => {
+                            builder = builder.set_dataset_definition(crate::protocol_serde::shape_dataset_definition::de_dataset_definition(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`proposals(Option<Vec<ProposalSummary>>)`](crate::operation::list_proposals::ListProposalsOutput::proposals): <p>The summary of each proposal made on the network.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_proposals::ListProposalsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListProposalsError>`](crate::operation::list_proposals::ListProposalsError)
-    pub fn list_proposals(
-        &self,
-    ) -> crate::operation::list_proposals::builders::ListProposalsFluentBuilder {
-        crate::operation::list_proposals::builders::ListProposalsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_proposals(&self) -> crate::operation::list_proposals::builders::ListProposalsFluentBuilder {
+        crate::operation::list_proposals::builders::ListProposalsFluentBuilder::new(self.handle.clone())
     }
 }

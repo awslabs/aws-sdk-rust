@@ -10,10 +10,7 @@ impl UpdateThesaurusInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_thesaurus::UpdateThesaurusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thesaurus::UpdateThesaurusError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thesaurus::UpdateThesaurusError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_thesaurus();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateThesaurusFluentBuilder {
         }
     }
     /// Access the UpdateThesaurus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_thesaurus::builders::UpdateThesaurusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_thesaurus::builders::UpdateThesaurusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateThesaurusFluentBuilder {
             crate::operation::update_thesaurus::UpdateThesaurus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thesaurus::UpdateThesaurusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thesaurus::UpdateThesaurusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateThesaurusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateThesaurusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_thesaurus::UpdateThesaurusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thesaurus::UpdateThesaurusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thesaurus::UpdateThesaurusError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateThesaurusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_thesaurus::UpdateThesaurusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thesaurus::UpdateThesaurusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thesaurus::UpdateThesaurusError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateThesaurusFluentBuilder {
             crate::operation::update_thesaurus::UpdateThesaurus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_thesaurus::UpdateThesaurusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_thesaurus::UpdateThesaurusError>,
     > {
         self.customize_middleware().await
     }
@@ -198,10 +182,7 @@ impl UpdateThesaurusFluentBuilder {
         self
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
-    pub fn set_source_s3_path(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Path>,
-    ) -> Self {
+    pub fn set_source_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
         self.inner = self.inner.set_source_s3_path(input);
         self
     }

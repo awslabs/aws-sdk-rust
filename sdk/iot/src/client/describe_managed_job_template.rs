@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`document_parameters(Option<Vec<DocumentParameter>>)`](crate::operation::describe_managed_job_template::DescribeManagedJobTemplateOutput::document_parameters): <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p> <note>   <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>  </note>
     ///   - [`document(Option<String>)`](crate::operation::describe_managed_job_template::DescribeManagedJobTemplateOutput::document): <p>The document schema for a managed job template.</p>
     /// - On failure, responds with [`SdkError<DescribeManagedJobTemplateError>`](crate::operation::describe_managed_job_template::DescribeManagedJobTemplateError)
-    pub fn describe_managed_job_template(&self) -> crate::operation::describe_managed_job_template::builders::DescribeManagedJobTemplateFluentBuilder{
+    pub fn describe_managed_job_template(
+        &self,
+    ) -> crate::operation::describe_managed_job_template::builders::DescribeManagedJobTemplateFluentBuilder {
         crate::operation::describe_managed_job_template::builders::DescribeManagedJobTemplateFluentBuilder::new(self.handle.clone())
     }
 }

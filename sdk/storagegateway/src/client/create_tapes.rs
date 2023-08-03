@@ -16,9 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTapesOutput`](crate::operation::create_tapes::CreateTapesOutput) with field(s):
     ///   - [`tape_ar_ns(Option<Vec<String>>)`](crate::operation::create_tapes::CreateTapesOutput::tape_ar_ns): <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
     /// - On failure, responds with [`SdkError<CreateTapesError>`](crate::operation::create_tapes::CreateTapesError)
-    pub fn create_tapes(
-        &self,
-    ) -> crate::operation::create_tapes::builders::CreateTapesFluentBuilder {
+    pub fn create_tapes(&self) -> crate::operation::create_tapes::builders::CreateTapesFluentBuilder {
         crate::operation::create_tapes::builders::CreateTapesFluentBuilder::new(self.handle.clone())
     }
 }

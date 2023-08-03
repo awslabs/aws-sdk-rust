@@ -10,10 +10,7 @@ impl CreateModelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_model::CreateModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model::CreateModelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_model();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateModelFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_model::CreateModel,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_model::CreateModel, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateModelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateModelFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_model::CreateModel,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_model::CreateModel, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>,
     > {
         self.customize_middleware().await
@@ -132,10 +120,7 @@ impl CreateModelFluentBuilder {
         self
     }
     /// <p>The model type. </p>
-    pub fn set_model_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelTypeEnum>,
-    ) -> Self {
+    pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
         self.inner = self.inner.set_model_type(input);
         self
     }
@@ -158,18 +143,12 @@ impl CreateModelFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_type_name(input.into());
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
@@ -187,10 +166,7 @@ impl CreateModelFluentBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

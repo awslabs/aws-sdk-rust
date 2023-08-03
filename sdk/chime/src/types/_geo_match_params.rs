@@ -30,9 +30,7 @@ impl GeoMatchParams {
 
 /// A builder for [`GeoMatchParams`](crate::types::GeoMatchParams).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeoMatchParamsBuilder {
     pub(crate) country: ::std::option::Option<::std::string::String>,
     pub(crate) area_code: ::std::option::Option<::std::string::String>,

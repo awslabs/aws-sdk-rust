@@ -13,21 +13,16 @@ pub fn ser_data_set_import_config(
                 {
                     #[allow(unused_mut)]
                     let mut object_3 = array_1.value().start_object();
-                    crate::protocol_serde::shape_data_set_import_item::ser_data_set_import_item(
-                        &mut object_3,
-                        item_2,
-                    )?;
+                    crate::protocol_serde::shape_data_set_import_item::ser_data_set_import_item(&mut object_3, item_2)?;
                     object_3.finish();
                 }
             }
             array_1.finish();
         }
         crate::types::DataSetImportConfig::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "DataSetImportConfig",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "DataSetImportConfig",
+            ))
         }
     }
     Ok(())

@@ -29,18 +29,14 @@ impl GenerateRecommendationsInput {
 }
 impl GenerateRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`GenerateRecommendationsInput`](crate::operation::generate_recommendations::GenerateRecommendationsInput).
-    pub fn builder(
-    ) -> crate::operation::generate_recommendations::builders::GenerateRecommendationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::generate_recommendations::builders::GenerateRecommendationsInputBuilder {
         crate::operation::generate_recommendations::builders::GenerateRecommendationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateRecommendationsInput`](crate::operation::generate_recommendations::GenerateRecommendationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateRecommendationsInputBuilder {
     pub(crate) discovery_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -48,18 +44,12 @@ pub struct GenerateRecommendationsInputBuilder {
 }
 impl GenerateRecommendationsInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p>
-    pub fn discovery_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p>
-    pub fn set_discovery_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discovery_job_arn = input;
         self
     }
@@ -79,17 +69,12 @@ impl GenerateRecommendationsInputBuilder {
         self
     }
     /// <p>Specifies the universally unique identifiers (UUIDs) of the resources in your storage system that you want recommendations on.</p>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_ids = input;
         self
     }
     /// <p>Specifies the universally unique identifiers (UUIDs) of the resources in your storage system that you want recommendations on.</p>
-    pub fn get_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_ids
     }
     /// <p>Specifies the type of resource in your storage system that you want recommendations on.</p>
@@ -98,10 +83,7 @@ impl GenerateRecommendationsInputBuilder {
         self
     }
     /// <p>Specifies the type of resource in your storage system that you want recommendations on.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::DiscoveryResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -116,12 +98,10 @@ impl GenerateRecommendationsInputBuilder {
         crate::operation::generate_recommendations::GenerateRecommendationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::generate_recommendations::GenerateRecommendationsInput {
-                discovery_job_arn: self.discovery_job_arn,
-                resource_ids: self.resource_ids,
-                resource_type: self.resource_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::generate_recommendations::GenerateRecommendationsInput {
+            discovery_job_arn: self.discovery_job_arn,
+            resource_ids: self.resource_ids,
+            resource_type: self.resource_type,
+        })
     }
 }

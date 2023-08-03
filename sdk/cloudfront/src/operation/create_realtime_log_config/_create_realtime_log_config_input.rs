@@ -38,18 +38,14 @@ impl CreateRealtimeLogConfigInput {
 }
 impl CreateRealtimeLogConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateRealtimeLogConfigInput`](crate::operation::create_realtime_log_config::CreateRealtimeLogConfigInput).
-    pub fn builder(
-    ) -> crate::operation::create_realtime_log_config::builders::CreateRealtimeLogConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_realtime_log_config::builders::CreateRealtimeLogConfigInputBuilder {
         crate::operation::create_realtime_log_config::builders::CreateRealtimeLogConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRealtimeLogConfigInput`](crate::operation::create_realtime_log_config::CreateRealtimeLogConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRealtimeLogConfigInputBuilder {
     pub(crate) end_points: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -69,17 +65,12 @@ impl CreateRealtimeLogConfigInputBuilder {
         self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn set_end_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>,
-    ) -> Self {
+    pub fn set_end_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>) -> Self {
         self.end_points = input;
         self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn get_end_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndPoint>> {
+    pub fn get_end_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndPoint>> {
         &self.end_points
     }
     /// Appends an item to `fields`.
@@ -96,10 +87,7 @@ impl CreateRealtimeLogConfigInputBuilder {
     }
     /// <p>A list of fields to include in each real-time log record.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.fields = input;
         self
     }
@@ -143,13 +131,11 @@ impl CreateRealtimeLogConfigInputBuilder {
         crate::operation::create_realtime_log_config::CreateRealtimeLogConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_realtime_log_config::CreateRealtimeLogConfigInput {
-                end_points: self.end_points,
-                fields: self.fields,
-                name: self.name,
-                sampling_rate: self.sampling_rate,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_realtime_log_config::CreateRealtimeLogConfigInput {
+            end_points: self.end_points,
+            fields: self.fields,
+            name: self.name,
+            sampling_rate: self.sampling_rate,
+        })
     }
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteLoadBalancerOutput {
 }
 impl DeleteLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerOutput`](crate::operation::delete_load_balancer::DeleteLoadBalancerOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_load_balancer::builders::DeleteLoadBalancerOutputBuilder {
+    pub fn builder() -> crate::operation::delete_load_balancer::builders::DeleteLoadBalancerOutputBuilder {
         crate::operation::delete_load_balancer::builders::DeleteLoadBalancerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLoadBalancerOutput`](crate::operation::delete_load_balancer::DeleteLoadBalancerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLoadBalancerOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl DeleteLoadBalancerOutputBuilder {
         self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
-    ) -> Self {
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>) -> Self {
         self.operations = input;
         self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn get_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
         &self.operations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

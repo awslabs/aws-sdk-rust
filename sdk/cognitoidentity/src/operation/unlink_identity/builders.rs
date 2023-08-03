@@ -10,10 +10,7 @@ impl UnlinkIdentityInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::unlink_identity::UnlinkIdentityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unlink_identity::UnlinkIdentityError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unlink_identity::UnlinkIdentityError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.unlink_identity();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UnlinkIdentityFluentBuilder {
         }
     }
     /// Access the UnlinkIdentity as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::unlink_identity::builders::UnlinkIdentityInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::unlink_identity::builders::UnlinkIdentityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl UnlinkIdentityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -134,30 +126,17 @@ impl UnlinkIdentityFluentBuilder {
     /// To override the contents of this collection use [`set_logins`](Self::set_logins).
     ///
     /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
-    pub fn logins(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logins(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logins(k.into(), v.into());
         self
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
-    pub fn set_logins(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_logins(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_logins(input);
         self
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
-    pub fn get_logins(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_logins(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_logins()
     }
     /// Appends an item to `LoginsToRemove`.
@@ -165,25 +144,17 @@ impl UnlinkIdentityFluentBuilder {
     /// To override the contents of this collection use [`set_logins_to_remove`](Self::set_logins_to_remove).
     ///
     /// <p>Provider names to unlink from this identity.</p>
-    pub fn logins_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logins_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logins_to_remove(input.into());
         self
     }
     /// <p>Provider names to unlink from this identity.</p>
-    pub fn set_logins_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_logins_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_logins_to_remove(input);
         self
     }
     /// <p>Provider names to unlink from this identity.</p>
-    pub fn get_logins_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_logins_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_logins_to_remove()
     }
 }

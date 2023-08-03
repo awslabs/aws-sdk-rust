@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`acceptance_type(AcceptanceType)`](crate::operation::accept_match::builders::AcceptMatchFluentBuilder::acceptance_type) / [`set_acceptance_type(Option<AcceptanceType>)`](crate::operation::accept_match::builders::AcceptMatchFluentBuilder::set_acceptance_type): <p>Player response to the proposed match.</p>
     /// - On success, responds with [`AcceptMatchOutput`](crate::operation::accept_match::AcceptMatchOutput)
     /// - On failure, responds with [`SdkError<AcceptMatchError>`](crate::operation::accept_match::AcceptMatchError)
-    pub fn accept_match(
-        &self,
-    ) -> crate::operation::accept_match::builders::AcceptMatchFluentBuilder {
+    pub fn accept_match(&self) -> crate::operation::accept_match::builders::AcceptMatchFluentBuilder {
         crate::operation::accept_match::builders::AcceptMatchFluentBuilder::new(self.handle.clone())
     }
 }

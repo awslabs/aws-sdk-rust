@@ -30,9 +30,7 @@ impl JobCheckpointConfig {
 
 /// A builder for [`JobCheckpointConfig`](crate::types::JobCheckpointConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobCheckpointConfigBuilder {
     pub(crate) local_path: ::std::option::Option<::std::string::String>,
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,

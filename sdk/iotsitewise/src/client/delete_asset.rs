@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAssetOutput`](crate::operation::delete_asset::DeleteAssetOutput) with field(s):
     ///   - [`asset_status(Option<AssetStatus>)`](crate::operation::delete_asset::DeleteAssetOutput::asset_status): <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     /// - On failure, responds with [`SdkError<DeleteAssetError>`](crate::operation::delete_asset::DeleteAssetError)
-    pub fn delete_asset(
-        &self,
-    ) -> crate::operation::delete_asset::builders::DeleteAssetFluentBuilder {
+    pub fn delete_asset(&self) -> crate::operation::delete_asset::builders::DeleteAssetFluentBuilder {
         crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::new(self.handle.clone())
     }
 }

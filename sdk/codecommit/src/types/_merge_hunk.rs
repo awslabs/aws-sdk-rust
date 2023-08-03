@@ -44,9 +44,7 @@ impl MergeHunk {
 
 /// A builder for [`MergeHunk`](crate::types::MergeHunk).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MergeHunkBuilder {
     pub(crate) is_conflict: ::std::option::Option<bool>,
     pub(crate) source: ::std::option::Option<crate::types::MergeHunkDetail>,
@@ -74,10 +72,7 @@ impl MergeHunkBuilder {
         self
     }
     /// <p>Information about the merge hunk in the source of a merge or pull request.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeHunkDetail>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::MergeHunkDetail>) -> Self {
         self.source = input;
         self
     }
@@ -91,10 +86,7 @@ impl MergeHunkBuilder {
         self
     }
     /// <p>Information about the merge hunk in the destination of a merge or pull request.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeHunkDetail>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::MergeHunkDetail>) -> Self {
         self.destination = input;
         self
     }

@@ -30,9 +30,7 @@ impl Job {
 
 /// A builder for [`Job`](crate::types::Job).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::JobSummary>,
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
@@ -64,10 +62,7 @@ impl JobBuilder {
         self
     }
     /// <p> The execution steps for an execution job, for an Amplify app. </p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Step>>) -> Self {
         self.steps = input;
         self
     }

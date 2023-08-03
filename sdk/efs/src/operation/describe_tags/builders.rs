@@ -10,10 +10,7 @@ impl DescribeTagsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_tags::DescribeTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tags::DescribeTagsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_tags::DescribeTagsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_tags();
         fluent_builder.inner = self;
@@ -50,10 +47,7 @@ impl DescribeTagsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_tags::DescribeTags,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::describe_tags::DescribeTags, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_tags::DescribeTagsError>,
     > {
         let handle = self.handle.clone();
@@ -64,10 +58,7 @@ impl DescribeTagsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -109,10 +100,7 @@ impl DescribeTagsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_tags::DescribeTags,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::describe_tags::DescribeTags, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_tags::DescribeTagsError>,
     > {
         self.customize_middleware().await
@@ -120,13 +108,8 @@ impl DescribeTagsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_tags::paginator::DescribeTagsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_tags::paginator::DescribeTagsPaginator {
-        crate::operation::describe_tags::paginator::DescribeTagsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_tags::paginator::DescribeTagsPaginator {
+        crate::operation::describe_tags::paginator::DescribeTagsPaginator::new(self.handle, self.inner)
     }
     /// <p>(Optional) The maximum number of file system tags to return in the response. Currently, this number is automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -157,18 +140,12 @@ impl DescribeTagsFluentBuilder {
         self.inner.get_marker()
     }
     /// <p>The ID of the file system whose tag set you want to retrieve.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>The ID of the file system whose tag set you want to retrieve.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }

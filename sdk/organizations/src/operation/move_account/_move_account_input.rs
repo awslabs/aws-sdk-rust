@@ -58,9 +58,7 @@ impl MoveAccountInput {
 
 /// A builder for [`MoveAccountInput`](crate::operation::move_account::MoveAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MoveAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_parent_id: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl MoveAccountInputBuilder {
     /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
     /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
-    pub fn source_parent_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_parent_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -103,10 +98,7 @@ impl MoveAccountInputBuilder {
     /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
     /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
-    pub fn set_source_parent_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_parent_id = input;
         self
     }
@@ -125,10 +117,7 @@ impl MoveAccountInputBuilder {
     /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
     /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
-    pub fn destination_parent_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_parent_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -138,10 +127,7 @@ impl MoveAccountInputBuilder {
     /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
     /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
-    pub fn set_destination_parent_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_parent_id = input;
         self
     }
@@ -155,12 +141,7 @@ impl MoveAccountInputBuilder {
         &self.destination_parent_id
     }
     /// Consumes the builder and constructs a [`MoveAccountInput`](crate::operation::move_account::MoveAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::move_account::MoveAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::move_account::MoveAccountInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::move_account::MoveAccountInput {
             account_id: self.account_id,
             source_parent_id: self.source_parent_id,

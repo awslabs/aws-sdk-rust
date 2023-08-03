@@ -52,9 +52,7 @@ impl PutSolNetworkPackageContentOutput {
         self.vnf_pkg_ids.as_deref()
     }
     /// <p>Network package metadata.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PutSolNetworkPackageContentMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::PutSolNetworkPackageContentMetadata> {
         self.metadata.as_ref()
     }
 }
@@ -65,16 +63,14 @@ impl ::aws_http::request_id::RequestId for PutSolNetworkPackageContentOutput {
 }
 impl PutSolNetworkPackageContentOutput {
     /// Creates a new builder-style object to manufacture [`PutSolNetworkPackageContentOutput`](crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput).
-    pub fn builder() -> crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentOutputBuilder{
+    pub fn builder() -> crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentOutputBuilder {
         crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutSolNetworkPackageContentOutput`](crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSolNetworkPackageContentOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -168,17 +164,12 @@ impl PutSolNetworkPackageContentOutputBuilder {
         self
     }
     /// <p>Function package IDs.</p>
-    pub fn set_vnf_pkg_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vnf_pkg_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vnf_pkg_ids = input;
         self
     }
     /// <p>Function package IDs.</p>
-    pub fn get_vnf_pkg_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vnf_pkg_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vnf_pkg_ids
     }
     /// <p>Network package metadata.</p>
@@ -187,17 +178,12 @@ impl PutSolNetworkPackageContentOutputBuilder {
         self
     }
     /// <p>Network package metadata.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::PutSolNetworkPackageContentMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::PutSolNetworkPackageContentMetadata>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Network package metadata.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::PutSolNetworkPackageContentMetadata> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::PutSolNetworkPackageContentMetadata> {
         &self.metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -210,9 +196,7 @@ impl PutSolNetworkPackageContentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutSolNetworkPackageContentOutput`](crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput {
+    pub fn build(self) -> crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput {
         crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput {
             id: self.id,
             arn: self.arn,

@@ -28,27 +28,19 @@ impl TestTypeOutput {
 
 /// A builder for [`TestTypeOutput`](crate::operation::test_type::TestTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestTypeOutputBuilder {
     pub(crate) type_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl TestTypeOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-    pub fn type_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-    pub fn set_type_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_version_arn = input;
         self
     }

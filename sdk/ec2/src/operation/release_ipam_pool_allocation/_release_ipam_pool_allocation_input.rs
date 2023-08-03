@@ -36,16 +36,14 @@ impl ReleaseIpamPoolAllocationInput {
 }
 impl ReleaseIpamPoolAllocationInput {
     /// Creates a new builder-style object to manufacture [`ReleaseIpamPoolAllocationInput`](crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationInput).
-    pub fn builder() -> crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationInputBuilder{
+    pub fn builder() -> crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationInputBuilder {
         crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationInputBuilder::default()
     }
 }
 
 /// A builder for [`ReleaseIpamPoolAllocationInput`](crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReleaseIpamPoolAllocationInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,
@@ -96,18 +94,12 @@ impl ReleaseIpamPoolAllocationInputBuilder {
         &self.cidr
     }
     /// <p>The ID of the allocation.</p>
-    pub fn ipam_pool_allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_pool_allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the allocation.</p>
-    pub fn set_ipam_pool_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_pool_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_pool_allocation_id = input;
         self
     }
@@ -122,13 +114,11 @@ impl ReleaseIpamPoolAllocationInputBuilder {
         crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationInput {
-                dry_run: self.dry_run,
-                ipam_pool_id: self.ipam_pool_id,
-                cidr: self.cidr,
-                ipam_pool_allocation_id: self.ipam_pool_allocation_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationInput {
+            dry_run: self.dry_run,
+            ipam_pool_id: self.ipam_pool_id,
+            cidr: self.cidr,
+            ipam_pool_allocation_id: self.ipam_pool_allocation_id,
+        })
     }
 }

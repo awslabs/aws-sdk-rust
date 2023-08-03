@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateFileCacheOutput {
 }
 impl CreateFileCacheOutput {
     /// Creates a new builder-style object to manufacture [`CreateFileCacheOutput`](crate::operation::create_file_cache::CreateFileCacheOutput).
-    pub fn builder() -> crate::operation::create_file_cache::builders::CreateFileCacheOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_file_cache::builders::CreateFileCacheOutputBuilder {
         crate::operation::create_file_cache::builders::CreateFileCacheOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFileCacheOutput`](crate::operation::create_file_cache::CreateFileCacheOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFileCacheOutputBuilder {
     pub(crate) file_cache: ::std::option::Option<crate::types::FileCacheCreating>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateFileCacheOutputBuilder {
         self
     }
     /// <p>A description of the cache that was created.</p>
-    pub fn set_file_cache(
-        mut self,
-        input: ::std::option::Option<crate::types::FileCacheCreating>,
-    ) -> Self {
+    pub fn set_file_cache(mut self, input: ::std::option::Option<crate::types::FileCacheCreating>) -> Self {
         self.file_cache = input;
         self
     }

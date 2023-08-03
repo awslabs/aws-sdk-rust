@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`list_phone_numbers_summary_list(Option<Vec<ListPhoneNumbersSummary>>)`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output::list_phone_numbers_summary_list): <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
     /// - On failure, responds with [`SdkError<ListPhoneNumbersV2Error>`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error)
-    pub fn list_phone_numbers_v2(
-        &self,
-    ) -> crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder {
-        crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_phone_numbers_v2(&self) -> crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder {
+        crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::new(self.handle.clone())
     }
 }

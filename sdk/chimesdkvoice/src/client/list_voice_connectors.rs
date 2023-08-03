@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`voice_connectors(Option<Vec<VoiceConnector>>)`](crate::operation::list_voice_connectors::ListVoiceConnectorsOutput::voice_connectors): <p>The details of the Voice Connectors.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_voice_connectors::ListVoiceConnectorsOutput::next_token): <p>The token used to return the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListVoiceConnectorsError>`](crate::operation::list_voice_connectors::ListVoiceConnectorsError)
-    pub fn list_voice_connectors(
-        &self,
-    ) -> crate::operation::list_voice_connectors::builders::ListVoiceConnectorsFluentBuilder {
-        crate::operation::list_voice_connectors::builders::ListVoiceConnectorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_voice_connectors(&self) -> crate::operation::list_voice_connectors::builders::ListVoiceConnectorsFluentBuilder {
+        crate::operation::list_voice_connectors::builders::ListVoiceConnectorsFluentBuilder::new(self.handle.clone())
     }
 }

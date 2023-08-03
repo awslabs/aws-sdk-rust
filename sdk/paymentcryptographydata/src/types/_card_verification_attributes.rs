@@ -33,9 +33,7 @@ pub enum CardVerificationAttributes {
 impl CardVerificationAttributes {
     /// Tries to convert the enum instance into [`AmexCardSecurityCodeVersion1`](crate::types::CardVerificationAttributes::AmexCardSecurityCodeVersion1), extracting the inner [`AmexCardSecurityCodeVersion1`](crate::types::AmexCardSecurityCodeVersion1).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_amex_card_security_code_version1(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AmexCardSecurityCodeVersion1, &Self> {
+    pub fn as_amex_card_security_code_version1(&self) -> ::std::result::Result<&crate::types::AmexCardSecurityCodeVersion1, &Self> {
         if let CardVerificationAttributes::AmexCardSecurityCodeVersion1(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -48,9 +46,7 @@ impl CardVerificationAttributes {
     }
     /// Tries to convert the enum instance into [`AmexCardSecurityCodeVersion2`](crate::types::CardVerificationAttributes::AmexCardSecurityCodeVersion2), extracting the inner [`AmexCardSecurityCodeVersion2`](crate::types::AmexCardSecurityCodeVersion2).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_amex_card_security_code_version2(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AmexCardSecurityCodeVersion2, &Self> {
+    pub fn as_amex_card_security_code_version2(&self) -> ::std::result::Result<&crate::types::AmexCardSecurityCodeVersion2, &Self> {
         if let CardVerificationAttributes::AmexCardSecurityCodeVersion2(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -63,9 +59,7 @@ impl CardVerificationAttributes {
     }
     /// Tries to convert the enum instance into [`CardHolderVerificationValue`](crate::types::CardVerificationAttributes::CardHolderVerificationValue), extracting the inner [`CardHolderVerificationValue`](crate::types::CardHolderVerificationValue).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_card_holder_verification_value(
-        &self,
-    ) -> ::std::result::Result<&crate::types::CardHolderVerificationValue, &Self> {
+    pub fn as_card_holder_verification_value(&self) -> ::std::result::Result<&crate::types::CardHolderVerificationValue, &Self> {
         if let CardVerificationAttributes::CardHolderVerificationValue(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -78,9 +72,7 @@ impl CardVerificationAttributes {
     }
     /// Tries to convert the enum instance into [`CardVerificationValue1`](crate::types::CardVerificationAttributes::CardVerificationValue1), extracting the inner [`CardVerificationValue1`](crate::types::CardVerificationValue1).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_card_verification_value1(
-        &self,
-    ) -> ::std::result::Result<&crate::types::CardVerificationValue1, &Self> {
+    pub fn as_card_verification_value1(&self) -> ::std::result::Result<&crate::types::CardVerificationValue1, &Self> {
         if let CardVerificationAttributes::CardVerificationValue1(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -93,9 +85,7 @@ impl CardVerificationAttributes {
     }
     /// Tries to convert the enum instance into [`CardVerificationValue2`](crate::types::CardVerificationAttributes::CardVerificationValue2), extracting the inner [`CardVerificationValue2`](crate::types::CardVerificationValue2).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_card_verification_value2(
-        &self,
-    ) -> ::std::result::Result<&crate::types::CardVerificationValue2, &Self> {
+    pub fn as_card_verification_value2(&self) -> ::std::result::Result<&crate::types::CardVerificationValue2, &Self> {
         if let CardVerificationAttributes::CardVerificationValue2(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -108,9 +98,7 @@ impl CardVerificationAttributes {
     }
     /// Tries to convert the enum instance into [`DiscoverDynamicCardVerificationCode`](crate::types::CardVerificationAttributes::DiscoverDynamicCardVerificationCode), extracting the inner [`DiscoverDynamicCardVerificationCode`](crate::types::DiscoverDynamicCardVerificationCode).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_discover_dynamic_card_verification_code(
-        &self,
-    ) -> ::std::result::Result<&crate::types::DiscoverDynamicCardVerificationCode, &Self> {
+    pub fn as_discover_dynamic_card_verification_code(&self) -> ::std::result::Result<&crate::types::DiscoverDynamicCardVerificationCode, &Self> {
         if let CardVerificationAttributes::DiscoverDynamicCardVerificationCode(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -123,9 +111,7 @@ impl CardVerificationAttributes {
     }
     /// Tries to convert the enum instance into [`DynamicCardVerificationCode`](crate::types::CardVerificationAttributes::DynamicCardVerificationCode), extracting the inner [`DynamicCardVerificationCode`](crate::types::DynamicCardVerificationCode).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_dynamic_card_verification_code(
-        &self,
-    ) -> ::std::result::Result<&crate::types::DynamicCardVerificationCode, &Self> {
+    pub fn as_dynamic_card_verification_code(&self) -> ::std::result::Result<&crate::types::DynamicCardVerificationCode, &Self> {
         if let CardVerificationAttributes::DynamicCardVerificationCode(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -138,9 +124,7 @@ impl CardVerificationAttributes {
     }
     /// Tries to convert the enum instance into [`DynamicCardVerificationValue`](crate::types::CardVerificationAttributes::DynamicCardVerificationValue), extracting the inner [`DynamicCardVerificationValue`](crate::types::DynamicCardVerificationValue).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_dynamic_card_verification_value(
-        &self,
-    ) -> ::std::result::Result<&crate::types::DynamicCardVerificationValue, &Self> {
+    pub fn as_dynamic_card_verification_value(&self) -> ::std::result::Result<&crate::types::DynamicCardVerificationValue, &Self> {
         if let CardVerificationAttributes::DynamicCardVerificationValue(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

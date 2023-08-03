@@ -37,10 +37,7 @@ impl DeleteCustomLineItemFluentBuilder {
         }
     }
     /// Access the DeleteCustomLineItem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_custom_line_item::builders::DeleteCustomLineItemInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_custom_line_item::builders::DeleteCustomLineItemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteCustomLineItemFluentBuilder {
             crate::operation::delete_custom_line_item::DeleteCustomLineItem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_line_item::DeleteCustomLineItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_line_item::DeleteCustomLineItemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteCustomLineItemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteCustomLineItemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_line_item::DeleteCustomLineItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_line_item::DeleteCustomLineItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_line_item::DeleteCustomLineItemError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteCustomLineItemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_line_item::DeleteCustomLineItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_line_item::DeleteCustomLineItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_line_item::DeleteCustomLineItemError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteCustomLineItemFluentBuilder {
             crate::operation::delete_custom_line_item::DeleteCustomLineItem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_line_item::DeleteCustomLineItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_line_item::DeleteCustomLineItemError>,
     > {
         self.customize_middleware().await
     }
@@ -138,25 +124,17 @@ impl DeleteCustomLineItemFluentBuilder {
         self.inner.get_arn()
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn billing_period_range(
-        mut self,
-        input: crate::types::CustomLineItemBillingPeriodRange,
-    ) -> Self {
+    pub fn billing_period_range(mut self, input: crate::types::CustomLineItemBillingPeriodRange) -> Self {
         self.inner = self.inner.billing_period_range(input);
         self
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn set_billing_period_range(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
-    ) -> Self {
+    pub fn set_billing_period_range(mut self, input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>) -> Self {
         self.inner = self.inner.set_billing_period_range(input);
         self
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn get_billing_period_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
+    pub fn get_billing_period_range(&self) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
         self.inner.get_billing_period_range()
     }
 }

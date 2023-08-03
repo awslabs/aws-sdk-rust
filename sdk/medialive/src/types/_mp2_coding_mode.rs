@@ -38,13 +38,7 @@
 /// Mp2 Coding Mode
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Mp2CodingMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Mp2CodingMode {
         match s {
             "CODING_MODE_1_0" => Mp2CodingMode::CodingMode10,
             "CODING_MODE_2_0" => Mp2CodingMode::CodingMode20,
-            other => {
-                Mp2CodingMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Mp2CodingMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -12,8 +12,7 @@ pub struct DescribeConfigurationOptionsOutput {
     pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
     #[doc(hidden)]
-    pub options:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionDescription>>,
+    pub options: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationOptionsOutput {
@@ -26,9 +25,7 @@ impl DescribeConfigurationOptionsOutput {
         self.platform_arn.as_deref()
     }
     /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConfigurationOptionDescription]> {
+    pub fn options(&self) -> ::std::option::Option<&[crate::types::ConfigurationOptionDescription]> {
         self.options.as_deref()
     }
 }
@@ -39,37 +36,28 @@ impl ::aws_http::request_id::RequestId for DescribeConfigurationOptionsOutput {
 }
 impl DescribeConfigurationOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationOptionsOutput`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput).
-    pub fn builder() -> crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsOutputBuilder {
         crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationOptionsOutput`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationOptionsOutputBuilder {
     pub(crate) solution_stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) platform_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) options:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionDescription>>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationOptionsOutputBuilder {
     /// <p>The name of the solution stack these configuration options belong to.</p>
-    pub fn solution_stack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the solution stack these configuration options belong to.</p>
-    pub fn set_solution_stack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_stack_name = input;
         self
     }
@@ -103,17 +91,12 @@ impl DescribeConfigurationOptionsOutputBuilder {
         self
     }
     /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionDescription>>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionDescription>>) -> Self {
         self.options = input;
         self
     }
     /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionDescription>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionDescription>> {
         &self.options
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -126,9 +109,7 @@ impl DescribeConfigurationOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationOptionsOutput`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput {
+    pub fn build(self) -> crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput {
         crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput {
             solution_stack_name: self.solution_stack_name,
             platform_arn: self.platform_arn,

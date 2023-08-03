@@ -26,7 +26,7 @@ impl DescribeDirectConnectGatewaysInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewaysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysInputBuilder,
+    inner: crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysInputBuilder,
 }
 impl DescribeDirectConnectGatewaysFluentBuilder {
     /// Creates a new `DescribeDirectConnectGateways`.
@@ -37,7 +37,7 @@ impl DescribeDirectConnectGatewaysFluentBuilder {
         }
     }
     /// Access the DescribeDirectConnectGateways as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDirectConnectGatewaysFluentBuilder {
             crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDirectConnectGatewaysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDirectConnectGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDirectConnectGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeDirectConnectGatewaysFluentBuilder {
             crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.direct_connect_gateway_id(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_direct_connect_gateway_id(input);
         self
     }

@@ -23,9 +23,7 @@ impl GetServersOutput {
         self.last_modified_on.as_ref()
     }
     /// <p>The status of the server catalog.</p>
-    pub fn server_catalog_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServerCatalogStatus> {
+    pub fn server_catalog_status(&self) -> ::std::option::Option<&crate::types::ServerCatalogStatus> {
         self.server_catalog_status.as_ref()
     }
     /// <p>Information about the servers.</p>
@@ -51,9 +49,7 @@ impl GetServersOutput {
 
 /// A builder for [`GetServersOutput`](crate::operation::get_servers::GetServersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServersOutputBuilder {
     pub(crate) last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) server_catalog_status: ::std::option::Option<crate::types::ServerCatalogStatus>,
@@ -68,10 +64,7 @@ impl GetServersOutputBuilder {
         self
     }
     /// <p>The time when the server was last modified.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_on = input;
         self
     }
@@ -85,17 +78,12 @@ impl GetServersOutputBuilder {
         self
     }
     /// <p>The status of the server catalog.</p>
-    pub fn set_server_catalog_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerCatalogStatus>,
-    ) -> Self {
+    pub fn set_server_catalog_status(mut self, input: ::std::option::Option<crate::types::ServerCatalogStatus>) -> Self {
         self.server_catalog_status = input;
         self
     }
     /// <p>The status of the server catalog.</p>
-    pub fn get_server_catalog_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerCatalogStatus> {
+    pub fn get_server_catalog_status(&self) -> &::std::option::Option<crate::types::ServerCatalogStatus> {
         &self.server_catalog_status
     }
     /// Appends an item to `server_list`.
@@ -110,10 +98,7 @@ impl GetServersOutputBuilder {
         self
     }
     /// <p>Information about the servers.</p>
-    pub fn set_server_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Server>>,
-    ) -> Self {
+    pub fn set_server_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Server>>) -> Self {
         self.server_list = input;
         self
     }

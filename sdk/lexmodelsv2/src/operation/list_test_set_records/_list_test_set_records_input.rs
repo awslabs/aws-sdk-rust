@@ -29,17 +29,14 @@ impl ListTestSetRecordsInput {
 }
 impl ListTestSetRecordsInput {
     /// Creates a new builder-style object to manufacture [`ListTestSetRecordsInput`](crate::operation::list_test_set_records::ListTestSetRecordsInput).
-    pub fn builder(
-    ) -> crate::operation::list_test_set_records::builders::ListTestSetRecordsInputBuilder {
+    pub fn builder() -> crate::operation::list_test_set_records::builders::ListTestSetRecordsInputBuilder {
         crate::operation::list_test_set_records::builders::ListTestSetRecordsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestSetRecordsInput`](crate::operation::list_test_set_records::ListTestSetRecordsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestSetRecordsInputBuilder {
     pub(crate) test_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,16 +88,12 @@ impl ListTestSetRecordsInputBuilder {
     /// Consumes the builder and constructs a [`ListTestSetRecordsInput`](crate::operation::list_test_set_records::ListTestSetRecordsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_test_set_records::ListTestSetRecordsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_test_set_records::ListTestSetRecordsInput {
-                test_set_id: self.test_set_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_test_set_records::ListTestSetRecordsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_test_set_records::ListTestSetRecordsInput {
+            test_set_id: self.test_set_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

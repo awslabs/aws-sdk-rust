@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ListDistributionsByCachePolicyIdOutpu
 }
 impl ListDistributionsByCachePolicyIdOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByCachePolicyIdOutput`](crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdOutput).
-    pub fn builder() -> crate::operation::list_distributions_by_cache_policy_id::builders::ListDistributionsByCachePolicyIdOutputBuilder{
+    pub fn builder() -> crate::operation::list_distributions_by_cache_policy_id::builders::ListDistributionsByCachePolicyIdOutputBuilder {
         crate::operation::list_distributions_by_cache_policy_id::builders::ListDistributionsByCachePolicyIdOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDistributionsByCachePolicyIdOutput`](crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributionsByCachePolicyIdOutputBuilder {
     pub(crate) distribution_id_list: ::std::option::Option<crate::types::DistributionIdList>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl ListDistributionsByCachePolicyIdOutputBuilder {
         self
     }
     /// <p>A list of distribution IDs.</p>
-    pub fn set_distribution_id_list(
-        mut self,
-        input: ::std::option::Option<crate::types::DistributionIdList>,
-    ) -> Self {
+    pub fn set_distribution_id_list(mut self, input: ::std::option::Option<crate::types::DistributionIdList>) -> Self {
         self.distribution_id_list = input;
         self
     }
     /// <p>A list of distribution IDs.</p>
-    pub fn get_distribution_id_list(
-        &self,
-    ) -> &::std::option::Option<crate::types::DistributionIdList> {
+    pub fn get_distribution_id_list(&self) -> &::std::option::Option<crate::types::DistributionIdList> {
         &self.distribution_id_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,10 +58,9 @@ impl ListDistributionsByCachePolicyIdOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDistributionsByCachePolicyIdOutput`](crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdOutput).
-    pub fn build(self) -> crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdOutput{
+    pub fn build(self) -> crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdOutput {
         crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdOutput {
-            distribution_id_list: self.distribution_id_list
-            ,
+            distribution_id_list: self.distribution_id_list,
             _request_id: self._request_id,
         }
     }

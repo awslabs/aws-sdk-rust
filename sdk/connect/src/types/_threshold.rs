@@ -30,9 +30,7 @@ impl Threshold {
 
 /// A builder for [`Threshold`](crate::types::Threshold).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThresholdBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::Comparison>,
     pub(crate) threshold_value: ::std::option::Option<f64>,
@@ -44,10 +42,7 @@ impl ThresholdBuilder {
         self
     }
     /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
-    pub fn set_comparison(
-        mut self,
-        input: ::std::option::Option<crate::types::Comparison>,
-    ) -> Self {
+    pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::Comparison>) -> Self {
         self.comparison = input;
         self
     }

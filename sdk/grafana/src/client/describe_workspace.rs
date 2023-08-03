@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeWorkspaceOutput`](crate::operation::describe_workspace::DescribeWorkspaceOutput) with field(s):
     ///   - [`workspace(Option<WorkspaceDescription>)`](crate::operation::describe_workspace::DescribeWorkspaceOutput::workspace): <p>A structure containing information about the workspace.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkspaceError>`](crate::operation::describe_workspace::DescribeWorkspaceError)
-    pub fn describe_workspace(
-        &self,
-    ) -> crate::operation::describe_workspace::builders::DescribeWorkspaceFluentBuilder {
-        crate::operation::describe_workspace::builders::DescribeWorkspaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_workspace(&self) -> crate::operation::describe_workspace::builders::DescribeWorkspaceFluentBuilder {
+        crate::operation::describe_workspace::builders::DescribeWorkspaceFluentBuilder::new(self.handle.clone())
     }
 }

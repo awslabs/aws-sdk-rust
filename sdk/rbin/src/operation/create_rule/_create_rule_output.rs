@@ -96,9 +96,7 @@ impl CreateRuleOutput {
 
 /// A builder for [`CreateRuleOutput`](crate::operation::create_rule::CreateRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRuleOutputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
@@ -132,10 +130,7 @@ impl CreateRuleOutputBuilder {
         self
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-    pub fn set_retention_period(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.retention_period = input;
         self
     }
@@ -169,10 +164,7 @@ impl CreateRuleOutputBuilder {
         self
     }
     /// <p>Information about the tags assigned to the retention rule.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -186,10 +178,7 @@ impl CreateRuleOutputBuilder {
         self
     }
     /// <p>The resource type retained by the retention rule.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -209,17 +198,12 @@ impl CreateRuleOutputBuilder {
         self
     }
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    pub fn set_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
-    ) -> Self {
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.resource_tags = input;
         self
     }
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    pub fn get_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         &self.resource_tags
     }
     /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
@@ -242,17 +226,12 @@ impl CreateRuleOutputBuilder {
         self
     }
     /// <p>Information about the retention rule lock configuration.</p>
-    pub fn set_lock_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LockConfiguration>,
-    ) -> Self {
+    pub fn set_lock_configuration(mut self, input: ::std::option::Option<crate::types::LockConfiguration>) -> Self {
         self.lock_configuration = input;
         self
     }
     /// <p>Information about the retention rule lock configuration.</p>
-    pub fn get_lock_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LockConfiguration> {
+    pub fn get_lock_configuration(&self) -> &::std::option::Option<crate::types::LockConfiguration> {
         &self.lock_configuration
     }
     /// <p>The lock state for the retention rule.</p>

@@ -10,10 +10,7 @@ impl SearchVocabulariesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_vocabularies::SearchVocabulariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_vocabularies::SearchVocabulariesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_vocabularies::SearchVocabulariesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_vocabularies();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SearchVocabulariesFluentBuilder {
         }
     }
     /// Access the SearchVocabularies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_vocabularies::builders::SearchVocabulariesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_vocabularies::builders::SearchVocabulariesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SearchVocabulariesFluentBuilder {
             crate::operation::search_vocabularies::SearchVocabularies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_vocabularies::SearchVocabulariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_vocabularies::SearchVocabulariesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SearchVocabulariesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SearchVocabulariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_vocabularies::SearchVocabulariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_vocabularies::SearchVocabulariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_vocabularies::SearchVocabulariesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SearchVocabulariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_vocabularies::SearchVocabulariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_vocabularies::SearchVocabulariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_vocabularies::SearchVocabulariesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl SearchVocabulariesFluentBuilder {
             crate::operation::search_vocabularies::SearchVocabularies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_vocabularies::SearchVocabulariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_vocabularies::SearchVocabulariesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_vocabularies::paginator::SearchVocabulariesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_vocabularies::paginator::SearchVocabulariesPaginator {
-        crate::operation::search_vocabularies::paginator::SearchVocabulariesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_vocabularies::paginator::SearchVocabulariesPaginator {
+        crate::operation::search_vocabularies::paginator::SearchVocabulariesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,10 +160,7 @@ impl SearchVocabulariesFluentBuilder {
         self
     }
     /// <p>The current state of the custom vocabulary.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::VocabularyState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }
@@ -193,18 +169,12 @@ impl SearchVocabulariesFluentBuilder {
         self.inner.get_state()
     }
     /// <p>The starting pattern of the name of the vocabulary.</p>
-    pub fn name_starts_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_starts_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_starts_with(input.into());
         self
     }
     /// <p>The starting pattern of the name of the vocabulary.</p>
-    pub fn set_name_starts_with(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_starts_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_starts_with(input);
         self
     }
@@ -218,17 +188,12 @@ impl SearchVocabulariesFluentBuilder {
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::VocabularyLanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn get_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
         self.inner.get_language_code()
     }
 }

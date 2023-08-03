@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`lens_review_summaries(Option<Vec<LensReviewSummary>>)`](crate::operation::list_lens_reviews::ListLensReviewsOutput::lens_review_summaries): <p>List of lens summaries of lens reviews of a workload.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lens_reviews::ListLensReviewsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLensReviewsError>`](crate::operation::list_lens_reviews::ListLensReviewsError)
-    pub fn list_lens_reviews(
-        &self,
-    ) -> crate::operation::list_lens_reviews::builders::ListLensReviewsFluentBuilder {
-        crate::operation::list_lens_reviews::builders::ListLensReviewsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_lens_reviews(&self) -> crate::operation::list_lens_reviews::builders::ListLensReviewsFluentBuilder {
+        crate::operation::list_lens_reviews::builders::ListLensReviewsFluentBuilder::new(self.handle.clone())
     }
 }

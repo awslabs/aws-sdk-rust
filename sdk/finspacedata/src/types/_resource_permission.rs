@@ -33,9 +33,7 @@ impl ResourcePermission {
 
 /// A builder for [`ResourcePermission`](crate::types::ResourcePermission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourcePermissionBuilder {
     pub(crate) permission: ::std::option::Option<::std::string::String>,
 }
@@ -56,8 +54,6 @@ impl ResourcePermissionBuilder {
     }
     /// Consumes the builder and constructs a [`ResourcePermission`](crate::types::ResourcePermission).
     pub fn build(self) -> crate::types::ResourcePermission {
-        crate::types::ResourcePermission {
-            permission: self.permission,
-        }
+        crate::types::ResourcePermission { permission: self.permission }
     }
 }

@@ -7,10 +7,11 @@ impl super::Client {
     /// - On success, responds with [`GetVoiceConnectorEmergencyCallingConfigurationOutput`](crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationOutput) with field(s):
     ///   - [`emergency_calling_configuration(Option<EmergencyCallingConfiguration>)`](crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationOutput::emergency_calling_configuration): <p>The emergency calling configuration details.</p>
     /// - On failure, responds with [`SdkError<GetVoiceConnectorEmergencyCallingConfigurationError>`](crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationError)
-    #[deprecated(
-        note = "Replaced by GetVoiceConnectorEmergencyCallingConfiguration in the Amazon Chime SDK Voice Namespace"
-    )]
-    pub fn get_voice_connector_emergency_calling_configuration(&self) -> crate::operation::get_voice_connector_emergency_calling_configuration::builders::GetVoiceConnectorEmergencyCallingConfigurationFluentBuilder{
+    #[deprecated(note = "Replaced by GetVoiceConnectorEmergencyCallingConfiguration in the Amazon Chime SDK Voice Namespace")]
+    pub fn get_voice_connector_emergency_calling_configuration(
+        &self,
+    ) -> crate::operation::get_voice_connector_emergency_calling_configuration::builders::GetVoiceConnectorEmergencyCallingConfigurationFluentBuilder
+    {
         crate::operation::get_voice_connector_emergency_calling_configuration::builders::GetVoiceConnectorEmergencyCallingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

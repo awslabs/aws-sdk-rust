@@ -7,14 +7,11 @@
 pub struct TreeMapFieldWells {
     /// <p>The aggregated field wells of a tree map.</p>
     #[doc(hidden)]
-    pub tree_map_aggregated_field_wells:
-        ::std::option::Option<crate::types::TreeMapAggregatedFieldWells>,
+    pub tree_map_aggregated_field_wells: ::std::option::Option<crate::types::TreeMapAggregatedFieldWells>,
 }
 impl TreeMapFieldWells {
     /// <p>The aggregated field wells of a tree map.</p>
-    pub fn tree_map_aggregated_field_wells(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TreeMapAggregatedFieldWells> {
+    pub fn tree_map_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::TreeMapAggregatedFieldWells> {
         self.tree_map_aggregated_field_wells.as_ref()
     }
 }
@@ -27,34 +24,23 @@ impl TreeMapFieldWells {
 
 /// A builder for [`TreeMapFieldWells`](crate::types::TreeMapFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TreeMapFieldWellsBuilder {
-    pub(crate) tree_map_aggregated_field_wells:
-        ::std::option::Option<crate::types::TreeMapAggregatedFieldWells>,
+    pub(crate) tree_map_aggregated_field_wells: ::std::option::Option<crate::types::TreeMapAggregatedFieldWells>,
 }
 impl TreeMapFieldWellsBuilder {
     /// <p>The aggregated field wells of a tree map.</p>
-    pub fn tree_map_aggregated_field_wells(
-        mut self,
-        input: crate::types::TreeMapAggregatedFieldWells,
-    ) -> Self {
+    pub fn tree_map_aggregated_field_wells(mut self, input: crate::types::TreeMapAggregatedFieldWells) -> Self {
         self.tree_map_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregated field wells of a tree map.</p>
-    pub fn set_tree_map_aggregated_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::TreeMapAggregatedFieldWells>,
-    ) -> Self {
+    pub fn set_tree_map_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::TreeMapAggregatedFieldWells>) -> Self {
         self.tree_map_aggregated_field_wells = input;
         self
     }
     /// <p>The aggregated field wells of a tree map.</p>
-    pub fn get_tree_map_aggregated_field_wells(
-        &self,
-    ) -> &::std::option::Option<crate::types::TreeMapAggregatedFieldWells> {
+    pub fn get_tree_map_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::TreeMapAggregatedFieldWells> {
         &self.tree_map_aggregated_field_wells
     }
     /// Consumes the builder and constructs a [`TreeMapFieldWells`](crate::types::TreeMapFieldWells).

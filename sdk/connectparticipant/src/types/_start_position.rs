@@ -39,9 +39,7 @@ impl StartPosition {
 
 /// A builder for [`StartPosition`](crate::types::StartPosition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartPositionBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) absolute_time: ::std::option::Option<::std::string::String>,
@@ -64,19 +62,13 @@ impl StartPositionBuilder {
     }
     /// <p>The time in ISO format where to start.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn absolute_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn absolute_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.absolute_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time in ISO format where to start.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn set_absolute_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_absolute_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.absolute_time = input;
         self
     }

@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetReusableDelegationSetOutput`](crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput) with field(s):
     ///   - [`delegation_set(Option<DelegationSet>)`](crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput::delegation_set): <p>A complex type that contains information about the reusable delegation set.</p>
     /// - On failure, responds with [`SdkError<GetReusableDelegationSetError>`](crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError)
-    pub fn get_reusable_delegation_set(&self) -> crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetFluentBuilder{
+    pub fn get_reusable_delegation_set(&self) -> crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetFluentBuilder {
         crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetFluentBuilder::new(self.handle.clone())
     }
 }

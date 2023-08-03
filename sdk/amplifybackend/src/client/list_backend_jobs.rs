@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`jobs(Option<Vec<BackendJobRespObj>>)`](crate::operation::list_backend_jobs::ListBackendJobsOutput::jobs): <p>An array of jobs and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_backend_jobs::ListBackendJobsOutput::next_token): <p>The token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListBackendJobsError>`](crate::operation::list_backend_jobs::ListBackendJobsError)
-    pub fn list_backend_jobs(
-        &self,
-    ) -> crate::operation::list_backend_jobs::builders::ListBackendJobsFluentBuilder {
-        crate::operation::list_backend_jobs::builders::ListBackendJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_backend_jobs(&self) -> crate::operation::list_backend_jobs::builders::ListBackendJobsFluentBuilder {
+        crate::operation::list_backend_jobs::builders::ListBackendJobsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`related_resources(Option<Vec<RelatedResource>>)`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput::related_resources): <p>The related resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> for the first API call.</p>
     /// - On failure, responds with [`SdkError<ListRelatedResourcesForAuditFindingError>`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingError)
-    pub fn list_related_resources_for_audit_finding(&self) -> crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder{
-        crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder::new(self.handle.clone())
+    pub fn list_related_resources_for_audit_finding(
+        &self,
+    ) -> crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder {
+        crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

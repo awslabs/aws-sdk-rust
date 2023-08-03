@@ -44,9 +44,7 @@ impl BucketCountBySharedAccessType {
 
 /// A builder for [`BucketCountBySharedAccessType`](crate::types::BucketCountBySharedAccessType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketCountBySharedAccessTypeBuilder {
     pub(crate) external: ::std::option::Option<i64>,
     pub(crate) internal: ::std::option::Option<i64>,

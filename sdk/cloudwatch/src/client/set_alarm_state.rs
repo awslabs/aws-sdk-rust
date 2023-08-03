@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`state_reason_data(impl ::std::convert::Into<String>)`](crate::operation::set_alarm_state::builders::SetAlarmStateFluentBuilder::state_reason_data) / [`set_state_reason_data(Option<String>)`](crate::operation::set_alarm_state::builders::SetAlarmStateFluentBuilder::set_state_reason_data): <p>The reason that this alarm is set to this specific state, in JSON format.</p>  <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
     /// - On success, responds with [`SetAlarmStateOutput`](crate::operation::set_alarm_state::SetAlarmStateOutput)
     /// - On failure, responds with [`SdkError<SetAlarmStateError>`](crate::operation::set_alarm_state::SetAlarmStateError)
-    pub fn set_alarm_state(
-        &self,
-    ) -> crate::operation::set_alarm_state::builders::SetAlarmStateFluentBuilder {
-        crate::operation::set_alarm_state::builders::SetAlarmStateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_alarm_state(&self) -> crate::operation::set_alarm_state::builders::SetAlarmStateFluentBuilder {
+        crate::operation::set_alarm_state::builders::SetAlarmStateFluentBuilder::new(self.handle.clone())
     }
 }

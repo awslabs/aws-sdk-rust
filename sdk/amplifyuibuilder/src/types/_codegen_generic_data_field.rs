@@ -25,9 +25,7 @@ pub struct CodegenGenericDataField {
 }
 impl CodegenGenericDataField {
     /// <p>The data type for the generic data field.</p>
-    pub fn data_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CodegenGenericDataFieldDataType> {
+    pub fn data_type(&self) -> ::std::option::Option<&crate::types::CodegenGenericDataFieldDataType> {
         self.data_type.as_ref()
     }
     /// <p>The value of the data type for the generic data field.</p>
@@ -47,9 +45,7 @@ impl CodegenGenericDataField {
         self.is_array
     }
     /// <p>The relationship of the generic data schema.</p>
-    pub fn relationship(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CodegenGenericDataRelationshipType> {
+    pub fn relationship(&self) -> ::std::option::Option<&crate::types::CodegenGenericDataRelationshipType> {
         self.relationship.as_ref()
     }
 }
@@ -62,17 +58,14 @@ impl CodegenGenericDataField {
 
 /// A builder for [`CodegenGenericDataField`](crate::types::CodegenGenericDataField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodegenGenericDataFieldBuilder {
     pub(crate) data_type: ::std::option::Option<crate::types::CodegenGenericDataFieldDataType>,
     pub(crate) data_type_value: ::std::option::Option<::std::string::String>,
     pub(crate) required: ::std::option::Option<bool>,
     pub(crate) read_only: ::std::option::Option<bool>,
     pub(crate) is_array: ::std::option::Option<bool>,
-    pub(crate) relationship:
-        ::std::option::Option<crate::types::CodegenGenericDataRelationshipType>,
+    pub(crate) relationship: ::std::option::Option<crate::types::CodegenGenericDataRelationshipType>,
 }
 impl CodegenGenericDataFieldBuilder {
     /// <p>The data type for the generic data field.</p>
@@ -81,32 +74,21 @@ impl CodegenGenericDataFieldBuilder {
         self
     }
     /// <p>The data type for the generic data field.</p>
-    pub fn set_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CodegenGenericDataFieldDataType>,
-    ) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::CodegenGenericDataFieldDataType>) -> Self {
         self.data_type = input;
         self
     }
     /// <p>The data type for the generic data field.</p>
-    pub fn get_data_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodegenGenericDataFieldDataType> {
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::CodegenGenericDataFieldDataType> {
         &self.data_type
     }
     /// <p>The value of the data type for the generic data field.</p>
-    pub fn data_type_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_type_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the data type for the generic data field.</p>
-    pub fn set_data_type_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_type_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type_value = input;
         self
     }
@@ -162,17 +144,12 @@ impl CodegenGenericDataFieldBuilder {
         self
     }
     /// <p>The relationship of the generic data schema.</p>
-    pub fn set_relationship(
-        mut self,
-        input: ::std::option::Option<crate::types::CodegenGenericDataRelationshipType>,
-    ) -> Self {
+    pub fn set_relationship(mut self, input: ::std::option::Option<crate::types::CodegenGenericDataRelationshipType>) -> Self {
         self.relationship = input;
         self
     }
     /// <p>The relationship of the generic data schema.</p>
-    pub fn get_relationship(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodegenGenericDataRelationshipType> {
+    pub fn get_relationship(&self) -> &::std::option::Option<crate::types::CodegenGenericDataRelationshipType> {
         &self.relationship
     }
     /// Consumes the builder and constructs a [`CodegenGenericDataField`](crate::types::CodegenGenericDataField).

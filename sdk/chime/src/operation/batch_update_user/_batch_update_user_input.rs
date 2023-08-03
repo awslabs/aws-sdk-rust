@@ -8,8 +8,7 @@ pub struct BatchUpdateUserInput {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The request containing the user IDs and details to update.</p>
     #[doc(hidden)]
-    pub update_user_request_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>>,
+    pub update_user_request_items: ::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>>,
 }
 impl BatchUpdateUserInput {
     /// <p>The Amazon Chime account ID.</p>
@@ -17,9 +16,7 @@ impl BatchUpdateUserInput {
         self.account_id.as_deref()
     }
     /// <p>The request containing the user IDs and details to update.</p>
-    pub fn update_user_request_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UpdateUserRequestItem]> {
+    pub fn update_user_request_items(&self) -> ::std::option::Option<&[crate::types::UpdateUserRequestItem]> {
         self.update_user_request_items.as_deref()
     }
 }
@@ -32,13 +29,10 @@ impl BatchUpdateUserInput {
 
 /// A builder for [`BatchUpdateUserInput`](crate::operation::batch_update_user::BatchUpdateUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateUserInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) update_user_request_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>>,
+    pub(crate) update_user_request_items: ::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>>,
 }
 impl BatchUpdateUserInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
@@ -67,26 +61,18 @@ impl BatchUpdateUserInputBuilder {
         self
     }
     /// <p>The request containing the user IDs and details to update.</p>
-    pub fn set_update_user_request_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>>,
-    ) -> Self {
+    pub fn set_update_user_request_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>>) -> Self {
         self.update_user_request_items = input;
         self
     }
     /// <p>The request containing the user IDs and details to update.</p>
-    pub fn get_update_user_request_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>> {
+    pub fn get_update_user_request_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>> {
         &self.update_user_request_items
     }
     /// Consumes the builder and constructs a [`BatchUpdateUserInput`](crate::operation::batch_update_user::BatchUpdateUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_user::BatchUpdateUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::batch_update_user::BatchUpdateUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_update_user::BatchUpdateUserInput {
             account_id: self.account_id,
             update_user_request_items: self.update_user_request_items,

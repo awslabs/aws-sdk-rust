@@ -45,26 +45,20 @@ impl AttachNetworkInterfaceInput {
         self.network_card_index
     }
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
-    pub fn ena_srd_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EnaSrdSpecification> {
+    pub fn ena_srd_specification(&self) -> ::std::option::Option<&crate::types::EnaSrdSpecification> {
         self.ena_srd_specification.as_ref()
     }
 }
 impl AttachNetworkInterfaceInput {
     /// Creates a new builder-style object to manufacture [`AttachNetworkInterfaceInput`](crate::operation::attach_network_interface::AttachNetworkInterfaceInput).
-    pub fn builder(
-    ) -> crate::operation::attach_network_interface::builders::AttachNetworkInterfaceInputBuilder
-    {
+    pub fn builder() -> crate::operation::attach_network_interface::builders::AttachNetworkInterfaceInputBuilder {
         crate::operation::attach_network_interface::builders::AttachNetworkInterfaceInputBuilder::default()
     }
 }
 
 /// A builder for [`AttachNetworkInterfaceInput`](crate::operation::attach_network_interface::AttachNetworkInterfaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachNetworkInterfaceInputBuilder {
     pub(crate) device_index: ::std::option::Option<i32>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -117,18 +111,12 @@ impl AttachNetworkInterfaceInputBuilder {
         &self.instance_id
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -156,35 +144,26 @@ impl AttachNetworkInterfaceInputBuilder {
         self
     }
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
-    pub fn set_ena_srd_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::EnaSrdSpecification>,
-    ) -> Self {
+    pub fn set_ena_srd_specification(mut self, input: ::std::option::Option<crate::types::EnaSrdSpecification>) -> Self {
         self.ena_srd_specification = input;
         self
     }
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
-    pub fn get_ena_srd_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
+    pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
         &self.ena_srd_specification
     }
     /// Consumes the builder and constructs a [`AttachNetworkInterfaceInput`](crate::operation::attach_network_interface::AttachNetworkInterfaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::attach_network_interface::AttachNetworkInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::attach_network_interface::AttachNetworkInterfaceInput {
-                device_index: self.device_index,
-                dry_run: self.dry_run,
-                instance_id: self.instance_id,
-                network_interface_id: self.network_interface_id,
-                network_card_index: self.network_card_index,
-                ena_srd_specification: self.ena_srd_specification,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::attach_network_interface::AttachNetworkInterfaceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::attach_network_interface::AttachNetworkInterfaceInput {
+            device_index: self.device_index,
+            dry_run: self.dry_run,
+            instance_id: self.instance_id,
+            network_interface_id: self.network_interface_id,
+            network_card_index: self.network_card_index,
+            ena_srd_specification: self.ena_srd_specification,
+        })
     }
 }

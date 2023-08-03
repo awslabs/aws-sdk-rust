@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_work_group::builders::CreateWorkGroupFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_work_group::builders::CreateWorkGroupFluentBuilder::set_tags): <p>A list of comma separated tags to add to the workgroup that is created.</p>
     /// - On success, responds with [`CreateWorkGroupOutput`](crate::operation::create_work_group::CreateWorkGroupOutput)
     /// - On failure, responds with [`SdkError<CreateWorkGroupError>`](crate::operation::create_work_group::CreateWorkGroupError)
-    pub fn create_work_group(
-        &self,
-    ) -> crate::operation::create_work_group::builders::CreateWorkGroupFluentBuilder {
-        crate::operation::create_work_group::builders::CreateWorkGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_work_group(&self) -> crate::operation::create_work_group::builders::CreateWorkGroupFluentBuilder {
+        crate::operation::create_work_group::builders::CreateWorkGroupFluentBuilder::new(self.handle.clone())
     }
 }

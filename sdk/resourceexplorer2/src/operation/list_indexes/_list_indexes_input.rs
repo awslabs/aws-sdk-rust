@@ -49,9 +49,7 @@ impl ListIndexesInput {
 
 /// A builder for [`ListIndexesInput`](crate::operation::list_indexes::ListIndexesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIndexesInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::IndexType>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -88,10 +86,7 @@ impl ListIndexesInputBuilder {
         self
     }
     /// <p>If specified, limits the response to only information about the index in the specified list of Amazon Web Services Regions.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
@@ -134,12 +129,7 @@ impl ListIndexesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListIndexesInput`](crate::operation::list_indexes::ListIndexesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_indexes::ListIndexesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_indexes::ListIndexesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_indexes::ListIndexesInput {
             r#type: self.r#type,
             regions: self.regions,

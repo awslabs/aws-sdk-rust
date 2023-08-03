@@ -26,7 +26,7 @@ impl DeleteWhatIfForecastExportInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWhatIfForecastExportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_what_if_forecast_export::builders::DeleteWhatIfForecastExportInputBuilder,
+    inner: crate::operation::delete_what_if_forecast_export::builders::DeleteWhatIfForecastExportInputBuilder,
 }
 impl DeleteWhatIfForecastExportFluentBuilder {
     /// Creates a new `DeleteWhatIfForecastExport`.
@@ -37,7 +37,7 @@ impl DeleteWhatIfForecastExportFluentBuilder {
         }
     }
     /// Access the DeleteWhatIfForecastExport as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_what_if_forecast_export::builders::DeleteWhatIfForecastExportInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_what_if_forecast_export::builders::DeleteWhatIfForecastExportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteWhatIfForecastExportFluentBuilder {
             crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteWhatIfForecastExportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteWhatIfForecastExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteWhatIfForecastExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteWhatIfForecastExportFluentBuilder {
             crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.</p>
-    pub fn what_if_forecast_export_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_forecast_export_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.what_if_forecast_export_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.</p>
-    pub fn set_what_if_forecast_export_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_forecast_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_what_if_forecast_export_arn(input);
         self
     }

@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`scaling_activities(Option<Vec<ScalingActivity>>)`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput::scaling_activities): <p>A list of scaling activity objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput::next_token): <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeScalingActivitiesError>`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesError)
-    pub fn describe_scaling_activities(&self) -> crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesFluentBuilder{
+    pub fn describe_scaling_activities(&self) -> crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesFluentBuilder {
         crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesFluentBuilder::new(self.handle.clone())
     }
 }

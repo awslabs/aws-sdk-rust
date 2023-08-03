@@ -33,7 +33,7 @@ impl UpdateDomainContactPrivacyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDomainContactPrivacyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyInputBuilder,
+    inner: crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyInputBuilder,
 }
 impl UpdateDomainContactPrivacyFluentBuilder {
     /// Creates a new `UpdateDomainContactPrivacy`.
@@ -44,7 +44,7 @@ impl UpdateDomainContactPrivacyFluentBuilder {
         }
     }
     /// Access the UpdateDomainContactPrivacy as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +56,7 @@ impl UpdateDomainContactPrivacyFluentBuilder {
             crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +66,7 @@ impl UpdateDomainContactPrivacyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +75,7 @@ impl UpdateDomainContactPrivacyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyError>,
     > {
         let op = self
             .inner
@@ -105,9 +98,7 @@ impl UpdateDomainContactPrivacyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +112,7 @@ impl UpdateDomainContactPrivacyFluentBuilder {
             crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyError>,
     > {
         self.customize_middleware().await
     }

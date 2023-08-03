@@ -68,9 +68,7 @@ impl Certificate {
 
 /// A builder for [`Certificate`](crate::types::Certificate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateBuilder {
     pub(crate) certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_type: ::std::option::Option<::std::string::String>,
@@ -82,19 +80,13 @@ pub struct CertificateBuilder {
 impl CertificateBuilder {
     /// <p>The unique key that identifies a certificate.</p>
     /// <p>Example: <code>rds-ca-2019</code> </p>
-    pub fn certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique key that identifies a certificate.</p>
     /// <p>Example: <code>rds-ca-2019</code> </p>
-    pub fn set_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_identifier = input;
         self
     }
@@ -105,19 +97,13 @@ impl CertificateBuilder {
     }
     /// <p>The type of the certificate.</p>
     /// <p>Example: <code>CA</code> </p>
-    pub fn certificate_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the certificate.</p>
     /// <p>Example: <code>CA</code> </p>
-    pub fn set_certificate_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_type = input;
         self
     }
@@ -148,10 +134,7 @@ impl CertificateBuilder {
     }
     /// <p>The starting date-time from which the certificate is valid.</p>
     /// <p>Example: <code>2019-07-31T17:57:09Z</code> </p>
-    pub fn set_valid_from(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_from(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_from = input;
         self
     }
@@ -168,10 +151,7 @@ impl CertificateBuilder {
     }
     /// <p>The date-time after which the certificate is no longer valid.</p>
     /// <p>Example: <code>2024-07-31T17:57:09Z</code> </p>
-    pub fn set_valid_till(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_till(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_till = input;
         self
     }
@@ -182,19 +162,13 @@ impl CertificateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code> </p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code> </p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }

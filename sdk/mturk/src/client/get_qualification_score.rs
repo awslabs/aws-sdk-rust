@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetQualificationScoreOutput`](crate::operation::get_qualification_score::GetQualificationScoreOutput) with field(s):
     ///   - [`qualification(Option<Qualification>)`](crate::operation::get_qualification_score::GetQualificationScoreOutput::qualification): <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
     /// - On failure, responds with [`SdkError<GetQualificationScoreError>`](crate::operation::get_qualification_score::GetQualificationScoreError)
-    pub fn get_qualification_score(
-        &self,
-    ) -> crate::operation::get_qualification_score::builders::GetQualificationScoreFluentBuilder
-    {
-        crate::operation::get_qualification_score::builders::GetQualificationScoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_qualification_score(&self) -> crate::operation::get_qualification_score::builders::GetQualificationScoreFluentBuilder {
+        crate::operation::get_qualification_score::builders::GetQualificationScoreFluentBuilder::new(self.handle.clone())
     }
 }

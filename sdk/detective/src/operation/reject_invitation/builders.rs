@@ -10,10 +10,7 @@ impl RejectInvitationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::reject_invitation::RejectInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_invitation::RejectInvitationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_invitation::RejectInvitationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.reject_invitation();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl RejectInvitationFluentBuilder {
         }
     }
     /// Access the RejectInvitation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reject_invitation::builders::RejectInvitationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::reject_invitation::builders::RejectInvitationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl RejectInvitationFluentBuilder {
             crate::operation::reject_invitation::RejectInvitation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_invitation::RejectInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_invitation::RejectInvitationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl RejectInvitationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl RejectInvitationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_invitation::RejectInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_invitation::RejectInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_invitation::RejectInvitationError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl RejectInvitationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_invitation::RejectInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_invitation::RejectInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_invitation::RejectInvitationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl RejectInvitationFluentBuilder {
             crate::operation::reject_invitation::RejectInvitation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_invitation::RejectInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_invitation::RejectInvitationError>,
     > {
         self.customize_middleware().await
     }

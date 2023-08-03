@@ -31,17 +31,14 @@ impl DeletePermissionInput {
 }
 impl DeletePermissionInput {
     /// Creates a new builder-style object to manufacture [`DeletePermissionInput`](crate::operation::delete_permission::DeletePermissionInput).
-    pub fn builder() -> crate::operation::delete_permission::builders::DeletePermissionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_permission::builders::DeletePermissionInputBuilder {
         crate::operation::delete_permission::builders::DeletePermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePermissionInput`](crate::operation::delete_permission::DeletePermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePermissionInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
@@ -50,19 +47,13 @@ pub struct DeletePermissionInputBuilder {
 impl DeletePermissionInputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }
@@ -86,18 +77,12 @@ impl DeletePermissionInputBuilder {
         &self.principal
     }
     /// <p>The Amazon Web Services account that calls this action.</p>
-    pub fn source_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account that calls this action.</p>
-    pub fn set_source_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_account = input;
         self
     }
@@ -108,10 +93,7 @@ impl DeletePermissionInputBuilder {
     /// Consumes the builder and constructs a [`DeletePermissionInput`](crate::operation::delete_permission::DeletePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_permission::DeletePermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_permission::DeletePermissionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_permission::DeletePermissionInput {
             certificate_authority_arn: self.certificate_authority_arn,
             principal: self.principal,

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`certificate_pem(Option<String>)`](crate::operation::register_thing::RegisterThingOutput::certificate_pem): <p>The certificate data, in PEM format.</p>
     ///   - [`resource_arns(Option<HashMap<String, String>>)`](crate::operation::register_thing::RegisterThingOutput::resource_arns): <p>ARNs for the generated resources.</p>
     /// - On failure, responds with [`SdkError<RegisterThingError>`](crate::operation::register_thing::RegisterThingError)
-    pub fn register_thing(
-        &self,
-    ) -> crate::operation::register_thing::builders::RegisterThingFluentBuilder {
-        crate::operation::register_thing::builders::RegisterThingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_thing(&self) -> crate::operation::register_thing::builders::RegisterThingFluentBuilder {
+        crate::operation::register_thing::builders::RegisterThingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for PutCoreNetworkPolicyOutput {
 }
 impl PutCoreNetworkPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutCoreNetworkPolicyOutput`](crate::operation::put_core_network_policy::PutCoreNetworkPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyOutputBuilder {
         crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutCoreNetworkPolicyOutput`](crate::operation::put_core_network_policy::PutCoreNetworkPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutCoreNetworkPolicyOutputBuilder {
     pub(crate) core_network_policy: ::std::option::Option<crate::types::CoreNetworkPolicy>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl PutCoreNetworkPolicyOutputBuilder {
         self
     }
     /// <p>Describes the changed core network policy.</p>
-    pub fn set_core_network_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::CoreNetworkPolicy>,
-    ) -> Self {
+    pub fn set_core_network_policy(mut self, input: ::std::option::Option<crate::types::CoreNetworkPolicy>) -> Self {
         self.core_network_policy = input;
         self
     }
     /// <p>Describes the changed core network policy.</p>
-    pub fn get_core_network_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoreNetworkPolicy> {
+    pub fn get_core_network_policy(&self) -> &::std::option::Option<crate::types::CoreNetworkPolicy> {
         &self.core_network_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

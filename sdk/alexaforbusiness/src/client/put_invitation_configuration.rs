@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`PutInvitationConfigurationOutput`](crate::operation::put_invitation_configuration::PutInvitationConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutInvitationConfigurationError>`](crate::operation::put_invitation_configuration::PutInvitationConfigurationError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn put_invitation_configuration(&self) -> crate::operation::put_invitation_configuration::builders::PutInvitationConfigurationFluentBuilder{
+    pub fn put_invitation_configuration(&self) -> crate::operation::put_invitation_configuration::builders::PutInvitationConfigurationFluentBuilder {
         crate::operation::put_invitation_configuration::builders::PutInvitationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

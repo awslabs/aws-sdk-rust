@@ -5,9 +5,7 @@
 pub struct ListDataQualityRulesetEvaluationRunsOutput {
     /// <p>A list of <code>DataQualityRulesetEvaluationRunDescription</code> objects representing data quality ruleset runs.</p>
     #[doc(hidden)]
-    pub runs: ::std::option::Option<
-        ::std::vec::Vec<crate::types::DataQualityRulesetEvaluationRunDescription>,
-    >,
+    pub runs: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRulesetEvaluationRunDescription>>,
     /// <p>A pagination token, if more results are available.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +13,7 @@ pub struct ListDataQualityRulesetEvaluationRunsOutput {
 }
 impl ListDataQualityRulesetEvaluationRunsOutput {
     /// <p>A list of <code>DataQualityRulesetEvaluationRunDescription</code> objects representing data quality ruleset runs.</p>
-    pub fn runs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataQualityRulesetEvaluationRunDescription]> {
+    pub fn runs(&self) -> ::std::option::Option<&[crate::types::DataQualityRulesetEvaluationRunDescription]> {
         self.runs.as_deref()
     }
     /// <p>A pagination token, if more results are available.</p>
@@ -32,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDataQualityRulesetEvaluationRunsO
 }
 impl ListDataQualityRulesetEvaluationRunsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataQualityRulesetEvaluationRunsOutput`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsOutput).
-    pub fn builder() -> crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsOutputBuilder{
+    pub fn builder() -> crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsOutputBuilder {
         crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataQualityRulesetEvaluationRunsOutput`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataQualityRulesetEvaluationRunsOutputBuilder {
-    pub(crate) runs: ::std::option::Option<
-        ::std::vec::Vec<crate::types::DataQualityRulesetEvaluationRunDescription>,
-    >,
+    pub(crate) runs: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRulesetEvaluationRunDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,21 +54,12 @@ impl ListDataQualityRulesetEvaluationRunsOutputBuilder {
         self
     }
     /// <p>A list of <code>DataQualityRulesetEvaluationRunDescription</code> objects representing data quality ruleset runs.</p>
-    pub fn set_runs(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DataQualityRulesetEvaluationRunDescription>,
-        >,
-    ) -> Self {
+    pub fn set_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRulesetEvaluationRunDescription>>) -> Self {
         self.runs = input;
         self
     }
     /// <p>A list of <code>DataQualityRulesetEvaluationRunDescription</code> objects representing data quality ruleset runs.</p>
-    pub fn get_runs(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::DataQualityRulesetEvaluationRunDescription>,
-    > {
+    pub fn get_runs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityRulesetEvaluationRunDescription>> {
         &self.runs
     }
     /// <p>A pagination token, if more results are available.</p>
@@ -103,12 +86,10 @@ impl ListDataQualityRulesetEvaluationRunsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDataQualityRulesetEvaluationRunsOutput`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsOutput).
-    pub fn build(self) -> crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsOutput{
+    pub fn build(self) -> crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsOutput {
         crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsOutput {
-            runs: self.runs
-            ,
-            next_token: self.next_token
-            ,
+            runs: self.runs,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

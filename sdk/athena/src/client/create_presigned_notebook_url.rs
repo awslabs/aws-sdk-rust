@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`auth_token(Option<String>)`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput::auth_token): <p>The authentication token for the notebook.</p>
     ///   - [`auth_token_expiration_time(Option<i64>)`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput::auth_token_expiration_time): <p>The UTC epoch time when the authentication token expires.</p>
     /// - On failure, responds with [`SdkError<CreatePresignedNotebookUrlError>`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlError)
-    pub fn create_presigned_notebook_url(&self) -> crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlFluentBuilder{
+    pub fn create_presigned_notebook_url(
+        &self,
+    ) -> crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlFluentBuilder {
         crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlFluentBuilder::new(self.handle.clone())
     }
 }

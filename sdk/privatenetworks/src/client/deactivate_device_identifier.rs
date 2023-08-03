@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeactivateDeviceIdentifierOutput`](crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput) with field(s):
     ///   - [`device_identifier(Option<DeviceIdentifier>)`](crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput::device_identifier): <p>Information about the device identifier.</p>
     /// - On failure, responds with [`SdkError<DeactivateDeviceIdentifierError>`](crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierError)
-    pub fn deactivate_device_identifier(&self) -> crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierFluentBuilder{
+    pub fn deactivate_device_identifier(&self) -> crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierFluentBuilder {
         crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierFluentBuilder::new(self.handle.clone())
     }
 }

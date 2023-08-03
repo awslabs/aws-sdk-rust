@@ -24,10 +24,7 @@ pub fn ser_run_job_flow_input(
     if let Some(var_7) = &input.instances {
         #[allow(unused_mut)]
         let mut object_8 = object.key("Instances").start_object();
-        crate::protocol_serde::shape_job_flow_instances_config::ser_job_flow_instances_config(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_job_flow_instances_config::ser_job_flow_instances_config(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.steps {
@@ -48,10 +45,7 @@ pub fn ser_run_job_flow_input(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_bootstrap_action_config::ser_bootstrap_action_config(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_bootstrap_action_config::ser_bootstrap_action_config(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }
@@ -96,10 +90,7 @@ pub fn ser_run_job_flow_input(
             {
                 #[allow(unused_mut)]
                 let mut object_31 = array_29.value().start_object();
-                crate::protocol_serde::shape_configuration::ser_configuration(
-                    &mut object_31,
-                    item_30,
-                )?;
+                crate::protocol_serde::shape_configuration::ser_configuration(&mut object_31, item_30)?;
                 object_31.finish();
             }
         }
@@ -150,10 +141,7 @@ pub fn ser_run_job_flow_input(
     if let Some(var_45) = &input.kerberos_attributes {
         #[allow(unused_mut)]
         let mut object_46 = object.key("KerberosAttributes").start_object();
-        crate::protocol_serde::shape_kerberos_attributes::ser_kerberos_attributes(
-            &mut object_46,
-            var_45,
-        )?;
+        crate::protocol_serde::shape_kerberos_attributes::ser_kerberos_attributes(&mut object_46, var_45)?;
         object_46.finish();
     }
     if let Some(var_47) = &input.step_concurrency_level {
@@ -165,10 +153,7 @@ pub fn ser_run_job_flow_input(
     if let Some(var_48) = &input.managed_scaling_policy {
         #[allow(unused_mut)]
         let mut object_49 = object.key("ManagedScalingPolicy").start_object();
-        crate::protocol_serde::shape_managed_scaling_policy::ser_managed_scaling_policy(
-            &mut object_49,
-            var_48,
-        )?;
+        crate::protocol_serde::shape_managed_scaling_policy::ser_managed_scaling_policy(&mut object_49, var_48)?;
         object_49.finish();
     }
     if let Some(var_50) = &input.placement_group_configs {
@@ -177,10 +162,7 @@ pub fn ser_run_job_flow_input(
             {
                 #[allow(unused_mut)]
                 let mut object_53 = array_51.value().start_object();
-                crate::protocol_serde::shape_placement_group_config::ser_placement_group_config(
-                    &mut object_53,
-                    item_52,
-                )?;
+                crate::protocol_serde::shape_placement_group_config::ser_placement_group_config(&mut object_53, item_52)?;
                 object_53.finish();
             }
         }
@@ -189,10 +171,7 @@ pub fn ser_run_job_flow_input(
     if let Some(var_54) = &input.auto_termination_policy {
         #[allow(unused_mut)]
         let mut object_55 = object.key("AutoTerminationPolicy").start_object();
-        crate::protocol_serde::shape_auto_termination_policy::ser_auto_termination_policy(
-            &mut object_55,
-            var_54,
-        )?;
+        crate::protocol_serde::shape_auto_termination_policy::ser_auto_termination_policy(&mut object_55, var_54)?;
         object_55.finish();
     }
     if let Some(var_56) = &input.os_release_label {

@@ -36,9 +36,7 @@ impl UpdateContactInput {
 
 /// A builder for [`UpdateContactInput`](crate::operation::update_contact::UpdateContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContactInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl UpdateContactInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContactInput`](crate::operation::update_contact::UpdateContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_contact::UpdateContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_contact::UpdateContactInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_contact::UpdateContactInput {
             contact_id: self.contact_id,
             display_name: self.display_name,

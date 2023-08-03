@@ -24,9 +24,7 @@ impl UpsolverDestinationProperties {
         self.bucket_prefix.as_deref()
     }
     /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow destination. </p>
-    pub fn s3_output_format_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpsolverS3OutputFormatConfig> {
+    pub fn s3_output_format_config(&self) -> ::std::option::Option<&crate::types::UpsolverS3OutputFormatConfig> {
         self.s3_output_format_config.as_ref()
     }
 }
@@ -39,14 +37,11 @@ impl UpsolverDestinationProperties {
 
 /// A builder for [`UpsolverDestinationProperties`](crate::types::UpsolverDestinationProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpsolverDestinationPropertiesBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_prefix: ::std::option::Option<::std::string::String>,
-    pub(crate) s3_output_format_config:
-        ::std::option::Option<crate::types::UpsolverS3OutputFormatConfig>,
+    pub(crate) s3_output_format_config: ::std::option::Option<crate::types::UpsolverS3OutputFormatConfig>,
 }
 impl UpsolverDestinationPropertiesBuilder {
     /// <p> The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
@@ -64,18 +59,12 @@ impl UpsolverDestinationPropertiesBuilder {
         &self.bucket_name
     }
     /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow places the files. </p>
-    pub fn bucket_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow places the files. </p>
-    pub fn set_bucket_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_prefix = input;
         self
     }
@@ -84,25 +73,17 @@ impl UpsolverDestinationPropertiesBuilder {
         &self.bucket_prefix
     }
     /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow destination. </p>
-    pub fn s3_output_format_config(
-        mut self,
-        input: crate::types::UpsolverS3OutputFormatConfig,
-    ) -> Self {
+    pub fn s3_output_format_config(mut self, input: crate::types::UpsolverS3OutputFormatConfig) -> Self {
         self.s3_output_format_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow destination. </p>
-    pub fn set_s3_output_format_config(
-        mut self,
-        input: ::std::option::Option<crate::types::UpsolverS3OutputFormatConfig>,
-    ) -> Self {
+    pub fn set_s3_output_format_config(mut self, input: ::std::option::Option<crate::types::UpsolverS3OutputFormatConfig>) -> Self {
         self.s3_output_format_config = input;
         self
     }
     /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow destination. </p>
-    pub fn get_s3_output_format_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpsolverS3OutputFormatConfig> {
+    pub fn get_s3_output_format_config(&self) -> &::std::option::Option<crate::types::UpsolverS3OutputFormatConfig> {
         &self.s3_output_format_config
     }
     /// Consumes the builder and constructs a [`UpsolverDestinationProperties`](crate::types::UpsolverDestinationProperties).

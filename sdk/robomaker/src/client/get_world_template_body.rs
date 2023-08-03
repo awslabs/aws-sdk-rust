@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetWorldTemplateBodyOutput`](crate::operation::get_world_template_body::GetWorldTemplateBodyOutput) with field(s):
     ///   - [`template_body(Option<String>)`](crate::operation::get_world_template_body::GetWorldTemplateBodyOutput::template_body): <p>The world template body.</p>
     /// - On failure, responds with [`SdkError<GetWorldTemplateBodyError>`](crate::operation::get_world_template_body::GetWorldTemplateBodyError)
-    pub fn get_world_template_body(
-        &self,
-    ) -> crate::operation::get_world_template_body::builders::GetWorldTemplateBodyFluentBuilder
-    {
-        crate::operation::get_world_template_body::builders::GetWorldTemplateBodyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_world_template_body(&self) -> crate::operation::get_world_template_body::builders::GetWorldTemplateBodyFluentBuilder {
+        crate::operation::get_world_template_body::builders::GetWorldTemplateBodyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl SetV2LoggingLevelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_v2_logging_level::SetV2LoggingLevelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_v2_logging_level::SetV2LoggingLevelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_v2_logging_level::SetV2LoggingLevelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_v2_logging_level();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl SetV2LoggingLevelFluentBuilder {
         }
     }
     /// Access the SetV2LoggingLevel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl SetV2LoggingLevelFluentBuilder {
             crate::operation::set_v2_logging_level::SetV2LoggingLevel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_v2_logging_level::SetV2LoggingLevelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_v2_logging_level::SetV2LoggingLevelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl SetV2LoggingLevelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl SetV2LoggingLevelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_v2_logging_level::SetV2LoggingLevelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_v2_logging_level::SetV2LoggingLevelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_v2_logging_level::SetV2LoggingLevelError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl SetV2LoggingLevelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_v2_logging_level::SetV2LoggingLevelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_v2_logging_level::SetV2LoggingLevelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_v2_logging_level::SetV2LoggingLevelError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl SetV2LoggingLevelFluentBuilder {
             crate::operation::set_v2_logging_level::SetV2LoggingLevel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_v2_logging_level::SetV2LoggingLevelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_v2_logging_level::SetV2LoggingLevelError>,
     > {
         self.customize_middleware().await
     }

@@ -37,9 +37,7 @@ impl DescribeTransformJobFluentBuilder {
         }
     }
     /// Access the DescribeTransformJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_transform_job::builders::DescribeTransformJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_transform_job::builders::DescribeTransformJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeTransformJobFluentBuilder {
             crate::operation::describe_transform_job::DescribeTransformJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_transform_job::DescribeTransformJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_transform_job::DescribeTransformJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeTransformJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeTransformJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_transform_job::DescribeTransformJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_transform_job::DescribeTransformJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_transform_job::DescribeTransformJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeTransformJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_transform_job::DescribeTransformJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_transform_job::DescribeTransformJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_transform_job::DescribeTransformJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeTransformJobFluentBuilder {
             crate::operation::describe_transform_job::DescribeTransformJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_transform_job::DescribeTransformJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_transform_job::DescribeTransformJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the transform job that you want to view details of.</p>
-    pub fn transform_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transform_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transform_job_name(input.into());
         self
     }
     /// <p>The name of the transform job that you want to view details of.</p>
-    pub fn set_transform_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transform_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transform_job_name(input);
         self
     }

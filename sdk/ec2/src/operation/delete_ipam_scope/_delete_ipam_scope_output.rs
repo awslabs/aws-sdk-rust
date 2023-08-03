@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteIpamScopeOutput {
 }
 impl DeleteIpamScopeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIpamScopeOutput`](crate::operation::delete_ipam_scope::DeleteIpamScopeOutput).
-    pub fn builder() -> crate::operation::delete_ipam_scope::builders::DeleteIpamScopeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_ipam_scope::builders::DeleteIpamScopeOutputBuilder {
         crate::operation::delete_ipam_scope::builders::DeleteIpamScopeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIpamScopeOutput`](crate::operation::delete_ipam_scope::DeleteIpamScopeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIpamScopeOutputBuilder {
     pub(crate) ipam_scope: ::std::option::Option<crate::types::IpamScope>,
     _request_id: Option<String>,

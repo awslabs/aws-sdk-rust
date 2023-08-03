@@ -10,10 +10,7 @@ impl UploadArchiveInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::upload_archive::UploadArchiveOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_archive::UploadArchiveError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_archive::UploadArchiveError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.upload_archive();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl UploadArchiveFluentBuilder {
         }
     }
     /// Access the UploadArchive as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::upload_archive::builders::UploadArchiveInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::upload_archive::builders::UploadArchiveInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -67,10 +62,7 @@ impl UploadArchiveFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -149,18 +141,12 @@ impl UploadArchiveFluentBuilder {
         self.inner.get_account_id()
     }
     /// <p>The optional description of the archive you are uploading.</p>
-    pub fn archive_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn archive_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.archive_description(input.into());
         self
     }
     /// <p>The optional description of the archive you are uploading.</p>
-    pub fn set_archive_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_archive_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_archive_description(input);
         self
     }
@@ -188,10 +174,7 @@ impl UploadArchiveFluentBuilder {
         self
     }
     /// <p>The data to upload.</p>
-    pub fn set_body(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_body(input);
         self
     }

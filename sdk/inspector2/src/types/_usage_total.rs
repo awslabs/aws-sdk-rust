@@ -30,9 +30,7 @@ impl UsageTotal {
 
 /// A builder for [`UsageTotal`](crate::types::UsageTotal).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageTotalBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) usage: ::std::option::Option<::std::vec::Vec<crate::types::Usage>>,
@@ -64,10 +62,7 @@ impl UsageTotalBuilder {
         self
     }
     /// <p>An object representing the total usage for an account.</p>
-    pub fn set_usage(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Usage>>,
-    ) -> Self {
+    pub fn set_usage(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Usage>>) -> Self {
         self.usage = input;
         self
     }

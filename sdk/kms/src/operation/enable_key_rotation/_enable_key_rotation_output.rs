@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for EnableKeyRotationOutput {
 }
 impl EnableKeyRotationOutput {
     /// Creates a new builder-style object to manufacture [`EnableKeyRotationOutput`](crate::operation::enable_key_rotation::EnableKeyRotationOutput).
-    pub fn builder(
-    ) -> crate::operation::enable_key_rotation::builders::EnableKeyRotationOutputBuilder {
+    pub fn builder() -> crate::operation::enable_key_rotation::builders::EnableKeyRotationOutputBuilder {
         crate::operation::enable_key_rotation::builders::EnableKeyRotationOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableKeyRotationOutput`](crate::operation::enable_key_rotation::EnableKeyRotationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableKeyRotationOutputBuilder {
     _request_id: Option<String>,
 }

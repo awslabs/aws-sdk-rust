@@ -59,23 +59,20 @@ impl ListUtteranceAnalyticsDataInput {
 }
 impl ListUtteranceAnalyticsDataInput {
     /// Creates a new builder-style object to manufacture [`ListUtteranceAnalyticsDataInput`](crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataInput).
-    pub fn builder() -> crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataInputBuilder{
+    pub fn builder() -> crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataInputBuilder {
         crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataInputBuilder::default()
     }
 }
 
 /// A builder for [`ListUtteranceAnalyticsDataInput`](crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUtteranceAnalyticsDataInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) sort_by: ::std::option::Option<crate::types::UtteranceDataSortBy>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -100,10 +97,7 @@ impl ListUtteranceAnalyticsDataInputBuilder {
         self
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see utterance analytics.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date_time = input;
         self
     }
@@ -117,10 +111,7 @@ impl ListUtteranceAnalyticsDataInputBuilder {
         self
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see utterance analytics.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date_time = input;
         self
     }
@@ -134,10 +125,7 @@ impl ListUtteranceAnalyticsDataInputBuilder {
         self
     }
     /// <p>An object specifying the measure and method by which to sort the utterance analytics data.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UtteranceDataSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::UtteranceDataSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -157,17 +145,12 @@ impl ListUtteranceAnalyticsDataInputBuilder {
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>> {
         &self.filters
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
@@ -208,16 +191,14 @@ impl ListUtteranceAnalyticsDataInputBuilder {
         crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataInput {
-                bot_id: self.bot_id,
-                start_date_time: self.start_date_time,
-                end_date_time: self.end_date_time,
-                sort_by: self.sort_by,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataInput {
+            bot_id: self.bot_id,
+            start_date_time: self.start_date_time,
+            end_date_time: self.end_date_time,
+            sort_by: self.sort_by,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

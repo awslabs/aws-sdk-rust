@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`report_jobs(Option<Vec<ReportJob>>)`](crate::operation::list_report_jobs::ListReportJobsOutput::report_jobs): <p>Details about your report jobs in JSON format.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_report_jobs::ListReportJobsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListReportJobsError>`](crate::operation::list_report_jobs::ListReportJobsError)
-    pub fn list_report_jobs(
-        &self,
-    ) -> crate::operation::list_report_jobs::builders::ListReportJobsFluentBuilder {
-        crate::operation::list_report_jobs::builders::ListReportJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_report_jobs(&self) -> crate::operation::list_report_jobs::builders::ListReportJobsFluentBuilder {
+        crate::operation::list_report_jobs::builders::ListReportJobsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -70,9 +70,7 @@ impl GetImportOutput {
 
 /// A builder for [`GetImportOutput`](crate::operation::get_import::GetImportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImportOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -104,10 +102,7 @@ impl GetImportOutputBuilder {
         self
     }
     /// <p>The type of resource imported.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -121,10 +116,7 @@ impl GetImportOutputBuilder {
         self
     }
     /// <p>The action taken when there was a conflict between an existing resource and a resource in the import file.</p>
-    pub fn set_merge_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeStrategy>,
-    ) -> Self {
+    pub fn set_merge_strategy(mut self, input: ::std::option::Option<crate::types::MergeStrategy>) -> Self {
         self.merge_strategy = input;
         self
     }
@@ -152,10 +144,7 @@ impl GetImportOutputBuilder {
         self
     }
     /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure from the <code>failureReason</code> field.</p>
-    pub fn set_import_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportStatus>,
-    ) -> Self {
+    pub fn set_import_status(mut self, input: ::std::option::Option<crate::types::ImportStatus>) -> Self {
         self.import_status = input;
         self
     }
@@ -168,27 +157,19 @@ impl GetImportOutputBuilder {
     /// To override the contents of this collection use [`set_failure_reason`](Self::set_failure_reason).
     ///
     /// <p>A string that describes why an import job failed to complete.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reason.unwrap_or_default();
         v.push(input.into());
         self.failure_reason = ::std::option::Option::Some(v);
         self
     }
     /// <p>A string that describes why an import job failed to complete.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_reason = input;
         self
     }
     /// <p>A string that describes why an import job failed to complete.</p>
-    pub fn get_failure_reason(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_reason
     }
     /// <p>A timestamp for the date and time that the import job was created.</p>
@@ -197,10 +178,7 @@ impl GetImportOutputBuilder {
         self
     }
     /// <p>A timestamp for the date and time that the import job was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }

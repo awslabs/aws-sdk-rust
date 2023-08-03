@@ -27,7 +27,7 @@ impl DeleteSigningCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSigningCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateInputBuilder,
+    inner: crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateInputBuilder,
 }
 impl DeleteSigningCertificateFluentBuilder {
     /// Creates a new `DeleteSigningCertificate`.
@@ -38,10 +38,7 @@ impl DeleteSigningCertificateFluentBuilder {
         }
     }
     /// Access the DeleteSigningCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteSigningCertificateFluentBuilder {
             crate::operation::delete_signing_certificate::DeleteSigningCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_signing_certificate::DeleteSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_signing_certificate::DeleteSigningCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteSigningCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteSigningCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_signing_certificate::DeleteSigningCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_signing_certificate::DeleteSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_signing_certificate::DeleteSigningCertificateError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteSigningCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_signing_certificate::DeleteSigningCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_signing_certificate::DeleteSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_signing_certificate::DeleteSigningCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DeleteSigningCertificateFluentBuilder {
             crate::operation::delete_signing_certificate::DeleteSigningCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_signing_certificate::DeleteSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_signing_certificate::DeleteSigningCertificateError>,
     > {
         self.customize_middleware().await
     }
@@ -143,19 +129,13 @@ impl DeleteSigningCertificateFluentBuilder {
     }
     /// <p>The ID of the signing certificate to delete.</p>
     /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of characters that can be upper- or lower-cased letters or digits.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_id(input.into());
         self
     }
     /// <p>The ID of the signing certificate to delete.</p>
     /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of characters that can be upper- or lower-cased letters or digits.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_id(input);
         self
     }

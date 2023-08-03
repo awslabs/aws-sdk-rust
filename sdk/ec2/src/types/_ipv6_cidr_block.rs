@@ -23,26 +23,18 @@ impl Ipv6CidrBlock {
 
 /// A builder for [`Ipv6CidrBlock`](crate::types::Ipv6CidrBlock).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ipv6CidrBlockBuilder {
     pub(crate) ipv6_cidr_block: ::std::option::Option<::std::string::String>,
 }
 impl Ipv6CidrBlockBuilder {
     /// <p>The IPv6 CIDR block.</p>
-    pub fn ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 CIDR block.</p>
-    pub fn set_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_cidr_block = input;
         self
     }

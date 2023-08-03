@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`default_lambda_role(impl ::std::convert::Into<String>)`](crate::operation::register_workflow_type::builders::RegisterWorkflowTypeFluentBuilder::default_lambda_role) / [`set_default_lambda_role(Option<String>)`](crate::operation::register_workflow_type::builders::RegisterWorkflowTypeFluentBuilder::set_default_lambda_role): <p>The default IAM role attached to this workflow type.</p> <note>   <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>  </note>
     /// - On success, responds with [`RegisterWorkflowTypeOutput`](crate::operation::register_workflow_type::RegisterWorkflowTypeOutput)
     /// - On failure, responds with [`SdkError<RegisterWorkflowTypeError>`](crate::operation::register_workflow_type::RegisterWorkflowTypeError)
-    pub fn register_workflow_type(
-        &self,
-    ) -> crate::operation::register_workflow_type::builders::RegisterWorkflowTypeFluentBuilder {
-        crate::operation::register_workflow_type::builders::RegisterWorkflowTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_workflow_type(&self) -> crate::operation::register_workflow_type::builders::RegisterWorkflowTypeFluentBuilder {
+        crate::operation::register_workflow_type::builders::RegisterWorkflowTypeFluentBuilder::new(self.handle.clone())
     }
 }

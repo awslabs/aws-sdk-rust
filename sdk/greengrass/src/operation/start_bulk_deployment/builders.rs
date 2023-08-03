@@ -37,9 +37,7 @@ impl StartBulkDeploymentFluentBuilder {
         }
     }
     /// Access the StartBulkDeployment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_bulk_deployment::builders::StartBulkDeploymentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_bulk_deployment::builders::StartBulkDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl StartBulkDeploymentFluentBuilder {
             crate::operation::start_bulk_deployment::StartBulkDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_bulk_deployment::StartBulkDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_bulk_deployment::StartBulkDeploymentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl StartBulkDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl StartBulkDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_bulk_deployment::StartBulkDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_bulk_deployment::StartBulkDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_bulk_deployment::StartBulkDeploymentError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl StartBulkDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_bulk_deployment::StartBulkDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_bulk_deployment::StartBulkDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_bulk_deployment::StartBulkDeploymentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl StartBulkDeploymentFluentBuilder {
             crate::operation::start_bulk_deployment::StartBulkDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_bulk_deployment::StartBulkDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_bulk_deployment::StartBulkDeploymentError>,
     > {
         self.customize_middleware().await
     }
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.amzn_client_token(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
@@ -143,18 +124,12 @@ impl StartBulkDeploymentFluentBuilder {
         self.inner.get_amzn_client_token()
     }
     /// The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file.
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file.
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
@@ -163,18 +138,12 @@ impl StartBulkDeploymentFluentBuilder {
         self.inner.get_execution_role_arn()
     }
     /// The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types.
-    pub fn input_file_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_file_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_file_uri(input.into());
         self
     }
     /// The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types.
-    pub fn set_input_file_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_file_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_file_uri(input);
         self
     }
@@ -187,30 +156,17 @@ impl StartBulkDeploymentFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// Tag(s) to add to the new resource.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// Tag(s) to add to the new resource.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// Tag(s) to add to the new resource.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

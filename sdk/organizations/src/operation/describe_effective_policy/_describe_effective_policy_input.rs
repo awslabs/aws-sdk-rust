@@ -32,18 +32,14 @@ impl DescribeEffectivePolicyInput {
 }
 impl DescribeEffectivePolicyInput {
     /// Creates a new builder-style object to manufacture [`DescribeEffectivePolicyInput`](crate::operation::describe_effective_policy::DescribeEffectivePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyInputBuilder {
         crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEffectivePolicyInput`](crate::operation::describe_effective_policy::DescribeEffectivePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEffectivePolicyInputBuilder {
     pub(crate) policy_type: ::std::option::Option<crate::types::EffectivePolicyType>,
     pub(crate) target_id: ::std::option::Option<::std::string::String>,
@@ -65,10 +61,7 @@ impl DescribeEffectivePolicyInputBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EffectivePolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::EffectivePolicyType>) -> Self {
         self.policy_type = input;
         self
     }
@@ -102,11 +95,9 @@ impl DescribeEffectivePolicyInputBuilder {
         crate::operation::describe_effective_policy::DescribeEffectivePolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_effective_policy::DescribeEffectivePolicyInput {
-                policy_type: self.policy_type,
-                target_id: self.target_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_effective_policy::DescribeEffectivePolicyInput {
+            policy_type: self.policy_type,
+            target_id: self.target_id,
+        })
     }
 }

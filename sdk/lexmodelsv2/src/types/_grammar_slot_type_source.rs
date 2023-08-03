@@ -37,9 +37,7 @@ impl GrammarSlotTypeSource {
 
 /// A builder for [`GrammarSlotTypeSource`](crate::types::GrammarSlotTypeSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrammarSlotTypeSourceBuilder {
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_object_key: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct GrammarSlotTypeSourceBuilder {
 }
 impl GrammarSlotTypeSourceBuilder {
     /// <p>The name of the Amazon S3 bucket that contains the grammar source.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon S3 bucket that contains the grammar source.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -67,18 +59,12 @@ impl GrammarSlotTypeSourceBuilder {
         &self.s3_bucket_name
     }
     /// <p>The path to the grammar in the Amazon S3 bucket.</p>
-    pub fn s3_object_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_object_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the grammar in the Amazon S3 bucket.</p>
-    pub fn set_s3_object_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_object_key = input;
         self
     }

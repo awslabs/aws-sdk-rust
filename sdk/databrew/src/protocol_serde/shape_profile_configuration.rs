@@ -6,10 +6,7 @@ pub fn ser_profile_configuration(
     if let Some(var_1) = &input.dataset_statistics_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DatasetStatisticsConfiguration").start_object();
-        crate::protocol_serde::shape_statistics_configuration::ser_statistics_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_statistics_configuration::ser_statistics_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.profile_columns {
@@ -18,10 +15,7 @@ pub fn ser_profile_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_column_selector::ser_column_selector(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_column_selector::ser_column_selector(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -50,17 +44,9 @@ pub fn ser_profile_configuration(
 
 pub(crate) fn de_profile_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ProfileConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ProfileConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -70,46 +56,40 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DatasetStatisticsConfiguration" => {
-                                builder = builder.set_dataset_statistics_configuration(
-                                    crate::protocol_serde::shape_statistics_configuration::de_statistics_configuration(tokens)?
-                                );
-                            }
-                            "ProfileColumns" => {
-                                builder = builder.set_profile_columns(
-                                    crate::protocol_serde::shape_column_selector_list::de_column_selector_list(tokens)?
-                                );
-                            }
-                            "ColumnStatisticsConfigurations" => {
-                                builder = builder.set_column_statistics_configurations(
-                                    crate::protocol_serde::shape_column_statistics_configuration_list::de_column_statistics_configuration_list(tokens)?
-                                );
-                            }
-                            "EntityDetectorConfiguration" => {
-                                builder = builder.set_entity_detector_configuration(
-                                    crate::protocol_serde::shape_entity_detector_configuration::de_entity_detector_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DatasetStatisticsConfiguration" => {
+                            builder = builder.set_dataset_statistics_configuration(
+                                crate::protocol_serde::shape_statistics_configuration::de_statistics_configuration(tokens)?,
+                            );
                         }
-                    }
+                        "ProfileColumns" => {
+                            builder =
+                                builder.set_profile_columns(crate::protocol_serde::shape_column_selector_list::de_column_selector_list(tokens)?);
+                        }
+                        "ColumnStatisticsConfigurations" => {
+                            builder = builder.set_column_statistics_configurations(
+                                crate::protocol_serde::shape_column_statistics_configuration_list::de_column_statistics_configuration_list(tokens)?,
+                            );
+                        }
+                        "EntityDetectorConfiguration" => {
+                            builder = builder.set_entity_detector_configuration(
+                                crate::protocol_serde::shape_entity_detector_configuration::de_entity_detector_configuration(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -30,9 +30,7 @@ impl MetricsConfiguration {
 
 /// A builder for [`MetricsConfiguration`](crate::types::MetricsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricsConfigurationBuilder {
     pub(crate) cloud_metric_enabled: ::std::option::Option<bool>,
     pub(crate) metric_rule_role_arn: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl MetricsConfigurationBuilder {
         &self.cloud_metric_enabled
     }
     /// <p>The ARN of the role that is used to collect cloud metrics.</p>
-    pub fn metric_rule_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_rule_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_rule_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role that is used to collect cloud metrics.</p>
-    pub fn set_metric_rule_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_rule_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_rule_role_arn = input;
         self
     }

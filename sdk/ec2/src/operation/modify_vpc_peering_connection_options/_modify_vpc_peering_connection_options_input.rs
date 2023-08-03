@@ -5,24 +5,20 @@
 pub struct ModifyVpcPeeringConnectionOptionsInput {
     /// <p>The VPC peering connection options for the accepter VPC.</p>
     #[doc(hidden)]
-    pub accepter_peering_connection_options:
-        ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>,
+    pub accepter_peering_connection_options: ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The VPC peering connection options for the requester VPC.</p>
     #[doc(hidden)]
-    pub requester_peering_connection_options:
-        ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>,
+    pub requester_peering_connection_options: ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>,
     /// <p>The ID of the VPC peering connection.</p>
     #[doc(hidden)]
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyVpcPeeringConnectionOptionsInput {
     /// <p>The VPC peering connection options for the accepter VPC.</p>
-    pub fn accepter_peering_connection_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PeeringConnectionOptionsRequest> {
+    pub fn accepter_peering_connection_options(&self) -> ::std::option::Option<&crate::types::PeeringConnectionOptionsRequest> {
         self.accepter_peering_connection_options.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -30,9 +26,7 @@ impl ModifyVpcPeeringConnectionOptionsInput {
         self.dry_run
     }
     /// <p>The VPC peering connection options for the requester VPC.</p>
-    pub fn requester_peering_connection_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PeeringConnectionOptionsRequest> {
+    pub fn requester_peering_connection_options(&self) -> ::std::option::Option<&crate::types::PeeringConnectionOptionsRequest> {
         self.requester_peering_connection_options.as_ref()
     }
     /// <p>The ID of the VPC peering connection.</p>
@@ -42,45 +36,33 @@ impl ModifyVpcPeeringConnectionOptionsInput {
 }
 impl ModifyVpcPeeringConnectionOptionsInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcPeeringConnectionOptionsInput`](crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsInput).
-    pub fn builder() -> crate::operation::modify_vpc_peering_connection_options::builders::ModifyVpcPeeringConnectionOptionsInputBuilder{
+    pub fn builder() -> crate::operation::modify_vpc_peering_connection_options::builders::ModifyVpcPeeringConnectionOptionsInputBuilder {
         crate::operation::modify_vpc_peering_connection_options::builders::ModifyVpcPeeringConnectionOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpcPeeringConnectionOptionsInput`](crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcPeeringConnectionOptionsInputBuilder {
-    pub(crate) accepter_peering_connection_options:
-        ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>,
+    pub(crate) accepter_peering_connection_options: ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) requester_peering_connection_options:
-        ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>,
+    pub(crate) requester_peering_connection_options: ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>,
     pub(crate) vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyVpcPeeringConnectionOptionsInputBuilder {
     /// <p>The VPC peering connection options for the accepter VPC.</p>
-    pub fn accepter_peering_connection_options(
-        mut self,
-        input: crate::types::PeeringConnectionOptionsRequest,
-    ) -> Self {
+    pub fn accepter_peering_connection_options(mut self, input: crate::types::PeeringConnectionOptionsRequest) -> Self {
         self.accepter_peering_connection_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The VPC peering connection options for the accepter VPC.</p>
-    pub fn set_accepter_peering_connection_options(
-        mut self,
-        input: ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>,
-    ) -> Self {
+    pub fn set_accepter_peering_connection_options(mut self, input: ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>) -> Self {
         self.accepter_peering_connection_options = input;
         self
     }
     /// <p>The VPC peering connection options for the accepter VPC.</p>
-    pub fn get_accepter_peering_connection_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::PeeringConnectionOptionsRequest> {
+    pub fn get_accepter_peering_connection_options(&self) -> &::std::option::Option<crate::types::PeeringConnectionOptionsRequest> {
         &self.accepter_peering_connection_options
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -98,40 +80,26 @@ impl ModifyVpcPeeringConnectionOptionsInputBuilder {
         &self.dry_run
     }
     /// <p>The VPC peering connection options for the requester VPC.</p>
-    pub fn requester_peering_connection_options(
-        mut self,
-        input: crate::types::PeeringConnectionOptionsRequest,
-    ) -> Self {
+    pub fn requester_peering_connection_options(mut self, input: crate::types::PeeringConnectionOptionsRequest) -> Self {
         self.requester_peering_connection_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The VPC peering connection options for the requester VPC.</p>
-    pub fn set_requester_peering_connection_options(
-        mut self,
-        input: ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>,
-    ) -> Self {
+    pub fn set_requester_peering_connection_options(mut self, input: ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>) -> Self {
         self.requester_peering_connection_options = input;
         self
     }
     /// <p>The VPC peering connection options for the requester VPC.</p>
-    pub fn get_requester_peering_connection_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::PeeringConnectionOptionsRequest> {
+    pub fn get_requester_peering_connection_options(&self) -> &::std::option::Option<crate::types::PeeringConnectionOptionsRequest> {
         &self.requester_peering_connection_options
     }
     /// <p>The ID of the VPC peering connection.</p>
-    pub fn vpc_peering_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_peering_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC peering connection.</p>
-    pub fn set_vpc_peering_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_peering_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = input;
         self
     }
@@ -140,18 +108,19 @@ impl ModifyVpcPeeringConnectionOptionsInputBuilder {
         &self.vpc_peering_connection_id
     }
     /// Consumes the builder and constructs a [`ModifyVpcPeeringConnectionOptionsInput`](crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsInput {
-                accepter_peering_connection_options: self.accepter_peering_connection_options
-                ,
-                dry_run: self.dry_run
-                ,
-                requester_peering_connection_options: self.requester_peering_connection_options
-                ,
-                vpc_peering_connection_id: self.vpc_peering_connection_id
-                ,
-            }
+                accepter_peering_connection_options: self.accepter_peering_connection_options,
+                dry_run: self.dry_run,
+                requester_peering_connection_options: self.requester_peering_connection_options,
+                vpc_peering_connection_id: self.vpc_peering_connection_id,
+            },
         )
     }
 }

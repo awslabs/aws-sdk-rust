@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetMultiRegionAccessPointPolicyOutput`](crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyOutput) with field(s):
     ///   - [`policy(Option<MultiRegionAccessPointPolicyDocument>)`](crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyOutput::policy): <p>The policy associated with the specified Multi-Region Access Point.</p>
     /// - On failure, responds with [`SdkError<GetMultiRegionAccessPointPolicyError>`](crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyError)
-    pub fn get_multi_region_access_point_policy(&self) -> crate::operation::get_multi_region_access_point_policy::builders::GetMultiRegionAccessPointPolicyFluentBuilder{
+    pub fn get_multi_region_access_point_policy(
+        &self,
+    ) -> crate::operation::get_multi_region_access_point_policy::builders::GetMultiRegionAccessPointPolicyFluentBuilder {
         crate::operation::get_multi_region_access_point_policy::builders::GetMultiRegionAccessPointPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`domain_configuration_name(Option<String>)`](crate::operation::create_domain_configuration::CreateDomainConfigurationOutput::domain_configuration_name): <p>The name of the domain configuration.</p>
     ///   - [`domain_configuration_arn(Option<String>)`](crate::operation::create_domain_configuration::CreateDomainConfigurationOutput::domain_configuration_arn): <p>The ARN of the domain configuration.</p>
     /// - On failure, responds with [`SdkError<CreateDomainConfigurationError>`](crate::operation::create_domain_configuration::CreateDomainConfigurationError)
-    pub fn create_domain_configuration(&self) -> crate::operation::create_domain_configuration::builders::CreateDomainConfigurationFluentBuilder{
+    pub fn create_domain_configuration(&self) -> crate::operation::create_domain_configuration::builders::CreateDomainConfigurationFluentBuilder {
         crate::operation::create_domain_configuration::builders::CreateDomainConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

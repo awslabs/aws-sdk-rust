@@ -31,10 +31,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::put_source_server_action::PutSourceServerActionOutput::description): <p>Source server post migration custom action description.</p>
     ///   - [`category(Option<ActionCategory>)`](crate::operation::put_source_server_action::PutSourceServerActionOutput::category): <p>Source server post migration custom action category.</p>
     /// - On failure, responds with [`SdkError<PutSourceServerActionError>`](crate::operation::put_source_server_action::PutSourceServerActionError)
-    pub fn put_source_server_action(
-        &self,
-    ) -> crate::operation::put_source_server_action::builders::PutSourceServerActionFluentBuilder
-    {
+    pub fn put_source_server_action(&self) -> crate::operation::put_source_server_action::builders::PutSourceServerActionFluentBuilder {
         crate::operation::put_source_server_action::builders::PutSourceServerActionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,17 +30,14 @@ impl UpdateConfigurationInput {
 }
 impl UpdateConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder {
         crate::operation::update_configuration::builders::UpdateConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfigurationInputBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<::std::string::String>,
@@ -48,18 +45,12 @@ pub struct UpdateConfigurationInputBuilder {
 }
 impl UpdateConfigurationInputBuilder {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn set_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_id = input;
         self
     }
@@ -98,16 +89,12 @@ impl UpdateConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_configuration::UpdateConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_configuration::UpdateConfigurationInput {
-                configuration_id: self.configuration_id,
-                data: self.data,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_configuration::UpdateConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_configuration::UpdateConfigurationInput {
+            configuration_id: self.configuration_id,
+            data: self.data,
+            description: self.description,
+        })
     }
 }

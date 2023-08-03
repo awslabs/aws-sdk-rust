@@ -19,9 +19,7 @@ pub fn ser_create_location_fsx_ontap_input(
         array_4.finish();
     }
     if let Some(var_6) = &input.storage_virtual_machine_arn {
-        object
-            .key("StorageVirtualMachineArn")
-            .string(var_6.as_str());
+        object.key("StorageVirtualMachineArn").string(var_6.as_str());
     }
     if let Some(var_7) = &input.subdirectory {
         object.key("Subdirectory").string(var_7.as_str());
@@ -32,10 +30,7 @@ pub fn ser_create_location_fsx_ontap_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }

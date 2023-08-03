@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::delete_model_manifest::DeleteModelManifestOutput::name): <p>The name of the deleted model manifest.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_model_manifest::DeleteModelManifestOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted model manifest.</p>
     /// - On failure, responds with [`SdkError<DeleteModelManifestError>`](crate::operation::delete_model_manifest::DeleteModelManifestError)
-    pub fn delete_model_manifest(
-        &self,
-    ) -> crate::operation::delete_model_manifest::builders::DeleteModelManifestFluentBuilder {
-        crate::operation::delete_model_manifest::builders::DeleteModelManifestFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_model_manifest(&self) -> crate::operation::delete_model_manifest::builders::DeleteModelManifestFluentBuilder {
+        crate::operation::delete_model_manifest::builders::DeleteModelManifestFluentBuilder::new(self.handle.clone())
     }
 }

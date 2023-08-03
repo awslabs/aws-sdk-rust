@@ -24,17 +24,14 @@ impl DeleteReportGroupInput {
 }
 impl DeleteReportGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteReportGroupInput`](crate::operation::delete_report_group::DeleteReportGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_report_group::builders::DeleteReportGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_report_group::builders::DeleteReportGroupInputBuilder {
         crate::operation::delete_report_group::builders::DeleteReportGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReportGroupInput`](crate::operation::delete_report_group::DeleteReportGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReportGroupInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) delete_reports: ::std::option::Option<bool>,
@@ -74,15 +71,10 @@ impl DeleteReportGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReportGroupInput`](crate::operation::delete_report_group::DeleteReportGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_report_group::DeleteReportGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_report_group::DeleteReportGroupInput {
-                arn: self.arn,
-                delete_reports: self.delete_reports.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_report_group::DeleteReportGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_report_group::DeleteReportGroupInput {
+            arn: self.arn,
+            delete_reports: self.delete_reports.unwrap_or_default(),
+        })
     }
 }

@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetStreamingSessionStreamOutput`](crate::operation::get_streaming_session_stream::GetStreamingSessionStreamOutput) with field(s):
     ///   - [`stream(Option<StreamingSessionStream>)`](crate::operation::get_streaming_session_stream::GetStreamingSessionStreamOutput::stream): <p>The stream.</p>
     /// - On failure, responds with [`SdkError<GetStreamingSessionStreamError>`](crate::operation::get_streaming_session_stream::GetStreamingSessionStreamError)
-    pub fn get_streaming_session_stream(&self) -> crate::operation::get_streaming_session_stream::builders::GetStreamingSessionStreamFluentBuilder{
+    pub fn get_streaming_session_stream(&self) -> crate::operation::get_streaming_session_stream::builders::GetStreamingSessionStreamFluentBuilder {
         crate::operation::get_streaming_session_stream::builders::GetStreamingSessionStreamFluentBuilder::new(self.handle.clone())
     }
 }

@@ -51,9 +51,7 @@ impl ListArtifactsInput {
 
 /// A builder for [`ListArtifactsInput`](crate::operation::list_artifacts::ListArtifactsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListArtifactsInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,
@@ -135,10 +133,7 @@ impl ListArtifactsInputBuilder {
     /// Consumes the builder and constructs a [`ListArtifactsInput`](crate::operation::list_artifacts::ListArtifactsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_artifacts::ListArtifactsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_artifacts::ListArtifactsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_artifacts::ListArtifactsInput {
             app_id: self.app_id,
             branch_name: self.branch_name,

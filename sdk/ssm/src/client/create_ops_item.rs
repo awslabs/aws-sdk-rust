@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`ops_item_id(Option<String>)`](crate::operation::create_ops_item::CreateOpsItemOutput::ops_item_id): <p>The ID of the OpsItem.</p>
     ///   - [`ops_item_arn(Option<String>)`](crate::operation::create_ops_item::CreateOpsItemOutput::ops_item_arn): <p>The OpsItem Amazon Resource Name (ARN).</p>
     /// - On failure, responds with [`SdkError<CreateOpsItemError>`](crate::operation::create_ops_item::CreateOpsItemError)
-    pub fn create_ops_item(
-        &self,
-    ) -> crate::operation::create_ops_item::builders::CreateOpsItemFluentBuilder {
-        crate::operation::create_ops_item::builders::CreateOpsItemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_ops_item(&self) -> crate::operation::create_ops_item::builders::CreateOpsItemFluentBuilder {
+        crate::operation::create_ops_item::builders::CreateOpsItemFluentBuilder::new(self.handle.clone())
     }
 }

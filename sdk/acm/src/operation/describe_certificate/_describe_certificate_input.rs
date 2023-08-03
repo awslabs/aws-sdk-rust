@@ -19,17 +19,14 @@ impl DescribeCertificateInput {
 }
 impl DescribeCertificateInput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificateInput`](crate::operation::describe_certificate::DescribeCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::describe_certificate::builders::DescribeCertificateInputBuilder {
+    pub fn builder() -> crate::operation::describe_certificate::builders::DescribeCertificateInputBuilder {
         crate::operation::describe_certificate::builders::DescribeCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCertificateInput`](crate::operation::describe_certificate::DescribeCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCertificateInputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +34,14 @@ impl DescribeCertificateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -63,14 +54,10 @@ impl DescribeCertificateInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCertificateInput`](crate::operation::describe_certificate::DescribeCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_certificate::DescribeCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_certificate::DescribeCertificateInput {
-                certificate_arn: self.certificate_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_certificate::DescribeCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_certificate::DescribeCertificateInput {
+            certificate_arn: self.certificate_arn,
+        })
     }
 }

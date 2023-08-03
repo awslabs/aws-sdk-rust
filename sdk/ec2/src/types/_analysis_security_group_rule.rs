@@ -66,9 +66,7 @@ impl AnalysisSecurityGroupRule {
 
 /// A builder for [`AnalysisSecurityGroupRule`](crate::types::AnalysisSecurityGroupRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisSecurityGroupRuleBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) direction: ::std::option::Option<::std::string::String>,
@@ -119,18 +117,12 @@ impl AnalysisSecurityGroupRuleBuilder {
         &self.direction
     }
     /// <p>The security group ID.</p>
-    pub fn security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The security group ID.</p>
-    pub fn set_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_group_id = input;
         self
     }
@@ -153,18 +145,12 @@ impl AnalysisSecurityGroupRuleBuilder {
         &self.port_range
     }
     /// <p>The prefix list ID.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix list ID.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_id = input;
         self
     }

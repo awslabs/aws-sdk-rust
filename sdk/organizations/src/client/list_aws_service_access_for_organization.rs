@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`enabled_service_principals(Option<Vec<EnabledServicePrincipal>>)`](crate::operation::list_aws_service_access_for_organization::ListAwsServiceAccessForOrganizationOutput::enabled_service_principals): <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_aws_service_access_for_organization::ListAwsServiceAccessForOrganizationOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListAWSServiceAccessForOrganizationError>`](crate::operation::list_aws_service_access_for_organization::ListAWSServiceAccessForOrganizationError)
-    pub fn list_aws_service_access_for_organization(&self) -> crate::operation::list_aws_service_access_for_organization::builders::ListAWSServiceAccessForOrganizationFluentBuilder{
-        crate::operation::list_aws_service_access_for_organization::builders::ListAWSServiceAccessForOrganizationFluentBuilder::new(self.handle.clone())
+    pub fn list_aws_service_access_for_organization(
+        &self,
+    ) -> crate::operation::list_aws_service_access_for_organization::builders::ListAWSServiceAccessForOrganizationFluentBuilder {
+        crate::operation::list_aws_service_access_for_organization::builders::ListAWSServiceAccessForOrganizationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

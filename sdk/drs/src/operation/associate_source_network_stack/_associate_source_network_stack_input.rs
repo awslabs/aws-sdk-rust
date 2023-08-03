@@ -30,7 +30,7 @@ impl ::std::fmt::Debug for AssociateSourceNetworkStackInput {
 }
 impl AssociateSourceNetworkStackInput {
     /// Creates a new builder-style object to manufacture [`AssociateSourceNetworkStackInput`](crate::operation::associate_source_network_stack::AssociateSourceNetworkStackInput).
-    pub fn builder() -> crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackInputBuilder{
+    pub fn builder() -> crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackInputBuilder {
         crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackInputBuilder::default()
     }
 }
@@ -44,18 +44,12 @@ pub struct AssociateSourceNetworkStackInputBuilder {
 }
 impl AssociateSourceNetworkStackInputBuilder {
     /// <p>The Source Network ID to associate with CloudFormation template.</p>
-    pub fn source_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Source Network ID to associate with CloudFormation template.</p>
-    pub fn set_source_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_network_id = input;
         self
     }
@@ -64,18 +58,12 @@ impl AssociateSourceNetworkStackInputBuilder {
         &self.source_network_id
     }
     /// <p>CloudFormation template to associate with a Source Network.</p>
-    pub fn cfn_stack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cfn_stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cfn_stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>CloudFormation template to associate with a Source Network.</p>
-    pub fn set_cfn_stack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cfn_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cfn_stack_name = input;
         self
     }
@@ -90,12 +78,10 @@ impl AssociateSourceNetworkStackInputBuilder {
         crate::operation::associate_source_network_stack::AssociateSourceNetworkStackInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackInput {
-                source_network_id: self.source_network_id,
-                cfn_stack_name: self.cfn_stack_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_source_network_stack::AssociateSourceNetworkStackInput {
+            source_network_id: self.source_network_id,
+            cfn_stack_name: self.cfn_stack_name,
+        })
     }
 }
 impl ::std::fmt::Debug for AssociateSourceNetworkStackInputBuilder {

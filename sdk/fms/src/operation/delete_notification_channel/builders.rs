@@ -26,7 +26,7 @@ impl DeleteNotificationChannelInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteNotificationChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_notification_channel::builders::DeleteNotificationChannelInputBuilder,
+    inner: crate::operation::delete_notification_channel::builders::DeleteNotificationChannelInputBuilder,
 }
 impl DeleteNotificationChannelFluentBuilder {
     /// Creates a new `DeleteNotificationChannel`.
@@ -37,7 +37,7 @@ impl DeleteNotificationChannelFluentBuilder {
         }
     }
     /// Access the DeleteNotificationChannel as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_notification_channel::builders::DeleteNotificationChannelInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_notification_channel::builders::DeleteNotificationChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteNotificationChannelFluentBuilder {
             crate::operation::delete_notification_channel::DeleteNotificationChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification_channel::DeleteNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification_channel::DeleteNotificationChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteNotificationChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteNotificationChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_notification_channel::DeleteNotificationChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification_channel::DeleteNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification_channel::DeleteNotificationChannelError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteNotificationChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_notification_channel::DeleteNotificationChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification_channel::DeleteNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification_channel::DeleteNotificationChannelError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteNotificationChannelFluentBuilder {
             crate::operation::delete_notification_channel::DeleteNotificationChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification_channel::DeleteNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification_channel::DeleteNotificationChannelError>,
     > {
         self.customize_middleware().await
     }

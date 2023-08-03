@@ -37,16 +37,14 @@ impl ::aws_http::request_id::RequestId for ListSessionAnalyticsDataOutput {
 }
 impl ListSessionAnalyticsDataOutput {
     /// Creates a new builder-style object to manufacture [`ListSessionAnalyticsDataOutput`](crate::operation::list_session_analytics_data::ListSessionAnalyticsDataOutput).
-    pub fn builder() -> crate::operation::list_session_analytics_data::builders::ListSessionAnalyticsDataOutputBuilder{
+    pub fn builder() -> crate::operation::list_session_analytics_data::builders::ListSessionAnalyticsDataOutputBuilder {
         crate::operation::list_session_analytics_data::builders::ListSessionAnalyticsDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSessionAnalyticsDataOutput`](crate::operation::list_session_analytics_data::ListSessionAnalyticsDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSessionAnalyticsDataOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -97,17 +95,12 @@ impl ListSessionAnalyticsDataOutputBuilder {
         self
     }
     /// <p>A list of objects, each of which contains information about a session with the bot.</p>
-    pub fn set_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SessionSpecification>>,
-    ) -> Self {
+    pub fn set_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SessionSpecification>>) -> Self {
         self.sessions = input;
         self
     }
     /// <p>A list of objects, each of which contains information about a session with the bot.</p>
-    pub fn get_sessions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionSpecification>> {
+    pub fn get_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionSpecification>> {
         &self.sessions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -120,9 +113,7 @@ impl ListSessionAnalyticsDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSessionAnalyticsDataOutput`](crate::operation::list_session_analytics_data::ListSessionAnalyticsDataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_session_analytics_data::ListSessionAnalyticsDataOutput {
+    pub fn build(self) -> crate::operation::list_session_analytics_data::ListSessionAnalyticsDataOutput {
         crate::operation::list_session_analytics_data::ListSessionAnalyticsDataOutput {
             bot_id: self.bot_id,
             next_token: self.next_token,

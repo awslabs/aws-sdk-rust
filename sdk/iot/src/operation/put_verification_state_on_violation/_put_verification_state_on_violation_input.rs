@@ -29,16 +29,14 @@ impl PutVerificationStateOnViolationInput {
 }
 impl PutVerificationStateOnViolationInput {
     /// Creates a new builder-style object to manufacture [`PutVerificationStateOnViolationInput`](crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput).
-    pub fn builder() -> crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationInputBuilder{
+    pub fn builder() -> crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationInputBuilder {
         crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutVerificationStateOnViolationInput`](crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutVerificationStateOnViolationInputBuilder {
     pub(crate) violation_id: ::std::option::Option<::std::string::String>,
     pub(crate) verification_state: ::std::option::Option<crate::types::VerificationState>,
@@ -65,39 +63,26 @@ impl PutVerificationStateOnViolationInputBuilder {
         self
     }
     /// <p>The verification state of the violation.</p>
-    pub fn set_verification_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationState>,
-    ) -> Self {
+    pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
         self.verification_state = input;
         self
     }
     /// <p>The verification state of the violation.</p>
-    pub fn get_verification_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerificationState> {
+    pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
         &self.verification_state
     }
     /// <p>The description of the verification state of the violation (detect alarm).</p>
-    pub fn verification_state_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verification_state_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_state_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the verification state of the violation (detect alarm).</p>
-    pub fn set_verification_state_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verification_state_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verification_state_description = input;
         self
     }
     /// <p>The description of the verification state of the violation (detect alarm).</p>
-    pub fn get_verification_state_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_verification_state_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.verification_state_description
     }
     /// Consumes the builder and constructs a [`PutVerificationStateOnViolationInput`](crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput).
@@ -109,13 +94,10 @@ impl PutVerificationStateOnViolationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput {
-                violation_id: self.violation_id
-                ,
-                verification_state: self.verification_state
-                ,
-                verification_state_description: self.verification_state_description
-                ,
-            }
+                violation_id: self.violation_id,
+                verification_state: self.verification_state,
+                verification_state_description: self.verification_state_description,
+            },
         )
     }
 }

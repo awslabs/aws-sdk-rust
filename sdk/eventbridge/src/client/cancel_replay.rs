@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`state(Option<ReplayState>)`](crate::operation::cancel_replay::CancelReplayOutput::state): <p>The current state of the replay.</p>
     ///   - [`state_reason(Option<String>)`](crate::operation::cancel_replay::CancelReplayOutput::state_reason): <p>The reason that the replay is in the current state.</p>
     /// - On failure, responds with [`SdkError<CancelReplayError>`](crate::operation::cancel_replay::CancelReplayError)
-    pub fn cancel_replay(
-        &self,
-    ) -> crate::operation::cancel_replay::builders::CancelReplayFluentBuilder {
-        crate::operation::cancel_replay::builders::CancelReplayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_replay(&self) -> crate::operation::cancel_replay::builders::CancelReplayFluentBuilder {
+        crate::operation::cancel_replay::builders::CancelReplayFluentBuilder::new(self.handle.clone())
     }
 }

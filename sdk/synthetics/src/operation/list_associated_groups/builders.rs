@@ -37,9 +37,7 @@ impl ListAssociatedGroupsFluentBuilder {
         }
     }
     /// Access the ListAssociatedGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_associated_groups::builders::ListAssociatedGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_associated_groups::builders::ListAssociatedGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListAssociatedGroupsFluentBuilder {
             crate::operation::list_associated_groups::ListAssociatedGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_groups::ListAssociatedGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_groups::ListAssociatedGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListAssociatedGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListAssociatedGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_associated_groups::ListAssociatedGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_groups::ListAssociatedGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_groups::ListAssociatedGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListAssociatedGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_associated_groups::ListAssociatedGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_groups::ListAssociatedGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_groups::ListAssociatedGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListAssociatedGroupsFluentBuilder {
             crate::operation::list_associated_groups::ListAssociatedGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_groups::ListAssociatedGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_groups::ListAssociatedGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_associated_groups::paginator::ListAssociatedGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_associated_groups::paginator::ListAssociatedGroupsPaginator {
-        crate::operation::list_associated_groups::paginator::ListAssociatedGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_associated_groups::paginator::ListAssociatedGroupsPaginator {
+        crate::operation::list_associated_groups::paginator::ListAssociatedGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

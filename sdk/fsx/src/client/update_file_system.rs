@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateFileSystemOutput`](crate::operation::update_file_system::UpdateFileSystemOutput) with field(s):
     ///   - [`file_system(Option<FileSystem>)`](crate::operation::update_file_system::UpdateFileSystemOutput::file_system): <p>A description of the file system that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateFileSystemError>`](crate::operation::update_file_system::UpdateFileSystemError)
-    pub fn update_file_system(
-        &self,
-    ) -> crate::operation::update_file_system::builders::UpdateFileSystemFluentBuilder {
-        crate::operation::update_file_system::builders::UpdateFileSystemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_file_system(&self) -> crate::operation::update_file_system::builders::UpdateFileSystemFluentBuilder {
+        crate::operation::update_file_system::builders::UpdateFileSystemFluentBuilder::new(self.handle.clone())
     }
 }

@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateThingGroupOutput {
 }
 impl CreateThingGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateThingGroupOutput`](crate::operation::create_thing_group::CreateThingGroupOutput).
-    pub fn builder() -> crate::operation::create_thing_group::builders::CreateThingGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_thing_group::builders::CreateThingGroupOutputBuilder {
         crate::operation::create_thing_group::builders::CreateThingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateThingGroupOutput`](crate::operation::create_thing_group::CreateThingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateThingGroupOutputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_group_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ pub struct CreateThingGroupOutputBuilder {
 }
 impl CreateThingGroupOutputBuilder {
     /// <p>The thing group name.</p>
-    pub fn thing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The thing group name.</p>
-    pub fn set_thing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_name = input;
         self
     }
@@ -74,18 +65,12 @@ impl CreateThingGroupOutputBuilder {
         &self.thing_group_name
     }
     /// <p>The thing group ARN.</p>
-    pub fn thing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The thing group ARN.</p>
-    pub fn set_thing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_arn = input;
         self
     }
@@ -94,18 +79,12 @@ impl CreateThingGroupOutputBuilder {
         &self.thing_group_arn
     }
     /// <p>The thing group ID.</p>
-    pub fn thing_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The thing group ID.</p>
-    pub fn set_thing_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_id = input;
         self
     }

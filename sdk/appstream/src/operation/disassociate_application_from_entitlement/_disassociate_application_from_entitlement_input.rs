@@ -29,16 +29,14 @@ impl DisassociateApplicationFromEntitlementInput {
 }
 impl DisassociateApplicationFromEntitlementInput {
     /// Creates a new builder-style object to manufacture [`DisassociateApplicationFromEntitlementInput`](crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementInput).
-    pub fn builder() -> crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementInputBuilder {
         crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateApplicationFromEntitlementInput`](crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateApplicationFromEntitlementInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) entitlement_name: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl DisassociateApplicationFromEntitlementInputBuilder {
         &self.stack_name
     }
     /// <p>The name of the entitlement.</p>
-    pub fn entitlement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entitlement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entitlement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the entitlement.</p>
-    pub fn set_entitlement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entitlement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entitlement_name = input;
         self
     }
@@ -80,18 +72,12 @@ impl DisassociateApplicationFromEntitlementInputBuilder {
         &self.entitlement_name
     }
     /// <p>The identifier of the application to remove from the entitlement.</p>
-    pub fn application_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the application to remove from the entitlement.</p>
-    pub fn set_application_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_identifier = input;
         self
     }
@@ -100,16 +86,18 @@ impl DisassociateApplicationFromEntitlementInputBuilder {
         &self.application_identifier
     }
     /// Consumes the builder and constructs a [`DisassociateApplicationFromEntitlementInput`](crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementInput {
-                stack_name: self.stack_name
-                ,
-                entitlement_name: self.entitlement_name
-                ,
-                application_identifier: self.application_identifier
-                ,
-            }
+                stack_name: self.stack_name,
+                entitlement_name: self.entitlement_name,
+                application_identifier: self.application_identifier,
+            },
         )
     }
 }

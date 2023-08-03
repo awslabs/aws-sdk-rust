@@ -23,12 +23,9 @@ impl ToxicityDetectionSettings {
 
 /// A builder for [`ToxicityDetectionSettings`](crate::types::ToxicityDetectionSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ToxicityDetectionSettingsBuilder {
-    pub(crate) toxicity_categories:
-        ::std::option::Option<::std::vec::Vec<crate::types::ToxicityCategory>>,
+    pub(crate) toxicity_categories: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityCategory>>,
 }
 impl ToxicityDetectionSettingsBuilder {
     /// Appends an item to `toxicity_categories`.
@@ -43,17 +40,12 @@ impl ToxicityDetectionSettingsBuilder {
         self
     }
     /// <p> If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
-    pub fn set_toxicity_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityCategory>>,
-    ) -> Self {
+    pub fn set_toxicity_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityCategory>>) -> Self {
         self.toxicity_categories = input;
         self
     }
     /// <p> If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
-    pub fn get_toxicity_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ToxicityCategory>> {
+    pub fn get_toxicity_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ToxicityCategory>> {
         &self.toxicity_categories
     }
     /// Consumes the builder and constructs a [`ToxicityDetectionSettings`](crate::types::ToxicityDetectionSettings).

@@ -51,9 +51,7 @@ impl ItemValue {
     }
     /// Tries to convert the enum instance into [`PagerDutyIncidentDetail`](crate::types::ItemValue::PagerDutyIncidentDetail), extracting the inner [`PagerDutyIncidentDetail`](crate::types::PagerDutyIncidentDetail).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_pager_duty_incident_detail(
-        &self,
-    ) -> ::std::result::Result<&crate::types::PagerDutyIncidentDetail, &Self> {
+    pub fn as_pager_duty_incident_detail(&self) -> ::std::result::Result<&crate::types::PagerDutyIncidentDetail, &Self> {
         if let ItemValue::PagerDutyIncidentDetail(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

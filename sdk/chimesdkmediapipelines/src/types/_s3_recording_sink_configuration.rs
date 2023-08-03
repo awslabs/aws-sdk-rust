@@ -17,9 +17,7 @@ impl S3RecordingSinkConfiguration {
         self.destination.as_deref()
     }
     /// <p>The default file format for the media files sent to the Amazon S3 bucket.</p>
-    pub fn recording_file_format(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecordingFileFormat> {
+    pub fn recording_file_format(&self) -> ::std::option::Option<&crate::types::RecordingFileFormat> {
         self.recording_file_format.as_ref()
     }
 }
@@ -66,17 +64,12 @@ impl S3RecordingSinkConfigurationBuilder {
         self
     }
     /// <p>The default file format for the media files sent to the Amazon S3 bucket.</p>
-    pub fn set_recording_file_format(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordingFileFormat>,
-    ) -> Self {
+    pub fn set_recording_file_format(mut self, input: ::std::option::Option<crate::types::RecordingFileFormat>) -> Self {
         self.recording_file_format = input;
         self
     }
     /// <p>The default file format for the media files sent to the Amazon S3 bucket.</p>
-    pub fn get_recording_file_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecordingFileFormat> {
+    pub fn get_recording_file_format(&self) -> &::std::option::Option<crate::types::RecordingFileFormat> {
         &self.recording_file_format
     }
     /// Consumes the builder and constructs a [`S3RecordingSinkConfiguration`](crate::types::S3RecordingSinkConfiguration).

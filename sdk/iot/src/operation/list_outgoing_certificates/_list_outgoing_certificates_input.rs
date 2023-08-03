@@ -30,18 +30,14 @@ impl ListOutgoingCertificatesInput {
 }
 impl ListOutgoingCertificatesInput {
     /// Creates a new builder-style object to manufacture [`ListOutgoingCertificatesInput`](crate::operation::list_outgoing_certificates::ListOutgoingCertificatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_outgoing_certificates::builders::ListOutgoingCertificatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_outgoing_certificates::builders::ListOutgoingCertificatesInputBuilder {
         crate::operation::list_outgoing_certificates::builders::ListOutgoingCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListOutgoingCertificatesInput`](crate::operation::list_outgoing_certificates::ListOutgoingCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOutgoingCertificatesInputBuilder {
     pub(crate) page_size: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -97,12 +93,10 @@ impl ListOutgoingCertificatesInputBuilder {
         crate::operation::list_outgoing_certificates::ListOutgoingCertificatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_outgoing_certificates::ListOutgoingCertificatesInput {
-                page_size: self.page_size,
-                marker: self.marker,
-                ascending_order: self.ascending_order,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_outgoing_certificates::ListOutgoingCertificatesInput {
+            page_size: self.page_size,
+            marker: self.marker,
+            ascending_order: self.ascending_order,
+        })
     }
 }

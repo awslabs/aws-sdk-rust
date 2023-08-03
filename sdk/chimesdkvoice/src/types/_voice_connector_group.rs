@@ -12,8 +12,7 @@ pub struct VoiceConnectorGroup {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Voice Connectors to which you route inbound calls.</p>
     #[doc(hidden)]
-    pub voice_connector_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
+    pub voice_connector_items: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
     /// <p>The Voice Connector group's creation time stamp, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -34,9 +33,7 @@ impl VoiceConnectorGroup {
         self.name.as_deref()
     }
     /// <p>The Voice Connectors to which you route inbound calls.</p>
-    pub fn voice_connector_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VoiceConnectorItem]> {
+    pub fn voice_connector_items(&self) -> ::std::option::Option<&[crate::types::VoiceConnectorItem]> {
         self.voice_connector_items.as_deref()
     }
     /// <p>The Voice Connector group's creation time stamp, in ISO 8601 format.</p>
@@ -61,32 +58,23 @@ impl VoiceConnectorGroup {
 
 /// A builder for [`VoiceConnectorGroup`](crate::types::VoiceConnectorGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VoiceConnectorGroupBuilder {
     pub(crate) voice_connector_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) voice_connector_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
+    pub(crate) voice_connector_items: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) voice_connector_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl VoiceConnectorGroupBuilder {
     /// <p>The ID of a Voice Connector group.</p>
-    pub fn voice_connector_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a Voice Connector group.</p>
-    pub fn set_voice_connector_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_group_id = input;
         self
     }
@@ -120,17 +108,12 @@ impl VoiceConnectorGroupBuilder {
         self
     }
     /// <p>The Voice Connectors to which you route inbound calls.</p>
-    pub fn set_voice_connector_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
-    ) -> Self {
+    pub fn set_voice_connector_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>) -> Self {
         self.voice_connector_items = input;
         self
     }
     /// <p>The Voice Connectors to which you route inbound calls.</p>
-    pub fn get_voice_connector_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>> {
+    pub fn get_voice_connector_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>> {
         &self.voice_connector_items
     }
     /// <p>The Voice Connector group's creation time stamp, in ISO 8601 format.</p>
@@ -139,10 +122,7 @@ impl VoiceConnectorGroupBuilder {
         self
     }
     /// <p>The Voice Connector group's creation time stamp, in ISO 8601 format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -156,10 +136,7 @@ impl VoiceConnectorGroupBuilder {
         self
     }
     /// <p>The Voice Connector group's creation time stamp, in ISO 8601 format.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_timestamp = input;
         self
     }
@@ -168,18 +145,12 @@ impl VoiceConnectorGroupBuilder {
         &self.updated_timestamp
     }
     /// <p>The ARN of the Voice Connector group.</p>
-    pub fn voice_connector_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Voice Connector group.</p>
-    pub fn set_voice_connector_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_group_arn = input;
         self
     }

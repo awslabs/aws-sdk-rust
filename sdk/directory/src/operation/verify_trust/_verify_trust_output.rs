@@ -29,9 +29,7 @@ impl VerifyTrustOutput {
 
 /// A builder for [`VerifyTrustOutput`](crate::operation::verify_trust::VerifyTrustOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyTrustOutputBuilder {
     pub(crate) trust_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

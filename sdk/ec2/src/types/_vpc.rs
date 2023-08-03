@@ -24,12 +24,10 @@ pub struct Vpc {
     pub instance_tenancy: ::std::option::Option<crate::types::Tenancy>,
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
     #[doc(hidden)]
-    pub ipv6_cidr_block_association_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcIpv6CidrBlockAssociation>>,
+    pub ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcIpv6CidrBlockAssociation>>,
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
     #[doc(hidden)]
-    pub cidr_block_association_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcCidrBlockAssociation>>,
+    pub cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcCidrBlockAssociation>>,
     /// <p>Indicates whether the VPC is the default VPC.</p>
     #[doc(hidden)]
     pub is_default: ::std::option::Option<bool>,
@@ -63,15 +61,11 @@ impl Vpc {
         self.instance_tenancy.as_ref()
     }
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
-    pub fn ipv6_cidr_block_association_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VpcIpv6CidrBlockAssociation]> {
+    pub fn ipv6_cidr_block_association_set(&self) -> ::std::option::Option<&[crate::types::VpcIpv6CidrBlockAssociation]> {
         self.ipv6_cidr_block_association_set.as_deref()
     }
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
-    pub fn cidr_block_association_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VpcCidrBlockAssociation]> {
+    pub fn cidr_block_association_set(&self) -> ::std::option::Option<&[crate::types::VpcCidrBlockAssociation]> {
         self.cidr_block_association_set.as_deref()
     }
     /// <p>Indicates whether the VPC is the default VPC.</p>
@@ -92,9 +86,7 @@ impl Vpc {
 
 /// A builder for [`Vpc`](crate::types::Vpc).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) dhcp_options_id: ::std::option::Option<::std::string::String>,
@@ -102,10 +94,8 @@ pub struct VpcBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_tenancy: ::std::option::Option<crate::types::Tenancy>,
-    pub(crate) ipv6_cidr_block_association_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcIpv6CidrBlockAssociation>>,
-    pub(crate) cidr_block_association_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcCidrBlockAssociation>>,
+    pub(crate) ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcIpv6CidrBlockAssociation>>,
+    pub(crate) cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcCidrBlockAssociation>>,
     pub(crate) is_default: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -125,18 +115,12 @@ impl VpcBuilder {
         &self.cidr_block
     }
     /// <p>The ID of the set of DHCP options you've associated with the VPC.</p>
-    pub fn dhcp_options_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dhcp_options_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dhcp_options_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the set of DHCP options you've associated with the VPC.</p>
-    pub fn set_dhcp_options_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dhcp_options_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dhcp_options_id = input;
         self
     }
@@ -192,10 +176,7 @@ impl VpcBuilder {
         self
     }
     /// <p>The allowed tenancy of instances launched into the VPC.</p>
-    pub fn set_instance_tenancy(
-        mut self,
-        input: ::std::option::Option<crate::types::Tenancy>,
-    ) -> Self {
+    pub fn set_instance_tenancy(mut self, input: ::std::option::Option<crate::types::Tenancy>) -> Self {
         self.instance_tenancy = input;
         self
     }
@@ -208,10 +189,7 @@ impl VpcBuilder {
     /// To override the contents of this collection use [`set_ipv6_cidr_block_association_set`](Self::set_ipv6_cidr_block_association_set).
     ///
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
-    pub fn ipv6_cidr_block_association_set(
-        mut self,
-        input: crate::types::VpcIpv6CidrBlockAssociation,
-    ) -> Self {
+    pub fn ipv6_cidr_block_association_set(mut self, input: crate::types::VpcIpv6CidrBlockAssociation) -> Self {
         let mut v = self.ipv6_cidr_block_association_set.unwrap_or_default();
         v.push(input);
         self.ipv6_cidr_block_association_set = ::std::option::Option::Some(v);
@@ -226,9 +204,7 @@ impl VpcBuilder {
         self
     }
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
-    pub fn get_ipv6_cidr_block_association_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcIpv6CidrBlockAssociation>> {
+    pub fn get_ipv6_cidr_block_association_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcIpv6CidrBlockAssociation>> {
         &self.ipv6_cidr_block_association_set
     }
     /// Appends an item to `cidr_block_association_set`.
@@ -236,27 +212,19 @@ impl VpcBuilder {
     /// To override the contents of this collection use [`set_cidr_block_association_set`](Self::set_cidr_block_association_set).
     ///
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
-    pub fn cidr_block_association_set(
-        mut self,
-        input: crate::types::VpcCidrBlockAssociation,
-    ) -> Self {
+    pub fn cidr_block_association_set(mut self, input: crate::types::VpcCidrBlockAssociation) -> Self {
         let mut v = self.cidr_block_association_set.unwrap_or_default();
         v.push(input);
         self.cidr_block_association_set = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
-    pub fn set_cidr_block_association_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcCidrBlockAssociation>>,
-    ) -> Self {
+    pub fn set_cidr_block_association_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcCidrBlockAssociation>>) -> Self {
         self.cidr_block_association_set = input;
         self
     }
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
-    pub fn get_cidr_block_association_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcCidrBlockAssociation>> {
+    pub fn get_cidr_block_association_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcCidrBlockAssociation>> {
         &self.cidr_block_association_set
     }
     /// <p>Indicates whether the VPC is the default VPC.</p>
@@ -285,10 +253,7 @@ impl VpcBuilder {
         self
     }
     /// <p>Any tags assigned to the VPC.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

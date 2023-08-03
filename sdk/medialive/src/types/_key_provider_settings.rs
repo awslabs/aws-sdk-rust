@@ -23,9 +23,7 @@ impl KeyProviderSettings {
 
 /// A builder for [`KeyProviderSettings`](crate::types::KeyProviderSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyProviderSettingsBuilder {
     pub(crate) static_key_settings: ::std::option::Option<crate::types::StaticKeySettings>,
 }
@@ -36,17 +34,12 @@ impl KeyProviderSettingsBuilder {
         self
     }
     /// Static Key Settings
-    pub fn set_static_key_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::StaticKeySettings>,
-    ) -> Self {
+    pub fn set_static_key_settings(mut self, input: ::std::option::Option<crate::types::StaticKeySettings>) -> Self {
         self.static_key_settings = input;
         self
     }
     /// Static Key Settings
-    pub fn get_static_key_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::StaticKeySettings> {
+    pub fn get_static_key_settings(&self) -> &::std::option::Option<crate::types::StaticKeySettings> {
         &self.static_key_settings
     }
     /// Consumes the builder and constructs a [`KeyProviderSettings`](crate::types::KeyProviderSettings).

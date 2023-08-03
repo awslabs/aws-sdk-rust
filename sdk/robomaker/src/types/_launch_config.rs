@@ -12,9 +12,7 @@ pub struct LaunchConfig {
     pub launch_file: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables for the application launch.</p>
     #[doc(hidden)]
-    pub environment_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The port forwarding configuration.</p>
     #[doc(hidden)]
     pub port_forwarding_config: ::std::option::Option<crate::types::PortForwardingConfig>,
@@ -36,17 +34,11 @@ impl LaunchConfig {
         self.launch_file.as_deref()
     }
     /// <p>The environment variables for the application launch.</p>
-    pub fn environment_variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
     /// <p>The port forwarding configuration.</p>
-    pub fn port_forwarding_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PortForwardingConfig> {
+    pub fn port_forwarding_config(&self) -> ::std::option::Option<&crate::types::PortForwardingConfig> {
         self.port_forwarding_config.as_ref()
     }
     /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
@@ -68,15 +60,11 @@ impl LaunchConfig {
 
 /// A builder for [`LaunchConfig`](crate::types::LaunchConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchConfigBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) launch_file: ::std::option::Option<::std::string::String>,
-    pub(crate) environment_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) port_forwarding_config: ::std::option::Option<crate::types::PortForwardingConfig>,
     pub(crate) stream_ui: ::std::option::Option<bool>,
     pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -128,19 +116,13 @@ impl LaunchConfigBuilder {
     /// <p>The environment variables for the application launch.</p>
     pub fn set_environment_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.environment_variables = input;
         self
     }
     /// <p>The environment variables for the application launch.</p>
-    pub fn get_environment_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
     /// <p>The port forwarding configuration.</p>
@@ -149,17 +131,12 @@ impl LaunchConfigBuilder {
         self
     }
     /// <p>The port forwarding configuration.</p>
-    pub fn set_port_forwarding_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PortForwardingConfig>,
-    ) -> Self {
+    pub fn set_port_forwarding_config(mut self, input: ::std::option::Option<crate::types::PortForwardingConfig>) -> Self {
         self.port_forwarding_config = input;
         self
     }
     /// <p>The port forwarding configuration.</p>
-    pub fn get_port_forwarding_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::PortForwardingConfig> {
+    pub fn get_port_forwarding_config(&self) -> &::std::option::Option<crate::types::PortForwardingConfig> {
         &self.port_forwarding_config
     }
     /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
@@ -190,10 +167,7 @@ impl LaunchConfigBuilder {
     }
     /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
     /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.command = input;
         self
     }

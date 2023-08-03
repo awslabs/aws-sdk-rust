@@ -26,7 +26,7 @@ impl ModifyClusterSnapshotScheduleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyClusterSnapshotScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleInputBuilder,
+    inner: crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleInputBuilder,
 }
 impl ModifyClusterSnapshotScheduleFluentBuilder {
     /// Creates a new `ModifyClusterSnapshotSchedule`.
@@ -37,7 +37,7 @@ impl ModifyClusterSnapshotScheduleFluentBuilder {
         }
     }
     /// Access the ModifyClusterSnapshotSchedule as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyClusterSnapshotScheduleFluentBuilder {
             crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyClusterSnapshotScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyClusterSnapshotScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyClusterSnapshotScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ModifyClusterSnapshotScheduleFluentBuilder {
             crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify. </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify. </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -141,18 +124,12 @@ impl ModifyClusterSnapshotScheduleFluentBuilder {
         self.inner.get_cluster_identifier()
     }
     /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the cluster.</p>
-    pub fn schedule_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_identifier(input.into());
         self
     }
     /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the cluster.</p>
-    pub fn set_schedule_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_identifier(input);
         self
     }

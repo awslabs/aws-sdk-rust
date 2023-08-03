@@ -179,9 +179,7 @@ impl SimulationJobBatchSummary {
 
 /// A builder for [`SimulationJobBatchSummary`](crate::types::SimulationJobBatchSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SimulationJobBatchSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -212,10 +210,7 @@ impl SimulationJobBatchSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -229,10 +224,7 @@ impl SimulationJobBatchSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -360,10 +352,7 @@ impl SimulationJobBatchSummaryBuilder {
     /// <p>The simulation batch job timed out.</p>
     /// </dd>
     /// </dl>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationJobBatchStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SimulationJobBatchStatus>) -> Self {
         self.status = input;
         self
     }

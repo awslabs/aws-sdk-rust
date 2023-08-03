@@ -43,9 +43,7 @@ impl ListCrawlsInput {
 
 /// A builder for [`ListCrawlsInput`](crate::operation::list_crawls::ListCrawlsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCrawlsInputBuilder {
     pub(crate) crawler_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -93,17 +91,12 @@ impl ListCrawlsInputBuilder {
         self
     }
     /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CrawlsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrawlsFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CrawlsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrawlsFilter>> {
         &self.filters
     }
     /// <p>A continuation token, if this is a continuation call.</p>
@@ -121,12 +114,7 @@ impl ListCrawlsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCrawlsInput`](crate::operation::list_crawls::ListCrawlsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_crawls::ListCrawlsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_crawls::ListCrawlsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_crawls::ListCrawlsInput {
             crawler_name: self.crawler_name,
             max_results: self.max_results,

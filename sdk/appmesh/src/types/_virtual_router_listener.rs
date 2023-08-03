@@ -23,9 +23,7 @@ impl VirtualRouterListener {
 
 /// A builder for [`VirtualRouterListener`](crate::types::VirtualRouterListener).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualRouterListenerBuilder {
     pub(crate) port_mapping: ::std::option::Option<crate::types::PortMapping>,
 }
@@ -36,10 +34,7 @@ impl VirtualRouterListenerBuilder {
         self
     }
     /// <p>An object that represents a port mapping.</p>
-    pub fn set_port_mapping(
-        mut self,
-        input: ::std::option::Option<crate::types::PortMapping>,
-    ) -> Self {
+    pub fn set_port_mapping(mut self, input: ::std::option::Option<crate::types::PortMapping>) -> Self {
         self.port_mapping = input;
         self
     }

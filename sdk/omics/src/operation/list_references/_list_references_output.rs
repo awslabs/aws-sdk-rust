@@ -35,9 +35,7 @@ impl ListReferencesOutput {
 
 /// A builder for [`ListReferencesOutput`](crate::operation::list_references::ListReferencesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReferencesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) references: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceListItem>>,
@@ -70,17 +68,12 @@ impl ListReferencesOutputBuilder {
         self
     }
     /// <p>A list of references.</p>
-    pub fn set_references(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceListItem>>,
-    ) -> Self {
+    pub fn set_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceListItem>>) -> Self {
         self.references = input;
         self
     }
     /// <p>A list of references.</p>
-    pub fn get_references(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceListItem>> {
+    pub fn get_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceListItem>> {
         &self.references
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

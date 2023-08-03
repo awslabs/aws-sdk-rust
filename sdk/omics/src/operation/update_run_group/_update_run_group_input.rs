@@ -57,9 +57,7 @@ impl UpdateRunGroupInput {
 
 /// A builder for [`UpdateRunGroupInput`](crate::operation::update_run_group::UpdateRunGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRunGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -156,10 +154,7 @@ impl UpdateRunGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRunGroupInput`](crate::operation::update_run_group::UpdateRunGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_run_group::UpdateRunGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_run_group::UpdateRunGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_run_group::UpdateRunGroupInput {
             id: self.id,
             name: self.name,

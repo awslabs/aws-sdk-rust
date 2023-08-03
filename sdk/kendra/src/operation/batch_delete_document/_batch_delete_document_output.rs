@@ -5,16 +5,12 @@
 pub struct BatchDeleteDocumentOutput {
     /// <p>A list of documents that could not be removed from the index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
     #[doc(hidden)]
-    pub failed_documents: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchDeleteDocumentResponseFailedDocument>,
-    >,
+    pub failed_documents: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDocumentResponseFailedDocument>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteDocumentOutput {
     /// <p>A list of documents that could not be removed from the index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
-    pub fn failed_documents(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchDeleteDocumentResponseFailedDocument]> {
+    pub fn failed_documents(&self) -> ::std::option::Option<&[crate::types::BatchDeleteDocumentResponseFailedDocument]> {
         self.failed_documents.as_deref()
     }
 }
@@ -25,22 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchDeleteDocumentOutput {
 }
 impl BatchDeleteDocumentOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteDocumentOutput`](crate::operation::batch_delete_document::BatchDeleteDocumentOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_document::builders::BatchDeleteDocumentOutputBuilder {
-        crate::operation::batch_delete_document::builders::BatchDeleteDocumentOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_delete_document::builders::BatchDeleteDocumentOutputBuilder {
+        crate::operation::batch_delete_document::builders::BatchDeleteDocumentOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteDocumentOutput`](crate::operation::batch_delete_document::BatchDeleteDocumentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteDocumentOutputBuilder {
-    pub(crate) failed_documents: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchDeleteDocumentResponseFailedDocument>,
-    >,
+    pub(crate) failed_documents: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDocumentResponseFailedDocument>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteDocumentOutputBuilder {
@@ -49,10 +39,7 @@ impl BatchDeleteDocumentOutputBuilder {
     /// To override the contents of this collection use [`set_failed_documents`](Self::set_failed_documents).
     ///
     /// <p>A list of documents that could not be removed from the index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
-    pub fn failed_documents(
-        mut self,
-        input: crate::types::BatchDeleteDocumentResponseFailedDocument,
-    ) -> Self {
+    pub fn failed_documents(mut self, input: crate::types::BatchDeleteDocumentResponseFailedDocument) -> Self {
         let mut v = self.failed_documents.unwrap_or_default();
         v.push(input);
         self.failed_documents = ::std::option::Option::Some(v);
@@ -61,19 +48,13 @@ impl BatchDeleteDocumentOutputBuilder {
     /// <p>A list of documents that could not be removed from the index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
     pub fn set_failed_documents(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchDeleteDocumentResponseFailedDocument>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDocumentResponseFailedDocument>>,
     ) -> Self {
         self.failed_documents = input;
         self
     }
     /// <p>A list of documents that could not be removed from the index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
-    pub fn get_failed_documents(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchDeleteDocumentResponseFailedDocument>,
-    > {
+    pub fn get_failed_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDocumentResponseFailedDocument>> {
         &self.failed_documents
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

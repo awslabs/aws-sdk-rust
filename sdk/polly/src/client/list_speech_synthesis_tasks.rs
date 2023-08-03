@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput::next_token): <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
     ///   - [`synthesis_tasks(Option<Vec<SynthesisTask>>)`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput::synthesis_tasks): <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
     /// - On failure, responds with [`SdkError<ListSpeechSynthesisTasksError>`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksError)
-    pub fn list_speech_synthesis_tasks(&self) -> crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksFluentBuilder{
+    pub fn list_speech_synthesis_tasks(&self) -> crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksFluentBuilder {
         crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksFluentBuilder::new(self.handle.clone())
     }
 }

@@ -35,9 +35,7 @@ impl GetChangeLogsOutput {
 
 /// A builder for [`GetChangeLogsOutput`](crate::operation::get_change_logs::GetChangeLogsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChangeLogsOutputBuilder {
     pub(crate) change_logs: ::std::option::Option<::std::vec::Vec<crate::types::ChangeLog>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetChangeLogsOutputBuilder {
         self
     }
     /// <p>The list of user activity for the control. </p>
-    pub fn set_change_logs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeLog>>,
-    ) -> Self {
+    pub fn set_change_logs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeLog>>) -> Self {
         self.change_logs = input;
         self
     }
     /// <p>The list of user activity for the control. </p>
-    pub fn get_change_logs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeLog>> {
+    pub fn get_change_logs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeLog>> {
         &self.change_logs
     }
     /// <p>The pagination token that's used to fetch the next set of results. </p>

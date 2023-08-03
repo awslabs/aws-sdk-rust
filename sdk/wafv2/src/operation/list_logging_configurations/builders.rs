@@ -26,7 +26,7 @@ impl ListLoggingConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLoggingConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder,
+    inner: crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder,
 }
 impl ListLoggingConfigurationsFluentBuilder {
     /// Creates a new `ListLoggingConfigurations`.
@@ -37,7 +37,7 @@ impl ListLoggingConfigurationsFluentBuilder {
         }
     }
     /// Access the ListLoggingConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListLoggingConfigurationsFluentBuilder {
             crate::operation::list_logging_configurations::ListLoggingConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_logging_configurations::ListLoggingConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_logging_configurations::ListLoggingConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListLoggingConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListLoggingConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_logging_configurations::ListLoggingConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_logging_configurations::ListLoggingConfigurationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListLoggingConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_logging_configurations::ListLoggingConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_logging_configurations::ListLoggingConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ListLoggingConfigurationsFluentBuilder {
             crate::operation::list_logging_configurations::ListLoggingConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_logging_configurations::ListLoggingConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_logging_configurations::ListLoggingConfigurationsError>,
     > {
         self.customize_middleware().await
     }

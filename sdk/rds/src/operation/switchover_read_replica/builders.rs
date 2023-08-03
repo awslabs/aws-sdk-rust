@@ -37,10 +37,7 @@ impl SwitchoverReadReplicaFluentBuilder {
         }
     }
     /// Access the SwitchoverReadReplica as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl SwitchoverReadReplicaFluentBuilder {
             crate::operation::switchover_read_replica::SwitchoverReadReplica,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::switchover_read_replica::SwitchoverReadReplicaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::switchover_read_replica::SwitchoverReadReplicaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl SwitchoverReadReplicaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl SwitchoverReadReplicaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::switchover_read_replica::SwitchoverReadReplicaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::switchover_read_replica::SwitchoverReadReplicaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::switchover_read_replica::SwitchoverReadReplicaError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl SwitchoverReadReplicaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::switchover_read_replica::SwitchoverReadReplicaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::switchover_read_replica::SwitchoverReadReplicaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::switchover_read_replica::SwitchoverReadReplicaError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl SwitchoverReadReplicaFluentBuilder {
             crate::operation::switchover_read_replica::SwitchoverReadReplica,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::switchover_read_replica::SwitchoverReadReplicaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::switchover_read_replica::SwitchoverReadReplicaError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +114,7 @@ impl SwitchoverReadReplicaFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
@@ -140,10 +123,7 @@ impl SwitchoverReadReplicaFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`app_bundle_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_app_bundle::builders::DeleteAppBundleFluentBuilder::app_bundle_identifier) / [`set_app_bundle_identifier(Option<String>)`](crate::operation::delete_app_bundle::builders::DeleteAppBundleFluentBuilder::set_app_bundle_identifier): <p>The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.</p>
     /// - On success, responds with [`DeleteAppBundleOutput`](crate::operation::delete_app_bundle::DeleteAppBundleOutput)
     /// - On failure, responds with [`SdkError<DeleteAppBundleError>`](crate::operation::delete_app_bundle::DeleteAppBundleError)
-    pub fn delete_app_bundle(
-        &self,
-    ) -> crate::operation::delete_app_bundle::builders::DeleteAppBundleFluentBuilder {
-        crate::operation::delete_app_bundle::builders::DeleteAppBundleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_app_bundle(&self) -> crate::operation::delete_app_bundle::builders::DeleteAppBundleFluentBuilder {
+        crate::operation::delete_app_bundle::builders::DeleteAppBundleFluentBuilder::new(self.handle.clone())
     }
 }

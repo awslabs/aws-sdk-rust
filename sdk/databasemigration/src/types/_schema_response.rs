@@ -50,9 +50,7 @@ impl SchemaResponse {
         self.server.as_ref()
     }
     /// <p>The database for a schema in a Fleet Advisor collector inventory.</p>
-    pub fn database_instance(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DatabaseShortInfoResponse> {
+    pub fn database_instance(&self) -> ::std::option::Option<&crate::types::DatabaseShortInfoResponse> {
         self.database_instance.as_ref()
     }
     /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
@@ -81,9 +79,7 @@ impl SchemaResponse {
 
 /// A builder for [`SchemaResponse`](crate::types::SchemaResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaResponseBuilder {
     pub(crate) code_line_count: ::std::option::Option<i64>,
     pub(crate) code_size: ::std::option::Option<i64>,
@@ -144,10 +140,7 @@ impl SchemaResponseBuilder {
         self
     }
     /// <p>The database server for a schema in a Fleet Advisor collector inventory.</p>
-    pub fn set_server(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerShortInfoResponse>,
-    ) -> Self {
+    pub fn set_server(mut self, input: ::std::option::Option<crate::types::ServerShortInfoResponse>) -> Self {
         self.server = input;
         self
     }
@@ -161,17 +154,12 @@ impl SchemaResponseBuilder {
         self
     }
     /// <p>The database for a schema in a Fleet Advisor collector inventory.</p>
-    pub fn set_database_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseShortInfoResponse>,
-    ) -> Self {
+    pub fn set_database_instance(mut self, input: ::std::option::Option<crate::types::DatabaseShortInfoResponse>) -> Self {
         self.database_instance = input;
         self
     }
     /// <p>The database for a schema in a Fleet Advisor collector inventory.</p>
-    pub fn get_database_instance(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatabaseShortInfoResponse> {
+    pub fn get_database_instance(&self) -> &::std::option::Option<crate::types::DatabaseShortInfoResponse> {
         &self.database_instance
     }
     /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
@@ -208,17 +196,12 @@ impl SchemaResponseBuilder {
         self
     }
     /// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
-    pub fn set_original_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaShortInfoResponse>,
-    ) -> Self {
+    pub fn set_original_schema(mut self, input: ::std::option::Option<crate::types::SchemaShortInfoResponse>) -> Self {
         self.original_schema = input;
         self
     }
     /// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
-    pub fn get_original_schema(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaShortInfoResponse> {
+    pub fn get_original_schema(&self) -> &::std::option::Option<crate::types::SchemaShortInfoResponse> {
         &self.original_schema
     }
     /// <p>The similarity value for a schema in a Fleet Advisor collector inventory. A higher similarity value indicates that a schema is likely to be a duplicate.</p>

@@ -50,9 +50,7 @@ impl CreateStreamInput {
 
 /// A builder for [`CreateStreamInput`](crate::operation::create_stream::CreateStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStreamInputBuilder {
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -101,10 +99,7 @@ impl CreateStreamInputBuilder {
         self
     }
     /// <p>The files to stream.</p>
-    pub fn set_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamFile>>,
-    ) -> Self {
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamFile>>) -> Self {
         self.files = input;
         self
     }
@@ -138,10 +133,7 @@ impl CreateStreamInputBuilder {
         self
     }
     /// <p>Metadata which can be used to manage streams.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -150,12 +142,7 @@ impl CreateStreamInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStreamInput`](crate::operation::create_stream::CreateStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_stream::CreateStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_stream::CreateStreamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stream::CreateStreamInput {
             stream_id: self.stream_id,
             description: self.description,

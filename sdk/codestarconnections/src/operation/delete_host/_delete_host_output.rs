@@ -19,9 +19,7 @@ impl DeleteHostOutput {
 
 /// A builder for [`DeleteHostOutput`](crate::operation::delete_host::DeleteHostOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHostOutputBuilder {
     _request_id: Option<String>,
 }

@@ -17,18 +17,14 @@ impl DisassociateMembershipInput {
 }
 impl DisassociateMembershipInput {
     /// Creates a new builder-style object to manufacture [`DisassociateMembershipInput`](crate::operation::disassociate_membership::DisassociateMembershipInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_membership::builders::DisassociateMembershipInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_membership::builders::DisassociateMembershipInputBuilder {
         crate::operation::disassociate_membership::builders::DisassociateMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateMembershipInput`](crate::operation::disassociate_membership::DisassociateMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateMembershipInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
 }
@@ -53,14 +49,8 @@ impl DisassociateMembershipInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateMembershipInput`](crate::operation::disassociate_membership::DisassociateMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_membership::DisassociateMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_membership::DisassociateMembershipInput {
-                graph_arn: self.graph_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_membership::DisassociateMembershipInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disassociate_membership::DisassociateMembershipInput { graph_arn: self.graph_arn })
     }
 }

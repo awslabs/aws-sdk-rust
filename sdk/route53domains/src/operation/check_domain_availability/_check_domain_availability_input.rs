@@ -39,18 +39,14 @@ impl CheckDomainAvailabilityInput {
 }
 impl CheckDomainAvailabilityInput {
     /// Creates a new builder-style object to manufacture [`CheckDomainAvailabilityInput`](crate::operation::check_domain_availability::CheckDomainAvailabilityInput).
-    pub fn builder(
-    ) -> crate::operation::check_domain_availability::builders::CheckDomainAvailabilityInputBuilder
-    {
+    pub fn builder() -> crate::operation::check_domain_availability::builders::CheckDomainAvailabilityInputBuilder {
         crate::operation::check_domain_availability::builders::CheckDomainAvailabilityInputBuilder::default()
     }
 }
 
 /// A builder for [`CheckDomainAvailabilityInput`](crate::operation::check_domain_availability::CheckDomainAvailabilityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckDomainAvailabilityInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) idn_lang_code: ::std::option::Option<::std::string::String>,
@@ -95,18 +91,12 @@ impl CheckDomainAvailabilityInputBuilder {
         &self.domain_name
     }
     /// <p>Reserved for future use.</p>
-    pub fn idn_lang_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idn_lang_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idn_lang_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_idn_lang_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idn_lang_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idn_lang_code = input;
         self
     }
@@ -121,11 +111,9 @@ impl CheckDomainAvailabilityInputBuilder {
         crate::operation::check_domain_availability::CheckDomainAvailabilityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::check_domain_availability::CheckDomainAvailabilityInput {
-                domain_name: self.domain_name,
-                idn_lang_code: self.idn_lang_code,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::check_domain_availability::CheckDomainAvailabilityInput {
+            domain_name: self.domain_name,
+            idn_lang_code: self.idn_lang_code,
+        })
     }
 }

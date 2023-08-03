@@ -38,8 +38,7 @@ impl ::std::fmt::Debug for DisassociateFraudsterInput {
 }
 impl DisassociateFraudsterInput {
     /// Creates a new builder-style object to manufacture [`DisassociateFraudsterInput`](crate::operation::disassociate_fraudster::DisassociateFraudsterInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_fraudster::builders::DisassociateFraudsterInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_fraudster::builders::DisassociateFraudsterInputBuilder {
         crate::operation::disassociate_fraudster::builders::DisassociateFraudsterInputBuilder::default()
     }
 }
@@ -98,17 +97,13 @@ impl DisassociateFraudsterInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateFraudsterInput`](crate::operation::disassociate_fraudster::DisassociateFraudsterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_fraudster::DisassociateFraudsterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_fraudster::DisassociateFraudsterInput {
-                domain_id: self.domain_id,
-                watchlist_id: self.watchlist_id,
-                fraudster_id: self.fraudster_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_fraudster::DisassociateFraudsterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disassociate_fraudster::DisassociateFraudsterInput {
+            domain_id: self.domain_id,
+            watchlist_id: self.watchlist_id,
+            fraudster_id: self.fraudster_id,
+        })
     }
 }
 impl ::std::fmt::Debug for DisassociateFraudsterInputBuilder {

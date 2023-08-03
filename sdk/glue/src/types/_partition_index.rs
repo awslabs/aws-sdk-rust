@@ -30,9 +30,7 @@ impl PartitionIndex {
 
 /// A builder for [`PartitionIndex`](crate::types::PartitionIndex).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartitionIndexBuilder {
     pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl PartitionIndexBuilder {
         self
     }
     /// <p>The keys for the partition index.</p>
-    pub fn set_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.keys = input;
         self
     }

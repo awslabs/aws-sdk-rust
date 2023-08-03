@@ -10,10 +10,7 @@ impl ListUsageTotalsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_usage_totals::ListUsageTotalsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_usage_totals::ListUsageTotalsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_usage_totals::ListUsageTotalsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_usage_totals();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListUsageTotalsFluentBuilder {
         }
     }
     /// Access the ListUsageTotals as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_usage_totals::builders::ListUsageTotalsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_usage_totals::builders::ListUsageTotalsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListUsageTotalsFluentBuilder {
             crate::operation::list_usage_totals::ListUsageTotals,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_usage_totals::ListUsageTotalsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_usage_totals::ListUsageTotalsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListUsageTotalsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListUsageTotalsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_usage_totals::ListUsageTotalsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_usage_totals::ListUsageTotalsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_usage_totals::ListUsageTotalsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListUsageTotalsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_usage_totals::ListUsageTotalsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_usage_totals::ListUsageTotalsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_usage_totals::ListUsageTotalsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListUsageTotalsFluentBuilder {
             crate::operation::list_usage_totals::ListUsageTotals,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_usage_totals::ListUsageTotalsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_usage_totals::ListUsageTotalsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_usage_totals::paginator::ListUsageTotalsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_usage_totals::paginator::ListUsageTotalsPaginator {
-        crate::operation::list_usage_totals::paginator::ListUsageTotalsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_usage_totals::paginator::ListUsageTotalsPaginator {
+        crate::operation::list_usage_totals::paginator::ListUsageTotalsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -171,17 +150,12 @@ impl ListUsageTotalsFluentBuilder {
         self
     }
     /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
 }

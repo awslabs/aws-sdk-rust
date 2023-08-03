@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateEnvironmentOutput {
 }
 impl CreateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentOutput`](crate::operation::create_environment::CreateEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder {
         crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEnvironmentOutput`](crate::operation::create_environment::CreateEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEnvironmentOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

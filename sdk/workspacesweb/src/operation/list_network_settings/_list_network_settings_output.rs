@@ -5,8 +5,7 @@
 pub struct ListNetworkSettingsOutput {
     /// <p>The network settings.</p>
     #[doc(hidden)]
-    pub network_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkSettingsSummary>>,
+    pub network_settings: ::std::option::Option<::std::vec::Vec<crate::types::NetworkSettingsSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListNetworkSettingsOutput {
 }
 impl ListNetworkSettingsOutput {
     /// <p>The network settings.</p>
-    pub fn network_settings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NetworkSettingsSummary]> {
+    pub fn network_settings(&self) -> ::std::option::Option<&[crate::types::NetworkSettingsSummary]> {
         self.network_settings.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListNetworkSettingsOutput {
 }
 impl ListNetworkSettingsOutput {
     /// Creates a new builder-style object to manufacture [`ListNetworkSettingsOutput`](crate::operation::list_network_settings::ListNetworkSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_network_settings::builders::ListNetworkSettingsOutputBuilder {
-        crate::operation::list_network_settings::builders::ListNetworkSettingsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_network_settings::builders::ListNetworkSettingsOutputBuilder {
+        crate::operation::list_network_settings::builders::ListNetworkSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNetworkSettingsOutput`](crate::operation::list_network_settings::ListNetworkSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNetworkSettingsOutputBuilder {
-    pub(crate) network_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkSettingsSummary>>,
+    pub(crate) network_settings: ::std::option::Option<::std::vec::Vec<crate::types::NetworkSettingsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListNetworkSettingsOutputBuilder {
         self
     }
     /// <p>The network settings.</p>
-    pub fn set_network_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkSettingsSummary>>,
-    ) -> Self {
+    pub fn set_network_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkSettingsSummary>>) -> Self {
         self.network_settings = input;
         self
     }
     /// <p>The network settings.</p>
-    pub fn get_network_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkSettingsSummary>> {
+    pub fn get_network_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkSettingsSummary>> {
         &self.network_settings
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>

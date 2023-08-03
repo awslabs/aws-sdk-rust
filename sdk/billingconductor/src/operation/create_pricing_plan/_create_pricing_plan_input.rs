@@ -17,9 +17,7 @@ pub struct CreatePricingPlanInput {
     pub pricing_rule_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePricingPlanInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
@@ -39,11 +37,7 @@ impl CreatePricingPlanInput {
         self.pricing_rule_arns.as_deref()
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -60,8 +54,7 @@ impl ::std::fmt::Debug for CreatePricingPlanInput {
 }
 impl CreatePricingPlanInput {
     /// Creates a new builder-style object to manufacture [`CreatePricingPlanInput`](crate::operation::create_pricing_plan::CreatePricingPlanInput).
-    pub fn builder(
-    ) -> crate::operation::create_pricing_plan::builders::CreatePricingPlanInputBuilder {
+    pub fn builder() -> crate::operation::create_pricing_plan::builders::CreatePricingPlanInputBuilder {
         crate::operation::create_pricing_plan::builders::CreatePricingPlanInputBuilder::default()
     }
 }
@@ -74,9 +67,7 @@ pub struct CreatePricingPlanInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_rule_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePricingPlanInputBuilder {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
@@ -126,27 +117,19 @@ impl CreatePricingPlanInputBuilder {
     /// To override the contents of this collection use [`set_pricing_rule_arns`](Self::set_pricing_rule_arns).
     ///
     /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
-    pub fn pricing_rule_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pricing_rule_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pricing_rule_arns.unwrap_or_default();
         v.push(input.into());
         self.pricing_rule_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
-    pub fn set_pricing_rule_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pricing_rule_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pricing_rule_arns = input;
         self
     }
     /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
-    pub fn get_pricing_rule_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pricing_rule_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.pricing_rule_arns
     }
     /// Adds a key-value pair to `tags`.
@@ -154,50 +137,32 @@ impl CreatePricingPlanInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePricingPlanInput`](crate::operation::create_pricing_plan::CreatePricingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_pricing_plan::CreatePricingPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_pricing_plan::CreatePricingPlanInput {
-                client_token: self.client_token,
-                name: self.name,
-                description: self.description,
-                pricing_rule_arns: self.pricing_rule_arns,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_pricing_plan::CreatePricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_pricing_plan::CreatePricingPlanInput {
+            client_token: self.client_token,
+            name: self.name,
+            description: self.description,
+            pricing_rule_arns: self.pricing_rule_arns,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for CreatePricingPlanInputBuilder {

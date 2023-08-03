@@ -25,9 +25,7 @@ pub fn ser_create_broker_input(
         object.key("dataReplicationMode").string(var_7.as_str());
     }
     if let Some(var_8) = &input.data_replication_primary_broker_arn {
-        object
-            .key("dataReplicationPrimaryBrokerArn")
-            .string(var_8.as_str());
+        object.key("dataReplicationPrimaryBrokerArn").string(var_8.as_str());
     }
     if let Some(var_9) = &input.deployment_mode {
         object.key("deploymentMode").string(var_9.as_str());
@@ -35,10 +33,7 @@ pub fn ser_create_broker_input(
     if let Some(var_10) = &input.encryption_options {
         #[allow(unused_mut)]
         let mut object_11 = object.key("encryptionOptions").start_object();
-        crate::protocol_serde::shape_encryption_options::ser_encryption_options(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_encryption_options::ser_encryption_options(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.engine_type {
@@ -53,10 +48,7 @@ pub fn ser_create_broker_input(
     if let Some(var_15) = &input.ldap_server_metadata {
         #[allow(unused_mut)]
         let mut object_16 = object.key("ldapServerMetadata").start_object();
-        crate::protocol_serde::shape_ldap_server_metadata_input::ser_ldap_server_metadata_input(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_ldap_server_metadata_input::ser_ldap_server_metadata_input(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.logs {
@@ -68,10 +60,7 @@ pub fn ser_create_broker_input(
     if let Some(var_19) = &input.maintenance_window_start_time {
         #[allow(unused_mut)]
         let mut object_20 = object.key("maintenanceWindowStartTime").start_object();
-        crate::protocol_serde::shape_weekly_start_time::ser_weekly_start_time(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_weekly_start_time::ser_weekly_start_time(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.publicly_accessible {

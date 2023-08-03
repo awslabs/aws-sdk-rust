@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`domain_deliverability_campaigns(Option<Vec<DomainDeliverabilityCampaign>>)`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput::domain_deliverability_campaigns): <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput::next_token): <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
     /// - On failure, responds with [`SdkError<ListDomainDeliverabilityCampaignsError>`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsError)
-    pub fn list_domain_deliverability_campaigns(&self) -> crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder{
+    pub fn list_domain_deliverability_campaigns(
+        &self,
+    ) -> crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder {
         crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder::new(self.handle.clone())
     }
 }

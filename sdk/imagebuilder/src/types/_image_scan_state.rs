@@ -30,9 +30,7 @@ impl ImageScanState {
 
 /// A builder for [`ImageScanState`](crate::types::ImageScanState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageScanStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ImageScanStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ImageScanStateBuilder {
         self
     }
     /// <p>The current state of vulnerability scans for the image.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ImageScanStatus>) -> Self {
         self.status = input;
         self
     }

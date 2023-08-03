@@ -9,8 +9,7 @@ pub struct ListMonitorEvaluationsOutput {
     /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
     /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
     #[doc(hidden)]
-    pub predictor_monitor_evaluations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PredictorMonitorEvaluation>>,
+    pub predictor_monitor_evaluations: ::std::option::Option<::std::vec::Vec<crate::types::PredictorMonitorEvaluation>>,
     _request_id: Option<String>,
 }
 impl ListMonitorEvaluationsOutput {
@@ -20,9 +19,7 @@ impl ListMonitorEvaluationsOutput {
     }
     /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
     /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
-    pub fn predictor_monitor_evaluations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PredictorMonitorEvaluation]> {
+    pub fn predictor_monitor_evaluations(&self) -> ::std::option::Option<&[crate::types::PredictorMonitorEvaluation]> {
         self.predictor_monitor_evaluations.as_deref()
     }
 }
@@ -33,22 +30,17 @@ impl ::aws_http::request_id::RequestId for ListMonitorEvaluationsOutput {
 }
 impl ListMonitorEvaluationsOutput {
     /// Creates a new builder-style object to manufacture [`ListMonitorEvaluationsOutput`](crate::operation::list_monitor_evaluations::ListMonitorEvaluationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_monitor_evaluations::builders::ListMonitorEvaluationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_monitor_evaluations::builders::ListMonitorEvaluationsOutputBuilder {
         crate::operation::list_monitor_evaluations::builders::ListMonitorEvaluationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMonitorEvaluationsOutput`](crate::operation::list_monitor_evaluations::ListMonitorEvaluationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitorEvaluationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) predictor_monitor_evaluations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PredictorMonitorEvaluation>>,
+    pub(crate) predictor_monitor_evaluations: ::std::option::Option<::std::vec::Vec<crate::types::PredictorMonitorEvaluation>>,
     _request_id: Option<String>,
 }
 impl ListMonitorEvaluationsOutputBuilder {
@@ -72,10 +64,7 @@ impl ListMonitorEvaluationsOutputBuilder {
     ///
     /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
     /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
-    pub fn predictor_monitor_evaluations(
-        mut self,
-        input: crate::types::PredictorMonitorEvaluation,
-    ) -> Self {
+    pub fn predictor_monitor_evaluations(mut self, input: crate::types::PredictorMonitorEvaluation) -> Self {
         let mut v = self.predictor_monitor_evaluations.unwrap_or_default();
         v.push(input);
         self.predictor_monitor_evaluations = ::std::option::Option::Some(v);
@@ -92,9 +81,7 @@ impl ListMonitorEvaluationsOutputBuilder {
     }
     /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
     /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
-    pub fn get_predictor_monitor_evaluations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictorMonitorEvaluation>> {
+    pub fn get_predictor_monitor_evaluations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictorMonitorEvaluation>> {
         &self.predictor_monitor_evaluations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

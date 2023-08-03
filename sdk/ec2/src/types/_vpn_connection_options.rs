@@ -73,9 +73,7 @@ impl VpnConnectionOptions {
         self.transport_transit_gateway_attachment_id.as_deref()
     }
     /// <p>Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
-    pub fn tunnel_inside_ip_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TunnelInsideIpVersion> {
+    pub fn tunnel_inside_ip_version(&self) -> ::std::option::Option<&crate::types::TunnelInsideIpVersion> {
         self.tunnel_inside_ip_version.as_ref()
     }
     /// <p>Indicates the VPN tunnel options.</p>
@@ -92,9 +90,7 @@ impl VpnConnectionOptions {
 
 /// A builder for [`VpnConnectionOptions`](crate::types::VpnConnectionOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpnConnectionOptionsBuilder {
     pub(crate) enable_acceleration: ::std::option::Option<bool>,
     pub(crate) static_routes_only: ::std::option::Option<bool>,
@@ -103,8 +99,7 @@ pub struct VpnConnectionOptionsBuilder {
     pub(crate) local_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) remote_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) outside_ip_address_type: ::std::option::Option<::std::string::String>,
-    pub(crate) transport_transit_gateway_attachment_id:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) transport_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) tunnel_inside_ip_version: ::std::option::Option<crate::types::TunnelInsideIpVersion>,
     pub(crate) tunnel_options: ::std::option::Option<::std::vec::Vec<crate::types::TunnelOption>>,
 }
@@ -138,18 +133,12 @@ impl VpnConnectionOptionsBuilder {
         &self.static_routes_only
     }
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    pub fn local_ipv4_network_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_ipv4_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_ipv4_network_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    pub fn set_local_ipv4_network_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_ipv4_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_ipv4_network_cidr = input;
         self
     }
@@ -158,18 +147,12 @@ impl VpnConnectionOptionsBuilder {
         &self.local_ipv4_network_cidr
     }
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    pub fn remote_ipv4_network_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_ipv4_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_ipv4_network_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    pub fn set_remote_ipv4_network_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_ipv4_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_ipv4_network_cidr = input;
         self
     }
@@ -178,18 +161,12 @@ impl VpnConnectionOptionsBuilder {
         &self.remote_ipv4_network_cidr
     }
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    pub fn local_ipv6_network_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_ipv6_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_ipv6_network_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    pub fn set_local_ipv6_network_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_ipv6_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_ipv6_network_cidr = input;
         self
     }
@@ -198,18 +175,12 @@ impl VpnConnectionOptionsBuilder {
         &self.local_ipv6_network_cidr
     }
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    pub fn remote_ipv6_network_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_ipv6_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_ipv6_network_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    pub fn set_remote_ipv6_network_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_ipv6_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_ipv6_network_cidr = input;
         self
     }
@@ -220,20 +191,14 @@ impl VpnConnectionOptionsBuilder {
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway.</p>
     /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
     /// <p>Default: <code>PublicIpv4</code> </p>
-    pub fn outside_ip_address_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outside_ip_address_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outside_ip_address_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway.</p>
     /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
     /// <p>Default: <code>PublicIpv4</code> </p>
-    pub fn set_outside_ip_address_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outside_ip_address_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outside_ip_address_type = input;
         self
     }
@@ -244,25 +209,17 @@ impl VpnConnectionOptionsBuilder {
         &self.outside_ip_address_type
     }
     /// <p>The transit gateway attachment ID in use for the VPN tunnel.</p>
-    pub fn transport_transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transport_transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transport_transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transit gateway attachment ID in use for the VPN tunnel.</p>
-    pub fn set_transport_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transport_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transport_transit_gateway_attachment_id = input;
         self
     }
     /// <p>The transit gateway attachment ID in use for the VPN tunnel.</p>
-    pub fn get_transport_transit_gateway_attachment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transport_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transport_transit_gateway_attachment_id
     }
     /// <p>Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
@@ -271,17 +228,12 @@ impl VpnConnectionOptionsBuilder {
         self
     }
     /// <p>Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
-    pub fn set_tunnel_inside_ip_version(
-        mut self,
-        input: ::std::option::Option<crate::types::TunnelInsideIpVersion>,
-    ) -> Self {
+    pub fn set_tunnel_inside_ip_version(mut self, input: ::std::option::Option<crate::types::TunnelInsideIpVersion>) -> Self {
         self.tunnel_inside_ip_version = input;
         self
     }
     /// <p>Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
-    pub fn get_tunnel_inside_ip_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::TunnelInsideIpVersion> {
+    pub fn get_tunnel_inside_ip_version(&self) -> &::std::option::Option<crate::types::TunnelInsideIpVersion> {
         &self.tunnel_inside_ip_version
     }
     /// Appends an item to `tunnel_options`.
@@ -296,17 +248,12 @@ impl VpnConnectionOptionsBuilder {
         self
     }
     /// <p>Indicates the VPN tunnel options.</p>
-    pub fn set_tunnel_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TunnelOption>>,
-    ) -> Self {
+    pub fn set_tunnel_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TunnelOption>>) -> Self {
         self.tunnel_options = input;
         self
     }
     /// <p>Indicates the VPN tunnel options.</p>
-    pub fn get_tunnel_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TunnelOption>> {
+    pub fn get_tunnel_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TunnelOption>> {
         &self.tunnel_options
     }
     /// Consumes the builder and constructs a [`VpnConnectionOptions`](crate::types::VpnConnectionOptions).

@@ -29,9 +29,7 @@ impl RemoveIpRoutesInput {
 
 /// A builder for [`RemoveIpRoutesInput`](crate::operation::remove_ip_routes::RemoveIpRoutesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveIpRoutesInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,10 +61,7 @@ impl RemoveIpRoutesInputBuilder {
         self
     }
     /// <p>IP address blocks that you want to remove.</p>
-    pub fn set_cidr_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cidr_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cidr_ips = input;
         self
     }
@@ -77,10 +72,7 @@ impl RemoveIpRoutesInputBuilder {
     /// Consumes the builder and constructs a [`RemoveIpRoutesInput`](crate::operation::remove_ip_routes::RemoveIpRoutesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_ip_routes::RemoveIpRoutesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::remove_ip_routes::RemoveIpRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_ip_routes::RemoveIpRoutesInput {
             directory_id: self.directory_id,
             cidr_ips: self.cidr_ips,

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetResourceRequestStatusOutput {
 }
 impl GetResourceRequestStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceRequestStatusOutput`](crate::operation::get_resource_request_status::GetResourceRequestStatusOutput).
-    pub fn builder() -> crate::operation::get_resource_request_status::builders::GetResourceRequestStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_resource_request_status::builders::GetResourceRequestStatusOutputBuilder {
         crate::operation::get_resource_request_status::builders::GetResourceRequestStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceRequestStatusOutput`](crate::operation::get_resource_request_status::GetResourceRequestStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceRequestStatusOutputBuilder {
     pub(crate) progress_event: ::std::option::Option<crate::types::ProgressEvent>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetResourceRequestStatusOutputBuilder {
         self
     }
     /// <p>Represents the current status of the resource operation request.</p>
-    pub fn set_progress_event(
-        mut self,
-        input: ::std::option::Option<crate::types::ProgressEvent>,
-    ) -> Self {
+    pub fn set_progress_event(mut self, input: ::std::option::Option<crate::types::ProgressEvent>) -> Self {
         self.progress_event = input;
         self
     }
@@ -63,9 +58,7 @@ impl GetResourceRequestStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetResourceRequestStatusOutput`](crate::operation::get_resource_request_status::GetResourceRequestStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_resource_request_status::GetResourceRequestStatusOutput {
+    pub fn build(self) -> crate::operation::get_resource_request_status::GetResourceRequestStatusOutput {
         crate::operation::get_resource_request_status::GetResourceRequestStatusOutput {
             progress_event: self.progress_event,
             _request_id: self._request_id,

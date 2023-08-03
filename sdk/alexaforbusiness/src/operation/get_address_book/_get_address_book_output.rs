@@ -28,9 +28,7 @@ impl GetAddressBookOutput {
 
 /// A builder for [`GetAddressBookOutput`](crate::operation::get_address_book::GetAddressBookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAddressBookOutputBuilder {
     pub(crate) address_book: ::std::option::Option<crate::types::AddressBook>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetAddressBookOutputBuilder {
         self
     }
     /// <p>The details of the requested address book.</p>
-    pub fn set_address_book(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressBook>,
-    ) -> Self {
+    pub fn set_address_book(mut self, input: ::std::option::Option<crate::types::AddressBook>) -> Self {
         self.address_book = input;
         self
     }

@@ -35,9 +35,7 @@ impl GetGroupsOutput {
 
 /// A builder for [`GetGroupsOutput`](crate::operation::get_groups::GetGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupsOutputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetGroupsOutputBuilder {
         self
     }
     /// <p>The collection of all active groups.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>) -> Self {
         self.groups = input;
         self
     }
     /// <p>The collection of all active groups.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>> {
         &self.groups
     }
     /// <p>Pagination token.</p>

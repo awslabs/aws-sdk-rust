@@ -26,7 +26,7 @@ impl DescribeTestSetGenerationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTestSetGenerationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationInputBuilder,
+    inner: crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationInputBuilder,
 }
 impl DescribeTestSetGenerationFluentBuilder {
     /// Creates a new `DescribeTestSetGeneration`.
@@ -37,7 +37,7 @@ impl DescribeTestSetGenerationFluentBuilder {
         }
     }
     /// Access the DescribeTestSetGeneration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeTestSetGenerationFluentBuilder {
             crate::operation::describe_test_set_generation::DescribeTestSetGeneration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_set_generation::DescribeTestSetGenerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_set_generation::DescribeTestSetGenerationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeTestSetGenerationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeTestSetGenerationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_set_generation::DescribeTestSetGenerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_set_generation::DescribeTestSetGenerationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeTestSetGenerationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_set_generation::DescribeTestSetGenerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_set_generation::DescribeTestSetGenerationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeTestSetGenerationFluentBuilder {
             crate::operation::describe_test_set_generation::DescribeTestSetGeneration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_set_generation::DescribeTestSetGenerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_set_generation::DescribeTestSetGenerationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the test set generation.</p>
-    pub fn test_set_generation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_set_generation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.test_set_generation_id(input.into());
         self
     }
     /// <p>The unique identifier of the test set generation.</p>
-    pub fn set_test_set_generation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_set_generation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_test_set_generation_id(input);
         self
     }

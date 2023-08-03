@@ -10,10 +10,7 @@ impl InvokeDeviceMethodInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::invoke_device_method::InvokeDeviceMethodOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::invoke_device_method::InvokeDeviceMethodError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::invoke_device_method::InvokeDeviceMethodError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.invoke_device_method();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl InvokeDeviceMethodFluentBuilder {
         }
     }
     /// Access the InvokeDeviceMethod as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::invoke_device_method::builders::InvokeDeviceMethodInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::invoke_device_method::builders::InvokeDeviceMethodInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl InvokeDeviceMethodFluentBuilder {
             crate::operation::invoke_device_method::InvokeDeviceMethod,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::invoke_device_method::InvokeDeviceMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::invoke_device_method::InvokeDeviceMethodError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl InvokeDeviceMethodFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl InvokeDeviceMethodFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::invoke_device_method::InvokeDeviceMethodOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::invoke_device_method::InvokeDeviceMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::invoke_device_method::InvokeDeviceMethodError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl InvokeDeviceMethodFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::invoke_device_method::InvokeDeviceMethodOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::invoke_device_method::InvokeDeviceMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::invoke_device_method::InvokeDeviceMethodError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl InvokeDeviceMethodFluentBuilder {
             crate::operation::invoke_device_method::InvokeDeviceMethod,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::invoke_device_method::InvokeDeviceMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::invoke_device_method::InvokeDeviceMethodError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl InvokeDeviceMethodFluentBuilder {
         self
     }
     /// <p>The device method to invoke.</p>
-    pub fn set_device_method(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceMethod>,
-    ) -> Self {
+    pub fn set_device_method(mut self, input: ::std::option::Option<crate::types::DeviceMethod>) -> Self {
         self.inner = self.inner.set_device_method(input);
         self
     }
@@ -154,18 +135,12 @@ impl InvokeDeviceMethodFluentBuilder {
         self.inner.get_device_method()
     }
     /// <p>A JSON encoded string containing the device method request parameters.</p>
-    pub fn device_method_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_method_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_method_parameters(input.into());
         self
     }
     /// <p>A JSON encoded string containing the device method request parameters.</p>
-    pub fn set_device_method_parameters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_method_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_method_parameters(input);
         self
     }

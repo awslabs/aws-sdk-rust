@@ -10,10 +10,7 @@ impl CloseAccountInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::close_account::CloseAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::close_account::CloseAccountError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::close_account::CloseAccountError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.close_account();
         fluent_builder.inner = self;
@@ -56,10 +53,7 @@ impl CloseAccountFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::close_account::CloseAccount,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::close_account::CloseAccount, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::close_account::CloseAccountError>,
     > {
         let handle = self.handle.clone();
@@ -70,10 +64,7 @@ impl CloseAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,10 +106,7 @@ impl CloseAccountFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::close_account::CloseAccount,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::close_account::CloseAccount, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::close_account::CloseAccountError>,
     > {
         self.customize_middleware().await

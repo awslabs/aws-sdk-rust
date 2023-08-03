@@ -30,9 +30,7 @@ impl MemberAdditionalConfiguration {
 
 /// A builder for [`MemberAdditionalConfiguration`](crate::types::MemberAdditionalConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberAdditionalConfigurationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
@@ -44,17 +42,12 @@ impl MemberAdditionalConfigurationBuilder {
         self
     }
     /// <p>Name of the additional configuration.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>) -> Self {
         self.name = input;
         self
     }
     /// <p>Name of the additional configuration.</p>
-    pub fn get_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
         &self.name
     }
     /// <p>Status of the additional configuration.</p>

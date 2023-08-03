@@ -26,7 +26,7 @@ impl ModifySelfservicePermissionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifySelfservicePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsInputBuilder,
+    inner: crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsInputBuilder,
 }
 impl ModifySelfservicePermissionsFluentBuilder {
     /// Creates a new `ModifySelfservicePermissions`.
@@ -37,7 +37,7 @@ impl ModifySelfservicePermissionsFluentBuilder {
         }
     }
     /// Access the ModifySelfservicePermissions as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifySelfservicePermissionsFluentBuilder {
             crate::operation::modify_selfservice_permissions::ModifySelfservicePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifySelfservicePermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifySelfservicePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifySelfservicePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ModifySelfservicePermissionsFluentBuilder {
             crate::operation::modify_selfservice_permissions::ModifySelfservicePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsError>,
     > {
         self.customize_middleware().await
     }
@@ -140,17 +129,12 @@ impl ModifySelfservicePermissionsFluentBuilder {
         self
     }
     /// <p>The permissions to enable or disable self-service capabilities.</p>
-    pub fn set_selfservice_permissions(
-        mut self,
-        input: ::std::option::Option<crate::types::SelfservicePermissions>,
-    ) -> Self {
+    pub fn set_selfservice_permissions(mut self, input: ::std::option::Option<crate::types::SelfservicePermissions>) -> Self {
         self.inner = self.inner.set_selfservice_permissions(input);
         self
     }
     /// <p>The permissions to enable or disable self-service capabilities.</p>
-    pub fn get_selfservice_permissions(
-        &self,
-    ) -> &::std::option::Option<crate::types::SelfservicePermissions> {
+    pub fn get_selfservice_permissions(&self) -> &::std::option::Option<crate::types::SelfservicePermissions> {
         self.inner.get_selfservice_permissions()
     }
 }

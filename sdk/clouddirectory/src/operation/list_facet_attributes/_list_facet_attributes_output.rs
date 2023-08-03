@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListFacetAttributesOutput {
 }
 impl ListFacetAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ListFacetAttributesOutput`](crate::operation::list_facet_attributes::ListFacetAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_facet_attributes::builders::ListFacetAttributesOutputBuilder {
-        crate::operation::list_facet_attributes::builders::ListFacetAttributesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_facet_attributes::builders::ListFacetAttributesOutputBuilder {
+        crate::operation::list_facet_attributes::builders::ListFacetAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFacetAttributesOutput`](crate::operation::list_facet_attributes::ListFacetAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFacetAttributesOutputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListFacetAttributesOutputBuilder {
         self
     }
     /// <p>The attributes attached to the facet.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes attached to the facet.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>> {
         &self.attributes
     }
     /// <p>The pagination token.</p>

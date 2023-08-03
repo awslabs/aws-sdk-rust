@@ -29,7 +29,7 @@ impl AddRoleToInstanceProfileInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddRoleToInstanceProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileInputBuilder,
+    inner: crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileInputBuilder,
 }
 impl AddRoleToInstanceProfileFluentBuilder {
     /// Creates a new `AddRoleToInstanceProfile`.
@@ -40,7 +40,7 @@ impl AddRoleToInstanceProfileFluentBuilder {
         }
     }
     /// Access the AddRoleToInstanceProfile as a reference.
-    pub fn as_input(&self) -> &crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl AddRoleToInstanceProfileFluentBuilder {
             crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl AddRoleToInstanceProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl AddRoleToInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl AddRoleToInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +108,19 @@ impl AddRoleToInstanceProfileFluentBuilder {
             crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the instance profile to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn instance_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_profile_name(input.into());
         self
     }
     /// <p>The name of the instance profile to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_instance_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_profile_name(input);
         self
     }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`instance_reuse_policy(InstanceReusePolicy)`](crate::operation::put_warm_pool::builders::PutWarmPoolFluentBuilder::instance_reuse_policy) / [`set_instance_reuse_policy(Option<InstanceReusePolicy>)`](crate::operation::put_warm_pool::builders::PutWarmPoolFluentBuilder::set_instance_reuse_policy): <p>Indicates whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.</p>
     /// - On success, responds with [`PutWarmPoolOutput`](crate::operation::put_warm_pool::PutWarmPoolOutput)
     /// - On failure, responds with [`SdkError<PutWarmPoolError>`](crate::operation::put_warm_pool::PutWarmPoolError)
-    pub fn put_warm_pool(
-        &self,
-    ) -> crate::operation::put_warm_pool::builders::PutWarmPoolFluentBuilder {
-        crate::operation::put_warm_pool::builders::PutWarmPoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_warm_pool(&self) -> crate::operation::put_warm_pool::builders::PutWarmPoolFluentBuilder {
+        crate::operation::put_warm_pool::builders::PutWarmPoolFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,24 +16,20 @@ impl NotifyAppValidationOutputInput {
         self.app_id.as_deref()
     }
     /// <p>The notification information.</p>
-    pub fn notification_context(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationContext> {
+    pub fn notification_context(&self) -> ::std::option::Option<&crate::types::NotificationContext> {
         self.notification_context.as_ref()
     }
 }
 impl NotifyAppValidationOutputInput {
     /// Creates a new builder-style object to manufacture [`NotifyAppValidationOutputInput`](crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput).
-    pub fn builder() -> crate::operation::notify_app_validation_output::builders::NotifyAppValidationOutputInputBuilder{
+    pub fn builder() -> crate::operation::notify_app_validation_output::builders::NotifyAppValidationOutputInputBuilder {
         crate::operation::notify_app_validation_output::builders::NotifyAppValidationOutputInputBuilder::default()
     }
 }
 
 /// A builder for [`NotifyAppValidationOutputInput`](crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyAppValidationOutputInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) notification_context: ::std::option::Option<crate::types::NotificationContext>,
@@ -59,17 +55,12 @@ impl NotifyAppValidationOutputInputBuilder {
         self
     }
     /// <p>The notification information.</p>
-    pub fn set_notification_context(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationContext>,
-    ) -> Self {
+    pub fn set_notification_context(mut self, input: ::std::option::Option<crate::types::NotificationContext>) -> Self {
         self.notification_context = input;
         self
     }
     /// <p>The notification information.</p>
-    pub fn get_notification_context(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationContext> {
+    pub fn get_notification_context(&self) -> &::std::option::Option<crate::types::NotificationContext> {
         &self.notification_context
     }
     /// Consumes the builder and constructs a [`NotifyAppValidationOutputInput`](crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput).
@@ -79,11 +70,9 @@ impl NotifyAppValidationOutputInputBuilder {
         crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput {
-                app_id: self.app_id,
-                notification_context: self.notification_context,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput {
+            app_id: self.app_id,
+            notification_context: self.notification_context,
+        })
     }
 }

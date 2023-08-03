@@ -15,10 +15,7 @@ pub fn ser_create_trust_anchor_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_notification_setting::ser_notification_setting(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_notification_setting::ser_notification_setting(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

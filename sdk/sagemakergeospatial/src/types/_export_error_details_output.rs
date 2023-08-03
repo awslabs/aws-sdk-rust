@@ -30,9 +30,7 @@ impl ExportErrorDetailsOutput {
 
 /// A builder for [`ExportErrorDetailsOutput`](crate::types::ExportErrorDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportErrorDetailsOutputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ExportErrorType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

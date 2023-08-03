@@ -27,7 +27,7 @@ impl GetPipelineChangeProgressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPipelineChangeProgressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressInputBuilder,
+    inner: crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressInputBuilder,
 }
 impl GetPipelineChangeProgressFluentBuilder {
     /// Creates a new `GetPipelineChangeProgress`.
@@ -38,7 +38,7 @@ impl GetPipelineChangeProgressFluentBuilder {
         }
     }
     /// Access the GetPipelineChangeProgress as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetPipelineChangeProgressFluentBuilder {
             crate::operation::get_pipeline_change_progress::GetPipelineChangeProgress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetPipelineChangeProgressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetPipelineChangeProgressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetPipelineChangeProgressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl GetPipelineChangeProgressFluentBuilder {
             crate::operation::get_pipeline_change_progress::GetPipelineChangeProgress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of the pipeline.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }

@@ -15,16 +15,14 @@ impl ForgetSmartHomeAppliancesInput {
 }
 impl ForgetSmartHomeAppliancesInput {
     /// Creates a new builder-style object to manufacture [`ForgetSmartHomeAppliancesInput`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput).
-    pub fn builder() -> crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesInputBuilder{
+    pub fn builder() -> crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesInputBuilder {
         crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesInputBuilder::default()
     }
 }
 
 /// A builder for [`ForgetSmartHomeAppliancesInput`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ForgetSmartHomeAppliancesInputBuilder {
     pub(crate) room_arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl ForgetSmartHomeAppliancesInputBuilder {
         crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput {
-                room_arn: self.room_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput { room_arn: self.room_arn })
     }
 }

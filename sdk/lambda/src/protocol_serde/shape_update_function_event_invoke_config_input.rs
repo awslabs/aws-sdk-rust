@@ -6,10 +6,7 @@ pub fn ser_update_function_event_invoke_config_input(
     if let Some(var_1) = &input.destination_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DestinationConfig").start_object();
-        crate::protocol_serde::shape_destination_config::ser_destination_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_destination_config::ser_destination_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.maximum_event_age_in_seconds {

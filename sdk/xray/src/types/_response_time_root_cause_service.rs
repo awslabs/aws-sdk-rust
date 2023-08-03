@@ -18,8 +18,7 @@ pub struct ResponseTimeRootCauseService {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The path of root cause entities found on the service. </p>
     #[doc(hidden)]
-    pub entity_path:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseEntity>>,
+    pub entity_path: ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseEntity>>,
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
     #[doc(hidden)]
     pub inferred: ::std::option::Option<bool>,
@@ -42,9 +41,7 @@ impl ResponseTimeRootCauseService {
         self.account_id.as_deref()
     }
     /// <p>The path of root cause entities found on the service. </p>
-    pub fn entity_path(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResponseTimeRootCauseEntity]> {
+    pub fn entity_path(&self) -> ::std::option::Option<&[crate::types::ResponseTimeRootCauseEntity]> {
         self.entity_path.as_deref()
     }
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
@@ -61,16 +58,13 @@ impl ResponseTimeRootCauseService {
 
 /// A builder for [`ResponseTimeRootCauseService`](crate::types::ResponseTimeRootCauseService).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseTimeRootCauseServiceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) entity_path:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseEntity>>,
+    pub(crate) entity_path: ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseEntity>>,
     pub(crate) inferred: ::std::option::Option<bool>,
 }
 impl ResponseTimeRootCauseServiceBuilder {
@@ -100,10 +94,7 @@ impl ResponseTimeRootCauseServiceBuilder {
         self
     }
     /// <p>A collection of associated service names.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -151,17 +142,12 @@ impl ResponseTimeRootCauseServiceBuilder {
         self
     }
     /// <p>The path of root cause entities found on the service. </p>
-    pub fn set_entity_path(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseEntity>>,
-    ) -> Self {
+    pub fn set_entity_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseEntity>>) -> Self {
         self.entity_path = input;
         self
     }
     /// <p>The path of root cause entities found on the service. </p>
-    pub fn get_entity_path(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseEntity>> {
+    pub fn get_entity_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseEntity>> {
         &self.entity_path
     }
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>

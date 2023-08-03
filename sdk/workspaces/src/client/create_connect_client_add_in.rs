@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateConnectClientAddInOutput`](crate::operation::create_connect_client_add_in::CreateConnectClientAddInOutput) with field(s):
     ///   - [`add_in_id(Option<String>)`](crate::operation::create_connect_client_add_in::CreateConnectClientAddInOutput::add_in_id): <p>The client add-in identifier.</p>
     /// - On failure, responds with [`SdkError<CreateConnectClientAddInError>`](crate::operation::create_connect_client_add_in::CreateConnectClientAddInError)
-    pub fn create_connect_client_add_in(&self) -> crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInFluentBuilder{
+    pub fn create_connect_client_add_in(&self) -> crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInFluentBuilder {
         crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInFluentBuilder::new(self.handle.clone())
     }
 }

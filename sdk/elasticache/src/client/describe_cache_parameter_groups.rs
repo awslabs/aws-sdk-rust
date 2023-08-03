@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`cache_parameter_groups(Option<Vec<CacheParameterGroup>>)`](crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsOutput::cache_parameter_groups): <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
     /// - On failure, responds with [`SdkError<DescribeCacheParameterGroupsError>`](crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError)
-    pub fn describe_cache_parameter_groups(&self) -> crate::operation::describe_cache_parameter_groups::builders::DescribeCacheParameterGroupsFluentBuilder{
+    pub fn describe_cache_parameter_groups(
+        &self,
+    ) -> crate::operation::describe_cache_parameter_groups::builders::DescribeCacheParameterGroupsFluentBuilder {
         crate::operation::describe_cache_parameter_groups::builders::DescribeCacheParameterGroupsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,33 +15,25 @@ impl GetVoiceConnectorTerminationHealthInput {
 }
 impl GetVoiceConnectorTerminationHealthInput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorTerminationHealthInput`](crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthInput).
-    pub fn builder() -> crate::operation::get_voice_connector_termination_health::builders::GetVoiceConnectorTerminationHealthInputBuilder{
+    pub fn builder() -> crate::operation::get_voice_connector_termination_health::builders::GetVoiceConnectorTerminationHealthInputBuilder {
         crate::operation::get_voice_connector_termination_health::builders::GetVoiceConnectorTerminationHealthInputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceConnectorTerminationHealthInput`](crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorTerminationHealthInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
 }
 impl GetVoiceConnectorTerminationHealthInputBuilder {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -50,12 +42,16 @@ impl GetVoiceConnectorTerminationHealthInputBuilder {
         &self.voice_connector_id
     }
     /// Consumes the builder and constructs a [`GetVoiceConnectorTerminationHealthInput`](crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthInput {
-                voice_connector_id: self.voice_connector_id
-                ,
-            }
+                voice_connector_id: self.voice_connector_id,
+            },
         )
     }
 }

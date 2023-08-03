@@ -38,13 +38,7 @@
 /// _Note: `ExternalAlarmState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExternalAlarmState {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ExternalAlarmState {
         match s {
             "ALARM" => ExternalAlarmState::Alarm,
             "UNKNOWN" => ExternalAlarmState::UnknownValue,
-            other => ExternalAlarmState::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ExternalAlarmState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -27,7 +27,7 @@ impl DeleteTrafficMirrorFilterInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTrafficMirrorFilterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_traffic_mirror_filter::builders::DeleteTrafficMirrorFilterInputBuilder,
+    inner: crate::operation::delete_traffic_mirror_filter::builders::DeleteTrafficMirrorFilterInputBuilder,
 }
 impl DeleteTrafficMirrorFilterFluentBuilder {
     /// Creates a new `DeleteTrafficMirrorFilter`.
@@ -38,7 +38,7 @@ impl DeleteTrafficMirrorFilterFluentBuilder {
         }
     }
     /// Access the DeleteTrafficMirrorFilter as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_traffic_mirror_filter::builders::DeleteTrafficMirrorFilterInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_traffic_mirror_filter::builders::DeleteTrafficMirrorFilterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteTrafficMirrorFilterFluentBuilder {
             crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteTrafficMirrorFilterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteTrafficMirrorFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteTrafficMirrorFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DeleteTrafficMirrorFilterFluentBuilder {
             crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn traffic_mirror_filter_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_mirror_filter_id(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn set_traffic_mirror_filter_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_traffic_mirror_filter_id(input);
         self
     }

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`default_task_schedule_to_close_timeout(impl ::std::convert::Into<String>)`](crate::operation::register_activity_type::builders::RegisterActivityTypeFluentBuilder::default_task_schedule_to_close_timeout) / [`set_default_task_schedule_to_close_timeout(Option<String>)`](crate::operation::register_activity_type::builders::RegisterActivityTypeFluentBuilder::set_default_task_schedule_to_close_timeout): <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>  <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     /// - On success, responds with [`RegisterActivityTypeOutput`](crate::operation::register_activity_type::RegisterActivityTypeOutput)
     /// - On failure, responds with [`SdkError<RegisterActivityTypeError>`](crate::operation::register_activity_type::RegisterActivityTypeError)
-    pub fn register_activity_type(
-        &self,
-    ) -> crate::operation::register_activity_type::builders::RegisterActivityTypeFluentBuilder {
-        crate::operation::register_activity_type::builders::RegisterActivityTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_activity_type(&self) -> crate::operation::register_activity_type::builders::RegisterActivityTypeFluentBuilder {
+        crate::operation::register_activity_type::builders::RegisterActivityTypeFluentBuilder::new(self.handle.clone())
     }
 }

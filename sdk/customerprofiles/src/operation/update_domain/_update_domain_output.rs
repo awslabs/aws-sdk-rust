@@ -30,9 +30,7 @@ pub struct UpdateDomainOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateDomainOutput {
@@ -58,9 +56,7 @@ impl UpdateDomainOutput {
         self.matching.as_ref()
     }
     /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
-    pub fn rule_based_matching(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RuleBasedMatchingResponse> {
+    pub fn rule_based_matching(&self) -> ::std::option::Option<&crate::types::RuleBasedMatchingResponse> {
         self.rule_based_matching.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
@@ -72,11 +68,7 @@ impl UpdateDomainOutput {
         self.last_updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -94,9 +86,7 @@ impl UpdateDomainOutput {
 
 /// A builder for [`UpdateDomainOutput`](crate::operation::update_domain::UpdateDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDomainOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) default_expiration_days: ::std::option::Option<i32>,
@@ -106,9 +96,7 @@ pub struct UpdateDomainOutputBuilder {
     pub(crate) rule_based_matching: ::std::option::Option<crate::types::RuleBasedMatchingResponse>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateDomainOutputBuilder {
@@ -141,18 +129,12 @@ impl UpdateDomainOutputBuilder {
         &self.default_expiration_days
     }
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
-    pub fn default_encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
-    pub fn set_default_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_encryption_key = input;
         self
     }
@@ -161,18 +143,12 @@ impl UpdateDomainOutputBuilder {
         &self.default_encryption_key
     }
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
-    pub fn dead_letter_queue_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dead_letter_queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dead_letter_queue_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
-    pub fn set_dead_letter_queue_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dead_letter_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dead_letter_queue_url = input;
         self
     }
@@ -188,10 +164,7 @@ impl UpdateDomainOutputBuilder {
     }
     /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
-    pub fn set_matching(
-        mut self,
-        input: ::std::option::Option<crate::types::MatchingResponse>,
-    ) -> Self {
+    pub fn set_matching(mut self, input: ::std::option::Option<crate::types::MatchingResponse>) -> Self {
         self.matching = input;
         self
     }
@@ -206,17 +179,12 @@ impl UpdateDomainOutputBuilder {
         self
     }
     /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
-    pub fn set_rule_based_matching(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleBasedMatchingResponse>,
-    ) -> Self {
+    pub fn set_rule_based_matching(mut self, input: ::std::option::Option<crate::types::RuleBasedMatchingResponse>) -> Self {
         self.rule_based_matching = input;
         self
     }
     /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
-    pub fn get_rule_based_matching(
-        &self,
-    ) -> &::std::option::Option<crate::types::RuleBasedMatchingResponse> {
+    pub fn get_rule_based_matching(&self) -> &::std::option::Option<crate::types::RuleBasedMatchingResponse> {
         &self.rule_based_matching
     }
     /// <p>The timestamp of when the domain was created.</p>
@@ -225,10 +193,7 @@ impl UpdateDomainOutputBuilder {
         self
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -242,10 +207,7 @@ impl UpdateDomainOutputBuilder {
         self
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -258,32 +220,19 @@ impl UpdateDomainOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -5,16 +5,16 @@ pub use crate::operation::start_db_instance_automated_backups_replication::_star
 
 impl StartDbInstanceAutomatedBackupsReplicationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.start_db_instance_automated_backups_replication();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl StartDbInstanceAutomatedBackupsReplicationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDBInstanceAutomatedBackupsReplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_db_instance_automated_backups_replication::builders::StartDbInstanceAutomatedBackupsReplicationInputBuilder,
+    inner: crate::operation::start_db_instance_automated_backups_replication::builders::StartDbInstanceAutomatedBackupsReplicationInputBuilder,
 }
 impl StartDBInstanceAutomatedBackupsReplicationFluentBuilder {
     /// Creates a new `StartDBInstanceAutomatedBackupsReplication`.
@@ -39,15 +39,24 @@ impl StartDBInstanceAutomatedBackupsReplicationFluentBuilder {
         }
     }
     /// Access the StartDBInstanceAutomatedBackupsReplication as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_db_instance_automated_backups_replication::builders::StartDbInstanceAutomatedBackupsReplicationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_db_instance_automated_backups_replication::builders::StartDbInstanceAutomatedBackupsReplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplication, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplication,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +65,19 @@ impl StartDBInstanceAutomatedBackupsReplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -83,32 +95,39 @@ impl StartDBInstanceAutomatedBackupsReplicationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplication, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplication,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for the replicated automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-    pub fn source_db_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_db_instance_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for the replicated automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-    pub fn set_source_db_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_db_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_db_instance_arn(input);
         self
     }
@@ -149,10 +168,7 @@ impl StartDBInstanceAutomatedBackupsReplicationFluentBuilder {
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
     /// </note>
-    pub fn pre_signed_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_signed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pre_signed_url(input.into());
         self
     }
@@ -161,10 +177,7 @@ impl StartDBInstanceAutomatedBackupsReplicationFluentBuilder {
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
     /// </note>
-    pub fn set_pre_signed_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_signed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pre_signed_url(input);
         self
     }

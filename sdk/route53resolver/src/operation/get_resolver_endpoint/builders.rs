@@ -37,9 +37,7 @@ impl GetResolverEndpointFluentBuilder {
         }
     }
     /// Access the GetResolverEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_resolver_endpoint::builders::GetResolverEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_resolver_endpoint::builders::GetResolverEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetResolverEndpointFluentBuilder {
             crate::operation::get_resolver_endpoint::GetResolverEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_endpoint::GetResolverEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_endpoint::GetResolverEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetResolverEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetResolverEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_endpoint::GetResolverEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_endpoint::GetResolverEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_endpoint::GetResolverEndpointError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetResolverEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_endpoint::GetResolverEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_endpoint::GetResolverEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_endpoint::GetResolverEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetResolverEndpointFluentBuilder {
             crate::operation::get_resolver_endpoint::GetResolverEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_endpoint::GetResolverEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_endpoint::GetResolverEndpointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
-    pub fn resolver_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
-    pub fn set_resolver_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_endpoint_id(input);
         self
     }

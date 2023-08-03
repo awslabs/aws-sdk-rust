@@ -10,10 +10,7 @@ impl ListGlobalTablesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_global_tables::ListGlobalTablesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_global_tables::ListGlobalTablesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_global_tables::ListGlobalTablesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_global_tables();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ListGlobalTablesFluentBuilder {
         }
     }
     /// Access the ListGlobalTables as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_global_tables::builders::ListGlobalTablesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_global_tables::builders::ListGlobalTablesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ListGlobalTablesFluentBuilder {
             crate::operation::list_global_tables::ListGlobalTables,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_global_tables::ListGlobalTablesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_global_tables::ListGlobalTablesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ListGlobalTablesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ListGlobalTablesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_global_tables::ListGlobalTablesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_global_tables::ListGlobalTablesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_global_tables::ListGlobalTablesError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ListGlobalTablesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_global_tables::ListGlobalTablesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_global_tables::ListGlobalTablesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_global_tables::ListGlobalTablesError>,
     > {
         self.send_middleware().await
     }
@@ -118,32 +104,22 @@ impl ListGlobalTablesFluentBuilder {
             crate::operation::list_global_tables::ListGlobalTables,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_global_tables::ListGlobalTablesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_global_tables::ListGlobalTablesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The first global table name that this operation will evaluate.</p>
-    pub fn exclusive_start_global_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusive_start_global_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.exclusive_start_global_table_name(input.into());
         self
     }
     /// <p>The first global table name that this operation will evaluate.</p>
-    pub fn set_exclusive_start_global_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exclusive_start_global_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_exclusive_start_global_table_name(input);
         self
     }
     /// <p>The first global table name that this operation will evaluate.</p>
-    pub fn get_exclusive_start_global_table_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_exclusive_start_global_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_exclusive_start_global_table_name()
     }
     /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>

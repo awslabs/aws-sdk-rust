@@ -44,9 +44,7 @@ impl QuickConnectSummary {
 
 /// A builder for [`QuickConnectSummary`](crate::types::QuickConnectSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QuickConnectSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl QuickConnectSummaryBuilder {
         self
     }
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
-    pub fn set_quick_connect_type(
-        mut self,
-        input: ::std::option::Option<crate::types::QuickConnectType>,
-    ) -> Self {
+    pub fn set_quick_connect_type(mut self, input: ::std::option::Option<crate::types::QuickConnectType>) -> Self {
         self.quick_connect_type = input;
         self
     }

@@ -28,7 +28,7 @@ impl UpdateRepositoryDescriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRepositoryDescriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionInputBuilder,
+    inner: crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionInputBuilder,
 }
 impl UpdateRepositoryDescriptionFluentBuilder {
     /// Creates a new `UpdateRepositoryDescription`.
@@ -39,7 +39,7 @@ impl UpdateRepositoryDescriptionFluentBuilder {
         }
     }
     /// Access the UpdateRepositoryDescription as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl UpdateRepositoryDescriptionFluentBuilder {
             crate::operation::update_repository_description::UpdateRepositoryDescription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_repository_description::UpdateRepositoryDescriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_repository_description::UpdateRepositoryDescriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl UpdateRepositoryDescriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl UpdateRepositoryDescriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_repository_description::UpdateRepositoryDescriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_repository_description::UpdateRepositoryDescriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_repository_description::UpdateRepositoryDescriptionError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl UpdateRepositoryDescriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_repository_description::UpdateRepositoryDescriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_repository_description::UpdateRepositoryDescriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_repository_description::UpdateRepositoryDescriptionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl UpdateRepositoryDescriptionFluentBuilder {
             crate::operation::update_repository_description::UpdateRepositoryDescription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_repository_description::UpdateRepositoryDescriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_repository_description::UpdateRepositoryDescriptionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the repository to set or change the comment or description for.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository to set or change the comment or description for.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -143,18 +126,12 @@ impl UpdateRepositoryDescriptionFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
-    pub fn repository_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_description(input.into());
         self
     }
     /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
-    pub fn set_repository_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_description(input);
         self
     }

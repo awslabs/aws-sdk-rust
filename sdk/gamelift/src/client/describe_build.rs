@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeBuildOutput`](crate::operation::describe_build::DescribeBuildOutput) with field(s):
     ///   - [`build_value(Option<Build>)`](crate::operation::describe_build::DescribeBuildOutput::build_value): <p>Set of properties describing the requested build.</p>
     /// - On failure, responds with [`SdkError<DescribeBuildError>`](crate::operation::describe_build::DescribeBuildError)
-    pub fn describe_build(
-        &self,
-    ) -> crate::operation::describe_build::builders::DescribeBuildFluentBuilder {
-        crate::operation::describe_build::builders::DescribeBuildFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_build(&self) -> crate::operation::describe_build::builders::DescribeBuildFluentBuilder {
+        crate::operation::describe_build::builders::DescribeBuildFluentBuilder::new(self.handle.clone())
     }
 }

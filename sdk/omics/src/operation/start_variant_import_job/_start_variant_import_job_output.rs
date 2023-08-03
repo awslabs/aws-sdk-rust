@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartVariantImportJobOutput {
 }
 impl StartVariantImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartVariantImportJobOutput`](crate::operation::start_variant_import_job::StartVariantImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_variant_import_job::builders::StartVariantImportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_variant_import_job::builders::StartVariantImportJobOutputBuilder {
         crate::operation::start_variant_import_job::builders::StartVariantImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartVariantImportJobOutput`](crate::operation::start_variant_import_job::StartVariantImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartVariantImportJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

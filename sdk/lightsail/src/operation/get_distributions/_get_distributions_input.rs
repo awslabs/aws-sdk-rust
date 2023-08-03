@@ -26,17 +26,14 @@ impl GetDistributionsInput {
 }
 impl GetDistributionsInput {
     /// Creates a new builder-style object to manufacture [`GetDistributionsInput`](crate::operation::get_distributions::GetDistributionsInput).
-    pub fn builder() -> crate::operation::get_distributions::builders::GetDistributionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_distributions::builders::GetDistributionsInputBuilder {
         crate::operation::get_distributions::builders::GetDistributionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDistributionsInput`](crate::operation::get_distributions::GetDistributionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDistributionsInputBuilder {
     pub(crate) distribution_name: ::std::option::Option<::std::string::String>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
@@ -44,19 +41,13 @@ pub struct GetDistributionsInputBuilder {
 impl GetDistributionsInputBuilder {
     /// <p>The name of the distribution for which to return information.</p>
     /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the distribution for which to return information.</p>
     /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_name = input;
         self
     }
@@ -85,10 +76,7 @@ impl GetDistributionsInputBuilder {
     /// Consumes the builder and constructs a [`GetDistributionsInput`](crate::operation::get_distributions::GetDistributionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_distributions::GetDistributionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_distributions::GetDistributionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_distributions::GetDistributionsInput {
             distribution_name: self.distribution_name,
             page_token: self.page_token,

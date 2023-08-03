@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for SearchDatabasesByLfTagsOutput {
 }
 impl SearchDatabasesByLfTagsOutput {
     /// Creates a new builder-style object to manufacture [`SearchDatabasesByLfTagsOutput`](crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsOutput).
-    pub fn builder(
-    ) -> crate::operation::search_databases_by_lf_tags::builders::SearchDatabasesByLfTagsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::search_databases_by_lf_tags::builders::SearchDatabasesByLfTagsOutputBuilder {
         crate::operation::search_databases_by_lf_tags::builders::SearchDatabasesByLfTagsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchDatabasesByLfTagsOutput`](crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchDatabasesByLfTagsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) database_list: ::std::option::Option<::std::vec::Vec<crate::types::TaggedDatabase>>,
@@ -72,17 +68,12 @@ impl SearchDatabasesByLfTagsOutputBuilder {
         self
     }
     /// <p>A list of databases that meet the LF-tag conditions.</p>
-    pub fn set_database_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaggedDatabase>>,
-    ) -> Self {
+    pub fn set_database_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaggedDatabase>>) -> Self {
         self.database_list = input;
         self
     }
     /// <p>A list of databases that meet the LF-tag conditions.</p>
-    pub fn get_database_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaggedDatabase>> {
+    pub fn get_database_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaggedDatabase>> {
         &self.database_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -95,9 +86,7 @@ impl SearchDatabasesByLfTagsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchDatabasesByLfTagsOutput`](crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsOutput {
+    pub fn build(self) -> crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsOutput {
         crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsOutput {
             next_token: self.next_token,
             database_list: self.database_list,

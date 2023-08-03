@@ -93,13 +93,10 @@ impl LocalGatewayRoute {
 
 /// A builder for [`LocalGatewayRoute`](crate::types::LocalGatewayRoute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocalGatewayRouteBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
-    pub(crate) local_gateway_virtual_interface_group_id:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) local_gateway_virtual_interface_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::LocalGatewayRouteType>,
     pub(crate) state: ::std::option::Option<crate::types::LocalGatewayRouteState>,
     pub(crate) local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
@@ -112,18 +109,12 @@ pub struct LocalGatewayRouteBuilder {
 }
 impl LocalGatewayRouteBuilder {
     /// <p>The CIDR block used for destination matches.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CIDR block used for destination matches.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_cidr_block = input;
         self
     }
@@ -132,25 +123,17 @@ impl LocalGatewayRouteBuilder {
         &self.destination_cidr_block
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn local_gateway_virtual_interface_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_virtual_interface_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_virtual_interface_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn set_local_gateway_virtual_interface_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_virtual_interface_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_virtual_interface_group_id = input;
         self
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn get_local_gateway_virtual_interface_group_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_virtual_interface_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_virtual_interface_group_id
     }
     /// <p>The route type.</p>
@@ -159,10 +142,7 @@ impl LocalGatewayRouteBuilder {
         self
     }
     /// <p>The route type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LocalGatewayRouteType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::LocalGatewayRouteType>) -> Self {
         self.r#type = input;
         self
     }
@@ -176,10 +156,7 @@ impl LocalGatewayRouteBuilder {
         self
     }
     /// <p>The state of the route.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::LocalGatewayRouteState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::LocalGatewayRouteState>) -> Self {
         self.state = input;
         self
     }
@@ -188,47 +165,31 @@ impl LocalGatewayRouteBuilder {
         &self.state
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = input;
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn get_local_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_route_table_id
     }
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
-    pub fn local_gateway_route_table_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_route_table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_route_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_route_table_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
-    pub fn get_local_gateway_route_table_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_route_table_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_route_table_arn
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway route.</p>
@@ -274,18 +235,12 @@ impl LocalGatewayRouteBuilder {
         &self.coip_pool_id
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -294,18 +249,12 @@ impl LocalGatewayRouteBuilder {
         &self.network_interface_id
     }
     /// <p> The ID of the prefix list. </p>
-    pub fn destination_prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the prefix list. </p>
-    pub fn set_destination_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_prefix_list_id = input;
         self
     }

@@ -55,9 +55,7 @@ impl ErrorDetail {
 
 /// A builder for [`ErrorDetail`](crate::types::ErrorDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorDetailBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
@@ -106,18 +104,12 @@ impl ErrorDetailBuilder {
         &self.error_code
     }
     /// <p>A more complete description of the error.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A more complete description of the error.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -137,17 +129,12 @@ impl ErrorDetailBuilder {
         self
     }
     /// <p>An optional field that contains the resource IDs associated with the error.</p>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_ids = input;
         self
     }
     /// <p>An optional field that contains the resource IDs associated with the error.</p>
-    pub fn get_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_ids
     }
     /// Consumes the builder and constructs a [`ErrorDetail`](crate::types::ErrorDetail).

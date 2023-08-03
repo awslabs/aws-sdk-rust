@@ -29,18 +29,14 @@ impl ListMonitoredResourcesInput {
 }
 impl ListMonitoredResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListMonitoredResourcesInput`](crate::operation::list_monitored_resources::ListMonitoredResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_monitored_resources::builders::ListMonitoredResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_monitored_resources::builders::ListMonitoredResourcesInputBuilder {
         crate::operation::list_monitored_resources::builders::ListMonitoredResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMonitoredResourcesInput`](crate::operation::list_monitored_resources::ListMonitoredResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitoredResourcesInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ListMonitoredResourcesFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -53,17 +49,12 @@ impl ListMonitoredResourcesInputBuilder {
         self
     }
     /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListMonitoredResourcesFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListMonitoredResourcesFilters>) -> Self {
         self.filters = input;
         self
     }
     /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListMonitoredResourcesFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListMonitoredResourcesFilters> {
         &self.filters
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -97,16 +88,12 @@ impl ListMonitoredResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListMonitoredResourcesInput`](crate::operation::list_monitored_resources::ListMonitoredResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_monitored_resources::ListMonitoredResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_monitored_resources::ListMonitoredResourcesInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_monitored_resources::ListMonitoredResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_monitored_resources::ListMonitoredResourcesInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

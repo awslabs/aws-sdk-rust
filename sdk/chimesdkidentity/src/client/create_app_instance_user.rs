@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAppInstanceUserOutput`](crate::operation::create_app_instance_user::CreateAppInstanceUserOutput) with field(s):
     ///   - [`app_instance_user_arn(Option<String>)`](crate::operation::create_app_instance_user::CreateAppInstanceUserOutput::app_instance_user_arn): <p>The user's ARN.</p>
     /// - On failure, responds with [`SdkError<CreateAppInstanceUserError>`](crate::operation::create_app_instance_user::CreateAppInstanceUserError)
-    pub fn create_app_instance_user(
-        &self,
-    ) -> crate::operation::create_app_instance_user::builders::CreateAppInstanceUserFluentBuilder
-    {
+    pub fn create_app_instance_user(&self) -> crate::operation::create_app_instance_user::builders::CreateAppInstanceUserFluentBuilder {
         crate::operation::create_app_instance_user::builders::CreateAppInstanceUserFluentBuilder::new(self.handle.clone())
     }
 }

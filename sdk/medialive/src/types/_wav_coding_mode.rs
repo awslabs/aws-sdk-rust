@@ -40,13 +40,7 @@
 /// Wav Coding Mode
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WavCodingMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for WavCodingMode {
             "CODING_MODE_2_0" => WavCodingMode::CodingMode20,
             "CODING_MODE_4_0" => WavCodingMode::CodingMode40,
             "CODING_MODE_8_0" => WavCodingMode::CodingMode80,
-            other => {
-                WavCodingMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => WavCodingMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl WavCodingMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CODING_MODE_1_0",
-            "CODING_MODE_2_0",
-            "CODING_MODE_4_0",
-            "CODING_MODE_8_0",
-        ]
+        &["CODING_MODE_1_0", "CODING_MODE_2_0", "CODING_MODE_4_0", "CODING_MODE_8_0"]
     }
 }
 impl ::std::convert::AsRef<str> for WavCodingMode {

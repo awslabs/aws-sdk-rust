@@ -59,9 +59,7 @@ impl BatchImportFindingsFluentBuilder {
         }
     }
     /// Access the BatchImportFindings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_import_findings::builders::BatchImportFindingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_import_findings::builders::BatchImportFindingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +71,7 @@ impl BatchImportFindingsFluentBuilder {
             crate::operation::batch_import_findings::BatchImportFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_import_findings::BatchImportFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_import_findings::BatchImportFindingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -85,10 +81,7 @@ impl BatchImportFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -97,9 +90,7 @@ impl BatchImportFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_import_findings::BatchImportFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_import_findings::BatchImportFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_import_findings::BatchImportFindingsError>,
     > {
         let op = self
             .inner
@@ -122,9 +113,7 @@ impl BatchImportFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_import_findings::BatchImportFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_import_findings::BatchImportFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_import_findings::BatchImportFindingsError>,
     > {
         self.send_middleware().await
     }
@@ -138,9 +127,7 @@ impl BatchImportFindingsFluentBuilder {
             crate::operation::batch_import_findings::BatchImportFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_import_findings::BatchImportFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_import_findings::BatchImportFindingsError>,
     > {
         self.customize_middleware().await
     }
@@ -154,17 +141,12 @@ impl BatchImportFindingsFluentBuilder {
         self
     }
     /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
-    pub fn set_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>>,
-    ) -> Self {
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>>) -> Self {
         self.inner = self.inner.set_findings(input);
         self
     }
     /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
-    pub fn get_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>> {
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>> {
         self.inner.get_findings()
     }
 }

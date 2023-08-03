@@ -37,9 +37,7 @@ impl DescribeDBSnapshotsFluentBuilder {
         }
     }
     /// Access the DescribeDBSnapshots as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeDBSnapshotsFluentBuilder {
             crate::operation::describe_db_snapshots::DescribeDBSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_snapshots::DescribeDBSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_snapshots::DescribeDBSnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeDBSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeDBSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_snapshots::DescribeDBSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_snapshots::DescribeDBSnapshotsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeDBSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_snapshots::DescribeDBSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_snapshots::DescribeDBSnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -116,32 +105,22 @@ impl DescribeDBSnapshotsFluentBuilder {
             crate::operation::describe_db_snapshots::DescribeDBSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_snapshots::DescribeDBSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_snapshots::DescribeDBSnapshotsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator {
-        crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator {
+        crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
@@ -150,10 +129,7 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
@@ -171,10 +147,7 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li>
     /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
-    pub fn db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_snapshot_identifier(input.into());
         self
     }
@@ -184,10 +157,7 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li>
     /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
-    pub fn set_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_snapshot_identifier(input);
         self
     }
@@ -210,10 +180,7 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    pub fn snapshot_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_type(input.into());
         self
     }
@@ -227,10 +194,7 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    pub fn set_snapshot_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_type(input);
         self
     }
@@ -273,10 +237,7 @@ impl DescribeDBSnapshotsFluentBuilder {
     /// <li> <p> <code>snapshot-type</code> - Accepts types of DB snapshots.</p> </li>
     /// <li> <p> <code>engine</code> - Accepts names of database engines.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -367,18 +328,12 @@ impl DescribeDBSnapshotsFluentBuilder {
         self.inner.get_include_public()
     }
     /// <p>A specific DB resource ID to describe.</p>
-    pub fn dbi_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dbi_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dbi_resource_id(input.into());
         self
     }
     /// <p>A specific DB resource ID to describe.</p>
-    pub fn set_dbi_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dbi_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dbi_resource_id(input);
         self
     }

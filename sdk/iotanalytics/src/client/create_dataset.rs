@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`dataset_arn(Option<String>)`](crate::operation::create_dataset::CreateDatasetOutput::dataset_arn): <p>The ARN of the dataset.</p>
     ///   - [`retention_period(Option<RetentionPeriod>)`](crate::operation::create_dataset::CreateDatasetOutput::retention_period): <p>How long, in days, dataset contents are kept for the dataset.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetError>`](crate::operation::create_dataset::CreateDatasetError)
-    pub fn create_dataset(
-        &self,
-    ) -> crate::operation::create_dataset::builders::CreateDatasetFluentBuilder {
-        crate::operation::create_dataset::builders::CreateDatasetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_dataset(&self) -> crate::operation::create_dataset::builders::CreateDatasetFluentBuilder {
+        crate::operation::create_dataset::builders::CreateDatasetFluentBuilder::new(self.handle.clone())
     }
 }

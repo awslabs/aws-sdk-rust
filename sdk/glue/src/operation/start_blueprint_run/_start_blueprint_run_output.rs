@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartBlueprintRunOutput {
 }
 impl StartBlueprintRunOutput {
     /// Creates a new builder-style object to manufacture [`StartBlueprintRunOutput`](crate::operation::start_blueprint_run::StartBlueprintRunOutput).
-    pub fn builder(
-    ) -> crate::operation::start_blueprint_run::builders::StartBlueprintRunOutputBuilder {
+    pub fn builder() -> crate::operation::start_blueprint_run::builders::StartBlueprintRunOutputBuilder {
         crate::operation::start_blueprint_run::builders::StartBlueprintRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartBlueprintRunOutput`](crate::operation::start_blueprint_run::StartBlueprintRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartBlueprintRunOutputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

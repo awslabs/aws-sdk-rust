@@ -8,8 +8,7 @@ pub struct CreateProductOutput {
     pub product_view_detail: ::std::option::Option<crate::types::ProductViewDetail>,
     /// <p>Information about the provisioning artifact. </p>
     #[doc(hidden)]
-    pub provisioning_artifact_detail:
-        ::std::option::Option<crate::types::ProvisioningArtifactDetail>,
+    pub provisioning_artifact_detail: ::std::option::Option<crate::types::ProvisioningArtifactDetail>,
     /// <p>Information about the tags associated with the product.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -21,9 +20,7 @@ impl CreateProductOutput {
         self.product_view_detail.as_ref()
     }
     /// <p>Information about the provisioning artifact. </p>
-    pub fn provisioning_artifact_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProvisioningArtifactDetail> {
+    pub fn provisioning_artifact_detail(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactDetail> {
         self.provisioning_artifact_detail.as_ref()
     }
     /// <p>Information about the tags associated with the product.</p>
@@ -45,13 +42,10 @@ impl CreateProductOutput {
 
 /// A builder for [`CreateProductOutput`](crate::operation::create_product::CreateProductOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProductOutputBuilder {
     pub(crate) product_view_detail: ::std::option::Option<crate::types::ProductViewDetail>,
-    pub(crate) provisioning_artifact_detail:
-        ::std::option::Option<crate::types::ProvisioningArtifactDetail>,
+    pub(crate) provisioning_artifact_detail: ::std::option::Option<crate::types::ProvisioningArtifactDetail>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
@@ -62,39 +56,26 @@ impl CreateProductOutputBuilder {
         self
     }
     /// <p>Information about the product view.</p>
-    pub fn set_product_view_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductViewDetail>,
-    ) -> Self {
+    pub fn set_product_view_detail(mut self, input: ::std::option::Option<crate::types::ProductViewDetail>) -> Self {
         self.product_view_detail = input;
         self
     }
     /// <p>Information about the product view.</p>
-    pub fn get_product_view_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProductViewDetail> {
+    pub fn get_product_view_detail(&self) -> &::std::option::Option<crate::types::ProductViewDetail> {
         &self.product_view_detail
     }
     /// <p>Information about the provisioning artifact. </p>
-    pub fn provisioning_artifact_detail(
-        mut self,
-        input: crate::types::ProvisioningArtifactDetail,
-    ) -> Self {
+    pub fn provisioning_artifact_detail(mut self, input: crate::types::ProvisioningArtifactDetail) -> Self {
         self.provisioning_artifact_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the provisioning artifact. </p>
-    pub fn set_provisioning_artifact_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningArtifactDetail>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_detail(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactDetail>) -> Self {
         self.provisioning_artifact_detail = input;
         self
     }
     /// <p>Information about the provisioning artifact. </p>
-    pub fn get_provisioning_artifact_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisioningArtifactDetail> {
+    pub fn get_provisioning_artifact_detail(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactDetail> {
         &self.provisioning_artifact_detail
     }
     /// Appends an item to `tags`.
@@ -109,10 +90,7 @@ impl CreateProductOutputBuilder {
         self
     }
     /// <p>Information about the tags associated with the product.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

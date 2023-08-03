@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeContactFlowOutput {
 }
 impl DescribeContactFlowOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContactFlowOutput`](crate::operation::describe_contact_flow::DescribeContactFlowOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_contact_flow::builders::DescribeContactFlowOutputBuilder {
-        crate::operation::describe_contact_flow::builders::DescribeContactFlowOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_contact_flow::builders::DescribeContactFlowOutputBuilder {
+        crate::operation::describe_contact_flow::builders::DescribeContactFlowOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeContactFlowOutput`](crate::operation::describe_contact_flow::DescribeContactFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeContactFlowOutputBuilder {
     pub(crate) contact_flow: ::std::option::Option<crate::types::ContactFlow>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeContactFlowOutputBuilder {
         self
     }
     /// <p>Information about the flow.</p>
-    pub fn set_contact_flow(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactFlow>,
-    ) -> Self {
+    pub fn set_contact_flow(mut self, input: ::std::option::Option<crate::types::ContactFlow>) -> Self {
         self.contact_flow = input;
         self
     }

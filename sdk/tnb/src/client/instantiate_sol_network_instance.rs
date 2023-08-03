@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`ns_lcm_op_occ_id(Option<String>)`](crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceOutput::ns_lcm_op_occ_id): <p>The identifier of the network operation.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceOutput::tags): <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     /// - On failure, responds with [`SdkError<InstantiateSolNetworkInstanceError>`](crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError)
-    pub fn instantiate_sol_network_instance(&self) -> crate::operation::instantiate_sol_network_instance::builders::InstantiateSolNetworkInstanceFluentBuilder{
+    pub fn instantiate_sol_network_instance(
+        &self,
+    ) -> crate::operation::instantiate_sol_network_instance::builders::InstantiateSolNetworkInstanceFluentBuilder {
         crate::operation::instantiate_sol_network_instance::builders::InstantiateSolNetworkInstanceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -56,18 +56,14 @@ impl DescribePublicIpv4PoolsInput {
 }
 impl DescribePublicIpv4PoolsInput {
     /// Creates a new builder-style object to manufacture [`DescribePublicIpv4PoolsInput`](crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsInputBuilder {
         crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePublicIpv4PoolsInput`](crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePublicIpv4PoolsInputBuilder {
     pub(crate) pool_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -87,10 +83,7 @@ impl DescribePublicIpv4PoolsInputBuilder {
         self
     }
     /// <p>The IDs of the address pools.</p>
-    pub fn set_pool_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pool_ids = input;
         self
     }
@@ -158,10 +151,7 @@ impl DescribePublicIpv4PoolsInputBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -186,13 +176,11 @@ impl DescribePublicIpv4PoolsInputBuilder {
         crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsInput {
-                pool_ids: self.pool_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsInput {
+            pool_ids: self.pool_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+        })
     }
 }

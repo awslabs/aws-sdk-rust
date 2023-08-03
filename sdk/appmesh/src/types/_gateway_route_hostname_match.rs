@@ -30,9 +30,7 @@ impl GatewayRouteHostnameMatch {
 
 /// A builder for [`GatewayRouteHostnameMatch`](crate::types::GatewayRouteHostnameMatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GatewayRouteHostnameMatchBuilder {
     pub(crate) exact: ::std::option::Option<::std::string::String>,
     pub(crate) suffix: ::std::option::Option<::std::string::String>,

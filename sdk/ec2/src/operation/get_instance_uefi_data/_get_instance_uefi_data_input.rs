@@ -22,18 +22,14 @@ impl GetInstanceUefiDataInput {
 }
 impl GetInstanceUefiDataInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceUefiDataInput`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataInputBuilder {
-        crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataInputBuilder {
+        crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceUefiDataInput`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceUefiDataInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -70,15 +66,11 @@ impl GetInstanceUefiDataInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceUefiDataInput`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput {
-                instance_id: self.instance_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput {
+            instance_id: self.instance_id,
+            dry_run: self.dry_run,
+        })
     }
 }

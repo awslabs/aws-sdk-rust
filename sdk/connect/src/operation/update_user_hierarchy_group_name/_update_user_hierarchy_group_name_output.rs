@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateUserHierarchyGroupNameOutput {
 }
 impl UpdateUserHierarchyGroupNameOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserHierarchyGroupNameOutput`](crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameOutput).
-    pub fn builder() -> crate::operation::update_user_hierarchy_group_name::builders::UpdateUserHierarchyGroupNameOutputBuilder{
+    pub fn builder() -> crate::operation::update_user_hierarchy_group_name::builders::UpdateUserHierarchyGroupNameOutputBuilder {
         crate::operation::update_user_hierarchy_group_name::builders::UpdateUserHierarchyGroupNameOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserHierarchyGroupNameOutput`](crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserHierarchyGroupNameOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateUserHierarchyGroupNameOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateUserHierarchyGroupNameOutput`](crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameOutput
-    {
+    pub fn build(self) -> crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameOutput {
         crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameOutput {
             _request_id: self._request_id,
         }

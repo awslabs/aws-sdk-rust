@@ -30,8 +30,7 @@ impl ListSizeConstraintSetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSizeConstraintSetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_size_constraint_sets::builders::ListSizeConstraintSetsInputBuilder,
+    inner: crate::operation::list_size_constraint_sets::builders::ListSizeConstraintSetsInputBuilder,
 }
 impl ListSizeConstraintSetsFluentBuilder {
     /// Creates a new `ListSizeConstraintSets`.
@@ -42,10 +41,7 @@ impl ListSizeConstraintSetsFluentBuilder {
         }
     }
     /// Access the ListSizeConstraintSets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_size_constraint_sets::builders::ListSizeConstraintSetsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_size_constraint_sets::builders::ListSizeConstraintSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl ListSizeConstraintSetsFluentBuilder {
             crate::operation::list_size_constraint_sets::ListSizeConstraintSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl ListSizeConstraintSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl ListSizeConstraintSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_size_constraint_sets::ListSizeConstraintSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl ListSizeConstraintSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_size_constraint_sets::ListSizeConstraintSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +109,7 @@ impl ListSizeConstraintSetsFluentBuilder {
             crate::operation::list_size_constraint_sets::ListSizeConstraintSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError>,
     > {
         self.customize_middleware().await
     }

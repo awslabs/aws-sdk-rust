@@ -40,9 +40,7 @@ impl StartReportCreationFluentBuilder {
         }
     }
     /// Access the StartReportCreation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_report_creation::builders::StartReportCreationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_report_creation::builders::StartReportCreationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl StartReportCreationFluentBuilder {
             crate::operation::start_report_creation::StartReportCreation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_report_creation::StartReportCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_report_creation::StartReportCreationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl StartReportCreationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl StartReportCreationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_report_creation::StartReportCreationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_report_creation::StartReportCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_report_creation::StartReportCreationError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl StartReportCreationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_report_creation::StartReportCreationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_report_creation::StartReportCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_report_creation::StartReportCreationError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +108,7 @@ impl StartReportCreationFluentBuilder {
             crate::operation::start_report_creation::StartReportCreation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_report_creation::StartReportCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_report_creation::StartReportCreationError>,
     > {
         self.customize_middleware().await
     }

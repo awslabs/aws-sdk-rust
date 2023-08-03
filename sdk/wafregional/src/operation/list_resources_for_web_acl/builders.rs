@@ -30,8 +30,7 @@ impl ListResourcesForWebAclInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourcesForWebACLFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclInputBuilder,
+    inner: crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclInputBuilder,
 }
 impl ListResourcesForWebACLFluentBuilder {
     /// Creates a new `ListResourcesForWebACL`.
@@ -42,10 +41,7 @@ impl ListResourcesForWebACLFluentBuilder {
         }
     }
     /// Access the ListResourcesForWebACL as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl ListResourcesForWebACLFluentBuilder {
             crate::operation::list_resources_for_web_acl::ListResourcesForWebACL,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl ListResourcesForWebACLFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl ListResourcesForWebACLFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl ListResourcesForWebACLFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +109,7 @@ impl ListResourcesForWebACLFluentBuilder {
             crate::operation::list_resources_for_web_acl::ListResourcesForWebACL,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError>,
     > {
         self.customize_middleware().await
     }
@@ -148,10 +133,7 @@ impl ListResourcesForWebACLFluentBuilder {
         self
     }
     /// <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

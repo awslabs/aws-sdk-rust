@@ -43,16 +43,14 @@ impl GetColumnStatisticsForPartitionInput {
 }
 impl GetColumnStatisticsForPartitionInput {
     /// Creates a new builder-style object to manufacture [`GetColumnStatisticsForPartitionInput`](crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionInput).
-    pub fn builder() -> crate::operation::get_column_statistics_for_partition::builders::GetColumnStatisticsForPartitionInputBuilder{
+    pub fn builder() -> crate::operation::get_column_statistics_for_partition::builders::GetColumnStatisticsForPartitionInputBuilder {
         crate::operation::get_column_statistics_for_partition::builders::GetColumnStatisticsForPartitionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetColumnStatisticsForPartitionInput`](crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetColumnStatisticsForPartitionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl GetColumnStatisticsForPartitionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -114,27 +106,19 @@ impl GetColumnStatisticsForPartitionInputBuilder {
     /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
     ///
     /// <p>A list of partition values identifying the partition.</p>
-    pub fn partition_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_values.unwrap_or_default();
         v.push(input.into());
         self.partition_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of partition values identifying the partition.</p>
-    pub fn set_partition_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.partition_values = input;
         self
     }
     /// <p>A list of partition values identifying the partition.</p>
-    pub fn get_partition_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.partition_values
     }
     /// Appends an item to `column_names`.
@@ -149,17 +133,12 @@ impl GetColumnStatisticsForPartitionInputBuilder {
         self
     }
     /// <p>A list of the column names.</p>
-    pub fn set_column_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_column_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.column_names = input;
         self
     }
     /// <p>A list of the column names.</p>
-    pub fn get_column_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_column_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.column_names
     }
     /// Consumes the builder and constructs a [`GetColumnStatisticsForPartitionInput`](crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionInput).
@@ -171,17 +150,12 @@ impl GetColumnStatisticsForPartitionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionInput {
-                catalog_id: self.catalog_id
-                ,
-                database_name: self.database_name
-                ,
-                table_name: self.table_name
-                ,
-                partition_values: self.partition_values
-                ,
-                column_names: self.column_names
-                ,
-            }
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                table_name: self.table_name,
+                partition_values: self.partition_values,
+                column_names: self.column_names,
+            },
         )
     }
 }

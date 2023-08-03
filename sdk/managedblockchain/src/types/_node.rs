@@ -25,8 +25,7 @@ pub struct Node {
     pub framework_attributes: ::std::option::Option<crate::types::NodeFrameworkAttributes>,
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
     #[doc(hidden)]
-    pub log_publishing_configuration:
-        ::std::option::Option<crate::types::NodeLogPublishingConfiguration>,
+    pub log_publishing_configuration: ::std::option::Option<crate::types::NodeLogPublishingConfiguration>,
     /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
     #[doc(hidden)]
@@ -51,9 +50,7 @@ pub struct Node {
     /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -86,15 +83,11 @@ impl Node {
         self.availability_zone.as_deref()
     }
     /// <p>Attributes of the blockchain framework being used.</p>
-    pub fn framework_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NodeFrameworkAttributes> {
+    pub fn framework_attributes(&self) -> ::std::option::Option<&crate::types::NodeFrameworkAttributes> {
         self.framework_attributes.as_ref()
     }
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
-    pub fn log_publishing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NodeLogPublishingConfiguration> {
+    pub fn log_publishing_configuration(&self) -> ::std::option::Option<&crate::types::NodeLogPublishingConfiguration> {
         self.log_publishing_configuration.as_ref()
     }
     /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
@@ -123,11 +116,7 @@ impl Node {
     }
     /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -150,9 +139,7 @@ impl Node {
 
 /// A builder for [`Node`](crate::types::Node).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_id: ::std::option::Option<::std::string::String>,
@@ -160,14 +147,11 @@ pub struct NodeBuilder {
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) framework_attributes: ::std::option::Option<crate::types::NodeFrameworkAttributes>,
-    pub(crate) log_publishing_configuration:
-        ::std::option::Option<crate::types::NodeLogPublishingConfiguration>,
+    pub(crate) log_publishing_configuration: ::std::option::Option<crate::types::NodeLogPublishingConfiguration>,
     pub(crate) state_db: ::std::option::Option<crate::types::StateDbType>,
     pub(crate) status: ::std::option::Option<crate::types::NodeStatus>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
@@ -218,18 +202,12 @@ impl NodeBuilder {
         &self.id
     }
     /// <p>The instance type of the node.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type of the node.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -238,18 +216,12 @@ impl NodeBuilder {
         &self.instance_type
     }
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -263,39 +235,26 @@ impl NodeBuilder {
         self
     }
     /// <p>Attributes of the blockchain framework being used.</p>
-    pub fn set_framework_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeFrameworkAttributes>,
-    ) -> Self {
+    pub fn set_framework_attributes(mut self, input: ::std::option::Option<crate::types::NodeFrameworkAttributes>) -> Self {
         self.framework_attributes = input;
         self
     }
     /// <p>Attributes of the blockchain framework being used.</p>
-    pub fn get_framework_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::NodeFrameworkAttributes> {
+    pub fn get_framework_attributes(&self) -> &::std::option::Option<crate::types::NodeFrameworkAttributes> {
         &self.framework_attributes
     }
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
-    pub fn log_publishing_configuration(
-        mut self,
-        input: crate::types::NodeLogPublishingConfiguration,
-    ) -> Self {
+    pub fn log_publishing_configuration(mut self, input: crate::types::NodeLogPublishingConfiguration) -> Self {
         self.log_publishing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
-    pub fn set_log_publishing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeLogPublishingConfiguration>,
-    ) -> Self {
+    pub fn set_log_publishing_configuration(mut self, input: ::std::option::Option<crate::types::NodeLogPublishingConfiguration>) -> Self {
         self.log_publishing_configuration = input;
         self
     }
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
-    pub fn get_log_publishing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NodeLogPublishingConfiguration> {
+    pub fn get_log_publishing_configuration(&self) -> &::std::option::Option<crate::types::NodeLogPublishingConfiguration> {
         &self.log_publishing_configuration
     }
     /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
@@ -368,10 +327,7 @@ impl NodeBuilder {
         self
     }
     /// <p>The date and time that the node was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -385,11 +341,7 @@ impl NodeBuilder {
     ///
     /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -397,22 +349,13 @@ impl NodeBuilder {
     }
     /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>

@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for GetInsightSummariesOutput {
 }
 impl GetInsightSummariesOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightSummariesOutput`](crate::operation::get_insight_summaries::GetInsightSummariesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_insight_summaries::builders::GetInsightSummariesOutputBuilder {
-        crate::operation::get_insight_summaries::builders::GetInsightSummariesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_insight_summaries::builders::GetInsightSummariesOutputBuilder {
+        crate::operation::get_insight_summaries::builders::GetInsightSummariesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInsightSummariesOutput`](crate::operation::get_insight_summaries::GetInsightSummariesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightSummariesOutputBuilder {
-    pub(crate) insight_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::InsightSummary>>,
+    pub(crate) insight_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InsightSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl GetInsightSummariesOutputBuilder {
         self
     }
     /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
-    pub fn set_insight_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSummary>>,
-    ) -> Self {
+    pub fn set_insight_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSummary>>) -> Self {
         self.insight_summaries = input;
         self
     }
     /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
-    pub fn get_insight_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSummary>> {
+    pub fn get_insight_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSummary>> {
         &self.insight_summaries
     }
     /// <p>Pagination token.</p>

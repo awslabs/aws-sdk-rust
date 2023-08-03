@@ -30,9 +30,7 @@ impl RegisterTypeOutput {
 
 /// A builder for [`RegisterTypeOutput`](crate::operation::register_type::RegisterTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterTypeOutputBuilder {
     pub(crate) registration_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -40,19 +38,13 @@ pub struct RegisterTypeOutputBuilder {
 impl RegisterTypeOutputBuilder {
     /// <p>The identifier for this registration request.</p>
     /// <p>Use this registration token when calling <code>DescribeTypeRegistration</code>, which returns information about the status and IDs of the extension registration.</p>
-    pub fn registration_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registration_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registration_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for this registration request.</p>
     /// <p>Use this registration token when calling <code>DescribeTypeRegistration</code>, which returns information about the status and IDs of the extension registration.</p>
-    pub fn set_registration_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registration_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registration_token = input;
         self
     }

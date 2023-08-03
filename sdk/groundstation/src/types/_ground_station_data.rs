@@ -37,9 +37,7 @@ impl GroundStationData {
 
 /// A builder for [`GroundStationData`](crate::types::GroundStationData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroundStationDataBuilder {
     pub(crate) ground_station_id: ::std::option::Option<::std::string::String>,
     pub(crate) ground_station_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct GroundStationDataBuilder {
 }
 impl GroundStationDataBuilder {
     /// <p>UUID of a ground station.</p>
-    pub fn ground_station_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ground_station_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ground_station_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a ground station.</p>
-    pub fn set_ground_station_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ground_station_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ground_station_id = input;
         self
     }
@@ -67,18 +59,12 @@ impl GroundStationDataBuilder {
         &self.ground_station_id
     }
     /// <p>Name of a ground station.</p>
-    pub fn ground_station_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ground_station_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ground_station_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a ground station.</p>
-    pub fn set_ground_station_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ground_station_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ground_station_name = input;
         self
     }

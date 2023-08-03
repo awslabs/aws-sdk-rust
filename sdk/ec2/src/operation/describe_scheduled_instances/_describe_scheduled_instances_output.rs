@@ -9,8 +9,7 @@ pub struct DescribeScheduledInstancesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Scheduled Instances.</p>
     #[doc(hidden)]
-    pub scheduled_instance_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstance>>,
+    pub scheduled_instance_set: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeScheduledInstancesOutput {
@@ -19,9 +18,7 @@ impl DescribeScheduledInstancesOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the Scheduled Instances.</p>
-    pub fn scheduled_instance_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ScheduledInstance]> {
+    pub fn scheduled_instance_set(&self) -> ::std::option::Option<&[crate::types::ScheduledInstance]> {
         self.scheduled_instance_set.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeScheduledInstancesOutput {
 }
 impl DescribeScheduledInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledInstancesOutput`](crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput).
-    pub fn builder() -> crate::operation::describe_scheduled_instances::builders::DescribeScheduledInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_scheduled_instances::builders::DescribeScheduledInstancesOutputBuilder {
         crate::operation::describe_scheduled_instances::builders::DescribeScheduledInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScheduledInstancesOutput`](crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScheduledInstancesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) scheduled_instance_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstance>>,
+    pub(crate) scheduled_instance_set: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeScheduledInstancesOutputBuilder {
@@ -75,17 +69,12 @@ impl DescribeScheduledInstancesOutputBuilder {
         self
     }
     /// <p>Information about the Scheduled Instances.</p>
-    pub fn set_scheduled_instance_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstance>>,
-    ) -> Self {
+    pub fn set_scheduled_instance_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstance>>) -> Self {
         self.scheduled_instance_set = input;
         self
     }
     /// <p>Information about the Scheduled Instances.</p>
-    pub fn get_scheduled_instance_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstance>> {
+    pub fn get_scheduled_instance_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstance>> {
         &self.scheduled_instance_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -98,9 +87,7 @@ impl DescribeScheduledInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeScheduledInstancesOutput`](crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput {
+    pub fn build(self) -> crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput {
         crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput {
             next_token: self.next_token,
             scheduled_instance_set: self.scheduled_instance_set,

@@ -9,8 +9,7 @@ pub struct ListMissionProfilesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of mission profiles.</p>
     #[doc(hidden)]
-    pub mission_profile_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>>,
+    pub mission_profile_list: ::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>>,
     _request_id: Option<String>,
 }
 impl ListMissionProfilesOutput {
@@ -19,9 +18,7 @@ impl ListMissionProfilesOutput {
         self.next_token.as_deref()
     }
     /// <p>List of mission profiles.</p>
-    pub fn mission_profile_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MissionProfileListItem]> {
+    pub fn mission_profile_list(&self) -> ::std::option::Option<&[crate::types::MissionProfileListItem]> {
         self.mission_profile_list.as_deref()
     }
 }
@@ -32,22 +29,17 @@ impl ::aws_http::request_id::RequestId for ListMissionProfilesOutput {
 }
 impl ListMissionProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListMissionProfilesOutput`](crate::operation::list_mission_profiles::ListMissionProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_mission_profiles::builders::ListMissionProfilesOutputBuilder {
-        crate::operation::list_mission_profiles::builders::ListMissionProfilesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_mission_profiles::builders::ListMissionProfilesOutputBuilder {
+        crate::operation::list_mission_profiles::builders::ListMissionProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMissionProfilesOutput`](crate::operation::list_mission_profiles::ListMissionProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMissionProfilesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) mission_profile_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>>,
+    pub(crate) mission_profile_list: ::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>>,
     _request_id: Option<String>,
 }
 impl ListMissionProfilesOutputBuilder {
@@ -77,17 +69,12 @@ impl ListMissionProfilesOutputBuilder {
         self
     }
     /// <p>List of mission profiles.</p>
-    pub fn set_mission_profile_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>>,
-    ) -> Self {
+    pub fn set_mission_profile_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>>) -> Self {
         self.mission_profile_list = input;
         self
     }
     /// <p>List of mission profiles.</p>
-    pub fn get_mission_profile_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>> {
+    pub fn get_mission_profile_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>> {
         &self.mission_profile_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

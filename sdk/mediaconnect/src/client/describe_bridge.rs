@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeBridgeOutput`](crate::operation::describe_bridge::DescribeBridgeOutput) with field(s):
     ///   - [`bridge(Option<Bridge>)`](crate::operation::describe_bridge::DescribeBridgeOutput::bridge): A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
     /// - On failure, responds with [`SdkError<DescribeBridgeError>`](crate::operation::describe_bridge::DescribeBridgeError)
-    pub fn describe_bridge(
-        &self,
-    ) -> crate::operation::describe_bridge::builders::DescribeBridgeFluentBuilder {
-        crate::operation::describe_bridge::builders::DescribeBridgeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_bridge(&self) -> crate::operation::describe_bridge::builders::DescribeBridgeFluentBuilder {
+        crate::operation::describe_bridge::builders::DescribeBridgeFluentBuilder::new(self.handle.clone())
     }
 }

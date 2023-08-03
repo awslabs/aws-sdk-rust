@@ -10,9 +10,7 @@ pub struct RevokeClusterSecurityGroupIngressOutput {
 }
 impl RevokeClusterSecurityGroupIngressOutput {
     /// <p>Describes a security group.</p>
-    pub fn cluster_security_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClusterSecurityGroup> {
+    pub fn cluster_security_group(&self) -> ::std::option::Option<&crate::types::ClusterSecurityGroup> {
         self.cluster_security_group.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for RevokeClusterSecurityGroupIngressOutp
 }
 impl RevokeClusterSecurityGroupIngressOutput {
     /// Creates a new builder-style object to manufacture [`RevokeClusterSecurityGroupIngressOutput`](crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressOutput).
-    pub fn builder() -> crate::operation::revoke_cluster_security_group_ingress::builders::RevokeClusterSecurityGroupIngressOutputBuilder{
+    pub fn builder() -> crate::operation::revoke_cluster_security_group_ingress::builders::RevokeClusterSecurityGroupIngressOutputBuilder {
         crate::operation::revoke_cluster_security_group_ingress::builders::RevokeClusterSecurityGroupIngressOutputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeClusterSecurityGroupIngressOutput`](crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeClusterSecurityGroupIngressOutputBuilder {
     pub(crate) cluster_security_group: ::std::option::Option<crate::types::ClusterSecurityGroup>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl RevokeClusterSecurityGroupIngressOutputBuilder {
         self
     }
     /// <p>Describes a security group.</p>
-    pub fn set_cluster_security_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterSecurityGroup>,
-    ) -> Self {
+    pub fn set_cluster_security_group(mut self, input: ::std::option::Option<crate::types::ClusterSecurityGroup>) -> Self {
         self.cluster_security_group = input;
         self
     }
     /// <p>Describes a security group.</p>
-    pub fn get_cluster_security_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClusterSecurityGroup> {
+    pub fn get_cluster_security_group(&self) -> &::std::option::Option<crate::types::ClusterSecurityGroup> {
         &self.cluster_security_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,10 +58,9 @@ impl RevokeClusterSecurityGroupIngressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RevokeClusterSecurityGroupIngressOutput`](crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressOutput).
-    pub fn build(self) -> crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressOutput{
+    pub fn build(self) -> crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressOutput {
         crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressOutput {
-            cluster_security_group: self.cluster_security_group
-            ,
+            cluster_security_group: self.cluster_security_group,
             _request_id: self._request_id,
         }
     }

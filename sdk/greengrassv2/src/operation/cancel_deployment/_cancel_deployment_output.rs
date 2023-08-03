@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CancelDeploymentOutput {
 }
 impl CancelDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CancelDeploymentOutput`](crate::operation::cancel_deployment::CancelDeploymentOutput).
-    pub fn builder() -> crate::operation::cancel_deployment::builders::CancelDeploymentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_deployment::builders::CancelDeploymentOutputBuilder {
         crate::operation::cancel_deployment::builders::CancelDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelDeploymentOutput`](crate::operation::cancel_deployment::CancelDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelDeploymentOutputBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

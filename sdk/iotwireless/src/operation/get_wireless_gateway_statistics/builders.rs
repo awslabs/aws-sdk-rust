@@ -26,7 +26,7 @@ impl GetWirelessGatewayStatisticsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayStatisticsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsInputBuilder,
+    inner: crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsInputBuilder,
 }
 impl GetWirelessGatewayStatisticsFluentBuilder {
     /// Creates a new `GetWirelessGatewayStatistics`.
@@ -37,7 +37,7 @@ impl GetWirelessGatewayStatisticsFluentBuilder {
         }
     }
     /// Access the GetWirelessGatewayStatistics as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetWirelessGatewayStatisticsFluentBuilder {
             crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetWirelessGatewayStatisticsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetWirelessGatewayStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetWirelessGatewayStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetWirelessGatewayStatisticsFluentBuilder {
             crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the wireless gateway for which to get the data.</p>
-    pub fn wireless_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wireless_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.wireless_gateway_id(input.into());
         self
     }
     /// <p>The ID of the wireless gateway for which to get the data.</p>
-    pub fn set_wireless_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_wireless_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_wireless_gateway_id(input);
         self
     }

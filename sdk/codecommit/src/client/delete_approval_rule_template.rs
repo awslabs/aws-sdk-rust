@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteApprovalRuleTemplateOutput`](crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput) with field(s):
     ///   - [`approval_rule_template_id(Option<String>)`](crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput::approval_rule_template_id): <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
     /// - On failure, responds with [`SdkError<DeleteApprovalRuleTemplateError>`](crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError)
-    pub fn delete_approval_rule_template(&self) -> crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateFluentBuilder{
+    pub fn delete_approval_rule_template(
+        &self,
+    ) -> crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateFluentBuilder {
         crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateFluentBuilder::new(self.handle.clone())
     }
 }

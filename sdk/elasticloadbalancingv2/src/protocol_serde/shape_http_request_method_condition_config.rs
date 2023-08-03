@@ -20,8 +20,7 @@ pub fn ser_http_request_method_condition_config(
 
 pub fn de_http_request_method_condition_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::HttpRequestMethodConditionConfig, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::HttpRequestMethodConditionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::HttpRequestMethodConditionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

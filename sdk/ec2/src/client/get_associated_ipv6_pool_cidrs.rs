@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`ipv6_cidr_associations(Option<Vec<Ipv6CidrAssociation>>)`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput::ipv6_cidr_associations): <p>Information about the IPv6 CIDR block associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetAssociatedIpv6PoolCidrsError>`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError)
-    pub fn get_associated_ipv6_pool_cidrs(&self) -> crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder{
+    pub fn get_associated_ipv6_pool_cidrs(
+        &self,
+    ) -> crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder {
         crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder::new(self.handle.clone())
     }
 }

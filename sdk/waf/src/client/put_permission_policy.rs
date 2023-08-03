@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder::set_policy): <p>The policy to attach to the specified RuleGroup.</p>
     /// - On success, responds with [`PutPermissionPolicyOutput`](crate::operation::put_permission_policy::PutPermissionPolicyOutput)
     /// - On failure, responds with [`SdkError<PutPermissionPolicyError>`](crate::operation::put_permission_policy::PutPermissionPolicyError)
-    pub fn put_permission_policy(
-        &self,
-    ) -> crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder {
-        crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_permission_policy(&self) -> crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder {
+        crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder::new(self.handle.clone())
     }
 }

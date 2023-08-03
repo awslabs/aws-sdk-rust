@@ -12,10 +12,7 @@ pub fn ser_put_auto_scaling_policy_input(
     if let Some(var_3) = &input.auto_scaling_policy {
         #[allow(unused_mut)]
         let mut object_4 = object.key("AutoScalingPolicy").start_object();
-        crate::protocol_serde::shape_auto_scaling_policy::ser_auto_scaling_policy(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_auto_scaling_policy::ser_auto_scaling_policy(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

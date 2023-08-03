@@ -36,9 +36,7 @@ impl ListTunnelsInput {
 
 /// A builder for [`ListTunnelsInput`](crate::operation::list_tunnels::ListTunnelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTunnelsInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,12 +86,7 @@ impl ListTunnelsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTunnelsInput`](crate::operation::list_tunnels::ListTunnelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tunnels::ListTunnelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tunnels::ListTunnelsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tunnels::ListTunnelsInput {
             thing_name: self.thing_name,
             max_results: self.max_results,

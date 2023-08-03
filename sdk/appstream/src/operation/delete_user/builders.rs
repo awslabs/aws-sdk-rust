@@ -10,10 +10,7 @@ impl DeleteUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_user::DeleteUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user::DeleteUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user::DeleteUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_user();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl DeleteUserFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_user::DeleteUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_user::DeleteUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_user::DeleteUserError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl DeleteUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl DeleteUserFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_user::DeleteUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_user::DeleteUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_user::DeleteUserError>,
     > {
         self.customize_middleware().await
@@ -138,17 +126,12 @@ impl DeleteUserFluentBuilder {
         self
     }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
-    pub fn get_authentication_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         self.inner.get_authentication_type()
     }
 }

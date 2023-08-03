@@ -44,9 +44,7 @@ impl SplitShardInput {
 
 /// A builder for [`SplitShardInput`](crate::operation::split_shard::SplitShardInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SplitShardInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) shard_to_split: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl SplitShardInputBuilder {
         &self.stream_name
     }
     /// <p>The shard ID of the shard to split.</p>
-    pub fn shard_to_split(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shard_to_split(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_to_split = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The shard ID of the shard to split.</p>
-    pub fn set_shard_to_split(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shard_to_split(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shard_to_split = input;
         self
     }
@@ -89,18 +81,12 @@ impl SplitShardInputBuilder {
         &self.shard_to_split
     }
     /// <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
-    pub fn new_starting_hash_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_starting_hash_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_starting_hash_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
-    pub fn set_new_starting_hash_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_starting_hash_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_starting_hash_key = input;
         self
     }
@@ -123,12 +109,7 @@ impl SplitShardInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`SplitShardInput`](crate::operation::split_shard::SplitShardInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::split_shard::SplitShardInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::split_shard::SplitShardInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::split_shard::SplitShardInput {
             stream_name: self.stream_name,
             shard_to_split: self.shard_to_split,

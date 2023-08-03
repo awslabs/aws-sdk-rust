@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdatePackageOutput`](crate::operation::update_package::UpdatePackageOutput) with field(s):
     ///   - [`package_details(Option<PackageDetails>)`](crate::operation::update_package::UpdatePackageOutput::package_details): <p>Information about the package <code>PackageDetails</code>.</p>
     /// - On failure, responds with [`SdkError<UpdatePackageError>`](crate::operation::update_package::UpdatePackageError)
-    pub fn update_package(
-        &self,
-    ) -> crate::operation::update_package::builders::UpdatePackageFluentBuilder {
-        crate::operation::update_package::builders::UpdatePackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_package(&self) -> crate::operation::update_package::builders::UpdatePackageFluentBuilder {
+        crate::operation::update_package::builders::UpdatePackageFluentBuilder::new(self.handle.clone())
     }
 }

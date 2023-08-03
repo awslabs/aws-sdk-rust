@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`local_gateway_route_tables(Option<Vec<LocalGatewayRouteTable>>)`](crate::operation::describe_local_gateway_route_tables::DescribeLocalGatewayRouteTablesOutput::local_gateway_route_tables): <p>Information about the local gateway route tables.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_local_gateway_route_tables::DescribeLocalGatewayRouteTablesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeLocalGatewayRouteTablesError>`](crate::operation::describe_local_gateway_route_tables::DescribeLocalGatewayRouteTablesError)
-    pub fn describe_local_gateway_route_tables(&self) -> crate::operation::describe_local_gateway_route_tables::builders::DescribeLocalGatewayRouteTablesFluentBuilder{
+    pub fn describe_local_gateway_route_tables(
+        &self,
+    ) -> crate::operation::describe_local_gateway_route_tables::builders::DescribeLocalGatewayRouteTablesFluentBuilder {
         crate::operation::describe_local_gateway_route_tables::builders::DescribeLocalGatewayRouteTablesFluentBuilder::new(self.handle.clone())
     }
 }

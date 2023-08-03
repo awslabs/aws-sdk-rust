@@ -21,10 +21,7 @@ pub fn ser_update_project_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_project_source::ser_project_source(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_project_source::ser_project_source(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -39,10 +36,7 @@ pub fn ser_update_project_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_project_source_version::ser_project_source_version(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_project_source_version::ser_project_source_version(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }
@@ -51,10 +45,7 @@ pub fn ser_update_project_input(
     if let Some(var_14) = &input.artifacts {
         #[allow(unused_mut)]
         let mut object_15 = object.key("artifacts").start_object();
-        crate::protocol_serde::shape_project_artifacts::ser_project_artifacts(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_project_artifacts::ser_project_artifacts(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.secondary_artifacts {
@@ -63,10 +54,7 @@ pub fn ser_update_project_input(
             {
                 #[allow(unused_mut)]
                 let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_project_artifacts::ser_project_artifacts(
-                    &mut object_19,
-                    item_18,
-                )?;
+                crate::protocol_serde::shape_project_artifacts::ser_project_artifacts(&mut object_19, item_18)?;
                 object_19.finish();
             }
         }
@@ -81,10 +69,7 @@ pub fn ser_update_project_input(
     if let Some(var_22) = &input.environment {
         #[allow(unused_mut)]
         let mut object_23 = object.key("environment").start_object();
-        crate::protocol_serde::shape_project_environment::ser_project_environment(
-            &mut object_23,
-            var_22,
-        )?;
+        crate::protocol_serde::shape_project_environment::ser_project_environment(&mut object_23, var_22)?;
         object_23.finish();
     }
     if let Some(var_24) = &input.service_role {
@@ -147,10 +132,7 @@ pub fn ser_update_project_input(
     if let Some(var_41) = &input.build_batch_config {
         #[allow(unused_mut)]
         let mut object_42 = object.key("buildBatchConfig").start_object();
-        crate::protocol_serde::shape_project_build_batch_config::ser_project_build_batch_config(
-            &mut object_42,
-            var_41,
-        )?;
+        crate::protocol_serde::shape_project_build_batch_config::ser_project_build_batch_config(&mut object_42, var_41)?;
         object_42.finish();
     }
     if let Some(var_43) = &input.concurrent_build_limit {

@@ -8,8 +8,7 @@ pub struct ModifyWorkspaceCreationPropertiesInput {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The default properties for creating WorkSpaces.</p>
     #[doc(hidden)]
-    pub workspace_creation_properties:
-        ::std::option::Option<crate::types::WorkspaceCreationProperties>,
+    pub workspace_creation_properties: ::std::option::Option<crate::types::WorkspaceCreationProperties>,
 }
 impl ModifyWorkspaceCreationPropertiesInput {
     /// <p>The identifier of the directory.</p>
@@ -17,28 +16,23 @@ impl ModifyWorkspaceCreationPropertiesInput {
         self.resource_id.as_deref()
     }
     /// <p>The default properties for creating WorkSpaces.</p>
-    pub fn workspace_creation_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkspaceCreationProperties> {
+    pub fn workspace_creation_properties(&self) -> ::std::option::Option<&crate::types::WorkspaceCreationProperties> {
         self.workspace_creation_properties.as_ref()
     }
 }
 impl ModifyWorkspaceCreationPropertiesInput {
     /// Creates a new builder-style object to manufacture [`ModifyWorkspaceCreationPropertiesInput`](crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesInput).
-    pub fn builder() -> crate::operation::modify_workspace_creation_properties::builders::ModifyWorkspaceCreationPropertiesInputBuilder{
+    pub fn builder() -> crate::operation::modify_workspace_creation_properties::builders::ModifyWorkspaceCreationPropertiesInputBuilder {
         crate::operation::modify_workspace_creation_properties::builders::ModifyWorkspaceCreationPropertiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyWorkspaceCreationPropertiesInput`](crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyWorkspaceCreationPropertiesInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) workspace_creation_properties:
-        ::std::option::Option<crate::types::WorkspaceCreationProperties>,
+    pub(crate) workspace_creation_properties: ::std::option::Option<crate::types::WorkspaceCreationProperties>,
 }
 impl ModifyWorkspaceCreationPropertiesInputBuilder {
     /// <p>The identifier of the directory.</p>
@@ -56,36 +50,31 @@ impl ModifyWorkspaceCreationPropertiesInputBuilder {
         &self.resource_id
     }
     /// <p>The default properties for creating WorkSpaces.</p>
-    pub fn workspace_creation_properties(
-        mut self,
-        input: crate::types::WorkspaceCreationProperties,
-    ) -> Self {
+    pub fn workspace_creation_properties(mut self, input: crate::types::WorkspaceCreationProperties) -> Self {
         self.workspace_creation_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default properties for creating WorkSpaces.</p>
-    pub fn set_workspace_creation_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceCreationProperties>,
-    ) -> Self {
+    pub fn set_workspace_creation_properties(mut self, input: ::std::option::Option<crate::types::WorkspaceCreationProperties>) -> Self {
         self.workspace_creation_properties = input;
         self
     }
     /// <p>The default properties for creating WorkSpaces.</p>
-    pub fn get_workspace_creation_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkspaceCreationProperties> {
+    pub fn get_workspace_creation_properties(&self) -> &::std::option::Option<crate::types::WorkspaceCreationProperties> {
         &self.workspace_creation_properties
     }
     /// Consumes the builder and constructs a [`ModifyWorkspaceCreationPropertiesInput`](crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesInput {
-                resource_id: self.resource_id
-                ,
-                workspace_creation_properties: self.workspace_creation_properties
-                ,
-            }
+                resource_id: self.resource_id,
+                workspace_creation_properties: self.workspace_creation_properties,
+            },
         )
     }
 }

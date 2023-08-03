@@ -14,8 +14,7 @@ pub struct ListBotLocalesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Summary information for the locales that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more locales available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     #[doc(hidden)]
-    pub bot_locale_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleSummary>>,
+    pub bot_locale_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleSummary>>,
     _request_id: Option<String>,
 }
 impl ListBotLocalesOutput {
@@ -50,15 +49,12 @@ impl ListBotLocalesOutput {
 
 /// A builder for [`ListBotLocalesOutput`](crate::operation::list_bot_locales::ListBotLocalesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotLocalesOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) bot_locale_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleSummary>>,
+    pub(crate) bot_locale_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleSummary>>,
     _request_id: Option<String>,
 }
 impl ListBotLocalesOutputBuilder {
@@ -116,17 +112,12 @@ impl ListBotLocalesOutputBuilder {
         self
     }
     /// <p>Summary information for the locales that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more locales available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn set_bot_locale_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleSummary>>,
-    ) -> Self {
+    pub fn set_bot_locale_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotLocaleSummary>>) -> Self {
         self.bot_locale_summaries = input;
         self
     }
     /// <p>Summary information for the locales that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more locales available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn get_bot_locale_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotLocaleSummary>> {
+    pub fn get_bot_locale_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotLocaleSummary>> {
         &self.bot_locale_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -23,9 +23,7 @@ impl TriggerNodeDetails {
 
 /// A builder for [`TriggerNodeDetails`](crate::types::TriggerNodeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TriggerNodeDetailsBuilder {
     pub(crate) trigger: ::std::option::Option<crate::types::Trigger>,
 }
@@ -46,8 +44,6 @@ impl TriggerNodeDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`TriggerNodeDetails`](crate::types::TriggerNodeDetails).
     pub fn build(self) -> crate::types::TriggerNodeDetails {
-        crate::types::TriggerNodeDetails {
-            trigger: self.trigger,
-        }
+        crate::types::TriggerNodeDetails { trigger: self.trigger }
     }
 }

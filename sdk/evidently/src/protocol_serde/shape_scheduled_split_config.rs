@@ -27,10 +27,7 @@ pub fn ser_scheduled_split_config(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_segment_override::ser_segment_override(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_segment_override::ser_segment_override(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }

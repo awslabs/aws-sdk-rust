@@ -41,13 +41,7 @@
 /// Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper pictures, while blend produces smoother motion. If your source file includes a ticker, such as a scrolling headline at the bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling: Choose Linear interpolation. Note that Linear interpolation may introduce video artifacts into your output.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeinterlaceAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for DeinterlaceAlgorithm {
             "INTERPOLATE" => DeinterlaceAlgorithm::Interpolate,
             "INTERPOLATE_TICKER" => DeinterlaceAlgorithm::InterpolateTicker,
             "LINEAR_INTERPOLATION" => DeinterlaceAlgorithm::LinearInterpolation,
-            other => DeinterlaceAlgorithm::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DeinterlaceAlgorithm::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl DeinterlaceAlgorithm {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BLEND",
-            "BLEND_TICKER",
-            "INTERPOLATE",
-            "INTERPOLATE_TICKER",
-            "LINEAR_INTERPOLATION",
-        ]
+        &["BLEND", "BLEND_TICKER", "INTERPOLATE", "INTERPOLATE_TICKER", "LINEAR_INTERPOLATION"]
     }
 }
 impl ::std::convert::AsRef<str> for DeinterlaceAlgorithm {

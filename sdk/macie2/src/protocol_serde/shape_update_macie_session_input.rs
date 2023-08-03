@@ -4,9 +4,7 @@ pub fn ser_update_macie_session_input(
     input: &crate::operation::update_macie_session::UpdateMacieSessionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.finding_publishing_frequency {
-        object
-            .key("findingPublishingFrequency")
-            .string(var_1.as_str());
+        object.key("findingPublishingFrequency").string(var_1.as_str());
     }
     if let Some(var_2) = &input.status {
         object.key("status").string(var_2.as_str());

@@ -22,18 +22,14 @@ impl AssociateApprovedOriginInput {
 }
 impl AssociateApprovedOriginInput {
     /// Creates a new builder-style object to manufacture [`AssociateApprovedOriginInput`](crate::operation::associate_approved_origin::AssociateApprovedOriginInput).
-    pub fn builder(
-    ) -> crate::operation::associate_approved_origin::builders::AssociateApprovedOriginInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_approved_origin::builders::AssociateApprovedOriginInputBuilder {
         crate::operation::associate_approved_origin::builders::AssociateApprovedOriginInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateApprovedOriginInput`](crate::operation::associate_approved_origin::AssociateApprovedOriginInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateApprovedOriginInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl AssociateApprovedOriginInputBuilder {
         crate::operation::associate_approved_origin::AssociateApprovedOriginInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_approved_origin::AssociateApprovedOriginInput {
-                instance_id: self.instance_id,
-                origin: self.origin,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_approved_origin::AssociateApprovedOriginInput {
+            instance_id: self.instance_id,
+            origin: self.origin,
+        })
     }
 }

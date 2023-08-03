@@ -44,16 +44,14 @@ impl ModifySnapshotCopyRetentionPeriodInput {
 }
 impl ModifySnapshotCopyRetentionPeriodInput {
     /// Creates a new builder-style object to manufacture [`ModifySnapshotCopyRetentionPeriodInput`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodInput).
-    pub fn builder() -> crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodInputBuilder{
+    pub fn builder() -> crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodInputBuilder {
         crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifySnapshotCopyRetentionPeriodInput`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifySnapshotCopyRetentionPeriodInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) retention_period: ::std::option::Option<i32>,
@@ -62,19 +60,13 @@ pub struct ModifySnapshotCopyRetentionPeriodInputBuilder {
 impl ModifySnapshotCopyRetentionPeriodInputBuilder {
     /// <p>The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -130,18 +122,18 @@ impl ModifySnapshotCopyRetentionPeriodInputBuilder {
         &self.manual
     }
     /// Consumes the builder and constructs a [`ModifySnapshotCopyRetentionPeriodInput`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodInput {
-                cluster_identifier: self.cluster_identifier
-                ,
-                retention_period: self.retention_period
-                    .unwrap_or_default()
-                ,
-                manual: self.manual
-                    .unwrap_or_default()
-                ,
-            }
+                cluster_identifier: self.cluster_identifier,
+                retention_period: self.retention_period.unwrap_or_default(),
+                manual: self.manual.unwrap_or_default(),
+            },
         )
     }
 }

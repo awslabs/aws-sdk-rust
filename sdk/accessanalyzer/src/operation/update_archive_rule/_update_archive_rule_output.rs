@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateArchiveRuleOutput {
 }
 impl UpdateArchiveRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateArchiveRuleOutput`](crate::operation::update_archive_rule::UpdateArchiveRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_archive_rule::builders::UpdateArchiveRuleOutputBuilder {
+    pub fn builder() -> crate::operation::update_archive_rule::builders::UpdateArchiveRuleOutputBuilder {
         crate::operation::update_archive_rule::builders::UpdateArchiveRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateArchiveRuleOutput`](crate::operation::update_archive_rule::UpdateArchiveRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateArchiveRuleOutputBuilder {
     _request_id: Option<String>,
 }

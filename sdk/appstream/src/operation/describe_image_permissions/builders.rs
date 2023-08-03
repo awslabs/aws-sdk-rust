@@ -26,7 +26,7 @@ impl DescribeImagePermissionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeImagePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_image_permissions::builders::DescribeImagePermissionsInputBuilder,
+    inner: crate::operation::describe_image_permissions::builders::DescribeImagePermissionsInputBuilder,
 }
 impl DescribeImagePermissionsFluentBuilder {
     /// Creates a new `DescribeImagePermissions`.
@@ -37,10 +37,7 @@ impl DescribeImagePermissionsFluentBuilder {
         }
     }
     /// Access the DescribeImagePermissions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_image_permissions::builders::DescribeImagePermissionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_image_permissions::builders::DescribeImagePermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeImagePermissionsFluentBuilder {
             crate::operation::describe_image_permissions::DescribeImagePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_permissions::DescribeImagePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_permissions::DescribeImagePermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeImagePermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeImagePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_permissions::DescribeImagePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_permissions::DescribeImagePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_permissions::DescribeImagePermissionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeImagePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_permissions::DescribeImagePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_permissions::DescribeImagePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_permissions::DescribeImagePermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl DescribeImagePermissionsFluentBuilder {
             crate::operation::describe_image_permissions::DescribeImagePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_permissions::DescribeImagePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_permissions::DescribeImagePermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_image_permissions::paginator::DescribeImagePermissionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_image_permissions::paginator::DescribeImagePermissionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_image_permissions::paginator::DescribeImagePermissionsPaginator {
         crate::operation::describe_image_permissions::paginator::DescribeImagePermissionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
@@ -165,25 +148,17 @@ impl DescribeImagePermissionsFluentBuilder {
     /// To override the contents of this collection use [`set_shared_aws_account_ids`](Self::set_shared_aws_account_ids).
     ///
     /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
-    pub fn shared_aws_account_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_aws_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shared_aws_account_ids(input.into());
         self
     }
     /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
-    pub fn set_shared_aws_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_shared_aws_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_shared_aws_account_ids(input);
         self
     }
     /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
-    pub fn get_shared_aws_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_shared_aws_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_shared_aws_account_ids()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>

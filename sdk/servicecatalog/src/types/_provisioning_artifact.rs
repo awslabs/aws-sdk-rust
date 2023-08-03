@@ -51,9 +51,7 @@ impl ProvisioningArtifact {
 
 /// A builder for [`ProvisioningArtifact`](crate::types::ProvisioningArtifact).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisioningArtifactBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl ProvisioningArtifactBuilder {
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -127,17 +122,12 @@ impl ProvisioningArtifactBuilder {
         self
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
-    pub fn set_guidance(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>,
-    ) -> Self {
+    pub fn set_guidance(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>) -> Self {
         self.guidance = input;
         self
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
-    pub fn get_guidance(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisioningArtifactGuidance> {
+    pub fn get_guidance(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactGuidance> {
         &self.guidance
     }
     /// Consumes the builder and constructs a [`ProvisioningArtifact`](crate::types::ProvisioningArtifact).

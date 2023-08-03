@@ -19,9 +19,7 @@ impl DeleteUseCaseOutput {
 
 /// A builder for [`DeleteUseCaseOutput`](crate::operation::delete_use_case::DeleteUseCaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUseCaseOutputBuilder {
     _request_id: Option<String>,
 }

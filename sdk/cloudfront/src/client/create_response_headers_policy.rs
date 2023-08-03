@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput::location): <p>The URL of the response headers policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput::e_tag): <p>The version identifier for the current version of the response headers policy.</p>
     /// - On failure, responds with [`SdkError<CreateResponseHeadersPolicyError>`](crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError)
-    pub fn create_response_headers_policy(&self) -> crate::operation::create_response_headers_policy::builders::CreateResponseHeadersPolicyFluentBuilder{
+    pub fn create_response_headers_policy(
+        &self,
+    ) -> crate::operation::create_response_headers_policy::builders::CreateResponseHeadersPolicyFluentBuilder {
         crate::operation::create_response_headers_policy::builders::CreateResponseHeadersPolicyFluentBuilder::new(self.handle.clone())
     }
 }

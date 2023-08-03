@@ -16,9 +16,7 @@ pub fn ser_aws_step_function_state_machine_logging_configuration_details(
         array_2.finish();
     }
     if input.include_execution_data {
-        object
-            .key("IncludeExecutionData")
-            .boolean(input.include_execution_data);
+        object.key("IncludeExecutionData").boolean(input.include_execution_data);
     }
     if let Some(var_5) = &input.level {
         object.key("Level").string(var_5.as_str());
@@ -28,17 +26,9 @@ pub fn ser_aws_step_function_state_machine_logging_configuration_details(
 
 pub(crate) fn de_aws_step_function_state_machine_logging_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -48,47 +38,36 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Destinations" => {
-                                builder = builder.set_destinations(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Destinations" => {
+                            builder = builder.set_destinations(
                                     crate::protocol_serde::shape_aws_step_function_state_machine_logging_configuration_destinations_list::de_aws_step_function_state_machine_logging_configuration_destinations_list(tokens)?
                                 );
-                            }
-                            "IncludeExecutionData" => {
-                                builder = builder.set_include_execution_data(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "Level" => {
-                                builder = builder.set_level(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "IncludeExecutionData" => {
+                            builder = builder.set_include_execution_data(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "Level" => {
+                            builder = builder.set_level(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

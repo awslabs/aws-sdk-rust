@@ -30,9 +30,7 @@ impl WriteOperation {
 
 /// A builder for [`WriteOperation`](crate::types::WriteOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WriteOperationBuilder {
     pub(crate) add_object: ::std::option::Option<crate::types::AddObjectInput>,
     pub(crate) delete_object: ::std::option::Option<crate::types::DeleteObjectInput>,
@@ -44,10 +42,7 @@ impl WriteOperationBuilder {
         self
     }
     /// <p>A new object to add to the governed table.</p>
-    pub fn set_add_object(
-        mut self,
-        input: ::std::option::Option<crate::types::AddObjectInput>,
-    ) -> Self {
+    pub fn set_add_object(mut self, input: ::std::option::Option<crate::types::AddObjectInput>) -> Self {
         self.add_object = input;
         self
     }
@@ -61,10 +56,7 @@ impl WriteOperationBuilder {
         self
     }
     /// <p>An object to delete from the governed table.</p>
-    pub fn set_delete_object(
-        mut self,
-        input: ::std::option::Option<crate::types::DeleteObjectInput>,
-    ) -> Self {
+    pub fn set_delete_object(mut self, input: ::std::option::Option<crate::types::DeleteObjectInput>) -> Self {
         self.delete_object = input;
         self
     }

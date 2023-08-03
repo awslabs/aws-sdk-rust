@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TransactionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for TransactionType {
         match s {
             "READ_AND_WRITE" => TransactionType::ReadAndWrite,
             "READ_ONLY" => TransactionType::ReadOnly,
-            other => {
-                TransactionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => TransactionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

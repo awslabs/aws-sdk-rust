@@ -15,10 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateResolverEndpointOutput`](crate::operation::create_resolver_endpoint::CreateResolverEndpointOutput) with field(s):
     ///   - [`resolver_endpoint(Option<ResolverEndpoint>)`](crate::operation::create_resolver_endpoint::CreateResolverEndpointOutput::resolver_endpoint): <p>Information about the <code>CreateResolverEndpoint</code> request, including the status of the request.</p>
     /// - On failure, responds with [`SdkError<CreateResolverEndpointError>`](crate::operation::create_resolver_endpoint::CreateResolverEndpointError)
-    pub fn create_resolver_endpoint(
-        &self,
-    ) -> crate::operation::create_resolver_endpoint::builders::CreateResolverEndpointFluentBuilder
-    {
+    pub fn create_resolver_endpoint(&self) -> crate::operation::create_resolver_endpoint::builders::CreateResolverEndpointFluentBuilder {
         crate::operation::create_resolver_endpoint::builders::CreateResolverEndpointFluentBuilder::new(self.handle.clone())
     }
 }

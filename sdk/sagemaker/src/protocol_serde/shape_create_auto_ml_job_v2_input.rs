@@ -12,10 +12,7 @@ pub fn ser_create_auto_ml_job_v2_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_auto_ml_job_channel::ser_auto_ml_job_channel(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_auto_ml_job_channel::ser_auto_ml_job_channel(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -24,19 +21,13 @@ pub fn ser_create_auto_ml_job_v2_input(
     if let Some(var_6) = &input.output_data_config {
         #[allow(unused_mut)]
         let mut object_7 = object.key("OutputDataConfig").start_object();
-        crate::protocol_serde::shape_auto_ml_output_data_config::ser_auto_ml_output_data_config(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_auto_ml_output_data_config::ser_auto_ml_output_data_config(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.auto_ml_problem_type_config {
         #[allow(unused_mut)]
         let mut object_9 = object.key("AutoMLProblemTypeConfig").start_object();
-        crate::protocol_serde::shape_auto_ml_problem_type_config::ser_auto_ml_problem_type_config(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_auto_ml_problem_type_config::ser_auto_ml_problem_type_config(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.role_arn {
@@ -57,37 +48,25 @@ pub fn ser_create_auto_ml_job_v2_input(
     if let Some(var_15) = &input.security_config {
         #[allow(unused_mut)]
         let mut object_16 = object.key("SecurityConfig").start_object();
-        crate::protocol_serde::shape_auto_ml_security_config::ser_auto_ml_security_config(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_auto_ml_security_config::ser_auto_ml_security_config(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.auto_ml_job_objective {
         #[allow(unused_mut)]
         let mut object_18 = object.key("AutoMLJobObjective").start_object();
-        crate::protocol_serde::shape_auto_ml_job_objective::ser_auto_ml_job_objective(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_auto_ml_job_objective::ser_auto_ml_job_objective(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.model_deploy_config {
         #[allow(unused_mut)]
         let mut object_20 = object.key("ModelDeployConfig").start_object();
-        crate::protocol_serde::shape_model_deploy_config::ser_model_deploy_config(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_model_deploy_config::ser_model_deploy_config(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.data_split_config {
         #[allow(unused_mut)]
         let mut object_22 = object.key("DataSplitConfig").start_object();
-        crate::protocol_serde::shape_auto_ml_data_split_config::ser_auto_ml_data_split_config(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_auto_ml_data_split_config::ser_auto_ml_data_split_config(&mut object_22, var_21)?;
         object_22.finish();
     }
     Ok(())

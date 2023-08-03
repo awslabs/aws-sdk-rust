@@ -22,9 +22,7 @@ impl DescribeWorldInput {
 
 /// A builder for [`DescribeWorldInput`](crate::operation::describe_world::DescribeWorldInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorldInputBuilder {
     pub(crate) world: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeWorldInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorldInput`](crate::operation::describe_world::DescribeWorldInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_world::DescribeWorldInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_world::DescribeWorldInput {
-            world: self.world,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_world::DescribeWorldInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_world::DescribeWorldInput { world: self.world })
     }
 }

@@ -17,29 +17,23 @@ impl RequestSpotFleetInput {
         self.dry_run
     }
     /// <p>The configuration for the Spot Fleet request.</p>
-    pub fn spot_fleet_request_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SpotFleetRequestConfigData> {
+    pub fn spot_fleet_request_config(&self) -> ::std::option::Option<&crate::types::SpotFleetRequestConfigData> {
         self.spot_fleet_request_config.as_ref()
     }
 }
 impl RequestSpotFleetInput {
     /// Creates a new builder-style object to manufacture [`RequestSpotFleetInput`](crate::operation::request_spot_fleet::RequestSpotFleetInput).
-    pub fn builder() -> crate::operation::request_spot_fleet::builders::RequestSpotFleetInputBuilder
-    {
+    pub fn builder() -> crate::operation::request_spot_fleet::builders::RequestSpotFleetInputBuilder {
         crate::operation::request_spot_fleet::builders::RequestSpotFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`RequestSpotFleetInput`](crate::operation::request_spot_fleet::RequestSpotFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestSpotFleetInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) spot_fleet_request_config:
-        ::std::option::Option<crate::types::SpotFleetRequestConfigData>,
+    pub(crate) spot_fleet_request_config: ::std::option::Option<crate::types::SpotFleetRequestConfigData>,
 }
 impl RequestSpotFleetInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -57,39 +51,26 @@ impl RequestSpotFleetInputBuilder {
         &self.dry_run
     }
     /// <p>The configuration for the Spot Fleet request.</p>
-    pub fn spot_fleet_request_config(
-        mut self,
-        input: crate::types::SpotFleetRequestConfigData,
-    ) -> Self {
+    pub fn spot_fleet_request_config(mut self, input: crate::types::SpotFleetRequestConfigData) -> Self {
         self.spot_fleet_request_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the Spot Fleet request.</p>
-    pub fn set_spot_fleet_request_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SpotFleetRequestConfigData>,
-    ) -> Self {
+    pub fn set_spot_fleet_request_config(mut self, input: ::std::option::Option<crate::types::SpotFleetRequestConfigData>) -> Self {
         self.spot_fleet_request_config = input;
         self
     }
     /// <p>The configuration for the Spot Fleet request.</p>
-    pub fn get_spot_fleet_request_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::SpotFleetRequestConfigData> {
+    pub fn get_spot_fleet_request_config(&self) -> &::std::option::Option<crate::types::SpotFleetRequestConfigData> {
         &self.spot_fleet_request_config
     }
     /// Consumes the builder and constructs a [`RequestSpotFleetInput`](crate::operation::request_spot_fleet::RequestSpotFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::request_spot_fleet::RequestSpotFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::request_spot_fleet::RequestSpotFleetInput {
-                dry_run: self.dry_run,
-                spot_fleet_request_config: self.spot_fleet_request_config,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::request_spot_fleet::RequestSpotFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::request_spot_fleet::RequestSpotFleetInput {
+            dry_run: self.dry_run,
+            spot_fleet_request_config: self.spot_fleet_request_config,
+        })
     }
 }

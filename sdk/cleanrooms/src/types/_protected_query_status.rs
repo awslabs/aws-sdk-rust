@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ProtectedQueryStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for ProtectedQueryStatus {
             "SUBMITTED" => ProtectedQueryStatus::Submitted,
             "SUCCESS" => ProtectedQueryStatus::Success,
             "TIMED_OUT" => ProtectedQueryStatus::TimedOut,
-            other => ProtectedQueryStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ProtectedQueryStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl ProtectedQueryStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED",
-            "CANCELLING",
-            "FAILED",
-            "STARTED",
-            "SUBMITTED",
-            "SUCCESS",
-            "TIMED_OUT",
-        ]
+        &["CANCELLED", "CANCELLING", "FAILED", "STARTED", "SUBMITTED", "SUCCESS", "TIMED_OUT"]
     }
 }
 impl ::std::convert::AsRef<str> for ProtectedQueryStatus {

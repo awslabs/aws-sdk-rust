@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`notebook_execution_id(impl ::std::convert::Into<String>)`](crate::operation::stop_notebook_execution::builders::StopNotebookExecutionFluentBuilder::notebook_execution_id) / [`set_notebook_execution_id(Option<String>)`](crate::operation::stop_notebook_execution::builders::StopNotebookExecutionFluentBuilder::set_notebook_execution_id): <p>The unique identifier of the notebook execution.</p>
     /// - On success, responds with [`StopNotebookExecutionOutput`](crate::operation::stop_notebook_execution::StopNotebookExecutionOutput)
     /// - On failure, responds with [`SdkError<StopNotebookExecutionError>`](crate::operation::stop_notebook_execution::StopNotebookExecutionError)
-    pub fn stop_notebook_execution(
-        &self,
-    ) -> crate::operation::stop_notebook_execution::builders::StopNotebookExecutionFluentBuilder
-    {
-        crate::operation::stop_notebook_execution::builders::StopNotebookExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_notebook_execution(&self) -> crate::operation::stop_notebook_execution::builders::StopNotebookExecutionFluentBuilder {
+        crate::operation::stop_notebook_execution::builders::StopNotebookExecutionFluentBuilder::new(self.handle.clone())
     }
 }

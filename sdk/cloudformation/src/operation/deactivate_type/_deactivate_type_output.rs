@@ -19,9 +19,7 @@ impl DeactivateTypeOutput {
 
 /// A builder for [`DeactivateTypeOutput`](crate::operation::deactivate_type::DeactivateTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeactivateTypeOutputBuilder {
     _request_id: Option<String>,
 }

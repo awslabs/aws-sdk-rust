@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTargetsByRuleOutput {
 }
 impl ListTargetsByRuleOutput {
     /// Creates a new builder-style object to manufacture [`ListTargetsByRuleOutput`](crate::operation::list_targets_by_rule::ListTargetsByRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::list_targets_by_rule::builders::ListTargetsByRuleOutputBuilder {
+    pub fn builder() -> crate::operation::list_targets_by_rule::builders::ListTargetsByRuleOutputBuilder {
         crate::operation::list_targets_by_rule::builders::ListTargetsByRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTargetsByRuleOutput`](crate::operation::list_targets_by_rule::ListTargetsByRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetsByRuleOutputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListTargetsByRuleOutputBuilder {
         self
     }
     /// <p>The targets assigned to the rule.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }

@@ -47,9 +47,7 @@ impl SearchThingsInput {
 
 /// A builder for [`SearchThingsInput`](crate::operation::search_things::SearchThingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchThingsInputBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -120,12 +118,7 @@ impl SearchThingsInputBuilder {
         &self.namespace_version
     }
     /// Consumes the builder and constructs a [`SearchThingsInput`](crate::operation::search_things::SearchThingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_things::SearchThingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_things::SearchThingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_things::SearchThingsInput {
             entity_id: self.entity_id,
             next_token: self.next_token,

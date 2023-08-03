@@ -36,9 +36,7 @@ impl UpdateCrlInput {
 
 /// A builder for [`UpdateCrlInput`](crate::operation::update_crl::UpdateCrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCrlInputBuilder {
     pub(crate) crl_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl UpdateCrlInputBuilder {
         &self.crl_data
     }
     /// Consumes the builder and constructs a [`UpdateCrlInput`](crate::operation::update_crl::UpdateCrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_crl::UpdateCrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_crl::UpdateCrlInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_crl::UpdateCrlInput {
             crl_id: self.crl_id,
             name: self.name,

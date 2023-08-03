@@ -37,9 +37,7 @@ impl RepositorySyncAttempt {
 
 /// A builder for [`RepositorySyncAttempt`](crate::types::RepositorySyncAttempt).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositorySyncAttemptBuilder {
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::RepositorySyncStatus>,
@@ -52,10 +50,7 @@ impl RepositorySyncAttemptBuilder {
         self
     }
     /// <p>The time when the sync attempt started.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -69,10 +64,7 @@ impl RepositorySyncAttemptBuilder {
         self
     }
     /// <p>The sync attempt status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositorySyncStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RepositorySyncStatus>) -> Self {
         self.status = input;
         self
     }
@@ -92,17 +84,12 @@ impl RepositorySyncAttemptBuilder {
         self
     }
     /// <p>Detail data for sync attempt events.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncEvent>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncEvent>>) -> Self {
         self.events = input;
         self
     }
     /// <p>Detail data for sync attempt events.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncEvent>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`RepositorySyncAttempt`](crate::types::RepositorySyncAttempt).

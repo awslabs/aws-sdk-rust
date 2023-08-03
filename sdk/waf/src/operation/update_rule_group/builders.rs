@@ -10,10 +10,7 @@ impl UpdateRuleGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_rule_group::UpdateRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_rule_group();
         fluent_builder.inner = self;
@@ -52,9 +49,7 @@ impl UpdateRuleGroupFluentBuilder {
         }
     }
     /// Access the UpdateRuleGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_rule_group::builders::UpdateRuleGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_rule_group::builders::UpdateRuleGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,9 +61,7 @@ impl UpdateRuleGroupFluentBuilder {
             crate::operation::update_rule_group::UpdateRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -78,10 +71,7 @@ impl UpdateRuleGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -90,9 +80,7 @@ impl UpdateRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rule_group::UpdateRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError>,
     > {
         let op = self
             .inner
@@ -115,9 +103,7 @@ impl UpdateRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rule_group::UpdateRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError>,
     > {
         self.send_middleware().await
     }
@@ -131,25 +117,17 @@ impl UpdateRuleGroupFluentBuilder {
             crate::operation::update_rule_group::UpdateRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    pub fn rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_group_id(input.into());
         self
     }
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    pub fn set_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_group_id(input);
         self
     }
@@ -171,19 +149,14 @@ impl UpdateRuleGroupFluentBuilder {
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
     /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
         self
     }
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
     /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupUpdate>> {
         self.inner.get_updates()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>

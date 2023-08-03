@@ -37,9 +37,7 @@ impl PollForTaskInput {
 
 /// A builder for [`PollForTaskInput`](crate::operation::poll_for_task::PollForTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PollForTaskInputBuilder {
     pub(crate) worker_group: ::std::option::Option<::std::string::String>,
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl PollForTaskInputBuilder {
         self
     }
     /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
-    pub fn set_instance_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceIdentity>,
-    ) -> Self {
+    pub fn set_instance_identity(mut self, input: ::std::option::Option<crate::types::InstanceIdentity>) -> Self {
         self.instance_identity = input;
         self
     }
@@ -92,12 +87,7 @@ impl PollForTaskInputBuilder {
         &self.instance_identity
     }
     /// Consumes the builder and constructs a [`PollForTaskInput`](crate::operation::poll_for_task::PollForTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::poll_for_task::PollForTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::poll_for_task::PollForTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::poll_for_task::PollForTaskInput {
             worker_group: self.worker_group,
             hostname: self.hostname,

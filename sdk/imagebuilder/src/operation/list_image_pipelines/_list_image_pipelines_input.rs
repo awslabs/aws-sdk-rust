@@ -45,17 +45,14 @@ impl ListImagePipelinesInput {
 }
 impl ListImagePipelinesInput {
     /// Creates a new builder-style object to manufacture [`ListImagePipelinesInput`](crate::operation::list_image_pipelines::ListImagePipelinesInput).
-    pub fn builder(
-    ) -> crate::operation::list_image_pipelines::builders::ListImagePipelinesInputBuilder {
+    pub fn builder() -> crate::operation::list_image_pipelines::builders::ListImagePipelinesInputBuilder {
         crate::operation::list_image_pipelines::builders::ListImagePipelinesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListImagePipelinesInput`](crate::operation::list_image_pipelines::ListImagePipelinesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImagePipelinesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -90,10 +87,7 @@ impl ListImagePipelinesInputBuilder {
     /// <li> <p> <code>name</code> </p> </li>
     /// <li> <p> <code>status</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -140,16 +134,11 @@ impl ListImagePipelinesInputBuilder {
     /// Consumes the builder and constructs a [`ListImagePipelinesInput`](crate::operation::list_image_pipelines::ListImagePipelinesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_image_pipelines::ListImagePipelinesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_image_pipelines::ListImagePipelinesInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_image_pipelines::ListImagePipelinesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_image_pipelines::ListImagePipelinesInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

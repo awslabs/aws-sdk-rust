@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeCoipPoolsOutput {
 }
 impl DescribeCoipPoolsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCoipPoolsOutput`](crate::operation::describe_coip_pools::DescribeCoipPoolsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_coip_pools::builders::DescribeCoipPoolsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_coip_pools::builders::DescribeCoipPoolsOutputBuilder {
         crate::operation::describe_coip_pools::builders::DescribeCoipPoolsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCoipPoolsOutput`](crate::operation::describe_coip_pools::DescribeCoipPoolsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCoipPoolsOutputBuilder {
     pub(crate) coip_pools: ::std::option::Option<::std::vec::Vec<crate::types::CoipPool>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeCoipPoolsOutputBuilder {
         self
     }
     /// <p>Information about the address pools.</p>
-    pub fn set_coip_pools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoipPool>>,
-    ) -> Self {
+    pub fn set_coip_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoipPool>>) -> Self {
         self.coip_pools = input;
         self
     }
     /// <p>Information about the address pools.</p>
-    pub fn get_coip_pools(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoipPool>> {
+    pub fn get_coip_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoipPool>> {
         &self.coip_pools
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

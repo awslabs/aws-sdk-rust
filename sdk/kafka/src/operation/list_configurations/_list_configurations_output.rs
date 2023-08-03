@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListConfigurationsOutput {
 }
 impl ListConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationsOutput`](crate::operation::list_configurations::ListConfigurationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_configurations::builders::ListConfigurationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_configurations::builders::ListConfigurationsOutputBuilder {
         crate::operation::list_configurations::builders::ListConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListConfigurationsOutput`](crate::operation::list_configurations::ListConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfigurationsOutputBuilder {
     pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListConfigurationsOutputBuilder {
         self
     }
     /// <p>An array of MSK configurations.</p>
-    pub fn set_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
-    ) -> Self {
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
         self.configurations = input;
         self
     }
     /// <p>An array of MSK configurations.</p>
-    pub fn get_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
         &self.configurations
     }
     /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::query_objects::QueryObjectsOutput::marker): <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     ///   - [`has_more_results(bool)`](crate::operation::query_objects::QueryObjectsOutput::has_more_results): <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     /// - On failure, responds with [`SdkError<QueryObjectsError>`](crate::operation::query_objects::QueryObjectsError)
-    pub fn query_objects(
-        &self,
-    ) -> crate::operation::query_objects::builders::QueryObjectsFluentBuilder {
-        crate::operation::query_objects::builders::QueryObjectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn query_objects(&self) -> crate::operation::query_objects::builders::QueryObjectsFluentBuilder {
+        crate::operation::query_objects::builders::QueryObjectsFluentBuilder::new(self.handle.clone())
     }
 }

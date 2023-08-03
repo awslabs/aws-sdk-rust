@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCollaborationOutput`](crate::operation::create_collaboration::CreateCollaborationOutput) with field(s):
     ///   - [`collaboration(Option<Collaboration>)`](crate::operation::create_collaboration::CreateCollaborationOutput::collaboration): <p>The entire created collaboration object.</p>
     /// - On failure, responds with [`SdkError<CreateCollaborationError>`](crate::operation::create_collaboration::CreateCollaborationError)
-    pub fn create_collaboration(
-        &self,
-    ) -> crate::operation::create_collaboration::builders::CreateCollaborationFluentBuilder {
-        crate::operation::create_collaboration::builders::CreateCollaborationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_collaboration(&self) -> crate::operation::create_collaboration::builders::CreateCollaborationFluentBuilder {
+        crate::operation::create_collaboration::builders::CreateCollaborationFluentBuilder::new(self.handle.clone())
     }
 }

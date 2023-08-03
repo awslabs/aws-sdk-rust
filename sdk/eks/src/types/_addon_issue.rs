@@ -37,9 +37,7 @@ impl AddonIssue {
 
 /// A builder for [`AddonIssue`](crate::types::AddonIssue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddonIssueBuilder {
     pub(crate) code: ::std::option::Option<crate::types::AddonIssueCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -86,17 +84,12 @@ impl AddonIssueBuilder {
         self
     }
     /// <p>The resource IDs of the issue.</p>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_ids = input;
         self
     }
     /// <p>The resource IDs of the issue.</p>
-    pub fn get_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_ids
     }
     /// Consumes the builder and constructs a [`AddonIssue`](crate::types::AddonIssue).

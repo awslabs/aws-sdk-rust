@@ -5,8 +5,7 @@
 pub struct DescribeLaunchConfigurationsOutput {
     /// <p>The launch configurations.</p>
     #[doc(hidden)]
-    pub launch_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>,
+    pub launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeLaunchConfigurationsOutput {
 }
 impl DescribeLaunchConfigurationsOutput {
     /// <p>The launch configurations.</p>
-    pub fn launch_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LaunchConfiguration]> {
+    pub fn launch_configurations(&self) -> ::std::option::Option<&[crate::types::LaunchConfiguration]> {
         self.launch_configurations.as_deref()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeLaunchConfigurationsOutput {
 }
 impl DescribeLaunchConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLaunchConfigurationsOutput`](crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsOutput).
-    pub fn builder() -> crate::operation::describe_launch_configurations::builders::DescribeLaunchConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_launch_configurations::builders::DescribeLaunchConfigurationsOutputBuilder {
         crate::operation::describe_launch_configurations::builders::DescribeLaunchConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLaunchConfigurationsOutput`](crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLaunchConfigurationsOutputBuilder {
-    pub(crate) launch_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>,
+    pub(crate) launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeLaunchConfigurationsOutputBuilder {
         self
     }
     /// <p>The launch configurations.</p>
-    pub fn set_launch_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>,
-    ) -> Self {
+    pub fn set_launch_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>) -> Self {
         self.launch_configurations = input;
         self
     }
     /// <p>The launch configurations.</p>
-    pub fn get_launch_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>> {
+    pub fn get_launch_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>> {
         &self.launch_configurations
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -97,9 +86,7 @@ impl DescribeLaunchConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLaunchConfigurationsOutput`](crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsOutput {
+    pub fn build(self) -> crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsOutput {
         crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsOutput {
             launch_configurations: self.launch_configurations,
             next_token: self.next_token,

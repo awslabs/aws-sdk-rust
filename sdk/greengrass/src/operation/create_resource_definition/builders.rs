@@ -26,7 +26,7 @@ impl CreateResourceDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateResourceDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_resource_definition::builders::CreateResourceDefinitionInputBuilder,
+    inner: crate::operation::create_resource_definition::builders::CreateResourceDefinitionInputBuilder,
 }
 impl CreateResourceDefinitionFluentBuilder {
     /// Creates a new `CreateResourceDefinition`.
@@ -37,10 +37,7 @@ impl CreateResourceDefinitionFluentBuilder {
         }
     }
     /// Access the CreateResourceDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_resource_definition::builders::CreateResourceDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_resource_definition::builders::CreateResourceDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateResourceDefinitionFluentBuilder {
             crate::operation::create_resource_definition::CreateResourceDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_definition::CreateResourceDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_definition::CreateResourceDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateResourceDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateResourceDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_definition::CreateResourceDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_definition::CreateResourceDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_definition::CreateResourceDefinitionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateResourceDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_definition::CreateResourceDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_definition::CreateResourceDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_definition::CreateResourceDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateResourceDefinitionFluentBuilder {
             crate::operation::create_resource_definition::CreateResourceDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_definition::CreateResourceDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_definition::CreateResourceDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.amzn_client_token(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
@@ -149,17 +129,12 @@ impl CreateResourceDefinitionFluentBuilder {
         self
     }
     /// Information about the initial version of the resource definition.
-    pub fn set_initial_version(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDefinitionVersion>,
-    ) -> Self {
+    pub fn set_initial_version(mut self, input: ::std::option::Option<crate::types::ResourceDefinitionVersion>) -> Self {
         self.inner = self.inner.set_initial_version(input);
         self
     }
     /// Information about the initial version of the resource definition.
-    pub fn get_initial_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceDefinitionVersion> {
+    pub fn get_initial_version(&self) -> &::std::option::Option<crate::types::ResourceDefinitionVersion> {
         self.inner.get_initial_version()
     }
     /// The name of the resource definition.
@@ -181,30 +156,17 @@ impl CreateResourceDefinitionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// Tag(s) to add to the new resource.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// Tag(s) to add to the new resource.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// Tag(s) to add to the new resource.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

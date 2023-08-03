@@ -6,17 +6,11 @@
 pub struct AwsEcsServiceNetworkConfigurationDetails {
     /// <p>The VPC subnet and security group configuration.</p>
     #[doc(hidden)]
-    pub aws_vpc_configuration: ::std::option::Option<
-        crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails,
-    >,
+    pub aws_vpc_configuration: ::std::option::Option<crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails>,
 }
 impl AwsEcsServiceNetworkConfigurationDetails {
     /// <p>The VPC subnet and security group configuration.</p>
-    pub fn aws_vpc_configuration(
-        &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails,
-    > {
+    pub fn aws_vpc_configuration(&self) -> ::std::option::Option<&crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails> {
         self.aws_vpc_configuration.as_ref()
     }
 }
@@ -29,39 +23,26 @@ impl AwsEcsServiceNetworkConfigurationDetails {
 
 /// A builder for [`AwsEcsServiceNetworkConfigurationDetails`](crate::types::AwsEcsServiceNetworkConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsServiceNetworkConfigurationDetailsBuilder {
-    pub(crate) aws_vpc_configuration: ::std::option::Option<
-        crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails,
-    >,
+    pub(crate) aws_vpc_configuration: ::std::option::Option<crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails>,
 }
 impl AwsEcsServiceNetworkConfigurationDetailsBuilder {
     /// <p>The VPC subnet and security group configuration.</p>
-    pub fn aws_vpc_configuration(
-        mut self,
-        input: crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails,
-    ) -> Self {
+    pub fn aws_vpc_configuration(mut self, input: crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails) -> Self {
         self.aws_vpc_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The VPC subnet and security group configuration.</p>
     pub fn set_aws_vpc_configuration(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails>,
     ) -> Self {
         self.aws_vpc_configuration = input;
         self
     }
     /// <p>The VPC subnet and security group configuration.</p>
-    pub fn get_aws_vpc_configuration(
-        &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails,
-    > {
+    pub fn get_aws_vpc_configuration(&self) -> &::std::option::Option<crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails> {
         &self.aws_vpc_configuration
     }
     /// Consumes the builder and constructs a [`AwsEcsServiceNetworkConfigurationDetails`](crate::types::AwsEcsServiceNetworkConfigurationDetails).

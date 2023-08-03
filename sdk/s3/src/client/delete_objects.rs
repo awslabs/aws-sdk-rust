@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::delete_objects::DeleteObjectsOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     ///   - [`errors(Option<Vec<Error>>)`](crate::operation::delete_objects::DeleteObjectsOutput::errors): <p>Container for a failed delete action that describes the object that Amazon S3 attempted to delete and the error it encountered.</p>
     /// - On failure, responds with [`SdkError<DeleteObjectsError>`](crate::operation::delete_objects::DeleteObjectsError)
-    pub fn delete_objects(
-        &self,
-    ) -> crate::operation::delete_objects::builders::DeleteObjectsFluentBuilder {
-        crate::operation::delete_objects::builders::DeleteObjectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_objects(&self) -> crate::operation::delete_objects::builders::DeleteObjectsFluentBuilder {
+        crate::operation::delete_objects::builders::DeleteObjectsFluentBuilder::new(self.handle.clone())
     }
 }

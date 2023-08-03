@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetAssessmentReportUrlOutput`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput) with field(s):
     ///   - [`pre_signed_url(Option<Url>)`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput::pre_signed_url): <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
     /// - On failure, responds with [`SdkError<GetAssessmentReportUrlError>`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlError)
-    pub fn get_assessment_report_url(
-        &self,
-    ) -> crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlFluentBuilder
-    {
+    pub fn get_assessment_report_url(&self) -> crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlFluentBuilder {
         crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlFluentBuilder::new(self.handle.clone())
     }
 }

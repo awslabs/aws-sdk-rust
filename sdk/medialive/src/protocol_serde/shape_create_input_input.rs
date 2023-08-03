@@ -21,10 +21,7 @@ pub fn ser_create_input_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_input_device_settings::ser_input_device_settings(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_input_device_settings::ser_input_device_settings(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -66,10 +63,7 @@ pub fn ser_create_input_input(
             {
                 #[allow(unused_mut)]
                 let mut object_22 = array_20.value().start_object();
-                crate::protocol_serde::shape_input_source_request::ser_input_source_request(
-                    &mut object_22,
-                    item_21,
-                )?;
+                crate::protocol_serde::shape_input_source_request::ser_input_source_request(&mut object_22, item_21)?;
                 object_22.finish();
             }
         }
@@ -91,10 +85,7 @@ pub fn ser_create_input_input(
     if let Some(var_28) = &input.vpc {
         #[allow(unused_mut)]
         let mut object_29 = object.key("vpc").start_object();
-        crate::protocol_serde::shape_input_vpc_request::ser_input_vpc_request(
-            &mut object_29,
-            var_28,
-        )?;
+        crate::protocol_serde::shape_input_vpc_request::ser_input_vpc_request(&mut object_29, var_28)?;
         object_29.finish();
     }
     Ok(())

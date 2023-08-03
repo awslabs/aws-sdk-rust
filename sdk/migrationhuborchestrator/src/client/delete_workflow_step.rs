@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`workflow_id(impl ::std::convert::Into<String>)`](crate::operation::delete_workflow_step::builders::DeleteWorkflowStepFluentBuilder::workflow_id) / [`set_workflow_id(Option<String>)`](crate::operation::delete_workflow_step::builders::DeleteWorkflowStepFluentBuilder::set_workflow_id): <p>The ID of the migration workflow.</p>
     /// - On success, responds with [`DeleteWorkflowStepOutput`](crate::operation::delete_workflow_step::DeleteWorkflowStepOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkflowStepError>`](crate::operation::delete_workflow_step::DeleteWorkflowStepError)
-    pub fn delete_workflow_step(
-        &self,
-    ) -> crate::operation::delete_workflow_step::builders::DeleteWorkflowStepFluentBuilder {
-        crate::operation::delete_workflow_step::builders::DeleteWorkflowStepFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_workflow_step(&self) -> crate::operation::delete_workflow_step::builders::DeleteWorkflowStepFluentBuilder {
+        crate::operation::delete_workflow_step::builders::DeleteWorkflowStepFluentBuilder::new(self.handle.clone())
     }
 }

@@ -51,9 +51,7 @@ impl ManagedJobTemplateSummary {
 
 /// A builder for [`ManagedJobTemplateSummary`](crate::types::ManagedJobTemplateSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedJobTemplateSummaryBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl ManagedJobTemplateSummaryBuilder {
         &self.template_arn
     }
     /// <p>The unique Name for a managed template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique Name for a managed template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -122,32 +114,21 @@ impl ManagedJobTemplateSummaryBuilder {
         self
     }
     /// <p>A list of environments that are supported with the managed job template.</p>
-    pub fn set_environments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_environments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.environments = input;
         self
     }
     /// <p>A list of environments that are supported with the managed job template.</p>
-    pub fn get_environments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_environments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.environments
     }
     /// <p>The version for a managed template.</p>
-    pub fn template_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version for a managed template.</p>
-    pub fn set_template_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_version = input;
         self
     }

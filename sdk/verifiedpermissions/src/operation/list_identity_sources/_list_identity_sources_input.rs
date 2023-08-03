@@ -36,18 +36,14 @@ impl ListIdentitySourcesInput {
 }
 impl ListIdentitySourcesInput {
     /// Creates a new builder-style object to manufacture [`ListIdentitySourcesInput`](crate::operation::list_identity_sources::ListIdentitySourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_identity_sources::builders::ListIdentitySourcesInputBuilder {
-        crate::operation::list_identity_sources::builders::ListIdentitySourcesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_identity_sources::builders::ListIdentitySourcesInputBuilder {
+        crate::operation::list_identity_sources::builders::ListIdentitySourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentitySourcesInput`](crate::operation::list_identity_sources::ListIdentitySourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentitySourcesInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct ListIdentitySourcesInputBuilder {
 }
 impl ListIdentitySourcesInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the identity sources that you want to list.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the identity sources that you want to list.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -115,33 +105,24 @@ impl ListIdentitySourcesInputBuilder {
         self
     }
     /// <p>Specifies characteristics of an identity source that you can use to limit the output to matching identity sources.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Specifies characteristics of an identity source that you can use to limit the output to matching identity sources.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentitySourceFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListIdentitySourcesInput`](crate::operation::list_identity_sources::ListIdentitySourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_identity_sources::ListIdentitySourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_identity_sources::ListIdentitySourcesInput {
-                policy_store_id: self.policy_store_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_identity_sources::ListIdentitySourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_identity_sources::ListIdentitySourcesInput {
+            policy_store_id: self.policy_store_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+        })
     }
 }

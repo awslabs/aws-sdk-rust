@@ -15,16 +15,14 @@ impl DescribeLocationAzureBlobInput {
 }
 impl DescribeLocationAzureBlobInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationAzureBlobInput`](crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobInput).
-    pub fn builder() -> crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobInputBuilder{
+    pub fn builder() -> crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobInputBuilder {
         crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationAzureBlobInput`](crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationAzureBlobInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl DescribeLocationAzureBlobInputBuilder {
         crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobInput {
-                location_arn: self.location_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobInput {
+            location_arn: self.location_arn,
+        })
     }
 }

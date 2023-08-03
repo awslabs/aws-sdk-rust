@@ -27,8 +27,7 @@ impl DescribeVirtualGatewaysInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVirtualGatewaysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_virtual_gateways::builders::DescribeVirtualGatewaysInputBuilder,
+    inner: crate::operation::describe_virtual_gateways::builders::DescribeVirtualGatewaysInputBuilder,
 }
 impl DescribeVirtualGatewaysFluentBuilder {
     /// Creates a new `DescribeVirtualGateways`.
@@ -39,10 +38,7 @@ impl DescribeVirtualGatewaysFluentBuilder {
         }
     }
     /// Access the DescribeVirtualGateways as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_virtual_gateways::builders::DescribeVirtualGatewaysInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_virtual_gateways::builders::DescribeVirtualGatewaysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DescribeVirtualGatewaysFluentBuilder {
             crate::operation::describe_virtual_gateways::DescribeVirtualGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DescribeVirtualGatewaysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DescribeVirtualGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DescribeVirtualGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl DescribeVirtualGatewaysFluentBuilder {
             crate::operation::describe_virtual_gateways::DescribeVirtualGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysError>,
     > {
         self.customize_middleware().await
     }

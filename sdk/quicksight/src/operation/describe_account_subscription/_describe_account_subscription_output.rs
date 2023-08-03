@@ -49,16 +49,14 @@ impl ::aws_http::request_id::RequestId for DescribeAccountSubscriptionOutput {
 }
 impl DescribeAccountSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountSubscriptionOutput`](crate::operation::describe_account_subscription::DescribeAccountSubscriptionOutput).
-    pub fn builder() -> crate::operation::describe_account_subscription::builders::DescribeAccountSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::describe_account_subscription::builders::DescribeAccountSubscriptionOutputBuilder {
         crate::operation::describe_account_subscription::builders::DescribeAccountSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountSubscriptionOutput`](crate::operation::describe_account_subscription::DescribeAccountSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountSubscriptionOutputBuilder {
     pub(crate) account_info: ::std::option::Option<crate::types::AccountInfo>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -86,10 +84,7 @@ impl DescribeAccountSubscriptionOutputBuilder {
     /// <li> <p>The authentication type of the Amazon QuickSight account.</p> </li>
     /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
     /// </ul>
-    pub fn set_account_info(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountInfo>,
-    ) -> Self {
+    pub fn set_account_info(mut self, input: ::std::option::Option<crate::types::AccountInfo>) -> Self {
         self.account_info = input;
         self
     }
@@ -142,9 +137,7 @@ impl DescribeAccountSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccountSubscriptionOutput`](crate::operation::describe_account_subscription::DescribeAccountSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_account_subscription::DescribeAccountSubscriptionOutput {
+    pub fn build(self) -> crate::operation::describe_account_subscription::DescribeAccountSubscriptionOutput {
         crate::operation::describe_account_subscription::DescribeAccountSubscriptionOutput {
             account_info: self.account_info,
             status: self.status.unwrap_or_default(),

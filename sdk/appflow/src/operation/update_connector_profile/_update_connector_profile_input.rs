@@ -28,9 +28,7 @@ impl UpdateConnectorProfileInput {
         self.connection_mode.as_ref()
     }
     /// <p> Defines the connector-specific profile configuration and credentials. </p>
-    pub fn connector_profile_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectorProfileConfig> {
+    pub fn connector_profile_config(&self) -> ::std::option::Option<&crate::types::ConnectorProfileConfig> {
         self.connector_profile_config.as_ref()
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
@@ -42,39 +40,28 @@ impl UpdateConnectorProfileInput {
 }
 impl UpdateConnectorProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectorProfileInput`](crate::operation::update_connector_profile::UpdateConnectorProfileInput).
-    pub fn builder(
-    ) -> crate::operation::update_connector_profile::builders::UpdateConnectorProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_connector_profile::builders::UpdateConnectorProfileInputBuilder {
         crate::operation::update_connector_profile::builders::UpdateConnectorProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConnectorProfileInput`](crate::operation::update_connector_profile::UpdateConnectorProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectorProfileInputBuilder {
     pub(crate) connector_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
-    pub(crate) connector_profile_config:
-        ::std::option::Option<crate::types::ConnectorProfileConfig>,
+    pub(crate) connector_profile_config: ::std::option::Option<crate::types::ConnectorProfileConfig>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectorProfileInputBuilder {
     /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn connector_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn set_connector_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_profile_name = input;
         self
     }
@@ -88,10 +75,7 @@ impl UpdateConnectorProfileInputBuilder {
         self
     }
     /// <p> Indicates the connection mode and if it is public or private. </p>
-    pub fn set_connection_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionMode>,
-    ) -> Self {
+    pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
         self.connection_mode = input;
         self
     }
@@ -105,17 +89,12 @@ impl UpdateConnectorProfileInputBuilder {
         self
     }
     /// <p> Defines the connector-specific profile configuration and credentials. </p>
-    pub fn set_connector_profile_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorProfileConfig>,
-    ) -> Self {
+    pub fn set_connector_profile_config(mut self, input: ::std::option::Option<crate::types::ConnectorProfileConfig>) -> Self {
         self.connector_profile_config = input;
         self
     }
     /// <p> Defines the connector-specific profile configuration and credentials. </p>
-    pub fn get_connector_profile_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorProfileConfig> {
+    pub fn get_connector_profile_config(&self) -> &::std::option::Option<crate::types::ConnectorProfileConfig> {
         &self.connector_profile_config
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
@@ -141,17 +120,13 @@ impl UpdateConnectorProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectorProfileInput`](crate::operation::update_connector_profile::UpdateConnectorProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_connector_profile::UpdateConnectorProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_connector_profile::UpdateConnectorProfileInput {
-                connector_profile_name: self.connector_profile_name,
-                connection_mode: self.connection_mode,
-                connector_profile_config: self.connector_profile_config,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_connector_profile::UpdateConnectorProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_connector_profile::UpdateConnectorProfileInput {
+            connector_profile_name: self.connector_profile_name,
+            connection_mode: self.connection_mode,
+            connector_profile_config: self.connector_profile_config,
+            client_token: self.client_token,
+        })
     }
 }

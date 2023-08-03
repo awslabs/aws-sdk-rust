@@ -26,7 +26,7 @@ impl ListProgressUpdateStreamsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListProgressUpdateStreamsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsInputBuilder,
+    inner: crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsInputBuilder,
 }
 impl ListProgressUpdateStreamsFluentBuilder {
     /// Creates a new `ListProgressUpdateStreams`.
@@ -37,7 +37,7 @@ impl ListProgressUpdateStreamsFluentBuilder {
         }
     }
     /// Access the ListProgressUpdateStreams as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListProgressUpdateStreamsFluentBuilder {
             crate::operation::list_progress_update_streams::ListProgressUpdateStreams,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListProgressUpdateStreamsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListProgressUpdateStreamsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListProgressUpdateStreamsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListProgressUpdateStreamsFluentBuilder {
             crate::operation::list_progress_update_streams::ListProgressUpdateStreams,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_progress_update_streams::paginator::ListProgressUpdateStreamsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_progress_update_streams::paginator::ListProgressUpdateStreamsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_progress_update_streams::paginator::ListProgressUpdateStreamsPaginator {
         crate::operation::list_progress_update_streams::paginator::ListProgressUpdateStreamsPaginator::new(self.handle, self.inner)
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>

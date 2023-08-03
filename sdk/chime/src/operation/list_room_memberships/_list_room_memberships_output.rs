@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRoomMembershipsOutput {
 }
 impl ListRoomMembershipsOutput {
     /// Creates a new builder-style object to manufacture [`ListRoomMembershipsOutput`](crate::operation::list_room_memberships::ListRoomMembershipsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_room_memberships::builders::ListRoomMembershipsOutputBuilder {
-        crate::operation::list_room_memberships::builders::ListRoomMembershipsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_room_memberships::builders::ListRoomMembershipsOutputBuilder {
+        crate::operation::list_room_memberships::builders::ListRoomMembershipsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRoomMembershipsOutput`](crate::operation::list_room_memberships::ListRoomMembershipsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoomMembershipsOutputBuilder {
-    pub(crate) room_memberships:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoomMembership>>,
+    pub(crate) room_memberships: ::std::option::Option<::std::vec::Vec<crate::types::RoomMembership>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListRoomMembershipsOutputBuilder {
         self
     }
     /// <p>The room membership details.</p>
-    pub fn set_room_memberships(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoomMembership>>,
-    ) -> Self {
+    pub fn set_room_memberships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoomMembership>>) -> Self {
         self.room_memberships = input;
         self
     }
     /// <p>The room membership details.</p>
-    pub fn get_room_memberships(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoomMembership>> {
+    pub fn get_room_memberships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoomMembership>> {
         &self.room_memberships
     }
     /// <p>The token to use to retrieve the next page of results.</p>

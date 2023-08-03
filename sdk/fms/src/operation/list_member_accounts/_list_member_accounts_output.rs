@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListMemberAccountsOutput {
 }
 impl ListMemberAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListMemberAccountsOutput`](crate::operation::list_member_accounts::ListMemberAccountsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_member_accounts::builders::ListMemberAccountsOutputBuilder {
+    pub fn builder() -> crate::operation::list_member_accounts::builders::ListMemberAccountsOutputBuilder {
         crate::operation::list_member_accounts::builders::ListMemberAccountsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMemberAccountsOutput`](crate::operation::list_member_accounts::ListMemberAccountsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMemberAccountsOutputBuilder {
     pub(crate) member_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,27 +47,19 @@ impl ListMemberAccountsOutputBuilder {
     /// To override the contents of this collection use [`set_member_accounts`](Self::set_member_accounts).
     ///
     /// <p>An array of account IDs.</p>
-    pub fn member_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.member_accounts.unwrap_or_default();
         v.push(input.into());
         self.member_accounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of account IDs.</p>
-    pub fn set_member_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_member_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.member_accounts = input;
         self
     }
     /// <p>An array of account IDs.</p>
-    pub fn get_member_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_member_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.member_accounts
     }
     /// <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>

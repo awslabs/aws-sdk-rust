@@ -23,9 +23,7 @@ impl ImplicitDeny {
 
 /// A builder for [`ImplicitDeny`](crate::types::ImplicitDeny).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImplicitDenyBuilder {
     pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
 }
@@ -42,10 +40,7 @@ impl ImplicitDenyBuilder {
         self
     }
     /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>) -> Self {
         self.policies = input;
         self
     }
@@ -55,8 +50,6 @@ impl ImplicitDenyBuilder {
     }
     /// Consumes the builder and constructs a [`ImplicitDeny`](crate::types::ImplicitDeny).
     pub fn build(self) -> crate::types::ImplicitDeny {
-        crate::types::ImplicitDeny {
-            policies: self.policies,
-        }
+        crate::types::ImplicitDeny { policies: self.policies }
     }
 }

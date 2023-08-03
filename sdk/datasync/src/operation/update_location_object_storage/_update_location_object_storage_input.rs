@@ -40,9 +40,7 @@ impl UpdateLocationObjectStorageInput {
         self.server_port
     }
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    pub fn server_protocol(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ObjectStorageServerProtocol> {
+    pub fn server_protocol(&self) -> ::std::option::Option<&crate::types::ObjectStorageServerProtocol> {
         self.server_protocol.as_ref()
     }
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
@@ -84,7 +82,7 @@ impl ::std::fmt::Debug for UpdateLocationObjectStorageInput {
 }
 impl UpdateLocationObjectStorageInput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationObjectStorageInput`](crate::operation::update_location_object_storage::UpdateLocationObjectStorageInput).
-    pub fn builder() -> crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageInputBuilder{
+    pub fn builder() -> crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageInputBuilder {
         crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageInputBuilder::default()
     }
 }
@@ -137,17 +135,12 @@ impl UpdateLocationObjectStorageInputBuilder {
         self
     }
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    pub fn set_server_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectStorageServerProtocol>,
-    ) -> Self {
+    pub fn set_server_protocol(mut self, input: ::std::option::Option<crate::types::ObjectStorageServerProtocol>) -> Self {
         self.server_protocol = input;
         self
     }
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    pub fn get_server_protocol(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectStorageServerProtocol> {
+    pub fn get_server_protocol(&self) -> &::std::option::Option<crate::types::ObjectStorageServerProtocol> {
         &self.server_protocol
     }
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
@@ -204,10 +197,7 @@ impl UpdateLocationObjectStorageInputBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
@@ -225,10 +215,7 @@ impl UpdateLocationObjectStorageInputBuilder {
     /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     /// <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
-    pub fn set_server_certificate(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_server_certificate(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.server_certificate = input;
         self
     }
@@ -245,18 +232,16 @@ impl UpdateLocationObjectStorageInputBuilder {
         crate::operation::update_location_object_storage::UpdateLocationObjectStorageInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_location_object_storage::UpdateLocationObjectStorageInput {
-                location_arn: self.location_arn,
-                server_port: self.server_port,
-                server_protocol: self.server_protocol,
-                subdirectory: self.subdirectory,
-                access_key: self.access_key,
-                secret_key: self.secret_key,
-                agent_arns: self.agent_arns,
-                server_certificate: self.server_certificate,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_location_object_storage::UpdateLocationObjectStorageInput {
+            location_arn: self.location_arn,
+            server_port: self.server_port,
+            server_protocol: self.server_protocol,
+            subdirectory: self.subdirectory,
+            access_key: self.access_key,
+            secret_key: self.secret_key,
+            agent_arns: self.agent_arns,
+            server_certificate: self.server_certificate,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateLocationObjectStorageInputBuilder {

@@ -22,9 +22,7 @@ impl DeleteTrialInput {
 
 /// A builder for [`DeleteTrialInput`](crate::operation::delete_trial::DeleteTrialInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrialInputBuilder {
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteTrialInputBuilder {
         &self.trial_name
     }
     /// Consumes the builder and constructs a [`DeleteTrialInput`](crate::operation::delete_trial::DeleteTrialInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_trial::DeleteTrialInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_trial::DeleteTrialInput {
-            trial_name: self.trial_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trial::DeleteTrialInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_trial::DeleteTrialInput { trial_name: self.trial_name })
     }
 }

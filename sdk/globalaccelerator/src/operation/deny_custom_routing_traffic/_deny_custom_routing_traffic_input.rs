@@ -49,18 +49,14 @@ impl DenyCustomRoutingTrafficInput {
 }
 impl DenyCustomRoutingTrafficInput {
     /// Creates a new builder-style object to manufacture [`DenyCustomRoutingTrafficInput`](crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficInput).
-    pub fn builder(
-    ) -> crate::operation::deny_custom_routing_traffic::builders::DenyCustomRoutingTrafficInputBuilder
-    {
+    pub fn builder() -> crate::operation::deny_custom_routing_traffic::builders::DenyCustomRoutingTrafficInputBuilder {
         crate::operation::deny_custom_routing_traffic::builders::DenyCustomRoutingTrafficInputBuilder::default()
     }
 }
 
 /// A builder for [`DenyCustomRoutingTrafficInput`](crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DenyCustomRoutingTrafficInputBuilder {
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ pub struct DenyCustomRoutingTrafficInputBuilder {
 }
 impl DenyCustomRoutingTrafficInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_group_arn = input;
         self
     }
@@ -108,27 +98,19 @@ impl DenyCustomRoutingTrafficInputBuilder {
     /// To override the contents of this collection use [`set_destination_addresses`](Self::set_destination_addresses).
     ///
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
-    pub fn destination_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destination_addresses.unwrap_or_default();
         v.push(input.into());
         self.destination_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
-    pub fn set_destination_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_destination_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.destination_addresses = input;
         self
     }
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
-    pub fn get_destination_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destination_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.destination_addresses
     }
     /// Appends an item to `destination_ports`.
@@ -143,10 +125,7 @@ impl DenyCustomRoutingTrafficInputBuilder {
         self
     }
     /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from receiving traffic.</p>
-    pub fn set_destination_ports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_destination_ports(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.destination_ports = input;
         self
     }
@@ -184,14 +163,12 @@ impl DenyCustomRoutingTrafficInputBuilder {
         crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficInput {
-                endpoint_group_arn: self.endpoint_group_arn,
-                endpoint_id: self.endpoint_id,
-                destination_addresses: self.destination_addresses,
-                destination_ports: self.destination_ports,
-                deny_all_traffic_to_endpoint: self.deny_all_traffic_to_endpoint,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficInput {
+            endpoint_group_arn: self.endpoint_group_arn,
+            endpoint_id: self.endpoint_id,
+            destination_addresses: self.destination_addresses,
+            destination_ports: self.destination_ports,
+            deny_all_traffic_to_endpoint: self.deny_all_traffic_to_endpoint,
+        })
     }
 }

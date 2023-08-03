@@ -43,9 +43,7 @@ impl EvaluateCodeInput {
 
 /// A builder for [`EvaluateCodeInput`](crate::operation::evaluate_code::EvaluateCodeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluateCodeInputBuilder {
     pub(crate) runtime: ::std::option::Option<crate::types::AppSyncRuntime>,
     pub(crate) code: ::std::option::Option<::std::string::String>,
@@ -59,10 +57,7 @@ impl EvaluateCodeInputBuilder {
         self
     }
     /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
-    pub fn set_runtime(
-        mut self,
-        input: ::std::option::Option<crate::types::AppSyncRuntime>,
-    ) -> Self {
+    pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::AppSyncRuntime>) -> Self {
         self.runtime = input;
         self
     }
@@ -113,12 +108,7 @@ impl EvaluateCodeInputBuilder {
         &self.function
     }
     /// Consumes the builder and constructs a [`EvaluateCodeInput`](crate::operation::evaluate_code::EvaluateCodeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::evaluate_code::EvaluateCodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::evaluate_code::EvaluateCodeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::evaluate_code::EvaluateCodeInput {
             runtime: self.runtime,
             code: self.code,

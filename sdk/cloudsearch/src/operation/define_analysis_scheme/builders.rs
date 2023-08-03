@@ -37,9 +37,7 @@ impl DefineAnalysisSchemeFluentBuilder {
         }
     }
     /// Access the DefineAnalysisScheme as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DefineAnalysisSchemeFluentBuilder {
             crate::operation::define_analysis_scheme::DefineAnalysisScheme,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_analysis_scheme::DefineAnalysisSchemeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_analysis_scheme::DefineAnalysisSchemeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DefineAnalysisSchemeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DefineAnalysisSchemeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::define_analysis_scheme::DefineAnalysisSchemeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_analysis_scheme::DefineAnalysisSchemeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_analysis_scheme::DefineAnalysisSchemeError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DefineAnalysisSchemeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::define_analysis_scheme::DefineAnalysisSchemeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_analysis_scheme::DefineAnalysisSchemeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_analysis_scheme::DefineAnalysisSchemeError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DefineAnalysisSchemeFluentBuilder {
             crate::operation::define_analysis_scheme::DefineAnalysisScheme,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_analysis_scheme::DefineAnalysisSchemeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_analysis_scheme::DefineAnalysisSchemeError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +129,7 @@ impl DefineAnalysisSchemeFluentBuilder {
         self
     }
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
-    pub fn set_analysis_scheme(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisScheme>,
-    ) -> Self {
+    pub fn set_analysis_scheme(mut self, input: ::std::option::Option<crate::types::AnalysisScheme>) -> Self {
         self.inner = self.inner.set_analysis_scheme(input);
         self
     }

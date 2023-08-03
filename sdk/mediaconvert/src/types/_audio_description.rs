@@ -6,12 +6,10 @@
 pub struct AudioDescription {
     /// When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L), Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
     #[doc(hidden)]
-    pub audio_channel_tagging_settings:
-        ::std::option::Option<crate::types::AudioChannelTaggingSettings>,
+    pub audio_channel_tagging_settings: ::std::option::Option<crate::types::AudioChannelTaggingSettings>,
     /// Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
     #[doc(hidden)]
-    pub audio_normalization_settings:
-        ::std::option::Option<crate::types::AudioNormalizationSettings>,
+    pub audio_normalization_settings: ::std::option::Option<crate::types::AudioNormalizationSettings>,
     /// Specifies which audio data to use from each input. In the simplest case, specify an "Audio Selector":#inputs-audio_selector by name based on its order within each input. For example if you specify "Audio Selector 3", then the third audio selector will be used from each input. If an input does not have an "Audio Selector 3", then the audio selector marked as "default" in that input will be used. If there is no audio selector marked as "default", silence will be inserted for the duration of that input. Alternatively, an "Audio Selector Group":#inputs-audio_selector_group name may be specified, with similar default/silence behavior. If no audio_source_name is specified, then "Audio Selector 1" will be chosen automatically.
     #[doc(hidden)]
     pub audio_source_name: ::std::option::Option<::std::string::String>,
@@ -42,15 +40,11 @@ pub struct AudioDescription {
 }
 impl AudioDescription {
     /// When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L), Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
-    pub fn audio_channel_tagging_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AudioChannelTaggingSettings> {
+    pub fn audio_channel_tagging_settings(&self) -> ::std::option::Option<&crate::types::AudioChannelTaggingSettings> {
         self.audio_channel_tagging_settings.as_ref()
     }
     /// Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
-    pub fn audio_normalization_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AudioNormalizationSettings> {
+    pub fn audio_normalization_settings(&self) -> ::std::option::Option<&crate::types::AudioNormalizationSettings> {
         self.audio_normalization_settings.as_ref()
     }
     /// Specifies which audio data to use from each input. In the simplest case, specify an "Audio Selector":#inputs-audio_selector by name based on its order within each input. For example if you specify "Audio Selector 3", then the third audio selector will be used from each input. If an input does not have an "Audio Selector 3", then the audio selector marked as "default" in that input will be used. If there is no audio selector marked as "default", silence will be inserted for the duration of that input. Alternatively, an "Audio Selector Group":#inputs-audio_selector_group name may be specified, with similar default/silence behavior. If no audio_source_name is specified, then "Audio Selector 1" will be chosen automatically.
@@ -78,9 +72,7 @@ impl AudioDescription {
         self.language_code.as_ref()
     }
     /// Specify which source for language code takes precedence for this audio track. When you choose Follow input, the service uses the language code from the input track if it's present. If there's no languge code on the input track, the service uses the code that you specify in the setting Language code. When you choose Use configured, the service uses the language code that you specify.
-    pub fn language_code_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AudioLanguageCodeControl> {
+    pub fn language_code_control(&self) -> ::std::option::Option<&crate::types::AudioLanguageCodeControl> {
         self.language_code_control.as_ref()
     }
     /// Advanced audio remixing settings.
@@ -101,14 +93,10 @@ impl AudioDescription {
 
 /// A builder for [`AudioDescription`](crate::types::AudioDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioDescriptionBuilder {
-    pub(crate) audio_channel_tagging_settings:
-        ::std::option::Option<crate::types::AudioChannelTaggingSettings>,
-    pub(crate) audio_normalization_settings:
-        ::std::option::Option<crate::types::AudioNormalizationSettings>,
+    pub(crate) audio_channel_tagging_settings: ::std::option::Option<crate::types::AudioChannelTaggingSettings>,
+    pub(crate) audio_normalization_settings: ::std::option::Option<crate::types::AudioNormalizationSettings>,
     pub(crate) audio_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) audio_type: ::std::option::Option<i32>,
     pub(crate) audio_type_control: ::std::option::Option<crate::types::AudioTypeControl>,
@@ -121,62 +109,40 @@ pub struct AudioDescriptionBuilder {
 }
 impl AudioDescriptionBuilder {
     /// When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L), Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
-    pub fn audio_channel_tagging_settings(
-        mut self,
-        input: crate::types::AudioChannelTaggingSettings,
-    ) -> Self {
+    pub fn audio_channel_tagging_settings(mut self, input: crate::types::AudioChannelTaggingSettings) -> Self {
         self.audio_channel_tagging_settings = ::std::option::Option::Some(input);
         self
     }
     /// When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L), Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
-    pub fn set_audio_channel_tagging_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioChannelTaggingSettings>,
-    ) -> Self {
+    pub fn set_audio_channel_tagging_settings(mut self, input: ::std::option::Option<crate::types::AudioChannelTaggingSettings>) -> Self {
         self.audio_channel_tagging_settings = input;
         self
     }
     /// When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L), Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
-    pub fn get_audio_channel_tagging_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioChannelTaggingSettings> {
+    pub fn get_audio_channel_tagging_settings(&self) -> &::std::option::Option<crate::types::AudioChannelTaggingSettings> {
         &self.audio_channel_tagging_settings
     }
     /// Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
-    pub fn audio_normalization_settings(
-        mut self,
-        input: crate::types::AudioNormalizationSettings,
-    ) -> Self {
+    pub fn audio_normalization_settings(mut self, input: crate::types::AudioNormalizationSettings) -> Self {
         self.audio_normalization_settings = ::std::option::Option::Some(input);
         self
     }
     /// Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
-    pub fn set_audio_normalization_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioNormalizationSettings>,
-    ) -> Self {
+    pub fn set_audio_normalization_settings(mut self, input: ::std::option::Option<crate::types::AudioNormalizationSettings>) -> Self {
         self.audio_normalization_settings = input;
         self
     }
     /// Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
-    pub fn get_audio_normalization_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioNormalizationSettings> {
+    pub fn get_audio_normalization_settings(&self) -> &::std::option::Option<crate::types::AudioNormalizationSettings> {
         &self.audio_normalization_settings
     }
     /// Specifies which audio data to use from each input. In the simplest case, specify an "Audio Selector":#inputs-audio_selector by name based on its order within each input. For example if you specify "Audio Selector 3", then the third audio selector will be used from each input. If an input does not have an "Audio Selector 3", then the audio selector marked as "default" in that input will be used. If there is no audio selector marked as "default", silence will be inserted for the duration of that input. Alternatively, an "Audio Selector Group":#inputs-audio_selector_group name may be specified, with similar default/silence behavior. If no audio_source_name is specified, then "Audio Selector 1" will be chosen automatically.
-    pub fn audio_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audio_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audio_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// Specifies which audio data to use from each input. In the simplest case, specify an "Audio Selector":#inputs-audio_selector by name based on its order within each input. For example if you specify "Audio Selector 3", then the third audio selector will be used from each input. If an input does not have an "Audio Selector 3", then the audio selector marked as "default" in that input will be used. If there is no audio selector marked as "default", silence will be inserted for the duration of that input. Alternatively, an "Audio Selector Group":#inputs-audio_selector_group name may be specified, with similar default/silence behavior. If no audio_source_name is specified, then "Audio Selector 1" will be chosen automatically.
-    pub fn set_audio_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audio_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audio_source_name = input;
         self
     }
@@ -204,10 +170,7 @@ impl AudioDescriptionBuilder {
         self
     }
     /// When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
-    pub fn set_audio_type_control(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioTypeControl>,
-    ) -> Self {
+    pub fn set_audio_type_control(mut self, input: ::std::option::Option<crate::types::AudioTypeControl>) -> Self {
         self.audio_type_control = input;
         self
     }
@@ -221,10 +184,7 @@ impl AudioDescriptionBuilder {
         self
     }
     /// Settings related to audio encoding. The settings in this group vary depending on the value that you choose for your audio codec.
-    pub fn set_codec_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioCodecSettings>,
-    ) -> Self {
+    pub fn set_codec_settings(mut self, input: ::std::option::Option<crate::types::AudioCodecSettings>) -> Self {
         self.codec_settings = input;
         self
     }
@@ -233,18 +193,12 @@ impl AudioDescriptionBuilder {
         &self.codec_settings
     }
     /// Specify the language for this audio output track. The service puts this language code into your output audio track when you set Language code control to Use configured. The service also uses your specified custom language code when you set Language code control to Follow input, but your input file doesn't specify a language code. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you can also use any other code in the full RFC-5646 specification. Streaming outputs are those that are in one of the following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
-    pub fn custom_language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// Specify the language for this audio output track. The service puts this language code into your output audio track when you set Language code control to Use configured. The service also uses your specified custom language code when you set Language code control to Follow input, but your input file doesn't specify a language code. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you can also use any other code in the full RFC-5646 specification. Streaming outputs are those that are in one of the following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
-    pub fn set_custom_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_language_code = input;
         self
     }
@@ -258,10 +212,7 @@ impl AudioDescriptionBuilder {
         self
     }
     /// Indicates the language of the audio output track. The ISO 639 language specified in the 'Language Code' drop down will be used when 'Follow Input Language Code' is not selected or when 'Follow Input Language Code' is selected but there is no ISO 639 language code specified by the input.
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -275,17 +226,12 @@ impl AudioDescriptionBuilder {
         self
     }
     /// Specify which source for language code takes precedence for this audio track. When you choose Follow input, the service uses the language code from the input track if it's present. If there's no languge code on the input track, the service uses the code that you specify in the setting Language code. When you choose Use configured, the service uses the language code that you specify.
-    pub fn set_language_code_control(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioLanguageCodeControl>,
-    ) -> Self {
+    pub fn set_language_code_control(mut self, input: ::std::option::Option<crate::types::AudioLanguageCodeControl>) -> Self {
         self.language_code_control = input;
         self
     }
     /// Specify which source for language code takes precedence for this audio track. When you choose Follow input, the service uses the language code from the input track if it's present. If there's no languge code on the input track, the service uses the code that you specify in the setting Language code. When you choose Use configured, the service uses the language code that you specify.
-    pub fn get_language_code_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioLanguageCodeControl> {
+    pub fn get_language_code_control(&self) -> &::std::option::Option<crate::types::AudioLanguageCodeControl> {
         &self.language_code_control
     }
     /// Advanced audio remixing settings.
@@ -294,10 +240,7 @@ impl AudioDescriptionBuilder {
         self
     }
     /// Advanced audio remixing settings.
-    pub fn set_remix_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RemixSettings>,
-    ) -> Self {
+    pub fn set_remix_settings(mut self, input: ::std::option::Option<crate::types::RemixSettings>) -> Self {
         self.remix_settings = input;
         self
     }

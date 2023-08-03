@@ -39,9 +39,7 @@ impl CheckpointConfigurationUpdate {
     /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
     /// </ul>
     /// </note>
-    pub fn configuration_type_update(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfigurationType> {
+    pub fn configuration_type_update(&self) -> ::std::option::Option<&crate::types::ConfigurationType> {
         self.configuration_type_update.as_ref()
     }
     /// <p>Describes updates to whether checkpointing is enabled for an application.</p> <note>
@@ -72,9 +70,7 @@ impl CheckpointConfigurationUpdate {
 
 /// A builder for [`CheckpointConfigurationUpdate`](crate::types::CheckpointConfigurationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckpointConfigurationUpdateBuilder {
     pub(crate) configuration_type_update: ::std::option::Option<crate::types::ConfigurationType>,
     pub(crate) checkpointing_enabled_update: ::std::option::Option<bool>,
@@ -102,10 +98,7 @@ impl CheckpointConfigurationUpdateBuilder {
     /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_configuration_type_update(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationType>,
-    ) -> Self {
+    pub fn set_configuration_type_update(mut self, input: ::std::option::Option<crate::types::ConfigurationType>) -> Self {
         self.configuration_type_update = input;
         self
     }
@@ -117,9 +110,7 @@ impl CheckpointConfigurationUpdateBuilder {
     /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_configuration_type_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationType> {
+    pub fn get_configuration_type_update(&self) -> &::std::option::Option<crate::types::ConfigurationType> {
         &self.configuration_type_update
     }
     /// <p>Describes updates to whether checkpointing is enabled for an application.</p> <note>
@@ -172,10 +163,7 @@ impl CheckpointConfigurationUpdateBuilder {
     /// <p>Describes updates to the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation can start.</p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application code.</p>
     /// </note>
-    pub fn set_min_pause_between_checkpoints_update(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_min_pause_between_checkpoints_update(mut self, input: ::std::option::Option<i64>) -> Self {
         self.min_pause_between_checkpoints_update = input;
         self
     }

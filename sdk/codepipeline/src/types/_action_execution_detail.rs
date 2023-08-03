@@ -86,9 +86,7 @@ impl ActionExecutionDetail {
 
 /// A builder for [`ActionExecutionDetail`](crate::types::ActionExecutionDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionExecutionDetailBuilder {
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_execution_id: ::std::option::Option<::std::string::String>,
@@ -103,18 +101,12 @@ pub struct ActionExecutionDetailBuilder {
 }
 impl ActionExecutionDetailBuilder {
     /// <p>The pipeline execution ID for the action execution.</p>
-    pub fn pipeline_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pipeline execution ID for the action execution.</p>
-    pub fn set_pipeline_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_id = input;
         self
     }
@@ -123,18 +115,12 @@ impl ActionExecutionDetailBuilder {
         &self.pipeline_execution_id
     }
     /// <p>The action execution ID.</p>
-    pub fn action_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action execution ID.</p>
-    pub fn set_action_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_action_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_execution_id = input;
         self
     }
@@ -190,10 +176,7 @@ impl ActionExecutionDetailBuilder {
         self
     }
     /// <p>The start time of the action execution.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -207,10 +190,7 @@ impl ActionExecutionDetailBuilder {
         self
     }
     /// <p>The last update time of the action execution.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }
@@ -224,10 +204,7 @@ impl ActionExecutionDetailBuilder {
         self
     }
     /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -241,10 +218,7 @@ impl ActionExecutionDetailBuilder {
         self
     }
     /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
-    pub fn set_input(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionExecutionInput>,
-    ) -> Self {
+    pub fn set_input(mut self, input: ::std::option::Option<crate::types::ActionExecutionInput>) -> Self {
         self.input = input;
         self
     }
@@ -258,10 +232,7 @@ impl ActionExecutionDetailBuilder {
         self
     }
     /// <p>Output details for the action execution, such as the action execution result.</p>
-    pub fn set_output(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionExecutionOutput>,
-    ) -> Self {
+    pub fn set_output(mut self, input: ::std::option::Option<crate::types::ActionExecutionOutput>) -> Self {
         self.output = input;
         self
     }

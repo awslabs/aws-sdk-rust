@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DisassociateTransitGatewayRouteTableO
 }
 impl DisassociateTransitGatewayRouteTableOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateTransitGatewayRouteTableOutput`](crate::operation::disassociate_transit_gateway_route_table::DisassociateTransitGatewayRouteTableOutput).
-    pub fn builder() -> crate::operation::disassociate_transit_gateway_route_table::builders::DisassociateTransitGatewayRouteTableOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_transit_gateway_route_table::builders::DisassociateTransitGatewayRouteTableOutputBuilder {
         crate::operation::disassociate_transit_gateway_route_table::builders::DisassociateTransitGatewayRouteTableOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTransitGatewayRouteTableOutput`](crate::operation::disassociate_transit_gateway_route_table::DisassociateTransitGatewayRouteTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTransitGatewayRouteTableOutputBuilder {
     pub(crate) association: ::std::option::Option<crate::types::TransitGatewayAssociation>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DisassociateTransitGatewayRouteTableOutputBuilder {
         self
     }
     /// <p>Information about the association.</p>
-    pub fn set_association(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayAssociation>,
-    ) -> Self {
+    pub fn set_association(mut self, input: ::std::option::Option<crate::types::TransitGatewayAssociation>) -> Self {
         self.association = input;
         self
     }
     /// <p>Information about the association.</p>
-    pub fn get_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayAssociation> {
+    pub fn get_association(&self) -> &::std::option::Option<crate::types::TransitGatewayAssociation> {
         &self.association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,10 +58,9 @@ impl DisassociateTransitGatewayRouteTableOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateTransitGatewayRouteTableOutput`](crate::operation::disassociate_transit_gateway_route_table::DisassociateTransitGatewayRouteTableOutput).
-    pub fn build(self) -> crate::operation::disassociate_transit_gateway_route_table::DisassociateTransitGatewayRouteTableOutput{
+    pub fn build(self) -> crate::operation::disassociate_transit_gateway_route_table::DisassociateTransitGatewayRouteTableOutput {
         crate::operation::disassociate_transit_gateway_route_table::DisassociateTransitGatewayRouteTableOutput {
-            association: self.association
-            ,
+            association: self.association,
             _request_id: self._request_id,
         }
     }

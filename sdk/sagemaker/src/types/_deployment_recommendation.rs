@@ -9,20 +9,15 @@ pub struct DeploymentRecommendation {
     pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RealTimeInferenceRecommendation.html">RealTimeInferenceRecommendation</a> items.</p>
     #[doc(hidden)]
-    pub real_time_inference_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::RealTimeInferenceRecommendation>>,
+    pub real_time_inference_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeInferenceRecommendation>>,
 }
 impl DeploymentRecommendation {
     /// <p>Status of the deployment recommendation. The status <code>NOT_APPLICABLE</code> means that SageMaker is unable to provide a default recommendation for the model using the information provided. If the deployment status is <code>IN_PROGRESS</code>, retry your API call after a few seconds to get a <code>COMPLETED</code> deployment recommendation.</p>
-    pub fn recommendation_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationStatus> {
+    pub fn recommendation_status(&self) -> ::std::option::Option<&crate::types::RecommendationStatus> {
         self.recommendation_status.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RealTimeInferenceRecommendation.html">RealTimeInferenceRecommendation</a> items.</p>
-    pub fn real_time_inference_recommendations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RealTimeInferenceRecommendation]> {
+    pub fn real_time_inference_recommendations(&self) -> ::std::option::Option<&[crate::types::RealTimeInferenceRecommendation]> {
         self.real_time_inference_recommendations.as_deref()
     }
 }
@@ -35,13 +30,10 @@ impl DeploymentRecommendation {
 
 /// A builder for [`DeploymentRecommendation`](crate::types::DeploymentRecommendation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentRecommendationBuilder {
     pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
-    pub(crate) real_time_inference_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::RealTimeInferenceRecommendation>>,
+    pub(crate) real_time_inference_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeInferenceRecommendation>>,
 }
 impl DeploymentRecommendationBuilder {
     /// <p>Status of the deployment recommendation. The status <code>NOT_APPLICABLE</code> means that SageMaker is unable to provide a default recommendation for the model using the information provided. If the deployment status is <code>IN_PROGRESS</code>, retry your API call after a few seconds to get a <code>COMPLETED</code> deployment recommendation.</p>
@@ -50,17 +42,12 @@ impl DeploymentRecommendationBuilder {
         self
     }
     /// <p>Status of the deployment recommendation. The status <code>NOT_APPLICABLE</code> means that SageMaker is unable to provide a default recommendation for the model using the information provided. If the deployment status is <code>IN_PROGRESS</code>, retry your API call after a few seconds to get a <code>COMPLETED</code> deployment recommendation.</p>
-    pub fn set_recommendation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationStatus>,
-    ) -> Self {
+    pub fn set_recommendation_status(mut self, input: ::std::option::Option<crate::types::RecommendationStatus>) -> Self {
         self.recommendation_status = input;
         self
     }
     /// <p>Status of the deployment recommendation. The status <code>NOT_APPLICABLE</code> means that SageMaker is unable to provide a default recommendation for the model using the information provided. If the deployment status is <code>IN_PROGRESS</code>, retry your API call after a few seconds to get a <code>COMPLETED</code> deployment recommendation.</p>
-    pub fn get_recommendation_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationStatus> {
+    pub fn get_recommendation_status(&self) -> &::std::option::Option<crate::types::RecommendationStatus> {
         &self.recommendation_status
     }
     /// Appends an item to `real_time_inference_recommendations`.
@@ -68,10 +55,7 @@ impl DeploymentRecommendationBuilder {
     /// To override the contents of this collection use [`set_real_time_inference_recommendations`](Self::set_real_time_inference_recommendations).
     ///
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RealTimeInferenceRecommendation.html">RealTimeInferenceRecommendation</a> items.</p>
-    pub fn real_time_inference_recommendations(
-        mut self,
-        input: crate::types::RealTimeInferenceRecommendation,
-    ) -> Self {
+    pub fn real_time_inference_recommendations(mut self, input: crate::types::RealTimeInferenceRecommendation) -> Self {
         let mut v = self.real_time_inference_recommendations.unwrap_or_default();
         v.push(input);
         self.real_time_inference_recommendations = ::std::option::Option::Some(v);
@@ -80,18 +64,13 @@ impl DeploymentRecommendationBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RealTimeInferenceRecommendation.html">RealTimeInferenceRecommendation</a> items.</p>
     pub fn set_real_time_inference_recommendations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::RealTimeInferenceRecommendation>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeInferenceRecommendation>>,
     ) -> Self {
         self.real_time_inference_recommendations = input;
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RealTimeInferenceRecommendation.html">RealTimeInferenceRecommendation</a> items.</p>
-    pub fn get_real_time_inference_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RealTimeInferenceRecommendation>>
-    {
+    pub fn get_real_time_inference_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RealTimeInferenceRecommendation>> {
         &self.real_time_inference_recommendations
     }
     /// Consumes the builder and constructs a [`DeploymentRecommendation`](crate::types::DeploymentRecommendation).

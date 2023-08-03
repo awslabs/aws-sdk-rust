@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteClientVpnRouteOutput {
 }
 impl DeleteClientVpnRouteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteClientVpnRouteOutput`](crate::operation::delete_client_vpn_route::DeleteClientVpnRouteOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_client_vpn_route::builders::DeleteClientVpnRouteOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_client_vpn_route::builders::DeleteClientVpnRouteOutputBuilder {
         crate::operation::delete_client_vpn_route::builders::DeleteClientVpnRouteOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteClientVpnRouteOutput`](crate::operation::delete_client_vpn_route::DeleteClientVpnRouteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClientVpnRouteOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ClientVpnRouteStatus>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteClientVpnRouteOutputBuilder {
         self
     }
     /// <p>The current state of the route.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientVpnRouteStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClientVpnRouteStatus>) -> Self {
         self.status = input;
         self
     }

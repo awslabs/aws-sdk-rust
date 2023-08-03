@@ -24,9 +24,7 @@ impl ActivityMetrics {
 
 /// A builder for [`ActivityMetrics`](crate::types::ActivityMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivityMetricsBuilder {
     pub(crate) is_enabled: ::std::option::Option<bool>,
 }

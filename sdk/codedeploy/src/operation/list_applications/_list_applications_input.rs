@@ -16,17 +16,14 @@ impl ListApplicationsInput {
 }
 impl ListApplicationsInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsInputBuilder {
         crate::operation::list_applications::builders::ListApplicationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +45,7 @@ impl ListApplicationsInputBuilder {
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_applications::ListApplicationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsInput {
-            next_token: self.next_token,
-        })
+    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsInput { next_token: self.next_token })
     }
 }

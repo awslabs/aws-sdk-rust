@@ -93,9 +93,7 @@ impl InsertableImage {
 
 /// A builder for [`InsertableImage`](crate::types::InsertableImage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsertableImageBuilder {
     pub(crate) duration: ::std::option::Option<i32>,
     pub(crate) fade_in: ::std::option::Option<i32>,
@@ -167,18 +165,12 @@ impl InsertableImageBuilder {
         &self.height
     }
     /// Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
-    pub fn image_inserter_input(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_inserter_input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_inserter_input = ::std::option::Option::Some(input.into());
         self
     }
     /// Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
-    pub fn set_image_inserter_input(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_inserter_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_inserter_input = input;
         self
     }

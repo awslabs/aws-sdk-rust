@@ -48,7 +48,7 @@ impl CreateReplicationConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateReplicationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_replication_configuration::builders::CreateReplicationConfigurationInputBuilder,
+    inner: crate::operation::create_replication_configuration::builders::CreateReplicationConfigurationInputBuilder,
 }
 impl CreateReplicationConfigurationFluentBuilder {
     /// Creates a new `CreateReplicationConfiguration`.
@@ -59,7 +59,7 @@ impl CreateReplicationConfigurationFluentBuilder {
         }
     }
     /// Access the CreateReplicationConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_replication_configuration::builders::CreateReplicationConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_replication_configuration::builders::CreateReplicationConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -71,9 +71,7 @@ impl CreateReplicationConfigurationFluentBuilder {
             crate::operation::create_replication_configuration::CreateReplicationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_configuration::CreateReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_configuration::CreateReplicationConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -83,10 +81,7 @@ impl CreateReplicationConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -95,9 +90,7 @@ impl CreateReplicationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_configuration::CreateReplicationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_configuration::CreateReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_configuration::CreateReplicationConfigurationError>,
     > {
         let op = self
             .inner
@@ -120,9 +113,7 @@ impl CreateReplicationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_configuration::CreateReplicationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_configuration::CreateReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_configuration::CreateReplicationConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -136,25 +127,17 @@ impl CreateReplicationConfigurationFluentBuilder {
             crate::operation::create_replication_configuration::CreateReplicationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_configuration::CreateReplicationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_configuration::CreateReplicationConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
-    pub fn source_file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_file_system_id(input.into());
         self
     }
     /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
-    pub fn set_source_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_file_system_id(input);
         self
     }
@@ -172,17 +155,12 @@ impl CreateReplicationConfigurationFluentBuilder {
         self
     }
     /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>>) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
     }
     /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationToCreate>> {
         self.inner.get_destinations()
     }
 }

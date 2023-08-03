@@ -36,9 +36,7 @@ impl ListBridgesInput {
 
 /// A builder for [`ListBridgesInput`](crate::operation::list_bridges::ListBridgesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBridgesInputBuilder {
     pub(crate) filter_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,12 +86,7 @@ impl ListBridgesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBridgesInput`](crate::operation::list_bridges::ListBridgesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bridges::ListBridgesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bridges::ListBridgesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_bridges::ListBridgesInput {
             filter_arn: self.filter_arn,
             max_results: self.max_results,

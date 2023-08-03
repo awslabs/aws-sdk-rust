@@ -36,9 +36,7 @@ impl ListThingsOutput {
 
 /// A builder for [`ListThingsOutput`](crate::operation::list_things::ListThingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingsOutputBuilder {
     pub(crate) things: ::std::option::Option<::std::vec::Vec<crate::types::ThingAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListThingsOutputBuilder {
         self
     }
     /// <p>The things.</p>
-    pub fn set_things(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThingAttribute>>,
-    ) -> Self {
+    pub fn set_things(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThingAttribute>>) -> Self {
         self.things = input;
         self
     }
     /// <p>The things.</p>
-    pub fn get_things(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThingAttribute>> {
+    pub fn get_things(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThingAttribute>> {
         &self.things
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>

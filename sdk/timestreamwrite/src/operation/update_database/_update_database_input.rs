@@ -43,27 +43,19 @@ impl UpdateDatabaseInput {
 
 /// A builder for [`UpdateDatabaseInput`](crate::operation::update_database::UpdateDatabaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatabaseInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDatabaseInputBuilder {
     /// <p> The name of the database. </p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the database. </p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -109,10 +101,7 @@ impl UpdateDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatabaseInput`](crate::operation::update_database::UpdateDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_database::UpdateDatabaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_database::UpdateDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_database::UpdateDatabaseInput {
             database_name: self.database_name,
             kms_key_id: self.kms_key_id,

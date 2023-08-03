@@ -10,10 +10,7 @@ impl ListFleetMetricsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_fleet_metrics::ListFleetMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fleet_metrics::ListFleetMetricsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fleet_metrics::ListFleetMetricsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_fleet_metrics();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListFleetMetricsFluentBuilder {
         }
     }
     /// Access the ListFleetMetrics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_fleet_metrics::builders::ListFleetMetricsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_fleet_metrics::builders::ListFleetMetricsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListFleetMetricsFluentBuilder {
             crate::operation::list_fleet_metrics::ListFleetMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fleet_metrics::ListFleetMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fleet_metrics::ListFleetMetricsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListFleetMetricsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListFleetMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_fleet_metrics::ListFleetMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fleet_metrics::ListFleetMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fleet_metrics::ListFleetMetricsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListFleetMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_fleet_metrics::ListFleetMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fleet_metrics::ListFleetMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fleet_metrics::ListFleetMetricsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListFleetMetricsFluentBuilder {
             crate::operation::list_fleet_metrics::ListFleetMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fleet_metrics::ListFleetMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fleet_metrics::ListFleetMetricsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_fleet_metrics::paginator::ListFleetMetricsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_fleet_metrics::paginator::ListFleetMetricsPaginator {
-        crate::operation::list_fleet_metrics::paginator::ListFleetMetricsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_fleet_metrics::paginator::ListFleetMetricsPaginator {
+        crate::operation::list_fleet_metrics::paginator::ListFleetMetricsPaginator::new(self.handle, self.inner)
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

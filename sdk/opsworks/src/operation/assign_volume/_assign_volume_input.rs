@@ -29,9 +29,7 @@ impl AssignVolumeInput {
 
 /// A builder for [`AssignVolumeInput`](crate::operation::assign_volume::AssignVolumeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssignVolumeInputBuilder {
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl AssignVolumeInputBuilder {
         &self.instance_id
     }
     /// Consumes the builder and constructs a [`AssignVolumeInput`](crate::operation::assign_volume::AssignVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::assign_volume::AssignVolumeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::assign_volume::AssignVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::assign_volume::AssignVolumeInput {
             volume_id: self.volume_id,
             instance_id: self.instance_id,

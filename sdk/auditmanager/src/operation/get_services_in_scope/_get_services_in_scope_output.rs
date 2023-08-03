@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for GetServicesInScopeOutput {
 }
 impl GetServicesInScopeOutput {
     /// Creates a new builder-style object to manufacture [`GetServicesInScopeOutput`](crate::operation::get_services_in_scope::GetServicesInScopeOutput).
-    pub fn builder(
-    ) -> crate::operation::get_services_in_scope::builders::GetServicesInScopeOutputBuilder {
-        crate::operation::get_services_in_scope::builders::GetServicesInScopeOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_services_in_scope::builders::GetServicesInScopeOutputBuilder {
+        crate::operation::get_services_in_scope::builders::GetServicesInScopeOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServicesInScopeOutput`](crate::operation::get_services_in_scope::GetServicesInScopeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServicesInScopeOutputBuilder {
-    pub(crate) service_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceMetadata>>,
+    pub(crate) service_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ServiceMetadata>>,
     _request_id: Option<String>,
 }
 impl GetServicesInScopeOutputBuilder {
@@ -51,17 +46,12 @@ impl GetServicesInScopeOutputBuilder {
         self
     }
     /// <p> The metadata that's associated with the Amazon Web Service. </p>
-    pub fn set_service_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceMetadata>>,
-    ) -> Self {
+    pub fn set_service_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceMetadata>>) -> Self {
         self.service_metadata = input;
         self
     }
     /// <p> The metadata that's associated with the Amazon Web Service. </p>
-    pub fn get_service_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceMetadata>> {
+    pub fn get_service_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceMetadata>> {
         &self.service_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

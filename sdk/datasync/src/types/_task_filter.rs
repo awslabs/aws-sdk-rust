@@ -38,9 +38,7 @@ impl TaskFilter {
 
 /// A builder for [`TaskFilter`](crate::types::TaskFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::TaskFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -73,10 +71,7 @@ impl TaskFilterBuilder {
         self
     }
     /// <p>The values that you want to filter for. For example, you might want to display only tasks for a specific destination location.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

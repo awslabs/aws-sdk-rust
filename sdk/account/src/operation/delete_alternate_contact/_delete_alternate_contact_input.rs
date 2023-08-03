@@ -17,9 +17,7 @@ pub struct DeleteAlternateContactInput {
 }
 impl DeleteAlternateContactInput {
     /// <p>Specifies which of the alternate contacts to delete. </p>
-    pub fn alternate_contact_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AlternateContactType> {
+    pub fn alternate_contact_type(&self) -> ::std::option::Option<&crate::types::AlternateContactType> {
         self.alternate_contact_type.as_ref()
     }
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
@@ -34,18 +32,14 @@ impl DeleteAlternateContactInput {
 }
 impl DeleteAlternateContactInput {
     /// Creates a new builder-style object to manufacture [`DeleteAlternateContactInput`](crate::operation::delete_alternate_contact::DeleteAlternateContactInput).
-    pub fn builder(
-    ) -> crate::operation::delete_alternate_contact::builders::DeleteAlternateContactInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_alternate_contact::builders::DeleteAlternateContactInputBuilder {
         crate::operation::delete_alternate_contact::builders::DeleteAlternateContactInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAlternateContactInput`](crate::operation::delete_alternate_contact::DeleteAlternateContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAlternateContactInputBuilder {
     pub(crate) alternate_contact_type: ::std::option::Option<crate::types::AlternateContactType>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -57,17 +51,12 @@ impl DeleteAlternateContactInputBuilder {
         self
     }
     /// <p>Specifies which of the alternate contacts to delete. </p>
-    pub fn set_alternate_contact_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AlternateContactType>,
-    ) -> Self {
+    pub fn set_alternate_contact_type(mut self, input: ::std::option::Option<crate::types::AlternateContactType>) -> Self {
         self.alternate_contact_type = input;
         self
     }
     /// <p>Specifies which of the alternate contacts to delete. </p>
-    pub fn get_alternate_contact_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlternateContactType> {
+    pub fn get_alternate_contact_type(&self) -> &::std::option::Option<crate::types::AlternateContactType> {
         &self.alternate_contact_type
     }
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
@@ -102,15 +91,11 @@ impl DeleteAlternateContactInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAlternateContactInput`](crate::operation::delete_alternate_contact::DeleteAlternateContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_alternate_contact::DeleteAlternateContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_alternate_contact::DeleteAlternateContactInput {
-                alternate_contact_type: self.alternate_contact_type,
-                account_id: self.account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_alternate_contact::DeleteAlternateContactInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_alternate_contact::DeleteAlternateContactInput {
+            alternate_contact_type: self.alternate_contact_type,
+            account_id: self.account_id,
+        })
     }
 }

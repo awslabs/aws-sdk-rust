@@ -20,8 +20,7 @@ pub struct GetInsightRuleReportOutput {
     pub contributors: ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleContributor>>,
     /// <p>A time series of metric data points that matches the time period in the rule request.</p>
     #[doc(hidden)]
-    pub metric_datapoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleMetricDatapoint>>,
+    pub metric_datapoints: ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleMetricDatapoint>>,
     _request_id: Option<String>,
 }
 impl GetInsightRuleReportOutput {
@@ -46,9 +45,7 @@ impl GetInsightRuleReportOutput {
         self.contributors.as_deref()
     }
     /// <p>A time series of metric data points that matches the time period in the rule request.</p>
-    pub fn metric_datapoints(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InsightRuleMetricDatapoint]> {
+    pub fn metric_datapoints(&self) -> ::std::option::Option<&[crate::types::InsightRuleMetricDatapoint]> {
         self.metric_datapoints.as_deref()
     }
 }
@@ -59,27 +56,21 @@ impl ::aws_http::request_id::RequestId for GetInsightRuleReportOutput {
 }
 impl GetInsightRuleReportOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightRuleReportOutput`](crate::operation::get_insight_rule_report::GetInsightRuleReportOutput).
-    pub fn builder(
-    ) -> crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder {
         crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInsightRuleReportOutput`](crate::operation::get_insight_rule_report::GetInsightRuleReportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightRuleReportOutputBuilder {
     pub(crate) key_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) aggregation_statistic: ::std::option::Option<::std::string::String>,
     pub(crate) aggregate_value: ::std::option::Option<f64>,
     pub(crate) approximate_unique_count: ::std::option::Option<i64>,
-    pub(crate) contributors:
-        ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleContributor>>,
-    pub(crate) metric_datapoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleMetricDatapoint>>,
+    pub(crate) contributors: ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleContributor>>,
+    pub(crate) metric_datapoints: ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleMetricDatapoint>>,
     _request_id: Option<String>,
 }
 impl GetInsightRuleReportOutputBuilder {
@@ -95,10 +86,7 @@ impl GetInsightRuleReportOutputBuilder {
         self
     }
     /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors. If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
-    pub fn set_key_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_key_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.key_labels = input;
         self
     }
@@ -107,18 +95,12 @@ impl GetInsightRuleReportOutputBuilder {
         &self.key_labels
     }
     /// <p>Specifies whether this rule aggregates contributor data by COUNT or SUM.</p>
-    pub fn aggregation_statistic(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aggregation_statistic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aggregation_statistic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies whether this rule aggregates contributor data by COUNT or SUM.</p>
-    pub fn set_aggregation_statistic(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aggregation_statistic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aggregation_statistic = input;
         self
     }
@@ -166,17 +148,12 @@ impl GetInsightRuleReportOutputBuilder {
         self
     }
     /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
-    pub fn set_contributors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleContributor>>,
-    ) -> Self {
+    pub fn set_contributors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleContributor>>) -> Self {
         self.contributors = input;
         self
     }
     /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
-    pub fn get_contributors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightRuleContributor>> {
+    pub fn get_contributors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightRuleContributor>> {
         &self.contributors
     }
     /// Appends an item to `metric_datapoints`.
@@ -191,17 +168,12 @@ impl GetInsightRuleReportOutputBuilder {
         self
     }
     /// <p>A time series of metric data points that matches the time period in the rule request.</p>
-    pub fn set_metric_datapoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleMetricDatapoint>>,
-    ) -> Self {
+    pub fn set_metric_datapoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleMetricDatapoint>>) -> Self {
         self.metric_datapoints = input;
         self
     }
     /// <p>A time series of metric data points that matches the time period in the rule request.</p>
-    pub fn get_metric_datapoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightRuleMetricDatapoint>> {
+    pub fn get_metric_datapoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightRuleMetricDatapoint>> {
         &self.metric_datapoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

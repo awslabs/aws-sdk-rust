@@ -35,19 +35,16 @@ impl ::aws_http::request_id::RequestId for DescribeBrokerEngineTypesOutput {
 }
 impl DescribeBrokerEngineTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBrokerEngineTypesOutput`](crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput).
-    pub fn builder() -> crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesOutputBuilder {
         crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBrokerEngineTypesOutput`](crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBrokerEngineTypesOutputBuilder {
-    pub(crate) broker_engine_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::BrokerEngineType>>,
+    pub(crate) broker_engine_types: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEngineType>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -65,17 +62,12 @@ impl DescribeBrokerEngineTypesOutputBuilder {
         self
     }
     /// <p>List of available engine types and versions.</p>
-    pub fn set_broker_engine_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEngineType>>,
-    ) -> Self {
+    pub fn set_broker_engine_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEngineType>>) -> Self {
         self.broker_engine_types = input;
         self
     }
     /// <p>List of available engine types and versions.</p>
-    pub fn get_broker_engine_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BrokerEngineType>> {
+    pub fn get_broker_engine_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrokerEngineType>> {
         &self.broker_engine_types
     }
     /// <p>Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -116,9 +108,7 @@ impl DescribeBrokerEngineTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeBrokerEngineTypesOutput`](crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput {
+    pub fn build(self) -> crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput {
         crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput {
             broker_engine_types: self.broker_engine_types,
             max_results: self.max_results,

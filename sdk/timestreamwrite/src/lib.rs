@@ -101,22 +101,14 @@ pub use config::Config;
 
 async fn resolve_endpoint(
     client: &crate::Client,
-) -> Result<
-    (
-        ::aws_smithy_types::endpoint::Endpoint,
-        ::std::time::SystemTime,
-    ),
-    ::aws_smithy_http::endpoint::ResolveEndpointError,
-> {
-    let describe_endpoints = client.describe_endpoints().send().await.map_err(|e| {
-        ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-            "failed to call describe_endpoints",
-            e,
-        )
-    })?;
+) -> Result<(::aws_smithy_types::endpoint::Endpoint, ::std::time::SystemTime), ::aws_smithy_http::endpoint::ResolveEndpointError> {
+    let describe_endpoints = client
+        .describe_endpoints()
+        .send()
+        .await
+        .map_err(|e| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("failed to call describe_endpoints", e))?;
     let endpoint = describe_endpoints.endpoints().unwrap().get(0).unwrap();
-    let expiry = client.conf().time_source().now()
-        + ::std::time::Duration::from_secs(endpoint.cache_period_in_minutes() as u64 * 60);
+    let expiry = client.conf().time_source().now() + ::std::time::Duration::from_secs(endpoint.cache_period_in_minutes() as u64 * 60);
     Ok((
         ::aws_smithy_types::endpoint::Endpoint::builder()
             .url(format!("https://{}", endpoint.address().unwrap()))
@@ -131,15 +123,9 @@ impl Client {
     /// This method MUST be called to construct a working client.
     pub async fn enable_endpoint_discovery(
         self,
-    ) -> ::std::result::Result<
-        (Self, crate::endpoint_discovery::ReloadEndpoint),
-        ::aws_smithy_http::endpoint::ResolveEndpointError,
-    > {
+    ) -> ::std::result::Result<(Self, crate::endpoint_discovery::ReloadEndpoint), ::aws_smithy_http::endpoint::ResolveEndpointError> {
         let mut new_conf = self.conf().clone();
-        let sleep = self
-            .conf()
-            .sleep_impl()
-            .expect("sleep impl must be provided");
+        let sleep = self.conf().sleep_impl().expect("sleep impl must be provided");
         let time = self.conf().time_source();
         let (resolver, reloader) = crate::endpoint_discovery::create_cache(
             move || {
@@ -150,8 +136,7 @@ impl Client {
             time,
         )
         .await?;
-        new_conf.endpoint_resolver =
-            ::aws_smithy_http::endpoint::SharedEndpointResolver::new(resolver);
+        new_conf.endpoint_resolver = ::aws_smithy_http::endpoint::SharedEndpointResolver::new(resolver);
         Ok((Self::from_conf(new_conf), reloader))
     }
 }

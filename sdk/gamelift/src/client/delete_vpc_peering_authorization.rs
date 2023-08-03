@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`peer_vpc_id(impl ::std::convert::Into<String>)`](crate::operation::delete_vpc_peering_authorization::builders::DeleteVpcPeeringAuthorizationFluentBuilder::peer_vpc_id) / [`set_peer_vpc_id(Option<String>)`](crate::operation::delete_vpc_peering_authorization::builders::DeleteVpcPeeringAuthorizationFluentBuilder::set_peer_vpc_id): <p>A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
     /// - On success, responds with [`DeleteVpcPeeringAuthorizationOutput`](crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationOutput)
     /// - On failure, responds with [`SdkError<DeleteVpcPeeringAuthorizationError>`](crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationError)
-    pub fn delete_vpc_peering_authorization(&self) -> crate::operation::delete_vpc_peering_authorization::builders::DeleteVpcPeeringAuthorizationFluentBuilder{
+    pub fn delete_vpc_peering_authorization(
+        &self,
+    ) -> crate::operation::delete_vpc_peering_authorization::builders::DeleteVpcPeeringAuthorizationFluentBuilder {
         crate::operation::delete_vpc_peering_authorization::builders::DeleteVpcPeeringAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

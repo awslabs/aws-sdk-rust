@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_opt_out_list::CreateOptOutListOutput::tags): <p>An array of tags (key and value pairs) associated with the new OptOutList.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::create_opt_out_list::CreateOptOutListOutput::created_timestamp): <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     /// - On failure, responds with [`SdkError<CreateOptOutListError>`](crate::operation::create_opt_out_list::CreateOptOutListError)
-    pub fn create_opt_out_list(
-        &self,
-    ) -> crate::operation::create_opt_out_list::builders::CreateOptOutListFluentBuilder {
-        crate::operation::create_opt_out_list::builders::CreateOptOutListFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_opt_out_list(&self) -> crate::operation::create_opt_out_list::builders::CreateOptOutListFluentBuilder {
+        crate::operation::create_opt_out_list::builders::CreateOptOutListFluentBuilder::new(self.handle.clone())
     }
 }

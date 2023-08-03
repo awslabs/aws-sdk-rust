@@ -59,10 +59,7 @@ impl DescribeIdentityUsageFluentBuilder {
         }
     }
     /// Access the DescribeIdentityUsage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_identity_usage::builders::DescribeIdentityUsageInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_identity_usage::builders::DescribeIdentityUsageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +71,7 @@ impl DescribeIdentityUsageFluentBuilder {
             crate::operation::describe_identity_usage::DescribeIdentityUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_identity_usage::DescribeIdentityUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_identity_usage::DescribeIdentityUsageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -86,10 +81,7 @@ impl DescribeIdentityUsageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -98,9 +90,7 @@ impl DescribeIdentityUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_identity_usage::DescribeIdentityUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_identity_usage::DescribeIdentityUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_identity_usage::DescribeIdentityUsageError>,
     > {
         let op = self
             .inner
@@ -123,9 +113,7 @@ impl DescribeIdentityUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_identity_usage::DescribeIdentityUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_identity_usage::DescribeIdentityUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_identity_usage::DescribeIdentityUsageError>,
     > {
         self.send_middleware().await
     }
@@ -139,25 +127,17 @@ impl DescribeIdentityUsageFluentBuilder {
             crate::operation::describe_identity_usage::DescribeIdentityUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_identity_usage::DescribeIdentityUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_identity_usage::DescribeIdentityUsageError>,
     > {
         self.customize_middleware().await
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }

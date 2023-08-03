@@ -23,26 +23,18 @@ impl VpcConnectionProperties {
 
 /// A builder for [`VpcConnectionProperties`](crate::types::VpcConnectionProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcConnectionPropertiesBuilder {
     pub(crate) vpc_connection_arn: ::std::option::Option<::std::string::String>,
 }
 impl VpcConnectionPropertiesBuilder {
     /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
-    pub fn vpc_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
-    pub fn set_vpc_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_connection_arn = input;
         self
     }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`voices(Option<Vec<Voice>>)`](crate::operation::describe_voices::DescribeVoicesOutput::voices): <p>A list of voices with their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_voices::DescribeVoicesOutput::next_token): <p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>
     /// - On failure, responds with [`SdkError<DescribeVoicesError>`](crate::operation::describe_voices::DescribeVoicesError)
-    pub fn describe_voices(
-        &self,
-    ) -> crate::operation::describe_voices::builders::DescribeVoicesFluentBuilder {
-        crate::operation::describe_voices::builders::DescribeVoicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_voices(&self) -> crate::operation::describe_voices::builders::DescribeVoicesFluentBuilder {
+        crate::operation::describe_voices::builders::DescribeVoicesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,12 +9,8 @@ pub fn de_describe_ipam_scopes_http_error(
     crate::operation::describe_ipam_scopes::DescribeIpamScopesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::describe_ipam_scopes::DescribeIpamScopesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_ipam_scopes::DescribeIpamScopesError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::describe_ipam_scopes::DescribeIpamScopesError::generic(generic))
@@ -32,14 +28,9 @@ pub fn de_describe_ipam_scopes_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesOutputBuilder::default();
-        output = crate::protocol_serde::shape_describe_ipam_scopes::de_describe_ipam_scopes(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::describe_ipam_scopes::DescribeIpamScopesError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_describe_ipam_scopes::de_describe_ipam_scopes(_response_body, output)
+            .map_err(crate::operation::describe_ipam_scopes::DescribeIpamScopesError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -48,10 +39,7 @@ pub fn de_describe_ipam_scopes_http_response_with_props(
 pub fn de_describe_ipam_scopes(
     inp: &[u8],
     mut builder: crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesOutputBuilder,
-) -> Result<
-    crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

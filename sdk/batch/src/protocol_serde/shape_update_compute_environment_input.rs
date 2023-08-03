@@ -9,10 +9,7 @@ pub fn ser_update_compute_environment_input(
     if let Some(var_2) = &input.compute_resources {
         #[allow(unused_mut)]
         let mut object_3 = object.key("computeResources").start_object();
-        crate::protocol_serde::shape_compute_resource_update::ser_compute_resource_update(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_compute_resource_update::ser_compute_resource_update(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.service_role {

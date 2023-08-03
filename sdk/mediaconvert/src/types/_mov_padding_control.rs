@@ -38,13 +38,7 @@
 /// Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon: Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might cause file rejections when a recipient of the output file doesn't expect this extra padding.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MovPaddingControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for MovPaddingControl {
         match s {
             "NONE" => MovPaddingControl::None,
             "OMNEON" => MovPaddingControl::Omneon,
-            other => {
-                MovPaddingControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => MovPaddingControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

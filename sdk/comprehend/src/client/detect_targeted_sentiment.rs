@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DetectTargetedSentimentOutput`](crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput) with field(s):
     ///   - [`entities(Option<Vec<TargetedSentimentEntity>>)`](crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput::entities): <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
     /// - On failure, responds with [`SdkError<DetectTargetedSentimentError>`](crate::operation::detect_targeted_sentiment::DetectTargetedSentimentError)
-    pub fn detect_targeted_sentiment(
-        &self,
-    ) -> crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentFluentBuilder
-    {
+    pub fn detect_targeted_sentiment(&self) -> crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentFluentBuilder {
         crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentFluentBuilder::new(self.handle.clone())
     }
 }

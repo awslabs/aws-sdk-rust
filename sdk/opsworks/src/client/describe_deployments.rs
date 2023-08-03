@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDeploymentsOutput`](crate::operation::describe_deployments::DescribeDeploymentsOutput) with field(s):
     ///   - [`deployments(Option<Vec<Deployment>>)`](crate::operation::describe_deployments::DescribeDeploymentsOutput::deployments): <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
     /// - On failure, responds with [`SdkError<DescribeDeploymentsError>`](crate::operation::describe_deployments::DescribeDeploymentsError)
-    pub fn describe_deployments(
-        &self,
-    ) -> crate::operation::describe_deployments::builders::DescribeDeploymentsFluentBuilder {
-        crate::operation::describe_deployments::builders::DescribeDeploymentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_deployments(&self) -> crate::operation::describe_deployments::builders::DescribeDeploymentsFluentBuilder {
+        crate::operation::describe_deployments::builders::DescribeDeploymentsFluentBuilder::new(self.handle.clone())
     }
 }

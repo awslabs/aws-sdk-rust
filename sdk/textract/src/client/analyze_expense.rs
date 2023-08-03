@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::operation::analyze_expense::AnalyzeExpenseOutput::document_metadata): <p>Information about the input document.</p>
     ///   - [`expense_documents(Option<Vec<ExpenseDocument>>)`](crate::operation::analyze_expense::AnalyzeExpenseOutput::expense_documents): <p>The expenses detected by Amazon Textract.</p>
     /// - On failure, responds with [`SdkError<AnalyzeExpenseError>`](crate::operation::analyze_expense::AnalyzeExpenseError)
-    pub fn analyze_expense(
-        &self,
-    ) -> crate::operation::analyze_expense::builders::AnalyzeExpenseFluentBuilder {
-        crate::operation::analyze_expense::builders::AnalyzeExpenseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn analyze_expense(&self) -> crate::operation::analyze_expense::builders::AnalyzeExpenseFluentBuilder {
+        crate::operation::analyze_expense::builders::AnalyzeExpenseFluentBuilder::new(self.handle.clone())
     }
 }

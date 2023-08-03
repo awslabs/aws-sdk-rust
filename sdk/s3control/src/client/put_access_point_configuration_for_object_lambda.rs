@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`configuration(ObjectLambdaConfiguration)`](crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaFluentBuilder::configuration) / [`set_configuration(Option<ObjectLambdaConfiguration>)`](crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaFluentBuilder::set_configuration): <p>Object Lambda Access Point configuration document.</p>
     /// - On success, responds with [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput)
     /// - On failure, responds with [`SdkError<PutAccessPointConfigurationForObjectLambdaError>`](crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError)
-    pub fn put_access_point_configuration_for_object_lambda(&self) -> crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaFluentBuilder{
-        crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaFluentBuilder::new(self.handle.clone())
+    pub fn put_access_point_configuration_for_object_lambda(
+        &self,
+    ) -> crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaFluentBuilder {
+        crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

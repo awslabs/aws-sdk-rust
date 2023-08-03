@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateDirectoryConfigOutput {
 }
 impl UpdateDirectoryConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDirectoryConfigOutput`](crate::operation::update_directory_config::UpdateDirectoryConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::update_directory_config::builders::UpdateDirectoryConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_directory_config::builders::UpdateDirectoryConfigOutputBuilder {
         crate::operation::update_directory_config::builders::UpdateDirectoryConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDirectoryConfigOutput`](crate::operation::update_directory_config::UpdateDirectoryConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDirectoryConfigOutputBuilder {
     pub(crate) directory_config: ::std::option::Option<crate::types::DirectoryConfig>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateDirectoryConfigOutputBuilder {
         self
     }
     /// <p>Information about the Directory Config object.</p>
-    pub fn set_directory_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryConfig>,
-    ) -> Self {
+    pub fn set_directory_config(mut self, input: ::std::option::Option<crate::types::DirectoryConfig>) -> Self {
         self.directory_config = input;
         self
     }

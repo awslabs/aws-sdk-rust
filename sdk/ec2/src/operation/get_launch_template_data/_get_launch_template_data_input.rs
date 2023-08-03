@@ -22,18 +22,14 @@ impl GetLaunchTemplateDataInput {
 }
 impl GetLaunchTemplateDataInput {
     /// Creates a new builder-style object to manufacture [`GetLaunchTemplateDataInput`](crate::operation::get_launch_template_data::GetLaunchTemplateDataInput).
-    pub fn builder(
-    ) -> crate::operation::get_launch_template_data::builders::GetLaunchTemplateDataInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_launch_template_data::builders::GetLaunchTemplateDataInputBuilder {
         crate::operation::get_launch_template_data::builders::GetLaunchTemplateDataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLaunchTemplateDataInput`](crate::operation::get_launch_template_data::GetLaunchTemplateDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLaunchTemplateDataInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl GetLaunchTemplateDataInputBuilder {
     /// Consumes the builder and constructs a [`GetLaunchTemplateDataInput`](crate::operation::get_launch_template_data::GetLaunchTemplateDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_launch_template_data::GetLaunchTemplateDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_launch_template_data::GetLaunchTemplateDataInput {
-                dry_run: self.dry_run,
-                instance_id: self.instance_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_launch_template_data::GetLaunchTemplateDataInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_launch_template_data::GetLaunchTemplateDataInput {
+            dry_run: self.dry_run,
+            instance_id: self.instance_id,
+        })
     }
 }

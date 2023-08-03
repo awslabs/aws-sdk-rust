@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`queries(Option<Vec<Query>>)`](crate::operation::list_queries::ListQueriesOutput::queries): <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_queries::ListQueriesOutput::next_token): <p>A token you can use to get the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListQueriesError>`](crate::operation::list_queries::ListQueriesError)
-    pub fn list_queries(
-        &self,
-    ) -> crate::operation::list_queries::builders::ListQueriesFluentBuilder {
+    pub fn list_queries(&self) -> crate::operation::list_queries::builders::ListQueriesFluentBuilder {
         crate::operation::list_queries::builders::ListQueriesFluentBuilder::new(self.handle.clone())
     }
 }

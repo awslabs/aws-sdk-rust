@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteElasticsearchDomainOutput {
 }
 impl DeleteElasticsearchDomainOutput {
     /// Creates a new builder-style object to manufacture [`DeleteElasticsearchDomainOutput`](crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainOutput).
-    pub fn builder() -> crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainOutputBuilder{
+    pub fn builder() -> crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainOutputBuilder {
         crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteElasticsearchDomainOutput`](crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteElasticsearchDomainOutputBuilder {
     pub(crate) domain_status: ::std::option::Option<crate::types::ElasticsearchDomainStatus>,
     _request_id: Option<String>,
@@ -43,17 +41,12 @@ impl DeleteElasticsearchDomainOutputBuilder {
         self
     }
     /// <p>The status of the Elasticsearch domain being deleted.</p>
-    pub fn set_domain_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticsearchDomainStatus>,
-    ) -> Self {
+    pub fn set_domain_status(mut self, input: ::std::option::Option<crate::types::ElasticsearchDomainStatus>) -> Self {
         self.domain_status = input;
         self
     }
     /// <p>The status of the Elasticsearch domain being deleted.</p>
-    pub fn get_domain_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticsearchDomainStatus> {
+    pub fn get_domain_status(&self) -> &::std::option::Option<crate::types::ElasticsearchDomainStatus> {
         &self.domain_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -66,9 +59,7 @@ impl DeleteElasticsearchDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteElasticsearchDomainOutput`](crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainOutput {
+    pub fn build(self) -> crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainOutput {
         crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainOutput {
             domain_status: self.domain_status,
             _request_id: self._request_id,

@@ -22,9 +22,7 @@ impl DescribeInputInput {
 
 /// A builder for [`DescribeInputInput`](crate::operation::describe_input::DescribeInputInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInputInputBuilder {
     pub(crate) input_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeInputInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInputInput`](crate::operation::describe_input::DescribeInputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_input::DescribeInputInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_input::DescribeInputInput {
-            input_name: self.input_name,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_input::DescribeInputInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_input::DescribeInputInput { input_name: self.input_name })
     }
 }

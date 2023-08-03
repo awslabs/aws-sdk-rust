@@ -16,17 +16,14 @@ impl GetUpgradeStatusInput {
 }
 impl GetUpgradeStatusInput {
     /// Creates a new builder-style object to manufacture [`GetUpgradeStatusInput`](crate::operation::get_upgrade_status::GetUpgradeStatusInput).
-    pub fn builder() -> crate::operation::get_upgrade_status::builders::GetUpgradeStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_upgrade_status::builders::GetUpgradeStatusInputBuilder {
         crate::operation::get_upgrade_status::builders::GetUpgradeStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetUpgradeStatusInput`](crate::operation::get_upgrade_status::GetUpgradeStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUpgradeStatusInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +45,9 @@ impl GetUpgradeStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetUpgradeStatusInput`](crate::operation::get_upgrade_status::GetUpgradeStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_upgrade_status::GetUpgradeStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_upgrade_status::GetUpgradeStatusInput {
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_upgrade_status::GetUpgradeStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_upgrade_status::GetUpgradeStatusInput {
+            domain_name: self.domain_name,
+        })
     }
 }

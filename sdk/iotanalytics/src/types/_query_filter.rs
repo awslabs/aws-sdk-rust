@@ -23,9 +23,7 @@ impl QueryFilter {
 
 /// A builder for [`QueryFilter`](crate::types::QueryFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryFilterBuilder {
     pub(crate) delta_time: ::std::option::Option<crate::types::DeltaTime>,
 }
@@ -46,8 +44,6 @@ impl QueryFilterBuilder {
     }
     /// Consumes the builder and constructs a [`QueryFilter`](crate::types::QueryFilter).
     pub fn build(self) -> crate::types::QueryFilter {
-        crate::types::QueryFilter {
-            delta_time: self.delta_time,
-        }
+        crate::types::QueryFilter { delta_time: self.delta_time }
     }
 }

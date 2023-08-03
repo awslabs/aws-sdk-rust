@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateApiCacheOutput`](crate::operation::create_api_cache::CreateApiCacheOutput) with field(s):
     ///   - [`api_cache(Option<ApiCache>)`](crate::operation::create_api_cache::CreateApiCacheOutput::api_cache): <p>The <code>ApiCache</code> object.</p>
     /// - On failure, responds with [`SdkError<CreateApiCacheError>`](crate::operation::create_api_cache::CreateApiCacheError)
-    pub fn create_api_cache(
-        &self,
-    ) -> crate::operation::create_api_cache::builders::CreateApiCacheFluentBuilder {
-        crate::operation::create_api_cache::builders::CreateApiCacheFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_api_cache(&self) -> crate::operation::create_api_cache::builders::CreateApiCacheFluentBuilder {
+        crate::operation::create_api_cache::builders::CreateApiCacheFluentBuilder::new(self.handle.clone())
     }
 }

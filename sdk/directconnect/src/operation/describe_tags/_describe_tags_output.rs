@@ -28,9 +28,7 @@ impl DescribeTagsOutput {
 
 /// A builder for [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTagsOutputBuilder {
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl DescribeTagsOutputBuilder {
         self
     }
     /// <p>Information about the tags.</p>
-    pub fn set_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
-    ) -> Self {
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.resource_tags = input;
         self
     }
     /// <p>Information about the tags.</p>
-    pub fn get_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         &self.resource_tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

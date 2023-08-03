@@ -36,17 +36,14 @@ impl GetPersonTrackingInput {
 }
 impl GetPersonTrackingInput {
     /// Creates a new builder-style object to manufacture [`GetPersonTrackingInput`](crate::operation::get_person_tracking::GetPersonTrackingInput).
-    pub fn builder(
-    ) -> crate::operation::get_person_tracking::builders::GetPersonTrackingInputBuilder {
+    pub fn builder() -> crate::operation::get_person_tracking::builders::GetPersonTrackingInputBuilder {
         crate::operation::get_person_tracking::builders::GetPersonTrackingInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPersonTrackingInput`](crate::operation::get_person_tracking::GetPersonTrackingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPersonTrackingInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -102,10 +99,7 @@ impl GetPersonTrackingInputBuilder {
         self
     }
     /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons. If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::PersonTrackingSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::PersonTrackingSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -116,17 +110,12 @@ impl GetPersonTrackingInputBuilder {
     /// Consumes the builder and constructs a [`GetPersonTrackingInput`](crate::operation::get_person_tracking::GetPersonTrackingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_person_tracking::GetPersonTrackingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_person_tracking::GetPersonTrackingInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                sort_by: self.sort_by,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_person_tracking::GetPersonTrackingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_person_tracking::GetPersonTrackingInput {
+            job_id: self.job_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            sort_by: self.sort_by,
+        })
     }
 }

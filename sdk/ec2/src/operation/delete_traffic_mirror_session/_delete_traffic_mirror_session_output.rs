@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for DeleteTrafficMirrorSessionOutput {
 }
 impl DeleteTrafficMirrorSessionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTrafficMirrorSessionOutput`](crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionOutput).
-    pub fn builder() -> crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionOutputBuilder {
         crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrafficMirrorSessionOutput`](crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrafficMirrorSessionOutputBuilder {
     pub(crate) traffic_mirror_session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteTrafficMirrorSessionOutputBuilder {
     /// <p>The ID of the deleted Traffic Mirror session.</p>
-    pub fn traffic_mirror_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deleted Traffic Mirror session.</p>
-    pub fn set_traffic_mirror_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_mirror_session_id = input;
         self
     }
@@ -66,9 +58,7 @@ impl DeleteTrafficMirrorSessionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteTrafficMirrorSessionOutput`](crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionOutput {
+    pub fn build(self) -> crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionOutput {
         crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionOutput {
             traffic_mirror_session_id: self.traffic_mirror_session_id,
             _request_id: self._request_id,

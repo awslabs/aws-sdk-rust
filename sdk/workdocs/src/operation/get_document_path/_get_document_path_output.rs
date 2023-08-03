@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetDocumentPathOutput {
 }
 impl GetDocumentPathOutput {
     /// Creates a new builder-style object to manufacture [`GetDocumentPathOutput`](crate::operation::get_document_path::GetDocumentPathOutput).
-    pub fn builder() -> crate::operation::get_document_path::builders::GetDocumentPathOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_document_path::builders::GetDocumentPathOutputBuilder {
         crate::operation::get_document_path::builders::GetDocumentPathOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDocumentPathOutput`](crate::operation::get_document_path::GetDocumentPathOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDocumentPathOutputBuilder {
     pub(crate) path: ::std::option::Option<crate::types::ResourcePath>,
     _request_id: Option<String>,

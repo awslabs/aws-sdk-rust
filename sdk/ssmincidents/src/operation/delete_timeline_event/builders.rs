@@ -37,9 +37,7 @@ impl DeleteTimelineEventFluentBuilder {
         }
     }
     /// Access the DeleteTimelineEvent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_timeline_event::builders::DeleteTimelineEventInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_timeline_event::builders::DeleteTimelineEventInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteTimelineEventFluentBuilder {
             crate::operation::delete_timeline_event::DeleteTimelineEvent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_timeline_event::DeleteTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_timeline_event::DeleteTimelineEventError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteTimelineEventFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteTimelineEventFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_timeline_event::DeleteTimelineEventOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_timeline_event::DeleteTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_timeline_event::DeleteTimelineEventError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteTimelineEventFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_timeline_event::DeleteTimelineEventOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_timeline_event::DeleteTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_timeline_event::DeleteTimelineEventError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteTimelineEventFluentBuilder {
             crate::operation::delete_timeline_event::DeleteTimelineEvent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_timeline_event::DeleteTimelineEventError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_timeline_event::DeleteTimelineEventError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn incident_record_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.incident_record_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn set_incident_record_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }

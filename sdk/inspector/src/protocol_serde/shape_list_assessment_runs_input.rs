@@ -15,10 +15,7 @@ pub fn ser_list_assessment_runs_input(
     if let Some(var_4) = &input.filter {
         #[allow(unused_mut)]
         let mut object_5 = object.key("filter").start_object();
-        crate::protocol_serde::shape_assessment_run_filter::ser_assessment_run_filter(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_assessment_run_filter::ser_assessment_run_filter(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.next_token {

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetUiCustomizationOutput {
 }
 impl GetUiCustomizationOutput {
     /// Creates a new builder-style object to manufacture [`GetUiCustomizationOutput`](crate::operation::get_ui_customization::GetUiCustomizationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_ui_customization::builders::GetUiCustomizationOutputBuilder {
+    pub fn builder() -> crate::operation::get_ui_customization::builders::GetUiCustomizationOutputBuilder {
         crate::operation::get_ui_customization::builders::GetUiCustomizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUiCustomizationOutput`](crate::operation::get_ui_customization::GetUiCustomizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUiCustomizationOutputBuilder {
     pub(crate) ui_customization: ::std::option::Option<crate::types::UiCustomizationType>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl GetUiCustomizationOutputBuilder {
         self
     }
     /// <p>The UI customization information.</p>
-    pub fn set_ui_customization(
-        mut self,
-        input: ::std::option::Option<crate::types::UiCustomizationType>,
-    ) -> Self {
+    pub fn set_ui_customization(mut self, input: ::std::option::Option<crate::types::UiCustomizationType>) -> Self {
         self.ui_customization = input;
         self
     }
     /// <p>The UI customization information.</p>
-    pub fn get_ui_customization(
-        &self,
-    ) -> &::std::option::Option<crate::types::UiCustomizationType> {
+    pub fn get_ui_customization(&self) -> &::std::option::Option<crate::types::UiCustomizationType> {
         &self.ui_customization
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

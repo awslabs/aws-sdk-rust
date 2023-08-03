@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<SourceLocation>>)`](crate::operation::list_source_locations::ListSourceLocationsOutput::items): <p>A list of source locations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_source_locations::ListSourceLocationsOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListSourceLocationsError>`](crate::operation::list_source_locations::ListSourceLocationsError)
-    pub fn list_source_locations(
-        &self,
-    ) -> crate::operation::list_source_locations::builders::ListSourceLocationsFluentBuilder {
-        crate::operation::list_source_locations::builders::ListSourceLocationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_source_locations(&self) -> crate::operation::list_source_locations::builders::ListSourceLocationsFluentBuilder {
+        crate::operation::list_source_locations::builders::ListSourceLocationsFluentBuilder::new(self.handle.clone())
     }
 }

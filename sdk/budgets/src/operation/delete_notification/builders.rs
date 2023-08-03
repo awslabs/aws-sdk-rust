@@ -10,10 +10,7 @@ impl DeleteNotificationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_notification::DeleteNotificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification::DeleteNotificationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification::DeleteNotificationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_notification();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteNotificationFluentBuilder {
         }
     }
     /// Access the DeleteNotification as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_notification::builders::DeleteNotificationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_notification::builders::DeleteNotificationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DeleteNotificationFluentBuilder {
             crate::operation::delete_notification::DeleteNotification,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification::DeleteNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification::DeleteNotificationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DeleteNotificationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DeleteNotificationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_notification::DeleteNotificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification::DeleteNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification::DeleteNotificationError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DeleteNotificationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_notification::DeleteNotificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification::DeleteNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification::DeleteNotificationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl DeleteNotificationFluentBuilder {
             crate::operation::delete_notification::DeleteNotification,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification::DeleteNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification::DeleteNotificationError>,
     > {
         self.customize_middleware().await
     }
@@ -158,10 +142,7 @@ impl DeleteNotificationFluentBuilder {
         self
     }
     /// <p>The notification that you want to delete.</p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::Notification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
         self.inner = self.inner.set_notification(input);
         self
     }

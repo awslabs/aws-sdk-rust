@@ -22,17 +22,14 @@ impl GenerateChangeSetInput {
 }
 impl GenerateChangeSetInput {
     /// Creates a new builder-style object to manufacture [`GenerateChangeSetInput`](crate::operation::generate_change_set::GenerateChangeSetInput).
-    pub fn builder(
-    ) -> crate::operation::generate_change_set::builders::GenerateChangeSetInputBuilder {
+    pub fn builder() -> crate::operation::generate_change_set::builders::GenerateChangeSetInputBuilder {
         crate::operation::generate_change_set::builders::GenerateChangeSetInputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateChangeSetInput`](crate::operation::generate_change_set::GenerateChangeSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateChangeSetInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) changeset_format: ::std::option::Option<crate::types::OutputFormat>,
@@ -58,10 +55,7 @@ impl GenerateChangeSetInputBuilder {
         self
     }
     /// <p>The format for the change set.</p>
-    pub fn set_changeset_format(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputFormat>,
-    ) -> Self {
+    pub fn set_changeset_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.changeset_format = input;
         self
     }
@@ -72,15 +66,10 @@ impl GenerateChangeSetInputBuilder {
     /// Consumes the builder and constructs a [`GenerateChangeSetInput`](crate::operation::generate_change_set::GenerateChangeSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::generate_change_set::GenerateChangeSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::generate_change_set::GenerateChangeSetInput {
-                app_id: self.app_id,
-                changeset_format: self.changeset_format,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::generate_change_set::GenerateChangeSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::generate_change_set::GenerateChangeSetInput {
+            app_id: self.app_id,
+            changeset_format: self.changeset_format,
+        })
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`launch_profiles(Option<Vec<LaunchProfile>>)`](crate::operation::list_launch_profiles::ListLaunchProfilesOutput::launch_profiles): <p>A collection of launch profiles.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_launch_profiles::ListLaunchProfilesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListLaunchProfilesError>`](crate::operation::list_launch_profiles::ListLaunchProfilesError)
-    pub fn list_launch_profiles(
-        &self,
-    ) -> crate::operation::list_launch_profiles::builders::ListLaunchProfilesFluentBuilder {
-        crate::operation::list_launch_profiles::builders::ListLaunchProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_launch_profiles(&self) -> crate::operation::list_launch_profiles::builders::ListLaunchProfilesFluentBuilder {
+        crate::operation::list_launch_profiles::builders::ListLaunchProfilesFluentBuilder::new(self.handle.clone())
     }
 }

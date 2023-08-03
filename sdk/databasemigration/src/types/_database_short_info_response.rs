@@ -44,9 +44,7 @@ impl DatabaseShortInfoResponse {
 
 /// A builder for [`DatabaseShortInfoResponse`](crate::types::DatabaseShortInfoResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatabaseShortInfoResponseBuilder {
     pub(crate) database_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl DatabaseShortInfoResponseBuilder {
         &self.database_id
     }
     /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -89,18 +81,12 @@ impl DatabaseShortInfoResponseBuilder {
         &self.database_name
     }
     /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
-    pub fn database_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
-    pub fn set_database_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_ip_address = input;
         self
     }
@@ -109,18 +95,12 @@ impl DatabaseShortInfoResponseBuilder {
         &self.database_ip_address
     }
     /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.</p>
-    pub fn database_engine(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_engine = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.</p>
-    pub fn set_database_engine(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_engine = input;
         self
     }

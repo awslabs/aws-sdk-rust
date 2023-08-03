@@ -51,9 +51,7 @@ impl WaveAggregatedStatus {
 
 /// A builder for [`WaveAggregatedStatus`](crate::types::WaveAggregatedStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WaveAggregatedStatusBuilder {
     pub(crate) last_update_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) replication_started_date_time: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct WaveAggregatedStatusBuilder {
 }
 impl WaveAggregatedStatusBuilder {
     /// <p>Wave aggregated status last update dateTime.</p>
-    pub fn last_update_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_update_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_update_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Wave aggregated status last update dateTime.</p>
-    pub fn set_last_update_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_update_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_update_date_time = input;
         self
     }
@@ -83,25 +75,17 @@ impl WaveAggregatedStatusBuilder {
         &self.last_update_date_time
     }
     /// <p>DateTime marking when the first source server in the wave started replication.</p>
-    pub fn replication_started_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_started_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_started_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>DateTime marking when the first source server in the wave started replication.</p>
-    pub fn set_replication_started_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_started_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_started_date_time = input;
         self
     }
     /// <p>DateTime marking when the first source server in the wave started replication.</p>
-    pub fn get_replication_started_date_time(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_started_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_started_date_time
     }
     /// <p>Wave aggregated status health status.</p>
@@ -110,10 +94,7 @@ impl WaveAggregatedStatusBuilder {
         self
     }
     /// <p>Wave aggregated status health status.</p>
-    pub fn set_health_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WaveHealthStatus>,
-    ) -> Self {
+    pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::WaveHealthStatus>) -> Self {
         self.health_status = input;
         self
     }
@@ -127,10 +108,7 @@ impl WaveAggregatedStatusBuilder {
         self
     }
     /// <p>Wave aggregated status progress status.</p>
-    pub fn set_progress_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WaveProgressStatus>,
-    ) -> Self {
+    pub fn set_progress_status(mut self, input: ::std::option::Option<crate::types::WaveProgressStatus>) -> Self {
         self.progress_status = input;
         self
     }

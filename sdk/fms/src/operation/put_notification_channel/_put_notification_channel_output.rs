@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutNotificationChannelOutput {
 }
 impl PutNotificationChannelOutput {
     /// Creates a new builder-style object to manufacture [`PutNotificationChannelOutput`](crate::operation::put_notification_channel::PutNotificationChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::put_notification_channel::builders::PutNotificationChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_notification_channel::builders::PutNotificationChannelOutputBuilder {
         crate::operation::put_notification_channel::builders::PutNotificationChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutNotificationChannelOutput`](crate::operation::put_notification_channel::PutNotificationChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutNotificationChannelOutputBuilder {
     _request_id: Option<String>,
 }

@@ -25,9 +25,7 @@ pub fn ser_mpeg2_settings(
         object.key("framerateControl").string(var_6.as_str());
     }
     if let Some(var_7) = &input.framerate_conversion_algorithm {
-        object
-            .key("framerateConversionAlgorithm")
-            .string(var_7.as_str());
+        object.key("framerateConversionAlgorithm").string(var_7.as_str());
     }
     if let Some(var_8) = &input.framerate_denominator {
         object.key("framerateDenominator").number(
@@ -135,9 +133,7 @@ pub fn ser_mpeg2_settings(
         );
     }
     if let Some(var_30) = &input.spatial_adaptive_quantization {
-        object
-            .key("spatialAdaptiveQuantization")
-            .string(var_30.as_str());
+        object.key("spatialAdaptiveQuantization").string(var_30.as_str());
     }
     if let Some(var_31) = &input.syntax {
         object.key("syntax").string(var_31.as_str());
@@ -146,26 +142,16 @@ pub fn ser_mpeg2_settings(
         object.key("telecine").string(var_32.as_str());
     }
     if let Some(var_33) = &input.temporal_adaptive_quantization {
-        object
-            .key("temporalAdaptiveQuantization")
-            .string(var_33.as_str());
+        object.key("temporalAdaptiveQuantization").string(var_33.as_str());
     }
     Ok(())
 }
 
 pub(crate) fn de_mpeg2_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::Mpeg2Settings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::Mpeg2Settings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -175,396 +161,255 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "adaptiveQuantization" => {
                             builder = builder.set_adaptive_quantization(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::Mpeg2AdaptiveQuantization::from(u.as_ref())
-                                    })
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2AdaptiveQuantization::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "bitrate" => {
                             builder = builder.set_bitrate(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "codecLevel" => {
                             builder = builder.set_codec_level(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::Mpeg2CodecLevel::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2CodecLevel::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "codecProfile" => {
                             builder = builder.set_codec_profile(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::Mpeg2CodecProfile::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2CodecProfile::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "dynamicSubGop" => {
                             builder = builder.set_dynamic_sub_gop(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::Mpeg2DynamicSubGop::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2DynamicSubGop::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "framerateControl" => {
                             builder = builder.set_framerate_control(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::Mpeg2FramerateControl::from(u.as_ref())
-                                    })
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2FramerateControl::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "framerateConversionAlgorithm" => {
                             builder = builder.set_framerate_conversion_algorithm(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::Mpeg2FramerateConversionAlgorithm::from(
-                                            u.as_ref(),
-                                        )
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::Mpeg2FramerateConversionAlgorithm::from(u.as_ref()))
                                     })
-                                })
-                                .transpose()?,
+                                    .transpose()?,
                             );
                         }
                         "framerateDenominator" => {
                             builder = builder.set_framerate_denominator(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "framerateNumerator" => {
                             builder = builder.set_framerate_numerator(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "gopClosedCadence" => {
                             builder = builder.set_gop_closed_cadence(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "gopSize" => {
-                            builder = builder.set_gop_size(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|v| v.to_f64_lossy()),
-                            );
+                            builder = builder
+                                .set_gop_size(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
                         }
                         "gopSizeUnits" => {
                             builder = builder.set_gop_size_units(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::Mpeg2GopSizeUnits::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2GopSizeUnits::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "hrdBufferFinalFillPercentage" => {
                             builder = builder.set_hrd_buffer_final_fill_percentage(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "hrdBufferInitialFillPercentage" => {
                             builder = builder.set_hrd_buffer_initial_fill_percentage(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "hrdBufferSize" => {
                             builder = builder.set_hrd_buffer_size(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "interlaceMode" => {
                             builder = builder.set_interlace_mode(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::Mpeg2InterlaceMode::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2InterlaceMode::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "intraDcPrecision" => {
                             builder = builder.set_intra_dc_precision(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::Mpeg2IntraDcPrecision::from(u.as_ref())
-                                    })
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2IntraDcPrecision::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "maxBitrate" => {
                             builder = builder.set_max_bitrate(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "minIInterval" => {
                             builder = builder.set_min_i_interval(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "numberBFramesBetweenReferenceFrames" => {
                             builder = builder.set_number_b_frames_between_reference_frames(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "parControl" => {
                             builder = builder.set_par_control(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::Mpeg2ParControl::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2ParControl::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "parDenominator" => {
                             builder = builder.set_par_denominator(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "parNumerator" => {
                             builder = builder.set_par_numerator(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "qualityTuningLevel" => {
                             builder = builder.set_quality_tuning_level(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::Mpeg2QualityTuningLevel::from(u.as_ref())
-                                    })
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2QualityTuningLevel::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "rateControlMode" => {
                             builder = builder.set_rate_control_mode(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::Mpeg2RateControlMode::from(u.as_ref())
-                                    })
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2RateControlMode::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "scanTypeConversionMode" => {
                             builder = builder.set_scan_type_conversion_mode(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::Mpeg2ScanTypeConversionMode::from(u.as_ref())
-                                    })
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2ScanTypeConversionMode::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "sceneChangeDetect" => {
                             builder = builder.set_scene_change_detect(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::Mpeg2SceneChangeDetect::from(u.as_ref())
-                                    })
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2SceneChangeDetect::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "slowPal" => {
                             builder = builder.set_slow_pal(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::Mpeg2SlowPal::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2SlowPal::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "softness" => {
                             builder = builder.set_softness(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "spatialAdaptiveQuantization" => {
                             builder = builder.set_spatial_adaptive_quantization(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::Mpeg2SpatialAdaptiveQuantization::from(
-                                            u.as_ref(),
-                                        )
-                                    })
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2SpatialAdaptiveQuantization::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "syntax" => {
                             builder = builder.set_syntax(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::Mpeg2Syntax::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2Syntax::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "telecine" => {
                             builder = builder.set_telecine(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::Mpeg2Telecine::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2Telecine::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "temporalAdaptiveQuantization" => {
                             builder = builder.set_temporal_adaptive_quantization(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::Mpeg2TemporalAdaptiveQuantization::from(
-                                            u.as_ref(),
-                                        )
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::Mpeg2TemporalAdaptiveQuantization::from(u.as_ref()))
                                     })
-                                })
-                                .transpose()?,
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

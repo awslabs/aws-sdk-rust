@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::get_workspace::GetWorkspaceOutput::creation_date_time): <p>The date and time when the workspace was created.</p>
     ///   - [`update_date_time(Option<DateTime>)`](crate::operation::get_workspace::GetWorkspaceOutput::update_date_time): <p>The date and time when the workspace was last updated.</p>
     /// - On failure, responds with [`SdkError<GetWorkspaceError>`](crate::operation::get_workspace::GetWorkspaceError)
-    pub fn get_workspace(
-        &self,
-    ) -> crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder {
-        crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_workspace(&self) -> crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder {
+        crate::operation::get_workspace::builders::GetWorkspaceFluentBuilder::new(self.handle.clone())
     }
 }

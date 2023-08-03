@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetServiceInstanceOutput {
 }
 impl GetServiceInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceInstanceOutput`](crate::operation::get_service_instance::GetServiceInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_service_instance::builders::GetServiceInstanceOutputBuilder {
+    pub fn builder() -> crate::operation::get_service_instance::builders::GetServiceInstanceOutputBuilder {
         crate::operation::get_service_instance::builders::GetServiceInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceInstanceOutput`](crate::operation::get_service_instance::GetServiceInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceInstanceOutputBuilder {
     pub(crate) service_instance: ::std::option::Option<crate::types::ServiceInstance>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetServiceInstanceOutputBuilder {
         self
     }
     /// <p>The detailed data of the requested service instance.</p>
-    pub fn set_service_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceInstance>,
-    ) -> Self {
+    pub fn set_service_instance(mut self, input: ::std::option::Option<crate::types::ServiceInstance>) -> Self {
         self.service_instance = input;
         self
     }

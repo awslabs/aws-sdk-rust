@@ -13,7 +13,9 @@ impl super::Client {
     /// - On success, responds with [`CreateMediaInsightsPipelineOutput`](crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineOutput) with field(s):
     ///   - [`media_insights_pipeline(Option<MediaInsightsPipeline>)`](crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineOutput::media_insights_pipeline): <p>The media insights pipeline object.</p>
     /// - On failure, responds with [`SdkError<CreateMediaInsightsPipelineError>`](crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineError)
-    pub fn create_media_insights_pipeline(&self) -> crate::operation::create_media_insights_pipeline::builders::CreateMediaInsightsPipelineFluentBuilder{
+    pub fn create_media_insights_pipeline(
+        &self,
+    ) -> crate::operation::create_media_insights_pipeline::builders::CreateMediaInsightsPipelineFluentBuilder {
         crate::operation::create_media_insights_pipeline::builders::CreateMediaInsightsPipelineFluentBuilder::new(self.handle.clone())
     }
 }

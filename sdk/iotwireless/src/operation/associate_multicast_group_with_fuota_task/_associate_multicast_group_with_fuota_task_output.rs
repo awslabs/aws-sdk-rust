@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateMulticastGroupWithFuotaTaskO
 }
 impl AssociateMulticastGroupWithFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskOutput).
-    pub fn builder() -> crate::operation::associate_multicast_group_with_fuota_task::builders::AssociateMulticastGroupWithFuotaTaskOutputBuilder{
+    pub fn builder() -> crate::operation::associate_multicast_group_with_fuota_task::builders::AssociateMulticastGroupWithFuotaTaskOutputBuilder {
         crate::operation::associate_multicast_group_with_fuota_task::builders::AssociateMulticastGroupWithFuotaTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateMulticastGroupWithFuotaTaskOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl AssociateMulticastGroupWithFuotaTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskOutput).
-    pub fn build(self) -> crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskOutput{
+    pub fn build(self) -> crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskOutput {
         crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskOutput {
             _request_id: self._request_id,
         }

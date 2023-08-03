@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopReplicationOutput`](crate::operation::stop_replication::StopReplicationOutput) with field(s):
     ///   - [`replication(Option<Replication>)`](crate::operation::stop_replication::StopReplicationOutput::replication): <p>The replication that DMS stopped.</p>
     /// - On failure, responds with [`SdkError<StopReplicationError>`](crate::operation::stop_replication::StopReplicationError)
-    pub fn stop_replication(
-        &self,
-    ) -> crate::operation::stop_replication::builders::StopReplicationFluentBuilder {
-        crate::operation::stop_replication::builders::StopReplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_replication(&self) -> crate::operation::stop_replication::builders::StopReplicationFluentBuilder {
+        crate::operation::stop_replication::builders::StopReplicationFluentBuilder::new(self.handle.clone())
     }
 }

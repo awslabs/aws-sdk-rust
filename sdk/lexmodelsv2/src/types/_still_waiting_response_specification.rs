@@ -44,9 +44,7 @@ impl StillWaitingResponseSpecification {
 
 /// A builder for [`StillWaitingResponseSpecification`](crate::types::StillWaitingResponseSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StillWaitingResponseSpecificationBuilder {
     pub(crate) message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
     pub(crate) frequency_in_seconds: ::std::option::Option<i32>,
@@ -66,17 +64,12 @@ impl StillWaitingResponseSpecificationBuilder {
         self
     }
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
-    pub fn set_message_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
-    ) -> Self {
+    pub fn set_message_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>) -> Self {
         self.message_groups = input;
         self
     }
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
-    pub fn get_message_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>> {
+    pub fn get_message_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>> {
         &self.message_groups
     }
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>

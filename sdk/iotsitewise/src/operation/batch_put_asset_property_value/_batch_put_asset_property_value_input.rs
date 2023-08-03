@@ -15,19 +15,16 @@ impl BatchPutAssetPropertyValueInput {
 }
 impl BatchPutAssetPropertyValueInput {
     /// Creates a new builder-style object to manufacture [`BatchPutAssetPropertyValueInput`](crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput).
-    pub fn builder() -> crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueInputBuilder{
+    pub fn builder() -> crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueInputBuilder {
         crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchPutAssetPropertyValueInput`](crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutAssetPropertyValueInputBuilder {
-    pub(crate) entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
 }
 impl BatchPutAssetPropertyValueInputBuilder {
     /// Appends an item to `entries`.
@@ -42,17 +39,12 @@ impl BatchPutAssetPropertyValueInputBuilder {
         self
     }
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>> {
         &self.entries
     }
     /// Consumes the builder and constructs a [`BatchPutAssetPropertyValueInput`](crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput).
@@ -62,10 +54,6 @@ impl BatchPutAssetPropertyValueInputBuilder {
         crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput {
-                entries: self.entries,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput { entries: self.entries })
     }
 }

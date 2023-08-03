@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AttachmentState {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,9 +81,7 @@ impl ::std::convert::From<&str> for AttachmentState {
             "PENDING_TAG_ACCEPTANCE" => AttachmentState::PendingTagAcceptance,
             "REJECTED" => AttachmentState::Rejected,
             "UPDATING" => AttachmentState::Updating,
-            other => {
-                AttachmentState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AttachmentState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

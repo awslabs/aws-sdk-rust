@@ -38,9 +38,7 @@ impl WarmPoolConfiguration {
         self.status.as_ref()
     }
     /// <p>The instance reuse policy.</p>
-    pub fn instance_reuse_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceReusePolicy> {
+    pub fn instance_reuse_policy(&self) -> ::std::option::Option<&crate::types::InstanceReusePolicy> {
         self.instance_reuse_policy.as_ref()
     }
 }
@@ -53,9 +51,7 @@ impl WarmPoolConfiguration {
 
 /// A builder for [`WarmPoolConfiguration`](crate::types::WarmPoolConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WarmPoolConfigurationBuilder {
     pub(crate) max_group_prepared_capacity: ::std::option::Option<i32>,
     pub(crate) min_size: ::std::option::Option<i32>,
@@ -98,10 +94,7 @@ impl WarmPoolConfigurationBuilder {
         self
     }
     /// <p>The instance state to transition to after the lifecycle actions are complete.</p>
-    pub fn set_pool_state(
-        mut self,
-        input: ::std::option::Option<crate::types::WarmPoolState>,
-    ) -> Self {
+    pub fn set_pool_state(mut self, input: ::std::option::Option<crate::types::WarmPoolState>) -> Self {
         self.pool_state = input;
         self
     }
@@ -115,10 +108,7 @@ impl WarmPoolConfigurationBuilder {
         self
     }
     /// <p>The status of a warm pool that is marked for deletion.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WarmPoolStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WarmPoolStatus>) -> Self {
         self.status = input;
         self
     }
@@ -132,17 +122,12 @@ impl WarmPoolConfigurationBuilder {
         self
     }
     /// <p>The instance reuse policy.</p>
-    pub fn set_instance_reuse_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceReusePolicy>,
-    ) -> Self {
+    pub fn set_instance_reuse_policy(mut self, input: ::std::option::Option<crate::types::InstanceReusePolicy>) -> Self {
         self.instance_reuse_policy = input;
         self
     }
     /// <p>The instance reuse policy.</p>
-    pub fn get_instance_reuse_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceReusePolicy> {
+    pub fn get_instance_reuse_policy(&self) -> &::std::option::Option<crate::types::InstanceReusePolicy> {
         &self.instance_reuse_policy
     }
     /// Consumes the builder and constructs a [`WarmPoolConfiguration`](crate::types::WarmPoolConfiguration).

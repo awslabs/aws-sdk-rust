@@ -36,10 +36,7 @@ pub fn ser_update_web_acl_input(
     if let Some(var_11) = &input.visibility_config {
         #[allow(unused_mut)]
         let mut object_12 = object.key("VisibilityConfig").start_object();
-        crate::protocol_serde::shape_visibility_config::ser_visibility_config(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_visibility_config::ser_visibility_config(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.lock_token {
@@ -52,10 +49,7 @@ pub fn ser_update_web_acl_input(
             {
                 #[allow(unused_mut)]
                 let mut object_18 = object_15.key(key_16.as_str()).start_object();
-                crate::protocol_serde::shape_custom_response_body::ser_custom_response_body(
-                    &mut object_18,
-                    value_17,
-                )?;
+                crate::protocol_serde::shape_custom_response_body::ser_custom_response_body(&mut object_18, value_17)?;
                 object_18.finish();
             }
         }
@@ -70,10 +64,7 @@ pub fn ser_update_web_acl_input(
     if let Some(var_21) = &input.challenge_config {
         #[allow(unused_mut)]
         let mut object_22 = object.key("ChallengeConfig").start_object();
-        crate::protocol_serde::shape_challenge_config::ser_challenge_config(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_challenge_config::ser_challenge_config(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.token_domains {
@@ -88,10 +79,7 @@ pub fn ser_update_web_acl_input(
     if let Some(var_26) = &input.association_config {
         #[allow(unused_mut)]
         let mut object_27 = object.key("AssociationConfig").start_object();
-        crate::protocol_serde::shape_association_config::ser_association_config(
-            &mut object_27,
-            var_26,
-        )?;
+        crate::protocol_serde::shape_association_config::ser_association_config(&mut object_27, var_26)?;
         object_27.finish();
     }
     Ok(())

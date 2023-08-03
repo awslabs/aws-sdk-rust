@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteBridgeOutput`](crate::operation::delete_bridge::DeleteBridgeOutput) with field(s):
     ///   - [`bridge_arn(Option<String>)`](crate::operation::delete_bridge::DeleteBridgeOutput::bridge_arn): The Amazon Resource Number (ARN) of the deleted bridge.
     /// - On failure, responds with [`SdkError<DeleteBridgeError>`](crate::operation::delete_bridge::DeleteBridgeError)
-    pub fn delete_bridge(
-        &self,
-    ) -> crate::operation::delete_bridge::builders::DeleteBridgeFluentBuilder {
-        crate::operation::delete_bridge::builders::DeleteBridgeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_bridge(&self) -> crate::operation::delete_bridge::builders::DeleteBridgeFluentBuilder {
+        crate::operation::delete_bridge::builders::DeleteBridgeFluentBuilder::new(self.handle.clone())
     }
 }

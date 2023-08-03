@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`group_id(Option<String>)`](crate::operation::get_group_id::GetGroupIdOutput::group_id): <p>The identifier for a group in the identity store.</p>
     ///   - [`identity_store_id(Option<String>)`](crate::operation::get_group_id::GetGroupIdOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
     /// - On failure, responds with [`SdkError<GetGroupIdError>`](crate::operation::get_group_id::GetGroupIdError)
-    pub fn get_group_id(
-        &self,
-    ) -> crate::operation::get_group_id::builders::GetGroupIdFluentBuilder {
+    pub fn get_group_id(&self) -> crate::operation::get_group_id::builders::GetGroupIdFluentBuilder {
         crate::operation::get_group_id::builders::GetGroupIdFluentBuilder::new(self.handle.clone())
     }
 }

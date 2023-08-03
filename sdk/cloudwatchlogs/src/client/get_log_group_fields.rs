@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetLogGroupFieldsOutput`](crate::operation::get_log_group_fields::GetLogGroupFieldsOutput) with field(s):
     ///   - [`log_group_fields(Option<Vec<LogGroupField>>)`](crate::operation::get_log_group_fields::GetLogGroupFieldsOutput::log_group_fields): <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the percentage of time it appeared in the log events that were queried.</p>
     /// - On failure, responds with [`SdkError<GetLogGroupFieldsError>`](crate::operation::get_log_group_fields::GetLogGroupFieldsError)
-    pub fn get_log_group_fields(
-        &self,
-    ) -> crate::operation::get_log_group_fields::builders::GetLogGroupFieldsFluentBuilder {
-        crate::operation::get_log_group_fields::builders::GetLogGroupFieldsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_log_group_fields(&self) -> crate::operation::get_log_group_fields::builders::GetLogGroupFieldsFluentBuilder {
+        crate::operation::get_log_group_fields::builders::GetLogGroupFieldsFluentBuilder::new(self.handle.clone())
     }
 }

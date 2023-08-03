@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateDevicePoolOutput {
 }
 impl CreateDevicePoolOutput {
     /// Creates a new builder-style object to manufacture [`CreateDevicePoolOutput`](crate::operation::create_device_pool::CreateDevicePoolOutput).
-    pub fn builder() -> crate::operation::create_device_pool::builders::CreateDevicePoolOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_device_pool::builders::CreateDevicePoolOutputBuilder {
         crate::operation::create_device_pool::builders::CreateDevicePoolOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDevicePoolOutput`](crate::operation::create_device_pool::CreateDevicePoolOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDevicePoolOutputBuilder {
     pub(crate) device_pool: ::std::option::Option<crate::types::DevicePool>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl CreateDevicePoolOutputBuilder {
         self
     }
     /// <p>The newly created device pool.</p>
-    pub fn set_device_pool(
-        mut self,
-        input: ::std::option::Option<crate::types::DevicePool>,
-    ) -> Self {
+    pub fn set_device_pool(mut self, input: ::std::option::Option<crate::types::DevicePool>) -> Self {
         self.device_pool = input;
         self
     }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for RequestEnvironmentInfoOutput {
 }
 impl RequestEnvironmentInfoOutput {
     /// Creates a new builder-style object to manufacture [`RequestEnvironmentInfoOutput`](crate::operation::request_environment_info::RequestEnvironmentInfoOutput).
-    pub fn builder(
-    ) -> crate::operation::request_environment_info::builders::RequestEnvironmentInfoOutputBuilder
-    {
+    pub fn builder() -> crate::operation::request_environment_info::builders::RequestEnvironmentInfoOutputBuilder {
         crate::operation::request_environment_info::builders::RequestEnvironmentInfoOutputBuilder::default()
     }
 }
 
 /// A builder for [`RequestEnvironmentInfoOutput`](crate::operation::request_environment_info::RequestEnvironmentInfoOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestEnvironmentInfoOutputBuilder {
     _request_id: Option<String>,
 }

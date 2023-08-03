@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetEbsEncryptionByDefaultOutput {
 }
 impl GetEbsEncryptionByDefaultOutput {
     /// Creates a new builder-style object to manufacture [`GetEbsEncryptionByDefaultOutput`](crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput).
-    pub fn builder() -> crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultOutputBuilder{
+    pub fn builder() -> crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultOutputBuilder {
         crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEbsEncryptionByDefaultOutput`](crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEbsEncryptionByDefaultOutputBuilder {
     pub(crate) ebs_encryption_by_default: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl GetEbsEncryptionByDefaultOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEbsEncryptionByDefaultOutput`](crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput {
+    pub fn build(self) -> crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput {
         crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput {
             ebs_encryption_by_default: self.ebs_encryption_by_default,
             _request_id: self._request_id,

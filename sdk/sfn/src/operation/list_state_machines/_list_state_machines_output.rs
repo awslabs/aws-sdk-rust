@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListStateMachinesOutput {
 }
 impl ListStateMachinesOutput {
     /// Creates a new builder-style object to manufacture [`ListStateMachinesOutput`](crate::operation::list_state_machines::ListStateMachinesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_state_machines::builders::ListStateMachinesOutputBuilder {
+    pub fn builder() -> crate::operation::list_state_machines::builders::ListStateMachinesOutputBuilder {
         crate::operation::list_state_machines::builders::ListStateMachinesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStateMachinesOutput`](crate::operation::list_state_machines::ListStateMachinesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStateMachinesOutputBuilder {
-    pub(crate) state_machines:
-        ::std::option::Option<::std::vec::Vec<crate::types::StateMachineListItem>>,
+    pub(crate) state_machines: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +53,12 @@ impl ListStateMachinesOutputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_state_machines(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineListItem>>,
-    ) -> Self {
+    pub fn set_state_machines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineListItem>>) -> Self {
         self.state_machines = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_state_machines(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StateMachineListItem>> {
+    pub fn get_state_machines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StateMachineListItem>> {
         &self.state_machines
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>

@@ -118,9 +118,7 @@ impl GlobalReplicationGroup {
 
 /// A builder for [`GlobalReplicationGroup`](crate::types::GlobalReplicationGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlobalReplicationGroupBuilder {
     pub(crate) global_replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) global_replication_group_description: ::std::option::Option<::std::string::String>,
@@ -128,11 +126,9 @@ pub struct GlobalReplicationGroupBuilder {
     pub(crate) cache_node_type: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
-    pub(crate) members:
-        ::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroupMember>>,
+    pub(crate) members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroupMember>>,
     pub(crate) cluster_enabled: ::std::option::Option<bool>,
-    pub(crate) global_node_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::GlobalNodeGroup>>,
+    pub(crate) global_node_groups: ::std::option::Option<::std::vec::Vec<crate::types::GlobalNodeGroup>>,
     pub(crate) auth_token_enabled: ::std::option::Option<bool>,
     pub(crate) transit_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) at_rest_encryption_enabled: ::std::option::Option<bool>,
@@ -140,18 +136,12 @@ pub struct GlobalReplicationGroupBuilder {
 }
 impl GlobalReplicationGroupBuilder {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_replication_group_id = input;
         self
     }
@@ -160,25 +150,17 @@ impl GlobalReplicationGroupBuilder {
         &self.global_replication_group_id
     }
     /// <p>The optional description of the Global datastore</p>
-    pub fn global_replication_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The optional description of the Global datastore</p>
-    pub fn set_global_replication_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_replication_group_description = input;
         self
     }
     /// <p>The optional description of the Global datastore</p>
-    pub fn get_global_replication_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_global_replication_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_replication_group_description
     }
     /// <p>The status of the Global datastore</p>
@@ -196,18 +178,12 @@ impl GlobalReplicationGroupBuilder {
         &self.status
     }
     /// <p>The cache node type of the Global datastore</p>
-    pub fn cache_node_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cache node type of the Global datastore</p>
-    pub fn set_cache_node_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_node_type = input;
         self
     }
@@ -230,18 +206,12 @@ impl GlobalReplicationGroupBuilder {
         &self.engine
     }
     /// <p>The Elasticache Redis engine version.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Elasticache Redis engine version.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -261,17 +231,12 @@ impl GlobalReplicationGroupBuilder {
         self
     }
     /// <p>The replication groups that comprise the Global datastore.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroupMember>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroupMember>>) -> Self {
         self.members = input;
         self
     }
     /// <p>The replication groups that comprise the Global datastore.</p>
-    pub fn get_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroupMember>> {
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroupMember>> {
         &self.members
     }
     /// <p>A flag that indicates whether the Global datastore is cluster enabled.</p>
@@ -300,17 +265,12 @@ impl GlobalReplicationGroupBuilder {
         self
     }
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
-    pub fn set_global_node_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalNodeGroup>>,
-    ) -> Self {
+    pub fn set_global_node_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalNodeGroup>>) -> Self {
         self.global_node_groups = input;
         self
     }
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
-    pub fn get_global_node_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalNodeGroup>> {
+    pub fn get_global_node_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalNodeGroup>> {
         &self.global_node_groups
     }
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>

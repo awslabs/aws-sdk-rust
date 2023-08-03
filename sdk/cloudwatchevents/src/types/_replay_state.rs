@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ReplayState {
     #[allow(missing_docs)] // documentation missing in model
@@ -101,14 +95,7 @@ impl ReplayState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED",
-            "CANCELLING",
-            "COMPLETED",
-            "FAILED",
-            "RUNNING",
-            "STARTING",
-        ]
+        &["CANCELLED", "CANCELLING", "COMPLETED", "FAILED", "RUNNING", "STARTING"]
     }
 }
 impl ::std::convert::AsRef<str> for ReplayState {

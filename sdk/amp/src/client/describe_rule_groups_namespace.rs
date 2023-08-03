@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeRuleGroupsNamespaceOutput`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceOutput) with field(s):
     ///   - [`rule_groups_namespace(Option<RuleGroupsNamespaceDescription>)`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceOutput::rule_groups_namespace): The selected rule groups namespace.
     /// - On failure, responds with [`SdkError<DescribeRuleGroupsNamespaceError>`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceError)
-    pub fn describe_rule_groups_namespace(&self) -> crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceFluentBuilder{
+    pub fn describe_rule_groups_namespace(
+        &self,
+    ) -> crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceFluentBuilder {
         crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

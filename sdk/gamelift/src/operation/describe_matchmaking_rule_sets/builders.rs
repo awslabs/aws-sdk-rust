@@ -30,7 +30,7 @@ impl DescribeMatchmakingRuleSetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMatchmakingRuleSetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsInputBuilder,
+    inner: crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsInputBuilder,
 }
 impl DescribeMatchmakingRuleSetsFluentBuilder {
     /// Creates a new `DescribeMatchmakingRuleSets`.
@@ -41,7 +41,7 @@ impl DescribeMatchmakingRuleSetsFluentBuilder {
         }
     }
     /// Access the DescribeMatchmakingRuleSets as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl DescribeMatchmakingRuleSetsFluentBuilder {
             crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl DescribeMatchmakingRuleSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl DescribeMatchmakingRuleSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl DescribeMatchmakingRuleSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError>,
     > {
         self.send_middleware().await
     }
@@ -118,16 +109,14 @@ impl DescribeMatchmakingRuleSetsFluentBuilder {
             crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_matchmaking_rule_sets::paginator::DescribeMatchmakingRuleSetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_matchmaking_rule_sets::paginator::DescribeMatchmakingRuleSetsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_matchmaking_rule_sets::paginator::DescribeMatchmakingRuleSetsPaginator {
         crate::operation::describe_matchmaking_rule_sets::paginator::DescribeMatchmakingRuleSetsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Names`.
@@ -140,10 +129,7 @@ impl DescribeMatchmakingRuleSetsFluentBuilder {
         self
     }
     /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

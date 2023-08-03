@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`wireless_device_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_wireless_device_from_fuota_task::builders::DisassociateWirelessDeviceFromFuotaTaskFluentBuilder::wireless_device_id) / [`set_wireless_device_id(Option<String>)`](crate::operation::disassociate_wireless_device_from_fuota_task::builders::DisassociateWirelessDeviceFromFuotaTaskFluentBuilder::set_wireless_device_id): <p>The ID of the wireless device.</p>
     /// - On success, responds with [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskOutput)
     /// - On failure, responds with [`SdkError<DisassociateWirelessDeviceFromFuotaTaskError>`](crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskError)
-    pub fn disassociate_wireless_device_from_fuota_task(&self) -> crate::operation::disassociate_wireless_device_from_fuota_task::builders::DisassociateWirelessDeviceFromFuotaTaskFluentBuilder{
-        crate::operation::disassociate_wireless_device_from_fuota_task::builders::DisassociateWirelessDeviceFromFuotaTaskFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_wireless_device_from_fuota_task(
+        &self,
+    ) -> crate::operation::disassociate_wireless_device_from_fuota_task::builders::DisassociateWirelessDeviceFromFuotaTaskFluentBuilder {
+        crate::operation::disassociate_wireless_device_from_fuota_task::builders::DisassociateWirelessDeviceFromFuotaTaskFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

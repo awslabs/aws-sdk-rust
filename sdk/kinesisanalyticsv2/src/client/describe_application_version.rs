@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeApplicationVersionOutput`](crate::operation::describe_application_version::DescribeApplicationVersionOutput) with field(s):
     ///   - [`application_version_detail(Option<ApplicationDetail>)`](crate::operation::describe_application_version::DescribeApplicationVersionOutput::application_version_detail): <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationVersionError>`](crate::operation::describe_application_version::DescribeApplicationVersionError)
-    pub fn describe_application_version(&self) -> crate::operation::describe_application_version::builders::DescribeApplicationVersionFluentBuilder{
+    pub fn describe_application_version(&self) -> crate::operation::describe_application_version::builders::DescribeApplicationVersionFluentBuilder {
         crate::operation::describe_application_version::builders::DescribeApplicationVersionFluentBuilder::new(self.handle.clone())
     }
 }

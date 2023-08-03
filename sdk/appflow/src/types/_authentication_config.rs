@@ -58,17 +58,14 @@ impl AuthenticationConfig {
 
 /// A builder for [`AuthenticationConfig`](crate::types::AuthenticationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthenticationConfigBuilder {
     pub(crate) is_basic_auth_supported: ::std::option::Option<bool>,
     pub(crate) is_api_key_auth_supported: ::std::option::Option<bool>,
     pub(crate) is_o_auth2_supported: ::std::option::Option<bool>,
     pub(crate) is_custom_auth_supported: ::std::option::Option<bool>,
     pub(crate) o_auth2_defaults: ::std::option::Option<crate::types::OAuth2Defaults>,
-    pub(crate) custom_auth_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomAuthConfig>>,
+    pub(crate) custom_auth_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomAuthConfig>>,
 }
 impl AuthenticationConfigBuilder {
     /// <p>Indicates whether basic authentication is supported by the connector.</p>
@@ -133,10 +130,7 @@ impl AuthenticationConfigBuilder {
         self
     }
     /// <p>Contains the default values required for OAuth 2.0 authentication.</p>
-    pub fn set_o_auth2_defaults(
-        mut self,
-        input: ::std::option::Option<crate::types::OAuth2Defaults>,
-    ) -> Self {
+    pub fn set_o_auth2_defaults(mut self, input: ::std::option::Option<crate::types::OAuth2Defaults>) -> Self {
         self.o_auth2_defaults = input;
         self
     }
@@ -156,17 +150,12 @@ impl AuthenticationConfigBuilder {
         self
     }
     /// <p>Contains information required for custom authentication.</p>
-    pub fn set_custom_auth_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomAuthConfig>>,
-    ) -> Self {
+    pub fn set_custom_auth_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomAuthConfig>>) -> Self {
         self.custom_auth_configs = input;
         self
     }
     /// <p>Contains information required for custom authentication.</p>
-    pub fn get_custom_auth_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAuthConfig>> {
+    pub fn get_custom_auth_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAuthConfig>> {
         &self.custom_auth_configs
     }
     /// Consumes the builder and constructs a [`AuthenticationConfig`](crate::types::AuthenticationConfig).

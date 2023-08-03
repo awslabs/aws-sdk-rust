@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteServiceOutput`](crate::operation::delete_service::DeleteServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::operation::delete_service::DeleteServiceOutput::service): <p>The full description of the deleted service.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::operation::delete_service::DeleteServiceError)
-    pub fn delete_service(
-        &self,
-    ) -> crate::operation::delete_service::builders::DeleteServiceFluentBuilder {
-        crate::operation::delete_service::builders::DeleteServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_service(&self) -> crate::operation::delete_service::builders::DeleteServiceFluentBuilder {
+        crate::operation::delete_service::builders::DeleteServiceFluentBuilder::new(self.handle.clone())
     }
 }

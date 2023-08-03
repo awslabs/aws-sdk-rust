@@ -26,7 +26,7 @@ impl UntagOpenIdConnectProviderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagOpenIDConnectProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::untag_open_id_connect_provider::builders::UntagOpenIdConnectProviderInputBuilder,
+    inner: crate::operation::untag_open_id_connect_provider::builders::UntagOpenIdConnectProviderInputBuilder,
 }
 impl UntagOpenIDConnectProviderFluentBuilder {
     /// Creates a new `UntagOpenIDConnectProvider`.
@@ -37,7 +37,7 @@ impl UntagOpenIDConnectProviderFluentBuilder {
         }
     }
     /// Access the UntagOpenIDConnectProvider as a reference.
-    pub fn as_input(&self) -> &crate::operation::untag_open_id_connect_provider::builders::UntagOpenIdConnectProviderInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::untag_open_id_connect_provider::builders::UntagOpenIdConnectProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UntagOpenIDConnectProviderFluentBuilder {
             crate::operation::untag_open_id_connect_provider::UntagOpenIDConnectProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_open_id_connect_provider::UntagOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_open_id_connect_provider::UntagOpenIDConnectProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UntagOpenIDConnectProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UntagOpenIDConnectProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::untag_open_id_connect_provider::UntagOpenIdConnectProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_open_id_connect_provider::UntagOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_open_id_connect_provider::UntagOpenIDConnectProviderError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UntagOpenIDConnectProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::untag_open_id_connect_provider::UntagOpenIdConnectProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_open_id_connect_provider::UntagOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_open_id_connect_provider::UntagOpenIDConnectProviderError>,
     > {
         self.send_middleware().await
     }
@@ -114,35 +105,25 @@ impl UntagOpenIDConnectProviderFluentBuilder {
             crate::operation::untag_open_id_connect_provider::UntagOpenIDConnectProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_open_id_connect_provider::UntagOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_open_id_connect_provider::UntagOpenIDConnectProviderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the OIDC provider in IAM from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn open_id_connect_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_connect_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.open_id_connect_provider_arn(input.into());
         self
     }
     /// <p>The ARN of the OIDC provider in IAM from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_open_id_connect_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_open_id_connect_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_open_id_connect_provider_arn(input);
         self
     }
     /// <p>The ARN of the OIDC provider in IAM from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn get_open_id_connect_provider_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_open_id_connect_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_open_id_connect_provider_arn()
     }
     /// Appends an item to `TagKeys`.
@@ -155,10 +136,7 @@ impl UntagOpenIDConnectProviderFluentBuilder {
         self
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified OIDC provider.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }

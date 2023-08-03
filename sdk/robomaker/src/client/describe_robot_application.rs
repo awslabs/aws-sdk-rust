@@ -17,10 +17,7 @@ impl super::Client {
     ///   - [`environment(Option<Environment>)`](crate::operation::describe_robot_application::DescribeRobotApplicationOutput::environment): <p>The object that contains the Docker image URI used to create the robot application.</p>
     ///   - [`image_digest(Option<String>)`](crate::operation::describe_robot_application::DescribeRobotApplicationOutput::image_digest): <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
     /// - On failure, responds with [`SdkError<DescribeRobotApplicationError>`](crate::operation::describe_robot_application::DescribeRobotApplicationError)
-    pub fn describe_robot_application(
-        &self,
-    ) -> crate::operation::describe_robot_application::builders::DescribeRobotApplicationFluentBuilder
-    {
+    pub fn describe_robot_application(&self) -> crate::operation::describe_robot_application::builders::DescribeRobotApplicationFluentBuilder {
         crate::operation::describe_robot_application::builders::DescribeRobotApplicationFluentBuilder::new(self.handle.clone())
     }
 }

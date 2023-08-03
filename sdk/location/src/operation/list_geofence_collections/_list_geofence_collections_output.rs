@@ -5,8 +5,7 @@
 pub struct ListGeofenceCollectionsOutput {
     /// <p>Lists the geofence collections that exist in your Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceCollectionsResponseEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceCollectionsResponseEntry>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListGeofenceCollectionsOutput {
 }
 impl ListGeofenceCollectionsOutput {
     /// <p>Lists the geofence collections that exist in your Amazon Web Services account.</p>
-    pub fn entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListGeofenceCollectionsResponseEntry]> {
+    pub fn entries(&self) -> ::std::option::Option<&[crate::types::ListGeofenceCollectionsResponseEntry]> {
         self.entries.as_deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListGeofenceCollectionsOutput {
 }
 impl ListGeofenceCollectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListGeofenceCollectionsOutput`](crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsOutputBuilder {
         crate::operation::list_geofence_collections::builders::ListGeofenceCollectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGeofenceCollectionsOutput`](crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGeofenceCollectionsOutputBuilder {
-    pub(crate) entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceCollectionsResponseEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceCollectionsResponseEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,20 +54,12 @@ impl ListGeofenceCollectionsOutputBuilder {
         self
     }
     /// <p>Lists the geofence collections that exist in your Amazon Web Services account.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ListGeofenceCollectionsResponseEntry>,
-        >,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceCollectionsResponseEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>Lists the geofence collections that exist in your Amazon Web Services account.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceCollectionsResponseEntry>>
-    {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceCollectionsResponseEntry>> {
         &self.entries
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
@@ -102,9 +86,7 @@ impl ListGeofenceCollectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListGeofenceCollectionsOutput`](crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput {
+    pub fn build(self) -> crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput {
         crate::operation::list_geofence_collections::ListGeofenceCollectionsOutput {
             entries: self.entries,
             next_token: self.next_token,

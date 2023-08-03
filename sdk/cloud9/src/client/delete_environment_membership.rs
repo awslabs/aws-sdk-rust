@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`user_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_environment_membership::builders::DeleteEnvironmentMembershipFluentBuilder::user_arn) / [`set_user_arn(Option<String>)`](crate::operation::delete_environment_membership::builders::DeleteEnvironmentMembershipFluentBuilder::set_user_arn): <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
     /// - On success, responds with [`DeleteEnvironmentMembershipOutput`](crate::operation::delete_environment_membership::DeleteEnvironmentMembershipOutput)
     /// - On failure, responds with [`SdkError<DeleteEnvironmentMembershipError>`](crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError)
-    pub fn delete_environment_membership(&self) -> crate::operation::delete_environment_membership::builders::DeleteEnvironmentMembershipFluentBuilder{
+    pub fn delete_environment_membership(
+        &self,
+    ) -> crate::operation::delete_environment_membership::builders::DeleteEnvironmentMembershipFluentBuilder {
         crate::operation::delete_environment_membership::builders::DeleteEnvironmentMembershipFluentBuilder::new(self.handle.clone())
     }
 }

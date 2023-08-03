@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`dataset_import_job_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobFluentBuilder::dataset_import_job_arn) / [`set_dataset_import_job_arn(Option<String>)`](crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobFluentBuilder::set_dataset_import_job_arn): <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
     /// - On success, responds with [`DeleteDatasetImportJobOutput`](crate::operation::delete_dataset_import_job::DeleteDatasetImportJobOutput)
     /// - On failure, responds with [`SdkError<DeleteDatasetImportJobError>`](crate::operation::delete_dataset_import_job::DeleteDatasetImportJobError)
-    pub fn delete_dataset_import_job(
-        &self,
-    ) -> crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobFluentBuilder
-    {
+    pub fn delete_dataset_import_job(&self) -> crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobFluentBuilder {
         crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobFluentBuilder::new(self.handle.clone())
     }
 }

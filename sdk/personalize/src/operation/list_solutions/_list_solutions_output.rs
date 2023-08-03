@@ -35,9 +35,7 @@ impl ListSolutionsOutput {
 
 /// A builder for [`ListSolutionsOutput`](crate::operation::list_solutions::ListSolutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolutionsOutputBuilder {
     pub(crate) solutions: ::std::option::Option<::std::vec::Vec<crate::types::SolutionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListSolutionsOutputBuilder {
         self
     }
     /// <p>A list of the current solutions.</p>
-    pub fn set_solutions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SolutionSummary>>,
-    ) -> Self {
+    pub fn set_solutions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SolutionSummary>>) -> Self {
         self.solutions = input;
         self
     }
     /// <p>A list of the current solutions.</p>
-    pub fn get_solutions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SolutionSummary>> {
+    pub fn get_solutions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SolutionSummary>> {
         &self.solutions
     }
     /// <p>A token for getting the next set of solutions (if they exist).</p>

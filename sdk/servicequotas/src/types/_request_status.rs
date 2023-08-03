@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RequestStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for RequestStatus {
             "CASE_OPENED" => RequestStatus::CaseOpened,
             "DENIED" => RequestStatus::Denied,
             "PENDING" => RequestStatus::Pending,
-            other => {
-                RequestStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => RequestStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl RequestStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "APPROVED",
-            "CASE_CLOSED",
-            "CASE_OPENED",
-            "DENIED",
-            "PENDING",
-        ]
+        &["APPROVED", "CASE_CLOSED", "CASE_OPENED", "DENIED", "PENDING"]
     }
 }
 impl ::std::convert::AsRef<str> for RequestStatus {

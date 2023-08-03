@@ -66,9 +66,7 @@ impl SetPermissionInput {
 
 /// A builder for [`SetPermissionInput`](crate::operation::set_permission::SetPermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetPermissionInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) iam_user_arn: ::std::option::Option<::std::string::String>,
@@ -174,10 +172,7 @@ impl SetPermissionInputBuilder {
     /// Consumes the builder and constructs a [`SetPermissionInput`](crate::operation::set_permission::SetPermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_permission::SetPermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::set_permission::SetPermissionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_permission::SetPermissionInput {
             stack_id: self.stack_id,
             iam_user_arn: self.iam_user_arn,

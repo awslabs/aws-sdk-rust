@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ApiKey>>)`](crate::operation::get_api_keys::GetApiKeysOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_api_keys::GetApiKeysOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetApiKeysError>`](crate::operation::get_api_keys::GetApiKeysError)
-    pub fn get_api_keys(
-        &self,
-    ) -> crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder {
+    pub fn get_api_keys(&self) -> crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder {
         crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::new(self.handle.clone())
     }
 }

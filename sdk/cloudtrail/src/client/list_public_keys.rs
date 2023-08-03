@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`public_key_list(Option<Vec<PublicKey>>)`](crate::operation::list_public_keys::ListPublicKeysOutput::public_key_list): <p>Contains an array of PublicKey objects.</p> <note>   <p>The returned public keys may have validity time ranges that overlap.</p>  </note>
     ///   - [`next_token(Option<String>)`](crate::operation::list_public_keys::ListPublicKeysOutput::next_token): <p>Reserved for future use.</p>
     /// - On failure, responds with [`SdkError<ListPublicKeysError>`](crate::operation::list_public_keys::ListPublicKeysError)
-    pub fn list_public_keys(
-        &self,
-    ) -> crate::operation::list_public_keys::builders::ListPublicKeysFluentBuilder {
-        crate::operation::list_public_keys::builders::ListPublicKeysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_public_keys(&self) -> crate::operation::list_public_keys::builders::ListPublicKeysFluentBuilder {
+        crate::operation::list_public_keys::builders::ListPublicKeysFluentBuilder::new(self.handle.clone())
     }
 }

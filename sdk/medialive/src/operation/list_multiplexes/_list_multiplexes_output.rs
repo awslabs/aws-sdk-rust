@@ -36,9 +36,7 @@ impl ListMultiplexesOutput {
 
 /// A builder for [`ListMultiplexesOutput`](crate::operation::list_multiplexes::ListMultiplexesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMultiplexesOutputBuilder {
     pub(crate) multiplexes: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListMultiplexesOutputBuilder {
         self
     }
     /// List of multiplexes.
-    pub fn set_multiplexes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexSummary>>,
-    ) -> Self {
+    pub fn set_multiplexes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexSummary>>) -> Self {
         self.multiplexes = input;
         self
     }
     /// List of multiplexes.
-    pub fn get_multiplexes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiplexSummary>> {
+    pub fn get_multiplexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiplexSummary>> {
         &self.multiplexes
     }
     /// Token for the next ListMultiplexes request.

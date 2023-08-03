@@ -58,9 +58,7 @@ impl HostedConfigurationVersionSummary {
 
 /// A builder for [`HostedConfigurationVersionSummary`](crate::types::HostedConfigurationVersionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HostedConfigurationVersionSummaryBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_profile_id: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct HostedConfigurationVersionSummaryBuilder {
 }
 impl HostedConfigurationVersionSummaryBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -91,18 +83,12 @@ impl HostedConfigurationVersionSummaryBuilder {
         &self.application_id
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration profile ID.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_profile_id = input;
         self
     }
@@ -153,18 +139,12 @@ impl HostedConfigurationVersionSummaryBuilder {
         &self.content_type
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_label = input;
         self
     }

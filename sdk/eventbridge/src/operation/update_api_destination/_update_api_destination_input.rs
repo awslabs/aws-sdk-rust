@@ -50,17 +50,14 @@ impl UpdateApiDestinationInput {
 }
 impl UpdateApiDestinationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApiDestinationInput`](crate::operation::update_api_destination::UpdateApiDestinationInput).
-    pub fn builder(
-    ) -> crate::operation::update_api_destination::builders::UpdateApiDestinationInputBuilder {
+    pub fn builder() -> crate::operation::update_api_destination::builders::UpdateApiDestinationInputBuilder {
         crate::operation::update_api_destination::builders::UpdateApiDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApiDestinationInput`](crate::operation::update_api_destination::UpdateApiDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApiDestinationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -99,18 +96,12 @@ impl UpdateApiDestinationInputBuilder {
         &self.description
     }
     /// <p>The ARN of the connection to use for the API destination.</p>
-    pub fn connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the connection to use for the API destination.</p>
-    pub fn set_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_arn = input;
         self
     }
@@ -119,18 +110,12 @@ impl UpdateApiDestinationInputBuilder {
         &self.connection_arn
     }
     /// <p>The URL to the endpoint to use for the API destination.</p>
-    pub fn invocation_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invocation_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invocation_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to the endpoint to use for the API destination.</p>
-    pub fn set_invocation_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invocation_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invocation_endpoint = input;
         self
     }
@@ -144,17 +129,12 @@ impl UpdateApiDestinationInputBuilder {
         self
     }
     /// <p>The method to use for the API destination.</p>
-    pub fn set_http_method(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiDestinationHttpMethod>,
-    ) -> Self {
+    pub fn set_http_method(mut self, input: ::std::option::Option<crate::types::ApiDestinationHttpMethod>) -> Self {
         self.http_method = input;
         self
     }
     /// <p>The method to use for the API destination.</p>
-    pub fn get_http_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApiDestinationHttpMethod> {
+    pub fn get_http_method(&self) -> &::std::option::Option<crate::types::ApiDestinationHttpMethod> {
         &self.http_method
     }
     /// <p>The maximum number of invocations per second to send to the API destination.</p>
@@ -163,10 +143,7 @@ impl UpdateApiDestinationInputBuilder {
         self
     }
     /// <p>The maximum number of invocations per second to send to the API destination.</p>
-    pub fn set_invocation_rate_limit_per_second(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_invocation_rate_limit_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.invocation_rate_limit_per_second = input;
         self
     }
@@ -177,19 +154,15 @@ impl UpdateApiDestinationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateApiDestinationInput`](crate::operation::update_api_destination::UpdateApiDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_api_destination::UpdateApiDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_api_destination::UpdateApiDestinationInput {
-                name: self.name,
-                description: self.description,
-                connection_arn: self.connection_arn,
-                invocation_endpoint: self.invocation_endpoint,
-                http_method: self.http_method,
-                invocation_rate_limit_per_second: self.invocation_rate_limit_per_second,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_api_destination::UpdateApiDestinationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_api_destination::UpdateApiDestinationInput {
+            name: self.name,
+            description: self.description,
+            connection_arn: self.connection_arn,
+            invocation_endpoint: self.invocation_endpoint,
+            http_method: self.http_method,
+            invocation_rate_limit_per_second: self.invocation_rate_limit_per_second,
+        })
     }
 }

@@ -44,9 +44,7 @@ impl CloudTrailDetails {
 
 /// A builder for [`CloudTrailDetails`](crate::types::CloudTrailDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudTrailDetailsBuilder {
     pub(crate) trails: ::std::option::Option<::std::vec::Vec<crate::types::Trail>>,
     pub(crate) access_role: ::std::option::Option<::std::string::String>,
@@ -66,10 +64,7 @@ impl CloudTrailDetailsBuilder {
         self
     }
     /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
-    pub fn set_trails(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Trail>>,
-    ) -> Self {
+    pub fn set_trails(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trail>>) -> Self {
         self.trails = input;
         self
     }
@@ -97,10 +92,7 @@ impl CloudTrailDetailsBuilder {
         self
     }
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -114,10 +106,7 @@ impl CloudTrailDetailsBuilder {
         self
     }
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }

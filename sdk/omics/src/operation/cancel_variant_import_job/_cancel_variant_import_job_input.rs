@@ -15,18 +15,14 @@ impl CancelVariantImportJobInput {
 }
 impl CancelVariantImportJobInput {
     /// Creates a new builder-style object to manufacture [`CancelVariantImportJobInput`](crate::operation::cancel_variant_import_job::CancelVariantImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobInputBuilder {
         crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelVariantImportJobInput`](crate::operation::cancel_variant_import_job::CancelVariantImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelVariantImportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl CancelVariantImportJobInputBuilder {
         crate::operation::cancel_variant_import_job::CancelVariantImportJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_variant_import_job::CancelVariantImportJobInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::cancel_variant_import_job::CancelVariantImportJobInput { job_id: self.job_id })
     }
 }

@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`endpoint_access_list(Option<Vec<EndpointAccess>>)`](crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput::endpoint_access_list): <p>The list of endpoints with access to the cluster.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput::marker): <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointAccessError>`](crate::operation::describe_endpoint_access::DescribeEndpointAccessError)
-    pub fn describe_endpoint_access(
-        &self,
-    ) -> crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder
-    {
+    pub fn describe_endpoint_access(&self) -> crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder {
         crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl LexiconDescription {
 
 /// A builder for [`LexiconDescription`](crate::types::LexiconDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LexiconDescriptionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<crate::types::LexiconAttributes>,
@@ -58,10 +56,7 @@ impl LexiconDescriptionBuilder {
         self
     }
     /// <p>Provides lexicon metadata.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::LexiconAttributes>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::LexiconAttributes>) -> Self {
         self.attributes = input;
         self
     }

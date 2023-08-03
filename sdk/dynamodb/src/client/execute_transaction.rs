@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`responses(Option<Vec<ItemResponse>>)`](crate::operation::execute_transaction::ExecuteTransactionOutput::responses): <p>The response to a PartiQL transaction.</p>
     ///   - [`consumed_capacity(Option<Vec<ConsumedCapacity>>)`](crate::operation::execute_transaction::ExecuteTransactionOutput::consumed_capacity): <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
     /// - On failure, responds with [`SdkError<ExecuteTransactionError>`](crate::operation::execute_transaction::ExecuteTransactionError)
-    pub fn execute_transaction(
-        &self,
-    ) -> crate::operation::execute_transaction::builders::ExecuteTransactionFluentBuilder {
-        crate::operation::execute_transaction::builders::ExecuteTransactionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn execute_transaction(&self) -> crate::operation::execute_transaction::builders::ExecuteTransactionFluentBuilder {
+        crate::operation::execute_transaction::builders::ExecuteTransactionFluentBuilder::new(self.handle.clone())
     }
 }

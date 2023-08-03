@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`candidate_address_list(Option<Vec<CandidateAddress>>)`](crate::operation::validate_e911_address::ValidateE911AddressOutput::candidate_address_list): <p>The list of address suggestions.</p>
     /// - On failure, responds with [`SdkError<ValidateE911AddressError>`](crate::operation::validate_e911_address::ValidateE911AddressError)
     #[deprecated(note = "Replaced by ValidateE911Address in the Amazon Chime SDK Voice Namespace")]
-    pub fn validate_e911_address(
-        &self,
-    ) -> crate::operation::validate_e911_address::builders::ValidateE911AddressFluentBuilder {
-        crate::operation::validate_e911_address::builders::ValidateE911AddressFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn validate_e911_address(&self) -> crate::operation::validate_e911_address::builders::ValidateE911AddressFluentBuilder {
+        crate::operation::validate_e911_address::builders::ValidateE911AddressFluentBuilder::new(self.handle.clone())
     }
 }

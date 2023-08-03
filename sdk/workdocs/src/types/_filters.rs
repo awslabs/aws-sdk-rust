@@ -9,8 +9,7 @@ pub struct Filters {
     pub text_locales: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeType>>,
     /// <p>Filters by content category.</p>
     #[doc(hidden)]
-    pub content_categories:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContentCategoryType>>,
+    pub content_categories: ::std::option::Option<::std::vec::Vec<crate::types::ContentCategoryType>>,
     /// <p>Filters based on entity type.</p>
     #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::SearchResourceType>>,
@@ -25,8 +24,7 @@ pub struct Filters {
     pub ancestor_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filter based on file groupings.</p>
     #[doc(hidden)]
-    pub search_collection_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::SearchCollectionType>>,
+    pub search_collection_types: ::std::option::Option<::std::vec::Vec<crate::types::SearchCollectionType>>,
     /// <p>Filter based on size (in bytes).</p>
     #[doc(hidden)]
     pub size_range: ::std::option::Option<crate::types::LongRangeType>,
@@ -43,9 +41,7 @@ impl Filters {
         self.text_locales.as_deref()
     }
     /// <p>Filters by content category.</p>
-    pub fn content_categories(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ContentCategoryType]> {
+    pub fn content_categories(&self) -> ::std::option::Option<&[crate::types::ContentCategoryType]> {
         self.content_categories.as_deref()
     }
     /// <p>Filters based on entity type.</p>
@@ -65,9 +61,7 @@ impl Filters {
         self.ancestor_ids.as_deref()
     }
     /// <p>Filter based on file groupings.</p>
-    pub fn search_collection_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SearchCollectionType]> {
+    pub fn search_collection_types(&self) -> ::std::option::Option<&[crate::types::SearchCollectionType]> {
         self.search_collection_types.as_deref()
     }
     /// <p>Filter based on size (in bytes).</p>
@@ -92,21 +86,15 @@ impl Filters {
 
 /// A builder for [`Filters`](crate::types::Filters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FiltersBuilder {
     pub(crate) text_locales: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeType>>,
-    pub(crate) content_categories:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContentCategoryType>>,
-    pub(crate) resource_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::SearchResourceType>>,
+    pub(crate) content_categories: ::std::option::Option<::std::vec::Vec<crate::types::ContentCategoryType>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::SearchResourceType>>,
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) principals:
-        ::std::option::Option<::std::vec::Vec<crate::types::SearchPrincipalType>>,
+    pub(crate) principals: ::std::option::Option<::std::vec::Vec<crate::types::SearchPrincipalType>>,
     pub(crate) ancestor_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) search_collection_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::SearchCollectionType>>,
+    pub(crate) search_collection_types: ::std::option::Option<::std::vec::Vec<crate::types::SearchCollectionType>>,
     pub(crate) size_range: ::std::option::Option<crate::types::LongRangeType>,
     pub(crate) created_range: ::std::option::Option<crate::types::DateRangeType>,
     pub(crate) modified_range: ::std::option::Option<crate::types::DateRangeType>,
@@ -124,17 +112,12 @@ impl FiltersBuilder {
         self
     }
     /// <p>Filters by the locale of the content or comment.</p>
-    pub fn set_text_locales(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeType>>,
-    ) -> Self {
+    pub fn set_text_locales(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeType>>) -> Self {
         self.text_locales = input;
         self
     }
     /// <p>Filters by the locale of the content or comment.</p>
-    pub fn get_text_locales(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeType>> {
+    pub fn get_text_locales(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeType>> {
         &self.text_locales
     }
     /// Appends an item to `content_categories`.
@@ -149,17 +132,12 @@ impl FiltersBuilder {
         self
     }
     /// <p>Filters by content category.</p>
-    pub fn set_content_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContentCategoryType>>,
-    ) -> Self {
+    pub fn set_content_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContentCategoryType>>) -> Self {
         self.content_categories = input;
         self
     }
     /// <p>Filters by content category.</p>
-    pub fn get_content_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentCategoryType>> {
+    pub fn get_content_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentCategoryType>> {
         &self.content_categories
     }
     /// Appends an item to `resource_types`.
@@ -174,17 +152,12 @@ impl FiltersBuilder {
         self
     }
     /// <p>Filters based on entity type.</p>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchResourceType>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchResourceType>>) -> Self {
         self.resource_types = input;
         self
     }
     /// <p>Filters based on entity type.</p>
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchResourceType>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchResourceType>> {
         &self.resource_types
     }
     /// Appends an item to `labels`.
@@ -199,10 +172,7 @@ impl FiltersBuilder {
         self
     }
     /// <p>Filter by labels using exact match.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
@@ -222,17 +192,12 @@ impl FiltersBuilder {
         self
     }
     /// <p>Filter based on UserIds or GroupIds.</p>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchPrincipalType>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchPrincipalType>>) -> Self {
         self.principals = input;
         self
     }
     /// <p>Filter based on UserIds or GroupIds.</p>
-    pub fn get_principals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchPrincipalType>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchPrincipalType>> {
         &self.principals
     }
     /// Appends an item to `ancestor_ids`.
@@ -247,17 +212,12 @@ impl FiltersBuilder {
         self
     }
     /// <p>Filter based on resource’s path.</p>
-    pub fn set_ancestor_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ancestor_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ancestor_ids = input;
         self
     }
     /// <p>Filter based on resource’s path.</p>
-    pub fn get_ancestor_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ancestor_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ancestor_ids
     }
     /// Appends an item to `search_collection_types`.
@@ -272,17 +232,12 @@ impl FiltersBuilder {
         self
     }
     /// <p>Filter based on file groupings.</p>
-    pub fn set_search_collection_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchCollectionType>>,
-    ) -> Self {
+    pub fn set_search_collection_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchCollectionType>>) -> Self {
         self.search_collection_types = input;
         self
     }
     /// <p>Filter based on file groupings.</p>
-    pub fn get_search_collection_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchCollectionType>> {
+    pub fn get_search_collection_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchCollectionType>> {
         &self.search_collection_types
     }
     /// <p>Filter based on size (in bytes).</p>
@@ -291,10 +246,7 @@ impl FiltersBuilder {
         self
     }
     /// <p>Filter based on size (in bytes).</p>
-    pub fn set_size_range(
-        mut self,
-        input: ::std::option::Option<crate::types::LongRangeType>,
-    ) -> Self {
+    pub fn set_size_range(mut self, input: ::std::option::Option<crate::types::LongRangeType>) -> Self {
         self.size_range = input;
         self
     }
@@ -308,10 +260,7 @@ impl FiltersBuilder {
         self
     }
     /// <p>Filter based on resource’s creation timestamp.</p>
-    pub fn set_created_range(
-        mut self,
-        input: ::std::option::Option<crate::types::DateRangeType>,
-    ) -> Self {
+    pub fn set_created_range(mut self, input: ::std::option::Option<crate::types::DateRangeType>) -> Self {
         self.created_range = input;
         self
     }
@@ -325,10 +274,7 @@ impl FiltersBuilder {
         self
     }
     /// <p>Filter based on resource’s modified timestamp.</p>
-    pub fn set_modified_range(
-        mut self,
-        input: ::std::option::Option<crate::types::DateRangeType>,
-    ) -> Self {
+    pub fn set_modified_range(mut self, input: ::std::option::Option<crate::types::DateRangeType>) -> Self {
         self.modified_range = input;
         self
     }

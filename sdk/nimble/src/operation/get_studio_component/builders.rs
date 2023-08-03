@@ -10,10 +10,7 @@ impl GetStudioComponentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_studio_component::GetStudioComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_studio_component::GetStudioComponentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_studio_component::GetStudioComponentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_studio_component();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetStudioComponentFluentBuilder {
         }
     }
     /// Access the GetStudioComponent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_studio_component::builders::GetStudioComponentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_studio_component::builders::GetStudioComponentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetStudioComponentFluentBuilder {
             crate::operation::get_studio_component::GetStudioComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_studio_component::GetStudioComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_studio_component::GetStudioComponentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetStudioComponentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetStudioComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_studio_component::GetStudioComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_studio_component::GetStudioComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_studio_component::GetStudioComponentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetStudioComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_studio_component::GetStudioComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_studio_component::GetStudioComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_studio_component::GetStudioComponentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetStudioComponentFluentBuilder {
             crate::operation::get_studio_component::GetStudioComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_studio_component::GetStudioComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_studio_component::GetStudioComponentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The studio component ID.</p>
-    pub fn studio_component_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_component_id(input.into());
         self
     }
     /// <p>The studio component ID.</p>
-    pub fn set_studio_component_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_studio_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_component_id(input);
         self
     }

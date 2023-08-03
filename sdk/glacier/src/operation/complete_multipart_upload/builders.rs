@@ -31,8 +31,7 @@ impl CompleteMultipartUploadInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CompleteMultipartUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadInputBuilder,
+    inner: crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadInputBuilder,
 }
 impl CompleteMultipartUploadFluentBuilder {
     /// Creates a new `CompleteMultipartUpload`.
@@ -43,10 +42,7 @@ impl CompleteMultipartUploadFluentBuilder {
         }
     }
     /// Access the CompleteMultipartUpload as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +54,7 @@ impl CompleteMultipartUploadFluentBuilder {
             crate::operation::complete_multipart_upload::CompleteMultipartUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_multipart_upload::CompleteMultipartUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_upload::CompleteMultipartUploadError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +64,7 @@ impl CompleteMultipartUploadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +73,7 @@ impl CompleteMultipartUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_multipart_upload::CompleteMultipartUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_upload::CompleteMultipartUploadError>,
     > {
         let op = self
             .inner
@@ -107,9 +96,7 @@ impl CompleteMultipartUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_multipart_upload::CompleteMultipartUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_upload::CompleteMultipartUploadError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +110,7 @@ impl CompleteMultipartUploadFluentBuilder {
             crate::operation::complete_multipart_upload::CompleteMultipartUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_multipart_upload::CompleteMultipartUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_upload::CompleteMultipartUploadError>,
     > {
         self.customize_middleware().await
     }

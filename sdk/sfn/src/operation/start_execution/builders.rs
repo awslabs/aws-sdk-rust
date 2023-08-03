@@ -10,10 +10,7 @@ impl StartExecutionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_execution::StartExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_execution::StartExecutionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_execution::StartExecutionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_execution();
         fluent_builder.inner = self;
@@ -73,9 +70,7 @@ impl StartExecutionFluentBuilder {
         }
     }
     /// Access the StartExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_execution::builders::StartExecutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_execution::builders::StartExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -97,10 +92,7 @@ impl StartExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -189,10 +181,7 @@ impl StartExecutionFluentBuilder {
     /// </region>
     /// </partition></code> </p> <p>Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.</p> </li>
     /// </ul>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state_machine_arn(input.into());
         self
     }
@@ -235,10 +224,7 @@ impl StartExecutionFluentBuilder {
     /// </region>
     /// </partition></code> </p> <p>Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.</p> </li>
     /// </ul>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state_machine_arn(input);
         self
     }

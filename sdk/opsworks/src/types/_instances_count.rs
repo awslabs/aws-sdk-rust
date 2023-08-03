@@ -156,9 +156,7 @@ impl InstancesCount {
 
 /// A builder for [`InstancesCount`](crate::types::InstancesCount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstancesCountBuilder {
     pub(crate) assigning: ::std::option::Option<i32>,
     pub(crate) booting: ::std::option::Option<i32>,

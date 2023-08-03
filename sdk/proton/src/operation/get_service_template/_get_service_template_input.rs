@@ -15,17 +15,14 @@ impl GetServiceTemplateInput {
 }
 impl GetServiceTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetServiceTemplateInput`](crate::operation::get_service_template::GetServiceTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::get_service_template::builders::GetServiceTemplateInputBuilder {
+    pub fn builder() -> crate::operation::get_service_template::builders::GetServiceTemplateInputBuilder {
         crate::operation::get_service_template::builders::GetServiceTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceTemplateInput`](crate::operation::get_service_template::GetServiceTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceTemplateInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl GetServiceTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceTemplateInput`](crate::operation::get_service_template::GetServiceTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_service_template::GetServiceTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_service_template::GetServiceTemplateInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::get_service_template::GetServiceTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_service_template::GetServiceTemplateInput { name: self.name })
     }
 }

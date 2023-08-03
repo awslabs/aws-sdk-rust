@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LogTargetType {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for LogTargetType {
             "PRINCIPAL_ID" => LogTargetType::PrincipalId,
             "SOURCE_IP" => LogTargetType::SourceIp,
             "THING_GROUP" => LogTargetType::ThingGroup,
-            other => {
-                LogTargetType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => LogTargetType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl LogTargetType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLIENT_ID",
-            "DEFAULT",
-            "PRINCIPAL_ID",
-            "SOURCE_IP",
-            "THING_GROUP",
-        ]
+        &["CLIENT_ID", "DEFAULT", "PRINCIPAL_ID", "SOURCE_IP", "THING_GROUP"]
     }
 }
 impl ::std::convert::AsRef<str> for LogTargetType {

@@ -15,16 +15,14 @@ impl ListSlackWorkspaceConfigurationsInput {
 }
 impl ListSlackWorkspaceConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListSlackWorkspaceConfigurationsInput`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsInput).
-    pub fn builder() -> crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsInputBuilder {
         crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSlackWorkspaceConfigurationsInput`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSlackWorkspaceConfigurationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl ListSlackWorkspaceConfigurationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSlackWorkspaceConfigurationsInput`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsInput {
-                next_token: self.next_token
-                ,
-            }
+            crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsInput { next_token: self.next_token },
         )
     }
 }

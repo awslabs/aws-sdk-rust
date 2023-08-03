@@ -6,10 +6,7 @@ pub fn ser_list_reference_stores_input(
     if let Some(var_1) = &input.filter {
         #[allow(unused_mut)]
         let mut object_2 = object.key("filter").start_object();
-        crate::protocol_serde::shape_reference_store_filter::ser_reference_store_filter(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_reference_store_filter::ser_reference_store_filter(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

@@ -18,10 +18,7 @@ pub fn ser_detect_moderation_labels_input(
     if let Some(var_4) = &input.human_loop_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("HumanLoopConfig").start_object();
-        crate::protocol_serde::shape_human_loop_config::ser_human_loop_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_human_loop_config::ser_human_loop_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

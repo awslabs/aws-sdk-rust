@@ -70,17 +70,14 @@ impl ::aws_http::request_id::RequestId for DescribeLineageGroupOutput {
 }
 impl DescribeLineageGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLineageGroupOutput`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_lineage_group::builders::DescribeLineageGroupOutputBuilder {
+    pub fn builder() -> crate::operation::describe_lineage_group::builders::DescribeLineageGroupOutputBuilder {
         crate::operation::describe_lineage_group::builders::DescribeLineageGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLineageGroupOutput`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLineageGroupOutputBuilder {
     pub(crate) lineage_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) lineage_group_arn: ::std::option::Option<::std::string::String>,
@@ -94,18 +91,12 @@ pub struct DescribeLineageGroupOutputBuilder {
 }
 impl DescribeLineageGroupOutputBuilder {
     /// <p>The name of the lineage group.</p>
-    pub fn lineage_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lineage_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lineage_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the lineage group.</p>
-    pub fn set_lineage_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lineage_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lineage_group_name = input;
         self
     }
@@ -114,18 +105,12 @@ impl DescribeLineageGroupOutputBuilder {
         &self.lineage_group_name
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn lineage_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lineage_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lineage_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn set_lineage_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lineage_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lineage_group_arn = input;
         self
     }
@@ -167,10 +152,7 @@ impl DescribeLineageGroupOutputBuilder {
         self
     }
     /// <p>The creation time of lineage group.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -184,10 +166,7 @@ impl DescribeLineageGroupOutputBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
@@ -201,10 +180,7 @@ impl DescribeLineageGroupOutputBuilder {
         self
     }
     /// <p>The last modified time of the lineage group.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -218,10 +194,7 @@ impl DescribeLineageGroupOutputBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }

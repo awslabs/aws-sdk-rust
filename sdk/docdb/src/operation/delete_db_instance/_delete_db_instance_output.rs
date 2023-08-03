@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteDbInstanceOutput {
 }
 impl DeleteDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbInstanceOutput`](crate::operation::delete_db_instance::DeleteDbInstanceOutput).
-    pub fn builder() -> crate::operation::delete_db_instance::builders::DeleteDbInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_db_instance::builders::DeleteDbInstanceOutputBuilder {
         crate::operation::delete_db_instance::builders::DeleteDbInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbInstanceOutput`](crate::operation::delete_db_instance::DeleteDbInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbInstanceOutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteDbInstanceOutputBuilder {
         self
     }
     /// <p>Detailed information about an instance. </p>
-    pub fn set_db_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::DbInstance>,
-    ) -> Self {
+    pub fn set_db_instance(mut self, input: ::std::option::Option<crate::types::DbInstance>) -> Self {
         self.db_instance = input;
         self
     }

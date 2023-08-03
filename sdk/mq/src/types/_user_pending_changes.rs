@@ -37,9 +37,7 @@ impl UserPendingChanges {
 
 /// A builder for [`UserPendingChanges`](crate::types::UserPendingChanges).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserPendingChangesBuilder {
     pub(crate) console_access: ::std::option::Option<bool>,
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,10 +70,7 @@ impl UserPendingChangesBuilder {
         self
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groups = input;
         self
     }
@@ -89,10 +84,7 @@ impl UserPendingChangesBuilder {
         self
     }
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
-    pub fn set_pending_change(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeType>,
-    ) -> Self {
+    pub fn set_pending_change(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
         self.pending_change = input;
         self
     }

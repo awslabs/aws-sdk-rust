@@ -10,10 +10,7 @@ impl GetMetricPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_metric_policy::GetMetricPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_policy::GetMetricPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_policy::GetMetricPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_metric_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetMetricPolicyFluentBuilder {
         }
     }
     /// Access the GetMetricPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_metric_policy::builders::GetMetricPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_metric_policy::builders::GetMetricPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetMetricPolicyFluentBuilder {
             crate::operation::get_metric_policy::GetMetricPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_policy::GetMetricPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_policy::GetMetricPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetMetricPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetMetricPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_metric_policy::GetMetricPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_policy::GetMetricPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_policy::GetMetricPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetMetricPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_metric_policy::GetMetricPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_policy::GetMetricPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_policy::GetMetricPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetMetricPolicyFluentBuilder {
             crate::operation::get_metric_policy::GetMetricPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_policy::GetMetricPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_policy::GetMetricPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the container that is associated with the metric policy.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_name(input.into());
         self
     }
     /// <p>The name of the container that is associated with the metric policy.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_name(input);
         self
     }

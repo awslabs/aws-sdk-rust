@@ -22,34 +22,26 @@ impl ::aws_http::request_id::RequestId for DecodeAuthorizationMessageOutput {
 }
 impl DecodeAuthorizationMessageOutput {
     /// Creates a new builder-style object to manufacture [`DecodeAuthorizationMessageOutput`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput).
-    pub fn builder() -> crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageOutputBuilder{
+    pub fn builder() -> crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageOutputBuilder {
         crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageOutputBuilder::default()
     }
 }
 
 /// A builder for [`DecodeAuthorizationMessageOutput`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecodeAuthorizationMessageOutputBuilder {
     pub(crate) decoded_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DecodeAuthorizationMessageOutputBuilder {
     /// <p>The API returns a response with the decoded message.</p>
-    pub fn decoded_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn decoded_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.decoded_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API returns a response with the decoded message.</p>
-    pub fn set_decoded_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_decoded_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.decoded_message = input;
         self
     }
@@ -67,9 +59,7 @@ impl DecodeAuthorizationMessageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DecodeAuthorizationMessageOutput`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput {
+    pub fn build(self) -> crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput {
         crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput {
             decoded_message: self.decoded_message,
             _request_id: self._request_id,

@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`ModifySnapshotCopyRetentionPeriodOutput`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<ModifySnapshotCopyRetentionPeriodError>`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError)
-    pub fn modify_snapshot_copy_retention_period(&self) -> crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodFluentBuilder{
+    pub fn modify_snapshot_copy_retention_period(
+        &self,
+    ) -> crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodFluentBuilder {
         crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodFluentBuilder::new(self.handle.clone())
     }
 }

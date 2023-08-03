@@ -5,8 +5,7 @@
 pub struct ListDatasetImportJobsOutput {
     /// <p>The list of dataset import jobs.</p>
     #[doc(hidden)]
-    pub dataset_import_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasetImportJobSummary>>,
+    pub dataset_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::DatasetImportJobSummary>>,
     /// <p>A token for getting the next set of dataset import jobs (if they exist).</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDatasetImportJobsOutput {
 }
 impl ListDatasetImportJobsOutput {
     /// <p>The list of dataset import jobs.</p>
-    pub fn dataset_import_jobs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DatasetImportJobSummary]> {
+    pub fn dataset_import_jobs(&self) -> ::std::option::Option<&[crate::types::DatasetImportJobSummary]> {
         self.dataset_import_jobs.as_deref()
     }
     /// <p>A token for getting the next set of dataset import jobs (if they exist).</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDatasetImportJobsOutput {
 }
 impl ListDatasetImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDatasetImportJobsOutput`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsOutputBuilder {
         crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDatasetImportJobsOutput`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetImportJobsOutputBuilder {
-    pub(crate) dataset_import_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasetImportJobSummary>>,
+    pub(crate) dataset_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::DatasetImportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListDatasetImportJobsOutputBuilder {
         self
     }
     /// <p>The list of dataset import jobs.</p>
-    pub fn set_dataset_import_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetImportJobSummary>>,
-    ) -> Self {
+    pub fn set_dataset_import_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetImportJobSummary>>) -> Self {
         self.dataset_import_jobs = input;
         self
     }
     /// <p>The list of dataset import jobs.</p>
-    pub fn get_dataset_import_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetImportJobSummary>> {
+    pub fn get_dataset_import_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetImportJobSummary>> {
         &self.dataset_import_jobs
     }
     /// <p>A token for getting the next set of dataset import jobs (if they exist).</p>

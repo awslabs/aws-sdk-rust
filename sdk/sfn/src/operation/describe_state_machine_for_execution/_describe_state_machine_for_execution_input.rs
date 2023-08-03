@@ -15,33 +15,25 @@ impl DescribeStateMachineForExecutionInput {
 }
 impl DescribeStateMachineForExecutionInput {
     /// Creates a new builder-style object to manufacture [`DescribeStateMachineForExecutionInput`](crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionInput).
-    pub fn builder() -> crate::operation::describe_state_machine_for_execution::builders::DescribeStateMachineForExecutionInputBuilder{
+    pub fn builder() -> crate::operation::describe_state_machine_for_execution::builders::DescribeStateMachineForExecutionInputBuilder {
         crate::operation::describe_state_machine_for_execution::builders::DescribeStateMachineForExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStateMachineForExecutionInput`](crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStateMachineForExecutionInputBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStateMachineForExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
-    pub fn execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
-    pub fn set_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_arn = input;
         self
     }
@@ -50,12 +42,16 @@ impl DescribeStateMachineForExecutionInputBuilder {
         &self.execution_arn
     }
     /// Consumes the builder and constructs a [`DescribeStateMachineForExecutionInput`](crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionInput {
-                execution_arn: self.execution_arn
-                ,
-            }
+                execution_arn: self.execution_arn,
+            },
         )
     }
 }

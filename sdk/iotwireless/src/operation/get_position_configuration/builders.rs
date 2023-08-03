@@ -29,7 +29,7 @@ impl GetPositionConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPositionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_position_configuration::builders::GetPositionConfigurationInputBuilder,
+    inner: crate::operation::get_position_configuration::builders::GetPositionConfigurationInputBuilder,
 }
 impl GetPositionConfigurationFluentBuilder {
     /// Creates a new `GetPositionConfiguration`.
@@ -40,10 +40,7 @@ impl GetPositionConfigurationFluentBuilder {
         }
     }
     /// Access the GetPositionConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_position_configuration::builders::GetPositionConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_position_configuration::builders::GetPositionConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl GetPositionConfigurationFluentBuilder {
             crate::operation::get_position_configuration::GetPositionConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_position_configuration::GetPositionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_position_configuration::GetPositionConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl GetPositionConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl GetPositionConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_position_configuration::GetPositionConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_position_configuration::GetPositionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_position_configuration::GetPositionConfigurationError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl GetPositionConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_position_configuration::GetPositionConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_position_configuration::GetPositionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_position_configuration::GetPositionConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +108,17 @@ impl GetPositionConfigurationFluentBuilder {
             crate::operation::get_position_configuration::GetPositionConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_position_configuration::GetPositionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_position_configuration::GetPositionConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Resource identifier used in a position configuration.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>Resource identifier used in a position configuration.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
@@ -152,10 +132,7 @@ impl GetPositionConfigurationFluentBuilder {
         self
     }
     /// <p>Resource type of the resource for which position configuration is retrieved.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PositionResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

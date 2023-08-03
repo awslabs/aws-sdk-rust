@@ -43,18 +43,14 @@ impl UpdateServiceSyncConfigInput {
 }
 impl UpdateServiceSyncConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceSyncConfigInput`](crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput).
-    pub fn builder(
-    ) -> crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigInputBuilder {
         crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServiceSyncConfigInput`](crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceSyncConfigInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
@@ -83,32 +79,21 @@ impl UpdateServiceSyncConfigInputBuilder {
         self
     }
     /// <p>The name of the repository provider where the Proton Ops file is found.</p>
-    pub fn set_repository_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.repository_provider = input;
         self
     }
     /// <p>The name of the repository provider where the Proton Ops file is found.</p>
-    pub fn get_repository_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+    pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
         &self.repository_provider
     }
     /// <p>The name of the repository where the Proton Ops file is found.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where the Proton Ops file is found.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -151,14 +136,12 @@ impl UpdateServiceSyncConfigInputBuilder {
         crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput {
-                service_name: self.service_name,
-                repository_provider: self.repository_provider,
-                repository_name: self.repository_name,
-                branch: self.branch,
-                file_path: self.file_path,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput {
+            service_name: self.service_name,
+            repository_provider: self.repository_provider,
+            repository_name: self.repository_name,
+            branch: self.branch,
+            file_path: self.file_path,
+        })
     }
 }

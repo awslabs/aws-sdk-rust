@@ -8,8 +8,7 @@ pub struct ListBackupSelectionsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of backup selection list items containing metadata about each resource in the list.</p>
     #[doc(hidden)]
-    pub backup_selections_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::BackupSelectionsListMember>>,
+    pub backup_selections_list: ::std::option::Option<::std::vec::Vec<crate::types::BackupSelectionsListMember>>,
     _request_id: Option<String>,
 }
 impl ListBackupSelectionsOutput {
@@ -18,9 +17,7 @@ impl ListBackupSelectionsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of backup selection list items containing metadata about each resource in the list.</p>
-    pub fn backup_selections_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BackupSelectionsListMember]> {
+    pub fn backup_selections_list(&self) -> ::std::option::Option<&[crate::types::BackupSelectionsListMember]> {
         self.backup_selections_list.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListBackupSelectionsOutput {
 }
 impl ListBackupSelectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListBackupSelectionsOutput`](crate::operation::list_backup_selections::ListBackupSelectionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_backup_selections::builders::ListBackupSelectionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_backup_selections::builders::ListBackupSelectionsOutputBuilder {
         crate::operation::list_backup_selections::builders::ListBackupSelectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBackupSelectionsOutput`](crate::operation::list_backup_selections::ListBackupSelectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackupSelectionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) backup_selections_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::BackupSelectionsListMember>>,
+    pub(crate) backup_selections_list: ::std::option::Option<::std::vec::Vec<crate::types::BackupSelectionsListMember>>,
     _request_id: Option<String>,
 }
 impl ListBackupSelectionsOutputBuilder {
@@ -68,27 +61,19 @@ impl ListBackupSelectionsOutputBuilder {
     /// To override the contents of this collection use [`set_backup_selections_list`](Self::set_backup_selections_list).
     ///
     /// <p>An array of backup selection list items containing metadata about each resource in the list.</p>
-    pub fn backup_selections_list(
-        mut self,
-        input: crate::types::BackupSelectionsListMember,
-    ) -> Self {
+    pub fn backup_selections_list(mut self, input: crate::types::BackupSelectionsListMember) -> Self {
         let mut v = self.backup_selections_list.unwrap_or_default();
         v.push(input);
         self.backup_selections_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of backup selection list items containing metadata about each resource in the list.</p>
-    pub fn set_backup_selections_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BackupSelectionsListMember>>,
-    ) -> Self {
+    pub fn set_backup_selections_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupSelectionsListMember>>) -> Self {
         self.backup_selections_list = input;
         self
     }
     /// <p>An array of backup selection list items containing metadata about each resource in the list.</p>
-    pub fn get_backup_selections_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupSelectionsListMember>> {
+    pub fn get_backup_selections_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupSelectionsListMember>> {
         &self.backup_selections_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

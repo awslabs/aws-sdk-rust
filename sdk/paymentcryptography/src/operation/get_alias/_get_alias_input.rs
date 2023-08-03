@@ -22,9 +22,7 @@ impl GetAliasInput {
 
 /// A builder for [`GetAliasInput`](crate::operation::get_alias::GetAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAliasInputBuilder {
     pub(crate) alias_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetAliasInputBuilder {
         &self.alias_name
     }
     /// Consumes the builder and constructs a [`GetAliasInput`](crate::operation::get_alias::GetAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_alias::GetAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_alias::GetAliasInput {
-            alias_name: self.alias_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_alias::GetAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_alias::GetAliasInput { alias_name: self.alias_name })
     }
 }

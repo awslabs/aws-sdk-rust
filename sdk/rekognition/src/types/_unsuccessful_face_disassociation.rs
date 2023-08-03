@@ -12,8 +12,7 @@ pub struct UnsuccessfulFaceDisassociation {
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The reason why the deletion was unsuccessful. </p>
     #[doc(hidden)]
-    pub reasons:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociationReason>>,
+    pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociationReason>>,
 }
 impl UnsuccessfulFaceDisassociation {
     /// <p>A unique identifier assigned to the face. </p>
@@ -25,9 +24,7 @@ impl UnsuccessfulFaceDisassociation {
         self.user_id.as_deref()
     }
     /// <p>The reason why the deletion was unsuccessful. </p>
-    pub fn reasons(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceDisassociationReason]> {
+    pub fn reasons(&self) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceDisassociationReason]> {
         self.reasons.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl UnsuccessfulFaceDisassociation {
 
 /// A builder for [`UnsuccessfulFaceDisassociation`](crate::types::UnsuccessfulFaceDisassociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsuccessfulFaceDisassociationBuilder {
     pub(crate) face_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) reasons:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociationReason>>,
+    pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociationReason>>,
 }
 impl UnsuccessfulFaceDisassociationBuilder {
     /// <p>A unique identifier assigned to the face. </p>
@@ -90,20 +84,12 @@ impl UnsuccessfulFaceDisassociationBuilder {
         self
     }
     /// <p>The reason why the deletion was unsuccessful. </p>
-    pub fn set_reasons(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociationReason>,
-        >,
-    ) -> Self {
+    pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociationReason>>) -> Self {
         self.reasons = input;
         self
     }
     /// <p>The reason why the deletion was unsuccessful. </p>
-    pub fn get_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociationReason>>
-    {
+    pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociationReason>> {
         &self.reasons
     }
     /// Consumes the builder and constructs a [`UnsuccessfulFaceDisassociation`](crate::types::UnsuccessfulFaceDisassociation).

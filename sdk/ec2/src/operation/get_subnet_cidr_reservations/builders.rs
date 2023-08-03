@@ -26,7 +26,7 @@ impl GetSubnetCidrReservationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSubnetCidrReservationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsInputBuilder,
+    inner: crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsInputBuilder,
 }
 impl GetSubnetCidrReservationsFluentBuilder {
     /// Creates a new `GetSubnetCidrReservations`.
@@ -37,7 +37,7 @@ impl GetSubnetCidrReservationsFluentBuilder {
         }
     }
     /// Access the GetSubnetCidrReservations as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetSubnetCidrReservationsFluentBuilder {
             crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetSubnetCidrReservationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetSubnetCidrReservationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetSubnetCidrReservationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetSubnetCidrReservationsFluentBuilder {
             crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsError>,
     > {
         self.customize_middleware().await
     }
@@ -154,10 +143,7 @@ impl GetSubnetCidrReservationsFluentBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

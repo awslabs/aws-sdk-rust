@@ -33,7 +33,7 @@ impl DescribeAppVersionResourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAppVersionResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_app_version_resource::builders::DescribeAppVersionResourceInputBuilder,
+    inner: crate::operation::describe_app_version_resource::builders::DescribeAppVersionResourceInputBuilder,
 }
 impl DescribeAppVersionResourceFluentBuilder {
     /// Creates a new `DescribeAppVersionResource`.
@@ -44,7 +44,7 @@ impl DescribeAppVersionResourceFluentBuilder {
         }
     }
     /// Access the DescribeAppVersionResource as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_app_version_resource::builders::DescribeAppVersionResourceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_app_version_resource::builders::DescribeAppVersionResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +56,7 @@ impl DescribeAppVersionResourceFluentBuilder {
             crate::operation::describe_app_version_resource::DescribeAppVersionResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_version_resource::DescribeAppVersionResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_version_resource::DescribeAppVersionResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +66,7 @@ impl DescribeAppVersionResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +75,7 @@ impl DescribeAppVersionResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_version_resource::DescribeAppVersionResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_version_resource::DescribeAppVersionResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_version_resource::DescribeAppVersionResourceError>,
     > {
         let op = self
             .inner
@@ -105,9 +98,7 @@ impl DescribeAppVersionResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_version_resource::DescribeAppVersionResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_version_resource::DescribeAppVersionResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_version_resource::DescribeAppVersionResourceError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +112,7 @@ impl DescribeAppVersionResourceFluentBuilder {
             crate::operation::describe_app_version_resource::DescribeAppVersionResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_version_resource::DescribeAppVersionResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_app_version_resource::DescribeAppVersionResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -156,18 +145,12 @@ impl DescribeAppVersionResourceFluentBuilder {
         self.inner.get_app_version()
     }
     /// <p>The name of the resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }
@@ -181,32 +164,21 @@ impl DescribeAppVersionResourceFluentBuilder {
         self
     }
     /// <p>The logical identifier of the resource.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<crate::types::LogicalResourceId>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<crate::types::LogicalResourceId>) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
     }
     /// <p>The logical identifier of the resource.</p>
-    pub fn get_logical_resource_id(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogicalResourceId> {
+    pub fn get_logical_resource_id(&self) -> &::std::option::Option<crate::types::LogicalResourceId> {
         self.inner.get_logical_resource_id()
     }
     /// <p>The physical identifier of the resource.</p>
-    pub fn physical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn physical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.physical_resource_id(input.into());
         self
     }
     /// <p>The physical identifier of the resource.</p>
-    pub fn set_physical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_physical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_physical_resource_id(input);
         self
     }
@@ -229,18 +201,12 @@ impl DescribeAppVersionResourceFluentBuilder {
         self.inner.get_aws_region()
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

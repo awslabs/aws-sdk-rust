@@ -6,8 +6,7 @@
 pub struct ListDiscoveredResourcesOutput {
     /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
     #[doc(hidden)]
-    pub resource_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
+    pub resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListDiscoveredResourcesOutput {
 }
 impl ListDiscoveredResourcesOutput {
     /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
-    pub fn resource_identifiers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceIdentifier]> {
+    pub fn resource_identifiers(&self) -> ::std::option::Option<&[crate::types::ResourceIdentifier]> {
         self.resource_identifiers.as_deref()
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
@@ -32,21 +29,16 @@ impl ::aws_http::request_id::RequestId for ListDiscoveredResourcesOutput {
 }
 impl ListDiscoveredResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesOutput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesOutputBuilder {
         crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDiscoveredResourcesOutput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDiscoveredResourcesOutputBuilder {
-    pub(crate) resource_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
+    pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,17 +55,12 @@ impl ListDiscoveredResourcesOutputBuilder {
         self
     }
     /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
-    pub fn set_resource_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
-    ) -> Self {
+    pub fn set_resource_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>) -> Self {
         self.resource_identifiers = input;
         self
     }
     /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
-    pub fn get_resource_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>> {
+    pub fn get_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>> {
         &self.resource_identifiers
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
@@ -100,9 +87,7 @@ impl ListDiscoveredResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDiscoveredResourcesOutput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput {
+    pub fn build(self) -> crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput {
         crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput {
             resource_identifiers: self.resource_identifiers,
             next_token: self.next_token,

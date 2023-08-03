@@ -37,9 +37,7 @@ impl CreateContactChannelFluentBuilder {
         }
     }
     /// Access the CreateContactChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_contact_channel::builders::CreateContactChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_contact_channel::builders::CreateContactChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateContactChannelFluentBuilder {
             crate::operation::create_contact_channel::CreateContactChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact_channel::CreateContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact_channel::CreateContactChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateContactChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateContactChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_contact_channel::CreateContactChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact_channel::CreateContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact_channel::CreateContactChannelError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateContactChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_contact_channel::CreateContactChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact_channel::CreateContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact_channel::CreateContactChannelError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateContactChannelFluentBuilder {
             crate::operation::create_contact_channel::CreateContactChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact_channel::CreateContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact_channel::CreateContactChannelError>,
     > {
         self.customize_middleware().await
     }
@@ -195,10 +182,7 @@ impl CreateContactChannelFluentBuilder {
     /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
     /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
-    pub fn set_delivery_address(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactChannelAddress>,
-    ) -> Self {
+    pub fn set_delivery_address(mut self, input: ::std::option::Option<crate::types::ContactChannelAddress>) -> Self {
         self.inner = self.inner.set_delivery_address(input);
         self
     }
@@ -208,9 +192,7 @@ impl CreateContactChannelFluentBuilder {
     /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
     /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
-    pub fn get_delivery_address(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContactChannelAddress> {
+    pub fn get_delivery_address(&self) -> &::std::option::Option<crate::types::ContactChannelAddress> {
         self.inner.get_delivery_address()
     }
     /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
@@ -228,18 +210,12 @@ impl CreateContactChannelFluentBuilder {
         self.inner.get_defer_activation()
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

@@ -10,10 +10,7 @@ impl DescribeVaultInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_vault::DescribeVaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vault::DescribeVaultError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vault::DescribeVaultError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_vault();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeVaultFluentBuilder {
         }
     }
     /// Access the DescribeVault as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_vault::builders::DescribeVaultInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_vault::builders::DescribeVaultInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl DescribeVaultFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

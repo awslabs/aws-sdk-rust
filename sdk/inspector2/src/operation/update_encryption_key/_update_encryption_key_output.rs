@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateEncryptionKeyOutput {
 }
 impl UpdateEncryptionKeyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEncryptionKeyOutput`](crate::operation::update_encryption_key::UpdateEncryptionKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::update_encryption_key::builders::UpdateEncryptionKeyOutputBuilder {
-        crate::operation::update_encryption_key::builders::UpdateEncryptionKeyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_encryption_key::builders::UpdateEncryptionKeyOutputBuilder {
+        crate::operation::update_encryption_key::builders::UpdateEncryptionKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEncryptionKeyOutput`](crate::operation::update_encryption_key::UpdateEncryptionKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEncryptionKeyOutputBuilder {
     _request_id: Option<String>,
 }

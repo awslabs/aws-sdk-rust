@@ -30,9 +30,7 @@ impl Remediation {
 
 /// A builder for [`Remediation`](crate::types::Remediation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemediationBuilder {
     pub(crate) recommendation: ::std::option::Option<crate::types::Recommendation>,
     pub(crate) suggested_fixes: ::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>>,
@@ -44,10 +42,7 @@ impl RemediationBuilder {
         self
     }
     /// <p>An object that contains information about the recommended course of action to remediate a finding.</p>
-    pub fn set_recommendation(
-        mut self,
-        input: ::std::option::Option<crate::types::Recommendation>,
-    ) -> Self {
+    pub fn set_recommendation(mut self, input: ::std::option::Option<crate::types::Recommendation>) -> Self {
         self.recommendation = input;
         self
     }
@@ -67,17 +62,12 @@ impl RemediationBuilder {
         self
     }
     /// <p>A list of <code>SuggestedFix</code> objects. Each object contains information about a suggested code fix to remediate the finding.</p>
-    pub fn set_suggested_fixes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>>,
-    ) -> Self {
+    pub fn set_suggested_fixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>>) -> Self {
         self.suggested_fixes = input;
         self
     }
     /// <p>A list of <code>SuggestedFix</code> objects. Each object contains information about a suggested code fix to remediate the finding.</p>
-    pub fn get_suggested_fixes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>> {
+    pub fn get_suggested_fixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>> {
         &self.suggested_fixes
     }
     /// Consumes the builder and constructs a [`Remediation`](crate::types::Remediation).

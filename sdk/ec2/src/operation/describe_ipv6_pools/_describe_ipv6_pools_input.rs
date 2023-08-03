@@ -63,17 +63,14 @@ impl DescribeIpv6PoolsInput {
 }
 impl DescribeIpv6PoolsInput {
     /// Creates a new builder-style object to manufacture [`DescribeIpv6PoolsInput`](crate::operation::describe_ipv6_pools::DescribeIpv6PoolsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsInputBuilder {
+    pub fn builder() -> crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsInputBuilder {
         crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIpv6PoolsInput`](crate::operation::describe_ipv6_pools::DescribeIpv6PoolsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpv6PoolsInputBuilder {
     pub(crate) pool_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -94,10 +91,7 @@ impl DescribeIpv6PoolsInputBuilder {
         self
     }
     /// <p>The IDs of the IPv6 address pools.</p>
-    pub fn set_pool_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pool_ids = input;
         self
     }
@@ -179,10 +173,7 @@ impl DescribeIpv6PoolsInputBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -203,18 +194,13 @@ impl DescribeIpv6PoolsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIpv6PoolsInput`](crate::operation::describe_ipv6_pools::DescribeIpv6PoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ipv6_pools::DescribeIpv6PoolsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_ipv6_pools::DescribeIpv6PoolsInput {
-                pool_ids: self.pool_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                dry_run: self.dry_run,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_ipv6_pools::DescribeIpv6PoolsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_ipv6_pools::DescribeIpv6PoolsInput {
+            pool_ids: self.pool_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            dry_run: self.dry_run,
+            filters: self.filters,
+        })
     }
 }

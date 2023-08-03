@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StudioComponentSubtype {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for StudioComponentSubtype {
             "AMAZON_FSX_FOR_WINDOWS" => StudioComponentSubtype::AmazonFsxForWindows,
             "AWS_MANAGED_MICROSOFT_AD" => StudioComponentSubtype::AwsManagedMicrosoftAd,
             "CUSTOM" => StudioComponentSubtype::Custom,
-            other => StudioComponentSubtype::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => StudioComponentSubtype::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl StudioComponentSubtype {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AMAZON_FSX_FOR_LUSTRE",
-            "AMAZON_FSX_FOR_WINDOWS",
-            "AWS_MANAGED_MICROSOFT_AD",
-            "CUSTOM",
-        ]
+        &["AMAZON_FSX_FOR_LUSTRE", "AMAZON_FSX_FOR_WINDOWS", "AWS_MANAGED_MICROSOFT_AD", "CUSTOM"]
     }
 }
 impl ::std::convert::AsRef<str> for StudioComponentSubtype {

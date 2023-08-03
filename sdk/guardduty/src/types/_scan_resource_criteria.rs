@@ -6,30 +6,18 @@
 pub struct ScanResourceCriteria {
     /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
     #[doc(hidden)]
-    pub include: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
-    >,
+    pub include: ::std::option::Option<::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>>,
     /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
     #[doc(hidden)]
-    pub exclude: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
-    >,
+    pub exclude: ::std::option::Option<::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>>,
 }
 impl ScanResourceCriteria {
     /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
-    pub fn include(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
-    > {
+    pub fn include(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>> {
         self.include.as_ref()
     }
     /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
-    pub fn exclude(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
-    > {
+    pub fn exclude(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>> {
         self.exclude.as_ref()
     }
 }
@@ -42,16 +30,10 @@ impl ScanResourceCriteria {
 
 /// A builder for [`ScanResourceCriteria`](crate::types::ScanResourceCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScanResourceCriteriaBuilder {
-    pub(crate) include: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
-    >,
-    pub(crate) exclude: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
-    >,
+    pub(crate) include: ::std::option::Option<::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>>,
+    pub(crate) exclude: ::std::option::Option<::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>>,
 }
 impl ScanResourceCriteriaBuilder {
     /// Adds a key-value pair to `include`.
@@ -59,11 +41,7 @@ impl ScanResourceCriteriaBuilder {
     /// To override the contents of this collection use [`set_include`](Self::set_include).
     ///
     /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
-    pub fn include(
-        mut self,
-        k: crate::types::ScanCriterionKey,
-        v: crate::types::ScanCondition,
-    ) -> Self {
+    pub fn include(mut self, k: crate::types::ScanCriterionKey, v: crate::types::ScanCondition) -> Self {
         let mut hash_map = self.include.unwrap_or_default();
         hash_map.insert(k, v);
         self.include = ::std::option::Option::Some(hash_map);
@@ -72,22 +50,13 @@ impl ScanResourceCriteriaBuilder {
     /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
     pub fn set_include(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::ScanCriterionKey,
-                crate::types::ScanCondition,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>>,
     ) -> Self {
         self.include = input;
         self
     }
     /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
-    pub fn get_include(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
-    > {
+    pub fn get_include(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>> {
         &self.include
     }
     /// Adds a key-value pair to `exclude`.
@@ -95,11 +64,7 @@ impl ScanResourceCriteriaBuilder {
     /// To override the contents of this collection use [`set_exclude`](Self::set_exclude).
     ///
     /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
-    pub fn exclude(
-        mut self,
-        k: crate::types::ScanCriterionKey,
-        v: crate::types::ScanCondition,
-    ) -> Self {
+    pub fn exclude(mut self, k: crate::types::ScanCriterionKey, v: crate::types::ScanCondition) -> Self {
         let mut hash_map = self.exclude.unwrap_or_default();
         hash_map.insert(k, v);
         self.exclude = ::std::option::Option::Some(hash_map);
@@ -108,22 +73,13 @@ impl ScanResourceCriteriaBuilder {
     /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
     pub fn set_exclude(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::ScanCriterionKey,
-                crate::types::ScanCondition,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>>,
     ) -> Self {
         self.exclude = input;
         self
     }
     /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
-    pub fn get_exclude(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
-    > {
+    pub fn get_exclude(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>> {
         &self.exclude
     }
     /// Consumes the builder and constructs a [`ScanResourceCriteria`](crate::types::ScanResourceCriteria).

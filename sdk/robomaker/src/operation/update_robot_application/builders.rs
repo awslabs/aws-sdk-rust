@@ -37,10 +37,7 @@ impl UpdateRobotApplicationFluentBuilder {
         }
     }
     /// Access the UpdateRobotApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_robot_application::builders::UpdateRobotApplicationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_robot_application::builders::UpdateRobotApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateRobotApplicationFluentBuilder {
             crate::operation::update_robot_application::UpdateRobotApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_robot_application::UpdateRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_robot_application::UpdateRobotApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateRobotApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateRobotApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_robot_application::UpdateRobotApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_robot_application::UpdateRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_robot_application::UpdateRobotApplicationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateRobotApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_robot_application::UpdateRobotApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_robot_application::UpdateRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_robot_application::UpdateRobotApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateRobotApplicationFluentBuilder {
             crate::operation::update_robot_application::UpdateRobotApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_robot_application::UpdateRobotApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_robot_application::UpdateRobotApplicationError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +133,12 @@ impl UpdateRobotApplicationFluentBuilder {
         self
     }
     /// <p>The sources of the robot application.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// <p>The sources of the robot application.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
         self.inner.get_sources()
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
@@ -166,32 +147,21 @@ impl UpdateRobotApplicationFluentBuilder {
         self
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    pub fn set_robot_software_suite(
-        mut self,
-        input: ::std::option::Option<crate::types::RobotSoftwareSuite>,
-    ) -> Self {
+    pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.inner = self.inner.set_robot_software_suite(input);
         self
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    pub fn get_robot_software_suite(
-        &self,
-    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+    pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         self.inner.get_robot_software_suite()
     }
     /// <p>The revision id for the robot application.</p>
-    pub fn current_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_revision_id(input.into());
         self
     }
     /// <p>The revision id for the robot application.</p>
-    pub fn set_current_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_revision_id(input);
         self
     }
@@ -205,10 +175,7 @@ impl UpdateRobotApplicationFluentBuilder {
         self
     }
     /// <p>The object that contains the Docker image URI for your robot application.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }

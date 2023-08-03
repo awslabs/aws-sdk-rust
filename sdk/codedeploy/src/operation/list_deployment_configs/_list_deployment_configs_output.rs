@@ -29,21 +29,16 @@ impl ::aws_http::request_id::RequestId for ListDeploymentConfigsOutput {
 }
 impl ListDeploymentConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentConfigsOutput`](crate::operation::list_deployment_configs::ListDeploymentConfigsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_deployment_configs::builders::ListDeploymentConfigsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_deployment_configs::builders::ListDeploymentConfigsOutputBuilder {
         crate::operation::list_deployment_configs::builders::ListDeploymentConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeploymentConfigsOutput`](crate::operation::list_deployment_configs::ListDeploymentConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentConfigsOutputBuilder {
-    pub(crate) deployment_configs_list:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) deployment_configs_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +48,19 @@ impl ListDeploymentConfigsOutputBuilder {
     /// To override the contents of this collection use [`set_deployment_configs_list`](Self::set_deployment_configs_list).
     ///
     /// <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
-    pub fn deployment_configs_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_configs_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.deployment_configs_list.unwrap_or_default();
         v.push(input.into());
         self.deployment_configs_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
-    pub fn set_deployment_configs_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_deployment_configs_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.deployment_configs_list = input;
         self
     }
     /// <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
-    pub fn get_deployment_configs_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_deployment_configs_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.deployment_configs_list
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>

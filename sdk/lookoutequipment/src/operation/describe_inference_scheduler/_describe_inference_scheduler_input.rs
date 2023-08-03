@@ -15,33 +15,25 @@ impl DescribeInferenceSchedulerInput {
 }
 impl DescribeInferenceSchedulerInput {
     /// Creates a new builder-style object to manufacture [`DescribeInferenceSchedulerInput`](crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput).
-    pub fn builder() -> crate::operation::describe_inference_scheduler::builders::DescribeInferenceSchedulerInputBuilder{
+    pub fn builder() -> crate::operation::describe_inference_scheduler::builders::DescribeInferenceSchedulerInputBuilder {
         crate::operation::describe_inference_scheduler::builders::DescribeInferenceSchedulerInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInferenceSchedulerInput`](crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInferenceSchedulerInputBuilder {
     pub(crate) inference_scheduler_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInferenceSchedulerInputBuilder {
     /// <p>The name of the inference scheduler being described. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the inference scheduler being described. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_name = input;
         self
     }
@@ -56,10 +48,8 @@ impl DescribeInferenceSchedulerInputBuilder {
         crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput {
-                inference_scheduler_name: self.inference_scheduler_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput {
+            inference_scheduler_name: self.inference_scheduler_name,
+        })
     }
 }

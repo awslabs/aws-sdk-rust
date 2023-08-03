@@ -51,9 +51,7 @@ impl LoggingConfigurationMetadata {
 
 /// A builder for [`LoggingConfigurationMetadata`](crate::types::LoggingConfigurationMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingConfigurationMetadataBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LoggingConfigurationStatus>,
     pub(crate) workspace: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl LoggingConfigurationMetadataBuilder {
         self
     }
     /// The status of the logging configuration.
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfigurationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::LoggingConfigurationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -94,18 +89,12 @@ impl LoggingConfigurationMetadataBuilder {
         &self.workspace
     }
     /// The ARN of the CW log group to which the vended log data will be published.
-    pub fn log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the CW log group to which the vended log data will be published.
-    pub fn set_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_arn = input;
         self
     }
@@ -119,10 +108,7 @@ impl LoggingConfigurationMetadataBuilder {
         self
     }
     /// The time when the logging configuration was created.
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -136,10 +122,7 @@ impl LoggingConfigurationMetadataBuilder {
         self
     }
     /// The time when the logging configuration was modified.
-    pub fn set_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_at = input;
         self
     }

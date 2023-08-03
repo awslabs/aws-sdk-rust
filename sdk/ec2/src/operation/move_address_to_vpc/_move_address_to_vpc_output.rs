@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for MoveAddressToVpcOutput {
 }
 impl MoveAddressToVpcOutput {
     /// Creates a new builder-style object to manufacture [`MoveAddressToVpcOutput`](crate::operation::move_address_to_vpc::MoveAddressToVpcOutput).
-    pub fn builder(
-    ) -> crate::operation::move_address_to_vpc::builders::MoveAddressToVpcOutputBuilder {
+    pub fn builder() -> crate::operation::move_address_to_vpc::builders::MoveAddressToVpcOutputBuilder {
         crate::operation::move_address_to_vpc::builders::MoveAddressToVpcOutputBuilder::default()
     }
 }
 
 /// A builder for [`MoveAddressToVpcOutput`](crate::operation::move_address_to_vpc::MoveAddressToVpcOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MoveAddressToVpcOutputBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
@@ -46,18 +43,12 @@ pub struct MoveAddressToVpcOutputBuilder {
 }
 impl MoveAddressToVpcOutputBuilder {
     /// <p>The allocation ID for the Elastic IP address.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The allocation ID for the Elastic IP address.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allocation_id = input;
         self
     }

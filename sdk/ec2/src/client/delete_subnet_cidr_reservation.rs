@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteSubnetCidrReservationOutput`](crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationOutput) with field(s):
     ///   - [`deleted_subnet_cidr_reservation(Option<SubnetCidrReservation>)`](crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationOutput::deleted_subnet_cidr_reservation): <p>Information about the deleted subnet CIDR reservation.</p>
     /// - On failure, responds with [`SdkError<DeleteSubnetCidrReservationError>`](crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationError)
-    pub fn delete_subnet_cidr_reservation(&self) -> crate::operation::delete_subnet_cidr_reservation::builders::DeleteSubnetCidrReservationFluentBuilder{
+    pub fn delete_subnet_cidr_reservation(
+        &self,
+    ) -> crate::operation::delete_subnet_cidr_reservation::builders::DeleteSubnetCidrReservationFluentBuilder {
         crate::operation::delete_subnet_cidr_reservation::builders::DeleteSubnetCidrReservationFluentBuilder::new(self.handle.clone())
     }
 }

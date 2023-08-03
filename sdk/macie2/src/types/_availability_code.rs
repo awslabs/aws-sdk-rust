@@ -38,13 +38,7 @@
 /// <p>Specifies whether occurrences of sensitive data can be retrieved for a finding. Possible values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AvailabilityCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AvailabilityCode {
         match s {
             "AVAILABLE" => AvailabilityCode::Available,
             "UNAVAILABLE" => AvailabilityCode::Unavailable,
-            other => {
-                AvailabilityCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AvailabilityCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -30,9 +30,7 @@ impl DesiredPlayerSession {
 
 /// A builder for [`DesiredPlayerSession`](crate::types::DesiredPlayerSession).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DesiredPlayerSessionBuilder {
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_data: ::std::option::Option<::std::string::String>,

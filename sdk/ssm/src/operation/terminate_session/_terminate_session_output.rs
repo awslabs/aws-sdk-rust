@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for TerminateSessionOutput {
 }
 impl TerminateSessionOutput {
     /// Creates a new builder-style object to manufacture [`TerminateSessionOutput`](crate::operation::terminate_session::TerminateSessionOutput).
-    pub fn builder() -> crate::operation::terminate_session::builders::TerminateSessionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::terminate_session::builders::TerminateSessionOutputBuilder {
         crate::operation::terminate_session::builders::TerminateSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateSessionOutput`](crate::operation::terminate_session::TerminateSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateSessionOutputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -42,17 +42,14 @@ impl GetChannelScheduleInput {
 }
 impl GetChannelScheduleInput {
     /// Creates a new builder-style object to manufacture [`GetChannelScheduleInput`](crate::operation::get_channel_schedule::GetChannelScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::get_channel_schedule::builders::GetChannelScheduleInputBuilder {
+    pub fn builder() -> crate::operation::get_channel_schedule::builders::GetChannelScheduleInputBuilder {
         crate::operation::get_channel_schedule::builders::GetChannelScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`GetChannelScheduleInput`](crate::operation::get_channel_schedule::GetChannelScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChannelScheduleInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) duration_minutes: ::std::option::Option<::std::string::String>,
@@ -75,18 +72,12 @@ impl GetChannelScheduleInputBuilder {
         &self.channel_name
     }
     /// <p>The duration in minutes of the channel schedule.</p>
-    pub fn duration_minutes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn duration_minutes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.duration_minutes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The duration in minutes of the channel schedule.</p>
-    pub fn set_duration_minutes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_duration_minutes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.duration_minutes = input;
         self
     }
@@ -134,17 +125,12 @@ impl GetChannelScheduleInputBuilder {
     /// Consumes the builder and constructs a [`GetChannelScheduleInput`](crate::operation::get_channel_schedule::GetChannelScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_channel_schedule::GetChannelScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_channel_schedule::GetChannelScheduleInput {
-                channel_name: self.channel_name,
-                duration_minutes: self.duration_minutes,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_channel_schedule::GetChannelScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_channel_schedule::GetChannelScheduleInput {
+            channel_name: self.channel_name,
+            duration_minutes: self.duration_minutes,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

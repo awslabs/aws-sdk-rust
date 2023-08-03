@@ -27,34 +27,27 @@ impl ::std::fmt::Display for MaximumOpenPullRequestsExceededException {
     }
 }
 impl ::std::error::Error for MaximumOpenPullRequestsExceededException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::MaximumOpenPullRequestsExceededException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::MaximumOpenPullRequestsExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for MaximumOpenPullRequestsExceededException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MaximumOpenPullRequestsExceededException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl MaximumOpenPullRequestsExceededException {
     /// Creates a new builder-style object to manufacture [`MaximumOpenPullRequestsExceededException`](crate::types::error::MaximumOpenPullRequestsExceededException).
-    pub fn builder(
-    ) -> crate::types::error::builders::MaximumOpenPullRequestsExceededExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::MaximumOpenPullRequestsExceededExceptionBuilder {
         crate::types::error::builders::MaximumOpenPullRequestsExceededExceptionBuilder::default()
     }
 }
 
 /// A builder for [`MaximumOpenPullRequestsExceededException`](crate::types::error::MaximumOpenPullRequestsExceededException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MaximumOpenPullRequestsExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl MaximumOpenPullRequestsExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

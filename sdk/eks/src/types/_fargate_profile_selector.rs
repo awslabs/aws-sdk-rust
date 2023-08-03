@@ -9,9 +9,7 @@ pub struct FargateProfileSelector {
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The Kubernetes labels that the selector should match. A pod must contain all of the labels that are specified in the selector for it to be considered a match.</p>
     #[doc(hidden)]
-    pub labels: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FargateProfileSelector {
     /// <p>The Kubernetes namespace that the selector should match.</p>
@@ -19,11 +17,7 @@ impl FargateProfileSelector {
         self.namespace.as_deref()
     }
     /// <p>The Kubernetes labels that the selector should match. A pod must contain all of the labels that are specified in the selector for it to be considered a match.</p>
-    pub fn labels(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn labels(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.labels.as_ref()
     }
 }
@@ -36,14 +30,10 @@ impl FargateProfileSelector {
 
 /// A builder for [`FargateProfileSelector`](crate::types::FargateProfileSelector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FargateProfileSelectorBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
-    pub(crate) labels: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FargateProfileSelectorBuilder {
     /// <p>The Kubernetes namespace that the selector should match.</p>
@@ -65,32 +55,19 @@ impl FargateProfileSelectorBuilder {
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
     ///
     /// <p>The Kubernetes labels that the selector should match. A pod must contain all of the labels that are specified in the selector for it to be considered a match.</p>
-    pub fn labels(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn labels(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.labels.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.labels = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The Kubernetes labels that the selector should match. A pod must contain all of the labels that are specified in the selector for it to be considered a match.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
     /// <p>The Kubernetes labels that the selector should match. A pod must contain all of the labels that are specified in the selector for it to be considered a match.</p>
-    pub fn get_labels(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.labels
     }
     /// Consumes the builder and constructs a [`FargateProfileSelector`](crate::types::FargateProfileSelector).

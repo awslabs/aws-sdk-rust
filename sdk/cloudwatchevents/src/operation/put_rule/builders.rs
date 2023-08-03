@@ -10,10 +10,7 @@ impl PutRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_rule::PutRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_rule::PutRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_rule::PutRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_rule();
         fluent_builder.inner = self;
@@ -55,10 +52,7 @@ impl PutRuleFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_rule::PutRule,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_rule::PutRule, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_rule::PutRuleError>,
     > {
         let handle = self.handle.clone();
@@ -69,20 +63,15 @@ impl PutRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_rule::PutRuleOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_rule::PutRuleError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_rule::PutRuleOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_rule::PutRuleError>>
+    {
         let op = self
             .inner
             .build()
@@ -102,10 +91,8 @@ impl PutRuleFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_rule::PutRuleOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_rule::PutRuleError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_rule::PutRuleOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_rule::PutRuleError>>
+    {
         self.send_middleware().await
     }
 
@@ -114,10 +101,7 @@ impl PutRuleFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_rule::PutRule,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_rule::PutRule, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_rule::PutRuleError>,
     > {
         self.customize_middleware().await
@@ -137,18 +121,12 @@ impl PutRuleFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".</p>
-    pub fn schedule_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_expression(input.into());
         self
     }
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".</p>
-    pub fn set_schedule_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_expression(input);
         self
     }
@@ -157,18 +135,12 @@ impl PutRuleFluentBuilder {
         self.inner.get_schedule_expression()
     }
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    pub fn event_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_pattern(input.into());
         self
     }
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    pub fn set_event_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_pattern(input);
         self
     }
@@ -231,10 +203,7 @@ impl PutRuleFluentBuilder {
         self
     }
     /// <p>The list of key-value pairs to associate with the rule.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -243,18 +212,12 @@ impl PutRuleFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.</p>
-    pub fn event_bus_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_bus_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_bus_name(input.into());
         self
     }
     /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.</p>
-    pub fn set_event_bus_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_bus_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_bus_name(input);
         self
     }

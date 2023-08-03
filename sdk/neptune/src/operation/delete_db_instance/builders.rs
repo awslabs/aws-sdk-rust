@@ -10,10 +10,7 @@ impl DeleteDbInstanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_db_instance::DeleteDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_instance::DeleteDBInstanceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_instance::DeleteDBInstanceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_db_instance();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DeleteDBInstanceFluentBuilder {
         }
     }
     /// Access the DeleteDBInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_db_instance::builders::DeleteDbInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_db_instance::builders::DeleteDbInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DeleteDBInstanceFluentBuilder {
             crate::operation::delete_db_instance::DeleteDBInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_instance::DeleteDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_instance::DeleteDBInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DeleteDBInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DeleteDBInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_instance::DeleteDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_instance::DeleteDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_instance::DeleteDBInstanceError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DeleteDBInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_instance::DeleteDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_instance::DeleteDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_instance::DeleteDBInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl DeleteDBInstanceFluentBuilder {
             crate::operation::delete_db_instance::DeleteDBInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_db_instance::DeleteDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_db_instance::DeleteDBInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +114,7 @@ impl DeleteDBInstanceFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing DB instance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
@@ -142,10 +123,7 @@ impl DeleteDBInstanceFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing DB instance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
@@ -196,10 +174,7 @@ impl DeleteDBInstanceFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// <li> <p>Cannot be specified when deleting a Read Replica.</p> </li>
     /// </ul>
-    pub fn final_db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn final_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.final_db_snapshot_identifier(input.into());
         self
     }
@@ -213,10 +188,7 @@ impl DeleteDBInstanceFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// <li> <p>Cannot be specified when deleting a Read Replica.</p> </li>
     /// </ul>
-    pub fn set_final_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_final_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_final_db_snapshot_identifier(input);
         self
     }
@@ -230,9 +202,7 @@ impl DeleteDBInstanceFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// <li> <p>Cannot be specified when deleting a Read Replica.</p> </li>
     /// </ul>
-    pub fn get_final_db_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_final_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_final_db_snapshot_identifier()
     }
 }

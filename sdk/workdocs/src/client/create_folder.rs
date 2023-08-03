@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFolderOutput`](crate::operation::create_folder::CreateFolderOutput) with field(s):
     ///   - [`metadata(Option<FolderMetadata>)`](crate::operation::create_folder::CreateFolderOutput::metadata): <p>The metadata of the folder.</p>
     /// - On failure, responds with [`SdkError<CreateFolderError>`](crate::operation::create_folder::CreateFolderError)
-    pub fn create_folder(
-        &self,
-    ) -> crate::operation::create_folder::builders::CreateFolderFluentBuilder {
-        crate::operation::create_folder::builders::CreateFolderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_folder(&self) -> crate::operation::create_folder::builders::CreateFolderFluentBuilder {
+        crate::operation::create_folder::builders::CreateFolderFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`role_arn(impl ::std::convert::Into<String>)`](crate::operation::associate_drt_role::builders::AssociateDRTRoleFluentBuilder::role_arn) / [`set_role_arn(Option<String>)`](crate::operation::associate_drt_role::builders::AssociateDRTRoleFluentBuilder::set_role_arn): <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your Amazon Web Services account.</p>  <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a> managed policy to this role. For more information see <a href=" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching and Detaching IAM Policies</a>.</p>
     /// - On success, responds with [`AssociateDrtRoleOutput`](crate::operation::associate_drt_role::AssociateDrtRoleOutput)
     /// - On failure, responds with [`SdkError<AssociateDRTRoleError>`](crate::operation::associate_drt_role::AssociateDRTRoleError)
-    pub fn associate_drt_role(
-        &self,
-    ) -> crate::operation::associate_drt_role::builders::AssociateDRTRoleFluentBuilder {
-        crate::operation::associate_drt_role::builders::AssociateDRTRoleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_drt_role(&self) -> crate::operation::associate_drt_role::builders::AssociateDRTRoleFluentBuilder {
+        crate::operation::associate_drt_role::builders::AssociateDRTRoleFluentBuilder::new(self.handle.clone())
     }
 }

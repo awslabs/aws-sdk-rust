@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteFleetAdvisorDatabasesOutput`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput) with field(s):
     ///   - [`database_ids(Option<Vec<String>>)`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput::database_ids): <p>The IDs of the databases that the operation deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteFleetAdvisorDatabasesError>`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError)
-    pub fn delete_fleet_advisor_databases(&self) -> crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesFluentBuilder{
+    pub fn delete_fleet_advisor_databases(
+        &self,
+    ) -> crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesFluentBuilder {
         crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesFluentBuilder::new(self.handle.clone())
     }
 }

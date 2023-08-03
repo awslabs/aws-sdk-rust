@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`RegisterTransitGatewayMulticastGroupSourcesOutput`](crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesOutput) with field(s):
     ///   - [`registered_multicast_group_sources(Option<TransitGatewayMulticastRegisteredGroupSources>)`](crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesOutput::registered_multicast_group_sources): <p>Information about the transit gateway multicast group sources.</p>
     /// - On failure, responds with [`SdkError<RegisterTransitGatewayMulticastGroupSourcesError>`](crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesError)
-    pub fn register_transit_gateway_multicast_group_sources(&self) -> crate::operation::register_transit_gateway_multicast_group_sources::builders::RegisterTransitGatewayMulticastGroupSourcesFluentBuilder{
-        crate::operation::register_transit_gateway_multicast_group_sources::builders::RegisterTransitGatewayMulticastGroupSourcesFluentBuilder::new(self.handle.clone())
+    pub fn register_transit_gateway_multicast_group_sources(
+        &self,
+    ) -> crate::operation::register_transit_gateway_multicast_group_sources::builders::RegisterTransitGatewayMulticastGroupSourcesFluentBuilder {
+        crate::operation::register_transit_gateway_multicast_group_sources::builders::RegisterTransitGatewayMulticastGroupSourcesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

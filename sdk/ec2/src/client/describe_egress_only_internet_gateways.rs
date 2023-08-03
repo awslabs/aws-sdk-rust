@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`egress_only_internet_gateways(Option<Vec<EgressOnlyInternetGateway>>)`](crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput::egress_only_internet_gateways): <p>Information about the egress-only internet gateways.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeEgressOnlyInternetGatewaysError>`](crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysError)
-    pub fn describe_egress_only_internet_gateways(&self) -> crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysFluentBuilder{
+    pub fn describe_egress_only_internet_gateways(
+        &self,
+    ) -> crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysFluentBuilder {
         crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysFluentBuilder::new(self.handle.clone())
     }
 }

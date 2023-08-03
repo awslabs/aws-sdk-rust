@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`dhcp_options(Option<Vec<DhcpOptions>>)`](crate::operation::describe_dhcp_options::DescribeDhcpOptionsOutput::dhcp_options): <p>Information about one or more DHCP options sets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_dhcp_options::DescribeDhcpOptionsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeDhcpOptionsError>`](crate::operation::describe_dhcp_options::DescribeDhcpOptionsError)
-    pub fn describe_dhcp_options(
-        &self,
-    ) -> crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsFluentBuilder {
-        crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_dhcp_options(&self) -> crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsFluentBuilder {
+        crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsFluentBuilder::new(self.handle.clone())
     }
 }

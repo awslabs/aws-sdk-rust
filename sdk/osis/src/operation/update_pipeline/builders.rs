@@ -10,10 +10,7 @@ impl UpdatePipelineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_pipeline::UpdatePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipeline::UpdatePipelineError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline::UpdatePipelineError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_pipeline();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdatePipelineFluentBuilder {
         }
     }
     /// Access the UpdatePipeline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_pipeline::builders::UpdatePipelineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_pipeline::builders::UpdatePipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdatePipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl UpdatePipelineFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the pipeline to update.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of the pipeline to update.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
@@ -163,18 +149,12 @@ impl UpdatePipelineFluentBuilder {
         self.inner.get_max_units()
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
-    pub fn pipeline_configuration_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_configuration_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_configuration_body(input.into());
         self
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
-    pub fn set_pipeline_configuration_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_configuration_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_configuration_body(input);
         self
     }
@@ -188,17 +168,12 @@ impl UpdatePipelineFluentBuilder {
         self
     }
     /// <p>Key-value pairs to configure log publishing.</p>
-    pub fn set_log_publishing_options(
-        mut self,
-        input: ::std::option::Option<crate::types::LogPublishingOptions>,
-    ) -> Self {
+    pub fn set_log_publishing_options(mut self, input: ::std::option::Option<crate::types::LogPublishingOptions>) -> Self {
         self.inner = self.inner.set_log_publishing_options(input);
         self
     }
     /// <p>Key-value pairs to configure log publishing.</p>
-    pub fn get_log_publishing_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogPublishingOptions> {
+    pub fn get_log_publishing_options(&self) -> &::std::option::Option<crate::types::LogPublishingOptions> {
         self.inner.get_log_publishing_options()
     }
 }

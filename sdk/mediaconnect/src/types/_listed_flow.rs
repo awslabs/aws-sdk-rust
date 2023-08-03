@@ -65,9 +65,7 @@ impl ListedFlow {
 
 /// A builder for [`ListedFlow`](crate::types::ListedFlow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListedFlowBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct ListedFlowBuilder {
 }
 impl ListedFlowBuilder {
     /// The Availability Zone that the flow was created in.
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// The Availability Zone that the flow was created in.
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -146,10 +138,7 @@ impl ListedFlowBuilder {
         self
     }
     /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.source_type = input;
         self
     }
@@ -177,10 +166,7 @@ impl ListedFlowBuilder {
         self
     }
     /// The maintenance setting of a flow
-    pub fn set_maintenance(
-        mut self,
-        input: ::std::option::Option<crate::types::Maintenance>,
-    ) -> Self {
+    pub fn set_maintenance(mut self, input: ::std::option::Option<crate::types::Maintenance>) -> Self {
         self.maintenance = input;
         self
     }

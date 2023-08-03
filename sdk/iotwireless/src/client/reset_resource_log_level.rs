@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`resource_type(impl ::std::convert::Into<String>)`](crate::operation::reset_resource_log_level::builders::ResetResourceLogLevelFluentBuilder::resource_type) / [`set_resource_type(Option<String>)`](crate::operation::reset_resource_log_level::builders::ResetResourceLogLevelFluentBuilder::set_resource_type): <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     /// - On success, responds with [`ResetResourceLogLevelOutput`](crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput)
     /// - On failure, responds with [`SdkError<ResetResourceLogLevelError>`](crate::operation::reset_resource_log_level::ResetResourceLogLevelError)
-    pub fn reset_resource_log_level(
-        &self,
-    ) -> crate::operation::reset_resource_log_level::builders::ResetResourceLogLevelFluentBuilder
-    {
+    pub fn reset_resource_log_level(&self) -> crate::operation::reset_resource_log_level::builders::ResetResourceLogLevelFluentBuilder {
         crate::operation::reset_resource_log_level::builders::ResetResourceLogLevelFluentBuilder::new(self.handle.clone())
     }
 }

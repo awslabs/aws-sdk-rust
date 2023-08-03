@@ -9,12 +9,10 @@ pub struct SqlApplicationConfigurationDescription {
     pub input_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>,
     /// <p>The array of <code>OutputDescription</code> objects describing the destination streams used by the application.</p>
     #[doc(hidden)]
-    pub output_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>,
+    pub output_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>,
     /// <p>The array of <code>ReferenceDataSourceDescription</code> objects describing the reference data sources used by the application.</p>
     #[doc(hidden)]
-    pub reference_data_source_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
+    pub reference_data_source_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
 }
 impl SqlApplicationConfigurationDescription {
     /// <p>The array of <code>InputDescription</code> objects describing the input streams used by the application.</p>
@@ -26,9 +24,7 @@ impl SqlApplicationConfigurationDescription {
         self.output_descriptions.as_deref()
     }
     /// <p>The array of <code>ReferenceDataSourceDescription</code> objects describing the reference data sources used by the application.</p>
-    pub fn reference_data_source_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReferenceDataSourceDescription]> {
+    pub fn reference_data_source_descriptions(&self) -> ::std::option::Option<&[crate::types::ReferenceDataSourceDescription]> {
         self.reference_data_source_descriptions.as_deref()
     }
 }
@@ -41,16 +37,11 @@ impl SqlApplicationConfigurationDescription {
 
 /// A builder for [`SqlApplicationConfigurationDescription`](crate::types::SqlApplicationConfigurationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SqlApplicationConfigurationDescriptionBuilder {
-    pub(crate) input_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>,
-    pub(crate) output_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>,
-    pub(crate) reference_data_source_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
+    pub(crate) input_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>,
+    pub(crate) output_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>,
+    pub(crate) reference_data_source_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
 }
 impl SqlApplicationConfigurationDescriptionBuilder {
     /// Appends an item to `input_descriptions`.
@@ -65,17 +56,12 @@ impl SqlApplicationConfigurationDescriptionBuilder {
         self
     }
     /// <p>The array of <code>InputDescription</code> objects describing the input streams used by the application.</p>
-    pub fn set_input_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>,
-    ) -> Self {
+    pub fn set_input_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>) -> Self {
         self.input_descriptions = input;
         self
     }
     /// <p>The array of <code>InputDescription</code> objects describing the input streams used by the application.</p>
-    pub fn get_input_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDescription>> {
+    pub fn get_input_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDescription>> {
         &self.input_descriptions
     }
     /// Appends an item to `output_descriptions`.
@@ -90,17 +76,12 @@ impl SqlApplicationConfigurationDescriptionBuilder {
         self
     }
     /// <p>The array of <code>OutputDescription</code> objects describing the destination streams used by the application.</p>
-    pub fn set_output_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>,
-    ) -> Self {
+    pub fn set_output_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>) -> Self {
         self.output_descriptions = input;
         self
     }
     /// <p>The array of <code>OutputDescription</code> objects describing the destination streams used by the application.</p>
-    pub fn get_output_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>> {
+    pub fn get_output_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>> {
         &self.output_descriptions
     }
     /// Appends an item to `reference_data_source_descriptions`.
@@ -108,10 +89,7 @@ impl SqlApplicationConfigurationDescriptionBuilder {
     /// To override the contents of this collection use [`set_reference_data_source_descriptions`](Self::set_reference_data_source_descriptions).
     ///
     /// <p>The array of <code>ReferenceDataSourceDescription</code> objects describing the reference data sources used by the application.</p>
-    pub fn reference_data_source_descriptions(
-        mut self,
-        input: crate::types::ReferenceDataSourceDescription,
-    ) -> Self {
+    pub fn reference_data_source_descriptions(mut self, input: crate::types::ReferenceDataSourceDescription) -> Self {
         let mut v = self.reference_data_source_descriptions.unwrap_or_default();
         v.push(input);
         self.reference_data_source_descriptions = ::std::option::Option::Some(v);
@@ -126,9 +104,7 @@ impl SqlApplicationConfigurationDescriptionBuilder {
         self
     }
     /// <p>The array of <code>ReferenceDataSourceDescription</code> objects describing the reference data sources used by the application.</p>
-    pub fn get_reference_data_source_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>> {
+    pub fn get_reference_data_source_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>> {
         &self.reference_data_source_descriptions
     }
     /// Consumes the builder and constructs a [`SqlApplicationConfigurationDescription`](crate::types::SqlApplicationConfigurationDescription).

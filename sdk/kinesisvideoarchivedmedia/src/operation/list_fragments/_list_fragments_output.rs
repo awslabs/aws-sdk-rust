@@ -35,9 +35,7 @@ impl ListFragmentsOutput {
 
 /// A builder for [`ListFragmentsOutput`](crate::operation::list_fragments::ListFragmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFragmentsOutputBuilder {
     pub(crate) fragments: ::std::option::Option<::std::vec::Vec<crate::types::Fragment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListFragmentsOutputBuilder {
         self
     }
     /// <p>A list of archived <code>Fragment</code> objects from the stream that meet the selector criteria. Results are in no specific order, even across pages.</p>
-    pub fn set_fragments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Fragment>>,
-    ) -> Self {
+    pub fn set_fragments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Fragment>>) -> Self {
         self.fragments = input;
         self
     }

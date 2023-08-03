@@ -35,9 +35,7 @@ impl StartFlowInput {
 
 /// A builder for [`StartFlowInput`](crate::operation::start_flow::StartFlowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFlowInputBuilder {
     pub(crate) flow_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -81,12 +79,7 @@ impl StartFlowInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`StartFlowInput`](crate::operation::start_flow::StartFlowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_flow::StartFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_flow::StartFlowInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_flow::StartFlowInput {
             flow_name: self.flow_name,
             client_token: self.client_token,

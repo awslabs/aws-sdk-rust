@@ -10,10 +10,7 @@ impl UpdateLensReviewInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_lens_review::UpdateLensReviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_lens_review::UpdateLensReviewError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_lens_review::UpdateLensReviewError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_lens_review();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateLensReviewFluentBuilder {
         }
     }
     /// Access the UpdateLensReview as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_lens_review::builders::UpdateLensReviewInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_lens_review::builders::UpdateLensReviewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateLensReviewFluentBuilder {
             crate::operation::update_lens_review::UpdateLensReview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_lens_review::UpdateLensReviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_lens_review::UpdateLensReviewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateLensReviewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateLensReviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_lens_review::UpdateLensReviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_lens_review::UpdateLensReviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_lens_review::UpdateLensReviewError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateLensReviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_lens_review::UpdateLensReviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_lens_review::UpdateLensReviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_lens_review::UpdateLensReviewError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateLensReviewFluentBuilder {
             crate::operation::update_lens_review::UpdateLensReview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_lens_review::UpdateLensReviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_lens_review::UpdateLensReviewError>,
     > {
         self.customize_middleware().await
     }
@@ -178,30 +162,20 @@ impl UpdateLensReviewFluentBuilder {
     /// To override the contents of this collection use [`set_pillar_notes`](Self::set_pillar_notes).
     ///
     /// <p>List of pillar notes of a lens review in a workload.</p>
-    pub fn pillar_notes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pillar_notes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pillar_notes(k.into(), v.into());
         self
     }
     /// <p>List of pillar notes of a lens review in a workload.</p>
     pub fn set_pillar_notes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_pillar_notes(input);
         self
     }
     /// <p>List of pillar notes of a lens review in a workload.</p>
-    pub fn get_pillar_notes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_pillar_notes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_pillar_notes()
     }
 }

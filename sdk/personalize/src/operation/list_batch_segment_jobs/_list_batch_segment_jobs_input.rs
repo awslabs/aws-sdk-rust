@@ -29,17 +29,14 @@ impl ListBatchSegmentJobsInput {
 }
 impl ListBatchSegmentJobsInput {
     /// Creates a new builder-style object to manufacture [`ListBatchSegmentJobsInput`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsInputBuilder {
+    pub fn builder() -> crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsInputBuilder {
         crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBatchSegmentJobsInput`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBatchSegmentJobsInputBuilder {
     pub(crate) solution_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct ListBatchSegmentJobsInputBuilder {
 }
 impl ListBatchSegmentJobsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
-    pub fn solution_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
-    pub fn set_solution_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_version_arn = input;
         self
     }
@@ -97,16 +88,12 @@ impl ListBatchSegmentJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListBatchSegmentJobsInput`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput {
-                solution_version_arn: self.solution_version_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput {
+            solution_version_arn: self.solution_version_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -86,16 +86,14 @@ impl DescribeReservedDbInstancesOfferingsInput {
 }
 impl DescribeReservedDbInstancesOfferingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedDbInstancesOfferingsInput`](crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsInput).
-    pub fn builder() -> crate::operation::describe_reserved_db_instances_offerings::builders::DescribeReservedDbInstancesOfferingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_db_instances_offerings::builders::DescribeReservedDbInstancesOfferingsInputBuilder {
         crate::operation::describe_reserved_db_instances_offerings::builders::DescribeReservedDbInstancesOfferingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedDbInstancesOfferingsInput`](crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedDbInstancesOfferingsInputBuilder {
     pub(crate) reserved_db_instances_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_class: ::std::option::Option<::std::string::String>,
@@ -110,42 +108,28 @@ pub struct DescribeReservedDbInstancesOfferingsInputBuilder {
 impl DescribeReservedDbInstancesOfferingsInputBuilder {
     /// <p>The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
-    pub fn reserved_db_instances_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_db_instances_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_db_instances_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
-    pub fn set_reserved_db_instances_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_db_instances_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_db_instances_offering_id = input;
         self
     }
     /// <p>The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
-    pub fn get_reserved_db_instances_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_db_instances_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_db_instances_offering_id
     }
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-    pub fn db_instance_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-    pub fn set_db_instance_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_class = input;
         self
     }
@@ -173,20 +157,14 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p> <note>
     /// <p>The results show offerings that partially match the filter value.</p>
     /// </note>
-    pub fn product_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p> <note>
     /// <p>The results show offerings that partially match the filter value.</p>
     /// </note>
-    pub fn set_product_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_product_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_description = input;
         self
     }
@@ -198,19 +176,13 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     }
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
-    pub fn offering_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_type = input;
         self
     }
@@ -245,10 +217,7 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -291,28 +260,24 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeReservedDbInstancesOfferingsInput`](crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsInput {
-                reserved_db_instances_offering_id: self.reserved_db_instances_offering_id
-                ,
-                db_instance_class: self.db_instance_class
-                ,
-                duration: self.duration
-                ,
-                product_description: self.product_description
-                ,
-                offering_type: self.offering_type
-                ,
-                multi_az: self.multi_az
-                ,
-                filters: self.filters
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                reserved_db_instances_offering_id: self.reserved_db_instances_offering_id,
+                db_instance_class: self.db_instance_class,
+                duration: self.duration,
+                product_description: self.product_description,
+                offering_type: self.offering_type,
+                multi_az: self.multi_az,
+                filters: self.filters,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateCarrierGatewayOutput {
 }
 impl CreateCarrierGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateCarrierGatewayOutput`](crate::operation::create_carrier_gateway::CreateCarrierGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::create_carrier_gateway::builders::CreateCarrierGatewayOutputBuilder {
+    pub fn builder() -> crate::operation::create_carrier_gateway::builders::CreateCarrierGatewayOutputBuilder {
         crate::operation::create_carrier_gateway::builders::CreateCarrierGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCarrierGatewayOutput`](crate::operation::create_carrier_gateway::CreateCarrierGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCarrierGatewayOutputBuilder {
     pub(crate) carrier_gateway: ::std::option::Option<crate::types::CarrierGateway>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateCarrierGatewayOutputBuilder {
         self
     }
     /// <p>Information about the carrier gateway.</p>
-    pub fn set_carrier_gateway(
-        mut self,
-        input: ::std::option::Option<crate::types::CarrierGateway>,
-    ) -> Self {
+    pub fn set_carrier_gateway(mut self, input: ::std::option::Option<crate::types::CarrierGateway>) -> Self {
         self.carrier_gateway = input;
         self
     }

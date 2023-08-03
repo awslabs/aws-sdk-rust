@@ -15,35 +15,25 @@ impl DeleteVcenterClientInput {
 }
 impl DeleteVcenterClientInput {
     /// Creates a new builder-style object to manufacture [`DeleteVcenterClientInput`](crate::operation::delete_vcenter_client::DeleteVcenterClientInput).
-    pub fn builder(
-    ) -> crate::operation::delete_vcenter_client::builders::DeleteVcenterClientInputBuilder {
-        crate::operation::delete_vcenter_client::builders::DeleteVcenterClientInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_vcenter_client::builders::DeleteVcenterClientInputBuilder {
+        crate::operation::delete_vcenter_client::builders::DeleteVcenterClientInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVcenterClientInput`](crate::operation::delete_vcenter_client::DeleteVcenterClientInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVcenterClientInputBuilder {
     pub(crate) vcenter_client_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVcenterClientInputBuilder {
     /// <p>ID of resource to be deleted.</p>
-    pub fn vcenter_client_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vcenter_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vcenter_client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of resource to be deleted.</p>
-    pub fn set_vcenter_client_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vcenter_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vcenter_client_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteVcenterClientInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVcenterClientInput`](crate::operation::delete_vcenter_client::DeleteVcenterClientInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vcenter_client::DeleteVcenterClientInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_vcenter_client::DeleteVcenterClientInput {
-                vcenter_client_id: self.vcenter_client_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_vcenter_client::DeleteVcenterClientInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_vcenter_client::DeleteVcenterClientInput {
+            vcenter_client_id: self.vcenter_client_id,
+        })
     }
 }

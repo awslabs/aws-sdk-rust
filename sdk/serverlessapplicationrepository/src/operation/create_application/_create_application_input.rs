@@ -151,17 +151,14 @@ impl CreateApplicationInput {
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn builder() -> crate::operation::create_application::builders::CreateApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_application::builders::CreateApplicationInputBuilder {
         crate::operation::create_application::builders::CreateApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApplicationInputBuilder {
     pub(crate) author: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -218,18 +215,12 @@ impl CreateApplicationInputBuilder {
         &self.description
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    pub fn home_page_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn home_page_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_page_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    pub fn set_home_page_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_home_page_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_page_url = input;
         self
     }
@@ -253,10 +244,7 @@ impl CreateApplicationInputBuilder {
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
@@ -368,19 +356,13 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.semantic_version = input;
         self
     }
@@ -391,19 +373,13 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
-    pub fn source_code_archive_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_code_archive_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_code_archive_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
-    pub fn set_source_code_archive_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_code_archive_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_code_archive_url = input;
         self
     }
@@ -413,18 +389,12 @@ impl CreateApplicationInputBuilder {
         &self.source_code_archive_url
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    pub fn source_code_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_code_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_code_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    pub fn set_source_code_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_code_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_code_url = input;
         self
     }
@@ -433,18 +403,12 @@ impl CreateApplicationInputBuilder {
         &self.source_code_url
     }
     /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
-    pub fn spdx_license_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spdx_license_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spdx_license_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
-    pub fn set_spdx_license_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spdx_license_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spdx_license_id = input;
         self
     }
@@ -454,19 +418,13 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The local raw packaged AWS SAM template file of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The local raw packaged AWS SAM template file of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_body = input;
         self
     }
@@ -495,28 +453,23 @@ impl CreateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_application::CreateApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_application::CreateApplicationInput {
-                author: self.author,
-                description: self.description,
-                home_page_url: self.home_page_url,
-                labels: self.labels,
-                license_body: self.license_body,
-                license_url: self.license_url,
-                name: self.name,
-                readme_body: self.readme_body,
-                readme_url: self.readme_url,
-                semantic_version: self.semantic_version,
-                source_code_archive_url: self.source_code_archive_url,
-                source_code_url: self.source_code_url,
-                spdx_license_id: self.spdx_license_id,
-                template_body: self.template_body,
-                template_url: self.template_url,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
+            author: self.author,
+            description: self.description,
+            home_page_url: self.home_page_url,
+            labels: self.labels,
+            license_body: self.license_body,
+            license_url: self.license_url,
+            name: self.name,
+            readme_body: self.readme_body,
+            readme_url: self.readme_url,
+            semantic_version: self.semantic_version,
+            source_code_archive_url: self.source_code_archive_url,
+            source_code_url: self.source_code_url,
+            spdx_license_id: self.spdx_license_id,
+            template_body: self.template_body,
+            template_url: self.template_url,
+        })
     }
 }

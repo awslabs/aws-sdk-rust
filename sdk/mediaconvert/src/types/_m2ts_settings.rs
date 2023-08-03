@@ -184,9 +184,7 @@ impl M2tsSettings {
         self.es_rate_in_pes.as_ref()
     }
     /// Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your video EBP markers. To correct this problem, set this value to Force.
-    pub fn force_ts_video_ebp_order(
-        &self,
-    ) -> ::std::option::Option<&crate::types::M2tsForceTsVideoEbpOrder> {
+    pub fn force_ts_video_ebp_order(&self) -> ::std::option::Option<&crate::types::M2tsForceTsVideoEbpOrder> {
         self.force_ts_video_ebp_order.as_ref()
     }
     /// The length, in seconds, of each fragment. Only used with EBP markers.
@@ -258,15 +256,11 @@ impl M2tsSettings {
         self.scte35_source.as_ref()
     }
     /// Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
-    pub fn segmentation_markers(
-        &self,
-    ) -> ::std::option::Option<&crate::types::M2tsSegmentationMarkers> {
+    pub fn segmentation_markers(&self) -> ::std::option::Option<&crate::types::M2tsSegmentationMarkers> {
         self.segmentation_markers.as_ref()
     }
     /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of of $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule.
-    pub fn segmentation_style(
-        &self,
-    ) -> ::std::option::Option<&crate::types::M2tsSegmentationStyle> {
+    pub fn segmentation_style(&self) -> ::std::option::Option<&crate::types::M2tsSegmentationStyle> {
         self.segmentation_style.as_ref()
     }
     /// Specify the length, in seconds, of each segment. Required unless markers is set to _none_.
@@ -295,9 +289,7 @@ impl M2tsSettings {
 
 /// A builder for [`M2tsSettings`](crate::types::M2tsSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct M2tsSettingsBuilder {
     pub(crate) audio_buffer_model: ::std::option::Option<crate::types::M2tsAudioBufferModel>,
     pub(crate) audio_duration: ::std::option::Option<crate::types::M2tsAudioDuration>,
@@ -314,8 +306,7 @@ pub struct M2tsSettingsBuilder {
     pub(crate) ebp_audio_interval: ::std::option::Option<crate::types::M2tsEbpAudioInterval>,
     pub(crate) ebp_placement: ::std::option::Option<crate::types::M2tsEbpPlacement>,
     pub(crate) es_rate_in_pes: ::std::option::Option<crate::types::M2tsEsRateInPes>,
-    pub(crate) force_ts_video_ebp_order:
-        ::std::option::Option<crate::types::M2tsForceTsVideoEbpOrder>,
+    pub(crate) force_ts_video_ebp_order: ::std::option::Option<crate::types::M2tsForceTsVideoEbpOrder>,
     pub(crate) fragment_time: ::std::option::Option<f64>,
     pub(crate) klv_metadata: ::std::option::Option<crate::types::M2tsKlvMetadata>,
     pub(crate) max_pcr_interval: ::std::option::Option<i32>,
@@ -347,17 +338,12 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Selects between the DVB and ATSC buffer models for Dolby Digital audio.
-    pub fn set_audio_buffer_model(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsAudioBufferModel>,
-    ) -> Self {
+    pub fn set_audio_buffer_model(mut self, input: ::std::option::Option<crate::types::M2tsAudioBufferModel>) -> Self {
         self.audio_buffer_model = input;
         self
     }
     /// Selects between the DVB and ATSC buffer models for Dolby Digital audio.
-    pub fn get_audio_buffer_model(
-        &self,
-    ) -> &::std::option::Option<crate::types::M2tsAudioBufferModel> {
+    pub fn get_audio_buffer_model(&self) -> &::std::option::Option<crate::types::M2tsAudioBufferModel> {
         &self.audio_buffer_model
     }
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
@@ -366,10 +352,7 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
-    pub fn set_audio_duration(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsAudioDuration>,
-    ) -> Self {
+    pub fn set_audio_duration(mut self, input: ::std::option::Option<crate::types::M2tsAudioDuration>) -> Self {
         self.audio_duration = input;
         self
     }
@@ -431,10 +414,7 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
-    pub fn set_buffer_model(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsBufferModel>,
-    ) -> Self {
+    pub fn set_buffer_model(mut self, input: ::std::option::Option<crate::types::M2tsBufferModel>) -> Self {
         self.buffer_model = input;
         self
     }
@@ -448,10 +428,7 @@ impl M2tsSettingsBuilder {
         self
     }
     /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value to allow all PTS values.
-    pub fn set_data_pts_control(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsDataPtsControl>,
-    ) -> Self {
+    pub fn set_data_pts_control(mut self, input: ::std::option::Option<crate::types::M2tsDataPtsControl>) -> Self {
         self.data_pts_control = input;
         self
     }
@@ -465,10 +442,7 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output.
-    pub fn set_dvb_nit_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DvbNitSettings>,
-    ) -> Self {
+    pub fn set_dvb_nit_settings(mut self, input: ::std::option::Option<crate::types::DvbNitSettings>) -> Self {
         self.dvb_nit_settings = input;
         self
     }
@@ -482,10 +456,7 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output.
-    pub fn set_dvb_sdt_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DvbSdtSettings>,
-    ) -> Self {
+    pub fn set_dvb_sdt_settings(mut self, input: ::std::option::Option<crate::types::DvbSdtSettings>) -> Self {
         self.dvb_sdt_settings = input;
         self
     }
@@ -519,10 +490,7 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output.
-    pub fn set_dvb_tdt_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DvbTdtSettings>,
-    ) -> Self {
+    pub fn set_dvb_tdt_settings(mut self, input: ::std::option::Option<crate::types::DvbTdtSettings>) -> Self {
         self.dvb_tdt_settings = input;
         self
     }
@@ -550,17 +518,12 @@ impl M2tsSettingsBuilder {
         self
     }
     /// When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
-    pub fn set_ebp_audio_interval(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsEbpAudioInterval>,
-    ) -> Self {
+    pub fn set_ebp_audio_interval(mut self, input: ::std::option::Option<crate::types::M2tsEbpAudioInterval>) -> Self {
         self.ebp_audio_interval = input;
         self
     }
     /// When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
-    pub fn get_ebp_audio_interval(
-        &self,
-    ) -> &::std::option::Option<crate::types::M2tsEbpAudioInterval> {
+    pub fn get_ebp_audio_interval(&self) -> &::std::option::Option<crate::types::M2tsEbpAudioInterval> {
         &self.ebp_audio_interval
     }
     /// Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
@@ -569,10 +532,7 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
-    pub fn set_ebp_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsEbpPlacement>,
-    ) -> Self {
+    pub fn set_ebp_placement(mut self, input: ::std::option::Option<crate::types::M2tsEbpPlacement>) -> Self {
         self.ebp_placement = input;
         self
     }
@@ -586,10 +546,7 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Controls whether to include the ES Rate field in the PES header.
-    pub fn set_es_rate_in_pes(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsEsRateInPes>,
-    ) -> Self {
+    pub fn set_es_rate_in_pes(mut self, input: ::std::option::Option<crate::types::M2tsEsRateInPes>) -> Self {
         self.es_rate_in_pes = input;
         self
     }
@@ -598,25 +555,17 @@ impl M2tsSettingsBuilder {
         &self.es_rate_in_pes
     }
     /// Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your video EBP markers. To correct this problem, set this value to Force.
-    pub fn force_ts_video_ebp_order(
-        mut self,
-        input: crate::types::M2tsForceTsVideoEbpOrder,
-    ) -> Self {
+    pub fn force_ts_video_ebp_order(mut self, input: crate::types::M2tsForceTsVideoEbpOrder) -> Self {
         self.force_ts_video_ebp_order = ::std::option::Option::Some(input);
         self
     }
     /// Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your video EBP markers. To correct this problem, set this value to Force.
-    pub fn set_force_ts_video_ebp_order(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsForceTsVideoEbpOrder>,
-    ) -> Self {
+    pub fn set_force_ts_video_ebp_order(mut self, input: ::std::option::Option<crate::types::M2tsForceTsVideoEbpOrder>) -> Self {
         self.force_ts_video_ebp_order = input;
         self
     }
     /// Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your video EBP markers. To correct this problem, set this value to Force.
-    pub fn get_force_ts_video_ebp_order(
-        &self,
-    ) -> &::std::option::Option<crate::types::M2tsForceTsVideoEbpOrder> {
+    pub fn get_force_ts_video_ebp_order(&self) -> &::std::option::Option<crate::types::M2tsForceTsVideoEbpOrder> {
         &self.force_ts_video_ebp_order
     }
     /// The length, in seconds, of each fragment. Only used with EBP markers.
@@ -639,10 +588,7 @@ impl M2tsSettingsBuilder {
         self
     }
     /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
-    pub fn set_klv_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsKlvMetadata>,
-    ) -> Self {
+    pub fn set_klv_metadata(mut self, input: ::std::option::Option<crate::types::M2tsKlvMetadata>) -> Self {
         self.klv_metadata = input;
         self
     }
@@ -684,10 +630,7 @@ impl M2tsSettingsBuilder {
         self
     }
     /// If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
-    pub fn set_nielsen_id3(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsNielsenId3>,
-    ) -> Self {
+    pub fn set_nielsen_id3(mut self, input: ::std::option::Option<crate::types::M2tsNielsenId3>) -> Self {
         self.nielsen_id3 = input;
         self
     }
@@ -729,10 +672,7 @@ impl M2tsSettingsBuilder {
         self
     }
     /// When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio elementary stream.
-    pub fn set_pcr_control(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsPcrControl>,
-    ) -> Self {
+    pub fn set_pcr_control(mut self, input: ::std::option::Option<crate::types::M2tsPcrControl>) -> Self {
         self.pcr_control = input;
         self
     }
@@ -816,10 +756,7 @@ impl M2tsSettingsBuilder {
         self
     }
     /// When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR, the bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
-    pub fn set_rate_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsRateMode>,
-    ) -> Self {
+    pub fn set_rate_mode(mut self, input: ::std::option::Option<crate::types::M2tsRateMode>) -> Self {
         self.rate_mode = input;
         self
     }
@@ -833,10 +770,7 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML.
-    pub fn set_scte35_esam(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsScte35Esam>,
-    ) -> Self {
+    pub fn set_scte35_esam(mut self, input: ::std::option::Option<crate::types::M2tsScte35Esam>) -> Self {
         self.scte35_esam = input;
         self
     }
@@ -864,10 +798,7 @@ impl M2tsSettingsBuilder {
         self
     }
     /// For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the setting Signal processing notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
-    pub fn set_scte35_source(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsScte35Source>,
-    ) -> Self {
+    pub fn set_scte35_source(mut self, input: ::std::option::Option<crate::types::M2tsScte35Source>) -> Self {
         self.scte35_source = input;
         self
     }
@@ -881,17 +812,12 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
-    pub fn set_segmentation_markers(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsSegmentationMarkers>,
-    ) -> Self {
+    pub fn set_segmentation_markers(mut self, input: ::std::option::Option<crate::types::M2tsSegmentationMarkers>) -> Self {
         self.segmentation_markers = input;
         self
     }
     /// Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
-    pub fn get_segmentation_markers(
-        &self,
-    ) -> &::std::option::Option<crate::types::M2tsSegmentationMarkers> {
+    pub fn get_segmentation_markers(&self) -> &::std::option::Option<crate::types::M2tsSegmentationMarkers> {
         &self.segmentation_markers
     }
     /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of of $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule.
@@ -900,17 +826,12 @@ impl M2tsSettingsBuilder {
         self
     }
     /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of of $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule.
-    pub fn set_segmentation_style(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsSegmentationStyle>,
-    ) -> Self {
+    pub fn set_segmentation_style(mut self, input: ::std::option::Option<crate::types::M2tsSegmentationStyle>) -> Self {
         self.segmentation_style = input;
         self
     }
     /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of of $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule.
-    pub fn get_segmentation_style(
-        &self,
-    ) -> &::std::option::Option<crate::types::M2tsSegmentationStyle> {
+    pub fn get_segmentation_style(&self) -> &::std::option::Option<crate::types::M2tsSegmentationStyle> {
         &self.segmentation_style
     }
     /// Specify the length, in seconds, of each segment. Required unless markers is set to _none_.

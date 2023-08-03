@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDatasetContentOutput {
 }
 impl DeleteDatasetContentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDatasetContentOutput`](crate::operation::delete_dataset_content::DeleteDatasetContentOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_dataset_content::builders::DeleteDatasetContentOutputBuilder {
+    pub fn builder() -> crate::operation::delete_dataset_content::builders::DeleteDatasetContentOutputBuilder {
         crate::operation::delete_dataset_content::builders::DeleteDatasetContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDatasetContentOutput`](crate::operation::delete_dataset_content::DeleteDatasetContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDatasetContentOutputBuilder {
     _request_id: Option<String>,
 }

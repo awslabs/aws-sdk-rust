@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`successful(Option<Vec<DisableFastSnapshotRestoreSuccessItem>>)`](crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresOutput::successful): <p>Information about the snapshots for which fast snapshot restores were successfully disabled.</p>
     ///   - [`unsuccessful(Option<Vec<DisableFastSnapshotRestoreErrorItem>>)`](crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresOutput::unsuccessful): <p>Information about the snapshots for which fast snapshot restores could not be disabled.</p>
     /// - On failure, responds with [`SdkError<DisableFastSnapshotRestoresError>`](crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresError)
-    pub fn disable_fast_snapshot_restores(&self) -> crate::operation::disable_fast_snapshot_restores::builders::DisableFastSnapshotRestoresFluentBuilder{
+    pub fn disable_fast_snapshot_restores(
+        &self,
+    ) -> crate::operation::disable_fast_snapshot_restores::builders::DisableFastSnapshotRestoresFluentBuilder {
         crate::operation::disable_fast_snapshot_restores::builders::DisableFastSnapshotRestoresFluentBuilder::new(self.handle.clone())
     }
 }

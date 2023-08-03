@@ -37,9 +37,7 @@ impl ConfigureLogsInput {
 
 /// A builder for [`ConfigureLogsInput`](crate::operation::configure_logs::ConfigureLogsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigureLogsInputBuilder {
     pub(crate) egress_access_logs: ::std::option::Option<crate::types::EgressAccessLogs>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl ConfigureLogsInputBuilder {
         self
     }
     /// Configure egress access logging.
-    pub fn set_egress_access_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::EgressAccessLogs>,
-    ) -> Self {
+    pub fn set_egress_access_logs(mut self, input: ::std::option::Option<crate::types::EgressAccessLogs>) -> Self {
         self.egress_access_logs = input;
         self
     }
@@ -83,26 +78,18 @@ impl ConfigureLogsInputBuilder {
         self
     }
     /// Configure ingress access logging.
-    pub fn set_ingress_access_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::IngressAccessLogs>,
-    ) -> Self {
+    pub fn set_ingress_access_logs(mut self, input: ::std::option::Option<crate::types::IngressAccessLogs>) -> Self {
         self.ingress_access_logs = input;
         self
     }
     /// Configure ingress access logging.
-    pub fn get_ingress_access_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngressAccessLogs> {
+    pub fn get_ingress_access_logs(&self) -> &::std::option::Option<crate::types::IngressAccessLogs> {
         &self.ingress_access_logs
     }
     /// Consumes the builder and constructs a [`ConfigureLogsInput`](crate::operation::configure_logs::ConfigureLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::configure_logs::ConfigureLogsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::configure_logs::ConfigureLogsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::configure_logs::ConfigureLogsInput {
             egress_access_logs: self.egress_access_logs,
             id: self.id,

@@ -67,18 +67,12 @@ impl CreateAttendeeInputBuilder {
         &self.meeting_id
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    pub fn external_user_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    pub fn set_external_user_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_user_id = input;
         self
     }
@@ -98,10 +92,7 @@ impl CreateAttendeeInputBuilder {
         self
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -112,10 +103,7 @@ impl CreateAttendeeInputBuilder {
     /// Consumes the builder and constructs a [`CreateAttendeeInput`](crate::operation::create_attendee::CreateAttendeeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_attendee::CreateAttendeeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_attendee::CreateAttendeeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_attendee::CreateAttendeeInput {
             meeting_id: self.meeting_id,
             external_user_id: self.external_user_id,

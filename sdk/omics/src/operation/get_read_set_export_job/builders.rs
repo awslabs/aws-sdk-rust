@@ -37,9 +37,7 @@ impl GetReadSetExportJobFluentBuilder {
         }
     }
     /// Access the GetReadSetExportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_read_set_export_job::builders::GetReadSetExportJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_read_set_export_job::builders::GetReadSetExportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetReadSetExportJobFluentBuilder {
             crate::operation::get_read_set_export_job::GetReadSetExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_read_set_export_job::GetReadSetExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_read_set_export_job::GetReadSetExportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetReadSetExportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetReadSetExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_read_set_export_job::GetReadSetExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_read_set_export_job::GetReadSetExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_read_set_export_job::GetReadSetExportJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetReadSetExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_read_set_export_job::GetReadSetExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_read_set_export_job::GetReadSetExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_read_set_export_job::GetReadSetExportJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetReadSetExportJobFluentBuilder {
             crate::operation::get_read_set_export_job::GetReadSetExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_read_set_export_job::GetReadSetExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_read_set_export_job::GetReadSetExportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }

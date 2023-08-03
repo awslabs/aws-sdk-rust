@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`explainability_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_explainability::builders::DeleteExplainabilityFluentBuilder::explainability_arn) / [`set_explainability_arn(Option<String>)`](crate::operation::delete_explainability::builders::DeleteExplainabilityFluentBuilder::set_explainability_arn): <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
     /// - On success, responds with [`DeleteExplainabilityOutput`](crate::operation::delete_explainability::DeleteExplainabilityOutput)
     /// - On failure, responds with [`SdkError<DeleteExplainabilityError>`](crate::operation::delete_explainability::DeleteExplainabilityError)
-    pub fn delete_explainability(
-        &self,
-    ) -> crate::operation::delete_explainability::builders::DeleteExplainabilityFluentBuilder {
-        crate::operation::delete_explainability::builders::DeleteExplainabilityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_explainability(&self) -> crate::operation::delete_explainability::builders::DeleteExplainabilityFluentBuilder {
+        crate::operation::delete_explainability::builders::DeleteExplainabilityFluentBuilder::new(self.handle.clone())
     }
 }

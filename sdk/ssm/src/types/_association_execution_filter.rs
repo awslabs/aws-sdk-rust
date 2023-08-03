@@ -37,9 +37,7 @@ impl AssociationExecutionFilter {
 
 /// A builder for [`AssociationExecutionFilter`](crate::types::AssociationExecutionFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociationExecutionFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::AssociationExecutionFilterKey>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl AssociationExecutionFilterBuilder {
         self
     }
     /// <p>The key value used in the request.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationExecutionFilterKey>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::AssociationExecutionFilterKey>) -> Self {
         self.key = input;
         self
     }
@@ -83,10 +78,7 @@ impl AssociationExecutionFilterBuilder {
         self
     }
     /// <p>The filter type specified in the request.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationFilterOperatorType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AssociationFilterOperatorType>) -> Self {
         self.r#type = input;
         self
     }

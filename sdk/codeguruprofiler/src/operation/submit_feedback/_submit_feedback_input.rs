@@ -44,9 +44,7 @@ impl SubmitFeedbackInput {
 
 /// A builder for [`SubmitFeedbackInput`](crate::operation::submit_feedback::SubmitFeedbackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubmitFeedbackInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_instance_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct SubmitFeedbackInputBuilder {
 }
 impl SubmitFeedbackInputBuilder {
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profiling_group_name = input;
         self
     }
@@ -75,18 +67,12 @@ impl SubmitFeedbackInputBuilder {
         &self.profiling_group_name
     }
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
-    pub fn anomaly_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
-    pub fn set_anomaly_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_instance_id = input;
         self
     }
@@ -125,10 +111,7 @@ impl SubmitFeedbackInputBuilder {
     /// Consumes the builder and constructs a [`SubmitFeedbackInput`](crate::operation::submit_feedback::SubmitFeedbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::submit_feedback::SubmitFeedbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::submit_feedback::SubmitFeedbackInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::submit_feedback::SubmitFeedbackInput {
             profiling_group_name: self.profiling_group_name,
             anomaly_instance_id: self.anomaly_instance_id,

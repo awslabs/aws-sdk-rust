@@ -6,8 +6,7 @@
 pub struct ListDeliverabilityTestReportsOutput {
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
     #[doc(hidden)]
-    pub deliverability_test_reports:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>>,
+    pub deliverability_test_reports: ::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>>,
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListDeliverabilityTestReportsOutput {
 }
 impl ListDeliverabilityTestReportsOutput {
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
-    pub fn deliverability_test_reports(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeliverabilityTestReport]> {
+    pub fn deliverability_test_reports(&self) -> ::std::option::Option<&[crate::types::DeliverabilityTestReport]> {
         self.deliverability_test_reports.as_deref()
     }
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
@@ -32,19 +29,16 @@ impl ::aws_http::request_id::RequestId for ListDeliverabilityTestReportsOutput {
 }
 impl ListDeliverabilityTestReportsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeliverabilityTestReportsOutput`](crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput).
-    pub fn builder() -> crate::operation::list_deliverability_test_reports::builders::ListDeliverabilityTestReportsOutputBuilder{
+    pub fn builder() -> crate::operation::list_deliverability_test_reports::builders::ListDeliverabilityTestReportsOutputBuilder {
         crate::operation::list_deliverability_test_reports::builders::ListDeliverabilityTestReportsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeliverabilityTestReportsOutput`](crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeliverabilityTestReportsOutputBuilder {
-    pub(crate) deliverability_test_reports:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>>,
+    pub(crate) deliverability_test_reports: ::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,27 +48,19 @@ impl ListDeliverabilityTestReportsOutputBuilder {
     /// To override the contents of this collection use [`set_deliverability_test_reports`](Self::set_deliverability_test_reports).
     ///
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
-    pub fn deliverability_test_reports(
-        mut self,
-        input: crate::types::DeliverabilityTestReport,
-    ) -> Self {
+    pub fn deliverability_test_reports(mut self, input: crate::types::DeliverabilityTestReport) -> Self {
         let mut v = self.deliverability_test_reports.unwrap_or_default();
         v.push(input);
         self.deliverability_test_reports = ::std::option::Option::Some(v);
         self
     }
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
-    pub fn set_deliverability_test_reports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>>,
-    ) -> Self {
+    pub fn set_deliverability_test_reports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>>) -> Self {
         self.deliverability_test_reports = input;
         self
     }
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
-    pub fn get_deliverability_test_reports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>> {
+    pub fn get_deliverability_test_reports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>> {
         &self.deliverability_test_reports
     }
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
@@ -101,10 +87,7 @@ impl ListDeliverabilityTestReportsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDeliverabilityTestReportsOutput`](crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput
-    {
+    pub fn build(self) -> crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput {
         crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput {
             deliverability_test_reports: self.deliverability_test_reports,
             next_token: self.next_token,

@@ -10,10 +10,7 @@ impl DeleteResourceTreeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_tree::DeleteResourceTreeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_tree::DeleteResourceTreeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_tree::DeleteResourceTreeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_resource_tree();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl DeleteResourceTreeFluentBuilder {
         }
     }
     /// Access the DeleteResourceTree as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_resource_tree::builders::DeleteResourceTreeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_resource_tree::builders::DeleteResourceTreeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl DeleteResourceTreeFluentBuilder {
             crate::operation::delete_resource_tree::DeleteResourceTree,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_tree::DeleteResourceTreeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_tree::DeleteResourceTreeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl DeleteResourceTreeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl DeleteResourceTreeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_tree::DeleteResourceTreeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_tree::DeleteResourceTreeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_tree::DeleteResourceTreeError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl DeleteResourceTreeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_tree::DeleteResourceTreeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_tree::DeleteResourceTreeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_tree::DeleteResourceTreeError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +112,7 @@ impl DeleteResourceTreeFluentBuilder {
             crate::operation::delete_resource_tree::DeleteResourceTree,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_tree::DeleteResourceTreeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_tree::DeleteResourceTreeError>,
     > {
         self.customize_middleware().await
     }

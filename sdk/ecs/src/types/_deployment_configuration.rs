@@ -38,9 +38,7 @@ impl DeploymentConfiguration {
     /// <p>The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>) deployment type.</p>
     /// </note>
     /// <p>The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't reach a steady state. If you use the deployment circuit breaker, a service deployment will transition to a failed state and stop launching new tasks. If you use the rollback option, when a service deployment fails, the service is rolled back to the last deployment that completed successfully. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
-    pub fn deployment_circuit_breaker(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeploymentCircuitBreaker> {
+    pub fn deployment_circuit_breaker(&self) -> ::std::option::Option<&crate::types::DeploymentCircuitBreaker> {
         self.deployment_circuit_breaker.as_ref()
     }
     /// <p>If a service is using the rolling update (<code>ECS</code>) deployment type, the <code>maximumPercent</code> parameter represents an upper limit on the number of your service's tasks that are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment, as a percentage of the <code>desiredCount</code> (rounded down to the nearest integer). This parameter enables you to define the deployment batch size. For example, if your service is using the <code>REPLICA</code> service scheduler and has a <code>desiredCount</code> of four tasks and a <code>maximumPercent</code> value of 200%, the scheduler may start four new tasks before stopping the four older tasks (provided that the cluster resources required to do this are available). The default <code>maximumPercent</code> value for a service using the <code>REPLICA</code> service scheduler is 200%.</p>
@@ -78,12 +76,9 @@ impl DeploymentConfiguration {
 
 /// A builder for [`DeploymentConfiguration`](crate::types::DeploymentConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentConfigurationBuilder {
-    pub(crate) deployment_circuit_breaker:
-        ::std::option::Option<crate::types::DeploymentCircuitBreaker>,
+    pub(crate) deployment_circuit_breaker: ::std::option::Option<crate::types::DeploymentCircuitBreaker>,
     pub(crate) maximum_percent: ::std::option::Option<i32>,
     pub(crate) minimum_healthy_percent: ::std::option::Option<i32>,
     pub(crate) alarms: ::std::option::Option<crate::types::DeploymentAlarms>,
@@ -93,10 +88,7 @@ impl DeploymentConfigurationBuilder {
     /// <p>The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>) deployment type.</p>
     /// </note>
     /// <p>The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't reach a steady state. If you use the deployment circuit breaker, a service deployment will transition to a failed state and stop launching new tasks. If you use the rollback option, when a service deployment fails, the service is rolled back to the last deployment that completed successfully. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
-    pub fn deployment_circuit_breaker(
-        mut self,
-        input: crate::types::DeploymentCircuitBreaker,
-    ) -> Self {
+    pub fn deployment_circuit_breaker(mut self, input: crate::types::DeploymentCircuitBreaker) -> Self {
         self.deployment_circuit_breaker = ::std::option::Option::Some(input);
         self
     }
@@ -104,10 +96,7 @@ impl DeploymentConfigurationBuilder {
     /// <p>The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>) deployment type.</p>
     /// </note>
     /// <p>The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't reach a steady state. If you use the deployment circuit breaker, a service deployment will transition to a failed state and stop launching new tasks. If you use the rollback option, when a service deployment fails, the service is rolled back to the last deployment that completed successfully. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
-    pub fn set_deployment_circuit_breaker(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentCircuitBreaker>,
-    ) -> Self {
+    pub fn set_deployment_circuit_breaker(mut self, input: ::std::option::Option<crate::types::DeploymentCircuitBreaker>) -> Self {
         self.deployment_circuit_breaker = input;
         self
     }
@@ -115,9 +104,7 @@ impl DeploymentConfigurationBuilder {
     /// <p>The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>) deployment type.</p>
     /// </note>
     /// <p>The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't reach a steady state. If you use the deployment circuit breaker, a service deployment will transition to a failed state and stop launching new tasks. If you use the rollback option, when a service deployment fails, the service is rolled back to the last deployment that completed successfully. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
-    pub fn get_deployment_circuit_breaker(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentCircuitBreaker> {
+    pub fn get_deployment_circuit_breaker(&self) -> &::std::option::Option<crate::types::DeploymentCircuitBreaker> {
         &self.deployment_circuit_breaker
     }
     /// <p>If a service is using the rolling update (<code>ECS</code>) deployment type, the <code>maximumPercent</code> parameter represents an upper limit on the number of your service's tasks that are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment, as a percentage of the <code>desiredCount</code> (rounded down to the nearest integer). This parameter enables you to define the deployment batch size. For example, if your service is using the <code>REPLICA</code> service scheduler and has a <code>desiredCount</code> of four tasks and a <code>maximumPercent</code> value of 200%, the scheduler may start four new tasks before stopping the four older tasks (provided that the cluster resources required to do this are available). The default <code>maximumPercent</code> value for a service using the <code>REPLICA</code> service scheduler is 200%.</p>
@@ -193,10 +180,7 @@ impl DeploymentConfigurationBuilder {
         self
     }
     /// <p>Information about the CloudWatch alarms.</p>
-    pub fn set_alarms(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentAlarms>,
-    ) -> Self {
+    pub fn set_alarms(mut self, input: ::std::option::Option<crate::types::DeploymentAlarms>) -> Self {
         self.alarms = input;
         self
     }

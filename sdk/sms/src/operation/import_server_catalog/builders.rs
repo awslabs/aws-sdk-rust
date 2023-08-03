@@ -38,9 +38,7 @@ impl ImportServerCatalogFluentBuilder {
         }
     }
     /// Access the ImportServerCatalog as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_server_catalog::builders::ImportServerCatalogInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_server_catalog::builders::ImportServerCatalogInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ImportServerCatalogFluentBuilder {
             crate::operation::import_server_catalog::ImportServerCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_server_catalog::ImportServerCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_server_catalog::ImportServerCatalogError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ImportServerCatalogFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ImportServerCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_server_catalog::ImportServerCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_server_catalog::ImportServerCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_server_catalog::ImportServerCatalogError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ImportServerCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_server_catalog::ImportServerCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_server_catalog::ImportServerCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_server_catalog::ImportServerCatalogError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl ImportServerCatalogFluentBuilder {
             crate::operation::import_server_catalog::ImportServerCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_server_catalog::ImportServerCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_server_catalog::ImportServerCatalogError>,
     > {
         self.customize_middleware().await
     }

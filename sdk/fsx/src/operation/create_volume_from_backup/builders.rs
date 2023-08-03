@@ -26,8 +26,7 @@ impl CreateVolumeFromBackupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateVolumeFromBackupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupInputBuilder,
+    inner: crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupInputBuilder,
 }
 impl CreateVolumeFromBackupFluentBuilder {
     /// Creates a new `CreateVolumeFromBackup`.
@@ -38,10 +37,7 @@ impl CreateVolumeFromBackupFluentBuilder {
         }
     }
     /// Access the CreateVolumeFromBackup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateVolumeFromBackupFluentBuilder {
             crate::operation::create_volume_from_backup::CreateVolumeFromBackup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_volume_from_backup::CreateVolumeFromBackupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_volume_from_backup::CreateVolumeFromBackupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateVolumeFromBackupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateVolumeFromBackupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_volume_from_backup::CreateVolumeFromBackupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_volume_from_backup::CreateVolumeFromBackupError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateVolumeFromBackupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_volume_from_backup::CreateVolumeFromBackupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_volume_from_backup::CreateVolumeFromBackupError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CreateVolumeFromBackupFluentBuilder {
             crate::operation::create_volume_from_backup::CreateVolumeFromBackup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_volume_from_backup::CreateVolumeFromBackupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_volume_from_backup::CreateVolumeFromBackupError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl CreateVolumeFromBackupFluentBuilder {
         self.inner.get_backup_id()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -173,25 +152,17 @@ impl CreateVolumeFromBackupFluentBuilder {
         self.inner.get_name()
     }
     /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
-    pub fn ontap_configuration(
-        mut self,
-        input: crate::types::CreateOntapVolumeConfiguration,
-    ) -> Self {
+    pub fn ontap_configuration(mut self, input: crate::types::CreateOntapVolumeConfiguration) -> Self {
         self.inner = self.inner.ontap_configuration(input);
         self
     }
     /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
-    pub fn set_ontap_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateOntapVolumeConfiguration>,
-    ) -> Self {
+    pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::CreateOntapVolumeConfiguration>) -> Self {
         self.inner = self.inner.set_ontap_configuration(input);
         self
     }
     /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
-    pub fn get_ontap_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateOntapVolumeConfiguration> {
+    pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::CreateOntapVolumeConfiguration> {
         self.inner.get_ontap_configuration()
     }
     /// Appends an item to `Tags`.
@@ -204,10 +175,7 @@ impl CreateVolumeFromBackupFluentBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

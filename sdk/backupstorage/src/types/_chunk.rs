@@ -34,9 +34,7 @@ impl Chunk {
         self.checksum.as_deref()
     }
     /// Checksum algorithm
-    pub fn checksum_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> ::std::option::Option<&crate::types::DataChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
     /// Chunk token
@@ -53,9 +51,7 @@ impl Chunk {
 
 /// A builder for [`Chunk`](crate::types::Chunk).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChunkBuilder {
     pub(crate) index: ::std::option::Option<i64>,
     pub(crate) length: ::std::option::Option<i64>,
@@ -112,17 +108,12 @@ impl ChunkBuilder {
         self
     }
     /// Checksum algorithm
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::DataChecksumAlgorithm>) -> Self {
         self.checksum_algorithm = input;
         self
     }
     /// Checksum algorithm
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
         &self.checksum_algorithm
     }
     /// Chunk token

@@ -15,33 +15,25 @@ impl DeregisterOrganizationAdminAccountInput {
 }
 impl DeregisterOrganizationAdminAccountInput {
     /// Creates a new builder-style object to manufacture [`DeregisterOrganizationAdminAccountInput`](crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput).
-    pub fn builder() -> crate::operation::deregister_organization_admin_account::builders::DeregisterOrganizationAdminAccountInputBuilder{
+    pub fn builder() -> crate::operation::deregister_organization_admin_account::builders::DeregisterOrganizationAdminAccountInputBuilder {
         crate::operation::deregister_organization_admin_account::builders::DeregisterOrganizationAdminAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterOrganizationAdminAccountInput`](crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterOrganizationAdminAccountInputBuilder {
     pub(crate) admin_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterOrganizationAdminAccountInputBuilder {
     /// <p> The identifier for the administrator account. </p>
-    pub fn admin_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the administrator account. </p>
-    pub fn set_admin_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_account_id = input;
         self
     }
@@ -50,12 +42,16 @@ impl DeregisterOrganizationAdminAccountInputBuilder {
         &self.admin_account_id
     }
     /// Consumes the builder and constructs a [`DeregisterOrganizationAdminAccountInput`](crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput {
-                admin_account_id: self.admin_account_id
-                ,
-            }
+                admin_account_id: self.admin_account_id,
+            },
         )
     }
 }

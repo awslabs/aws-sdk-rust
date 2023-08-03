@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopRxNormInferenceJobOutput`](crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobOutput::job_id): <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeRxNormInferenceJob</code> operation.</p>
     /// - On failure, responds with [`SdkError<StopRxNormInferenceJobError>`](crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError)
-    pub fn stop_rx_norm_inference_job(
-        &self,
-    ) -> crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobFluentBuilder
-    {
+    pub fn stop_rx_norm_inference_job(&self) -> crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobFluentBuilder {
         crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobFluentBuilder::new(self.handle.clone())
     }
 }

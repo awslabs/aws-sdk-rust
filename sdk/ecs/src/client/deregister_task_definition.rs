@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeregisterTaskDefinitionOutput`](crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput) with field(s):
     ///   - [`task_definition(Option<TaskDefinition>)`](crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput::task_definition): <p>The full description of the deregistered task.</p>
     /// - On failure, responds with [`SdkError<DeregisterTaskDefinitionError>`](crate::operation::deregister_task_definition::DeregisterTaskDefinitionError)
-    pub fn deregister_task_definition(
-        &self,
-    ) -> crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionFluentBuilder
-    {
+    pub fn deregister_task_definition(&self) -> crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionFluentBuilder {
         crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

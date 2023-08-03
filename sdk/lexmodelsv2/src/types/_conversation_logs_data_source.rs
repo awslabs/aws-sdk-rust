@@ -31,9 +31,7 @@ impl ConversationLogsDataSource {
         self.locale_id.as_deref()
     }
     /// <p>The filter for the data source of the conversation log.</p>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConversationLogsDataSourceFilterBy> {
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::ConversationLogsDataSourceFilterBy> {
         self.filter.as_ref()
     }
 }
@@ -46,9 +44,7 @@ impl ConversationLogsDataSource {
 
 /// A builder for [`ConversationLogsDataSource`](crate::types::ConversationLogsDataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConversationLogsDataSourceBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias_id: ::std::option::Option<::std::string::String>,
@@ -104,17 +100,12 @@ impl ConversationLogsDataSourceBuilder {
         self
     }
     /// <p>The filter for the data source of the conversation log.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ConversationLogsDataSourceFilterBy>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ConversationLogsDataSourceFilterBy>) -> Self {
         self.filter = input;
         self
     }
     /// <p>The filter for the data source of the conversation log.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConversationLogsDataSourceFilterBy> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ConversationLogsDataSourceFilterBy> {
         &self.filter
     }
     /// Consumes the builder and constructs a [`ConversationLogsDataSource`](crate::types::ConversationLogsDataSource).

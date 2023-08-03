@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`index_arn(Option<String>)`](crate::operation::update_place_index::UpdatePlaceIndexOutput::index_arn): <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>  </ul>
     ///   - [`update_time(Option<DateTime>)`](crate::operation::update_place_index::UpdatePlaceIndexOutput::update_time): <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// - On failure, responds with [`SdkError<UpdatePlaceIndexError>`](crate::operation::update_place_index::UpdatePlaceIndexError)
-    pub fn update_place_index(
-        &self,
-    ) -> crate::operation::update_place_index::builders::UpdatePlaceIndexFluentBuilder {
-        crate::operation::update_place_index::builders::UpdatePlaceIndexFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_place_index(&self) -> crate::operation::update_place_index::builders::UpdatePlaceIndexFluentBuilder {
+        crate::operation::update_place_index::builders::UpdatePlaceIndexFluentBuilder::new(self.handle.clone())
     }
 }

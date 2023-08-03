@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateUsageLimitOutput`](crate::operation::update_usage_limit::UpdateUsageLimitOutput) with field(s):
     ///   - [`usage_limit(Option<UsageLimit>)`](crate::operation::update_usage_limit::UpdateUsageLimitOutput::usage_limit): <p>The updated usage limit object.</p>
     /// - On failure, responds with [`SdkError<UpdateUsageLimitError>`](crate::operation::update_usage_limit::UpdateUsageLimitError)
-    pub fn update_usage_limit(
-        &self,
-    ) -> crate::operation::update_usage_limit::builders::UpdateUsageLimitFluentBuilder {
-        crate::operation::update_usage_limit::builders::UpdateUsageLimitFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_usage_limit(&self) -> crate::operation::update_usage_limit::builders::UpdateUsageLimitFluentBuilder {
+        crate::operation::update_usage_limit::builders::UpdateUsageLimitFluentBuilder::new(self.handle.clone())
     }
 }

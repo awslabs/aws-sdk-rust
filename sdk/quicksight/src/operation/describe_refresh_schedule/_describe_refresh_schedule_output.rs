@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for DescribeRefreshScheduleOutput {
 }
 impl DescribeRefreshScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRefreshScheduleOutput`](crate::operation::describe_refresh_schedule::DescribeRefreshScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_refresh_schedule::builders::DescribeRefreshScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_refresh_schedule::builders::DescribeRefreshScheduleOutputBuilder {
         crate::operation::describe_refresh_schedule::builders::DescribeRefreshScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRefreshScheduleOutput`](crate::operation::describe_refresh_schedule::DescribeRefreshScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRefreshScheduleOutputBuilder {
     pub(crate) refresh_schedule: ::std::option::Option<crate::types::RefreshSchedule>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -68,10 +64,7 @@ impl DescribeRefreshScheduleOutputBuilder {
         self
     }
     /// <p>The refresh schedule.</p>
-    pub fn set_refresh_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::RefreshSchedule>,
-    ) -> Self {
+    pub fn set_refresh_schedule(mut self, input: ::std::option::Option<crate::types::RefreshSchedule>) -> Self {
         self.refresh_schedule = input;
         self
     }
@@ -131,9 +124,7 @@ impl DescribeRefreshScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRefreshScheduleOutput`](crate::operation::describe_refresh_schedule::DescribeRefreshScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_refresh_schedule::DescribeRefreshScheduleOutput {
+    pub fn build(self) -> crate::operation::describe_refresh_schedule::DescribeRefreshScheduleOutput {
         crate::operation::describe_refresh_schedule::DescribeRefreshScheduleOutput {
             refresh_schedule: self.refresh_schedule,
             status: self.status.unwrap_or_default(),

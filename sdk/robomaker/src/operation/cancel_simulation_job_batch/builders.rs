@@ -26,7 +26,7 @@ impl CancelSimulationJobBatchInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelSimulationJobBatchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchInputBuilder,
+    inner: crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchInputBuilder,
 }
 impl CancelSimulationJobBatchFluentBuilder {
     /// Creates a new `CancelSimulationJobBatch`.
@@ -37,7 +37,7 @@ impl CancelSimulationJobBatchFluentBuilder {
         }
     }
     /// Access the CancelSimulationJobBatch as a reference.
-    pub fn as_input(&self) -> &crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CancelSimulationJobBatchFluentBuilder {
             crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CancelSimulationJobBatchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CancelSimulationJobBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CancelSimulationJobBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CancelSimulationJobBatchFluentBuilder {
             crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError>,
     > {
         self.customize_middleware().await
     }

@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEventIntegrationsOutput {
 }
 impl ListEventIntegrationsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventIntegrationsOutput`](crate::operation::list_event_integrations::ListEventIntegrationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_event_integrations::builders::ListEventIntegrationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_event_integrations::builders::ListEventIntegrationsOutputBuilder {
         crate::operation::list_event_integrations::builders::ListEventIntegrationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventIntegrationsOutput`](crate::operation::list_event_integrations::ListEventIntegrationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventIntegrationsOutputBuilder {
-    pub(crate) event_integrations:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventIntegration>>,
+    pub(crate) event_integrations: ::std::option::Option<::std::vec::Vec<crate::types::EventIntegration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListEventIntegrationsOutputBuilder {
         self
     }
     /// <p>The event integrations.</p>
-    pub fn set_event_integrations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventIntegration>>,
-    ) -> Self {
+    pub fn set_event_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventIntegration>>) -> Self {
         self.event_integrations = input;
         self
     }
     /// <p>The event integrations.</p>
-    pub fn get_event_integrations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventIntegration>> {
+    pub fn get_event_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventIntegration>> {
         &self.event_integrations
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

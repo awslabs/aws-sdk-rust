@@ -26,8 +26,7 @@ impl ListEventConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEventConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_event_configurations::builders::ListEventConfigurationsInputBuilder,
+    inner: crate::operation::list_event_configurations::builders::ListEventConfigurationsInputBuilder,
 }
 impl ListEventConfigurationsFluentBuilder {
     /// Creates a new `ListEventConfigurations`.
@@ -38,10 +37,7 @@ impl ListEventConfigurationsFluentBuilder {
         }
     }
     /// Access the ListEventConfigurations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_event_configurations::builders::ListEventConfigurationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_event_configurations::builders::ListEventConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListEventConfigurationsFluentBuilder {
             crate::operation::list_event_configurations::ListEventConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_event_configurations::ListEventConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_event_configurations::ListEventConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListEventConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListEventConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_event_configurations::ListEventConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_event_configurations::ListEventConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_event_configurations::ListEventConfigurationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListEventConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_event_configurations::ListEventConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_event_configurations::ListEventConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_event_configurations::ListEventConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl ListEventConfigurationsFluentBuilder {
             crate::operation::list_event_configurations::ListEventConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_event_configurations::ListEventConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_event_configurations::ListEventConfigurationsError>,
     > {
         self.customize_middleware().await
     }
@@ -130,17 +115,12 @@ impl ListEventConfigurationsFluentBuilder {
         self
     }
     /// <p>Resource type to filter event configurations.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EventNotificationResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::EventNotificationResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
     /// <p>Resource type to filter event configurations.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventNotificationResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::EventNotificationResourceType> {
         self.inner.get_resource_type()
     }
     /// <p>The maximum number of results to return in this operation.</p>

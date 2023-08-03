@@ -68,9 +68,7 @@ impl ContactChannel {
 
 /// A builder for [`ContactChannel`](crate::types::ContactChannel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContactChannelBuilder {
     pub(crate) contact_channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
@@ -81,18 +79,12 @@ pub struct ContactChannelBuilder {
 }
 impl ContactChannelBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn set_contact_channel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_channel_arn = input;
         self
     }
@@ -163,17 +155,12 @@ impl ContactChannelBuilder {
         self
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
-    pub fn set_delivery_address(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactChannelAddress>,
-    ) -> Self {
+    pub fn set_delivery_address(mut self, input: ::std::option::Option<crate::types::ContactChannelAddress>) -> Self {
         self.delivery_address = input;
         self
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
-    pub fn get_delivery_address(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContactChannelAddress> {
+    pub fn get_delivery_address(&self) -> &::std::option::Option<crate::types::ContactChannelAddress> {
         &self.delivery_address
     }
     /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it.</p>
@@ -182,10 +169,7 @@ impl ContactChannelBuilder {
         self
     }
     /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it.</p>
-    pub fn set_activation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivationStatus>,
-    ) -> Self {
+    pub fn set_activation_status(mut self, input: ::std::option::Option<crate::types::ActivationStatus>) -> Self {
         self.activation_status = input;
         self
     }

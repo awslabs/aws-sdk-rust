@@ -31,9 +31,7 @@ impl ApiPassthrough {
 
 /// A builder for [`ApiPassthrough`](crate::types::ApiPassthrough).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApiPassthroughBuilder {
     pub(crate) extensions: ::std::option::Option<crate::types::Extensions>,
     pub(crate) subject: ::std::option::Option<crate::types::Asn1Subject>,
@@ -45,10 +43,7 @@ impl ApiPassthroughBuilder {
         self
     }
     /// <p>Specifies X.509 extension information for a certificate.</p>
-    pub fn set_extensions(
-        mut self,
-        input: ::std::option::Option<crate::types::Extensions>,
-    ) -> Self {
+    pub fn set_extensions(mut self, input: ::std::option::Option<crate::types::Extensions>) -> Self {
         self.extensions = input;
         self
     }

@@ -26,7 +26,7 @@ impl ListStackSetOperationResultsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStackSetOperationResultsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_stack_set_operation_results::builders::ListStackSetOperationResultsInputBuilder,
+    inner: crate::operation::list_stack_set_operation_results::builders::ListStackSetOperationResultsInputBuilder,
 }
 impl ListStackSetOperationResultsFluentBuilder {
     /// Creates a new `ListStackSetOperationResults`.
@@ -37,7 +37,7 @@ impl ListStackSetOperationResultsFluentBuilder {
         }
     }
     /// Access the ListStackSetOperationResults as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_stack_set_operation_results::builders::ListStackSetOperationResultsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_stack_set_operation_results::builders::ListStackSetOperationResultsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListStackSetOperationResultsFluentBuilder {
             crate::operation::list_stack_set_operation_results::ListStackSetOperationResults,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListStackSetOperationResultsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListStackSetOperationResultsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListStackSetOperationResultsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListStackSetOperationResultsFluentBuilder {
             crate::operation::list_stack_set_operation_results::ListStackSetOperationResults,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_stack_set_operation_results::paginator::ListStackSetOperationResultsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_stack_set_operation_results::paginator::ListStackSetOperationResultsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_stack_set_operation_results::paginator::ListStackSetOperationResultsPaginator {
         crate::operation::list_stack_set_operation_results::paginator::ListStackSetOperationResultsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name or unique ID of the stack set that you want to get operation results for.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set that you want to get operation results for.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
@@ -227,17 +210,12 @@ impl ListStackSetOperationResultsFluentBuilder {
         self
     }
     /// <p>The filter to apply to operation results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OperationResultFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationResultFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The filter to apply to operation results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationResultFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationResultFilter>> {
         self.inner.get_filters()
     }
 }

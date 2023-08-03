@@ -19,9 +19,7 @@ impl UpdateFirewallPolicyOutput {
         self.update_token.as_deref()
     }
     /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
-    pub fn firewall_policy_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FirewallPolicyResponse> {
+    pub fn firewall_policy_response(&self) -> ::std::option::Option<&crate::types::FirewallPolicyResponse> {
         self.firewall_policy_response.as_ref()
     }
 }
@@ -32,21 +30,17 @@ impl ::aws_http::request_id::RequestId for UpdateFirewallPolicyOutput {
 }
 impl UpdateFirewallPolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallPolicyOutput`](crate::operation::update_firewall_policy::UpdateFirewallPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::update_firewall_policy::builders::UpdateFirewallPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::update_firewall_policy::builders::UpdateFirewallPolicyOutputBuilder {
         crate::operation::update_firewall_policy::builders::UpdateFirewallPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFirewallPolicyOutput`](crate::operation::update_firewall_policy::UpdateFirewallPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFirewallPolicyOutputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
-    pub(crate) firewall_policy_response:
-        ::std::option::Option<crate::types::FirewallPolicyResponse>,
+    pub(crate) firewall_policy_response: ::std::option::Option<crate::types::FirewallPolicyResponse>,
     _request_id: Option<String>,
 }
 impl UpdateFirewallPolicyOutputBuilder {
@@ -73,17 +67,12 @@ impl UpdateFirewallPolicyOutputBuilder {
         self
     }
     /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
-    pub fn set_firewall_policy_response(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallPolicyResponse>,
-    ) -> Self {
+    pub fn set_firewall_policy_response(mut self, input: ::std::option::Option<crate::types::FirewallPolicyResponse>) -> Self {
         self.firewall_policy_response = input;
         self
     }
     /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
-    pub fn get_firewall_policy_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirewallPolicyResponse> {
+    pub fn get_firewall_policy_response(&self) -> &::std::option::Option<crate::types::FirewallPolicyResponse> {
         &self.firewall_policy_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

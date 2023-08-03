@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`execution_id(Option<String>)`](crate::operation::start_simulation::StartSimulationOutput::execution_id): <p>A universally unique identifier (UUID) for this simulation.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::start_simulation::StartSimulationOutput::creation_time): <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
     /// - On failure, responds with [`SdkError<StartSimulationError>`](crate::operation::start_simulation::StartSimulationError)
-    pub fn start_simulation(
-        &self,
-    ) -> crate::operation::start_simulation::builders::StartSimulationFluentBuilder {
-        crate::operation::start_simulation::builders::StartSimulationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_simulation(&self) -> crate::operation::start_simulation::builders::StartSimulationFluentBuilder {
+        crate::operation::start_simulation::builders::StartSimulationFluentBuilder::new(self.handle.clone())
     }
 }

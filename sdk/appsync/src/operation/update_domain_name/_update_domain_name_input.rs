@@ -22,17 +22,14 @@ impl UpdateDomainNameInput {
 }
 impl UpdateDomainNameInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainNameInput`](crate::operation::update_domain_name::UpdateDomainNameInput).
-    pub fn builder() -> crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder {
         crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDomainNameInput`](crate::operation::update_domain_name::UpdateDomainNameInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDomainNameInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl UpdateDomainNameInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDomainNameInput`](crate::operation::update_domain_name::UpdateDomainNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_domain_name::UpdateDomainNameInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_domain_name::UpdateDomainNameInput {
-                domain_name: self.domain_name,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_domain_name::UpdateDomainNameInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_domain_name::UpdateDomainNameInput {
+            domain_name: self.domain_name,
+            description: self.description,
+        })
     }
 }

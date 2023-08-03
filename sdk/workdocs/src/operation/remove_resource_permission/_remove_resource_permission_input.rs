@@ -46,9 +46,7 @@ impl ::std::fmt::Debug for RemoveResourcePermissionInput {
 }
 impl RemoveResourcePermissionInput {
     /// Creates a new builder-style object to manufacture [`RemoveResourcePermissionInput`](crate::operation::remove_resource_permission::RemoveResourcePermissionInput).
-    pub fn builder(
-    ) -> crate::operation::remove_resource_permission::builders::RemoveResourcePermissionInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_resource_permission::builders::RemoveResourcePermissionInputBuilder {
         crate::operation::remove_resource_permission::builders::RemoveResourcePermissionInputBuilder::default()
     }
 }
@@ -64,18 +62,12 @@ pub struct RemoveResourcePermissionInputBuilder {
 }
 impl RemoveResourcePermissionInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -117,10 +109,7 @@ impl RemoveResourcePermissionInputBuilder {
         self
     }
     /// <p>The principal type of the resource.</p>
-    pub fn set_principal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PrincipalType>,
-    ) -> Self {
+    pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
         self.principal_type = input;
         self
     }
@@ -135,14 +124,12 @@ impl RemoveResourcePermissionInputBuilder {
         crate::operation::remove_resource_permission::RemoveResourcePermissionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_resource_permission::RemoveResourcePermissionInput {
-                authentication_token: self.authentication_token,
-                resource_id: self.resource_id,
-                principal_id: self.principal_id,
-                principal_type: self.principal_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_resource_permission::RemoveResourcePermissionInput {
+            authentication_token: self.authentication_token,
+            resource_id: self.resource_id,
+            principal_id: self.principal_id,
+            principal_type: self.principal_type,
+        })
     }
 }
 impl ::std::fmt::Debug for RemoveResourcePermissionInputBuilder {

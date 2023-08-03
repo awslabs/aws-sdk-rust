@@ -5,16 +5,16 @@ pub use crate::operation::delete_repository_permissions_policy::_delete_reposito
 
 impl DeleteRepositoryPermissionsPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_repository_permissions_policy();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl DeleteRepositoryPermissionsPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRepositoryPermissionsPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_repository_permissions_policy::builders::DeleteRepositoryPermissionsPolicyInputBuilder,
+    inner: crate::operation::delete_repository_permissions_policy::builders::DeleteRepositoryPermissionsPolicyInputBuilder,
 }
 impl DeleteRepositoryPermissionsPolicyFluentBuilder {
     /// Creates a new `DeleteRepositoryPermissionsPolicy`.
@@ -39,15 +39,20 @@ impl DeleteRepositoryPermissionsPolicyFluentBuilder {
         }
     }
     /// Access the DeleteRepositoryPermissionsPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_repository_permissions_policy::builders::DeleteRepositoryPermissionsPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_repository_permissions_policy::builders::DeleteRepositoryPermissionsPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicy,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl DeleteRepositoryPermissionsPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,17 +89,26 @@ impl DeleteRepositoryPermissionsPolicyFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicy,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError>,
+    > {
         self.customize_middleware().await
     }
     /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
@@ -139,18 +154,12 @@ impl DeleteRepositoryPermissionsPolicyFluentBuilder {
         self.inner.get_repository()
     }
     /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
-    pub fn policy_revision(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_revision(input.into());
         self
     }
     /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
-    pub fn set_policy_revision(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_revision(input);
         self
     }

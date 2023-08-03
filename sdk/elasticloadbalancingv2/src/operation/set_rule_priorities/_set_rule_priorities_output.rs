@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for SetRulePrioritiesOutput {
 }
 impl SetRulePrioritiesOutput {
     /// Creates a new builder-style object to manufacture [`SetRulePrioritiesOutput`](crate::operation::set_rule_priorities::SetRulePrioritiesOutput).
-    pub fn builder(
-    ) -> crate::operation::set_rule_priorities::builders::SetRulePrioritiesOutputBuilder {
+    pub fn builder() -> crate::operation::set_rule_priorities::builders::SetRulePrioritiesOutputBuilder {
         crate::operation::set_rule_priorities::builders::SetRulePrioritiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetRulePrioritiesOutput`](crate::operation::set_rule_priorities::SetRulePrioritiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetRulePrioritiesOutputBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     _request_id: Option<String>,
@@ -49,10 +46,7 @@ impl SetRulePrioritiesOutputBuilder {
         self
     }
     /// <p>Information about the rules.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }

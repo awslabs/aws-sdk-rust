@@ -26,7 +26,7 @@ impl GetAccountPasswordPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccountPasswordPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyInputBuilder,
+    inner: crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyInputBuilder,
 }
 impl GetAccountPasswordPolicyFluentBuilder {
     /// Creates a new `GetAccountPasswordPolicy`.
@@ -37,7 +37,7 @@ impl GetAccountPasswordPolicyFluentBuilder {
         }
     }
     /// Access the GetAccountPasswordPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetAccountPasswordPolicyFluentBuilder {
             crate::operation::get_account_password_policy::GetAccountPasswordPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_password_policy::GetAccountPasswordPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_password_policy::GetAccountPasswordPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetAccountPasswordPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetAccountPasswordPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_account_password_policy::GetAccountPasswordPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_password_policy::GetAccountPasswordPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_password_policy::GetAccountPasswordPolicyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetAccountPasswordPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_account_password_policy::GetAccountPasswordPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_password_policy::GetAccountPasswordPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_password_policy::GetAccountPasswordPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetAccountPasswordPolicyFluentBuilder {
             crate::operation::get_account_password_policy::GetAccountPasswordPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_account_password_policy::GetAccountPasswordPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_password_policy::GetAccountPasswordPolicyError>,
     > {
         self.customize_middleware().await
     }

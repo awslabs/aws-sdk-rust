@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`instances_health(Option<InstanceHealthSummary>)`](crate::operation::describe_environment_health::DescribeEnvironmentHealthOutput::instances_health): <p>Summary health information for the instances in the environment.</p>
     ///   - [`refreshed_at(Option<DateTime>)`](crate::operation::describe_environment_health::DescribeEnvironmentHealthOutput::refreshed_at): <p>The date and time that the health information was retrieved.</p>
     /// - On failure, responds with [`SdkError<DescribeEnvironmentHealthError>`](crate::operation::describe_environment_health::DescribeEnvironmentHealthError)
-    pub fn describe_environment_health(&self) -> crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthFluentBuilder{
+    pub fn describe_environment_health(&self) -> crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthFluentBuilder {
         crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthFluentBuilder::new(self.handle.clone())
     }
 }

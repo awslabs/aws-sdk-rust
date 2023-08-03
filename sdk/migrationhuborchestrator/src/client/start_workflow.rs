@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::start_workflow::StartWorkflowOutput::status_message): <p>The status message of the migration workflow.</p>
     ///   - [`last_start_time(Option<DateTime>)`](crate::operation::start_workflow::StartWorkflowOutput::last_start_time): <p>The time at which the migration workflow was last started.</p>
     /// - On failure, responds with [`SdkError<StartWorkflowError>`](crate::operation::start_workflow::StartWorkflowError)
-    pub fn start_workflow(
-        &self,
-    ) -> crate::operation::start_workflow::builders::StartWorkflowFluentBuilder {
-        crate::operation::start_workflow::builders::StartWorkflowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_workflow(&self) -> crate::operation::start_workflow::builders::StartWorkflowFluentBuilder {
+        crate::operation::start_workflow::builders::StartWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

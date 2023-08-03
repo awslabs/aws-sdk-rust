@@ -18,9 +18,7 @@ pub struct UpdateComponentData {
     pub component_type: ::std::option::Option<::std::string::String>,
     /// <p>Describes the component's properties.</p>
     #[doc(hidden)]
-    pub properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-    >,
+    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
     /// <p>The components that are instances of the main component.</p>
     #[doc(hidden)]
     pub children: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
@@ -30,32 +28,17 @@ pub struct UpdateComponentData {
     /// <p>Describes the properties that can be overriden to customize the component.</p>
     #[doc(hidden)]
     pub overrides: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
     /// <p>The data binding information for the component's properties.</p>
     #[doc(hidden)]
-    pub binding_properties: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentBindingPropertiesValue,
-        >,
-    >,
+    pub binding_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue>>,
     /// <p>The configuration for binding a component's properties to a data model. Use this for a collection component.</p>
     #[doc(hidden)]
-    pub collection_properties: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentDataConfiguration,
-        >,
-    >,
+    pub collection_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDataConfiguration>>,
     /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
     #[doc(hidden)]
-    pub events: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
-    >,
+    pub events: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>>,
     /// <p>The schema version of the component when it was imported.</p>
     #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
@@ -78,11 +61,7 @@ impl UpdateComponentData {
         self.component_type.as_deref()
     }
     /// <p>Describes the component's properties.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-    > {
+    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>> {
         self.properties.as_ref()
     }
     /// <p>The components that are instances of the main component.</p>
@@ -97,41 +76,24 @@ impl UpdateComponentData {
     pub fn overrides(
         &self,
     ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         self.overrides.as_ref()
     }
     /// <p>The data binding information for the component's properties.</p>
     pub fn binding_properties(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentBindingPropertiesValue,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue>> {
         self.binding_properties.as_ref()
     }
     /// <p>The configuration for binding a component's properties to a data model. Use this for a collection component.</p>
     pub fn collection_properties(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentDataConfiguration,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentDataConfiguration>> {
         self.collection_properties.as_ref()
     }
     /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-    pub fn events(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
-    > {
+    pub fn events(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>> {
         self.events.as_ref()
     }
     /// <p>The schema version of the component when it was imported.</p>
@@ -148,40 +110,23 @@ impl UpdateComponentData {
 
 /// A builder for [`UpdateComponentData`](crate::types::UpdateComponentData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateComponentDataBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) source_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_type: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-    >,
+    pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
     pub(crate) children: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
     pub(crate) variants: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVariant>>,
     pub(crate) overrides: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
-    pub(crate) binding_properties: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentBindingPropertiesValue,
-        >,
-    >,
-    pub(crate) collection_properties: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentDataConfiguration,
-        >,
-    >,
-    pub(crate) events: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
-    >,
+    pub(crate) binding_properties:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue>>,
+    pub(crate) collection_properties:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDataConfiguration>>,
+    pub(crate) events: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>>,
     pub(crate) schema_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateComponentDataBuilder {
@@ -228,18 +173,12 @@ impl UpdateComponentDataBuilder {
         &self.source_id
     }
     /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
-    pub fn component_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
-    pub fn set_component_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_type = input;
         self
     }
@@ -252,11 +191,7 @@ impl UpdateComponentDataBuilder {
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>Describes the component's properties.</p>
-    pub fn properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentProperty,
-    ) -> Self {
+    pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentProperty) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.properties = ::std::option::Option::Some(hash_map);
@@ -265,19 +200,13 @@ impl UpdateComponentDataBuilder {
     /// <p>Describes the component's properties.</p>
     pub fn set_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
     ) -> Self {
         self.properties = input;
         self
     }
     /// <p>Describes the component's properties.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-    > {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>> {
         &self.properties
     }
     /// Appends an item to `children`.
@@ -292,17 +221,12 @@ impl UpdateComponentDataBuilder {
         self
     }
     /// <p>The components that are instances of the main component.</p>
-    pub fn set_children(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
-    ) -> Self {
+    pub fn set_children(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>) -> Self {
         self.children = input;
         self
     }
     /// <p>The components that are instances of the main component.</p>
-    pub fn get_children(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>> {
+    pub fn get_children(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>> {
         &self.children
     }
     /// Appends an item to `variants`.
@@ -317,17 +241,12 @@ impl UpdateComponentDataBuilder {
         self
     }
     /// <p>A list of the unique variants of the main component being updated.</p>
-    pub fn set_variants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVariant>>,
-    ) -> Self {
+    pub fn set_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVariant>>) -> Self {
         self.variants = input;
         self
     }
     /// <p>A list of the unique variants of the main component being updated.</p>
-    pub fn get_variants(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentVariant>> {
+    pub fn get_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentVariant>> {
         &self.variants
     }
     /// Adds a key-value pair to `overrides`.
@@ -349,10 +268,7 @@ impl UpdateComponentDataBuilder {
     pub fn set_overrides(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
         >,
     ) -> Self {
         self.overrides = input;
@@ -362,10 +278,7 @@ impl UpdateComponentDataBuilder {
     pub fn get_overrides(
         &self,
     ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         &self.overrides
     }
@@ -387,12 +300,7 @@ impl UpdateComponentDataBuilder {
     /// <p>The data binding information for the component's properties.</p>
     pub fn set_binding_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::ComponentBindingPropertiesValue,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue>>,
     ) -> Self {
         self.binding_properties = input;
         self
@@ -400,12 +308,7 @@ impl UpdateComponentDataBuilder {
     /// <p>The data binding information for the component's properties.</p>
     pub fn get_binding_properties(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentBindingPropertiesValue,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue>> {
         &self.binding_properties
     }
     /// Adds a key-value pair to `collection_properties`.
@@ -413,11 +316,7 @@ impl UpdateComponentDataBuilder {
     /// To override the contents of this collection use [`set_collection_properties`](Self::set_collection_properties).
     ///
     /// <p>The configuration for binding a component's properties to a data model. Use this for a collection component.</p>
-    pub fn collection_properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentDataConfiguration,
-    ) -> Self {
+    pub fn collection_properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentDataConfiguration) -> Self {
         let mut hash_map = self.collection_properties.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.collection_properties = ::std::option::Option::Some(hash_map);
@@ -426,12 +325,7 @@ impl UpdateComponentDataBuilder {
     /// <p>The configuration for binding a component's properties to a data model. Use this for a collection component.</p>
     pub fn set_collection_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::ComponentDataConfiguration,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDataConfiguration>>,
     ) -> Self {
         self.collection_properties = input;
         self
@@ -439,12 +333,7 @@ impl UpdateComponentDataBuilder {
     /// <p>The configuration for binding a component's properties to a data model. Use this for a collection component.</p>
     pub fn get_collection_properties(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentDataConfiguration,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDataConfiguration>> {
         &self.collection_properties
     }
     /// Adds a key-value pair to `events`.
@@ -452,11 +341,7 @@ impl UpdateComponentDataBuilder {
     /// To override the contents of this collection use [`set_events`](Self::set_events).
     ///
     /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-    pub fn events(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentEvent,
-    ) -> Self {
+    pub fn events(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentEvent) -> Self {
         let mut hash_map = self.events.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.events = ::std::option::Option::Some(hash_map);
@@ -465,34 +350,22 @@ impl UpdateComponentDataBuilder {
     /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
     pub fn set_events(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>>,
     ) -> Self {
         self.events = input;
         self
     }
     /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
-    > {
+    pub fn get_events(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>> {
         &self.events
     }
     /// <p>The schema version of the component when it was imported.</p>
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema version of the component when it was imported.</p>
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version = input;
         self
     }

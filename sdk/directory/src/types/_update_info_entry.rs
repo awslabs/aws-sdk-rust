@@ -72,9 +72,7 @@ impl UpdateInfoEntry {
 
 /// A builder for [`UpdateInfoEntry`](crate::types::UpdateInfoEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInfoEntryBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::UpdateStatus>,
@@ -115,18 +113,12 @@ impl UpdateInfoEntryBuilder {
         &self.status
     }
     /// <p> The reason for the current status of the update type activity. </p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The reason for the current status of the update type activity. </p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -154,10 +146,7 @@ impl UpdateInfoEntryBuilder {
         self
     }
     /// <p> The new value of the target setting. </p>
-    pub fn set_new_value(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateValue>,
-    ) -> Self {
+    pub fn set_new_value(mut self, input: ::std::option::Option<crate::types::UpdateValue>) -> Self {
         self.new_value = input;
         self
     }
@@ -171,10 +160,7 @@ impl UpdateInfoEntryBuilder {
         self
     }
     /// <p> The old value of the target setting. </p>
-    pub fn set_previous_value(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateValue>,
-    ) -> Self {
+    pub fn set_previous_value(mut self, input: ::std::option::Option<crate::types::UpdateValue>) -> Self {
         self.previous_value = input;
         self
     }
@@ -188,10 +174,7 @@ impl UpdateInfoEntryBuilder {
         self
     }
     /// <p> The start time of the <code>UpdateDirectorySetup</code> for the particular type. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -205,17 +188,12 @@ impl UpdateInfoEntryBuilder {
         self
     }
     /// <p> The last updated date and time of a particular directory setting. </p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p> The last updated date and time of a particular directory setting. </p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`UpdateInfoEntry`](crate::types::UpdateInfoEntry).

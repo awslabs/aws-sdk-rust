@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`status(Option<ZonalShiftStatus>)`](crate::operation::start_zonal_shift::StartZonalShiftOutput::status): <p>A status for a zonal shift.</p>  <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>  <ul>   <li> <p> <b>ACTIVE:</b> The zonal shift is started and active.</p> </li>   <li> <p> <b>EXPIRED:</b> The zonal shift has expired (the expiry time was exceeded).</p> </li>   <li> <p> <b>CANCELED:</b> The zonal shift was canceled.</p> </li>  </ul>
     ///   - [`comment(Option<String>)`](crate::operation::start_zonal_shift::StartZonalShiftOutput::comment): <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
     /// - On failure, responds with [`SdkError<StartZonalShiftError>`](crate::operation::start_zonal_shift::StartZonalShiftError)
-    pub fn start_zonal_shift(
-        &self,
-    ) -> crate::operation::start_zonal_shift::builders::StartZonalShiftFluentBuilder {
-        crate::operation::start_zonal_shift::builders::StartZonalShiftFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_zonal_shift(&self) -> crate::operation::start_zonal_shift::builders::StartZonalShiftFluentBuilder {
+        crate::operation::start_zonal_shift::builders::StartZonalShiftFluentBuilder::new(self.handle.clone())
     }
 }

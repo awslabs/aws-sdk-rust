@@ -43,8 +43,7 @@ impl PutLoggingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::put_logging_configuration::builders::PutLoggingConfigurationInputBuilder,
+    inner: crate::operation::put_logging_configuration::builders::PutLoggingConfigurationInputBuilder,
 }
 impl PutLoggingConfigurationFluentBuilder {
     /// Creates a new `PutLoggingConfiguration`.
@@ -55,10 +54,7 @@ impl PutLoggingConfigurationFluentBuilder {
         }
     }
     /// Access the PutLoggingConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_logging_configuration::builders::PutLoggingConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_logging_configuration::builders::PutLoggingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -70,9 +66,7 @@ impl PutLoggingConfigurationFluentBuilder {
             crate::operation::put_logging_configuration::PutLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_logging_configuration::PutLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_logging_configuration::PutLoggingConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -82,10 +76,7 @@ impl PutLoggingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -94,9 +85,7 @@ impl PutLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_logging_configuration::PutLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_logging_configuration::PutLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_logging_configuration::PutLoggingConfigurationError>,
     > {
         let op = self
             .inner
@@ -119,9 +108,7 @@ impl PutLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_logging_configuration::PutLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_logging_configuration::PutLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_logging_configuration::PutLoggingConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -135,9 +122,7 @@ impl PutLoggingConfigurationFluentBuilder {
             crate::operation::put_logging_configuration::PutLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_logging_configuration::PutLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_logging_configuration::PutLoggingConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +132,12 @@ impl PutLoggingConfigurationFluentBuilder {
         self
     }
     /// <p></p>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.inner = self.inner.set_logging_configuration(input);
         self
     }
     /// <p></p>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         self.inner.get_logging_configuration()
     }
 }

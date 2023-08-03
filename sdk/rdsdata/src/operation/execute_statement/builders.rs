@@ -10,10 +10,7 @@ impl ExecuteStatementInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::execute_statement::ExecuteStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_statement::ExecuteStatementError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_statement::ExecuteStatementError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.execute_statement();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl ExecuteStatementFluentBuilder {
         }
     }
     /// Access the ExecuteStatement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::execute_statement::builders::ExecuteStatementInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::execute_statement::builders::ExecuteStatementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl ExecuteStatementFluentBuilder {
             crate::operation::execute_statement::ExecuteStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_statement::ExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_statement::ExecuteStatementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl ExecuteStatementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl ExecuteStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_statement::ExecuteStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_statement::ExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_statement::ExecuteStatementError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl ExecuteStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_statement::ExecuteStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_statement::ExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_statement::ExecuteStatementError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl ExecuteStatementFluentBuilder {
             crate::operation::execute_statement::ExecuteStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_statement::ExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_statement::ExecuteStatementError>,
     > {
         self.customize_middleware().await
     }
@@ -218,36 +202,25 @@ impl ExecuteStatementFluentBuilder {
     /// <p>The parameters for the SQL statement.</p> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>The parameters for the SQL statement.</p> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
         self.inner.get_parameters()
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
@@ -296,10 +269,7 @@ impl ExecuteStatementFluentBuilder {
         self
     }
     /// <p>Options that control how the result set is returned.</p>
-    pub fn set_result_set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ResultSetOptions>,
-    ) -> Self {
+    pub fn set_result_set_options(mut self, input: ::std::option::Option<crate::types::ResultSetOptions>) -> Self {
         self.inner = self.inner.set_result_set_options(input);
         self
     }
@@ -315,10 +285,7 @@ impl ExecuteStatementFluentBuilder {
     }
     /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
     /// <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_format_records_as(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordsFormatType>,
-    ) -> Self {
+    pub fn set_format_records_as(mut self, input: ::std::option::Option<crate::types::RecordsFormatType>) -> Self {
         self.inner = self.inner.set_format_records_as(input);
         self
     }

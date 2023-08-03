@@ -22,36 +22,26 @@ impl ::aws_http::request_id::RequestId for StartPipelineExecutionOutput {
 }
 impl StartPipelineExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartPipelineExecutionOutput`](crate::operation::start_pipeline_execution::StartPipelineExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::start_pipeline_execution::builders::StartPipelineExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_pipeline_execution::builders::StartPipelineExecutionOutputBuilder {
         crate::operation::start_pipeline_execution::builders::StartPipelineExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartPipelineExecutionOutput`](crate::operation::start_pipeline_execution::StartPipelineExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartPipelineExecutionOutputBuilder {
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartPipelineExecutionOutputBuilder {
     /// <p>The unique system-generated ID of the pipeline execution that was started.</p>
-    pub fn pipeline_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique system-generated ID of the pipeline execution that was started.</p>
-    pub fn set_pipeline_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_id = input;
         self
     }

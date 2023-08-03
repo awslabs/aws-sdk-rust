@@ -14,9 +14,7 @@ pub struct MetricPolicy {
 }
 impl MetricPolicy {
     /// <p>A setting to enable or disable metrics at the container level.</p>
-    pub fn container_level_metrics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContainerLevelMetrics> {
+    pub fn container_level_metrics(&self) -> ::std::option::Option<&crate::types::ContainerLevelMetrics> {
         self.container_level_metrics.as_ref()
     }
     /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
@@ -33,13 +31,10 @@ impl MetricPolicy {
 
 /// A builder for [`MetricPolicy`](crate::types::MetricPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricPolicyBuilder {
     pub(crate) container_level_metrics: ::std::option::Option<crate::types::ContainerLevelMetrics>,
-    pub(crate) metric_policy_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricPolicyRule>>,
+    pub(crate) metric_policy_rules: ::std::option::Option<::std::vec::Vec<crate::types::MetricPolicyRule>>,
 }
 impl MetricPolicyBuilder {
     /// <p>A setting to enable or disable metrics at the container level.</p>
@@ -48,17 +43,12 @@ impl MetricPolicyBuilder {
         self
     }
     /// <p>A setting to enable or disable metrics at the container level.</p>
-    pub fn set_container_level_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerLevelMetrics>,
-    ) -> Self {
+    pub fn set_container_level_metrics(mut self, input: ::std::option::Option<crate::types::ContainerLevelMetrics>) -> Self {
         self.container_level_metrics = input;
         self
     }
     /// <p>A setting to enable or disable metrics at the container level.</p>
-    pub fn get_container_level_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerLevelMetrics> {
+    pub fn get_container_level_metrics(&self) -> &::std::option::Option<crate::types::ContainerLevelMetrics> {
         &self.container_level_metrics
     }
     /// Appends an item to `metric_policy_rules`.
@@ -73,17 +63,12 @@ impl MetricPolicyBuilder {
         self
     }
     /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
-    pub fn set_metric_policy_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricPolicyRule>>,
-    ) -> Self {
+    pub fn set_metric_policy_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricPolicyRule>>) -> Self {
         self.metric_policy_rules = input;
         self
     }
     /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
-    pub fn get_metric_policy_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricPolicyRule>> {
+    pub fn get_metric_policy_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricPolicyRule>> {
         &self.metric_policy_rules
     }
     /// Consumes the builder and constructs a [`MetricPolicy`](crate::types::MetricPolicy).

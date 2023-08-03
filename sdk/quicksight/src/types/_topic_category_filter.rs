@@ -19,9 +19,7 @@ pub struct TopicCategoryFilter {
 }
 impl TopicCategoryFilter {
     /// <p>The category filter function. Valid values for this structure are <code>EXACT</code> and <code>CONTAINS</code>.</p>
-    pub fn category_filter_function(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CategoryFilterFunction> {
+    pub fn category_filter_function(&self) -> ::std::option::Option<&crate::types::CategoryFilterFunction> {
         self.category_filter_function.as_ref()
     }
     /// <p>The category filter type. This element is used to specify whether a filter is a simple category filter or an inverse category filter.</p>
@@ -58,8 +56,7 @@ impl TopicCategoryFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct TopicCategoryFilterBuilder {
-    pub(crate) category_filter_function:
-        ::std::option::Option<crate::types::CategoryFilterFunction>,
+    pub(crate) category_filter_function: ::std::option::Option<crate::types::CategoryFilterFunction>,
     pub(crate) category_filter_type: ::std::option::Option<crate::types::CategoryFilterType>,
     pub(crate) constant: ::std::option::Option<crate::types::TopicCategoryFilterConstant>,
     pub(crate) inverse: ::std::option::Option<bool>,
@@ -71,17 +68,12 @@ impl TopicCategoryFilterBuilder {
         self
     }
     /// <p>The category filter function. Valid values for this structure are <code>EXACT</code> and <code>CONTAINS</code>.</p>
-    pub fn set_category_filter_function(
-        mut self,
-        input: ::std::option::Option<crate::types::CategoryFilterFunction>,
-    ) -> Self {
+    pub fn set_category_filter_function(mut self, input: ::std::option::Option<crate::types::CategoryFilterFunction>) -> Self {
         self.category_filter_function = input;
         self
     }
     /// <p>The category filter function. Valid values for this structure are <code>EXACT</code> and <code>CONTAINS</code>.</p>
-    pub fn get_category_filter_function(
-        &self,
-    ) -> &::std::option::Option<crate::types::CategoryFilterFunction> {
+    pub fn get_category_filter_function(&self) -> &::std::option::Option<crate::types::CategoryFilterFunction> {
         &self.category_filter_function
     }
     /// <p>The category filter type. This element is used to specify whether a filter is a simple category filter or an inverse category filter.</p>
@@ -90,17 +82,12 @@ impl TopicCategoryFilterBuilder {
         self
     }
     /// <p>The category filter type. This element is used to specify whether a filter is a simple category filter or an inverse category filter.</p>
-    pub fn set_category_filter_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CategoryFilterType>,
-    ) -> Self {
+    pub fn set_category_filter_type(mut self, input: ::std::option::Option<crate::types::CategoryFilterType>) -> Self {
         self.category_filter_type = input;
         self
     }
     /// <p>The category filter type. This element is used to specify whether a filter is a simple category filter or an inverse category filter.</p>
-    pub fn get_category_filter_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::CategoryFilterType> {
+    pub fn get_category_filter_type(&self) -> &::std::option::Option<crate::types::CategoryFilterType> {
         &self.category_filter_type
     }
     /// <p>The constant used in a category filter.</p>
@@ -109,17 +96,12 @@ impl TopicCategoryFilterBuilder {
         self
     }
     /// <p>The constant used in a category filter.</p>
-    pub fn set_constant(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicCategoryFilterConstant>,
-    ) -> Self {
+    pub fn set_constant(mut self, input: ::std::option::Option<crate::types::TopicCategoryFilterConstant>) -> Self {
         self.constant = input;
         self
     }
     /// <p>The constant used in a category filter.</p>
-    pub fn get_constant(
-        &self,
-    ) -> &::std::option::Option<crate::types::TopicCategoryFilterConstant> {
+    pub fn get_constant(&self) -> &::std::option::Option<crate::types::TopicCategoryFilterConstant> {
         &self.constant
     }
     /// <p>A Boolean value that indicates if the filter is inverse.</p>

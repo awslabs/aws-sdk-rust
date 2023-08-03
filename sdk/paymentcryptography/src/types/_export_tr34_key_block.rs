@@ -49,10 +49,7 @@ impl ::std::fmt::Debug for ExportTr34KeyBlock {
             "certificate_authority_public_key_identifier",
             &self.certificate_authority_public_key_identifier,
         );
-        formatter.field(
-            "wrapping_key_certificate",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("wrapping_key_certificate", &"*** Sensitive Data Redacted ***");
         formatter.field("export_token", &self.export_token);
         formatter.field("key_block_format", &self.key_block_format);
         formatter.field("random_nonce", &self.random_nonce);
@@ -70,8 +67,7 @@ impl ExportTr34KeyBlock {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ExportTr34KeyBlockBuilder {
-    pub(crate) certificate_authority_public_key_identifier:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_authority_public_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) wrapping_key_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) export_token: ::std::option::Option<::std::string::String>,
     pub(crate) key_block_format: ::std::option::Option<crate::types::Tr34KeyBlockFormat>,
@@ -79,41 +75,26 @@ pub struct ExportTr34KeyBlockBuilder {
 }
 impl ExportTr34KeyBlockBuilder {
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during TR-34 key export.</p>
-    pub fn certificate_authority_public_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.certificate_authority_public_key_identifier =
-            ::std::option::Option::Some(input.into());
+    pub fn certificate_authority_public_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.certificate_authority_public_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during TR-34 key export.</p>
-    pub fn set_certificate_authority_public_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_public_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_public_key_identifier = input;
         self
     }
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during TR-34 key export.</p>
-    pub fn get_certificate_authority_public_key_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_certificate_authority_public_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_authority_public_key_identifier
     }
     /// <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services Payment Cryptography uses this certificate to wrap the key under export.</p>
-    pub fn wrapping_key_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wrapping_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services Payment Cryptography uses this certificate to wrap the key under export.</p>
-    pub fn set_wrapping_key_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_wrapping_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wrapping_key_certificate = input;
         self
     }
@@ -141,10 +122,7 @@ impl ExportTr34KeyBlockBuilder {
         self
     }
     /// <p>The format of key block that Amazon Web Services Payment Cryptography will use during key export.</p>
-    pub fn set_key_block_format(
-        mut self,
-        input: ::std::option::Option<crate::types::Tr34KeyBlockFormat>,
-    ) -> Self {
+    pub fn set_key_block_format(mut self, input: ::std::option::Option<crate::types::Tr34KeyBlockFormat>) -> Self {
         self.key_block_format = input;
         self
     }
@@ -169,8 +147,7 @@ impl ExportTr34KeyBlockBuilder {
     /// Consumes the builder and constructs a [`ExportTr34KeyBlock`](crate::types::ExportTr34KeyBlock).
     pub fn build(self) -> crate::types::ExportTr34KeyBlock {
         crate::types::ExportTr34KeyBlock {
-            certificate_authority_public_key_identifier: self
-                .certificate_authority_public_key_identifier,
+            certificate_authority_public_key_identifier: self.certificate_authority_public_key_identifier,
             wrapping_key_certificate: self.wrapping_key_certificate,
             export_token: self.export_token,
             key_block_format: self.key_block_format,
@@ -185,10 +162,7 @@ impl ::std::fmt::Debug for ExportTr34KeyBlockBuilder {
             "certificate_authority_public_key_identifier",
             &self.certificate_authority_public_key_identifier,
         );
-        formatter.field(
-            "wrapping_key_certificate",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("wrapping_key_certificate", &"*** Sensitive Data Redacted ***");
         formatter.field("export_token", &self.export_token);
         formatter.field("key_block_format", &self.key_block_format);
         formatter.field("random_nonce", &self.random_nonce);

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`task_template_id(impl ::std::convert::Into<String>)`](crate::operation::delete_task_template::builders::DeleteTaskTemplateFluentBuilder::task_template_id) / [`set_task_template_id(Option<String>)`](crate::operation::delete_task_template::builders::DeleteTaskTemplateFluentBuilder::set_task_template_id): <p>A unique identifier for the task template.</p>
     /// - On success, responds with [`DeleteTaskTemplateOutput`](crate::operation::delete_task_template::DeleteTaskTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteTaskTemplateError>`](crate::operation::delete_task_template::DeleteTaskTemplateError)
-    pub fn delete_task_template(
-        &self,
-    ) -> crate::operation::delete_task_template::builders::DeleteTaskTemplateFluentBuilder {
-        crate::operation::delete_task_template::builders::DeleteTaskTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_task_template(&self) -> crate::operation::delete_task_template::builders::DeleteTaskTemplateFluentBuilder {
+        crate::operation::delete_task_template::builders::DeleteTaskTemplateFluentBuilder::new(self.handle.clone())
     }
 }

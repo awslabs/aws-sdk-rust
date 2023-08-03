@@ -41,10 +41,7 @@ impl DescribeStreamSummaryFluentBuilder {
         }
     }
     /// Access the DescribeStreamSummary as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_stream_summary::builders::DescribeStreamSummaryInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_stream_summary::builders::DescribeStreamSummaryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl DescribeStreamSummaryFluentBuilder {
             crate::operation::describe_stream_summary::DescribeStreamSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stream_summary::DescribeStreamSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream_summary::DescribeStreamSummaryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl DescribeStreamSummaryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl DescribeStreamSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stream_summary::DescribeStreamSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stream_summary::DescribeStreamSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream_summary::DescribeStreamSummaryError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl DescribeStreamSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stream_summary::DescribeStreamSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stream_summary::DescribeStreamSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream_summary::DescribeStreamSummaryError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl DescribeStreamSummaryFluentBuilder {
             crate::operation::describe_stream_summary::DescribeStreamSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stream_summary::DescribeStreamSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream_summary::DescribeStreamSummaryError>,
     > {
         self.customize_middleware().await
     }

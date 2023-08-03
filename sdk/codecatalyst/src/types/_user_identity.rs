@@ -44,9 +44,7 @@ impl UserIdentity {
 
 /// A builder for [`UserIdentity`](crate::types::UserIdentity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserIdentityBuilder {
     pub(crate) user_type: ::std::option::Option<crate::types::UserType>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
@@ -97,18 +95,12 @@ impl UserIdentityBuilder {
         &self.user_name
     }
     /// <p>The Amazon Web Services account number of the user in Amazon Web Services, if any.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account number of the user in Amazon Web Services, if any.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }

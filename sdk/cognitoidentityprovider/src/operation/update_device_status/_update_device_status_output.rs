@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for UpdateDeviceStatusOutput {
 }
 impl UpdateDeviceStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDeviceStatusOutput`](crate::operation::update_device_status::UpdateDeviceStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::update_device_status::builders::UpdateDeviceStatusOutputBuilder {
+    pub fn builder() -> crate::operation::update_device_status::builders::UpdateDeviceStatusOutputBuilder {
         crate::operation::update_device_status::builders::UpdateDeviceStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDeviceStatusOutput`](crate::operation::update_device_status::UpdateDeviceStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDeviceStatusOutputBuilder {
     _request_id: Option<String>,
 }

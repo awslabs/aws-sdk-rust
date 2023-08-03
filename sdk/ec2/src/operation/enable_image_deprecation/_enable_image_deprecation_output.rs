@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for EnableImageDeprecationOutput {
 }
 impl EnableImageDeprecationOutput {
     /// Creates a new builder-style object to manufacture [`EnableImageDeprecationOutput`](crate::operation::enable_image_deprecation::EnableImageDeprecationOutput).
-    pub fn builder(
-    ) -> crate::operation::enable_image_deprecation::builders::EnableImageDeprecationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_image_deprecation::builders::EnableImageDeprecationOutputBuilder {
         crate::operation::enable_image_deprecation::builders::EnableImageDeprecationOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableImageDeprecationOutput`](crate::operation::enable_image_deprecation::EnableImageDeprecationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableImageDeprecationOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

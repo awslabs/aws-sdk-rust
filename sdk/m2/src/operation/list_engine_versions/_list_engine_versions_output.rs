@@ -5,8 +5,7 @@
 pub struct ListEngineVersionsOutput {
     /// <p>Returns the engine versions.</p>
     #[doc(hidden)]
-    pub engine_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionsSummary>>,
+    pub engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionsSummary>>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEngineVersionsOutput {
 }
 impl ListEngineVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListEngineVersionsOutput`](crate::operation::list_engine_versions::ListEngineVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_engine_versions::builders::ListEngineVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_engine_versions::builders::ListEngineVersionsOutputBuilder {
         crate::operation::list_engine_versions::builders::ListEngineVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEngineVersionsOutput`](crate::operation::list_engine_versions::ListEngineVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEngineVersionsOutputBuilder {
-    pub(crate) engine_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionsSummary>>,
+    pub(crate) engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListEngineVersionsOutputBuilder {
         self
     }
     /// <p>Returns the engine versions.</p>
-    pub fn set_engine_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionsSummary>>,
-    ) -> Self {
+    pub fn set_engine_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionsSummary>>) -> Self {
         self.engine_versions = input;
         self
     }
     /// <p>Returns the engine versions.</p>
-    pub fn get_engine_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineVersionsSummary>> {
+    pub fn get_engine_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineVersionsSummary>> {
         &self.engine_versions
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>

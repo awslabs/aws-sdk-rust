@@ -29,9 +29,7 @@ impl UpdateElasticIpInput {
 
 /// A builder for [`UpdateElasticIpInput`](crate::operation::update_elastic_ip::UpdateElasticIpInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateElasticIpInputBuilder {
     pub(crate) elastic_ip: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl UpdateElasticIpInputBuilder {
     /// Consumes the builder and constructs a [`UpdateElasticIpInput`](crate::operation::update_elastic_ip::UpdateElasticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_elastic_ip::UpdateElasticIpInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_elastic_ip::UpdateElasticIpInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_elastic_ip::UpdateElasticIpInput {
             elastic_ip: self.elastic_ip,
             name: self.name,

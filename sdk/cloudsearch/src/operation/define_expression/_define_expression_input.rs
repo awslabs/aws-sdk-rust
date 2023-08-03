@@ -23,17 +23,14 @@ impl DefineExpressionInput {
 }
 impl DefineExpressionInput {
     /// Creates a new builder-style object to manufacture [`DefineExpressionInput`](crate::operation::define_expression::DefineExpressionInput).
-    pub fn builder() -> crate::operation::define_expression::builders::DefineExpressionInputBuilder
-    {
+    pub fn builder() -> crate::operation::define_expression::builders::DefineExpressionInputBuilder {
         crate::operation::define_expression::builders::DefineExpressionInputBuilder::default()
     }
 }
 
 /// A builder for [`DefineExpressionInput`](crate::operation::define_expression::DefineExpressionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefineExpressionInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) expression: ::std::option::Option<crate::types::Expression>,
@@ -59,10 +56,7 @@ impl DefineExpressionInputBuilder {
         self
     }
     /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
-    pub fn set_expression(
-        mut self,
-        input: ::std::option::Option<crate::types::Expression>,
-    ) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.expression = input;
         self
     }
@@ -73,10 +67,7 @@ impl DefineExpressionInputBuilder {
     /// Consumes the builder and constructs a [`DefineExpressionInput`](crate::operation::define_expression::DefineExpressionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::define_expression::DefineExpressionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::define_expression::DefineExpressionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::define_expression::DefineExpressionInput {
             domain_name: self.domain_name,
             expression: self.expression,

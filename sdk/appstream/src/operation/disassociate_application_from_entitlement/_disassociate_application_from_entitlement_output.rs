@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateApplicationFromEntitlemen
 }
 impl DisassociateApplicationFromEntitlementOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateApplicationFromEntitlementOutput`](crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementOutput).
-    pub fn builder() -> crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementOutputBuilder {
         crate::operation::disassociate_application_from_entitlement::builders::DisassociateApplicationFromEntitlementOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateApplicationFromEntitlementOutput`](crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateApplicationFromEntitlementOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DisassociateApplicationFromEntitlementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateApplicationFromEntitlementOutput`](crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementOutput).
-    pub fn build(self) -> crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementOutput{
+    pub fn build(self) -> crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementOutput {
         crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementOutput {
             _request_id: self._request_id,
         }

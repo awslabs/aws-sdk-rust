@@ -10,10 +10,7 @@ impl ListCidrLocationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_cidr_locations::ListCidrLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cidr_locations::ListCidrLocationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cidr_locations::ListCidrLocationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_cidr_locations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListCidrLocationsFluentBuilder {
         }
     }
     /// Access the ListCidrLocations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_cidr_locations::builders::ListCidrLocationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_cidr_locations::builders::ListCidrLocationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListCidrLocationsFluentBuilder {
             crate::operation::list_cidr_locations::ListCidrLocations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cidr_locations::ListCidrLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cidr_locations::ListCidrLocationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListCidrLocationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListCidrLocationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_cidr_locations::ListCidrLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cidr_locations::ListCidrLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cidr_locations::ListCidrLocationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListCidrLocationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_cidr_locations::ListCidrLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cidr_locations::ListCidrLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cidr_locations::ListCidrLocationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListCidrLocationsFluentBuilder {
             crate::operation::list_cidr_locations::ListCidrLocations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cidr_locations::ListCidrLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cidr_locations::ListCidrLocationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_cidr_locations::paginator::ListCidrLocationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_cidr_locations::paginator::ListCidrLocationsPaginator {
-        crate::operation::list_cidr_locations::paginator::ListCidrLocationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_cidr_locations::paginator::ListCidrLocationsPaginator {
+        crate::operation::list_cidr_locations::paginator::ListCidrLocationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The CIDR collection ID.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_id(input.into());
         self
     }
     /// <p>The CIDR collection ID.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_id(input);
         self
     }

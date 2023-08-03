@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteBatchImportJobOutput {
 }
 impl DeleteBatchImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBatchImportJobOutput`](crate::operation::delete_batch_import_job::DeleteBatchImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_batch_import_job::builders::DeleteBatchImportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_batch_import_job::builders::DeleteBatchImportJobOutputBuilder {
         crate::operation::delete_batch_import_job::builders::DeleteBatchImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBatchImportJobOutput`](crate::operation::delete_batch_import_job::DeleteBatchImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBatchImportJobOutputBuilder {
     _request_id: Option<String>,
 }

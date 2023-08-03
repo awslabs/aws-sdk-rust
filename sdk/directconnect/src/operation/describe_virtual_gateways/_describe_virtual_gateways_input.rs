@@ -5,18 +5,14 @@
 pub struct DescribeVirtualGatewaysInput {}
 impl DescribeVirtualGatewaysInput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewaysInput`](crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput).
-    pub fn builder(
-    ) -> crate::operation::describe_virtual_gateways::builders::DescribeVirtualGatewaysInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_virtual_gateways::builders::DescribeVirtualGatewaysInputBuilder {
         crate::operation::describe_virtual_gateways::builders::DescribeVirtualGatewaysInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVirtualGatewaysInput`](crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVirtualGatewaysInputBuilder {}
 impl DescribeVirtualGatewaysInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVirtualGatewaysInput`](crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput).
@@ -26,8 +22,6 @@ impl DescribeVirtualGatewaysInputBuilder {
         crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput {})
     }
 }

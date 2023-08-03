@@ -5,16 +5,16 @@ pub use crate::operation::list_conformance_pack_compliance_scores::_list_conform
 
 impl ListConformancePackComplianceScoresInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_conformance_pack_compliance_scores();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl ListConformancePackComplianceScoresInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConformancePackComplianceScoresFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresInputBuilder,
+    inner: crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresInputBuilder,
 }
 impl ListConformancePackComplianceScoresFluentBuilder {
     /// Creates a new `ListConformancePackComplianceScores`.
@@ -39,15 +39,20 @@ impl ListConformancePackComplianceScoresFluentBuilder {
         }
     }
     /// Access the ListConformancePackComplianceScores as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScores, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScores,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl ListConformancePackComplianceScoresFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,24 +89,38 @@ impl ListConformancePackComplianceScoresFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScores, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScores,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_conformance_pack_compliance_scores::paginator::ListConformancePackComplianceScoresPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_conformance_pack_compliance_scores::paginator::ListConformancePackComplianceScoresPaginator{
-        crate::operation::list_conformance_pack_compliance_scores::paginator::ListConformancePackComplianceScoresPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_conformance_pack_compliance_scores::paginator::ListConformancePackComplianceScoresPaginator {
+        crate::operation::list_conformance_pack_compliance_scores::paginator::ListConformancePackComplianceScoresPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>Filters the results based on the <code>ConformancePackComplianceScoresFilters</code>.</p>
     pub fn filters(mut self, input: crate::types::ConformancePackComplianceScoresFilters) -> Self {
@@ -108,17 +128,12 @@ impl ListConformancePackComplianceScoresFluentBuilder {
         self
     }
     /// <p>Filters the results based on the <code>ConformancePackComplianceScoresFilters</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ConformancePackComplianceScoresFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ConformancePackComplianceScoresFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Filters the results based on the <code>ConformancePackComplianceScoresFilters</code>.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConformancePackComplianceScoresFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ConformancePackComplianceScoresFilters> {
         self.inner.get_filters()
     }
     /// <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>

@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CheckDomainTransferabilityOutput`](crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput) with field(s):
     ///   - [`transferability(Option<DomainTransferability>)`](crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput::transferability): <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
     /// - On failure, responds with [`SdkError<CheckDomainTransferabilityError>`](crate::operation::check_domain_transferability::CheckDomainTransferabilityError)
-    pub fn check_domain_transferability(&self) -> crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityFluentBuilder{
+    pub fn check_domain_transferability(&self) -> crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityFluentBuilder {
         crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityFluentBuilder::new(self.handle.clone())
     }
 }

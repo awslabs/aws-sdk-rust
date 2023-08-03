@@ -37,9 +37,7 @@ impl PrimaryKey {
 
 /// A builder for [`PrimaryKey`](crate::types::PrimaryKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrimaryKeyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) offset: ::std::option::Option<i32>,

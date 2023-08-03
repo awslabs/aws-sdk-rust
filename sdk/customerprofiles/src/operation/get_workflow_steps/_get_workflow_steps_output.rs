@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for GetWorkflowStepsOutput {
 }
 impl GetWorkflowStepsOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowStepsOutput`](crate::operation::get_workflow_steps::GetWorkflowStepsOutput).
-    pub fn builder() -> crate::operation::get_workflow_steps::builders::GetWorkflowStepsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_workflow_steps::builders::GetWorkflowStepsOutputBuilder {
         crate::operation::get_workflow_steps::builders::GetWorkflowStepsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkflowStepsOutput`](crate::operation::get_workflow_steps::GetWorkflowStepsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowStepsOutputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
@@ -81,10 +78,7 @@ impl GetWorkflowStepsOutputBuilder {
         self
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -104,17 +98,12 @@ impl GetWorkflowStepsOutputBuilder {
         self
     }
     /// <p>List containing workflow step details.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>List containing workflow step details.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepItem>> {
         &self.items
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

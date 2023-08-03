@@ -10,10 +10,7 @@ impl DescribeJobRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_job_run::DescribeJobRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_run::DescribeJobRunError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_run::DescribeJobRunError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_job_run();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeJobRunFluentBuilder {
         }
     }
     /// Access the DescribeJobRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_job_run::builders::DescribeJobRunInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_job_run::builders::DescribeJobRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeJobRunFluentBuilder {
             crate::operation::describe_job_run::DescribeJobRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_run::DescribeJobRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_run::DescribeJobRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeJobRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeJobRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_job_run::DescribeJobRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_run::DescribeJobRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_run::DescribeJobRunError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeJobRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_job_run::DescribeJobRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_run::DescribeJobRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_run::DescribeJobRunError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeJobRunFluentBuilder {
             crate::operation::describe_job_run::DescribeJobRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_run::DescribeJobRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_run::DescribeJobRunError>,
     > {
         self.customize_middleware().await
     }

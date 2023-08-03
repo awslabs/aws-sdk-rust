@@ -51,9 +51,7 @@ impl Behavior {
 
 /// A builder for [`Behavior`](crate::types::Behavior).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BehaviorBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) metric: ::std::option::Option<::std::string::String>,
@@ -96,10 +94,7 @@ impl BehaviorBuilder {
         self
     }
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
-    pub fn set_metric_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricDimension>,
-    ) -> Self {
+    pub fn set_metric_dimension(mut self, input: ::std::option::Option<crate::types::MetricDimension>) -> Self {
         self.metric_dimension = input;
         self
     }
@@ -113,10 +108,7 @@ impl BehaviorBuilder {
         self
     }
     /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
-    pub fn set_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::BehaviorCriteria>,
-    ) -> Self {
+    pub fn set_criteria(mut self, input: ::std::option::Option<crate::types::BehaviorCriteria>) -> Self {
         self.criteria = input;
         self
     }

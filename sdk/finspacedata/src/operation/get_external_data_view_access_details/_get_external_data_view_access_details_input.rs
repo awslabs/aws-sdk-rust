@@ -22,16 +22,14 @@ impl GetExternalDataViewAccessDetailsInput {
 }
 impl GetExternalDataViewAccessDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetExternalDataViewAccessDetailsInput`](crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsInput).
-    pub fn builder() -> crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsInputBuilder{
+    pub fn builder() -> crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsInputBuilder {
         crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetExternalDataViewAccessDetailsInput`](crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExternalDataViewAccessDetailsInputBuilder {
     pub(crate) data_view_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl GetExternalDataViewAccessDetailsInputBuilder {
         &self.dataset_id
     }
     /// Consumes the builder and constructs a [`GetExternalDataViewAccessDetailsInput`](crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsInput {
-                data_view_id: self.data_view_id
-                ,
-                dataset_id: self.dataset_id
-                ,
-            }
+                data_view_id: self.data_view_id,
+                dataset_id: self.dataset_id,
+            },
         )
     }
 }

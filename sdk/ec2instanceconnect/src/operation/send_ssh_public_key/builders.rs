@@ -10,10 +10,7 @@ impl SendSshPublicKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_ssh_public_key::SendSshPublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_ssh_public_key::SendSSHPublicKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_ssh_public_key::SendSSHPublicKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_ssh_public_key();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SendSSHPublicKeyFluentBuilder {
         }
     }
     /// Access the SendSSHPublicKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_ssh_public_key::builders::SendSshPublicKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_ssh_public_key::builders::SendSshPublicKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SendSSHPublicKeyFluentBuilder {
             crate::operation::send_ssh_public_key::SendSSHPublicKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_ssh_public_key::SendSSHPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_ssh_public_key::SendSSHPublicKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SendSSHPublicKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SendSSHPublicKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_ssh_public_key::SendSshPublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_ssh_public_key::SendSSHPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_ssh_public_key::SendSSHPublicKeyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SendSSHPublicKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_ssh_public_key::SendSshPublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_ssh_public_key::SendSSHPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_ssh_public_key::SendSSHPublicKeyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl SendSSHPublicKeyFluentBuilder {
             crate::operation::send_ssh_public_key::SendSSHPublicKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_ssh_public_key::SendSSHPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_ssh_public_key::SendSSHPublicKeyError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl SendSSHPublicKeyFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
-    pub fn instance_os_user(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_os_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_os_user(input.into());
         self
     }
     /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
-    pub fn set_instance_os_user(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_os_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_os_user(input);
         self
     }
@@ -157,18 +135,12 @@ impl SendSSHPublicKeyFluentBuilder {
         self.inner.get_instance_os_user()
     }
     /// <p>The public key material. To use the public key, you must have the matching private key.</p>
-    pub fn ssh_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ssh_public_key(input.into());
         self
     }
     /// <p>The public key material. To use the public key, you must have the matching private key.</p>
-    pub fn set_ssh_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ssh_public_key(input);
         self
     }
@@ -177,18 +149,12 @@ impl SendSSHPublicKeyFluentBuilder {
         self.inner.get_ssh_public_key()
     }
     /// <p>The Availability Zone in which the EC2 instance was launched.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// <p>The Availability Zone in which the EC2 instance was launched.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }

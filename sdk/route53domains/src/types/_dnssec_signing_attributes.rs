@@ -39,9 +39,7 @@ impl DnssecSigningAttributes {
 
 /// A builder for [`DnssecSigningAttributes`](crate::types::DnssecSigningAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DnssecSigningAttributesBuilder {
     pub(crate) algorithm: ::std::option::Option<i32>,
     pub(crate) flags: ::std::option::Option<i32>,

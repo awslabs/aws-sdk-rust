@@ -29,17 +29,14 @@ impl ListBulkImportJobsInput {
 }
 impl ListBulkImportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListBulkImportJobsInput`](crate::operation::list_bulk_import_jobs::ListBulkImportJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsInputBuilder {
+    pub fn builder() -> crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsInputBuilder {
         crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBulkImportJobsInput`](crate::operation::list_bulk_import_jobs::ListBulkImportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBulkImportJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -80,10 +77,7 @@ impl ListBulkImportJobsInputBuilder {
         self
     }
     /// <p>You can use a filter to select the bulk import jobs that you want to retrieve.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListBulkImportJobsFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListBulkImportJobsFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -94,16 +88,12 @@ impl ListBulkImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListBulkImportJobsInput`](crate::operation::list_bulk_import_jobs::ListBulkImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bulk_import_jobs::ListBulkImportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_bulk_import_jobs::ListBulkImportJobsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filter: self.filter,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_bulk_import_jobs::ListBulkImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_bulk_import_jobs::ListBulkImportJobsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filter: self.filter,
+        })
     }
 }

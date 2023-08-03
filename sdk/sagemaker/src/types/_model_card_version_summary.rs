@@ -70,9 +70,7 @@ impl ModelCardVersionSummary {
 
 /// A builder for [`ModelCardVersionSummary`](crate::types::ModelCardVersionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelCardVersionSummaryBuilder {
     pub(crate) model_card_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_card_arn: ::std::option::Option<::std::string::String>,
@@ -83,18 +81,12 @@ pub struct ModelCardVersionSummaryBuilder {
 }
 impl ModelCardVersionSummaryBuilder {
     /// <p>The name of the model card.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model card.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_name = input;
         self
     }
@@ -103,18 +95,12 @@ impl ModelCardVersionSummaryBuilder {
         &self.model_card_name
     }
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
-    pub fn model_card_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
-    pub fn set_model_card_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_arn = input;
         self
     }
@@ -140,10 +126,7 @@ impl ModelCardVersionSummaryBuilder {
     /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
     /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
-    pub fn set_model_card_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardStatus>,
-    ) -> Self {
+    pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
         self.model_card_status = input;
         self
     }
@@ -177,10 +160,7 @@ impl ModelCardVersionSummaryBuilder {
         self
     }
     /// <p>The date and time that the model card version was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -194,10 +174,7 @@ impl ModelCardVersionSummaryBuilder {
         self
     }
     /// <p>The time date and time that the model card version was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

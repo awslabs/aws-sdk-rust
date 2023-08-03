@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`application_component(Option<ApplicationComponent>)`](crate::operation::describe_component::DescribeComponentOutput::application_component): <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
     ///   - [`resource_list(Option<Vec<String>>)`](crate::operation::describe_component::DescribeComponentOutput::resource_list): <p>The list of resource ARNs that belong to the component.</p>
     /// - On failure, responds with [`SdkError<DescribeComponentError>`](crate::operation::describe_component::DescribeComponentError)
-    pub fn describe_component(
-        &self,
-    ) -> crate::operation::describe_component::builders::DescribeComponentFluentBuilder {
-        crate::operation::describe_component::builders::DescribeComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_component(&self) -> crate::operation::describe_component::builders::DescribeComponentFluentBuilder {
+        crate::operation::describe_component::builders::DescribeComponentFluentBuilder::new(self.handle.clone())
     }
 }

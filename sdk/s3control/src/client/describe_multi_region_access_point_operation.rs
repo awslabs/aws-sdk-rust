@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`DescribeMultiRegionAccessPointOperationOutput`](crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationOutput) with field(s):
     ///   - [`async_operation(Option<AsyncOperation>)`](crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationOutput::async_operation): <p>A container element containing the details of the asynchronous operation.</p>
     /// - On failure, responds with [`SdkError<DescribeMultiRegionAccessPointOperationError>`](crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationError)
-    pub fn describe_multi_region_access_point_operation(&self) -> crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationFluentBuilder{
-        crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationFluentBuilder::new(self.handle.clone())
+    pub fn describe_multi_region_access_point_operation(
+        &self,
+    ) -> crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationFluentBuilder {
+        crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamFluentBuilder::dry_run) / [`set_dry_run(bool)`](crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamFluentBuilder::set_dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     /// - On success, responds with [`CreateProgressUpdateStreamOutput`](crate::operation::create_progress_update_stream::CreateProgressUpdateStreamOutput)
     /// - On failure, responds with [`SdkError<CreateProgressUpdateStreamError>`](crate::operation::create_progress_update_stream::CreateProgressUpdateStreamError)
-    pub fn create_progress_update_stream(&self) -> crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamFluentBuilder{
+    pub fn create_progress_update_stream(
+        &self,
+    ) -> crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamFluentBuilder {
         crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamFluentBuilder::new(self.handle.clone())
     }
 }

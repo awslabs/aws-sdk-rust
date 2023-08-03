@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for GetCustomEntityTypeOutput {
 }
 impl GetCustomEntityTypeOutput {
     /// Creates a new builder-style object to manufacture [`GetCustomEntityTypeOutput`](crate::operation::get_custom_entity_type::GetCustomEntityTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeOutputBuilder {
+    pub fn builder() -> crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeOutputBuilder {
         crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCustomEntityTypeOutput`](crate::operation::get_custom_entity_type::GetCustomEntityTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCustomEntityTypeOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) regex_string: ::std::option::Option<::std::string::String>,
@@ -86,27 +83,19 @@ impl GetCustomEntityTypeOutputBuilder {
     /// To override the contents of this collection use [`set_context_words`](Self::set_context_words).
     ///
     /// <p>A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
-    pub fn context_words(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn context_words(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.context_words.unwrap_or_default();
         v.push(input.into());
         self.context_words = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
-    pub fn set_context_words(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_context_words(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.context_words = input;
         self
     }
     /// <p>A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
-    pub fn get_context_words(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_context_words(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.context_words
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

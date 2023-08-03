@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`s3_resources(Option<Vec<S3ResourceClassification>>)`](crate::operation::list_s3_resources::ListS3ResourcesOutput::s3_resources): <p>(Discontinued) A list of the associated S3 resources returned by the action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_s3_resources::ListS3ResourcesOutput::next_token): <p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
     /// - On failure, responds with [`SdkError<ListS3ResourcesError>`](crate::operation::list_s3_resources::ListS3ResourcesError)
-    pub fn list_s3_resources(
-        &self,
-    ) -> crate::operation::list_s3_resources::builders::ListS3ResourcesFluentBuilder {
-        crate::operation::list_s3_resources::builders::ListS3ResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_s3_resources(&self) -> crate::operation::list_s3_resources::builders::ListS3ResourcesFluentBuilder {
+        crate::operation::list_s3_resources::builders::ListS3ResourcesFluentBuilder::new(self.handle.clone())
     }
 }

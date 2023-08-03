@@ -66,9 +66,7 @@ impl UpdateAnalysisInput {
 
 /// A builder for [`UpdateAnalysisInput`](crate::operation::update_analysis::UpdateAnalysisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAnalysisInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
@@ -80,18 +78,12 @@ pub struct UpdateAnalysisInputBuilder {
 }
 impl UpdateAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -133,10 +125,7 @@ impl UpdateAnalysisInputBuilder {
         self
     }
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::Parameters>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::Parameters>) -> Self {
         self.parameters = input;
         self
     }
@@ -150,10 +139,7 @@ impl UpdateAnalysisInputBuilder {
         self
     }
     /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
-    pub fn set_source_entity(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisSourceEntity>,
-    ) -> Self {
+    pub fn set_source_entity(mut self, input: ::std::option::Option<crate::types::AnalysisSourceEntity>) -> Self {
         self.source_entity = input;
         self
     }
@@ -183,10 +169,7 @@ impl UpdateAnalysisInputBuilder {
     }
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisDefinition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::AnalysisDefinition>) -> Self {
         self.definition = input;
         self
     }
@@ -198,10 +181,7 @@ impl UpdateAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAnalysisInput`](crate::operation::update_analysis::UpdateAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_analysis::UpdateAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_analysis::UpdateAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_analysis::UpdateAnalysisInput {
             aws_account_id: self.aws_account_id,
             analysis_id: self.analysis_id,

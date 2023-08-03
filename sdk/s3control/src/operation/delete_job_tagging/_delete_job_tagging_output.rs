@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteJobTaggingOutput {
 }
 impl DeleteJobTaggingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteJobTaggingOutput`](crate::operation::delete_job_tagging::DeleteJobTaggingOutput).
-    pub fn builder() -> crate::operation::delete_job_tagging::builders::DeleteJobTaggingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_job_tagging::builders::DeleteJobTaggingOutputBuilder {
         crate::operation::delete_job_tagging::builders::DeleteJobTaggingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteJobTaggingOutput`](crate::operation::delete_job_tagging::DeleteJobTaggingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteJobTaggingOutputBuilder {
     _request_id: Option<String>,
 }

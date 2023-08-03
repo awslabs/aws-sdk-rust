@@ -36,17 +36,14 @@ impl DeleteTableVersionInput {
 }
 impl DeleteTableVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteTableVersionInput`](crate::operation::delete_table_version::DeleteTableVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_table_version::builders::DeleteTableVersionInputBuilder {
+    pub fn builder() -> crate::operation::delete_table_version::builders::DeleteTableVersionInputBuilder {
         crate::operation::delete_table_version::builders::DeleteTableVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTableVersionInput`](crate::operation::delete_table_version::DeleteTableVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTableVersionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +66,12 @@ impl DeleteTableVersionInputBuilder {
         &self.catalog_id
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -119,17 +110,12 @@ impl DeleteTableVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTableVersionInput`](crate::operation::delete_table_version::DeleteTableVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_table_version::DeleteTableVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_table_version::DeleteTableVersionInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                version_id: self.version_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_table_version::DeleteTableVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_table_version::DeleteTableVersionInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            version_id: self.version_id,
+        })
     }
 }

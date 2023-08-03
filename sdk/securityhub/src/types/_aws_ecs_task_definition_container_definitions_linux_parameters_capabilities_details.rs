@@ -27,16 +27,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails 
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetailsBuilder {
     pub(crate) add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) drop: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -56,10 +54,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetailsB
     }
     /// <p>The Linux capabilities for the container that are added to the default configuration provided by Docker. Valid values are as follows:</p>
     /// <p>Valid values: <code>"ALL"</code> | <code>"AUDIT_CONTROL"</code> |<code> "AUDIT_WRITE"</code> | <code>"BLOCK_SUSPEND"</code> | <code>"CHOWN"</code> | <code>"DAC_OVERRIDE"</code> | <code>"DAC_READ_SEARCH"</code> | <code>"FOWNER"</code> | <code>"FSETID"</code> | <code>"IPC_LOCK"</code> | <code>"IPC_OWNER"</code> | <code>"KILL"</code> | <code>"LEASE"</code> | <code>"LINUX_IMMUTABLE"</code> | <code>"MAC_ADMIN"</code> |<code> "MAC_OVERRIDE"</code> | <code>"MKNOD"</code> | <code>"NET_ADMIN"</code> | <code>"NET_BIND_SERVICE"</code> | <code>"NET_BROADCAST"</code> | <code>"NET_RAW"</code> | <code>"SETFCAP"</code> | <code>"SETGID"</code> | <code>"SETPCAP"</code> | <code>"SETUID"</code> | <code>"SYS_ADMIN"</code> | <code>"SYS_BOOT"</code> | <code>"SYS_CHROOT"</code> | <code>"SYS_MODULE"</code> | <code>"SYS_NICE"</code> | <code>"SYS_PACCT"</code> | <code>"SYS_PTRACE"</code> | <code>"SYS_RAWIO"</code> | <code>"SYS_RESOURCE"</code> | <code>"SYS_TIME"</code> | <code>"SYS_TTY_CONFIG"</code> | <code>"SYSLOG"</code> | <code>"WAKE_ALARM"</code> </p>
-    pub fn set_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.add = input;
         self
     }
@@ -82,10 +77,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetailsB
     }
     /// <p>The Linux capabilities for the container that are dropped from the default configuration provided by Docker.</p>
     /// <p>Valid values: <code>"ALL"</code> | <code>"AUDIT_CONTROL"</code> |<code> "AUDIT_WRITE"</code> | <code>"BLOCK_SUSPEND"</code> | <code>"CHOWN"</code> | <code>"DAC_OVERRIDE"</code> | <code>"DAC_READ_SEARCH"</code> | <code>"FOWNER"</code> | <code>"FSETID"</code> | <code>"IPC_LOCK"</code> | <code>"IPC_OWNER"</code> | <code>"KILL"</code> | <code>"LEASE"</code> | <code>"LINUX_IMMUTABLE"</code> | <code>"MAC_ADMIN"</code> |<code> "MAC_OVERRIDE"</code> | <code>"MKNOD"</code> | <code>"NET_ADMIN"</code> | <code>"NET_BIND_SERVICE"</code> | <code>"NET_BROADCAST"</code> | <code>"NET_RAW"</code> | <code>"SETFCAP"</code> | <code>"SETGID"</code> | <code>"SETPCAP"</code> | <code>"SETUID"</code> | <code>"SYS_ADMIN"</code> | <code>"SYS_BOOT"</code> | <code>"SYS_CHROOT"</code> | <code>"SYS_MODULE"</code> | <code>"SYS_NICE"</code> | <code>"SYS_PACCT"</code> | <code>"SYS_PTRACE"</code> | <code>"SYS_RAWIO"</code> | <code>"SYS_RESOURCE"</code> | <code>"SYS_TIME"</code> | <code>"SYS_TTY_CONFIG"</code> | <code>"SYSLOG"</code> | <code>"WAKE_ALARM"</code> </p>
-    pub fn set_drop(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_drop(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.drop = input;
         self
     }
@@ -95,10 +87,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetailsB
         &self.drop
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails
-    {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails {
             add: self.add,
             drop: self.drop,

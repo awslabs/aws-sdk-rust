@@ -34,7 +34,7 @@ impl GetRecommendationSummariesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRecommendationSummariesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesInputBuilder,
+    inner: crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesInputBuilder,
 }
 impl GetRecommendationSummariesFluentBuilder {
     /// Creates a new `GetRecommendationSummaries`.
@@ -45,7 +45,7 @@ impl GetRecommendationSummariesFluentBuilder {
         }
     }
     /// Access the GetRecommendationSummaries as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl GetRecommendationSummariesFluentBuilder {
             crate::operation::get_recommendation_summaries::GetRecommendationSummaries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recommendation_summaries::GetRecommendationSummariesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl GetRecommendationSummariesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl GetRecommendationSummariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recommendation_summaries::GetRecommendationSummariesError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl GetRecommendationSummariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recommendation_summaries::GetRecommendationSummariesError>,
     > {
         self.send_middleware().await
     }
@@ -122,16 +113,14 @@ impl GetRecommendationSummariesFluentBuilder {
             crate::operation::get_recommendation_summaries::GetRecommendationSummaries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recommendation_summaries::GetRecommendationSummariesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_recommendation_summaries::paginator::GetRecommendationSummariesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_recommendation_summaries::paginator::GetRecommendationSummariesPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_recommendation_summaries::paginator::GetRecommendationSummariesPaginator {
         crate::operation::get_recommendation_summaries::paginator::GetRecommendationSummariesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `accountIds`.
@@ -148,19 +137,14 @@ impl GetRecommendationSummariesFluentBuilder {
     /// <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// <p>The token to advance to the next page of recommendation summaries.</p>

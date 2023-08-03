@@ -26,7 +26,7 @@ impl DescribeReplicationInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReplicationInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_replication_instances::builders::DescribeReplicationInstancesInputBuilder,
+    inner: crate::operation::describe_replication_instances::builders::DescribeReplicationInstancesInputBuilder,
 }
 impl DescribeReplicationInstancesFluentBuilder {
     /// Creates a new `DescribeReplicationInstances`.
@@ -37,7 +37,7 @@ impl DescribeReplicationInstancesFluentBuilder {
         }
     }
     /// Access the DescribeReplicationInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_replication_instances::builders::DescribeReplicationInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_replication_instances::builders::DescribeReplicationInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeReplicationInstancesFluentBuilder {
             crate::operation::describe_replication_instances::DescribeReplicationInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_replication_instances::DescribeReplicationInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_instances::DescribeReplicationInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeReplicationInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeReplicationInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_replication_instances::DescribeReplicationInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_replication_instances::DescribeReplicationInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_instances::DescribeReplicationInstancesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeReplicationInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_replication_instances::DescribeReplicationInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_replication_instances::DescribeReplicationInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_instances::DescribeReplicationInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeReplicationInstancesFluentBuilder {
             crate::operation::describe_replication_instances::DescribeReplicationInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_replication_instances::DescribeReplicationInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_instances::DescribeReplicationInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_replication_instances::paginator::DescribeReplicationInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_replication_instances::paginator::DescribeReplicationInstancesPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_replication_instances::paginator::DescribeReplicationInstancesPaginator {
         crate::operation::describe_replication_instances::paginator::DescribeReplicationInstancesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -138,10 +127,7 @@ impl DescribeReplicationInstancesFluentBuilder {
     }
     /// <p>Filters applied to replication instances.</p>
     /// <p>Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

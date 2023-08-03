@@ -23,9 +23,7 @@ impl ModelPackagingConfiguration {
 
 /// A builder for [`ModelPackagingConfiguration`](crate::types::ModelPackagingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelPackagingConfigurationBuilder {
     pub(crate) greengrass: ::std::option::Option<crate::types::GreengrassConfiguration>,
 }
@@ -36,10 +34,7 @@ impl ModelPackagingConfigurationBuilder {
         self
     }
     /// <p> Configuration information for the AWS IoT Greengrass component in a model packaging job. </p>
-    pub fn set_greengrass(
-        mut self,
-        input: ::std::option::Option<crate::types::GreengrassConfiguration>,
-    ) -> Self {
+    pub fn set_greengrass(mut self, input: ::std::option::Option<crate::types::GreengrassConfiguration>) -> Self {
         self.greengrass = input;
         self
     }
@@ -49,8 +44,6 @@ impl ModelPackagingConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`ModelPackagingConfiguration`](crate::types::ModelPackagingConfiguration).
     pub fn build(self) -> crate::types::ModelPackagingConfiguration {
-        crate::types::ModelPackagingConfiguration {
-            greengrass: self.greengrass,
-        }
+        crate::types::ModelPackagingConfiguration { greengrass: self.greengrass }
     }
 }

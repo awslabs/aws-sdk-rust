@@ -35,9 +35,7 @@ impl BatchGetBuildsOutput {
 
 /// A builder for [`BatchGetBuildsOutput`](crate::operation::batch_get_builds::BatchGetBuildsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetBuildsOutputBuilder {
     pub(crate) builds: ::std::option::Option<::std::vec::Vec<crate::types::Build>>,
     pub(crate) builds_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -56,10 +54,7 @@ impl BatchGetBuildsOutputBuilder {
         self
     }
     /// <p>Information about the requested builds.</p>
-    pub fn set_builds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Build>>,
-    ) -> Self {
+    pub fn set_builds(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Build>>) -> Self {
         self.builds = input;
         self
     }
@@ -72,27 +67,19 @@ impl BatchGetBuildsOutputBuilder {
     /// To override the contents of this collection use [`set_builds_not_found`](Self::set_builds_not_found).
     ///
     /// <p>The IDs of builds for which information could not be found.</p>
-    pub fn builds_not_found(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn builds_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.builds_not_found.unwrap_or_default();
         v.push(input.into());
         self.builds_not_found = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of builds for which information could not be found.</p>
-    pub fn set_builds_not_found(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_builds_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.builds_not_found = input;
         self
     }
     /// <p>The IDs of builds for which information could not be found.</p>
-    pub fn get_builds_not_found(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_builds_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.builds_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

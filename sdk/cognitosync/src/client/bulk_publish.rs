@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BulkPublishOutput`](crate::operation::bulk_publish::BulkPublishOutput) with field(s):
     ///   - [`identity_pool_id(Option<String>)`](crate::operation::bulk_publish::BulkPublishOutput::identity_pool_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     /// - On failure, responds with [`SdkError<BulkPublishError>`](crate::operation::bulk_publish::BulkPublishError)
-    pub fn bulk_publish(
-        &self,
-    ) -> crate::operation::bulk_publish::builders::BulkPublishFluentBuilder {
+    pub fn bulk_publish(&self) -> crate::operation::bulk_publish::builders::BulkPublishFluentBuilder {
         crate::operation::bulk_publish::builders::BulkPublishFluentBuilder::new(self.handle.clone())
     }
 }

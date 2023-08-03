@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for PutContainerRecipePolicyOutput {
 }
 impl PutContainerRecipePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutContainerRecipePolicyOutput`](crate::operation::put_container_recipe_policy::PutContainerRecipePolicyOutput).
-    pub fn builder() -> crate::operation::put_container_recipe_policy::builders::PutContainerRecipePolicyOutputBuilder{
+    pub fn builder() -> crate::operation::put_container_recipe_policy::builders::PutContainerRecipePolicyOutputBuilder {
         crate::operation::put_container_recipe_policy::builders::PutContainerRecipePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutContainerRecipePolicyOutput`](crate::operation::put_container_recipe_policy::PutContainerRecipePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutContainerRecipePolicyOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) container_recipe_arn: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ impl PutContainerRecipePolicyOutputBuilder {
         &self.request_id
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy was applied to.</p>
-    pub fn container_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy was applied to.</p>
-    pub fn set_container_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_recipe_arn = input;
         self
     }
@@ -88,9 +80,7 @@ impl PutContainerRecipePolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutContainerRecipePolicyOutput`](crate::operation::put_container_recipe_policy::PutContainerRecipePolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_container_recipe_policy::PutContainerRecipePolicyOutput {
+    pub fn build(self) -> crate::operation::put_container_recipe_policy::PutContainerRecipePolicyOutput {
         crate::operation::put_container_recipe_policy::PutContainerRecipePolicyOutput {
             request_id: self.request_id,
             container_recipe_arn: self.container_recipe_arn,

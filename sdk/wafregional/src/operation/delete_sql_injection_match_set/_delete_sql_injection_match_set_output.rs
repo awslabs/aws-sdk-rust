@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteSqlInjectionMatchSetOutput {
 }
 impl DeleteSqlInjectionMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSqlInjectionMatchSetOutput`](crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetOutput).
-    pub fn builder() -> crate::operation::delete_sql_injection_match_set::builders::DeleteSqlInjectionMatchSetOutputBuilder{
+    pub fn builder() -> crate::operation::delete_sql_injection_match_set::builders::DeleteSqlInjectionMatchSetOutputBuilder {
         crate::operation::delete_sql_injection_match_set::builders::DeleteSqlInjectionMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSqlInjectionMatchSetOutput`](crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSqlInjectionMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -61,9 +59,7 @@ impl DeleteSqlInjectionMatchSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSqlInjectionMatchSetOutput`](crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetOutput {
+    pub fn build(self) -> crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetOutput {
         crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetOutput {
             change_token: self.change_token,
             _request_id: self._request_id,

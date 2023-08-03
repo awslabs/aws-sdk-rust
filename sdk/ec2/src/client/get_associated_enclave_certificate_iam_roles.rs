@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`GetAssociatedEnclaveCertificateIamRolesOutput`](crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesOutput) with field(s):
     ///   - [`associated_roles(Option<Vec<AssociatedRole>>)`](crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesOutput::associated_roles): <p>Information about the associated IAM roles.</p>
     /// - On failure, responds with [`SdkError<GetAssociatedEnclaveCertificateIamRolesError>`](crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesError)
-    pub fn get_associated_enclave_certificate_iam_roles(&self) -> crate::operation::get_associated_enclave_certificate_iam_roles::builders::GetAssociatedEnclaveCertificateIamRolesFluentBuilder{
-        crate::operation::get_associated_enclave_certificate_iam_roles::builders::GetAssociatedEnclaveCertificateIamRolesFluentBuilder::new(self.handle.clone())
+    pub fn get_associated_enclave_certificate_iam_roles(
+        &self,
+    ) -> crate::operation::get_associated_enclave_certificate_iam_roles::builders::GetAssociatedEnclaveCertificateIamRolesFluentBuilder {
+        crate::operation::get_associated_enclave_certificate_iam_roles::builders::GetAssociatedEnclaveCertificateIamRolesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

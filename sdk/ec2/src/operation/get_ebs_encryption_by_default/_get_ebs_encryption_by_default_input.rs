@@ -15,16 +15,14 @@ impl GetEbsEncryptionByDefaultInput {
 }
 impl GetEbsEncryptionByDefaultInput {
     /// Creates a new builder-style object to manufacture [`GetEbsEncryptionByDefaultInput`](crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultInput).
-    pub fn builder() -> crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultInputBuilder{
+    pub fn builder() -> crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultInputBuilder {
         crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEbsEncryptionByDefaultInput`](crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEbsEncryptionByDefaultInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -50,10 +48,6 @@ impl GetEbsEncryptionByDefaultInputBuilder {
         crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultInput {
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultInput { dry_run: self.dry_run })
     }
 }

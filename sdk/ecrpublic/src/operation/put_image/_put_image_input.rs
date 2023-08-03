@@ -57,9 +57,7 @@ impl PutImageInput {
 
 /// A builder for [`PutImageInput`](crate::operation::put_image::PutImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutImageInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -84,18 +82,12 @@ impl PutImageInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository where the image is put.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where the image is put.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -104,18 +96,12 @@ impl PutImageInputBuilder {
         &self.repository_name
     }
     /// <p>The image manifest that corresponds to the image to be uploaded.</p>
-    pub fn image_manifest(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_manifest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_manifest = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The image manifest that corresponds to the image to be uploaded.</p>
-    pub fn set_image_manifest(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_manifest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_manifest = input;
         self
     }
@@ -124,18 +110,12 @@ impl PutImageInputBuilder {
         &self.image_manifest
     }
     /// <p>The media type of the image manifest. If you push an image manifest that doesn't contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
-    pub fn image_manifest_media_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_manifest_media_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_manifest_media_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The media type of the image manifest. If you push an image manifest that doesn't contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
-    pub fn set_image_manifest_media_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_manifest_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_manifest_media_type = input;
         self
     }
@@ -172,12 +152,7 @@ impl PutImageInputBuilder {
         &self.image_digest
     }
     /// Consumes the builder and constructs a [`PutImageInput`](crate::operation::put_image::PutImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_image::PutImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_image::PutImageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_image::PutImageInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

@@ -16,17 +16,14 @@ impl AwsEc2LaunchTemplateDataHibernationOptionsDetails {
 }
 impl AwsEc2LaunchTemplateDataHibernationOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataHibernationOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataHibernationOptionsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataHibernationOptionsDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataHibernationOptionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataHibernationOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataHibernationOptionsDetailsBuilder {
     pub(crate) configured: ::std::option::Option<bool>,
 }

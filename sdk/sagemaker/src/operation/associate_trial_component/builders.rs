@@ -26,8 +26,7 @@ impl AssociateTrialComponentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateTrialComponentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::associate_trial_component::builders::AssociateTrialComponentInputBuilder,
+    inner: crate::operation::associate_trial_component::builders::AssociateTrialComponentInputBuilder,
 }
 impl AssociateTrialComponentFluentBuilder {
     /// Creates a new `AssociateTrialComponent`.
@@ -38,10 +37,7 @@ impl AssociateTrialComponentFluentBuilder {
         }
     }
     /// Access the AssociateTrialComponent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_trial_component::builders::AssociateTrialComponentInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_trial_component::builders::AssociateTrialComponentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl AssociateTrialComponentFluentBuilder {
             crate::operation::associate_trial_component::AssociateTrialComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_trial_component::AssociateTrialComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_trial_component::AssociateTrialComponentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl AssociateTrialComponentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl AssociateTrialComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_trial_component::AssociateTrialComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_trial_component::AssociateTrialComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_trial_component::AssociateTrialComponentError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl AssociateTrialComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_trial_component::AssociateTrialComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_trial_component::AssociateTrialComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_trial_component::AssociateTrialComponentError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl AssociateTrialComponentFluentBuilder {
             crate::operation::associate_trial_component::AssociateTrialComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_trial_component::AssociateTrialComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_trial_component::AssociateTrialComponentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the component to associated with the trial.</p>
-    pub fn trial_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trial_component_name(input.into());
         self
     }
     /// <p>The name of the component to associated with the trial.</p>
-    pub fn set_trial_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trial_component_name(input);
         self
     }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`request_origin(impl ::std::convert::Into<String>)`](crate::operation::cancel_statement::builders::CancelStatementFluentBuilder::request_origin) / [`set_request_origin(Option<String>)`](crate::operation::cancel_statement::builders::CancelStatementFluentBuilder::set_request_origin): <p>The origin of the request to cancel the statement.</p>
     /// - On success, responds with [`CancelStatementOutput`](crate::operation::cancel_statement::CancelStatementOutput)
     /// - On failure, responds with [`SdkError<CancelStatementError>`](crate::operation::cancel_statement::CancelStatementError)
-    pub fn cancel_statement(
-        &self,
-    ) -> crate::operation::cancel_statement::builders::CancelStatementFluentBuilder {
-        crate::operation::cancel_statement::builders::CancelStatementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_statement(&self) -> crate::operation::cancel_statement::builders::CancelStatementFluentBuilder {
+        crate::operation::cancel_statement::builders::CancelStatementFluentBuilder::new(self.handle.clone())
     }
 }

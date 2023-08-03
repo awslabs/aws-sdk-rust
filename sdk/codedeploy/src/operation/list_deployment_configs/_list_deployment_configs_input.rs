@@ -16,18 +16,14 @@ impl ListDeploymentConfigsInput {
 }
 impl ListDeploymentConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentConfigsInput`](crate::operation::list_deployment_configs::ListDeploymentConfigsInput).
-    pub fn builder(
-    ) -> crate::operation::list_deployment_configs::builders::ListDeploymentConfigsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_deployment_configs::builders::ListDeploymentConfigsInputBuilder {
         crate::operation::list_deployment_configs::builders::ListDeploymentConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeploymentConfigsInput`](crate::operation::list_deployment_configs::ListDeploymentConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentConfigsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -49,14 +45,8 @@ impl ListDeploymentConfigsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeploymentConfigsInput`](crate::operation::list_deployment_configs::ListDeploymentConfigsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_deployment_configs::ListDeploymentConfigsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_deployment_configs::ListDeploymentConfigsInput {
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_deployment_configs::ListDeploymentConfigsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_deployment_configs::ListDeploymentConfigsInput { next_token: self.next_token })
     }
 }

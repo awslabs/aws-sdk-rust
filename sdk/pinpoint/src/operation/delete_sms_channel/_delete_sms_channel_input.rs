@@ -15,34 +15,25 @@ impl DeleteSmsChannelInput {
 }
 impl DeleteSmsChannelInput {
     /// Creates a new builder-style object to manufacture [`DeleteSmsChannelInput`](crate::operation::delete_sms_channel::DeleteSmsChannelInput).
-    pub fn builder() -> crate::operation::delete_sms_channel::builders::DeleteSmsChannelInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_sms_channel::builders::DeleteSmsChannelInputBuilder {
         crate::operation::delete_sms_channel::builders::DeleteSmsChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSmsChannelInput`](crate::operation::delete_sms_channel::DeleteSmsChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSmsChannelInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSmsChannelInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteSmsChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSmsChannelInput`](crate::operation::delete_sms_channel::DeleteSmsChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_sms_channel::DeleteSmsChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_sms_channel::DeleteSmsChannelInput {
-                application_id: self.application_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_sms_channel::DeleteSmsChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_sms_channel::DeleteSmsChannelInput {
+            application_id: self.application_id,
+        })
     }
 }

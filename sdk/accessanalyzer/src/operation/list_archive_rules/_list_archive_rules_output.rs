@@ -29,20 +29,16 @@ impl ::aws_http::request_id::RequestId for ListArchiveRulesOutput {
 }
 impl ListArchiveRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListArchiveRulesOutput`](crate::operation::list_archive_rules::ListArchiveRulesOutput).
-    pub fn builder() -> crate::operation::list_archive_rules::builders::ListArchiveRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_archive_rules::builders::ListArchiveRulesOutputBuilder {
         crate::operation::list_archive_rules::builders::ListArchiveRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListArchiveRulesOutput`](crate::operation::list_archive_rules::ListArchiveRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListArchiveRulesOutputBuilder {
-    pub(crate) archive_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::ArchiveRuleSummary>>,
+    pub(crate) archive_rules: ::std::option::Option<::std::vec::Vec<crate::types::ArchiveRuleSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +55,12 @@ impl ListArchiveRulesOutputBuilder {
         self
     }
     /// <p>A list of archive rules created for the specified analyzer.</p>
-    pub fn set_archive_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ArchiveRuleSummary>>,
-    ) -> Self {
+    pub fn set_archive_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ArchiveRuleSummary>>) -> Self {
         self.archive_rules = input;
         self
     }
     /// <p>A list of archive rules created for the specified analyzer.</p>
-    pub fn get_archive_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ArchiveRuleSummary>> {
+    pub fn get_archive_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArchiveRuleSummary>> {
         &self.archive_rules
     }
     /// <p>A token used for pagination of results returned.</p>

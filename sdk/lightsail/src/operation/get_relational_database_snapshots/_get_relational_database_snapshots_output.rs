@@ -5,8 +5,7 @@
 pub struct GetRelationalDatabaseSnapshotsOutput {
     /// <p>An object describing the result of your get relational database snapshots request.</p>
     #[doc(hidden)]
-    pub relational_database_snapshots:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseSnapshot>>,
+    pub relational_database_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseSnapshot>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -16,9 +15,7 @@ pub struct GetRelationalDatabaseSnapshotsOutput {
 }
 impl GetRelationalDatabaseSnapshotsOutput {
     /// <p>An object describing the result of your get relational database snapshots request.</p>
-    pub fn relational_database_snapshots(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RelationalDatabaseSnapshot]> {
+    pub fn relational_database_snapshots(&self) -> ::std::option::Option<&[crate::types::RelationalDatabaseSnapshot]> {
         self.relational_database_snapshots.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -35,19 +32,16 @@ impl ::aws_http::request_id::RequestId for GetRelationalDatabaseSnapshotsOutput 
 }
 impl GetRelationalDatabaseSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseSnapshotsOutput`](crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsOutput).
-    pub fn builder() -> crate::operation::get_relational_database_snapshots::builders::GetRelationalDatabaseSnapshotsOutputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_snapshots::builders::GetRelationalDatabaseSnapshotsOutputBuilder {
         crate::operation::get_relational_database_snapshots::builders::GetRelationalDatabaseSnapshotsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseSnapshotsOutput`](crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseSnapshotsOutputBuilder {
-    pub(crate) relational_database_snapshots:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseSnapshot>>,
+    pub(crate) relational_database_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseSnapshot>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,10 +51,7 @@ impl GetRelationalDatabaseSnapshotsOutputBuilder {
     /// To override the contents of this collection use [`set_relational_database_snapshots`](Self::set_relational_database_snapshots).
     ///
     /// <p>An object describing the result of your get relational database snapshots request.</p>
-    pub fn relational_database_snapshots(
-        mut self,
-        input: crate::types::RelationalDatabaseSnapshot,
-    ) -> Self {
+    pub fn relational_database_snapshots(mut self, input: crate::types::RelationalDatabaseSnapshot) -> Self {
         let mut v = self.relational_database_snapshots.unwrap_or_default();
         v.push(input);
         self.relational_database_snapshots = ::std::option::Option::Some(v);
@@ -75,28 +66,20 @@ impl GetRelationalDatabaseSnapshotsOutputBuilder {
         self
     }
     /// <p>An object describing the result of your get relational database snapshots request.</p>
-    pub fn get_relational_database_snapshots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseSnapshot>> {
+    pub fn get_relational_database_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseSnapshot>> {
         &self.relational_database_snapshots
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -116,10 +99,7 @@ impl GetRelationalDatabaseSnapshotsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseSnapshotsOutput`](crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsOutput
-    {
+    pub fn build(self) -> crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsOutput {
         crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsOutput {
             relational_database_snapshots: self.relational_database_snapshots,
             next_page_token: self.next_page_token,

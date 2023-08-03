@@ -10,10 +10,7 @@ impl RestoreServerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::restore_server::RestoreServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_server::RestoreServerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_server::RestoreServerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.restore_server();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl RestoreServerFluentBuilder {
         }
     }
     /// Access the RestoreServer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::restore_server::builders::RestoreServerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::restore_server::builders::RestoreServerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl RestoreServerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -146,18 +138,12 @@ impl RestoreServerFluentBuilder {
         self.inner.get_server_name()
     }
     /// <p> The type of instance to restore. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code> For example, <code>m5.large</code>. Valid values are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the instance type from the specified backup. </p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_type(input.into());
         self
     }
     /// <p> The type of instance to restore. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code> For example, <code>m5.large</code>. Valid values are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the instance type from the specified backup. </p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }

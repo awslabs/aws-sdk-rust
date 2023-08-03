@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`timestamp(Option<DateTime>)`](crate::operation::get_dataset_content::GetDatasetContentOutput::timestamp): <p>The time when the request was made.</p>
     ///   - [`status(Option<DatasetContentStatus>)`](crate::operation::get_dataset_content::GetDatasetContentOutput::status): <p>The status of the dataset content.</p>
     /// - On failure, responds with [`SdkError<GetDatasetContentError>`](crate::operation::get_dataset_content::GetDatasetContentError)
-    pub fn get_dataset_content(
-        &self,
-    ) -> crate::operation::get_dataset_content::builders::GetDatasetContentFluentBuilder {
-        crate::operation::get_dataset_content::builders::GetDatasetContentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_dataset_content(&self) -> crate::operation::get_dataset_content::builders::GetDatasetContentFluentBuilder {
+        crate::operation::get_dataset_content::builders::GetDatasetContentFluentBuilder::new(self.handle.clone())
     }
 }

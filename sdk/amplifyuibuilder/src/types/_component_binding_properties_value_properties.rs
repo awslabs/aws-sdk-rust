@@ -72,9 +72,7 @@ impl ComponentBindingPropertiesValueProperties {
 
 /// A builder for [`ComponentBindingPropertiesValueProperties`](crate::types::ComponentBindingPropertiesValueProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentBindingPropertiesValuePropertiesBuilder {
     pub(crate) model: ::std::option::Option<::std::string::String>,
     pub(crate) field: ::std::option::Option<::std::string::String>,
@@ -126,32 +124,21 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
         self
     }
     /// <p>A list of predicates for binding a component's properties to data.</p>
-    pub fn set_predicates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
-    ) -> Self {
+    pub fn set_predicates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>) -> Self {
         self.predicates = input;
         self
     }
     /// <p>A list of predicates for binding a component's properties to data.</p>
-    pub fn get_predicates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Predicate>> {
+    pub fn get_predicates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Predicate>> {
         &self.predicates
     }
     /// <p>An authenticated user attribute.</p>
-    pub fn user_attribute(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An authenticated user attribute.</p>
-    pub fn set_user_attribute(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_attribute = input;
         self
     }
@@ -188,18 +175,12 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
         &self.key
     }
     /// <p>The default value to assign to the property.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value to assign to the property.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }

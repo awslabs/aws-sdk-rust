@@ -43,9 +43,7 @@ impl RemoveTargetsInput {
 
 /// A builder for [`RemoveTargetsInput`](crate::operation::remove_targets::RemoveTargetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTargetsInputBuilder {
     pub(crate) rule: ::std::option::Option<::std::string::String>,
     pub(crate) event_bus_name: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl RemoveTargetsInputBuilder {
         &self.rule
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    pub fn event_bus_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_bus_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bus_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    pub fn set_event_bus_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_bus_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_bus_name = input;
         self
     }
@@ -99,10 +91,7 @@ impl RemoveTargetsInputBuilder {
         self
     }
     /// <p>The IDs of the targets to remove from the rule.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
@@ -127,10 +116,7 @@ impl RemoveTargetsInputBuilder {
     /// Consumes the builder and constructs a [`RemoveTargetsInput`](crate::operation::remove_targets::RemoveTargetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_targets::RemoveTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::remove_targets::RemoveTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_targets::RemoveTargetsInput {
             rule: self.rule,
             event_bus_name: self.event_bus_name,

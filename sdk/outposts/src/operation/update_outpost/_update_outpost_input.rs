@@ -30,9 +30,7 @@ impl UpdateOutpostInput {
         self.description.as_deref()
     }
     /// <p> The type of hardware for this Outpost. </p>
-    pub fn supported_hardware_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SupportedHardwareType> {
+    pub fn supported_hardware_type(&self) -> ::std::option::Option<&crate::types::SupportedHardwareType> {
         self.supported_hardware_type.as_ref()
     }
 }
@@ -45,9 +43,7 @@ impl UpdateOutpostInput {
 
 /// A builder for [`UpdateOutpostInput`](crate::operation::update_outpost::UpdateOutpostInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOutpostInputBuilder {
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -103,26 +99,18 @@ impl UpdateOutpostInputBuilder {
         self
     }
     /// <p> The type of hardware for this Outpost. </p>
-    pub fn set_supported_hardware_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SupportedHardwareType>,
-    ) -> Self {
+    pub fn set_supported_hardware_type(mut self, input: ::std::option::Option<crate::types::SupportedHardwareType>) -> Self {
         self.supported_hardware_type = input;
         self
     }
     /// <p> The type of hardware for this Outpost. </p>
-    pub fn get_supported_hardware_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::SupportedHardwareType> {
+    pub fn get_supported_hardware_type(&self) -> &::std::option::Option<crate::types::SupportedHardwareType> {
         &self.supported_hardware_type
     }
     /// Consumes the builder and constructs a [`UpdateOutpostInput`](crate::operation::update_outpost::UpdateOutpostInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_outpost::UpdateOutpostInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_outpost::UpdateOutpostInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_outpost::UpdateOutpostInput {
             outpost_id: self.outpost_id,
             name: self.name,

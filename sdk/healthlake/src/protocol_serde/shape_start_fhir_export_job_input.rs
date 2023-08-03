@@ -9,10 +9,7 @@ pub fn ser_start_fhir_export_job_input(
     if let Some(var_2) = &input.output_data_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("OutputDataConfig").start_object();
-        crate::protocol_serde::shape_output_data_config::ser_output_data_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_output_data_config::ser_output_data_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.datastore_id {

@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`base_configuration_items(Option<Vec<BaseConfigurationItem>>)`](crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput::base_configuration_items): <p>A list that contains the current configuration of one or more resources.</p>
     ///   - [`unprocessed_resource_identifiers(Option<Vec<AggregateResourceIdentifier>>)`](crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput::unprocessed_resource_identifiers): <p>A list of resource identifiers that were not processed with current scope. The list is empty if all the resources are processed.</p>
     /// - On failure, responds with [`SdkError<BatchGetAggregateResourceConfigError>`](crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError)
-    pub fn batch_get_aggregate_resource_config(&self) -> crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigFluentBuilder{
+    pub fn batch_get_aggregate_resource_config(
+        &self,
+    ) -> crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigFluentBuilder {
         crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigFluentBuilder::new(self.handle.clone())
     }
 }

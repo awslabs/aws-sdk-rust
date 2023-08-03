@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVocabularyFilterOutput {
 }
 impl DeleteVocabularyFilterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVocabularyFilterOutput`](crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_vocabulary_filter::builders::DeleteVocabularyFilterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vocabulary_filter::builders::DeleteVocabularyFilterOutputBuilder {
         crate::operation::delete_vocabulary_filter::builders::DeleteVocabularyFilterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVocabularyFilterOutput`](crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVocabularyFilterOutputBuilder {
     _request_id: Option<String>,
 }

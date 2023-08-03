@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for AdvertiseByoipCidrOutput {
 }
 impl AdvertiseByoipCidrOutput {
     /// Creates a new builder-style object to manufacture [`AdvertiseByoipCidrOutput`](crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrOutput).
-    pub fn builder(
-    ) -> crate::operation::advertise_byoip_cidr::builders::AdvertiseByoipCidrOutputBuilder {
+    pub fn builder() -> crate::operation::advertise_byoip_cidr::builders::AdvertiseByoipCidrOutputBuilder {
         crate::operation::advertise_byoip_cidr::builders::AdvertiseByoipCidrOutputBuilder::default()
     }
 }
 
 /// A builder for [`AdvertiseByoipCidrOutput`](crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdvertiseByoipCidrOutputBuilder {
     pub(crate) byoip_cidr: ::std::option::Option<crate::types::ByoipCidr>,
     _request_id: Option<String>,

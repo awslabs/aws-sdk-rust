@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`source_location_name(Option<String>)`](crate::operation::update_live_source::UpdateLiveSourceOutput::source_location_name): <p>The name of the source location associated with the live source.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_live_source::UpdateLiveSourceOutput::tags): <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     /// - On failure, responds with [`SdkError<UpdateLiveSourceError>`](crate::operation::update_live_source::UpdateLiveSourceError)
-    pub fn update_live_source(
-        &self,
-    ) -> crate::operation::update_live_source::builders::UpdateLiveSourceFluentBuilder {
-        crate::operation::update_live_source::builders::UpdateLiveSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_live_source(&self) -> crate::operation::update_live_source::builders::UpdateLiveSourceFluentBuilder {
+        crate::operation::update_live_source::builders::UpdateLiveSourceFluentBuilder::new(self.handle.clone())
     }
 }

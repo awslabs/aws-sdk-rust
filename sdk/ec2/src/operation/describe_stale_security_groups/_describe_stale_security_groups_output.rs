@@ -8,8 +8,7 @@ pub struct DescribeStaleSecurityGroupsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the stale security groups.</p>
     #[doc(hidden)]
-    pub stale_security_group_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::StaleSecurityGroup>>,
+    pub stale_security_group_set: ::std::option::Option<::std::vec::Vec<crate::types::StaleSecurityGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeStaleSecurityGroupsOutput {
@@ -18,9 +17,7 @@ impl DescribeStaleSecurityGroupsOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the stale security groups.</p>
-    pub fn stale_security_group_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StaleSecurityGroup]> {
+    pub fn stale_security_group_set(&self) -> ::std::option::Option<&[crate::types::StaleSecurityGroup]> {
         self.stale_security_group_set.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeStaleSecurityGroupsOutput {
 }
 impl DescribeStaleSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStaleSecurityGroupsOutput`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput).
-    pub fn builder() -> crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsOutputBuilder {
         crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStaleSecurityGroupsOutput`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStaleSecurityGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) stale_security_group_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::StaleSecurityGroup>>,
+    pub(crate) stale_security_group_set: ::std::option::Option<::std::vec::Vec<crate::types::StaleSecurityGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeStaleSecurityGroupsOutputBuilder {
@@ -74,17 +68,12 @@ impl DescribeStaleSecurityGroupsOutputBuilder {
         self
     }
     /// <p>Information about the stale security groups.</p>
-    pub fn set_stale_security_group_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StaleSecurityGroup>>,
-    ) -> Self {
+    pub fn set_stale_security_group_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StaleSecurityGroup>>) -> Self {
         self.stale_security_group_set = input;
         self
     }
     /// <p>Information about the stale security groups.</p>
-    pub fn get_stale_security_group_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StaleSecurityGroup>> {
+    pub fn get_stale_security_group_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StaleSecurityGroup>> {
         &self.stale_security_group_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl DescribeStaleSecurityGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeStaleSecurityGroupsOutput`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput {
+    pub fn build(self) -> crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput {
         crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput {
             next_token: self.next_token,
             stale_security_group_set: self.stale_security_group_set,

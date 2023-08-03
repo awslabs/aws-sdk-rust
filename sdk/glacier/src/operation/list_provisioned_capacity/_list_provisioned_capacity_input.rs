@@ -15,18 +15,14 @@ impl ListProvisionedCapacityInput {
 }
 impl ListProvisionedCapacityInput {
     /// Creates a new builder-style object to manufacture [`ListProvisionedCapacityInput`](crate::operation::list_provisioned_capacity::ListProvisionedCapacityInput).
-    pub fn builder(
-    ) -> crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityInputBuilder {
         crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProvisionedCapacityInput`](crate::operation::list_provisioned_capacity::ListProvisionedCapacityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProvisionedCapacityInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl ListProvisionedCapacityInputBuilder {
         crate::operation::list_provisioned_capacity::ListProvisionedCapacityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_provisioned_capacity::ListProvisionedCapacityInput {
-                account_id: self.account_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_provisioned_capacity::ListProvisionedCapacityInput { account_id: self.account_id })
     }
 }

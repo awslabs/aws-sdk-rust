@@ -16,9 +16,7 @@ pub struct CloudFormationStackRecordSourceInfo {
 }
 impl CloudFormationStackRecordSourceInfo {
     /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
-    pub fn resource_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudFormationStackRecordSourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::CloudFormationStackRecordSourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The name of the record.</p>
@@ -39,36 +37,25 @@ impl CloudFormationStackRecordSourceInfo {
 
 /// A builder for [`CloudFormationStackRecordSourceInfo`](crate::types::CloudFormationStackRecordSourceInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudFormationStackRecordSourceInfoBuilder {
-    pub(crate) resource_type:
-        ::std::option::Option<crate::types::CloudFormationStackRecordSourceType>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::CloudFormationStackRecordSourceType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl CloudFormationStackRecordSourceInfoBuilder {
     /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
-    pub fn resource_type(
-        mut self,
-        input: crate::types::CloudFormationStackRecordSourceType,
-    ) -> Self {
+    pub fn resource_type(mut self, input: crate::types::CloudFormationStackRecordSourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudFormationStackRecordSourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::CloudFormationStackRecordSourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudFormationStackRecordSourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::CloudFormationStackRecordSourceType> {
         &self.resource_type
     }
     /// <p>The name of the record.</p>

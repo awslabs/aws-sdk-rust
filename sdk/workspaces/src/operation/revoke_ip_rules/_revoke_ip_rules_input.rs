@@ -29,9 +29,7 @@ impl RevokeIpRulesInput {
 
 /// A builder for [`RevokeIpRulesInput`](crate::operation::revoke_ip_rules::RevokeIpRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeIpRulesInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,10 +61,7 @@ impl RevokeIpRulesInputBuilder {
         self
     }
     /// <p>The rules to remove from the group.</p>
-    pub fn set_user_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_rules(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_rules = input;
         self
     }
@@ -77,10 +72,7 @@ impl RevokeIpRulesInputBuilder {
     /// Consumes the builder and constructs a [`RevokeIpRulesInput`](crate::operation::revoke_ip_rules::RevokeIpRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_ip_rules::RevokeIpRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::revoke_ip_rules::RevokeIpRulesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_ip_rules::RevokeIpRulesInput {
             group_id: self.group_id,
             user_rules: self.user_rules,

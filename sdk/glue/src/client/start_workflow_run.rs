@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartWorkflowRunOutput`](crate::operation::start_workflow_run::StartWorkflowRunOutput) with field(s):
     ///   - [`run_id(Option<String>)`](crate::operation::start_workflow_run::StartWorkflowRunOutput::run_id): <p>An Id for the new run.</p>
     /// - On failure, responds with [`SdkError<StartWorkflowRunError>`](crate::operation::start_workflow_run::StartWorkflowRunError)
-    pub fn start_workflow_run(
-        &self,
-    ) -> crate::operation::start_workflow_run::builders::StartWorkflowRunFluentBuilder {
-        crate::operation::start_workflow_run::builders::StartWorkflowRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_workflow_run(&self) -> crate::operation::start_workflow_run::builders::StartWorkflowRunFluentBuilder {
+        crate::operation::start_workflow_run::builders::StartWorkflowRunFluentBuilder::new(self.handle.clone())
     }
 }

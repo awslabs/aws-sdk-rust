@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateExportTaskOutput`](crate::operation::create_export_task::CreateExportTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::operation::create_export_task::CreateExportTaskOutput::task_id): <p>The ID of the export task.</p>
     /// - On failure, responds with [`SdkError<CreateExportTaskError>`](crate::operation::create_export_task::CreateExportTaskError)
-    pub fn create_export_task(
-        &self,
-    ) -> crate::operation::create_export_task::builders::CreateExportTaskFluentBuilder {
-        crate::operation::create_export_task::builders::CreateExportTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_export_task(&self) -> crate::operation::create_export_task::builders::CreateExportTaskFluentBuilder {
+        crate::operation::create_export_task::builders::CreateExportTaskFluentBuilder::new(self.handle.clone())
     }
 }

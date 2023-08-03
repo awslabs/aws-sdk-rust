@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`access_control_list(Option<Vec<Principal>>)`](crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationOutput::access_control_list): <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     ///   - [`hierarchical_access_control_list(Option<Vec<HierarchicalPrincipal>>)`](crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationOutput::hierarchical_access_control_list): <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
     /// - On failure, responds with [`SdkError<DescribeAccessControlConfigurationError>`](crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationError)
-    pub fn describe_access_control_configuration(&self) -> crate::operation::describe_access_control_configuration::builders::DescribeAccessControlConfigurationFluentBuilder{
+    pub fn describe_access_control_configuration(
+        &self,
+    ) -> crate::operation::describe_access_control_configuration::builders::DescribeAccessControlConfigurationFluentBuilder {
         crate::operation::describe_access_control_configuration::builders::DescribeAccessControlConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,9 +13,7 @@ pub fn ser_describe_replication_configuration_templates_input(
         object.key("nextToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.replication_configuration_template_i_ds {
-        let mut array_3 = object
-            .key("replicationConfigurationTemplateIDs")
-            .start_array();
+        let mut array_3 = object.key("replicationConfigurationTemplateIDs").start_array();
         for item_4 in var_2 {
             {
                 array_3.value().string(item_4.as_str());

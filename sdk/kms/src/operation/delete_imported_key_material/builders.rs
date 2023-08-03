@@ -35,7 +35,7 @@ impl DeleteImportedKeyMaterialInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteImportedKeyMaterialFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_imported_key_material::builders::DeleteImportedKeyMaterialInputBuilder,
+    inner: crate::operation::delete_imported_key_material::builders::DeleteImportedKeyMaterialInputBuilder,
 }
 impl DeleteImportedKeyMaterialFluentBuilder {
     /// Creates a new `DeleteImportedKeyMaterial`.
@@ -46,7 +46,7 @@ impl DeleteImportedKeyMaterialFluentBuilder {
         }
     }
     /// Access the DeleteImportedKeyMaterial as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_imported_key_material::builders::DeleteImportedKeyMaterialInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_imported_key_material::builders::DeleteImportedKeyMaterialInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +58,7 @@ impl DeleteImportedKeyMaterialFluentBuilder {
             crate::operation::delete_imported_key_material::DeleteImportedKeyMaterial,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +68,7 @@ impl DeleteImportedKeyMaterialFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +77,7 @@ impl DeleteImportedKeyMaterialFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialError>,
     > {
         let op = self
             .inner
@@ -107,9 +100,7 @@ impl DeleteImportedKeyMaterialFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +114,7 @@ impl DeleteImportedKeyMaterialFluentBuilder {
             crate::operation::delete_imported_key_material::DeleteImportedKeyMaterial,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialError>,
     > {
         self.customize_middleware().await
     }

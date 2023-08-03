@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateOrganizationalUnitOutput {
 }
 impl UpdateOrganizationalUnitOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOrganizationalUnitOutput`](crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput).
-    pub fn builder(
-    ) -> crate::operation::update_organizational_unit::builders::UpdateOrganizationalUnitOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_organizational_unit::builders::UpdateOrganizationalUnitOutputBuilder {
         crate::operation::update_organizational_unit::builders::UpdateOrganizationalUnitOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateOrganizationalUnitOutput`](crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOrganizationalUnitOutputBuilder {
     pub(crate) organizational_unit: ::std::option::Option<crate::types::OrganizationalUnit>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl UpdateOrganizationalUnitOutputBuilder {
         self
     }
     /// <p>A structure that contains the details about the specified OU, including its new name.</p>
-    pub fn set_organizational_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationalUnit>,
-    ) -> Self {
+    pub fn set_organizational_unit(mut self, input: ::std::option::Option<crate::types::OrganizationalUnit>) -> Self {
         self.organizational_unit = input;
         self
     }
     /// <p>A structure that contains the details about the specified OU, including its new name.</p>
-    pub fn get_organizational_unit(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationalUnit> {
+    pub fn get_organizational_unit(&self) -> &::std::option::Option<crate::types::OrganizationalUnit> {
         &self.organizational_unit
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl UpdateOrganizationalUnitOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateOrganizationalUnitOutput`](crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput {
+    pub fn build(self) -> crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput {
         crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput {
             organizational_unit: self.organizational_unit,
             _request_id: self._request_id,

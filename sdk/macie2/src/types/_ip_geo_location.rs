@@ -30,9 +30,7 @@ impl IpGeoLocation {
 
 /// A builder for [`IpGeoLocation`](crate::types::IpGeoLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpGeoLocationBuilder {
     pub(crate) lat: ::std::option::Option<f64>,
     pub(crate) lon: ::std::option::Option<f64>,

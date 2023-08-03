@@ -65,9 +65,7 @@ impl PullRequestTarget {
 
 /// A builder for [`PullRequestTarget`](crate::types::PullRequestTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PullRequestTargetBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_reference: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct PullRequestTargetBuilder {
 }
 impl PullRequestTargetBuilder {
     /// <p>The name of the repository that contains the pull request source and destination branches.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that contains the pull request source and destination branches.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -99,18 +91,12 @@ impl PullRequestTargetBuilder {
         &self.repository_name
     }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
-    pub fn source_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
-    pub fn set_source_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_reference = input;
         self
     }
@@ -119,18 +105,12 @@ impl PullRequestTargetBuilder {
         &self.source_reference
     }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
-    pub fn destination_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
-    pub fn set_destination_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_reference = input;
         self
     }
@@ -139,18 +119,12 @@ impl PullRequestTargetBuilder {
         &self.destination_reference
     }
     /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
-    pub fn destination_commit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_commit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_commit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
-    pub fn set_destination_commit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_commit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_commit = input;
         self
     }
@@ -159,18 +133,12 @@ impl PullRequestTargetBuilder {
         &self.destination_commit
     }
     /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
-    pub fn source_commit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_commit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_commit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
-    pub fn set_source_commit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_commit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_commit = input;
         self
     }
@@ -198,10 +166,7 @@ impl PullRequestTargetBuilder {
         self
     }
     /// <p>Returns metadata about the state of the merge, including whether the merge has been made.</p>
-    pub fn set_merge_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeMetadata>,
-    ) -> Self {
+    pub fn set_merge_metadata(mut self, input: ::std::option::Option<crate::types::MergeMetadata>) -> Self {
         self.merge_metadata = input;
         self
     }

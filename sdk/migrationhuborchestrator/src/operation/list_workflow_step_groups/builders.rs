@@ -26,8 +26,7 @@ impl ListWorkflowStepGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWorkflowStepGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsInputBuilder,
+    inner: crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsInputBuilder,
 }
 impl ListWorkflowStepGroupsFluentBuilder {
     /// Creates a new `ListWorkflowStepGroups`.
@@ -38,10 +37,7 @@ impl ListWorkflowStepGroupsFluentBuilder {
         }
     }
     /// Access the ListWorkflowStepGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListWorkflowStepGroupsFluentBuilder {
             crate::operation::list_workflow_step_groups::ListWorkflowStepGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListWorkflowStepGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListWorkflowStepGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListWorkflowStepGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -118,23 +105,15 @@ impl ListWorkflowStepGroupsFluentBuilder {
             crate::operation::list_workflow_step_groups::ListWorkflowStepGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_workflow_step_groups::paginator::ListWorkflowStepGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_workflow_step_groups::paginator::ListWorkflowStepGroupsPaginator
-    {
-        crate::operation::list_workflow_step_groups::paginator::ListWorkflowStepGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_workflow_step_groups::paginator::ListWorkflowStepGroupsPaginator {
+        crate::operation::list_workflow_step_groups::paginator::ListWorkflowStepGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

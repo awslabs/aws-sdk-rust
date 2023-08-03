@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyClusterMaintenanceOutput {
 }
 impl ModifyClusterMaintenanceOutput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterMaintenanceOutput`](crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceOutputBuilder {
         crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyClusterMaintenanceOutput`](crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClusterMaintenanceOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl ModifyClusterMaintenanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyClusterMaintenanceOutput`](crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput {
+    pub fn build(self) -> crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput {
         crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput {
             cluster: self.cluster,
             _request_id: self._request_id,

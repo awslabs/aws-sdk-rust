@@ -37,10 +37,7 @@ impl DescribeLifecycleHooksFluentBuilder {
         }
     }
     /// Access the DescribeLifecycleHooks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeLifecycleHooksFluentBuilder {
             crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeLifecycleHooksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeLifecycleHooksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeLifecycleHooksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeLifecycleHooksFluentBuilder {
             crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -148,25 +128,17 @@ impl DescribeLifecycleHooksFluentBuilder {
     /// To override the contents of this collection use [`set_lifecycle_hook_names`](Self::set_lifecycle_hook_names).
     ///
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    pub fn lifecycle_hook_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_hook_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lifecycle_hook_names(input.into());
         self
     }
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    pub fn set_lifecycle_hook_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_lifecycle_hook_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_lifecycle_hook_names(input);
         self
     }
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    pub fn get_lifecycle_hook_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lifecycle_hook_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_lifecycle_hook_names()
     }
 }

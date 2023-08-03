@@ -31,7 +31,7 @@ impl DescribeCreateCaseOptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCreateCaseOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsInputBuilder,
+    inner: crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsInputBuilder,
 }
 impl DescribeCreateCaseOptionsFluentBuilder {
     /// Creates a new `DescribeCreateCaseOptions`.
@@ -42,7 +42,7 @@ impl DescribeCreateCaseOptionsFluentBuilder {
         }
     }
     /// Access the DescribeCreateCaseOptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl DescribeCreateCaseOptionsFluentBuilder {
             crate::operation::describe_create_case_options::DescribeCreateCaseOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl DescribeCreateCaseOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl DescribeCreateCaseOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl DescribeCreateCaseOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +110,7 @@ impl DescribeCreateCaseOptionsFluentBuilder {
             crate::operation::describe_create_case_options::DescribeCreateCaseOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError>,
     > {
         self.customize_middleware().await
     }
@@ -168,18 +157,12 @@ impl DescribeCreateCaseOptionsFluentBuilder {
         self.inner.get_language()
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    pub fn category_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.category_code(input.into());
         self
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    pub fn set_category_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_category_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_category_code(input);
         self
     }

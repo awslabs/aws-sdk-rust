@@ -9,46 +9,31 @@ pub fn ser_is_authorized_input(
     if let Some(var_2) = &input.principal {
         #[allow(unused_mut)]
         let mut object_3 = object.key("principal").start_object();
-        crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.action {
         #[allow(unused_mut)]
         let mut object_5 = object.key("action").start_object();
-        crate::protocol_serde::shape_action_identifier::ser_action_identifier(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_action_identifier::ser_action_identifier(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.resource {
         #[allow(unused_mut)]
         let mut object_7 = object.key("resource").start_object();
-        crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.context {
         #[allow(unused_mut)]
         let mut object_9 = object.key("context").start_object();
-        crate::protocol_serde::shape_context_definition::ser_context_definition(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_context_definition::ser_context_definition(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.entities {
         #[allow(unused_mut)]
         let mut object_11 = object.key("entities").start_object();
-        crate::protocol_serde::shape_entities_definition::ser_entities_definition(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_entities_definition::ser_entities_definition(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())

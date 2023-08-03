@@ -30,18 +30,14 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     /// Creates a new builder-style object to manufacture [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
-    pub fn builder(
-    ) -> crate::types::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesErrorBuilder
-    {
+    pub fn builder() -> crate::types::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesErrorBuilder {
         crate::types::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesErrorBuilder::default()
     }
 }
 
 /// A builder for [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesErrorBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
@@ -49,18 +45,12 @@ pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesErrorBuilder {
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesErrorBuilder {
     /// <p>The name of the repository where the association was not made.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where the association was not made.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -83,18 +73,12 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesErrorBuilder {
         &self.error_code
     }
     /// <p>An error message that provides details about why the repository name was not found or not valid.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An error message that provides details about why the repository name was not found or not valid.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

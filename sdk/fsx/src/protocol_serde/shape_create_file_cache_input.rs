@@ -49,9 +49,7 @@ pub fn ser_create_file_cache_input(
         array_12.finish();
     }
     if let Some(var_15) = &input.copy_tags_to_data_repository_associations {
-        object
-            .key("CopyTagsToDataRepositoryAssociations")
-            .boolean(*var_15);
+        object.key("CopyTagsToDataRepositoryAssociations").boolean(*var_15);
     }
     if let Some(var_16) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_16.as_str());
@@ -68,7 +66,10 @@ pub fn ser_create_file_cache_input(
             {
                 #[allow(unused_mut)]
                 let mut object_22 = array_20.value().start_object();
-                crate::protocol_serde::shape_file_cache_data_repository_association::ser_file_cache_data_repository_association(&mut object_22, item_21)?;
+                crate::protocol_serde::shape_file_cache_data_repository_association::ser_file_cache_data_repository_association(
+                    &mut object_22,
+                    item_21,
+                )?;
                 object_22.finish();
             }
         }

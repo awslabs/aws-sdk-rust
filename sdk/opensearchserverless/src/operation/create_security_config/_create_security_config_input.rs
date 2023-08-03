@@ -43,17 +43,14 @@ impl CreateSecurityConfigInput {
 }
 impl CreateSecurityConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateSecurityConfigInput`](crate::operation::create_security_config::CreateSecurityConfigInput).
-    pub fn builder(
-    ) -> crate::operation::create_security_config::builders::CreateSecurityConfigInputBuilder {
+    pub fn builder() -> crate::operation::create_security_config::builders::CreateSecurityConfigInputBuilder {
         crate::operation::create_security_config::builders::CreateSecurityConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSecurityConfigInput`](crate::operation::create_security_config::CreateSecurityConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSecurityConfigInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SecurityConfigType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -68,10 +65,7 @@ impl CreateSecurityConfigInputBuilder {
         self
     }
     /// <p>The type of security configuration.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityConfigType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityConfigType>) -> Self {
         self.r#type = input;
         self
     }
@@ -113,10 +107,7 @@ impl CreateSecurityConfigInputBuilder {
         self
     }
     /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
-    pub fn set_saml_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SamlConfigOptions>,
-    ) -> Self {
+    pub fn set_saml_options(mut self, input: ::std::option::Option<crate::types::SamlConfigOptions>) -> Self {
         self.saml_options = input;
         self
     }
@@ -141,18 +132,14 @@ impl CreateSecurityConfigInputBuilder {
     /// Consumes the builder and constructs a [`CreateSecurityConfigInput`](crate::operation::create_security_config::CreateSecurityConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_security_config::CreateSecurityConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_security_config::CreateSecurityConfigInput {
-                r#type: self.r#type,
-                name: self.name,
-                description: self.description,
-                saml_options: self.saml_options,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_security_config::CreateSecurityConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_security_config::CreateSecurityConfigInput {
+            r#type: self.r#type,
+            name: self.name,
+            description: self.description,
+            saml_options: self.saml_options,
+            client_token: self.client_token,
+        })
     }
 }

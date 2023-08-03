@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeploymentCreator {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for DeploymentCreator {
             "autoscaling" => DeploymentCreator::Autoscaling,
             "codeDeployRollback" => DeploymentCreator::CodeDeployRollback,
             "user" => DeploymentCreator::User,
-            other => {
-                DeploymentCreator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DeploymentCreator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

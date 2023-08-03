@@ -5,8 +5,7 @@
 pub struct ListMonitoringExecutionsOutput {
     /// <p>A JSON array in which each element is a summary for a monitoring execution.</p>
     #[doc(hidden)]
-    pub monitoring_execution_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringExecutionSummary>>,
+    pub monitoring_execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringExecutionSummary>>,
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent reques</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListMonitoringExecutionsOutput {
 }
 impl ListMonitoringExecutionsOutput {
     /// <p>A JSON array in which each element is a summary for a monitoring execution.</p>
-    pub fn monitoring_execution_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MonitoringExecutionSummary]> {
+    pub fn monitoring_execution_summaries(&self) -> ::std::option::Option<&[crate::types::MonitoringExecutionSummary]> {
         self.monitoring_execution_summaries.as_deref()
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent reques</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListMonitoringExecutionsOutput {
 }
 impl ListMonitoringExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListMonitoringExecutionsOutput`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsOutputBuilder {
         crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMonitoringExecutionsOutput`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitoringExecutionsOutputBuilder {
-    pub(crate) monitoring_execution_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringExecutionSummary>>,
+    pub(crate) monitoring_execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringExecutionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListMonitoringExecutionsOutputBuilder {
     /// To override the contents of this collection use [`set_monitoring_execution_summaries`](Self::set_monitoring_execution_summaries).
     ///
     /// <p>A JSON array in which each element is a summary for a monitoring execution.</p>
-    pub fn monitoring_execution_summaries(
-        mut self,
-        input: crate::types::MonitoringExecutionSummary,
-    ) -> Self {
+    pub fn monitoring_execution_summaries(mut self, input: crate::types::MonitoringExecutionSummary) -> Self {
         let mut v = self.monitoring_execution_summaries.unwrap_or_default();
         v.push(input);
         self.monitoring_execution_summaries = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl ListMonitoringExecutionsOutputBuilder {
         self
     }
     /// <p>A JSON array in which each element is a summary for a monitoring execution.</p>
-    pub fn get_monitoring_execution_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringExecutionSummary>> {
+    pub fn get_monitoring_execution_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringExecutionSummary>> {
         &self.monitoring_execution_summaries
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent reques</p>
@@ -102,9 +89,7 @@ impl ListMonitoringExecutionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMonitoringExecutionsOutput`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput {
+    pub fn build(self) -> crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput {
         crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput {
             monitoring_execution_summaries: self.monitoring_execution_summaries,
             next_token: self.next_token,

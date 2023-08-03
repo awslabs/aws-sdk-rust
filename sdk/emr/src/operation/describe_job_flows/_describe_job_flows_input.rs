@@ -15,8 +15,7 @@ pub struct DescribeJobFlowsInput {
     pub job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Return only job flows whose state is contained in this list.</p>
     #[doc(hidden)]
-    pub job_flow_states:
-        ::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>>,
+    pub job_flow_states: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>>,
 }
 impl DescribeJobFlowsInput {
     /// <p>Return only job flows created after this date and time.</p>
@@ -38,23 +37,19 @@ impl DescribeJobFlowsInput {
 }
 impl DescribeJobFlowsInput {
     /// Creates a new builder-style object to manufacture [`DescribeJobFlowsInput`](crate::operation::describe_job_flows::DescribeJobFlowsInput).
-    pub fn builder() -> crate::operation::describe_job_flows::builders::DescribeJobFlowsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_job_flows::builders::DescribeJobFlowsInputBuilder {
         crate::operation::describe_job_flows::builders::DescribeJobFlowsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeJobFlowsInput`](crate::operation::describe_job_flows::DescribeJobFlowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobFlowsInputBuilder {
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) job_flow_states:
-        ::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>>,
+    pub(crate) job_flow_states: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>>,
 }
 impl DescribeJobFlowsInputBuilder {
     /// <p>Return only job flows created after this date and time.</p>
@@ -63,10 +58,7 @@ impl DescribeJobFlowsInputBuilder {
         self
     }
     /// <p>Return only job flows created after this date and time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -80,10 +72,7 @@ impl DescribeJobFlowsInputBuilder {
         self
     }
     /// <p>Return only job flows created before this date and time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -103,17 +92,12 @@ impl DescribeJobFlowsInputBuilder {
         self
     }
     /// <p>Return only job flows whose job flow ID is contained in this list.</p>
-    pub fn set_job_flow_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.job_flow_ids = input;
         self
     }
     /// <p>Return only job flows whose job flow ID is contained in this list.</p>
-    pub fn get_job_flow_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.job_flow_ids
     }
     /// Appends an item to `job_flow_states`.
@@ -128,33 +112,23 @@ impl DescribeJobFlowsInputBuilder {
         self
     }
     /// <p>Return only job flows whose state is contained in this list.</p>
-    pub fn set_job_flow_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>>,
-    ) -> Self {
+    pub fn set_job_flow_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>>) -> Self {
         self.job_flow_states = input;
         self
     }
     /// <p>Return only job flows whose state is contained in this list.</p>
-    pub fn get_job_flow_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>> {
+    pub fn get_job_flow_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>> {
         &self.job_flow_states
     }
     /// Consumes the builder and constructs a [`DescribeJobFlowsInput`](crate::operation::describe_job_flows::DescribeJobFlowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_job_flows::DescribeJobFlowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_job_flows::DescribeJobFlowsInput {
-                created_after: self.created_after,
-                created_before: self.created_before,
-                job_flow_ids: self.job_flow_ids,
-                job_flow_states: self.job_flow_states,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_job_flows::DescribeJobFlowsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_job_flows::DescribeJobFlowsInput {
+            created_after: self.created_after,
+            created_before: self.created_before,
+            job_flow_ids: self.job_flow_ids,
+            job_flow_states: self.job_flow_states,
+        })
     }
 }

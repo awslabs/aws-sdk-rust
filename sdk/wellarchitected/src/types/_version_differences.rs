@@ -23,12 +23,9 @@ impl VersionDifferences {
 
 /// A builder for [`VersionDifferences`](crate::types::VersionDifferences).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VersionDifferencesBuilder {
-    pub(crate) pillar_differences:
-        ::std::option::Option<::std::vec::Vec<crate::types::PillarDifference>>,
+    pub(crate) pillar_differences: ::std::option::Option<::std::vec::Vec<crate::types::PillarDifference>>,
 }
 impl VersionDifferencesBuilder {
     /// Appends an item to `pillar_differences`.
@@ -43,17 +40,12 @@ impl VersionDifferencesBuilder {
         self
     }
     /// <p>The differences between the base and latest versions of the lens.</p>
-    pub fn set_pillar_differences(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PillarDifference>>,
-    ) -> Self {
+    pub fn set_pillar_differences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PillarDifference>>) -> Self {
         self.pillar_differences = input;
         self
     }
     /// <p>The differences between the base and latest versions of the lens.</p>
-    pub fn get_pillar_differences(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PillarDifference>> {
+    pub fn get_pillar_differences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PillarDifference>> {
         &self.pillar_differences
     }
     /// Consumes the builder and constructs a [`VersionDifferences`](crate::types::VersionDifferences).

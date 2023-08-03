@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Icd10CmRelationshipType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for Icd10CmRelationshipType {
             "OVERLAP" => Icd10CmRelationshipType::Overlap,
             "QUALITY" => Icd10CmRelationshipType::Quality,
             "SYSTEM_ORGAN_SITE" => Icd10CmRelationshipType::SystemOrganSite,
-            other => Icd10CmRelationshipType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Icd10CmRelationshipType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`PostCommentReplyOutput`](crate::operation::post_comment_reply::PostCommentReplyOutput) with field(s):
     ///   - [`comment(Option<Comment>)`](crate::operation::post_comment_reply::PostCommentReplyOutput::comment): <p>Information about the reply to a comment.</p>
     /// - On failure, responds with [`SdkError<PostCommentReplyError>`](crate::operation::post_comment_reply::PostCommentReplyError)
-    pub fn post_comment_reply(
-        &self,
-    ) -> crate::operation::post_comment_reply::builders::PostCommentReplyFluentBuilder {
-        crate::operation::post_comment_reply::builders::PostCommentReplyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn post_comment_reply(&self) -> crate::operation::post_comment_reply::builders::PostCommentReplyFluentBuilder {
+        crate::operation::post_comment_reply::builders::PostCommentReplyFluentBuilder::new(self.handle.clone())
     }
 }

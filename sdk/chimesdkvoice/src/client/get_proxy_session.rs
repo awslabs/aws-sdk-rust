@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetProxySessionOutput`](crate::operation::get_proxy_session::GetProxySessionOutput) with field(s):
     ///   - [`proxy_session(Option<ProxySession>)`](crate::operation::get_proxy_session::GetProxySessionOutput::proxy_session): <p>The proxy session details.</p>
     /// - On failure, responds with [`SdkError<GetProxySessionError>`](crate::operation::get_proxy_session::GetProxySessionError)
-    pub fn get_proxy_session(
-        &self,
-    ) -> crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder {
-        crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_proxy_session(&self) -> crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder {
+        crate::operation::get_proxy_session::builders::GetProxySessionFluentBuilder::new(self.handle.clone())
     }
 }

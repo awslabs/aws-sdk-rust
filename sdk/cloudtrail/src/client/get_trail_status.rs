@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`time_logging_started(Option<String>)`](crate::operation::get_trail_status::GetTrailStatusOutput::time_logging_started): <p>This field is no longer in use.</p>
     ///   - [`time_logging_stopped(Option<String>)`](crate::operation::get_trail_status::GetTrailStatusOutput::time_logging_stopped): <p>This field is no longer in use.</p>
     /// - On failure, responds with [`SdkError<GetTrailStatusError>`](crate::operation::get_trail_status::GetTrailStatusError)
-    pub fn get_trail_status(
-        &self,
-    ) -> crate::operation::get_trail_status::builders::GetTrailStatusFluentBuilder {
-        crate::operation::get_trail_status::builders::GetTrailStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_trail_status(&self) -> crate::operation::get_trail_status::builders::GetTrailStatusFluentBuilder {
+        crate::operation::get_trail_status::builders::GetTrailStatusFluentBuilder::new(self.handle.clone())
     }
 }

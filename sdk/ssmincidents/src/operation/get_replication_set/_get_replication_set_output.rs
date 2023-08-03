@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetReplicationSetOutput {
 }
 impl GetReplicationSetOutput {
     /// Creates a new builder-style object to manufacture [`GetReplicationSetOutput`](crate::operation::get_replication_set::GetReplicationSetOutput).
-    pub fn builder(
-    ) -> crate::operation::get_replication_set::builders::GetReplicationSetOutputBuilder {
+    pub fn builder() -> crate::operation::get_replication_set::builders::GetReplicationSetOutputBuilder {
         crate::operation::get_replication_set::builders::GetReplicationSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetReplicationSetOutput`](crate::operation::get_replication_set::GetReplicationSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReplicationSetOutputBuilder {
     pub(crate) replication_set: ::std::option::Option<crate::types::ReplicationSet>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetReplicationSetOutputBuilder {
         self
     }
     /// <p>Details of the replication set.</p>
-    pub fn set_replication_set(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationSet>,
-    ) -> Self {
+    pub fn set_replication_set(mut self, input: ::std::option::Option<crate::types::ReplicationSet>) -> Self {
         self.replication_set = input;
         self
     }

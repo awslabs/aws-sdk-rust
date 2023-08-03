@@ -15,18 +15,14 @@ impl DescribeFhirDatastoreInput {
 }
 impl DescribeFhirDatastoreInput {
     /// Creates a new builder-style object to manufacture [`DescribeFhirDatastoreInput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreInputBuilder {
         crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFhirDatastoreInput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFhirDatastoreInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl DescribeFhirDatastoreInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFhirDatastoreInput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput {
-                datastore_id: self.datastore_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_fhir_datastore::DescribeFhirDatastoreInput {
+            datastore_id: self.datastore_id,
+        })
     }
 }

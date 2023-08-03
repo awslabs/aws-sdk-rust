@@ -146,20 +146,15 @@ impl DescribeResizeOutput {
 
 /// A builder for [`DescribeResizeOutput`](crate::operation::describe_resize::DescribeResizeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeResizeOutputBuilder {
     pub(crate) target_node_type: ::std::option::Option<::std::string::String>,
     pub(crate) target_number_of_nodes: ::std::option::Option<i32>,
     pub(crate) target_cluster_type: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
-    pub(crate) import_tables_completed:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) import_tables_in_progress:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) import_tables_not_started:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) import_tables_completed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) import_tables_in_progress: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) import_tables_not_started: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) avg_resize_rate_in_mega_bytes_per_second: ::std::option::Option<f64>,
     pub(crate) total_resize_data_in_mega_bytes: ::std::option::Option<i64>,
     pub(crate) progress_in_mega_bytes: ::std::option::Option<i64>,
@@ -173,18 +168,12 @@ pub struct DescribeResizeOutputBuilder {
 }
 impl DescribeResizeOutputBuilder {
     /// <p>The node type that the cluster will have after the resize operation is complete.</p>
-    pub fn target_node_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node type that the cluster will have after the resize operation is complete.</p>
-    pub fn set_target_node_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_node_type = input;
         self
     }
@@ -208,19 +197,13 @@ impl DescribeResizeOutputBuilder {
     }
     /// <p>The cluster type after the resize operation is complete.</p>
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
-    pub fn target_cluster_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_cluster_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_cluster_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster type after the resize operation is complete.</p>
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
-    pub fn set_target_cluster_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_cluster_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_cluster_type = input;
         self
     }
@@ -252,10 +235,7 @@ impl DescribeResizeOutputBuilder {
     ///
     /// <p>The names of tables that have been completely imported .</p>
     /// <p>Valid Values: List of table names.</p>
-    pub fn import_tables_completed(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn import_tables_completed(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.import_tables_completed.unwrap_or_default();
         v.push(input.into());
         self.import_tables_completed = ::std::option::Option::Some(v);
@@ -263,18 +243,13 @@ impl DescribeResizeOutputBuilder {
     }
     /// <p>The names of tables that have been completely imported .</p>
     /// <p>Valid Values: List of table names.</p>
-    pub fn set_import_tables_completed(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_import_tables_completed(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.import_tables_completed = input;
         self
     }
     /// <p>The names of tables that have been completely imported .</p>
     /// <p>Valid Values: List of table names.</p>
-    pub fn get_import_tables_completed(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_import_tables_completed(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.import_tables_completed
     }
     /// Appends an item to `import_tables_in_progress`.
@@ -283,10 +258,7 @@ impl DescribeResizeOutputBuilder {
     ///
     /// <p>The names of tables that are being currently imported.</p>
     /// <p>Valid Values: List of table names.</p>
-    pub fn import_tables_in_progress(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn import_tables_in_progress(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.import_tables_in_progress.unwrap_or_default();
         v.push(input.into());
         self.import_tables_in_progress = ::std::option::Option::Some(v);
@@ -294,18 +266,13 @@ impl DescribeResizeOutputBuilder {
     }
     /// <p>The names of tables that are being currently imported.</p>
     /// <p>Valid Values: List of table names.</p>
-    pub fn set_import_tables_in_progress(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_import_tables_in_progress(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.import_tables_in_progress = input;
         self
     }
     /// <p>The names of tables that are being currently imported.</p>
     /// <p>Valid Values: List of table names.</p>
-    pub fn get_import_tables_in_progress(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_import_tables_in_progress(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.import_tables_in_progress
     }
     /// Appends an item to `import_tables_not_started`.
@@ -314,10 +281,7 @@ impl DescribeResizeOutputBuilder {
     ///
     /// <p>The names of tables that have not been yet imported.</p>
     /// <p>Valid Values: List of table names</p>
-    pub fn import_tables_not_started(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn import_tables_not_started(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.import_tables_not_started.unwrap_or_default();
         v.push(input.into());
         self.import_tables_not_started = ::std::option::Option::Some(v);
@@ -325,18 +289,13 @@ impl DescribeResizeOutputBuilder {
     }
     /// <p>The names of tables that have not been yet imported.</p>
     /// <p>Valid Values: List of table names</p>
-    pub fn set_import_tables_not_started(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_import_tables_not_started(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.import_tables_not_started = input;
         self
     }
     /// <p>The names of tables that have not been yet imported.</p>
     /// <p>Valid Values: List of table names</p>
-    pub fn get_import_tables_not_started(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_import_tables_not_started(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.import_tables_not_started
     }
     /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
@@ -345,10 +304,7 @@ impl DescribeResizeOutputBuilder {
         self
     }
     /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
-    pub fn set_avg_resize_rate_in_mega_bytes_per_second(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_avg_resize_rate_in_mega_bytes_per_second(mut self, input: ::std::option::Option<f64>) -> Self {
         self.avg_resize_rate_in_mega_bytes_per_second = input;
         self
     }
@@ -362,10 +318,7 @@ impl DescribeResizeOutputBuilder {
         self
     }
     /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
-    pub fn set_total_resize_data_in_mega_bytes(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_total_resize_data_in_mega_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_resize_data_in_mega_bytes = input;
         self
     }
@@ -407,10 +360,7 @@ impl DescribeResizeOutputBuilder {
         self
     }
     /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
-    pub fn set_estimated_time_to_completion_in_seconds(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_estimated_time_to_completion_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.estimated_time_to_completion_in_seconds = input;
         self
     }
@@ -448,19 +398,13 @@ impl DescribeResizeOutputBuilder {
     }
     /// <p>The type of encryption for the cluster after the resize is complete.</p>
     /// <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
-    pub fn target_encryption_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_encryption_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_encryption_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of encryption for the cluster after the resize is complete.</p>
     /// <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
-    pub fn set_target_encryption_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_encryption_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_encryption_type = input;
         self
     }

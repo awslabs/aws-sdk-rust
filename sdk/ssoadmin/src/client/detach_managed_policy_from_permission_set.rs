@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`managed_policy_arn(impl ::std::convert::Into<String>)`](crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetFluentBuilder::managed_policy_arn) / [`set_managed_policy_arn(Option<String>)`](crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetFluentBuilder::set_managed_policy_arn): <p>The AWS managed policy ARN to be detached from a permission set.</p>
     /// - On success, responds with [`DetachManagedPolicyFromPermissionSetOutput`](crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetOutput)
     /// - On failure, responds with [`SdkError<DetachManagedPolicyFromPermissionSetError>`](crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError)
-    pub fn detach_managed_policy_from_permission_set(&self) -> crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetFluentBuilder{
-        crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetFluentBuilder::new(self.handle.clone())
+    pub fn detach_managed_policy_from_permission_set(
+        &self,
+    ) -> crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetFluentBuilder {
+        crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

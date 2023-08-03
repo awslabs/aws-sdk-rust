@@ -93,9 +93,7 @@ impl SoftwarePackage {
 
 /// A builder for [`SoftwarePackage`](crate::types::SoftwarePackage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SoftwarePackageBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -181,18 +179,12 @@ impl SoftwarePackageBuilder {
         &self.architecture
     }
     /// <p>The source of the package.</p>
-    pub fn package_manager(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_manager(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_manager = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source of the package.</p>
-    pub fn set_package_manager(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_manager(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_manager = input;
         self
     }
@@ -215,18 +207,12 @@ impl SoftwarePackageBuilder {
         &self.file_path
     }
     /// <p>The version of the software package in which the vulnerability has been resolved. </p>
-    pub fn fixed_in_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fixed_in_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fixed_in_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the software package in which the vulnerability has been resolved. </p>
-    pub fn set_fixed_in_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fixed_in_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fixed_in_version = input;
         self
     }
@@ -249,18 +235,12 @@ impl SoftwarePackageBuilder {
         &self.remediation
     }
     /// <p>The source layer hash of the vulnerable package. </p>
-    pub fn source_layer_hash(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_layer_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_layer_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source layer hash of the vulnerable package. </p>
-    pub fn set_source_layer_hash(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_layer_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_layer_hash = input;
         self
     }
@@ -269,18 +249,12 @@ impl SoftwarePackageBuilder {
         &self.source_layer_hash
     }
     /// <p>The Amazon Resource Name (ARN) of the source layer. </p>
-    pub fn source_layer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_layer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_layer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source layer. </p>
-    pub fn set_source_layer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_layer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_layer_arn = input;
         self
     }

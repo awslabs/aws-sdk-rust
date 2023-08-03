@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateOptOutListOutput {
 }
 impl CreateOptOutListOutput {
     /// Creates a new builder-style object to manufacture [`CreateOptOutListOutput`](crate::operation::create_opt_out_list::CreateOptOutListOutput).
-    pub fn builder(
-    ) -> crate::operation::create_opt_out_list::builders::CreateOptOutListOutputBuilder {
+    pub fn builder() -> crate::operation::create_opt_out_list::builders::CreateOptOutListOutputBuilder {
         crate::operation::create_opt_out_list::builders::CreateOptOutListOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOptOutListOutput`](crate::operation::create_opt_out_list::CreateOptOutListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOptOutListOutputBuilder {
     pub(crate) opt_out_list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
@@ -62,18 +59,12 @@ pub struct CreateOptOutListOutputBuilder {
 }
 impl CreateOptOutListOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the OptOutList.</p>
-    pub fn opt_out_list_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the OptOutList.</p>
-    pub fn set_opt_out_list_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_arn = input;
         self
     }
@@ -82,18 +73,12 @@ impl CreateOptOutListOutputBuilder {
         &self.opt_out_list_arn
     }
     /// <p>The name of the new OptOutList.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the new OptOutList.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_name = input;
         self
     }
@@ -113,10 +98,7 @@ impl CreateOptOutListOutputBuilder {
         self
     }
     /// <p>An array of tags (key and value pairs) associated with the new OptOutList.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -130,10 +112,7 @@ impl CreateOptOutListOutputBuilder {
         self
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }

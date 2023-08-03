@@ -13,9 +13,7 @@ impl S3Metadata {
 
 /// A builder for [`S3Metadata`](crate::types::S3Metadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3MetadataBuilder {}
 impl S3MetadataBuilder {
     /// Consumes the builder and constructs a [`S3Metadata`](crate::types::S3Metadata).

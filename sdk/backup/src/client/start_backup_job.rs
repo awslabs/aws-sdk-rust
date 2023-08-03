@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::start_backup_job::StartBackupJobOutput::creation_date): <p>The date and time that a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     ///   - [`is_parent(bool)`](crate::operation::start_backup_job::StartBackupJobOutput::is_parent): <p>This is a returned boolean value indicating this is a parent (composite) backup job.</p>
     /// - On failure, responds with [`SdkError<StartBackupJobError>`](crate::operation::start_backup_job::StartBackupJobError)
-    pub fn start_backup_job(
-        &self,
-    ) -> crate::operation::start_backup_job::builders::StartBackupJobFluentBuilder {
-        crate::operation::start_backup_job::builders::StartBackupJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_backup_job(&self) -> crate::operation::start_backup_job::builders::StartBackupJobFluentBuilder {
+        crate::operation::start_backup_job::builders::StartBackupJobFluentBuilder::new(self.handle.clone())
     }
 }

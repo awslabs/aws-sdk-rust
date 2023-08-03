@@ -23,10 +23,7 @@ pub fn ser_get_property_value_history_input(
     if let Some(var_6) = &input.interpolation {
         #[allow(unused_mut)]
         let mut object_7 = object.key("interpolation").start_object();
-        crate::protocol_serde::shape_interpolation_parameters::ser_interpolation_parameters(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_interpolation_parameters::ser_interpolation_parameters(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.max_results {
@@ -47,10 +44,7 @@ pub fn ser_get_property_value_history_input(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_property_filter::ser_property_filter(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_property_filter::ser_property_filter(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }

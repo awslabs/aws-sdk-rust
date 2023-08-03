@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::operation::describe_user::DescribeUserOutput::user): <p>Information about the user account and configuration settings.</p>
     /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::operation::describe_user::DescribeUserError)
-    pub fn describe_user(
-        &self,
-    ) -> crate::operation::describe_user::builders::DescribeUserFluentBuilder {
-        crate::operation::describe_user::builders::DescribeUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_user(&self) -> crate::operation::describe_user::builders::DescribeUserFluentBuilder {
+        crate::operation::describe_user::builders::DescribeUserFluentBuilder::new(self.handle.clone())
     }
 }

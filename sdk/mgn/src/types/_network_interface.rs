@@ -37,9 +37,7 @@ impl NetworkInterface {
 
 /// A builder for [`NetworkInterface`](crate::types::NetworkInterface).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkInterfaceBuilder {
     pub(crate) mac_address: ::std::option::Option<::std::string::String>,
     pub(crate) ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,10 +70,7 @@ impl NetworkInterfaceBuilder {
         self
     }
     /// <p>Network interface IPs.</p>
-    pub fn set_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ips = input;
         self
     }

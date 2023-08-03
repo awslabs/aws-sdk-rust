@@ -10,10 +10,7 @@ impl PutMetricFilterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_metric_filter::PutMetricFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metric_filter::PutMetricFilterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metric_filter::PutMetricFilterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_metric_filter();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl PutMetricFilterFluentBuilder {
         }
     }
     /// Access the PutMetricFilter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_metric_filter::builders::PutMetricFilterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_metric_filter::builders::PutMetricFilterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl PutMetricFilterFluentBuilder {
             crate::operation::put_metric_filter::PutMetricFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metric_filter::PutMetricFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metric_filter::PutMetricFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl PutMetricFilterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl PutMetricFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_metric_filter::PutMetricFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metric_filter::PutMetricFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metric_filter::PutMetricFilterError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl PutMetricFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_metric_filter::PutMetricFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metric_filter::PutMetricFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metric_filter::PutMetricFilterError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +108,17 @@ impl PutMetricFilterFluentBuilder {
             crate::operation::put_metric_filter::PutMetricFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metric_filter::PutMetricFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metric_filter::PutMetricFilterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
@@ -163,18 +141,12 @@ impl PutMetricFilterFluentBuilder {
         self.inner.get_filter_name()
     }
     /// <p>A filter pattern for extracting metric data out of ingested log events.</p>
-    pub fn filter_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_pattern(input.into());
         self
     }
     /// <p>A filter pattern for extracting metric data out of ingested log events.</p>
-    pub fn set_filter_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_pattern(input);
         self
     }
@@ -192,17 +164,12 @@ impl PutMetricFilterFluentBuilder {
         self
     }
     /// <p>A collection of information that defines how metric data gets emitted.</p>
-    pub fn set_metric_transformations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>>,
-    ) -> Self {
+    pub fn set_metric_transformations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>>) -> Self {
         self.inner = self.inner.set_metric_transformations(input);
         self
     }
     /// <p>A collection of information that defines how metric data gets emitted.</p>
-    pub fn get_metric_transformations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>> {
+    pub fn get_metric_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>> {
         self.inner.get_metric_transformations()
     }
 }

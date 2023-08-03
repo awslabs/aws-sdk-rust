@@ -119,9 +119,7 @@ impl PackageVersionDescription {
 
 /// A builder for [`PackageVersionDescription`](crate::types::PackageVersionDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PackageVersionDescriptionBuilder {
     pub(crate) format: ::std::option::Option<crate::types::PackageFormat>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
@@ -255,18 +253,12 @@ impl PackageVersionDescriptionBuilder {
         &self.home_page
     }
     /// <p> The repository for the source code in the package version, or the source code used to build it. </p>
-    pub fn source_code_repository(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_code_repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_code_repository = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The repository for the source code in the package version, or the source code used to build it. </p>
-    pub fn set_source_code_repository(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_code_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_code_repository = input;
         self
     }
@@ -280,10 +272,7 @@ impl PackageVersionDescriptionBuilder {
         self
     }
     /// <p> A timestamp that contains the date and time the package version was published. </p>
-    pub fn set_published_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_published_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.published_time = input;
         self
     }
@@ -303,17 +292,12 @@ impl PackageVersionDescriptionBuilder {
         self
     }
     /// <p> Information about licenses associated with the package version. </p>
-    pub fn set_licenses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseInfo>>,
-    ) -> Self {
+    pub fn set_licenses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseInfo>>) -> Self {
         self.licenses = input;
         self
     }
     /// <p> Information about licenses associated with the package version. </p>
-    pub fn get_licenses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseInfo>> {
+    pub fn get_licenses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseInfo>> {
         &self.licenses
     }
     /// <p> The revision of the package version. </p>
@@ -336,10 +320,7 @@ impl PackageVersionDescriptionBuilder {
         self
     }
     /// <p> A string that contains the status of the package version. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -353,10 +334,7 @@ impl PackageVersionDescriptionBuilder {
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
-    pub fn set_origin(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVersionOrigin>,
-    ) -> Self {
+    pub fn set_origin(mut self, input: ::std::option::Option<crate::types::PackageVersionOrigin>) -> Self {
         self.origin = input;
         self
     }

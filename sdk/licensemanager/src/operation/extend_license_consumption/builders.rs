@@ -26,7 +26,7 @@ impl ExtendLicenseConsumptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExtendLicenseConsumptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionInputBuilder,
+    inner: crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionInputBuilder,
 }
 impl ExtendLicenseConsumptionFluentBuilder {
     /// Creates a new `ExtendLicenseConsumption`.
@@ -37,10 +37,7 @@ impl ExtendLicenseConsumptionFluentBuilder {
         }
     }
     /// Access the ExtendLicenseConsumption as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ExtendLicenseConsumptionFluentBuilder {
             crate::operation::extend_license_consumption::ExtendLicenseConsumption,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::extend_license_consumption::ExtendLicenseConsumptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ExtendLicenseConsumptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ExtendLicenseConsumptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::extend_license_consumption::ExtendLicenseConsumptionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ExtendLicenseConsumptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::extend_license_consumption::ExtendLicenseConsumptionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl ExtendLicenseConsumptionFluentBuilder {
             crate::operation::extend_license_consumption::ExtendLicenseConsumption,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::extend_license_consumption::ExtendLicenseConsumptionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_consumption_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_consumption_token(input.into());
         self
     }
     /// <p>License consumption token.</p>
-    pub fn set_license_consumption_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_consumption_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_consumption_token(input);
         self
     }

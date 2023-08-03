@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`metric_name(Option<RelationalDatabaseMetricName>)`](crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataOutput::metric_name): <p>The name of the metric returned.</p>
     ///   - [`metric_data(Option<Vec<MetricDatapoint>>)`](crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataOutput::metric_data): <p>An array of objects that describe the metric data returned.</p>
     /// - On failure, responds with [`SdkError<GetRelationalDatabaseMetricDataError>`](crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError)
-    pub fn get_relational_database_metric_data(&self) -> crate::operation::get_relational_database_metric_data::builders::GetRelationalDatabaseMetricDataFluentBuilder{
+    pub fn get_relational_database_metric_data(
+        &self,
+    ) -> crate::operation::get_relational_database_metric_data::builders::GetRelationalDatabaseMetricDataFluentBuilder {
         crate::operation::get_relational_database_metric_data::builders::GetRelationalDatabaseMetricDataFluentBuilder::new(self.handle.clone())
     }
 }

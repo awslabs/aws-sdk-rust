@@ -23,9 +23,7 @@ impl SegmentCondition {
 
 /// A builder for [`SegmentCondition`](crate::types::SegmentCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentConditionBuilder {
     pub(crate) segment_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl SegmentConditionBuilder {
     }
     /// Consumes the builder and constructs a [`SegmentCondition`](crate::types::SegmentCondition).
     pub fn build(self) -> crate::types::SegmentCondition {
-        crate::types::SegmentCondition {
-            segment_id: self.segment_id,
-        }
+        crate::types::SegmentCondition { segment_id: self.segment_id }
     }
 }

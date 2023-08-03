@@ -37,9 +37,7 @@ impl AxisLabelOptions {
 
 /// A builder for [`AxisLabelOptions`](crate::types::AxisLabelOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AxisLabelOptionsBuilder {
     pub(crate) font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     pub(crate) custom_label: ::std::option::Option<::std::string::String>,
@@ -52,17 +50,12 @@ impl AxisLabelOptionsBuilder {
         self
     }
     /// <p>The font configuration of the axis label.</p>
-    pub fn set_font_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FontConfiguration>,
-    ) -> Self {
+    pub fn set_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
         self.font_configuration = input;
         self
     }
     /// <p>The font configuration of the axis label.</p>
-    pub fn get_font_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FontConfiguration> {
+    pub fn get_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
         &self.font_configuration
     }
     /// <p>The text for the axis label.</p>
@@ -85,10 +78,7 @@ impl AxisLabelOptionsBuilder {
         self
     }
     /// <p>The options that indicate which field the label belongs to.</p>
-    pub fn set_apply_to(
-        mut self,
-        input: ::std::option::Option<crate::types::AxisLabelReferenceOptions>,
-    ) -> Self {
+    pub fn set_apply_to(mut self, input: ::std::option::Option<crate::types::AxisLabelReferenceOptions>) -> Self {
         self.apply_to = input;
         self
     }

@@ -26,8 +26,7 @@ impl DeleteResourceDataSyncInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourceDataSyncFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncInputBuilder,
+    inner: crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncInputBuilder,
 }
 impl DeleteResourceDataSyncFluentBuilder {
     /// Creates a new `DeleteResourceDataSync`.
@@ -38,10 +37,7 @@ impl DeleteResourceDataSyncFluentBuilder {
         }
     }
     /// Access the DeleteResourceDataSync as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteResourceDataSyncFluentBuilder {
             crate::operation::delete_resource_data_sync::DeleteResourceDataSync,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_data_sync::DeleteResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_data_sync::DeleteResourceDataSyncError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteResourceDataSyncFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteResourceDataSyncFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_data_sync::DeleteResourceDataSyncOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_data_sync::DeleteResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_data_sync::DeleteResourceDataSyncError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteResourceDataSyncFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_data_sync::DeleteResourceDataSyncOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_data_sync::DeleteResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_data_sync::DeleteResourceDataSyncError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DeleteResourceDataSyncFluentBuilder {
             crate::operation::delete_resource_data_sync::DeleteResourceDataSync,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_data_sync::DeleteResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_data_sync::DeleteResourceDataSyncError>,
     > {
         self.customize_middleware().await
     }

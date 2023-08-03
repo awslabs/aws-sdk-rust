@@ -10,10 +10,7 @@ impl UpdateS3ResourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_s3_resources::UpdateS3ResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_s3_resources::UpdateS3ResourcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_s3_resources::UpdateS3ResourcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_s3_resources();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateS3ResourcesFluentBuilder {
         }
     }
     /// Access the UpdateS3Resources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_s3_resources::builders::UpdateS3ResourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_s3_resources::builders::UpdateS3ResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateS3ResourcesFluentBuilder {
             crate::operation::update_s3_resources::UpdateS3Resources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_s3_resources::UpdateS3ResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_s3_resources::UpdateS3ResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateS3ResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateS3ResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_s3_resources::UpdateS3ResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_s3_resources::UpdateS3ResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_s3_resources::UpdateS3ResourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateS3ResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_s3_resources::UpdateS3ResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_s3_resources::UpdateS3ResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_s3_resources::UpdateS3ResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateS3ResourcesFluentBuilder {
             crate::operation::update_s3_resources::UpdateS3Resources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_s3_resources::UpdateS3ResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_s3_resources::UpdateS3ResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update.</p>
-    pub fn member_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_account_id(input.into());
         self
     }
     /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update.</p>
-    pub fn set_member_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_account_id(input);
         self
     }
@@ -147,25 +125,17 @@ impl UpdateS3ResourcesFluentBuilder {
     /// To override the contents of this collection use [`set_s3_resources_update`](Self::set_s3_resources_update).
     ///
     /// <p>(Discontinued) The S3 resources whose classification types you want to update.</p>
-    pub fn s3_resources_update(
-        mut self,
-        input: crate::types::S3ResourceClassificationUpdate,
-    ) -> Self {
+    pub fn s3_resources_update(mut self, input: crate::types::S3ResourceClassificationUpdate) -> Self {
         self.inner = self.inner.s3_resources_update(input);
         self
     }
     /// <p>(Discontinued) The S3 resources whose classification types you want to update.</p>
-    pub fn set_s3_resources_update(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassificationUpdate>>,
-    ) -> Self {
+    pub fn set_s3_resources_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassificationUpdate>>) -> Self {
         self.inner = self.inner.set_s3_resources_update(input);
         self
     }
     /// <p>(Discontinued) The S3 resources whose classification types you want to update.</p>
-    pub fn get_s3_resources_update(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassificationUpdate>> {
+    pub fn get_s3_resources_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassificationUpdate>> {
         self.inner.get_s3_resources_update()
     }
 }

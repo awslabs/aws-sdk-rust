@@ -70,18 +70,14 @@ impl ::aws_http::request_id::RequestId for DescribeFeatureMetadataOutput {
 }
 impl DescribeFeatureMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFeatureMetadataOutput`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataOutputBuilder {
         crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFeatureMetadataOutput`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFeatureMetadataOutputBuilder {
     pub(crate) feature_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
@@ -95,18 +91,12 @@ pub struct DescribeFeatureMetadataOutputBuilder {
 }
 impl DescribeFeatureMetadataOutputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the feature group that contains the feature.</p>
-    pub fn feature_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the feature group that contains the feature.</p>
-    pub fn set_feature_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_arn = input;
         self
     }
@@ -115,18 +105,12 @@ impl DescribeFeatureMetadataOutputBuilder {
         &self.feature_group_arn
     }
     /// <p>The name of the feature group that you've specified.</p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the feature group that you've specified.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_name = input;
         self
     }
@@ -154,10 +138,7 @@ impl DescribeFeatureMetadataOutputBuilder {
         self
     }
     /// <p>The data type of the feature.</p>
-    pub fn set_feature_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FeatureType>,
-    ) -> Self {
+    pub fn set_feature_type(mut self, input: ::std::option::Option<crate::types::FeatureType>) -> Self {
         self.feature_type = input;
         self
     }
@@ -171,10 +152,7 @@ impl DescribeFeatureMetadataOutputBuilder {
         self
     }
     /// <p>A timestamp indicating when the feature was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -188,10 +166,7 @@ impl DescribeFeatureMetadataOutputBuilder {
         self
     }
     /// <p>A timestamp indicating when the metadata for the feature group was modified. For example, if you add a parameter describing the feature, the timestamp changes to reflect the last time you </p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -225,17 +200,12 @@ impl DescribeFeatureMetadataOutputBuilder {
         self
     }
     /// <p>The key-value pairs that you added to describe the feature.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The key-value pairs that you added to describe the feature.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>> {
         &self.parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -248,9 +218,7 @@ impl DescribeFeatureMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFeatureMetadataOutput`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput {
+    pub fn build(self) -> crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput {
         crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput {
             feature_group_arn: self.feature_group_arn,
             feature_group_name: self.feature_group_name,

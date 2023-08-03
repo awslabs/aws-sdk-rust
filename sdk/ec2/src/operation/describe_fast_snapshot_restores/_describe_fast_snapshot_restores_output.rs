@@ -5,9 +5,7 @@
 pub struct DescribeFastSnapshotRestoresOutput {
     /// <p>Information about the state of fast snapshot restores.</p>
     #[doc(hidden)]
-    pub fast_snapshot_restores: ::std::option::Option<
-        ::std::vec::Vec<crate::types::DescribeFastSnapshotRestoreSuccessItem>,
-    >,
+    pub fast_snapshot_restores: ::std::option::Option<::std::vec::Vec<crate::types::DescribeFastSnapshotRestoreSuccessItem>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +13,7 @@ pub struct DescribeFastSnapshotRestoresOutput {
 }
 impl DescribeFastSnapshotRestoresOutput {
     /// <p>Information about the state of fast snapshot restores.</p>
-    pub fn fast_snapshot_restores(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DescribeFastSnapshotRestoreSuccessItem]> {
+    pub fn fast_snapshot_restores(&self) -> ::std::option::Option<&[crate::types::DescribeFastSnapshotRestoreSuccessItem]> {
         self.fast_snapshot_restores.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -32,20 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeFastSnapshotRestoresOutput {
 }
 impl DescribeFastSnapshotRestoresOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFastSnapshotRestoresOutput`](crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresOutput).
-    pub fn builder() -> crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresOutputBuilder{
+    pub fn builder() -> crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresOutputBuilder {
         crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFastSnapshotRestoresOutput`](crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFastSnapshotRestoresOutputBuilder {
-    pub(crate) fast_snapshot_restores: ::std::option::Option<
-        ::std::vec::Vec<crate::types::DescribeFastSnapshotRestoreSuccessItem>,
-    >,
+    pub(crate) fast_snapshot_restores: ::std::option::Option<::std::vec::Vec<crate::types::DescribeFastSnapshotRestoreSuccessItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl DescribeFastSnapshotRestoresOutputBuilder {
     /// To override the contents of this collection use [`set_fast_snapshot_restores`](Self::set_fast_snapshot_restores).
     ///
     /// <p>Information about the state of fast snapshot restores.</p>
-    pub fn fast_snapshot_restores(
-        mut self,
-        input: crate::types::DescribeFastSnapshotRestoreSuccessItem,
-    ) -> Self {
+    pub fn fast_snapshot_restores(mut self, input: crate::types::DescribeFastSnapshotRestoreSuccessItem) -> Self {
         let mut v = self.fast_snapshot_restores.unwrap_or_default();
         v.push(input);
         self.fast_snapshot_restores = ::std::option::Option::Some(v);
@@ -67,18 +56,13 @@ impl DescribeFastSnapshotRestoresOutputBuilder {
     /// <p>Information about the state of fast snapshot restores.</p>
     pub fn set_fast_snapshot_restores(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DescribeFastSnapshotRestoreSuccessItem>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeFastSnapshotRestoreSuccessItem>>,
     ) -> Self {
         self.fast_snapshot_restores = input;
         self
     }
     /// <p>Information about the state of fast snapshot restores.</p>
-    pub fn get_fast_snapshot_restores(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeFastSnapshotRestoreSuccessItem>>
-    {
+    pub fn get_fast_snapshot_restores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeFastSnapshotRestoreSuccessItem>> {
         &self.fast_snapshot_restores
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -105,9 +89,7 @@ impl DescribeFastSnapshotRestoresOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFastSnapshotRestoresOutput`](crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresOutput {
+    pub fn build(self) -> crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresOutput {
         crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresOutput {
             fast_snapshot_restores: self.fast_snapshot_restores,
             next_token: self.next_token,

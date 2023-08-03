@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`channel_arn(Option<String>)`](crate::operation::channel_flow_callback::ChannelFlowCallbackOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`callback_id(Option<String>)`](crate::operation::channel_flow_callback::ChannelFlowCallbackOutput::callback_id): <p>The call back ID passed in the request.</p>
     /// - On failure, responds with [`SdkError<ChannelFlowCallbackError>`](crate::operation::channel_flow_callback::ChannelFlowCallbackError)
-    pub fn channel_flow_callback(
-        &self,
-    ) -> crate::operation::channel_flow_callback::builders::ChannelFlowCallbackFluentBuilder {
-        crate::operation::channel_flow_callback::builders::ChannelFlowCallbackFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn channel_flow_callback(&self) -> crate::operation::channel_flow_callback::builders::ChannelFlowCallbackFluentBuilder {
+        crate::operation::channel_flow_callback::builders::ChannelFlowCallbackFluentBuilder::new(self.handle.clone())
     }
 }

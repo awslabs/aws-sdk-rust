@@ -26,7 +26,7 @@ impl PutFunctionCodeSigningConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutFunctionCodeSigningConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_function_code_signing_config::builders::PutFunctionCodeSigningConfigInputBuilder,
+    inner: crate::operation::put_function_code_signing_config::builders::PutFunctionCodeSigningConfigInputBuilder,
 }
 impl PutFunctionCodeSigningConfigFluentBuilder {
     /// Creates a new `PutFunctionCodeSigningConfig`.
@@ -37,7 +37,7 @@ impl PutFunctionCodeSigningConfigFluentBuilder {
         }
     }
     /// Access the PutFunctionCodeSigningConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_function_code_signing_config::builders::PutFunctionCodeSigningConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_function_code_signing_config::builders::PutFunctionCodeSigningConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutFunctionCodeSigningConfigFluentBuilder {
             crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutFunctionCodeSigningConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutFunctionCodeSigningConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutFunctionCodeSigningConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl PutFunctionCodeSigningConfigFluentBuilder {
             crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn code_signing_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_signing_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_signing_config_arn(input.into());
         self
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn set_code_signing_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_signing_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code_signing_config_arn(input);
         self
     }
@@ -148,10 +131,7 @@ impl PutFunctionCodeSigningConfigFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -163,10 +143,7 @@ impl PutFunctionCodeSigningConfigFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }

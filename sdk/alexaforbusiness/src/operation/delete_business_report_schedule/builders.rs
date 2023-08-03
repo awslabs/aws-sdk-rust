@@ -27,7 +27,7 @@ impl DeleteBusinessReportScheduleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBusinessReportScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleInputBuilder,
+    inner: crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleInputBuilder,
 }
 impl DeleteBusinessReportScheduleFluentBuilder {
     /// Creates a new `DeleteBusinessReportSchedule`.
@@ -38,7 +38,7 @@ impl DeleteBusinessReportScheduleFluentBuilder {
         }
     }
     /// Access the DeleteBusinessReportSchedule as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteBusinessReportScheduleFluentBuilder {
             crate::operation::delete_business_report_schedule::DeleteBusinessReportSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteBusinessReportScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteBusinessReportScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteBusinessReportScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DeleteBusinessReportScheduleFluentBuilder {
             crate::operation::delete_business_report_schedule::DeleteBusinessReportSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleError>,
     > {
         self.customize_middleware().await
     }

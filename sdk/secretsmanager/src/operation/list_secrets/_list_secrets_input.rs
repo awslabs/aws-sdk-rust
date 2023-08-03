@@ -52,9 +52,7 @@ impl ListSecretsInput {
 
 /// A builder for [`ListSecretsInput`](crate::operation::list_secrets::ListSecretsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecretsInputBuilder {
     pub(crate) include_planned_deletion: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -120,10 +118,7 @@ impl ListSecretsInputBuilder {
         self
     }
     /// <p>The filters to apply to the list of secrets.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -137,10 +132,7 @@ impl ListSecretsInputBuilder {
         self
     }
     /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
         self
     }
@@ -149,12 +141,7 @@ impl ListSecretsInputBuilder {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListSecretsInput`](crate::operation::list_secrets::ListSecretsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_secrets::ListSecretsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_secrets::ListSecretsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_secrets::ListSecretsInput {
             include_planned_deletion: self.include_planned_deletion,
             max_results: self.max_results,

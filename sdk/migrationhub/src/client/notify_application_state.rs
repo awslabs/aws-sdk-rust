@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::notify_application_state::builders::NotifyApplicationStateFluentBuilder::dry_run) / [`set_dry_run(bool)`](crate::operation::notify_application_state::builders::NotifyApplicationStateFluentBuilder::set_dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     /// - On success, responds with [`NotifyApplicationStateOutput`](crate::operation::notify_application_state::NotifyApplicationStateOutput)
     /// - On failure, responds with [`SdkError<NotifyApplicationStateError>`](crate::operation::notify_application_state::NotifyApplicationStateError)
-    pub fn notify_application_state(
-        &self,
-    ) -> crate::operation::notify_application_state::builders::NotifyApplicationStateFluentBuilder
-    {
+    pub fn notify_application_state(&self) -> crate::operation::notify_application_state::builders::NotifyApplicationStateFluentBuilder {
         crate::operation::notify_application_state::builders::NotifyApplicationStateFluentBuilder::new(self.handle.clone())
     }
 }

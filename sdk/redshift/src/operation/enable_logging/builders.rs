@@ -10,10 +10,7 @@ impl EnableLoggingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::enable_logging::EnableLoggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_logging::EnableLoggingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.enable_logging();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl EnableLoggingFluentBuilder {
         }
     }
     /// Access the EnableLogging as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_logging::builders::EnableLoggingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::enable_logging::builders::EnableLoggingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl EnableLoggingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -116,19 +108,13 @@ impl EnableLoggingFluentBuilder {
     }
     /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -179,10 +165,7 @@ impl EnableLoggingFluentBuilder {
     /// <li> <p>x7f or larger</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_key_prefix(input.into());
         self
     }
@@ -199,10 +182,7 @@ impl EnableLoggingFluentBuilder {
     /// <li> <p>x7f or larger</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_key_prefix(input);
         self
     }
@@ -228,17 +208,12 @@ impl EnableLoggingFluentBuilder {
         self
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
-    pub fn set_log_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LogDestinationType>,
-    ) -> Self {
+    pub fn set_log_destination_type(mut self, input: ::std::option::Option<crate::types::LogDestinationType>) -> Self {
         self.inner = self.inner.set_log_destination_type(input);
         self
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
-    pub fn get_log_destination_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogDestinationType> {
+    pub fn get_log_destination_type(&self) -> &::std::option::Option<crate::types::LogDestinationType> {
         self.inner.get_log_destination_type()
     }
     /// Appends an item to `LogExports`.
@@ -251,17 +226,12 @@ impl EnableLoggingFluentBuilder {
         self
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn set_log_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_log_exports(input);
         self
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn get_log_exports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_log_exports()
     }
 }

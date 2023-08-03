@@ -38,10 +38,7 @@ impl DisassociateConnectorFluentBuilder {
         }
     }
     /// Access the DisassociateConnector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_connector::builders::DisassociateConnectorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_connector::builders::DisassociateConnectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DisassociateConnectorFluentBuilder {
             crate::operation::disassociate_connector::DisassociateConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connector::DisassociateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connector::DisassociateConnectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DisassociateConnectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DisassociateConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_connector::DisassociateConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connector::DisassociateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connector::DisassociateConnectorError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DisassociateConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_connector::DisassociateConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connector::DisassociateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connector::DisassociateConnectorError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DisassociateConnectorFluentBuilder {
             crate::operation::disassociate_connector::DisassociateConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connector::DisassociateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connector::DisassociateConnectorError>,
     > {
         self.customize_middleware().await
     }

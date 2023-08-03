@@ -12,42 +12,26 @@ pub fn ser_aws_managed_rules_acfp_rule_set(
     if let Some(var_3) = &input.request_inspection {
         #[allow(unused_mut)]
         let mut object_4 = object.key("RequestInspection").start_object();
-        crate::protocol_serde::shape_request_inspection_acfp::ser_request_inspection_acfp(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_request_inspection_acfp::ser_request_inspection_acfp(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.response_inspection {
         #[allow(unused_mut)]
         let mut object_6 = object.key("ResponseInspection").start_object();
-        crate::protocol_serde::shape_response_inspection::ser_response_inspection(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_response_inspection::ser_response_inspection(&mut object_6, var_5)?;
         object_6.finish();
     }
     if input.enable_regex_in_path {
-        object
-            .key("EnableRegexInPath")
-            .boolean(input.enable_regex_in_path);
+        object.key("EnableRegexInPath").boolean(input.enable_regex_in_path);
     }
     Ok(())
 }
 
 pub(crate) fn de_aws_managed_rules_acfp_rule_set<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsManagedRulesAcfpRuleSet>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsManagedRulesAcfpRuleSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -57,61 +41,46 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "CreationPath" => {
-                                builder = builder.set_creation_path(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "CreationPath" => {
+                            builder = builder.set_creation_path(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "RegistrationPagePath" => {
-                                builder = builder.set_registration_page_path(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "RequestInspection" => {
-                                builder = builder.set_request_inspection(
-                                    crate::protocol_serde::shape_request_inspection_acfp::de_request_inspection_acfp(tokens)?
-                                );
-                            }
-                            "ResponseInspection" => {
-                                builder = builder.set_response_inspection(
-                                    crate::protocol_serde::shape_response_inspection::de_response_inspection(tokens)?
-                                );
-                            }
-                            "EnableRegexInPath" => {
-                                builder = builder.set_enable_regex_in_path(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "RegistrationPagePath" => {
+                            builder = builder.set_registration_page_path(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "RequestInspection" => {
+                            builder = builder
+                                .set_request_inspection(crate::protocol_serde::shape_request_inspection_acfp::de_request_inspection_acfp(tokens)?);
+                        }
+                        "ResponseInspection" => {
+                            builder =
+                                builder.set_response_inspection(crate::protocol_serde::shape_response_inspection::de_response_inspection(tokens)?);
+                        }
+                        "EnableRegexInPath" => {
+                            builder = builder.set_enable_regex_in_path(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

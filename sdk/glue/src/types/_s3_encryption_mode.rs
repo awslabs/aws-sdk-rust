@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum S3EncryptionMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for S3EncryptionMode {
             "DISABLED" => S3EncryptionMode::Disabled,
             "SSE-KMS" => S3EncryptionMode::Ssekms,
             "SSE-S3" => S3EncryptionMode::Sses3,
-            other => {
-                S3EncryptionMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => S3EncryptionMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

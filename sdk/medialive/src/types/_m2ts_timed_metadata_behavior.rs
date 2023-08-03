@@ -38,13 +38,7 @@
 /// M2ts Timed Metadata Behavior
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M2tsTimedMetadataBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for M2tsTimedMetadataBehavior {
         match s {
             "NO_PASSTHROUGH" => M2tsTimedMetadataBehavior::NoPassthrough,
             "PASSTHROUGH" => M2tsTimedMetadataBehavior::Passthrough,
-            other => M2tsTimedMetadataBehavior::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => M2tsTimedMetadataBehavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

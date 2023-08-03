@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`RebalanceSlotsInGlobalReplicationGroupOutput`](crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupOutput) with field(s):
     ///   - [`global_replication_group(Option<GlobalReplicationGroup>)`](crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupOutput::global_replication_group): <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>  <ul>   <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<RebalanceSlotsInGlobalReplicationGroupError>`](crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupError)
-    pub fn rebalance_slots_in_global_replication_group(&self) -> crate::operation::rebalance_slots_in_global_replication_group::builders::RebalanceSlotsInGlobalReplicationGroupFluentBuilder{
-        crate::operation::rebalance_slots_in_global_replication_group::builders::RebalanceSlotsInGlobalReplicationGroupFluentBuilder::new(self.handle.clone())
+    pub fn rebalance_slots_in_global_replication_group(
+        &self,
+    ) -> crate::operation::rebalance_slots_in_global_replication_group::builders::RebalanceSlotsInGlobalReplicationGroupFluentBuilder {
+        crate::operation::rebalance_slots_in_global_replication_group::builders::RebalanceSlotsInGlobalReplicationGroupFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -30,9 +30,7 @@ impl OutputResources {
 
 /// A builder for [`OutputResources`](crate::types::OutputResources).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputResourcesBuilder {
     pub(crate) amis: ::std::option::Option<::std::vec::Vec<crate::types::Ami>>,
     pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
@@ -50,10 +48,7 @@ impl OutputResourcesBuilder {
         self
     }
     /// <p>The Amazon EC2 AMIs created by this image.</p>
-    pub fn set_amis(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ami>>,
-    ) -> Self {
+    pub fn set_amis(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ami>>) -> Self {
         self.amis = input;
         self
     }
@@ -73,17 +68,12 @@ impl OutputResourcesBuilder {
         self
     }
     /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
-    ) -> Self {
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Container>>) -> Self {
         self.containers = input;
         self
     }
     /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Container>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Container>> {
         &self.containers
     }
     /// Consumes the builder and constructs a [`OutputResources`](crate::types::OutputResources).

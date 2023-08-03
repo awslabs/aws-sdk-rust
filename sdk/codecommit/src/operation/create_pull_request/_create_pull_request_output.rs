@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreatePullRequestOutput {
 }
 impl CreatePullRequestOutput {
     /// Creates a new builder-style object to manufacture [`CreatePullRequestOutput`](crate::operation::create_pull_request::CreatePullRequestOutput).
-    pub fn builder(
-    ) -> crate::operation::create_pull_request::builders::CreatePullRequestOutputBuilder {
+    pub fn builder() -> crate::operation::create_pull_request::builders::CreatePullRequestOutputBuilder {
         crate::operation::create_pull_request::builders::CreatePullRequestOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePullRequestOutput`](crate::operation::create_pull_request::CreatePullRequestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePullRequestOutputBuilder {
     pub(crate) pull_request: ::std::option::Option<crate::types::PullRequest>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreatePullRequestOutputBuilder {
         self
     }
     /// <p>Information about the newly created pull request.</p>
-    pub fn set_pull_request(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequest>,
-    ) -> Self {
+    pub fn set_pull_request(mut self, input: ::std::option::Option<crate::types::PullRequest>) -> Self {
         self.pull_request = input;
         self
     }

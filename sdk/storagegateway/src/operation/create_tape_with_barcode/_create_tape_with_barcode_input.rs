@@ -79,18 +79,14 @@ impl CreateTapeWithBarcodeInput {
 }
 impl CreateTapeWithBarcodeInput {
     /// Creates a new builder-style object to manufacture [`CreateTapeWithBarcodeInput`](crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeInput).
-    pub fn builder(
-    ) -> crate::operation::create_tape_with_barcode::builders::CreateTapeWithBarcodeInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_tape_with_barcode::builders::CreateTapeWithBarcodeInputBuilder {
         crate::operation::create_tape_with_barcode::builders::CreateTapeWithBarcodeInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTapeWithBarcodeInput`](crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTapeWithBarcodeInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tape_size_in_bytes: ::std::option::Option<i64>,
@@ -231,10 +227,7 @@ impl CreateTapeWithBarcodeInputBuilder {
     /// <p>A list of up to 50 tags that can be assigned to a virtual tape that has a barcode. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -247,21 +240,17 @@ impl CreateTapeWithBarcodeInputBuilder {
     /// Consumes the builder and constructs a [`CreateTapeWithBarcodeInput`](crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeInput {
-                gateway_arn: self.gateway_arn,
-                tape_size_in_bytes: self.tape_size_in_bytes,
-                tape_barcode: self.tape_barcode,
-                kms_encrypted: self.kms_encrypted,
-                kms_key: self.kms_key,
-                pool_id: self.pool_id,
-                worm: self.worm.unwrap_or_default(),
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeInput {
+            gateway_arn: self.gateway_arn,
+            tape_size_in_bytes: self.tape_size_in_bytes,
+            tape_barcode: self.tape_barcode,
+            kms_encrypted: self.kms_encrypted,
+            kms_key: self.kms_key,
+            pool_id: self.pool_id,
+            worm: self.worm.unwrap_or_default(),
+            tags: self.tags,
+        })
     }
 }

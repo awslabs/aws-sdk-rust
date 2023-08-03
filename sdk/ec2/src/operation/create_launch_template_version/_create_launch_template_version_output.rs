@@ -13,9 +13,7 @@ pub struct CreateLaunchTemplateVersionOutput {
 }
 impl CreateLaunchTemplateVersionOutput {
     /// <p>Information about the launch template version.</p>
-    pub fn launch_template_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LaunchTemplateVersion> {
+    pub fn launch_template_version(&self) -> ::std::option::Option<&crate::types::LaunchTemplateVersion> {
         self.launch_template_version.as_ref()
     }
     /// <p>If the new version of the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
@@ -30,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateLaunchTemplateVersionOutput {
 }
 impl CreateLaunchTemplateVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateLaunchTemplateVersionOutput`](crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput).
-    pub fn builder() -> crate::operation::create_launch_template_version::builders::CreateLaunchTemplateVersionOutputBuilder{
+    pub fn builder() -> crate::operation::create_launch_template_version::builders::CreateLaunchTemplateVersionOutputBuilder {
         crate::operation::create_launch_template_version::builders::CreateLaunchTemplateVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLaunchTemplateVersionOutput`](crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLaunchTemplateVersionOutputBuilder {
     pub(crate) launch_template_version: ::std::option::Option<crate::types::LaunchTemplateVersion>,
     pub(crate) warning: ::std::option::Option<crate::types::ValidationWarning>,
@@ -52,17 +48,12 @@ impl CreateLaunchTemplateVersionOutputBuilder {
         self
     }
     /// <p>Information about the launch template version.</p>
-    pub fn set_launch_template_version(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateVersion>,
-    ) -> Self {
+    pub fn set_launch_template_version(mut self, input: ::std::option::Option<crate::types::LaunchTemplateVersion>) -> Self {
         self.launch_template_version = input;
         self
     }
     /// <p>Information about the launch template version.</p>
-    pub fn get_launch_template_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchTemplateVersion> {
+    pub fn get_launch_template_version(&self) -> &::std::option::Option<crate::types::LaunchTemplateVersion> {
         &self.launch_template_version
     }
     /// <p>If the new version of the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
@@ -71,10 +62,7 @@ impl CreateLaunchTemplateVersionOutputBuilder {
         self
     }
     /// <p>If the new version of the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
-    pub fn set_warning(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationWarning>,
-    ) -> Self {
+    pub fn set_warning(mut self, input: ::std::option::Option<crate::types::ValidationWarning>) -> Self {
         self.warning = input;
         self
     }
@@ -92,9 +80,7 @@ impl CreateLaunchTemplateVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLaunchTemplateVersionOutput`](crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput {
+    pub fn build(self) -> crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput {
         crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput {
             launch_template_version: self.launch_template_version,
             warning: self.warning,

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::delete_account_customization::DeleteAccountCustomizationOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::delete_account_customization::DeleteAccountCustomizationOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteAccountCustomizationError>`](crate::operation::delete_account_customization::DeleteAccountCustomizationError)
-    pub fn delete_account_customization(&self) -> crate::operation::delete_account_customization::builders::DeleteAccountCustomizationFluentBuilder{
+    pub fn delete_account_customization(&self) -> crate::operation::delete_account_customization::builders::DeleteAccountCustomizationFluentBuilder {
         crate::operation::delete_account_customization::builders::DeleteAccountCustomizationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -39,10 +39,7 @@ impl UpdateShareInvitationFluentBuilder {
         }
     }
     /// Access the UpdateShareInvitation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_share_invitation::builders::UpdateShareInvitationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_share_invitation::builders::UpdateShareInvitationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl UpdateShareInvitationFluentBuilder {
             crate::operation::update_share_invitation::UpdateShareInvitation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_share_invitation::UpdateShareInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_share_invitation::UpdateShareInvitationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl UpdateShareInvitationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl UpdateShareInvitationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_share_invitation::UpdateShareInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_share_invitation::UpdateShareInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_share_invitation::UpdateShareInvitationError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl UpdateShareInvitationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_share_invitation::UpdateShareInvitationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_share_invitation::UpdateShareInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_share_invitation::UpdateShareInvitationError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl UpdateShareInvitationFluentBuilder {
             crate::operation::update_share_invitation::UpdateShareInvitation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_share_invitation::UpdateShareInvitationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_share_invitation::UpdateShareInvitationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn share_invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.share_invitation_id(input.into());
         self
     }
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn set_share_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_share_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_share_invitation_id(input);
         self
     }
@@ -151,17 +131,12 @@ impl UpdateShareInvitationFluentBuilder {
         self
     }
     /// <p>Share invitation action taken by contributor.</p>
-    pub fn set_share_invitation_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareInvitationAction>,
-    ) -> Self {
+    pub fn set_share_invitation_action(mut self, input: ::std::option::Option<crate::types::ShareInvitationAction>) -> Self {
         self.inner = self.inner.set_share_invitation_action(input);
         self
     }
     /// <p>Share invitation action taken by contributor.</p>
-    pub fn get_share_invitation_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::ShareInvitationAction> {
+    pub fn get_share_invitation_action(&self) -> &::std::option::Option<crate::types::ShareInvitationAction> {
         self.inner.get_share_invitation_action()
     }
 }

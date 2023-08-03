@@ -27,7 +27,7 @@ impl DescribeBandwidthRateLimitInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBandwidthRateLimitFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitInputBuilder,
+    inner: crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitInputBuilder,
 }
 impl DescribeBandwidthRateLimitFluentBuilder {
     /// Creates a new `DescribeBandwidthRateLimit`.
@@ -38,7 +38,7 @@ impl DescribeBandwidthRateLimitFluentBuilder {
         }
     }
     /// Access the DescribeBandwidthRateLimit as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeBandwidthRateLimitFluentBuilder {
             crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeBandwidthRateLimitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeBandwidthRateLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeBandwidthRateLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DescribeBandwidthRateLimitFluentBuilder {
             crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitError>,
     > {
         self.customize_middleware().await
     }

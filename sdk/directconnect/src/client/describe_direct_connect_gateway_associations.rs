@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`direct_connect_gateway_associations(Option<Vec<DirectConnectGatewayAssociation>>)`](crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsOutput::direct_connect_gateway_associations): <p>Information about the associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsOutput::next_token): <p>The token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<DescribeDirectConnectGatewayAssociationsError>`](crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsError)
-    pub fn describe_direct_connect_gateway_associations(&self) -> crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsFluentBuilder{
-        crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsFluentBuilder::new(self.handle.clone())
+    pub fn describe_direct_connect_gateway_associations(
+        &self,
+    ) -> crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsFluentBuilder {
+        crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

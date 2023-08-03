@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`summary(Option<SearchPlaceIndexForTextSummary>)`](crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput::summary): <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
     ///   - [`results(Option<Vec<SearchForTextResult>>)`](crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput::results): <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>  <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
     /// - On failure, responds with [`SdkError<SearchPlaceIndexForTextError>`](crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError)
-    pub fn search_place_index_for_text(
-        &self,
-    ) -> crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextFluentBuilder
-    {
+    pub fn search_place_index_for_text(&self) -> crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextFluentBuilder {
         crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextFluentBuilder::new(self.handle.clone())
     }
 }

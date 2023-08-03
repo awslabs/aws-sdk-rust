@@ -36,16 +36,14 @@ impl PurchaseReservedNodesOfferingInput {
 }
 impl PurchaseReservedNodesOfferingInput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedNodesOfferingInput`](crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingInput).
-    pub fn builder() -> crate::operation::purchase_reserved_nodes_offering::builders::PurchaseReservedNodesOfferingInputBuilder{
+    pub fn builder() -> crate::operation::purchase_reserved_nodes_offering::builders::PurchaseReservedNodesOfferingInputBuilder {
         crate::operation::purchase_reserved_nodes_offering::builders::PurchaseReservedNodesOfferingInputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseReservedNodesOfferingInput`](crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseReservedNodesOfferingInputBuilder {
     pub(crate) reserved_nodes_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) reservation_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct PurchaseReservedNodesOfferingInputBuilder {
 }
 impl PurchaseReservedNodesOfferingInputBuilder {
     /// <p>The ID of the reserved node offering to purchase.</p>
-    pub fn reserved_nodes_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_nodes_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_nodes_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the reserved node offering to purchase.</p>
-    pub fn set_reserved_nodes_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_nodes_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_nodes_offering_id = input;
         self
     }
@@ -74,18 +66,12 @@ impl PurchaseReservedNodesOfferingInputBuilder {
         &self.reserved_nodes_offering_id
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
-    pub fn reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
-    pub fn set_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reservation_id = input;
         self
     }
@@ -119,10 +105,7 @@ impl PurchaseReservedNodesOfferingInputBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -137,17 +120,11 @@ impl PurchaseReservedNodesOfferingInputBuilder {
         crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingInput {
-                reserved_nodes_offering_id: self.reserved_nodes_offering_id
-                ,
-                reservation_id: self.reservation_id
-                ,
-                node_count: self.node_count
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingInput {
+            reserved_nodes_offering_id: self.reserved_nodes_offering_id,
+            reservation_id: self.reservation_id,
+            node_count: self.node_count,
+            tags: self.tags,
+        })
     }
 }

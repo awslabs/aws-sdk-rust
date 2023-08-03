@@ -28,9 +28,7 @@ impl GetJobTemplateOutput {
 
 /// A builder for [`GetJobTemplateOutput`](crate::operation::get_job_template::GetJobTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobTemplateOutputBuilder {
     pub(crate) job_template: ::std::option::Option<crate::types::JobTemplate>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetJobTemplateOutputBuilder {
         self
     }
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
-    pub fn set_job_template(
-        mut self,
-        input: ::std::option::Option<crate::types::JobTemplate>,
-    ) -> Self {
+    pub fn set_job_template(mut self, input: ::std::option::Option<crate::types::JobTemplate>) -> Self {
         self.job_template = input;
         self
     }

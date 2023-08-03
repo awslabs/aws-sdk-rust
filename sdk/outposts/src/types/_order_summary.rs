@@ -27,8 +27,7 @@ pub struct OrderSummary {
     pub status: ::std::option::Option<crate::types::OrderStatus>,
     /// <p> The status of all line items in the order. </p>
     #[doc(hidden)]
-    pub line_item_counts_by_status:
-        ::std::option::Option<::std::collections::HashMap<crate::types::LineItemStatus, i32>>,
+    pub line_item_counts_by_status: ::std::option::Option<::std::collections::HashMap<crate::types::LineItemStatus, i32>>,
     /// <p> The submission date for the order. </p>
     #[doc(hidden)]
     pub order_submission_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -63,10 +62,7 @@ impl OrderSummary {
         self.status.as_ref()
     }
     /// <p> The status of all line items in the order. </p>
-    pub fn line_item_counts_by_status(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LineItemStatus, i32>>
-    {
+    pub fn line_item_counts_by_status(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LineItemStatus, i32>> {
         self.line_item_counts_by_status.as_ref()
     }
     /// <p> The submission date for the order. </p>
@@ -87,16 +83,13 @@ impl OrderSummary {
 
 /// A builder for [`OrderSummary`](crate::types::OrderSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrderSummaryBuilder {
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
     pub(crate) order_id: ::std::option::Option<::std::string::String>,
     pub(crate) order_type: ::std::option::Option<crate::types::OrderType>,
     pub(crate) status: ::std::option::Option<crate::types::OrderStatus>,
-    pub(crate) line_item_counts_by_status:
-        ::std::option::Option<::std::collections::HashMap<crate::types::LineItemStatus, i32>>,
+    pub(crate) line_item_counts_by_status: ::std::option::Option<::std::collections::HashMap<crate::types::LineItemStatus, i32>>,
     pub(crate) order_submission_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) order_fulfilled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -198,18 +191,13 @@ impl OrderSummaryBuilder {
     /// <p> The status of all line items in the order. </p>
     pub fn set_line_item_counts_by_status(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::LineItemStatus, i32>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::LineItemStatus, i32>>,
     ) -> Self {
         self.line_item_counts_by_status = input;
         self
     }
     /// <p> The status of all line items in the order. </p>
-    pub fn get_line_item_counts_by_status(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::LineItemStatus, i32>>
-    {
+    pub fn get_line_item_counts_by_status(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::LineItemStatus, i32>> {
         &self.line_item_counts_by_status
     }
     /// <p> The submission date for the order. </p>
@@ -218,17 +206,12 @@ impl OrderSummaryBuilder {
         self
     }
     /// <p> The submission date for the order. </p>
-    pub fn set_order_submission_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_order_submission_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.order_submission_date = input;
         self
     }
     /// <p> The submission date for the order. </p>
-    pub fn get_order_submission_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_order_submission_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.order_submission_date
     }
     /// <p> The fulfilment date for the order. </p>
@@ -237,10 +220,7 @@ impl OrderSummaryBuilder {
         self
     }
     /// <p> The fulfilment date for the order. </p>
-    pub fn set_order_fulfilled_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_order_fulfilled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.order_fulfilled_date = input;
         self
     }

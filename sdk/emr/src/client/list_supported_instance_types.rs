@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`supported_instance_types(Option<Vec<SupportedInstanceType>>)`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput::supported_instance_types): <p>The list of instance types that the release specified in <code>ListSupportedInstanceTypesInput$ReleaseLabel</code> supports, filtered by Amazon Web Services Region.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput::marker): <p>The pagination token that marks the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListSupportedInstanceTypesError>`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesError)
-    pub fn list_supported_instance_types(&self) -> crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesFluentBuilder{
+    pub fn list_supported_instance_types(
+        &self,
+    ) -> crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesFluentBuilder {
         crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesFluentBuilder::new(self.handle.clone())
     }
 }

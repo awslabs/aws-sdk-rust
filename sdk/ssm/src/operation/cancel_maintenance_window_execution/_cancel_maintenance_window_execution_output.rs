@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for CancelMaintenanceWindowExecutionOutpu
 }
 impl CancelMaintenanceWindowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`CancelMaintenanceWindowExecutionOutput`](crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionOutput).
-    pub fn builder() -> crate::operation::cancel_maintenance_window_execution::builders::CancelMaintenanceWindowExecutionOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_maintenance_window_execution::builders::CancelMaintenanceWindowExecutionOutputBuilder {
         crate::operation::cancel_maintenance_window_execution::builders::CancelMaintenanceWindowExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelMaintenanceWindowExecutionOutput`](crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelMaintenanceWindowExecutionOutputBuilder {
     pub(crate) window_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CancelMaintenanceWindowExecutionOutputBuilder {
     /// <p>The ID of the maintenance window execution that has been stopped.</p>
-    pub fn window_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the maintenance window execution that has been stopped.</p>
-    pub fn set_window_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_execution_id = input;
         self
     }
@@ -66,13 +58,9 @@ impl CancelMaintenanceWindowExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelMaintenanceWindowExecutionOutput`](crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionOutput
-    {
+    pub fn build(self) -> crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionOutput {
         crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionOutput {
-            window_execution_id: self.window_execution_id
-            ,
+            window_execution_id: self.window_execution_id,
             _request_id: self._request_id,
         }
     }

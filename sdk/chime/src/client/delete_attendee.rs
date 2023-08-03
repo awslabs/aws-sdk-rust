@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAttendeeOutput`](crate::operation::delete_attendee::DeleteAttendeeOutput)
     /// - On failure, responds with [`SdkError<DeleteAttendeeError>`](crate::operation::delete_attendee::DeleteAttendeeError)
     #[deprecated(note = "Replaced by DeleteAttendee in the Amazon Chime SDK Meetings Namespace")]
-    pub fn delete_attendee(
-        &self,
-    ) -> crate::operation::delete_attendee::builders::DeleteAttendeeFluentBuilder {
-        crate::operation::delete_attendee::builders::DeleteAttendeeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_attendee(&self) -> crate::operation::delete_attendee::builders::DeleteAttendeeFluentBuilder {
+        crate::operation::delete_attendee::builders::DeleteAttendeeFluentBuilder::new(self.handle.clone())
     }
 }

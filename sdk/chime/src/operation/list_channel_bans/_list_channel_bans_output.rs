@@ -45,8 +45,7 @@ impl ::aws_http::request_id::RequestId for ListChannelBansOutput {
 }
 impl ListChannelBansOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelBansOutput`](crate::operation::list_channel_bans::ListChannelBansOutput).
-    pub fn builder() -> crate::operation::list_channel_bans::builders::ListChannelBansOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_channel_bans::builders::ListChannelBansOutputBuilder {
         crate::operation::list_channel_bans::builders::ListChannelBansOutputBuilder::default()
     }
 }
@@ -57,8 +56,7 @@ impl ListChannelBansOutput {
 pub struct ListChannelBansOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) channel_bans:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelBanSummary>>,
+    pub(crate) channel_bans: ::std::option::Option<::std::vec::Vec<crate::types::ChannelBanSummary>>,
     _request_id: Option<String>,
 }
 impl ListChannelBansOutputBuilder {
@@ -102,17 +100,12 @@ impl ListChannelBansOutputBuilder {
         self
     }
     /// <p>The information for each requested ban.</p>
-    pub fn set_channel_bans(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelBanSummary>>,
-    ) -> Self {
+    pub fn set_channel_bans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelBanSummary>>) -> Self {
         self.channel_bans = input;
         self
     }
     /// <p>The information for each requested ban.</p>
-    pub fn get_channel_bans(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelBanSummary>> {
+    pub fn get_channel_bans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelBanSummary>> {
         &self.channel_bans
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetAssessmentFrameworkOutput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkOutput) with field(s):
     ///   - [`framework(Option<Framework>)`](crate::operation::get_assessment_framework::GetAssessmentFrameworkOutput::framework): <p> The framework that the <code>GetAssessmentFramework</code> API returned. </p>
     /// - On failure, responds with [`SdkError<GetAssessmentFrameworkError>`](crate::operation::get_assessment_framework::GetAssessmentFrameworkError)
-    pub fn get_assessment_framework(
-        &self,
-    ) -> crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkFluentBuilder
-    {
+    pub fn get_assessment_framework(&self) -> crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkFluentBuilder {
         crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkFluentBuilder::new(self.handle.clone())
     }
 }

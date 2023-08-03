@@ -50,16 +50,14 @@ impl ListTableStorageOptimizersInput {
 }
 impl ListTableStorageOptimizersInput {
     /// Creates a new builder-style object to manufacture [`ListTableStorageOptimizersInput`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersInput).
-    pub fn builder() -> crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersInputBuilder{
+    pub fn builder() -> crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersInputBuilder {
         crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTableStorageOptimizersInput`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTableStorageOptimizersInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -84,18 +82,12 @@ impl ListTableStorageOptimizersInputBuilder {
         &self.catalog_id
     }
     /// <p>Name of the database where the table is present.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the database where the table is present.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -123,17 +115,12 @@ impl ListTableStorageOptimizersInputBuilder {
         self
     }
     /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
-    pub fn set_storage_optimizer_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OptimizerType>,
-    ) -> Self {
+    pub fn set_storage_optimizer_type(mut self, input: ::std::option::Option<crate::types::OptimizerType>) -> Self {
         self.storage_optimizer_type = input;
         self
     }
     /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
-    pub fn get_storage_optimizer_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OptimizerType> {
+    pub fn get_storage_optimizer_type(&self) -> &::std::option::Option<crate::types::OptimizerType> {
         &self.storage_optimizer_type
     }
     /// <p>The number of storage optimizers to return on each call.</p>
@@ -171,15 +158,13 @@ impl ListTableStorageOptimizersInputBuilder {
         crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                storage_optimizer_type: self.storage_optimizer_type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            storage_optimizer_type: self.storage_optimizer_type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -23,16 +23,14 @@ impl ListDataflowEndpointGroupsInput {
 }
 impl ListDataflowEndpointGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListDataflowEndpointGroupsInput`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsInput).
-    pub fn builder() -> crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsInputBuilder{
+    pub fn builder() -> crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsInputBuilder {
         crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataflowEndpointGroupsInput`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataflowEndpointGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -73,11 +71,9 @@ impl ListDataflowEndpointGroupsInputBuilder {
         crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

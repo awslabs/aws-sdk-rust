@@ -29,17 +29,14 @@ impl ListScheduleGroupsInput {
 }
 impl ListScheduleGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListScheduleGroupsInput`](crate::operation::list_schedule_groups::ListScheduleGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_schedule_groups::builders::ListScheduleGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_schedule_groups::builders::ListScheduleGroupsInputBuilder {
         crate::operation::list_schedule_groups::builders::ListScheduleGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListScheduleGroupsInput`](crate::operation::list_schedule_groups::ListScheduleGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScheduleGroupsInputBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl ListScheduleGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListScheduleGroupsInput`](crate::operation::list_schedule_groups::ListScheduleGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_schedule_groups::ListScheduleGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_schedule_groups::ListScheduleGroupsInput {
-                name_prefix: self.name_prefix,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_schedule_groups::ListScheduleGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_schedule_groups::ListScheduleGroupsInput {
+            name_prefix: self.name_prefix,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

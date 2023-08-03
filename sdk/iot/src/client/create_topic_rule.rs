@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`tags(impl ::std::convert::Into<String>)`](crate::operation::create_topic_rule::builders::CreateTopicRuleFluentBuilder::tags) / [`set_tags(Option<String>)`](crate::operation::create_topic_rule::builders::CreateTopicRuleFluentBuilder::set_tags): <p>Metadata which can be used to manage the topic rule.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
     /// - On success, responds with [`CreateTopicRuleOutput`](crate::operation::create_topic_rule::CreateTopicRuleOutput)
     /// - On failure, responds with [`SdkError<CreateTopicRuleError>`](crate::operation::create_topic_rule::CreateTopicRuleError)
-    pub fn create_topic_rule(
-        &self,
-    ) -> crate::operation::create_topic_rule::builders::CreateTopicRuleFluentBuilder {
-        crate::operation::create_topic_rule::builders::CreateTopicRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_topic_rule(&self) -> crate::operation::create_topic_rule::builders::CreateTopicRuleFluentBuilder {
+        crate::operation::create_topic_rule::builders::CreateTopicRuleFluentBuilder::new(self.handle.clone())
     }
 }

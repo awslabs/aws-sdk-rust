@@ -22,9 +22,7 @@ impl DeleteControlInput {
 
 /// A builder for [`DeleteControlInput`](crate::operation::delete_control::DeleteControlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteControlInputBuilder {
     pub(crate) control_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteControlInputBuilder {
     /// Consumes the builder and constructs a [`DeleteControlInput`](crate::operation::delete_control::DeleteControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_control::DeleteControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_control::DeleteControlInput {
-            control_id: self.control_id,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_control::DeleteControlInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_control::DeleteControlInput { control_id: self.control_id })
     }
 }

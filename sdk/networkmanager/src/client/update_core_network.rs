@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateCoreNetworkOutput`](crate::operation::update_core_network::UpdateCoreNetworkOutput) with field(s):
     ///   - [`core_network(Option<CoreNetwork>)`](crate::operation::update_core_network::UpdateCoreNetworkOutput::core_network): <p>Returns information about a core network update.</p>
     /// - On failure, responds with [`SdkError<UpdateCoreNetworkError>`](crate::operation::update_core_network::UpdateCoreNetworkError)
-    pub fn update_core_network(
-        &self,
-    ) -> crate::operation::update_core_network::builders::UpdateCoreNetworkFluentBuilder {
-        crate::operation::update_core_network::builders::UpdateCoreNetworkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_core_network(&self) -> crate::operation::update_core_network::builders::UpdateCoreNetworkFluentBuilder {
+        crate::operation::update_core_network::builders::UpdateCoreNetworkFluentBuilder::new(self.handle.clone())
     }
 }

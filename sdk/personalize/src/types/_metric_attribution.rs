@@ -43,9 +43,7 @@ impl MetricAttribution {
         self.dataset_group_arn.as_deref()
     }
     /// <p>The metric attribution's output configuration.</p>
-    pub fn metrics_output_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MetricAttributionOutput> {
+    pub fn metrics_output_config(&self) -> ::std::option::Option<&crate::types::MetricAttributionOutput> {
         self.metrics_output_config.as_ref()
     }
     /// <p>The metric attribution's status.</p>
@@ -74,9 +72,7 @@ impl MetricAttribution {
 
 /// A builder for [`MetricAttribution`](crate::types::MetricAttribution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricAttributionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_attribution_arn: ::std::option::Option<::std::string::String>,
@@ -103,18 +99,12 @@ impl MetricAttributionBuilder {
         &self.name
     }
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
-    pub fn metric_attribution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_attribution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_attribution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
-    pub fn set_metric_attribution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_attribution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_attribution_arn = input;
         self
     }
@@ -123,18 +113,12 @@ impl MetricAttributionBuilder {
         &self.metric_attribution_arn
     }
     /// <p>The metric attribution's dataset group Amazon Resource Name (ARN).</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The metric attribution's dataset group Amazon Resource Name (ARN).</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -148,17 +132,12 @@ impl MetricAttributionBuilder {
         self
     }
     /// <p>The metric attribution's output configuration.</p>
-    pub fn set_metrics_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricAttributionOutput>,
-    ) -> Self {
+    pub fn set_metrics_output_config(mut self, input: ::std::option::Option<crate::types::MetricAttributionOutput>) -> Self {
         self.metrics_output_config = input;
         self
     }
     /// <p>The metric attribution's output configuration.</p>
-    pub fn get_metrics_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricAttributionOutput> {
+    pub fn get_metrics_output_config(&self) -> &::std::option::Option<crate::types::MetricAttributionOutput> {
         &self.metrics_output_config
     }
     /// <p>The metric attribution's status.</p>
@@ -181,10 +160,7 @@ impl MetricAttributionBuilder {
         self
     }
     /// <p>The metric attribution's creation date time.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -198,32 +174,21 @@ impl MetricAttributionBuilder {
         self
     }
     /// <p>The metric attribution's last updated date time.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The metric attribution's last updated date time.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>The metric attribution's failure reason.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The metric attribution's failure reason.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

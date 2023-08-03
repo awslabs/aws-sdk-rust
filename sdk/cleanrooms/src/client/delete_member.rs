@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_member::builders::DeleteMemberFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_member::builders::DeleteMemberFluentBuilder::set_account_id): <p>The account ID of the member to remove.</p>
     /// - On success, responds with [`DeleteMemberOutput`](crate::operation::delete_member::DeleteMemberOutput)
     /// - On failure, responds with [`SdkError<DeleteMemberError>`](crate::operation::delete_member::DeleteMemberError)
-    pub fn delete_member(
-        &self,
-    ) -> crate::operation::delete_member::builders::DeleteMemberFluentBuilder {
-        crate::operation::delete_member::builders::DeleteMemberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_member(&self) -> crate::operation::delete_member::builders::DeleteMemberFluentBuilder {
+        crate::operation::delete_member::builders::DeleteMemberFluentBuilder::new(self.handle.clone())
     }
 }

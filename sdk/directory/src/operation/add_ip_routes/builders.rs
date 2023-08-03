@@ -10,10 +10,7 @@ impl AddIpRoutesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_ip_routes::AddIpRoutesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_ip_routes::AddIpRoutesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_ip_routes::AddIpRoutesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_ip_routes();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl AddIpRoutesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::add_ip_routes::AddIpRoutes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::add_ip_routes::AddIpRoutes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::add_ip_routes::AddIpRoutesError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl AddIpRoutesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl AddIpRoutesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::add_ip_routes::AddIpRoutes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::add_ip_routes::AddIpRoutes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::add_ip_routes::AddIpRoutesError>,
     > {
         self.customize_middleware().await
@@ -137,10 +125,7 @@ impl AddIpRoutesFluentBuilder {
         self
     }
     /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.</p>
-    pub fn set_ip_routes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRoute>>,
-    ) -> Self {
+    pub fn set_ip_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRoute>>) -> Self {
         self.inner = self.inner.set_ip_routes(input);
         self
     }
@@ -176,9 +161,7 @@ impl AddIpRoutesFluentBuilder {
     /// </ul>
     /// <p>These security rules impact an internal network interface that is not exposed publicly.</p>
     pub fn update_security_group_for_directory_controllers(mut self, input: bool) -> Self {
-        self.inner = self
-            .inner
-            .update_security_group_for_directory_controllers(input);
+        self.inner = self.inner.update_security_group_for_directory_controllers(input);
         self
     }
     /// <p>If set to true, updates the inbound and outbound rules of the security group that has the description: "Amazon Web Services created security group for <i>directory ID</i> directory controllers." Following are the new rules: </p>
@@ -208,13 +191,8 @@ impl AddIpRoutesFluentBuilder {
     /// <li> <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p> </li>
     /// </ul>
     /// <p>These security rules impact an internal network interface that is not exposed publicly.</p>
-    pub fn set_update_security_group_for_directory_controllers(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_update_security_group_for_directory_controllers(input);
+    pub fn set_update_security_group_for_directory_controllers(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_update_security_group_for_directory_controllers(input);
         self
     }
     /// <p>If set to true, updates the inbound and outbound rules of the security group that has the description: "Amazon Web Services created security group for <i>directory ID</i> directory controllers." Following are the new rules: </p>
@@ -244,10 +222,7 @@ impl AddIpRoutesFluentBuilder {
     /// <li> <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p> </li>
     /// </ul>
     /// <p>These security rules impact an internal network interface that is not exposed publicly.</p>
-    pub fn get_update_security_group_for_directory_controllers(
-        &self,
-    ) -> &::std::option::Option<bool> {
-        self.inner
-            .get_update_security_group_for_directory_controllers()
+    pub fn get_update_security_group_for_directory_controllers(&self) -> &::std::option::Option<bool> {
+        self.inner.get_update_security_group_for_directory_controllers()
     }
 }

@@ -51,9 +51,7 @@ impl ConnectionConfiguration {
 
 /// A builder for [`ConnectionConfiguration`](crate::types::ConnectionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionConfigurationBuilder {
     pub(crate) database_host: ::std::option::Option<::std::string::String>,
     pub(crate) database_port: ::std::option::Option<i32>,
@@ -63,18 +61,12 @@ pub struct ConnectionConfigurationBuilder {
 }
 impl ConnectionConfigurationBuilder {
     /// <p>The name of the host for the database. Can be either a string (host.subdomain.domain.tld) or an IPv4 or IPv6 address.</p>
-    pub fn database_host(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_host = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the host for the database. Can be either a string (host.subdomain.domain.tld) or an IPv4 or IPv6 address.</p>
-    pub fn set_database_host(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_host = input;
         self
     }
@@ -97,18 +89,12 @@ impl ConnectionConfigurationBuilder {
         &self.database_port
     }
     /// <p>The name of the database containing the document data.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database containing the document data.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }

@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::create_channel_group::CreateChannelGroupOutput::description): <p>The description for your channel group.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_channel_group::CreateChannelGroupOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the channel group.</p>
     /// - On failure, responds with [`SdkError<CreateChannelGroupError>`](crate::operation::create_channel_group::CreateChannelGroupError)
-    pub fn create_channel_group(
-        &self,
-    ) -> crate::operation::create_channel_group::builders::CreateChannelGroupFluentBuilder {
-        crate::operation::create_channel_group::builders::CreateChannelGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_channel_group(&self) -> crate::operation::create_channel_group::builders::CreateChannelGroupFluentBuilder {
+        crate::operation::create_channel_group::builders::CreateChannelGroupFluentBuilder::new(self.handle.clone())
     }
 }

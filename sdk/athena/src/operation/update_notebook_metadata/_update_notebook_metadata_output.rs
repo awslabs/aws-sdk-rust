@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateNotebookMetadataOutput {
 }
 impl UpdateNotebookMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNotebookMetadataOutput`](crate::operation::update_notebook_metadata::UpdateNotebookMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataOutputBuilder {
         crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNotebookMetadataOutput`](crate::operation::update_notebook_metadata::UpdateNotebookMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNotebookMetadataOutputBuilder {
     _request_id: Option<String>,
 }

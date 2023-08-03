@@ -36,18 +36,14 @@ impl StartStreamingSessionInput {
 }
 impl StartStreamingSessionInput {
     /// Creates a new builder-style object to manufacture [`StartStreamingSessionInput`](crate::operation::start_streaming_session::StartStreamingSessionInput).
-    pub fn builder(
-    ) -> crate::operation::start_streaming_session::builders::StartStreamingSessionInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_streaming_session::builders::StartStreamingSessionInputBuilder {
         crate::operation::start_streaming_session::builders::StartStreamingSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartStreamingSessionInput`](crate::operation::start_streaming_session::StartStreamingSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartStreamingSessionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
@@ -114,17 +110,13 @@ impl StartStreamingSessionInputBuilder {
     /// Consumes the builder and constructs a [`StartStreamingSessionInput`](crate::operation::start_streaming_session::StartStreamingSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_streaming_session::StartStreamingSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_streaming_session::StartStreamingSessionInput {
-                client_token: self.client_token,
-                session_id: self.session_id,
-                studio_id: self.studio_id,
-                backup_id: self.backup_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_streaming_session::StartStreamingSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_streaming_session::StartStreamingSessionInput {
+            client_token: self.client_token,
+            session_id: self.session_id,
+            studio_id: self.studio_id,
+            backup_id: self.backup_id,
+        })
     }
 }

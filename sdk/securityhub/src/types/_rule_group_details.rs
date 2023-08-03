@@ -34,9 +34,7 @@ impl RuleGroupDetails {
 
 /// A builder for [`RuleGroupDetails`](crate::types::RuleGroupDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupDetailsBuilder {
     pub(crate) rule_variables: ::std::option::Option<crate::types::RuleGroupVariables>,
     pub(crate) rules_source: ::std::option::Option<crate::types::RuleGroupSource>,
@@ -48,10 +46,7 @@ impl RuleGroupDetailsBuilder {
         self
     }
     /// <p>Additional settings to use in the specified rules.</p>
-    pub fn set_rule_variables(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleGroupVariables>,
-    ) -> Self {
+    pub fn set_rule_variables(mut self, input: ::std::option::Option<crate::types::RuleGroupVariables>) -> Self {
         self.rule_variables = input;
         self
     }
@@ -69,10 +64,7 @@ impl RuleGroupDetailsBuilder {
     /// <p>The rules and actions for the rule group.</p>
     /// <p>For stateful rule groups, can contain <code>RulesString</code>, <code>RulesSourceList</code>, or <code>StatefulRules</code>.</p>
     /// <p>For stateless rule groups, contains <code>StatelessRulesAndCustomActions</code>.</p>
-    pub fn set_rules_source(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleGroupSource>,
-    ) -> Self {
+    pub fn set_rules_source(mut self, input: ::std::option::Option<crate::types::RuleGroupSource>) -> Self {
         self.rules_source = input;
         self
     }

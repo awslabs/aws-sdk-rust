@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`IncreaseReplicaCountOutput`](crate::operation::increase_replica_count::IncreaseReplicaCountOutput) with field(s):
     ///   - [`replication_group(Option<ReplicationGroup>)`](crate::operation::increase_replica_count::IncreaseReplicaCountOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
     /// - On failure, responds with [`SdkError<IncreaseReplicaCountError>`](crate::operation::increase_replica_count::IncreaseReplicaCountError)
-    pub fn increase_replica_count(
-        &self,
-    ) -> crate::operation::increase_replica_count::builders::IncreaseReplicaCountFluentBuilder {
-        crate::operation::increase_replica_count::builders::IncreaseReplicaCountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn increase_replica_count(&self) -> crate::operation::increase_replica_count::builders::IncreaseReplicaCountFluentBuilder {
+        crate::operation::increase_replica_count::builders::IncreaseReplicaCountFluentBuilder::new(self.handle.clone())
     }
 }

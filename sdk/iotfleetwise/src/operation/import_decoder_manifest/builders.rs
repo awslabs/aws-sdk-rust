@@ -37,10 +37,7 @@ impl ImportDecoderManifestFluentBuilder {
         }
     }
     /// Access the ImportDecoderManifest as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_decoder_manifest::builders::ImportDecoderManifestInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::import_decoder_manifest::builders::ImportDecoderManifestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ImportDecoderManifestFluentBuilder {
             crate::operation::import_decoder_manifest::ImportDecoderManifest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_decoder_manifest::ImportDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_decoder_manifest::ImportDecoderManifestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ImportDecoderManifestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ImportDecoderManifestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_decoder_manifest::ImportDecoderManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_decoder_manifest::ImportDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_decoder_manifest::ImportDecoderManifestError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ImportDecoderManifestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_decoder_manifest::ImportDecoderManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_decoder_manifest::ImportDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_decoder_manifest::ImportDecoderManifestError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ImportDecoderManifestFluentBuilder {
             crate::operation::import_decoder_manifest::ImportDecoderManifest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_decoder_manifest::ImportDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_decoder_manifest::ImportDecoderManifestError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +133,12 @@ impl ImportDecoderManifestFluentBuilder {
         self
     }
     /// <p> The file to load into an Amazon Web Services account. </p>
-    pub fn set_network_file_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>,
-    ) -> Self {
+    pub fn set_network_file_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>) -> Self {
         self.inner = self.inner.set_network_file_definitions(input);
         self
     }
     /// <p> The file to load into an Amazon Web Services account. </p>
-    pub fn get_network_file_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>> {
+    pub fn get_network_file_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>> {
         self.inner.get_network_file_definitions()
     }
 }

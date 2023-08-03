@@ -15,17 +15,14 @@ impl DeregisterVolumeInput {
 }
 impl DeregisterVolumeInput {
     /// Creates a new builder-style object to manufacture [`DeregisterVolumeInput`](crate::operation::deregister_volume::DeregisterVolumeInput).
-    pub fn builder() -> crate::operation::deregister_volume::builders::DeregisterVolumeInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_volume::builders::DeregisterVolumeInputBuilder {
         crate::operation::deregister_volume::builders::DeregisterVolumeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterVolumeInput`](crate::operation::deregister_volume::DeregisterVolumeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterVolumeInputBuilder {
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DeregisterVolumeInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterVolumeInput`](crate::operation::deregister_volume::DeregisterVolumeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_volume::DeregisterVolumeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deregister_volume::DeregisterVolumeInput {
-            volume_id: self.volume_id,
-        })
+    ) -> ::std::result::Result<crate::operation::deregister_volume::DeregisterVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::deregister_volume::DeregisterVolumeInput { volume_id: self.volume_id })
     }
 }

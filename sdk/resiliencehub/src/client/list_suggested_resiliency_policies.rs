@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`resiliency_policies(Option<Vec<ResiliencyPolicy>>)`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput::resiliency_policies): <p>The suggested resiliency policies for the Resilience Hub applications.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListSuggestedResiliencyPoliciesError>`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesError)
-    pub fn list_suggested_resiliency_policies(&self) -> crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesFluentBuilder{
+    pub fn list_suggested_resiliency_policies(
+        &self,
+    ) -> crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesFluentBuilder {
         crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

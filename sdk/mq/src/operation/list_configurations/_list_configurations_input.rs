@@ -22,17 +22,14 @@ impl ListConfigurationsInput {
 }
 impl ListConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationsInput`](crate::operation::list_configurations::ListConfigurationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_configurations::builders::ListConfigurationsInputBuilder {
+    pub fn builder() -> crate::operation::list_configurations::builders::ListConfigurationsInputBuilder {
         crate::operation::list_configurations::builders::ListConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListConfigurationsInput`](crate::operation::list_configurations::ListConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfigurationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl ListConfigurationsInputBuilder {
     /// Consumes the builder and constructs a [`ListConfigurationsInput`](crate::operation::list_configurations::ListConfigurationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_configurations::ListConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_configurations::ListConfigurationsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_configurations::ListConfigurationsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_configurations::ListConfigurationsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

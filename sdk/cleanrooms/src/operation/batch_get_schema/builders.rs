@@ -10,10 +10,7 @@ impl BatchGetSchemaInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_schema::BatchGetSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_schema::BatchGetSchemaError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_schema::BatchGetSchemaError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_schema();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetSchemaFluentBuilder {
         }
     }
     /// Access the BatchGetSchema as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_schema::builders::BatchGetSchemaInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_schema::builders::BatchGetSchemaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetSchemaFluentBuilder {
             crate::operation::batch_get_schema::BatchGetSchema,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_schema::BatchGetSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_schema::BatchGetSchemaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetSchemaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetSchemaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_schema::BatchGetSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_schema::BatchGetSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_schema::BatchGetSchemaError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetSchemaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_schema::BatchGetSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_schema::BatchGetSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_schema::BatchGetSchemaError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl BatchGetSchemaFluentBuilder {
             crate::operation::batch_get_schema::BatchGetSchema,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_schema::BatchGetSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_schema::BatchGetSchemaError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
-    pub fn collaboration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collaboration_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
-    pub fn set_collaboration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collaboration_identifier(input);
         self
     }
@@ -152,10 +130,7 @@ impl BatchGetSchemaFluentBuilder {
         self
     }
     /// <p>The names for the schema objects to retrieve.&gt;</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

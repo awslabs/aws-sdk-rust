@@ -15,18 +15,14 @@ impl GetTransitGatewayPeeringInput {
 }
 impl GetTransitGatewayPeeringInput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayPeeringInput`](crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput).
-    pub fn builder(
-    ) -> crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringInputBuilder {
         crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTransitGatewayPeeringInput`](crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayPeeringInputBuilder {
     pub(crate) peering_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetTransitGatewayPeeringInputBuilder {
         crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput {
-                peering_id: self.peering_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput { peering_id: self.peering_id })
     }
 }

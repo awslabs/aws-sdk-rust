@@ -32,18 +32,14 @@ impl ::aws_http::request_id::RequestId for GetBucketsAggregationOutput {
 }
 impl GetBucketsAggregationOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketsAggregationOutput`](crate::operation::get_buckets_aggregation::GetBucketsAggregationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_buckets_aggregation::builders::GetBucketsAggregationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_buckets_aggregation::builders::GetBucketsAggregationOutputBuilder {
         crate::operation::get_buckets_aggregation::builders::GetBucketsAggregationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketsAggregationOutput`](crate::operation::get_buckets_aggregation::GetBucketsAggregationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketsAggregationOutputBuilder {
     pub(crate) total_count: ::std::option::Option<i32>,
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
@@ -80,10 +76,7 @@ impl GetBucketsAggregationOutputBuilder {
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
     /// <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
     /// <p> <code>count</code>: The number of documents that have that value.</p>
-    pub fn set_buckets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
-    ) -> Self {
+    pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>) -> Self {
         self.buckets = input;
         self
     }

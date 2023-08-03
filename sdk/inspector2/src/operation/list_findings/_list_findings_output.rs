@@ -35,9 +35,7 @@ impl ListFindingsOutput {
 
 /// A builder for [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>,
@@ -70,10 +68,7 @@ impl ListFindingsOutputBuilder {
         self
     }
     /// <p>Contains details on the findings in your environment.</p>
-    pub fn set_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>,
-    ) -> Self {
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>) -> Self {
         self.findings = input;
         self
     }

@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`StartDbInstanceAutomatedBackupsReplicationOutput`](crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput) with field(s):
     ///   - [`db_instance_automated_backup(Option<DbInstanceAutomatedBackup>)`](crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput::db_instance_automated_backup): <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
     /// - On failure, responds with [`SdkError<StartDBInstanceAutomatedBackupsReplicationError>`](crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError)
-    pub fn start_db_instance_automated_backups_replication(&self) -> crate::operation::start_db_instance_automated_backups_replication::builders::StartDBInstanceAutomatedBackupsReplicationFluentBuilder{
-        crate::operation::start_db_instance_automated_backups_replication::builders::StartDBInstanceAutomatedBackupsReplicationFluentBuilder::new(self.handle.clone())
+    pub fn start_db_instance_automated_backups_replication(
+        &self,
+    ) -> crate::operation::start_db_instance_automated_backups_replication::builders::StartDBInstanceAutomatedBackupsReplicationFluentBuilder {
+        crate::operation::start_db_instance_automated_backups_replication::builders::StartDBInstanceAutomatedBackupsReplicationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

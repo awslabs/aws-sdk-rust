@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListRevisionAssetsOutput {
 }
 impl ListRevisionAssetsOutput {
     /// Creates a new builder-style object to manufacture [`ListRevisionAssetsOutput`](crate::operation::list_revision_assets::ListRevisionAssetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_revision_assets::builders::ListRevisionAssetsOutputBuilder {
+    pub fn builder() -> crate::operation::list_revision_assets::builders::ListRevisionAssetsOutputBuilder {
         crate::operation::list_revision_assets::builders::ListRevisionAssetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRevisionAssetsOutput`](crate::operation::list_revision_assets::ListRevisionAssetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRevisionAssetsOutputBuilder {
     pub(crate) assets: ::std::option::Option<::std::vec::Vec<crate::types::AssetEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListRevisionAssetsOutputBuilder {
         self
     }
     /// <p>The asset objects listed by the request.</p>
-    pub fn set_assets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetEntry>>,
-    ) -> Self {
+    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetEntry>>) -> Self {
         self.assets = input;
         self
     }

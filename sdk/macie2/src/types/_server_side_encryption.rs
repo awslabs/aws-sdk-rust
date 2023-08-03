@@ -30,9 +30,7 @@ impl ServerSideEncryption {
 
 /// A builder for [`ServerSideEncryption`](crate::types::ServerSideEncryption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerSideEncryptionBuilder {
     pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     pub(crate) kms_master_key_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ServerSideEncryptionBuilder {
         self
     }
     /// <p>The server-side encryption algorithm that's used when storing data in the bucket or object. If default encryption settings aren't configured for the bucket or the object isn't encrypted using server-side encryption, this value is NONE.</p>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionType>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.encryption_type = input;
         self
     }
@@ -56,18 +51,12 @@ impl ServerSideEncryptionBuilder {
         &self.encryption_type
     }
     /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used to encrypt data in the bucket or the object. This value is null if an KMS key isn't used to encrypt the data.</p>
-    pub fn kms_master_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kms_master_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_master_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used to encrypt data in the bucket or the object. This value is null if an KMS key isn't used to encrypt the data.</p>
-    pub fn set_kms_master_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kms_master_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_master_key_id = input;
         self
     }

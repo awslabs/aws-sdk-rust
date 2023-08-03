@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`state(Option<EnvironmentState>)`](crate::operation::get_environment::GetEnvironmentOutput::state): <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     ///   - [`monitors(Option<Vec<Monitor>>)`](crate::operation::get_environment::GetEnvironmentOutput::monitors): <p>Amazon CloudWatch alarms monitored during the deployment.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::operation::get_environment::GetEnvironmentError)
-    pub fn get_environment(
-        &self,
-    ) -> crate::operation::get_environment::builders::GetEnvironmentFluentBuilder {
-        crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_environment(&self) -> crate::operation::get_environment::builders::GetEnvironmentFluentBuilder {
+        crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -31,8 +31,7 @@ pub struct CreateAlgorithmInput {
     pub inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
     #[doc(hidden)]
-    pub validation_specification:
-        ::std::option::Option<crate::types::AlgorithmValidationSpecification>,
+    pub validation_specification: ::std::option::Option<crate::types::AlgorithmValidationSpecification>,
     /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
     #[doc(hidden)]
     pub certify_for_marketplace: ::std::option::Option<bool>,
@@ -59,9 +58,7 @@ impl CreateAlgorithmInput {
     /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
     /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
     /// </ul>
-    pub fn training_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrainingSpecification> {
+    pub fn training_specification(&self) -> ::std::option::Option<&crate::types::TrainingSpecification> {
         self.training_specification.as_ref()
     }
     /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
@@ -70,15 +67,11 @@ impl CreateAlgorithmInput {
     /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
     /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
     /// </ul>
-    pub fn inference_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InferenceSpecification> {
+    pub fn inference_specification(&self) -> ::std::option::Option<&crate::types::InferenceSpecification> {
         self.inference_specification.as_ref()
     }
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
-    pub fn validation_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AlgorithmValidationSpecification> {
+    pub fn validation_specification(&self) -> ::std::option::Option<&crate::types::AlgorithmValidationSpecification> {
         self.validation_specification.as_ref()
     }
     /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
@@ -99,33 +92,24 @@ impl CreateAlgorithmInput {
 
 /// A builder for [`CreateAlgorithmInput`](crate::operation::create_algorithm::CreateAlgorithmInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAlgorithmInputBuilder {
     pub(crate) algorithm_name: ::std::option::Option<::std::string::String>,
     pub(crate) algorithm_description: ::std::option::Option<::std::string::String>,
     pub(crate) training_specification: ::std::option::Option<crate::types::TrainingSpecification>,
     pub(crate) inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
-    pub(crate) validation_specification:
-        ::std::option::Option<crate::types::AlgorithmValidationSpecification>,
+    pub(crate) validation_specification: ::std::option::Option<crate::types::AlgorithmValidationSpecification>,
     pub(crate) certify_for_marketplace: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateAlgorithmInputBuilder {
     /// <p>The name of the algorithm.</p>
-    pub fn algorithm_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the algorithm.</p>
-    pub fn set_algorithm_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_algorithm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.algorithm_name = input;
         self
     }
@@ -134,18 +118,12 @@ impl CreateAlgorithmInputBuilder {
         &self.algorithm_name
     }
     /// <p>A description of the algorithm.</p>
-    pub fn algorithm_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn algorithm_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the algorithm.</p>
-    pub fn set_algorithm_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_algorithm_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.algorithm_description = input;
         self
     }
@@ -177,10 +155,7 @@ impl CreateAlgorithmInputBuilder {
     /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
     /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
     /// </ul>
-    pub fn set_training_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingSpecification>,
-    ) -> Self {
+    pub fn set_training_specification(mut self, input: ::std::option::Option<crate::types::TrainingSpecification>) -> Self {
         self.training_specification = input;
         self
     }
@@ -194,9 +169,7 @@ impl CreateAlgorithmInputBuilder {
     /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
     /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
     /// </ul>
-    pub fn get_training_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrainingSpecification> {
+    pub fn get_training_specification(&self) -> &::std::option::Option<crate::types::TrainingSpecification> {
         &self.training_specification
     }
     /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
@@ -215,10 +188,7 @@ impl CreateAlgorithmInputBuilder {
     /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
     /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
     /// </ul>
-    pub fn set_inference_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceSpecification>,
-    ) -> Self {
+    pub fn set_inference_specification(mut self, input: ::std::option::Option<crate::types::InferenceSpecification>) -> Self {
         self.inference_specification = input;
         self
     }
@@ -228,31 +198,21 @@ impl CreateAlgorithmInputBuilder {
     /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
     /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
     /// </ul>
-    pub fn get_inference_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceSpecification> {
+    pub fn get_inference_specification(&self) -> &::std::option::Option<crate::types::InferenceSpecification> {
         &self.inference_specification
     }
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
-    pub fn validation_specification(
-        mut self,
-        input: crate::types::AlgorithmValidationSpecification,
-    ) -> Self {
+    pub fn validation_specification(mut self, input: crate::types::AlgorithmValidationSpecification) -> Self {
         self.validation_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
-    pub fn set_validation_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::AlgorithmValidationSpecification>,
-    ) -> Self {
+    pub fn set_validation_specification(mut self, input: ::std::option::Option<crate::types::AlgorithmValidationSpecification>) -> Self {
         self.validation_specification = input;
         self
     }
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
-    pub fn get_validation_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlgorithmValidationSpecification> {
+    pub fn get_validation_specification(&self) -> &::std::option::Option<crate::types::AlgorithmValidationSpecification> {
         &self.validation_specification
     }
     /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
@@ -281,10 +241,7 @@ impl CreateAlgorithmInputBuilder {
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -295,10 +252,7 @@ impl CreateAlgorithmInputBuilder {
     /// Consumes the builder and constructs a [`CreateAlgorithmInput`](crate::operation::create_algorithm::CreateAlgorithmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_algorithm::CreateAlgorithmInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_algorithm::CreateAlgorithmInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_algorithm::CreateAlgorithmInput {
             algorithm_name: self.algorithm_name,
             algorithm_description: self.algorithm_description,

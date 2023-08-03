@@ -11,8 +11,7 @@ pub struct DescribeEdgeDeploymentPlanOutput {
     pub edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>List of models associated with the edge deployment plan.</p>
     #[doc(hidden)]
-    pub model_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>,
+    pub model_configs: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>,
     /// <p>The device fleet used for this edge deployment plan.</p>
     #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
@@ -49,9 +48,7 @@ impl DescribeEdgeDeploymentPlanOutput {
         self.edge_deployment_plan_name.as_deref()
     }
     /// <p>List of models associated with the edge deployment plan.</p>
-    pub fn model_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EdgeDeploymentModelConfig]> {
+    pub fn model_configs(&self) -> ::std::option::Option<&[crate::types::EdgeDeploymentModelConfig]> {
         self.model_configs.as_deref()
     }
     /// <p>The device fleet used for this edge deployment plan.</p>
@@ -94,27 +91,23 @@ impl ::aws_http::request_id::RequestId for DescribeEdgeDeploymentPlanOutput {
 }
 impl DescribeEdgeDeploymentPlanOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEdgeDeploymentPlanOutput`](crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanOutput).
-    pub fn builder() -> crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanOutputBuilder{
+    pub fn builder() -> crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanOutputBuilder {
         crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEdgeDeploymentPlanOutput`](crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEdgeDeploymentPlanOutputBuilder {
     pub(crate) edge_deployment_plan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
-    pub(crate) model_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>,
+    pub(crate) model_configs: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>,
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) edge_deployment_success: ::std::option::Option<i32>,
     pub(crate) edge_deployment_pending: ::std::option::Option<i32>,
     pub(crate) edge_deployment_failed: ::std::option::Option<i32>,
-    pub(crate) stages:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStageStatusSummary>>,
+    pub(crate) stages: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStageStatusSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -122,18 +115,12 @@ pub struct DescribeEdgeDeploymentPlanOutputBuilder {
 }
 impl DescribeEdgeDeploymentPlanOutputBuilder {
     /// <p>The ARN of edge deployment plan.</p>
-    pub fn edge_deployment_plan_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_deployment_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of edge deployment plan.</p>
-    pub fn set_edge_deployment_plan_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_deployment_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_deployment_plan_arn = input;
         self
     }
@@ -142,18 +129,12 @@ impl DescribeEdgeDeploymentPlanOutputBuilder {
         &self.edge_deployment_plan_arn
     }
     /// <p>The name of the edge deployment plan.</p>
-    pub fn edge_deployment_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the edge deployment plan.</p>
-    pub fn set_edge_deployment_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_deployment_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = input;
         self
     }
@@ -173,32 +154,21 @@ impl DescribeEdgeDeploymentPlanOutputBuilder {
         self
     }
     /// <p>List of models associated with the edge deployment plan.</p>
-    pub fn set_model_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>,
-    ) -> Self {
+    pub fn set_model_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>) -> Self {
         self.model_configs = input;
         self
     }
     /// <p>List of models associated with the edge deployment plan.</p>
-    pub fn get_model_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>> {
+    pub fn get_model_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>> {
         &self.model_configs
     }
     /// <p>The device fleet used for this edge deployment plan.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device fleet used for this edge deployment plan.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -260,17 +230,12 @@ impl DescribeEdgeDeploymentPlanOutputBuilder {
         self
     }
     /// <p>List of stages in the edge deployment plan.</p>
-    pub fn set_stages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStageStatusSummary>>,
-    ) -> Self {
+    pub fn set_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStageStatusSummary>>) -> Self {
         self.stages = input;
         self
     }
     /// <p>List of stages in the edge deployment plan.</p>
-    pub fn get_stages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStageStatusSummary>> {
+    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStageStatusSummary>> {
         &self.stages
     }
     /// <p>Token to use when calling the next set of stages in the edge deployment plan.</p>
@@ -293,10 +258,7 @@ impl DescribeEdgeDeploymentPlanOutputBuilder {
         self
     }
     /// <p>The time when the edge deployment plan was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -310,10 +272,7 @@ impl DescribeEdgeDeploymentPlanOutputBuilder {
         self
     }
     /// <p>The time when the edge deployment plan was last updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -331,9 +290,7 @@ impl DescribeEdgeDeploymentPlanOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEdgeDeploymentPlanOutput`](crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanOutput {
+    pub fn build(self) -> crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanOutput {
         crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanOutput {
             edge_deployment_plan_arn: self.edge_deployment_plan_arn,
             edge_deployment_plan_name: self.edge_deployment_plan_name,

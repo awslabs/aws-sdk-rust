@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeEventAggregatesOutput {
 }
 impl DescribeEventAggregatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventAggregatesOutput`](crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesOutputBuilder {
         crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventAggregatesOutput`](crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventAggregatesOutputBuilder {
-    pub(crate) event_aggregates:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventAggregate>>,
+    pub(crate) event_aggregates: ::std::option::Option<::std::vec::Vec<crate::types::EventAggregate>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeEventAggregatesOutputBuilder {
         self
     }
     /// <p>The number of events in each category that meet the optional filter criteria.</p>
-    pub fn set_event_aggregates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventAggregate>>,
-    ) -> Self {
+    pub fn set_event_aggregates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventAggregate>>) -> Self {
         self.event_aggregates = input;
         self
     }
     /// <p>The number of events in each category that meet the optional filter criteria.</p>
-    pub fn get_event_aggregates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventAggregate>> {
+    pub fn get_event_aggregates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventAggregate>> {
         &self.event_aggregates
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
@@ -96,9 +86,7 @@ impl DescribeEventAggregatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEventAggregatesOutput`](crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput {
+    pub fn build(self) -> crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput {
         crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput {
             event_aggregates: self.event_aggregates,
             next_token: self.next_token,

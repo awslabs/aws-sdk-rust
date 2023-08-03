@@ -15,18 +15,14 @@ impl DescribeEventSourceInput {
 }
 impl DescribeEventSourceInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventSourceInput`](crate::operation::describe_event_source::DescribeEventSourceInput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_source::builders::DescribeEventSourceInputBuilder {
-        crate::operation::describe_event_source::builders::DescribeEventSourceInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_event_source::builders::DescribeEventSourceInputBuilder {
+        crate::operation::describe_event_source::builders::DescribeEventSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventSourceInput`](crate::operation::describe_event_source::DescribeEventSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventSourceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl DescribeEventSourceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventSourceInput`](crate::operation::describe_event_source::DescribeEventSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_event_source::DescribeEventSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_event_source::DescribeEventSourceInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_event_source::DescribeEventSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_event_source::DescribeEventSourceInput { name: self.name })
     }
 }

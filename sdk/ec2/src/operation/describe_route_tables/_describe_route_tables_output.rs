@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeRouteTablesOutput {
 }
 impl DescribeRouteTablesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRouteTablesOutput`](crate::operation::describe_route_tables::DescribeRouteTablesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_route_tables::builders::DescribeRouteTablesOutputBuilder {
-        crate::operation::describe_route_tables::builders::DescribeRouteTablesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_route_tables::builders::DescribeRouteTablesOutputBuilder {
+        crate::operation::describe_route_tables::builders::DescribeRouteTablesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRouteTablesOutput`](crate::operation::describe_route_tables::DescribeRouteTablesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRouteTablesOutputBuilder {
     pub(crate) route_tables: ::std::option::Option<::std::vec::Vec<crate::types::RouteTable>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl DescribeRouteTablesOutputBuilder {
         self
     }
     /// <p>Information about one or more route tables.</p>
-    pub fn set_route_tables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteTable>>,
-    ) -> Self {
+    pub fn set_route_tables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteTable>>) -> Self {
         self.route_tables = input;
         self
     }
     /// <p>Information about one or more route tables.</p>
-    pub fn get_route_tables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteTable>> {
+    pub fn get_route_tables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteTable>> {
         &self.route_tables
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>

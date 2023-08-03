@@ -107,16 +107,14 @@ impl CreateRelationalDatabaseFromSnapshotInput {
 }
 impl CreateRelationalDatabaseFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CreateRelationalDatabaseFromSnapshotInput`](crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotInput).
-    pub fn builder() -> crate::operation::create_relational_database_from_snapshot::builders::CreateRelationalDatabaseFromSnapshotInputBuilder{
+    pub fn builder() -> crate::operation::create_relational_database_from_snapshot::builders::CreateRelationalDatabaseFromSnapshotInputBuilder {
         crate::operation::create_relational_database_from_snapshot::builders::CreateRelationalDatabaseFromSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRelationalDatabaseFromSnapshotInput`](crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRelationalDatabaseFromSnapshotInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
@@ -135,10 +133,7 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -148,10 +143,7 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
         self
     }
@@ -166,19 +158,13 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     }
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -202,75 +188,51 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
         &self.publicly_accessible
     }
     /// <p>The name of the database snapshot from which to create your new database.</p>
-    pub fn relational_database_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database snapshot from which to create your new database.</p>
-    pub fn set_relational_database_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_snapshot_name = input;
         self
     }
     /// <p>The name of the database snapshot from which to create your new database.</p>
-    pub fn get_relational_database_snapshot_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_relational_database_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.relational_database_snapshot_name
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
     /// <p>When creating a new database from a snapshot, you cannot choose a bundle that is smaller than the bundle of the source database.</p>
-    pub fn relational_database_bundle_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_bundle_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
     /// <p>When creating a new database from a snapshot, you cannot choose a bundle that is smaller than the bundle of the source database.</p>
-    pub fn set_relational_database_bundle_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_bundle_id = input;
         self
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
     /// <p>When creating a new database from a snapshot, you cannot choose a bundle that is smaller than the bundle of the source database.</p>
-    pub fn get_relational_database_bundle_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_relational_database_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.relational_database_bundle_id
     }
     /// <p>The name of the source database.</p>
-    pub fn source_relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source database.</p>
-    pub fn set_source_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_relational_database_name = input;
         self
     }
     /// <p>The name of the source database.</p>
-    pub fn get_source_relational_database_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_relational_database_name
     }
     /// <p>The date and time to restore your database from.</p>
@@ -293,10 +255,7 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p> </li>
     /// </ul>
-    pub fn set_restore_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_restore_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.restore_time = input;
         self
     }
@@ -345,10 +304,7 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -358,28 +314,24 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRelationalDatabaseFromSnapshotInput`](crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotInput {
-                relational_database_name: self.relational_database_name
-                ,
-                availability_zone: self.availability_zone
-                ,
-                publicly_accessible: self.publicly_accessible
-                ,
-                relational_database_snapshot_name: self.relational_database_snapshot_name
-                ,
-                relational_database_bundle_id: self.relational_database_bundle_id
-                ,
-                source_relational_database_name: self.source_relational_database_name
-                ,
-                restore_time: self.restore_time
-                ,
-                use_latest_restorable_time: self.use_latest_restorable_time
-                ,
-                tags: self.tags
-                ,
-            }
+                relational_database_name: self.relational_database_name,
+                availability_zone: self.availability_zone,
+                publicly_accessible: self.publicly_accessible,
+                relational_database_snapshot_name: self.relational_database_snapshot_name,
+                relational_database_bundle_id: self.relational_database_bundle_id,
+                source_relational_database_name: self.source_relational_database_name,
+                restore_time: self.restore_time,
+                use_latest_restorable_time: self.use_latest_restorable_time,
+                tags: self.tags,
+            },
         )
     }
 }

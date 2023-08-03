@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeAlgorithmOutput {
 }
 impl DescribeAlgorithmOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAlgorithmOutput`](crate::operation::describe_algorithm::DescribeAlgorithmOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_algorithm::builders::DescribeAlgorithmOutputBuilder {
+    pub fn builder() -> crate::operation::describe_algorithm::builders::DescribeAlgorithmOutputBuilder {
         crate::operation::describe_algorithm::builders::DescribeAlgorithmOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAlgorithmOutput`](crate::operation::describe_algorithm::DescribeAlgorithmOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlgorithmOutputBuilder {
     pub(crate) algorithm: ::std::option::Option<crate::types::Algorithm>,
     _request_id: Option<String>,

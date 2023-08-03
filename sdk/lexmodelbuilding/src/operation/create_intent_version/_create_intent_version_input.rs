@@ -22,18 +22,14 @@ impl CreateIntentVersionInput {
 }
 impl CreateIntentVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateIntentVersionInput`](crate::operation::create_intent_version::CreateIntentVersionInput).
-    pub fn builder(
-    ) -> crate::operation::create_intent_version::builders::CreateIntentVersionInputBuilder {
-        crate::operation::create_intent_version::builders::CreateIntentVersionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_intent_version::builders::CreateIntentVersionInputBuilder {
+        crate::operation::create_intent_version::builders::CreateIntentVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateIntentVersionInput`](crate::operation::create_intent_version::CreateIntentVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIntentVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl CreateIntentVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateIntentVersionInput`](crate::operation::create_intent_version::CreateIntentVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_intent_version::CreateIntentVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_intent_version::CreateIntentVersionInput {
-                name: self.name,
-                checksum: self.checksum,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_intent_version::CreateIntentVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_intent_version::CreateIntentVersionInput {
+            name: self.name,
+            checksum: self.checksum,
+        })
     }
 }

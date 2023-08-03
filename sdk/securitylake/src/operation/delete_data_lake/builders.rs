@@ -10,10 +10,7 @@ impl DeleteDataLakeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_data_lake::DeleteDataLakeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_lake::DeleteDataLakeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_lake::DeleteDataLakeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_data_lake();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteDataLakeFluentBuilder {
         }
     }
     /// Access the DeleteDataLake as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_data_lake::builders::DeleteDataLakeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_data_lake::builders::DeleteDataLakeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteDataLakeFluentBuilder {
             crate::operation::delete_data_lake::DeleteDataLake,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_lake::DeleteDataLakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_lake::DeleteDataLakeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteDataLakeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteDataLakeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_data_lake::DeleteDataLakeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_lake::DeleteDataLakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_lake::DeleteDataLakeError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteDataLakeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_data_lake::DeleteDataLakeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_lake::DeleteDataLakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_lake::DeleteDataLakeError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DeleteDataLakeFluentBuilder {
             crate::operation::delete_data_lake::DeleteDataLake,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_lake::DeleteDataLakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_lake::DeleteDataLakeError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +117,7 @@ impl DeleteDataLakeFluentBuilder {
         self
     }
     /// <p>The list of Regions where Security Lake is enabled.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_regions(input);
         self
     }

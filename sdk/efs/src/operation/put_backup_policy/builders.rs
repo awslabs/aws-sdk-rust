@@ -10,10 +10,7 @@ impl PutBackupPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_backup_policy::PutBackupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_backup_policy::PutBackupPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_backup_policy::PutBackupPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_backup_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutBackupPolicyFluentBuilder {
         }
     }
     /// Access the PutBackupPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_backup_policy::builders::PutBackupPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_backup_policy::builders::PutBackupPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutBackupPolicyFluentBuilder {
             crate::operation::put_backup_policy::PutBackupPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_backup_policy::PutBackupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_backup_policy::PutBackupPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutBackupPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutBackupPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_backup_policy::PutBackupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_backup_policy::PutBackupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_backup_policy::PutBackupPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutBackupPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_backup_policy::PutBackupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_backup_policy::PutBackupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_backup_policy::PutBackupPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl PutBackupPolicyFluentBuilder {
             crate::operation::put_backup_policy::PutBackupPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_backup_policy::PutBackupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_backup_policy::PutBackupPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies which EFS file system to update the backup policy for.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>Specifies which EFS file system to update the backup policy for.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
@@ -148,10 +126,7 @@ impl PutBackupPolicyFluentBuilder {
         self
     }
     /// <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
-    pub fn set_backup_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupPolicy>,
-    ) -> Self {
+    pub fn set_backup_policy(mut self, input: ::std::option::Option<crate::types::BackupPolicy>) -> Self {
         self.inner = self.inner.set_backup_policy(input);
         self
     }

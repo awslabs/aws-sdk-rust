@@ -3,25 +3,25 @@
 /// <p>The log configuration specification for the container.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails  {
-    /// <p>The log driver to use for the container.</p> 
-    /// <p>Valid values on Fargate are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>awsfirelens</code> </p> </li> 
-    /// <li> <p> <code>awslogs</code> </p> </li> 
-    /// <li> <p> <code>splunk</code> </p> </li> 
-    /// </ul> 
-    /// <p>Valid values on Amazon EC2 are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>awsfirelens</code> </p> </li> 
-    /// <li> <p> <code>awslogs</code> </p> </li> 
-    /// <li> <p> <code>fluentd</code> </p> </li> 
-    /// <li> <p> <code>gelf</code> </p> </li> 
-    /// <li> <p> <code>journald</code> </p> </li> 
-    /// <li> <p> <code>json-file</code> </p> </li> 
-    /// <li> <p> <code>logentries</code> </p> </li> 
-    /// <li> <p> <code>splunk</code> </p> </li> 
-    /// <li> <p> <code>syslog</code> </p> </li> 
+pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
+    /// <p>The log driver to use for the container.</p>
+    /// <p>Valid values on Fargate are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>awsfirelens</code> </p> </li>
+    /// <li> <p> <code>awslogs</code> </p> </li>
+    /// <li> <p> <code>splunk</code> </p> </li>
+    /// </ul>
+    /// <p>Valid values on Amazon EC2 are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>awsfirelens</code> </p> </li>
+    /// <li> <p> <code>awslogs</code> </p> </li>
+    /// <li> <p> <code>fluentd</code> </p> </li>
+    /// <li> <p> <code>gelf</code> </p> </li>
+    /// <li> <p> <code>journald</code> </p> </li>
+    /// <li> <p> <code>json-file</code> </p> </li>
+    /// <li> <p> <code>logentries</code> </p> </li>
+    /// <li> <p> <code>splunk</code> </p> </li>
+    /// <li> <p> <code>syslog</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub log_driver: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,8 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails  {
     pub options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The secrets to pass to the log configuration.</p>
     #[doc(hidden)]
-    pub secret_options: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>,
+    pub secret_options:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
     /// <p>The log driver to use for the container.</p>
@@ -56,34 +57,31 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
         self.log_driver.as_deref()
     }
     /// <p>The configuration options to send to the log driver. Requires version 1.19 of the Docker Remote API or greater on your container instance.</p>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.options.as_ref()
     }
     /// <p>The secrets to pass to the log configuration.</p>
-    pub fn secret_options(&self) -> ::std::option::Option<& [crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails]>{
+    pub fn secret_options(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails]> {
         self.secret_options.as_deref()
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
     pub(crate) log_driver: ::std::option::Option<::std::string::String>,
     pub(crate) options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) secret_options: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>,
+    pub(crate) secret_options:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
     /// <p>The log driver to use for the container.</p>
@@ -159,32 +157,19 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
     /// To override the contents of this collection use [`set_options`](Self::set_options).
     ///
     /// <p>The configuration options to send to the log driver. Requires version 1.19 of the Docker Remote API or greater on your container instance.</p>
-    pub fn options(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The configuration options to send to the log driver. Requires version 1.19 of the Docker Remote API or greater on your container instance.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.options = input;
         self
     }
     /// <p>The configuration options to send to the log driver. Requires version 1.19 of the Docker Remote API or greater on your container instance.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.options
     }
     /// Appends an item to `secret_options`.
@@ -192,10 +177,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
     /// To override the contents of this collection use [`set_secret_options`](Self::set_secret_options).
     ///
     /// <p>The secrets to pass to the log configuration.</p>
-    pub fn secret_options(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails,
-    ) -> Self {
+    pub fn secret_options(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails) -> Self {
         let mut v = self.secret_options.unwrap_or_default();
         v.push(input);
         self.secret_options = ::std::option::Option::Some(v);
@@ -210,13 +192,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
         self
     }
     /// <p>The secrets to pass to the log configuration.</p>
-    pub fn get_secret_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>{
+    pub fn get_secret_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>> {
         &self.secret_options
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
             log_driver: self.log_driver,
             options: self.options,

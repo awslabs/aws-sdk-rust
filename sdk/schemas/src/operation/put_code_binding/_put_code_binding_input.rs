@@ -43,9 +43,7 @@ impl PutCodeBindingInput {
 
 /// A builder for [`PutCodeBindingInput`](crate::operation::put_code_binding::PutCodeBindingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutCodeBindingInputBuilder {
     pub(crate) language: ::std::option::Option<::std::string::String>,
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl PutCodeBindingInputBuilder {
         &self.language
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_name = input;
         self
     }
@@ -102,18 +94,12 @@ impl PutCodeBindingInputBuilder {
         &self.schema_name
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version = input;
         self
     }
@@ -124,10 +110,7 @@ impl PutCodeBindingInputBuilder {
     /// Consumes the builder and constructs a [`PutCodeBindingInput`](crate::operation::put_code_binding::PutCodeBindingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_code_binding::PutCodeBindingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_code_binding::PutCodeBindingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_code_binding::PutCodeBindingInput {
             language: self.language,
             registry_name: self.registry_name,

@@ -44,9 +44,7 @@ impl PublicIpv4PoolRange {
 
 /// A builder for [`PublicIpv4PoolRange`](crate::types::PublicIpv4PoolRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublicIpv4PoolRangeBuilder {
     pub(crate) first_address: ::std::option::Option<::std::string::String>,
     pub(crate) last_address: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct PublicIpv4PoolRangeBuilder {
 }
 impl PublicIpv4PoolRangeBuilder {
     /// <p>The first IP address in the range.</p>
-    pub fn first_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn first_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first IP address in the range.</p>
-    pub fn set_first_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_first_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_address = input;
         self
     }

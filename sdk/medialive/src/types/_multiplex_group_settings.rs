@@ -13,9 +13,7 @@ impl MultiplexGroupSettings {
 
 /// A builder for [`MultiplexGroupSettings`](crate::types::MultiplexGroupSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiplexGroupSettingsBuilder {}
 impl MultiplexGroupSettingsBuilder {
     /// Consumes the builder and constructs a [`MultiplexGroupSettings`](crate::types::MultiplexGroupSettings).

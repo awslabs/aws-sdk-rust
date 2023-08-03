@@ -26,7 +26,7 @@ impl ListStreamingSessionBackupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStreamingSessionBackupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_streaming_session_backups::builders::ListStreamingSessionBackupsInputBuilder,
+    inner: crate::operation::list_streaming_session_backups::builders::ListStreamingSessionBackupsInputBuilder,
 }
 impl ListStreamingSessionBackupsFluentBuilder {
     /// Creates a new `ListStreamingSessionBackups`.
@@ -37,7 +37,7 @@ impl ListStreamingSessionBackupsFluentBuilder {
         }
     }
     /// Access the ListStreamingSessionBackups as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_streaming_session_backups::builders::ListStreamingSessionBackupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_streaming_session_backups::builders::ListStreamingSessionBackupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListStreamingSessionBackupsFluentBuilder {
             crate::operation::list_streaming_session_backups::ListStreamingSessionBackups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListStreamingSessionBackupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListStreamingSessionBackupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListStreamingSessionBackupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListStreamingSessionBackupsFluentBuilder {
             crate::operation::list_streaming_session_backups::ListStreamingSessionBackups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_streaming_session_backups::paginator::ListStreamingSessionBackupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_streaming_session_backups::paginator::ListStreamingSessionBackupsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_streaming_session_backups::paginator::ListStreamingSessionBackupsPaginator {
         crate::operation::list_streaming_session_backups::paginator::ListStreamingSessionBackupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

@@ -10,10 +10,7 @@ impl SetTopicAttributesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_topic_attributes::SetTopicAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_topic_attributes::SetTopicAttributesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_topic_attributes::SetTopicAttributesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_topic_attributes();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl SetTopicAttributesFluentBuilder {
         }
     }
     /// Access the SetTopicAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_topic_attributes::builders::SetTopicAttributesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_topic_attributes::builders::SetTopicAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl SetTopicAttributesFluentBuilder {
             crate::operation::set_topic_attributes::SetTopicAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_topic_attributes::SetTopicAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_topic_attributes::SetTopicAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl SetTopicAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl SetTopicAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_topic_attributes::SetTopicAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_topic_attributes::SetTopicAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_topic_attributes::SetTopicAttributesError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl SetTopicAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_topic_attributes::SetTopicAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_topic_attributes::SetTopicAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_topic_attributes::SetTopicAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl SetTopicAttributesFluentBuilder {
             crate::operation::set_topic_attributes::SetTopicAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_topic_attributes::SetTopicAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_topic_attributes::SetTopicAttributesError>,
     > {
         self.customize_middleware().await
     }
@@ -206,10 +190,7 @@ impl SetTopicAttributesFluentBuilder {
     /// <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_name(input.into());
         self
     }
@@ -281,10 +262,7 @@ impl SetTopicAttributesFluentBuilder {
     /// <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_name(input);
         self
     }
@@ -360,18 +338,12 @@ impl SetTopicAttributesFluentBuilder {
         self.inner.get_attribute_name()
     }
     /// <p>The new value for the attribute.</p>
-    pub fn attribute_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_value(input.into());
         self
     }
     /// <p>The new value for the attribute.</p>
-    pub fn set_attribute_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_value(input);
         self
     }

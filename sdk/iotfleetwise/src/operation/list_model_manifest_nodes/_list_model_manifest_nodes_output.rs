@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListModelManifestNodesOutput {
 }
 impl ListModelManifestNodesOutput {
     /// Creates a new builder-style object to manufacture [`ListModelManifestNodesOutput`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesOutputBuilder {
         crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelManifestNodesOutput`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelManifestNodesOutputBuilder {
     pub(crate) nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListModelManifestNodesOutputBuilder {
         self
     }
     /// <p> A list of information about nodes. </p>
-    pub fn set_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
-    ) -> Self {
+    pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.nodes = input;
         self
     }
@@ -93,9 +86,7 @@ impl ListModelManifestNodesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListModelManifestNodesOutput`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput {
+    pub fn build(self) -> crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput {
         crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput {
             nodes: self.nodes,
             next_token: self.next_token,

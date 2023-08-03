@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OrganizationRuleStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,9 +81,7 @@ impl ::std::convert::From<&str> for OrganizationRuleStatus {
             "UPDATE_FAILED" => OrganizationRuleStatus::UpdateFailed,
             "UPDATE_IN_PROGRESS" => OrganizationRuleStatus::UpdateInProgress,
             "UPDATE_SUCCESSFUL" => OrganizationRuleStatus::UpdateSuccessful,
-            other => OrganizationRuleStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => OrganizationRuleStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

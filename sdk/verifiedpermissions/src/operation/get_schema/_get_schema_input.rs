@@ -22,26 +22,18 @@ impl GetSchemaInput {
 
 /// A builder for [`GetSchemaInput`](crate::operation::get_schema::GetSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSchemaInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the schema.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the schema.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -50,12 +42,7 @@ impl GetSchemaInputBuilder {
         &self.policy_store_id
     }
     /// Consumes the builder and constructs a [`GetSchemaInput`](crate::operation::get_schema::GetSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_schema::GetSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_schema::GetSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_schema::GetSchemaInput {
             policy_store_id: self.policy_store_id,
         })

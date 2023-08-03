@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTransactionEventsOutput {
 }
 impl ListTransactionEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListTransactionEventsOutput`](crate::operation::list_transaction_events::ListTransactionEventsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_transaction_events::builders::ListTransactionEventsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_transaction_events::builders::ListTransactionEventsOutputBuilder {
         crate::operation::list_transaction_events::builders::ListTransactionEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTransactionEventsOutput`](crate::operation::list_transaction_events::ListTransactionEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTransactionEventsOutputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::TransactionEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListTransactionEventsOutputBuilder {
         self
     }
     /// <p>An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction events.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransactionEvent>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransactionEvent>>) -> Self {
         self.events = input;
         self
     }
     /// <p>An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction events.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransactionEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransactionEvent>> {
         &self.events
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>

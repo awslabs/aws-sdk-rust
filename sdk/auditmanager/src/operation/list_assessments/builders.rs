@@ -10,10 +10,7 @@ impl ListAssessmentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_assessments::ListAssessmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessments::ListAssessmentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessments::ListAssessmentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_assessments();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListAssessmentsFluentBuilder {
         }
     }
     /// Access the ListAssessments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_assessments::builders::ListAssessmentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_assessments::builders::ListAssessmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListAssessmentsFluentBuilder {
             crate::operation::list_assessments::ListAssessments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessments::ListAssessmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessments::ListAssessmentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListAssessmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListAssessmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assessments::ListAssessmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessments::ListAssessmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessments::ListAssessmentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListAssessmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assessments::ListAssessmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessments::ListAssessmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessments::ListAssessmentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListAssessmentsFluentBuilder {
             crate::operation::list_assessments::ListAssessments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessments::ListAssessmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessments::ListAssessmentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_assessments::paginator::ListAssessmentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_assessments::paginator::ListAssessmentsPaginator {
-        crate::operation::list_assessments::paginator::ListAssessmentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_assessments::paginator::ListAssessmentsPaginator {
+        crate::operation::list_assessments::paginator::ListAssessmentsPaginator::new(self.handle, self.inner)
     }
     /// <p> The current status of the assessment.</p>
     pub fn status(mut self, input: crate::types::AssessmentStatus) -> Self {
@@ -139,10 +118,7 @@ impl ListAssessmentsFluentBuilder {
         self
     }
     /// <p> The current status of the assessment.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AssessmentStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

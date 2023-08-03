@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::list_operations::ListOperationsOutput::operations): <p>List of operations performed by AWS Systems Manager for SAP.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_operations::ListOperationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListOperationsError>`](crate::operation::list_operations::ListOperationsError)
-    pub fn list_operations(
-        &self,
-    ) -> crate::operation::list_operations::builders::ListOperationsFluentBuilder {
-        crate::operation::list_operations::builders::ListOperationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_operations(&self) -> crate::operation::list_operations::builders::ListOperationsFluentBuilder {
+        crate::operation::list_operations::builders::ListOperationsFluentBuilder::new(self.handle.clone())
     }
 }

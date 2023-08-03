@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`pipeline_execution_steps(Option<Vec<PipelineExecutionStep>>)`](crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsOutput::pipeline_execution_steps): <p>A list of <code>PipeLineExecutionStep</code> objects. Each <code>PipeLineExecutionStep</code> consists of StepName, StartTime, EndTime, StepStatus, and Metadata. Metadata is an object with properties for each job that contains relevant information about the job created by the step.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsOutput::next_token): <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListPipelineExecutionStepsError>`](crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsError)
-    pub fn list_pipeline_execution_steps(&self) -> crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsFluentBuilder{
+    pub fn list_pipeline_execution_steps(
+        &self,
+    ) -> crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsFluentBuilder {
         crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsFluentBuilder::new(self.handle.clone())
     }
 }

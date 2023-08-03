@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`application_versions(Option<Vec<ApplicationVersionDescription>>)`](crate::operation::describe_application_versions::DescribeApplicationVersionsOutput::application_versions): <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_application_versions::DescribeApplicationVersionsOutput::next_token): <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationVersionsError>`](crate::operation::describe_application_versions::DescribeApplicationVersionsError)
-    pub fn describe_application_versions(&self) -> crate::operation::describe_application_versions::builders::DescribeApplicationVersionsFluentBuilder{
+    pub fn describe_application_versions(
+        &self,
+    ) -> crate::operation::describe_application_versions::builders::DescribeApplicationVersionsFluentBuilder {
         crate::operation::describe_application_versions::builders::DescribeApplicationVersionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,10 +37,7 @@ impl CreateServiceInstanceFluentBuilder {
         }
     }
     /// Access the CreateServiceInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_service_instance::builders::CreateServiceInstanceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_service_instance::builders::CreateServiceInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateServiceInstanceFluentBuilder {
             crate::operation::create_service_instance::CreateServiceInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_instance::CreateServiceInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_instance::CreateServiceInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateServiceInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateServiceInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_instance::CreateServiceInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_instance::CreateServiceInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_instance::CreateServiceInstanceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateServiceInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_instance::CreateServiceInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_instance::CreateServiceInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_instance::CreateServiceInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateServiceInstanceFluentBuilder {
             crate::operation::create_service_instance::CreateServiceInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service_instance::CreateServiceInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service_instance::CreateServiceInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -166,18 +152,12 @@ impl CreateServiceInstanceFluentBuilder {
         self.inner.get_spec()
     }
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
-    pub fn template_major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_major_version(input.into());
         self
     }
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
-    pub fn set_template_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_major_version(input);
         self
     }
@@ -186,18 +166,12 @@ impl CreateServiceInstanceFluentBuilder {
         self.inner.get_template_major_version()
     }
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-    pub fn template_minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_minor_version(input.into());
         self
     }
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-    pub fn set_template_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_minor_version(input);
         self
     }
@@ -217,10 +191,7 @@ impl CreateServiceInstanceFluentBuilder {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service instance. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

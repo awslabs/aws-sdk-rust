@@ -23,18 +23,14 @@ impl ::aws_http::request_id::RequestId for CreateGlobalClusterOutput {
 }
 impl CreateGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalClusterOutput`](crate::operation::create_global_cluster::CreateGlobalClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::create_global_cluster::builders::CreateGlobalClusterOutputBuilder {
-        crate::operation::create_global_cluster::builders::CreateGlobalClusterOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_global_cluster::builders::CreateGlobalClusterOutputBuilder {
+        crate::operation::create_global_cluster::builders::CreateGlobalClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGlobalClusterOutput`](crate::operation::create_global_cluster::CreateGlobalClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGlobalClusterOutputBuilder {
     pub(crate) global_cluster: ::std::option::Option<crate::types::GlobalCluster>,
     _request_id: Option<String>,
@@ -48,10 +44,7 @@ impl CreateGlobalClusterOutputBuilder {
     }
     /// <p>Contains the details of an Amazon Neptune global database.</p>
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
-    pub fn set_global_cluster(
-        mut self,
-        input: ::std::option::Option<crate::types::GlobalCluster>,
-    ) -> Self {
+    pub fn set_global_cluster(mut self, input: ::std::option::Option<crate::types::GlobalCluster>) -> Self {
         self.global_cluster = input;
         self
     }

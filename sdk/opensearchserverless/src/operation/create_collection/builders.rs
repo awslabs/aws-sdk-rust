@@ -10,10 +10,7 @@ impl CreateCollectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_collection::CreateCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collection::CreateCollectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collection::CreateCollectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_collection();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateCollectionFluentBuilder {
         }
     }
     /// Access the CreateCollection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_collection::builders::CreateCollectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_collection::builders::CreateCollectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateCollectionFluentBuilder {
             crate::operation::create_collection::CreateCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collection::CreateCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collection::CreateCollectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateCollectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_collection::CreateCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collection::CreateCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collection::CreateCollectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_collection::CreateCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collection::CreateCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collection::CreateCollectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateCollectionFluentBuilder {
             crate::operation::create_collection::CreateCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collection::CreateCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collection::CreateCollectionError>,
     > {
         self.customize_middleware().await
     }
@@ -174,10 +158,7 @@ impl CreateCollectionFluentBuilder {
         self
     }
     /// <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

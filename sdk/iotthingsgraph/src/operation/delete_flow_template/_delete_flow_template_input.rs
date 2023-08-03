@@ -19,17 +19,14 @@ impl DeleteFlowTemplateInput {
 }
 impl DeleteFlowTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteFlowTemplateInput`](crate::operation::delete_flow_template::DeleteFlowTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_flow_template::builders::DeleteFlowTemplateInputBuilder {
+    pub fn builder() -> crate::operation::delete_flow_template::builders::DeleteFlowTemplateInputBuilder {
         crate::operation::delete_flow_template::builders::DeleteFlowTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFlowTemplateInput`](crate::operation::delete_flow_template::DeleteFlowTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFlowTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -57,12 +54,7 @@ impl DeleteFlowTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFlowTemplateInput`](crate::operation::delete_flow_template::DeleteFlowTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_flow_template::DeleteFlowTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_flow_template::DeleteFlowTemplateInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_flow_template::DeleteFlowTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_flow_template::DeleteFlowTemplateInput { id: self.id })
     }
 }

@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListContactChannelsOutput {
 }
 impl ListContactChannelsOutput {
     /// Creates a new builder-style object to manufacture [`ListContactChannelsOutput`](crate::operation::list_contact_channels::ListContactChannelsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_contact_channels::builders::ListContactChannelsOutputBuilder {
-        crate::operation::list_contact_channels::builders::ListContactChannelsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_contact_channels::builders::ListContactChannelsOutputBuilder {
+        crate::operation::list_contact_channels::builders::ListContactChannelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListContactChannelsOutput`](crate::operation::list_contact_channels::ListContactChannelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactChannelsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) contact_channels:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContactChannel>>,
+    pub(crate) contact_channels: ::std::option::Option<::std::vec::Vec<crate::types::ContactChannel>>,
     _request_id: Option<String>,
 }
 impl ListContactChannelsOutputBuilder {
@@ -73,17 +68,12 @@ impl ListContactChannelsOutputBuilder {
         self
     }
     /// <p>A list of contact channels related to the specified contact.</p>
-    pub fn set_contact_channels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContactChannel>>,
-    ) -> Self {
+    pub fn set_contact_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactChannel>>) -> Self {
         self.contact_channels = input;
         self
     }
     /// <p>A list of contact channels related to the specified contact.</p>
-    pub fn get_contact_channels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactChannel>> {
+    pub fn get_contact_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactChannel>> {
         &self.contact_channels
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

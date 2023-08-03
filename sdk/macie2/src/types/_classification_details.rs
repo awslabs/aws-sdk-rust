@@ -51,9 +51,7 @@ impl ClassificationDetails {
 
 /// A builder for [`ClassificationDetails`](crate::types::ClassificationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClassificationDetailsBuilder {
     pub(crate) detailed_results_location: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct ClassificationDetailsBuilder {
 }
 impl ClassificationDetailsBuilder {
     /// <p>The path to the folder or file in Amazon S3 that contains the corresponding sensitive data discovery result for the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder. Otherwise, this value is the path to a file.</p>
-    pub fn detailed_results_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detailed_results_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detailed_results_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the folder or file in Amazon S3 that contains the corresponding sensitive data discovery result for the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder. Otherwise, this value is the path to a file.</p>
-    pub fn set_detailed_results_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detailed_results_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detailed_results_location = input;
         self
     }
@@ -116,10 +108,7 @@ impl ClassificationDetailsBuilder {
         self
     }
     /// <p>Specifies how Amazon Macie found the sensitive data that produced the finding. Possible values are: SENSITIVE_DATA_DISCOVERY_JOB, for a classification job; and, AUTOMATED_SENSITIVE_DATA_DISCOVERY, for automated sensitive data discovery.</p>
-    pub fn set_origin_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginType>,
-    ) -> Self {
+    pub fn set_origin_type(mut self, input: ::std::option::Option<crate::types::OriginType>) -> Self {
         self.origin_type = input;
         self
     }
@@ -133,10 +122,7 @@ impl ClassificationDetailsBuilder {
         self
     }
     /// <p>The status and other details of the finding.</p>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<crate::types::ClassificationResult>,
-    ) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::ClassificationResult>) -> Self {
         self.result = input;
         self
     }

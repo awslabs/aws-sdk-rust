@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`monitor_arn(Option<String>)`](crate::operation::update_monitor::UpdateMonitorOutput::monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor.</p>
     ///   - [`status(Option<MonitorConfigState>)`](crate::operation::update_monitor::UpdateMonitorOutput::status): <p>The status of a monitor.</p>
     /// - On failure, responds with [`SdkError<UpdateMonitorError>`](crate::operation::update_monitor::UpdateMonitorError)
-    pub fn update_monitor(
-        &self,
-    ) -> crate::operation::update_monitor::builders::UpdateMonitorFluentBuilder {
-        crate::operation::update_monitor::builders::UpdateMonitorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_monitor(&self) -> crate::operation::update_monitor::builders::UpdateMonitorFluentBuilder {
+        crate::operation::update_monitor::builders::UpdateMonitorFluentBuilder::new(self.handle.clone())
     }
 }

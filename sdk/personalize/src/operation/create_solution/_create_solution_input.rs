@@ -87,9 +87,7 @@ impl CreateSolutionInput {
 
 /// A builder for [`CreateSolutionInput`](crate::operation::create_solution::CreateSolutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSolutionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) perform_hpo: ::std::option::Option<bool>,
@@ -173,18 +171,12 @@ impl CreateSolutionInputBuilder {
         &self.recipe_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -219,10 +211,7 @@ impl CreateSolutionInputBuilder {
     /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
-    pub fn set_solution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SolutionConfig>,
-    ) -> Self {
+    pub fn set_solution_config(mut self, input: ::std::option::Option<crate::types::SolutionConfig>) -> Self {
         self.solution_config = input;
         self
     }
@@ -244,10 +233,7 @@ impl CreateSolutionInputBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the solution.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -258,10 +244,7 @@ impl CreateSolutionInputBuilder {
     /// Consumes the builder and constructs a [`CreateSolutionInput`](crate::operation::create_solution::CreateSolutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_solution::CreateSolutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_solution::CreateSolutionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_solution::CreateSolutionInput {
             name: self.name,
             perform_hpo: self.perform_hpo,

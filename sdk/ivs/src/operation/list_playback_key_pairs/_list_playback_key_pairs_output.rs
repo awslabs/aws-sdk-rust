@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPlaybackKeyPairsOutput {
 }
 impl ListPlaybackKeyPairsOutput {
     /// Creates a new builder-style object to manufacture [`ListPlaybackKeyPairsOutput`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsOutputBuilder {
         crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPlaybackKeyPairsOutput`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlaybackKeyPairsOutputBuilder {
-    pub(crate) key_pairs:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlaybackKeyPairSummary>>,
+    pub(crate) key_pairs: ::std::option::Option<::std::vec::Vec<crate::types::PlaybackKeyPairSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListPlaybackKeyPairsOutputBuilder {
         self
     }
     /// <p>List of key pairs.</p>
-    pub fn set_key_pairs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlaybackKeyPairSummary>>,
-    ) -> Self {
+    pub fn set_key_pairs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlaybackKeyPairSummary>>) -> Self {
         self.key_pairs = input;
         self
     }
     /// <p>List of key pairs.</p>
-    pub fn get_key_pairs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlaybackKeyPairSummary>> {
+    pub fn get_key_pairs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlaybackKeyPairSummary>> {
         &self.key_pairs
     }
     /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>

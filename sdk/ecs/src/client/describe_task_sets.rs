@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`task_sets(Option<Vec<TaskSet>>)`](crate::operation::describe_task_sets::DescribeTaskSetsOutput::task_sets): <p>The list of task sets described.</p>
     ///   - [`failures(Option<Vec<Failure>>)`](crate::operation::describe_task_sets::DescribeTaskSetsOutput::failures): <p>Any failures associated with the call.</p>
     /// - On failure, responds with [`SdkError<DescribeTaskSetsError>`](crate::operation::describe_task_sets::DescribeTaskSetsError)
-    pub fn describe_task_sets(
-        &self,
-    ) -> crate::operation::describe_task_sets::builders::DescribeTaskSetsFluentBuilder {
-        crate::operation::describe_task_sets::builders::DescribeTaskSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_task_sets(&self) -> crate::operation::describe_task_sets::builders::DescribeTaskSetsFluentBuilder {
+        crate::operation::describe_task_sets::builders::DescribeTaskSetsFluentBuilder::new(self.handle.clone())
     }
 }

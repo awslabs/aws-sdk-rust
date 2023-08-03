@@ -26,8 +26,7 @@ impl GetManagedScalingPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetManagedScalingPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyInputBuilder,
+    inner: crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyInputBuilder,
 }
 impl GetManagedScalingPolicyFluentBuilder {
     /// Creates a new `GetManagedScalingPolicy`.
@@ -38,10 +37,7 @@ impl GetManagedScalingPolicyFluentBuilder {
         }
     }
     /// Access the GetManagedScalingPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetManagedScalingPolicyFluentBuilder {
             crate::operation::get_managed_scaling_policy::GetManagedScalingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetManagedScalingPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetManagedScalingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetManagedScalingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetManagedScalingPolicyFluentBuilder {
             crate::operation::get_managed_scaling_policy::GetManagedScalingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyError>,
     > {
         self.customize_middleware().await
     }

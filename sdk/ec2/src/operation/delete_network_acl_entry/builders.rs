@@ -37,10 +37,7 @@ impl DeleteNetworkAclEntryFluentBuilder {
         }
     }
     /// Access the DeleteNetworkAclEntry as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteNetworkAclEntryFluentBuilder {
             crate::operation::delete_network_acl_entry::DeleteNetworkAclEntry,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteNetworkAclEntryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteNetworkAclEntryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteNetworkAclEntryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteNetworkAclEntryFluentBuilder {
             crate::operation::delete_network_acl_entry::DeleteNetworkAclEntry,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryError>,
     > {
         self.customize_middleware().await
     }
@@ -152,18 +138,12 @@ impl DeleteNetworkAclEntryFluentBuilder {
         self.inner.get_egress()
     }
     /// <p>The ID of the network ACL.</p>
-    pub fn network_acl_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_acl_id(input.into());
         self
     }
     /// <p>The ID of the network ACL.</p>
-    pub fn set_network_acl_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_acl_id(input);
         self
     }

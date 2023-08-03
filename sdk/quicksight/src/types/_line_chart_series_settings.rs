@@ -13,15 +13,11 @@ pub struct LineChartSeriesSettings {
 }
 impl LineChartSeriesSettings {
     /// <p>Line styles options for a line series in <code>LineChartVisual</code>.</p>
-    pub fn line_style_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LineChartLineStyleSettings> {
+    pub fn line_style_settings(&self) -> ::std::option::Option<&crate::types::LineChartLineStyleSettings> {
         self.line_style_settings.as_ref()
     }
     /// <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
-    pub fn marker_style_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LineChartMarkerStyleSettings> {
+    pub fn marker_style_settings(&self) -> ::std::option::Option<&crate::types::LineChartMarkerStyleSettings> {
         self.marker_style_settings.as_ref()
     }
 }
@@ -34,13 +30,10 @@ impl LineChartSeriesSettings {
 
 /// A builder for [`LineChartSeriesSettings`](crate::types::LineChartSeriesSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LineChartSeriesSettingsBuilder {
     pub(crate) line_style_settings: ::std::option::Option<crate::types::LineChartLineStyleSettings>,
-    pub(crate) marker_style_settings:
-        ::std::option::Option<crate::types::LineChartMarkerStyleSettings>,
+    pub(crate) marker_style_settings: ::std::option::Option<crate::types::LineChartMarkerStyleSettings>,
 }
 impl LineChartSeriesSettingsBuilder {
     /// <p>Line styles options for a line series in <code>LineChartVisual</code>.</p>
@@ -49,39 +42,26 @@ impl LineChartSeriesSettingsBuilder {
         self
     }
     /// <p>Line styles options for a line series in <code>LineChartVisual</code>.</p>
-    pub fn set_line_style_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::LineChartLineStyleSettings>,
-    ) -> Self {
+    pub fn set_line_style_settings(mut self, input: ::std::option::Option<crate::types::LineChartLineStyleSettings>) -> Self {
         self.line_style_settings = input;
         self
     }
     /// <p>Line styles options for a line series in <code>LineChartVisual</code>.</p>
-    pub fn get_line_style_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::LineChartLineStyleSettings> {
+    pub fn get_line_style_settings(&self) -> &::std::option::Option<crate::types::LineChartLineStyleSettings> {
         &self.line_style_settings
     }
     /// <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
-    pub fn marker_style_settings(
-        mut self,
-        input: crate::types::LineChartMarkerStyleSettings,
-    ) -> Self {
+    pub fn marker_style_settings(mut self, input: crate::types::LineChartMarkerStyleSettings) -> Self {
         self.marker_style_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
-    pub fn set_marker_style_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::LineChartMarkerStyleSettings>,
-    ) -> Self {
+    pub fn set_marker_style_settings(mut self, input: ::std::option::Option<crate::types::LineChartMarkerStyleSettings>) -> Self {
         self.marker_style_settings = input;
         self
     }
     /// <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
-    pub fn get_marker_style_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::LineChartMarkerStyleSettings> {
+    pub fn get_marker_style_settings(&self) -> &::std::option::Option<crate::types::LineChartMarkerStyleSettings> {
         &self.marker_style_settings
     }
     /// Consumes the builder and constructs a [`LineChartSeriesSettings`](crate::types::LineChartSeriesSettings).

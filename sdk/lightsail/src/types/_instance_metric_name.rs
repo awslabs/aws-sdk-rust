@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstanceMetricName {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,9 +81,7 @@ impl ::std::convert::From<&str> for InstanceMetricName {
             "StatusCheckFailed" => InstanceMetricName::StatusCheckFailed,
             "StatusCheckFailed_Instance" => InstanceMetricName::StatusCheckFailedInstance,
             "StatusCheckFailed_System" => InstanceMetricName::StatusCheckFailedSystem,
-            other => InstanceMetricName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InstanceMetricName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

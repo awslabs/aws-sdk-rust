@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetResourcePolicyOutput {
 }
 impl GetResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePolicyOutput`](crate::operation::get_resource_policy::GetResourcePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
+    pub fn builder() -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
         crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourcePolicyOutput`](crate::operation::get_resource_policy::GetResourcePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcePolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,

@@ -12,8 +12,7 @@ pub struct Subscription {
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of existing event subscriptions.</p>
     #[doc(hidden)]
-    pub event_subscriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
+    pub event_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
 }
 impl Subscription {
     /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
@@ -38,14 +37,11 @@ impl Subscription {
 
 /// A builder for [`Subscription`](crate::types::Subscription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscriptionBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) event_subscriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
+    pub(crate) event_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
 }
 impl SubscriptionBuilder {
     /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
@@ -88,17 +84,12 @@ impl SubscriptionBuilder {
         self
     }
     /// <p>The list of existing event subscriptions.</p>
-    pub fn set_event_subscriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
-    ) -> Self {
+    pub fn set_event_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>) -> Self {
         self.event_subscriptions = input;
         self
     }
     /// <p>The list of existing event subscriptions.</p>
-    pub fn get_event_subscriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>> {
+    pub fn get_event_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>> {
         &self.event_subscriptions
     }
     /// Consumes the builder and constructs a [`Subscription`](crate::types::Subscription).

@@ -45,9 +45,7 @@ impl ResourceTagSet {
 
 /// A builder for [`ResourceTagSet`](crate::types::ResourceTagSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceTagSetBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::TagResourceType>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl ResourceTagSetBuilder {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TagResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TagResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -109,10 +104,7 @@ impl ResourceTagSetBuilder {
         self
     }
     /// <p>The tags associated with the specified resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

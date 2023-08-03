@@ -29,9 +29,7 @@ impl GetProjectInput {
 
 /// A builder for [`GetProjectInput`](crate::operation::get_project::GetProjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProjectInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetProjectInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetProjectInput`](crate::operation::get_project::GetProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_project::GetProjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_project::GetProjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_project::GetProjectInput {
             space_name: self.space_name,
             name: self.name,

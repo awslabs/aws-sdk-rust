@@ -8,9 +8,7 @@ pub struct GetNetworkResourceOutput {
     pub network_resource: ::std::option::Option<crate::types::NetworkResource>,
     /// <p> The network resource tags. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetNetworkResourceOutput {
@@ -19,11 +17,7 @@ impl GetNetworkResourceOutput {
         self.network_resource.as_ref()
     }
     /// <p> The network resource tags. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -43,8 +37,7 @@ impl ::aws_http::request_id::RequestId for GetNetworkResourceOutput {
 }
 impl GetNetworkResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkResourceOutput`](crate::operation::get_network_resource::GetNetworkResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_network_resource::builders::GetNetworkResourceOutputBuilder {
+    pub fn builder() -> crate::operation::get_network_resource::builders::GetNetworkResourceOutputBuilder {
         crate::operation::get_network_resource::builders::GetNetworkResourceOutputBuilder::default()
     }
 }
@@ -54,9 +47,7 @@ impl GetNetworkResourceOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GetNetworkResourceOutputBuilder {
     pub(crate) network_resource: ::std::option::Option<crate::types::NetworkResource>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetNetworkResourceOutputBuilder {
@@ -66,10 +57,7 @@ impl GetNetworkResourceOutputBuilder {
         self
     }
     /// <p>Information about the network resource.</p>
-    pub fn set_network_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkResource>,
-    ) -> Self {
+    pub fn set_network_resource(mut self, input: ::std::option::Option<crate::types::NetworkResource>) -> Self {
         self.network_resource = input;
         self
     }
@@ -82,32 +70,19 @@ impl GetNetworkResourceOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The network resource tags. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> The network resource tags. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p> The network resource tags. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

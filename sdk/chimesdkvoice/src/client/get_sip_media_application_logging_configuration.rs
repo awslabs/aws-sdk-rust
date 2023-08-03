@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`GetSipMediaApplicationLoggingConfigurationOutput`](crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationOutput) with field(s):
     ///   - [`sip_media_application_logging_configuration(Option<SipMediaApplicationLoggingConfiguration>)`](crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationOutput::sip_media_application_logging_configuration): <p>The actual logging configuration.</p>
     /// - On failure, responds with [`SdkError<GetSipMediaApplicationLoggingConfigurationError>`](crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationError)
-    pub fn get_sip_media_application_logging_configuration(&self) -> crate::operation::get_sip_media_application_logging_configuration::builders::GetSipMediaApplicationLoggingConfigurationFluentBuilder{
-        crate::operation::get_sip_media_application_logging_configuration::builders::GetSipMediaApplicationLoggingConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn get_sip_media_application_logging_configuration(
+        &self,
+    ) -> crate::operation::get_sip_media_application_logging_configuration::builders::GetSipMediaApplicationLoggingConfigurationFluentBuilder {
+        crate::operation::get_sip_media_application_logging_configuration::builders::GetSipMediaApplicationLoggingConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

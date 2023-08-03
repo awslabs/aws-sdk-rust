@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`GetShardIteratorOutput`](crate::operation::get_shard_iterator::GetShardIteratorOutput) with field(s):
     ///   - [`shard_iterator(Option<String>)`](crate::operation::get_shard_iterator::GetShardIteratorOutput::shard_iterator): <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
     /// - On failure, responds with [`SdkError<GetShardIteratorError>`](crate::operation::get_shard_iterator::GetShardIteratorError)
-    pub fn get_shard_iterator(
-        &self,
-    ) -> crate::operation::get_shard_iterator::builders::GetShardIteratorFluentBuilder {
-        crate::operation::get_shard_iterator::builders::GetShardIteratorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_shard_iterator(&self) -> crate::operation::get_shard_iterator::builders::GetShardIteratorFluentBuilder {
+        crate::operation::get_shard_iterator::builders::GetShardIteratorFluentBuilder::new(self.handle.clone())
     }
 }

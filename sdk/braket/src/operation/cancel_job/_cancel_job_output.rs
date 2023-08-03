@@ -35,9 +35,7 @@ impl CancelJobOutput {
 
 /// A builder for [`CancelJobOutput`](crate::operation::cancel_job::CancelJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelJobOutputBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cancellation_status: ::std::option::Option<crate::types::CancellationStatus>,
@@ -64,17 +62,12 @@ impl CancelJobOutputBuilder {
         self
     }
     /// <p>The status of the job cancellation request.</p>
-    pub fn set_cancellation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CancellationStatus>,
-    ) -> Self {
+    pub fn set_cancellation_status(mut self, input: ::std::option::Option<crate::types::CancellationStatus>) -> Self {
         self.cancellation_status = input;
         self
     }
     /// <p>The status of the job cancellation request.</p>
-    pub fn get_cancellation_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CancellationStatus> {
+    pub fn get_cancellation_status(&self) -> &::std::option::Option<crate::types::CancellationStatus> {
         &self.cancellation_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::remove_all_resource_permissions::builders::RemoveAllResourcePermissionsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::remove_all_resource_permissions::builders::RemoveAllResourcePermissionsFluentBuilder::set_resource_id): <p>The ID of the resource.</p>
     /// - On success, responds with [`RemoveAllResourcePermissionsOutput`](crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsOutput)
     /// - On failure, responds with [`SdkError<RemoveAllResourcePermissionsError>`](crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsError)
-    pub fn remove_all_resource_permissions(&self) -> crate::operation::remove_all_resource_permissions::builders::RemoveAllResourcePermissionsFluentBuilder{
+    pub fn remove_all_resource_permissions(
+        &self,
+    ) -> crate::operation::remove_all_resource_permissions::builders::RemoveAllResourcePermissionsFluentBuilder {
         crate::operation::remove_all_resource_permissions::builders::RemoveAllResourcePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,9 +44,7 @@ impl NodeConfigurationOption {
 
 /// A builder for [`NodeConfigurationOption`](crate::types::NodeConfigurationOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeConfigurationOptionBuilder {
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_nodes: ::std::option::Option<i32>,
@@ -88,10 +86,7 @@ impl NodeConfigurationOptionBuilder {
         self
     }
     /// <p>The estimated disk utilizaton percentage.</p>
-    pub fn set_estimated_disk_utilization_percent(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_estimated_disk_utilization_percent(mut self, input: ::std::option::Option<f64>) -> Self {
         self.estimated_disk_utilization_percent = input;
         self
     }

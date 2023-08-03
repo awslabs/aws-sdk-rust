@@ -29,17 +29,14 @@ impl ListMigrationTasksInput {
 }
 impl ListMigrationTasksInput {
     /// Creates a new builder-style object to manufacture [`ListMigrationTasksInput`](crate::operation::list_migration_tasks::ListMigrationTasksInput).
-    pub fn builder(
-    ) -> crate::operation::list_migration_tasks::builders::ListMigrationTasksInputBuilder {
+    pub fn builder() -> crate::operation::list_migration_tasks::builders::ListMigrationTasksInputBuilder {
         crate::operation::list_migration_tasks::builders::ListMigrationTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMigrationTasksInput`](crate::operation::list_migration_tasks::ListMigrationTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMigrationTasksInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -75,18 +72,12 @@ impl ListMigrationTasksInputBuilder {
         &self.max_results
     }
     /// <p>Filter migration tasks by discovered resource name.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filter migration tasks by discovered resource name.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -97,16 +88,11 @@ impl ListMigrationTasksInputBuilder {
     /// Consumes the builder and constructs a [`ListMigrationTasksInput`](crate::operation::list_migration_tasks::ListMigrationTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_migration_tasks::ListMigrationTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_migration_tasks::ListMigrationTasksInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                resource_name: self.resource_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_migration_tasks::ListMigrationTasksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_migration_tasks::ListMigrationTasksInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            resource_name: self.resource_name,
+        })
     }
 }

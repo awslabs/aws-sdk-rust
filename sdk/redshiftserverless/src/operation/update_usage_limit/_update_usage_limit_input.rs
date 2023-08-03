@@ -29,17 +29,14 @@ impl UpdateUsageLimitInput {
 }
 impl UpdateUsageLimitInput {
     /// Creates a new builder-style object to manufacture [`UpdateUsageLimitInput`](crate::operation::update_usage_limit::UpdateUsageLimitInput).
-    pub fn builder() -> crate::operation::update_usage_limit::builders::UpdateUsageLimitInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_usage_limit::builders::UpdateUsageLimitInputBuilder {
         crate::operation::update_usage_limit::builders::UpdateUsageLimitInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUsageLimitInput`](crate::operation::update_usage_limit::UpdateUsageLimitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUsageLimitInputBuilder {
     pub(crate) usage_limit_id: ::std::option::Option<::std::string::String>,
     pub(crate) amount: ::std::option::Option<i64>,
@@ -47,18 +44,12 @@ pub struct UpdateUsageLimitInputBuilder {
 }
 impl UpdateUsageLimitInputBuilder {
     /// <p>The identifier of the usage limit to update.</p>
-    pub fn usage_limit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_limit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the usage limit to update.</p>
-    pub fn set_usage_limit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_limit_id = input;
         self
     }
@@ -86,32 +77,22 @@ impl UpdateUsageLimitInputBuilder {
         self
     }
     /// <p>The new action that Amazon Redshift Serverless takes when the limit is reached.</p>
-    pub fn set_breach_action(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageLimitBreachAction>,
-    ) -> Self {
+    pub fn set_breach_action(mut self, input: ::std::option::Option<crate::types::UsageLimitBreachAction>) -> Self {
         self.breach_action = input;
         self
     }
     /// <p>The new action that Amazon Redshift Serverless takes when the limit is reached.</p>
-    pub fn get_breach_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
+    pub fn get_breach_action(&self) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
         &self.breach_action
     }
     /// Consumes the builder and constructs a [`UpdateUsageLimitInput`](crate::operation::update_usage_limit::UpdateUsageLimitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_usage_limit::UpdateUsageLimitInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_usage_limit::UpdateUsageLimitInput {
-                usage_limit_id: self.usage_limit_id,
-                amount: self.amount,
-                breach_action: self.breach_action,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_usage_limit::UpdateUsageLimitInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_usage_limit::UpdateUsageLimitInput {
+            usage_limit_id: self.usage_limit_id,
+            amount: self.amount,
+            breach_action: self.breach_action,
+        })
     }
 }

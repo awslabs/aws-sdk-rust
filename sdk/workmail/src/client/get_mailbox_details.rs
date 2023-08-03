@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`mailbox_quota(Option<i32>)`](crate::operation::get_mailbox_details::GetMailboxDetailsOutput::mailbox_quota): <p>The maximum allowed mailbox size, in MB, for the specified user.</p>
     ///   - [`mailbox_size(f64)`](crate::operation::get_mailbox_details::GetMailboxDetailsOutput::mailbox_size): <p>The current mailbox size, in MB, for the specified user.</p>
     /// - On failure, responds with [`SdkError<GetMailboxDetailsError>`](crate::operation::get_mailbox_details::GetMailboxDetailsError)
-    pub fn get_mailbox_details(
-        &self,
-    ) -> crate::operation::get_mailbox_details::builders::GetMailboxDetailsFluentBuilder {
-        crate::operation::get_mailbox_details::builders::GetMailboxDetailsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_mailbox_details(&self) -> crate::operation::get_mailbox_details::builders::GetMailboxDetailsFluentBuilder {
+        crate::operation::get_mailbox_details::builders::GetMailboxDetailsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`rules(Option<Vec<AutomationRulesConfig>>)`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput::rules): <p> A list of rule details for the provided rule ARNs. </p>
     ///   - [`unprocessed_automation_rules(Option<Vec<UnprocessedAutomationRule>>)`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput::unprocessed_automation_rules): <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why. </p>
     /// - On failure, responds with [`SdkError<BatchGetAutomationRulesError>`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError)
-    pub fn batch_get_automation_rules(
-        &self,
-    ) -> crate::operation::batch_get_automation_rules::builders::BatchGetAutomationRulesFluentBuilder
-    {
+    pub fn batch_get_automation_rules(&self) -> crate::operation::batch_get_automation_rules::builders::BatchGetAutomationRulesFluentBuilder {
         crate::operation::batch_get_automation_rules::builders::BatchGetAutomationRulesFluentBuilder::new(self.handle.clone())
     }
 }

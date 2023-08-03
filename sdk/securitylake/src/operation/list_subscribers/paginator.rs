@@ -31,9 +31,7 @@ impl ListSubscribersPaginator {
     ///
     /// This paginator automatically flattens results using `subscribers`. Queries to the underlying service
     /// are dispatched lazily.
-    pub fn items(
-        self,
-    ) -> crate::operation::list_subscribers::paginator::ListSubscribersPaginatorItems {
+    pub fn items(self) -> crate::operation::list_subscribers::paginator::ListSubscribersPaginatorItems {
         crate::operation::list_subscribers::paginator::ListSubscribersPaginatorItems(self)
     }
 
@@ -57,9 +55,7 @@ impl ListSubscribersPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::list_subscribers::ListSubscribersOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_subscribers::ListSubscribersError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_subscribers::ListSubscribersError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -69,10 +65,7 @@ impl ListSubscribersPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -97,13 +90,9 @@ impl ListSubscribersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_list_subscribers_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_subscribers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.next_token.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.next_token = new_token.cloned();
@@ -141,9 +130,7 @@ impl ListSubscribersPaginatorItems {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::types::SubscriberResource,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_subscribers::ListSubscribersError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_subscribers::ListSubscribersError>,
         >,
     > + ::std::marker::Unpin {
         ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateSkillWithUsersOutput {
 }
 impl AssociateSkillWithUsersOutput {
     /// Creates a new builder-style object to manufacture [`AssociateSkillWithUsersOutput`](crate::operation::associate_skill_with_users::AssociateSkillWithUsersOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersOutputBuilder {
         crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateSkillWithUsersOutput`](crate::operation::associate_skill_with_users::AssociateSkillWithUsersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateSkillWithUsersOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl AssociateSkillWithUsersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateSkillWithUsersOutput`](crate::operation::associate_skill_with_users::AssociateSkillWithUsersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_skill_with_users::AssociateSkillWithUsersOutput {
+    pub fn build(self) -> crate::operation::associate_skill_with_users::AssociateSkillWithUsersOutput {
         crate::operation::associate_skill_with_users::AssociateSkillWithUsersOutput {
             _request_id: self._request_id,
         }

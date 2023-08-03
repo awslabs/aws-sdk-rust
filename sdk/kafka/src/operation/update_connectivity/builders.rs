@@ -10,10 +10,7 @@ impl UpdateConnectivityInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_connectivity::UpdateConnectivityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connectivity::UpdateConnectivityError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connectivity::UpdateConnectivityError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_connectivity();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateConnectivityFluentBuilder {
         }
     }
     /// Access the UpdateConnectivity as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_connectivity::builders::UpdateConnectivityInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_connectivity::builders::UpdateConnectivityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateConnectivityFluentBuilder {
             crate::operation::update_connectivity::UpdateConnectivity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connectivity::UpdateConnectivityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connectivity::UpdateConnectivityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateConnectivityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateConnectivityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connectivity::UpdateConnectivityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connectivity::UpdateConnectivityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connectivity::UpdateConnectivityError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateConnectivityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connectivity::UpdateConnectivityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connectivity::UpdateConnectivityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connectivity::UpdateConnectivityError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateConnectivityFluentBuilder {
             crate::operation::update_connectivity::UpdateConnectivity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connectivity::UpdateConnectivityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connectivity::UpdateConnectivityError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl UpdateConnectivityFluentBuilder {
         self
     }
     /// <p>Information about the broker access configuration.</p>
-    pub fn set_connectivity_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectivityInfo>,
-    ) -> Self {
+    pub fn set_connectivity_info(mut self, input: ::std::option::Option<crate::types::ConnectivityInfo>) -> Self {
         self.inner = self.inner.set_connectivity_info(input);
         self
     }
@@ -154,18 +135,12 @@ impl UpdateConnectivityFluentBuilder {
         self.inner.get_connectivity_info()
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }

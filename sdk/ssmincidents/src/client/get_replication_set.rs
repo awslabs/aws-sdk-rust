@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetReplicationSetOutput`](crate::operation::get_replication_set::GetReplicationSetOutput) with field(s):
     ///   - [`replication_set(Option<ReplicationSet>)`](crate::operation::get_replication_set::GetReplicationSetOutput::replication_set): <p>Details of the replication set.</p>
     /// - On failure, responds with [`SdkError<GetReplicationSetError>`](crate::operation::get_replication_set::GetReplicationSetError)
-    pub fn get_replication_set(
-        &self,
-    ) -> crate::operation::get_replication_set::builders::GetReplicationSetFluentBuilder {
-        crate::operation::get_replication_set::builders::GetReplicationSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_replication_set(&self) -> crate::operation::get_replication_set::builders::GetReplicationSetFluentBuilder {
+        crate::operation::get_replication_set::builders::GetReplicationSetFluentBuilder::new(self.handle.clone())
     }
 }

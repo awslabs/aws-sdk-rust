@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDbSubnetGroupOutput {
 }
 impl DeleteDbSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbSubnetGroupOutput`](crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_db_subnet_group::builders::DeleteDbSubnetGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_db_subnet_group::builders::DeleteDbSubnetGroupOutputBuilder {
         crate::operation::delete_db_subnet_group::builders::DeleteDbSubnetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbSubnetGroupOutput`](crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbSubnetGroupOutputBuilder {
     _request_id: Option<String>,
 }

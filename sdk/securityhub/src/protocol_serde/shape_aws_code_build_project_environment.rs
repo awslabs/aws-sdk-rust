@@ -22,9 +22,7 @@ pub fn ser_aws_code_build_project_environment(
         object.key("PrivilegedMode").boolean(input.privileged_mode);
     }
     if let Some(var_6) = &input.image_pull_credentials_type {
-        object
-            .key("ImagePullCredentialsType")
-            .string(var_6.as_str());
+        object.key("ImagePullCredentialsType").string(var_6.as_str());
     }
     if let Some(var_7) = &input.registry_credential {
         #[allow(unused_mut)]
@@ -40,91 +38,67 @@ pub fn ser_aws_code_build_project_environment(
 
 pub(crate) fn de_aws_code_build_project_environment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsCodeBuildProjectEnvironment>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsCodeBuildProjectEnvironment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AwsCodeBuildProjectEnvironmentBuilder::default();
+            let mut builder = crate::types::builders::AwsCodeBuildProjectEnvironmentBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Certificate" => {
-                                builder = builder.set_certificate(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Certificate" => {
+                            builder = builder.set_certificate(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "EnvironmentVariables" => {
-                                builder = builder.set_environment_variables(
+                            );
+                        }
+                        "EnvironmentVariables" => {
+                            builder = builder.set_environment_variables(
                                     crate::protocol_serde::shape_aws_code_build_project_environment_environment_variables_list::de_aws_code_build_project_environment_environment_variables_list(tokens)?
                                 );
-                            }
-                            "PrivilegedMode" => {
-                                builder = builder.set_privileged_mode(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "ImagePullCredentialsType" => {
-                                builder = builder.set_image_pull_credentials_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "PrivilegedMode" => {
+                            builder = builder.set_privileged_mode(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "ImagePullCredentialsType" => {
+                            builder = builder.set_image_pull_credentials_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "RegistryCredential" => {
-                                builder = builder.set_registry_credential(
+                            );
+                        }
+                        "RegistryCredential" => {
+                            builder = builder.set_registry_credential(
                                     crate::protocol_serde::shape_aws_code_build_project_environment_registry_credential::de_aws_code_build_project_environment_registry_credential(tokens)?
                                 );
-                            }
-                            "Type" => {
-                                builder = builder.set_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "Type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

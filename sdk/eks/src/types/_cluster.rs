@@ -27,8 +27,7 @@ pub struct Cluster {
     pub resources_vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
     /// <p>The Kubernetes network configuration for the cluster.</p>
     #[doc(hidden)]
-    pub kubernetes_network_config:
-        ::std::option::Option<crate::types::KubernetesNetworkConfigResponse>,
+    pub kubernetes_network_config: ::std::option::Option<crate::types::KubernetesNetworkConfigResponse>,
     /// <p>The logging configuration for your cluster.</p>
     #[doc(hidden)]
     pub logging: ::std::option::Option<crate::types::Logging>,
@@ -49,9 +48,7 @@ pub struct Cluster {
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Cluster tags do not propagate to any other resources associated with the cluster.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The encryption configuration for the cluster.</p>
     #[doc(hidden)]
     pub encryption_config: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
@@ -98,9 +95,7 @@ impl Cluster {
         self.resources_vpc_config.as_ref()
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub fn kubernetes_network_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KubernetesNetworkConfigResponse> {
+    pub fn kubernetes_network_config(&self) -> ::std::option::Option<&crate::types::KubernetesNetworkConfigResponse> {
         self.kubernetes_network_config.as_ref()
     }
     /// <p>The logging configuration for your cluster.</p>
@@ -128,11 +123,7 @@ impl Cluster {
         self.platform_version.as_deref()
     }
     /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Cluster tags do not propagate to any other resources associated with the cluster.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The encryption configuration for the cluster.</p>
@@ -140,9 +131,7 @@ impl Cluster {
         self.encryption_config.as_deref()
     }
     /// <p>The configuration used to connect to a cluster for registration.</p>
-    pub fn connector_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectorConfigResponse> {
+    pub fn connector_config(&self) -> ::std::option::Option<&crate::types::ConnectorConfigResponse> {
         self.connector_config.as_ref()
     }
     /// <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an Amazon EKS cluster on the Amazon Web Services cloud.</p>
@@ -167,9 +156,7 @@ impl Cluster {
 
 /// A builder for [`Cluster`](crate::types::Cluster).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -178,19 +165,15 @@ pub struct ClusterBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resources_vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
-    pub(crate) kubernetes_network_config:
-        ::std::option::Option<crate::types::KubernetesNetworkConfigResponse>,
+    pub(crate) kubernetes_network_config: ::std::option::Option<crate::types::KubernetesNetworkConfigResponse>,
     pub(crate) logging: ::std::option::Option<crate::types::Logging>,
     pub(crate) identity: ::std::option::Option<crate::types::Identity>,
     pub(crate) status: ::std::option::Option<crate::types::ClusterStatus>,
     pub(crate) certificate_authority: ::std::option::Option<crate::types::Certificate>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) encryption_config:
-        ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) encryption_config: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
     pub(crate) connector_config: ::std::option::Option<crate::types::ConnectorConfigResponse>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) health: ::std::option::Option<crate::types::ClusterHealth>,
@@ -231,10 +214,7 @@ impl ClusterBuilder {
         self
     }
     /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -290,39 +270,26 @@ impl ClusterBuilder {
         self
     }
     /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn set_resources_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfigResponse>,
-    ) -> Self {
+    pub fn set_resources_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfigResponse>) -> Self {
         self.resources_vpc_config = input;
         self
     }
     /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn get_resources_vpc_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcConfigResponse> {
+    pub fn get_resources_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfigResponse> {
         &self.resources_vpc_config
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub fn kubernetes_network_config(
-        mut self,
-        input: crate::types::KubernetesNetworkConfigResponse,
-    ) -> Self {
+    pub fn kubernetes_network_config(mut self, input: crate::types::KubernetesNetworkConfigResponse) -> Self {
         self.kubernetes_network_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub fn set_kubernetes_network_config(
-        mut self,
-        input: ::std::option::Option<crate::types::KubernetesNetworkConfigResponse>,
-    ) -> Self {
+    pub fn set_kubernetes_network_config(mut self, input: ::std::option::Option<crate::types::KubernetesNetworkConfigResponse>) -> Self {
         self.kubernetes_network_config = input;
         self
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub fn get_kubernetes_network_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::KubernetesNetworkConfigResponse> {
+    pub fn get_kubernetes_network_config(&self) -> &::std::option::Option<crate::types::KubernetesNetworkConfigResponse> {
         &self.kubernetes_network_config
     }
     /// <p>The logging configuration for your cluster.</p>
@@ -373,10 +340,7 @@ impl ClusterBuilder {
         self
     }
     /// <p>The <code>certificate-authority-data</code> for your cluster.</p>
-    pub fn set_certificate_authority(
-        mut self,
-        input: ::std::option::Option<crate::types::Certificate>,
-    ) -> Self {
+    pub fn set_certificate_authority(mut self, input: ::std::option::Option<crate::types::Certificate>) -> Self {
         self.certificate_authority = input;
         self
     }
@@ -385,18 +349,12 @@ impl ClusterBuilder {
         &self.certificate_authority
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -405,18 +363,12 @@ impl ClusterBuilder {
         &self.client_request_token
     }
     /// <p>The platform version of your Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
-    pub fn platform_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The platform version of your Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
-    pub fn set_platform_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_version = input;
         self
     }
@@ -429,32 +381,19 @@ impl ClusterBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Cluster tags do not propagate to any other resources associated with the cluster.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Cluster tags do not propagate to any other resources associated with the cluster.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Cluster tags do not propagate to any other resources associated with the cluster.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `encryption_config`.
@@ -469,17 +408,12 @@ impl ClusterBuilder {
         self
     }
     /// <p>The encryption configuration for the cluster.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>) -> Self {
         self.encryption_config = input;
         self
     }
     /// <p>The encryption configuration for the cluster.</p>
-    pub fn get_encryption_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
+    pub fn get_encryption_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
         &self.encryption_config
     }
     /// <p>The configuration used to connect to a cluster for registration.</p>
@@ -488,17 +422,12 @@ impl ClusterBuilder {
         self
     }
     /// <p>The configuration used to connect to a cluster for registration.</p>
-    pub fn set_connector_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorConfigResponse>,
-    ) -> Self {
+    pub fn set_connector_config(mut self, input: ::std::option::Option<crate::types::ConnectorConfigResponse>) -> Self {
         self.connector_config = input;
         self
     }
     /// <p>The configuration used to connect to a cluster for registration.</p>
-    pub fn get_connector_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorConfigResponse> {
+    pub fn get_connector_config(&self) -> &::std::option::Option<crate::types::ConnectorConfigResponse> {
         &self.connector_config
     }
     /// <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an Amazon EKS cluster on the Amazon Web Services cloud.</p>
@@ -535,17 +464,12 @@ impl ClusterBuilder {
         self
     }
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
-    pub fn set_outpost_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutpostConfigResponse>,
-    ) -> Self {
+    pub fn set_outpost_config(mut self, input: ::std::option::Option<crate::types::OutpostConfigResponse>) -> Self {
         self.outpost_config = input;
         self
     }
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
-    pub fn get_outpost_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutpostConfigResponse> {
+    pub fn get_outpost_config(&self) -> &::std::option::Option<crate::types::OutpostConfigResponse> {
         &self.outpost_config
     }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).

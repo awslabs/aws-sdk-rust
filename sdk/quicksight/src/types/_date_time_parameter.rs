@@ -30,9 +30,7 @@ impl DateTimeParameter {
 
 /// A builder for [`DateTimeParameter`](crate::types::DateTimeParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DateTimeParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
@@ -64,17 +62,12 @@ impl DateTimeParameterBuilder {
         self
     }
     /// <p>The values for the date-time parameter.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
         self.values = input;
         self
     }
     /// <p>The values for the date-time parameter.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`DateTimeParameter`](crate::types::DateTimeParameter).

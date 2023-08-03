@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`job_runs(Option<Vec<JobRun>>)`](crate::operation::list_job_runs::ListJobRunsOutput::job_runs): <p>This output lists information about the specified job runs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_job_runs::ListJobRunsOutput::next_token): <p>This output displays the token for the next set of job runs.</p>
     /// - On failure, responds with [`SdkError<ListJobRunsError>`](crate::operation::list_job_runs::ListJobRunsError)
-    pub fn list_job_runs(
-        &self,
-    ) -> crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder {
-        crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_job_runs(&self) -> crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder {
+        crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,9 +26,7 @@ pub struct BotChannelAssociation {
     pub r#type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>Provides information necessary to communicate with the messaging platform. </p>
     #[doc(hidden)]
-    pub bot_configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub bot_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the bot channel. </p>
     /// <ul>
     /// <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li>
@@ -69,11 +67,7 @@ impl BotChannelAssociation {
         self.r#type.as_ref()
     }
     /// <p>Provides information necessary to communicate with the messaging platform. </p>
-    pub fn bot_configuration(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn bot_configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.bot_configuration.as_ref()
     }
     /// <p>The status of the bot channel. </p>
@@ -122,9 +116,7 @@ pub struct BotChannelAssociationBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) r#type: ::std::option::Option<crate::types::ChannelType>,
-    pub(crate) bot_configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) bot_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::ChannelStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
 }
@@ -197,10 +189,7 @@ impl BotChannelAssociationBuilder {
         self
     }
     /// <p>The date that the association between the Amazon Lex bot and the channel was created. </p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -240,19 +229,13 @@ impl BotChannelAssociationBuilder {
     /// <p>Provides information necessary to communicate with the messaging platform. </p>
     pub fn set_bot_configuration(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.bot_configuration = input;
         self
     }
     /// <p>Provides information necessary to communicate with the messaging platform. </p>
-    pub fn get_bot_configuration(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_bot_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.bot_configuration
     }
     /// <p>The status of the bot channel. </p>
@@ -285,18 +268,12 @@ impl BotChannelAssociationBuilder {
         &self.status
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

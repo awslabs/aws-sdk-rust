@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`policy_name(impl ::std::convert::Into<String>)`](crate::operation::delete_email_identity_policy::builders::DeleteEmailIdentityPolicyFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::delete_email_identity_policy::builders::DeleteEmailIdentityPolicyFluentBuilder::set_policy_name): <p>The name of the policy.</p>  <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     /// - On success, responds with [`DeleteEmailIdentityPolicyOutput`](crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteEmailIdentityPolicyError>`](crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError)
-    pub fn delete_email_identity_policy(&self) -> crate::operation::delete_email_identity_policy::builders::DeleteEmailIdentityPolicyFluentBuilder{
+    pub fn delete_email_identity_policy(&self) -> crate::operation::delete_email_identity_policy::builders::DeleteEmailIdentityPolicyFluentBuilder {
         crate::operation::delete_email_identity_policy::builders::DeleteEmailIdentityPolicyFluentBuilder::new(self.handle.clone())
     }
 }

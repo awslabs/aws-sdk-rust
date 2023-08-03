@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ImportSignalCatalogOutput {
 }
 impl ImportSignalCatalogOutput {
     /// Creates a new builder-style object to manufacture [`ImportSignalCatalogOutput`](crate::operation::import_signal_catalog::ImportSignalCatalogOutput).
-    pub fn builder(
-    ) -> crate::operation::import_signal_catalog::builders::ImportSignalCatalogOutputBuilder {
-        crate::operation::import_signal_catalog::builders::ImportSignalCatalogOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::import_signal_catalog::builders::ImportSignalCatalogOutputBuilder {
+        crate::operation::import_signal_catalog::builders::ImportSignalCatalogOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportSignalCatalogOutput`](crate::operation::import_signal_catalog::ImportSignalCatalogOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportSignalCatalogOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

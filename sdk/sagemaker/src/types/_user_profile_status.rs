@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UserProfileStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for UserProfileStatus {
             "Pending" => UserProfileStatus::Pending,
             "Update_Failed" => UserProfileStatus::UpdateFailed,
             "Updating" => UserProfileStatus::Updating,
-            other => {
-                UserProfileStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => UserProfileStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl UserProfileStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Delete_Failed",
-            "Deleting",
-            "Failed",
-            "InService",
-            "Pending",
-            "Update_Failed",
-            "Updating",
-        ]
+        &["Delete_Failed", "Deleting", "Failed", "InService", "Pending", "Update_Failed", "Updating"]
     }
 }
 impl ::std::convert::AsRef<str> for UserProfileStatus {

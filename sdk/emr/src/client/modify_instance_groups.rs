@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`instance_groups(Vec<InstanceGroupModifyConfig>)`](crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder::instance_groups) / [`set_instance_groups(Option<Vec<InstanceGroupModifyConfig>>)`](crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder::set_instance_groups): <p>Instance groups to change.</p>
     /// - On success, responds with [`ModifyInstanceGroupsOutput`](crate::operation::modify_instance_groups::ModifyInstanceGroupsOutput)
     /// - On failure, responds with [`SdkError<ModifyInstanceGroupsError>`](crate::operation::modify_instance_groups::ModifyInstanceGroupsError)
-    pub fn modify_instance_groups(
-        &self,
-    ) -> crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder {
-        crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_instance_groups(&self) -> crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder {
+        crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsFluentBuilder::new(self.handle.clone())
     }
 }

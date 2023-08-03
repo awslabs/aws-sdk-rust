@@ -22,9 +22,7 @@ impl ListStudiosInput {
 
 /// A builder for [`ListStudiosInput`](crate::operation::list_studios::ListStudiosInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStudiosInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl ListStudiosInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListStudiosInput`](crate::operation::list_studios::ListStudiosInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_studios::ListStudiosInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_studios::ListStudiosInput {
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_studios::ListStudiosInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_studios::ListStudiosInput { next_token: self.next_token })
     }
 }

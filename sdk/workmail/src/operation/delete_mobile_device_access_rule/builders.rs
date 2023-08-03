@@ -28,7 +28,7 @@ impl DeleteMobileDeviceAccessRuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMobileDeviceAccessRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleInputBuilder,
+    inner: crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleInputBuilder,
 }
 impl DeleteMobileDeviceAccessRuleFluentBuilder {
     /// Creates a new `DeleteMobileDeviceAccessRule`.
@@ -39,7 +39,7 @@ impl DeleteMobileDeviceAccessRuleFluentBuilder {
         }
     }
     /// Access the DeleteMobileDeviceAccessRule as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DeleteMobileDeviceAccessRuleFluentBuilder {
             crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DeleteMobileDeviceAccessRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DeleteMobileDeviceAccessRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DeleteMobileDeviceAccessRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl DeleteMobileDeviceAccessRuleFluentBuilder {
             crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The WorkMail organization under which the rule will be deleted.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The WorkMail organization under which the rule will be deleted.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }
@@ -143,25 +126,17 @@ impl DeleteMobileDeviceAccessRuleFluentBuilder {
         self.inner.get_organization_id()
     }
     /// <p>The identifier of the rule to be deleted.</p>
-    pub fn mobile_device_access_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mobile_device_access_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mobile_device_access_rule_id(input.into());
         self
     }
     /// <p>The identifier of the rule to be deleted.</p>
-    pub fn set_mobile_device_access_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mobile_device_access_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mobile_device_access_rule_id(input);
         self
     }
     /// <p>The identifier of the rule to be deleted.</p>
-    pub fn get_mobile_device_access_rule_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_mobile_device_access_rule_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_mobile_device_access_rule_id()
     }
 }

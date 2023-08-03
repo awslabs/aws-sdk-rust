@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartImportLabelsTaskRunOutput`](crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunOutput) with field(s):
     ///   - [`task_run_id(Option<String>)`](crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunOutput::task_run_id): <p>The unique identifier for the task run.</p>
     /// - On failure, responds with [`SdkError<StartImportLabelsTaskRunError>`](crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunError)
-    pub fn start_import_labels_task_run(&self) -> crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunFluentBuilder{
+    pub fn start_import_labels_task_run(&self) -> crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunFluentBuilder {
         crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunFluentBuilder::new(self.handle.clone())
     }
 }

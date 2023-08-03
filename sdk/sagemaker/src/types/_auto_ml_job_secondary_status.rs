@@ -55,13 +55,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AutoMlJobSecondaryStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -109,20 +103,14 @@ impl ::std::convert::From<&str> for AutoMlJobSecondaryStatus {
     fn from(s: &str) -> Self {
         match s {
             "AnalyzingData" => AutoMlJobSecondaryStatus::AnalyzingData,
-            "CandidateDefinitionsGenerated" => {
-                AutoMlJobSecondaryStatus::CandidateDefinitionsGenerated
-            }
+            "CandidateDefinitionsGenerated" => AutoMlJobSecondaryStatus::CandidateDefinitionsGenerated,
             "Completed" => AutoMlJobSecondaryStatus::Completed,
             "DeployingModel" => AutoMlJobSecondaryStatus::DeployingModel,
             "ExplainabilityError" => AutoMlJobSecondaryStatus::ExplainabilityError,
             "Failed" => AutoMlJobSecondaryStatus::Failed,
             "FeatureEngineering" => AutoMlJobSecondaryStatus::FeatureEngineering,
-            "GeneratingExplainabilityReport" => {
-                AutoMlJobSecondaryStatus::GeneratingExplainabilityReport
-            }
-            "GeneratingModelInsightsReport" => {
-                AutoMlJobSecondaryStatus::GeneratingModelInsightsReport
-            }
+            "GeneratingExplainabilityReport" => AutoMlJobSecondaryStatus::GeneratingExplainabilityReport,
+            "GeneratingModelInsightsReport" => AutoMlJobSecondaryStatus::GeneratingModelInsightsReport,
             "MaxAutoMLJobRuntimeReached" => AutoMlJobSecondaryStatus::MaxAutoMlJobRuntimeReached,
             "MaxCandidatesReached" => AutoMlJobSecondaryStatus::MaxCandidatesReached,
             "ModelDeploymentError" => AutoMlJobSecondaryStatus::ModelDeploymentError,
@@ -133,9 +121,7 @@ impl ::std::convert::From<&str> for AutoMlJobSecondaryStatus {
             "Stopped" => AutoMlJobSecondaryStatus::Stopped,
             "Stopping" => AutoMlJobSecondaryStatus::Stopping,
             "TrainingModels" => AutoMlJobSecondaryStatus::TrainingModels,
-            other => AutoMlJobSecondaryStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AutoMlJobSecondaryStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -151,20 +137,14 @@ impl AutoMlJobSecondaryStatus {
     pub fn as_str(&self) -> &str {
         match self {
             AutoMlJobSecondaryStatus::AnalyzingData => "AnalyzingData",
-            AutoMlJobSecondaryStatus::CandidateDefinitionsGenerated => {
-                "CandidateDefinitionsGenerated"
-            }
+            AutoMlJobSecondaryStatus::CandidateDefinitionsGenerated => "CandidateDefinitionsGenerated",
             AutoMlJobSecondaryStatus::Completed => "Completed",
             AutoMlJobSecondaryStatus::DeployingModel => "DeployingModel",
             AutoMlJobSecondaryStatus::ExplainabilityError => "ExplainabilityError",
             AutoMlJobSecondaryStatus::Failed => "Failed",
             AutoMlJobSecondaryStatus::FeatureEngineering => "FeatureEngineering",
-            AutoMlJobSecondaryStatus::GeneratingExplainabilityReport => {
-                "GeneratingExplainabilityReport"
-            }
-            AutoMlJobSecondaryStatus::GeneratingModelInsightsReport => {
-                "GeneratingModelInsightsReport"
-            }
+            AutoMlJobSecondaryStatus::GeneratingExplainabilityReport => "GeneratingExplainabilityReport",
+            AutoMlJobSecondaryStatus::GeneratingModelInsightsReport => "GeneratingModelInsightsReport",
             AutoMlJobSecondaryStatus::MaxAutoMlJobRuntimeReached => "MaxAutoMLJobRuntimeReached",
             AutoMlJobSecondaryStatus::MaxCandidatesReached => "MaxCandidatesReached",
             AutoMlJobSecondaryStatus::ModelDeploymentError => "ModelDeploymentError",

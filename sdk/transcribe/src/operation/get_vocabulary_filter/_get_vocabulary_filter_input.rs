@@ -15,35 +15,25 @@ impl GetVocabularyFilterInput {
 }
 impl GetVocabularyFilterInput {
     /// Creates a new builder-style object to manufacture [`GetVocabularyFilterInput`](crate::operation::get_vocabulary_filter::GetVocabularyFilterInput).
-    pub fn builder(
-    ) -> crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterInputBuilder {
-        crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterInputBuilder {
+        crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`GetVocabularyFilterInput`](crate::operation::get_vocabulary_filter::GetVocabularyFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVocabularyFilterInputBuilder {
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,
 }
 impl GetVocabularyFilterInputBuilder {
     /// <p>The name of the custom vocabulary filter you want information about. Custom vocabulary filter names are case sensitive.</p>
-    pub fn vocabulary_filter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the custom vocabulary filter you want information about. Custom vocabulary filter names are case sensitive.</p>
-    pub fn set_vocabulary_filter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_filter_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetVocabularyFilterInputBuilder {
     /// Consumes the builder and constructs a [`GetVocabularyFilterInput`](crate::operation::get_vocabulary_filter::GetVocabularyFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_vocabulary_filter::GetVocabularyFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_vocabulary_filter::GetVocabularyFilterInput {
-                vocabulary_filter_name: self.vocabulary_filter_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_vocabulary_filter::GetVocabularyFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_vocabulary_filter::GetVocabularyFilterInput {
+            vocabulary_filter_name: self.vocabulary_filter_name,
+        })
     }
 }

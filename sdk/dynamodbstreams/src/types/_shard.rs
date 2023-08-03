@@ -20,9 +20,7 @@ impl Shard {
         self.shard_id.as_deref()
     }
     /// <p>The range of possible sequence numbers for the shard.</p>
-    pub fn sequence_number_range(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SequenceNumberRange> {
+    pub fn sequence_number_range(&self) -> ::std::option::Option<&crate::types::SequenceNumberRange> {
         self.sequence_number_range.as_ref()
     }
     /// <p>The shard ID of the current shard's parent.</p>
@@ -39,9 +37,7 @@ impl Shard {
 
 /// A builder for [`Shard`](crate::types::Shard).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShardBuilder {
     pub(crate) shard_id: ::std::option::Option<::std::string::String>,
     pub(crate) sequence_number_range: ::std::option::Option<crate::types::SequenceNumberRange>,
@@ -68,32 +64,21 @@ impl ShardBuilder {
         self
     }
     /// <p>The range of possible sequence numbers for the shard.</p>
-    pub fn set_sequence_number_range(
-        mut self,
-        input: ::std::option::Option<crate::types::SequenceNumberRange>,
-    ) -> Self {
+    pub fn set_sequence_number_range(mut self, input: ::std::option::Option<crate::types::SequenceNumberRange>) -> Self {
         self.sequence_number_range = input;
         self
     }
     /// <p>The range of possible sequence numbers for the shard.</p>
-    pub fn get_sequence_number_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::SequenceNumberRange> {
+    pub fn get_sequence_number_range(&self) -> &::std::option::Option<crate::types::SequenceNumberRange> {
         &self.sequence_number_range
     }
     /// <p>The shard ID of the current shard's parent.</p>
-    pub fn parent_shard_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_shard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_shard_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The shard ID of the current shard's parent.</p>
-    pub fn set_parent_shard_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_shard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_shard_id = input;
         self
     }

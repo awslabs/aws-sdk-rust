@@ -2,8 +2,7 @@
 pub fn ser_delete_cloud_front_origin_access_identity_headers(
     input: &crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.if_match {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_delete_cloud_front_origin_access_identity_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "if_match",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("If-Match", header_value);
@@ -24,15 +20,25 @@ pub fn ser_delete_cloud_front_origin_access_identity_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_cloud_front_origin_access_identity_http_error(_response_status: u16, _response_headers: &::http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput, crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError>{
+pub fn de_delete_cloud_front_origin_access_identity_http_error(
+    _response_status: u16,
+    _response_headers: &::http::header::HeaderMap,
+    _response_body: &[u8],
+) -> std::result::Result<
+    crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput,
+    crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError,
+> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => {
+            return Err(crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::unhandled(generic))
+        }
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
@@ -121,13 +127,19 @@ pub fn de_delete_cloud_front_origin_access_identity_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_cloud_front_origin_access_identity_http_response_with_props(_response_status: u16, _response_headers: &::http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput, crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError>{
+pub fn de_delete_cloud_front_origin_access_identity_http_response_with_props(
+    _response_status: u16,
+    _response_headers: &::http::header::HeaderMap,
+    _response_body: &[u8],
+) -> std::result::Result<
+    crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput,
+    crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output =
+            crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityOutputBuilder::default();
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

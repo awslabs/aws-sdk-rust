@@ -10,10 +10,7 @@ impl UpdateDeploymentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_deployment::UpdateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment::UpdateDeploymentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deployment::UpdateDeploymentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_deployment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDeploymentFluentBuilder {
         }
     }
     /// Access the UpdateDeployment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_deployment::builders::UpdateDeploymentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_deployment::builders::UpdateDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateDeploymentFluentBuilder {
             crate::operation::update_deployment::UpdateDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment::UpdateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deployment::UpdateDeploymentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_deployment::UpdateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment::UpdateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deployment::UpdateDeploymentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_deployment::UpdateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment::UpdateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deployment::UpdateDeploymentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateDeploymentFluentBuilder {
             crate::operation::update_deployment::UpdateDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment::UpdateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deployment::UpdateDeploymentError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl UpdateDeploymentFluentBuilder {
         self.inner.get_api_id()
     }
     /// <p>The deployment ID.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p>The deployment ID.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }

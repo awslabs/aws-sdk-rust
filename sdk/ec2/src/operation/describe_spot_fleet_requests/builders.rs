@@ -27,7 +27,7 @@ impl DescribeSpotFleetRequestsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSpotFleetRequestsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_spot_fleet_requests::builders::DescribeSpotFleetRequestsInputBuilder,
+    inner: crate::operation::describe_spot_fleet_requests::builders::DescribeSpotFleetRequestsInputBuilder,
 }
 impl DescribeSpotFleetRequestsFluentBuilder {
     /// Creates a new `DescribeSpotFleetRequests`.
@@ -38,7 +38,7 @@ impl DescribeSpotFleetRequestsFluentBuilder {
         }
     }
     /// Access the DescribeSpotFleetRequests as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_spot_fleet_requests::builders::DescribeSpotFleetRequestsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_spot_fleet_requests::builders::DescribeSpotFleetRequestsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeSpotFleetRequestsFluentBuilder {
             crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeSpotFleetRequestsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeSpotFleetRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeSpotFleetRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsError>,
     > {
         self.send_middleware().await
     }
@@ -115,19 +106,14 @@ impl DescribeSpotFleetRequestsFluentBuilder {
             crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_spot_fleet_requests::paginator::DescribeSpotFleetRequestsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_spot_fleet_requests::paginator::DescribeSpotFleetRequestsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_spot_fleet_requests::paginator::DescribeSpotFleetRequestsPaginator {
         crate::operation::describe_spot_fleet_requests::paginator::DescribeSpotFleetRequestsPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -177,25 +163,17 @@ impl DescribeSpotFleetRequestsFluentBuilder {
     /// To override the contents of this collection use [`set_spot_fleet_request_ids`](Self::set_spot_fleet_request_ids).
     ///
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn spot_fleet_request_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_fleet_request_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.spot_fleet_request_ids(input.into());
         self
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn set_spot_fleet_request_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_spot_fleet_request_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_spot_fleet_request_ids(input);
         self
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn get_spot_fleet_request_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_spot_fleet_request_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_spot_fleet_request_ids()
     }
 }

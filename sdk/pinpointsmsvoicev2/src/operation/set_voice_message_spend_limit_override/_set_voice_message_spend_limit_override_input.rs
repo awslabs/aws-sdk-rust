@@ -15,16 +15,14 @@ impl SetVoiceMessageSpendLimitOverrideInput {
 }
 impl SetVoiceMessageSpendLimitOverrideInput {
     /// Creates a new builder-style object to manufacture [`SetVoiceMessageSpendLimitOverrideInput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput).
-    pub fn builder() -> crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideInputBuilder{
+    pub fn builder() -> crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideInputBuilder {
         crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideInputBuilder::default()
     }
 }
 
 /// A builder for [`SetVoiceMessageSpendLimitOverrideInput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetVoiceMessageSpendLimitOverrideInputBuilder {
     pub(crate) monthly_limit: ::std::option::Option<i64>,
 }
@@ -44,12 +42,16 @@ impl SetVoiceMessageSpendLimitOverrideInputBuilder {
         &self.monthly_limit
     }
     /// Consumes the builder and constructs a [`SetVoiceMessageSpendLimitOverrideInput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput {
-                monthly_limit: self.monthly_limit
-                ,
-            }
+                monthly_limit: self.monthly_limit,
+            },
         )
     }
 }

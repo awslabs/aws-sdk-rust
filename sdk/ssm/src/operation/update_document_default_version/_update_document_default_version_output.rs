@@ -10,9 +10,7 @@ pub struct UpdateDocumentDefaultVersionOutput {
 }
 impl UpdateDocumentDefaultVersionOutput {
     /// <p>The description of a custom document that you want to set as the default version.</p>
-    pub fn description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentDefaultVersionDescription> {
+    pub fn description(&self) -> ::std::option::Option<&crate::types::DocumentDefaultVersionDescription> {
         self.description.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateDocumentDefaultVersionOutput {
 }
 impl UpdateDocumentDefaultVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentDefaultVersionOutput`](crate::operation::update_document_default_version::UpdateDocumentDefaultVersionOutput).
-    pub fn builder() -> crate::operation::update_document_default_version::builders::UpdateDocumentDefaultVersionOutputBuilder{
+    pub fn builder() -> crate::operation::update_document_default_version::builders::UpdateDocumentDefaultVersionOutputBuilder {
         crate::operation::update_document_default_version::builders::UpdateDocumentDefaultVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDocumentDefaultVersionOutput`](crate::operation::update_document_default_version::UpdateDocumentDefaultVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDocumentDefaultVersionOutputBuilder {
     pub(crate) description: ::std::option::Option<crate::types::DocumentDefaultVersionDescription>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl UpdateDocumentDefaultVersionOutputBuilder {
         self
     }
     /// <p>The description of a custom document that you want to set as the default version.</p>
-    pub fn set_description(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentDefaultVersionDescription>,
-    ) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<crate::types::DocumentDefaultVersionDescription>) -> Self {
         self.description = input;
         self
     }
     /// <p>The description of a custom document that you want to set as the default version.</p>
-    pub fn get_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentDefaultVersionDescription> {
+    pub fn get_description(&self) -> &::std::option::Option<crate::types::DocumentDefaultVersionDescription> {
         &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl UpdateDocumentDefaultVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDocumentDefaultVersionOutput`](crate::operation::update_document_default_version::UpdateDocumentDefaultVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_document_default_version::UpdateDocumentDefaultVersionOutput {
+    pub fn build(self) -> crate::operation::update_document_default_version::UpdateDocumentDefaultVersionOutput {
         crate::operation::update_document_default_version::UpdateDocumentDefaultVersionOutput {
             description: self.description,
             _request_id: self._request_id,

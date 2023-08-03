@@ -24,18 +24,14 @@ impl RemoveTagsFromResourceInput {
 }
 impl RemoveTagsFromResourceInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
-    pub fn builder(
-    ) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder {
         crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tag_key_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -69,18 +65,13 @@ impl RemoveTagsFromResourceInputBuilder {
     }
     /// <p>The tag key or keys to remove.</p>
     /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
-    pub fn set_tag_key_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_key_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_key_list = input;
         self
     }
     /// <p>The tag key or keys to remove.</p>
     /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
-    pub fn get_tag_key_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_key_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_key_list
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
@@ -90,11 +81,9 @@ impl RemoveTagsFromResourceInputBuilder {
         crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
-                resource_arn: self.resource_arn,
-                tag_key_list: self.tag_key_list,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
+            resource_arn: self.resource_arn,
+            tag_key_list: self.tag_key_list,
+        })
     }
 }

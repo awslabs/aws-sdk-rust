@@ -40,9 +40,7 @@ impl CreateTrialComponentFluentBuilder {
         }
     }
     /// Access the CreateTrialComponent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_trial_component::builders::CreateTrialComponentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_trial_component::builders::CreateTrialComponentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl CreateTrialComponentFluentBuilder {
             crate::operation::create_trial_component::CreateTrialComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trial_component::CreateTrialComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trial_component::CreateTrialComponentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl CreateTrialComponentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl CreateTrialComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_trial_component::CreateTrialComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trial_component::CreateTrialComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trial_component::CreateTrialComponentError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl CreateTrialComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_trial_component::CreateTrialComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trial_component::CreateTrialComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trial_component::CreateTrialComponentError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +108,17 @@ impl CreateTrialComponentFluentBuilder {
             crate::operation::create_trial_component::CreateTrialComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trial_component::CreateTrialComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trial_component::CreateTrialComponentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the component. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
-    pub fn trial_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trial_component_name(input.into());
         self
     }
     /// <p>The name of the component. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
-    pub fn set_trial_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trial_component_name(input);
         self
     }
@@ -175,10 +156,7 @@ impl CreateTrialComponentFluentBuilder {
     /// <li> <p>Completed</p> </li>
     /// <li> <p>Failed</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TrialComponentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TrialComponentStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -197,10 +175,7 @@ impl CreateTrialComponentFluentBuilder {
         self
     }
     /// <p>When the component started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -214,10 +189,7 @@ impl CreateTrialComponentFluentBuilder {
         self
     }
     /// <p>When the component ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -230,23 +202,14 @@ impl CreateTrialComponentFluentBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The hyperparameters for the component.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::TrialComponentParameterValue,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::TrialComponentParameterValue) -> Self {
         self.inner = self.inner.parameters(k.into(), v);
         self
     }
     /// <p>The hyperparameters for the component.</p>
     pub fn set_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::TrialComponentParameterValue,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentParameterValue>>,
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
@@ -254,12 +217,7 @@ impl CreateTrialComponentFluentBuilder {
     /// <p>The hyperparameters for the component.</p>
     pub fn get_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::TrialComponentParameterValue,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentParameterValue>> {
         self.inner.get_parameters()
     }
     /// Adds a key-value pair to `InputArtifacts`.
@@ -267,23 +225,14 @@ impl CreateTrialComponentFluentBuilder {
     /// To override the contents of this collection use [`set_input_artifacts`](Self::set_input_artifacts).
     ///
     /// <p>The input artifacts for the component. Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types.</p>
-    pub fn input_artifacts(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::TrialComponentArtifact,
-    ) -> Self {
+    pub fn input_artifacts(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::TrialComponentArtifact) -> Self {
         self.inner = self.inner.input_artifacts(k.into(), v);
         self
     }
     /// <p>The input artifacts for the component. Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types.</p>
     pub fn set_input_artifacts(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::TrialComponentArtifact,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>>,
     ) -> Self {
         self.inner = self.inner.set_input_artifacts(input);
         self
@@ -291,9 +240,7 @@ impl CreateTrialComponentFluentBuilder {
     /// <p>The input artifacts for the component. Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types.</p>
     pub fn get_input_artifacts(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>> {
         self.inner.get_input_artifacts()
     }
     /// Adds a key-value pair to `OutputArtifacts`.
@@ -301,23 +248,14 @@ impl CreateTrialComponentFluentBuilder {
     /// To override the contents of this collection use [`set_output_artifacts`](Self::set_output_artifacts).
     ///
     /// <p>The output artifacts for the component. Examples of output artifacts are metrics, snapshots, logs, and images.</p>
-    pub fn output_artifacts(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::TrialComponentArtifact,
-    ) -> Self {
+    pub fn output_artifacts(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::TrialComponentArtifact) -> Self {
         self.inner = self.inner.output_artifacts(k.into(), v);
         self
     }
     /// <p>The output artifacts for the component. Examples of output artifacts are metrics, snapshots, logs, and images.</p>
     pub fn set_output_artifacts(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::TrialComponentArtifact,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>>,
     ) -> Self {
         self.inner = self.inner.set_output_artifacts(input);
         self
@@ -325,9 +263,7 @@ impl CreateTrialComponentFluentBuilder {
     /// <p>The output artifacts for the component. Examples of output artifacts are metrics, snapshots, logs, and images.</p>
     pub fn get_output_artifacts(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>> {
         self.inner.get_output_artifacts()
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
@@ -336,17 +272,12 @@ impl CreateTrialComponentFluentBuilder {
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn set_metadata_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::MetadataProperties>,
-    ) -> Self {
+    pub fn set_metadata_properties(mut self, input: ::std::option::Option<crate::types::MetadataProperties>) -> Self {
         self.inner = self.inner.set_metadata_properties(input);
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn get_metadata_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+    pub fn get_metadata_properties(&self) -> &::std::option::Option<crate::types::MetadataProperties> {
         self.inner.get_metadata_properties()
     }
     /// Appends an item to `Tags`.
@@ -359,10 +290,7 @@ impl CreateTrialComponentFluentBuilder {
         self
     }
     /// <p>A list of tags to associate with the component. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

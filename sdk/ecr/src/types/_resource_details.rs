@@ -10,9 +10,7 @@ pub struct ResourceDetails {
 }
 impl ResourceDetails {
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
-    pub fn aws_ecr_container_image(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEcrContainerImageDetails> {
+    pub fn aws_ecr_container_image(&self) -> ::std::option::Option<&crate::types::AwsEcrContainerImageDetails> {
         self.aws_ecr_container_image.as_ref()
     }
 }
@@ -25,34 +23,23 @@ impl ResourceDetails {
 
 /// A builder for [`ResourceDetails`](crate::types::ResourceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDetailsBuilder {
-    pub(crate) aws_ecr_container_image:
-        ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
+    pub(crate) aws_ecr_container_image: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
 }
 impl ResourceDetailsBuilder {
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
-    pub fn aws_ecr_container_image(
-        mut self,
-        input: crate::types::AwsEcrContainerImageDetails,
-    ) -> Self {
+    pub fn aws_ecr_container_image(mut self, input: crate::types::AwsEcrContainerImageDetails) -> Self {
         self.aws_ecr_container_image = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
-    pub fn set_aws_ecr_container_image(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
-    ) -> Self {
+    pub fn set_aws_ecr_container_image(mut self, input: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>) -> Self {
         self.aws_ecr_container_image = input;
         self
     }
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
-    pub fn get_aws_ecr_container_image(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEcrContainerImageDetails> {
+    pub fn get_aws_ecr_container_image(&self) -> &::std::option::Option<crate::types::AwsEcrContainerImageDetails> {
         &self.aws_ecr_container_image
     }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).

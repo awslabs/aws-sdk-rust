@@ -74,10 +74,7 @@ impl DeleteFraudsterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFraudsterInput`](crate::operation::delete_fraudster::DeleteFraudsterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_fraudster::DeleteFraudsterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_fraudster::DeleteFraudsterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_fraudster::DeleteFraudsterInput {
             domain_id: self.domain_id,
             fraudster_id: self.fraudster_id,

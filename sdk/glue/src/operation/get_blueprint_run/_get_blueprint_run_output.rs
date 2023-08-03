@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetBlueprintRunOutput {
 }
 impl GetBlueprintRunOutput {
     /// Creates a new builder-style object to manufacture [`GetBlueprintRunOutput`](crate::operation::get_blueprint_run::GetBlueprintRunOutput).
-    pub fn builder() -> crate::operation::get_blueprint_run::builders::GetBlueprintRunOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_blueprint_run::builders::GetBlueprintRunOutputBuilder {
         crate::operation::get_blueprint_run::builders::GetBlueprintRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBlueprintRunOutput`](crate::operation::get_blueprint_run::GetBlueprintRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBlueprintRunOutputBuilder {
     pub(crate) blueprint_run: ::std::option::Option<crate::types::BlueprintRun>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetBlueprintRunOutputBuilder {
         self
     }
     /// <p>Returns a <code>BlueprintRun</code> object.</p>
-    pub fn set_blueprint_run(
-        mut self,
-        input: ::std::option::Option<crate::types::BlueprintRun>,
-    ) -> Self {
+    pub fn set_blueprint_run(mut self, input: ::std::option::Option<crate::types::BlueprintRun>) -> Self {
         self.blueprint_run = input;
         self
     }

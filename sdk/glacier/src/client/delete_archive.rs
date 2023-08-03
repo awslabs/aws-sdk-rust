@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`archive_id(impl ::std::convert::Into<String>)`](crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder::archive_id) / [`set_archive_id(Option<String>)`](crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder::set_archive_id): <p>The ID of the archive to delete.</p>
     /// - On success, responds with [`DeleteArchiveOutput`](crate::operation::delete_archive::DeleteArchiveOutput)
     /// - On failure, responds with [`SdkError<DeleteArchiveError>`](crate::operation::delete_archive::DeleteArchiveError)
-    pub fn delete_archive(
-        &self,
-    ) -> crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder {
-        crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_archive(&self) -> crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder {
+        crate::operation::delete_archive::builders::DeleteArchiveFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,7 +28,7 @@ impl AssociateOriginationIdentityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateOriginationIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityInputBuilder,
+    inner: crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityInputBuilder,
 }
 impl AssociateOriginationIdentityFluentBuilder {
     /// Creates a new `AssociateOriginationIdentity`.
@@ -39,7 +39,7 @@ impl AssociateOriginationIdentityFluentBuilder {
         }
     }
     /// Access the AssociateOriginationIdentity as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl AssociateOriginationIdentityFluentBuilder {
             crate::operation::associate_origination_identity::AssociateOriginationIdentity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_origination_identity::AssociateOriginationIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_origination_identity::AssociateOriginationIdentityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl AssociateOriginationIdentityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl AssociateOriginationIdentityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_origination_identity::AssociateOriginationIdentityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_origination_identity::AssociateOriginationIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_origination_identity::AssociateOriginationIdentityError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl AssociateOriginationIdentityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_origination_identity::AssociateOriginationIdentityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_origination_identity::AssociateOriginationIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_origination_identity::AssociateOriginationIdentityError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl AssociateOriginationIdentityFluentBuilder {
             crate::operation::associate_origination_identity::AssociateOriginationIdentity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_origination_identity::AssociateOriginationIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_origination_identity::AssociateOriginationIdentityError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +126,12 @@ impl AssociateOriginationIdentityFluentBuilder {
         self.inner.get_pool_id()
     }
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origination_identity(input.into());
         self
     }
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origination_identity(input);
         self
     }
@@ -157,18 +140,12 @@ impl AssociateOriginationIdentityFluentBuilder {
         self.inner.get_origination_identity()
     }
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
-    pub fn iso_country_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iso_country_code(input.into());
         self
     }
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
-    pub fn set_iso_country_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iso_country_code(input);
         self
     }

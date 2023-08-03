@@ -4,22 +4,13 @@ pub fn de_replace_route_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::replace_route::ReplaceRouteOutput,
-    crate::operation::replace_route::ReplaceRouteError,
-> {
+) -> std::result::Result<crate::operation::replace_route::ReplaceRouteOutput, crate::operation::replace_route::ReplaceRouteError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::replace_route::ReplaceRouteError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::replace_route::ReplaceRouteError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::replace_route::ReplaceRouteError::generic(
-        generic,
-    ))
+    Err(crate::operation::replace_route::ReplaceRouteError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -27,17 +18,11 @@ pub fn de_replace_route_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::replace_route::ReplaceRouteOutput,
-    crate::operation::replace_route::ReplaceRouteError,
-> {
+) -> std::result::Result<crate::operation::replace_route::ReplaceRouteOutput, crate::operation::replace_route::ReplaceRouteError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::replace_route::builders::ReplaceRouteOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::replace_route::builders::ReplaceRouteOutputBuilder::default();
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

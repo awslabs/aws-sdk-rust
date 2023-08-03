@@ -56,9 +56,7 @@ impl SortingConfiguration {
 
 /// A builder for [`SortingConfiguration`](crate::types::SortingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SortingConfigurationBuilder {
     pub(crate) document_attribute_key: ::std::option::Option<::std::string::String>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -73,10 +71,7 @@ impl SortingConfigurationBuilder {
     /// <li> <p>_version</p> </li>
     /// <li> <p>_view_count</p> </li>
     /// </ul>
-    pub fn document_attribute_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_attribute_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_attribute_key = ::std::option::Option::Some(input.into());
         self
     }
@@ -89,10 +84,7 @@ impl SortingConfigurationBuilder {
     /// <li> <p>_version</p> </li>
     /// <li> <p>_view_count</p> </li>
     /// </ul>
-    pub fn set_document_attribute_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_attribute_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_attribute_key = input;
         self
     }

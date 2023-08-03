@@ -10,10 +10,7 @@ impl UpdateShardCountInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_shard_count::UpdateShardCountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_shard_count::UpdateShardCountError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_shard_count::UpdateShardCountError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_shard_count();
         fluent_builder.inner = self;
@@ -52,9 +49,7 @@ impl UpdateShardCountFluentBuilder {
         }
     }
     /// Access the UpdateShardCount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_shard_count::builders::UpdateShardCountInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_shard_count::builders::UpdateShardCountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,9 +61,7 @@ impl UpdateShardCountFluentBuilder {
             crate::operation::update_shard_count::UpdateShardCount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_shard_count::UpdateShardCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_shard_count::UpdateShardCountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -78,10 +71,7 @@ impl UpdateShardCountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -90,9 +80,7 @@ impl UpdateShardCountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_shard_count::UpdateShardCountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_shard_count::UpdateShardCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_shard_count::UpdateShardCountError>,
     > {
         let op = self
             .inner
@@ -115,9 +103,7 @@ impl UpdateShardCountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_shard_count::UpdateShardCountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_shard_count::UpdateShardCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_shard_count::UpdateShardCountError>,
     > {
         self.send_middleware().await
     }
@@ -131,9 +117,7 @@ impl UpdateShardCountFluentBuilder {
             crate::operation::update_shard_count::UpdateShardCount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_shard_count::UpdateShardCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_shard_count::UpdateShardCountError>,
     > {
         self.customize_middleware().await
     }
@@ -189,10 +173,7 @@ impl UpdateShardCountFluentBuilder {
         self
     }
     /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
-    pub fn set_scaling_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalingType>,
-    ) -> Self {
+    pub fn set_scaling_type(mut self, input: ::std::option::Option<crate::types::ScalingType>) -> Self {
         self.inner = self.inner.set_scaling_type(input);
         self
     }

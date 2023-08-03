@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreatePricingPlanOutput {
 }
 impl CreatePricingPlanOutput {
     /// Creates a new builder-style object to manufacture [`CreatePricingPlanOutput`](crate::operation::create_pricing_plan::CreatePricingPlanOutput).
-    pub fn builder(
-    ) -> crate::operation::create_pricing_plan::builders::CreatePricingPlanOutputBuilder {
+    pub fn builder() -> crate::operation::create_pricing_plan::builders::CreatePricingPlanOutputBuilder {
         crate::operation::create_pricing_plan::builders::CreatePricingPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePricingPlanOutput`](crate::operation::create_pricing_plan::CreatePricingPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePricingPlanOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

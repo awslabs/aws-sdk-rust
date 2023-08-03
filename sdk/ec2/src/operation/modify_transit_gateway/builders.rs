@@ -37,9 +37,7 @@ impl ModifyTransitGatewayFluentBuilder {
         }
     }
     /// Access the ModifyTransitGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_transit_gateway::builders::ModifyTransitGatewayInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_transit_gateway::builders::ModifyTransitGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ModifyTransitGatewayFluentBuilder {
             crate::operation::modify_transit_gateway::ModifyTransitGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_transit_gateway::ModifyTransitGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_transit_gateway::ModifyTransitGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ModifyTransitGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ModifyTransitGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_transit_gateway::ModifyTransitGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_transit_gateway::ModifyTransitGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_transit_gateway::ModifyTransitGatewayError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ModifyTransitGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_transit_gateway::ModifyTransitGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_transit_gateway::ModifyTransitGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_transit_gateway::ModifyTransitGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl ModifyTransitGatewayFluentBuilder {
             crate::operation::modify_transit_gateway::ModifyTransitGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_transit_gateway::ModifyTransitGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_transit_gateway::ModifyTransitGatewayError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_id(input);
         self
     }
@@ -162,10 +143,7 @@ impl ModifyTransitGatewayFluentBuilder {
         self
     }
     /// <p>The options to modify.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ModifyTransitGatewayOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::ModifyTransitGatewayOptions>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }

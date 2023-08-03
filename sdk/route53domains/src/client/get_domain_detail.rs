@@ -28,11 +28,7 @@ impl super::Client {
     ///   - [`status_list(Option<Vec<String>>)`](crate::operation::get_domain_detail::GetDomainDetailOutput::status_list): <p>An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.</p>  <p>ICANN, the organization that maintains a central database of domain names, has developed a set of domain name status codes that tell you the status of a variety of operations on a domain name, for example, registering a domain name, transferring a domain name to another registrar, renewing the registration for a domain name, and so on. All registrars use this same set of status codes.</p>  <p>For a current list of domain name status codes and an explanation of what each code means, go to the <a href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the ICANN website; web searches sometimes return an old version of the document.)</p>
     ///   - [`dnssec_keys(Option<Vec<DnssecKey>>)`](crate::operation::get_domain_detail::GetDomainDetailOutput::dnssec_keys): <p>A complex type that contains information about the DNSSEC configuration.</p>
     /// - On failure, responds with [`SdkError<GetDomainDetailError>`](crate::operation::get_domain_detail::GetDomainDetailError)
-    pub fn get_domain_detail(
-        &self,
-    ) -> crate::operation::get_domain_detail::builders::GetDomainDetailFluentBuilder {
-        crate::operation::get_domain_detail::builders::GetDomainDetailFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_domain_detail(&self) -> crate::operation::get_domain_detail::builders::GetDomainDetailFluentBuilder {
+        crate::operation::get_domain_detail::builders::GetDomainDetailFluentBuilder::new(self.handle.clone())
     }
 }

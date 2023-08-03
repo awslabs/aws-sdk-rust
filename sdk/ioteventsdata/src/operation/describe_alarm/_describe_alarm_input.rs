@@ -29,27 +29,19 @@ impl DescribeAlarmInput {
 
 /// A builder for [`DescribeAlarmInput`](crate::operation::describe_alarm::DescribeAlarmInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlarmInputBuilder {
     pub(crate) alarm_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) key_value: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAlarmInputBuilder {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the alarm model.</p>
-    pub fn set_alarm_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_model_name = input;
         self
     }
@@ -74,10 +66,7 @@ impl DescribeAlarmInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAlarmInput`](crate::operation::describe_alarm::DescribeAlarmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_alarm::DescribeAlarmInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_alarm::DescribeAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_alarm::DescribeAlarmInput {
             alarm_model_name: self.alarm_model_name,
             key_value: self.key_value,

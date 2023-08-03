@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyTargetGroupOutput`](crate::operation::modify_target_group::ModifyTargetGroupOutput) with field(s):
     ///   - [`target_groups(Option<Vec<TargetGroup>>)`](crate::operation::modify_target_group::ModifyTargetGroupOutput::target_groups): <p>Information about the modified target group.</p>
     /// - On failure, responds with [`SdkError<ModifyTargetGroupError>`](crate::operation::modify_target_group::ModifyTargetGroupError)
-    pub fn modify_target_group(
-        &self,
-    ) -> crate::operation::modify_target_group::builders::ModifyTargetGroupFluentBuilder {
-        crate::operation::modify_target_group::builders::ModifyTargetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_target_group(&self) -> crate::operation::modify_target_group::builders::ModifyTargetGroupFluentBuilder {
+        crate::operation::modify_target_group::builders::ModifyTargetGroupFluentBuilder::new(self.handle.clone())
     }
 }

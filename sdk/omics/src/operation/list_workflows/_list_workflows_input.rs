@@ -43,9 +43,7 @@ impl ListWorkflowsInput {
 
 /// A builder for [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowsInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::WorkflowType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl ListWorkflowsInputBuilder {
         &self.name
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn starting_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.starting_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn set_starting_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_starting_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.starting_token = input;
         self
     }
@@ -118,10 +110,7 @@ impl ListWorkflowsInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_workflows::ListWorkflowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workflows::ListWorkflowsInput {
             r#type: self.r#type,
             name: self.name,

@@ -15,16 +15,14 @@ impl DeleteVectorEnrichmentJobInput {
 }
 impl DeleteVectorEnrichmentJobInput {
     /// Creates a new builder-style object to manufacture [`DeleteVectorEnrichmentJobInput`](crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobInput).
-    pub fn builder() -> crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobInputBuilder{
+    pub fn builder() -> crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobInputBuilder {
         crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVectorEnrichmentJobInput`](crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVectorEnrichmentJobInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DeleteVectorEnrichmentJobInputBuilder {
         crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobInput { arn: self.arn })
     }
 }

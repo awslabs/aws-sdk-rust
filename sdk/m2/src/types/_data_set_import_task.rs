@@ -37,9 +37,7 @@ impl DataSetImportTask {
 
 /// A builder for [`DataSetImportTask`](crate::types::DataSetImportTask).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSetImportTaskBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DataSetTaskLifecycle>,
@@ -66,10 +64,7 @@ impl DataSetImportTaskBuilder {
         self
     }
     /// <p>The status of the data set import task.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSetTaskLifecycle>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSetTaskLifecycle>) -> Self {
         self.status = input;
         self
     }
@@ -83,10 +78,7 @@ impl DataSetImportTaskBuilder {
         self
     }
     /// <p>A summary of the data set import task.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSetImportSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::DataSetImportSummary>) -> Self {
         self.summary = input;
         self
     }

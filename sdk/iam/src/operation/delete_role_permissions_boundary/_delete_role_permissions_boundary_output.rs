@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRolePermissionsBoundaryOutput {
 }
 impl DeleteRolePermissionsBoundaryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRolePermissionsBoundaryOutput`](crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryOutput).
-    pub fn builder() -> crate::operation::delete_role_permissions_boundary::builders::DeleteRolePermissionsBoundaryOutputBuilder{
+    pub fn builder() -> crate::operation::delete_role_permissions_boundary::builders::DeleteRolePermissionsBoundaryOutputBuilder {
         crate::operation::delete_role_permissions_boundary::builders::DeleteRolePermissionsBoundaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRolePermissionsBoundaryOutput`](crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRolePermissionsBoundaryOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteRolePermissionsBoundaryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteRolePermissionsBoundaryOutput`](crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryOutput
-    {
+    pub fn build(self) -> crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryOutput {
         crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryOutput {
             _request_id: self._request_id,
         }

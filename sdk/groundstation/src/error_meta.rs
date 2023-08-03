@@ -25,32 +25,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_contact::CancelContactError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::cancel_contact::CancelContactError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_contact::CancelContactError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::cancel_contact::CancelContactError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -60,43 +44,23 @@ where
 impl From<crate::operation::cancel_contact::CancelContactError> for Error {
     fn from(err: crate::operation::cancel_contact::CancelContactError) -> Self {
         match err {
-            crate::operation::cancel_contact::CancelContactError::DependencyException(inner) => {
-                Error::DependencyException(inner)
-            }
-            crate::operation::cancel_contact::CancelContactError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::cancel_contact::CancelContactError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::cancel_contact::CancelContactError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::cancel_contact::CancelContactError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::cancel_contact::CancelContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_contact::CancelContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_contact::CancelContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::create_config::CreateConfigError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_config::CreateConfigError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_config::CreateConfigError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_config::CreateConfigError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -106,96 +70,56 @@ where
 impl From<crate::operation::create_config::CreateConfigError> for Error {
     fn from(err: crate::operation::create_config::CreateConfigError) -> Self {
         match err {
-            crate::operation::create_config::CreateConfigError::DependencyException(inner) => {
-                Error::DependencyException(inner)
-            }
-            crate::operation::create_config::CreateConfigError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::create_config::CreateConfigError::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::operation::create_config::CreateConfigError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::create_config::CreateConfigError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::create_config::CreateConfigError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::create_config::CreateConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_config::CreateConfigError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::create_config::CreateConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_config::CreateConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError>
-    for Error
-{
-    fn from(
-        err: crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
-    ) -> Self {
+impl From<crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError> for Error {
+    fn from(err: crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError) -> Self {
         match err {
-            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError::DependencyException(inner) => Error::DependencyException(inner),
-            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ephemeris::CreateEphemerisError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_ephemeris::CreateEphemerisError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ephemeris::CreateEphemerisError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_ephemeris::CreateEphemerisError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -205,47 +129,23 @@ where
 impl From<crate::operation::create_ephemeris::CreateEphemerisError> for Error {
     fn from(err: crate::operation::create_ephemeris::CreateEphemerisError) -> Self {
         match err {
-            crate::operation::create_ephemeris::CreateEphemerisError::DependencyException(
-                inner,
-            ) => Error::DependencyException(inner),
-            crate::operation::create_ephemeris::CreateEphemerisError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::create_ephemeris::CreateEphemerisError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::create_ephemeris::CreateEphemerisError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::create_ephemeris::CreateEphemerisError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::create_ephemeris::CreateEphemerisError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_ephemeris::CreateEphemerisError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_ephemeris::CreateEphemerisError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_mission_profile::CreateMissionProfileError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_mission_profile::CreateMissionProfileError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_mission_profile::CreateMissionProfileError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_mission_profile::CreateMissionProfileError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -256,34 +156,26 @@ impl From<crate::operation::create_mission_profile::CreateMissionProfileError> f
     fn from(err: crate::operation::create_mission_profile::CreateMissionProfileError) -> Self {
         match err {
             crate::operation::create_mission_profile::CreateMissionProfileError::DependencyException(inner) => Error::DependencyException(inner),
-            crate::operation::create_mission_profile::CreateMissionProfileError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::create_mission_profile::CreateMissionProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_mission_profile::CreateMissionProfileError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_mission_profile::CreateMissionProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::create_mission_profile::CreateMissionProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::delete_config::DeleteConfigError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_config::DeleteConfigError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_config::DeleteConfigError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_config::DeleteConfigError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -293,93 +185,55 @@ where
 impl From<crate::operation::delete_config::DeleteConfigError> for Error {
     fn from(err: crate::operation::delete_config::DeleteConfigError) -> Self {
         match err {
-            crate::operation::delete_config::DeleteConfigError::DependencyException(inner) => {
-                Error::DependencyException(inner)
-            }
-            crate::operation::delete_config::DeleteConfigError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::delete_config::DeleteConfigError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_config::DeleteConfigError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_config::DeleteConfigError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::delete_config::DeleteConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_config::DeleteConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_config::DeleteConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError>
-    for Error
-{
-    fn from(
-        err: crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError,
-    ) -> Self {
+impl From<crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError> for Error {
+    fn from(err: crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError) -> Self {
         match err {
-            crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError::DependencyException(inner) => Error::DependencyException(inner),
-            crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ephemeris::DeleteEphemerisError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_ephemeris::DeleteEphemerisError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ephemeris::DeleteEphemerisError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_ephemeris::DeleteEphemerisError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -389,47 +243,23 @@ where
 impl From<crate::operation::delete_ephemeris::DeleteEphemerisError> for Error {
     fn from(err: crate::operation::delete_ephemeris::DeleteEphemerisError) -> Self {
         match err {
-            crate::operation::delete_ephemeris::DeleteEphemerisError::DependencyException(
-                inner,
-            ) => Error::DependencyException(inner),
-            crate::operation::delete_ephemeris::DeleteEphemerisError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::delete_ephemeris::DeleteEphemerisError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_ephemeris::DeleteEphemerisError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_ephemeris::DeleteEphemerisError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::delete_ephemeris::DeleteEphemerisError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_ephemeris::DeleteEphemerisError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_ephemeris::DeleteEphemerisError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_mission_profile::DeleteMissionProfileError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_mission_profile::DeleteMissionProfileError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_mission_profile::DeleteMissionProfileError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_mission_profile::DeleteMissionProfileError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -440,38 +270,26 @@ impl From<crate::operation::delete_mission_profile::DeleteMissionProfileError> f
     fn from(err: crate::operation::delete_mission_profile::DeleteMissionProfileError) -> Self {
         match err {
             crate::operation::delete_mission_profile::DeleteMissionProfileError::DependencyException(inner) => Error::DependencyException(inner),
-            crate::operation::delete_mission_profile::DeleteMissionProfileError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::delete_mission_profile::DeleteMissionProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_mission_profile::DeleteMissionProfileError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_mission_profile::DeleteMissionProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_mission_profile::DeleteMissionProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contact::DescribeContactError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_contact::DescribeContactError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contact::DescribeContactError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_contact::DescribeContactError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -481,47 +299,23 @@ where
 impl From<crate::operation::describe_contact::DescribeContactError> for Error {
     fn from(err: crate::operation::describe_contact::DescribeContactError) -> Self {
         match err {
-            crate::operation::describe_contact::DescribeContactError::DependencyException(
-                inner,
-            ) => Error::DependencyException(inner),
-            crate::operation::describe_contact::DescribeContactError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::describe_contact::DescribeContactError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::describe_contact::DescribeContactError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::describe_contact::DescribeContactError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::describe_contact::DescribeContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_contact::DescribeContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_contact::DescribeContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ephemeris::DescribeEphemerisError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_ephemeris::DescribeEphemerisError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ephemeris::DescribeEphemerisError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_ephemeris::DescribeEphemerisError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -538,32 +332,16 @@ impl From<crate::operation::describe_ephemeris::DescribeEphemerisError> for Erro
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_agent_configuration::GetAgentConfigurationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_agent_configuration::GetAgentConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_agent_configuration::GetAgentConfigurationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_agent_configuration::GetAgentConfigurationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -574,30 +352,26 @@ impl From<crate::operation::get_agent_configuration::GetAgentConfigurationError>
     fn from(err: crate::operation::get_agent_configuration::GetAgentConfigurationError) -> Self {
         match err {
             crate::operation::get_agent_configuration::GetAgentConfigurationError::DependencyException(inner) => Error::DependencyException(inner),
-            crate::operation::get_agent_configuration::GetAgentConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::get_agent_configuration::GetAgentConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_agent_configuration::GetAgentConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_agent_configuration::GetAgentConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_agent_configuration::GetAgentConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_config::GetConfigError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_config::GetConfigError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::get_config::GetConfigError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_config::GetConfigError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -607,47 +381,23 @@ where
 impl From<crate::operation::get_config::GetConfigError> for Error {
     fn from(err: crate::operation::get_config::GetConfigError) -> Self {
         match err {
-            crate::operation::get_config::GetConfigError::DependencyException(inner) => {
-                Error::DependencyException(inner)
-            }
-            crate::operation::get_config::GetConfigError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_config::GetConfigError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_config::GetConfigError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_config::GetConfigError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::get_config::GetConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_config::GetConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_config::GetConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -655,43 +405,31 @@ where
     }
 }
 impl From<crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError> for Error {
-    fn from(
-        err: crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError,
-    ) -> Self {
+    fn from(err: crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError) -> Self {
         match err {
-            crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError::DependencyException(inner) => Error::DependencyException(inner),
-            crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_minute_usage::GetMinuteUsageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_minute_usage::GetMinuteUsageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_minute_usage::GetMinuteUsageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_minute_usage::GetMinuteUsageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -701,47 +439,23 @@ where
 impl From<crate::operation::get_minute_usage::GetMinuteUsageError> for Error {
     fn from(err: crate::operation::get_minute_usage::GetMinuteUsageError) -> Self {
         match err {
-            crate::operation::get_minute_usage::GetMinuteUsageError::DependencyException(inner) => {
-                Error::DependencyException(inner)
-            }
-            crate::operation::get_minute_usage::GetMinuteUsageError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::get_minute_usage::GetMinuteUsageError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_minute_usage::GetMinuteUsageError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_minute_usage::GetMinuteUsageError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::get_minute_usage::GetMinuteUsageError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_minute_usage::GetMinuteUsageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_minute_usage::GetMinuteUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mission_profile::GetMissionProfileError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_mission_profile::GetMissionProfileError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mission_profile::GetMissionProfileError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_mission_profile::GetMissionProfileError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -752,34 +466,26 @@ impl From<crate::operation::get_mission_profile::GetMissionProfileError> for Err
     fn from(err: crate::operation::get_mission_profile::GetMissionProfileError) -> Self {
         match err {
             crate::operation::get_mission_profile::GetMissionProfileError::DependencyException(inner) => Error::DependencyException(inner),
-            crate::operation::get_mission_profile::GetMissionProfileError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::get_mission_profile::GetMissionProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_mission_profile::GetMissionProfileError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_mission_profile::GetMissionProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_mission_profile::GetMissionProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::get_satellite::GetSatelliteError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_satellite::GetSatelliteError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_satellite::GetSatelliteError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_satellite::GetSatelliteError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -789,43 +495,23 @@ where
 impl From<crate::operation::get_satellite::GetSatelliteError> for Error {
     fn from(err: crate::operation::get_satellite::GetSatelliteError) -> Self {
         match err {
-            crate::operation::get_satellite::GetSatelliteError::DependencyException(inner) => {
-                Error::DependencyException(inner)
-            }
-            crate::operation::get_satellite::GetSatelliteError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::get_satellite::GetSatelliteError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_satellite::GetSatelliteError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_satellite::GetSatelliteError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::get_satellite::GetSatelliteError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_satellite::GetSatelliteError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_satellite::GetSatelliteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::list_configs::ListConfigsError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_configs::ListConfigsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configs::ListConfigsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_configs::ListConfigsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -835,43 +521,23 @@ where
 impl From<crate::operation::list_configs::ListConfigsError> for Error {
     fn from(err: crate::operation::list_configs::ListConfigsError) -> Self {
         match err {
-            crate::operation::list_configs::ListConfigsError::DependencyException(inner) => {
-                Error::DependencyException(inner)
-            }
-            crate::operation::list_configs::ListConfigsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::list_configs::ListConfigsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::list_configs::ListConfigsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_configs::ListConfigsError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::list_configs::ListConfigsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_configs::ListConfigsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_configs::ListConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contacts::ListContactsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -881,93 +547,55 @@ where
 impl From<crate::operation::list_contacts::ListContactsError> for Error {
     fn from(err: crate::operation::list_contacts::ListContactsError) -> Self {
         match err {
-            crate::operation::list_contacts::ListContactsError::DependencyException(inner) => {
-                Error::DependencyException(inner)
-            }
-            crate::operation::list_contacts::ListContactsError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::list_contacts::ListContactsError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_contacts::ListContactsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_contacts::ListContactsError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::list_contacts::ListContactsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_contacts::ListContactsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_contacts::ListContactsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError>
-    for Error
-{
-    fn from(
-        err: crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError,
-    ) -> Self {
+impl From<crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError> for Error {
+    fn from(err: crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError) -> Self {
         match err {
-            crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError::DependencyException(inner) => Error::DependencyException(inner),
-            crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ephemerides::ListEphemeridesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_ephemerides::ListEphemeridesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ephemerides::ListEphemeridesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_ephemerides::ListEphemeridesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -977,47 +605,23 @@ where
 impl From<crate::operation::list_ephemerides::ListEphemeridesError> for Error {
     fn from(err: crate::operation::list_ephemerides::ListEphemeridesError) -> Self {
         match err {
-            crate::operation::list_ephemerides::ListEphemeridesError::DependencyException(
-                inner,
-            ) => Error::DependencyException(inner),
-            crate::operation::list_ephemerides::ListEphemeridesError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::list_ephemerides::ListEphemeridesError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_ephemerides::ListEphemeridesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_ephemerides::ListEphemeridesError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::list_ephemerides::ListEphemeridesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_ephemerides::ListEphemeridesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_ephemerides::ListEphemeridesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ground_stations::ListGroundStationsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_ground_stations::ListGroundStationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ground_stations::ListGroundStationsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_ground_stations::ListGroundStationsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1028,38 +632,26 @@ impl From<crate::operation::list_ground_stations::ListGroundStationsError> for E
     fn from(err: crate::operation::list_ground_stations::ListGroundStationsError) -> Self {
         match err {
             crate::operation::list_ground_stations::ListGroundStationsError::DependencyException(inner) => Error::DependencyException(inner),
-            crate::operation::list_ground_stations::ListGroundStationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::list_ground_stations::ListGroundStationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_ground_stations::ListGroundStationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_ground_stations::ListGroundStationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_ground_stations::ListGroundStationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mission_profiles::ListMissionProfilesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_mission_profiles::ListMissionProfilesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mission_profiles::ListMissionProfilesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_mission_profiles::ListMissionProfilesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1070,38 +662,26 @@ impl From<crate::operation::list_mission_profiles::ListMissionProfilesError> for
     fn from(err: crate::operation::list_mission_profiles::ListMissionProfilesError) -> Self {
         match err {
             crate::operation::list_mission_profiles::ListMissionProfilesError::DependencyException(inner) => Error::DependencyException(inner),
-            crate::operation::list_mission_profiles::ListMissionProfilesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::list_mission_profiles::ListMissionProfilesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_mission_profiles::ListMissionProfilesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_mission_profiles::ListMissionProfilesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_mission_profiles::ListMissionProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_satellites::ListSatellitesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_satellites::ListSatellitesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_satellites::ListSatellitesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_satellites::ListSatellitesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1111,47 +691,23 @@ where
 impl From<crate::operation::list_satellites::ListSatellitesError> for Error {
     fn from(err: crate::operation::list_satellites::ListSatellitesError) -> Self {
         match err {
-            crate::operation::list_satellites::ListSatellitesError::DependencyException(inner) => {
-                Error::DependencyException(inner)
-            }
-            crate::operation::list_satellites::ListSatellitesError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::list_satellites::ListSatellitesError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_satellites::ListSatellitesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_satellites::ListSatellitesError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::list_satellites::ListSatellitesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_satellites::ListSatellitesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_satellites::ListSatellitesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1162,38 +718,26 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::DependencyException(inner) => Error::DependencyException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_agent::RegisterAgentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::register_agent::RegisterAgentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::register_agent::RegisterAgentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::register_agent::RegisterAgentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1203,47 +747,23 @@ where
 impl From<crate::operation::register_agent::RegisterAgentError> for Error {
     fn from(err: crate::operation::register_agent::RegisterAgentError) -> Self {
         match err {
-            crate::operation::register_agent::RegisterAgentError::DependencyException(inner) => {
-                Error::DependencyException(inner)
-            }
-            crate::operation::register_agent::RegisterAgentError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::register_agent::RegisterAgentError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::register_agent::RegisterAgentError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::register_agent::RegisterAgentError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::register_agent::RegisterAgentError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::register_agent::RegisterAgentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::register_agent::RegisterAgentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reserve_contact::ReserveContactError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::reserve_contact::ReserveContactError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::reserve_contact::ReserveContactError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::reserve_contact::ReserveContactError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1253,43 +773,23 @@ where
 impl From<crate::operation::reserve_contact::ReserveContactError> for Error {
     fn from(err: crate::operation::reserve_contact::ReserveContactError) -> Self {
         match err {
-            crate::operation::reserve_contact::ReserveContactError::DependencyException(inner) => {
-                Error::DependencyException(inner)
-            }
-            crate::operation::reserve_contact::ReserveContactError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::reserve_contact::ReserveContactError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::reserve_contact::ReserveContactError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::reserve_contact::ReserveContactError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::reserve_contact::ReserveContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::reserve_contact::ReserveContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::reserve_contact::ReserveContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_resource::TagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1299,47 +799,23 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::DependencyException(inner) => {
-                Error::DependencyException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1349,47 +825,23 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::DependencyException(inner) => {
-                Error::DependencyException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::untag_resource::UntagResourceError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_agent_status::UpdateAgentStatusError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_agent_status::UpdateAgentStatusError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_agent_status::UpdateAgentStatusError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_agent_status::UpdateAgentStatusError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1400,34 +852,26 @@ impl From<crate::operation::update_agent_status::UpdateAgentStatusError> for Err
     fn from(err: crate::operation::update_agent_status::UpdateAgentStatusError) -> Self {
         match err {
             crate::operation::update_agent_status::UpdateAgentStatusError::DependencyException(inner) => Error::DependencyException(inner),
-            crate::operation::update_agent_status::UpdateAgentStatusError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::update_agent_status::UpdateAgentStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_agent_status::UpdateAgentStatusError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_agent_status::UpdateAgentStatusError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::update_agent_status::UpdateAgentStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::update_config::UpdateConfigError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_config::UpdateConfigError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_config::UpdateConfigError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_config::UpdateConfigError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1437,47 +881,23 @@ where
 impl From<crate::operation::update_config::UpdateConfigError> for Error {
     fn from(err: crate::operation::update_config::UpdateConfigError) -> Self {
         match err {
-            crate::operation::update_config::UpdateConfigError::DependencyException(inner) => {
-                Error::DependencyException(inner)
-            }
-            crate::operation::update_config::UpdateConfigError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::update_config::UpdateConfigError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_config::UpdateConfigError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::update_config::UpdateConfigError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::update_config::UpdateConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_config::UpdateConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_config::UpdateConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ephemeris::UpdateEphemerisError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_ephemeris::UpdateEphemerisError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ephemeris::UpdateEphemerisError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_ephemeris::UpdateEphemerisError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1487,47 +907,23 @@ where
 impl From<crate::operation::update_ephemeris::UpdateEphemerisError> for Error {
     fn from(err: crate::operation::update_ephemeris::UpdateEphemerisError) -> Self {
         match err {
-            crate::operation::update_ephemeris::UpdateEphemerisError::DependencyException(
-                inner,
-            ) => Error::DependencyException(inner),
-            crate::operation::update_ephemeris::UpdateEphemerisError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::update_ephemeris::UpdateEphemerisError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_ephemeris::UpdateEphemerisError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::update_ephemeris::UpdateEphemerisError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::update_ephemeris::UpdateEphemerisError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_ephemeris::UpdateEphemerisError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_ephemeris::UpdateEphemerisError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mission_profile::UpdateMissionProfileError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_mission_profile::UpdateMissionProfileError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mission_profile::UpdateMissionProfileError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_mission_profile::UpdateMissionProfileError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1538,8 +934,12 @@ impl From<crate::operation::update_mission_profile::UpdateMissionProfileError> f
     fn from(err: crate::operation::update_mission_profile::UpdateMissionProfileError) -> Self {
         match err {
             crate::operation::update_mission_profile::UpdateMissionProfileError::DependencyException(inner) => Error::DependencyException(inner),
-            crate::operation::update_mission_profile::UpdateMissionProfileError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::update_mission_profile::UpdateMissionProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_mission_profile::UpdateMissionProfileError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_mission_profile::UpdateMissionProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::update_mission_profile::UpdateMissionProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

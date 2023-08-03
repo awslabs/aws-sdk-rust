@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for ListApplicationRevisionsOutput {
 }
 impl ListApplicationRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationRevisionsOutput`](crate::operation::list_application_revisions::ListApplicationRevisionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_application_revisions::builders::ListApplicationRevisionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_application_revisions::builders::ListApplicationRevisionsOutputBuilder {
         crate::operation::list_application_revisions::builders::ListApplicationRevisionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationRevisionsOutput`](crate::operation::list_application_revisions::ListApplicationRevisionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationRevisionsOutputBuilder {
     pub(crate) revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl ListApplicationRevisionsOutputBuilder {
         self
     }
     /// <p>A list of locations that contain the matching revisions.</p>
-    pub fn set_revisions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>,
-    ) -> Self {
+    pub fn set_revisions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>) -> Self {
         self.revisions = input;
         self
     }
     /// <p>A list of locations that contain the matching revisions.</p>
-    pub fn get_revisions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>> {
+    pub fn get_revisions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>> {
         &self.revisions
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
@@ -96,9 +87,7 @@ impl ListApplicationRevisionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListApplicationRevisionsOutput`](crate::operation::list_application_revisions::ListApplicationRevisionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_application_revisions::ListApplicationRevisionsOutput {
+    pub fn build(self) -> crate::operation::list_application_revisions::ListApplicationRevisionsOutput {
         crate::operation::list_application_revisions::ListApplicationRevisionsOutput {
             revisions: self.revisions,
             next_token: self.next_token,

@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`StartMlLabelingSetGenerationTaskRunOutput`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput) with field(s):
     ///   - [`task_run_id(Option<String>)`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput::task_run_id): <p>The unique run identifier that is associated with this task run.</p>
     /// - On failure, responds with [`SdkError<StartMLLabelingSetGenerationTaskRunError>`](crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRunError)
-    pub fn start_ml_labeling_set_generation_task_run(&self) -> crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMLLabelingSetGenerationTaskRunFluentBuilder{
-        crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMLLabelingSetGenerationTaskRunFluentBuilder::new(self.handle.clone())
+    pub fn start_ml_labeling_set_generation_task_run(
+        &self,
+    ) -> crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMLLabelingSetGenerationTaskRunFluentBuilder {
+        crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMLLabelingSetGenerationTaskRunFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

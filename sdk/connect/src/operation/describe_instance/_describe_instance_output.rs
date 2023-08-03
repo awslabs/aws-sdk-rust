@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeInstanceOutput {
 }
 impl DescribeInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceOutput`](crate::operation::describe_instance::DescribeInstanceOutput).
-    pub fn builder() -> crate::operation::describe_instance::builders::DescribeInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instance::builders::DescribeInstanceOutputBuilder {
         crate::operation::describe_instance::builders::DescribeInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceOutput`](crate::operation::describe_instance::DescribeInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceOutputBuilder {
     pub(crate) instance: ::std::option::Option<crate::types::Instance>,
     _request_id: Option<String>,

@@ -9,7 +9,10 @@ pub fn ser_batch_associate_client_device_with_core_device_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_associate_client_device_with_core_device_entry::ser_associate_client_device_with_core_device_entry(&mut object_4, item_3)?;
+                crate::protocol_serde::shape_associate_client_device_with_core_device_entry::ser_associate_client_device_with_core_device_entry(
+                    &mut object_4,
+                    item_3,
+                )?;
                 object_4.finish();
             }
         }

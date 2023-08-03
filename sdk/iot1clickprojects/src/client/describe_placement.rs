@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribePlacementOutput`](crate::operation::describe_placement::DescribePlacementOutput) with field(s):
     ///   - [`placement(Option<PlacementDescription>)`](crate::operation::describe_placement::DescribePlacementOutput::placement): <p>An object describing the placement.</p>
     /// - On failure, responds with [`SdkError<DescribePlacementError>`](crate::operation::describe_placement::DescribePlacementError)
-    pub fn describe_placement(
-        &self,
-    ) -> crate::operation::describe_placement::builders::DescribePlacementFluentBuilder {
-        crate::operation::describe_placement::builders::DescribePlacementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_placement(&self) -> crate::operation::describe_placement::builders::DescribePlacementFluentBuilder {
+        crate::operation::describe_placement::builders::DescribePlacementFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEdgeDeploymentPlanOutput`](crate::operation::create_edge_deployment_plan::CreateEdgeDeploymentPlanOutput) with field(s):
     ///   - [`edge_deployment_plan_arn(Option<String>)`](crate::operation::create_edge_deployment_plan::CreateEdgeDeploymentPlanOutput::edge_deployment_plan_arn): <p>The ARN of the edge deployment plan.</p>
     /// - On failure, responds with [`SdkError<CreateEdgeDeploymentPlanError>`](crate::operation::create_edge_deployment_plan::CreateEdgeDeploymentPlanError)
-    pub fn create_edge_deployment_plan(&self) -> crate::operation::create_edge_deployment_plan::builders::CreateEdgeDeploymentPlanFluentBuilder{
+    pub fn create_edge_deployment_plan(&self) -> crate::operation::create_edge_deployment_plan::builders::CreateEdgeDeploymentPlanFluentBuilder {
         crate::operation::create_edge_deployment_plan::builders::CreateEdgeDeploymentPlanFluentBuilder::new(self.handle.clone())
     }
 }

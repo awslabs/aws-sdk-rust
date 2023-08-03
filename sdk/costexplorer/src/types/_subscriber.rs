@@ -37,9 +37,7 @@ impl Subscriber {
 
 /// A builder for [`Subscriber`](crate::types::Subscriber).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscriberBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::SubscriberType>,
@@ -80,10 +78,7 @@ impl SubscriberBuilder {
         self
     }
     /// <p>Indicates if the subscriber accepts the notifications. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriberStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SubscriberStatus>) -> Self {
         self.status = input;
         self
     }

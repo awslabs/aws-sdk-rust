@@ -10,10 +10,7 @@ impl ListAttachmentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_attachments::ListAttachmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attachments::ListAttachmentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attachments::ListAttachmentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_attachments();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListAttachmentsFluentBuilder {
         }
     }
     /// Access the ListAttachments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_attachments::builders::ListAttachmentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_attachments::builders::ListAttachmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListAttachmentsFluentBuilder {
             crate::operation::list_attachments::ListAttachments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attachments::ListAttachmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attachments::ListAttachmentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListAttachmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListAttachmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attachments::ListAttachmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attachments::ListAttachmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attachments::ListAttachmentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListAttachmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attachments::ListAttachmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attachments::ListAttachmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attachments::ListAttachmentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListAttachmentsFluentBuilder {
             crate::operation::list_attachments::ListAttachments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attachments::ListAttachmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attachments::ListAttachmentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_attachments::paginator::ListAttachmentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_attachments::paginator::ListAttachmentsPaginator {
-        crate::operation::list_attachments::paginator::ListAttachmentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_attachments::paginator::ListAttachmentsPaginator {
+        crate::operation::list_attachments::paginator::ListAttachmentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }
@@ -159,10 +132,7 @@ impl ListAttachmentsFluentBuilder {
         self
     }
     /// <p>The type of attachment.</p>
-    pub fn set_attachment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AttachmentType>,
-    ) -> Self {
+    pub fn set_attachment_type(mut self, input: ::std::option::Option<crate::types::AttachmentType>) -> Self {
         self.inner = self.inner.set_attachment_type(input);
         self
     }
@@ -171,18 +141,12 @@ impl ListAttachmentsFluentBuilder {
         self.inner.get_attachment_type()
     }
     /// <p>The Region where the edge is located.</p>
-    pub fn edge_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.edge_location(input.into());
         self
     }
     /// <p>The Region where the edge is located.</p>
-    pub fn set_edge_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_edge_location(input);
         self
     }
@@ -196,10 +160,7 @@ impl ListAttachmentsFluentBuilder {
         self
     }
     /// <p>The state of the attachment.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AttachmentState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AttachmentState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }

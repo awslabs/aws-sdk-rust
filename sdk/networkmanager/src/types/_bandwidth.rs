@@ -30,9 +30,7 @@ impl Bandwidth {
 
 /// A builder for [`Bandwidth`](crate::types::Bandwidth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BandwidthBuilder {
     pub(crate) upload_speed: ::std::option::Option<i32>,
     pub(crate) download_speed: ::std::option::Option<i32>,

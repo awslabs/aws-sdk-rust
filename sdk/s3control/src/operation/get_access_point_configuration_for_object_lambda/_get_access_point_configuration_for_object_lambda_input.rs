@@ -22,16 +22,16 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
 }
 impl GetAccessPointConfigurationForObjectLambdaInput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointConfigurationForObjectLambdaInput`](crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaInput).
-    pub fn builder() -> crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaInputBuilder{
-        crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaInputBuilder {
+        crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaInputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`GetAccessPointConfigurationForObjectLambdaInput`](crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessPointConfigurationForObjectLambdaInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -66,14 +66,17 @@ impl GetAccessPointConfigurationForObjectLambdaInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetAccessPointConfigurationForObjectLambdaInput`](crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaInput {
-                account_id: self.account_id
-                ,
-                name: self.name
-                ,
-            }
+                account_id: self.account_id,
+                name: self.name,
+            },
         )
     }
 }

@@ -58,9 +58,7 @@ impl SeveritySummary {
 
 /// A builder for [`SeveritySummary`](crate::types::SeveritySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SeveritySummaryBuilder {
     pub(crate) critical_count: ::std::option::Option<i32>,
     pub(crate) high_count: ::std::option::Option<i32>,

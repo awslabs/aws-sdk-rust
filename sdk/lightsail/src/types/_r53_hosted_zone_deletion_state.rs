@@ -44,9 +44,7 @@ impl R53HostedZoneDeletionState {
 
 /// A builder for [`R53HostedZoneDeletionState`](crate::types::R53HostedZoneDeletionState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct R53HostedZoneDeletionStateBuilder {
     pub(crate) code: ::std::option::Option<crate::types::R53HostedZoneDeletionStateCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -72,10 +70,7 @@ impl R53HostedZoneDeletionStateBuilder {
     /// <li> <p> <code>FAILED</code> - The hosted zone deletion failed.</p> </li>
     /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
     /// </ul>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::R53HostedZoneDeletionStateCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::R53HostedZoneDeletionStateCode>) -> Self {
         self.code = input;
         self
     }

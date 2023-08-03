@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateSecurityConfigurationOutput {
 }
 impl CreateSecurityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateSecurityConfigurationOutput`](crate::operation::create_security_configuration::CreateSecurityConfigurationOutput).
-    pub fn builder() -> crate::operation::create_security_configuration::builders::CreateSecurityConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::create_security_configuration::builders::CreateSecurityConfigurationOutputBuilder {
         crate::operation::create_security_configuration::builders::CreateSecurityConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSecurityConfigurationOutput`](crate::operation::create_security_configuration::CreateSecurityConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSecurityConfigurationOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -64,10 +62,7 @@ impl CreateSecurityConfigurationOutputBuilder {
         self
     }
     /// <p>The date and time the security configuration was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -85,9 +80,7 @@ impl CreateSecurityConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSecurityConfigurationOutput`](crate::operation::create_security_configuration::CreateSecurityConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_security_configuration::CreateSecurityConfigurationOutput {
+    pub fn build(self) -> crate::operation::create_security_configuration::CreateSecurityConfigurationOutput {
         crate::operation::create_security_configuration::CreateSecurityConfigurationOutput {
             name: self.name,
             creation_date_time: self.creation_date_time,

@@ -67,9 +67,7 @@ impl RecommendationExportJob {
 
 /// A builder for [`RecommendationExportJob`](crate::types::RecommendationExportJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationExportJobBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::ExportDestination>,
@@ -100,10 +98,7 @@ impl RecommendationExportJobBuilder {
         self
     }
     /// <p>An object that describes the destination of the export file.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::ExportDestination>) -> Self {
         self.destination = input;
         self
     }
@@ -117,10 +112,7 @@ impl RecommendationExportJobBuilder {
         self
     }
     /// <p>The resource type of the exported recommendations.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -148,10 +140,7 @@ impl RecommendationExportJobBuilder {
         self
     }
     /// <p>The timestamp of when the export job was created.</p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -165,32 +154,21 @@ impl RecommendationExportJobBuilder {
         self
     }
     /// <p>The timestamp of when the export job was last updated.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// <p>The timestamp of when the export job was last updated.</p>
-    pub fn get_last_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_timestamp
     }
     /// <p>The reason for an export job failure.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for an export job failure.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

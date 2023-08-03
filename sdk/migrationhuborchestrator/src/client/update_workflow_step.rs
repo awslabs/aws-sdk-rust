@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`workflow_id(Option<String>)`](crate::operation::update_workflow_step::UpdateWorkflowStepOutput::workflow_id): <p>The ID of the migration workflow.</p>
     ///   - [`name(Option<String>)`](crate::operation::update_workflow_step::UpdateWorkflowStepOutput::name): <p>The name of the step.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkflowStepError>`](crate::operation::update_workflow_step::UpdateWorkflowStepError)
-    pub fn update_workflow_step(
-        &self,
-    ) -> crate::operation::update_workflow_step::builders::UpdateWorkflowStepFluentBuilder {
-        crate::operation::update_workflow_step::builders::UpdateWorkflowStepFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_workflow_step(&self) -> crate::operation::update_workflow_step::builders::UpdateWorkflowStepFluentBuilder {
+        crate::operation::update_workflow_step::builders::UpdateWorkflowStepFluentBuilder::new(self.handle.clone())
     }
 }

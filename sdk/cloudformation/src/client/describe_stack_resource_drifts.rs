@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`stack_resource_drifts(Option<Vec<StackResourceDrift>>)`](crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsOutput::stack_resource_drifts): <p>Drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects drift.</p>  <p>For a given stack, there will be one <code>StackResourceDrift</code> for each stack resource that has been checked for drift. Resources that haven't yet been checked for drift aren't included. Resources that do not currently support drift detection aren't checked, and so not included. For a list of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsOutput::next_token): <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>DescribeStackResourceDrifts</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeStackResourceDriftsError>`](crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsError)
-    pub fn describe_stack_resource_drifts(&self) -> crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsFluentBuilder{
+    pub fn describe_stack_resource_drifts(
+        &self,
+    ) -> crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsFluentBuilder {
         crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsFluentBuilder::new(self.handle.clone())
     }
 }

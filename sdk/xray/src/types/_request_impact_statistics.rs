@@ -37,9 +37,7 @@ impl RequestImpactStatistics {
 
 /// A builder for [`RequestImpactStatistics`](crate::types::RequestImpactStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestImpactStatisticsBuilder {
     pub(crate) fault_count: ::std::option::Option<i64>,
     pub(crate) ok_count: ::std::option::Option<i64>,

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`EstimateTemplateCostOutput`](crate::operation::estimate_template_cost::EstimateTemplateCostOutput) with field(s):
     ///   - [`url(Option<String>)`](crate::operation::estimate_template_cost::EstimateTemplateCostOutput::url): <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
     /// - On failure, responds with [`SdkError<EstimateTemplateCostError>`](crate::operation::estimate_template_cost::EstimateTemplateCostError)
-    pub fn estimate_template_cost(
-        &self,
-    ) -> crate::operation::estimate_template_cost::builders::EstimateTemplateCostFluentBuilder {
-        crate::operation::estimate_template_cost::builders::EstimateTemplateCostFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn estimate_template_cost(&self) -> crate::operation::estimate_template_cost::builders::EstimateTemplateCostFluentBuilder {
+        crate::operation::estimate_template_cost::builders::EstimateTemplateCostFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,8 +26,7 @@ impl DeleteCorsConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCorsConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationInputBuilder,
+    inner: crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationInputBuilder,
 }
 impl DeleteCorsConfigurationFluentBuilder {
     /// Creates a new `DeleteCorsConfiguration`.
@@ -38,10 +37,7 @@ impl DeleteCorsConfigurationFluentBuilder {
         }
     }
     /// Access the DeleteCorsConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteCorsConfigurationFluentBuilder {
             crate::operation::delete_cors_configuration::DeleteCorsConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cors_configuration::DeleteCorsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cors_configuration::DeleteCorsConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteCorsConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteCorsConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cors_configuration::DeleteCorsConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cors_configuration::DeleteCorsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cors_configuration::DeleteCorsConfigurationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteCorsConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cors_configuration::DeleteCorsConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cors_configuration::DeleteCorsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cors_configuration::DeleteCorsConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DeleteCorsConfigurationFluentBuilder {
             crate::operation::delete_cors_configuration::DeleteCorsConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cors_configuration::DeleteCorsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cors_configuration::DeleteCorsConfigurationError>,
     > {
         self.customize_middleware().await
     }

@@ -72,9 +72,7 @@ impl InAppMessageCampaign {
 
 /// A builder for [`InAppMessageCampaign`](crate::types::InAppMessageCampaign).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InAppMessageCampaignBuilder {
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
     pub(crate) daily_cap: ::std::option::Option<i32>,
@@ -120,10 +118,7 @@ impl InAppMessageCampaignBuilder {
         self
     }
     /// <p>In-app message content with all fields required for rendering an in-app message.</p>
-    pub fn set_in_app_message(
-        mut self,
-        input: ::std::option::Option<crate::types::InAppMessage>,
-    ) -> Self {
+    pub fn set_in_app_message(mut self, input: ::std::option::Option<crate::types::InAppMessage>) -> Self {
         self.in_app_message = input;
         self
     }
@@ -151,10 +146,7 @@ impl InAppMessageCampaignBuilder {
         self
     }
     /// <p>Schedule of the campaign.</p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::InAppCampaignSchedule>,
-    ) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::InAppCampaignSchedule>) -> Self {
         self.schedule = input;
         self
     }

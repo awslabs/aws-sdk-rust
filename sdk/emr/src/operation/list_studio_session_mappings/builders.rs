@@ -26,7 +26,7 @@ impl ListStudioSessionMappingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStudioSessionMappingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsInputBuilder,
+    inner: crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsInputBuilder,
 }
 impl ListStudioSessionMappingsFluentBuilder {
     /// Creates a new `ListStudioSessionMappings`.
@@ -37,7 +37,7 @@ impl ListStudioSessionMappingsFluentBuilder {
         }
     }
     /// Access the ListStudioSessionMappings as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListStudioSessionMappingsFluentBuilder {
             crate::operation::list_studio_session_mappings::ListStudioSessionMappings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_studio_session_mappings::ListStudioSessionMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_studio_session_mappings::ListStudioSessionMappingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListStudioSessionMappingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListStudioSessionMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_studio_session_mappings::ListStudioSessionMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_studio_session_mappings::ListStudioSessionMappingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListStudioSessionMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_studio_session_mappings::ListStudioSessionMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_studio_session_mappings::ListStudioSessionMappingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListStudioSessionMappingsFluentBuilder {
             crate::operation::list_studio_session_mappings::ListStudioSessionMappings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_studio_session_mappings::ListStudioSessionMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_studio_session_mappings::ListStudioSessionMappingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_studio_session_mappings::paginator::ListStudioSessionMappingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_studio_session_mappings::paginator::ListStudioSessionMappingsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_studio_session_mappings::paginator::ListStudioSessionMappingsPaginator {
         crate::operation::list_studio_session_mappings::paginator::ListStudioSessionMappingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the Amazon EMR Studio.</p>
@@ -149,10 +135,7 @@ impl ListStudioSessionMappingsFluentBuilder {
         self
     }
     /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.inner = self.inner.set_identity_type(input);
         self
     }

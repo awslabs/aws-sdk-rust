@@ -22,34 +22,26 @@ impl ReleaseFileSystemNfsV3LocksInput {
 }
 impl ReleaseFileSystemNfsV3LocksInput {
     /// Creates a new builder-style object to manufacture [`ReleaseFileSystemNfsV3LocksInput`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput).
-    pub fn builder() -> crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksInputBuilder{
+    pub fn builder() -> crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksInputBuilder {
         crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksInputBuilder::default()
     }
 }
 
 /// A builder for [`ReleaseFileSystemNfsV3LocksInput`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReleaseFileSystemNfsV3LocksInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl ReleaseFileSystemNfsV3LocksInputBuilder {
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -58,18 +50,12 @@ impl ReleaseFileSystemNfsV3LocksInputBuilder {
         &self.file_system_id
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -84,11 +70,9 @@ impl ReleaseFileSystemNfsV3LocksInputBuilder {
         crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput {
-                file_system_id: self.file_system_id,
-                client_request_token: self.client_request_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput {
+            file_system_id: self.file_system_id,
+            client_request_token: self.client_request_token,
+        })
     }
 }

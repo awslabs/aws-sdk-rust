@@ -32,9 +32,7 @@ impl RecommendationJobInferenceBenchmark {
         self.metrics.as_ref()
     }
     /// <p>The endpoint configuration made by Inference Recommender during a recommendation job.</p>
-    pub fn endpoint_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EndpointOutputConfiguration> {
+    pub fn endpoint_configuration(&self) -> ::std::option::Option<&crate::types::EndpointOutputConfiguration> {
         self.endpoint_configuration.as_ref()
     }
     /// <p>Defines the model configuration. Includes the specification name and environment parameters.</p>
@@ -67,13 +65,10 @@ impl RecommendationJobInferenceBenchmark {
 
 /// A builder for [`RecommendationJobInferenceBenchmark`](crate::types::RecommendationJobInferenceBenchmark).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationJobInferenceBenchmarkBuilder {
     pub(crate) metrics: ::std::option::Option<crate::types::RecommendationMetrics>,
-    pub(crate) endpoint_configuration:
-        ::std::option::Option<crate::types::EndpointOutputConfiguration>,
+    pub(crate) endpoint_configuration: ::std::option::Option<crate::types::EndpointOutputConfiguration>,
     pub(crate) model_configuration: ::std::option::Option<crate::types::ModelConfiguration>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_metrics: ::std::option::Option<crate::types::InferenceMetrics>,
@@ -87,10 +82,7 @@ impl RecommendationJobInferenceBenchmarkBuilder {
         self
     }
     /// <p>The metrics of recommendations.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationMetrics>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::RecommendationMetrics>) -> Self {
         self.metrics = input;
         self
     }
@@ -99,25 +91,17 @@ impl RecommendationJobInferenceBenchmarkBuilder {
         &self.metrics
     }
     /// <p>The endpoint configuration made by Inference Recommender during a recommendation job.</p>
-    pub fn endpoint_configuration(
-        mut self,
-        input: crate::types::EndpointOutputConfiguration,
-    ) -> Self {
+    pub fn endpoint_configuration(mut self, input: crate::types::EndpointOutputConfiguration) -> Self {
         self.endpoint_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The endpoint configuration made by Inference Recommender during a recommendation job.</p>
-    pub fn set_endpoint_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointOutputConfiguration>,
-    ) -> Self {
+    pub fn set_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::EndpointOutputConfiguration>) -> Self {
         self.endpoint_configuration = input;
         self
     }
     /// <p>The endpoint configuration made by Inference Recommender during a recommendation job.</p>
-    pub fn get_endpoint_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EndpointOutputConfiguration> {
+    pub fn get_endpoint_configuration(&self) -> &::std::option::Option<crate::types::EndpointOutputConfiguration> {
         &self.endpoint_configuration
     }
     /// <p>Defines the model configuration. Includes the specification name and environment parameters.</p>
@@ -126,32 +110,21 @@ impl RecommendationJobInferenceBenchmarkBuilder {
         self
     }
     /// <p>Defines the model configuration. Includes the specification name and environment parameters.</p>
-    pub fn set_model_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelConfiguration>,
-    ) -> Self {
+    pub fn set_model_configuration(mut self, input: ::std::option::Option<crate::types::ModelConfiguration>) -> Self {
         self.model_configuration = input;
         self
     }
     /// <p>Defines the model configuration. Includes the specification name and environment parameters.</p>
-    pub fn get_model_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelConfiguration> {
+    pub fn get_model_configuration(&self) -> &::std::option::Option<crate::types::ModelConfiguration> {
         &self.model_configuration
     }
     /// <p>The reason why a benchmark failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason why a benchmark failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -165,10 +138,7 @@ impl RecommendationJobInferenceBenchmarkBuilder {
         self
     }
     /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
-    pub fn set_endpoint_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceMetrics>,
-    ) -> Self {
+    pub fn set_endpoint_metrics(mut self, input: ::std::option::Option<crate::types::InferenceMetrics>) -> Self {
         self.endpoint_metrics = input;
         self
     }
@@ -182,10 +152,7 @@ impl RecommendationJobInferenceBenchmarkBuilder {
         self
     }
     /// <p>A timestamp that shows when the benchmark completed.</p>
-    pub fn set_invocation_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_invocation_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.invocation_end_time = input;
         self
     }
@@ -199,17 +166,12 @@ impl RecommendationJobInferenceBenchmarkBuilder {
         self
     }
     /// <p>A timestamp that shows when the benchmark started.</p>
-    pub fn set_invocation_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_invocation_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.invocation_start_time = input;
         self
     }
     /// <p>A timestamp that shows when the benchmark started.</p>
-    pub fn get_invocation_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_invocation_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.invocation_start_time
     }
     /// Consumes the builder and constructs a [`RecommendationJobInferenceBenchmark`](crate::types::RecommendationJobInferenceBenchmark).

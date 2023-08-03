@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateModelCardOutput`](crate::operation::create_model_card::CreateModelCardOutput) with field(s):
     ///   - [`model_card_arn(Option<String>)`](crate::operation::create_model_card::CreateModelCardOutput::model_card_arn): <p>The Amazon Resource Name (ARN) of the successfully created model card.</p>
     /// - On failure, responds with [`SdkError<CreateModelCardError>`](crate::operation::create_model_card::CreateModelCardError)
-    pub fn create_model_card(
-        &self,
-    ) -> crate::operation::create_model_card::builders::CreateModelCardFluentBuilder {
-        crate::operation::create_model_card::builders::CreateModelCardFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_model_card(&self) -> crate::operation::create_model_card::builders::CreateModelCardFluentBuilder {
+        crate::operation::create_model_card::builders::CreateModelCardFluentBuilder::new(self.handle.clone())
     }
 }

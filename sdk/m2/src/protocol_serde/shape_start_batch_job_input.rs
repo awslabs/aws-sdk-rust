@@ -6,10 +6,7 @@ pub fn ser_start_batch_job_input(
     if let Some(var_1) = &input.batch_job_identifier {
         #[allow(unused_mut)]
         let mut object_2 = object.key("batchJobIdentifier").start_object();
-        crate::protocol_serde::shape_batch_job_identifier::ser_batch_job_identifier(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_batch_job_identifier::ser_batch_job_identifier(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.job_params {

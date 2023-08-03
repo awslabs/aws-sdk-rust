@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateComponentOutput`](crate::operation::update_component::UpdateComponentOutput) with field(s):
     ///   - [`entity(Option<Component>)`](crate::operation::update_component::UpdateComponentOutput::entity): <p>Describes the configuration of the updated component.</p>
     /// - On failure, responds with [`SdkError<UpdateComponentError>`](crate::operation::update_component::UpdateComponentError)
-    pub fn update_component(
-        &self,
-    ) -> crate::operation::update_component::builders::UpdateComponentFluentBuilder {
-        crate::operation::update_component::builders::UpdateComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_component(&self) -> crate::operation::update_component::builders::UpdateComponentFluentBuilder {
+        crate::operation::update_component::builders::UpdateComponentFluentBuilder::new(self.handle.clone())
     }
 }

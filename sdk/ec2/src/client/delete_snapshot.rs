@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`DeleteSnapshotOutput`](crate::operation::delete_snapshot::DeleteSnapshotOutput)
     /// - On failure, responds with [`SdkError<DeleteSnapshotError>`](crate::operation::delete_snapshot::DeleteSnapshotError)
-    pub fn delete_snapshot(
-        &self,
-    ) -> crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder {
-        crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_snapshot(&self) -> crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder {
+        crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

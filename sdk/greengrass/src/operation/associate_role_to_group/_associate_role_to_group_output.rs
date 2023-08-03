@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for AssociateRoleToGroupOutput {
 }
 impl AssociateRoleToGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateRoleToGroupOutput`](crate::operation::associate_role_to_group::AssociateRoleToGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_role_to_group::builders::AssociateRoleToGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_role_to_group::builders::AssociateRoleToGroupOutputBuilder {
         crate::operation::associate_role_to_group::builders::AssociateRoleToGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateRoleToGroupOutput`](crate::operation::associate_role_to_group::AssociateRoleToGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateRoleToGroupOutputBuilder {
     pub(crate) associated_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateRoleToGroupOutputBuilder {
     /// The time, in milliseconds since the epoch, when the role ARN was associated with the group.
-    pub fn associated_at(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_at = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the role ARN was associated with the group.
-    pub fn set_associated_at(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_associated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_at = input;
         self
     }

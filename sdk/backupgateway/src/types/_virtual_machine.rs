@@ -58,9 +58,7 @@ impl VirtualMachine {
 
 /// A builder for [`VirtualMachine`](crate::types::VirtualMachine).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualMachineBuilder {
     pub(crate) host_name: ::std::option::Option<::std::string::String>,
     pub(crate) hypervisor_id: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl VirtualMachineBuilder {
         &self.host_name
     }
     /// <p>The ID of the virtual machine's hypervisor.</p>
-    pub fn hypervisor_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual machine's hypervisor.</p>
-    pub fn set_hypervisor_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hypervisor_id = input;
         self
     }
@@ -152,10 +144,7 @@ impl VirtualMachineBuilder {
         self
     }
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
-    pub fn set_last_backup_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_backup_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_backup_date = input;
         self
     }

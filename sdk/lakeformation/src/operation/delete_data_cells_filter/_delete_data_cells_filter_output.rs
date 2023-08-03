@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDataCellsFilterOutput {
 }
 impl DeleteDataCellsFilterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataCellsFilterOutput`](crate::operation::delete_data_cells_filter::DeleteDataCellsFilterOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_data_cells_filter::builders::DeleteDataCellsFilterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_data_cells_filter::builders::DeleteDataCellsFilterOutputBuilder {
         crate::operation::delete_data_cells_filter::builders::DeleteDataCellsFilterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDataCellsFilterOutput`](crate::operation::delete_data_cells_filter::DeleteDataCellsFilterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataCellsFilterOutputBuilder {
     _request_id: Option<String>,
 }

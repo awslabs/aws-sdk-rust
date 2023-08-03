@@ -7,14 +7,11 @@
 pub struct AggregatedVariablesImportanceMetrics {
     /// <p> List of variables' metrics. </p>
     #[doc(hidden)]
-    pub log_odds_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregatedLogOddsMetric>>,
+    pub log_odds_metrics: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedLogOddsMetric>>,
 }
 impl AggregatedVariablesImportanceMetrics {
     /// <p> List of variables' metrics. </p>
-    pub fn log_odds_metrics(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AggregatedLogOddsMetric]> {
+    pub fn log_odds_metrics(&self) -> ::std::option::Option<&[crate::types::AggregatedLogOddsMetric]> {
         self.log_odds_metrics.as_deref()
     }
 }
@@ -27,12 +24,9 @@ impl AggregatedVariablesImportanceMetrics {
 
 /// A builder for [`AggregatedVariablesImportanceMetrics`](crate::types::AggregatedVariablesImportanceMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregatedVariablesImportanceMetricsBuilder {
-    pub(crate) log_odds_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregatedLogOddsMetric>>,
+    pub(crate) log_odds_metrics: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedLogOddsMetric>>,
 }
 impl AggregatedVariablesImportanceMetricsBuilder {
     /// Appends an item to `log_odds_metrics`.
@@ -47,17 +41,12 @@ impl AggregatedVariablesImportanceMetricsBuilder {
         self
     }
     /// <p> List of variables' metrics. </p>
-    pub fn set_log_odds_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedLogOddsMetric>>,
-    ) -> Self {
+    pub fn set_log_odds_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedLogOddsMetric>>) -> Self {
         self.log_odds_metrics = input;
         self
     }
     /// <p> List of variables' metrics. </p>
-    pub fn get_log_odds_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedLogOddsMetric>> {
+    pub fn get_log_odds_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedLogOddsMetric>> {
         &self.log_odds_metrics
     }
     /// Consumes the builder and constructs a [`AggregatedVariablesImportanceMetrics`](crate::types::AggregatedVariablesImportanceMetrics).

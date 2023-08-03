@@ -29,27 +29,19 @@ impl CheckInLicenseInput {
 
 /// A builder for [`CheckInLicenseInput`](crate::operation::check_in_license::CheckInLicenseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckInLicenseInputBuilder {
     pub(crate) license_consumption_token: ::std::option::Option<::std::string::String>,
     pub(crate) beneficiary: ::std::option::Option<::std::string::String>,
 }
 impl CheckInLicenseInputBuilder {
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_consumption_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_consumption_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>License consumption token.</p>
-    pub fn set_license_consumption_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_consumption_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_consumption_token = input;
         self
     }
@@ -74,10 +66,7 @@ impl CheckInLicenseInputBuilder {
     /// Consumes the builder and constructs a [`CheckInLicenseInput`](crate::operation::check_in_license::CheckInLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::check_in_license::CheckInLicenseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::check_in_license::CheckInLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::check_in_license::CheckInLicenseInput {
             license_consumption_token: self.license_consumption_token,
             beneficiary: self.beneficiary,

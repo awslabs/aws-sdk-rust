@@ -58,9 +58,7 @@ impl HlsManifest {
 
 /// A builder for [`HlsManifest`](crate::types::HlsManifest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsManifestBuilder {
     pub(crate) ad_markers: ::std::option::Option<crate::types::AdMarkers>,
     pub(crate) include_iframe_only_stream: ::std::option::Option<bool>,
@@ -99,18 +97,12 @@ impl HlsManifestBuilder {
         &self.include_iframe_only_stream
     }
     /// An optional string to include in the name of the manifest.
-    pub fn manifest_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn manifest_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_name = ::std::option::Option::Some(input.into());
         self
     }
     /// An optional string to include in the name of the manifest.
-    pub fn set_manifest_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_manifest_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manifest_name = input;
         self
     }
@@ -124,10 +116,7 @@ impl HlsManifestBuilder {
         self
     }
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
-    pub fn set_program_date_time_interval_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_program_date_time_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.program_date_time_interval_seconds = input;
         self
     }
@@ -155,10 +144,7 @@ impl HlsManifestBuilder {
         self
     }
     /// A StreamSelection configuration.
-    pub fn set_stream_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamSelection>,
-    ) -> Self {
+    pub fn set_stream_selection(mut self, input: ::std::option::Option<crate::types::StreamSelection>) -> Self {
         self.stream_selection = input;
         self
     }

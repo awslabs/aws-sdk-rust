@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`resource_arns(Option<Vec<String>>)`](crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput::resource_arns): <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput::next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     /// - On failure, responds with [`SdkError<ListResourcesInProtectionGroupError>`](crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupError)
-    pub fn list_resources_in_protection_group(&self) -> crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupFluentBuilder{
+    pub fn list_resources_in_protection_group(
+        &self,
+    ) -> crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupFluentBuilder {
         crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupFluentBuilder::new(self.handle.clone())
     }
 }

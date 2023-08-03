@@ -36,9 +36,7 @@ impl AdditionalLimit {
 
 /// A builder for [`AdditionalLimit`](crate::types::AdditionalLimit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdditionalLimitBuilder {
     pub(crate) limit_name: ::std::option::Option<::std::string::String>,
     pub(crate) limit_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -79,17 +77,12 @@ impl AdditionalLimitBuilder {
         self
     }
     /// <p> The values of the additional instance type limits.</p>
-    pub fn set_limit_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_limit_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.limit_values = input;
         self
     }
     /// <p> The values of the additional instance type limits.</p>
-    pub fn get_limit_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_limit_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.limit_values
     }
     /// Consumes the builder and constructs a [`AdditionalLimit`](crate::types::AdditionalLimit).

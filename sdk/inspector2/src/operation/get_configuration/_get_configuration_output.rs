@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetConfigurationOutput {
 }
 impl GetConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationOutput`](crate::operation::get_configuration::GetConfigurationOutput).
-    pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationOutputBuilder {
         crate::operation::get_configuration::builders::GetConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetConfigurationOutput`](crate::operation::get_configuration::GetConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConfigurationOutputBuilder {
     pub(crate) ecr_configuration: ::std::option::Option<crate::types::EcrConfigurationState>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl GetConfigurationOutputBuilder {
         self
     }
     /// <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
-    pub fn set_ecr_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EcrConfigurationState>,
-    ) -> Self {
+    pub fn set_ecr_configuration(mut self, input: ::std::option::Option<crate::types::EcrConfigurationState>) -> Self {
         self.ecr_configuration = input;
         self
     }
     /// <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
-    pub fn get_ecr_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EcrConfigurationState> {
+    pub fn get_ecr_configuration(&self) -> &::std::option::Option<crate::types::EcrConfigurationState> {
         &self.ecr_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

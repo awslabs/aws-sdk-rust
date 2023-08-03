@@ -20,9 +20,7 @@ impl ConfirmSignUpOutput {
 
 /// A builder for [`ConfirmSignUpOutput`](crate::operation::confirm_sign_up::ConfirmSignUpOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmSignUpOutputBuilder {
     _request_id: Option<String>,
 }

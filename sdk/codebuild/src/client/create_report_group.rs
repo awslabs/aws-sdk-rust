@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateReportGroupOutput`](crate::operation::create_report_group::CreateReportGroupOutput) with field(s):
     ///   - [`report_group(Option<ReportGroup>)`](crate::operation::create_report_group::CreateReportGroupOutput::report_group): <p> Information about the report group that was created. </p>
     /// - On failure, responds with [`SdkError<CreateReportGroupError>`](crate::operation::create_report_group::CreateReportGroupError)
-    pub fn create_report_group(
-        &self,
-    ) -> crate::operation::create_report_group::builders::CreateReportGroupFluentBuilder {
-        crate::operation::create_report_group::builders::CreateReportGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_report_group(&self) -> crate::operation::create_report_group::builders::CreateReportGroupFluentBuilder {
+        crate::operation::create_report_group::builders::CreateReportGroupFluentBuilder::new(self.handle.clone())
     }
 }

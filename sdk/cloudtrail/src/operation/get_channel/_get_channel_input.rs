@@ -22,9 +22,7 @@ impl GetChannelInput {
 
 /// A builder for [`GetChannelInput`](crate::operation::get_channel::GetChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChannelInputBuilder {
     pub(crate) channel: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetChannelInputBuilder {
         &self.channel
     }
     /// Consumes the builder and constructs a [`GetChannelInput`](crate::operation::get_channel::GetChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_channel::GetChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_channel::GetChannelInput {
-            channel: self.channel,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_channel::GetChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_channel::GetChannelInput { channel: self.channel })
     }
 }

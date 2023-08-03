@@ -48,9 +48,7 @@ impl ScheduleLambdaFunctionFailedEventAttributes {
 
 /// A builder for [`ScheduleLambdaFunctionFailedEventAttributes`](crate::types::ScheduleLambdaFunctionFailedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleLambdaFunctionFailedEventAttributesBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -96,19 +94,14 @@ impl ScheduleLambdaFunctionFailedEventAttributesBuilder {
     /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
-    pub fn set_cause(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleLambdaFunctionFailedCause>,
-    ) -> Self {
+    pub fn set_cause(mut self, input: ::std::option::Option<crate::types::ScheduleLambdaFunctionFailedCause>) -> Self {
         self.cause = input;
         self
     }
     /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
-    pub fn get_cause(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleLambdaFunctionFailedCause> {
+    pub fn get_cause(&self) -> &::std::option::Option<crate::types::ScheduleLambdaFunctionFailedCause> {
         &self.cause
     }
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this Lambda task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
@@ -117,10 +110,7 @@ impl ScheduleLambdaFunctionFailedEventAttributesBuilder {
         self
     }
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this Lambda task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
-    pub fn set_decision_task_completed_event_id(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.decision_task_completed_event_id = input;
         self
     }
@@ -134,9 +124,7 @@ impl ScheduleLambdaFunctionFailedEventAttributesBuilder {
             id: self.id,
             name: self.name,
             cause: self.cause,
-            decision_task_completed_event_id: self
-                .decision_task_completed_event_id
-                .unwrap_or_default(),
+            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
         }
     }
 }

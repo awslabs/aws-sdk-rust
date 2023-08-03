@@ -29,9 +29,7 @@ impl AddIngressGatewayBridgeRequest {
 
 /// A builder for [`AddIngressGatewayBridgeRequest`](crate::types::AddIngressGatewayBridgeRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddIngressGatewayBridgeRequestBuilder {
     pub(crate) max_bitrate: ::std::option::Option<i32>,
     pub(crate) max_outputs: ::std::option::Option<i32>,

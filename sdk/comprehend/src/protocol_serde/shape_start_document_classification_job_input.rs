@@ -12,19 +12,13 @@ pub fn ser_start_document_classification_job_input(
     if let Some(var_3) = &input.input_data_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("InputDataConfig").start_object();
-        crate::protocol_serde::shape_input_data_config::ser_input_data_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_input_data_config::ser_input_data_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.output_data_config {
         #[allow(unused_mut)]
         let mut object_6 = object.key("OutputDataConfig").start_object();
-        crate::protocol_serde::shape_output_data_config::ser_output_data_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_output_data_config::ser_output_data_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.data_access_role_arn {

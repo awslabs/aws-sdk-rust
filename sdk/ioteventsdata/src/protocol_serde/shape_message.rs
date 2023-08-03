@@ -10,9 +10,7 @@ pub fn ser_message(
         object.key("inputName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.payload {
-        object
-            .key("payload")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_3));
+        object.key("payload").string_unchecked(&::aws_smithy_types::base64::encode(var_3));
     }
     if let Some(var_4) = &input.timestamp {
         #[allow(unused_mut)]

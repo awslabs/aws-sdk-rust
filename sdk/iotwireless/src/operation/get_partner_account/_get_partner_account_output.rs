@@ -13,9 +13,7 @@ pub struct GetPartnerAccountOutput {
 }
 impl GetPartnerAccountOutput {
     /// <p>The Sidewalk account credentials.</p>
-    pub fn sidewalk(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SidewalkAccountInfoWithFingerprint> {
+    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkAccountInfoWithFingerprint> {
         self.sidewalk.as_ref()
     }
     /// <p>Whether the partner account is linked to the AWS account.</p>
@@ -30,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetPartnerAccountOutput {
 }
 impl GetPartnerAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetPartnerAccountOutput`](crate::operation::get_partner_account::GetPartnerAccountOutput).
-    pub fn builder(
-    ) -> crate::operation::get_partner_account::builders::GetPartnerAccountOutputBuilder {
+    pub fn builder() -> crate::operation::get_partner_account::builders::GetPartnerAccountOutputBuilder {
         crate::operation::get_partner_account::builders::GetPartnerAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPartnerAccountOutput`](crate::operation::get_partner_account::GetPartnerAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPartnerAccountOutputBuilder {
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkAccountInfoWithFingerprint>,
     pub(crate) account_linked: ::std::option::Option<bool>,
@@ -53,17 +48,12 @@ impl GetPartnerAccountOutputBuilder {
         self
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkAccountInfoWithFingerprint>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkAccountInfoWithFingerprint>) -> Self {
         self.sidewalk = input;
         self
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn get_sidewalk(
-        &self,
-    ) -> &::std::option::Option<crate::types::SidewalkAccountInfoWithFingerprint> {
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkAccountInfoWithFingerprint> {
         &self.sidewalk
     }
     /// <p>Whether the partner account is linked to the AWS account.</p>

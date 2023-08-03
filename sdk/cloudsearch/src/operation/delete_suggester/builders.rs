@@ -10,10 +10,7 @@ impl DeleteSuggesterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_suggester::DeleteSuggesterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_suggester::DeleteSuggesterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_suggester::DeleteSuggesterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_suggester();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteSuggesterFluentBuilder {
         }
     }
     /// Access the DeleteSuggester as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_suggester::builders::DeleteSuggesterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_suggester::builders::DeleteSuggesterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteSuggesterFluentBuilder {
             crate::operation::delete_suggester::DeleteSuggester,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_suggester::DeleteSuggesterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_suggester::DeleteSuggesterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteSuggesterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteSuggesterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_suggester::DeleteSuggesterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_suggester::DeleteSuggesterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_suggester::DeleteSuggesterError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteSuggesterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_suggester::DeleteSuggesterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_suggester::DeleteSuggesterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_suggester::DeleteSuggesterError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteSuggesterFluentBuilder {
             crate::operation::delete_suggester::DeleteSuggester,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_suggester::DeleteSuggesterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_suggester::DeleteSuggesterError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DeleteSuggesterFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>Specifies the name of the suggester you want to delete.</p>
-    pub fn suggester_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suggester_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suggester_name(input.into());
         self
     }
     /// <p>Specifies the name of the suggester you want to delete.</p>
-    pub fn set_suggester_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suggester_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_suggester_name(input);
         self
     }

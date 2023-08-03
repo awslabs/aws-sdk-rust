@@ -10,10 +10,7 @@ impl ListPoliciesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_policies::ListPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policies::ListPoliciesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policies::ListPoliciesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_policies();
         fluent_builder.inner = self;
@@ -50,10 +47,7 @@ impl ListPoliciesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_policies::ListPolicies,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_policies::ListPolicies, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_policies::ListPoliciesError>,
     > {
         let handle = self.handle.clone();
@@ -64,10 +58,7 @@ impl ListPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -109,10 +100,7 @@ impl ListPoliciesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_policies::ListPolicies,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_policies::ListPolicies, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_policies::ListPoliciesError>,
     > {
         self.customize_middleware().await
@@ -120,13 +108,8 @@ impl ListPoliciesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_policies::paginator::ListPoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_policies::paginator::ListPoliciesPaginator {
-        crate::operation::list_policies::paginator::ListPoliciesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_policies::paginator::ListPoliciesPaginator {
+        crate::operation::list_policies::paginator::ListPoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>The scope to use for filtering the results.</p>
     /// <p>To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer managed policies in your Amazon Web Services account, set <code>Scope</code> to <code>Local</code>.</p>
@@ -138,10 +121,7 @@ impl ListPoliciesFluentBuilder {
     /// <p>The scope to use for filtering the results.</p>
     /// <p>To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer managed policies in your Amazon Web Services account, set <code>Scope</code> to <code>Local</code>.</p>
     /// <p>This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are returned.</p>
-    pub fn set_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyScopeType>,
-    ) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::PolicyScopeType>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }
@@ -192,10 +172,7 @@ impl ListPoliciesFluentBuilder {
     /// <p>The policy usage method to use for filtering the results.</p>
     /// <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>
     /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
-    pub fn set_policy_usage_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyUsageType>,
-    ) -> Self {
+    pub fn set_policy_usage_filter(mut self, input: ::std::option::Option<crate::types::PolicyUsageType>) -> Self {
         self.inner = self.inner.set_policy_usage_filter(input);
         self
     }

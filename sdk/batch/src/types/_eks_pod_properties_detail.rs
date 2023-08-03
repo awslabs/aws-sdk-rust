@@ -74,9 +74,7 @@ impl EksPodPropertiesDetail {
 
 /// A builder for [`EksPodPropertiesDetail`](crate::types::EksPodPropertiesDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksPodPropertiesDetailBuilder {
     pub(crate) service_account_name: ::std::option::Option<::std::string::String>,
     pub(crate) host_network: ::std::option::Option<bool>,
@@ -89,18 +87,12 @@ pub struct EksPodPropertiesDetailBuilder {
 }
 impl EksPodPropertiesDetailBuilder {
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn service_account_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_account_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn set_service_account_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_account_name = input;
         self
     }
@@ -151,17 +143,12 @@ impl EksPodPropertiesDetailBuilder {
         self
     }
     /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerDetail>>,
-    ) -> Self {
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerDetail>>) -> Self {
         self.containers = input;
         self
     }
     /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainerDetail>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainerDetail>> {
         &self.containers
     }
     /// Appends an item to `volumes`.
@@ -176,10 +163,7 @@ impl EksPodPropertiesDetailBuilder {
         self
     }
     /// <p>Specifies the volumes for a job definition using Amazon EKS resources.</p>
-    pub fn set_volumes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EksVolume>>,
-    ) -> Self {
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksVolume>>) -> Self {
         self.volumes = input;
         self
     }

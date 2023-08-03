@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DecodeAuthorizationMessageOutput`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput) with field(s):
     ///   - [`decoded_message(Option<String>)`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput::decoded_message): <p>The API returns a response with the decoded message.</p>
     /// - On failure, responds with [`SdkError<DecodeAuthorizationMessageError>`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageError)
-    pub fn decode_authorization_message(&self) -> crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageFluentBuilder{
+    pub fn decode_authorization_message(&self) -> crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageFluentBuilder {
         crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageFluentBuilder::new(self.handle.clone())
     }
 }

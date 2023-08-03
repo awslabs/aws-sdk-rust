@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateProfileJobOutput`](crate::operation::update_profile_job::UpdateProfileJobOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::update_profile_job::UpdateProfileJobOutput::name): <p>The name of the job that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateProfileJobError>`](crate::operation::update_profile_job::UpdateProfileJobError)
-    pub fn update_profile_job(
-        &self,
-    ) -> crate::operation::update_profile_job::builders::UpdateProfileJobFluentBuilder {
-        crate::operation::update_profile_job::builders::UpdateProfileJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_profile_job(&self) -> crate::operation::update_profile_job::builders::UpdateProfileJobFluentBuilder {
+        crate::operation::update_profile_job::builders::UpdateProfileJobFluentBuilder::new(self.handle.clone())
     }
 }

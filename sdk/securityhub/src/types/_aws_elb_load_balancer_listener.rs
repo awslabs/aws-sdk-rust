@@ -59,9 +59,7 @@ impl AwsElbLoadBalancerListener {
 
 /// A builder for [`AwsElbLoadBalancerListener`](crate::types::AwsElbLoadBalancerListener).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerListenerBuilder {
     pub(crate) instance_port: ::std::option::Option<i32>,
     pub(crate) instance_protocol: ::std::option::Option<::std::string::String>,
@@ -86,19 +84,13 @@ impl AwsElbLoadBalancerListenerBuilder {
     }
     /// <p>The protocol to use to route traffic to instances.</p>
     /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
-    pub fn instance_protocol(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The protocol to use to route traffic to instances.</p>
     /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
-    pub fn set_instance_protocol(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_protocol = input;
         self
     }
@@ -145,18 +137,12 @@ impl AwsElbLoadBalancerListenerBuilder {
         &self.protocol
     }
     /// <p>The ARN of the server certificate.</p>
-    pub fn ssl_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssl_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl_certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the server certificate.</p>
-    pub fn set_ssl_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssl_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssl_certificate_id = input;
         self
     }

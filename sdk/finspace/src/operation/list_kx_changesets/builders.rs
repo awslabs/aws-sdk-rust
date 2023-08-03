@@ -10,10 +10,7 @@ impl ListKxChangesetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_kx_changesets::ListKxChangesetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_changesets::ListKxChangesetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_changesets::ListKxChangesetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_kx_changesets();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListKxChangesetsFluentBuilder {
         }
     }
     /// Access the ListKxChangesets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_kx_changesets::builders::ListKxChangesetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_kx_changesets::builders::ListKxChangesetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListKxChangesetsFluentBuilder {
             crate::operation::list_kx_changesets::ListKxChangesets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_changesets::ListKxChangesetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_changesets::ListKxChangesetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListKxChangesetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListKxChangesetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_kx_changesets::ListKxChangesetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_changesets::ListKxChangesetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_changesets::ListKxChangesetsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListKxChangesetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_kx_changesets::ListKxChangesetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_changesets::ListKxChangesetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_changesets::ListKxChangesetsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListKxChangesetsFluentBuilder {
             crate::operation::list_kx_changesets::ListKxChangesets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_kx_changesets::ListKxChangesetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_kx_changesets::ListKxChangesetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_kx_changesets::paginator::ListKxChangesetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_kx_changesets::paginator::ListKxChangesetsPaginator {
-        crate::operation::list_kx_changesets::paginator::ListKxChangesetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_kx_changesets::paginator::ListKxChangesetsPaginator {
+        crate::operation::list_kx_changesets::paginator::ListKxChangesetsPaginator::new(self.handle, self.inner)
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -154,18 +127,12 @@ impl ListKxChangesetsFluentBuilder {
         self.inner.get_environment_id()
     }
     /// <p>The name of the kdb database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the kdb database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }

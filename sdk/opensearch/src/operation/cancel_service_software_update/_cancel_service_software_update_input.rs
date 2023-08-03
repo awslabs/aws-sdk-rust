@@ -16,16 +16,14 @@ impl CancelServiceSoftwareUpdateInput {
 }
 impl CancelServiceSoftwareUpdateInput {
     /// Creates a new builder-style object to manufacture [`CancelServiceSoftwareUpdateInput`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput).
-    pub fn builder() -> crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateInputBuilder{
+    pub fn builder() -> crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateInputBuilder {
         crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelServiceSoftwareUpdateInput`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelServiceSoftwareUpdateInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,8 @@ impl CancelServiceSoftwareUpdateInputBuilder {
         crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput {
-                domain_name: self.domain_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput {
+            domain_name: self.domain_name,
+        })
     }
 }

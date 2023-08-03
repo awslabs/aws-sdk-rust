@@ -9,19 +9,13 @@ pub fn ser_output(
     if let Some(var_2) = &input.kinesis_streams_output {
         #[allow(unused_mut)]
         let mut object_3 = object.key("KinesisStreamsOutput").start_object();
-        crate::protocol_serde::shape_kinesis_streams_output::ser_kinesis_streams_output(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_kinesis_streams_output::ser_kinesis_streams_output(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.kinesis_firehose_output {
         #[allow(unused_mut)]
         let mut object_5 = object.key("KinesisFirehoseOutput").start_object();
-        crate::protocol_serde::shape_kinesis_firehose_output::ser_kinesis_firehose_output(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_kinesis_firehose_output::ser_kinesis_firehose_output(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.lambda_output {
@@ -33,10 +27,7 @@ pub fn ser_output(
     if let Some(var_8) = &input.destination_schema {
         #[allow(unused_mut)]
         let mut object_9 = object.key("DestinationSchema").start_object();
-        crate::protocol_serde::shape_destination_schema::ser_destination_schema(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_destination_schema::ser_destination_schema(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())

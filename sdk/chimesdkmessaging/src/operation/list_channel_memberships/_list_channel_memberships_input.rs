@@ -66,9 +66,7 @@ impl ::std::fmt::Debug for ListChannelMembershipsInput {
 }
 impl ListChannelMembershipsInput {
     /// Creates a new builder-style object to manufacture [`ListChannelMembershipsInput`](crate::operation::list_channel_memberships::ListChannelMembershipsInput).
-    pub fn builder(
-    ) -> crate::operation::list_channel_memberships::builders::ListChannelMembershipsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_channel_memberships::builders::ListChannelMembershipsInputBuilder {
         crate::operation::list_channel_memberships::builders::ListChannelMembershipsInputBuilder::default()
     }
 }
@@ -105,10 +103,7 @@ impl ListChannelMembershipsInputBuilder {
         self
     }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are returned as part of <code>ListChannelMemberships</code> if no type is specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMembershipType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMembershipType>) -> Self {
         self.r#type = input;
         self
     }
@@ -161,20 +156,14 @@ impl ListChannelMembershipsInputBuilder {
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p>
     /// </note>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p>
     /// </note>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_channel_id = input;
         self
     }
@@ -187,20 +176,16 @@ impl ListChannelMembershipsInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelMembershipsInput`](crate::operation::list_channel_memberships::ListChannelMembershipsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_channel_memberships::ListChannelMembershipsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_channel_memberships::ListChannelMembershipsInput {
-                channel_arn: self.channel_arn,
-                r#type: self.r#type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                chime_bearer: self.chime_bearer,
-                sub_channel_id: self.sub_channel_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_channel_memberships::ListChannelMembershipsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_channel_memberships::ListChannelMembershipsInput {
+            channel_arn: self.channel_arn,
+            r#type: self.r#type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            chime_bearer: self.chime_bearer,
+            sub_channel_id: self.sub_channel_id,
+        })
     }
 }
 impl ::std::fmt::Debug for ListChannelMembershipsInputBuilder {

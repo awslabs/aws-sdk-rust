@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for UpdateDataSetPermissionsOutput {
 }
 impl UpdateDataSetPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSetPermissionsOutput`](crate::operation::update_data_set_permissions::UpdateDataSetPermissionsOutput).
-    pub fn builder() -> crate::operation::update_data_set_permissions::builders::UpdateDataSetPermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::update_data_set_permissions::builders::UpdateDataSetPermissionsOutputBuilder {
         crate::operation::update_data_set_permissions::builders::UpdateDataSetPermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDataSetPermissionsOutput`](crate::operation::update_data_set_permissions::UpdateDataSetPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataSetPermissionsOutputBuilder {
     pub(crate) data_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
@@ -126,9 +124,7 @@ impl UpdateDataSetPermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDataSetPermissionsOutput`](crate::operation::update_data_set_permissions::UpdateDataSetPermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_data_set_permissions::UpdateDataSetPermissionsOutput {
+    pub fn build(self) -> crate::operation::update_data_set_permissions::UpdateDataSetPermissionsOutput {
         crate::operation::update_data_set_permissions::UpdateDataSetPermissionsOutput {
             data_set_arn: self.data_set_arn,
             data_set_id: self.data_set_id,

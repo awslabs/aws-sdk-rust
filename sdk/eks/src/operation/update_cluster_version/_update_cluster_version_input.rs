@@ -29,17 +29,14 @@ impl UpdateClusterVersionInput {
 }
 impl UpdateClusterVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterVersionInput`](crate::operation::update_cluster_version::UpdateClusterVersionInput).
-    pub fn builder(
-    ) -> crate::operation::update_cluster_version::builders::UpdateClusterVersionInputBuilder {
+    pub fn builder() -> crate::operation::update_cluster_version::builders::UpdateClusterVersionInputBuilder {
         crate::operation::update_cluster_version::builders::UpdateClusterVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateClusterVersionInput`](crate::operation::update_cluster_version::UpdateClusterVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClusterVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -75,18 +72,12 @@ impl UpdateClusterVersionInputBuilder {
         &self.version
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -97,16 +88,12 @@ impl UpdateClusterVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateClusterVersionInput`](crate::operation::update_cluster_version::UpdateClusterVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_cluster_version::UpdateClusterVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_cluster_version::UpdateClusterVersionInput {
-                name: self.name,
-                version: self.version,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_cluster_version::UpdateClusterVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_cluster_version::UpdateClusterVersionInput {
+            name: self.name,
+            version: self.version,
+            client_request_token: self.client_request_token,
+        })
     }
 }

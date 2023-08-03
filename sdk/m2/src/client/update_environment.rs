@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput) with field(s):
     ///   - [`environment_id(Option<String>)`](crate::operation::update_environment::UpdateEnvironmentOutput::environment_id): <p>The unique identifier of the runtime environment that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::operation::update_environment::UpdateEnvironmentError)
-    pub fn update_environment(
-        &self,
-    ) -> crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder {
-        crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_environment(&self) -> crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder {
+        crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

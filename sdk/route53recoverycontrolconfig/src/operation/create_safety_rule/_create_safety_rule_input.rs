@@ -15,9 +15,7 @@ pub struct CreateSafetyRuleInput {
     pub gating_rule: ::std::option::Option<crate::types::NewGatingRule>,
     /// <p>The tags associated with the safety rule.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSafetyRuleInput {
     /// <p>The assertion rule requested.</p>
@@ -33,34 +31,25 @@ impl CreateSafetyRuleInput {
         self.gating_rule.as_ref()
     }
     /// <p>The tags associated with the safety rule.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateSafetyRuleInput {
     /// Creates a new builder-style object to manufacture [`CreateSafetyRuleInput`](crate::operation::create_safety_rule::CreateSafetyRuleInput).
-    pub fn builder() -> crate::operation::create_safety_rule::builders::CreateSafetyRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_safety_rule::builders::CreateSafetyRuleInputBuilder {
         crate::operation::create_safety_rule::builders::CreateSafetyRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSafetyRuleInput`](crate::operation::create_safety_rule::CreateSafetyRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSafetyRuleInputBuilder {
     pub(crate) assertion_rule: ::std::option::Option<crate::types::NewAssertionRule>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) gating_rule: ::std::option::Option<crate::types::NewGatingRule>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSafetyRuleInputBuilder {
     /// <p>The assertion rule requested.</p>
@@ -69,10 +58,7 @@ impl CreateSafetyRuleInputBuilder {
         self
     }
     /// <p>The assertion rule requested.</p>
-    pub fn set_assertion_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::NewAssertionRule>,
-    ) -> Self {
+    pub fn set_assertion_rule(mut self, input: ::std::option::Option<crate::types::NewAssertionRule>) -> Self {
         self.assertion_rule = input;
         self
     }
@@ -100,10 +86,7 @@ impl CreateSafetyRuleInputBuilder {
         self
     }
     /// <p>The gating rule requested.</p>
-    pub fn set_gating_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::NewGatingRule>,
-    ) -> Self {
+    pub fn set_gating_rule(mut self, input: ::std::option::Option<crate::types::NewGatingRule>) -> Self {
         self.gating_rule = input;
         self
     }
@@ -116,48 +99,30 @@ impl CreateSafetyRuleInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags associated with the safety rule.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags associated with the safety rule.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags associated with the safety rule.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSafetyRuleInput`](crate::operation::create_safety_rule::CreateSafetyRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_safety_rule::CreateSafetyRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_safety_rule::CreateSafetyRuleInput {
-                assertion_rule: self.assertion_rule,
-                client_token: self.client_token,
-                gating_rule: self.gating_rule,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_safety_rule::CreateSafetyRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_safety_rule::CreateSafetyRuleInput {
+            assertion_rule: self.assertion_rule,
+            client_token: self.client_token,
+            gating_rule: self.gating_rule,
+            tags: self.tags,
+        })
     }
 }

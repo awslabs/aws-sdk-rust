@@ -37,9 +37,7 @@ impl CloudFrontOriginAccessIdentitySummary {
 
 /// A builder for [`CloudFrontOriginAccessIdentitySummary`](crate::types::CloudFrontOriginAccessIdentitySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentitySummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_canonical_user_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl CloudFrontOriginAccessIdentitySummaryBuilder {
         &self.id
     }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.</p>
-    pub fn s3_canonical_user_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_canonical_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_canonical_user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.</p>
-    pub fn set_s3_canonical_user_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_canonical_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_canonical_user_id = input;
         self
     }

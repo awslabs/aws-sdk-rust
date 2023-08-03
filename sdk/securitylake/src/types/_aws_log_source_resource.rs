@@ -30,9 +30,7 @@ impl AwsLogSourceResource {
 
 /// A builder for [`AwsLogSourceResource`](crate::types::AwsLogSourceResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsLogSourceResourceBuilder {
     pub(crate) source_name: ::std::option::Option<crate::types::AwsLogSourceName>,
     pub(crate) source_version: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl AwsLogSourceResourceBuilder {
         self
     }
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    pub fn set_source_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsLogSourceName>,
-    ) -> Self {
+    pub fn set_source_name(mut self, input: ::std::option::Option<crate::types::AwsLogSourceName>) -> Self {
         self.source_name = input;
         self
     }
@@ -56,18 +51,12 @@ impl AwsLogSourceResourceBuilder {
         &self.source_name
     }
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_version = input;
         self
     }

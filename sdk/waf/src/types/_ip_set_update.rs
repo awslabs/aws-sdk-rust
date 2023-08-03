@@ -34,9 +34,7 @@ impl IpSetUpdate {
 
 /// A builder for [`IpSetUpdate`](crate::types::IpSetUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpSetUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) ip_set_descriptor: ::std::option::Option<crate::types::IpSetDescriptor>,
@@ -62,10 +60,7 @@ impl IpSetUpdateBuilder {
         self
     }
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>
-    pub fn set_ip_set_descriptor(
-        mut self,
-        input: ::std::option::Option<crate::types::IpSetDescriptor>,
-    ) -> Self {
+    pub fn set_ip_set_descriptor(mut self, input: ::std::option::Option<crate::types::IpSetDescriptor>) -> Self {
         self.ip_set_descriptor = input;
         self
     }

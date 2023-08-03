@@ -20,16 +20,14 @@ impl DeleteTrafficPolicyInstanceInput {
 }
 impl DeleteTrafficPolicyInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyInstanceInput`](crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceInput).
-    pub fn builder() -> crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceInputBuilder{
+    pub fn builder() -> crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceInputBuilder {
         crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrafficPolicyInstanceInput`](crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrafficPolicyInstanceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -61,10 +59,6 @@ impl DeleteTrafficPolicyInstanceInputBuilder {
         crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceInput { id: self.id })
     }
 }

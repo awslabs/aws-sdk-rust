@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEventBusOutput`](crate::operation::create_event_bus::CreateEventBusOutput) with field(s):
     ///   - [`event_bus_arn(Option<String>)`](crate::operation::create_event_bus::CreateEventBusOutput::event_bus_arn): <p>The ARN of the new event bus.</p>
     /// - On failure, responds with [`SdkError<CreateEventBusError>`](crate::operation::create_event_bus::CreateEventBusError)
-    pub fn create_event_bus(
-        &self,
-    ) -> crate::operation::create_event_bus::builders::CreateEventBusFluentBuilder {
-        crate::operation::create_event_bus::builders::CreateEventBusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_event_bus(&self) -> crate::operation::create_event_bus::builders::CreateEventBusFluentBuilder {
+        crate::operation::create_event_bus::builders::CreateEventBusFluentBuilder::new(self.handle.clone())
     }
 }

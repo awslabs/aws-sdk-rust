@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`BatchStartViewerSessionRevocationOutput`](crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput) with field(s):
     ///   - [`errors(Option<Vec<BatchStartViewerSessionRevocationError>>)`](crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput::errors): <p>Each error object is related to a specific <code>channelArn</code> and <code>viewerId</code> pair in the request.</p>
     /// - On failure, responds with [`SdkError<BatchStartViewerSessionRevocationError>`](crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError)
-    pub fn batch_start_viewer_session_revocation(&self) -> crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationFluentBuilder{
+    pub fn batch_start_viewer_session_revocation(
+        &self,
+    ) -> crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationFluentBuilder {
         crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationFluentBuilder::new(self.handle.clone())
     }
 }

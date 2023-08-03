@@ -50,9 +50,7 @@ impl DetachVolumeInput {
 
 /// A builder for [`DetachVolumeInput`](crate::operation::detach_volume::DetachVolumeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachVolumeInputBuilder {
     pub(crate) device: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
@@ -132,12 +130,7 @@ impl DetachVolumeInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DetachVolumeInput`](crate::operation::detach_volume::DetachVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_volume::DetachVolumeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_volume::DetachVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_volume::DetachVolumeInput {
             device: self.device,
             force: self.force,

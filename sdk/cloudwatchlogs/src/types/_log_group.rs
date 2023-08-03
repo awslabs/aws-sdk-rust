@@ -31,8 +31,7 @@ pub struct LogGroup {
     pub data_protection_status: ::std::option::Option<crate::types::DataProtectionStatus>,
     /// <p>Displays all the properties that this log group has inherited from account-level settings.</p>
     #[doc(hidden)]
-    pub inherited_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>>,
+    pub inherited_properties: ::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>>,
 }
 impl LogGroup {
     /// <p>The name of the log group.</p>
@@ -65,15 +64,11 @@ impl LogGroup {
         self.kms_key_id.as_deref()
     }
     /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
-    pub fn data_protection_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataProtectionStatus> {
+    pub fn data_protection_status(&self) -> ::std::option::Option<&crate::types::DataProtectionStatus> {
         self.data_protection_status.as_ref()
     }
     /// <p>Displays all the properties that this log group has inherited from account-level settings.</p>
-    pub fn inherited_properties(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InheritedProperty]> {
+    pub fn inherited_properties(&self) -> ::std::option::Option<&[crate::types::InheritedProperty]> {
         self.inherited_properties.as_deref()
     }
 }
@@ -86,9 +81,7 @@ impl LogGroup {
 
 /// A builder for [`LogGroup`](crate::types::LogGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogGroupBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<i64>,
@@ -98,23 +91,16 @@ pub struct LogGroupBuilder {
     pub(crate) stored_bytes: ::std::option::Option<i64>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_protection_status: ::std::option::Option<crate::types::DataProtectionStatus>,
-    pub(crate) inherited_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>>,
+    pub(crate) inherited_properties: ::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>>,
 }
 impl LogGroupBuilder {
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
@@ -215,17 +201,12 @@ impl LogGroupBuilder {
         self
     }
     /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
-    pub fn set_data_protection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataProtectionStatus>,
-    ) -> Self {
+    pub fn set_data_protection_status(mut self, input: ::std::option::Option<crate::types::DataProtectionStatus>) -> Self {
         self.data_protection_status = input;
         self
     }
     /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
-    pub fn get_data_protection_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataProtectionStatus> {
+    pub fn get_data_protection_status(&self) -> &::std::option::Option<crate::types::DataProtectionStatus> {
         &self.data_protection_status
     }
     /// Appends an item to `inherited_properties`.
@@ -240,17 +221,12 @@ impl LogGroupBuilder {
         self
     }
     /// <p>Displays all the properties that this log group has inherited from account-level settings.</p>
-    pub fn set_inherited_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>>,
-    ) -> Self {
+    pub fn set_inherited_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>>) -> Self {
         self.inherited_properties = input;
         self
     }
     /// <p>Displays all the properties that this log group has inherited from account-level settings.</p>
-    pub fn get_inherited_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>> {
+    pub fn get_inherited_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>> {
         &self.inherited_properties
     }
     /// Consumes the builder and constructs a [`LogGroup`](crate::types::LogGroup).

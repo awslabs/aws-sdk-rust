@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCloudFormationStackOutput`](crate::operation::create_cloud_formation_stack::CreateCloudFormationStackOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::create_cloud_formation_stack::CreateCloudFormationStackOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateCloudFormationStackError>`](crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError)
-    pub fn create_cloud_formation_stack(&self) -> crate::operation::create_cloud_formation_stack::builders::CreateCloudFormationStackFluentBuilder{
+    pub fn create_cloud_formation_stack(&self) -> crate::operation::create_cloud_formation_stack::builders::CreateCloudFormationStackFluentBuilder {
         crate::operation::create_cloud_formation_stack::builders::CreateCloudFormationStackFluentBuilder::new(self.handle.clone())
     }
 }

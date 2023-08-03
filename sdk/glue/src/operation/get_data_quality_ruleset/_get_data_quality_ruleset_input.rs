@@ -15,18 +15,14 @@ impl GetDataQualityRulesetInput {
 }
 impl GetDataQualityRulesetInput {
     /// Creates a new builder-style object to manufacture [`GetDataQualityRulesetInput`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput).
-    pub fn builder(
-    ) -> crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetInputBuilder {
         crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataQualityRulesetInput`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataQualityRulesetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl GetDataQualityRulesetInputBuilder {
     /// Consumes the builder and constructs a [`GetDataQualityRulesetInput`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput {
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput { name: self.name })
     }
 }

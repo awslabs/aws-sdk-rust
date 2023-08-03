@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteEntitlementOutput {
 }
 impl DeleteEntitlementOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEntitlementOutput`](crate::operation::delete_entitlement::DeleteEntitlementOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_entitlement::builders::DeleteEntitlementOutputBuilder {
+    pub fn builder() -> crate::operation::delete_entitlement::builders::DeleteEntitlementOutputBuilder {
         crate::operation::delete_entitlement::builders::DeleteEntitlementOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEntitlementOutput`](crate::operation::delete_entitlement::DeleteEntitlementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEntitlementOutputBuilder {
     _request_id: Option<String>,
 }

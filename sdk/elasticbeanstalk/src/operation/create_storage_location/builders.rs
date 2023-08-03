@@ -37,10 +37,7 @@ impl CreateStorageLocationFluentBuilder {
         }
     }
     /// Access the CreateStorageLocation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_storage_location::builders::CreateStorageLocationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_storage_location::builders::CreateStorageLocationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateStorageLocationFluentBuilder {
             crate::operation::create_storage_location::CreateStorageLocation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_storage_location::CreateStorageLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_storage_location::CreateStorageLocationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateStorageLocationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateStorageLocationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_storage_location::CreateStorageLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_storage_location::CreateStorageLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_storage_location::CreateStorageLocationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateStorageLocationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_storage_location::CreateStorageLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_storage_location::CreateStorageLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_storage_location::CreateStorageLocationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateStorageLocationFluentBuilder {
             crate::operation::create_storage_location::CreateStorageLocation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_storage_location::CreateStorageLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_storage_location::CreateStorageLocationError>,
     > {
         self.customize_middleware().await
     }

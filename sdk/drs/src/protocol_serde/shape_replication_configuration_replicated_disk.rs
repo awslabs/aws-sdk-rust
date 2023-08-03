@@ -25,108 +25,84 @@ pub fn ser_replication_configuration_replicated_disk(
         );
     }
     if let Some(var_4) = &input.optimized_staging_disk_type {
-        object
-            .key("optimizedStagingDiskType")
-            .string(var_4.as_str());
+        object.key("optimizedStagingDiskType").string(var_4.as_str());
     }
     Ok(())
 }
 
 pub(crate) fn de_replication_configuration_replicated_disk<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ReplicationConfigurationReplicatedDisk>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ReplicationConfigurationReplicatedDisk>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::ReplicationConfigurationReplicatedDiskBuilder::default();
+            let mut builder = crate::types::builders::ReplicationConfigurationReplicatedDiskBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "deviceName" => {
-                                builder = builder.set_device_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "deviceName" => {
+                            builder = builder.set_device_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "isBootDisk" => {
-                                builder = builder.set_is_boot_disk(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "stagingDiskType" => {
-                                builder = builder.set_staging_disk_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
-                                        s.to_unescaped().map(|u|
-                                            crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType::from(u.as_ref())
-                                        )
-                                    ).transpose()?
-                                );
-                            }
-                            "iops" => {
-                                builder = builder.set_iops(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "throughput" => {
-                                builder = builder.set_throughput(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i64::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "optimizedStagingDiskType" => {
-                                builder = builder.set_optimized_staging_disk_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
-                                        s.to_unescaped().map(|u|
-                                            crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType::from(u.as_ref())
-                                        )
-                                    ).transpose()?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "isBootDisk" => {
+                            builder = builder.set_is_boot_disk(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "stagingDiskType" => {
+                            builder = builder.set_staging_disk_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        "iops" => {
+                            builder = builder.set_iops(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "throughput" => {
+                            builder = builder.set_throughput(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "optimizedStagingDiskType" => {
+                            builder = builder.set_optimized_staging_disk_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::ReplicationConfigurationReplicatedDiskStagingDiskType::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

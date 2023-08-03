@@ -15,35 +15,25 @@ impl DescribeLabelingJobInput {
 }
 impl DescribeLabelingJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeLabelingJobInput`](crate::operation::describe_labeling_job::DescribeLabelingJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_labeling_job::builders::DescribeLabelingJobInputBuilder {
-        crate::operation::describe_labeling_job::builders::DescribeLabelingJobInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_labeling_job::builders::DescribeLabelingJobInputBuilder {
+        crate::operation::describe_labeling_job::builders::DescribeLabelingJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLabelingJobInput`](crate::operation::describe_labeling_job::DescribeLabelingJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLabelingJobInputBuilder {
     pub(crate) labeling_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLabelingJobInputBuilder {
     /// <p>The name of the labeling job to return information for.</p>
-    pub fn labeling_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn labeling_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.labeling_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the labeling job to return information for.</p>
-    pub fn set_labeling_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_labeling_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.labeling_job_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DescribeLabelingJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLabelingJobInput`](crate::operation::describe_labeling_job::DescribeLabelingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_labeling_job::DescribeLabelingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_labeling_job::DescribeLabelingJobInput {
-                labeling_job_name: self.labeling_job_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_labeling_job::DescribeLabelingJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_labeling_job::DescribeLabelingJobInput {
+            labeling_job_name: self.labeling_job_name,
+        })
     }
 }

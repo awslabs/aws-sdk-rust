@@ -22,9 +22,7 @@ impl StartWorkflowInput {
 
 /// A builder for [`StartWorkflowInput`](crate::operation::start_workflow::StartWorkflowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartWorkflowInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl StartWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`StartWorkflowInput`](crate::operation::start_workflow::StartWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_workflow::StartWorkflowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_workflow::StartWorkflowInput {
-            id: self.id,
-        })
+    ) -> ::std::result::Result<crate::operation::start_workflow::StartWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_workflow::StartWorkflowInput { id: self.id })
     }
 }

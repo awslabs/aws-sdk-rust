@@ -29,16 +29,14 @@ impl ListStreamingSessionBackupsInput {
 }
 impl ListStreamingSessionBackupsInput {
     /// Creates a new builder-style object to manufacture [`ListStreamingSessionBackupsInput`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsInput).
-    pub fn builder() -> crate::operation::list_streaming_session_backups::builders::ListStreamingSessionBackupsInputBuilder{
+    pub fn builder() -> crate::operation::list_streaming_session_backups::builders::ListStreamingSessionBackupsInputBuilder {
         crate::operation::list_streaming_session_backups::builders::ListStreamingSessionBackupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStreamingSessionBackupsInput`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamingSessionBackupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) owned_by: ::std::option::Option<::std::string::String>,
@@ -94,12 +92,10 @@ impl ListStreamingSessionBackupsInputBuilder {
         crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsInput {
-                next_token: self.next_token,
-                owned_by: self.owned_by,
-                studio_id: self.studio_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsInput {
+            next_token: self.next_token,
+            owned_by: self.owned_by,
+            studio_id: self.studio_id,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl DeleteHubContentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_hub_content::DeleteHubContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hub_content::DeleteHubContentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hub_content::DeleteHubContentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_hub_content();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteHubContentFluentBuilder {
         }
     }
     /// Access the DeleteHubContent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_hub_content::builders::DeleteHubContentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_hub_content::builders::DeleteHubContentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DeleteHubContentFluentBuilder {
             crate::operation::delete_hub_content::DeleteHubContent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hub_content::DeleteHubContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hub_content::DeleteHubContentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DeleteHubContentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DeleteHubContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_hub_content::DeleteHubContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hub_content::DeleteHubContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hub_content::DeleteHubContentError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DeleteHubContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_hub_content::DeleteHubContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hub_content::DeleteHubContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hub_content::DeleteHubContentError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl DeleteHubContentFluentBuilder {
             crate::operation::delete_hub_content::DeleteHubContent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_hub_content::DeleteHubContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hub_content::DeleteHubContentError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +128,7 @@ impl DeleteHubContentFluentBuilder {
         self
     }
     /// <p>The type of content that you want to delete from a hub.</p>
-    pub fn set_hub_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HubContentType>,
-    ) -> Self {
+    pub fn set_hub_content_type(mut self, input: ::std::option::Option<crate::types::HubContentType>) -> Self {
         self.inner = self.inner.set_hub_content_type(input);
         self
     }
@@ -156,18 +137,12 @@ impl DeleteHubContentFluentBuilder {
         self.inner.get_hub_content_type()
     }
     /// <p>The name of the content that you want to delete from a hub.</p>
-    pub fn hub_content_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hub_content_name(input.into());
         self
     }
     /// <p>The name of the content that you want to delete from a hub.</p>
-    pub fn set_hub_content_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hub_content_name(input);
         self
     }
@@ -176,18 +151,12 @@ impl DeleteHubContentFluentBuilder {
         self.inner.get_hub_content_name()
     }
     /// <p>The version of the content that you want to delete from a hub.</p>
-    pub fn hub_content_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hub_content_version(input.into());
         self
     }
     /// <p>The version of the content that you want to delete from a hub.</p>
-    pub fn set_hub_content_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hub_content_version(input);
         self
     }

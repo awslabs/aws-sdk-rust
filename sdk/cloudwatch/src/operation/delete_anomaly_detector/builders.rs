@@ -37,10 +37,7 @@ impl DeleteAnomalyDetectorFluentBuilder {
         }
     }
     /// Access the DeleteAnomalyDetector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteAnomalyDetectorFluentBuilder {
             crate::operation::delete_anomaly_detector::DeleteAnomalyDetector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteAnomalyDetectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteAnomalyDetectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteAnomalyDetectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteAnomalyDetectorFluentBuilder {
             crate::operation::delete_anomaly_detector::DeleteAnomalyDetector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError>,
     > {
         self.customize_middleware().await
     }
@@ -169,18 +155,13 @@ impl DeleteAnomalyDetectorFluentBuilder {
     }
     /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
         self.inner = self.inner.set_dimensions(input);
         self
     }
     /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
         self.inner.get_dimensions()
     }
     /// <p>The statistic associated with the anomaly detection model to delete.</p>
@@ -210,10 +191,7 @@ impl DeleteAnomalyDetectorFluentBuilder {
     /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
-    pub fn single_metric_anomaly_detector(
-        mut self,
-        input: crate::types::SingleMetricAnomalyDetector,
-    ) -> Self {
+    pub fn single_metric_anomaly_detector(mut self, input: crate::types::SingleMetricAnomalyDetector) -> Self {
         self.inner = self.inner.single_metric_anomaly_detector(input);
         self
     }
@@ -227,10 +205,7 @@ impl DeleteAnomalyDetectorFluentBuilder {
     /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
-    pub fn set_single_metric_anomaly_detector(
-        mut self,
-        input: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
-    ) -> Self {
+    pub fn set_single_metric_anomaly_detector(mut self, input: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>) -> Self {
         self.inner = self.inner.set_single_metric_anomaly_detector(input);
         self
     }
@@ -244,9 +219,7 @@ impl DeleteAnomalyDetectorFluentBuilder {
     /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
-    pub fn get_single_metric_anomaly_detector(
-        &self,
-    ) -> &::std::option::Option<crate::types::SingleMetricAnomalyDetector> {
+    pub fn get_single_metric_anomaly_detector(&self) -> &::std::option::Option<crate::types::SingleMetricAnomalyDetector> {
         self.inner.get_single_metric_anomaly_detector()
     }
     /// <p>The metric math anomaly detector to be deleted.</p>
@@ -259,10 +232,7 @@ impl DeleteAnomalyDetectorFluentBuilder {
     /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
     /// </ul>
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
-    pub fn metric_math_anomaly_detector(
-        mut self,
-        input: crate::types::MetricMathAnomalyDetector,
-    ) -> Self {
+    pub fn metric_math_anomaly_detector(mut self, input: crate::types::MetricMathAnomalyDetector) -> Self {
         self.inner = self.inner.metric_math_anomaly_detector(input);
         self
     }
@@ -276,10 +246,7 @@ impl DeleteAnomalyDetectorFluentBuilder {
     /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
     /// </ul>
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
-    pub fn set_metric_math_anomaly_detector(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricMathAnomalyDetector>,
-    ) -> Self {
+    pub fn set_metric_math_anomaly_detector(mut self, input: ::std::option::Option<crate::types::MetricMathAnomalyDetector>) -> Self {
         self.inner = self.inner.set_metric_math_anomaly_detector(input);
         self
     }
@@ -293,9 +260,7 @@ impl DeleteAnomalyDetectorFluentBuilder {
     /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
     /// </ul>
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
-    pub fn get_metric_math_anomaly_detector(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricMathAnomalyDetector> {
+    pub fn get_metric_math_anomaly_detector(&self) -> &::std::option::Option<crate::types::MetricMathAnomalyDetector> {
         self.inner.get_metric_math_anomaly_detector()
     }
 }

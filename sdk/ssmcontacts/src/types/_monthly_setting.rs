@@ -30,9 +30,7 @@ impl MonthlySetting {
 
 /// A builder for [`MonthlySetting`](crate::types::MonthlySetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonthlySettingBuilder {
     pub(crate) day_of_month: ::std::option::Option<i32>,
     pub(crate) hand_off_time: ::std::option::Option<crate::types::HandOffTime>,
@@ -58,10 +56,7 @@ impl MonthlySettingBuilder {
         self
     }
     /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
-    pub fn set_hand_off_time(
-        mut self,
-        input: ::std::option::Option<crate::types::HandOffTime>,
-    ) -> Self {
+    pub fn set_hand_off_time(mut self, input: ::std::option::Option<crate::types::HandOffTime>) -> Self {
         self.hand_off_time = input;
         self
     }

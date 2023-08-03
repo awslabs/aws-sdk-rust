@@ -43,9 +43,7 @@ impl ListLaunchesInput {
 
 /// A builder for [`ListLaunchesInput`](crate::operation::list_launches::ListLaunchesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLaunchesInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -110,12 +108,7 @@ impl ListLaunchesInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListLaunchesInput`](crate::operation::list_launches::ListLaunchesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_launches::ListLaunchesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_launches::ListLaunchesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_launches::ListLaunchesInput {
             project: self.project,
             max_results: self.max_results,

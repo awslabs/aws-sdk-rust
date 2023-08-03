@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::create_workflow::CreateWorkflowOutput::creation_time): <p>The time at which the migration workflow was created.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_workflow::CreateWorkflowOutput::tags): <p>The tags to add on a migration workflow.</p>
     /// - On failure, responds with [`SdkError<CreateWorkflowError>`](crate::operation::create_workflow::CreateWorkflowError)
-    pub fn create_workflow(
-        &self,
-    ) -> crate::operation::create_workflow::builders::CreateWorkflowFluentBuilder {
-        crate::operation::create_workflow::builders::CreateWorkflowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_workflow(&self) -> crate::operation::create_workflow::builders::CreateWorkflowFluentBuilder {
+        crate::operation::create_workflow::builders::CreateWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

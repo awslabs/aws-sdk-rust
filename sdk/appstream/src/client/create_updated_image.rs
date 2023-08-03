@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`image(Option<Image>)`](crate::operation::create_updated_image::CreateUpdatedImageOutput::image): <p>Describes an image.</p>
     ///   - [`can_update_image(bool)`](crate::operation::create_updated_image::CreateUpdatedImageOutput::can_update_image): <p>Indicates whether a new image can be created.</p>
     /// - On failure, responds with [`SdkError<CreateUpdatedImageError>`](crate::operation::create_updated_image::CreateUpdatedImageError)
-    pub fn create_updated_image(
-        &self,
-    ) -> crate::operation::create_updated_image::builders::CreateUpdatedImageFluentBuilder {
-        crate::operation::create_updated_image::builders::CreateUpdatedImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_updated_image(&self) -> crate::operation::create_updated_image::builders::CreateUpdatedImageFluentBuilder {
+        crate::operation::create_updated_image::builders::CreateUpdatedImageFluentBuilder::new(self.handle.clone())
     }
 }

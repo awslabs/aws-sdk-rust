@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListObjectAttributesOutput {
 }
 impl ListObjectAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ListObjectAttributesOutput`](crate::operation::list_object_attributes::ListObjectAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_object_attributes::builders::ListObjectAttributesOutputBuilder {
+    pub fn builder() -> crate::operation::list_object_attributes::builders::ListObjectAttributesOutputBuilder {
         crate::operation::list_object_attributes::builders::ListObjectAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListObjectAttributesOutput`](crate::operation::list_object_attributes::ListObjectAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObjectAttributesOutputBuilder {
-    pub(crate) attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListObjectAttributesOutputBuilder {
         self
     }
     /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
         &self.attributes
     }
     /// <p>The pagination token.</p>

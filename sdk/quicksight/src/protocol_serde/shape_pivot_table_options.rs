@@ -36,42 +36,26 @@ pub fn ser_pivot_table_options(
     if let Some(var_11) = &input.row_field_names_style {
         #[allow(unused_mut)]
         let mut object_12 = object.key("RowFieldNamesStyle").start_object();
-        crate::protocol_serde::shape_table_cell_style::ser_table_cell_style(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_table_cell_style::ser_table_cell_style(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.row_alternate_color_options {
         #[allow(unused_mut)]
         let mut object_14 = object.key("RowAlternateColorOptions").start_object();
-        crate::protocol_serde::shape_row_alternate_color_options::ser_row_alternate_color_options(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_row_alternate_color_options::ser_row_alternate_color_options(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.collapsed_row_dimensions_visibility {
-        object
-            .key("CollapsedRowDimensionsVisibility")
-            .string(var_15.as_str());
+        object.key("CollapsedRowDimensionsVisibility").string(var_15.as_str());
     }
     Ok(())
 }
 
 pub(crate) fn de_pivot_table_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::PivotTableOptions>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::PivotTableOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -81,114 +65,73 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "MetricPlacement" => {
-                                builder = builder.set_metric_placement(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::PivotTableMetricPlacement::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "MetricPlacement" => {
+                            builder = builder.set_metric_placement(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PivotTableMetricPlacement::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "SingleMetricVisibility" => {
-                                builder = builder.set_single_metric_visibility(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::Visibility::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "ColumnNamesVisibility" => {
-                                builder = builder.set_column_names_visibility(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::Visibility::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "ToggleButtonsVisibility" => {
-                                builder = builder.set_toggle_buttons_visibility(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::Visibility::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "ColumnHeaderStyle" => {
-                                builder = builder.set_column_header_style(
-                                    crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?
-                                );
-                            }
-                            "RowHeaderStyle" => {
-                                builder = builder.set_row_header_style(
-                                    crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?
-                                );
-                            }
-                            "CellStyle" => {
-                                builder = builder.set_cell_style(
-                                    crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?
-                                );
-                            }
-                            "RowFieldNamesStyle" => {
-                                builder = builder.set_row_field_names_style(
-                                    crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?
-                                );
-                            }
-                            "RowAlternateColorOptions" => {
-                                builder = builder.set_row_alternate_color_options(
-                                    crate::protocol_serde::shape_row_alternate_color_options::de_row_alternate_color_options(tokens)?
-                                );
-                            }
-                            "CollapsedRowDimensionsVisibility" => {
-                                builder = builder.set_collapsed_row_dimensions_visibility(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::Visibility::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "SingleMetricVisibility" => {
+                            builder = builder.set_single_metric_visibility(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ColumnNamesVisibility" => {
+                            builder = builder.set_column_names_visibility(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ToggleButtonsVisibility" => {
+                            builder = builder.set_toggle_buttons_visibility(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ColumnHeaderStyle" => {
+                            builder = builder.set_column_header_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                        }
+                        "RowHeaderStyle" => {
+                            builder = builder.set_row_header_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                        }
+                        "CellStyle" => {
+                            builder = builder.set_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                        }
+                        "RowFieldNamesStyle" => {
+                            builder = builder.set_row_field_names_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                        }
+                        "RowAlternateColorOptions" => {
+                            builder = builder.set_row_alternate_color_options(
+                                crate::protocol_serde::shape_row_alternate_color_options::de_row_alternate_color_options(tokens)?,
+                            );
+                        }
+                        "CollapsedRowDimensionsVisibility" => {
+                            builder = builder.set_collapsed_row_dimensions_visibility(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

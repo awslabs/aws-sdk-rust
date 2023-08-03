@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::describe_refresh_schedule::DescribeRefreshScheduleOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_refresh_schedule::DescribeRefreshScheduleOutput::arn): <p>The Amazon Resource Name (ARN) for the refresh schedule.</p>
     /// - On failure, responds with [`SdkError<DescribeRefreshScheduleError>`](crate::operation::describe_refresh_schedule::DescribeRefreshScheduleError)
-    pub fn describe_refresh_schedule(
-        &self,
-    ) -> crate::operation::describe_refresh_schedule::builders::DescribeRefreshScheduleFluentBuilder
-    {
+    pub fn describe_refresh_schedule(&self) -> crate::operation::describe_refresh_schedule::builders::DescribeRefreshScheduleFluentBuilder {
         crate::operation::describe_refresh_schedule::builders::DescribeRefreshScheduleFluentBuilder::new(self.handle.clone())
     }
 }

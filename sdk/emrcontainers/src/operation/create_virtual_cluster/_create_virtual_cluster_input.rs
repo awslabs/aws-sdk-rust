@@ -14,9 +14,7 @@ pub struct CreateVirtualClusterInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the virtual cluster.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateVirtualClusterInput {
     /// <p>The specified name of the virtual cluster.</p>
@@ -32,34 +30,25 @@ impl CreateVirtualClusterInput {
         self.client_token.as_deref()
     }
     /// <p>The tags assigned to the virtual cluster.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateVirtualClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualClusterInput`](crate::operation::create_virtual_cluster::CreateVirtualClusterInput).
-    pub fn builder(
-    ) -> crate::operation::create_virtual_cluster::builders::CreateVirtualClusterInputBuilder {
+    pub fn builder() -> crate::operation::create_virtual_cluster::builders::CreateVirtualClusterInputBuilder {
         crate::operation::create_virtual_cluster::builders::CreateVirtualClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVirtualClusterInput`](crate::operation::create_virtual_cluster::CreateVirtualClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVirtualClusterInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) container_provider: ::std::option::Option<crate::types::ContainerProvider>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateVirtualClusterInputBuilder {
     /// <p>The specified name of the virtual cluster.</p>
@@ -82,17 +71,12 @@ impl CreateVirtualClusterInputBuilder {
         self
     }
     /// <p>The container provider of the virtual cluster.</p>
-    pub fn set_container_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerProvider>,
-    ) -> Self {
+    pub fn set_container_provider(mut self, input: ::std::option::Option<crate::types::ContainerProvider>) -> Self {
         self.container_provider = input;
         self
     }
     /// <p>The container provider of the virtual cluster.</p>
-    pub fn get_container_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerProvider> {
+    pub fn get_container_provider(&self) -> &::std::option::Option<crate::types::ContainerProvider> {
         &self.container_provider
     }
     /// <p>The client token of the virtual cluster.</p>
@@ -114,48 +98,31 @@ impl CreateVirtualClusterInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the virtual cluster.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the virtual cluster.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags assigned to the virtual cluster.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVirtualClusterInput`](crate::operation::create_virtual_cluster::CreateVirtualClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_virtual_cluster::CreateVirtualClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_virtual_cluster::CreateVirtualClusterInput {
-                name: self.name,
-                container_provider: self.container_provider,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_virtual_cluster::CreateVirtualClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_virtual_cluster::CreateVirtualClusterInput {
+            name: self.name,
+            container_provider: self.container_provider,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

@@ -238,18 +238,12 @@ impl SnapshotTaskDetailBuilder {
         &self.status
     }
     /// <p>A detailed status message for the import snapshot task.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed status message for the import snapshot task.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -277,10 +271,7 @@ impl SnapshotTaskDetailBuilder {
         self
     }
     /// <p>The Amazon S3 bucket for the disk image.</p>
-    pub fn set_user_bucket(
-        mut self,
-        input: ::std::option::Option<crate::types::UserBucketDetails>,
-    ) -> Self {
+    pub fn set_user_bucket(mut self, input: ::std::option::Option<crate::types::UserBucketDetails>) -> Self {
         self.user_bucket = input;
         self
     }

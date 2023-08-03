@@ -15,40 +15,30 @@ impl GetResolverRuleAssociationInput {
 }
 impl GetResolverRuleAssociationInput {
     /// Creates a new builder-style object to manufacture [`GetResolverRuleAssociationInput`](crate::operation::get_resolver_rule_association::GetResolverRuleAssociationInput).
-    pub fn builder() -> crate::operation::get_resolver_rule_association::builders::GetResolverRuleAssociationInputBuilder{
+    pub fn builder() -> crate::operation::get_resolver_rule_association::builders::GetResolverRuleAssociationInputBuilder {
         crate::operation::get_resolver_rule_association::builders::GetResolverRuleAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResolverRuleAssociationInput`](crate::operation::get_resolver_rule_association::GetResolverRuleAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResolverRuleAssociationInputBuilder {
     pub(crate) resolver_rule_association_id: ::std::option::Option<::std::string::String>,
 }
 impl GetResolverRuleAssociationInputBuilder {
     /// <p>The ID of the Resolver rule association that you want to get information about.</p>
-    pub fn resolver_rule_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_rule_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_rule_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Resolver rule association that you want to get information about.</p>
-    pub fn set_resolver_rule_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_rule_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolver_rule_association_id = input;
         self
     }
     /// <p>The ID of the Resolver rule association that you want to get information about.</p>
-    pub fn get_resolver_rule_association_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_resolver_rule_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolver_rule_association_id
     }
     /// Consumes the builder and constructs a [`GetResolverRuleAssociationInput`](crate::operation::get_resolver_rule_association::GetResolverRuleAssociationInput).
@@ -58,10 +48,8 @@ impl GetResolverRuleAssociationInputBuilder {
         crate::operation::get_resolver_rule_association::GetResolverRuleAssociationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resolver_rule_association::GetResolverRuleAssociationInput {
-                resolver_rule_association_id: self.resolver_rule_association_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_resolver_rule_association::GetResolverRuleAssociationInput {
+            resolver_rule_association_id: self.resolver_rule_association_id,
+        })
     }
 }

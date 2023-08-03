@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeAdjustmentTypesOutput {
 }
 impl DescribeAdjustmentTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAdjustmentTypesOutput`](crate::operation::describe_adjustment_types::DescribeAdjustmentTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_adjustment_types::builders::DescribeAdjustmentTypesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_adjustment_types::builders::DescribeAdjustmentTypesOutputBuilder {
         crate::operation::describe_adjustment_types::builders::DescribeAdjustmentTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAdjustmentTypesOutput`](crate::operation::describe_adjustment_types::DescribeAdjustmentTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAdjustmentTypesOutputBuilder {
-    pub(crate) adjustment_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdjustmentType>>,
+    pub(crate) adjustment_types: ::std::option::Option<::std::vec::Vec<crate::types::AdjustmentType>>,
     _request_id: Option<String>,
 }
 impl DescribeAdjustmentTypesOutputBuilder {
@@ -51,17 +46,12 @@ impl DescribeAdjustmentTypesOutputBuilder {
         self
     }
     /// <p>The policy adjustment types.</p>
-    pub fn set_adjustment_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdjustmentType>>,
-    ) -> Self {
+    pub fn set_adjustment_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdjustmentType>>) -> Self {
         self.adjustment_types = input;
         self
     }
     /// <p>The policy adjustment types.</p>
-    pub fn get_adjustment_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdjustmentType>> {
+    pub fn get_adjustment_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdjustmentType>> {
         &self.adjustment_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +64,7 @@ impl DescribeAdjustmentTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAdjustmentTypesOutput`](crate::operation::describe_adjustment_types::DescribeAdjustmentTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_adjustment_types::DescribeAdjustmentTypesOutput {
+    pub fn build(self) -> crate::operation::describe_adjustment_types::DescribeAdjustmentTypesOutput {
         crate::operation::describe_adjustment_types::DescribeAdjustmentTypesOutput {
             adjustment_types: self.adjustment_types,
             _request_id: self._request_id,

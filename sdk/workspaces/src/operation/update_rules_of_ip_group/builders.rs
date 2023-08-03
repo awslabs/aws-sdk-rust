@@ -37,10 +37,7 @@ impl UpdateRulesOfIpGroupFluentBuilder {
         }
     }
     /// Access the UpdateRulesOfIpGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateRulesOfIpGroupFluentBuilder {
             crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateRulesOfIpGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateRulesOfIpGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateRulesOfIpGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateRulesOfIpGroupFluentBuilder {
             crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +133,12 @@ impl UpdateRulesOfIpGroupFluentBuilder {
         self
     }
     /// <p>One or more rules.</p>
-    pub fn set_user_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,
-    ) -> Self {
+    pub fn set_user_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>) -> Self {
         self.inner = self.inner.set_user_rules(input);
         self
     }
     /// <p>One or more rules.</p>
-    pub fn get_user_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
+    pub fn get_user_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
         self.inner.get_user_rules()
     }
 }

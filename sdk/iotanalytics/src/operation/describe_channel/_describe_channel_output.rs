@@ -35,9 +35,7 @@ impl DescribeChannelOutput {
 
 /// A builder for [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeChannelOutputBuilder {
     pub(crate) channel: ::std::option::Option<crate::types::Channel>,
     pub(crate) statistics: ::std::option::Option<crate::types::ChannelStatistics>,
@@ -64,10 +62,7 @@ impl DescribeChannelOutputBuilder {
         self
     }
     /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelStatistics>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::ChannelStatistics>) -> Self {
         self.statistics = input;
         self
     }

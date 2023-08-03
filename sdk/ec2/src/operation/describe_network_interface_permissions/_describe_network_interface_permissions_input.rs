@@ -6,8 +6,7 @@
 pub struct DescribeNetworkInterfacePermissionsInput {
     /// <p>The network interface permission IDs.</p>
     #[doc(hidden)]
-    pub network_interface_permission_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub network_interface_permission_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li> <p> <code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p> </li>
@@ -27,9 +26,7 @@ pub struct DescribeNetworkInterfacePermissionsInput {
 }
 impl DescribeNetworkInterfacePermissionsInput {
     /// <p>The network interface permission IDs.</p>
-    pub fn network_interface_permission_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn network_interface_permission_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.network_interface_permission_ids.as_deref()
     }
     /// <p>One or more filters.</p>
@@ -54,19 +51,16 @@ impl DescribeNetworkInterfacePermissionsInput {
 }
 impl DescribeNetworkInterfacePermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInterfacePermissionsInput`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput).
-    pub fn builder() -> crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsInputBuilder {
         crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkInterfacePermissionsInput`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfacePermissionsInputBuilder {
-    pub(crate) network_interface_permission_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) network_interface_permission_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -77,27 +71,19 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
     /// To override the contents of this collection use [`set_network_interface_permission_ids`](Self::set_network_interface_permission_ids).
     ///
     /// <p>The network interface permission IDs.</p>
-    pub fn network_interface_permission_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_permission_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_interface_permission_ids.unwrap_or_default();
         v.push(input.into());
         self.network_interface_permission_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The network interface permission IDs.</p>
-    pub fn set_network_interface_permission_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_interface_permission_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_interface_permission_ids = input;
         self
     }
     /// <p>The network interface permission IDs.</p>
-    pub fn get_network_interface_permission_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_interface_permission_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_interface_permission_ids
     }
     /// Appends an item to `filters`.
@@ -126,10 +112,7 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
     /// <li> <p> <code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p> </li>
     /// <li> <p> <code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -173,18 +156,19 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInterfacePermissionsInput`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput {
-                network_interface_permission_ids: self.network_interface_permission_ids
-                ,
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                network_interface_permission_ids: self.network_interface_permission_ids,
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

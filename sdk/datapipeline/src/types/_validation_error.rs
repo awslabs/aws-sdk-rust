@@ -30,9 +30,7 @@ impl ValidationError {
 
 /// A builder for [`ValidationError`](crate::types::ValidationError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationErrorBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +62,7 @@ impl ValidationErrorBuilder {
         self
     }
     /// <p>A description of the validation error.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.errors = input;
         self
     }

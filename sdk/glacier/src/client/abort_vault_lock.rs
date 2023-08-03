@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`vault_name(impl ::std::convert::Into<String>)`](crate::operation::abort_vault_lock::builders::AbortVaultLockFluentBuilder::vault_name) / [`set_vault_name(Option<String>)`](crate::operation::abort_vault_lock::builders::AbortVaultLockFluentBuilder::set_vault_name): <p>The name of the vault.</p>
     /// - On success, responds with [`AbortVaultLockOutput`](crate::operation::abort_vault_lock::AbortVaultLockOutput)
     /// - On failure, responds with [`SdkError<AbortVaultLockError>`](crate::operation::abort_vault_lock::AbortVaultLockError)
-    pub fn abort_vault_lock(
-        &self,
-    ) -> crate::operation::abort_vault_lock::builders::AbortVaultLockFluentBuilder {
-        crate::operation::abort_vault_lock::builders::AbortVaultLockFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn abort_vault_lock(&self) -> crate::operation::abort_vault_lock::builders::AbortVaultLockFluentBuilder {
+        crate::operation::abort_vault_lock::builders::AbortVaultLockFluentBuilder::new(self.handle.clone())
     }
 }

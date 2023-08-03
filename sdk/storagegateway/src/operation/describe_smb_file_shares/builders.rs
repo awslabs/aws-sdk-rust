@@ -37,10 +37,7 @@ impl DescribeSMBFileSharesFluentBuilder {
         }
     }
     /// Access the DescribeSMBFileShares as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_smb_file_shares::builders::DescribeSmbFileSharesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_smb_file_shares::builders::DescribeSmbFileSharesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeSMBFileSharesFluentBuilder {
             crate::operation::describe_smb_file_shares::DescribeSMBFileShares,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_smb_file_shares::DescribeSMBFileSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_smb_file_shares::DescribeSMBFileSharesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeSMBFileSharesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeSMBFileSharesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_smb_file_shares::DescribeSmbFileSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_smb_file_shares::DescribeSMBFileSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_smb_file_shares::DescribeSMBFileSharesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeSMBFileSharesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_smb_file_shares::DescribeSmbFileSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_smb_file_shares::DescribeSMBFileSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_smb_file_shares::DescribeSMBFileSharesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeSMBFileSharesFluentBuilder {
             crate::operation::describe_smb_file_shares::DescribeSMBFileShares,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_smb_file_shares::DescribeSMBFileSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_smb_file_shares::DescribeSMBFileSharesError>,
     > {
         self.customize_middleware().await
     }
@@ -128,25 +114,17 @@ impl DescribeSMBFileSharesFluentBuilder {
     /// To override the contents of this collection use [`set_file_share_arn_list`](Self::set_file_share_arn_list).
     ///
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
-    pub fn file_share_arn_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_share_arn_list(input.into());
         self
     }
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
-    pub fn set_file_share_arn_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_file_share_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_file_share_arn_list(input);
         self
     }
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
-    pub fn get_file_share_arn_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_file_share_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_file_share_arn_list()
     }
 }

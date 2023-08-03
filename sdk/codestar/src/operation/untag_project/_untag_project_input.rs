@@ -29,9 +29,7 @@ impl UntagProjectInput {
 
 /// A builder for [`UntagProjectInput`](crate::operation::untag_project::UntagProjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagProjectInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,10 +61,7 @@ impl UntagProjectInputBuilder {
         self
     }
     /// <p>The tags to remove from the project.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
@@ -75,12 +70,7 @@ impl UntagProjectInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UntagProjectInput`](crate::operation::untag_project::UntagProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::untag_project::UntagProjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_project::UntagProjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_project::UntagProjectInput {
             id: self.id,
             tags: self.tags,

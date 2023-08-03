@@ -4,9 +4,7 @@ pub fn ser_start_restore_job_input(
     input: &crate::operation::start_restore_job::StartRestoreJobInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.copy_source_tags_to_restored_resource {
-        object
-            .key("CopySourceTagsToRestoredResource")
-            .boolean(*var_1);
+        object.key("CopySourceTagsToRestoredResource").boolean(*var_1);
     }
     if let Some(var_2) = &input.iam_role_arn {
         object.key("IamRoleArn").string(var_2.as_str());

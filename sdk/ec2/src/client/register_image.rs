@@ -23,11 +23,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterImageOutput`](crate::operation::register_image::RegisterImageOutput) with field(s):
     ///   - [`image_id(Option<String>)`](crate::operation::register_image::RegisterImageOutput::image_id): <p>The ID of the newly registered AMI.</p>
     /// - On failure, responds with [`SdkError<RegisterImageError>`](crate::operation::register_image::RegisterImageError)
-    pub fn register_image(
-        &self,
-    ) -> crate::operation::register_image::builders::RegisterImageFluentBuilder {
-        crate::operation::register_image::builders::RegisterImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_image(&self) -> crate::operation::register_image::builders::RegisterImageFluentBuilder {
+        crate::operation::register_image::builders::RegisterImageFluentBuilder::new(self.handle.clone())
     }
 }

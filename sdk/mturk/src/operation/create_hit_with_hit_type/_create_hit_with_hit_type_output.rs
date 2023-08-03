@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateHitWithHitTypeOutput {
 }
 impl CreateHitWithHitTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateHitWithHitTypeOutput`](crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::create_hit_with_hit_type::builders::CreateHitWithHitTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_hit_with_hit_type::builders::CreateHitWithHitTypeOutputBuilder {
         crate::operation::create_hit_with_hit_type::builders::CreateHitWithHitTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateHitWithHitTypeOutput`](crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHitWithHitTypeOutputBuilder {
     pub(crate) hit: ::std::option::Option<crate::types::Hit>,
     _request_id: Option<String>,

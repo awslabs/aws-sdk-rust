@@ -37,9 +37,7 @@ impl GetGameConfigurationFluentBuilder {
         }
     }
     /// Access the GetGameConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_game_configuration::builders::GetGameConfigurationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_game_configuration::builders::GetGameConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetGameConfigurationFluentBuilder {
             crate::operation::get_game_configuration::GetGameConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_game_configuration::GetGameConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_game_configuration::GetGameConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetGameConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetGameConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_game_configuration::GetGameConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_game_configuration::GetGameConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_game_configuration::GetGameConfigurationError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetGameConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_game_configuration::GetGameConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_game_configuration::GetGameConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_game_configuration::GetGameConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetGameConfigurationFluentBuilder {
             crate::operation::get_game_configuration::GetGameConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_game_configuration::GetGameConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_game_configuration::GetGameConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +133,7 @@ impl GetGameConfigurationFluentBuilder {
         self
     }
     /// <p>The list of sections to return.</p>
-    pub fn set_sections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sections(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_sections(input);
         self
     }

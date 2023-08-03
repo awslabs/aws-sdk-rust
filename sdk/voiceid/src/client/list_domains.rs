@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`domain_summaries(Option<Vec<DomainSummary>>)`](crate::operation::list_domains::ListDomainsOutput::domain_summaries): <p>A list containing details about each domain in the Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domains::ListDomainsOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
-    pub fn list_domains(
-        &self,
-    ) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
+    pub fn list_domains(&self) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
         crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
     }
 }

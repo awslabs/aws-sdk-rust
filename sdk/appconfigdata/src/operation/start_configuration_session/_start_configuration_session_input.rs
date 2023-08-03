@@ -36,16 +36,14 @@ impl StartConfigurationSessionInput {
 }
 impl StartConfigurationSessionInput {
     /// Creates a new builder-style object to manufacture [`StartConfigurationSessionInput`](crate::operation::start_configuration_session::StartConfigurationSessionInput).
-    pub fn builder() -> crate::operation::start_configuration_session::builders::StartConfigurationSessionInputBuilder{
+    pub fn builder() -> crate::operation::start_configuration_session::builders::StartConfigurationSessionInputBuilder {
         crate::operation::start_configuration_session::builders::StartConfigurationSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartConfigurationSessionInput`](crate::operation::start_configuration_session::StartConfigurationSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartConfigurationSessionInputBuilder {
     pub(crate) application_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct StartConfigurationSessionInputBuilder {
 }
 impl StartConfigurationSessionInputBuilder {
     /// <p>The application ID or the application name.</p>
-    pub fn application_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID or the application name.</p>
-    pub fn set_application_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_identifier = input;
         self
     }
@@ -74,18 +66,12 @@ impl StartConfigurationSessionInputBuilder {
         &self.application_identifier
     }
     /// <p>The environment ID or the environment name.</p>
-    pub fn environment_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The environment ID or the environment name.</p>
-    pub fn set_environment_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_identifier = input;
         self
     }
@@ -94,25 +80,17 @@ impl StartConfigurationSessionInputBuilder {
         &self.environment_identifier
     }
     /// <p>The configuration profile ID or the configuration profile name.</p>
-    pub fn configuration_profile_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration profile ID or the configuration profile name.</p>
-    pub fn set_configuration_profile_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_profile_identifier = input;
         self
     }
     /// <p>The configuration profile ID or the configuration profile name.</p>
-    pub fn get_configuration_profile_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_configuration_profile_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_profile_identifier
     }
     /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
@@ -121,10 +99,7 @@ impl StartConfigurationSessionInputBuilder {
         self
     }
     /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
-    pub fn set_required_minimum_poll_interval_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_required_minimum_poll_interval_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.required_minimum_poll_interval_in_seconds = input;
         self
     }
@@ -139,14 +114,11 @@ impl StartConfigurationSessionInputBuilder {
         crate::operation::start_configuration_session::StartConfigurationSessionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_configuration_session::StartConfigurationSessionInput {
-                application_identifier: self.application_identifier,
-                environment_identifier: self.environment_identifier,
-                configuration_profile_identifier: self.configuration_profile_identifier,
-                required_minimum_poll_interval_in_seconds: self
-                    .required_minimum_poll_interval_in_seconds,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_configuration_session::StartConfigurationSessionInput {
+            application_identifier: self.application_identifier,
+            environment_identifier: self.environment_identifier,
+            configuration_profile_identifier: self.configuration_profile_identifier,
+            required_minimum_poll_interval_in_seconds: self.required_minimum_poll_interval_in_seconds,
+        })
     }
 }

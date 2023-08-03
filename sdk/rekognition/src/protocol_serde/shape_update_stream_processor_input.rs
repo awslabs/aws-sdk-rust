@@ -18,10 +18,7 @@ pub fn ser_update_stream_processor_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_region_of_interest::ser_region_of_interest(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_region_of_interest::ser_region_of_interest(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

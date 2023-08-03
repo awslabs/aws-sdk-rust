@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`processed_findings(Option<Vec<AwsSecurityFindingIdentifier>>)`](crate::operation::batch_update_findings::BatchUpdateFindingsOutput::processed_findings): <p>The list of findings that were updated successfully.</p>
     ///   - [`unprocessed_findings(Option<Vec<BatchUpdateFindingsUnprocessedFinding>>)`](crate::operation::batch_update_findings::BatchUpdateFindingsOutput::unprocessed_findings): <p>The list of findings that were not updated.</p>
     /// - On failure, responds with [`SdkError<BatchUpdateFindingsError>`](crate::operation::batch_update_findings::BatchUpdateFindingsError)
-    pub fn batch_update_findings(
-        &self,
-    ) -> crate::operation::batch_update_findings::builders::BatchUpdateFindingsFluentBuilder {
-        crate::operation::batch_update_findings::builders::BatchUpdateFindingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_update_findings(&self) -> crate::operation::batch_update_findings::builders::BatchUpdateFindingsFluentBuilder {
+        crate::operation::batch_update_findings::builders::BatchUpdateFindingsFluentBuilder::new(self.handle.clone())
     }
 }

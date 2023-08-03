@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListKxEnvironmentsOutput {
 }
 impl ListKxEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListKxEnvironmentsOutput`](crate::operation::list_kx_environments::ListKxEnvironmentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_kx_environments::builders::ListKxEnvironmentsOutputBuilder {
+    pub fn builder() -> crate::operation::list_kx_environments::builders::ListKxEnvironmentsOutputBuilder {
         crate::operation::list_kx_environments::builders::ListKxEnvironmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListKxEnvironmentsOutput`](crate::operation::list_kx_environments::ListKxEnvironmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKxEnvironmentsOutputBuilder {
     pub(crate) environments: ::std::option::Option<::std::vec::Vec<crate::types::KxEnvironment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListKxEnvironmentsOutputBuilder {
         self
     }
     /// <p>A list of environments in an account.</p>
-    pub fn set_environments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KxEnvironment>>,
-    ) -> Self {
+    pub fn set_environments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxEnvironment>>) -> Self {
         self.environments = input;
         self
     }
     /// <p>A list of environments in an account.</p>
-    pub fn get_environments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KxEnvironment>> {
+    pub fn get_environments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxEnvironment>> {
         &self.environments
     }
     /// <p>A token that indicates where a results page should begin.</p>

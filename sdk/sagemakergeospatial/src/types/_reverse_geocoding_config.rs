@@ -30,27 +30,19 @@ impl ReverseGeocodingConfig {
 
 /// A builder for [`ReverseGeocodingConfig`](crate::types::ReverseGeocodingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReverseGeocodingConfigBuilder {
     pub(crate) y_attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) x_attribute_name: ::std::option::Option<::std::string::String>,
 }
 impl ReverseGeocodingConfigBuilder {
     /// <p>The field name for the data that describes y-axis coordinate, eg. latitude of a point.</p>
-    pub fn y_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn y_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.y_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field name for the data that describes y-axis coordinate, eg. latitude of a point.</p>
-    pub fn set_y_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_y_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.y_attribute_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl ReverseGeocodingConfigBuilder {
         &self.y_attribute_name
     }
     /// <p>The field name for the data that describes x-axis coordinate, eg. longitude of a point.</p>
-    pub fn x_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn x_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.x_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field name for the data that describes x-axis coordinate, eg. longitude of a point.</p>
-    pub fn set_x_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_x_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.x_attribute_name = input;
         self
     }

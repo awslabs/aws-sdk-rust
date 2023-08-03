@@ -30,9 +30,7 @@ impl OrderByElement {
 
 /// A builder for [`OrderByElement`](crate::types::OrderByElement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrderByElementBuilder {
     pub(crate) field_name: ::std::option::Option<::std::string::String>,
     pub(crate) sort_order: ::std::option::Option<crate::types::OrderString>,
@@ -58,10 +56,7 @@ impl OrderByElementBuilder {
         self
     }
     /// <p>Ordering direction.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::OrderString>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::OrderString>) -> Self {
         self.sort_order = input;
         self
     }

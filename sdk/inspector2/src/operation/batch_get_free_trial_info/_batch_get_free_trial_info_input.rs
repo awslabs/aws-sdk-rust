@@ -15,18 +15,14 @@ impl BatchGetFreeTrialInfoInput {
 }
 impl BatchGetFreeTrialInfoInput {
     /// Creates a new builder-style object to manufacture [`BatchGetFreeTrialInfoInput`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoInputBuilder {
         crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetFreeTrialInfoInput`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetFreeTrialInfoInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -43,30 +39,21 @@ impl BatchGetFreeTrialInfoInputBuilder {
         self
     }
     /// <p>The account IDs to get free trial status for.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The account IDs to get free trial status for.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`BatchGetFreeTrialInfoInput`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput {
-                account_ids: self.account_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput {
+            account_ids: self.account_ids,
+        })
     }
 }

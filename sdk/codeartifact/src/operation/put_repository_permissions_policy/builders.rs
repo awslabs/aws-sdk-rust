@@ -5,16 +5,16 @@ pub use crate::operation::put_repository_permissions_policy::_put_repository_per
 
 impl PutRepositoryPermissionsPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_repository_permissions_policy();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl PutRepositoryPermissionsPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRepositoryPermissionsPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_repository_permissions_policy::builders::PutRepositoryPermissionsPolicyInputBuilder,
+    inner: crate::operation::put_repository_permissions_policy::builders::PutRepositoryPermissionsPolicyInputBuilder,
 }
 impl PutRepositoryPermissionsPolicyFluentBuilder {
     /// Creates a new `PutRepositoryPermissionsPolicy`.
@@ -38,15 +38,20 @@ impl PutRepositoryPermissionsPolicyFluentBuilder {
         }
     }
     /// Access the PutRepositoryPermissionsPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_repository_permissions_policy::builders::PutRepositoryPermissionsPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_repository_permissions_policy::builders::PutRepositoryPermissionsPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicy,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl PutRepositoryPermissionsPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl PutRepositoryPermissionsPolicyFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicy,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyError>,
+    > {
         self.customize_middleware().await
     }
     /// <p> The name of the domain containing the repository to set the resource policy on. </p>
@@ -138,18 +153,12 @@ impl PutRepositoryPermissionsPolicyFluentBuilder {
         self.inner.get_repository()
     }
     /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
-    pub fn policy_revision(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_revision(input.into());
         self
     }
     /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
-    pub fn set_policy_revision(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_revision(input);
         self
     }
@@ -158,18 +167,12 @@ impl PutRepositoryPermissionsPolicyFluentBuilder {
         self.inner.get_policy_revision()
     }
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_document(input.into());
         self
     }
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
     }

@@ -39,10 +39,7 @@ pub fn ser_update_backend_auth_o_auth_config(
     if let Some(var_12) = &input.social_provider_settings {
         #[allow(unused_mut)]
         let mut object_13 = object.key("socialProviderSettings").start_object();
-        crate::protocol_serde::shape_social_provider_settings::ser_social_provider_settings(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_social_provider_settings::ser_social_provider_settings(&mut object_13, var_12)?;
         object_13.finish();
     }
     Ok(())

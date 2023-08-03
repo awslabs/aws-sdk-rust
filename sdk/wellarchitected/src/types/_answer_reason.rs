@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AnswerReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for AnswerReason {
             "NONE" => AnswerReason::None,
             "OTHER" => AnswerReason::Other,
             "OUT_OF_SCOPE" => AnswerReason::OutOfScope,
-            other => {
-                AnswerReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AnswerReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl AnswerReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ARCHITECTURE_CONSTRAINTS",
-            "BUSINESS_PRIORITIES",
-            "NONE",
-            "OTHER",
-            "OUT_OF_SCOPE",
-        ]
+        &["ARCHITECTURE_CONSTRAINTS", "BUSINESS_PRIORITIES", "NONE", "OTHER", "OUT_OF_SCOPE"]
     }
 }
 impl ::std::convert::AsRef<str> for AnswerReason {

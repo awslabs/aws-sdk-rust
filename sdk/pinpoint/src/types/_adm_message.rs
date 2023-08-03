@@ -20,9 +20,7 @@ pub struct AdmMessage {
     pub consolidation_key: ::std::option::Option<::std::string::String>,
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
     #[doc(hidden)]
-    pub data: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub data: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The amount of time, in seconds, that ADM should store the message if the recipient's device is offline. Amazon Pinpoint specifies this value in the expiresAfter parameter when it sends the notification message to ADM.</p>
     #[doc(hidden)]
     pub expires_after: ::std::option::Option<::std::string::String>,
@@ -52,9 +50,7 @@ pub struct AdmMessage {
     pub sound: ::std::option::Option<::std::string::String>,
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
     #[doc(hidden)]
-    pub substitutions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The title to display above the notification message on the recipient's device.</p>
     #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
@@ -81,11 +77,7 @@ impl AdmMessage {
         self.consolidation_key.as_deref()
     }
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn data(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn data(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.data.as_ref()
     }
     /// <p>The amount of time, in seconds, that ADM should store the message if the recipient's device is offline. Amazon Pinpoint specifies this value in the expiresAfter parameter when it sends the notification message to ADM.</p>
@@ -127,9 +119,7 @@ impl AdmMessage {
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
     pub fn substitutions(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.substitutions.as_ref()
     }
     /// <p>The title to display above the notification message on the recipient's device.</p>
@@ -150,16 +140,12 @@ impl AdmMessage {
 
 /// A builder for [`AdmMessage`](crate::types::AdmMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdmMessageBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) consolidation_key: ::std::option::Option<::std::string::String>,
-    pub(crate) data: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) data: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) expires_after: ::std::option::Option<::std::string::String>,
     pub(crate) icon_reference: ::std::option::Option<::std::string::String>,
     pub(crate) image_icon_url: ::std::option::Option<::std::string::String>,
@@ -169,9 +155,7 @@ pub struct AdmMessageBuilder {
     pub(crate) silent_push: ::std::option::Option<bool>,
     pub(crate) small_image_icon_url: ::std::option::Option<::std::string::String>,
     pub(crate) sound: ::std::option::Option<::std::string::String>,
-    pub(crate) substitutions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
 }
@@ -220,18 +204,12 @@ impl AdmMessageBuilder {
         &self.body
     }
     /// <p>An arbitrary string that indicates that multiple messages are logically the same and that Amazon Device Messaging (ADM) can drop previously enqueued messages in favor of this message.</p>
-    pub fn consolidation_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consolidation_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consolidation_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An arbitrary string that indicates that multiple messages are logically the same and that Amazon Device Messaging (ADM) can drop previously enqueued messages in favor of this message.</p>
-    pub fn set_consolidation_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_consolidation_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.consolidation_key = input;
         self
     }
@@ -244,47 +222,28 @@ impl AdmMessageBuilder {
     /// To override the contents of this collection use [`set_data`](Self::set_data).
     ///
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn data(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.data.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.data = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.data = input;
         self
     }
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn get_data(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.data
     }
     /// <p>The amount of time, in seconds, that ADM should store the message if the recipient's device is offline. Amazon Pinpoint specifies this value in the expiresAfter parameter when it sends the notification message to ADM.</p>
-    pub fn expires_after(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expires_after(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expires_after = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The amount of time, in seconds, that ADM should store the message if the recipient's device is offline. Amazon Pinpoint specifies this value in the expiresAfter parameter when it sends the notification message to ADM.</p>
-    pub fn set_expires_after(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expires_after(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expires_after = input;
         self
     }
@@ -293,18 +252,12 @@ impl AdmMessageBuilder {
         &self.expires_after
     }
     /// <p>The icon image name of the asset saved in your app.</p>
-    pub fn icon_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn icon_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.icon_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The icon image name of the asset saved in your app.</p>
-    pub fn set_icon_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_icon_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.icon_reference = input;
         self
     }
@@ -313,18 +266,12 @@ impl AdmMessageBuilder {
         &self.icon_reference
     }
     /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
-    pub fn image_icon_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_icon_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_icon_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
-    pub fn set_image_icon_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_icon_url = input;
         self
     }
@@ -389,18 +336,12 @@ impl AdmMessageBuilder {
         &self.silent_push
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
-    pub fn small_image_icon_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn small_image_icon_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.small_image_icon_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
-    pub fn set_small_image_icon_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_small_image_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.small_image_icon_url = input;
         self
     }
@@ -427,11 +368,7 @@ impl AdmMessageBuilder {
     /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
     ///
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
-    pub fn substitutions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn substitutions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.substitutions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.substitutions = ::std::option::Option::Some(hash_map);
@@ -440,12 +377,7 @@ impl AdmMessageBuilder {
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
     pub fn set_substitutions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.substitutions = input;
         self
@@ -453,9 +385,7 @@ impl AdmMessageBuilder {
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
     pub fn get_substitutions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.substitutions
     }
     /// <p>The title to display above the notification message on the recipient's device.</p>

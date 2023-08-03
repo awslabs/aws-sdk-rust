@@ -61,18 +61,14 @@ impl CreateLocationFsxOntapInput {
 }
 impl CreateLocationFsxOntapInput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxOntapInput`](crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapInput).
-    pub fn builder(
-    ) -> crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapInputBuilder {
         crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationFsxOntapInput`](crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationFsxOntapInputBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::FsxProtocol>,
     pub(crate) security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -106,10 +102,7 @@ impl CreateLocationFsxOntapInputBuilder {
     /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
-    pub fn security_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
         v.push(input.into());
         self.security_group_arns = ::std::option::Option::Some(v);
@@ -122,10 +115,7 @@ impl CreateLocationFsxOntapInputBuilder {
     /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
-    pub fn set_security_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_arns = input;
         self
     }
@@ -136,24 +126,16 @@ impl CreateLocationFsxOntapInputBuilder {
     /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
-    pub fn get_security_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_arns
     }
     /// <p>Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or from.</p>
-    pub fn storage_virtual_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_virtual_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_virtual_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or from.</p>
-    pub fn set_storage_virtual_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_virtual_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_virtual_machine_arn = input;
         self
     }
@@ -196,10 +178,7 @@ impl CreateLocationFsxOntapInputBuilder {
         self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.tags = input;
         self
     }
@@ -214,14 +193,12 @@ impl CreateLocationFsxOntapInputBuilder {
         crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapInput {
-                protocol: self.protocol,
-                security_group_arns: self.security_group_arns,
-                storage_virtual_machine_arn: self.storage_virtual_machine_arn,
-                subdirectory: self.subdirectory,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapInput {
+            protocol: self.protocol,
+            security_group_arns: self.security_group_arns,
+            storage_virtual_machine_arn: self.storage_virtual_machine_arn,
+            subdirectory: self.subdirectory,
+            tags: self.tags,
+        })
     }
 }

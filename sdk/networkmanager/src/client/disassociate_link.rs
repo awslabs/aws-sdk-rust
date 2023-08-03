@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociateLinkOutput`](crate::operation::disassociate_link::DisassociateLinkOutput) with field(s):
     ///   - [`link_association(Option<LinkAssociation>)`](crate::operation::disassociate_link::DisassociateLinkOutput::link_association): <p>Information about the link association.</p>
     /// - On failure, responds with [`SdkError<DisassociateLinkError>`](crate::operation::disassociate_link::DisassociateLinkError)
-    pub fn disassociate_link(
-        &self,
-    ) -> crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder {
-        crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_link(&self) -> crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder {
+        crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder::new(self.handle.clone())
     }
 }

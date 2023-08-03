@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateFirewallConfigOutput`](crate::operation::update_firewall_config::UpdateFirewallConfigOutput) with field(s):
     ///   - [`firewall_config(Option<FirewallConfig>)`](crate::operation::update_firewall_config::UpdateFirewallConfigOutput::firewall_config): <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC. </p>
     /// - On failure, responds with [`SdkError<UpdateFirewallConfigError>`](crate::operation::update_firewall_config::UpdateFirewallConfigError)
-    pub fn update_firewall_config(
-        &self,
-    ) -> crate::operation::update_firewall_config::builders::UpdateFirewallConfigFluentBuilder {
-        crate::operation::update_firewall_config::builders::UpdateFirewallConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_firewall_config(&self) -> crate::operation::update_firewall_config::builders::UpdateFirewallConfigFluentBuilder {
+        crate::operation::update_firewall_config::builders::UpdateFirewallConfigFluentBuilder::new(self.handle.clone())
     }
 }

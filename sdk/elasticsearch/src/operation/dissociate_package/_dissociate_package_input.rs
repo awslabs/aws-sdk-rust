@@ -23,17 +23,14 @@ impl DissociatePackageInput {
 }
 impl DissociatePackageInput {
     /// Creates a new builder-style object to manufacture [`DissociatePackageInput`](crate::operation::dissociate_package::DissociatePackageInput).
-    pub fn builder() -> crate::operation::dissociate_package::builders::DissociatePackageInputBuilder
-    {
+    pub fn builder() -> crate::operation::dissociate_package::builders::DissociatePackageInputBuilder {
         crate::operation::dissociate_package::builders::DissociatePackageInputBuilder::default()
     }
 }
 
 /// A builder for [`DissociatePackageInput`](crate::operation::dissociate_package::DissociatePackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DissociatePackageInputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,10 @@ impl DissociatePackageInputBuilder {
     /// Consumes the builder and constructs a [`DissociatePackageInput`](crate::operation::dissociate_package::DissociatePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::dissociate_package::DissociatePackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::dissociate_package::DissociatePackageInput {
-                package_id: self.package_id,
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::dissociate_package::DissociatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::dissociate_package::DissociatePackageInput {
+            package_id: self.package_id,
+            domain_name: self.domain_name,
+        })
     }
 }

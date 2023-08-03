@@ -26,8 +26,7 @@ impl GetAppliedSchemaVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAppliedSchemaVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionInputBuilder,
+    inner: crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionInputBuilder,
 }
 impl GetAppliedSchemaVersionFluentBuilder {
     /// Creates a new `GetAppliedSchemaVersion`.
@@ -38,10 +37,7 @@ impl GetAppliedSchemaVersionFluentBuilder {
         }
     }
     /// Access the GetAppliedSchemaVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetAppliedSchemaVersionFluentBuilder {
             crate::operation::get_applied_schema_version::GetAppliedSchemaVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_applied_schema_version::GetAppliedSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_applied_schema_version::GetAppliedSchemaVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetAppliedSchemaVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetAppliedSchemaVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_applied_schema_version::GetAppliedSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_applied_schema_version::GetAppliedSchemaVersionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetAppliedSchemaVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_applied_schema_version::GetAppliedSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_applied_schema_version::GetAppliedSchemaVersionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetAppliedSchemaVersionFluentBuilder {
             crate::operation::get_applied_schema_version::GetAppliedSchemaVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_applied_schema_version::GetAppliedSchemaVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_applied_schema_version::GetAppliedSchemaVersionError>,
     > {
         self.customize_middleware().await
     }

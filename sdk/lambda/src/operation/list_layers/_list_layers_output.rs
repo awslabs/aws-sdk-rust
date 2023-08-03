@@ -35,9 +35,7 @@ impl ListLayersOutput {
 
 /// A builder for [`ListLayersOutput`](crate::operation::list_layers::ListLayersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLayersOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) layers: ::std::option::Option<::std::vec::Vec<crate::types::LayersListItem>>,
@@ -70,17 +68,12 @@ impl ListLayersOutputBuilder {
         self
     }
     /// <p>A list of function layers.</p>
-    pub fn set_layers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LayersListItem>>,
-    ) -> Self {
+    pub fn set_layers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LayersListItem>>) -> Self {
         self.layers = input;
         self
     }
     /// <p>A list of function layers.</p>
-    pub fn get_layers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LayersListItem>> {
+    pub fn get_layers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LayersListItem>> {
         &self.layers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

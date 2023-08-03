@@ -10,10 +10,7 @@ impl DeleteLicenseInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_license::DeleteLicenseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_license::DeleteLicenseError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_license::DeleteLicenseError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_license();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteLicenseFluentBuilder {
         }
     }
     /// Access the DeleteLicense as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_license::builders::DeleteLicenseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_license::builders::DeleteLicenseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DeleteLicenseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl DeleteLicenseFluentBuilder {
         self.inner.get_license_arn()
     }
     /// <p>Current version of the license.</p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_version(input.into());
         self
     }
     /// <p>Current version of the license.</p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_version(input);
         self
     }

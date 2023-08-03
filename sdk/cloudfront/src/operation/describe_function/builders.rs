@@ -10,10 +10,7 @@ impl DescribeFunctionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_function::DescribeFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_function::DescribeFunctionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_function::DescribeFunctionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_function();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeFunctionFluentBuilder {
         }
     }
     /// Access the DescribeFunction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_function::builders::DescribeFunctionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_function::builders::DescribeFunctionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeFunctionFluentBuilder {
             crate::operation::describe_function::DescribeFunction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_function::DescribeFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_function::DescribeFunctionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeFunctionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeFunctionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_function::DescribeFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_function::DescribeFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_function::DescribeFunctionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeFunctionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_function::DescribeFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_function::DescribeFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_function::DescribeFunctionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DescribeFunctionFluentBuilder {
             crate::operation::describe_function::DescribeFunction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_function::DescribeFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_function::DescribeFunctionError>,
     > {
         self.customize_middleware().await
     }

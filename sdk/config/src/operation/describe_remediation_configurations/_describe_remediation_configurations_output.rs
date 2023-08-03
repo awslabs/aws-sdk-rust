@@ -5,15 +5,12 @@
 pub struct DescribeRemediationConfigurationsOutput {
     /// <p>Returns a remediation configuration object.</p>
     #[doc(hidden)]
-    pub remediation_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
+    pub remediation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeRemediationConfigurationsOutput {
     /// <p>Returns a remediation configuration object.</p>
-    pub fn remediation_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RemediationConfiguration]> {
+    pub fn remediation_configurations(&self) -> ::std::option::Option<&[crate::types::RemediationConfiguration]> {
         self.remediation_configurations.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeRemediationConfigurationsOutp
 }
 impl DescribeRemediationConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRemediationConfigurationsOutput`](crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput).
-    pub fn builder() -> crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsOutputBuilder {
         crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRemediationConfigurationsOutput`](crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRemediationConfigurationsOutputBuilder {
-    pub(crate) remediation_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
+    pub(crate) remediation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeRemediationConfigurationsOutputBuilder {
@@ -45,27 +39,19 @@ impl DescribeRemediationConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_remediation_configurations`](Self::set_remediation_configurations).
     ///
     /// <p>Returns a remediation configuration object.</p>
-    pub fn remediation_configurations(
-        mut self,
-        input: crate::types::RemediationConfiguration,
-    ) -> Self {
+    pub fn remediation_configurations(mut self, input: crate::types::RemediationConfiguration) -> Self {
         let mut v = self.remediation_configurations.unwrap_or_default();
         v.push(input);
         self.remediation_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns a remediation configuration object.</p>
-    pub fn set_remediation_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
-    ) -> Self {
+    pub fn set_remediation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>) -> Self {
         self.remediation_configurations = input;
         self
     }
     /// <p>Returns a remediation configuration object.</p>
-    pub fn get_remediation_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>> {
+    pub fn get_remediation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>> {
         &self.remediation_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -78,10 +64,9 @@ impl DescribeRemediationConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRemediationConfigurationsOutput`](crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput).
-    pub fn build(self) -> crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput{
+    pub fn build(self) -> crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput {
         crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput {
-            remediation_configurations: self.remediation_configurations
-            ,
+            remediation_configurations: self.remediation_configurations,
             _request_id: self._request_id,
         }
     }

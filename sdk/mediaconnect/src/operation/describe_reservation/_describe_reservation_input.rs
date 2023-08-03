@@ -15,34 +15,25 @@ impl DescribeReservationInput {
 }
 impl DescribeReservationInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_reservation::builders::DescribeReservationInputBuilder {
+    pub fn builder() -> crate::operation::describe_reservation::builders::DescribeReservationInputBuilder {
         crate::operation::describe_reservation::builders::DescribeReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservationInputBuilder {
     pub(crate) reservation_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReservationInputBuilder {
     /// The Amazon Resource Name (ARN) of the reservation.
-    pub fn reservation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the reservation.
-    pub fn set_reservation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reservation_arn = input;
         self
     }
@@ -53,14 +44,10 @@ impl DescribeReservationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_reservation::DescribeReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_reservation::DescribeReservationInput {
-                reservation_arn: self.reservation_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_reservation::DescribeReservationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_reservation::DescribeReservationInput {
+            reservation_arn: self.reservation_arn,
+        })
     }
 }

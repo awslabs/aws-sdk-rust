@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`outcomes(Option<Vec<Outcome>>)`](crate::operation::get_outcomes::GetOutcomesOutput::outcomes): <p>The outcomes. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_outcomes::GetOutcomesOutput::next_token): <p>The next page token for subsequent requests.</p>
     /// - On failure, responds with [`SdkError<GetOutcomesError>`](crate::operation::get_outcomes::GetOutcomesError)
-    pub fn get_outcomes(
-        &self,
-    ) -> crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder {
+    pub fn get_outcomes(&self) -> crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder {
         crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::new(self.handle.clone())
     }
 }

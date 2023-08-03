@@ -23,9 +23,7 @@ impl SubjectAlternativeNameMatchers {
 
 /// A builder for [`SubjectAlternativeNameMatchers`](crate::types::SubjectAlternativeNameMatchers).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubjectAlternativeNameMatchersBuilder {
     pub(crate) exact: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl SubjectAlternativeNameMatchersBuilder {
         self
     }
     /// <p>The values sent must match the specified values exactly.</p>
-    pub fn set_exact(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_exact(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.exact = input;
         self
     }

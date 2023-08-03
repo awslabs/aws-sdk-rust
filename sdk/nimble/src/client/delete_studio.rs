@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteStudioOutput`](crate::operation::delete_studio::DeleteStudioOutput) with field(s):
     ///   - [`studio(Option<Studio>)`](crate::operation::delete_studio::DeleteStudioOutput::studio): <p>Information about a studio.</p>
     /// - On failure, responds with [`SdkError<DeleteStudioError>`](crate::operation::delete_studio::DeleteStudioError)
-    pub fn delete_studio(
-        &self,
-    ) -> crate::operation::delete_studio::builders::DeleteStudioFluentBuilder {
-        crate::operation::delete_studio::builders::DeleteStudioFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_studio(&self) -> crate::operation::delete_studio::builders::DeleteStudioFluentBuilder {
+        crate::operation::delete_studio::builders::DeleteStudioFluentBuilder::new(self.handle.clone())
     }
 }

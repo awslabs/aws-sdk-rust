@@ -16,17 +16,14 @@ impl AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails {
 }
 impl AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails {
     /// Creates a new builder-style object to manufacture [`AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails`](crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetailsBuilder {
         crate::types::builders::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails`](crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetailsBuilder {
     pub(crate) immunity_time: ::std::option::Option<i64>,
 }

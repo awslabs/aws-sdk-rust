@@ -45,7 +45,7 @@ impl CreateReusableDelegationSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateReusableDelegationSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_reusable_delegation_set::builders::CreateReusableDelegationSetInputBuilder,
+    inner: crate::operation::create_reusable_delegation_set::builders::CreateReusableDelegationSetInputBuilder,
 }
 impl CreateReusableDelegationSetFluentBuilder {
     /// Creates a new `CreateReusableDelegationSet`.
@@ -56,7 +56,7 @@ impl CreateReusableDelegationSetFluentBuilder {
         }
     }
     /// Access the CreateReusableDelegationSet as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_reusable_delegation_set::builders::CreateReusableDelegationSetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_reusable_delegation_set::builders::CreateReusableDelegationSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -68,9 +68,7 @@ impl CreateReusableDelegationSetFluentBuilder {
             crate::operation::create_reusable_delegation_set::CreateReusableDelegationSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -80,10 +78,7 @@ impl CreateReusableDelegationSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -92,9 +87,7 @@ impl CreateReusableDelegationSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError>,
     > {
         let op = self
             .inner
@@ -117,9 +110,7 @@ impl CreateReusableDelegationSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError>,
     > {
         self.send_middleware().await
     }
@@ -133,25 +124,17 @@ impl CreateReusableDelegationSetFluentBuilder {
             crate::operation::create_reusable_delegation_set::CreateReusableDelegationSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique string that identifies the request, and that allows you to retry failed <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string, for example a date/time stamp.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.caller_reference(input.into());
         self
     }
     /// <p>A unique string that identifies the request, and that allows you to retry failed <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string, for example a date/time stamp.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_caller_reference(input);
         self
     }
@@ -160,18 +143,12 @@ impl CreateReusableDelegationSetFluentBuilder {
         self.inner.get_caller_reference()
     }
     /// <p>If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted zone.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
         self
     }
     /// <p>If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted zone.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }

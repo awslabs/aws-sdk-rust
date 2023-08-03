@@ -37,10 +37,7 @@ impl ListAppInstanceAdminsFluentBuilder {
         }
     }
     /// Access the ListAppInstanceAdmins as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListAppInstanceAdminsFluentBuilder {
             crate::operation::list_app_instance_admins::ListAppInstanceAdmins,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_admins::ListAppInstanceAdminsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListAppInstanceAdminsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListAppInstanceAdminsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_admins::ListAppInstanceAdminsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListAppInstanceAdminsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_admins::ListAppInstanceAdminsError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +105,23 @@ impl ListAppInstanceAdminsFluentBuilder {
             crate::operation::list_app_instance_admins::ListAppInstanceAdmins,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_admins::ListAppInstanceAdminsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_app_instance_admins::paginator::ListAppInstanceAdminsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_app_instance_admins::paginator::ListAppInstanceAdminsPaginator {
-        crate::operation::list_app_instance_admins::paginator::ListAppInstanceAdminsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_app_instance_admins::paginator::ListAppInstanceAdminsPaginator {
+        crate::operation::list_app_instance_admins::paginator::ListAppInstanceAdminsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }

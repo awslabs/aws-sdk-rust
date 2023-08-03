@@ -2,8 +2,7 @@
 pub fn ser_create_streaming_session_stream_headers(
     input: &crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.client_token {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_create_streaming_session_stream_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "client_token",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("X-Amz-Client-Token", header_value);
@@ -25,8 +21,7 @@ pub fn ser_create_streaming_session_stream_headers(
 
 pub fn ser_create_streaming_session_stream_input(
     input: &crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_streaming_session_stream_input::ser_create_streaming_session_stream_input(&mut object, input)?;
@@ -44,129 +39,136 @@ pub fn de_create_streaming_session_stream_http_error(
     crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ConflictException" => crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::ConflictException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InternalServerErrorException" => crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::InternalServerErrorException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalServerErrorException" => {
+            crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output).map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ServiceQuotaExceededException" => crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::ServiceQuotaExceededException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceQuotaExceededException" => {
+            crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ThrottlingException" => crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::ThrottlingException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::ValidationException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::generic(generic)
+        _ => crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::generic(generic),
     })
 }
 
@@ -182,49 +184,46 @@ pub fn de_create_streaming_session_stream_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_streaming_session_stream::de_create_streaming_session_stream(_response_body, output).map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_create_streaming_session_stream::de_create_streaming_session_stream(_response_body, output)
+            .map_err(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
-pub(crate) fn de_create_streaming_session_stream(value: &[u8], mut builder: crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamOutputBuilder) -> Result<crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+pub(crate) fn de_create_streaming_session_stream(
+    value: &[u8],
+    mut builder: crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamOutputBuilder,
+) -> Result<
+    crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "stream" => {
-                        builder = builder.set_stream(
-                            crate::protocol_serde::shape_streaming_session_stream::de_streaming_session_stream(tokens)?
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "stream" => {
+                    builder = builder.set_stream(crate::protocol_serde::shape_streaming_session_stream::de_streaming_session_stream(
+                        tokens,
+                    )?);
                 }
-            }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

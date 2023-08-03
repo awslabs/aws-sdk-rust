@@ -10,10 +10,7 @@ impl StartZonalShiftInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_zonal_shift::StartZonalShiftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_zonal_shift::StartZonalShiftError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_zonal_shift::StartZonalShiftError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_zonal_shift();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl StartZonalShiftFluentBuilder {
         }
     }
     /// Access the StartZonalShift as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_zonal_shift::builders::StartZonalShiftInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_zonal_shift::builders::StartZonalShiftInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl StartZonalShiftFluentBuilder {
             crate::operation::start_zonal_shift::StartZonalShift,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_zonal_shift::StartZonalShiftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_zonal_shift::StartZonalShiftError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl StartZonalShiftFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl StartZonalShiftFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_zonal_shift::StartZonalShiftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_zonal_shift::StartZonalShiftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_zonal_shift::StartZonalShiftError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl StartZonalShiftFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_zonal_shift::StartZonalShiftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_zonal_shift::StartZonalShiftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_zonal_shift::StartZonalShiftError>,
     > {
         self.send_middleware().await
     }
@@ -119,27 +105,19 @@ impl StartZonalShiftFluentBuilder {
             crate::operation::start_zonal_shift::StartZonalShift,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_zonal_shift::StartZonalShiftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_zonal_shift::StartZonalShiftError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }

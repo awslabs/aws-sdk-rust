@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateWorkspaceAuthenticationOutput`](crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationOutput) with field(s):
     ///   - [`authentication(Option<AuthenticationDescription>)`](crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationOutput::authentication): <p>A structure that describes the user authentication for this workspace after the update is made.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkspaceAuthenticationError>`](crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationError)
-    pub fn update_workspace_authentication(&self) -> crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationFluentBuilder{
+    pub fn update_workspace_authentication(
+        &self,
+    ) -> crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationFluentBuilder {
         crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationFluentBuilder::new(self.handle.clone())
     }
 }

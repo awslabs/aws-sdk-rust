@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetContainerRecipePolicyOutput {
 }
 impl GetContainerRecipePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerRecipePolicyOutput`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput).
-    pub fn builder() -> crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyOutputBuilder{
+    pub fn builder() -> crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyOutputBuilder {
         crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContainerRecipePolicyOutput`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerRecipePolicyOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
@@ -82,9 +80,7 @@ impl GetContainerRecipePolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetContainerRecipePolicyOutput`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput {
+    pub fn build(self) -> crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput {
         crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput {
             request_id: self.request_id,
             policy: self.policy,

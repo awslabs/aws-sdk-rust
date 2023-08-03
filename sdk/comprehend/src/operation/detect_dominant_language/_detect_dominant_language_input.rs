@@ -22,9 +22,7 @@ impl ::std::fmt::Debug for DetectDominantLanguageInput {
 }
 impl DetectDominantLanguageInput {
     /// Creates a new builder-style object to manufacture [`DetectDominantLanguageInput`](crate::operation::detect_dominant_language::DetectDominantLanguageInput).
-    pub fn builder(
-    ) -> crate::operation::detect_dominant_language::builders::DetectDominantLanguageInputBuilder
-    {
+    pub fn builder() -> crate::operation::detect_dominant_language::builders::DetectDominantLanguageInputBuilder {
         crate::operation::detect_dominant_language::builders::DetectDominantLanguageInputBuilder::default()
     }
 }
@@ -53,15 +51,9 @@ impl DetectDominantLanguageInputBuilder {
     /// Consumes the builder and constructs a [`DetectDominantLanguageInput`](crate::operation::detect_dominant_language::DetectDominantLanguageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_dominant_language::DetectDominantLanguageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detect_dominant_language::DetectDominantLanguageInput {
-                text: self.text,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::detect_dominant_language::DetectDominantLanguageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::detect_dominant_language::DetectDominantLanguageInput { text: self.text })
     }
 }
 impl ::std::fmt::Debug for DetectDominantLanguageInputBuilder {

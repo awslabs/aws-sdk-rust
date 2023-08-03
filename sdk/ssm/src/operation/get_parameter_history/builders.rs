@@ -39,9 +39,7 @@ impl GetParameterHistoryFluentBuilder {
         }
     }
     /// Access the GetParameterHistory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_parameter_history::builders::GetParameterHistoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_parameter_history::builders::GetParameterHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl GetParameterHistoryFluentBuilder {
             crate::operation::get_parameter_history::GetParameterHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_parameter_history::GetParameterHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_parameter_history::GetParameterHistoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl GetParameterHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl GetParameterHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_parameter_history::GetParameterHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_parameter_history::GetParameterHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_parameter_history::GetParameterHistoryError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl GetParameterHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_parameter_history::GetParameterHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_parameter_history::GetParameterHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_parameter_history::GetParameterHistoryError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +107,15 @@ impl GetParameterHistoryFluentBuilder {
             crate::operation::get_parameter_history::GetParameterHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_parameter_history::GetParameterHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_parameter_history::GetParameterHistoryError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_parameter_history::paginator::GetParameterHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_parameter_history::paginator::GetParameterHistoryPaginator {
-        crate::operation::get_parameter_history::paginator::GetParameterHistoryPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_parameter_history::paginator::GetParameterHistoryPaginator {
+        crate::operation::get_parameter_history::paginator::GetParameterHistoryPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the parameter for which you want to review history.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

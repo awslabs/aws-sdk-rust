@@ -46,18 +46,14 @@ impl DescribeProductAsAdminInput {
 }
 impl DescribeProductAsAdminInput {
     /// Creates a new builder-style object to manufacture [`DescribeProductAsAdminInput`](crate::operation::describe_product_as_admin::DescribeProductAsAdminInput).
-    pub fn builder(
-    ) -> crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminInputBuilder {
         crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProductAsAdminInput`](crate::operation::describe_product_as_admin::DescribeProductAsAdminInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProductAsAdminInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -70,10 +66,7 @@ impl DescribeProductAsAdminInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -82,10 +75,7 @@ impl DescribeProductAsAdminInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -127,19 +117,13 @@ impl DescribeProductAsAdminInputBuilder {
     }
     /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
     /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
-    pub fn source_portfolio_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_portfolio_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
     /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
-    pub fn set_source_portfolio_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_portfolio_id = input;
         self
     }
@@ -155,13 +139,11 @@ impl DescribeProductAsAdminInputBuilder {
         crate::operation::describe_product_as_admin::DescribeProductAsAdminInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_product_as_admin::DescribeProductAsAdminInput {
-                accept_language: self.accept_language,
-                id: self.id,
-                name: self.name,
-                source_portfolio_id: self.source_portfolio_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_product_as_admin::DescribeProductAsAdminInput {
+            accept_language: self.accept_language,
+            id: self.id,
+            name: self.name,
+            source_portfolio_id: self.source_portfolio_id,
+        })
     }
 }

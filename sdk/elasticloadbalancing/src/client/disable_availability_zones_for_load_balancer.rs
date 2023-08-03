@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerOutput) with field(s):
     ///   - [`availability_zones(Option<Vec<String>>)`](crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerOutput::availability_zones): <p>The remaining Availability Zones for the load balancer.</p>
     /// - On failure, responds with [`SdkError<DisableAvailabilityZonesForLoadBalancerError>`](crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerError)
-    pub fn disable_availability_zones_for_load_balancer(&self) -> crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerFluentBuilder{
-        crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerFluentBuilder::new(self.handle.clone())
+    pub fn disable_availability_zones_for_load_balancer(
+        &self,
+    ) -> crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerFluentBuilder {
+        crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -37,10 +37,7 @@ impl UpdateCapacityProviderFluentBuilder {
         }
     }
     /// Access the UpdateCapacityProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_capacity_provider::builders::UpdateCapacityProviderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_capacity_provider::builders::UpdateCapacityProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateCapacityProviderFluentBuilder {
             crate::operation::update_capacity_provider::UpdateCapacityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_capacity_provider::UpdateCapacityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_capacity_provider::UpdateCapacityProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateCapacityProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateCapacityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_capacity_provider::UpdateCapacityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_capacity_provider::UpdateCapacityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_capacity_provider::UpdateCapacityProviderError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateCapacityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_capacity_provider::UpdateCapacityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_capacity_provider::UpdateCapacityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_capacity_provider::UpdateCapacityProviderError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateCapacityProviderFluentBuilder {
             crate::operation::update_capacity_provider::UpdateCapacityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_capacity_provider::UpdateCapacityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_capacity_provider::UpdateCapacityProviderError>,
     > {
         self.customize_middleware().await
     }
@@ -138,25 +124,17 @@ impl UpdateCapacityProviderFluentBuilder {
         self.inner.get_name()
     }
     /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
-    pub fn auto_scaling_group_provider(
-        mut self,
-        input: crate::types::AutoScalingGroupProviderUpdate,
-    ) -> Self {
+    pub fn auto_scaling_group_provider(mut self, input: crate::types::AutoScalingGroupProviderUpdate) -> Self {
         self.inner = self.inner.auto_scaling_group_provider(input);
         self
     }
     /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
-    pub fn set_auto_scaling_group_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingGroupProviderUpdate>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_provider(mut self, input: ::std::option::Option<crate::types::AutoScalingGroupProviderUpdate>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_provider(input);
         self
     }
     /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
-    pub fn get_auto_scaling_group_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingGroupProviderUpdate> {
+    pub fn get_auto_scaling_group_provider(&self) -> &::std::option::Option<crate::types::AutoScalingGroupProviderUpdate> {
         self.inner.get_auto_scaling_group_provider()
     }
 }

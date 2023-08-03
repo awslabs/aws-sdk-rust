@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`integer_value(i32)`](crate::operation::accept_qualification_request::builders::AcceptQualificationRequestFluentBuilder::integer_value) / [`set_integer_value(Option<i32>)`](crate::operation::accept_qualification_request::builders::AcceptQualificationRequestFluentBuilder::set_integer_value): <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
     /// - On success, responds with [`AcceptQualificationRequestOutput`](crate::operation::accept_qualification_request::AcceptQualificationRequestOutput)
     /// - On failure, responds with [`SdkError<AcceptQualificationRequestError>`](crate::operation::accept_qualification_request::AcceptQualificationRequestError)
-    pub fn accept_qualification_request(&self) -> crate::operation::accept_qualification_request::builders::AcceptQualificationRequestFluentBuilder{
+    pub fn accept_qualification_request(&self) -> crate::operation::accept_qualification_request::builders::AcceptQualificationRequestFluentBuilder {
         crate::operation::accept_qualification_request::builders::AcceptQualificationRequestFluentBuilder::new(self.handle.clone())
     }
 }

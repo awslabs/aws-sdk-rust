@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`value(Option<String>)`](crate::operation::create_usage_plan_key::CreateUsagePlanKeyOutput::value): <p>The value of a usage plan key.</p>
     ///   - [`name(Option<String>)`](crate::operation::create_usage_plan_key::CreateUsagePlanKeyOutput::name): <p>The name of a usage plan key.</p>
     /// - On failure, responds with [`SdkError<CreateUsagePlanKeyError>`](crate::operation::create_usage_plan_key::CreateUsagePlanKeyError)
-    pub fn create_usage_plan_key(
-        &self,
-    ) -> crate::operation::create_usage_plan_key::builders::CreateUsagePlanKeyFluentBuilder {
-        crate::operation::create_usage_plan_key::builders::CreateUsagePlanKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_usage_plan_key(&self) -> crate::operation::create_usage_plan_key::builders::CreateUsagePlanKeyFluentBuilder {
+        crate::operation::create_usage_plan_key::builders::CreateUsagePlanKeyFluentBuilder::new(self.handle.clone())
     }
 }

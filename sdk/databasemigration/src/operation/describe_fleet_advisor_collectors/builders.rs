@@ -5,16 +5,16 @@ pub use crate::operation::describe_fleet_advisor_collectors::_describe_fleet_adv
 
 impl DescribeFleetAdvisorCollectorsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_fleet_advisor_collectors();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeFleetAdvisorCollectorsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorCollectorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsInputBuilder,
+    inner: crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsInputBuilder,
 }
 impl DescribeFleetAdvisorCollectorsFluentBuilder {
     /// Creates a new `DescribeFleetAdvisorCollectors`.
@@ -37,15 +37,20 @@ impl DescribeFleetAdvisorCollectorsFluentBuilder {
         }
     }
     /// Access the DescribeFleetAdvisorCollectors as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectors, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectors,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeFleetAdvisorCollectorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl DescribeFleetAdvisorCollectorsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectors, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectors,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_advisor_collectors::paginator::DescribeFleetAdvisorCollectorsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_fleet_advisor_collectors::paginator::DescribeFleetAdvisorCollectorsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_fleet_advisor_collectors::paginator::DescribeFleetAdvisorCollectorsPaginator {
         crate::operation::describe_fleet_advisor_collectors::paginator::DescribeFleetAdvisorCollectorsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -120,10 +135,7 @@ impl DescribeFleetAdvisorCollectorsFluentBuilder {
     /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

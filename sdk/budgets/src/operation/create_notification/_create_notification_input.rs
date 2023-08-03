@@ -37,17 +37,14 @@ impl CreateNotificationInput {
 }
 impl CreateNotificationInput {
     /// Creates a new builder-style object to manufacture [`CreateNotificationInput`](crate::operation::create_notification::CreateNotificationInput).
-    pub fn builder(
-    ) -> crate::operation::create_notification::builders::CreateNotificationInputBuilder {
+    pub fn builder() -> crate::operation::create_notification::builders::CreateNotificationInputBuilder {
         crate::operation::create_notification::builders::CreateNotificationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNotificationInput`](crate::operation::create_notification::CreateNotificationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNotificationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -89,10 +86,7 @@ impl CreateNotificationInputBuilder {
         self
     }
     /// <p>The notification that you want to create.</p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::Notification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
         self.notification = input;
         self
     }
@@ -112,33 +106,23 @@ impl CreateNotificationInputBuilder {
         self
     }
     /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
-    pub fn set_subscribers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
-    ) -> Self {
+    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>) -> Self {
         self.subscribers = input;
         self
     }
     /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
-    pub fn get_subscribers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
         &self.subscribers
     }
     /// Consumes the builder and constructs a [`CreateNotificationInput`](crate::operation::create_notification::CreateNotificationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_notification::CreateNotificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_notification::CreateNotificationInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                notification: self.notification,
-                subscribers: self.subscribers,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_notification::CreateNotificationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_notification::CreateNotificationInput {
+            account_id: self.account_id,
+            budget_name: self.budget_name,
+            notification: self.notification,
+            subscribers: self.subscribers,
+        })
     }
 }

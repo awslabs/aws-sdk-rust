@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateReportGroupOutput {
 }
 impl CreateReportGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateReportGroupOutput`](crate::operation::create_report_group::CreateReportGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_report_group::builders::CreateReportGroupOutputBuilder {
+    pub fn builder() -> crate::operation::create_report_group::builders::CreateReportGroupOutputBuilder {
         crate::operation::create_report_group::builders::CreateReportGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReportGroupOutput`](crate::operation::create_report_group::CreateReportGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReportGroupOutputBuilder {
     pub(crate) report_group: ::std::option::Option<crate::types::ReportGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateReportGroupOutputBuilder {
         self
     }
     /// <p> Information about the report group that was created. </p>
-    pub fn set_report_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportGroup>,
-    ) -> Self {
+    pub fn set_report_group(mut self, input: ::std::option::Option<crate::types::ReportGroup>) -> Self {
         self.report_group = input;
         self
     }

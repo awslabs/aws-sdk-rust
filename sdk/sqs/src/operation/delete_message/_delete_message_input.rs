@@ -32,9 +32,7 @@ impl DeleteMessageInput {
 
 /// A builder for [`DeleteMessageInput`](crate::operation::delete_message::DeleteMessageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMessageInputBuilder {
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) receipt_handle: ::std::option::Option<::std::string::String>,
@@ -58,18 +56,12 @@ impl DeleteMessageInputBuilder {
         &self.queue_url
     }
     /// <p>The receipt handle associated with the message to delete.</p>
-    pub fn receipt_handle(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn receipt_handle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.receipt_handle = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The receipt handle associated with the message to delete.</p>
-    pub fn set_receipt_handle(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_receipt_handle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.receipt_handle = input;
         self
     }
@@ -80,10 +72,7 @@ impl DeleteMessageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMessageInput`](crate::operation::delete_message::DeleteMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_message::DeleteMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_message::DeleteMessageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_message::DeleteMessageInput {
             queue_url: self.queue_url,
             receipt_handle: self.receipt_handle,

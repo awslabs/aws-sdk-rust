@@ -29,27 +29,19 @@ impl GetMatchingJobInput {
 
 /// A builder for [`GetMatchingJobInput`](crate::operation::get_matching_job::GetMatchingJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMatchingJobInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMatchingJobInputBuilder {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workflow.</p>
-    pub fn set_workflow_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_name = input;
         self
     }
@@ -74,10 +66,7 @@ impl GetMatchingJobInputBuilder {
     /// Consumes the builder and constructs a [`GetMatchingJobInput`](crate::operation::get_matching_job::GetMatchingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_matching_job::GetMatchingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_matching_job::GetMatchingJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_matching_job::GetMatchingJobInput {
             workflow_name: self.workflow_name,
             job_id: self.job_id,

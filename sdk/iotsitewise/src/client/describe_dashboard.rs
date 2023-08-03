@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`dashboard_creation_date(Option<DateTime>)`](crate::operation::describe_dashboard::DescribeDashboardOutput::dashboard_creation_date): <p>The date the dashboard was created, in Unix epoch time.</p>
     ///   - [`dashboard_last_update_date(Option<DateTime>)`](crate::operation::describe_dashboard::DescribeDashboardOutput::dashboard_last_update_date): <p>The date the dashboard was last updated, in Unix epoch time.</p>
     /// - On failure, responds with [`SdkError<DescribeDashboardError>`](crate::operation::describe_dashboard::DescribeDashboardError)
-    pub fn describe_dashboard(
-        &self,
-    ) -> crate::operation::describe_dashboard::builders::DescribeDashboardFluentBuilder {
-        crate::operation::describe_dashboard::builders::DescribeDashboardFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_dashboard(&self) -> crate::operation::describe_dashboard::builders::DescribeDashboardFluentBuilder {
+        crate::operation::describe_dashboard::builders::DescribeDashboardFluentBuilder::new(self.handle.clone())
     }
 }

@@ -58,9 +58,7 @@ impl PoolInfo {
 
 /// A builder for [`PoolInfo`](crate::types::PoolInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PoolInfoBuilder {
     pub(crate) pool_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pool_name: ::std::option::Option<::std::string::String>,
@@ -104,10 +102,7 @@ impl PoolInfoBuilder {
         self
     }
     /// <p>The storage class that is associated with the custom pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    pub fn set_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::TapeStorageClass>,
-    ) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::TapeStorageClass>) -> Self {
         self.storage_class = input;
         self
     }
@@ -121,17 +116,12 @@ impl PoolInfoBuilder {
         self
     }
     /// <p>Tape retention lock type, which can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
-    pub fn set_retention_lock_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionLockType>,
-    ) -> Self {
+    pub fn set_retention_lock_type(mut self, input: ::std::option::Option<crate::types::RetentionLockType>) -> Self {
         self.retention_lock_type = input;
         self
     }
     /// <p>Tape retention lock type, which can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
-    pub fn get_retention_lock_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetentionLockType> {
+    pub fn get_retention_lock_type(&self) -> &::std::option::Option<crate::types::RetentionLockType> {
         &self.retention_lock_type
     }
     /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to 100 years (36,500 days).</p>
@@ -154,10 +144,7 @@ impl PoolInfoBuilder {
         self
     }
     /// <p>Status of the custom tape pool. Pool can be <code>ACTIVE</code> or <code>DELETED</code>.</p>
-    pub fn set_pool_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PoolStatus>,
-    ) -> Self {
+    pub fn set_pool_status(mut self, input: ::std::option::Option<crate::types::PoolStatus>) -> Self {
         self.pool_status = input;
         self
     }

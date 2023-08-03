@@ -35,9 +35,7 @@ impl ListModelsOutput {
 
 /// A builder for [`ListModelsOutput`](crate::operation::list_models::ListModelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ModelSummary>>,
@@ -70,17 +68,12 @@ impl ListModelsOutputBuilder {
         self
     }
     /// <p>Provides information on the specified model, including created time, model and dataset ARNs, and status. </p>
-    pub fn set_model_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelSummary>>,
-    ) -> Self {
+    pub fn set_model_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelSummary>>) -> Self {
         self.model_summaries = input;
         self
     }
     /// <p>Provides information on the specified model, including created time, model and dataset ARNs, and status. </p>
-    pub fn get_model_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelSummary>> {
+    pub fn get_model_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelSummary>> {
         &self.model_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

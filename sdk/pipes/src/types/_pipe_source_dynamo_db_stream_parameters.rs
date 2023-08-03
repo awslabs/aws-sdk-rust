@@ -12,8 +12,7 @@ pub struct PipeSourceDynamoDbStreamParameters {
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
     #[doc(hidden)]
-    pub on_partial_batch_item_failure:
-        ::std::option::Option<crate::types::OnPartialBatchItemFailureStreams>,
+    pub on_partial_batch_item_failure: ::std::option::Option<crate::types::OnPartialBatchItemFailureStreams>,
     /// <p>The maximum length of a time to wait for events.</p>
     #[doc(hidden)]
     pub maximum_batching_window_in_seconds: ::std::option::Option<i32>,
@@ -40,9 +39,7 @@ impl PipeSourceDynamoDbStreamParameters {
         self.dead_letter_config.as_ref()
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-    pub fn on_partial_batch_item_failure(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OnPartialBatchItemFailureStreams> {
+    pub fn on_partial_batch_item_failure(&self) -> ::std::option::Option<&crate::types::OnPartialBatchItemFailureStreams> {
         self.on_partial_batch_item_failure.as_ref()
     }
     /// <p>The maximum length of a time to wait for events.</p>
@@ -62,9 +59,7 @@ impl PipeSourceDynamoDbStreamParameters {
         self.parallelization_factor
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn starting_position(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DynamoDbStreamStartPosition> {
+    pub fn starting_position(&self) -> ::std::option::Option<&crate::types::DynamoDbStreamStartPosition> {
         self.starting_position.as_ref()
     }
 }
@@ -77,14 +72,11 @@ impl PipeSourceDynamoDbStreamParameters {
 
 /// A builder for [`PipeSourceDynamoDbStreamParameters`](crate::types::PipeSourceDynamoDbStreamParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipeSourceDynamoDbStreamParametersBuilder {
     pub(crate) batch_size: ::std::option::Option<i32>,
     pub(crate) dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
-    pub(crate) on_partial_batch_item_failure:
-        ::std::option::Option<crate::types::OnPartialBatchItemFailureStreams>,
+    pub(crate) on_partial_batch_item_failure: ::std::option::Option<crate::types::OnPartialBatchItemFailureStreams>,
     pub(crate) maximum_batching_window_in_seconds: ::std::option::Option<i32>,
     pub(crate) maximum_record_age_in_seconds: ::std::option::Option<i32>,
     pub(crate) maximum_retry_attempts: ::std::option::Option<i32>,
@@ -112,10 +104,7 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
         self
     }
     /// <p>Define the target queue to send dead-letter queue events to.</p>
-    pub fn set_dead_letter_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeadLetterConfig>,
-    ) -> Self {
+    pub fn set_dead_letter_config(mut self, input: ::std::option::Option<crate::types::DeadLetterConfig>) -> Self {
         self.dead_letter_config = input;
         self
     }
@@ -124,25 +113,17 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
         &self.dead_letter_config
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-    pub fn on_partial_batch_item_failure(
-        mut self,
-        input: crate::types::OnPartialBatchItemFailureStreams,
-    ) -> Self {
+    pub fn on_partial_batch_item_failure(mut self, input: crate::types::OnPartialBatchItemFailureStreams) -> Self {
         self.on_partial_batch_item_failure = ::std::option::Option::Some(input);
         self
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-    pub fn set_on_partial_batch_item_failure(
-        mut self,
-        input: ::std::option::Option<crate::types::OnPartialBatchItemFailureStreams>,
-    ) -> Self {
+    pub fn set_on_partial_batch_item_failure(mut self, input: ::std::option::Option<crate::types::OnPartialBatchItemFailureStreams>) -> Self {
         self.on_partial_batch_item_failure = input;
         self
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-    pub fn get_on_partial_batch_item_failure(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnPartialBatchItemFailureStreams> {
+    pub fn get_on_partial_batch_item_failure(&self) -> &::std::option::Option<crate::types::OnPartialBatchItemFailureStreams> {
         &self.on_partial_batch_item_failure
     }
     /// <p>The maximum length of a time to wait for events.</p>
@@ -151,10 +132,7 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn set_maximum_batching_window_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_batching_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_batching_window_in_seconds = input;
         self
     }
@@ -210,17 +188,12 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
         self
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn set_starting_position(
-        mut self,
-        input: ::std::option::Option<crate::types::DynamoDbStreamStartPosition>,
-    ) -> Self {
+    pub fn set_starting_position(mut self, input: ::std::option::Option<crate::types::DynamoDbStreamStartPosition>) -> Self {
         self.starting_position = input;
         self
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn get_starting_position(
-        &self,
-    ) -> &::std::option::Option<crate::types::DynamoDbStreamStartPosition> {
+    pub fn get_starting_position(&self) -> &::std::option::Option<crate::types::DynamoDbStreamStartPosition> {
         &self.starting_position
     }
     /// Consumes the builder and constructs a [`PipeSourceDynamoDbStreamParameters`](crate::types::PipeSourceDynamoDbStreamParameters).

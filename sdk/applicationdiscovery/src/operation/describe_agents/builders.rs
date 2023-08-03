@@ -10,10 +10,7 @@ impl DescribeAgentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_agents::DescribeAgentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_agents::DescribeAgentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_agents::DescribeAgentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_agents();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeAgentsFluentBuilder {
         }
     }
     /// Access the DescribeAgents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_agents::builders::DescribeAgentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_agents::builders::DescribeAgentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DescribeAgentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -124,10 +116,7 @@ impl DescribeAgentsFluentBuilder {
         self
     }
     /// <p>The agent or the collector IDs for which you want information. If you specify no IDs, the system returns information about all agents/collectors associated with your user.</p>
-    pub fn set_agent_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_ids(input);
         self
     }
@@ -147,10 +136,7 @@ impl DescribeAgentsFluentBuilder {
     }
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
     /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

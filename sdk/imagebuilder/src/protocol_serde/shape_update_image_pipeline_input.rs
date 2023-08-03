@@ -13,9 +13,7 @@ pub fn ser_update_image_pipeline_input(
         object.key("description").string(var_3.as_str());
     }
     if let Some(var_4) = &input.distribution_configuration_arn {
-        object
-            .key("distributionConfigurationArn")
-            .string(var_4.as_str());
+        object.key("distributionConfigurationArn").string(var_4.as_str());
     }
     if let Some(var_5) = &input.enhanced_image_metadata_enabled {
         object.key("enhancedImageMetadataEnabled").boolean(*var_5);
@@ -35,16 +33,11 @@ pub fn ser_update_image_pipeline_input(
     if let Some(var_10) = &input.image_tests_configuration {
         #[allow(unused_mut)]
         let mut object_11 = object.key("imageTestsConfiguration").start_object();
-        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.infrastructure_configuration_arn {
-        object
-            .key("infrastructureConfigurationArn")
-            .string(var_12.as_str());
+        object.key("infrastructureConfigurationArn").string(var_12.as_str());
     }
     if let Some(var_13) = &input.schedule {
         #[allow(unused_mut)]

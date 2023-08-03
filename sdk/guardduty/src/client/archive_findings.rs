@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`finding_ids(Vec<String>)`](crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder::set_finding_ids): <p>The IDs of the findings that you want to archive.</p>
     /// - On success, responds with [`ArchiveFindingsOutput`](crate::operation::archive_findings::ArchiveFindingsOutput)
     /// - On failure, responds with [`SdkError<ArchiveFindingsError>`](crate::operation::archive_findings::ArchiveFindingsError)
-    pub fn archive_findings(
-        &self,
-    ) -> crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder {
-        crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn archive_findings(&self) -> crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder {
+        crate::operation::archive_findings::builders::ArchiveFindingsFluentBuilder::new(self.handle.clone())
     }
 }

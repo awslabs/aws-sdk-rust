@@ -23,9 +23,7 @@ impl GetHostedZoneInput {
 
 /// A builder for [`GetHostedZoneInput`](crate::operation::get_hosted_zone::GetHostedZoneInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHostedZoneInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl GetHostedZoneInputBuilder {
     /// Consumes the builder and constructs a [`GetHostedZoneInput`](crate::operation::get_hosted_zone::GetHostedZoneInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_hosted_zone::GetHostedZoneInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_hosted_zone::GetHostedZoneInput {
-            id: self.id,
-        })
+    ) -> ::std::result::Result<crate::operation::get_hosted_zone::GetHostedZoneInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_hosted_zone::GetHostedZoneInput { id: self.id })
     }
 }

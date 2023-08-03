@@ -10,10 +10,7 @@ impl ListAccessKeysInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_access_keys::ListAccessKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_keys::ListAccessKeysError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_keys::ListAccessKeysError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_access_keys();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl ListAccessKeysFluentBuilder {
         }
     }
     /// Access the ListAccessKeys as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_access_keys::builders::ListAccessKeysInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_access_keys::builders::ListAccessKeysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl ListAccessKeysFluentBuilder {
             crate::operation::list_access_keys::ListAccessKeys,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_keys::ListAccessKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_keys::ListAccessKeysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl ListAccessKeysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl ListAccessKeysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_access_keys::ListAccessKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_keys::ListAccessKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_keys::ListAccessKeysError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl ListAccessKeysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_access_keys::ListAccessKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_keys::ListAccessKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_keys::ListAccessKeysError>,
     > {
         self.send_middleware().await
     }
@@ -120,22 +106,15 @@ impl ListAccessKeysFluentBuilder {
             crate::operation::list_access_keys::ListAccessKeys,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_keys::ListAccessKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_keys::ListAccessKeysError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_access_keys::paginator::ListAccessKeysPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_access_keys::paginator::ListAccessKeysPaginator {
-        crate::operation::list_access_keys::paginator::ListAccessKeysPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_access_keys::paginator::ListAccessKeysPaginator {
+        crate::operation::list_access_keys::paginator::ListAccessKeysPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the user.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetIdentityProviderOutput`](crate::operation::get_identity_provider::GetIdentityProviderOutput) with field(s):
     ///   - [`identity_provider(Option<IdentityProvider>)`](crate::operation::get_identity_provider::GetIdentityProviderOutput::identity_provider): <p>The identity provider.</p>
     /// - On failure, responds with [`SdkError<GetIdentityProviderError>`](crate::operation::get_identity_provider::GetIdentityProviderError)
-    pub fn get_identity_provider(
-        &self,
-    ) -> crate::operation::get_identity_provider::builders::GetIdentityProviderFluentBuilder {
-        crate::operation::get_identity_provider::builders::GetIdentityProviderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_identity_provider(&self) -> crate::operation::get_identity_provider::builders::GetIdentityProviderFluentBuilder {
+        crate::operation::get_identity_provider::builders::GetIdentityProviderFluentBuilder::new(self.handle.clone())
     }
 }

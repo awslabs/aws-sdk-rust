@@ -26,8 +26,7 @@ impl DeleteContactEvaluationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteContactEvaluationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationInputBuilder,
+    inner: crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationInputBuilder,
 }
 impl DeleteContactEvaluationFluentBuilder {
     /// Creates a new `DeleteContactEvaluation`.
@@ -38,10 +37,7 @@ impl DeleteContactEvaluationFluentBuilder {
         }
     }
     /// Access the DeleteContactEvaluation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteContactEvaluationFluentBuilder {
             crate::operation::delete_contact_evaluation::DeleteContactEvaluation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_contact_evaluation::DeleteContactEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_contact_evaluation::DeleteContactEvaluationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteContactEvaluationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteContactEvaluationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_contact_evaluation::DeleteContactEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_contact_evaluation::DeleteContactEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_contact_evaluation::DeleteContactEvaluationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteContactEvaluationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_contact_evaluation::DeleteContactEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_contact_evaluation::DeleteContactEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_contact_evaluation::DeleteContactEvaluationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DeleteContactEvaluationFluentBuilder {
             crate::operation::delete_contact_evaluation::DeleteContactEvaluation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_contact_evaluation::DeleteContactEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_contact_evaluation::DeleteContactEvaluationError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl DeleteContactEvaluationFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evaluation_id(input.into());
         self
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evaluation_id(input);
         self
     }

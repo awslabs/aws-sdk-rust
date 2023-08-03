@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for OverridePullRequestApprovalRulesOutpu
 }
 impl OverridePullRequestApprovalRulesOutput {
     /// Creates a new builder-style object to manufacture [`OverridePullRequestApprovalRulesOutput`](crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesOutput).
-    pub fn builder() -> crate::operation::override_pull_request_approval_rules::builders::OverridePullRequestApprovalRulesOutputBuilder{
+    pub fn builder() -> crate::operation::override_pull_request_approval_rules::builders::OverridePullRequestApprovalRulesOutputBuilder {
         crate::operation::override_pull_request_approval_rules::builders::OverridePullRequestApprovalRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`OverridePullRequestApprovalRulesOutput`](crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OverridePullRequestApprovalRulesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl OverridePullRequestApprovalRulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`OverridePullRequestApprovalRulesOutput`](crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesOutput).
-    pub fn build(self) -> crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesOutput{
+    pub fn build(self) -> crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesOutput {
         crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesOutput {
             _request_id: self._request_id,
         }

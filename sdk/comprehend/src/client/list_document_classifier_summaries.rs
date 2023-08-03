@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`document_classifier_summaries_list(Option<Vec<DocumentClassifierSummary>>)`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesOutput::document_classifier_summaries_list): <p>The list of summaries of document classifiers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListDocumentClassifierSummariesError>`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesError)
-    pub fn list_document_classifier_summaries(&self) -> crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesFluentBuilder{
+    pub fn list_document_classifier_summaries(
+        &self,
+    ) -> crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesFluentBuilder {
         crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesFluentBuilder::new(self.handle.clone())
     }
 }

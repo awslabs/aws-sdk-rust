@@ -72,9 +72,7 @@ impl IntegrationAssociationSummary {
 
 /// A builder for [`IntegrationAssociationSummary`](crate::types::IntegrationAssociationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntegrationAssociationSummaryBuilder {
     pub(crate) integration_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_association_arn: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct IntegrationAssociationSummaryBuilder {
 }
 impl IntegrationAssociationSummaryBuilder {
     /// <p>The identifier for the AppIntegration association.</p>
-    pub fn integration_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the AppIntegration association.</p>
-    pub fn set_integration_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_association_id = input;
         self
     }
@@ -107,18 +99,12 @@ impl IntegrationAssociationSummaryBuilder {
         &self.integration_association_id
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
-    pub fn integration_association_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_association_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
-    pub fn set_integration_association_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_association_arn = input;
         self
     }
@@ -146,10 +132,7 @@ impl IntegrationAssociationSummaryBuilder {
         self
     }
     /// <p>The integration type.</p>
-    pub fn set_integration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IntegrationType>,
-    ) -> Self {
+    pub fn set_integration_type(mut self, input: ::std::option::Option<crate::types::IntegrationType>) -> Self {
         self.integration_type = input;
         self
     }
@@ -158,18 +141,12 @@ impl IntegrationAssociationSummaryBuilder {
         &self.integration_type
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
-    pub fn integration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
-    pub fn set_integration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_arn = input;
         self
     }
@@ -178,18 +155,12 @@ impl IntegrationAssociationSummaryBuilder {
         &self.integration_arn
     }
     /// <p>The URL for the external application.</p>
-    pub fn source_application_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_application_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_application_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the external application.</p>
-    pub fn set_source_application_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_application_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_application_url = input;
         self
     }
@@ -198,18 +169,12 @@ impl IntegrationAssociationSummaryBuilder {
         &self.source_application_url
     }
     /// <p>The user-provided, friendly name for the external application.</p>
-    pub fn source_application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-provided, friendly name for the external application.</p>
-    pub fn set_source_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_application_name = input;
         self
     }
@@ -223,10 +188,7 @@ impl IntegrationAssociationSummaryBuilder {
         self
     }
     /// <p>The name of the source.</p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.source_type = input;
         self
     }

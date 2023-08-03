@@ -31,8 +31,7 @@ impl DeleteAutoScalingGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAutoScalingGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupInputBuilder,
+    inner: crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupInputBuilder,
 }
 impl DeleteAutoScalingGroupFluentBuilder {
     /// Creates a new `DeleteAutoScalingGroup`.
@@ -43,10 +42,7 @@ impl DeleteAutoScalingGroupFluentBuilder {
         }
     }
     /// Access the DeleteAutoScalingGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +54,7 @@ impl DeleteAutoScalingGroupFluentBuilder {
             crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +64,7 @@ impl DeleteAutoScalingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +73,7 @@ impl DeleteAutoScalingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError>,
     > {
         let op = self
             .inner
@@ -107,9 +96,7 @@ impl DeleteAutoScalingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -123,25 +110,17 @@ impl DeleteAutoScalingGroupFluentBuilder {
             crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }

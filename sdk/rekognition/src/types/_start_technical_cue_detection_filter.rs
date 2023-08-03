@@ -32,9 +32,7 @@ impl StartTechnicalCueDetectionFilter {
 
 /// A builder for [`StartTechnicalCueDetectionFilter`](crate::types::StartTechnicalCueDetectionFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTechnicalCueDetectionFilterBuilder {
     pub(crate) min_segment_confidence: ::std::option::Option<f32>,
     pub(crate) black_frame: ::std::option::Option<crate::types::BlackFrame>,
@@ -63,10 +61,7 @@ impl StartTechnicalCueDetectionFilterBuilder {
         self
     }
     /// <p> A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for. </p>
-    pub fn set_black_frame(
-        mut self,
-        input: ::std::option::Option<crate::types::BlackFrame>,
-    ) -> Self {
+    pub fn set_black_frame(mut self, input: ::std::option::Option<crate::types::BlackFrame>) -> Self {
         self.black_frame = input;
         self
     }

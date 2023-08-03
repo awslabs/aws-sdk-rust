@@ -10,10 +10,7 @@ impl UpdateLfTagInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_lf_tag::UpdateLfTagOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_lf_tag::UpdateLFTagError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_lf_tag::UpdateLFTagError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_lf_tag();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateLFTagFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_lf_tag::UpdateLFTag,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_lf_tag::UpdateLFTag, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_lf_tag::UpdateLFTagError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateLFTagFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateLFTagFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_lf_tag::UpdateLFTag,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_lf_tag::UpdateLFTag, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_lf_tag::UpdateLFTagError>,
     > {
         self.customize_middleware().await
@@ -145,25 +133,17 @@ impl UpdateLFTagFluentBuilder {
     /// To override the contents of this collection use [`set_tag_values_to_delete`](Self::set_tag_values_to_delete).
     ///
     /// <p>A list of LF-tag values to delete from the LF-tag.</p>
-    pub fn tag_values_to_delete(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tag_values_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_values_to_delete(input.into());
         self
     }
     /// <p>A list of LF-tag values to delete from the LF-tag.</p>
-    pub fn set_tag_values_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_values_to_delete(input);
         self
     }
     /// <p>A list of LF-tag values to delete from the LF-tag.</p>
-    pub fn get_tag_values_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_values_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_values_to_delete()
     }
     /// Appends an item to `TagValuesToAdd`.
@@ -171,25 +151,17 @@ impl UpdateLFTagFluentBuilder {
     /// To override the contents of this collection use [`set_tag_values_to_add`](Self::set_tag_values_to_add).
     ///
     /// <p>A list of LF-tag values to add from the LF-tag.</p>
-    pub fn tag_values_to_add(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tag_values_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_values_to_add(input.into());
         self
     }
     /// <p>A list of LF-tag values to add from the LF-tag.</p>
-    pub fn set_tag_values_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_values_to_add(input);
         self
     }
     /// <p>A list of LF-tag values to add from the LF-tag.</p>
-    pub fn get_tag_values_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_values_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_values_to_add()
     }
 }

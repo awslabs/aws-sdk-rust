@@ -30,17 +30,14 @@ impl AttachVpnGatewayInput {
 }
 impl AttachVpnGatewayInput {
     /// Creates a new builder-style object to manufacture [`AttachVpnGatewayInput`](crate::operation::attach_vpn_gateway::AttachVpnGatewayInput).
-    pub fn builder() -> crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayInputBuilder
-    {
+    pub fn builder() -> crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayInputBuilder {
         crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`AttachVpnGatewayInput`](crate::operation::attach_vpn_gateway::AttachVpnGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachVpnGatewayInputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_gateway_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +59,12 @@ impl AttachVpnGatewayInputBuilder {
         &self.vpc_id
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn vpn_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn set_vpn_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_gateway_id = input;
         self
     }
@@ -98,16 +89,11 @@ impl AttachVpnGatewayInputBuilder {
     /// Consumes the builder and constructs a [`AttachVpnGatewayInput`](crate::operation::attach_vpn_gateway::AttachVpnGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::attach_vpn_gateway::AttachVpnGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::attach_vpn_gateway::AttachVpnGatewayInput {
-                vpc_id: self.vpc_id,
-                vpn_gateway_id: self.vpn_gateway_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::attach_vpn_gateway::AttachVpnGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::attach_vpn_gateway::AttachVpnGatewayInput {
+            vpc_id: self.vpc_id,
+            vpn_gateway_id: self.vpn_gateway_id,
+            dry_run: self.dry_run,
+        })
     }
 }

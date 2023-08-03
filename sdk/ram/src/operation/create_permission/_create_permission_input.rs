@@ -65,17 +65,14 @@ impl CreatePermissionInput {
 }
 impl CreatePermissionInput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionInput`](crate::operation::create_permission::CreatePermissionInput).
-    pub fn builder() -> crate::operation::create_permission::builders::CreatePermissionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_permission::builders::CreatePermissionInputBuilder {
         crate::operation::create_permission::builders::CreatePermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePermissionInput`](crate::operation::create_permission::CreatePermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePermissionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
@@ -102,10 +99,7 @@ impl CreatePermissionInputBuilder {
     /// <p>The format is <code> <i>
     /// <service-code></service-code></i>:<i>
     /// <resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -113,10 +107,7 @@ impl CreatePermissionInputBuilder {
     /// <p>The format is <code> <i>
     /// <service-code></service-code></i>:<i>
     /// <resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -134,10 +125,7 @@ impl CreatePermissionInputBuilder {
     /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
     /// <p>This template can't include either the <code>Resource</code> or <code>Principal</code> elements. Those are both filled in by RAM when it instantiates the resource-based policy on each resource shared using this managed permission. The <code>Resource</code> comes from the ARN of the specific resource that you are sharing. The <code>Principal</code> comes from the list of identities added to the resource share.</p>
-    pub fn policy_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_template = ::std::option::Option::Some(input.into());
         self
     }
@@ -148,10 +136,7 @@ impl CreatePermissionInputBuilder {
     /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
     /// <p>This template can't include either the <code>Resource</code> or <code>Principal</code> elements. Those are both filled in by RAM when it instantiates the resource-based policy on each resource shared using this managed permission. The <code>Resource</code> comes from the ARN of the specific resource that you are sharing. The <code>Principal</code> comes from the list of identities added to the resource share.</p>
-    pub fn set_policy_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_template = input;
         self
     }
@@ -197,10 +182,7 @@ impl CreatePermissionInputBuilder {
         self
     }
     /// <p>Specifies a list of one or more tag key and value pairs to attach to the permission.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -211,10 +193,7 @@ impl CreatePermissionInputBuilder {
     /// Consumes the builder and constructs a [`CreatePermissionInput`](crate::operation::create_permission::CreatePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_permission::CreatePermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_permission::CreatePermissionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_permission::CreatePermissionInput {
             name: self.name,
             resource_type: self.resource_type,

@@ -10,10 +10,7 @@ impl GetSequenceStoreInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_sequence_store::GetSequenceStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sequence_store::GetSequenceStoreError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sequence_store::GetSequenceStoreError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_sequence_store();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetSequenceStoreFluentBuilder {
         }
     }
     /// Access the GetSequenceStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_sequence_store::builders::GetSequenceStoreInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_sequence_store::builders::GetSequenceStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetSequenceStoreFluentBuilder {
             crate::operation::get_sequence_store::GetSequenceStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sequence_store::GetSequenceStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sequence_store::GetSequenceStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetSequenceStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetSequenceStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sequence_store::GetSequenceStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sequence_store::GetSequenceStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sequence_store::GetSequenceStoreError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetSequenceStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sequence_store::GetSequenceStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sequence_store::GetSequenceStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sequence_store::GetSequenceStoreError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetSequenceStoreFluentBuilder {
             crate::operation::get_sequence_store::GetSequenceStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sequence_store::GetSequenceStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sequence_store::GetSequenceStoreError>,
     > {
         self.customize_middleware().await
     }

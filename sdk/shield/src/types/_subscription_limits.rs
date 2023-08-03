@@ -17,9 +17,7 @@ impl SubscriptionLimits {
         self.protection_limits.as_ref()
     }
     /// <p>Limits settings on protection groups for your subscription. </p>
-    pub fn protection_group_limits(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProtectionGroupLimits> {
+    pub fn protection_group_limits(&self) -> ::std::option::Option<&crate::types::ProtectionGroupLimits> {
         self.protection_group_limits.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl SubscriptionLimits {
 
 /// A builder for [`SubscriptionLimits`](crate::types::SubscriptionLimits).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscriptionLimitsBuilder {
     pub(crate) protection_limits: ::std::option::Option<crate::types::ProtectionLimits>,
     pub(crate) protection_group_limits: ::std::option::Option<crate::types::ProtectionGroupLimits>,
@@ -46,10 +42,7 @@ impl SubscriptionLimitsBuilder {
         self
     }
     /// <p>Limits settings on protections for your subscription. </p>
-    pub fn set_protection_limits(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectionLimits>,
-    ) -> Self {
+    pub fn set_protection_limits(mut self, input: ::std::option::Option<crate::types::ProtectionLimits>) -> Self {
         self.protection_limits = input;
         self
     }
@@ -63,17 +56,12 @@ impl SubscriptionLimitsBuilder {
         self
     }
     /// <p>Limits settings on protection groups for your subscription. </p>
-    pub fn set_protection_group_limits(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectionGroupLimits>,
-    ) -> Self {
+    pub fn set_protection_group_limits(mut self, input: ::std::option::Option<crate::types::ProtectionGroupLimits>) -> Self {
         self.protection_group_limits = input;
         self
     }
     /// <p>Limits settings on protection groups for your subscription. </p>
-    pub fn get_protection_group_limits(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProtectionGroupLimits> {
+    pub fn get_protection_group_limits(&self) -> &::std::option::Option<crate::types::ProtectionGroupLimits> {
         &self.protection_group_limits
     }
     /// Consumes the builder and constructs a [`SubscriptionLimits`](crate::types::SubscriptionLimits).

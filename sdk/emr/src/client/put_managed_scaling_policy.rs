@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`managed_scaling_policy(ManagedScalingPolicy)`](crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyFluentBuilder::managed_scaling_policy) / [`set_managed_scaling_policy(Option<ManagedScalingPolicy>)`](crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyFluentBuilder::set_managed_scaling_policy): <p>Specifies the constraints for the managed scaling policy. </p>
     /// - On success, responds with [`PutManagedScalingPolicyOutput`](crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyOutput)
     /// - On failure, responds with [`SdkError<PutManagedScalingPolicyError>`](crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyError)
-    pub fn put_managed_scaling_policy(
-        &self,
-    ) -> crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyFluentBuilder
-    {
+    pub fn put_managed_scaling_policy(&self) -> crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyFluentBuilder {
         crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyFluentBuilder::new(self.handle.clone())
     }
 }

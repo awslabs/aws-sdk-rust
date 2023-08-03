@@ -10,10 +10,7 @@ impl GetUsageLimitInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_usage_limit::GetUsageLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_limit::GetUsageLimitError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_limit::GetUsageLimitError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_usage_limit();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetUsageLimitFluentBuilder {
         }
     }
     /// Access the GetUsageLimit as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_usage_limit::builders::GetUsageLimitInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_usage_limit::builders::GetUsageLimitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetUsageLimitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl GetUsageLimitFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the usage limit to return information for.</p>
-    pub fn usage_limit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.usage_limit_id(input.into());
         self
     }
     /// <p>The unique identifier of the usage limit to return information for.</p>
-    pub fn set_usage_limit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_usage_limit_id(input);
         self
     }

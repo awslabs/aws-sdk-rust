@@ -10,10 +10,7 @@ impl DescribeQueryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_query::DescribeQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_query::DescribeQueryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_query::DescribeQueryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_query();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeQueryFluentBuilder {
         }
     }
     /// Access the DescribeQuery as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_query::builders::DescribeQueryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_query::builders::DescribeQueryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DescribeQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,19 +109,13 @@ impl DescribeQueryFluentBuilder {
     }
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by DescribeQueryRequest")]
-    pub fn event_data_store(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_data_store(input.into());
         self
     }
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by DescribeQueryRequest")]
-    pub fn set_event_data_store(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_data_store(input);
         self
     }

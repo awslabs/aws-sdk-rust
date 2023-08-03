@@ -15,35 +15,25 @@ impl GetLicenseConversionTaskInput {
 }
 impl GetLicenseConversionTaskInput {
     /// Creates a new builder-style object to manufacture [`GetLicenseConversionTaskInput`](crate::operation::get_license_conversion_task::GetLicenseConversionTaskInput).
-    pub fn builder(
-    ) -> crate::operation::get_license_conversion_task::builders::GetLicenseConversionTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_license_conversion_task::builders::GetLicenseConversionTaskInputBuilder {
         crate::operation::get_license_conversion_task::builders::GetLicenseConversionTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLicenseConversionTaskInput`](crate::operation::get_license_conversion_task::GetLicenseConversionTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLicenseConversionTaskInputBuilder {
     pub(crate) license_conversion_task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLicenseConversionTaskInputBuilder {
     /// <p>ID of the license type conversion task to retrieve information on.</p>
-    pub fn license_conversion_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_conversion_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_conversion_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the license type conversion task to retrieve information on.</p>
-    pub fn set_license_conversion_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_conversion_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_conversion_task_id = input;
         self
     }
@@ -58,10 +48,8 @@ impl GetLicenseConversionTaskInputBuilder {
         crate::operation::get_license_conversion_task::GetLicenseConversionTaskInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_license_conversion_task::GetLicenseConversionTaskInput {
-                license_conversion_task_id: self.license_conversion_task_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_license_conversion_task::GetLicenseConversionTaskInput {
+            license_conversion_task_id: self.license_conversion_task_id,
+        })
     }
 }

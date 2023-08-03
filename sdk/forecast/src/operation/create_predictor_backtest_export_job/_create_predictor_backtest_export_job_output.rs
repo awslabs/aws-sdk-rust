@@ -21,41 +21,31 @@ impl ::aws_http::request_id::RequestId for CreatePredictorBacktestExportJobOutpu
 }
 impl CreatePredictorBacktestExportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreatePredictorBacktestExportJobOutput`](crate::operation::create_predictor_backtest_export_job::CreatePredictorBacktestExportJobOutput).
-    pub fn builder() -> crate::operation::create_predictor_backtest_export_job::builders::CreatePredictorBacktestExportJobOutputBuilder{
+    pub fn builder() -> crate::operation::create_predictor_backtest_export_job::builders::CreatePredictorBacktestExportJobOutputBuilder {
         crate::operation::create_predictor_backtest_export_job::builders::CreatePredictorBacktestExportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePredictorBacktestExportJobOutput`](crate::operation::create_predictor_backtest_export_job::CreatePredictorBacktestExportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePredictorBacktestExportJobOutputBuilder {
     pub(crate) predictor_backtest_export_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePredictorBacktestExportJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to export.</p>
-    pub fn predictor_backtest_export_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_backtest_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_backtest_export_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to export.</p>
-    pub fn set_predictor_backtest_export_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_backtest_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_backtest_export_job_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to export.</p>
-    pub fn get_predictor_backtest_export_job_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_predictor_backtest_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.predictor_backtest_export_job_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,10 +58,9 @@ impl CreatePredictorBacktestExportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreatePredictorBacktestExportJobOutput`](crate::operation::create_predictor_backtest_export_job::CreatePredictorBacktestExportJobOutput).
-    pub fn build(self) -> crate::operation::create_predictor_backtest_export_job::CreatePredictorBacktestExportJobOutput{
+    pub fn build(self) -> crate::operation::create_predictor_backtest_export_job::CreatePredictorBacktestExportJobOutput {
         crate::operation::create_predictor_backtest_export_job::CreatePredictorBacktestExportJobOutput {
-            predictor_backtest_export_job_arn: self.predictor_backtest_export_job_arn
-            ,
+            predictor_backtest_export_job_arn: self.predictor_backtest_export_job_arn,
             _request_id: self._request_id,
         }
     }

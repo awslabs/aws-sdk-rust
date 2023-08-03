@@ -22,16 +22,14 @@ impl UpdateSmbFileShareVisibilityInput {
 }
 impl UpdateSmbFileShareVisibilityInput {
     /// Creates a new builder-style object to manufacture [`UpdateSmbFileShareVisibilityInput`](crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput).
-    pub fn builder() -> crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityInputBuilder{
+    pub fn builder() -> crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityInputBuilder {
         crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSmbFileShareVisibilityInput`](crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSmbFileShareVisibilityInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) file_shares_visible: ::std::option::Option<bool>,
@@ -72,11 +70,9 @@ impl UpdateSmbFileShareVisibilityInputBuilder {
         crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput {
-                gateway_arn: self.gateway_arn,
-                file_shares_visible: self.file_shares_visible,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput {
+            gateway_arn: self.gateway_arn,
+            file_shares_visible: self.file_shares_visible,
+        })
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for PutInstancePublicPortsOutput {
 }
 impl PutInstancePublicPortsOutput {
     /// Creates a new builder-style object to manufacture [`PutInstancePublicPortsOutput`](crate::operation::put_instance_public_ports::PutInstancePublicPortsOutput).
-    pub fn builder(
-    ) -> crate::operation::put_instance_public_ports::builders::PutInstancePublicPortsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_instance_public_ports::builders::PutInstancePublicPortsOutputBuilder {
         crate::operation::put_instance_public_ports::builders::PutInstancePublicPortsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutInstancePublicPortsOutput`](crate::operation::put_instance_public_ports::PutInstancePublicPortsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutInstancePublicPortsOutputBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl PutInstancePublicPortsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutInstancePublicPortsOutput`](crate::operation::put_instance_public_ports::PutInstancePublicPortsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_instance_public_ports::PutInstancePublicPortsOutput {
+    pub fn build(self) -> crate::operation::put_instance_public_ports::PutInstancePublicPortsOutput {
         crate::operation::put_instance_public_ports::PutInstancePublicPortsOutput {
             operation: self.operation,
             _request_id: self._request_id,

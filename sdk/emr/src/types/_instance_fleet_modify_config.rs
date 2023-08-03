@@ -17,8 +17,7 @@ pub struct InstanceFleetModifyConfig {
     pub target_spot_capacity: ::std::option::Option<i32>,
     /// <p>The resize specification for the instance fleet.</p>
     #[doc(hidden)]
-    pub resize_specifications:
-        ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
+    pub resize_specifications: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
 }
 impl InstanceFleetModifyConfig {
     /// <p>A unique identifier for the instance fleet.</p>
@@ -34,9 +33,7 @@ impl InstanceFleetModifyConfig {
         self.target_spot_capacity
     }
     /// <p>The resize specification for the instance fleet.</p>
-    pub fn resize_specifications(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceFleetResizingSpecifications> {
+    pub fn resize_specifications(&self) -> ::std::option::Option<&crate::types::InstanceFleetResizingSpecifications> {
         self.resize_specifications.as_ref()
     }
 }
@@ -49,30 +46,21 @@ impl InstanceFleetModifyConfig {
 
 /// A builder for [`InstanceFleetModifyConfig`](crate::types::InstanceFleetModifyConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceFleetModifyConfigBuilder {
     pub(crate) instance_fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_on_demand_capacity: ::std::option::Option<i32>,
     pub(crate) target_spot_capacity: ::std::option::Option<i32>,
-    pub(crate) resize_specifications:
-        ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
+    pub(crate) resize_specifications: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
 }
 impl InstanceFleetModifyConfigBuilder {
     /// <p>A unique identifier for the instance fleet.</p>
-    pub fn instance_fleet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_fleet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the instance fleet.</p>
-    pub fn set_instance_fleet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_fleet_id = input;
         self
     }
@@ -109,25 +97,17 @@ impl InstanceFleetModifyConfigBuilder {
         &self.target_spot_capacity
     }
     /// <p>The resize specification for the instance fleet.</p>
-    pub fn resize_specifications(
-        mut self,
-        input: crate::types::InstanceFleetResizingSpecifications,
-    ) -> Self {
+    pub fn resize_specifications(mut self, input: crate::types::InstanceFleetResizingSpecifications) -> Self {
         self.resize_specifications = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resize specification for the instance fleet.</p>
-    pub fn set_resize_specifications(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
-    ) -> Self {
+    pub fn set_resize_specifications(mut self, input: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>) -> Self {
         self.resize_specifications = input;
         self
     }
     /// <p>The resize specification for the instance fleet.</p>
-    pub fn get_resize_specifications(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceFleetResizingSpecifications> {
+    pub fn get_resize_specifications(&self) -> &::std::option::Option<crate::types::InstanceFleetResizingSpecifications> {
         &self.resize_specifications
     }
     /// Consumes the builder and constructs a [`InstanceFleetModifyConfig`](crate::types::InstanceFleetModifyConfig).

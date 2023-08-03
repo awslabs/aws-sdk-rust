@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`maintenance_tracks(Option<Vec<MaintenanceTrack>>)`](crate::operation::describe_cluster_tracks::DescribeClusterTracksOutput::maintenance_tracks): <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_cluster_tracks::DescribeClusterTracksOutput::marker): <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     /// - On failure, responds with [`SdkError<DescribeClusterTracksError>`](crate::operation::describe_cluster_tracks::DescribeClusterTracksError)
-    pub fn describe_cluster_tracks(
-        &self,
-    ) -> crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksFluentBuilder
-    {
-        crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_cluster_tracks(&self) -> crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksFluentBuilder {
+        crate::operation::describe_cluster_tracks::builders::DescribeClusterTracksFluentBuilder::new(self.handle.clone())
     }
 }

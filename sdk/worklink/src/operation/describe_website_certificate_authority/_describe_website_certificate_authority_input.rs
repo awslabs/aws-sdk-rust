@@ -22,16 +22,14 @@ impl DescribeWebsiteCertificateAuthorityInput {
 }
 impl DescribeWebsiteCertificateAuthorityInput {
     /// Creates a new builder-style object to manufacture [`DescribeWebsiteCertificateAuthorityInput`](crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityInput).
-    pub fn builder() -> crate::operation::describe_website_certificate_authority::builders::DescribeWebsiteCertificateAuthorityInputBuilder{
+    pub fn builder() -> crate::operation::describe_website_certificate_authority::builders::DescribeWebsiteCertificateAuthorityInputBuilder {
         crate::operation::describe_website_certificate_authority::builders::DescribeWebsiteCertificateAuthorityInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWebsiteCertificateAuthorityInput`](crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWebsiteCertificateAuthorityInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) website_ca_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DescribeWebsiteCertificateAuthorityInputBuilder {
         &self.fleet_arn
     }
     /// <p>A unique identifier for the certificate authority.</p>
-    pub fn website_ca_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn website_ca_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.website_ca_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the certificate authority.</p>
-    pub fn set_website_ca_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_website_ca_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.website_ca_id = input;
         self
     }
@@ -72,14 +64,17 @@ impl DescribeWebsiteCertificateAuthorityInputBuilder {
         &self.website_ca_id
     }
     /// Consumes the builder and constructs a [`DescribeWebsiteCertificateAuthorityInput`](crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityInput {
-                fleet_arn: self.fleet_arn
-                ,
-                website_ca_id: self.website_ca_id
-                ,
-            }
+                fleet_arn: self.fleet_arn,
+                website_ca_id: self.website_ca_id,
+            },
         )
     }
 }

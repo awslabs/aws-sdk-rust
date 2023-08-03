@@ -30,9 +30,7 @@ impl ValueWithServiceIds {
 
 /// A builder for [`ValueWithServiceIds`](crate::types::ValueWithServiceIds).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValueWithServiceIdsBuilder {
     pub(crate) annotation_value: ::std::option::Option<crate::types::AnnotationValue>,
     pub(crate) service_ids: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,
@@ -44,10 +42,7 @@ impl ValueWithServiceIdsBuilder {
         self
     }
     /// <p>Values of the annotation.</p>
-    pub fn set_annotation_value(
-        mut self,
-        input: ::std::option::Option<crate::types::AnnotationValue>,
-    ) -> Self {
+    pub fn set_annotation_value(mut self, input: ::std::option::Option<crate::types::AnnotationValue>) -> Self {
         self.annotation_value = input;
         self
     }
@@ -67,17 +62,12 @@ impl ValueWithServiceIdsBuilder {
         self
     }
     /// <p>Services to which the annotation applies.</p>
-    pub fn set_service_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,
-    ) -> Self {
+    pub fn set_service_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>) -> Self {
         self.service_ids = input;
         self
     }
     /// <p>Services to which the annotation applies.</p>
-    pub fn get_service_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceId>> {
+    pub fn get_service_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceId>> {
         &self.service_ids
     }
     /// Consumes the builder and constructs a [`ValueWithServiceIds`](crate::types::ValueWithServiceIds).

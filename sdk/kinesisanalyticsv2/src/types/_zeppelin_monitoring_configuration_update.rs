@@ -23,9 +23,7 @@ impl ZeppelinMonitoringConfigurationUpdate {
 
 /// A builder for [`ZeppelinMonitoringConfigurationUpdate`](crate::types::ZeppelinMonitoringConfigurationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ZeppelinMonitoringConfigurationUpdateBuilder {
     pub(crate) log_level_update: ::std::option::Option<crate::types::LogLevel>,
 }
@@ -36,10 +34,7 @@ impl ZeppelinMonitoringConfigurationUpdateBuilder {
         self
     }
     /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
-    pub fn set_log_level_update(
-        mut self,
-        input: ::std::option::Option<crate::types::LogLevel>,
-    ) -> Self {
+    pub fn set_log_level_update(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.log_level_update = input;
         self
     }

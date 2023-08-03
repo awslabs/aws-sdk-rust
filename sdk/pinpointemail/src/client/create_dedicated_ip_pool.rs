@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder::set_tags): <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
     /// - On success, responds with [`CreateDedicatedIpPoolOutput`](crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolOutput)
     /// - On failure, responds with [`SdkError<CreateDedicatedIpPoolError>`](crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError)
-    pub fn create_dedicated_ip_pool(
-        &self,
-    ) -> crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder
-    {
+    pub fn create_dedicated_ip_pool(&self) -> crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder {
         crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder::new(self.handle.clone())
     }
 }

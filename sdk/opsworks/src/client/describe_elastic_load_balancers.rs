@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeElasticLoadBalancersOutput`](crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersOutput) with field(s):
     ///   - [`elastic_load_balancers(Option<Vec<ElasticLoadBalancer>>)`](crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersOutput::elastic_load_balancers): <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
     /// - On failure, responds with [`SdkError<DescribeElasticLoadBalancersError>`](crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersError)
-    pub fn describe_elastic_load_balancers(&self) -> crate::operation::describe_elastic_load_balancers::builders::DescribeElasticLoadBalancersFluentBuilder{
+    pub fn describe_elastic_load_balancers(
+        &self,
+    ) -> crate::operation::describe_elastic_load_balancers::builders::DescribeElasticLoadBalancersFluentBuilder {
         crate::operation::describe_elastic_load_balancers::builders::DescribeElasticLoadBalancersFluentBuilder::new(self.handle.clone())
     }
 }

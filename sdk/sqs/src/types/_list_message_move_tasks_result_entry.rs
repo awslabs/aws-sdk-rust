@@ -79,9 +79,7 @@ impl ListMessageMoveTasksResultEntry {
 
 /// A builder for [`ListMessageMoveTasksResultEntry`](crate::types::ListMessageMoveTasksResultEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMessageMoveTasksResultEntryBuilder {
     pub(crate) task_handle: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -137,18 +135,12 @@ impl ListMessageMoveTasksResultEntryBuilder {
         &self.source_arn
     }
     /// <p>The ARN of the destination queue if it has been specified in the <code>StartMessageMoveTask</code> request. If a <code>DestinationArn</code> has not been specified in the <code>StartMessageMoveTask</code> request, this field value will be NULL.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the destination queue if it has been specified in the <code>StartMessageMoveTask</code> request. If a <code>DestinationArn</code> has not been specified in the <code>StartMessageMoveTask</code> request, this field value will be NULL.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -162,10 +154,7 @@ impl ListMessageMoveTasksResultEntryBuilder {
         self
     }
     /// <p>The number of messages to be moved per second (the message movement rate), if it has been specified in the <code>StartMessageMoveTask</code> request. If a <code>MaxNumberOfMessagesPerSecond</code> has not been specified in the <code>StartMessageMoveTask</code> request, this field value will be NULL.</p>
-    pub fn set_max_number_of_messages_per_second(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_max_number_of_messages_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_number_of_messages_per_second = input;
         self
     }
@@ -179,10 +168,7 @@ impl ListMessageMoveTasksResultEntryBuilder {
         self
     }
     /// <p>The approximate number of messages already moved to the destination queue.</p>
-    pub fn set_approximate_number_of_messages_moved(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_approximate_number_of_messages_moved(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_number_of_messages_moved = input;
         self
     }
@@ -196,10 +182,7 @@ impl ListMessageMoveTasksResultEntryBuilder {
         self
     }
     /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task.</p>
-    pub fn set_approximate_number_of_messages_to_move(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_approximate_number_of_messages_to_move(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_number_of_messages_to_move = input;
         self
     }
@@ -208,18 +191,12 @@ impl ListMessageMoveTasksResultEntryBuilder {
         &self.approximate_number_of_messages_to_move
     }
     /// <p>The task failure reason (only included if the task status is FAILED).</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The task failure reason (only included if the task status is FAILED).</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -248,15 +225,9 @@ impl ListMessageMoveTasksResultEntryBuilder {
             status: self.status,
             source_arn: self.source_arn,
             destination_arn: self.destination_arn,
-            max_number_of_messages_per_second: self
-                .max_number_of_messages_per_second
-                .unwrap_or_default(),
-            approximate_number_of_messages_moved: self
-                .approximate_number_of_messages_moved
-                .unwrap_or_default(),
-            approximate_number_of_messages_to_move: self
-                .approximate_number_of_messages_to_move
-                .unwrap_or_default(),
+            max_number_of_messages_per_second: self.max_number_of_messages_per_second.unwrap_or_default(),
+            approximate_number_of_messages_moved: self.approximate_number_of_messages_moved.unwrap_or_default(),
+            approximate_number_of_messages_to_move: self.approximate_number_of_messages_to_move.unwrap_or_default(),
             failure_reason: self.failure_reason,
             started_timestamp: self.started_timestamp.unwrap_or_default(),
         }

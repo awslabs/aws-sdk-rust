@@ -22,16 +22,14 @@ impl DescribeEc2InstanceLimitsInput {
 }
 impl DescribeEc2InstanceLimitsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEc2InstanceLimitsInput`](crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput).
-    pub fn builder() -> crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsInputBuilder{
+    pub fn builder() -> crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsInputBuilder {
         crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEc2InstanceLimitsInput`](crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEc2InstanceLimitsInputBuilder {
     pub(crate) ec2_instance_type: ::std::option::Option<crate::types::Ec2InstanceType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -43,10 +41,7 @@ impl DescribeEc2InstanceLimitsInputBuilder {
         self
     }
     /// <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
-    pub fn set_ec2_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2InstanceType>,
-    ) -> Self {
+    pub fn set_ec2_instance_type(mut self, input: ::std::option::Option<crate::types::Ec2InstanceType>) -> Self {
         self.ec2_instance_type = input;
         self
     }
@@ -75,11 +70,9 @@ impl DescribeEc2InstanceLimitsInputBuilder {
         crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput {
-                ec2_instance_type: self.ec2_instance_type,
-                location: self.location,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput {
+            ec2_instance_type: self.ec2_instance_type,
+            location: self.location,
+        })
     }
 }

@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`reason(impl ::std::convert::Into<String>)`](crate::operation::disconnect_participant::builders::DisconnectParticipantFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::disconnect_participant::builders::DisconnectParticipantFluentBuilder::set_reason): <p>Description of why this participant is being disconnected.</p>
     /// - On success, responds with [`DisconnectParticipantOutput`](crate::operation::disconnect_participant::DisconnectParticipantOutput)
     /// - On failure, responds with [`SdkError<DisconnectParticipantError>`](crate::operation::disconnect_participant::DisconnectParticipantError)
-    pub fn disconnect_participant(
-        &self,
-    ) -> crate::operation::disconnect_participant::builders::DisconnectParticipantFluentBuilder
-    {
-        crate::operation::disconnect_participant::builders::DisconnectParticipantFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disconnect_participant(&self) -> crate::operation::disconnect_participant::builders::DisconnectParticipantFluentBuilder {
+        crate::operation::disconnect_participant::builders::DisconnectParticipantFluentBuilder::new(self.handle.clone())
     }
 }

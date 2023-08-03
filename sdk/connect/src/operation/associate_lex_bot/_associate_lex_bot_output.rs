@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateLexBotOutput {
 }
 impl AssociateLexBotOutput {
     /// Creates a new builder-style object to manufacture [`AssociateLexBotOutput`](crate::operation::associate_lex_bot::AssociateLexBotOutput).
-    pub fn builder() -> crate::operation::associate_lex_bot::builders::AssociateLexBotOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_lex_bot::builders::AssociateLexBotOutputBuilder {
         crate::operation::associate_lex_bot::builders::AssociateLexBotOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateLexBotOutput`](crate::operation::associate_lex_bot::AssociateLexBotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateLexBotOutputBuilder {
     _request_id: Option<String>,
 }

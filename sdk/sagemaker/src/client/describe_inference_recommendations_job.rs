@@ -20,7 +20,9 @@ impl super::Client {
     ///   - [`inference_recommendations(Option<Vec<InferenceRecommendation>>)`](crate::operation::describe_inference_recommendations_job::DescribeInferenceRecommendationsJobOutput::inference_recommendations): <p>The recommendations made by Inference Recommender.</p>
     ///   - [`endpoint_performances(Option<Vec<EndpointPerformance>>)`](crate::operation::describe_inference_recommendations_job::DescribeInferenceRecommendationsJobOutput::endpoint_performances): <p>The performance results from running an Inference Recommender job on an existing endpoint.</p>
     /// - On failure, responds with [`SdkError<DescribeInferenceRecommendationsJobError>`](crate::operation::describe_inference_recommendations_job::DescribeInferenceRecommendationsJobError)
-    pub fn describe_inference_recommendations_job(&self) -> crate::operation::describe_inference_recommendations_job::builders::DescribeInferenceRecommendationsJobFluentBuilder{
+    pub fn describe_inference_recommendations_job(
+        &self,
+    ) -> crate::operation::describe_inference_recommendations_job::builders::DescribeInferenceRecommendationsJobFluentBuilder {
         crate::operation::describe_inference_recommendations_job::builders::DescribeInferenceRecommendationsJobFluentBuilder::new(self.handle.clone())
     }
 }

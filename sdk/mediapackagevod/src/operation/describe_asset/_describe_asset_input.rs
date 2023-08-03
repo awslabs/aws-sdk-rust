@@ -22,9 +22,7 @@ impl DescribeAssetInput {
 
 /// A builder for [`DescribeAssetInput`](crate::operation::describe_asset::DescribeAssetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssetInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeAssetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAssetInput`](crate::operation::describe_asset::DescribeAssetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_asset::DescribeAssetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_asset::DescribeAssetInput {
-            id: self.id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_asset::DescribeAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_asset::DescribeAssetInput { id: self.id })
     }
 }

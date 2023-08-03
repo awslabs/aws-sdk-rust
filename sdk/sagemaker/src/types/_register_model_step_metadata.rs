@@ -23,9 +23,7 @@ impl RegisterModelStepMetadata {
 
 /// A builder for [`RegisterModelStepMetadata`](crate::types::RegisterModelStepMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterModelStepMetadataBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

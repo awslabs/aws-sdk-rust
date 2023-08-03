@@ -44,9 +44,7 @@ impl CoreNetworkChangeEventValues {
 
 /// A builder for [`CoreNetworkChangeEventValues`](crate::types::CoreNetworkChangeEventValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreNetworkChangeEventValuesBuilder {
     pub(crate) edge_location: ::std::option::Option<::std::string::String>,
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct CoreNetworkChangeEventValuesBuilder {
 }
 impl CoreNetworkChangeEventValuesBuilder {
     /// <p>The edge location for the core network change event.</p>
-    pub fn edge_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The edge location for the core network change event.</p>
-    pub fn set_edge_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_location = input;
         self
     }
@@ -89,18 +81,12 @@ impl CoreNetworkChangeEventValuesBuilder {
         &self.segment_name
     }
     /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }

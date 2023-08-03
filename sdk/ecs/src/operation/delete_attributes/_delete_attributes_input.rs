@@ -22,17 +22,14 @@ impl DeleteAttributesInput {
 }
 impl DeleteAttributesInput {
     /// Creates a new builder-style object to manufacture [`DeleteAttributesInput`](crate::operation::delete_attributes::DeleteAttributesInput).
-    pub fn builder() -> crate::operation::delete_attributes::builders::DeleteAttributesInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_attributes::builders::DeleteAttributesInputBuilder {
         crate::operation::delete_attributes::builders::DeleteAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAttributesInput`](crate::operation::delete_attributes::DeleteAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAttributesInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
@@ -64,26 +61,18 @@ impl DeleteAttributesInputBuilder {
         self
     }
     /// <p>The attributes to delete from your resource. You can specify up to 10 attributes for each request. For custom attributes, specify the attribute name and target ID, but don't specify the value. If you specify the target ID using the short form, you must also specify the target type.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes to delete from your resource. You can specify up to 10 attributes for each request. For custom attributes, specify the attribute name and target ID, but don't specify the value. If you specify the target ID using the short form, you must also specify the target type.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`DeleteAttributesInput`](crate::operation::delete_attributes::DeleteAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_attributes::DeleteAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_attributes::DeleteAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_attributes::DeleteAttributesInput {
             cluster: self.cluster,
             attributes: self.attributes,

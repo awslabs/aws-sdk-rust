@@ -41,13 +41,7 @@
 /// </p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ProjectState {
     #[allow(missing_docs)] // documentation missing in model
@@ -65,9 +59,7 @@ impl ::std::convert::From<&str> for ProjectState {
             "IMPORTING" => ProjectState::Importing,
             "NORMAL" => ProjectState::Normal,
             "SYNCING" => ProjectState::Syncing,
-            other => {
-                ProjectState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ProjectState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

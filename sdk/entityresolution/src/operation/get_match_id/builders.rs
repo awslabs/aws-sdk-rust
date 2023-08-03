@@ -10,10 +10,7 @@ impl GetMatchIdInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_match_id::GetMatchIdOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_match_id::GetMatchIdError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_match_id::GetMatchIdError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_match_id();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetMatchIdFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_match_id::GetMatchId,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_match_id::GetMatchId, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_match_id::GetMatchIdError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetMatchIdFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl GetMatchIdFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_match_id::GetMatchId,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_match_id::GetMatchId, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_match_id::GetMatchIdError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_name(input.into());
         self
     }
     /// <p>The name of the workflow.</p>
-    pub fn set_workflow_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_name(input);
         self
     }
@@ -137,30 +119,17 @@ impl GetMatchIdFluentBuilder {
     /// To override the contents of this collection use [`set_record`](Self::set_record).
     ///
     /// <p>The record to fetch the Match ID for.</p>
-    pub fn record(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.record(k.into(), v.into());
         self
     }
     /// <p>The record to fetch the Match ID for.</p>
-    pub fn set_record(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_record(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_record(input);
         self
     }
     /// <p>The record to fetch the Match ID for.</p>
-    pub fn get_record(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_record(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_record()
     }
 }

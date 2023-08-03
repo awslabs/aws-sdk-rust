@@ -30,9 +30,7 @@ impl ScpActionDefinition {
 
 /// A builder for [`ScpActionDefinition`](crate::types::ScpActionDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScpActionDefinitionBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +62,7 @@ impl ScpActionDefinitionBuilder {
         self
     }
     /// <p>A list of target IDs. </p>
-    pub fn set_target_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_ids = input;
         self
     }

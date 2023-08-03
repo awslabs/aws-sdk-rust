@@ -24,17 +24,14 @@ impl UpdateBucketBundleInput {
 }
 impl UpdateBucketBundleInput {
     /// Creates a new builder-style object to manufacture [`UpdateBucketBundleInput`](crate::operation::update_bucket_bundle::UpdateBucketBundleInput).
-    pub fn builder(
-    ) -> crate::operation::update_bucket_bundle::builders::UpdateBucketBundleInputBuilder {
+    pub fn builder() -> crate::operation::update_bucket_bundle::builders::UpdateBucketBundleInputBuilder {
         crate::operation::update_bucket_bundle::builders::UpdateBucketBundleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBucketBundleInput`](crate::operation::update_bucket_bundle::UpdateBucketBundleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBucketBundleInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
@@ -74,15 +71,10 @@ impl UpdateBucketBundleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBucketBundleInput`](crate::operation::update_bucket_bundle::UpdateBucketBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_bucket_bundle::UpdateBucketBundleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_bucket_bundle::UpdateBucketBundleInput {
-                bucket_name: self.bucket_name,
-                bundle_id: self.bundle_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_bucket_bundle::UpdateBucketBundleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_bucket_bundle::UpdateBucketBundleInput {
+            bucket_name: self.bucket_name,
+            bundle_id: self.bundle_id,
+        })
     }
 }

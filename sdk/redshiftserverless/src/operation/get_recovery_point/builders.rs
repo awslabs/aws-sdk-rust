@@ -10,10 +10,7 @@ impl GetRecoveryPointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_recovery_point::GetRecoveryPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recovery_point::GetRecoveryPointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recovery_point::GetRecoveryPointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_recovery_point();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetRecoveryPointFluentBuilder {
         }
     }
     /// Access the GetRecoveryPoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_recovery_point::builders::GetRecoveryPointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_recovery_point::builders::GetRecoveryPointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetRecoveryPointFluentBuilder {
             crate::operation::get_recovery_point::GetRecoveryPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recovery_point::GetRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recovery_point::GetRecoveryPointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetRecoveryPointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetRecoveryPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recovery_point::GetRecoveryPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recovery_point::GetRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recovery_point::GetRecoveryPointError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetRecoveryPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recovery_point::GetRecoveryPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recovery_point::GetRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recovery_point::GetRecoveryPointError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetRecoveryPointFluentBuilder {
             crate::operation::get_recovery_point::GetRecoveryPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_recovery_point::GetRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_recovery_point::GetRecoveryPointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the recovery point to return information for.</p>
-    pub fn recovery_point_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recovery_point_id(input.into());
         self
     }
     /// <p>The unique identifier of the recovery point to return information for.</p>
-    pub fn set_recovery_point_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recovery_point_id(input);
         self
     }

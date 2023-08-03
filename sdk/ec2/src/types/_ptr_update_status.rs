@@ -37,9 +37,7 @@ impl PtrUpdateStatus {
 
 /// A builder for [`PtrUpdateStatus`](crate::types::PtrUpdateStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PtrUpdateStatusBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

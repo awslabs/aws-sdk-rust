@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`analyzers(Option<Vec<AnalyzerSummary>>)`](crate::operation::list_analyzers::ListAnalyzersOutput::analyzers): <p>The analyzers retrieved.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_analyzers::ListAnalyzersOutput::next_token): <p>A token used for pagination of results returned.</p>
     /// - On failure, responds with [`SdkError<ListAnalyzersError>`](crate::operation::list_analyzers::ListAnalyzersError)
-    pub fn list_analyzers(
-        &self,
-    ) -> crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder {
-        crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_analyzers(&self) -> crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder {
+        crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::new(self.handle.clone())
     }
 }

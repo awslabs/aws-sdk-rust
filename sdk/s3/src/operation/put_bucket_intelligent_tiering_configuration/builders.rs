@@ -5,16 +5,16 @@ pub use crate::operation::put_bucket_intelligent_tiering_configuration::_put_buc
 
 impl PutBucketIntelligentTieringConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_bucket_intelligent_tiering_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -60,7 +60,7 @@ impl PutBucketIntelligentTieringConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBucketIntelligentTieringConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationInputBuilder,
+    inner: crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationInputBuilder,
 }
 impl PutBucketIntelligentTieringConfigurationFluentBuilder {
     /// Creates a new `PutBucketIntelligentTieringConfiguration`.
@@ -71,15 +71,24 @@ impl PutBucketIntelligentTieringConfigurationFluentBuilder {
         }
     }
     /// Access the PutBucketIntelligentTieringConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -88,16 +97,19 @@ impl PutBucketIntelligentTieringConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -115,17 +127,30 @@ impl PutBucketIntelligentTieringConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
@@ -157,25 +182,17 @@ impl PutBucketIntelligentTieringConfigurationFluentBuilder {
         self.inner.get_id()
     }
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
-    pub fn intelligent_tiering_configuration(
-        mut self,
-        input: crate::types::IntelligentTieringConfiguration,
-    ) -> Self {
+    pub fn intelligent_tiering_configuration(mut self, input: crate::types::IntelligentTieringConfiguration) -> Self {
         self.inner = self.inner.intelligent_tiering_configuration(input);
         self
     }
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
-    pub fn set_intelligent_tiering_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::IntelligentTieringConfiguration>,
-    ) -> Self {
+    pub fn set_intelligent_tiering_configuration(mut self, input: ::std::option::Option<crate::types::IntelligentTieringConfiguration>) -> Self {
         self.inner = self.inner.set_intelligent_tiering_configuration(input);
         self
     }
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
-    pub fn get_intelligent_tiering_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::IntelligentTieringConfiguration> {
+    pub fn get_intelligent_tiering_configuration(&self) -> &::std::option::Option<crate::types::IntelligentTieringConfiguration> {
         self.inner.get_intelligent_tiering_configuration()
     }
 }

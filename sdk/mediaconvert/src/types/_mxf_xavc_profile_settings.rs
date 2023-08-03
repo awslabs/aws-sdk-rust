@@ -30,9 +30,7 @@ impl MxfXavcProfileSettings {
 
 /// A builder for [`MxfXavcProfileSettings`](crate::types::MxfXavcProfileSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MxfXavcProfileSettingsBuilder {
     pub(crate) duration_mode: ::std::option::Option<crate::types::MxfXavcDurationMode>,
     pub(crate) max_anc_data_size: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl MxfXavcProfileSettingsBuilder {
         self
     }
     /// To create an output that complies with the XAVC file format guidelines for interoperability, keep the default value, Drop frames for compliance. To include all frames from your input in this output, keep the default setting, Allow any duration. The number of frames that MediaConvert excludes when you set this to Drop frames for compliance depends on the output frame rate and duration.
-    pub fn set_duration_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::MxfXavcDurationMode>,
-    ) -> Self {
+    pub fn set_duration_mode(mut self, input: ::std::option::Option<crate::types::MxfXavcDurationMode>) -> Self {
         self.duration_mode = input;
         self
     }

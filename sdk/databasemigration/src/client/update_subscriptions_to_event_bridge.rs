@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateSubscriptionsToEventBridgeOutput`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput) with field(s):
     ///   - [`result(Option<String>)`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput::result): <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
     /// - On failure, responds with [`SdkError<UpdateSubscriptionsToEventBridgeError>`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeError)
-    pub fn update_subscriptions_to_event_bridge(&self) -> crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeFluentBuilder{
+    pub fn update_subscriptions_to_event_bridge(
+        &self,
+    ) -> crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeFluentBuilder {
         crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeFluentBuilder::new(self.handle.clone())
     }
 }

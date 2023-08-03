@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ExportTransitGatewayRoutesOutput {
 }
 impl ExportTransitGatewayRoutesOutput {
     /// Creates a new builder-style object to manufacture [`ExportTransitGatewayRoutesOutput`](crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput).
-    pub fn builder() -> crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesOutputBuilder{
+    pub fn builder() -> crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesOutputBuilder {
         crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExportTransitGatewayRoutesOutput`](crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportTransitGatewayRoutesOutputBuilder {
     pub(crate) s3_location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl ExportTransitGatewayRoutesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExportTransitGatewayRoutesOutput`](crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput {
+    pub fn build(self) -> crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput {
         crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput {
             s3_location: self.s3_location,
             _request_id: self._request_id,

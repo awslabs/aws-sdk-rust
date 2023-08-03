@@ -10,10 +10,7 @@ impl ListInvitationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_invitations::ListInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_invitations::ListInvitationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_invitations::ListInvitationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_invitations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListInvitationsFluentBuilder {
         }
     }
     /// Access the ListInvitations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_invitations::builders::ListInvitationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_invitations::builders::ListInvitationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListInvitationsFluentBuilder {
             crate::operation::list_invitations::ListInvitations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_invitations::ListInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_invitations::ListInvitationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListInvitationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListInvitationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_invitations::ListInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_invitations::ListInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_invitations::ListInvitationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListInvitationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_invitations::ListInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_invitations::ListInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_invitations::ListInvitationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListInvitationsFluentBuilder {
             crate::operation::list_invitations::ListInvitations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_invitations::ListInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_invitations::ListInvitationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_invitations::paginator::ListInvitationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_invitations::paginator::ListInvitationsPaginator {
-        crate::operation::list_invitations::paginator::ListInvitationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_invitations::paginator::ListInvitationsPaginator {
+        crate::operation::list_invitations::paginator::ListInvitationsPaginator::new(self.handle, self.inner)
     }
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {

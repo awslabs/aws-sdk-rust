@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_multicast_group::CreateMulticastGroupOutput::arn): <p>The arn of the multicast group.</p>
     ///   - [`id(Option<String>)`](crate::operation::create_multicast_group::CreateMulticastGroupOutput::id): <p>The ID of the multicast group.</p>
     /// - On failure, responds with [`SdkError<CreateMulticastGroupError>`](crate::operation::create_multicast_group::CreateMulticastGroupError)
-    pub fn create_multicast_group(
-        &self,
-    ) -> crate::operation::create_multicast_group::builders::CreateMulticastGroupFluentBuilder {
-        crate::operation::create_multicast_group::builders::CreateMulticastGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_multicast_group(&self) -> crate::operation::create_multicast_group::builders::CreateMulticastGroupFluentBuilder {
+        crate::operation::create_multicast_group::builders::CreateMulticastGroupFluentBuilder::new(self.handle.clone())
     }
 }

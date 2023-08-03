@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteLabelGroupOutput {
 }
 impl DeleteLabelGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLabelGroupOutput`](crate::operation::delete_label_group::DeleteLabelGroupOutput).
-    pub fn builder() -> crate::operation::delete_label_group::builders::DeleteLabelGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_label_group::builders::DeleteLabelGroupOutputBuilder {
         crate::operation::delete_label_group::builders::DeleteLabelGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLabelGroupOutput`](crate::operation::delete_label_group::DeleteLabelGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLabelGroupOutputBuilder {
     _request_id: Option<String>,
 }

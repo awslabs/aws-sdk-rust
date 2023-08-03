@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateFlowEntitlementOutput {
 }
 impl UpdateFlowEntitlementOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowEntitlementOutput`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementOutput).
-    pub fn builder(
-    ) -> crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementOutputBuilder {
         crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFlowEntitlementOutput`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFlowEntitlementOutputBuilder {
     pub(crate) entitlement: ::std::option::Option<crate::types::Entitlement>,
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
@@ -52,10 +48,7 @@ impl UpdateFlowEntitlementOutputBuilder {
         self
     }
     /// The new configuration of the entitlement that you updated.
-    pub fn set_entitlement(
-        mut self,
-        input: ::std::option::Option<crate::types::Entitlement>,
-    ) -> Self {
+    pub fn set_entitlement(mut self, input: ::std::option::Option<crate::types::Entitlement>) -> Self {
         self.entitlement = input;
         self
     }

@@ -51,9 +51,7 @@ pub struct CreateMultipartUploadInput {
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>A map of metadata to store with the object in S3.</p>
     #[doc(hidden)]
-    pub metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
     #[doc(hidden)]
     pub server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
@@ -96,8 +94,7 @@ pub struct CreateMultipartUploadInput {
     pub object_lock_retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether you want to apply a legal hold to the uploaded object.</p>
     #[doc(hidden)]
-    pub object_lock_legal_hold_status:
-        ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
+    pub object_lock_legal_hold_status: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     #[doc(hidden)]
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
@@ -166,17 +163,11 @@ impl CreateMultipartUploadInput {
         self.key.as_deref()
     }
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
-    pub fn server_side_encryption(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServerSideEncryption> {
+    pub fn server_side_encryption(&self) -> ::std::option::Option<&crate::types::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
     /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -225,15 +216,11 @@ impl CreateMultipartUploadInput {
         self.object_lock_mode.as_ref()
     }
     /// <p>Specifies the date and time when you want the Object Lock to expire.</p>
-    pub fn object_lock_retain_until_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn object_lock_retain_until_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.object_lock_retain_until_date.as_ref()
     }
     /// <p>Specifies whether you want to apply a legal hold to the uploaded object.</p>
-    pub fn object_lock_legal_hold_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ObjectLockLegalHoldStatus> {
+    pub fn object_lock_legal_hold_status(&self) -> ::std::option::Option<&crate::types::ObjectLockLegalHoldStatus> {
         self.object_lock_legal_hold_status.as_ref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
@@ -269,22 +256,13 @@ impl ::std::fmt::Debug for CreateMultipartUploadInput {
         formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
         formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
         formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "ssekms_encryption_context",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("ssekms_encryption_context", &"*** Sensitive Data Redacted ***");
         formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
         formatter.field("request_payer", &self.request_payer);
         formatter.field("tagging", &self.tagging);
         formatter.field("object_lock_mode", &self.object_lock_mode);
-        formatter.field(
-            "object_lock_retain_until_date",
-            &self.object_lock_retain_until_date,
-        );
-        formatter.field(
-            "object_lock_legal_hold_status",
-            &self.object_lock_legal_hold_status,
-        );
+        formatter.field("object_lock_retain_until_date", &self.object_lock_retain_until_date);
+        formatter.field("object_lock_legal_hold_status", &self.object_lock_legal_hold_status);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.finish()
@@ -292,9 +270,7 @@ impl ::std::fmt::Debug for CreateMultipartUploadInput {
 }
 impl CreateMultipartUploadInput {
     /// Creates a new builder-style object to manufacture [`CreateMultipartUploadInput`](crate::operation::create_multipart_upload::CreateMultipartUploadInput).
-    pub fn builder(
-    ) -> crate::operation::create_multipart_upload::builders::CreateMultipartUploadInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_multipart_upload::builders::CreateMultipartUploadInputBuilder {
         crate::operation::create_multipart_upload::builders::CreateMultipartUploadInputBuilder::default()
     }
 }
@@ -316,9 +292,7 @@ pub struct CreateMultipartUploadInputBuilder {
     pub(crate) grant_read_acp: ::std::option::Option<::std::string::String>,
     pub(crate) grant_write_acp: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     pub(crate) storage_class: ::std::option::Option<crate::types::StorageClass>,
     pub(crate) website_redirect_location: ::std::option::Option<::std::string::String>,
@@ -332,8 +306,7 @@ pub struct CreateMultipartUploadInputBuilder {
     pub(crate) tagging: ::std::option::Option<::std::string::String>,
     pub(crate) object_lock_mode: ::std::option::Option<crate::types::ObjectLockMode>,
     pub(crate) object_lock_retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) object_lock_legal_hold_status:
-        ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
+    pub(crate) object_lock_legal_hold_status: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
     pub(crate) checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
 }
@@ -376,18 +349,12 @@ impl CreateMultipartUploadInputBuilder {
         &self.bucket
     }
     /// <p>Specifies caching behavior along the request/reply chain.</p>
-    pub fn cache_control(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_control = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies caching behavior along the request/reply chain.</p>
-    pub fn set_cache_control(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_control = input;
         self
     }
@@ -396,18 +363,12 @@ impl CreateMultipartUploadInputBuilder {
         &self.cache_control
     }
     /// <p>Specifies presentational information for the object.</p>
-    pub fn content_disposition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_disposition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_disposition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies presentational information for the object.</p>
-    pub fn set_content_disposition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_disposition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_disposition = input;
         self
     }
@@ -416,18 +377,12 @@ impl CreateMultipartUploadInputBuilder {
         &self.content_disposition
     }
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
-    pub fn content_encoding(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_encoding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_encoding = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
-    pub fn set_content_encoding(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_encoding = input;
         self
     }
@@ -436,18 +391,12 @@ impl CreateMultipartUploadInputBuilder {
         &self.content_encoding
     }
     /// <p>The language the content is in.</p>
-    pub fn content_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_language = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The language the content is in.</p>
-    pub fn set_content_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_language = input;
         self
     }
@@ -475,10 +424,7 @@ impl CreateMultipartUploadInputBuilder {
         self
     }
     /// <p>The date and time at which the object is no longer cacheable.</p>
-    pub fn set_expires(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires = input;
         self
     }
@@ -488,19 +434,13 @@ impl CreateMultipartUploadInputBuilder {
     }
     /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-    pub fn grant_full_control(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grant_full_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_full_control = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-    pub fn set_grant_full_control(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_full_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_full_control = input;
         self
     }
@@ -528,19 +468,13 @@ impl CreateMultipartUploadInputBuilder {
     }
     /// <p>Allows grantee to read the object ACL.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-    pub fn grant_read_acp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grant_read_acp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_read_acp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Allows grantee to read the object ACL.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-    pub fn set_grant_read_acp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_read_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_read_acp = input;
         self
     }
@@ -551,19 +485,13 @@ impl CreateMultipartUploadInputBuilder {
     }
     /// <p>Allows grantee to write the ACL for the applicable object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-    pub fn grant_write_acp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grant_write_acp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_write_acp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Allows grantee to write the ACL for the applicable object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-    pub fn set_grant_write_acp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grant_write_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_write_acp = input;
         self
     }
@@ -591,32 +519,19 @@ impl CreateMultipartUploadInputBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
@@ -625,17 +540,12 @@ impl CreateMultipartUploadInputBuilder {
         self
     }
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
-    pub fn set_server_side_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerSideEncryption>,
-    ) -> Self {
+    pub fn set_server_side_encryption(mut self, input: ::std::option::Option<crate::types::ServerSideEncryption>) -> Self {
         self.server_side_encryption = input;
         self
     }
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
-    pub fn get_server_side_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerSideEncryption> {
+    pub fn get_server_side_encryption(&self) -> &::std::option::Option<crate::types::ServerSideEncryption> {
         &self.server_side_encryption
     }
     /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -644,10 +554,7 @@ impl CreateMultipartUploadInputBuilder {
         self
     }
     /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageClass>,
-    ) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::StorageClass>) -> Self {
         self.storage_class = input;
         self
     }
@@ -656,18 +563,12 @@ impl CreateMultipartUploadInputBuilder {
         &self.storage_class
     }
     /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
-    pub fn website_redirect_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn website_redirect_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.website_redirect_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
-    pub fn set_website_redirect_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_website_redirect_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.website_redirect_location = input;
         self
     }
@@ -676,18 +577,12 @@ impl CreateMultipartUploadInputBuilder {
         &self.website_redirect_location
     }
     /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
-    pub fn sse_customer_algorithm(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_customer_algorithm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sse_customer_algorithm = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
-    pub fn set_sse_customer_algorithm(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_customer_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sse_customer_algorithm = input;
         self
     }
@@ -696,18 +591,12 @@ impl CreateMultipartUploadInputBuilder {
         &self.sse_customer_algorithm
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-    pub fn sse_customer_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_customer_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sse_customer_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-    pub fn set_sse_customer_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_customer_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sse_customer_key = input;
         self
     }
@@ -716,18 +605,12 @@ impl CreateMultipartUploadInputBuilder {
         &self.sse_customer_key
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
-    pub fn sse_customer_key_md5(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_customer_key_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sse_customer_key_md5 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
-    pub fn set_sse_customer_key_md5(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_customer_key_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sse_customer_key_md5 = input;
         self
     }
@@ -736,18 +619,12 @@ impl CreateMultipartUploadInputBuilder {
         &self.sse_customer_key_md5
     }
     /// <p>Specifies the ID of the symmetric encryption customer managed key to use for object encryption. All GET and PUT requests for an object protected by KMS will fail if they're not made via SSL or using SigV4. For information about configuring any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn ssekms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssekms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssekms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the symmetric encryption customer managed key to use for object encryption. All GET and PUT requests for an object protected by KMS will fail if they're not made via SSL or using SigV4. For information about configuring any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_ssekms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssekms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssekms_key_id = input;
         self
     }
@@ -756,18 +633,12 @@ impl CreateMultipartUploadInputBuilder {
         &self.ssekms_key_id
     }
     /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
-    pub fn ssekms_encryption_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssekms_encryption_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssekms_encryption_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
-    pub fn set_ssekms_encryption_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssekms_encryption_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssekms_encryption_context = input;
         self
     }
@@ -798,10 +669,7 @@ impl CreateMultipartUploadInputBuilder {
         self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_request_payer(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestPayer>,
-    ) -> Self {
+    pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
         self.request_payer = input;
         self
     }
@@ -829,10 +697,7 @@ impl CreateMultipartUploadInputBuilder {
         self
     }
     /// <p>Specifies the Object Lock mode that you want to apply to the uploaded object.</p>
-    pub fn set_object_lock_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLockMode>,
-    ) -> Self {
+    pub fn set_object_lock_mode(mut self, input: ::std::option::Option<crate::types::ObjectLockMode>) -> Self {
         self.object_lock_mode = input;
         self
     }
@@ -846,54 +711,35 @@ impl CreateMultipartUploadInputBuilder {
         self
     }
     /// <p>Specifies the date and time when you want the Object Lock to expire.</p>
-    pub fn set_object_lock_retain_until_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_object_lock_retain_until_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.object_lock_retain_until_date = input;
         self
     }
     /// <p>Specifies the date and time when you want the Object Lock to expire.</p>
-    pub fn get_object_lock_retain_until_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_object_lock_retain_until_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.object_lock_retain_until_date
     }
     /// <p>Specifies whether you want to apply a legal hold to the uploaded object.</p>
-    pub fn object_lock_legal_hold_status(
-        mut self,
-        input: crate::types::ObjectLockLegalHoldStatus,
-    ) -> Self {
+    pub fn object_lock_legal_hold_status(mut self, input: crate::types::ObjectLockLegalHoldStatus) -> Self {
         self.object_lock_legal_hold_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether you want to apply a legal hold to the uploaded object.</p>
-    pub fn set_object_lock_legal_hold_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
-    ) -> Self {
+    pub fn set_object_lock_legal_hold_status(mut self, input: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>) -> Self {
         self.object_lock_legal_hold_status = input;
         self
     }
     /// <p>Specifies whether you want to apply a legal hold to the uploaded object.</p>
-    pub fn get_object_lock_legal_hold_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectLockLegalHoldStatus> {
+    pub fn get_object_lock_legal_hold_status(&self) -> &::std::option::Option<crate::types::ObjectLockLegalHoldStatus> {
         &self.object_lock_legal_hold_status
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -907,60 +753,51 @@ impl CreateMultipartUploadInputBuilder {
         self
     }
     /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::ChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
         self.checksum_algorithm = input;
         self
     }
     /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
         &self.checksum_algorithm
     }
     /// Consumes the builder and constructs a [`CreateMultipartUploadInput`](crate::operation::create_multipart_upload::CreateMultipartUploadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_multipart_upload::CreateMultipartUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_multipart_upload::CreateMultipartUploadInput {
-                acl: self.acl,
-                bucket: self.bucket,
-                cache_control: self.cache_control,
-                content_disposition: self.content_disposition,
-                content_encoding: self.content_encoding,
-                content_language: self.content_language,
-                content_type: self.content_type,
-                expires: self.expires,
-                grant_full_control: self.grant_full_control,
-                grant_read: self.grant_read,
-                grant_read_acp: self.grant_read_acp,
-                grant_write_acp: self.grant_write_acp,
-                key: self.key,
-                metadata: self.metadata,
-                server_side_encryption: self.server_side_encryption,
-                storage_class: self.storage_class,
-                website_redirect_location: self.website_redirect_location,
-                sse_customer_algorithm: self.sse_customer_algorithm,
-                sse_customer_key: self.sse_customer_key,
-                sse_customer_key_md5: self.sse_customer_key_md5,
-                ssekms_key_id: self.ssekms_key_id,
-                ssekms_encryption_context: self.ssekms_encryption_context,
-                bucket_key_enabled: self.bucket_key_enabled,
-                request_payer: self.request_payer,
-                tagging: self.tagging,
-                object_lock_mode: self.object_lock_mode,
-                object_lock_retain_until_date: self.object_lock_retain_until_date,
-                object_lock_legal_hold_status: self.object_lock_legal_hold_status,
-                expected_bucket_owner: self.expected_bucket_owner,
-                checksum_algorithm: self.checksum_algorithm,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_multipart_upload::CreateMultipartUploadInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_multipart_upload::CreateMultipartUploadInput {
+            acl: self.acl,
+            bucket: self.bucket,
+            cache_control: self.cache_control,
+            content_disposition: self.content_disposition,
+            content_encoding: self.content_encoding,
+            content_language: self.content_language,
+            content_type: self.content_type,
+            expires: self.expires,
+            grant_full_control: self.grant_full_control,
+            grant_read: self.grant_read,
+            grant_read_acp: self.grant_read_acp,
+            grant_write_acp: self.grant_write_acp,
+            key: self.key,
+            metadata: self.metadata,
+            server_side_encryption: self.server_side_encryption,
+            storage_class: self.storage_class,
+            website_redirect_location: self.website_redirect_location,
+            sse_customer_algorithm: self.sse_customer_algorithm,
+            sse_customer_key: self.sse_customer_key,
+            sse_customer_key_md5: self.sse_customer_key_md5,
+            ssekms_key_id: self.ssekms_key_id,
+            ssekms_encryption_context: self.ssekms_encryption_context,
+            bucket_key_enabled: self.bucket_key_enabled,
+            request_payer: self.request_payer,
+            tagging: self.tagging,
+            object_lock_mode: self.object_lock_mode,
+            object_lock_retain_until_date: self.object_lock_retain_until_date,
+            object_lock_legal_hold_status: self.object_lock_legal_hold_status,
+            expected_bucket_owner: self.expected_bucket_owner,
+            checksum_algorithm: self.checksum_algorithm,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateMultipartUploadInputBuilder {
@@ -987,22 +824,13 @@ impl ::std::fmt::Debug for CreateMultipartUploadInputBuilder {
         formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
         formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
         formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "ssekms_encryption_context",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("ssekms_encryption_context", &"*** Sensitive Data Redacted ***");
         formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
         formatter.field("request_payer", &self.request_payer);
         formatter.field("tagging", &self.tagging);
         formatter.field("object_lock_mode", &self.object_lock_mode);
-        formatter.field(
-            "object_lock_retain_until_date",
-            &self.object_lock_retain_until_date,
-        );
-        formatter.field(
-            "object_lock_legal_hold_status",
-            &self.object_lock_legal_hold_status,
-        );
+        formatter.field("object_lock_retain_until_date", &self.object_lock_retain_until_date);
+        formatter.field("object_lock_legal_hold_status", &self.object_lock_legal_hold_status);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.finish()

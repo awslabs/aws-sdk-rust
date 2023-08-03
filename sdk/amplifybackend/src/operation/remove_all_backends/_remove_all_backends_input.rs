@@ -23,17 +23,14 @@ impl RemoveAllBackendsInput {
 }
 impl RemoveAllBackendsInput {
     /// Creates a new builder-style object to manufacture [`RemoveAllBackendsInput`](crate::operation::remove_all_backends::RemoveAllBackendsInput).
-    pub fn builder(
-    ) -> crate::operation::remove_all_backends::builders::RemoveAllBackendsInputBuilder {
+    pub fn builder() -> crate::operation::remove_all_backends::builders::RemoveAllBackendsInputBuilder {
         crate::operation::remove_all_backends::builders::RemoveAllBackendsInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveAllBackendsInput`](crate::operation::remove_all_backends::RemoveAllBackendsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveAllBackendsInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) clean_amplify_app: ::std::option::Option<bool>,
@@ -70,15 +67,10 @@ impl RemoveAllBackendsInputBuilder {
     /// Consumes the builder and constructs a [`RemoveAllBackendsInput`](crate::operation::remove_all_backends::RemoveAllBackendsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_all_backends::RemoveAllBackendsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_all_backends::RemoveAllBackendsInput {
-                app_id: self.app_id,
-                clean_amplify_app: self.clean_amplify_app,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::remove_all_backends::RemoveAllBackendsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::remove_all_backends::RemoveAllBackendsInput {
+            app_id: self.app_id,
+            clean_amplify_app: self.clean_amplify_app,
+        })
     }
 }

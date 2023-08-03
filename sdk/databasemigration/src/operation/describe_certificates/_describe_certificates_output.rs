@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeCertificatesOutput {
 }
 impl DescribeCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificatesOutput`](crate::operation::describe_certificates::DescribeCertificatesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_certificates::builders::DescribeCertificatesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_certificates::builders::DescribeCertificatesOutputBuilder {
         crate::operation::describe_certificates::builders::DescribeCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCertificatesOutput`](crate::operation::describe_certificates::DescribeCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCertificatesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
@@ -71,17 +68,12 @@ impl DescribeCertificatesOutputBuilder {
         self
     }
     /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.certificates = input;
         self
     }
     /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
-    pub fn get_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         &self.certificates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

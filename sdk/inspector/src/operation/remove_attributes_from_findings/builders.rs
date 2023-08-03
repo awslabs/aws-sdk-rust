@@ -26,7 +26,7 @@ impl RemoveAttributesFromFindingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveAttributesFromFindingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsInputBuilder,
+    inner: crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsInputBuilder,
 }
 impl RemoveAttributesFromFindingsFluentBuilder {
     /// Creates a new `RemoveAttributesFromFindings`.
@@ -37,7 +37,7 @@ impl RemoveAttributesFromFindingsFluentBuilder {
         }
     }
     /// Access the RemoveAttributesFromFindings as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RemoveAttributesFromFindingsFluentBuilder {
             crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RemoveAttributesFromFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RemoveAttributesFromFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RemoveAttributesFromFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl RemoveAttributesFromFindingsFluentBuilder {
             crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError>,
     > {
         self.customize_middleware().await
     }
@@ -130,17 +119,12 @@ impl RemoveAttributesFromFindingsFluentBuilder {
         self
     }
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
-    pub fn set_finding_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_finding_arns(input);
         self
     }
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
-    pub fn get_finding_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_finding_arns()
     }
     /// Appends an item to `attributeKeys`.
@@ -148,25 +132,17 @@ impl RemoveAttributesFromFindingsFluentBuilder {
     /// To override the contents of this collection use [`set_attribute_keys`](Self::set_attribute_keys).
     ///
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
-    pub fn attribute_keys(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_keys(input.into());
         self
     }
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
-    pub fn set_attribute_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_attribute_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_attribute_keys(input);
         self
     }
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
-    pub fn get_attribute_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attribute_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_attribute_keys()
     }
 }

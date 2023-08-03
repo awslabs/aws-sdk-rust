@@ -28,7 +28,7 @@ impl DeleteResolverQueryLogConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResolverQueryLogConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_resolver_query_log_config::builders::DeleteResolverQueryLogConfigInputBuilder,
+    inner: crate::operation::delete_resolver_query_log_config::builders::DeleteResolverQueryLogConfigInputBuilder,
 }
 impl DeleteResolverQueryLogConfigFluentBuilder {
     /// Creates a new `DeleteResolverQueryLogConfig`.
@@ -39,7 +39,7 @@ impl DeleteResolverQueryLogConfigFluentBuilder {
         }
     }
     /// Access the DeleteResolverQueryLogConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_resolver_query_log_config::builders::DeleteResolverQueryLogConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_resolver_query_log_config::builders::DeleteResolverQueryLogConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DeleteResolverQueryLogConfigFluentBuilder {
             crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DeleteResolverQueryLogConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DeleteResolverQueryLogConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DeleteResolverQueryLogConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,32 +107,22 @@ impl DeleteResolverQueryLogConfigFluentBuilder {
             crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the query logging configuration that you want to delete.</p>
-    pub fn resolver_query_log_config_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_query_log_config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_query_log_config_id(input.into());
         self
     }
     /// <p>The ID of the query logging configuration that you want to delete.</p>
-    pub fn set_resolver_query_log_config_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_query_log_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_query_log_config_id(input);
         self
     }
     /// <p>The ID of the query logging configuration that you want to delete.</p>
-    pub fn get_resolver_query_log_config_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_resolver_query_log_config_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resolver_query_log_config_id()
     }
 }

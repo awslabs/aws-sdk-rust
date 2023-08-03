@@ -30,9 +30,7 @@ impl AwsDynamoDbTableStreamSpecification {
 
 /// A builder for [`AwsDynamoDbTableStreamSpecification`](crate::types::AwsDynamoDbTableStreamSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableStreamSpecificationBuilder {
     pub(crate) stream_enabled: ::std::option::Option<bool>,
     pub(crate) stream_view_type: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl AwsDynamoDbTableStreamSpecificationBuilder {
         &self.stream_enabled
     }
     /// <p>Determines the information that is written to the table.</p>
-    pub fn stream_view_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stream_view_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_view_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines the information that is written to the table.</p>
-    pub fn set_stream_view_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stream_view_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_view_type = input;
         self
     }

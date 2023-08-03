@@ -30,16 +30,14 @@ impl ListDistributionsByWebAclIdInput {
 }
 impl ListDistributionsByWebAclIdInput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByWebAclIdInput`](crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdInput).
-    pub fn builder() -> crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdInputBuilder{
+    pub fn builder() -> crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdInputBuilder {
         crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDistributionsByWebAclIdInput`](crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributionsByWebAclIdInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -95,12 +93,10 @@ impl ListDistributionsByWebAclIdInputBuilder {
         crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdInput {
-                marker: self.marker,
-                max_items: self.max_items,
-                web_acl_id: self.web_acl_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdInput {
+            marker: self.marker,
+            max_items: self.max_items,
+            web_acl_id: self.web_acl_id,
+        })
     }
 }

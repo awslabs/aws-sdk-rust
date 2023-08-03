@@ -23,9 +23,7 @@ impl ContactFilter {
 
 /// A builder for [`ContactFilter`](crate::types::ContactFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContactFilterBuilder {
     pub(crate) contact_states: ::std::option::Option<::std::vec::Vec<crate::types::ContactState>>,
 }
@@ -42,17 +40,12 @@ impl ContactFilterBuilder {
         self
     }
     /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
-    pub fn set_contact_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContactState>>,
-    ) -> Self {
+    pub fn set_contact_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactState>>) -> Self {
         self.contact_states = input;
         self
     }
     /// <p>A list of up to 9 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
-    pub fn get_contact_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactState>> {
+    pub fn get_contact_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactState>> {
         &self.contact_states
     }
     /// Consumes the builder and constructs a [`ContactFilter`](crate::types::ContactFilter).

@@ -42,8 +42,7 @@ pub struct SearchRecord {
     pub feature_metadata: ::std::option::Option<crate::types::FeatureMetadata>,
     /// <p>The properties of a hyperparameter tuning job.</p>
     #[doc(hidden)]
-    pub hyper_parameter_tuning_job:
-        ::std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>,
+    pub hyper_parameter_tuning_job: ::std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>,
     /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
     #[doc(hidden)]
     pub model: ::std::option::Option<crate::types::ModelDashboardModel>,
@@ -101,9 +100,7 @@ impl SearchRecord {
         self.feature_metadata.as_ref()
     }
     /// <p>The properties of a hyperparameter tuning job.</p>
-    pub fn hyper_parameter_tuning_job(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HyperParameterTuningJobSearchEntity> {
+    pub fn hyper_parameter_tuning_job(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobSearchEntity> {
         self.hyper_parameter_tuning_job.as_ref()
     }
     /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
@@ -124,9 +121,7 @@ impl SearchRecord {
 
 /// A builder for [`SearchRecord`](crate::types::SearchRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchRecordBuilder {
     pub(crate) training_job: ::std::option::Option<crate::types::TrainingJob>,
     pub(crate) experiment: ::std::option::Option<crate::types::Experiment>,
@@ -140,8 +135,7 @@ pub struct SearchRecordBuilder {
     pub(crate) feature_group: ::std::option::Option<crate::types::FeatureGroup>,
     pub(crate) project: ::std::option::Option<crate::types::Project>,
     pub(crate) feature_metadata: ::std::option::Option<crate::types::FeatureMetadata>,
-    pub(crate) hyper_parameter_tuning_job:
-        ::std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>,
+    pub(crate) hyper_parameter_tuning_job: ::std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>,
     pub(crate) model: ::std::option::Option<crate::types::ModelDashboardModel>,
     pub(crate) model_card: ::std::option::Option<crate::types::ModelCard>,
 }
@@ -152,10 +146,7 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>The properties of a training job.</p>
-    pub fn set_training_job(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingJob>,
-    ) -> Self {
+    pub fn set_training_job(mut self, input: ::std::option::Option<crate::types::TrainingJob>) -> Self {
         self.training_job = input;
         self
     }
@@ -169,10 +160,7 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>The properties of an experiment.</p>
-    pub fn set_experiment(
-        mut self,
-        input: ::std::option::Option<crate::types::Experiment>,
-    ) -> Self {
+    pub fn set_experiment(mut self, input: ::std::option::Option<crate::types::Experiment>) -> Self {
         self.experiment = input;
         self
     }
@@ -200,10 +188,7 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>The properties of a trial component.</p>
-    pub fn set_trial_component(
-        mut self,
-        input: ::std::option::Option<crate::types::TrialComponent>,
-    ) -> Self {
+    pub fn set_trial_component(mut self, input: ::std::option::Option<crate::types::TrialComponent>) -> Self {
         self.trial_component = input;
         self
     }
@@ -231,10 +216,7 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>A versioned model that can be deployed for SageMaker inference.</p>
-    pub fn set_model_package(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackage>,
-    ) -> Self {
+    pub fn set_model_package(mut self, input: ::std::option::Option<crate::types::ModelPackage>) -> Self {
         self.model_package = input;
         self
     }
@@ -248,17 +230,12 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>A group of versioned models in the model registry.</p>
-    pub fn set_model_package_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackageGroup>,
-    ) -> Self {
+    pub fn set_model_package_group(mut self, input: ::std::option::Option<crate::types::ModelPackageGroup>) -> Self {
         self.model_package_group = input;
         self
     }
     /// <p>A group of versioned models in the model registry.</p>
-    pub fn get_model_package_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelPackageGroup> {
+    pub fn get_model_package_group(&self) -> &::std::option::Option<crate::types::ModelPackageGroup> {
         &self.model_package_group
     }
     /// <p>A SageMaker Model Building Pipeline instance.</p>
@@ -281,17 +258,12 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>An execution of a pipeline.</p>
-    pub fn set_pipeline_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineExecution>,
-    ) -> Self {
+    pub fn set_pipeline_execution(mut self, input: ::std::option::Option<crate::types::PipelineExecution>) -> Self {
         self.pipeline_execution = input;
         self
     }
     /// <p>An execution of a pipeline.</p>
-    pub fn get_pipeline_execution(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipelineExecution> {
+    pub fn get_pipeline_execution(&self) -> &::std::option::Option<crate::types::PipelineExecution> {
         &self.pipeline_execution
     }
     /// <p>Amazon SageMaker Feature Store stores features in a collection called Feature Group. A Feature Group can be visualized as a table which has rows, with a unique identifier for each row where each column in the table is a feature. In principle, a Feature Group is composed of features and values per features.</p>
@@ -300,10 +272,7 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>Amazon SageMaker Feature Store stores features in a collection called Feature Group. A Feature Group can be visualized as a table which has rows, with a unique identifier for each row where each column in the table is a feature. In principle, a Feature Group is composed of features and values per features.</p>
-    pub fn set_feature_group(
-        mut self,
-        input: ::std::option::Option<crate::types::FeatureGroup>,
-    ) -> Self {
+    pub fn set_feature_group(mut self, input: ::std::option::Option<crate::types::FeatureGroup>) -> Self {
         self.feature_group = input;
         self
     }
@@ -331,10 +300,7 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>The feature metadata used to search through the features.</p>
-    pub fn set_feature_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::FeatureMetadata>,
-    ) -> Self {
+    pub fn set_feature_metadata(mut self, input: ::std::option::Option<crate::types::FeatureMetadata>) -> Self {
         self.feature_metadata = input;
         self
     }
@@ -343,25 +309,17 @@ impl SearchRecordBuilder {
         &self.feature_metadata
     }
     /// <p>The properties of a hyperparameter tuning job.</p>
-    pub fn hyper_parameter_tuning_job(
-        mut self,
-        input: crate::types::HyperParameterTuningJobSearchEntity,
-    ) -> Self {
+    pub fn hyper_parameter_tuning_job(mut self, input: crate::types::HyperParameterTuningJobSearchEntity) -> Self {
         self.hyper_parameter_tuning_job = ::std::option::Option::Some(input);
         self
     }
     /// <p>The properties of a hyperparameter tuning job.</p>
-    pub fn set_hyper_parameter_tuning_job(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>,
-    ) -> Self {
+    pub fn set_hyper_parameter_tuning_job(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>) -> Self {
         self.hyper_parameter_tuning_job = input;
         self
     }
     /// <p>The properties of a hyperparameter tuning job.</p>
-    pub fn get_hyper_parameter_tuning_job(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobSearchEntity> {
+    pub fn get_hyper_parameter_tuning_job(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobSearchEntity> {
         &self.hyper_parameter_tuning_job
     }
     /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
@@ -370,10 +328,7 @@ impl SearchRecordBuilder {
         self
     }
     /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
-    pub fn set_model(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelDashboardModel>,
-    ) -> Self {
+    pub fn set_model(mut self, input: ::std::option::Option<crate::types::ModelDashboardModel>) -> Self {
         self.model = input;
         self
     }

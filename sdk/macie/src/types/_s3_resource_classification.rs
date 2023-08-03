@@ -37,9 +37,7 @@ impl S3ResourceClassification {
 
 /// A builder for [`S3ResourceClassification`](crate::types::S3ResourceClassification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ResourceClassificationBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
@@ -80,17 +78,12 @@ impl S3ResourceClassificationBuilder {
         self
     }
     /// <p>(Discontinued) The classification type that you want to specify for the resource associated with Amazon Macie Classic. </p>
-    pub fn set_classification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ClassificationType>,
-    ) -> Self {
+    pub fn set_classification_type(mut self, input: ::std::option::Option<crate::types::ClassificationType>) -> Self {
         self.classification_type = input;
         self
     }
     /// <p>(Discontinued) The classification type that you want to specify for the resource associated with Amazon Macie Classic. </p>
-    pub fn get_classification_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClassificationType> {
+    pub fn get_classification_type(&self) -> &::std::option::Option<crate::types::ClassificationType> {
         &self.classification_type
     }
     /// Consumes the builder and constructs a [`S3ResourceClassification`](crate::types::S3ResourceClassification).

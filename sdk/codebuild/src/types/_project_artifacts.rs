@@ -252,9 +252,7 @@ impl ProjectArtifacts {
 
 /// A builder for [`ProjectArtifacts`](crate::types::ProjectArtifacts).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectArtifactsBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ArtifactsType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -396,10 +394,7 @@ impl ProjectArtifactsBuilder {
     /// <build-id>
     /// /MyArtifact.zip
     /// </build-id></code>.</p>
-    pub fn set_namespace_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactNamespace>,
-    ) -> Self {
+    pub fn set_namespace_type(mut self, input: ::std::option::Option<crate::types::ArtifactNamespace>) -> Self {
         self.namespace_type = input;
         self
     }
@@ -503,10 +498,7 @@ impl ProjectArtifactsBuilder {
     /// <li> <p> <code>ZIP</code>: CodeBuild creates in the output bucket a ZIP file that contains the build output.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_packaging(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactPackaging>,
-    ) -> Self {
+    pub fn set_packaging(mut self, input: ::std::option::Option<crate::types::ArtifactPackaging>) -> Self {
         self.packaging = input;
         self
     }
@@ -552,18 +544,12 @@ impl ProjectArtifactsBuilder {
         &self.encryption_disabled
     }
     /// <p> An identifier for this artifact definition. </p>
-    pub fn artifact_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An identifier for this artifact definition. </p>
-    pub fn set_artifact_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_identifier = input;
         self
     }
@@ -633,10 +619,7 @@ impl ProjectArtifactsBuilder {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn set_bucket_owner_access(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketOwnerAccess>,
-    ) -> Self {
+    pub fn set_bucket_owner_access(mut self, input: ::std::option::Option<crate::types::BucketOwnerAccess>) -> Self {
         self.bucket_owner_access = input;
         self
     }
@@ -669,9 +652,7 @@ impl ProjectArtifactsBuilder {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn get_bucket_owner_access(
-        &self,
-    ) -> &::std::option::Option<crate::types::BucketOwnerAccess> {
+    pub fn get_bucket_owner_access(&self) -> &::std::option::Option<crate::types::BucketOwnerAccess> {
         &self.bucket_owner_access
     }
     /// Consumes the builder and constructs a [`ProjectArtifacts`](crate::types::ProjectArtifacts).

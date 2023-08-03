@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`content_type(Option<String>)`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorOutput::content_type): <p>The style descriptor's content type. For example, <code>application/json</code>.</p>
     ///   - [`cache_control(Option<String>)`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorOutput::cache_control): <p>The HTTP Cache-Control directive for the value.</p>
     /// - On failure, responds with [`SdkError<GetMapStyleDescriptorError>`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError)
-    pub fn get_map_style_descriptor(
-        &self,
-    ) -> crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorFluentBuilder
-    {
+    pub fn get_map_style_descriptor(&self) -> crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorFluentBuilder {
         crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorFluentBuilder::new(self.handle.clone())
     }
 }

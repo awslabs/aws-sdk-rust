@@ -10,10 +10,7 @@ impl QueryTableRowsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::query_table_rows::QueryTableRowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_table_rows::QueryTableRowsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_table_rows::QueryTableRowsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.query_table_rows();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl QueryTableRowsFluentBuilder {
         }
     }
     /// Access the QueryTableRows as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::query_table_rows::builders::QueryTableRowsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::query_table_rows::builders::QueryTableRowsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl QueryTableRowsFluentBuilder {
             crate::operation::query_table_rows::QueryTableRows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_table_rows::QueryTableRowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_table_rows::QueryTableRowsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl QueryTableRowsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl QueryTableRowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::query_table_rows::QueryTableRowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_table_rows::QueryTableRowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_table_rows::QueryTableRowsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl QueryTableRowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::query_table_rows::QueryTableRowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_table_rows::QueryTableRowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_table_rows::QueryTableRowsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl QueryTableRowsFluentBuilder {
             crate::operation::query_table_rows::QueryTableRows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::query_table_rows::QueryTableRowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_table_rows::QueryTableRowsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::query_table_rows::paginator::QueryTableRowsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::query_table_rows::paginator::QueryTableRowsPaginator {
-        crate::operation::query_table_rows::paginator::QueryTableRowsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::query_table_rows::paginator::QueryTableRowsPaginator {
+        crate::operation::query_table_rows::paginator::QueryTableRowsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the workbook whose table rows are being queried.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -173,10 +152,7 @@ impl QueryTableRowsFluentBuilder {
         self
     }
     /// <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
-    pub fn set_filter_formula(
-        mut self,
-        input: ::std::option::Option<crate::types::Filter>,
-    ) -> Self {
+    pub fn set_filter_formula(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
         self.inner = self.inner.set_filter_formula(input);
         self
     }

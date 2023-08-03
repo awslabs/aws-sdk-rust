@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateByteMatchSetOutput {
 }
 impl CreateByteMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateByteMatchSetOutput`](crate::operation::create_byte_match_set::CreateByteMatchSetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_byte_match_set::builders::CreateByteMatchSetOutputBuilder {
-        crate::operation::create_byte_match_set::builders::CreateByteMatchSetOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_byte_match_set::builders::CreateByteMatchSetOutputBuilder {
+        crate::operation::create_byte_match_set::builders::CreateByteMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateByteMatchSetOutput`](crate::operation::create_byte_match_set::CreateByteMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateByteMatchSetOutputBuilder {
     pub(crate) byte_match_set: ::std::option::Option<crate::types::ByteMatchSet>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -52,10 +48,7 @@ impl CreateByteMatchSetOutputBuilder {
         self
     }
     /// <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
-    pub fn set_byte_match_set(
-        mut self,
-        input: ::std::option::Option<crate::types::ByteMatchSet>,
-    ) -> Self {
+    pub fn set_byte_match_set(mut self, input: ::std::option::Option<crate::types::ByteMatchSet>) -> Self {
         self.byte_match_set = input;
         self
     }

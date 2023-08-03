@@ -36,9 +36,7 @@ impl StartDbClusterOutput {
 
 /// A builder for [`StartDbClusterOutput`](crate::operation::start_db_cluster::StartDbClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDbClusterOutputBuilder {
     pub(crate) db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,

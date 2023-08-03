@@ -37,9 +37,7 @@ impl DataColorPalette {
 
 /// A builder for [`DataColorPalette`](crate::types::DataColorPalette).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataColorPaletteBuilder {
     pub(crate) colors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) min_max_gradient: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -58,10 +56,7 @@ impl DataColorPaletteBuilder {
         self
     }
     /// <p>The hexadecimal codes for the colors.</p>
-    pub fn set_colors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_colors(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.colors = input;
         self
     }
@@ -74,42 +69,28 @@ impl DataColorPaletteBuilder {
     /// To override the contents of this collection use [`set_min_max_gradient`](Self::set_min_max_gradient).
     ///
     /// <p>The minimum and maximum hexadecimal codes that describe a color gradient. </p>
-    pub fn min_max_gradient(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn min_max_gradient(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.min_max_gradient.unwrap_or_default();
         v.push(input.into());
         self.min_max_gradient = ::std::option::Option::Some(v);
         self
     }
     /// <p>The minimum and maximum hexadecimal codes that describe a color gradient. </p>
-    pub fn set_min_max_gradient(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_min_max_gradient(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.min_max_gradient = input;
         self
     }
     /// <p>The minimum and maximum hexadecimal codes that describe a color gradient. </p>
-    pub fn get_min_max_gradient(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_min_max_gradient(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.min_max_gradient
     }
     /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
-    pub fn empty_fill_color(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn empty_fill_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.empty_fill_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
-    pub fn set_empty_fill_color(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_empty_fill_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.empty_fill_color = input;
         self
     }

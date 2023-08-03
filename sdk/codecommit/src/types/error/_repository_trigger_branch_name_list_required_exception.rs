@@ -27,35 +27,27 @@ impl ::std::fmt::Display for RepositoryTriggerBranchNameListRequiredException {
     }
 }
 impl ::std::error::Error for RepositoryTriggerBranchNameListRequiredException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::RepositoryTriggerBranchNameListRequiredException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::RepositoryTriggerBranchNameListRequiredException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for RepositoryTriggerBranchNameListRequiredException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RepositoryTriggerBranchNameListRequiredException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl RepositoryTriggerBranchNameListRequiredException {
     /// Creates a new builder-style object to manufacture [`RepositoryTriggerBranchNameListRequiredException`](crate::types::error::RepositoryTriggerBranchNameListRequiredException).
-    pub fn builder(
-    ) -> crate::types::error::builders::RepositoryTriggerBranchNameListRequiredExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::RepositoryTriggerBranchNameListRequiredExceptionBuilder {
         crate::types::error::builders::RepositoryTriggerBranchNameListRequiredExceptionBuilder::default()
     }
 }
 
 /// A builder for [`RepositoryTriggerBranchNameListRequiredException`](crate::types::error::RepositoryTriggerBranchNameListRequiredException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryTriggerBranchNameListRequiredExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,10 +74,7 @@ impl RepositoryTriggerBranchNameListRequiredExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

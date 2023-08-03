@@ -15,17 +15,14 @@ impl DeleteConfigurationInput {
 }
 impl DeleteConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationInput`](crate::operation::delete_configuration::DeleteConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_configuration::builders::DeleteConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::delete_configuration::builders::DeleteConfigurationInputBuilder {
         crate::operation::delete_configuration::builders::DeleteConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConfigurationInput`](crate::operation::delete_configuration::DeleteConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfigurationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,8 @@ impl DeleteConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConfigurationInput`](crate::operation::delete_configuration::DeleteConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_configuration::DeleteConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_configuration::DeleteConfigurationInput { arn: self.arn },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_configuration::DeleteConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_configuration::DeleteConfigurationInput { arn: self.arn })
     }
 }

@@ -10,10 +10,7 @@ impl GetBlueprintRunsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_blueprint_runs::GetBlueprintRunsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_blueprint_runs::GetBlueprintRunsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_blueprint_runs::GetBlueprintRunsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_blueprint_runs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetBlueprintRunsFluentBuilder {
         }
     }
     /// Access the GetBlueprintRuns as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_blueprint_runs::builders::GetBlueprintRunsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_blueprint_runs::builders::GetBlueprintRunsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetBlueprintRunsFluentBuilder {
             crate::operation::get_blueprint_runs::GetBlueprintRuns,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_blueprint_runs::GetBlueprintRunsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_blueprint_runs::GetBlueprintRunsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetBlueprintRunsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetBlueprintRunsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_blueprint_runs::GetBlueprintRunsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_blueprint_runs::GetBlueprintRunsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_blueprint_runs::GetBlueprintRunsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetBlueprintRunsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_blueprint_runs::GetBlueprintRunsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_blueprint_runs::GetBlueprintRunsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_blueprint_runs::GetBlueprintRunsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl GetBlueprintRunsFluentBuilder {
             crate::operation::get_blueprint_runs::GetBlueprintRuns,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_blueprint_runs::GetBlueprintRunsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_blueprint_runs::GetBlueprintRunsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_blueprint_runs::paginator::GetBlueprintRunsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_blueprint_runs::paginator::GetBlueprintRunsPaginator {
-        crate::operation::get_blueprint_runs::paginator::GetBlueprintRunsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_blueprint_runs::paginator::GetBlueprintRunsPaginator {
+        crate::operation::get_blueprint_runs::paginator::GetBlueprintRunsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blueprint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.blueprint_name(input.into());
         self
     }
     /// <p>The name of the blueprint.</p>
-    pub fn set_blueprint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blueprint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_blueprint_name(input);
         self
     }

@@ -28,9 +28,7 @@ impl GetExtensionOutput {
 
 /// A builder for [`GetExtensionOutput`](crate::operation::get_extension::GetExtensionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExtensionOutputBuilder {
     pub(crate) extension: ::std::option::Option<crate::types::ExtensionDetails>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetExtensionOutputBuilder {
         self
     }
     /// <p>Details about the extension.</p>
-    pub fn set_extension(
-        mut self,
-        input: ::std::option::Option<crate::types::ExtensionDetails>,
-    ) -> Self {
+    pub fn set_extension(mut self, input: ::std::option::Option<crate::types::ExtensionDetails>) -> Self {
         self.extension = input;
         self
     }

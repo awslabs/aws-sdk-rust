@@ -22,18 +22,14 @@ impl GetLayerVersionPolicyInput {
 }
 impl GetLayerVersionPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetLayerVersionPolicyInput`](crate::operation::get_layer_version_policy::GetLayerVersionPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyInputBuilder {
         crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLayerVersionPolicyInput`](crate::operation::get_layer_version_policy::GetLayerVersionPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLayerVersionPolicyInputBuilder {
     pub(crate) layer_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_number: ::std::option::Option<i64>,
@@ -70,15 +66,11 @@ impl GetLayerVersionPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetLayerVersionPolicyInput`](crate::operation::get_layer_version_policy::GetLayerVersionPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_layer_version_policy::GetLayerVersionPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_layer_version_policy::GetLayerVersionPolicyInput {
-                layer_name: self.layer_name,
-                version_number: self.version_number,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_layer_version_policy::GetLayerVersionPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_layer_version_policy::GetLayerVersionPolicyInput {
+            layer_name: self.layer_name,
+            version_number: self.version_number,
+        })
     }
 }

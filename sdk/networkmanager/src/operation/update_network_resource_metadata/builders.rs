@@ -26,7 +26,7 @@ impl UpdateNetworkResourceMetadataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateNetworkResourceMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_network_resource_metadata::builders::UpdateNetworkResourceMetadataInputBuilder,
+    inner: crate::operation::update_network_resource_metadata::builders::UpdateNetworkResourceMetadataInputBuilder,
 }
 impl UpdateNetworkResourceMetadataFluentBuilder {
     /// Creates a new `UpdateNetworkResourceMetadata`.
@@ -37,7 +37,7 @@ impl UpdateNetworkResourceMetadataFluentBuilder {
         }
     }
     /// Access the UpdateNetworkResourceMetadata as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_network_resource_metadata::builders::UpdateNetworkResourceMetadataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_network_resource_metadata::builders::UpdateNetworkResourceMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateNetworkResourceMetadataFluentBuilder {
             crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateNetworkResourceMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateNetworkResourceMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateNetworkResourceMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateNetworkResourceMetadataFluentBuilder {
             crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -159,30 +142,17 @@ impl UpdateNetworkResourceMetadataFluentBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>The resource metadata.</p>
-    pub fn metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(k.into(), v.into());
         self
     }
     /// <p>The resource metadata.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
     }
     /// <p>The resource metadata.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_metadata()
     }
 }

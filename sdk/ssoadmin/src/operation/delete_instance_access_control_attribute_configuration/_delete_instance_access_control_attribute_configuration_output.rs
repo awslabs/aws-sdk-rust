@@ -19,9 +19,7 @@ impl DeleteInstanceAccessControlAttributeConfigurationOutput {
 
 /// A builder for [`DeleteInstanceAccessControlAttributeConfigurationOutput`](crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInstanceAccessControlAttributeConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,9 @@ impl DeleteInstanceAccessControlAttributeConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteInstanceAccessControlAttributeConfigurationOutput`](crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationOutput {
         crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationOutput {
             _request_id: self._request_id,
         }

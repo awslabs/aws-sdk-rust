@@ -43,9 +43,7 @@ impl CreatePipelineInput {
         self.pipeline_configuration_body.as_deref()
     }
     /// <p>Key-value pairs to configure log publishing.</p>
-    pub fn log_publishing_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LogPublishingOptions> {
+    pub fn log_publishing_options(&self) -> ::std::option::Option<&crate::types::LogPublishingOptions> {
         self.log_publishing_options.as_ref()
     }
     /// <p>Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion creates the pipeline with a public endpoint.</p>
@@ -66,9 +64,7 @@ impl CreatePipelineInput {
 
 /// A builder for [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePipelineInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) min_units: ::std::option::Option<i32>,
@@ -80,18 +76,12 @@ pub struct CreatePipelineInputBuilder {
 }
 impl CreatePipelineInputBuilder {
     /// <p>The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -128,18 +118,12 @@ impl CreatePipelineInputBuilder {
         &self.max_units
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
-    pub fn pipeline_configuration_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_configuration_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_configuration_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
-    pub fn set_pipeline_configuration_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_configuration_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_configuration_body = input;
         self
     }
@@ -153,17 +137,12 @@ impl CreatePipelineInputBuilder {
         self
     }
     /// <p>Key-value pairs to configure log publishing.</p>
-    pub fn set_log_publishing_options(
-        mut self,
-        input: ::std::option::Option<crate::types::LogPublishingOptions>,
-    ) -> Self {
+    pub fn set_log_publishing_options(mut self, input: ::std::option::Option<crate::types::LogPublishingOptions>) -> Self {
         self.log_publishing_options = input;
         self
     }
     /// <p>Key-value pairs to configure log publishing.</p>
-    pub fn get_log_publishing_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogPublishingOptions> {
+    pub fn get_log_publishing_options(&self) -> &::std::option::Option<crate::types::LogPublishingOptions> {
         &self.log_publishing_options
     }
     /// <p>Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion creates the pipeline with a public endpoint.</p>
@@ -172,10 +151,7 @@ impl CreatePipelineInputBuilder {
         self
     }
     /// <p>Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion creates the pipeline with a public endpoint.</p>
-    pub fn set_vpc_options(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcOptions>,
-    ) -> Self {
+    pub fn set_vpc_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
         self.vpc_options = input;
         self
     }
@@ -195,10 +171,7 @@ impl CreatePipelineInputBuilder {
         self
     }
     /// <p>List of tags to add to the pipeline upon creation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -209,10 +182,7 @@ impl CreatePipelineInputBuilder {
     /// Consumes the builder and constructs a [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_pipeline::CreatePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_pipeline::CreatePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pipeline::CreatePipelineInput {
             pipeline_name: self.pipeline_name,
             min_units: self.min_units,

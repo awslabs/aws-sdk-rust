@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`campaigns(Option<Vec<VehicleStatus>>)`](crate::operation::get_vehicle_status::GetVehicleStatusOutput::campaigns): <p> Lists information about the state of the vehicle with deployed campaigns. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_vehicle_status::GetVehicleStatusOutput::next_token): <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     /// - On failure, responds with [`SdkError<GetVehicleStatusError>`](crate::operation::get_vehicle_status::GetVehicleStatusError)
-    pub fn get_vehicle_status(
-        &self,
-    ) -> crate::operation::get_vehicle_status::builders::GetVehicleStatusFluentBuilder {
-        crate::operation::get_vehicle_status::builders::GetVehicleStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_vehicle_status(&self) -> crate::operation::get_vehicle_status::builders::GetVehicleStatusFluentBuilder {
+        crate::operation::get_vehicle_status::builders::GetVehicleStatusFluentBuilder::new(self.handle.clone())
     }
 }

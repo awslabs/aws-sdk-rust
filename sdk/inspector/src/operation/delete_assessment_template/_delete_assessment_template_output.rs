@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAssessmentTemplateOutput {
 }
 impl DeleteAssessmentTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAssessmentTemplateOutput`](crate::operation::delete_assessment_template::DeleteAssessmentTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateOutputBuilder {
         crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAssessmentTemplateOutput`](crate::operation::delete_assessment_template::DeleteAssessmentTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssessmentTemplateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteAssessmentTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAssessmentTemplateOutput`](crate::operation::delete_assessment_template::DeleteAssessmentTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_assessment_template::DeleteAssessmentTemplateOutput {
+    pub fn build(self) -> crate::operation::delete_assessment_template::DeleteAssessmentTemplateOutput {
         crate::operation::delete_assessment_template::DeleteAssessmentTemplateOutput {
             _request_id: self._request_id,
         }

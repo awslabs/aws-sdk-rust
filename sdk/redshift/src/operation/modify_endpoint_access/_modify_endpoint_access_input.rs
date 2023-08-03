@@ -22,36 +22,26 @@ impl ModifyEndpointAccessInput {
 }
 impl ModifyEndpointAccessInput {
     /// Creates a new builder-style object to manufacture [`ModifyEndpointAccessInput`](crate::operation::modify_endpoint_access::ModifyEndpointAccessInput).
-    pub fn builder(
-    ) -> crate::operation::modify_endpoint_access::builders::ModifyEndpointAccessInputBuilder {
+    pub fn builder() -> crate::operation::modify_endpoint_access::builders::ModifyEndpointAccessInputBuilder {
         crate::operation::modify_endpoint_access::builders::ModifyEndpointAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyEndpointAccessInput`](crate::operation::modify_endpoint_access::ModifyEndpointAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyEndpointAccessInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyEndpointAccessInputBuilder {
     /// <p>The endpoint to be modified.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint to be modified.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -64,41 +54,29 @@ impl ModifyEndpointAccessInputBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
         self
     }
     /// <p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// Consumes the builder and constructs a [`ModifyEndpointAccessInput`](crate::operation::modify_endpoint_access::ModifyEndpointAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_endpoint_access::ModifyEndpointAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_endpoint_access::ModifyEndpointAccessInput {
-                endpoint_name: self.endpoint_name,
-                vpc_security_group_ids: self.vpc_security_group_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_endpoint_access::ModifyEndpointAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_endpoint_access::ModifyEndpointAccessInput {
+            endpoint_name: self.endpoint_name,
+            vpc_security_group_ids: self.vpc_security_group_ids,
+        })
     }
 }

@@ -22,17 +22,14 @@ impl SetTagsForResourceInput {
 }
 impl SetTagsForResourceInput {
     /// Creates a new builder-style object to manufacture [`SetTagsForResourceInput`](crate::operation::set_tags_for_resource::SetTagsForResourceInput).
-    pub fn builder(
-    ) -> crate::operation::set_tags_for_resource::builders::SetTagsForResourceInputBuilder {
+    pub fn builder() -> crate::operation::set_tags_for_resource::builders::SetTagsForResourceInputBuilder {
         crate::operation::set_tags_for_resource::builders::SetTagsForResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`SetTagsForResourceInput`](crate::operation::set_tags_for_resource::SetTagsForResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetTagsForResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -64,10 +61,7 @@ impl SetTagsForResourceInputBuilder {
         self
     }
     /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -78,15 +72,11 @@ impl SetTagsForResourceInputBuilder {
     /// Consumes the builder and constructs a [`SetTagsForResourceInput`](crate::operation::set_tags_for_resource::SetTagsForResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_tags_for_resource::SetTagsForResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_tags_for_resource::SetTagsForResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_tags_for_resource::SetTagsForResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::set_tags_for_resource::SetTagsForResourceInput {
+            resource_arn: self.resource_arn,
+            tags: self.tags,
+        })
     }
 }

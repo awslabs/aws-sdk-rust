@@ -23,9 +23,7 @@ impl StatementOutputData {
 
 /// A builder for [`StatementOutputData`](crate::types::StatementOutputData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatementOutputDataBuilder {
     pub(crate) text_plain: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl StatementOutputDataBuilder {
     }
     /// Consumes the builder and constructs a [`StatementOutputData`](crate::types::StatementOutputData).
     pub fn build(self) -> crate::types::StatementOutputData {
-        crate::types::StatementOutputData {
-            text_plain: self.text_plain,
-        }
+        crate::types::StatementOutputData { text_plain: self.text_plain }
     }
 }

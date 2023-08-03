@@ -70,17 +70,14 @@ impl ::aws_http::request_id::RequestId for GetFaceDetectionOutput {
 }
 impl GetFaceDetectionOutput {
     /// Creates a new builder-style object to manufacture [`GetFaceDetectionOutput`](crate::operation::get_face_detection::GetFaceDetectionOutput).
-    pub fn builder() -> crate::operation::get_face_detection::builders::GetFaceDetectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_face_detection::builders::GetFaceDetectionOutputBuilder {
         crate::operation::get_face_detection::builders::GetFaceDetectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFaceDetectionOutput`](crate::operation::get_face_detection::GetFaceDetectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFaceDetectionOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
@@ -99,10 +96,7 @@ impl GetFaceDetectionOutputBuilder {
         self
     }
     /// <p>The current status of the face detection job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::VideoJobStatus>) -> Self {
         self.job_status = input;
         self
     }
@@ -111,18 +105,12 @@ impl GetFaceDetectionOutputBuilder {
         &self.job_status
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -136,10 +124,7 @@ impl GetFaceDetectionOutputBuilder {
         self
     }
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
-    pub fn set_video_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoMetadata>,
-    ) -> Self {
+    pub fn set_video_metadata(mut self, input: ::std::option::Option<crate::types::VideoMetadata>) -> Self {
         self.video_metadata = input;
         self
     }
@@ -173,17 +158,12 @@ impl GetFaceDetectionOutputBuilder {
         self
     }
     /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
-    pub fn set_faces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FaceDetection>>,
-    ) -> Self {
+    pub fn set_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FaceDetection>>) -> Self {
         self.faces = input;
         self
     }
     /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
-    pub fn get_faces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceDetection>> {
+    pub fn get_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceDetection>> {
         &self.faces
     }
     /// <p>Job identifier for the face detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceDetection.</p>

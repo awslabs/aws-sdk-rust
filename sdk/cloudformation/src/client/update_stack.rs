@@ -23,9 +23,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateStackOutput`](crate::operation::update_stack::UpdateStackOutput) with field(s):
     ///   - [`stack_id(Option<String>)`](crate::operation::update_stack::UpdateStackOutput::stack_id): <p>Unique identifier of the stack.</p>
     /// - On failure, responds with [`SdkError<UpdateStackError>`](crate::operation::update_stack::UpdateStackError)
-    pub fn update_stack(
-        &self,
-    ) -> crate::operation::update_stack::builders::UpdateStackFluentBuilder {
+    pub fn update_stack(&self) -> crate::operation::update_stack::builders::UpdateStackFluentBuilder {
         crate::operation::update_stack::builders::UpdateStackFluentBuilder::new(self.handle.clone())
     }
 }

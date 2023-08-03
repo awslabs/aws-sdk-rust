@@ -44,9 +44,7 @@ impl CreateTableInput {
         self.transaction_id.as_deref()
     }
     /// <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
-    pub fn open_table_format_input(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OpenTableFormatInput> {
+    pub fn open_table_format_input(&self) -> ::std::option::Option<&crate::types::OpenTableFormatInput> {
         self.open_table_format_input.as_ref()
     }
 }
@@ -59,15 +57,12 @@ impl CreateTableInput {
 
 /// A builder for [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTableInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_input: ::std::option::Option<crate::types::TableInput>,
-    pub(crate) partition_indexes:
-        ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndex>>,
+    pub(crate) partition_indexes: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndex>>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) open_table_format_input: ::std::option::Option<crate::types::OpenTableFormatInput>,
 }
@@ -87,18 +82,12 @@ impl CreateTableInputBuilder {
         &self.catalog_id
     }
     /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -112,10 +101,7 @@ impl CreateTableInputBuilder {
         self
     }
     /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
-    pub fn set_table_input(
-        mut self,
-        input: ::std::option::Option<crate::types::TableInput>,
-    ) -> Self {
+    pub fn set_table_input(mut self, input: ::std::option::Option<crate::types::TableInput>) -> Self {
         self.table_input = input;
         self
     }
@@ -135,32 +121,21 @@ impl CreateTableInputBuilder {
         self
     }
     /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
-    pub fn set_partition_indexes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndex>>,
-    ) -> Self {
+    pub fn set_partition_indexes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndex>>) -> Self {
         self.partition_indexes = input;
         self
     }
     /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
-    pub fn get_partition_indexes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionIndex>> {
+    pub fn get_partition_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionIndex>> {
         &self.partition_indexes
     }
     /// <p>The ID of the transaction.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transaction.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
@@ -174,26 +149,16 @@ impl CreateTableInputBuilder {
         self
     }
     /// <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
-    pub fn set_open_table_format_input(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenTableFormatInput>,
-    ) -> Self {
+    pub fn set_open_table_format_input(mut self, input: ::std::option::Option<crate::types::OpenTableFormatInput>) -> Self {
         self.open_table_format_input = input;
         self
     }
     /// <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
-    pub fn get_open_table_format_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::OpenTableFormatInput> {
+    pub fn get_open_table_format_input(&self) -> &::std::option::Option<crate::types::OpenTableFormatInput> {
         &self.open_table_format_input
     }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_table::CreateTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

@@ -84,9 +84,7 @@ impl AlarmModelVersionSummary {
 
 /// A builder for [`AlarmModelVersionSummary`](crate::types::AlarmModelVersionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmModelVersionSummaryBuilder {
     pub(crate) alarm_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_model_arn: ::std::option::Option<::std::string::String>,
@@ -99,18 +97,12 @@ pub struct AlarmModelVersionSummaryBuilder {
 }
 impl AlarmModelVersionSummaryBuilder {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the alarm model.</p>
-    pub fn set_alarm_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_model_name = input;
         self
     }
@@ -119,18 +111,12 @@ impl AlarmModelVersionSummaryBuilder {
         &self.alarm_model_name
     }
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn alarm_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn set_alarm_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_model_arn = input;
         self
     }
@@ -139,18 +125,12 @@ impl AlarmModelVersionSummaryBuilder {
         &self.alarm_model_arn
     }
     /// <p>The version of the alarm model.</p>
-    pub fn alarm_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the alarm model.</p>
-    pub fn set_alarm_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_model_version = input;
         self
     }
@@ -178,10 +158,7 @@ impl AlarmModelVersionSummaryBuilder {
         self
     }
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -195,10 +172,7 @@ impl AlarmModelVersionSummaryBuilder {
         self
     }
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }
@@ -224,10 +198,7 @@ impl AlarmModelVersionSummaryBuilder {
     /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
     /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmModelVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AlarmModelVersionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -242,18 +213,12 @@ impl AlarmModelVersionSummaryBuilder {
         &self.status
     }
     /// <p> Contains information about the status of the alarm model version. </p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Contains information about the status of the alarm model version. </p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

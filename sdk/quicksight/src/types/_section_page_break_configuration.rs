@@ -23,9 +23,7 @@ impl SectionPageBreakConfiguration {
 
 /// A builder for [`SectionPageBreakConfiguration`](crate::types::SectionPageBreakConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SectionPageBreakConfigurationBuilder {
     pub(crate) after: ::std::option::Option<crate::types::SectionAfterPageBreak>,
 }
@@ -36,10 +34,7 @@ impl SectionPageBreakConfigurationBuilder {
         self
     }
     /// <p>The configuration of a page break after a section.</p>
-    pub fn set_after(
-        mut self,
-        input: ::std::option::Option<crate::types::SectionAfterPageBreak>,
-    ) -> Self {
+    pub fn set_after(mut self, input: ::std::option::Option<crate::types::SectionAfterPageBreak>) -> Self {
         self.after = input;
         self
     }

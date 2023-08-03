@@ -37,9 +37,7 @@ impl ColorScale {
 
 /// A builder for [`ColorScale`](crate::types::ColorScale).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColorScaleBuilder {
     pub(crate) colors: ::std::option::Option<::std::vec::Vec<crate::types::DataColor>>,
     pub(crate) color_fill_type: ::std::option::Option<crate::types::ColorFillType>,
@@ -58,10 +56,7 @@ impl ColorScaleBuilder {
         self
     }
     /// <p>Determines the list of colors that are applied to the visual.</p>
-    pub fn set_colors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataColor>>,
-    ) -> Self {
+    pub fn set_colors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataColor>>) -> Self {
         self.colors = input;
         self
     }
@@ -75,10 +70,7 @@ impl ColorScaleBuilder {
         self
     }
     /// <p>Determines the color fill type.</p>
-    pub fn set_color_fill_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ColorFillType>,
-    ) -> Self {
+    pub fn set_color_fill_type(mut self, input: ::std::option::Option<crate::types::ColorFillType>) -> Self {
         self.color_fill_type = input;
         self
     }
@@ -92,10 +84,7 @@ impl ColorScaleBuilder {
         self
     }
     /// <p>Determines the color that is applied to null values.</p>
-    pub fn set_null_value_color(
-        mut self,
-        input: ::std::option::Option<crate::types::DataColor>,
-    ) -> Self {
+    pub fn set_null_value_color(mut self, input: ::std::option::Option<crate::types::DataColor>) -> Self {
         self.null_value_color = input;
         self
     }

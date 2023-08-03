@@ -6,15 +6,13 @@
 pub struct AwsEc2RouteTableDetails {
     /// <p> The associations between a route table and one or more subnets or a gateway. </p>
     #[doc(hidden)]
-    pub association_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationSetDetails>>,
+    pub association_set: ::std::option::Option<::std::vec::Vec<crate::types::AssociationSetDetails>>,
     /// <p> The ID of the Amazon Web Services account that owns the route table. </p>
     #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p> Describes a virtual private gateway propagating route. </p>
     #[doc(hidden)]
-    pub propagating_vgw_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgwSetDetails>>,
+    pub propagating_vgw_set: ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgwSetDetails>>,
     /// <p> The ID of the route table. </p>
     #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
@@ -35,9 +33,7 @@ impl AwsEc2RouteTableDetails {
         self.owner_id.as_deref()
     }
     /// <p> Describes a virtual private gateway propagating route. </p>
-    pub fn propagating_vgw_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PropagatingVgwSetDetails]> {
+    pub fn propagating_vgw_set(&self) -> ::std::option::Option<&[crate::types::PropagatingVgwSetDetails]> {
         self.propagating_vgw_set.as_deref()
     }
     /// <p> The ID of the route table. </p>
@@ -62,15 +58,11 @@ impl AwsEc2RouteTableDetails {
 
 /// A builder for [`AwsEc2RouteTableDetails`](crate::types::AwsEc2RouteTableDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2RouteTableDetailsBuilder {
-    pub(crate) association_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationSetDetails>>,
+    pub(crate) association_set: ::std::option::Option<::std::vec::Vec<crate::types::AssociationSetDetails>>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
-    pub(crate) propagating_vgw_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgwSetDetails>>,
+    pub(crate) propagating_vgw_set: ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgwSetDetails>>,
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) route_set: ::std::option::Option<::std::vec::Vec<crate::types::RouteSetDetails>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -88,17 +80,12 @@ impl AwsEc2RouteTableDetailsBuilder {
         self
     }
     /// <p> The associations between a route table and one or more subnets or a gateway. </p>
-    pub fn set_association_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationSetDetails>>,
-    ) -> Self {
+    pub fn set_association_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationSetDetails>>) -> Self {
         self.association_set = input;
         self
     }
     /// <p> The associations between a route table and one or more subnets or a gateway. </p>
-    pub fn get_association_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationSetDetails>> {
+    pub fn get_association_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationSetDetails>> {
         &self.association_set
     }
     /// <p> The ID of the Amazon Web Services account that owns the route table. </p>
@@ -127,32 +114,21 @@ impl AwsEc2RouteTableDetailsBuilder {
         self
     }
     /// <p> Describes a virtual private gateway propagating route. </p>
-    pub fn set_propagating_vgw_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgwSetDetails>>,
-    ) -> Self {
+    pub fn set_propagating_vgw_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgwSetDetails>>) -> Self {
         self.propagating_vgw_set = input;
         self
     }
     /// <p> Describes a virtual private gateway propagating route. </p>
-    pub fn get_propagating_vgw_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgwSetDetails>> {
+    pub fn get_propagating_vgw_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgwSetDetails>> {
         &self.propagating_vgw_set
     }
     /// <p> The ID of the route table. </p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the route table. </p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_table_id = input;
         self
     }
@@ -172,17 +148,12 @@ impl AwsEc2RouteTableDetailsBuilder {
         self
     }
     /// <p> The routes in the route table. </p>
-    pub fn set_route_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteSetDetails>>,
-    ) -> Self {
+    pub fn set_route_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteSetDetails>>) -> Self {
         self.route_set = input;
         self
     }
     /// <p> The routes in the route table. </p>
-    pub fn get_route_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteSetDetails>> {
+    pub fn get_route_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteSetDetails>> {
         &self.route_set
     }
     /// <p> The ID of the virtual private cloud (VPC). </p>

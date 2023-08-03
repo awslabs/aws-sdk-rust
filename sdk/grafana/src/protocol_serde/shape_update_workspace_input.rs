@@ -19,9 +19,7 @@ pub fn ser_update_workspace_input(
         object.key("permissionType").string(var_5.as_str());
     }
     if let Some(var_6) = &input.remove_network_access_configuration {
-        object
-            .key("removeNetworkAccessConfiguration")
-            .boolean(*var_6);
+        object.key("removeNetworkAccessConfiguration").boolean(*var_6);
     }
     if let Some(var_7) = &input.remove_vpc_configuration {
         object.key("removeVpcConfiguration").boolean(*var_7);
@@ -32,10 +30,7 @@ pub fn ser_update_workspace_input(
     if let Some(var_9) = &input.vpc_configuration {
         #[allow(unused_mut)]
         let mut object_10 = object.key("vpcConfiguration").start_object();
-        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.workspace_data_sources {
@@ -54,9 +49,7 @@ pub fn ser_update_workspace_input(
         object.key("workspaceName").string(var_15.as_str());
     }
     if let Some(var_16) = &input.workspace_notification_destinations {
-        let mut array_17 = object
-            .key("workspaceNotificationDestinations")
-            .start_array();
+        let mut array_17 = object.key("workspaceNotificationDestinations").start_array();
         for item_18 in var_16 {
             {
                 array_17.value().string(item_18.as_str());

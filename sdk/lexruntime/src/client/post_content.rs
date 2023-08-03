@@ -32,9 +32,7 @@ impl super::Client {
     ///   - [`session_id(Option<String>)`](crate::operation::post_content::PostContentOutput::session_id): <p>The unique identifier for the session.</p>
     ///   - [`active_contexts(Option<String>)`](crate::operation::post_content::PostContentOutput::active_contexts): <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>  <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
     /// - On failure, responds with [`SdkError<PostContentError>`](crate::operation::post_content::PostContentError)
-    pub fn post_content(
-        &self,
-    ) -> crate::operation::post_content::builders::PostContentFluentBuilder {
+    pub fn post_content(&self) -> crate::operation::post_content::builders::PostContentFluentBuilder {
         crate::operation::post_content::builders::PostContentFluentBuilder::new(self.handle.clone())
     }
 }

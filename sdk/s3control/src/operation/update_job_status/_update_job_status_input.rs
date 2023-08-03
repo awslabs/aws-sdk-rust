@@ -43,9 +43,7 @@ impl UpdateJobStatusInput {
 
 /// A builder for [`UpdateJobStatusInput`](crate::operation::update_job_status::UpdateJobStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJobStatusInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -87,32 +85,21 @@ impl UpdateJobStatusInputBuilder {
         self
     }
     /// <p>The status that you want to move the specified job to.</p>
-    pub fn set_requested_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestedJobStatus>,
-    ) -> Self {
+    pub fn set_requested_job_status(mut self, input: ::std::option::Option<crate::types::RequestedJobStatus>) -> Self {
         self.requested_job_status = input;
         self
     }
     /// <p>The status that you want to move the specified job to.</p>
-    pub fn get_requested_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RequestedJobStatus> {
+    pub fn get_requested_job_status(&self) -> &::std::option::Option<crate::types::RequestedJobStatus> {
         &self.requested_job_status
     }
     /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
-    pub fn status_update_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_update_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_update_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
-    pub fn set_status_update_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_update_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_update_reason = input;
         self
     }
@@ -123,10 +110,7 @@ impl UpdateJobStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateJobStatusInput`](crate::operation::update_job_status::UpdateJobStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_job_status::UpdateJobStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_job_status::UpdateJobStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_job_status::UpdateJobStatusInput {
             account_id: self.account_id,
             job_id: self.job_id,

@@ -50,33 +50,27 @@ impl GetAutoScalingGroupRecommendationsInput {
         self.filters.as_deref()
     }
     /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
-    pub fn recommendation_preferences(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationPreferences> {
+    pub fn recommendation_preferences(&self) -> ::std::option::Option<&crate::types::RecommendationPreferences> {
         self.recommendation_preferences.as_ref()
     }
 }
 impl GetAutoScalingGroupRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`GetAutoScalingGroupRecommendationsInput`](crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsInput).
-    pub fn builder() -> crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsInputBuilder{
+    pub fn builder() -> crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsInputBuilder {
         crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAutoScalingGroupRecommendationsInput`](crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAutoScalingGroupRecommendationsInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) auto_scaling_group_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) auto_scaling_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    pub(crate) recommendation_preferences:
-        ::std::option::Option<crate::types::RecommendationPreferences>,
+    pub(crate) recommendation_preferences: ::std::option::Option<crate::types::RecommendationPreferences>,
 }
 impl GetAutoScalingGroupRecommendationsInputBuilder {
     /// Appends an item to `account_ids`.
@@ -95,19 +89,14 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
     /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Appends an item to `auto_scaling_group_arns`.
@@ -115,27 +104,19 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
     /// To override the contents of this collection use [`set_auto_scaling_group_arns`](Self::set_auto_scaling_group_arns).
     ///
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
-    pub fn auto_scaling_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.auto_scaling_group_arns.unwrap_or_default();
         v.push(input.into());
         self.auto_scaling_group_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
-    pub fn set_auto_scaling_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.auto_scaling_group_arns = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
-    pub fn get_auto_scaling_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_auto_scaling_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.auto_scaling_group_arns
     }
     /// <p>The token to advance to the next page of Auto Scaling group recommendations.</p>
@@ -181,10 +162,7 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
         self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -193,44 +171,35 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
         &self.filters
     }
     /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
-    pub fn recommendation_preferences(
-        mut self,
-        input: crate::types::RecommendationPreferences,
-    ) -> Self {
+    pub fn recommendation_preferences(mut self, input: crate::types::RecommendationPreferences) -> Self {
         self.recommendation_preferences = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
-    pub fn set_recommendation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationPreferences>,
-    ) -> Self {
+    pub fn set_recommendation_preferences(mut self, input: ::std::option::Option<crate::types::RecommendationPreferences>) -> Self {
         self.recommendation_preferences = input;
         self
     }
     /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
-    pub fn get_recommendation_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationPreferences> {
+    pub fn get_recommendation_preferences(&self) -> &::std::option::Option<crate::types::RecommendationPreferences> {
         &self.recommendation_preferences
     }
     /// Consumes the builder and constructs a [`GetAutoScalingGroupRecommendationsInput`](crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsInput {
-                account_ids: self.account_ids
-                ,
-                auto_scaling_group_arns: self.auto_scaling_group_arns
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                filters: self.filters
-                ,
-                recommendation_preferences: self.recommendation_preferences
-                ,
-            }
+                account_ids: self.account_ids,
+                auto_scaling_group_arns: self.auto_scaling_group_arns,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+                recommendation_preferences: self.recommendation_preferences,
+            },
         )
     }
 }

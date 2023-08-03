@@ -66,13 +66,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExportableVolumeField {
     #[allow(missing_docs)] // documentation missing in model
@@ -142,80 +136,40 @@ impl ::std::convert::From<&str> for ExportableVolumeField {
     fn from(s: &str) -> Self {
         match s {
             "AccountId" => ExportableVolumeField::AccountId,
-            "CurrentConfigurationVolumeBaselineIOPS" => {
-                ExportableVolumeField::CurrentConfigurationVolumeBaselineIops
-            }
-            "CurrentConfigurationVolumeBaselineThroughput" => {
-                ExportableVolumeField::CurrentConfigurationVolumeBaselineThroughput
-            }
-            "CurrentConfigurationVolumeBurstIOPS" => {
-                ExportableVolumeField::CurrentConfigurationVolumeBurstIops
-            }
-            "CurrentConfigurationVolumeBurstThroughput" => {
-                ExportableVolumeField::CurrentConfigurationVolumeBurstThroughput
-            }
-            "CurrentConfigurationVolumeSize" => {
-                ExportableVolumeField::CurrentConfigurationVolumeSize
-            }
-            "CurrentConfigurationVolumeType" => {
-                ExportableVolumeField::CurrentConfigurationVolumeType
-            }
+            "CurrentConfigurationVolumeBaselineIOPS" => ExportableVolumeField::CurrentConfigurationVolumeBaselineIops,
+            "CurrentConfigurationVolumeBaselineThroughput" => ExportableVolumeField::CurrentConfigurationVolumeBaselineThroughput,
+            "CurrentConfigurationVolumeBurstIOPS" => ExportableVolumeField::CurrentConfigurationVolumeBurstIops,
+            "CurrentConfigurationVolumeBurstThroughput" => ExportableVolumeField::CurrentConfigurationVolumeBurstThroughput,
+            "CurrentConfigurationVolumeSize" => ExportableVolumeField::CurrentConfigurationVolumeSize,
+            "CurrentConfigurationVolumeType" => ExportableVolumeField::CurrentConfigurationVolumeType,
             "CurrentMonthlyPrice" => ExportableVolumeField::CurrentMonthlyPrice,
             "CurrentPerformanceRisk" => ExportableVolumeField::CurrentPerformanceRisk,
             "Finding" => ExportableVolumeField::Finding,
             "LastRefreshTimestamp" => ExportableVolumeField::LastRefreshTimestamp,
             "LookbackPeriodInDays" => ExportableVolumeField::LookbackPeriodInDays,
-            "RecommendationOptionsConfigurationVolumeBaselineIOPS" => {
-                ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineIops
-            }
+            "RecommendationOptionsConfigurationVolumeBaselineIOPS" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineIops,
             "RecommendationOptionsConfigurationVolumeBaselineThroughput" => {
                 ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineThroughput
             }
-            "RecommendationOptionsConfigurationVolumeBurstIOPS" => {
-                ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstIops
-            }
+            "RecommendationOptionsConfigurationVolumeBurstIOPS" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstIops,
             "RecommendationOptionsConfigurationVolumeBurstThroughput" => {
                 ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstThroughput
             }
-            "RecommendationOptionsConfigurationVolumeSize" => {
-                ExportableVolumeField::RecommendationOptionsConfigurationVolumeSize
-            }
-            "RecommendationOptionsConfigurationVolumeType" => {
-                ExportableVolumeField::RecommendationOptionsConfigurationVolumeType
-            }
-            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => {
-                ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency
-            }
-            "RecommendationOptionsEstimatedMonthlySavingsValue" => {
-                ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue
-            }
-            "RecommendationOptionsMonthlyPrice" => {
-                ExportableVolumeField::RecommendationOptionsMonthlyPrice
-            }
-            "RecommendationOptionsPerformanceRisk" => {
-                ExportableVolumeField::RecommendationOptionsPerformanceRisk
-            }
-            "RecommendationOptionsSavingsOpportunityPercentage" => {
-                ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage
-            }
+            "RecommendationOptionsConfigurationVolumeSize" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeSize,
+            "RecommendationOptionsConfigurationVolumeType" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeType,
+            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue,
+            "RecommendationOptionsMonthlyPrice" => ExportableVolumeField::RecommendationOptionsMonthlyPrice,
+            "RecommendationOptionsPerformanceRisk" => ExportableVolumeField::RecommendationOptionsPerformanceRisk,
+            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage,
             "RootVolume" => ExportableVolumeField::RootVolume,
             "Tags" => ExportableVolumeField::Tags,
-            "UtilizationMetricsVolumeReadBytesPerSecondMaximum" => {
-                ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum
-            }
-            "UtilizationMetricsVolumeReadOpsPerSecondMaximum" => {
-                ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum
-            }
-            "UtilizationMetricsVolumeWriteBytesPerSecondMaximum" => {
-                ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum
-            }
-            "UtilizationMetricsVolumeWriteOpsPerSecondMaximum" => {
-                ExportableVolumeField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum
-            }
+            "UtilizationMetricsVolumeReadBytesPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum,
+            "UtilizationMetricsVolumeReadOpsPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum,
+            "UtilizationMetricsVolumeWriteBytesPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum,
+            "UtilizationMetricsVolumeWriteOpsPerSecondMaximum" => ExportableVolumeField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum,
             "VolumeArn" => ExportableVolumeField::VolumeArn,
-            other => ExportableVolumeField::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ExportableVolumeField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -231,76 +185,38 @@ impl ExportableVolumeField {
     pub fn as_str(&self) -> &str {
         match self {
             ExportableVolumeField::AccountId => "AccountId",
-            ExportableVolumeField::CurrentConfigurationVolumeBaselineIops => {
-                "CurrentConfigurationVolumeBaselineIOPS"
-            }
-            ExportableVolumeField::CurrentConfigurationVolumeBaselineThroughput => {
-                "CurrentConfigurationVolumeBaselineThroughput"
-            }
-            ExportableVolumeField::CurrentConfigurationVolumeBurstIops => {
-                "CurrentConfigurationVolumeBurstIOPS"
-            }
-            ExportableVolumeField::CurrentConfigurationVolumeBurstThroughput => {
-                "CurrentConfigurationVolumeBurstThroughput"
-            }
-            ExportableVolumeField::CurrentConfigurationVolumeSize => {
-                "CurrentConfigurationVolumeSize"
-            }
-            ExportableVolumeField::CurrentConfigurationVolumeType => {
-                "CurrentConfigurationVolumeType"
-            }
+            ExportableVolumeField::CurrentConfigurationVolumeBaselineIops => "CurrentConfigurationVolumeBaselineIOPS",
+            ExportableVolumeField::CurrentConfigurationVolumeBaselineThroughput => "CurrentConfigurationVolumeBaselineThroughput",
+            ExportableVolumeField::CurrentConfigurationVolumeBurstIops => "CurrentConfigurationVolumeBurstIOPS",
+            ExportableVolumeField::CurrentConfigurationVolumeBurstThroughput => "CurrentConfigurationVolumeBurstThroughput",
+            ExportableVolumeField::CurrentConfigurationVolumeSize => "CurrentConfigurationVolumeSize",
+            ExportableVolumeField::CurrentConfigurationVolumeType => "CurrentConfigurationVolumeType",
             ExportableVolumeField::CurrentMonthlyPrice => "CurrentMonthlyPrice",
             ExportableVolumeField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
             ExportableVolumeField::Finding => "Finding",
             ExportableVolumeField::LastRefreshTimestamp => "LastRefreshTimestamp",
             ExportableVolumeField::LookbackPeriodInDays => "LookbackPeriodInDays",
-            ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineIops => {
-                "RecommendationOptionsConfigurationVolumeBaselineIOPS"
-            }
+            ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineIops => "RecommendationOptionsConfigurationVolumeBaselineIOPS",
             ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineThroughput => {
                 "RecommendationOptionsConfigurationVolumeBaselineThroughput"
             }
-            ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstIops => {
-                "RecommendationOptionsConfigurationVolumeBurstIOPS"
-            }
+            ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstIops => "RecommendationOptionsConfigurationVolumeBurstIOPS",
             ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstThroughput => {
                 "RecommendationOptionsConfigurationVolumeBurstThroughput"
             }
-            ExportableVolumeField::RecommendationOptionsConfigurationVolumeSize => {
-                "RecommendationOptionsConfigurationVolumeSize"
-            }
-            ExportableVolumeField::RecommendationOptionsConfigurationVolumeType => {
-                "RecommendationOptionsConfigurationVolumeType"
-            }
-            ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
-                "RecommendationOptionsEstimatedMonthlySavingsCurrency"
-            }
-            ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue => {
-                "RecommendationOptionsEstimatedMonthlySavingsValue"
-            }
-            ExportableVolumeField::RecommendationOptionsMonthlyPrice => {
-                "RecommendationOptionsMonthlyPrice"
-            }
-            ExportableVolumeField::RecommendationOptionsPerformanceRisk => {
-                "RecommendationOptionsPerformanceRisk"
-            }
-            ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage => {
-                "RecommendationOptionsSavingsOpportunityPercentage"
-            }
+            ExportableVolumeField::RecommendationOptionsConfigurationVolumeSize => "RecommendationOptionsConfigurationVolumeSize",
+            ExportableVolumeField::RecommendationOptionsConfigurationVolumeType => "RecommendationOptionsConfigurationVolumeType",
+            ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+            ExportableVolumeField::RecommendationOptionsMonthlyPrice => "RecommendationOptionsMonthlyPrice",
+            ExportableVolumeField::RecommendationOptionsPerformanceRisk => "RecommendationOptionsPerformanceRisk",
+            ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
             ExportableVolumeField::RootVolume => "RootVolume",
             ExportableVolumeField::Tags => "Tags",
-            ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum => {
-                "UtilizationMetricsVolumeReadBytesPerSecondMaximum"
-            }
-            ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum => {
-                "UtilizationMetricsVolumeReadOpsPerSecondMaximum"
-            }
-            ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum => {
-                "UtilizationMetricsVolumeWriteBytesPerSecondMaximum"
-            }
-            ExportableVolumeField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum => {
-                "UtilizationMetricsVolumeWriteOpsPerSecondMaximum"
-            }
+            ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum => "UtilizationMetricsVolumeReadBytesPerSecondMaximum",
+            ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum => "UtilizationMetricsVolumeReadOpsPerSecondMaximum",
+            ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum => "UtilizationMetricsVolumeWriteBytesPerSecondMaximum",
+            ExportableVolumeField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum => "UtilizationMetricsVolumeWriteOpsPerSecondMaximum",
             ExportableVolumeField::VolumeArn => "VolumeArn",
             ExportableVolumeField::Unknown(value) => value.as_str(),
         }

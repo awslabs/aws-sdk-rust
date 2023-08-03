@@ -37,9 +37,7 @@ impl CustomRoutingDestinationDescription {
 
 /// A builder for [`CustomRoutingDestinationDescription`](crate::types::CustomRoutingDestinationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomRoutingDestinationDescriptionBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) to_port: ::std::option::Option<i32>,
@@ -86,10 +84,7 @@ impl CustomRoutingDestinationDescriptionBuilder {
         self
     }
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-    pub fn set_protocols(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
-    ) -> Self {
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
         self.protocols = input;
         self
     }

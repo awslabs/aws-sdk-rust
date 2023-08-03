@@ -17,9 +17,7 @@ pub struct GetExtensionAssociationOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The parameter names and values defined in the association.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The version number for the extension defined in the association.</p>
     #[doc(hidden)]
     pub extension_version_number: i32,
@@ -43,11 +41,7 @@ impl GetExtensionAssociationOutput {
         self.arn.as_deref()
     }
     /// <p>The parameter names and values defined in the association.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The version number for the extension defined in the association.</p>
@@ -62,26 +56,20 @@ impl ::aws_http::request_id::RequestId for GetExtensionAssociationOutput {
 }
 impl GetExtensionAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetExtensionAssociationOutput`](crate::operation::get_extension_association::GetExtensionAssociationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_extension_association::builders::GetExtensionAssociationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_extension_association::builders::GetExtensionAssociationOutputBuilder {
         crate::operation::get_extension_association::builders::GetExtensionAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetExtensionAssociationOutput`](crate::operation::get_extension_association::GetExtensionAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExtensionAssociationOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) extension_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) extension_version_number: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
@@ -101,18 +89,12 @@ impl GetExtensionAssociationOutputBuilder {
         &self.id
     }
     /// <p>The ARN of the extension defined in the association.</p>
-    pub fn extension_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extension_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the extension defined in the association.</p>
-    pub fn set_extension_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extension_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extension_arn = input;
         self
     }
@@ -153,32 +135,19 @@ impl GetExtensionAssociationOutputBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The parameter names and values defined in the association.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The parameter names and values defined in the association.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The parameter names and values defined in the association.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// <p>The version number for the extension defined in the association.</p>
@@ -205,9 +174,7 @@ impl GetExtensionAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetExtensionAssociationOutput`](crate::operation::get_extension_association::GetExtensionAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_extension_association::GetExtensionAssociationOutput {
+    pub fn build(self) -> crate::operation::get_extension_association::GetExtensionAssociationOutput {
         crate::operation::get_extension_association::GetExtensionAssociationOutput {
             id: self.id,
             extension_arn: self.extension_arn,

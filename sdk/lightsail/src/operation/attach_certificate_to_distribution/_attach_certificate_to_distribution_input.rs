@@ -32,16 +32,14 @@ impl AttachCertificateToDistributionInput {
 }
 impl AttachCertificateToDistributionInput {
     /// Creates a new builder-style object to manufacture [`AttachCertificateToDistributionInput`](crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionInput).
-    pub fn builder() -> crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionInputBuilder{
+    pub fn builder() -> crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionInputBuilder {
         crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionInputBuilder::default()
     }
 }
 
 /// A builder for [`AttachCertificateToDistributionInput`](crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachCertificateToDistributionInputBuilder {
     pub(crate) distribution_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_name: ::std::option::Option<::std::string::String>,
@@ -49,19 +47,13 @@ pub struct AttachCertificateToDistributionInputBuilder {
 impl AttachCertificateToDistributionInputBuilder {
     /// <p>The name of the distribution that the certificate will be attached to.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the distribution that the certificate will be attached to.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_name = input;
         self
     }
@@ -75,10 +67,7 @@ impl AttachCertificateToDistributionInputBuilder {
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p> <note>
     /// <p>This is the name of the certificate resource type and is used only to reference the certificate in other API actions. It can be different than the domain name of the certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be <code>example.com</code>.</p>
     /// </note>
-    pub fn certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -87,10 +76,7 @@ impl AttachCertificateToDistributionInputBuilder {
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p> <note>
     /// <p>This is the name of the certificate resource type and is used only to reference the certificate in other API actions. It can be different than the domain name of the certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be <code>example.com</code>.</p>
     /// </note>
-    pub fn set_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_name = input;
         self
     }
@@ -111,11 +97,9 @@ impl AttachCertificateToDistributionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionInput {
-                distribution_name: self.distribution_name
-                ,
-                certificate_name: self.certificate_name
-                ,
-            }
+                distribution_name: self.distribution_name,
+                certificate_name: self.certificate_name,
+            },
         )
     }
 }

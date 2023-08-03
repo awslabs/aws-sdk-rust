@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateScheduleOutput`](crate::operation::create_schedule::CreateScheduleOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::create_schedule::CreateScheduleOutput::name): <p>The name of the schedule that was created.</p>
     /// - On failure, responds with [`SdkError<CreateScheduleError>`](crate::operation::create_schedule::CreateScheduleError)
-    pub fn create_schedule(
-        &self,
-    ) -> crate::operation::create_schedule::builders::CreateScheduleFluentBuilder {
-        crate::operation::create_schedule::builders::CreateScheduleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_schedule(&self) -> crate::operation::create_schedule::builders::CreateScheduleFluentBuilder {
+        crate::operation::create_schedule::builders::CreateScheduleFluentBuilder::new(self.handle.clone())
     }
 }

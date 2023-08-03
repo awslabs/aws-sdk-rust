@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`components(Option<Vec<ComponentSummary>>)`](crate::operation::list_components::ListComponentsOutput::components): <p>List of components registered with AWS System Manager for SAP.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_components::ListComponentsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::operation::list_components::ListComponentsError)
-    pub fn list_components(
-        &self,
-    ) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {
-        crate::operation::list_components::builders::ListComponentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_components(&self) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {
+        crate::operation::list_components::builders::ListComponentsFluentBuilder::new(self.handle.clone())
     }
 }

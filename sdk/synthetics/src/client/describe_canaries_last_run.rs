@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`canaries_last_run(Option<Vec<CanaryLastRun>>)`](crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput::canaries_last_run): <p>An array that contains the information from the most recent run of each canary.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<DescribeCanariesLastRunError>`](crate::operation::describe_canaries_last_run::DescribeCanariesLastRunError)
-    pub fn describe_canaries_last_run(
-        &self,
-    ) -> crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunFluentBuilder
-    {
+    pub fn describe_canaries_last_run(&self) -> crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunFluentBuilder {
         crate::operation::describe_canaries_last_run::builders::DescribeCanariesLastRunFluentBuilder::new(self.handle.clone())
     }
 }

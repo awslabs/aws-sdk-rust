@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ActionSubType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ActionSubType {
         match s {
             "STOP_EC2_INSTANCES" => ActionSubType::StopEc2,
             "STOP_RDS_INSTANCES" => ActionSubType::StopRds,
-            other => {
-                ActionSubType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ActionSubType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

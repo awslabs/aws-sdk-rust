@@ -30,9 +30,7 @@ impl DelegatedAdminAccount {
 
 /// A builder for [`DelegatedAdminAccount`](crate::types::DelegatedAdminAccount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DelegatedAdminAccountBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DelegatedAdminStatus>,
@@ -58,10 +56,7 @@ impl DelegatedAdminAccountBuilder {
         self
     }
     /// <p>The status of the Amazon Inspector delegated administrator.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DelegatedAdminStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DelegatedAdminStatus>) -> Self {
         self.status = input;
         self
     }

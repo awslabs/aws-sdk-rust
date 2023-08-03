@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EventSourceName {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for EventSourceName {
             "OnSalesforceCaseCreate" => EventSourceName::OnSalesforceCaseCreate,
             "OnZendeskTicketCreate" => EventSourceName::OnZendeskTicketCreate,
             "OnZendeskTicketStatusUpdate" => EventSourceName::OnZendeskTicketStatusUpdate,
-            other => {
-                EventSourceName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => EventSourceName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

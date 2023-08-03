@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteExperimentOutput`](crate::operation::delete_experiment::DeleteExperimentOutput) with field(s):
     ///   - [`experiment_arn(Option<String>)`](crate::operation::delete_experiment::DeleteExperimentOutput::experiment_arn): <p>The Amazon Resource Name (ARN) of the experiment that is being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteExperimentError>`](crate::operation::delete_experiment::DeleteExperimentError)
-    pub fn delete_experiment(
-        &self,
-    ) -> crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder {
-        crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_experiment(&self) -> crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder {
+        crate::operation::delete_experiment::builders::DeleteExperimentFluentBuilder::new(self.handle.clone())
     }
 }

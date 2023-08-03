@@ -5,16 +5,16 @@ pub use crate::operation::update_firewall_rule_group_association::_update_firewa
 
 impl UpdateFirewallRuleGroupAssociationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_firewall_rule_group_association();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateFirewallRuleGroupAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFirewallRuleGroupAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_firewall_rule_group_association::builders::UpdateFirewallRuleGroupAssociationInputBuilder,
+    inner: crate::operation::update_firewall_rule_group_association::builders::UpdateFirewallRuleGroupAssociationInputBuilder,
 }
 impl UpdateFirewallRuleGroupAssociationFluentBuilder {
     /// Creates a new `UpdateFirewallRuleGroupAssociation`.
@@ -37,15 +37,20 @@ impl UpdateFirewallRuleGroupAssociationFluentBuilder {
         }
     }
     /// Access the UpdateFirewallRuleGroupAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_firewall_rule_group_association::builders::UpdateFirewallRuleGroupAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_firewall_rule_group_association::builders::UpdateFirewallRuleGroupAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociation,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl UpdateFirewallRuleGroupAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,39 +87,40 @@ impl UpdateFirewallRuleGroupAssociationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociation,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn firewall_rule_group_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_rule_group_association_id(input.into());
         self
     }
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn set_firewall_rule_group_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_rule_group_association_id(input);
         self
     }
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn get_firewall_rule_group_association_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_firewall_rule_group_association_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_rule_group_association_id()
     }
     /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
@@ -139,17 +146,12 @@ impl UpdateFirewallRuleGroupAssociationFluentBuilder {
         self
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
-    pub fn set_mutation_protection(
-        mut self,
-        input: ::std::option::Option<crate::types::MutationProtectionStatus>,
-    ) -> Self {
+    pub fn set_mutation_protection(mut self, input: ::std::option::Option<crate::types::MutationProtectionStatus>) -> Self {
         self.inner = self.inner.set_mutation_protection(input);
         self
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
-    pub fn get_mutation_protection(
-        &self,
-    ) -> &::std::option::Option<crate::types::MutationProtectionStatus> {
+    pub fn get_mutation_protection(&self) -> &::std::option::Option<crate::types::MutationProtectionStatus> {
         self.inner.get_mutation_protection()
     }
     /// <p>The name of the rule group association.</p>

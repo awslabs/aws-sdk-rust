@@ -35,9 +35,7 @@ impl ListProjectsOutput {
 
 /// A builder for [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProjectsOutputBuilder {
     pub(crate) projects: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListProjectsOutputBuilder {
         self
     }
     /// <p>An array of structures that contain the configuration details of the projects in the Region.</p>
-    pub fn set_projects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
-    ) -> Self {
+    pub fn set_projects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>) -> Self {
         self.projects = input;
         self
     }
     /// <p>An array of structures that contain the configuration details of the projects in the Region.</p>
-    pub fn get_projects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
+    pub fn get_projects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
         &self.projects
     }
     /// <p>The token to use in a subsequent <code>ListProjects</code> operation to return the next set of results.</p>

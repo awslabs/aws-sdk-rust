@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDataSourceOutput`](crate::operation::create_data_source::CreateDataSourceOutput) with field(s):
     ///   - [`data_source(Option<DataSource>)`](crate::operation::create_data_source::CreateDataSourceOutput::data_source): <p>The <code>DataSource</code> object.</p>
     /// - On failure, responds with [`SdkError<CreateDataSourceError>`](crate::operation::create_data_source::CreateDataSourceError)
-    pub fn create_data_source(
-        &self,
-    ) -> crate::operation::create_data_source::builders::CreateDataSourceFluentBuilder {
-        crate::operation::create_data_source::builders::CreateDataSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_data_source(&self) -> crate::operation::create_data_source::builders::CreateDataSourceFluentBuilder {
+        crate::operation::create_data_source::builders::CreateDataSourceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`association_execution_targets(Option<Vec<AssociationExecutionTarget>>)`](crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput::association_execution_targets): <p>Information about the execution.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<DescribeAssociationExecutionTargetsError>`](crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError)
-    pub fn describe_association_execution_targets(&self) -> crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsFluentBuilder{
+    pub fn describe_association_execution_targets(
+        &self,
+    ) -> crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsFluentBuilder {
         crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsFluentBuilder::new(self.handle.clone())
     }
 }

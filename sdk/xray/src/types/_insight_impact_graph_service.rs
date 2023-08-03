@@ -70,9 +70,7 @@ impl InsightImpactGraphService {
 
 /// A builder for [`InsightImpactGraphService`](crate::types::InsightImpactGraphService).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsightImpactGraphServiceBuilder {
     pub(crate) reference_id: ::std::option::Option<i32>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -154,10 +152,7 @@ impl InsightImpactGraphServiceBuilder {
         self
     }
     /// <p>A list of names for the service, including the canonical name.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -191,17 +186,12 @@ impl InsightImpactGraphServiceBuilder {
         self
     }
     /// <p>Connections to downstream services.</p>
-    pub fn set_edges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphEdge>>,
-    ) -> Self {
+    pub fn set_edges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphEdge>>) -> Self {
         self.edges = input;
         self
     }
     /// <p>Connections to downstream services.</p>
-    pub fn get_edges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphEdge>> {
+    pub fn get_edges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphEdge>> {
         &self.edges
     }
     /// Consumes the builder and constructs a [`InsightImpactGraphService`](crate::types::InsightImpactGraphService).

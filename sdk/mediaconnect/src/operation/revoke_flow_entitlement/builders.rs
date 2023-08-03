@@ -37,10 +37,7 @@ impl RevokeFlowEntitlementFluentBuilder {
         }
     }
     /// Access the RevokeFlowEntitlement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl RevokeFlowEntitlementFluentBuilder {
             crate::operation::revoke_flow_entitlement::RevokeFlowEntitlement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl RevokeFlowEntitlementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl RevokeFlowEntitlementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl RevokeFlowEntitlementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl RevokeFlowEntitlementFluentBuilder {
             crate::operation::revoke_flow_entitlement::RevokeFlowEntitlement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementError>,
     > {
         self.customize_middleware().await
     }
     /// The ARN of the entitlement that you want to revoke.
-    pub fn entitlement_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entitlement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entitlement_arn(input.into());
         self
     }
     /// The ARN of the entitlement that you want to revoke.
-    pub fn set_entitlement_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entitlement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entitlement_arn(input);
         self
     }

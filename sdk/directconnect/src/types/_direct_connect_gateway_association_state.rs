@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DirectConnectGatewayAssociationState {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for DirectConnectGatewayAssociationState {
             "disassociated" => DirectConnectGatewayAssociationState::Disassociated,
             "disassociating" => DirectConnectGatewayAssociationState::Disassociating,
             "updating" => DirectConnectGatewayAssociationState::Updating,
-            other => DirectConnectGatewayAssociationState::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => DirectConnectGatewayAssociationState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl DirectConnectGatewayAssociationState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "associated",
-            "associating",
-            "disassociated",
-            "disassociating",
-            "updating",
-        ]
+        &["associated", "associating", "disassociated", "disassociating", "updating"]
     }
 }
 impl ::std::convert::AsRef<str> for DirectConnectGatewayAssociationState {

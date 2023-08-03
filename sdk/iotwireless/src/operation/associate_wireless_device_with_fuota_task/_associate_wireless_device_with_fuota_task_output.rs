@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateWirelessDeviceWithFuotaTaskO
 }
 impl AssociateWirelessDeviceWithFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::operation::associate_wireless_device_with_fuota_task::AssociateWirelessDeviceWithFuotaTaskOutput).
-    pub fn builder() -> crate::operation::associate_wireless_device_with_fuota_task::builders::AssociateWirelessDeviceWithFuotaTaskOutputBuilder{
+    pub fn builder() -> crate::operation::associate_wireless_device_with_fuota_task::builders::AssociateWirelessDeviceWithFuotaTaskOutputBuilder {
         crate::operation::associate_wireless_device_with_fuota_task::builders::AssociateWirelessDeviceWithFuotaTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::operation::associate_wireless_device_with_fuota_task::AssociateWirelessDeviceWithFuotaTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateWirelessDeviceWithFuotaTaskOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl AssociateWirelessDeviceWithFuotaTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::operation::associate_wireless_device_with_fuota_task::AssociateWirelessDeviceWithFuotaTaskOutput).
-    pub fn build(self) -> crate::operation::associate_wireless_device_with_fuota_task::AssociateWirelessDeviceWithFuotaTaskOutput{
+    pub fn build(self) -> crate::operation::associate_wireless_device_with_fuota_task::AssociateWirelessDeviceWithFuotaTaskOutput {
         crate::operation::associate_wireless_device_with_fuota_task::AssociateWirelessDeviceWithFuotaTaskOutput {
             _request_id: self._request_id,
         }

@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSizeConstraintSetOutput`](crate::operation::get_size_constraint_set::GetSizeConstraintSetOutput) with field(s):
     ///   - [`size_constraint_set(Option<SizeConstraintSet>)`](crate::operation::get_size_constraint_set::GetSizeConstraintSetOutput::size_constraint_set): <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p>  <ul>   <li> <p> <code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code> </p> </li>   <li> <p> <code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetSizeConstraintSetError>`](crate::operation::get_size_constraint_set::GetSizeConstraintSetError)
-    pub fn get_size_constraint_set(
-        &self,
-    ) -> crate::operation::get_size_constraint_set::builders::GetSizeConstraintSetFluentBuilder
-    {
-        crate::operation::get_size_constraint_set::builders::GetSizeConstraintSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_size_constraint_set(&self) -> crate::operation::get_size_constraint_set::builders::GetSizeConstraintSetFluentBuilder {
+        crate::operation::get_size_constraint_set::builders::GetSizeConstraintSetFluentBuilder::new(self.handle.clone())
     }
 }

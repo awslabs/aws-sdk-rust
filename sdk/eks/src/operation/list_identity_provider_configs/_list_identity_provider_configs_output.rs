@@ -5,8 +5,7 @@
 pub struct ListIdentityProviderConfigsOutput {
     /// <p>The identity provider configurations for the cluster.</p>
     #[doc(hidden)]
-    pub identity_provider_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>>,
+    pub identity_provider_configs: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListIdentityProviderConfigsOutput {
 }
 impl ListIdentityProviderConfigsOutput {
     /// <p>The identity provider configurations for the cluster.</p>
-    pub fn identity_provider_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IdentityProviderConfig]> {
+    pub fn identity_provider_configs(&self) -> ::std::option::Option<&[crate::types::IdentityProviderConfig]> {
         self.identity_provider_configs.as_deref()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListIdentityProviderConfigsOutput {
 }
 impl ListIdentityProviderConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentityProviderConfigsOutput`](crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput).
-    pub fn builder() -> crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsOutputBuilder{
+    pub fn builder() -> crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsOutputBuilder {
         crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentityProviderConfigsOutput`](crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityProviderConfigsOutputBuilder {
-    pub(crate) identity_provider_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>>,
+    pub(crate) identity_provider_configs: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListIdentityProviderConfigsOutputBuilder {
     /// To override the contents of this collection use [`set_identity_provider_configs`](Self::set_identity_provider_configs).
     ///
     /// <p>The identity provider configurations for the cluster.</p>
-    pub fn identity_provider_configs(
-        mut self,
-        input: crate::types::IdentityProviderConfig,
-    ) -> Self {
+    pub fn identity_provider_configs(mut self, input: crate::types::IdentityProviderConfig) -> Self {
         let mut v = self.identity_provider_configs.unwrap_or_default();
         v.push(input);
         self.identity_provider_configs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identity provider configurations for the cluster.</p>
-    pub fn set_identity_provider_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>>,
-    ) -> Self {
+    pub fn set_identity_provider_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>>) -> Self {
         self.identity_provider_configs = input;
         self
     }
     /// <p>The identity provider configurations for the cluster.</p>
-    pub fn get_identity_provider_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>> {
+    pub fn get_identity_provider_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>> {
         &self.identity_provider_configs
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
@@ -100,9 +86,7 @@ impl ListIdentityProviderConfigsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListIdentityProviderConfigsOutput`](crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput {
+    pub fn build(self) -> crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput {
         crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput {
             identity_provider_configs: self.identity_provider_configs,
             next_token: self.next_token,

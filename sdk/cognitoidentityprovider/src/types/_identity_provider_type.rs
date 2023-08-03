@@ -62,14 +62,10 @@ pub struct IdentityProviderType {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub provider_details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub provider_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
     #[doc(hidden)]
-    pub attribute_mapping: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attribute_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of IdP identifiers.</p>
     #[doc(hidden)]
     pub idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -141,19 +137,11 @@ impl IdentityProviderType {
     /// <li> <p>IDPSignout <i>optional</i> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn provider_details(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn provider_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.provider_details.as_ref()
     }
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
-    pub fn attribute_mapping(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attribute_mapping(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attribute_mapping.as_ref()
     }
     /// <p>A list of IdP identifiers.</p>
@@ -178,19 +166,13 @@ impl IdentityProviderType {
 
 /// A builder for [`IdentityProviderType`](crate::types::IdentityProviderType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentityProviderTypeBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) provider_type: ::std::option::Option<crate::types::IdentityProviderTypeType>,
-    pub(crate) provider_details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) attribute_mapping: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) provider_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attribute_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -211,18 +193,12 @@ impl IdentityProviderTypeBuilder {
         &self.user_pool_id
     }
     /// <p>The IdP name.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IdP name.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_name = input;
         self
     }
@@ -236,17 +212,12 @@ impl IdentityProviderTypeBuilder {
         self
     }
     /// <p>The IdP type.</p>
-    pub fn set_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderTypeType>,
-    ) -> Self {
+    pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::IdentityProviderTypeType>) -> Self {
         self.provider_type = input;
         self
     }
     /// <p>The IdP type.</p>
-    pub fn get_provider_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderTypeType> {
+    pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::IdentityProviderTypeType> {
         &self.provider_type
     }
     /// Adds a key-value pair to `provider_details`.
@@ -361,9 +332,7 @@ impl IdentityProviderTypeBuilder {
     /// </ul>
     pub fn set_provider_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.provider_details = input;
         self
@@ -416,11 +385,7 @@ impl IdentityProviderTypeBuilder {
     /// <li> <p>IDPSignout <i>optional</i> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_provider_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.provider_details
     }
     /// Adds a key-value pair to `attribute_mapping`.
@@ -441,19 +406,13 @@ impl IdentityProviderTypeBuilder {
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
     pub fn set_attribute_mapping(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.attribute_mapping = input;
         self
     }
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
-    pub fn get_attribute_mapping(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attribute_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attribute_mapping
     }
     /// Appends an item to `idp_identifiers`.
@@ -461,27 +420,19 @@ impl IdentityProviderTypeBuilder {
     /// To override the contents of this collection use [`set_idp_identifiers`](Self::set_idp_identifiers).
     ///
     /// <p>A list of IdP identifiers.</p>
-    pub fn idp_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idp_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.idp_identifiers.unwrap_or_default();
         v.push(input.into());
         self.idp_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn set_idp_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_idp_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.idp_identifiers = input;
         self
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn get_idp_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_idp_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.idp_identifiers
     }
     /// <p>The date the IdP was last modified.</p>
@@ -490,10 +441,7 @@ impl IdentityProviderTypeBuilder {
         self
     }
     /// <p>The date the IdP was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -507,10 +455,7 @@ impl IdentityProviderTypeBuilder {
         self
     }
     /// <p>The date the IdP was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCustomDataIdentifiersOutput {
 }
 impl ListCustomDataIdentifiersOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomDataIdentifiersOutput`](crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput).
-    pub fn builder() -> crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersOutputBuilder{
+    pub fn builder() -> crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersOutputBuilder {
         crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomDataIdentifiersOutput`](crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomDataIdentifiersOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomDataIdentifierSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::CustomDataIdentifierSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListCustomDataIdentifiersOutputBuilder {
         self
     }
     /// <p>An array of objects, one for each custom data identifier.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomDataIdentifierSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomDataIdentifierSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>An array of objects, one for each custom data identifier.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDataIdentifierSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDataIdentifierSummary>> {
         &self.items
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -94,9 +86,7 @@ impl ListCustomDataIdentifiersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCustomDataIdentifiersOutput`](crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput {
+    pub fn build(self) -> crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput {
         crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput {
             items: self.items,
             next_token: self.next_token,

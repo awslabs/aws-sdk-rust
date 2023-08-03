@@ -37,8 +37,7 @@ impl ::aws_http::request_id::RequestId for CreateTestGridUrlOutput {
 }
 impl CreateTestGridUrlOutput {
     /// Creates a new builder-style object to manufacture [`CreateTestGridUrlOutput`](crate::operation::create_test_grid_url::CreateTestGridUrlOutput).
-    pub fn builder(
-    ) -> crate::operation::create_test_grid_url::builders::CreateTestGridUrlOutputBuilder {
+    pub fn builder() -> crate::operation::create_test_grid_url::builders::CreateTestGridUrlOutputBuilder {
         crate::operation::create_test_grid_url::builders::CreateTestGridUrlOutputBuilder::default()
     }
 }
@@ -72,10 +71,7 @@ impl CreateTestGridUrlOutputBuilder {
         self
     }
     /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
-    pub fn set_expires(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires = input;
         self
     }

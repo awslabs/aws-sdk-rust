@@ -5,16 +5,16 @@ pub use crate::operation::list_environment_template_versions::_list_environment_
 
 impl ListEnvironmentTemplateVersionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_environment_template_versions();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListEnvironmentTemplateVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnvironmentTemplateVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsInputBuilder,
+    inner: crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsInputBuilder,
 }
 impl ListEnvironmentTemplateVersionsFluentBuilder {
     /// Creates a new `ListEnvironmentTemplateVersions`.
@@ -37,15 +37,20 @@ impl ListEnvironmentTemplateVersionsFluentBuilder {
         }
     }
     /// Access the ListEnvironmentTemplateVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListEnvironmentTemplateVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl ListEnvironmentTemplateVersionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_environment_template_versions::paginator::ListEnvironmentTemplateVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_environment_template_versions::paginator::ListEnvironmentTemplateVersionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_environment_template_versions::paginator::ListEnvironmentTemplateVersionsPaginator {
         crate::operation::list_environment_template_versions::paginator::ListEnvironmentTemplateVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
@@ -129,18 +144,12 @@ impl ListEnvironmentTemplateVersionsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The name of the environment template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the environment template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -150,19 +159,13 @@ impl ListEnvironmentTemplateVersionsFluentBuilder {
     }
     /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
     /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
-    pub fn major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.major_version(input.into());
         self
     }
     /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
     /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
-    pub fn set_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_major_version(input);
         self
     }

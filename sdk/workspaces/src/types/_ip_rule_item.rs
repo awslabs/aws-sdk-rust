@@ -30,9 +30,7 @@ impl IpRuleItem {
 
 /// A builder for [`IpRuleItem`](crate::types::IpRuleItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpRuleItemBuilder {
     pub(crate) ip_rule: ::std::option::Option<::std::string::String>,
     pub(crate) rule_desc: ::std::option::Option<::std::string::String>,

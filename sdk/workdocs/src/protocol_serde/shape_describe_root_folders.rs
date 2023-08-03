@@ -2,8 +2,7 @@
 pub fn ser_describe_root_folders_headers(
     input: &crate::operation::describe_root_folders::DescribeRootFoldersInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.authentication_token {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_describe_root_folders_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "authentication_token",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
             builder = builder.header("Authentication", header_value);
@@ -33,108 +29,102 @@ pub fn de_describe_root_folders_http_error(
     crate::operation::describe_root_folders::DescribeRootFoldersError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "FailedDependencyException" => crate::operation::describe_root_folders::DescribeRootFoldersError::FailedDependencyException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::FailedDependencyExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_failed_dependency_exception::de_failed_dependency_exception_json_err(_response_body, output).map_err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::FailedDependencyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_failed_dependency_exception::de_failed_dependency_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidArgumentException" => crate::operation::describe_root_folders::DescribeRootFoldersError::InvalidArgumentException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output).map_err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::describe_root_folders::DescribeRootFoldersError::ServiceUnavailableException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnauthorizedOperationException" => crate::operation::describe_root_folders::DescribeRootFoldersError::UnauthorizedOperationException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedOperationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_operation_exception::de_unauthorized_operation_exception_json_err(_response_body, output).map_err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedOperationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_operation_exception::de_unauthorized_operation_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "UnauthorizedResourceAccessException" => crate::operation::describe_root_folders::DescribeRootFoldersError::UnauthorizedResourceAccessException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "UnauthorizedResourceAccessException" => {
+            crate::operation::describe_root_folders::DescribeRootFoldersError::UnauthorizedResourceAccessException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedResourceAccessExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_resource_access_exception::de_unauthorized_resource_access_exception_json_err(_response_body, output).map_err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_resource_access_exception::de_unauthorized_resource_access_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::describe_root_folders::DescribeRootFoldersError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::describe_root_folders::DescribeRootFoldersError::generic(generic),
     })
 }
 
@@ -150,14 +140,9 @@ pub fn de_describe_root_folders_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_root_folders::builders::DescribeRootFoldersOutputBuilder::default();
-        output = crate::protocol_serde::shape_describe_root_folders::de_describe_root_folders(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_describe_root_folders::de_describe_root_folders(_response_body, output)
+            .map_err(crate::operation::describe_root_folders::DescribeRootFoldersError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -169,49 +154,37 @@ pub(crate) fn de_describe_root_folders(
     crate::operation::describe_root_folders::builders::DescribeRootFoldersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "Folders" => {
-                        builder = builder.set_folders(
-                            crate::protocol_serde::shape_folder_metadata_list::de_folder_metadata_list(tokens)?
-                        );
-                    }
-                    "Marker" => {
-                        builder = builder.set_marker(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "Folders" => {
+                    builder = builder.set_folders(crate::protocol_serde::shape_folder_metadata_list::de_folder_metadata_list(tokens)?);
+                }
+                "Marker" => {
+                    builder = builder.set_marker(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    );
                 }
-            }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

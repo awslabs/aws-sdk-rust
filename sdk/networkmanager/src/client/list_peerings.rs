@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`peerings(Option<Vec<Peering>>)`](crate::operation::list_peerings::ListPeeringsOutput::peerings): <p>Lists the transit gateway peerings for the <code>ListPeerings</code> request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_peerings::ListPeeringsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListPeeringsError>`](crate::operation::list_peerings::ListPeeringsError)
-    pub fn list_peerings(
-        &self,
-    ) -> crate::operation::list_peerings::builders::ListPeeringsFluentBuilder {
-        crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_peerings(&self) -> crate::operation::list_peerings::builders::ListPeeringsFluentBuilder {
+        crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::new(self.handle.clone())
     }
 }

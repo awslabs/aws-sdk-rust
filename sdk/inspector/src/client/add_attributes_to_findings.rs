@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AddAttributesToFindingsOutput`](crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput) with field(s):
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput::failed_items): <p>Attribute details that cannot be described. An error code is provided for each failed item.</p>
     /// - On failure, responds with [`SdkError<AddAttributesToFindingsError>`](crate::operation::add_attributes_to_findings::AddAttributesToFindingsError)
-    pub fn add_attributes_to_findings(
-        &self,
-    ) -> crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsFluentBuilder
-    {
+    pub fn add_attributes_to_findings(&self) -> crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsFluentBuilder {
         crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsFluentBuilder::new(self.handle.clone())
     }
 }

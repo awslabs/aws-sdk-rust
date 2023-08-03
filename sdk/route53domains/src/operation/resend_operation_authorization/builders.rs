@@ -26,7 +26,7 @@ impl ResendOperationAuthorizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResendOperationAuthorizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationInputBuilder,
+    inner: crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationInputBuilder,
 }
 impl ResendOperationAuthorizationFluentBuilder {
     /// Creates a new `ResendOperationAuthorization`.
@@ -37,7 +37,7 @@ impl ResendOperationAuthorizationFluentBuilder {
         }
     }
     /// Access the ResendOperationAuthorization as a reference.
-    pub fn as_input(&self) -> &crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ResendOperationAuthorizationFluentBuilder {
             crate::operation::resend_operation_authorization::ResendOperationAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resend_operation_authorization::ResendOperationAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resend_operation_authorization::ResendOperationAuthorizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ResendOperationAuthorizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ResendOperationAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resend_operation_authorization::ResendOperationAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resend_operation_authorization::ResendOperationAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resend_operation_authorization::ResendOperationAuthorizationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ResendOperationAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resend_operation_authorization::ResendOperationAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resend_operation_authorization::ResendOperationAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resend_operation_authorization::ResendOperationAuthorizationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ResendOperationAuthorizationFluentBuilder {
             crate::operation::resend_operation_authorization::ResendOperationAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resend_operation_authorization::ResendOperationAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resend_operation_authorization::ResendOperationAuthorizationError>,
     > {
         self.customize_middleware().await
     }

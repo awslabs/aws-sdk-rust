@@ -30,17 +30,14 @@ impl ::aws_http::request_id::RequestId for DescribeWorkspacesOutput {
 }
 impl DescribeWorkspacesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspacesOutput`](crate::operation::describe_workspaces::DescribeWorkspacesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_workspaces::builders::DescribeWorkspacesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_workspaces::builders::DescribeWorkspacesOutputBuilder {
         crate::operation::describe_workspaces::builders::DescribeWorkspacesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspacesOutput`](crate::operation::describe_workspaces::DescribeWorkspacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspacesOutputBuilder {
     pub(crate) workspaces: ::std::option::Option<::std::vec::Vec<crate::types::Workspace>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,13 @@ impl DescribeWorkspacesOutputBuilder {
     }
     /// <p>Information about the WorkSpaces.</p>
     /// <p>Because <code>CreateWorkspaces</code> is an asynchronous operation, some of the returned information could be incomplete.</p>
-    pub fn set_workspaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Workspace>>,
-    ) -> Self {
+    pub fn set_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Workspace>>) -> Self {
         self.workspaces = input;
         self
     }
     /// <p>Information about the WorkSpaces.</p>
     /// <p>Because <code>CreateWorkspaces</code> is an asynchronous operation, some of the returned information could be incomplete.</p>
-    pub fn get_workspaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Workspace>> {
+    pub fn get_workspaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Workspace>> {
         &self.workspaces
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>

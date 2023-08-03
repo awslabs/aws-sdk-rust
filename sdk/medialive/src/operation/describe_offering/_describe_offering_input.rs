@@ -16,17 +16,14 @@ impl DescribeOfferingInput {
 }
 impl DescribeOfferingInput {
     /// Creates a new builder-style object to manufacture [`DescribeOfferingInput`](crate::operation::describe_offering::DescribeOfferingInput).
-    pub fn builder() -> crate::operation::describe_offering::builders::DescribeOfferingInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_offering::builders::DescribeOfferingInputBuilder {
         crate::operation::describe_offering::builders::DescribeOfferingInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOfferingInput`](crate::operation::describe_offering::DescribeOfferingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOfferingInputBuilder {
     pub(crate) offering_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,10 +45,7 @@ impl DescribeOfferingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOfferingInput`](crate::operation::describe_offering::DescribeOfferingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_offering::DescribeOfferingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_offering::DescribeOfferingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_offering::DescribeOfferingInput {
             offering_id: self.offering_id,
         })

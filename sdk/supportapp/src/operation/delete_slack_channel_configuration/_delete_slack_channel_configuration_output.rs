@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSlackChannelConfigurationOutput
 }
 impl DeleteSlackChannelConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSlackChannelConfigurationOutput`](crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationOutputBuilder {
         crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSlackChannelConfigurationOutput`](crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSlackChannelConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteSlackChannelConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSlackChannelConfigurationOutput`](crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationOutput {
         crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationOutput {
             _request_id: self._request_id,
         }

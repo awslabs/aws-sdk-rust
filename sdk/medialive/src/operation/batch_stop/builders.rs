@@ -10,10 +10,7 @@ impl BatchStopInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_stop::BatchStopOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_stop::BatchStopError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_stop::BatchStopError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_stop();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl BatchStopFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::batch_stop::BatchStop,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::batch_stop::BatchStop, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::batch_stop::BatchStopError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl BatchStopFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl BatchStopFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::batch_stop::BatchStop,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::batch_stop::BatchStop, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::batch_stop::BatchStopError>,
     > {
         self.customize_middleware().await
@@ -122,17 +110,12 @@ impl BatchStopFluentBuilder {
         self
     }
     /// List of channel IDs
-    pub fn set_channel_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_channel_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_channel_ids(input);
         self
     }
     /// List of channel IDs
-    pub fn get_channel_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_channel_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_channel_ids()
     }
     /// Appends an item to `MultiplexIds`.
@@ -140,25 +123,17 @@ impl BatchStopFluentBuilder {
     /// To override the contents of this collection use [`set_multiplex_ids`](Self::set_multiplex_ids).
     ///
     /// List of multiplex IDs
-    pub fn multiplex_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multiplex_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.multiplex_ids(input.into());
         self
     }
     /// List of multiplex IDs
-    pub fn set_multiplex_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_multiplex_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_multiplex_ids(input);
         self
     }
     /// List of multiplex IDs
-    pub fn get_multiplex_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_multiplex_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_multiplex_ids()
     }
 }

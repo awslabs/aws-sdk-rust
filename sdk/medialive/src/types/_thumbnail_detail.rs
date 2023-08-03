@@ -30,9 +30,7 @@ impl ThumbnailDetail {
 
 /// A builder for [`ThumbnailDetail`](crate::types::ThumbnailDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThumbnailDetailBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) thumbnails: ::std::option::Option<::std::vec::Vec<crate::types::Thumbnail>>,
@@ -64,17 +62,12 @@ impl ThumbnailDetailBuilder {
         self
     }
     /// thumbnails of a single pipeline
-    pub fn set_thumbnails(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Thumbnail>>,
-    ) -> Self {
+    pub fn set_thumbnails(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Thumbnail>>) -> Self {
         self.thumbnails = input;
         self
     }
     /// thumbnails of a single pipeline
-    pub fn get_thumbnails(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Thumbnail>> {
+    pub fn get_thumbnails(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Thumbnail>> {
         &self.thumbnails
     }
     /// Consumes the builder and constructs a [`ThumbnailDetail`](crate::types::ThumbnailDetail).

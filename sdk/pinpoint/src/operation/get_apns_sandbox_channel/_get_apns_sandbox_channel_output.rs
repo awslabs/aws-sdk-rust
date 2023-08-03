@@ -5,15 +5,12 @@
 pub struct GetApnsSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
     #[doc(hidden)]
-    pub apns_sandbox_channel_response:
-        ::std::option::Option<crate::types::ApnsSandboxChannelResponse>,
+    pub apns_sandbox_channel_response: ::std::option::Option<crate::types::ApnsSandboxChannelResponse>,
     _request_id: Option<String>,
 }
 impl GetApnsSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-    pub fn apns_sandbox_channel_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApnsSandboxChannelResponse> {
+    pub fn apns_sandbox_channel_response(&self) -> ::std::option::Option<&crate::types::ApnsSandboxChannelResponse> {
         self.apns_sandbox_channel_response.as_ref()
     }
 }
@@ -24,44 +21,31 @@ impl ::aws_http::request_id::RequestId for GetApnsSandboxChannelOutput {
 }
 impl GetApnsSandboxChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetApnsSandboxChannelOutput`](crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::get_apns_sandbox_channel::builders::GetApnsSandboxChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_apns_sandbox_channel::builders::GetApnsSandboxChannelOutputBuilder {
         crate::operation::get_apns_sandbox_channel::builders::GetApnsSandboxChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetApnsSandboxChannelOutput`](crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApnsSandboxChannelOutputBuilder {
-    pub(crate) apns_sandbox_channel_response:
-        ::std::option::Option<crate::types::ApnsSandboxChannelResponse>,
+    pub(crate) apns_sandbox_channel_response: ::std::option::Option<crate::types::ApnsSandboxChannelResponse>,
     _request_id: Option<String>,
 }
 impl GetApnsSandboxChannelOutputBuilder {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-    pub fn apns_sandbox_channel_response(
-        mut self,
-        input: crate::types::ApnsSandboxChannelResponse,
-    ) -> Self {
+    pub fn apns_sandbox_channel_response(mut self, input: crate::types::ApnsSandboxChannelResponse) -> Self {
         self.apns_sandbox_channel_response = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-    pub fn set_apns_sandbox_channel_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ApnsSandboxChannelResponse>,
-    ) -> Self {
+    pub fn set_apns_sandbox_channel_response(mut self, input: ::std::option::Option<crate::types::ApnsSandboxChannelResponse>) -> Self {
         self.apns_sandbox_channel_response = input;
         self
     }
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-    pub fn get_apns_sandbox_channel_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApnsSandboxChannelResponse> {
+    pub fn get_apns_sandbox_channel_response(&self) -> &::std::option::Option<crate::types::ApnsSandboxChannelResponse> {
         &self.apns_sandbox_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

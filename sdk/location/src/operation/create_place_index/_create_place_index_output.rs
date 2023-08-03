@@ -41,17 +41,14 @@ impl ::aws_http::request_id::RequestId for CreatePlaceIndexOutput {
 }
 impl CreatePlaceIndexOutput {
     /// Creates a new builder-style object to manufacture [`CreatePlaceIndexOutput`](crate::operation::create_place_index::CreatePlaceIndexOutput).
-    pub fn builder() -> crate::operation::create_place_index::builders::CreatePlaceIndexOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_place_index::builders::CreatePlaceIndexOutputBuilder {
         crate::operation::create_place_index::builders::CreatePlaceIndexOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePlaceIndexOutput`](crate::operation::create_place_index::CreatePlaceIndexOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePlaceIndexOutputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) index_arn: ::std::option::Option<::std::string::String>,
@@ -102,10 +99,7 @@ impl CreatePlaceIndexOutputBuilder {
         self
     }
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }

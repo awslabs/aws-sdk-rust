@@ -10,10 +10,7 @@ impl CreateResolverInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_resolver::CreateResolverOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resolver::CreateResolverError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resolver::CreateResolverError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_resolver();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateResolverFluentBuilder {
         }
     }
     /// Access the CreateResolver as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_resolver::builders::CreateResolverInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_resolver::builders::CreateResolverInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl CreateResolverFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -158,18 +150,12 @@ impl CreateResolverFluentBuilder {
         self.inner.get_field_name()
     }
     /// <p>The name of the data source for which the resolver is being created.</p>
-    pub fn data_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_name(input.into());
         self
     }
     /// <p>The name of the data source for which the resolver is being created.</p>
-    pub fn set_data_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_name(input);
         self
     }
@@ -180,20 +166,14 @@ impl CreateResolverFluentBuilder {
     /// <p>The mapping template to use for requests.</p>
     /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-    pub fn request_mapping_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_mapping_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_mapping_template(input.into());
         self
     }
     /// <p>The mapping template to use for requests.</p>
     /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-    pub fn set_request_mapping_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_mapping_template(input);
         self
     }
@@ -204,18 +184,12 @@ impl CreateResolverFluentBuilder {
         self.inner.get_request_mapping_template()
     }
     /// <p>The mapping template to use for responses from the data source.</p>
-    pub fn response_mapping_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_mapping_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_mapping_template(input.into());
         self
     }
     /// <p>The mapping template to use for responses from the data source.</p>
-    pub fn set_response_mapping_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_response_mapping_template(input);
         self
     }
@@ -255,10 +229,7 @@ impl CreateResolverFluentBuilder {
         self
     }
     /// <p>The <code>PipelineConfig</code>.</p>
-    pub fn set_pipeline_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineConfig>,
-    ) -> Self {
+    pub fn set_pipeline_config(mut self, input: ::std::option::Option<crate::types::PipelineConfig>) -> Self {
         self.inner = self.inner.set_pipeline_config(input);
         self
     }
@@ -272,10 +243,7 @@ impl CreateResolverFluentBuilder {
         self
     }
     /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
-    pub fn set_sync_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SyncConfig>,
-    ) -> Self {
+    pub fn set_sync_config(mut self, input: ::std::option::Option<crate::types::SyncConfig>) -> Self {
         self.inner = self.inner.set_sync_config(input);
         self
     }
@@ -289,10 +257,7 @@ impl CreateResolverFluentBuilder {
         self
     }
     /// <p>The caching configuration for the resolver.</p>
-    pub fn set_caching_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CachingConfig>,
-    ) -> Self {
+    pub fn set_caching_config(mut self, input: ::std::option::Option<crate::types::CachingConfig>) -> Self {
         self.inner = self.inner.set_caching_config(input);
         self
     }
@@ -320,10 +285,7 @@ impl CreateResolverFluentBuilder {
         self
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
-    pub fn set_runtime(
-        mut self,
-        input: ::std::option::Option<crate::types::AppSyncRuntime>,
-    ) -> Self {
+    pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::AppSyncRuntime>) -> Self {
         self.inner = self.inner.set_runtime(input);
         self
     }

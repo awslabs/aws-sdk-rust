@@ -29,18 +29,14 @@ impl GetSchemaAnalysisRuleInput {
 }
 impl GetSchemaAnalysisRuleInput {
     /// Creates a new builder-style object to manufacture [`GetSchemaAnalysisRuleInput`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput).
-    pub fn builder(
-    ) -> crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleInputBuilder {
         crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSchemaAnalysisRuleInput`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaAnalysisRuleInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct GetSchemaAnalysisRuleInputBuilder {
 }
 impl GetSchemaAnalysisRuleInputBuilder {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn collaboration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn set_collaboration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_identifier = input;
         self
     }
@@ -87,10 +77,7 @@ impl GetSchemaAnalysisRuleInputBuilder {
         self
     }
     /// <p>The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisRuleType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AnalysisRuleType>) -> Self {
         self.r#type = input;
         self
     }
@@ -101,16 +88,12 @@ impl GetSchemaAnalysisRuleInputBuilder {
     /// Consumes the builder and constructs a [`GetSchemaAnalysisRuleInput`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput {
-                collaboration_identifier: self.collaboration_identifier,
-                name: self.name,
-                r#type: self.r#type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput {
+            collaboration_identifier: self.collaboration_identifier,
+            name: self.name,
+            r#type: self.r#type,
+        })
     }
 }

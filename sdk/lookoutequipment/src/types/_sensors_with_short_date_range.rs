@@ -23,9 +23,7 @@ impl SensorsWithShortDateRange {
 
 /// A builder for [`SensorsWithShortDateRange`](crate::types::SensorsWithShortDateRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SensorsWithShortDateRangeBuilder {
     pub(crate) affected_sensor_count: ::std::option::Option<i32>,
 }

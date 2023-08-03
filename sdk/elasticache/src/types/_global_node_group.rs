@@ -30,27 +30,19 @@ impl GlobalNodeGroup {
 
 /// A builder for [`GlobalNodeGroup`](crate::types::GlobalNodeGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlobalNodeGroupBuilder {
     pub(crate) global_node_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) slots: ::std::option::Option<::std::string::String>,
 }
 impl GlobalNodeGroupBuilder {
     /// <p>The name of the global node group</p>
-    pub fn global_node_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_node_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_node_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the global node group</p>
-    pub fn set_global_node_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_node_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_node_group_id = input;
         self
     }

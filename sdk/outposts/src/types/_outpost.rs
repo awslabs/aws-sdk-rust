@@ -33,9 +33,7 @@ pub struct Outpost {
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The Outpost tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
     #[doc(hidden)]
     pub site_arn: ::std::option::Option<::std::string::String>,
@@ -81,11 +79,7 @@ impl Outpost {
         self.availability_zone_id.as_deref()
     }
     /// <p>The Outpost tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
@@ -93,9 +87,7 @@ impl Outpost {
         self.site_arn.as_deref()
     }
     /// <p> The hardware type. </p>
-    pub fn supported_hardware_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SupportedHardwareType> {
+    pub fn supported_hardware_type(&self) -> ::std::option::Option<&crate::types::SupportedHardwareType> {
         self.supported_hardware_type.as_ref()
     }
 }
@@ -108,9 +100,7 @@ impl Outpost {
 
 /// A builder for [`Outpost`](crate::types::Outpost).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutpostBuilder {
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
@@ -121,9 +111,7 @@ pub struct OutpostBuilder {
     pub(crate) life_cycle_status: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) site_arn: ::std::option::Option<::std::string::String>,
     pub(crate) supported_hardware_type: ::std::option::Option<crate::types::SupportedHardwareType>,
 }
@@ -213,18 +201,12 @@ impl OutpostBuilder {
         &self.description
     }
     /// <p>The life cycle status.</p>
-    pub fn life_cycle_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn life_cycle_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.life_cycle_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The life cycle status.</p>
-    pub fn set_life_cycle_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_life_cycle_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.life_cycle_status = input;
         self
     }
@@ -233,18 +215,12 @@ impl OutpostBuilder {
         &self.life_cycle_status
     }
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -253,18 +229,12 @@ impl OutpostBuilder {
         &self.availability_zone
     }
     /// <p>The ID of the Availability Zone.</p>
-    pub fn availability_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Availability Zone.</p>
-    pub fn set_availability_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }
@@ -277,32 +247,19 @@ impl OutpostBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The Outpost tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The Outpost tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The Outpost tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
@@ -325,17 +282,12 @@ impl OutpostBuilder {
         self
     }
     /// <p> The hardware type. </p>
-    pub fn set_supported_hardware_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SupportedHardwareType>,
-    ) -> Self {
+    pub fn set_supported_hardware_type(mut self, input: ::std::option::Option<crate::types::SupportedHardwareType>) -> Self {
         self.supported_hardware_type = input;
         self
     }
     /// <p> The hardware type. </p>
-    pub fn get_supported_hardware_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::SupportedHardwareType> {
+    pub fn get_supported_hardware_type(&self) -> &::std::option::Option<crate::types::SupportedHardwareType> {
         &self.supported_hardware_type
     }
     /// Consumes the builder and constructs a [`Outpost`](crate::types::Outpost).

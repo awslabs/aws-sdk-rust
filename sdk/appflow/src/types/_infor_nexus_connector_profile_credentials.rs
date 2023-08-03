@@ -63,18 +63,12 @@ pub struct InforNexusConnectorProfileCredentialsBuilder {
 }
 impl InforNexusConnectorProfileCredentialsBuilder {
     /// <p> The Access Key portion of the credentials. </p>
-    pub fn access_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Access Key portion of the credentials. </p>
-    pub fn set_access_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_key_id = input;
         self
     }
@@ -97,18 +91,12 @@ impl InforNexusConnectorProfileCredentialsBuilder {
         &self.user_id
     }
     /// <p> The secret key used to sign requests. </p>
-    pub fn secret_access_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_access_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_access_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The secret key used to sign requests. </p>
-    pub fn set_secret_access_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_access_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_access_key = input;
         self
     }

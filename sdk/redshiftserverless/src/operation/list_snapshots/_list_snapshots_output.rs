@@ -35,9 +35,7 @@ impl ListSnapshotsOutput {
 
 /// A builder for [`ListSnapshotsOutput`](crate::operation::list_snapshots::ListSnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSnapshotsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
@@ -70,10 +68,7 @@ impl ListSnapshotsOutputBuilder {
         self
     }
     /// <p>All of the returned snapshot objects.</p>
-    pub fn set_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
-    ) -> Self {
+    pub fn set_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>) -> Self {
         self.snapshots = input;
         self
     }

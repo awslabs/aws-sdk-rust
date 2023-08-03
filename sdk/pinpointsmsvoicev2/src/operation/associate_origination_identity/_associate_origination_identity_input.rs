@@ -36,16 +36,14 @@ impl AssociateOriginationIdentityInput {
 }
 impl AssociateOriginationIdentityInput {
     /// Creates a new builder-style object to manufacture [`AssociateOriginationIdentityInput`](crate::operation::associate_origination_identity::AssociateOriginationIdentityInput).
-    pub fn builder() -> crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityInputBuilder{
+    pub fn builder() -> crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityInputBuilder {
         crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateOriginationIdentityInput`](crate::operation::associate_origination_identity::AssociateOriginationIdentityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateOriginationIdentityInputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) origination_identity: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl AssociateOriginationIdentityInputBuilder {
         &self.pool_id
     }
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_identity = input;
         self
     }
@@ -88,18 +80,12 @@ impl AssociateOriginationIdentityInputBuilder {
         &self.origination_identity
     }
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
-    pub fn iso_country_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
-    pub fn set_iso_country_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso_country_code = input;
         self
     }
@@ -128,13 +114,11 @@ impl AssociateOriginationIdentityInputBuilder {
         crate::operation::associate_origination_identity::AssociateOriginationIdentityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_origination_identity::AssociateOriginationIdentityInput {
-                pool_id: self.pool_id,
-                origination_identity: self.origination_identity,
-                iso_country_code: self.iso_country_code,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_origination_identity::AssociateOriginationIdentityInput {
+            pool_id: self.pool_id,
+            origination_identity: self.origination_identity,
+            iso_country_code: self.iso_country_code,
+            client_token: self.client_token,
+        })
     }
 }

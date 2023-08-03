@@ -43,17 +43,14 @@ impl ListSigningPlatformsInput {
 }
 impl ListSigningPlatformsInput {
     /// Creates a new builder-style object to manufacture [`ListSigningPlatformsInput`](crate::operation::list_signing_platforms::ListSigningPlatformsInput).
-    pub fn builder(
-    ) -> crate::operation::list_signing_platforms::builders::ListSigningPlatformsInputBuilder {
+    pub fn builder() -> crate::operation::list_signing_platforms::builders::ListSigningPlatformsInputBuilder {
         crate::operation::list_signing_platforms::builders::ListSigningPlatformsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSigningPlatformsInput`](crate::operation::list_signing_platforms::ListSigningPlatformsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSigningPlatformsInputBuilder {
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) partner: ::std::option::Option<::std::string::String>,
@@ -135,18 +132,14 @@ impl ListSigningPlatformsInputBuilder {
     /// Consumes the builder and constructs a [`ListSigningPlatformsInput`](crate::operation::list_signing_platforms::ListSigningPlatformsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_signing_platforms::ListSigningPlatformsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_signing_platforms::ListSigningPlatformsInput {
-                category: self.category,
-                partner: self.partner,
-                target: self.target,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_signing_platforms::ListSigningPlatformsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_signing_platforms::ListSigningPlatformsInput {
+            category: self.category,
+            partner: self.partner,
+            target: self.target,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

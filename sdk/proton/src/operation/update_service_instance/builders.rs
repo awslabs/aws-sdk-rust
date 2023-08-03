@@ -41,10 +41,7 @@ impl UpdateServiceInstanceFluentBuilder {
         }
     }
     /// Access the UpdateServiceInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_service_instance::builders::UpdateServiceInstanceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_service_instance::builders::UpdateServiceInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl UpdateServiceInstanceFluentBuilder {
             crate::operation::update_service_instance::UpdateServiceInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_instance::UpdateServiceInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_instance::UpdateServiceInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl UpdateServiceInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl UpdateServiceInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_instance::UpdateServiceInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_instance::UpdateServiceInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_instance::UpdateServiceInstanceError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl UpdateServiceInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_instance::UpdateServiceInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_instance::UpdateServiceInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_instance::UpdateServiceInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl UpdateServiceInstanceFluentBuilder {
             crate::operation::update_service_instance::UpdateServiceInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_instance::UpdateServiceInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_instance::UpdateServiceInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -205,10 +191,7 @@ impl UpdateServiceInstanceFluentBuilder {
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
-    pub fn set_deployment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentUpdateType>,
-    ) -> Self {
+    pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentUpdateType>) -> Self {
         self.inner = self.inner.set_deployment_type(input);
         self
     }
@@ -235,9 +218,7 @@ impl UpdateServiceInstanceFluentBuilder {
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
-    pub fn get_deployment_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentUpdateType> {
+    pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentUpdateType> {
         self.inner.get_deployment_type()
     }
     /// <p>The formatted specification that defines the service instance update.</p>
@@ -255,18 +236,12 @@ impl UpdateServiceInstanceFluentBuilder {
         self.inner.get_spec()
     }
     /// <p>The major version of the service template to update.</p>
-    pub fn template_major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_major_version(input.into());
         self
     }
     /// <p>The major version of the service template to update.</p>
-    pub fn set_template_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_major_version(input);
         self
     }
@@ -275,18 +250,12 @@ impl UpdateServiceInstanceFluentBuilder {
         self.inner.get_template_major_version()
     }
     /// <p>The minor version of the service template to update.</p>
-    pub fn template_minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_minor_version(input.into());
         self
     }
     /// <p>The minor version of the service template to update.</p>
-    pub fn set_template_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_minor_version(input);
         self
     }

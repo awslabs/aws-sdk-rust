@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRuleGroupOutput`](crate::operation::update_rule_group::UpdateRuleGroupOutput) with field(s):
     ///   - [`next_lock_token(Option<String>)`](crate::operation::update_rule_group::UpdateRuleGroupOutput::next_lock_token): <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     /// - On failure, responds with [`SdkError<UpdateRuleGroupError>`](crate::operation::update_rule_group::UpdateRuleGroupError)
-    pub fn update_rule_group(
-        &self,
-    ) -> crate::operation::update_rule_group::builders::UpdateRuleGroupFluentBuilder {
-        crate::operation::update_rule_group::builders::UpdateRuleGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_rule_group(&self) -> crate::operation::update_rule_group::builders::UpdateRuleGroupFluentBuilder {
+        crate::operation::update_rule_group::builders::UpdateRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

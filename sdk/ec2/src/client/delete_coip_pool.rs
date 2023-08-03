@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteCoipPoolOutput`](crate::operation::delete_coip_pool::DeleteCoipPoolOutput) with field(s):
     ///   - [`coip_pool(Option<CoipPool>)`](crate::operation::delete_coip_pool::DeleteCoipPoolOutput::coip_pool): <p>Information about the CoIP address pool.</p>
     /// - On failure, responds with [`SdkError<DeleteCoipPoolError>`](crate::operation::delete_coip_pool::DeleteCoipPoolError)
-    pub fn delete_coip_pool(
-        &self,
-    ) -> crate::operation::delete_coip_pool::builders::DeleteCoipPoolFluentBuilder {
-        crate::operation::delete_coip_pool::builders::DeleteCoipPoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_coip_pool(&self) -> crate::operation::delete_coip_pool::builders::DeleteCoipPoolFluentBuilder {
+        crate::operation::delete_coip_pool::builders::DeleteCoipPoolFluentBuilder::new(self.handle.clone())
     }
 }

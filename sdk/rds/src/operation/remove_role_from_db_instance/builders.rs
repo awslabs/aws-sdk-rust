@@ -26,7 +26,7 @@ impl RemoveRoleFromDbInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveRoleFromDBInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_role_from_db_instance::builders::RemoveRoleFromDbInstanceInputBuilder,
+    inner: crate::operation::remove_role_from_db_instance::builders::RemoveRoleFromDbInstanceInputBuilder,
 }
 impl RemoveRoleFromDBInstanceFluentBuilder {
     /// Creates a new `RemoveRoleFromDBInstance`.
@@ -37,7 +37,7 @@ impl RemoveRoleFromDBInstanceFluentBuilder {
         }
     }
     /// Access the RemoveRoleFromDBInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_role_from_db_instance::builders::RemoveRoleFromDbInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_role_from_db_instance::builders::RemoveRoleFromDbInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RemoveRoleFromDBInstanceFluentBuilder {
             crate::operation::remove_role_from_db_instance::RemoveRoleFromDBInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_role_from_db_instance::RemoveRoleFromDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_role_from_db_instance::RemoveRoleFromDBInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RemoveRoleFromDBInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RemoveRoleFromDBInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_role_from_db_instance::RemoveRoleFromDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_role_from_db_instance::RemoveRoleFromDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_role_from_db_instance::RemoveRoleFromDBInstanceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RemoveRoleFromDBInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_role_from_db_instance::RemoveRoleFromDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_role_from_db_instance::RemoveRoleFromDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_role_from_db_instance::RemoveRoleFromDBInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl RemoveRoleFromDBInstanceFluentBuilder {
             crate::operation::remove_role_from_db_instance::RemoveRoleFromDBInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_role_from_db_instance::RemoveRoleFromDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_role_from_db_instance::RemoveRoleFromDBInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the DB instance to disassociate the IAM role from.</p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
     /// <p>The name of the DB instance to disassociate the IAM role from.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for SendTemplatedEmailOutput {
 }
 impl SendTemplatedEmailOutput {
     /// Creates a new builder-style object to manufacture [`SendTemplatedEmailOutput`](crate::operation::send_templated_email::SendTemplatedEmailOutput).
-    pub fn builder(
-    ) -> crate::operation::send_templated_email::builders::SendTemplatedEmailOutputBuilder {
+    pub fn builder() -> crate::operation::send_templated_email::builders::SendTemplatedEmailOutputBuilder {
         crate::operation::send_templated_email::builders::SendTemplatedEmailOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendTemplatedEmailOutput`](crate::operation::send_templated_email::SendTemplatedEmailOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendTemplatedEmailOutputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

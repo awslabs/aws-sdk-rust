@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateGlobalClusterOutput`](crate::operation::create_global_cluster::CreateGlobalClusterOutput) with field(s):
     ///   - [`global_cluster(Option<GlobalCluster>)`](crate::operation::create_global_cluster::CreateGlobalClusterOutput::global_cluster): <p>Contains the details of an Amazon Neptune global database.</p>  <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
     /// - On failure, responds with [`SdkError<CreateGlobalClusterError>`](crate::operation::create_global_cluster::CreateGlobalClusterError)
-    pub fn create_global_cluster(
-        &self,
-    ) -> crate::operation::create_global_cluster::builders::CreateGlobalClusterFluentBuilder {
-        crate::operation::create_global_cluster::builders::CreateGlobalClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_global_cluster(&self) -> crate::operation::create_global_cluster::builders::CreateGlobalClusterFluentBuilder {
+        crate::operation::create_global_cluster::builders::CreateGlobalClusterFluentBuilder::new(self.handle.clone())
     }
 }

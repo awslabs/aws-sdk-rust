@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`association_id(impl ::std::convert::Into<String>)`](crate::operation::delete_association::builders::DeleteAssociationFluentBuilder::association_id) / [`set_association_id(Option<String>)`](crate::operation::delete_association::builders::DeleteAssociationFluentBuilder::set_association_id): <p>The association ID that you want to delete.</p>
     /// - On success, responds with [`DeleteAssociationOutput`](crate::operation::delete_association::DeleteAssociationOutput)
     /// - On failure, responds with [`SdkError<DeleteAssociationError>`](crate::operation::delete_association::DeleteAssociationError)
-    pub fn delete_association(
-        &self,
-    ) -> crate::operation::delete_association::builders::DeleteAssociationFluentBuilder {
-        crate::operation::delete_association::builders::DeleteAssociationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_association(&self) -> crate::operation::delete_association::builders::DeleteAssociationFluentBuilder {
+        crate::operation::delete_association::builders::DeleteAssociationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,7 +28,7 @@ impl RemoveRegionsFromReplicationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveRegionsFromReplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_regions_from_replication::builders::RemoveRegionsFromReplicationInputBuilder,
+    inner: crate::operation::remove_regions_from_replication::builders::RemoveRegionsFromReplicationInputBuilder,
 }
 impl RemoveRegionsFromReplicationFluentBuilder {
     /// Creates a new `RemoveRegionsFromReplication`.
@@ -39,7 +39,7 @@ impl RemoveRegionsFromReplicationFluentBuilder {
         }
     }
     /// Access the RemoveRegionsFromReplication as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_regions_from_replication::builders::RemoveRegionsFromReplicationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_regions_from_replication::builders::RemoveRegionsFromReplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl RemoveRegionsFromReplicationFluentBuilder {
             crate::operation::remove_regions_from_replication::RemoveRegionsFromReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl RemoveRegionsFromReplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl RemoveRegionsFromReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl RemoveRegionsFromReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl RemoveRegionsFromReplicationFluentBuilder {
             crate::operation::remove_regions_from_replication::RemoveRegionsFromReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError>,
     > {
         self.customize_middleware().await
     }
@@ -141,25 +130,17 @@ impl RemoveRegionsFromReplicationFluentBuilder {
     /// To override the contents of this collection use [`set_remove_replica_regions`](Self::set_remove_replica_regions).
     ///
     /// <p>The Regions of the replicas to remove.</p>
-    pub fn remove_replica_regions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_replica_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remove_replica_regions(input.into());
         self
     }
     /// <p>The Regions of the replicas to remove.</p>
-    pub fn set_remove_replica_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_replica_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_replica_regions(input);
         self
     }
     /// <p>The Regions of the replicas to remove.</p>
-    pub fn get_remove_replica_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_replica_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_replica_regions()
     }
 }

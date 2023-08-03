@@ -26,7 +26,7 @@ impl ListApplicationSnapshotsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationSnapshotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_application_snapshots::builders::ListApplicationSnapshotsInputBuilder,
+    inner: crate::operation::list_application_snapshots::builders::ListApplicationSnapshotsInputBuilder,
 }
 impl ListApplicationSnapshotsFluentBuilder {
     /// Creates a new `ListApplicationSnapshots`.
@@ -37,10 +37,7 @@ impl ListApplicationSnapshotsFluentBuilder {
         }
     }
     /// Access the ListApplicationSnapshots as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_application_snapshots::builders::ListApplicationSnapshotsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_application_snapshots::builders::ListApplicationSnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListApplicationSnapshotsFluentBuilder {
             crate::operation::list_application_snapshots::ListApplicationSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_snapshots::ListApplicationSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_snapshots::ListApplicationSnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListApplicationSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListApplicationSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_snapshots::ListApplicationSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_snapshots::ListApplicationSnapshotsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListApplicationSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_snapshots::ListApplicationSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_snapshots::ListApplicationSnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl ListApplicationSnapshotsFluentBuilder {
             crate::operation::list_application_snapshots::ListApplicationSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_application_snapshots::ListApplicationSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_application_snapshots::ListApplicationSnapshotsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of an existing application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of an existing application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }

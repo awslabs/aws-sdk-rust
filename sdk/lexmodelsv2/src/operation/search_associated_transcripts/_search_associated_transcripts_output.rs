@@ -20,8 +20,7 @@ pub struct SearchAssociatedTranscriptsOutput {
     pub next_index: ::std::option::Option<i32>,
     /// <p>The object that contains the associated transcript that meet the criteria you specified.</p>
     #[doc(hidden)]
-    pub associated_transcripts:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscript>>,
+    pub associated_transcripts: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscript>>,
     /// <p>The total number of transcripts returned by the search.</p>
     #[doc(hidden)]
     pub total_results: ::std::option::Option<i32>,
@@ -49,9 +48,7 @@ impl SearchAssociatedTranscriptsOutput {
         self.next_index
     }
     /// <p>The object that contains the associated transcript that meet the criteria you specified.</p>
-    pub fn associated_transcripts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssociatedTranscript]> {
+    pub fn associated_transcripts(&self) -> ::std::option::Option<&[crate::types::AssociatedTranscript]> {
         self.associated_transcripts.as_deref()
     }
     /// <p>The total number of transcripts returned by the search.</p>
@@ -66,24 +63,21 @@ impl ::aws_http::request_id::RequestId for SearchAssociatedTranscriptsOutput {
 }
 impl SearchAssociatedTranscriptsOutput {
     /// Creates a new builder-style object to manufacture [`SearchAssociatedTranscriptsOutput`](crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput).
-    pub fn builder() -> crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsOutputBuilder{
+    pub fn builder() -> crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsOutputBuilder {
         crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchAssociatedTranscriptsOutput`](crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchAssociatedTranscriptsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_index: ::std::option::Option<i32>,
-    pub(crate) associated_transcripts:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscript>>,
+    pub(crate) associated_transcripts: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscript>>,
     pub(crate) total_results: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
@@ -131,18 +125,12 @@ impl SearchAssociatedTranscriptsOutputBuilder {
         &self.locale_id
     }
     /// <p> The unique identifier of the bot recommendation associated with the transcripts to search.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier of the bot recommendation associated with the transcripts to search.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_recommendation_id = input;
         self
     }
@@ -176,17 +164,12 @@ impl SearchAssociatedTranscriptsOutputBuilder {
         self
     }
     /// <p>The object that contains the associated transcript that meet the criteria you specified.</p>
-    pub fn set_associated_transcripts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscript>>,
-    ) -> Self {
+    pub fn set_associated_transcripts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscript>>) -> Self {
         self.associated_transcripts = input;
         self
     }
     /// <p>The object that contains the associated transcript that meet the criteria you specified.</p>
-    pub fn get_associated_transcripts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscript>> {
+    pub fn get_associated_transcripts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscript>> {
         &self.associated_transcripts
     }
     /// <p>The total number of transcripts returned by the search.</p>
@@ -213,9 +196,7 @@ impl SearchAssociatedTranscriptsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchAssociatedTranscriptsOutput`](crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput {
+    pub fn build(self) -> crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput {
         crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

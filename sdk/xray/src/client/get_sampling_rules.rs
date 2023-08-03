@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`sampling_rule_records(Option<Vec<SamplingRuleRecord>>)`](crate::operation::get_sampling_rules::GetSamplingRulesOutput::sampling_rule_records): <p>Rule definitions and metadata.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_sampling_rules::GetSamplingRulesOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<GetSamplingRulesError>`](crate::operation::get_sampling_rules::GetSamplingRulesError)
-    pub fn get_sampling_rules(
-        &self,
-    ) -> crate::operation::get_sampling_rules::builders::GetSamplingRulesFluentBuilder {
-        crate::operation::get_sampling_rules::builders::GetSamplingRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_sampling_rules(&self) -> crate::operation::get_sampling_rules::builders::GetSamplingRulesFluentBuilder {
+        crate::operation::get_sampling_rules::builders::GetSamplingRulesFluentBuilder::new(self.handle.clone())
     }
 }

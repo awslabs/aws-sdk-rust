@@ -58,9 +58,7 @@ impl LambdaFunctionScheduledEventAttributes {
 
 /// A builder for [`LambdaFunctionScheduledEventAttributes`](crate::types::LambdaFunctionScheduledEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaFunctionScheduledEventAttributesBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -127,18 +125,12 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
         &self.input
     }
     /// <p>The maximum amount of time a worker can take to process the Lambda task.</p>
-    pub fn start_to_close_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum amount of time a worker can take to process the Lambda task.</p>
-    pub fn set_start_to_close_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_to_close_timeout = input;
         self
     }
@@ -152,10 +144,7 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
         self
     }
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
-    pub fn set_decision_task_completed_event_id(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.decision_task_completed_event_id = input;
         self
     }
@@ -171,9 +160,7 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
             control: self.control,
             input: self.input,
             start_to_close_timeout: self.start_to_close_timeout,
-            decision_task_completed_event_id: self
-                .decision_task_completed_event_id
-                .unwrap_or_default(),
+            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
         }
     }
 }

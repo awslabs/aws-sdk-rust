@@ -74,9 +74,7 @@ impl Role {
     }
     /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
-    pub fn permissions_boundary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttachedPermissionsBoundary> {
+    pub fn permissions_boundary(&self) -> ::std::option::Option<&crate::types::AttachedPermissionsBoundary> {
         self.permissions_boundary.as_ref()
     }
     /// <p>A list of tags that are attached to the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
@@ -97,9 +95,7 @@ impl Role {
 
 /// A builder for [`Role`](crate::types::Role).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoleBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
@@ -109,8 +105,7 @@ pub struct RoleBuilder {
     pub(crate) assume_role_policy_document: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) max_session_duration: ::std::option::Option<i32>,
-    pub(crate) permissions_boundary:
-        ::std::option::Option<crate::types::AttachedPermissionsBoundary>,
+    pub(crate) permissions_boundary: ::std::option::Option<crate::types::AttachedPermissionsBoundary>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) role_last_used: ::std::option::Option<crate::types::RoleLastUsed>,
 }
@@ -177,10 +172,7 @@ impl RoleBuilder {
         self
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the role was created.</p>
-    pub fn set_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }
@@ -189,18 +181,12 @@ impl RoleBuilder {
         &self.create_date
     }
     /// <p>The policy that grants an entity permission to assume the role.</p>
-    pub fn assume_role_policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assume_role_policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assume_role_policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy that grants an entity permission to assume the role.</p>
-    pub fn set_assume_role_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assume_role_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assume_role_policy_document = input;
         self
     }
@@ -238,27 +224,19 @@ impl RoleBuilder {
     }
     /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
-    pub fn permissions_boundary(
-        mut self,
-        input: crate::types::AttachedPermissionsBoundary,
-    ) -> Self {
+    pub fn permissions_boundary(mut self, input: crate::types::AttachedPermissionsBoundary) -> Self {
         self.permissions_boundary = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_permissions_boundary(
-        mut self,
-        input: ::std::option::Option<crate::types::AttachedPermissionsBoundary>,
-    ) -> Self {
+    pub fn set_permissions_boundary(mut self, input: ::std::option::Option<crate::types::AttachedPermissionsBoundary>) -> Self {
         self.permissions_boundary = input;
         self
     }
     /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
-    pub fn get_permissions_boundary(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttachedPermissionsBoundary> {
+    pub fn get_permissions_boundary(&self) -> &::std::option::Option<crate::types::AttachedPermissionsBoundary> {
         &self.permissions_boundary
     }
     /// Appends an item to `tags`.
@@ -273,10 +251,7 @@ impl RoleBuilder {
         self
     }
     /// <p>A list of tags that are attached to the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -290,10 +265,7 @@ impl RoleBuilder {
         self
     }
     /// <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM user Guide</i>.</p>
-    pub fn set_role_last_used(
-        mut self,
-        input: ::std::option::Option<crate::types::RoleLastUsed>,
-    ) -> Self {
+    pub fn set_role_last_used(mut self, input: ::std::option::Option<crate::types::RoleLastUsed>) -> Self {
         self.role_last_used = input;
         self
     }

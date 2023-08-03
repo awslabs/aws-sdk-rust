@@ -40,13 +40,7 @@
 /// Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores Stereo downmix.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3AtmosStereoDownmix {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for Eac3AtmosStereoDownmix {
             "NOT_INDICATED" => Eac3AtmosStereoDownmix::NotIndicated,
             "STEREO" => Eac3AtmosStereoDownmix::Stereo,
             "SURROUND" => Eac3AtmosStereoDownmix::Surround,
-            other => Eac3AtmosStereoDownmix::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Eac3AtmosStereoDownmix::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

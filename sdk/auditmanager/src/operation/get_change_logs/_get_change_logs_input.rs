@@ -50,9 +50,7 @@ impl GetChangeLogsInput {
 
 /// A builder for [`GetChangeLogsInput`](crate::operation::get_change_logs::GetChangeLogsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChangeLogsInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) control_set_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct GetChangeLogsInputBuilder {
 }
 impl GetChangeLogsInputBuilder {
     /// <p>The unique identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -82,18 +74,12 @@ impl GetChangeLogsInputBuilder {
         &self.assessment_id
     }
     /// <p> The unique identifier for the control set. </p>
-    pub fn control_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the control set. </p>
-    pub fn set_control_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_set_id = input;
         self
     }
@@ -146,10 +132,7 @@ impl GetChangeLogsInputBuilder {
     /// Consumes the builder and constructs a [`GetChangeLogsInput`](crate::operation::get_change_logs::GetChangeLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_change_logs::GetChangeLogsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_change_logs::GetChangeLogsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_change_logs::GetChangeLogsInput {
             assessment_id: self.assessment_id,
             control_set_id: self.control_set_id,

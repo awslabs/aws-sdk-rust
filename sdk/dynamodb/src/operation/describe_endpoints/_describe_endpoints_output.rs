@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeEndpointsOutput {
 }
 impl DescribeEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointsOutput`](crate::operation::describe_endpoints::DescribeEndpointsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_endpoints::builders::DescribeEndpointsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_endpoints::builders::DescribeEndpointsOutputBuilder {
         crate::operation::describe_endpoints::builders::DescribeEndpointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointsOutput`](crate::operation::describe_endpoints::DescribeEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointsOutputBuilder {
     pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
     _request_id: Option<String>,
@@ -49,10 +46,7 @@ impl DescribeEndpointsOutputBuilder {
         self
     }
     /// <p>List of endpoints.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>) -> Self {
         self.endpoints = input;
         self
     }

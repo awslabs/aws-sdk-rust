@@ -11,8 +11,7 @@ pub struct PutImageScanningConfigurationInput {
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
     #[doc(hidden)]
-    pub image_scanning_configuration:
-        ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl PutImageScanningConfigurationInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image scanning configuration setting. If you do not specify a registry, the default registry is assumed.</p>
@@ -24,29 +23,24 @@ impl PutImageScanningConfigurationInput {
         self.repository_name.as_deref()
     }
     /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    pub fn image_scanning_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
+    pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
 }
 impl PutImageScanningConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutImageScanningConfigurationInput`](crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationInput).
-    pub fn builder() -> crate::operation::put_image_scanning_configuration::builders::PutImageScanningConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_image_scanning_configuration::builders::PutImageScanningConfigurationInputBuilder {
         crate::operation::put_image_scanning_configuration::builders::PutImageScanningConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutImageScanningConfigurationInput`](crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutImageScanningConfigurationInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
-    pub(crate) image_scanning_configuration:
-        ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl PutImageScanningConfigurationInputBuilder {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image scanning configuration setting. If you do not specify a registry, the default registry is assumed.</p>
@@ -64,18 +58,12 @@ impl PutImageScanningConfigurationInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository in which to update the image scanning configuration setting.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository in which to update the image scanning configuration setting.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -84,25 +72,17 @@ impl PutImageScanningConfigurationInputBuilder {
         &self.repository_name
     }
     /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    pub fn image_scanning_configuration(
-        mut self,
-        input: crate::types::ImageScanningConfiguration,
-    ) -> Self {
+    pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.image_scanning_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    pub fn set_image_scanning_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanningConfiguration>,
-    ) -> Self {
+    pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.image_scanning_configuration = input;
         self
     }
     /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    pub fn get_image_scanning_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
+    pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         &self.image_scanning_configuration
     }
     /// Consumes the builder and constructs a [`PutImageScanningConfigurationInput`](crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationInput).
@@ -112,15 +92,10 @@ impl PutImageScanningConfigurationInputBuilder {
         crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationInput {
-                registry_id: self.registry_id
-                ,
-                repository_name: self.repository_name
-                ,
-                image_scanning_configuration: self.image_scanning_configuration
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            image_scanning_configuration: self.image_scanning_configuration,
+        })
     }
 }

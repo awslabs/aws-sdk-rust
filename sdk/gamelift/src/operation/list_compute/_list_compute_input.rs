@@ -43,9 +43,7 @@ impl ListComputeInput {
 
 /// A builder for [`ListComputeInput`](crate::operation::list_compute::ListComputeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComputeInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -110,12 +108,7 @@ impl ListComputeInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListComputeInput`](crate::operation::list_compute::ListComputeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_compute::ListComputeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_compute::ListComputeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_compute::ListComputeInput {
             fleet_id: self.fleet_id,
             location: self.location,

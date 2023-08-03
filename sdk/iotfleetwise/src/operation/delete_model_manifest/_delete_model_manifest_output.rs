@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteModelManifestOutput {
 }
 impl DeleteModelManifestOutput {
     /// Creates a new builder-style object to manufacture [`DeleteModelManifestOutput`](crate::operation::delete_model_manifest::DeleteModelManifestOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_model_manifest::builders::DeleteModelManifestOutputBuilder {
-        crate::operation::delete_model_manifest::builders::DeleteModelManifestOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_model_manifest::builders::DeleteModelManifestOutputBuilder {
+        crate::operation::delete_model_manifest::builders::DeleteModelManifestOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteModelManifestOutput`](crate::operation::delete_model_manifest::DeleteModelManifestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelManifestOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

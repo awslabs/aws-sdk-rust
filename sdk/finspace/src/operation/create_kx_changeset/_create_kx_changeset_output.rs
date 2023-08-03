@@ -82,17 +82,14 @@ impl ::aws_http::request_id::RequestId for CreateKxChangesetOutput {
 }
 impl CreateKxChangesetOutput {
     /// Creates a new builder-style object to manufacture [`CreateKxChangesetOutput`](crate::operation::create_kx_changeset::CreateKxChangesetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_kx_changeset::builders::CreateKxChangesetOutputBuilder {
+    pub fn builder() -> crate::operation::create_kx_changeset::builders::CreateKxChangesetOutputBuilder {
         crate::operation::create_kx_changeset::builders::CreateKxChangesetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateKxChangesetOutput`](crate::operation::create_kx_changeset::CreateKxChangesetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateKxChangesetOutputBuilder {
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -120,18 +117,12 @@ impl CreateKxChangesetOutputBuilder {
         &self.changeset_id
     }
     /// <p>The name of the kdb database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the kdb database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -140,18 +131,12 @@ impl CreateKxChangesetOutputBuilder {
         &self.database_name
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -171,17 +156,12 @@ impl CreateKxChangesetOutputBuilder {
         self
     }
     /// <p>A list of change requests.</p>
-    pub fn set_change_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>,
-    ) -> Self {
+    pub fn set_change_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>) -> Self {
         self.change_requests = input;
         self
     }
     /// <p>A list of change requests.</p>
-    pub fn get_change_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>> {
+    pub fn get_change_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>> {
         &self.change_requests
     }
     /// <p>The timestamp at which the changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -190,10 +170,7 @@ impl CreateKxChangesetOutputBuilder {
         self
     }
     /// <p>The timestamp at which the changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -207,17 +184,12 @@ impl CreateKxChangesetOutputBuilder {
         self
     }
     /// <p>The timestamp at which the changeset was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn set_last_modified_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_timestamp = input;
         self
     }
     /// <p>The timestamp at which the changeset was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn get_last_modified_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_timestamp
     }
     /// <p>Status of the changeset creation process.</p>
@@ -238,10 +210,7 @@ impl CreateKxChangesetOutputBuilder {
     /// <li> <p>Failed – Changeset creation has failed.</p> </li>
     /// <li> <p>Complete – Changeset creation has succeeded.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangesetStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChangesetStatus>) -> Self {
         self.status = input;
         self
     }

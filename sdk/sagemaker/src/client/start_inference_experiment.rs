@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartInferenceExperimentOutput`](crate::operation::start_inference_experiment::StartInferenceExperimentOutput) with field(s):
     ///   - [`inference_experiment_arn(Option<String>)`](crate::operation::start_inference_experiment::StartInferenceExperimentOutput::inference_experiment_arn): <p>The ARN of the started inference experiment to start.</p>
     /// - On failure, responds with [`SdkError<StartInferenceExperimentError>`](crate::operation::start_inference_experiment::StartInferenceExperimentError)
-    pub fn start_inference_experiment(
-        &self,
-    ) -> crate::operation::start_inference_experiment::builders::StartInferenceExperimentFluentBuilder
-    {
+    pub fn start_inference_experiment(&self) -> crate::operation::start_inference_experiment::builders::StartInferenceExperimentFluentBuilder {
         crate::operation::start_inference_experiment::builders::StartInferenceExperimentFluentBuilder::new(self.handle.clone())
     }
 }

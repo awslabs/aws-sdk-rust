@@ -22,11 +22,7 @@ impl super::Client {
     ///   - [`uhd_device_settings(Option<InputDeviceUhdSettings>)`](crate::operation::update_input_device::UpdateInputDeviceOutput::uhd_device_settings): Settings that describe an input device that is type UHD.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_input_device::UpdateInputDeviceOutput::tags): A collection of key-value pairs.
     /// - On failure, responds with [`SdkError<UpdateInputDeviceError>`](crate::operation::update_input_device::UpdateInputDeviceError)
-    pub fn update_input_device(
-        &self,
-    ) -> crate::operation::update_input_device::builders::UpdateInputDeviceFluentBuilder {
-        crate::operation::update_input_device::builders::UpdateInputDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_input_device(&self) -> crate::operation::update_input_device::builders::UpdateInputDeviceFluentBuilder {
+        crate::operation::update_input_device::builders::UpdateInputDeviceFluentBuilder::new(self.handle.clone())
     }
 }

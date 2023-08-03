@@ -45,7 +45,7 @@ impl ::aws_http::request_id::RequestId for SearchRasterDataCollectionOutput {
 }
 impl SearchRasterDataCollectionOutput {
     /// Creates a new builder-style object to manufacture [`SearchRasterDataCollectionOutput`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput).
-    pub fn builder() -> crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionOutputBuilder{
+    pub fn builder() -> crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionOutputBuilder {
         crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionOutputBuilder::default()
     }
 }
@@ -100,10 +100,7 @@ impl SearchRasterDataCollectionOutputBuilder {
         self
     }
     /// <p>List of items matching the Raster DataCollectionQuery.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ItemSource>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ItemSource>>) -> Self {
         self.items = input;
         self
     }
@@ -121,9 +118,7 @@ impl SearchRasterDataCollectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchRasterDataCollectionOutput`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput {
+    pub fn build(self) -> crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput {
         crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput {
             approximate_result_count: self.approximate_result_count,
             next_token: self.next_token,

@@ -9,9 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AcceptEulasOutput`](crate::operation::accept_eulas::AcceptEulasOutput) with field(s):
     ///   - [`eula_acceptances(Option<Vec<EulaAcceptance>>)`](crate::operation::accept_eulas::AcceptEulasOutput::eula_acceptances): <p>A collection of EULA acceptances.</p>
     /// - On failure, responds with [`SdkError<AcceptEulasError>`](crate::operation::accept_eulas::AcceptEulasError)
-    pub fn accept_eulas(
-        &self,
-    ) -> crate::operation::accept_eulas::builders::AcceptEulasFluentBuilder {
+    pub fn accept_eulas(&self) -> crate::operation::accept_eulas::builders::AcceptEulasFluentBuilder {
         crate::operation::accept_eulas::builders::AcceptEulasFluentBuilder::new(self.handle.clone())
     }
 }

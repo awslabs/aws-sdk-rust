@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ResetPersonalPinOutput`](crate::operation::reset_personal_pin::ResetPersonalPinOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::operation::reset_personal_pin::ResetPersonalPinOutput::user): <p>The user details and new personal meeting PIN.</p>
     /// - On failure, responds with [`SdkError<ResetPersonalPINError>`](crate::operation::reset_personal_pin::ResetPersonalPINError)
-    pub fn reset_personal_pin(
-        &self,
-    ) -> crate::operation::reset_personal_pin::builders::ResetPersonalPINFluentBuilder {
-        crate::operation::reset_personal_pin::builders::ResetPersonalPINFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reset_personal_pin(&self) -> crate::operation::reset_personal_pin::builders::ResetPersonalPINFluentBuilder {
+        crate::operation::reset_personal_pin::builders::ResetPersonalPINFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for AcceptSharedDirectoryOutput {
 }
 impl AcceptSharedDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`AcceptSharedDirectoryOutput`](crate::operation::accept_shared_directory::AcceptSharedDirectoryOutput).
-    pub fn builder(
-    ) -> crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryOutputBuilder {
         crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptSharedDirectoryOutput`](crate::operation::accept_shared_directory::AcceptSharedDirectoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptSharedDirectoryOutputBuilder {
     pub(crate) shared_directory: ::std::option::Option<crate::types::SharedDirectory>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl AcceptSharedDirectoryOutputBuilder {
         self
     }
     /// <p>The shared directory in the directory consumer account.</p>
-    pub fn set_shared_directory(
-        mut self,
-        input: ::std::option::Option<crate::types::SharedDirectory>,
-    ) -> Self {
+    pub fn set_shared_directory(mut self, input: ::std::option::Option<crate::types::SharedDirectory>) -> Self {
         self.shared_directory = input;
         self
     }

@@ -17,9 +17,7 @@ impl FailedCampaignStateResponse {
         self.campaign_id.as_deref()
     }
     /// A predefined code indicating the error that caused the failure in getting state of campaigns
-    pub fn failure_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GetCampaignStateBatchFailureCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::GetCampaignStateBatchFailureCode> {
         self.failure_code.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl FailedCampaignStateResponse {
 
 /// A builder for [`FailedCampaignStateResponse`](crate::types::FailedCampaignStateResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedCampaignStateResponseBuilder {
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
     pub(crate) failure_code: ::std::option::Option<crate::types::GetCampaignStateBatchFailureCode>,
@@ -60,17 +56,12 @@ impl FailedCampaignStateResponseBuilder {
         self
     }
     /// A predefined code indicating the error that caused the failure in getting state of campaigns
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::GetCampaignStateBatchFailureCode>,
-    ) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::GetCampaignStateBatchFailureCode>) -> Self {
         self.failure_code = input;
         self
     }
     /// A predefined code indicating the error that caused the failure in getting state of campaigns
-    pub fn get_failure_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::GetCampaignStateBatchFailureCode> {
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::GetCampaignStateBatchFailureCode> {
         &self.failure_code
     }
     /// Consumes the builder and constructs a [`FailedCampaignStateResponse`](crate::types::FailedCampaignStateResponse).

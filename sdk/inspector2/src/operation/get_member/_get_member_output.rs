@@ -28,9 +28,7 @@ impl GetMemberOutput {
 
 /// A builder for [`GetMemberOutput`](crate::operation::get_member::GetMemberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMemberOutputBuilder {
     pub(crate) member: ::std::option::Option<crate::types::Member>,
     _request_id: Option<String>,

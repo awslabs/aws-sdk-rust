@@ -37,9 +37,7 @@ impl SlotValueOverride {
 
 /// A builder for [`SlotValueOverride`](crate::types::SlotValueOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotValueOverrideBuilder {
     pub(crate) shape: ::std::option::Option<crate::types::SlotShape>,
     pub(crate) value: ::std::option::Option<crate::types::SlotValue>,
@@ -86,17 +84,12 @@ impl SlotValueOverrideBuilder {
         self
     }
     /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlotValueOverride>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotValueOverride>>) -> Self {
         self.values = input;
         self
     }
     /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotValueOverride>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotValueOverride>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`SlotValueOverride`](crate::types::SlotValueOverride).

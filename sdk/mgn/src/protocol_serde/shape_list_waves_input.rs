@@ -9,10 +9,7 @@ pub fn ser_list_waves_input(
     if let Some(var_2) = &input.filters {
         #[allow(unused_mut)]
         let mut object_3 = object.key("filters").start_object();
-        crate::protocol_serde::shape_list_waves_request_filters::ser_list_waves_request_filters(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_list_waves_request_filters::ser_list_waves_request_filters(&mut object_3, var_2)?;
         object_3.finish();
     }
     if input.max_results != 0 {

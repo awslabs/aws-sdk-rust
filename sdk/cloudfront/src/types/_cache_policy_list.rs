@@ -44,9 +44,7 @@ impl CachePolicyList {
 
 /// A builder for [`CachePolicyList`](crate::types::CachePolicyList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CachePolicyListBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -108,17 +106,12 @@ impl CachePolicyListBuilder {
         self
     }
     /// <p>Contains the cache policies in the list.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CachePolicySummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CachePolicySummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Contains the cache policies in the list.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CachePolicySummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CachePolicySummary>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`CachePolicyList`](crate::types::CachePolicyList).

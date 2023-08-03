@@ -19,9 +19,7 @@ impl CancelClusterOutput {
 
 /// A builder for [`CancelClusterOutput`](crate::operation::cancel_cluster::CancelClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelClusterOutputBuilder {
     _request_id: Option<String>,
 }

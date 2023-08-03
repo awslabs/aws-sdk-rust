@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for AssociateConnectionAliasOutput {
 }
 impl AssociateConnectionAliasOutput {
     /// Creates a new builder-style object to manufacture [`AssociateConnectionAliasOutput`](crate::operation::associate_connection_alias::AssociateConnectionAliasOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_connection_alias::builders::AssociateConnectionAliasOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_connection_alias::builders::AssociateConnectionAliasOutputBuilder {
         crate::operation::associate_connection_alias::builders::AssociateConnectionAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateConnectionAliasOutput`](crate::operation::associate_connection_alias::AssociateConnectionAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateConnectionAliasOutputBuilder {
     pub(crate) connection_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateConnectionAliasOutputBuilder {
     /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
-    pub fn connection_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
-    pub fn set_connection_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_identifier = input;
         self
     }
@@ -68,9 +58,7 @@ impl AssociateConnectionAliasOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateConnectionAliasOutput`](crate::operation::associate_connection_alias::AssociateConnectionAliasOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_connection_alias::AssociateConnectionAliasOutput {
+    pub fn build(self) -> crate::operation::associate_connection_alias::AssociateConnectionAliasOutput {
         crate::operation::associate_connection_alias::AssociateConnectionAliasOutput {
             connection_identifier: self.connection_identifier,
             _request_id: self._request_id,

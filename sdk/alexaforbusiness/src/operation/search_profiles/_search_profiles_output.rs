@@ -42,9 +42,7 @@ impl SearchProfilesOutput {
 
 /// A builder for [`SearchProfilesOutput`](crate::operation::search_profiles::SearchProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchProfilesOutputBuilder {
     pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::ProfileData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,17 +62,12 @@ impl SearchProfilesOutputBuilder {
         self
     }
     /// <p>The profiles that meet the specified set of filter criteria, in sort order.</p>
-    pub fn set_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileData>>,
-    ) -> Self {
+    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileData>>) -> Self {
         self.profiles = input;
         self
     }
     /// <p>The profiles that meet the specified set of filter criteria, in sort order.</p>
-    pub fn get_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileData>> {
+    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileData>> {
         &self.profiles
     }
     /// <p>The token returned to indicate that there is more data available.</p>

@@ -18,13 +18,10 @@ pub struct IncidentTemplate {
     pub dedupe_string: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     #[doc(hidden)]
-    pub notification_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
+    pub notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
     #[doc(hidden)]
-    pub incident_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub incident_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IncidentTemplate {
     /// <p>The title of the incident. </p>
@@ -44,17 +41,11 @@ impl IncidentTemplate {
         self.dedupe_string.as_deref()
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn notification_targets(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotificationTargetItem]> {
+    pub fn notification_targets(&self) -> ::std::option::Option<&[crate::types::NotificationTargetItem]> {
         self.notification_targets.as_deref()
     }
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
-    pub fn incident_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn incident_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.incident_tags.as_ref()
     }
 }
@@ -67,19 +58,14 @@ impl IncidentTemplate {
 
 /// A builder for [`IncidentTemplate`](crate::types::IncidentTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IncidentTemplateBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) impact: ::std::option::Option<i32>,
     pub(crate) summary: ::std::option::Option<::std::string::String>,
     pub(crate) dedupe_string: ::std::option::Option<::std::string::String>,
-    pub(crate) notification_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
-    pub(crate) incident_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
+    pub(crate) incident_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IncidentTemplateBuilder {
     /// <p>The title of the incident. </p>
@@ -125,18 +111,12 @@ impl IncidentTemplateBuilder {
         &self.summary
     }
     /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
-    pub fn dedupe_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dedupe_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dedupe_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
-    pub fn set_dedupe_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dedupe_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dedupe_string = input;
         self
     }
@@ -156,17 +136,12 @@ impl IncidentTemplateBuilder {
         self
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn set_notification_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
-    ) -> Self {
+    pub fn set_notification_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>) -> Self {
         self.notification_targets = input;
         self
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn get_notification_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
+    pub fn get_notification_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
         &self.notification_targets
     }
     /// Adds a key-value pair to `incident_tags`.
@@ -174,11 +149,7 @@ impl IncidentTemplateBuilder {
     /// To override the contents of this collection use [`set_incident_tags`](Self::set_incident_tags).
     ///
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
-    pub fn incident_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.incident_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.incident_tags = ::std::option::Option::Some(hash_map);
@@ -187,19 +158,13 @@ impl IncidentTemplateBuilder {
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
     pub fn set_incident_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.incident_tags = input;
         self
     }
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
-    pub fn get_incident_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_incident_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.incident_tags
     }
     /// Consumes the builder and constructs a [`IncidentTemplate`](crate::types::IncidentTemplate).

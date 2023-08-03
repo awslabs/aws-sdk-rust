@@ -30,9 +30,7 @@ impl RetentionProperties {
 
 /// A builder for [`RetentionProperties`](crate::types::RetentionProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetentionPropertiesBuilder {
     pub(crate) memory_store_retention_period_in_hours: ::std::option::Option<i64>,
     pub(crate) magnetic_store_retention_period_in_days: ::std::option::Option<i64>,
@@ -44,10 +42,7 @@ impl RetentionPropertiesBuilder {
         self
     }
     /// <p>The duration for which data must be stored in the memory store. </p>
-    pub fn set_memory_store_retention_period_in_hours(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_memory_store_retention_period_in_hours(mut self, input: ::std::option::Option<i64>) -> Self {
         self.memory_store_retention_period_in_hours = input;
         self
     }
@@ -61,10 +56,7 @@ impl RetentionPropertiesBuilder {
         self
     }
     /// <p>The duration for which data must be stored in the magnetic store. </p>
-    pub fn set_magnetic_store_retention_period_in_days(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_magnetic_store_retention_period_in_days(mut self, input: ::std::option::Option<i64>) -> Self {
         self.magnetic_store_retention_period_in_days = input;
         self
     }
@@ -75,12 +67,8 @@ impl RetentionPropertiesBuilder {
     /// Consumes the builder and constructs a [`RetentionProperties`](crate::types::RetentionProperties).
     pub fn build(self) -> crate::types::RetentionProperties {
         crate::types::RetentionProperties {
-            memory_store_retention_period_in_hours: self
-                .memory_store_retention_period_in_hours
-                .unwrap_or_default(),
-            magnetic_store_retention_period_in_days: self
-                .magnetic_store_retention_period_in_days
-                .unwrap_or_default(),
+            memory_store_retention_period_in_hours: self.memory_store_retention_period_in_hours.unwrap_or_default(),
+            magnetic_store_retention_period_in_days: self.magnetic_store_retention_period_in_days.unwrap_or_default(),
         }
     }
 }

@@ -19,7 +19,9 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobOutput::request_id): <p> The Amazon Web Services request ID for this operation. </p>
     ///   - [`status(i32)`](crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobOutput::status): <p>The HTTP status of the request</p>
     /// - On failure, responds with [`SdkError<DescribeDashboardSnapshotJobError>`](crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobError)
-    pub fn describe_dashboard_snapshot_job(&self) -> crate::operation::describe_dashboard_snapshot_job::builders::DescribeDashboardSnapshotJobFluentBuilder{
+    pub fn describe_dashboard_snapshot_job(
+        &self,
+    ) -> crate::operation::describe_dashboard_snapshot_job::builders::DescribeDashboardSnapshotJobFluentBuilder {
         crate::operation::describe_dashboard_snapshot_job::builders::DescribeDashboardSnapshotJobFluentBuilder::new(self.handle.clone())
     }
 }

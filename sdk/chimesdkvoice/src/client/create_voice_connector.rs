@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVoiceConnectorOutput`](crate::operation::create_voice_connector::CreateVoiceConnectorOutput) with field(s):
     ///   - [`voice_connector(Option<VoiceConnector>)`](crate::operation::create_voice_connector::CreateVoiceConnectorOutput::voice_connector): <p>The details of the Voice Connector.</p>
     /// - On failure, responds with [`SdkError<CreateVoiceConnectorError>`](crate::operation::create_voice_connector::CreateVoiceConnectorError)
-    pub fn create_voice_connector(
-        &self,
-    ) -> crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder {
-        crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_voice_connector(&self) -> crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder {
+        crate::operation::create_voice_connector::builders::CreateVoiceConnectorFluentBuilder::new(self.handle.clone())
     }
 }

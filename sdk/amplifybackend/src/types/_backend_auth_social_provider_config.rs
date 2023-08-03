@@ -30,9 +30,7 @@ impl BackendAuthSocialProviderConfig {
 
 /// A builder for [`BackendAuthSocialProviderConfig`](crate::types::BackendAuthSocialProviderConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackendAuthSocialProviderConfigBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl BackendAuthSocialProviderConfigBuilder {
         &self.client_id
     }
     /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
-    pub fn client_secret(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
-    pub fn set_client_secret(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_secret = input;
         self
     }

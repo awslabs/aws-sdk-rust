@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`recovery_point_arn(Option<String>)`](crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput::recovery_point_arn): <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     ///   - [`restore_metadata(Option<HashMap<String, String>>)`](crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput::restore_metadata): <p>The set of metadata key-value pairs that describe the original configuration of the backed-up resource. These values vary depending on the service that is being restored.</p>
     /// - On failure, responds with [`SdkError<GetRecoveryPointRestoreMetadataError>`](crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataError)
-    pub fn get_recovery_point_restore_metadata(&self) -> crate::operation::get_recovery_point_restore_metadata::builders::GetRecoveryPointRestoreMetadataFluentBuilder{
+    pub fn get_recovery_point_restore_metadata(
+        &self,
+    ) -> crate::operation::get_recovery_point_restore_metadata::builders::GetRecoveryPointRestoreMetadataFluentBuilder {
         crate::operation::get_recovery_point_restore_metadata::builders::GetRecoveryPointRestoreMetadataFluentBuilder::new(self.handle.clone())
     }
 }

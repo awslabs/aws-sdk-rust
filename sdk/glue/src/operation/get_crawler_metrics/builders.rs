@@ -10,10 +10,7 @@ impl GetCrawlerMetricsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_crawler_metrics::GetCrawlerMetricsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_crawler_metrics::GetCrawlerMetricsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_crawler_metrics();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetCrawlerMetricsFluentBuilder {
         }
     }
     /// Access the GetCrawlerMetrics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetCrawlerMetricsFluentBuilder {
             crate::operation::get_crawler_metrics::GetCrawlerMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_crawler_metrics::GetCrawlerMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_crawler_metrics::GetCrawlerMetricsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetCrawlerMetricsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetCrawlerMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_crawler_metrics::GetCrawlerMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_crawler_metrics::GetCrawlerMetricsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetCrawlerMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_crawler_metrics::GetCrawlerMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_crawler_metrics::GetCrawlerMetricsError>,
     > {
         self.send_middleware().await
     }
@@ -116,47 +102,32 @@ impl GetCrawlerMetricsFluentBuilder {
             crate::operation::get_crawler_metrics::GetCrawlerMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_crawler_metrics::GetCrawlerMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_crawler_metrics::GetCrawlerMetricsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_crawler_metrics::paginator::GetCrawlerMetricsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_crawler_metrics::paginator::GetCrawlerMetricsPaginator {
-        crate::operation::get_crawler_metrics::paginator::GetCrawlerMetricsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_crawler_metrics::paginator::GetCrawlerMetricsPaginator {
+        crate::operation::get_crawler_metrics::paginator::GetCrawlerMetricsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `CrawlerNameList`.
     ///
     /// To override the contents of this collection use [`set_crawler_name_list`](Self::set_crawler_name_list).
     ///
     /// <p>A list of the names of crawlers about which to retrieve metrics.</p>
-    pub fn crawler_name_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn crawler_name_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.crawler_name_list(input.into());
         self
     }
     /// <p>A list of the names of crawlers about which to retrieve metrics.</p>
-    pub fn set_crawler_name_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_crawler_name_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_crawler_name_list(input);
         self
     }
     /// <p>A list of the names of crawlers about which to retrieve metrics.</p>
-    pub fn get_crawler_name_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_crawler_name_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_crawler_name_list()
     }
     /// <p>The maximum size of a list to return.</p>

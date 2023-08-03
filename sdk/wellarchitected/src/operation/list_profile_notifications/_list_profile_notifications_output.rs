@@ -5,8 +5,7 @@
 pub struct ListProfileNotificationsOutput {
     /// <p>Notification summaries.</p>
     #[doc(hidden)]
-    pub notification_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileNotificationSummary>>,
+    pub notification_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProfileNotificationSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListProfileNotificationsOutput {
 }
 impl ListProfileNotificationsOutput {
     /// <p>Notification summaries.</p>
-    pub fn notification_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProfileNotificationSummary]> {
+    pub fn notification_summaries(&self) -> ::std::option::Option<&[crate::types::ProfileNotificationSummary]> {
         self.notification_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListProfileNotificationsOutput {
 }
 impl ListProfileNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`ListProfileNotificationsOutput`](crate::operation::list_profile_notifications::ListProfileNotificationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_profile_notifications::builders::ListProfileNotificationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_profile_notifications::builders::ListProfileNotificationsOutputBuilder {
         crate::operation::list_profile_notifications::builders::ListProfileNotificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfileNotificationsOutput`](crate::operation::list_profile_notifications::ListProfileNotificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileNotificationsOutputBuilder {
-    pub(crate) notification_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileNotificationSummary>>,
+    pub(crate) notification_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProfileNotificationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,27 +47,19 @@ impl ListProfileNotificationsOutputBuilder {
     /// To override the contents of this collection use [`set_notification_summaries`](Self::set_notification_summaries).
     ///
     /// <p>Notification summaries.</p>
-    pub fn notification_summaries(
-        mut self,
-        input: crate::types::ProfileNotificationSummary,
-    ) -> Self {
+    pub fn notification_summaries(mut self, input: crate::types::ProfileNotificationSummary) -> Self {
         let mut v = self.notification_summaries.unwrap_or_default();
         v.push(input);
         self.notification_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Notification summaries.</p>
-    pub fn set_notification_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileNotificationSummary>>,
-    ) -> Self {
+    pub fn set_notification_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileNotificationSummary>>) -> Self {
         self.notification_summaries = input;
         self
     }
     /// <p>Notification summaries.</p>
-    pub fn get_notification_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileNotificationSummary>> {
+    pub fn get_notification_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileNotificationSummary>> {
         &self.notification_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -102,9 +86,7 @@ impl ListProfileNotificationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProfileNotificationsOutput`](crate::operation::list_profile_notifications::ListProfileNotificationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_profile_notifications::ListProfileNotificationsOutput {
+    pub fn build(self) -> crate::operation::list_profile_notifications::ListProfileNotificationsOutput {
         crate::operation::list_profile_notifications::ListProfileNotificationsOutput {
             notification_summaries: self.notification_summaries,
             next_token: self.next_token,

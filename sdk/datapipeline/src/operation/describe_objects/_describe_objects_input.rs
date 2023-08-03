@@ -44,9 +44,7 @@ impl DescribeObjectsInput {
 
 /// A builder for [`DescribeObjectsInput`](crate::operation::describe_objects::DescribeObjectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeObjectsInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) object_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -80,10 +78,7 @@ impl DescribeObjectsInputBuilder {
         self
     }
     /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
-    pub fn set_object_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_object_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.object_ids = input;
         self
     }
@@ -122,10 +117,7 @@ impl DescribeObjectsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeObjectsInput`](crate::operation::describe_objects::DescribeObjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_objects::DescribeObjectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_objects::DescribeObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_objects::DescribeObjectsInput {
             pipeline_id: self.pipeline_id,
             object_ids: self.object_ids,

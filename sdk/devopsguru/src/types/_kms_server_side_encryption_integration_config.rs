@@ -49,9 +49,7 @@ impl KmsServerSideEncryptionIntegrationConfig {
 
 /// A builder for [`KmsServerSideEncryptionIntegrationConfig`](crate::types::KmsServerSideEncryptionIntegrationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KmsServerSideEncryptionIntegrationConfigBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) opt_in_status: ::std::option::Option<crate::types::OptInStatus>,
@@ -96,10 +94,7 @@ impl KmsServerSideEncryptionIntegrationConfigBuilder {
         self
     }
     /// <p> Specifies if DevOps Guru is enabled for KMS integration. </p>
-    pub fn set_opt_in_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OptInStatus>,
-    ) -> Self {
+    pub fn set_opt_in_status(mut self, input: ::std::option::Option<crate::types::OptInStatus>) -> Self {
         self.opt_in_status = input;
         self
     }
@@ -113,10 +108,7 @@ impl KmsServerSideEncryptionIntegrationConfigBuilder {
         self
     }
     /// <p> The type of KMS key used. Customer managed keys are the KMS keys that you create. Amazon Web Services owned keys are keys that are owned and managed by DevOps Guru. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerSideEncryptionType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionType>) -> Self {
         self.r#type = input;
         self
     }

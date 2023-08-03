@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_rule_metadata::builders::UpdateRuleMetadataFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_rule_metadata::builders::UpdateRuleMetadataFluentBuilder::set_description): <p>The rule description.</p>
     /// - On success, responds with [`UpdateRuleMetadataOutput`](crate::operation::update_rule_metadata::UpdateRuleMetadataOutput)
     /// - On failure, responds with [`SdkError<UpdateRuleMetadataError>`](crate::operation::update_rule_metadata::UpdateRuleMetadataError)
-    pub fn update_rule_metadata(
-        &self,
-    ) -> crate::operation::update_rule_metadata::builders::UpdateRuleMetadataFluentBuilder {
-        crate::operation::update_rule_metadata::builders::UpdateRuleMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_rule_metadata(&self) -> crate::operation::update_rule_metadata::builders::UpdateRuleMetadataFluentBuilder {
+        crate::operation::update_rule_metadata::builders::UpdateRuleMetadataFluentBuilder::new(self.handle.clone())
     }
 }

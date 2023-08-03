@@ -22,18 +22,14 @@ impl GetIdentityResolutionJobInput {
 }
 impl GetIdentityResolutionJobInput {
     /// Creates a new builder-style object to manufacture [`GetIdentityResolutionJobInput`](crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput).
-    pub fn builder(
-    ) -> crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobInputBuilder {
         crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityResolutionJobInput`](crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityResolutionJobInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl GetIdentityResolutionJobInputBuilder {
         crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput {
-                domain_name: self.domain_name,
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput {
+            domain_name: self.domain_name,
+            job_id: self.job_id,
+        })
     }
 }

@@ -37,18 +37,14 @@ impl ::aws_http::request_id::RequestId for CreateEmailIdentityOutput {
 }
 impl CreateEmailIdentityOutput {
     /// Creates a new builder-style object to manufacture [`CreateEmailIdentityOutput`](crate::operation::create_email_identity::CreateEmailIdentityOutput).
-    pub fn builder(
-    ) -> crate::operation::create_email_identity::builders::CreateEmailIdentityOutputBuilder {
-        crate::operation::create_email_identity::builders::CreateEmailIdentityOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_email_identity::builders::CreateEmailIdentityOutputBuilder {
+        crate::operation::create_email_identity::builders::CreateEmailIdentityOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEmailIdentityOutput`](crate::operation::create_email_identity::CreateEmailIdentityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEmailIdentityOutputBuilder {
     pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
     pub(crate) verified_for_sending_status: ::std::option::Option<bool>,
@@ -62,10 +58,7 @@ impl CreateEmailIdentityOutputBuilder {
         self
     }
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.identity_type = input;
         self
     }
@@ -93,10 +86,7 @@ impl CreateEmailIdentityOutputBuilder {
         self
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
-    pub fn set_dkim_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::DkimAttributes>,
-    ) -> Self {
+    pub fn set_dkim_attributes(mut self, input: ::std::option::Option<crate::types::DkimAttributes>) -> Self {
         self.dkim_attributes = input;
         self
     }

@@ -22,36 +22,26 @@ impl UpdateDefaultMailDomainInput {
 }
 impl UpdateDefaultMailDomainInput {
     /// Creates a new builder-style object to manufacture [`UpdateDefaultMailDomainInput`](crate::operation::update_default_mail_domain::UpdateDefaultMailDomainInput).
-    pub fn builder(
-    ) -> crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainInputBuilder {
         crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDefaultMailDomainInput`](crate::operation::update_default_mail_domain::UpdateDefaultMailDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDefaultMailDomainInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDefaultMailDomainInputBuilder {
     /// <p>The WorkMail organization for which to list domains.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The WorkMail organization for which to list domains.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl UpdateDefaultMailDomainInputBuilder {
         crate::operation::update_default_mail_domain::UpdateDefaultMailDomainInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainInput {
-                organization_id: self.organization_id,
-                domain_name: self.domain_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_default_mail_domain::UpdateDefaultMailDomainInput {
+            organization_id: self.organization_id,
+            domain_name: self.domain_name,
+        })
     }
 }

@@ -37,9 +37,7 @@ impl ImportApiInput {
 
 /// A builder for [`ImportApiInput`](crate::operation::import_api::ImportApiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportApiInputBuilder {
     pub(crate) basepath: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
@@ -89,12 +87,7 @@ impl ImportApiInputBuilder {
         &self.fail_on_warnings
     }
     /// Consumes the builder and constructs a [`ImportApiInput`](crate::operation::import_api::ImportApiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::import_api::ImportApiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_api::ImportApiInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_api::ImportApiInput {
             basepath: self.basepath,
             body: self.body,

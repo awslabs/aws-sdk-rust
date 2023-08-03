@@ -34,7 +34,7 @@ impl CountPendingActivityTasksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CountPendingActivityTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder,
+    inner: crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder,
 }
 impl CountPendingActivityTasksFluentBuilder {
     /// Creates a new `CountPendingActivityTasks`.
@@ -45,7 +45,7 @@ impl CountPendingActivityTasksFluentBuilder {
         }
     }
     /// Access the CountPendingActivityTasks as a reference.
-    pub fn as_input(&self) -> &crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl CountPendingActivityTasksFluentBuilder {
             crate::operation::count_pending_activity_tasks::CountPendingActivityTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl CountPendingActivityTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl CountPendingActivityTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl CountPendingActivityTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +113,7 @@ impl CountPendingActivityTasksFluentBuilder {
             crate::operation::count_pending_activity_tasks::CountPendingActivityTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError>,
     > {
         self.customize_middleware().await
     }

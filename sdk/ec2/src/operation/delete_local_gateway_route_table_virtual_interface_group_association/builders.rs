@@ -15,8 +15,7 @@ impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
                             ::aws_smithy_http::operation::Response
                         >
     >{
-        let mut fluent_builder =
-            client.delete_local_gateway_route_table_virtual_interface_group_association();
+        let mut fluent_builder = client.delete_local_gateway_route_table_virtual_interface_group_association();
         fluent_builder.inner = self;
         fluent_builder.send().await
     }
@@ -55,10 +54,7 @@ impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -100,9 +96,7 @@ impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .local_gateway_route_table_virtual_interface_group_association_id(input.into());
+        self.inner = self.inner.local_gateway_route_table_virtual_interface_group_association_id(input.into());
         self
     }
     /// <p> The ID of the local gateway route table virtual interface group association. </p>
@@ -110,17 +104,12 @@ impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
         mut self,
         input: ::std::option::Option<::std::string::String>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_local_gateway_route_table_virtual_interface_group_association_id(input);
+        self.inner = self.inner.set_local_gateway_route_table_virtual_interface_group_association_id(input);
         self
     }
     /// <p> The ID of the local gateway route table virtual interface group association. </p>
-    pub fn get_local_gateway_route_table_virtual_interface_group_association_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
-        self.inner
-            .get_local_gateway_route_table_virtual_interface_group_association_id()
+    pub fn get_local_gateway_route_table_virtual_interface_group_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_local_gateway_route_table_virtual_interface_group_association_id()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {

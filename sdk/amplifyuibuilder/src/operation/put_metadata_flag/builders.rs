@@ -10,10 +10,7 @@ impl PutMetadataFlagInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_metadata_flag::PutMetadataFlagOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metadata_flag::PutMetadataFlagError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metadata_flag::PutMetadataFlagError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_metadata_flag();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutMetadataFlagFluentBuilder {
         }
     }
     /// Access the PutMetadataFlag as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_metadata_flag::builders::PutMetadataFlagInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_metadata_flag::builders::PutMetadataFlagInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutMetadataFlagFluentBuilder {
             crate::operation::put_metadata_flag::PutMetadataFlag,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metadata_flag::PutMetadataFlagError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metadata_flag::PutMetadataFlagError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutMetadataFlagFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutMetadataFlagFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_metadata_flag::PutMetadataFlagOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metadata_flag::PutMetadataFlagError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metadata_flag::PutMetadataFlagError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutMetadataFlagFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_metadata_flag::PutMetadataFlagOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metadata_flag::PutMetadataFlagError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metadata_flag::PutMetadataFlagError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PutMetadataFlagFluentBuilder {
             crate::operation::put_metadata_flag::PutMetadataFlag,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metadata_flag::PutMetadataFlagError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metadata_flag::PutMetadataFlagError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl PutMetadataFlagFluentBuilder {
         self.inner.get_app_id()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
@@ -176,10 +154,7 @@ impl PutMetadataFlagFluentBuilder {
         self
     }
     /// <p>The metadata information to store.</p>
-    pub fn set_body(
-        mut self,
-        input: ::std::option::Option<crate::types::PutMetadataFlagBody>,
-    ) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<crate::types::PutMetadataFlagBody>) -> Self {
         self.inner = self.inner.set_body(input);
         self
     }

@@ -60,18 +60,14 @@ impl DescribeDbInstancesInput {
 }
 impl DescribeDbInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbInstancesInput`](crate::operation::describe_db_instances::DescribeDbInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_instances::builders::DescribeDbInstancesInputBuilder {
-        crate::operation::describe_db_instances::builders::DescribeDbInstancesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_db_instances::builders::DescribeDbInstancesInputBuilder {
+        crate::operation::describe_db_instances::builders::DescribeDbInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbInstancesInput`](crate::operation::describe_db_instances::DescribeDbInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbInstancesInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -84,10 +80,7 @@ impl DescribeDbInstancesInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -96,10 +89,7 @@ impl DescribeDbInstancesInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -135,10 +125,7 @@ impl DescribeDbInstancesInputBuilder {
     /// <li> <p> <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB instances created by that engine.</p> </li>
     /// </ul>
     /// <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are returned, you could use the following command:</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -189,17 +176,13 @@ impl DescribeDbInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDbInstancesInput`](crate::operation::describe_db_instances::DescribeDbInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_instances::DescribeDbInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_instances::DescribeDbInstancesInput {
-                db_instance_identifier: self.db_instance_identifier,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_db_instances::DescribeDbInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_db_instances::DescribeDbInstancesInput {
+            db_instance_identifier: self.db_instance_identifier,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

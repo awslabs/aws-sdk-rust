@@ -22,16 +22,14 @@ impl DeleteCustomDbEngineVersionInput {
 }
 impl DeleteCustomDbEngineVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomDbEngineVersionInput`](crate::operation::delete_custom_db_engine_version::DeleteCustomDbEngineVersionInput).
-    pub fn builder() -> crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionInputBuilder{
+    pub fn builder() -> crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionInputBuilder {
         crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomDbEngineVersionInput`](crate::operation::delete_custom_db_engine_version::DeleteCustomDbEngineVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomDbEngineVersionInputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DeleteCustomDbEngineVersionInputBuilder {
         &self.engine
     }
     /// <p>The custom engine version (CEV) for your DB instance. This option is required for RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom engine version (CEV) for your DB instance. This option is required for RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -78,11 +70,9 @@ impl DeleteCustomDbEngineVersionInputBuilder {
         crate::operation::delete_custom_db_engine_version::DeleteCustomDbEngineVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_custom_db_engine_version::DeleteCustomDbEngineVersionInput {
-                engine: self.engine,
-                engine_version: self.engine_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_custom_db_engine_version::DeleteCustomDbEngineVersionInput {
+            engine: self.engine,
+            engine_version: self.engine_version,
+        })
     }
 }

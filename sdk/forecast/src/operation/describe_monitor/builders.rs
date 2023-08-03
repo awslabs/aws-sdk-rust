@@ -10,10 +10,7 @@ impl DescribeMonitorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_monitor::DescribeMonitorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_monitor::DescribeMonitorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_monitor::DescribeMonitorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_monitor();
         fluent_builder.inner = self;
@@ -46,9 +43,7 @@ impl DescribeMonitorFluentBuilder {
         }
     }
     /// Access the DescribeMonitor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_monitor::builders::DescribeMonitorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_monitor::builders::DescribeMonitorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +55,7 @@ impl DescribeMonitorFluentBuilder {
             crate::operation::describe_monitor::DescribeMonitor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_monitor::DescribeMonitorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_monitor::DescribeMonitorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +65,7 @@ impl DescribeMonitorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +74,7 @@ impl DescribeMonitorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_monitor::DescribeMonitorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_monitor::DescribeMonitorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_monitor::DescribeMonitorError>,
     > {
         let op = self
             .inner
@@ -109,9 +97,7 @@ impl DescribeMonitorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_monitor::DescribeMonitorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_monitor::DescribeMonitorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_monitor::DescribeMonitorError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +111,7 @@ impl DescribeMonitorFluentBuilder {
             crate::operation::describe_monitor::DescribeMonitor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_monitor::DescribeMonitorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_monitor::DescribeMonitorError>,
     > {
         self.customize_middleware().await
     }

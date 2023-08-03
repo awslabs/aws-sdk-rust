@@ -62,9 +62,7 @@ impl TrafficSourceIdentifier {
 
 /// A builder for [`TrafficSourceIdentifier`](crate::types::TrafficSourceIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrafficSourceIdentifierBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

@@ -30,27 +30,19 @@ impl SlateSource {
 
 /// A builder for [`SlateSource`](crate::types::SlateSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlateSourceBuilder {
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
     pub(crate) vod_source_name: ::std::option::Option<::std::string::String>,
 }
 impl SlateSourceBuilder {
     /// <p>The name of the source location where the slate VOD source is stored.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source location where the slate VOD source is stored.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_location_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl SlateSourceBuilder {
         &self.source_location_name
     }
     /// <p>The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.</p>
-    pub fn vod_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vod_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vod_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.</p>
-    pub fn set_vod_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vod_source_name = input;
         self
     }

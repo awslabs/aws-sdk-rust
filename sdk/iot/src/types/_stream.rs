@@ -30,9 +30,7 @@ impl Stream {
 
 /// A builder for [`Stream`](crate::types::Stream).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamBuilder {
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) file_id: ::std::option::Option<i32>,

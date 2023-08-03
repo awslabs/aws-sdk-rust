@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StopCrawlerScheduleOutput {
 }
 impl StopCrawlerScheduleOutput {
     /// Creates a new builder-style object to manufacture [`StopCrawlerScheduleOutput`](crate::operation::stop_crawler_schedule::StopCrawlerScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleOutputBuilder {
-        crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleOutputBuilder {
+        crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopCrawlerScheduleOutput`](crate::operation::stop_crawler_schedule::StopCrawlerScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopCrawlerScheduleOutputBuilder {
     _request_id: Option<String>,
 }

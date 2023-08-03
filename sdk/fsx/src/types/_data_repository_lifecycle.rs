@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DataRepositoryLifecycle {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for DataRepositoryLifecycle {
             "FAILED" => DataRepositoryLifecycle::Failed,
             "MISCONFIGURED" => DataRepositoryLifecycle::Misconfigured,
             "UPDATING" => DataRepositoryLifecycle::Updating,
-            other => DataRepositoryLifecycle::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DataRepositoryLifecycle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl DataRepositoryLifecycle {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE",
-            "CREATING",
-            "DELETING",
-            "FAILED",
-            "MISCONFIGURED",
-            "UPDATING",
-        ]
+        &["AVAILABLE", "CREATING", "DELETING", "FAILED", "MISCONFIGURED", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for DataRepositoryLifecycle {

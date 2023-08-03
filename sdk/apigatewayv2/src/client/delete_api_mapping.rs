@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder::set_domain_name): <p>The domain name.</p>
     /// - On success, responds with [`DeleteApiMappingOutput`](crate::operation::delete_api_mapping::DeleteApiMappingOutput)
     /// - On failure, responds with [`SdkError<DeleteApiMappingError>`](crate::operation::delete_api_mapping::DeleteApiMappingError)
-    pub fn delete_api_mapping(
-        &self,
-    ) -> crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder {
-        crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_api_mapping(&self) -> crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder {
+        crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,18 +5,12 @@
 pub struct AddAttributesToFindingsOutput {
     /// <p>Attribute details that cannot be described. An error code is provided for each failed item.</p>
     #[doc(hidden)]
-    pub failed_items: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    >,
+    pub failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl AddAttributesToFindingsOutput {
     /// <p>Attribute details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    > {
+    pub fn failed_items(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
         self.failed_items.as_ref()
     }
 }
@@ -27,22 +21,16 @@ impl ::aws_http::request_id::RequestId for AddAttributesToFindingsOutput {
 }
 impl AddAttributesToFindingsOutput {
     /// Creates a new builder-style object to manufacture [`AddAttributesToFindingsOutput`](crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput).
-    pub fn builder(
-    ) -> crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsOutputBuilder {
         crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddAttributesToFindingsOutput`](crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddAttributesToFindingsOutputBuilder {
-    pub(crate) failed_items: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    >,
+    pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl AddAttributesToFindingsOutputBuilder {
@@ -51,11 +39,7 @@ impl AddAttributesToFindingsOutputBuilder {
     /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
     ///
     /// <p>Attribute details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::FailedItemDetails,
-    ) -> Self {
+    pub fn failed_items(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FailedItemDetails) -> Self {
         let mut hash_map = self.failed_items.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.failed_items = ::std::option::Option::Some(hash_map);
@@ -64,19 +48,13 @@ impl AddAttributesToFindingsOutputBuilder {
     /// <p>Attribute details that cannot be described. An error code is provided for each failed item.</p>
     pub fn set_failed_items(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     ) -> Self {
         self.failed_items = input;
         self
     }
     /// <p>Attribute details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn get_failed_items(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    > {
+    pub fn get_failed_items(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
         &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -89,9 +67,7 @@ impl AddAttributesToFindingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddAttributesToFindingsOutput`](crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput {
+    pub fn build(self) -> crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput {
         crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput {
             failed_items: self.failed_items,
             _request_id: self._request_id,

@@ -10,10 +10,7 @@ impl DeleteParametersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_parameters::DeleteParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_parameters::DeleteParametersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_parameters::DeleteParametersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_parameters();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteParametersFluentBuilder {
         }
     }
     /// Access the DeleteParameters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_parameters::builders::DeleteParametersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_parameters::builders::DeleteParametersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteParametersFluentBuilder {
             crate::operation::delete_parameters::DeleteParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_parameters::DeleteParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_parameters::DeleteParametersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteParametersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_parameters::DeleteParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_parameters::DeleteParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_parameters::DeleteParametersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_parameters::DeleteParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_parameters::DeleteParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_parameters::DeleteParametersError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteParametersFluentBuilder {
             crate::operation::delete_parameters::DeleteParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_parameters::DeleteParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_parameters::DeleteParametersError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl DeleteParametersFluentBuilder {
         self
     }
     /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

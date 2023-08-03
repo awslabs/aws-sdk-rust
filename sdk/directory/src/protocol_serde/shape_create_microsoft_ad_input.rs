@@ -18,10 +18,7 @@ pub fn ser_create_microsoft_ad_input(
     if let Some(var_5) = &input.vpc_settings {
         #[allow(unused_mut)]
         let mut object_6 = object.key("VpcSettings").start_object();
-        crate::protocol_serde::shape_directory_vpc_settings::ser_directory_vpc_settings(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_directory_vpc_settings::ser_directory_vpc_settings(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.edition {

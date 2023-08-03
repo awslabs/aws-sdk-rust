@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutStorageLensConfigurationTaggingOut
 }
 impl PutStorageLensConfigurationTaggingOutput {
     /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationTaggingOutput`](crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingOutput).
-    pub fn builder() -> crate::operation::put_storage_lens_configuration_tagging::builders::PutStorageLensConfigurationTaggingOutputBuilder{
+    pub fn builder() -> crate::operation::put_storage_lens_configuration_tagging::builders::PutStorageLensConfigurationTaggingOutputBuilder {
         crate::operation::put_storage_lens_configuration_tagging::builders::PutStorageLensConfigurationTaggingOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutStorageLensConfigurationTaggingOutput`](crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutStorageLensConfigurationTaggingOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl PutStorageLensConfigurationTaggingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutStorageLensConfigurationTaggingOutput`](crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingOutput).
-    pub fn build(self) -> crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingOutput{
+    pub fn build(self) -> crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingOutput {
         crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingOutput {
             _request_id: self._request_id,
         }

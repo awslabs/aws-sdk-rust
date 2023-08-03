@@ -10,10 +10,7 @@ impl BatchUpdateUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_update_user::BatchUpdateUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_user::BatchUpdateUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_user::BatchUpdateUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_update_user();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchUpdateUserFluentBuilder {
         }
     }
     /// Access the BatchUpdateUser as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_update_user::builders::BatchUpdateUserInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_update_user::builders::BatchUpdateUserInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchUpdateUserFluentBuilder {
             crate::operation::batch_update_user::BatchUpdateUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_user::BatchUpdateUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_user::BatchUpdateUserError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchUpdateUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchUpdateUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_user::BatchUpdateUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_user::BatchUpdateUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_user::BatchUpdateUserError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchUpdateUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_user::BatchUpdateUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_user::BatchUpdateUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_user::BatchUpdateUserError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchUpdateUserFluentBuilder {
             crate::operation::batch_update_user::BatchUpdateUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_user::BatchUpdateUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_user::BatchUpdateUserError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +130,12 @@ impl BatchUpdateUserFluentBuilder {
         self
     }
     /// <p>The request containing the user IDs and details to update.</p>
-    pub fn set_update_user_request_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>>,
-    ) -> Self {
+    pub fn set_update_user_request_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>>) -> Self {
         self.inner = self.inner.set_update_user_request_items(input);
         self
     }
     /// <p>The request containing the user IDs and details to update.</p>
-    pub fn get_update_user_request_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>> {
+    pub fn get_update_user_request_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>> {
         self.inner.get_update_user_request_items()
     }
 }

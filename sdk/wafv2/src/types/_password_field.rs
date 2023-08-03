@@ -34,9 +34,7 @@ impl PasswordField {
 
 /// A builder for [`PasswordField`](crate::types::PasswordField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PasswordFieldBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -72,8 +70,6 @@ impl PasswordFieldBuilder {
     }
     /// Consumes the builder and constructs a [`PasswordField`](crate::types::PasswordField).
     pub fn build(self) -> crate::types::PasswordField {
-        crate::types::PasswordField {
-            identifier: self.identifier,
-        }
+        crate::types::PasswordField { identifier: self.identifier }
     }
 }

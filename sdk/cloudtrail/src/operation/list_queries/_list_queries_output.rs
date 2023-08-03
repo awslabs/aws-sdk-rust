@@ -35,9 +35,7 @@ impl ListQueriesOutput {
 
 /// A builder for [`ListQueriesOutput`](crate::operation::list_queries::ListQueriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueriesOutputBuilder {
     pub(crate) queries: ::std::option::Option<::std::vec::Vec<crate::types::Query>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListQueriesOutputBuilder {
         self
     }
     /// <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
-    pub fn set_queries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Query>>,
-    ) -> Self {
+    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Query>>) -> Self {
         self.queries = input;
         self
     }

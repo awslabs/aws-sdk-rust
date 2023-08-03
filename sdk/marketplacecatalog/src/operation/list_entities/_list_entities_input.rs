@@ -64,9 +64,7 @@ impl ListEntitiesInput {
 
 /// A builder for [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntitiesInputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) entity_type: ::std::option::Option<::std::string::String>,
@@ -117,10 +115,7 @@ impl ListEntitiesInputBuilder {
         self
     }
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-    pub fn set_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filter_list = input;
         self
     }
@@ -176,10 +171,7 @@ impl ListEntitiesInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_ownership_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OwnershipType>,
-    ) -> Self {
+    pub fn set_ownership_type(mut self, input: ::std::option::Option<crate::types::OwnershipType>) -> Self {
         self.ownership_type = input;
         self
     }
@@ -188,12 +180,7 @@ impl ListEntitiesInputBuilder {
         &self.ownership_type
     }
     /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_entities::ListEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_entities::ListEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_entities::ListEntitiesInput {
             catalog: self.catalog,
             entity_type: self.entity_type,

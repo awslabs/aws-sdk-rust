@@ -23,36 +23,26 @@ impl ::aws_http::request_id::RequestId for UpdateBatchPredictionOutput {
 }
 impl UpdateBatchPredictionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBatchPredictionOutput`](crate::operation::update_batch_prediction::UpdateBatchPredictionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_batch_prediction::builders::UpdateBatchPredictionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_batch_prediction::builders::UpdateBatchPredictionOutputBuilder {
         crate::operation::update_batch_prediction::builders::UpdateBatchPredictionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBatchPredictionOutput`](crate::operation::update_batch_prediction::UpdateBatchPredictionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBatchPredictionOutputBuilder {
     pub(crate) batch_prediction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateBatchPredictionOutputBuilder {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation. This value should be identical to the value of the <code>BatchPredictionId</code> in the request.</p>
-    pub fn batch_prediction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation. This value should be identical to the value of the <code>BatchPredictionId</code> in the request.</p>
-    pub fn set_batch_prediction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_prediction_id = input;
         self
     }

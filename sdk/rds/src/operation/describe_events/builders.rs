@@ -10,10 +10,7 @@ impl DescribeEventsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_events::DescribeEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_events::DescribeEventsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_events::DescribeEventsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_events();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DescribeEventsFluentBuilder {
         }
     }
     /// Access the DescribeEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_events::builders::DescribeEventsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_events::builders::DescribeEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl DescribeEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -120,13 +112,8 @@ impl DescribeEventsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_events::paginator::DescribeEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_events::paginator::DescribeEventsPaginator {
-        crate::operation::describe_events::paginator::DescribeEventsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_events::paginator::DescribeEventsPaginator {
+        crate::operation::describe_events::paginator::DescribeEventsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
@@ -141,10 +128,7 @@ impl DescribeEventsFluentBuilder {
     /// <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p> </li>
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn source_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_identifier(input.into());
         self
     }
@@ -161,10 +145,7 @@ impl DescribeEventsFluentBuilder {
     /// <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p> </li>
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn set_source_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_identifier(input);
         self
     }
@@ -190,10 +171,7 @@ impl DescribeEventsFluentBuilder {
         self
     }
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.inner = self.inner.set_source_type(input);
         self
     }
@@ -209,10 +187,7 @@ impl DescribeEventsFluentBuilder {
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -229,10 +204,7 @@ impl DescribeEventsFluentBuilder {
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -263,25 +235,17 @@ impl DescribeEventsFluentBuilder {
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
     ///
     /// <p>A list of event categories that trigger notifications for a event notification subscription.</p>
-    pub fn event_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_categories(input.into());
         self
     }
     /// <p>A list of event categories that trigger notifications for a event notification subscription.</p>
-    pub fn set_event_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_event_categories(input);
         self
     }
     /// <p>A list of event categories that trigger notifications for a event notification subscription.</p>
-    pub fn get_event_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_event_categories()
     }
     /// Appends an item to `Filters`.
@@ -294,10 +258,7 @@ impl DescribeEventsFluentBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`activation_id(impl ::std::convert::Into<String>)`](crate::operation::delete_activation::builders::DeleteActivationFluentBuilder::activation_id) / [`set_activation_id(Option<String>)`](crate::operation::delete_activation::builders::DeleteActivationFluentBuilder::set_activation_id): <p>The ID of the activation that you want to delete.</p>
     /// - On success, responds with [`DeleteActivationOutput`](crate::operation::delete_activation::DeleteActivationOutput)
     /// - On failure, responds with [`SdkError<DeleteActivationError>`](crate::operation::delete_activation::DeleteActivationError)
-    pub fn delete_activation(
-        &self,
-    ) -> crate::operation::delete_activation::builders::DeleteActivationFluentBuilder {
-        crate::operation::delete_activation::builders::DeleteActivationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_activation(&self) -> crate::operation::delete_activation::builders::DeleteActivationFluentBuilder {
+        crate::operation::delete_activation::builders::DeleteActivationFluentBuilder::new(self.handle.clone())
     }
 }

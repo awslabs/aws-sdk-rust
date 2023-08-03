@@ -30,9 +30,7 @@ impl ModelClientConfig {
 
 /// A builder for [`ModelClientConfig`](crate::types::ModelClientConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelClientConfigBuilder {
     pub(crate) invocations_timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) invocations_max_retries: ::std::option::Option<i32>,

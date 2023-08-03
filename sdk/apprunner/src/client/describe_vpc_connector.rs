@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeVpcConnectorOutput`](crate::operation::describe_vpc_connector::DescribeVpcConnectorOutput) with field(s):
     ///   - [`vpc_connector(Option<VpcConnector>)`](crate::operation::describe_vpc_connector::DescribeVpcConnectorOutput::vpc_connector): <p>A description of the App Runner VPC connector that you specified in this request.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcConnectorError>`](crate::operation::describe_vpc_connector::DescribeVpcConnectorError)
-    pub fn describe_vpc_connector(
-        &self,
-    ) -> crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorFluentBuilder {
-        crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_vpc_connector(&self) -> crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorFluentBuilder {
+        crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorFluentBuilder::new(self.handle.clone())
     }
 }

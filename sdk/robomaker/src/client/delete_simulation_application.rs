@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`application_version(impl ::std::convert::Into<String>)`](crate::operation::delete_simulation_application::builders::DeleteSimulationApplicationFluentBuilder::application_version) / [`set_application_version(Option<String>)`](crate::operation::delete_simulation_application::builders::DeleteSimulationApplicationFluentBuilder::set_application_version): <p>The version of the simulation application to delete.</p>
     /// - On success, responds with [`DeleteSimulationApplicationOutput`](crate::operation::delete_simulation_application::DeleteSimulationApplicationOutput)
     /// - On failure, responds with [`SdkError<DeleteSimulationApplicationError>`](crate::operation::delete_simulation_application::DeleteSimulationApplicationError)
-    pub fn delete_simulation_application(&self) -> crate::operation::delete_simulation_application::builders::DeleteSimulationApplicationFluentBuilder{
+    pub fn delete_simulation_application(
+        &self,
+    ) -> crate::operation::delete_simulation_application::builders::DeleteSimulationApplicationFluentBuilder {
         crate::operation::delete_simulation_application::builders::DeleteSimulationApplicationFluentBuilder::new(self.handle.clone())
     }
 }

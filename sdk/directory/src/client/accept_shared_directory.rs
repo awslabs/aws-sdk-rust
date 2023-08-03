@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`AcceptSharedDirectoryOutput`](crate::operation::accept_shared_directory::AcceptSharedDirectoryOutput) with field(s):
     ///   - [`shared_directory(Option<SharedDirectory>)`](crate::operation::accept_shared_directory::AcceptSharedDirectoryOutput::shared_directory): <p>The shared directory in the directory consumer account.</p>
     /// - On failure, responds with [`SdkError<AcceptSharedDirectoryError>`](crate::operation::accept_shared_directory::AcceptSharedDirectoryError)
-    pub fn accept_shared_directory(
-        &self,
-    ) -> crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryFluentBuilder
-    {
-        crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn accept_shared_directory(&self) -> crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryFluentBuilder {
+        crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryFluentBuilder::new(self.handle.clone())
     }
 }

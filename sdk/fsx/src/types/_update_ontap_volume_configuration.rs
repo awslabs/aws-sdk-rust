@@ -73,9 +73,7 @@ impl UpdateOntapVolumeConfiguration {
         self.copy_tags_to_backups
     }
     /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
-    pub fn snaplock_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateSnaplockConfiguration> {
+    pub fn snaplock_configuration(&self) -> ::std::option::Option<&crate::types::UpdateSnaplockConfiguration> {
         self.snaplock_configuration.as_ref()
     }
 }
@@ -88,9 +86,7 @@ impl UpdateOntapVolumeConfiguration {
 
 /// A builder for [`UpdateOntapVolumeConfiguration`](crate::types::UpdateOntapVolumeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOntapVolumeConfigurationBuilder {
     pub(crate) junction_path: ::std::option::Option<::std::string::String>,
     pub(crate) security_style: ::std::option::Option<crate::types::SecurityStyle>,
@@ -99,23 +95,16 @@ pub struct UpdateOntapVolumeConfigurationBuilder {
     pub(crate) tiering_policy: ::std::option::Option<crate::types::TieringPolicy>,
     pub(crate) snapshot_policy: ::std::option::Option<::std::string::String>,
     pub(crate) copy_tags_to_backups: ::std::option::Option<bool>,
-    pub(crate) snaplock_configuration:
-        ::std::option::Option<crate::types::UpdateSnaplockConfiguration>,
+    pub(crate) snaplock_configuration: ::std::option::Option<crate::types::UpdateSnaplockConfiguration>,
 }
 impl UpdateOntapVolumeConfigurationBuilder {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
-    pub fn junction_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn junction_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.junction_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
-    pub fn set_junction_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_junction_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.junction_path = input;
         self
     }
@@ -129,10 +118,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
         self
     }
     /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
-    pub fn set_security_style(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityStyle>,
-    ) -> Self {
+    pub fn set_security_style(mut self, input: ::std::option::Option<crate::types::SecurityStyle>) -> Self {
         self.security_style = input;
         self
     }
@@ -174,10 +160,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
         self
     }
     /// <p>Update the volume's data tiering policy.</p>
-    pub fn set_tiering_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::TieringPolicy>,
-    ) -> Self {
+    pub fn set_tiering_policy(mut self, input: ::std::option::Option<crate::types::TieringPolicy>) -> Self {
         self.tiering_policy = input;
         self
     }
@@ -193,10 +176,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    pub fn snapshot_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_policy = ::std::option::Option::Some(input.into());
         self
     }
@@ -208,10 +188,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    pub fn set_snapshot_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_policy = input;
         self
     }
@@ -241,25 +218,17 @@ impl UpdateOntapVolumeConfigurationBuilder {
         &self.copy_tags_to_backups
     }
     /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
-    pub fn snaplock_configuration(
-        mut self,
-        input: crate::types::UpdateSnaplockConfiguration,
-    ) -> Self {
+    pub fn snaplock_configuration(mut self, input: crate::types::UpdateSnaplockConfiguration) -> Self {
         self.snaplock_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
-    pub fn set_snaplock_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateSnaplockConfiguration>,
-    ) -> Self {
+    pub fn set_snaplock_configuration(mut self, input: ::std::option::Option<crate::types::UpdateSnaplockConfiguration>) -> Self {
         self.snaplock_configuration = input;
         self
     }
     /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
-    pub fn get_snaplock_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateSnaplockConfiguration> {
+    pub fn get_snaplock_configuration(&self) -> &::std::option::Option<crate::types::UpdateSnaplockConfiguration> {
         &self.snaplock_configuration
     }
     /// Consumes the builder and constructs a [`UpdateOntapVolumeConfiguration`](crate::types::UpdateOntapVolumeConfiguration).

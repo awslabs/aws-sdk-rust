@@ -45,18 +45,14 @@ impl RestoreFromSnapshotInput {
 }
 impl RestoreFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreFromSnapshotInput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotInputBuilder {
-        crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotInputBuilder {
+        crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreFromSnapshotInput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreFromSnapshotInputBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
@@ -66,18 +62,12 @@ pub struct RestoreFromSnapshotInputBuilder {
 }
 impl RestoreFromSnapshotInputBuilder {
     /// <p>The name of the namespace to restore the snapshot to.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the namespace to restore the snapshot to.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
@@ -86,18 +76,12 @@ impl RestoreFromSnapshotInputBuilder {
         &self.namespace_name
     }
     /// <p>The name of the workgroup used to restore the snapshot.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workgroup used to restore the snapshot.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workgroup_name = input;
         self
     }
@@ -106,18 +90,12 @@ impl RestoreFromSnapshotInputBuilder {
         &self.workgroup_name
     }
     /// <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
@@ -143,18 +121,12 @@ impl RestoreFromSnapshotInputBuilder {
         &self.snapshot_arn
     }
     /// <p>The Amazon Web Services account that owns the snapshot.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account that owns the snapshot.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -165,18 +137,14 @@ impl RestoreFromSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`RestoreFromSnapshotInput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_from_snapshot::RestoreFromSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::restore_from_snapshot::RestoreFromSnapshotInput {
-                namespace_name: self.namespace_name,
-                workgroup_name: self.workgroup_name,
-                snapshot_name: self.snapshot_name,
-                snapshot_arn: self.snapshot_arn,
-                owner_account: self.owner_account,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::restore_from_snapshot::RestoreFromSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::restore_from_snapshot::RestoreFromSnapshotInput {
+            namespace_name: self.namespace_name,
+            workgroup_name: self.workgroup_name,
+            snapshot_name: self.snapshot_name,
+            snapshot_arn: self.snapshot_arn,
+            owner_account: self.owner_account,
+        })
     }
 }

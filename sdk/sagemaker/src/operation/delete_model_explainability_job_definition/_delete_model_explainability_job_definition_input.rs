@@ -15,33 +15,25 @@ impl DeleteModelExplainabilityJobDefinitionInput {
 }
 impl DeleteModelExplainabilityJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteModelExplainabilityJobDefinitionInput`](crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput).
-    pub fn builder() -> crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionInputBuilder {
         crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteModelExplainabilityJobDefinitionInput`](crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelExplainabilityJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteModelExplainabilityJobDefinitionInputBuilder {
     /// <p>The name of the model explainability job definition to delete.</p>
-    pub fn job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model explainability job definition to delete.</p>
-    pub fn set_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_definition_name = input;
         self
     }
@@ -50,12 +42,16 @@ impl DeleteModelExplainabilityJobDefinitionInputBuilder {
         &self.job_definition_name
     }
     /// Consumes the builder and constructs a [`DeleteModelExplainabilityJobDefinitionInput`](crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput {
-                job_definition_name: self.job_definition_name
-                ,
-            }
+                job_definition_name: self.job_definition_name,
+            },
         )
     }
 }

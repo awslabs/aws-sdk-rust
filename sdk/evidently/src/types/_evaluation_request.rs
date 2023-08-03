@@ -37,9 +37,7 @@ impl EvaluationRequest {
 
 /// A builder for [`EvaluationRequest`](crate::types::EvaluationRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationRequestBuilder {
     pub(crate) feature: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl EvaluationRequestBuilder {
         &self.entity_id
     }
     /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
-    pub fn evaluation_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
-    pub fn set_evaluation_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_context = input;
         self
     }

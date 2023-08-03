@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`conformance_pack_name(impl ::std::convert::Into<String>)`](crate::operation::delete_conformance_pack::builders::DeleteConformancePackFluentBuilder::conformance_pack_name) / [`set_conformance_pack_name(Option<String>)`](crate::operation::delete_conformance_pack::builders::DeleteConformancePackFluentBuilder::set_conformance_pack_name): <p>Name of the conformance pack you want to delete.</p>
     /// - On success, responds with [`DeleteConformancePackOutput`](crate::operation::delete_conformance_pack::DeleteConformancePackOutput)
     /// - On failure, responds with [`SdkError<DeleteConformancePackError>`](crate::operation::delete_conformance_pack::DeleteConformancePackError)
-    pub fn delete_conformance_pack(
-        &self,
-    ) -> crate::operation::delete_conformance_pack::builders::DeleteConformancePackFluentBuilder
-    {
-        crate::operation::delete_conformance_pack::builders::DeleteConformancePackFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_conformance_pack(&self) -> crate::operation::delete_conformance_pack::builders::DeleteConformancePackFluentBuilder {
+        crate::operation::delete_conformance_pack::builders::DeleteConformancePackFluentBuilder::new(self.handle.clone())
     }
 }

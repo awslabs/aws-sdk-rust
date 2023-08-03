@@ -104,18 +104,14 @@ impl GetSavingsPlansCoverageInput {
 }
 impl GetSavingsPlansCoverageInput {
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansCoverageInput`](crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageInput).
-    pub fn builder(
-    ) -> crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageInputBuilder {
         crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSavingsPlansCoverageInput`](crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSavingsPlansCoverageInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) group_by: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
@@ -133,10 +129,7 @@ impl GetSavingsPlansCoverageInputBuilder {
         self
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.time_period = input;
         self
     }
@@ -156,17 +149,12 @@ impl GetSavingsPlansCoverageInputBuilder {
         self
     }
     /// <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>, or <code>SERVICE</code>.</p>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>) -> Self {
         self.group_by = input;
         self
     }
     /// <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>, or <code>SERVICE</code>.</p>
-    pub fn get_group_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
         &self.group_by
     }
     /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
@@ -177,10 +165,7 @@ impl GetSavingsPlansCoverageInputBuilder {
     }
     /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
     /// <p>The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn set_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::Granularity>,
-    ) -> Self {
+    pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
         self.granularity = input;
         self
     }
@@ -239,10 +224,7 @@ impl GetSavingsPlansCoverageInputBuilder {
         self
     }
     /// <p>The measurement that you want your Savings Plans coverage reported in. The only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metrics = input;
         self
     }
@@ -306,10 +288,7 @@ impl GetSavingsPlansCoverageInputBuilder {
     /// <li> <p> <code>Service</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortDefinition>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
         self.sort_by = input;
         self
     }
@@ -335,17 +314,15 @@ impl GetSavingsPlansCoverageInputBuilder {
         crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageInput {
-                time_period: self.time_period,
-                group_by: self.group_by,
-                granularity: self.granularity,
-                filter: self.filter,
-                metrics: self.metrics,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                sort_by: self.sort_by,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageInput {
+            time_period: self.time_period,
+            group_by: self.group_by,
+            granularity: self.granularity,
+            filter: self.filter,
+            metrics: self.metrics,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            sort_by: self.sort_by,
+        })
     }
 }

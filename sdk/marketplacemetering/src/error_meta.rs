@@ -65,32 +65,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_meter_usage::BatchMeterUsageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_meter_usage::BatchMeterUsageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_meter_usage::BatchMeterUsageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_meter_usage::BatchMeterUsageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -101,36 +85,40 @@ impl From<crate::operation::batch_meter_usage::BatchMeterUsageError> for Error {
     fn from(err: crate::operation::batch_meter_usage::BatchMeterUsageError) -> Self {
         match err {
             crate::operation::batch_meter_usage::BatchMeterUsageError::DisabledApiException(inner) => Error::DisabledApiException(inner),
-            crate::operation::batch_meter_usage::BatchMeterUsageError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidCustomerIdentifierException(inner) => Error::InvalidCustomerIdentifierException(inner),
-            crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidProductCodeException(inner) => Error::InvalidProductCodeException(inner),
+            crate::operation::batch_meter_usage::BatchMeterUsageError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidCustomerIdentifierException(inner) => {
+                Error::InvalidCustomerIdentifierException(inner)
+            }
+            crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidProductCodeException(inner) => {
+                Error::InvalidProductCodeException(inner)
+            }
             crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidTagException(inner) => Error::InvalidTagException(inner),
-            crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidUsageAllocationsException(inner) => Error::InvalidUsageAllocationsException(inner),
-            crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidUsageDimensionException(inner) => Error::InvalidUsageDimensionException(inner),
+            crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidUsageAllocationsException(inner) => {
+                Error::InvalidUsageAllocationsException(inner)
+            }
+            crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidUsageDimensionException(inner) => {
+                Error::InvalidUsageDimensionException(inner)
+            }
             crate::operation::batch_meter_usage::BatchMeterUsageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::batch_meter_usage::BatchMeterUsageError::TimestampOutOfBoundsException(inner) => Error::TimestampOutOfBoundsException(inner),
+            crate::operation::batch_meter_usage::BatchMeterUsageError::TimestampOutOfBoundsException(inner) => {
+                Error::TimestampOutOfBoundsException(inner)
+            }
             crate::operation::batch_meter_usage::BatchMeterUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::meter_usage::MeterUsageError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::meter_usage::MeterUsageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::meter_usage::MeterUsageError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::meter_usage::MeterUsageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -140,68 +128,30 @@ where
 impl From<crate::operation::meter_usage::MeterUsageError> for Error {
     fn from(err: crate::operation::meter_usage::MeterUsageError) -> Self {
         match err {
-            crate::operation::meter_usage::MeterUsageError::CustomerNotEntitledException(inner) => {
-                Error::CustomerNotEntitledException(inner)
-            }
-            crate::operation::meter_usage::MeterUsageError::DuplicateRequestException(inner) => {
-                Error::DuplicateRequestException(inner)
-            }
-            crate::operation::meter_usage::MeterUsageError::InternalServiceErrorException(
-                inner,
-            ) => Error::InternalServiceErrorException(inner),
-            crate::operation::meter_usage::MeterUsageError::InvalidEndpointRegionException(
-                inner,
-            ) => Error::InvalidEndpointRegionException(inner),
-            crate::operation::meter_usage::MeterUsageError::InvalidProductCodeException(inner) => {
-                Error::InvalidProductCodeException(inner)
-            }
-            crate::operation::meter_usage::MeterUsageError::InvalidTagException(inner) => {
-                Error::InvalidTagException(inner)
-            }
-            crate::operation::meter_usage::MeterUsageError::InvalidUsageAllocationsException(
-                inner,
-            ) => Error::InvalidUsageAllocationsException(inner),
-            crate::operation::meter_usage::MeterUsageError::InvalidUsageDimensionException(
-                inner,
-            ) => Error::InvalidUsageDimensionException(inner),
-            crate::operation::meter_usage::MeterUsageError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::meter_usage::MeterUsageError::TimestampOutOfBoundsException(
-                inner,
-            ) => Error::TimestampOutOfBoundsException(inner),
-            crate::operation::meter_usage::MeterUsageError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::meter_usage::MeterUsageError::CustomerNotEntitledException(inner) => Error::CustomerNotEntitledException(inner),
+            crate::operation::meter_usage::MeterUsageError::DuplicateRequestException(inner) => Error::DuplicateRequestException(inner),
+            crate::operation::meter_usage::MeterUsageError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::meter_usage::MeterUsageError::InvalidEndpointRegionException(inner) => Error::InvalidEndpointRegionException(inner),
+            crate::operation::meter_usage::MeterUsageError::InvalidProductCodeException(inner) => Error::InvalidProductCodeException(inner),
+            crate::operation::meter_usage::MeterUsageError::InvalidTagException(inner) => Error::InvalidTagException(inner),
+            crate::operation::meter_usage::MeterUsageError::InvalidUsageAllocationsException(inner) => Error::InvalidUsageAllocationsException(inner),
+            crate::operation::meter_usage::MeterUsageError::InvalidUsageDimensionException(inner) => Error::InvalidUsageDimensionException(inner),
+            crate::operation::meter_usage::MeterUsageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::meter_usage::MeterUsageError::TimestampOutOfBoundsException(inner) => Error::TimestampOutOfBoundsException(inner),
+            crate::operation::meter_usage::MeterUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_usage::RegisterUsageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::register_usage::RegisterUsageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::register_usage::RegisterUsageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::register_usage::RegisterUsageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -215,7 +165,9 @@ impl From<crate::operation::register_usage::RegisterUsageError> for Error {
             crate::operation::register_usage::RegisterUsageError::DisabledApiException(inner) => Error::DisabledApiException(inner),
             crate::operation::register_usage::RegisterUsageError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
             crate::operation::register_usage::RegisterUsageError::InvalidProductCodeException(inner) => Error::InvalidProductCodeException(inner),
-            crate::operation::register_usage::RegisterUsageError::InvalidPublicKeyVersionException(inner) => Error::InvalidPublicKeyVersionException(inner),
+            crate::operation::register_usage::RegisterUsageError::InvalidPublicKeyVersionException(inner) => {
+                Error::InvalidPublicKeyVersionException(inner)
+            }
             crate::operation::register_usage::RegisterUsageError::InvalidRegionException(inner) => Error::InvalidRegionException(inner),
             crate::operation::register_usage::RegisterUsageError::PlatformNotSupportedException(inner) => Error::PlatformNotSupportedException(inner),
             crate::operation::register_usage::RegisterUsageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
@@ -223,32 +175,16 @@ impl From<crate::operation::register_usage::RegisterUsageError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_customer::ResolveCustomerError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::resolve_customer::ResolveCustomerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_customer::ResolveCustomerError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::resolve_customer::ResolveCustomerError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -260,7 +196,9 @@ impl From<crate::operation::resolve_customer::ResolveCustomerError> for Error {
         match err {
             crate::operation::resolve_customer::ResolveCustomerError::DisabledApiException(inner) => Error::DisabledApiException(inner),
             crate::operation::resolve_customer::ResolveCustomerError::ExpiredTokenException(inner) => Error::ExpiredTokenException(inner),
-            crate::operation::resolve_customer::ResolveCustomerError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::resolve_customer::ResolveCustomerError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
             crate::operation::resolve_customer::ResolveCustomerError::InvalidTokenException(inner) => Error::InvalidTokenException(inner),
             crate::operation::resolve_customer::ResolveCustomerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::resolve_customer::ResolveCustomerError::Unhandled(inner) => Error::Unhandled(inner),

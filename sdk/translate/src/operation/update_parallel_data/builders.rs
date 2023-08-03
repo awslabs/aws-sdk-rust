@@ -10,10 +10,7 @@ impl UpdateParallelDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_parallel_data::UpdateParallelDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_parallel_data::UpdateParallelDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_parallel_data::UpdateParallelDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_parallel_data();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateParallelDataFluentBuilder {
         }
     }
     /// Access the UpdateParallelData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_parallel_data::builders::UpdateParallelDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_parallel_data::builders::UpdateParallelDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateParallelDataFluentBuilder {
             crate::operation::update_parallel_data::UpdateParallelData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_parallel_data::UpdateParallelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_parallel_data::UpdateParallelDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateParallelDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateParallelDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_parallel_data::UpdateParallelDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_parallel_data::UpdateParallelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_parallel_data::UpdateParallelDataError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateParallelDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_parallel_data::UpdateParallelDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_parallel_data::UpdateParallelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_parallel_data::UpdateParallelDataError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateParallelDataFluentBuilder {
             crate::operation::update_parallel_data::UpdateParallelData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_parallel_data::UpdateParallelDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_parallel_data::UpdateParallelDataError>,
     > {
         self.customize_middleware().await
     }
@@ -156,17 +140,12 @@ impl UpdateParallelDataFluentBuilder {
         self
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    pub fn set_parallel_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelDataConfig>,
-    ) -> Self {
+    pub fn set_parallel_data_config(mut self, input: ::std::option::Option<crate::types::ParallelDataConfig>) -> Self {
         self.inner = self.inner.set_parallel_data_config(input);
         self
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    pub fn get_parallel_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParallelDataConfig> {
+    pub fn get_parallel_data_config(&self) -> &::std::option::Option<crate::types::ParallelDataConfig> {
         self.inner.get_parallel_data_config()
     }
     /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>

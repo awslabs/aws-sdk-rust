@@ -170,10 +170,7 @@ impl CreateRuleInputBuilder {
         self
     }
     /// <p>The outcome or outcomes returned when the rule expression matches.</p>
-    pub fn set_outcomes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_outcomes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.outcomes = input;
         self
     }
@@ -193,10 +190,7 @@ impl CreateRuleInputBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -205,12 +199,7 @@ impl CreateRuleInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_rule::CreateRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_rule::CreateRuleInput {
             rule_id: self.rule_id,
             detector_id: self.detector_id,

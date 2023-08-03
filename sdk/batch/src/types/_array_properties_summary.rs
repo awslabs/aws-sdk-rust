@@ -30,9 +30,7 @@ impl ArrayPropertiesSummary {
 
 /// A builder for [`ArrayPropertiesSummary`](crate::types::ArrayPropertiesSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArrayPropertiesSummaryBuilder {
     pub(crate) size: ::std::option::Option<i32>,
     pub(crate) index: ::std::option::Option<i32>,

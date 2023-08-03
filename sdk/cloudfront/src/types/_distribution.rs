@@ -68,15 +68,11 @@ impl Distribution {
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
     /// </important>
     /// <p>This field contains a list of Amazon Web Services account IDs and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
-    pub fn active_trusted_signers(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ActiveTrustedSigners> {
+    pub fn active_trusted_signers(&self) -> ::std::option::Option<&crate::types::ActiveTrustedSigners> {
         self.active_trusted_signers.as_ref()
     }
     /// <p>This field contains a list of key groups and the public keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
-    pub fn active_trusted_key_groups(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ActiveTrustedKeyGroups> {
+    pub fn active_trusted_key_groups(&self) -> ::std::option::Option<&crate::types::ActiveTrustedKeyGroups> {
         self.active_trusted_key_groups.as_ref()
     }
     /// <p>The distribution's configuration.</p>
@@ -98,9 +94,7 @@ impl Distribution {
 
 /// A builder for [`Distribution`](crate::types::Distribution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DistributionBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -109,11 +103,9 @@ pub struct DistributionBuilder {
     pub(crate) in_progress_invalidation_batches: ::std::option::Option<i32>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) active_trusted_signers: ::std::option::Option<crate::types::ActiveTrustedSigners>,
-    pub(crate) active_trusted_key_groups:
-        ::std::option::Option<crate::types::ActiveTrustedKeyGroups>,
+    pub(crate) active_trusted_key_groups: ::std::option::Option<crate::types::ActiveTrustedKeyGroups>,
     pub(crate) distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
-    pub(crate) alias_icp_recordals:
-        ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>,
+    pub(crate) alias_icp_recordals: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>,
 }
 impl DistributionBuilder {
     /// <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
@@ -164,10 +156,7 @@ impl DistributionBuilder {
         self
     }
     /// <p>The date and time when the distribution was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -181,10 +170,7 @@ impl DistributionBuilder {
         self
     }
     /// <p>The number of invalidation batches currently in progress.</p>
-    pub fn set_in_progress_invalidation_batches(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_in_progress_invalidation_batches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.in_progress_invalidation_batches = input;
         self
     }
@@ -218,10 +204,7 @@ impl DistributionBuilder {
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
     /// </important>
     /// <p>This field contains a list of Amazon Web Services account IDs and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
-    pub fn set_active_trusted_signers(
-        mut self,
-        input: ::std::option::Option<crate::types::ActiveTrustedSigners>,
-    ) -> Self {
+    pub fn set_active_trusted_signers(mut self, input: ::std::option::Option<crate::types::ActiveTrustedSigners>) -> Self {
         self.active_trusted_signers = input;
         self
     }
@@ -229,31 +212,21 @@ impl DistributionBuilder {
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
     /// </important>
     /// <p>This field contains a list of Amazon Web Services account IDs and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
-    pub fn get_active_trusted_signers(
-        &self,
-    ) -> &::std::option::Option<crate::types::ActiveTrustedSigners> {
+    pub fn get_active_trusted_signers(&self) -> &::std::option::Option<crate::types::ActiveTrustedSigners> {
         &self.active_trusted_signers
     }
     /// <p>This field contains a list of key groups and the public keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
-    pub fn active_trusted_key_groups(
-        mut self,
-        input: crate::types::ActiveTrustedKeyGroups,
-    ) -> Self {
+    pub fn active_trusted_key_groups(mut self, input: crate::types::ActiveTrustedKeyGroups) -> Self {
         self.active_trusted_key_groups = ::std::option::Option::Some(input);
         self
     }
     /// <p>This field contains a list of key groups and the public keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
-    pub fn set_active_trusted_key_groups(
-        mut self,
-        input: ::std::option::Option<crate::types::ActiveTrustedKeyGroups>,
-    ) -> Self {
+    pub fn set_active_trusted_key_groups(mut self, input: ::std::option::Option<crate::types::ActiveTrustedKeyGroups>) -> Self {
         self.active_trusted_key_groups = input;
         self
     }
     /// <p>This field contains a list of key groups and the public keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
-    pub fn get_active_trusted_key_groups(
-        &self,
-    ) -> &::std::option::Option<crate::types::ActiveTrustedKeyGroups> {
+    pub fn get_active_trusted_key_groups(&self) -> &::std::option::Option<crate::types::ActiveTrustedKeyGroups> {
         &self.active_trusted_key_groups
     }
     /// <p>The distribution's configuration.</p>
@@ -262,17 +235,12 @@ impl DistributionBuilder {
         self
     }
     /// <p>The distribution's configuration.</p>
-    pub fn set_distribution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DistributionConfig>,
-    ) -> Self {
+    pub fn set_distribution_config(mut self, input: ::std::option::Option<crate::types::DistributionConfig>) -> Self {
         self.distribution_config = input;
         self
     }
     /// <p>The distribution's configuration.</p>
-    pub fn get_distribution_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DistributionConfig> {
+    pub fn get_distribution_config(&self) -> &::std::option::Option<crate::types::DistributionConfig> {
         &self.distribution_config
     }
     /// Appends an item to `alias_icp_recordals`.
@@ -289,18 +257,13 @@ impl DistributionBuilder {
     }
     /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
-    pub fn set_alias_icp_recordals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>,
-    ) -> Self {
+    pub fn set_alias_icp_recordals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>) -> Self {
         self.alias_icp_recordals = input;
         self
     }
     /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
-    pub fn get_alias_icp_recordals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>> {
+    pub fn get_alias_icp_recordals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>> {
         &self.alias_icp_recordals
     }
     /// Consumes the builder and constructs a [`Distribution`](crate::types::Distribution).

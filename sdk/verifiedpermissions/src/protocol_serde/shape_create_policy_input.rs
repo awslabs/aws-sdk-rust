@@ -12,10 +12,7 @@ pub fn ser_create_policy_input(
     if let Some(var_3) = &input.definition {
         #[allow(unused_mut)]
         let mut object_4 = object.key("definition").start_object();
-        crate::protocol_serde::shape_policy_definition::ser_policy_definition(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_policy_definition::ser_policy_definition(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

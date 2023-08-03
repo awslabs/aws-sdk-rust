@@ -37,14 +37,11 @@ impl InputSchemaUpdate {
 
 /// A builder for [`InputSchemaUpdate`](crate::types::InputSchemaUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputSchemaUpdateBuilder {
     pub(crate) record_format_update: ::std::option::Option<crate::types::RecordFormat>,
     pub(crate) record_encoding_update: ::std::option::Option<::std::string::String>,
-    pub(crate) record_column_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>>,
+    pub(crate) record_column_updates: ::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>>,
 }
 impl InputSchemaUpdateBuilder {
     /// <p>Specifies the format of the records on the streaming source.</p>
@@ -53,10 +50,7 @@ impl InputSchemaUpdateBuilder {
         self
     }
     /// <p>Specifies the format of the records on the streaming source.</p>
-    pub fn set_record_format_update(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordFormat>,
-    ) -> Self {
+    pub fn set_record_format_update(mut self, input: ::std::option::Option<crate::types::RecordFormat>) -> Self {
         self.record_format_update = input;
         self
     }
@@ -65,18 +59,12 @@ impl InputSchemaUpdateBuilder {
         &self.record_format_update
     }
     /// <p>Specifies the encoding of the records in the streaming source; for example, UTF-8.</p>
-    pub fn record_encoding_update(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_encoding_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_encoding_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the encoding of the records in the streaming source; for example, UTF-8.</p>
-    pub fn set_record_encoding_update(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_record_encoding_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_encoding_update = input;
         self
     }
@@ -96,17 +84,12 @@ impl InputSchemaUpdateBuilder {
         self
     }
     /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream.</p>
-    pub fn set_record_column_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>>,
-    ) -> Self {
+    pub fn set_record_column_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>>) -> Self {
         self.record_column_updates = input;
         self
     }
     /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream.</p>
-    pub fn get_record_column_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>> {
+    pub fn get_record_column_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>> {
         &self.record_column_updates
     }
     /// Consumes the builder and constructs a [`InputSchemaUpdate`](crate::types::InputSchemaUpdate).

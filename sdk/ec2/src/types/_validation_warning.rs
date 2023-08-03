@@ -23,9 +23,7 @@ impl ValidationWarning {
 
 /// A builder for [`ValidationWarning`](crate::types::ValidationWarning).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationWarningBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
 }
@@ -42,23 +40,16 @@ impl ValidationWarningBuilder {
         self
     }
     /// <p>The error codes and error messages.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>The error codes and error messages.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
         &self.errors
     }
     /// Consumes the builder and constructs a [`ValidationWarning`](crate::types::ValidationWarning).
     pub fn build(self) -> crate::types::ValidationWarning {
-        crate::types::ValidationWarning {
-            errors: self.errors,
-        }
+        crate::types::ValidationWarning { errors: self.errors }
     }
 }

@@ -22,17 +22,14 @@ impl GetTaskProtectionInput {
 }
 impl GetTaskProtectionInput {
     /// Creates a new builder-style object to manufacture [`GetTaskProtectionInput`](crate::operation::get_task_protection::GetTaskProtectionInput).
-    pub fn builder(
-    ) -> crate::operation::get_task_protection::builders::GetTaskProtectionInputBuilder {
+    pub fn builder() -> crate::operation::get_task_protection::builders::GetTaskProtectionInputBuilder {
         crate::operation::get_task_protection::builders::GetTaskProtectionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTaskProtectionInput`](crate::operation::get_task_protection::GetTaskProtectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTaskProtectionInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +61,7 @@ impl GetTaskProtectionInputBuilder {
         self
     }
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tasks = input;
         self
     }
@@ -78,15 +72,10 @@ impl GetTaskProtectionInputBuilder {
     /// Consumes the builder and constructs a [`GetTaskProtectionInput`](crate::operation::get_task_protection::GetTaskProtectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_task_protection::GetTaskProtectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_task_protection::GetTaskProtectionInput {
-                cluster: self.cluster,
-                tasks: self.tasks,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_task_protection::GetTaskProtectionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_task_protection::GetTaskProtectionInput {
+            cluster: self.cluster,
+            tasks: self.tasks,
+        })
     }
 }

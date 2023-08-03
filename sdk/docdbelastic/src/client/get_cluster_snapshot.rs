@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetClusterSnapshotOutput`](crate::operation::get_cluster_snapshot::GetClusterSnapshotOutput) with field(s):
     ///   - [`snapshot(Option<ClusterSnapshot>)`](crate::operation::get_cluster_snapshot::GetClusterSnapshotOutput::snapshot): <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
     /// - On failure, responds with [`SdkError<GetClusterSnapshotError>`](crate::operation::get_cluster_snapshot::GetClusterSnapshotError)
-    pub fn get_cluster_snapshot(
-        &self,
-    ) -> crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotFluentBuilder {
-        crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_cluster_snapshot(&self) -> crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotFluentBuilder {
+        crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

@@ -18,10 +18,7 @@ pub fn ser_resource_identifier(
     if let Some(var_5) = &input.policy_version_identifier {
         #[allow(unused_mut)]
         let mut object_6 = object.key("policyVersionIdentifier").start_object();
-        crate::protocol_serde::shape_policy_version_identifier::ser_policy_version_identifier(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_policy_version_identifier::ser_policy_version_identifier(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.account {
@@ -47,17 +44,9 @@ pub fn ser_resource_identifier(
 
 pub(crate) fn de_resource_identifier<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ResourceIdentifier>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ResourceIdentifier>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -67,108 +56,87 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "deviceCertificateId" => {
-                                builder = builder.set_device_certificate_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "deviceCertificateId" => {
+                            builder = builder.set_device_certificate_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "caCertificateId" => {
-                                builder = builder.set_ca_certificate_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "cognitoIdentityPoolId" => {
-                                builder = builder.set_cognito_identity_pool_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "clientId" => {
-                                builder = builder.set_client_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "policyVersionIdentifier" => {
-                                builder = builder.set_policy_version_identifier(
-                                    crate::protocol_serde::shape_policy_version_identifier::de_policy_version_identifier(tokens)?
-                                );
-                            }
-                            "account" => {
-                                builder = builder.set_account(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "iamRoleArn" => {
-                                builder = builder.set_iam_role_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "roleAliasArn" => {
-                                builder = builder.set_role_alias_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "issuerCertificateIdentifier" => {
-                                builder = builder.set_issuer_certificate_identifier(
-                                    crate::protocol_serde::shape_issuer_certificate_identifier::de_issuer_certificate_identifier(tokens)?
-                                );
-                            }
-                            "deviceCertificateArn" => {
-                                builder = builder.set_device_certificate_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "caCertificateId" => {
+                            builder = builder.set_ca_certificate_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "cognitoIdentityPoolId" => {
+                            builder = builder.set_cognito_identity_pool_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "clientId" => {
+                            builder = builder.set_client_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "policyVersionIdentifier" => {
+                            builder = builder.set_policy_version_identifier(
+                                crate::protocol_serde::shape_policy_version_identifier::de_policy_version_identifier(tokens)?,
+                            );
+                        }
+                        "account" => {
+                            builder = builder.set_account(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "iamRoleArn" => {
+                            builder = builder.set_iam_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "roleAliasArn" => {
+                            builder = builder.set_role_alias_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "issuerCertificateIdentifier" => {
+                            builder = builder.set_issuer_certificate_identifier(
+                                crate::protocol_serde::shape_issuer_certificate_identifier::de_issuer_certificate_identifier(tokens)?,
+                            );
+                        }
+                        "deviceCertificateArn" => {
+                            builder = builder.set_device_certificate_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

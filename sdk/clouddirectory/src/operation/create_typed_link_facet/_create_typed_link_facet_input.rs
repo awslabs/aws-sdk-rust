@@ -22,17 +22,14 @@ impl CreateTypedLinkFacetInput {
 }
 impl CreateTypedLinkFacetInput {
     /// Creates a new builder-style object to manufacture [`CreateTypedLinkFacetInput`](crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput).
-    pub fn builder(
-    ) -> crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetInputBuilder {
+    pub fn builder() -> crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetInputBuilder {
         crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTypedLinkFacetInput`](crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTypedLinkFacetInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) facet: ::std::option::Option<crate::types::TypedLinkFacet>,
@@ -69,15 +66,11 @@ impl CreateTypedLinkFacetInputBuilder {
     /// Consumes the builder and constructs a [`CreateTypedLinkFacetInput`](crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput {
-                schema_arn: self.schema_arn,
-                facet: self.facet,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput {
+            schema_arn: self.schema_arn,
+            facet: self.facet,
+        })
     }
 }

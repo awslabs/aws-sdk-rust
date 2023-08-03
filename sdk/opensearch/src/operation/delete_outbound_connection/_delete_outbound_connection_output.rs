@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteOutboundConnectionOutput {
 }
 impl DeleteOutboundConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOutboundConnectionOutput`](crate::operation::delete_outbound_connection::DeleteOutboundConnectionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_outbound_connection::builders::DeleteOutboundConnectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_outbound_connection::builders::DeleteOutboundConnectionOutputBuilder {
         crate::operation::delete_outbound_connection::builders::DeleteOutboundConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOutboundConnectionOutput`](crate::operation::delete_outbound_connection::DeleteOutboundConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOutboundConnectionOutputBuilder {
     pub(crate) connection: ::std::option::Option<crate::types::OutboundConnection>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl DeleteOutboundConnectionOutputBuilder {
         self
     }
     /// <p>The deleted inbound connection.</p>
-    pub fn set_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::OutboundConnection>,
-    ) -> Self {
+    pub fn set_connection(mut self, input: ::std::option::Option<crate::types::OutboundConnection>) -> Self {
         self.connection = input;
         self
     }
@@ -66,9 +59,7 @@ impl DeleteOutboundConnectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteOutboundConnectionOutput`](crate::operation::delete_outbound_connection::DeleteOutboundConnectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_outbound_connection::DeleteOutboundConnectionOutput {
+    pub fn build(self) -> crate::operation::delete_outbound_connection::DeleteOutboundConnectionOutput {
         crate::operation::delete_outbound_connection::DeleteOutboundConnectionOutput {
             connection: self.connection,
             _request_id: self._request_id,

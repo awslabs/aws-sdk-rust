@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartStreamingSessionOutput {
 }
 impl StartStreamingSessionOutput {
     /// Creates a new builder-style object to manufacture [`StartStreamingSessionOutput`](crate::operation::start_streaming_session::StartStreamingSessionOutput).
-    pub fn builder(
-    ) -> crate::operation::start_streaming_session::builders::StartStreamingSessionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_streaming_session::builders::StartStreamingSessionOutputBuilder {
         crate::operation::start_streaming_session::builders::StartStreamingSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartStreamingSessionOutput`](crate::operation::start_streaming_session::StartStreamingSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartStreamingSessionOutputBuilder {
     pub(crate) session: ::std::option::Option<crate::types::StreamingSession>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl StartStreamingSessionOutputBuilder {
         self
     }
     /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
-    pub fn set_session(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingSession>,
-    ) -> Self {
+    pub fn set_session(mut self, input: ::std::option::Option<crate::types::StreamingSession>) -> Self {
         self.session = input;
         self
     }

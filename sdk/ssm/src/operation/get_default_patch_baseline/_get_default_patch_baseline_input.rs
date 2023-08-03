@@ -15,18 +15,14 @@ impl GetDefaultPatchBaselineInput {
 }
 impl GetDefaultPatchBaselineInput {
     /// Creates a new builder-style object to manufacture [`GetDefaultPatchBaselineInput`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput).
-    pub fn builder(
-    ) -> crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineInputBuilder {
         crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDefaultPatchBaselineInput`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDefaultPatchBaselineInputBuilder {
     pub(crate) operating_system: ::std::option::Option<crate::types::OperatingSystem>,
 }
@@ -37,10 +33,7 @@ impl GetDefaultPatchBaselineInputBuilder {
         self
     }
     /// <p>Returns the default patch baseline for the specified operating system.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
@@ -55,10 +48,8 @@ impl GetDefaultPatchBaselineInputBuilder {
         crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput {
-                operating_system: self.operating_system,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput {
+            operating_system: self.operating_system,
+        })
     }
 }

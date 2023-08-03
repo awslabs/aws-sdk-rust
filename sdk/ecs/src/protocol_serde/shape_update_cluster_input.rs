@@ -12,10 +12,7 @@ pub fn ser_update_cluster_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_cluster_setting::ser_cluster_setting(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_cluster_setting::ser_cluster_setting(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_update_cluster_input(
     if let Some(var_6) = &input.configuration {
         #[allow(unused_mut)]
         let mut object_7 = object.key("configuration").start_object();
-        crate::protocol_serde::shape_cluster_configuration::ser_cluster_configuration(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_cluster_configuration::ser_cluster_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.service_connect_defaults {

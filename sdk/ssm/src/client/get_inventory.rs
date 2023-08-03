@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`entities(Option<Vec<InventoryResultEntity>>)`](crate::operation::get_inventory::GetInventoryOutput::entities): <p>Collection of inventory entities such as a collection of managed node inventory. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_inventory::GetInventoryOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<GetInventoryError>`](crate::operation::get_inventory::GetInventoryError)
-    pub fn get_inventory(
-        &self,
-    ) -> crate::operation::get_inventory::builders::GetInventoryFluentBuilder {
-        crate::operation::get_inventory::builders::GetInventoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_inventory(&self) -> crate::operation::get_inventory::builders::GetInventoryFluentBuilder {
+        crate::operation::get_inventory::builders::GetInventoryFluentBuilder::new(self.handle.clone())
     }
 }

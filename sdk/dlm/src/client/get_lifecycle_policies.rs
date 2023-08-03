@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetLifecyclePoliciesOutput`](crate::operation::get_lifecycle_policies::GetLifecyclePoliciesOutput) with field(s):
     ///   - [`policies(Option<Vec<LifecyclePolicySummary>>)`](crate::operation::get_lifecycle_policies::GetLifecyclePoliciesOutput::policies): <p>Summary information about the lifecycle policies.</p>
     /// - On failure, responds with [`SdkError<GetLifecyclePoliciesError>`](crate::operation::get_lifecycle_policies::GetLifecyclePoliciesError)
-    pub fn get_lifecycle_policies(
-        &self,
-    ) -> crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesFluentBuilder {
-        crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_lifecycle_policies(&self) -> crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesFluentBuilder {
+        crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesFluentBuilder::new(self.handle.clone())
     }
 }

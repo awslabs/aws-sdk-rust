@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`incident_record_summaries(Option<Vec<IncidentRecordSummary>>)`](crate::operation::list_incident_records::ListIncidentRecordsOutput::incident_record_summaries): <p>The details of each listed incident record.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_incident_records::ListIncidentRecordsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListIncidentRecordsError>`](crate::operation::list_incident_records::ListIncidentRecordsError)
-    pub fn list_incident_records(
-        &self,
-    ) -> crate::operation::list_incident_records::builders::ListIncidentRecordsFluentBuilder {
-        crate::operation::list_incident_records::builders::ListIncidentRecordsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_incident_records(&self) -> crate::operation::list_incident_records::builders::ListIncidentRecordsFluentBuilder {
+        crate::operation::list_incident_records::builders::ListIncidentRecordsFluentBuilder::new(self.handle.clone())
     }
 }

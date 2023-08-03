@@ -61,10 +61,7 @@ pub fn ser_analytics_configuration(
     }
     if let Some(var_6) = &input.storage_class_analysis {
         let inner_writer = scope.start_el("StorageClassAnalysis");
-        crate::protocol_serde::shape_storage_class_analysis::ser_storage_class_analysis(
-            var_6,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_storage_class_analysis::ser_storage_class_analysis(var_6, inner_writer)?
     }
     scope.finish();
     Ok(())

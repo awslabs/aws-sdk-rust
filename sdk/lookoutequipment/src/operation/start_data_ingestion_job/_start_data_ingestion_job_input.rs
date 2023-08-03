@@ -8,8 +8,7 @@ pub struct StartDataIngestionJobInput {
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
     #[doc(hidden)]
-    pub ingestion_input_configuration:
-        ::std::option::Option<crate::types::IngestionInputConfiguration>,
+    pub ingestion_input_configuration: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -23,9 +22,7 @@ impl StartDataIngestionJobInput {
         self.dataset_name.as_deref()
     }
     /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
-    pub fn ingestion_input_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IngestionInputConfiguration> {
+    pub fn ingestion_input_configuration(&self) -> ::std::option::Option<&crate::types::IngestionInputConfiguration> {
         self.ingestion_input_configuration.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
@@ -39,22 +36,17 @@ impl StartDataIngestionJobInput {
 }
 impl StartDataIngestionJobInput {
     /// Creates a new builder-style object to manufacture [`StartDataIngestionJobInput`](crate::operation::start_data_ingestion_job::StartDataIngestionJobInput).
-    pub fn builder(
-    ) -> crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobInputBuilder {
         crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartDataIngestionJobInput`](crate::operation::start_data_ingestion_job::StartDataIngestionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDataIngestionJobInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
-    pub(crate) ingestion_input_configuration:
-        ::std::option::Option<crate::types::IngestionInputConfiguration>,
+    pub(crate) ingestion_input_configuration: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -74,25 +66,17 @@ impl StartDataIngestionJobInputBuilder {
         &self.dataset_name
     }
     /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
-    pub fn ingestion_input_configuration(
-        mut self,
-        input: crate::types::IngestionInputConfiguration,
-    ) -> Self {
+    pub fn ingestion_input_configuration(mut self, input: crate::types::IngestionInputConfiguration) -> Self {
         self.ingestion_input_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
-    pub fn set_ingestion_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionInputConfiguration>,
-    ) -> Self {
+    pub fn set_ingestion_input_configuration(mut self, input: ::std::option::Option<crate::types::IngestionInputConfiguration>) -> Self {
         self.ingestion_input_configuration = input;
         self
     }
     /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
-    pub fn get_ingestion_input_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngestionInputConfiguration> {
+    pub fn get_ingestion_input_configuration(&self) -> &::std::option::Option<crate::types::IngestionInputConfiguration> {
         &self.ingestion_input_configuration
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
@@ -126,17 +110,13 @@ impl StartDataIngestionJobInputBuilder {
     /// Consumes the builder and constructs a [`StartDataIngestionJobInput`](crate::operation::start_data_ingestion_job::StartDataIngestionJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_data_ingestion_job::StartDataIngestionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_data_ingestion_job::StartDataIngestionJobInput {
-                dataset_name: self.dataset_name,
-                ingestion_input_configuration: self.ingestion_input_configuration,
-                role_arn: self.role_arn,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_data_ingestion_job::StartDataIngestionJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_data_ingestion_job::StartDataIngestionJobInput {
+            dataset_name: self.dataset_name,
+            ingestion_input_configuration: self.ingestion_input_configuration,
+            role_arn: self.role_arn,
+            client_token: self.client_token,
+        })
     }
 }

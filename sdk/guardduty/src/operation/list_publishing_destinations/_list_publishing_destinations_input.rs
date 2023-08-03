@@ -29,16 +29,14 @@ impl ListPublishingDestinationsInput {
 }
 impl ListPublishingDestinationsInput {
     /// Creates a new builder-style object to manufacture [`ListPublishingDestinationsInput`](crate::operation::list_publishing_destinations::ListPublishingDestinationsInput).
-    pub fn builder() -> crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsInputBuilder{
+    pub fn builder() -> crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsInputBuilder {
         crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPublishingDestinationsInput`](crate::operation::list_publishing_destinations::ListPublishingDestinationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPublishingDestinationsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -94,12 +92,10 @@ impl ListPublishingDestinationsInputBuilder {
         crate::operation::list_publishing_destinations::ListPublishingDestinationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_publishing_destinations::ListPublishingDestinationsInput {
-                detector_id: self.detector_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_publishing_destinations::ListPublishingDestinationsInput {
+            detector_id: self.detector_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

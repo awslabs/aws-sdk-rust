@@ -22,26 +22,18 @@ impl StopAutoMlJobInput {
 
 /// A builder for [`StopAutoMlJobInput`](crate::operation::stop_auto_ml_job::StopAutoMlJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopAutoMlJobInputBuilder {
     pub(crate) auto_ml_job_name: ::std::option::Option<::std::string::String>,
 }
 impl StopAutoMlJobInputBuilder {
     /// <p>The name of the object you are requesting.</p>
-    pub fn auto_ml_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_ml_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the object you are requesting.</p>
-    pub fn set_auto_ml_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_ml_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_ml_job_name = input;
         self
     }
@@ -52,10 +44,7 @@ impl StopAutoMlJobInputBuilder {
     /// Consumes the builder and constructs a [`StopAutoMlJobInput`](crate::operation::stop_auto_ml_job::StopAutoMlJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_auto_ml_job::StopAutoMlJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::stop_auto_ml_job::StopAutoMlJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_auto_ml_job::StopAutoMlJobInput {
             auto_ml_job_name: self.auto_ml_job_name,
         })

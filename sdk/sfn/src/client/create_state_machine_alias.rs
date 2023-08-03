@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`state_machine_alias_arn(Option<String>)`](crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput::state_machine_alias_arn): <p>The Amazon Resource Name (ARN) that identifies the created state machine alias.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput::creation_date): <p>The date the state machine alias was created.</p>
     /// - On failure, responds with [`SdkError<CreateStateMachineAliasError>`](crate::operation::create_state_machine_alias::CreateStateMachineAliasError)
-    pub fn create_state_machine_alias(
-        &self,
-    ) -> crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasFluentBuilder
-    {
+    pub fn create_state_machine_alias(&self) -> crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasFluentBuilder {
         crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasFluentBuilder::new(self.handle.clone())
     }
 }

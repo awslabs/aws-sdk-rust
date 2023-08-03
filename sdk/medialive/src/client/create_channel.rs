@@ -20,11 +20,7 @@ impl super::Client {
     /// - On success, responds with [`CreateChannelOutput`](crate::operation::create_channel::CreateChannelOutput) with field(s):
     ///   - [`channel(Option<Channel>)`](crate::operation::create_channel::CreateChannelOutput::channel): Placeholder documentation for Channel
     /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::operation::create_channel::CreateChannelError)
-    pub fn create_channel(
-        &self,
-    ) -> crate::operation::create_channel::builders::CreateChannelFluentBuilder {
-        crate::operation::create_channel::builders::CreateChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_channel(&self) -> crate::operation::create_channel::builders::CreateChannelFluentBuilder {
+        crate::operation::create_channel::builders::CreateChannelFluentBuilder::new(self.handle.clone())
     }
 }

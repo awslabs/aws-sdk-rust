@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSolNetworkInstanceOutput {
 }
 impl DeleteSolNetworkInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSolNetworkInstanceOutput`](crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceOutput).
-    pub fn builder() -> crate::operation::delete_sol_network_instance::builders::DeleteSolNetworkInstanceOutputBuilder{
+    pub fn builder() -> crate::operation::delete_sol_network_instance::builders::DeleteSolNetworkInstanceOutputBuilder {
         crate::operation::delete_sol_network_instance::builders::DeleteSolNetworkInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSolNetworkInstanceOutput`](crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSolNetworkInstanceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteSolNetworkInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSolNetworkInstanceOutput`](crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceOutput {
+    pub fn build(self) -> crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceOutput {
         crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceOutput {
             _request_id: self._request_id,
         }

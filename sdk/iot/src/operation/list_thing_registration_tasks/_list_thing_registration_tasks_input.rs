@@ -29,16 +29,14 @@ impl ListThingRegistrationTasksInput {
 }
 impl ListThingRegistrationTasksInput {
     /// Creates a new builder-style object to manufacture [`ListThingRegistrationTasksInput`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksInput).
-    pub fn builder() -> crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksInputBuilder{
+    pub fn builder() -> crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksInputBuilder {
         crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListThingRegistrationTasksInput`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingRegistrationTasksInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -94,12 +92,10 @@ impl ListThingRegistrationTasksInputBuilder {
         crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                status: self.status,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            status: self.status,
+        })
     }
 }

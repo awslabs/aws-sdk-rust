@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateInstanceStorageConfigOutput {
 }
 impl UpdateInstanceStorageConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceStorageConfigOutput`](crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigOutput).
-    pub fn builder() -> crate::operation::update_instance_storage_config::builders::UpdateInstanceStorageConfigOutputBuilder{
+    pub fn builder() -> crate::operation::update_instance_storage_config::builders::UpdateInstanceStorageConfigOutputBuilder {
         crate::operation::update_instance_storage_config::builders::UpdateInstanceStorageConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateInstanceStorageConfigOutput`](crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInstanceStorageConfigOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateInstanceStorageConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateInstanceStorageConfigOutput`](crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigOutput {
+    pub fn build(self) -> crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigOutput {
         crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigOutput {
             _request_id: self._request_id,
         }

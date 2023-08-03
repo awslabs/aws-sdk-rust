@@ -10,10 +10,7 @@ impl UpdatePackageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_package::UpdatePackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_package::UpdatePackageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_package::UpdatePackageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_package();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdatePackageFluentBuilder {
         }
     }
     /// Access the UpdatePackage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_package::builders::UpdatePackageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_package::builders::UpdatePackageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdatePackageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -134,10 +126,7 @@ impl UpdatePackageFluentBuilder {
         self
     }
     /// <p>Amazon S3 bucket and key for the package.</p>
-    pub fn set_package_source(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageSource>,
-    ) -> Self {
+    pub fn set_package_source(mut self, input: ::std::option::Option<crate::types::PackageSource>) -> Self {
         self.inner = self.inner.set_package_source(input);
         self
     }
@@ -146,18 +135,12 @@ impl UpdatePackageFluentBuilder {
         self.inner.get_package_source()
     }
     /// <p>A new description of the package.</p>
-    pub fn package_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_description(input.into());
         self
     }
     /// <p>A new description of the package.</p>
-    pub fn set_package_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_description(input);
         self
     }
@@ -166,18 +149,12 @@ impl UpdatePackageFluentBuilder {
         self.inner.get_package_description()
     }
     /// <p>Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
-    pub fn commit_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn commit_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.commit_message(input.into());
         self
     }
     /// <p>Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
-    pub fn set_commit_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_commit_message(input);
         self
     }

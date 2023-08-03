@@ -10,10 +10,7 @@ impl ListDeploymentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_deployments::ListDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_deployments();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDeploymentsFluentBuilder {
         }
     }
     /// Access the ListDeployments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_deployments::builders::ListDeploymentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_deployments::builders::ListDeploymentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListDeploymentsFluentBuilder {
             crate::operation::list_deployments::ListDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListDeploymentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployments::ListDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployments::ListDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListDeploymentsFluentBuilder {
             crate::operation::list_deployments::ListDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_deployments::paginator::ListDeploymentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
-        crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
+        crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -154,18 +127,12 @@ impl ListDeploymentsFluentBuilder {
         self.inner.get_application_id()
     }
     /// <p>The environment ID.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>The environment ID.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }

@@ -22,35 +22,26 @@ impl ::aws_http::request_id::RequestId for GetShardIteratorOutput {
 }
 impl GetShardIteratorOutput {
     /// Creates a new builder-style object to manufacture [`GetShardIteratorOutput`](crate::operation::get_shard_iterator::GetShardIteratorOutput).
-    pub fn builder() -> crate::operation::get_shard_iterator::builders::GetShardIteratorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_shard_iterator::builders::GetShardIteratorOutputBuilder {
         crate::operation::get_shard_iterator::builders::GetShardIteratorOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetShardIteratorOutput`](crate::operation::get_shard_iterator::GetShardIteratorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetShardIteratorOutputBuilder {
     pub(crate) shard_iterator: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetShardIteratorOutputBuilder {
     /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
-    pub fn shard_iterator(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shard_iterator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_iterator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
-    pub fn set_shard_iterator(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shard_iterator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shard_iterator = input;
         self
     }

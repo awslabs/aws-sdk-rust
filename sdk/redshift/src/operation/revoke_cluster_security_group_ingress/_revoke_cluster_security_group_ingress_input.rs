@@ -39,16 +39,14 @@ impl RevokeClusterSecurityGroupIngressInput {
 }
 impl RevokeClusterSecurityGroupIngressInput {
     /// Creates a new builder-style object to manufacture [`RevokeClusterSecurityGroupIngressInput`](crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressInput).
-    pub fn builder() -> crate::operation::revoke_cluster_security_group_ingress::builders::RevokeClusterSecurityGroupIngressInputBuilder{
+    pub fn builder() -> crate::operation::revoke_cluster_security_group_ingress::builders::RevokeClusterSecurityGroupIngressInputBuilder {
         crate::operation::revoke_cluster_security_group_ingress::builders::RevokeClusterSecurityGroupIngressInputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeClusterSecurityGroupIngressInput`](crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeClusterSecurityGroupIngressInputBuilder {
     pub(crate) cluster_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cidrip: ::std::option::Option<::std::string::String>,
@@ -57,18 +55,12 @@ pub struct RevokeClusterSecurityGroupIngressInputBuilder {
 }
 impl RevokeClusterSecurityGroupIngressInputBuilder {
     /// <p>The name of the security Group from which to revoke the ingress rule.</p>
-    pub fn cluster_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the security Group from which to revoke the ingress rule.</p>
-    pub fn set_cluster_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_security_group_name = input;
         self
     }
@@ -91,18 +83,12 @@ impl RevokeClusterSecurityGroupIngressInputBuilder {
         &self.cidrip
     }
     /// <p>The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided. </p>
-    pub fn ec2_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided. </p>
-    pub fn set_ec2_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_name = input;
         self
     }
@@ -112,19 +98,13 @@ impl RevokeClusterSecurityGroupIngressInputBuilder {
     }
     /// <p>The Amazon Web Services account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided. </p>
     /// <p>Example: <code>111122223333</code> </p>
-    pub fn ec2_security_group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided. </p>
     /// <p>Example: <code>111122223333</code> </p>
-    pub fn set_ec2_security_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = input;
         self
     }
@@ -134,18 +114,19 @@ impl RevokeClusterSecurityGroupIngressInputBuilder {
         &self.ec2_security_group_owner_id
     }
     /// Consumes the builder and constructs a [`RevokeClusterSecurityGroupIngressInput`](crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressInput {
-                cluster_security_group_name: self.cluster_security_group_name
-                ,
-                cidrip: self.cidrip
-                ,
-                ec2_security_group_name: self.ec2_security_group_name
-                ,
-                ec2_security_group_owner_id: self.ec2_security_group_owner_id
-                ,
-            }
+                cluster_security_group_name: self.cluster_security_group_name,
+                cidrip: self.cidrip,
+                ec2_security_group_name: self.ec2_security_group_name,
+                ec2_security_group_owner_id: self.ec2_security_group_owner_id,
+            },
         )
     }
 }

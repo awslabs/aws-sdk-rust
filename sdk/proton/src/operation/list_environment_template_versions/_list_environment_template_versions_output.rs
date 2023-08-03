@@ -8,8 +8,7 @@ pub struct ListEnvironmentTemplateVersionsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of major or minor versions of an environment template detail data.</p>
     #[doc(hidden)]
-    pub template_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>>,
+    pub template_versions: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentTemplateVersionsOutput {
@@ -18,9 +17,7 @@ impl ListEnvironmentTemplateVersionsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of major or minor versions of an environment template detail data.</p>
-    pub fn template_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EnvironmentTemplateVersionSummary]> {
+    pub fn template_versions(&self) -> ::std::option::Option<&[crate::types::EnvironmentTemplateVersionSummary]> {
         self.template_versions.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListEnvironmentTemplateVersionsOutput
 }
 impl ListEnvironmentTemplateVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentTemplateVersionsOutput`](crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput).
-    pub fn builder() -> crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsOutputBuilder {
         crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEnvironmentTemplateVersionsOutput`](crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentTemplateVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) template_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>>,
+    pub(crate) template_versions: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentTemplateVersionsOutputBuilder {
@@ -67,30 +61,19 @@ impl ListEnvironmentTemplateVersionsOutputBuilder {
     /// To override the contents of this collection use [`set_template_versions`](Self::set_template_versions).
     ///
     /// <p>An array of major or minor versions of an environment template detail data.</p>
-    pub fn template_versions(
-        mut self,
-        input: crate::types::EnvironmentTemplateVersionSummary,
-    ) -> Self {
+    pub fn template_versions(mut self, input: crate::types::EnvironmentTemplateVersionSummary) -> Self {
         let mut v = self.template_versions.unwrap_or_default();
         v.push(input);
         self.template_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of major or minor versions of an environment template detail data.</p>
-    pub fn set_template_versions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>,
-        >,
-    ) -> Self {
+    pub fn set_template_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>>) -> Self {
         self.template_versions = input;
         self
     }
     /// <p>An array of major or minor versions of an environment template detail data.</p>
-    pub fn get_template_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>>
-    {
+    pub fn get_template_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>> {
         &self.template_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -103,15 +86,10 @@ impl ListEnvironmentTemplateVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentTemplateVersionsOutput`](crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput
-    {
+    pub fn build(self) -> crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput {
         crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput {
-            next_token: self.next_token
-            ,
-            template_versions: self.template_versions
-            ,
+            next_token: self.next_token,
+            template_versions: self.template_versions,
             _request_id: self._request_id,
         }
     }

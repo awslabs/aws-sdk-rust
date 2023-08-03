@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartImportFileTaskOutput {
 }
 impl StartImportFileTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartImportFileTaskOutput`](crate::operation::start_import_file_task::StartImportFileTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::start_import_file_task::builders::StartImportFileTaskOutputBuilder {
+    pub fn builder() -> crate::operation::start_import_file_task::builders::StartImportFileTaskOutputBuilder {
         crate::operation::start_import_file_task::builders::StartImportFileTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartImportFileTaskOutput`](crate::operation::start_import_file_task::StartImportFileTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImportFileTaskOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

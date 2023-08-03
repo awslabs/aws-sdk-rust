@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetWorkloadOutput`](crate::operation::get_workload::GetWorkloadOutput) with field(s):
     ///   - [`workload(Option<Workload>)`](crate::operation::get_workload::GetWorkloadOutput::workload): <p>A workload return object.</p>
     /// - On failure, responds with [`SdkError<GetWorkloadError>`](crate::operation::get_workload::GetWorkloadError)
-    pub fn get_workload(
-        &self,
-    ) -> crate::operation::get_workload::builders::GetWorkloadFluentBuilder {
+    pub fn get_workload(&self) -> crate::operation::get_workload::builders::GetWorkloadFluentBuilder {
         crate::operation::get_workload::builders::GetWorkloadFluentBuilder::new(self.handle.clone())
     }
 }

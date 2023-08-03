@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`carrier_gateways(Option<Vec<CarrierGateway>>)`](crate::operation::describe_carrier_gateways::DescribeCarrierGatewaysOutput::carrier_gateways): <p>Information about the carrier gateway.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_carrier_gateways::DescribeCarrierGatewaysOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeCarrierGatewaysError>`](crate::operation::describe_carrier_gateways::DescribeCarrierGatewaysError)
-    pub fn describe_carrier_gateways(
-        &self,
-    ) -> crate::operation::describe_carrier_gateways::builders::DescribeCarrierGatewaysFluentBuilder
-    {
+    pub fn describe_carrier_gateways(&self) -> crate::operation::describe_carrier_gateways::builders::DescribeCarrierGatewaysFluentBuilder {
         crate::operation::describe_carrier_gateways::builders::DescribeCarrierGatewaysFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl LaunchTemplatePrivateDnsNameOptions {
 
 /// A builder for [`LaunchTemplatePrivateDnsNameOptions`](crate::types::LaunchTemplatePrivateDnsNameOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplatePrivateDnsNameOptionsBuilder {
     pub(crate) hostname_type: ::std::option::Option<crate::types::HostnameType>,
     pub(crate) enable_resource_name_dns_a_record: ::std::option::Option<bool>,
@@ -52,10 +50,7 @@ impl LaunchTemplatePrivateDnsNameOptionsBuilder {
         self
     }
     /// <p>The type of hostname to assign to an instance.</p>
-    pub fn set_hostname_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HostnameType>,
-    ) -> Self {
+    pub fn set_hostname_type(mut self, input: ::std::option::Option<crate::types::HostnameType>) -> Self {
         self.hostname_type = input;
         self
     }
@@ -69,10 +64,7 @@ impl LaunchTemplatePrivateDnsNameOptionsBuilder {
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
-    pub fn set_enable_resource_name_dns_a_record(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_resource_name_dns_a_record(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_resource_name_dns_a_record = input;
         self
     }
@@ -86,10 +78,7 @@ impl LaunchTemplatePrivateDnsNameOptionsBuilder {
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
-    pub fn set_enable_resource_name_dns_aaaa_record(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_resource_name_dns_aaaa_record(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_resource_name_dns_aaaa_record = input;
         self
     }

@@ -10,10 +10,7 @@ impl ListActivitiesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_activities::ListActivitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_activities::ListActivitiesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_activities::ListActivitiesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_activities();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl ListActivitiesFluentBuilder {
         }
     }
     /// Access the ListActivities as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_activities::builders::ListActivitiesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_activities::builders::ListActivitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl ListActivitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -120,13 +112,8 @@ impl ListActivitiesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_activities::paginator::ListActivitiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_activities::paginator::ListActivitiesPaginator {
-        crate::operation::list_activities::paginator::ListActivitiesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_activities::paginator::ListActivitiesPaginator {
+        crate::operation::list_activities::paginator::ListActivitiesPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>

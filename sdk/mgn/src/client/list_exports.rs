@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ExportTask>>)`](crate::operation::list_exports::ListExportsOutput::items): <p>List export response items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_exports::ListExportsOutput::next_token): <p>List export response next token.</p>
     /// - On failure, responds with [`SdkError<ListExportsError>`](crate::operation::list_exports::ListExportsError)
-    pub fn list_exports(
-        &self,
-    ) -> crate::operation::list_exports::builders::ListExportsFluentBuilder {
+    pub fn list_exports(&self) -> crate::operation::list_exports::builders::ListExportsFluentBuilder {
         crate::operation::list_exports::builders::ListExportsFluentBuilder::new(self.handle.clone())
     }
 }

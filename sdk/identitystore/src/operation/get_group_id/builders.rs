@@ -10,10 +10,7 @@ impl GetGroupIdInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_group_id::GetGroupIdOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_group_id::GetGroupIdError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_group_id::GetGroupIdError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_group_id();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetGroupIdFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_group_id::GetGroupId,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_group_id::GetGroupId, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_group_id::GetGroupIdError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetGroupIdFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl GetGroupIdFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_group_id::GetGroupId,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_group_id::GetGroupId, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_group_id::GetGroupIdError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
@@ -138,17 +120,12 @@ impl GetGroupIdFluentBuilder {
         self
     }
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
-    pub fn set_alternate_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::AlternateIdentifier>,
-    ) -> Self {
+    pub fn set_alternate_identifier(mut self, input: ::std::option::Option<crate::types::AlternateIdentifier>) -> Self {
         self.inner = self.inner.set_alternate_identifier(input);
         self
     }
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
-    pub fn get_alternate_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlternateIdentifier> {
+    pub fn get_alternate_identifier(&self) -> &::std::option::Option<crate::types::AlternateIdentifier> {
         self.inner.get_alternate_identifier()
     }
 }

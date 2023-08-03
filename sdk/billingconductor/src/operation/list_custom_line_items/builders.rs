@@ -37,9 +37,7 @@ impl ListCustomLineItemsFluentBuilder {
         }
     }
     /// Access the ListCustomLineItems as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_custom_line_items::builders::ListCustomLineItemsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_custom_line_items::builders::ListCustomLineItemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListCustomLineItemsFluentBuilder {
             crate::operation::list_custom_line_items::ListCustomLineItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_line_items::ListCustomLineItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_line_items::ListCustomLineItemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListCustomLineItemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListCustomLineItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_line_items::ListCustomLineItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_line_items::ListCustomLineItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_line_items::ListCustomLineItemsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListCustomLineItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_line_items::ListCustomLineItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_line_items::ListCustomLineItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_line_items::ListCustomLineItemsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl ListCustomLineItemsFluentBuilder {
             crate::operation::list_custom_line_items::ListCustomLineItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_line_items::ListCustomLineItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_line_items::ListCustomLineItemsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_custom_line_items::paginator::ListCustomLineItemsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_custom_line_items::paginator::ListCustomLineItemsPaginator {
-        crate::operation::list_custom_line_items::paginator::ListCustomLineItemsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_custom_line_items::paginator::ListCustomLineItemsPaginator {
+        crate::operation::list_custom_line_items::paginator::ListCustomLineItemsPaginator::new(self.handle, self.inner)
     }
     /// <p> The preferred billing period to get custom line items (FFLIs). </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_period(input.into());
         self
     }
     /// <p> The preferred billing period to get custom line items (FFLIs). </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_period(input);
         self
     }
@@ -187,10 +163,7 @@ impl ListCustomLineItemsFluentBuilder {
         self
     }
     /// <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListCustomLineItemsFilter>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListCustomLineItemsFilter>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -55,10 +55,8 @@ impl ::std::fmt::Debug for UpdateDomainContactInput {
 }
 impl UpdateDomainContactInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainContactInput`](crate::operation::update_domain_contact::UpdateDomainContactInput).
-    pub fn builder(
-    ) -> crate::operation::update_domain_contact::builders::UpdateDomainContactInputBuilder {
-        crate::operation::update_domain_contact::builders::UpdateDomainContactInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_domain_contact::builders::UpdateDomainContactInputBuilder {
+        crate::operation::update_domain_contact::builders::UpdateDomainContactInputBuilder::default()
     }
 }
 
@@ -93,10 +91,7 @@ impl UpdateDomainContactInputBuilder {
         self
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn set_admin_contact(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactDetail>,
-    ) -> Self {
+    pub fn set_admin_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
         self.admin_contact = input;
         self
     }
@@ -110,10 +105,7 @@ impl UpdateDomainContactInputBuilder {
         self
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn set_registrant_contact(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactDetail>,
-    ) -> Self {
+    pub fn set_registrant_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
         self.registrant_contact = input;
         self
     }
@@ -127,10 +119,7 @@ impl UpdateDomainContactInputBuilder {
         self
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn set_tech_contact(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactDetail>,
-    ) -> Self {
+    pub fn set_tech_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
         self.tech_contact = input;
         self
     }
@@ -155,19 +144,15 @@ impl UpdateDomainContactInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDomainContactInput`](crate::operation::update_domain_contact::UpdateDomainContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_domain_contact::UpdateDomainContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_domain_contact::UpdateDomainContactInput {
-                domain_name: self.domain_name,
-                admin_contact: self.admin_contact,
-                registrant_contact: self.registrant_contact,
-                tech_contact: self.tech_contact,
-                consent: self.consent,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_domain_contact::UpdateDomainContactInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_domain_contact::UpdateDomainContactInput {
+            domain_name: self.domain_name,
+            admin_contact: self.admin_contact,
+            registrant_contact: self.registrant_contact,
+            tech_contact: self.tech_contact,
+            consent: self.consent,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateDomainContactInputBuilder {

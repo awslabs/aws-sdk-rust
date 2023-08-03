@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteLayerVersionOutput {
 }
 impl DeleteLayerVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLayerVersionOutput`](crate::operation::delete_layer_version::DeleteLayerVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_layer_version::builders::DeleteLayerVersionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_layer_version::builders::DeleteLayerVersionOutputBuilder {
         crate::operation::delete_layer_version::builders::DeleteLayerVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLayerVersionOutput`](crate::operation::delete_layer_version::DeleteLayerVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLayerVersionOutputBuilder {
     _request_id: Option<String>,
 }

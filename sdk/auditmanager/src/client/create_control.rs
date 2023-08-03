@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateControlOutput`](crate::operation::create_control::CreateControlOutput) with field(s):
     ///   - [`control(Option<Control>)`](crate::operation::create_control::CreateControlOutput::control): <p> The new control that the <code>CreateControl</code> API returned. </p>
     /// - On failure, responds with [`SdkError<CreateControlError>`](crate::operation::create_control::CreateControlError)
-    pub fn create_control(
-        &self,
-    ) -> crate::operation::create_control::builders::CreateControlFluentBuilder {
-        crate::operation::create_control::builders::CreateControlFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_control(&self) -> crate::operation::create_control::builders::CreateControlFluentBuilder {
+        crate::operation::create_control::builders::CreateControlFluentBuilder::new(self.handle.clone())
     }
 }

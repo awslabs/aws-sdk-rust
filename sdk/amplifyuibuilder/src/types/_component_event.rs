@@ -37,9 +37,7 @@ impl ComponentEvent {
 
 /// A builder for [`ComponentEvent`](crate::types::ComponentEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentEventBuilder {
     pub(crate) action: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<crate::types::ActionParameters>,
@@ -66,10 +64,7 @@ impl ComponentEventBuilder {
         self
     }
     /// <p>Describes information about the action.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionParameters>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::ActionParameters>) -> Self {
         self.parameters = input;
         self
     }
@@ -78,18 +73,12 @@ impl ComponentEventBuilder {
         &self.parameters
     }
     /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
-    pub fn binding_event(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn binding_event(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.binding_event = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
-    pub fn set_binding_event(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_binding_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.binding_event = input;
         self
     }

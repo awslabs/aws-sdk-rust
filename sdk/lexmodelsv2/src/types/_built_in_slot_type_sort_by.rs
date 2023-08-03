@@ -30,9 +30,7 @@ impl BuiltInSlotTypeSortBy {
 
 /// A builder for [`BuiltInSlotTypeSortBy`](crate::types::BuiltInSlotTypeSortBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuiltInSlotTypeSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::BuiltInSlotTypeSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
@@ -44,17 +42,12 @@ impl BuiltInSlotTypeSortByBuilder {
         self
     }
     /// <p>The attribute to use to sort the list of built-in intents.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::BuiltInSlotTypeSortAttribute>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::BuiltInSlotTypeSortAttribute>) -> Self {
         self.attribute = input;
         self
     }
     /// <p>The attribute to use to sort the list of built-in intents.</p>
-    pub fn get_attribute(
-        &self,
-    ) -> &::std::option::Option<crate::types::BuiltInSlotTypeSortAttribute> {
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::BuiltInSlotTypeSortAttribute> {
         &self.attribute
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>

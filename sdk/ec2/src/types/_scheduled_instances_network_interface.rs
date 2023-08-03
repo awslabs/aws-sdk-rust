@@ -24,8 +24,7 @@ pub struct ScheduledInstancesNetworkInterface {
     pub ipv6_address_count: ::std::option::Option<i32>,
     /// <p>The specific IPv6 addresses from the subnet range.</p>
     #[doc(hidden)]
-    pub ipv6_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>>,
+    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>>,
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
@@ -34,9 +33,7 @@ pub struct ScheduledInstancesNetworkInterface {
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 addresses.</p>
     #[doc(hidden)]
-    pub private_ip_address_configs: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>,
-    >,
+    pub private_ip_address_configs: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>>,
     /// <p>The number of secondary private IPv4 addresses.</p>
     #[doc(hidden)]
     pub secondary_private_ip_address_count: ::std::option::Option<i32>,
@@ -70,9 +67,7 @@ impl ScheduledInstancesNetworkInterface {
         self.ipv6_address_count
     }
     /// <p>The specific IPv6 addresses from the subnet range.</p>
-    pub fn ipv6_addresses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ScheduledInstancesIpv6Address]> {
+    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[crate::types::ScheduledInstancesIpv6Address]> {
         self.ipv6_addresses.as_deref()
     }
     /// <p>The ID of the network interface.</p>
@@ -84,9 +79,7 @@ impl ScheduledInstancesNetworkInterface {
         self.private_ip_address.as_deref()
     }
     /// <p>The private IPv4 addresses.</p>
-    pub fn private_ip_address_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ScheduledInstancesPrivateIpAddressConfig]> {
+    pub fn private_ip_address_configs(&self) -> ::std::option::Option<&[crate::types::ScheduledInstancesPrivateIpAddressConfig]> {
         self.private_ip_address_configs.as_deref()
     }
     /// <p>The number of secondary private IPv4 addresses.</p>
@@ -107,9 +100,7 @@ impl ScheduledInstancesNetworkInterface {
 
 /// A builder for [`ScheduledInstancesNetworkInterface`](crate::types::ScheduledInstancesNetworkInterface).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledInstancesNetworkInterfaceBuilder {
     pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
@@ -117,13 +108,10 @@ pub struct ScheduledInstancesNetworkInterfaceBuilder {
     pub(crate) device_index: ::std::option::Option<i32>,
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ipv6_address_count: ::std::option::Option<i32>,
-    pub(crate) ipv6_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>>,
+    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
-    pub(crate) private_ip_address_configs: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>,
-    >,
+    pub(crate) private_ip_address_configs: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>>,
     pub(crate) secondary_private_ip_address_count: ::std::option::Option<i32>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
 }
@@ -196,10 +184,7 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
         self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groups = input;
         self
     }
@@ -233,32 +218,21 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
         self
     }
     /// <p>The specific IPv6 addresses from the subnet range.</p>
-    pub fn set_ipv6_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>>,
-    ) -> Self {
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>>) -> Self {
         self.ipv6_addresses = input;
         self
     }
     /// <p>The specific IPv6 addresses from the subnet range.</p>
-    pub fn get_ipv6_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>> {
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>> {
         &self.ipv6_addresses
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -267,18 +241,12 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
         &self.network_interface_id
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }
@@ -291,10 +259,7 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
     /// To override the contents of this collection use [`set_private_ip_address_configs`](Self::set_private_ip_address_configs).
     ///
     /// <p>The private IPv4 addresses.</p>
-    pub fn private_ip_address_configs(
-        mut self,
-        input: crate::types::ScheduledInstancesPrivateIpAddressConfig,
-    ) -> Self {
+    pub fn private_ip_address_configs(mut self, input: crate::types::ScheduledInstancesPrivateIpAddressConfig) -> Self {
         let mut v = self.private_ip_address_configs.unwrap_or_default();
         v.push(input);
         self.private_ip_address_configs = ::std::option::Option::Some(v);
@@ -303,19 +268,13 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
     /// <p>The private IPv4 addresses.</p>
     pub fn set_private_ip_address_configs(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>>,
     ) -> Self {
         self.private_ip_address_configs = input;
         self
     }
     /// <p>The private IPv4 addresses.</p>
-    pub fn get_private_ip_address_configs(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>,
-    > {
+    pub fn get_private_ip_address_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>> {
         &self.private_ip_address_configs
     }
     /// <p>The number of secondary private IPv4 addresses.</p>
@@ -324,10 +283,7 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
         self
     }
     /// <p>The number of secondary private IPv4 addresses.</p>
-    pub fn set_secondary_private_ip_address_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_secondary_private_ip_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.secondary_private_ip_address_count = input;
         self
     }

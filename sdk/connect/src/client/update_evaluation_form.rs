@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`evaluation_form_arn(Option<String>)`](crate::operation::update_evaluation_form::UpdateEvaluationFormOutput::evaluation_form_arn): <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     ///   - [`evaluation_form_version(Option<i32>)`](crate::operation::update_evaluation_form::UpdateEvaluationFormOutput::evaluation_form_version): <p>The version of the updated evaluation form resource.</p>
     /// - On failure, responds with [`SdkError<UpdateEvaluationFormError>`](crate::operation::update_evaluation_form::UpdateEvaluationFormError)
-    pub fn update_evaluation_form(
-        &self,
-    ) -> crate::operation::update_evaluation_form::builders::UpdateEvaluationFormFluentBuilder {
-        crate::operation::update_evaluation_form::builders::UpdateEvaluationFormFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_evaluation_form(&self) -> crate::operation::update_evaluation_form::builders::UpdateEvaluationFormFluentBuilder {
+        crate::operation::update_evaluation_form::builders::UpdateEvaluationFormFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPullRequestsOutput {
 }
 impl ListPullRequestsOutput {
     /// Creates a new builder-style object to manufacture [`ListPullRequestsOutput`](crate::operation::list_pull_requests::ListPullRequestsOutput).
-    pub fn builder() -> crate::operation::list_pull_requests::builders::ListPullRequestsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pull_requests::builders::ListPullRequestsOutputBuilder {
         crate::operation::list_pull_requests::builders::ListPullRequestsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPullRequestsOutput`](crate::operation::list_pull_requests::ListPullRequestsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPullRequestsOutputBuilder {
     pub(crate) pull_request_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,27 +47,19 @@ impl ListPullRequestsOutputBuilder {
     /// To override the contents of this collection use [`set_pull_request_ids`](Self::set_pull_request_ids).
     ///
     /// <p>The system-generated IDs of the pull requests.</p>
-    pub fn pull_request_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pull_request_ids.unwrap_or_default();
         v.push(input.into());
         self.pull_request_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The system-generated IDs of the pull requests.</p>
-    pub fn set_pull_request_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pull_request_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pull_request_ids = input;
         self
     }
     /// <p>The system-generated IDs of the pull requests.</p>
-    pub fn get_pull_request_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pull_request_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.pull_request_ids
     }
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>

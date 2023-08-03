@@ -37,9 +37,7 @@ impl ResourceTagMapping {
 
 /// A builder for [`ResourceTagMapping`](crate::types::ResourceTagMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceTagMappingBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -72,10 +70,7 @@ impl ResourceTagMappingBuilder {
         self
     }
     /// <p>The tags that have been applied to one or more Amazon Web Services resources.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -89,17 +84,12 @@ impl ResourceTagMappingBuilder {
         self
     }
     /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
-    pub fn set_compliance_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceDetails>,
-    ) -> Self {
+    pub fn set_compliance_details(mut self, input: ::std::option::Option<crate::types::ComplianceDetails>) -> Self {
         self.compliance_details = input;
         self
     }
     /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
-    pub fn get_compliance_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComplianceDetails> {
+    pub fn get_compliance_details(&self) -> &::std::option::Option<crate::types::ComplianceDetails> {
         &self.compliance_details
     }
     /// Consumes the builder and constructs a [`ResourceTagMapping`](crate::types::ResourceTagMapping).

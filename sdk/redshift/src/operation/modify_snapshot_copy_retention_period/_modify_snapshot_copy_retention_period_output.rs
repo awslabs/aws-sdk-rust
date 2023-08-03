@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifySnapshotCopyRetentionPeriodOutp
 }
 impl ModifySnapshotCopyRetentionPeriodOutput {
     /// Creates a new builder-style object to manufacture [`ModifySnapshotCopyRetentionPeriodOutput`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput).
-    pub fn builder() -> crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodOutputBuilder{
+    pub fn builder() -> crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodOutputBuilder {
         crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifySnapshotCopyRetentionPeriodOutput`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifySnapshotCopyRetentionPeriodOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl ModifySnapshotCopyRetentionPeriodOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifySnapshotCopyRetentionPeriodOutput`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput).
-    pub fn build(self) -> crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput{
+    pub fn build(self) -> crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput {
         crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput {
-            cluster: self.cluster
-            ,
+            cluster: self.cluster,
             _request_id: self._request_id,
         }
     }

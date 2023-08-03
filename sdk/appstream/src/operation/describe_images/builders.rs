@@ -10,10 +10,7 @@ impl DescribeImagesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_images::DescribeImagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_images::DescribeImagesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_images::DescribeImagesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_images();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeImagesFluentBuilder {
         }
     }
     /// Access the DescribeImages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_images::builders::DescribeImagesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_images::builders::DescribeImagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DescribeImagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl DescribeImagesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_images::paginator::DescribeImagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_images::paginator::DescribeImagesPaginator {
-        crate::operation::describe_images::paginator::DescribeImagesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_images::paginator::DescribeImagesPaginator {
+        crate::operation::describe_images::paginator::DescribeImagesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Names`.
     ///
@@ -135,10 +122,7 @@ impl DescribeImagesFluentBuilder {
         self
     }
     /// <p>The names of the public or private images to describe.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }
@@ -156,10 +140,7 @@ impl DescribeImagesFluentBuilder {
         self
     }
     /// <p>The ARNs of the public, private, and shared images to describe.</p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_arns(input);
         self
     }

@@ -30,12 +30,7 @@ impl super::Client {
     ///   - [`is_parent(bool)`](crate::operation::describe_recovery_point::DescribeRecoveryPointOutput::is_parent): <p>This returns the boolean value that a recovery point is a parent (composite) job.</p>
     ///   - [`resource_name(Option<String>)`](crate::operation::describe_recovery_point::DescribeRecoveryPointOutput::resource_name): <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     /// - On failure, responds with [`SdkError<DescribeRecoveryPointError>`](crate::operation::describe_recovery_point::DescribeRecoveryPointError)
-    pub fn describe_recovery_point(
-        &self,
-    ) -> crate::operation::describe_recovery_point::builders::DescribeRecoveryPointFluentBuilder
-    {
-        crate::operation::describe_recovery_point::builders::DescribeRecoveryPointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_recovery_point(&self) -> crate::operation::describe_recovery_point::builders::DescribeRecoveryPointFluentBuilder {
+        crate::operation::describe_recovery_point::builders::DescribeRecoveryPointFluentBuilder::new(self.handle.clone())
     }
 }

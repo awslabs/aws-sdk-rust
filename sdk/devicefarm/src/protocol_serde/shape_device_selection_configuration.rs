@@ -9,10 +9,7 @@ pub fn ser_device_selection_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_device_filter::ser_device_filter(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_device_filter::ser_device_filter(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

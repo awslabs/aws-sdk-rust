@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`workspaces(Option<Vec<Workspace>>)`](crate::operation::describe_workspaces::DescribeWorkspacesOutput::workspaces): <p>Information about the WorkSpaces.</p>  <p>Because <code>CreateWorkspaces</code> is an asynchronous operation, some of the returned information could be incomplete.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_workspaces::DescribeWorkspacesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<DescribeWorkspacesError>`](crate::operation::describe_workspaces::DescribeWorkspacesError)
-    pub fn describe_workspaces(
-        &self,
-    ) -> crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder {
-        crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_workspaces(&self) -> crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder {
+        crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::new(self.handle.clone())
     }
 }

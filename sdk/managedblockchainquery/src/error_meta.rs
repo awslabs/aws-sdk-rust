@@ -31,32 +31,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_token_balance::BatchGetTokenBalanceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_get_token_balance::BatchGetTokenBalanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_token_balance::BatchGetTokenBalanceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_get_token_balance::BatchGetTokenBalanceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -67,41 +51,31 @@ impl From<crate::operation::batch_get_token_balance::BatchGetTokenBalanceError> 
     fn from(err: crate::operation::batch_get_token_balance::BatchGetTokenBalanceError) -> Self {
         match err {
             crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_get_token_balance::BatchGetTokenBalanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_token_balance::GetTokenBalanceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_token_balance::GetTokenBalanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_token_balance::GetTokenBalanceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_token_balance::GetTokenBalanceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -114,39 +88,25 @@ impl From<crate::operation::get_token_balance::GetTokenBalanceError> for Error {
             crate::operation::get_token_balance::GetTokenBalanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_token_balance::GetTokenBalanceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_token_balance::GetTokenBalanceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_token_balance::GetTokenBalanceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_token_balance::GetTokenBalanceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::get_token_balance::GetTokenBalanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_token_balance::GetTokenBalanceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_token_balance::GetTokenBalanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_transaction::GetTransactionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_transaction::GetTransactionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_transaction::GetTransactionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_transaction::GetTransactionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -159,39 +119,25 @@ impl From<crate::operation::get_transaction::GetTransactionError> for Error {
             crate::operation::get_transaction::GetTransactionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_transaction::GetTransactionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_transaction::GetTransactionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_transaction::GetTransactionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_transaction::GetTransactionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::get_transaction::GetTransactionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_transaction::GetTransactionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_transaction::GetTransactionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_token_balances::ListTokenBalancesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_token_balances::ListTokenBalancesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_token_balances::ListTokenBalancesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_token_balances::ListTokenBalancesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -203,39 +149,25 @@ impl From<crate::operation::list_token_balances::ListTokenBalancesError> for Err
         match err {
             crate::operation::list_token_balances::ListTokenBalancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_token_balances::ListTokenBalancesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_token_balances::ListTokenBalancesError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_token_balances::ListTokenBalancesError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::list_token_balances::ListTokenBalancesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_token_balances::ListTokenBalancesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_token_balances::ListTokenBalancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transaction_events::ListTransactionEventsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_transaction_events::ListTransactionEventsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transaction_events::ListTransactionEventsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_transaction_events::ListTransactionEventsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -245,41 +177,31 @@ where
 impl From<crate::operation::list_transaction_events::ListTransactionEventsError> for Error {
     fn from(err: crate::operation::list_transaction_events::ListTransactionEventsError) -> Self {
         match err {
-            crate::operation::list_transaction_events::ListTransactionEventsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_transaction_events::ListTransactionEventsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_transaction_events::ListTransactionEventsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_transaction_events::ListTransactionEventsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_transaction_events::ListTransactionEventsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_transaction_events::ListTransactionEventsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::list_transaction_events::ListTransactionEventsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_transaction_events::ListTransactionEventsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_transaction_events::ListTransactionEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transactions::ListTransactionsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_transactions::ListTransactionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transactions::ListTransactionsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_transactions::ListTransactionsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -291,7 +213,9 @@ impl From<crate::operation::list_transactions::ListTransactionsError> for Error 
         match err {
             crate::operation::list_transactions::ListTransactionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_transactions::ListTransactionsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_transactions::ListTransactionsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_transactions::ListTransactionsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::list_transactions::ListTransactionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_transactions::ListTransactionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_transactions::ListTransactionsError::Unhandled(inner) => Error::Unhandled(inner),

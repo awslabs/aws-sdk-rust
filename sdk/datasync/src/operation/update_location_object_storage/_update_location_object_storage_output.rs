@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateLocationObjectStorageOutput {
 }
 impl UpdateLocationObjectStorageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationObjectStorageOutput`](crate::operation::update_location_object_storage::UpdateLocationObjectStorageOutput).
-    pub fn builder() -> crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageOutputBuilder{
+    pub fn builder() -> crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageOutputBuilder {
         crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLocationObjectStorageOutput`](crate::operation::update_location_object_storage::UpdateLocationObjectStorageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLocationObjectStorageOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateLocationObjectStorageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateLocationObjectStorageOutput`](crate::operation::update_location_object_storage::UpdateLocationObjectStorageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_location_object_storage::UpdateLocationObjectStorageOutput {
+    pub fn build(self) -> crate::operation::update_location_object_storage::UpdateLocationObjectStorageOutput {
         crate::operation::update_location_object_storage::UpdateLocationObjectStorageOutput {
             _request_id: self._request_id,
         }

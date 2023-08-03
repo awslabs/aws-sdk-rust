@@ -29,16 +29,14 @@ impl DeleteVerifiedAccessInstanceInput {
 }
 impl DeleteVerifiedAccessInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeleteVerifiedAccessInstanceInput`](crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceInput).
-    pub fn builder() -> crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceInputBuilder{
+    pub fn builder() -> crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceInputBuilder {
         crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVerifiedAccessInstanceInput`](crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVerifiedAccessInstanceInputBuilder {
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -46,18 +44,12 @@ pub struct DeleteVerifiedAccessInstanceInputBuilder {
 }
 impl DeleteVerifiedAccessInstanceInputBuilder {
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn verified_access_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verified_access_instance_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl DeleteVerifiedAccessInstanceInputBuilder {
         crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceInput {
-                verified_access_instance_id: self.verified_access_instance_id,
-                dry_run: self.dry_run,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceInput {
+            verified_access_instance_id: self.verified_access_instance_id,
+            dry_run: self.dry_run,
+            client_token: self.client_token,
+        })
     }
 }

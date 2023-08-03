@@ -26,7 +26,7 @@ impl CreateLoggingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationInputBuilder,
+    inner: crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationInputBuilder,
 }
 impl CreateLoggingConfigurationFluentBuilder {
     /// Creates a new `CreateLoggingConfiguration`.
@@ -37,7 +37,7 @@ impl CreateLoggingConfigurationFluentBuilder {
         }
     }
     /// Access the CreateLoggingConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateLoggingConfigurationFluentBuilder {
             crate::operation::create_logging_configuration::CreateLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logging_configuration::CreateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logging_configuration::CreateLoggingConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateLoggingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logging_configuration::CreateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logging_configuration::CreateLoggingConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logging_configuration::CreateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logging_configuration::CreateLoggingConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateLoggingConfigurationFluentBuilder {
             crate::operation::create_logging_configuration::CreateLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logging_configuration::CreateLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logging_configuration::CreateLoggingConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl CreateLoggingConfigurationFluentBuilder {
         self.inner.get_workspace_id()
     }
     /// The ARN of the CW log group to which the vended log data will be published.
-    pub fn log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_arn(input.into());
         self
     }
     /// The ARN of the CW log group to which the vended log data will be published.
-    pub fn set_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_arn(input);
         self
     }

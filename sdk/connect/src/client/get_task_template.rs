@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`created_time(Option<DateTime>)`](crate::operation::get_task_template::GetTaskTemplateOutput::created_time): <p>The timestamp when the task template was created.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_task_template::GetTaskTemplateOutput::tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On failure, responds with [`SdkError<GetTaskTemplateError>`](crate::operation::get_task_template::GetTaskTemplateError)
-    pub fn get_task_template(
-        &self,
-    ) -> crate::operation::get_task_template::builders::GetTaskTemplateFluentBuilder {
-        crate::operation::get_task_template::builders::GetTaskTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_task_template(&self) -> crate::operation::get_task_template::builders::GetTaskTemplateFluentBuilder {
+        crate::operation::get_task_template::builders::GetTaskTemplateFluentBuilder::new(self.handle.clone())
     }
 }

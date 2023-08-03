@@ -50,9 +50,7 @@ impl SearchInsightsInput {
 
 /// A builder for [`SearchInsightsInput`](crate::operation::search_insights::SearchInsightsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchInsightsInputBuilder {
     pub(crate) start_time_range: ::std::option::Option<crate::types::StartTimeRange>,
     pub(crate) filters: ::std::option::Option<crate::types::SearchInsightsFilters>,
@@ -67,10 +65,7 @@ impl SearchInsightsInputBuilder {
         self
     }
     /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
-    pub fn set_start_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::StartTimeRange>,
-    ) -> Self {
+    pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::StartTimeRange>) -> Self {
         self.start_time_range = input;
         self
     }
@@ -84,10 +79,7 @@ impl SearchInsightsInputBuilder {
         self
     }
     /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchInsightsFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::SearchInsightsFilters>) -> Self {
         self.filters = input;
         self
     }
@@ -140,10 +132,7 @@ impl SearchInsightsInputBuilder {
     /// Consumes the builder and constructs a [`SearchInsightsInput`](crate::operation::search_insights::SearchInsightsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_insights::SearchInsightsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::search_insights::SearchInsightsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_insights::SearchInsightsInput {
             start_time_range: self.start_time_range,
             filters: self.filters,

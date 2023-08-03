@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DismissUserContactOutput {
 }
 impl DismissUserContactOutput {
     /// Creates a new builder-style object to manufacture [`DismissUserContactOutput`](crate::operation::dismiss_user_contact::DismissUserContactOutput).
-    pub fn builder(
-    ) -> crate::operation::dismiss_user_contact::builders::DismissUserContactOutputBuilder {
+    pub fn builder() -> crate::operation::dismiss_user_contact::builders::DismissUserContactOutputBuilder {
         crate::operation::dismiss_user_contact::builders::DismissUserContactOutputBuilder::default()
     }
 }
 
 /// A builder for [`DismissUserContactOutput`](crate::operation::dismiss_user_contact::DismissUserContactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DismissUserContactOutputBuilder {
     _request_id: Option<String>,
 }

@@ -47,13 +47,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SnowballCapacity {
     #[allow(missing_docs)] // documentation missing in model
@@ -95,9 +89,7 @@ impl ::std::convert::From<&str> for SnowballCapacity {
             "T8" => SnowballCapacity::T8,
             "T80" => SnowballCapacity::T80,
             "T98" => SnowballCapacity::T98,
-            other => {
-                SnowballCapacity::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SnowballCapacity::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -128,19 +120,7 @@ impl SnowballCapacity {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "NoPreference",
-            "T100",
-            "T13",
-            "T14",
-            "T240",
-            "T32",
-            "T42",
-            "T50",
-            "T8",
-            "T80",
-            "T98",
-        ]
+        &["NoPreference", "T100", "T13", "T14", "T240", "T32", "T42", "T50", "T8", "T80", "T98"]
     }
 }
 impl ::std::convert::AsRef<str> for SnowballCapacity {

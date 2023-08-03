@@ -35,15 +35,11 @@ impl CreateLocationAzureBlobInput {
         self.container_url.as_deref()
     }
     /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
-    pub fn authentication_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AzureBlobAuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AzureBlobAuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
-    pub fn sas_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AzureBlobSasConfiguration> {
+    pub fn sas_configuration(&self) -> ::std::option::Option<&crate::types::AzureBlobSasConfiguration> {
         self.sas_configuration.as_ref()
     }
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
@@ -70,22 +66,17 @@ impl CreateLocationAzureBlobInput {
 }
 impl CreateLocationAzureBlobInput {
     /// Creates a new builder-style object to manufacture [`CreateLocationAzureBlobInput`](crate::operation::create_location_azure_blob::CreateLocationAzureBlobInput).
-    pub fn builder(
-    ) -> crate::operation::create_location_azure_blob::builders::CreateLocationAzureBlobInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_location_azure_blob::builders::CreateLocationAzureBlobInputBuilder {
         crate::operation::create_location_azure_blob::builders::CreateLocationAzureBlobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationAzureBlobInput`](crate::operation::create_location_azure_blob::CreateLocationAzureBlobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationAzureBlobInputBuilder {
     pub(crate) container_url: ::std::option::Option<::std::string::String>,
-    pub(crate) authentication_type:
-        ::std::option::Option<crate::types::AzureBlobAuthenticationType>,
+    pub(crate) authentication_type: ::std::option::Option<crate::types::AzureBlobAuthenticationType>,
     pub(crate) sas_configuration: ::std::option::Option<crate::types::AzureBlobSasConfiguration>,
     pub(crate) blob_type: ::std::option::Option<crate::types::AzureBlobType>,
     pub(crate) access_tier: ::std::option::Option<crate::types::AzureAccessTier>,
@@ -95,18 +86,12 @@ pub struct CreateLocationAzureBlobInputBuilder {
 }
 impl CreateLocationAzureBlobInputBuilder {
     /// <p>Specifies the URL of the Azure Blob Storage container involved in your transfer.</p>
-    pub fn container_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the URL of the Azure Blob Storage container involved in your transfer.</p>
-    pub fn set_container_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_url = input;
         self
     }
@@ -120,17 +105,12 @@ impl CreateLocationAzureBlobInputBuilder {
         self
     }
     /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AzureBlobAuthenticationType>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AzureBlobAuthenticationType>) -> Self {
         self.authentication_type = input;
         self
     }
     /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
-    pub fn get_authentication_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AzureBlobAuthenticationType> {
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AzureBlobAuthenticationType> {
         &self.authentication_type
     }
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
@@ -139,17 +119,12 @@ impl CreateLocationAzureBlobInputBuilder {
         self
     }
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
-    pub fn set_sas_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AzureBlobSasConfiguration>,
-    ) -> Self {
+    pub fn set_sas_configuration(mut self, input: ::std::option::Option<crate::types::AzureBlobSasConfiguration>) -> Self {
         self.sas_configuration = input;
         self
     }
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
-    pub fn get_sas_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AzureBlobSasConfiguration> {
+    pub fn get_sas_configuration(&self) -> &::std::option::Option<crate::types::AzureBlobSasConfiguration> {
         &self.sas_configuration
     }
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
@@ -158,10 +133,7 @@ impl CreateLocationAzureBlobInputBuilder {
         self
     }
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
-    pub fn set_blob_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AzureBlobType>,
-    ) -> Self {
+    pub fn set_blob_type(mut self, input: ::std::option::Option<crate::types::AzureBlobType>) -> Self {
         self.blob_type = input;
         self
     }
@@ -175,10 +147,7 @@ impl CreateLocationAzureBlobInputBuilder {
         self
     }
     /// <p>Specifies the access tier that you want your objects or files transferred into. This only applies when using the location as a transfer destination. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">Access tiers</a>.</p>
-    pub fn set_access_tier(
-        mut self,
-        input: ::std::option::Option<crate::types::AzureAccessTier>,
-    ) -> Self {
+    pub fn set_access_tier(mut self, input: ::std::option::Option<crate::types::AzureAccessTier>) -> Self {
         self.access_tier = input;
         self
     }
@@ -214,10 +183,7 @@ impl CreateLocationAzureBlobInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
     /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
@@ -238,10 +204,7 @@ impl CreateLocationAzureBlobInputBuilder {
         self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your transfer location.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.tags = input;
         self
     }
@@ -256,17 +219,15 @@ impl CreateLocationAzureBlobInputBuilder {
         crate::operation::create_location_azure_blob::CreateLocationAzureBlobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_location_azure_blob::CreateLocationAzureBlobInput {
-                container_url: self.container_url,
-                authentication_type: self.authentication_type,
-                sas_configuration: self.sas_configuration,
-                blob_type: self.blob_type,
-                access_tier: self.access_tier,
-                subdirectory: self.subdirectory,
-                agent_arns: self.agent_arns,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_location_azure_blob::CreateLocationAzureBlobInput {
+            container_url: self.container_url,
+            authentication_type: self.authentication_type,
+            sas_configuration: self.sas_configuration,
+            blob_type: self.blob_type,
+            access_tier: self.access_tier,
+            subdirectory: self.subdirectory,
+            agent_arns: self.agent_arns,
+            tags: self.tags,
+        })
     }
 }

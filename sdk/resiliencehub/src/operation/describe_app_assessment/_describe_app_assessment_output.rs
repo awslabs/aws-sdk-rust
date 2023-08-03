@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeAppAssessmentOutput {
 }
 impl DescribeAppAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppAssessmentOutput`](crate::operation::describe_app_assessment::DescribeAppAssessmentOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_app_assessment::builders::DescribeAppAssessmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_app_assessment::builders::DescribeAppAssessmentOutputBuilder {
         crate::operation::describe_app_assessment::builders::DescribeAppAssessmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppAssessmentOutput`](crate::operation::describe_app_assessment::DescribeAppAssessmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppAssessmentOutputBuilder {
     pub(crate) assessment: ::std::option::Option<crate::types::AppAssessment>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeAppAssessmentOutputBuilder {
         self
     }
     /// <p>The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
-    pub fn set_assessment(
-        mut self,
-        input: ::std::option::Option<crate::types::AppAssessment>,
-    ) -> Self {
+    pub fn set_assessment(mut self, input: ::std::option::Option<crate::types::AppAssessment>) -> Self {
         self.assessment = input;
         self
     }

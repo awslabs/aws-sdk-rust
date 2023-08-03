@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAssociatedResourcesOutput {
 }
 impl ListAssociatedResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedResourcesOutput`](crate::operation::list_associated_resources::ListAssociatedResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_associated_resources::builders::ListAssociatedResourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_associated_resources::builders::ListAssociatedResourcesOutputBuilder {
         crate::operation::list_associated_resources::builders::ListAssociatedResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociatedResourcesOutput`](crate::operation::list_associated_resources::ListAssociatedResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedResourcesOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListAssociatedResourcesOutputBuilder {
         self
     }
     /// <p>Information about the resources.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInfo>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInfo>>) -> Self {
         self.resources = input;
         self
     }
     /// <p>Information about the resources.</p>
-    pub fn get_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceInfo>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceInfo>> {
         &self.resources
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
@@ -95,9 +86,7 @@ impl ListAssociatedResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssociatedResourcesOutput`](crate::operation::list_associated_resources::ListAssociatedResourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_associated_resources::ListAssociatedResourcesOutput {
+    pub fn build(self) -> crate::operation::list_associated_resources::ListAssociatedResourcesOutput {
         crate::operation::list_associated_resources::ListAssociatedResourcesOutput {
             resources: self.resources,
             next_token: self.next_token,

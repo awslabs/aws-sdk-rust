@@ -32,16 +32,14 @@ impl ListDeadLetterSourceQueuesInput {
 }
 impl ListDeadLetterSourceQueuesInput {
     /// Creates a new builder-style object to manufacture [`ListDeadLetterSourceQueuesInput`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesInput).
-    pub fn builder() -> crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesInputBuilder{
+    pub fn builder() -> crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesInputBuilder {
         crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeadLetterSourceQueuesInput`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeadLetterSourceQueuesInputBuilder {
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -100,12 +98,10 @@ impl ListDeadLetterSourceQueuesInputBuilder {
         crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesInput {
-                queue_url: self.queue_url,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesInput {
+            queue_url: self.queue_url,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

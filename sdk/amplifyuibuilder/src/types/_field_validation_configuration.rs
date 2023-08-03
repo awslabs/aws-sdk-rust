@@ -44,9 +44,7 @@ impl FieldValidationConfiguration {
 
 /// A builder for [`FieldValidationConfiguration`](crate::types::FieldValidationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldValidationConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) str_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -80,10 +78,7 @@ impl FieldValidationConfigurationBuilder {
         self
     }
     /// <p>The validation to perform on a string value.</p>
-    pub fn set_str_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_str_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.str_values = input;
         self
     }
@@ -112,18 +107,12 @@ impl FieldValidationConfigurationBuilder {
         &self.num_values
     }
     /// <p>The validation message to display.</p>
-    pub fn validation_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The validation message to display.</p>
-    pub fn set_validation_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_message = input;
         self
     }

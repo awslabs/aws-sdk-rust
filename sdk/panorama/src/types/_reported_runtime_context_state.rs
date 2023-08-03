@@ -27,9 +27,7 @@ impl ReportedRuntimeContextState {
         self.runtime_context_name.as_deref()
     }
     /// <p>The application's reported status.</p>
-    pub fn device_reported_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeviceReportedStatus> {
+    pub fn device_reported_status(&self) -> ::std::option::Option<&crate::types::DeviceReportedStatus> {
         self.device_reported_status.as_ref()
     }
     /// <p>When the device reported the application's state.</p>
@@ -46,9 +44,7 @@ impl ReportedRuntimeContextState {
 
 /// A builder for [`ReportedRuntimeContextState`](crate::types::ReportedRuntimeContextState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportedRuntimeContextStateBuilder {
     pub(crate) desired_state: ::std::option::Option<crate::types::DesiredState>,
     pub(crate) runtime_context_name: ::std::option::Option<::std::string::String>,
@@ -62,10 +58,7 @@ impl ReportedRuntimeContextStateBuilder {
         self
     }
     /// <p>The application's desired state.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DesiredState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::DesiredState>) -> Self {
         self.desired_state = input;
         self
     }
@@ -74,18 +67,12 @@ impl ReportedRuntimeContextStateBuilder {
         &self.desired_state
     }
     /// <p>The device's name.</p>
-    pub fn runtime_context_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runtime_context_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime_context_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device's name.</p>
-    pub fn set_runtime_context_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_runtime_context_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime_context_name = input;
         self
     }
@@ -99,17 +86,12 @@ impl ReportedRuntimeContextStateBuilder {
         self
     }
     /// <p>The application's reported status.</p>
-    pub fn set_device_reported_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceReportedStatus>,
-    ) -> Self {
+    pub fn set_device_reported_status(mut self, input: ::std::option::Option<crate::types::DeviceReportedStatus>) -> Self {
         self.device_reported_status = input;
         self
     }
     /// <p>The application's reported status.</p>
-    pub fn get_device_reported_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceReportedStatus> {
+    pub fn get_device_reported_status(&self) -> &::std::option::Option<crate::types::DeviceReportedStatus> {
         &self.device_reported_status
     }
     /// <p>When the device reported the application's state.</p>
@@ -118,10 +100,7 @@ impl ReportedRuntimeContextStateBuilder {
         self
     }
     /// <p>When the device reported the application's state.</p>
-    pub fn set_device_reported_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_device_reported_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.device_reported_time = input;
         self
     }

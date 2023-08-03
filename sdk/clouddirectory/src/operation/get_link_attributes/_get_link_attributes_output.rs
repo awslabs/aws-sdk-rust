@@ -21,20 +21,16 @@ impl ::aws_http::request_id::RequestId for GetLinkAttributesOutput {
 }
 impl GetLinkAttributesOutput {
     /// Creates a new builder-style object to manufacture [`GetLinkAttributesOutput`](crate::operation::get_link_attributes::GetLinkAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_link_attributes::builders::GetLinkAttributesOutputBuilder {
+    pub fn builder() -> crate::operation::get_link_attributes::builders::GetLinkAttributesOutputBuilder {
         crate::operation::get_link_attributes::builders::GetLinkAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLinkAttributesOutput`](crate::operation::get_link_attributes::GetLinkAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLinkAttributesOutputBuilder {
-    pub(crate) attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     _request_id: Option<String>,
 }
 impl GetLinkAttributesOutputBuilder {
@@ -50,17 +46,12 @@ impl GetLinkAttributesOutputBuilder {
         self
     }
     /// <p>The attributes that are associated with the typed link.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes that are associated with the typed link.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
         &self.attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

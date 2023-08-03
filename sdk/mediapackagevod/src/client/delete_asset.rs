@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::set_id): The ID of the MediaPackage VOD Asset resource to delete.
     /// - On success, responds with [`DeleteAssetOutput`](crate::operation::delete_asset::DeleteAssetOutput)
     /// - On failure, responds with [`SdkError<DeleteAssetError>`](crate::operation::delete_asset::DeleteAssetError)
-    pub fn delete_asset(
-        &self,
-    ) -> crate::operation::delete_asset::builders::DeleteAssetFluentBuilder {
+    pub fn delete_asset(&self) -> crate::operation::delete_asset::builders::DeleteAssetFluentBuilder {
         crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::new(self.handle.clone())
     }
 }

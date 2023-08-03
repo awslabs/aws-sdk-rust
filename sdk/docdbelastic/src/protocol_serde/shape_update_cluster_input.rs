@@ -13,9 +13,7 @@ pub fn ser_update_cluster_input(
         object.key("clientToken").string(var_3.as_str());
     }
     if let Some(var_4) = &input.preferred_maintenance_window {
-        object
-            .key("preferredMaintenanceWindow")
-            .string(var_4.as_str());
+        object.key("preferredMaintenanceWindow").string(var_4.as_str());
     }
     if let Some(var_5) = &input.shard_capacity {
         object.key("shardCapacity").number(

@@ -27,34 +27,27 @@ impl ::std::fmt::Display for InvalidRelativeFileVersionEnumException {
     }
 }
 impl ::std::error::Error for InvalidRelativeFileVersionEnumException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidRelativeFileVersionEnumException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidRelativeFileVersionEnumException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidRelativeFileVersionEnumException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidRelativeFileVersionEnumException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidRelativeFileVersionEnumException {
     /// Creates a new builder-style object to manufacture [`InvalidRelativeFileVersionEnumException`](crate::types::error::InvalidRelativeFileVersionEnumException).
-    pub fn builder() -> crate::types::error::builders::InvalidRelativeFileVersionEnumExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::InvalidRelativeFileVersionEnumExceptionBuilder {
         crate::types::error::builders::InvalidRelativeFileVersionEnumExceptionBuilder::default()
     }
 }
 
 /// A builder for [`InvalidRelativeFileVersionEnumException`](crate::types::error::InvalidRelativeFileVersionEnumException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidRelativeFileVersionEnumExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl InvalidRelativeFileVersionEnumExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

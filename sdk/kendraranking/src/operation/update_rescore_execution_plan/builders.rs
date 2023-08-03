@@ -26,7 +26,7 @@ impl UpdateRescoreExecutionPlanInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRescoreExecutionPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanInputBuilder,
+    inner: crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanInputBuilder,
 }
 impl UpdateRescoreExecutionPlanFluentBuilder {
     /// Creates a new `UpdateRescoreExecutionPlan`.
@@ -37,7 +37,7 @@ impl UpdateRescoreExecutionPlanFluentBuilder {
         }
     }
     /// Access the UpdateRescoreExecutionPlan as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateRescoreExecutionPlanFluentBuilder {
             crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateRescoreExecutionPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateRescoreExecutionPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateRescoreExecutionPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateRescoreExecutionPlanFluentBuilder {
             crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanError>,
     > {
         self.customize_middleware().await
     }
@@ -168,17 +157,12 @@ impl UpdateRescoreExecutionPlanFluentBuilder {
         self
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn set_capacity_units(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityUnitsConfiguration>,
-    ) -> Self {
+    pub fn set_capacity_units(mut self, input: ::std::option::Option<crate::types::CapacityUnitsConfiguration>) -> Self {
         self.inner = self.inner.set_capacity_units(input);
         self
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn get_capacity_units(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
+    pub fn get_capacity_units(&self) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
         self.inner.get_capacity_units()
     }
 }

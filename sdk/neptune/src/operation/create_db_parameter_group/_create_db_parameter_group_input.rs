@@ -52,18 +52,14 @@ impl CreateDbParameterGroupInput {
 }
 impl CreateDbParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateDbParameterGroupInput`](crate::operation::create_db_parameter_group::CreateDbParameterGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupInputBuilder {
         crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDbParameterGroupInput`](crate::operation::create_db_parameter_group::CreateDbParameterGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDbParameterGroupInputBuilder {
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_parameter_group_family: ::std::option::Option<::std::string::String>,
@@ -80,10 +76,7 @@ impl CreateDbParameterGroupInputBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
-    pub fn db_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -96,10 +89,7 @@ impl CreateDbParameterGroupInputBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
-    pub fn set_db_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
         self
     }
@@ -116,18 +106,12 @@ impl CreateDbParameterGroupInputBuilder {
         &self.db_parameter_group_name
     }
     /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
-    pub fn db_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
-    pub fn set_db_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_family = input;
         self
     }
@@ -161,10 +145,7 @@ impl CreateDbParameterGroupInputBuilder {
         self
     }
     /// <p>The tags to be assigned to the new DB parameter group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -179,13 +160,11 @@ impl CreateDbParameterGroupInputBuilder {
         crate::operation::create_db_parameter_group::CreateDbParameterGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_db_parameter_group::CreateDbParameterGroupInput {
-                db_parameter_group_name: self.db_parameter_group_name,
-                db_parameter_group_family: self.db_parameter_group_family,
-                description: self.description,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_db_parameter_group::CreateDbParameterGroupInput {
+            db_parameter_group_name: self.db_parameter_group_name,
+            db_parameter_group_family: self.db_parameter_group_family,
+            description: self.description,
+            tags: self.tags,
+        })
     }
 }

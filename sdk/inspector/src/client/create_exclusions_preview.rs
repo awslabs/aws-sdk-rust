@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateExclusionsPreviewOutput`](crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput) with field(s):
     ///   - [`preview_token(Option<String>)`](crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput::preview_token): <p>Specifies the unique identifier of the requested exclusions preview. You can use the unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview API.</p>
     /// - On failure, responds with [`SdkError<CreateExclusionsPreviewError>`](crate::operation::create_exclusions_preview::CreateExclusionsPreviewError)
-    pub fn create_exclusions_preview(
-        &self,
-    ) -> crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewFluentBuilder
-    {
+    pub fn create_exclusions_preview(&self) -> crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewFluentBuilder {
         crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,9 +36,7 @@ impl GetEntitlementsOutput {
 
 /// A builder for [`GetEntitlementsOutput`](crate::operation::get_entitlements::GetEntitlementsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEntitlementsOutputBuilder {
     pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl GetEntitlementsOutputBuilder {
         self
     }
     /// <p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
-    pub fn set_entitlements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
-    ) -> Self {
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>) -> Self {
         self.entitlements = input;
         self
     }
     /// <p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
-    pub fn get_entitlements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
         &self.entitlements
     }
     /// <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>

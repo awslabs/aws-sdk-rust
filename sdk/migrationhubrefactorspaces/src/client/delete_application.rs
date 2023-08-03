@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`state(Option<ApplicationState>)`](crate::operation::delete_application::DeleteApplicationOutput::state): <p>The current state of the application. </p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::delete_application::DeleteApplicationOutput::last_updated_time): <p>A timestamp that indicates when the environment was last updated. </p>
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::operation::delete_application::DeleteApplicationError)
-    pub fn delete_application(
-        &self,
-    ) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {
-        crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_application(&self) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {
+        crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::new(self.handle.clone())
     }
 }

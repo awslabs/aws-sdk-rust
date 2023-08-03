@@ -10,10 +10,7 @@ impl BatchReadInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_read::BatchReadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_read::BatchReadError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_read::BatchReadError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_read();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl BatchReadFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::batch_read::BatchRead,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::batch_read::BatchRead, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::batch_read::BatchReadError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl BatchReadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl BatchReadFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::batch_read::BatchRead,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::batch_read::BatchRead, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::batch_read::BatchReadError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -142,17 +124,12 @@ impl BatchReadFluentBuilder {
         self
     }
     /// <p>A list of operations that are part of the batch.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperation>>,
-    ) -> Self {
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperation>>) -> Self {
         self.inner = self.inner.set_operations(input);
         self
     }
     /// <p>A list of operations that are part of the batch.</p>
-    pub fn get_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperation>> {
         self.inner.get_operations()
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
@@ -161,10 +138,7 @@ impl BatchReadFluentBuilder {
         self
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
     }

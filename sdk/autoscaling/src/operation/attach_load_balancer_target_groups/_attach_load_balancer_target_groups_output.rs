@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AttachLoadBalancerTargetGroupsOutput 
 }
 impl AttachLoadBalancerTargetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`AttachLoadBalancerTargetGroupsOutput`](crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput).
-    pub fn builder() -> crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsOutputBuilder {
         crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachLoadBalancerTargetGroupsOutput`](crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachLoadBalancerTargetGroupsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl AttachLoadBalancerTargetGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AttachLoadBalancerTargetGroupsOutput`](crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput
-    {
+    pub fn build(self) -> crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput {
         crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput {
             _request_id: self._request_id,
         }

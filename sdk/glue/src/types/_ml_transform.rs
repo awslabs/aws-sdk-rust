@@ -186,9 +186,7 @@ impl MlTransform {
         self.max_retries
     }
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
-    pub fn transform_encryption(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransformEncryption> {
+    pub fn transform_encryption(&self) -> ::std::option::Option<&crate::types::TransformEncryption> {
         self.transform_encryption.as_ref()
     }
 }
@@ -201,9 +199,7 @@ impl MlTransform {
 
 /// A builder for [`MlTransform`](crate::types::MlTransform).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MlTransformBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -274,10 +270,7 @@ impl MlTransformBuilder {
         self
     }
     /// <p>The current status of the machine learning transform.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TransformStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -291,10 +284,7 @@ impl MlTransformBuilder {
         self
     }
     /// <p>A timestamp. The time and date that this machine learning transform was created.</p>
-    pub fn set_created_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_on = input;
         self
     }
@@ -308,10 +298,7 @@ impl MlTransformBuilder {
         self
     }
     /// <p>A timestamp. The last point in time when this machine learning transform was modified.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_on = input;
         self
     }
@@ -331,17 +318,12 @@ impl MlTransformBuilder {
         self
     }
     /// <p>A list of Glue table definitions used by the transform.</p>
-    pub fn set_input_record_tables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueTable>>,
-    ) -> Self {
+    pub fn set_input_record_tables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueTable>>) -> Self {
         self.input_record_tables = input;
         self
     }
     /// <p>A list of Glue table definitions used by the transform.</p>
-    pub fn get_input_record_tables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueTable>> {
+    pub fn get_input_record_tables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueTable>> {
         &self.input_record_tables
     }
     /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the behavior of the machine learning transform by specifying what data it learns from and your preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).</p>
@@ -350,10 +332,7 @@ impl MlTransformBuilder {
         self
     }
     /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the behavior of the machine learning transform by specifying what data it learns from and your preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformParameters>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::TransformParameters>) -> Self {
         self.parameters = input;
         self
     }
@@ -367,17 +346,12 @@ impl MlTransformBuilder {
         self
     }
     /// <p>An <code>EvaluationMetrics</code> object. Evaluation metrics provide an estimate of the quality of your machine learning transform.</p>
-    pub fn set_evaluation_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationMetrics>,
-    ) -> Self {
+    pub fn set_evaluation_metrics(mut self, input: ::std::option::Option<crate::types::EvaluationMetrics>) -> Self {
         self.evaluation_metrics = input;
         self
     }
     /// <p>An <code>EvaluationMetrics</code> object. Evaluation metrics provide an estimate of the quality of your machine learning transform.</p>
-    pub fn get_evaluation_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationMetrics> {
+    pub fn get_evaluation_metrics(&self) -> &::std::option::Option<crate::types::EvaluationMetrics> {
         &self.evaluation_metrics
     }
     /// <p>A count identifier for the labeling files generated by Glue for this transform. As you create a better transform, you can iteratively download, label, and upload the labeling file.</p>
@@ -406,17 +380,12 @@ impl MlTransformBuilder {
         self
     }
     /// <p>A map of key-value pairs representing the columns and data types that this transform can run against. Has an upper bound of 100 columns.</p>
-    pub fn set_schema(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>>,
-    ) -> Self {
+    pub fn set_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>>) -> Self {
         self.schema = input;
         self
     }
     /// <p>A map of key-value pairs representing the columns and data types that this transform can run against. Has an upper bound of 100 columns.</p>
-    pub fn get_schema(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>> {
+    pub fn get_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>> {
         &self.schema
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
@@ -527,10 +496,7 @@ impl MlTransformBuilder {
     /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
     /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
     /// </ul>
-    pub fn set_worker_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkerType>,
-    ) -> Self {
+    pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
         self.worker_type = input;
         self
     }
@@ -601,17 +567,12 @@ impl MlTransformBuilder {
         self
     }
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
-    pub fn set_transform_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformEncryption>,
-    ) -> Self {
+    pub fn set_transform_encryption(mut self, input: ::std::option::Option<crate::types::TransformEncryption>) -> Self {
         self.transform_encryption = input;
         self
     }
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
-    pub fn get_transform_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransformEncryption> {
+    pub fn get_transform_encryption(&self) -> &::std::option::Option<crate::types::TransformEncryption> {
         &self.transform_encryption
     }
     /// Consumes the builder and constructs a [`MlTransform`](crate::types::MlTransform).

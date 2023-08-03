@@ -44,9 +44,7 @@ impl RenameField {
 
 /// A builder for [`RenameField`](crate::types::RenameField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RenameFieldBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -80,10 +78,7 @@ impl RenameFieldBuilder {
         self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
@@ -103,17 +98,12 @@ impl RenameFieldBuilder {
         self
     }
     /// <p>A JSON path to a variable in the data structure for the source data.</p>
-    pub fn set_source_path(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_path(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_path = input;
         self
     }
     /// <p>A JSON path to a variable in the data structure for the source data.</p>
-    pub fn get_source_path(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_path(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_path
     }
     /// Appends an item to `target_path`.
@@ -128,17 +118,12 @@ impl RenameFieldBuilder {
         self
     }
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
-    pub fn set_target_path(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_path(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_path = input;
         self
     }
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
-    pub fn get_target_path(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_path(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_path
     }
     /// Consumes the builder and constructs a [`RenameField`](crate::types::RenameField).

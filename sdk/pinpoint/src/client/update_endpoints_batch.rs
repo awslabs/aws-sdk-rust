@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateEndpointsBatchOutput`](crate::operation::update_endpoints_batch::UpdateEndpointsBatchOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::operation::update_endpoints_batch::UpdateEndpointsBatchOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdateEndpointsBatchError>`](crate::operation::update_endpoints_batch::UpdateEndpointsBatchError)
-    pub fn update_endpoints_batch(
-        &self,
-    ) -> crate::operation::update_endpoints_batch::builders::UpdateEndpointsBatchFluentBuilder {
-        crate::operation::update_endpoints_batch::builders::UpdateEndpointsBatchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_endpoints_batch(&self) -> crate::operation::update_endpoints_batch::builders::UpdateEndpointsBatchFluentBuilder {
+        crate::operation::update_endpoints_batch::builders::UpdateEndpointsBatchFluentBuilder::new(self.handle.clone())
     }
 }

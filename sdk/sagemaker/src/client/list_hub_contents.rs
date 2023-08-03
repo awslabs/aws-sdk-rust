@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`hub_content_summaries(Option<Vec<HubContentInfo>>)`](crate::operation::list_hub_contents::ListHubContentsOutput::hub_content_summaries): <p>The summaries of the listed hub content.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_hub_contents::ListHubContentsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListHubContentsError>`](crate::operation::list_hub_contents::ListHubContentsError)
-    pub fn list_hub_contents(
-        &self,
-    ) -> crate::operation::list_hub_contents::builders::ListHubContentsFluentBuilder {
-        crate::operation::list_hub_contents::builders::ListHubContentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_hub_contents(&self) -> crate::operation::list_hub_contents::builders::ListHubContentsFluentBuilder {
+        crate::operation::list_hub_contents::builders::ListHubContentsFluentBuilder::new(self.handle.clone())
     }
 }

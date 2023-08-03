@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopRecommenderOutput`](crate::operation::stop_recommender::StopRecommenderOutput) with field(s):
     ///   - [`recommender_arn(Option<String>)`](crate::operation::stop_recommender::StopRecommenderOutput::recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
     /// - On failure, responds with [`SdkError<StopRecommenderError>`](crate::operation::stop_recommender::StopRecommenderError)
-    pub fn stop_recommender(
-        &self,
-    ) -> crate::operation::stop_recommender::builders::StopRecommenderFluentBuilder {
-        crate::operation::stop_recommender::builders::StopRecommenderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_recommender(&self) -> crate::operation::stop_recommender::builders::StopRecommenderFluentBuilder {
+        crate::operation::stop_recommender::builders::StopRecommenderFluentBuilder::new(self.handle.clone())
     }
 }

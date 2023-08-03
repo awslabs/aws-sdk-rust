@@ -10,10 +10,7 @@ impl DescribeVtlDevicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_vtl_devices::DescribeVtlDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vtl_devices::DescribeVTLDevicesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vtl_devices::DescribeVTLDevicesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_vtl_devices();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeVTLDevicesFluentBuilder {
         }
     }
     /// Access the DescribeVTLDevices as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_vtl_devices::builders::DescribeVtlDevicesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_vtl_devices::builders::DescribeVtlDevicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeVTLDevicesFluentBuilder {
             crate::operation::describe_vtl_devices::DescribeVTLDevices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vtl_devices::DescribeVTLDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vtl_devices::DescribeVTLDevicesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeVTLDevicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeVTLDevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vtl_devices::DescribeVtlDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vtl_devices::DescribeVTLDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vtl_devices::DescribeVTLDevicesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeVTLDevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vtl_devices::DescribeVtlDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vtl_devices::DescribeVTLDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vtl_devices::DescribeVTLDevicesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl DescribeVTLDevicesFluentBuilder {
             crate::operation::describe_vtl_devices::DescribeVTLDevices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vtl_devices::DescribeVTLDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vtl_devices::DescribeVTLDevicesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator {
-        crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator {
+        crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,29 +134,21 @@ impl DescribeVTLDevicesFluentBuilder {
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    pub fn vtl_device_ar_ns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vtl_device_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vtl_device_ar_ns(input.into());
         self
     }
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    pub fn set_vtl_device_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vtl_device_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vtl_device_ar_ns(input);
         self
     }
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    pub fn get_vtl_device_ar_ns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vtl_device_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vtl_device_ar_ns()
     }
     /// <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>

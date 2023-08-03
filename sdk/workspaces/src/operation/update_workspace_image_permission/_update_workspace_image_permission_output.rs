@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateWorkspaceImagePermissionOutput 
 }
 impl UpdateWorkspaceImagePermissionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceImagePermissionOutput`](crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput).
-    pub fn builder() -> crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionOutputBuilder{
+    pub fn builder() -> crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionOutputBuilder {
         crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkspaceImagePermissionOutput`](crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceImagePermissionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateWorkspaceImagePermissionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceImagePermissionOutput`](crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput
-    {
+    pub fn build(self) -> crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput {
         crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput {
             _request_id: self._request_id,
         }

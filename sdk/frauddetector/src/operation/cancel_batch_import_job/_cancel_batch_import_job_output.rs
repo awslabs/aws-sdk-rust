@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelBatchImportJobOutput {
 }
 impl CancelBatchImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelBatchImportJobOutput`](crate::operation::cancel_batch_import_job::CancelBatchImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobOutputBuilder {
         crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelBatchImportJobOutput`](crate::operation::cancel_batch_import_job::CancelBatchImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelBatchImportJobOutputBuilder {
     _request_id: Option<String>,
 }

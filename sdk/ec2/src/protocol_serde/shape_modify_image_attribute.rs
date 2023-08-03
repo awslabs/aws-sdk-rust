@@ -9,12 +9,8 @@ pub fn de_modify_image_attribute_http_error(
     crate::operation::modify_image_attribute::ModifyImageAttributeError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::modify_image_attribute::ModifyImageAttributeError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::modify_image_attribute::ModifyImageAttributeError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::modify_image_attribute::ModifyImageAttributeError::generic(generic))
@@ -32,9 +28,7 @@ pub fn de_modify_image_attribute_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::modify_image_attribute::builders::ModifyImageAttributeOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

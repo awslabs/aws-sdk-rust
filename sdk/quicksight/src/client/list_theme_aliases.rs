@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::list_theme_aliases::ListThemeAliasesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_theme_aliases::ListThemeAliasesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListThemeAliasesError>`](crate::operation::list_theme_aliases::ListThemeAliasesError)
-    pub fn list_theme_aliases(
-        &self,
-    ) -> crate::operation::list_theme_aliases::builders::ListThemeAliasesFluentBuilder {
-        crate::operation::list_theme_aliases::builders::ListThemeAliasesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_theme_aliases(&self) -> crate::operation::list_theme_aliases::builders::ListThemeAliasesFluentBuilder {
+        crate::operation::list_theme_aliases::builders::ListThemeAliasesFluentBuilder::new(self.handle.clone())
     }
 }

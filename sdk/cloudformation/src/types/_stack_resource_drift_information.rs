@@ -25,9 +25,7 @@ impl StackResourceDriftInformation {
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its expected configuration.</p> <p>Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p> </li>
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected configuration.</p> </li>
     /// </ul>
-    pub fn stack_resource_drift_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackResourceDriftStatus> {
+    pub fn stack_resource_drift_status(&self) -> ::std::option::Option<&crate::types::StackResourceDriftStatus> {
         self.stack_resource_drift_status.as_ref()
     }
     /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
@@ -44,12 +42,9 @@ impl StackResourceDriftInformation {
 
 /// A builder for [`StackResourceDriftInformation`](crate::types::StackResourceDriftInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackResourceDriftInformationBuilder {
-    pub(crate) stack_resource_drift_status:
-        ::std::option::Option<crate::types::StackResourceDriftStatus>,
+    pub(crate) stack_resource_drift_status: ::std::option::Option<crate::types::StackResourceDriftStatus>,
     pub(crate) last_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StackResourceDriftInformationBuilder {
@@ -60,10 +55,7 @@ impl StackResourceDriftInformationBuilder {
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its expected configuration.</p> <p>Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p> </li>
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected configuration.</p> </li>
     /// </ul>
-    pub fn stack_resource_drift_status(
-        mut self,
-        input: crate::types::StackResourceDriftStatus,
-    ) -> Self {
+    pub fn stack_resource_drift_status(mut self, input: crate::types::StackResourceDriftStatus) -> Self {
         self.stack_resource_drift_status = ::std::option::Option::Some(input);
         self
     }
@@ -74,10 +66,7 @@ impl StackResourceDriftInformationBuilder {
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its expected configuration.</p> <p>Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p> </li>
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected configuration.</p> </li>
     /// </ul>
-    pub fn set_stack_resource_drift_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackResourceDriftStatus>,
-    ) -> Self {
+    pub fn set_stack_resource_drift_status(mut self, input: ::std::option::Option<crate::types::StackResourceDriftStatus>) -> Self {
         self.stack_resource_drift_status = input;
         self
     }
@@ -88,9 +77,7 @@ impl StackResourceDriftInformationBuilder {
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its expected configuration.</p> <p>Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p> </li>
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected configuration.</p> </li>
     /// </ul>
-    pub fn get_stack_resource_drift_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackResourceDriftStatus> {
+    pub fn get_stack_resource_drift_status(&self) -> &::std::option::Option<crate::types::StackResourceDriftStatus> {
         &self.stack_resource_drift_status
     }
     /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
@@ -99,10 +86,7 @@ impl StackResourceDriftInformationBuilder {
         self
     }
     /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
-    pub fn set_last_check_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_check_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_check_timestamp = input;
         self
     }

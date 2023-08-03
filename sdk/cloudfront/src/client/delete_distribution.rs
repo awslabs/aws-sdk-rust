@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`if_match(impl ::std::convert::Into<String>)`](crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder::set_if_match): <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On success, responds with [`DeleteDistributionOutput`](crate::operation::delete_distribution::DeleteDistributionOutput)
     /// - On failure, responds with [`SdkError<DeleteDistributionError>`](crate::operation::delete_distribution::DeleteDistributionError)
-    pub fn delete_distribution(
-        &self,
-    ) -> crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder {
-        crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_distribution(&self) -> crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder {
+        crate::operation::delete_distribution::builders::DeleteDistributionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -47,30 +47,24 @@ impl PutBucketReplicationInput {
         self.bucket.as_deref()
     }
     /// <p></p>
-    pub fn replication_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplicationConfiguration> {
+    pub fn replication_configuration(&self) -> ::std::option::Option<&crate::types::ReplicationConfiguration> {
         self.replication_configuration.as_ref()
     }
 }
 impl PutBucketReplicationInput {
     /// Creates a new builder-style object to manufacture [`PutBucketReplicationInput`](crate::operation::put_bucket_replication::PutBucketReplicationInput).
-    pub fn builder(
-    ) -> crate::operation::put_bucket_replication::builders::PutBucketReplicationInputBuilder {
+    pub fn builder() -> crate::operation::put_bucket_replication::builders::PutBucketReplicationInputBuilder {
         crate::operation::put_bucket_replication::builders::PutBucketReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutBucketReplicationInput`](crate::operation::put_bucket_replication::PutBucketReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketReplicationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_configuration:
-        ::std::option::Option<crate::types::ReplicationConfiguration>,
+    pub(crate) replication_configuration: ::std::option::Option<crate::types::ReplicationConfiguration>,
 }
 impl PutBucketReplicationInputBuilder {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
@@ -138,40 +132,28 @@ impl PutBucketReplicationInputBuilder {
         &self.bucket
     }
     /// <p></p>
-    pub fn replication_configuration(
-        mut self,
-        input: crate::types::ReplicationConfiguration,
-    ) -> Self {
+    pub fn replication_configuration(mut self, input: crate::types::ReplicationConfiguration) -> Self {
         self.replication_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_replication_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfiguration>,
-    ) -> Self {
+    pub fn set_replication_configuration(mut self, input: ::std::option::Option<crate::types::ReplicationConfiguration>) -> Self {
         self.replication_configuration = input;
         self
     }
     /// <p></p>
-    pub fn get_replication_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
+    pub fn get_replication_configuration(&self) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
         &self.replication_configuration
     }
     /// Consumes the builder and constructs a [`PutBucketReplicationInput`](crate::operation::put_bucket_replication::PutBucketReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bucket_replication::PutBucketReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_bucket_replication::PutBucketReplicationInput {
-                account_id: self.account_id,
-                bucket: self.bucket,
-                replication_configuration: self.replication_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_bucket_replication::PutBucketReplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_bucket_replication::PutBucketReplicationInput {
+            account_id: self.account_id,
+            bucket: self.bucket,
+            replication_configuration: self.replication_configuration,
+        })
     }
 }

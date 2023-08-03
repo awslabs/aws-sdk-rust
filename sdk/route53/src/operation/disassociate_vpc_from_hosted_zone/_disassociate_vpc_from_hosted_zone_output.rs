@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for DisassociateVpcFromHostedZoneOutput {
 }
 impl DisassociateVpcFromHostedZoneOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateVpcFromHostedZoneOutput`](crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneOutput).
-    pub fn builder() -> crate::operation::disassociate_vpc_from_hosted_zone::builders::DisassociateVpcFromHostedZoneOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_vpc_from_hosted_zone::builders::DisassociateVpcFromHostedZoneOutputBuilder {
         crate::operation::disassociate_vpc_from_hosted_zone::builders::DisassociateVpcFromHostedZoneOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateVpcFromHostedZoneOutput`](crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateVpcFromHostedZoneOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl DisassociateVpcFromHostedZoneOutputBuilder {
         self
     }
     /// <p>A complex type that describes the changes made to the specified private hosted zone.</p>
-    pub fn set_change_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeInfo>,
-    ) -> Self {
+    pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
         self.change_info = input;
         self
     }
@@ -64,10 +59,7 @@ impl DisassociateVpcFromHostedZoneOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateVpcFromHostedZoneOutput`](crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneOutput {
         crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneOutput {
             change_info: self.change_info,
             _request_id: self._request_id,

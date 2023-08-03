@@ -19,9 +19,7 @@ impl DeprecateDomainOutput {
 
 /// A builder for [`DeprecateDomainOutput`](crate::operation::deprecate_domain::DeprecateDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprecateDomainOutputBuilder {
     _request_id: Option<String>,
 }

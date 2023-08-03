@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`fleet_summary_list(Option<Vec<FleetSummary>>)`](crate::operation::list_fleets::ListFleetsOutput::fleet_summary_list): <p>The summary list of the fleets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fleets::ListFleetsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListFleetsError>`](crate::operation::list_fleets::ListFleetsError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
     pub fn list_fleets(&self) -> crate::operation::list_fleets::builders::ListFleetsFluentBuilder {
         crate::operation::list_fleets::builders::ListFleetsFluentBuilder::new(self.handle.clone())
     }

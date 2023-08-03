@@ -24,8 +24,7 @@ pub struct ConnectorProfile {
     pub credentials_arn: ::std::option::Option<::std::string::String>,
     /// <p> The connector-specific properties of the profile configuration. </p>
     #[doc(hidden)]
-    pub connector_profile_properties:
-        ::std::option::Option<crate::types::ConnectorProfileProperties>,
+    pub connector_profile_properties: ::std::option::Option<crate::types::ConnectorProfileProperties>,
     /// <p> Specifies when the connector profile was created. </p>
     #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -34,8 +33,7 @@ pub struct ConnectorProfile {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies the private connection provisioning state. </p>
     #[doc(hidden)]
-    pub private_connection_provisioning_state:
-        ::std::option::Option<crate::types::PrivateConnectionProvisioningState>,
+    pub private_connection_provisioning_state: ::std::option::Option<crate::types::PrivateConnectionProvisioningState>,
 }
 impl ConnectorProfile {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
@@ -63,9 +61,7 @@ impl ConnectorProfile {
         self.credentials_arn.as_deref()
     }
     /// <p> The connector-specific properties of the profile configuration. </p>
-    pub fn connector_profile_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectorProfileProperties> {
+    pub fn connector_profile_properties(&self) -> ::std::option::Option<&crate::types::ConnectorProfileProperties> {
         self.connector_profile_properties.as_ref()
     }
     /// <p> Specifies when the connector profile was created. </p>
@@ -77,9 +73,7 @@ impl ConnectorProfile {
         self.last_updated_at.as_ref()
     }
     /// <p> Specifies the private connection provisioning state. </p>
-    pub fn private_connection_provisioning_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PrivateConnectionProvisioningState> {
+    pub fn private_connection_provisioning_state(&self) -> ::std::option::Option<&crate::types::PrivateConnectionProvisioningState> {
         self.private_connection_provisioning_state.as_ref()
     }
 }
@@ -92,9 +86,7 @@ impl ConnectorProfile {
 
 /// A builder for [`ConnectorProfile`](crate::types::ConnectorProfile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectorProfileBuilder {
     pub(crate) connector_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connector_profile_name: ::std::option::Option<::std::string::String>,
@@ -102,27 +94,19 @@ pub struct ConnectorProfileBuilder {
     pub(crate) connector_label: ::std::option::Option<::std::string::String>,
     pub(crate) connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
     pub(crate) credentials_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) connector_profile_properties:
-        ::std::option::Option<crate::types::ConnectorProfileProperties>,
+    pub(crate) connector_profile_properties: ::std::option::Option<crate::types::ConnectorProfileProperties>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) private_connection_provisioning_state:
-        ::std::option::Option<crate::types::PrivateConnectionProvisioningState>,
+    pub(crate) private_connection_provisioning_state: ::std::option::Option<crate::types::PrivateConnectionProvisioningState>,
 }
 impl ConnectorProfileBuilder {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
-    pub fn connector_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
-    pub fn set_connector_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_profile_arn = input;
         self
     }
@@ -131,18 +115,12 @@ impl ConnectorProfileBuilder {
         &self.connector_profile_arn
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn connector_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn set_connector_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_profile_name = input;
         self
     }
@@ -156,10 +134,7 @@ impl ConnectorProfileBuilder {
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
+    pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.connector_type = input;
         self
     }
@@ -168,18 +143,12 @@ impl ConnectorProfileBuilder {
         &self.connector_type
     }
     /// <p>The label for the connector profile being created.</p>
-    pub fn connector_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The label for the connector profile being created.</p>
-    pub fn set_connector_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_label = input;
         self
     }
@@ -193,10 +162,7 @@ impl ConnectorProfileBuilder {
         self
     }
     /// <p> Indicates the connection mode and if it is public or private. </p>
-    pub fn set_connection_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionMode>,
-    ) -> Self {
+    pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
         self.connection_mode = input;
         self
     }
@@ -205,18 +171,12 @@ impl ConnectorProfileBuilder {
         &self.connection_mode
     }
     /// <p> The Amazon Resource Name (ARN) of the connector profile credentials. </p>
-    pub fn credentials_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn credentials_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credentials_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the connector profile credentials. </p>
-    pub fn set_credentials_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_credentials_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credentials_arn = input;
         self
     }
@@ -225,25 +185,17 @@ impl ConnectorProfileBuilder {
         &self.credentials_arn
     }
     /// <p> The connector-specific properties of the profile configuration. </p>
-    pub fn connector_profile_properties(
-        mut self,
-        input: crate::types::ConnectorProfileProperties,
-    ) -> Self {
+    pub fn connector_profile_properties(mut self, input: crate::types::ConnectorProfileProperties) -> Self {
         self.connector_profile_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p> The connector-specific properties of the profile configuration. </p>
-    pub fn set_connector_profile_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorProfileProperties>,
-    ) -> Self {
+    pub fn set_connector_profile_properties(mut self, input: ::std::option::Option<crate::types::ConnectorProfileProperties>) -> Self {
         self.connector_profile_properties = input;
         self
     }
     /// <p> The connector-specific properties of the profile configuration. </p>
-    pub fn get_connector_profile_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorProfileProperties> {
+    pub fn get_connector_profile_properties(&self) -> &::std::option::Option<crate::types::ConnectorProfileProperties> {
         &self.connector_profile_properties
     }
     /// <p> Specifies when the connector profile was created. </p>
@@ -252,10 +204,7 @@ impl ConnectorProfileBuilder {
         self
     }
     /// <p> Specifies when the connector profile was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -269,10 +218,7 @@ impl ConnectorProfileBuilder {
         self
     }
     /// <p> Specifies when the connector profile was last updated. </p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -281,10 +227,7 @@ impl ConnectorProfileBuilder {
         &self.last_updated_at
     }
     /// <p> Specifies the private connection provisioning state. </p>
-    pub fn private_connection_provisioning_state(
-        mut self,
-        input: crate::types::PrivateConnectionProvisioningState,
-    ) -> Self {
+    pub fn private_connection_provisioning_state(mut self, input: crate::types::PrivateConnectionProvisioningState) -> Self {
         self.private_connection_provisioning_state = ::std::option::Option::Some(input);
         self
     }
@@ -297,9 +240,7 @@ impl ConnectorProfileBuilder {
         self
     }
     /// <p> Specifies the private connection provisioning state. </p>
-    pub fn get_private_connection_provisioning_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::PrivateConnectionProvisioningState> {
+    pub fn get_private_connection_provisioning_state(&self) -> &::std::option::Option<crate::types::PrivateConnectionProvisioningState> {
         &self.private_connection_provisioning_state
     }
     /// Consumes the builder and constructs a [`ConnectorProfile`](crate::types::ConnectorProfile).

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataFluentBuilder::set_description): <p>The description.</p>
     /// - On success, responds with [`UpdateDetectorVersionMetadataOutput`](crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataOutput)
     /// - On failure, responds with [`SdkError<UpdateDetectorVersionMetadataError>`](crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataError)
-    pub fn update_detector_version_metadata(&self) -> crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataFluentBuilder{
+    pub fn update_detector_version_metadata(
+        &self,
+    ) -> crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataFluentBuilder {
         crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataFluentBuilder::new(self.handle.clone())
     }
 }

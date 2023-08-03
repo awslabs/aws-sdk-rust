@@ -44,9 +44,7 @@ impl Radios {
 
 /// A builder for [`Radios`](crate::types::Radios).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RadiosBuilder {
     pub(crate) wifi: ::std::option::Option<bool>,
     pub(crate) bluetooth: ::std::option::Option<bool>,

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`verified_access_trust_provider(Option<VerifiedAccessTrustProvider>)`](crate::operation::attach_verified_access_trust_provider::AttachVerifiedAccessTrustProviderOutput::verified_access_trust_provider): <p>The ID of the Verified Access trust provider.</p>
     ///   - [`verified_access_instance(Option<VerifiedAccessInstance>)`](crate::operation::attach_verified_access_trust_provider::AttachVerifiedAccessTrustProviderOutput::verified_access_instance): <p>The ID of the Verified Access instance.</p>
     /// - On failure, responds with [`SdkError<AttachVerifiedAccessTrustProviderError>`](crate::operation::attach_verified_access_trust_provider::AttachVerifiedAccessTrustProviderError)
-    pub fn attach_verified_access_trust_provider(&self) -> crate::operation::attach_verified_access_trust_provider::builders::AttachVerifiedAccessTrustProviderFluentBuilder{
+    pub fn attach_verified_access_trust_provider(
+        &self,
+    ) -> crate::operation::attach_verified_access_trust_provider::builders::AttachVerifiedAccessTrustProviderFluentBuilder {
         crate::operation::attach_verified_access_trust_provider::builders::AttachVerifiedAccessTrustProviderFluentBuilder::new(self.handle.clone())
     }
 }

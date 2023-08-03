@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AdjustmentType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for AdjustmentType {
             "CHANGE_IN_CAPACITY" => AdjustmentType::ChangeInCapacity,
             "EXACT_CAPACITY" => AdjustmentType::ExactCapacity,
             "PERCENT_CHANGE_IN_CAPACITY" => AdjustmentType::PercentChangeInCapacity,
-            other => {
-                AdjustmentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AdjustmentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl AdjustmentType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CHANGE_IN_CAPACITY",
-            "EXACT_CAPACITY",
-            "PERCENT_CHANGE_IN_CAPACITY",
-        ]
+        &["CHANGE_IN_CAPACITY", "EXACT_CAPACITY", "PERCENT_CHANGE_IN_CAPACITY"]
     }
 }
 impl ::std::convert::AsRef<str> for AdjustmentType {

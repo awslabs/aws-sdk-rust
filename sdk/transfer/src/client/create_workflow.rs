@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateWorkflowOutput`](crate::operation::create_workflow::CreateWorkflowOutput) with field(s):
     ///   - [`workflow_id(Option<String>)`](crate::operation::create_workflow::CreateWorkflowOutput::workflow_id): <p>A unique identifier for the workflow.</p>
     /// - On failure, responds with [`SdkError<CreateWorkflowError>`](crate::operation::create_workflow::CreateWorkflowError)
-    pub fn create_workflow(
-        &self,
-    ) -> crate::operation::create_workflow::builders::CreateWorkflowFluentBuilder {
-        crate::operation::create_workflow::builders::CreateWorkflowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_workflow(&self) -> crate::operation::create_workflow::builders::CreateWorkflowFluentBuilder {
+        crate::operation::create_workflow::builders::CreateWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

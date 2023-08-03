@@ -10,10 +10,7 @@ impl UpdateMapInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_map::UpdateMapOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_map::UpdateMapError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_map::UpdateMapError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_map();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateMapFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_map::UpdateMap,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_map::UpdateMap, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_map::UpdateMapError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateMapFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateMapFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_map::UpdateMap,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_map::UpdateMap, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_map::UpdateMapError>,
     > {
         self.customize_middleware().await
@@ -127,31 +115,19 @@ impl UpdateMapFluentBuilder {
         self.inner.get_map_name()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.inner = self.inner.pricing_plan(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn set_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
+    pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.inner = self.inner.set_pricing_plan(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
         self.inner.get_pricing_plan()
     }
@@ -175,17 +151,12 @@ impl UpdateMapFluentBuilder {
         self
     }
     /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
-    pub fn set_configuration_update(
-        mut self,
-        input: ::std::option::Option<crate::types::MapConfigurationUpdate>,
-    ) -> Self {
+    pub fn set_configuration_update(mut self, input: ::std::option::Option<crate::types::MapConfigurationUpdate>) -> Self {
         self.inner = self.inner.set_configuration_update(input);
         self
     }
     /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
-    pub fn get_configuration_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::MapConfigurationUpdate> {
+    pub fn get_configuration_update(&self) -> &::std::option::Option<crate::types::MapConfigurationUpdate> {
         self.inner.get_configuration_update()
     }
 }

@@ -37,9 +37,7 @@ impl WorkUnitRange {
 
 /// A builder for [`WorkUnitRange`](crate::types::WorkUnitRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkUnitRangeBuilder {
     pub(crate) work_unit_id_max: ::std::option::Option<i64>,
     pub(crate) work_unit_id_min: ::std::option::Option<i64>,
@@ -75,18 +73,12 @@ impl WorkUnitRangeBuilder {
         &self.work_unit_id_min
     }
     /// <p>A work token used to query the execution service.</p>
-    pub fn work_unit_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn work_unit_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_unit_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A work token used to query the execution service.</p>
-    pub fn set_work_unit_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_work_unit_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.work_unit_token = input;
         self
     }

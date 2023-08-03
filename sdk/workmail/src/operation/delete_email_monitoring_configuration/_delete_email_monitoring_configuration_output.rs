@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteEmailMonitoringConfigurationOut
 }
 impl DeleteEmailMonitoringConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEmailMonitoringConfigurationOutput`](crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationOutputBuilder {
         crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEmailMonitoringConfigurationOutput`](crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEmailMonitoringConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteEmailMonitoringConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteEmailMonitoringConfigurationOutput`](crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput{
+    pub fn build(self) -> crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput {
         crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput {
             _request_id: self._request_id,
         }

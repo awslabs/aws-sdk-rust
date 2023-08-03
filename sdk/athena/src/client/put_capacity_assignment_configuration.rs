@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`capacity_assignments(Vec<CapacityAssignment>)`](crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationFluentBuilder::capacity_assignments) / [`set_capacity_assignments(Option<Vec<CapacityAssignment>>)`](crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationFluentBuilder::set_capacity_assignments): <p>The list of assignments for the capacity assignment configuration.</p>
     /// - On success, responds with [`PutCapacityAssignmentConfigurationOutput`](crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutCapacityAssignmentConfigurationError>`](crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError)
-    pub fn put_capacity_assignment_configuration(&self) -> crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationFluentBuilder{
+    pub fn put_capacity_assignment_configuration(
+        &self,
+    ) -> crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationFluentBuilder {
         crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

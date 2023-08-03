@@ -55,17 +55,14 @@ impl AddTagsToResourceInput {
 }
 impl AddTagsToResourceInput {
     /// Creates a new builder-style object to manufacture [`AddTagsToResourceInput`](crate::operation::add_tags_to_resource::AddTagsToResourceInput).
-    pub fn builder(
-    ) -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
+    pub fn builder() -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
         crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`AddTagsToResourceInput`](crate::operation::add_tags_to_resource::AddTagsToResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddTagsToResourceInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceTypeForTagging>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -82,19 +79,14 @@ impl AddTagsToResourceInputBuilder {
     /// <p>Specifies the type of resource you are tagging.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceTypeForTagging>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceTypeForTagging>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>Specifies the type of resource you are tagging.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceTypeForTagging> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceTypeForTagging> {
         &self.resource_type
     }
     /// <p>The resource ID you want to tag.</p>
@@ -154,10 +146,7 @@ impl AddTagsToResourceInputBuilder {
     /// <p>One or more tags. The value parameter is required.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -170,16 +159,11 @@ impl AddTagsToResourceInputBuilder {
     /// Consumes the builder and constructs a [`AddTagsToResourceInput`](crate::operation::add_tags_to_resource::AddTagsToResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_tags_to_resource::AddTagsToResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_tags_to_resource::AddTagsToResourceInput {
-                resource_type: self.resource_type,
-                resource_id: self.resource_id,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_tags_to_resource::AddTagsToResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::add_tags_to_resource::AddTagsToResourceInput {
+            resource_type: self.resource_type,
+            resource_id: self.resource_id,
+            tags: self.tags,
+        })
     }
 }

@@ -56,9 +56,7 @@ impl DescribeDomainOutput {
 
 /// A builder for [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>The time that the domain was added.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -119,10 +114,7 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>The current state for the domain.</p>
-    pub fn set_domain_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainStatus>,
-    ) -> Self {
+    pub fn set_domain_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
         self.domain_status = input;
         self
     }
@@ -131,18 +123,12 @@ impl DescribeDomainOutputBuilder {
         &self.domain_status
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-    pub fn acm_certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn acm_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acm_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-    pub fn set_acm_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_acm_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acm_certificate_arn = input;
         self
     }

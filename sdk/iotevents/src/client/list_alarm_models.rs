@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`alarm_model_summaries(Option<Vec<AlarmModelSummary>>)`](crate::operation::list_alarm_models::ListAlarmModelsOutput::alarm_model_summaries): <p>A list that summarizes each alarm model.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_alarm_models::ListAlarmModelsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAlarmModelsError>`](crate::operation::list_alarm_models::ListAlarmModelsError)
-    pub fn list_alarm_models(
-        &self,
-    ) -> crate::operation::list_alarm_models::builders::ListAlarmModelsFluentBuilder {
-        crate::operation::list_alarm_models::builders::ListAlarmModelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_alarm_models(&self) -> crate::operation::list_alarm_models::builders::ListAlarmModelsFluentBuilder {
+        crate::operation::list_alarm_models::builders::ListAlarmModelsFluentBuilder::new(self.handle.clone())
     }
 }

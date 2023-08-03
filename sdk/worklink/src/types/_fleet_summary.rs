@@ -27,9 +27,7 @@ pub struct FleetSummary {
     pub fleet_status: ::std::option::Option<crate::types::FleetStatus>,
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FleetSummary {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -61,11 +59,7 @@ impl FleetSummary {
         self.fleet_status.as_ref()
     }
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -78,9 +72,7 @@ impl FleetSummary {
 
 /// A builder for [`FleetSummary`](crate::types::FleetSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FleetSummaryBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -89,9 +81,7 @@ pub struct FleetSummaryBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) company_code: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_status: ::std::option::Option<crate::types::FleetStatus>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FleetSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -114,10 +104,7 @@ impl FleetSummaryBuilder {
         self
     }
     /// <p>The time when the fleet was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -131,10 +118,7 @@ impl FleetSummaryBuilder {
         self
     }
     /// <p>The time when the fleet was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -190,10 +174,7 @@ impl FleetSummaryBuilder {
         self
     }
     /// <p>The status of the fleet.</p>
-    pub fn set_fleet_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetStatus>,
-    ) -> Self {
+    pub fn set_fleet_status(mut self, input: ::std::option::Option<crate::types::FleetStatus>) -> Self {
         self.fleet_status = input;
         self
     }
@@ -206,32 +187,19 @@ impl FleetSummaryBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`FleetSummary`](crate::types::FleetSummary).

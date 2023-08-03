@@ -37,9 +37,7 @@ impl Target {
 
 /// A builder for [`Target`](crate::types::Target).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_reference: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct TargetBuilder {
 }
 impl TargetBuilder {
     /// <p>The name of the repository that contains the pull request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that contains the pull request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -67,18 +59,12 @@ impl TargetBuilder {
         &self.repository_name
     }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
-    pub fn source_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
-    pub fn set_source_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_reference = input;
         self
     }
@@ -87,18 +73,12 @@ impl TargetBuilder {
         &self.source_reference
     }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
-    pub fn destination_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
-    pub fn set_destination_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_reference = input;
         self
     }

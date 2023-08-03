@@ -38,9 +38,7 @@ impl CancelConversionTaskFluentBuilder {
         }
     }
     /// Access the CancelConversionTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_conversion_task::builders::CancelConversionTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_conversion_task::builders::CancelConversionTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl CancelConversionTaskFluentBuilder {
             crate::operation::cancel_conversion_task::CancelConversionTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_conversion_task::CancelConversionTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_conversion_task::CancelConversionTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl CancelConversionTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl CancelConversionTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_conversion_task::CancelConversionTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_conversion_task::CancelConversionTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_conversion_task::CancelConversionTaskError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl CancelConversionTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_conversion_task::CancelConversionTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_conversion_task::CancelConversionTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_conversion_task::CancelConversionTaskError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl CancelConversionTaskFluentBuilder {
             crate::operation::cancel_conversion_task::CancelConversionTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_conversion_task::CancelConversionTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_conversion_task::CancelConversionTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the conversion task.</p>
-    pub fn conversion_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conversion_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conversion_task_id(input.into());
         self
     }
     /// <p>The ID of the conversion task.</p>
-    pub fn set_conversion_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conversion_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_conversion_task_id(input);
         self
     }
@@ -158,18 +139,12 @@ impl CancelConversionTaskFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The reason for canceling the conversion task.</p>
-    pub fn reason_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reason_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason_message(input.into());
         self
     }
     /// <p>The reason for canceling the conversion task.</p>
-    pub fn set_reason_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reason_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason_message(input);
         self
     }

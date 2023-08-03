@@ -34,17 +34,14 @@ impl ::aws_http::request_id::RequestId for StartFleetActionsOutput {
 }
 impl StartFleetActionsOutput {
     /// Creates a new builder-style object to manufacture [`StartFleetActionsOutput`](crate::operation::start_fleet_actions::StartFleetActionsOutput).
-    pub fn builder(
-    ) -> crate::operation::start_fleet_actions::builders::StartFleetActionsOutputBuilder {
+    pub fn builder() -> crate::operation::start_fleet_actions::builders::StartFleetActionsOutputBuilder {
         crate::operation::start_fleet_actions::builders::StartFleetActionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartFleetActionsOutput`](crate::operation::start_fleet_actions::StartFleetActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFleetActionsOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,

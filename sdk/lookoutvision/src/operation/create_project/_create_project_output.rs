@@ -28,9 +28,7 @@ impl CreateProjectOutput {
 
 /// A builder for [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProjectOutputBuilder {
     pub(crate) project_metadata: ::std::option::Option<crate::types::ProjectMetadata>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateProjectOutputBuilder {
         self
     }
     /// <p>Information about the project.</p>
-    pub fn set_project_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectMetadata>,
-    ) -> Self {
+    pub fn set_project_metadata(mut self, input: ::std::option::Option<crate::types::ProjectMetadata>) -> Self {
         self.project_metadata = input;
         self
     }

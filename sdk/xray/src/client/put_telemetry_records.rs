@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::set_resource_arn): <p></p>
     /// - On success, responds with [`PutTelemetryRecordsOutput`](crate::operation::put_telemetry_records::PutTelemetryRecordsOutput)
     /// - On failure, responds with [`SdkError<PutTelemetryRecordsError>`](crate::operation::put_telemetry_records::PutTelemetryRecordsError)
-    pub fn put_telemetry_records(
-        &self,
-    ) -> crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder {
-        crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_telemetry_records(&self) -> crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder {
+        crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::new(self.handle.clone())
     }
 }

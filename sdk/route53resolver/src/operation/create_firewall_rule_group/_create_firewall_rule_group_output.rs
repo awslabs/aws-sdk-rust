@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateFirewallRuleGroupOutput {
 }
 impl CreateFirewallRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateFirewallRuleGroupOutput`](crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_firewall_rule_group::builders::CreateFirewallRuleGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_firewall_rule_group::builders::CreateFirewallRuleGroupOutputBuilder {
         crate::operation::create_firewall_rule_group::builders::CreateFirewallRuleGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFirewallRuleGroupOutput`](crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFirewallRuleGroupOutputBuilder {
     pub(crate) firewall_rule_group: ::std::option::Option<crate::types::FirewallRuleGroup>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateFirewallRuleGroupOutputBuilder {
         self
     }
     /// <p>A collection of rules used to filter DNS network traffic. </p>
-    pub fn set_firewall_rule_group(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallRuleGroup>,
-    ) -> Self {
+    pub fn set_firewall_rule_group(mut self, input: ::std::option::Option<crate::types::FirewallRuleGroup>) -> Self {
         self.firewall_rule_group = input;
         self
     }
     /// <p>A collection of rules used to filter DNS network traffic. </p>
-    pub fn get_firewall_rule_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirewallRuleGroup> {
+    pub fn get_firewall_rule_group(&self) -> &::std::option::Option<crate::types::FirewallRuleGroup> {
         &self.firewall_rule_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateFirewallRuleGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateFirewallRuleGroupOutput`](crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupOutput {
+    pub fn build(self) -> crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupOutput {
         crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupOutput {
             firewall_rule_group: self.firewall_rule_group,
             _request_id: self._request_id,

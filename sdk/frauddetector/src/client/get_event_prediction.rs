@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`rule_results(Option<Vec<RuleResult>>)`](crate::operation::get_event_prediction::GetEventPredictionOutput::rule_results): <p>The results from the rules.</p>
     ///   - [`external_model_outputs(Option<Vec<ExternalModelOutputs>>)`](crate::operation::get_event_prediction::GetEventPredictionOutput::external_model_outputs): <p>The model scores for Amazon SageMaker models.</p>
     /// - On failure, responds with [`SdkError<GetEventPredictionError>`](crate::operation::get_event_prediction::GetEventPredictionError)
-    pub fn get_event_prediction(
-        &self,
-    ) -> crate::operation::get_event_prediction::builders::GetEventPredictionFluentBuilder {
-        crate::operation::get_event_prediction::builders::GetEventPredictionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_event_prediction(&self) -> crate::operation::get_event_prediction::builders::GetEventPredictionFluentBuilder {
+        crate::operation::get_event_prediction::builders::GetEventPredictionFluentBuilder::new(self.handle.clone())
     }
 }

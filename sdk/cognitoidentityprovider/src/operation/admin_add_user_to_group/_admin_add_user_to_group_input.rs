@@ -38,8 +38,7 @@ impl ::std::fmt::Debug for AdminAddUserToGroupInput {
 }
 impl AdminAddUserToGroupInput {
     /// Creates a new builder-style object to manufacture [`AdminAddUserToGroupInput`](crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput).
-    pub fn builder(
-    ) -> crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupInputBuilder {
+    pub fn builder() -> crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupInputBuilder {
         crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupInputBuilder::default()
     }
 }
@@ -98,17 +97,13 @@ impl AdminAddUserToGroupInputBuilder {
     /// Consumes the builder and constructs a [`AdminAddUserToGroupInput`](crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput {
-                user_pool_id: self.user_pool_id,
-                username: self.username,
-                group_name: self.group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput {
+            user_pool_id: self.user_pool_id,
+            username: self.username,
+            group_name: self.group_name,
+        })
     }
 }
 impl ::std::fmt::Debug for AdminAddUserToGroupInputBuilder {

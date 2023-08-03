@@ -38,13 +38,7 @@
 /// Set to ENABLED to force a rendition to be included.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RequiredFlag {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for RequiredFlag {
         match s {
             "DISABLED" => RequiredFlag::Disabled,
             "ENABLED" => RequiredFlag::Enabled,
-            other => {
-                RequiredFlag::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => RequiredFlag::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CreateLocalGatewayRouteTableOutput`](crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableOutput) with field(s):
     ///   - [`local_gateway_route_table(Option<LocalGatewayRouteTable>)`](crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableOutput::local_gateway_route_table): <p>Information about the local gateway route table.</p>
     /// - On failure, responds with [`SdkError<CreateLocalGatewayRouteTableError>`](crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableError)
-    pub fn create_local_gateway_route_table(&self) -> crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableFluentBuilder{
+    pub fn create_local_gateway_route_table(
+        &self,
+    ) -> crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableFluentBuilder {
         crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableFluentBuilder::new(self.handle.clone())
     }
 }

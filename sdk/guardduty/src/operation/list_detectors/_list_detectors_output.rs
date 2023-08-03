@@ -35,9 +35,7 @@ impl ListDetectorsOutput {
 
 /// A builder for [`ListDetectorsOutput`](crate::operation::list_detectors::ListDetectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDetectorsOutputBuilder {
     pub(crate) detector_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListDetectorsOutputBuilder {
         self
     }
     /// <p>A list of detector IDs.</p>
-    pub fn set_detector_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_detector_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.detector_ids = input;
         self
     }
     /// <p>A list of detector IDs.</p>
-    pub fn get_detector_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_detector_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.detector_ids
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>

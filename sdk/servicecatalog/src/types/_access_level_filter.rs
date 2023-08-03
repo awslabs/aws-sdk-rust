@@ -40,9 +40,7 @@ impl AccessLevelFilter {
 
 /// A builder for [`AccessLevelFilter`](crate::types::AccessLevelFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessLevelFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::AccessLevelFilterKey>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -64,10 +62,7 @@ impl AccessLevelFilterBuilder {
     /// <li> <p> <code>Role</code> - Filter results based on the federated role of the specified user.</p> </li>
     /// <li> <p> <code>User</code> - Filter results based on the specified user.</p> </li>
     /// </ul>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessLevelFilterKey>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::AccessLevelFilterKey>) -> Self {
         self.key = input;
         self
     }

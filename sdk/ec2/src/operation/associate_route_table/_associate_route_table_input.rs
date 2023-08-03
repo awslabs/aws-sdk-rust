@@ -36,18 +36,14 @@ impl AssociateRouteTableInput {
 }
 impl AssociateRouteTableInput {
     /// Creates a new builder-style object to manufacture [`AssociateRouteTableInput`](crate::operation::associate_route_table::AssociateRouteTableInput).
-    pub fn builder(
-    ) -> crate::operation::associate_route_table::builders::AssociateRouteTableInputBuilder {
-        crate::operation::associate_route_table::builders::AssociateRouteTableInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::associate_route_table::builders::AssociateRouteTableInputBuilder {
+        crate::operation::associate_route_table::builders::AssociateRouteTableInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateRouteTableInput`](crate::operation::associate_route_table::AssociateRouteTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateRouteTableInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl AssociateRouteTableInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_table_id = input;
         self
     }
@@ -120,17 +110,13 @@ impl AssociateRouteTableInputBuilder {
     /// Consumes the builder and constructs a [`AssociateRouteTableInput`](crate::operation::associate_route_table::AssociateRouteTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_route_table::AssociateRouteTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_route_table::AssociateRouteTableInput {
-                dry_run: self.dry_run,
-                route_table_id: self.route_table_id,
-                subnet_id: self.subnet_id,
-                gateway_id: self.gateway_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_route_table::AssociateRouteTableInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_route_table::AssociateRouteTableInput {
+            dry_run: self.dry_run,
+            route_table_id: self.route_table_id,
+            subnet_id: self.subnet_id,
+            gateway_id: self.gateway_id,
+        })
     }
 }

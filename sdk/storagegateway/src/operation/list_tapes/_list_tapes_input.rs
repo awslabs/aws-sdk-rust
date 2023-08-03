@@ -42,9 +42,7 @@ impl ListTapesInput {
 
 /// A builder for [`ListTapesInput`](crate::operation::list_tapes::ListTapesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTapesInputBuilder {
     pub(crate) tape_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -63,10 +61,7 @@ impl ListTapesInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS.</p>
-    pub fn set_tape_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tape_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tape_ar_ns = input;
         self
     }
@@ -103,12 +98,7 @@ impl ListTapesInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListTapesInput`](crate::operation::list_tapes::ListTapesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tapes::ListTapesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tapes::ListTapesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tapes::ListTapesInput {
             tape_ar_ns: self.tape_ar_ns,
             marker: self.marker,

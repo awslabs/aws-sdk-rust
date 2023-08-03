@@ -5,15 +5,12 @@
 pub struct DescribeAllManagedProductsOutput {
     /// <p>High-level information for the Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups. </p>
     #[doc(hidden)]
-    pub managed_products:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
+    pub managed_products: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
     _request_id: Option<String>,
 }
 impl DescribeAllManagedProductsOutput {
     /// <p>High-level information for the Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups. </p>
-    pub fn managed_products(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ManagedProductDescriptor]> {
+    pub fn managed_products(&self) -> ::std::option::Option<&[crate::types::ManagedProductDescriptor]> {
         self.managed_products.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeAllManagedProductsOutput {
 }
 impl DescribeAllManagedProductsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAllManagedProductsOutput`](crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput).
-    pub fn builder() -> crate::operation::describe_all_managed_products::builders::DescribeAllManagedProductsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_all_managed_products::builders::DescribeAllManagedProductsOutputBuilder {
         crate::operation::describe_all_managed_products::builders::DescribeAllManagedProductsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAllManagedProductsOutput`](crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAllManagedProductsOutputBuilder {
-    pub(crate) managed_products:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
+    pub(crate) managed_products: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
     _request_id: Option<String>,
 }
 impl DescribeAllManagedProductsOutputBuilder {
@@ -52,17 +46,12 @@ impl DescribeAllManagedProductsOutputBuilder {
         self
     }
     /// <p>High-level information for the Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups. </p>
-    pub fn set_managed_products(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
-    ) -> Self {
+    pub fn set_managed_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>) -> Self {
         self.managed_products = input;
         self
     }
     /// <p>High-level information for the Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups. </p>
-    pub fn get_managed_products(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>> {
+    pub fn get_managed_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>> {
         &self.managed_products
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,9 +64,7 @@ impl DescribeAllManagedProductsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAllManagedProductsOutput`](crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput {
+    pub fn build(self) -> crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput {
         crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput {
             managed_products: self.managed_products,
             _request_id: self._request_id,

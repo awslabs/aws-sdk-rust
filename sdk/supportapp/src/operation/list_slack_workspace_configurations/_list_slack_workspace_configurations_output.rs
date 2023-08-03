@@ -8,8 +8,7 @@ pub struct ListSlackWorkspaceConfigurationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The configurations for a Slack workspace.</p>
     #[doc(hidden)]
-    pub slack_workspace_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspaceConfiguration>>,
+    pub slack_workspace_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspaceConfiguration>>,
     _request_id: Option<String>,
 }
 impl ListSlackWorkspaceConfigurationsOutput {
@@ -18,9 +17,7 @@ impl ListSlackWorkspaceConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The configurations for a Slack workspace.</p>
-    pub fn slack_workspace_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SlackWorkspaceConfiguration]> {
+    pub fn slack_workspace_configurations(&self) -> ::std::option::Option<&[crate::types::SlackWorkspaceConfiguration]> {
         self.slack_workspace_configurations.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListSlackWorkspaceConfigurationsOutpu
 }
 impl ListSlackWorkspaceConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSlackWorkspaceConfigurationsOutput`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsOutputBuilder {
         crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSlackWorkspaceConfigurationsOutput`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSlackWorkspaceConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) slack_workspace_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspaceConfiguration>>,
+    pub(crate) slack_workspace_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspaceConfiguration>>,
     _request_id: Option<String>,
 }
 impl ListSlackWorkspaceConfigurationsOutputBuilder {
@@ -67,10 +61,7 @@ impl ListSlackWorkspaceConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_slack_workspace_configurations`](Self::set_slack_workspace_configurations).
     ///
     /// <p>The configurations for a Slack workspace.</p>
-    pub fn slack_workspace_configurations(
-        mut self,
-        input: crate::types::SlackWorkspaceConfiguration,
-    ) -> Self {
+    pub fn slack_workspace_configurations(mut self, input: crate::types::SlackWorkspaceConfiguration) -> Self {
         let mut v = self.slack_workspace_configurations.unwrap_or_default();
         v.push(input);
         self.slack_workspace_configurations = ::std::option::Option::Some(v);
@@ -85,9 +76,7 @@ impl ListSlackWorkspaceConfigurationsOutputBuilder {
         self
     }
     /// <p>The configurations for a Slack workspace.</p>
-    pub fn get_slack_workspace_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspaceConfiguration>> {
+    pub fn get_slack_workspace_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspaceConfiguration>> {
         &self.slack_workspace_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -100,15 +89,10 @@ impl ListSlackWorkspaceConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSlackWorkspaceConfigurationsOutput`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput {
         crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput {
-            next_token: self.next_token
-            ,
-            slack_workspace_configurations: self.slack_workspace_configurations
-            ,
+            next_token: self.next_token,
+            slack_workspace_configurations: self.slack_workspace_configurations,
             _request_id: self._request_id,
         }
     }

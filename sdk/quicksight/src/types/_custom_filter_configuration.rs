@@ -32,9 +32,7 @@ pub struct CustomFilterConfiguration {
 }
 impl CustomFilterConfiguration {
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub fn match_operator(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CategoryFilterMatchOperator> {
+    pub fn match_operator(&self) -> ::std::option::Option<&crate::types::CategoryFilterMatchOperator> {
         self.match_operator.as_ref()
     }
     /// <p>The category value for the filter.</p>
@@ -46,9 +44,7 @@ impl CustomFilterConfiguration {
     /// <ul>
     /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    pub fn select_all_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CategoryFilterSelectAllOptions> {
+    pub fn select_all_options(&self) -> ::std::option::Option<&crate::types::CategoryFilterSelectAllOptions> {
         self.select_all_options.as_ref()
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
@@ -75,14 +71,11 @@ impl CustomFilterConfiguration {
 
 /// A builder for [`CustomFilterConfiguration`](crate::types::CustomFilterConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomFilterConfigurationBuilder {
     pub(crate) match_operator: ::std::option::Option<crate::types::CategoryFilterMatchOperator>,
     pub(crate) category_value: ::std::option::Option<::std::string::String>,
-    pub(crate) select_all_options:
-        ::std::option::Option<crate::types::CategoryFilterSelectAllOptions>,
+    pub(crate) select_all_options: ::std::option::Option<crate::types::CategoryFilterSelectAllOptions>,
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) null_option: ::std::option::Option<crate::types::FilterNullOption>,
 }
@@ -93,34 +86,23 @@ impl CustomFilterConfigurationBuilder {
         self
     }
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub fn set_match_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::CategoryFilterMatchOperator>,
-    ) -> Self {
+    pub fn set_match_operator(mut self, input: ::std::option::Option<crate::types::CategoryFilterMatchOperator>) -> Self {
         self.match_operator = input;
         self
     }
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub fn get_match_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::CategoryFilterMatchOperator> {
+    pub fn get_match_operator(&self) -> &::std::option::Option<crate::types::CategoryFilterMatchOperator> {
         &self.match_operator
     }
     /// <p>The category value for the filter.</p>
     /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
-    pub fn category_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The category value for the filter.</p>
     /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
-    pub fn set_category_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_category_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category_value = input;
         self
     }
@@ -133,10 +115,7 @@ impl CustomFilterConfigurationBuilder {
     /// <ul>
     /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    pub fn select_all_options(
-        mut self,
-        input: crate::types::CategoryFilterSelectAllOptions,
-    ) -> Self {
+    pub fn select_all_options(mut self, input: crate::types::CategoryFilterSelectAllOptions) -> Self {
         self.select_all_options = ::std::option::Option::Some(input);
         self
     }
@@ -144,10 +123,7 @@ impl CustomFilterConfigurationBuilder {
     /// <ul>
     /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    pub fn set_select_all_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CategoryFilterSelectAllOptions>,
-    ) -> Self {
+    pub fn set_select_all_options(mut self, input: ::std::option::Option<crate::types::CategoryFilterSelectAllOptions>) -> Self {
         self.select_all_options = input;
         self
     }
@@ -155,26 +131,18 @@ impl CustomFilterConfigurationBuilder {
     /// <ul>
     /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    pub fn get_select_all_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CategoryFilterSelectAllOptions> {
+    pub fn get_select_all_options(&self) -> &::std::option::Option<crate::types::CategoryFilterSelectAllOptions> {
         &self.select_all_options
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
     /// <p>This field is mutually exclusive to <code>CategoryValue</code>.</p>
-    pub fn parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
     /// <p>This field is mutually exclusive to <code>CategoryValue</code>.</p>
-    pub fn set_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_name = input;
         self
     }
@@ -199,10 +167,7 @@ impl CustomFilterConfigurationBuilder {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    pub fn set_null_option(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterNullOption>,
-    ) -> Self {
+    pub fn set_null_option(mut self, input: ::std::option::Option<crate::types::FilterNullOption>) -> Self {
         self.null_option = input;
         self
     }

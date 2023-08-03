@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSkillGroupOutput`](crate::operation::update_skill_group::UpdateSkillGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateSkillGroupError>`](crate::operation::update_skill_group::UpdateSkillGroupError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn update_skill_group(
-        &self,
-    ) -> crate::operation::update_skill_group::builders::UpdateSkillGroupFluentBuilder {
-        crate::operation::update_skill_group::builders::UpdateSkillGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_skill_group(&self) -> crate::operation::update_skill_group::builders::UpdateSkillGroupFluentBuilder {
+        crate::operation::update_skill_group::builders::UpdateSkillGroupFluentBuilder::new(self.handle.clone())
     }
 }

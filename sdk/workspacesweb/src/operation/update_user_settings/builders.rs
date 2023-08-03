@@ -10,10 +10,7 @@ impl UpdateUserSettingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_user_settings::UpdateUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_settings::UpdateUserSettingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_settings::UpdateUserSettingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_user_settings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateUserSettingsFluentBuilder {
         }
     }
     /// Access the UpdateUserSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_user_settings::builders::UpdateUserSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_user_settings::builders::UpdateUserSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateUserSettingsFluentBuilder {
             crate::operation::update_user_settings::UpdateUserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_settings::UpdateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_settings::UpdateUserSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateUserSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateUserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_settings::UpdateUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_settings::UpdateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_settings::UpdateUserSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateUserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_settings::UpdateUserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_settings::UpdateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_settings::UpdateUserSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateUserSettingsFluentBuilder {
             crate::operation::update_user_settings::UpdateUserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_settings::UpdateUserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_settings::UpdateUserSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_settings_arn(input.into());
         self
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn set_user_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_settings_arn(input);
         self
     }
@@ -148,10 +126,7 @@ impl UpdateUserSettingsFluentBuilder {
         self
     }
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
-    pub fn set_copy_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_copy_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.inner = self.inner.set_copy_allowed(input);
         self
     }
@@ -165,10 +140,7 @@ impl UpdateUserSettingsFluentBuilder {
         self
     }
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
-    pub fn set_paste_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_paste_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.inner = self.inner.set_paste_allowed(input);
         self
     }
@@ -182,10 +154,7 @@ impl UpdateUserSettingsFluentBuilder {
         self
     }
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
-    pub fn set_download_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_download_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.inner = self.inner.set_download_allowed(input);
         self
     }
@@ -199,10 +168,7 @@ impl UpdateUserSettingsFluentBuilder {
         self
     }
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
-    pub fn set_upload_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_upload_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.inner = self.inner.set_upload_allowed(input);
         self
     }
@@ -216,10 +182,7 @@ impl UpdateUserSettingsFluentBuilder {
         self
     }
     /// <p>Specifies whether the user can print to the local device.</p>
-    pub fn set_print_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_print_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.inner = self.inner.set_print_allowed(input);
         self
     }
@@ -247,10 +210,7 @@ impl UpdateUserSettingsFluentBuilder {
         self
     }
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
-    pub fn set_idle_disconnect_timeout_in_minutes(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_idle_disconnect_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_idle_disconnect_timeout_in_minutes(input);
         self
     }

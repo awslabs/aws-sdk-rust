@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AcceptAddressTransferOutput`](crate::operation::accept_address_transfer::AcceptAddressTransferOutput) with field(s):
     ///   - [`address_transfer(Option<AddressTransfer>)`](crate::operation::accept_address_transfer::AcceptAddressTransferOutput::address_transfer): <p>An Elastic IP address transfer.</p>
     /// - On failure, responds with [`SdkError<AcceptAddressTransferError>`](crate::operation::accept_address_transfer::AcceptAddressTransferError)
-    pub fn accept_address_transfer(
-        &self,
-    ) -> crate::operation::accept_address_transfer::builders::AcceptAddressTransferFluentBuilder
-    {
-        crate::operation::accept_address_transfer::builders::AcceptAddressTransferFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn accept_address_transfer(&self) -> crate::operation::accept_address_transfer::builders::AcceptAddressTransferFluentBuilder {
+        crate::operation::accept_address_transfer::builders::AcceptAddressTransferFluentBuilder::new(self.handle.clone())
     }
 }

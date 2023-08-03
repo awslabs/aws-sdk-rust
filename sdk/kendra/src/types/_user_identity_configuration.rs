@@ -23,26 +23,18 @@ impl UserIdentityConfiguration {
 
 /// A builder for [`UserIdentityConfiguration`](crate::types::UserIdentityConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserIdentityConfigurationBuilder {
     pub(crate) identity_attribute_name: ::std::option::Option<::std::string::String>,
 }
 impl UserIdentityConfigurationBuilder {
     /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>.</p>
-    pub fn identity_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>.</p>
-    pub fn set_identity_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_attribute_name = input;
         self
     }

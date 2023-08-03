@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetChannelMessageStatusOutput`](crate::operation::get_channel_message_status::GetChannelMessageStatusOutput) with field(s):
     ///   - [`status(Option<ChannelMessageStatusStructure>)`](crate::operation::get_channel_message_status::GetChannelMessageStatusOutput::status): <p>The message status and details.</p>
     /// - On failure, responds with [`SdkError<GetChannelMessageStatusError>`](crate::operation::get_channel_message_status::GetChannelMessageStatusError)
-    pub fn get_channel_message_status(
-        &self,
-    ) -> crate::operation::get_channel_message_status::builders::GetChannelMessageStatusFluentBuilder
-    {
+    pub fn get_channel_message_status(&self) -> crate::operation::get_channel_message_status::builders::GetChannelMessageStatusFluentBuilder {
         crate::operation::get_channel_message_status::builders::GetChannelMessageStatusFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartKeyUsageOutput`](crate::operation::start_key_usage::StartKeyUsageOutput) with field(s):
     ///   - [`key(Option<Key>)`](crate::operation::start_key_usage::StartKeyUsageOutput::key): <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key activated for use.</p>
     /// - On failure, responds with [`SdkError<StartKeyUsageError>`](crate::operation::start_key_usage::StartKeyUsageError)
-    pub fn start_key_usage(
-        &self,
-    ) -> crate::operation::start_key_usage::builders::StartKeyUsageFluentBuilder {
-        crate::operation::start_key_usage::builders::StartKeyUsageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_key_usage(&self) -> crate::operation::start_key_usage::builders::StartKeyUsageFluentBuilder {
+        crate::operation::start_key_usage::builders::StartKeyUsageFluentBuilder::new(self.handle.clone())
     }
 }

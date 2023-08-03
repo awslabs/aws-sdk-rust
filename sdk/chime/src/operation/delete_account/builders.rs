@@ -10,10 +10,7 @@ impl DeleteAccountInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_account::DeleteAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account::DeleteAccountError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account::DeleteAccountError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_account();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DeleteAccountFluentBuilder {
         }
     }
     /// Access the DeleteAccount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_account::builders::DeleteAccountInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_account::builders::DeleteAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl DeleteAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

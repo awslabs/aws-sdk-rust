@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`model_package_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupFluentBuilder::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupFluentBuilder::set_model_package_group_name): <p>The name of the model group to delete.</p>
     /// - On success, responds with [`DeleteModelPackageGroupOutput`](crate::operation::delete_model_package_group::DeleteModelPackageGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteModelPackageGroupError>`](crate::operation::delete_model_package_group::DeleteModelPackageGroupError)
-    pub fn delete_model_package_group(
-        &self,
-    ) -> crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupFluentBuilder
-    {
+    pub fn delete_model_package_group(&self) -> crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupFluentBuilder {
         crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupFluentBuilder::new(self.handle.clone())
     }
 }

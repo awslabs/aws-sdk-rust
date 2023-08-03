@@ -12,8 +12,7 @@ pub struct ExportRevisionsToS3ResponseDetails {
     pub encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
     /// <p>The destination in Amazon S3 where the revision is exported.</p>
     #[doc(hidden)]
-    pub revision_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>>,
+    pub revision_destinations: ::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>>,
     /// <p>The Amazon Resource Name (ARN) of the event action.</p>
     #[doc(hidden)]
     pub event_action_arn: ::std::option::Option<::std::string::String>,
@@ -28,9 +27,7 @@ impl ExportRevisionsToS3ResponseDetails {
         self.encryption.as_ref()
     }
     /// <p>The destination in Amazon S3 where the revision is exported.</p>
-    pub fn revision_destinations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RevisionDestinationEntry]> {
+    pub fn revision_destinations(&self) -> ::std::option::Option<&[crate::types::RevisionDestinationEntry]> {
         self.revision_destinations.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the event action.</p>
@@ -47,14 +44,11 @@ impl ExportRevisionsToS3ResponseDetails {
 
 /// A builder for [`ExportRevisionsToS3ResponseDetails`](crate::types::ExportRevisionsToS3ResponseDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportRevisionsToS3ResponseDetailsBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
-    pub(crate) revision_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>>,
+    pub(crate) revision_destinations: ::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>>,
     pub(crate) event_action_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExportRevisionsToS3ResponseDetailsBuilder {
@@ -78,17 +72,12 @@ impl ExportRevisionsToS3ResponseDetailsBuilder {
         self
     }
     /// <p>Encryption configuration of the export job.</p>
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportServerSideEncryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::ExportServerSideEncryption>) -> Self {
         self.encryption = input;
         self
     }
     /// <p>Encryption configuration of the export job.</p>
-    pub fn get_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportServerSideEncryption> {
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::ExportServerSideEncryption> {
         &self.encryption
     }
     /// Appends an item to `revision_destinations`.
@@ -103,32 +92,21 @@ impl ExportRevisionsToS3ResponseDetailsBuilder {
         self
     }
     /// <p>The destination in Amazon S3 where the revision is exported.</p>
-    pub fn set_revision_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>>,
-    ) -> Self {
+    pub fn set_revision_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>>) -> Self {
         self.revision_destinations = input;
         self
     }
     /// <p>The destination in Amazon S3 where the revision is exported.</p>
-    pub fn get_revision_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>> {
+    pub fn get_revision_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>> {
         &self.revision_destinations
     }
     /// <p>The Amazon Resource Name (ARN) of the event action.</p>
-    pub fn event_action_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_action_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_action_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the event action.</p>
-    pub fn set_event_action_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_action_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_action_arn = input;
         self
     }

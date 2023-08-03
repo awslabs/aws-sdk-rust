@@ -58,9 +58,7 @@ impl VsamDetailAttributes {
 
 /// A builder for [`VsamDetailAttributes`](crate::types::VsamDetailAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VsamDetailAttributesBuilder {
     pub(crate) encoding: ::std::option::Option<::std::string::String>,
     pub(crate) record_format: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl VsamDetailAttributesBuilder {
         &self.encoding
     }
     /// <p>The record format of the data set.</p>
-    pub fn record_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The record format of the data set.</p>
-    pub fn set_record_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_record_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_format = input;
         self
     }
@@ -138,10 +130,7 @@ impl VsamDetailAttributesBuilder {
         self
     }
     /// <p>The primary key of the data set.</p>
-    pub fn set_primary_key(
-        mut self,
-        input: ::std::option::Option<crate::types::PrimaryKey>,
-    ) -> Self {
+    pub fn set_primary_key(mut self, input: ::std::option::Option<crate::types::PrimaryKey>) -> Self {
         self.primary_key = input;
         self
     }
@@ -161,17 +150,12 @@ impl VsamDetailAttributesBuilder {
         self
     }
     /// <p>The alternate key definitions, if any. A legacy dataset might not have any alternate key defined, but if those alternate keys definitions exist, provide them as some applications will make use of them.</p>
-    pub fn set_alternate_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlternateKey>>,
-    ) -> Self {
+    pub fn set_alternate_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlternateKey>>) -> Self {
         self.alternate_keys = input;
         self
     }
     /// <p>The alternate key definitions, if any. A legacy dataset might not have any alternate key defined, but if those alternate keys definitions exist, provide them as some applications will make use of them.</p>
-    pub fn get_alternate_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlternateKey>> {
+    pub fn get_alternate_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlternateKey>> {
         &self.alternate_keys
     }
     /// Consumes the builder and constructs a [`VsamDetailAttributes`](crate::types::VsamDetailAttributes).

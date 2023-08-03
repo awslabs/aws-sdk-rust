@@ -26,7 +26,7 @@ impl CreateLocalGatewayRouteTableInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableInputBuilder,
+    inner: crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableInputBuilder,
 }
 impl CreateLocalGatewayRouteTableFluentBuilder {
     /// Creates a new `CreateLocalGatewayRouteTable`.
@@ -37,7 +37,7 @@ impl CreateLocalGatewayRouteTableFluentBuilder {
         }
     }
     /// Access the CreateLocalGatewayRouteTable as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateLocalGatewayRouteTableFluentBuilder {
             crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateLocalGatewayRouteTableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateLocalGatewayRouteTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateLocalGatewayRouteTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateLocalGatewayRouteTableFluentBuilder {
             crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The ID of the local gateway. </p>
-    pub fn local_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_gateway_id(input.into());
         self
     }
     /// <p> The ID of the local gateway. </p>
-    pub fn set_local_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_local_gateway_id(input);
         self
     }
@@ -146,10 +129,7 @@ impl CreateLocalGatewayRouteTableFluentBuilder {
         self
     }
     /// <p> The mode of the local gateway route table. </p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::LocalGatewayRouteTableMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::LocalGatewayRouteTableMode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
     }
@@ -167,17 +147,12 @@ impl CreateLocalGatewayRouteTableFluentBuilder {
         self
     }
     /// <p> The tags assigned to the local gateway route table. </p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p> The tags assigned to the local gateway route table. </p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

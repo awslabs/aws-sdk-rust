@@ -23,9 +23,7 @@ impl FlowLogsConfigurationResult {
 
 /// A builder for [`FlowLogsConfigurationResult`](crate::types::FlowLogsConfigurationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlowLogsConfigurationResultBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
@@ -36,10 +34,7 @@ impl FlowLogsConfigurationResultBuilder {
         self
     }
     /// <p>Denotes whether VPC flow logs is enabled as a data source.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl FlowLogsConfigurationResultBuilder {
     }
     /// Consumes the builder and constructs a [`FlowLogsConfigurationResult`](crate::types::FlowLogsConfigurationResult).
     pub fn build(self) -> crate::types::FlowLogsConfigurationResult {
-        crate::types::FlowLogsConfigurationResult {
-            status: self.status,
-        }
+        crate::types::FlowLogsConfigurationResult { status: self.status }
     }
 }

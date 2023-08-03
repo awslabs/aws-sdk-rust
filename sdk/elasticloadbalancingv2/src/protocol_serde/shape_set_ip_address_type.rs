@@ -4,79 +4,72 @@ pub fn de_set_ip_address_type_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::set_ip_address_type::SetIpAddressTypeOutput,
-    crate::operation::set_ip_address_type::SetIpAddressTypeError,
-> {
+) -> std::result::Result<crate::operation::set_ip_address_type::SetIpAddressTypeOutput, crate::operation::set_ip_address_type::SetIpAddressTypeError>
+{
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::set_ip_address_type::SetIpAddressTypeError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::set_ip_address_type::SetIpAddressTypeError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::set_ip_address_type::SetIpAddressTypeError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::set_ip_address_type::SetIpAddressTypeError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidConfigurationRequest" => crate::operation::set_ip_address_type::SetIpAddressTypeError::InvalidConfigurationRequestException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(_response_body, output).map_err(crate::operation::set_ip_address_type::SetIpAddressTypeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::set_ip_address_type::SetIpAddressTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidSubnet" => crate::operation::set_ip_address_type::SetIpAddressTypeError::InvalidSubnetException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidSubnetExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_subnet_exception::de_invalid_subnet_exception_xml_err(_response_body, output).map_err(crate::operation::set_ip_address_type::SetIpAddressTypeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSubnetExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_subnet_exception::de_invalid_subnet_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::set_ip_address_type::SetIpAddressTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "LoadBalancerNotFound" => crate::operation::set_ip_address_type::SetIpAddressTypeError::LoadBalancerNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LoadBalancerNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_load_balancer_not_found_exception::de_load_balancer_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::set_ip_address_type::SetIpAddressTypeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LoadBalancerNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_load_balancer_not_found_exception::de_load_balancer_not_found_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::set_ip_address_type::SetIpAddressTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::set_ip_address_type::SetIpAddressTypeError::generic(generic)
+        _ => crate::operation::set_ip_address_type::SetIpAddressTypeError::generic(generic),
     })
 }
 
@@ -85,23 +78,14 @@ pub fn de_set_ip_address_type_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::set_ip_address_type::SetIpAddressTypeOutput,
-    crate::operation::set_ip_address_type::SetIpAddressTypeError,
-> {
+) -> std::result::Result<crate::operation::set_ip_address_type::SetIpAddressTypeOutput, crate::operation::set_ip_address_type::SetIpAddressTypeError>
+{
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder::default(
-            );
-        output = crate::protocol_serde::shape_set_ip_address_type::de_set_ip_address_type(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::set_ip_address_type::SetIpAddressTypeError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder::default();
+        output = crate::protocol_serde::shape_set_ip_address_type::de_set_ip_address_type(_response_body, output)
+            .map_err(crate::operation::set_ip_address_type::SetIpAddressTypeError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -110,10 +94,7 @@ pub fn de_set_ip_address_type_http_response_with_props(
 pub fn de_set_ip_address_type(
     inp: &[u8],
     mut builder: crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder,
-) -> Result<
-    crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -154,9 +135,7 @@ pub fn de_set_ip_address_type(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected SetIpAddressTypeResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected SetIpAddressTypeResult tag"));
     };
     Ok(builder)
 }

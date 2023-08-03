@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateSolFunctionPackageOutput {
 }
 impl UpdateSolFunctionPackageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSolFunctionPackageOutput`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput).
-    pub fn builder() -> crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageOutputBuilder{
+    pub fn builder() -> crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageOutputBuilder {
         crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSolFunctionPackageOutput`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSolFunctionPackageOutputBuilder {
     pub(crate) operational_state: ::std::option::Option<crate::types::OperationalState>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateSolFunctionPackageOutputBuilder {
         self
     }
     /// <p>Operational state of the function package.</p>
-    pub fn set_operational_state(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationalState>,
-    ) -> Self {
+    pub fn set_operational_state(mut self, input: ::std::option::Option<crate::types::OperationalState>) -> Self {
         self.operational_state = input;
         self
     }
@@ -63,9 +58,7 @@ impl UpdateSolFunctionPackageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSolFunctionPackageOutput`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput {
+    pub fn build(self) -> crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput {
         crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput {
             operational_state: self.operational_state,
             _request_id: self._request_id,

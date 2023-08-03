@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for CreateOpenIdConnectProviderOutput {
 }
 impl CreateOpenIdConnectProviderOutput {
     /// Creates a new builder-style object to manufacture [`CreateOpenIdConnectProviderOutput`](crate::operation::create_open_id_connect_provider::CreateOpenIdConnectProviderOutput).
-    pub fn builder() -> crate::operation::create_open_id_connect_provider::builders::CreateOpenIdConnectProviderOutputBuilder{
+    pub fn builder() -> crate::operation::create_open_id_connect_provider::builders::CreateOpenIdConnectProviderOutputBuilder {
         crate::operation::create_open_id_connect_provider::builders::CreateOpenIdConnectProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOpenIdConnectProviderOutput`](crate::operation::create_open_id_connect_provider::CreateOpenIdConnectProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOpenIdConnectProviderOutputBuilder {
     pub(crate) open_id_connect_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -46,25 +44,17 @@ pub struct CreateOpenIdConnectProviderOutputBuilder {
 }
 impl CreateOpenIdConnectProviderOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is created. For more information, see <code>OpenIDConnectProviderListEntry</code>. </p>
-    pub fn open_id_connect_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_connect_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_connect_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is created. For more information, see <code>OpenIDConnectProviderListEntry</code>. </p>
-    pub fn set_open_id_connect_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_open_id_connect_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.open_id_connect_provider_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is created. For more information, see <code>OpenIDConnectProviderListEntry</code>. </p>
-    pub fn get_open_id_connect_provider_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_open_id_connect_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.open_id_connect_provider_arn
     }
     /// Appends an item to `tags`.
@@ -79,10 +69,7 @@ impl CreateOpenIdConnectProviderOutputBuilder {
         self
     }
     /// <p>A list of tags that are attached to the new IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -100,9 +87,7 @@ impl CreateOpenIdConnectProviderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateOpenIdConnectProviderOutput`](crate::operation::create_open_id_connect_provider::CreateOpenIdConnectProviderOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_open_id_connect_provider::CreateOpenIdConnectProviderOutput {
+    pub fn build(self) -> crate::operation::create_open_id_connect_provider::CreateOpenIdConnectProviderOutput {
         crate::operation::create_open_id_connect_provider::CreateOpenIdConnectProviderOutput {
             open_id_connect_provider_arn: self.open_id_connect_provider_arn,
             tags: self.tags,

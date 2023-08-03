@@ -58,9 +58,7 @@ impl AttributeValue {
 
 /// A builder for [`AttributeValue`](crate::types::AttributeValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeValueBuilder {
     pub(crate) s: ::std::option::Option<::std::string::String>,
     pub(crate) n: ::std::option::Option<::std::string::String>,
@@ -124,10 +122,7 @@ impl AttributeValueBuilder {
         self
     }
     /// <p>A list of strings.</p>
-    pub fn set_ss(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ss(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ss = input;
         self
     }
@@ -147,10 +142,7 @@ impl AttributeValueBuilder {
         self
     }
     /// <p>A list of numbers.</p>
-    pub fn set_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ns = input;
         self
     }
@@ -170,10 +162,7 @@ impl AttributeValueBuilder {
         self
     }
     /// <p>A list of binary values.</p>
-    pub fn set_bs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.bs = input;
         self
     }

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DetachLoadBalancerFromSubnetsOutput`](crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsOutput) with field(s):
     ///   - [`subnets(Option<Vec<String>>)`](crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsOutput::subnets): <p>The IDs of the remaining subnets for the load balancer.</p>
     /// - On failure, responds with [`SdkError<DetachLoadBalancerFromSubnetsError>`](crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsError)
-    pub fn detach_load_balancer_from_subnets(&self) -> crate::operation::detach_load_balancer_from_subnets::builders::DetachLoadBalancerFromSubnetsFluentBuilder{
+    pub fn detach_load_balancer_from_subnets(
+        &self,
+    ) -> crate::operation::detach_load_balancer_from_subnets::builders::DetachLoadBalancerFromSubnetsFluentBuilder {
         crate::operation::detach_load_balancer_from_subnets::builders::DetachLoadBalancerFromSubnetsFluentBuilder::new(self.handle.clone())
     }
 }

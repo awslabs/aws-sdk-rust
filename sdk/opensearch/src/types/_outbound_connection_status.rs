@@ -37,9 +37,7 @@ impl OutboundConnectionStatus {
     /// <li> <p> <b>DELETING</b> - Outbound connection deletion is in progress.</p> </li>
     /// <li> <p> <b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
-    pub fn status_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OutboundConnectionStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<&crate::types::OutboundConnectionStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>Verbose information for the outbound connection.</p>
@@ -56,9 +54,7 @@ impl OutboundConnectionStatus {
 
 /// A builder for [`OutboundConnectionStatus`](crate::types::OutboundConnectionStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutboundConnectionStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::OutboundConnectionStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -94,10 +90,7 @@ impl OutboundConnectionStatusBuilder {
     /// <li> <p> <b>DELETING</b> - Outbound connection deletion is in progress.</p> </li>
     /// <li> <p> <b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::OutboundConnectionStatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::OutboundConnectionStatusCode>) -> Self {
         self.status_code = input;
         self
     }
@@ -114,9 +107,7 @@ impl OutboundConnectionStatusBuilder {
     /// <li> <p> <b>DELETING</b> - Outbound connection deletion is in progress.</p> </li>
     /// <li> <p> <b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
-    pub fn get_status_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutboundConnectionStatusCode> {
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::OutboundConnectionStatusCode> {
         &self.status_code
     }
     /// <p>Verbose information for the outbound connection.</p>

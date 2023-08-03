@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`video(Option<Video>)`](crate::operation::get_person_tracking::GetPersonTrackingOutput::video): <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     ///   - [`job_tag(Option<String>)`](crate::operation::get_person_tracking::GetPersonTrackingOutput::job_tag): <p>A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
     /// - On failure, responds with [`SdkError<GetPersonTrackingError>`](crate::operation::get_person_tracking::GetPersonTrackingError)
-    pub fn get_person_tracking(
-        &self,
-    ) -> crate::operation::get_person_tracking::builders::GetPersonTrackingFluentBuilder {
-        crate::operation::get_person_tracking::builders::GetPersonTrackingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_person_tracking(&self) -> crate::operation::get_person_tracking::builders::GetPersonTrackingFluentBuilder {
+        crate::operation::get_person_tracking::builders::GetPersonTrackingFluentBuilder::new(self.handle.clone())
     }
 }

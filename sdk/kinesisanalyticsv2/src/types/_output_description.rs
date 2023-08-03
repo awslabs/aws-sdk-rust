@@ -12,12 +12,10 @@ pub struct OutputDescription {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the Kinesis data stream that is configured as the destination where output is written.</p>
     #[doc(hidden)]
-    pub kinesis_streams_output_description:
-        ::std::option::Option<crate::types::KinesisStreamsOutputDescription>,
+    pub kinesis_streams_output_description: ::std::option::Option<crate::types::KinesisStreamsOutputDescription>,
     /// <p>Describes the Kinesis Data Firehose delivery stream that is configured as the destination where output is written.</p>
     #[doc(hidden)]
-    pub kinesis_firehose_output_description:
-        ::std::option::Option<crate::types::KinesisFirehoseOutputDescription>,
+    pub kinesis_firehose_output_description: ::std::option::Option<crate::types::KinesisFirehoseOutputDescription>,
     /// <p>Describes the Lambda function that is configured as the destination where output is written.</p>
     #[doc(hidden)]
     pub lambda_output_description: ::std::option::Option<crate::types::LambdaOutputDescription>,
@@ -35,21 +33,15 @@ impl OutputDescription {
         self.name.as_deref()
     }
     /// <p>Describes the Kinesis data stream that is configured as the destination where output is written.</p>
-    pub fn kinesis_streams_output_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisStreamsOutputDescription> {
+    pub fn kinesis_streams_output_description(&self) -> ::std::option::Option<&crate::types::KinesisStreamsOutputDescription> {
         self.kinesis_streams_output_description.as_ref()
     }
     /// <p>Describes the Kinesis Data Firehose delivery stream that is configured as the destination where output is written.</p>
-    pub fn kinesis_firehose_output_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisFirehoseOutputDescription> {
+    pub fn kinesis_firehose_output_description(&self) -> ::std::option::Option<&crate::types::KinesisFirehoseOutputDescription> {
         self.kinesis_firehose_output_description.as_ref()
     }
     /// <p>Describes the Lambda function that is configured as the destination where output is written.</p>
-    pub fn lambda_output_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LambdaOutputDescription> {
+    pub fn lambda_output_description(&self) -> ::std::option::Option<&crate::types::LambdaOutputDescription> {
         self.lambda_output_description.as_ref()
     }
     /// <p>The data format used for writing data to the destination.</p>
@@ -66,18 +58,13 @@ impl OutputDescription {
 
 /// A builder for [`OutputDescription`](crate::types::OutputDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputDescriptionBuilder {
     pub(crate) output_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) kinesis_streams_output_description:
-        ::std::option::Option<crate::types::KinesisStreamsOutputDescription>,
-    pub(crate) kinesis_firehose_output_description:
-        ::std::option::Option<crate::types::KinesisFirehoseOutputDescription>,
-    pub(crate) lambda_output_description:
-        ::std::option::Option<crate::types::LambdaOutputDescription>,
+    pub(crate) kinesis_streams_output_description: ::std::option::Option<crate::types::KinesisStreamsOutputDescription>,
+    pub(crate) kinesis_firehose_output_description: ::std::option::Option<crate::types::KinesisFirehoseOutputDescription>,
+    pub(crate) lambda_output_description: ::std::option::Option<crate::types::LambdaOutputDescription>,
     pub(crate) destination_schema: ::std::option::Option<crate::types::DestinationSchema>,
 }
 impl OutputDescriptionBuilder {
@@ -110,69 +97,45 @@ impl OutputDescriptionBuilder {
         &self.name
     }
     /// <p>Describes the Kinesis data stream that is configured as the destination where output is written.</p>
-    pub fn kinesis_streams_output_description(
-        mut self,
-        input: crate::types::KinesisStreamsOutputDescription,
-    ) -> Self {
+    pub fn kinesis_streams_output_description(mut self, input: crate::types::KinesisStreamsOutputDescription) -> Self {
         self.kinesis_streams_output_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the Kinesis data stream that is configured as the destination where output is written.</p>
-    pub fn set_kinesis_streams_output_description(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisStreamsOutputDescription>,
-    ) -> Self {
+    pub fn set_kinesis_streams_output_description(mut self, input: ::std::option::Option<crate::types::KinesisStreamsOutputDescription>) -> Self {
         self.kinesis_streams_output_description = input;
         self
     }
     /// <p>Describes the Kinesis data stream that is configured as the destination where output is written.</p>
-    pub fn get_kinesis_streams_output_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisStreamsOutputDescription> {
+    pub fn get_kinesis_streams_output_description(&self) -> &::std::option::Option<crate::types::KinesisStreamsOutputDescription> {
         &self.kinesis_streams_output_description
     }
     /// <p>Describes the Kinesis Data Firehose delivery stream that is configured as the destination where output is written.</p>
-    pub fn kinesis_firehose_output_description(
-        mut self,
-        input: crate::types::KinesisFirehoseOutputDescription,
-    ) -> Self {
+    pub fn kinesis_firehose_output_description(mut self, input: crate::types::KinesisFirehoseOutputDescription) -> Self {
         self.kinesis_firehose_output_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the Kinesis Data Firehose delivery stream that is configured as the destination where output is written.</p>
-    pub fn set_kinesis_firehose_output_description(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisFirehoseOutputDescription>,
-    ) -> Self {
+    pub fn set_kinesis_firehose_output_description(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseOutputDescription>) -> Self {
         self.kinesis_firehose_output_description = input;
         self
     }
     /// <p>Describes the Kinesis Data Firehose delivery stream that is configured as the destination where output is written.</p>
-    pub fn get_kinesis_firehose_output_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisFirehoseOutputDescription> {
+    pub fn get_kinesis_firehose_output_description(&self) -> &::std::option::Option<crate::types::KinesisFirehoseOutputDescription> {
         &self.kinesis_firehose_output_description
     }
     /// <p>Describes the Lambda function that is configured as the destination where output is written.</p>
-    pub fn lambda_output_description(
-        mut self,
-        input: crate::types::LambdaOutputDescription,
-    ) -> Self {
+    pub fn lambda_output_description(mut self, input: crate::types::LambdaOutputDescription) -> Self {
         self.lambda_output_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the Lambda function that is configured as the destination where output is written.</p>
-    pub fn set_lambda_output_description(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaOutputDescription>,
-    ) -> Self {
+    pub fn set_lambda_output_description(mut self, input: ::std::option::Option<crate::types::LambdaOutputDescription>) -> Self {
         self.lambda_output_description = input;
         self
     }
     /// <p>Describes the Lambda function that is configured as the destination where output is written.</p>
-    pub fn get_lambda_output_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::LambdaOutputDescription> {
+    pub fn get_lambda_output_description(&self) -> &::std::option::Option<crate::types::LambdaOutputDescription> {
         &self.lambda_output_description
     }
     /// <p>The data format used for writing data to the destination.</p>
@@ -181,17 +144,12 @@ impl OutputDescriptionBuilder {
         self
     }
     /// <p>The data format used for writing data to the destination.</p>
-    pub fn set_destination_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationSchema>,
-    ) -> Self {
+    pub fn set_destination_schema(mut self, input: ::std::option::Option<crate::types::DestinationSchema>) -> Self {
         self.destination_schema = input;
         self
     }
     /// <p>The data format used for writing data to the destination.</p>
-    pub fn get_destination_schema(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationSchema> {
+    pub fn get_destination_schema(&self) -> &::std::option::Option<crate::types::DestinationSchema> {
         &self.destination_schema
     }
     /// Consumes the builder and constructs a [`OutputDescription`](crate::types::OutputDescription).

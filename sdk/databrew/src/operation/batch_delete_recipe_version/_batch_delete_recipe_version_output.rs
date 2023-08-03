@@ -28,20 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchDeleteRecipeVersionOutput {
 }
 impl BatchDeleteRecipeVersionOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteRecipeVersionOutput`](crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput).
-    pub fn builder() -> crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionOutputBuilder{
+    pub fn builder() -> crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionOutputBuilder {
         crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteRecipeVersionOutput`](crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteRecipeVersionOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecipeVersionErrorDetail>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::RecipeVersionErrorDetail>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteRecipeVersionOutputBuilder {
@@ -71,17 +68,12 @@ impl BatchDeleteRecipeVersionOutputBuilder {
         self
     }
     /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecipeVersionErrorDetail>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecipeVersionErrorDetail>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipeVersionErrorDetail>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipeVersionErrorDetail>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -94,9 +86,7 @@ impl BatchDeleteRecipeVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDeleteRecipeVersionOutput`](crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput {
+    pub fn build(self) -> crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput {
         crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput {
             name: self.name,
             errors: self.errors,

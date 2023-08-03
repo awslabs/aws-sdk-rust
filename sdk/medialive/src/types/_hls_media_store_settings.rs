@@ -30,9 +30,7 @@ impl HlsMediaStoreSettings {
         self.filecache_duration
     }
     /// When set to temporal, output files are stored in non-persistent memory for faster reading and writing.
-    pub fn media_store_storage_class(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsMediaStoreStorageClass> {
+    pub fn media_store_storage_class(&self) -> ::std::option::Option<&crate::types::HlsMediaStoreStorageClass> {
         self.media_store_storage_class.as_ref()
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
@@ -53,14 +51,11 @@ impl HlsMediaStoreSettings {
 
 /// A builder for [`HlsMediaStoreSettings`](crate::types::HlsMediaStoreSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsMediaStoreSettingsBuilder {
     pub(crate) connection_retry_interval: ::std::option::Option<i32>,
     pub(crate) filecache_duration: ::std::option::Option<i32>,
-    pub(crate) media_store_storage_class:
-        ::std::option::Option<crate::types::HlsMediaStoreStorageClass>,
+    pub(crate) media_store_storage_class: ::std::option::Option<crate::types::HlsMediaStoreStorageClass>,
     pub(crate) num_retries: ::std::option::Option<i32>,
     pub(crate) restart_delay: ::std::option::Option<i32>,
 }
@@ -94,25 +89,17 @@ impl HlsMediaStoreSettingsBuilder {
         &self.filecache_duration
     }
     /// When set to temporal, output files are stored in non-persistent memory for faster reading and writing.
-    pub fn media_store_storage_class(
-        mut self,
-        input: crate::types::HlsMediaStoreStorageClass,
-    ) -> Self {
+    pub fn media_store_storage_class(mut self, input: crate::types::HlsMediaStoreStorageClass) -> Self {
         self.media_store_storage_class = ::std::option::Option::Some(input);
         self
     }
     /// When set to temporal, output files are stored in non-persistent memory for faster reading and writing.
-    pub fn set_media_store_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsMediaStoreStorageClass>,
-    ) -> Self {
+    pub fn set_media_store_storage_class(mut self, input: ::std::option::Option<crate::types::HlsMediaStoreStorageClass>) -> Self {
         self.media_store_storage_class = input;
         self
     }
     /// When set to temporal, output files are stored in non-persistent memory for faster reading and writing.
-    pub fn get_media_store_storage_class(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsMediaStoreStorageClass> {
+    pub fn get_media_store_storage_class(&self) -> &::std::option::Option<crate::types::HlsMediaStoreStorageClass> {
         &self.media_store_storage_class
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.

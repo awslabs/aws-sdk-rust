@@ -44,9 +44,7 @@ impl AwsEcsContainerDetails {
 
 /// A builder for [`AwsEcsContainerDetails`](crate::types::AwsEcsContainerDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsContainerDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<::std::string::String>,
@@ -94,17 +92,12 @@ impl AwsEcsContainerDetailsBuilder {
         self
     }
     /// <p>The mount points for data volumes in your container. </p>
-    pub fn set_mount_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsMountPoint>>,
-    ) -> Self {
+    pub fn set_mount_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsMountPoint>>) -> Self {
         self.mount_points = input;
         self
     }
     /// <p>The mount points for data volumes in your container. </p>
-    pub fn get_mount_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsMountPoint>> {
+    pub fn get_mount_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsMountPoint>> {
         &self.mount_points
     }
     /// <p>When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user). </p>

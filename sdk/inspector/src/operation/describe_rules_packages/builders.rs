@@ -37,10 +37,7 @@ impl DescribeRulesPackagesFluentBuilder {
         }
     }
     /// Access the DescribeRulesPackages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_rules_packages::builders::DescribeRulesPackagesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_rules_packages::builders::DescribeRulesPackagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeRulesPackagesFluentBuilder {
             crate::operation::describe_rules_packages::DescribeRulesPackages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rules_packages::DescribeRulesPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rules_packages::DescribeRulesPackagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeRulesPackagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeRulesPackagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rules_packages::DescribeRulesPackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rules_packages::DescribeRulesPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rules_packages::DescribeRulesPackagesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeRulesPackagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rules_packages::DescribeRulesPackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rules_packages::DescribeRulesPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rules_packages::DescribeRulesPackagesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeRulesPackagesFluentBuilder {
             crate::operation::describe_rules_packages::DescribeRulesPackages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_rules_packages::DescribeRulesPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_rules_packages::DescribeRulesPackagesError>,
     > {
         self.customize_middleware().await
     }
@@ -128,25 +114,17 @@ impl DescribeRulesPackagesFluentBuilder {
     /// To override the contents of this collection use [`set_rules_package_arns`](Self::set_rules_package_arns).
     ///
     /// <p>The ARN that specifies the rules package that you want to describe.</p>
-    pub fn rules_package_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rules_package_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rules_package_arns(input.into());
         self
     }
     /// <p>The ARN that specifies the rules package that you want to describe.</p>
-    pub fn set_rules_package_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rules_package_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_rules_package_arns(input);
         self
     }
     /// <p>The ARN that specifies the rules package that you want to describe.</p>
-    pub fn get_rules_package_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rules_package_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_rules_package_arns()
     }
     /// <p>The locale that you want to translate a rules package description into.</p>

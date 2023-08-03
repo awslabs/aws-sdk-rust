@@ -29,9 +29,7 @@ impl PutAttributesInput {
 
 /// A builder for [`PutAttributesInput`](crate::operation::put_attributes::PutAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAttributesInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
@@ -63,26 +61,18 @@ impl PutAttributesInputBuilder {
         self
     }
     /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes for each resource. You can specify up to 10 attributes in a single call.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes for each resource. You can specify up to 10 attributes in a single call.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`PutAttributesInput`](crate::operation::put_attributes::PutAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_attributes::PutAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_attributes::PutAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_attributes::PutAttributesInput {
             cluster: self.cluster,
             attributes: self.attributes,

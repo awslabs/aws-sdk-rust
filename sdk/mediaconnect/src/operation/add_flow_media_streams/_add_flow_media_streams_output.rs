@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for AddFlowMediaStreamsOutput {
 }
 impl AddFlowMediaStreamsOutput {
     /// Creates a new builder-style object to manufacture [`AddFlowMediaStreamsOutput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsOutput).
-    pub fn builder(
-    ) -> crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsOutputBuilder {
+    pub fn builder() -> crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsOutputBuilder {
         crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddFlowMediaStreamsOutput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddFlowMediaStreamsOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) media_streams: ::std::option::Option<::std::vec::Vec<crate::types::MediaStream>>,
@@ -71,17 +68,12 @@ impl AddFlowMediaStreamsOutputBuilder {
         self
     }
     /// The media streams that you added to the flow.
-    pub fn set_media_streams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStream>>,
-    ) -> Self {
+    pub fn set_media_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStream>>) -> Self {
         self.media_streams = input;
         self
     }
     /// The media streams that you added to the flow.
-    pub fn get_media_streams(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStream>> {
+    pub fn get_media_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStream>> {
         &self.media_streams
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

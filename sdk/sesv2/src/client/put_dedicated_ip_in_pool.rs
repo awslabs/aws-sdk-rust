@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`destination_pool_name(impl ::std::convert::Into<String>)`](crate::operation::put_dedicated_ip_in_pool::builders::PutDedicatedIpInPoolFluentBuilder::destination_pool_name) / [`set_destination_pool_name(Option<String>)`](crate::operation::put_dedicated_ip_in_pool::builders::PutDedicatedIpInPoolFluentBuilder::set_destination_pool_name): <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
     /// - On success, responds with [`PutDedicatedIpInPoolOutput`](crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput)
     /// - On failure, responds with [`SdkError<PutDedicatedIpInPoolError>`](crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError)
-    pub fn put_dedicated_ip_in_pool(
-        &self,
-    ) -> crate::operation::put_dedicated_ip_in_pool::builders::PutDedicatedIpInPoolFluentBuilder
-    {
-        crate::operation::put_dedicated_ip_in_pool::builders::PutDedicatedIpInPoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_dedicated_ip_in_pool(&self) -> crate::operation::put_dedicated_ip_in_pool::builders::PutDedicatedIpInPoolFluentBuilder {
+        crate::operation::put_dedicated_ip_in_pool::builders::PutDedicatedIpInPoolFluentBuilder::new(self.handle.clone())
     }
 }

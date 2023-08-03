@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for DescribeNamespaceOutput {
 }
 impl DescribeNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNamespaceOutput`](crate::operation::describe_namespace::DescribeNamespaceOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_namespace::builders::DescribeNamespaceOutputBuilder {
+    pub fn builder() -> crate::operation::describe_namespace::builders::DescribeNamespaceOutputBuilder {
         crate::operation::describe_namespace::builders::DescribeNamespaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNamespaceOutput`](crate::operation::describe_namespace::DescribeNamespaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNamespaceOutputBuilder {
     pub(crate) namespace_arn: ::std::option::Option<::std::string::String>,
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
@@ -70,18 +67,12 @@ pub struct DescribeNamespaceOutputBuilder {
 }
 impl DescribeNamespaceOutputBuilder {
     /// <p>The ARN of the namespace.</p>
-    pub fn namespace_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the namespace.</p>
-    pub fn set_namespace_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_arn = input;
         self
     }
@@ -90,18 +81,12 @@ impl DescribeNamespaceOutputBuilder {
         &self.namespace_arn
     }
     /// <p>The name of the namespace.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the namespace.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
@@ -110,18 +95,12 @@ impl DescribeNamespaceOutputBuilder {
         &self.namespace_name
     }
     /// <p>The name of the public namespace that the latest namespace version is tracking.</p>
-    pub fn tracking_namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tracking_namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracking_namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the public namespace that the latest namespace version is tracking.</p>
-    pub fn set_tracking_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tracking_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tracking_namespace_name = input;
         self
     }

@@ -87,10 +87,7 @@ impl SearchChannelsInputBuilder {
         self
     }
     /// <p>A list of the <code>Field</code> objects in the channel being searched.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchField>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchField>>) -> Self {
         self.fields = input;
         self
     }
@@ -129,10 +126,7 @@ impl SearchChannelsInputBuilder {
     /// Consumes the builder and constructs a [`SearchChannelsInput`](crate::operation::search_channels::SearchChannelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_channels::SearchChannelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::search_channels::SearchChannelsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_channels::SearchChannelsInput {
             chime_bearer: self.chime_bearer,
             fields: self.fields,

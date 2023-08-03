@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::delete_job_tagging::builders::DeleteJobTaggingFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::delete_job_tagging::builders::DeleteJobTaggingFluentBuilder::set_job_id): <p>The ID for the S3 Batch Operations job whose tags you want to delete.</p>
     /// - On success, responds with [`DeleteJobTaggingOutput`](crate::operation::delete_job_tagging::DeleteJobTaggingOutput)
     /// - On failure, responds with [`SdkError<DeleteJobTaggingError>`](crate::operation::delete_job_tagging::DeleteJobTaggingError)
-    pub fn delete_job_tagging(
-        &self,
-    ) -> crate::operation::delete_job_tagging::builders::DeleteJobTaggingFluentBuilder {
-        crate::operation::delete_job_tagging::builders::DeleteJobTaggingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_job_tagging(&self) -> crate::operation::delete_job_tagging::builders::DeleteJobTaggingFluentBuilder {
+        crate::operation::delete_job_tagging::builders::DeleteJobTaggingFluentBuilder::new(self.handle.clone())
     }
 }

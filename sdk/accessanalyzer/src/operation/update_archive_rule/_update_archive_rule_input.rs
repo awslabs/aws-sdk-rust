@@ -12,9 +12,7 @@ pub struct UpdateArchiveRuleInput {
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
     #[doc(hidden)]
-    pub filter: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    >,
+    pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
     /// <p>A client token.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -29,11 +27,7 @@ impl UpdateArchiveRuleInput {
         self.rule_name.as_deref()
     }
     /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    > {
+    pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
         self.filter.as_ref()
     }
     /// <p>A client token.</p>
@@ -43,39 +37,28 @@ impl UpdateArchiveRuleInput {
 }
 impl UpdateArchiveRuleInput {
     /// Creates a new builder-style object to manufacture [`UpdateArchiveRuleInput`](crate::operation::update_archive_rule::UpdateArchiveRuleInput).
-    pub fn builder(
-    ) -> crate::operation::update_archive_rule::builders::UpdateArchiveRuleInputBuilder {
+    pub fn builder() -> crate::operation::update_archive_rule::builders::UpdateArchiveRuleInputBuilder {
         crate::operation::update_archive_rule::builders::UpdateArchiveRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateArchiveRuleInput`](crate::operation::update_archive_rule::UpdateArchiveRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateArchiveRuleInputBuilder {
     pub(crate) analyzer_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
-    pub(crate) filter: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    >,
+    pub(crate) filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateArchiveRuleInputBuilder {
     /// <p>The name of the analyzer to update the archive rules for.</p>
-    pub fn analyzer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the analyzer to update the archive rules for.</p>
-    pub fn set_analyzer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analyzer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyzer_name = input;
         self
     }
@@ -102,32 +85,19 @@ impl UpdateArchiveRuleInputBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
-    pub fn filter(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Criterion,
-    ) -> Self {
+    pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Criterion) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.filter = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-        >,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>) -> Self {
         self.filter = input;
         self
     }
     /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    > {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
         &self.filter
     }
     /// <p>A client token.</p>
@@ -147,17 +117,12 @@ impl UpdateArchiveRuleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateArchiveRuleInput`](crate::operation::update_archive_rule::UpdateArchiveRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_archive_rule::UpdateArchiveRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_archive_rule::UpdateArchiveRuleInput {
-                analyzer_name: self.analyzer_name,
-                rule_name: self.rule_name,
-                filter: self.filter,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_archive_rule::UpdateArchiveRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_archive_rule::UpdateArchiveRuleInput {
+            analyzer_name: self.analyzer_name,
+            rule_name: self.rule_name,
+            filter: self.filter,
+            client_token: self.client_token,
+        })
     }
 }

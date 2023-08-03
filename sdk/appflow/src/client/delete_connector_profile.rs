@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`force_delete(bool)`](crate::operation::delete_connector_profile::builders::DeleteConnectorProfileFluentBuilder::force_delete) / [`set_force_delete(Option<bool>)`](crate::operation::delete_connector_profile::builders::DeleteConnectorProfileFluentBuilder::set_force_delete): <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
     /// - On success, responds with [`DeleteConnectorProfileOutput`](crate::operation::delete_connector_profile::DeleteConnectorProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteConnectorProfileError>`](crate::operation::delete_connector_profile::DeleteConnectorProfileError)
-    pub fn delete_connector_profile(
-        &self,
-    ) -> crate::operation::delete_connector_profile::builders::DeleteConnectorProfileFluentBuilder
-    {
+    pub fn delete_connector_profile(&self) -> crate::operation::delete_connector_profile::builders::DeleteConnectorProfileFluentBuilder {
         crate::operation::delete_connector_profile::builders::DeleteConnectorProfileFluentBuilder::new(self.handle.clone())
     }
 }

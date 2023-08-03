@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AppBlockBuilderAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -62,12 +56,8 @@ impl ::std::convert::From<&str> for AppBlockBuilderAttribute {
         match s {
             "ACCESS_ENDPOINTS" => AppBlockBuilderAttribute::AccessEndpoints,
             "IAM_ROLE_ARN" => AppBlockBuilderAttribute::IamRoleArn,
-            "VPC_CONFIGURATION_SECURITY_GROUP_IDS" => {
-                AppBlockBuilderAttribute::VpcConfigurationSecurityGroupIds
-            }
-            other => AppBlockBuilderAttribute::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "VPC_CONFIGURATION_SECURITY_GROUP_IDS" => AppBlockBuilderAttribute::VpcConfigurationSecurityGroupIds,
+            other => AppBlockBuilderAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -84,19 +74,13 @@ impl AppBlockBuilderAttribute {
         match self {
             AppBlockBuilderAttribute::AccessEndpoints => "ACCESS_ENDPOINTS",
             AppBlockBuilderAttribute::IamRoleArn => "IAM_ROLE_ARN",
-            AppBlockBuilderAttribute::VpcConfigurationSecurityGroupIds => {
-                "VPC_CONFIGURATION_SECURITY_GROUP_IDS"
-            }
+            AppBlockBuilderAttribute::VpcConfigurationSecurityGroupIds => "VPC_CONFIGURATION_SECURITY_GROUP_IDS",
             AppBlockBuilderAttribute::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_ENDPOINTS",
-            "IAM_ROLE_ARN",
-            "VPC_CONFIGURATION_SECURITY_GROUP_IDS",
-        ]
+        &["ACCESS_ENDPOINTS", "IAM_ROLE_ARN", "VPC_CONFIGURATION_SECURITY_GROUP_IDS"]
     }
 }
 impl ::std::convert::AsRef<str> for AppBlockBuilderAttribute {

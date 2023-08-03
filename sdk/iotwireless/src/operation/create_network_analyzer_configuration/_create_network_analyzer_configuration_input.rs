@@ -64,16 +64,14 @@ impl CreateNetworkAnalyzerConfigurationInput {
 }
 impl CreateNetworkAnalyzerConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkAnalyzerConfigurationInput`](crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationInput).
-    pub fn builder() -> crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationInputBuilder {
         crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNetworkAnalyzerConfigurationInput`](crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkAnalyzerConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) trace_content: ::std::option::Option<crate::types::TraceContent>,
@@ -105,10 +103,7 @@ impl CreateNetworkAnalyzerConfigurationInputBuilder {
         self
     }
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
-    pub fn set_trace_content(
-        mut self,
-        input: ::std::option::Option<crate::types::TraceContent>,
-    ) -> Self {
+    pub fn set_trace_content(mut self, input: ::std::option::Option<crate::types::TraceContent>) -> Self {
         self.trace_content = input;
         self
     }
@@ -121,27 +116,19 @@ impl CreateNetworkAnalyzerConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_wireless_devices`](Self::set_wireless_devices).
     ///
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    pub fn wireless_devices(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wireless_devices(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.wireless_devices.unwrap_or_default();
         v.push(input.into());
         self.wireless_devices = ::std::option::Option::Some(v);
         self
     }
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    pub fn set_wireless_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_wireless_devices(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.wireless_devices = input;
         self
     }
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    pub fn get_wireless_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_wireless_devices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.wireless_devices
     }
     /// Appends an item to `wireless_gateways`.
@@ -149,27 +136,19 @@ impl CreateNetworkAnalyzerConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_wireless_gateways`](Self::set_wireless_gateways).
     ///
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    pub fn wireless_gateways(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wireless_gateways(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.wireless_gateways.unwrap_or_default();
         v.push(input.into());
         self.wireless_gateways = ::std::option::Option::Some(v);
         self
     }
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    pub fn set_wireless_gateways(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_wireless_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.wireless_gateways = input;
         self
     }
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    pub fn get_wireless_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_wireless_gateways(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.wireless_gateways
     }
     /// <p>The description of the new resource.</p>
@@ -198,10 +177,7 @@ impl CreateNetworkAnalyzerConfigurationInputBuilder {
         self
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -210,18 +186,12 @@ impl CreateNetworkAnalyzerConfigurationInputBuilder {
         &self.tags
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -234,50 +204,39 @@ impl CreateNetworkAnalyzerConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_multicast_groups`](Self::set_multicast_groups).
     ///
     /// <p>Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
-    pub fn multicast_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multicast_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.multicast_groups.unwrap_or_default();
         v.push(input.into());
         self.multicast_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
-    pub fn set_multicast_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_multicast_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.multicast_groups = input;
         self
     }
     /// <p>Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
-    pub fn get_multicast_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_multicast_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.multicast_groups
     }
     /// Consumes the builder and constructs a [`CreateNetworkAnalyzerConfigurationInput`](crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationInput {
-                name: self.name
-                ,
-                trace_content: self.trace_content
-                ,
-                wireless_devices: self.wireless_devices
-                ,
-                wireless_gateways: self.wireless_gateways
-                ,
-                description: self.description
-                ,
-                tags: self.tags
-                ,
-                client_request_token: self.client_request_token
-                ,
-                multicast_groups: self.multicast_groups
-                ,
-            }
+                name: self.name,
+                trace_content: self.trace_content,
+                wireless_devices: self.wireless_devices,
+                wireless_gateways: self.wireless_gateways,
+                description: self.description,
+                tags: self.tags,
+                client_request_token: self.client_request_token,
+                multicast_groups: self.multicast_groups,
+            },
         )
     }
 }

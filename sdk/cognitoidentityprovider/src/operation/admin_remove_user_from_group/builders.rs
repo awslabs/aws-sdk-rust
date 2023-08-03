@@ -27,7 +27,7 @@ impl AdminRemoveUserFromGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminRemoveUserFromGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupInputBuilder,
+    inner: crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupInputBuilder,
 }
 impl AdminRemoveUserFromGroupFluentBuilder {
     /// Creates a new `AdminRemoveUserFromGroup`.
@@ -38,7 +38,7 @@ impl AdminRemoveUserFromGroupFluentBuilder {
         }
     }
     /// Access the AdminRemoveUserFromGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl AdminRemoveUserFromGroupFluentBuilder {
             crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl AdminRemoveUserFromGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl AdminRemoveUserFromGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl AdminRemoveUserFromGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl AdminRemoveUserFromGroupFluentBuilder {
             crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError>,
     > {
         self.customize_middleware().await
     }

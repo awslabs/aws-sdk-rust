@@ -36,9 +36,7 @@ impl ListEventTypesInput {
 
 /// A builder for [`ListEventTypesInput`](crate::operation::list_event_types::ListEventTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventTypesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ListEventTypesFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListEventTypesInputBuilder {
         self
     }
     /// <p>The filters to use to return information by service or resource type.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListEventTypesFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListEventTypesFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filters to use to return information by service or resource type.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEventTypesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEventTypesFilter>> {
         &self.filters
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
@@ -101,10 +94,7 @@ impl ListEventTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListEventTypesInput`](crate::operation::list_event_types::ListEventTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_event_types::ListEventTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_event_types::ListEventTypesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_event_types::ListEventTypesInput {
             filters: self.filters,
             next_token: self.next_token,

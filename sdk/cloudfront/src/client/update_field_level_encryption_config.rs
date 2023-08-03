@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`field_level_encryption(Option<FieldLevelEncryption>)`](crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput::field_level_encryption): <p>Return the results of updating the configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput::e_tag): <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateFieldLevelEncryptionConfigError>`](crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError)
-    pub fn update_field_level_encryption_config(&self) -> crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigFluentBuilder{
+    pub fn update_field_level_encryption_config(
+        &self,
+    ) -> crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigFluentBuilder {
         crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigFluentBuilder::new(self.handle.clone())
     }
 }

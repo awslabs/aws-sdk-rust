@@ -22,9 +22,7 @@ impl ExpireSessionInput {
 
 /// A builder for [`ExpireSessionInput`](crate::operation::expire_session::ExpireSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExpireSessionInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl ExpireSessionInputBuilder {
     /// Consumes the builder and constructs a [`ExpireSessionInput`](crate::operation::expire_session::ExpireSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::expire_session::ExpireSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::expire_session::ExpireSessionInput {
-            session_id: self.session_id,
-        })
+    ) -> ::std::result::Result<crate::operation::expire_session::ExpireSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::expire_session::ExpireSessionInput { session_id: self.session_id })
     }
 }

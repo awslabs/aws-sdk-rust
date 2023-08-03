@@ -344,9 +344,7 @@ impl ResourceRequirement {
 
 /// A builder for [`ResourceRequirement`](crate::types::ResourceRequirement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceRequirementBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ResourceType>,

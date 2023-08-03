@@ -50,9 +50,7 @@ impl InvokedBy {
 
 /// A builder for [`InvokedBy`](crate::types::InvokedBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvokedByBuilder {
     pub(crate) standard_messages: ::std::option::Option<crate::types::StandardMessages>,
     pub(crate) targeted_messages: ::std::option::Option<crate::types::TargetedMessages>,
@@ -76,10 +74,7 @@ impl InvokedByBuilder {
     /// <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li>
     /// <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>
     /// </ul>
-    pub fn set_standard_messages(
-        mut self,
-        input: ::std::option::Option<crate::types::StandardMessages>,
-    ) -> Self {
+    pub fn set_standard_messages(mut self, input: ::std::option::Option<crate::types::StandardMessages>) -> Self {
         self.standard_messages = input;
         self
     }
@@ -107,10 +102,7 @@ impl InvokedByBuilder {
     /// <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li>
     /// <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>
     /// </ul>
-    pub fn set_targeted_messages(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetedMessages>,
-    ) -> Self {
+    pub fn set_targeted_messages(mut self, input: ::std::option::Option<crate::types::TargetedMessages>) -> Self {
         self.targeted_messages = input;
         self
     }

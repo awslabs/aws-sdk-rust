@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateConferenceProviderOutput`](crate::operation::update_conference_provider::UpdateConferenceProviderOutput)
     /// - On failure, responds with [`SdkError<UpdateConferenceProviderError>`](crate::operation::update_conference_provider::UpdateConferenceProviderError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn update_conference_provider(
-        &self,
-    ) -> crate::operation::update_conference_provider::builders::UpdateConferenceProviderFluentBuilder
-    {
+    pub fn update_conference_provider(&self) -> crate::operation::update_conference_provider::builders::UpdateConferenceProviderFluentBuilder {
         crate::operation::update_conference_provider::builders::UpdateConferenceProviderFluentBuilder::new(self.handle.clone())
     }
 }

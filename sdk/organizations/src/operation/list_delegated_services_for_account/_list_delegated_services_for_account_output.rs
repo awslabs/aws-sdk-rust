@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDelegatedServicesForAccountOutput
 }
 impl ListDelegatedServicesForAccountOutput {
     /// Creates a new builder-style object to manufacture [`ListDelegatedServicesForAccountOutput`](crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput).
-    pub fn builder() -> crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountOutputBuilder{
+    pub fn builder() -> crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountOutputBuilder {
         crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDelegatedServicesForAccountOutput`](crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDelegatedServicesForAccountOutputBuilder {
-    pub(crate) delegated_services:
-        ::std::option::Option<::std::vec::Vec<crate::types::DelegatedService>>,
+    pub(crate) delegated_services: ::std::option::Option<::std::vec::Vec<crate::types::DelegatedService>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListDelegatedServicesForAccountOutputBuilder {
         self
     }
     /// <p>The services for which the account is a delegated administrator.</p>
-    pub fn set_delegated_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DelegatedService>>,
-    ) -> Self {
+    pub fn set_delegated_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DelegatedService>>) -> Self {
         self.delegated_services = input;
         self
     }
     /// <p>The services for which the account is a delegated administrator.</p>
-    pub fn get_delegated_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DelegatedService>> {
+    pub fn get_delegated_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DelegatedService>> {
         &self.delegated_services
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
@@ -94,15 +86,10 @@ impl ListDelegatedServicesForAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDelegatedServicesForAccountOutput`](crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput
-    {
+    pub fn build(self) -> crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput {
         crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput {
-            delegated_services: self.delegated_services
-            ,
-            next_token: self.next_token
-            ,
+            delegated_services: self.delegated_services,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

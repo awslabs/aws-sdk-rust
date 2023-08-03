@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListViolationEventsOutput {
 }
 impl ListViolationEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListViolationEventsOutput`](crate::operation::list_violation_events::ListViolationEventsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder {
-        crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder {
+        crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListViolationEventsOutput`](crate::operation::list_violation_events::ListViolationEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListViolationEventsOutputBuilder {
-    pub(crate) violation_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::ViolationEvent>>,
+    pub(crate) violation_events: ::std::option::Option<::std::vec::Vec<crate::types::ViolationEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListViolationEventsOutputBuilder {
         self
     }
     /// <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
-    pub fn set_violation_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ViolationEvent>>,
-    ) -> Self {
+    pub fn set_violation_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ViolationEvent>>) -> Self {
         self.violation_events = input;
         self
     }
     /// <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
-    pub fn get_violation_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ViolationEvent>> {
+    pub fn get_violation_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ViolationEvent>> {
         &self.violation_events
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>

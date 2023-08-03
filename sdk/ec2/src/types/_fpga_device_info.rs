@@ -44,9 +44,7 @@ impl FpgaDeviceInfo {
 
 /// A builder for [`FpgaDeviceInfo`](crate::types::FpgaDeviceInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FpgaDeviceInfoBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) manufacturer: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl FpgaDeviceInfoBuilder {
         self
     }
     /// <p>Describes the memory for the FPGA accelerator for the instance type.</p>
-    pub fn set_memory_info(
-        mut self,
-        input: ::std::option::Option<crate::types::FpgaDeviceMemoryInfo>,
-    ) -> Self {
+    pub fn set_memory_info(mut self, input: ::std::option::Option<crate::types::FpgaDeviceMemoryInfo>) -> Self {
         self.memory_info = input;
         self
     }

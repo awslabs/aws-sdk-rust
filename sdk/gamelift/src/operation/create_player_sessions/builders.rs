@@ -42,9 +42,7 @@ impl CreatePlayerSessionsFluentBuilder {
         }
     }
     /// Access the CreatePlayerSessions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_player_sessions::builders::CreatePlayerSessionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_player_sessions::builders::CreatePlayerSessionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl CreatePlayerSessionsFluentBuilder {
             crate::operation::create_player_sessions::CreatePlayerSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_player_sessions::CreatePlayerSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_player_sessions::CreatePlayerSessionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl CreatePlayerSessionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl CreatePlayerSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_player_sessions::CreatePlayerSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_player_sessions::CreatePlayerSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_player_sessions::CreatePlayerSessionsError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl CreatePlayerSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_player_sessions::CreatePlayerSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_player_sessions::CreatePlayerSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_player_sessions::CreatePlayerSessionsError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +110,17 @@ impl CreatePlayerSessionsFluentBuilder {
             crate::operation::create_player_sessions::CreatePlayerSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_player_sessions::CreatePlayerSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_player_sessions::CreatePlayerSessionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the game session to add players to.</p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_id(input.into());
         self
     }
     /// <p>A unique identifier for the game session to add players to.</p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_session_id(input);
         self
     }
@@ -157,10 +138,7 @@ impl CreatePlayerSessionsFluentBuilder {
         self
     }
     /// <p>List of unique identifiers for the players to be added.</p>
-    pub fn set_player_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_player_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_player_ids(input);
         self
     }
@@ -184,19 +162,13 @@ impl CreatePlayerSessionsFluentBuilder {
     /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
     pub fn set_player_data_map(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_player_data_map(input);
         self
     }
     /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
-    pub fn get_player_data_map(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_player_data_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_player_data_map()
     }
 }

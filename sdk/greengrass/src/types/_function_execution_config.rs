@@ -30,9 +30,7 @@ impl FunctionExecutionConfig {
 
 /// A builder for [`FunctionExecutionConfig`](crate::types::FunctionExecutionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionExecutionConfigBuilder {
     pub(crate) isolation_mode: ::std::option::Option<crate::types::FunctionIsolationMode>,
     pub(crate) run_as: ::std::option::Option<crate::types::FunctionRunAsConfig>,
@@ -44,17 +42,12 @@ impl FunctionExecutionConfigBuilder {
         self
     }
     /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
-    pub fn set_isolation_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionIsolationMode>,
-    ) -> Self {
+    pub fn set_isolation_mode(mut self, input: ::std::option::Option<crate::types::FunctionIsolationMode>) -> Self {
         self.isolation_mode = input;
         self
     }
     /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
-    pub fn get_isolation_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::FunctionIsolationMode> {
+    pub fn get_isolation_mode(&self) -> &::std::option::Option<crate::types::FunctionIsolationMode> {
         &self.isolation_mode
     }
     /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
@@ -63,10 +56,7 @@ impl FunctionExecutionConfigBuilder {
         self
     }
     /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
-    pub fn set_run_as(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionRunAsConfig>,
-    ) -> Self {
+    pub fn set_run_as(mut self, input: ::std::option::Option<crate::types::FunctionRunAsConfig>) -> Self {
         self.run_as = input;
         self
     }

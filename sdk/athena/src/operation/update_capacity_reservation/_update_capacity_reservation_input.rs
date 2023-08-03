@@ -22,16 +22,14 @@ impl UpdateCapacityReservationInput {
 }
 impl UpdateCapacityReservationInput {
     /// Creates a new builder-style object to manufacture [`UpdateCapacityReservationInput`](crate::operation::update_capacity_reservation::UpdateCapacityReservationInput).
-    pub fn builder() -> crate::operation::update_capacity_reservation::builders::UpdateCapacityReservationInputBuilder{
+    pub fn builder() -> crate::operation::update_capacity_reservation::builders::UpdateCapacityReservationInputBuilder {
         crate::operation::update_capacity_reservation::builders::UpdateCapacityReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCapacityReservationInput`](crate::operation::update_capacity_reservation::UpdateCapacityReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCapacityReservationInputBuilder {
     pub(crate) target_dpus: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl UpdateCapacityReservationInputBuilder {
         crate::operation::update_capacity_reservation::UpdateCapacityReservationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_capacity_reservation::UpdateCapacityReservationInput {
-                target_dpus: self.target_dpus,
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_capacity_reservation::UpdateCapacityReservationInput {
+            target_dpus: self.target_dpus,
+            name: self.name,
+        })
     }
 }

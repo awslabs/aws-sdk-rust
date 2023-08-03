@@ -37,9 +37,7 @@ impl AsyncOperation {
         self.request_token_arn.as_deref()
     }
     /// <p>The parameters associated with the request.</p>
-    pub fn request_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AsyncRequestParameters> {
+    pub fn request_parameters(&self) -> ::std::option::Option<&crate::types::AsyncRequestParameters> {
         self.request_parameters.as_ref()
     }
     /// <p>The current status of the request.</p>
@@ -60,9 +58,7 @@ impl AsyncOperation {
 
 /// A builder for [`AsyncOperation`](crate::types::AsyncOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AsyncOperationBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) operation: ::std::option::Option<crate::types::AsyncOperationName>,
@@ -78,10 +74,7 @@ impl AsyncOperationBuilder {
         self
     }
     /// <p>The time that the request was sent to the service.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -95,10 +88,7 @@ impl AsyncOperationBuilder {
         self
     }
     /// <p>The specific operation for the asynchronous request.</p>
-    pub fn set_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::AsyncOperationName>,
-    ) -> Self {
+    pub fn set_operation(mut self, input: ::std::option::Option<crate::types::AsyncOperationName>) -> Self {
         self.operation = input;
         self
     }
@@ -107,18 +97,12 @@ impl AsyncOperationBuilder {
         &self.operation
     }
     /// <p>The request token associated with the request.</p>
-    pub fn request_token_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_token_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_token_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The request token associated with the request.</p>
-    pub fn set_request_token_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_token_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_token_arn = input;
         self
     }
@@ -132,32 +116,21 @@ impl AsyncOperationBuilder {
         self
     }
     /// <p>The parameters associated with the request.</p>
-    pub fn set_request_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::AsyncRequestParameters>,
-    ) -> Self {
+    pub fn set_request_parameters(mut self, input: ::std::option::Option<crate::types::AsyncRequestParameters>) -> Self {
         self.request_parameters = input;
         self
     }
     /// <p>The parameters associated with the request.</p>
-    pub fn get_request_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::AsyncRequestParameters> {
+    pub fn get_request_parameters(&self) -> &::std::option::Option<crate::types::AsyncRequestParameters> {
         &self.request_parameters
     }
     /// <p>The current status of the request.</p>
-    pub fn request_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current status of the request.</p>
-    pub fn set_request_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_status = input;
         self
     }
@@ -171,17 +144,12 @@ impl AsyncOperationBuilder {
         self
     }
     /// <p>The details of the response.</p>
-    pub fn set_response_details(
-        mut self,
-        input: ::std::option::Option<crate::types::AsyncResponseDetails>,
-    ) -> Self {
+    pub fn set_response_details(mut self, input: ::std::option::Option<crate::types::AsyncResponseDetails>) -> Self {
         self.response_details = input;
         self
     }
     /// <p>The details of the response.</p>
-    pub fn get_response_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::AsyncResponseDetails> {
+    pub fn get_response_details(&self) -> &::std::option::Option<crate::types::AsyncResponseDetails> {
         &self.response_details
     }
     /// Consumes the builder and constructs a [`AsyncOperation`](crate::types::AsyncOperation).

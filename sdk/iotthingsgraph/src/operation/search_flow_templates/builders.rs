@@ -38,9 +38,7 @@ impl SearchFlowTemplatesFluentBuilder {
         }
     }
     /// Access the SearchFlowTemplates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_flow_templates::builders::SearchFlowTemplatesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_flow_templates::builders::SearchFlowTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl SearchFlowTemplatesFluentBuilder {
             crate::operation::search_flow_templates::SearchFlowTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_flow_templates::SearchFlowTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_flow_templates::SearchFlowTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl SearchFlowTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl SearchFlowTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_flow_templates::SearchFlowTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_flow_templates::SearchFlowTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_flow_templates::SearchFlowTemplatesError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl SearchFlowTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_flow_templates::SearchFlowTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_flow_templates::SearchFlowTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_flow_templates::SearchFlowTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl SearchFlowTemplatesFluentBuilder {
             crate::operation::search_flow_templates::SearchFlowTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_flow_templates::SearchFlowTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_flow_templates::SearchFlowTemplatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_flow_templates::paginator::SearchFlowTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_flow_templates::paginator::SearchFlowTemplatesPaginator {
-        crate::operation::search_flow_templates::paginator::SearchFlowTemplatesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_flow_templates::paginator::SearchFlowTemplatesPaginator {
+        crate::operation::search_flow_templates::paginator::SearchFlowTemplatesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `filters`.
     ///
@@ -144,17 +126,12 @@ impl SearchFlowTemplatesFluentBuilder {
         self
     }
     /// <p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateFilter>> {
         self.inner.get_filters()
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>

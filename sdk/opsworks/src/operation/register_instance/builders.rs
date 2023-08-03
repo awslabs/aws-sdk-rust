@@ -10,10 +10,7 @@ impl RegisterInstanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_instance::RegisterInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_instance::RegisterInstanceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_instance::RegisterInstanceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_instance();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl RegisterInstanceFluentBuilder {
         }
     }
     /// Access the RegisterInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_instance::builders::RegisterInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_instance::builders::RegisterInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl RegisterInstanceFluentBuilder {
             crate::operation::register_instance::RegisterInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_instance::RegisterInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_instance::RegisterInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl RegisterInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl RegisterInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_instance::RegisterInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_instance::RegisterInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_instance::RegisterInstanceError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl RegisterInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_instance::RegisterInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_instance::RegisterInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_instance::RegisterInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl RegisterInstanceFluentBuilder {
             crate::operation::register_instance::RegisterInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_instance::RegisterInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_instance::RegisterInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -183,18 +167,12 @@ impl RegisterInstanceFluentBuilder {
         self.inner.get_private_ip()
     }
     /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
-    pub fn rsa_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rsa_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rsa_public_key(input.into());
         self
     }
     /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
-    pub fn set_rsa_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rsa_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rsa_public_key(input);
         self
     }
@@ -203,18 +181,12 @@ impl RegisterInstanceFluentBuilder {
         self.inner.get_rsa_public_key()
     }
     /// <p>The instances public RSA key fingerprint.</p>
-    pub fn rsa_public_key_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rsa_public_key_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rsa_public_key_fingerprint(input.into());
         self
     }
     /// <p>The instances public RSA key fingerprint.</p>
-    pub fn set_rsa_public_key_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rsa_public_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rsa_public_key_fingerprint(input);
         self
     }
@@ -228,10 +200,7 @@ impl RegisterInstanceFluentBuilder {
         self
     }
     /// <p>An InstanceIdentity object that contains the instance's identity.</p>
-    pub fn set_instance_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceIdentity>,
-    ) -> Self {
+    pub fn set_instance_identity(mut self, input: ::std::option::Option<crate::types::InstanceIdentity>) -> Self {
         self.inner = self.inner.set_instance_identity(input);
         self
     }

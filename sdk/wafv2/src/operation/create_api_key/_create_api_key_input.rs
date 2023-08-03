@@ -43,9 +43,7 @@ impl CreateApiKeyInput {
 
 /// A builder for [`CreateApiKeyInput`](crate::operation::create_api_key::CreateApiKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApiKeyInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -87,10 +85,7 @@ impl CreateApiKeyInputBuilder {
     /// <p>The client application domains that you want to use this API key for. </p>
     /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
-    pub fn token_domains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.token_domains.unwrap_or_default();
         v.push(input.into());
         self.token_domains = ::std::option::Option::Some(v);
@@ -99,28 +94,20 @@ impl CreateApiKeyInputBuilder {
     /// <p>The client application domains that you want to use this API key for. </p>
     /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
-    pub fn set_token_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_token_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.token_domains = input;
         self
     }
     /// <p>The client application domains that you want to use this API key for. </p>
     /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
-    pub fn get_token_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_token_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.token_domains
     }
     /// Consumes the builder and constructs a [`CreateApiKeyInput`](crate::operation::create_api_key::CreateApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_api_key::CreateApiKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_api_key::CreateApiKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_api_key::CreateApiKeyInput {
             scope: self.scope,
             token_domains: self.token_domains,

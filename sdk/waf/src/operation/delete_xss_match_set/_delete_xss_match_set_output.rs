@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteXssMatchSetOutput {
 }
 impl DeleteXssMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteXssMatchSetOutput`](crate::operation::delete_xss_match_set::DeleteXssMatchSetOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_xss_match_set::builders::DeleteXssMatchSetOutputBuilder {
+    pub fn builder() -> crate::operation::delete_xss_match_set::builders::DeleteXssMatchSetOutputBuilder {
         crate::operation::delete_xss_match_set::builders::DeleteXssMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteXssMatchSetOutput`](crate::operation::delete_xss_match_set::DeleteXssMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteXssMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

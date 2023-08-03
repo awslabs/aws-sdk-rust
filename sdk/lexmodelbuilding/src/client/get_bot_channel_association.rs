@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`status(Option<ChannelStatus>)`](crate::operation::get_bot_channel_association::GetBotChannelAssociationOutput::status): <p>The status of the bot channel. </p>  <ul>   <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li>   <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li>   <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li>  </ul>
     ///   - [`failure_reason(Option<String>)`](crate::operation::get_bot_channel_association::GetBotChannelAssociationOutput::failure_reason): <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
     /// - On failure, responds with [`SdkError<GetBotChannelAssociationError>`](crate::operation::get_bot_channel_association::GetBotChannelAssociationError)
-    pub fn get_bot_channel_association(&self) -> crate::operation::get_bot_channel_association::builders::GetBotChannelAssociationFluentBuilder{
+    pub fn get_bot_channel_association(&self) -> crate::operation::get_bot_channel_association::builders::GetBotChannelAssociationFluentBuilder {
         crate::operation::get_bot_channel_association::builders::GetBotChannelAssociationFluentBuilder::new(self.handle.clone())
     }
 }

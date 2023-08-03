@@ -10,10 +10,7 @@ impl ListDetectorModelsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_detector_models::ListDetectorModelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_detector_models::ListDetectorModelsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_detector_models::ListDetectorModelsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_detector_models();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDetectorModelsFluentBuilder {
         }
     }
     /// Access the ListDetectorModels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_detector_models::builders::ListDetectorModelsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_detector_models::builders::ListDetectorModelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListDetectorModelsFluentBuilder {
             crate::operation::list_detector_models::ListDetectorModels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_detector_models::ListDetectorModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_detector_models::ListDetectorModelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListDetectorModelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListDetectorModelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_detector_models::ListDetectorModelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_detector_models::ListDetectorModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_detector_models::ListDetectorModelsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListDetectorModelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_detector_models::ListDetectorModelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_detector_models::ListDetectorModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_detector_models::ListDetectorModelsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ListDetectorModelsFluentBuilder {
             crate::operation::list_detector_models::ListDetectorModels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_detector_models::ListDetectorModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_detector_models::ListDetectorModelsError>,
     > {
         self.customize_middleware().await
     }

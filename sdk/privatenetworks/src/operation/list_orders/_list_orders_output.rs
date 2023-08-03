@@ -35,9 +35,7 @@ impl ListOrdersOutput {
 
 /// A builder for [`ListOrdersOutput`](crate::operation::list_orders::ListOrdersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOrdersOutputBuilder {
     pub(crate) orders: ::std::option::Option<::std::vec::Vec<crate::types::Order>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListOrdersOutputBuilder {
         self
     }
     /// <p>Information about the orders.</p>
-    pub fn set_orders(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Order>>,
-    ) -> Self {
+    pub fn set_orders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Order>>) -> Self {
         self.orders = input;
         self
     }

@@ -30,9 +30,7 @@ impl SmallMultiplesAxisProperties {
 
 /// A builder for [`SmallMultiplesAxisProperties`](crate::types::SmallMultiplesAxisProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SmallMultiplesAxisPropertiesBuilder {
     pub(crate) scale: ::std::option::Option<crate::types::SmallMultiplesAxisScale>,
     pub(crate) placement: ::std::option::Option<crate::types::SmallMultiplesAxisPlacement>,
@@ -44,10 +42,7 @@ impl SmallMultiplesAxisPropertiesBuilder {
         self
     }
     /// <p>Determines whether scale of the axes are shared or independent. The default value is <code>SHARED</code>.</p>
-    pub fn set_scale(
-        mut self,
-        input: ::std::option::Option<crate::types::SmallMultiplesAxisScale>,
-    ) -> Self {
+    pub fn set_scale(mut self, input: ::std::option::Option<crate::types::SmallMultiplesAxisScale>) -> Self {
         self.scale = input;
         self
     }
@@ -61,17 +56,12 @@ impl SmallMultiplesAxisPropertiesBuilder {
         self
     }
     /// <p>Defines the placement of the axis. By default, axes are rendered <code>OUTSIDE</code> of the panels. Axes with <code>INDEPENDENT</code> scale are rendered <code>INSIDE</code> the panels.</p>
-    pub fn set_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::SmallMultiplesAxisPlacement>,
-    ) -> Self {
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::SmallMultiplesAxisPlacement>) -> Self {
         self.placement = input;
         self
     }
     /// <p>Defines the placement of the axis. By default, axes are rendered <code>OUTSIDE</code> of the panels. Axes with <code>INDEPENDENT</code> scale are rendered <code>INSIDE</code> the panels.</p>
-    pub fn get_placement(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmallMultiplesAxisPlacement> {
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::SmallMultiplesAxisPlacement> {
         &self.placement
     }
     /// Consumes the builder and constructs a [`SmallMultiplesAxisProperties`](crate::types::SmallMultiplesAxisProperties).

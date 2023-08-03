@@ -31,8 +31,7 @@ impl ::std::fmt::Debug for AssetBundleImportJobDataSourceCredentialPair {
 }
 impl AssetBundleImportJobDataSourceCredentialPair {
     /// Creates a new builder-style object to manufacture [`AssetBundleImportJobDataSourceCredentialPair`](crate::types::AssetBundleImportJobDataSourceCredentialPair).
-    pub fn builder() -> crate::types::builders::AssetBundleImportJobDataSourceCredentialPairBuilder
-    {
+    pub fn builder() -> crate::types::builders::AssetBundleImportJobDataSourceCredentialPairBuilder {
         crate::types::builders::AssetBundleImportJobDataSourceCredentialPairBuilder::default()
     }
 }

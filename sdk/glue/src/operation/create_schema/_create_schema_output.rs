@@ -38,9 +38,7 @@ pub struct CreateSchemaOutput {
     pub schema_status: ::std::option::Option<crate::types::SchemaStatus>,
     /// <p>The tags for the schema.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The unique identifier of the first schema version.</p>
     #[doc(hidden)]
     pub schema_version_id: ::std::option::Option<::std::string::String>,
@@ -95,11 +93,7 @@ impl CreateSchemaOutput {
         self.schema_status.as_ref()
     }
     /// <p>The tags for the schema.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The unique identifier of the first schema version.</p>
@@ -107,9 +101,7 @@ impl CreateSchemaOutput {
         self.schema_version_id.as_deref()
     }
     /// <p>The status of the first schema version created.</p>
-    pub fn schema_version_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SchemaVersionStatus> {
+    pub fn schema_version_status(&self) -> ::std::option::Option<&crate::types::SchemaVersionStatus> {
         self.schema_version_status.as_ref()
     }
 }
@@ -127,9 +119,7 @@ impl CreateSchemaOutput {
 
 /// A builder for [`CreateSchemaOutput`](crate::operation::create_schema::CreateSchemaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSchemaOutputBuilder {
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,
     pub(crate) registry_arn: ::std::option::Option<::std::string::String>,
@@ -142,27 +132,19 @@ pub struct CreateSchemaOutputBuilder {
     pub(crate) latest_schema_version: ::std::option::Option<i64>,
     pub(crate) next_schema_version: ::std::option::Option<i64>,
     pub(crate) schema_status: ::std::option::Option<crate::types::SchemaStatus>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) schema_version_id: ::std::option::Option<::std::string::String>,
     pub(crate) schema_version_status: ::std::option::Option<crate::types::SchemaVersionStatus>,
     _request_id: Option<String>,
 }
 impl CreateSchemaOutputBuilder {
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_name = input;
         self
     }
@@ -232,10 +214,7 @@ impl CreateSchemaOutputBuilder {
         self
     }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
-    pub fn set_data_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DataFormat>,
-    ) -> Self {
+    pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
         self.data_format = input;
         self
     }
@@ -249,10 +228,7 @@ impl CreateSchemaOutputBuilder {
         self
     }
     /// <p>The schema compatibility mode.</p>
-    pub fn set_compatibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Compatibility>,
-    ) -> Self {
+    pub fn set_compatibility(mut self, input: ::std::option::Option<crate::types::Compatibility>) -> Self {
         self.compatibility = input;
         self
     }
@@ -308,10 +284,7 @@ impl CreateSchemaOutputBuilder {
         self
     }
     /// <p>The status of the schema. </p>
-    pub fn set_schema_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaStatus>,
-    ) -> Self {
+    pub fn set_schema_status(mut self, input: ::std::option::Option<crate::types::SchemaStatus>) -> Self {
         self.schema_status = input;
         self
     }
@@ -324,47 +297,28 @@ impl CreateSchemaOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the schema.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags for the schema.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags for the schema.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The unique identifier of the first schema version.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the first schema version.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version_id = input;
         self
     }
@@ -378,17 +332,12 @@ impl CreateSchemaOutputBuilder {
         self
     }
     /// <p>The status of the first schema version created.</p>
-    pub fn set_schema_version_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionStatus>,
-    ) -> Self {
+    pub fn set_schema_version_status(mut self, input: ::std::option::Option<crate::types::SchemaVersionStatus>) -> Self {
         self.schema_version_status = input;
         self
     }
     /// <p>The status of the first schema version created.</p>
-    pub fn get_schema_version_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaVersionStatus> {
+    pub fn get_schema_version_status(&self) -> &::std::option::Option<crate::types::SchemaVersionStatus> {
         &self.schema_version_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -30,9 +30,7 @@ impl GetEndpointInput {
         self.device_role_arn.as_deref()
     }
     /// <p>The authentication method used during the device connection.</p>
-    pub fn authentication_method(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthenticationMethod> {
+    pub fn authentication_method(&self) -> ::std::option::Option<&crate::types::AuthenticationMethod> {
         self.authentication_method.as_ref()
     }
 }
@@ -45,9 +43,7 @@ impl GetEndpointInput {
 
 /// A builder for [`GetEndpointInput`](crate::operation::get_endpoint::GetEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEndpointInputBuilder {
     pub(crate) thing_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl GetEndpointInputBuilder {
         &self.thing_arn
     }
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -90,18 +80,12 @@ impl GetEndpointInputBuilder {
         &self.certificate_arn
     }
     /// <p>The device role ARN of the device. This is an optional parameter.</p>
-    pub fn device_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device role ARN of the device. This is an optional parameter.</p>
-    pub fn set_device_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_role_arn = input;
         self
     }
@@ -115,26 +99,16 @@ impl GetEndpointInputBuilder {
         self
     }
     /// <p>The authentication method used during the device connection.</p>
-    pub fn set_authentication_method(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationMethod>,
-    ) -> Self {
+    pub fn set_authentication_method(mut self, input: ::std::option::Option<crate::types::AuthenticationMethod>) -> Self {
         self.authentication_method = input;
         self
     }
     /// <p>The authentication method used during the device connection.</p>
-    pub fn get_authentication_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationMethod> {
+    pub fn get_authentication_method(&self) -> &::std::option::Option<crate::types::AuthenticationMethod> {
         &self.authentication_method
     }
     /// Consumes the builder and constructs a [`GetEndpointInput`](crate::operation::get_endpoint::GetEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_endpoint::GetEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_endpoint::GetEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_endpoint::GetEndpointInput {
             thing_arn: self.thing_arn,
             certificate_arn: self.certificate_arn,

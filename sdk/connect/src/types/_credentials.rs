@@ -82,32 +82,21 @@ impl CredentialsBuilder {
         self
     }
     /// <p>A token generated with an expiration time for the session a user is logged in to Amazon Connect.</p>
-    pub fn set_access_token_expiration(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_access_token_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.access_token_expiration = input;
         self
     }
     /// <p>A token generated with an expiration time for the session a user is logged in to Amazon Connect.</p>
-    pub fn get_access_token_expiration(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_access_token_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.access_token_expiration
     }
     /// <p>Renews a token generated for a user to access the Amazon Connect instance.</p>
-    pub fn refresh_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn refresh_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.refresh_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Renews a token generated for a user to access the Amazon Connect instance.</p>
-    pub fn set_refresh_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_refresh_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.refresh_token = input;
         self
     }
@@ -121,17 +110,12 @@ impl CredentialsBuilder {
         self
     }
     /// <p>Renews the expiration timer for a generated token.</p>
-    pub fn set_refresh_token_expiration(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_refresh_token_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.refresh_token_expiration = input;
         self
     }
     /// <p>Renews the expiration timer for a generated token.</p>
-    pub fn get_refresh_token_expiration(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_refresh_token_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.refresh_token_expiration
     }
     /// Consumes the builder and constructs a [`Credentials`](crate::types::Credentials).

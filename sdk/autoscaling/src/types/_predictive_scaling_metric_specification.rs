@@ -21,28 +21,22 @@ pub struct PredictiveScalingMetricSpecification {
     pub target_value: ::std::option::Option<f64>,
     /// <p>The predefined metric pair specification from which Amazon EC2 Auto Scaling determines the appropriate scaling metric and load metric to use.</p>
     #[doc(hidden)]
-    pub predefined_metric_pair_specification:
-        ::std::option::Option<crate::types::PredictiveScalingPredefinedMetricPair>,
+    pub predefined_metric_pair_specification: ::std::option::Option<crate::types::PredictiveScalingPredefinedMetricPair>,
     /// <p>The predefined scaling metric specification.</p>
     #[doc(hidden)]
-    pub predefined_scaling_metric_specification:
-        ::std::option::Option<crate::types::PredictiveScalingPredefinedScalingMetric>,
+    pub predefined_scaling_metric_specification: ::std::option::Option<crate::types::PredictiveScalingPredefinedScalingMetric>,
     /// <p>The predefined load metric specification.</p>
     #[doc(hidden)]
-    pub predefined_load_metric_specification:
-        ::std::option::Option<crate::types::PredictiveScalingPredefinedLoadMetric>,
+    pub predefined_load_metric_specification: ::std::option::Option<crate::types::PredictiveScalingPredefinedLoadMetric>,
     /// <p>The customized scaling metric specification.</p>
     #[doc(hidden)]
-    pub customized_scaling_metric_specification:
-        ::std::option::Option<crate::types::PredictiveScalingCustomizedScalingMetric>,
+    pub customized_scaling_metric_specification: ::std::option::Option<crate::types::PredictiveScalingCustomizedScalingMetric>,
     /// <p>The customized load metric specification.</p>
     #[doc(hidden)]
-    pub customized_load_metric_specification:
-        ::std::option::Option<crate::types::PredictiveScalingCustomizedLoadMetric>,
+    pub customized_load_metric_specification: ::std::option::Option<crate::types::PredictiveScalingCustomizedLoadMetric>,
     /// <p>The customized capacity metric specification.</p>
     #[doc(hidden)]
-    pub customized_capacity_metric_specification:
-        ::std::option::Option<crate::types::PredictiveScalingCustomizedCapacityMetric>,
+    pub customized_capacity_metric_specification: ::std::option::Option<crate::types::PredictiveScalingCustomizedCapacityMetric>,
 }
 impl PredictiveScalingMetricSpecification {
     /// <p>Specifies the target utilization.</p> <note>
@@ -52,39 +46,27 @@ impl PredictiveScalingMetricSpecification {
         self.target_value
     }
     /// <p>The predefined metric pair specification from which Amazon EC2 Auto Scaling determines the appropriate scaling metric and load metric to use.</p>
-    pub fn predefined_metric_pair_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredictiveScalingPredefinedMetricPair> {
+    pub fn predefined_metric_pair_specification(&self) -> ::std::option::Option<&crate::types::PredictiveScalingPredefinedMetricPair> {
         self.predefined_metric_pair_specification.as_ref()
     }
     /// <p>The predefined scaling metric specification.</p>
-    pub fn predefined_scaling_metric_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredictiveScalingPredefinedScalingMetric> {
+    pub fn predefined_scaling_metric_specification(&self) -> ::std::option::Option<&crate::types::PredictiveScalingPredefinedScalingMetric> {
         self.predefined_scaling_metric_specification.as_ref()
     }
     /// <p>The predefined load metric specification.</p>
-    pub fn predefined_load_metric_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredictiveScalingPredefinedLoadMetric> {
+    pub fn predefined_load_metric_specification(&self) -> ::std::option::Option<&crate::types::PredictiveScalingPredefinedLoadMetric> {
         self.predefined_load_metric_specification.as_ref()
     }
     /// <p>The customized scaling metric specification.</p>
-    pub fn customized_scaling_metric_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredictiveScalingCustomizedScalingMetric> {
+    pub fn customized_scaling_metric_specification(&self) -> ::std::option::Option<&crate::types::PredictiveScalingCustomizedScalingMetric> {
         self.customized_scaling_metric_specification.as_ref()
     }
     /// <p>The customized load metric specification.</p>
-    pub fn customized_load_metric_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredictiveScalingCustomizedLoadMetric> {
+    pub fn customized_load_metric_specification(&self) -> ::std::option::Option<&crate::types::PredictiveScalingCustomizedLoadMetric> {
         self.customized_load_metric_specification.as_ref()
     }
     /// <p>The customized capacity metric specification.</p>
-    pub fn customized_capacity_metric_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredictiveScalingCustomizedCapacityMetric> {
+    pub fn customized_capacity_metric_specification(&self) -> ::std::option::Option<&crate::types::PredictiveScalingCustomizedCapacityMetric> {
         self.customized_capacity_metric_specification.as_ref()
     }
 }
@@ -97,23 +79,15 @@ impl PredictiveScalingMetricSpecification {
 
 /// A builder for [`PredictiveScalingMetricSpecification`](crate::types::PredictiveScalingMetricSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictiveScalingMetricSpecificationBuilder {
     pub(crate) target_value: ::std::option::Option<f64>,
-    pub(crate) predefined_metric_pair_specification:
-        ::std::option::Option<crate::types::PredictiveScalingPredefinedMetricPair>,
-    pub(crate) predefined_scaling_metric_specification:
-        ::std::option::Option<crate::types::PredictiveScalingPredefinedScalingMetric>,
-    pub(crate) predefined_load_metric_specification:
-        ::std::option::Option<crate::types::PredictiveScalingPredefinedLoadMetric>,
-    pub(crate) customized_scaling_metric_specification:
-        ::std::option::Option<crate::types::PredictiveScalingCustomizedScalingMetric>,
-    pub(crate) customized_load_metric_specification:
-        ::std::option::Option<crate::types::PredictiveScalingCustomizedLoadMetric>,
-    pub(crate) customized_capacity_metric_specification:
-        ::std::option::Option<crate::types::PredictiveScalingCustomizedCapacityMetric>,
+    pub(crate) predefined_metric_pair_specification: ::std::option::Option<crate::types::PredictiveScalingPredefinedMetricPair>,
+    pub(crate) predefined_scaling_metric_specification: ::std::option::Option<crate::types::PredictiveScalingPredefinedScalingMetric>,
+    pub(crate) predefined_load_metric_specification: ::std::option::Option<crate::types::PredictiveScalingPredefinedLoadMetric>,
+    pub(crate) customized_scaling_metric_specification: ::std::option::Option<crate::types::PredictiveScalingCustomizedScalingMetric>,
+    pub(crate) customized_load_metric_specification: ::std::option::Option<crate::types::PredictiveScalingCustomizedLoadMetric>,
+    pub(crate) customized_capacity_metric_specification: ::std::option::Option<crate::types::PredictiveScalingCustomizedCapacityMetric>,
 }
 impl PredictiveScalingMetricSpecificationBuilder {
     /// <p>Specifies the target utilization.</p> <note>
@@ -137,10 +111,7 @@ impl PredictiveScalingMetricSpecificationBuilder {
         &self.target_value
     }
     /// <p>The predefined metric pair specification from which Amazon EC2 Auto Scaling determines the appropriate scaling metric and load metric to use.</p>
-    pub fn predefined_metric_pair_specification(
-        mut self,
-        input: crate::types::PredictiveScalingPredefinedMetricPair,
-    ) -> Self {
+    pub fn predefined_metric_pair_specification(mut self, input: crate::types::PredictiveScalingPredefinedMetricPair) -> Self {
         self.predefined_metric_pair_specification = ::std::option::Option::Some(input);
         self
     }
@@ -153,16 +124,11 @@ impl PredictiveScalingMetricSpecificationBuilder {
         self
     }
     /// <p>The predefined metric pair specification from which Amazon EC2 Auto Scaling determines the appropriate scaling metric and load metric to use.</p>
-    pub fn get_predefined_metric_pair_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredictiveScalingPredefinedMetricPair> {
+    pub fn get_predefined_metric_pair_specification(&self) -> &::std::option::Option<crate::types::PredictiveScalingPredefinedMetricPair> {
         &self.predefined_metric_pair_specification
     }
     /// <p>The predefined scaling metric specification.</p>
-    pub fn predefined_scaling_metric_specification(
-        mut self,
-        input: crate::types::PredictiveScalingPredefinedScalingMetric,
-    ) -> Self {
+    pub fn predefined_scaling_metric_specification(mut self, input: crate::types::PredictiveScalingPredefinedScalingMetric) -> Self {
         self.predefined_scaling_metric_specification = ::std::option::Option::Some(input);
         self
     }
@@ -175,16 +141,11 @@ impl PredictiveScalingMetricSpecificationBuilder {
         self
     }
     /// <p>The predefined scaling metric specification.</p>
-    pub fn get_predefined_scaling_metric_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredictiveScalingPredefinedScalingMetric> {
+    pub fn get_predefined_scaling_metric_specification(&self) -> &::std::option::Option<crate::types::PredictiveScalingPredefinedScalingMetric> {
         &self.predefined_scaling_metric_specification
     }
     /// <p>The predefined load metric specification.</p>
-    pub fn predefined_load_metric_specification(
-        mut self,
-        input: crate::types::PredictiveScalingPredefinedLoadMetric,
-    ) -> Self {
+    pub fn predefined_load_metric_specification(mut self, input: crate::types::PredictiveScalingPredefinedLoadMetric) -> Self {
         self.predefined_load_metric_specification = ::std::option::Option::Some(input);
         self
     }
@@ -197,16 +158,11 @@ impl PredictiveScalingMetricSpecificationBuilder {
         self
     }
     /// <p>The predefined load metric specification.</p>
-    pub fn get_predefined_load_metric_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredictiveScalingPredefinedLoadMetric> {
+    pub fn get_predefined_load_metric_specification(&self) -> &::std::option::Option<crate::types::PredictiveScalingPredefinedLoadMetric> {
         &self.predefined_load_metric_specification
     }
     /// <p>The customized scaling metric specification.</p>
-    pub fn customized_scaling_metric_specification(
-        mut self,
-        input: crate::types::PredictiveScalingCustomizedScalingMetric,
-    ) -> Self {
+    pub fn customized_scaling_metric_specification(mut self, input: crate::types::PredictiveScalingCustomizedScalingMetric) -> Self {
         self.customized_scaling_metric_specification = ::std::option::Option::Some(input);
         self
     }
@@ -219,16 +175,11 @@ impl PredictiveScalingMetricSpecificationBuilder {
         self
     }
     /// <p>The customized scaling metric specification.</p>
-    pub fn get_customized_scaling_metric_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredictiveScalingCustomizedScalingMetric> {
+    pub fn get_customized_scaling_metric_specification(&self) -> &::std::option::Option<crate::types::PredictiveScalingCustomizedScalingMetric> {
         &self.customized_scaling_metric_specification
     }
     /// <p>The customized load metric specification.</p>
-    pub fn customized_load_metric_specification(
-        mut self,
-        input: crate::types::PredictiveScalingCustomizedLoadMetric,
-    ) -> Self {
+    pub fn customized_load_metric_specification(mut self, input: crate::types::PredictiveScalingCustomizedLoadMetric) -> Self {
         self.customized_load_metric_specification = ::std::option::Option::Some(input);
         self
     }
@@ -241,16 +192,11 @@ impl PredictiveScalingMetricSpecificationBuilder {
         self
     }
     /// <p>The customized load metric specification.</p>
-    pub fn get_customized_load_metric_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredictiveScalingCustomizedLoadMetric> {
+    pub fn get_customized_load_metric_specification(&self) -> &::std::option::Option<crate::types::PredictiveScalingCustomizedLoadMetric> {
         &self.customized_load_metric_specification
     }
     /// <p>The customized capacity metric specification.</p>
-    pub fn customized_capacity_metric_specification(
-        mut self,
-        input: crate::types::PredictiveScalingCustomizedCapacityMetric,
-    ) -> Self {
+    pub fn customized_capacity_metric_specification(mut self, input: crate::types::PredictiveScalingCustomizedCapacityMetric) -> Self {
         self.customized_capacity_metric_specification = ::std::option::Option::Some(input);
         self
     }
@@ -263,9 +209,7 @@ impl PredictiveScalingMetricSpecificationBuilder {
         self
     }
     /// <p>The customized capacity metric specification.</p>
-    pub fn get_customized_capacity_metric_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredictiveScalingCustomizedCapacityMetric> {
+    pub fn get_customized_capacity_metric_specification(&self) -> &::std::option::Option<crate::types::PredictiveScalingCustomizedCapacityMetric> {
         &self.customized_capacity_metric_specification
     }
     /// Consumes the builder and constructs a [`PredictiveScalingMetricSpecification`](crate::types::PredictiveScalingMetricSpecification).

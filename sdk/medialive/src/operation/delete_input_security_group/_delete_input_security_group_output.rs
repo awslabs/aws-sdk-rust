@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteInputSecurityGroupOutput {
 }
 impl DeleteInputSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInputSecurityGroupOutput`](crate::operation::delete_input_security_group::DeleteInputSecurityGroupOutput).
-    pub fn builder() -> crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupOutputBuilder{
+    pub fn builder() -> crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupOutputBuilder {
         crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInputSecurityGroupOutput`](crate::operation::delete_input_security_group::DeleteInputSecurityGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInputSecurityGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl DeleteInputSecurityGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteInputSecurityGroupOutput`](crate::operation::delete_input_security_group::DeleteInputSecurityGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_input_security_group::DeleteInputSecurityGroupOutput {
+    pub fn build(self) -> crate::operation::delete_input_security_group::DeleteInputSecurityGroupOutput {
         crate::operation::delete_input_security_group::DeleteInputSecurityGroupOutput {
             _request_id: self._request_id,
         }

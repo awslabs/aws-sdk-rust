@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for PutEmailIdentityDkimAttributesOutput 
 }
 impl PutEmailIdentityDkimAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutEmailIdentityDkimAttributesOutput`](crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesOutput).
-    pub fn builder() -> crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesOutputBuilder {
         crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutEmailIdentityDkimAttributesOutput`](crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEmailIdentityDkimAttributesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,10 +35,7 @@ impl PutEmailIdentityDkimAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutEmailIdentityDkimAttributesOutput`](crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesOutput
-    {
+    pub fn build(self) -> crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesOutput {
         crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesOutput {
             _request_id: self._request_id,
         }

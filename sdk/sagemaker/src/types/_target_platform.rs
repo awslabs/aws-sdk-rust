@@ -69,9 +69,7 @@ impl TargetPlatform {
 
 /// A builder for [`TargetPlatform`](crate::types::TargetPlatform).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetPlatformBuilder {
     pub(crate) os: ::std::option::Option<crate::types::TargetPlatformOs>,
     pub(crate) arch: ::std::option::Option<crate::types::TargetPlatformArch>,
@@ -124,10 +122,7 @@ impl TargetPlatformBuilder {
     /// <li> <p> <code>ARM_EABIHF</code>: ARMv7 32-bit, Hard Float.</p> </li>
     /// <li> <p> <code>ARM_EABI</code>: ARMv7 32-bit, Soft Float. Used by Android 32-bit ARM platform.</p> </li>
     /// </ul>
-    pub fn set_arch(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetPlatformArch>,
-    ) -> Self {
+    pub fn set_arch(mut self, input: ::std::option::Option<crate::types::TargetPlatformArch>) -> Self {
         self.arch = input;
         self
     }
@@ -158,10 +153,7 @@ impl TargetPlatformBuilder {
     /// <li> <p> <code>MALI</code>: ARM Mali graphics processor</p> </li>
     /// <li> <p> <code>INTEL_GRAPHICS</code>: Integrated Intel graphics</p> </li>
     /// </ul>
-    pub fn set_accelerator(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetPlatformAccelerator>,
-    ) -> Self {
+    pub fn set_accelerator(mut self, input: ::std::option::Option<crate::types::TargetPlatformAccelerator>) -> Self {
         self.accelerator = input;
         self
     }
@@ -171,9 +163,7 @@ impl TargetPlatformBuilder {
     /// <li> <p> <code>MALI</code>: ARM Mali graphics processor</p> </li>
     /// <li> <p> <code>INTEL_GRAPHICS</code>: Integrated Intel graphics</p> </li>
     /// </ul>
-    pub fn get_accelerator(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetPlatformAccelerator> {
+    pub fn get_accelerator(&self) -> &::std::option::Option<crate::types::TargetPlatformAccelerator> {
         &self.accelerator
     }
     /// Consumes the builder and constructs a [`TargetPlatform`](crate::types::TargetPlatform).

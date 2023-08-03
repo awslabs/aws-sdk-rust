@@ -64,9 +64,7 @@ impl ListSnapshotsInput {
 
 /// A builder for [`ListSnapshotsInput`](crate::operation::list_snapshots::ListSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSnapshotsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -106,18 +104,12 @@ impl ListSnapshotsInputBuilder {
         &self.max_results
     }
     /// <p>The namespace from which to list all snapshots.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespace from which to list all snapshots.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
@@ -126,18 +118,12 @@ impl ListSnapshotsInputBuilder {
         &self.namespace_name
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.</p>
-    pub fn namespace_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.</p>
-    pub fn set_namespace_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_arn = input;
         self
     }
@@ -146,18 +132,12 @@ impl ListSnapshotsInputBuilder {
         &self.namespace_arn
     }
     /// <p>The owner Amazon Web Services account of the snapshot.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The owner Amazon Web Services account of the snapshot.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -171,10 +151,7 @@ impl ListSnapshotsInputBuilder {
         self
     }
     /// <p>The time when the creation of the snapshot was initiated.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -188,10 +165,7 @@ impl ListSnapshotsInputBuilder {
         self
     }
     /// <p>The timestamp showing when the snapshot creation finished.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -202,10 +176,7 @@ impl ListSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`ListSnapshotsInput`](crate::operation::list_snapshots::ListSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_snapshots::ListSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_snapshots::ListSnapshotsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_snapshots::ListSnapshotsInput {
             next_token: self.next_token,
             max_results: self.max_results,

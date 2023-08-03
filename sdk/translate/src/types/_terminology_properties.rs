@@ -142,9 +142,7 @@ impl TerminologyProperties {
 
 /// A builder for [`TerminologyProperties`](crate::types::TerminologyProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminologyPropertiesBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -205,18 +203,12 @@ impl TerminologyPropertiesBuilder {
         &self.arn
     }
     /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
-    pub fn source_language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
-    pub fn set_source_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_language_code = input;
         self
     }
@@ -229,27 +221,19 @@ impl TerminologyPropertiesBuilder {
     /// To override the contents of this collection use [`set_target_language_codes`](Self::set_target_language_codes).
     ///
     /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
-    pub fn target_language_codes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_language_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_language_codes.unwrap_or_default();
         v.push(input.into());
         self.target_language_codes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
-    pub fn set_target_language_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_language_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_language_codes = input;
         self
     }
     /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
-    pub fn get_target_language_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_language_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_language_codes
     }
     /// <p>The encryption key for the custom terminology.</p>
@@ -258,10 +242,7 @@ impl TerminologyPropertiesBuilder {
         self
     }
     /// <p>The encryption key for the custom terminology.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionKey>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<crate::types::EncryptionKey>) -> Self {
         self.encryption_key = input;
         self
     }
@@ -303,10 +284,7 @@ impl TerminologyPropertiesBuilder {
         self
     }
     /// <p>The time at which the custom terminology was created, based on the timestamp.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -320,10 +298,7 @@ impl TerminologyPropertiesBuilder {
         self
     }
     /// <p>The time at which the custom terminology was last update, based on the timestamp.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -365,10 +340,7 @@ impl TerminologyPropertiesBuilder {
     /// <p>Any language in the terminology resource can be the source language.</p>
     /// </dd>
     /// </dl>
-    pub fn set_directionality(
-        mut self,
-        input: ::std::option::Option<crate::types::Directionality>,
-    ) -> Self {
+    pub fn set_directionality(mut self, input: ::std::option::Option<crate::types::Directionality>) -> Self {
         self.directionality = input;
         self
     }
@@ -424,10 +396,7 @@ impl TerminologyPropertiesBuilder {
         self
     }
     /// <p>The format of the custom terminology input file.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::TerminologyDataFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::TerminologyDataFormat>) -> Self {
         self.format = input;
         self
     }

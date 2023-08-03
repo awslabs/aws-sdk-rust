@@ -23,9 +23,7 @@ impl CodeHookSpecification {
 
 /// A builder for [`CodeHookSpecification`](crate::types::CodeHookSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeHookSpecificationBuilder {
     pub(crate) lambda_code_hook: ::std::option::Option<crate::types::LambdaCodeHook>,
 }
@@ -36,10 +34,7 @@ impl CodeHookSpecificationBuilder {
         self
     }
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
-    pub fn set_lambda_code_hook(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaCodeHook>,
-    ) -> Self {
+    pub fn set_lambda_code_hook(mut self, input: ::std::option::Option<crate::types::LambdaCodeHook>) -> Self {
         self.lambda_code_hook = input;
         self
     }

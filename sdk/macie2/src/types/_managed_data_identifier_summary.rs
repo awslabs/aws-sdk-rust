@@ -30,9 +30,7 @@ impl ManagedDataIdentifierSummary {
 
 /// A builder for [`ManagedDataIdentifierSummary`](crate::types::ManagedDataIdentifierSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedDataIdentifierSummaryBuilder {
     pub(crate) category: ::std::option::Option<crate::types::SensitiveDataItemCategory>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ManagedDataIdentifierSummaryBuilder {
         self
     }
     /// <p>The category of sensitive data that the managed data identifier detects: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::SensitiveDataItemCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::SensitiveDataItemCategory>) -> Self {
         self.category = input;
         self
     }

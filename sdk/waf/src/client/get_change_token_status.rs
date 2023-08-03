@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetChangeTokenStatusOutput`](crate::operation::get_change_token_status::GetChangeTokenStatusOutput) with field(s):
     ///   - [`change_token_status(Option<ChangeTokenStatus>)`](crate::operation::get_change_token_status::GetChangeTokenStatusOutput::change_token_status): <p>The status of the change token.</p>
     /// - On failure, responds with [`SdkError<GetChangeTokenStatusError>`](crate::operation::get_change_token_status::GetChangeTokenStatusError)
-    pub fn get_change_token_status(
-        &self,
-    ) -> crate::operation::get_change_token_status::builders::GetChangeTokenStatusFluentBuilder
-    {
-        crate::operation::get_change_token_status::builders::GetChangeTokenStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_change_token_status(&self) -> crate::operation::get_change_token_status::builders::GetChangeTokenStatusFluentBuilder {
+        crate::operation::get_change_token_status::builders::GetChangeTokenStatusFluentBuilder::new(self.handle.clone())
     }
 }

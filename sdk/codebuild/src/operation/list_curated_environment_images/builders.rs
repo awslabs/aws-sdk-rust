@@ -26,7 +26,7 @@ impl ListCuratedEnvironmentImagesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCuratedEnvironmentImagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesInputBuilder,
+    inner: crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesInputBuilder,
 }
 impl ListCuratedEnvironmentImagesFluentBuilder {
     /// Creates a new `ListCuratedEnvironmentImages`.
@@ -37,7 +37,7 @@ impl ListCuratedEnvironmentImagesFluentBuilder {
         }
     }
     /// Access the ListCuratedEnvironmentImages as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListCuratedEnvironmentImagesFluentBuilder {
             crate::operation::list_curated_environment_images::ListCuratedEnvironmentImages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListCuratedEnvironmentImagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListCuratedEnvironmentImagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListCuratedEnvironmentImagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ListCuratedEnvironmentImagesFluentBuilder {
             crate::operation::list_curated_environment_images::ListCuratedEnvironmentImages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesError>,
     > {
         self.customize_middleware().await
     }

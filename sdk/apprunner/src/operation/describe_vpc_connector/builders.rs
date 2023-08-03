@@ -37,9 +37,7 @@ impl DescribeVpcConnectorFluentBuilder {
         }
     }
     /// Access the DescribeVpcConnector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeVpcConnectorFluentBuilder {
             crate::operation::describe_vpc_connector::DescribeVpcConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_connector::DescribeVpcConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_connector::DescribeVpcConnectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeVpcConnectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeVpcConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_connector::DescribeVpcConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_connector::DescribeVpcConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_connector::DescribeVpcConnectorError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeVpcConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_connector::DescribeVpcConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_connector::DescribeVpcConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_connector::DescribeVpcConnectorError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +105,19 @@ impl DescribeVpcConnectorFluentBuilder {
             crate::operation::describe_vpc_connector::DescribeVpcConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_connector::DescribeVpcConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_connector::DescribeVpcConnectorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
     /// <p>The ARN must be a full VPC connector ARN.</p>
-    pub fn vpc_connector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_connector_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
     /// <p>The ARN must be a full VPC connector ARN.</p>
-    pub fn set_vpc_connector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_connector_arn(input);
         self
     }

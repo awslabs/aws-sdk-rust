@@ -27,9 +27,7 @@ impl RepositoryCredentials {
 
 /// A builder for [`RepositoryCredentials`](crate::types::RepositoryCredentials).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryCredentialsBuilder {
     pub(crate) credentials_parameter: ::std::option::Option<::std::string::String>,
 }
@@ -37,20 +35,14 @@ impl RepositoryCredentialsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the secret containing the private repository credentials.</p> <note>
     /// <p>When you use the Amazon ECS API, CLI, or Amazon Web Services SDK, if the secret exists in the same Region as the task that you're launching then you can use either the full ARN or the name of the secret. When you use the Amazon Web Services Management Console, you must specify the full ARN of the secret.</p>
     /// </note>
-    pub fn credentials_parameter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn credentials_parameter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credentials_parameter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the secret containing the private repository credentials.</p> <note>
     /// <p>When you use the Amazon ECS API, CLI, or Amazon Web Services SDK, if the secret exists in the same Region as the task that you're launching then you can use either the full ARN or the name of the secret. When you use the Amazon Web Services Management Console, you must specify the full ARN of the secret.</p>
     /// </note>
-    pub fn set_credentials_parameter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_credentials_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credentials_parameter = input;
         self
     }

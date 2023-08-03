@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateSizeConstraintSetOutput {
 }
 impl UpdateSizeConstraintSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSizeConstraintSetOutput`](crate::operation::update_size_constraint_set::UpdateSizeConstraintSetOutput).
-    pub fn builder(
-    ) -> crate::operation::update_size_constraint_set::builders::UpdateSizeConstraintSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_size_constraint_set::builders::UpdateSizeConstraintSetOutputBuilder {
         crate::operation::update_size_constraint_set::builders::UpdateSizeConstraintSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSizeConstraintSetOutput`](crate::operation::update_size_constraint_set::UpdateSizeConstraintSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSizeConstraintSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl UpdateSizeConstraintSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSizeConstraintSetOutput`](crate::operation::update_size_constraint_set::UpdateSizeConstraintSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_size_constraint_set::UpdateSizeConstraintSetOutput {
+    pub fn build(self) -> crate::operation::update_size_constraint_set::UpdateSizeConstraintSetOutput {
         crate::operation::update_size_constraint_set::UpdateSizeConstraintSetOutput {
             change_token: self.change_token,
             _request_id: self._request_id,

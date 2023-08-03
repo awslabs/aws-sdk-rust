@@ -26,7 +26,7 @@ impl GetVpnTunnelReplacementStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetVpnTunnelReplacementStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusInputBuilder,
+    inner: crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusInputBuilder,
 }
 impl GetVpnTunnelReplacementStatusFluentBuilder {
     /// Creates a new `GetVpnTunnelReplacementStatus`.
@@ -37,7 +37,7 @@ impl GetVpnTunnelReplacementStatusFluentBuilder {
         }
     }
     /// Access the GetVpnTunnelReplacementStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetVpnTunnelReplacementStatusFluentBuilder {
             crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetVpnTunnelReplacementStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetVpnTunnelReplacementStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetVpnTunnelReplacementStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetVpnTunnelReplacementStatusFluentBuilder {
             crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn vpn_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpn_connection_id(input.into());
         self
     }
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn set_vpn_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpn_connection_id(input);
         self
     }
@@ -141,25 +124,17 @@ impl GetVpnTunnelReplacementStatusFluentBuilder {
         self.inner.get_vpn_connection_id()
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn vpn_tunnel_outside_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_tunnel_outside_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpn_tunnel_outside_ip_address(input.into());
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn set_vpn_tunnel_outside_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_tunnel_outside_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpn_tunnel_outside_ip_address(input);
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn get_vpn_tunnel_outside_ip_address(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_vpn_tunnel_outside_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpn_tunnel_outside_ip_address()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

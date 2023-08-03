@@ -43,9 +43,7 @@ impl UpdateAliasInput {
 
 /// A builder for [`UpdateAliasInput`](crate::operation::update_alias::UpdateAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAliasInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -101,10 +99,7 @@ impl UpdateAliasInputBuilder {
         self
     }
     /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
-    pub fn set_routing_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingStrategy>,
-    ) -> Self {
+    pub fn set_routing_strategy(mut self, input: ::std::option::Option<crate::types::RoutingStrategy>) -> Self {
         self.routing_strategy = input;
         self
     }
@@ -113,12 +108,7 @@ impl UpdateAliasInputBuilder {
         &self.routing_strategy
     }
     /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::operation::update_alias::UpdateAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_alias::UpdateAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_alias::UpdateAliasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_alias::UpdateAliasInput {
             alias_id: self.alias_id,
             name: self.name,

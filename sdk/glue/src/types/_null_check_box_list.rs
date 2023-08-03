@@ -37,9 +37,7 @@ impl NullCheckBoxList {
 
 /// A builder for [`NullCheckBoxList`](crate::types::NullCheckBoxList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NullCheckBoxListBuilder {
     pub(crate) is_empty: ::std::option::Option<bool>,
     pub(crate) is_null_string: ::std::option::Option<bool>,

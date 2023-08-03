@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RenditionConfigurationRenditionSelection {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for RenditionConfigurationRenditionSelection {
             "ALL" => RenditionConfigurationRenditionSelection::All,
             "CUSTOM" => RenditionConfigurationRenditionSelection::Custom,
             "NONE" => RenditionConfigurationRenditionSelection::None,
-            other => RenditionConfigurationRenditionSelection::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => RenditionConfigurationRenditionSelection::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

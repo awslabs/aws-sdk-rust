@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartDetectMitigationActionsTaskOutpu
 }
 impl StartDetectMitigationActionsTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartDetectMitigationActionsTaskOutput`](crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput).
-    pub fn builder() -> crate::operation::start_detect_mitigation_actions_task::builders::StartDetectMitigationActionsTaskOutputBuilder{
+    pub fn builder() -> crate::operation::start_detect_mitigation_actions_task::builders::StartDetectMitigationActionsTaskOutputBuilder {
         crate::operation::start_detect_mitigation_actions_task::builders::StartDetectMitigationActionsTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDetectMitigationActionsTaskOutput`](crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDetectMitigationActionsTaskOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl StartDetectMitigationActionsTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDetectMitigationActionsTaskOutput`](crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput).
-    pub fn build(self) -> crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput{
+    pub fn build(self) -> crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput {
         crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput {
-            task_id: self.task_id
-            ,
+            task_id: self.task_id,
             _request_id: self._request_id,
         }
     }

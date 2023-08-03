@@ -6,7 +6,11 @@ impl super::Client {
     ///   - [`auto_enable_new_account(Vec<DataLakeAutoEnableNewAccountConfiguration>)`](crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationFluentBuilder::auto_enable_new_account) / [`set_auto_enable_new_account(Option<Vec<DataLakeAutoEnableNewAccountConfiguration>>)`](crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationFluentBuilder::set_auto_enable_new_account): <p>Enable Security Lake with the specified configuration settings, to begin collecting security data for new accounts in your organization.</p>
     /// - On success, responds with [`CreateDataLakeOrganizationConfigurationOutput`](crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationOutput)
     /// - On failure, responds with [`SdkError<CreateDataLakeOrganizationConfigurationError>`](crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationError)
-    pub fn create_data_lake_organization_configuration(&self) -> crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationFluentBuilder{
-        crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn create_data_lake_organization_configuration(
+        &self,
+    ) -> crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationFluentBuilder {
+        crate::operation::create_data_lake_organization_configuration::builders::CreateDataLakeOrganizationConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

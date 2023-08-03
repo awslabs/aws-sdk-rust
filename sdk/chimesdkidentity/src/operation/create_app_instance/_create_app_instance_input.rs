@@ -46,8 +46,7 @@ impl ::std::fmt::Debug for CreateAppInstanceInput {
 }
 impl CreateAppInstanceInput {
     /// Creates a new builder-style object to manufacture [`CreateAppInstanceInput`](crate::operation::create_app_instance::CreateAppInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::create_app_instance::builders::CreateAppInstanceInputBuilder {
+    pub fn builder() -> crate::operation::create_app_instance::builders::CreateAppInstanceInputBuilder {
         crate::operation::create_app_instance::builders::CreateAppInstanceInputBuilder::default()
     }
 }
@@ -91,18 +90,12 @@ impl CreateAppInstanceInputBuilder {
         &self.metadata
     }
     /// <p>The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -122,10 +115,7 @@ impl CreateAppInstanceInputBuilder {
         self
     }
     /// <p>Tags assigned to the <code>AppInstance</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -136,18 +126,13 @@ impl CreateAppInstanceInputBuilder {
     /// Consumes the builder and constructs a [`CreateAppInstanceInput`](crate::operation::create_app_instance::CreateAppInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_app_instance::CreateAppInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_app_instance::CreateAppInstanceInput {
-                name: self.name,
-                metadata: self.metadata,
-                client_request_token: self.client_request_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_app_instance::CreateAppInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_app_instance::CreateAppInstanceInput {
+            name: self.name,
+            metadata: self.metadata,
+            client_request_token: self.client_request_token,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateAppInstanceInputBuilder {

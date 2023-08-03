@@ -10,10 +10,7 @@ impl DescribeServicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_services::DescribeServicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_services::DescribeServicesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_services::DescribeServicesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_services();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl DescribeServicesFluentBuilder {
         }
     }
     /// Access the DescribeServices as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_services::builders::DescribeServicesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_services::builders::DescribeServicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl DescribeServicesFluentBuilder {
             crate::operation::describe_services::DescribeServices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_services::DescribeServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_services::DescribeServicesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl DescribeServicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl DescribeServicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_services::DescribeServicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_services::DescribeServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_services::DescribeServicesError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl DescribeServicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_services::DescribeServicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_services::DescribeServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_services::DescribeServicesError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +108,7 @@ impl DescribeServicesFluentBuilder {
             crate::operation::describe_services::DescribeServices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_services::DescribeServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_services::DescribeServicesError>,
     > {
         self.customize_middleware().await
     }
@@ -133,25 +117,17 @@ impl DescribeServicesFluentBuilder {
     /// To override the contents of this collection use [`set_service_code_list`](Self::set_service_code_list).
     ///
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
-    pub fn service_code_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_code_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_code_list(input.into());
         self
     }
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
-    pub fn set_service_code_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_service_code_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_service_code_list(input);
         self
     }
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
-    pub fn get_service_code_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_code_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_service_code_list()
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>

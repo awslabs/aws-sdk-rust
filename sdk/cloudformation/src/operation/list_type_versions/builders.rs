@@ -10,10 +10,7 @@ impl ListTypeVersionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_type_versions::ListTypeVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_type_versions::ListTypeVersionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_type_versions::ListTypeVersionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_type_versions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListTypeVersionsFluentBuilder {
         }
     }
     /// Access the ListTypeVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_type_versions::builders::ListTypeVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_type_versions::builders::ListTypeVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListTypeVersionsFluentBuilder {
             crate::operation::list_type_versions::ListTypeVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_type_versions::ListTypeVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_type_versions::ListTypeVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListTypeVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListTypeVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_type_versions::ListTypeVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_type_versions::ListTypeVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_type_versions::ListTypeVersionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListTypeVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_type_versions::ListTypeVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_type_versions::ListTypeVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_type_versions::ListTypeVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListTypeVersionsFluentBuilder {
             crate::operation::list_type_versions::ListTypeVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_type_versions::ListTypeVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_type_versions::ListTypeVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_type_versions::paginator::ListTypeVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_type_versions::paginator::ListTypeVersionsPaginator {
-        crate::operation::list_type_versions::paginator::ListTypeVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_type_versions::paginator::ListTypeVersionsPaginator {
+        crate::operation::list_type_versions::paginator::ListTypeVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The kind of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -230,10 +209,7 @@ impl ListTypeVersionsFluentBuilder {
     /// <li> <p> <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
     /// <p>The default is <code>LIVE</code>.</p>
-    pub fn set_deprecated_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeprecatedStatus>,
-    ) -> Self {
+    pub fn set_deprecated_status(mut self, input: ::std::option::Option<crate::types::DeprecatedStatus>) -> Self {
         self.inner = self.inner.set_deprecated_status(input);
         self
     }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`change_set_id(Option<String>)`](crate::operation::cancel_change_set::CancelChangeSetOutput::change_set_id): <p>The unique identifier for the change set referenced in this request.</p>
     ///   - [`change_set_arn(Option<String>)`](crate::operation::cancel_change_set::CancelChangeSetOutput::change_set_arn): <p>The ARN associated with the change set referenced in this request.</p>
     /// - On failure, responds with [`SdkError<CancelChangeSetError>`](crate::operation::cancel_change_set::CancelChangeSetError)
-    pub fn cancel_change_set(
-        &self,
-    ) -> crate::operation::cancel_change_set::builders::CancelChangeSetFluentBuilder {
-        crate::operation::cancel_change_set::builders::CancelChangeSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_change_set(&self) -> crate::operation::cancel_change_set::builders::CancelChangeSetFluentBuilder {
+        crate::operation::cancel_change_set::builders::CancelChangeSetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,8 +23,7 @@ pub fn ser_response_headers_policy_custom_header(
 
 pub fn de_response_headers_policy_custom_header(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ResponseHeadersPolicyCustomHeader, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::ResponseHeadersPolicyCustomHeader, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicyCustomHeader::builder();
     while let Some(mut tag) = decoder.next_tag() {

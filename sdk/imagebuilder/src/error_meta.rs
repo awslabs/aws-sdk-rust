@@ -64,32 +64,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_image_creation::CancelImageCreationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::cancel_image_creation::CancelImageCreationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_image_creation::CancelImageCreationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::cancel_image_creation::CancelImageCreationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -99,44 +83,36 @@ where
 impl From<crate::operation::cancel_image_creation::CancelImageCreationError> for Error {
     fn from(err: crate::operation::cancel_image_creation::CancelImageCreationError) -> Self {
         match err {
-            crate::operation::cancel_image_creation::CancelImageCreationError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::cancel_image_creation::CancelImageCreationError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::cancel_image_creation::CancelImageCreationError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::cancel_image_creation::CancelImageCreationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::cancel_image_creation::CancelImageCreationError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::operation::cancel_image_creation::CancelImageCreationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::cancel_image_creation::CancelImageCreationError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::cancel_image_creation::CancelImageCreationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
             crate::operation::cancel_image_creation::CancelImageCreationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::cancel_image_creation::CancelImageCreationError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::cancel_image_creation::CancelImageCreationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::cancel_image_creation::CancelImageCreationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::cancel_image_creation::CancelImageCreationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_component::CreateComponentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_component::CreateComponentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_component::CreateComponentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_component::CreateComponentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -146,47 +122,41 @@ where
 impl From<crate::operation::create_component::CreateComponentError> for Error {
     fn from(err: crate::operation::create_component::CreateComponentError) -> Self {
         match err {
-            crate::operation::create_component::CreateComponentError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::create_component::CreateComponentError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::create_component::CreateComponentError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::create_component::CreateComponentError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::create_component::CreateComponentError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::operation::create_component::CreateComponentError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::create_component::CreateComponentError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::create_component::CreateComponentError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
             crate::operation::create_component::CreateComponentError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::create_component::CreateComponentError::InvalidVersionNumberException(inner) => Error::InvalidVersionNumberException(inner),
+            crate::operation::create_component::CreateComponentError::InvalidVersionNumberException(inner) => {
+                Error::InvalidVersionNumberException(inner)
+            }
             crate::operation::create_component::CreateComponentError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::create_component::CreateComponentError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::create_component::CreateComponentError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_component::CreateComponentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::create_component::CreateComponentError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::create_component::CreateComponentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_container_recipe::CreateContainerRecipeError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_container_recipe::CreateContainerRecipeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_container_recipe::CreateContainerRecipeError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_container_recipe::CreateContainerRecipeError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -196,78 +166,106 @@ where
 impl From<crate::operation::create_container_recipe::CreateContainerRecipeError> for Error {
     fn from(err: crate::operation::create_container_recipe::CreateContainerRecipeError) -> Self {
         match err {
-            crate::operation::create_container_recipe::CreateContainerRecipeError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::create_container_recipe::CreateContainerRecipeError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::create_container_recipe::CreateContainerRecipeError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::create_container_recipe::CreateContainerRecipeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::create_container_recipe::CreateContainerRecipeError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::operation::create_container_recipe::CreateContainerRecipeError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::create_container_recipe::CreateContainerRecipeError::InvalidVersionNumberException(inner) => Error::InvalidVersionNumberException(inner),
-            crate::operation::create_container_recipe::CreateContainerRecipeError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
-            crate::operation::create_container_recipe::CreateContainerRecipeError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::create_container_recipe::CreateContainerRecipeError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::create_container_recipe::CreateContainerRecipeError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_container_recipe::CreateContainerRecipeError::InvalidVersionNumberException(inner) => {
+                Error::InvalidVersionNumberException(inner)
+            }
+            crate::operation::create_container_recipe::CreateContainerRecipeError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::create_container_recipe::CreateContainerRecipeError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
             crate::operation::create_container_recipe::CreateContainerRecipeError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::create_container_recipe::CreateContainerRecipeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::create_container_recipe::CreateContainerRecipeError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_container_recipe::CreateContainerRecipeError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_container_recipe::CreateContainerRecipeError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::create_container_recipe::CreateContainerRecipeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_distribution_configuration::CreateDistributionConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_distribution_configuration::CreateDistributionConfigurationError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::create_distribution_configuration::CreateDistributionConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::create_distribution_configuration::CreateDistributionConfigurationError,
-    ) -> Self {
-        match err {
-            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
-            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
-            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError, R>>
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_distribution_configuration::CreateDistributionConfigurationError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image::CreateImageError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::create_distribution_configuration::CreateDistributionConfigurationError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_distribution_configuration::CreateDistributionConfigurationError> for Error {
+    fn from(err: crate::operation::create_distribution_configuration::CreateDistributionConfigurationError) -> Self {
+        match err {
+            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::IdempotentParameterMismatchException(
+                inner,
+            ) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::InvalidParameterCombinationException(
+                inner,
+            ) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -280,7 +278,9 @@ impl From<crate::operation::create_image::CreateImageError> for Error {
             crate::operation::create_image::CreateImageError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
             crate::operation::create_image::CreateImageError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::create_image::CreateImageError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::create_image::CreateImageError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_image::CreateImageError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
             crate::operation::create_image::CreateImageError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::create_image::CreateImageError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::create_image::CreateImageError::ServiceException(inner) => Error::ServiceException(inner),
@@ -290,32 +290,16 @@ impl From<crate::operation::create_image::CreateImageError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_pipeline::CreateImagePipelineError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_image_pipeline::CreateImagePipelineError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_pipeline::CreateImagePipelineError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_image_pipeline::CreateImagePipelineError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -325,46 +309,42 @@ where
 impl From<crate::operation::create_image_pipeline::CreateImagePipelineError> for Error {
     fn from(err: crate::operation::create_image_pipeline::CreateImagePipelineError) -> Self {
         match err {
-            crate::operation::create_image_pipeline::CreateImagePipelineError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::create_image_pipeline::CreateImagePipelineError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::create_image_pipeline::CreateImagePipelineError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::create_image_pipeline::CreateImagePipelineError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::create_image_pipeline::CreateImagePipelineError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::operation::create_image_pipeline::CreateImagePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::create_image_pipeline::CreateImagePipelineError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::operation::create_image_pipeline::CreateImagePipelineError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::create_image_pipeline::CreateImagePipelineError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_image_pipeline::CreateImagePipelineError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
             crate::operation::create_image_pipeline::CreateImagePipelineError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::create_image_pipeline::CreateImagePipelineError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::create_image_pipeline::CreateImagePipelineError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::create_image_pipeline::CreateImagePipelineError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_image_pipeline::CreateImagePipelineError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_image_pipeline::CreateImagePipelineError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::create_image_pipeline::CreateImagePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_recipe::CreateImageRecipeError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_image_recipe::CreateImageRecipeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_recipe::CreateImageRecipeError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_image_recipe::CreateImageRecipeError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -374,77 +354,101 @@ where
 impl From<crate::operation::create_image_recipe::CreateImageRecipeError> for Error {
     fn from(err: crate::operation::create_image_recipe::CreateImageRecipeError) -> Self {
         match err {
-            crate::operation::create_image_recipe::CreateImageRecipeError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::create_image_recipe::CreateImageRecipeError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::create_image_recipe::CreateImageRecipeError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::create_image_recipe::CreateImageRecipeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::create_image_recipe::CreateImageRecipeError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_image_recipe::CreateImageRecipeError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
             crate::operation::create_image_recipe::CreateImageRecipeError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::create_image_recipe::CreateImageRecipeError::InvalidVersionNumberException(inner) => Error::InvalidVersionNumberException(inner),
-            crate::operation::create_image_recipe::CreateImageRecipeError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::operation::create_image_recipe::CreateImageRecipeError::InvalidVersionNumberException(inner) => {
+                Error::InvalidVersionNumberException(inner)
+            }
+            crate::operation::create_image_recipe::CreateImageRecipeError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
             crate::operation::create_image_recipe::CreateImageRecipeError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::create_image_recipe::CreateImageRecipeError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::create_image_recipe::CreateImageRecipeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::create_image_recipe::CreateImageRecipeError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_image_recipe::CreateImageRecipeError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_image_recipe::CreateImageRecipeError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::create_image_recipe::CreateImageRecipeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError> for Error {
     fn from(err: crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError) -> Self {
         match err {
-            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
-            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
-            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::IdempotentParameterMismatchException(
+                inner,
+            ) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_component::DeleteComponentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_component::DeleteComponentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_component::DeleteComponentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_component::DeleteComponentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -454,7 +458,9 @@ where
 impl From<crate::operation::delete_component::DeleteComponentError> for Error {
     fn from(err: crate::operation::delete_component::DeleteComponentError) -> Self {
         match err {
-            crate::operation::delete_component::DeleteComponentError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::delete_component::DeleteComponentError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::delete_component::DeleteComponentError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::delete_component::DeleteComponentError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::delete_component::DeleteComponentError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
@@ -465,32 +471,16 @@ impl From<crate::operation::delete_component::DeleteComponentError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_container_recipe::DeleteContainerRecipeError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_container_recipe::DeleteContainerRecipeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_container_recipe::DeleteContainerRecipeError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_container_recipe::DeleteContainerRecipeError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -500,70 +490,82 @@ where
 impl From<crate::operation::delete_container_recipe::DeleteContainerRecipeError> for Error {
     fn from(err: crate::operation::delete_container_recipe::DeleteContainerRecipeError) -> Self {
         match err {
-            crate::operation::delete_container_recipe::DeleteContainerRecipeError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::delete_container_recipe::DeleteContainerRecipeError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::delete_container_recipe::DeleteContainerRecipeError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::delete_container_recipe::DeleteContainerRecipeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::delete_container_recipe::DeleteContainerRecipeError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::delete_container_recipe::DeleteContainerRecipeError::ResourceDependencyException(inner) => Error::ResourceDependencyException(inner),
+            crate::operation::delete_container_recipe::DeleteContainerRecipeError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_container_recipe::DeleteContainerRecipeError::ResourceDependencyException(inner) => {
+                Error::ResourceDependencyException(inner)
+            }
             crate::operation::delete_container_recipe::DeleteContainerRecipeError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::delete_container_recipe::DeleteContainerRecipeError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_container_recipe::DeleteContainerRecipeError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::delete_container_recipe::DeleteContainerRecipeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError,
-    ) -> Self {
-        match err {
-            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
-            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::ResourceDependencyException(inner) => Error::ResourceDependencyException(inner),
-            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::delete_image::DeleteImageError, R>>
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_image::DeleteImageError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError> for Error {
+    fn from(err: crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::ResourceDependencyException(inner) => {
+                Error::ResourceDependencyException(inner)
+            }
+            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_image::DeleteImageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_image::DeleteImageError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -573,59 +575,27 @@ where
 impl From<crate::operation::delete_image::DeleteImageError> for Error {
     fn from(err: crate::operation::delete_image::DeleteImageError) -> Self {
         match err {
-            crate::operation::delete_image::DeleteImageError::CallRateLimitExceededException(
-                inner,
-            ) => Error::CallRateLimitExceededException(inner),
-            crate::operation::delete_image::DeleteImageError::ClientException(inner) => {
-                Error::ClientException(inner)
-            }
-            crate::operation::delete_image::DeleteImageError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::operation::delete_image::DeleteImageError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::delete_image::DeleteImageError::ResourceDependencyException(
-                inner,
-            ) => Error::ResourceDependencyException(inner),
-            crate::operation::delete_image::DeleteImageError::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::operation::delete_image::DeleteImageError::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::operation::delete_image::DeleteImageError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_image::DeleteImageError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::delete_image::DeleteImageError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::delete_image::DeleteImageError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_image::DeleteImageError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_image::DeleteImageError::ResourceDependencyException(inner) => Error::ResourceDependencyException(inner),
+            crate::operation::delete_image::DeleteImageError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_image::DeleteImageError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_image::DeleteImageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_image_pipeline::DeleteImagePipelineError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_image_pipeline::DeleteImagePipelineError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_image_pipeline::DeleteImagePipelineError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_image_pipeline::DeleteImagePipelineError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -635,43 +605,35 @@ where
 impl From<crate::operation::delete_image_pipeline::DeleteImagePipelineError> for Error {
     fn from(err: crate::operation::delete_image_pipeline::DeleteImagePipelineError) -> Self {
         match err {
-            crate::operation::delete_image_pipeline::DeleteImagePipelineError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::delete_image_pipeline::DeleteImagePipelineError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::delete_image_pipeline::DeleteImagePipelineError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::delete_image_pipeline::DeleteImagePipelineError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::delete_image_pipeline::DeleteImagePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::delete_image_pipeline::DeleteImagePipelineError::ResourceDependencyException(inner) => Error::ResourceDependencyException(inner),
+            crate::operation::delete_image_pipeline::DeleteImagePipelineError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_image_pipeline::DeleteImagePipelineError::ResourceDependencyException(inner) => {
+                Error::ResourceDependencyException(inner)
+            }
             crate::operation::delete_image_pipeline::DeleteImagePipelineError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::delete_image_pipeline::DeleteImagePipelineError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_image_pipeline::DeleteImagePipelineError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::delete_image_pipeline::DeleteImagePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_image_recipe::DeleteImageRecipeError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_image_recipe::DeleteImageRecipeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_image_recipe::DeleteImageRecipeError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_image_recipe::DeleteImageRecipeError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -681,66 +643,82 @@ where
 impl From<crate::operation::delete_image_recipe::DeleteImageRecipeError> for Error {
     fn from(err: crate::operation::delete_image_recipe::DeleteImageRecipeError) -> Self {
         match err {
-            crate::operation::delete_image_recipe::DeleteImageRecipeError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::delete_image_recipe::DeleteImageRecipeError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::delete_image_recipe::DeleteImageRecipeError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::delete_image_recipe::DeleteImageRecipeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::delete_image_recipe::DeleteImageRecipeError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::delete_image_recipe::DeleteImageRecipeError::ResourceDependencyException(inner) => Error::ResourceDependencyException(inner),
+            crate::operation::delete_image_recipe::DeleteImageRecipeError::ResourceDependencyException(inner) => {
+                Error::ResourceDependencyException(inner)
+            }
             crate::operation::delete_image_recipe::DeleteImageRecipeError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::delete_image_recipe::DeleteImageRecipeError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_image_recipe::DeleteImageRecipeError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::delete_image_recipe::DeleteImageRecipeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError> for Error {
     fn from(err: crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError) -> Self {
         match err {
-            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
-            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ResourceDependencyException(inner) => Error::ResourceDependencyException(inner),
-            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ResourceDependencyException(inner) => {
+                Error::ResourceDependencyException(inner)
+            }
+            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::get_component::GetComponentError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_component::GetComponentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_component::GetComponentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_component::GetComponentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -750,56 +728,26 @@ where
 impl From<crate::operation::get_component::GetComponentError> for Error {
     fn from(err: crate::operation::get_component::GetComponentError) -> Self {
         match err {
-            crate::operation::get_component::GetComponentError::CallRateLimitExceededException(
-                inner,
-            ) => Error::CallRateLimitExceededException(inner),
-            crate::operation::get_component::GetComponentError::ClientException(inner) => {
-                Error::ClientException(inner)
-            }
-            crate::operation::get_component::GetComponentError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::operation::get_component::GetComponentError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::get_component::GetComponentError::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::operation::get_component::GetComponentError::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::operation::get_component::GetComponentError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_component::GetComponentError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::get_component::GetComponentError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::get_component::GetComponentError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_component::GetComponentError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_component::GetComponentError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_component::GetComponentError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_component::GetComponentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_component_policy::GetComponentPolicyError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_component_policy::GetComponentPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_component_policy::GetComponentPolicyError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_component_policy::GetComponentPolicyError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -809,42 +757,32 @@ where
 impl From<crate::operation::get_component_policy::GetComponentPolicyError> for Error {
     fn from(err: crate::operation::get_component_policy::GetComponentPolicyError) -> Self {
         match err {
-            crate::operation::get_component_policy::GetComponentPolicyError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::get_component_policy::GetComponentPolicyError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::get_component_policy::GetComponentPolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::get_component_policy::GetComponentPolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::get_component_policy::GetComponentPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_component_policy::GetComponentPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_component_policy::GetComponentPolicyError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::get_component_policy::GetComponentPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_component_policy::GetComponentPolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::get_component_policy::GetComponentPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_recipe::GetContainerRecipeError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_container_recipe::GetContainerRecipeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_recipe::GetContainerRecipeError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_container_recipe::GetContainerRecipeError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -854,42 +792,30 @@ where
 impl From<crate::operation::get_container_recipe::GetContainerRecipeError> for Error {
     fn from(err: crate::operation::get_container_recipe::GetContainerRecipeError) -> Self {
         match err {
-            crate::operation::get_container_recipe::GetContainerRecipeError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::get_container_recipe::GetContainerRecipeError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::get_container_recipe::GetContainerRecipeError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::get_container_recipe::GetContainerRecipeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::get_container_recipe::GetContainerRecipeError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::get_container_recipe::GetContainerRecipeError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::get_container_recipe::GetContainerRecipeError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_container_recipe::GetContainerRecipeError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::get_container_recipe::GetContainerRecipeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -897,87 +823,81 @@ where
     }
 }
 impl From<crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError> for Error {
-    fn from(
-        err: crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError,
-    ) -> Self {
+    fn from(err: crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError) -> Self {
         match err {
-            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
-            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distribution_configuration::GetDistributionConfigurationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_distribution_configuration::GetDistributionConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distribution_configuration::GetDistributionConfigurationError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_configuration::GetDistributionConfigurationError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::get_distribution_configuration::GetDistributionConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::get_distribution_configuration::GetDistributionConfigurationError,
-    ) -> Self {
+impl From<crate::operation::get_distribution_configuration::GetDistributionConfigurationError> for Error {
+    fn from(err: crate::operation::get_distribution_configuration::GetDistributionConfigurationError) -> Self {
         match err {
-            crate::operation::get_distribution_configuration::GetDistributionConfigurationError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
-            crate::operation::get_distribution_configuration::GetDistributionConfigurationError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::get_distribution_configuration::GetDistributionConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::get_distribution_configuration::GetDistributionConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::get_distribution_configuration::GetDistributionConfigurationError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::get_distribution_configuration::GetDistributionConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_distribution_configuration::GetDistributionConfigurationError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::get_distribution_configuration::GetDistributionConfigurationError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::get_distribution_configuration::GetDistributionConfigurationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_distribution_configuration::GetDistributionConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_distribution_configuration::GetDistributionConfigurationError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::get_distribution_configuration::GetDistributionConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::get_distribution_configuration::GetDistributionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_image::GetImageError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_image::GetImageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::get_image::GetImageError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_image::GetImageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -987,54 +907,26 @@ where
 impl From<crate::operation::get_image::GetImageError> for Error {
     fn from(err: crate::operation::get_image::GetImageError) -> Self {
         match err {
-            crate::operation::get_image::GetImageError::CallRateLimitExceededException(inner) => {
-                Error::CallRateLimitExceededException(inner)
-            }
-            crate::operation::get_image::GetImageError::ClientException(inner) => {
-                Error::ClientException(inner)
-            }
-            crate::operation::get_image::GetImageError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::operation::get_image::GetImageError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::get_image::GetImageError::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::operation::get_image::GetImageError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
+            crate::operation::get_image::GetImageError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::get_image::GetImageError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::get_image::GetImageError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_image::GetImageError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_image::GetImageError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_image::GetImageError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::get_image::GetImageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_pipeline::GetImagePipelineError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_image_pipeline::GetImagePipelineError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_pipeline::GetImagePipelineError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_image_pipeline::GetImagePipelineError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1044,42 +936,30 @@ where
 impl From<crate::operation::get_image_pipeline::GetImagePipelineError> for Error {
     fn from(err: crate::operation::get_image_pipeline::GetImagePipelineError) -> Self {
         match err {
-            crate::operation::get_image_pipeline::GetImagePipelineError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::get_image_pipeline::GetImagePipelineError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::get_image_pipeline::GetImagePipelineError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::get_image_pipeline::GetImagePipelineError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::get_image_pipeline::GetImagePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::get_image_pipeline::GetImagePipelineError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::get_image_pipeline::GetImagePipelineError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_image_pipeline::GetImagePipelineError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::get_image_pipeline::GetImagePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_policy::GetImagePolicyError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_image_policy::GetImagePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_policy::GetImagePolicyError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_image_policy::GetImagePolicyError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1089,7 +969,9 @@ where
 impl From<crate::operation::get_image_policy::GetImagePolicyError> for Error {
     fn from(err: crate::operation::get_image_policy::GetImagePolicyError) -> Self {
         match err {
-            crate::operation::get_image_policy::GetImagePolicyError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::get_image_policy::GetImagePolicyError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::get_image_policy::GetImagePolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::get_image_policy::GetImagePolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::get_image_policy::GetImagePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -1099,32 +981,16 @@ impl From<crate::operation::get_image_policy::GetImagePolicyError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_recipe::GetImageRecipeError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_image_recipe::GetImageRecipeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_recipe::GetImageRecipeError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_image_recipe::GetImageRecipeError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1134,7 +1000,9 @@ where
 impl From<crate::operation::get_image_recipe::GetImageRecipeError> for Error {
     fn from(err: crate::operation::get_image_recipe::GetImageRecipeError) -> Self {
         match err {
-            crate::operation::get_image_recipe::GetImageRecipeError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::get_image_recipe::GetImageRecipeError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::get_image_recipe::GetImageRecipeError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::get_image_recipe::GetImageRecipeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::get_image_recipe::GetImageRecipeError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
@@ -1144,32 +1012,16 @@ impl From<crate::operation::get_image_recipe::GetImageRecipeError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_recipe_policy::GetImageRecipePolicyError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_image_recipe_policy::GetImageRecipePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_recipe_policy::GetImageRecipePolicyError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_image_recipe_policy::GetImageRecipePolicyError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1179,91 +1031,78 @@ where
 impl From<crate::operation::get_image_recipe_policy::GetImageRecipePolicyError> for Error {
     fn from(err: crate::operation::get_image_recipe_policy::GetImageRecipePolicyError) -> Self {
         match err {
-            crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError,
-    ) -> Self {
+impl From<crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError> for Error {
+    fn from(err: crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError) -> Self {
         match err {
-            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
-            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_execution::GetWorkflowExecutionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_workflow_execution::GetWorkflowExecutionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_execution::GetWorkflowExecutionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_execution::GetWorkflowExecutionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1273,42 +1112,32 @@ where
 impl From<crate::operation::get_workflow_execution::GetWorkflowExecutionError> for Error {
     fn from(err: crate::operation::get_workflow_execution::GetWorkflowExecutionError) -> Self {
         match err {
-            crate::operation::get_workflow_execution::GetWorkflowExecutionError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::get_workflow_execution::GetWorkflowExecutionError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::get_workflow_execution::GetWorkflowExecutionError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::get_workflow_execution::GetWorkflowExecutionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::get_workflow_execution::GetWorkflowExecutionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_workflow_execution::GetWorkflowExecutionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
             crate::operation::get_workflow_execution::GetWorkflowExecutionError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::get_workflow_execution::GetWorkflowExecutionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_workflow_execution::GetWorkflowExecutionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::get_workflow_execution::GetWorkflowExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1316,46 +1145,36 @@ where
     }
 }
 impl From<crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError> for Error {
-    fn from(
-        err: crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError,
-    ) -> Self {
+    fn from(err: crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError) -> Self {
         match err {
-            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
             crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_component::ImportComponentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::import_component::ImportComponentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::import_component::ImportComponentError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::import_component::ImportComponentError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1365,13 +1184,21 @@ where
 impl From<crate::operation::import_component::ImportComponentError> for Error {
     fn from(err: crate::operation::import_component::ImportComponentError) -> Self {
         match err {
-            crate::operation::import_component::ImportComponentError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::import_component::ImportComponentError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::import_component::ImportComponentError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::import_component::ImportComponentError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::import_component::ImportComponentError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::operation::import_component::ImportComponentError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::import_component::ImportComponentError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::import_component::ImportComponentError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
             crate::operation::import_component::ImportComponentError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::import_component::ImportComponentError::InvalidVersionNumberException(inner) => Error::InvalidVersionNumberException(inner),
+            crate::operation::import_component::ImportComponentError::InvalidVersionNumberException(inner) => {
+                Error::InvalidVersionNumberException(inner)
+            }
             crate::operation::import_component::ImportComponentError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::import_component::ImportComponentError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::import_component::ImportComponentError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
@@ -1379,32 +1206,16 @@ impl From<crate::operation::import_component::ImportComponentError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_vm_image::ImportVmImageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::import_vm_image::ImportVmImageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::import_vm_image::ImportVmImageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::import_vm_image::ImportVmImageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1414,97 +1225,65 @@ where
 impl From<crate::operation::import_vm_image::ImportVmImageError> for Error {
     fn from(err: crate::operation::import_vm_image::ImportVmImageError) -> Self {
         match err {
-            crate::operation::import_vm_image::ImportVmImageError::ClientException(inner) => {
-                Error::ClientException(inner)
-            }
-            crate::operation::import_vm_image::ImportVmImageError::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::operation::import_vm_image::ImportVmImageError::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::operation::import_vm_image::ImportVmImageError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::import_vm_image::ImportVmImageError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::import_vm_image::ImportVmImageError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::import_vm_image::ImportVmImageError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::import_vm_image::ImportVmImageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_build_versions::ListComponentBuildVersionsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_component_build_versions::ListComponentBuildVersionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_component_build_versions::ListComponentBuildVersionsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_component_build_versions::ListComponentBuildVersionsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::list_component_build_versions::ListComponentBuildVersionsError>
-    for Error
-{
-    fn from(
-        err: crate::operation::list_component_build_versions::ListComponentBuildVersionsError,
-    ) -> Self {
+impl From<crate::operation::list_component_build_versions::ListComponentBuildVersionsError> for Error {
+    fn from(err: crate::operation::list_component_build_versions::ListComponentBuildVersionsError) -> Self {
         match err {
-            crate::operation::list_component_build_versions::ListComponentBuildVersionsError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_component_build_versions::ListComponentBuildVersionsError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::list_component_build_versions::ListComponentBuildVersionsError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::list_component_build_versions::ListComponentBuildVersionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_component_build_versions::ListComponentBuildVersionsError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::operation::list_component_build_versions::ListComponentBuildVersionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::list_component_build_versions::ListComponentBuildVersionsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::list_component_build_versions::ListComponentBuildVersionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_component_build_versions::ListComponentBuildVersionsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_component_build_versions::ListComponentBuildVersionsError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_component_build_versions::ListComponentBuildVersionsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_component_build_versions::ListComponentBuildVersionsError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::list_component_build_versions::ListComponentBuildVersionsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::list_component_build_versions::ListComponentBuildVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_components::ListComponentsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_components::ListComponentsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_components::ListComponentsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_components::ListComponentsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1514,10 +1293,14 @@ where
 impl From<crate::operation::list_components::ListComponentsError> for Error {
     fn from(err: crate::operation::list_components::ListComponentsError) -> Self {
         match err {
-            crate::operation::list_components::ListComponentsError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_components::ListComponentsError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::list_components::ListComponentsError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_components::ListComponentsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_components::ListComponentsError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::operation::list_components::ListComponentsError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
             crate::operation::list_components::ListComponentsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_components::ListComponentsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_components::ListComponentsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
@@ -1525,32 +1308,16 @@ impl From<crate::operation::list_components::ListComponentsError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_container_recipes::ListContainerRecipesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_container_recipes::ListContainerRecipesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_container_recipes::ListContainerRecipesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_container_recipes::ListContainerRecipesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1560,93 +1327,82 @@ where
 impl From<crate::operation::list_container_recipes::ListContainerRecipesError> for Error {
     fn from(err: crate::operation::list_container_recipes::ListContainerRecipesError) -> Self {
         match err {
-            crate::operation::list_container_recipes::ListContainerRecipesError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_container_recipes::ListContainerRecipesError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::list_container_recipes::ListContainerRecipesError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_container_recipes::ListContainerRecipesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_container_recipes::ListContainerRecipesError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::operation::list_container_recipes::ListContainerRecipesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_container_recipes::ListContainerRecipesError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_container_recipes::ListContainerRecipesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
             crate::operation::list_container_recipes::ListContainerRecipesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::list_container_recipes::ListContainerRecipesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_container_recipes::ListContainerRecipesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::list_container_recipes::ListContainerRecipesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_distribution_configurations::ListDistributionConfigurationsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::list_distribution_configurations::ListDistributionConfigurationsError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::list_distribution_configurations::ListDistributionConfigurationsError>
-    for Error
-{
-    fn from(
-        err: crate::operation::list_distribution_configurations::ListDistributionConfigurationsError,
-    ) -> Self {
+impl From<crate::operation::list_distribution_configurations::ListDistributionConfigurationsError> for Error {
+    fn from(err: crate::operation::list_distribution_configurations::ListDistributionConfigurationsError) -> Self {
         match err {
-            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
-            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::list_distribution_configurations::ListDistributionConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_build_versions::ListImageBuildVersionsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_image_build_versions::ListImageBuildVersionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_build_versions::ListImageBuildVersionsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_image_build_versions::ListImageBuildVersionsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1656,43 +1412,35 @@ where
 impl From<crate::operation::list_image_build_versions::ListImageBuildVersionsError> for Error {
     fn from(err: crate::operation::list_image_build_versions::ListImageBuildVersionsError) -> Self {
         match err {
-            crate::operation::list_image_build_versions::ListImageBuildVersionsError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_image_build_versions::ListImageBuildVersionsError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::list_image_build_versions::ListImageBuildVersionsError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_image_build_versions::ListImageBuildVersionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_image_build_versions::ListImageBuildVersionsError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::operation::list_image_build_versions::ListImageBuildVersionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_image_build_versions::ListImageBuildVersionsError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_image_build_versions::ListImageBuildVersionsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
             crate::operation::list_image_build_versions::ListImageBuildVersionsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::list_image_build_versions::ListImageBuildVersionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_image_build_versions::ListImageBuildVersionsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::list_image_build_versions::ListImageBuildVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_packages::ListImagePackagesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_image_packages::ListImagePackagesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_packages::ListImagePackagesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_image_packages::ListImagePackagesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1702,44 +1450,36 @@ where
 impl From<crate::operation::list_image_packages::ListImagePackagesError> for Error {
     fn from(err: crate::operation::list_image_packages::ListImagePackagesError) -> Self {
         match err {
-            crate::operation::list_image_packages::ListImagePackagesError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_image_packages::ListImagePackagesError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::list_image_packages::ListImagePackagesError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_image_packages::ListImagePackagesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_image_packages::ListImagePackagesError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::operation::list_image_packages::ListImagePackagesError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
             crate::operation::list_image_packages::ListImagePackagesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::list_image_packages::ListImagePackagesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_image_packages::ListImagePackagesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_image_packages::ListImagePackagesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::list_image_packages::ListImagePackagesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_image_packages::ListImagePackagesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::list_image_packages::ListImagePackagesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_image_pipeline_images::ListImagePipelineImagesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_image_pipeline_images::ListImagePipelineImagesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1747,48 +1487,40 @@ where
     }
 }
 impl From<crate::operation::list_image_pipeline_images::ListImagePipelineImagesError> for Error {
-    fn from(
-        err: crate::operation::list_image_pipeline_images::ListImagePipelineImagesError,
-    ) -> Self {
+    fn from(err: crate::operation::list_image_pipeline_images::ListImagePipelineImagesError) -> Self {
         match err {
-            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::list_image_pipeline_images::ListImagePipelineImagesError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_image_pipeline_images::ListImagePipelineImagesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_image_pipeline_images::ListImagePipelineImagesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_image_pipeline_images::ListImagePipelineImagesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::list_image_pipeline_images::ListImagePipelineImagesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_pipelines::ListImagePipelinesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_image_pipelines::ListImagePipelinesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_pipelines::ListImagePipelinesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_image_pipelines::ListImagePipelinesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1798,43 +1530,33 @@ where
 impl From<crate::operation::list_image_pipelines::ListImagePipelinesError> for Error {
     fn from(err: crate::operation::list_image_pipelines::ListImagePipelinesError) -> Self {
         match err {
-            crate::operation::list_image_pipelines::ListImagePipelinesError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_image_pipelines::ListImagePipelinesError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::list_image_pipelines::ListImagePipelinesError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_image_pipelines::ListImagePipelinesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_image_pipelines::ListImagePipelinesError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::operation::list_image_pipelines::ListImagePipelinesError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
             crate::operation::list_image_pipelines::ListImagePipelinesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_image_pipelines::ListImagePipelinesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::list_image_pipelines::ListImagePipelinesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_image_pipelines::ListImagePipelinesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::list_image_pipelines::ListImagePipelinesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_recipes::ListImageRecipesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_image_recipes::ListImageRecipesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_recipes::ListImageRecipesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_image_recipes::ListImageRecipesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1844,35 +1566,33 @@ where
 impl From<crate::operation::list_image_recipes::ListImageRecipesError> for Error {
     fn from(err: crate::operation::list_image_recipes::ListImageRecipesError) -> Self {
         match err {
-            crate::operation::list_image_recipes::ListImageRecipesError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_image_recipes::ListImageRecipesError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::list_image_recipes::ListImageRecipesError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_image_recipes::ListImageRecipesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_image_recipes::ListImageRecipesError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::operation::list_image_recipes::ListImageRecipesError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
             crate::operation::list_image_recipes::ListImageRecipesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_image_recipes::ListImageRecipesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::list_image_recipes::ListImageRecipesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_image_recipes::ListImageRecipesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::list_image_recipes::ListImageRecipesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_images::ListImagesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1882,86 +1602,76 @@ where
 impl From<crate::operation::list_images::ListImagesError> for Error {
     fn from(err: crate::operation::list_images::ListImagesError) -> Self {
         match err {
-            crate::operation::list_images::ListImagesError::CallRateLimitExceededException(
-                inner,
-            ) => Error::CallRateLimitExceededException(inner),
-            crate::operation::list_images::ListImagesError::ClientException(inner) => {
-                Error::ClientException(inner)
-            }
-            crate::operation::list_images::ListImagesError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::operation::list_images::ListImagesError::InvalidPaginationTokenException(
-                inner,
-            ) => Error::InvalidPaginationTokenException(inner),
-            crate::operation::list_images::ListImagesError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::list_images::ListImagesError::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::operation::list_images::ListImagesError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::operation::list_images::ListImagesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_images::ListImagesError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_images::ListImagesError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_images::ListImagesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_images::ListImagesError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::operation::list_images::ListImagesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_images::ListImagesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_images::ListImagesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_images::ListImagesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError> for Error {
     fn from(err: crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError) -> Self {
         match err {
-            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
-            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_scan_findings::ListImageScanFindingsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_findings::ListImageScanFindingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_scan_findings::ListImageScanFindingsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_findings::ListImageScanFindingsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1971,76 +1681,82 @@ where
 impl From<crate::operation::list_image_scan_findings::ListImageScanFindingsError> for Error {
     fn from(err: crate::operation::list_image_scan_findings::ListImageScanFindingsError) -> Self {
         match err {
-            crate::operation::list_image_scan_findings::ListImageScanFindingsError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::list_image_scan_findings::ListImageScanFindingsError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_image_scan_findings::ListImageScanFindingsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_image_scan_findings::ListImageScanFindingsError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::operation::list_image_scan_findings::ListImageScanFindingsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
             crate::operation::list_image_scan_findings::ListImageScanFindingsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::list_image_scan_findings::ListImageScanFindingsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::list_image_scan_findings::ListImageScanFindingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl
-    From<
-        crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError,
-    > for Error
-{
-    fn from(
-        err: crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError,
-    ) -> Self {
-        match err {
-            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
-            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError> for Error {
+    fn from(err: crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2050,39 +1766,27 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_executions::ListWorkflowExecutionsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_workflow_executions::ListWorkflowExecutionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_executions::ListWorkflowExecutionsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_executions::ListWorkflowExecutionsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2092,93 +1796,77 @@ where
 impl From<crate::operation::list_workflow_executions::ListWorkflowExecutionsError> for Error {
     fn from(err: crate::operation::list_workflow_executions::ListWorkflowExecutionsError) -> Self {
         match err {
-            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::list_workflow_executions::ListWorkflowExecutionsError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_workflow_executions::ListWorkflowExecutionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
             crate::operation::list_workflow_executions::ListWorkflowExecutionsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::list_workflow_executions::ListWorkflowExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError>
-    for Error
-{
-    fn from(
-        err: crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError,
-    ) -> Self {
+impl From<crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError> for Error {
+    fn from(err: crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError) -> Self {
         match err {
-            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_component_policy::PutComponentPolicyError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_component_policy::PutComponentPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::put_component_policy::PutComponentPolicyError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_component_policy::PutComponentPolicyError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2188,44 +1876,36 @@ where
 impl From<crate::operation::put_component_policy::PutComponentPolicyError> for Error {
     fn from(err: crate::operation::put_component_policy::PutComponentPolicyError) -> Self {
         match err {
-            crate::operation::put_component_policy::PutComponentPolicyError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::put_component_policy::PutComponentPolicyError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::put_component_policy::PutComponentPolicyError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::put_component_policy::PutComponentPolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::put_component_policy::PutComponentPolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::put_component_policy::PutComponentPolicyError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::put_component_policy::PutComponentPolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::put_component_policy::PutComponentPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_component_policy::PutComponentPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::put_component_policy::PutComponentPolicyError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::put_component_policy::PutComponentPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::put_component_policy::PutComponentPolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::put_component_policy::PutComponentPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2233,48 +1913,42 @@ where
     }
 }
 impl From<crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError> for Error {
-    fn from(
-        err: crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError,
-    ) -> Self {
+    fn from(err: crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError) -> Self {
         match err {
-            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_policy::PutImagePolicyError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_image_policy::PutImagePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_policy::PutImagePolicyError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_image_policy::PutImagePolicyError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2284,10 +1958,14 @@ where
 impl From<crate::operation::put_image_policy::PutImagePolicyError> for Error {
     fn from(err: crate::operation::put_image_policy::PutImagePolicyError) -> Self {
         match err {
-            crate::operation::put_image_policy::PutImagePolicyError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::put_image_policy::PutImagePolicyError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::put_image_policy::PutImagePolicyError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::put_image_policy::PutImagePolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::put_image_policy::PutImagePolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::put_image_policy::PutImagePolicyError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::put_image_policy::PutImagePolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::put_image_policy::PutImagePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::put_image_policy::PutImagePolicyError::ServiceException(inner) => Error::ServiceException(inner),
@@ -2296,32 +1974,16 @@ impl From<crate::operation::put_image_policy::PutImagePolicyError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_image_recipe_policy::PutImageRecipePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_image_recipe_policy::PutImageRecipePolicyError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2331,92 +1993,88 @@ where
 impl From<crate::operation::put_image_recipe_policy::PutImageRecipePolicyError> for Error {
     fn from(err: crate::operation::put_image_recipe_policy::PutImageRecipePolicyError) -> Self {
         match err {
-            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError>
-    for Error
-{
-    fn from(
-        err: crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError,
-    ) -> Self {
+impl From<crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError> for Error {
+    fn from(err: crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError) -> Self {
         match err {
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_resource::TagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2426,47 +2084,23 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2476,80 +2110,76 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::InvalidParameterException(
-                inner,
-            ) => Error::InvalidParameterException(inner),
-            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::untag_resource::UntagResourceError::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::untag_resource::UntagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError>
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError, R>>
     for Error
-{
-    fn from(
-        err: crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError,
-    ) -> Self {
-        match err {
-            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
-            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
-            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_image_pipeline::UpdateImagePipelineError,
-            R,
-        >,
-    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_image_pipeline::UpdateImagePipelineError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError> for Error {
+    fn from(err: crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError) -> Self {
+        match err {
+            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::IdempotentParameterMismatchException(
+                inner,
+            ) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::InvalidParameterCombinationException(
+                inner,
+            ) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_image_pipeline::UpdateImagePipelineError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_image_pipeline::UpdateImagePipelineError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -2559,43 +2189,75 @@ where
 impl From<crate::operation::update_image_pipeline::UpdateImagePipelineError> for Error {
     fn from(err: crate::operation::update_image_pipeline::UpdateImagePipelineError) -> Self {
         match err {
-            crate::operation::update_image_pipeline::UpdateImagePipelineError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::update_image_pipeline::UpdateImagePipelineError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
             crate::operation::update_image_pipeline::UpdateImagePipelineError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::update_image_pipeline::UpdateImagePipelineError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::update_image_pipeline::UpdateImagePipelineError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::operation::update_image_pipeline::UpdateImagePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_image_pipeline::UpdateImagePipelineError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::update_image_pipeline::UpdateImagePipelineError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
             crate::operation::update_image_pipeline::UpdateImagePipelineError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::update_image_pipeline::UpdateImagePipelineError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::update_image_pipeline::UpdateImagePipelineError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_image_pipeline::UpdateImagePipelineError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::update_image_pipeline::UpdateImagePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError> for Error {
     fn from(err: crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError) -> Self {
         match err {
-            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
-            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::ClientException(inner) => Error::ClientException(inner),
-            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::IdempotentParameterMismatchException(
+                inner,
+            ) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

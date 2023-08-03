@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`subjects(Option<Vec<SubjectSummary>>)`](crate::operation::list_subjects::ListSubjectsOutput::subjects): <p>A list of subjects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_subjects::ListSubjectsOutput::next_token): <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     /// - On failure, responds with [`SdkError<ListSubjectsError>`](crate::operation::list_subjects::ListSubjectsError)
-    pub fn list_subjects(
-        &self,
-    ) -> crate::operation::list_subjects::builders::ListSubjectsFluentBuilder {
-        crate::operation::list_subjects::builders::ListSubjectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_subjects(&self) -> crate::operation::list_subjects::builders::ListSubjectsFluentBuilder {
+        crate::operation::list_subjects::builders::ListSubjectsFluentBuilder::new(self.handle.clone())
     }
 }

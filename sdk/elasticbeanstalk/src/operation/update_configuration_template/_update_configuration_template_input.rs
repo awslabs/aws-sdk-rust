@@ -17,13 +17,11 @@ pub struct UpdateConfigurationTemplateInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of configuration option settings to update with the new specified option value.</p>
     #[doc(hidden)]
-    pub option_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
+    pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
     /// <p>A list of configuration options to remove from the configuration set.</p>
     /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
     #[doc(hidden)]
-    pub options_to_remove:
-        ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
+    pub options_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
 }
 impl UpdateConfigurationTemplateInput {
     /// <p>The name of the application associated with the configuration template to update.</p>
@@ -41,9 +39,7 @@ impl UpdateConfigurationTemplateInput {
         self.description.as_deref()
     }
     /// <p>A list of configuration option settings to update with the new specified option value.</p>
-    pub fn option_settings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConfigurationOptionSetting]> {
+    pub fn option_settings(&self) -> ::std::option::Option<&[crate::types::ConfigurationOptionSetting]> {
         self.option_settings.as_deref()
     }
     /// <p>A list of configuration options to remove from the configuration set.</p>
@@ -54,41 +50,31 @@ impl UpdateConfigurationTemplateInput {
 }
 impl UpdateConfigurationTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationTemplateInput`](crate::operation::update_configuration_template::UpdateConfigurationTemplateInput).
-    pub fn builder() -> crate::operation::update_configuration_template::builders::UpdateConfigurationTemplateInputBuilder{
+    pub fn builder() -> crate::operation::update_configuration_template::builders::UpdateConfigurationTemplateInputBuilder {
         crate::operation::update_configuration_template::builders::UpdateConfigurationTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConfigurationTemplateInput`](crate::operation::update_configuration_template::UpdateConfigurationTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfigurationTemplateInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) option_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
-    pub(crate) options_to_remove:
-        ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
+    pub(crate) option_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
+    pub(crate) options_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
 }
 impl UpdateConfigurationTemplateInputBuilder {
     /// <p>The name of the application associated with the configuration template to update.</p>
     /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application associated with the configuration template to update.</p>
     /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -99,19 +85,13 @@ impl UpdateConfigurationTemplateInputBuilder {
     }
     /// <p>The name of the configuration template to update.</p>
     /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration template to update.</p>
     /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -146,17 +126,12 @@ impl UpdateConfigurationTemplateInputBuilder {
         self
     }
     /// <p>A list of configuration option settings to update with the new specified option value.</p>
-    pub fn set_option_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
-    ) -> Self {
+    pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>) -> Self {
         self.option_settings = input;
         self
     }
     /// <p>A list of configuration option settings to update with the new specified option value.</p>
-    pub fn get_option_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
         &self.option_settings
     }
     /// Appends an item to `options_to_remove`.
@@ -173,18 +148,13 @@ impl UpdateConfigurationTemplateInputBuilder {
     }
     /// <p>A list of configuration options to remove from the configuration set.</p>
     /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
-    pub fn set_options_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
-    ) -> Self {
+    pub fn set_options_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>) -> Self {
         self.options_to_remove = input;
         self
     }
     /// <p>A list of configuration options to remove from the configuration set.</p>
     /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
-    pub fn get_options_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
+    pub fn get_options_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
         &self.options_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationTemplateInput`](crate::operation::update_configuration_template::UpdateConfigurationTemplateInput).
@@ -194,14 +164,12 @@ impl UpdateConfigurationTemplateInputBuilder {
         crate::operation::update_configuration_template::UpdateConfigurationTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_configuration_template::UpdateConfigurationTemplateInput {
-                application_name: self.application_name,
-                template_name: self.template_name,
-                description: self.description,
-                option_settings: self.option_settings,
-                options_to_remove: self.options_to_remove,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_configuration_template::UpdateConfigurationTemplateInput {
+            application_name: self.application_name,
+            template_name: self.template_name,
+            description: self.description,
+            option_settings: self.option_settings,
+            options_to_remove: self.options_to_remove,
+        })
     }
 }

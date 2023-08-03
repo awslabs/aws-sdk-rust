@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSegmentOutput`](crate::operation::update_segment::UpdateSegmentOutput) with field(s):
     ///   - [`segment_response(Option<SegmentResponse>)`](crate::operation::update_segment::UpdateSegmentOutput::segment_response): <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     /// - On failure, responds with [`SdkError<UpdateSegmentError>`](crate::operation::update_segment::UpdateSegmentError)
-    pub fn update_segment(
-        &self,
-    ) -> crate::operation::update_segment::builders::UpdateSegmentFluentBuilder {
-        crate::operation::update_segment::builders::UpdateSegmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_segment(&self) -> crate::operation::update_segment::builders::UpdateSegmentFluentBuilder {
+        crate::operation::update_segment::builders::UpdateSegmentFluentBuilder::new(self.handle.clone())
     }
 }

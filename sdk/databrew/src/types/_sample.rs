@@ -30,9 +30,7 @@ impl Sample {
 
 /// A builder for [`Sample`](crate::types::Sample).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SampleBuilder {
     pub(crate) size: ::std::option::Option<i32>,
     pub(crate) r#type: ::std::option::Option<crate::types::SampleType>,

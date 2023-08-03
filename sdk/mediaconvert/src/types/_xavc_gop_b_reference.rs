@@ -38,13 +38,7 @@
 /// Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow to allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder from using B-frames as reference frames.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum XavcGopBReference {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for XavcGopBReference {
         match s {
             "DISABLED" => XavcGopBReference::Disabled,
             "ENABLED" => XavcGopBReference::Enabled,
-            other => {
-                XavcGopBReference::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => XavcGopBReference::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

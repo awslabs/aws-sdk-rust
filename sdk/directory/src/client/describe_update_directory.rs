@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`update_activities(Option<Vec<UpdateInfoEntry>>)`](crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput::update_activities): <p> The list of update activities on a directory for the requested update type. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput::next_token): <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
     /// - On failure, responds with [`SdkError<DescribeUpdateDirectoryError>`](crate::operation::describe_update_directory::DescribeUpdateDirectoryError)
-    pub fn describe_update_directory(
-        &self,
-    ) -> crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryFluentBuilder
-    {
+    pub fn describe_update_directory(&self) -> crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryFluentBuilder {
         crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryFluentBuilder::new(self.handle.clone())
     }
 }

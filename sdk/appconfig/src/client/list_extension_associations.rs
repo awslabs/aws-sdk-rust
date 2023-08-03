@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ExtensionAssociationSummary>>)`](crate::operation::list_extension_associations::ListExtensionAssociationsOutput::items): <p>The list of extension associations. Each item represents an extension association to an application, environment, or configuration profile. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_extension_associations::ListExtensionAssociationsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListExtensionAssociationsError>`](crate::operation::list_extension_associations::ListExtensionAssociationsError)
-    pub fn list_extension_associations(&self) -> crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder{
+    pub fn list_extension_associations(&self) -> crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder {
         crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

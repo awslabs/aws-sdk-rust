@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeVpcConnectionOutput {
 }
 impl DescribeVpcConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcConnectionOutput`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionOutputBuilder {
         crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcConnectionOutput`](crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcConnectionOutputBuilder {
     pub(crate) vpc_connection: ::std::option::Option<crate::types::VpcConnection>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -60,10 +56,7 @@ impl DescribeVpcConnectionOutputBuilder {
         self
     }
     /// <p>A response object that provides information for the specified VPC connection.</p>
-    pub fn set_vpc_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConnection>,
-    ) -> Self {
+    pub fn set_vpc_connection(mut self, input: ::std::option::Option<crate::types::VpcConnection>) -> Self {
         self.vpc_connection = input;
         self
     }

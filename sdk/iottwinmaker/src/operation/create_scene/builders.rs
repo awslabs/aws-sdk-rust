@@ -10,10 +10,7 @@ impl CreateSceneInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_scene::CreateSceneOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_scene::CreateSceneError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_scene::CreateSceneError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_scene();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateSceneFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_scene::CreateScene,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_scene::CreateScene, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_scene::CreateSceneError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateSceneFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateSceneFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_scene::CreateScene,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_scene::CreateScene, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_scene::CreateSceneError>,
     > {
         self.customize_middleware().await
@@ -141,18 +129,12 @@ impl CreateSceneFluentBuilder {
         self.inner.get_scene_id()
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub fn content_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_location(input.into());
         self
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub fn set_content_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_location(input);
         self
     }
@@ -184,17 +166,12 @@ impl CreateSceneFluentBuilder {
         self
     }
     /// <p>A list of capabilities that the scene uses to render itself.</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
     }
     /// <p>A list of capabilities that the scene uses to render itself.</p>
-    pub fn get_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_capabilities()
     }
     /// Adds a key-value pair to `tags`.
@@ -202,30 +179,17 @@ impl CreateSceneFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata that you can use to manage the scene.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Metadata that you can use to manage the scene.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Metadata that you can use to manage the scene.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// Adds a key-value pair to `sceneMetadata`.
@@ -244,19 +208,13 @@ impl CreateSceneFluentBuilder {
     /// <p>The request metadata.</p>
     pub fn set_scene_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_scene_metadata(input);
         self
     }
     /// <p>The request metadata.</p>
-    pub fn get_scene_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_scene_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_scene_metadata()
     }
 }

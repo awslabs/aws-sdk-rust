@@ -22,9 +22,7 @@ impl StopClockInput {
 
 /// A builder for [`StopClockInput`](crate::operation::stop_clock::StopClockInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopClockInputBuilder {
     pub(crate) simulation: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl StopClockInputBuilder {
         &self.simulation
     }
     /// Consumes the builder and constructs a [`StopClockInput`](crate::operation::stop_clock::StopClockInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_clock::StopClockInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_clock::StopClockInput {
-            simulation: self.simulation,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_clock::StopClockInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_clock::StopClockInput { simulation: self.simulation })
     }
 }

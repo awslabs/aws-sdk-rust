@@ -10,10 +10,7 @@ impl CancelUpdateStackInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_update_stack::CancelUpdateStackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_update_stack::CancelUpdateStackError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_update_stack::CancelUpdateStackError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_update_stack();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CancelUpdateStackFluentBuilder {
         }
     }
     /// Access the CancelUpdateStack as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_update_stack::builders::CancelUpdateStackInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_update_stack::builders::CancelUpdateStackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CancelUpdateStackFluentBuilder {
             crate::operation::cancel_update_stack::CancelUpdateStack,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_update_stack::CancelUpdateStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_update_stack::CancelUpdateStackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CancelUpdateStackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CancelUpdateStackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_update_stack::CancelUpdateStackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_update_stack::CancelUpdateStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_update_stack::CancelUpdateStackError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CancelUpdateStackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_update_stack::CancelUpdateStackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_update_stack::CancelUpdateStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_update_stack::CancelUpdateStackError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl CancelUpdateStackFluentBuilder {
             crate::operation::cancel_update_stack::CancelUpdateStack,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_update_stack::CancelUpdateStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_update_stack::CancelUpdateStackError>,
     > {
         self.customize_middleware().await
     }
@@ -154,18 +138,12 @@ impl CancelUpdateStackFluentBuilder {
         self.inner.get_stack_name()
     }
     /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

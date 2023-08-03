@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetContainerPolicyOutput {
 }
 impl GetContainerPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerPolicyOutput`](crate::operation::get_container_policy::GetContainerPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_container_policy::builders::GetContainerPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::get_container_policy::builders::GetContainerPolicyOutputBuilder {
         crate::operation::get_container_policy::builders::GetContainerPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContainerPolicyOutput`](crate::operation::get_container_policy::GetContainerPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

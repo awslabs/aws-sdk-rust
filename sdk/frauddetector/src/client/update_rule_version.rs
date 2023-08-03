@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRuleVersionOutput`](crate::operation::update_rule_version::UpdateRuleVersionOutput) with field(s):
     ///   - [`rule(Option<Rule>)`](crate::operation::update_rule_version::UpdateRuleVersionOutput::rule): <p>The new rule version that was created.</p>
     /// - On failure, responds with [`SdkError<UpdateRuleVersionError>`](crate::operation::update_rule_version::UpdateRuleVersionError)
-    pub fn update_rule_version(
-        &self,
-    ) -> crate::operation::update_rule_version::builders::UpdateRuleVersionFluentBuilder {
-        crate::operation::update_rule_version::builders::UpdateRuleVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_rule_version(&self) -> crate::operation::update_rule_version::builders::UpdateRuleVersionFluentBuilder {
+        crate::operation::update_rule_version::builders::UpdateRuleVersionFluentBuilder::new(self.handle.clone())
     }
 }

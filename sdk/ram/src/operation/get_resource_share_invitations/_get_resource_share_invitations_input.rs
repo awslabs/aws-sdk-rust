@@ -5,8 +5,7 @@
 pub struct GetResourceShareInvitationsInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
     #[doc(hidden)]
-    pub resource_share_invitation_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_share_invitation_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
     #[doc(hidden)]
     pub resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -19,9 +18,7 @@ pub struct GetResourceShareInvitationsInput {
 }
 impl GetResourceShareInvitationsInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
-    pub fn resource_share_invitation_arns(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn resource_share_invitation_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.resource_share_invitation_arns.as_deref()
     }
     /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
@@ -39,19 +36,16 @@ impl GetResourceShareInvitationsInput {
 }
 impl GetResourceShareInvitationsInput {
     /// Creates a new builder-style object to manufacture [`GetResourceShareInvitationsInput`](crate::operation::get_resource_share_invitations::GetResourceShareInvitationsInput).
-    pub fn builder() -> crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsInputBuilder{
+    pub fn builder() -> crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsInputBuilder {
         crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceShareInvitationsInput`](crate::operation::get_resource_share_invitations::GetResourceShareInvitationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceShareInvitationsInputBuilder {
-    pub(crate) resource_share_invitation_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_share_invitation_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -62,27 +56,19 @@ impl GetResourceShareInvitationsInputBuilder {
     /// To override the contents of this collection use [`set_resource_share_invitation_arns`](Self::set_resource_share_invitation_arns).
     ///
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
-    pub fn resource_share_invitation_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_invitation_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_share_invitation_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_share_invitation_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
-    pub fn set_resource_share_invitation_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_share_invitation_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_share_invitation_arns = input;
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
-    pub fn get_resource_share_invitation_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share_invitation_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_share_invitation_arns
     }
     /// Appends an item to `resource_share_arns`.
@@ -90,27 +76,19 @@ impl GetResourceShareInvitationsInputBuilder {
     /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
     ///
     /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
-    pub fn resource_share_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_share_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_share_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
-    pub fn set_resource_share_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_share_arns = input;
         self
     }
     /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
-    pub fn get_resource_share_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_share_arns
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -148,13 +126,11 @@ impl GetResourceShareInvitationsInputBuilder {
         crate::operation::get_resource_share_invitations::GetResourceShareInvitationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsInput {
-                resource_share_invitation_arns: self.resource_share_invitation_arns,
-                resource_share_arns: self.resource_share_arns,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_resource_share_invitations::GetResourceShareInvitationsInput {
+            resource_share_invitation_arns: self.resource_share_invitation_arns,
+            resource_share_arns: self.resource_share_arns,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

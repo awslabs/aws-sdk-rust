@@ -9,8 +9,7 @@ pub struct ProductInformationFilter {
     pub product_information_filter_name: ::std::option::Option<::std::string::String>,
     /// <p>Filter value.</p>
     #[doc(hidden)]
-    pub product_information_filter_value:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub product_information_filter_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Logical operator.</p>
     #[doc(hidden)]
     pub product_information_filter_comparator: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl ProductInformationFilter {
         self.product_information_filter_name.as_deref()
     }
     /// <p>Filter value.</p>
-    pub fn product_information_filter_value(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn product_information_filter_value(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.product_information_filter_value.as_deref()
     }
     /// <p>Logical operator.</p>
@@ -40,36 +37,25 @@ impl ProductInformationFilter {
 
 /// A builder for [`ProductInformationFilter`](crate::types::ProductInformationFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProductInformationFilterBuilder {
     pub(crate) product_information_filter_name: ::std::option::Option<::std::string::String>,
-    pub(crate) product_information_filter_value:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) product_information_filter_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) product_information_filter_comparator: ::std::option::Option<::std::string::String>,
 }
 impl ProductInformationFilterBuilder {
     /// <p>Filter name.</p>
-    pub fn product_information_filter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_information_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_information_filter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filter name.</p>
-    pub fn set_product_information_filter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_product_information_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_information_filter_name = input;
         self
     }
     /// <p>Filter name.</p>
-    pub fn get_product_information_filter_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_product_information_filter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.product_information_filter_name
     }
     /// Appends an item to `product_information_filter_value`.
@@ -77,49 +63,33 @@ impl ProductInformationFilterBuilder {
     /// To override the contents of this collection use [`set_product_information_filter_value`](Self::set_product_information_filter_value).
     ///
     /// <p>Filter value.</p>
-    pub fn product_information_filter_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_information_filter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.product_information_filter_value.unwrap_or_default();
         v.push(input.into());
         self.product_information_filter_value = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filter value.</p>
-    pub fn set_product_information_filter_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_product_information_filter_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.product_information_filter_value = input;
         self
     }
     /// <p>Filter value.</p>
-    pub fn get_product_information_filter_value(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_product_information_filter_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.product_information_filter_value
     }
     /// <p>Logical operator.</p>
-    pub fn product_information_filter_comparator(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_information_filter_comparator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_information_filter_comparator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Logical operator.</p>
-    pub fn set_product_information_filter_comparator(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_product_information_filter_comparator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_information_filter_comparator = input;
         self
     }
     /// <p>Logical operator.</p>
-    pub fn get_product_information_filter_comparator(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_product_information_filter_comparator(&self) -> &::std::option::Option<::std::string::String> {
         &self.product_information_filter_comparator
     }
     /// Consumes the builder and constructs a [`ProductInformationFilter`](crate::types::ProductInformationFilter).

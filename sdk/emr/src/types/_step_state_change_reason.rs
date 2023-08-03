@@ -30,9 +30,7 @@ impl StepStateChangeReason {
 
 /// A builder for [`StepStateChangeReason`](crate::types::StepStateChangeReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StepStateChangeReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::StepStateChangeReasonCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl StepStateChangeReasonBuilder {
         self
     }
     /// <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::StepStateChangeReasonCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::StepStateChangeReasonCode>) -> Self {
         self.code = input;
         self
     }

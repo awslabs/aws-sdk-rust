@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetStageSessionOutput`](crate::operation::get_stage_session::GetStageSessionOutput) with field(s):
     ///   - [`stage_session(Option<StageSession>)`](crate::operation::get_stage_session::GetStageSessionOutput::stage_session): <p>The stage session that is returned.</p>
     /// - On failure, responds with [`SdkError<GetStageSessionError>`](crate::operation::get_stage_session::GetStageSessionError)
-    pub fn get_stage_session(
-        &self,
-    ) -> crate::operation::get_stage_session::builders::GetStageSessionFluentBuilder {
-        crate::operation::get_stage_session::builders::GetStageSessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_stage_session(&self) -> crate::operation::get_stage_session::builders::GetStageSessionFluentBuilder {
+        crate::operation::get_stage_session::builders::GetStageSessionFluentBuilder::new(self.handle.clone())
     }
 }

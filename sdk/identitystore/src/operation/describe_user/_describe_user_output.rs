@@ -217,17 +217,12 @@ impl DescribeUserOutputBuilder {
         self
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub fn set_external_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>,
-    ) -> Self {
+    pub fn set_external_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>) -> Self {
         self.external_ids = input;
         self
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub fn get_external_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExternalId>> {
+    pub fn get_external_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExternalId>> {
         &self.external_ids
     }
     /// <p>The name of the user.</p>
@@ -298,10 +293,7 @@ impl DescribeUserOutputBuilder {
         self
     }
     /// <p>The email address of the user.</p>
-    pub fn set_emails(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Email>>,
-    ) -> Self {
+    pub fn set_emails(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Email>>) -> Self {
         self.emails = input;
         self
     }
@@ -321,10 +313,7 @@ impl DescribeUserOutputBuilder {
         self
     }
     /// <p>The physical address of the user.</p>
-    pub fn set_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
-    ) -> Self {
+    pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Address>>) -> Self {
         self.addresses = input;
         self
     }
@@ -344,17 +333,12 @@ impl DescribeUserOutputBuilder {
         self
     }
     /// <p>A list of <code>PhoneNumber</code> objects associated with a user.</p>
-    pub fn set_phone_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
-    ) -> Self {
+    pub fn set_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>) -> Self {
         self.phone_numbers = input;
         self
     }
     /// <p>A list of <code>PhoneNumber</code> objects associated with a user.</p>
-    pub fn get_phone_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
+    pub fn get_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
         &self.phone_numbers
     }
     /// <p>A string indicating the type of user.</p>
@@ -386,18 +370,12 @@ impl DescribeUserOutputBuilder {
         &self.title
     }
     /// <p>The preferred language of the user.</p>
-    pub fn preferred_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_language = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The preferred language of the user.</p>
-    pub fn set_preferred_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_language = input;
         self
     }
@@ -434,18 +412,12 @@ impl DescribeUserOutputBuilder {
         &self.timezone
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_store_id = input;
         self
     }

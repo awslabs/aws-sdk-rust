@@ -25,9 +25,7 @@ impl RetentionPolicy {
 
 /// A builder for [`RetentionPolicy`](crate::types::RetentionPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetentionPolicyBuilder {
     pub(crate) home_efs_file_system: ::std::option::Option<crate::types::RetentionType>,
 }
@@ -40,10 +38,7 @@ impl RetentionPolicyBuilder {
     }
     /// <p>The default is <code>Retain</code>, which specifies to keep the data stored on the EFS volume.</p>
     /// <p>Specify <code>Delete</code> to delete the data stored on the EFS volume.</p>
-    pub fn set_home_efs_file_system(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionType>,
-    ) -> Self {
+    pub fn set_home_efs_file_system(mut self, input: ::std::option::Option<crate::types::RetentionType>) -> Self {
         self.home_efs_file_system = input;
         self
     }

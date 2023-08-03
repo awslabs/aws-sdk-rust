@@ -5,18 +5,12 @@
 pub struct GetContainerApiMetadataOutput {
     /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
     #[doc(hidden)]
-    pub metadata: ::std::option::Option<
-        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub metadata: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl GetContainerApiMetadataOutput {
     /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &[::std::collections::HashMap<::std::string::String, ::std::string::String>],
-    > {
+    pub fn metadata(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::string::String>]> {
         self.metadata.as_deref()
     }
 }
@@ -27,22 +21,16 @@ impl ::aws_http::request_id::RequestId for GetContainerApiMetadataOutput {
 }
 impl GetContainerApiMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerApiMetadataOutput`](crate::operation::get_container_api_metadata::GetContainerApiMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_container_api_metadata::builders::GetContainerApiMetadataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_container_api_metadata::builders::GetContainerApiMetadataOutputBuilder {
         crate::operation::get_container_api_metadata::builders::GetContainerApiMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContainerApiMetadataOutput`](crate::operation::get_container_api_metadata::GetContainerApiMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerApiMetadataOutputBuilder {
-    pub(crate) metadata: ::std::option::Option<
-        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub(crate) metadata: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl GetContainerApiMetadataOutputBuilder {
@@ -51,10 +39,7 @@ impl GetContainerApiMetadataOutputBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
-    pub fn metadata(
-        mut self,
-        input: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    ) -> Self {
+    pub fn metadata(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
         let mut v = self.metadata.unwrap_or_default();
         v.push(input);
         self.metadata = ::std::option::Option::Some(v);
@@ -63,21 +48,13 @@ impl GetContainerApiMetadataOutputBuilder {
     /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
     pub fn set_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     ) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
         &self.metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -90,9 +67,7 @@ impl GetContainerApiMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetContainerApiMetadataOutput`](crate::operation::get_container_api_metadata::GetContainerApiMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_container_api_metadata::GetContainerApiMetadataOutput {
+    pub fn build(self) -> crate::operation::get_container_api_metadata::GetContainerApiMetadataOutput {
         crate::operation::get_container_api_metadata::GetContainerApiMetadataOutput {
             metadata: self.metadata,
             _request_id: self._request_id,

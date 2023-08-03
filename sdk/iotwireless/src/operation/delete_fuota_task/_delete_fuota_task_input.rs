@@ -22,9 +22,7 @@ impl DeleteFuotaTaskInput {
 
 /// A builder for [`DeleteFuotaTaskInput`](crate::operation::delete_fuota_task::DeleteFuotaTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFuotaTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteFuotaTaskInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFuotaTaskInput`](crate::operation::delete_fuota_task::DeleteFuotaTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_fuota_task::DeleteFuotaTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_fuota_task::DeleteFuotaTaskInput {
-            id: self.id,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_fuota_task::DeleteFuotaTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_fuota_task::DeleteFuotaTaskInput { id: self.id })
     }
 }

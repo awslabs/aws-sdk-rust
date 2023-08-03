@@ -35,9 +35,7 @@ impl ListMonitorsOutput {
 
 /// A builder for [`ListMonitorsOutput`](crate::operation::list_monitors::ListMonitorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitorsOutputBuilder {
     pub(crate) monitors: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListMonitorsOutputBuilder {
         self
     }
     /// <p>A list of monitors.</p>
-    pub fn set_monitors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>,
-    ) -> Self {
+    pub fn set_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>) -> Self {
         self.monitors = input;
         self
     }

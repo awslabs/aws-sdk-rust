@@ -37,9 +37,7 @@ impl ActivateNetworkSiteFluentBuilder {
         }
     }
     /// Access the ActivateNetworkSite as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::activate_network_site::builders::ActivateNetworkSiteInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::activate_network_site::builders::ActivateNetworkSiteInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ActivateNetworkSiteFluentBuilder {
             crate::operation::activate_network_site::ActivateNetworkSite,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_network_site::ActivateNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_network_site::ActivateNetworkSiteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ActivateNetworkSiteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ActivateNetworkSiteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_network_site::ActivateNetworkSiteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_network_site::ActivateNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_network_site::ActivateNetworkSiteError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ActivateNetworkSiteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_network_site::ActivateNetworkSiteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_network_site::ActivateNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_network_site::ActivateNetworkSiteError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl ActivateNetworkSiteFluentBuilder {
             crate::operation::activate_network_site::ActivateNetworkSite,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_network_site::ActivateNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_network_site::ActivateNetworkSiteError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_site_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn set_network_site_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_site_arn(input);
         self
     }
@@ -148,10 +129,7 @@ impl ActivateNetworkSiteFluentBuilder {
         self
     }
     /// <p>The shipping address of the network site.</p>
-    pub fn set_shipping_address(
-        mut self,
-        input: ::std::option::Option<crate::types::Address>,
-    ) -> Self {
+    pub fn set_shipping_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.inner = self.inner.set_shipping_address(input);
         self
     }
@@ -181,10 +159,7 @@ impl ActivateNetworkSiteFluentBuilder {
     /// </ul>
     /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
     /// <p>If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is set to 60-days.</p>
-    pub fn commitment_configuration(
-        mut self,
-        input: crate::types::CommitmentConfiguration,
-    ) -> Self {
+    pub fn commitment_configuration(mut self, input: crate::types::CommitmentConfiguration) -> Self {
         self.inner = self.inner.commitment_configuration(input);
         self
     }
@@ -196,10 +171,7 @@ impl ActivateNetworkSiteFluentBuilder {
     /// </ul>
     /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
     /// <p>If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is set to 60-days.</p>
-    pub fn set_commitment_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CommitmentConfiguration>,
-    ) -> Self {
+    pub fn set_commitment_configuration(mut self, input: ::std::option::Option<crate::types::CommitmentConfiguration>) -> Self {
         self.inner = self.inner.set_commitment_configuration(input);
         self
     }
@@ -211,9 +183,7 @@ impl ActivateNetworkSiteFluentBuilder {
     /// </ul>
     /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
     /// <p>If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is set to 60-days.</p>
-    pub fn get_commitment_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CommitmentConfiguration> {
+    pub fn get_commitment_configuration(&self) -> &::std::option::Option<crate::types::CommitmentConfiguration> {
         self.inner.get_commitment_configuration()
     }
 }

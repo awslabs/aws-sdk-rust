@@ -38,9 +38,7 @@ impl ::std::fmt::Debug for UpdateServiceTemplateInput {
 }
 impl UpdateServiceTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceTemplateInput`](crate::operation::update_service_template::UpdateServiceTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::update_service_template::builders::UpdateServiceTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_service_template::builders::UpdateServiceTemplateInputBuilder {
         crate::operation::update_service_template::builders::UpdateServiceTemplateInputBuilder::default()
     }
 }
@@ -99,17 +97,13 @@ impl UpdateServiceTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServiceTemplateInput`](crate::operation::update_service_template::UpdateServiceTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_template::UpdateServiceTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_service_template::UpdateServiceTemplateInput {
-                name: self.name,
-                display_name: self.display_name,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_service_template::UpdateServiceTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_service_template::UpdateServiceTemplateInput {
+            name: self.name,
+            display_name: self.display_name,
+            description: self.description,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateServiceTemplateInputBuilder {

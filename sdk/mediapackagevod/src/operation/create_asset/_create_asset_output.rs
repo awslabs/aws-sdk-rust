@@ -29,9 +29,7 @@ pub struct CreateAssetOutput {
     pub source_role_arn: ::std::option::Option<::std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateAssetOutput {
@@ -68,11 +66,7 @@ impl CreateAssetOutput {
         self.source_role_arn.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -90,22 +84,17 @@ impl CreateAssetOutput {
 
 /// A builder for [`CreateAssetOutput`](crate::operation::create_asset::CreateAssetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssetOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::std::string::String>,
-    pub(crate) egress_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::EgressEndpoint>>,
+    pub(crate) egress_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::EgressEndpoint>>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) packaging_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateAssetOutputBuilder {
@@ -149,17 +138,12 @@ impl CreateAssetOutputBuilder {
         self
     }
     /// The list of egress endpoints available for the Asset.
-    pub fn set_egress_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EgressEndpoint>>,
-    ) -> Self {
+    pub fn set_egress_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EgressEndpoint>>) -> Self {
         self.egress_endpoints = input;
         self
     }
     /// The list of egress endpoints available for the Asset.
-    pub fn get_egress_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EgressEndpoint>> {
+    pub fn get_egress_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EgressEndpoint>> {
         &self.egress_endpoints
     }
     /// The unique identifier for the Asset.
@@ -177,18 +161,12 @@ impl CreateAssetOutputBuilder {
         &self.id
     }
     /// The ID of the PackagingGroup for the Asset.
-    pub fn packaging_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn packaging_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.packaging_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the PackagingGroup for the Asset.
-    pub fn set_packaging_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_packaging_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.packaging_group_id = input;
         self
     }
@@ -225,18 +203,12 @@ impl CreateAssetOutputBuilder {
         &self.source_arn
     }
     /// The IAM role_arn used to access the source S3 bucket.
-    pub fn source_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The IAM role_arn used to access the source S3 bucket.
-    pub fn set_source_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_role_arn = input;
         self
     }
@@ -249,32 +221,19 @@ impl CreateAssetOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of tags associated with a resource
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of tags associated with a resource
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// A collection of tags associated with a resource
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

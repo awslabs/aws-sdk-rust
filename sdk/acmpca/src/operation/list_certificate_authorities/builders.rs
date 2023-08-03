@@ -26,7 +26,7 @@ impl ListCertificateAuthoritiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCertificateAuthoritiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesInputBuilder,
+    inner: crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesInputBuilder,
 }
 impl ListCertificateAuthoritiesFluentBuilder {
     /// Creates a new `ListCertificateAuthorities`.
@@ -37,7 +37,7 @@ impl ListCertificateAuthoritiesFluentBuilder {
         }
     }
     /// Access the ListCertificateAuthorities as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListCertificateAuthoritiesFluentBuilder {
             crate::operation::list_certificate_authorities::ListCertificateAuthorities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListCertificateAuthoritiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListCertificateAuthoritiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListCertificateAuthoritiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListCertificateAuthoritiesFluentBuilder {
             crate::operation::list_certificate_authorities::ListCertificateAuthorities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_certificate_authorities::paginator::ListCertificateAuthoritiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_certificate_authorities::paginator::ListCertificateAuthoritiesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_certificate_authorities::paginator::ListCertificateAuthoritiesPaginator {
         crate::operation::list_certificate_authorities::paginator::ListCertificateAuthoritiesPaginator::new(self.handle, self.inner)
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
@@ -160,10 +149,7 @@ impl ListCertificateAuthoritiesFluentBuilder {
         self
     }
     /// <p>Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.</p>
-    pub fn set_resource_owner(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceOwner>,
-    ) -> Self {
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
         self.inner = self.inner.set_resource_owner(input);
         self
     }

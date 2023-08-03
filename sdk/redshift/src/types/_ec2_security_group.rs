@@ -44,9 +44,7 @@ impl Ec2SecurityGroup {
 
 /// A builder for [`Ec2SecurityGroup`](crate::types::Ec2SecurityGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2SecurityGroupBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_security_group_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl Ec2SecurityGroupBuilder {
         &self.status
     }
     /// <p>The name of the EC2 Security Group.</p>
-    pub fn ec2_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the EC2 Security Group.</p>
-    pub fn set_ec2_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_name = input;
         self
     }
@@ -89,18 +81,12 @@ impl Ec2SecurityGroupBuilder {
         &self.ec2_security_group_name
     }
     /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
-    pub fn ec2_security_group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
-    pub fn set_ec2_security_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = input;
         self
     }
@@ -120,10 +106,7 @@ impl Ec2SecurityGroupBuilder {
         self
     }
     /// <p>The list of tags for the EC2 security group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

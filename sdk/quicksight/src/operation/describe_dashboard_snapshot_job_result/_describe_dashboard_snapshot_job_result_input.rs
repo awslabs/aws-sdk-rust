@@ -29,16 +29,14 @@ impl DescribeDashboardSnapshotJobResultInput {
 }
 impl DescribeDashboardSnapshotJobResultInput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardSnapshotJobResultInput`](crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultInput).
-    pub fn builder() -> crate::operation::describe_dashboard_snapshot_job_result::builders::DescribeDashboardSnapshotJobResultInputBuilder{
+    pub fn builder() -> crate::operation::describe_dashboard_snapshot_job_result::builders::DescribeDashboardSnapshotJobResultInputBuilder {
         crate::operation::describe_dashboard_snapshot_job_result::builders::DescribeDashboardSnapshotJobResultInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDashboardSnapshotJobResultInput`](crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDashboardSnapshotJobResultInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DescribeDashboardSnapshotJobResultInputBuilder {
 }
 impl DescribeDashboardSnapshotJobResultInputBuilder {
     /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -80,18 +72,12 @@ impl DescribeDashboardSnapshotJobResultInputBuilder {
         &self.dashboard_id
     }
     /// <p>The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn snapshot_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn set_snapshot_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_job_id = input;
         self
     }
@@ -100,16 +86,18 @@ impl DescribeDashboardSnapshotJobResultInputBuilder {
         &self.snapshot_job_id
     }
     /// Consumes the builder and constructs a [`DescribeDashboardSnapshotJobResultInput`](crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultInput {
-                aws_account_id: self.aws_account_id
-                ,
-                dashboard_id: self.dashboard_id
-                ,
-                snapshot_job_id: self.snapshot_job_id
-                ,
-            }
+                aws_account_id: self.aws_account_id,
+                dashboard_id: self.dashboard_id,
+                snapshot_job_id: self.snapshot_job_id,
+            },
         )
     }
 }

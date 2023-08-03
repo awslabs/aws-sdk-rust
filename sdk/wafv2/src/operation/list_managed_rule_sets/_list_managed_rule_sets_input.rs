@@ -39,18 +39,14 @@ impl ListManagedRuleSetsInput {
 }
 impl ListManagedRuleSetsInput {
     /// Creates a new builder-style object to manufacture [`ListManagedRuleSetsInput`](crate::operation::list_managed_rule_sets::ListManagedRuleSetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_managed_rule_sets::builders::ListManagedRuleSetsInputBuilder {
-        crate::operation::list_managed_rule_sets::builders::ListManagedRuleSetsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_managed_rule_sets::builders::ListManagedRuleSetsInputBuilder {
+        crate::operation::list_managed_rule_sets::builders::ListManagedRuleSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListManagedRuleSetsInput`](crate::operation::list_managed_rule_sets::ListManagedRuleSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedRuleSetsInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -117,16 +113,12 @@ impl ListManagedRuleSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListManagedRuleSetsInput`](crate::operation::list_managed_rule_sets::ListManagedRuleSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_managed_rule_sets::ListManagedRuleSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_managed_rule_sets::ListManagedRuleSetsInput {
-                scope: self.scope,
-                next_marker: self.next_marker,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_managed_rule_sets::ListManagedRuleSetsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_managed_rule_sets::ListManagedRuleSetsInput {
+            scope: self.scope,
+            next_marker: self.next_marker,
+            limit: self.limit,
+        })
     }
 }

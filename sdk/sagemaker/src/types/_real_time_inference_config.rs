@@ -30,9 +30,7 @@ impl RealTimeInferenceConfig {
 
 /// A builder for [`RealTimeInferenceConfig`](crate::types::RealTimeInferenceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RealTimeInferenceConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl RealTimeInferenceConfigBuilder {
         self
     }
     /// <p>The instance type the model is deployed to.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }

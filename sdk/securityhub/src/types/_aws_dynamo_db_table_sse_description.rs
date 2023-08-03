@@ -46,9 +46,7 @@ impl AwsDynamoDbTableSseDescription {
 
 /// A builder for [`AwsDynamoDbTableSseDescription`](crate::types::AwsDynamoDbTableSseDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableSseDescriptionBuilder {
     pub(crate) inaccessible_encryption_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -58,27 +56,19 @@ pub struct AwsDynamoDbTableSseDescriptionBuilder {
 impl AwsDynamoDbTableSseDescriptionBuilder {
     /// <p>If the key is inaccessible, the date and time when DynamoDB detected that the key was inaccessible.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn inaccessible_encryption_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inaccessible_encryption_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inaccessible_encryption_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the key is inaccessible, the date and time when DynamoDB detected that the key was inaccessible.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_inaccessible_encryption_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inaccessible_encryption_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inaccessible_encryption_date_time = input;
         self
     }
     /// <p>If the key is inaccessible, the date and time when DynamoDB detected that the key was inaccessible.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn get_inaccessible_encryption_date_time(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_inaccessible_encryption_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.inaccessible_encryption_date_time
     }
     /// <p>The status of the server-side encryption.</p>
@@ -110,18 +100,12 @@ impl AwsDynamoDbTableSseDescriptionBuilder {
         &self.sse_type
     }
     /// <p>The ARN of the KMS key that is used for the KMS encryption.</p>
-    pub fn kms_master_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kms_master_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_master_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the KMS key that is used for the KMS encryption.</p>
-    pub fn set_kms_master_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kms_master_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_master_key_arn = input;
         self
     }

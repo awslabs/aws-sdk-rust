@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateTestGridProjectOutput {
 }
 impl CreateTestGridProjectOutput {
     /// Creates a new builder-style object to manufacture [`CreateTestGridProjectOutput`](crate::operation::create_test_grid_project::CreateTestGridProjectOutput).
-    pub fn builder(
-    ) -> crate::operation::create_test_grid_project::builders::CreateTestGridProjectOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_test_grid_project::builders::CreateTestGridProjectOutputBuilder {
         crate::operation::create_test_grid_project::builders::CreateTestGridProjectOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTestGridProjectOutput`](crate::operation::create_test_grid_project::CreateTestGridProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTestGridProjectOutputBuilder {
     pub(crate) test_grid_project: ::std::option::Option<crate::types::TestGridProject>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateTestGridProjectOutputBuilder {
         self
     }
     /// <p>ARN of the Selenium testing project that was created.</p>
-    pub fn set_test_grid_project(
-        mut self,
-        input: ::std::option::Option<crate::types::TestGridProject>,
-    ) -> Self {
+    pub fn set_test_grid_project(mut self, input: ::std::option::Option<crate::types::TestGridProject>) -> Self {
         self.test_grid_project = input;
         self
     }

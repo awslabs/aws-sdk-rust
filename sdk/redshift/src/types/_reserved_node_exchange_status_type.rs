@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ReservedNodeExchangeStatusType {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for ReservedNodeExchangeStatusType {
             "REQUESTED" => ReservedNodeExchangeStatusType::Requested,
             "RETRYING" => ReservedNodeExchangeStatusType::Retrying,
             "SUCCEEDED" => ReservedNodeExchangeStatusType::Succeeded,
-            other => ReservedNodeExchangeStatusType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ReservedNodeExchangeStatusType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl ReservedNodeExchangeStatusType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED",
-            "IN_PROGRESS",
-            "PENDING",
-            "REQUESTED",
-            "RETRYING",
-            "SUCCEEDED",
-        ]
+        &["FAILED", "IN_PROGRESS", "PENDING", "REQUESTED", "RETRYING", "SUCCEEDED"]
     }
 }
 impl ::std::convert::AsRef<str> for ReservedNodeExchangeStatusType {

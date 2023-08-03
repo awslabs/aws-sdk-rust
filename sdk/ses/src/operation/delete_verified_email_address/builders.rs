@@ -26,7 +26,7 @@ impl DeleteVerifiedEmailAddressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVerifiedEmailAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressInputBuilder,
+    inner: crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressInputBuilder,
 }
 impl DeleteVerifiedEmailAddressFluentBuilder {
     /// Creates a new `DeleteVerifiedEmailAddress`.
@@ -37,7 +37,7 @@ impl DeleteVerifiedEmailAddressFluentBuilder {
         }
     }
     /// Access the DeleteVerifiedEmailAddress as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteVerifiedEmailAddressFluentBuilder {
             crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteVerifiedEmailAddressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteVerifiedEmailAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteVerifiedEmailAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteVerifiedEmailAddressFluentBuilder {
             crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An email address to be removed from the list of verified addresses.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
     /// <p>An email address to be removed from the list of verified addresses.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }

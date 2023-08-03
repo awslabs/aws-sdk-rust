@@ -30,9 +30,7 @@ impl Origins {
 
 /// A builder for [`Origins`](crate::types::Origins).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Origin>>,
@@ -64,10 +62,7 @@ impl OriginsBuilder {
         self
     }
     /// <p>A list of origins.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Origin>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Origin>>) -> Self {
         self.items = input;
         self
     }

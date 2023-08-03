@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetMailboxDetailsOutput {
 }
 impl GetMailboxDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetMailboxDetailsOutput`](crate::operation::get_mailbox_details::GetMailboxDetailsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_mailbox_details::builders::GetMailboxDetailsOutputBuilder {
+    pub fn builder() -> crate::operation::get_mailbox_details::builders::GetMailboxDetailsOutputBuilder {
         crate::operation::get_mailbox_details::builders::GetMailboxDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMailboxDetailsOutput`](crate::operation::get_mailbox_details::GetMailboxDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMailboxDetailsOutputBuilder {
     pub(crate) mailbox_quota: ::std::option::Option<i32>,
     pub(crate) mailbox_size: ::std::option::Option<f64>,

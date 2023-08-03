@@ -12,10 +12,7 @@ pub fn ser_update_resource_data_sync_input(
     if let Some(var_3) = &input.sync_source {
         #[allow(unused_mut)]
         let mut object_4 = object.key("SyncSource").start_object();
-        crate::protocol_serde::shape_resource_data_sync_source::ser_resource_data_sync_source(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_resource_data_sync_source::ser_resource_data_sync_source(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

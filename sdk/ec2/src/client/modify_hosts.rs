@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`successful(Option<Vec<String>>)`](crate::operation::modify_hosts::ModifyHostsOutput::successful): <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
     ///   - [`unsuccessful(Option<Vec<UnsuccessfulItem>>)`](crate::operation::modify_hosts::ModifyHostsOutput::unsuccessful): <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the setting you requested can be used.</p>
     /// - On failure, responds with [`SdkError<ModifyHostsError>`](crate::operation::modify_hosts::ModifyHostsError)
-    pub fn modify_hosts(
-        &self,
-    ) -> crate::operation::modify_hosts::builders::ModifyHostsFluentBuilder {
+    pub fn modify_hosts(&self) -> crate::operation::modify_hosts::builders::ModifyHostsFluentBuilder {
         crate::operation::modify_hosts::builders::ModifyHostsFluentBuilder::new(self.handle.clone())
     }
 }

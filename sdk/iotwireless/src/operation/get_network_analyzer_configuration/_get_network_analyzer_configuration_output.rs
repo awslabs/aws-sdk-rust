@@ -63,16 +63,14 @@ impl ::aws_http::request_id::RequestId for GetNetworkAnalyzerConfigurationOutput
 }
 impl GetNetworkAnalyzerConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkAnalyzerConfigurationOutput`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput).
-    pub fn builder() -> crate::operation::get_network_analyzer_configuration::builders::GetNetworkAnalyzerConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_network_analyzer_configuration::builders::GetNetworkAnalyzerConfigurationOutputBuilder {
         crate::operation::get_network_analyzer_configuration::builders::GetNetworkAnalyzerConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetNetworkAnalyzerConfigurationOutput`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNetworkAnalyzerConfigurationOutputBuilder {
     pub(crate) trace_content: ::std::option::Option<crate::types::TraceContent>,
     pub(crate) wireless_devices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -90,10 +88,7 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
         self
     }
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
-    pub fn set_trace_content(
-        mut self,
-        input: ::std::option::Option<crate::types::TraceContent>,
-    ) -> Self {
+    pub fn set_trace_content(mut self, input: ::std::option::Option<crate::types::TraceContent>) -> Self {
         self.trace_content = input;
         self
     }
@@ -106,27 +101,19 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_wireless_devices`](Self::set_wireless_devices).
     ///
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    pub fn wireless_devices(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wireless_devices(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.wireless_devices.unwrap_or_default();
         v.push(input.into());
         self.wireless_devices = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    pub fn set_wireless_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_wireless_devices(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.wireless_devices = input;
         self
     }
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    pub fn get_wireless_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_wireless_devices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.wireless_devices
     }
     /// Appends an item to `wireless_gateways`.
@@ -134,27 +121,19 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_wireless_gateways`](Self::set_wireless_gateways).
     ///
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    pub fn wireless_gateways(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wireless_gateways(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.wireless_gateways.unwrap_or_default();
         v.push(input.into());
         self.wireless_gateways = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    pub fn set_wireless_gateways(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_wireless_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.wireless_gateways = input;
         self
     }
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    pub fn get_wireless_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_wireless_gateways(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.wireless_gateways
     }
     /// <p>The description of the new resource.</p>
@@ -204,27 +183,19 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_multicast_groups`](Self::set_multicast_groups).
     ///
     /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
-    pub fn multicast_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multicast_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.multicast_groups.unwrap_or_default();
         v.push(input.into());
         self.multicast_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
-    pub fn set_multicast_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_multicast_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.multicast_groups = input;
         self
     }
     /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
-    pub fn get_multicast_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_multicast_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.multicast_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -237,25 +208,15 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetNetworkAnalyzerConfigurationOutput`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput {
         crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput {
-            trace_content: self.trace_content
-            ,
-            wireless_devices: self.wireless_devices
-            ,
-            wireless_gateways: self.wireless_gateways
-            ,
-            description: self.description
-            ,
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            multicast_groups: self.multicast_groups
-            ,
+            trace_content: self.trace_content,
+            wireless_devices: self.wireless_devices,
+            wireless_gateways: self.wireless_gateways,
+            description: self.description,
+            arn: self.arn,
+            name: self.name,
+            multicast_groups: self.multicast_groups,
             _request_id: self._request_id,
         }
     }

@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`consumer_arn(impl ::std::convert::Into<String>)`](crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerFluentBuilder::consumer_arn) / [`set_consumer_arn(Option<String>)`](crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerFluentBuilder::set_consumer_arn): <p>The ARN returned by Kinesis Data Streams when you registered the consumer. If you don't know the ARN of the consumer that you want to deregister, you can use the ListStreamConsumers operation to get a list of the descriptions of all the consumers that are currently registered with a given data stream. The description of a consumer contains its ARN.</p>
     /// - On success, responds with [`DeregisterStreamConsumerOutput`](crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput)
     /// - On failure, responds with [`SdkError<DeregisterStreamConsumerError>`](crate::operation::deregister_stream_consumer::DeregisterStreamConsumerError)
-    pub fn deregister_stream_consumer(
-        &self,
-    ) -> crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerFluentBuilder
-    {
+    pub fn deregister_stream_consumer(&self) -> crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerFluentBuilder {
         crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerFluentBuilder::new(self.handle.clone())
     }
 }

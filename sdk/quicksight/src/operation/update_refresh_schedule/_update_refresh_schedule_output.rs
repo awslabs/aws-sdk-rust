@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for UpdateRefreshScheduleOutput {
 }
 impl UpdateRefreshScheduleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRefreshScheduleOutput`](crate::operation::update_refresh_schedule::UpdateRefreshScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_refresh_schedule::builders::UpdateRefreshScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_refresh_schedule::builders::UpdateRefreshScheduleOutputBuilder {
         crate::operation::update_refresh_schedule::builders::UpdateRefreshScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRefreshScheduleOutput`](crate::operation::update_refresh_schedule::UpdateRefreshScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRefreshScheduleOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

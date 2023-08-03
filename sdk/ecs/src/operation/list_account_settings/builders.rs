@@ -37,9 +37,7 @@ impl ListAccountSettingsFluentBuilder {
         }
     }
     /// Access the ListAccountSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_account_settings::builders::ListAccountSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_account_settings::builders::ListAccountSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListAccountSettingsFluentBuilder {
             crate::operation::list_account_settings::ListAccountSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_settings::ListAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_settings::ListAccountSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListAccountSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListAccountSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_account_settings::ListAccountSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_settings::ListAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_settings::ListAccountSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListAccountSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_account_settings::ListAccountSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_settings::ListAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_settings::ListAccountSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListAccountSettingsFluentBuilder {
             crate::operation::list_account_settings::ListAccountSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_settings::ListAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_settings::ListAccountSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_account_settings::paginator::ListAccountSettingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_account_settings::paginator::ListAccountSettingsPaginator {
-        crate::operation::list_account_settings::paginator::ListAccountSettingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_account_settings::paginator::ListAccountSettingsPaginator {
+        crate::operation::list_account_settings::paginator::ListAccountSettingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the account setting you want to list the settings for.</p>
     pub fn name(mut self, input: crate::types::SettingName) -> Self {
@@ -164,20 +146,14 @@ impl ListAccountSettingsFluentBuilder {
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_arn(input.into());
         self
     }
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_arn(input);
         self
     }

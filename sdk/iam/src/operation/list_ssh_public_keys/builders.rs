@@ -10,10 +10,7 @@ impl ListSshPublicKeysInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_ssh_public_keys::ListSshPublicKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ssh_public_keys::ListSSHPublicKeysError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ssh_public_keys::ListSSHPublicKeysError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_ssh_public_keys();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ListSSHPublicKeysFluentBuilder {
         }
     }
     /// Access the ListSSHPublicKeys as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_ssh_public_keys::builders::ListSshPublicKeysInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_ssh_public_keys::builders::ListSshPublicKeysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ListSSHPublicKeysFluentBuilder {
             crate::operation::list_ssh_public_keys::ListSSHPublicKeys,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ssh_public_keys::ListSSHPublicKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ssh_public_keys::ListSSHPublicKeysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ListSSHPublicKeysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ListSSHPublicKeysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ssh_public_keys::ListSshPublicKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ssh_public_keys::ListSSHPublicKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ssh_public_keys::ListSSHPublicKeysError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ListSSHPublicKeysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ssh_public_keys::ListSshPublicKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ssh_public_keys::ListSSHPublicKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ssh_public_keys::ListSSHPublicKeysError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl ListSSHPublicKeysFluentBuilder {
             crate::operation::list_ssh_public_keys::ListSSHPublicKeys,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ssh_public_keys::ListSSHPublicKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ssh_public_keys::ListSSHPublicKeysError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_ssh_public_keys::paginator::ListSshPublicKeysPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_ssh_public_keys::paginator::ListSshPublicKeysPaginator {
-        crate::operation::list_ssh_public_keys::paginator::ListSshPublicKeysPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_ssh_public_keys::paginator::ListSshPublicKeysPaginator {
+        crate::operation::list_ssh_public_keys::paginator::ListSshPublicKeysPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the IAM user to list SSH public keys for. If none is specified, the <code>UserName</code> field is determined implicitly based on the Amazon Web Services access key used to sign the request.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>

@@ -23,9 +23,7 @@ impl OriginGroupFailoverCriteria {
 
 /// A builder for [`OriginGroupFailoverCriteria`](crate::types::OriginGroupFailoverCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginGroupFailoverCriteriaBuilder {
     pub(crate) status_codes: ::std::option::Option<crate::types::StatusCodes>,
 }
@@ -36,10 +34,7 @@ impl OriginGroupFailoverCriteriaBuilder {
         self
     }
     /// <p>The status codes that, when returned from the primary origin, will trigger CloudFront to failover to the second origin.</p>
-    pub fn set_status_codes(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusCodes>,
-    ) -> Self {
+    pub fn set_status_codes(mut self, input: ::std::option::Option<crate::types::StatusCodes>) -> Self {
         self.status_codes = input;
         self
     }

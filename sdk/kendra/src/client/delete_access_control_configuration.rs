@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_access_control_configuration::builders::DeleteAccessControlConfigurationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_access_control_configuration::builders::DeleteAccessControlConfigurationFluentBuilder::set_id): <p>The identifier of the access control configuration you want to delete.</p>
     /// - On success, responds with [`DeleteAccessControlConfigurationOutput`](crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessControlConfigurationError>`](crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationError)
-    pub fn delete_access_control_configuration(&self) -> crate::operation::delete_access_control_configuration::builders::DeleteAccessControlConfigurationFluentBuilder{
+    pub fn delete_access_control_configuration(
+        &self,
+    ) -> crate::operation::delete_access_control_configuration::builders::DeleteAccessControlConfigurationFluentBuilder {
         crate::operation::delete_access_control_configuration::builders::DeleteAccessControlConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

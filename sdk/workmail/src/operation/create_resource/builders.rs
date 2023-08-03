@@ -10,10 +10,7 @@ impl CreateResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_resource::CreateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource::CreateResourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource::CreateResourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_resource();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateResourceFluentBuilder {
         }
     }
     /// Access the CreateResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_resource::builders::CreateResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_resource::builders::CreateResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl CreateResourceFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The identifier associated with the organization for which the resource is created.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier associated with the organization for which the resource is created.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

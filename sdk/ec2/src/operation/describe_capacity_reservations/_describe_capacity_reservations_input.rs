@@ -109,19 +109,16 @@ impl DescribeCapacityReservationsInput {
 }
 impl DescribeCapacityReservationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeCapacityReservationsInput`](crate::operation::describe_capacity_reservations::DescribeCapacityReservationsInput).
-    pub fn builder() -> crate::operation::describe_capacity_reservations::builders::DescribeCapacityReservationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_capacity_reservations::builders::DescribeCapacityReservationsInputBuilder {
         crate::operation::describe_capacity_reservations::builders::DescribeCapacityReservationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCapacityReservationsInput`](crate::operation::describe_capacity_reservations::DescribeCapacityReservationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCapacityReservationsInputBuilder {
-    pub(crate) capacity_reservation_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) capacity_reservation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -133,27 +130,19 @@ impl DescribeCapacityReservationsInputBuilder {
     /// To override the contents of this collection use [`set_capacity_reservation_ids`](Self::set_capacity_reservation_ids).
     ///
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn capacity_reservation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.capacity_reservation_ids.unwrap_or_default();
         v.push(input.into());
         self.capacity_reservation_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn set_capacity_reservation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_capacity_reservation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.capacity_reservation_ids = input;
         self
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn get_capacity_reservation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capacity_reservation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.capacity_reservation_ids
     }
     /// <p>The token to use to retrieve the next page of results.</p>
@@ -262,10 +251,7 @@ impl DescribeCapacityReservationsInputBuilder {
     /// </ul> </li>
     /// <li> <p> <code>placement-group-arn</code> - The ARN of the cluster placement group in which the Capacity Reservation was created.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -327,14 +313,12 @@ impl DescribeCapacityReservationsInputBuilder {
         crate::operation::describe_capacity_reservations::DescribeCapacityReservationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_capacity_reservations::DescribeCapacityReservationsInput {
-                capacity_reservation_ids: self.capacity_reservation_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_capacity_reservations::DescribeCapacityReservationsInput {
+            capacity_reservation_ids: self.capacity_reservation_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+            dry_run: self.dry_run,
+        })
     }
 }

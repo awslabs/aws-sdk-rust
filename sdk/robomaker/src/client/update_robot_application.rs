@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`revision_id(Option<String>)`](crate::operation::update_robot_application::UpdateRobotApplicationOutput::revision_id): <p>The revision id of the robot application.</p>
     ///   - [`environment(Option<Environment>)`](crate::operation::update_robot_application::UpdateRobotApplicationOutput::environment): <p>The object that contains the Docker image URI for your robot application.</p>
     /// - On failure, responds with [`SdkError<UpdateRobotApplicationError>`](crate::operation::update_robot_application::UpdateRobotApplicationError)
-    pub fn update_robot_application(
-        &self,
-    ) -> crate::operation::update_robot_application::builders::UpdateRobotApplicationFluentBuilder
-    {
+    pub fn update_robot_application(&self) -> crate::operation::update_robot_application::builders::UpdateRobotApplicationFluentBuilder {
         crate::operation::update_robot_application::builders::UpdateRobotApplicationFluentBuilder::new(self.handle.clone())
     }
 }

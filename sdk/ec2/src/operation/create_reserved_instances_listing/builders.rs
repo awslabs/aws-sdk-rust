@@ -5,16 +5,16 @@ pub use crate::operation::create_reserved_instances_listing::_create_reserved_in
 
 impl CreateReservedInstancesListingInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_reserved_instances_listing();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -31,7 +31,7 @@ impl CreateReservedInstancesListingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateReservedInstancesListingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingInputBuilder,
+    inner: crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingInputBuilder,
 }
 impl CreateReservedInstancesListingFluentBuilder {
     /// Creates a new `CreateReservedInstancesListing`.
@@ -42,15 +42,20 @@ impl CreateReservedInstancesListingFluentBuilder {
         }
     }
     /// Access the CreateReservedInstancesListing as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListing, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_reserved_instances_listing::CreateReservedInstancesListing,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -59,16 +64,17 @@ impl CreateReservedInstancesListingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError>,
+    > {
         let op = self
             .inner
             .build()
@@ -86,17 +92,26 @@ impl CreateReservedInstancesListingFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListing, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_reserved_instances_listing::CreateReservedInstancesListing,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
@@ -137,32 +152,21 @@ impl CreateReservedInstancesListingFluentBuilder {
         self
     }
     /// <p>A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance term.</p>
-    pub fn set_price_schedules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>>,
-    ) -> Self {
+    pub fn set_price_schedules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>>) -> Self {
         self.inner = self.inner.set_price_schedules(input);
         self
     }
     /// <p>A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance term.</p>
-    pub fn get_price_schedules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>> {
+    pub fn get_price_schedules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>> {
         self.inner.get_price_schedules()
     }
     /// <p>The ID of the active Standard Reserved Instance.</p>
-    pub fn reserved_instances_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_instances_id(input.into());
         self
     }
     /// <p>The ID of the active Standard Reserved Instance.</p>
-    pub fn set_reserved_instances_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_instances_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_instances_id(input);
         self
     }

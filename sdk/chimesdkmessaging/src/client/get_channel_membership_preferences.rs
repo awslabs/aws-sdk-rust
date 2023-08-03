@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`member(Option<Identity>)`](crate::operation::get_channel_membership_preferences::GetChannelMembershipPreferencesOutput::member): <p>The details of a user.</p>
     ///   - [`preferences(Option<ChannelMembershipPreferences>)`](crate::operation::get_channel_membership_preferences::GetChannelMembershipPreferencesOutput::preferences): <p>The channel membership preferences for an <code>AppInstanceUser</code> .</p>
     /// - On failure, responds with [`SdkError<GetChannelMembershipPreferencesError>`](crate::operation::get_channel_membership_preferences::GetChannelMembershipPreferencesError)
-    pub fn get_channel_membership_preferences(&self) -> crate::operation::get_channel_membership_preferences::builders::GetChannelMembershipPreferencesFluentBuilder{
+    pub fn get_channel_membership_preferences(
+        &self,
+    ) -> crate::operation::get_channel_membership_preferences::builders::GetChannelMembershipPreferencesFluentBuilder {
         crate::operation::get_channel_membership_preferences::builders::GetChannelMembershipPreferencesFluentBuilder::new(self.handle.clone())
     }
 }

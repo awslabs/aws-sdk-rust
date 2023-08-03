@@ -23,9 +23,7 @@ impl CampaignFilters {
 
 /// A builder for [`CampaignFilters`](crate::types::CampaignFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CampaignFiltersBuilder {
     pub(crate) instance_id_filter: ::std::option::Option<crate::types::InstanceIdFilter>,
 }
@@ -36,10 +34,7 @@ impl CampaignFiltersBuilder {
         self
     }
     /// Connect instance identifier filter
-    pub fn set_instance_id_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceIdFilter>,
-    ) -> Self {
+    pub fn set_instance_id_filter(mut self, input: ::std::option::Option<crate::types::InstanceIdFilter>) -> Self {
         self.instance_id_filter = input;
         self
     }

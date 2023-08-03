@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListCasesForContactOutput {
 }
 impl ListCasesForContactOutput {
     /// Creates a new builder-style object to manufacture [`ListCasesForContactOutput`](crate::operation::list_cases_for_contact::ListCasesForContactOutput).
-    pub fn builder(
-    ) -> crate::operation::list_cases_for_contact::builders::ListCasesForContactOutputBuilder {
+    pub fn builder() -> crate::operation::list_cases_for_contact::builders::ListCasesForContactOutputBuilder {
         crate::operation::list_cases_for_contact::builders::ListCasesForContactOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCasesForContactOutput`](crate::operation::list_cases_for_contact::ListCasesForContactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCasesForContactOutputBuilder {
     pub(crate) cases: ::std::option::Option<::std::vec::Vec<crate::types::CaseSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListCasesForContactOutputBuilder {
         self
     }
     /// <p>A list of Case summary information.</p>
-    pub fn set_cases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CaseSummary>>,
-    ) -> Self {
+    pub fn set_cases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaseSummary>>) -> Self {
         self.cases = input;
         self
     }

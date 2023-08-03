@@ -37,9 +37,7 @@ impl AppSpecification {
 
 /// A builder for [`AppSpecification`](crate::types::AppSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppSpecificationBuilder {
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
     pub(crate) container_entrypoint: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -65,27 +63,19 @@ impl AppSpecificationBuilder {
     /// To override the contents of this collection use [`set_container_entrypoint`](Self::set_container_entrypoint).
     ///
     /// <p>The entrypoint for a container used to run a processing job.</p>
-    pub fn container_entrypoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_entrypoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.container_entrypoint.unwrap_or_default();
         v.push(input.into());
         self.container_entrypoint = ::std::option::Option::Some(v);
         self
     }
     /// <p>The entrypoint for a container used to run a processing job.</p>
-    pub fn set_container_entrypoint(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_container_entrypoint(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.container_entrypoint = input;
         self
     }
     /// <p>The entrypoint for a container used to run a processing job.</p>
-    pub fn get_container_entrypoint(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_container_entrypoint(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.container_entrypoint
     }
     /// Appends an item to `container_arguments`.
@@ -93,27 +83,19 @@ impl AppSpecificationBuilder {
     /// To override the contents of this collection use [`set_container_arguments`](Self::set_container_arguments).
     ///
     /// <p>The arguments for a container used to run a processing job.</p>
-    pub fn container_arguments(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_arguments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.container_arguments.unwrap_or_default();
         v.push(input.into());
         self.container_arguments = ::std::option::Option::Some(v);
         self
     }
     /// <p>The arguments for a container used to run a processing job.</p>
-    pub fn set_container_arguments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_container_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.container_arguments = input;
         self
     }
     /// <p>The arguments for a container used to run a processing job.</p>
-    pub fn get_container_arguments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_container_arguments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.container_arguments
     }
     /// Consumes the builder and constructs a [`AppSpecification`](crate::types::AppSpecification).

@@ -28,9 +28,7 @@ impl DeleteProfileOutput {
 
 /// A builder for [`DeleteProfileOutput`](crate::operation::delete_profile::DeleteProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProfileOutputBuilder {
     pub(crate) profile: ::std::option::Option<crate::types::ProfileDetail>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DeleteProfileOutputBuilder {
         self
     }
     /// <p>The state of the profile after a read or write operation.</p>
-    pub fn set_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfileDetail>,
-    ) -> Self {
+    pub fn set_profile(mut self, input: ::std::option::Option<crate::types::ProfileDetail>) -> Self {
         self.profile = input;
         self
     }

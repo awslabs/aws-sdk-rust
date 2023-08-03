@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_service_updates::DescribeServiceUpdatesOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     ///   - [`service_updates(Option<Vec<ServiceUpdate>>)`](crate::operation::describe_service_updates::DescribeServiceUpdatesOutput::service_updates): <p>A list of service updates</p>
     /// - On failure, responds with [`SdkError<DescribeServiceUpdatesError>`](crate::operation::describe_service_updates::DescribeServiceUpdatesError)
-    pub fn describe_service_updates(
-        &self,
-    ) -> crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder
-    {
+    pub fn describe_service_updates(&self) -> crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder {
         crate::operation::describe_service_updates::builders::DescribeServiceUpdatesFluentBuilder::new(self.handle.clone())
     }
 }

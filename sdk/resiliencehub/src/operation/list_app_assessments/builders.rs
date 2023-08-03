@@ -10,10 +10,7 @@ impl ListAppAssessmentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_app_assessments::ListAppAssessmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_assessments::ListAppAssessmentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_assessments::ListAppAssessmentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_app_assessments();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListAppAssessmentsFluentBuilder {
         }
     }
     /// Access the ListAppAssessments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_app_assessments::builders::ListAppAssessmentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_app_assessments::builders::ListAppAssessmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListAppAssessmentsFluentBuilder {
             crate::operation::list_app_assessments::ListAppAssessments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_assessments::ListAppAssessmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_assessments::ListAppAssessmentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListAppAssessmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListAppAssessmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_assessments::ListAppAssessmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_assessments::ListAppAssessmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_assessments::ListAppAssessmentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListAppAssessmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_assessments::ListAppAssessmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_assessments::ListAppAssessmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_assessments::ListAppAssessmentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListAppAssessmentsFluentBuilder {
             crate::operation::list_app_assessments::ListAppAssessments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_assessments::ListAppAssessmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_assessments::ListAppAssessmentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_app_assessments::paginator::ListAppAssessmentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_app_assessments::paginator::ListAppAssessmentsPaginator {
-        crate::operation::list_app_assessments::paginator::ListAppAssessmentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_app_assessments::paginator::ListAppAssessmentsPaginator {
+        crate::operation::list_app_assessments::paginator::ListAppAssessmentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +127,12 @@ impl ListAppAssessmentsFluentBuilder {
         self.inner.get_app_arn()
     }
     /// <p>The name for the assessment.</p>
-    pub fn assessment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_name(input.into());
         self
     }
     /// <p>The name for the assessment.</p>
-    pub fn set_assessment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_name(input);
         self
     }
@@ -177,17 +150,12 @@ impl ListAppAssessmentsFluentBuilder {
         self
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn set_assessment_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>>,
-    ) -> Self {
+    pub fn set_assessment_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>>) -> Self {
         self.inner = self.inner.set_assessment_status(input);
         self
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn get_assessment_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>> {
+    pub fn get_assessment_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>> {
         self.inner.get_assessment_status()
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
@@ -196,10 +164,7 @@ impl ListAppAssessmentsFluentBuilder {
         self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn set_compliance_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceStatus>,
-    ) -> Self {
+    pub fn set_compliance_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
         self.inner = self.inner.set_compliance_status(input);
         self
     }
@@ -213,10 +178,7 @@ impl ListAppAssessmentsFluentBuilder {
         self
     }
     /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
-    pub fn set_invoker(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentInvoker>,
-    ) -> Self {
+    pub fn set_invoker(mut self, input: ::std::option::Option<crate::types::AssessmentInvoker>) -> Self {
         self.inner = self.inner.set_invoker(input);
         self
     }

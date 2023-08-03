@@ -58,9 +58,7 @@ impl NamedQuery {
 
 /// A builder for [`NamedQuery`](crate::types::NamedQuery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NamedQueryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -127,18 +125,12 @@ impl NamedQueryBuilder {
         &self.query_string
     }
     /// <p>The unique identifier of the query.</p>
-    pub fn named_query_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn named_query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.named_query_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the query.</p>
-    pub fn set_named_query_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_named_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.named_query_id = input;
         self
     }

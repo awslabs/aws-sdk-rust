@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutLifecycleConfigurationOutput`](crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationOutput) with field(s):
     ///   - [`lifecycle_policies(Option<Vec<LifecyclePolicy>>)`](crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationOutput::lifecycle_policies): <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
     /// - On failure, responds with [`SdkError<PutLifecycleConfigurationError>`](crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError)
-    pub fn put_lifecycle_configuration(&self) -> crate::operation::put_lifecycle_configuration::builders::PutLifecycleConfigurationFluentBuilder{
+    pub fn put_lifecycle_configuration(&self) -> crate::operation::put_lifecycle_configuration::builders::PutLifecycleConfigurationFluentBuilder {
         crate::operation::put_lifecycle_configuration::builders::PutLifecycleConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

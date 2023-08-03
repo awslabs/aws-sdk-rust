@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetPlatformApplicationAttributesOutput`](crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesOutput) with field(s):
     ///   - [`attributes(Option<HashMap<String, String>>)`](crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesOutput::attributes): <p>Attributes include the following:</p>  <ul>   <li> <p> <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate used to configure certificate-based authentication.</p> </li>   <li> <p> <code>ApplePlatformTeamID</code> – The Apple developer account ID used to configure token-based authentication.</p> </li>   <li> <p> <code>ApplePlatformBundleID</code> – The app identifier used to configure token-based authentication.</p> </li>   <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.</p> </li>   <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.</p> </li>   <li> <p> <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.</p> </li>   <li> <p> <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetPlatformApplicationAttributesError>`](crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesError)
-    pub fn get_platform_application_attributes(&self) -> crate::operation::get_platform_application_attributes::builders::GetPlatformApplicationAttributesFluentBuilder{
+    pub fn get_platform_application_attributes(
+        &self,
+    ) -> crate::operation::get_platform_application_attributes::builders::GetPlatformApplicationAttributesFluentBuilder {
         crate::operation::get_platform_application_attributes::builders::GetPlatformApplicationAttributesFluentBuilder::new(self.handle.clone())
     }
 }

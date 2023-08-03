@@ -36,16 +36,14 @@ impl DecreaseReplicationFactorInput {
 }
 impl DecreaseReplicationFactorInput {
     /// Creates a new builder-style object to manufacture [`DecreaseReplicationFactorInput`](crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput).
-    pub fn builder() -> crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorInputBuilder{
+    pub fn builder() -> crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorInputBuilder {
         crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorInputBuilder::default()
     }
 }
 
 /// A builder for [`DecreaseReplicationFactorInput`](crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecreaseReplicationFactorInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_replication_factor: ::std::option::Option<i32>,
@@ -86,27 +84,19 @@ impl DecreaseReplicationFactorInputBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     /// Appends an item to `node_ids_to_remove`.
@@ -114,27 +104,19 @@ impl DecreaseReplicationFactorInputBuilder {
     /// To override the contents of this collection use [`set_node_ids_to_remove`](Self::set_node_ids_to_remove).
     ///
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    pub fn node_ids_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn node_ids_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.node_ids_to_remove.unwrap_or_default();
         v.push(input.into());
         self.node_ids_to_remove = ::std::option::Option::Some(v);
         self
     }
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    pub fn set_node_ids_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_node_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.node_ids_to_remove = input;
         self
     }
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    pub fn get_node_ids_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_node_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.node_ids_to_remove
     }
     /// Consumes the builder and constructs a [`DecreaseReplicationFactorInput`](crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput).
@@ -144,13 +126,11 @@ impl DecreaseReplicationFactorInputBuilder {
         crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput {
-                cluster_name: self.cluster_name,
-                new_replication_factor: self.new_replication_factor.unwrap_or_default(),
-                availability_zones: self.availability_zones,
-                node_ids_to_remove: self.node_ids_to_remove,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput {
+            cluster_name: self.cluster_name,
+            new_replication_factor: self.new_replication_factor.unwrap_or_default(),
+            availability_zones: self.availability_zones,
+            node_ids_to_remove: self.node_ids_to_remove,
+        })
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteResourceOutput`](crate::operation::delete_resource::DeleteResourceOutput) with field(s):
     ///   - [`progress_event(Option<ProgressEvent>)`](crate::operation::delete_resource::DeleteResourceOutput::progress_event): <p>Represents the current status of the resource deletion request.</p>  <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteResourceError>`](crate::operation::delete_resource::DeleteResourceError)
-    pub fn delete_resource(
-        &self,
-    ) -> crate::operation::delete_resource::builders::DeleteResourceFluentBuilder {
-        crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_resource(&self) -> crate::operation::delete_resource::builders::DeleteResourceFluentBuilder {
+        crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl DisassociateIpGroupsFluentBuilder {
         }
     }
     /// Access the DisassociateIpGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DisassociateIpGroupsFluentBuilder {
             crate::operation::disassociate_ip_groups::DisassociateIpGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_ip_groups::DisassociateIpGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ip_groups::DisassociateIpGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DisassociateIpGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DisassociateIpGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_ip_groups::DisassociateIpGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_ip_groups::DisassociateIpGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ip_groups::DisassociateIpGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DisassociateIpGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_ip_groups::DisassociateIpGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_ip_groups::DisassociateIpGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ip_groups::DisassociateIpGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DisassociateIpGroupsFluentBuilder {
             crate::operation::disassociate_ip_groups::DisassociateIpGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_ip_groups::DisassociateIpGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ip_groups::DisassociateIpGroupsError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +133,7 @@ impl DisassociateIpGroupsFluentBuilder {
         self
     }
     /// <p>The identifiers of one or more IP access control groups.</p>
-    pub fn set_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_group_ids(input);
         self
     }

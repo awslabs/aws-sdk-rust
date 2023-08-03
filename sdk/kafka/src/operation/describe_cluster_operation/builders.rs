@@ -26,7 +26,7 @@ impl DescribeClusterOperationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClusterOperationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_cluster_operation::builders::DescribeClusterOperationInputBuilder,
+    inner: crate::operation::describe_cluster_operation::builders::DescribeClusterOperationInputBuilder,
 }
 impl DescribeClusterOperationFluentBuilder {
     /// Creates a new `DescribeClusterOperation`.
@@ -37,10 +37,7 @@ impl DescribeClusterOperationFluentBuilder {
         }
     }
     /// Access the DescribeClusterOperation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_cluster_operation::builders::DescribeClusterOperationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_cluster_operation::builders::DescribeClusterOperationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeClusterOperationFluentBuilder {
             crate::operation::describe_cluster_operation::DescribeClusterOperation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_operation::DescribeClusterOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_operation::DescribeClusterOperationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeClusterOperationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeClusterOperationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_operation::DescribeClusterOperationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_operation::DescribeClusterOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_operation::DescribeClusterOperationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeClusterOperationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_operation::DescribeClusterOperationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_operation::DescribeClusterOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_operation::DescribeClusterOperationError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeClusterOperationFluentBuilder {
             crate::operation::describe_cluster_operation::DescribeClusterOperation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_operation::DescribeClusterOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_operation::DescribeClusterOperationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
-    pub fn cluster_operation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_operation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_operation_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
-    pub fn set_cluster_operation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_operation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_operation_arn(input);
         self
     }

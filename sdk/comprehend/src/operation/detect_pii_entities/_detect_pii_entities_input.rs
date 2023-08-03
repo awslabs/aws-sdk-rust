@@ -22,17 +22,14 @@ impl DetectPiiEntitiesInput {
 }
 impl DetectPiiEntitiesInput {
     /// Creates a new builder-style object to manufacture [`DetectPiiEntitiesInput`](crate::operation::detect_pii_entities::DetectPiiEntitiesInput).
-    pub fn builder(
-    ) -> crate::operation::detect_pii_entities::builders::DetectPiiEntitiesInputBuilder {
+    pub fn builder() -> crate::operation::detect_pii_entities::builders::DetectPiiEntitiesInputBuilder {
         crate::operation::detect_pii_entities::builders::DetectPiiEntitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`DetectPiiEntitiesInput`](crate::operation::detect_pii_entities::DetectPiiEntitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectPiiEntitiesInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
@@ -58,10 +55,7 @@ impl DetectPiiEntitiesInputBuilder {
         self
     }
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -72,15 +66,10 @@ impl DetectPiiEntitiesInputBuilder {
     /// Consumes the builder and constructs a [`DetectPiiEntitiesInput`](crate::operation::detect_pii_entities::DetectPiiEntitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_pii_entities::DetectPiiEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detect_pii_entities::DetectPiiEntitiesInput {
-                text: self.text,
-                language_code: self.language_code,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::detect_pii_entities::DetectPiiEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::detect_pii_entities::DetectPiiEntitiesInput {
+            text: self.text,
+            language_code: self.language_code,
+        })
     }
 }

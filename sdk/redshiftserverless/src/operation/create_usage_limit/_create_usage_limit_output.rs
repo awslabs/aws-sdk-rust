@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateUsageLimitOutput {
 }
 impl CreateUsageLimitOutput {
     /// Creates a new builder-style object to manufacture [`CreateUsageLimitOutput`](crate::operation::create_usage_limit::CreateUsageLimitOutput).
-    pub fn builder() -> crate::operation::create_usage_limit::builders::CreateUsageLimitOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_usage_limit::builders::CreateUsageLimitOutputBuilder {
         crate::operation::create_usage_limit::builders::CreateUsageLimitOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUsageLimitOutput`](crate::operation::create_usage_limit::CreateUsageLimitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUsageLimitOutputBuilder {
     pub(crate) usage_limit: ::std::option::Option<crate::types::UsageLimit>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateUsageLimitOutputBuilder {
         self
     }
     /// <p>The returned usage limit object.</p>
-    pub fn set_usage_limit(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageLimit>,
-    ) -> Self {
+    pub fn set_usage_limit(mut self, input: ::std::option::Option<crate::types::UsageLimit>) -> Self {
         self.usage_limit = input;
         self
     }

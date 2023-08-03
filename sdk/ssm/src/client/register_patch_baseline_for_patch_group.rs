@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`baseline_id(Option<String>)`](crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput::baseline_id): <p>The ID of the patch baseline the patch group was registered with.</p>
     ///   - [`patch_group(Option<String>)`](crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput::patch_group): <p>The name of the patch group registered with the patch baseline.</p>
     /// - On failure, responds with [`SdkError<RegisterPatchBaselineForPatchGroupError>`](crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupError)
-    pub fn register_patch_baseline_for_patch_group(&self) -> crate::operation::register_patch_baseline_for_patch_group::builders::RegisterPatchBaselineForPatchGroupFluentBuilder{
+    pub fn register_patch_baseline_for_patch_group(
+        &self,
+    ) -> crate::operation::register_patch_baseline_for_patch_group::builders::RegisterPatchBaselineForPatchGroupFluentBuilder {
         crate::operation::register_patch_baseline_for_patch_group::builders::RegisterPatchBaselineForPatchGroupFluentBuilder::new(self.handle.clone())
     }
 }

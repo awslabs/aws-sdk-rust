@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for CreateXssMatchSetOutput {
 }
 impl CreateXssMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateXssMatchSetOutput`](crate::operation::create_xss_match_set::CreateXssMatchSetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_xss_match_set::builders::CreateXssMatchSetOutputBuilder {
+    pub fn builder() -> crate::operation::create_xss_match_set::builders::CreateXssMatchSetOutputBuilder {
         crate::operation::create_xss_match_set::builders::CreateXssMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateXssMatchSetOutput`](crate::operation::create_xss_match_set::CreateXssMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateXssMatchSetOutputBuilder {
     pub(crate) xss_match_set: ::std::option::Option<crate::types::XssMatchSet>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -52,10 +49,7 @@ impl CreateXssMatchSetOutputBuilder {
         self
     }
     /// <p>An <code>XssMatchSet</code>.</p>
-    pub fn set_xss_match_set(
-        mut self,
-        input: ::std::option::Option<crate::types::XssMatchSet>,
-    ) -> Self {
+    pub fn set_xss_match_set(mut self, input: ::std::option::Option<crate::types::XssMatchSet>) -> Self {
         self.xss_match_set = input;
         self
     }

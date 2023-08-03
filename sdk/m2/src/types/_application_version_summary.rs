@@ -44,9 +44,7 @@ impl ApplicationVersionSummary {
 
 /// A builder for [`ApplicationVersionSummary`](crate::types::ApplicationVersionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationVersionSummaryBuilder {
     pub(crate) application_version: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::ApplicationVersionLifecycle>,
@@ -74,10 +72,7 @@ impl ApplicationVersionSummaryBuilder {
         self
     }
     /// <p>The status of the application.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationVersionLifecycle>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationVersionLifecycle>) -> Self {
         self.status = input;
         self
     }
@@ -86,18 +81,12 @@ impl ApplicationVersionSummaryBuilder {
         &self.status
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the reported status.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -111,10 +100,7 @@ impl ApplicationVersionSummaryBuilder {
         self
     }
     /// <p>The timestamp when the application version was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

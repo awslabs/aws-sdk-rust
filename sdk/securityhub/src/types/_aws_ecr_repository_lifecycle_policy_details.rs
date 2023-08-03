@@ -30,27 +30,19 @@ impl AwsEcrRepositoryLifecyclePolicyDetails {
 
 /// A builder for [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::types::AwsEcrRepositoryLifecyclePolicyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcrRepositoryLifecyclePolicyDetailsBuilder {
     pub(crate) lifecycle_policy_text: ::std::option::Option<::std::string::String>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcrRepositoryLifecyclePolicyDetailsBuilder {
     /// <p>The text of the lifecycle policy.</p>
-    pub fn lifecycle_policy_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_policy_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the lifecycle policy.</p>
-    pub fn set_lifecycle_policy_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_policy_text = input;
         self
     }

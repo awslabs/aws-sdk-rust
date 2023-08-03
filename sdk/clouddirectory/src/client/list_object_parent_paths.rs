@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`path_to_object_identifiers_list(Option<Vec<PathToObjectIdentifiers>>)`](crate::operation::list_object_parent_paths::ListObjectParentPathsOutput::path_to_object_identifiers_list): <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_object_parent_paths::ListObjectParentPathsOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListObjectParentPathsError>`](crate::operation::list_object_parent_paths::ListObjectParentPathsError)
-    pub fn list_object_parent_paths(
-        &self,
-    ) -> crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder
-    {
+    pub fn list_object_parent_paths(&self) -> crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder {
         crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder::new(self.handle.clone())
     }
 }

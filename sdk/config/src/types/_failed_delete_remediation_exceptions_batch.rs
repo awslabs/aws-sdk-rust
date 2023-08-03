@@ -9,8 +9,7 @@ pub struct FailedDeleteRemediationExceptionsBatch {
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>Returns remediation exception resource key object of the failed items.</p>
     #[doc(hidden)]
-    pub failed_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
+    pub failed_items: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
 }
 impl FailedDeleteRemediationExceptionsBatch {
     /// <p>Returns a failure message for delete remediation exception. For example, Config creates an exception due to an internal error.</p>
@@ -18,9 +17,7 @@ impl FailedDeleteRemediationExceptionsBatch {
         self.failure_message.as_deref()
     }
     /// <p>Returns remediation exception resource key object of the failed items.</p>
-    pub fn failed_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RemediationExceptionResourceKey]> {
+    pub fn failed_items(&self) -> ::std::option::Option<&[crate::types::RemediationExceptionResourceKey]> {
         self.failed_items.as_deref()
     }
 }
@@ -33,28 +30,19 @@ impl FailedDeleteRemediationExceptionsBatch {
 
 /// A builder for [`FailedDeleteRemediationExceptionsBatch`](crate::types::FailedDeleteRemediationExceptionsBatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedDeleteRemediationExceptionsBatchBuilder {
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
-    pub(crate) failed_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
+    pub(crate) failed_items: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
 }
 impl FailedDeleteRemediationExceptionsBatchBuilder {
     /// <p>Returns a failure message for delete remediation exception. For example, Config creates an exception due to an internal error.</p>
-    pub fn failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns a failure message for delete remediation exception. For example, Config creates an exception due to an internal error.</p>
-    pub fn set_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_message = input;
         self
     }
@@ -74,20 +62,12 @@ impl FailedDeleteRemediationExceptionsBatchBuilder {
         self
     }
     /// <p>Returns remediation exception resource key object of the failed items.</p>
-    pub fn set_failed_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::RemediationExceptionResourceKey>,
-        >,
-    ) -> Self {
+    pub fn set_failed_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>) -> Self {
         self.failed_items = input;
         self
     }
     /// <p>Returns remediation exception resource key object of the failed items.</p>
-    pub fn get_failed_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>
-    {
+    pub fn get_failed_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>> {
         &self.failed_items
     }
     /// Consumes the builder and constructs a [`FailedDeleteRemediationExceptionsBatch`](crate::types::FailedDeleteRemediationExceptionsBatch).

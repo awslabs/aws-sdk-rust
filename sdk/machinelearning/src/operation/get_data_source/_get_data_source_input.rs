@@ -33,27 +33,19 @@ impl GetDataSourceInput {
 
 /// A builder for [`GetDataSourceInput`](crate::operation::get_data_source::GetDataSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataSourceInputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) verbose: ::std::option::Option<bool>,
 }
 impl GetDataSourceInputBuilder {
     /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -84,10 +76,7 @@ impl GetDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`GetDataSourceInput`](crate::operation::get_data_source::GetDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_source::GetDataSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_data_source::GetDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_data_source::GetDataSourceInput {
             data_source_id: self.data_source_id,
             verbose: self.verbose.unwrap_or_default(),

@@ -4,17 +4,10 @@ pub fn de_get_campaigns_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_campaigns::GetCampaignsOutput,
-    crate::operation::get_campaigns::GetCampaignsError,
-> {
+) -> std::result::Result<crate::operation::get_campaigns::GetCampaignsOutput, crate::operation::get_campaigns::GetCampaignsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
@@ -24,126 +17,112 @@ pub fn de_get_campaigns_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::operation::get_campaigns::GetCampaignsError::BadRequestException({
+        "BadRequestException" => crate::operation::get_campaigns::GetCampaignsError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ForbiddenException" => {
-            crate::operation::get_campaigns::GetCampaignsError::ForbiddenException({
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => crate::operation::get_campaigns::GetCampaignsError::ForbiddenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalServerErrorException" => {
-            crate::operation::get_campaigns::GetCampaignsError::InternalServerErrorException({
+                let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServerErrorException" => crate::operation::get_campaigns::GetCampaignsError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
-                        );
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output).map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "MethodNotAllowedException" => {
-            crate::operation::get_campaigns::GetCampaignsError::MethodNotAllowedException({
+                let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MethodNotAllowedException" => crate::operation::get_campaigns::GetCampaignsError::MethodNotAllowedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::MethodNotAllowedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_method_not_allowed_exception::de_method_not_allowed_exception_json_err(_response_body, output).map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "NotFoundException" => {
-            crate::operation::get_campaigns::GetCampaignsError::NotFoundException({
+                let mut output = crate::types::error::builders::MethodNotAllowedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_method_not_allowed_exception::de_method_not_allowed_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => crate::operation::get_campaigns::GetCampaignsError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::NotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "PayloadTooLargeException" => {
-            crate::operation::get_campaigns::GetCampaignsError::PayloadTooLargeException({
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "PayloadTooLargeException" => crate::operation::get_campaigns::GetCampaignsError::PayloadTooLargeException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::PayloadTooLargeExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_payload_too_large_exception::de_payload_too_large_exception_json_err(_response_body, output).map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "TooManyRequestsException" => {
-            crate::operation::get_campaigns::GetCampaignsError::TooManyRequestsException({
+                let mut output = crate::types::error::builders::PayloadTooLargeExceptionBuilder::default();
+                output = crate::protocol_serde::shape_payload_too_large_exception::de_payload_too_large_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::get_campaigns::GetCampaignsError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::get_campaigns::GetCampaignsError::generic(generic),
     })
 }
@@ -153,22 +132,14 @@ pub fn de_get_campaigns_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_campaigns::GetCampaignsOutput,
-    crate::operation::get_campaigns::GetCampaignsError,
-> {
+) -> std::result::Result<crate::operation::get_campaigns::GetCampaignsOutput, crate::operation::get_campaigns::GetCampaignsError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::get_campaigns::builders::GetCampaignsOutputBuilder::default();
-        output = output.set_campaigns_response(
-            crate::protocol_serde::shape_get_campaigns_output::de_campaigns_response_payload(
-                _response_body,
-            )?,
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::get_campaigns::builders::GetCampaignsOutputBuilder::default();
+        output = output.set_campaigns_response(crate::protocol_serde::shape_get_campaigns_output::de_campaigns_response_payload(
+            _response_body,
+        )?);
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

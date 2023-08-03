@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`success_count(i32)`](crate::operation::batch_import_findings::BatchImportFindingsOutput::success_count): <p>The number of findings that were successfully imported.</p>
     ///   - [`failed_findings(Option<Vec<ImportFindingsError>>)`](crate::operation::batch_import_findings::BatchImportFindingsOutput::failed_findings): <p>The list of findings that failed to import.</p>
     /// - On failure, responds with [`SdkError<BatchImportFindingsError>`](crate::operation::batch_import_findings::BatchImportFindingsError)
-    pub fn batch_import_findings(
-        &self,
-    ) -> crate::operation::batch_import_findings::builders::BatchImportFindingsFluentBuilder {
-        crate::operation::batch_import_findings::builders::BatchImportFindingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_import_findings(&self) -> crate::operation::batch_import_findings::builders::BatchImportFindingsFluentBuilder {
+        crate::operation::batch_import_findings::builders::BatchImportFindingsFluentBuilder::new(self.handle.clone())
     }
 }

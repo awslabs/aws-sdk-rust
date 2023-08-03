@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for PutFileSystemPolicyOutput {
 }
 impl PutFileSystemPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutFileSystemPolicyOutput`](crate::operation::put_file_system_policy::PutFileSystemPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_file_system_policy::builders::PutFileSystemPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::put_file_system_policy::builders::PutFileSystemPolicyOutputBuilder {
         crate::operation::put_file_system_policy::builders::PutFileSystemPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutFileSystemPolicyOutput`](crate::operation::put_file_system_policy::PutFileSystemPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutFileSystemPolicyOutputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
@@ -46,18 +43,12 @@ pub struct PutFileSystemPolicyOutputBuilder {
 }
 impl PutFileSystemPolicyOutputBuilder {
     /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }

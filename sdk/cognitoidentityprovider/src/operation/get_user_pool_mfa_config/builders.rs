@@ -37,10 +37,7 @@ impl GetUserPoolMfaConfigFluentBuilder {
         }
     }
     /// Access the GetUserPoolMfaConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_user_pool_mfa_config::builders::GetUserPoolMfaConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_user_pool_mfa_config::builders::GetUserPoolMfaConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetUserPoolMfaConfigFluentBuilder {
             crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetUserPoolMfaConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetUserPoolMfaConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetUserPoolMfaConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetUserPoolMfaConfigFluentBuilder {
             crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError>,
     > {
         self.customize_middleware().await
     }

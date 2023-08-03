@@ -8,9 +8,7 @@ pub fn ser_replica_global_secondary_index_auto_scaling_update(
     }
     if let Some(var_2) = &input.provisioned_read_capacity_auto_scaling_update {
         #[allow(unused_mut)]
-        let mut object_3 = object
-            .key("ProvisionedReadCapacityAutoScalingUpdate")
-            .start_object();
+        let mut object_3 = object.key("ProvisionedReadCapacityAutoScalingUpdate").start_object();
         crate::protocol_serde::shape_auto_scaling_settings_update::ser_auto_scaling_settings_update(&mut object_3, var_2)?;
         object_3.finish();
     }

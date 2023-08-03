@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`executions(Option<Vec<ExecutionSummary>>)`](crate::operation::list_executions::ListExecutionsOutput::executions): <p>A list of executions. Each execution contains the task ID, the device that the task is executing on, the execution ID, and the status of the execution.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_executions::ListExecutionsOutput::next_token): <p>A pagination token to continue to the next page of executions.</p>
     /// - On failure, responds with [`SdkError<ListExecutionsError>`](crate::operation::list_executions::ListExecutionsError)
-    pub fn list_executions(
-        &self,
-    ) -> crate::operation::list_executions::builders::ListExecutionsFluentBuilder {
-        crate::operation::list_executions::builders::ListExecutionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_executions(&self) -> crate::operation::list_executions::builders::ListExecutionsFluentBuilder {
+        crate::operation::list_executions::builders::ListExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

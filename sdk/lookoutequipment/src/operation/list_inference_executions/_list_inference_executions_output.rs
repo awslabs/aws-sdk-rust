@@ -8,8 +8,7 @@ pub struct ListInferenceExecutionsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
     #[doc(hidden)]
-    pub inference_execution_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferenceExecutionSummary>>,
+    pub inference_execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceExecutionSummary>>,
     _request_id: Option<String>,
 }
 impl ListInferenceExecutionsOutput {
@@ -18,9 +17,7 @@ impl ListInferenceExecutionsOutput {
         self.next_token.as_deref()
     }
     /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
-    pub fn inference_execution_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InferenceExecutionSummary]> {
+    pub fn inference_execution_summaries(&self) -> ::std::option::Option<&[crate::types::InferenceExecutionSummary]> {
         self.inference_execution_summaries.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListInferenceExecutionsOutput {
 }
 impl ListInferenceExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListInferenceExecutionsOutput`](crate::operation::list_inference_executions::ListInferenceExecutionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_inference_executions::builders::ListInferenceExecutionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_inference_executions::builders::ListInferenceExecutionsOutputBuilder {
         crate::operation::list_inference_executions::builders::ListInferenceExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInferenceExecutionsOutput`](crate::operation::list_inference_executions::ListInferenceExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInferenceExecutionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) inference_execution_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferenceExecutionSummary>>,
+    pub(crate) inference_execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceExecutionSummary>>,
     _request_id: Option<String>,
 }
 impl ListInferenceExecutionsOutputBuilder {
@@ -69,10 +61,7 @@ impl ListInferenceExecutionsOutputBuilder {
     /// To override the contents of this collection use [`set_inference_execution_summaries`](Self::set_inference_execution_summaries).
     ///
     /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
-    pub fn inference_execution_summaries(
-        mut self,
-        input: crate::types::InferenceExecutionSummary,
-    ) -> Self {
+    pub fn inference_execution_summaries(mut self, input: crate::types::InferenceExecutionSummary) -> Self {
         let mut v = self.inference_execution_summaries.unwrap_or_default();
         v.push(input);
         self.inference_execution_summaries = ::std::option::Option::Some(v);
@@ -87,9 +76,7 @@ impl ListInferenceExecutionsOutputBuilder {
         self
     }
     /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
-    pub fn get_inference_execution_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceExecutionSummary>> {
+    pub fn get_inference_execution_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceExecutionSummary>> {
         &self.inference_execution_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -102,9 +89,7 @@ impl ListInferenceExecutionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListInferenceExecutionsOutput`](crate::operation::list_inference_executions::ListInferenceExecutionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_inference_executions::ListInferenceExecutionsOutput {
+    pub fn build(self) -> crate::operation::list_inference_executions::ListInferenceExecutionsOutput {
         crate::operation::list_inference_executions::ListInferenceExecutionsOutput {
             next_token: self.next_token,
             inference_execution_summaries: self.inference_execution_summaries,

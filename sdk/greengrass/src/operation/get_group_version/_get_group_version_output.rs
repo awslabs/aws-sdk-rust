@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for GetGroupVersionOutput {
 }
 impl GetGroupVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupVersionOutput`](crate::operation::get_group_version::GetGroupVersionOutput).
-    pub fn builder() -> crate::operation::get_group_version::builders::GetGroupVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_group_version::builders::GetGroupVersionOutputBuilder {
         crate::operation::get_group_version::builders::GetGroupVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetGroupVersionOutput`](crate::operation::get_group_version::GetGroupVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupVersionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,
@@ -84,18 +81,12 @@ impl GetGroupVersionOutputBuilder {
         &self.arn
     }
     /// The time, in milliseconds since the epoch, when the group version was created.
-    pub fn creation_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the group version was created.
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -109,10 +100,7 @@ impl GetGroupVersionOutputBuilder {
         self
     }
     /// Information about the group version definition.
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupVersion>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::GroupVersion>) -> Self {
         self.definition = input;
         self
     }

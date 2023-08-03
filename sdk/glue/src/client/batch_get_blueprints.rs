@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`blueprints(Option<Vec<Blueprint>>)`](crate::operation::batch_get_blueprints::BatchGetBlueprintsOutput::blueprints): <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
     ///   - [`missing_blueprints(Option<Vec<String>>)`](crate::operation::batch_get_blueprints::BatchGetBlueprintsOutput::missing_blueprints): <p>Returns a list of <code>BlueprintNames</code> that were not found.</p>
     /// - On failure, responds with [`SdkError<BatchGetBlueprintsError>`](crate::operation::batch_get_blueprints::BatchGetBlueprintsError)
-    pub fn batch_get_blueprints(
-        &self,
-    ) -> crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsFluentBuilder {
-        crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_blueprints(&self) -> crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsFluentBuilder {
+        crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsFluentBuilder::new(self.handle.clone())
     }
 }

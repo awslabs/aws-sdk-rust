@@ -26,8 +26,7 @@ impl BatchGetQueryExecutionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetQueryExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionInputBuilder,
+    inner: crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionInputBuilder,
 }
 impl BatchGetQueryExecutionFluentBuilder {
     /// Creates a new `BatchGetQueryExecution`.
@@ -38,10 +37,7 @@ impl BatchGetQueryExecutionFluentBuilder {
         }
     }
     /// Access the BatchGetQueryExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl BatchGetQueryExecutionFluentBuilder {
             crate::operation::batch_get_query_execution::BatchGetQueryExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_query_execution::BatchGetQueryExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_query_execution::BatchGetQueryExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl BatchGetQueryExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl BatchGetQueryExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_query_execution::BatchGetQueryExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_query_execution::BatchGetQueryExecutionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl BatchGetQueryExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_query_execution::BatchGetQueryExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_query_execution::BatchGetQueryExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl BatchGetQueryExecutionFluentBuilder {
             crate::operation::batch_get_query_execution::BatchGetQueryExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_query_execution::BatchGetQueryExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_query_execution::BatchGetQueryExecutionError>,
     > {
         self.customize_middleware().await
     }
@@ -129,25 +114,17 @@ impl BatchGetQueryExecutionFluentBuilder {
     /// To override the contents of this collection use [`set_query_execution_ids`](Self::set_query_execution_ids).
     ///
     /// <p>An array of query execution IDs.</p>
-    pub fn query_execution_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_execution_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_execution_ids(input.into());
         self
     }
     /// <p>An array of query execution IDs.</p>
-    pub fn set_query_execution_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_query_execution_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_query_execution_ids(input);
         self
     }
     /// <p>An array of query execution IDs.</p>
-    pub fn get_query_execution_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_query_execution_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_query_execution_ids()
     }
 }

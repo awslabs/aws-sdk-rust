@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteBusinessReportScheduleOutput {
 }
 impl DeleteBusinessReportScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBusinessReportScheduleOutput`](crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleOutput).
-    pub fn builder() -> crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleOutputBuilder{
+    pub fn builder() -> crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleOutputBuilder {
         crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBusinessReportScheduleOutput`](crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBusinessReportScheduleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteBusinessReportScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteBusinessReportScheduleOutput`](crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleOutput {
+    pub fn build(self) -> crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleOutput {
         crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleOutput {
             _request_id: self._request_id,
         }

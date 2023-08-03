@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateGatewayGroupOutput {
 }
 impl CreateGatewayGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateGatewayGroupOutput`](crate::operation::create_gateway_group::CreateGatewayGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_gateway_group::builders::CreateGatewayGroupOutputBuilder {
+    pub fn builder() -> crate::operation::create_gateway_group::builders::CreateGatewayGroupOutputBuilder {
         crate::operation::create_gateway_group::builders::CreateGatewayGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGatewayGroupOutput`](crate::operation::create_gateway_group::CreateGatewayGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGatewayGroupOutputBuilder {
     pub(crate) gateway_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateGatewayGroupOutputBuilder {
     /// <p>The ARN of the created gateway group.</p>
-    pub fn gateway_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the created gateway group.</p>
-    pub fn set_gateway_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_group_arn = input;
         self
     }

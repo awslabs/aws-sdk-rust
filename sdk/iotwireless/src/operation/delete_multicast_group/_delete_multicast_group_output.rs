@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMulticastGroupOutput {
 }
 impl DeleteMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMulticastGroupOutput`](crate::operation::delete_multicast_group::DeleteMulticastGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_multicast_group::builders::DeleteMulticastGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_multicast_group::builders::DeleteMulticastGroupOutputBuilder {
         crate::operation::delete_multicast_group::builders::DeleteMulticastGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMulticastGroupOutput`](crate::operation::delete_multicast_group::DeleteMulticastGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMulticastGroupOutputBuilder {
     _request_id: Option<String>,
 }

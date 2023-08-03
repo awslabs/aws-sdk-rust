@@ -35,9 +35,7 @@ impl ListActionsOutput {
 
 /// A builder for [`ListActionsOutput`](crate::operation::list_actions::ListActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActionsOutputBuilder {
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListActionsOutputBuilder {
         self
     }
     /// <p>The actions.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>The actions.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
         &self.actions
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

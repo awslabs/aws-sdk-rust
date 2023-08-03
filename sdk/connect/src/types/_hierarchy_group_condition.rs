@@ -17,9 +17,7 @@ impl HierarchyGroupCondition {
         self.value.as_deref()
     }
     /// <p>The type of hierarchy group match.</p>
-    pub fn hierarchy_group_match_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HierarchyGroupMatchType> {
+    pub fn hierarchy_group_match_type(&self) -> ::std::option::Option<&crate::types::HierarchyGroupMatchType> {
         self.hierarchy_group_match_type.as_ref()
     }
 }
@@ -32,13 +30,10 @@ impl HierarchyGroupCondition {
 
 /// A builder for [`HierarchyGroupCondition`](crate::types::HierarchyGroupCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HierarchyGroupConditionBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
-    pub(crate) hierarchy_group_match_type:
-        ::std::option::Option<crate::types::HierarchyGroupMatchType>,
+    pub(crate) hierarchy_group_match_type: ::std::option::Option<crate::types::HierarchyGroupMatchType>,
 }
 impl HierarchyGroupConditionBuilder {
     /// <p>The value in the hierarchy group condition.</p>
@@ -56,25 +51,17 @@ impl HierarchyGroupConditionBuilder {
         &self.value
     }
     /// <p>The type of hierarchy group match.</p>
-    pub fn hierarchy_group_match_type(
-        mut self,
-        input: crate::types::HierarchyGroupMatchType,
-    ) -> Self {
+    pub fn hierarchy_group_match_type(mut self, input: crate::types::HierarchyGroupMatchType) -> Self {
         self.hierarchy_group_match_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of hierarchy group match.</p>
-    pub fn set_hierarchy_group_match_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HierarchyGroupMatchType>,
-    ) -> Self {
+    pub fn set_hierarchy_group_match_type(mut self, input: ::std::option::Option<crate::types::HierarchyGroupMatchType>) -> Self {
         self.hierarchy_group_match_type = input;
         self
     }
     /// <p>The type of hierarchy group match.</p>
-    pub fn get_hierarchy_group_match_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::HierarchyGroupMatchType> {
+    pub fn get_hierarchy_group_match_type(&self) -> &::std::option::Option<crate::types::HierarchyGroupMatchType> {
         &self.hierarchy_group_match_type
     }
     /// Consumes the builder and constructs a [`HierarchyGroupCondition`](crate::types::HierarchyGroupCondition).

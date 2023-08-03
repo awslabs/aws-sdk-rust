@@ -44,9 +44,7 @@ impl DvbSdtSettings {
 
 /// A builder for [`DvbSdtSettings`](crate::types::DvbSdtSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DvbSdtSettingsBuilder {
     pub(crate) output_sdt: ::std::option::Option<crate::types::OutputSdt>,
     pub(crate) sdt_interval: ::std::option::Option<i32>,
@@ -97,18 +95,12 @@ impl DvbSdtSettingsBuilder {
         &self.service_name
     }
     /// The service provider name placed in the service_descriptor in the Service Description Table. Maximum length is 256 characters.
-    pub fn service_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The service provider name placed in the service_descriptor in the Service Description Table. Maximum length is 256 characters.
-    pub fn set_service_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_provider_name = input;
         self
     }

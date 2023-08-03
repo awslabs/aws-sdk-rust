@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeRiskConfigurationOutput`](crate::operation::describe_risk_configuration::DescribeRiskConfigurationOutput) with field(s):
     ///   - [`risk_configuration(Option<RiskConfigurationType>)`](crate::operation::describe_risk_configuration::DescribeRiskConfigurationOutput::risk_configuration): <p>The risk configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeRiskConfigurationError>`](crate::operation::describe_risk_configuration::DescribeRiskConfigurationError)
-    pub fn describe_risk_configuration(&self) -> crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationFluentBuilder{
+    pub fn describe_risk_configuration(&self) -> crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationFluentBuilder {
         crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

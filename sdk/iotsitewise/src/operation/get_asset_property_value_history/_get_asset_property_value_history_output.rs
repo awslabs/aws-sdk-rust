@@ -5,8 +5,7 @@
 pub struct GetAssetPropertyValueHistoryOutput {
     /// <p>The asset property's value history.</p>
     #[doc(hidden)]
-    pub asset_property_value_history:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
+    pub asset_property_value_history: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetAssetPropertyValueHistoryOutput {
 }
 impl GetAssetPropertyValueHistoryOutput {
     /// <p>The asset property's value history.</p>
-    pub fn asset_property_value_history(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetPropertyValue]> {
+    pub fn asset_property_value_history(&self) -> ::std::option::Option<&[crate::types::AssetPropertyValue]> {
         self.asset_property_value_history.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetAssetPropertyValueHistoryOutput {
 }
 impl GetAssetPropertyValueHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetAssetPropertyValueHistoryOutput`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput).
-    pub fn builder() -> crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryOutputBuilder{
+    pub fn builder() -> crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryOutputBuilder {
         crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssetPropertyValueHistoryOutput`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssetPropertyValueHistoryOutputBuilder {
-    pub(crate) asset_property_value_history:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
+    pub(crate) asset_property_value_history: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl GetAssetPropertyValueHistoryOutputBuilder {
         self
     }
     /// <p>The asset property's value history.</p>
-    pub fn set_asset_property_value_history(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
-    ) -> Self {
+    pub fn set_asset_property_value_history(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>) -> Self {
         self.asset_property_value_history = input;
         self
     }
     /// <p>The asset property's value history.</p>
-    pub fn get_asset_property_value_history(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>> {
+    pub fn get_asset_property_value_history(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>> {
         &self.asset_property_value_history
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -97,10 +86,7 @@ impl GetAssetPropertyValueHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAssetPropertyValueHistoryOutput`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput
-    {
+    pub fn build(self) -> crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput {
         crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput {
             asset_property_value_history: self.asset_property_value_history,
             next_token: self.next_token,

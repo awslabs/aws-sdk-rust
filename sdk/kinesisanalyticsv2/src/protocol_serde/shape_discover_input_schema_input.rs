@@ -11,9 +11,7 @@ pub fn ser_discover_input_schema_input(
     }
     if let Some(var_3) = &input.input_starting_position_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object
-            .key("InputStartingPositionConfiguration")
-            .start_object();
+        let mut object_4 = object.key("InputStartingPositionConfiguration").start_object();
         crate::protocol_serde::shape_input_starting_position_configuration::ser_input_starting_position_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }

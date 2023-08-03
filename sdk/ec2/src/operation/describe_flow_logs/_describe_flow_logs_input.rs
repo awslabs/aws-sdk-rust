@@ -77,17 +77,14 @@ impl DescribeFlowLogsInput {
 }
 impl DescribeFlowLogsInput {
     /// Creates a new builder-style object to manufacture [`DescribeFlowLogsInput`](crate::operation::describe_flow_logs::DescribeFlowLogsInput).
-    pub fn builder() -> crate::operation::describe_flow_logs::builders::DescribeFlowLogsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_flow_logs::builders::DescribeFlowLogsInputBuilder {
         crate::operation::describe_flow_logs::builders::DescribeFlowLogsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFlowLogsInput`](crate::operation::describe_flow_logs::DescribeFlowLogsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFlowLogsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -154,10 +151,7 @@ impl DescribeFlowLogsInputBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filter = input;
         self
     }
@@ -195,18 +189,13 @@ impl DescribeFlowLogsInputBuilder {
     }
     /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    pub fn set_flow_log_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_flow_log_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.flow_log_ids = input;
         self
     }
     /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    pub fn get_flow_log_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_flow_log_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.flow_log_ids
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -240,18 +229,13 @@ impl DescribeFlowLogsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFlowLogsInput`](crate::operation::describe_flow_logs::DescribeFlowLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_flow_logs::DescribeFlowLogsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_flow_logs::DescribeFlowLogsInput {
-                dry_run: self.dry_run,
-                filter: self.filter,
-                flow_log_ids: self.flow_log_ids,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_flow_logs::DescribeFlowLogsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_flow_logs::DescribeFlowLogsInput {
+            dry_run: self.dry_run,
+            filter: self.filter,
+            flow_log_ids: self.flow_log_ids,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

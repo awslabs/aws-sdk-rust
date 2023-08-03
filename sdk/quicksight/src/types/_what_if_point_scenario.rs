@@ -30,9 +30,7 @@ impl WhatIfPointScenario {
 
 /// A builder for [`WhatIfPointScenario`](crate::types::WhatIfPointScenario).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WhatIfPointScenarioBuilder {
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) value: ::std::option::Option<f64>,

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`code(impl ::std::convert::Into<String>)`](crate::operation::verify_user_attribute::builders::VerifyUserAttributeFluentBuilder::code) / [`set_code(Option<String>)`](crate::operation::verify_user_attribute::builders::VerifyUserAttributeFluentBuilder::set_code): <p>The verification code in the request to verify user attributes.</p>
     /// - On success, responds with [`VerifyUserAttributeOutput`](crate::operation::verify_user_attribute::VerifyUserAttributeOutput)
     /// - On failure, responds with [`SdkError<VerifyUserAttributeError>`](crate::operation::verify_user_attribute::VerifyUserAttributeError)
-    pub fn verify_user_attribute(
-        &self,
-    ) -> crate::operation::verify_user_attribute::builders::VerifyUserAttributeFluentBuilder {
-        crate::operation::verify_user_attribute::builders::VerifyUserAttributeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn verify_user_attribute(&self) -> crate::operation::verify_user_attribute::builders::VerifyUserAttributeFluentBuilder {
+        crate::operation::verify_user_attribute::builders::VerifyUserAttributeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl CreatePartitionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_partition::CreatePartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_partition::CreatePartitionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_partition::CreatePartitionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_partition();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreatePartitionFluentBuilder {
         }
     }
     /// Access the CreatePartition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_partition::builders::CreatePartitionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_partition::builders::CreatePartitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreatePartitionFluentBuilder {
             crate::operation::create_partition::CreatePartition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_partition::CreatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_partition::CreatePartitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreatePartitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreatePartitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_partition::CreatePartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_partition::CreatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_partition::CreatePartitionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreatePartitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_partition::CreatePartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_partition::CreatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_partition::CreatePartitionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreatePartitionFluentBuilder {
             crate::operation::create_partition::CreatePartition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_partition::CreatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_partition::CreatePartitionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl CreatePartitionFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -176,10 +154,7 @@ impl CreatePartitionFluentBuilder {
         self
     }
     /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
-    pub fn set_partition_input(
-        mut self,
-        input: ::std::option::Option<crate::types::PartitionInput>,
-    ) -> Self {
+    pub fn set_partition_input(mut self, input: ::std::option::Option<crate::types::PartitionInput>) -> Self {
         self.inner = self.inner.set_partition_input(input);
         self
     }

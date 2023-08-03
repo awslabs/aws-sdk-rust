@@ -28,9 +28,7 @@ impl CreateAttendeeOutput {
 
 /// A builder for [`CreateAttendeeOutput`](crate::operation::create_attendee::CreateAttendeeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAttendeeOutputBuilder {
     pub(crate) attendee: ::std::option::Option<crate::types::Attendee>,
     _request_id: Option<String>,

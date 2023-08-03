@@ -30,9 +30,7 @@ impl S3Encryption {
 
 /// A builder for [`S3Encryption`](crate::types::S3Encryption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3EncryptionBuilder {
     pub(crate) s3_encryption_mode: ::std::option::Option<crate::types::S3EncryptionMode>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl S3EncryptionBuilder {
         self
     }
     /// <p>The encryption mode to use for Amazon S3 data.</p>
-    pub fn set_s3_encryption_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::S3EncryptionMode>,
-    ) -> Self {
+    pub fn set_s3_encryption_mode(mut self, input: ::std::option::Option<crate::types::S3EncryptionMode>) -> Self {
         self.s3_encryption_mode = input;
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDirectoryOutput`](crate::operation::delete_directory::DeleteDirectoryOutput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::operation::delete_directory::DeleteDirectoryOutput::directory_id): <p>The directory identifier.</p>
     /// - On failure, responds with [`SdkError<DeleteDirectoryError>`](crate::operation::delete_directory::DeleteDirectoryError)
-    pub fn delete_directory(
-        &self,
-    ) -> crate::operation::delete_directory::builders::DeleteDirectoryFluentBuilder {
-        crate::operation::delete_directory::builders::DeleteDirectoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_directory(&self) -> crate::operation::delete_directory::builders::DeleteDirectoryFluentBuilder {
+        crate::operation::delete_directory::builders::DeleteDirectoryFluentBuilder::new(self.handle.clone())
     }
 }

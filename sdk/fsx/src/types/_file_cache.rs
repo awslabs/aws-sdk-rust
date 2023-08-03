@@ -58,8 +58,7 @@ pub struct FileCache {
     pub lustre_configuration: ::std::option::Option<crate::types::FileCacheLustreConfiguration>,
     /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
     #[doc(hidden)]
-    pub data_repository_association_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub data_repository_association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FileCache {
     /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
@@ -126,15 +125,11 @@ impl FileCache {
         self.resource_arn.as_deref()
     }
     /// <p>The configuration for the Amazon File Cache resource.</p>
-    pub fn lustre_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FileCacheLustreConfiguration> {
+    pub fn lustre_configuration(&self) -> ::std::option::Option<&crate::types::FileCacheLustreConfiguration> {
         self.lustre_configuration.as_ref()
     }
     /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
-    pub fn data_repository_association_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn data_repository_association_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.data_repository_association_ids.as_deref()
     }
 }
@@ -147,9 +142,7 @@ impl FileCache {
 
 /// A builder for [`FileCache`](crate::types::FileCache).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileCacheBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -165,10 +158,8 @@ pub struct FileCacheBuilder {
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) lustre_configuration:
-        ::std::option::Option<crate::types::FileCacheLustreConfiguration>,
-    pub(crate) data_repository_association_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) lustre_configuration: ::std::option::Option<crate::types::FileCacheLustreConfiguration>,
+    pub(crate) data_repository_association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FileCacheBuilder {
     /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
@@ -191,10 +182,7 @@ impl FileCacheBuilder {
         self
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -203,18 +191,12 @@ impl FileCacheBuilder {
         &self.creation_time
     }
     /// <p>The system-generated, unique ID of the cache.</p>
-    pub fn file_cache_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_cache_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_cache_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated, unique ID of the cache.</p>
-    pub fn set_file_cache_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_cache_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_cache_id = input;
         self
     }
@@ -228,10 +210,7 @@ impl FileCacheBuilder {
         self
     }
     /// <p>The type of cache, which must be <code>LUSTRE</code>.</p>
-    pub fn set_file_cache_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FileCacheType>,
-    ) -> Self {
+    pub fn set_file_cache_type(mut self, input: ::std::option::Option<crate::types::FileCacheType>) -> Self {
         self.file_cache_type = input;
         self
     }
@@ -240,18 +219,12 @@ impl FileCacheBuilder {
         &self.file_cache_type
     }
     /// <p>The Lustre version of the cache, which must be <code>2.12</code>.</p>
-    pub fn file_cache_type_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_cache_type_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_cache_type_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Lustre version of the cache, which must be <code>2.12</code>.</p>
-    pub fn set_file_cache_type_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_cache_type_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_cache_type_version = input;
         self
     }
@@ -279,10 +252,7 @@ impl FileCacheBuilder {
     /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
     /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
     /// </ul>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::FileCacheLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::FileCacheLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
@@ -303,17 +273,12 @@ impl FileCacheBuilder {
         self
     }
     /// <p>A structure providing details of any failures that occurred.</p>
-    pub fn set_failure_details(
-        mut self,
-        input: ::std::option::Option<crate::types::FileCacheFailureDetails>,
-    ) -> Self {
+    pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::FileCacheFailureDetails>) -> Self {
         self.failure_details = input;
         self
     }
     /// <p>A structure providing details of any failures that occurred.</p>
-    pub fn get_failure_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::FileCacheFailureDetails> {
+    pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::FileCacheFailureDetails> {
         &self.failure_details
     }
     /// <p>The storage capacity of the cache in gibibytes (GiB).</p>
@@ -356,10 +321,7 @@ impl FileCacheBuilder {
         self
     }
     /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -372,27 +334,19 @@ impl FileCacheBuilder {
     /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
     ///
     /// <p>A list of network interface IDs.</p>
-    pub fn network_interface_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_interface_ids.unwrap_or_default();
         v.push(input.into());
         self.network_interface_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of network interface IDs.</p>
-    pub fn set_network_interface_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_interface_ids = input;
         self
     }
     /// <p>A list of network interface IDs.</p>
-    pub fn get_network_interface_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_interface_ids
     }
     /// <p>The Domain Name System (DNS) name for the cache.</p>
@@ -438,25 +392,17 @@ impl FileCacheBuilder {
         &self.resource_arn
     }
     /// <p>The configuration for the Amazon File Cache resource.</p>
-    pub fn lustre_configuration(
-        mut self,
-        input: crate::types::FileCacheLustreConfiguration,
-    ) -> Self {
+    pub fn lustre_configuration(mut self, input: crate::types::FileCacheLustreConfiguration) -> Self {
         self.lustre_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the Amazon File Cache resource.</p>
-    pub fn set_lustre_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FileCacheLustreConfiguration>,
-    ) -> Self {
+    pub fn set_lustre_configuration(mut self, input: ::std::option::Option<crate::types::FileCacheLustreConfiguration>) -> Self {
         self.lustre_configuration = input;
         self
     }
     /// <p>The configuration for the Amazon File Cache resource.</p>
-    pub fn get_lustre_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FileCacheLustreConfiguration> {
+    pub fn get_lustre_configuration(&self) -> &::std::option::Option<crate::types::FileCacheLustreConfiguration> {
         &self.lustre_configuration
     }
     /// Appends an item to `data_repository_association_ids`.
@@ -464,27 +410,19 @@ impl FileCacheBuilder {
     /// To override the contents of this collection use [`set_data_repository_association_ids`](Self::set_data_repository_association_ids).
     ///
     /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
-    pub fn data_repository_association_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_repository_association_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_repository_association_ids.unwrap_or_default();
         v.push(input.into());
         self.data_repository_association_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
-    pub fn set_data_repository_association_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_data_repository_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.data_repository_association_ids = input;
         self
     }
     /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
-    pub fn get_data_repository_association_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_repository_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.data_repository_association_ids
     }
     /// Consumes the builder and constructs a [`FileCache`](crate::types::FileCache).

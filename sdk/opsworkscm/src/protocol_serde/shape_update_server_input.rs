@@ -16,9 +16,7 @@ pub fn ser_update_server_input(
         object.key("ServerName").string(var_3.as_str());
     }
     if let Some(var_4) = &input.preferred_maintenance_window {
-        object
-            .key("PreferredMaintenanceWindow")
-            .string(var_4.as_str());
+        object.key("PreferredMaintenanceWindow").string(var_4.as_str());
     }
     if let Some(var_5) = &input.preferred_backup_window {
         object.key("PreferredBackupWindow").string(var_5.as_str());

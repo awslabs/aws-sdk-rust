@@ -15,16 +15,16 @@ impl DescribeDraftAppVersionResourcesImportStatusInput {
 }
 impl DescribeDraftAppVersionResourcesImportStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeDraftAppVersionResourcesImportStatusInput`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusInput).
-    pub fn builder() -> crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusInputBuilder
+    {
         crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDraftAppVersionResourcesImportStatusInput`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDraftAppVersionResourcesImportStatusInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +44,16 @@ impl DescribeDraftAppVersionResourcesImportStatusInputBuilder {
         &self.app_arn
     }
     /// Consumes the builder and constructs a [`DescribeDraftAppVersionResourcesImportStatusInput`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusInput {
-                app_arn: self.app_arn
-                ,
-            }
+                app_arn: self.app_arn,
+            },
         )
     }
 }

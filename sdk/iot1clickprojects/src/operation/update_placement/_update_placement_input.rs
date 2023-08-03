@@ -11,9 +11,7 @@ pub struct UpdatePlacementInput {
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdatePlacementInput {
     /// <p>The name of the placement to update.</p>
@@ -25,11 +23,7 @@ impl UpdatePlacementInput {
         self.project_name.as_deref()
     }
     /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -42,30 +36,20 @@ impl UpdatePlacementInput {
 
 /// A builder for [`UpdatePlacementInput`](crate::operation::update_placement::UpdatePlacementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePlacementInputBuilder {
     pub(crate) placement_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdatePlacementInputBuilder {
     /// <p>The name of the placement to update.</p>
-    pub fn placement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the placement to update.</p>
-    pub fn set_placement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.placement_name = input;
         self
     }
@@ -92,41 +76,25 @@ impl UpdatePlacementInputBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`UpdatePlacementInput`](crate::operation::update_placement::UpdatePlacementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_placement::UpdatePlacementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_placement::UpdatePlacementInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_placement::UpdatePlacementInput {
             placement_name: self.placement_name,
             project_name: self.project_name,

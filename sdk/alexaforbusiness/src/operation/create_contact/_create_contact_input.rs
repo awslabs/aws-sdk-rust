@@ -165,17 +165,12 @@ impl CreateContactInputBuilder {
         self
     }
     /// <p>The list of phone numbers for the contact.</p>
-    pub fn set_phone_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
-    ) -> Self {
+    pub fn set_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>) -> Self {
         self.phone_numbers = input;
         self
     }
     /// <p>The list of phone numbers for the contact.</p>
-    pub fn get_phone_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
+    pub fn get_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
         &self.phone_numbers
     }
     /// Appends an item to `sip_addresses`.
@@ -190,32 +185,21 @@ impl CreateContactInputBuilder {
         self
     }
     /// <p>The list of SIP addresses for the contact.</p>
-    pub fn set_sip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SipAddress>>,
-    ) -> Self {
+    pub fn set_sip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipAddress>>) -> Self {
         self.sip_addresses = input;
         self
     }
     /// <p>The list of SIP addresses for the contact.</p>
-    pub fn get_sip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipAddress>> {
+    pub fn get_sip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipAddress>> {
         &self.sip_addresses
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -235,10 +219,7 @@ impl CreateContactInputBuilder {
         self
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -249,10 +230,7 @@ impl CreateContactInputBuilder {
     /// Consumes the builder and constructs a [`CreateContactInput`](crate::operation::create_contact::CreateContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_contact::CreateContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_contact::CreateContactInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_contact::CreateContactInput {
             display_name: self.display_name,
             first_name: self.first_name,

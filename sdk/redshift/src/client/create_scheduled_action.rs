@@ -22,12 +22,7 @@ impl super::Client {
     ///   - [`start_time(Option<DateTime>)`](crate::operation::create_scheduled_action::CreateScheduledActionOutput::start_time): <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
     ///   - [`end_time(Option<DateTime>)`](crate::operation::create_scheduled_action::CreateScheduledActionOutput::end_time): <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
     /// - On failure, responds with [`SdkError<CreateScheduledActionError>`](crate::operation::create_scheduled_action::CreateScheduledActionError)
-    pub fn create_scheduled_action(
-        &self,
-    ) -> crate::operation::create_scheduled_action::builders::CreateScheduledActionFluentBuilder
-    {
-        crate::operation::create_scheduled_action::builders::CreateScheduledActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_scheduled_action(&self) -> crate::operation::create_scheduled_action::builders::CreateScheduledActionFluentBuilder {
+        crate::operation::create_scheduled_action::builders::CreateScheduledActionFluentBuilder::new(self.handle.clone())
     }
 }

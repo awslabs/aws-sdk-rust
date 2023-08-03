@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SupportDataSetType {
     #[allow(missing_docs)] // documentation missing in model
@@ -58,12 +52,8 @@ impl ::std::convert::From<&str> for SupportDataSetType {
     fn from(s: &str) -> Self {
         match s {
             "customer_support_contacts_data" => SupportDataSetType::CustomerSupportContactsData,
-            "test_customer_support_contacts_data" => {
-                SupportDataSetType::TestCustomerSupportContactsData
-            }
-            other => SupportDataSetType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "test_customer_support_contacts_data" => SupportDataSetType::TestCustomerSupportContactsData,
+            other => SupportDataSetType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -79,18 +69,13 @@ impl SupportDataSetType {
     pub fn as_str(&self) -> &str {
         match self {
             SupportDataSetType::CustomerSupportContactsData => "customer_support_contacts_data",
-            SupportDataSetType::TestCustomerSupportContactsData => {
-                "test_customer_support_contacts_data"
-            }
+            SupportDataSetType::TestCustomerSupportContactsData => "test_customer_support_contacts_data",
             SupportDataSetType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "customer_support_contacts_data",
-            "test_customer_support_contacts_data",
-        ]
+        &["customer_support_contacts_data", "test_customer_support_contacts_data"]
     }
 }
 impl ::std::convert::AsRef<str> for SupportDataSetType {

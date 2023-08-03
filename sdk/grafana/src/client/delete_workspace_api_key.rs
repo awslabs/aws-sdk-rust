@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`key_name(Option<String>)`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput::key_name): <p>The name of the key that was deleted.</p>
     ///   - [`workspace_id(Option<String>)`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput::workspace_id): <p>The ID of the workspace where the key was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteWorkspaceApiKeyError>`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyError)
-    pub fn delete_workspace_api_key(
-        &self,
-    ) -> crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyFluentBuilder
-    {
+    pub fn delete_workspace_api_key(&self) -> crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyFluentBuilder {
         crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyFluentBuilder::new(self.handle.clone())
     }
 }

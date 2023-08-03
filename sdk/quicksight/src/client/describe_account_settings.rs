@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::describe_account_settings::DescribeAccountSettingsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_account_settings::DescribeAccountSettingsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountSettingsError>`](crate::operation::describe_account_settings::DescribeAccountSettingsError)
-    pub fn describe_account_settings(
-        &self,
-    ) -> crate::operation::describe_account_settings::builders::DescribeAccountSettingsFluentBuilder
-    {
+    pub fn describe_account_settings(&self) -> crate::operation::describe_account_settings::builders::DescribeAccountSettingsFluentBuilder {
         crate::operation::describe_account_settings::builders::DescribeAccountSettingsFluentBuilder::new(self.handle.clone())
     }
 }

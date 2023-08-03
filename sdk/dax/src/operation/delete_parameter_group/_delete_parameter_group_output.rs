@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for DeleteParameterGroupOutput {
 }
 impl DeleteParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteParameterGroupOutput`](crate::operation::delete_parameter_group::DeleteParameterGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_parameter_group::builders::DeleteParameterGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_parameter_group::builders::DeleteParameterGroupOutputBuilder {
         crate::operation::delete_parameter_group::builders::DeleteParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteParameterGroupOutput`](crate::operation::delete_parameter_group::DeleteParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteParameterGroupOutputBuilder {
     pub(crate) deletion_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteParameterGroupOutputBuilder {
     /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
-    pub fn deletion_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deletion_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deletion_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
-    pub fn set_deletion_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deletion_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deletion_message = input;
         self
     }

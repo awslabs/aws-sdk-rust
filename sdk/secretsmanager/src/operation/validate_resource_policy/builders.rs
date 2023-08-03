@@ -45,10 +45,7 @@ impl ValidateResourcePolicyFluentBuilder {
         }
     }
     /// Access the ValidateResourcePolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::validate_resource_policy::builders::ValidateResourcePolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::validate_resource_policy::builders::ValidateResourcePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +57,7 @@ impl ValidateResourcePolicyFluentBuilder {
             crate::operation::validate_resource_policy::ValidateResourcePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_resource_policy::ValidateResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_resource_policy::ValidateResourcePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +67,7 @@ impl ValidateResourcePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +76,7 @@ impl ValidateResourcePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_resource_policy::ValidateResourcePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_resource_policy::ValidateResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_resource_policy::ValidateResourcePolicyError>,
     > {
         let op = self
             .inner
@@ -109,9 +99,7 @@ impl ValidateResourcePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_resource_policy::ValidateResourcePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_resource_policy::ValidateResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_resource_policy::ValidateResourcePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +113,7 @@ impl ValidateResourcePolicyFluentBuilder {
             crate::operation::validate_resource_policy::ValidateResourcePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_resource_policy::ValidateResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_resource_policy::ValidateResourcePolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -146,18 +132,12 @@ impl ValidateResourcePolicyFluentBuilder {
         self.inner.get_secret_id()
     }
     /// <p>A JSON-formatted string that contains an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
-    pub fn resource_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_policy(input.into());
         self
     }
     /// <p>A JSON-formatted string that contains an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
-    pub fn set_resource_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_policy(input);
         self
     }

@@ -14,9 +14,7 @@ impl super::Client {
     #[deprecated(
         note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     )]
-    pub fn create_fleet(
-        &self,
-    ) -> crate::operation::create_fleet::builders::CreateFleetFluentBuilder {
+    pub fn create_fleet(&self) -> crate::operation::create_fleet::builders::CreateFleetFluentBuilder {
         crate::operation::create_fleet::builders::CreateFleetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -65,9 +65,7 @@ impl ListedAgreement {
 
 /// A builder for [`ListedAgreement`](crate::types::ListedAgreement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListedAgreementBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) agreement_id: ::std::option::Option<::std::string::String>,
@@ -126,10 +124,7 @@ impl ListedAgreementBuilder {
         self
     }
     /// <p>The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AgreementStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -152,18 +147,12 @@ impl ListedAgreementBuilder {
         &self.server_id
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
-    pub fn local_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
-    pub fn set_local_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_profile_id = input;
         self
     }
@@ -172,18 +161,12 @@ impl ListedAgreementBuilder {
         &self.local_profile_id
     }
     /// <p>A unique identifier for the partner profile.</p>
-    pub fn partner_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partner_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the partner profile.</p>
-    pub fn set_partner_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partner_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partner_profile_id = input;
         self
     }

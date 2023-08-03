@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMissionProfileOutput`](crate::operation::create_mission_profile::CreateMissionProfileOutput) with field(s):
     ///   - [`mission_profile_id(Option<String>)`](crate::operation::create_mission_profile::CreateMissionProfileOutput::mission_profile_id): <p>UUID of a mission profile.</p>
     /// - On failure, responds with [`SdkError<CreateMissionProfileError>`](crate::operation::create_mission_profile::CreateMissionProfileError)
-    pub fn create_mission_profile(
-        &self,
-    ) -> crate::operation::create_mission_profile::builders::CreateMissionProfileFluentBuilder {
-        crate::operation::create_mission_profile::builders::CreateMissionProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_mission_profile(&self) -> crate::operation::create_mission_profile::builders::CreateMissionProfileFluentBuilder {
+        crate::operation::create_mission_profile::builders::CreateMissionProfileFluentBuilder::new(self.handle.clone())
     }
 }

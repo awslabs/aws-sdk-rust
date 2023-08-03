@@ -5,16 +5,16 @@ pub use crate::operation::disassociate_instance_storage_config::_disassociate_in
 
 impl DisassociateInstanceStorageConfigInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.disassociate_instance_storage_config();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl DisassociateInstanceStorageConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateInstanceStorageConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_instance_storage_config::builders::DisassociateInstanceStorageConfigInputBuilder,
+    inner: crate::operation::disassociate_instance_storage_config::builders::DisassociateInstanceStorageConfigInputBuilder,
 }
 impl DisassociateInstanceStorageConfigFluentBuilder {
     /// Creates a new `DisassociateInstanceStorageConfig`.
@@ -38,15 +38,20 @@ impl DisassociateInstanceStorageConfigFluentBuilder {
         }
     }
     /// Access the DisassociateInstanceStorageConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_instance_storage_config::builders::DisassociateInstanceStorageConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_instance_storage_config::builders::DisassociateInstanceStorageConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfig,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl DisassociateInstanceStorageConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl DisassociateInstanceStorageConfigFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfig,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -110,18 +125,12 @@ impl DisassociateInstanceStorageConfigFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }
@@ -135,17 +144,12 @@ impl DisassociateInstanceStorageConfigFluentBuilder {
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStorageResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::InstanceStorageResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
         self.inner.get_resource_type()
     }
 }

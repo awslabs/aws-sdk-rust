@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateBandwidthRateLimitOutput {
 }
 impl UpdateBandwidthRateLimitOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBandwidthRateLimitOutput`](crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput).
-    pub fn builder() -> crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitOutputBuilder{
+    pub fn builder() -> crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitOutputBuilder {
         crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBandwidthRateLimitOutput`](crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBandwidthRateLimitOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -61,9 +59,7 @@ impl UpdateBandwidthRateLimitOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateBandwidthRateLimitOutput`](crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput {
+    pub fn build(self) -> crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput {
         crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput {
             gateway_arn: self.gateway_arn,
             _request_id: self._request_id,

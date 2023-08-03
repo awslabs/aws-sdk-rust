@@ -16,9 +16,7 @@ pub fn ser_copy_product_input(
         object.key("TargetProductName").string(var_4.as_str());
     }
     if let Some(var_5) = &input.source_provisioning_artifact_identifiers {
-        let mut array_6 = object
-            .key("SourceProvisioningArtifactIdentifiers")
-            .start_array();
+        let mut array_6 = object.key("SourceProvisioningArtifactIdentifiers").start_array();
         for item_7 in var_5 {
             {
                 #[allow(unused_mut)]

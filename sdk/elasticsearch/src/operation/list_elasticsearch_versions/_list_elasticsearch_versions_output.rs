@@ -29,19 +29,16 @@ impl ::aws_http::request_id::RequestId for ListElasticsearchVersionsOutput {
 }
 impl ListElasticsearchVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListElasticsearchVersionsOutput`](crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsOutput).
-    pub fn builder() -> crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsOutputBuilder {
         crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListElasticsearchVersionsOutput`](crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListElasticsearchVersionsOutputBuilder {
-    pub(crate) elasticsearch_versions:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) elasticsearch_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,27 +48,19 @@ impl ListElasticsearchVersionsOutputBuilder {
     /// To override the contents of this collection use [`set_elasticsearch_versions`](Self::set_elasticsearch_versions).
     ///
     /// <p>List of supported elastic search versions. </p>
-    pub fn elasticsearch_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn elasticsearch_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.elasticsearch_versions.unwrap_or_default();
         v.push(input.into());
         self.elasticsearch_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of supported elastic search versions. </p>
-    pub fn set_elasticsearch_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_elasticsearch_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.elasticsearch_versions = input;
         self
     }
     /// <p>List of supported elastic search versions. </p>
-    pub fn get_elasticsearch_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_elasticsearch_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.elasticsearch_versions
     }
     /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
@@ -98,9 +87,7 @@ impl ListElasticsearchVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListElasticsearchVersionsOutput`](crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsOutput {
+    pub fn build(self) -> crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsOutput {
         crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsOutput {
             elasticsearch_versions: self.elasticsearch_versions,
             next_token: self.next_token,

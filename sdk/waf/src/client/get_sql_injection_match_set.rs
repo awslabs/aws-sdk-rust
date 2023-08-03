@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSqlInjectionMatchSetOutput`](crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetOutput) with field(s):
     ///   - [`sql_injection_match_set(Option<SqlInjectionMatchSet>)`](crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetOutput::sql_injection_match_set): <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p>  <ul>   <li> <p> <code>SqlInjectionMatchSet</code>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of <code>SqlInjectionMatchTuple</code> objects</p> </li>   <li> <p> <code>SqlInjectionMatchTuple</code>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetSqlInjectionMatchSetError>`](crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetError)
-    pub fn get_sql_injection_match_set(
-        &self,
-    ) -> crate::operation::get_sql_injection_match_set::builders::GetSqlInjectionMatchSetFluentBuilder
-    {
+    pub fn get_sql_injection_match_set(&self) -> crate::operation::get_sql_injection_match_set::builders::GetSqlInjectionMatchSetFluentBuilder {
         crate::operation::get_sql_injection_match_set::builders::GetSqlInjectionMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

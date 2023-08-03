@@ -10,10 +10,7 @@ impl ResizeClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::resize_cluster::ResizeClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resize_cluster::ResizeClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resize_cluster::ResizeClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.resize_cluster();
         fluent_builder.inner = self;
@@ -53,9 +50,7 @@ impl ResizeClusterFluentBuilder {
         }
     }
     /// Access the ResizeCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::resize_cluster::builders::ResizeClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::resize_cluster::builders::ResizeClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -77,10 +72,7 @@ impl ResizeClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -131,18 +123,12 @@ impl ResizeClusterFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the cluster to resize.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The unique identifier for the cluster to resize.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -207,18 +193,12 @@ impl ResizeClusterFluentBuilder {
         self.inner.get_classic()
     }
     /// <p>The identifier of the reserved node.</p>
-    pub fn reserved_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_node_id(input.into());
         self
     }
     /// <p>The identifier of the reserved node.</p>
-    pub fn set_reserved_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_node_id(input);
         self
     }
@@ -227,25 +207,17 @@ impl ResizeClusterFluentBuilder {
         self.inner.get_reserved_node_id()
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn target_reserved_node_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_reserved_node_offering_id(input.into());
         self
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn set_target_reserved_node_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_reserved_node_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_reserved_node_offering_id(input);
         self
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn get_target_reserved_node_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_reserved_node_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_reserved_node_offering_id()
     }
 }

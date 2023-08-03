@@ -17,17 +17,14 @@ impl AcceptInvitationInput {
 }
 impl AcceptInvitationInput {
     /// Creates a new builder-style object to manufacture [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
-    pub fn builder() -> crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder
-    {
+    pub fn builder() -> crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder {
         crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptInvitationInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,12 +49,7 @@ impl AcceptInvitationInputBuilder {
     /// Consumes the builder and constructs a [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_invitation::AcceptInvitationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::accept_invitation::AcceptInvitationInput {
-            graph_arn: self.graph_arn,
-        })
+    ) -> ::std::result::Result<crate::operation::accept_invitation::AcceptInvitationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::accept_invitation::AcceptInvitationInput { graph_arn: self.graph_arn })
     }
 }

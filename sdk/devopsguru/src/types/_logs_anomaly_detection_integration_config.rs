@@ -23,9 +23,7 @@ impl LogsAnomalyDetectionIntegrationConfig {
 
 /// A builder for [`LogsAnomalyDetectionIntegrationConfig`](crate::types::LogsAnomalyDetectionIntegrationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogsAnomalyDetectionIntegrationConfigBuilder {
     pub(crate) opt_in_status: ::std::option::Option<crate::types::OptInStatus>,
 }
@@ -36,10 +34,7 @@ impl LogsAnomalyDetectionIntegrationConfigBuilder {
         self
     }
     /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
-    pub fn set_opt_in_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OptInStatus>,
-    ) -> Self {
+    pub fn set_opt_in_status(mut self, input: ::std::option::Option<crate::types::OptInStatus>) -> Self {
         self.opt_in_status = input;
         self
     }

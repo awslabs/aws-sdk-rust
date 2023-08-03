@@ -17,10 +17,7 @@ impl super::Client {
     ///   - [`unprocessed_end_times(Option<HashMap<String, Vec<TimestampStructure>>>)`](crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataOutput::unprocessed_end_times): <p>List of instances which remained unprocessed. This will create a missing time step in the list of end times.</p>
     ///   - [`frame_metric_data(Option<Vec<FrameMetricDatum>>)`](crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataOutput::frame_metric_data): <p>Details of the metrics to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
     /// - On failure, responds with [`SdkError<BatchGetFrameMetricDataError>`](crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataError)
-    pub fn batch_get_frame_metric_data(
-        &self,
-    ) -> crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataFluentBuilder
-    {
+    pub fn batch_get_frame_metric_data(&self) -> crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataFluentBuilder {
         crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl FileCacheFailureDetails {
 
 /// A builder for [`FileCacheFailureDetails`](crate::types::FileCacheFailureDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileCacheFailureDetailsBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl FileCacheFailureDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`FileCacheFailureDetails`](crate::types::FileCacheFailureDetails).
     pub fn build(self) -> crate::types::FileCacheFailureDetails {
-        crate::types::FileCacheFailureDetails {
-            message: self.message,
-        }
+        crate::types::FileCacheFailureDetails { message: self.message }
     }
 }

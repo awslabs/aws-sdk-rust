@@ -79,9 +79,7 @@ impl LambdaDetails {
 
 /// A builder for [`LambdaDetails`](crate::types::LambdaDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaDetailsBuilder {
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
@@ -109,18 +107,12 @@ impl LambdaDetailsBuilder {
         &self.function_arn
     }
     /// <p>Name of the Lambda function.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the Lambda function.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -148,10 +140,7 @@ impl LambdaDetailsBuilder {
         self
     }
     /// <p>The timestamp when the Lambda function was last modified. This field is in the UTC date string format <code>(2023-03-22T19:37:20.168Z)</code>.</p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_at = input;
         self
     }
@@ -174,18 +163,12 @@ impl LambdaDetailsBuilder {
         &self.revision_id
     }
     /// <p>The version of the Lambda function.</p>
-    pub fn function_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the Lambda function.</p>
-    pub fn set_function_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_version = input;
         self
     }
@@ -233,10 +216,7 @@ impl LambdaDetailsBuilder {
         self
     }
     /// <p>A list of tags attached to this resource, listed in the format of <code>key</code>:<code>value</code> pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

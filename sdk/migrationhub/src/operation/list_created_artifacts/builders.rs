@@ -42,9 +42,7 @@ impl ListCreatedArtifactsFluentBuilder {
         }
     }
     /// Access the ListCreatedArtifacts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_created_artifacts::builders::ListCreatedArtifactsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_created_artifacts::builders::ListCreatedArtifactsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl ListCreatedArtifactsFluentBuilder {
             crate::operation::list_created_artifacts::ListCreatedArtifacts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_created_artifacts::ListCreatedArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_created_artifacts::ListCreatedArtifactsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl ListCreatedArtifactsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl ListCreatedArtifactsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_created_artifacts::ListCreatedArtifactsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_created_artifacts::ListCreatedArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_created_artifacts::ListCreatedArtifactsError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl ListCreatedArtifactsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_created_artifacts::ListCreatedArtifactsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_created_artifacts::ListCreatedArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_created_artifacts::ListCreatedArtifactsError>,
     > {
         self.send_middleware().await
     }
@@ -121,36 +110,23 @@ impl ListCreatedArtifactsFluentBuilder {
             crate::operation::list_created_artifacts::ListCreatedArtifacts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_created_artifacts::ListCreatedArtifactsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_created_artifacts::ListCreatedArtifactsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_created_artifacts::paginator::ListCreatedArtifactsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_created_artifacts::paginator::ListCreatedArtifactsPaginator {
-        crate::operation::list_created_artifacts::paginator::ListCreatedArtifactsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_created_artifacts::paginator::ListCreatedArtifactsPaginator {
+        crate::operation::list_created_artifacts::paginator::ListCreatedArtifactsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.progress_update_stream(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_progress_update_stream(input);
         self
     }
@@ -159,18 +135,12 @@ impl ListCreatedArtifactsFluentBuilder {
         self.inner.get_progress_update_stream()
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.migration_task_name(input.into());
         self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_migration_task_name(input);
         self
     }

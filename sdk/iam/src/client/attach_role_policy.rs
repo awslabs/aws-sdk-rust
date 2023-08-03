@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy_arn(impl ::std::convert::Into<String>)`](crate::operation::attach_role_policy::builders::AttachRolePolicyFluentBuilder::policy_arn) / [`set_policy_arn(Option<String>)`](crate::operation::attach_role_policy::builders::AttachRolePolicyFluentBuilder::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// - On success, responds with [`AttachRolePolicyOutput`](crate::operation::attach_role_policy::AttachRolePolicyOutput)
     /// - On failure, responds with [`SdkError<AttachRolePolicyError>`](crate::operation::attach_role_policy::AttachRolePolicyError)
-    pub fn attach_role_policy(
-        &self,
-    ) -> crate::operation::attach_role_policy::builders::AttachRolePolicyFluentBuilder {
-        crate::operation::attach_role_policy::builders::AttachRolePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_role_policy(&self) -> crate::operation::attach_role_policy::builders::AttachRolePolicyFluentBuilder {
+        crate::operation::attach_role_policy::builders::AttachRolePolicyFluentBuilder::new(self.handle.clone())
     }
 }

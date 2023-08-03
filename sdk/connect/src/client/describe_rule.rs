@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeRuleOutput`](crate::operation::describe_rule::DescribeRuleOutput) with field(s):
     ///   - [`rule(Option<Rule>)`](crate::operation::describe_rule::DescribeRuleOutput::rule): <p>Information about the rule.</p>
     /// - On failure, responds with [`SdkError<DescribeRuleError>`](crate::operation::describe_rule::DescribeRuleError)
-    pub fn describe_rule(
-        &self,
-    ) -> crate::operation::describe_rule::builders::DescribeRuleFluentBuilder {
-        crate::operation::describe_rule::builders::DescribeRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_rule(&self) -> crate::operation::describe_rule::builders::DescribeRuleFluentBuilder {
+        crate::operation::describe_rule::builders::DescribeRuleFluentBuilder::new(self.handle.clone())
     }
 }

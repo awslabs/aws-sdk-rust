@@ -22,9 +22,7 @@ impl DeleteRunInput {
 
 /// A builder for [`DeleteRunInput`](crate::operation::delete_run::DeleteRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRunInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl DeleteRunInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteRunInput`](crate::operation::delete_run::DeleteRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_run::DeleteRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_run::DeleteRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_run::DeleteRunInput { id: self.id })
     }
 }

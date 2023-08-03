@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`session(Option<Session>)`](crate::operation::execute_command::ExecuteCommandOutput::session): <p>The details of the SSM session that was created for this instance of execute-command.</p>
     ///   - [`task_arn(Option<String>)`](crate::operation::execute_command::ExecuteCommandOutput::task_arn): <p>The Amazon Resource Name (ARN) of the task.</p>
     /// - On failure, responds with [`SdkError<ExecuteCommandError>`](crate::operation::execute_command::ExecuteCommandError)
-    pub fn execute_command(
-        &self,
-    ) -> crate::operation::execute_command::builders::ExecuteCommandFluentBuilder {
-        crate::operation::execute_command::builders::ExecuteCommandFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn execute_command(&self) -> crate::operation::execute_command::builders::ExecuteCommandFluentBuilder {
+        crate::operation::execute_command::builders::ExecuteCommandFluentBuilder::new(self.handle.clone())
     }
 }

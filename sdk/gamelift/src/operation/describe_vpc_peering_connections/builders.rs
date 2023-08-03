@@ -29,7 +29,7 @@ impl DescribeVpcPeeringConnectionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVpcPeeringConnectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder,
+    inner: crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder,
 }
 impl DescribeVpcPeeringConnectionsFluentBuilder {
     /// Creates a new `DescribeVpcPeeringConnections`.
@@ -40,7 +40,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
         }
     }
     /// Access the DescribeVpcPeeringConnections as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
             crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl DescribeVpcPeeringConnectionsFluentBuilder {
             crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError>,
     > {
         self.customize_middleware().await
     }

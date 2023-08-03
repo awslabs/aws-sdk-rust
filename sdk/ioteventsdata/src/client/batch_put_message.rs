@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BatchPutMessageOutput`](crate::operation::batch_put_message::BatchPutMessageOutput) with field(s):
     ///   - [`batch_put_message_error_entries(Option<Vec<BatchPutMessageErrorEntry>>)`](crate::operation::batch_put_message::BatchPutMessageOutput::batch_put_message_error_entries): <p>A list of any errors encountered when sending the messages.</p>
     /// - On failure, responds with [`SdkError<BatchPutMessageError>`](crate::operation::batch_put_message::BatchPutMessageError)
-    pub fn batch_put_message(
-        &self,
-    ) -> crate::operation::batch_put_message::builders::BatchPutMessageFluentBuilder {
-        crate::operation::batch_put_message::builders::BatchPutMessageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_put_message(&self) -> crate::operation::batch_put_message::builders::BatchPutMessageFluentBuilder {
+        crate::operation::batch_put_message::builders::BatchPutMessageFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteCarrierGatewayOutput {
 }
 impl DeleteCarrierGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCarrierGatewayOutput`](crate::operation::delete_carrier_gateway::DeleteCarrierGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayOutputBuilder {
+    pub fn builder() -> crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayOutputBuilder {
         crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCarrierGatewayOutput`](crate::operation::delete_carrier_gateway::DeleteCarrierGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCarrierGatewayOutputBuilder {
     pub(crate) carrier_gateway: ::std::option::Option<crate::types::CarrierGateway>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteCarrierGatewayOutputBuilder {
         self
     }
     /// <p>Information about the carrier gateway.</p>
-    pub fn set_carrier_gateway(
-        mut self,
-        input: ::std::option::Option<crate::types::CarrierGateway>,
-    ) -> Self {
+    pub fn set_carrier_gateway(mut self, input: ::std::option::Option<crate::types::CarrierGateway>) -> Self {
         self.carrier_gateway = input;
         self
     }

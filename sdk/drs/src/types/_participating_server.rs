@@ -37,9 +37,7 @@ impl ParticipatingServer {
 
 /// A builder for [`ParticipatingServer`](crate::types::ParticipatingServer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParticipatingServerBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_instance_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct ParticipatingServerBuilder {
 }
 impl ParticipatingServerBuilder {
     /// <p>The Source Server ID of a participating server.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Source Server ID of a participating server.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -67,18 +59,12 @@ impl ParticipatingServerBuilder {
         &self.source_server_id
     }
     /// <p>The Recovery Instance ID of a participating server.</p>
-    pub fn recovery_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Recovery Instance ID of a participating server.</p>
-    pub fn set_recovery_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_instance_id = input;
         self
     }
@@ -92,10 +78,7 @@ impl ParticipatingServerBuilder {
         self
     }
     /// <p>The launch status of a participating server.</p>
-    pub fn set_launch_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchStatus>,
-    ) -> Self {
+    pub fn set_launch_status(mut self, input: ::std::option::Option<crate::types::LaunchStatus>) -> Self {
         self.launch_status = input;
         self
     }

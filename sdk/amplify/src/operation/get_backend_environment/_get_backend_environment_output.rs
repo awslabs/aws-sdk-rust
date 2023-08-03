@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for GetBackendEnvironmentOutput {
 }
 impl GetBackendEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`GetBackendEnvironmentOutput`](crate::operation::get_backend_environment::GetBackendEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::get_backend_environment::builders::GetBackendEnvironmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_backend_environment::builders::GetBackendEnvironmentOutputBuilder {
         crate::operation::get_backend_environment::builders::GetBackendEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBackendEnvironmentOutput`](crate::operation::get_backend_environment::GetBackendEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBackendEnvironmentOutputBuilder {
     pub(crate) backend_environment: ::std::option::Option<crate::types::BackendEnvironment>,
     _request_id: Option<String>,
@@ -45,17 +41,12 @@ impl GetBackendEnvironmentOutputBuilder {
         self
     }
     /// <p> Describes the backend environment for an Amplify app. </p>
-    pub fn set_backend_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::BackendEnvironment>,
-    ) -> Self {
+    pub fn set_backend_environment(mut self, input: ::std::option::Option<crate::types::BackendEnvironment>) -> Self {
         self.backend_environment = input;
         self
     }
     /// <p> Describes the backend environment for an Amplify app. </p>
-    pub fn get_backend_environment(
-        &self,
-    ) -> &::std::option::Option<crate::types::BackendEnvironment> {
+    pub fn get_backend_environment(&self) -> &::std::option::Option<crate::types::BackendEnvironment> {
         &self.backend_environment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

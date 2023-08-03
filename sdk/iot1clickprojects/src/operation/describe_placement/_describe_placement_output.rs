@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribePlacementOutput {
 }
 impl DescribePlacementOutput {
     /// Creates a new builder-style object to manufacture [`DescribePlacementOutput`](crate::operation::describe_placement::DescribePlacementOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_placement::builders::DescribePlacementOutputBuilder {
+    pub fn builder() -> crate::operation::describe_placement::builders::DescribePlacementOutputBuilder {
         crate::operation::describe_placement::builders::DescribePlacementOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePlacementOutput`](crate::operation::describe_placement::DescribePlacementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePlacementOutputBuilder {
     pub(crate) placement: ::std::option::Option<crate::types::PlacementDescription>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribePlacementOutputBuilder {
         self
     }
     /// <p>An object describing the placement.</p>
-    pub fn set_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementDescription>,
-    ) -> Self {
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::PlacementDescription>) -> Self {
         self.placement = input;
         self
     }

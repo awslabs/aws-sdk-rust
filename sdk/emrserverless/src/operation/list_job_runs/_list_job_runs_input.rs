@@ -57,9 +57,7 @@ impl ListJobRunsInput {
 
 /// A builder for [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobRunsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ pub struct ListJobRunsInputBuilder {
 }
 impl ListJobRunsInputBuilder {
     /// <p>The ID of the application for which to list the job run.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application for which to list the job run.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -123,10 +115,7 @@ impl ListJobRunsInputBuilder {
         self
     }
     /// <p>The lower bound of the option to filter by creation date and time.</p>
-    pub fn set_created_at_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at_after = input;
         self
     }
@@ -140,10 +129,7 @@ impl ListJobRunsInputBuilder {
         self
     }
     /// <p>The upper bound of the option to filter by creation date and time.</p>
-    pub fn set_created_at_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at_before = input;
         self
     }
@@ -163,10 +149,7 @@ impl ListJobRunsInputBuilder {
         self
     }
     /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobRunState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobRunState>>) -> Self {
         self.states = input;
         self
     }
@@ -175,12 +158,7 @@ impl ListJobRunsInputBuilder {
         &self.states
     }
     /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_job_runs::ListJobRunsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_job_runs::ListJobRunsInput {
             application_id: self.application_id,
             next_token: self.next_token,

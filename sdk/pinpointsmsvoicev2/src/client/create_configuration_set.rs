@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_configuration_set::CreateConfigurationSetOutput::tags): <p>An array of key and value pair tags that's associated with the configuration set.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::create_configuration_set::CreateConfigurationSetOutput::created_timestamp): <p>The time when the configuration set was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     /// - On failure, responds with [`SdkError<CreateConfigurationSetError>`](crate::operation::create_configuration_set::CreateConfigurationSetError)
-    pub fn create_configuration_set(
-        &self,
-    ) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder
-    {
+    pub fn create_configuration_set(&self) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder {
         crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::new(self.handle.clone())
     }
 }

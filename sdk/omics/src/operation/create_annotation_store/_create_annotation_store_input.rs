@@ -14,9 +14,7 @@ pub struct CreateAnnotationStoreInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the store.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     #[doc(hidden)]
     pub sse_config: ::std::option::Option<crate::types::SseConfig>,
@@ -41,11 +39,7 @@ impl CreateAnnotationStoreInput {
         self.description.as_deref()
     }
     /// <p>Tags for the store.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
@@ -63,25 +57,19 @@ impl CreateAnnotationStoreInput {
 }
 impl CreateAnnotationStoreInput {
     /// Creates a new builder-style object to manufacture [`CreateAnnotationStoreInput`](crate::operation::create_annotation_store::CreateAnnotationStoreInput).
-    pub fn builder(
-    ) -> crate::operation::create_annotation_store::builders::CreateAnnotationStoreInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_annotation_store::builders::CreateAnnotationStoreInputBuilder {
         crate::operation::create_annotation_store::builders::CreateAnnotationStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAnnotationStoreInput`](crate::operation::create_annotation_store::CreateAnnotationStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAnnotationStoreInputBuilder {
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) sse_config: ::std::option::Option<crate::types::SseConfig>,
     pub(crate) store_format: ::std::option::Option<crate::types::StoreFormat>,
     pub(crate) store_options: ::std::option::Option<crate::types::StoreOptions>,
@@ -93,10 +81,7 @@ impl CreateAnnotationStoreInputBuilder {
         self
     }
     /// <p>The genome reference for the store's annotations.</p>
-    pub fn set_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceItem>,
-    ) -> Self {
+    pub fn set_reference(mut self, input: ::std::option::Option<crate::types::ReferenceItem>) -> Self {
         self.reference = input;
         self
     }
@@ -137,32 +122,19 @@ impl CreateAnnotationStoreInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags for the store.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags for the store.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags for the store.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
@@ -185,10 +157,7 @@ impl CreateAnnotationStoreInputBuilder {
         self
     }
     /// <p>The annotation file format of the store.</p>
-    pub fn set_store_format(
-        mut self,
-        input: ::std::option::Option<crate::types::StoreFormat>,
-    ) -> Self {
+    pub fn set_store_format(mut self, input: ::std::option::Option<crate::types::StoreFormat>) -> Self {
         self.store_format = input;
         self
     }
@@ -202,10 +171,7 @@ impl CreateAnnotationStoreInputBuilder {
         self
     }
     /// <p>File parsing options for the annotation store.</p>
-    pub fn set_store_options(
-        mut self,
-        input: ::std::option::Option<crate::types::StoreOptions>,
-    ) -> Self {
+    pub fn set_store_options(mut self, input: ::std::option::Option<crate::types::StoreOptions>) -> Self {
         self.store_options = input;
         self
     }
@@ -216,20 +182,16 @@ impl CreateAnnotationStoreInputBuilder {
     /// Consumes the builder and constructs a [`CreateAnnotationStoreInput`](crate::operation::create_annotation_store::CreateAnnotationStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_annotation_store::CreateAnnotationStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_annotation_store::CreateAnnotationStoreInput {
-                reference: self.reference,
-                name: self.name,
-                description: self.description,
-                tags: self.tags,
-                sse_config: self.sse_config,
-                store_format: self.store_format,
-                store_options: self.store_options,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_annotation_store::CreateAnnotationStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_annotation_store::CreateAnnotationStoreInput {
+            reference: self.reference,
+            name: self.name,
+            description: self.description,
+            tags: self.tags,
+            sse_config: self.sse_config,
+            store_format: self.store_format,
+            store_options: self.store_options,
+        })
     }
 }

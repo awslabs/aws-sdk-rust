@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteCertificateOutput {
 }
 impl DeleteCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCertificateOutput`](crate::operation::delete_certificate::DeleteCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_certificate::builders::DeleteCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::delete_certificate::builders::DeleteCertificateOutputBuilder {
         crate::operation::delete_certificate::builders::DeleteCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCertificateOutput`](crate::operation::delete_certificate::DeleteCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCertificateOutputBuilder {
     pub(crate) certificate: ::std::option::Option<crate::types::Certificate>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteCertificateOutputBuilder {
         self
     }
     /// <p>The Secure Sockets Layer (SSL) certificate.</p>
-    pub fn set_certificate(
-        mut self,
-        input: ::std::option::Option<crate::types::Certificate>,
-    ) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<crate::types::Certificate>) -> Self {
         self.certificate = input;
         self
     }

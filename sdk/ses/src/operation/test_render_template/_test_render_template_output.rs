@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for TestRenderTemplateOutput {
 }
 impl TestRenderTemplateOutput {
     /// Creates a new builder-style object to manufacture [`TestRenderTemplateOutput`](crate::operation::test_render_template::TestRenderTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::test_render_template::builders::TestRenderTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::test_render_template::builders::TestRenderTemplateOutputBuilder {
         crate::operation::test_render_template::builders::TestRenderTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`TestRenderTemplateOutput`](crate::operation::test_render_template::TestRenderTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestRenderTemplateOutputBuilder {
     pub(crate) rendered_template: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl TestRenderTemplateOutputBuilder {
     /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
-    pub fn rendered_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rendered_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rendered_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
-    pub fn set_rendered_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rendered_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rendered_template = input;
         self
     }

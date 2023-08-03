@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EncryptionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for EncryptionType {
         match s {
             "AWS_OWNED_KMS_KEY" => EncryptionType::AwsOwnedKmsKey,
             "CUSTOMER_KMS" => EncryptionType::CustomerKms,
-            other => {
-                EncryptionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => EncryptionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -10,10 +10,7 @@ impl SetQueueAttributesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_queue_attributes::SetQueueAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_queue_attributes::SetQueueAttributesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_queue_attributes::SetQueueAttributesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_queue_attributes();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl SetQueueAttributesFluentBuilder {
         }
     }
     /// Access the SetQueueAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_queue_attributes::builders::SetQueueAttributesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_queue_attributes::builders::SetQueueAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl SetQueueAttributesFluentBuilder {
             crate::operation::set_queue_attributes::SetQueueAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_queue_attributes::SetQueueAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_queue_attributes::SetQueueAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl SetQueueAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl SetQueueAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_queue_attributes::SetQueueAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_queue_attributes::SetQueueAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_queue_attributes::SetQueueAttributesError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl SetQueueAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_queue_attributes::SetQueueAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_queue_attributes::SetQueueAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_queue_attributes::SetQueueAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +108,7 @@ impl SetQueueAttributesFluentBuilder {
             crate::operation::set_queue_attributes::SetQueueAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_queue_attributes::SetQueueAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_queue_attributes::SetQueueAttributesError>,
     > {
         self.customize_middleware().await
     }
@@ -212,11 +196,7 @@ impl SetQueueAttributesFluentBuilder {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn attributes(
-        mut self,
-        k: crate::types::QueueAttributeName,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: crate::types::QueueAttributeName, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k, v.into());
         self
     }
@@ -285,9 +265,7 @@ impl SetQueueAttributesFluentBuilder {
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn set_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
@@ -355,11 +333,7 @@ impl SetQueueAttributesFluentBuilder {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>> {
         self.inner.get_attributes()
     }
 }

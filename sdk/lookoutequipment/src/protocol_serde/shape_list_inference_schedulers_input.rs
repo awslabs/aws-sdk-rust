@@ -13,9 +13,7 @@ pub fn ser_list_inference_schedulers_input(
         );
     }
     if let Some(var_3) = &input.inference_scheduler_name_begins_with {
-        object
-            .key("InferenceSchedulerNameBeginsWith")
-            .string(var_3.as_str());
+        object.key("InferenceSchedulerNameBeginsWith").string(var_3.as_str());
     }
     if let Some(var_4) = &input.model_name {
         object.key("ModelName").string(var_4.as_str());

@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`RestoreTableOutput`](crate::operation::restore_table::RestoreTableOutput) with field(s):
     ///   - [`restored_table_arn(Option<String>)`](crate::operation::restore_table::RestoreTableOutput::restored_table_arn): <p>The Amazon Resource Name (ARN) of the restored table.</p>
     /// - On failure, responds with [`SdkError<RestoreTableError>`](crate::operation::restore_table::RestoreTableError)
-    pub fn restore_table(
-        &self,
-    ) -> crate::operation::restore_table::builders::RestoreTableFluentBuilder {
-        crate::operation::restore_table::builders::RestoreTableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn restore_table(&self) -> crate::operation::restore_table::builders::RestoreTableFluentBuilder {
+        crate::operation::restore_table::builders::RestoreTableFluentBuilder::new(self.handle.clone())
     }
 }

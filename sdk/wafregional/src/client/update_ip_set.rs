@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateIpSetOutput`](crate::operation::update_ip_set::UpdateIpSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::update_ip_set::UpdateIpSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateIPSetError>`](crate::operation::update_ip_set::UpdateIPSetError)
-    pub fn update_ip_set(
-        &self,
-    ) -> crate::operation::update_ip_set::builders::UpdateIPSetFluentBuilder {
-        crate::operation::update_ip_set::builders::UpdateIPSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_ip_set(&self) -> crate::operation::update_ip_set::builders::UpdateIPSetFluentBuilder {
+        crate::operation::update_ip_set::builders::UpdateIPSetFluentBuilder::new(self.handle.clone())
     }
 }

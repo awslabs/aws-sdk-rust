@@ -10,10 +10,7 @@ impl DescribeQueriesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_queries::DescribeQueriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_queries::DescribeQueriesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_queries::DescribeQueriesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_queries();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeQueriesFluentBuilder {
         }
     }
     /// Access the DescribeQueries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_queries::builders::DescribeQueriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_queries::builders::DescribeQueriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeQueriesFluentBuilder {
             crate::operation::describe_queries::DescribeQueries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_queries::DescribeQueriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_queries::DescribeQueriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeQueriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeQueriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_queries::DescribeQueriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_queries::DescribeQueriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_queries::DescribeQueriesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeQueriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_queries::DescribeQueriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_queries::DescribeQueriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_queries::DescribeQueriesError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribeQueriesFluentBuilder {
             crate::operation::describe_queries::DescribeQueries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_queries::DescribeQueriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_queries::DescribeQueriesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Limits the returned queries to only those for the specified log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>Limits the returned queries to only those for the specified log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }

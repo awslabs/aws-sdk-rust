@@ -30,9 +30,7 @@ impl RescoreResultItem {
 
 /// A builder for [`RescoreResultItem`](crate::types::RescoreResultItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RescoreResultItemBuilder {
     pub(crate) document_id: ::std::option::Option<::std::string::String>,
     pub(crate) score: ::std::option::Option<f32>,

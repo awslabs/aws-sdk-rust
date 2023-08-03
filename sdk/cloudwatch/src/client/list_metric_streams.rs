@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_metric_streams::ListMetricStreamsOutput::next_token): <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
     ///   - [`entries(Option<Vec<MetricStreamEntry>>)`](crate::operation::list_metric_streams::ListMetricStreamsOutput::entries): <p>The array of metric stream information.</p>
     /// - On failure, responds with [`SdkError<ListMetricStreamsError>`](crate::operation::list_metric_streams::ListMetricStreamsError)
-    pub fn list_metric_streams(
-        &self,
-    ) -> crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder {
-        crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_metric_streams(&self) -> crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder {
+        crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::new(self.handle.clone())
     }
 }

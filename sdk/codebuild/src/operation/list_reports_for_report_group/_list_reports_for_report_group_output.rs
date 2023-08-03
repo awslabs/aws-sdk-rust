@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListReportsForReportGroupOutput {
 }
 impl ListReportsForReportGroupOutput {
     /// Creates a new builder-style object to manufacture [`ListReportsForReportGroupOutput`](crate::operation::list_reports_for_report_group::ListReportsForReportGroupOutput).
-    pub fn builder() -> crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupOutputBuilder{
+    pub fn builder() -> crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupOutputBuilder {
         crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReportsForReportGroupOutput`](crate::operation::list_reports_for_report_group::ListReportsForReportGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReportsForReportGroupOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) reports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -70,10 +68,7 @@ impl ListReportsForReportGroupOutputBuilder {
         self
     }
     /// <p> The list of report ARNs. </p>
-    pub fn set_reports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.reports = input;
         self
     }
@@ -91,9 +86,7 @@ impl ListReportsForReportGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListReportsForReportGroupOutput`](crate::operation::list_reports_for_report_group::ListReportsForReportGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_reports_for_report_group::ListReportsForReportGroupOutput {
+    pub fn build(self) -> crate::operation::list_reports_for_report_group::ListReportsForReportGroupOutput {
         crate::operation::list_reports_for_report_group::ListReportsForReportGroupOutput {
             next_token: self.next_token,
             reports: self.reports,

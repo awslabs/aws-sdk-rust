@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteConnectorProfileOutput {
 }
 impl DeleteConnectorProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectorProfileOutput`](crate::operation::delete_connector_profile::DeleteConnectorProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_connector_profile::builders::DeleteConnectorProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_connector_profile::builders::DeleteConnectorProfileOutputBuilder {
         crate::operation::delete_connector_profile::builders::DeleteConnectorProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConnectorProfileOutput`](crate::operation::delete_connector_profile::DeleteConnectorProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectorProfileOutputBuilder {
     _request_id: Option<String>,
 }

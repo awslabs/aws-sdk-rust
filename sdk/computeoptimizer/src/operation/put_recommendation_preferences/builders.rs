@@ -27,7 +27,7 @@ impl PutRecommendationPreferencesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRecommendationPreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesInputBuilder,
+    inner: crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesInputBuilder,
 }
 impl PutRecommendationPreferencesFluentBuilder {
     /// Creates a new `PutRecommendationPreferences`.
@@ -38,7 +38,7 @@ impl PutRecommendationPreferencesFluentBuilder {
         }
     }
     /// Access the PutRecommendationPreferences as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl PutRecommendationPreferencesFluentBuilder {
             crate::operation::put_recommendation_preferences::PutRecommendationPreferences,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl PutRecommendationPreferencesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl PutRecommendationPreferencesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl PutRecommendationPreferencesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl PutRecommendationPreferencesFluentBuilder {
             crate::operation::put_recommendation_preferences::PutRecommendationPreferences,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +122,7 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -173,29 +159,21 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
     /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn enhanced_infrastructure_metrics(
-        mut self,
-        input: crate::types::EnhancedInfrastructureMetrics,
-    ) -> Self {
+    pub fn enhanced_infrastructure_metrics(mut self, input: crate::types::EnhancedInfrastructureMetrics) -> Self {
         self.inner = self.inner.enhanced_infrastructure_metrics(input);
         self
     }
     /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
     /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn set_enhanced_infrastructure_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::EnhancedInfrastructureMetrics>,
-    ) -> Self {
+    pub fn set_enhanced_infrastructure_metrics(mut self, input: ::std::option::Option<crate::types::EnhancedInfrastructureMetrics>) -> Self {
         self.inner = self.inner.set_enhanced_infrastructure_metrics(input);
         self
     }
     /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
     /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn get_enhanced_infrastructure_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnhancedInfrastructureMetrics> {
+    pub fn get_enhanced_infrastructure_metrics(&self) -> &::std::option::Option<crate::types::EnhancedInfrastructureMetrics> {
         self.inner.get_enhanced_infrastructure_metrics()
     }
     /// <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>
@@ -203,10 +181,7 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// </note>
     /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn inferred_workload_types(
-        mut self,
-        input: crate::types::InferredWorkloadTypesPreference,
-    ) -> Self {
+    pub fn inferred_workload_types(mut self, input: crate::types::InferredWorkloadTypesPreference) -> Self {
         self.inner = self.inner.inferred_workload_types(input);
         self
     }
@@ -215,10 +190,7 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// </note>
     /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn set_inferred_workload_types(
-        mut self,
-        input: ::std::option::Option<crate::types::InferredWorkloadTypesPreference>,
-    ) -> Self {
+    pub fn set_inferred_workload_types(mut self, input: ::std::option::Option<crate::types::InferredWorkloadTypesPreference>) -> Self {
         self.inner = self.inner.set_inferred_workload_types(input);
         self
     }
@@ -227,19 +199,14 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// </note>
     /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn get_inferred_workload_types(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferredWorkloadTypesPreference> {
+    pub fn get_inferred_workload_types(&self) -> &::std::option::Option<crate::types::InferredWorkloadTypesPreference> {
         self.inner.get_inferred_workload_types()
     }
     /// <p>The provider of the external metrics recommendation preference to create or update.</p>
     /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
     /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn external_metrics_preference(
-        mut self,
-        input: crate::types::ExternalMetricsPreference,
-    ) -> Self {
+    pub fn external_metrics_preference(mut self, input: crate::types::ExternalMetricsPreference) -> Self {
         self.inner = self.inner.external_metrics_preference(input);
         self
     }
@@ -247,10 +214,7 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
     /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn set_external_metrics_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::ExternalMetricsPreference>,
-    ) -> Self {
+    pub fn set_external_metrics_preference(mut self, input: ::std::option::Option<crate::types::ExternalMetricsPreference>) -> Self {
         self.inner = self.inner.set_external_metrics_preference(input);
         self
     }
@@ -258,9 +222,7 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
     /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn get_external_metrics_preference(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExternalMetricsPreference> {
+    pub fn get_external_metrics_preference(&self) -> &::std::option::Option<crate::types::ExternalMetricsPreference> {
         self.inner.get_external_metrics_preference()
     }
 }

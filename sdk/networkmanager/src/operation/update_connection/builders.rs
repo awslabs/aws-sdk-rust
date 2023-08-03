@@ -10,10 +10,7 @@ impl UpdateConnectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_connection::UpdateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_connection();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateConnectionFluentBuilder {
         }
     }
     /// Access the UpdateConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_connection::builders::UpdateConnectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_connection::builders::UpdateConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateConnectionFluentBuilder {
             crate::operation::update_connection::UpdateConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connection::UpdateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connection::UpdateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateConnectionFluentBuilder {
             crate::operation::update_connection::UpdateConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl UpdateConnectionFluentBuilder {
         self.inner.get_global_network_id()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
@@ -177,18 +149,12 @@ impl UpdateConnectionFluentBuilder {
         self.inner.get_link_id()
     }
     /// <p>The ID of the link for the second device in the connection.</p>
-    pub fn connected_link_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connected_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connected_link_id(input.into());
         self
     }
     /// <p>The ID of the link for the second device in the connection.</p>
-    pub fn set_connected_link_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connected_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connected_link_id(input);
         self
     }

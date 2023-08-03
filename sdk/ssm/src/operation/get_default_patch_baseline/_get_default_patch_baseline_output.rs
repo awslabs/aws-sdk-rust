@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetDefaultPatchBaselineOutput {
 }
 impl GetDefaultPatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`GetDefaultPatchBaselineOutput`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput).
-    pub fn builder(
-    ) -> crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineOutputBuilder {
         crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDefaultPatchBaselineOutput`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDefaultPatchBaselineOutputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     pub(crate) operating_system: ::std::option::Option<crate::types::OperatingSystem>,
@@ -66,10 +62,7 @@ impl GetDefaultPatchBaselineOutputBuilder {
         self
     }
     /// <p>The operating system for the returned patch baseline. </p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
@@ -87,9 +80,7 @@ impl GetDefaultPatchBaselineOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDefaultPatchBaselineOutput`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput {
+    pub fn build(self) -> crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput {
         crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput {
             baseline_id: self.baseline_id,
             operating_system: self.operating_system,

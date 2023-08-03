@@ -23,9 +23,7 @@ impl DomainDetails {
 
 /// A builder for [`DomainDetails`](crate::types::DomainDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainDetailsBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl DomainDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`DomainDetails`](crate::types::DomainDetails).
     pub fn build(self) -> crate::types::DomainDetails {
-        crate::types::DomainDetails {
-            domain: self.domain,
-        }
+        crate::types::DomainDetails { domain: self.domain }
     }
 }

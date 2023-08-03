@@ -30,12 +30,9 @@ impl DashboardSourceTemplate {
 
 /// A builder for [`DashboardSourceTemplate`](crate::types::DashboardSourceTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashboardSourceTemplateBuilder {
-    pub(crate) data_set_references:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>>,
+    pub(crate) data_set_references: ::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl DashboardSourceTemplateBuilder {
@@ -51,17 +48,12 @@ impl DashboardSourceTemplateBuilder {
         self
     }
     /// <p>Dataset references.</p>
-    pub fn set_data_set_references(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>>,
-    ) -> Self {
+    pub fn set_data_set_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>>) -> Self {
         self.data_set_references = input;
         self
     }
     /// <p>Dataset references.</p>
-    pub fn get_data_set_references(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>> {
+    pub fn get_data_set_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>> {
         &self.data_set_references
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>

@@ -27,8 +27,7 @@ pub struct ListDeploymentsInput {
     /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub include_only_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>,
+    pub include_only_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>,
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
     #[doc(hidden)]
     pub create_time_range: ::std::option::Option<crate::types::TimeRange>,
@@ -62,9 +61,7 @@ impl ListDeploymentsInput {
     /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
     /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
-    pub fn include_only_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeploymentStatus]> {
+    pub fn include_only_statuses(&self) -> ::std::option::Option<&[crate::types::DeploymentStatus]> {
         self.include_only_statuses.as_deref()
     }
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
@@ -85,15 +82,12 @@ impl ListDeploymentsInput {
 
 /// A builder for [`ListDeploymentsInput`](crate::operation::list_deployments::ListDeploymentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
-    pub(crate) include_only_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>,
+    pub(crate) include_only_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>,
     pub(crate) create_time_range: ::std::option::Option<crate::types::TimeRange>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -101,20 +95,14 @@ impl ListDeploymentsInputBuilder {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -127,20 +115,14 @@ impl ListDeploymentsInputBuilder {
     /// <p>The name of a deployment group for the specified application.</p> <note>
     /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
     /// </note>
-    pub fn deployment_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a deployment group for the specified application.</p> <note>
     /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
     /// </note>
-    pub fn set_deployment_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_group_name = input;
         self
     }
@@ -192,10 +174,7 @@ impl ListDeploymentsInputBuilder {
     /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
     /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
-    pub fn set_include_only_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>,
-    ) -> Self {
+    pub fn set_include_only_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>) -> Self {
         self.include_only_statuses = input;
         self
     }
@@ -208,9 +187,7 @@ impl ListDeploymentsInputBuilder {
     /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
     /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
-    pub fn get_include_only_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>> {
+    pub fn get_include_only_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>> {
         &self.include_only_statuses
     }
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
@@ -219,10 +196,7 @@ impl ListDeploymentsInputBuilder {
         self
     }
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
-    pub fn set_create_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeRange>,
-    ) -> Self {
+    pub fn set_create_time_range(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
         self.create_time_range = input;
         self
     }
@@ -247,10 +221,7 @@ impl ListDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeploymentsInput`](crate::operation::list_deployments::ListDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_deployments::ListDeploymentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_deployments::ListDeploymentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_deployments::ListDeploymentsInput {
             application_name: self.application_name,
             deployment_group_name: self.deployment_group_name,

@@ -29,16 +29,14 @@ impl DisassociateSourceServersInput {
 }
 impl DisassociateSourceServersInput {
     /// Creates a new builder-style object to manufacture [`DisassociateSourceServersInput`](crate::operation::disassociate_source_servers::DisassociateSourceServersInput).
-    pub fn builder() -> crate::operation::disassociate_source_servers::builders::DisassociateSourceServersInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_source_servers::builders::DisassociateSourceServersInputBuilder {
         crate::operation::disassociate_source_servers::builders::DisassociateSourceServersInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateSourceServersInput`](crate::operation::disassociate_source_servers::DisassociateSourceServersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateSourceServersInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,18 +44,12 @@ pub struct DisassociateSourceServersInputBuilder {
 }
 impl DisassociateSourceServersInputBuilder {
     /// <p>Application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -70,27 +62,19 @@ impl DisassociateSourceServersInputBuilder {
     /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
     ///
     /// <p>Source server IDs list.</p>
-    pub fn source_server_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_server_i_ds.unwrap_or_default();
         v.push(input.into());
         self.source_server_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>Source server IDs list.</p>
-    pub fn set_source_server_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_server_i_ds = input;
         self
     }
     /// <p>Source server IDs list.</p>
-    pub fn get_source_server_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_server_i_ds
     }
     /// <p>Account ID.</p>
@@ -114,12 +98,10 @@ impl DisassociateSourceServersInputBuilder {
         crate::operation::disassociate_source_servers::DisassociateSourceServersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_source_servers::DisassociateSourceServersInput {
-                application_id: self.application_id,
-                source_server_i_ds: self.source_server_i_ds,
-                account_id: self.account_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_source_servers::DisassociateSourceServersInput {
+            application_id: self.application_id,
+            source_server_i_ds: self.source_server_i_ds,
+            account_id: self.account_id,
+        })
     }
 }

@@ -5,16 +5,16 @@ pub use crate::operation::get_rate_based_statement_managed_keys::_get_rate_based
 
 impl GetRateBasedStatementManagedKeysInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_rate_based_statement_managed_keys();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl GetRateBasedStatementManagedKeysInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRateBasedStatementManagedKeysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysInputBuilder,
+    inner: crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysInputBuilder,
 }
 impl GetRateBasedStatementManagedKeysFluentBuilder {
     /// Creates a new `GetRateBasedStatementManagedKeys`.
@@ -40,15 +40,20 @@ impl GetRateBasedStatementManagedKeysFluentBuilder {
         }
     }
     /// Access the GetRateBasedStatementManagedKeys as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeys, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeys,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl GetRateBasedStatementManagedKeysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,17 +90,26 @@ impl GetRateBasedStatementManagedKeysFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeys, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeys,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
@@ -155,18 +170,12 @@ impl GetRateBasedStatementManagedKeysFluentBuilder {
         self.inner.get_web_acl_id()
     }
     /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested inside a rule group. </p>
-    pub fn rule_group_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_group_rule_name(input.into());
         self
     }
     /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested inside a rule group. </p>
-    pub fn set_rule_group_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_group_rule_name(input);
         self
     }

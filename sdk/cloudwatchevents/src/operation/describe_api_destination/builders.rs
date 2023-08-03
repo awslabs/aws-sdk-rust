@@ -37,10 +37,7 @@ impl DescribeApiDestinationFluentBuilder {
         }
     }
     /// Access the DescribeApiDestination as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_api_destination::builders::DescribeApiDestinationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_api_destination::builders::DescribeApiDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeApiDestinationFluentBuilder {
             crate::operation::describe_api_destination::DescribeApiDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_api_destination::DescribeApiDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_api_destination::DescribeApiDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeApiDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeApiDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_api_destination::DescribeApiDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_api_destination::DescribeApiDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_api_destination::DescribeApiDestinationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeApiDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_api_destination::DescribeApiDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_api_destination::DescribeApiDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_api_destination::DescribeApiDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeApiDestinationFluentBuilder {
             crate::operation::describe_api_destination::DescribeApiDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_api_destination::DescribeApiDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_api_destination::DescribeApiDestinationError>,
     > {
         self.customize_middleware().await
     }

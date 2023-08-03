@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateDomainContactPrivacyOutput {
 }
 impl UpdateDomainContactPrivacyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainContactPrivacyOutput`](crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyOutput).
-    pub fn builder() -> crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyOutputBuilder{
+    pub fn builder() -> crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyOutputBuilder {
         crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDomainContactPrivacyOutput`](crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDomainContactPrivacyOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -61,9 +59,7 @@ impl UpdateDomainContactPrivacyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDomainContactPrivacyOutput`](crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyOutput {
+    pub fn build(self) -> crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyOutput {
         crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyOutput {
             operation_id: self.operation_id,
             _request_id: self._request_id,

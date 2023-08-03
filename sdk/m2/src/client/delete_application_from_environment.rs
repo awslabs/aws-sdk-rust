@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`environment_id(impl ::std::convert::Into<String>)`](crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentFluentBuilder::set_environment_id): <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
     /// - On success, responds with [`DeleteApplicationFromEnvironmentOutput`](crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationFromEnvironmentError>`](crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentError)
-    pub fn delete_application_from_environment(&self) -> crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentFluentBuilder{
+    pub fn delete_application_from_environment(
+        &self,
+    ) -> crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentFluentBuilder {
         crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

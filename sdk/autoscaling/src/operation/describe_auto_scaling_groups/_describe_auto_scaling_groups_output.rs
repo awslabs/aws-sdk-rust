@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeAutoScalingGroupsOutput {
 }
 impl DescribeAutoScalingGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoScalingGroupsOutput`](crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsOutput).
-    pub fn builder() -> crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsOutputBuilder {
         crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAutoScalingGroupsOutput`](crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutoScalingGroupsOutputBuilder {
-    pub(crate) auto_scaling_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
+    pub(crate) auto_scaling_groups: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeAutoScalingGroupsOutputBuilder {
         self
     }
     /// <p>The groups.</p>
-    pub fn set_auto_scaling_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
-    ) -> Self {
+    pub fn set_auto_scaling_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>) -> Self {
         self.auto_scaling_groups = input;
         self
     }
     /// <p>The groups.</p>
-    pub fn get_auto_scaling_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>> {
+    pub fn get_auto_scaling_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>> {
         &self.auto_scaling_groups
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -94,9 +86,7 @@ impl DescribeAutoScalingGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAutoScalingGroupsOutput`](crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsOutput {
+    pub fn build(self) -> crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsOutput {
         crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsOutput {
             auto_scaling_groups: self.auto_scaling_groups,
             next_token: self.next_token,

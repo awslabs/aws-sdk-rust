@@ -10,9 +10,7 @@ pub fn ser_update_asset_property_input(
         object.key("propertyAlias").string(var_2.as_str());
     }
     if let Some(var_3) = &input.property_notification_state {
-        object
-            .key("propertyNotificationState")
-            .string(var_3.as_str());
+        object.key("propertyNotificationState").string(var_3.as_str());
     }
     if let Some(var_4) = &input.property_unit {
         object.key("propertyUnit").string(var_4.as_str());

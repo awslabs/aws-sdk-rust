@@ -35,12 +35,9 @@ impl ListSpeakersOutput {
 
 /// A builder for [`ListSpeakersOutput`](crate::operation::list_speakers::ListSpeakersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSpeakersOutputBuilder {
-    pub(crate) speaker_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpeakerSummary>>,
+    pub(crate) speaker_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListSpeakersOutputBuilder {
         self
     }
     /// <p>A list containing details about each speaker in the Amazon Web Services account. </p>
-    pub fn set_speaker_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerSummary>>,
-    ) -> Self {
+    pub fn set_speaker_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerSummary>>) -> Self {
         self.speaker_summaries = input;
         self
     }
     /// <p>A list containing details about each speaker in the Amazon Web Services account. </p>
-    pub fn get_speaker_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeakerSummary>> {
+    pub fn get_speaker_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeakerSummary>> {
         &self.speaker_summaries
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>

@@ -10,10 +10,7 @@ impl CancelExportTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_export_task::CancelExportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_export_task::CancelExportTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_export_task::CancelExportTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_export_task();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CancelExportTaskFluentBuilder {
         }
     }
     /// Access the CancelExportTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_export_task::builders::CancelExportTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_export_task::builders::CancelExportTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CancelExportTaskFluentBuilder {
             crate::operation::cancel_export_task::CancelExportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_export_task::CancelExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_export_task::CancelExportTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CancelExportTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CancelExportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_export_task::CancelExportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_export_task::CancelExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_export_task::CancelExportTaskError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CancelExportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_export_task::CancelExportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_export_task::CancelExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_export_task::CancelExportTaskError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CancelExportTaskFluentBuilder {
             crate::operation::cancel_export_task::CancelExportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_export_task::CancelExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_export_task::CancelExportTaskError>,
     > {
         self.customize_middleware().await
     }

@@ -12,8 +12,7 @@ pub struct CustomDomain {
     pub enable_www_subdomain: ::std::option::Option<bool>,
     /// <p>A list of certificate CNAME records that's used for this domain name.</p>
     #[doc(hidden)]
-    pub certificate_validation_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::CertificateValidationRecord>>,
+    pub certificate_validation_records: ::std::option::Option<::std::vec::Vec<crate::types::CertificateValidationRecord>>,
     /// <p>The current state of the domain name association.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CustomDomainAssociationStatus>,
@@ -28,9 +27,7 @@ impl CustomDomain {
         self.enable_www_subdomain
     }
     /// <p>A list of certificate CNAME records that's used for this domain name.</p>
-    pub fn certificate_validation_records(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CertificateValidationRecord]> {
+    pub fn certificate_validation_records(&self) -> ::std::option::Option<&[crate::types::CertificateValidationRecord]> {
         self.certificate_validation_records.as_deref()
     }
     /// <p>The current state of the domain name association.</p>
@@ -47,14 +44,11 @@ impl CustomDomain {
 
 /// A builder for [`CustomDomain`](crate::types::CustomDomain).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomDomainBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) enable_www_subdomain: ::std::option::Option<bool>,
-    pub(crate) certificate_validation_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::CertificateValidationRecord>>,
+    pub(crate) certificate_validation_records: ::std::option::Option<::std::vec::Vec<crate::types::CertificateValidationRecord>>,
     pub(crate) status: ::std::option::Option<crate::types::CustomDomainAssociationStatus>,
 }
 impl CustomDomainBuilder {
@@ -91,10 +85,7 @@ impl CustomDomainBuilder {
     /// To override the contents of this collection use [`set_certificate_validation_records`](Self::set_certificate_validation_records).
     ///
     /// <p>A list of certificate CNAME records that's used for this domain name.</p>
-    pub fn certificate_validation_records(
-        mut self,
-        input: crate::types::CertificateValidationRecord,
-    ) -> Self {
+    pub fn certificate_validation_records(mut self, input: crate::types::CertificateValidationRecord) -> Self {
         let mut v = self.certificate_validation_records.unwrap_or_default();
         v.push(input);
         self.certificate_validation_records = ::std::option::Option::Some(v);
@@ -109,9 +100,7 @@ impl CustomDomainBuilder {
         self
     }
     /// <p>A list of certificate CNAME records that's used for this domain name.</p>
-    pub fn get_certificate_validation_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateValidationRecord>> {
+    pub fn get_certificate_validation_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateValidationRecord>> {
         &self.certificate_validation_records
     }
     /// <p>The current state of the domain name association.</p>
@@ -120,17 +109,12 @@ impl CustomDomainBuilder {
         self
     }
     /// <p>The current state of the domain name association.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomDomainAssociationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CustomDomainAssociationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The current state of the domain name association.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomDomainAssociationStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CustomDomainAssociationStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`CustomDomain`](crate::types::CustomDomain).

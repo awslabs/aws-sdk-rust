@@ -12,16 +12,16 @@ impl ::aws_http::request_id::RequestId for DisassociateConfigurationItemsFromApp
 }
 impl DisassociateConfigurationItemsFromApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateConfigurationItemsFromApplicationOutput`](crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput).
-    pub fn builder() -> crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationOutputBuilder
+    {
         crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateConfigurationItemsFromApplicationOutput`](crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateConfigurationItemsFromApplicationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +36,7 @@ impl DisassociateConfigurationItemsFromApplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateConfigurationItemsFromApplicationOutput`](crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput).
-    pub fn build(self) -> crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput{
+    pub fn build(self) -> crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput {
         crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput {
             _request_id: self._request_id,
         }

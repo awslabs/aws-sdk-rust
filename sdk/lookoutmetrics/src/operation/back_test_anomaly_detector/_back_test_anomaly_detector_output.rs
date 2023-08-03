@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for BackTestAnomalyDetectorOutput {
 }
 impl BackTestAnomalyDetectorOutput {
     /// Creates a new builder-style object to manufacture [`BackTestAnomalyDetectorOutput`](crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorOutput).
-    pub fn builder(
-    ) -> crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorOutputBuilder {
         crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`BackTestAnomalyDetectorOutput`](crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackTestAnomalyDetectorOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl BackTestAnomalyDetectorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BackTestAnomalyDetectorOutput`](crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorOutput {
+    pub fn build(self) -> crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorOutput {
         crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorOutput {
             _request_id: self._request_id,
         }

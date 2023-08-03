@@ -10,10 +10,7 @@ impl ListAcceleratorsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_accelerators::ListAcceleratorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_accelerators::ListAcceleratorsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_accelerators::ListAcceleratorsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_accelerators();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListAcceleratorsFluentBuilder {
         }
     }
     /// Access the ListAccelerators as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_accelerators::builders::ListAcceleratorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_accelerators::builders::ListAcceleratorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListAcceleratorsFluentBuilder {
             crate::operation::list_accelerators::ListAccelerators,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_accelerators::ListAcceleratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_accelerators::ListAcceleratorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListAcceleratorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListAcceleratorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_accelerators::ListAcceleratorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_accelerators::ListAcceleratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_accelerators::ListAcceleratorsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListAcceleratorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_accelerators::ListAcceleratorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_accelerators::ListAcceleratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_accelerators::ListAcceleratorsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListAcceleratorsFluentBuilder {
             crate::operation::list_accelerators::ListAccelerators,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_accelerators::ListAcceleratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_accelerators::ListAcceleratorsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_accelerators::paginator::ListAcceleratorsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_accelerators::paginator::ListAcceleratorsPaginator {
-        crate::operation::list_accelerators::paginator::ListAcceleratorsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_accelerators::paginator::ListAcceleratorsPaginator {
+        crate::operation::list_accelerators::paginator::ListAcceleratorsPaginator::new(self.handle, self.inner)
     }
     /// <p>The number of Global Accelerator objects that you want to return with this call. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {

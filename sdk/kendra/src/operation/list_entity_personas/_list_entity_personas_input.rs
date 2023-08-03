@@ -36,17 +36,14 @@ impl ListEntityPersonasInput {
 }
 impl ListEntityPersonasInput {
     /// Creates a new builder-style object to manufacture [`ListEntityPersonasInput`](crate::operation::list_entity_personas::ListEntityPersonasInput).
-    pub fn builder(
-    ) -> crate::operation::list_entity_personas::builders::ListEntityPersonasInputBuilder {
+    pub fn builder() -> crate::operation::list_entity_personas::builders::ListEntityPersonasInputBuilder {
         crate::operation::list_entity_personas::builders::ListEntityPersonasInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEntityPersonasInput`](crate::operation::list_entity_personas::ListEntityPersonasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntityPersonasInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
@@ -113,17 +110,12 @@ impl ListEntityPersonasInputBuilder {
     /// Consumes the builder and constructs a [`ListEntityPersonasInput`](crate::operation::list_entity_personas::ListEntityPersonasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_entity_personas::ListEntityPersonasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_entity_personas::ListEntityPersonasInput {
-                id: self.id,
-                index_id: self.index_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_entity_personas::ListEntityPersonasInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_entity_personas::ListEntityPersonasInput {
+            id: self.id,
+            index_id: self.index_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

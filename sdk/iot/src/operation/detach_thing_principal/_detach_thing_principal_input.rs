@@ -23,17 +23,14 @@ impl DetachThingPrincipalInput {
 }
 impl DetachThingPrincipalInput {
     /// Creates a new builder-style object to manufacture [`DetachThingPrincipalInput`](crate::operation::detach_thing_principal::DetachThingPrincipalInput).
-    pub fn builder(
-    ) -> crate::operation::detach_thing_principal::builders::DetachThingPrincipalInputBuilder {
+    pub fn builder() -> crate::operation::detach_thing_principal::builders::DetachThingPrincipalInputBuilder {
         crate::operation::detach_thing_principal::builders::DetachThingPrincipalInputBuilder::default()
     }
 }
 
 /// A builder for [`DetachThingPrincipalInput`](crate::operation::detach_thing_principal::DetachThingPrincipalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachThingPrincipalInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,11 @@ impl DetachThingPrincipalInputBuilder {
     /// Consumes the builder and constructs a [`DetachThingPrincipalInput`](crate::operation::detach_thing_principal::DetachThingPrincipalInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_thing_principal::DetachThingPrincipalInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detach_thing_principal::DetachThingPrincipalInput {
-                thing_name: self.thing_name,
-                principal: self.principal,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::detach_thing_principal::DetachThingPrincipalInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::detach_thing_principal::DetachThingPrincipalInput {
+            thing_name: self.thing_name,
+            principal: self.principal,
+        })
     }
 }

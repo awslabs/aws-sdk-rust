@@ -25,7 +25,9 @@ impl super::Client {
     ///   - [`fleet_capacity_reservations(Option<Vec<FleetCapacityReservation>>)`](crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput::fleet_capacity_reservations): <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput::tags): <p>The tags assigned to the Capacity Reservation Fleet.</p>
     /// - On failure, responds with [`SdkError<CreateCapacityReservationFleetError>`](crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError)
-    pub fn create_capacity_reservation_fleet(&self) -> crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetFluentBuilder{
+    pub fn create_capacity_reservation_fleet(
+        &self,
+    ) -> crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetFluentBuilder {
         crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetFluentBuilder::new(self.handle.clone())
     }
 }

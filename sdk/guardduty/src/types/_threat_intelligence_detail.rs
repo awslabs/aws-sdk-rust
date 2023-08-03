@@ -30,27 +30,19 @@ impl ThreatIntelligenceDetail {
 
 /// A builder for [`ThreatIntelligenceDetail`](crate::types::ThreatIntelligenceDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThreatIntelligenceDetailBuilder {
     pub(crate) threat_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) threat_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ThreatIntelligenceDetailBuilder {
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
-    pub fn threat_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn threat_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.threat_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
-    pub fn set_threat_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_threat_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.threat_list_name = input;
         self
     }
@@ -70,17 +62,12 @@ impl ThreatIntelligenceDetailBuilder {
         self
     }
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
-    pub fn set_threat_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_threat_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.threat_names = input;
         self
     }
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
-    pub fn get_threat_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_threat_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.threat_names
     }
     /// Consumes the builder and constructs a [`ThreatIntelligenceDetail`](crate::types::ThreatIntelligenceDetail).

@@ -10,10 +10,7 @@ impl PublishMetricsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::publish_metrics::PublishMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::publish_metrics::PublishMetricsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_metrics::PublishMetricsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.publish_metrics();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PublishMetricsFluentBuilder {
         }
     }
     /// Access the PublishMetrics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::publish_metrics::builders::PublishMetricsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::publish_metrics::builders::PublishMetricsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl PublishMetricsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl PublishMetricsFluentBuilder {
         self.customize_middleware().await
     }
     /// <p> <b>Internal only</b>. The name of the environment.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p> <b>Internal only</b>. The name of the environment.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
@@ -144,17 +130,12 @@ impl PublishMetricsFluentBuilder {
         self
     }
     /// <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
-    pub fn set_metric_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
-    ) -> Self {
+    pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>) -> Self {
         self.inner = self.inner.set_metric_data(input);
         self
     }
     /// <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
-    pub fn get_metric_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
+    pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
         self.inner.get_metric_data()
     }
 }

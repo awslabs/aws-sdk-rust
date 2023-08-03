@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SetInstanceProtectionOutput {
 }
 impl SetInstanceProtectionOutput {
     /// Creates a new builder-style object to manufacture [`SetInstanceProtectionOutput`](crate::operation::set_instance_protection::SetInstanceProtectionOutput).
-    pub fn builder(
-    ) -> crate::operation::set_instance_protection::builders::SetInstanceProtectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_instance_protection::builders::SetInstanceProtectionOutputBuilder {
         crate::operation::set_instance_protection::builders::SetInstanceProtectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetInstanceProtectionOutput`](crate::operation::set_instance_protection::SetInstanceProtectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetInstanceProtectionOutputBuilder {
     _request_id: Option<String>,
 }

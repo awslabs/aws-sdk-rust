@@ -23,9 +23,7 @@ pub struct GetEventStreamOutput {
     pub destination_details: ::std::option::Option<crate::types::EventStreamDestinationDetails>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetEventStreamOutput {
@@ -50,17 +48,11 @@ impl GetEventStreamOutput {
         self.stopped_since.as_ref()
     }
     /// <p>Details regarding the Kinesis stream.</p>
-    pub fn destination_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EventStreamDestinationDetails> {
+    pub fn destination_details(&self) -> ::std::option::Option<&crate::types::EventStreamDestinationDetails> {
         self.destination_details.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -78,20 +70,15 @@ impl GetEventStreamOutput {
 
 /// A builder for [`GetEventStreamOutput`](crate::operation::get_event_stream::GetEventStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventStreamOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) state: ::std::option::Option<crate::types::EventStreamState>,
     pub(crate) stopped_since: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) destination_details:
-        ::std::option::Option<crate::types::EventStreamDestinationDetails>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) destination_details: ::std::option::Option<crate::types::EventStreamDestinationDetails>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetEventStreamOutputBuilder {
@@ -110,18 +97,12 @@ impl GetEventStreamOutputBuilder {
         &self.domain_name
     }
     /// <p>A unique identifier for the event stream.</p>
-    pub fn event_stream_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the event stream.</p>
-    pub fn set_event_stream_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_stream_arn = input;
         self
     }
@@ -135,10 +116,7 @@ impl GetEventStreamOutputBuilder {
         self
     }
     /// <p>The timestamp of when the export was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -152,10 +130,7 @@ impl GetEventStreamOutputBuilder {
         self
     }
     /// <p>The operational state of destination stream for export.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::EventStreamState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::EventStreamState>) -> Self {
         self.state = input;
         self
     }
@@ -169,10 +144,7 @@ impl GetEventStreamOutputBuilder {
         self
     }
     /// <p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>
-    pub fn set_stopped_since(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stopped_since(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stopped_since = input;
         self
     }
@@ -181,25 +153,17 @@ impl GetEventStreamOutputBuilder {
         &self.stopped_since
     }
     /// <p>Details regarding the Kinesis stream.</p>
-    pub fn destination_details(
-        mut self,
-        input: crate::types::EventStreamDestinationDetails,
-    ) -> Self {
+    pub fn destination_details(mut self, input: crate::types::EventStreamDestinationDetails) -> Self {
         self.destination_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details regarding the Kinesis stream.</p>
-    pub fn set_destination_details(
-        mut self,
-        input: ::std::option::Option<crate::types::EventStreamDestinationDetails>,
-    ) -> Self {
+    pub fn set_destination_details(mut self, input: ::std::option::Option<crate::types::EventStreamDestinationDetails>) -> Self {
         self.destination_details = input;
         self
     }
     /// <p>Details regarding the Kinesis stream.</p>
-    pub fn get_destination_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventStreamDestinationDetails> {
+    pub fn get_destination_details(&self) -> &::std::option::Option<crate::types::EventStreamDestinationDetails> {
         &self.destination_details
     }
     /// Adds a key-value pair to `tags`.
@@ -207,32 +171,19 @@ impl GetEventStreamOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

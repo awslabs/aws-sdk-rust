@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteRecommenderConfigurationOutput`](crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationOutput) with field(s):
     ///   - [`recommender_configuration_response(Option<RecommenderConfigurationResponse>)`](crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationOutput::recommender_configuration_response): <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     /// - On failure, responds with [`SdkError<DeleteRecommenderConfigurationError>`](crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError)
-    pub fn delete_recommender_configuration(&self) -> crate::operation::delete_recommender_configuration::builders::DeleteRecommenderConfigurationFluentBuilder{
+    pub fn delete_recommender_configuration(
+        &self,
+    ) -> crate::operation::delete_recommender_configuration::builders::DeleteRecommenderConfigurationFluentBuilder {
         crate::operation::delete_recommender_configuration::builders::DeleteRecommenderConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

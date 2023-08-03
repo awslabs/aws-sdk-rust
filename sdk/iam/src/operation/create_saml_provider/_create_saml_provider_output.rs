@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for CreateSamlProviderOutput {
 }
 impl CreateSamlProviderOutput {
     /// Creates a new builder-style object to manufacture [`CreateSamlProviderOutput`](crate::operation::create_saml_provider::CreateSamlProviderOutput).
-    pub fn builder(
-    ) -> crate::operation::create_saml_provider::builders::CreateSamlProviderOutputBuilder {
+    pub fn builder() -> crate::operation::create_saml_provider::builders::CreateSamlProviderOutputBuilder {
         crate::operation::create_saml_provider::builders::CreateSamlProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSamlProviderOutput`](crate::operation::create_saml_provider::CreateSamlProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSamlProviderOutputBuilder {
     pub(crate) saml_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -47,18 +44,12 @@ pub struct CreateSamlProviderOutputBuilder {
 }
 impl CreateSamlProviderOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
-    pub fn saml_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn saml_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.saml_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
-    pub fn set_saml_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_saml_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.saml_provider_arn = input;
         self
     }
@@ -78,10 +69,7 @@ impl CreateSamlProviderOutputBuilder {
         self
     }
     /// <p>A list of tags that are attached to the new IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

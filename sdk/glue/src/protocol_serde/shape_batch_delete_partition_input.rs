@@ -18,10 +18,7 @@ pub fn ser_batch_delete_partition_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_partition_value_list::ser_partition_value_list(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_partition_value_list::ser_partition_value_list(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

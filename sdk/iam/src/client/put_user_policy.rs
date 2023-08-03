@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`policy_document(impl ::std::convert::Into<String>)`](crate::operation::put_user_policy::builders::PutUserPolicyFluentBuilder::policy_document) / [`set_policy_document(Option<String>)`](crate::operation::put_user_policy::builders::PutUserPolicyFluentBuilder::set_policy_document): <p>The policy document.</p>  <p>You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
     /// - On success, responds with [`PutUserPolicyOutput`](crate::operation::put_user_policy::PutUserPolicyOutput)
     /// - On failure, responds with [`SdkError<PutUserPolicyError>`](crate::operation::put_user_policy::PutUserPolicyError)
-    pub fn put_user_policy(
-        &self,
-    ) -> crate::operation::put_user_policy::builders::PutUserPolicyFluentBuilder {
-        crate::operation::put_user_policy::builders::PutUserPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_user_policy(&self) -> crate::operation::put_user_policy::builders::PutUserPolicyFluentBuilder {
+        crate::operation::put_user_policy::builders::PutUserPolicyFluentBuilder::new(self.handle.clone())
     }
 }

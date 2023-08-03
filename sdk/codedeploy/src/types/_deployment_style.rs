@@ -30,9 +30,7 @@ impl DeploymentStyle {
 
 /// A builder for [`DeploymentStyle`](crate::types::DeploymentStyle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentStyleBuilder {
     pub(crate) deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     pub(crate) deployment_option: ::std::option::Option<crate::types::DeploymentOption>,
@@ -44,10 +42,7 @@ impl DeploymentStyleBuilder {
         self
     }
     /// <p>Indicates whether to run an in-place deployment or a blue/green deployment.</p>
-    pub fn set_deployment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentType>,
-    ) -> Self {
+    pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentType>) -> Self {
         self.deployment_type = input;
         self
     }
@@ -61,10 +56,7 @@ impl DeploymentStyleBuilder {
         self
     }
     /// <p>Indicates whether to route deployment traffic behind a load balancer.</p>
-    pub fn set_deployment_option(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentOption>,
-    ) -> Self {
+    pub fn set_deployment_option(mut self, input: ::std::option::Option<crate::types::DeploymentOption>) -> Self {
         self.deployment_option = input;
         self
     }

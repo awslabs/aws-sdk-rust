@@ -38,9 +38,7 @@ impl DeleteContactMethodFluentBuilder {
         }
     }
     /// Access the DeleteContactMethod as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_contact_method::builders::DeleteContactMethodInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_contact_method::builders::DeleteContactMethodInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeleteContactMethodFluentBuilder {
             crate::operation::delete_contact_method::DeleteContactMethod,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_contact_method::DeleteContactMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_contact_method::DeleteContactMethodError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeleteContactMethodFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeleteContactMethodFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_contact_method::DeleteContactMethodOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_contact_method::DeleteContactMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_contact_method::DeleteContactMethodError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeleteContactMethodFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_contact_method::DeleteContactMethodOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_contact_method::DeleteContactMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_contact_method::DeleteContactMethodError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DeleteContactMethodFluentBuilder {
             crate::operation::delete_contact_method::DeleteContactMethod,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_contact_method::DeleteContactMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_contact_method::DeleteContactMethodError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +120,7 @@ impl DeleteContactMethodFluentBuilder {
     /// <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text messaging).</p> <note>
     /// <p>To delete an <code>Email</code> and an <code>SMS</code> contact method if you added both, you must run separate <code>DeleteContactMethod</code> actions to delete each protocol.</p>
     /// </note>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ContactProtocol>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }

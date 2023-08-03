@@ -10,10 +10,7 @@ impl ListRoutesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_routes::ListRoutesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_routes::ListRoutesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_routes::ListRoutesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_routes();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListRoutesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_routes::ListRoutes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_routes::ListRoutes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_routes::ListRoutesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListRoutesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListRoutesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_routes::ListRoutes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_routes::ListRoutes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_routes::ListRoutesError>,
     > {
         self.customize_middleware().await
@@ -133,18 +121,12 @@ impl ListRoutesFluentBuilder {
         self.inner.get_mesh_name()
     }
     /// <p>The name of the virtual router to list routes in.</p>
-    pub fn virtual_router_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_router_name(input.into());
         self
     }
     /// <p>The name of the virtual router to list routes in.</p>
-    pub fn set_virtual_router_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_router_name(input);
         self
     }

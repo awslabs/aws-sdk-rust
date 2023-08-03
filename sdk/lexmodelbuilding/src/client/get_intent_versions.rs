@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`intents(Option<Vec<IntentMetadata>>)`](crate::operation::get_intent_versions::GetIntentVersionsOutput::intents): <p>An array of <code>IntentMetadata</code> objects, one for each numbered version of the intent plus one for the <code>$LATEST</code> version.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_intent_versions::GetIntentVersionsOutput::next_token): <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
     /// - On failure, responds with [`SdkError<GetIntentVersionsError>`](crate::operation::get_intent_versions::GetIntentVersionsError)
-    pub fn get_intent_versions(
-        &self,
-    ) -> crate::operation::get_intent_versions::builders::GetIntentVersionsFluentBuilder {
-        crate::operation::get_intent_versions::builders::GetIntentVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_intent_versions(&self) -> crate::operation::get_intent_versions::builders::GetIntentVersionsFluentBuilder {
+        crate::operation::get_intent_versions::builders::GetIntentVersionsFluentBuilder::new(self.handle.clone())
     }
 }

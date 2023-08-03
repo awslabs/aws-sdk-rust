@@ -5,15 +5,12 @@
 pub struct RejectTransitGatewayMulticastDomainAssociationsOutput {
     /// <p>Information about the multicast domain associations.</p>
     #[doc(hidden)]
-    pub associations:
-        ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>,
+    pub associations: ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>,
     _request_id: Option<String>,
 }
 impl RejectTransitGatewayMulticastDomainAssociationsOutput {
     /// <p>Information about the multicast domain associations.</p>
-    pub fn associations(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayMulticastDomainAssociations> {
+    pub fn associations(&self) -> ::std::option::Option<&crate::types::TransitGatewayMulticastDomainAssociations> {
         self.associations.as_ref()
     }
 }
@@ -24,42 +21,33 @@ impl ::aws_http::request_id::RequestId for RejectTransitGatewayMulticastDomainAs
 }
 impl RejectTransitGatewayMulticastDomainAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`RejectTransitGatewayMulticastDomainAssociationsOutput`](crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsOutput).
-    pub fn builder() -> crate::operation::reject_transit_gateway_multicast_domain_associations::builders::RejectTransitGatewayMulticastDomainAssociationsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::reject_transit_gateway_multicast_domain_associations::builders::RejectTransitGatewayMulticastDomainAssociationsOutputBuilder
+    {
         crate::operation::reject_transit_gateway_multicast_domain_associations::builders::RejectTransitGatewayMulticastDomainAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`RejectTransitGatewayMulticastDomainAssociationsOutput`](crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectTransitGatewayMulticastDomainAssociationsOutputBuilder {
-    pub(crate) associations:
-        ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>,
+    pub(crate) associations: ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>,
     _request_id: Option<String>,
 }
 impl RejectTransitGatewayMulticastDomainAssociationsOutputBuilder {
     /// <p>Information about the multicast domain associations.</p>
-    pub fn associations(
-        mut self,
-        input: crate::types::TransitGatewayMulticastDomainAssociations,
-    ) -> Self {
+    pub fn associations(mut self, input: crate::types::TransitGatewayMulticastDomainAssociations) -> Self {
         self.associations = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the multicast domain associations.</p>
-    pub fn set_associations(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>,
-    ) -> Self {
+    pub fn set_associations(mut self, input: ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>) -> Self {
         self.associations = input;
         self
     }
     /// <p>Information about the multicast domain associations.</p>
-    pub fn get_associations(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations> {
+    pub fn get_associations(&self) -> &::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations> {
         &self.associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +60,11 @@ impl RejectTransitGatewayMulticastDomainAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RejectTransitGatewayMulticastDomainAssociationsOutput`](crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsOutput).
-    pub fn build(self) -> crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsOutput {
         crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsOutput {
-            associations: self.associations
-            ,
+            associations: self.associations,
             _request_id: self._request_id,
         }
     }

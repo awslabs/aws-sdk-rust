@@ -10,10 +10,7 @@ impl ListRevisionAssetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_revision_assets::ListRevisionAssetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_revision_assets::ListRevisionAssetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_revision_assets::ListRevisionAssetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_revision_assets();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListRevisionAssetsFluentBuilder {
         }
     }
     /// Access the ListRevisionAssets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_revision_assets::builders::ListRevisionAssetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_revision_assets::builders::ListRevisionAssetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListRevisionAssetsFluentBuilder {
             crate::operation::list_revision_assets::ListRevisionAssets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_revision_assets::ListRevisionAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_revision_assets::ListRevisionAssetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListRevisionAssetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListRevisionAssetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_revision_assets::ListRevisionAssetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_revision_assets::ListRevisionAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_revision_assets::ListRevisionAssetsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListRevisionAssetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_revision_assets::ListRevisionAssetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_revision_assets::ListRevisionAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_revision_assets::ListRevisionAssetsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListRevisionAssetsFluentBuilder {
             crate::operation::list_revision_assets::ListRevisionAssets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_revision_assets::ListRevisionAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_revision_assets::ListRevisionAssetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_revision_assets::paginator::ListRevisionAssetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_revision_assets::paginator::ListRevisionAssetsPaginator {
-        crate::operation::list_revision_assets::paginator::ListRevisionAssetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_revision_assets::paginator::ListRevisionAssetsPaginator {
+        crate::operation::list_revision_assets::paginator::ListRevisionAssetsPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier for a data set.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

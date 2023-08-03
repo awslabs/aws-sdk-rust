@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetConfiguredTableOutput`](crate::operation::get_configured_table::GetConfiguredTableOutput) with field(s):
     ///   - [`configured_table(Option<ConfiguredTable>)`](crate::operation::get_configured_table::GetConfiguredTableOutput::configured_table): <p>The retrieved configured table.</p>
     /// - On failure, responds with [`SdkError<GetConfiguredTableError>`](crate::operation::get_configured_table::GetConfiguredTableError)
-    pub fn get_configured_table(
-        &self,
-    ) -> crate::operation::get_configured_table::builders::GetConfiguredTableFluentBuilder {
-        crate::operation::get_configured_table::builders::GetConfiguredTableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_configured_table(&self) -> crate::operation::get_configured_table::builders::GetConfiguredTableFluentBuilder {
+        crate::operation::get_configured_table::builders::GetConfiguredTableFluentBuilder::new(self.handle.clone())
     }
 }

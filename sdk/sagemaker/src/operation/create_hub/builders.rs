@@ -10,10 +10,7 @@ impl CreateHubInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_hub::CreateHubOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hub::CreateHubError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hub::CreateHubError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_hub();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl CreateHubFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_hub::CreateHub,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_hub::CreateHub, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_hub::CreateHubError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl CreateHubFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl CreateHubFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_hub::CreateHub,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_hub::CreateHub, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_hub::CreateHubError>,
     > {
         self.customize_middleware().await
@@ -129,18 +117,12 @@ impl CreateHubFluentBuilder {
         self.inner.get_hub_name()
     }
     /// <p>A description of the hub.</p>
-    pub fn hub_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hub_description(input.into());
         self
     }
     /// <p>A description of the hub.</p>
-    pub fn set_hub_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hub_description(input);
         self
     }
@@ -149,18 +131,12 @@ impl CreateHubFluentBuilder {
         self.inner.get_hub_description()
     }
     /// <p>The display name of the hub.</p>
-    pub fn hub_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hub_display_name(input.into());
         self
     }
     /// <p>The display name of the hub.</p>
-    pub fn set_hub_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hub_display_name(input);
         self
     }
@@ -173,25 +149,17 @@ impl CreateHubFluentBuilder {
     /// To override the contents of this collection use [`set_hub_search_keywords`](Self::set_hub_search_keywords).
     ///
     /// <p>The searchable keywords for the hub.</p>
-    pub fn hub_search_keywords(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_search_keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hub_search_keywords(input.into());
         self
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn set_hub_search_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_hub_search_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_hub_search_keywords(input);
         self
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn get_hub_search_keywords(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hub_search_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_hub_search_keywords()
     }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
@@ -200,17 +168,12 @@ impl CreateHubFluentBuilder {
         self
     }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
-    pub fn set_s3_storage_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HubS3StorageConfig>,
-    ) -> Self {
+    pub fn set_s3_storage_config(mut self, input: ::std::option::Option<crate::types::HubS3StorageConfig>) -> Self {
         self.inner = self.inner.set_s3_storage_config(input);
         self
     }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
-    pub fn get_s3_storage_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HubS3StorageConfig> {
+    pub fn get_s3_storage_config(&self) -> &::std::option::Option<crate::types::HubS3StorageConfig> {
         self.inner.get_s3_storage_config()
     }
     /// Appends an item to `Tags`.
@@ -223,10 +186,7 @@ impl CreateHubFluentBuilder {
         self
     }
     /// <p>Any tags to associate with the hub.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

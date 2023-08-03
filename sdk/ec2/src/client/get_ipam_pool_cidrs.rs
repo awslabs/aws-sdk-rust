@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`ipam_pool_cidrs(Option<Vec<IpamPoolCidr>>)`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput::ipam_pool_cidrs): <p>Information about the CIDRs provisioned to an IPAM pool.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetIpamPoolCidrsError>`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsError)
-    pub fn get_ipam_pool_cidrs(
-        &self,
-    ) -> crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder {
-        crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_ipam_pool_cidrs(&self) -> crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder {
+        crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::new(self.handle.clone())
     }
 }

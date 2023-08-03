@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeResiliencyPolicyOutput {
 }
 impl DescribeResiliencyPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResiliencyPolicyOutput`](crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyOutputBuilder {
         crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeResiliencyPolicyOutput`](crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeResiliencyPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::ResiliencyPolicy>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeResiliencyPolicyOutputBuilder {
         self
     }
     /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResiliencyPolicy>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::ResiliencyPolicy>) -> Self {
         self.policy = input;
         self
     }
@@ -65,9 +58,7 @@ impl DescribeResiliencyPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeResiliencyPolicyOutput`](crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput {
+    pub fn build(self) -> crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput {
         crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput {
             policy: self.policy,
             _request_id: self._request_id,

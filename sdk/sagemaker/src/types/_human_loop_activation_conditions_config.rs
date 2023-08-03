@@ -23,33 +23,23 @@ impl HumanLoopActivationConditionsConfig {
 
 /// A builder for [`HumanLoopActivationConditionsConfig`](crate::types::HumanLoopActivationConditionsConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HumanLoopActivationConditionsConfigBuilder {
     pub(crate) human_loop_activation_conditions: ::std::option::Option<::std::string::String>,
 }
 impl HumanLoopActivationConditionsConfigBuilder {
     /// <p>JSON expressing use-case specific conditions declaratively. If any condition is matched, atomic tasks are created against the configured work team. The set of conditions is different for Rekognition and Textract. For more information about how to structure the JSON, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-    pub fn human_loop_activation_conditions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_loop_activation_conditions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_activation_conditions = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>JSON expressing use-case specific conditions declaratively. If any condition is matched, atomic tasks are created against the configured work team. The set of conditions is different for Rekognition and Textract. For more information about how to structure the JSON, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-    pub fn set_human_loop_activation_conditions(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_loop_activation_conditions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_loop_activation_conditions = input;
         self
     }
     /// <p>JSON expressing use-case specific conditions declaratively. If any condition is matched, atomic tasks are created against the configured work team. The set of conditions is different for Rekognition and Textract. For more information about how to structure the JSON, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-    pub fn get_human_loop_activation_conditions(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_human_loop_activation_conditions(&self) -> &::std::option::Option<::std::string::String> {
         &self.human_loop_activation_conditions
     }
     /// Consumes the builder and constructs a [`HumanLoopActivationConditionsConfig`](crate::types::HumanLoopActivationConditionsConfig).

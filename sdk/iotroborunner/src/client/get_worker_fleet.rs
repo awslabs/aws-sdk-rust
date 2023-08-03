@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_worker_fleet::GetWorkerFleetOutput::updated_at): Timestamp at which the resource was last updated.
     ///   - [`additional_fixed_properties(Option<String>)`](crate::operation::get_worker_fleet::GetWorkerFleetOutput::additional_fixed_properties): JSON blob containing additional fixed properties regarding the worker fleet
     /// - On failure, responds with [`SdkError<GetWorkerFleetError>`](crate::operation::get_worker_fleet::GetWorkerFleetError)
-    pub fn get_worker_fleet(
-        &self,
-    ) -> crate::operation::get_worker_fleet::builders::GetWorkerFleetFluentBuilder {
-        crate::operation::get_worker_fleet::builders::GetWorkerFleetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_worker_fleet(&self) -> crate::operation::get_worker_fleet::builders::GetWorkerFleetFluentBuilder {
+        crate::operation::get_worker_fleet::builders::GetWorkerFleetFluentBuilder::new(self.handle.clone())
     }
 }

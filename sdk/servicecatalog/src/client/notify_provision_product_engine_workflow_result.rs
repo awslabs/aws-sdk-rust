@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`idempotency_token(impl ::std::convert::Into<String>)`](crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultFluentBuilder::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultFluentBuilder::set_idempotency_token): <p> The idempotency token that identifies the provisioning engine execution. </p>
     /// - On success, responds with [`NotifyProvisionProductEngineWorkflowResultOutput`](crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultOutput)
     /// - On failure, responds with [`SdkError<NotifyProvisionProductEngineWorkflowResultError>`](crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError)
-    pub fn notify_provision_product_engine_workflow_result(&self) -> crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultFluentBuilder{
-        crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultFluentBuilder::new(self.handle.clone())
+    pub fn notify_provision_product_engine_workflow_result(
+        &self,
+    ) -> crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultFluentBuilder {
+        crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -22,9 +22,7 @@ impl DeleteCrawlerInput {
 
 /// A builder for [`DeleteCrawlerInput`](crate::operation::delete_crawler::DeleteCrawlerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCrawlerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteCrawlerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCrawlerInput`](crate::operation::delete_crawler::DeleteCrawlerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_crawler::DeleteCrawlerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_crawler::DeleteCrawlerInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_crawler::DeleteCrawlerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_crawler::DeleteCrawlerInput { name: self.name })
     }
 }

@@ -30,27 +30,19 @@ impl TimestreamResources {
 
 /// A builder for [`TimestreamResources`](crate::types::TimestreamResources).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimestreamResourcesBuilder {
     pub(crate) timestream_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) timestream_table_name: ::std::option::Option<::std::string::String>,
 }
 impl TimestreamResourcesBuilder {
     /// <p>The name of the registered Amazon Timestream database.</p>
-    pub fn timestream_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timestream_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestream_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the registered Amazon Timestream database.</p>
-    pub fn set_timestream_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timestream_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestream_database_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl TimestreamResourcesBuilder {
         &self.timestream_database_name
     }
     /// <p>The name of the registered Amazon Timestream database table.</p>
-    pub fn timestream_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timestream_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestream_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the registered Amazon Timestream database table.</p>
-    pub fn set_timestream_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timestream_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestream_table_name = input;
         self
     }

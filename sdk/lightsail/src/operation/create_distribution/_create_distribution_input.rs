@@ -76,42 +76,32 @@ impl CreateDistributionInput {
 }
 impl CreateDistributionInput {
     /// Creates a new builder-style object to manufacture [`CreateDistributionInput`](crate::operation::create_distribution::CreateDistributionInput).
-    pub fn builder(
-    ) -> crate::operation::create_distribution::builders::CreateDistributionInputBuilder {
+    pub fn builder() -> crate::operation::create_distribution::builders::CreateDistributionInputBuilder {
         crate::operation::create_distribution::builders::CreateDistributionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDistributionInput`](crate::operation::create_distribution::CreateDistributionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDistributionInputBuilder {
     pub(crate) distribution_name: ::std::option::Option<::std::string::String>,
     pub(crate) origin: ::std::option::Option<crate::types::InputOrigin>,
     pub(crate) default_cache_behavior: ::std::option::Option<crate::types::CacheBehavior>,
     pub(crate) cache_behavior_settings: ::std::option::Option<crate::types::CacheSettings>,
-    pub(crate) cache_behaviors:
-        ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
+    pub(crate) cache_behaviors: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDistributionInputBuilder {
     /// <p>The name for the distribution.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the distribution.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_name = input;
         self
     }
@@ -142,17 +132,12 @@ impl CreateDistributionInputBuilder {
         self
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
-    pub fn set_default_cache_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheBehavior>,
-    ) -> Self {
+    pub fn set_default_cache_behavior(mut self, input: ::std::option::Option<crate::types::CacheBehavior>) -> Self {
         self.default_cache_behavior = input;
         self
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
-    pub fn get_default_cache_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::CacheBehavior> {
+    pub fn get_default_cache_behavior(&self) -> &::std::option::Option<crate::types::CacheBehavior> {
         &self.default_cache_behavior
     }
     /// <p>An object that describes the cache behavior settings for the distribution.</p>
@@ -161,17 +146,12 @@ impl CreateDistributionInputBuilder {
         self
     }
     /// <p>An object that describes the cache behavior settings for the distribution.</p>
-    pub fn set_cache_behavior_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheSettings>,
-    ) -> Self {
+    pub fn set_cache_behavior_settings(mut self, input: ::std::option::Option<crate::types::CacheSettings>) -> Self {
         self.cache_behavior_settings = input;
         self
     }
     /// <p>An object that describes the cache behavior settings for the distribution.</p>
-    pub fn get_cache_behavior_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::CacheSettings> {
+    pub fn get_cache_behavior_settings(&self) -> &::std::option::Option<crate::types::CacheSettings> {
         &self.cache_behavior_settings
     }
     /// Appends an item to `cache_behaviors`.
@@ -186,17 +166,12 @@ impl CreateDistributionInputBuilder {
         self
     }
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    pub fn set_cache_behaviors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
-    ) -> Self {
+    pub fn set_cache_behaviors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>) -> Self {
         self.cache_behaviors = input;
         self
     }
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    pub fn get_cache_behaviors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>> {
+    pub fn get_cache_behaviors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>> {
         &self.cache_behaviors
     }
     /// <p>The bundle ID to use for the distribution.</p>
@@ -229,10 +204,7 @@ impl CreateDistributionInputBuilder {
     /// <p>The IP address type for the distribution.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -256,10 +228,7 @@ impl CreateDistributionInputBuilder {
     }
     /// <p>The tag keys and optional values to add to the distribution during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -271,21 +240,16 @@ impl CreateDistributionInputBuilder {
     /// Consumes the builder and constructs a [`CreateDistributionInput`](crate::operation::create_distribution::CreateDistributionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_distribution::CreateDistributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_distribution::CreateDistributionInput {
-                distribution_name: self.distribution_name,
-                origin: self.origin,
-                default_cache_behavior: self.default_cache_behavior,
-                cache_behavior_settings: self.cache_behavior_settings,
-                cache_behaviors: self.cache_behaviors,
-                bundle_id: self.bundle_id,
-                ip_address_type: self.ip_address_type,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_distribution::CreateDistributionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_distribution::CreateDistributionInput {
+            distribution_name: self.distribution_name,
+            origin: self.origin,
+            default_cache_behavior: self.default_cache_behavior,
+            cache_behavior_settings: self.cache_behavior_settings,
+            cache_behaviors: self.cache_behaviors,
+            bundle_id: self.bundle_id,
+            ip_address_type: self.ip_address_type,
+            tags: self.tags,
+        })
     }
 }

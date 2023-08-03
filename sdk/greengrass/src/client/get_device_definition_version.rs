@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_device_definition_version::GetDeviceDefinitionVersionOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     ///   - [`version(Option<String>)`](crate::operation::get_device_definition_version::GetDeviceDefinitionVersionOutput::version): The version of the device definition version.
     /// - On failure, responds with [`SdkError<GetDeviceDefinitionVersionError>`](crate::operation::get_device_definition_version::GetDeviceDefinitionVersionError)
-    pub fn get_device_definition_version(&self) -> crate::operation::get_device_definition_version::builders::GetDeviceDefinitionVersionFluentBuilder{
+    pub fn get_device_definition_version(
+        &self,
+    ) -> crate::operation::get_device_definition_version::builders::GetDeviceDefinitionVersionFluentBuilder {
         crate::operation::get_device_definition_version::builders::GetDeviceDefinitionVersionFluentBuilder::new(self.handle.clone())
     }
 }

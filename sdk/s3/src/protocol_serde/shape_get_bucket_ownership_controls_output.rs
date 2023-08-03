@@ -5,14 +5,15 @@ pub(crate) fn de_ownership_controls_payload(
     ::std::option::Option<crate::types::OwnershipControls>,
     crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_get_bucket_ownership_controls_output::de_ownership_controls(body).map_err(crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_get_bucket_ownership_controls_output::de_ownership_controls(body)
+                .map_err(crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsError::unhandled)
+        })
+        .transpose()
 }
 
-pub fn de_ownership_controls(
-    inp: &[u8],
-) -> Result<crate::types::OwnershipControls, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_ownership_controls(inp: &[u8]) -> Result<crate::types::OwnershipControls, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

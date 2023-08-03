@@ -43,18 +43,14 @@ impl ListFlowDefinitionsInput {
 }
 impl ListFlowDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListFlowDefinitionsInput`](crate::operation::list_flow_definitions::ListFlowDefinitionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_flow_definitions::builders::ListFlowDefinitionsInputBuilder {
-        crate::operation::list_flow_definitions::builders::ListFlowDefinitionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_flow_definitions::builders::ListFlowDefinitionsInputBuilder {
+        crate::operation::list_flow_definitions::builders::ListFlowDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFlowDefinitionsInput`](crate::operation::list_flow_definitions::ListFlowDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFlowDefinitionsInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -69,10 +65,7 @@ impl ListFlowDefinitionsInputBuilder {
         self
     }
     /// <p>A filter that returns only flow definitions with a creation time greater than or equal to the specified timestamp.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -86,10 +79,7 @@ impl ListFlowDefinitionsInputBuilder {
         self
     }
     /// <p>A filter that returns only flow definitions that were created before the specified timestamp.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -142,18 +132,14 @@ impl ListFlowDefinitionsInputBuilder {
     /// Consumes the builder and constructs a [`ListFlowDefinitionsInput`](crate::operation::list_flow_definitions::ListFlowDefinitionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_flow_definitions::ListFlowDefinitionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_flow_definitions::ListFlowDefinitionsInput {
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_flow_definitions::ListFlowDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_flow_definitions::ListFlowDefinitionsInput {
+            creation_time_after: self.creation_time_after,
+            creation_time_before: self.creation_time_before,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

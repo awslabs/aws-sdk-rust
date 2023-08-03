@@ -37,9 +37,7 @@ impl BucketLevelPermissions {
 
 /// A builder for [`BucketLevelPermissions`](crate::types::BucketLevelPermissions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketLevelPermissionsBuilder {
     pub(crate) access_control_list: ::std::option::Option<crate::types::AccessControlList>,
     pub(crate) bucket_policy: ::std::option::Option<crate::types::BucketPolicy>,
@@ -52,17 +50,12 @@ impl BucketLevelPermissionsBuilder {
         self
     }
     /// <p>Contains information on how Access Control Policies are applied to the bucket.</p>
-    pub fn set_access_control_list(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessControlList>,
-    ) -> Self {
+    pub fn set_access_control_list(mut self, input: ::std::option::Option<crate::types::AccessControlList>) -> Self {
         self.access_control_list = input;
         self
     }
     /// <p>Contains information on how Access Control Policies are applied to the bucket.</p>
-    pub fn get_access_control_list(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessControlList> {
+    pub fn get_access_control_list(&self) -> &::std::option::Option<crate::types::AccessControlList> {
         &self.access_control_list
     }
     /// <p>Contains information on the bucket policies for the S3 bucket.</p>
@@ -71,10 +64,7 @@ impl BucketLevelPermissionsBuilder {
         self
     }
     /// <p>Contains information on the bucket policies for the S3 bucket.</p>
-    pub fn set_bucket_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketPolicy>,
-    ) -> Self {
+    pub fn set_bucket_policy(mut self, input: ::std::option::Option<crate::types::BucketPolicy>) -> Self {
         self.bucket_policy = input;
         self
     }
@@ -88,17 +78,12 @@ impl BucketLevelPermissionsBuilder {
         self
     }
     /// <p>Contains information on which account level S3 Block Public Access settings are applied to the S3 bucket.</p>
-    pub fn set_block_public_access(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockPublicAccess>,
-    ) -> Self {
+    pub fn set_block_public_access(mut self, input: ::std::option::Option<crate::types::BlockPublicAccess>) -> Self {
         self.block_public_access = input;
         self
     }
     /// <p>Contains information on which account level S3 Block Public Access settings are applied to the S3 bucket.</p>
-    pub fn get_block_public_access(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlockPublicAccess> {
+    pub fn get_block_public_access(&self) -> &::std::option::Option<crate::types::BlockPublicAccess> {
         &self.block_public_access
     }
     /// Consumes the builder and constructs a [`BucketLevelPermissions`](crate::types::BucketLevelPermissions).

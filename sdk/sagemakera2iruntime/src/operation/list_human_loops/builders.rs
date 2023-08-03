@@ -10,10 +10,7 @@ impl ListHumanLoopsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_human_loops::ListHumanLoopsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_human_loops::ListHumanLoopsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_human_loops::ListHumanLoopsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_human_loops();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListHumanLoopsFluentBuilder {
         }
     }
     /// Access the ListHumanLoops as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_human_loops::builders::ListHumanLoopsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_human_loops::builders::ListHumanLoopsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListHumanLoopsFluentBuilder {
             crate::operation::list_human_loops::ListHumanLoops,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_human_loops::ListHumanLoopsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_human_loops::ListHumanLoopsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListHumanLoopsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListHumanLoopsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_human_loops::ListHumanLoopsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_human_loops::ListHumanLoopsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_human_loops::ListHumanLoopsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListHumanLoopsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_human_loops::ListHumanLoopsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_human_loops::ListHumanLoopsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_human_loops::ListHumanLoopsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListHumanLoopsFluentBuilder {
             crate::operation::list_human_loops::ListHumanLoops,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_human_loops::ListHumanLoopsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_human_loops::ListHumanLoopsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_human_loops::paginator::ListHumanLoopsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_human_loops::paginator::ListHumanLoopsPaginator {
-        crate::operation::list_human_loops::paginator::ListHumanLoopsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_human_loops::paginator::ListHumanLoopsPaginator {
+        crate::operation::list_human_loops::paginator::ListHumanLoopsPaginator::new(self.handle, self.inner)
     }
     /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -139,10 +118,7 @@ impl ListHumanLoopsFluentBuilder {
         self
     }
     /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -156,10 +132,7 @@ impl ListHumanLoopsFluentBuilder {
         self
     }
     /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -168,18 +141,12 @@ impl ListHumanLoopsFluentBuilder {
         self.inner.get_creation_time_before()
     }
     /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
-    pub fn flow_definition_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_definition_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
-    pub fn set_flow_definition_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_definition_arn(input);
         self
     }

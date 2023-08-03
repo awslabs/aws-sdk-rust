@@ -37,9 +37,7 @@ impl BatchImportEvidenceToAssessmentControlError {
 
 /// A builder for [`BatchImportEvidenceToAssessmentControlError`](crate::types::BatchImportEvidenceToAssessmentControlError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchImportEvidenceToAssessmentControlErrorBuilder {
     pub(crate) manual_evidence: ::std::option::Option<crate::types::ManualEvidence>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl BatchImportEvidenceToAssessmentControlErrorBuilder {
         self
     }
     /// <p> Manual evidence that can't be collected automatically by Audit Manager. </p>
-    pub fn set_manual_evidence(
-        mut self,
-        input: ::std::option::Option<crate::types::ManualEvidence>,
-    ) -> Self {
+    pub fn set_manual_evidence(mut self, input: ::std::option::Option<crate::types::ManualEvidence>) -> Self {
         self.manual_evidence = input;
         self
     }
@@ -78,18 +73,12 @@ impl BatchImportEvidenceToAssessmentControlErrorBuilder {
         &self.error_code
     }
     /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

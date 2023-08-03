@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_engagements::ListEngagementsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     ///   - [`engagements(Option<Vec<Engagement>>)`](crate::operation::list_engagements::ListEngagementsOutput::engagements): <p>A list of each engagement that occurred during the specified time range of an incident.</p>
     /// - On failure, responds with [`SdkError<ListEngagementsError>`](crate::operation::list_engagements::ListEngagementsError)
-    pub fn list_engagements(
-        &self,
-    ) -> crate::operation::list_engagements::builders::ListEngagementsFluentBuilder {
-        crate::operation::list_engagements::builders::ListEngagementsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_engagements(&self) -> crate::operation::list_engagements::builders::ListEngagementsFluentBuilder {
+        crate::operation::list_engagements::builders::ListEngagementsFluentBuilder::new(self.handle.clone())
     }
 }

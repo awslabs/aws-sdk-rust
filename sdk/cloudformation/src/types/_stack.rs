@@ -112,9 +112,7 @@ impl Stack {
         self.last_updated_time.as_ref()
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
-    pub fn rollback_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RollbackConfiguration> {
+    pub fn rollback_configuration(&self) -> ::std::option::Option<&crate::types::RollbackConfiguration> {
         self.rollback_configuration.as_ref()
     }
     /// <p>Current status of the stack.</p>
@@ -186,9 +184,7 @@ impl Stack {
 
 /// A builder for [`Stack`](crate::types::Stack).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
@@ -243,18 +239,12 @@ impl StackBuilder {
         &self.stack_name
     }
     /// <p>The unique ID of the change set.</p>
-    pub fn change_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the change set.</p>
-    pub fn set_change_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_id = input;
         self
     }
@@ -288,17 +278,12 @@ impl StackBuilder {
         self
     }
     /// <p>A list of <code>Parameter</code> structures.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>A list of <code>Parameter</code> structures.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }
     /// <p>The time at which the stack was created.</p>
@@ -307,10 +292,7 @@ impl StackBuilder {
         self
     }
     /// <p>The time at which the stack was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -324,10 +306,7 @@ impl StackBuilder {
         self
     }
     /// <p>The time the stack was deleted.</p>
-    pub fn set_deletion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deletion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deletion_time = input;
         self
     }
@@ -341,10 +320,7 @@ impl StackBuilder {
         self
     }
     /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -358,17 +334,12 @@ impl StackBuilder {
         self
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
-    pub fn set_rollback_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RollbackConfiguration>,
-    ) -> Self {
+    pub fn set_rollback_configuration(mut self, input: ::std::option::Option<crate::types::RollbackConfiguration>) -> Self {
         self.rollback_configuration = input;
         self
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
-    pub fn get_rollback_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RollbackConfiguration> {
+    pub fn get_rollback_configuration(&self) -> &::std::option::Option<crate::types::RollbackConfiguration> {
         &self.rollback_configuration
     }
     /// <p>Current status of the stack.</p>
@@ -377,10 +348,7 @@ impl StackBuilder {
         self
     }
     /// <p>Current status of the stack.</p>
-    pub fn set_stack_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackStatus>,
-    ) -> Self {
+    pub fn set_stack_status(mut self, input: ::std::option::Option<crate::types::StackStatus>) -> Self {
         self.stack_status = input;
         self
     }
@@ -389,18 +357,12 @@ impl StackBuilder {
         &self.stack_status
     }
     /// <p>Success/failure message associated with the stack status.</p>
-    pub fn stack_status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Success/failure message associated with the stack status.</p>
-    pub fn set_stack_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_status_reason = input;
         self
     }
@@ -439,27 +401,19 @@ impl StackBuilder {
     /// To override the contents of this collection use [`set_notification_ar_ns`](Self::set_notification_ar_ns).
     ///
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
-    pub fn notification_ar_ns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.notification_ar_ns.unwrap_or_default();
         v.push(input.into());
         self.notification_ar_ns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
-    pub fn set_notification_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_notification_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.notification_ar_ns = input;
         self
     }
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
-    pub fn get_notification_ar_ns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_notification_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.notification_ar_ns
     }
     /// <p>The amount of time within which stack creation should complete.</p>
@@ -488,17 +442,12 @@ impl StackBuilder {
         self
     }
     /// <p>The capabilities allowed in the stack.</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
         self.capabilities = input;
         self
     }
     /// <p>The capabilities allowed in the stack.</p>
-    pub fn get_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
         &self.capabilities
     }
     /// Appends an item to `outputs`.
@@ -513,10 +462,7 @@ impl StackBuilder {
         self
     }
     /// <p>A list of output structures.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
         self.outputs = input;
         self
     }
@@ -550,10 +496,7 @@ impl StackBuilder {
         self
     }
     /// <p>A list of <code>Tag</code>s that specify information about the stack.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -618,17 +561,12 @@ impl StackBuilder {
         self
     }
     /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    pub fn set_drift_information(
-        mut self,
-        input: ::std::option::Option<crate::types::StackDriftInformation>,
-    ) -> Self {
+    pub fn set_drift_information(mut self, input: ::std::option::Option<crate::types::StackDriftInformation>) -> Self {
         self.drift_information = input;
         self
     }
     /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    pub fn get_drift_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackDriftInformation> {
+    pub fn get_drift_information(&self) -> &::std::option::Option<crate::types::StackDriftInformation> {
         &self.drift_information
     }
     /// Consumes the builder and constructs a [`Stack`](crate::types::Stack).

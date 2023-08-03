@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionOutput::id): The ID of the parent definition that the version is associated with.
     ///   - [`version(Option<String>)`](crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionOutput::version): The ID of the version.
     /// - On failure, responds with [`SdkError<CreateDeviceDefinitionVersionError>`](crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionError)
-    pub fn create_device_definition_version(&self) -> crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionFluentBuilder{
+    pub fn create_device_definition_version(
+        &self,
+    ) -> crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionFluentBuilder {
         crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -112,10 +112,7 @@ impl ::std::fmt::Debug for UpdatePricingRuleOutput {
         formatter.field("r#type", &self.r#type);
         formatter.field("modifier_percentage", &self.modifier_percentage);
         formatter.field("service", &self.service);
-        formatter.field(
-            "associated_pricing_plan_count",
-            &self.associated_pricing_plan_count,
-        );
+        formatter.field("associated_pricing_plan_count", &self.associated_pricing_plan_count);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("billing_entity", &self.billing_entity);
         formatter.field("tiering", &self.tiering);
@@ -132,8 +129,7 @@ impl ::aws_http::request_id::RequestId for UpdatePricingRuleOutput {
 }
 impl UpdatePricingRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePricingRuleOutput`](crate::operation::update_pricing_rule::UpdatePricingRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_pricing_rule::builders::UpdatePricingRuleOutputBuilder {
+    pub fn builder() -> crate::operation::update_pricing_rule::builders::UpdatePricingRuleOutputBuilder {
         crate::operation::update_pricing_rule::builders::UpdatePricingRuleOutputBuilder::default()
     }
 }
@@ -206,10 +202,7 @@ impl UpdatePricingRuleOutputBuilder {
         self
     }
     /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
-    pub fn set_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingRuleScope>,
-    ) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::PricingRuleScope>) -> Self {
         self.scope = input;
         self
     }
@@ -288,18 +281,12 @@ impl UpdatePricingRuleOutputBuilder {
         &self.last_modified_time
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-    pub fn billing_entity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_entity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_entity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-    pub fn set_billing_entity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_entity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_entity = input;
         self
     }
@@ -313,10 +300,7 @@ impl UpdatePricingRuleOutputBuilder {
         self
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    pub fn set_tiering(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateTieringInput>,
-    ) -> Self {
+    pub fn set_tiering(mut self, input: ::std::option::Option<crate::types::UpdateTieringInput>) -> Self {
         self.tiering = input;
         self
     }
@@ -397,10 +381,7 @@ impl ::std::fmt::Debug for UpdatePricingRuleOutputBuilder {
         formatter.field("r#type", &self.r#type);
         formatter.field("modifier_percentage", &self.modifier_percentage);
         formatter.field("service", &self.service);
-        formatter.field(
-            "associated_pricing_plan_count",
-            &self.associated_pricing_plan_count,
-        );
+        formatter.field("associated_pricing_plan_count", &self.associated_pricing_plan_count);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("billing_entity", &self.billing_entity);
         formatter.field("tiering", &self.tiering);

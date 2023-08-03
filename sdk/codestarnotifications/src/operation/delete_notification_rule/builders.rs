@@ -37,10 +37,7 @@ impl DeleteNotificationRuleFluentBuilder {
         }
     }
     /// Access the DeleteNotificationRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_notification_rule::builders::DeleteNotificationRuleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_notification_rule::builders::DeleteNotificationRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteNotificationRuleFluentBuilder {
             crate::operation::delete_notification_rule::DeleteNotificationRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification_rule::DeleteNotificationRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification_rule::DeleteNotificationRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteNotificationRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteNotificationRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_notification_rule::DeleteNotificationRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification_rule::DeleteNotificationRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification_rule::DeleteNotificationRuleError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteNotificationRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_notification_rule::DeleteNotificationRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification_rule::DeleteNotificationRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification_rule::DeleteNotificationRuleError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteNotificationRuleFluentBuilder {
             crate::operation::delete_notification_rule::DeleteNotificationRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification_rule::DeleteNotificationRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification_rule::DeleteNotificationRuleError>,
     > {
         self.customize_middleware().await
     }

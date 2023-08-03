@@ -46,18 +46,14 @@ impl DescribeManagedRuleGroupInput {
 }
 impl DescribeManagedRuleGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeManagedRuleGroupInput`](crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupInput).
-    pub fn builder(
-    ) -> crate::operation::describe_managed_rule_group::builders::DescribeManagedRuleGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_managed_rule_group::builders::DescribeManagedRuleGroupInputBuilder {
         crate::operation::describe_managed_rule_group::builders::DescribeManagedRuleGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeManagedRuleGroupInput`](crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeManagedRuleGroupInputBuilder {
     pub(crate) vendor_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -143,13 +139,11 @@ impl DescribeManagedRuleGroupInputBuilder {
         crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupInput {
-                vendor_name: self.vendor_name,
-                name: self.name,
-                scope: self.scope,
-                version_name: self.version_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupInput {
+            vendor_name: self.vendor_name,
+            name: self.name,
+            scope: self.scope,
+            version_name: self.version_name,
+        })
     }
 }

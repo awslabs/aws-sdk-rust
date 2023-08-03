@@ -48,9 +48,7 @@ impl CreateMapOutput {
 
 /// A builder for [`CreateMapOutput`](crate::operation::create_map::CreateMapOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMapOutputBuilder {
     pub(crate) map_name: ::std::option::Option<::std::string::String>,
     pub(crate) map_arn: ::std::option::Option<::std::string::String>,
@@ -101,10 +99,7 @@ impl CreateMapOutputBuilder {
         self
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }

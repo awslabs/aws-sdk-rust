@@ -39,9 +39,7 @@ impl CreateBulkImportJobFluentBuilder {
         }
     }
     /// Access the CreateBulkImportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_bulk_import_job::builders::CreateBulkImportJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_bulk_import_job::builders::CreateBulkImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl CreateBulkImportJobFluentBuilder {
             crate::operation::create_bulk_import_job::CreateBulkImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bulk_import_job::CreateBulkImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bulk_import_job::CreateBulkImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl CreateBulkImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl CreateBulkImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_bulk_import_job::CreateBulkImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bulk_import_job::CreateBulkImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bulk_import_job::CreateBulkImportJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl CreateBulkImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_bulk_import_job::CreateBulkImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bulk_import_job::CreateBulkImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bulk_import_job::CreateBulkImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl CreateBulkImportJobFluentBuilder {
             crate::operation::create_bulk_import_job::CreateBulkImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bulk_import_job::CreateBulkImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bulk_import_job::CreateBulkImportJobError>,
     > {
         self.customize_middleware().await
     }
@@ -162,10 +149,7 @@ impl CreateBulkImportJobFluentBuilder {
         self
     }
     /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
-    pub fn set_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::File>>,
-    ) -> Self {
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::File>>) -> Self {
         self.inner = self.inner.set_files(input);
         self
     }
@@ -179,17 +163,12 @@ impl CreateBulkImportJobFluentBuilder {
         self
     }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
-    pub fn set_error_report_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorReportLocation>,
-    ) -> Self {
+    pub fn set_error_report_location(mut self, input: ::std::option::Option<crate::types::ErrorReportLocation>) -> Self {
         self.inner = self.inner.set_error_report_location(input);
         self
     }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
-    pub fn get_error_report_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::ErrorReportLocation> {
+    pub fn get_error_report_location(&self) -> &::std::option::Option<crate::types::ErrorReportLocation> {
         self.inner.get_error_report_location()
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
@@ -198,10 +177,7 @@ impl CreateBulkImportJobFluentBuilder {
         self
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
-    pub fn set_job_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::JobConfiguration>,
-    ) -> Self {
+    pub fn set_job_configuration(mut self, input: ::std::option::Option<crate::types::JobConfiguration>) -> Self {
         self.inner = self.inner.set_job_configuration(input);
         self
     }

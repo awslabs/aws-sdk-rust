@@ -31,18 +31,14 @@ impl ListVirtualMfaDevicesInput {
 }
 impl ListVirtualMfaDevicesInput {
     /// Creates a new builder-style object to manufacture [`ListVirtualMfaDevicesInput`](crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesInput).
-    pub fn builder(
-    ) -> crate::operation::list_virtual_mfa_devices::builders::ListVirtualMfaDevicesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_virtual_mfa_devices::builders::ListVirtualMfaDevicesInputBuilder {
         crate::operation::list_virtual_mfa_devices::builders::ListVirtualMfaDevicesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVirtualMfaDevicesInput`](crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVirtualMfaDevicesInputBuilder {
     pub(crate) assignment_status: ::std::option::Option<crate::types::AssignmentStatusType>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -55,17 +51,12 @@ impl ListVirtualMfaDevicesInputBuilder {
         self
     }
     /// <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code>, which lists both assigned and unassigned virtual MFA devices.,</p>
-    pub fn set_assignment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssignmentStatusType>,
-    ) -> Self {
+    pub fn set_assignment_status(mut self, input: ::std::option::Option<crate::types::AssignmentStatusType>) -> Self {
         self.assignment_status = input;
         self
     }
     /// <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code>, which lists both assigned and unassigned virtual MFA devices.,</p>
-    pub fn get_assignment_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssignmentStatusType> {
+    pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatusType> {
         &self.assignment_status
     }
     /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
@@ -102,16 +93,12 @@ impl ListVirtualMfaDevicesInputBuilder {
     /// Consumes the builder and constructs a [`ListVirtualMfaDevicesInput`](crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesInput {
-                assignment_status: self.assignment_status,
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesInput {
+            assignment_status: self.assignment_status,
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl ListDashboardsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_dashboards::ListDashboardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dashboards::ListDashboardsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dashboards::ListDashboardsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_dashboards();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListDashboardsFluentBuilder {
         }
     }
     /// Access the ListDashboards as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_dashboards::builders::ListDashboardsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_dashboards::builders::ListDashboardsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl ListDashboardsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,27 +110,16 @@ impl ListDashboardsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_dashboards::paginator::ListDashboardsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_dashboards::paginator::ListDashboardsPaginator {
-        crate::operation::list_dashboards::paginator::ListDashboardsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_dashboards::paginator::ListDashboardsPaginator {
+        crate::operation::list_dashboards::paginator::ListDashboardsPaginator::new(self.handle, self.inner)
     }
     /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
-    pub fn dashboard_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dashboard_name_prefix(input.into());
         self
     }
     /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
-    pub fn set_dashboard_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dashboard_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dashboard_name_prefix(input);
         self
     }

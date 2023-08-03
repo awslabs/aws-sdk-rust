@@ -53,9 +53,7 @@ impl Captions {
 
 /// A builder for [`Captions`](crate::types::Captions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaptionsBuilder {
     pub(crate) merge_policy: ::std::option::Option<::std::string::String>,
     pub(crate) caption_sources: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>,
@@ -111,18 +109,13 @@ impl CaptionsBuilder {
     }
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
     #[deprecated]
-    pub fn set_caption_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>,
-    ) -> Self {
+    pub fn set_caption_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>) -> Self {
         self.caption_sources = input;
         self
     }
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
     #[deprecated]
-    pub fn get_caption_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>> {
+    pub fn get_caption_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>> {
         &self.caption_sources
     }
     /// Appends an item to `caption_formats`.
@@ -137,17 +130,12 @@ impl CaptionsBuilder {
         self
     }
     /// <p>The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
-    pub fn set_caption_formats(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionFormat>>,
-    ) -> Self {
+    pub fn set_caption_formats(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionFormat>>) -> Self {
         self.caption_formats = input;
         self
     }
     /// <p>The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
-    pub fn get_caption_formats(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionFormat>> {
+    pub fn get_caption_formats(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionFormat>> {
         &self.caption_formats
     }
     /// Consumes the builder and constructs a [`Captions`](crate::types::Captions).

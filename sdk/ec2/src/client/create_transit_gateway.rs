@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTransitGatewayOutput`](crate::operation::create_transit_gateway::CreateTransitGatewayOutput) with field(s):
     ///   - [`transit_gateway(Option<TransitGateway>)`](crate::operation::create_transit_gateway::CreateTransitGatewayOutput::transit_gateway): <p>Information about the transit gateway.</p>
     /// - On failure, responds with [`SdkError<CreateTransitGatewayError>`](crate::operation::create_transit_gateway::CreateTransitGatewayError)
-    pub fn create_transit_gateway(
-        &self,
-    ) -> crate::operation::create_transit_gateway::builders::CreateTransitGatewayFluentBuilder {
-        crate::operation::create_transit_gateway::builders::CreateTransitGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_transit_gateway(&self) -> crate::operation::create_transit_gateway::builders::CreateTransitGatewayFluentBuilder {
+        crate::operation::create_transit_gateway::builders::CreateTransitGatewayFluentBuilder::new(self.handle.clone())
     }
 }

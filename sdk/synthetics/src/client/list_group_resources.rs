@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`resources(Option<Vec<String>>)`](crate::operation::list_group_resources::ListGroupResourcesOutput::resources): <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_group_resources::ListGroupResourcesOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListGroupResourcesError>`](crate::operation::list_group_resources::ListGroupResourcesError)
-    pub fn list_group_resources(
-        &self,
-    ) -> crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder {
-        crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_group_resources(&self) -> crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder {
+        crate::operation::list_group_resources::builders::ListGroupResourcesFluentBuilder::new(self.handle.clone())
     }
 }

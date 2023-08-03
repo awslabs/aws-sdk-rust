@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`sip_rule(Option<SipRule>)`](crate::operation::update_sip_rule::UpdateSipRuleOutput::sip_rule): <p>Updated SIP rule details.</p>
     /// - On failure, responds with [`SdkError<UpdateSipRuleError>`](crate::operation::update_sip_rule::UpdateSipRuleError)
     #[deprecated(note = "Replaced by UpdateSipRule in the Amazon Chime SDK Voice Namespace")]
-    pub fn update_sip_rule(
-        &self,
-    ) -> crate::operation::update_sip_rule::builders::UpdateSipRuleFluentBuilder {
-        crate::operation::update_sip_rule::builders::UpdateSipRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_sip_rule(&self) -> crate::operation::update_sip_rule::builders::UpdateSipRuleFluentBuilder {
+        crate::operation::update_sip_rule::builders::UpdateSipRuleFluentBuilder::new(self.handle.clone())
     }
 }

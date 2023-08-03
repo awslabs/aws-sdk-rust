@@ -39,10 +39,7 @@ impl DeleteEntityRecognizerFluentBuilder {
         }
     }
     /// Access the DeleteEntityRecognizer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DeleteEntityRecognizerFluentBuilder {
             crate::operation::delete_entity_recognizer::DeleteEntityRecognizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_entity_recognizer::DeleteEntityRecognizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_entity_recognizer::DeleteEntityRecognizerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DeleteEntityRecognizerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DeleteEntityRecognizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_entity_recognizer::DeleteEntityRecognizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_entity_recognizer::DeleteEntityRecognizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_entity_recognizer::DeleteEntityRecognizerError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DeleteEntityRecognizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_entity_recognizer::DeleteEntityRecognizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_entity_recognizer::DeleteEntityRecognizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_entity_recognizer::DeleteEntityRecognizerError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl DeleteEntityRecognizerFluentBuilder {
             crate::operation::delete_entity_recognizer::DeleteEntityRecognizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_entity_recognizer::DeleteEntityRecognizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_entity_recognizer::DeleteEntityRecognizerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
-    pub fn entity_recognizer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_recognizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_recognizer_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
-    pub fn set_entity_recognizer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entity_recognizer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_recognizer_arn(input);
         self
     }

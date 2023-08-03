@@ -10,10 +10,7 @@ impl ListSequenceStoresInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_sequence_stores::ListSequenceStoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sequence_stores::ListSequenceStoresError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sequence_stores::ListSequenceStoresError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_sequence_stores();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListSequenceStoresFluentBuilder {
         }
     }
     /// Access the ListSequenceStores as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_sequence_stores::builders::ListSequenceStoresInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_sequence_stores::builders::ListSequenceStoresInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListSequenceStoresFluentBuilder {
             crate::operation::list_sequence_stores::ListSequenceStores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sequence_stores::ListSequenceStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sequence_stores::ListSequenceStoresError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListSequenceStoresFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListSequenceStoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sequence_stores::ListSequenceStoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sequence_stores::ListSequenceStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sequence_stores::ListSequenceStoresError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListSequenceStoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sequence_stores::ListSequenceStoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sequence_stores::ListSequenceStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sequence_stores::ListSequenceStoresError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListSequenceStoresFluentBuilder {
             crate::operation::list_sequence_stores::ListSequenceStores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sequence_stores::ListSequenceStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sequence_stores::ListSequenceStoresError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_sequence_stores::paginator::ListSequenceStoresPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_sequence_stores::paginator::ListSequenceStoresPaginator {
-        crate::operation::list_sequence_stores::paginator::ListSequenceStoresPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_sequence_stores::paginator::ListSequenceStoresPaginator {
+        crate::operation::list_sequence_stores::paginator::ListSequenceStoresPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of stores to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -167,10 +146,7 @@ impl ListSequenceStoresFluentBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::SequenceStoreFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::SequenceStoreFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

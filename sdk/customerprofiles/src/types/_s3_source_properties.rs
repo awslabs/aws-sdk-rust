@@ -30,9 +30,7 @@ impl S3SourceProperties {
 
 /// A builder for [`S3SourceProperties`](crate::types::S3SourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3SourcePropertiesBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_prefix: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl S3SourcePropertiesBuilder {
         &self.bucket_name
     }
     /// <p>The object key for the Amazon S3 bucket in which the source files are stored.</p>
-    pub fn bucket_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The object key for the Amazon S3 bucket in which the source files are stored.</p>
-    pub fn set_bucket_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_prefix = input;
         self
     }

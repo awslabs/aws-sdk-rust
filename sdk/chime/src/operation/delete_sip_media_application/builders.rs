@@ -26,13 +26,11 @@ impl DeleteSipMediaApplicationInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteSipMediaApplication.html">DeleteSipMediaApplication</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by DeleteSipMediaApplication in the Amazon Chime SDK Voice Namespace"
-)]
+#[deprecated(note = "Replaced by DeleteSipMediaApplication in the Amazon Chime SDK Voice Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSipMediaApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationInputBuilder,
+    inner: crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationInputBuilder,
 }
 impl DeleteSipMediaApplicationFluentBuilder {
     /// Creates a new `DeleteSipMediaApplication`.
@@ -43,7 +41,7 @@ impl DeleteSipMediaApplicationFluentBuilder {
         }
     }
     /// Access the DeleteSipMediaApplication as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl DeleteSipMediaApplicationFluentBuilder {
             crate::operation::delete_sip_media_application::DeleteSipMediaApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sip_media_application::DeleteSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sip_media_application::DeleteSipMediaApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl DeleteSipMediaApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl DeleteSipMediaApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sip_media_application::DeleteSipMediaApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sip_media_application::DeleteSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sip_media_application::DeleteSipMediaApplicationError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl DeleteSipMediaApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sip_media_application::DeleteSipMediaApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sip_media_application::DeleteSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sip_media_application::DeleteSipMediaApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +109,17 @@ impl DeleteSipMediaApplicationFluentBuilder {
             crate::operation::delete_sip_media_application::DeleteSipMediaApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sip_media_application::DeleteSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sip_media_application::DeleteSipMediaApplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sip_media_application_id(input.into());
         self
     }
     /// <p>The SIP media application ID.</p>
-    pub fn set_sip_media_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sip_media_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
     }

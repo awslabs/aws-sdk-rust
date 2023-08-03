@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateRelatedItemOutput {
 }
 impl CreateRelatedItemOutput {
     /// Creates a new builder-style object to manufacture [`CreateRelatedItemOutput`](crate::operation::create_related_item::CreateRelatedItemOutput).
-    pub fn builder(
-    ) -> crate::operation::create_related_item::builders::CreateRelatedItemOutputBuilder {
+    pub fn builder() -> crate::operation::create_related_item::builders::CreateRelatedItemOutputBuilder {
         crate::operation::create_related_item::builders::CreateRelatedItemOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRelatedItemOutput`](crate::operation::create_related_item::CreateRelatedItemOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRelatedItemOutputBuilder {
     pub(crate) related_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) related_item_arn: ::std::option::Option<::std::string::String>,
@@ -46,18 +43,12 @@ pub struct CreateRelatedItemOutputBuilder {
 }
 impl CreateRelatedItemOutputBuilder {
     /// <p>The unique identifier of the related item.</p>
-    pub fn related_item_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_item_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the related item.</p>
-    pub fn set_related_item_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_related_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_item_id = input;
         self
     }
@@ -66,18 +57,12 @@ impl CreateRelatedItemOutputBuilder {
         &self.related_item_id
     }
     /// <p>The Amazon Resource Name (ARN) of the related item.</p>
-    pub fn related_item_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_item_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_item_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the related item.</p>
-    pub fn set_related_item_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_related_item_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_item_arn = input;
         self
     }

@@ -10,10 +10,7 @@ impl CreateStreamInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_stream::CreateStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_stream::CreateStreamError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stream::CreateStreamError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_stream();
         fluent_builder.inner = self;
@@ -56,10 +53,7 @@ impl CreateStreamFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_stream::CreateStream,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_stream::CreateStream, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_stream::CreateStreamError>,
     > {
         let handle = self.handle.clone();
@@ -70,10 +64,7 @@ impl CreateStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,10 +106,7 @@ impl CreateStreamFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_stream::CreateStream,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_stream::CreateStream, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_stream::CreateStreamError>,
     > {
         self.customize_middleware().await
@@ -157,17 +145,12 @@ impl CreateStreamFluentBuilder {
         self
     }
     /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
-    pub fn set_stream_mode_details(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamModeDetails>,
-    ) -> Self {
+    pub fn set_stream_mode_details(mut self, input: ::std::option::Option<crate::types::StreamModeDetails>) -> Self {
         self.inner = self.inner.set_stream_mode_details(input);
         self
     }
     /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
-    pub fn get_stream_mode_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamModeDetails> {
+    pub fn get_stream_mode_details(&self) -> &::std::option::Option<crate::types::StreamModeDetails> {
         self.inner.get_stream_mode_details()
     }
 }

@@ -37,10 +37,7 @@ impl AttachNetworkInterfaceFluentBuilder {
         }
     }
     /// Access the AttachNetworkInterface as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::attach_network_interface::builders::AttachNetworkInterfaceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::attach_network_interface::builders::AttachNetworkInterfaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AttachNetworkInterfaceFluentBuilder {
             crate::operation::attach_network_interface::AttachNetworkInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_network_interface::AttachNetworkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_network_interface::AttachNetworkInterfaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AttachNetworkInterfaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AttachNetworkInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_network_interface::AttachNetworkInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_network_interface::AttachNetworkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_network_interface::AttachNetworkInterfaceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AttachNetworkInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_network_interface::AttachNetworkInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_network_interface::AttachNetworkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_network_interface::AttachNetworkInterfaceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl AttachNetworkInterfaceFluentBuilder {
             crate::operation::attach_network_interface::AttachNetworkInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_network_interface::AttachNetworkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_network_interface::AttachNetworkInterfaceError>,
     > {
         self.customize_middleware().await
     }
@@ -166,18 +152,12 @@ impl AttachNetworkInterfaceFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_id(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
@@ -205,17 +185,12 @@ impl AttachNetworkInterfaceFluentBuilder {
         self
     }
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
-    pub fn set_ena_srd_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::EnaSrdSpecification>,
-    ) -> Self {
+    pub fn set_ena_srd_specification(mut self, input: ::std::option::Option<crate::types::EnaSrdSpecification>) -> Self {
         self.inner = self.inner.set_ena_srd_specification(input);
         self
     }
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
-    pub fn get_ena_srd_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
+    pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
         self.inner.get_ena_srd_specification()
     }
 }

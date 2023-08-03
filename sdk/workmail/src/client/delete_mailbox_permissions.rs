@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`grantee_id(impl ::std::convert::Into<String>)`](crate::operation::delete_mailbox_permissions::builders::DeleteMailboxPermissionsFluentBuilder::grantee_id) / [`set_grantee_id(Option<String>)`](crate::operation::delete_mailbox_permissions::builders::DeleteMailboxPermissionsFluentBuilder::set_grantee_id): <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
     /// - On success, responds with [`DeleteMailboxPermissionsOutput`](crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsOutput)
     /// - On failure, responds with [`SdkError<DeleteMailboxPermissionsError>`](crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError)
-    pub fn delete_mailbox_permissions(
-        &self,
-    ) -> crate::operation::delete_mailbox_permissions::builders::DeleteMailboxPermissionsFluentBuilder
-    {
+    pub fn delete_mailbox_permissions(&self) -> crate::operation::delete_mailbox_permissions::builders::DeleteMailboxPermissionsFluentBuilder {
         crate::operation::delete_mailbox_permissions::builders::DeleteMailboxPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

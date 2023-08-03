@@ -29,18 +29,14 @@ impl CreateScheduleGroupInput {
 }
 impl CreateScheduleGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateScheduleGroupInput`](crate::operation::create_schedule_group::CreateScheduleGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_schedule_group::builders::CreateScheduleGroupInputBuilder {
-        crate::operation::create_schedule_group::builders::CreateScheduleGroupInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_schedule_group::builders::CreateScheduleGroupInputBuilder {
+        crate::operation::create_schedule_group::builders::CreateScheduleGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateScheduleGroupInput`](crate::operation::create_schedule_group::CreateScheduleGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateScheduleGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -73,10 +69,7 @@ impl CreateScheduleGroupInputBuilder {
         self
     }
     /// <p>The list of tags to associate with the schedule group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -101,16 +94,12 @@ impl CreateScheduleGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateScheduleGroupInput`](crate::operation::create_schedule_group::CreateScheduleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_schedule_group::CreateScheduleGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_schedule_group::CreateScheduleGroupInput {
-                name: self.name,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_schedule_group::CreateScheduleGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_schedule_group::CreateScheduleGroupInput {
+            name: self.name,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }

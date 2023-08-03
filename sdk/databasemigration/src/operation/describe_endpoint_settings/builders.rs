@@ -26,7 +26,7 @@ impl DescribeEndpointSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEndpointSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsInputBuilder,
+    inner: crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsInputBuilder,
 }
 impl DescribeEndpointSettingsFluentBuilder {
     /// Creates a new `DescribeEndpointSettings`.
@@ -37,10 +37,7 @@ impl DescribeEndpointSettingsFluentBuilder {
         }
     }
     /// Access the DescribeEndpointSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeEndpointSettingsFluentBuilder {
             crate::operation::describe_endpoint_settings::DescribeEndpointSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_settings::DescribeEndpointSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_settings::DescribeEndpointSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeEndpointSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeEndpointSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_settings::DescribeEndpointSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_settings::DescribeEndpointSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeEndpointSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_settings::DescribeEndpointSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_settings::DescribeEndpointSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl DescribeEndpointSettingsFluentBuilder {
             crate::operation::describe_endpoint_settings::DescribeEndpointSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_settings::DescribeEndpointSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_settings::DescribeEndpointSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_endpoint_settings::paginator::DescribeEndpointSettingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_endpoint_settings::paginator::DescribeEndpointSettingsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_endpoint_settings::paginator::DescribeEndpointSettingsPaginator {
         crate::operation::describe_endpoint_settings::paginator::DescribeEndpointSettingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The database engine used for your source or target endpoint.</p>

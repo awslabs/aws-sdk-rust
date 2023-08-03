@@ -12,16 +12,16 @@ impl ::aws_http::request_id::RequestId for DeleteServiceQuotaIncreaseRequestFrom
 }
 impl DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
-    pub fn builder() -> crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateOutputBuilder
+    {
         crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceQuotaIncreaseRequestFromTemplateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +36,7 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
-    pub fn build(self) -> crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateOutput{
+    pub fn build(self) -> crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
         crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
             _request_id: self._request_id,
         }

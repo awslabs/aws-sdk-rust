@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for RegisterTaskDefinitionOutput {
 }
 impl RegisterTaskDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`RegisterTaskDefinitionOutput`](crate::operation::register_task_definition::RegisterTaskDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::register_task_definition::builders::RegisterTaskDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::register_task_definition::builders::RegisterTaskDefinitionOutputBuilder {
         crate::operation::register_task_definition::builders::RegisterTaskDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterTaskDefinitionOutput`](crate::operation::register_task_definition::RegisterTaskDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterTaskDefinitionOutputBuilder {
     pub(crate) task_definition: ::std::option::Option<crate::types::TaskDefinition>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -52,10 +48,7 @@ impl RegisterTaskDefinitionOutputBuilder {
         self
     }
     /// <p>The full description of the registered task definition.</p>
-    pub fn set_task_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskDefinition>,
-    ) -> Self {
+    pub fn set_task_definition(mut self, input: ::std::option::Option<crate::types::TaskDefinition>) -> Self {
         self.task_definition = input;
         self
     }
@@ -75,10 +68,7 @@ impl RegisterTaskDefinitionOutputBuilder {
         self
     }
     /// <p>The list of tags associated with the task definition.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

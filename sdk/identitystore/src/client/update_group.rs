@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`operations(Vec<AttributeOperation>)`](crate::operation::update_group::builders::UpdateGroupFluentBuilder::operations) / [`set_operations(Option<Vec<AttributeOperation>>)`](crate::operation::update_group::builders::UpdateGroupFluentBuilder::set_operations): <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
     /// - On success, responds with [`UpdateGroupOutput`](crate::operation::update_group::UpdateGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateGroupError>`](crate::operation::update_group::UpdateGroupError)
-    pub fn update_group(
-        &self,
-    ) -> crate::operation::update_group::builders::UpdateGroupFluentBuilder {
+    pub fn update_group(&self) -> crate::operation::update_group::builders::UpdateGroupFluentBuilder {
         crate::operation::update_group::builders::UpdateGroupFluentBuilder::new(self.handle.clone())
     }
 }

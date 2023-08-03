@@ -22,16 +22,11 @@ pub struct UpdateMaintenanceWindowTaskOutput {
     /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     #[doc(hidden)]
-    pub task_parameters: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::MaintenanceWindowTaskParameterValueExpression,
-        >,
-    >,
+    pub task_parameters:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
     /// <p>The updated parameter values.</p>
     #[doc(hidden)]
-    pub task_invocation_parameters:
-        ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
+    pub task_invocation_parameters: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
     /// <p>The updated priority value.</p>
     #[doc(hidden)]
     pub priority: i32,
@@ -86,18 +81,11 @@ impl UpdateMaintenanceWindowTaskOutput {
     /// </note>
     pub fn task_parameters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::MaintenanceWindowTaskParameterValueExpression,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>> {
         self.task_parameters.as_ref()
     }
     /// <p>The updated parameter values.</p>
-    pub fn task_invocation_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MaintenanceWindowTaskInvocationParameters> {
+    pub fn task_invocation_parameters(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowTaskInvocationParameters> {
         self.task_invocation_parameters.as_ref()
     }
     /// <p>The updated priority value.</p>
@@ -127,9 +115,7 @@ impl UpdateMaintenanceWindowTaskOutput {
         self.description.as_deref()
     }
     /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
-    pub fn cutoff_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MaintenanceWindowTaskCutoffBehavior> {
+    pub fn cutoff_behavior(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowTaskCutoffBehavior> {
         self.cutoff_behavior.as_ref()
     }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
@@ -146,10 +132,7 @@ impl ::std::fmt::Debug for UpdateMaintenanceWindowTaskOutput {
         formatter.field("task_arn", &self.task_arn);
         formatter.field("service_role_arn", &self.service_role_arn);
         formatter.field("task_parameters", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "task_invocation_parameters",
-            &self.task_invocation_parameters,
-        );
+        formatter.field("task_invocation_parameters", &self.task_invocation_parameters);
         formatter.field("priority", &self.priority);
         formatter.field("max_concurrency", &self.max_concurrency);
         formatter.field("max_errors", &self.max_errors);
@@ -169,7 +152,7 @@ impl ::aws_http::request_id::RequestId for UpdateMaintenanceWindowTaskOutput {
 }
 impl UpdateMaintenanceWindowTaskOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenanceWindowTaskOutput`](crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput).
-    pub fn builder() -> crate::operation::update_maintenance_window_task::builders::UpdateMaintenanceWindowTaskOutputBuilder{
+    pub fn builder() -> crate::operation::update_maintenance_window_task::builders::UpdateMaintenanceWindowTaskOutputBuilder {
         crate::operation::update_maintenance_window_task::builders::UpdateMaintenanceWindowTaskOutputBuilder::default()
     }
 }
@@ -183,22 +166,16 @@ pub struct UpdateMaintenanceWindowTaskOutputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) service_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) task_parameters: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::MaintenanceWindowTaskParameterValueExpression,
-        >,
-    >,
-    pub(crate) task_invocation_parameters:
-        ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
+    pub(crate) task_parameters:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
+    pub(crate) task_invocation_parameters: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) max_concurrency: ::std::option::Option<::std::string::String>,
     pub(crate) max_errors: ::std::option::Option<::std::string::String>,
     pub(crate) logging_info: ::std::option::Option<crate::types::LoggingInfo>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) cutoff_behavior:
-        ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>,
+    pub(crate) cutoff_behavior: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     _request_id: Option<String>,
 }
@@ -218,18 +195,12 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         &self.window_id
     }
     /// <p>The task ID of the maintenance window that was updated.</p>
-    pub fn window_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The task ID of the maintenance window that was updated.</p>
-    pub fn set_window_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_task_id = input;
         self
     }
@@ -249,10 +220,7 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         self
     }
     /// <p>The updated target values.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -275,18 +243,12 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         &self.task_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
-    pub fn service_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
-    pub fn set_service_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_role_arn = input;
         self
     }
@@ -316,12 +278,7 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
     /// </note>
     pub fn set_task_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::MaintenanceWindowTaskParameterValueExpression,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
     ) -> Self {
         self.task_parameters = input;
         self
@@ -331,34 +288,21 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
     /// </note>
     pub fn get_task_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::MaintenanceWindowTaskParameterValueExpression,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>> {
         &self.task_parameters
     }
     /// <p>The updated parameter values.</p>
-    pub fn task_invocation_parameters(
-        mut self,
-        input: crate::types::MaintenanceWindowTaskInvocationParameters,
-    ) -> Self {
+    pub fn task_invocation_parameters(mut self, input: crate::types::MaintenanceWindowTaskInvocationParameters) -> Self {
         self.task_invocation_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The updated parameter values.</p>
-    pub fn set_task_invocation_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
-    ) -> Self {
+    pub fn set_task_invocation_parameters(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>) -> Self {
         self.task_invocation_parameters = input;
         self
     }
     /// <p>The updated parameter values.</p>
-    pub fn get_task_invocation_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters> {
+    pub fn get_task_invocation_parameters(&self) -> &::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters> {
         &self.task_invocation_parameters
     }
     /// <p>The updated priority value.</p>
@@ -376,18 +320,12 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         &self.priority
     }
     /// <p>The updated <code>MaxConcurrency</code> value.</p>
-    pub fn max_concurrency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_concurrency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_concurrency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The updated <code>MaxConcurrency</code> value.</p>
-    pub fn set_max_concurrency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_concurrency = input;
         self
     }
@@ -419,10 +357,7 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
     /// <p>The updated logging information in Amazon S3.</p> <note>
     /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
-    pub fn set_logging_info(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingInfo>,
-    ) -> Self {
+    pub fn set_logging_info(mut self, input: ::std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.logging_info = input;
         self
     }
@@ -461,25 +396,17 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         &self.description
     }
     /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
-    pub fn cutoff_behavior(
-        mut self,
-        input: crate::types::MaintenanceWindowTaskCutoffBehavior,
-    ) -> Self {
+    pub fn cutoff_behavior(mut self, input: crate::types::MaintenanceWindowTaskCutoffBehavior) -> Self {
         self.cutoff_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
-    pub fn set_cutoff_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>,
-    ) -> Self {
+    pub fn set_cutoff_behavior(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>) -> Self {
         self.cutoff_behavior = input;
         self
     }
     /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
-    pub fn get_cutoff_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior> {
+    pub fn get_cutoff_behavior(&self) -> &::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior> {
         &self.cutoff_behavior
     }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
@@ -488,17 +415,12 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         self
     }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
-    pub fn set_alarm_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmConfiguration>,
-    ) -> Self {
+    pub fn set_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
         self.alarm_configuration = input;
         self
     }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
-    pub fn get_alarm_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+    pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.alarm_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -511,9 +433,7 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateMaintenanceWindowTaskOutput`](crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput {
+    pub fn build(self) -> crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput {
         crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput {
             window_id: self.window_id,
             window_task_id: self.window_task_id,
@@ -543,10 +463,7 @@ impl ::std::fmt::Debug for UpdateMaintenanceWindowTaskOutputBuilder {
         formatter.field("task_arn", &self.task_arn);
         formatter.field("service_role_arn", &self.service_role_arn);
         formatter.field("task_parameters", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "task_invocation_parameters",
-            &self.task_invocation_parameters,
-        );
+        formatter.field("task_invocation_parameters", &self.task_invocation_parameters);
         formatter.field("priority", &self.priority);
         formatter.field("max_concurrency", &self.max_concurrency);
         formatter.field("max_errors", &self.max_errors);

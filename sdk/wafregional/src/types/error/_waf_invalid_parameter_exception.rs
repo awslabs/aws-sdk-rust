@@ -51,10 +51,7 @@ impl WafInvalidParameterException {
 }
 impl ::std::fmt::Display for WafInvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "WafInvalidParameterException [WAFInvalidParameterException]"
-        )?;
+        ::std::write!(f, "WafInvalidParameterException [WAFInvalidParameterException]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -84,9 +81,7 @@ impl WafInvalidParameterException {
 
 /// A builder for [`WafInvalidParameterException`](crate::types::error::WafInvalidParameterException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WafInvalidParameterExceptionBuilder {
     pub(crate) field: ::std::option::Option<crate::types::ParameterExceptionField>,
     pub(crate) parameter: ::std::option::Option<::std::string::String>,
@@ -101,10 +96,7 @@ impl WafInvalidParameterExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_field(
-        mut self,
-        input: ::std::option::Option<crate::types::ParameterExceptionField>,
-    ) -> Self {
+    pub fn set_field(mut self, input: ::std::option::Option<crate::types::ParameterExceptionField>) -> Self {
         self.field = input;
         self
     }
@@ -132,10 +124,7 @@ impl WafInvalidParameterExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::ParameterExceptionReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ParameterExceptionReason>) -> Self {
         self.reason = input;
         self
     }
@@ -164,10 +153,7 @@ impl WafInvalidParameterExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

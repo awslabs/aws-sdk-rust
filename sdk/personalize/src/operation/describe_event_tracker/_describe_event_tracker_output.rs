@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeEventTrackerOutput {
 }
 impl DescribeEventTrackerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventTrackerOutput`](crate::operation::describe_event_tracker::DescribeEventTrackerOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_tracker::builders::DescribeEventTrackerOutputBuilder {
+    pub fn builder() -> crate::operation::describe_event_tracker::builders::DescribeEventTrackerOutputBuilder {
         crate::operation::describe_event_tracker::builders::DescribeEventTrackerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventTrackerOutput`](crate::operation::describe_event_tracker::DescribeEventTrackerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventTrackerOutputBuilder {
     pub(crate) event_tracker: ::std::option::Option<crate::types::EventTracker>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeEventTrackerOutputBuilder {
         self
     }
     /// <p>An object that describes the event tracker.</p>
-    pub fn set_event_tracker(
-        mut self,
-        input: ::std::option::Option<crate::types::EventTracker>,
-    ) -> Self {
+    pub fn set_event_tracker(mut self, input: ::std::option::Option<crate::types::EventTracker>) -> Self {
         self.event_tracker = input;
         self
     }

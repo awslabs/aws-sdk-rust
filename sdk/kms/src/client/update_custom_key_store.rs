@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`xks_proxy_connectivity(XksProxyConnectivityType)`](crate::operation::update_custom_key_store::builders::UpdateCustomKeyStoreFluentBuilder::xks_proxy_connectivity) / [`set_xks_proxy_connectivity(Option<XksProxyConnectivityType>)`](crate::operation::update_custom_key_store::builders::UpdateCustomKeyStoreFluentBuilder::set_xks_proxy_connectivity): <p>Changes the connectivity setting for the external key store. To indicate that the external key store proxy uses a Amazon VPC endpoint service to communicate with KMS, specify <code>VPC_ENDPOINT_SERVICE</code>. Otherwise, specify <code>PUBLIC_ENDPOINT</code>.</p>  <p>If you change the <code>XksProxyConnectivity</code> to <code>VPC_ENDPOINT_SERVICE</code>, you must also change the <code>XksProxyUriEndpoint</code> and add an <code>XksProxyVpcEndpointServiceName</code> value. </p>  <p>If you change the <code>XksProxyConnectivity</code> to <code>PUBLIC_ENDPOINT</code>, you must also change the <code>XksProxyUriEndpoint</code> and specify a null or empty string for the <code>XksProxyVpcEndpointServiceName</code> value.</p>  <p>To change this value, the external key store must be disconnected.</p>
     /// - On success, responds with [`UpdateCustomKeyStoreOutput`](crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput)
     /// - On failure, responds with [`SdkError<UpdateCustomKeyStoreError>`](crate::operation::update_custom_key_store::UpdateCustomKeyStoreError)
-    pub fn update_custom_key_store(
-        &self,
-    ) -> crate::operation::update_custom_key_store::builders::UpdateCustomKeyStoreFluentBuilder
-    {
-        crate::operation::update_custom_key_store::builders::UpdateCustomKeyStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_custom_key_store(&self) -> crate::operation::update_custom_key_store::builders::UpdateCustomKeyStoreFluentBuilder {
+        crate::operation::update_custom_key_store::builders::UpdateCustomKeyStoreFluentBuilder::new(self.handle.clone())
     }
 }

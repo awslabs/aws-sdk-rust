@@ -50,16 +50,14 @@ impl UpdateMaintenanceStartTimeInput {
 }
 impl UpdateMaintenanceStartTimeInput {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenanceStartTimeInput`](crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeInput).
-    pub fn builder() -> crate::operation::update_maintenance_start_time::builders::UpdateMaintenanceStartTimeInputBuilder{
+    pub fn builder() -> crate::operation::update_maintenance_start_time::builders::UpdateMaintenanceStartTimeInputBuilder {
         crate::operation::update_maintenance_start_time::builders::UpdateMaintenanceStartTimeInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMaintenanceStartTimeInput`](crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMaintenanceStartTimeInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hour_of_day: ::std::option::Option<i32>,
@@ -145,14 +143,12 @@ impl UpdateMaintenanceStartTimeInputBuilder {
         crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeInput {
-                gateway_arn: self.gateway_arn,
-                hour_of_day: self.hour_of_day,
-                minute_of_hour: self.minute_of_hour,
-                day_of_week: self.day_of_week,
-                day_of_month: self.day_of_month,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeInput {
+            gateway_arn: self.gateway_arn,
+            hour_of_day: self.hour_of_day,
+            minute_of_hour: self.minute_of_hour,
+            day_of_week: self.day_of_week,
+            day_of_month: self.day_of_month,
+        })
     }
 }

@@ -38,18 +38,14 @@ impl ListAssessmentRunAgentsInput {
 }
 impl ListAssessmentRunAgentsInput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentRunAgentsInput`](crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsInputBuilder {
         crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentRunAgentsInput`](crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentRunAgentsInputBuilder {
     pub(crate) assessment_run_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::AgentFilter>,
@@ -58,18 +54,12 @@ pub struct ListAssessmentRunAgentsInputBuilder {
 }
 impl ListAssessmentRunAgentsInputBuilder {
     /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
-    pub fn assessment_run_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_run_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
-    pub fn set_assessment_run_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_run_arn = input;
         self
     }
@@ -129,13 +119,11 @@ impl ListAssessmentRunAgentsInputBuilder {
         crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsInput {
-                assessment_run_arn: self.assessment_run_arn,
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsInput {
+            assessment_run_arn: self.assessment_run_arn,
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

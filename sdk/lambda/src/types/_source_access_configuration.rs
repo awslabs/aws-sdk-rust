@@ -52,9 +52,7 @@ impl SourceAccessConfiguration {
 
 /// A builder for [`SourceAccessConfiguration`](crate::types::SourceAccessConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceAccessConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SourceAccessType>,
     pub(crate) uri: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl SourceAccessConfigurationBuilder {
     /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
     /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceAccessType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SourceAccessType>) -> Self {
         self.r#type = input;
         self
     }

@@ -13,16 +13,16 @@ impl ::aws_http::request_id::RequestId for PutEmailIdentityConfigurationSetAttri
 }
 impl PutEmailIdentityConfigurationSetAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput).
-    pub fn builder() -> crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesOutputBuilder{
-        crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesOutputBuilder {
+        crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEmailIdentityConfigurationSetAttributesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +37,7 @@ impl PutEmailIdentityConfigurationSetAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput).
-    pub fn build(self) -> crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput{
+    pub fn build(self) -> crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput {
         crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput {
             _request_id: self._request_id,
         }

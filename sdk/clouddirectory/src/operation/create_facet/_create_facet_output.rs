@@ -19,9 +19,7 @@ impl CreateFacetOutput {
 
 /// A builder for [`CreateFacetOutput`](crate::operation::create_facet::CreateFacetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFacetOutputBuilder {
     _request_id: Option<String>,
 }

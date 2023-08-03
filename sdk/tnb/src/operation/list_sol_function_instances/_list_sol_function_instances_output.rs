@@ -8,8 +8,7 @@ pub struct ListSolFunctionInstancesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Network function instances.</p>
     #[doc(hidden)]
-    pub function_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionInstanceInfo>>,
+    pub function_instances: ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionInstanceInfo>>,
     _request_id: Option<String>,
 }
 impl ListSolFunctionInstancesOutput {
@@ -18,9 +17,7 @@ impl ListSolFunctionInstancesOutput {
         self.next_token.as_deref()
     }
     /// <p>Network function instances.</p>
-    pub fn function_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListSolFunctionInstanceInfo]> {
+    pub fn function_instances(&self) -> ::std::option::Option<&[crate::types::ListSolFunctionInstanceInfo]> {
         self.function_instances.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListSolFunctionInstancesOutput {
 }
 impl ListSolFunctionInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListSolFunctionInstancesOutput`](crate::operation::list_sol_function_instances::ListSolFunctionInstancesOutput).
-    pub fn builder() -> crate::operation::list_sol_function_instances::builders::ListSolFunctionInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::list_sol_function_instances::builders::ListSolFunctionInstancesOutputBuilder {
         crate::operation::list_sol_function_instances::builders::ListSolFunctionInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSolFunctionInstancesOutput`](crate::operation::list_sol_function_instances::ListSolFunctionInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolFunctionInstancesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) function_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionInstanceInfo>>,
+    pub(crate) function_instances: ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionInstanceInfo>>,
     _request_id: Option<String>,
 }
 impl ListSolFunctionInstancesOutputBuilder {
@@ -74,17 +68,12 @@ impl ListSolFunctionInstancesOutputBuilder {
         self
     }
     /// <p>Network function instances.</p>
-    pub fn set_function_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionInstanceInfo>>,
-    ) -> Self {
+    pub fn set_function_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionInstanceInfo>>) -> Self {
         self.function_instances = input;
         self
     }
     /// <p>Network function instances.</p>
-    pub fn get_function_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionInstanceInfo>> {
+    pub fn get_function_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionInstanceInfo>> {
         &self.function_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl ListSolFunctionInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSolFunctionInstancesOutput`](crate::operation::list_sol_function_instances::ListSolFunctionInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_sol_function_instances::ListSolFunctionInstancesOutput {
+    pub fn build(self) -> crate::operation::list_sol_function_instances::ListSolFunctionInstancesOutput {
         crate::operation::list_sol_function_instances::ListSolFunctionInstancesOutput {
             next_token: self.next_token,
             function_instances: self.function_instances,

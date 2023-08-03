@@ -5,16 +5,16 @@ pub use crate::operation::modify_capacity_reservation_fleet::_modify_capacity_re
 
 impl ModifyCapacityReservationFleetInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.modify_capacity_reservation_fleet();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ModifyCapacityReservationFleetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyCapacityReservationFleetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_capacity_reservation_fleet::builders::ModifyCapacityReservationFleetInputBuilder,
+    inner: crate::operation::modify_capacity_reservation_fleet::builders::ModifyCapacityReservationFleetInputBuilder,
 }
 impl ModifyCapacityReservationFleetFluentBuilder {
     /// Creates a new `ModifyCapacityReservationFleet`.
@@ -38,15 +38,20 @@ impl ModifyCapacityReservationFleetFluentBuilder {
         }
     }
     /// Access the ModifyCapacityReservationFleet as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_capacity_reservation_fleet::builders::ModifyCapacityReservationFleetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_capacity_reservation_fleet::builders::ModifyCapacityReservationFleetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleet, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleet,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl ModifyCapacityReservationFleetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,39 +88,40 @@ impl ModifyCapacityReservationFleetFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleet, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleet,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Capacity Reservation Fleet to modify.</p>
-    pub fn capacity_reservation_fleet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.capacity_reservation_fleet_id(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation Fleet to modify.</p>
-    pub fn set_capacity_reservation_fleet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_capacity_reservation_fleet_id(input);
         self
     }
     /// <p>The ID of the Capacity Reservation Fleet to modify.</p>
-    pub fn get_capacity_reservation_fleet_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_capacity_reservation_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_capacity_reservation_fleet_id()
     }
     /// <p>The total number of capacity units to be reserved by the Capacity Reservation Fleet. This value, together with the instance type weights that you assign to each instance type used by the Fleet determine the number of instances for which the Fleet reserves capacity. Both values are based on units that make sense for your workload. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the Amazon EC2 User Guide.</p>
@@ -141,10 +148,7 @@ impl ModifyCapacityReservationFleetFluentBuilder {
     /// <p>The date and time at which the Capacity Reservation Fleet expires. When the Capacity Reservation Fleet expires, its state changes to <code>expired</code> and all of the Capacity Reservations in the Fleet expire.</p>
     /// <p>The Capacity Reservation Fleet expires within an hour after the specified time. For example, if you specify <code>5/31/2019</code>, <code>13:30:55</code>, the Capacity Reservation Fleet is guaranteed to expire between <code>13:30:55</code> and <code>14:30:55</code> on <code>5/31/2019</code>.</p>
     /// <p>You can't specify <b>EndDate</b> and <b> RemoveEndDate</b> in the same request.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
     }

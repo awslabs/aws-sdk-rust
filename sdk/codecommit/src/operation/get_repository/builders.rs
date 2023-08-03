@@ -10,10 +10,7 @@ impl GetRepositoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_repository::GetRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository::GetRepositoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository::GetRepositoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_repository();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetRepositoryFluentBuilder {
         }
     }
     /// Access the GetRepository as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_repository::builders::GetRepositoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_repository::builders::GetRepositoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl GetRepositoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,18 +109,12 @@ impl GetRepositoryFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the repository to get information about.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository to get information about.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }

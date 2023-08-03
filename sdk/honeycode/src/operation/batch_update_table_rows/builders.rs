@@ -38,10 +38,7 @@ impl BatchUpdateTableRowsFluentBuilder {
         }
     }
     /// Access the BatchUpdateTableRows as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl BatchUpdateTableRowsFluentBuilder {
             crate::operation::batch_update_table_rows::BatchUpdateTableRows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_table_rows::BatchUpdateTableRowsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl BatchUpdateTableRowsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl BatchUpdateTableRowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_table_rows::BatchUpdateTableRowsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl BatchUpdateTableRowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_table_rows::BatchUpdateTableRowsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl BatchUpdateTableRowsFluentBuilder {
             crate::operation::batch_update_table_rows::BatchUpdateTableRows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_table_rows::BatchUpdateTableRowsError>,
     > {
         self.customize_middleware().await
     }
@@ -170,35 +156,24 @@ impl BatchUpdateTableRowsFluentBuilder {
     }
     /// <p> The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update. </p>
     /// <p> Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
-    pub fn set_rows_to_update(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateRowData>>,
-    ) -> Self {
+    pub fn set_rows_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateRowData>>) -> Self {
         self.inner = self.inner.set_rows_to_update(input);
         self
     }
     /// <p> The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update. </p>
     /// <p> Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
-    pub fn get_rows_to_update(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateRowData>> {
+    pub fn get_rows_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateRowData>> {
         self.inner.get_rows_to_update()
     }
     /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

@@ -20,9 +20,7 @@ impl DeleteIdentityOutput {
 
 /// A builder for [`DeleteIdentityOutput`](crate::operation::delete_identity::DeleteIdentityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIdentityOutputBuilder {
     _request_id: Option<String>,
 }

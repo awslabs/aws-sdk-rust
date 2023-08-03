@@ -10,9 +10,7 @@ pub struct GetInAppTemplateOutput {
 }
 impl GetInAppTemplateOutput {
     /// <p>In-App Template Response.</p>
-    pub fn in_app_template_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InAppTemplateResponse> {
+    pub fn in_app_template_response(&self) -> ::std::option::Option<&crate::types::InAppTemplateResponse> {
         self.in_app_template_response.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetInAppTemplateOutput {
 }
 impl GetInAppTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetInAppTemplateOutput`](crate::operation::get_in_app_template::GetInAppTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::get_in_app_template::builders::GetInAppTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::get_in_app_template::builders::GetInAppTemplateOutputBuilder {
         crate::operation::get_in_app_template::builders::GetInAppTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInAppTemplateOutput`](crate::operation::get_in_app_template::GetInAppTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInAppTemplateOutputBuilder {
     pub(crate) in_app_template_response: ::std::option::Option<crate::types::InAppTemplateResponse>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl GetInAppTemplateOutputBuilder {
         self
     }
     /// <p>In-App Template Response.</p>
-    pub fn set_in_app_template_response(
-        mut self,
-        input: ::std::option::Option<crate::types::InAppTemplateResponse>,
-    ) -> Self {
+    pub fn set_in_app_template_response(mut self, input: ::std::option::Option<crate::types::InAppTemplateResponse>) -> Self {
         self.in_app_template_response = input;
         self
     }
     /// <p>In-App Template Response.</p>
-    pub fn get_in_app_template_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::InAppTemplateResponse> {
+    pub fn get_in_app_template_response(&self) -> &::std::option::Option<crate::types::InAppTemplateResponse> {
         &self.in_app_template_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

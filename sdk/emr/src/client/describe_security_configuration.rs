@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`security_configuration(Option<String>)`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput::security_configuration): <p>The security configuration details in JSON format.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput::creation_date_time): <p>The date and time the security configuration was created</p>
     /// - On failure, responds with [`SdkError<DescribeSecurityConfigurationError>`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationError)
-    pub fn describe_security_configuration(&self) -> crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationFluentBuilder{
+    pub fn describe_security_configuration(
+        &self,
+    ) -> crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationFluentBuilder {
         crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -66,9 +66,7 @@ impl ListComponentsInput {
 
 /// A builder for [`ListComponentsInput`](crate::operation::list_components::ListComponentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentsInputBuilder {
     pub(crate) owner: ::std::option::Option<crate::types::Ownership>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -119,10 +117,7 @@ impl ListComponentsInputBuilder {
     /// <li> <p> <code>type</code> </p> </li>
     /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -183,10 +178,7 @@ impl ListComponentsInputBuilder {
     /// Consumes the builder and constructs a [`ListComponentsInput`](crate::operation::list_components::ListComponentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_components::ListComponentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_components::ListComponentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_components::ListComponentsInput {
             owner: self.owner,
             filters: self.filters,

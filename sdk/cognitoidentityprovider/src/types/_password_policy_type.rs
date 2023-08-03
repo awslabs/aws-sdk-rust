@@ -62,9 +62,7 @@ impl PasswordPolicyType {
 
 /// A builder for [`PasswordPolicyType`](crate::types::PasswordPolicyType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PasswordPolicyTypeBuilder {
     pub(crate) minimum_length: ::std::option::Option<i32>,
     pub(crate) require_uppercase: ::std::option::Option<bool>,
@@ -154,10 +152,7 @@ impl PasswordPolicyTypeBuilder {
     /// <p>The number of days a temporary password is valid in the password policy. If the user doesn't sign in during this time, an administrator must reset their password.</p> <note>
     /// <p>When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for the legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.</p>
     /// </note>
-    pub fn set_temporary_password_validity_days(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_temporary_password_validity_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.temporary_password_validity_days = input;
         self
     }
@@ -175,9 +170,7 @@ impl PasswordPolicyTypeBuilder {
             require_lowercase: self.require_lowercase.unwrap_or_default(),
             require_numbers: self.require_numbers.unwrap_or_default(),
             require_symbols: self.require_symbols.unwrap_or_default(),
-            temporary_password_validity_days: self
-                .temporary_password_validity_days
-                .unwrap_or_default(),
+            temporary_password_validity_days: self.temporary_password_validity_days.unwrap_or_default(),
         }
     }
 }

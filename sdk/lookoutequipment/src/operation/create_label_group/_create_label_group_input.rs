@@ -42,17 +42,14 @@ impl CreateLabelGroupInput {
 }
 impl CreateLabelGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateLabelGroupInput`](crate::operation::create_label_group::CreateLabelGroupInput).
-    pub fn builder() -> crate::operation::create_label_group::builders::CreateLabelGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_label_group::builders::CreateLabelGroupInputBuilder {
         crate::operation::create_label_group::builders::CreateLabelGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLabelGroupInput`](crate::operation::create_label_group::CreateLabelGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLabelGroupInputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) fault_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -62,19 +59,13 @@ pub struct CreateLabelGroupInputBuilder {
 impl CreateLabelGroupInputBuilder {
     /// <p> Names a group of labels.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn label_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Names a group of labels.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn set_label_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_name = input;
         self
     }
@@ -97,18 +88,13 @@ impl CreateLabelGroupInputBuilder {
     }
     /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn set_fault_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fault_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.fault_codes = input;
         self
     }
     /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn get_fault_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_fault_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.fault_codes
     }
     /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
@@ -139,10 +125,7 @@ impl CreateLabelGroupInputBuilder {
     }
     /// <p> Tags that provide metadata about the label group you are creating. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -154,17 +137,12 @@ impl CreateLabelGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateLabelGroupInput`](crate::operation::create_label_group::CreateLabelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_label_group::CreateLabelGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_label_group::CreateLabelGroupInput {
-                label_group_name: self.label_group_name,
-                fault_codes: self.fault_codes,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_label_group::CreateLabelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_label_group::CreateLabelGroupInput {
+            label_group_name: self.label_group_name,
+            fault_codes: self.fault_codes,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

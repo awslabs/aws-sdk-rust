@@ -36,10 +36,7 @@ pub fn ser_associate_file_system_input(
     if let Some(var_11) = &input.cache_attributes {
         #[allow(unused_mut)]
         let mut object_12 = object.key("CacheAttributes").start_object();
-        crate::protocol_serde::shape_cache_attributes::ser_cache_attributes(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_cache_attributes::ser_cache_attributes(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.endpoint_network_configuration {

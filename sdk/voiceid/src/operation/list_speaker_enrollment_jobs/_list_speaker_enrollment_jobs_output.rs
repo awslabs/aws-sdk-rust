@@ -5,8 +5,7 @@
 pub struct ListSpeakerEnrollmentJobsOutput {
     /// <p>A list containing details about each specified speaker enrollment job.</p>
     #[doc(hidden)]
-    pub job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>>,
+    pub job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSpeakerEnrollmentJobsOutput {
 }
 impl ListSpeakerEnrollmentJobsOutput {
     /// <p>A list containing details about each specified speaker enrollment job.</p>
-    pub fn job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SpeakerEnrollmentJobSummary]> {
+    pub fn job_summaries(&self) -> ::std::option::Option<&[crate::types::SpeakerEnrollmentJobSummary]> {
         self.job_summaries.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSpeakerEnrollmentJobsOutput {
 }
 impl ListSpeakerEnrollmentJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListSpeakerEnrollmentJobsOutput`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput).
-    pub fn builder() -> crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsOutputBuilder {
         crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSpeakerEnrollmentJobsOutput`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSpeakerEnrollmentJobsOutputBuilder {
-    pub(crate) job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>>,
+    pub(crate) job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListSpeakerEnrollmentJobsOutputBuilder {
         self
     }
     /// <p>A list containing details about each specified speaker enrollment job.</p>
-    pub fn set_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>>,
-    ) -> Self {
+    pub fn set_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>>) -> Self {
         self.job_summaries = input;
         self
     }
     /// <p>A list containing details about each specified speaker enrollment job.</p>
-    pub fn get_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>> {
+    pub fn get_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>> {
         &self.job_summaries
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
@@ -97,9 +86,7 @@ impl ListSpeakerEnrollmentJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSpeakerEnrollmentJobsOutput`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput {
+    pub fn build(self) -> crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput {
         crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput {
             job_summaries: self.job_summaries,
             next_token: self.next_token,

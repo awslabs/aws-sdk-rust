@@ -23,9 +23,7 @@ impl ClusterHealth {
 
 /// A builder for [`ClusterHealth`](crate::types::ClusterHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterHealthBuilder {
     pub(crate) issues: ::std::option::Option<::std::vec::Vec<crate::types::ClusterIssue>>,
 }
@@ -42,23 +40,16 @@ impl ClusterHealthBuilder {
         self
     }
     /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
-    pub fn set_issues(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterIssue>>,
-    ) -> Self {
+    pub fn set_issues(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterIssue>>) -> Self {
         self.issues = input;
         self
     }
     /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
-    pub fn get_issues(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterIssue>> {
+    pub fn get_issues(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterIssue>> {
         &self.issues
     }
     /// Consumes the builder and constructs a [`ClusterHealth`](crate::types::ClusterHealth).
     pub fn build(self) -> crate::types::ClusterHealth {
-        crate::types::ClusterHealth {
-            issues: self.issues,
-        }
+        crate::types::ClusterHealth { issues: self.issues }
     }
 }

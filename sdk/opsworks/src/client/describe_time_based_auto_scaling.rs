@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeTimeBasedAutoScalingOutput`](crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingOutput) with field(s):
     ///   - [`time_based_auto_scaling_configurations(Option<Vec<TimeBasedAutoScalingConfiguration>>)`](crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingOutput::time_based_auto_scaling_configurations): <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
     /// - On failure, responds with [`SdkError<DescribeTimeBasedAutoScalingError>`](crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingError)
-    pub fn describe_time_based_auto_scaling(&self) -> crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingFluentBuilder{
+    pub fn describe_time_based_auto_scaling(
+        &self,
+    ) -> crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingFluentBuilder {
         crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingFluentBuilder::new(self.handle.clone())
     }
 }

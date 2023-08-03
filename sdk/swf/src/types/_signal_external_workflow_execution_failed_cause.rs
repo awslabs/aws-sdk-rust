@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SignalExternalWorkflowExecutionFailedCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,11 +54,13 @@ pub enum SignalExternalWorkflowExecutionFailedCause {
 impl ::std::convert::From<&str> for SignalExternalWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
         match s {
-                        "OPERATION_NOT_PERMITTED" => SignalExternalWorkflowExecutionFailedCause::OperationNotPermitted,
-"SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED" => SignalExternalWorkflowExecutionFailedCause::SignalExternalWorkflowExecutionRateExceeded,
-"UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION" => SignalExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution,
-other => SignalExternalWorkflowExecutionFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
+            "OPERATION_NOT_PERMITTED" => SignalExternalWorkflowExecutionFailedCause::OperationNotPermitted,
+            "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED" => {
+                SignalExternalWorkflowExecutionFailedCause::SignalExternalWorkflowExecutionRateExceeded
+            }
+            "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION" => SignalExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution,
+            other => SignalExternalWorkflowExecutionFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
     }
 }
 impl ::std::str::FromStr for SignalExternalWorkflowExecutionFailedCause {
@@ -78,11 +74,13 @@ impl SignalExternalWorkflowExecutionFailedCause {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-    SignalExternalWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
-    SignalExternalWorkflowExecutionFailedCause::SignalExternalWorkflowExecutionRateExceeded => "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED",
-    SignalExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION",
-    SignalExternalWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
-}
+            SignalExternalWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
+            SignalExternalWorkflowExecutionFailedCause::SignalExternalWorkflowExecutionRateExceeded => {
+                "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED"
+            }
+            SignalExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION",
+            SignalExternalWorkflowExecutionFailedCause::Unknown(value) => value.as_str(),
+        }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {

@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_versions_by_function::ListVersionsByFunctionOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
     ///   - [`versions(Option<Vec<FunctionConfiguration>>)`](crate::operation::list_versions_by_function::ListVersionsByFunctionOutput::versions): <p>A list of Lambda function versions.</p>
     /// - On failure, responds with [`SdkError<ListVersionsByFunctionError>`](crate::operation::list_versions_by_function::ListVersionsByFunctionError)
-    pub fn list_versions_by_function(
-        &self,
-    ) -> crate::operation::list_versions_by_function::builders::ListVersionsByFunctionFluentBuilder
-    {
+    pub fn list_versions_by_function(&self) -> crate::operation::list_versions_by_function::builders::ListVersionsByFunctionFluentBuilder {
         crate::operation::list_versions_by_function::builders::ListVersionsByFunctionFluentBuilder::new(self.handle.clone())
     }
 }

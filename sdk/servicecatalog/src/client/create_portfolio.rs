@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`portfolio_detail(Option<PortfolioDetail>)`](crate::operation::create_portfolio::CreatePortfolioOutput::portfolio_detail): <p>Information about the portfolio.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_portfolio::CreatePortfolioOutput::tags): <p>Information about the tags associated with the portfolio.</p>
     /// - On failure, responds with [`SdkError<CreatePortfolioError>`](crate::operation::create_portfolio::CreatePortfolioError)
-    pub fn create_portfolio(
-        &self,
-    ) -> crate::operation::create_portfolio::builders::CreatePortfolioFluentBuilder {
-        crate::operation::create_portfolio::builders::CreatePortfolioFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_portfolio(&self) -> crate::operation::create_portfolio::builders::CreatePortfolioFluentBuilder {
+        crate::operation::create_portfolio::builders::CreatePortfolioFluentBuilder::new(self.handle.clone())
     }
 }

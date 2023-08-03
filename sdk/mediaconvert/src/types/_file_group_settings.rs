@@ -17,9 +17,7 @@ impl FileGroupSettings {
         self.destination.as_deref()
     }
     /// Settings associated with the destination. Will vary based on the type of destination
-    pub fn destination_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DestinationSettings> {
+    pub fn destination_settings(&self) -> ::std::option::Option<&crate::types::DestinationSettings> {
         self.destination_settings.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl FileGroupSettings {
 
 /// A builder for [`FileGroupSettings`](crate::types::FileGroupSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileGroupSettingsBuilder {
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) destination_settings: ::std::option::Option<crate::types::DestinationSettings>,
@@ -60,17 +56,12 @@ impl FileGroupSettingsBuilder {
         self
     }
     /// Settings associated with the destination. Will vary based on the type of destination
-    pub fn set_destination_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationSettings>,
-    ) -> Self {
+    pub fn set_destination_settings(mut self, input: ::std::option::Option<crate::types::DestinationSettings>) -> Self {
         self.destination_settings = input;
         self
     }
     /// Settings associated with the destination. Will vary based on the type of destination
-    pub fn get_destination_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationSettings> {
+    pub fn get_destination_settings(&self) -> &::std::option::Option<crate::types::DestinationSettings> {
         &self.destination_settings
     }
     /// Consumes the builder and constructs a [`FileGroupSettings`](crate::types::FileGroupSettings).

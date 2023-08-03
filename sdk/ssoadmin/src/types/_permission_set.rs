@@ -58,9 +58,7 @@ impl PermissionSet {
 
 /// A builder for [`PermissionSet`](crate::types::PermissionSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PermissionSetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) permission_set_arn: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl PermissionSetBuilder {
         &self.name
     }
     /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_set_arn = input;
         self
     }
@@ -124,10 +116,7 @@ impl PermissionSetBuilder {
         self
     }
     /// <p>The date that the permission set was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -136,18 +125,12 @@ impl PermissionSetBuilder {
         &self.created_date
     }
     /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
-    pub fn session_duration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_duration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
-    pub fn set_session_duration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_duration = input;
         self
     }

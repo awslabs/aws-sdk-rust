@@ -26,7 +26,7 @@ impl GetMulticastGroupSessionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMulticastGroupSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionInputBuilder,
+    inner: crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionInputBuilder,
 }
 impl GetMulticastGroupSessionFluentBuilder {
     /// Creates a new `GetMulticastGroupSession`.
@@ -37,7 +37,7 @@ impl GetMulticastGroupSessionFluentBuilder {
         }
     }
     /// Access the GetMulticastGroupSession as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetMulticastGroupSessionFluentBuilder {
             crate::operation::get_multicast_group_session::GetMulticastGroupSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_multicast_group_session::GetMulticastGroupSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_multicast_group_session::GetMulticastGroupSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetMulticastGroupSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetMulticastGroupSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_multicast_group_session::GetMulticastGroupSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_multicast_group_session::GetMulticastGroupSessionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetMulticastGroupSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_multicast_group_session::GetMulticastGroupSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_multicast_group_session::GetMulticastGroupSessionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetMulticastGroupSessionFluentBuilder {
             crate::operation::get_multicast_group_session::GetMulticastGroupSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_multicast_group_session::GetMulticastGroupSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_multicast_group_session::GetMulticastGroupSessionError>,
     > {
         self.customize_middleware().await
     }

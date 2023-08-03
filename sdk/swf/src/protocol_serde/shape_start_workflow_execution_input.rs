@@ -28,9 +28,7 @@ pub fn ser_start_workflow_execution_input(
         object.key("input").string(var_8.as_str());
     }
     if let Some(var_9) = &input.execution_start_to_close_timeout {
-        object
-            .key("executionStartToCloseTimeout")
-            .string(var_9.as_str());
+        object.key("executionStartToCloseTimeout").string(var_9.as_str());
     }
     if let Some(var_10) = &input.tag_list {
         let mut array_11 = object.key("tagList").start_array();
@@ -42,9 +40,7 @@ pub fn ser_start_workflow_execution_input(
         array_11.finish();
     }
     if let Some(var_13) = &input.task_start_to_close_timeout {
-        object
-            .key("taskStartToCloseTimeout")
-            .string(var_13.as_str());
+        object.key("taskStartToCloseTimeout").string(var_13.as_str());
     }
     if let Some(var_14) = &input.child_policy {
         object.key("childPolicy").string(var_14.as_str());

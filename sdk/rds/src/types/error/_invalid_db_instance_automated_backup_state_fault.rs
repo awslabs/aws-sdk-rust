@@ -17,7 +17,10 @@ impl InvalidDbInstanceAutomatedBackupStateFault {
 }
 impl ::std::fmt::Display for InvalidDbInstanceAutomatedBackupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(f, "InvalidDbInstanceAutomatedBackupStateFault [InvalidDBInstanceAutomatedBackupStateFault]")?;
+        ::std::write!(
+            f,
+            "InvalidDbInstanceAutomatedBackupStateFault [InvalidDBInstanceAutomatedBackupStateFault]"
+        )?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -27,34 +30,27 @@ impl ::std::fmt::Display for InvalidDbInstanceAutomatedBackupStateFault {
     }
 }
 impl ::std::error::Error for InvalidDbInstanceAutomatedBackupStateFault {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidDbInstanceAutomatedBackupStateFault
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidDbInstanceAutomatedBackupStateFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidDbInstanceAutomatedBackupStateFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidDbInstanceAutomatedBackupStateFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidDbInstanceAutomatedBackupStateFault {
     /// Creates a new builder-style object to manufacture [`InvalidDbInstanceAutomatedBackupStateFault`](crate::types::error::InvalidDbInstanceAutomatedBackupStateFault).
-    pub fn builder(
-    ) -> crate::types::error::builders::InvalidDbInstanceAutomatedBackupStateFaultBuilder {
+    pub fn builder() -> crate::types::error::builders::InvalidDbInstanceAutomatedBackupStateFaultBuilder {
         crate::types::error::builders::InvalidDbInstanceAutomatedBackupStateFaultBuilder::default()
     }
 }
 
 /// A builder for [`InvalidDbInstanceAutomatedBackupStateFault`](crate::types::error::InvalidDbInstanceAutomatedBackupStateFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidDbInstanceAutomatedBackupStateFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +77,7 @@ impl InvalidDbInstanceAutomatedBackupStateFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

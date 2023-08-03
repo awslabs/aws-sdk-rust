@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateLoadBalancerOutput {
 }
 impl CreateLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerOutput`](crate::operation::create_load_balancer::CreateLoadBalancerOutput).
-    pub fn builder(
-    ) -> crate::operation::create_load_balancer::builders::CreateLoadBalancerOutputBuilder {
+    pub fn builder() -> crate::operation::create_load_balancer::builders::CreateLoadBalancerOutputBuilder {
         crate::operation::create_load_balancer::builders::CreateLoadBalancerOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLoadBalancerOutput`](crate::operation::create_load_balancer::CreateLoadBalancerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerOutputBuilder {
     pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl CreateLoadBalancerOutputBuilder {
         self
     }
     /// <p>Information about the load balancer.</p>
-    pub fn set_load_balancers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
-    ) -> Self {
+    pub fn set_load_balancers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>) -> Self {
         self.load_balancers = input;
         self
     }
     /// <p>Information about the load balancer.</p>
-    pub fn get_load_balancers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
+    pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
         &self.load_balancers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

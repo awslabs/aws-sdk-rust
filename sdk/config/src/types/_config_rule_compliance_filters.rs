@@ -46,9 +46,7 @@ impl ConfigRuleComplianceFilters {
 
 /// A builder for [`ConfigRuleComplianceFilters`](crate::types::ConfigRuleComplianceFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigRuleComplianceFiltersBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) compliance_type: ::std::option::Option<crate::types::ComplianceType>,
@@ -57,18 +55,12 @@ pub struct ConfigRuleComplianceFiltersBuilder {
 }
 impl ConfigRuleComplianceFiltersBuilder {
     /// <p>The name of the Config rule.</p>
-    pub fn config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Config rule.</p>
-    pub fn set_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_rule_name = input;
         self
     }
@@ -84,10 +76,7 @@ impl ConfigRuleComplianceFiltersBuilder {
     }
     /// <p>The rule compliance status.</p>
     /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code> values.</p>
-    pub fn set_compliance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceType>,
-    ) -> Self {
+    pub fn set_compliance_type(mut self, input: ::std::option::Option<crate::types::ComplianceType>) -> Self {
         self.compliance_type = input;
         self
     }

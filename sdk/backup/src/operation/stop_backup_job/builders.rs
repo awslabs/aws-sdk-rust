@@ -10,10 +10,7 @@ impl StopBackupJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_backup_job::StopBackupJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_backup_job::StopBackupJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_backup_job::StopBackupJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_backup_job();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl StopBackupJobFluentBuilder {
         }
     }
     /// Access the StopBackupJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_backup_job::builders::StopBackupJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_backup_job::builders::StopBackupJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl StopBackupJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -116,18 +108,12 @@ impl StopBackupJobFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
-    pub fn backup_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_job_id(input.into());
         self
     }
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
-    pub fn set_backup_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_job_id(input);
         self
     }

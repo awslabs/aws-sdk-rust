@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`column_name(impl ::std::convert::Into<String>)`](crate::operation::delete_column_statistics_for_partition::builders::DeleteColumnStatisticsForPartitionFluentBuilder::column_name) / [`set_column_name(Option<String>)`](crate::operation::delete_column_statistics_for_partition::builders::DeleteColumnStatisticsForPartitionFluentBuilder::set_column_name): <p>Name of the column.</p>
     /// - On success, responds with [`DeleteColumnStatisticsForPartitionOutput`](crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionOutput)
     /// - On failure, responds with [`SdkError<DeleteColumnStatisticsForPartitionError>`](crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionError)
-    pub fn delete_column_statistics_for_partition(&self) -> crate::operation::delete_column_statistics_for_partition::builders::DeleteColumnStatisticsForPartitionFluentBuilder{
+    pub fn delete_column_statistics_for_partition(
+        &self,
+    ) -> crate::operation::delete_column_statistics_for_partition::builders::DeleteColumnStatisticsForPartitionFluentBuilder {
         crate::operation::delete_column_statistics_for_partition::builders::DeleteColumnStatisticsForPartitionFluentBuilder::new(self.handle.clone())
     }
 }

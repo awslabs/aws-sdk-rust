@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateEntitlementOutput {
 }
 impl CreateEntitlementOutput {
     /// Creates a new builder-style object to manufacture [`CreateEntitlementOutput`](crate::operation::create_entitlement::CreateEntitlementOutput).
-    pub fn builder(
-    ) -> crate::operation::create_entitlement::builders::CreateEntitlementOutputBuilder {
+    pub fn builder() -> crate::operation::create_entitlement::builders::CreateEntitlementOutputBuilder {
         crate::operation::create_entitlement::builders::CreateEntitlementOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEntitlementOutput`](crate::operation::create_entitlement::CreateEntitlementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEntitlementOutputBuilder {
     pub(crate) entitlement: ::std::option::Option<crate::types::Entitlement>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateEntitlementOutputBuilder {
         self
     }
     /// <p>The entitlement.</p>
-    pub fn set_entitlement(
-        mut self,
-        input: ::std::option::Option<crate::types::Entitlement>,
-    ) -> Self {
+    pub fn set_entitlement(mut self, input: ::std::option::Option<crate::types::Entitlement>) -> Self {
         self.entitlement = input;
         self
     }

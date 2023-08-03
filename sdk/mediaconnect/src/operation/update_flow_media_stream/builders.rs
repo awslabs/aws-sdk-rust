@@ -37,10 +37,7 @@ impl UpdateFlowMediaStreamFluentBuilder {
         }
     }
     /// Access the UpdateFlowMediaStream as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_flow_media_stream::builders::UpdateFlowMediaStreamInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_flow_media_stream::builders::UpdateFlowMediaStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateFlowMediaStreamFluentBuilder {
             crate::operation::update_flow_media_stream::UpdateFlowMediaStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateFlowMediaStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateFlowMediaStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_flow_media_stream::UpdateFlowMediaStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateFlowMediaStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_flow_media_stream::UpdateFlowMediaStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateFlowMediaStreamFluentBuilder {
             crate::operation::update_flow_media_stream::UpdateFlowMediaStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError>,
     > {
         self.customize_middleware().await
     }
@@ -129,17 +115,12 @@ impl UpdateFlowMediaStreamFluentBuilder {
         self
     }
     /// The attributes that you want to assign to the media stream.
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaStreamAttributesRequest>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::MediaStreamAttributesRequest>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// The attributes that you want to assign to the media stream.
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::MediaStreamAttributesRequest> {
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::MediaStreamAttributesRequest> {
         self.inner.get_attributes()
     }
     /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
@@ -185,18 +166,12 @@ impl UpdateFlowMediaStreamFluentBuilder {
         self.inner.get_flow_arn()
     }
     /// The name of the media stream that you want to update.
-    pub fn media_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.media_stream_name(input.into());
         self
     }
     /// The name of the media stream that you want to update.
-    pub fn set_media_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_media_stream_name(input);
         self
     }
@@ -210,10 +185,7 @@ impl UpdateFlowMediaStreamFluentBuilder {
         self
     }
     /// The type of media stream.
-    pub fn set_media_stream_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaStreamType>,
-    ) -> Self {
+    pub fn set_media_stream_type(mut self, input: ::std::option::Option<crate::types::MediaStreamType>) -> Self {
         self.inner = self.inner.set_media_stream_type(input);
         self
     }

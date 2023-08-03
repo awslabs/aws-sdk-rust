@@ -10,10 +10,7 @@ impl AssociateRepositoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_repository::AssociateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_repository::AssociateRepositoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_repository::AssociateRepositoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_repository();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl AssociateRepositoryFluentBuilder {
         }
     }
     /// Access the AssociateRepository as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_repository::builders::AssociateRepositoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_repository::builders::AssociateRepositoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl AssociateRepositoryFluentBuilder {
             crate::operation::associate_repository::AssociateRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_repository::AssociateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_repository::AssociateRepositoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl AssociateRepositoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl AssociateRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_repository::AssociateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_repository::AssociateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_repository::AssociateRepositoryError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl AssociateRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_repository::AssociateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_repository::AssociateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_repository::AssociateRepositoryError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl AssociateRepositoryFluentBuilder {
             crate::operation::associate_repository::AssociateRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_repository::AssociateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_repository::AssociateRepositoryError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl AssociateRepositoryFluentBuilder {
         self
     }
     /// <p>The repository to associate.</p>
-    pub fn set_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::Repository>,
-    ) -> Self {
+    pub fn set_repository(mut self, input: ::std::option::Option<crate::types::Repository>) -> Self {
         self.inner = self.inner.set_repository(input);
         self
     }
@@ -144,18 +125,12 @@ impl AssociateRepositoryFluentBuilder {
         self.inner.get_repository()
     }
     /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -172,11 +147,7 @@ impl AssociateRepositoryFluentBuilder {
     /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
     /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
@@ -185,12 +156,7 @@ impl AssociateRepositoryFluentBuilder {
     /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
     /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -199,11 +165,7 @@ impl AssociateRepositoryFluentBuilder {
     /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
     /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
@@ -220,10 +182,7 @@ impl AssociateRepositoryFluentBuilder {
     /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
     /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p> </li>
     /// </ul>
-    pub fn set_kms_key_details(
-        mut self,
-        input: ::std::option::Option<crate::types::KmsKeyDetails>,
-    ) -> Self {
+    pub fn set_kms_key_details(mut self, input: ::std::option::Option<crate::types::KmsKeyDetails>) -> Self {
         self.inner = self.inner.set_kms_key_details(input);
         self
     }

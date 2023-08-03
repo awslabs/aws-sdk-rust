@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for StartDevEnvironmentOutput {
 }
 impl StartDevEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`StartDevEnvironmentOutput`](crate::operation::start_dev_environment::StartDevEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder {
-        crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder {
+        crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDevEnvironmentOutput`](crate::operation::start_dev_environment::StartDevEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDevEnvironmentOutputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -110,10 +106,7 @@ impl StartDevEnvironmentOutputBuilder {
         self
     }
     /// <p>The status of the Dev Environment. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DevEnvironmentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DevEnvironmentStatus>) -> Self {
         self.status = input;
         self
     }

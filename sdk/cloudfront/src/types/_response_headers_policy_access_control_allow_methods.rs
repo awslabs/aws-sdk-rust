@@ -21,9 +21,7 @@ pub struct ResponseHeadersPolicyAccessControlAllowMethods {
     /// </ul>
     /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
     #[doc(hidden)]
-    pub items: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
-    >,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>>,
 }
 impl ResponseHeadersPolicyAccessControlAllowMethods {
     /// <p>The number of HTTP methods in the list.</p>
@@ -42,31 +40,23 @@ impl ResponseHeadersPolicyAccessControlAllowMethods {
     /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
     /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues]>
-    {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues]> {
         self.items.as_deref()
     }
 }
 impl ResponseHeadersPolicyAccessControlAllowMethods {
     /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::types::ResponseHeadersPolicyAccessControlAllowMethods).
-    pub fn builder() -> crate::types::builders::ResponseHeadersPolicyAccessControlAllowMethodsBuilder
-    {
+    pub fn builder() -> crate::types::builders::ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
         crate::types::builders::ResponseHeadersPolicyAccessControlAllowMethodsBuilder::default()
     }
 }
 
 /// A builder for [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::types::ResponseHeadersPolicyAccessControlAllowMethods).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
-    >,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>>,
 }
 impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     /// <p>The number of HTTP methods in the list.</p>
@@ -99,10 +89,7 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
     /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
-    pub fn items(
-        mut self,
-        input: crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues,
-    ) -> Self {
+    pub fn items(mut self, input: crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
@@ -122,9 +109,7 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
     pub fn set_items(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>>,
     ) -> Self {
         self.items = input;
         self
@@ -141,11 +126,7 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
     /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
-    > {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::types::ResponseHeadersPolicyAccessControlAllowMethods).

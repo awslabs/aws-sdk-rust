@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetResolverConfigOutput {
 }
 impl GetResolverConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverConfigOutput`](crate::operation::get_resolver_config::GetResolverConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resolver_config::builders::GetResolverConfigOutputBuilder {
+    pub fn builder() -> crate::operation::get_resolver_config::builders::GetResolverConfigOutputBuilder {
         crate::operation::get_resolver_config::builders::GetResolverConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResolverConfigOutput`](crate::operation::get_resolver_config::GetResolverConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResolverConfigOutputBuilder {
     pub(crate) resolver_config: ::std::option::Option<crate::types::ResolverConfig>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetResolverConfigOutputBuilder {
         self
     }
     /// <p>Information about the behavior configuration of Route&nbsp;53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
-    pub fn set_resolver_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverConfig>,
-    ) -> Self {
+    pub fn set_resolver_config(mut self, input: ::std::option::Option<crate::types::ResolverConfig>) -> Self {
         self.resolver_config = input;
         self
     }

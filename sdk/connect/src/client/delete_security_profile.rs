@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`security_profile_id(impl ::std::convert::Into<String>)`](crate::operation::delete_security_profile::builders::DeleteSecurityProfileFluentBuilder::security_profile_id) / [`set_security_profile_id(Option<String>)`](crate::operation::delete_security_profile::builders::DeleteSecurityProfileFluentBuilder::set_security_profile_id): <p>The identifier for the security profle.</p>
     /// - On success, responds with [`DeleteSecurityProfileOutput`](crate::operation::delete_security_profile::DeleteSecurityProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteSecurityProfileError>`](crate::operation::delete_security_profile::DeleteSecurityProfileError)
-    pub fn delete_security_profile(
-        &self,
-    ) -> crate::operation::delete_security_profile::builders::DeleteSecurityProfileFluentBuilder
-    {
-        crate::operation::delete_security_profile::builders::DeleteSecurityProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_security_profile(&self) -> crate::operation::delete_security_profile::builders::DeleteSecurityProfileFluentBuilder {
+        crate::operation::delete_security_profile::builders::DeleteSecurityProfileFluentBuilder::new(self.handle.clone())
     }
 }

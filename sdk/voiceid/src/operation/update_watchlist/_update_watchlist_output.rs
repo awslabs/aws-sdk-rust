@@ -28,9 +28,7 @@ impl UpdateWatchlistOutput {
 
 /// A builder for [`UpdateWatchlistOutput`](crate::operation::update_watchlist::UpdateWatchlistOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWatchlistOutputBuilder {
     pub(crate) watchlist: ::std::option::Option<crate::types::Watchlist>,
     _request_id: Option<String>,

@@ -36,18 +36,14 @@ impl ResetServiceSettingInput {
 }
 impl ResetServiceSettingInput {
     /// Creates a new builder-style object to manufacture [`ResetServiceSettingInput`](crate::operation::reset_service_setting::ResetServiceSettingInput).
-    pub fn builder(
-    ) -> crate::operation::reset_service_setting::builders::ResetServiceSettingInputBuilder {
-        crate::operation::reset_service_setting::builders::ResetServiceSettingInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::reset_service_setting::builders::ResetServiceSettingInputBuilder {
+        crate::operation::reset_service_setting::builders::ResetServiceSettingInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetServiceSettingInput`](crate::operation::reset_service_setting::ResetServiceSettingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetServiceSettingInputBuilder {
     pub(crate) setting_id: ::std::option::Option<::std::string::String>,
 }
@@ -99,14 +95,8 @@ impl ResetServiceSettingInputBuilder {
     /// Consumes the builder and constructs a [`ResetServiceSettingInput`](crate::operation::reset_service_setting::ResetServiceSettingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_service_setting::ResetServiceSettingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::reset_service_setting::ResetServiceSettingInput {
-                setting_id: self.setting_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::reset_service_setting::ResetServiceSettingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::reset_service_setting::ResetServiceSettingInput { setting_id: self.setting_id })
     }
 }

@@ -9,49 +9,55 @@ pub fn de_modify_cluster_parameter_group_http_error(
     crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterParameterGroupNotFound" => crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::ClusterParameterGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ClusterParameterGroupNotFound" => {
+            crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::ClusterParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClusterParameterGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cluster_parameter_group_not_found_fault::de_cluster_parameter_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_cluster_parameter_group_not_found_fault::de_cluster_parameter_group_not_found_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidClusterParameterGroupState" => crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::InvalidClusterParameterGroupStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidClusterParameterGroupState" => {
+            crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::InvalidClusterParameterGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidClusterParameterGroupStateFaultBuilder::default();
                     output = crate::protocol_serde::shape_invalid_cluster_parameter_group_state_fault::de_invalid_cluster_parameter_group_state_fault_xml_err(_response_body, output).map_err(crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::generic(generic),
     })
 }
 
@@ -67,16 +73,21 @@ pub fn de_modify_cluster_parameter_group_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupOutputBuilder::default();
-        output = crate::protocol_serde::shape_modify_cluster_parameter_group::de_modify_cluster_parameter_group(_response_body, output).map_err(crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_modify_cluster_parameter_group::de_modify_cluster_parameter_group(_response_body, output)
+            .map_err(crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_modify_cluster_parameter_group(inp: &[u8], mut builder: crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupOutputBuilder) -> Result<crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_modify_cluster_parameter_group(
+    inp: &[u8],
+    mut builder: crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupOutputBuilder,
+) -> Result<
+    crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::update_test_set::UpdateTestSetOutput::creation_date_time): <p>The creation date and time for the updated test set.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::update_test_set::UpdateTestSetOutput::last_updated_date_time): <p> The date and time of the last update for the updated test set.</p>
     /// - On failure, responds with [`SdkError<UpdateTestSetError>`](crate::operation::update_test_set::UpdateTestSetError)
-    pub fn update_test_set(
-        &self,
-    ) -> crate::operation::update_test_set::builders::UpdateTestSetFluentBuilder {
-        crate::operation::update_test_set::builders::UpdateTestSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_test_set(&self) -> crate::operation::update_test_set::builders::UpdateTestSetFluentBuilder {
+        crate::operation::update_test_set::builders::UpdateTestSetFluentBuilder::new(self.handle.clone())
     }
 }

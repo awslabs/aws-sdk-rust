@@ -5,8 +5,7 @@
 pub struct ListAnalysesOutput {
     /// <p>Metadata describing each of the analyses that are listed.</p>
     #[doc(hidden)]
-    pub analysis_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>>,
+    pub analysis_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -50,12 +49,9 @@ impl ListAnalysesOutput {
 
 /// A builder for [`ListAnalysesOutput`](crate::operation::list_analyses::ListAnalysesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnalysesOutputBuilder {
-    pub(crate) analysis_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>>,
+    pub(crate) analysis_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -74,17 +70,12 @@ impl ListAnalysesOutputBuilder {
         self
     }
     /// <p>Metadata describing each of the analyses that are listed.</p>
-    pub fn set_analysis_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>>,
-    ) -> Self {
+    pub fn set_analysis_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>>) -> Self {
         self.analysis_summary_list = input;
         self
     }
     /// <p>Metadata describing each of the analyses that are listed.</p>
-    pub fn get_analysis_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>> {
+    pub fn get_analysis_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>> {
         &self.analysis_summary_list
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>

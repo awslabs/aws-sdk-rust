@@ -10,10 +10,7 @@ impl CreateLagInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_lag::CreateLagOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_lag::CreateLagError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_lag::CreateLagError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_lag();
         fluent_builder.inner = self;
@@ -49,10 +46,7 @@ impl CreateLagFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_lag::CreateLag,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_lag::CreateLag, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_lag::CreateLagError>,
     > {
         let handle = self.handle.clone();
@@ -63,10 +57,7 @@ impl CreateLagFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -108,10 +99,7 @@ impl CreateLagFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_lag::CreateLag,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_lag::CreateLag, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_lag::CreateLagError>,
     > {
         self.customize_middleware().await
@@ -145,18 +133,12 @@ impl CreateLagFluentBuilder {
         self.inner.get_location()
     }
     /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-    pub fn connections_bandwidth(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connections_bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connections_bandwidth(input.into());
         self
     }
     /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-    pub fn set_connections_bandwidth(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connections_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connections_bandwidth(input);
         self
     }
@@ -179,18 +161,12 @@ impl CreateLagFluentBuilder {
         self.inner.get_lag_name()
     }
     /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
@@ -208,10 +184,7 @@ impl CreateLagFluentBuilder {
         self
     }
     /// <p>The tags to associate with the LAG.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -229,32 +202,21 @@ impl CreateLagFluentBuilder {
         self
     }
     /// <p>The tags to associate with the automtically created LAGs.</p>
-    pub fn set_child_connection_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_child_connection_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_child_connection_tags(input);
         self
     }
     /// <p>The tags to associate with the automtically created LAGs.</p>
-    pub fn get_child_connection_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_child_connection_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_child_connection_tags()
     }
     /// <p>The name of the service provider associated with the LAG.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_name(input.into());
         self
     }
     /// <p>The name of the service provider associated with the LAG.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
     }

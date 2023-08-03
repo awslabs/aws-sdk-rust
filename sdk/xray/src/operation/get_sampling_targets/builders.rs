@@ -10,10 +10,7 @@ impl GetSamplingTargetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_sampling_targets::GetSamplingTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampling_targets::GetSamplingTargetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampling_targets::GetSamplingTargetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_sampling_targets();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetSamplingTargetsFluentBuilder {
         }
     }
     /// Access the GetSamplingTargets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_sampling_targets::builders::GetSamplingTargetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_sampling_targets::builders::GetSamplingTargetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetSamplingTargetsFluentBuilder {
             crate::operation::get_sampling_targets::GetSamplingTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampling_targets::GetSamplingTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampling_targets::GetSamplingTargetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetSamplingTargetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetSamplingTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sampling_targets::GetSamplingTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampling_targets::GetSamplingTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampling_targets::GetSamplingTargetsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetSamplingTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sampling_targets::GetSamplingTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampling_targets::GetSamplingTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampling_targets::GetSamplingTargetsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetSamplingTargetsFluentBuilder {
             crate::operation::get_sampling_targets::GetSamplingTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampling_targets::GetSamplingTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampling_targets::GetSamplingTargetsError>,
     > {
         self.customize_middleware().await
     }
@@ -127,10 +111,7 @@ impl GetSamplingTargetsFluentBuilder {
     /// To override the contents of this collection use [`set_sampling_statistics_documents`](Self::set_sampling_statistics_documents).
     ///
     /// <p>Information about rules that the service is using to sample requests.</p>
-    pub fn sampling_statistics_documents(
-        mut self,
-        input: crate::types::SamplingStatisticsDocument,
-    ) -> Self {
+    pub fn sampling_statistics_documents(mut self, input: crate::types::SamplingStatisticsDocument) -> Self {
         self.inner = self.inner.sampling_statistics_documents(input);
         self
     }
@@ -143,9 +124,7 @@ impl GetSamplingTargetsFluentBuilder {
         self
     }
     /// <p>Information about rules that the service is using to sample requests.</p>
-    pub fn get_sampling_statistics_documents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>> {
+    pub fn get_sampling_statistics_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>> {
         self.inner.get_sampling_statistics_documents()
     }
 }

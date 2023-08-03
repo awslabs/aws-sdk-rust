@@ -6,10 +6,7 @@ pub fn ser_put_voice_connector_streaming_configuration_input(
     if let Some(var_1) = &input.streaming_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("StreamingConfiguration").start_object();
-        crate::protocol_serde::shape_streaming_configuration::ser_streaming_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_streaming_configuration::ser_streaming_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

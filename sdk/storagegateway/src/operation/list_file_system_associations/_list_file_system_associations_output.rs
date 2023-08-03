@@ -11,8 +11,7 @@ pub struct ListFileSystemAssociationsOutput {
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of information about the Amazon FSx gateway's file system associations.</p>
     #[doc(hidden)]
-    pub file_system_association_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationSummary>>,
+    pub file_system_association_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationSummary>>,
     _request_id: Option<String>,
 }
 impl ListFileSystemAssociationsOutput {
@@ -25,9 +24,7 @@ impl ListFileSystemAssociationsOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of information about the Amazon FSx gateway's file system associations.</p>
-    pub fn file_system_association_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FileSystemAssociationSummary]> {
+    pub fn file_system_association_summary_list(&self) -> ::std::option::Option<&[crate::types::FileSystemAssociationSummary]> {
         self.file_system_association_summary_list.as_deref()
     }
 }
@@ -38,21 +35,18 @@ impl ::aws_http::request_id::RequestId for ListFileSystemAssociationsOutput {
 }
 impl ListFileSystemAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListFileSystemAssociationsOutput`](crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput).
-    pub fn builder() -> crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsOutputBuilder {
         crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFileSystemAssociationsOutput`](crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFileSystemAssociationsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) file_system_association_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationSummary>>,
+    pub(crate) file_system_association_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationSummary>>,
     _request_id: Option<String>,
 }
 impl ListFileSystemAssociationsOutputBuilder {
@@ -89,13 +83,8 @@ impl ListFileSystemAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_file_system_association_summary_list`](Self::set_file_system_association_summary_list).
     ///
     /// <p>An array of information about the Amazon FSx gateway's file system associations.</p>
-    pub fn file_system_association_summary_list(
-        mut self,
-        input: crate::types::FileSystemAssociationSummary,
-    ) -> Self {
-        let mut v = self
-            .file_system_association_summary_list
-            .unwrap_or_default();
+    pub fn file_system_association_summary_list(mut self, input: crate::types::FileSystemAssociationSummary) -> Self {
+        let mut v = self.file_system_association_summary_list.unwrap_or_default();
         v.push(input);
         self.file_system_association_summary_list = ::std::option::Option::Some(v);
         self
@@ -109,9 +98,7 @@ impl ListFileSystemAssociationsOutputBuilder {
         self
     }
     /// <p>An array of information about the Amazon FSx gateway's file system associations.</p>
-    pub fn get_file_system_association_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationSummary>> {
+    pub fn get_file_system_association_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationSummary>> {
         &self.file_system_association_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -124,9 +111,7 @@ impl ListFileSystemAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFileSystemAssociationsOutput`](crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput {
+    pub fn build(self) -> crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput {
         crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput {
             marker: self.marker,
             next_marker: self.next_marker,

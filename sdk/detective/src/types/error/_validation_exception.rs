@@ -63,9 +63,7 @@ impl ValidationException {
 
 /// A builder for [`ValidationException`](crate::types::error::ValidationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
@@ -102,18 +100,12 @@ impl ValidationExceptionBuilder {
         &self.error_code
     }
     /// <p> An explanation of why validation failed.</p>
-    pub fn error_code_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_code_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An explanation of why validation failed.</p>
-    pub fn set_error_code_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_code_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code_reason = input;
         self
     }
@@ -128,10 +120,7 @@ impl ValidationExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

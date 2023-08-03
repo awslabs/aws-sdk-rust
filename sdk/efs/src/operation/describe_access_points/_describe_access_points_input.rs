@@ -36,17 +36,14 @@ impl DescribeAccessPointsInput {
 }
 impl DescribeAccessPointsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccessPointsInput`](crate::operation::describe_access_points::DescribeAccessPointsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_access_points::builders::DescribeAccessPointsInputBuilder {
+    pub fn builder() -> crate::operation::describe_access_points::builders::DescribeAccessPointsInputBuilder {
         crate::operation::describe_access_points::builders::DescribeAccessPointsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccessPointsInput`](crate::operation::describe_access_points::DescribeAccessPointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccessPointsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -83,18 +80,12 @@ impl DescribeAccessPointsInputBuilder {
         &self.next_token
     }
     /// <p>(Optional) Specifies an EFS access point to describe in the response; mutually exclusive with <code>FileSystemId</code>.</p>
-    pub fn access_point_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) Specifies an EFS access point to describe in the response; mutually exclusive with <code>FileSystemId</code>.</p>
-    pub fn set_access_point_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_point_id = input;
         self
     }
@@ -103,18 +94,12 @@ impl DescribeAccessPointsInputBuilder {
         &self.access_point_id
     }
     /// <p>(Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points for that file system; mutually exclusive with <code>AccessPointId</code>.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points for that file system; mutually exclusive with <code>AccessPointId</code>.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -125,17 +110,13 @@ impl DescribeAccessPointsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccessPointsInput`](crate::operation::describe_access_points::DescribeAccessPointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_access_points::DescribeAccessPointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_access_points::DescribeAccessPointsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                access_point_id: self.access_point_id,
-                file_system_id: self.file_system_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_access_points::DescribeAccessPointsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_access_points::DescribeAccessPointsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            access_point_id: self.access_point_id,
+            file_system_id: self.file_system_id,
+        })
     }
 }

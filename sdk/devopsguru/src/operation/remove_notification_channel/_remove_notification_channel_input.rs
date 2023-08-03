@@ -15,16 +15,14 @@ impl RemoveNotificationChannelInput {
 }
 impl RemoveNotificationChannelInput {
     /// Creates a new builder-style object to manufacture [`RemoveNotificationChannelInput`](crate::operation::remove_notification_channel::RemoveNotificationChannelInput).
-    pub fn builder() -> crate::operation::remove_notification_channel::builders::RemoveNotificationChannelInputBuilder{
+    pub fn builder() -> crate::operation::remove_notification_channel::builders::RemoveNotificationChannelInputBuilder {
         crate::operation::remove_notification_channel::builders::RemoveNotificationChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveNotificationChannelInput`](crate::operation::remove_notification_channel::RemoveNotificationChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveNotificationChannelInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl RemoveNotificationChannelInputBuilder {
         crate::operation::remove_notification_channel::RemoveNotificationChannelInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_notification_channel::RemoveNotificationChannelInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_notification_channel::RemoveNotificationChannelInput { id: self.id })
     }
 }

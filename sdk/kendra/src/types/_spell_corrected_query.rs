@@ -30,27 +30,19 @@ impl SpellCorrectedQuery {
 
 /// A builder for [`SpellCorrectedQuery`](crate::types::SpellCorrectedQuery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpellCorrectedQueryBuilder {
     pub(crate) suggested_query_text: ::std::option::Option<::std::string::String>,
     pub(crate) corrections: ::std::option::Option<::std::vec::Vec<crate::types::Correction>>,
 }
 impl SpellCorrectedQueryBuilder {
     /// <p>The query with the suggested spell corrections.</p>
-    pub fn suggested_query_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suggested_query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suggested_query_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query with the suggested spell corrections.</p>
-    pub fn set_suggested_query_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suggested_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suggested_query_text = input;
         self
     }
@@ -70,17 +62,12 @@ impl SpellCorrectedQueryBuilder {
         self
     }
     /// <p>The corrected misspelled word or words in a query.</p>
-    pub fn set_corrections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Correction>>,
-    ) -> Self {
+    pub fn set_corrections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Correction>>) -> Self {
         self.corrections = input;
         self
     }
     /// <p>The corrected misspelled word or words in a query.</p>
-    pub fn get_corrections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Correction>> {
+    pub fn get_corrections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Correction>> {
         &self.corrections
     }
     /// Consumes the builder and constructs a [`SpellCorrectedQuery`](crate::types::SpellCorrectedQuery).

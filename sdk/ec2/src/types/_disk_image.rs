@@ -37,9 +37,7 @@ impl DiskImage {
 
 /// A builder for [`DiskImage`](crate::types::DiskImage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiskImageBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<crate::types::DiskImageDetail>,
@@ -66,10 +64,7 @@ impl DiskImageBuilder {
         self
     }
     /// <p>Information about the disk image.</p>
-    pub fn set_image(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskImageDetail>,
-    ) -> Self {
+    pub fn set_image(mut self, input: ::std::option::Option<crate::types::DiskImageDetail>) -> Self {
         self.image = input;
         self
     }

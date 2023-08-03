@@ -20,10 +20,7 @@ pub fn ser_partition_input(
     if let Some(var_5) = &input.storage_descriptor {
         #[allow(unused_mut)]
         let mut object_6 = object.key("StorageDescriptor").start_object();
-        crate::protocol_serde::shape_storage_descriptor::ser_storage_descriptor(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_storage_descriptor::ser_storage_descriptor(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.parameters {

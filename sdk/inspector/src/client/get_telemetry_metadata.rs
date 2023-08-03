@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetTelemetryMetadataOutput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput) with field(s):
     ///   - [`telemetry_metadata(Option<Vec<TelemetryMetadata>>)`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput::telemetry_metadata): <p>Telemetry details.</p>
     /// - On failure, responds with [`SdkError<GetTelemetryMetadataError>`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataError)
-    pub fn get_telemetry_metadata(
-        &self,
-    ) -> crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataFluentBuilder {
-        crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_telemetry_metadata(&self) -> crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataFluentBuilder {
+        crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataFluentBuilder::new(self.handle.clone())
     }
 }

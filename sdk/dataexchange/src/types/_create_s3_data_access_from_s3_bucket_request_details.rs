@@ -16,9 +16,7 @@ pub struct CreateS3DataAccessFromS3BucketRequestDetails {
 }
 impl CreateS3DataAccessFromS3BucketRequestDetails {
     /// <p>Details about the S3 data access source asset.</p>
-    pub fn asset_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3DataAccessAssetSourceEntry> {
+    pub fn asset_source(&self) -> ::std::option::Option<&crate::types::S3DataAccessAssetSourceEntry> {
         self.asset_source.as_ref()
     }
     /// <p>The unique identifier for the data set associated with the creation of this Amazon S3 data access.</p>
@@ -32,17 +30,14 @@ impl CreateS3DataAccessFromS3BucketRequestDetails {
 }
 impl CreateS3DataAccessFromS3BucketRequestDetails {
     /// Creates a new builder-style object to manufacture [`CreateS3DataAccessFromS3BucketRequestDetails`](crate::types::CreateS3DataAccessFromS3BucketRequestDetails).
-    pub fn builder() -> crate::types::builders::CreateS3DataAccessFromS3BucketRequestDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::CreateS3DataAccessFromS3BucketRequestDetailsBuilder {
         crate::types::builders::CreateS3DataAccessFromS3BucketRequestDetailsBuilder::default()
     }
 }
 
 /// A builder for [`CreateS3DataAccessFromS3BucketRequestDetails`](crate::types::CreateS3DataAccessFromS3BucketRequestDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateS3DataAccessFromS3BucketRequestDetailsBuilder {
     pub(crate) asset_source: ::std::option::Option<crate::types::S3DataAccessAssetSourceEntry>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
@@ -55,17 +50,12 @@ impl CreateS3DataAccessFromS3BucketRequestDetailsBuilder {
         self
     }
     /// <p>Details about the S3 data access source asset.</p>
-    pub fn set_asset_source(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DataAccessAssetSourceEntry>,
-    ) -> Self {
+    pub fn set_asset_source(mut self, input: ::std::option::Option<crate::types::S3DataAccessAssetSourceEntry>) -> Self {
         self.asset_source = input;
         self
     }
     /// <p>Details about the S3 data access source asset.</p>
-    pub fn get_asset_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DataAccessAssetSourceEntry> {
+    pub fn get_asset_source(&self) -> &::std::option::Option<crate::types::S3DataAccessAssetSourceEntry> {
         &self.asset_source
     }
     /// <p>The unique identifier for the data set associated with the creation of this Amazon S3 data access.</p>

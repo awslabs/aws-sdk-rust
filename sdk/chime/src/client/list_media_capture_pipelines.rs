@@ -10,10 +10,8 @@ impl super::Client {
     ///   - [`media_capture_pipelines(Option<Vec<MediaCapturePipeline>>)`](crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesOutput::media_capture_pipelines): <p>The media capture pipeline objects in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesOutput::next_token): <p>The token used to retrieve the next page of results. </p>
     /// - On failure, responds with [`SdkError<ListMediaCapturePipelinesError>`](crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesError)
-    #[deprecated(
-        note = "Replaced by ListMediaCapturePipelines in the Amazon Chime SDK Media Pipelines Namespace"
-    )]
-    pub fn list_media_capture_pipelines(&self) -> crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesFluentBuilder{
+    #[deprecated(note = "Replaced by ListMediaCapturePipelines in the Amazon Chime SDK Media Pipelines Namespace")]
+    pub fn list_media_capture_pipelines(&self) -> crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesFluentBuilder {
         crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`DeleteLocalGatewayRouteTableVpcAssociationOutput`](crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationOutput) with field(s):
     ///   - [`local_gateway_route_table_vpc_association(Option<LocalGatewayRouteTableVpcAssociation>)`](crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationOutput::local_gateway_route_table_vpc_association): <p>Information about the association.</p>
     /// - On failure, responds with [`SdkError<DeleteLocalGatewayRouteTableVpcAssociationError>`](crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationError)
-    pub fn delete_local_gateway_route_table_vpc_association(&self) -> crate::operation::delete_local_gateway_route_table_vpc_association::builders::DeleteLocalGatewayRouteTableVpcAssociationFluentBuilder{
-        crate::operation::delete_local_gateway_route_table_vpc_association::builders::DeleteLocalGatewayRouteTableVpcAssociationFluentBuilder::new(self.handle.clone())
+    pub fn delete_local_gateway_route_table_vpc_association(
+        &self,
+    ) -> crate::operation::delete_local_gateway_route_table_vpc_association::builders::DeleteLocalGatewayRouteTableVpcAssociationFluentBuilder {
+        crate::operation::delete_local_gateway_route_table_vpc_association::builders::DeleteLocalGatewayRouteTableVpcAssociationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

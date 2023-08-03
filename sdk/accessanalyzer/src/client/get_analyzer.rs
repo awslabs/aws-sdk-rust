@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetAnalyzerOutput`](crate::operation::get_analyzer::GetAnalyzerOutput) with field(s):
     ///   - [`analyzer(Option<AnalyzerSummary>)`](crate::operation::get_analyzer::GetAnalyzerOutput::analyzer): <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
     /// - On failure, responds with [`SdkError<GetAnalyzerError>`](crate::operation::get_analyzer::GetAnalyzerError)
-    pub fn get_analyzer(
-        &self,
-    ) -> crate::operation::get_analyzer::builders::GetAnalyzerFluentBuilder {
+    pub fn get_analyzer(&self) -> crate::operation::get_analyzer::builders::GetAnalyzerFluentBuilder {
         crate::operation::get_analyzer::builders::GetAnalyzerFluentBuilder::new(self.handle.clone())
     }
 }

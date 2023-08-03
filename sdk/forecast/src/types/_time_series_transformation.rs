@@ -9,8 +9,7 @@ pub struct TimeSeriesTransformation {
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>An array of conditions that define which members of the related time series are transformed.</p>
     #[doc(hidden)]
-    pub time_series_conditions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>>,
+    pub time_series_conditions: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>>,
 }
 impl TimeSeriesTransformation {
     /// <p>An array of actions that define a time series and how it is transformed. These transformations create a new time series that is used for the what-if analysis.</p>
@@ -18,9 +17,7 @@ impl TimeSeriesTransformation {
         self.action.as_ref()
     }
     /// <p>An array of conditions that define which members of the related time series are transformed.</p>
-    pub fn time_series_conditions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TimeSeriesCondition]> {
+    pub fn time_series_conditions(&self) -> ::std::option::Option<&[crate::types::TimeSeriesCondition]> {
         self.time_series_conditions.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl TimeSeriesTransformation {
 
 /// A builder for [`TimeSeriesTransformation`](crate::types::TimeSeriesTransformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeSeriesTransformationBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
-    pub(crate) time_series_conditions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>>,
+    pub(crate) time_series_conditions: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>>,
 }
 impl TimeSeriesTransformationBuilder {
     /// <p>An array of actions that define a time series and how it is transformed. These transformations create a new time series that is used for the what-if analysis.</p>
@@ -68,17 +62,12 @@ impl TimeSeriesTransformationBuilder {
         self
     }
     /// <p>An array of conditions that define which members of the related time series are transformed.</p>
-    pub fn set_time_series_conditions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>>,
-    ) -> Self {
+    pub fn set_time_series_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>>) -> Self {
         self.time_series_conditions = input;
         self
     }
     /// <p>An array of conditions that define which members of the related time series are transformed.</p>
-    pub fn get_time_series_conditions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>> {
+    pub fn get_time_series_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>> {
         &self.time_series_conditions
     }
     /// Consumes the builder and constructs a [`TimeSeriesTransformation`](crate::types::TimeSeriesTransformation).

@@ -59,12 +59,10 @@ pub struct InstanceInformation {
     pub last_association_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last date the association was successfully run.</p>
     #[doc(hidden)]
-    pub last_successful_association_execution_date:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_successful_association_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the association.</p>
     #[doc(hidden)]
-    pub association_overview:
-        ::std::option::Option<crate::types::InstanceAggregatedAssociationOverview>,
+    pub association_overview: ::std::option::Option<crate::types::InstanceAggregatedAssociationOverview>,
     /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is the Thing name. </p>
     #[doc(hidden)]
     pub source_id: ::std::option::Option<::std::string::String>,
@@ -140,21 +138,15 @@ impl InstanceInformation {
         self.association_status.as_deref()
     }
     /// <p>The date the association was last run.</p>
-    pub fn last_association_execution_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_association_execution_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_association_execution_date.as_ref()
     }
     /// <p>The last date the association was successfully run.</p>
-    pub fn last_successful_association_execution_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_successful_association_execution_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_successful_association_execution_date.as_ref()
     }
     /// <p>Information about the association.</p>
-    pub fn association_overview(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceAggregatedAssociationOverview> {
+    pub fn association_overview(&self) -> ::std::option::Option<&crate::types::InstanceAggregatedAssociationOverview> {
         self.association_overview.as_ref()
     }
     /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is the Thing name. </p>
@@ -175,9 +167,7 @@ impl InstanceInformation {
 
 /// A builder for [`InstanceInformation`](crate::types::InstanceInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceInformationBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) ping_status: ::std::option::Option<crate::types::PingStatus>,
@@ -196,10 +186,8 @@ pub struct InstanceInformationBuilder {
     pub(crate) computer_name: ::std::option::Option<::std::string::String>,
     pub(crate) association_status: ::std::option::Option<::std::string::String>,
     pub(crate) last_association_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) last_successful_association_execution_date:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) association_overview:
-        ::std::option::Option<crate::types::InstanceAggregatedAssociationOverview>,
+    pub(crate) last_successful_association_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) association_overview: ::std::option::Option<crate::types::InstanceAggregatedAssociationOverview>,
     pub(crate) source_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
 }
@@ -228,10 +216,7 @@ impl InstanceInformationBuilder {
     /// <p>Connection status of SSM Agent. </p> <note>
     /// <p>The status <code>Inactive</code> has been deprecated and is no longer in use.</p>
     /// </note>
-    pub fn set_ping_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PingStatus>,
-    ) -> Self {
+    pub fn set_ping_status(mut self, input: ::std::option::Option<crate::types::PingStatus>) -> Self {
         self.ping_status = input;
         self
     }
@@ -247,10 +232,7 @@ impl InstanceInformationBuilder {
         self
     }
     /// <p>The date and time when the agent last pinged the Systems Manager service. </p>
-    pub fn set_last_ping_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_ping_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_ping_date_time = input;
         self
     }
@@ -259,18 +241,12 @@ impl InstanceInformationBuilder {
         &self.last_ping_date_time
     }
     /// <p>The version of SSM Agent running on your Linux managed node. </p>
-    pub fn agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of SSM Agent running on your Linux managed node. </p>
-    pub fn set_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_version = input;
         self
     }
@@ -298,10 +274,7 @@ impl InstanceInformationBuilder {
         self
     }
     /// <p>The operating system platform type. </p>
-    pub fn set_platform_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PlatformType>,
-    ) -> Self {
+    pub fn set_platform_type(mut self, input: ::std::option::Option<crate::types::PlatformType>) -> Self {
         self.platform_type = input;
         self
     }
@@ -310,18 +283,12 @@ impl InstanceInformationBuilder {
         &self.platform_type
     }
     /// <p>The name of the operating system platform running on your managed node. </p>
-    pub fn platform_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the operating system platform running on your managed node. </p>
-    pub fn set_platform_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_name = input;
         self
     }
@@ -330,18 +297,12 @@ impl InstanceInformationBuilder {
         &self.platform_name
     }
     /// <p>The version of the OS platform running on your managed node. </p>
-    pub fn platform_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the OS platform running on your managed node. </p>
-    pub fn set_platform_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_version = input;
         self
     }
@@ -350,18 +311,12 @@ impl InstanceInformationBuilder {
         &self.platform_version
     }
     /// <p>The activation ID created by Amazon Web Services Systems Manager when the server or virtual machine (VM) was registered.</p>
-    pub fn activation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn activation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The activation ID created by Amazon Web Services Systems Manager when the server or virtual machine (VM) was registered.</p>
-    pub fn set_activation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_activation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.activation_id = input;
         self
     }
@@ -389,10 +344,7 @@ impl InstanceInformationBuilder {
         self
     }
     /// <p>The date the server or VM was registered with Amazon Web Services as a managed node.</p>
-    pub fn set_registration_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_registration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.registration_date = input;
         self
     }
@@ -406,10 +358,7 @@ impl InstanceInformationBuilder {
         self
     }
     /// <p>The type of instance. Instances are either EC2 instances or managed instances. </p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -446,18 +395,12 @@ impl InstanceInformationBuilder {
         &self.ip_address
     }
     /// <p>The fully qualified host name of the managed node.</p>
-    pub fn computer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn computer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.computer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified host name of the managed node.</p>
-    pub fn set_computer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_computer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.computer_name = input;
         self
     }
@@ -466,18 +409,12 @@ impl InstanceInformationBuilder {
         &self.computer_name
     }
     /// <p>The status of the association.</p>
-    pub fn association_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the association.</p>
-    pub fn set_association_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_status = input;
         self
     }
@@ -491,61 +428,40 @@ impl InstanceInformationBuilder {
         self
     }
     /// <p>The date the association was last run.</p>
-    pub fn set_last_association_execution_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_association_execution_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_association_execution_date = input;
         self
     }
     /// <p>The date the association was last run.</p>
-    pub fn get_last_association_execution_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_association_execution_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_association_execution_date
     }
     /// <p>The last date the association was successfully run.</p>
-    pub fn last_successful_association_execution_date(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn last_successful_association_execution_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_successful_association_execution_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last date the association was successfully run.</p>
-    pub fn set_last_successful_association_execution_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_successful_association_execution_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_successful_association_execution_date = input;
         self
     }
     /// <p>The last date the association was successfully run.</p>
-    pub fn get_last_successful_association_execution_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_successful_association_execution_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_successful_association_execution_date
     }
     /// <p>Information about the association.</p>
-    pub fn association_overview(
-        mut self,
-        input: crate::types::InstanceAggregatedAssociationOverview,
-    ) -> Self {
+    pub fn association_overview(mut self, input: crate::types::InstanceAggregatedAssociationOverview) -> Self {
         self.association_overview = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the association.</p>
-    pub fn set_association_overview(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAggregatedAssociationOverview>,
-    ) -> Self {
+    pub fn set_association_overview(mut self, input: ::std::option::Option<crate::types::InstanceAggregatedAssociationOverview>) -> Self {
         self.association_overview = input;
         self
     }
     /// <p>Information about the association.</p>
-    pub fn get_association_overview(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceAggregatedAssociationOverview> {
+    pub fn get_association_overview(&self) -> &::std::option::Option<crate::types::InstanceAggregatedAssociationOverview> {
         &self.association_overview
     }
     /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is the Thing name. </p>
@@ -568,10 +484,7 @@ impl InstanceInformationBuilder {
         self
     }
     /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. </p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.source_type = input;
         self
     }
@@ -599,8 +512,7 @@ impl InstanceInformationBuilder {
             computer_name: self.computer_name,
             association_status: self.association_status,
             last_association_execution_date: self.last_association_execution_date,
-            last_successful_association_execution_date: self
-                .last_successful_association_execution_date,
+            last_successful_association_execution_date: self.last_successful_association_execution_date,
             association_overview: self.association_overview,
             source_id: self.source_id,
             source_type: self.source_type,

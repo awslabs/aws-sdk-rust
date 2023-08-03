@@ -30,9 +30,7 @@ impl PlacementStrategy {
 
 /// A builder for [`PlacementStrategy`](crate::types::PlacementStrategy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlacementStrategyBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::PlacementStrategyType>,
     pub(crate) field: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl PlacementStrategyBuilder {
         self
     }
     /// <p>The type of placement strategy. The <code>random</code> placement strategy randomly places tasks on available candidates. The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the <code>field</code> parameter. The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that's specified with the <code>field</code> parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory but still enough to run the task.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementStrategyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PlacementStrategyType>) -> Self {
         self.r#type = input;
         self
     }

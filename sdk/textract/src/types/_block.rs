@@ -197,9 +197,7 @@ impl Block {
 
 /// A builder for [`Block`](crate::types::Block).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlockBuilder {
     pub(crate) block_type: ::std::option::Option<crate::types::BlockType>,
     pub(crate) confidence: ::std::option::Option<f32>,
@@ -433,17 +431,12 @@ impl BlockBuilder {
         self
     }
     /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
-    pub fn set_relationships(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
-    ) -> Self {
+    pub fn set_relationships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>) -> Self {
         self.relationships = input;
         self
     }
     /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
-    pub fn get_relationships(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Relationship>> {
+    pub fn get_relationships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Relationship>> {
         &self.relationships
     }
     /// Appends an item to `entity_types`.
@@ -490,10 +483,7 @@ impl BlockBuilder {
     /// <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table. </p> </li>
     /// </ul>
     /// <p> <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    pub fn set_entity_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
-    ) -> Self {
+    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>) -> Self {
         self.entity_types = input;
         self
     }
@@ -514,9 +504,7 @@ impl BlockBuilder {
     /// <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table. </p> </li>
     /// </ul>
     /// <p> <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    pub fn get_entity_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityType>> {
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityType>> {
         &self.entity_types
     }
     /// <p>The selection status of a selection element, such as an option button or check box. </p>
@@ -525,10 +513,7 @@ impl BlockBuilder {
         self
     }
     /// <p>The selection status of a selection element, such as an option button or check box. </p>
-    pub fn set_selection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SelectionStatus>,
-    ) -> Self {
+    pub fn set_selection_status(mut self, input: ::std::option::Option<crate::types::SelectionStatus>) -> Self {
         self.selection_status = input;
         self
     }

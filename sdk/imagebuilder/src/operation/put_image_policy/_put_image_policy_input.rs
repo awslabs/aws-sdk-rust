@@ -29,9 +29,7 @@ impl PutImagePolicyInput {
 
 /// A builder for [`PutImagePolicyInput`](crate::operation::put_image_policy::PutImagePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutImagePolicyInputBuilder {
     pub(crate) image_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl PutImagePolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutImagePolicyInput`](crate::operation::put_image_policy::PutImagePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_image_policy::PutImagePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_image_policy::PutImagePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_image_policy::PutImagePolicyInput {
             image_arn: self.image_arn,
             policy: self.policy,

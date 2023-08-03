@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AwsS3BucketNotificationConfigurationS3KeyFilterRuleName {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AwsS3BucketNotificationConfigurationS3KeyFil
         match s {
             "Prefix" => AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Prefix,
             "Suffix" => AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Suffix,
-            other => AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -78,9 +70,7 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilterRuleName {
         match self {
             AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Prefix => "Prefix",
             AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Suffix => "Suffix",
-            AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Unknown(value) => {
-                value.as_str()
-            }
+            AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.

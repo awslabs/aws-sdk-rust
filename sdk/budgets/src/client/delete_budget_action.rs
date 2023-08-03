@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`budget_name(Option<String>)`](crate::operation::delete_budget_action::DeleteBudgetActionOutput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`action(Option<Action>)`](crate::operation::delete_budget_action::DeleteBudgetActionOutput::action): <p>A budget action resource. </p>
     /// - On failure, responds with [`SdkError<DeleteBudgetActionError>`](crate::operation::delete_budget_action::DeleteBudgetActionError)
-    pub fn delete_budget_action(
-        &self,
-    ) -> crate::operation::delete_budget_action::builders::DeleteBudgetActionFluentBuilder {
-        crate::operation::delete_budget_action::builders::DeleteBudgetActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_budget_action(&self) -> crate::operation::delete_budget_action::builders::DeleteBudgetActionFluentBuilder {
+        crate::operation::delete_budget_action::builders::DeleteBudgetActionFluentBuilder::new(self.handle.clone())
     }
 }

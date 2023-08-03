@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CpuArchitecture {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for CpuArchitecture {
         match s {
             "ARM64" => CpuArchitecture::Arm64,
             "X86_64" => CpuArchitecture::X8664,
-            other => {
-                CpuArchitecture::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => CpuArchitecture::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

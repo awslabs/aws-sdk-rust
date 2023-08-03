@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ActivateContactChannelOutput {
 }
 impl ActivateContactChannelOutput {
     /// Creates a new builder-style object to manufacture [`ActivateContactChannelOutput`](crate::operation::activate_contact_channel::ActivateContactChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::activate_contact_channel::builders::ActivateContactChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::activate_contact_channel::builders::ActivateContactChannelOutputBuilder {
         crate::operation::activate_contact_channel::builders::ActivateContactChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`ActivateContactChannelOutput`](crate::operation::activate_contact_channel::ActivateContactChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivateContactChannelOutputBuilder {
     _request_id: Option<String>,
 }

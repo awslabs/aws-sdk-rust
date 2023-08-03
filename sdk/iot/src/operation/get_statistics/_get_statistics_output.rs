@@ -28,9 +28,7 @@ impl GetStatisticsOutput {
 
 /// A builder for [`GetStatisticsOutput`](crate::operation::get_statistics::GetStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStatisticsOutputBuilder {
     pub(crate) statistics: ::std::option::Option<crate::types::Statistics>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetStatisticsOutputBuilder {
         self
     }
     /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation field.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::Statistics>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::Statistics>) -> Self {
         self.statistics = input;
         self
     }

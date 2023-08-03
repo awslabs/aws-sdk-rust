@@ -62,9 +62,7 @@ impl JournalS3ExportDescription {
         self.exclusive_end_time.as_ref()
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
-    pub fn s3_export_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3ExportConfiguration> {
+    pub fn s3_export_configuration(&self) -> ::std::option::Option<&crate::types::S3ExportConfiguration> {
         self.s3_export_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
@@ -89,9 +87,7 @@ impl JournalS3ExportDescription {
 
 /// A builder for [`JournalS3ExportDescription`](crate::types::JournalS3ExportDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JournalS3ExportDescriptionBuilder {
     pub(crate) ledger_name: ::std::option::Option<::std::string::String>,
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
@@ -138,10 +134,7 @@ impl JournalS3ExportDescriptionBuilder {
         self
     }
     /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn set_export_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_export_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.export_creation_time = input;
         self
     }
@@ -169,10 +162,7 @@ impl JournalS3ExportDescriptionBuilder {
         self
     }
     /// <p>The inclusive start date and time for the range of journal contents that was specified in the original export request.</p>
-    pub fn set_inclusive_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_inclusive_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inclusive_start_time = input;
         self
     }
@@ -186,10 +176,7 @@ impl JournalS3ExportDescriptionBuilder {
         self
     }
     /// <p>The exclusive end date and time for the range of journal contents that was specified in the original export request.</p>
-    pub fn set_exclusive_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_exclusive_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.exclusive_end_time = input;
         self
     }
@@ -203,17 +190,12 @@ impl JournalS3ExportDescriptionBuilder {
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
-    pub fn set_s3_export_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ExportConfiguration>,
-    ) -> Self {
+    pub fn set_s3_export_configuration(mut self, input: ::std::option::Option<crate::types::S3ExportConfiguration>) -> Self {
         self.s3_export_configuration = input;
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
-    pub fn get_s3_export_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3ExportConfiguration> {
+    pub fn get_s3_export_configuration(&self) -> &::std::option::Option<crate::types::S3ExportConfiguration> {
         &self.s3_export_configuration
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
@@ -248,10 +230,7 @@ impl JournalS3ExportDescriptionBuilder {
         self
     }
     /// <p>The output format of the exported journal data.</p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputFormat>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.output_format = input;
         self
     }

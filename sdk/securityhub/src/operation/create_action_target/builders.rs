@@ -10,10 +10,7 @@ impl CreateActionTargetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_action_target::CreateActionTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_action_target::CreateActionTargetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_action_target::CreateActionTargetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_action_target();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateActionTargetFluentBuilder {
         }
     }
     /// Access the CreateActionTarget as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_action_target::builders::CreateActionTargetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_action_target::builders::CreateActionTargetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateActionTargetFluentBuilder {
             crate::operation::create_action_target::CreateActionTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_action_target::CreateActionTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_action_target::CreateActionTargetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateActionTargetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateActionTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_action_target::CreateActionTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_action_target::CreateActionTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_action_target::CreateActionTargetError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateActionTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_action_target::CreateActionTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_action_target::CreateActionTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_action_target::CreateActionTargetError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateActionTargetFluentBuilder {
             crate::operation::create_action_target::CreateActionTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_action_target::CreateActionTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_action_target::CreateActionTargetError>,
     > {
         self.customize_middleware().await
     }

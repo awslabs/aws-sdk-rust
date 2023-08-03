@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetPortalServiceProviderMetadataOutpu
 }
 impl GetPortalServiceProviderMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetPortalServiceProviderMetadataOutput`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput).
-    pub fn builder() -> crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataOutputBuilder{
+    pub fn builder() -> crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataOutputBuilder {
         crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPortalServiceProviderMetadataOutput`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPortalServiceProviderMetadataOutputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) service_provider_saml_metadata: ::std::option::Option<::std::string::String>,
@@ -59,25 +57,17 @@ impl GetPortalServiceProviderMetadataOutputBuilder {
         &self.portal_arn
     }
     /// <p>The service provider SAML metadata.</p>
-    pub fn service_provider_saml_metadata(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_provider_saml_metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_provider_saml_metadata = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service provider SAML metadata.</p>
-    pub fn set_service_provider_saml_metadata(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_provider_saml_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_provider_saml_metadata = input;
         self
     }
     /// <p>The service provider SAML metadata.</p>
-    pub fn get_service_provider_saml_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_service_provider_saml_metadata(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_provider_saml_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -90,12 +80,10 @@ impl GetPortalServiceProviderMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPortalServiceProviderMetadataOutput`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput).
-    pub fn build(self) -> crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput{
+    pub fn build(self) -> crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput {
         crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput {
-            portal_arn: self.portal_arn
-            ,
-            service_provider_saml_metadata: self.service_provider_saml_metadata
-            ,
+            portal_arn: self.portal_arn,
+            service_provider_saml_metadata: self.service_provider_saml_metadata,
             _request_id: self._request_id,
         }
     }

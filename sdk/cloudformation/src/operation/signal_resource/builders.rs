@@ -10,10 +10,7 @@ impl SignalResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::signal_resource::SignalResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::signal_resource::SignalResourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::signal_resource::SignalResourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.signal_resource();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SignalResourceFluentBuilder {
         }
     }
     /// Access the SignalResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::signal_resource::builders::SignalResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::signal_resource::builders::SignalResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl SignalResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl SignalResourceFluentBuilder {
         self.inner.get_stack_name()
     }
     /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of the resource that given in the template.</p>
-    pub fn logical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logical_resource_id(input.into());
         self
     }
     /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of the resource that given in the template.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
     }
@@ -168,10 +154,7 @@ impl SignalResourceFluentBuilder {
         self
     }
     /// <p>The status of the signal, which is either success or failure. A failure signal causes CloudFormation to immediately fail the stack creation or update.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSignalStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceSignalStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

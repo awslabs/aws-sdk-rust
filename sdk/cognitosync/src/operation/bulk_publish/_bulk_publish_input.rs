@@ -23,26 +23,18 @@ impl BulkPublishInput {
 
 /// A builder for [`BulkPublishInput`](crate::operation::bulk_publish::BulkPublishInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BulkPublishInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl BulkPublishInputBuilder {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -51,12 +43,7 @@ impl BulkPublishInputBuilder {
         &self.identity_pool_id
     }
     /// Consumes the builder and constructs a [`BulkPublishInput`](crate::operation::bulk_publish::BulkPublishInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::bulk_publish::BulkPublishInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::bulk_publish::BulkPublishInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::bulk_publish::BulkPublishInput {
             identity_pool_id: self.identity_pool_id,
         })

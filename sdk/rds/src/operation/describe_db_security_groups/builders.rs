@@ -28,7 +28,7 @@ impl DescribeDbSecurityGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBSecurityGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_db_security_groups::builders::DescribeDbSecurityGroupsInputBuilder,
+    inner: crate::operation::describe_db_security_groups::builders::DescribeDbSecurityGroupsInputBuilder,
 }
 impl DescribeDBSecurityGroupsFluentBuilder {
     /// Creates a new `DescribeDBSecurityGroups`.
@@ -39,7 +39,7 @@ impl DescribeDBSecurityGroupsFluentBuilder {
         }
     }
     /// Access the DescribeDBSecurityGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_db_security_groups::builders::DescribeDbSecurityGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_db_security_groups::builders::DescribeDbSecurityGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeDBSecurityGroupsFluentBuilder {
             crate::operation::describe_db_security_groups::DescribeDBSecurityGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_security_groups::DescribeDBSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_security_groups::DescribeDBSecurityGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeDBSecurityGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeDBSecurityGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_security_groups::DescribeDBSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_security_groups::DescribeDBSecurityGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeDBSecurityGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_security_groups::DescribeDBSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_security_groups::DescribeDBSecurityGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,34 +107,23 @@ impl DescribeDBSecurityGroupsFluentBuilder {
             crate::operation::describe_db_security_groups::DescribeDBSecurityGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_security_groups::DescribeDBSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_security_groups::DescribeDBSecurityGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_security_groups::paginator::DescribeDbSecurityGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_db_security_groups::paginator::DescribeDbSecurityGroupsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_db_security_groups::paginator::DescribeDbSecurityGroupsPaginator {
         crate::operation::describe_db_security_groups::paginator::DescribeDbSecurityGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the DB security group to return details for.</p>
-    pub fn db_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_security_group_name(input.into());
         self
     }
     /// <p>The name of the DB security group to return details for.</p>
-    pub fn set_db_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_security_group_name(input);
         self
     }
@@ -161,10 +141,7 @@ impl DescribeDBSecurityGroupsFluentBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

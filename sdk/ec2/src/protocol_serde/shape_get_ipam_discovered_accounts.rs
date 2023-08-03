@@ -9,21 +9,13 @@ pub fn de_get_ipam_discovered_accounts_http_error(
     crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(
-        crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError::generic(
-            generic,
-        ),
-    )
+    Err(crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -38,16 +30,19 @@ pub fn de_get_ipam_discovered_accounts_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsOutputBuilder::default();
-        output = crate::protocol_serde::shape_get_ipam_discovered_accounts::de_get_ipam_discovered_accounts(_response_body, output).map_err(crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_get_ipam_discovered_accounts::de_get_ipam_discovered_accounts(_response_body, output)
+            .map_err(crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_get_ipam_discovered_accounts(inp: &[u8], mut builder: crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsOutputBuilder) -> Result<crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_get_ipam_discovered_accounts(
+    inp: &[u8],
+    mut builder: crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsOutputBuilder,
+) -> Result<crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -44,17 +44,14 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolation {
 }
 impl NetworkFirewallUnexpectedFirewallRoutesViolation {
     /// Creates a new builder-style object to manufacture [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::types::NetworkFirewallUnexpectedFirewallRoutesViolation).
-    pub fn builder(
-    ) -> crate::types::builders::NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
+    pub fn builder() -> crate::types::builders::NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
         crate::types::builders::NetworkFirewallUnexpectedFirewallRoutesViolationBuilder::default()
     }
 }
 
 /// A builder for [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::types::NetworkFirewallUnexpectedFirewallRoutesViolation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
     pub(crate) firewall_subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
@@ -64,18 +61,12 @@ pub struct NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
 }
 impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
     /// <p>The subnet ID for the firewall.</p>
-    pub fn firewall_subnet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subnet ID for the firewall.</p>
-    pub fn set_firewall_subnet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_subnet_id = input;
         self
     }
@@ -95,32 +86,21 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
         self
     }
     /// <p>The routes that are in violation.</p>
-    pub fn set_violating_routes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
-    ) -> Self {
+    pub fn set_violating_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Route>>) -> Self {
         self.violating_routes = input;
         self
     }
     /// <p>The routes that are in violation.</p>
-    pub fn get_violating_routes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Route>> {
+    pub fn get_violating_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Route>> {
         &self.violating_routes
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_table_id = input;
         self
     }
@@ -129,18 +109,12 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
         &self.route_table_id
     }
     /// <p>The endpoint of the firewall.</p>
-    pub fn firewall_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint of the firewall.</p>
-    pub fn set_firewall_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_endpoint = input;
         self
     }

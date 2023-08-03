@@ -45,7 +45,7 @@ impl ::aws_http::request_id::RequestId for GenerateEmbedUrlForRegisteredUserOutp
 }
 impl GenerateEmbedUrlForRegisteredUserOutput {
     /// Creates a new builder-style object to manufacture [`GenerateEmbedUrlForRegisteredUserOutput`](crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput).
-    pub fn builder() -> crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserOutputBuilder{
+    pub fn builder() -> crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserOutputBuilder {
         crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserOutputBuilder::default()
     }
 }
@@ -112,15 +112,11 @@ impl GenerateEmbedUrlForRegisteredUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GenerateEmbedUrlForRegisteredUserOutput`](crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput).
-    pub fn build(self) -> crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput{
+    pub fn build(self) -> crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput {
         crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput {
-            embed_url: self.embed_url
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
-            request_id: self.request_id
-            ,
+            embed_url: self.embed_url,
+            status: self.status.unwrap_or_default(),
+            request_id: self.request_id,
             _request_id: self._request_id,
         }
     }

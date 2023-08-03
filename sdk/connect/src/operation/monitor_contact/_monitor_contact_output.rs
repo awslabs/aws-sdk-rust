@@ -35,9 +35,7 @@ impl MonitorContactOutput {
 
 /// A builder for [`MonitorContactOutput`](crate::operation::monitor_contact::MonitorContactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitorContactOutputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,

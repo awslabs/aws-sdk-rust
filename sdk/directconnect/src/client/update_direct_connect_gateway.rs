@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateDirectConnectGatewayOutput`](crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayOutput) with field(s):
     ///   - [`direct_connect_gateway(Option<DirectConnectGateway>)`](crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayOutput::direct_connect_gateway): <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
     /// - On failure, responds with [`SdkError<UpdateDirectConnectGatewayError>`](crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayError)
-    pub fn update_direct_connect_gateway(&self) -> crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayFluentBuilder{
+    pub fn update_direct_connect_gateway(
+        &self,
+    ) -> crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayFluentBuilder {
         crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayFluentBuilder::new(self.handle.clone())
     }
 }

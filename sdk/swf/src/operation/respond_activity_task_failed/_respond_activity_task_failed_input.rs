@@ -33,16 +33,14 @@ impl RespondActivityTaskFailedInput {
 }
 impl RespondActivityTaskFailedInput {
     /// Creates a new builder-style object to manufacture [`RespondActivityTaskFailedInput`](crate::operation::respond_activity_task_failed::RespondActivityTaskFailedInput).
-    pub fn builder() -> crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedInputBuilder{
+    pub fn builder() -> crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedInputBuilder {
         crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedInputBuilder::default()
     }
 }
 
 /// A builder for [`RespondActivityTaskFailedInput`](crate::operation::respond_activity_task_failed::RespondActivityTaskFailedInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RespondActivityTaskFailedInputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -104,12 +102,10 @@ impl RespondActivityTaskFailedInputBuilder {
         crate::operation::respond_activity_task_failed::RespondActivityTaskFailedInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::respond_activity_task_failed::RespondActivityTaskFailedInput {
-                task_token: self.task_token,
-                reason: self.reason,
-                details: self.details,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::respond_activity_task_failed::RespondActivityTaskFailedInput {
+            task_token: self.task_token,
+            reason: self.reason,
+            details: self.details,
+        })
     }
 }

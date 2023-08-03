@@ -35,18 +35,12 @@ pub struct GetPhoneNumberInputBuilder {
 }
 impl GetPhoneNumberInputBuilder {
     /// <p>The phone number ID.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number ID.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_id = input;
         self
     }
@@ -57,10 +51,7 @@ impl GetPhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`GetPhoneNumberInput`](crate::operation::get_phone_number::GetPhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_phone_number::GetPhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_phone_number::GetPhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_phone_number::GetPhoneNumberInput {
             phone_number_id: self.phone_number_id,
         })

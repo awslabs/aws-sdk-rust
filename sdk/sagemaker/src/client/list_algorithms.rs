@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`algorithm_summary_list(Option<Vec<AlgorithmSummary>>)`](crate::operation::list_algorithms::ListAlgorithmsOutput::algorithm_summary_list): <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_algorithms::ListAlgorithmsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListAlgorithmsError>`](crate::operation::list_algorithms::ListAlgorithmsError)
-    pub fn list_algorithms(
-        &self,
-    ) -> crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder {
-        crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_algorithms(&self) -> crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder {
+        crate::operation::list_algorithms::builders::ListAlgorithmsFluentBuilder::new(self.handle.clone())
     }
 }

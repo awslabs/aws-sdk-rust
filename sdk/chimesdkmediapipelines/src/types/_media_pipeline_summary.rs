@@ -30,27 +30,19 @@ impl MediaPipelineSummary {
 
 /// A builder for [`MediaPipelineSummary`](crate::types::MediaPipelineSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MediaPipelineSummaryBuilder {
     pub(crate) media_pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) media_pipeline_arn: ::std::option::Option<::std::string::String>,
 }
 impl MediaPipelineSummaryBuilder {
     /// <p>The ID of the media pipeline in the summary.</p>
-    pub fn media_pipeline_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_pipeline_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the media pipeline in the summary.</p>
-    pub fn set_media_pipeline_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_pipeline_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl MediaPipelineSummaryBuilder {
         &self.media_pipeline_id
     }
     /// <p>The ARN of the media pipeline in the summary.</p>
-    pub fn media_pipeline_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the media pipeline in the summary.</p>
-    pub fn set_media_pipeline_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_pipeline_arn = input;
         self
     }

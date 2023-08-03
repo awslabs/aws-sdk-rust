@@ -6,9 +6,7 @@
 pub struct AwsRedshiftClusterClusterParameterGroup {
     /// <p>The list of parameter statuses.</p>
     #[doc(hidden)]
-    pub cluster_parameter_status_list: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterStatus>,
-    >,
+    pub cluster_parameter_status_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterStatus>>,
     /// <p>The status of updates to the parameters.</p>
     #[doc(hidden)]
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
@@ -18,9 +16,7 @@ pub struct AwsRedshiftClusterClusterParameterGroup {
 }
 impl AwsRedshiftClusterClusterParameterGroup {
     /// <p>The list of parameter statuses.</p>
-    pub fn cluster_parameter_status_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterClusterParameterStatus]> {
+    pub fn cluster_parameter_status_list(&self) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterClusterParameterStatus]> {
         self.cluster_parameter_status_list.as_deref()
     }
     /// <p>The status of updates to the parameters.</p>
@@ -41,13 +37,9 @@ impl AwsRedshiftClusterClusterParameterGroup {
 
 /// A builder for [`AwsRedshiftClusterClusterParameterGroup`](crate::types::AwsRedshiftClusterClusterParameterGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterClusterParameterGroupBuilder {
-    pub(crate) cluster_parameter_status_list: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterStatus>,
-    >,
+    pub(crate) cluster_parameter_status_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterStatus>>,
     pub(crate) parameter_apply_status: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
 }
@@ -57,10 +49,7 @@ impl AwsRedshiftClusterClusterParameterGroupBuilder {
     /// To override the contents of this collection use [`set_cluster_parameter_status_list`](Self::set_cluster_parameter_status_list).
     ///
     /// <p>The list of parameter statuses.</p>
-    pub fn cluster_parameter_status_list(
-        mut self,
-        input: crate::types::AwsRedshiftClusterClusterParameterStatus,
-    ) -> Self {
+    pub fn cluster_parameter_status_list(mut self, input: crate::types::AwsRedshiftClusterClusterParameterStatus) -> Self {
         let mut v = self.cluster_parameter_status_list.unwrap_or_default();
         v.push(input);
         self.cluster_parameter_status_list = ::std::option::Option::Some(v);
@@ -69,9 +58,7 @@ impl AwsRedshiftClusterClusterParameterGroupBuilder {
     /// <p>The list of parameter statuses.</p>
     pub fn set_cluster_parameter_status_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterStatus>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterStatus>>,
     ) -> Self {
         self.cluster_parameter_status_list = input;
         self
@@ -79,24 +66,16 @@ impl AwsRedshiftClusterClusterParameterGroupBuilder {
     /// <p>The list of parameter statuses.</p>
     pub fn get_cluster_parameter_status_list(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterStatus>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterStatus>> {
         &self.cluster_parameter_status_list
     }
     /// <p>The status of updates to the parameters.</p>
-    pub fn parameter_apply_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_apply_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_apply_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of updates to the parameters.</p>
-    pub fn set_parameter_apply_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_apply_status = input;
         self
     }
@@ -105,18 +84,12 @@ impl AwsRedshiftClusterClusterParameterGroupBuilder {
         &self.parameter_apply_status
     }
     /// <p>The name of the parameter group.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter group.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }

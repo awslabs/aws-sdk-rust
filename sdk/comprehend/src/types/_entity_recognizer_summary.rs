@@ -30,9 +30,7 @@ impl EntityRecognizerSummary {
         self.number_of_versions
     }
     /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
-    pub fn latest_version_created_at(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_version_created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.latest_version_created_at.as_ref()
     }
     /// <p> The version name you assigned to the latest entity recognizer version.</p>
@@ -53,9 +51,7 @@ impl EntityRecognizerSummary {
 
 /// A builder for [`EntityRecognizerSummary`](crate::types::EntityRecognizerSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityRecognizerSummaryBuilder {
     pub(crate) recognizer_name: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_versions: ::std::option::Option<i32>,
@@ -65,18 +61,12 @@ pub struct EntityRecognizerSummaryBuilder {
 }
 impl EntityRecognizerSummaryBuilder {
     /// <p> The name that you assigned the entity recognizer.</p>
-    pub fn recognizer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recognizer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recognizer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name that you assigned the entity recognizer.</p>
-    pub fn set_recognizer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recognizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recognizer_name = input;
         self
     }
@@ -104,32 +94,21 @@ impl EntityRecognizerSummaryBuilder {
         self
     }
     /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
-    pub fn set_latest_version_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_version_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_version_created_at = input;
         self
     }
     /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
-    pub fn get_latest_version_created_at(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_latest_version_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.latest_version_created_at
     }
     /// <p> The version name you assigned to the latest entity recognizer version.</p>
-    pub fn latest_version_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_version_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The version name you assigned to the latest entity recognizer version.</p>
-    pub fn set_latest_version_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_version_name = input;
         self
     }
@@ -143,10 +122,7 @@ impl EntityRecognizerSummaryBuilder {
         self
     }
     /// <p> Provides the status of the latest entity recognizer version.</p>
-    pub fn set_latest_version_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelStatus>,
-    ) -> Self {
+    pub fn set_latest_version_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.latest_version_status = input;
         self
     }

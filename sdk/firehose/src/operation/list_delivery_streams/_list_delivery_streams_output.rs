@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDeliveryStreamsOutput {
 }
 impl ListDeliveryStreamsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeliveryStreamsOutput`](crate::operation::list_delivery_streams::ListDeliveryStreamsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_delivery_streams::builders::ListDeliveryStreamsOutputBuilder {
-        crate::operation::list_delivery_streams::builders::ListDeliveryStreamsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_delivery_streams::builders::ListDeliveryStreamsOutputBuilder {
+        crate::operation::list_delivery_streams::builders::ListDeliveryStreamsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeliveryStreamsOutput`](crate::operation::list_delivery_streams::ListDeliveryStreamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeliveryStreamsOutputBuilder {
     pub(crate) delivery_stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) has_more_delivery_streams: ::std::option::Option<bool>,
@@ -51,27 +47,19 @@ impl ListDeliveryStreamsOutputBuilder {
     /// To override the contents of this collection use [`set_delivery_stream_names`](Self::set_delivery_stream_names).
     ///
     /// <p>The names of the delivery streams.</p>
-    pub fn delivery_stream_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_stream_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.delivery_stream_names.unwrap_or_default();
         v.push(input.into());
         self.delivery_stream_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the delivery streams.</p>
-    pub fn set_delivery_stream_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_delivery_stream_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.delivery_stream_names = input;
         self
     }
     /// <p>The names of the delivery streams.</p>
-    pub fn get_delivery_stream_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_delivery_stream_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.delivery_stream_names
     }
     /// <p>Indicates whether there are more delivery streams available to list.</p>

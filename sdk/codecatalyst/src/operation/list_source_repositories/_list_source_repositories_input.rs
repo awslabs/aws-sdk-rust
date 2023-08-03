@@ -36,18 +36,14 @@ impl ListSourceRepositoriesInput {
 }
 impl ListSourceRepositoriesInput {
     /// Creates a new builder-style object to manufacture [`ListSourceRepositoriesInput`](crate::operation::list_source_repositories::ListSourceRepositoriesInput).
-    pub fn builder(
-    ) -> crate::operation::list_source_repositories::builders::ListSourceRepositoriesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_source_repositories::builders::ListSourceRepositoriesInputBuilder {
         crate::operation::list_source_repositories::builders::ListSourceRepositoriesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSourceRepositoriesInput`](crate::operation::list_source_repositories::ListSourceRepositoriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSourceRepositoriesInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -114,17 +110,13 @@ impl ListSourceRepositoriesInputBuilder {
     /// Consumes the builder and constructs a [`ListSourceRepositoriesInput`](crate::operation::list_source_repositories::ListSourceRepositoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_source_repositories::ListSourceRepositoriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_source_repositories::ListSourceRepositoriesInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_source_repositories::ListSourceRepositoriesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_source_repositories::ListSourceRepositoriesInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

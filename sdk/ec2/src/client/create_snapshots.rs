@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSnapshotsOutput`](crate::operation::create_snapshots::CreateSnapshotsOutput) with field(s):
     ///   - [`snapshots(Option<Vec<SnapshotInfo>>)`](crate::operation::create_snapshots::CreateSnapshotsOutput::snapshots): <p>List of snapshots.</p>
     /// - On failure, responds with [`SdkError<CreateSnapshotsError>`](crate::operation::create_snapshots::CreateSnapshotsError)
-    pub fn create_snapshots(
-        &self,
-    ) -> crate::operation::create_snapshots::builders::CreateSnapshotsFluentBuilder {
-        crate::operation::create_snapshots::builders::CreateSnapshotsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_snapshots(&self) -> crate::operation::create_snapshots::builders::CreateSnapshotsFluentBuilder {
+        crate::operation::create_snapshots::builders::CreateSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

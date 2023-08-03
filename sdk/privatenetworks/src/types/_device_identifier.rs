@@ -108,18 +108,12 @@ pub struct DeviceIdentifierBuilder {
 }
 impl DeviceIdentifierBuilder {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn device_identifier_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_identifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_identifier_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn set_device_identifier_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_identifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_identifier_arn = input;
         self
     }
@@ -128,18 +122,12 @@ impl DeviceIdentifierBuilder {
         &self.device_identifier_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the traffic group to which the device identifier belongs.</p>
-    pub fn traffic_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the traffic group to which the device identifier belongs.</p>
-    pub fn set_traffic_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_group_arn = input;
         self
     }
@@ -209,10 +197,7 @@ impl DeviceIdentifierBuilder {
         self
     }
     /// <p>The status of the device identifier.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceIdentifierStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeviceIdentifierStatus>) -> Self {
         self.status = input;
         self
     }
@@ -240,10 +225,7 @@ impl DeviceIdentifierBuilder {
         self
     }
     /// <p>The creation time of this device identifier.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

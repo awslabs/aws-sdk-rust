@@ -27,7 +27,7 @@ impl UpdateAccountSendingEnabledInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccountSendingEnabledFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_account_sending_enabled::builders::UpdateAccountSendingEnabledInputBuilder,
+    inner: crate::operation::update_account_sending_enabled::builders::UpdateAccountSendingEnabledInputBuilder,
 }
 impl UpdateAccountSendingEnabledFluentBuilder {
     /// Creates a new `UpdateAccountSendingEnabled`.
@@ -38,7 +38,7 @@ impl UpdateAccountSendingEnabledFluentBuilder {
         }
     }
     /// Access the UpdateAccountSendingEnabled as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_account_sending_enabled::builders::UpdateAccountSendingEnabledInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_account_sending_enabled::builders::UpdateAccountSendingEnabledInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateAccountSendingEnabledFluentBuilder {
             crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabled,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateAccountSendingEnabledFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateAccountSendingEnabledFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateAccountSendingEnabledFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl UpdateAccountSendingEnabledFluentBuilder {
             crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabled,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledError>,
     > {
         self.customize_middleware().await
     }

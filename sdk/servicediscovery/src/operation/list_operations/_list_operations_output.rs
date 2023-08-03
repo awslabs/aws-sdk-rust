@@ -39,9 +39,7 @@ impl ListOperationsOutput {
 
 /// A builder for [`ListOperationsOutput`](crate::operation::list_operations::ListOperationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOperationsOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -60,17 +58,12 @@ impl ListOperationsOutputBuilder {
         self
     }
     /// <p>Summary information about the operations that match the specified criteria.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>,
-    ) -> Self {
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>) -> Self {
         self.operations = input;
         self
     }
     /// <p>Summary information about the operations that match the specified criteria.</p>
-    pub fn get_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>> {
         &self.operations
     }
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>

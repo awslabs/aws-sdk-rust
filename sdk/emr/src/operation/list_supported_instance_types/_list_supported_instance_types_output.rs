@@ -5,8 +5,7 @@
 pub struct ListSupportedInstanceTypesOutput {
     /// <p>The list of instance types that the release specified in <code>ListSupportedInstanceTypesInput$ReleaseLabel</code> supports, filtered by Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub supported_instance_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::SupportedInstanceType>>,
+    pub supported_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedInstanceType>>,
     /// <p>The pagination token that marks the next set of results to retrieve.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSupportedInstanceTypesOutput {
 }
 impl ListSupportedInstanceTypesOutput {
     /// <p>The list of instance types that the release specified in <code>ListSupportedInstanceTypesInput$ReleaseLabel</code> supports, filtered by Amazon Web Services Region.</p>
-    pub fn supported_instance_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SupportedInstanceType]> {
+    pub fn supported_instance_types(&self) -> ::std::option::Option<&[crate::types::SupportedInstanceType]> {
         self.supported_instance_types.as_deref()
     }
     /// <p>The pagination token that marks the next set of results to retrieve.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSupportedInstanceTypesOutput {
 }
 impl ListSupportedInstanceTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListSupportedInstanceTypesOutput`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput).
-    pub fn builder() -> crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesOutputBuilder{
+    pub fn builder() -> crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesOutputBuilder {
         crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSupportedInstanceTypesOutput`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSupportedInstanceTypesOutputBuilder {
-    pub(crate) supported_instance_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::SupportedInstanceType>>,
+    pub(crate) supported_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedInstanceType>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListSupportedInstanceTypesOutputBuilder {
         self
     }
     /// <p>The list of instance types that the release specified in <code>ListSupportedInstanceTypesInput$ReleaseLabel</code> supports, filtered by Amazon Web Services Region.</p>
-    pub fn set_supported_instance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedInstanceType>>,
-    ) -> Self {
+    pub fn set_supported_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedInstanceType>>) -> Self {
         self.supported_instance_types = input;
         self
     }
     /// <p>The list of instance types that the release specified in <code>ListSupportedInstanceTypesInput$ReleaseLabel</code> supports, filtered by Amazon Web Services Region.</p>
-    pub fn get_supported_instance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedInstanceType>> {
+    pub fn get_supported_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedInstanceType>> {
         &self.supported_instance_types
     }
     /// <p>The pagination token that marks the next set of results to retrieve.</p>
@@ -97,9 +86,7 @@ impl ListSupportedInstanceTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSupportedInstanceTypesOutput`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput {
+    pub fn build(self) -> crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput {
         crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput {
             supported_instance_types: self.supported_instance_types,
             marker: self.marker,

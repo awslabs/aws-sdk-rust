@@ -10,9 +10,7 @@ pub struct DescribeConnectorOutput {
 }
 impl DescribeConnectorOutput {
     /// <p>Configuration info of all the connectors that the user requested.</p>
-    pub fn connector_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectorConfiguration> {
+    pub fn connector_configuration(&self) -> ::std::option::Option<&crate::types::ConnectorConfiguration> {
         self.connector_configuration.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeConnectorOutput {
 }
 impl DescribeConnectorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorOutput`](crate::operation::describe_connector::DescribeConnectorOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_connector::builders::DescribeConnectorOutputBuilder {
+    pub fn builder() -> crate::operation::describe_connector::builders::DescribeConnectorOutputBuilder {
         crate::operation::describe_connector::builders::DescribeConnectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectorOutput`](crate::operation::describe_connector::DescribeConnectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectorOutputBuilder {
     pub(crate) connector_configuration: ::std::option::Option<crate::types::ConnectorConfiguration>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl DescribeConnectorOutputBuilder {
         self
     }
     /// <p>Configuration info of all the connectors that the user requested.</p>
-    pub fn set_connector_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorConfiguration>,
-    ) -> Self {
+    pub fn set_connector_configuration(mut self, input: ::std::option::Option<crate::types::ConnectorConfiguration>) -> Self {
         self.connector_configuration = input;
         self
     }
     /// <p>Configuration info of all the connectors that the user requested.</p>
-    pub fn get_connector_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorConfiguration> {
+    pub fn get_connector_configuration(&self) -> &::std::option::Option<crate::types::ConnectorConfiguration> {
         &self.connector_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

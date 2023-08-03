@@ -37,9 +37,7 @@ impl BatchGetVpcEndpointFluentBuilder {
         }
     }
     /// Access the BatchGetVpcEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl BatchGetVpcEndpointFluentBuilder {
             crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl BatchGetVpcEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl BatchGetVpcEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl BatchGetVpcEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl BatchGetVpcEndpointFluentBuilder {
             crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +119,7 @@ impl BatchGetVpcEndpointFluentBuilder {
         self
     }
     /// <p>A list of VPC endpoint identifiers.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ids(input);
         self
     }

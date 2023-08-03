@@ -30,13 +30,10 @@ impl PossibleRemediationActions {
 
 /// A builder for [`PossibleRemediationActions`](crate::types::PossibleRemediationActions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PossibleRemediationActionsBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PossibleRemediationAction>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::PossibleRemediationAction>>,
 }
 impl PossibleRemediationActionsBuilder {
     /// <p>A description of the possible remediation actions list.</p>
@@ -65,17 +62,12 @@ impl PossibleRemediationActionsBuilder {
         self
     }
     /// <p>Information about the actions.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PossibleRemediationAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PossibleRemediationAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>Information about the actions.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PossibleRemediationAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PossibleRemediationAction>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`PossibleRemediationActions`](crate::types::PossibleRemediationActions).

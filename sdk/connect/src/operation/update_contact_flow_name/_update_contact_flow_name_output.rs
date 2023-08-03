@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateContactFlowNameOutput {
 }
 impl UpdateContactFlowNameOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContactFlowNameOutput`](crate::operation::update_contact_flow_name::UpdateContactFlowNameOutput).
-    pub fn builder(
-    ) -> crate::operation::update_contact_flow_name::builders::UpdateContactFlowNameOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_contact_flow_name::builders::UpdateContactFlowNameOutputBuilder {
         crate::operation::update_contact_flow_name::builders::UpdateContactFlowNameOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContactFlowNameOutput`](crate::operation::update_contact_flow_name::UpdateContactFlowNameOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContactFlowNameOutputBuilder {
     _request_id: Option<String>,
 }

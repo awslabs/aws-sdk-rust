@@ -50,9 +50,7 @@ impl PutChunkInput {
         self.checksum.as_deref()
     }
     /// Checksum algorithm
-    pub fn checksum_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> ::std::option::Option<&crate::types::DataChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
 }
@@ -77,18 +75,12 @@ pub struct PutChunkInputBuilder {
 }
 impl PutChunkInputBuilder {
     /// Backup job Id for the in-progress backup.
-    pub fn backup_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Backup job Id for the in-progress backup.
-    pub fn set_backup_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_job_id = input;
         self
     }
@@ -130,10 +122,7 @@ impl PutChunkInputBuilder {
         self
     }
     /// Data to be uploaded
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.data = input;
         self
     }
@@ -175,26 +164,16 @@ impl PutChunkInputBuilder {
         self
     }
     /// Checksum algorithm
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::DataChecksumAlgorithm>) -> Self {
         self.checksum_algorithm = input;
         self
     }
     /// Checksum algorithm
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
         &self.checksum_algorithm
     }
     /// Consumes the builder and constructs a [`PutChunkInput`](crate::operation::put_chunk::PutChunkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_chunk::PutChunkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_chunk::PutChunkInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_chunk::PutChunkInput {
             backup_job_id: self.backup_job_id,
             upload_id: self.upload_id,

@@ -63,18 +63,14 @@ impl ::aws_http::request_id::RequestId for GetReadSetActivationJobOutput {
 }
 impl GetReadSetActivationJobOutput {
     /// Creates a new builder-style object to manufacture [`GetReadSetActivationJobOutput`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput).
-    pub fn builder(
-    ) -> crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobOutputBuilder {
         crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetReadSetActivationJobOutput`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReadSetActivationJobOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
@@ -82,8 +78,7 @@ pub struct GetReadSetActivationJobOutputBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetSourceItem>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetSourceItem>>,
     _request_id: Option<String>,
 }
 impl GetReadSetActivationJobOutputBuilder {
@@ -102,18 +97,12 @@ impl GetReadSetActivationJobOutputBuilder {
         &self.id
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
@@ -127,10 +116,7 @@ impl GetReadSetActivationJobOutputBuilder {
         self
     }
     /// <p>The job's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReadSetActivationJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReadSetActivationJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -139,18 +125,12 @@ impl GetReadSetActivationJobOutputBuilder {
         &self.status
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -164,10 +144,7 @@ impl GetReadSetActivationJobOutputBuilder {
         self
     }
     /// <p>When the job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -181,10 +158,7 @@ impl GetReadSetActivationJobOutputBuilder {
         self
     }
     /// <p>When the job completed.</p>
-    pub fn set_completion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_time = input;
         self
     }
@@ -204,17 +178,12 @@ impl GetReadSetActivationJobOutputBuilder {
         self
     }
     /// <p>The job's source files.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetSourceItem>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetSourceItem>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>The job's source files.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetSourceItem>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActivateReadSetSourceItem>> {
         &self.sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -227,9 +196,7 @@ impl GetReadSetActivationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetReadSetActivationJobOutput`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput {
+    pub fn build(self) -> crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput {
         crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput {
             id: self.id,
             sequence_store_id: self.sequence_store_id,

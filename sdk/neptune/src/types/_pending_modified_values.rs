@@ -45,8 +45,7 @@ pub struct PendingModifiedValues {
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
     #[doc(hidden)]
-    pub pending_cloudwatch_logs_exports:
-        ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
+    pub pending_cloudwatch_logs_exports: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
 }
 impl PendingModifiedValues {
     /// <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
@@ -102,9 +101,7 @@ impl PendingModifiedValues {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
-    pub fn pending_cloudwatch_logs_exports(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PendingCloudwatchLogsExports> {
+    pub fn pending_cloudwatch_logs_exports(&self) -> ::std::option::Option<&crate::types::PendingCloudwatchLogsExports> {
         self.pending_cloudwatch_logs_exports.as_ref()
     }
 }
@@ -117,9 +114,7 @@ impl PendingModifiedValues {
 
 /// A builder for [`PendingModifiedValues`](crate::types::PendingModifiedValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PendingModifiedValuesBuilder {
     pub(crate) db_instance_class: ::std::option::Option<::std::string::String>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
@@ -134,23 +129,16 @@ pub struct PendingModifiedValuesBuilder {
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) pending_cloudwatch_logs_exports:
-        ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
+    pub(crate) pending_cloudwatch_logs_exports: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
 }
 impl PendingModifiedValuesBuilder {
     /// <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
-    pub fn db_instance_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
-    pub fn set_db_instance_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_class = input;
         self
     }
@@ -173,18 +161,12 @@ impl PendingModifiedValuesBuilder {
         &self.allocated_storage
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }
@@ -235,18 +217,12 @@ impl PendingModifiedValuesBuilder {
         &self.multi_az
     }
     /// <p>Indicates the database engine version.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the database engine version.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -255,18 +231,12 @@ impl PendingModifiedValuesBuilder {
         &self.engine_version
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn license_model(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn set_license_model(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_model = input;
         self
     }
@@ -289,18 +259,12 @@ impl PendingModifiedValuesBuilder {
         &self.iops
     }
     /// <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -323,18 +287,12 @@ impl PendingModifiedValuesBuilder {
         &self.storage_type
     }
     /// <p>Specifies the identifier of the CA certificate for the DB instance.</p>
-    pub fn ca_certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ca_certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the identifier of the CA certificate for the DB instance.</p>
-    pub fn set_ca_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ca_certificate_identifier = input;
         self
     }
@@ -343,18 +301,12 @@ impl PendingModifiedValuesBuilder {
         &self.ca_certificate_identifier
     }
     /// <p>The new DB subnet group for the DB instance.</p>
-    pub fn db_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new DB subnet group for the DB instance.</p>
-    pub fn set_db_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
         self
     }
@@ -363,25 +315,17 @@ impl PendingModifiedValuesBuilder {
         &self.db_subnet_group_name
     }
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
-    pub fn pending_cloudwatch_logs_exports(
-        mut self,
-        input: crate::types::PendingCloudwatchLogsExports,
-    ) -> Self {
+    pub fn pending_cloudwatch_logs_exports(mut self, input: crate::types::PendingCloudwatchLogsExports) -> Self {
         self.pending_cloudwatch_logs_exports = ::std::option::Option::Some(input);
         self
     }
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
-    pub fn set_pending_cloudwatch_logs_exports(
-        mut self,
-        input: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
-    ) -> Self {
+    pub fn set_pending_cloudwatch_logs_exports(mut self, input: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>) -> Self {
         self.pending_cloudwatch_logs_exports = input;
         self
     }
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
-    pub fn get_pending_cloudwatch_logs_exports(
-        &self,
-    ) -> &::std::option::Option<crate::types::PendingCloudwatchLogsExports> {
+    pub fn get_pending_cloudwatch_logs_exports(&self) -> &::std::option::Option<crate::types::PendingCloudwatchLogsExports> {
         &self.pending_cloudwatch_logs_exports
     }
     /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::types::PendingModifiedValues).

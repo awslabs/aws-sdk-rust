@@ -80,9 +80,7 @@ impl DbSubnetGroup {
 
 /// A builder for [`DbSubnetGroup`](crate::types::DbSubnetGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbSubnetGroupBuilder {
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group_description: ::std::option::Option<::std::string::String>,
@@ -90,23 +88,16 @@ pub struct DbSubnetGroupBuilder {
     pub(crate) subnet_group_status: ::std::option::Option<::std::string::String>,
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     pub(crate) db_subnet_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_network_types:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DbSubnetGroupBuilder {
     /// <p>The name of the DB subnet group.</p>
-    pub fn db_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB subnet group.</p>
-    pub fn set_db_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
         self
     }
@@ -115,18 +106,12 @@ impl DbSubnetGroupBuilder {
         &self.db_subnet_group_name
     }
     /// <p>Provides the description of the DB subnet group.</p>
-    pub fn db_subnet_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the description of the DB subnet group.</p>
-    pub fn set_db_subnet_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_description = input;
         self
     }
@@ -149,18 +134,12 @@ impl DbSubnetGroupBuilder {
         &self.vpc_id
     }
     /// <p>Provides the status of the DB subnet group.</p>
-    pub fn subnet_group_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_group_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the status of the DB subnet group.</p>
-    pub fn set_subnet_group_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_group_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_group_status = input;
         self
     }
@@ -180,10 +159,7 @@ impl DbSubnetGroupBuilder {
         self
     }
     /// <p>Contains a list of <code>Subnet</code> elements.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>) -> Self {
         self.subnets = input;
         self
     }
@@ -192,18 +168,12 @@ impl DbSubnetGroupBuilder {
         &self.subnets
     }
     /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
-    pub fn db_subnet_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
-    pub fn set_db_subnet_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_arn = input;
         self
     }
@@ -223,10 +193,7 @@ impl DbSubnetGroupBuilder {
     /// </ul>
     /// <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn supported_network_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_network_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_network_types.unwrap_or_default();
         v.push(input.into());
         self.supported_network_types = ::std::option::Option::Some(v);
@@ -240,10 +207,7 @@ impl DbSubnetGroupBuilder {
     /// </ul>
     /// <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_supported_network_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_network_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_network_types = input;
         self
     }
@@ -255,9 +219,7 @@ impl DbSubnetGroupBuilder {
     /// </ul>
     /// <p>A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn get_supported_network_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_network_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_network_types
     }
     /// Consumes the builder and constructs a [`DbSubnetGroup`](crate::types::DbSubnetGroup).

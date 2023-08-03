@@ -5,8 +5,7 @@
 pub struct ListPipelineExecutionsOutput {
     /// <p>Contains a sorted list of pipeline execution summary objects matching the specified filters. Each run summary includes the Amazon Resource Name (ARN) of the pipeline execution, the run date, and the status. This list can be empty. </p>
     #[doc(hidden)]
-    pub pipeline_execution_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>>,
+    pub pipeline_execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>>,
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListPipelineExecutionsOutput {
 }
 impl ListPipelineExecutionsOutput {
     /// <p>Contains a sorted list of pipeline execution summary objects matching the specified filters. Each run summary includes the Amazon Resource Name (ARN) of the pipeline execution, the run date, and the status. This list can be empty. </p>
-    pub fn pipeline_execution_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PipelineExecutionSummary]> {
+    pub fn pipeline_execution_summaries(&self) -> ::std::option::Option<&[crate::types::PipelineExecutionSummary]> {
         self.pipeline_execution_summaries.as_deref()
     }
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPipelineExecutionsOutput {
 }
 impl ListPipelineExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPipelineExecutionsOutput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsOutputBuilder {
         crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPipelineExecutionsOutput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelineExecutionsOutputBuilder {
-    pub(crate) pipeline_execution_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>>,
+    pub(crate) pipeline_execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,27 +47,19 @@ impl ListPipelineExecutionsOutputBuilder {
     /// To override the contents of this collection use [`set_pipeline_execution_summaries`](Self::set_pipeline_execution_summaries).
     ///
     /// <p>Contains a sorted list of pipeline execution summary objects matching the specified filters. Each run summary includes the Amazon Resource Name (ARN) of the pipeline execution, the run date, and the status. This list can be empty. </p>
-    pub fn pipeline_execution_summaries(
-        mut self,
-        input: crate::types::PipelineExecutionSummary,
-    ) -> Self {
+    pub fn pipeline_execution_summaries(mut self, input: crate::types::PipelineExecutionSummary) -> Self {
         let mut v = self.pipeline_execution_summaries.unwrap_or_default();
         v.push(input);
         self.pipeline_execution_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains a sorted list of pipeline execution summary objects matching the specified filters. Each run summary includes the Amazon Resource Name (ARN) of the pipeline execution, the run date, and the status. This list can be empty. </p>
-    pub fn set_pipeline_execution_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>>,
-    ) -> Self {
+    pub fn set_pipeline_execution_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>>) -> Self {
         self.pipeline_execution_summaries = input;
         self
     }
     /// <p>Contains a sorted list of pipeline execution summary objects matching the specified filters. Each run summary includes the Amazon Resource Name (ARN) of the pipeline execution, the run date, and the status. This list can be empty. </p>
-    pub fn get_pipeline_execution_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>> {
+    pub fn get_pipeline_execution_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>> {
         &self.pipeline_execution_summaries
     }
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>

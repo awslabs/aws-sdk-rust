@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`discovery_integration_status(DiscoveryIntegrationStatus)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::discovery_integration_status) / [`set_discovery_integration_status(Option<DiscoveryIntegrationStatus>)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::set_discovery_integration_status): <p>The status of discovery support settings.</p>
     /// - On success, responds with [`UpdateGlobalSettingsOutput`](crate::operation::update_global_settings::UpdateGlobalSettingsOutput)
     /// - On failure, responds with [`SdkError<UpdateGlobalSettingsError>`](crate::operation::update_global_settings::UpdateGlobalSettingsError)
-    pub fn update_global_settings(
-        &self,
-    ) -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder {
-        crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_global_settings(&self) -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder {
+        crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::new(self.handle.clone())
     }
 }

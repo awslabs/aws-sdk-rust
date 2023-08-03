@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateAuthorizerOutput {
 }
 impl CreateAuthorizerOutput {
     /// Creates a new builder-style object to manufacture [`CreateAuthorizerOutput`](crate::operation::create_authorizer::CreateAuthorizerOutput).
-    pub fn builder() -> crate::operation::create_authorizer::builders::CreateAuthorizerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_authorizer::builders::CreateAuthorizerOutputBuilder {
         crate::operation::create_authorizer::builders::CreateAuthorizerOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAuthorizerOutput`](crate::operation::create_authorizer::CreateAuthorizerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAuthorizerOutputBuilder {
     pub(crate) authorizer_name: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_arn: ::std::option::Option<::std::string::String>,
@@ -46,18 +43,12 @@ pub struct CreateAuthorizerOutputBuilder {
 }
 impl CreateAuthorizerOutputBuilder {
     /// <p>The authorizer's name.</p>
-    pub fn authorizer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorizer's name.</p>
-    pub fn set_authorizer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_name = input;
         self
     }
@@ -66,18 +57,12 @@ impl CreateAuthorizerOutputBuilder {
         &self.authorizer_name
     }
     /// <p>The authorizer ARN.</p>
-    pub fn authorizer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorizer ARN.</p>
-    pub fn set_authorizer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_arn = input;
         self
     }

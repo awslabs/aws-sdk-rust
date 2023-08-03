@@ -28,9 +28,7 @@ pub struct ModifyNetworkInterfaceAttributeInput {
 }
 impl ModifyNetworkInterfaceAttributeInput {
     /// <p>Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you must specify the ID of the interface attachment.</p>
-    pub fn attachment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkInterfaceAttachmentChanges> {
+    pub fn attachment(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceAttachmentChanges> {
         self.attachment.as_ref()
     }
     /// <p>A description for the network interface.</p>
@@ -54,24 +52,20 @@ impl ModifyNetworkInterfaceAttributeInput {
         self.source_dest_check.as_ref()
     }
     /// <p>Updates the ENA Express configuration for the network interface that’s attached to the instance.</p>
-    pub fn ena_srd_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EnaSrdSpecification> {
+    pub fn ena_srd_specification(&self) -> ::std::option::Option<&crate::types::EnaSrdSpecification> {
         self.ena_srd_specification.as_ref()
     }
 }
 impl ModifyNetworkInterfaceAttributeInput {
     /// Creates a new builder-style object to manufacture [`ModifyNetworkInterfaceAttributeInput`](crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeInput).
-    pub fn builder() -> crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeInputBuilder{
+    pub fn builder() -> crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeInputBuilder {
         crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyNetworkInterfaceAttributeInput`](crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyNetworkInterfaceAttributeInputBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::NetworkInterfaceAttachmentChanges>,
     pub(crate) description: ::std::option::Option<crate::types::AttributeValue>,
@@ -88,17 +82,12 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
         self
     }
     /// <p>Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you must specify the ID of the interface attachment.</p>
-    pub fn set_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInterfaceAttachmentChanges>,
-    ) -> Self {
+    pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceAttachmentChanges>) -> Self {
         self.attachment = input;
         self
     }
     /// <p>Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you must specify the ID of the interface attachment.</p>
-    pub fn get_attachment(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkInterfaceAttachmentChanges> {
+    pub fn get_attachment(&self) -> &::std::option::Option<crate::types::NetworkInterfaceAttachmentChanges> {
         &self.attachment
     }
     /// <p>A description for the network interface.</p>
@@ -107,10 +96,7 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
         self
     }
     /// <p>A description for the network interface.</p>
-    pub fn set_description(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeValue>,
-    ) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
         self.description = input;
         self
     }
@@ -144,10 +130,7 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
         self
     }
     /// <p>Changes the security groups for the network interface. The new set of groups you specify replaces the current set. You must specify at least one group, even if it's just the default security group in the VPC. You must specify the ID of the security group, not the name.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groups = input;
         self
     }
@@ -156,18 +139,12 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
         &self.groups
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -181,17 +158,12 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
         self
     }
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
-    pub fn set_source_dest_check(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_source_dest_check(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.source_dest_check = input;
         self
     }
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
-    pub fn get_source_dest_check(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_source_dest_check(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.source_dest_check
     }
     /// <p>Updates the ENA Express configuration for the network interface that’s attached to the instance.</p>
@@ -200,17 +172,12 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
         self
     }
     /// <p>Updates the ENA Express configuration for the network interface that’s attached to the instance.</p>
-    pub fn set_ena_srd_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::EnaSrdSpecification>,
-    ) -> Self {
+    pub fn set_ena_srd_specification(mut self, input: ::std::option::Option<crate::types::EnaSrdSpecification>) -> Self {
         self.ena_srd_specification = input;
         self
     }
     /// <p>Updates the ENA Express configuration for the network interface that’s attached to the instance.</p>
-    pub fn get_ena_srd_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
+    pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
         &self.ena_srd_specification
     }
     /// Consumes the builder and constructs a [`ModifyNetworkInterfaceAttributeInput`](crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeInput).
@@ -222,21 +189,14 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeInput {
-                attachment: self.attachment
-                ,
-                description: self.description
-                ,
-                dry_run: self.dry_run
-                ,
-                groups: self.groups
-                ,
-                network_interface_id: self.network_interface_id
-                ,
-                source_dest_check: self.source_dest_check
-                ,
-                ena_srd_specification: self.ena_srd_specification
-                ,
-            }
+                attachment: self.attachment,
+                description: self.description,
+                dry_run: self.dry_run,
+                groups: self.groups,
+                network_interface_id: self.network_interface_id,
+                source_dest_check: self.source_dest_check,
+                ena_srd_specification: self.ena_srd_specification,
+            },
         )
     }
 }

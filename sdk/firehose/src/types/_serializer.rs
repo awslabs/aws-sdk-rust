@@ -30,9 +30,7 @@ impl Serializer {
 
 /// A builder for [`Serializer`](crate::types::Serializer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SerializerBuilder {
     pub(crate) parquet_ser_de: ::std::option::Option<crate::types::ParquetSerDe>,
     pub(crate) orc_ser_de: ::std::option::Option<crate::types::OrcSerDe>,
@@ -44,10 +42,7 @@ impl SerializerBuilder {
         self
     }
     /// <p>A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
-    pub fn set_parquet_ser_de(
-        mut self,
-        input: ::std::option::Option<crate::types::ParquetSerDe>,
-    ) -> Self {
+    pub fn set_parquet_ser_de(mut self, input: ::std::option::Option<crate::types::ParquetSerDe>) -> Self {
         self.parquet_ser_de = input;
         self
     }

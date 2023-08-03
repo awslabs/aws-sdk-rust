@@ -30,9 +30,7 @@ impl ListTargetsFilter {
 
 /// A builder for [`ListTargetsFilter`](crate::types::ListTargetsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetsFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ListTargetsFilterName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ListTargetsFilterBuilder {
         self
     }
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ListTargetsFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ListTargetsFilterName>) -> Self {
         self.name = input;
         self
     }

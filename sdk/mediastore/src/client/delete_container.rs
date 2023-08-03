@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`container_name(impl ::std::convert::Into<String>)`](crate::operation::delete_container::builders::DeleteContainerFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::delete_container::builders::DeleteContainerFluentBuilder::set_container_name): <p>The name of the container to delete. </p>
     /// - On success, responds with [`DeleteContainerOutput`](crate::operation::delete_container::DeleteContainerOutput)
     /// - On failure, responds with [`SdkError<DeleteContainerError>`](crate::operation::delete_container::DeleteContainerError)
-    pub fn delete_container(
-        &self,
-    ) -> crate::operation::delete_container::builders::DeleteContainerFluentBuilder {
-        crate::operation::delete_container::builders::DeleteContainerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_container(&self) -> crate::operation::delete_container::builders::DeleteContainerFluentBuilder {
+        crate::operation::delete_container::builders::DeleteContainerFluentBuilder::new(self.handle.clone())
     }
 }

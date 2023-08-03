@@ -14,9 +14,7 @@ pub struct CreateAccessLogSubscriptionInput {
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the access log subscription.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAccessLogSubscriptionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -32,33 +30,25 @@ impl CreateAccessLogSubscriptionInput {
         self.destination_arn.as_deref()
     }
     /// <p>The tags for the access log subscription.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateAccessLogSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`CreateAccessLogSubscriptionInput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput).
-    pub fn builder() -> crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionInputBuilder {
         crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessLogSubscriptionInput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessLogSubscriptionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAccessLogSubscriptionInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -76,18 +66,12 @@ impl CreateAccessLogSubscriptionInputBuilder {
         &self.client_token
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -96,18 +80,12 @@ impl CreateAccessLogSubscriptionInputBuilder {
         &self.resource_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -120,32 +98,19 @@ impl CreateAccessLogSubscriptionInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the access log subscription.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags for the access log subscription.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags for the access log subscription.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAccessLogSubscriptionInput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput).
@@ -155,13 +120,11 @@ impl CreateAccessLogSubscriptionInputBuilder {
         crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput {
-                client_token: self.client_token,
-                resource_identifier: self.resource_identifier,
-                destination_arn: self.destination_arn,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput {
+            client_token: self.client_token,
+            resource_identifier: self.resource_identifier,
+            destination_arn: self.destination_arn,
+            tags: self.tags,
+        })
     }
 }

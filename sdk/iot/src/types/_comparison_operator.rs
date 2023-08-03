@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,9 +85,7 @@ impl ::std::convert::From<&str> for ComparisonOperator {
             "not-in-cidr-set" => ComparisonOperator::NotInCidrSet,
             "not-in-port-set" => ComparisonOperator::NotInPortSet,
             "not-in-set" => ComparisonOperator::NotInSet,
-            other => ComparisonOperator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ComparisonOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

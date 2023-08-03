@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociateMembersOutput`](crate::operation::disassociate_members::DisassociateMembersOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::disassociate_members::DisassociateMembersOutput::unprocessed_accounts): <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     /// - On failure, responds with [`SdkError<DisassociateMembersError>`](crate::operation::disassociate_members::DisassociateMembersError)
-    pub fn disassociate_members(
-        &self,
-    ) -> crate::operation::disassociate_members::builders::DisassociateMembersFluentBuilder {
-        crate::operation::disassociate_members::builders::DisassociateMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_members(&self) -> crate::operation::disassociate_members::builders::DisassociateMembersFluentBuilder {
+        crate::operation::disassociate_members::builders::DisassociateMembersFluentBuilder::new(self.handle.clone())
     }
 }

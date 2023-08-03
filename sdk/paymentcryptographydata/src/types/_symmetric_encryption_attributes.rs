@@ -68,18 +68,12 @@ impl SymmetricEncryptionAttributesBuilder {
         &self.mode
     }
     /// <p>An input to cryptographic primitive used to provide the intial state. The <code>InitializationVector</code> is typically required have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If a value is not provided, Amazon Web Services Payment Cryptography generates a random value.</p>
-    pub fn initialization_vector(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initialization_vector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initialization_vector = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An input to cryptographic primitive used to provide the intial state. The <code>InitializationVector</code> is typically required have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If a value is not provided, Amazon Web Services Payment Cryptography generates a random value.</p>
-    pub fn set_initialization_vector(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initialization_vector = input;
         self
     }
@@ -93,10 +87,7 @@ impl SymmetricEncryptionAttributesBuilder {
         self
     }
     /// <p>The padding to be included with the data.</p>
-    pub fn set_padding_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PaddingType>,
-    ) -> Self {
+    pub fn set_padding_type(mut self, input: ::std::option::Option<crate::types::PaddingType>) -> Self {
         self.padding_type = input;
         self
     }

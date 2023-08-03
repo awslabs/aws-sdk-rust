@@ -41,10 +41,7 @@ impl DeleteConnectionAliasFluentBuilder {
         }
     }
     /// Access the DeleteConnectionAlias as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_connection_alias::builders::DeleteConnectionAliasInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_connection_alias::builders::DeleteConnectionAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl DeleteConnectionAliasFluentBuilder {
             crate::operation::delete_connection_alias::DeleteConnectionAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connection_alias::DeleteConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connection_alias::DeleteConnectionAliasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl DeleteConnectionAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl DeleteConnectionAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_connection_alias::DeleteConnectionAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connection_alias::DeleteConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connection_alias::DeleteConnectionAliasError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl DeleteConnectionAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_connection_alias::DeleteConnectionAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connection_alias::DeleteConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connection_alias::DeleteConnectionAliasError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl DeleteConnectionAliasFluentBuilder {
             crate::operation::delete_connection_alias::DeleteConnectionAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connection_alias::DeleteConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connection_alias::DeleteConnectionAliasError>,
     > {
         self.customize_middleware().await
     }

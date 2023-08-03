@@ -38,10 +38,7 @@ impl ContinueUpdateRollbackFluentBuilder {
         }
     }
     /// Access the ContinueUpdateRollback as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ContinueUpdateRollbackFluentBuilder {
             crate::operation::continue_update_rollback::ContinueUpdateRollback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::continue_update_rollback::ContinueUpdateRollbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::continue_update_rollback::ContinueUpdateRollbackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ContinueUpdateRollbackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ContinueUpdateRollbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::continue_update_rollback::ContinueUpdateRollbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::continue_update_rollback::ContinueUpdateRollbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::continue_update_rollback::ContinueUpdateRollbackError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ContinueUpdateRollbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::continue_update_rollback::ContinueUpdateRollbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::continue_update_rollback::ContinueUpdateRollbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::continue_update_rollback::ContinueUpdateRollbackError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl ContinueUpdateRollbackFluentBuilder {
             crate::operation::continue_update_rollback::ContinueUpdateRollback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::continue_update_rollback::ContinueUpdateRollbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::continue_update_rollback::ContinueUpdateRollbackError>,
     > {
         self.customize_middleware().await
     }
@@ -172,10 +158,7 @@ impl ContinueUpdateRollbackFluentBuilder {
     /// <p>To skip resources that are part of nested stacks, use the following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource (<code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its corresponding embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.</p> <note>
     /// <p>Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example of a continue update rollback operation with nested stacks, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using ResourcesToSkip to recover a nested stacks hierarchy</a>.</p>
     /// </note>
-    pub fn resources_to_skip(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resources_to_skip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resources_to_skip(input.into());
         self
     }
@@ -186,10 +169,7 @@ impl ContinueUpdateRollbackFluentBuilder {
     /// <p>To skip resources that are part of nested stacks, use the following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource (<code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its corresponding embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.</p> <note>
     /// <p>Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example of a continue update rollback operation with nested stacks, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using ResourcesToSkip to recover a nested stacks hierarchy</a>.</p>
     /// </note>
-    pub fn set_resources_to_skip(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources_to_skip(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resources_to_skip(input);
         self
     }
@@ -200,24 +180,16 @@ impl ContinueUpdateRollbackFluentBuilder {
     /// <p>To skip resources that are part of nested stacks, use the following format: <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource (<code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its corresponding embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.</p> <note>
     /// <p>Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example of a continue update rollback operation with nested stacks, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using ResourcesToSkip to recover a nested stacks hierarchy</a>.</p>
     /// </note>
-    pub fn get_resources_to_skip(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources_to_skip(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resources_to_skip()
     }
     /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to continue the rollback to a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to continue the rollback to a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

@@ -36,16 +36,14 @@ impl AssumeDecoratedRoleWithSamlInput {
 }
 impl AssumeDecoratedRoleWithSamlInput {
     /// Creates a new builder-style object to manufacture [`AssumeDecoratedRoleWithSamlInput`](crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlInput).
-    pub fn builder() -> crate::operation::assume_decorated_role_with_saml::builders::AssumeDecoratedRoleWithSamlInputBuilder{
+    pub fn builder() -> crate::operation::assume_decorated_role_with_saml::builders::AssumeDecoratedRoleWithSamlInputBuilder {
         crate::operation::assume_decorated_role_with_saml::builders::AssumeDecoratedRoleWithSamlInputBuilder::default()
     }
 }
 
 /// A builder for [`AssumeDecoratedRoleWithSamlInput`](crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssumeDecoratedRoleWithSamlInputBuilder {
     pub(crate) saml_assertion: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct AssumeDecoratedRoleWithSamlInputBuilder {
 }
 impl AssumeDecoratedRoleWithSamlInputBuilder {
     /// <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
-    pub fn saml_assertion(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn saml_assertion(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.saml_assertion = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
-    pub fn set_saml_assertion(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_saml_assertion(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.saml_assertion = input;
         self
     }
@@ -88,18 +80,12 @@ impl AssumeDecoratedRoleWithSamlInputBuilder {
         &self.role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_arn = input;
         self
     }
@@ -128,13 +114,11 @@ impl AssumeDecoratedRoleWithSamlInputBuilder {
         crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlInput {
-                saml_assertion: self.saml_assertion,
-                role_arn: self.role_arn,
-                principal_arn: self.principal_arn,
-                duration_seconds: self.duration_seconds,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlInput {
+            saml_assertion: self.saml_assertion,
+            role_arn: self.role_arn,
+            principal_arn: self.principal_arn,
+            duration_seconds: self.duration_seconds,
+        })
     }
 }

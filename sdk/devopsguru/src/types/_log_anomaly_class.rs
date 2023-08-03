@@ -65,9 +65,7 @@ impl LogAnomalyClass {
 
 /// A builder for [`LogAnomalyClass`](crate::types::LogAnomalyClass).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogAnomalyClassBuilder {
     pub(crate) log_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_anomaly_type: ::std::option::Option<crate::types::LogAnomalyType>,
@@ -79,18 +77,12 @@ pub struct LogAnomalyClassBuilder {
 }
 impl LogAnomalyClassBuilder {
     /// <p> The name of the Amazon CloudWatch log stream that the anomalous log event belongs to. A log stream is a sequence of log events that share the same source. </p>
-    pub fn log_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the Amazon CloudWatch log stream that the anomalous log event belongs to. A log stream is a sequence of log events that share the same source. </p>
-    pub fn set_log_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_stream_name = input;
         self
     }
@@ -104,10 +96,7 @@ impl LogAnomalyClassBuilder {
         self
     }
     /// <p> The type of log anomaly that has been detected. </p>
-    pub fn set_log_anomaly_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LogAnomalyType>,
-    ) -> Self {
+    pub fn set_log_anomaly_type(mut self, input: ::std::option::Option<crate::types::LogAnomalyType>) -> Self {
         self.log_anomaly_type = input;
         self
     }
@@ -116,18 +105,12 @@ impl LogAnomalyClassBuilder {
         &self.log_anomaly_type
     }
     /// <p> The token where the anomaly was detected. This may refer to an exception or another location, or it may be blank for log anomalies such as format anomalies. </p>
-    pub fn log_anomaly_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_anomaly_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_anomaly_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The token where the anomaly was detected. This may refer to an exception or another location, or it may be blank for log anomalies such as format anomalies. </p>
-    pub fn set_log_anomaly_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_anomaly_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_anomaly_token = input;
         self
     }
@@ -169,10 +152,7 @@ impl LogAnomalyClassBuilder {
         self
     }
     /// <p> The number of log lines where this anomalous log event occurs. </p>
-    pub fn set_number_of_log_lines_occurrences(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_number_of_log_lines_occurrences(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_log_lines_occurrences = input;
         self
     }
@@ -186,10 +166,7 @@ impl LogAnomalyClassBuilder {
         self
     }
     /// <p> The time of the first occurrence of the anomalous log event. </p>
-    pub fn set_log_event_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_log_event_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.log_event_timestamp = input;
         self
     }
@@ -205,9 +182,7 @@ impl LogAnomalyClassBuilder {
             log_anomaly_token: self.log_anomaly_token,
             log_event_id: self.log_event_id,
             explanation: self.explanation,
-            number_of_log_lines_occurrences: self
-                .number_of_log_lines_occurrences
-                .unwrap_or_default(),
+            number_of_log_lines_occurrences: self.number_of_log_lines_occurrences.unwrap_or_default(),
             log_event_timestamp: self.log_event_timestamp,
         }
     }

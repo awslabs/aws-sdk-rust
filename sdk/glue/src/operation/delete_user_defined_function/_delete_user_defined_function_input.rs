@@ -29,16 +29,14 @@ impl DeleteUserDefinedFunctionInput {
 }
 impl DeleteUserDefinedFunctionInput {
     /// Creates a new builder-style object to manufacture [`DeleteUserDefinedFunctionInput`](crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput).
-    pub fn builder() -> crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionInputBuilder{
+    pub fn builder() -> crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionInputBuilder {
         crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUserDefinedFunctionInput`](crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUserDefinedFunctionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl DeleteUserDefinedFunctionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the function is located.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database where the function is located.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -80,18 +72,12 @@ impl DeleteUserDefinedFunctionInputBuilder {
         &self.database_name
     }
     /// <p>The name of the function definition to be deleted.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the function definition to be deleted.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -106,12 +92,10 @@ impl DeleteUserDefinedFunctionInputBuilder {
         crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                function_name: self.function_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            function_name: self.function_name,
+        })
     }
 }

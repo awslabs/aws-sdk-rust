@@ -26,7 +26,7 @@ impl DescribeAutoScalingInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAutoScalingInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesInputBuilder,
+    inner: crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesInputBuilder,
 }
 impl DescribeAutoScalingInstancesFluentBuilder {
     /// Creates a new `DescribeAutoScalingInstances`.
@@ -37,7 +37,7 @@ impl DescribeAutoScalingInstancesFluentBuilder {
         }
     }
     /// Access the DescribeAutoScalingInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAutoScalingInstancesFluentBuilder {
             crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAutoScalingInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAutoScalingInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAutoScalingInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeAutoScalingInstancesFluentBuilder {
             crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_auto_scaling_instances::paginator::DescribeAutoScalingInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_auto_scaling_instances::paginator::DescribeAutoScalingInstancesPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_auto_scaling_instances::paginator::DescribeAutoScalingInstancesPaginator {
         crate::operation::describe_auto_scaling_instances::paginator::DescribeAutoScalingInstancesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `InstanceIds`.
@@ -138,18 +127,13 @@ impl DescribeAutoScalingInstancesFluentBuilder {
     }
     /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>50</code>.</p>

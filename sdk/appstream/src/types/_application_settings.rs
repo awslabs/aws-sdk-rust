@@ -30,9 +30,7 @@ impl ApplicationSettings {
 
 /// A builder for [`ApplicationSettings`](crate::types::ApplicationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationSettingsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) settings_group: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl ApplicationSettingsBuilder {
         &self.enabled
     }
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
-    pub fn settings_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn settings_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.settings_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
-    pub fn set_settings_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_settings_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.settings_group = input;
         self
     }

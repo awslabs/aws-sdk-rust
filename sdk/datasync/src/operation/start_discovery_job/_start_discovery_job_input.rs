@@ -40,17 +40,14 @@ impl StartDiscoveryJobInput {
 }
 impl StartDiscoveryJobInput {
     /// Creates a new builder-style object to manufacture [`StartDiscoveryJobInput`](crate::operation::start_discovery_job::StartDiscoveryJobInput).
-    pub fn builder(
-    ) -> crate::operation::start_discovery_job::builders::StartDiscoveryJobInputBuilder {
+    pub fn builder() -> crate::operation::start_discovery_job::builders::StartDiscoveryJobInputBuilder {
         crate::operation::start_discovery_job::builders::StartDiscoveryJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartDiscoveryJobInput`](crate::operation::start_discovery_job::StartDiscoveryJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDiscoveryJobInputBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
     pub(crate) collection_duration_minutes: ::std::option::Option<i32>,
@@ -59,18 +56,12 @@ pub struct StartDiscoveryJobInputBuilder {
 }
 impl StartDiscoveryJobInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
-    pub fn storage_system_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_system_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
-    pub fn set_storage_system_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_system_arn = input;
         self
     }
@@ -124,10 +115,7 @@ impl StartDiscoveryJobInputBuilder {
         self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.tags = input;
         self
     }
@@ -138,17 +126,12 @@ impl StartDiscoveryJobInputBuilder {
     /// Consumes the builder and constructs a [`StartDiscoveryJobInput`](crate::operation::start_discovery_job::StartDiscoveryJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_discovery_job::StartDiscoveryJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_discovery_job::StartDiscoveryJobInput {
-                storage_system_arn: self.storage_system_arn,
-                collection_duration_minutes: self.collection_duration_minutes,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_discovery_job::StartDiscoveryJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_discovery_job::StartDiscoveryJobInput {
+            storage_system_arn: self.storage_system_arn,
+            collection_duration_minutes: self.collection_duration_minutes,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

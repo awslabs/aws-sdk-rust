@@ -36,9 +36,7 @@ impl DescribeTasksInput {
 
 /// A builder for [`DescribeTasksInput`](crate::operation::describe_tasks::DescribeTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTasksInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,10 +69,7 @@ impl DescribeTasksInputBuilder {
         self
     }
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tasks = input;
         self
     }
@@ -94,10 +89,7 @@ impl DescribeTasksInputBuilder {
         self
     }
     /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskField>>,
-    ) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskField>>) -> Self {
         self.include = input;
         self
     }
@@ -108,10 +100,7 @@ impl DescribeTasksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTasksInput`](crate::operation::describe_tasks::DescribeTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_tasks::DescribeTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_tasks::DescribeTasksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tasks::DescribeTasksInput {
             cluster: self.cluster,
             tasks: self.tasks,

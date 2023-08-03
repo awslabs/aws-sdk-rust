@@ -13,9 +13,7 @@ pub struct IoTJobExecutionsRolloutConfig {
 }
 impl IoTJobExecutionsRolloutConfig {
     /// <p>The exponential rate to increase the job rollout rate.</p>
-    pub fn exponential_rate(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IoTJobExponentialRolloutRate> {
+    pub fn exponential_rate(&self) -> ::std::option::Option<&crate::types::IoTJobExponentialRolloutRate> {
         self.exponential_rate.as_ref()
     }
     /// <p>The maximum number of devices that receive a pending job notification, per minute.</p>
@@ -32,9 +30,7 @@ impl IoTJobExecutionsRolloutConfig {
 
 /// A builder for [`IoTJobExecutionsRolloutConfig`](crate::types::IoTJobExecutionsRolloutConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IoTJobExecutionsRolloutConfigBuilder {
     pub(crate) exponential_rate: ::std::option::Option<crate::types::IoTJobExponentialRolloutRate>,
     pub(crate) maximum_per_minute: ::std::option::Option<i32>,
@@ -46,17 +42,12 @@ impl IoTJobExecutionsRolloutConfigBuilder {
         self
     }
     /// <p>The exponential rate to increase the job rollout rate.</p>
-    pub fn set_exponential_rate(
-        mut self,
-        input: ::std::option::Option<crate::types::IoTJobExponentialRolloutRate>,
-    ) -> Self {
+    pub fn set_exponential_rate(mut self, input: ::std::option::Option<crate::types::IoTJobExponentialRolloutRate>) -> Self {
         self.exponential_rate = input;
         self
     }
     /// <p>The exponential rate to increase the job rollout rate.</p>
-    pub fn get_exponential_rate(
-        &self,
-    ) -> &::std::option::Option<crate::types::IoTJobExponentialRolloutRate> {
+    pub fn get_exponential_rate(&self) -> &::std::option::Option<crate::types::IoTJobExponentialRolloutRate> {
         &self.exponential_rate
     }
     /// <p>The maximum number of devices that receive a pending job notification, per minute.</p>

@@ -26,9 +26,7 @@ pub struct DescribeFleetMetadataOutput {
     pub fleet_status: ::std::option::Option<crate::types::FleetStatus>,
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeFleetMetadataOutput {
@@ -61,11 +59,7 @@ impl DescribeFleetMetadataOutput {
         self.fleet_status.as_ref()
     }
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -76,18 +70,14 @@ impl ::aws_http::request_id::RequestId for DescribeFleetMetadataOutput {
 }
 impl DescribeFleetMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetMetadataOutput`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataOutputBuilder {
         crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetMetadataOutput`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetMetadataOutputBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -96,9 +86,7 @@ pub struct DescribeFleetMetadataOutputBuilder {
     pub(crate) optimize_for_end_user_location: ::std::option::Option<bool>,
     pub(crate) company_code: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_status: ::std::option::Option<crate::types::FleetStatus>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeFleetMetadataOutputBuilder {
@@ -108,10 +96,7 @@ impl DescribeFleetMetadataOutputBuilder {
         self
     }
     /// <p>The time that the fleet was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -125,10 +110,7 @@ impl DescribeFleetMetadataOutputBuilder {
         self
     }
     /// <p>The time that the fleet was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -170,10 +152,7 @@ impl DescribeFleetMetadataOutputBuilder {
         self
     }
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
-    pub fn set_optimize_for_end_user_location(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_optimize_for_end_user_location(mut self, input: ::std::option::Option<bool>) -> Self {
         self.optimize_for_end_user_location = input;
         self
     }
@@ -201,10 +180,7 @@ impl DescribeFleetMetadataOutputBuilder {
         self
     }
     /// <p>The current state of the fleet.</p>
-    pub fn set_fleet_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetStatus>,
-    ) -> Self {
+    pub fn set_fleet_status(mut self, input: ::std::option::Option<crate::types::FleetStatus>) -> Self {
         self.fleet_status = input;
         self
     }
@@ -217,32 +193,19 @@ impl DescribeFleetMetadataOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

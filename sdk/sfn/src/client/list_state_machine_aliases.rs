@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`state_machine_aliases(Option<Vec<StateMachineAliasListItem>>)`](crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput::state_machine_aliases): <p>Aliases for the state machine.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     /// - On failure, responds with [`SdkError<ListStateMachineAliasesError>`](crate::operation::list_state_machine_aliases::ListStateMachineAliasesError)
-    pub fn list_state_machine_aliases(
-        &self,
-    ) -> crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesFluentBuilder
-    {
+    pub fn list_state_machine_aliases(&self) -> crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesFluentBuilder {
         crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesFluentBuilder::new(self.handle.clone())
     }
 }

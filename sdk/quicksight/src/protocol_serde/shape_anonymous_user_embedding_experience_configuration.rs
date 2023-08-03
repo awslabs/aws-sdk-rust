@@ -6,7 +6,10 @@ pub fn ser_anonymous_user_embedding_experience_configuration(
     if let Some(var_1) = &input.dashboard {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Dashboard").start_object();
-        crate::protocol_serde::shape_anonymous_user_dashboard_embedding_configuration::ser_anonymous_user_dashboard_embedding_configuration(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_anonymous_user_dashboard_embedding_configuration::ser_anonymous_user_dashboard_embedding_configuration(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     if let Some(var_3) = &input.dashboard_visual {
@@ -18,7 +21,10 @@ pub fn ser_anonymous_user_embedding_experience_configuration(
     if let Some(var_5) = &input.q_search_bar {
         #[allow(unused_mut)]
         let mut object_6 = object.key("QSearchBar").start_object();
-        crate::protocol_serde::shape_anonymous_user_q_search_bar_embedding_configuration::ser_anonymous_user_q_search_bar_embedding_configuration(&mut object_6, var_5)?;
+        crate::protocol_serde::shape_anonymous_user_q_search_bar_embedding_configuration::ser_anonymous_user_q_search_bar_embedding_configuration(
+            &mut object_6,
+            var_5,
+        )?;
         object_6.finish();
     }
     Ok(())

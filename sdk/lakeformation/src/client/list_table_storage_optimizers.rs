@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`storage_optimizer_list(Option<Vec<StorageOptimizer>>)`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput::storage_optimizer_list): <p>A list of the storage optimizers associated with a table.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     /// - On failure, responds with [`SdkError<ListTableStorageOptimizersError>`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersError)
-    pub fn list_table_storage_optimizers(&self) -> crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder{
+    pub fn list_table_storage_optimizers(
+        &self,
+    ) -> crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder {
         crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::new(self.handle.clone())
     }
 }

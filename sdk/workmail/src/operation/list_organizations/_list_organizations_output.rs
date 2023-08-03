@@ -5,8 +5,7 @@
 pub struct ListOrganizationsOutput {
     /// <p>The overview of owned organizations presented as a list of organization summaries.</p>
     #[doc(hidden)]
-    pub organization_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrganizationSummary>>,
+    pub organization_summaries: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationSummary>>,
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListOrganizationsOutput {
 }
 impl ListOrganizationsOutput {
     /// <p>The overview of owned organizations presented as a list of organization summaries.</p>
-    pub fn organization_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OrganizationSummary]> {
+    pub fn organization_summaries(&self) -> ::std::option::Option<&[crate::types::OrganizationSummary]> {
         self.organization_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListOrganizationsOutput {
 }
 impl ListOrganizationsOutput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationsOutput`](crate::operation::list_organizations::ListOrganizationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_organizations::builders::ListOrganizationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_organizations::builders::ListOrganizationsOutputBuilder {
         crate::operation::list_organizations::builders::ListOrganizationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOrganizationsOutput`](crate::operation::list_organizations::ListOrganizationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOrganizationsOutputBuilder {
-    pub(crate) organization_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrganizationSummary>>,
+    pub(crate) organization_summaries: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListOrganizationsOutputBuilder {
         self
     }
     /// <p>The overview of owned organizations presented as a list of organization summaries.</p>
-    pub fn set_organization_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationSummary>>,
-    ) -> Self {
+    pub fn set_organization_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationSummary>>) -> Self {
         self.organization_summaries = input;
         self
     }
     /// <p>The overview of owned organizations presented as a list of organization summaries.</p>
-    pub fn get_organization_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationSummary>> {
+    pub fn get_organization_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationSummary>> {
         &self.organization_summaries
     }
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>

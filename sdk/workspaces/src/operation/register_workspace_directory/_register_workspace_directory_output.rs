@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RegisterWorkspaceDirectoryOutput {
 }
 impl RegisterWorkspaceDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`RegisterWorkspaceDirectoryOutput`](crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput).
-    pub fn builder() -> crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryOutputBuilder{
+    pub fn builder() -> crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryOutputBuilder {
         crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterWorkspaceDirectoryOutput`](crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterWorkspaceDirectoryOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RegisterWorkspaceDirectoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterWorkspaceDirectoryOutput`](crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput {
+    pub fn build(self) -> crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput {
         crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput {
             _request_id: self._request_id,
         }

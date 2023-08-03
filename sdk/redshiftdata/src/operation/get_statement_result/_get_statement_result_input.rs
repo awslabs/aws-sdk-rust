@@ -22,17 +22,14 @@ impl GetStatementResultInput {
 }
 impl GetStatementResultInput {
     /// Creates a new builder-style object to manufacture [`GetStatementResultInput`](crate::operation::get_statement_result::GetStatementResultInput).
-    pub fn builder(
-    ) -> crate::operation::get_statement_result::builders::GetStatementResultInputBuilder {
+    pub fn builder() -> crate::operation::get_statement_result::builders::GetStatementResultInputBuilder {
         crate::operation::get_statement_result::builders::GetStatementResultInputBuilder::default()
     }
 }
 
 /// A builder for [`GetStatementResultInput`](crate::operation::get_statement_result::GetStatementResultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStatementResultInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl GetStatementResultInputBuilder {
     /// Consumes the builder and constructs a [`GetStatementResultInput`](crate::operation::get_statement_result::GetStatementResultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_statement_result::GetStatementResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_statement_result::GetStatementResultInput {
-                id: self.id,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_statement_result::GetStatementResultInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_statement_result::GetStatementResultInput {
+            id: self.id,
+            next_token: self.next_token,
+        })
     }
 }

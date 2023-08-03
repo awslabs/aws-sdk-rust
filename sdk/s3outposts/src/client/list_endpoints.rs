@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::operation::list_endpoints::ListEndpointsOutput::endpoints): <p>The list of endpoints associated with the specified Outpost.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoints::ListEndpointsOutput::next_token): <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
     /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::operation::list_endpoints::ListEndpointsError)
-    pub fn list_endpoints(
-        &self,
-    ) -> crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder {
-        crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_endpoints(&self) -> crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder {
+        crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`TerminateInstancesOutput`](crate::operation::terminate_instances::TerminateInstancesOutput) with field(s):
     ///   - [`terminating_instances(Option<Vec<InstanceStateChange>>)`](crate::operation::terminate_instances::TerminateInstancesOutput::terminating_instances): <p>Information about the terminated instances.</p>
     /// - On failure, responds with [`SdkError<TerminateInstancesError>`](crate::operation::terminate_instances::TerminateInstancesError)
-    pub fn terminate_instances(
-        &self,
-    ) -> crate::operation::terminate_instances::builders::TerminateInstancesFluentBuilder {
-        crate::operation::terminate_instances::builders::TerminateInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn terminate_instances(&self) -> crate::operation::terminate_instances::builders::TerminateInstancesFluentBuilder {
+        crate::operation::terminate_instances::builders::TerminateInstancesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -41,9 +41,7 @@ impl JobManifestLocation {
 
 /// A builder for [`JobManifestLocation`](crate::types::JobManifestLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobManifestLocationBuilder {
     pub(crate) object_arn: ::std::option::Option<::std::string::String>,
     pub(crate) object_version_id: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ impl JobManifestLocationBuilder {
         &self.object_arn
     }
     /// <p>The optional version ID to identify a specific version of the manifest object.</p>
-    pub fn object_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The optional version ID to identify a specific version of the manifest object.</p>
-    pub fn set_object_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_version_id = input;
         self
     }

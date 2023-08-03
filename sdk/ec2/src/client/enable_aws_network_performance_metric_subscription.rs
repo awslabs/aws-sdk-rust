@@ -11,7 +11,10 @@ impl super::Client {
     /// - On success, responds with [`EnableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionOutput) with field(s):
     ///   - [`output(Option<bool>)`](crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionOutput::output): <p>Indicates whether the subscribe action was successful.</p>
     /// - On failure, responds with [`SdkError<EnableAwsNetworkPerformanceMetricSubscriptionError>`](crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionError)
-    pub fn enable_aws_network_performance_metric_subscription(&self) -> crate::operation::enable_aws_network_performance_metric_subscription::builders::EnableAwsNetworkPerformanceMetricSubscriptionFluentBuilder{
+    pub fn enable_aws_network_performance_metric_subscription(
+        &self,
+    ) -> crate::operation::enable_aws_network_performance_metric_subscription::builders::EnableAwsNetworkPerformanceMetricSubscriptionFluentBuilder
+    {
         crate::operation::enable_aws_network_performance_metric_subscription::builders::EnableAwsNetworkPerformanceMetricSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

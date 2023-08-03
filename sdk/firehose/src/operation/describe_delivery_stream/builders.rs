@@ -38,10 +38,7 @@ impl DescribeDeliveryStreamFluentBuilder {
         }
     }
     /// Access the DescribeDeliveryStream as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeDeliveryStreamFluentBuilder {
             crate::operation::describe_delivery_stream::DescribeDeliveryStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_delivery_stream::DescribeDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_delivery_stream::DescribeDeliveryStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeDeliveryStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeDeliveryStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_delivery_stream::DescribeDeliveryStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_delivery_stream::DescribeDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_delivery_stream::DescribeDeliveryStreamError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeDeliveryStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_delivery_stream::DescribeDeliveryStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_delivery_stream::DescribeDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_delivery_stream::DescribeDeliveryStreamError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DescribeDeliveryStreamFluentBuilder {
             crate::operation::describe_delivery_stream::DescribeDeliveryStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_delivery_stream::DescribeDeliveryStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_delivery_stream::DescribeDeliveryStreamError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_stream_name(input.into());
         self
     }
     /// <p>The name of the delivery stream.</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
@@ -159,25 +139,17 @@ impl DescribeDeliveryStreamFluentBuilder {
         self.inner.get_limit()
     }
     /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
-    pub fn exclusive_start_destination_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusive_start_destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.exclusive_start_destination_id(input.into());
         self
     }
     /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
-    pub fn set_exclusive_start_destination_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exclusive_start_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_exclusive_start_destination_id(input);
         self
     }
     /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
-    pub fn get_exclusive_start_destination_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_exclusive_start_destination_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_exclusive_start_destination_id()
     }
 }

@@ -23,36 +23,26 @@ impl DeleteVpnConnectionInput {
 }
 impl DeleteVpnConnectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteVpnConnectionInput`](crate::operation::delete_vpn_connection::DeleteVpnConnectionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_vpn_connection::builders::DeleteVpnConnectionInputBuilder {
-        crate::operation::delete_vpn_connection::builders::DeleteVpnConnectionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_vpn_connection::builders::DeleteVpnConnectionInputBuilder {
+        crate::operation::delete_vpn_connection::builders::DeleteVpnConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpnConnectionInput`](crate::operation::delete_vpn_connection::DeleteVpnConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpnConnectionInputBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteVpnConnectionInputBuilder {
     /// <p>The ID of the VPN connection.</p>
-    pub fn vpn_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPN connection.</p>
-    pub fn set_vpn_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_connection_id = input;
         self
     }
@@ -77,15 +67,11 @@ impl DeleteVpnConnectionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVpnConnectionInput`](crate::operation::delete_vpn_connection::DeleteVpnConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vpn_connection::DeleteVpnConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_vpn_connection::DeleteVpnConnectionInput {
-                vpn_connection_id: self.vpn_connection_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_vpn_connection::DeleteVpnConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_vpn_connection::DeleteVpnConnectionInput {
+            vpn_connection_id: self.vpn_connection_id,
+            dry_run: self.dry_run,
+        })
     }
 }

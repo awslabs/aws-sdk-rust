@@ -51,9 +51,7 @@ impl EmailChannelRequest {
 
 /// A builder for [`EmailChannelRequest`](crate::types::EmailChannelRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EmailChannelRequestBuilder {
     pub(crate) configuration_set: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
@@ -63,18 +61,12 @@ pub struct EmailChannelRequestBuilder {
 }
 impl EmailChannelRequestBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
-    pub fn configuration_set(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
-    pub fn set_configuration_set(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set = input;
         self
     }

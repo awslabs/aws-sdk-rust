@@ -10,10 +10,7 @@ impl ListResourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_resources::ListResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resources::ListResourcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resources::ListResourcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_resources();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListResourcesFluentBuilder {
         }
     }
     /// Access the ListResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resources::builders::ListResourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_resources::builders::ListResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListResourcesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resources::paginator::ListResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_resources::paginator::ListResourcesPaginator {
-        crate::operation::list_resources::paginator::ListResourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_resources::paginator::ListResourcesPaginator {
+        crate::operation::list_resources::paginator::ListResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies that you want to list only the resource shares that match the following:</p>
     /// <ul>
@@ -139,10 +126,7 @@ impl ListResourcesFluentBuilder {
     /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
     /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
     /// </ul>
-    pub fn set_resource_owner(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceOwner>,
-    ) -> Self {
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
         self.inner = self.inner.set_resource_owner(input);
         self
     }
@@ -170,19 +154,13 @@ impl ListResourcesFluentBuilder {
     }
     /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
     /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
     /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -196,25 +174,17 @@ impl ListResourcesFluentBuilder {
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arns(input.into());
         self
     }
     /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
     /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn get_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_arns()
     }
     /// Appends an item to `resourceShareArns`.
@@ -222,25 +192,17 @@ impl ListResourcesFluentBuilder {
     /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
     ///
     /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn resource_share_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_share_arns(input.into());
         self
     }
     /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_resource_share_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_share_arns(input);
         self
     }
     /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn get_resource_share_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_share_arns()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -289,10 +251,7 @@ impl ListResourcesFluentBuilder {
     /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn set_resource_region_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceRegionScopeFilter>,
-    ) -> Self {
+    pub fn set_resource_region_scope(mut self, input: ::std::option::Option<crate::types::ResourceRegionScopeFilter>) -> Self {
         self.inner = self.inner.set_resource_region_scope(input);
         self
     }
@@ -303,9 +262,7 @@ impl ListResourcesFluentBuilder {
     /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn get_resource_region_scope(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceRegionScopeFilter> {
+    pub fn get_resource_region_scope(&self) -> &::std::option::Option<crate::types::ResourceRegionScopeFilter> {
         self.inner.get_resource_region_scope()
     }
 }

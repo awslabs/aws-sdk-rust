@@ -45,17 +45,14 @@ impl UpdateConnectionInput {
 }
 impl UpdateConnectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
-    pub fn builder() -> crate::operation::update_connection::builders::UpdateConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_connection::builders::UpdateConnectionInputBuilder {
         crate::operation::update_connection::builders::UpdateConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectionInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
@@ -65,18 +62,12 @@ pub struct UpdateConnectionInputBuilder {
 }
 impl UpdateConnectionInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -85,18 +76,12 @@ impl UpdateConnectionInputBuilder {
         &self.global_network_id
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -119,18 +104,12 @@ impl UpdateConnectionInputBuilder {
         &self.link_id
     }
     /// <p>The ID of the link for the second device in the connection.</p>
-    pub fn connected_link_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connected_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connected_link_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the link for the second device in the connection.</p>
-    pub fn set_connected_link_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connected_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connected_link_id = input;
         self
     }
@@ -158,10 +137,7 @@ impl UpdateConnectionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_connection::UpdateConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_connection::UpdateConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_connection::UpdateConnectionInput {
             global_network_id: self.global_network_id,
             connection_id: self.connection_id,

@@ -6,8 +6,7 @@
 pub struct AudioSelectorSettings {
     /// Audio Hls Rendition Selection
     #[doc(hidden)]
-    pub audio_hls_rendition_selection:
-        ::std::option::Option<crate::types::AudioHlsRenditionSelection>,
+    pub audio_hls_rendition_selection: ::std::option::Option<crate::types::AudioHlsRenditionSelection>,
     /// Audio Language Selection
     #[doc(hidden)]
     pub audio_language_selection: ::std::option::Option<crate::types::AudioLanguageSelection>,
@@ -20,15 +19,11 @@ pub struct AudioSelectorSettings {
 }
 impl AudioSelectorSettings {
     /// Audio Hls Rendition Selection
-    pub fn audio_hls_rendition_selection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AudioHlsRenditionSelection> {
+    pub fn audio_hls_rendition_selection(&self) -> ::std::option::Option<&crate::types::AudioHlsRenditionSelection> {
         self.audio_hls_rendition_selection.as_ref()
     }
     /// Audio Language Selection
-    pub fn audio_language_selection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AudioLanguageSelection> {
+    pub fn audio_language_selection(&self) -> ::std::option::Option<&crate::types::AudioLanguageSelection> {
         self.audio_language_selection.as_ref()
     }
     /// Audio Pid Selection
@@ -36,9 +31,7 @@ impl AudioSelectorSettings {
         self.audio_pid_selection.as_ref()
     }
     /// Audio Track Selection
-    pub fn audio_track_selection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AudioTrackSelection> {
+    pub fn audio_track_selection(&self) -> ::std::option::Option<&crate::types::AudioTrackSelection> {
         self.audio_track_selection.as_ref()
     }
 }
@@ -51,38 +44,26 @@ impl AudioSelectorSettings {
 
 /// A builder for [`AudioSelectorSettings`](crate::types::AudioSelectorSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioSelectorSettingsBuilder {
-    pub(crate) audio_hls_rendition_selection:
-        ::std::option::Option<crate::types::AudioHlsRenditionSelection>,
-    pub(crate) audio_language_selection:
-        ::std::option::Option<crate::types::AudioLanguageSelection>,
+    pub(crate) audio_hls_rendition_selection: ::std::option::Option<crate::types::AudioHlsRenditionSelection>,
+    pub(crate) audio_language_selection: ::std::option::Option<crate::types::AudioLanguageSelection>,
     pub(crate) audio_pid_selection: ::std::option::Option<crate::types::AudioPidSelection>,
     pub(crate) audio_track_selection: ::std::option::Option<crate::types::AudioTrackSelection>,
 }
 impl AudioSelectorSettingsBuilder {
     /// Audio Hls Rendition Selection
-    pub fn audio_hls_rendition_selection(
-        mut self,
-        input: crate::types::AudioHlsRenditionSelection,
-    ) -> Self {
+    pub fn audio_hls_rendition_selection(mut self, input: crate::types::AudioHlsRenditionSelection) -> Self {
         self.audio_hls_rendition_selection = ::std::option::Option::Some(input);
         self
     }
     /// Audio Hls Rendition Selection
-    pub fn set_audio_hls_rendition_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioHlsRenditionSelection>,
-    ) -> Self {
+    pub fn set_audio_hls_rendition_selection(mut self, input: ::std::option::Option<crate::types::AudioHlsRenditionSelection>) -> Self {
         self.audio_hls_rendition_selection = input;
         self
     }
     /// Audio Hls Rendition Selection
-    pub fn get_audio_hls_rendition_selection(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioHlsRenditionSelection> {
+    pub fn get_audio_hls_rendition_selection(&self) -> &::std::option::Option<crate::types::AudioHlsRenditionSelection> {
         &self.audio_hls_rendition_selection
     }
     /// Audio Language Selection
@@ -91,17 +72,12 @@ impl AudioSelectorSettingsBuilder {
         self
     }
     /// Audio Language Selection
-    pub fn set_audio_language_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioLanguageSelection>,
-    ) -> Self {
+    pub fn set_audio_language_selection(mut self, input: ::std::option::Option<crate::types::AudioLanguageSelection>) -> Self {
         self.audio_language_selection = input;
         self
     }
     /// Audio Language Selection
-    pub fn get_audio_language_selection(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioLanguageSelection> {
+    pub fn get_audio_language_selection(&self) -> &::std::option::Option<crate::types::AudioLanguageSelection> {
         &self.audio_language_selection
     }
     /// Audio Pid Selection
@@ -110,17 +86,12 @@ impl AudioSelectorSettingsBuilder {
         self
     }
     /// Audio Pid Selection
-    pub fn set_audio_pid_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioPidSelection>,
-    ) -> Self {
+    pub fn set_audio_pid_selection(mut self, input: ::std::option::Option<crate::types::AudioPidSelection>) -> Self {
         self.audio_pid_selection = input;
         self
     }
     /// Audio Pid Selection
-    pub fn get_audio_pid_selection(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioPidSelection> {
+    pub fn get_audio_pid_selection(&self) -> &::std::option::Option<crate::types::AudioPidSelection> {
         &self.audio_pid_selection
     }
     /// Audio Track Selection
@@ -129,17 +100,12 @@ impl AudioSelectorSettingsBuilder {
         self
     }
     /// Audio Track Selection
-    pub fn set_audio_track_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioTrackSelection>,
-    ) -> Self {
+    pub fn set_audio_track_selection(mut self, input: ::std::option::Option<crate::types::AudioTrackSelection>) -> Self {
         self.audio_track_selection = input;
         self
     }
     /// Audio Track Selection
-    pub fn get_audio_track_selection(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioTrackSelection> {
+    pub fn get_audio_track_selection(&self) -> &::std::option::Option<crate::types::AudioTrackSelection> {
         &self.audio_track_selection
     }
     /// Consumes the builder and constructs a [`AudioSelectorSettings`](crate::types::AudioSelectorSettings).

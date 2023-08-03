@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateDatasetContentOutput {
 }
 impl CreateDatasetContentOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatasetContentOutput`](crate::operation::create_dataset_content::CreateDatasetContentOutput).
-    pub fn builder(
-    ) -> crate::operation::create_dataset_content::builders::CreateDatasetContentOutputBuilder {
+    pub fn builder() -> crate::operation::create_dataset_content::builders::CreateDatasetContentOutputBuilder {
         crate::operation::create_dataset_content::builders::CreateDatasetContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDatasetContentOutput`](crate::operation::create_dataset_content::CreateDatasetContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDatasetContentOutputBuilder {
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -9,44 +9,33 @@ pub fn de_describe_db_instances_http_error(
     crate::operation::describe_db_instances::DescribeDBInstancesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::describe_db_instances::DescribeDBInstancesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_db_instances::DescribeDBInstancesError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::describe_db_instances::DescribeDBInstancesError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::describe_db_instances::DescribeDBInstancesError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DBInstanceNotFound" => crate::operation::describe_db_instances::DescribeDBInstancesError::DbInstanceNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::describe_db_instances::DescribeDBInstancesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::describe_db_instances::DescribeDBInstancesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::describe_db_instances::DescribeDBInstancesError::generic(generic)
+        _ => crate::operation::describe_db_instances::DescribeDBInstancesError::generic(generic),
     })
 }
 
@@ -62,14 +51,9 @@ pub fn de_describe_db_instances_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_db_instances::builders::DescribeDbInstancesOutputBuilder::default();
-        output = crate::protocol_serde::shape_describe_db_instances::de_describe_db_instances(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::describe_db_instances::DescribeDBInstancesError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_describe_db_instances::de_describe_db_instances(_response_body, output)
+            .map_err(crate::operation::describe_db_instances::DescribeDBInstancesError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -78,10 +62,7 @@ pub fn de_describe_db_instances_http_response_with_props(
 pub fn de_describe_db_instances(
     inp: &[u8],
     mut builder: crate::operation::describe_db_instances::builders::DescribeDbInstancesOutputBuilder,
-) -> Result<
-    crate::operation::describe_db_instances::builders::DescribeDbInstancesOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::describe_db_instances::builders::DescribeDbInstancesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -131,9 +112,7 @@ pub fn de_describe_db_instances(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected DescribeDBInstancesResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected DescribeDBInstancesResult tag"));
     };
     Ok(builder)
 }

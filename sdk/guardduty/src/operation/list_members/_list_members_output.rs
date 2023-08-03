@@ -35,9 +35,7 @@ impl ListMembersOutput {
 
 /// A builder for [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMembersOutputBuilder {
     pub(crate) members: ::std::option::Option<::std::vec::Vec<crate::types::Member>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListMembersOutputBuilder {
         self
     }
     /// <p>A list of members.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Member>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Member>>) -> Self {
         self.members = input;
         self
     }

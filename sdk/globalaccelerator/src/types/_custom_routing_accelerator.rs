@@ -87,9 +87,7 @@ impl CustomRoutingAccelerator {
 
 /// A builder for [`CustomRoutingAccelerator`](crate::types::CustomRoutingAccelerator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomRoutingAcceleratorBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -103,18 +101,12 @@ pub struct CustomRoutingAcceleratorBuilder {
 }
 impl CustomRoutingAcceleratorBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator.</p>
-    pub fn accelerator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator.</p>
-    pub fn set_accelerator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accelerator_arn = input;
         self
     }
@@ -142,10 +134,7 @@ impl CustomRoutingAcceleratorBuilder {
         self
     }
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -182,10 +171,7 @@ impl CustomRoutingAcceleratorBuilder {
         self
     }
     /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
-    pub fn set_ip_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpSet>>,
-    ) -> Self {
+    pub fn set_ip_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpSet>>) -> Self {
         self.ip_sets = input;
         self
     }
@@ -222,17 +208,12 @@ impl CustomRoutingAcceleratorBuilder {
         self
     }
     /// <p>Describes the deployment status of the accelerator.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomRoutingAcceleratorStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CustomRoutingAcceleratorStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>Describes the deployment status of the accelerator.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomRoutingAcceleratorStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CustomRoutingAcceleratorStatus> {
         &self.status
     }
     /// <p>The date and time that the accelerator was created.</p>
@@ -241,10 +222,7 @@ impl CustomRoutingAcceleratorBuilder {
         self
     }
     /// <p>The date and time that the accelerator was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -258,10 +236,7 @@ impl CustomRoutingAcceleratorBuilder {
         self
     }
     /// <p>The date and time that the accelerator was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ConfirmationState {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for ConfirmationState {
             "Confirmed" => ConfirmationState::Confirmed,
             "Denied" => ConfirmationState::Denied,
             "None" => ConfirmationState::None,
-            other => {
-                ConfirmationState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ConfirmationState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

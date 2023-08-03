@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_label::builders::DeleteLabelFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_label::builders::DeleteLabelFluentBuilder::set_name): <p>The name of the label to delete.</p>
     /// - On success, responds with [`DeleteLabelOutput`](crate::operation::delete_label::DeleteLabelOutput)
     /// - On failure, responds with [`SdkError<DeleteLabelError>`](crate::operation::delete_label::DeleteLabelError)
-    pub fn delete_label(
-        &self,
-    ) -> crate::operation::delete_label::builders::DeleteLabelFluentBuilder {
+    pub fn delete_label(&self) -> crate::operation::delete_label::builders::DeleteLabelFluentBuilder {
         crate::operation::delete_label::builders::DeleteLabelFluentBuilder::new(self.handle.clone())
     }
 }

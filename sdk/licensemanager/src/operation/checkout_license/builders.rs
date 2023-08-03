@@ -10,10 +10,7 @@ impl CheckoutLicenseInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::checkout_license::CheckoutLicenseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::checkout_license::CheckoutLicenseError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::checkout_license::CheckoutLicenseError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.checkout_license();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CheckoutLicenseFluentBuilder {
         }
     }
     /// Access the CheckoutLicense as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::checkout_license::builders::CheckoutLicenseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::checkout_license::builders::CheckoutLicenseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CheckoutLicenseFluentBuilder {
             crate::operation::checkout_license::CheckoutLicense,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::checkout_license::CheckoutLicenseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::checkout_license::CheckoutLicenseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CheckoutLicenseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CheckoutLicenseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::checkout_license::CheckoutLicenseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::checkout_license::CheckoutLicenseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::checkout_license::CheckoutLicenseError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CheckoutLicenseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::checkout_license::CheckoutLicenseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::checkout_license::CheckoutLicenseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::checkout_license::CheckoutLicenseError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl CheckoutLicenseFluentBuilder {
             crate::operation::checkout_license::CheckoutLicense,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::checkout_license::CheckoutLicenseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::checkout_license::CheckoutLicenseError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +128,7 @@ impl CheckoutLicenseFluentBuilder {
         self
     }
     /// <p>Checkout type.</p>
-    pub fn set_checkout_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CheckoutType>,
-    ) -> Self {
+    pub fn set_checkout_type(mut self, input: ::std::option::Option<crate::types::CheckoutType>) -> Self {
         self.inner = self.inner.set_checkout_type(input);
         self
     }
@@ -156,18 +137,12 @@ impl CheckoutLicenseFluentBuilder {
         self.inner.get_checkout_type()
     }
     /// <p>Key fingerprint identifying the license.</p>
-    pub fn key_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_fingerprint(input.into());
         self
     }
     /// <p>Key fingerprint identifying the license.</p>
-    pub fn set_key_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_fingerprint(input);
         self
     }
@@ -185,17 +160,12 @@ impl CheckoutLicenseFluentBuilder {
         self
     }
     /// <p>License entitlements.</p>
-    pub fn set_entitlements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
-    ) -> Self {
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>) -> Self {
         self.inner = self.inner.set_entitlements(input);
         self
     }
     /// <p>License entitlements.</p>
-    pub fn get_entitlements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
         self.inner.get_entitlements()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>

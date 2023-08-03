@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`skipped_entries(Option<Vec<BatchGetAssetPropertyValueSkippedEntry>>)`](crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueOutput::skipped_entries): <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<BatchGetAssetPropertyValueError>`](crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError)
-    pub fn batch_get_asset_property_value(&self) -> crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueFluentBuilder{
+    pub fn batch_get_asset_property_value(
+        &self,
+    ) -> crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueFluentBuilder {
         crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueFluentBuilder::new(self.handle.clone())
     }
 }

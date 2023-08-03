@@ -17,8 +17,7 @@ pub struct SqlInjectionMatchSet {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
     #[doc(hidden)]
-    pub sql_injection_match_tuples:
-        ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchTuple>>,
+    pub sql_injection_match_tuples: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchTuple>>,
 }
 impl SqlInjectionMatchSet {
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
@@ -31,9 +30,7 @@ impl SqlInjectionMatchSet {
         self.name.as_deref()
     }
     /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
-    pub fn sql_injection_match_tuples(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SqlInjectionMatchTuple]> {
+    pub fn sql_injection_match_tuples(&self) -> ::std::option::Option<&[crate::types::SqlInjectionMatchTuple]> {
         self.sql_injection_match_tuples.as_deref()
     }
 }
@@ -46,31 +43,22 @@ impl SqlInjectionMatchSet {
 
 /// A builder for [`SqlInjectionMatchSet`](crate::types::SqlInjectionMatchSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SqlInjectionMatchSetBuilder {
     pub(crate) sql_injection_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) sql_injection_match_tuples:
-        ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchTuple>>,
+    pub(crate) sql_injection_match_tuples: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchTuple>>,
 }
 impl SqlInjectionMatchSetBuilder {
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
     /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sql_injection_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_injection_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
     /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn set_sql_injection_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sql_injection_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sql_injection_match_set_id = input;
         self
     }
@@ -98,27 +86,19 @@ impl SqlInjectionMatchSetBuilder {
     /// To override the contents of this collection use [`set_sql_injection_match_tuples`](Self::set_sql_injection_match_tuples).
     ///
     /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
-    pub fn sql_injection_match_tuples(
-        mut self,
-        input: crate::types::SqlInjectionMatchTuple,
-    ) -> Self {
+    pub fn sql_injection_match_tuples(mut self, input: crate::types::SqlInjectionMatchTuple) -> Self {
         let mut v = self.sql_injection_match_tuples.unwrap_or_default();
         v.push(input);
         self.sql_injection_match_tuples = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
-    pub fn set_sql_injection_match_tuples(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchTuple>>,
-    ) -> Self {
+    pub fn set_sql_injection_match_tuples(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchTuple>>) -> Self {
         self.sql_injection_match_tuples = input;
         self
     }
     /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
-    pub fn get_sql_injection_match_tuples(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchTuple>> {
+    pub fn get_sql_injection_match_tuples(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchTuple>> {
         &self.sql_injection_match_tuples
     }
     /// Consumes the builder and constructs a [`SqlInjectionMatchSet`](crate::types::SqlInjectionMatchSet).

@@ -22,16 +22,14 @@ impl UpdateClassificationScopeInput {
 }
 impl UpdateClassificationScopeInput {
     /// Creates a new builder-style object to manufacture [`UpdateClassificationScopeInput`](crate::operation::update_classification_scope::UpdateClassificationScopeInput).
-    pub fn builder() -> crate::operation::update_classification_scope::builders::UpdateClassificationScopeInputBuilder{
+    pub fn builder() -> crate::operation::update_classification_scope::builders::UpdateClassificationScopeInputBuilder {
         crate::operation::update_classification_scope::builders::UpdateClassificationScopeInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateClassificationScopeInput`](crate::operation::update_classification_scope::UpdateClassificationScopeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClassificationScopeInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) s3: ::std::option::Option<crate::types::S3ClassificationScopeUpdate>,
@@ -57,10 +55,7 @@ impl UpdateClassificationScopeInputBuilder {
         self
     }
     /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
-    pub fn set_s3(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ClassificationScopeUpdate>,
-    ) -> Self {
+    pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3ClassificationScopeUpdate>) -> Self {
         self.s3 = input;
         self
     }
@@ -75,11 +70,6 @@ impl UpdateClassificationScopeInputBuilder {
         crate::operation::update_classification_scope::UpdateClassificationScopeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_classification_scope::UpdateClassificationScopeInput {
-                id: self.id,
-                s3: self.s3,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_classification_scope::UpdateClassificationScopeInput { id: self.id, s3: self.s3 })
     }
 }

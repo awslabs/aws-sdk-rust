@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`IsVpcPeeredOutput`](crate::operation::is_vpc_peered::IsVpcPeeredOutput) with field(s):
     ///   - [`is_peered(Option<bool>)`](crate::operation::is_vpc_peered::IsVpcPeeredOutput::is_peered): <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise, <code>false</code>.</p>
     /// - On failure, responds with [`SdkError<IsVpcPeeredError>`](crate::operation::is_vpc_peered::IsVpcPeeredError)
-    pub fn is_vpc_peered(
-        &self,
-    ) -> crate::operation::is_vpc_peered::builders::IsVpcPeeredFluentBuilder {
-        crate::operation::is_vpc_peered::builders::IsVpcPeeredFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn is_vpc_peered(&self) -> crate::operation::is_vpc_peered::builders::IsVpcPeeredFluentBuilder {
+        crate::operation::is_vpc_peered::builders::IsVpcPeeredFluentBuilder::new(self.handle.clone())
     }
 }

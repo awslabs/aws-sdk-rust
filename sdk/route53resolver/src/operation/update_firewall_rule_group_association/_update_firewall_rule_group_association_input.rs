@@ -28,9 +28,7 @@ impl UpdateFirewallRuleGroupAssociationInput {
         self.priority
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
-    pub fn mutation_protection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MutationProtectionStatus> {
+    pub fn mutation_protection(&self) -> ::std::option::Option<&crate::types::MutationProtectionStatus> {
         self.mutation_protection.as_ref()
     }
     /// <p>The name of the rule group association.</p>
@@ -40,16 +38,14 @@ impl UpdateFirewallRuleGroupAssociationInput {
 }
 impl UpdateFirewallRuleGroupAssociationInput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleGroupAssociationInput`](crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationInput).
-    pub fn builder() -> crate::operation::update_firewall_rule_group_association::builders::UpdateFirewallRuleGroupAssociationInputBuilder{
+    pub fn builder() -> crate::operation::update_firewall_rule_group_association::builders::UpdateFirewallRuleGroupAssociationInputBuilder {
         crate::operation::update_firewall_rule_group_association::builders::UpdateFirewallRuleGroupAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFirewallRuleGroupAssociationInput`](crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFirewallRuleGroupAssociationInputBuilder {
     pub(crate) firewall_rule_group_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
@@ -58,25 +54,17 @@ pub struct UpdateFirewallRuleGroupAssociationInputBuilder {
 }
 impl UpdateFirewallRuleGroupAssociationInputBuilder {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn firewall_rule_group_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn set_firewall_rule_group_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_rule_group_association_id = input;
         self
     }
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn get_firewall_rule_group_association_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_firewall_rule_group_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_rule_group_association_id
     }
     /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
@@ -102,17 +90,12 @@ impl UpdateFirewallRuleGroupAssociationInputBuilder {
         self
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
-    pub fn set_mutation_protection(
-        mut self,
-        input: ::std::option::Option<crate::types::MutationProtectionStatus>,
-    ) -> Self {
+    pub fn set_mutation_protection(mut self, input: ::std::option::Option<crate::types::MutationProtectionStatus>) -> Self {
         self.mutation_protection = input;
         self
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
-    pub fn get_mutation_protection(
-        &self,
-    ) -> &::std::option::Option<crate::types::MutationProtectionStatus> {
+    pub fn get_mutation_protection(&self) -> &::std::option::Option<crate::types::MutationProtectionStatus> {
         &self.mutation_protection
     }
     /// <p>The name of the rule group association.</p>
@@ -130,18 +113,19 @@ impl UpdateFirewallRuleGroupAssociationInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateFirewallRuleGroupAssociationInput`](crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationInput {
-                firewall_rule_group_association_id: self.firewall_rule_group_association_id
-                ,
-                priority: self.priority
-                ,
-                mutation_protection: self.mutation_protection
-                ,
-                name: self.name
-                ,
-            }
+                firewall_rule_group_association_id: self.firewall_rule_group_association_id,
+                priority: self.priority,
+                mutation_protection: self.mutation_protection,
+                name: self.name,
+            },
         )
     }
 }

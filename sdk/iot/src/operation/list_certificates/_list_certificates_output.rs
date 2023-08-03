@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for ListCertificatesOutput {
 }
 impl ListCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
-    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesOutputBuilder {
         crate::operation::list_certificates::builders::ListCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCertificatesOutputBuilder {
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,12 @@ impl ListCertificatesOutputBuilder {
         self
     }
     /// <p>The descriptions of the certificates.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.certificates = input;
         self
     }
     /// <p>The descriptions of the certificates.</p>
-    pub fn get_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         &self.certificates
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>

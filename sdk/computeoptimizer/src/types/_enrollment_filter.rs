@@ -34,9 +34,7 @@ impl EnrollmentFilter {
 
 /// A builder for [`EnrollmentFilter`](crate::types::EnrollmentFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnrollmentFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::EnrollmentFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -50,10 +48,7 @@ impl EnrollmentFilterBuilder {
     }
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Status</code> to return accounts with a specific enrollment status (for example, <code>Active</code>).</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::EnrollmentFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::EnrollmentFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -76,10 +71,7 @@ impl EnrollmentFilterBuilder {
     }
     /// <p>The value of the filter.</p>
     /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>, and <code>Failed</code>.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

@@ -90,9 +90,7 @@ impl IdentityResolutionJob {
 
 /// A builder for [`IdentityResolutionJob`](crate::types::IdentityResolutionJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentityResolutionJobBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -156,10 +154,7 @@ impl IdentityResolutionJobBuilder {
     /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
     /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityResolutionJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::IdentityResolutionJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -182,10 +177,7 @@ impl IdentityResolutionJobBuilder {
         self
     }
     /// <p>The timestamp of when the job was started or will be started.</p>
-    pub fn set_job_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_job_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.job_start_time = input;
         self
     }
@@ -199,10 +191,7 @@ impl IdentityResolutionJobBuilder {
         self
     }
     /// <p>The timestamp of when the job was completed.</p>
-    pub fn set_job_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_job_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.job_end_time = input;
         self
     }
@@ -230,17 +219,12 @@ impl IdentityResolutionJobBuilder {
         self
     }
     /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
-    pub fn set_exporting_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportingLocation>,
-    ) -> Self {
+    pub fn set_exporting_location(mut self, input: ::std::option::Option<crate::types::ExportingLocation>) -> Self {
         self.exporting_location = input;
         self
     }
     /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
-    pub fn get_exporting_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportingLocation> {
+    pub fn get_exporting_location(&self) -> &::std::option::Option<crate::types::ExportingLocation> {
         &self.exporting_location
     }
     /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>

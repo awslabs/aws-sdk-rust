@@ -23,9 +23,7 @@ impl OsUpdateSettings {
 
 /// A builder for [`OsUpdateSettings`](crate::types::OsUpdateSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OsUpdateSettingsBuilder {
     pub(crate) os_version: ::std::option::Option<crate::types::OsVersion>,
 }
@@ -46,8 +44,6 @@ impl OsUpdateSettingsBuilder {
     }
     /// Consumes the builder and constructs a [`OsUpdateSettings`](crate::types::OsUpdateSettings).
     pub fn build(self) -> crate::types::OsUpdateSettings {
-        crate::types::OsUpdateSettings {
-            os_version: self.os_version,
-        }
+        crate::types::OsUpdateSettings { os_version: self.os_version }
     }
 }

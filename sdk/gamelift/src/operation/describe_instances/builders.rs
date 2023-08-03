@@ -10,10 +10,7 @@ impl DescribeInstancesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_instances::DescribeInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instances::DescribeInstancesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instances::DescribeInstancesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_instances();
         fluent_builder.inner = self;
@@ -50,9 +47,7 @@ impl DescribeInstancesFluentBuilder {
         }
     }
     /// Access the DescribeInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_instances::builders::DescribeInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_instances::builders::DescribeInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +59,7 @@ impl DescribeInstancesFluentBuilder {
             crate::operation::describe_instances::DescribeInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instances::DescribeInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instances::DescribeInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +69,7 @@ impl DescribeInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +78,7 @@ impl DescribeInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instances::DescribeInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instances::DescribeInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instances::DescribeInstancesError>,
     > {
         let op = self
             .inner
@@ -113,9 +101,7 @@ impl DescribeInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instances::DescribeInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instances::DescribeInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instances::DescribeInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -129,22 +115,15 @@ impl DescribeInstancesFluentBuilder {
             crate::operation::describe_instances::DescribeInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instances::DescribeInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instances::DescribeInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_instances::paginator::DescribeInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_instances::paginator::DescribeInstancesPaginator {
-        crate::operation::describe_instances::paginator::DescribeInstancesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_instances::paginator::DescribeInstancesPaginator {
+        crate::operation::describe_instances::paginator::DescribeInstancesPaginator::new(self.handle, self.inner)
     }
     /// <p>A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

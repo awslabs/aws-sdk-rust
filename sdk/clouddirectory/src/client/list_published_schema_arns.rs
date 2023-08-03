@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`schema_arns(Option<Vec<String>>)`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsOutput::schema_arns): <p>The ARNs of published schemas.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListPublishedSchemaArnsError>`](crate::operation::list_published_schema_arns::ListPublishedSchemaArnsError)
-    pub fn list_published_schema_arns(
-        &self,
-    ) -> crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsFluentBuilder
-    {
+    pub fn list_published_schema_arns(&self) -> crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsFluentBuilder {
         crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsFluentBuilder::new(self.handle.clone())
     }
 }

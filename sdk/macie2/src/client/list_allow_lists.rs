@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`allow_lists(Option<Vec<AllowListSummary>>)`](crate::operation::list_allow_lists::ListAllowListsOutput::allow_lists): <p>An array of objects, one for each allow list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_allow_lists::ListAllowListsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListAllowListsError>`](crate::operation::list_allow_lists::ListAllowListsError)
-    pub fn list_allow_lists(
-        &self,
-    ) -> crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder {
-        crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_allow_lists(&self) -> crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder {
+        crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::new(self.handle.clone())
     }
 }

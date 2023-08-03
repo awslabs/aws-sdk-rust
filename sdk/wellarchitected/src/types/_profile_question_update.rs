@@ -30,9 +30,7 @@ impl ProfileQuestionUpdate {
 
 /// A builder for [`ProfileQuestionUpdate`](crate::types::ProfileQuestionUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfileQuestionUpdateBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) selected_choice_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,27 +55,19 @@ impl ProfileQuestionUpdateBuilder {
     /// To override the contents of this collection use [`set_selected_choice_ids`](Self::set_selected_choice_ids).
     ///
     /// <p>The selected choices.</p>
-    pub fn selected_choice_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selected_choice_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.selected_choice_ids.unwrap_or_default();
         v.push(input.into());
         self.selected_choice_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The selected choices.</p>
-    pub fn set_selected_choice_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_selected_choice_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.selected_choice_ids = input;
         self
     }
     /// <p>The selected choices.</p>
-    pub fn get_selected_choice_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_choice_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.selected_choice_ids
     }
     /// Consumes the builder and constructs a [`ProfileQuestionUpdate`](crate::types::ProfileQuestionUpdate).

@@ -26,7 +26,7 @@ impl ConfirmCustomerAgreementInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConfirmCustomerAgreementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder,
+    inner: crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder,
 }
 impl ConfirmCustomerAgreementFluentBuilder {
     /// Creates a new `ConfirmCustomerAgreement`.
@@ -37,10 +37,7 @@ impl ConfirmCustomerAgreementFluentBuilder {
         }
     }
     /// Access the ConfirmCustomerAgreement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ConfirmCustomerAgreementFluentBuilder {
             crate::operation::confirm_customer_agreement::ConfirmCustomerAgreement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ConfirmCustomerAgreementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ConfirmCustomerAgreementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ConfirmCustomerAgreementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl ConfirmCustomerAgreementFluentBuilder {
             crate::operation::confirm_customer_agreement::ConfirmCustomerAgreement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The name of the customer agreement. </p>
-    pub fn agreement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agreement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agreement_name(input.into());
         self
     }
     /// <p> The name of the customer agreement. </p>
-    pub fn set_agreement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agreement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agreement_name(input);
         self
     }

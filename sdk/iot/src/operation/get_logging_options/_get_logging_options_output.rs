@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for GetLoggingOptionsOutput {
 }
 impl GetLoggingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`GetLoggingOptionsOutput`](crate::operation::get_logging_options::GetLoggingOptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_logging_options::builders::GetLoggingOptionsOutputBuilder {
+    pub fn builder() -> crate::operation::get_logging_options::builders::GetLoggingOptionsOutputBuilder {
         crate::operation::get_logging_options::builders::GetLoggingOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoggingOptionsOutput`](crate::operation::get_logging_options::GetLoggingOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoggingOptionsOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,

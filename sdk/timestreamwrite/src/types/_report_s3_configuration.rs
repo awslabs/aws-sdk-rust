@@ -44,9 +44,7 @@ impl ReportS3Configuration {
 
 /// A builder for [`ReportS3Configuration`](crate::types::ReportS3Configuration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportS3ConfigurationBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) object_key_prefix: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl ReportS3ConfigurationBuilder {
         &self.bucket_name
     }
     /// <p></p>
-    pub fn object_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_object_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_key_prefix = input;
         self
     }
@@ -94,17 +86,12 @@ impl ReportS3ConfigurationBuilder {
         self
     }
     /// <p></p>
-    pub fn set_encryption_option(
-        mut self,
-        input: ::std::option::Option<crate::types::S3EncryptionOption>,
-    ) -> Self {
+    pub fn set_encryption_option(mut self, input: ::std::option::Option<crate::types::S3EncryptionOption>) -> Self {
         self.encryption_option = input;
         self
     }
     /// <p></p>
-    pub fn get_encryption_option(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3EncryptionOption> {
+    pub fn get_encryption_option(&self) -> &::std::option::Option<crate::types::S3EncryptionOption> {
         &self.encryption_option
     }
     /// <p></p>

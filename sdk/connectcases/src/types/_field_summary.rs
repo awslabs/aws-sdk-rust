@@ -51,9 +51,7 @@ impl FieldSummary {
 
 /// A builder for [`FieldSummary`](crate::types::FieldSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldSummaryBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) field_arn: ::std::option::Option<::std::string::String>,
@@ -124,10 +122,7 @@ impl FieldSummaryBuilder {
         self
     }
     /// <p>The namespace of a field.</p>
-    pub fn set_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldNamespace>,
-    ) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<crate::types::FieldNamespace>) -> Self {
         self.namespace = input;
         self
     }

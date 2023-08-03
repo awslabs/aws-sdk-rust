@@ -5,8 +5,7 @@
 pub struct AssociateVpcCidrBlockOutput {
     /// <p>Information about the IPv6 CIDR block association.</p>
     #[doc(hidden)]
-    pub ipv6_cidr_block_association:
-        ::std::option::Option<crate::types::VpcIpv6CidrBlockAssociation>,
+    pub ipv6_cidr_block_association: ::std::option::Option<crate::types::VpcIpv6CidrBlockAssociation>,
     /// <p>Information about the IPv4 CIDR block association.</p>
     #[doc(hidden)]
     pub cidr_block_association: ::std::option::Option<crate::types::VpcCidrBlockAssociation>,
@@ -17,15 +16,11 @@ pub struct AssociateVpcCidrBlockOutput {
 }
 impl AssociateVpcCidrBlockOutput {
     /// <p>Information about the IPv6 CIDR block association.</p>
-    pub fn ipv6_cidr_block_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcIpv6CidrBlockAssociation> {
+    pub fn ipv6_cidr_block_association(&self) -> ::std::option::Option<&crate::types::VpcIpv6CidrBlockAssociation> {
         self.ipv6_cidr_block_association.as_ref()
     }
     /// <p>Information about the IPv4 CIDR block association.</p>
-    pub fn cidr_block_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcCidrBlockAssociation> {
+    pub fn cidr_block_association(&self) -> ::std::option::Option<&crate::types::VpcCidrBlockAssociation> {
         self.cidr_block_association.as_ref()
     }
     /// <p>The ID of the VPC.</p>
@@ -40,46 +35,33 @@ impl ::aws_http::request_id::RequestId for AssociateVpcCidrBlockOutput {
 }
 impl AssociateVpcCidrBlockOutput {
     /// Creates a new builder-style object to manufacture [`AssociateVpcCidrBlockOutput`](crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_vpc_cidr_block::builders::AssociateVpcCidrBlockOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_vpc_cidr_block::builders::AssociateVpcCidrBlockOutputBuilder {
         crate::operation::associate_vpc_cidr_block::builders::AssociateVpcCidrBlockOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateVpcCidrBlockOutput`](crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateVpcCidrBlockOutputBuilder {
-    pub(crate) ipv6_cidr_block_association:
-        ::std::option::Option<crate::types::VpcIpv6CidrBlockAssociation>,
+    pub(crate) ipv6_cidr_block_association: ::std::option::Option<crate::types::VpcIpv6CidrBlockAssociation>,
     pub(crate) cidr_block_association: ::std::option::Option<crate::types::VpcCidrBlockAssociation>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateVpcCidrBlockOutputBuilder {
     /// <p>Information about the IPv6 CIDR block association.</p>
-    pub fn ipv6_cidr_block_association(
-        mut self,
-        input: crate::types::VpcIpv6CidrBlockAssociation,
-    ) -> Self {
+    pub fn ipv6_cidr_block_association(mut self, input: crate::types::VpcIpv6CidrBlockAssociation) -> Self {
         self.ipv6_cidr_block_association = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the IPv6 CIDR block association.</p>
-    pub fn set_ipv6_cidr_block_association(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcIpv6CidrBlockAssociation>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_block_association(mut self, input: ::std::option::Option<crate::types::VpcIpv6CidrBlockAssociation>) -> Self {
         self.ipv6_cidr_block_association = input;
         self
     }
     /// <p>Information about the IPv6 CIDR block association.</p>
-    pub fn get_ipv6_cidr_block_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcIpv6CidrBlockAssociation> {
+    pub fn get_ipv6_cidr_block_association(&self) -> &::std::option::Option<crate::types::VpcIpv6CidrBlockAssociation> {
         &self.ipv6_cidr_block_association
     }
     /// <p>Information about the IPv4 CIDR block association.</p>
@@ -88,17 +70,12 @@ impl AssociateVpcCidrBlockOutputBuilder {
         self
     }
     /// <p>Information about the IPv4 CIDR block association.</p>
-    pub fn set_cidr_block_association(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcCidrBlockAssociation>,
-    ) -> Self {
+    pub fn set_cidr_block_association(mut self, input: ::std::option::Option<crate::types::VpcCidrBlockAssociation>) -> Self {
         self.cidr_block_association = input;
         self
     }
     /// <p>Information about the IPv4 CIDR block association.</p>
-    pub fn get_cidr_block_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcCidrBlockAssociation> {
+    pub fn get_cidr_block_association(&self) -> &::std::option::Option<crate::types::VpcCidrBlockAssociation> {
         &self.cidr_block_association
     }
     /// <p>The ID of the VPC.</p>

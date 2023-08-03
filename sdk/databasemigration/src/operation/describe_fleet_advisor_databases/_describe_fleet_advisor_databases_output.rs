@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeFleetAdvisorDatabasesOutput {
 }
 impl DescribeFleetAdvisorDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorDatabasesOutput`](crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput).
-    pub fn builder() -> crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesOutputBuilder {
         crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetAdvisorDatabasesOutput`](crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorDatabasesOutputBuilder {
     pub(crate) databases: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeFleetAdvisorDatabasesOutputBuilder {
         self
     }
     /// <p>Provides descriptions of the Fleet Advisor collector databases, including the database's collector, ID, and name.</p>
-    pub fn set_databases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseResponse>>,
-    ) -> Self {
+    pub fn set_databases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseResponse>>) -> Self {
         self.databases = input;
         self
     }
     /// <p>Provides descriptions of the Fleet Advisor collector databases, including the database's collector, ID, and name.</p>
-    pub fn get_databases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseResponse>> {
+    pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseResponse>> {
         &self.databases
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -93,10 +86,7 @@ impl DescribeFleetAdvisorDatabasesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFleetAdvisorDatabasesOutput`](crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput {
         crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput {
             databases: self.databases,
             next_token: self.next_token,

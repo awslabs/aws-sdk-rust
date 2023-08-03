@@ -23,9 +23,7 @@ impl InstanceMaintenanceOptionsRequest {
 
 /// A builder for [`InstanceMaintenanceOptionsRequest`](crate::types::InstanceMaintenanceOptionsRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceMaintenanceOptionsRequestBuilder {
     pub(crate) auto_recovery: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
 }
@@ -36,17 +34,12 @@ impl InstanceMaintenanceOptionsRequestBuilder {
         self
     }
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified automatic recovery</a>.</p>
-    pub fn set_auto_recovery(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
-    ) -> Self {
+    pub fn set_auto_recovery(mut self, input: ::std::option::Option<crate::types::InstanceAutoRecoveryState>) -> Self {
         self.auto_recovery = input;
         self
     }
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified automatic recovery</a>.</p>
-    pub fn get_auto_recovery(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
+    pub fn get_auto_recovery(&self) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
         &self.auto_recovery
     }
     /// Consumes the builder and constructs a [`InstanceMaintenanceOptionsRequest`](crate::types::InstanceMaintenanceOptionsRequest).

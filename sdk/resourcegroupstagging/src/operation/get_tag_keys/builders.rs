@@ -10,10 +10,7 @@ impl GetTagKeysInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_tag_keys::GetTagKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_tag_keys::GetTagKeysError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_tag_keys::GetTagKeysError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_tag_keys();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl GetTagKeysFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_tag_keys::GetTagKeys,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_tag_keys::GetTagKeys, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_tag_keys::GetTagKeysError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl GetTagKeysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl GetTagKeysFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_tag_keys::GetTagKeys,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_tag_keys::GetTagKeys, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_tag_keys::GetTagKeysError>,
     > {
         self.customize_middleware().await
@@ -120,18 +108,12 @@ impl GetTagKeysFluentBuilder {
         crate::operation::get_tag_keys::paginator::GetTagKeysPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
-    pub fn pagination_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pagination_token(input.into());
         self
     }
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
-    pub fn set_pagination_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pagination_token(input);
         self
     }

@@ -14,7 +14,9 @@ impl super::Client {
     /// - On success, responds with [`GetDashStreamingSessionUrlOutput`](crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput) with field(s):
     ///   - [`dash_streaming_session_url(Option<String>)`](crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput::dash_streaming_session_url): <p>The URL (containing the session token) that a media player can use to retrieve the MPEG-DASH manifest.</p>
     /// - On failure, responds with [`SdkError<GetDASHStreamingSessionURLError>`](crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError)
-    pub fn get_dash_streaming_session_url(&self) -> crate::operation::get_dash_streaming_session_url::builders::GetDASHStreamingSessionURLFluentBuilder{
+    pub fn get_dash_streaming_session_url(
+        &self,
+    ) -> crate::operation::get_dash_streaming_session_url::builders::GetDASHStreamingSessionURLFluentBuilder {
         crate::operation::get_dash_streaming_session_url::builders::GetDASHStreamingSessionURLFluentBuilder::new(self.handle.clone())
     }
 }

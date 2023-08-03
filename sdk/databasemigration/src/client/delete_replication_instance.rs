@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteReplicationInstanceOutput`](crate::operation::delete_replication_instance::DeleteReplicationInstanceOutput) with field(s):
     ///   - [`replication_instance(Option<ReplicationInstance>)`](crate::operation::delete_replication_instance::DeleteReplicationInstanceOutput::replication_instance): <p>The replication instance that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteReplicationInstanceError>`](crate::operation::delete_replication_instance::DeleteReplicationInstanceError)
-    pub fn delete_replication_instance(&self) -> crate::operation::delete_replication_instance::builders::DeleteReplicationInstanceFluentBuilder{
+    pub fn delete_replication_instance(&self) -> crate::operation::delete_replication_instance::builders::DeleteReplicationInstanceFluentBuilder {
         crate::operation::delete_replication_instance::builders::DeleteReplicationInstanceFluentBuilder::new(self.handle.clone())
     }
 }

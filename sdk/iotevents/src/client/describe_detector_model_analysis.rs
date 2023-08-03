@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeDetectorModelAnalysisOutput`](crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput) with field(s):
     ///   - [`status(Option<AnalysisStatus>)`](crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput::status): <p>The status of the analysis activity. The status can be one of the following values:</p>  <ul>   <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>   <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>   <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DescribeDetectorModelAnalysisError>`](crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError)
-    pub fn describe_detector_model_analysis(&self) -> crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisFluentBuilder{
+    pub fn describe_detector_model_analysis(
+        &self,
+    ) -> crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisFluentBuilder {
         crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

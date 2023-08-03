@@ -26,7 +26,7 @@ impl CreateInferenceSchedulerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInferenceSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerInputBuilder,
+    inner: crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerInputBuilder,
 }
 impl CreateInferenceSchedulerFluentBuilder {
     /// Creates a new `CreateInferenceScheduler`.
@@ -37,10 +37,7 @@ impl CreateInferenceSchedulerFluentBuilder {
         }
     }
     /// Access the CreateInferenceScheduler as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateInferenceSchedulerFluentBuilder {
             crate::operation::create_inference_scheduler::CreateInferenceScheduler,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_inference_scheduler::CreateInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_inference_scheduler::CreateInferenceSchedulerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateInferenceSchedulerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateInferenceSchedulerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_inference_scheduler::CreateInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_inference_scheduler::CreateInferenceSchedulerError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateInferenceSchedulerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_inference_scheduler::CreateInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_inference_scheduler::CreateInferenceSchedulerError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateInferenceSchedulerFluentBuilder {
             crate::operation::create_inference_scheduler::CreateInferenceScheduler,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_inference_scheduler::CreateInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_inference_scheduler::CreateInferenceSchedulerError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl CreateInferenceSchedulerFluentBuilder {
         self.inner.get_model_name()
     }
     /// <p>The name of the inference scheduler being created. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.inference_scheduler_name(input.into());
         self
     }
     /// <p>The name of the inference scheduler being created. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_inference_scheduler_name(input);
         self
     }
@@ -182,62 +162,41 @@ impl CreateInferenceSchedulerFluentBuilder {
     }
     /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
-    pub fn set_data_upload_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::DataUploadFrequency>,
-    ) -> Self {
+    pub fn set_data_upload_frequency(mut self, input: ::std::option::Option<crate::types::DataUploadFrequency>) -> Self {
         self.inner = self.inner.set_data_upload_frequency(input);
         self
     }
     /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
-    pub fn get_data_upload_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataUploadFrequency> {
+    pub fn get_data_upload_frequency(&self) -> &::std::option::Option<crate::types::DataUploadFrequency> {
         self.inner.get_data_upload_frequency()
     }
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    pub fn data_input_configuration(
-        mut self,
-        input: crate::types::InferenceInputConfiguration,
-    ) -> Self {
+    pub fn data_input_configuration(mut self, input: crate::types::InferenceInputConfiguration) -> Self {
         self.inner = self.inner.data_input_configuration(input);
         self
     }
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    pub fn set_data_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceInputConfiguration>,
-    ) -> Self {
+    pub fn set_data_input_configuration(mut self, input: ::std::option::Option<crate::types::InferenceInputConfiguration>) -> Self {
         self.inner = self.inner.set_data_input_configuration(input);
         self
     }
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    pub fn get_data_input_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceInputConfiguration> {
+    pub fn get_data_input_configuration(&self) -> &::std::option::Option<crate::types::InferenceInputConfiguration> {
         self.inner.get_data_input_configuration()
     }
     /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
-    pub fn data_output_configuration(
-        mut self,
-        input: crate::types::InferenceOutputConfiguration,
-    ) -> Self {
+    pub fn data_output_configuration(mut self, input: crate::types::InferenceOutputConfiguration) -> Self {
         self.inner = self.inner.data_output_configuration(input);
         self
     }
     /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
-    pub fn set_data_output_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceOutputConfiguration>,
-    ) -> Self {
+    pub fn set_data_output_configuration(mut self, input: ::std::option::Option<crate::types::InferenceOutputConfiguration>) -> Self {
         self.inner = self.inner.set_data_output_configuration(input);
         self
     }
     /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
-    pub fn get_data_output_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
+    pub fn get_data_output_configuration(&self) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
         self.inner.get_data_output_configuration()
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
@@ -255,18 +214,12 @@ impl CreateInferenceSchedulerFluentBuilder {
         self.inner.get_role_arn()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_side_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_side_kms_key_id(input.into());
         self
     }
     /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
-    pub fn set_server_side_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_side_kms_key_id(input);
         self
     }
@@ -298,10 +251,7 @@ impl CreateInferenceSchedulerFluentBuilder {
         self
     }
     /// <p>Any tags associated with the inference scheduler. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

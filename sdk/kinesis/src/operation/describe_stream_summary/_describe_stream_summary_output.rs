@@ -10,9 +10,7 @@ pub struct DescribeStreamSummaryOutput {
 }
 impl DescribeStreamSummaryOutput {
     /// <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
-    pub fn stream_description_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamDescriptionSummary> {
+    pub fn stream_description_summary(&self) -> ::std::option::Option<&crate::types::StreamDescriptionSummary> {
         self.stream_description_summary.as_ref()
     }
 }
@@ -23,44 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeStreamSummaryOutput {
 }
 impl DescribeStreamSummaryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStreamSummaryOutput`](crate::operation::describe_stream_summary::DescribeStreamSummaryOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_stream_summary::builders::DescribeStreamSummaryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_stream_summary::builders::DescribeStreamSummaryOutputBuilder {
         crate::operation::describe_stream_summary::builders::DescribeStreamSummaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStreamSummaryOutput`](crate::operation::describe_stream_summary::DescribeStreamSummaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStreamSummaryOutputBuilder {
-    pub(crate) stream_description_summary:
-        ::std::option::Option<crate::types::StreamDescriptionSummary>,
+    pub(crate) stream_description_summary: ::std::option::Option<crate::types::StreamDescriptionSummary>,
     _request_id: Option<String>,
 }
 impl DescribeStreamSummaryOutputBuilder {
     /// <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
-    pub fn stream_description_summary(
-        mut self,
-        input: crate::types::StreamDescriptionSummary,
-    ) -> Self {
+    pub fn stream_description_summary(mut self, input: crate::types::StreamDescriptionSummary) -> Self {
         self.stream_description_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
-    pub fn set_stream_description_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamDescriptionSummary>,
-    ) -> Self {
+    pub fn set_stream_description_summary(mut self, input: ::std::option::Option<crate::types::StreamDescriptionSummary>) -> Self {
         self.stream_description_summary = input;
         self
     }
     /// <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
-    pub fn get_stream_description_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamDescriptionSummary> {
+    pub fn get_stream_description_summary(&self) -> &::std::option::Option<crate::types::StreamDescriptionSummary> {
         &self.stream_description_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

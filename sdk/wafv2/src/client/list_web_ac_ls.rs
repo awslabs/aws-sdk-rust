@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_web_ac_ls::ListWebAcLsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     ///   - [`web_ac_ls(Option<Vec<WebAclSummary>>)`](crate::operation::list_web_ac_ls::ListWebAcLsOutput::web_ac_ls): <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     /// - On failure, responds with [`SdkError<ListWebACLsError>`](crate::operation::list_web_ac_ls::ListWebACLsError)
-    pub fn list_web_ac_ls(
-        &self,
-    ) -> crate::operation::list_web_ac_ls::builders::ListWebACLsFluentBuilder {
-        crate::operation::list_web_ac_ls::builders::ListWebACLsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_web_ac_ls(&self) -> crate::operation::list_web_ac_ls::builders::ListWebACLsFluentBuilder {
+        crate::operation::list_web_ac_ls::builders::ListWebACLsFluentBuilder::new(self.handle.clone())
     }
 }

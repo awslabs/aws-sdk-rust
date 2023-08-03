@@ -16,18 +16,14 @@ impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
 }
 impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsBuilder {
         crate::types::builders::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -47,9 +43,7 @@ impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
+    pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
         crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
             enabled: self.enabled.unwrap_or_default(),
         }

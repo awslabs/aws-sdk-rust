@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`object_type(ObjectType)`](crate::operation::update_facet::builders::UpdateFacetFluentBuilder::object_type) / [`set_object_type(Option<ObjectType>)`](crate::operation::update_facet::builders::UpdateFacetFluentBuilder::set_object_type): <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
     /// - On success, responds with [`UpdateFacetOutput`](crate::operation::update_facet::UpdateFacetOutput)
     /// - On failure, responds with [`SdkError<UpdateFacetError>`](crate::operation::update_facet::UpdateFacetError)
-    pub fn update_facet(
-        &self,
-    ) -> crate::operation::update_facet::builders::UpdateFacetFluentBuilder {
+    pub fn update_facet(&self) -> crate::operation::update_facet::builders::UpdateFacetFluentBuilder {
         crate::operation::update_facet::builders::UpdateFacetFluentBuilder::new(self.handle.clone())
     }
 }

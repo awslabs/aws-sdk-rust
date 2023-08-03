@@ -15,34 +15,25 @@ impl StopCompilationJobInput {
 }
 impl StopCompilationJobInput {
     /// Creates a new builder-style object to manufacture [`StopCompilationJobInput`](crate::operation::stop_compilation_job::StopCompilationJobInput).
-    pub fn builder(
-    ) -> crate::operation::stop_compilation_job::builders::StopCompilationJobInputBuilder {
+    pub fn builder() -> crate::operation::stop_compilation_job::builders::StopCompilationJobInputBuilder {
         crate::operation::stop_compilation_job::builders::StopCompilationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopCompilationJobInput`](crate::operation::stop_compilation_job::StopCompilationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopCompilationJobInputBuilder {
     pub(crate) compilation_job_name: ::std::option::Option<::std::string::String>,
 }
 impl StopCompilationJobInputBuilder {
     /// <p>The name of the model compilation job to stop.</p>
-    pub fn compilation_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compilation_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compilation_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model compilation job to stop.</p>
-    pub fn set_compilation_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compilation_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compilation_job_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl StopCompilationJobInputBuilder {
     /// Consumes the builder and constructs a [`StopCompilationJobInput`](crate::operation::stop_compilation_job::StopCompilationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_compilation_job::StopCompilationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_compilation_job::StopCompilationJobInput {
-                compilation_job_name: self.compilation_job_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_compilation_job::StopCompilationJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_compilation_job::StopCompilationJobInput {
+            compilation_job_name: self.compilation_job_name,
+        })
     }
 }

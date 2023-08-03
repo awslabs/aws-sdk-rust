@@ -6,10 +6,7 @@ pub fn ser_filled_map_configuration(
     if let Some(var_1) = &input.field_wells {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FieldWells").start_object();
-        crate::protocol_serde::shape_filled_map_field_wells::ser_filled_map_field_wells(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_filled_map_field_wells::ser_filled_map_field_wells(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.sort_configuration {
@@ -33,10 +30,7 @@ pub fn ser_filled_map_configuration(
     if let Some(var_9) = &input.window_options {
         #[allow(unused_mut)]
         let mut object_10 = object.key("WindowOptions").start_object();
-        crate::protocol_serde::shape_geospatial_window_options::ser_geospatial_window_options(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_geospatial_window_options::ser_geospatial_window_options(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.map_style_options {
@@ -50,17 +44,9 @@ pub fn ser_filled_map_configuration(
 
 pub(crate) fn de_filled_map_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::FilledMapConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::FilledMapConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -70,58 +56,46 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "FieldWells" => {
-                                builder = builder.set_field_wells(
-                                    crate::protocol_serde::shape_filled_map_field_wells::de_filled_map_field_wells(tokens)?
-                                );
-                            }
-                            "SortConfiguration" => {
-                                builder = builder.set_sort_configuration(
-                                    crate::protocol_serde::shape_filled_map_sort_configuration::de_filled_map_sort_configuration(tokens)?
-                                );
-                            }
-                            "Legend" => {
-                                builder = builder.set_legend(
-                                    crate::protocol_serde::shape_legend_options::de_legend_options(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "Tooltip" => {
-                                builder = builder.set_tooltip(
-                                    crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens)?
-                                );
-                            }
-                            "WindowOptions" => {
-                                builder = builder.set_window_options(
-                                    crate::protocol_serde::shape_geospatial_window_options::de_geospatial_window_options(tokens)?
-                                );
-                            }
-                            "MapStyleOptions" => {
-                                builder = builder.set_map_style_options(
-                                    crate::protocol_serde::shape_geospatial_map_style_options::de_geospatial_map_style_options(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "FieldWells" => {
+                            builder =
+                                builder.set_field_wells(crate::protocol_serde::shape_filled_map_field_wells::de_filled_map_field_wells(tokens)?);
                         }
-                    }
+                        "SortConfiguration" => {
+                            builder = builder.set_sort_configuration(
+                                crate::protocol_serde::shape_filled_map_sort_configuration::de_filled_map_sort_configuration(tokens)?,
+                            );
+                        }
+                        "Legend" => {
+                            builder = builder.set_legend(crate::protocol_serde::shape_legend_options::de_legend_options(tokens)?);
+                        }
+                        "Tooltip" => {
+                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens)?);
+                        }
+                        "WindowOptions" => {
+                            builder = builder.set_window_options(
+                                crate::protocol_serde::shape_geospatial_window_options::de_geospatial_window_options(tokens)?,
+                            );
+                        }
+                        "MapStyleOptions" => {
+                            builder = builder.set_map_style_options(
+                                crate::protocol_serde::shape_geospatial_map_style_options::de_geospatial_map_style_options(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

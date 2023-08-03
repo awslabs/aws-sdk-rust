@@ -5,15 +5,12 @@
 pub struct CreateTransitGatewayConnectPeerOutput {
     /// <p>Information about the Connect peer.</p>
     #[doc(hidden)]
-    pub transit_gateway_connect_peer:
-        ::std::option::Option<crate::types::TransitGatewayConnectPeer>,
+    pub transit_gateway_connect_peer: ::std::option::Option<crate::types::TransitGatewayConnectPeer>,
     _request_id: Option<String>,
 }
 impl CreateTransitGatewayConnectPeerOutput {
     /// <p>Information about the Connect peer.</p>
-    pub fn transit_gateway_connect_peer(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayConnectPeer> {
+    pub fn transit_gateway_connect_peer(&self) -> ::std::option::Option<&crate::types::TransitGatewayConnectPeer> {
         self.transit_gateway_connect_peer.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for CreateTransitGatewayConnectPeerOutput
 }
 impl CreateTransitGatewayConnectPeerOutput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayConnectPeerOutput`](crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerOutput).
-    pub fn builder() -> crate::operation::create_transit_gateway_connect_peer::builders::CreateTransitGatewayConnectPeerOutputBuilder{
+    pub fn builder() -> crate::operation::create_transit_gateway_connect_peer::builders::CreateTransitGatewayConnectPeerOutputBuilder {
         crate::operation::create_transit_gateway_connect_peer::builders::CreateTransitGatewayConnectPeerOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTransitGatewayConnectPeerOutput`](crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayConnectPeerOutputBuilder {
-    pub(crate) transit_gateway_connect_peer:
-        ::std::option::Option<crate::types::TransitGatewayConnectPeer>,
+    pub(crate) transit_gateway_connect_peer: ::std::option::Option<crate::types::TransitGatewayConnectPeer>,
     _request_id: Option<String>,
 }
 impl CreateTransitGatewayConnectPeerOutputBuilder {
     /// <p>Information about the Connect peer.</p>
-    pub fn transit_gateway_connect_peer(
-        mut self,
-        input: crate::types::TransitGatewayConnectPeer,
-    ) -> Self {
+    pub fn transit_gateway_connect_peer(mut self, input: crate::types::TransitGatewayConnectPeer) -> Self {
         self.transit_gateway_connect_peer = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the Connect peer.</p>
-    pub fn set_transit_gateway_connect_peer(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayConnectPeer>,
-    ) -> Self {
+    pub fn set_transit_gateway_connect_peer(mut self, input: ::std::option::Option<crate::types::TransitGatewayConnectPeer>) -> Self {
         self.transit_gateway_connect_peer = input;
         self
     }
     /// <p>Information about the Connect peer.</p>
-    pub fn get_transit_gateway_connect_peer(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayConnectPeer> {
+    pub fn get_transit_gateway_connect_peer(&self) -> &::std::option::Option<crate::types::TransitGatewayConnectPeer> {
         &self.transit_gateway_connect_peer
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,13 +58,9 @@ impl CreateTransitGatewayConnectPeerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayConnectPeerOutput`](crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerOutput
-    {
+    pub fn build(self) -> crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerOutput {
         crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerOutput {
-            transit_gateway_connect_peer: self.transit_gateway_connect_peer
-            ,
+            transit_gateway_connect_peer: self.transit_gateway_connect_peer,
             _request_id: self._request_id,
         }
     }

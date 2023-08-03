@@ -17,10 +17,7 @@ impl super::Client {
     /// - On success, responds with [`CreateGameServerGroupOutput`](crate::operation::create_game_server_group::CreateGameServerGroupOutput) with field(s):
     ///   - [`game_server_group(Option<GameServerGroup>)`](crate::operation::create_game_server_group::CreateGameServerGroupOutput::game_server_group): <p>The newly created game server group object, including the new ARN value for the Amazon GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
     /// - On failure, responds with [`SdkError<CreateGameServerGroupError>`](crate::operation::create_game_server_group::CreateGameServerGroupError)
-    pub fn create_game_server_group(
-        &self,
-    ) -> crate::operation::create_game_server_group::builders::CreateGameServerGroupFluentBuilder
-    {
+    pub fn create_game_server_group(&self) -> crate::operation::create_game_server_group::builders::CreateGameServerGroupFluentBuilder {
         crate::operation::create_game_server_group::builders::CreateGameServerGroupFluentBuilder::new(self.handle.clone())
     }
 }

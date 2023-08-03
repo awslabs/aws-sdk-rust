@@ -10,10 +10,7 @@ impl CreateResolverRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_resolver_rule::CreateResolverRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resolver_rule::CreateResolverRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resolver_rule::CreateResolverRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_resolver_rule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateResolverRuleFluentBuilder {
         }
     }
     /// Access the CreateResolverRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_resolver_rule::builders::CreateResolverRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_resolver_rule::builders::CreateResolverRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateResolverRuleFluentBuilder {
             crate::operation::create_resolver_rule::CreateResolverRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resolver_rule::CreateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resolver_rule::CreateResolverRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateResolverRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateResolverRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resolver_rule::CreateResolverRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resolver_rule::CreateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resolver_rule::CreateResolverRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateResolverRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resolver_rule::CreateResolverRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resolver_rule::CreateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resolver_rule::CreateResolverRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateResolverRuleFluentBuilder {
             crate::operation::create_resolver_rule::CreateResolverRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resolver_rule::CreateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resolver_rule::CreateResolverRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
@@ -168,10 +146,7 @@ impl CreateResolverRuleFluentBuilder {
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
-    pub fn set_rule_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleTypeOption>,
-    ) -> Self {
+    pub fn set_rule_type(mut self, input: ::std::option::Option<crate::types::RuleTypeOption>) -> Self {
         self.inner = self.inner.set_rule_type(input);
         self
     }
@@ -208,33 +183,22 @@ impl CreateResolverRuleFluentBuilder {
     }
     /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP addresses with a space.</p>
     /// <p> <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
-    pub fn set_target_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,
-    ) -> Self {
+    pub fn set_target_ips(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>) -> Self {
         self.inner = self.inner.set_target_ips(input);
         self
     }
     /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP addresses with a space.</p>
     /// <p> <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
-    pub fn get_target_ips(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>> {
+    pub fn get_target_ips(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>> {
         self.inner.get_target_ips()
     }
     /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
-    pub fn resolver_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
-    pub fn set_resolver_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_endpoint_id(input);
         self
     }
@@ -252,10 +216,7 @@ impl CreateResolverRuleFluentBuilder {
         self
     }
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

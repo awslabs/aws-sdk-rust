@@ -37,10 +37,7 @@ impl GetIpamResourceCidrsFluentBuilder {
         }
     }
     /// Access the GetIpamResourceCidrs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetIpamResourceCidrsFluentBuilder {
             crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetIpamResourceCidrsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetIpamResourceCidrsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetIpamResourceCidrsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl GetIpamResourceCidrsFluentBuilder {
             crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator {
-        crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator {
+        crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator::new(self.handle, self.inner)
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -158,10 +139,7 @@ impl GetIpamResourceCidrsFluentBuilder {
         self
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -198,18 +176,12 @@ impl GetIpamResourceCidrsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The ID of the scope that the resource is in.</p>
-    pub fn ipam_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_scope_id(input.into());
         self
     }
     /// <p>The ID of the scope that the resource is in.</p>
-    pub fn set_ipam_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ipam_scope_id(input);
         self
     }
@@ -251,10 +223,7 @@ impl GetIpamResourceCidrsFluentBuilder {
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::IpamResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -268,10 +237,7 @@ impl GetIpamResourceCidrsFluentBuilder {
         self
     }
     /// <p>The resource tag.</p>
-    pub fn set_resource_tag(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestIpamResourceTag>,
-    ) -> Self {
+    pub fn set_resource_tag(mut self, input: ::std::option::Option<crate::types::RequestIpamResourceTag>) -> Self {
         self.inner = self.inner.set_resource_tag(input);
         self
     }
@@ -280,18 +246,12 @@ impl GetIpamResourceCidrsFluentBuilder {
         self.inner.get_resource_tag()
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
-    pub fn resource_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_owner(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
-    pub fn set_resource_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_owner(input);
         self
     }

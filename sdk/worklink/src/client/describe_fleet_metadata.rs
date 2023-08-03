@@ -14,15 +14,8 @@ impl super::Client {
     ///   - [`fleet_status(Option<FleetStatus>)`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput::fleet_status): <p>The current state of the fleet.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput::tags): <p>The tags attached to the resource. A tag is a key-value pair.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetMetadataError>`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_fleet_metadata(
-        &self,
-    ) -> crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataFluentBuilder
-    {
-        crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn describe_fleet_metadata(&self) -> crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataFluentBuilder {
+        crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataFluentBuilder::new(self.handle.clone())
     }
 }

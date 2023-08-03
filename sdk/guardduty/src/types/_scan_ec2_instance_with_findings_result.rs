@@ -23,9 +23,7 @@ impl ScanEc2InstanceWithFindingsResult {
 
 /// A builder for [`ScanEc2InstanceWithFindingsResult`](crate::types::ScanEc2InstanceWithFindingsResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScanEc2InstanceWithFindingsResultBuilder {
     pub(crate) ebs_volumes: ::std::option::Option<crate::types::EbsVolumesResult>,
 }
@@ -36,10 +34,7 @@ impl ScanEc2InstanceWithFindingsResultBuilder {
         self
     }
     /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
-    pub fn set_ebs_volumes(
-        mut self,
-        input: ::std::option::Option<crate::types::EbsVolumesResult>,
-    ) -> Self {
+    pub fn set_ebs_volumes(mut self, input: ::std::option::Option<crate::types::EbsVolumesResult>) -> Self {
         self.ebs_volumes = input;
         self
     }

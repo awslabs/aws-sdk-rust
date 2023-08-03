@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`scheduled_audits(Option<Vec<ScheduledAuditMetadata>>)`](crate::operation::list_scheduled_audits::ListScheduledAuditsOutput::scheduled_audits): <p>The list of scheduled audits.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_scheduled_audits::ListScheduledAuditsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListScheduledAuditsError>`](crate::operation::list_scheduled_audits::ListScheduledAuditsError)
-    pub fn list_scheduled_audits(
-        &self,
-    ) -> crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder {
-        crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_scheduled_audits(&self) -> crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder {
+        crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::new(self.handle.clone())
     }
 }

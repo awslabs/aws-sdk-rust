@@ -15,18 +15,14 @@ impl DistributeDatasetEntriesInput {
 }
 impl DistributeDatasetEntriesInput {
     /// Creates a new builder-style object to manufacture [`DistributeDatasetEntriesInput`](crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput).
-    pub fn builder(
-    ) -> crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesInputBuilder
-    {
+    pub fn builder() -> crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesInputBuilder {
         crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesInputBuilder::default()
     }
 }
 
 /// A builder for [`DistributeDatasetEntriesInput`](crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DistributeDatasetEntriesInputBuilder {
     pub(crate) datasets: ::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>>,
 }
@@ -43,17 +39,12 @@ impl DistributeDatasetEntriesInputBuilder {
         self
     }
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
-    pub fn set_datasets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>>,
-    ) -> Self {
+    pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>>) -> Self {
         self.datasets = input;
         self
     }
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
-    pub fn get_datasets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>> {
+    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>> {
         &self.datasets
     }
     /// Consumes the builder and constructs a [`DistributeDatasetEntriesInput`](crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput).
@@ -63,10 +54,6 @@ impl DistributeDatasetEntriesInputBuilder {
         crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput {
-                datasets: self.datasets,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput { datasets: self.datasets })
     }
 }

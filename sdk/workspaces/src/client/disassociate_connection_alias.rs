@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`alias_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasFluentBuilder::alias_id) / [`set_alias_id(Option<String>)`](crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasFluentBuilder::set_alias_id): <p>The identifier of the connection alias to disassociate.</p>
     /// - On success, responds with [`DisassociateConnectionAliasOutput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasOutput)
     /// - On failure, responds with [`SdkError<DisassociateConnectionAliasError>`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasError)
-    pub fn disassociate_connection_alias(&self) -> crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasFluentBuilder{
+    pub fn disassociate_connection_alias(
+        &self,
+    ) -> crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasFluentBuilder {
         crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasFluentBuilder::new(self.handle.clone())
     }
 }

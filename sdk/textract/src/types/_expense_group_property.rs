@@ -30,9 +30,7 @@ impl ExpenseGroupProperty {
 
 /// A builder for [`ExpenseGroupProperty`](crate::types::ExpenseGroupProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExpenseGroupPropertyBuilder {
     pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl ExpenseGroupPropertyBuilder {
         self
     }
     /// <p>Informs you on whether the expense group is a name or an address.</p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.types = input;
         self
     }

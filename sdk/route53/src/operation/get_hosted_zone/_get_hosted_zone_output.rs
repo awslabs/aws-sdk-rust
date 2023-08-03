@@ -43,9 +43,7 @@ impl GetHostedZoneOutput {
 
 /// A builder for [`GetHostedZoneOutput`](crate::operation::get_hosted_zone::GetHostedZoneOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHostedZoneOutputBuilder {
     pub(crate) hosted_zone: ::std::option::Option<crate::types::HostedZone>,
     pub(crate) delegation_set: ::std::option::Option<crate::types::DelegationSet>,
@@ -59,10 +57,7 @@ impl GetHostedZoneOutputBuilder {
         self
     }
     /// <p>A complex type that contains general information about the specified hosted zone.</p>
-    pub fn set_hosted_zone(
-        mut self,
-        input: ::std::option::Option<crate::types::HostedZone>,
-    ) -> Self {
+    pub fn set_hosted_zone(mut self, input: ::std::option::Option<crate::types::HostedZone>) -> Self {
         self.hosted_zone = input;
         self
     }
@@ -76,10 +71,7 @@ impl GetHostedZoneOutputBuilder {
         self
     }
     /// <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
-    pub fn set_delegation_set(
-        mut self,
-        input: ::std::option::Option<crate::types::DelegationSet>,
-    ) -> Self {
+    pub fn set_delegation_set(mut self, input: ::std::option::Option<crate::types::DelegationSet>) -> Self {
         self.delegation_set = input;
         self
     }
@@ -99,10 +91,7 @@ impl GetHostedZoneOutputBuilder {
         self
     }
     /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
-    pub fn set_vp_cs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>,
-    ) -> Self {
+    pub fn set_vp_cs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>) -> Self {
         self.vp_cs = input;
         self
     }

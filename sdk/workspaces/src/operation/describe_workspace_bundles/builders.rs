@@ -27,7 +27,7 @@ impl DescribeWorkspaceBundlesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceBundlesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesInputBuilder,
+    inner: crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesInputBuilder,
 }
 impl DescribeWorkspaceBundlesFluentBuilder {
     /// Creates a new `DescribeWorkspaceBundles`.
@@ -38,10 +38,7 @@ impl DescribeWorkspaceBundlesFluentBuilder {
         }
     }
     /// Access the DescribeWorkspaceBundles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeWorkspaceBundlesFluentBuilder {
             crate::operation::describe_workspace_bundles::DescribeWorkspaceBundles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeWorkspaceBundlesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeWorkspaceBundlesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeWorkspaceBundlesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +106,14 @@ impl DescribeWorkspaceBundlesFluentBuilder {
             crate::operation::describe_workspace_bundles::DescribeWorkspaceBundles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_workspace_bundles::paginator::DescribeWorkspaceBundlesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_workspace_bundles::paginator::DescribeWorkspaceBundlesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_workspace_bundles::paginator::DescribeWorkspaceBundlesPaginator {
         crate::operation::describe_workspace_bundles::paginator::DescribeWorkspaceBundlesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `BundleIds`.
@@ -143,10 +126,7 @@ impl DescribeWorkspaceBundlesFluentBuilder {
         self
     }
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
-    pub fn set_bundle_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bundle_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_bundle_ids(input);
         self
     }

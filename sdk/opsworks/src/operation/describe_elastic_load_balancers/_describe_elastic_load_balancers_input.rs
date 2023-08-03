@@ -22,16 +22,14 @@ impl DescribeElasticLoadBalancersInput {
 }
 impl DescribeElasticLoadBalancersInput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticLoadBalancersInput`](crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersInput).
-    pub fn builder() -> crate::operation::describe_elastic_load_balancers::builders::DescribeElasticLoadBalancersInputBuilder{
+    pub fn builder() -> crate::operation::describe_elastic_load_balancers::builders::DescribeElasticLoadBalancersInputBuilder {
         crate::operation::describe_elastic_load_balancers::builders::DescribeElasticLoadBalancersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeElasticLoadBalancersInput`](crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeElasticLoadBalancersInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,10 +61,7 @@ impl DescribeElasticLoadBalancersInputBuilder {
         self
     }
     /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    pub fn set_layer_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.layer_ids = input;
         self
     }
@@ -81,11 +76,9 @@ impl DescribeElasticLoadBalancersInputBuilder {
         crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersInput {
-                stack_id: self.stack_id,
-                layer_ids: self.layer_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersInput {
+            stack_id: self.stack_id,
+            layer_ids: self.layer_ids,
+        })
     }
 }

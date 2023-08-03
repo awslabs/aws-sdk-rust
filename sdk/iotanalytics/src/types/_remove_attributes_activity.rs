@@ -37,9 +37,7 @@ impl RemoveAttributesActivity {
 
 /// A builder for [`RemoveAttributesActivity`](crate::types::RemoveAttributesActivity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveAttributesActivityBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,10 +70,7 @@ impl RemoveAttributesActivityBuilder {
         self
     }
     /// <p>A list of 1-50 attributes to remove from the message.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }

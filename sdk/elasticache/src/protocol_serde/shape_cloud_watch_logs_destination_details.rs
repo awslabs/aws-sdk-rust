@@ -14,8 +14,7 @@ pub fn ser_cloud_watch_logs_destination_details(
 
 pub fn de_cloud_watch_logs_destination_details(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CloudWatchLogsDestinationDetails, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::CloudWatchLogsDestinationDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CloudWatchLogsDestinationDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {

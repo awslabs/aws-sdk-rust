@@ -10,10 +10,7 @@ impl CreateCodeReviewInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_code_review::CreateCodeReviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_code_review::CreateCodeReviewError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_code_review::CreateCodeReviewError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_code_review();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateCodeReviewFluentBuilder {
         }
     }
     /// Access the CreateCodeReview as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_code_review::builders::CreateCodeReviewInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_code_review::builders::CreateCodeReviewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateCodeReviewFluentBuilder {
             crate::operation::create_code_review::CreateCodeReview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_code_review::CreateCodeReviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_code_review::CreateCodeReviewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateCodeReviewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateCodeReviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_code_review::CreateCodeReviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_code_review::CreateCodeReviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_code_review::CreateCodeReviewError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateCodeReviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_code_review::CreateCodeReviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_code_review::CreateCodeReviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_code_review::CreateCodeReviewError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateCodeReviewFluentBuilder {
             crate::operation::create_code_review::CreateCodeReview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_code_review::CreateCodeReviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_code_review::CreateCodeReviewError>,
     > {
         self.customize_middleware().await
     }
@@ -138,19 +122,13 @@ impl CreateCodeReviewFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     /// <p>A code review can only be created on an associated repository. This is the ARN of the associated repository.</p>
-    pub fn repository_association_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_association_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     /// <p>A code review can only be created on an associated repository. This is the ARN of the associated repository.</p>
-    pub fn set_repository_association_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_association_arn(input);
         self
     }
@@ -174,18 +152,12 @@ impl CreateCodeReviewFluentBuilder {
         self.inner.get_type()
     }
     /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code reviews if there are failures and retries.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code reviews if there are failures and retries.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

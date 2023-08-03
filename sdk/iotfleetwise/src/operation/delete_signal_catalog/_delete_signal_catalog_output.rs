@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteSignalCatalogOutput {
 }
 impl DeleteSignalCatalogOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSignalCatalogOutput`](crate::operation::delete_signal_catalog::DeleteSignalCatalogOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogOutputBuilder {
-        crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogOutputBuilder {
+        crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSignalCatalogOutput`](crate::operation::delete_signal_catalog::DeleteSignalCatalogOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSignalCatalogOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ApplicationRestoreType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for ApplicationRestoreType {
             "RESTORE_FROM_CUSTOM_SNAPSHOT" => ApplicationRestoreType::RestoreFromCustomSnapshot,
             "RESTORE_FROM_LATEST_SNAPSHOT" => ApplicationRestoreType::RestoreFromLatestSnapshot,
             "SKIP_RESTORE_FROM_SNAPSHOT" => ApplicationRestoreType::SkipRestoreFromSnapshot,
-            other => ApplicationRestoreType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ApplicationRestoreType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

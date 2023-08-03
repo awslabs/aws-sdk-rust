@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`status(Option<PackageVersionStatus>)`](crate::operation::create_package_version::CreatePackageVersionOutput::status): <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     ///   - [`error_reason(Option<String>)`](crate::operation::create_package_version::CreatePackageVersionOutput::error_reason): <p>Error reason for a package version failure during creation or update.</p>
     /// - On failure, responds with [`SdkError<CreatePackageVersionError>`](crate::operation::create_package_version::CreatePackageVersionError)
-    pub fn create_package_version(
-        &self,
-    ) -> crate::operation::create_package_version::builders::CreatePackageVersionFluentBuilder {
-        crate::operation::create_package_version::builders::CreatePackageVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_package_version(&self) -> crate::operation::create_package_version::builders::CreatePackageVersionFluentBuilder {
+        crate::operation::create_package_version::builders::CreatePackageVersionFluentBuilder::new(self.handle.clone())
     }
 }

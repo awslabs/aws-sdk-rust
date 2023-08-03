@@ -95,23 +95,19 @@ impl ::aws_http::request_id::RequestId for GetDetectorVersionOutput {
 }
 impl GetDetectorVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetDetectorVersionOutput`](crate::operation::get_detector_version::GetDetectorVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_detector_version::builders::GetDetectorVersionOutputBuilder {
+    pub fn builder() -> crate::operation::get_detector_version::builders::GetDetectorVersionOutputBuilder {
         crate::operation::get_detector_version::builders::GetDetectorVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDetectorVersionOutput`](crate::operation::get_detector_version::GetDetectorVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDetectorVersionOutputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_version_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) external_model_endpoints:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) external_model_endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) model_versions: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     pub(crate) status: ::std::option::Option<crate::types::DetectorVersionStatus>,
@@ -137,18 +133,12 @@ impl GetDetectorVersionOutputBuilder {
         &self.detector_id
     }
     /// <p>The detector version ID.</p>
-    pub fn detector_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The detector version ID.</p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_version_id = input;
         self
     }
@@ -175,27 +165,19 @@ impl GetDetectorVersionOutputBuilder {
     /// To override the contents of this collection use [`set_external_model_endpoints`](Self::set_external_model_endpoints).
     ///
     /// <p>The Amazon SageMaker model endpoints included in the detector version.</p>
-    pub fn external_model_endpoints(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_model_endpoints(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.external_model_endpoints.unwrap_or_default();
         v.push(input.into());
         self.external_model_endpoints = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon SageMaker model endpoints included in the detector version.</p>
-    pub fn set_external_model_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_external_model_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.external_model_endpoints = input;
         self
     }
     /// <p>The Amazon SageMaker model endpoints included in the detector version.</p>
-    pub fn get_external_model_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_external_model_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.external_model_endpoints
     }
     /// Appends an item to `model_versions`.
@@ -210,17 +192,12 @@ impl GetDetectorVersionOutputBuilder {
         self
     }
     /// <p>The model versions included in the detector version. </p>
-    pub fn set_model_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>,
-    ) -> Self {
+    pub fn set_model_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>) -> Self {
         self.model_versions = input;
         self
     }
     /// <p>The model versions included in the detector version. </p>
-    pub fn get_model_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>> {
+    pub fn get_model_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>> {
         &self.model_versions
     }
     /// Appends an item to `rules`.
@@ -235,10 +212,7 @@ impl GetDetectorVersionOutputBuilder {
         self
     }
     /// <p>The rules included in the detector version.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }
@@ -252,10 +226,7 @@ impl GetDetectorVersionOutputBuilder {
         self
     }
     /// <p>The status of the detector version.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectorVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DetectorVersionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -264,18 +235,12 @@ impl GetDetectorVersionOutputBuilder {
         &self.status
     }
     /// <p>The timestamp when the detector version was last updated. </p>
-    pub fn last_updated_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp when the detector version was last updated. </p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -307,19 +272,14 @@ impl GetDetectorVersionOutputBuilder {
     /// <p>The execution mode of the rule in the dectector</p>
     /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
     /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
-    pub fn set_rule_execution_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleExecutionMode>,
-    ) -> Self {
+    pub fn set_rule_execution_mode(mut self, input: ::std::option::Option<crate::types::RuleExecutionMode>) -> Self {
         self.rule_execution_mode = input;
         self
     }
     /// <p>The execution mode of the rule in the dectector</p>
     /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
     /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
-    pub fn get_rule_execution_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::RuleExecutionMode> {
+    pub fn get_rule_execution_mode(&self) -> &::std::option::Option<crate::types::RuleExecutionMode> {
         &self.rule_execution_mode
     }
     /// <p>The detector version ARN.</p>

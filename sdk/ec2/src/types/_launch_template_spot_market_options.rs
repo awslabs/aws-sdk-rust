@@ -20,8 +20,7 @@ pub struct LaunchTemplateSpotMarketOptions {
     pub valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The behavior when a Spot Instance is interrupted.</p>
     #[doc(hidden)]
-    pub instance_interruption_behavior:
-        ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
+    pub instance_interruption_behavior: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl LaunchTemplateSpotMarketOptions {
     /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
@@ -43,9 +42,7 @@ impl LaunchTemplateSpotMarketOptions {
         self.valid_until.as_ref()
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
-    pub fn instance_interruption_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceInterruptionBehavior> {
+    pub fn instance_interruption_behavior(&self) -> ::std::option::Option<&crate::types::InstanceInterruptionBehavior> {
         self.instance_interruption_behavior.as_ref()
     }
 }
@@ -58,16 +55,13 @@ impl LaunchTemplateSpotMarketOptions {
 
 /// A builder for [`LaunchTemplateSpotMarketOptions`](crate::types::LaunchTemplateSpotMarketOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateSpotMarketOptionsBuilder {
     pub(crate) max_price: ::std::option::Option<::std::string::String>,
     pub(crate) spot_instance_type: ::std::option::Option<crate::types::SpotInstanceType>,
     pub(crate) block_duration_minutes: ::std::option::Option<i32>,
     pub(crate) valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) instance_interruption_behavior:
-        ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
+    pub(crate) instance_interruption_behavior: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl LaunchTemplateSpotMarketOptionsBuilder {
     /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
@@ -96,10 +90,7 @@ impl LaunchTemplateSpotMarketOptionsBuilder {
         self
     }
     /// <p>The Spot Instance request type.</p>
-    pub fn set_spot_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SpotInstanceType>,
-    ) -> Self {
+    pub fn set_spot_instance_type(mut self, input: ::std::option::Option<crate::types::SpotInstanceType>) -> Self {
         self.spot_instance_type = input;
         self
     }
@@ -127,10 +118,7 @@ impl LaunchTemplateSpotMarketOptionsBuilder {
         self
     }
     /// <p>The end date of the request. For a one-time request, the request remains active until all instances launch, the request is canceled, or this date is reached. If the request is persistent, it remains active until it is canceled or this date and time is reached.</p>
-    pub fn set_valid_until(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_until = input;
         self
     }
@@ -139,25 +127,17 @@ impl LaunchTemplateSpotMarketOptionsBuilder {
         &self.valid_until
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
-    pub fn instance_interruption_behavior(
-        mut self,
-        input: crate::types::InstanceInterruptionBehavior,
-    ) -> Self {
+    pub fn instance_interruption_behavior(mut self, input: crate::types::InstanceInterruptionBehavior) -> Self {
         self.instance_interruption_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
-    pub fn set_instance_interruption_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
-    ) -> Self {
+    pub fn set_instance_interruption_behavior(mut self, input: ::std::option::Option<crate::types::InstanceInterruptionBehavior>) -> Self {
         self.instance_interruption_behavior = input;
         self
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
-    pub fn get_instance_interruption_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceInterruptionBehavior> {
+    pub fn get_instance_interruption_behavior(&self) -> &::std::option::Option<crate::types::InstanceInterruptionBehavior> {
         &self.instance_interruption_behavior
     }
     /// Consumes the builder and constructs a [`LaunchTemplateSpotMarketOptions`](crate::types::LaunchTemplateSpotMarketOptions).

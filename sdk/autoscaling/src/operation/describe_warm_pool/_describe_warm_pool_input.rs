@@ -29,17 +29,14 @@ impl DescribeWarmPoolInput {
 }
 impl DescribeWarmPoolInput {
     /// Creates a new builder-style object to manufacture [`DescribeWarmPoolInput`](crate::operation::describe_warm_pool::DescribeWarmPoolInput).
-    pub fn builder() -> crate::operation::describe_warm_pool::builders::DescribeWarmPoolInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_warm_pool::builders::DescribeWarmPoolInputBuilder {
         crate::operation::describe_warm_pool::builders::DescribeWarmPoolInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWarmPoolInput`](crate::operation::describe_warm_pool::DescribeWarmPoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWarmPoolInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -47,18 +44,12 @@ pub struct DescribeWarmPoolInputBuilder {
 }
 impl DescribeWarmPoolInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -97,16 +88,11 @@ impl DescribeWarmPoolInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWarmPoolInput`](crate::operation::describe_warm_pool::DescribeWarmPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_warm_pool::DescribeWarmPoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_warm_pool::DescribeWarmPoolInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                max_records: self.max_records,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_warm_pool::DescribeWarmPoolInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_warm_pool::DescribeWarmPoolInput {
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            max_records: self.max_records,
+            next_token: self.next_token,
+        })
     }
 }

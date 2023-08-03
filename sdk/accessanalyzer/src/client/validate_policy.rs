@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`findings(Option<Vec<ValidatePolicyFinding>>)`](crate::operation::validate_policy::ValidatePolicyOutput::findings): <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::validate_policy::ValidatePolicyOutput::next_token): <p>A token used for pagination of results returned.</p>
     /// - On failure, responds with [`SdkError<ValidatePolicyError>`](crate::operation::validate_policy::ValidatePolicyError)
-    pub fn validate_policy(
-        &self,
-    ) -> crate::operation::validate_policy::builders::ValidatePolicyFluentBuilder {
-        crate::operation::validate_policy::builders::ValidatePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn validate_policy(&self) -> crate::operation::validate_policy::builders::ValidatePolicyFluentBuilder {
+        crate::operation::validate_policy::builders::ValidatePolicyFluentBuilder::new(self.handle.clone())
     }
 }

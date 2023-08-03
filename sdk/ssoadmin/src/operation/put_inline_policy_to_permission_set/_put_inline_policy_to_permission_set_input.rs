@@ -29,16 +29,14 @@ impl PutInlinePolicyToPermissionSetInput {
 }
 impl PutInlinePolicyToPermissionSetInput {
     /// Creates a new builder-style object to manufacture [`PutInlinePolicyToPermissionSetInput`](crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetInput).
-    pub fn builder() -> crate::operation::put_inline_policy_to_permission_set::builders::PutInlinePolicyToPermissionSetInputBuilder{
+    pub fn builder() -> crate::operation::put_inline_policy_to_permission_set::builders::PutInlinePolicyToPermissionSetInputBuilder {
         crate::operation::put_inline_policy_to_permission_set::builders::PutInlinePolicyToPermissionSetInputBuilder::default()
     }
 }
 
 /// A builder for [`PutInlinePolicyToPermissionSetInput`](crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutInlinePolicyToPermissionSetInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_set_arn: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl PutInlinePolicyToPermissionSetInputBuilder {
         &self.instance_arn
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_set_arn = input;
         self
     }
@@ -80,18 +72,12 @@ impl PutInlinePolicyToPermissionSetInputBuilder {
         &self.permission_set_arn
     }
     /// <p>The inline policy to attach to a <code>PermissionSet</code>.</p>
-    pub fn inline_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inline_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inline_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The inline policy to attach to a <code>PermissionSet</code>.</p>
-    pub fn set_inline_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inline_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inline_policy = input;
         self
     }
@@ -108,13 +94,10 @@ impl PutInlinePolicyToPermissionSetInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetInput {
-                instance_arn: self.instance_arn
-                ,
-                permission_set_arn: self.permission_set_arn
-                ,
-                inline_policy: self.inline_policy
-                ,
-            }
+                instance_arn: self.instance_arn,
+                permission_set_arn: self.permission_set_arn,
+                inline_policy: self.inline_policy,
+            },
         )
     }
 }

@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`firewall_name(Option<String>)`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput::firewall_name): <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput::logging_configuration): <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
     /// - On failure, responds with [`SdkError<UpdateLoggingConfigurationError>`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationError)
-    pub fn update_logging_configuration(&self) -> crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationFluentBuilder{
+    pub fn update_logging_configuration(&self) -> crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationFluentBuilder {
         crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

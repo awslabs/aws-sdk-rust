@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetBaiduChannelOutput`](crate::operation::get_baidu_channel::GetBaiduChannelOutput) with field(s):
     ///   - [`baidu_channel_response(Option<BaiduChannelResponse>)`](crate::operation::get_baidu_channel::GetBaiduChannelOutput::baidu_channel_response): <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetBaiduChannelError>`](crate::operation::get_baidu_channel::GetBaiduChannelError)
-    pub fn get_baidu_channel(
-        &self,
-    ) -> crate::operation::get_baidu_channel::builders::GetBaiduChannelFluentBuilder {
-        crate::operation::get_baidu_channel::builders::GetBaiduChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_baidu_channel(&self) -> crate::operation::get_baidu_channel::builders::GetBaiduChannelFluentBuilder {
+        crate::operation::get_baidu_channel::builders::GetBaiduChannelFluentBuilder::new(self.handle.clone())
     }
 }

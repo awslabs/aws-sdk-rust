@@ -4,98 +4,79 @@ pub fn de_describe_products_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::describe_products::DescribeProductsOutput,
-    crate::operation::describe_products::DescribeProductsError,
-> {
+) -> std::result::Result<crate::operation::describe_products::DescribeProductsOutput, crate::operation::describe_products::DescribeProductsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::describe_products::DescribeProductsError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::describe_products::DescribeProductsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => {
-            crate::operation::describe_products::DescribeProductsError::InternalException({
+        "InternalException" => crate::operation::describe_products::DescribeProductsError::InternalException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output).map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidAccessException" => {
-            crate::operation::describe_products::DescribeProductsError::InvalidAccessException({
+                let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidAccessException" => crate::operation::describe_products::DescribeProductsError::InvalidAccessException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidAccessExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_access_exception::de_invalid_access_exception_json_err(_response_body, output).map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidInputException" => {
-            crate::operation::describe_products::DescribeProductsError::InvalidInputException({
+                let mut output = crate::types::error::builders::InvalidAccessExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_access_exception::de_invalid_access_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidInputException" => crate::operation::describe_products::DescribeProductsError::InvalidInputException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidInputExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output).map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "LimitExceededException" => {
-            crate::operation::describe_products::DescribeProductsError::LimitExceededException({
+                let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::describe_products::DescribeProductsError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::describe_products::DescribeProductsError::generic(generic),
     })
 }
@@ -105,22 +86,13 @@ pub fn de_describe_products_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::describe_products::DescribeProductsOutput,
-    crate::operation::describe_products::DescribeProductsError,
-> {
+) -> std::result::Result<crate::operation::describe_products::DescribeProductsOutput, crate::operation::describe_products::DescribeProductsError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::describe_products::builders::DescribeProductsOutputBuilder::default();
-        output = crate::protocol_serde::shape_describe_products::de_describe_products(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::describe_products::builders::DescribeProductsOutputBuilder::default();
+        output = crate::protocol_serde::shape_describe_products::de_describe_products(_response_body, output)
+            .map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -128,53 +100,38 @@ pub fn de_describe_products_http_response_with_props(
 pub(crate) fn de_describe_products(
     value: &[u8],
     mut builder: crate::operation::describe_products::builders::DescribeProductsOutputBuilder,
-) -> Result<
-    crate::operation::describe_products::builders::DescribeProductsOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+) -> Result<crate::operation::describe_products::builders::DescribeProductsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "NextToken" => {
-                        builder = builder.set_next_token(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "NextToken" => {
+                    builder = builder.set_next_token(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "Products" => {
-                        builder = builder.set_products(
-                            crate::protocol_serde::shape_products_list::de_products_list(tokens)?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    );
                 }
-            }
+                "Products" => {
+                    builder = builder.set_products(crate::protocol_serde::shape_products_list::de_products_list(tokens)?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

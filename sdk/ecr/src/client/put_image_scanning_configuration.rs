@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`repository_name(Option<String>)`](crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationOutput::repository_name): <p>The repository name associated with the request.</p>
     ///   - [`image_scanning_configuration(Option<ImageScanningConfiguration>)`](crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationOutput::image_scanning_configuration): <p>The image scanning configuration setting for the repository.</p>
     /// - On failure, responds with [`SdkError<PutImageScanningConfigurationError>`](crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationError)
-    pub fn put_image_scanning_configuration(&self) -> crate::operation::put_image_scanning_configuration::builders::PutImageScanningConfigurationFluentBuilder{
+    pub fn put_image_scanning_configuration(
+        &self,
+    ) -> crate::operation::put_image_scanning_configuration::builders::PutImageScanningConfigurationFluentBuilder {
         crate::operation::put_image_scanning_configuration::builders::PutImageScanningConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl Document {
 
 /// A builder for [`Document`](crate::types::Document).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentBuilder {
     pub(crate) content_reference: ::std::option::Option<crate::types::ContentReference>,
     pub(crate) title: ::std::option::Option<crate::types::DocumentText>,
@@ -52,10 +50,7 @@ impl DocumentBuilder {
         self
     }
     /// <p>A reference to the content resource.</p>
-    pub fn set_content_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentReference>,
-    ) -> Self {
+    pub fn set_content_reference(mut self, input: ::std::option::Option<crate::types::ContentReference>) -> Self {
         self.content_reference = input;
         self
     }

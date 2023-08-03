@@ -21,15 +21,11 @@ impl AlgorithmValidationProfile {
         self.profile_name.as_deref()
     }
     /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
-    pub fn training_job_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrainingJobDefinition> {
+    pub fn training_job_definition(&self) -> ::std::option::Option<&crate::types::TrainingJobDefinition> {
         self.training_job_definition.as_ref()
     }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
-    pub fn transform_job_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransformJobDefinition> {
+    pub fn transform_job_definition(&self) -> ::std::option::Option<&crate::types::TransformJobDefinition> {
         self.transform_job_definition.as_ref()
     }
 }
@@ -42,14 +38,11 @@ impl AlgorithmValidationProfile {
 
 /// A builder for [`AlgorithmValidationProfile`](crate::types::AlgorithmValidationProfile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlgorithmValidationProfileBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) training_job_definition: ::std::option::Option<crate::types::TrainingJobDefinition>,
-    pub(crate) transform_job_definition:
-        ::std::option::Option<crate::types::TransformJobDefinition>,
+    pub(crate) transform_job_definition: ::std::option::Option<crate::types::TransformJobDefinition>,
 }
 impl AlgorithmValidationProfileBuilder {
     /// <p>The name of the profile for the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
@@ -72,17 +65,12 @@ impl AlgorithmValidationProfileBuilder {
         self
     }
     /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
-    pub fn set_training_job_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingJobDefinition>,
-    ) -> Self {
+    pub fn set_training_job_definition(mut self, input: ::std::option::Option<crate::types::TrainingJobDefinition>) -> Self {
         self.training_job_definition = input;
         self
     }
     /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
-    pub fn get_training_job_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrainingJobDefinition> {
+    pub fn get_training_job_definition(&self) -> &::std::option::Option<crate::types::TrainingJobDefinition> {
         &self.training_job_definition
     }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
@@ -91,17 +79,12 @@ impl AlgorithmValidationProfileBuilder {
         self
     }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
-    pub fn set_transform_job_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformJobDefinition>,
-    ) -> Self {
+    pub fn set_transform_job_definition(mut self, input: ::std::option::Option<crate::types::TransformJobDefinition>) -> Self {
         self.transform_job_definition = input;
         self
     }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
-    pub fn get_transform_job_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransformJobDefinition> {
+    pub fn get_transform_job_definition(&self) -> &::std::option::Option<crate::types::TransformJobDefinition> {
         &self.transform_job_definition
     }
     /// Consumes the builder and constructs a [`AlgorithmValidationProfile`](crate::types::AlgorithmValidationProfile).

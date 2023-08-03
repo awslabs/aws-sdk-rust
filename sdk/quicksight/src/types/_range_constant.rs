@@ -30,9 +30,7 @@ impl RangeConstant {
 
 /// A builder for [`RangeConstant`](crate::types::RangeConstant).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RangeConstantBuilder {
     pub(crate) minimum: ::std::option::Option<::std::string::String>,
     pub(crate) maximum: ::std::option::Option<::std::string::String>,

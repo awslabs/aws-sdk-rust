@@ -10,10 +10,7 @@ impl UpdateDataSourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_data_source::UpdateDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_source::UpdateDataSourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_source::UpdateDataSourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_data_source();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateDataSourceFluentBuilder {
         }
     }
     /// Access the UpdateDataSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateDataSourceFluentBuilder {
             crate::operation::update_data_source::UpdateDataSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_source::UpdateDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_source::UpdateDataSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateDataSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateDataSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_source::UpdateDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_source::UpdateDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_source::UpdateDataSourceError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateDataSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_source::UpdateDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_source::UpdateDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_source::UpdateDataSourceError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl UpdateDataSourceFluentBuilder {
             crate::operation::update_data_source::UpdateDataSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_source::UpdateDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_source::UpdateDataSourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
     /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
@@ -144,18 +122,12 @@ impl UpdateDataSourceFluentBuilder {
         self.inner.get_data_source_id()
     }
     /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
-    pub fn data_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_name(input.into());
         self
     }
     /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
-    pub fn set_data_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_name(input);
         self
     }

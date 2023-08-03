@@ -44,13 +44,7 @@
 /// <p>The operator to use in a condition. Depending on the type of condition, possible values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum JobComparator {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for JobComparator {
             "LTE" => JobComparator::Lte,
             "NE" => JobComparator::Ne,
             "STARTS_WITH" => JobComparator::StartsWith,
-            other => {
-                JobComparator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => JobComparator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -113,16 +105,7 @@ impl JobComparator {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONTAINS",
-            "EQ",
-            "GT",
-            "GTE",
-            "LT",
-            "LTE",
-            "NE",
-            "STARTS_WITH",
-        ]
+        &["CONTAINS", "EQ", "GT", "GTE", "LT", "LTE", "NE", "STARTS_WITH"]
     }
 }
 impl ::std::convert::AsRef<str> for JobComparator {

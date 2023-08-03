@@ -43,18 +43,14 @@ impl CreatePresignedDomainUrlInput {
 }
 impl CreatePresignedDomainUrlInput {
     /// Creates a new builder-style object to manufacture [`CreatePresignedDomainUrlInput`](crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlInput).
-    pub fn builder(
-    ) -> crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlInputBuilder {
         crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePresignedDomainUrlInput`](crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePresignedDomainUrlInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_profile_name: ::std::option::Option<::std::string::String>,
@@ -78,18 +74,12 @@ impl CreatePresignedDomainUrlInputBuilder {
         &self.domain_id
     }
     /// <p>The name of the UserProfile to sign-in as.</p>
-    pub fn user_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the UserProfile to sign-in as.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_profile_name = input;
         self
     }
@@ -103,10 +93,7 @@ impl CreatePresignedDomainUrlInputBuilder {
         self
     }
     /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
-    pub fn set_session_expiration_duration_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_session_expiration_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_expiration_duration_in_seconds = input;
         self
     }
@@ -149,14 +136,12 @@ impl CreatePresignedDomainUrlInputBuilder {
         crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlInput {
-                domain_id: self.domain_id,
-                user_profile_name: self.user_profile_name,
-                session_expiration_duration_in_seconds: self.session_expiration_duration_in_seconds,
-                expires_in_seconds: self.expires_in_seconds,
-                space_name: self.space_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlInput {
+            domain_id: self.domain_id,
+            user_profile_name: self.user_profile_name,
+            session_expiration_duration_in_seconds: self.session_expiration_duration_in_seconds,
+            expires_in_seconds: self.expires_in_seconds,
+            space_name: self.space_name,
+        })
     }
 }

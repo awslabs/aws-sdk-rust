@@ -29,16 +29,14 @@ impl EnableFastSnapshotRestoresInput {
 }
 impl EnableFastSnapshotRestoresInput {
     /// Creates a new builder-style object to manufacture [`EnableFastSnapshotRestoresInput`](crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresInput).
-    pub fn builder() -> crate::operation::enable_fast_snapshot_restores::builders::EnableFastSnapshotRestoresInputBuilder{
+    pub fn builder() -> crate::operation::enable_fast_snapshot_restores::builders::EnableFastSnapshotRestoresInputBuilder {
         crate::operation::enable_fast_snapshot_restores::builders::EnableFastSnapshotRestoresInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableFastSnapshotRestoresInput`](crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableFastSnapshotRestoresInputBuilder {
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) source_snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -50,27 +48,19 @@ impl EnableFastSnapshotRestoresInputBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     /// Appends an item to `source_snapshot_ids`.
@@ -78,27 +68,19 @@ impl EnableFastSnapshotRestoresInputBuilder {
     /// To override the contents of this collection use [`set_source_snapshot_ids`](Self::set_source_snapshot_ids).
     ///
     /// <p>The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>. You can specify a snapshot that was shared with you from another Amazon Web Services account.</p>
-    pub fn source_snapshot_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_snapshot_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_snapshot_ids.unwrap_or_default();
         v.push(input.into());
         self.source_snapshot_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>. You can specify a snapshot that was shared with you from another Amazon Web Services account.</p>
-    pub fn set_source_snapshot_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_snapshot_ids = input;
         self
     }
     /// <p>The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>. You can specify a snapshot that was shared with you from another Amazon Web Services account.</p>
-    pub fn get_source_snapshot_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_snapshot_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -122,12 +104,10 @@ impl EnableFastSnapshotRestoresInputBuilder {
         crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresInput {
-                availability_zones: self.availability_zones,
-                source_snapshot_ids: self.source_snapshot_ids,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresInput {
+            availability_zones: self.availability_zones,
+            source_snapshot_ids: self.source_snapshot_ids,
+            dry_run: self.dry_run,
+        })
     }
 }

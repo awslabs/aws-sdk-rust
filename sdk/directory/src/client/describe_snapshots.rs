@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`snapshots(Option<Vec<Snapshot>>)`](crate::operation::describe_snapshots::DescribeSnapshotsOutput::snapshots): <p>The list of <code>Snapshot</code> objects that were retrieved.</p>  <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_snapshots::DescribeSnapshotsOutput::next_token): <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of a subsequent call to <code>DescribeSnapshots</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeSnapshotsError>`](crate::operation::describe_snapshots::DescribeSnapshotsError)
-    pub fn describe_snapshots(
-        &self,
-    ) -> crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder {
-        crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_snapshots(&self) -> crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder {
+        crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

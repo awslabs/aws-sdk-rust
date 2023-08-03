@@ -10,10 +10,7 @@ impl DescribeStandardsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_standards::DescribeStandardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_standards::DescribeStandardsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_standards::DescribeStandardsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_standards();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeStandardsFluentBuilder {
         }
     }
     /// Access the DescribeStandards as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_standards::builders::DescribeStandardsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_standards::builders::DescribeStandardsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeStandardsFluentBuilder {
             crate::operation::describe_standards::DescribeStandards,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_standards::DescribeStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_standards::DescribeStandardsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeStandardsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeStandardsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_standards::DescribeStandardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_standards::DescribeStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_standards::DescribeStandardsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeStandardsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_standards::DescribeStandardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_standards::DescribeStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_standards::DescribeStandardsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl DescribeStandardsFluentBuilder {
             crate::operation::describe_standards::DescribeStandards,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_standards::DescribeStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_standards::DescribeStandardsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_standards::paginator::DescribeStandardsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_standards::paginator::DescribeStandardsPaginator {
-        crate::operation::describe_standards::paginator::DescribeStandardsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_standards::paginator::DescribeStandardsPaginator {
+        crate::operation::describe_standards::paginator::DescribeStandardsPaginator::new(self.handle, self.inner)
     }
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>

@@ -120,9 +120,7 @@ impl CertificateDescription {
 
 /// A builder for [`CertificateDescription`](crate::types::CertificateDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateDescriptionBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
@@ -141,18 +139,12 @@ pub struct CertificateDescriptionBuilder {
 }
 impl CertificateDescriptionBuilder {
     /// <p>The ARN of the certificate.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the certificate.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -161,18 +153,12 @@ impl CertificateDescriptionBuilder {
         &self.certificate_arn
     }
     /// <p>The ID of the certificate.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the certificate.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -181,18 +167,12 @@ impl CertificateDescriptionBuilder {
         &self.certificate_id
     }
     /// <p>The certificate ID of the CA certificate used to sign this certificate.</p>
-    pub fn ca_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ca_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ca_certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate ID of the CA certificate used to sign this certificate.</p>
-    pub fn set_ca_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ca_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ca_certificate_id = input;
         self
     }
@@ -206,10 +186,7 @@ impl CertificateDescriptionBuilder {
         self
     }
     /// <p>The status of the certificate.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateStatus>) -> Self {
         self.status = input;
         self
     }
@@ -218,18 +195,12 @@ impl CertificateDescriptionBuilder {
         &self.status
     }
     /// <p>The certificate data, in PEM format.</p>
-    pub fn certificate_pem(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_pem(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_pem = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate data, in PEM format.</p>
-    pub fn set_certificate_pem(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_pem(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_pem = input;
         self
     }
@@ -252,18 +223,12 @@ impl CertificateDescriptionBuilder {
         &self.owned_by
     }
     /// <p>The ID of the Amazon Web Services account of the previous owner of the certificate.</p>
-    pub fn previous_owned_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn previous_owned_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.previous_owned_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account of the previous owner of the certificate.</p>
-    pub fn set_previous_owned_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_previous_owned_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.previous_owned_by = input;
         self
     }
@@ -277,10 +242,7 @@ impl CertificateDescriptionBuilder {
         self
     }
     /// <p>The date and time the certificate was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -294,10 +256,7 @@ impl CertificateDescriptionBuilder {
         self
     }
     /// <p>The date and time the certificate was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -325,10 +284,7 @@ impl CertificateDescriptionBuilder {
         self
     }
     /// <p>The transfer data.</p>
-    pub fn set_transfer_data(
-        mut self,
-        input: ::std::option::Option<crate::types::TransferData>,
-    ) -> Self {
+    pub fn set_transfer_data(mut self, input: ::std::option::Option<crate::types::TransferData>) -> Self {
         self.transfer_data = input;
         self
     }
@@ -337,18 +293,12 @@ impl CertificateDescriptionBuilder {
         &self.transfer_data
     }
     /// <p>The generation ID of the certificate.</p>
-    pub fn generation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The generation ID of the certificate.</p>
-    pub fn set_generation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generation_id = input;
         self
     }
@@ -362,10 +312,7 @@ impl CertificateDescriptionBuilder {
         self
     }
     /// <p>When the certificate is valid.</p>
-    pub fn set_validity(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateValidity>,
-    ) -> Self {
+    pub fn set_validity(mut self, input: ::std::option::Option<crate::types::CertificateValidity>) -> Self {
         self.validity = input;
         self
     }
@@ -385,10 +332,7 @@ impl CertificateDescriptionBuilder {
     /// <p> <code>DEFAULT</code>: A certificate in <code>DEFAULT</code> mode is either generated by Amazon Web Services IoT Core or registered with an issuer certificate authority (CA) in <code>DEFAULT</code> mode. Devices with certificates in <code>DEFAULT</code> mode aren't required to send the Server Name Indication (SNI) extension when connecting to Amazon Web Services IoT Core. However, to use features such as custom domains and VPC endpoints, we recommend that you use the SNI extension when connecting to Amazon Web Services IoT Core.</p>
     /// <p> <code>SNI_ONLY</code>: A certificate in <code>SNI_ONLY</code> mode is registered without an issuer CA. Devices with certificates in <code>SNI_ONLY</code> mode must send the SNI extension when connecting to Amazon Web Services IoT Core. </p>
     /// <p>For more information about the value for SNI extension, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html">Transport security in IoT</a>.</p>
-    pub fn set_certificate_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateMode>,
-    ) -> Self {
+    pub fn set_certificate_mode(mut self, input: ::std::option::Option<crate::types::CertificateMode>) -> Self {
         self.certificate_mode = input;
         self
     }

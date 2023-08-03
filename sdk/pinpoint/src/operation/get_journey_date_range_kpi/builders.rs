@@ -26,8 +26,7 @@ impl GetJourneyDateRangeKpiInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetJourneyDateRangeKpiFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_journey_date_range_kpi::builders::GetJourneyDateRangeKpiInputBuilder,
+    inner: crate::operation::get_journey_date_range_kpi::builders::GetJourneyDateRangeKpiInputBuilder,
 }
 impl GetJourneyDateRangeKpiFluentBuilder {
     /// Creates a new `GetJourneyDateRangeKpi`.
@@ -38,10 +37,7 @@ impl GetJourneyDateRangeKpiFluentBuilder {
         }
     }
     /// Access the GetJourneyDateRangeKpi as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_journey_date_range_kpi::builders::GetJourneyDateRangeKpiInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_journey_date_range_kpi::builders::GetJourneyDateRangeKpiInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetJourneyDateRangeKpiFluentBuilder {
             crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpi,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetJourneyDateRangeKpiFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetJourneyDateRangeKpiFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetJourneyDateRangeKpiFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl GetJourneyDateRangeKpiFluentBuilder {
             crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpi,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -150,10 +129,7 @@ impl GetJourneyDateRangeKpiFluentBuilder {
         self
     }
     /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -223,10 +199,7 @@ impl GetJourneyDateRangeKpiFluentBuilder {
         self
     }
     /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }

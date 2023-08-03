@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteProtocolsListOutput {
 }
 impl DeleteProtocolsListOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProtocolsListOutput`](crate::operation::delete_protocols_list::DeleteProtocolsListOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_protocols_list::builders::DeleteProtocolsListOutputBuilder {
-        crate::operation::delete_protocols_list::builders::DeleteProtocolsListOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_protocols_list::builders::DeleteProtocolsListOutputBuilder {
+        crate::operation::delete_protocols_list::builders::DeleteProtocolsListOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProtocolsListOutput`](crate::operation::delete_protocols_list::DeleteProtocolsListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProtocolsListOutputBuilder {
     _request_id: Option<String>,
 }

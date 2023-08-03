@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetFindingStatisticsOutput {
 }
 impl GetFindingStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingStatisticsOutput`](crate::operation::get_finding_statistics::GetFindingStatisticsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_finding_statistics::builders::GetFindingStatisticsOutputBuilder {
+    pub fn builder() -> crate::operation::get_finding_statistics::builders::GetFindingStatisticsOutputBuilder {
         crate::operation::get_finding_statistics::builders::GetFindingStatisticsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFindingStatisticsOutput`](crate::operation::get_finding_statistics::GetFindingStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingStatisticsOutputBuilder {
     pub(crate) counts_by_group: ::std::option::Option<::std::vec::Vec<crate::types::GroupCount>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl GetFindingStatisticsOutputBuilder {
         self
     }
     /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
-    pub fn set_counts_by_group(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupCount>>,
-    ) -> Self {
+    pub fn set_counts_by_group(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupCount>>) -> Self {
         self.counts_by_group = input;
         self
     }
     /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
-    pub fn get_counts_by_group(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupCount>> {
+    pub fn get_counts_by_group(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupCount>> {
         &self.counts_by_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

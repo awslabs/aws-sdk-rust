@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`shared_document_version(impl ::std::convert::Into<String>)`](crate::operation::modify_document_permission::builders::ModifyDocumentPermissionFluentBuilder::shared_document_version) / [`set_shared_document_version(Option<String>)`](crate::operation::modify_document_permission::builders::ModifyDocumentPermissionFluentBuilder::set_shared_document_version): <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
     /// - On success, responds with [`ModifyDocumentPermissionOutput`](crate::operation::modify_document_permission::ModifyDocumentPermissionOutput)
     /// - On failure, responds with [`SdkError<ModifyDocumentPermissionError>`](crate::operation::modify_document_permission::ModifyDocumentPermissionError)
-    pub fn modify_document_permission(
-        &self,
-    ) -> crate::operation::modify_document_permission::builders::ModifyDocumentPermissionFluentBuilder
-    {
+    pub fn modify_document_permission(&self) -> crate::operation::modify_document_permission::builders::ModifyDocumentPermissionFluentBuilder {
         crate::operation::modify_document_permission::builders::ModifyDocumentPermissionFluentBuilder::new(self.handle.clone())
     }
 }

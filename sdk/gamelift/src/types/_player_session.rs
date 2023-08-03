@@ -144,9 +144,7 @@ impl PlayerSession {
 
 /// A builder for [`PlayerSession`](crate::types::PlayerSession).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlayerSessionBuilder {
     pub(crate) player_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
@@ -163,18 +161,12 @@ pub struct PlayerSessionBuilder {
 }
 impl PlayerSessionBuilder {
     /// <p>A unique identifier for a player session.</p>
-    pub fn player_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn player_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.player_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a player session.</p>
-    pub fn set_player_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_player_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.player_session_id = input;
         self
     }
@@ -197,18 +189,12 @@ impl PlayerSessionBuilder {
         &self.player_id
     }
     /// <p>A unique identifier for the game session that the player session is connected to.</p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game session that the player session is connected to.</p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
@@ -250,10 +236,7 @@ impl PlayerSessionBuilder {
         self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -267,10 +250,7 @@ impl PlayerSessionBuilder {
         self
     }
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn set_termination_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_termination_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.termination_time = input;
         self
     }
@@ -298,10 +278,7 @@ impl PlayerSessionBuilder {
     /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
     /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PlayerSessionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PlayerSessionStatus>) -> Self {
         self.status = input;
         self
     }

@@ -5,14 +5,15 @@ pub(crate) fn de_storage_lens_configuration_payload(
     ::std::option::Option<crate::types::StorageLensConfiguration>,
     crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_get_storage_lens_configuration_output::de_storage_lens_configuration(body).map_err(crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_get_storage_lens_configuration_output::de_storage_lens_configuration(body)
+                .map_err(crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError::unhandled)
+        })
+        .transpose()
 }
 
-pub fn de_storage_lens_configuration(
-    inp: &[u8],
-) -> Result<crate::types::StorageLensConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_storage_lens_configuration(inp: &[u8]) -> Result<crate::types::StorageLensConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -23,7 +24,5 @@ pub fn de_storage_lens_configuration(
             start_el
         )));
     }
-    crate::protocol_serde::shape_storage_lens_configuration::de_storage_lens_configuration(
-        &mut decoder,
-    )
+    crate::protocol_serde::shape_storage_lens_configuration::de_storage_lens_configuration(&mut decoder)
 }

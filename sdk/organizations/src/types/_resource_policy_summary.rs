@@ -30,9 +30,7 @@ impl ResourcePolicySummary {
 
 /// A builder for [`ResourcePolicySummary`](crate::types::ResourcePolicySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourcePolicySummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -68,9 +66,6 @@ impl ResourcePolicySummaryBuilder {
     }
     /// Consumes the builder and constructs a [`ResourcePolicySummary`](crate::types::ResourcePolicySummary).
     pub fn build(self) -> crate::types::ResourcePolicySummary {
-        crate::types::ResourcePolicySummary {
-            id: self.id,
-            arn: self.arn,
-        }
+        crate::types::ResourcePolicySummary { id: self.id, arn: self.arn }
     }
 }

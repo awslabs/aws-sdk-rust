@@ -104,9 +104,7 @@ impl JobSummary {
 
 /// A builder for [`JobSummary`](crate::types::JobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobSummaryBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -193,18 +191,12 @@ impl JobSummaryBuilder {
         &self.status
     }
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -246,10 +238,7 @@ impl JobSummaryBuilder {
         self
     }
     /// <p>An object that represents the details of the container that's associated with the job.</p>
-    pub fn set_container(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerSummary>,
-    ) -> Self {
+    pub fn set_container(mut self, input: ::std::option::Option<crate::types::ContainerSummary>) -> Self {
         self.container = input;
         self
     }
@@ -263,17 +252,12 @@ impl JobSummaryBuilder {
         self
     }
     /// <p>The array properties of the job, if it's an array job.</p>
-    pub fn set_array_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ArrayPropertiesSummary>,
-    ) -> Self {
+    pub fn set_array_properties(mut self, input: ::std::option::Option<crate::types::ArrayPropertiesSummary>) -> Self {
         self.array_properties = input;
         self
     }
     /// <p>The array properties of the job, if it's an array job.</p>
-    pub fn get_array_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ArrayPropertiesSummary> {
+    pub fn get_array_properties(&self) -> &::std::option::Option<crate::types::ArrayPropertiesSummary> {
         &self.array_properties
     }
     /// <p>The node properties for a single node in a job summary list.</p> <note>
@@ -286,34 +270,23 @@ impl JobSummaryBuilder {
     /// <p>The node properties for a single node in a job summary list.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
-    pub fn set_node_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::NodePropertiesSummary>,
-    ) -> Self {
+    pub fn set_node_properties(mut self, input: ::std::option::Option<crate::types::NodePropertiesSummary>) -> Self {
         self.node_properties = input;
         self
     }
     /// <p>The node properties for a single node in a job summary list.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
-    pub fn get_node_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::NodePropertiesSummary> {
+    pub fn get_node_properties(&self) -> &::std::option::Option<crate::types::NodePropertiesSummary> {
         &self.node_properties
     }
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
-    pub fn job_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
-    pub fn set_job_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_definition = input;
         self
     }

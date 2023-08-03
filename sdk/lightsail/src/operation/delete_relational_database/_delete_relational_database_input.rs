@@ -47,38 +47,27 @@ impl DeleteRelationalDatabaseInput {
 }
 impl DeleteRelationalDatabaseInput {
     /// Creates a new builder-style object to manufacture [`DeleteRelationalDatabaseInput`](crate::operation::delete_relational_database::DeleteRelationalDatabaseInput).
-    pub fn builder(
-    ) -> crate::operation::delete_relational_database::builders::DeleteRelationalDatabaseInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_relational_database::builders::DeleteRelationalDatabaseInputBuilder {
         crate::operation::delete_relational_database::builders::DeleteRelationalDatabaseInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRelationalDatabaseInput`](crate::operation::delete_relational_database::DeleteRelationalDatabaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRelationalDatabaseInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) skip_final_snapshot: ::std::option::Option<bool>,
-    pub(crate) final_relational_database_snapshot_name:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) final_relational_database_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRelationalDatabaseInputBuilder {
     /// <p>The name of the database that you are deleting.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database that you are deleting.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
         self
     }
@@ -114,10 +103,7 @@ impl DeleteRelationalDatabaseInputBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn final_relational_database_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn final_relational_database_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_relational_database_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -129,10 +115,7 @@ impl DeleteRelationalDatabaseInputBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn set_final_relational_database_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_final_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.final_relational_database_snapshot_name = input;
         self
     }
@@ -144,9 +127,7 @@ impl DeleteRelationalDatabaseInputBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn get_final_relational_database_snapshot_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_final_relational_database_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.final_relational_database_snapshot_name
     }
     /// Consumes the builder and constructs a [`DeleteRelationalDatabaseInput`](crate::operation::delete_relational_database::DeleteRelationalDatabaseInput).
@@ -156,13 +137,10 @@ impl DeleteRelationalDatabaseInputBuilder {
         crate::operation::delete_relational_database::DeleteRelationalDatabaseInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_relational_database::DeleteRelationalDatabaseInput {
-                relational_database_name: self.relational_database_name,
-                skip_final_snapshot: self.skip_final_snapshot,
-                final_relational_database_snapshot_name: self
-                    .final_relational_database_snapshot_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_relational_database::DeleteRelationalDatabaseInput {
+            relational_database_name: self.relational_database_name,
+            skip_final_snapshot: self.skip_final_snapshot,
+            final_relational_database_snapshot_name: self.final_relational_database_snapshot_name,
+        })
     }
 }

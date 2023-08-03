@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::create_connector_definition::CreateConnectorDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::create_connector_definition::CreateConnectorDefinitionOutput::name): The name of the definition.
     /// - On failure, responds with [`SdkError<CreateConnectorDefinitionError>`](crate::operation::create_connector_definition::CreateConnectorDefinitionError)
-    pub fn create_connector_definition(&self) -> crate::operation::create_connector_definition::builders::CreateConnectorDefinitionFluentBuilder{
+    pub fn create_connector_definition(&self) -> crate::operation::create_connector_definition::builders::CreateConnectorDefinitionFluentBuilder {
         crate::operation::create_connector_definition::builders::CreateConnectorDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

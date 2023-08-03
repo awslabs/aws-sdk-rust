@@ -22,34 +22,26 @@ impl DescribeAnalysisDefinitionInput {
 }
 impl DescribeAnalysisDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisDefinitionInput`](crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionInput).
-    pub fn builder() -> crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionInputBuilder {
         crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAnalysisDefinitionInput`](crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnalysisDefinitionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAnalysisDefinitionInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl DescribeAnalysisDefinitionInputBuilder {
         crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionInput {
-                aws_account_id: self.aws_account_id,
-                analysis_id: self.analysis_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionInput {
+            aws_account_id: self.aws_account_id,
+            analysis_id: self.analysis_id,
+        })
     }
 }

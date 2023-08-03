@@ -37,9 +37,7 @@ impl StartExportInput {
 
 /// A builder for [`StartExportInput`](crate::operation::start_export::StartExportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartExportInputBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl StartExportInputBuilder {
         &self.s3_key
     }
     /// <p>Start export request s3 bucket owner.</p>
-    pub fn s3_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Start export request s3 bucket owner.</p>
-    pub fn set_s3_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_owner = input;
         self
     }
@@ -95,12 +87,7 @@ impl StartExportInputBuilder {
         &self.s3_bucket_owner
     }
     /// Consumes the builder and constructs a [`StartExportInput`](crate::operation::start_export::StartExportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_export::StartExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_export::StartExportInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_export::StartExportInput {
             s3_bucket: self.s3_bucket,
             s3_key: self.s3_key,

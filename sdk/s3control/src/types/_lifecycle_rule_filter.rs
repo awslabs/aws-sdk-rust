@@ -55,9 +55,7 @@ impl LifecycleRuleFilter {
 
 /// A builder for [`LifecycleRuleFilter`](crate::types::LifecycleRuleFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifecycleRuleFilterBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) tag: ::std::option::Option<crate::types::S3Tag>,
@@ -106,10 +104,7 @@ impl LifecycleRuleFilterBuilder {
         self
     }
     /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
-    pub fn set_and(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecycleRuleAndOperator>,
-    ) -> Self {
+    pub fn set_and(mut self, input: ::std::option::Option<crate::types::LifecycleRuleAndOperator>) -> Self {
         self.and = input;
         self
     }

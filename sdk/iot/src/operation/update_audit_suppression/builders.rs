@@ -37,10 +37,7 @@ impl UpdateAuditSuppressionFluentBuilder {
         }
     }
     /// Access the UpdateAuditSuppression as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_audit_suppression::builders::UpdateAuditSuppressionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_audit_suppression::builders::UpdateAuditSuppressionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateAuditSuppressionFluentBuilder {
             crate::operation::update_audit_suppression::UpdateAuditSuppression,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_audit_suppression::UpdateAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_audit_suppression::UpdateAuditSuppressionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateAuditSuppressionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateAuditSuppressionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_audit_suppression::UpdateAuditSuppressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_audit_suppression::UpdateAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_audit_suppression::UpdateAuditSuppressionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateAuditSuppressionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_audit_suppression::UpdateAuditSuppressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_audit_suppression::UpdateAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_audit_suppression::UpdateAuditSuppressionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateAuditSuppressionFluentBuilder {
             crate::operation::update_audit_suppression::UpdateAuditSuppression,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_audit_suppression::UpdateAuditSuppressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_audit_suppression::UpdateAuditSuppressionError>,
     > {
         self.customize_middleware().await
     }
@@ -143,17 +129,12 @@ impl UpdateAuditSuppressionFluentBuilder {
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn get_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         self.inner.get_resource_identifier()
     }
     /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
@@ -162,10 +143,7 @@ impl UpdateAuditSuppressionFluentBuilder {
         self
     }
     /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
-    pub fn set_expiration_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_expiration_date(input);
         self
     }

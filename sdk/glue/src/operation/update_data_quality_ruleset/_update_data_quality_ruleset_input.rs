@@ -29,18 +29,14 @@ impl UpdateDataQualityRulesetInput {
 }
 impl UpdateDataQualityRulesetInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataQualityRulesetInput`](crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetInput).
-    pub fn builder(
-    ) -> crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetInputBuilder {
         crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDataQualityRulesetInput`](crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataQualityRulesetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -96,12 +92,10 @@ impl UpdateDataQualityRulesetInputBuilder {
         crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetInput {
-                name: self.name,
-                description: self.description,
-                ruleset: self.ruleset,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetInput {
+            name: self.name,
+            description: self.description,
+            ruleset: self.ruleset,
+        })
     }
 }

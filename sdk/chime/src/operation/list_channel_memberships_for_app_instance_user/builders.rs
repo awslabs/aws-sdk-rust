@@ -5,16 +5,16 @@ pub use crate::operation::list_channel_memberships_for_app_instance_user::_list_
 
 impl ListChannelMembershipsForAppInstanceUserInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_channel_memberships_for_app_instance_user();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,13 +28,11 @@ impl ListChannelMembershipsForAppInstanceUserInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by ListChannelMembershipsForAppInstanceUser in the Amazon Chime SDK Messaging Namespace"
-)]
+#[deprecated(note = "Replaced by ListChannelMembershipsForAppInstanceUser in the Amazon Chime SDK Messaging Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListChannelMembershipsForAppInstanceUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserInputBuilder,
+    inner: crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserInputBuilder,
 }
 impl ListChannelMembershipsForAppInstanceUserFluentBuilder {
     /// Creates a new `ListChannelMembershipsForAppInstanceUser`.
@@ -45,15 +43,24 @@ impl ListChannelMembershipsForAppInstanceUserFluentBuilder {
         }
     }
     /// Access the ListChannelMembershipsForAppInstanceUser as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUser, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUser,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -62,16 +69,19 @@ impl ListChannelMembershipsForAppInstanceUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -89,38 +99,50 @@ impl ListChannelMembershipsForAppInstanceUserFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUser, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUser,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_channel_memberships_for_app_instance_user::paginator::ListChannelMembershipsForAppInstanceUserPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_channel_memberships_for_app_instance_user::paginator::ListChannelMembershipsForAppInstanceUserPaginator{
-        crate::operation::list_channel_memberships_for_app_instance_user::paginator::ListChannelMembershipsForAppInstanceUserPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_channel_memberships_for_app_instance_user::paginator::ListChannelMembershipsForAppInstanceUserPaginator {
+        crate::operation::list_channel_memberships_for_app_instance_user::paginator::ListChannelMembershipsForAppInstanceUserPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_user_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_user_arn(input);
         self
     }

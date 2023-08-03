@@ -9,32 +9,25 @@ pub struct UpdatePipeSourceParameters {
     pub filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
     /// <p>The parameters for using a Kinesis stream as a source.</p>
     #[doc(hidden)]
-    pub kinesis_stream_parameters:
-        ::std::option::Option<crate::types::UpdatePipeSourceKinesisStreamParameters>,
+    pub kinesis_stream_parameters: ::std::option::Option<crate::types::UpdatePipeSourceKinesisStreamParameters>,
     /// <p>The parameters for using a DynamoDB stream as a source.</p>
     #[doc(hidden)]
-    pub dynamo_db_stream_parameters:
-        ::std::option::Option<crate::types::UpdatePipeSourceDynamoDbStreamParameters>,
+    pub dynamo_db_stream_parameters: ::std::option::Option<crate::types::UpdatePipeSourceDynamoDbStreamParameters>,
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
     #[doc(hidden)]
-    pub sqs_queue_parameters:
-        ::std::option::Option<crate::types::UpdatePipeSourceSqsQueueParameters>,
+    pub sqs_queue_parameters: ::std::option::Option<crate::types::UpdatePipeSourceSqsQueueParameters>,
     /// <p>The parameters for using an Active MQ broker as a source.</p>
     #[doc(hidden)]
-    pub active_mq_broker_parameters:
-        ::std::option::Option<crate::types::UpdatePipeSourceActiveMqBrokerParameters>,
+    pub active_mq_broker_parameters: ::std::option::Option<crate::types::UpdatePipeSourceActiveMqBrokerParameters>,
     /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
     #[doc(hidden)]
-    pub rabbit_mq_broker_parameters:
-        ::std::option::Option<crate::types::UpdatePipeSourceRabbitMqBrokerParameters>,
+    pub rabbit_mq_broker_parameters: ::std::option::Option<crate::types::UpdatePipeSourceRabbitMqBrokerParameters>,
     /// <p>The parameters for using an MSK stream as a source.</p>
     #[doc(hidden)]
-    pub managed_streaming_kafka_parameters:
-        ::std::option::Option<crate::types::UpdatePipeSourceManagedStreamingKafkaParameters>,
+    pub managed_streaming_kafka_parameters: ::std::option::Option<crate::types::UpdatePipeSourceManagedStreamingKafkaParameters>,
     /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
     #[doc(hidden)]
-    pub self_managed_kafka_parameters:
-        ::std::option::Option<crate::types::UpdatePipeSourceSelfManagedKafkaParameters>,
+    pub self_managed_kafka_parameters: ::std::option::Option<crate::types::UpdatePipeSourceSelfManagedKafkaParameters>,
 }
 impl UpdatePipeSourceParameters {
     /// <p>The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
@@ -42,45 +35,31 @@ impl UpdatePipeSourceParameters {
         self.filter_criteria.as_ref()
     }
     /// <p>The parameters for using a Kinesis stream as a source.</p>
-    pub fn kinesis_stream_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdatePipeSourceKinesisStreamParameters> {
+    pub fn kinesis_stream_parameters(&self) -> ::std::option::Option<&crate::types::UpdatePipeSourceKinesisStreamParameters> {
         self.kinesis_stream_parameters.as_ref()
     }
     /// <p>The parameters for using a DynamoDB stream as a source.</p>
-    pub fn dynamo_db_stream_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdatePipeSourceDynamoDbStreamParameters> {
+    pub fn dynamo_db_stream_parameters(&self) -> ::std::option::Option<&crate::types::UpdatePipeSourceDynamoDbStreamParameters> {
         self.dynamo_db_stream_parameters.as_ref()
     }
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-    pub fn sqs_queue_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdatePipeSourceSqsQueueParameters> {
+    pub fn sqs_queue_parameters(&self) -> ::std::option::Option<&crate::types::UpdatePipeSourceSqsQueueParameters> {
         self.sqs_queue_parameters.as_ref()
     }
     /// <p>The parameters for using an Active MQ broker as a source.</p>
-    pub fn active_mq_broker_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdatePipeSourceActiveMqBrokerParameters> {
+    pub fn active_mq_broker_parameters(&self) -> ::std::option::Option<&crate::types::UpdatePipeSourceActiveMqBrokerParameters> {
         self.active_mq_broker_parameters.as_ref()
     }
     /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
-    pub fn rabbit_mq_broker_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdatePipeSourceRabbitMqBrokerParameters> {
+    pub fn rabbit_mq_broker_parameters(&self) -> ::std::option::Option<&crate::types::UpdatePipeSourceRabbitMqBrokerParameters> {
         self.rabbit_mq_broker_parameters.as_ref()
     }
     /// <p>The parameters for using an MSK stream as a source.</p>
-    pub fn managed_streaming_kafka_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdatePipeSourceManagedStreamingKafkaParameters> {
+    pub fn managed_streaming_kafka_parameters(&self) -> ::std::option::Option<&crate::types::UpdatePipeSourceManagedStreamingKafkaParameters> {
         self.managed_streaming_kafka_parameters.as_ref()
     }
     /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
-    pub fn self_managed_kafka_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdatePipeSourceSelfManagedKafkaParameters> {
+    pub fn self_managed_kafka_parameters(&self) -> ::std::option::Option<&crate::types::UpdatePipeSourceSelfManagedKafkaParameters> {
         self.self_managed_kafka_parameters.as_ref()
     }
 }
@@ -93,25 +72,16 @@ impl UpdatePipeSourceParameters {
 
 /// A builder for [`UpdatePipeSourceParameters`](crate::types::UpdatePipeSourceParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePipeSourceParametersBuilder {
     pub(crate) filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
-    pub(crate) kinesis_stream_parameters:
-        ::std::option::Option<crate::types::UpdatePipeSourceKinesisStreamParameters>,
-    pub(crate) dynamo_db_stream_parameters:
-        ::std::option::Option<crate::types::UpdatePipeSourceDynamoDbStreamParameters>,
-    pub(crate) sqs_queue_parameters:
-        ::std::option::Option<crate::types::UpdatePipeSourceSqsQueueParameters>,
-    pub(crate) active_mq_broker_parameters:
-        ::std::option::Option<crate::types::UpdatePipeSourceActiveMqBrokerParameters>,
-    pub(crate) rabbit_mq_broker_parameters:
-        ::std::option::Option<crate::types::UpdatePipeSourceRabbitMqBrokerParameters>,
-    pub(crate) managed_streaming_kafka_parameters:
-        ::std::option::Option<crate::types::UpdatePipeSourceManagedStreamingKafkaParameters>,
-    pub(crate) self_managed_kafka_parameters:
-        ::std::option::Option<crate::types::UpdatePipeSourceSelfManagedKafkaParameters>,
+    pub(crate) kinesis_stream_parameters: ::std::option::Option<crate::types::UpdatePipeSourceKinesisStreamParameters>,
+    pub(crate) dynamo_db_stream_parameters: ::std::option::Option<crate::types::UpdatePipeSourceDynamoDbStreamParameters>,
+    pub(crate) sqs_queue_parameters: ::std::option::Option<crate::types::UpdatePipeSourceSqsQueueParameters>,
+    pub(crate) active_mq_broker_parameters: ::std::option::Option<crate::types::UpdatePipeSourceActiveMqBrokerParameters>,
+    pub(crate) rabbit_mq_broker_parameters: ::std::option::Option<crate::types::UpdatePipeSourceRabbitMqBrokerParameters>,
+    pub(crate) managed_streaming_kafka_parameters: ::std::option::Option<crate::types::UpdatePipeSourceManagedStreamingKafkaParameters>,
+    pub(crate) self_managed_kafka_parameters: ::std::option::Option<crate::types::UpdatePipeSourceSelfManagedKafkaParameters>,
 }
 impl UpdatePipeSourceParametersBuilder {
     /// <p>The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
@@ -120,10 +90,7 @@ impl UpdatePipeSourceParametersBuilder {
         self
     }
     /// <p>The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::FilterCriteria>) -> Self {
         self.filter_criteria = input;
         self
     }
@@ -132,120 +99,77 @@ impl UpdatePipeSourceParametersBuilder {
         &self.filter_criteria
     }
     /// <p>The parameters for using a Kinesis stream as a source.</p>
-    pub fn kinesis_stream_parameters(
-        mut self,
-        input: crate::types::UpdatePipeSourceKinesisStreamParameters,
-    ) -> Self {
+    pub fn kinesis_stream_parameters(mut self, input: crate::types::UpdatePipeSourceKinesisStreamParameters) -> Self {
         self.kinesis_stream_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters for using a Kinesis stream as a source.</p>
-    pub fn set_kinesis_stream_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdatePipeSourceKinesisStreamParameters>,
-    ) -> Self {
+    pub fn set_kinesis_stream_parameters(mut self, input: ::std::option::Option<crate::types::UpdatePipeSourceKinesisStreamParameters>) -> Self {
         self.kinesis_stream_parameters = input;
         self
     }
     /// <p>The parameters for using a Kinesis stream as a source.</p>
-    pub fn get_kinesis_stream_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdatePipeSourceKinesisStreamParameters> {
+    pub fn get_kinesis_stream_parameters(&self) -> &::std::option::Option<crate::types::UpdatePipeSourceKinesisStreamParameters> {
         &self.kinesis_stream_parameters
     }
     /// <p>The parameters for using a DynamoDB stream as a source.</p>
-    pub fn dynamo_db_stream_parameters(
-        mut self,
-        input: crate::types::UpdatePipeSourceDynamoDbStreamParameters,
-    ) -> Self {
+    pub fn dynamo_db_stream_parameters(mut self, input: crate::types::UpdatePipeSourceDynamoDbStreamParameters) -> Self {
         self.dynamo_db_stream_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters for using a DynamoDB stream as a source.</p>
-    pub fn set_dynamo_db_stream_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdatePipeSourceDynamoDbStreamParameters>,
-    ) -> Self {
+    pub fn set_dynamo_db_stream_parameters(mut self, input: ::std::option::Option<crate::types::UpdatePipeSourceDynamoDbStreamParameters>) -> Self {
         self.dynamo_db_stream_parameters = input;
         self
     }
     /// <p>The parameters for using a DynamoDB stream as a source.</p>
-    pub fn get_dynamo_db_stream_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdatePipeSourceDynamoDbStreamParameters> {
+    pub fn get_dynamo_db_stream_parameters(&self) -> &::std::option::Option<crate::types::UpdatePipeSourceDynamoDbStreamParameters> {
         &self.dynamo_db_stream_parameters
     }
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-    pub fn sqs_queue_parameters(
-        mut self,
-        input: crate::types::UpdatePipeSourceSqsQueueParameters,
-    ) -> Self {
+    pub fn sqs_queue_parameters(mut self, input: crate::types::UpdatePipeSourceSqsQueueParameters) -> Self {
         self.sqs_queue_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-    pub fn set_sqs_queue_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdatePipeSourceSqsQueueParameters>,
-    ) -> Self {
+    pub fn set_sqs_queue_parameters(mut self, input: ::std::option::Option<crate::types::UpdatePipeSourceSqsQueueParameters>) -> Self {
         self.sqs_queue_parameters = input;
         self
     }
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-    pub fn get_sqs_queue_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdatePipeSourceSqsQueueParameters> {
+    pub fn get_sqs_queue_parameters(&self) -> &::std::option::Option<crate::types::UpdatePipeSourceSqsQueueParameters> {
         &self.sqs_queue_parameters
     }
     /// <p>The parameters for using an Active MQ broker as a source.</p>
-    pub fn active_mq_broker_parameters(
-        mut self,
-        input: crate::types::UpdatePipeSourceActiveMqBrokerParameters,
-    ) -> Self {
+    pub fn active_mq_broker_parameters(mut self, input: crate::types::UpdatePipeSourceActiveMqBrokerParameters) -> Self {
         self.active_mq_broker_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters for using an Active MQ broker as a source.</p>
-    pub fn set_active_mq_broker_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdatePipeSourceActiveMqBrokerParameters>,
-    ) -> Self {
+    pub fn set_active_mq_broker_parameters(mut self, input: ::std::option::Option<crate::types::UpdatePipeSourceActiveMqBrokerParameters>) -> Self {
         self.active_mq_broker_parameters = input;
         self
     }
     /// <p>The parameters for using an Active MQ broker as a source.</p>
-    pub fn get_active_mq_broker_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdatePipeSourceActiveMqBrokerParameters> {
+    pub fn get_active_mq_broker_parameters(&self) -> &::std::option::Option<crate::types::UpdatePipeSourceActiveMqBrokerParameters> {
         &self.active_mq_broker_parameters
     }
     /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
-    pub fn rabbit_mq_broker_parameters(
-        mut self,
-        input: crate::types::UpdatePipeSourceRabbitMqBrokerParameters,
-    ) -> Self {
+    pub fn rabbit_mq_broker_parameters(mut self, input: crate::types::UpdatePipeSourceRabbitMqBrokerParameters) -> Self {
         self.rabbit_mq_broker_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
-    pub fn set_rabbit_mq_broker_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdatePipeSourceRabbitMqBrokerParameters>,
-    ) -> Self {
+    pub fn set_rabbit_mq_broker_parameters(mut self, input: ::std::option::Option<crate::types::UpdatePipeSourceRabbitMqBrokerParameters>) -> Self {
         self.rabbit_mq_broker_parameters = input;
         self
     }
     /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
-    pub fn get_rabbit_mq_broker_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdatePipeSourceRabbitMqBrokerParameters> {
+    pub fn get_rabbit_mq_broker_parameters(&self) -> &::std::option::Option<crate::types::UpdatePipeSourceRabbitMqBrokerParameters> {
         &self.rabbit_mq_broker_parameters
     }
     /// <p>The parameters for using an MSK stream as a source.</p>
-    pub fn managed_streaming_kafka_parameters(
-        mut self,
-        input: crate::types::UpdatePipeSourceManagedStreamingKafkaParameters,
-    ) -> Self {
+    pub fn managed_streaming_kafka_parameters(mut self, input: crate::types::UpdatePipeSourceManagedStreamingKafkaParameters) -> Self {
         self.managed_streaming_kafka_parameters = ::std::option::Option::Some(input);
         self
     }
@@ -258,16 +182,11 @@ impl UpdatePipeSourceParametersBuilder {
         self
     }
     /// <p>The parameters for using an MSK stream as a source.</p>
-    pub fn get_managed_streaming_kafka_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdatePipeSourceManagedStreamingKafkaParameters> {
+    pub fn get_managed_streaming_kafka_parameters(&self) -> &::std::option::Option<crate::types::UpdatePipeSourceManagedStreamingKafkaParameters> {
         &self.managed_streaming_kafka_parameters
     }
     /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
-    pub fn self_managed_kafka_parameters(
-        mut self,
-        input: crate::types::UpdatePipeSourceSelfManagedKafkaParameters,
-    ) -> Self {
+    pub fn self_managed_kafka_parameters(mut self, input: crate::types::UpdatePipeSourceSelfManagedKafkaParameters) -> Self {
         self.self_managed_kafka_parameters = ::std::option::Option::Some(input);
         self
     }
@@ -280,9 +199,7 @@ impl UpdatePipeSourceParametersBuilder {
         self
     }
     /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
-    pub fn get_self_managed_kafka_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdatePipeSourceSelfManagedKafkaParameters> {
+    pub fn get_self_managed_kafka_parameters(&self) -> &::std::option::Option<crate::types::UpdatePipeSourceSelfManagedKafkaParameters> {
         &self.self_managed_kafka_parameters
     }
     /// Consumes the builder and constructs a [`UpdatePipeSourceParameters`](crate::types::UpdatePipeSourceParameters).

@@ -44,9 +44,7 @@ impl Ec2InstanceLimit {
 
 /// A builder for [`Ec2InstanceLimit`](crate::types::Ec2InstanceLimit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2InstanceLimitBuilder {
     pub(crate) ec2_instance_type: ::std::option::Option<crate::types::Ec2InstanceType>,
     pub(crate) current_instances: ::std::option::Option<i32>,
@@ -60,10 +58,7 @@ impl Ec2InstanceLimitBuilder {
         self
     }
     /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
-    pub fn set_ec2_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2InstanceType>,
-    ) -> Self {
+    pub fn set_ec2_instance_type(mut self, input: ::std::option::Option<crate::types::Ec2InstanceType>) -> Self {
         self.ec2_instance_type = input;
         self
     }

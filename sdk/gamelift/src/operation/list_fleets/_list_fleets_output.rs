@@ -35,9 +35,7 @@ impl ListFleetsOutput {
 
 /// A builder for [`ListFleetsOutput`](crate::operation::list_fleets::ListFleetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFleetsOutputBuilder {
     pub(crate) fleet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListFleetsOutputBuilder {
         self
     }
     /// <p>A set of fleet IDs that match the list request.</p>
-    pub fn set_fleet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.fleet_ids = input;
         self
     }

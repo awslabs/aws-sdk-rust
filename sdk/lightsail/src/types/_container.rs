@@ -14,14 +14,10 @@ pub struct Container {
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The environment variables of the container.</p>
     #[doc(hidden)]
-    pub environment: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The open firewall ports of the container.</p>
     #[doc(hidden)]
-    pub ports: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ContainerServiceProtocol>,
-    >,
+    pub ports: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContainerServiceProtocol>>,
 }
 impl Container {
     /// <p>The name of the image used for the container.</p>
@@ -35,19 +31,11 @@ impl Container {
         self.command.as_deref()
     }
     /// <p>The environment variables of the container.</p>
-    pub fn environment(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
     /// <p>The open firewall ports of the container.</p>
-    pub fn ports(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ContainerServiceProtocol>,
-    > {
+    pub fn ports(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ContainerServiceProtocol>> {
         self.ports.as_ref()
     }
 }
@@ -60,18 +48,12 @@ impl Container {
 
 /// A builder for [`Container`](crate::types::Container).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerBuilder {
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) environment: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) ports: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ContainerServiceProtocol>,
-    >,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) ports: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContainerServiceProtocol>>,
 }
 impl ContainerBuilder {
     /// <p>The name of the image used for the container.</p>
@@ -106,10 +88,7 @@ impl ContainerBuilder {
         self
     }
     /// <p>The launch command for the container.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.command = input;
         self
     }
@@ -122,11 +101,7 @@ impl ContainerBuilder {
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
     /// <p>The environment variables of the container.</p>
-    pub fn environment(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.environment = ::std::option::Option::Some(hash_map);
@@ -135,19 +110,13 @@ impl ContainerBuilder {
     /// <p>The environment variables of the container.</p>
     pub fn set_environment(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.environment = input;
         self
     }
     /// <p>The environment variables of the container.</p>
-    pub fn get_environment(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// Adds a key-value pair to `ports`.
@@ -155,11 +124,7 @@ impl ContainerBuilder {
     /// To override the contents of this collection use [`set_ports`](Self::set_ports).
     ///
     /// <p>The open firewall ports of the container.</p>
-    pub fn ports(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ContainerServiceProtocol,
-    ) -> Self {
+    pub fn ports(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ContainerServiceProtocol) -> Self {
         let mut hash_map = self.ports.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.ports = ::std::option::Option::Some(hash_map);
@@ -168,22 +133,13 @@ impl ContainerBuilder {
     /// <p>The open firewall ports of the container.</p>
     pub fn set_ports(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::ContainerServiceProtocol,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContainerServiceProtocol>>,
     ) -> Self {
         self.ports = input;
         self
     }
     /// <p>The open firewall ports of the container.</p>
-    pub fn get_ports(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ContainerServiceProtocol>,
-    > {
+    pub fn get_ports(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContainerServiceProtocol>> {
         &self.ports
     }
     /// Consumes the builder and constructs a [`Container`](crate::types::Container).

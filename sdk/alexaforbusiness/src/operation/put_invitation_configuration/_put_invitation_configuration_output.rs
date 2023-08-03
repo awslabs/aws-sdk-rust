@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutInvitationConfigurationOutput {
 }
 impl PutInvitationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutInvitationConfigurationOutput`](crate::operation::put_invitation_configuration::PutInvitationConfigurationOutput).
-    pub fn builder() -> crate::operation::put_invitation_configuration::builders::PutInvitationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_invitation_configuration::builders::PutInvitationConfigurationOutputBuilder {
         crate::operation::put_invitation_configuration::builders::PutInvitationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutInvitationConfigurationOutput`](crate::operation::put_invitation_configuration::PutInvitationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutInvitationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl PutInvitationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutInvitationConfigurationOutput`](crate::operation::put_invitation_configuration::PutInvitationConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_invitation_configuration::PutInvitationConfigurationOutput {
+    pub fn build(self) -> crate::operation::put_invitation_configuration::PutInvitationConfigurationOutput {
         crate::operation::put_invitation_configuration::PutInvitationConfigurationOutput {
             _request_id: self._request_id,
         }

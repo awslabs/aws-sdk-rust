@@ -37,9 +37,7 @@ impl Section {
 
 /// A builder for [`Section`](crate::types::Section).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SectionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) size: ::std::option::Option<i32>,
@@ -80,10 +78,7 @@ impl SectionBuilder {
         self
     }
     /// <p>The content of a configuration section.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Document>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.attributes = input;
         self
     }

@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`latest_version_arn(Option<String>)`](crate::operation::create_subscription_definition::CreateSubscriptionDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
     ///   - [`name(Option<String>)`](crate::operation::create_subscription_definition::CreateSubscriptionDefinitionOutput::name): The name of the definition.
     /// - On failure, responds with [`SdkError<CreateSubscriptionDefinitionError>`](crate::operation::create_subscription_definition::CreateSubscriptionDefinitionError)
-    pub fn create_subscription_definition(&self) -> crate::operation::create_subscription_definition::builders::CreateSubscriptionDefinitionFluentBuilder{
+    pub fn create_subscription_definition(
+        &self,
+    ) -> crate::operation::create_subscription_definition::builders::CreateSubscriptionDefinitionFluentBuilder {
         crate::operation::create_subscription_definition::builders::CreateSubscriptionDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,8 +5,7 @@
 pub struct CreateWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be created.</p>
     #[doc(hidden)]
-    pub failed_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateWorkspaceRequest>>,
+    pub failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateWorkspaceRequest>>,
     /// <p>Information about the WorkSpaces that were created.</p>
     /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <code>DescribeWorkspaces</code> before the WorkSpace is created, the information returned can be incomplete.</p>
     #[doc(hidden)]
@@ -15,9 +14,7 @@ pub struct CreateWorkspacesOutput {
 }
 impl CreateWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be created.</p>
-    pub fn failed_requests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FailedCreateWorkspaceRequest]> {
+    pub fn failed_requests(&self) -> ::std::option::Option<&[crate::types::FailedCreateWorkspaceRequest]> {
         self.failed_requests.as_deref()
     }
     /// <p>Information about the WorkSpaces that were created.</p>
@@ -33,20 +30,16 @@ impl ::aws_http::request_id::RequestId for CreateWorkspacesOutput {
 }
 impl CreateWorkspacesOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspacesOutput`](crate::operation::create_workspaces::CreateWorkspacesOutput).
-    pub fn builder() -> crate::operation::create_workspaces::builders::CreateWorkspacesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_workspaces::builders::CreateWorkspacesOutputBuilder {
         crate::operation::create_workspaces::builders::CreateWorkspacesOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWorkspacesOutput`](crate::operation::create_workspaces::CreateWorkspacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkspacesOutputBuilder {
-    pub(crate) failed_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateWorkspaceRequest>>,
+    pub(crate) failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateWorkspaceRequest>>,
     pub(crate) pending_requests: ::std::option::Option<::std::vec::Vec<crate::types::Workspace>>,
     _request_id: Option<String>,
 }
@@ -63,17 +56,12 @@ impl CreateWorkspacesOutputBuilder {
         self
     }
     /// <p>Information about the WorkSpaces that could not be created.</p>
-    pub fn set_failed_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateWorkspaceRequest>>,
-    ) -> Self {
+    pub fn set_failed_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateWorkspaceRequest>>) -> Self {
         self.failed_requests = input;
         self
     }
     /// <p>Information about the WorkSpaces that could not be created.</p>
-    pub fn get_failed_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCreateWorkspaceRequest>> {
+    pub fn get_failed_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCreateWorkspaceRequest>> {
         &self.failed_requests
     }
     /// Appends an item to `pending_requests`.
@@ -90,18 +78,13 @@ impl CreateWorkspacesOutputBuilder {
     }
     /// <p>Information about the WorkSpaces that were created.</p>
     /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <code>DescribeWorkspaces</code> before the WorkSpace is created, the information returned can be incomplete.</p>
-    pub fn set_pending_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Workspace>>,
-    ) -> Self {
+    pub fn set_pending_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Workspace>>) -> Self {
         self.pending_requests = input;
         self
     }
     /// <p>Information about the WorkSpaces that were created.</p>
     /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <code>DescribeWorkspaces</code> before the WorkSpace is created, the information returned can be incomplete.</p>
-    pub fn get_pending_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Workspace>> {
+    pub fn get_pending_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Workspace>> {
         &self.pending_requests
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

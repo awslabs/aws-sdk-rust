@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`facet_names(Option<Vec<String>>)`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput::facet_names): <p>The names of typed link facets that exist within the schema.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListTypedLinkFacetNamesError>`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesError)
-    pub fn list_typed_link_facet_names(
-        &self,
-    ) -> crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesFluentBuilder
-    {
+    pub fn list_typed_link_facet_names(&self) -> crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesFluentBuilder {
         crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesFluentBuilder::new(self.handle.clone())
     }
 }

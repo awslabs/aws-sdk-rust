@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ContinueDeploymentOutput {
 }
 impl ContinueDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`ContinueDeploymentOutput`](crate::operation::continue_deployment::ContinueDeploymentOutput).
-    pub fn builder(
-    ) -> crate::operation::continue_deployment::builders::ContinueDeploymentOutputBuilder {
+    pub fn builder() -> crate::operation::continue_deployment::builders::ContinueDeploymentOutputBuilder {
         crate::operation::continue_deployment::builders::ContinueDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`ContinueDeploymentOutput`](crate::operation::continue_deployment::ContinueDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContinueDeploymentOutputBuilder {
     _request_id: Option<String>,
 }

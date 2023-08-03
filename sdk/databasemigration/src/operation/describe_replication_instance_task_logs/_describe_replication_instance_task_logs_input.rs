@@ -33,16 +33,14 @@ impl DescribeReplicationInstanceTaskLogsInput {
 }
 impl DescribeReplicationInstanceTaskLogsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationInstanceTaskLogsInput`](crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogsInput).
-    pub fn builder() -> crate::operation::describe_replication_instance_task_logs::builders::DescribeReplicationInstanceTaskLogsInputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_instance_task_logs::builders::DescribeReplicationInstanceTaskLogsInputBuilder {
         crate::operation::describe_replication_instance_task_logs::builders::DescribeReplicationInstanceTaskLogsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationInstanceTaskLogsInput`](crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationInstanceTaskLogsInputBuilder {
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -50,18 +48,12 @@ pub struct DescribeReplicationInstanceTaskLogsInputBuilder {
 }
 impl DescribeReplicationInstanceTaskLogsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_arn = input;
         self
     }
@@ -104,16 +96,18 @@ impl DescribeReplicationInstanceTaskLogsInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeReplicationInstanceTaskLogsInput`](crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogsInput {
-                replication_instance_arn: self.replication_instance_arn
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                replication_instance_arn: self.replication_instance_arn,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

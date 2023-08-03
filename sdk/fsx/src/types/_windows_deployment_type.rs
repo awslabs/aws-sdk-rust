@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WindowsDeploymentType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for WindowsDeploymentType {
             "MULTI_AZ_1" => WindowsDeploymentType::MultiAz1,
             "SINGLE_AZ_1" => WindowsDeploymentType::SingleAz1,
             "SINGLE_AZ_2" => WindowsDeploymentType::SingleAz2,
-            other => WindowsDeploymentType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WindowsDeploymentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

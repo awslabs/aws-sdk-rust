@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`insights(Option<Vec<Insight>>)`](crate::operation::get_insights::GetInsightsOutput::insights): <p>The insights returned by the operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_insights::GetInsightsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetInsightsError>`](crate::operation::get_insights::GetInsightsError)
-    pub fn get_insights(
-        &self,
-    ) -> crate::operation::get_insights::builders::GetInsightsFluentBuilder {
+    pub fn get_insights(&self) -> crate::operation::get_insights::builders::GetInsightsFluentBuilder {
         crate::operation::get_insights::builders::GetInsightsFluentBuilder::new(self.handle.clone())
     }
 }

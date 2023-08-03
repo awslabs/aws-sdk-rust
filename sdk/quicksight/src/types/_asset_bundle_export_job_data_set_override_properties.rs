@@ -9,9 +9,7 @@ pub struct AssetBundleExportJobDataSetOverrideProperties {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>DataSet</code> resource properties to generate variables for in the returned CloudFormation template.</p>
     #[doc(hidden)]
-    pub properties: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AssetBundleExportJobDataSetPropertyToOverride>,
-    >,
+    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSetPropertyToOverride>>,
 }
 impl AssetBundleExportJobDataSetOverrideProperties {
     /// <p>The ARN of the specific <code>DataSet</code> resource whose override properties are configured in this structure.</p>
@@ -19,30 +17,23 @@ impl AssetBundleExportJobDataSetOverrideProperties {
         self.arn.as_deref()
     }
     /// <p>A list of <code>DataSet</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetBundleExportJobDataSetPropertyToOverride]> {
+    pub fn properties(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobDataSetPropertyToOverride]> {
         self.properties.as_deref()
     }
 }
 impl AssetBundleExportJobDataSetOverrideProperties {
     /// Creates a new builder-style object to manufacture [`AssetBundleExportJobDataSetOverrideProperties`](crate::types::AssetBundleExportJobDataSetOverrideProperties).
-    pub fn builder() -> crate::types::builders::AssetBundleExportJobDataSetOverridePropertiesBuilder
-    {
+    pub fn builder() -> crate::types::builders::AssetBundleExportJobDataSetOverridePropertiesBuilder {
         crate::types::builders::AssetBundleExportJobDataSetOverridePropertiesBuilder::default()
     }
 }
 
 /// A builder for [`AssetBundleExportJobDataSetOverrideProperties`](crate::types::AssetBundleExportJobDataSetOverrideProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleExportJobDataSetOverridePropertiesBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AssetBundleExportJobDataSetPropertyToOverride>,
-    >,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSetPropertyToOverride>>,
 }
 impl AssetBundleExportJobDataSetOverridePropertiesBuilder {
     /// <p>The ARN of the specific <code>DataSet</code> resource whose override properties are configured in this structure.</p>
@@ -64,10 +55,7 @@ impl AssetBundleExportJobDataSetOverridePropertiesBuilder {
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>A list of <code>DataSet</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn properties(
-        mut self,
-        input: crate::types::AssetBundleExportJobDataSetPropertyToOverride,
-    ) -> Self {
+    pub fn properties(mut self, input: crate::types::AssetBundleExportJobDataSetPropertyToOverride) -> Self {
         let mut v = self.properties.unwrap_or_default();
         v.push(input);
         self.properties = ::std::option::Option::Some(v);
@@ -76,19 +64,13 @@ impl AssetBundleExportJobDataSetOverridePropertiesBuilder {
     /// <p>A list of <code>DataSet</code> resource properties to generate variables for in the returned CloudFormation template.</p>
     pub fn set_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AssetBundleExportJobDataSetPropertyToOverride>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSetPropertyToOverride>>,
     ) -> Self {
         self.properties = input;
         self
     }
     /// <p>A list of <code>DataSet</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AssetBundleExportJobDataSetPropertyToOverride>,
-    > {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSetPropertyToOverride>> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`AssetBundleExportJobDataSetOverrideProperties`](crate::types::AssetBundleExportJobDataSetOverrideProperties).

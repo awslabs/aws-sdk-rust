@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDataQualityRulesetOutput {
 }
 impl DeleteDataQualityRulesetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataQualityRulesetOutput`](crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetOutput).
-    pub fn builder() -> crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetOutputBuilder{
+    pub fn builder() -> crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetOutputBuilder {
         crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDataQualityRulesetOutput`](crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataQualityRulesetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteDataQualityRulesetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDataQualityRulesetOutput`](crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetOutput {
+    pub fn build(self) -> crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetOutput {
         crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetOutput {
             _request_id: self._request_id,
         }

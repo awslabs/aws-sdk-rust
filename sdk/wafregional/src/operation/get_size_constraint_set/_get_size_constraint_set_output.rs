@@ -31,18 +31,14 @@ impl ::aws_http::request_id::RequestId for GetSizeConstraintSetOutput {
 }
 impl GetSizeConstraintSetOutput {
     /// Creates a new builder-style object to manufacture [`GetSizeConstraintSetOutput`](crate::operation::get_size_constraint_set::GetSizeConstraintSetOutput).
-    pub fn builder(
-    ) -> crate::operation::get_size_constraint_set::builders::GetSizeConstraintSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_size_constraint_set::builders::GetSizeConstraintSetOutputBuilder {
         crate::operation::get_size_constraint_set::builders::GetSizeConstraintSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSizeConstraintSetOutput`](crate::operation::get_size_constraint_set::GetSizeConstraintSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSizeConstraintSetOutputBuilder {
     pub(crate) size_constraint_set: ::std::option::Option<crate::types::SizeConstraintSet>,
     _request_id: Option<String>,
@@ -64,10 +60,7 @@ impl GetSizeConstraintSetOutputBuilder {
     /// <li> <p> <code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn set_size_constraint_set(
-        mut self,
-        input: ::std::option::Option<crate::types::SizeConstraintSet>,
-    ) -> Self {
+    pub fn set_size_constraint_set(mut self, input: ::std::option::Option<crate::types::SizeConstraintSet>) -> Self {
         self.size_constraint_set = input;
         self
     }
@@ -77,9 +70,7 @@ impl GetSizeConstraintSetOutputBuilder {
     /// <li> <p> <code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn get_size_constraint_set(
-        &self,
-    ) -> &::std::option::Option<crate::types::SizeConstraintSet> {
+    pub fn get_size_constraint_set(&self) -> &::std::option::Option<crate::types::SizeConstraintSet> {
         &self.size_constraint_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CreateResolverQueryLogConfigOutput`](crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigOutput) with field(s):
     ///   - [`resolver_query_log_config(Option<ResolverQueryLogConfig>)`](crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigOutput::resolver_query_log_config): <p>Information about the <code>CreateResolverQueryLogConfig</code> request, including the status of the request.</p>
     /// - On failure, responds with [`SdkError<CreateResolverQueryLogConfigError>`](crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError)
-    pub fn create_resolver_query_log_config(&self) -> crate::operation::create_resolver_query_log_config::builders::CreateResolverQueryLogConfigFluentBuilder{
+    pub fn create_resolver_query_log_config(
+        &self,
+    ) -> crate::operation::create_resolver_query_log_config::builders::CreateResolverQueryLogConfigFluentBuilder {
         crate::operation::create_resolver_query_log_config::builders::CreateResolverQueryLogConfigFluentBuilder::new(self.handle.clone())
     }
 }

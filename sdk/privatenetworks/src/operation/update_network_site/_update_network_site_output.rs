@@ -8,9 +8,7 @@ pub struct UpdateNetworkSiteOutput {
     pub network_site: ::std::option::Option<crate::types::NetworkSite>,
     /// <p> The network site tags. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateNetworkSiteOutput {
@@ -19,11 +17,7 @@ impl UpdateNetworkSiteOutput {
         self.network_site.as_ref()
     }
     /// <p> The network site tags. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -43,8 +37,7 @@ impl ::aws_http::request_id::RequestId for UpdateNetworkSiteOutput {
 }
 impl UpdateNetworkSiteOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkSiteOutput`](crate::operation::update_network_site::UpdateNetworkSiteOutput).
-    pub fn builder(
-    ) -> crate::operation::update_network_site::builders::UpdateNetworkSiteOutputBuilder {
+    pub fn builder() -> crate::operation::update_network_site::builders::UpdateNetworkSiteOutputBuilder {
         crate::operation::update_network_site::builders::UpdateNetworkSiteOutputBuilder::default()
     }
 }
@@ -54,9 +47,7 @@ impl UpdateNetworkSiteOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateNetworkSiteOutputBuilder {
     pub(crate) network_site: ::std::option::Option<crate::types::NetworkSite>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateNetworkSiteOutputBuilder {
@@ -66,10 +57,7 @@ impl UpdateNetworkSiteOutputBuilder {
         self
     }
     /// <p>Information about the network site.</p>
-    pub fn set_network_site(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkSite>,
-    ) -> Self {
+    pub fn set_network_site(mut self, input: ::std::option::Option<crate::types::NetworkSite>) -> Self {
         self.network_site = input;
         self
     }
@@ -82,32 +70,19 @@ impl UpdateNetworkSiteOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The network site tags. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> The network site tags. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p> The network site tags. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

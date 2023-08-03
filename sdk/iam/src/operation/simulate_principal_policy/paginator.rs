@@ -2,8 +2,7 @@
 /// Paginator for [`SimulatePrincipalPolicy`](crate::operation::simulate_principal_policy::SimulatePrincipalPolicy)
 pub struct SimulatePrincipalPolicyPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
-    builder:
-        crate::operation::simulate_principal_policy::builders::SimulatePrincipalPolicyInputBuilder,
+    builder: crate::operation::simulate_principal_policy::builders::SimulatePrincipalPolicyInputBuilder,
     stop_on_duplicate_token: bool,
 }
 
@@ -32,10 +31,7 @@ impl SimulatePrincipalPolicyPaginator {
     ///
     /// This paginator automatically flattens results using `evaluation_results`. Queries to the underlying service
     /// are dispatched lazily.
-    pub fn items(
-        self,
-    ) -> crate::operation::simulate_principal_policy::paginator::SimulatePrincipalPolicyPaginatorItems
-    {
+    pub fn items(self) -> crate::operation::simulate_principal_policy::paginator::SimulatePrincipalPolicyPaginatorItems {
         crate::operation::simulate_principal_policy::paginator::SimulatePrincipalPolicyPaginatorItems(self)
     }
 
@@ -59,9 +55,7 @@ impl SimulatePrincipalPolicyPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::simulate_principal_policy::SimulatePrincipalPolicyError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::simulate_principal_policy::SimulatePrincipalPolicyError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -71,10 +65,7 @@ impl SimulatePrincipalPolicyPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -99,13 +90,9 @@ impl SimulatePrincipalPolicyPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_simulate_principal_policy_output_marker(resp);
+                            let new_token = crate::lens::reflens_simulate_principal_policy_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.marker.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.marker = new_token.cloned();
@@ -143,9 +130,7 @@ impl SimulatePrincipalPolicyPaginatorItems {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::types::EvaluationResult,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::simulate_principal_policy::SimulatePrincipalPolicyError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::simulate_principal_policy::SimulatePrincipalPolicyError>,
         >,
     > + ::std::marker::Unpin {
         ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {

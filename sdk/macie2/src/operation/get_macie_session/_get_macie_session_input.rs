@@ -12,18 +12,13 @@ impl GetMacieSessionInput {
 
 /// A builder for [`GetMacieSessionInput`](crate::operation::get_macie_session::GetMacieSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMacieSessionInputBuilder {}
 impl GetMacieSessionInputBuilder {
     /// Consumes the builder and constructs a [`GetMacieSessionInput`](crate::operation::get_macie_session::GetMacieSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_macie_session::GetMacieSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_macie_session::GetMacieSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_macie_session::GetMacieSessionInput {})
     }
 }

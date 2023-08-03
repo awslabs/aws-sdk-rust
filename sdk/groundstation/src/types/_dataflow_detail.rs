@@ -37,9 +37,7 @@ impl DataflowDetail {
 
 /// A builder for [`DataflowDetail`](crate::types::DataflowDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataflowDetailBuilder {
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
@@ -66,10 +64,7 @@ impl DataflowDetailBuilder {
         self
     }
     /// <p>Dataflow details for the destination side.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.destination = input;
         self
     }
@@ -78,18 +73,12 @@ impl DataflowDetailBuilder {
         &self.destination
     }
     /// <p>Error message for a dataflow.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Error message for a dataflow.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

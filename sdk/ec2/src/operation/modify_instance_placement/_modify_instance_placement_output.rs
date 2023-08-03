@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyInstancePlacementOutput {
 }
 impl ModifyInstancePlacementOutput {
     /// Creates a new builder-style object to manufacture [`ModifyInstancePlacementOutput`](crate::operation::modify_instance_placement::ModifyInstancePlacementOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_instance_placement::builders::ModifyInstancePlacementOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_instance_placement::builders::ModifyInstancePlacementOutputBuilder {
         crate::operation::modify_instance_placement::builders::ModifyInstancePlacementOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyInstancePlacementOutput`](crate::operation::modify_instance_placement::ModifyInstancePlacementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstancePlacementOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl ModifyInstancePlacementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyInstancePlacementOutput`](crate::operation::modify_instance_placement::ModifyInstancePlacementOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_instance_placement::ModifyInstancePlacementOutput {
+    pub fn build(self) -> crate::operation::modify_instance_placement::ModifyInstancePlacementOutput {
         crate::operation::modify_instance_placement::ModifyInstancePlacementOutput {
             r#return: self.r#return,
             _request_id: self._request_id,

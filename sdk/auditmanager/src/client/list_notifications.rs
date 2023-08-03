@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`notifications(Option<Vec<Notification>>)`](crate::operation::list_notifications::ListNotificationsOutput::notifications): <p> The returned list of notifications. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_notifications::ListNotificationsOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListNotificationsError>`](crate::operation::list_notifications::ListNotificationsError)
-    pub fn list_notifications(
-        &self,
-    ) -> crate::operation::list_notifications::builders::ListNotificationsFluentBuilder {
-        crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_notifications(&self) -> crate::operation::list_notifications::builders::ListNotificationsFluentBuilder {
+        crate::operation::list_notifications::builders::ListNotificationsFluentBuilder::new(self.handle.clone())
     }
 }

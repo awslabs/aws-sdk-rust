@@ -10,10 +10,7 @@ impl CreateLedgerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_ledger::CreateLedgerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ledger::CreateLedgerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ledger::CreateLedgerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_ledger();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateLedgerFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_ledger::CreateLedger,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_ledger::CreateLedger, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_ledger::CreateLedgerError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateLedgerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateLedgerFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_ledger::CreateLedger,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_ledger::CreateLedger, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_ledger::CreateLedgerError>,
     > {
         self.customize_middleware().await
@@ -134,23 +122,14 @@ impl CreateLedgerFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v);
         self
     }
     /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
     pub fn set_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::option::Option<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -158,12 +137,7 @@ impl CreateLedgerFluentBuilder {
     /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
     pub fn get_tags(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.inner.get_tags()
     }
     /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can have one of the following values:</p>
@@ -184,10 +158,7 @@ impl CreateLedgerFluentBuilder {
     /// </ul> <note>
     /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
-    pub fn set_permissions_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionsMode>,
-    ) -> Self {
+    pub fn set_permissions_mode(mut self, input: ::std::option::Option<crate::types::PermissionsMode>) -> Self {
         self.inner = self.inner.set_permissions_mode(input);
         self
     }

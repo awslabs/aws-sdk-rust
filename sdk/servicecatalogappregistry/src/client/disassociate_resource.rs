@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`application_arn(Option<String>)`](crate::operation::disassociate_resource::DisassociateResourceOutput::application_arn): <p>The Amazon resource name (ARN) that specifies the application.</p>
     ///   - [`resource_arn(Option<String>)`](crate::operation::disassociate_resource::DisassociateResourceOutput::resource_arn): <p>The Amazon resource name (ARN) that specifies the resource.</p>
     /// - On failure, responds with [`SdkError<DisassociateResourceError>`](crate::operation::disassociate_resource::DisassociateResourceError)
-    pub fn disassociate_resource(
-        &self,
-    ) -> crate::operation::disassociate_resource::builders::DisassociateResourceFluentBuilder {
-        crate::operation::disassociate_resource::builders::DisassociateResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_resource(&self) -> crate::operation::disassociate_resource::builders::DisassociateResourceFluentBuilder {
+        crate::operation::disassociate_resource::builders::DisassociateResourceFluentBuilder::new(self.handle.clone())
     }
 }

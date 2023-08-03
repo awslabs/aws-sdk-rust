@@ -26,7 +26,7 @@ impl RemoveListenerCertificatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveListenerCertificatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesInputBuilder,
+    inner: crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesInputBuilder,
 }
 impl RemoveListenerCertificatesFluentBuilder {
     /// Creates a new `RemoveListenerCertificates`.
@@ -37,7 +37,7 @@ impl RemoveListenerCertificatesFluentBuilder {
         }
     }
     /// Access the RemoveListenerCertificates as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RemoveListenerCertificatesFluentBuilder {
             crate::operation::remove_listener_certificates::RemoveListenerCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_listener_certificates::RemoveListenerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_listener_certificates::RemoveListenerCertificatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RemoveListenerCertificatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RemoveListenerCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_listener_certificates::RemoveListenerCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_listener_certificates::RemoveListenerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_listener_certificates::RemoveListenerCertificatesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RemoveListenerCertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_listener_certificates::RemoveListenerCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_listener_certificates::RemoveListenerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_listener_certificates::RemoveListenerCertificatesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl RemoveListenerCertificatesFluentBuilder {
             crate::operation::remove_listener_certificates::RemoveListenerCertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_listener_certificates::RemoveListenerCertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_listener_certificates::RemoveListenerCertificatesError>,
     > {
         self.customize_middleware().await
     }
@@ -144,17 +133,12 @@ impl RemoveListenerCertificatesFluentBuilder {
         self
     }
     /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.inner = self.inner.set_certificates(input);
         self
     }
     /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn get_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         self.inner.get_certificates()
     }
 }

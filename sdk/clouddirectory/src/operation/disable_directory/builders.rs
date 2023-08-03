@@ -10,10 +10,7 @@ impl DisableDirectoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disable_directory::DisableDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_directory::DisableDirectoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_directory::DisableDirectoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disable_directory();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DisableDirectoryFluentBuilder {
         }
     }
     /// Access the DisableDirectory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_directory::builders::DisableDirectoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disable_directory::builders::DisableDirectoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DisableDirectoryFluentBuilder {
             crate::operation::disable_directory::DisableDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_directory::DisableDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_directory::DisableDirectoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DisableDirectoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DisableDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_directory::DisableDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_directory::DisableDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_directory::DisableDirectoryError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DisableDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_directory::DisableDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_directory::DisableDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_directory::DisableDirectoryError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DisableDirectoryFluentBuilder {
             crate::operation::disable_directory::DisableDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_directory::DisableDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_directory::DisableDirectoryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the directory to disable.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The ARN of the directory to disable.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }

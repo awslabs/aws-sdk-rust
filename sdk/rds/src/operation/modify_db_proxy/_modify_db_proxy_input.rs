@@ -71,9 +71,7 @@ impl ModifyDbProxyInput {
 
 /// A builder for [`ModifyDbProxyInput`](crate::operation::modify_db_proxy::ModifyDbProxyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDbProxyInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_db_proxy_name: ::std::option::Option<::std::string::String>,
@@ -86,18 +84,12 @@ pub struct ModifyDbProxyInputBuilder {
 }
 impl ModifyDbProxyInputBuilder {
     /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_proxy_name = input;
         self
     }
@@ -106,18 +98,12 @@ impl ModifyDbProxyInputBuilder {
         &self.db_proxy_name
     }
     /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn new_db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_db_proxy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn set_new_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_db_proxy_name = input;
         self
     }
@@ -137,17 +123,12 @@ impl ModifyDbProxyInputBuilder {
         self
     }
     /// <p>The new authentication settings for the <code>DBProxy</code>.</p>
-    pub fn set_auth(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>,
-    ) -> Self {
+    pub fn set_auth(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>) -> Self {
         self.auth = input;
         self
     }
     /// <p>The new authentication settings for the <code>DBProxy</code>.</p>
-    pub fn get_auth(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>> {
+    pub fn get_auth(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>> {
         &self.auth
     }
     /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't use TLS.</p>
@@ -211,36 +192,25 @@ impl ModifyDbProxyInputBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The new list of security groups for the <code>DBProxy</code>.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The new list of security groups for the <code>DBProxy</code>.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The new list of security groups for the <code>DBProxy</code>.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// Consumes the builder and constructs a [`ModifyDbProxyInput`](crate::operation::modify_db_proxy::ModifyDbProxyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_db_proxy::ModifyDbProxyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::modify_db_proxy::ModifyDbProxyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_db_proxy::ModifyDbProxyInput {
             db_proxy_name: self.db_proxy_name,
             new_db_proxy_name: self.new_db_proxy_name,

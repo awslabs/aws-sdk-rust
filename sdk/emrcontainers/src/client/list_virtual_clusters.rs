@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`virtual_clusters(Option<Vec<VirtualCluster>>)`](crate::operation::list_virtual_clusters::ListVirtualClustersOutput::virtual_clusters): <p>This output lists the specified virtual clusters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_virtual_clusters::ListVirtualClustersOutput::next_token): <p>This output displays the token for the next set of virtual clusters.</p>
     /// - On failure, responds with [`SdkError<ListVirtualClustersError>`](crate::operation::list_virtual_clusters::ListVirtualClustersError)
-    pub fn list_virtual_clusters(
-        &self,
-    ) -> crate::operation::list_virtual_clusters::builders::ListVirtualClustersFluentBuilder {
-        crate::operation::list_virtual_clusters::builders::ListVirtualClustersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_virtual_clusters(&self) -> crate::operation::list_virtual_clusters::builders::ListVirtualClustersFluentBuilder {
+        crate::operation::list_virtual_clusters::builders::ListVirtualClustersFluentBuilder::new(self.handle.clone())
     }
 }

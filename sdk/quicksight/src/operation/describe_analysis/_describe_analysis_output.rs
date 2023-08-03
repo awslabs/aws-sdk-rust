@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeAnalysisOutput {
 }
 impl DescribeAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisOutput`](crate::operation::describe_analysis::DescribeAnalysisOutput).
-    pub fn builder() -> crate::operation::describe_analysis::builders::DescribeAnalysisOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_analysis::builders::DescribeAnalysisOutputBuilder {
         crate::operation::describe_analysis::builders::DescribeAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAnalysisOutput`](crate::operation::describe_analysis::DescribeAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnalysisOutputBuilder {
     pub(crate) analysis: ::std::option::Option<crate::types::Analysis>,
     pub(crate) status: ::std::option::Option<i32>,

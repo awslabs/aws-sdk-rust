@@ -30,9 +30,7 @@ impl AwsEc2LaunchTemplateDataCpuOptionsDetails {
 
 /// A builder for [`AwsEc2LaunchTemplateDataCpuOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataCpuOptionsDetailsBuilder {
     pub(crate) core_count: ::std::option::Option<i32>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,

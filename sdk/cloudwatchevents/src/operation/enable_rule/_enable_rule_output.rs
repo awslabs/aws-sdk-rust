@@ -19,9 +19,7 @@ impl EnableRuleOutput {
 
 /// A builder for [`EnableRuleOutput`](crate::operation::enable_rule::EnableRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableRuleOutputBuilder {
     _request_id: Option<String>,
 }

@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeEcsClustersOutput {
 }
 impl DescribeEcsClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEcsClustersOutput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersOutputBuilder {
-        crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersOutputBuilder {
+        crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEcsClustersOutput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEcsClustersOutputBuilder {
     pub(crate) ecs_clusters: ::std::option::Option<::std::vec::Vec<crate::types::EcsCluster>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl DescribeEcsClustersOutputBuilder {
         self
     }
     /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
-    pub fn set_ecs_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsCluster>>,
-    ) -> Self {
+    pub fn set_ecs_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsCluster>>) -> Self {
         self.ecs_clusters = input;
         self
     }
     /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
-    pub fn get_ecs_clusters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsCluster>> {
+    pub fn get_ecs_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsCluster>> {
         &self.ecs_clusters
     }
     /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>

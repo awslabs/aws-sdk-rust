@@ -37,17 +37,14 @@ impl UpdateGeoMatchSetInput {
 }
 impl UpdateGeoMatchSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateGeoMatchSetInput`](crate::operation::update_geo_match_set::UpdateGeoMatchSetInput).
-    pub fn builder(
-    ) -> crate::operation::update_geo_match_set::builders::UpdateGeoMatchSetInputBuilder {
+    pub fn builder() -> crate::operation::update_geo_match_set::builders::UpdateGeoMatchSetInputBuilder {
         crate::operation::update_geo_match_set::builders::UpdateGeoMatchSetInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGeoMatchSetInput`](crate::operation::update_geo_match_set::UpdateGeoMatchSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGeoMatchSetInputBuilder {
     pub(crate) geo_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct UpdateGeoMatchSetInputBuilder {
 }
 impl UpdateGeoMatchSetInputBuilder {
     /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    pub fn geo_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn geo_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.geo_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    pub fn set_geo_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_geo_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.geo_match_set_id = input;
         self
     }
@@ -108,10 +99,7 @@ impl UpdateGeoMatchSetInputBuilder {
     /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
     /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
     /// </ul>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>>) -> Self {
         self.updates = input;
         self
     }
@@ -120,24 +108,17 @@ impl UpdateGeoMatchSetInputBuilder {
     /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
     /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
     /// </ul>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>> {
         &self.updates
     }
     /// Consumes the builder and constructs a [`UpdateGeoMatchSetInput`](crate::operation::update_geo_match_set::UpdateGeoMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_geo_match_set::UpdateGeoMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_geo_match_set::UpdateGeoMatchSetInput {
-                geo_match_set_id: self.geo_match_set_id,
-                change_token: self.change_token,
-                updates: self.updates,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_geo_match_set::UpdateGeoMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_geo_match_set::UpdateGeoMatchSetInput {
+            geo_match_set_id: self.geo_match_set_id,
+            change_token: self.change_token,
+            updates: self.updates,
+        })
     }
 }

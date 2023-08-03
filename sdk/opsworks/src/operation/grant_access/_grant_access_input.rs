@@ -29,9 +29,7 @@ impl GrantAccessInput {
 
 /// A builder for [`GrantAccessInput`](crate::operation::grant_access::GrantAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrantAccessInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) valid_for_in_minutes: ::std::option::Option<i32>,
@@ -66,12 +64,7 @@ impl GrantAccessInputBuilder {
         &self.valid_for_in_minutes
     }
     /// Consumes the builder and constructs a [`GrantAccessInput`](crate::operation::grant_access::GrantAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::grant_access::GrantAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::grant_access::GrantAccessInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::grant_access::GrantAccessInput {
             instance_id: self.instance_id,
             valid_for_in_minutes: self.valid_for_in_minutes,

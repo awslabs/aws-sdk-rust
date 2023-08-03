@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`bridge_arn(Option<String>)`](crate::operation::add_bridge_sources::AddBridgeSourcesOutput::bridge_arn): The Amazon Resource Number (ARN) of the bridge.
     ///   - [`sources(Option<Vec<BridgeSource>>)`](crate::operation::add_bridge_sources::AddBridgeSourcesOutput::sources): The sources that you added to this bridge.
     /// - On failure, responds with [`SdkError<AddBridgeSourcesError>`](crate::operation::add_bridge_sources::AddBridgeSourcesError)
-    pub fn add_bridge_sources(
-        &self,
-    ) -> crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder {
-        crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_bridge_sources(&self) -> crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder {
+        crate::operation::add_bridge_sources::builders::AddBridgeSourcesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`qualifier(impl ::std::convert::Into<String>)`](crate::operation::delete_function_event_invoke_config::builders::DeleteFunctionEventInvokeConfigFluentBuilder::qualifier) / [`set_qualifier(Option<String>)`](crate::operation::delete_function_event_invoke_config::builders::DeleteFunctionEventInvokeConfigFluentBuilder::set_qualifier): <p>A version number or alias name.</p>
     /// - On success, responds with [`DeleteFunctionEventInvokeConfigOutput`](crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteFunctionEventInvokeConfigError>`](crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfigError)
-    pub fn delete_function_event_invoke_config(&self) -> crate::operation::delete_function_event_invoke_config::builders::DeleteFunctionEventInvokeConfigFluentBuilder{
+    pub fn delete_function_event_invoke_config(
+        &self,
+    ) -> crate::operation::delete_function_event_invoke_config::builders::DeleteFunctionEventInvokeConfigFluentBuilder {
         crate::operation::delete_function_event_invoke_config::builders::DeleteFunctionEventInvokeConfigFluentBuilder::new(self.handle.clone())
     }
 }

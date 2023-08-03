@@ -26,7 +26,7 @@ impl ModifyFpgaImageAttributeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyFpgaImageAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_fpga_image_attribute::builders::ModifyFpgaImageAttributeInputBuilder,
+    inner: crate::operation::modify_fpga_image_attribute::builders::ModifyFpgaImageAttributeInputBuilder,
 }
 impl ModifyFpgaImageAttributeFluentBuilder {
     /// Creates a new `ModifyFpgaImageAttribute`.
@@ -37,7 +37,7 @@ impl ModifyFpgaImageAttributeFluentBuilder {
         }
     }
     /// Access the ModifyFpgaImageAttribute as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_fpga_image_attribute::builders::ModifyFpgaImageAttributeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_fpga_image_attribute::builders::ModifyFpgaImageAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyFpgaImageAttributeFluentBuilder {
             crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyFpgaImageAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyFpgaImageAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyFpgaImageAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ModifyFpgaImageAttributeFluentBuilder {
             crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl ModifyFpgaImageAttributeFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the AFI.</p>
-    pub fn fpga_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fpga_image_id(input.into());
         self
     }
     /// <p>The ID of the AFI.</p>
-    pub fn set_fpga_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fpga_image_id(input);
         self
     }
@@ -160,10 +143,7 @@ impl ModifyFpgaImageAttributeFluentBuilder {
         self
     }
     /// <p>The name of the attribute.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::FpgaImageAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::FpgaImageAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }
@@ -177,10 +157,7 @@ impl ModifyFpgaImageAttributeFluentBuilder {
         self
     }
     /// <p>The operation type.</p>
-    pub fn set_operation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationType>,
-    ) -> Self {
+    pub fn set_operation_type(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
         self.inner = self.inner.set_operation_type(input);
         self
     }
@@ -198,10 +175,7 @@ impl ModifyFpgaImageAttributeFluentBuilder {
         self
     }
     /// <p>The Amazon Web Services account IDs. This parameter is valid only when modifying the <code>loadPermission</code> attribute.</p>
-    pub fn set_user_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_ids(input);
         self
     }
@@ -219,17 +193,12 @@ impl ModifyFpgaImageAttributeFluentBuilder {
         self
     }
     /// <p>The user groups. This parameter is valid only when modifying the <code>loadPermission</code> attribute.</p>
-    pub fn set_user_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_groups(input);
         self
     }
     /// <p>The user groups. This parameter is valid only when modifying the <code>loadPermission</code> attribute.</p>
-    pub fn get_user_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_user_groups()
     }
     /// Appends an item to `ProductCodes`.
@@ -237,25 +206,17 @@ impl ModifyFpgaImageAttributeFluentBuilder {
     /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
     ///
     /// <p>The product codes. After you add a product code to an AFI, it can't be removed. This parameter is valid only when modifying the <code>productCodes</code> attribute.</p>
-    pub fn product_codes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_codes(input.into());
         self
     }
     /// <p>The product codes. After you add a product code to an AFI, it can't be removed. This parameter is valid only when modifying the <code>productCodes</code> attribute.</p>
-    pub fn set_product_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_product_codes(input);
         self
     }
     /// <p>The product codes. After you add a product code to an AFI, it can't be removed. This parameter is valid only when modifying the <code>productCodes</code> attribute.</p>
-    pub fn get_product_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_product_codes()
     }
     /// <p>The load permission for the AFI.</p>
@@ -264,17 +225,12 @@ impl ModifyFpgaImageAttributeFluentBuilder {
         self
     }
     /// <p>The load permission for the AFI.</p>
-    pub fn set_load_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadPermissionModifications>,
-    ) -> Self {
+    pub fn set_load_permission(mut self, input: ::std::option::Option<crate::types::LoadPermissionModifications>) -> Self {
         self.inner = self.inner.set_load_permission(input);
         self
     }
     /// <p>The load permission for the AFI.</p>
-    pub fn get_load_permission(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoadPermissionModifications> {
+    pub fn get_load_permission(&self) -> &::std::option::Option<crate::types::LoadPermissionModifications> {
         self.inner.get_load_permission()
     }
     /// <p>A description for the AFI.</p>

@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`endpoint_authorization_list(Option<Vec<EndpointAuthorization>>)`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput::endpoint_authorization_list): <p>The authorizations to an endpoint.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput::marker): <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointAuthorizationError>`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError)
-    pub fn describe_endpoint_authorization(&self) -> crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder{
+    pub fn describe_endpoint_authorization(
+        &self,
+    ) -> crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder {
         crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetPipelineChangeProgressOutput`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput) with field(s):
     ///   - [`change_progress_statuses(Option<Vec<ChangeProgressStatus>>)`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput::change_progress_statuses): <p>The current status of the change happening on the pipeline.</p>
     /// - On failure, responds with [`SdkError<GetPipelineChangeProgressError>`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressError)
-    pub fn get_pipeline_change_progress(&self) -> crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressFluentBuilder{
+    pub fn get_pipeline_change_progress(&self) -> crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressFluentBuilder {
         crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressFluentBuilder::new(self.handle.clone())
     }
 }

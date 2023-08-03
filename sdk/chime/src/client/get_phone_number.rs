@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetPhoneNumberOutput`](crate::operation::get_phone_number::GetPhoneNumberOutput) with field(s):
     ///   - [`phone_number(Option<PhoneNumber>)`](crate::operation::get_phone_number::GetPhoneNumberOutput::phone_number): <p>The phone number details.</p>
     /// - On failure, responds with [`SdkError<GetPhoneNumberError>`](crate::operation::get_phone_number::GetPhoneNumberError)
-    pub fn get_phone_number(
-        &self,
-    ) -> crate::operation::get_phone_number::builders::GetPhoneNumberFluentBuilder {
-        crate::operation::get_phone_number::builders::GetPhoneNumberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_phone_number(&self) -> crate::operation::get_phone_number::builders::GetPhoneNumberFluentBuilder {
+        crate::operation::get_phone_number::builders::GetPhoneNumberFluentBuilder::new(self.handle.clone())
     }
 }

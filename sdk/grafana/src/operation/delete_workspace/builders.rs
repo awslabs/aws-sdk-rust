@@ -10,10 +10,7 @@ impl DeleteWorkspaceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_workspace::DeleteWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workspace::DeleteWorkspaceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workspace::DeleteWorkspaceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_workspace();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteWorkspaceFluentBuilder {
         }
     }
     /// Access the DeleteWorkspace as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_workspace::builders::DeleteWorkspaceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_workspace::builders::DeleteWorkspaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteWorkspaceFluentBuilder {
             crate::operation::delete_workspace::DeleteWorkspace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workspace::DeleteWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workspace::DeleteWorkspaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteWorkspaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteWorkspaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_workspace::DeleteWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workspace::DeleteWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workspace::DeleteWorkspaceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteWorkspaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_workspace::DeleteWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workspace::DeleteWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workspace::DeleteWorkspaceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteWorkspaceFluentBuilder {
             crate::operation::delete_workspace::DeleteWorkspace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workspace::DeleteWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workspace::DeleteWorkspaceError>,
     > {
         self.customize_middleware().await
     }

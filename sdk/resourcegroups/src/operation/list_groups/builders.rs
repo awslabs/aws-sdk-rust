@@ -10,10 +10,7 @@ impl ListGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_groups::ListGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_groups::ListGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_groups::ListGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_groups();
         fluent_builder.inner = self;
@@ -50,10 +47,7 @@ impl ListGroupsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_groups::ListGroups,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_groups::ListGroups, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_groups::ListGroupsError>,
     > {
         let handle = self.handle.clone();
@@ -64,10 +58,7 @@ impl ListGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -109,10 +100,7 @@ impl ListGroupsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_groups::ListGroups,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_groups::ListGroups, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_groups::ListGroupsError>,
     > {
         self.customize_middleware().await
@@ -149,10 +137,7 @@ impl ListGroupsFluentBuilder {
     /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -165,9 +150,7 @@ impl ListGroupsFluentBuilder {
     /// <li> <p> <code>AWS::EC2::HostManagement</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupFilter>> {
         self.inner.get_filters()
     }
     /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>

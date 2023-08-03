@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`route_response_id(Option<String>)`](crate::operation::update_route_response::UpdateRouteResponseOutput::route_response_id): <p>Represents the identifier of a route response.</p>
     ///   - [`route_response_key(Option<String>)`](crate::operation::update_route_response::UpdateRouteResponseOutput::route_response_key): <p>Represents the route response key of a route response.</p>
     /// - On failure, responds with [`SdkError<UpdateRouteResponseError>`](crate::operation::update_route_response::UpdateRouteResponseError)
-    pub fn update_route_response(
-        &self,
-    ) -> crate::operation::update_route_response::builders::UpdateRouteResponseFluentBuilder {
-        crate::operation::update_route_response::builders::UpdateRouteResponseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_route_response(&self) -> crate::operation::update_route_response::builders::UpdateRouteResponseFluentBuilder {
+        crate::operation::update_route_response::builders::UpdateRouteResponseFluentBuilder::new(self.handle.clone())
     }
 }

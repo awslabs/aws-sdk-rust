@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAccountAliasOutput {
 }
 impl DeleteAccountAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountAliasOutput`](crate::operation::delete_account_alias::DeleteAccountAliasOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_account_alias::builders::DeleteAccountAliasOutputBuilder {
+    pub fn builder() -> crate::operation::delete_account_alias::builders::DeleteAccountAliasOutputBuilder {
         crate::operation::delete_account_alias::builders::DeleteAccountAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccountAliasOutput`](crate::operation::delete_account_alias::DeleteAccountAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccountAliasOutputBuilder {
     _request_id: Option<String>,
 }

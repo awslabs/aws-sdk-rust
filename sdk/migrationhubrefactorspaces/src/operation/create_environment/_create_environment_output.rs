@@ -26,9 +26,7 @@ pub struct CreateEnvironmentOutput {
     pub state: ::std::option::Option<crate::types::EnvironmentState>,
     /// <p>The tags assigned to the created environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A timestamp that indicates when the environment was last updated.</p>
     #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -67,11 +65,7 @@ impl CreateEnvironmentOutput {
         self.state.as_ref()
     }
     /// <p>The tags assigned to the created environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A timestamp that indicates when the environment was last updated.</p>
@@ -107,8 +101,7 @@ impl ::aws_http::request_id::RequestId for CreateEnvironmentOutput {
 }
 impl CreateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentOutput`](crate::operation::create_environment::CreateEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder {
         crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder::default()
     }
 }
@@ -124,9 +117,7 @@ pub struct CreateEnvironmentOutputBuilder {
     pub(crate) network_fabric_type: ::std::option::Option<crate::types::NetworkFabricType>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::EnvironmentState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -175,18 +166,12 @@ impl CreateEnvironmentOutputBuilder {
         &self.description
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -200,32 +185,21 @@ impl CreateEnvironmentOutputBuilder {
         self
     }
     /// <p>The network fabric type of the environment.</p>
-    pub fn set_network_fabric_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkFabricType>,
-    ) -> Self {
+    pub fn set_network_fabric_type(mut self, input: ::std::option::Option<crate::types::NetworkFabricType>) -> Self {
         self.network_fabric_type = input;
         self
     }
     /// <p>The network fabric type of the environment.</p>
-    pub fn get_network_fabric_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkFabricType> {
+    pub fn get_network_fabric_type(&self) -> &::std::option::Option<crate::types::NetworkFabricType> {
         &self.network_fabric_type
     }
     /// <p>The Amazon Web Services account ID of environment owner.</p>
-    pub fn owner_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of environment owner.</p>
-    pub fn set_owner_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account_id = input;
         self
     }
@@ -239,10 +213,7 @@ impl CreateEnvironmentOutputBuilder {
         self
     }
     /// <p>The current state of the environment. </p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::EnvironmentState>) -> Self {
         self.state = input;
         self
     }
@@ -255,32 +226,19 @@ impl CreateEnvironmentOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the created environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the created environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags assigned to the created environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A timestamp that indicates when the environment was last updated.</p>
@@ -289,10 +247,7 @@ impl CreateEnvironmentOutputBuilder {
         self
     }
     /// <p>A timestamp that indicates when the environment was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -306,10 +261,7 @@ impl CreateEnvironmentOutputBuilder {
         self
     }
     /// <p>A timestamp that indicates when the environment is created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }

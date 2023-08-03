@@ -11,12 +11,8 @@ impl super::Client {
     ///   - [`domains(Option<Vec<DomainSummary>>)`](crate::operation::list_domains::ListDomainsOutput::domains): <p>Information about the domains.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domains::ListDomainsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn list_domains(
-        &self,
-    ) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn list_domains(&self) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
         crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
     }
 }

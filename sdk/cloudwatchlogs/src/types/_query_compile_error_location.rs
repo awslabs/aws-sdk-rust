@@ -30,9 +30,7 @@ impl QueryCompileErrorLocation {
 
 /// A builder for [`QueryCompileErrorLocation`](crate::types::QueryCompileErrorLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryCompileErrorLocationBuilder {
     pub(crate) start_char_offset: ::std::option::Option<i32>,
     pub(crate) end_char_offset: ::std::option::Option<i32>,

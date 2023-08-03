@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`time_series_last_update_date(Option<DateTime>)`](crate::operation::describe_time_series::DescribeTimeSeriesOutput::time_series_last_update_date): <p>The date that the time series was last updated, in Unix epoch time.</p>
     ///   - [`time_series_arn(Option<String>)`](crate::operation::describe_time_series::DescribeTimeSeriesOutput::time_series_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code> </p>
     /// - On failure, responds with [`SdkError<DescribeTimeSeriesError>`](crate::operation::describe_time_series::DescribeTimeSeriesError)
-    pub fn describe_time_series(
-        &self,
-    ) -> crate::operation::describe_time_series::builders::DescribeTimeSeriesFluentBuilder {
-        crate::operation::describe_time_series::builders::DescribeTimeSeriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_time_series(&self) -> crate::operation::describe_time_series::builders::DescribeTimeSeriesFluentBuilder {
+        crate::operation::describe_time_series::builders::DescribeTimeSeriesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateUsageLimitOutput`](crate::operation::create_usage_limit::CreateUsageLimitOutput) with field(s):
     ///   - [`usage_limit(Option<UsageLimit>)`](crate::operation::create_usage_limit::CreateUsageLimitOutput::usage_limit): <p>The returned usage limit object.</p>
     /// - On failure, responds with [`SdkError<CreateUsageLimitError>`](crate::operation::create_usage_limit::CreateUsageLimitError)
-    pub fn create_usage_limit(
-        &self,
-    ) -> crate::operation::create_usage_limit::builders::CreateUsageLimitFluentBuilder {
-        crate::operation::create_usage_limit::builders::CreateUsageLimitFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_usage_limit(&self) -> crate::operation::create_usage_limit::builders::CreateUsageLimitFluentBuilder {
+        crate::operation::create_usage_limit::builders::CreateUsageLimitFluentBuilder::new(self.handle.clone())
     }
 }

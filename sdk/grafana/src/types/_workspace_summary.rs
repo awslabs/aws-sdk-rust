@@ -27,8 +27,7 @@ pub struct WorkspaceSummary {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
     #[doc(hidden)]
-    pub notification_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
+    pub notification_destinations: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
     /// <p>The current status of the workspace.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorkspaceStatus>,
@@ -37,9 +36,7 @@ pub struct WorkspaceSummary {
     pub authentication: ::std::option::Option<crate::types::AuthenticationSummary>,
     /// <p>The list of tags associated with the workspace.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl WorkspaceSummary {
     /// <p>The date that the workspace was created.</p>
@@ -71,9 +68,7 @@ impl WorkspaceSummary {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
-    pub fn notification_destinations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotificationDestinationType]> {
+    pub fn notification_destinations(&self) -> ::std::option::Option<&[crate::types::NotificationDestinationType]> {
         self.notification_destinations.as_deref()
     }
     /// <p>The current status of the workspace.</p>
@@ -85,11 +80,7 @@ impl WorkspaceSummary {
         self.authentication.as_ref()
     }
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -128,13 +119,10 @@ pub struct WorkspaceSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) notification_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
+    pub(crate) notification_destinations: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
     pub(crate) status: ::std::option::Option<crate::types::WorkspaceStatus>,
     pub(crate) authentication: ::std::option::Option<crate::types::AuthenticationSummary>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl WorkspaceSummaryBuilder {
     /// <p>The date that the workspace was created.</p>
@@ -143,10 +131,7 @@ impl WorkspaceSummaryBuilder {
         self
     }
     /// <p>The date that the workspace was created.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -183,18 +168,12 @@ impl WorkspaceSummaryBuilder {
         &self.endpoint
     }
     /// <p>The Grafana version that the workspace is running.</p>
-    pub fn grafana_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grafana_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grafana_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Grafana version that the workspace is running.</p>
-    pub fn set_grafana_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grafana_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grafana_version = input;
         self
     }
@@ -222,10 +201,7 @@ impl WorkspaceSummaryBuilder {
         self
     }
     /// <p>The most recent date that the workspace was modified.</p>
-    pub fn set_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified = input;
         self
     }
@@ -252,27 +228,19 @@ impl WorkspaceSummaryBuilder {
     /// To override the contents of this collection use [`set_notification_destinations`](Self::set_notification_destinations).
     ///
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
-    pub fn notification_destinations(
-        mut self,
-        input: crate::types::NotificationDestinationType,
-    ) -> Self {
+    pub fn notification_destinations(mut self, input: crate::types::NotificationDestinationType) -> Self {
         let mut v = self.notification_destinations.unwrap_or_default();
         v.push(input);
         self.notification_destinations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
-    pub fn set_notification_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
-    ) -> Self {
+    pub fn set_notification_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>) -> Self {
         self.notification_destinations = input;
         self
     }
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
-    pub fn get_notification_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>> {
+    pub fn get_notification_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>> {
         &self.notification_destinations
     }
     /// <p>The current status of the workspace.</p>
@@ -281,10 +249,7 @@ impl WorkspaceSummaryBuilder {
         self
     }
     /// <p>The current status of the workspace.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkspaceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -298,17 +263,12 @@ impl WorkspaceSummaryBuilder {
         self
     }
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
-    pub fn set_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationSummary>,
-    ) -> Self {
+    pub fn set_authentication(mut self, input: ::std::option::Option<crate::types::AuthenticationSummary>) -> Self {
         self.authentication = input;
         self
     }
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
-    pub fn get_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationSummary> {
+    pub fn get_authentication(&self) -> &::std::option::Option<crate::types::AuthenticationSummary> {
         &self.authentication
     }
     /// Adds a key-value pair to `tags`.
@@ -316,32 +276,19 @@ impl WorkspaceSummaryBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::types::WorkspaceSummary).

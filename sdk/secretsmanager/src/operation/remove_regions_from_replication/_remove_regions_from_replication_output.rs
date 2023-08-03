@@ -8,8 +8,7 @@ pub struct RemoveRegionsFromReplicationOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of replicas for this secret after you remove Regions.</p>
     #[doc(hidden)]
-    pub replication_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
+    pub replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
     _request_id: Option<String>,
 }
 impl RemoveRegionsFromReplicationOutput {
@@ -18,9 +17,7 @@ impl RemoveRegionsFromReplicationOutput {
         self.arn.as_deref()
     }
     /// <p>The status of replicas for this secret after you remove Regions.</p>
-    pub fn replication_status(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplicationStatusType]> {
+    pub fn replication_status(&self) -> ::std::option::Option<&[crate::types::ReplicationStatusType]> {
         self.replication_status.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for RemoveRegionsFromReplicationOutput {
 }
 impl RemoveRegionsFromReplicationOutput {
     /// Creates a new builder-style object to manufacture [`RemoveRegionsFromReplicationOutput`](crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationOutput).
-    pub fn builder() -> crate::operation::remove_regions_from_replication::builders::RemoveRegionsFromReplicationOutputBuilder{
+    pub fn builder() -> crate::operation::remove_regions_from_replication::builders::RemoveRegionsFromReplicationOutputBuilder {
         crate::operation::remove_regions_from_replication::builders::RemoveRegionsFromReplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveRegionsFromReplicationOutput`](crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveRegionsFromReplicationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
+    pub(crate) replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
     _request_id: Option<String>,
 }
 impl RemoveRegionsFromReplicationOutputBuilder {
@@ -74,17 +68,12 @@ impl RemoveRegionsFromReplicationOutputBuilder {
         self
     }
     /// <p>The status of replicas for this secret after you remove Regions.</p>
-    pub fn set_replication_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
-    ) -> Self {
+    pub fn set_replication_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>) -> Self {
         self.replication_status = input;
         self
     }
     /// <p>The status of replicas for this secret after you remove Regions.</p>
-    pub fn get_replication_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>> {
+    pub fn get_replication_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>> {
         &self.replication_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl RemoveRegionsFromReplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveRegionsFromReplicationOutput`](crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationOutput {
+    pub fn build(self) -> crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationOutput {
         crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationOutput {
             arn: self.arn,
             replication_status: self.replication_status,

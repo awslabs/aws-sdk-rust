@@ -30,27 +30,19 @@ impl LineItemRequest {
 
 /// A builder for [`LineItemRequest`](crate::types::LineItemRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LineItemRequestBuilder {
     pub(crate) catalog_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) quantity: ::std::option::Option<i32>,
 }
 impl LineItemRequestBuilder {
     /// <p>The ID of the catalog item.</p>
-    pub fn catalog_item_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn catalog_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_item_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the catalog item.</p>
-    pub fn set_catalog_item_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_catalog_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_item_id = input;
         self
     }

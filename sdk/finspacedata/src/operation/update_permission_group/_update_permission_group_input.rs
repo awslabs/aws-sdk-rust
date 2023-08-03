@@ -25,8 +25,7 @@ pub struct UpdatePermissionGroupInput {
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub application_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
+    pub application_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -56,9 +55,7 @@ impl UpdatePermissionGroupInput {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    pub fn application_permissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationPermission]> {
+    pub fn application_permissions(&self) -> ::std::option::Option<&[crate::types::ApplicationPermission]> {
         self.application_permissions.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -79,9 +76,7 @@ impl ::std::fmt::Debug for UpdatePermissionGroupInput {
 }
 impl UpdatePermissionGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdatePermissionGroupInput`](crate::operation::update_permission_group::UpdatePermissionGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_permission_group::builders::UpdatePermissionGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_permission_group::builders::UpdatePermissionGroupInputBuilder {
         crate::operation::update_permission_group::builders::UpdatePermissionGroupInputBuilder::default()
     }
 }
@@ -93,24 +88,17 @@ pub struct UpdatePermissionGroupInputBuilder {
     pub(crate) permission_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) application_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
+    pub(crate) application_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePermissionGroupInputBuilder {
     /// <p>The unique identifier for the permission group to update.</p>
-    pub fn permission_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the permission group to update.</p>
-    pub fn set_permission_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_group_id = input;
         self
     }
@@ -180,10 +168,7 @@ impl UpdatePermissionGroupInputBuilder {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    pub fn set_application_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
-    ) -> Self {
+    pub fn set_application_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>) -> Self {
         self.application_permissions = input;
         self
     }
@@ -199,9 +184,7 @@ impl UpdatePermissionGroupInputBuilder {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    pub fn get_application_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>> {
+    pub fn get_application_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>> {
         &self.application_permissions
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -221,19 +204,15 @@ impl UpdatePermissionGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePermissionGroupInput`](crate::operation::update_permission_group::UpdatePermissionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_permission_group::UpdatePermissionGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_permission_group::UpdatePermissionGroupInput {
-                permission_group_id: self.permission_group_id,
-                name: self.name,
-                description: self.description,
-                application_permissions: self.application_permissions,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_permission_group::UpdatePermissionGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_permission_group::UpdatePermissionGroupInput {
+            permission_group_id: self.permission_group_id,
+            name: self.name,
+            description: self.description,
+            application_permissions: self.application_permissions,
+            client_token: self.client_token,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdatePermissionGroupInputBuilder {

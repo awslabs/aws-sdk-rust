@@ -55,8 +55,7 @@ pub struct DescribeNotebookInstanceOutput {
     pub volume_size_in_gb: ::std::option::Option<i32>,
     /// <p>A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
     #[doc(hidden)]
-    pub accelerator_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>,
+    pub accelerator_types: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>,
     /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     #[doc(hidden)]
     pub default_code_repository: ::std::option::Option<::std::string::String>,
@@ -73,8 +72,7 @@ pub struct DescribeNotebookInstanceOutput {
     pub platform_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Information on the IMDS configuration of the notebook instance</p>
     #[doc(hidden)]
-    pub instance_metadata_service_configuration:
-        ::std::option::Option<crate::types::InstanceMetadataServiceConfiguration>,
+    pub instance_metadata_service_configuration: ::std::option::Option<crate::types::InstanceMetadataServiceConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeNotebookInstanceOutput {
@@ -87,9 +85,7 @@ impl DescribeNotebookInstanceOutput {
         self.notebook_instance_name.as_deref()
     }
     /// <p>The status of the notebook instance.</p>
-    pub fn notebook_instance_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotebookInstanceStatus> {
+    pub fn notebook_instance_status(&self) -> ::std::option::Option<&crate::types::NotebookInstanceStatus> {
         self.notebook_instance_status.as_ref()
     }
     /// <p>If status is <code>Failed</code>, the reason it failed.</p>
@@ -139,9 +135,7 @@ impl DescribeNotebookInstanceOutput {
     }
     /// <p>Describes whether SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training and endpoint services.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>.</p>
-    pub fn direct_internet_access(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DirectInternetAccess> {
+    pub fn direct_internet_access(&self) -> ::std::option::Option<&crate::types::DirectInternetAccess> {
         self.direct_internet_access.as_ref()
     }
     /// <p>The size, in GB, of the ML storage volume attached to the notebook instance.</p>
@@ -149,9 +143,7 @@ impl DescribeNotebookInstanceOutput {
         self.volume_size_in_gb
     }
     /// <p>A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    pub fn accelerator_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotebookInstanceAcceleratorType]> {
+    pub fn accelerator_types(&self) -> ::std::option::Option<&[crate::types::NotebookInstanceAcceleratorType]> {
         self.accelerator_types.as_deref()
     }
     /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
@@ -173,9 +165,7 @@ impl DescribeNotebookInstanceOutput {
         self.platform_identifier.as_deref()
     }
     /// <p>Information on the IMDS configuration of the notebook instance</p>
-    pub fn instance_metadata_service_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceMetadataServiceConfiguration> {
+    pub fn instance_metadata_service_configuration(&self) -> ::std::option::Option<&crate::types::InstanceMetadataServiceConfiguration> {
         self.instance_metadata_service_configuration.as_ref()
     }
 }
@@ -186,23 +176,18 @@ impl ::aws_http::request_id::RequestId for DescribeNotebookInstanceOutput {
 }
 impl DescribeNotebookInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNotebookInstanceOutput`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceOutputBuilder {
         crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNotebookInstanceOutput`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNotebookInstanceOutputBuilder {
     pub(crate) notebook_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) notebook_instance_name: ::std::option::Option<::std::string::String>,
-    pub(crate) notebook_instance_status:
-        ::std::option::Option<crate::types::NotebookInstanceStatus>,
+    pub(crate) notebook_instance_status: ::std::option::Option<crate::types::NotebookInstanceStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
@@ -213,35 +198,25 @@ pub struct DescribeNotebookInstanceOutputBuilder {
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) notebook_instance_lifecycle_config_name:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) direct_internet_access: ::std::option::Option<crate::types::DirectInternetAccess>,
     pub(crate) volume_size_in_gb: ::std::option::Option<i32>,
-    pub(crate) accelerator_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>,
+    pub(crate) accelerator_types: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>,
     pub(crate) default_code_repository: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_code_repositories:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) additional_code_repositories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) root_access: ::std::option::Option<crate::types::RootAccess>,
     pub(crate) platform_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_metadata_service_configuration:
-        ::std::option::Option<crate::types::InstanceMetadataServiceConfiguration>,
+    pub(crate) instance_metadata_service_configuration: ::std::option::Option<crate::types::InstanceMetadataServiceConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeNotebookInstanceOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
-    pub fn notebook_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
-    pub fn set_notebook_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_instance_arn = input;
         self
     }
@@ -250,18 +225,12 @@ impl DescribeNotebookInstanceOutputBuilder {
         &self.notebook_instance_arn
     }
     /// <p>The name of the SageMaker notebook instance. </p>
-    pub fn notebook_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SageMaker notebook instance. </p>
-    pub fn set_notebook_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_instance_name = input;
         self
     }
@@ -275,32 +244,21 @@ impl DescribeNotebookInstanceOutputBuilder {
         self
     }
     /// <p>The status of the notebook instance.</p>
-    pub fn set_notebook_instance_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NotebookInstanceStatus>,
-    ) -> Self {
+    pub fn set_notebook_instance_status(mut self, input: ::std::option::Option<crate::types::NotebookInstanceStatus>) -> Self {
         self.notebook_instance_status = input;
         self
     }
     /// <p>The status of the notebook instance.</p>
-    pub fn get_notebook_instance_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotebookInstanceStatus> {
+    pub fn get_notebook_instance_status(&self) -> &::std::option::Option<crate::types::NotebookInstanceStatus> {
         &self.notebook_instance_status
     }
     /// <p>If status is <code>Failed</code>, the reason it failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If status is <code>Failed</code>, the reason it failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -328,10 +286,7 @@ impl DescribeNotebookInstanceOutputBuilder {
         self
     }
     /// <p>The type of ML compute instance running on the notebook instance.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -358,27 +313,19 @@ impl DescribeNotebookInstanceOutputBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The IDs of the VPC security groups.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the VPC security groups.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The IDs of the VPC security groups.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance. </p>
@@ -410,18 +357,12 @@ impl DescribeNotebookInstanceOutputBuilder {
         &self.kms_key_id
     }
     /// <p>The network interface IDs that SageMaker created at the time of creating the instance. </p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The network interface IDs that SageMaker created at the time of creating the instance. </p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -435,10 +376,7 @@ impl DescribeNotebookInstanceOutputBuilder {
         self
     }
     /// <p>A timestamp. Use this parameter to retrieve the time when the notebook instance was last modified. </p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -452,10 +390,7 @@ impl DescribeNotebookInstanceOutputBuilder {
         self
     }
     /// <p>A timestamp. Use this parameter to return the time when the notebook instance was created</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -465,27 +400,19 @@ impl DescribeNotebookInstanceOutputBuilder {
     }
     /// <p>Returns the name of a notebook instance lifecycle configuration.</p>
     /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a> </p>
-    pub fn notebook_instance_lifecycle_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the name of a notebook instance lifecycle configuration.</p>
     /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a> </p>
-    pub fn set_notebook_instance_lifecycle_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_instance_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_name = input;
         self
     }
     /// <p>Returns the name of a notebook instance lifecycle configuration.</p>
     /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a> </p>
-    pub fn get_notebook_instance_lifecycle_config_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_notebook_instance_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_instance_lifecycle_config_name
     }
     /// <p>Describes whether SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training and endpoint services.</p>
@@ -496,18 +423,13 @@ impl DescribeNotebookInstanceOutputBuilder {
     }
     /// <p>Describes whether SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training and endpoint services.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>.</p>
-    pub fn set_direct_internet_access(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectInternetAccess>,
-    ) -> Self {
+    pub fn set_direct_internet_access(mut self, input: ::std::option::Option<crate::types::DirectInternetAccess>) -> Self {
         self.direct_internet_access = input;
         self
     }
     /// <p>Describes whether SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled</i>, the notebook instance does not have internet access, and cannot connect to SageMaker training and endpoint services.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>.</p>
-    pub fn get_direct_internet_access(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectInternetAccess> {
+    pub fn get_direct_internet_access(&self) -> &::std::option::Option<crate::types::DirectInternetAccess> {
         &self.direct_internet_access
     }
     /// <p>The size, in GB, of the ML storage volume attached to the notebook instance.</p>
@@ -529,45 +451,28 @@ impl DescribeNotebookInstanceOutputBuilder {
     /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
     ///
     /// <p>A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    pub fn accelerator_types(
-        mut self,
-        input: crate::types::NotebookInstanceAcceleratorType,
-    ) -> Self {
+    pub fn accelerator_types(mut self, input: crate::types::NotebookInstanceAcceleratorType) -> Self {
         let mut v = self.accelerator_types.unwrap_or_default();
         v.push(input);
         self.accelerator_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    pub fn set_accelerator_types(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>,
-        >,
-    ) -> Self {
+    pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>) -> Self {
         self.accelerator_types = input;
         self
     }
     /// <p>A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    pub fn get_accelerator_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>>
-    {
+    pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceAcceleratorType>> {
         &self.accelerator_types
     }
     /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    pub fn default_code_repository(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_code_repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_code_repository = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    pub fn set_default_code_repository(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_code_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_code_repository = input;
         self
     }
@@ -580,27 +485,19 @@ impl DescribeNotebookInstanceOutputBuilder {
     /// To override the contents of this collection use [`set_additional_code_repositories`](Self::set_additional_code_repositories).
     ///
     /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    pub fn additional_code_repositories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_code_repositories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.additional_code_repositories.unwrap_or_default();
         v.push(input.into());
         self.additional_code_repositories = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    pub fn set_additional_code_repositories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_code_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.additional_code_repositories = input;
         self
     }
     /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    pub fn get_additional_code_repositories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_code_repositories
     }
     /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
@@ -613,10 +510,7 @@ impl DescribeNotebookInstanceOutputBuilder {
     /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
     /// </note>
-    pub fn set_root_access(
-        mut self,
-        input: ::std::option::Option<crate::types::RootAccess>,
-    ) -> Self {
+    pub fn set_root_access(mut self, input: ::std::option::Option<crate::types::RootAccess>) -> Self {
         self.root_access = input;
         self
     }
@@ -627,18 +521,12 @@ impl DescribeNotebookInstanceOutputBuilder {
         &self.root_access
     }
     /// <p>The platform identifier of the notebook instance runtime environment.</p>
-    pub fn platform_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The platform identifier of the notebook instance runtime environment.</p>
-    pub fn set_platform_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_identifier = input;
         self
     }
@@ -647,10 +535,7 @@ impl DescribeNotebookInstanceOutputBuilder {
         &self.platform_identifier
     }
     /// <p>Information on the IMDS configuration of the notebook instance</p>
-    pub fn instance_metadata_service_configuration(
-        mut self,
-        input: crate::types::InstanceMetadataServiceConfiguration,
-    ) -> Self {
+    pub fn instance_metadata_service_configuration(mut self, input: crate::types::InstanceMetadataServiceConfiguration) -> Self {
         self.instance_metadata_service_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -663,9 +548,7 @@ impl DescribeNotebookInstanceOutputBuilder {
         self
     }
     /// <p>Information on the IMDS configuration of the notebook instance</p>
-    pub fn get_instance_metadata_service_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceMetadataServiceConfiguration> {
+    pub fn get_instance_metadata_service_configuration(&self) -> &::std::option::Option<crate::types::InstanceMetadataServiceConfiguration> {
         &self.instance_metadata_service_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -678,9 +561,7 @@ impl DescribeNotebookInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNotebookInstanceOutput`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_notebook_instance::DescribeNotebookInstanceOutput {
+    pub fn build(self) -> crate::operation::describe_notebook_instance::DescribeNotebookInstanceOutput {
         crate::operation::describe_notebook_instance::DescribeNotebookInstanceOutput {
             notebook_instance_arn: self.notebook_instance_arn,
             notebook_instance_name: self.notebook_instance_name,

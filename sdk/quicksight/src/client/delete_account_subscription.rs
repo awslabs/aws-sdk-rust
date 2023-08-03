@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::delete_account_subscription::DeleteAccountSubscriptionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::delete_account_subscription::DeleteAccountSubscriptionOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteAccountSubscriptionError>`](crate::operation::delete_account_subscription::DeleteAccountSubscriptionError)
-    pub fn delete_account_subscription(&self) -> crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionFluentBuilder{
+    pub fn delete_account_subscription(&self) -> crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionFluentBuilder {
         crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

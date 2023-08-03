@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetWorkflowRunsOutput {
 }
 impl GetWorkflowRunsOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowRunsOutput`](crate::operation::get_workflow_runs::GetWorkflowRunsOutput).
-    pub fn builder() -> crate::operation::get_workflow_runs::builders::GetWorkflowRunsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_workflow_runs::builders::GetWorkflowRunsOutputBuilder {
         crate::operation::get_workflow_runs::builders::GetWorkflowRunsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkflowRunsOutput`](crate::operation::get_workflow_runs::GetWorkflowRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowRunsOutputBuilder {
     pub(crate) runs: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowRun>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl GetWorkflowRunsOutputBuilder {
         self
     }
     /// <p>A list of workflow run metadata objects.</p>
-    pub fn set_runs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowRun>>,
-    ) -> Self {
+    pub fn set_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowRun>>) -> Self {
         self.runs = input;
         self
     }

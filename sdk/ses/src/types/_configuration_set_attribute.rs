@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ConfigurationSetAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ConfigurationSetAttribute {
             "eventDestinations" => ConfigurationSetAttribute::EventDestinations,
             "reputationOptions" => ConfigurationSetAttribute::ReputationOptions,
             "trackingOptions" => ConfigurationSetAttribute::TrackingOptions,
-            other => ConfigurationSetAttribute::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConfigurationSetAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ConfigurationSetAttribute {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "deliveryOptions",
-            "eventDestinations",
-            "reputationOptions",
-            "trackingOptions",
-        ]
+        &["deliveryOptions", "eventDestinations", "reputationOptions", "trackingOptions"]
     }
 }
 impl ::std::convert::AsRef<str> for ConfigurationSetAttribute {

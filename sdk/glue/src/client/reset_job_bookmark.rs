@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ResetJobBookmarkOutput`](crate::operation::reset_job_bookmark::ResetJobBookmarkOutput) with field(s):
     ///   - [`job_bookmark_entry(Option<JobBookmarkEntry>)`](crate::operation::reset_job_bookmark::ResetJobBookmarkOutput::job_bookmark_entry): <p>The reset bookmark entry.</p>
     /// - On failure, responds with [`SdkError<ResetJobBookmarkError>`](crate::operation::reset_job_bookmark::ResetJobBookmarkError)
-    pub fn reset_job_bookmark(
-        &self,
-    ) -> crate::operation::reset_job_bookmark::builders::ResetJobBookmarkFluentBuilder {
-        crate::operation::reset_job_bookmark::builders::ResetJobBookmarkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reset_job_bookmark(&self) -> crate::operation::reset_job_bookmark::builders::ResetJobBookmarkFluentBuilder {
+        crate::operation::reset_job_bookmark::builders::ResetJobBookmarkFluentBuilder::new(self.handle.clone())
     }
 }

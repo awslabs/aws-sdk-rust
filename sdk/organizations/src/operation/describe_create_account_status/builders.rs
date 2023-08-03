@@ -27,7 +27,7 @@ impl DescribeCreateAccountStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCreateAccountStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusInputBuilder,
+    inner: crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusInputBuilder,
 }
 impl DescribeCreateAccountStatusFluentBuilder {
     /// Creates a new `DescribeCreateAccountStatus`.
@@ -38,7 +38,7 @@ impl DescribeCreateAccountStatusFluentBuilder {
         }
     }
     /// Access the DescribeCreateAccountStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeCreateAccountStatusFluentBuilder {
             crate::operation::describe_create_account_status::DescribeCreateAccountStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_create_account_status::DescribeCreateAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_create_account_status::DescribeCreateAccountStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeCreateAccountStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeCreateAccountStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_create_account_status::DescribeCreateAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_create_account_status::DescribeCreateAccountStatusError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeCreateAccountStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_create_account_status::DescribeCreateAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_create_account_status::DescribeCreateAccountStatusError>,
     > {
         self.send_middleware().await
     }
@@ -115,27 +106,19 @@ impl DescribeCreateAccountStatusFluentBuilder {
             crate::operation::describe_create_account_status::DescribeCreateAccountStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_create_account_status::DescribeCreateAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_create_account_status::DescribeCreateAccountStatusError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the <code>Id</code> value that uniquely identifies the <code>CreateAccount</code> request. You can get the value from the <code>CreateAccountStatus.Id</code> response in an earlier <code>CreateAccount</code> request, or from the <code>ListCreateAccountStatus</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn create_account_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn create_account_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.create_account_request_id(input.into());
         self
     }
     /// <p>Specifies the <code>Id</code> value that uniquely identifies the <code>CreateAccount</code> request. You can get the value from the <code>CreateAccountStatus.Id</code> response in an earlier <code>CreateAccount</code> request, or from the <code>ListCreateAccountStatus</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn set_create_account_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_create_account_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_create_account_request_id(input);
         self
     }

@@ -11,9 +11,7 @@ pub struct DescribeAccountConfigurationOutput {
 }
 impl DescribeAccountConfigurationOutput {
     /// Placeholder documentation for AccountConfiguration
-    pub fn account_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccountConfiguration> {
+    pub fn account_configuration(&self) -> ::std::option::Option<&crate::types::AccountConfiguration> {
         self.account_configuration.as_ref()
     }
 }
@@ -24,16 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeAccountConfigurationOutput {
 }
 impl DescribeAccountConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountConfigurationOutput`](crate::operation::describe_account_configuration::DescribeAccountConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_account_configuration::builders::DescribeAccountConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_account_configuration::builders::DescribeAccountConfigurationOutputBuilder {
         crate::operation::describe_account_configuration::builders::DescribeAccountConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountConfigurationOutput`](crate::operation::describe_account_configuration::DescribeAccountConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountConfigurationOutputBuilder {
     pub(crate) account_configuration: ::std::option::Option<crate::types::AccountConfiguration>,
     _request_id: Option<String>,
@@ -45,17 +41,12 @@ impl DescribeAccountConfigurationOutputBuilder {
         self
     }
     /// Placeholder documentation for AccountConfiguration
-    pub fn set_account_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountConfiguration>,
-    ) -> Self {
+    pub fn set_account_configuration(mut self, input: ::std::option::Option<crate::types::AccountConfiguration>) -> Self {
         self.account_configuration = input;
         self
     }
     /// Placeholder documentation for AccountConfiguration
-    pub fn get_account_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountConfiguration> {
+    pub fn get_account_configuration(&self) -> &::std::option::Option<crate::types::AccountConfiguration> {
         &self.account_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,9 +59,7 @@ impl DescribeAccountConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccountConfigurationOutput`](crate::operation::describe_account_configuration::DescribeAccountConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_account_configuration::DescribeAccountConfigurationOutput {
+    pub fn build(self) -> crate::operation::describe_account_configuration::DescribeAccountConfigurationOutput {
         crate::operation::describe_account_configuration::DescribeAccountConfigurationOutput {
             account_configuration: self.account_configuration,
             _request_id: self._request_id,

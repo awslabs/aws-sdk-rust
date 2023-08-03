@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CanaryState {
     #[allow(missing_docs)] // documentation missing in model
@@ -117,8 +111,7 @@ impl CanaryState {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CREATING", "DELETING", "ERROR", "READY", "RUNNING", "STARTING", "STOPPED", "STOPPING",
-            "UPDATING",
+            "CREATING", "DELETING", "ERROR", "READY", "RUNNING", "STARTING", "STOPPED", "STOPPING", "UPDATING",
         ]
     }
 }

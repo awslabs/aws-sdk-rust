@@ -6,7 +6,9 @@ impl super::Client {
     /// - On success, responds with [`GetFindingsPublicationConfigurationOutput`](crate::operation::get_findings_publication_configuration::GetFindingsPublicationConfigurationOutput) with field(s):
     ///   - [`security_hub_configuration(Option<SecurityHubConfiguration>)`](crate::operation::get_findings_publication_configuration::GetFindingsPublicationConfigurationOutput::security_hub_configuration): <p>The configuration settings that determine which findings are published to Security Hub.</p>
     /// - On failure, responds with [`SdkError<GetFindingsPublicationConfigurationError>`](crate::operation::get_findings_publication_configuration::GetFindingsPublicationConfigurationError)
-    pub fn get_findings_publication_configuration(&self) -> crate::operation::get_findings_publication_configuration::builders::GetFindingsPublicationConfigurationFluentBuilder{
+    pub fn get_findings_publication_configuration(
+        &self,
+    ) -> crate::operation::get_findings_publication_configuration::builders::GetFindingsPublicationConfigurationFluentBuilder {
         crate::operation::get_findings_publication_configuration::builders::GetFindingsPublicationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

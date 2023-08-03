@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`runs(Option<Vec<DataQualityRulesetEvaluationRunDescription>>)`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsOutput::runs): <p>A list of <code>DataQualityRulesetEvaluationRunDescription</code> objects representing data quality ruleset runs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsOutput::next_token): <p>A pagination token, if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListDataQualityRulesetEvaluationRunsError>`](crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsError)
-    pub fn list_data_quality_ruleset_evaluation_runs(&self) -> crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder{
-        crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder::new(self.handle.clone())
+    pub fn list_data_quality_ruleset_evaluation_runs(
+        &self,
+    ) -> crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder {
+        crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

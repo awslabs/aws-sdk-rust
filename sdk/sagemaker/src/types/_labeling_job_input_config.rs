@@ -17,9 +17,7 @@ impl LabelingJobInputConfig {
         self.data_source.as_ref()
     }
     /// <p>Attributes of the data specified by the customer.</p>
-    pub fn data_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LabelingJobDataAttributes> {
+    pub fn data_attributes(&self) -> ::std::option::Option<&crate::types::LabelingJobDataAttributes> {
         self.data_attributes.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl LabelingJobInputConfig {
 
 /// A builder for [`LabelingJobInputConfig`](crate::types::LabelingJobInputConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelingJobInputConfigBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::LabelingJobDataSource>,
     pub(crate) data_attributes: ::std::option::Option<crate::types::LabelingJobDataAttributes>,
@@ -46,10 +42,7 @@ impl LabelingJobInputConfigBuilder {
         self
     }
     /// <p>The location of the input data.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelingJobDataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::LabelingJobDataSource>) -> Self {
         self.data_source = input;
         self
     }
@@ -63,17 +56,12 @@ impl LabelingJobInputConfigBuilder {
         self
     }
     /// <p>Attributes of the data specified by the customer.</p>
-    pub fn set_data_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelingJobDataAttributes>,
-    ) -> Self {
+    pub fn set_data_attributes(mut self, input: ::std::option::Option<crate::types::LabelingJobDataAttributes>) -> Self {
         self.data_attributes = input;
         self
     }
     /// <p>Attributes of the data specified by the customer.</p>
-    pub fn get_data_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::LabelingJobDataAttributes> {
+    pub fn get_data_attributes(&self) -> &::std::option::Option<crate::types::LabelingJobDataAttributes> {
         &self.data_attributes
     }
     /// Consumes the builder and constructs a [`LabelingJobInputConfig`](crate::types::LabelingJobInputConfig).

@@ -40,16 +40,14 @@ impl CreateUpdatedWorkspaceImageInput {
 }
 impl CreateUpdatedWorkspaceImageInput {
     /// Creates a new builder-style object to manufacture [`CreateUpdatedWorkspaceImageInput`](crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageInput).
-    pub fn builder() -> crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageInputBuilder{
+    pub fn builder() -> crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageInputBuilder {
         crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUpdatedWorkspaceImageInput`](crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUpdatedWorkspaceImageInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -86,18 +84,12 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
         &self.description
     }
     /// <p>The identifier of the source WorkSpace image.</p>
-    pub fn source_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the source WorkSpace image.</p>
-    pub fn set_source_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_image_id = input;
         self
     }
@@ -121,10 +113,7 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
     /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
     /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -141,13 +130,11 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
         crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageInput {
-                name: self.name,
-                description: self.description,
-                source_image_id: self.source_image_id,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageInput {
+            name: self.name,
+            description: self.description,
+            source_image_id: self.source_image_id,
+            tags: self.tags,
+        })
     }
 }

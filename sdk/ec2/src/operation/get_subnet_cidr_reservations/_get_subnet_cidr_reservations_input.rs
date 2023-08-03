@@ -67,16 +67,14 @@ impl GetSubnetCidrReservationsInput {
 }
 impl GetSubnetCidrReservationsInput {
     /// Creates a new builder-style object to manufacture [`GetSubnetCidrReservationsInput`](crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsInput).
-    pub fn builder() -> crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsInputBuilder{
+    pub fn builder() -> crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsInputBuilder {
         crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSubnetCidrReservationsInput`](crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSubnetCidrReservationsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
@@ -121,10 +119,7 @@ impl GetSubnetCidrReservationsInputBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -207,14 +202,12 @@ impl GetSubnetCidrReservationsInputBuilder {
         crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsInput {
-                filters: self.filters,
-                subnet_id: self.subnet_id,
-                dry_run: self.dry_run,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsInput {
+            filters: self.filters,
+            subnet_id: self.subnet_id,
+            dry_run: self.dry_run,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

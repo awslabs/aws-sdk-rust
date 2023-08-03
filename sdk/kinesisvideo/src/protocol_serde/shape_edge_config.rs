@@ -3,12 +3,7 @@ pub(crate) fn de_edge_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::EdgeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -18,51 +13,38 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "HubDeviceArn" => {
-                                builder = builder.set_hub_device_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "HubDeviceArn" => {
+                            builder = builder.set_hub_device_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "RecorderConfig" => {
-                                builder = builder.set_recorder_config(
-                                    crate::protocol_serde::shape_recorder_config::de_recorder_config(tokens)?
-                                );
-                            }
-                            "UploaderConfig" => {
-                                builder = builder.set_uploader_config(
-                                    crate::protocol_serde::shape_uploader_config::de_uploader_config(tokens)?
-                                );
-                            }
-                            "DeletionConfig" => {
-                                builder = builder.set_deletion_config(
-                                    crate::protocol_serde::shape_deletion_config::de_deletion_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "RecorderConfig" => {
+                            builder = builder.set_recorder_config(crate::protocol_serde::shape_recorder_config::de_recorder_config(tokens)?);
+                        }
+                        "UploaderConfig" => {
+                            builder = builder.set_uploader_config(crate::protocol_serde::shape_uploader_config::de_uploader_config(tokens)?);
+                        }
+                        "DeletionConfig" => {
+                            builder = builder.set_deletion_config(crate::protocol_serde::shape_deletion_config::de_deletion_config(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }
 

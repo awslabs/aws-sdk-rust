@@ -44,9 +44,7 @@ impl Cell {
 
 /// A builder for [`Cell`](crate::types::Cell).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CellBuilder {
     pub(crate) cell_reference: ::std::option::Option<::std::string::String>,
     pub(crate) column: ::std::option::Option<i64>,
@@ -55,18 +53,12 @@ pub struct CellBuilder {
 }
 impl CellBuilder {
     /// <p>The location of the cell, as an absolute cell reference, that contains the sensitive data, for example Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.</p>
-    pub fn cell_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cell_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cell_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the cell, as an absolute cell reference, that contains the sensitive data, for example Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.</p>
-    pub fn set_cell_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cell_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cell_reference = input;
         self
     }

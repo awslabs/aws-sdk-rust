@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`instance_summary_list(Option<Vec<InstanceSummary>>)`](crate::operation::list_instances::ListInstancesOutput::instance_summary_list): <p>Information about the instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_instances::ListInstancesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListInstancesError>`](crate::operation::list_instances::ListInstancesError)
-    pub fn list_instances(
-        &self,
-    ) -> crate::operation::list_instances::builders::ListInstancesFluentBuilder {
-        crate::operation::list_instances::builders::ListInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_instances(&self) -> crate::operation::list_instances::builders::ListInstancesFluentBuilder {
+        crate::operation::list_instances::builders::ListInstancesFluentBuilder::new(self.handle.clone())
     }
 }

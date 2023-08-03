@@ -15,16 +15,14 @@ impl GetRecommendationReportDetailsInput {
 }
 impl GetRecommendationReportDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationReportDetailsInput`](crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsInput).
-    pub fn builder() -> crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsInputBuilder{
+    pub fn builder() -> crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsInputBuilder {
         crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommendationReportDetailsInput`](crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommendationReportDetailsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,6 @@ impl GetRecommendationReportDetailsInputBuilder {
         crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsInput {
-                id: self.id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsInput { id: self.id })
     }
 }

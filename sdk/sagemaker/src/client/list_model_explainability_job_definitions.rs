@@ -16,7 +16,11 @@ impl super::Client {
     ///   - [`job_definition_summaries(Option<Vec<MonitoringJobDefinitionSummary>>)`](crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsOutput::job_definition_summaries): <p>A JSON array in which each element is a summary for a explainability bias jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListModelExplainabilityJobDefinitionsError>`](crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsError)
-    pub fn list_model_explainability_job_definitions(&self) -> crate::operation::list_model_explainability_job_definitions::builders::ListModelExplainabilityJobDefinitionsFluentBuilder{
-        crate::operation::list_model_explainability_job_definitions::builders::ListModelExplainabilityJobDefinitionsFluentBuilder::new(self.handle.clone())
+    pub fn list_model_explainability_job_definitions(
+        &self,
+    ) -> crate::operation::list_model_explainability_job_definitions::builders::ListModelExplainabilityJobDefinitionsFluentBuilder {
+        crate::operation::list_model_explainability_job_definitions::builders::ListModelExplainabilityJobDefinitionsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

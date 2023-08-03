@@ -37,9 +37,7 @@ impl WeeklyStartTime {
 
 /// A builder for [`WeeklyStartTime`](crate::types::WeeklyStartTime).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WeeklyStartTimeBuilder {
     pub(crate) day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
     pub(crate) time_of_day: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl WeeklyStartTimeBuilder {
         self
     }
     /// <p>Required. The day of the week.</p>
-    pub fn set_day_of_week(
-        mut self,
-        input: ::std::option::Option<crate::types::DayOfWeek>,
-    ) -> Self {
+    pub fn set_day_of_week(mut self, input: ::std::option::Option<crate::types::DayOfWeek>) -> Self {
         self.day_of_week = input;
         self
     }

@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteMultiRegionAccessPointOutput`](crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointOutput) with field(s):
     ///   - [`request_token_arn(Option<String>)`](crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointOutput::request_token_arn): <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
     /// - On failure, responds with [`SdkError<DeleteMultiRegionAccessPointError>`](crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError)
-    pub fn delete_multi_region_access_point(&self) -> crate::operation::delete_multi_region_access_point::builders::DeleteMultiRegionAccessPointFluentBuilder{
+    pub fn delete_multi_region_access_point(
+        &self,
+    ) -> crate::operation::delete_multi_region_access_point::builders::DeleteMultiRegionAccessPointFluentBuilder {
         crate::operation::delete_multi_region_access_point::builders::DeleteMultiRegionAccessPointFluentBuilder::new(self.handle.clone())
     }
 }

@@ -62,9 +62,7 @@ impl RegionDescription {
         self.launch_time.as_ref()
     }
     /// <p>The date and time that the Region status was last updated.</p>
-    pub fn status_last_updated_date_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn status_last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.status_last_updated_date_time.as_ref()
     }
     /// <p>The date and time that the Region description was last updated.</p>
@@ -81,9 +79,7 @@ impl RegionDescription {
 
 /// A builder for [`RegionDescription`](crate::types::RegionDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegionDescriptionBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
@@ -130,10 +126,7 @@ impl RegionDescriptionBuilder {
         self
     }
     /// <p>Specifies whether the Region is the primary Region or an additional Region.</p>
-    pub fn set_region_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RegionType>,
-    ) -> Self {
+    pub fn set_region_type(mut self, input: ::std::option::Option<crate::types::RegionType>) -> Self {
         self.region_type = input;
         self
     }
@@ -147,10 +140,7 @@ impl RegionDescriptionBuilder {
         self
     }
     /// <p>The status of the replication process for the specified Region.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryStage>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DirectoryStage>) -> Self {
         self.status = input;
         self
     }
@@ -164,10 +154,7 @@ impl RegionDescriptionBuilder {
         self
     }
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
-    pub fn set_vpc_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryVpcSettings>,
-    ) -> Self {
+    pub fn set_vpc_settings(mut self, input: ::std::option::Option<crate::types::DirectoryVpcSettings>) -> Self {
         self.vpc_settings = input;
         self
     }
@@ -181,10 +168,7 @@ impl RegionDescriptionBuilder {
         self
     }
     /// <p>The desired number of domain controllers in the specified Region for the specified directory.</p>
-    pub fn set_desired_number_of_domain_controllers(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_desired_number_of_domain_controllers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_number_of_domain_controllers = input;
         self
     }
@@ -198,10 +182,7 @@ impl RegionDescriptionBuilder {
         self
     }
     /// <p>Specifies when the Region replication began.</p>
-    pub fn set_launch_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_launch_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.launch_time = input;
         self
     }
@@ -215,17 +196,12 @@ impl RegionDescriptionBuilder {
         self
     }
     /// <p>The date and time that the Region status was last updated.</p>
-    pub fn set_status_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_status_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.status_last_updated_date_time = input;
         self
     }
     /// <p>The date and time that the Region status was last updated.</p>
-    pub fn get_status_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_status_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.status_last_updated_date_time
     }
     /// <p>The date and time that the Region description was last updated.</p>
@@ -234,17 +210,12 @@ impl RegionDescriptionBuilder {
         self
     }
     /// <p>The date and time that the Region description was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time that the Region description was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`RegionDescription`](crate::types::RegionDescription).
@@ -255,9 +226,7 @@ impl RegionDescriptionBuilder {
             region_type: self.region_type,
             status: self.status,
             vpc_settings: self.vpc_settings,
-            desired_number_of_domain_controllers: self
-                .desired_number_of_domain_controllers
-                .unwrap_or_default(),
+            desired_number_of_domain_controllers: self.desired_number_of_domain_controllers.unwrap_or_default(),
             launch_time: self.launch_time,
             status_last_updated_date_time: self.status_last_updated_date_time,
             last_updated_date_time: self.last_updated_date_time,

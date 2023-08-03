@@ -59,10 +59,7 @@ impl DataSourceCredentialsBuilder {
         self
     }
     /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
-    pub fn set_credential_pair(
-        mut self,
-        input: ::std::option::Option<crate::types::CredentialPair>,
-    ) -> Self {
+    pub fn set_credential_pair(mut self, input: ::std::option::Option<crate::types::CredentialPair>) -> Self {
         self.credential_pair = input;
         self
     }
@@ -71,18 +68,12 @@ impl DataSourceCredentialsBuilder {
         &self.credential_pair
     }
     /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code> structure.</p>
-    pub fn copy_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn copy_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.copy_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code> structure.</p>
-    pub fn set_copy_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_copy_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.copy_source_arn = input;
         self
     }

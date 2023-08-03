@@ -5,8 +5,7 @@
 pub struct ListModelPackageGroupsOutput {
     /// <p>A list of summaries of the model groups in your Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub model_package_group_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageGroupSummary>>,
+    pub model_package_group_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageGroupSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model groups, use it in the subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListModelPackageGroupsOutput {
 }
 impl ListModelPackageGroupsOutput {
     /// <p>A list of summaries of the model groups in your Amazon Web Services account.</p>
-    pub fn model_package_group_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ModelPackageGroupSummary]> {
+    pub fn model_package_group_summary_list(&self) -> ::std::option::Option<&[crate::types::ModelPackageGroupSummary]> {
         self.model_package_group_summary_list.as_deref()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model groups, use it in the subsequent request.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListModelPackageGroupsOutput {
 }
 impl ListModelPackageGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListModelPackageGroupsOutput`](crate::operation::list_model_package_groups::ListModelPackageGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_model_package_groups::builders::ListModelPackageGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_model_package_groups::builders::ListModelPackageGroupsOutputBuilder {
         crate::operation::list_model_package_groups::builders::ListModelPackageGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelPackageGroupsOutput`](crate::operation::list_model_package_groups::ListModelPackageGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelPackageGroupsOutputBuilder {
-    pub(crate) model_package_group_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageGroupSummary>>,
+    pub(crate) model_package_group_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListModelPackageGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_model_package_group_summary_list`](Self::set_model_package_group_summary_list).
     ///
     /// <p>A list of summaries of the model groups in your Amazon Web Services account.</p>
-    pub fn model_package_group_summary_list(
-        mut self,
-        input: crate::types::ModelPackageGroupSummary,
-    ) -> Self {
+    pub fn model_package_group_summary_list(mut self, input: crate::types::ModelPackageGroupSummary) -> Self {
         let mut v = self.model_package_group_summary_list.unwrap_or_default();
         v.push(input);
         self.model_package_group_summary_list = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl ListModelPackageGroupsOutputBuilder {
         self
     }
     /// <p>A list of summaries of the model groups in your Amazon Web Services account.</p>
-    pub fn get_model_package_group_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackageGroupSummary>> {
+    pub fn get_model_package_group_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackageGroupSummary>> {
         &self.model_package_group_summary_list
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model groups, use it in the subsequent request.</p>
@@ -102,9 +89,7 @@ impl ListModelPackageGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListModelPackageGroupsOutput`](crate::operation::list_model_package_groups::ListModelPackageGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_model_package_groups::ListModelPackageGroupsOutput {
+    pub fn build(self) -> crate::operation::list_model_package_groups::ListModelPackageGroupsOutput {
         crate::operation::list_model_package_groups::ListModelPackageGroupsOutput {
             model_package_group_summary_list: self.model_package_group_summary_list,
             next_token: self.next_token,

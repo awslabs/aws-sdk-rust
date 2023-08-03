@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for UpdateDataSourcePermissionsOutput {
 }
 impl UpdateDataSourcePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSourcePermissionsOutput`](crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput).
-    pub fn builder() -> crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsOutputBuilder {
         crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDataSourcePermissionsOutput`](crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataSourcePermissionsOutputBuilder {
     pub(crate) data_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ pub struct UpdateDataSourcePermissionsOutputBuilder {
 }
 impl UpdateDataSourcePermissionsOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn data_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn set_data_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_arn = input;
         self
     }
@@ -81,18 +73,12 @@ impl UpdateDataSourcePermissionsOutputBuilder {
         &self.data_source_arn
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -138,9 +124,7 @@ impl UpdateDataSourcePermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDataSourcePermissionsOutput`](crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput {
+    pub fn build(self) -> crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput {
         crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput {
             data_source_arn: self.data_source_arn,
             data_source_id: self.data_source_id,

@@ -26,7 +26,7 @@ impl UpdatePackageVersionsStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePackageVersionsStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_package_versions_status::builders::UpdatePackageVersionsStatusInputBuilder,
+    inner: crate::operation::update_package_versions_status::builders::UpdatePackageVersionsStatusInputBuilder,
 }
 impl UpdatePackageVersionsStatusFluentBuilder {
     /// Creates a new `UpdatePackageVersionsStatus`.
@@ -37,7 +37,7 @@ impl UpdatePackageVersionsStatusFluentBuilder {
         }
     }
     /// Access the UpdatePackageVersionsStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_package_versions_status::builders::UpdatePackageVersionsStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_package_versions_status::builders::UpdatePackageVersionsStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdatePackageVersionsStatusFluentBuilder {
             crate::operation::update_package_versions_status::UpdatePackageVersionsStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_package_versions_status::UpdatePackageVersionsStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_package_versions_status::UpdatePackageVersionsStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdatePackageVersionsStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdatePackageVersionsStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_package_versions_status::UpdatePackageVersionsStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_package_versions_status::UpdatePackageVersionsStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_package_versions_status::UpdatePackageVersionsStatusError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdatePackageVersionsStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_package_versions_status::UpdatePackageVersionsStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_package_versions_status::UpdatePackageVersionsStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_package_versions_status::UpdatePackageVersionsStatusError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdatePackageVersionsStatusFluentBuilder {
             crate::operation::update_package_versions_status::UpdatePackageVersionsStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_package_versions_status::UpdatePackageVersionsStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_package_versions_status::UpdatePackageVersionsStatusError>,
     > {
         self.customize_middleware().await
     }
@@ -232,10 +221,7 @@ impl UpdatePackageVersionsStatusFluentBuilder {
         self
     }
     /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_versions(input);
         self
     }
@@ -259,19 +245,13 @@ impl UpdatePackageVersionsStatusFluentBuilder {
     /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
     pub fn set_version_revisions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_version_revisions(input);
         self
     }
     /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
-    pub fn get_version_revisions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_version_revisions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_version_revisions()
     }
     /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
@@ -280,17 +260,12 @@ impl UpdatePackageVersionsStatusFluentBuilder {
         self
     }
     /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
-    pub fn set_expected_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVersionStatus>,
-    ) -> Self {
+    pub fn set_expected_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
         self.inner = self.inner.set_expected_status(input);
         self
     }
     /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
-    pub fn get_expected_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PackageVersionStatus> {
+    pub fn get_expected_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
         self.inner.get_expected_status()
     }
     /// <p> The status you want to change the package version status to. </p>
@@ -299,10 +274,7 @@ impl UpdatePackageVersionsStatusFluentBuilder {
         self
     }
     /// <p> The status you want to change the package version status to. </p>
-    pub fn set_target_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVersionStatus>,
-    ) -> Self {
+    pub fn set_target_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
         self.inner = self.inner.set_target_status(input);
         self
     }

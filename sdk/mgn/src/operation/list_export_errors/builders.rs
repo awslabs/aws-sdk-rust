@@ -10,10 +10,7 @@ impl ListExportErrorsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_export_errors::ListExportErrorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_export_errors::ListExportErrorsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_export_errors::ListExportErrorsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_export_errors();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListExportErrorsFluentBuilder {
         }
     }
     /// Access the ListExportErrors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_export_errors::builders::ListExportErrorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_export_errors::builders::ListExportErrorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListExportErrorsFluentBuilder {
             crate::operation::list_export_errors::ListExportErrors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_export_errors::ListExportErrorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_export_errors::ListExportErrorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListExportErrorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListExportErrorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_export_errors::ListExportErrorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_export_errors::ListExportErrorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_export_errors::ListExportErrorsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListExportErrorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_export_errors::ListExportErrorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_export_errors::ListExportErrorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_export_errors::ListExportErrorsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListExportErrorsFluentBuilder {
             crate::operation::list_export_errors::ListExportErrors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_export_errors::ListExportErrorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_export_errors::ListExportErrorsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_export_errors::paginator::ListExportErrorsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_export_errors::paginator::ListExportErrorsPaginator {
-        crate::operation::list_export_errors::paginator::ListExportErrorsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_export_errors::paginator::ListExportErrorsPaginator {
+        crate::operation::list_export_errors::paginator::ListExportErrorsPaginator::new(self.handle, self.inner)
     }
     /// <p>List export errors request export id.</p>
     pub fn export_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

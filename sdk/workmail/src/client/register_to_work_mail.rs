@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`email(impl ::std::convert::Into<String>)`](crate::operation::register_to_work_mail::builders::RegisterToWorkMailFluentBuilder::email) / [`set_email(Option<String>)`](crate::operation::register_to_work_mail::builders::RegisterToWorkMailFluentBuilder::set_email): <p>The email for the user, group, or resource to be updated.</p>
     /// - On success, responds with [`RegisterToWorkMailOutput`](crate::operation::register_to_work_mail::RegisterToWorkMailOutput)
     /// - On failure, responds with [`SdkError<RegisterToWorkMailError>`](crate::operation::register_to_work_mail::RegisterToWorkMailError)
-    pub fn register_to_work_mail(
-        &self,
-    ) -> crate::operation::register_to_work_mail::builders::RegisterToWorkMailFluentBuilder {
-        crate::operation::register_to_work_mail::builders::RegisterToWorkMailFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_to_work_mail(&self) -> crate::operation::register_to_work_mail::builders::RegisterToWorkMailFluentBuilder {
+        crate::operation::register_to_work_mail::builders::RegisterToWorkMailFluentBuilder::new(self.handle.clone())
     }
 }

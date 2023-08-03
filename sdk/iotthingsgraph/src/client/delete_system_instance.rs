@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSystemInstanceOutput`](crate::operation::delete_system_instance::DeleteSystemInstanceOutput)
     /// - On failure, responds with [`SdkError<DeleteSystemInstanceError>`](crate::operation::delete_system_instance::DeleteSystemInstanceError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn delete_system_instance(
-        &self,
-    ) -> crate::operation::delete_system_instance::builders::DeleteSystemInstanceFluentBuilder {
-        crate::operation::delete_system_instance::builders::DeleteSystemInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_system_instance(&self) -> crate::operation::delete_system_instance::builders::DeleteSystemInstanceFluentBuilder {
+        crate::operation::delete_system_instance::builders::DeleteSystemInstanceFluentBuilder::new(self.handle.clone())
     }
 }

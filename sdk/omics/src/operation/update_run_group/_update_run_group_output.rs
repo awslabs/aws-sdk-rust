@@ -19,9 +19,7 @@ impl UpdateRunGroupOutput {
 
 /// A builder for [`UpdateRunGroupOutput`](crate::operation::update_run_group::UpdateRunGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRunGroupOutputBuilder {
     _request_id: Option<String>,
 }

@@ -10,10 +10,7 @@ impl ListFindingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_findings::ListFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_findings::ListFindingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_findings::ListFindingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_findings();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ListFindingsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_findings::ListFindings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_findings::ListFindings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_findings::ListFindingsError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ListFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ListFindingsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_findings::ListFindings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_findings::ListFindings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_findings::ListFindingsError>,
     > {
         self.customize_middleware().await
@@ -116,13 +104,8 @@ impl ListFindingsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_findings::paginator::ListFindingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_findings::paginator::ListFindingsPaginator {
-        crate::operation::list_findings::paginator::ListFindingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_findings::paginator::ListFindingsPaginator {
+        crate::operation::list_findings::paginator::ListFindingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,30 +126,17 @@ impl ListFindingsFluentBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>A filter to match for the findings to return.</p>
-    pub fn filter(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Criterion,
-    ) -> Self {
+    pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Criterion) -> Self {
         self.inner = self.inner.filter(k.into(), v);
         self
     }
     /// <p>A filter to match for the findings to return.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-        >,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>A filter to match for the findings to return.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    > {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
         self.inner.get_filter()
     }
     /// <p>The sort order for the findings returned.</p>

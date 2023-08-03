@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`locale_id(Option<String>)`](crate::operation::delete_session::DeleteSessionOutput::locale_id): <p>The locale where the session was used.</p>
     ///   - [`session_id(Option<String>)`](crate::operation::delete_session::DeleteSessionOutput::session_id): <p>The identifier of the deleted session.</p>
     /// - On failure, responds with [`SdkError<DeleteSessionError>`](crate::operation::delete_session::DeleteSessionError)
-    pub fn delete_session(
-        &self,
-    ) -> crate::operation::delete_session::builders::DeleteSessionFluentBuilder {
-        crate::operation::delete_session::builders::DeleteSessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_session(&self) -> crate::operation::delete_session::builders::DeleteSessionFluentBuilder {
+        crate::operation::delete_session::builders::DeleteSessionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -43,9 +43,7 @@ impl ListFraudstersInput {
 
 /// A builder for [`ListFraudstersInput`](crate::operation::list_fraudsters::ListFraudstersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFraudstersInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) watchlist_id: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl ListFraudstersInputBuilder {
     /// Consumes the builder and constructs a [`ListFraudstersInput`](crate::operation::list_fraudsters::ListFraudstersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_fraudsters::ListFraudstersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_fraudsters::ListFraudstersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_fraudsters::ListFraudstersInput {
             domain_id: self.domain_id,
             watchlist_id: self.watchlist_id,

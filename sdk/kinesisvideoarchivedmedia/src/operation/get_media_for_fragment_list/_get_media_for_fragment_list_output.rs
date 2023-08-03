@@ -49,9 +49,7 @@ impl ::aws_http::request_id::RequestId for GetMediaForFragmentListOutput {
 }
 impl GetMediaForFragmentListOutput {
     /// Creates a new builder-style object to manufacture [`GetMediaForFragmentListOutput`](crate::operation::get_media_for_fragment_list::GetMediaForFragmentListOutput).
-    pub fn builder(
-    ) -> crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListOutputBuilder {
         crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListOutputBuilder::default()
     }
 }
@@ -107,10 +105,7 @@ impl GetMediaForFragmentListOutputBuilder {
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li>
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li>
     /// </ul>
-    pub fn set_payload(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.payload = input;
         self
     }
@@ -126,9 +121,7 @@ impl GetMediaForFragmentListOutputBuilder {
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li>
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li>
     /// </ul>
-    pub fn get_payload(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -141,9 +134,7 @@ impl GetMediaForFragmentListOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMediaForFragmentListOutput`](crate::operation::get_media_for_fragment_list::GetMediaForFragmentListOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_media_for_fragment_list::GetMediaForFragmentListOutput {
+    pub fn build(self) -> crate::operation::get_media_for_fragment_list::GetMediaForFragmentListOutput {
         crate::operation::get_media_for_fragment_list::GetMediaForFragmentListOutput {
             content_type: self.content_type,
             payload: self.payload.unwrap_or_default(),

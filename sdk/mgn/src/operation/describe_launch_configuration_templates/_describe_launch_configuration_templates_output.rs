@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeLaunchConfigurationTemplatesO
 }
 impl DescribeLaunchConfigurationTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLaunchConfigurationTemplatesOutput`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesOutput).
-    pub fn builder() -> crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesOutputBuilder {
         crate::operation::describe_launch_configuration_templates::builders::DescribeLaunchConfigurationTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLaunchConfigurationTemplatesOutput`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLaunchConfigurationTemplatesOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfigurationTemplate>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfigurationTemplate>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeLaunchConfigurationTemplatesOutputBuilder {
         self
     }
     /// <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfigurationTemplate>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfigurationTemplate>>) -> Self {
         self.items = input;
         self
     }
     /// <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchConfigurationTemplate>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchConfigurationTemplate>> {
         &self.items
     }
     /// <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
@@ -94,12 +86,10 @@ impl DescribeLaunchConfigurationTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLaunchConfigurationTemplatesOutput`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesOutput).
-    pub fn build(self) -> crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesOutput{
+    pub fn build(self) -> crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesOutput {
         crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesOutput {
-            items: self.items
-            ,
-            next_token: self.next_token
-            ,
+            items: self.items,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

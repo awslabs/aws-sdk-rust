@@ -7,17 +7,11 @@ pub fn ser_source_selection_criteria(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.sse_kms_encrypted_objects {
         let inner_writer = scope.start_el("SseKmsEncryptedObjects");
-        crate::protocol_serde::shape_sse_kms_encrypted_objects::ser_sse_kms_encrypted_objects(
-            var_1,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_sse_kms_encrypted_objects::ser_sse_kms_encrypted_objects(var_1, inner_writer)?
     }
     if let Some(var_2) = &input.replica_modifications {
         let inner_writer = scope.start_el("ReplicaModifications");
-        crate::protocol_serde::shape_replica_modifications::ser_replica_modifications(
-            var_2,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_replica_modifications::ser_replica_modifications(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())

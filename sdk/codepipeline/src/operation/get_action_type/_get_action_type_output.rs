@@ -28,9 +28,7 @@ impl GetActionTypeOutput {
 
 /// A builder for [`GetActionTypeOutput`](crate::operation::get_action_type::GetActionTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetActionTypeOutputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ActionTypeDeclaration>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetActionTypeOutputBuilder {
         self
     }
     /// <p>The action type information for the requested action type, such as the action type ID.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTypeDeclaration>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionTypeDeclaration>) -> Self {
         self.action_type = input;
         self
     }

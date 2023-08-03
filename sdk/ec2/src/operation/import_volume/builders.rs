@@ -10,10 +10,7 @@ impl ImportVolumeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::import_volume::ImportVolumeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_volume::ImportVolumeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_volume::ImportVolumeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.import_volume();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl ImportVolumeFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::import_volume::ImportVolume,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::import_volume::ImportVolume, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::import_volume::ImportVolumeError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl ImportVolumeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,27 +98,18 @@ impl ImportVolumeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::import_volume::ImportVolume,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::import_volume::ImportVolume, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::import_volume::ImportVolumeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Availability Zone for the resulting EBS volume.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// <p>The Availability Zone for the resulting EBS volume.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
@@ -169,10 +151,7 @@ impl ImportVolumeFluentBuilder {
         self
     }
     /// <p>The disk image.</p>
-    pub fn set_image(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskImageDetail>,
-    ) -> Self {
+    pub fn set_image(mut self, input: ::std::option::Option<crate::types::DiskImageDetail>) -> Self {
         self.inner = self.inner.set_image(input);
         self
     }

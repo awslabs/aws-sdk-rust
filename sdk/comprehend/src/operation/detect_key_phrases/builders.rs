@@ -10,10 +10,7 @@ impl DetectKeyPhrasesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detect_key_phrases::DetectKeyPhrasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_key_phrases::DetectKeyPhrasesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_key_phrases::DetectKeyPhrasesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.detect_key_phrases();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DetectKeyPhrasesFluentBuilder {
         }
     }
     /// Access the DetectKeyPhrases as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detect_key_phrases::builders::DetectKeyPhrasesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::detect_key_phrases::builders::DetectKeyPhrasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DetectKeyPhrasesFluentBuilder {
             crate::operation::detect_key_phrases::DetectKeyPhrases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_key_phrases::DetectKeyPhrasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_key_phrases::DetectKeyPhrasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DetectKeyPhrasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DetectKeyPhrasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_key_phrases::DetectKeyPhrasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_key_phrases::DetectKeyPhrasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_key_phrases::DetectKeyPhrasesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DetectKeyPhrasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_key_phrases::DetectKeyPhrasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_key_phrases::DetectKeyPhrasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_key_phrases::DetectKeyPhrasesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DetectKeyPhrasesFluentBuilder {
             crate::operation::detect_key_phrases::DetectKeyPhrases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_key_phrases::DetectKeyPhrasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_key_phrases::DetectKeyPhrasesError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl DetectKeyPhrasesFluentBuilder {
         self
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`project_creation_date(Option<DateTime>)`](crate::operation::describe_project::DescribeProjectOutput::project_creation_date): <p>The date the project was created, in Unix epoch time.</p>
     ///   - [`project_last_update_date(Option<DateTime>)`](crate::operation::describe_project::DescribeProjectOutput::project_last_update_date): <p>The date the project was last updated, in Unix epoch time.</p>
     /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::operation::describe_project::DescribeProjectError)
-    pub fn describe_project(
-        &self,
-    ) -> crate::operation::describe_project::builders::DescribeProjectFluentBuilder {
-        crate::operation::describe_project::builders::DescribeProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_project(&self) -> crate::operation::describe_project::builders::DescribeProjectFluentBuilder {
+        crate::operation::describe_project::builders::DescribeProjectFluentBuilder::new(self.handle.clone())
     }
 }

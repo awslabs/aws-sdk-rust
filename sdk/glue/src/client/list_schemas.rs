@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`schemas(Option<Vec<SchemaListItem>>)`](crate::operation::list_schemas::ListSchemasOutput::schemas): <p>An array of <code>SchemaListItem</code> objects containing details of each schema.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schemas::ListSchemasOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
-    pub fn list_schemas(
-        &self,
-    ) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
+    pub fn list_schemas(&self) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
         crate::operation::list_schemas::builders::ListSchemasFluentBuilder::new(self.handle.clone())
     }
 }

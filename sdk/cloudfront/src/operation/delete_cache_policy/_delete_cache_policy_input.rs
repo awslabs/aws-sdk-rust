@@ -22,17 +22,14 @@ impl DeleteCachePolicyInput {
 }
 impl DeleteCachePolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteCachePolicyInput`](crate::operation::delete_cache_policy::DeleteCachePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_cache_policy::builders::DeleteCachePolicyInputBuilder {
+    pub fn builder() -> crate::operation::delete_cache_policy::builders::DeleteCachePolicyInputBuilder {
         crate::operation::delete_cache_policy::builders::DeleteCachePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCachePolicyInput`](crate::operation::delete_cache_policy::DeleteCachePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCachePolicyInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl DeleteCachePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCachePolicyInput`](crate::operation::delete_cache_policy::DeleteCachePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cache_policy::DeleteCachePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_cache_policy::DeleteCachePolicyInput {
-                id: self.id,
-                if_match: self.if_match,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_cache_policy::DeleteCachePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_cache_policy::DeleteCachePolicyInput {
+            id: self.id,
+            if_match: self.if_match,
+        })
     }
 }

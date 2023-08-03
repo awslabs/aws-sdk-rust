@@ -32,8 +32,7 @@ pub struct GameSessionConnectionInfo {
     pub port: ::std::option::Option<i32>,
     /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request. </p>
     #[doc(hidden)]
-    pub matched_player_sessions:
-        ::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>>,
+    pub matched_player_sessions: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>>,
 }
 impl GameSessionConnectionInfo {
     /// <p>A unique identifier for the game session. Use the game session ID.</p>
@@ -67,9 +66,7 @@ impl GameSessionConnectionInfo {
         self.port
     }
     /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request. </p>
-    pub fn matched_player_sessions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MatchedPlayerSession]> {
+    pub fn matched_player_sessions(&self) -> ::std::option::Option<&[crate::types::MatchedPlayerSession]> {
         self.matched_player_sessions.as_deref()
     }
 }
@@ -82,31 +79,22 @@ impl GameSessionConnectionInfo {
 
 /// A builder for [`GameSessionConnectionInfo`](crate::types::GameSessionConnectionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GameSessionConnectionInfoBuilder {
     pub(crate) game_session_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
-    pub(crate) matched_player_sessions:
-        ::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>>,
+    pub(crate) matched_player_sessions: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>>,
 }
 impl GameSessionConnectionInfoBuilder {
     /// <p>A unique identifier for the game session. Use the game session ID.</p>
-    pub fn game_session_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game session. Use the game session ID.</p>
-    pub fn set_game_session_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_arn = input;
         self
     }
@@ -210,17 +198,12 @@ impl GameSessionConnectionInfoBuilder {
         self
     }
     /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request. </p>
-    pub fn set_matched_player_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>>,
-    ) -> Self {
+    pub fn set_matched_player_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>>) -> Self {
         self.matched_player_sessions = input;
         self
     }
     /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request. </p>
-    pub fn get_matched_player_sessions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>> {
+    pub fn get_matched_player_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>> {
         &self.matched_player_sessions
     }
     /// Consumes the builder and constructs a [`GameSessionConnectionInfo`](crate::types::GameSessionConnectionInfo).

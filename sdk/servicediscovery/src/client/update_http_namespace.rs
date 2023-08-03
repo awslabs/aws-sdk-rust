@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateHttpNamespaceOutput`](crate::operation::update_http_namespace::UpdateHttpNamespaceOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::update_http_namespace::UpdateHttpNamespaceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     /// - On failure, responds with [`SdkError<UpdateHttpNamespaceError>`](crate::operation::update_http_namespace::UpdateHttpNamespaceError)
-    pub fn update_http_namespace(
-        &self,
-    ) -> crate::operation::update_http_namespace::builders::UpdateHttpNamespaceFluentBuilder {
-        crate::operation::update_http_namespace::builders::UpdateHttpNamespaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_http_namespace(&self) -> crate::operation::update_http_namespace::builders::UpdateHttpNamespaceFluentBuilder {
+        crate::operation::update_http_namespace::builders::UpdateHttpNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

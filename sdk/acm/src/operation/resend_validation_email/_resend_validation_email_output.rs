@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ResendValidationEmailOutput {
 }
 impl ResendValidationEmailOutput {
     /// Creates a new builder-style object to manufacture [`ResendValidationEmailOutput`](crate::operation::resend_validation_email::ResendValidationEmailOutput).
-    pub fn builder(
-    ) -> crate::operation::resend_validation_email::builders::ResendValidationEmailOutputBuilder
-    {
+    pub fn builder() -> crate::operation::resend_validation_email::builders::ResendValidationEmailOutputBuilder {
         crate::operation::resend_validation_email::builders::ResendValidationEmailOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResendValidationEmailOutput`](crate::operation::resend_validation_email::ResendValidationEmailOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResendValidationEmailOutputBuilder {
     _request_id: Option<String>,
 }

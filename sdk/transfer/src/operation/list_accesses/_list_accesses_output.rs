@@ -42,9 +42,7 @@ impl ListAccessesOutput {
 
 /// A builder for [`ListAccessesOutput`](crate::operation::list_accesses::ListAccessesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
@@ -92,17 +90,12 @@ impl ListAccessesOutputBuilder {
         self
     }
     /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
-    pub fn set_accesses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedAccess>>,
-    ) -> Self {
+    pub fn set_accesses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedAccess>>) -> Self {
         self.accesses = input;
         self
     }
     /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
-    pub fn get_accesses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedAccess>> {
+    pub fn get_accesses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedAccess>> {
         &self.accesses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

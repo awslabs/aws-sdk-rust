@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`owner(Option<Owner>)`](crate::operation::get_bucket_acl::GetBucketAclOutput::owner): <p>Container for the bucket owner's display name and ID.</p>
     ///   - [`grants(Option<Vec<Grant>>)`](crate::operation::get_bucket_acl::GetBucketAclOutput::grants): <p>A list of grants.</p>
     /// - On failure, responds with [`SdkError<GetBucketAclError>`](crate::operation::get_bucket_acl::GetBucketAclError)
-    pub fn get_bucket_acl(
-        &self,
-    ) -> crate::operation::get_bucket_acl::builders::GetBucketAclFluentBuilder {
-        crate::operation::get_bucket_acl::builders::GetBucketAclFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bucket_acl(&self) -> crate::operation::get_bucket_acl::builders::GetBucketAclFluentBuilder {
+        crate::operation::get_bucket_acl::builders::GetBucketAclFluentBuilder::new(self.handle.clone())
     }
 }

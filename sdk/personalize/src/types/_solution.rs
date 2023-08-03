@@ -110,9 +110,7 @@ impl Solution {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
-    pub fn latest_solution_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SolutionVersionSummary> {
+    pub fn latest_solution_version(&self) -> ::std::option::Option<&crate::types::SolutionVersionSummary> {
         self.latest_solution_version.as_ref()
     }
 }
@@ -125,9 +123,7 @@ impl Solution {
 
 /// A builder for [`Solution`](crate::types::Solution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SolutionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) solution_arn: ::std::option::Option<::std::string::String>,
@@ -224,18 +220,12 @@ impl SolutionBuilder {
         &self.recipe_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -263,10 +253,7 @@ impl SolutionBuilder {
         self
     }
     /// <p>Describes the configuration properties for the solution.</p>
-    pub fn set_solution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SolutionConfig>,
-    ) -> Self {
+    pub fn set_solution_config(mut self, input: ::std::option::Option<crate::types::SolutionConfig>) -> Self {
         self.solution_config = input;
         self
     }
@@ -280,10 +267,7 @@ impl SolutionBuilder {
         self
     }
     /// <p>When <code>performAutoML</code> is true, specifies the best recipe found.</p>
-    pub fn set_auto_ml_result(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlResult>,
-    ) -> Self {
+    pub fn set_auto_ml_result(mut self, input: ::std::option::Option<crate::types::AutoMlResult>) -> Self {
         self.auto_ml_result = input;
         self
     }
@@ -326,10 +310,7 @@ impl SolutionBuilder {
         self
     }
     /// <p>The creation date and time (in Unix time) of the solution.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -343,17 +324,12 @@ impl SolutionBuilder {
         self
     }
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
@@ -362,17 +338,12 @@ impl SolutionBuilder {
         self
     }
     /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
-    pub fn set_latest_solution_version(
-        mut self,
-        input: ::std::option::Option<crate::types::SolutionVersionSummary>,
-    ) -> Self {
+    pub fn set_latest_solution_version(mut self, input: ::std::option::Option<crate::types::SolutionVersionSummary>) -> Self {
         self.latest_solution_version = input;
         self
     }
     /// <p>Describes the latest version of the solution, including the status and the ARN.</p>
-    pub fn get_latest_solution_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::SolutionVersionSummary> {
+    pub fn get_latest_solution_version(&self) -> &::std::option::Option<crate::types::SolutionVersionSummary> {
         &self.latest_solution_version
     }
     /// Consumes the builder and constructs a [`Solution`](crate::types::Solution).

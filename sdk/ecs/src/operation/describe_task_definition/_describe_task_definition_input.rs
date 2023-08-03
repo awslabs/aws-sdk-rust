@@ -22,36 +22,26 @@ impl DescribeTaskDefinitionInput {
 }
 impl DescribeTaskDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeTaskDefinitionInput`](crate::operation::describe_task_definition::DescribeTaskDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_task_definition::builders::DescribeTaskDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_task_definition::builders::DescribeTaskDefinitionInputBuilder {
         crate::operation::describe_task_definition::builders::DescribeTaskDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTaskDefinitionInput`](crate::operation::describe_task_definition::DescribeTaskDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTaskDefinitionInputBuilder {
     pub(crate) task_definition: ::std::option::Option<::std::string::String>,
     pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>>,
 }
 impl DescribeTaskDefinitionInputBuilder {
     /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
-    pub fn task_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
-    pub fn set_task_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_definition = input;
         self
     }
@@ -71,31 +61,22 @@ impl DescribeTaskDefinitionInputBuilder {
         self
     }
     /// <p>Determines whether to see the resource tags for the task definition. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>>,
-    ) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>>) -> Self {
         self.include = input;
         self
     }
     /// <p>Determines whether to see the resource tags for the task definition. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn get_include(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>> {
         &self.include
     }
     /// Consumes the builder and constructs a [`DescribeTaskDefinitionInput`](crate::operation::describe_task_definition::DescribeTaskDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_task_definition::DescribeTaskDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_task_definition::DescribeTaskDefinitionInput {
-                task_definition: self.task_definition,
-                include: self.include,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_task_definition::DescribeTaskDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_task_definition::DescribeTaskDefinitionInput {
+            task_definition: self.task_definition,
+            include: self.include,
+        })
     }
 }

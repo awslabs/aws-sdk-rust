@@ -5,8 +5,7 @@
 pub struct ListTrialComponentsOutput {
     /// <p>A list of the summaries of your trial components.</p>
     #[doc(hidden)]
-    pub trial_component_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSummary>>,
+    pub trial_component_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSummary>>,
     /// <p>A token for getting the next set of components, if there are any.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListTrialComponentsOutput {
 }
 impl ListTrialComponentsOutput {
     /// <p>A list of the summaries of your trial components.</p>
-    pub fn trial_component_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrialComponentSummary]> {
+    pub fn trial_component_summaries(&self) -> ::std::option::Option<&[crate::types::TrialComponentSummary]> {
         self.trial_component_summaries.as_deref()
     }
     /// <p>A token for getting the next set of components, if there are any.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTrialComponentsOutput {
 }
 impl ListTrialComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ListTrialComponentsOutput`](crate::operation::list_trial_components::ListTrialComponentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_trial_components::builders::ListTrialComponentsOutputBuilder {
-        crate::operation::list_trial_components::builders::ListTrialComponentsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_trial_components::builders::ListTrialComponentsOutputBuilder {
+        crate::operation::list_trial_components::builders::ListTrialComponentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrialComponentsOutput`](crate::operation::list_trial_components::ListTrialComponentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrialComponentsOutputBuilder {
-    pub(crate) trial_component_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSummary>>,
+    pub(crate) trial_component_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListTrialComponentsOutputBuilder {
         self
     }
     /// <p>A list of the summaries of your trial components.</p>
-    pub fn set_trial_component_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSummary>>,
-    ) -> Self {
+    pub fn set_trial_component_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSummary>>) -> Self {
         self.trial_component_summaries = input;
         self
     }
     /// <p>A list of the summaries of your trial components.</p>
-    pub fn get_trial_component_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSummary>> {
+    pub fn get_trial_component_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSummary>> {
         &self.trial_component_summaries
     }
     /// <p>A token for getting the next set of components, if there are any.</p>

@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`cases(Option<Vec<CaseDetails>>)`](crate::operation::describe_cases::DescribeCasesOutput::cases): <p>The details for the cases that match the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_cases::DescribeCasesOutput::next_token): <p>A resumption point for pagination.</p>
     /// - On failure, responds with [`SdkError<DescribeCasesError>`](crate::operation::describe_cases::DescribeCasesError)
-    pub fn describe_cases(
-        &self,
-    ) -> crate::operation::describe_cases::builders::DescribeCasesFluentBuilder {
-        crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_cases(&self) -> crate::operation::describe_cases::builders::DescribeCasesFluentBuilder {
+        crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::new(self.handle.clone())
     }
 }

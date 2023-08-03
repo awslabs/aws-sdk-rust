@@ -45,9 +45,7 @@ impl BouncedRecipientInfo {
 
 /// A builder for [`BouncedRecipientInfo`](crate::types::BouncedRecipientInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BouncedRecipientInfoBuilder {
     pub(crate) recipient: ::std::option::Option<::std::string::String>,
     pub(crate) recipient_arn: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ impl BouncedRecipientInfoBuilder {
         &self.recipient
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to receive email for the recipient of the bounced email. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    pub fn recipient_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recipient_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipient_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to receive email for the recipient of the bounced email. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    pub fn set_recipient_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recipient_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipient_arn = input;
         self
     }
@@ -95,10 +87,7 @@ impl BouncedRecipientInfoBuilder {
         self
     }
     /// <p>The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.</p>
-    pub fn set_bounce_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BounceType>,
-    ) -> Self {
+    pub fn set_bounce_type(mut self, input: ::std::option::Option<crate::types::BounceType>) -> Self {
         self.bounce_type = input;
         self
     }
@@ -112,17 +101,12 @@ impl BouncedRecipientInfoBuilder {
         self
     }
     /// <p>Recipient-related DSN fields, most of which would normally be filled in automatically when provided with a <code>BounceType</code>. You must provide either this parameter or <code>BounceType</code>.</p>
-    pub fn set_recipient_dsn_fields(
-        mut self,
-        input: ::std::option::Option<crate::types::RecipientDsnFields>,
-    ) -> Self {
+    pub fn set_recipient_dsn_fields(mut self, input: ::std::option::Option<crate::types::RecipientDsnFields>) -> Self {
         self.recipient_dsn_fields = input;
         self
     }
     /// <p>Recipient-related DSN fields, most of which would normally be filled in automatically when provided with a <code>BounceType</code>. You must provide either this parameter or <code>BounceType</code>.</p>
-    pub fn get_recipient_dsn_fields(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecipientDsnFields> {
+    pub fn get_recipient_dsn_fields(&self) -> &::std::option::Option<crate::types::RecipientDsnFields> {
         &self.recipient_dsn_fields
     }
     /// Consumes the builder and constructs a [`BouncedRecipientInfo`](crate::types::BouncedRecipientInfo).

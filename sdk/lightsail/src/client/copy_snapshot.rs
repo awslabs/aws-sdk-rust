@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CopySnapshotOutput`](crate::operation::copy_snapshot::CopySnapshotOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::copy_snapshot::CopySnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CopySnapshotError>`](crate::operation::copy_snapshot::CopySnapshotError)
-    pub fn copy_snapshot(
-        &self,
-    ) -> crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder {
-        crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn copy_snapshot(&self) -> crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder {
+        crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::new(self.handle.clone())
     }
 }

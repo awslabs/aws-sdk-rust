@@ -39,13 +39,7 @@
 /// Video Description Respond To Afd
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum VideoDescriptionRespondToAfd {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for VideoDescriptionRespondToAfd {
             "NONE" => VideoDescriptionRespondToAfd::None,
             "PASSTHROUGH" => VideoDescriptionRespondToAfd::Passthrough,
             "RESPOND" => VideoDescriptionRespondToAfd::Respond,
-            other => VideoDescriptionRespondToAfd::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VideoDescriptionRespondToAfd::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

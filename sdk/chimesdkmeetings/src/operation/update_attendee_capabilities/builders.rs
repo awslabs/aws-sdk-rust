@@ -34,7 +34,7 @@ impl UpdateAttendeeCapabilitiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAttendeeCapabilitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_attendee_capabilities::builders::UpdateAttendeeCapabilitiesInputBuilder,
+    inner: crate::operation::update_attendee_capabilities::builders::UpdateAttendeeCapabilitiesInputBuilder,
 }
 impl UpdateAttendeeCapabilitiesFluentBuilder {
     /// Creates a new `UpdateAttendeeCapabilities`.
@@ -45,7 +45,7 @@ impl UpdateAttendeeCapabilitiesFluentBuilder {
         }
     }
     /// Access the UpdateAttendeeCapabilities as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_attendee_capabilities::builders::UpdateAttendeeCapabilitiesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_attendee_capabilities::builders::UpdateAttendeeCapabilitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl UpdateAttendeeCapabilitiesFluentBuilder {
             crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl UpdateAttendeeCapabilitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl UpdateAttendeeCapabilitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl UpdateAttendeeCapabilitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +113,7 @@ impl UpdateAttendeeCapabilitiesFluentBuilder {
             crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError>,
     > {
         self.customize_middleware().await
     }
@@ -162,10 +151,7 @@ impl UpdateAttendeeCapabilitiesFluentBuilder {
         self
     }
     /// <p>The capabilities that you want to update.</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<crate::types::AttendeeCapabilities>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<crate::types::AttendeeCapabilities>) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
     }

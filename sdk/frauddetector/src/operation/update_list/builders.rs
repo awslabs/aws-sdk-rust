@@ -10,10 +10,7 @@ impl UpdateListInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_list::UpdateListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_list::UpdateListError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_list::UpdateListError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_list();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateListFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_list::UpdateList,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_list::UpdateList, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_list::UpdateListError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateListFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_list::UpdateList,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_list::UpdateList, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_list::UpdateListError>,
     > {
         self.customize_middleware().await
@@ -138,10 +126,7 @@ impl UpdateListFluentBuilder {
     }
     /// <p> One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use. </p>
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
-    pub fn set_elements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_elements(input);
         self
     }
@@ -180,10 +165,7 @@ impl UpdateListFluentBuilder {
     /// <li> <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p> </li>
     /// <li> <p>Use <code>REMOVE</code> if you are removing elements from the list.</p> </li>
     /// </ul>
-    pub fn set_update_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ListUpdateMode>,
-    ) -> Self {
+    pub fn set_update_mode(mut self, input: ::std::option::Option<crate::types::ListUpdateMode>) -> Self {
         self.inner = self.inner.set_update_mode(input);
         self
     }
@@ -199,20 +181,14 @@ impl UpdateListFluentBuilder {
     /// <p> The variable type you want to assign to the list. </p> <note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
-    pub fn variable_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn variable_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.variable_type(input.into());
         self
     }
     /// <p> The variable type you want to assign to the list. </p> <note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
-    pub fn set_variable_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_variable_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_variable_type(input);
         self
     }

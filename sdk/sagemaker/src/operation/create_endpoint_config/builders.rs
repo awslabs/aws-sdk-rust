@@ -43,9 +43,7 @@ impl CreateEndpointConfigFluentBuilder {
         }
     }
     /// Access the CreateEndpointConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_endpoint_config::builders::CreateEndpointConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_endpoint_config::builders::CreateEndpointConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +55,7 @@ impl CreateEndpointConfigFluentBuilder {
             crate::operation::create_endpoint_config::CreateEndpointConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint_config::CreateEndpointConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint_config::CreateEndpointConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +65,7 @@ impl CreateEndpointConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +74,7 @@ impl CreateEndpointConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_endpoint_config::CreateEndpointConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint_config::CreateEndpointConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint_config::CreateEndpointConfigError>,
     > {
         let op = self
             .inner
@@ -106,9 +97,7 @@ impl CreateEndpointConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_endpoint_config::CreateEndpointConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint_config::CreateEndpointConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint_config::CreateEndpointConfigError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +111,17 @@ impl CreateEndpointConfigFluentBuilder {
             crate::operation::create_endpoint_config::CreateEndpointConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint_config::CreateEndpointConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint_config::CreateEndpointConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the endpoint configuration. You specify this name in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> request. </p>
-    pub fn endpoint_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_config_name(input.into());
         self
     }
     /// <p>The name of the endpoint configuration. You specify this name in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> request. </p>
-    pub fn set_endpoint_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_config_name(input);
         self
     }
@@ -158,17 +139,12 @@ impl CreateEndpointConfigFluentBuilder {
         self
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
-    pub fn set_production_variants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
-    ) -> Self {
+    pub fn set_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>) -> Self {
         self.inner = self.inner.set_production_variants(input);
         self
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
-    pub fn get_production_variants(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
+    pub fn get_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
         self.inner.get_production_variants()
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
@@ -177,17 +153,12 @@ impl CreateEndpointConfigFluentBuilder {
         self
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
-    pub fn set_data_capture_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DataCaptureConfig>,
-    ) -> Self {
+    pub fn set_data_capture_config(mut self, input: ::std::option::Option<crate::types::DataCaptureConfig>) -> Self {
         self.inner = self.inner.set_data_capture_config(input);
         self
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
-    pub fn get_data_capture_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataCaptureConfig> {
+    pub fn get_data_capture_config(&self) -> &::std::option::Option<crate::types::DataCaptureConfig> {
         self.inner.get_data_capture_config()
     }
     /// Appends an item to `Tags`.
@@ -200,10 +171,7 @@ impl CreateEndpointConfigFluentBuilder {
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -267,17 +235,12 @@ impl CreateEndpointConfigFluentBuilder {
         self
     }
     /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
-    pub fn set_async_inference_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AsyncInferenceConfig>,
-    ) -> Self {
+    pub fn set_async_inference_config(mut self, input: ::std::option::Option<crate::types::AsyncInferenceConfig>) -> Self {
         self.inner = self.inner.set_async_inference_config(input);
         self
     }
     /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
-    pub fn get_async_inference_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AsyncInferenceConfig> {
+    pub fn get_async_inference_config(&self) -> &::std::option::Option<crate::types::AsyncInferenceConfig> {
         self.inner.get_async_inference_config()
     }
     /// <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
@@ -286,10 +249,7 @@ impl CreateEndpointConfigFluentBuilder {
         self
     }
     /// <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
-    pub fn set_explainer_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ExplainerConfig>,
-    ) -> Self {
+    pub fn set_explainer_config(mut self, input: ::std::option::Option<crate::types::ExplainerConfig>) -> Self {
         self.inner = self.inner.set_explainer_config(input);
         self
     }
@@ -307,17 +267,12 @@ impl CreateEndpointConfigFluentBuilder {
         self
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
-    pub fn set_shadow_production_variants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
-    ) -> Self {
+    pub fn set_shadow_production_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>) -> Self {
         self.inner = self.inner.set_shadow_production_variants(input);
         self
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
-    pub fn get_shadow_production_variants(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
+    pub fn get_shadow_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
         self.inner.get_shadow_production_variants()
     }
 }

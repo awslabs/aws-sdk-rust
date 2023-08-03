@@ -43,9 +43,7 @@ impl UpdateQueueNameInput {
 
 /// A builder for [`UpdateQueueNameInput`](crate::operation::update_queue_name::UpdateQueueNameInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQueueNameInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl UpdateQueueNameInputBuilder {
     /// Consumes the builder and constructs a [`UpdateQueueNameInput`](crate::operation::update_queue_name::UpdateQueueNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_queue_name::UpdateQueueNameInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_queue_name::UpdateQueueNameInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_queue_name::UpdateQueueNameInput {
             instance_id: self.instance_id,
             queue_id: self.queue_id,

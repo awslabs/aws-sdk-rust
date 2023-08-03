@@ -58,9 +58,7 @@ impl SecurityGroupRuleDescription {
 
 /// A builder for [`SecurityGroupRuleDescription`](crate::types::SecurityGroupRuleDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityGroupRuleDescriptionBuilder {
     pub(crate) ipv4_range: ::std::option::Option<::std::string::String>,
     pub(crate) ipv6_range: ::std::option::Option<::std::string::String>,
@@ -99,18 +97,12 @@ impl SecurityGroupRuleDescriptionBuilder {
         &self.ipv6_range
     }
     /// <p>The ID of the prefix list for the security group rule.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the prefix list for the security group rule.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_id = input;
         self
     }

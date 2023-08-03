@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`content_type(Option<String>)`](crate::operation::get_map_glyphs::GetMapGlyphsOutput::content_type): <p>The map glyph content type. For example, <code>application/octet-stream</code>.</p>
     ///   - [`cache_control(Option<String>)`](crate::operation::get_map_glyphs::GetMapGlyphsOutput::cache_control): <p>The HTTP Cache-Control directive for the value.</p>
     /// - On failure, responds with [`SdkError<GetMapGlyphsError>`](crate::operation::get_map_glyphs::GetMapGlyphsError)
-    pub fn get_map_glyphs(
-        &self,
-    ) -> crate::operation::get_map_glyphs::builders::GetMapGlyphsFluentBuilder {
-        crate::operation::get_map_glyphs::builders::GetMapGlyphsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_map_glyphs(&self) -> crate::operation::get_map_glyphs::builders::GetMapGlyphsFluentBuilder {
+        crate::operation::get_map_glyphs::builders::GetMapGlyphsFluentBuilder::new(self.handle.clone())
     }
 }

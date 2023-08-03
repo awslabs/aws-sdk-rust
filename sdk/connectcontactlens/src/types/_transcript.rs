@@ -72,9 +72,7 @@ impl Transcript {
 
 /// A builder for [`Transcript`](crate::types::Transcript).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TranscriptBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,
@@ -101,18 +99,12 @@ impl TranscriptBuilder {
         &self.id
     }
     /// <p>The identifier of the participant.</p>
-    pub fn participant_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the participant.</p>
-    pub fn set_participant_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.participant_id = input;
         self
     }
@@ -121,18 +113,12 @@ impl TranscriptBuilder {
         &self.participant_id
     }
     /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
-    pub fn participant_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn participant_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
-    pub fn set_participant_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_participant_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.participant_role = input;
         self
     }
@@ -188,10 +174,7 @@ impl TranscriptBuilder {
         self
     }
     /// <p>The sentiment of the detected for this piece of transcript.</p>
-    pub fn set_sentiment(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentValue>,
-    ) -> Self {
+    pub fn set_sentiment(mut self, input: ::std::option::Option<crate::types::SentimentValue>) -> Self {
         self.sentiment = input;
         self
     }
@@ -211,17 +194,12 @@ impl TranscriptBuilder {
         self
     }
     /// <p>List of positions where issues were detected on the transcript.</p>
-    pub fn set_issues_detected(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>,
-    ) -> Self {
+    pub fn set_issues_detected(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>) -> Self {
         self.issues_detected = input;
         self
     }
     /// <p>List of positions where issues were detected on the transcript.</p>
-    pub fn get_issues_detected(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>> {
+    pub fn get_issues_detected(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>> {
         &self.issues_detected
     }
     /// Consumes the builder and constructs a [`Transcript`](crate::types::Transcript).

@@ -72,9 +72,7 @@ impl EcsClusterDetails {
 
 /// A builder for [`EcsClusterDetails`](crate::types::EcsClusterDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsClusterDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -148,10 +146,7 @@ impl EcsClusterDetailsBuilder {
         self
     }
     /// <p>The number of container instances registered into the cluster.</p>
-    pub fn set_registered_container_instances_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_registered_container_instances_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.registered_container_instances_count = input;
         self
     }
@@ -185,10 +180,7 @@ impl EcsClusterDetailsBuilder {
         self
     }
     /// <p>The tags of the ECS Cluster.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -202,10 +194,7 @@ impl EcsClusterDetailsBuilder {
         self
     }
     /// <p>Contains information about the details of the ECS Task.</p>
-    pub fn set_task_details(
-        mut self,
-        input: ::std::option::Option<crate::types::EcsTaskDetails>,
-    ) -> Self {
+    pub fn set_task_details(mut self, input: ::std::option::Option<crate::types::EcsTaskDetails>) -> Self {
         self.task_details = input;
         self
     }
@@ -220,9 +209,7 @@ impl EcsClusterDetailsBuilder {
             arn: self.arn,
             status: self.status,
             active_services_count: self.active_services_count.unwrap_or_default(),
-            registered_container_instances_count: self
-                .registered_container_instances_count
-                .unwrap_or_default(),
+            registered_container_instances_count: self.registered_container_instances_count.unwrap_or_default(),
             running_tasks_count: self.running_tasks_count.unwrap_or_default(),
             tags: self.tags,
             task_details: self.task_details,

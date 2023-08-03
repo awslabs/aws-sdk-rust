@@ -22,35 +22,26 @@ impl ::aws_http::request_id::RequestId for CreateMissionProfileOutput {
 }
 impl CreateMissionProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateMissionProfileOutput`](crate::operation::create_mission_profile::CreateMissionProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::create_mission_profile::builders::CreateMissionProfileOutputBuilder {
+    pub fn builder() -> crate::operation::create_mission_profile::builders::CreateMissionProfileOutputBuilder {
         crate::operation::create_mission_profile::builders::CreateMissionProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMissionProfileOutput`](crate::operation::create_mission_profile::CreateMissionProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMissionProfileOutputBuilder {
     pub(crate) mission_profile_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateMissionProfileOutputBuilder {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mission_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mission_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a mission profile.</p>
-    pub fn set_mission_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mission_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mission_profile_id = input;
         self
     }

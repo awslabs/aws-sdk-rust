@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateParticipantTokenOutput`](crate::operation::create_participant_token::CreateParticipantTokenOutput) with field(s):
     ///   - [`participant_token(Option<ParticipantToken>)`](crate::operation::create_participant_token::CreateParticipantTokenOutput::participant_token): <p>The participant token that was created.</p>
     /// - On failure, responds with [`SdkError<CreateParticipantTokenError>`](crate::operation::create_participant_token::CreateParticipantTokenError)
-    pub fn create_participant_token(
-        &self,
-    ) -> crate::operation::create_participant_token::builders::CreateParticipantTokenFluentBuilder
-    {
+    pub fn create_participant_token(&self) -> crate::operation::create_participant_token::builders::CreateParticipantTokenFluentBuilder {
         crate::operation::create_participant_token::builders::CreateParticipantTokenFluentBuilder::new(self.handle.clone())
     }
 }

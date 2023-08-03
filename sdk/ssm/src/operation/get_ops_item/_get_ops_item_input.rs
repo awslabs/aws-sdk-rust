@@ -29,9 +29,7 @@ impl GetOpsItemInput {
 
 /// A builder for [`GetOpsItemInput`](crate::operation::get_ops_item::GetOpsItemInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOpsItemInputBuilder {
     pub(crate) ops_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) ops_item_arn: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetOpsItemInputBuilder {
         &self.ops_item_arn
     }
     /// Consumes the builder and constructs a [`GetOpsItemInput`](crate::operation::get_ops_item::GetOpsItemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ops_item::GetOpsItemInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ops_item::GetOpsItemInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ops_item::GetOpsItemInput {
             ops_item_id: self.ops_item_id,
             ops_item_arn: self.ops_item_arn,

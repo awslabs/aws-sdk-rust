@@ -36,9 +36,7 @@ impl UpdateDatabaseInput {
 
 /// A builder for [`UpdateDatabaseInput`](crate::operation::update_database::UpdateDatabaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatabaseInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -79,10 +77,7 @@ impl UpdateDatabaseInputBuilder {
         self
     }
     /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
-    pub fn set_database_input(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseInput>,
-    ) -> Self {
+    pub fn set_database_input(mut self, input: ::std::option::Option<crate::types::DatabaseInput>) -> Self {
         self.database_input = input;
         self
     }
@@ -93,10 +88,7 @@ impl UpdateDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatabaseInput`](crate::operation::update_database::UpdateDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_database::UpdateDatabaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_database::UpdateDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_database::UpdateDatabaseInput {
             catalog_id: self.catalog_id,
             name: self.name,

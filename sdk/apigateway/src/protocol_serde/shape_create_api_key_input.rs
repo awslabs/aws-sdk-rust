@@ -13,9 +13,7 @@ pub fn ser_create_api_key_input(
         object.key("enabled").boolean(input.enabled);
     }
     if input.generate_distinct_id {
-        object
-            .key("generateDistinctId")
-            .boolean(input.generate_distinct_id);
+        object.key("generateDistinctId").boolean(input.generate_distinct_id);
     }
     if let Some(var_3) = &input.name {
         object.key("name").string(var_3.as_str());

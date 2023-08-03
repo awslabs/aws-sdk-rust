@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`sending_pool_name(impl ::std::convert::Into<String>)`](crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsFluentBuilder::sending_pool_name) / [`set_sending_pool_name(Option<String>)`](crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsFluentBuilder::set_sending_pool_name): <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
     /// - On success, responds with [`PutConfigurationSetDeliveryOptionsOutput`](crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsOutput)
     /// - On failure, responds with [`SdkError<PutConfigurationSetDeliveryOptionsError>`](crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsError)
-    pub fn put_configuration_set_delivery_options(&self) -> crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsFluentBuilder{
+    pub fn put_configuration_set_delivery_options(
+        &self,
+    ) -> crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsFluentBuilder {
         crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsFluentBuilder::new(self.handle.clone())
     }
 }

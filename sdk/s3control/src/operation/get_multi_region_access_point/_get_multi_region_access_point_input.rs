@@ -22,16 +22,14 @@ impl GetMultiRegionAccessPointInput {
 }
 impl GetMultiRegionAccessPointInput {
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointInput`](crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointInput).
-    pub fn builder() -> crate::operation::get_multi_region_access_point::builders::GetMultiRegionAccessPointInputBuilder{
+    pub fn builder() -> crate::operation::get_multi_region_access_point::builders::GetMultiRegionAccessPointInputBuilder {
         crate::operation::get_multi_region_access_point::builders::GetMultiRegionAccessPointInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMultiRegionAccessPointInput`](crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl GetMultiRegionAccessPointInputBuilder {
         crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointInput {
-                account_id: self.account_id,
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointInput {
+            account_id: self.account_id,
+            name: self.name,
+        })
     }
 }

@@ -33,14 +33,10 @@ pub struct StepExecution {
     pub response_code: ::std::option::Option<::std::string::String>,
     /// <p>Fully-resolved values passed into the step before execution.</p>
     #[doc(hidden)]
-    pub inputs: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub inputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Returned values from the execution of the step.</p>
     #[doc(hidden)]
-    pub outputs: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub outputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>A message associated with the response code for an execution.</p>
     #[doc(hidden)]
     pub response: ::std::option::Option<::std::string::String>,
@@ -55,9 +51,7 @@ pub struct StepExecution {
     pub step_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-specified list of parameters to override when running a step.</p>
     #[doc(hidden)]
-    pub overridden_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub overridden_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The flag which can be used to end automation no matter whether the step succeeds or fails.</p>
     #[doc(hidden)]
     pub is_end: ::std::option::Option<bool>,
@@ -78,8 +72,7 @@ pub struct StepExecution {
     pub target_location: ::std::option::Option<crate::types::TargetLocation>,
     /// <p>The CloudWatch alarms that were invoked by the automation.</p>
     #[doc(hidden)]
-    pub triggered_alarms:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
 }
 impl StepExecution {
     /// <p>The name of this execution step.</p>
@@ -119,19 +112,11 @@ impl StepExecution {
         self.response_code.as_deref()
     }
     /// <p>Fully-resolved values passed into the step before execution.</p>
-    pub fn inputs(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn inputs(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inputs.as_ref()
     }
     /// <p>Returned values from the execution of the step.</p>
-    pub fn outputs(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn outputs(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.outputs.as_ref()
     }
     /// <p>A message associated with the response code for an execution.</p>
@@ -153,9 +138,7 @@ impl StepExecution {
     /// <p>A user-specified list of parameters to override when running a step.</p>
     pub fn overridden_parameters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.overridden_parameters.as_ref()
     }
     /// <p>The flag which can be used to end automation no matter whether the step succeeds or fails.</p>
@@ -183,9 +166,7 @@ impl StepExecution {
         self.target_location.as_ref()
     }
     /// <p>The CloudWatch alarms that were invoked by the automation.</p>
-    pub fn triggered_alarms(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
+    pub fn triggered_alarms(&self) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
         self.triggered_alarms.as_deref()
     }
 }
@@ -198,9 +179,7 @@ impl StepExecution {
 
 /// A builder for [`StepExecution`](crate::types::StepExecution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StepExecutionBuilder {
     pub(crate) step_name: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<::std::string::String>,
@@ -211,27 +190,21 @@ pub struct StepExecutionBuilder {
     pub(crate) execution_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) step_status: ::std::option::Option<crate::types::AutomationExecutionStatus>,
     pub(crate) response_code: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) outputs: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) inputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) outputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) response: ::std::option::Option<::std::string::String>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) failure_details: ::std::option::Option<crate::types::FailureDetails>,
     pub(crate) step_execution_id: ::std::option::Option<::std::string::String>,
-    pub(crate) overridden_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) overridden_parameters:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) is_end: ::std::option::Option<bool>,
     pub(crate) next_step: ::std::option::Option<::std::string::String>,
     pub(crate) is_critical: ::std::option::Option<bool>,
     pub(crate) valid_next_steps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     pub(crate) target_location: ::std::option::Option<crate::types::TargetLocation>,
-    pub(crate) triggered_alarms:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub(crate) triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
 }
 impl StepExecutionBuilder {
     /// <p>The name of this execution step.</p>
@@ -310,10 +283,7 @@ impl StepExecutionBuilder {
         self
     }
     /// <p>If a step has begun execution, this contains the time the step started. If the step is in Pending status, this field isn't populated.</p>
-    pub fn set_execution_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_execution_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.execution_start_time = input;
         self
     }
@@ -327,10 +297,7 @@ impl StepExecutionBuilder {
         self
     }
     /// <p>If a step has finished execution, this contains the time the execution ended. If the step hasn't yet concluded, this field isn't populated.</p>
-    pub fn set_execution_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_execution_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.execution_end_time = input;
         self
     }
@@ -344,32 +311,21 @@ impl StepExecutionBuilder {
         self
     }
     /// <p>The execution status for this step.</p>
-    pub fn set_step_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AutomationExecutionStatus>,
-    ) -> Self {
+    pub fn set_step_status(mut self, input: ::std::option::Option<crate::types::AutomationExecutionStatus>) -> Self {
         self.step_status = input;
         self
     }
     /// <p>The execution status for this step.</p>
-    pub fn get_step_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutomationExecutionStatus> {
+    pub fn get_step_status(&self) -> &::std::option::Option<crate::types::AutomationExecutionStatus> {
         &self.step_status
     }
     /// <p>The response code returned by the execution of the step.</p>
-    pub fn response_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The response code returned by the execution of the step.</p>
-    pub fn set_response_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_code = input;
         self
     }
@@ -382,32 +338,19 @@ impl StepExecutionBuilder {
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
     ///
     /// <p>Fully-resolved values passed into the step before execution.</p>
-    pub fn inputs(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inputs(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.inputs.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.inputs = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Fully-resolved values passed into the step before execution.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
     /// <p>Fully-resolved values passed into the step before execution.</p>
-    pub fn get_inputs(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.inputs
     }
     /// Adds a key-value pair to `outputs`.
@@ -415,11 +358,7 @@ impl StepExecutionBuilder {
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
     /// <p>Returned values from the execution of the step.</p>
-    pub fn outputs(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn outputs(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.outputs.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.outputs = ::std::option::Option::Some(hash_map);
@@ -428,22 +367,13 @@ impl StepExecutionBuilder {
     /// <p>Returned values from the execution of the step.</p>
     pub fn set_outputs(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.outputs = input;
         self
     }
     /// <p>Returned values from the execution of the step.</p>
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.outputs
     }
     /// <p>A message associated with the response code for an execution.</p>
@@ -461,18 +391,12 @@ impl StepExecutionBuilder {
         &self.response
     }
     /// <p>If a step failed, this message explains why the execution failed.</p>
-    pub fn failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a step failed, this message explains why the execution failed.</p>
-    pub fn set_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_message = input;
         self
     }
@@ -486,10 +410,7 @@ impl StepExecutionBuilder {
         self
     }
     /// <p>Information about the Automation failure.</p>
-    pub fn set_failure_details(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureDetails>,
-    ) -> Self {
+    pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::FailureDetails>) -> Self {
         self.failure_details = input;
         self
     }
@@ -498,18 +419,12 @@ impl StepExecutionBuilder {
         &self.failure_details
     }
     /// <p>The unique ID of a step execution.</p>
-    pub fn step_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of a step execution.</p>
-    pub fn set_step_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_execution_id = input;
         self
     }
@@ -522,11 +437,7 @@ impl StepExecutionBuilder {
     /// To override the contents of this collection use [`set_overridden_parameters`](Self::set_overridden_parameters).
     ///
     /// <p>A user-specified list of parameters to override when running a step.</p>
-    pub fn overridden_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn overridden_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.overridden_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.overridden_parameters = ::std::option::Option::Some(hash_map);
@@ -535,12 +446,7 @@ impl StepExecutionBuilder {
     /// <p>A user-specified list of parameters to override when running a step.</p>
     pub fn set_overridden_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.overridden_parameters = input;
         self
@@ -548,9 +454,7 @@ impl StepExecutionBuilder {
     /// <p>A user-specified list of parameters to override when running a step.</p>
     pub fn get_overridden_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.overridden_parameters
     }
     /// <p>The flag which can be used to end automation no matter whether the step succeeds or fails.</p>
@@ -600,27 +504,19 @@ impl StepExecutionBuilder {
     /// To override the contents of this collection use [`set_valid_next_steps`](Self::set_valid_next_steps).
     ///
     /// <p>Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step fails. Continue will ignore the failure of current step and allow automation to run the next step. With conditional branching, we add step:stepName to support the automation to go to another specific step.</p>
-    pub fn valid_next_steps(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn valid_next_steps(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.valid_next_steps.unwrap_or_default();
         v.push(input.into());
         self.valid_next_steps = ::std::option::Option::Some(v);
         self
     }
     /// <p>Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step fails. Continue will ignore the failure of current step and allow automation to run the next step. With conditional branching, we add step:stepName to support the automation to go to another specific step.</p>
-    pub fn set_valid_next_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_valid_next_steps(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.valid_next_steps = input;
         self
     }
     /// <p>Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step fails. Continue will ignore the failure of current step and allow automation to run the next step. With conditional branching, we add step:stepName to support the automation to go to another specific step.</p>
-    pub fn get_valid_next_steps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_valid_next_steps(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.valid_next_steps
     }
     /// Appends an item to `targets`.
@@ -635,10 +531,7 @@ impl StepExecutionBuilder {
         self
     }
     /// <p>The targets for the step execution.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -652,10 +545,7 @@ impl StepExecutionBuilder {
         self
     }
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation execution.</p>
-    pub fn set_target_location(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetLocation>,
-    ) -> Self {
+    pub fn set_target_location(mut self, input: ::std::option::Option<crate::types::TargetLocation>) -> Self {
         self.target_location = input;
         self
     }
@@ -675,17 +565,12 @@ impl StepExecutionBuilder {
         self
     }
     /// <p>The CloudWatch alarms that were invoked by the automation.</p>
-    pub fn set_triggered_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
-    ) -> Self {
+    pub fn set_triggered_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>) -> Self {
         self.triggered_alarms = input;
         self
     }
     /// <p>The CloudWatch alarms that were invoked by the automation.</p>
-    pub fn get_triggered_alarms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
+    pub fn get_triggered_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
         &self.triggered_alarms
     }
     /// Consumes the builder and constructs a [`StepExecution`](crate::types::StepExecution).

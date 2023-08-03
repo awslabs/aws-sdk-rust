@@ -5,8 +5,7 @@
 pub struct ListControlInsightsByControlDomainOutput {
     /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API returned. </p>
     #[doc(hidden)]
-    pub control_insights_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataItem>>,
+    pub control_insights_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataItem>>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListControlInsightsByControlDomainOutput {
 }
 impl ListControlInsightsByControlDomainOutput {
     /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API returned. </p>
-    pub fn control_insights_metadata(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ControlInsightsMetadataItem]> {
+    pub fn control_insights_metadata(&self) -> ::std::option::Option<&[crate::types::ControlInsightsMetadataItem]> {
         self.control_insights_metadata.as_deref()
     }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListControlInsightsByControlDomainOut
 }
 impl ListControlInsightsByControlDomainOutput {
     /// Creates a new builder-style object to manufacture [`ListControlInsightsByControlDomainOutput`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainOutput).
-    pub fn builder() -> crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainOutputBuilder{
+    pub fn builder() -> crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainOutputBuilder {
         crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListControlInsightsByControlDomainOutput`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListControlInsightsByControlDomainOutputBuilder {
-    pub(crate) control_insights_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataItem>>,
+    pub(crate) control_insights_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListControlInsightsByControlDomainOutputBuilder {
     /// To override the contents of this collection use [`set_control_insights_metadata`](Self::set_control_insights_metadata).
     ///
     /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API returned. </p>
-    pub fn control_insights_metadata(
-        mut self,
-        input: crate::types::ControlInsightsMetadataItem,
-    ) -> Self {
+    pub fn control_insights_metadata(mut self, input: crate::types::ControlInsightsMetadataItem) -> Self {
         let mut v = self.control_insights_metadata.unwrap_or_default();
         v.push(input);
         self.control_insights_metadata = ::std::option::Option::Some(v);
         self
     }
     /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API returned. </p>
-    pub fn set_control_insights_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataItem>>,
-    ) -> Self {
+    pub fn set_control_insights_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataItem>>) -> Self {
         self.control_insights_metadata = input;
         self
     }
     /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API returned. </p>
-    pub fn get_control_insights_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataItem>> {
+    pub fn get_control_insights_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataItem>> {
         &self.control_insights_metadata
     }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
@@ -100,12 +86,10 @@ impl ListControlInsightsByControlDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListControlInsightsByControlDomainOutput`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainOutput).
-    pub fn build(self) -> crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainOutput{
+    pub fn build(self) -> crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainOutput {
         crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainOutput {
-            control_insights_metadata: self.control_insights_metadata
-            ,
-            next_token: self.next_token
-            ,
+            control_insights_metadata: self.control_insights_metadata,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

@@ -18,9 +18,7 @@ pub struct OnlineStoreConfig {
 }
 impl OnlineStoreConfig {
     /// <p>Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.</p>
-    pub fn security_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OnlineStoreSecurityConfig> {
+    pub fn security_config(&self) -> ::std::option::Option<&crate::types::OnlineStoreSecurityConfig> {
         self.security_config.as_ref()
     }
     /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p>
@@ -42,9 +40,7 @@ impl OnlineStoreConfig {
 
 /// A builder for [`OnlineStoreConfig`](crate::types::OnlineStoreConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OnlineStoreConfigBuilder {
     pub(crate) security_config: ::std::option::Option<crate::types::OnlineStoreSecurityConfig>,
     pub(crate) enable_online_store: ::std::option::Option<bool>,
@@ -57,17 +53,12 @@ impl OnlineStoreConfigBuilder {
         self
     }
     /// <p>Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.</p>
-    pub fn set_security_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OnlineStoreSecurityConfig>,
-    ) -> Self {
+    pub fn set_security_config(mut self, input: ::std::option::Option<crate::types::OnlineStoreSecurityConfig>) -> Self {
         self.security_config = input;
         self
     }
     /// <p>Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.</p>
-    pub fn get_security_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnlineStoreSecurityConfig> {
+    pub fn get_security_config(&self) -> &::std::option::Option<crate::types::OnlineStoreSecurityConfig> {
         &self.security_config
     }
     /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p>
@@ -93,10 +84,7 @@ impl OnlineStoreConfigBuilder {
         self
     }
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
-    pub fn set_ttl_duration(
-        mut self,
-        input: ::std::option::Option<crate::types::TtlDuration>,
-    ) -> Self {
+    pub fn set_ttl_duration(mut self, input: ::std::option::Option<crate::types::TtlDuration>) -> Self {
         self.ttl_duration = input;
         self
     }

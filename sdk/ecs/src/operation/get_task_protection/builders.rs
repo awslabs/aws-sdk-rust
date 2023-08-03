@@ -10,10 +10,7 @@ impl GetTaskProtectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_task_protection::GetTaskProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_task_protection::GetTaskProtectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_task_protection::GetTaskProtectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_task_protection();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetTaskProtectionFluentBuilder {
         }
     }
     /// Access the GetTaskProtection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_task_protection::builders::GetTaskProtectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_task_protection::builders::GetTaskProtectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetTaskProtectionFluentBuilder {
             crate::operation::get_task_protection::GetTaskProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_task_protection::GetTaskProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_task_protection::GetTaskProtectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetTaskProtectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetTaskProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_task_protection::GetTaskProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_task_protection::GetTaskProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_task_protection::GetTaskProtectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetTaskProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_task_protection::GetTaskProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_task_protection::GetTaskProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_task_protection::GetTaskProtectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetTaskProtectionFluentBuilder {
             crate::operation::get_task_protection::GetTaskProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_task_protection::GetTaskProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_task_protection::GetTaskProtectionError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +130,7 @@ impl GetTaskProtectionFluentBuilder {
         self
     }
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tasks(input);
         self
     }

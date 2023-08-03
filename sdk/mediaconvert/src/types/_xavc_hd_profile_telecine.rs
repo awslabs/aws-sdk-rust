@@ -38,13 +38,7 @@
 /// Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If your input framerate is 23.976, choose Hard. Otherwise, keep the default value None. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum XavcHdProfileTelecine {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for XavcHdProfileTelecine {
         match s {
             "HARD" => XavcHdProfileTelecine::Hard,
             "NONE" => XavcHdProfileTelecine::None,
-            other => XavcHdProfileTelecine::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => XavcHdProfileTelecine::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

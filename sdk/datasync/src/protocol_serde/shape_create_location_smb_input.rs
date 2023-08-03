@@ -30,10 +30,7 @@ pub fn ser_create_location_smb_input(
     if let Some(var_9) = &input.mount_options {
         #[allow(unused_mut)]
         let mut object_10 = object.key("MountOptions").start_object();
-        crate::protocol_serde::shape_smb_mount_options::ser_smb_mount_options(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_smb_mount_options::ser_smb_mount_options(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.tags {
@@ -42,10 +39,7 @@ pub fn ser_create_location_smb_input(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }

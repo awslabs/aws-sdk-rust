@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeTargetGroupsOutput {
 }
 impl DescribeTargetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTargetGroupsOutput`](crate::operation::describe_target_groups::DescribeTargetGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_target_groups::builders::DescribeTargetGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_target_groups::builders::DescribeTargetGroupsOutputBuilder {
         crate::operation::describe_target_groups::builders::DescribeTargetGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTargetGroupsOutput`](crate::operation::describe_target_groups::DescribeTargetGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTargetGroupsOutputBuilder {
     pub(crate) target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeTargetGroupsOutputBuilder {
         self
     }
     /// <p>Information about the target groups.</p>
-    pub fn set_target_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
-    ) -> Self {
+    pub fn set_target_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>) -> Self {
         self.target_groups = input;
         self
     }
     /// <p>Information about the target groups.</p>
-    pub fn get_target_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>> {
+    pub fn get_target_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>> {
         &self.target_groups
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>

@@ -79,17 +79,14 @@ impl UpgradeTarget {
 
 /// A builder for [`UpgradeTarget`](crate::types::UpgradeTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpgradeTargetBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) auto_upgrade: ::std::option::Option<bool>,
     pub(crate) is_major_version_upgrade: ::std::option::Option<bool>,
-    pub(crate) supported_engine_modes:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_engine_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) supports_parallel_query: ::std::option::Option<bool>,
     pub(crate) supports_global_databases: ::std::option::Option<bool>,
     pub(crate) supports_babelfish: ::std::option::Option<bool>,
@@ -110,18 +107,12 @@ impl UpgradeTargetBuilder {
         &self.engine
     }
     /// <p>The version number of the upgrade target database engine.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the upgrade target database engine.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -176,27 +167,19 @@ impl UpgradeTargetBuilder {
     /// To override the contents of this collection use [`set_supported_engine_modes`](Self::set_supported_engine_modes).
     ///
     /// <p>A list of the supported DB engine modes for the target engine version.</p>
-    pub fn supported_engine_modes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_engine_modes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_engine_modes.unwrap_or_default();
         v.push(input.into());
         self.supported_engine_modes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the supported DB engine modes for the target engine version.</p>
-    pub fn set_supported_engine_modes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_engine_modes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_engine_modes = input;
         self
     }
     /// <p>A list of the supported DB engine modes for the target engine version.</p>
-    pub fn get_supported_engine_modes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_engine_modes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_engine_modes
     }
     /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>

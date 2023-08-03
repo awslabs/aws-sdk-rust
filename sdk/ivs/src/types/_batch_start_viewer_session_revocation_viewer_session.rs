@@ -30,17 +30,14 @@ impl BatchStartViewerSessionRevocationViewerSession {
 }
 impl BatchStartViewerSessionRevocationViewerSession {
     /// Creates a new builder-style object to manufacture [`BatchStartViewerSessionRevocationViewerSession`](crate::types::BatchStartViewerSessionRevocationViewerSession).
-    pub fn builder() -> crate::types::builders::BatchStartViewerSessionRevocationViewerSessionBuilder
-    {
+    pub fn builder() -> crate::types::builders::BatchStartViewerSessionRevocationViewerSessionBuilder {
         crate::types::builders::BatchStartViewerSessionRevocationViewerSessionBuilder::default()
     }
 }
 
 /// A builder for [`BatchStartViewerSessionRevocationViewerSession`](crate::types::BatchStartViewerSessionRevocationViewerSession).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStartViewerSessionRevocationViewerSessionBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) viewer_id: ::std::option::Option<::std::string::String>,
@@ -81,10 +78,7 @@ impl BatchStartViewerSessionRevocationViewerSessionBuilder {
         self
     }
     /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
-    pub fn set_viewer_session_versions_less_than_or_equal_to(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_viewer_session_versions_less_than_or_equal_to(mut self, input: ::std::option::Option<i32>) -> Self {
         self.viewer_session_versions_less_than_or_equal_to = input;
         self
     }
@@ -97,9 +91,7 @@ impl BatchStartViewerSessionRevocationViewerSessionBuilder {
         crate::types::BatchStartViewerSessionRevocationViewerSession {
             channel_arn: self.channel_arn,
             viewer_id: self.viewer_id,
-            viewer_session_versions_less_than_or_equal_to: self
-                .viewer_session_versions_less_than_or_equal_to
-                .unwrap_or_default(),
+            viewer_session_versions_less_than_or_equal_to: self.viewer_session_versions_less_than_or_equal_to.unwrap_or_default(),
         }
     }
 }

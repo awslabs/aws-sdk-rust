@@ -9,32 +9,22 @@ pub struct UserTurnInputSpecification {
     pub utterance_input: ::std::option::Option<crate::types::UtteranceInputSpecification>,
     /// <p>Request attributes of the user turn.</p>
     #[doc(hidden)]
-    pub request_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Contains information about the session state in the input.</p>
     #[doc(hidden)]
     pub session_state: ::std::option::Option<crate::types::InputSessionStateSpecification>,
 }
 impl UserTurnInputSpecification {
     /// <p>The utterance input in the user turn.</p>
-    pub fn utterance_input(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UtteranceInputSpecification> {
+    pub fn utterance_input(&self) -> ::std::option::Option<&crate::types::UtteranceInputSpecification> {
         self.utterance_input.as_ref()
     }
     /// <p>Request attributes of the user turn.</p>
-    pub fn request_attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn request_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.request_attributes.as_ref()
     }
     /// <p>Contains information about the session state in the input.</p>
-    pub fn session_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputSessionStateSpecification> {
+    pub fn session_state(&self) -> ::std::option::Option<&crate::types::InputSessionStateSpecification> {
         self.session_state.as_ref()
     }
 }
@@ -47,14 +37,10 @@ impl UserTurnInputSpecification {
 
 /// A builder for [`UserTurnInputSpecification`](crate::types::UserTurnInputSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserTurnInputSpecificationBuilder {
     pub(crate) utterance_input: ::std::option::Option<crate::types::UtteranceInputSpecification>,
-    pub(crate) request_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) session_state: ::std::option::Option<crate::types::InputSessionStateSpecification>,
 }
 impl UserTurnInputSpecificationBuilder {
@@ -64,17 +50,12 @@ impl UserTurnInputSpecificationBuilder {
         self
     }
     /// <p>The utterance input in the user turn.</p>
-    pub fn set_utterance_input(
-        mut self,
-        input: ::std::option::Option<crate::types::UtteranceInputSpecification>,
-    ) -> Self {
+    pub fn set_utterance_input(mut self, input: ::std::option::Option<crate::types::UtteranceInputSpecification>) -> Self {
         self.utterance_input = input;
         self
     }
     /// <p>The utterance input in the user turn.</p>
-    pub fn get_utterance_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::UtteranceInputSpecification> {
+    pub fn get_utterance_input(&self) -> &::std::option::Option<crate::types::UtteranceInputSpecification> {
         &self.utterance_input
     }
     /// Adds a key-value pair to `request_attributes`.
@@ -95,19 +76,13 @@ impl UserTurnInputSpecificationBuilder {
     /// <p>Request attributes of the user turn.</p>
     pub fn set_request_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.request_attributes = input;
         self
     }
     /// <p>Request attributes of the user turn.</p>
-    pub fn get_request_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.request_attributes
     }
     /// <p>Contains information about the session state in the input.</p>
@@ -116,17 +91,12 @@ impl UserTurnInputSpecificationBuilder {
         self
     }
     /// <p>Contains information about the session state in the input.</p>
-    pub fn set_session_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InputSessionStateSpecification>,
-    ) -> Self {
+    pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::InputSessionStateSpecification>) -> Self {
         self.session_state = input;
         self
     }
     /// <p>Contains information about the session state in the input.</p>
-    pub fn get_session_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputSessionStateSpecification> {
+    pub fn get_session_state(&self) -> &::std::option::Option<crate::types::InputSessionStateSpecification> {
         &self.session_state
     }
     /// Consumes the builder and constructs a [`UserTurnInputSpecification`](crate::types::UserTurnInputSpecification).

@@ -35,9 +35,7 @@ impl GetEntityTypesOutput {
 
 /// A builder for [`GetEntityTypesOutput`](crate::operation::get_entity_types::GetEntityTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEntityTypesOutputBuilder {
     pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetEntityTypesOutputBuilder {
         self
     }
     /// <p>An array of entity types.</p>
-    pub fn set_entity_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
-    ) -> Self {
+    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>) -> Self {
         self.entity_types = input;
         self
     }
     /// <p>An array of entity types.</p>
-    pub fn get_entity_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityType>> {
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityType>> {
         &self.entity_types
     }
     /// <p>The next page token.</p>

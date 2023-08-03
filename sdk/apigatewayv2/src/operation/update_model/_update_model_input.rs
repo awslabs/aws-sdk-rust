@@ -58,9 +58,7 @@ impl UpdateModelInput {
 
 /// A builder for [`UpdateModelInput`](crate::operation::update_model::UpdateModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateModelInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
@@ -155,12 +153,7 @@ impl UpdateModelInputBuilder {
         &self.schema
     }
     /// Consumes the builder and constructs a [`UpdateModelInput`](crate::operation::update_model::UpdateModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_model::UpdateModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_model::UpdateModelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_model::UpdateModelInput {
             api_id: self.api_id,
             content_type: self.content_type,

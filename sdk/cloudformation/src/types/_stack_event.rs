@@ -119,9 +119,7 @@ impl StackEvent {
         self.hook_status_reason.as_deref()
     }
     /// <p>Invocation points are points in provisioning logic where hooks are initiated.</p>
-    pub fn hook_invocation_point(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HookInvocationPoint> {
+    pub fn hook_invocation_point(&self) -> ::std::option::Option<&crate::types::HookInvocationPoint> {
         self.hook_invocation_point.as_ref()
     }
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
@@ -142,9 +140,7 @@ impl StackEvent {
 
 /// A builder for [`StackEvent`](crate::types::StackEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackEventBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
@@ -207,18 +203,12 @@ impl StackEventBuilder {
         &self.stack_name
     }
     /// <p>The logical name of the resource specified in the template.</p>
-    pub fn logical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The logical name of the resource specified in the template.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logical_resource_id = input;
         self
     }
@@ -227,18 +217,12 @@ impl StackEventBuilder {
         &self.logical_resource_id
     }
     /// <p>The name or unique identifier associated with the physical instance of the resource.</p>
-    pub fn physical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn physical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.physical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or unique identifier associated with the physical instance of the resource.</p>
-    pub fn set_physical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_physical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.physical_resource_id = input;
         self
     }
@@ -247,18 +231,12 @@ impl StackEventBuilder {
         &self.physical_resource_id
     }
     /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -272,10 +250,7 @@ impl StackEventBuilder {
         self
     }
     /// <p>Time the status was updated.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -289,10 +264,7 @@ impl StackEventBuilder {
         self
     }
     /// <p>Current status of the resource.</p>
-    pub fn set_resource_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_resource_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.resource_status = input;
         self
     }
@@ -301,18 +273,12 @@ impl StackEventBuilder {
         &self.resource_status
     }
     /// <p>Success/failure message associated with the resource.</p>
-    pub fn resource_status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Success/failure message associated with the resource.</p>
-    pub fn set_resource_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_status_reason = input;
         self
     }
@@ -321,18 +287,12 @@ impl StackEventBuilder {
         &self.resource_status_reason
     }
     /// <p>BLOB of the properties used to create the resource.</p>
-    pub fn resource_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_properties = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>BLOB of the properties used to create the resource.</p>
-    pub fn set_resource_properties(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_properties = input;
         self
     }
@@ -343,20 +303,14 @@ impl StackEventBuilder {
     /// <p>The token passed to the operation that generated this event.</p>
     /// <p>All events triggered by a given stack operation are assigned the same client request token, which you can use to track operations. For example, if you execute a <code>CreateStack</code> operation with the token <code>token1</code>, then all the <code>StackEvents</code> generated by that operation will have <code>ClientRequestToken</code> set as <code>token1</code>.</p>
     /// <p>In the console, stack operations display the client request token on the Events tab. Stack operations that are initiated from the console use the token format <i>Console-StackOperation-ID</i>, which helps you easily identify the stack operation . For example, if you create a stack using the console, each stack event would be assigned the same token in the following format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token passed to the operation that generated this event.</p>
     /// <p>All events triggered by a given stack operation are assigned the same client request token, which you can use to track operations. For example, if you execute a <code>CreateStack</code> operation with the token <code>token1</code>, then all the <code>StackEvents</code> generated by that operation will have <code>ClientRequestToken</code> set as <code>token1</code>.</p>
     /// <p>In the console, stack operations display the client request token on the Events tab. Stack operations that are initiated from the console use the token format <i>Console-StackOperation-ID</i>, which helps you easily identify the stack operation . For example, if you create a stack using the console, each stack event would be assigned the same token in the following format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -386,10 +340,7 @@ impl StackEventBuilder {
         self
     }
     /// <p>Provides the status of the change set hook.</p>
-    pub fn set_hook_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HookStatus>,
-    ) -> Self {
+    pub fn set_hook_status(mut self, input: ::std::option::Option<crate::types::HookStatus>) -> Self {
         self.hook_status = input;
         self
     }
@@ -398,18 +349,12 @@ impl StackEventBuilder {
         &self.hook_status
     }
     /// <p>Provides the reason for the hook status.</p>
-    pub fn hook_status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hook_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hook_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the reason for the hook status.</p>
-    pub fn set_hook_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hook_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hook_status_reason = input;
         self
     }
@@ -423,17 +368,12 @@ impl StackEventBuilder {
         self
     }
     /// <p>Invocation points are points in provisioning logic where hooks are initiated.</p>
-    pub fn set_hook_invocation_point(
-        mut self,
-        input: ::std::option::Option<crate::types::HookInvocationPoint>,
-    ) -> Self {
+    pub fn set_hook_invocation_point(mut self, input: ::std::option::Option<crate::types::HookInvocationPoint>) -> Self {
         self.hook_invocation_point = input;
         self
     }
     /// <p>Invocation points are points in provisioning logic where hooks are initiated.</p>
-    pub fn get_hook_invocation_point(
-        &self,
-    ) -> &::std::option::Option<crate::types::HookInvocationPoint> {
+    pub fn get_hook_invocation_point(&self) -> &::std::option::Option<crate::types::HookInvocationPoint> {
         &self.hook_invocation_point
     }
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
@@ -450,10 +390,7 @@ impl StackEventBuilder {
     /// <li> <p> <code>FAIL</code> Stops provisioning resources.</p> </li>
     /// <li> <p> <code>WARN</code> Allows provisioning to continue with a warning message.</p> </li>
     /// </ul>
-    pub fn set_hook_failure_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::HookFailureMode>,
-    ) -> Self {
+    pub fn set_hook_failure_mode(mut self, input: ::std::option::Option<crate::types::HookFailureMode>) -> Self {
         self.hook_failure_mode = input;
         self
     }

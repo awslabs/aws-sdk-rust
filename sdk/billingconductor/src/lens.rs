@@ -191,9 +191,7 @@ pub(crate) fn lens_list_pricing_rules_associated_to_pricing_plan_output_pricing_
 
 pub(crate) fn lens_list_resources_associated_to_custom_line_item_output_associated_resources(
     input: crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput,
-) -> ::std::option::Option<
-    ::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>,
-> {
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>> {
     let input = match input.associated_resources {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

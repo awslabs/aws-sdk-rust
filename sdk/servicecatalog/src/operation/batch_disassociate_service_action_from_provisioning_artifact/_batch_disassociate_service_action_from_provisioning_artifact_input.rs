@@ -5,8 +5,7 @@
 pub struct BatchDisassociateServiceActionFromProvisioningArtifactInput {
     /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
     #[doc(hidden)]
-    pub service_action_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionAssociation>>,
+    pub service_action_associations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionAssociation>>,
     /// <p>The language code.</p>
     /// <ul>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
@@ -17,9 +16,7 @@ pub struct BatchDisassociateServiceActionFromProvisioningArtifactInput {
 }
 impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
     /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
-    pub fn service_action_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServiceActionAssociation]> {
+    pub fn service_action_associations(&self) -> ::std::option::Option<&[crate::types::ServiceActionAssociation]> {
         self.service_action_associations.as_deref()
     }
     /// <p>The language code.</p>
@@ -40,12 +37,9 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
 
 /// A builder for [`BatchDisassociateServiceActionFromProvisioningArtifactInput`](crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDisassociateServiceActionFromProvisioningArtifactInputBuilder {
-    pub(crate) service_action_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionAssociation>>,
+    pub(crate) service_action_associations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionAssociation>>,
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
 }
 impl BatchDisassociateServiceActionFromProvisioningArtifactInputBuilder {
@@ -54,27 +48,19 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInputBuilder {
     /// To override the contents of this collection use [`set_service_action_associations`](Self::set_service_action_associations).
     ///
     /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
-    pub fn service_action_associations(
-        mut self,
-        input: crate::types::ServiceActionAssociation,
-    ) -> Self {
+    pub fn service_action_associations(mut self, input: crate::types::ServiceActionAssociation) -> Self {
         let mut v = self.service_action_associations.unwrap_or_default();
         v.push(input);
         self.service_action_associations = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
-    pub fn set_service_action_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionAssociation>>,
-    ) -> Self {
+    pub fn set_service_action_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionAssociation>>) -> Self {
         self.service_action_associations = input;
         self
     }
     /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
-    pub fn get_service_action_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceActionAssociation>> {
+    pub fn get_service_action_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceActionAssociation>> {
         &self.service_action_associations
     }
     /// <p>The language code.</p>
@@ -82,10 +68,7 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -94,10 +77,7 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -110,7 +90,12 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInputBuilder {
         &self.accept_language
     }
     /// Consumes the builder and constructs a [`BatchDisassociateServiceActionFromProvisioningArtifactInput`](crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactInput {
                 service_action_associations: self.service_action_associations

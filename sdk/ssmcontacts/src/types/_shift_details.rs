@@ -23,12 +23,9 @@ impl ShiftDetails {
 
 /// A builder for [`ShiftDetails`](crate::types::ShiftDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShiftDetailsBuilder {
-    pub(crate) overridden_contact_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) overridden_contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ShiftDetailsBuilder {
     /// Appends an item to `overridden_contact_ids`.
@@ -36,27 +33,19 @@ impl ShiftDetailsBuilder {
     /// To override the contents of this collection use [`set_overridden_contact_ids`](Self::set_overridden_contact_ids).
     ///
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
-    pub fn overridden_contact_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn overridden_contact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.overridden_contact_ids.unwrap_or_default();
         v.push(input.into());
         self.overridden_contact_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
-    pub fn set_overridden_contact_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_overridden_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.overridden_contact_ids = input;
         self
     }
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
-    pub fn get_overridden_contact_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_overridden_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.overridden_contact_ids
     }
     /// Consumes the builder and constructs a [`ShiftDetails`](crate::types::ShiftDetails).

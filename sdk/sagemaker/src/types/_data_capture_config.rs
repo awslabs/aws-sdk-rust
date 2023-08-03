@@ -59,9 +59,7 @@ impl DataCaptureConfig {
         self.capture_options.as_deref()
     }
     /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
-    pub fn capture_content_type_header(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CaptureContentTypeHeader> {
+    pub fn capture_content_type_header(&self) -> ::std::option::Option<&crate::types::CaptureContentTypeHeader> {
         self.capture_content_type_header.as_ref()
     }
 }
@@ -74,17 +72,14 @@ impl DataCaptureConfig {
 
 /// A builder for [`DataCaptureConfig`](crate::types::DataCaptureConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataCaptureConfigBuilder {
     pub(crate) enable_capture: ::std::option::Option<bool>,
     pub(crate) initial_sampling_percentage: ::std::option::Option<i32>,
     pub(crate) destination_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) capture_options: ::std::option::Option<::std::vec::Vec<crate::types::CaptureOption>>,
-    pub(crate) capture_content_type_header:
-        ::std::option::Option<crate::types::CaptureContentTypeHeader>,
+    pub(crate) capture_content_type_header: ::std::option::Option<crate::types::CaptureContentTypeHeader>,
 }
 impl DataCaptureConfigBuilder {
     /// <p>Whether data capture should be enabled or disabled (defaults to enabled).</p>
@@ -116,18 +111,12 @@ impl DataCaptureConfigBuilder {
         &self.initial_sampling_percentage
     }
     /// <p>The Amazon S3 location used to capture the data.</p>
-    pub fn destination_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location used to capture the data.</p>
-    pub fn set_destination_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_s3_uri = input;
         self
     }
@@ -182,39 +171,26 @@ impl DataCaptureConfigBuilder {
         self
     }
     /// <p>Specifies data Model Monitor will capture. You can configure whether to collect only input, only output, or both</p>
-    pub fn set_capture_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CaptureOption>>,
-    ) -> Self {
+    pub fn set_capture_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaptureOption>>) -> Self {
         self.capture_options = input;
         self
     }
     /// <p>Specifies data Model Monitor will capture. You can configure whether to collect only input, only output, or both</p>
-    pub fn get_capture_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptureOption>> {
+    pub fn get_capture_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptureOption>> {
         &self.capture_options
     }
     /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
-    pub fn capture_content_type_header(
-        mut self,
-        input: crate::types::CaptureContentTypeHeader,
-    ) -> Self {
+    pub fn capture_content_type_header(mut self, input: crate::types::CaptureContentTypeHeader) -> Self {
         self.capture_content_type_header = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
-    pub fn set_capture_content_type_header(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptureContentTypeHeader>,
-    ) -> Self {
+    pub fn set_capture_content_type_header(mut self, input: ::std::option::Option<crate::types::CaptureContentTypeHeader>) -> Self {
         self.capture_content_type_header = input;
         self
     }
     /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
-    pub fn get_capture_content_type_header(
-        &self,
-    ) -> &::std::option::Option<crate::types::CaptureContentTypeHeader> {
+    pub fn get_capture_content_type_header(&self) -> &::std::option::Option<crate::types::CaptureContentTypeHeader> {
         &self.capture_content_type_header
     }
     /// Consumes the builder and constructs a [`DataCaptureConfig`](crate::types::DataCaptureConfig).

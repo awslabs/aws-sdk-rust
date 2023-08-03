@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for GetReplicationJobsOutput {
 }
 impl GetReplicationJobsOutput {
     /// Creates a new builder-style object to manufacture [`GetReplicationJobsOutput`](crate::operation::get_replication_jobs::GetReplicationJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_replication_jobs::builders::GetReplicationJobsOutputBuilder {
+    pub fn builder() -> crate::operation::get_replication_jobs::builders::GetReplicationJobsOutputBuilder {
         crate::operation::get_replication_jobs::builders::GetReplicationJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetReplicationJobsOutput`](crate::operation::get_replication_jobs::GetReplicationJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReplicationJobsOutputBuilder {
-    pub(crate) replication_job_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationJob>>,
+    pub(crate) replication_job_list: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl GetReplicationJobsOutputBuilder {
         self
     }
     /// <p>Information about the replication jobs.</p>
-    pub fn set_replication_job_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationJob>>,
-    ) -> Self {
+    pub fn set_replication_job_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationJob>>) -> Self {
         self.replication_job_list = input;
         self
     }
     /// <p>Information about the replication jobs.</p>
-    pub fn get_replication_job_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationJob>> {
+    pub fn get_replication_job_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationJob>> {
         &self.replication_job_list
     }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>

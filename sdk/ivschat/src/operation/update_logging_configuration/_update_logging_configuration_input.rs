@@ -23,29 +23,24 @@ impl UpdateLoggingConfigurationInput {
         self.name.as_deref()
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn destination_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
+    pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
 }
 impl UpdateLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateLoggingConfigurationInput`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput).
-    pub fn builder() -> crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder {
         crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLoggingConfigurationInput`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) destination_configuration:
-        ::std::option::Option<crate::types::DestinationConfiguration>,
+    pub(crate) destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
 }
 impl UpdateLoggingConfigurationInputBuilder {
     /// <p>Identifier of the logging configuration to be updated.</p>
@@ -77,25 +72,17 @@ impl UpdateLoggingConfigurationInputBuilder {
         &self.name
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn destination_configuration(
-        mut self,
-        input: crate::types::DestinationConfiguration,
-    ) -> Self {
+    pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn set_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
         self.destination_configuration = input;
         self
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn get_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+    pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         &self.destination_configuration
     }
     /// Consumes the builder and constructs a [`UpdateLoggingConfigurationInput`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput).
@@ -105,12 +92,10 @@ impl UpdateLoggingConfigurationInputBuilder {
         crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput {
-                identifier: self.identifier,
-                name: self.name,
-                destination_configuration: self.destination_configuration,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput {
+            identifier: self.identifier,
+            name: self.name,
+            destination_configuration: self.destination_configuration,
+        })
     }
 }

@@ -58,9 +58,7 @@ impl AutoTuneStatus {
 
 /// A builder for [`AutoTuneStatus`](crate::types::AutoTuneStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoTuneStatusBuilder {
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -76,10 +74,7 @@ impl AutoTuneStatusBuilder {
         self
     }
     /// <p>Timestamp which tells Auto-Tune options creation date .</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -93,10 +88,7 @@ impl AutoTuneStatusBuilder {
         self
     }
     /// <p>Timestamp which tells Auto-Tune options last updated time.</p>
-    pub fn set_update_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date = input;
         self
     }
@@ -133,18 +125,12 @@ impl AutoTuneStatusBuilder {
         &self.state
     }
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune options.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune options.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

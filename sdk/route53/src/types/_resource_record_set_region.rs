@@ -65,13 +65,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceRecordSetRegion {
     #[allow(missing_docs)] // documentation missing in model
@@ -167,9 +161,7 @@ impl ::std::convert::From<&str> for ResourceRecordSetRegion {
             "us-east-2" => ResourceRecordSetRegion::UsEast2,
             "us-west-1" => ResourceRecordSetRegion::UsWest1,
             "us-west-2" => ResourceRecordSetRegion::UsWest2,
-            other => ResourceRecordSetRegion::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceRecordSetRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

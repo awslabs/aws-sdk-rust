@@ -23,9 +23,7 @@ impl Allowed {
 
 /// A builder for [`Allowed`](crate::types::Allowed).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllowedBuilder {
     pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
 }
@@ -42,10 +40,7 @@ impl AllowedBuilder {
         self
     }
     /// <p>A list of policies that allowed the authentication.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>) -> Self {
         self.policies = input;
         self
     }
@@ -55,8 +50,6 @@ impl AllowedBuilder {
     }
     /// Consumes the builder and constructs a [`Allowed`](crate::types::Allowed).
     pub fn build(self) -> crate::types::Allowed {
-        crate::types::Allowed {
-            policies: self.policies,
-        }
+        crate::types::Allowed { policies: self.policies }
     }
 }

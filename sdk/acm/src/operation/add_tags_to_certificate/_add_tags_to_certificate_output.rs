@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AddTagsToCertificateOutput {
 }
 impl AddTagsToCertificateOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsToCertificateOutput`](crate::operation::add_tags_to_certificate::AddTagsToCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateOutputBuilder {
         crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddTagsToCertificateOutput`](crate::operation::add_tags_to_certificate::AddTagsToCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddTagsToCertificateOutputBuilder {
     _request_id: Option<String>,
 }

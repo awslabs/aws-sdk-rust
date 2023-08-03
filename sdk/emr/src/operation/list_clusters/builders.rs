@@ -10,10 +10,7 @@ impl ListClustersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_clusters::ListClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_clusters::ListClustersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_clusters::ListClustersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_clusters();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListClustersFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_clusters::ListClusters,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_clusters::ListClusters, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_clusters::ListClustersError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListClustersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListClustersFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_clusters::ListClusters,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_clusters::ListClusters, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_clusters::ListClustersError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListClustersFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_clusters::paginator::ListClustersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_clusters::paginator::ListClustersPaginator {
-        crate::operation::list_clusters::paginator::ListClustersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_clusters::paginator::ListClustersPaginator {
+        crate::operation::list_clusters::paginator::ListClustersPaginator::new(self.handle, self.inner)
     }
     /// <p>The creation date and time beginning value filter for listing clusters.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -129,10 +112,7 @@ impl ListClustersFluentBuilder {
         self
     }
     /// <p>The creation date and time beginning value filter for listing clusters.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
@@ -146,10 +126,7 @@ impl ListClustersFluentBuilder {
         self
     }
     /// <p>The creation date and time end value filter for listing clusters.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }
@@ -167,17 +144,12 @@ impl ListClustersFluentBuilder {
         self
     }
     /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
-    pub fn set_cluster_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterState>>,
-    ) -> Self {
+    pub fn set_cluster_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterState>>) -> Self {
         self.inner = self.inner.set_cluster_states(input);
         self
     }
     /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
-    pub fn get_cluster_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterState>> {
+    pub fn get_cluster_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterState>> {
         self.inner.get_cluster_states()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>

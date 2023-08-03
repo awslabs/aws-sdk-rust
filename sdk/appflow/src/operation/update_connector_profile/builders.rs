@@ -37,10 +37,7 @@ impl UpdateConnectorProfileFluentBuilder {
         }
     }
     /// Access the UpdateConnectorProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_connector_profile::builders::UpdateConnectorProfileInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_connector_profile::builders::UpdateConnectorProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateConnectorProfileFluentBuilder {
             crate::operation::update_connector_profile::UpdateConnectorProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector_profile::UpdateConnectorProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector_profile::UpdateConnectorProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateConnectorProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateConnectorProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connector_profile::UpdateConnectorProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector_profile::UpdateConnectorProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector_profile::UpdateConnectorProfileError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateConnectorProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connector_profile::UpdateConnectorProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector_profile::UpdateConnectorProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector_profile::UpdateConnectorProfileError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateConnectorProfileFluentBuilder {
             crate::operation::update_connector_profile::UpdateConnectorProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector_profile::UpdateConnectorProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector_profile::UpdateConnectorProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn connector_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_profile_name(input.into());
         self
     }
     /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn set_connector_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }
@@ -149,10 +129,7 @@ impl UpdateConnectorProfileFluentBuilder {
         self
     }
     /// <p> Indicates the connection mode and if it is public or private. </p>
-    pub fn set_connection_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionMode>,
-    ) -> Self {
+    pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
         self.inner = self.inner.set_connection_mode(input);
         self
     }
@@ -166,17 +143,12 @@ impl UpdateConnectorProfileFluentBuilder {
         self
     }
     /// <p> Defines the connector-specific profile configuration and credentials. </p>
-    pub fn set_connector_profile_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorProfileConfig>,
-    ) -> Self {
+    pub fn set_connector_profile_config(mut self, input: ::std::option::Option<crate::types::ConnectorProfileConfig>) -> Self {
         self.inner = self.inner.set_connector_profile_config(input);
         self
     }
     /// <p> Defines the connector-specific profile configuration and credentials. </p>
-    pub fn get_connector_profile_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorProfileConfig> {
+    pub fn get_connector_profile_config(&self) -> &::std::option::Option<crate::types::ConnectorProfileConfig> {
         self.inner.get_connector_profile_config()
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>

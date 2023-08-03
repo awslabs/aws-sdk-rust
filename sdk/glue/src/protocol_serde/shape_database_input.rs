@@ -28,10 +28,7 @@ pub fn ser_database_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_principal_permissions::ser_principal_permissions(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_principal_permissions::ser_principal_permissions(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }
@@ -40,19 +37,13 @@ pub fn ser_database_input(
     if let Some(var_12) = &input.target_database {
         #[allow(unused_mut)]
         let mut object_13 = object.key("TargetDatabase").start_object();
-        crate::protocol_serde::shape_database_identifier::ser_database_identifier(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_database_identifier::ser_database_identifier(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.federated_database {
         #[allow(unused_mut)]
         let mut object_15 = object.key("FederatedDatabase").start_object();
-        crate::protocol_serde::shape_federated_database::ser_federated_database(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_federated_database::ser_federated_database(&mut object_15, var_14)?;
         object_15.finish();
     }
     Ok(())

@@ -33,9 +33,7 @@ pub struct Configuration {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The list of all tags associated with this configuration.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Configuration {
     /// <p>Required. The ARN of the configuration.</p>
@@ -43,9 +41,7 @@ impl Configuration {
         self.arn.as_deref()
     }
     /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
-    pub fn authentication_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthenticationStrategy> {
+    pub fn authentication_strategy(&self) -> ::std::option::Option<&crate::types::AuthenticationStrategy> {
         self.authentication_strategy.as_ref()
     }
     /// <p>Required. The date and time of the configuration revision.</p>
@@ -77,11 +73,7 @@ impl Configuration {
         self.name.as_deref()
     }
     /// <p>The list of all tags associated with this configuration.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -94,9 +86,7 @@ impl Configuration {
 
 /// A builder for [`Configuration`](crate::types::Configuration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_strategy: ::std::option::Option<crate::types::AuthenticationStrategy>,
@@ -107,9 +97,7 @@ pub struct ConfigurationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) latest_revision: ::std::option::Option<crate::types::ConfigurationRevision>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ConfigurationBuilder {
     /// <p>Required. The ARN of the configuration.</p>
@@ -132,17 +120,12 @@ impl ConfigurationBuilder {
         self
     }
     /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
-    pub fn set_authentication_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationStrategy>,
-    ) -> Self {
+    pub fn set_authentication_strategy(mut self, input: ::std::option::Option<crate::types::AuthenticationStrategy>) -> Self {
         self.authentication_strategy = input;
         self
     }
     /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
-    pub fn get_authentication_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationStrategy> {
+    pub fn get_authentication_strategy(&self) -> &::std::option::Option<crate::types::AuthenticationStrategy> {
         &self.authentication_strategy
     }
     /// <p>Required. The date and time of the configuration revision.</p>
@@ -151,10 +134,7 @@ impl ConfigurationBuilder {
         self
     }
     /// <p>Required. The date and time of the configuration revision.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -182,10 +162,7 @@ impl ConfigurationBuilder {
         self
     }
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-    pub fn set_engine_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineType>,
-    ) -> Self {
+    pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
         self.engine_type = input;
         self
     }
@@ -194,18 +171,12 @@ impl ConfigurationBuilder {
         &self.engine_type
     }
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see, <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see, <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -233,17 +204,12 @@ impl ConfigurationBuilder {
         self
     }
     /// <p>Required. The latest revision of the configuration.</p>
-    pub fn set_latest_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationRevision>,
-    ) -> Self {
+    pub fn set_latest_revision(mut self, input: ::std::option::Option<crate::types::ConfigurationRevision>) -> Self {
         self.latest_revision = input;
         self
     }
     /// <p>Required. The latest revision of the configuration.</p>
-    pub fn get_latest_revision(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationRevision> {
+    pub fn get_latest_revision(&self) -> &::std::option::Option<crate::types::ConfigurationRevision> {
         &self.latest_revision
     }
     /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
@@ -265,32 +231,19 @@ impl ConfigurationBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of all tags associated with this configuration.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of all tags associated with this configuration.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The list of all tags associated with this configuration.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Configuration`](crate::types::Configuration).

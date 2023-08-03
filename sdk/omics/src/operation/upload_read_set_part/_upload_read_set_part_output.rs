@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UploadReadSetPartOutput {
 }
 impl UploadReadSetPartOutput {
     /// Creates a new builder-style object to manufacture [`UploadReadSetPartOutput`](crate::operation::upload_read_set_part::UploadReadSetPartOutput).
-    pub fn builder(
-    ) -> crate::operation::upload_read_set_part::builders::UploadReadSetPartOutputBuilder {
+    pub fn builder() -> crate::operation::upload_read_set_part::builders::UploadReadSetPartOutputBuilder {
         crate::operation::upload_read_set_part::builders::UploadReadSetPartOutputBuilder::default()
     }
 }
 
 /// A builder for [`UploadReadSetPartOutput`](crate::operation::upload_read_set_part::UploadReadSetPartOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadReadSetPartOutputBuilder {
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

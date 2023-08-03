@@ -26,7 +26,7 @@ impl CreateGeofenceCollectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGeofenceCollectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionInputBuilder,
+    inner: crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionInputBuilder,
 }
 impl CreateGeofenceCollectionFluentBuilder {
     /// Creates a new `CreateGeofenceCollection`.
@@ -37,10 +37,7 @@ impl CreateGeofenceCollectionFluentBuilder {
         }
     }
     /// Access the CreateGeofenceCollection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateGeofenceCollectionFluentBuilder {
             crate::operation::create_geofence_collection::CreateGeofenceCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_geofence_collection::CreateGeofenceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_geofence_collection::CreateGeofenceCollectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateGeofenceCollectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateGeofenceCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_geofence_collection::CreateGeofenceCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_geofence_collection::CreateGeofenceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_geofence_collection::CreateGeofenceCollectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateGeofenceCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_geofence_collection::CreateGeofenceCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_geofence_collection::CreateGeofenceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_geofence_collection::CreateGeofenceCollectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateGeofenceCollectionFluentBuilder {
             crate::operation::create_geofence_collection::CreateGeofenceCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_geofence_collection::CreateGeofenceCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_geofence_collection::CreateGeofenceCollectionError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +116,7 @@ impl CreateGeofenceCollectionFluentBuilder {
     /// <li> <p>Must be a unique geofence collection name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>
     /// </ul>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_name(input.into());
         self
     }
@@ -144,10 +127,7 @@ impl CreateGeofenceCollectionFluentBuilder {
     /// <li> <p>Must be a unique geofence collection name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>
     /// </ul>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_name(input);
         self
     }
@@ -162,49 +142,31 @@ impl CreateGeofenceCollectionFluentBuilder {
         self.inner.get_collection_name()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.inner = self.inner.pricing_plan(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn set_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
+    pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.inner = self.inner.set_pricing_plan(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
         self.inner.get_pricing_plan()
     }
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
-    pub fn pricing_plan_data_source(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pricing_plan_data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pricing_plan_data_source(input.into());
         self
     }
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
-    pub fn set_pricing_plan_data_source(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pricing_plan_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pricing_plan_data_source(input);
         self
     }
@@ -242,11 +204,7 @@ impl CreateGeofenceCollectionFluentBuilder {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
@@ -261,12 +219,7 @@ impl CreateGeofenceCollectionFluentBuilder {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -281,11 +234,7 @@ impl CreateGeofenceCollectionFluentBuilder {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. </p>

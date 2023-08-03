@@ -106,13 +106,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ParameterExceptionField {
     #[allow(missing_docs)] // documentation missing in model
@@ -261,18 +255,12 @@ pub enum ParameterExceptionField {
 impl ::std::convert::From<&str> for ParameterExceptionField {
     fn from(s: &str) -> Self {
         match s {
-            "ACP_RULE_SET_RESPONSE_INSPECTION" => {
-                ParameterExceptionField::AcpRuleSetResponseInspection
-            }
+            "ACP_RULE_SET_RESPONSE_INSPECTION" => ParameterExceptionField::AcpRuleSetResponseInspection,
             "AND_STATEMENT" => ParameterExceptionField::AndStatement,
             "ASSOCIABLE_RESOURCE" => ParameterExceptionField::AssociableResource,
             "ASSOCIATED_RESOURCE_TYPE" => ParameterExceptionField::AssociatedResourceType,
-            "ATP_RULE_SET_RESPONSE_INSPECTION" => {
-                ParameterExceptionField::AtpRuleSetResponseInspection
-            }
-            "BODY_PARSING_FALLBACK_BEHAVIOR" => {
-                ParameterExceptionField::BodyParsingFallbackBehavior
-            }
+            "ATP_RULE_SET_RESPONSE_INSPECTION" => ParameterExceptionField::AtpRuleSetResponseInspection,
+            "BODY_PARSING_FALLBACK_BEHAVIOR" => ParameterExceptionField::BodyParsingFallbackBehavior,
             "BYTE_MATCH_STATEMENT" => ParameterExceptionField::ByteMatchStatement,
             "CHALLENGE_CONFIG" => ParameterExceptionField::ChallengeConfig,
             "CHANGE_PROPAGATION_STATUS" => ParameterExceptionField::ChangePropagationStatus,
@@ -315,9 +303,7 @@ impl ::std::convert::From<&str> for ParameterExceptionField {
             "PAYLOAD_TYPE" => ParameterExceptionField::PayloadType,
             "POSITION" => ParameterExceptionField::Position,
             "RATE_BASED_STATEMENT" => ParameterExceptionField::RateBasedStatement,
-            "REGEX_PATTERN_REFERENCE_STATEMENT" => {
-                ParameterExceptionField::RegexPatternReferenceStatement
-            }
+            "REGEX_PATTERN_REFERENCE_STATEMENT" => ParameterExceptionField::RegexPatternReferenceStatement,
             "REGEX_PATTERN_SET" => ParameterExceptionField::RegexPatternSet,
             "RESOURCE_ARN" => ParameterExceptionField::ResourceArn,
             "RESOURCE_TYPE" => ParameterExceptionField::ResourceType,
@@ -325,9 +311,7 @@ impl ::std::convert::From<&str> for ParameterExceptionField {
             "RULE" => ParameterExceptionField::Rule,
             "RULE_ACTION" => ParameterExceptionField::RuleAction,
             "RULE_GROUP" => ParameterExceptionField::RuleGroup,
-            "RULE_GROUP_REFERENCE_STATEMENT" => {
-                ParameterExceptionField::RuleGroupReferenceStatement
-            }
+            "RULE_GROUP_REFERENCE_STATEMENT" => ParameterExceptionField::RuleGroupReferenceStatement,
             "SCOPE_DOWN" => ParameterExceptionField::ScopeDown,
             "SCOPE_VALUE" => ParameterExceptionField::ScopeValue,
             "SINGLE_HEADER" => ParameterExceptionField::SingleHeader,
@@ -341,9 +325,7 @@ impl ::std::convert::From<&str> for ParameterExceptionField {
             "TOKEN_DOMAIN" => ParameterExceptionField::TokenDomain,
             "WEB_ACL" => ParameterExceptionField::WebAcl,
             "XSS_MATCH_STATEMENT" => ParameterExceptionField::XssMatchStatement,
-            other => ParameterExceptionField::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ParameterExceptionField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -358,18 +340,12 @@ impl ParameterExceptionField {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ParameterExceptionField::AcpRuleSetResponseInspection => {
-                "ACP_RULE_SET_RESPONSE_INSPECTION"
-            }
+            ParameterExceptionField::AcpRuleSetResponseInspection => "ACP_RULE_SET_RESPONSE_INSPECTION",
             ParameterExceptionField::AndStatement => "AND_STATEMENT",
             ParameterExceptionField::AssociableResource => "ASSOCIABLE_RESOURCE",
             ParameterExceptionField::AssociatedResourceType => "ASSOCIATED_RESOURCE_TYPE",
-            ParameterExceptionField::AtpRuleSetResponseInspection => {
-                "ATP_RULE_SET_RESPONSE_INSPECTION"
-            }
-            ParameterExceptionField::BodyParsingFallbackBehavior => {
-                "BODY_PARSING_FALLBACK_BEHAVIOR"
-            }
+            ParameterExceptionField::AtpRuleSetResponseInspection => "ATP_RULE_SET_RESPONSE_INSPECTION",
+            ParameterExceptionField::BodyParsingFallbackBehavior => "BODY_PARSING_FALLBACK_BEHAVIOR",
             ParameterExceptionField::ByteMatchStatement => "BYTE_MATCH_STATEMENT",
             ParameterExceptionField::ChallengeConfig => "CHALLENGE_CONFIG",
             ParameterExceptionField::ChangePropagationStatus => "CHANGE_PROPAGATION_STATUS",
@@ -412,9 +388,7 @@ impl ParameterExceptionField {
             ParameterExceptionField::PayloadType => "PAYLOAD_TYPE",
             ParameterExceptionField::Position => "POSITION",
             ParameterExceptionField::RateBasedStatement => "RATE_BASED_STATEMENT",
-            ParameterExceptionField::RegexPatternReferenceStatement => {
-                "REGEX_PATTERN_REFERENCE_STATEMENT"
-            }
+            ParameterExceptionField::RegexPatternReferenceStatement => "REGEX_PATTERN_REFERENCE_STATEMENT",
             ParameterExceptionField::RegexPatternSet => "REGEX_PATTERN_SET",
             ParameterExceptionField::ResourceArn => "RESOURCE_ARN",
             ParameterExceptionField::ResourceType => "RESOURCE_TYPE",
@@ -422,9 +396,7 @@ impl ParameterExceptionField {
             ParameterExceptionField::Rule => "RULE",
             ParameterExceptionField::RuleAction => "RULE_ACTION",
             ParameterExceptionField::RuleGroup => "RULE_GROUP",
-            ParameterExceptionField::RuleGroupReferenceStatement => {
-                "RULE_GROUP_REFERENCE_STATEMENT"
-            }
+            ParameterExceptionField::RuleGroupReferenceStatement => "RULE_GROUP_REFERENCE_STATEMENT",
             ParameterExceptionField::ScopeDown => "SCOPE_DOWN",
             ParameterExceptionField::ScopeValue => "SCOPE_VALUE",
             ParameterExceptionField::SingleHeader => "SINGLE_HEADER",

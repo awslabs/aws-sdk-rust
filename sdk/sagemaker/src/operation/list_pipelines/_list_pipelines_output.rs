@@ -35,12 +35,9 @@ impl ListPipelinesOutput {
 
 /// A builder for [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelinesOutputBuilder {
-    pub(crate) pipeline_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>,
+    pub(crate) pipeline_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListPipelinesOutputBuilder {
         self
     }
     /// <p>Contains a sorted list of <code>PipelineSummary</code> objects matching the specified filters. Each <code>PipelineSummary</code> consists of PipelineArn, PipelineName, ExperimentName, PipelineDescription, CreationTime, LastModifiedTime, LastRunTime, and RoleArn. This list can be empty. </p>
-    pub fn set_pipeline_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>,
-    ) -> Self {
+    pub fn set_pipeline_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>) -> Self {
         self.pipeline_summaries = input;
         self
     }
     /// <p>Contains a sorted list of <code>PipelineSummary</code> objects matching the specified filters. Each <code>PipelineSummary</code> consists of PipelineArn, PipelineName, ExperimentName, PipelineDescription, CreationTime, LastModifiedTime, LastRunTime, and RoleArn. This list can be empty. </p>
-    pub fn get_pipeline_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>> {
+    pub fn get_pipeline_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>> {
         &self.pipeline_summaries
     }
     /// <p>If the result of the previous <code>ListPipelines</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>

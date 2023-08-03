@@ -15,34 +15,25 @@ impl DescribeFrameworkInput {
 }
 impl DescribeFrameworkInput {
     /// Creates a new builder-style object to manufacture [`DescribeFrameworkInput`](crate::operation::describe_framework::DescribeFrameworkInput).
-    pub fn builder() -> crate::operation::describe_framework::builders::DescribeFrameworkInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_framework::builders::DescribeFrameworkInputBuilder {
         crate::operation::describe_framework::builders::DescribeFrameworkInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFrameworkInput`](crate::operation::describe_framework::DescribeFrameworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFrameworkInputBuilder {
     pub(crate) framework_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFrameworkInputBuilder {
     /// <p>The unique name of a framework.</p>
-    pub fn framework_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of a framework.</p>
-    pub fn set_framework_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DescribeFrameworkInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFrameworkInput`](crate::operation::describe_framework::DescribeFrameworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_framework::DescribeFrameworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_framework::DescribeFrameworkInput {
-                framework_name: self.framework_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_framework::DescribeFrameworkInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_framework::DescribeFrameworkInput {
+            framework_name: self.framework_name,
+        })
     }
 }

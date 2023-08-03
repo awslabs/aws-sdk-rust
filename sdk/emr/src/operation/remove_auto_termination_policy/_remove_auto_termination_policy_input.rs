@@ -15,16 +15,14 @@ impl RemoveAutoTerminationPolicyInput {
 }
 impl RemoveAutoTerminationPolicyInput {
     /// Creates a new builder-style object to manufacture [`RemoveAutoTerminationPolicyInput`](crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyInput).
-    pub fn builder() -> crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyInputBuilder{
+    pub fn builder() -> crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyInputBuilder {
         crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveAutoTerminationPolicyInput`](crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveAutoTerminationPolicyInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl RemoveAutoTerminationPolicyInputBuilder {
         crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyInput {
-                cluster_id: self.cluster_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyInput { cluster_id: self.cluster_id })
     }
 }

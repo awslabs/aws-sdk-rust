@@ -37,9 +37,7 @@ impl EntitlementData {
 
 /// A builder for [`EntitlementData`](crate::types::EntitlementData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntitlementDataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl EntitlementDataBuilder {
         self
     }
     /// <p>Entitlement data unit.</p>
-    pub fn set_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::EntitlementDataUnit>,
-    ) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::EntitlementDataUnit>) -> Self {
         self.unit = input;
         self
     }

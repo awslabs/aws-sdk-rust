@@ -15,17 +15,11 @@ pub fn ser_field_level_encryption_config(
     }
     if let Some(var_3) = &input.query_arg_profile_config {
         let inner_writer = scope.start_el("QueryArgProfileConfig");
-        crate::protocol_serde::shape_query_arg_profile_config::ser_query_arg_profile_config(
-            var_3,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_query_arg_profile_config::ser_query_arg_profile_config(var_3, inner_writer)?
     }
     if let Some(var_4) = &input.content_type_profile_config {
         let inner_writer = scope.start_el("ContentTypeProfileConfig");
-        crate::protocol_serde::shape_content_type_profile_config::ser_content_type_profile_config(
-            var_4,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_content_type_profile_config::ser_content_type_profile_config(var_4, inner_writer)?
     }
     scope.finish();
     Ok(())

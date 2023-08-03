@@ -10,10 +10,7 @@ impl DeleteRouteInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_route::DeleteRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route::DeleteRouteError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route::DeleteRouteError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_route();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl DeleteRouteFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_route::DeleteRoute,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_route::DeleteRoute, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_route::DeleteRouteError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl DeleteRouteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl DeleteRouteFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_route::DeleteRoute,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_route::DeleteRoute, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_route::DeleteRouteError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_cidr_block(input.into());
         self
     }
     /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
@@ -133,18 +115,12 @@ impl DeleteRouteFluentBuilder {
         self.inner.get_destination_cidr_block()
     }
     /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn destination_ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_ipv6_cidr_block(input.into());
         self
     }
     /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn set_destination_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_ipv6_cidr_block(input);
         self
     }
@@ -153,18 +129,12 @@ impl DeleteRouteFluentBuilder {
         self.inner.get_destination_ipv6_cidr_block()
     }
     /// <p>The ID of the prefix list for the route.</p>
-    pub fn destination_prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_prefix_list_id(input.into());
         self
     }
     /// <p>The ID of the prefix list for the route.</p>
-    pub fn set_destination_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_prefix_list_id(input);
         self
     }
@@ -187,18 +157,12 @@ impl DeleteRouteFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_table_id(input.into());
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_table_id(input);
         self
     }

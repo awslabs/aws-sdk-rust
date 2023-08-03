@@ -27,12 +27,7 @@ impl super::Client {
     ///   - [`auto_ml_job_arn(Option<String>)`](crate::operation::describe_processing_job::DescribeProcessingJobOutput::auto_ml_job_arn): <p>The ARN of an AutoML job associated with this processing job.</p>
     ///   - [`training_job_arn(Option<String>)`](crate::operation::describe_processing_job::DescribeProcessingJobOutput::training_job_arn): <p>The ARN of a training job associated with this processing job.</p>
     /// - On failure, responds with [`SdkError<DescribeProcessingJobError>`](crate::operation::describe_processing_job::DescribeProcessingJobError)
-    pub fn describe_processing_job(
-        &self,
-    ) -> crate::operation::describe_processing_job::builders::DescribeProcessingJobFluentBuilder
-    {
-        crate::operation::describe_processing_job::builders::DescribeProcessingJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_processing_job(&self) -> crate::operation::describe_processing_job::builders::DescribeProcessingJobFluentBuilder {
+        crate::operation::describe_processing_job::builders::DescribeProcessingJobFluentBuilder::new(self.handle.clone())
     }
 }

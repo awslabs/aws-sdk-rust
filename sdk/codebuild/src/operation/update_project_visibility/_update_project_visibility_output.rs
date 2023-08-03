@@ -52,9 +52,7 @@ impl UpdateProjectVisibilityOutput {
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
     /// </dl>
-    pub fn project_visibility(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProjectVisibilityType> {
+    pub fn project_visibility(&self) -> ::std::option::Option<&crate::types::ProjectVisibilityType> {
         self.project_visibility.as_ref()
     }
 }
@@ -65,18 +63,14 @@ impl ::aws_http::request_id::RequestId for UpdateProjectVisibilityOutput {
 }
 impl UpdateProjectVisibilityOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProjectVisibilityOutput`](crate::operation::update_project_visibility::UpdateProjectVisibilityOutput).
-    pub fn builder(
-    ) -> crate::operation::update_project_visibility::builders::UpdateProjectVisibilityOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_project_visibility::builders::UpdateProjectVisibilityOutputBuilder {
         crate::operation::update_project_visibility::builders::UpdateProjectVisibilityOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateProjectVisibilityOutput`](crate::operation::update_project_visibility::UpdateProjectVisibilityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProjectVisibilityOutputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) public_project_alias: ::std::option::Option<::std::string::String>,
@@ -99,18 +93,12 @@ impl UpdateProjectVisibilityOutputBuilder {
         &self.project_arn
     }
     /// <p>Contains the project identifier used with the public build APIs. </p>
-    pub fn public_project_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_project_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_project_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains the project identifier used with the public build APIs. </p>
-    pub fn set_public_project_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_project_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_project_alias = input;
         self
     }
@@ -152,10 +140,7 @@ impl UpdateProjectVisibilityOutputBuilder {
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
     /// </dl>
-    pub fn set_project_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectVisibilityType>,
-    ) -> Self {
+    pub fn set_project_visibility(mut self, input: ::std::option::Option<crate::types::ProjectVisibilityType>) -> Self {
         self.project_visibility = input;
         self
     }
@@ -174,9 +159,7 @@ impl UpdateProjectVisibilityOutputBuilder {
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
     /// </dl>
-    pub fn get_project_visibility(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProjectVisibilityType> {
+    pub fn get_project_visibility(&self) -> &::std::option::Option<crate::types::ProjectVisibilityType> {
         &self.project_visibility
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -189,9 +172,7 @@ impl UpdateProjectVisibilityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateProjectVisibilityOutput`](crate::operation::update_project_visibility::UpdateProjectVisibilityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_project_visibility::UpdateProjectVisibilityOutput {
+    pub fn build(self) -> crate::operation::update_project_visibility::UpdateProjectVisibilityOutput {
         crate::operation::update_project_visibility::UpdateProjectVisibilityOutput {
             project_arn: self.project_arn,
             public_project_alias: self.public_project_alias,

@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`policy_details(PolicyDetails)`](crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyFluentBuilder::policy_details) / [`set_policy_details(Option<PolicyDetails>)`](crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyFluentBuilder::set_policy_details): <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
     /// - On success, responds with [`UpdateLifecyclePolicyOutput`](crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyOutput)
     /// - On failure, responds with [`SdkError<UpdateLifecyclePolicyError>`](crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError)
-    pub fn update_lifecycle_policy(
-        &self,
-    ) -> crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyFluentBuilder
-    {
-        crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_lifecycle_policy(&self) -> crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyFluentBuilder {
+        crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyFluentBuilder::new(self.handle.clone())
     }
 }

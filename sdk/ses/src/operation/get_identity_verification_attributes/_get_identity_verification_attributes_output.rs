@@ -6,24 +6,15 @@
 pub struct GetIdentityVerificationAttributesOutput {
     /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     #[doc(hidden)]
-    pub verification_attributes: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::IdentityVerificationAttributes,
-        >,
-    >,
+    pub verification_attributes:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityVerificationAttributes>>,
     _request_id: Option<String>,
 }
 impl GetIdentityVerificationAttributesOutput {
     /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     pub fn verification_attributes(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::IdentityVerificationAttributes,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::IdentityVerificationAttributes>> {
         self.verification_attributes.as_ref()
     }
 }
@@ -34,23 +25,17 @@ impl ::aws_http::request_id::RequestId for GetIdentityVerificationAttributesOutp
 }
 impl GetIdentityVerificationAttributesOutput {
     /// Creates a new builder-style object to manufacture [`GetIdentityVerificationAttributesOutput`](crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput).
-    pub fn builder() -> crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesOutputBuilder {
         crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityVerificationAttributesOutput`](crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityVerificationAttributesOutputBuilder {
-    pub(crate) verification_attributes: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::IdentityVerificationAttributes,
-        >,
-    >,
+    pub(crate) verification_attributes:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityVerificationAttributes>>,
     _request_id: Option<String>,
 }
 impl GetIdentityVerificationAttributesOutputBuilder {
@@ -72,12 +57,7 @@ impl GetIdentityVerificationAttributesOutputBuilder {
     /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     pub fn set_verification_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::IdentityVerificationAttributes,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityVerificationAttributes>>,
     ) -> Self {
         self.verification_attributes = input;
         self
@@ -85,12 +65,7 @@ impl GetIdentityVerificationAttributesOutputBuilder {
     /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     pub fn get_verification_attributes(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::IdentityVerificationAttributes,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityVerificationAttributes>> {
         &self.verification_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -103,10 +78,9 @@ impl GetIdentityVerificationAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIdentityVerificationAttributesOutput`](crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput).
-    pub fn build(self) -> crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput{
+    pub fn build(self) -> crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput {
         crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput {
-            verification_attributes: self.verification_attributes
-            ,
+            verification_attributes: self.verification_attributes,
             _request_id: self._request_id,
         }
     }

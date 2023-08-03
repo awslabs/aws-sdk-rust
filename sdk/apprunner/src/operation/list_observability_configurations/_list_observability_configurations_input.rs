@@ -44,16 +44,14 @@ impl ListObservabilityConfigurationsInput {
 }
 impl ListObservabilityConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListObservabilityConfigurationsInput`](crate::operation::list_observability_configurations::ListObservabilityConfigurationsInput).
-    pub fn builder() -> crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsInputBuilder {
         crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListObservabilityConfigurationsInput`](crate::operation::list_observability_configurations::ListObservabilityConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObservabilityConfigurationsInputBuilder {
     pub(crate) observability_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) latest_only: ::std::option::Option<bool>,
@@ -62,25 +60,17 @@ pub struct ListObservabilityConfigurationsInputBuilder {
 }
 impl ListObservabilityConfigurationsInputBuilder {
     /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
-    pub fn observability_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn observability_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.observability_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
-    pub fn set_observability_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_observability_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.observability_configuration_name = input;
         self
     }
     /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
-    pub fn get_observability_configuration_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_observability_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.observability_configuration_name
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
@@ -146,15 +136,11 @@ impl ListObservabilityConfigurationsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_observability_configurations::ListObservabilityConfigurationsInput {
-                observability_configuration_name: self.observability_configuration_name
-                ,
-                latest_only: self.latest_only
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                observability_configuration_name: self.observability_configuration_name,
+                latest_only: self.latest_only,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

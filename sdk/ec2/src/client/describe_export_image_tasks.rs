@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`export_image_tasks(Option<Vec<ExportImageTask>>)`](crate::operation::describe_export_image_tasks::DescribeExportImageTasksOutput::export_image_tasks): <p>Information about the export image tasks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_export_image_tasks::DescribeExportImageTasksOutput::next_token): <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeExportImageTasksError>`](crate::operation::describe_export_image_tasks::DescribeExportImageTasksError)
-    pub fn describe_export_image_tasks(&self) -> crate::operation::describe_export_image_tasks::builders::DescribeExportImageTasksFluentBuilder{
+    pub fn describe_export_image_tasks(&self) -> crate::operation::describe_export_image_tasks::builders::DescribeExportImageTasksFluentBuilder {
         crate::operation::describe_export_image_tasks::builders::DescribeExportImageTasksFluentBuilder::new(self.handle.clone())
     }
 }

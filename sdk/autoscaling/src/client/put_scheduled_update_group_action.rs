@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`time_zone(impl ::std::convert::Into<String>)`](crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionFluentBuilder::time_zone) / [`set_time_zone(Option<String>)`](crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionFluentBuilder::set_time_zone): <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default. </p>  <p>Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
     /// - On success, responds with [`PutScheduledUpdateGroupActionOutput`](crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionOutput)
     /// - On failure, responds with [`SdkError<PutScheduledUpdateGroupActionError>`](crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionError)
-    pub fn put_scheduled_update_group_action(&self) -> crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionFluentBuilder{
+    pub fn put_scheduled_update_group_action(
+        &self,
+    ) -> crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionFluentBuilder {
         crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionFluentBuilder::new(self.handle.clone())
     }
 }

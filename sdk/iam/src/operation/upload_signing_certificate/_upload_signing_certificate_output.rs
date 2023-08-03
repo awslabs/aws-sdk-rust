@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for UploadSigningCertificateOutput {
 }
 impl UploadSigningCertificateOutput {
     /// Creates a new builder-style object to manufacture [`UploadSigningCertificateOutput`](crate::operation::upload_signing_certificate::UploadSigningCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::upload_signing_certificate::builders::UploadSigningCertificateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::upload_signing_certificate::builders::UploadSigningCertificateOutputBuilder {
         crate::operation::upload_signing_certificate::builders::UploadSigningCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UploadSigningCertificateOutput`](crate::operation::upload_signing_certificate::UploadSigningCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadSigningCertificateOutputBuilder {
     pub(crate) certificate: ::std::option::Option<crate::types::SigningCertificate>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl UploadSigningCertificateOutputBuilder {
         self
     }
     /// <p>Information about the certificate.</p>
-    pub fn set_certificate(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningCertificate>,
-    ) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<crate::types::SigningCertificate>) -> Self {
         self.certificate = input;
         self
     }
@@ -66,9 +59,7 @@ impl UploadSigningCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UploadSigningCertificateOutput`](crate::operation::upload_signing_certificate::UploadSigningCertificateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::upload_signing_certificate::UploadSigningCertificateOutput {
+    pub fn build(self) -> crate::operation::upload_signing_certificate::UploadSigningCertificateOutput {
         crate::operation::upload_signing_certificate::UploadSigningCertificateOutput {
             certificate: self.certificate,
             _request_id: self._request_id,

@@ -29,9 +29,7 @@ impl DescribeAppsInput {
 
 /// A builder for [`DescribeAppsInput`](crate::operation::describe_apps::DescribeAppsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppsInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,10 +61,7 @@ impl DescribeAppsInputBuilder {
         self
     }
     /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
-    pub fn set_app_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_app_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.app_ids = input;
         self
     }
@@ -75,12 +70,7 @@ impl DescribeAppsInputBuilder {
         &self.app_ids
     }
     /// Consumes the builder and constructs a [`DescribeAppsInput`](crate::operation::describe_apps::DescribeAppsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_apps::DescribeAppsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_apps::DescribeAppsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_apps::DescribeAppsInput {
             stack_id: self.stack_id,
             app_ids: self.app_ids,

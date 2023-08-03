@@ -18,7 +18,10 @@ pub fn ser_aws_ecr_repository_details(
     if let Some(var_5) = &input.lifecycle_policy {
         #[allow(unused_mut)]
         let mut object_6 = object.key("LifecyclePolicy").start_object();
-        crate::protocol_serde::shape_aws_ecr_repository_lifecycle_policy_details::ser_aws_ecr_repository_lifecycle_policy_details(&mut object_6, var_5)?;
+        crate::protocol_serde::shape_aws_ecr_repository_lifecycle_policy_details::ser_aws_ecr_repository_lifecycle_policy_details(
+            &mut object_6,
+            var_5,
+        )?;
         object_6.finish();
     }
     if let Some(var_7) = &input.repository_name {
@@ -32,17 +35,9 @@ pub fn ser_aws_ecr_repository_details(
 
 pub(crate) fn de_aws_ecr_repository_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsEcrRepositoryDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsEcrRepositoryDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -52,72 +47,59 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Arn" => {
-                                builder = builder.set_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Arn" => {
+                            builder = builder.set_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "ImageScanningConfiguration" => {
-                                builder = builder.set_image_scanning_configuration(
+                            );
+                        }
+                        "ImageScanningConfiguration" => {
+                            builder = builder.set_image_scanning_configuration(
                                     crate::protocol_serde::shape_aws_ecr_repository_image_scanning_configuration_details::de_aws_ecr_repository_image_scanning_configuration_details(tokens)?
                                 );
-                            }
-                            "ImageTagMutability" => {
-                                builder = builder.set_image_tag_mutability(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "ImageTagMutability" => {
+                            builder = builder.set_image_tag_mutability(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "LifecyclePolicy" => {
-                                builder = builder.set_lifecycle_policy(
+                            );
+                        }
+                        "LifecyclePolicy" => {
+                            builder = builder.set_lifecycle_policy(
                                     crate::protocol_serde::shape_aws_ecr_repository_lifecycle_policy_details::de_aws_ecr_repository_lifecycle_policy_details(tokens)?
                                 );
-                            }
-                            "RepositoryName" => {
-                                builder = builder.set_repository_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "RepositoryPolicyText" => {
-                                builder = builder.set_repository_policy_text(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        "RepositoryName" => {
+                            builder = builder.set_repository_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "RepositoryPolicyText" => {
+                            builder = builder.set_repository_policy_text(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

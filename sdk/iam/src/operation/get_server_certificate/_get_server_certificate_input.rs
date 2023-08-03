@@ -17,36 +17,27 @@ impl GetServerCertificateInput {
 }
 impl GetServerCertificateInput {
     /// Creates a new builder-style object to manufacture [`GetServerCertificateInput`](crate::operation::get_server_certificate::GetServerCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::get_server_certificate::builders::GetServerCertificateInputBuilder {
+    pub fn builder() -> crate::operation::get_server_certificate::builders::GetServerCertificateInputBuilder {
         crate::operation::get_server_certificate::builders::GetServerCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServerCertificateInput`](crate::operation::get_server_certificate::GetServerCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServerCertificateInputBuilder {
     pub(crate) server_certificate_name: ::std::option::Option<::std::string::String>,
 }
 impl GetServerCertificateInputBuilder {
     /// <p>The name of the server certificate you want to retrieve information about.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn server_certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_certificate_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the server certificate you want to retrieve information about.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_server_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_certificate_name = input;
         self
     }
@@ -58,14 +49,10 @@ impl GetServerCertificateInputBuilder {
     /// Consumes the builder and constructs a [`GetServerCertificateInput`](crate::operation::get_server_certificate::GetServerCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_server_certificate::GetServerCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_server_certificate::GetServerCertificateInput {
-                server_certificate_name: self.server_certificate_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_server_certificate::GetServerCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_server_certificate::GetServerCertificateInput {
+            server_certificate_name: self.server_certificate_name,
+        })
     }
 }

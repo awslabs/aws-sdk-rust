@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`endpoints(Option<Vec<EndpointSummary>>)`](crate::operation::list_endpoints::ListEndpointsOutput::endpoints): <p> An array or endpoint objects. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoints::ListEndpointsOutput::next_token): <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request. </p>
     /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::operation::list_endpoints::ListEndpointsError)
-    pub fn list_endpoints(
-        &self,
-    ) -> crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder {
-        crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_endpoints(&self) -> crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder {
+        crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

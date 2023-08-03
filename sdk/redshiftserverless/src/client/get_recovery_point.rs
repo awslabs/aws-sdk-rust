@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetRecoveryPointOutput`](crate::operation::get_recovery_point::GetRecoveryPointOutput) with field(s):
     ///   - [`recovery_point(Option<RecoveryPoint>)`](crate::operation::get_recovery_point::GetRecoveryPointOutput::recovery_point): <p>The returned recovery point object.</p>
     /// - On failure, responds with [`SdkError<GetRecoveryPointError>`](crate::operation::get_recovery_point::GetRecoveryPointError)
-    pub fn get_recovery_point(
-        &self,
-    ) -> crate::operation::get_recovery_point::builders::GetRecoveryPointFluentBuilder {
-        crate::operation::get_recovery_point::builders::GetRecoveryPointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_recovery_point(&self) -> crate::operation::get_recovery_point::builders::GetRecoveryPointFluentBuilder {
+        crate::operation::get_recovery_point::builders::GetRecoveryPointFluentBuilder::new(self.handle.clone())
     }
 }

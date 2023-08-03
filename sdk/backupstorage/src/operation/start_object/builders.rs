@@ -10,10 +10,7 @@ impl StartObjectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_object::StartObjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_object::StartObjectError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_object::StartObjectError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_object();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl StartObjectFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_object::StartObject,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_object::StartObject, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_object::StartObjectError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl StartObjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl StartObjectFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_object::StartObject,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_object::StartObject, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_object::StartObjectError>,
     > {
         self.customize_middleware().await
     }
     /// Backup job Id for the in-progress backup
-    pub fn backup_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_job_id(input.into());
         self
     }
     /// Backup job Id for the in-progress backup
-    pub fn set_backup_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_job_id(input);
         self
     }

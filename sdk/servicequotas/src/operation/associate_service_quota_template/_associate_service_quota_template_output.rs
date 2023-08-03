@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateServiceQuotaTemplateOutput {
 }
 impl AssociateServiceQuotaTemplateOutput {
     /// Creates a new builder-style object to manufacture [`AssociateServiceQuotaTemplateOutput`](crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateOutput).
-    pub fn builder() -> crate::operation::associate_service_quota_template::builders::AssociateServiceQuotaTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::associate_service_quota_template::builders::AssociateServiceQuotaTemplateOutputBuilder {
         crate::operation::associate_service_quota_template::builders::AssociateServiceQuotaTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateServiceQuotaTemplateOutput`](crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateServiceQuotaTemplateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl AssociateServiceQuotaTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateServiceQuotaTemplateOutput`](crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateOutput
-    {
+    pub fn build(self) -> crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateOutput {
         crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateOutput {
             _request_id: self._request_id,
         }

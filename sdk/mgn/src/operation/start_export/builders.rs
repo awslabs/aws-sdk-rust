@@ -10,10 +10,7 @@ impl StartExportInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_export::StartExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_export::StartExportError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_export::StartExportError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_export();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl StartExportFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_export::StartExport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_export::StartExport, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_export::StartExportError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl StartExportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl StartExportFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_export::StartExport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_export::StartExport, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_export::StartExportError>,
     > {
         self.customize_middleware().await
@@ -141,18 +129,12 @@ impl StartExportFluentBuilder {
         self.inner.get_s3_key()
     }
     /// <p>Start export request s3 bucket owner.</p>
-    pub fn s3_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket_owner(input.into());
         self
     }
     /// <p>Start export request s3 bucket owner.</p>
-    pub fn set_s3_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket_owner(input);
         self
     }

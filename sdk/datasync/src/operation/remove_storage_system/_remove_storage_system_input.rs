@@ -15,35 +15,25 @@ impl RemoveStorageSystemInput {
 }
 impl RemoveStorageSystemInput {
     /// Creates a new builder-style object to manufacture [`RemoveStorageSystemInput`](crate::operation::remove_storage_system::RemoveStorageSystemInput).
-    pub fn builder(
-    ) -> crate::operation::remove_storage_system::builders::RemoveStorageSystemInputBuilder {
-        crate::operation::remove_storage_system::builders::RemoveStorageSystemInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::remove_storage_system::builders::RemoveStorageSystemInputBuilder {
+        crate::operation::remove_storage_system::builders::RemoveStorageSystemInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveStorageSystemInput`](crate::operation::remove_storage_system::RemoveStorageSystemInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveStorageSystemInputBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
 }
 impl RemoveStorageSystemInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
-    pub fn storage_system_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_system_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
-    pub fn set_storage_system_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_system_arn = input;
         self
     }
@@ -54,14 +44,10 @@ impl RemoveStorageSystemInputBuilder {
     /// Consumes the builder and constructs a [`RemoveStorageSystemInput`](crate::operation::remove_storage_system::RemoveStorageSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_storage_system::RemoveStorageSystemInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_storage_system::RemoveStorageSystemInput {
-                storage_system_arn: self.storage_system_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::remove_storage_system::RemoveStorageSystemInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::remove_storage_system::RemoveStorageSystemInput {
+            storage_system_arn: self.storage_system_arn,
+        })
     }
 }

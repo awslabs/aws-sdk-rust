@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetFluentBuilder::set_name): <p>The unique name of the typed link facet.</p>
     /// - On success, responds with [`DeleteTypedLinkFacetOutput`](crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetOutput)
     /// - On failure, responds with [`SdkError<DeleteTypedLinkFacetError>`](crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetError)
-    pub fn delete_typed_link_facet(
-        &self,
-    ) -> crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetFluentBuilder
-    {
-        crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_typed_link_facet(&self) -> crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetFluentBuilder {
+        crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetFluentBuilder::new(self.handle.clone())
     }
 }

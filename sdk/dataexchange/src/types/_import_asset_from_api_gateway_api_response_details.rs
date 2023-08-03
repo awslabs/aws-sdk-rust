@@ -24,8 +24,7 @@ pub struct ImportAssetFromApiGatewayApiResponseDetails {
     pub api_specification_upload_url: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
     #[doc(hidden)]
-    pub api_specification_upload_url_expires_at:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub api_specification_upload_url_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The data set ID.</p>
     #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
@@ -65,9 +64,7 @@ impl ImportAssetFromApiGatewayApiResponseDetails {
         self.api_specification_upload_url.as_deref()
     }
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
-    pub fn api_specification_upload_url_expires_at(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn api_specification_upload_url_expires_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.api_specification_upload_url_expires_at.as_ref()
     }
     /// <p>The data set ID.</p>
@@ -96,9 +93,7 @@ impl ImportAssetFromApiGatewayApiResponseDetails {
 
 /// A builder for [`ImportAssetFromApiGatewayApiResponseDetails`](crate::types::ImportAssetFromApiGatewayApiResponseDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportAssetFromApiGatewayApiResponseDetailsBuilder {
     pub(crate) api_description: ::std::option::Option<::std::string::String>,
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
@@ -106,8 +101,7 @@ pub struct ImportAssetFromApiGatewayApiResponseDetailsBuilder {
     pub(crate) api_name: ::std::option::Option<::std::string::String>,
     pub(crate) api_specification_md5_hash: ::std::option::Option<::std::string::String>,
     pub(crate) api_specification_upload_url: ::std::option::Option<::std::string::String>,
-    pub(crate) api_specification_upload_url_expires_at:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) api_specification_upload_url_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) protocol_type: ::std::option::Option<crate::types::ProtocolType>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
@@ -115,18 +109,12 @@ pub struct ImportAssetFromApiGatewayApiResponseDetailsBuilder {
 }
 impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
     /// <p>The API description.</p>
-    pub fn api_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API description.</p>
-    pub fn set_api_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_description = input;
         self
     }
@@ -177,18 +165,12 @@ impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
         &self.api_name
     }
     /// <p>The Base64-encoded Md5 hash for the API asset, used to ensure the integrity of the API at that location.</p>
-    pub fn api_specification_md5_hash(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_specification_md5_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_specification_md5_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Base64-encoded Md5 hash for the API asset, used to ensure the integrity of the API at that location.</p>
-    pub fn set_api_specification_md5_hash(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_specification_md5_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_specification_md5_hash = input;
         self
     }
@@ -197,47 +179,31 @@ impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
         &self.api_specification_md5_hash
     }
     /// <p>The upload URL of the API specification.</p>
-    pub fn api_specification_upload_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_specification_upload_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_specification_upload_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upload URL of the API specification.</p>
-    pub fn set_api_specification_upload_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_specification_upload_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_specification_upload_url = input;
         self
     }
     /// <p>The upload URL of the API specification.</p>
-    pub fn get_api_specification_upload_url(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_api_specification_upload_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_specification_upload_url
     }
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
-    pub fn api_specification_upload_url_expires_at(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn api_specification_upload_url_expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.api_specification_upload_url_expires_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
-    pub fn set_api_specification_upload_url_expires_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_api_specification_upload_url_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.api_specification_upload_url_expires_at = input;
         self
     }
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
-    pub fn get_api_specification_upload_url_expires_at(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_api_specification_upload_url_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.api_specification_upload_url_expires_at
     }
     /// <p>The data set ID.</p>
@@ -260,10 +226,7 @@ impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
         self
     }
     /// <p>The protocol type.</p>
-    pub fn set_protocol_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolType>,
-    ) -> Self {
+    pub fn set_protocol_type(mut self, input: ::std::option::Option<crate::types::ProtocolType>) -> Self {
         self.protocol_type = input;
         self
     }

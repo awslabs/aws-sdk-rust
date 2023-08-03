@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`region(Option<String>)`](crate::operation::describe_contact::DescribeContactOutput::region): <p>Region of a contact.</p>
     ///   - [`dataflow_list(Option<Vec<DataflowDetail>>)`](crate::operation::describe_contact::DescribeContactOutput::dataflow_list): <p>List describing source and destination details for each dataflow edge.</p>
     /// - On failure, responds with [`SdkError<DescribeContactError>`](crate::operation::describe_contact::DescribeContactError)
-    pub fn describe_contact(
-        &self,
-    ) -> crate::operation::describe_contact::builders::DescribeContactFluentBuilder {
-        crate::operation::describe_contact::builders::DescribeContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_contact(&self) -> crate::operation::describe_contact::builders::DescribeContactFluentBuilder {
+        crate::operation::describe_contact::builders::DescribeContactFluentBuilder::new(self.handle.clone())
     }
 }

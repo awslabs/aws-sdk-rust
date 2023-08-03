@@ -105,9 +105,7 @@ impl DatasetImportJob {
 
 /// A builder for [`DatasetImportJob`](crate::types::DatasetImportJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetImportJobBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_import_job_arn: ::std::option::Option<::std::string::String>,
@@ -137,18 +135,12 @@ impl DatasetImportJobBuilder {
         &self.job_name
     }
     /// <p>The ARN of the dataset import job.</p>
-    pub fn dataset_import_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_import_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_import_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the dataset import job.</p>
-    pub fn set_dataset_import_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_import_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_import_job_arn = input;
         self
     }
@@ -176,10 +168,7 @@ impl DatasetImportJobBuilder {
         self
     }
     /// <p>The Amazon S3 bucket that contains the training data to import.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }
@@ -233,10 +222,7 @@ impl DatasetImportJobBuilder {
         self
     }
     /// <p>The creation date and time (in Unix time) of the dataset import job.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -250,32 +236,21 @@ impl DatasetImportJobBuilder {
         self
     }
     /// <p>The date and time (in Unix time) the dataset was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time (in Unix time) the dataset was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>If a dataset import job fails, provides the reason why.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a dataset import job fails, provides the reason why.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -289,10 +264,7 @@ impl DatasetImportJobBuilder {
         self
     }
     /// <p>The import mode used by the dataset import job to import new records.</p>
-    pub fn set_import_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportMode>,
-    ) -> Self {
+    pub fn set_import_mode(mut self, input: ::std::option::Option<crate::types::ImportMode>) -> Self {
         self.import_mode = input;
         self
     }
@@ -306,10 +278,7 @@ impl DatasetImportJobBuilder {
         self
     }
     /// <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
-    pub fn set_publish_attribution_metrics_to_s3(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_publish_attribution_metrics_to_s3(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publish_attribution_metrics_to_s3 = input;
         self
     }

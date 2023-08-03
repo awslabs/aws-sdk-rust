@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`template_name(Option<String>)`](crate::operation::get_email_template::GetEmailTemplateOutput::template_name): <p>The name of the template.</p>
     ///   - [`template_content(Option<EmailTemplateContent>)`](crate::operation::get_email_template::GetEmailTemplateOutput::template_content): <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     /// - On failure, responds with [`SdkError<GetEmailTemplateError>`](crate::operation::get_email_template::GetEmailTemplateError)
-    pub fn get_email_template(
-        &self,
-    ) -> crate::operation::get_email_template::builders::GetEmailTemplateFluentBuilder {
-        crate::operation::get_email_template::builders::GetEmailTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_email_template(&self) -> crate::operation::get_email_template::builders::GetEmailTemplateFluentBuilder {
+        crate::operation::get_email_template::builders::GetEmailTemplateFluentBuilder::new(self.handle.clone())
     }
 }

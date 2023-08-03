@@ -22,18 +22,14 @@ impl DeleteResourceDataSyncInput {
 }
 impl DeleteResourceDataSyncInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceDataSyncInput`](crate::operation::delete_resource_data_sync::DeleteResourceDataSyncInput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncInputBuilder {
         crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResourceDataSyncInput`](crate::operation::delete_resource_data_sync::DeleteResourceDataSyncInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourceDataSyncInputBuilder {
     pub(crate) sync_name: ::std::option::Option<::std::string::String>,
     pub(crate) sync_type: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl DeleteResourceDataSyncInputBuilder {
         crate::operation::delete_resource_data_sync::DeleteResourceDataSyncInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_resource_data_sync::DeleteResourceDataSyncInput {
-                sync_name: self.sync_name,
-                sync_type: self.sync_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_resource_data_sync::DeleteResourceDataSyncInput {
+            sync_name: self.sync_name,
+            sync_type: self.sync_type,
+        })
     }
 }

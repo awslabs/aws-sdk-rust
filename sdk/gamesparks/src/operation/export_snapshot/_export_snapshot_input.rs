@@ -29,9 +29,7 @@ impl ExportSnapshotInput {
 
 /// A builder for [`ExportSnapshotInput`](crate::operation::export_snapshot::ExportSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportSnapshotInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl ExportSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`ExportSnapshotInput`](crate::operation::export_snapshot::ExportSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::export_snapshot::ExportSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::export_snapshot::ExportSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_snapshot::ExportSnapshotInput {
             game_name: self.game_name,
             snapshot_id: self.snapshot_id,

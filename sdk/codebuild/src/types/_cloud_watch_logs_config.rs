@@ -45,9 +45,7 @@ impl CloudWatchLogsConfig {
 
 /// A builder for [`CloudWatchLogsConfig`](crate::types::CloudWatchLogsConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLogsConfigBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LogsConfigStatusType>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl CloudWatchLogsConfigBuilder {
     /// <li> <p> <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p> </li>
     /// <li> <p> <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LogsConfigStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::LogsConfigStatusType>) -> Self {
         self.status = input;
         self
     }

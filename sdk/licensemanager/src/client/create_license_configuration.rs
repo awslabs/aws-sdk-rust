@@ -15,7 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLicenseConfigurationOutput`](crate::operation::create_license_configuration::CreateLicenseConfigurationOutput) with field(s):
     ///   - [`license_configuration_arn(Option<String>)`](crate::operation::create_license_configuration::CreateLicenseConfigurationOutput::license_configuration_arn): <p>Amazon Resource Name (ARN) of the license configuration.</p>
     /// - On failure, responds with [`SdkError<CreateLicenseConfigurationError>`](crate::operation::create_license_configuration::CreateLicenseConfigurationError)
-    pub fn create_license_configuration(&self) -> crate::operation::create_license_configuration::builders::CreateLicenseConfigurationFluentBuilder{
+    pub fn create_license_configuration(&self) -> crate::operation::create_license_configuration::builders::CreateLicenseConfigurationFluentBuilder {
         crate::operation::create_license_configuration::builders::CreateLicenseConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

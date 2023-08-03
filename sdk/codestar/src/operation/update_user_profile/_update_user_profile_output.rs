@@ -69,8 +69,7 @@ impl ::aws_http::request_id::RequestId for UpdateUserProfileOutput {
 }
 impl UpdateUserProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserProfileOutput`](crate::operation::update_user_profile::UpdateUserProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::update_user_profile::builders::UpdateUserProfileOutputBuilder {
+    pub fn builder() -> crate::operation::update_user_profile::builders::UpdateUserProfileOutputBuilder {
         crate::operation::update_user_profile::builders::UpdateUserProfileOutputBuilder::default()
     }
 }
@@ -117,18 +116,12 @@ impl UpdateUserProfileOutputBuilder {
         &self.display_name
     }
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -137,18 +130,12 @@ impl UpdateUserProfileOutputBuilder {
         &self.email_address
     }
     /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
-    pub fn ssh_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
-    pub fn set_ssh_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_public_key = input;
         self
     }
@@ -162,10 +149,7 @@ impl UpdateUserProfileOutputBuilder {
         self
     }
     /// <p>The date the user profile was created, in timestamp format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -179,17 +163,12 @@ impl UpdateUserProfileOutputBuilder {
         self
     }
     /// <p>The date the user profile was last modified, in timestamp format.</p>
-    pub fn set_last_modified_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_timestamp = input;
         self
     }
     /// <p>The date the user profile was last modified, in timestamp format.</p>
-    pub fn get_last_modified_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

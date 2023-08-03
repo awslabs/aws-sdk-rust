@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
     ///   - [`format(Option<String>)`](crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportOutput::format): <p>The format of the exported data, CSV or PARQUET.</p>
     /// - On failure, responds with [`SdkError<DescribeWhatIfForecastExportError>`](crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportError)
-    pub fn describe_what_if_forecast_export(&self) -> crate::operation::describe_what_if_forecast_export::builders::DescribeWhatIfForecastExportFluentBuilder{
+    pub fn describe_what_if_forecast_export(
+        &self,
+    ) -> crate::operation::describe_what_if_forecast_export::builders::DescribeWhatIfForecastExportFluentBuilder {
         crate::operation::describe_what_if_forecast_export::builders::DescribeWhatIfForecastExportFluentBuilder::new(self.handle.clone())
     }
 }

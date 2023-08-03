@@ -22,9 +22,7 @@ impl DescribeMapInput {
 
 /// A builder for [`DescribeMapInput`](crate::operation::describe_map::DescribeMapInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMapInputBuilder {
     pub(crate) map_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DescribeMapInputBuilder {
         &self.map_name
     }
     /// Consumes the builder and constructs a [`DescribeMapInput`](crate::operation::describe_map::DescribeMapInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_map::DescribeMapInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_map::DescribeMapInput {
-            map_name: self.map_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_map::DescribeMapInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_map::DescribeMapInput { map_name: self.map_name })
     }
 }

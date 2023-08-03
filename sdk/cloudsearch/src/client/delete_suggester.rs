@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSuggesterOutput`](crate::operation::delete_suggester::DeleteSuggesterOutput) with field(s):
     ///   - [`suggester(Option<SuggesterStatus>)`](crate::operation::delete_suggester::DeleteSuggesterOutput::suggester): <p>The status of the suggester being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteSuggesterError>`](crate::operation::delete_suggester::DeleteSuggesterError)
-    pub fn delete_suggester(
-        &self,
-    ) -> crate::operation::delete_suggester::builders::DeleteSuggesterFluentBuilder {
-        crate::operation::delete_suggester::builders::DeleteSuggesterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_suggester(&self) -> crate::operation::delete_suggester::builders::DeleteSuggesterFluentBuilder {
+        crate::operation::delete_suggester::builders::DeleteSuggesterFluentBuilder::new(self.handle.clone())
     }
 }

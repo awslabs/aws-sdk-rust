@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ResetFpgaImageAttributeOutput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput::return): <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
     /// - On failure, responds with [`SdkError<ResetFpgaImageAttributeError>`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError)
-    pub fn reset_fpga_image_attribute(
-        &self,
-    ) -> crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeFluentBuilder
-    {
+    pub fn reset_fpga_image_attribute(&self) -> crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeFluentBuilder {
         crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeFluentBuilder::new(self.handle.clone())
     }
 }

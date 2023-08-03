@@ -15,17 +15,14 @@ impl GetNetworkProfileInput {
 }
 impl GetNetworkProfileInput {
     /// Creates a new builder-style object to manufacture [`GetNetworkProfileInput`](crate::operation::get_network_profile::GetNetworkProfileInput).
-    pub fn builder(
-    ) -> crate::operation::get_network_profile::builders::GetNetworkProfileInputBuilder {
+    pub fn builder() -> crate::operation::get_network_profile::builders::GetNetworkProfileInputBuilder {
         crate::operation::get_network_profile::builders::GetNetworkProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`GetNetworkProfileInput`](crate::operation::get_network_profile::GetNetworkProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNetworkProfileInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl GetNetworkProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetNetworkProfileInput`](crate::operation::get_network_profile::GetNetworkProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_network_profile::GetNetworkProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_network_profile::GetNetworkProfileInput { arn: self.arn },
-        )
+    ) -> ::std::result::Result<crate::operation::get_network_profile::GetNetworkProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_network_profile::GetNetworkProfileInput { arn: self.arn })
     }
 }

@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`lifecycle_policy_text(Option<String>)`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyOutput::lifecycle_policy_text): <p>The JSON lifecycle policy text.</p>
     ///   - [`last_evaluated_at(Option<DateTime>)`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyOutput::last_evaluated_at): <p>The time stamp of the last time that the lifecycle policy was run.</p>
     /// - On failure, responds with [`SdkError<DeleteLifecyclePolicyError>`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError)
-    pub fn delete_lifecycle_policy(
-        &self,
-    ) -> crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyFluentBuilder
-    {
-        crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_lifecycle_policy(&self) -> crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyFluentBuilder {
+        crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyFluentBuilder::new(self.handle.clone())
     }
 }

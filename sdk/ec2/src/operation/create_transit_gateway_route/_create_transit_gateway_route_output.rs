@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateTransitGatewayRouteOutput {
 }
 impl CreateTransitGatewayRouteOutput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteOutput`](crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteOutput).
-    pub fn builder() -> crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteOutputBuilder{
+    pub fn builder() -> crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteOutputBuilder {
         crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTransitGatewayRouteOutput`](crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayRouteOutputBuilder {
     pub(crate) route: ::std::option::Option<crate::types::TransitGatewayRoute>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateTransitGatewayRouteOutputBuilder {
         self
     }
     /// <p>Information about the route.</p>
-    pub fn set_route(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayRoute>,
-    ) -> Self {
+    pub fn set_route(mut self, input: ::std::option::Option<crate::types::TransitGatewayRoute>) -> Self {
         self.route = input;
         self
     }
@@ -63,9 +58,7 @@ impl CreateTransitGatewayRouteOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayRouteOutput`](crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteOutput {
+    pub fn build(self) -> crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteOutput {
         crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteOutput {
             route: self.route,
             _request_id: self._request_id,

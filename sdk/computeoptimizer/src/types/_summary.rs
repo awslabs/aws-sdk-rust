@@ -12,8 +12,7 @@ pub struct Summary {
     pub value: f64,
     /// <p>An array of objects that summarize a finding reason code.</p>
     #[doc(hidden)]
-    pub reason_code_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>>,
+    pub reason_code_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>>,
 }
 impl Summary {
     /// <p>The finding classification of the recommendation.</p>
@@ -25,9 +24,7 @@ impl Summary {
         self.value
     }
     /// <p>An array of objects that summarize a finding reason code.</p>
-    pub fn reason_code_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReasonCodeSummary]> {
+    pub fn reason_code_summaries(&self) -> ::std::option::Option<&[crate::types::ReasonCodeSummary]> {
         self.reason_code_summaries.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl Summary {
 
 /// A builder for [`Summary`](crate::types::Summary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SummaryBuilder {
     pub(crate) name: ::std::option::Option<crate::types::Finding>,
     pub(crate) value: ::std::option::Option<f64>,
-    pub(crate) reason_code_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>>,
+    pub(crate) reason_code_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>>,
 }
 impl SummaryBuilder {
     /// <p>The finding classification of the recommendation.</p>
@@ -90,17 +84,12 @@ impl SummaryBuilder {
         self
     }
     /// <p>An array of objects that summarize a finding reason code.</p>
-    pub fn set_reason_code_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>>,
-    ) -> Self {
+    pub fn set_reason_code_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>>) -> Self {
         self.reason_code_summaries = input;
         self
     }
     /// <p>An array of objects that summarize a finding reason code.</p>
-    pub fn get_reason_code_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>> {
+    pub fn get_reason_code_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>> {
         &self.reason_code_summaries
     }
     /// Consumes the builder and constructs a [`Summary`](crate::types::Summary).

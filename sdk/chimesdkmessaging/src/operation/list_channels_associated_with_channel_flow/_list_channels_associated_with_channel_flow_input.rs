@@ -38,7 +38,7 @@ impl ::std::fmt::Debug for ListChannelsAssociatedWithChannelFlowInput {
 }
 impl ListChannelsAssociatedWithChannelFlowInput {
     /// Creates a new builder-style object to manufacture [`ListChannelsAssociatedWithChannelFlowInput`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput).
-    pub fn builder() -> crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowInputBuilder{
+    pub fn builder() -> crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowInputBuilder {
         crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowInputBuilder::default()
     }
 }
@@ -53,18 +53,12 @@ pub struct ListChannelsAssociatedWithChannelFlowInputBuilder {
 }
 impl ListChannelsAssociatedWithChannelFlowInputBuilder {
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_flow_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn set_channel_flow_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_flow_arn = input;
         self
     }
@@ -101,16 +95,18 @@ impl ListChannelsAssociatedWithChannelFlowInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListChannelsAssociatedWithChannelFlowInput`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput {
-                channel_flow_arn: self.channel_flow_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                channel_flow_arn: self.channel_flow_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

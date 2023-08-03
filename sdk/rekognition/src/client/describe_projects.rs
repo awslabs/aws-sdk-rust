@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`project_descriptions(Option<Vec<ProjectDescription>>)`](crate::operation::describe_projects::DescribeProjectsOutput::project_descriptions): <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_projects::DescribeProjectsOutput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     /// - On failure, responds with [`SdkError<DescribeProjectsError>`](crate::operation::describe_projects::DescribeProjectsError)
-    pub fn describe_projects(
-        &self,
-    ) -> crate::operation::describe_projects::builders::DescribeProjectsFluentBuilder {
-        crate::operation::describe_projects::builders::DescribeProjectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_projects(&self) -> crate::operation::describe_projects::builders::DescribeProjectsFluentBuilder {
+        crate::operation::describe_projects::builders::DescribeProjectsFluentBuilder::new(self.handle.clone())
     }
 }

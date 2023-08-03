@@ -46,35 +46,26 @@ impl SuspendProcessesInput {
 }
 impl SuspendProcessesInput {
     /// Creates a new builder-style object to manufacture [`SuspendProcessesInput`](crate::operation::suspend_processes::SuspendProcessesInput).
-    pub fn builder() -> crate::operation::suspend_processes::builders::SuspendProcessesInputBuilder
-    {
+    pub fn builder() -> crate::operation::suspend_processes::builders::SuspendProcessesInputBuilder {
         crate::operation::suspend_processes::builders::SuspendProcessesInputBuilder::default()
     }
 }
 
 /// A builder for [`SuspendProcessesInput`](crate::operation::suspend_processes::SuspendProcessesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuspendProcessesInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_processes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SuspendProcessesInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -99,10 +90,7 @@ impl SuspendProcessesInputBuilder {
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     /// <p>If you omit this property, all processes are specified.</p>
-    pub fn scaling_processes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scaling_processes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scaling_processes.unwrap_or_default();
         v.push(input.into());
         self.scaling_processes = ::std::option::Option::Some(v);
@@ -121,10 +109,7 @@ impl SuspendProcessesInputBuilder {
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     /// <p>If you omit this property, all processes are specified.</p>
-    pub fn set_scaling_processes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_scaling_processes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.scaling_processes = input;
         self
     }
@@ -141,18 +126,13 @@ impl SuspendProcessesInputBuilder {
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     /// <p>If you omit this property, all processes are specified.</p>
-    pub fn get_scaling_processes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scaling_processes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scaling_processes
     }
     /// Consumes the builder and constructs a [`SuspendProcessesInput`](crate::operation::suspend_processes::SuspendProcessesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::suspend_processes::SuspendProcessesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::suspend_processes::SuspendProcessesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::suspend_processes::SuspendProcessesInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             scaling_processes: self.scaling_processes,

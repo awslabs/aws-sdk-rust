@@ -9,9 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteModelOutput`](crate::operation::delete_model::DeleteModelOutput) with field(s):
     ///   - [`model_arn(Option<String>)`](crate::operation::delete_model::DeleteModelOutput::model_arn): <p>The Amazon Resource Name (ARN) of the model that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteModelError>`](crate::operation::delete_model::DeleteModelError)
-    pub fn delete_model(
-        &self,
-    ) -> crate::operation::delete_model::builders::DeleteModelFluentBuilder {
+    pub fn delete_model(&self) -> crate::operation::delete_model::builders::DeleteModelFluentBuilder {
         crate::operation::delete_model::builders::DeleteModelFluentBuilder::new(self.handle.clone())
     }
 }

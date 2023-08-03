@@ -23,9 +23,7 @@ impl DisassociatedFace {
 
 /// A builder for [`DisassociatedFace`](crate::types::DisassociatedFace).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociatedFaceBuilder {
     pub(crate) face_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl DisassociatedFaceBuilder {
     }
     /// Consumes the builder and constructs a [`DisassociatedFace`](crate::types::DisassociatedFace).
     pub fn build(self) -> crate::types::DisassociatedFace {
-        crate::types::DisassociatedFace {
-            face_id: self.face_id,
-        }
+        crate::types::DisassociatedFace { face_id: self.face_id }
     }
 }

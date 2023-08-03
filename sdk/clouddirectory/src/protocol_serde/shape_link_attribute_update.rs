@@ -12,10 +12,7 @@ pub fn ser_link_attribute_update(
     if let Some(var_3) = &input.attribute_action {
         #[allow(unused_mut)]
         let mut object_4 = object.key("AttributeAction").start_object();
-        crate::protocol_serde::shape_link_attribute_action::ser_link_attribute_action(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_link_attribute_action::ser_link_attribute_action(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`summaries(Option<Vec<StackInstanceSummary>>)`](crate::operation::list_stack_instances::ListStackInstancesOutput::summaries): <p>A list of <code>StackInstanceSummary</code> structures that contain information about the specified stack instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stack_instances::ListStackInstancesOutput::next_token): <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListStackInstancesError>`](crate::operation::list_stack_instances::ListStackInstancesError)
-    pub fn list_stack_instances(
-        &self,
-    ) -> crate::operation::list_stack_instances::builders::ListStackInstancesFluentBuilder {
-        crate::operation::list_stack_instances::builders::ListStackInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_stack_instances(&self) -> crate::operation::list_stack_instances::builders::ListStackInstancesFluentBuilder {
+        crate::operation::list_stack_instances::builders::ListStackInstancesFluentBuilder::new(self.handle.clone())
     }
 }

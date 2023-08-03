@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateRelationalDatabaseParametersOutput`](crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<UpdateRelationalDatabaseParametersError>`](crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError)
-    pub fn update_relational_database_parameters(&self) -> crate::operation::update_relational_database_parameters::builders::UpdateRelationalDatabaseParametersFluentBuilder{
+    pub fn update_relational_database_parameters(
+        &self,
+    ) -> crate::operation::update_relational_database_parameters::builders::UpdateRelationalDatabaseParametersFluentBuilder {
         crate::operation::update_relational_database_parameters::builders::UpdateRelationalDatabaseParametersFluentBuilder::new(self.handle.clone())
     }
 }

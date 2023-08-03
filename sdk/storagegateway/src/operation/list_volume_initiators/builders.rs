@@ -37,9 +37,7 @@ impl ListVolumeInitiatorsFluentBuilder {
         }
     }
     /// Access the ListVolumeInitiators as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListVolumeInitiatorsFluentBuilder {
             crate::operation::list_volume_initiators::ListVolumeInitiators,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_volume_initiators::ListVolumeInitiatorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_volume_initiators::ListVolumeInitiatorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListVolumeInitiatorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListVolumeInitiatorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_volume_initiators::ListVolumeInitiatorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_volume_initiators::ListVolumeInitiatorsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListVolumeInitiatorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_volume_initiators::ListVolumeInitiatorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_volume_initiators::ListVolumeInitiatorsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ListVolumeInitiatorsFluentBuilder {
             crate::operation::list_volume_initiators::ListVolumeInitiators,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_volume_initiators::ListVolumeInitiatorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_volume_initiators::ListVolumeInitiatorsError>,
     > {
         self.customize_middleware().await
     }

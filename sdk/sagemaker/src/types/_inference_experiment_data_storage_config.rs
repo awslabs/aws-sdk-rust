@@ -37,9 +37,7 @@ impl InferenceExperimentDataStorageConfig {
 
 /// A builder for [`InferenceExperimentDataStorageConfig`](crate::types::InferenceExperimentDataStorageConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceExperimentDataStorageConfigBuilder {
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
@@ -80,17 +78,12 @@ impl InferenceExperimentDataStorageConfigBuilder {
         self
     }
     /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptureContentTypeHeader>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::CaptureContentTypeHeader>) -> Self {
         self.content_type = input;
         self
     }
     /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
-    pub fn get_content_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::CaptureContentTypeHeader> {
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::CaptureContentTypeHeader> {
         &self.content_type
     }
     /// Consumes the builder and constructs a [`InferenceExperimentDataStorageConfig`](crate::types::InferenceExperimentDataStorageConfig).

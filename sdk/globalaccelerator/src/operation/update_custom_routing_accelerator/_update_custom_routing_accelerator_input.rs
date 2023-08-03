@@ -38,16 +38,14 @@ impl UpdateCustomRoutingAcceleratorInput {
 }
 impl UpdateCustomRoutingAcceleratorInput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingAcceleratorInput`](crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorInput).
-    pub fn builder() -> crate::operation::update_custom_routing_accelerator::builders::UpdateCustomRoutingAcceleratorInputBuilder{
+    pub fn builder() -> crate::operation::update_custom_routing_accelerator::builders::UpdateCustomRoutingAcceleratorInputBuilder {
         crate::operation::update_custom_routing_accelerator::builders::UpdateCustomRoutingAcceleratorInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCustomRoutingAcceleratorInput`](crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCustomRoutingAcceleratorInputBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -56,18 +54,12 @@ pub struct UpdateCustomRoutingAcceleratorInputBuilder {
 }
 impl UpdateCustomRoutingAcceleratorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-    pub fn accelerator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-    pub fn set_accelerator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accelerator_arn = input;
         self
     }
@@ -95,10 +87,7 @@ impl UpdateCustomRoutingAcceleratorInputBuilder {
         self
     }
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -130,17 +119,11 @@ impl UpdateCustomRoutingAcceleratorInputBuilder {
         crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorInput {
-                accelerator_arn: self.accelerator_arn
-                ,
-                name: self.name
-                ,
-                ip_address_type: self.ip_address_type
-                ,
-                enabled: self.enabled
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorInput {
+            accelerator_arn: self.accelerator_arn,
+            name: self.name,
+            ip_address_type: self.ip_address_type,
+            enabled: self.enabled,
+        })
     }
 }

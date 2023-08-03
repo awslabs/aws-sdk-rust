@@ -38,9 +38,7 @@ impl DeactivateMFADeviceFluentBuilder {
         }
     }
     /// Access the DeactivateMFADevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deactivate_mfa_device::builders::DeactivateMfaDeviceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::deactivate_mfa_device::builders::DeactivateMfaDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeactivateMFADeviceFluentBuilder {
             crate::operation::deactivate_mfa_device::DeactivateMFADevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_mfa_device::DeactivateMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_mfa_device::DeactivateMFADeviceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeactivateMFADeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeactivateMFADeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_mfa_device::DeactivateMfaDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_mfa_device::DeactivateMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_mfa_device::DeactivateMFADeviceError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeactivateMFADeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_mfa_device::DeactivateMfaDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_mfa_device::DeactivateMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_mfa_device::DeactivateMFADeviceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DeactivateMFADeviceFluentBuilder {
             crate::operation::deactivate_mfa_device::DeactivateMFADevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_mfa_device::DeactivateMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_mfa_device::DeactivateMFADeviceError>,
     > {
         self.customize_middleware().await
     }
@@ -142,19 +129,13 @@ impl DeactivateMFADeviceFluentBuilder {
     }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
-    pub fn serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.serial_number(input.into());
         self
     }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
-    pub fn set_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_serial_number(input);
         self
     }

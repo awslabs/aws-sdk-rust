@@ -47,9 +47,7 @@ pub struct SecretListEntry {
     /// <p>A version that does not have any <code>SecretVersionStage</code> is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
     /// </note>
     #[doc(hidden)]
-    pub secret_versions_to_stages: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub secret_versions_to_stages: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Returns the name of the service that created the secret.</p>
     #[doc(hidden)]
     pub owning_service: ::std::option::Option<::std::string::String>,
@@ -118,9 +116,7 @@ impl SecretListEntry {
     /// </note>
     pub fn secret_versions_to_stages(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.secret_versions_to_stages.as_ref()
     }
     /// <p>Returns the name of the service that created the secret.</p>
@@ -145,9 +141,7 @@ impl SecretListEntry {
 
 /// A builder for [`SecretListEntry`](crate::types::SecretListEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecretListEntryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -162,9 +156,8 @@ pub struct SecretListEntryBuilder {
     pub(crate) deleted_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) next_rotation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) secret_versions_to_stages: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) secret_versions_to_stages:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) owning_service: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) primary_region: ::std::option::Option<::std::string::String>,
@@ -241,18 +234,12 @@ impl SecretListEntryBuilder {
         &self.rotation_enabled
     }
     /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html"> <code>RotateSecret</code> </a>.</p>
-    pub fn rotation_lambda_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rotation_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html"> <code>RotateSecret</code> </a>.</p>
-    pub fn set_rotation_lambda_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rotation_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rotation_lambda_arn = input;
         self
     }
@@ -266,10 +253,7 @@ impl SecretListEntryBuilder {
         self
     }
     /// <p>A structure that defines the rotation configuration for the secret.</p>
-    pub fn set_rotation_rules(
-        mut self,
-        input: ::std::option::Option<crate::types::RotationRulesType>,
-    ) -> Self {
+    pub fn set_rotation_rules(mut self, input: ::std::option::Option<crate::types::RotationRulesType>) -> Self {
         self.rotation_rules = input;
         self
     }
@@ -283,10 +267,7 @@ impl SecretListEntryBuilder {
         self
     }
     /// <p>The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is null if the secret hasn't ever rotated.</p>
-    pub fn set_last_rotated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_rotated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_rotated_date = input;
         self
     }
@@ -300,10 +281,7 @@ impl SecretListEntryBuilder {
         self
     }
     /// <p>The last date and time that this secret was modified in any way.</p>
-    pub fn set_last_changed_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_changed_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_changed_date = input;
         self
     }
@@ -317,10 +295,7 @@ impl SecretListEntryBuilder {
         self
     }
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
-    pub fn set_last_accessed_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_accessed_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_accessed_date = input;
         self
     }
@@ -334,10 +309,7 @@ impl SecretListEntryBuilder {
         self
     }
     /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html"> <code>DeleteSecret</code> </a> operation.</p>
-    pub fn set_deleted_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deleted_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deleted_date = input;
         self
     }
@@ -351,10 +323,7 @@ impl SecretListEntryBuilder {
         self
     }
     /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
-    pub fn set_next_rotation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_next_rotation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.next_rotation_date = input;
         self
     }
@@ -374,10 +343,7 @@ impl SecretListEntryBuilder {
         self
     }
     /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html"> <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html"> <code>UntagResource</code> </a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -407,12 +373,7 @@ impl SecretListEntryBuilder {
     /// </note>
     pub fn set_secret_versions_to_stages(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.secret_versions_to_stages = input;
         self
@@ -422,24 +383,16 @@ impl SecretListEntryBuilder {
     /// </note>
     pub fn get_secret_versions_to_stages(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.secret_versions_to_stages
     }
     /// <p>Returns the name of the service that created the secret.</p>
-    pub fn owning_service(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owning_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_service = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the name of the service that created the secret.</p>
-    pub fn set_owning_service(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owning_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owning_service = input;
         self
     }
@@ -453,10 +406,7 @@ impl SecretListEntryBuilder {
         self
     }
     /// <p>The date and time when a secret was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -465,18 +415,12 @@ impl SecretListEntryBuilder {
         &self.created_date
     }
     /// <p>The Region where Secrets Manager originated the secret.</p>
-    pub fn primary_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region where Secrets Manager originated the secret.</p>
-    pub fn set_primary_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_region = input;
         self
     }

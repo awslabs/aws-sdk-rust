@@ -166,9 +166,7 @@ impl EnvironmentDescription {
         self.health_status.as_ref()
     }
     /// <p>The description of the AWS resources used by this environment.</p>
-    pub fn resources(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EnvironmentResourcesDescription> {
+    pub fn resources(&self) -> ::std::option::Option<&crate::types::EnvironmentResourcesDescription> {
         self.resources.as_ref()
     }
     /// <p>Describes the current tier of this environment.</p>
@@ -197,9 +195,7 @@ impl EnvironmentDescription {
 
 /// A builder for [`EnvironmentDescription`](crate::types::EnvironmentDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentDescriptionBuilder {
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
@@ -219,25 +215,18 @@ pub struct EnvironmentDescriptionBuilder {
     pub(crate) health_status: ::std::option::Option<crate::types::EnvironmentHealthStatus>,
     pub(crate) resources: ::std::option::Option<crate::types::EnvironmentResourcesDescription>,
     pub(crate) tier: ::std::option::Option<crate::types::EnvironmentTier>,
-    pub(crate) environment_links:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentLink>>,
+    pub(crate) environment_links: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentLink>>,
     pub(crate) environment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) operations_role: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentDescriptionBuilder {
     /// <p>The name of this environment.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of this environment.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -246,18 +235,12 @@ impl EnvironmentDescriptionBuilder {
         &self.environment_name
     }
     /// <p>The ID of this environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of this environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -266,18 +249,12 @@ impl EnvironmentDescriptionBuilder {
         &self.environment_id
     }
     /// <p>The name of the application associated with this environment.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application associated with this environment.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -286,18 +263,12 @@ impl EnvironmentDescriptionBuilder {
         &self.application_name
     }
     /// <p>The application version deployed in this environment.</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application version deployed in this environment.</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_label = input;
         self
     }
@@ -306,18 +277,12 @@ impl EnvironmentDescriptionBuilder {
         &self.version_label
     }
     /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
-    pub fn solution_stack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
-    pub fn set_solution_stack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_stack_name = input;
         self
     }
@@ -340,18 +305,12 @@ impl EnvironmentDescriptionBuilder {
         &self.platform_arn
     }
     /// <p>The name of the configuration template used to originally launch this environment.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration template used to originally launch this environment.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -407,10 +366,7 @@ impl EnvironmentDescriptionBuilder {
         self
     }
     /// <p>The creation date for this environment.</p>
-    pub fn set_date_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_created = input;
         self
     }
@@ -424,10 +380,7 @@ impl EnvironmentDescriptionBuilder {
         self
     }
     /// <p>The last modified date for this environment.</p>
-    pub fn set_date_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_updated = input;
         self
     }
@@ -455,10 +408,7 @@ impl EnvironmentDescriptionBuilder {
     /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
     /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -483,10 +433,7 @@ impl EnvironmentDescriptionBuilder {
     /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
     /// <p> <code>true:</code> There is an update in progress. </p>
     /// <p> <code>false:</code> There are no updates currently in progress. </p>
-    pub fn set_abortable_operation_in_progress(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_abortable_operation_in_progress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.abortable_operation_in_progress = input;
         self
     }
@@ -516,10 +463,7 @@ impl EnvironmentDescriptionBuilder {
     /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
     /// </ul>
     /// <p> Default: <code>Grey</code> </p>
-    pub fn set_health(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentHealth>,
-    ) -> Self {
+    pub fn set_health(mut self, input: ::std::option::Option<crate::types::EnvironmentHealth>) -> Self {
         self.health = input;
         self
     }
@@ -540,17 +484,12 @@ impl EnvironmentDescriptionBuilder {
         self
     }
     /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
-    pub fn set_health_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentHealthStatus>,
-    ) -> Self {
+    pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::EnvironmentHealthStatus>) -> Self {
         self.health_status = input;
         self
     }
     /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
-    pub fn get_health_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnvironmentHealthStatus> {
+    pub fn get_health_status(&self) -> &::std::option::Option<crate::types::EnvironmentHealthStatus> {
         &self.health_status
     }
     /// <p>The description of the AWS resources used by this environment.</p>
@@ -559,17 +498,12 @@ impl EnvironmentDescriptionBuilder {
         self
     }
     /// <p>The description of the AWS resources used by this environment.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentResourcesDescription>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<crate::types::EnvironmentResourcesDescription>) -> Self {
         self.resources = input;
         self
     }
     /// <p>The description of the AWS resources used by this environment.</p>
-    pub fn get_resources(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnvironmentResourcesDescription> {
+    pub fn get_resources(&self) -> &::std::option::Option<crate::types::EnvironmentResourcesDescription> {
         &self.resources
     }
     /// <p>Describes the current tier of this environment.</p>
@@ -598,32 +532,21 @@ impl EnvironmentDescriptionBuilder {
         self
     }
     /// <p>A list of links to other environments in the same group.</p>
-    pub fn set_environment_links(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentLink>>,
-    ) -> Self {
+    pub fn set_environment_links(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentLink>>) -> Self {
         self.environment_links = input;
         self
     }
     /// <p>A list of links to other environments in the same group.</p>
-    pub fn get_environment_links(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentLink>> {
+    pub fn get_environment_links(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentLink>> {
         &self.environment_links
     }
     /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
-    pub fn environment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
-    pub fn set_environment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_arn = input;
         self
     }
@@ -632,18 +555,12 @@ impl EnvironmentDescriptionBuilder {
         &self.environment_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-    pub fn operations_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operations_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operations_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-    pub fn set_operations_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operations_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operations_role = input;
         self
     }

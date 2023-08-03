@@ -19,11 +19,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDeliveryStreamOutput`](crate::operation::create_delivery_stream::CreateDeliveryStreamOutput) with field(s):
     ///   - [`delivery_stream_arn(Option<String>)`](crate::operation::create_delivery_stream::CreateDeliveryStreamOutput::delivery_stream_arn): <p>The ARN of the delivery stream.</p>
     /// - On failure, responds with [`SdkError<CreateDeliveryStreamError>`](crate::operation::create_delivery_stream::CreateDeliveryStreamError)
-    pub fn create_delivery_stream(
-        &self,
-    ) -> crate::operation::create_delivery_stream::builders::CreateDeliveryStreamFluentBuilder {
-        crate::operation::create_delivery_stream::builders::CreateDeliveryStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_delivery_stream(&self) -> crate::operation::create_delivery_stream::builders::CreateDeliveryStreamFluentBuilder {
+        crate::operation::create_delivery_stream::builders::CreateDeliveryStreamFluentBuilder::new(self.handle.clone())
     }
 }

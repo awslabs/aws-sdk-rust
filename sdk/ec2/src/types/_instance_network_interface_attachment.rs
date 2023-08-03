@@ -58,9 +58,7 @@ impl InstanceNetworkInterfaceAttachment {
 
 /// A builder for [`InstanceNetworkInterfaceAttachment`](crate::types::InstanceNetworkInterfaceAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceNetworkInterfaceAttachmentBuilder {
     pub(crate) attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
@@ -76,10 +74,7 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
         self
     }
     /// <p>The time stamp when the attachment initiated.</p>
-    pub fn set_attach_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_attach_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.attach_time = input;
         self
     }
@@ -88,18 +83,12 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
         &self.attach_time
     }
     /// <p>The ID of the network interface attachment.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface attachment.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }
@@ -141,10 +130,7 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
         self
     }
     /// <p>The attachment state.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AttachmentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AttachmentStatus>) -> Self {
         self.status = input;
         self
     }

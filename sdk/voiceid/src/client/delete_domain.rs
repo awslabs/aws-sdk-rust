@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`domain_id(impl ::std::convert::Into<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::set_domain_id): <p>The identifier of the domain you want to delete.</p>
     /// - On success, responds with [`DeleteDomainOutput`](crate::operation::delete_domain::DeleteDomainOutput)
     /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::operation::delete_domain::DeleteDomainError)
-    pub fn delete_domain(
-        &self,
-    ) -> crate::operation::delete_domain::builders::DeleteDomainFluentBuilder {
-        crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_domain(&self) -> crate::operation::delete_domain::builders::DeleteDomainFluentBuilder {
+        crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_firewall_domains::ListFirewallDomainsOutput::next_token): <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     ///   - [`domains(Option<Vec<String>>)`](crate::operation::list_firewall_domains::ListFirewallDomainsOutput::domains): <p>A list of the domains in the firewall domain list. </p>  <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>. </p>
     /// - On failure, responds with [`SdkError<ListFirewallDomainsError>`](crate::operation::list_firewall_domains::ListFirewallDomainsError)
-    pub fn list_firewall_domains(
-        &self,
-    ) -> crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder {
-        crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_firewall_domains(&self) -> crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder {
+        crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder::new(self.handle.clone())
     }
 }

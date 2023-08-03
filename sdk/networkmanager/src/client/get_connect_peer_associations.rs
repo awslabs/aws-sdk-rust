@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`connect_peer_associations(Option<Vec<ConnectPeerAssociation>>)`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput::connect_peer_associations): <p>Displays a list of Connect peer associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetConnectPeerAssociationsError>`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsError)
-    pub fn get_connect_peer_associations(&self) -> crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder{
+    pub fn get_connect_peer_associations(
+        &self,
+    ) -> crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder {
         crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

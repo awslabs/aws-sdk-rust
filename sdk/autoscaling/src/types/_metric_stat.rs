@@ -40,9 +40,7 @@ impl MetricStat {
 
 /// A builder for [`MetricStat`](crate::types::MetricStat).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricStatBuilder {
     pub(crate) metric: ::std::option::Option<crate::types::Metric>,
     pub(crate) stat: ::std::option::Option<::std::string::String>,

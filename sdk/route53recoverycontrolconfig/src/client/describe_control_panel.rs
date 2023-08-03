@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeControlPanelOutput`](crate::operation::describe_control_panel::DescribeControlPanelOutput) with field(s):
     ///   - [`control_panel(Option<ControlPanel>)`](crate::operation::describe_control_panel::DescribeControlPanelOutput::control_panel): <p>Information about the control panel.</p>
     /// - On failure, responds with [`SdkError<DescribeControlPanelError>`](crate::operation::describe_control_panel::DescribeControlPanelError)
-    pub fn describe_control_panel(
-        &self,
-    ) -> crate::operation::describe_control_panel::builders::DescribeControlPanelFluentBuilder {
-        crate::operation::describe_control_panel::builders::DescribeControlPanelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_control_panel(&self) -> crate::operation::describe_control_panel::builders::DescribeControlPanelFluentBuilder {
+        crate::operation::describe_control_panel::builders::DescribeControlPanelFluentBuilder::new(self.handle.clone())
     }
 }

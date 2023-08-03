@@ -25,9 +25,7 @@ pub struct AuthenticateCognitoActionConfig {
     pub session_timeout: ::std::option::Option<i64>,
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     #[doc(hidden)]
-    pub authentication_request_extra_params: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub authentication_request_extra_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
     /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
@@ -35,8 +33,7 @@ pub struct AuthenticateCognitoActionConfig {
     /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub on_unauthenticated_request:
-        ::std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>,
+    pub on_unauthenticated_request: ::std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>,
 }
 impl AuthenticateCognitoActionConfig {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
@@ -67,9 +64,7 @@ impl AuthenticateCognitoActionConfig {
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     pub fn authentication_request_extra_params(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.authentication_request_extra_params.as_ref()
     }
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
@@ -78,10 +73,7 @@ impl AuthenticateCognitoActionConfig {
     /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
     /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
-    pub fn on_unauthenticated_request(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>
-    {
+    pub fn on_unauthenticated_request(&self) -> ::std::option::Option<&crate::types::AuthenticateCognitoActionConditionalBehaviorEnum> {
         self.on_unauthenticated_request.as_ref()
     }
 }
@@ -94,9 +86,7 @@ impl AuthenticateCognitoActionConfig {
 
 /// A builder for [`AuthenticateCognitoActionConfig`](crate::types::AuthenticateCognitoActionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthenticateCognitoActionConfigBuilder {
     pub(crate) user_pool_arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_pool_client_id: ::std::option::Option<::std::string::String>,
@@ -104,26 +94,17 @@ pub struct AuthenticateCognitoActionConfigBuilder {
     pub(crate) session_cookie_name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,
     pub(crate) session_timeout: ::std::option::Option<i64>,
-    pub(crate) authentication_request_extra_params: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) on_unauthenticated_request:
-        ::std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>,
+    pub(crate) authentication_request_extra_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) on_unauthenticated_request: ::std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>,
 }
 impl AuthenticateCognitoActionConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
-    pub fn user_pool_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
-    pub fn set_user_pool_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_arn = input;
         self
     }
@@ -132,18 +113,12 @@ impl AuthenticateCognitoActionConfigBuilder {
         &self.user_pool_arn
     }
     /// <p>The ID of the Amazon Cognito user pool client.</p>
-    pub fn user_pool_client_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_pool_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Cognito user pool client.</p>
-    pub fn set_user_pool_client_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_pool_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_client_id = input;
         self
     }
@@ -152,18 +127,12 @@ impl AuthenticateCognitoActionConfigBuilder {
         &self.user_pool_client_id
     }
     /// <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.</p>
-    pub fn user_pool_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_pool_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.</p>
-    pub fn set_user_pool_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_pool_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_domain = input;
         self
     }
@@ -172,18 +141,12 @@ impl AuthenticateCognitoActionConfigBuilder {
         &self.user_pool_domain
     }
     /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
-    pub fn session_cookie_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_cookie_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_cookie_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
-    pub fn set_session_cookie_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_cookie_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_cookie_name = input;
         self
     }
@@ -240,9 +203,7 @@ impl AuthenticateCognitoActionConfigBuilder {
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     pub fn set_authentication_request_extra_params(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.authentication_request_extra_params = input;
         self
@@ -250,9 +211,7 @@ impl AuthenticateCognitoActionConfigBuilder {
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     pub fn get_authentication_request_extra_params(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.authentication_request_extra_params
     }
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
@@ -261,10 +220,7 @@ impl AuthenticateCognitoActionConfigBuilder {
     /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
     /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
-    pub fn on_unauthenticated_request(
-        mut self,
-        input: crate::types::AuthenticateCognitoActionConditionalBehaviorEnum,
-    ) -> Self {
+    pub fn on_unauthenticated_request(mut self, input: crate::types::AuthenticateCognitoActionConditionalBehaviorEnum) -> Self {
         self.on_unauthenticated_request = ::std::option::Option::Some(input);
         self
     }
@@ -276,9 +232,7 @@ impl AuthenticateCognitoActionConfigBuilder {
     /// </ul>
     pub fn set_on_unauthenticated_request(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AuthenticateCognitoActionConditionalBehaviorEnum,
-        >,
+        input: ::std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>,
     ) -> Self {
         self.on_unauthenticated_request = input;
         self
@@ -289,10 +243,7 @@ impl AuthenticateCognitoActionConfigBuilder {
     /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
     /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
-    pub fn get_on_unauthenticated_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>
-    {
+    pub fn get_on_unauthenticated_request(&self) -> &::std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum> {
         &self.on_unauthenticated_request
     }
     /// Consumes the builder and constructs a [`AuthenticateCognitoActionConfig`](crate::types::AuthenticateCognitoActionConfig).

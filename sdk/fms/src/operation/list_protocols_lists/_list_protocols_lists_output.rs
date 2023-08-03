@@ -5,8 +5,7 @@
 pub struct ListProtocolsListsOutput {
     /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
     #[doc(hidden)]
-    pub protocols_lists:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProtocolsListDataSummary>>,
+    pub protocols_lists: ::std::option::Option<::std::vec::Vec<crate::types::ProtocolsListDataSummary>>,
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListProtocolsListsOutput {
 }
 impl ListProtocolsListsOutput {
     /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
-    pub fn protocols_lists(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProtocolsListDataSummary]> {
+    pub fn protocols_lists(&self) -> ::std::option::Option<&[crate::types::ProtocolsListDataSummary]> {
         self.protocols_lists.as_deref()
     }
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListProtocolsListsOutput {
 }
 impl ListProtocolsListsOutput {
     /// Creates a new builder-style object to manufacture [`ListProtocolsListsOutput`](crate::operation::list_protocols_lists::ListProtocolsListsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_protocols_lists::builders::ListProtocolsListsOutputBuilder {
+    pub fn builder() -> crate::operation::list_protocols_lists::builders::ListProtocolsListsOutputBuilder {
         crate::operation::list_protocols_lists::builders::ListProtocolsListsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProtocolsListsOutput`](crate::operation::list_protocols_lists::ListProtocolsListsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProtocolsListsOutputBuilder {
-    pub(crate) protocols_lists:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProtocolsListDataSummary>>,
+    pub(crate) protocols_lists: ::std::option::Option<::std::vec::Vec<crate::types::ProtocolsListDataSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListProtocolsListsOutputBuilder {
         self
     }
     /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
-    pub fn set_protocols_lists(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProtocolsListDataSummary>>,
-    ) -> Self {
+    pub fn set_protocols_lists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtocolsListDataSummary>>) -> Self {
         self.protocols_lists = input;
         self
     }
     /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
-    pub fn get_protocols_lists(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtocolsListDataSummary>> {
+    pub fn get_protocols_lists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtocolsListDataSummary>> {
         &self.protocols_lists
     }
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>

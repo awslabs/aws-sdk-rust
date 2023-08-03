@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for NotifyMigrationTaskStateOutput {
 }
 impl NotifyMigrationTaskStateOutput {
     /// Creates a new builder-style object to manufacture [`NotifyMigrationTaskStateOutput`](crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput).
-    pub fn builder() -> crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateOutputBuilder{
+    pub fn builder() -> crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateOutputBuilder {
         crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`NotifyMigrationTaskStateOutput`](crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyMigrationTaskStateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl NotifyMigrationTaskStateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`NotifyMigrationTaskStateOutput`](crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput {
+    pub fn build(self) -> crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput {
         crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput {
             _request_id: self._request_id,
         }

@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::initiate_job::InitiateJobOutput::job_id): <p>The ID of the job.</p>
     ///   - [`job_output_path(Option<String>)`](crate::operation::initiate_job::InitiateJobOutput::job_output_path): <p>The path to the location of where the select results are stored.</p>
     /// - On failure, responds with [`SdkError<InitiateJobError>`](crate::operation::initiate_job::InitiateJobError)
-    pub fn initiate_job(
-        &self,
-    ) -> crate::operation::initiate_job::builders::InitiateJobFluentBuilder {
+    pub fn initiate_job(&self) -> crate::operation::initiate_job::builders::InitiateJobFluentBuilder {
         crate::operation::initiate_job::builders::InitiateJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,18 +29,14 @@ impl ListHoursOfOperationsInput {
 }
 impl ListHoursOfOperationsInput {
     /// Creates a new builder-style object to manufacture [`ListHoursOfOperationsInput`](crate::operation::list_hours_of_operations::ListHoursOfOperationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_hours_of_operations::builders::ListHoursOfOperationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_hours_of_operations::builders::ListHoursOfOperationsInputBuilder {
         crate::operation::list_hours_of_operations::builders::ListHoursOfOperationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListHoursOfOperationsInput`](crate::operation::list_hours_of_operations::ListHoursOfOperationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHoursOfOperationsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListHoursOfOperationsInputBuilder {
     /// Consumes the builder and constructs a [`ListHoursOfOperationsInput`](crate::operation::list_hours_of_operations::ListHoursOfOperationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_hours_of_operations::ListHoursOfOperationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_hours_of_operations::ListHoursOfOperationsInput {
-                instance_id: self.instance_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_hours_of_operations::ListHoursOfOperationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_hours_of_operations::ListHoursOfOperationsInput {
+            instance_id: self.instance_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

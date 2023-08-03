@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`traffic_mirror_sessions(Option<Vec<TrafficMirrorSession>>)`](crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsOutput::traffic_mirror_sessions): <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described. Alternatively, you can filter the results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeTrafficMirrorSessionsError>`](crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsError)
-    pub fn describe_traffic_mirror_sessions(&self) -> crate::operation::describe_traffic_mirror_sessions::builders::DescribeTrafficMirrorSessionsFluentBuilder{
+    pub fn describe_traffic_mirror_sessions(
+        &self,
+    ) -> crate::operation::describe_traffic_mirror_sessions::builders::DescribeTrafficMirrorSessionsFluentBuilder {
         crate::operation::describe_traffic_mirror_sessions::builders::DescribeTrafficMirrorSessionsFluentBuilder::new(self.handle.clone())
     }
 }

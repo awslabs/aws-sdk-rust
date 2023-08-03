@@ -72,9 +72,7 @@ impl BrokerSummary {
 
 /// A builder for [`BrokerSummary`](crate::types::BrokerSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BrokerSummaryBuilder {
     pub(crate) broker_arn: ::std::option::Option<::std::string::String>,
     pub(crate) broker_id: ::std::option::Option<::std::string::String>,
@@ -134,10 +132,7 @@ impl BrokerSummaryBuilder {
         self
     }
     /// <p>The broker's status.</p>
-    pub fn set_broker_state(
-        mut self,
-        input: ::std::option::Option<crate::types::BrokerState>,
-    ) -> Self {
+    pub fn set_broker_state(mut self, input: ::std::option::Option<crate::types::BrokerState>) -> Self {
         self.broker_state = input;
         self
     }
@@ -151,10 +146,7 @@ impl BrokerSummaryBuilder {
         self
     }
     /// <p>The time when the broker was created.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -168,10 +160,7 @@ impl BrokerSummaryBuilder {
         self
     }
     /// <p>The broker's deployment mode.</p>
-    pub fn set_deployment_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentMode>,
-    ) -> Self {
+    pub fn set_deployment_mode(mut self, input: ::std::option::Option<crate::types::DeploymentMode>) -> Self {
         self.deployment_mode = input;
         self
     }
@@ -185,10 +174,7 @@ impl BrokerSummaryBuilder {
         self
     }
     /// <p>The type of broker engine.</p>
-    pub fn set_engine_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineType>,
-    ) -> Self {
+    pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
         self.engine_type = input;
         self
     }
@@ -197,18 +183,12 @@ impl BrokerSummaryBuilder {
         &self.engine_type
     }
     /// <p>The broker's instance type.</p>
-    pub fn host_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The broker's instance type.</p>
-    pub fn set_host_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_host_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_instance_type = input;
         self
     }

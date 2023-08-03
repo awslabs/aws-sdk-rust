@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`dataset_group_arn(Option<String>)`](crate::operation::create_dataset_group::CreateDatasetGroupOutput::dataset_group_arn): <p>The Amazon Resource Name (ARN) of the new dataset group.</p>
     ///   - [`domain(Option<Domain>)`](crate::operation::create_dataset_group::CreateDatasetGroupOutput::domain): <p>The domain for the new Domain dataset group.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetGroupError>`](crate::operation::create_dataset_group::CreateDatasetGroupError)
-    pub fn create_dataset_group(
-        &self,
-    ) -> crate::operation::create_dataset_group::builders::CreateDatasetGroupFluentBuilder {
-        crate::operation::create_dataset_group::builders::CreateDatasetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_dataset_group(&self) -> crate::operation::create_dataset_group::builders::CreateDatasetGroupFluentBuilder {
+        crate::operation::create_dataset_group::builders::CreateDatasetGroupFluentBuilder::new(self.handle.clone())
     }
 }

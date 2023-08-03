@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StreamingSessionStreamStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for StreamingSessionStreamStatusCode {
             "STREAM_DELETED" => StreamingSessionStreamStatusCode::StreamDeleted,
             "STREAM_DELETE_IN_PROGRESS" => StreamingSessionStreamStatusCode::StreamDeleteInProgress,
             "STREAM_READY" => StreamingSessionStreamStatusCode::StreamReady,
-            other => StreamingSessionStreamStatusCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => StreamingSessionStreamStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -38,10 +38,7 @@ impl DetachSecurityProfileFluentBuilder {
         }
     }
     /// Access the DetachSecurityProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detach_security_profile::builders::DetachSecurityProfileInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::detach_security_profile::builders::DetachSecurityProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DetachSecurityProfileFluentBuilder {
             crate::operation::detach_security_profile::DetachSecurityProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_security_profile::DetachSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_security_profile::DetachSecurityProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DetachSecurityProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DetachSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_security_profile::DetachSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_security_profile::DetachSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_security_profile::DetachSecurityProfileError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DetachSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_security_profile::DetachSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_security_profile::DetachSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_security_profile::DetachSecurityProfileError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DetachSecurityProfileFluentBuilder {
             crate::operation::detach_security_profile::DetachSecurityProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_security_profile::DetachSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_security_profile::DetachSecurityProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The security profile that is detached.</p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_name(input.into());
         self
     }
     /// <p>The security profile that is detached.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_profile_name(input);
         self
     }
@@ -145,18 +125,12 @@ impl DetachSecurityProfileFluentBuilder {
         self.inner.get_security_profile_name()
     }
     /// <p>The ARN of the thing group from which the security profile is detached.</p>
-    pub fn security_profile_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_target_arn(input.into());
         self
     }
     /// <p>The ARN of the thing group from which the security profile is detached.</p>
-    pub fn set_security_profile_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_profile_target_arn(input);
         self
     }

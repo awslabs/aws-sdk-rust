@@ -30,9 +30,7 @@ impl UserStorageMetadata {
 
 /// A builder for [`UserStorageMetadata`](crate::types::UserStorageMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserStorageMetadataBuilder {
     pub(crate) storage_utilized_in_bytes: ::std::option::Option<i64>,
     pub(crate) storage_rule: ::std::option::Option<crate::types::StorageRuleType>,
@@ -58,10 +56,7 @@ impl UserStorageMetadataBuilder {
         self
     }
     /// <p>The storage for a user.</p>
-    pub fn set_storage_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageRuleType>,
-    ) -> Self {
+    pub fn set_storage_rule(mut self, input: ::std::option::Option<crate::types::StorageRuleType>) -> Self {
         self.storage_rule = input;
         self
     }

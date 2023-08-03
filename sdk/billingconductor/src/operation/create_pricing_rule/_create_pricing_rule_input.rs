@@ -26,9 +26,7 @@ pub struct CreatePricingRuleInput {
     pub service: ::std::option::Option<::std::string::String>,
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
     #[doc(hidden)]
     pub billing_entity: ::std::option::Option<::std::string::String>,
@@ -74,11 +72,7 @@ impl CreatePricingRuleInput {
         self.service.as_deref()
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
@@ -120,8 +114,7 @@ impl ::std::fmt::Debug for CreatePricingRuleInput {
 }
 impl CreatePricingRuleInput {
     /// Creates a new builder-style object to manufacture [`CreatePricingRuleInput`](crate::operation::create_pricing_rule::CreatePricingRuleInput).
-    pub fn builder(
-    ) -> crate::operation::create_pricing_rule::builders::CreatePricingRuleInputBuilder {
+    pub fn builder() -> crate::operation::create_pricing_rule::builders::CreatePricingRuleInputBuilder {
         crate::operation::create_pricing_rule::builders::CreatePricingRuleInputBuilder::default()
     }
 }
@@ -137,9 +130,7 @@ pub struct CreatePricingRuleInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::PricingRuleType>,
     pub(crate) modifier_percentage: ::std::option::Option<f64>,
     pub(crate) service: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) billing_entity: ::std::option::Option<::std::string::String>,
     pub(crate) tiering: ::std::option::Option<crate::types::CreateTieringInput>,
     pub(crate) usage_type: ::std::option::Option<::std::string::String>,
@@ -194,10 +185,7 @@ impl CreatePricingRuleInputBuilder {
         self
     }
     /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
-    pub fn set_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingRuleScope>,
-    ) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::PricingRuleScope>) -> Self {
         self.scope = input;
         self
     }
@@ -252,47 +240,28 @@ impl CreatePricingRuleInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-    pub fn billing_entity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_entity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_entity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-    pub fn set_billing_entity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_entity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_entity = input;
         self
     }
@@ -306,10 +275,7 @@ impl CreatePricingRuleInputBuilder {
         self
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    pub fn set_tiering(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateTieringInput>,
-    ) -> Self {
+    pub fn set_tiering(mut self, input: ::std::option::Option<crate::types::CreateTieringInput>) -> Self {
         self.tiering = input;
         self
     }
@@ -354,26 +320,21 @@ impl CreatePricingRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreatePricingRuleInput`](crate::operation::create_pricing_rule::CreatePricingRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_pricing_rule::CreatePricingRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_pricing_rule::CreatePricingRuleInput {
-                client_token: self.client_token,
-                name: self.name,
-                description: self.description,
-                scope: self.scope,
-                r#type: self.r#type,
-                modifier_percentage: self.modifier_percentage,
-                service: self.service,
-                tags: self.tags,
-                billing_entity: self.billing_entity,
-                tiering: self.tiering,
-                usage_type: self.usage_type,
-                operation: self.operation,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_pricing_rule::CreatePricingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_pricing_rule::CreatePricingRuleInput {
+            client_token: self.client_token,
+            name: self.name,
+            description: self.description,
+            scope: self.scope,
+            r#type: self.r#type,
+            modifier_percentage: self.modifier_percentage,
+            service: self.service,
+            tags: self.tags,
+            billing_entity: self.billing_entity,
+            tiering: self.tiering,
+            usage_type: self.usage_type,
+            operation: self.operation,
+        })
     }
 }
 impl ::std::fmt::Debug for CreatePricingRuleInputBuilder {

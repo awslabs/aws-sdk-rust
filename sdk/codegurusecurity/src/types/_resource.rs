@@ -30,9 +30,7 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) sub_resource_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl ResourceBuilder {
         &self.id
     }
     /// <p>The identifier for a section of the resource, such as an AWS Lambda layer.</p>
-    pub fn sub_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a section of the resource, such as an AWS Lambda layer.</p>
-    pub fn set_sub_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_resource_id = input;
         self
     }

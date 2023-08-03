@@ -37,10 +37,7 @@ impl GetSchemaByDefinitionFluentBuilder {
         }
     }
     /// Access the GetSchemaByDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_schema_by_definition::builders::GetSchemaByDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_schema_by_definition::builders::GetSchemaByDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetSchemaByDefinitionFluentBuilder {
             crate::operation::get_schema_by_definition::GetSchemaByDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_by_definition::GetSchemaByDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_by_definition::GetSchemaByDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetSchemaByDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetSchemaByDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_schema_by_definition::GetSchemaByDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_by_definition::GetSchemaByDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_by_definition::GetSchemaByDefinitionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetSchemaByDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_schema_by_definition::GetSchemaByDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_by_definition::GetSchemaByDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_by_definition::GetSchemaByDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetSchemaByDefinitionFluentBuilder {
             crate::operation::get_schema_by_definition::GetSchemaByDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_by_definition::GetSchemaByDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_by_definition::GetSchemaByDefinitionError>,
     > {
         self.customize_middleware().await
     }
@@ -150,18 +136,12 @@ impl GetSchemaByDefinitionFluentBuilder {
         self.inner.get_schema_id()
     }
     /// <p>The definition of the schema for which schema details are required.</p>
-    pub fn schema_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_definition(input.into());
         self
     }
     /// <p>The definition of the schema for which schema details are required.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_definition(input);
         self
     }

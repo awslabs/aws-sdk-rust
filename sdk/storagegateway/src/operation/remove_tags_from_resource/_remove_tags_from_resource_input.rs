@@ -23,18 +23,14 @@ impl RemoveTagsFromResourceInput {
 }
 impl RemoveTagsFromResourceInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
-    pub fn builder(
-    ) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder {
         crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -66,10 +62,7 @@ impl RemoveTagsFromResourceInputBuilder {
         self
     }
     /// <p>The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value pair.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -84,11 +77,9 @@ impl RemoveTagsFromResourceInputBuilder {
         crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
+            resource_arn: self.resource_arn,
+            tag_keys: self.tag_keys,
+        })
     }
 }

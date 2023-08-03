@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetJobUnlockCodeOutput`](crate::operation::get_job_unlock_code::GetJobUnlockCodeOutput) with field(s):
     ///   - [`unlock_code(Option<String>)`](crate::operation::get_job_unlock_code::GetJobUnlockCodeOutput::unlock_code): <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created.</p>
     /// - On failure, responds with [`SdkError<GetJobUnlockCodeError>`](crate::operation::get_job_unlock_code::GetJobUnlockCodeError)
-    pub fn get_job_unlock_code(
-        &self,
-    ) -> crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeFluentBuilder {
-        crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_job_unlock_code(&self) -> crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeFluentBuilder {
+        crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeFluentBuilder::new(self.handle.clone())
     }
 }

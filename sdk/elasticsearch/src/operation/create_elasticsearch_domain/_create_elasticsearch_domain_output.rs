@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateElasticsearchDomainOutput {
 }
 impl CreateElasticsearchDomainOutput {
     /// Creates a new builder-style object to manufacture [`CreateElasticsearchDomainOutput`](crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainOutput).
-    pub fn builder() -> crate::operation::create_elasticsearch_domain::builders::CreateElasticsearchDomainOutputBuilder{
+    pub fn builder() -> crate::operation::create_elasticsearch_domain::builders::CreateElasticsearchDomainOutputBuilder {
         crate::operation::create_elasticsearch_domain::builders::CreateElasticsearchDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateElasticsearchDomainOutput`](crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateElasticsearchDomainOutputBuilder {
     pub(crate) domain_status: ::std::option::Option<crate::types::ElasticsearchDomainStatus>,
     _request_id: Option<String>,
@@ -43,17 +41,12 @@ impl CreateElasticsearchDomainOutputBuilder {
         self
     }
     /// <p>The status of the newly created Elasticsearch domain. </p>
-    pub fn set_domain_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticsearchDomainStatus>,
-    ) -> Self {
+    pub fn set_domain_status(mut self, input: ::std::option::Option<crate::types::ElasticsearchDomainStatus>) -> Self {
         self.domain_status = input;
         self
     }
     /// <p>The status of the newly created Elasticsearch domain. </p>
-    pub fn get_domain_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticsearchDomainStatus> {
+    pub fn get_domain_status(&self) -> &::std::option::Option<crate::types::ElasticsearchDomainStatus> {
         &self.domain_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -66,9 +59,7 @@ impl CreateElasticsearchDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateElasticsearchDomainOutput`](crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainOutput {
+    pub fn build(self) -> crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainOutput {
         crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainOutput {
             domain_status: self.domain_status,
             _request_id: self._request_id,

@@ -10,10 +10,7 @@ impl DeleteMessageBatchInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_message_batch::DeleteMessageBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_message_batch::DeleteMessageBatchError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_message_batch::DeleteMessageBatchError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_message_batch();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteMessageBatchFluentBuilder {
         }
     }
     /// Access the DeleteMessageBatch as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_message_batch::builders::DeleteMessageBatchInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_message_batch::builders::DeleteMessageBatchInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DeleteMessageBatchFluentBuilder {
             crate::operation::delete_message_batch::DeleteMessageBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_message_batch::DeleteMessageBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_message_batch::DeleteMessageBatchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DeleteMessageBatchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DeleteMessageBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_message_batch::DeleteMessageBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_message_batch::DeleteMessageBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_message_batch::DeleteMessageBatchError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DeleteMessageBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_message_batch::DeleteMessageBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_message_batch::DeleteMessageBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_message_batch::DeleteMessageBatchError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl DeleteMessageBatchFluentBuilder {
             crate::operation::delete_message_batch::DeleteMessageBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_message_batch::DeleteMessageBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_message_batch::DeleteMessageBatchError>,
     > {
         self.customize_middleware().await
     }
@@ -151,17 +135,12 @@ impl DeleteMessageBatchFluentBuilder {
         self
     }
     /// <p>Lists the receipt handles for the messages to be deleted.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
     /// <p>Lists the receipt handles for the messages to be deleted.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>> {
         self.inner.get_entries()
     }
 }

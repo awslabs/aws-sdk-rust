@@ -6,10 +6,7 @@ pub fn ser_function_definition_version(
     if let Some(var_1) = &input.default_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DefaultConfig").start_object();
-        crate::protocol_serde::shape_function_default_config::ser_function_default_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_function_default_config::ser_function_default_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.functions {
@@ -29,17 +26,9 @@ pub fn ser_function_definition_version(
 
 pub(crate) fn de_function_definition_version<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::FunctionDefinitionVersion>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::FunctionDefinitionVersion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -49,36 +38,28 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DefaultConfig" => {
-                                builder = builder.set_default_config(
-                                    crate::protocol_serde::shape_function_default_config::de_function_default_config(tokens)?
-                                );
-                            }
-                            "Functions" => {
-                                builder = builder.set_functions(
-                                    crate::protocol_serde::shape___list_of_function::de___list_of_function(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DefaultConfig" => {
+                            builder =
+                                builder.set_default_config(crate::protocol_serde::shape_function_default_config::de_function_default_config(tokens)?);
                         }
-                    }
+                        "Functions" => {
+                            builder = builder.set_functions(crate::protocol_serde::shape___list_of_function::de___list_of_function(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

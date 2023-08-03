@@ -10,10 +10,7 @@ impl CreateStreamKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_stream_key::CreateStreamKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_stream_key::CreateStreamKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stream_key::CreateStreamKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_stream_key();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateStreamKeyFluentBuilder {
         }
     }
     /// Access the CreateStreamKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_stream_key::builders::CreateStreamKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_stream_key::builders::CreateStreamKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateStreamKeyFluentBuilder {
             crate::operation::create_stream_key::CreateStreamKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_stream_key::CreateStreamKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stream_key::CreateStreamKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateStreamKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateStreamKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_stream_key::CreateStreamKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_stream_key::CreateStreamKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stream_key::CreateStreamKeyError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateStreamKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_stream_key::CreateStreamKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_stream_key::CreateStreamKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stream_key::CreateStreamKeyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateStreamKeyFluentBuilder {
             crate::operation::create_stream_key::CreateStreamKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_stream_key::CreateStreamKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stream_key::CreateStreamKeyError>,
     > {
         self.customize_middleware().await
     }
@@ -142,30 +126,17 @@ impl CreateStreamKeyFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

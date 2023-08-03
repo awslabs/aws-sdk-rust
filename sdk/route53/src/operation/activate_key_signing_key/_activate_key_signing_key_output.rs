@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ActivateKeySigningKeyOutput {
 }
 impl ActivateKeySigningKeyOutput {
     /// Creates a new builder-style object to manufacture [`ActivateKeySigningKeyOutput`](crate::operation::activate_key_signing_key::ActivateKeySigningKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::activate_key_signing_key::builders::ActivateKeySigningKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::activate_key_signing_key::builders::ActivateKeySigningKeyOutputBuilder {
         crate::operation::activate_key_signing_key::builders::ActivateKeySigningKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`ActivateKeySigningKeyOutput`](crate::operation::activate_key_signing_key::ActivateKeySigningKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivateKeySigningKeyOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ActivateKeySigningKeyOutputBuilder {
         self
     }
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
-    pub fn set_change_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeInfo>,
-    ) -> Self {
+    pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
         self.change_info = input;
         self
     }

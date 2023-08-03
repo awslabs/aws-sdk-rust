@@ -39,9 +39,7 @@ impl ListEventPredictionsFluentBuilder {
         }
     }
     /// Access the ListEventPredictions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_event_predictions::builders::ListEventPredictionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_event_predictions::builders::ListEventPredictionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl ListEventPredictionsFluentBuilder {
             crate::operation::list_event_predictions::ListEventPredictions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_event_predictions::ListEventPredictionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_event_predictions::ListEventPredictionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl ListEventPredictionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl ListEventPredictionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_event_predictions::ListEventPredictionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_event_predictions::ListEventPredictionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_event_predictions::ListEventPredictionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl ListEventPredictionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_event_predictions::ListEventPredictionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_event_predictions::ListEventPredictionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_event_predictions::ListEventPredictionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +107,15 @@ impl ListEventPredictionsFluentBuilder {
             crate::operation::list_event_predictions::ListEventPredictions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_event_predictions::ListEventPredictionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_event_predictions::ListEventPredictionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_event_predictions::paginator::ListEventPredictionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_event_predictions::paginator::ListEventPredictionsPaginator {
-        crate::operation::list_event_predictions::paginator::ListEventPredictionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_event_predictions::paginator::ListEventPredictionsPaginator {
+        crate::operation::list_event_predictions::paginator::ListEventPredictionsPaginator::new(self.handle, self.inner)
     }
     /// <p> The event ID. </p>
     pub fn event_id(mut self, input: crate::types::FilterCondition) -> Self {
@@ -141,10 +123,7 @@ impl ListEventPredictionsFluentBuilder {
         self
     }
     /// <p> The event ID. </p>
-    pub fn set_event_id(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCondition>,
-    ) -> Self {
+    pub fn set_event_id(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.inner = self.inner.set_event_id(input);
         self
     }
@@ -158,10 +137,7 @@ impl ListEventPredictionsFluentBuilder {
         self
     }
     /// <p> The event type associated with the detector. </p>
-    pub fn set_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCondition>,
-    ) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.inner = self.inner.set_event_type(input);
         self
     }
@@ -175,10 +151,7 @@ impl ListEventPredictionsFluentBuilder {
         self
     }
     /// <p> The detector ID. </p>
-    pub fn set_detector_id(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCondition>,
-    ) -> Self {
+    pub fn set_detector_id(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
@@ -192,10 +165,7 @@ impl ListEventPredictionsFluentBuilder {
         self
     }
     /// <p> The detector version ID. </p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCondition>,
-    ) -> Self {
+    pub fn set_detector_version_id(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.inner = self.inner.set_detector_version_id(input);
         self
     }
@@ -209,17 +179,12 @@ impl ListEventPredictionsFluentBuilder {
         self
     }
     /// <p> The time period for when the predictions were generated. </p>
-    pub fn set_prediction_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::PredictionTimeRange>,
-    ) -> Self {
+    pub fn set_prediction_time_range(mut self, input: ::std::option::Option<crate::types::PredictionTimeRange>) -> Self {
         self.inner = self.inner.set_prediction_time_range(input);
         self
     }
     /// <p> The time period for when the predictions were generated. </p>
-    pub fn get_prediction_time_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredictionTimeRange> {
+    pub fn get_prediction_time_range(&self) -> &::std::option::Option<crate::types::PredictionTimeRange> {
         self.inner.get_prediction_time_range()
     }
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>

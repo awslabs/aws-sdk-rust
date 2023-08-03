@@ -38,10 +38,7 @@ impl PutNotificationChannelFluentBuilder {
         }
     }
     /// Access the PutNotificationChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_notification_channel::builders::PutNotificationChannelInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_notification_channel::builders::PutNotificationChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl PutNotificationChannelFluentBuilder {
             crate::operation::put_notification_channel::PutNotificationChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_notification_channel::PutNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_notification_channel::PutNotificationChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl PutNotificationChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl PutNotificationChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_notification_channel::PutNotificationChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_notification_channel::PutNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_notification_channel::PutNotificationChannelError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl PutNotificationChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_notification_channel::PutNotificationChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_notification_channel::PutNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_notification_channel::PutNotificationChannelError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl PutNotificationChannelFluentBuilder {
             crate::operation::put_notification_channel::PutNotificationChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_notification_channel::PutNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_notification_channel::PutNotificationChannelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
@@ -145,18 +125,12 @@ impl PutNotificationChannelFluentBuilder {
         self.inner.get_sns_topic_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
-    pub fn sns_role_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_role_name(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
-    pub fn set_sns_role_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sns_role_name(input);
         self
     }

@@ -10,10 +10,7 @@ impl DescribeChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_channel::DescribeChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel::DescribeChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel::DescribeChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_channel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeChannelFluentBuilder {
         }
     }
     /// Access the DescribeChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_channel::builders::DescribeChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_channel::builders::DescribeChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeChannelFluentBuilder {
             crate::operation::describe_channel::DescribeChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel::DescribeChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel::DescribeChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_channel::DescribeChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel::DescribeChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel::DescribeChannelError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_channel::DescribeChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel::DescribeChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel::DescribeChannelError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeChannelFluentBuilder {
             crate::operation::describe_channel::DescribeChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel::DescribeChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel::DescribeChannelError>,
     > {
         self.customize_middleware().await
     }

@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_experience::DescribeExperienceOutput::role_arn): <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::describe_experience::DescribeExperienceOutput::error_message): <p>The reason your Amazon Kendra experience could not properly process.</p>
     /// - On failure, responds with [`SdkError<DescribeExperienceError>`](crate::operation::describe_experience::DescribeExperienceError)
-    pub fn describe_experience(
-        &self,
-    ) -> crate::operation::describe_experience::builders::DescribeExperienceFluentBuilder {
-        crate::operation::describe_experience::builders::DescribeExperienceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_experience(&self) -> crate::operation::describe_experience::builders::DescribeExperienceFluentBuilder {
+        crate::operation::describe_experience::builders::DescribeExperienceFluentBuilder::new(self.handle.clone())
     }
 }

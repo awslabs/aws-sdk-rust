@@ -35,9 +35,7 @@ impl ListSkillsOutput {
 
 /// A builder for [`ListSkillsOutput`](crate::operation::list_skills::ListSkillsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSkillsOutputBuilder {
     pub(crate) skill_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SkillSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListSkillsOutputBuilder {
         self
     }
     /// <p>The list of enabled skills requested. Required.</p>
-    pub fn set_skill_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SkillSummary>>,
-    ) -> Self {
+    pub fn set_skill_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SkillSummary>>) -> Self {
         self.skill_summaries = input;
         self
     }
     /// <p>The list of enabled skills requested. Required.</p>
-    pub fn get_skill_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SkillSummary>> {
+    pub fn get_skill_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SkillSummary>> {
         &self.skill_summaries
     }
     /// <p>The token returned to indicate that there is more data available.</p>

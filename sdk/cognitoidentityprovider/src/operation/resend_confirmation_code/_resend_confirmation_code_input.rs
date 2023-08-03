@@ -30,9 +30,7 @@ pub struct ResendConfirmationCodeInput {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub client_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ResendConfirmationCodeInput {
     /// <p>The ID of the client associated with the user pool.</p>
@@ -52,9 +50,7 @@ impl ResendConfirmationCodeInput {
         self.username.as_deref()
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code> calls.</p>
-    pub fn analytics_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnalyticsMetadataType> {
+    pub fn analytics_metadata(&self) -> ::std::option::Option<&crate::types::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
@@ -67,11 +63,7 @@ impl ResendConfirmationCodeInput {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn client_metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn client_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.client_metadata.as_ref()
     }
 }
@@ -89,9 +81,7 @@ impl ::std::fmt::Debug for ResendConfirmationCodeInput {
 }
 impl ResendConfirmationCodeInput {
     /// Creates a new builder-style object to manufacture [`ResendConfirmationCodeInput`](crate::operation::resend_confirmation_code::ResendConfirmationCodeInput).
-    pub fn builder(
-    ) -> crate::operation::resend_confirmation_code::builders::ResendConfirmationCodeInputBuilder
-    {
+    pub fn builder() -> crate::operation::resend_confirmation_code::builders::ResendConfirmationCodeInputBuilder {
         crate::operation::resend_confirmation_code::builders::ResendConfirmationCodeInputBuilder::default()
     }
 }
@@ -105,9 +95,7 @@ pub struct ResendConfirmationCodeInputBuilder {
     pub(crate) user_context_data: ::std::option::Option<crate::types::UserContextDataType>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
-    pub(crate) client_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ResendConfirmationCodeInputBuilder {
     /// <p>The ID of the client associated with the user pool.</p>
@@ -144,17 +132,12 @@ impl ResendConfirmationCodeInputBuilder {
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn set_user_context_data(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContextDataType>,
-    ) -> Self {
+    pub fn set_user_context_data(mut self, input: ::std::option::Option<crate::types::UserContextDataType>) -> Self {
         self.user_context_data = input;
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn get_user_context_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserContextDataType> {
+    pub fn get_user_context_data(&self) -> &::std::option::Option<crate::types::UserContextDataType> {
         &self.user_context_data
     }
     /// <p>The <code>username</code> attribute of the user to whom you want to resend a confirmation code.</p>
@@ -177,17 +160,12 @@ impl ResendConfirmationCodeInputBuilder {
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code> calls.</p>
-    pub fn set_analytics_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMetadataType>,
-    ) -> Self {
+    pub fn set_analytics_metadata(mut self, input: ::std::option::Option<crate::types::AnalyticsMetadataType>) -> Self {
         self.analytics_metadata = input;
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code> calls.</p>
-    pub fn get_analytics_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
+    pub fn get_analytics_metadata(&self) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
         &self.analytics_metadata
     }
     /// Adds a key-value pair to `client_metadata`.
@@ -226,9 +204,7 @@ impl ResendConfirmationCodeInputBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.client_metadata = input;
         self
@@ -243,30 +219,22 @@ impl ResendConfirmationCodeInputBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.client_metadata
     }
     /// Consumes the builder and constructs a [`ResendConfirmationCodeInput`](crate::operation::resend_confirmation_code::ResendConfirmationCodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::resend_confirmation_code::ResendConfirmationCodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::resend_confirmation_code::ResendConfirmationCodeInput {
-                client_id: self.client_id,
-                secret_hash: self.secret_hash,
-                user_context_data: self.user_context_data,
-                username: self.username,
-                analytics_metadata: self.analytics_metadata,
-                client_metadata: self.client_metadata,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::resend_confirmation_code::ResendConfirmationCodeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::resend_confirmation_code::ResendConfirmationCodeInput {
+            client_id: self.client_id,
+            secret_hash: self.secret_hash,
+            user_context_data: self.user_context_data,
+            username: self.username,
+            analytics_metadata: self.analytics_metadata,
+            client_metadata: self.client_metadata,
+        })
     }
 }
 impl ::std::fmt::Debug for ResendConfirmationCodeInputBuilder {

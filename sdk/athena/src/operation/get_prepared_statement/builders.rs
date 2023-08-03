@@ -37,9 +37,7 @@ impl GetPreparedStatementFluentBuilder {
         }
     }
     /// Access the GetPreparedStatement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_prepared_statement::builders::GetPreparedStatementInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_prepared_statement::builders::GetPreparedStatementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetPreparedStatementFluentBuilder {
             crate::operation::get_prepared_statement::GetPreparedStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_prepared_statement::GetPreparedStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_prepared_statement::GetPreparedStatementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetPreparedStatementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetPreparedStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_prepared_statement::GetPreparedStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_prepared_statement::GetPreparedStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_prepared_statement::GetPreparedStatementError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetPreparedStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_prepared_statement::GetPreparedStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_prepared_statement::GetPreparedStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_prepared_statement::GetPreparedStatementError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetPreparedStatementFluentBuilder {
             crate::operation::get_prepared_statement::GetPreparedStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_prepared_statement::GetPreparedStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_prepared_statement::GetPreparedStatementError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the prepared statement to retrieve.</p>
-    pub fn statement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.statement_name(input.into());
         self
     }
     /// <p>The name of the prepared statement to retrieve.</p>
-    pub fn set_statement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_statement_name(input);
         self
     }

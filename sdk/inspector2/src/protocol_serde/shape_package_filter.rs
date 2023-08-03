@@ -50,17 +50,9 @@ pub fn ser_package_filter(
 
 pub(crate) fn de_package_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::PackageFilter>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::PackageFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -70,75 +62,42 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "name" => {
-                                builder = builder.set_name(
-                                    crate::protocol_serde::shape_string_filter::de_string_filter(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "version" => {
-                                builder = builder.set_version(
-                                    crate::protocol_serde::shape_string_filter::de_string_filter(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "epoch" => {
-                                builder = builder.set_epoch(
-                                    crate::protocol_serde::shape_number_filter::de_number_filter(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "release" => {
-                                builder = builder.set_release(
-                                    crate::protocol_serde::shape_string_filter::de_string_filter(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "architecture" => {
-                                builder = builder.set_architecture(
-                                    crate::protocol_serde::shape_string_filter::de_string_filter(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "sourceLayerHash" => {
-                                builder = builder.set_source_layer_hash(
-                                    crate::protocol_serde::shape_string_filter::de_string_filter(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "sourceLambdaLayerArn" => {
-                                builder = builder.set_source_lambda_layer_arn(
-                                    crate::protocol_serde::shape_string_filter::de_string_filter(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "name" => {
+                            builder = builder.set_name(crate::protocol_serde::shape_string_filter::de_string_filter(tokens)?);
                         }
-                    }
+                        "version" => {
+                            builder = builder.set_version(crate::protocol_serde::shape_string_filter::de_string_filter(tokens)?);
+                        }
+                        "epoch" => {
+                            builder = builder.set_epoch(crate::protocol_serde::shape_number_filter::de_number_filter(tokens)?);
+                        }
+                        "release" => {
+                            builder = builder.set_release(crate::protocol_serde::shape_string_filter::de_string_filter(tokens)?);
+                        }
+                        "architecture" => {
+                            builder = builder.set_architecture(crate::protocol_serde::shape_string_filter::de_string_filter(tokens)?);
+                        }
+                        "sourceLayerHash" => {
+                            builder = builder.set_source_layer_hash(crate::protocol_serde::shape_string_filter::de_string_filter(tokens)?);
+                        }
+                        "sourceLambdaLayerArn" => {
+                            builder = builder.set_source_lambda_layer_arn(crate::protocol_serde::shape_string_filter::de_string_filter(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -28,7 +28,7 @@ impl PutClusterCapacityProvidersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutClusterCapacityProvidersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersInputBuilder,
+    inner: crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersInputBuilder,
 }
 impl PutClusterCapacityProvidersFluentBuilder {
     /// Creates a new `PutClusterCapacityProviders`.
@@ -39,7 +39,7 @@ impl PutClusterCapacityProvidersFluentBuilder {
         }
     }
     /// Access the PutClusterCapacityProviders as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl PutClusterCapacityProvidersFluentBuilder {
             crate::operation::put_cluster_capacity_providers::PutClusterCapacityProviders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl PutClusterCapacityProvidersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl PutClusterCapacityProvidersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl PutClusterCapacityProvidersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl PutClusterCapacityProvidersFluentBuilder {
             crate::operation::put_cluster_capacity_providers::PutClusterCapacityProviders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError>,
     > {
         self.customize_middleware().await
     }
@@ -143,29 +132,21 @@ impl PutClusterCapacityProvidersFluentBuilder {
     /// <p>The name of one or more capacity providers to associate with the cluster.</p>
     /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
-    pub fn capacity_providers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_providers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.capacity_providers(input.into());
         self
     }
     /// <p>The name of one or more capacity providers to associate with the cluster.</p>
     /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
-    pub fn set_capacity_providers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_capacity_providers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_capacity_providers(input);
         self
     }
     /// <p>The name of one or more capacity providers to associate with the cluster.</p>
     /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
-    pub fn get_capacity_providers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capacity_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_capacity_providers()
     }
     /// Appends an item to `defaultCapacityProviderStrategy`.
@@ -177,10 +158,7 @@ impl PutClusterCapacityProvidersFluentBuilder {
     /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
     /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
-    pub fn default_capacity_provider_strategy(
-        mut self,
-        input: crate::types::CapacityProviderStrategyItem,
-    ) -> Self {
+    pub fn default_capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
         self.inner = self.inner.default_capacity_provider_strategy(input);
         self
     }
@@ -201,9 +179,7 @@ impl PutClusterCapacityProvidersFluentBuilder {
     /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
     /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
-    pub fn get_default_capacity_provider_strategy(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
+    pub fn get_default_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
         self.inner.get_default_capacity_provider_strategy()
     }
 }

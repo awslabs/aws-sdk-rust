@@ -30,9 +30,7 @@ impl FieldSortOptions {
 
 /// A builder for [`FieldSortOptions`](crate::types::FieldSortOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldSortOptionsBuilder {
     pub(crate) field_sort: ::std::option::Option<crate::types::FieldSort>,
     pub(crate) column_sort: ::std::option::Option<crate::types::ColumnSort>,
@@ -58,10 +56,7 @@ impl FieldSortOptionsBuilder {
         self
     }
     /// <p>The sort configuration for a column that is not used in a field well.</p>
-    pub fn set_column_sort(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnSort>,
-    ) -> Self {
+    pub fn set_column_sort(mut self, input: ::std::option::Option<crate::types::ColumnSort>) -> Self {
         self.column_sort = input;
         self
     }

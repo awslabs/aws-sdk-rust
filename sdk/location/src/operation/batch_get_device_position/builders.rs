@@ -26,8 +26,7 @@ impl BatchGetDevicePositionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetDevicePositionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::batch_get_device_position::builders::BatchGetDevicePositionInputBuilder,
+    inner: crate::operation::batch_get_device_position::builders::BatchGetDevicePositionInputBuilder,
 }
 impl BatchGetDevicePositionFluentBuilder {
     /// Creates a new `BatchGetDevicePosition`.
@@ -38,10 +37,7 @@ impl BatchGetDevicePositionFluentBuilder {
         }
     }
     /// Access the BatchGetDevicePosition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_device_position::builders::BatchGetDevicePositionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_get_device_position::builders::BatchGetDevicePositionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl BatchGetDevicePositionFluentBuilder {
             crate::operation::batch_get_device_position::BatchGetDevicePosition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_device_position::BatchGetDevicePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_device_position::BatchGetDevicePositionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl BatchGetDevicePositionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl BatchGetDevicePositionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_device_position::BatchGetDevicePositionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_device_position::BatchGetDevicePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_device_position::BatchGetDevicePositionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl BatchGetDevicePositionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_device_position::BatchGetDevicePositionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_device_position::BatchGetDevicePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_device_position::BatchGetDevicePositionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl BatchGetDevicePositionFluentBuilder {
             crate::operation::batch_get_device_position::BatchGetDevicePosition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_device_position::BatchGetDevicePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_device_position::BatchGetDevicePositionError>,
     > {
         self.customize_middleware().await
     }
@@ -154,10 +139,7 @@ impl BatchGetDevicePositionFluentBuilder {
     /// <ul>
     /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
     /// </ul>
-    pub fn set_device_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_device_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_device_ids(input);
         self
     }

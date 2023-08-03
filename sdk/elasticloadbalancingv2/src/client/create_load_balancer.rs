@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLoadBalancerOutput`](crate::operation::create_load_balancer::CreateLoadBalancerOutput) with field(s):
     ///   - [`load_balancers(Option<Vec<LoadBalancer>>)`](crate::operation::create_load_balancer::CreateLoadBalancerOutput::load_balancers): <p>Information about the load balancer.</p>
     /// - On failure, responds with [`SdkError<CreateLoadBalancerError>`](crate::operation::create_load_balancer::CreateLoadBalancerError)
-    pub fn create_load_balancer(
-        &self,
-    ) -> crate::operation::create_load_balancer::builders::CreateLoadBalancerFluentBuilder {
-        crate::operation::create_load_balancer::builders::CreateLoadBalancerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_load_balancer(&self) -> crate::operation::create_load_balancer::builders::CreateLoadBalancerFluentBuilder {
+        crate::operation::create_load_balancer::builders::CreateLoadBalancerFluentBuilder::new(self.handle.clone())
     }
 }

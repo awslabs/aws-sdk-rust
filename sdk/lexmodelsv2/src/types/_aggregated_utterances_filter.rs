@@ -24,9 +24,7 @@ impl AggregatedUtterancesFilter {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
-    pub fn operator(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AggregatedUtterancesFilterOperator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::AggregatedUtterancesFilterOperator> {
         self.operator.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl AggregatedUtterancesFilter {
 
 /// A builder for [`AggregatedUtterancesFilter`](crate::types::AggregatedUtterancesFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregatedUtterancesFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AggregatedUtterancesFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -54,10 +50,7 @@ impl AggregatedUtterancesFilterBuilder {
         self
     }
     /// <p>The name of the field to filter the utterance list.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregatedUtterancesFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AggregatedUtterancesFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -77,10 +70,7 @@ impl AggregatedUtterancesFilterBuilder {
         self
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -94,17 +84,12 @@ impl AggregatedUtterancesFilterBuilder {
         self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregatedUtterancesFilterOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::AggregatedUtterancesFilterOperator>) -> Self {
         self.operator = input;
         self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
-    pub fn get_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregatedUtterancesFilterOperator> {
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::AggregatedUtterancesFilterOperator> {
         &self.operator
     }
     /// Consumes the builder and constructs a [`AggregatedUtterancesFilter`](crate::types::AggregatedUtterancesFilter).

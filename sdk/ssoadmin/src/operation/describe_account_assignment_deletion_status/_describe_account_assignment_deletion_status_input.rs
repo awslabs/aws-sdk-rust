@@ -22,16 +22,14 @@ impl DescribeAccountAssignmentDeletionStatusInput {
 }
 impl DescribeAccountAssignmentDeletionStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAssignmentDeletionStatusInput`](crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusInput).
-    pub fn builder() -> crate::operation::describe_account_assignment_deletion_status::builders::DescribeAccountAssignmentDeletionStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_account_assignment_deletion_status::builders::DescribeAccountAssignmentDeletionStatusInputBuilder {
         crate::operation::describe_account_assignment_deletion_status::builders::DescribeAccountAssignmentDeletionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountAssignmentDeletionStatusInput`](crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountAssignmentDeletionStatusInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_assignment_deletion_request_id: ::std::option::Option<::std::string::String>,
@@ -52,36 +50,31 @@ impl DescribeAccountAssignmentDeletionStatusInputBuilder {
         &self.instance_arn
     }
     /// <p>The identifier that is used to track the request operation progress.</p>
-    pub fn account_assignment_deletion_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_assignment_deletion_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_assignment_deletion_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier that is used to track the request operation progress.</p>
-    pub fn set_account_assignment_deletion_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_account_assignment_deletion_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_assignment_deletion_request_id = input;
         self
     }
     /// <p>The identifier that is used to track the request operation progress.</p>
-    pub fn get_account_assignment_deletion_request_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_account_assignment_deletion_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_assignment_deletion_request_id
     }
     /// Consumes the builder and constructs a [`DescribeAccountAssignmentDeletionStatusInput`](crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusInput {
-                instance_arn: self.instance_arn
-                ,
-                account_assignment_deletion_request_id: self.account_assignment_deletion_request_id
-                ,
-            }
+                instance_arn: self.instance_arn,
+                account_assignment_deletion_request_id: self.account_assignment_deletion_request_id,
+            },
         )
     }
 }

@@ -27,15 +27,11 @@ impl AppValidationConfiguration {
         self.name.as_deref()
     }
     /// <p>The validation strategy.</p>
-    pub fn app_validation_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppValidationStrategy> {
+    pub fn app_validation_strategy(&self) -> ::std::option::Option<&crate::types::AppValidationStrategy> {
         self.app_validation_strategy.as_ref()
     }
     /// <p>The validation parameters.</p>
-    pub fn ssm_validation_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SsmValidationParameters> {
+    pub fn ssm_validation_parameters(&self) -> ::std::option::Option<&crate::types::SsmValidationParameters> {
         self.ssm_validation_parameters.as_ref()
     }
 }
@@ -48,30 +44,21 @@ impl AppValidationConfiguration {
 
 /// A builder for [`AppValidationConfiguration`](crate::types::AppValidationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppValidationConfigurationBuilder {
     pub(crate) validation_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) app_validation_strategy: ::std::option::Option<crate::types::AppValidationStrategy>,
-    pub(crate) ssm_validation_parameters:
-        ::std::option::Option<crate::types::SsmValidationParameters>,
+    pub(crate) ssm_validation_parameters: ::std::option::Option<crate::types::SsmValidationParameters>,
 }
 impl AppValidationConfigurationBuilder {
     /// <p>The ID of the validation.</p>
-    pub fn validation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the validation.</p>
-    pub fn set_validation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_id = input;
         self
     }
@@ -99,39 +86,26 @@ impl AppValidationConfigurationBuilder {
         self
     }
     /// <p>The validation strategy.</p>
-    pub fn set_app_validation_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::AppValidationStrategy>,
-    ) -> Self {
+    pub fn set_app_validation_strategy(mut self, input: ::std::option::Option<crate::types::AppValidationStrategy>) -> Self {
         self.app_validation_strategy = input;
         self
     }
     /// <p>The validation strategy.</p>
-    pub fn get_app_validation_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppValidationStrategy> {
+    pub fn get_app_validation_strategy(&self) -> &::std::option::Option<crate::types::AppValidationStrategy> {
         &self.app_validation_strategy
     }
     /// <p>The validation parameters.</p>
-    pub fn ssm_validation_parameters(
-        mut self,
-        input: crate::types::SsmValidationParameters,
-    ) -> Self {
+    pub fn ssm_validation_parameters(mut self, input: crate::types::SsmValidationParameters) -> Self {
         self.ssm_validation_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The validation parameters.</p>
-    pub fn set_ssm_validation_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::SsmValidationParameters>,
-    ) -> Self {
+    pub fn set_ssm_validation_parameters(mut self, input: ::std::option::Option<crate::types::SsmValidationParameters>) -> Self {
         self.ssm_validation_parameters = input;
         self
     }
     /// <p>The validation parameters.</p>
-    pub fn get_ssm_validation_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::SsmValidationParameters> {
+    pub fn get_ssm_validation_parameters(&self) -> &::std::option::Option<crate::types::SsmValidationParameters> {
         &self.ssm_validation_parameters
     }
     /// Consumes the builder and constructs a [`AppValidationConfiguration`](crate::types::AppValidationConfiguration).

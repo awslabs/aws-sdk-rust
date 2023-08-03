@@ -30,9 +30,7 @@ impl DatasetTrigger {
 
 /// A builder for [`DatasetTrigger`](crate::types::DatasetTrigger).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetTriggerBuilder {
     pub(crate) schedule: ::std::option::Option<crate::types::Schedule>,
     pub(crate) dataset: ::std::option::Option<crate::types::TriggeringDataset>,
@@ -58,10 +56,7 @@ impl DatasetTriggerBuilder {
         self
     }
     /// <p>The dataset whose content creation triggers the creation of this dataset's contents.</p>
-    pub fn set_dataset(
-        mut self,
-        input: ::std::option::Option<crate::types::TriggeringDataset>,
-    ) -> Self {
+    pub fn set_dataset(mut self, input: ::std::option::Option<crate::types::TriggeringDataset>) -> Self {
         self.dataset = input;
         self
     }

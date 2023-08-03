@@ -23,9 +23,7 @@ impl ListPricingPlansFilter {
 
 /// A builder for [`ListPricingPlansFilter`](crate::types::ListPricingPlansFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPricingPlansFilterBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl ListPricingPlansFilterBuilder {
         self
     }
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.arns = input;
         self
     }

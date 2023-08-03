@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateProfilesOutput {
 }
 impl AssociateProfilesOutput {
     /// Creates a new builder-style object to manufacture [`AssociateProfilesOutput`](crate::operation::associate_profiles::AssociateProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_profiles::builders::AssociateProfilesOutputBuilder {
+    pub fn builder() -> crate::operation::associate_profiles::builders::AssociateProfilesOutputBuilder {
         crate::operation::associate_profiles::builders::AssociateProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateProfilesOutput`](crate::operation::associate_profiles::AssociateProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateProfilesOutputBuilder {
     _request_id: Option<String>,
 }

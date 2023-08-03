@@ -49,9 +49,7 @@ impl GetTemplateInput {
 
 /// A builder for [`GetTemplateInput`](crate::operation::get_template::GetTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemplateInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) change_set_name: ::std::option::Option<::std::string::String>,
@@ -88,18 +86,12 @@ impl GetTemplateInputBuilder {
         &self.stack_name
     }
     /// <p>The name or Amazon Resource Name (ARN) of a change set for which CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>
-    pub fn change_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of a change set for which CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>
-    pub fn set_change_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_name = input;
         self
     }
@@ -115,10 +107,7 @@ impl GetTemplateInputBuilder {
     }
     /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after CloudFormation has processed all transforms, specify <code>Processed</code>.</p>
     /// <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, CloudFormation specifies <code>Processed</code>.</p>
-    pub fn set_template_stage(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateStage>,
-    ) -> Self {
+    pub fn set_template_stage(mut self, input: ::std::option::Option<crate::types::TemplateStage>) -> Self {
         self.template_stage = input;
         self
     }
@@ -128,12 +117,7 @@ impl GetTemplateInputBuilder {
         &self.template_stage
     }
     /// Consumes the builder and constructs a [`GetTemplateInput`](crate::operation::get_template::GetTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_template::GetTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_template::GetTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_template::GetTemplateInput {
             stack_name: self.stack_name,
             change_set_name: self.change_set_name,

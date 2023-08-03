@@ -21,9 +21,7 @@ pub enum LoggingFormat {
 impl LoggingFormat {
     /// Tries to convert the enum instance into [`Json`](crate::types::LoggingFormat::Json), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_json(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<crate::types::JsonFormatRef>, &Self> {
+    pub fn as_json(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::JsonFormatRef>, &Self> {
         if let LoggingFormat::Json(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

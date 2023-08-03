@@ -26,8 +26,7 @@ impl GetSchemaCreationStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSchemaCreationStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusInputBuilder,
+    inner: crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusInputBuilder,
 }
 impl GetSchemaCreationStatusFluentBuilder {
     /// Creates a new `GetSchemaCreationStatus`.
@@ -38,10 +37,7 @@ impl GetSchemaCreationStatusFluentBuilder {
         }
     }
     /// Access the GetSchemaCreationStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetSchemaCreationStatusFluentBuilder {
             crate::operation::get_schema_creation_status::GetSchemaCreationStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_creation_status::GetSchemaCreationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_creation_status::GetSchemaCreationStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetSchemaCreationStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetSchemaCreationStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_creation_status::GetSchemaCreationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_creation_status::GetSchemaCreationStatusError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetSchemaCreationStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_creation_status::GetSchemaCreationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_creation_status::GetSchemaCreationStatusError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetSchemaCreationStatusFluentBuilder {
             crate::operation::get_schema_creation_status::GetSchemaCreationStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_schema_creation_status::GetSchemaCreationStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_schema_creation_status::GetSchemaCreationStatusError>,
     > {
         self.customize_middleware().await
     }

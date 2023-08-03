@@ -27,7 +27,7 @@ impl CreateTopicRuleDestinationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTopicRuleDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationInputBuilder,
+    inner: crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationInputBuilder,
 }
 impl CreateTopicRuleDestinationFluentBuilder {
     /// Creates a new `CreateTopicRuleDestination`.
@@ -38,7 +38,7 @@ impl CreateTopicRuleDestinationFluentBuilder {
         }
     }
     /// Access the CreateTopicRuleDestination as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateTopicRuleDestinationFluentBuilder {
             crate::operation::create_topic_rule_destination::CreateTopicRuleDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateTopicRuleDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateTopicRuleDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateTopicRuleDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -115,32 +106,22 @@ impl CreateTopicRuleDestinationFluentBuilder {
             crate::operation::create_topic_rule_destination::CreateTopicRuleDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The topic rule destination configuration.</p>
-    pub fn destination_configuration(
-        mut self,
-        input: crate::types::TopicRuleDestinationConfiguration,
-    ) -> Self {
+    pub fn destination_configuration(mut self, input: crate::types::TopicRuleDestinationConfiguration) -> Self {
         self.inner = self.inner.destination_configuration(input);
         self
     }
     /// <p>The topic rule destination configuration.</p>
-    pub fn set_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRuleDestinationConfiguration>,
-    ) -> Self {
+    pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::TopicRuleDestinationConfiguration>) -> Self {
         self.inner = self.inner.set_destination_configuration(input);
         self
     }
     /// <p>The topic rule destination configuration.</p>
-    pub fn get_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TopicRuleDestinationConfiguration> {
+    pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::TopicRuleDestinationConfiguration> {
         self.inner.get_destination_configuration()
     }
 }

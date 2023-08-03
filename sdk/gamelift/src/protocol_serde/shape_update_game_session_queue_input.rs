@@ -18,10 +18,7 @@ pub fn ser_update_game_session_queue_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_player_latency_policy::ser_player_latency_policy(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_player_latency_policy::ser_player_latency_policy(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -42,19 +39,13 @@ pub fn ser_update_game_session_queue_input(
     if let Some(var_11) = &input.filter_configuration {
         #[allow(unused_mut)]
         let mut object_12 = object.key("FilterConfiguration").start_object();
-        crate::protocol_serde::shape_filter_configuration::ser_filter_configuration(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_filter_configuration::ser_filter_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.priority_configuration {
         #[allow(unused_mut)]
         let mut object_14 = object.key("PriorityConfiguration").start_object();
-        crate::protocol_serde::shape_priority_configuration::ser_priority_configuration(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_priority_configuration::ser_priority_configuration(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.custom_event_data {

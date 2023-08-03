@@ -45,9 +45,7 @@ impl ImageResponseCard {
 
 /// A builder for [`ImageResponseCard`](crate::types::ImageResponseCard).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageResponseCardBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) subtitle: ::std::option::Option<::std::string::String>,
@@ -109,10 +107,7 @@ impl ImageResponseCardBuilder {
         self
     }
     /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
-    pub fn set_buttons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Button>>,
-    ) -> Self {
+    pub fn set_buttons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Button>>) -> Self {
         self.buttons = input;
         self
     }

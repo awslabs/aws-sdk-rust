@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`compliance_items(Option<Vec<ComplianceItem>>)`](crate::operation::list_compliance_items::ListComplianceItemsOutput::compliance_items): <p>A list of compliance information for the specified resource ID. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_compliance_items::ListComplianceItemsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListComplianceItemsError>`](crate::operation::list_compliance_items::ListComplianceItemsError)
-    pub fn list_compliance_items(
-        &self,
-    ) -> crate::operation::list_compliance_items::builders::ListComplianceItemsFluentBuilder {
-        crate::operation::list_compliance_items::builders::ListComplianceItemsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_compliance_items(&self) -> crate::operation::list_compliance_items::builders::ListComplianceItemsFluentBuilder {
+        crate::operation::list_compliance_items::builders::ListComplianceItemsFluentBuilder::new(self.handle.clone())
     }
 }

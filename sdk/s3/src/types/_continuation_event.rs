@@ -13,9 +13,7 @@ impl ContinuationEvent {
 
 /// A builder for [`ContinuationEvent`](crate::types::ContinuationEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContinuationEventBuilder {}
 impl ContinuationEventBuilder {
     /// Consumes the builder and constructs a [`ContinuationEvent`](crate::types::ContinuationEvent).

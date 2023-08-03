@@ -27,34 +27,27 @@ impl ::std::fmt::Display for LifecycleEventAlreadyCompletedException {
     }
 }
 impl ::std::error::Error for LifecycleEventAlreadyCompletedException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::LifecycleEventAlreadyCompletedException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::LifecycleEventAlreadyCompletedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for LifecycleEventAlreadyCompletedException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for LifecycleEventAlreadyCompletedException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl LifecycleEventAlreadyCompletedException {
     /// Creates a new builder-style object to manufacture [`LifecycleEventAlreadyCompletedException`](crate::types::error::LifecycleEventAlreadyCompletedException).
-    pub fn builder() -> crate::types::error::builders::LifecycleEventAlreadyCompletedExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::LifecycleEventAlreadyCompletedExceptionBuilder {
         crate::types::error::builders::LifecycleEventAlreadyCompletedExceptionBuilder::default()
     }
 }
 
 /// A builder for [`LifecycleEventAlreadyCompletedException`](crate::types::error::LifecycleEventAlreadyCompletedException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifecycleEventAlreadyCompletedExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl LifecycleEventAlreadyCompletedExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

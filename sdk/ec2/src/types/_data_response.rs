@@ -65,9 +65,7 @@ impl DataResponse {
 
 /// A builder for [`DataResponse`](crate::types::DataResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataResponseBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
@@ -140,10 +138,7 @@ impl DataResponseBuilder {
         self
     }
     /// <p>The statistic used for the network performance request.</p>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::StatisticType>,
-    ) -> Self {
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::StatisticType>) -> Self {
         self.statistic = input;
         self
     }
@@ -177,17 +172,12 @@ impl DataResponseBuilder {
         self
     }
     /// <p>A list of <code>MetricPoint</code> objects.</p>
-    pub fn set_metric_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricPoint>>,
-    ) -> Self {
+    pub fn set_metric_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricPoint>>) -> Self {
         self.metric_points = input;
         self
     }
     /// <p>A list of <code>MetricPoint</code> objects.</p>
-    pub fn get_metric_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricPoint>> {
+    pub fn get_metric_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricPoint>> {
         &self.metric_points
     }
     /// Consumes the builder and constructs a [`DataResponse`](crate::types::DataResponse).

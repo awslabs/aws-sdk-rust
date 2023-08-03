@@ -29,16 +29,14 @@ impl ListDataSetImportHistoryInput {
 }
 impl ListDataSetImportHistoryInput {
     /// Creates a new builder-style object to manufacture [`ListDataSetImportHistoryInput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryInput).
-    pub fn builder() -> crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryInputBuilder{
+    pub fn builder() -> crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryInputBuilder {
         crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataSetImportHistoryInput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSetImportHistoryInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -74,18 +72,12 @@ impl ListDataSetImportHistoryInputBuilder {
         &self.max_results
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListDataSetImportHistoryInputBuilder {
         crate::operation::list_data_set_import_history::ListDataSetImportHistoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_data_set_import_history::ListDataSetImportHistoryInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                application_id: self.application_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_data_set_import_history::ListDataSetImportHistoryInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            application_id: self.application_id,
+        })
     }
 }

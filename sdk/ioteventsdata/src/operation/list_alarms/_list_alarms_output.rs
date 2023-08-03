@@ -35,9 +35,7 @@ impl ListAlarmsOutput {
 
 /// A builder for [`ListAlarmsOutput`](crate::operation::list_alarms::ListAlarmsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAlarmsOutputBuilder {
     pub(crate) alarm_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AlarmSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListAlarmsOutputBuilder {
         self
     }
     /// <p>A list that summarizes each alarm.</p>
-    pub fn set_alarm_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmSummary>>,
-    ) -> Self {
+    pub fn set_alarm_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmSummary>>) -> Self {
         self.alarm_summaries = input;
         self
     }
     /// <p>A list that summarizes each alarm.</p>
-    pub fn get_alarm_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmSummary>> {
+    pub fn get_alarm_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmSummary>> {
         &self.alarm_summaries
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>

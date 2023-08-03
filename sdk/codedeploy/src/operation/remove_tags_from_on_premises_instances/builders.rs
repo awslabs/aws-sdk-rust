@@ -5,16 +5,16 @@ pub use crate::operation::remove_tags_from_on_premises_instances::_remove_tags_f
 
 impl RemoveTagsFromOnPremisesInstancesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.remove_tags_from_on_premises_instances();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl RemoveTagsFromOnPremisesInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveTagsFromOnPremisesInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesInputBuilder,
+    inner: crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesInputBuilder,
 }
 impl RemoveTagsFromOnPremisesInstancesFluentBuilder {
     /// Creates a new `RemoveTagsFromOnPremisesInstances`.
@@ -37,15 +37,20 @@ impl RemoveTagsFromOnPremisesInstancesFluentBuilder {
         }
     }
     /// Access the RemoveTagsFromOnPremisesInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstances, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstances,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl RemoveTagsFromOnPremisesInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput, ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl RemoveTagsFromOnPremisesInstancesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput, ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstances, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstances,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `tags`.
@@ -104,10 +119,7 @@ impl RemoveTagsFromOnPremisesInstancesFluentBuilder {
         self
     }
     /// <p>The tag key-value pairs to remove from the on-premises instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -120,25 +132,17 @@ impl RemoveTagsFromOnPremisesInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
     ///
     /// <p>The names of the on-premises instances from which to remove tags.</p>
-    pub fn instance_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_names(input.into());
         self
     }
     /// <p>The names of the on-premises instances from which to remove tags.</p>
-    pub fn set_instance_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_names(input);
         self
     }
     /// <p>The names of the on-premises instances from which to remove tags.</p>
-    pub fn get_instance_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_names()
     }
 }

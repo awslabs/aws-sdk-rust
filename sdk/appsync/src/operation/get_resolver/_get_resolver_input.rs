@@ -36,9 +36,7 @@ impl GetResolverInput {
 
 /// A builder for [`GetResolverInput`](crate::operation::get_resolver::GetResolverInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResolverInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl GetResolverInputBuilder {
         &self.field_name
     }
     /// Consumes the builder and constructs a [`GetResolverInput`](crate::operation::get_resolver::GetResolverInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resolver::GetResolverInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resolver::GetResolverInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resolver::GetResolverInput {
             api_id: self.api_id,
             type_name: self.type_name,

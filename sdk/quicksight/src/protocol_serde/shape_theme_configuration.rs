@@ -6,10 +6,7 @@ pub fn ser_theme_configuration(
     if let Some(var_1) = &input.data_color_palette {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DataColorPalette").start_object();
-        crate::protocol_serde::shape_data_color_palette::ser_data_color_palette(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_data_color_palette::ser_data_color_palette(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.ui_color_palette {
@@ -35,17 +32,9 @@ pub fn ser_theme_configuration(
 
 pub(crate) fn de_theme_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ThemeConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ThemeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -55,48 +44,33 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DataColorPalette" => {
-                                builder = builder.set_data_color_palette(
-                                    crate::protocol_serde::shape_data_color_palette::de_data_color_palette(tokens)?
-                                );
-                            }
-                            "UIColorPalette" => {
-                                builder = builder.set_ui_color_palette(
-                                    crate::protocol_serde::shape_ui_color_palette::de_ui_color_palette(tokens)?
-                                );
-                            }
-                            "Sheet" => {
-                                builder = builder.set_sheet(
-                                    crate::protocol_serde::shape_sheet_style::de_sheet_style(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "Typography" => {
-                                builder = builder.set_typography(
-                                    crate::protocol_serde::shape_typography::de_typography(tokens)?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DataColorPalette" => {
+                            builder = builder.set_data_color_palette(crate::protocol_serde::shape_data_color_palette::de_data_color_palette(tokens)?);
                         }
-                    }
+                        "UIColorPalette" => {
+                            builder = builder.set_ui_color_palette(crate::protocol_serde::shape_ui_color_palette::de_ui_color_palette(tokens)?);
+                        }
+                        "Sheet" => {
+                            builder = builder.set_sheet(crate::protocol_serde::shape_sheet_style::de_sheet_style(tokens)?);
+                        }
+                        "Typography" => {
+                            builder = builder.set_typography(crate::protocol_serde::shape_typography::de_typography(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

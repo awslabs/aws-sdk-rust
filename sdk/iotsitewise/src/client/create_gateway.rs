@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`gateway_id(Option<String>)`](crate::operation::create_gateway::CreateGatewayOutput::gateway_id): <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
     ///   - [`gateway_arn(Option<String>)`](crate::operation::create_gateway::CreateGatewayOutput::gateway_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>  <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
     /// - On failure, responds with [`SdkError<CreateGatewayError>`](crate::operation::create_gateway::CreateGatewayError)
-    pub fn create_gateway(
-        &self,
-    ) -> crate::operation::create_gateway::builders::CreateGatewayFluentBuilder {
-        crate::operation::create_gateway::builders::CreateGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_gateway(&self) -> crate::operation::create_gateway::builders::CreateGatewayFluentBuilder {
+        crate::operation::create_gateway::builders::CreateGatewayFluentBuilder::new(self.handle.clone())
     }
 }

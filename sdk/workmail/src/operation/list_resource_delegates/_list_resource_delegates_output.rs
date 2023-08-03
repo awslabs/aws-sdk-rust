@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListResourceDelegatesOutput {
 }
 impl ListResourceDelegatesOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceDelegatesOutput`](crate::operation::list_resource_delegates::ListResourceDelegatesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_delegates::builders::ListResourceDelegatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resource_delegates::builders::ListResourceDelegatesOutputBuilder {
         crate::operation::list_resource_delegates::builders::ListResourceDelegatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceDelegatesOutput`](crate::operation::list_resource_delegates::ListResourceDelegatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceDelegatesOutputBuilder {
     pub(crate) delegates: ::std::option::Option<::std::vec::Vec<crate::types::Delegate>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListResourceDelegatesOutputBuilder {
         self
     }
     /// <p>One page of the resource's delegates.</p>
-    pub fn set_delegates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Delegate>>,
-    ) -> Self {
+    pub fn set_delegates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Delegate>>) -> Self {
         self.delegates = input;
         self
     }

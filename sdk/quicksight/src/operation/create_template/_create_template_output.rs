@@ -63,9 +63,7 @@ impl CreateTemplateOutput {
 
 /// A builder for [`CreateTemplateOutput`](crate::operation::create_template::CreateTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTemplateOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) version_arn: ::std::option::Option<::std::string::String>,
@@ -124,10 +122,7 @@ impl CreateTemplateOutputBuilder {
         self
     }
     /// <p>The template creation status.</p>
-    pub fn set_creation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_creation_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.creation_status = input;
         self
     }

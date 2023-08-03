@@ -34,9 +34,7 @@ impl OrganizationAdditionalConfigurationResult {
 
 /// A builder for [`OrganizationAdditionalConfigurationResult`](crate::types::OrganizationAdditionalConfigurationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationAdditionalConfigurationResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     pub(crate) auto_enable: ::std::option::Option<crate::types::OrgFeatureStatus>,
@@ -48,17 +46,12 @@ impl OrganizationAdditionalConfigurationResultBuilder {
         self
     }
     /// <p>The name of the additional configuration that is configured for the member accounts within the organization.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the additional configuration that is configured for the member accounts within the organization.</p>
-    pub fn get_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
         &self.name
     }
     /// <p>Describes how The status of the additional configuration that are configured for the member accounts within the organization.</p>
@@ -71,10 +64,7 @@ impl OrganizationAdditionalConfigurationResultBuilder {
     /// <p>Describes how The status of the additional configuration that are configured for the member accounts within the organization.</p>
     /// <p>If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts when they join the organization.</p>
     /// <p>If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they join the organization.</p>
-    pub fn set_auto_enable(
-        mut self,
-        input: ::std::option::Option<crate::types::OrgFeatureStatus>,
-    ) -> Self {
+    pub fn set_auto_enable(mut self, input: ::std::option::Option<crate::types::OrgFeatureStatus>) -> Self {
         self.auto_enable = input;
         self
     }

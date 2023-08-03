@@ -29,9 +29,7 @@ impl ReserveContactOutput {
 
 /// A builder for [`ReserveContactOutput`](crate::operation::reserve_contact::ReserveContactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReserveContactOutputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`entities(Option<Vec<CodegenJobSummary>>)`](crate::operation::list_codegen_jobs::ListCodegenJobsOutput::entities): <p>The list of code generation jobs for the Amplify app.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_codegen_jobs::ListCodegenJobsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListCodegenJobsError>`](crate::operation::list_codegen_jobs::ListCodegenJobsError)
-    pub fn list_codegen_jobs(
-        &self,
-    ) -> crate::operation::list_codegen_jobs::builders::ListCodegenJobsFluentBuilder {
-        crate::operation::list_codegen_jobs::builders::ListCodegenJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_codegen_jobs(&self) -> crate::operation::list_codegen_jobs::builders::ListCodegenJobsFluentBuilder {
+        crate::operation::list_codegen_jobs::builders::ListCodegenJobsFluentBuilder::new(self.handle.clone())
     }
 }

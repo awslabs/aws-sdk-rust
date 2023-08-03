@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`username(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::username): <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     ///   - [`replication_user(Option<bool>)`](crate::operation::describe_user::DescribeUserOutput::replication_user): <p>Describes whether the user is intended for data replication</p>
     /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::operation::describe_user::DescribeUserError)
-    pub fn describe_user(
-        &self,
-    ) -> crate::operation::describe_user::builders::DescribeUserFluentBuilder {
-        crate::operation::describe_user::builders::DescribeUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_user(&self) -> crate::operation::describe_user::builders::DescribeUserFluentBuilder {
+        crate::operation::describe_user::builders::DescribeUserFluentBuilder::new(self.handle.clone())
     }
 }

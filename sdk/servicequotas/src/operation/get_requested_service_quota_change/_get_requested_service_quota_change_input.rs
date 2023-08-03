@@ -15,16 +15,14 @@ impl GetRequestedServiceQuotaChangeInput {
 }
 impl GetRequestedServiceQuotaChangeInput {
     /// Creates a new builder-style object to manufacture [`GetRequestedServiceQuotaChangeInput`](crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeInput).
-    pub fn builder() -> crate::operation::get_requested_service_quota_change::builders::GetRequestedServiceQuotaChangeInputBuilder{
+    pub fn builder() -> crate::operation::get_requested_service_quota_change::builders::GetRequestedServiceQuotaChangeInputBuilder {
         crate::operation::get_requested_service_quota_change::builders::GetRequestedServiceQuotaChangeInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRequestedServiceQuotaChangeInput`](crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRequestedServiceQuotaChangeInputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,7 @@ impl GetRequestedServiceQuotaChangeInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(
-            crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeInput {
-                request_id: self.request_id
-                ,
-            }
+            crate::operation::get_requested_service_quota_change::GetRequestedServiceQuotaChangeInput { request_id: self.request_id },
         )
     }
 }

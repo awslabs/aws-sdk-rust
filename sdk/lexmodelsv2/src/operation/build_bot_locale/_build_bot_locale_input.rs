@@ -36,9 +36,7 @@ impl BuildBotLocaleInput {
 
 /// A builder for [`BuildBotLocaleInput`](crate::operation::build_bot_locale::BuildBotLocaleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuildBotLocaleInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl BuildBotLocaleInputBuilder {
     /// Consumes the builder and constructs a [`BuildBotLocaleInput`](crate::operation::build_bot_locale::BuildBotLocaleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::build_bot_locale::BuildBotLocaleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::build_bot_locale::BuildBotLocaleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::build_bot_locale::BuildBotLocaleInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

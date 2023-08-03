@@ -50,9 +50,7 @@ impl SendBonusInput {
 
 /// A builder for [`SendBonusInput`](crate::operation::send_bonus::SendBonusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendBonusInputBuilder {
     pub(crate) worker_id: ::std::option::Option<::std::string::String>,
     pub(crate) bonus_amount: ::std::option::Option<::std::string::String>,
@@ -90,18 +88,12 @@ impl SendBonusInputBuilder {
         &self.bonus_amount
     }
     /// <p>The ID of the assignment for which this bonus is paid.</p>
-    pub fn assignment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the assignment for which this bonus is paid.</p>
-    pub fn set_assignment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assignment_id = input;
         self
     }
@@ -124,18 +116,12 @@ impl SendBonusInputBuilder {
         &self.reason
     }
     /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
-    pub fn unique_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn unique_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unique_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
-    pub fn set_unique_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_unique_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unique_request_token = input;
         self
     }
@@ -144,12 +130,7 @@ impl SendBonusInputBuilder {
         &self.unique_request_token
     }
     /// Consumes the builder and constructs a [`SendBonusInput`](crate::operation::send_bonus::SendBonusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_bonus::SendBonusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_bonus::SendBonusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_bonus::SendBonusInput {
             worker_id: self.worker_id,
             bonus_amount: self.bonus_amount,

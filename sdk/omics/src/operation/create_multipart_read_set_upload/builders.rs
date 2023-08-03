@@ -26,7 +26,7 @@ impl CreateMultipartReadSetUploadInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMultipartReadSetUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_multipart_read_set_upload::builders::CreateMultipartReadSetUploadInputBuilder,
+    inner: crate::operation::create_multipart_read_set_upload::builders::CreateMultipartReadSetUploadInputBuilder,
 }
 impl CreateMultipartReadSetUploadFluentBuilder {
     /// Creates a new `CreateMultipartReadSetUpload`.
@@ -37,7 +37,7 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         }
     }
     /// Access the CreateMultipartReadSetUpload as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_multipart_read_set_upload::builders::CreateMultipartReadSetUploadInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_multipart_read_set_upload::builders::CreateMultipartReadSetUploadInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateMultipartReadSetUploadFluentBuilder {
             crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateMultipartReadSetUploadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateMultipartReadSetUploadFluentBuilder {
             crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The sequence store ID for the store that is the destination of the multipart uploads. </p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p> The sequence store ID for the store that is the destination of the multipart uploads. </p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
@@ -160,10 +143,7 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self
     }
     /// <p> The type of file being uploaded. </p>
-    pub fn set_source_file_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FileType>,
-    ) -> Self {
+    pub fn set_source_file_type(mut self, input: ::std::option::Option<crate::types::FileType>) -> Self {
         self.inner = self.inner.set_source_file_type(input);
         self
     }
@@ -200,18 +180,12 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self.inner.get_sample_id()
     }
     /// <p> Where the source originated. </p>
-    pub fn generated_from(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generated_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.generated_from(input.into());
         self
     }
     /// <p> Where the source originated. </p>
-    pub fn set_generated_from(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generated_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_generated_from(input);
         self
     }
@@ -220,18 +194,12 @@ impl CreateMultipartReadSetUploadFluentBuilder {
         self.inner.get_generated_from()
     }
     /// <p> The ARN of the reference. </p>
-    pub fn reference_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reference_arn(input.into());
         self
     }
     /// <p> The ARN of the reference. </p>
-    pub fn set_reference_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reference_arn(input);
         self
     }
@@ -272,30 +240,17 @@ impl CreateMultipartReadSetUploadFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> Any tags to add to the read set. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> Any tags to add to the read set. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> Any tags to add to the read set. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

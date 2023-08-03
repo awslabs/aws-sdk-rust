@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MediaInsightsPipelineConfigurationElementType {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,16 +69,16 @@ pub enum MediaInsightsPipelineConfigurationElementType {
 impl ::std::convert::From<&str> for MediaInsightsPipelineConfigurationElementType {
     fn from(s: &str) -> Self {
         match s {
-                        "AmazonTranscribeCallAnalyticsProcessor" => MediaInsightsPipelineConfigurationElementType::AmazonTranscribeCallAnalyticsProcessor,
-"AmazonTranscribeProcessor" => MediaInsightsPipelineConfigurationElementType::AmazonTranscribeProcessor,
-"KinesisDataStreamSink" => MediaInsightsPipelineConfigurationElementType::KinesisDataStreamSink,
-"LambdaFunctionSink" => MediaInsightsPipelineConfigurationElementType::LambdaFunctionSink,
-"S3RecordingSink" => MediaInsightsPipelineConfigurationElementType::S3RecordingSink,
-"SnsTopicSink" => MediaInsightsPipelineConfigurationElementType::SnsTopicSink,
-"SqsQueueSink" => MediaInsightsPipelineConfigurationElementType::SqsQueueSink,
-"VoiceAnalyticsProcessor" => MediaInsightsPipelineConfigurationElementType::VoiceAnalyticsProcessor,
-other => MediaInsightsPipelineConfigurationElementType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
+            "AmazonTranscribeCallAnalyticsProcessor" => MediaInsightsPipelineConfigurationElementType::AmazonTranscribeCallAnalyticsProcessor,
+            "AmazonTranscribeProcessor" => MediaInsightsPipelineConfigurationElementType::AmazonTranscribeProcessor,
+            "KinesisDataStreamSink" => MediaInsightsPipelineConfigurationElementType::KinesisDataStreamSink,
+            "LambdaFunctionSink" => MediaInsightsPipelineConfigurationElementType::LambdaFunctionSink,
+            "S3RecordingSink" => MediaInsightsPipelineConfigurationElementType::S3RecordingSink,
+            "SnsTopicSink" => MediaInsightsPipelineConfigurationElementType::SnsTopicSink,
+            "SqsQueueSink" => MediaInsightsPipelineConfigurationElementType::SqsQueueSink,
+            "VoiceAnalyticsProcessor" => MediaInsightsPipelineConfigurationElementType::VoiceAnalyticsProcessor,
+            other => MediaInsightsPipelineConfigurationElementType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
     }
 }
 impl ::std::str::FromStr for MediaInsightsPipelineConfigurationElementType {
@@ -98,16 +92,16 @@ impl MediaInsightsPipelineConfigurationElementType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-    MediaInsightsPipelineConfigurationElementType::AmazonTranscribeCallAnalyticsProcessor => "AmazonTranscribeCallAnalyticsProcessor",
-    MediaInsightsPipelineConfigurationElementType::AmazonTranscribeProcessor => "AmazonTranscribeProcessor",
-    MediaInsightsPipelineConfigurationElementType::KinesisDataStreamSink => "KinesisDataStreamSink",
-    MediaInsightsPipelineConfigurationElementType::LambdaFunctionSink => "LambdaFunctionSink",
-    MediaInsightsPipelineConfigurationElementType::S3RecordingSink => "S3RecordingSink",
-    MediaInsightsPipelineConfigurationElementType::SnsTopicSink => "SnsTopicSink",
-    MediaInsightsPipelineConfigurationElementType::SqsQueueSink => "SqsQueueSink",
-    MediaInsightsPipelineConfigurationElementType::VoiceAnalyticsProcessor => "VoiceAnalyticsProcessor",
-    MediaInsightsPipelineConfigurationElementType::Unknown(value) => value.as_str()
-}
+            MediaInsightsPipelineConfigurationElementType::AmazonTranscribeCallAnalyticsProcessor => "AmazonTranscribeCallAnalyticsProcessor",
+            MediaInsightsPipelineConfigurationElementType::AmazonTranscribeProcessor => "AmazonTranscribeProcessor",
+            MediaInsightsPipelineConfigurationElementType::KinesisDataStreamSink => "KinesisDataStreamSink",
+            MediaInsightsPipelineConfigurationElementType::LambdaFunctionSink => "LambdaFunctionSink",
+            MediaInsightsPipelineConfigurationElementType::S3RecordingSink => "S3RecordingSink",
+            MediaInsightsPipelineConfigurationElementType::SnsTopicSink => "SnsTopicSink",
+            MediaInsightsPipelineConfigurationElementType::SqsQueueSink => "SqsQueueSink",
+            MediaInsightsPipelineConfigurationElementType::VoiceAnalyticsProcessor => "VoiceAnalyticsProcessor",
+            MediaInsightsPipelineConfigurationElementType::Unknown(value) => value.as_str(),
+        }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {

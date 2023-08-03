@@ -5,16 +5,16 @@ pub use crate::operation::update_wireless_device_import_task::_update_wireless_d
 
 impl UpdateWirelessDeviceImportTaskInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_wireless_device_import_task();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateWirelessDeviceImportTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWirelessDeviceImportTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskInputBuilder,
+    inner: crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskInputBuilder,
 }
 impl UpdateWirelessDeviceImportTaskFluentBuilder {
     /// Creates a new `UpdateWirelessDeviceImportTask`.
@@ -37,15 +37,20 @@ impl UpdateWirelessDeviceImportTaskFluentBuilder {
         }
     }
     /// Access the UpdateWirelessDeviceImportTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTask, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTask,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl UpdateWirelessDeviceImportTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl UpdateWirelessDeviceImportTaskFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTask, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTask,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the import task to be updated.</p>
@@ -114,10 +129,7 @@ impl UpdateWirelessDeviceImportTaskFluentBuilder {
         self
     }
     /// <p>The Sidewalk-related parameters of the import task to be updated.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkUpdateImportInfo>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkUpdateImportInfo>) -> Self {
         self.inner = self.inner.set_sidewalk(input);
         self
     }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`uploads_list(Option<Vec<UploadListElement>>)`](crate::operation::list_multipart_uploads::ListMultipartUploadsOutput::uploads_list): <p>A list of in-progress multipart uploads.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_multipart_uploads::ListMultipartUploadsOutput::marker): <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListMultipartUploadsError>`](crate::operation::list_multipart_uploads::ListMultipartUploadsError)
-    pub fn list_multipart_uploads(
-        &self,
-    ) -> crate::operation::list_multipart_uploads::builders::ListMultipartUploadsFluentBuilder {
-        crate::operation::list_multipart_uploads::builders::ListMultipartUploadsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_multipart_uploads(&self) -> crate::operation::list_multipart_uploads::builders::ListMultipartUploadsFluentBuilder {
+        crate::operation::list_multipart_uploads::builders::ListMultipartUploadsFluentBuilder::new(self.handle.clone())
     }
 }

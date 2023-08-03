@@ -37,9 +37,7 @@ impl DescribeEnvironmentsFluentBuilder {
         }
     }
     /// Access the DescribeEnvironments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeEnvironmentsFluentBuilder {
             crate::operation::describe_environments::DescribeEnvironments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environments::DescribeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environments::DescribeEnvironmentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeEnvironmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeEnvironmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_environments::DescribeEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environments::DescribeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environments::DescribeEnvironmentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeEnvironmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_environments::DescribeEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environments::DescribeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environments::DescribeEnvironmentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeEnvironmentsFluentBuilder {
             crate::operation::describe_environments::DescribeEnvironments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environments::DescribeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environments::DescribeEnvironmentsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -143,18 +124,12 @@ impl DescribeEnvironmentsFluentBuilder {
         self.inner.get_application_name()
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_label(input.into());
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_label(input);
         self
     }
@@ -167,25 +142,17 @@ impl DescribeEnvironmentsFluentBuilder {
     /// To override the contents of this collection use [`set_environment_ids`](Self::set_environment_ids).
     ///
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
-    pub fn environment_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_ids(input.into());
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
-    pub fn set_environment_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_environment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_environment_ids(input);
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
-    pub fn get_environment_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_environment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_environment_ids()
     }
     /// Appends an item to `EnvironmentNames`.
@@ -193,25 +160,17 @@ impl DescribeEnvironmentsFluentBuilder {
     /// To override the contents of this collection use [`set_environment_names`](Self::set_environment_names).
     ///
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
-    pub fn environment_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_names(input.into());
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
-    pub fn set_environment_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_environment_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_environment_names(input);
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
-    pub fn get_environment_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_environment_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_environment_names()
     }
     /// <p>Indicates whether to include deleted environments:</p>
@@ -240,17 +199,12 @@ impl DescribeEnvironmentsFluentBuilder {
         self
     }
     /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>
-    pub fn set_included_deleted_back_to(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_included_deleted_back_to(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_included_deleted_back_to(input);
         self
     }
     /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>
-    pub fn get_included_deleted_back_to(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_included_deleted_back_to(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_included_deleted_back_to()
     }
     /// <p>For a paginated request. Specify a maximum number of environments to include in each response.</p>

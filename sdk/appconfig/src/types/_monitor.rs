@@ -30,9 +30,7 @@ impl Monitor {
 
 /// A builder for [`Monitor`](crate::types::Monitor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitorBuilder {
     pub(crate) alarm_arn: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_role_arn: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl MonitorBuilder {
         &self.alarm_arn
     }
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
-    pub fn alarm_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
-    pub fn set_alarm_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_role_arn = input;
         self
     }

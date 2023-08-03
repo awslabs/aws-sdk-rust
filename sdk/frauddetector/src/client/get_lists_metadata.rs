@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`lists(Option<Vec<AllowDenyList>>)`](crate::operation::get_lists_metadata::GetListsMetadataOutput::lists): <p> The metadata of the specified list or all lists under the account. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_lists_metadata::GetListsMetadataOutput::next_token): <p> The next page token. </p>
     /// - On failure, responds with [`SdkError<GetListsMetadataError>`](crate::operation::get_lists_metadata::GetListsMetadataError)
-    pub fn get_lists_metadata(
-        &self,
-    ) -> crate::operation::get_lists_metadata::builders::GetListsMetadataFluentBuilder {
-        crate::operation::get_lists_metadata::builders::GetListsMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_lists_metadata(&self) -> crate::operation::get_lists_metadata::builders::GetListsMetadataFluentBuilder {
+        crate::operation::get_lists_metadata::builders::GetListsMetadataFluentBuilder::new(self.handle.clone())
     }
 }

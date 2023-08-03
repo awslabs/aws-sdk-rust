@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeInstanceHealthOutput`](crate::operation::describe_instance_health::DescribeInstanceHealthOutput) with field(s):
     ///   - [`instance_states(Option<Vec<InstanceState>>)`](crate::operation::describe_instance_health::DescribeInstanceHealthOutput::instance_states): <p>Information about the health of the instances.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceHealthError>`](crate::operation::describe_instance_health::DescribeInstanceHealthError)
-    pub fn describe_instance_health(
-        &self,
-    ) -> crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder
-    {
+    pub fn describe_instance_health(&self) -> crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder {
         crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder::new(self.handle.clone())
     }
 }

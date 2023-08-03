@@ -52,9 +52,7 @@ impl GetProductsInput {
 
 /// A builder for [`GetProductsInput`](crate::operation::get_products::GetProductsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProductsInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -89,10 +87,7 @@ impl GetProductsInputBuilder {
         self
     }
     /// <p>The list of filters that limit the returned products. only products that match all filters are returned.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -102,19 +97,13 @@ impl GetProductsInputBuilder {
     }
     /// <p>The format version that you want the response to be in.</p>
     /// <p>Valid values are: <code>aws_v1</code> </p>
-    pub fn format_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format version that you want the response to be in.</p>
     /// <p>Valid values are: <code>aws_v1</code> </p>
-    pub fn set_format_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format_version = input;
         self
     }
@@ -152,12 +141,7 @@ impl GetProductsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetProductsInput`](crate::operation::get_products::GetProductsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_products::GetProductsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_products::GetProductsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_products::GetProductsInput {
             service_code: self.service_code,
             filters: self.filters,

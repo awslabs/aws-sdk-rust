@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetMetricStatisticsOutput {
 }
 impl GetMetricStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetMetricStatisticsOutput`](crate::operation::get_metric_statistics::GetMetricStatisticsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_metric_statistics::builders::GetMetricStatisticsOutputBuilder {
-        crate::operation::get_metric_statistics::builders::GetMetricStatisticsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_metric_statistics::builders::GetMetricStatisticsOutputBuilder {
+        crate::operation::get_metric_statistics::builders::GetMetricStatisticsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMetricStatisticsOutput`](crate::operation::get_metric_statistics::GetMetricStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMetricStatisticsOutputBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) datapoints: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>,
@@ -72,17 +68,12 @@ impl GetMetricStatisticsOutputBuilder {
         self
     }
     /// <p>The data points for the specified metric.</p>
-    pub fn set_datapoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>,
-    ) -> Self {
+    pub fn set_datapoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>) -> Self {
         self.datapoints = input;
         self
     }
     /// <p>The data points for the specified metric.</p>
-    pub fn get_datapoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Datapoint>> {
+    pub fn get_datapoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Datapoint>> {
         &self.datapoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

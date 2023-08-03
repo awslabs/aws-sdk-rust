@@ -37,9 +37,7 @@ impl UnprocessedSecurityControl {
 
 /// A builder for [`UnprocessedSecurityControl`](crate::types::UnprocessedSecurityControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnprocessedSecurityControlBuilder {
     pub(crate) security_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::UnprocessedErrorCode>,
@@ -47,18 +45,12 @@ pub struct UnprocessedSecurityControlBuilder {
 }
 impl UnprocessedSecurityControlBuilder {
     /// <p> The control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which a response couldn't be returned. </p>
-    pub fn security_control_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which a response couldn't be returned. </p>
-    pub fn set_security_control_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_id = input;
         self
     }
@@ -72,10 +64,7 @@ impl UnprocessedSecurityControlBuilder {
         self
     }
     /// <p> The error code for the unprocessed security control. </p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::UnprocessedErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::UnprocessedErrorCode>) -> Self {
         self.error_code = input;
         self
     }

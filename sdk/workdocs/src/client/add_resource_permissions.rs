@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`AddResourcePermissionsOutput`](crate::operation::add_resource_permissions::AddResourcePermissionsOutput) with field(s):
     ///   - [`share_results(Option<Vec<ShareResult>>)`](crate::operation::add_resource_permissions::AddResourcePermissionsOutput::share_results): <p>The share results.</p>
     /// - On failure, responds with [`SdkError<AddResourcePermissionsError>`](crate::operation::add_resource_permissions::AddResourcePermissionsError)
-    pub fn add_resource_permissions(
-        &self,
-    ) -> crate::operation::add_resource_permissions::builders::AddResourcePermissionsFluentBuilder
-    {
+    pub fn add_resource_permissions(&self) -> crate::operation::add_resource_permissions::builders::AddResourcePermissionsFluentBuilder {
         crate::operation::add_resource_permissions::builders::AddResourcePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

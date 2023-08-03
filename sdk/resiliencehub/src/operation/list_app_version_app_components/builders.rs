@@ -26,7 +26,7 @@ impl ListAppVersionAppComponentsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAppVersionAppComponentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsInputBuilder,
+    inner: crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsInputBuilder,
 }
 impl ListAppVersionAppComponentsFluentBuilder {
     /// Creates a new `ListAppVersionAppComponents`.
@@ -37,7 +37,7 @@ impl ListAppVersionAppComponentsFluentBuilder {
         }
     }
     /// Access the ListAppVersionAppComponents as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_app_version_app_components::builders::ListAppVersionAppComponentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListAppVersionAppComponentsFluentBuilder {
             crate::operation::list_app_version_app_components::ListAppVersionAppComponents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListAppVersionAppComponentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListAppVersionAppComponentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListAppVersionAppComponentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListAppVersionAppComponentsFluentBuilder {
             crate::operation::list_app_version_app_components::ListAppVersionAppComponents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_app_version_app_components::paginator::ListAppVersionAppComponentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_app_version_app_components::paginator::ListAppVersionAppComponentsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_app_version_app_components::paginator::ListAppVersionAppComponentsPaginator {
         crate::operation::list_app_version_app_components::paginator::ListAppVersionAppComponentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>

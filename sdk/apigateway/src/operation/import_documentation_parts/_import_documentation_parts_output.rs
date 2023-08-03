@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for ImportDocumentationPartsOutput {
 }
 impl ImportDocumentationPartsOutput {
     /// Creates a new builder-style object to manufacture [`ImportDocumentationPartsOutput`](crate::operation::import_documentation_parts::ImportDocumentationPartsOutput).
-    pub fn builder(
-    ) -> crate::operation::import_documentation_parts::builders::ImportDocumentationPartsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::import_documentation_parts::builders::ImportDocumentationPartsOutputBuilder {
         crate::operation::import_documentation_parts::builders::ImportDocumentationPartsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportDocumentationPartsOutput`](crate::operation::import_documentation_parts::ImportDocumentationPartsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportDocumentationPartsOutputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -59,10 +55,7 @@ impl ImportDocumentationPartsOutputBuilder {
         self
     }
     /// <p>A list of the returned documentation part identifiers.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
@@ -82,10 +75,7 @@ impl ImportDocumentationPartsOutputBuilder {
         self
     }
     /// <p>A list of warning messages reported during import of documentation parts.</p>
-    pub fn set_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.warnings = input;
         self
     }
@@ -103,9 +93,7 @@ impl ImportDocumentationPartsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ImportDocumentationPartsOutput`](crate::operation::import_documentation_parts::ImportDocumentationPartsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::import_documentation_parts::ImportDocumentationPartsOutput {
+    pub fn build(self) -> crate::operation::import_documentation_parts::ImportDocumentationPartsOutput {
         crate::operation::import_documentation_parts::ImportDocumentationPartsOutput {
             ids: self.ids,
             warnings: self.warnings,

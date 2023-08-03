@@ -39,9 +39,7 @@ impl Filter {
         self.numeric_range_filter.as_ref()
     }
     /// <p>A <code>NumericEqualityFilter</code> filters numeric values that equal or do not equal a given numeric value.</p>
-    pub fn numeric_equality_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NumericEqualityFilter> {
+    pub fn numeric_equality_filter(&self) -> ::std::option::Option<&crate::types::NumericEqualityFilter> {
         self.numeric_equality_filter.as_ref()
     }
     /// <p>A <code>TimeEqualityFilter</code> filters date-time values that equal or do not equal a given date/time value.</p>
@@ -53,9 +51,7 @@ impl Filter {
         self.time_range_filter.as_ref()
     }
     /// <p>A <code>RelativeDatesFilter</code> filters date values that are relative to a given date.</p>
-    pub fn relative_dates_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RelativeDatesFilter> {
+    pub fn relative_dates_filter(&self) -> ::std::option::Option<&crate::types::RelativeDatesFilter> {
         self.relative_dates_filter.as_ref()
     }
     /// <p>A <code>TopBottomFilter</code> filters data to the top or bottom values for a given column.</p>
@@ -72,9 +68,7 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) category_filter: ::std::option::Option<crate::types::CategoryFilter>,
     pub(crate) numeric_range_filter: ::std::option::Option<crate::types::NumericRangeFilter>,
@@ -93,10 +87,7 @@ impl FilterBuilder {
     }
     /// <p>A <code>CategoryFilter</code> filters text values.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html">Adding text filters</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn set_category_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::CategoryFilter>,
-    ) -> Self {
+    pub fn set_category_filter(mut self, input: ::std::option::Option<crate::types::CategoryFilter>) -> Self {
         self.category_filter = input;
         self
     }
@@ -111,17 +102,12 @@ impl FilterBuilder {
         self
     }
     /// <p>A <code>NumericRangeFilter</code> filters numeric values that are either inside or outside a given numeric range.</p>
-    pub fn set_numeric_range_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::NumericRangeFilter>,
-    ) -> Self {
+    pub fn set_numeric_range_filter(mut self, input: ::std::option::Option<crate::types::NumericRangeFilter>) -> Self {
         self.numeric_range_filter = input;
         self
     }
     /// <p>A <code>NumericRangeFilter</code> filters numeric values that are either inside or outside a given numeric range.</p>
-    pub fn get_numeric_range_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::NumericRangeFilter> {
+    pub fn get_numeric_range_filter(&self) -> &::std::option::Option<crate::types::NumericRangeFilter> {
         &self.numeric_range_filter
     }
     /// <p>A <code>NumericEqualityFilter</code> filters numeric values that equal or do not equal a given numeric value.</p>
@@ -130,17 +116,12 @@ impl FilterBuilder {
         self
     }
     /// <p>A <code>NumericEqualityFilter</code> filters numeric values that equal or do not equal a given numeric value.</p>
-    pub fn set_numeric_equality_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::NumericEqualityFilter>,
-    ) -> Self {
+    pub fn set_numeric_equality_filter(mut self, input: ::std::option::Option<crate::types::NumericEqualityFilter>) -> Self {
         self.numeric_equality_filter = input;
         self
     }
     /// <p>A <code>NumericEqualityFilter</code> filters numeric values that equal or do not equal a given numeric value.</p>
-    pub fn get_numeric_equality_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::NumericEqualityFilter> {
+    pub fn get_numeric_equality_filter(&self) -> &::std::option::Option<crate::types::NumericEqualityFilter> {
         &self.numeric_equality_filter
     }
     /// <p>A <code>TimeEqualityFilter</code> filters date-time values that equal or do not equal a given date/time value.</p>
@@ -149,17 +130,12 @@ impl FilterBuilder {
         self
     }
     /// <p>A <code>TimeEqualityFilter</code> filters date-time values that equal or do not equal a given date/time value.</p>
-    pub fn set_time_equality_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeEqualityFilter>,
-    ) -> Self {
+    pub fn set_time_equality_filter(mut self, input: ::std::option::Option<crate::types::TimeEqualityFilter>) -> Self {
         self.time_equality_filter = input;
         self
     }
     /// <p>A <code>TimeEqualityFilter</code> filters date-time values that equal or do not equal a given date/time value.</p>
-    pub fn get_time_equality_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeEqualityFilter> {
+    pub fn get_time_equality_filter(&self) -> &::std::option::Option<crate::types::TimeEqualityFilter> {
         &self.time_equality_filter
     }
     /// <p>A <code>TimeRangeFilter</code> filters date-time values that are either inside or outside a given date/time range.</p>
@@ -168,10 +144,7 @@ impl FilterBuilder {
         self
     }
     /// <p>A <code>TimeRangeFilter</code> filters date-time values that are either inside or outside a given date/time range.</p>
-    pub fn set_time_range_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeRangeFilter>,
-    ) -> Self {
+    pub fn set_time_range_filter(mut self, input: ::std::option::Option<crate::types::TimeRangeFilter>) -> Self {
         self.time_range_filter = input;
         self
     }
@@ -185,17 +158,12 @@ impl FilterBuilder {
         self
     }
     /// <p>A <code>RelativeDatesFilter</code> filters date values that are relative to a given date.</p>
-    pub fn set_relative_dates_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::RelativeDatesFilter>,
-    ) -> Self {
+    pub fn set_relative_dates_filter(mut self, input: ::std::option::Option<crate::types::RelativeDatesFilter>) -> Self {
         self.relative_dates_filter = input;
         self
     }
     /// <p>A <code>RelativeDatesFilter</code> filters date values that are relative to a given date.</p>
-    pub fn get_relative_dates_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelativeDatesFilter> {
+    pub fn get_relative_dates_filter(&self) -> &::std::option::Option<crate::types::RelativeDatesFilter> {
         &self.relative_dates_filter
     }
     /// <p>A <code>TopBottomFilter</code> filters data to the top or bottom values for a given column.</p>
@@ -204,10 +172,7 @@ impl FilterBuilder {
         self
     }
     /// <p>A <code>TopBottomFilter</code> filters data to the top or bottom values for a given column.</p>
-    pub fn set_top_bottom_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TopBottomFilter>,
-    ) -> Self {
+    pub fn set_top_bottom_filter(mut self, input: ::std::option::Option<crate::types::TopBottomFilter>) -> Self {
         self.top_bottom_filter = input;
         self
     }

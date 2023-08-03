@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`DeleteSpotDatafeedSubscriptionOutput`](crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionOutput)
     /// - On failure, responds with [`SdkError<DeleteSpotDatafeedSubscriptionError>`](crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionError)
-    pub fn delete_spot_datafeed_subscription(&self) -> crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionFluentBuilder{
+    pub fn delete_spot_datafeed_subscription(
+        &self,
+    ) -> crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionFluentBuilder {
         crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

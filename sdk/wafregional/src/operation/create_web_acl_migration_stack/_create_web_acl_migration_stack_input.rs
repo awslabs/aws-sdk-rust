@@ -39,16 +39,14 @@ impl CreateWebAclMigrationStackInput {
 }
 impl CreateWebAclMigrationStackInput {
     /// Creates a new builder-style object to manufacture [`CreateWebAclMigrationStackInput`](crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackInput).
-    pub fn builder() -> crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackInputBuilder{
+    pub fn builder() -> crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackInputBuilder {
         crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWebAclMigrationStackInput`](crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWebAclMigrationStackInputBuilder {
     pub(crate) web_acl_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
@@ -75,10 +73,7 @@ impl CreateWebAclMigrationStackInputBuilder {
     /// <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>
     /// <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>
     /// </ul>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -88,10 +83,7 @@ impl CreateWebAclMigrationStackInputBuilder {
     /// <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>
     /// <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>
     /// </ul>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -125,12 +117,10 @@ impl CreateWebAclMigrationStackInputBuilder {
         crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackInput {
-                web_acl_id: self.web_acl_id,
-                s3_bucket_name: self.s3_bucket_name,
-                ignore_unsupported_type: self.ignore_unsupported_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackInput {
+            web_acl_id: self.web_acl_id,
+            s3_bucket_name: self.s3_bucket_name,
+            ignore_unsupported_type: self.ignore_unsupported_type,
+        })
     }
 }

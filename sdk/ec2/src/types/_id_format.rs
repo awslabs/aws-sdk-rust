@@ -37,9 +37,7 @@ impl IdFormat {
 
 /// A builder for [`IdFormat`](crate::types::IdFormat).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdFormatBuilder {
     pub(crate) deadline: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl IdFormatBuilder {
         self
     }
     /// <p>The date in UTC at which you are permanently switched over to using longer IDs. If a deadline is not yet available for this resource type, this field is not returned.</p>
-    pub fn set_deadline(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deadline(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deadline = input;
         self
     }

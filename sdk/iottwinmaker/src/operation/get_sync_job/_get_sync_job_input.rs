@@ -33,9 +33,7 @@ impl GetSyncJobInput {
 
 /// A builder for [`GetSyncJobInput`](crate::operation::get_sync_job::GetSyncJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSyncJobInputBuilder {
     pub(crate) sync_source: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
@@ -76,12 +74,7 @@ impl GetSyncJobInputBuilder {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`GetSyncJobInput`](crate::operation::get_sync_job::GetSyncJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sync_job::GetSyncJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sync_job::GetSyncJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sync_job::GetSyncJobInput {
             sync_source: self.sync_source,
             workspace_id: self.workspace_id,

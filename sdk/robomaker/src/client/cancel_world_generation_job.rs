@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`job(impl ::std::convert::Into<String>)`](crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobFluentBuilder::job) / [`set_job(Option<String>)`](crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobFluentBuilder::set_job): <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
     /// - On success, responds with [`CancelWorldGenerationJobOutput`](crate::operation::cancel_world_generation_job::CancelWorldGenerationJobOutput)
     /// - On failure, responds with [`SdkError<CancelWorldGenerationJobError>`](crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError)
-    pub fn cancel_world_generation_job(&self) -> crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobFluentBuilder{
+    pub fn cancel_world_generation_job(&self) -> crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobFluentBuilder {
         crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobFluentBuilder::new(self.handle.clone())
     }
 }

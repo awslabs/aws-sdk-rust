@@ -23,9 +23,7 @@ impl AvailabilityZoneMessage {
 
 /// A builder for [`AvailabilityZoneMessage`](crate::types::AvailabilityZoneMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AvailabilityZoneMessageBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AvailabilityZoneMessageBuilder {
     }
     /// Consumes the builder and constructs a [`AvailabilityZoneMessage`](crate::types::AvailabilityZoneMessage).
     pub fn build(self) -> crate::types::AvailabilityZoneMessage {
-        crate::types::AvailabilityZoneMessage {
-            message: self.message,
-        }
+        crate::types::AvailabilityZoneMessage { message: self.message }
     }
 }

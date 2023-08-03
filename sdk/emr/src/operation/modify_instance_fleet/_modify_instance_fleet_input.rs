@@ -16,26 +16,20 @@ impl ModifyInstanceFleetInput {
         self.cluster_id.as_deref()
     }
     /// <p>The configuration parameters of the instance fleet.</p>
-    pub fn instance_fleet(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceFleetModifyConfig> {
+    pub fn instance_fleet(&self) -> ::std::option::Option<&crate::types::InstanceFleetModifyConfig> {
         self.instance_fleet.as_ref()
     }
 }
 impl ModifyInstanceFleetInput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceFleetInput`](crate::operation::modify_instance_fleet::ModifyInstanceFleetInput).
-    pub fn builder(
-    ) -> crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetInputBuilder {
-        crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetInputBuilder {
+        crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyInstanceFleetInput`](crate::operation::modify_instance_fleet::ModifyInstanceFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstanceFleetInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_fleet: ::std::option::Option<crate::types::InstanceFleetModifyConfig>,
@@ -61,31 +55,22 @@ impl ModifyInstanceFleetInputBuilder {
         self
     }
     /// <p>The configuration parameters of the instance fleet.</p>
-    pub fn set_instance_fleet(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceFleetModifyConfig>,
-    ) -> Self {
+    pub fn set_instance_fleet(mut self, input: ::std::option::Option<crate::types::InstanceFleetModifyConfig>) -> Self {
         self.instance_fleet = input;
         self
     }
     /// <p>The configuration parameters of the instance fleet.</p>
-    pub fn get_instance_fleet(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceFleetModifyConfig> {
+    pub fn get_instance_fleet(&self) -> &::std::option::Option<crate::types::InstanceFleetModifyConfig> {
         &self.instance_fleet
     }
     /// Consumes the builder and constructs a [`ModifyInstanceFleetInput`](crate::operation::modify_instance_fleet::ModifyInstanceFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_instance_fleet::ModifyInstanceFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_instance_fleet::ModifyInstanceFleetInput {
-                cluster_id: self.cluster_id,
-                instance_fleet: self.instance_fleet,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_instance_fleet::ModifyInstanceFleetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_instance_fleet::ModifyInstanceFleetInput {
+            cluster_id: self.cluster_id,
+            instance_fleet: self.instance_fleet,
+        })
     }
 }

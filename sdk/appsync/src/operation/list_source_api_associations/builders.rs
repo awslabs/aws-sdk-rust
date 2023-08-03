@@ -26,7 +26,7 @@ impl ListSourceApiAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSourceApiAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_source_api_associations::builders::ListSourceApiAssociationsInputBuilder,
+    inner: crate::operation::list_source_api_associations::builders::ListSourceApiAssociationsInputBuilder,
 }
 impl ListSourceApiAssociationsFluentBuilder {
     /// Creates a new `ListSourceApiAssociations`.
@@ -37,7 +37,7 @@ impl ListSourceApiAssociationsFluentBuilder {
         }
     }
     /// Access the ListSourceApiAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_source_api_associations::builders::ListSourceApiAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_source_api_associations::builders::ListSourceApiAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListSourceApiAssociationsFluentBuilder {
             crate::operation::list_source_api_associations::ListSourceApiAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_api_associations::ListSourceApiAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_api_associations::ListSourceApiAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListSourceApiAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListSourceApiAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_api_associations::ListSourceApiAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_api_associations::ListSourceApiAssociationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListSourceApiAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_api_associations::ListSourceApiAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_api_associations::ListSourceApiAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ListSourceApiAssociationsFluentBuilder {
             crate::operation::list_source_api_associations::ListSourceApiAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_source_api_associations::ListSourceApiAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_source_api_associations::ListSourceApiAssociationsError>,
     > {
         self.customize_middleware().await
     }

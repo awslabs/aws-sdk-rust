@@ -5,14 +5,15 @@ pub(crate) fn de_field_level_encryption_list_payload(
     ::std::option::Option<crate::types::FieldLevelEncryptionList>,
     crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_list_field_level_encryption_configs_output::de_field_level_encryption_list(body).map_err(crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_list_field_level_encryption_configs_output::de_field_level_encryption_list(body)
+                .map_err(crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError::unhandled)
+        })
+        .transpose()
 }
 
-pub fn de_field_level_encryption_list(
-    inp: &[u8],
-) -> Result<crate::types::FieldLevelEncryptionList, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_field_level_encryption_list(inp: &[u8]) -> Result<crate::types::FieldLevelEncryptionList, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -23,7 +24,5 @@ pub fn de_field_level_encryption_list(
             start_el
         )));
     }
-    crate::protocol_serde::shape_field_level_encryption_list::de_field_level_encryption_list(
-        &mut decoder,
-    )
+    crate::protocol_serde::shape_field_level_encryption_list::de_field_level_encryption_list(&mut decoder)
 }

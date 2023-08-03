@@ -50,9 +50,7 @@ impl UpdateStudioInput {
 
 /// A builder for [`UpdateStudioInput`](crate::operation::update_studio::UpdateStudioInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStudioInputBuilder {
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -115,10 +113,7 @@ impl UpdateStudioInputBuilder {
         self
     }
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio. </p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -127,18 +122,12 @@ impl UpdateStudioInputBuilder {
         &self.subnet_ids
     }
     /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
-    pub fn default_s3_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_s3_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
-    pub fn set_default_s3_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_s3_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_s3_location = input;
         self
     }
@@ -147,12 +136,7 @@ impl UpdateStudioInputBuilder {
         &self.default_s3_location
     }
     /// Consumes the builder and constructs a [`UpdateStudioInput`](crate::operation::update_studio::UpdateStudioInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_studio::UpdateStudioInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_studio::UpdateStudioInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_studio::UpdateStudioInput {
             studio_id: self.studio_id,
             name: self.name,

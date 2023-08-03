@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::delete_recipe_version::DeleteRecipeVersionOutput::name): <p>The name of the recipe that was deleted.</p>
     ///   - [`recipe_version(Option<String>)`](crate::operation::delete_recipe_version::DeleteRecipeVersionOutput::recipe_version): <p>The version of the recipe that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteRecipeVersionError>`](crate::operation::delete_recipe_version::DeleteRecipeVersionError)
-    pub fn delete_recipe_version(
-        &self,
-    ) -> crate::operation::delete_recipe_version::builders::DeleteRecipeVersionFluentBuilder {
-        crate::operation::delete_recipe_version::builders::DeleteRecipeVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_recipe_version(&self) -> crate::operation::delete_recipe_version::builders::DeleteRecipeVersionFluentBuilder {
+        crate::operation::delete_recipe_version::builders::DeleteRecipeVersionFluentBuilder::new(self.handle.clone())
     }
 }

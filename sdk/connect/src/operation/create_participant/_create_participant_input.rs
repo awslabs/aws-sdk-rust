@@ -36,25 +36,20 @@ impl CreateParticipantInput {
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>. </p>
     /// <p> <code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
-    pub fn participant_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParticipantDetailsToAdd> {
+    pub fn participant_details(&self) -> ::std::option::Option<&crate::types::ParticipantDetailsToAdd> {
         self.participant_details.as_ref()
     }
 }
 impl CreateParticipantInput {
     /// Creates a new builder-style object to manufacture [`CreateParticipantInput`](crate::operation::create_participant::CreateParticipantInput).
-    pub fn builder() -> crate::operation::create_participant::builders::CreateParticipantInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_participant::builders::CreateParticipantInputBuilder {
         crate::operation::create_participant::builders::CreateParticipantInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateParticipantInput`](crate::operation::create_participant::CreateParticipantInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateParticipantInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
@@ -116,10 +111,7 @@ impl CreateParticipantInputBuilder {
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>. </p>
     /// <p> <code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
-    pub fn set_participant_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantDetailsToAdd>,
-    ) -> Self {
+    pub fn set_participant_details(mut self, input: ::std::option::Option<crate::types::ParticipantDetailsToAdd>) -> Self {
         self.participant_details = input;
         self
     }
@@ -127,25 +119,18 @@ impl CreateParticipantInputBuilder {
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>. </p>
     /// <p> <code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
-    pub fn get_participant_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParticipantDetailsToAdd> {
+    pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetailsToAdd> {
         &self.participant_details
     }
     /// Consumes the builder and constructs a [`CreateParticipantInput`](crate::operation::create_participant::CreateParticipantInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_participant::CreateParticipantInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_participant::CreateParticipantInput {
-                instance_id: self.instance_id,
-                contact_id: self.contact_id,
-                client_token: self.client_token,
-                participant_details: self.participant_details,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_participant::CreateParticipantInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_participant::CreateParticipantInput {
+            instance_id: self.instance_id,
+            contact_id: self.contact_id,
+            client_token: self.client_token,
+            participant_details: self.participant_details,
+        })
     }
 }

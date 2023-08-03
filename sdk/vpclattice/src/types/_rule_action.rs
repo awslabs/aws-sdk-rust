@@ -21,9 +21,7 @@ pub enum RuleAction {
 impl RuleAction {
     /// Tries to convert the enum instance into [`FixedResponse`](crate::types::RuleAction::FixedResponse), extracting the inner [`FixedResponseAction`](crate::types::FixedResponseAction).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_fixed_response(
-        &self,
-    ) -> ::std::result::Result<&crate::types::FixedResponseAction, &Self> {
+    pub fn as_fixed_response(&self) -> ::std::result::Result<&crate::types::FixedResponseAction, &Self> {
         if let RuleAction::FixedResponse(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

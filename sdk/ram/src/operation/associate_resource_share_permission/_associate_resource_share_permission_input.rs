@@ -55,16 +55,14 @@ impl AssociateResourceSharePermissionInput {
 }
 impl AssociateResourceSharePermissionInput {
     /// Creates a new builder-style object to manufacture [`AssociateResourceSharePermissionInput`](crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionInput).
-    pub fn builder() -> crate::operation::associate_resource_share_permission::builders::AssociateResourceSharePermissionInputBuilder{
+    pub fn builder() -> crate::operation::associate_resource_share_permission::builders::AssociateResourceSharePermissionInputBuilder {
         crate::operation::associate_resource_share_permission::builders::AssociateResourceSharePermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateResourceSharePermissionInput`](crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateResourceSharePermissionInputBuilder {
     pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_arn: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ pub struct AssociateResourceSharePermissionInputBuilder {
 }
 impl AssociateResourceSharePermissionInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share to which you want to add or replace permissions.</p>
-    pub fn resource_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share to which you want to add or replace permissions.</p>
-    pub fn set_resource_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_share_arn = input;
         self
     }
@@ -94,18 +86,12 @@ impl AssociateResourceSharePermissionInputBuilder {
         &self.resource_share_arn
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
-    pub fn permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
-    pub fn set_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_arn = input;
         self
     }
@@ -174,20 +160,20 @@ impl AssociateResourceSharePermissionInputBuilder {
         &self.permission_version
     }
     /// Consumes the builder and constructs a [`AssociateResourceSharePermissionInput`](crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionInput {
-                resource_share_arn: self.resource_share_arn
-                ,
-                permission_arn: self.permission_arn
-                ,
-                replace: self.replace
-                ,
-                client_token: self.client_token
-                ,
-                permission_version: self.permission_version
-                ,
-            }
+                resource_share_arn: self.resource_share_arn,
+                permission_arn: self.permission_arn,
+                replace: self.replace,
+                client_token: self.client_token,
+                permission_version: self.permission_version,
+            },
         )
     }
 }

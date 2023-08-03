@@ -58,9 +58,7 @@ impl SceneSummary {
 
 /// A builder for [`SceneSummary`](crate::types::SceneSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SceneSummaryBuilder {
     pub(crate) scene_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_location: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl SceneSummaryBuilder {
         &self.scene_id
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub fn content_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub fn set_content_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_location = input;
         self
     }
@@ -124,10 +116,7 @@ impl SceneSummaryBuilder {
         self
     }
     /// <p>The date and time when the scene was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -141,10 +130,7 @@ impl SceneSummaryBuilder {
         self
     }
     /// <p>The date and time when the scene was last updated.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date_time = input;
         self
     }

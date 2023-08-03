@@ -44,9 +44,7 @@ impl ReplaceContentEntry {
 
 /// A builder for [`ReplaceContentEntry`](crate::types::ReplaceContentEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplaceContentEntryBuilder {
     pub(crate) file_path: ::std::option::Option<::std::string::String>,
     pub(crate) replacement_type: ::std::option::Option<crate::types::ReplacementTypeEnum>,
@@ -74,17 +72,12 @@ impl ReplaceContentEntryBuilder {
         self
     }
     /// <p>The replacement type to use when determining how to resolve the conflict.</p>
-    pub fn set_replacement_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplacementTypeEnum>,
-    ) -> Self {
+    pub fn set_replacement_type(mut self, input: ::std::option::Option<crate::types::ReplacementTypeEnum>) -> Self {
         self.replacement_type = input;
         self
     }
     /// <p>The replacement type to use when determining how to resolve the conflict.</p>
-    pub fn get_replacement_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplacementTypeEnum> {
+    pub fn get_replacement_type(&self) -> &::std::option::Option<crate::types::ReplacementTypeEnum> {
         &self.replacement_type
     }
     /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
@@ -107,10 +100,7 @@ impl ReplaceContentEntryBuilder {
         self
     }
     /// <p>The file mode to apply during conflict resoltion.</p>
-    pub fn set_file_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::FileModeTypeEnum>,
-    ) -> Self {
+    pub fn set_file_mode(mut self, input: ::std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
         self.file_mode = input;
         self
     }

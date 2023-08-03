@@ -160,16 +160,10 @@ impl ::std::fmt::Debug for MongoDbSettings {
         formatter.field("docs_to_investigate", &self.docs_to_investigate);
         formatter.field("auth_source", &self.auth_source);
         formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field(
-            "secrets_manager_access_role_arn",
-            &self.secrets_manager_access_role_arn,
-        );
+        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("use_update_look_up", &self.use_update_look_up);
-        formatter.field(
-            "replicate_shard_collections",
-            &self.replicate_shard_collections,
-        );
+        formatter.field("replicate_shard_collections", &self.replicate_shard_collections);
         formatter.finish()
     }
 }
@@ -259,18 +253,12 @@ impl MongoDbSettingsBuilder {
         &self.port
     }
     /// <p> The database name on the MongoDB source endpoint. </p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The database name on the MongoDB source endpoint. </p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -286,10 +274,7 @@ impl MongoDbSettingsBuilder {
     }
     /// <p> The authentication type you use to access the MongoDB source endpoint.</p>
     /// <p>When when set to <code>"no"</code>, user name and password parameters are not used and can be empty. </p>
-    pub fn set_auth_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthTypeValue>,
-    ) -> Self {
+    pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthTypeValue>) -> Self {
         self.auth_type = input;
         self
     }
@@ -306,10 +291,7 @@ impl MongoDbSettingsBuilder {
     }
     /// <p> The authentication mechanism you use to access the MongoDB source endpoint.</p>
     /// <p>For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
-    pub fn set_auth_mechanism(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthMechanismValue>,
-    ) -> Self {
+    pub fn set_auth_mechanism(mut self, input: ::std::option::Option<crate::types::AuthMechanismValue>) -> Self {
         self.auth_mechanism = input;
         self
     }
@@ -326,10 +308,7 @@ impl MongoDbSettingsBuilder {
     }
     /// <p> Specifies either document or table mode. </p>
     /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify <code>"one"</code> to use table mode.</p>
-    pub fn set_nesting_level(
-        mut self,
-        input: ::std::option::Option<crate::types::NestingLevelValue>,
-    ) -> Self {
+    pub fn set_nesting_level(mut self, input: ::std::option::Option<crate::types::NestingLevelValue>) -> Self {
         self.nesting_level = input;
         self
     }
@@ -340,19 +319,13 @@ impl MongoDbSettingsBuilder {
     }
     /// <p> Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>. </p>
     /// <p>Default value is <code>"false"</code>. </p>
-    pub fn extract_doc_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extract_doc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extract_doc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>. </p>
     /// <p>Default value is <code>"false"</code>. </p>
-    pub fn set_extract_doc_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extract_doc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extract_doc_id = input;
         self
     }
@@ -363,19 +336,13 @@ impl MongoDbSettingsBuilder {
     }
     /// <p> Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>. </p>
     /// <p>Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.</p>
-    pub fn docs_to_investigate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn docs_to_investigate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.docs_to_investigate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>. </p>
     /// <p>Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.</p>
-    pub fn set_docs_to_investigate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_docs_to_investigate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.docs_to_investigate = input;
         self
     }
@@ -418,44 +385,30 @@ impl MongoDbSettingsBuilder {
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn secrets_manager_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secrets_manager_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secrets_manager_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn set_secrets_manager_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secrets_manager_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secrets_manager_access_role_arn = input;
         self
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn get_secrets_manager_access_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_secrets_manager_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secrets_manager_access_role_arn
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MongoDB endpoint connection details.</p>
-    pub fn secrets_manager_secret_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secrets_manager_secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secrets_manager_secret_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MongoDB endpoint connection details.</p>
-    pub fn set_secrets_manager_secret_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secrets_manager_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secrets_manager_secret_id = input;
         self
     }
@@ -543,16 +496,10 @@ impl ::std::fmt::Debug for MongoDbSettingsBuilder {
         formatter.field("docs_to_investigate", &self.docs_to_investigate);
         formatter.field("auth_source", &self.auth_source);
         formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field(
-            "secrets_manager_access_role_arn",
-            &self.secrets_manager_access_role_arn,
-        );
+        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("use_update_look_up", &self.use_update_look_up);
-        formatter.field(
-            "replicate_shard_collections",
-            &self.replicate_shard_collections,
-        );
+        formatter.field("replicate_shard_collections", &self.replicate_shard_collections);
         formatter.finish()
     }
 }

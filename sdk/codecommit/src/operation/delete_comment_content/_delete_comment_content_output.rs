@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteCommentContentOutput {
 }
 impl DeleteCommentContentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCommentContentOutput`](crate::operation::delete_comment_content::DeleteCommentContentOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_comment_content::builders::DeleteCommentContentOutputBuilder {
+    pub fn builder() -> crate::operation::delete_comment_content::builders::DeleteCommentContentOutputBuilder {
         crate::operation::delete_comment_content::builders::DeleteCommentContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCommentContentOutput`](crate::operation::delete_comment_content::DeleteCommentContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCommentContentOutputBuilder {
     pub(crate) comment: ::std::option::Option<crate::types::Comment>,
     _request_id: Option<String>,

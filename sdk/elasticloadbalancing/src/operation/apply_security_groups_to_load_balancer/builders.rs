@@ -5,16 +5,16 @@ pub use crate::operation::apply_security_groups_to_load_balancer::_apply_securit
 
 impl ApplySecurityGroupsToLoadBalancerInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.apply_security_groups_to_load_balancer();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ApplySecurityGroupsToLoadBalancerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ApplySecurityGroupsToLoadBalancerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerInputBuilder,
+    inner: crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerInputBuilder,
 }
 impl ApplySecurityGroupsToLoadBalancerFluentBuilder {
     /// Creates a new `ApplySecurityGroupsToLoadBalancer`.
@@ -38,15 +38,20 @@ impl ApplySecurityGroupsToLoadBalancerFluentBuilder {
         }
     }
     /// Access the ApplySecurityGroupsToLoadBalancer as a reference.
-    pub fn as_input(&self) -> &crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancer, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancer,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl ApplySecurityGroupsToLoadBalancerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput, ::aws_smithy_http::result::SdkError<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,32 +88,35 @@ impl ApplySecurityGroupsToLoadBalancerFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput, ::aws_smithy_http::result::SdkError<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancer, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancer,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
@@ -120,25 +129,17 @@ impl ApplySecurityGroupsToLoadBalancerFluentBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_groups(input.into());
         self
     }
     /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
     }
     /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_groups()
     }
 }

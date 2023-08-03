@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSubnetOutput`](crate::operation::create_subnet::CreateSubnetOutput) with field(s):
     ///   - [`subnet(Option<Subnet>)`](crate::operation::create_subnet::CreateSubnetOutput::subnet): <p>Information about the subnet.</p>
     /// - On failure, responds with [`SdkError<CreateSubnetError>`](crate::operation::create_subnet::CreateSubnetError)
-    pub fn create_subnet(
-        &self,
-    ) -> crate::operation::create_subnet::builders::CreateSubnetFluentBuilder {
-        crate::operation::create_subnet::builders::CreateSubnetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_subnet(&self) -> crate::operation::create_subnet::builders::CreateSubnetFluentBuilder {
+        crate::operation::create_subnet::builders::CreateSubnetFluentBuilder::new(self.handle.clone())
     }
 }

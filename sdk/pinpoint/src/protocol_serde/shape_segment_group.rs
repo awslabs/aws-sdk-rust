@@ -9,10 +9,7 @@ pub fn ser_segment_group(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_segment_dimensions::ser_segment_dimensions(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_segment_dimensions::ser_segment_dimensions(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_segment_group(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_segment_reference::ser_segment_reference(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_segment_reference::ser_segment_reference(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -44,17 +38,9 @@ pub fn ser_segment_group(
 
 pub(crate) fn de_segment_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SegmentGroup>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SegmentGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -64,60 +50,45 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Dimensions" => {
-                                builder = builder.set_dimensions(
-                                    crate::protocol_serde::shape_list_of_segment_dimensions::de_list_of_segment_dimensions(tokens)?
-                                );
-                            }
-                            "SourceSegments" => {
-                                builder = builder.set_source_segments(
-                                    crate::protocol_serde::shape_list_of_segment_reference::de_list_of_segment_reference(tokens)?
-                                );
-                            }
-                            "SourceType" => {
-                                builder = builder.set_source_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::SourceType::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "Type" => {
-                                builder = builder.set_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::Type::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Dimensions" => {
+                            builder = builder.set_dimensions(crate::protocol_serde::shape_list_of_segment_dimensions::de_list_of_segment_dimensions(
+                                tokens,
+                            )?);
                         }
-                    }
+                        "SourceSegments" => {
+                            builder = builder.set_source_segments(
+                                crate::protocol_serde::shape_list_of_segment_reference::de_list_of_segment_reference(tokens)?,
+                            );
+                        }
+                        "SourceType" => {
+                            builder = builder.set_source_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SourceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Type::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

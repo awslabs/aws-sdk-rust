@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLocationNfsOutput`](crate::operation::create_location_nfs::CreateLocationNfsOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::create_location_nfs::CreateLocationNfsOutput::location_arn): <p>The ARN of the transfer location that you created for your NFS file server.</p>
     /// - On failure, responds with [`SdkError<CreateLocationNfsError>`](crate::operation::create_location_nfs::CreateLocationNfsError)
-    pub fn create_location_nfs(
-        &self,
-    ) -> crate::operation::create_location_nfs::builders::CreateLocationNfsFluentBuilder {
-        crate::operation::create_location_nfs::builders::CreateLocationNfsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_location_nfs(&self) -> crate::operation::create_location_nfs::builders::CreateLocationNfsFluentBuilder {
+        crate::operation::create_location_nfs::builders::CreateLocationNfsFluentBuilder::new(self.handle.clone())
     }
 }

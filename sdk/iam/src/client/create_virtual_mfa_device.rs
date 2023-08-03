@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVirtualMfaDeviceOutput`](crate::operation::create_virtual_mfa_device::CreateVirtualMfaDeviceOutput) with field(s):
     ///   - [`virtual_mfa_device(Option<VirtualMfaDevice>)`](crate::operation::create_virtual_mfa_device::CreateVirtualMfaDeviceOutput::virtual_mfa_device): <p>A structure containing details about the new virtual MFA device.</p>
     /// - On failure, responds with [`SdkError<CreateVirtualMFADeviceError>`](crate::operation::create_virtual_mfa_device::CreateVirtualMFADeviceError)
-    pub fn create_virtual_mfa_device(
-        &self,
-    ) -> crate::operation::create_virtual_mfa_device::builders::CreateVirtualMFADeviceFluentBuilder
-    {
+    pub fn create_virtual_mfa_device(&self) -> crate::operation::create_virtual_mfa_device::builders::CreateVirtualMFADeviceFluentBuilder {
         crate::operation::create_virtual_mfa_device::builders::CreateVirtualMFADeviceFluentBuilder::new(self.handle.clone())
     }
 }

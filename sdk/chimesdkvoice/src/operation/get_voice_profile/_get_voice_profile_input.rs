@@ -22,26 +22,18 @@ impl GetVoiceProfileInput {
 
 /// A builder for [`GetVoiceProfileInput`](crate::operation::get_voice_profile::GetVoiceProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceProfileInputBuilder {
     pub(crate) voice_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl GetVoiceProfileInputBuilder {
     /// <p>The voice profile ID.</p>
-    pub fn voice_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The voice profile ID.</p>
-    pub fn set_voice_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_profile_id = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetVoiceProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetVoiceProfileInput`](crate::operation::get_voice_profile::GetVoiceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_voice_profile::GetVoiceProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_voice_profile::GetVoiceProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_voice_profile::GetVoiceProfileInput {
             voice_profile_id: self.voice_profile_id,
         })

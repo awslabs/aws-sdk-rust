@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartMatchBackfillOutput`](crate::operation::start_match_backfill::StartMatchBackfillOutput) with field(s):
     ///   - [`matchmaking_ticket(Option<MatchmakingTicket>)`](crate::operation::start_match_backfill::StartMatchBackfillOutput::matchmaking_ticket): <p>Ticket representing the backfill matchmaking request. This object includes the information in the request, ticket status, and match results as generated during the matchmaking process.</p>
     /// - On failure, responds with [`SdkError<StartMatchBackfillError>`](crate::operation::start_match_backfill::StartMatchBackfillError)
-    pub fn start_match_backfill(
-        &self,
-    ) -> crate::operation::start_match_backfill::builders::StartMatchBackfillFluentBuilder {
-        crate::operation::start_match_backfill::builders::StartMatchBackfillFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_match_backfill(&self) -> crate::operation::start_match_backfill::builders::StartMatchBackfillFluentBuilder {
+        crate::operation::start_match_backfill::builders::StartMatchBackfillFluentBuilder::new(self.handle.clone())
     }
 }

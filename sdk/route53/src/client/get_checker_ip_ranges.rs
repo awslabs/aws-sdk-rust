@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetCheckerIpRangesOutput`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput) with field(s):
     ///   - [`checker_ip_ranges(Option<Vec<String>>)`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput::checker_ip_ranges): <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
     /// - On failure, responds with [`SdkError<GetCheckerIpRangesError>`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesError)
-    pub fn get_checker_ip_ranges(
-        &self,
-    ) -> crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesFluentBuilder {
-        crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_checker_ip_ranges(&self) -> crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesFluentBuilder {
+        crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesFluentBuilder::new(self.handle.clone())
     }
 }

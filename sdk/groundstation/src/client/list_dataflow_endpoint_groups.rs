@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsOutput::next_token): <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
     ///   - [`dataflow_endpoint_group_list(Option<Vec<DataflowEndpointListItem>>)`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsOutput::dataflow_endpoint_group_list): <p>A list of dataflow endpoint groups.</p>
     /// - On failure, responds with [`SdkError<ListDataflowEndpointGroupsError>`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError)
-    pub fn list_dataflow_endpoint_groups(&self) -> crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder{
+    pub fn list_dataflow_endpoint_groups(
+        &self,
+    ) -> crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder {
         crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder::new(self.handle.clone())
     }
 }

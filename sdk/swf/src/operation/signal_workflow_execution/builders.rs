@@ -38,8 +38,7 @@ impl SignalWorkflowExecutionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SignalWorkflowExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionInputBuilder,
+    inner: crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionInputBuilder,
 }
 impl SignalWorkflowExecutionFluentBuilder {
     /// Creates a new `SignalWorkflowExecution`.
@@ -50,10 +49,7 @@ impl SignalWorkflowExecutionFluentBuilder {
         }
     }
     /// Access the SignalWorkflowExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +61,7 @@ impl SignalWorkflowExecutionFluentBuilder {
             crate::operation::signal_workflow_execution::SignalWorkflowExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::signal_workflow_execution::SignalWorkflowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::signal_workflow_execution::SignalWorkflowExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +71,7 @@ impl SignalWorkflowExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +80,7 @@ impl SignalWorkflowExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::signal_workflow_execution::SignalWorkflowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::signal_workflow_execution::SignalWorkflowExecutionError>,
     > {
         let op = self
             .inner
@@ -114,9 +103,7 @@ impl SignalWorkflowExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::signal_workflow_execution::SignalWorkflowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::signal_workflow_execution::SignalWorkflowExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -130,9 +117,7 @@ impl SignalWorkflowExecutionFluentBuilder {
             crate::operation::signal_workflow_execution::SignalWorkflowExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::signal_workflow_execution::SignalWorkflowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::signal_workflow_execution::SignalWorkflowExecutionError>,
     > {
         self.customize_middleware().await
     }

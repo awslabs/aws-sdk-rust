@@ -37,13 +37,10 @@ impl UtilizationByTime {
 
 /// A builder for [`UtilizationByTime`](crate::types::UtilizationByTime).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UtilizationByTimeBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
-    pub(crate) groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservationUtilizationGroup>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::ReservationUtilizationGroup>>,
     pub(crate) total: ::std::option::Option<crate::types::ReservationAggregates>,
 }
 impl UtilizationByTimeBuilder {
@@ -53,10 +50,7 @@ impl UtilizationByTimeBuilder {
         self
     }
     /// <p>The period of time that this utilization was used for.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.time_period = input;
         self
     }
@@ -76,17 +70,12 @@ impl UtilizationByTimeBuilder {
         self
     }
     /// <p>The groups that this utilization result uses.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservationUtilizationGroup>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservationUtilizationGroup>>) -> Self {
         self.groups = input;
         self
     }
     /// <p>The groups that this utilization result uses.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservationUtilizationGroup>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservationUtilizationGroup>> {
         &self.groups
     }
     /// <p>The total number of reservation hours that were used.</p>
@@ -95,10 +84,7 @@ impl UtilizationByTimeBuilder {
         self
     }
     /// <p>The total number of reservation hours that were used.</p>
-    pub fn set_total(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationAggregates>,
-    ) -> Self {
+    pub fn set_total(mut self, input: ::std::option::Option<crate::types::ReservationAggregates>) -> Self {
         self.total = input;
         self
     }

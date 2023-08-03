@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ForgetSmartHomeAppliancesOutput {
 }
 impl ForgetSmartHomeAppliancesOutput {
     /// Creates a new builder-style object to manufacture [`ForgetSmartHomeAppliancesOutput`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesOutput).
-    pub fn builder() -> crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesOutputBuilder{
+    pub fn builder() -> crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesOutputBuilder {
         crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ForgetSmartHomeAppliancesOutput`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ForgetSmartHomeAppliancesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl ForgetSmartHomeAppliancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ForgetSmartHomeAppliancesOutput`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesOutput {
+    pub fn build(self) -> crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesOutput {
         crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesOutput {
             _request_id: self._request_id,
         }

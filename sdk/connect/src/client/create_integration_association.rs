@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`integration_association_id(Option<String>)`](crate::operation::create_integration_association::CreateIntegrationAssociationOutput::integration_association_id): <p>The identifier for the integration association.</p>
     ///   - [`integration_association_arn(Option<String>)`](crate::operation::create_integration_association::CreateIntegrationAssociationOutput::integration_association_arn): <p>The Amazon Resource Name (ARN) for the association.</p>
     /// - On failure, responds with [`SdkError<CreateIntegrationAssociationError>`](crate::operation::create_integration_association::CreateIntegrationAssociationError)
-    pub fn create_integration_association(&self) -> crate::operation::create_integration_association::builders::CreateIntegrationAssociationFluentBuilder{
+    pub fn create_integration_association(
+        &self,
+    ) -> crate::operation::create_integration_association::builders::CreateIntegrationAssociationFluentBuilder {
         crate::operation::create_integration_association::builders::CreateIntegrationAssociationFluentBuilder::new(self.handle.clone())
     }
 }

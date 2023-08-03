@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`state(Option<DestinationState>)`](crate::operation::get_destination::GetDestinationOutput::state): State of the destination.
     ///   - [`additional_fixed_properties(Option<String>)`](crate::operation::get_destination::GetDestinationOutput::additional_fixed_properties): JSON document containing additional fixed properties regarding the destination
     /// - On failure, responds with [`SdkError<GetDestinationError>`](crate::operation::get_destination::GetDestinationError)
-    pub fn get_destination(
-        &self,
-    ) -> crate::operation::get_destination::builders::GetDestinationFluentBuilder {
-        crate::operation::get_destination::builders::GetDestinationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_destination(&self) -> crate::operation::get_destination::builders::GetDestinationFluentBuilder {
+        crate::operation::get_destination::builders::GetDestinationFluentBuilder::new(self.handle.clone())
     }
 }

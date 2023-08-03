@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeCostCategoryDefinitionOutput 
 }
 impl DescribeCostCategoryDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCostCategoryDefinitionOutput`](crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput).
-    pub fn builder() -> crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionOutputBuilder {
         crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCostCategoryDefinitionOutput`](crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCostCategoryDefinitionOutputBuilder {
     pub(crate) cost_category: ::std::option::Option<crate::types::CostCategory>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeCostCategoryDefinitionOutputBuilder {
         self
     }
     /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
-    pub fn set_cost_category(
-        mut self,
-        input: ::std::option::Option<crate::types::CostCategory>,
-    ) -> Self {
+    pub fn set_cost_category(mut self, input: ::std::option::Option<crate::types::CostCategory>) -> Self {
         self.cost_category = input;
         self
     }
@@ -63,10 +58,7 @@ impl DescribeCostCategoryDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCostCategoryDefinitionOutput`](crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput
-    {
+    pub fn build(self) -> crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput {
         crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput {
             cost_category: self.cost_category,
             _request_id: self._request_id,

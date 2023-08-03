@@ -10,9 +10,7 @@ pub fn ser_assign_tape_pool_input(
         object.key("PoolId").string(var_2.as_str());
     }
     if input.bypass_governance_retention {
-        object
-            .key("BypassGovernanceRetention")
-            .boolean(input.bypass_governance_retention);
+        object.key("BypassGovernanceRetention").boolean(input.bypass_governance_retention);
     }
     Ok(())
 }

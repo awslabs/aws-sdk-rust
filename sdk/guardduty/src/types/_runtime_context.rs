@@ -156,9 +156,7 @@ impl RuntimeContext {
 
 /// A builder for [`RuntimeContext`](crate::types::RuntimeContext).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuntimeContextBuilder {
     pub(crate) modifying_process: ::std::option::Option<crate::types::ProcessDetails>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -188,10 +186,7 @@ impl RuntimeContextBuilder {
         self
     }
     /// <p>Information about the process that modified the current process. This is available for multiple finding types.</p>
-    pub fn set_modifying_process(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessDetails>,
-    ) -> Self {
+    pub fn set_modifying_process(mut self, input: ::std::option::Option<crate::types::ProcessDetails>) -> Self {
         self.modifying_process = input;
         self
     }
@@ -205,10 +200,7 @@ impl RuntimeContextBuilder {
         self
     }
     /// <p>The timestamp at which the process modified the current process. The timestamp is in UTC date string format.</p>
-    pub fn set_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_at = input;
         self
     }
@@ -245,18 +237,12 @@ impl RuntimeContextBuilder {
         &self.library_path
     }
     /// <p>The value of the LD_PRELOAD environment variable.</p>
-    pub fn ld_preload_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ld_preload_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ld_preload_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the LD_PRELOAD environment variable.</p>
-    pub fn set_ld_preload_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ld_preload_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ld_preload_value = input;
         self
     }
@@ -279,18 +265,12 @@ impl RuntimeContextBuilder {
         &self.socket_path
     }
     /// <p>The path to the leveraged <code>runc</code> implementation.</p>
-    pub fn runc_binary_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runc_binary_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runc_binary_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the leveraged <code>runc</code> implementation.</p>
-    pub fn set_runc_binary_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_runc_binary_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runc_binary_path = input;
         self
     }
@@ -299,18 +279,12 @@ impl RuntimeContextBuilder {
         &self.runc_binary_path
     }
     /// <p>The path in the container that modified the release agent file.</p>
-    pub fn release_agent_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_agent_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_agent_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path in the container that modified the release agent file.</p>
-    pub fn set_release_agent_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_agent_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_agent_path = input;
         self
     }
@@ -347,18 +321,12 @@ impl RuntimeContextBuilder {
         &self.mount_target
     }
     /// <p>Represents the type of mounted fileSystem.</p>
-    pub fn file_system_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Represents the type of mounted fileSystem.</p>
-    pub fn set_file_system_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_type = input;
         self
     }
@@ -378,10 +346,7 @@ impl RuntimeContextBuilder {
         self
     }
     /// <p>Represents options that control the behavior of a runtime operation or action. For example, a filesystem mount operation may contain a read-only flag.</p>
-    pub fn set_flags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_flags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.flags = input;
         self
     }
@@ -404,18 +369,12 @@ impl RuntimeContextBuilder {
         &self.module_name
     }
     /// <p>The path to the module loaded into the kernel.</p>
-    pub fn module_file_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn module_file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.module_file_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the module loaded into the kernel.</p>
-    pub fn set_module_file_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_module_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.module_file_path = input;
         self
     }
@@ -424,18 +383,12 @@ impl RuntimeContextBuilder {
         &self.module_file_path
     }
     /// <p>The <code>SHA256</code> hash of the module.</p>
-    pub fn module_sha256(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn module_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.module_sha256 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>SHA256</code> hash of the module.</p>
-    pub fn set_module_sha256(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_module_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.module_sha256 = input;
         self
     }
@@ -444,18 +397,12 @@ impl RuntimeContextBuilder {
         &self.module_sha256
     }
     /// <p>The path to the modified shell history file.</p>
-    pub fn shell_history_file_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shell_history_file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shell_history_file_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the modified shell history file.</p>
-    pub fn set_shell_history_file_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shell_history_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shell_history_file_path = input;
         self
     }
@@ -469,10 +416,7 @@ impl RuntimeContextBuilder {
         self
     }
     /// <p>Information about the process that had its memory overwritten by the current process.</p>
-    pub fn set_target_process(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessDetails>,
-    ) -> Self {
+    pub fn set_target_process(mut self, input: ::std::option::Option<crate::types::ProcessDetails>) -> Self {
         self.target_process = input;
         self
     }
@@ -481,18 +425,12 @@ impl RuntimeContextBuilder {
         &self.target_process
     }
     /// <p>Represents the communication protocol associated with the address. For example, the address family <code>AF_INET</code> is used for IP version of 4 protocol.</p>
-    pub fn address_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Represents the communication protocol associated with the address. For example, the address family <code>AF_INET</code> is used for IP version of 4 protocol.</p>
-    pub fn set_address_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_family = input;
         self
     }
@@ -519,27 +457,19 @@ impl RuntimeContextBuilder {
     /// To override the contents of this collection use [`set_memory_regions`](Self::set_memory_regions).
     ///
     /// <p>Specifies the Region of a process's address space such as stack and heap.</p>
-    pub fn memory_regions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn memory_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.memory_regions.unwrap_or_default();
         v.push(input.into());
         self.memory_regions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the Region of a process's address space such as stack and heap.</p>
-    pub fn set_memory_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_memory_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.memory_regions = input;
         self
     }
     /// <p>Specifies the Region of a process's address space such as stack and heap.</p>
-    pub fn get_memory_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_memory_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.memory_regions
     }
     /// Consumes the builder and constructs a [`RuntimeContext`](crate::types::RuntimeContext).

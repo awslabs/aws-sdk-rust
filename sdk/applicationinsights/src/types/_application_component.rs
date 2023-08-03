@@ -25,10 +25,7 @@ pub struct ApplicationComponent {
     /// <p> Workloads detected in the application component. </p>
     #[doc(hidden)]
     pub detected_workload: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::Tier,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<crate::types::Tier, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
 }
 impl ApplicationComponent {
@@ -60,10 +57,7 @@ impl ApplicationComponent {
     pub fn detected_workload(
         &self,
     ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::Tier,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        &::std::collections::HashMap<crate::types::Tier, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         self.detected_workload.as_ref()
     }
@@ -77,9 +71,7 @@ impl ApplicationComponent {
 
 /// A builder for [`ApplicationComponent`](crate::types::ApplicationComponent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationComponentBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_remarks: ::std::option::Option<::std::string::String>,
@@ -88,26 +80,17 @@ pub struct ApplicationComponentBuilder {
     pub(crate) tier: ::std::option::Option<crate::types::Tier>,
     pub(crate) monitor: ::std::option::Option<bool>,
     pub(crate) detected_workload: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::Tier,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<crate::types::Tier, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
 }
 impl ApplicationComponentBuilder {
     /// <p>The name of the component.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -116,18 +99,12 @@ impl ApplicationComponentBuilder {
         &self.component_name
     }
     /// <p> If logging is supported for the resource type, indicates whether the component has configured logs to be monitored. </p>
-    pub fn component_remarks(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_remarks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_remarks = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> If logging is supported for the resource type, indicates whether the component has configured logs to be monitored. </p>
-    pub fn set_component_remarks(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_remarks(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_remarks = input;
         self
     }
@@ -136,18 +113,12 @@ impl ApplicationComponentBuilder {
         &self.component_remarks
     }
     /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -202,11 +173,7 @@ impl ApplicationComponentBuilder {
     /// To override the contents of this collection use [`set_detected_workload`](Self::set_detected_workload).
     ///
     /// <p> Workloads detected in the application component. </p>
-    pub fn detected_workload(
-        mut self,
-        k: crate::types::Tier,
-        v: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    ) -> Self {
+    pub fn detected_workload(mut self, k: crate::types::Tier, v: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
         let mut hash_map = self.detected_workload.unwrap_or_default();
         hash_map.insert(k, v);
         self.detected_workload = ::std::option::Option::Some(hash_map);
@@ -216,10 +183,7 @@ impl ApplicationComponentBuilder {
     pub fn set_detected_workload(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::Tier,
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
+            ::std::collections::HashMap<crate::types::Tier, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
         >,
     ) -> Self {
         self.detected_workload = input;
@@ -229,10 +193,7 @@ impl ApplicationComponentBuilder {
     pub fn get_detected_workload(
         &self,
     ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::Tier,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<crate::types::Tier, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         &self.detected_workload
     }

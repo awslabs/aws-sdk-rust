@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteTemplateSyncConfigOutput {
 }
 impl DeleteTemplateSyncConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTemplateSyncConfigOutput`](crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput).
-    pub fn builder() -> crate::operation::delete_template_sync_config::builders::DeleteTemplateSyncConfigOutputBuilder{
+    pub fn builder() -> crate::operation::delete_template_sync_config::builders::DeleteTemplateSyncConfigOutputBuilder {
         crate::operation::delete_template_sync_config::builders::DeleteTemplateSyncConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTemplateSyncConfigOutput`](crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTemplateSyncConfigOutputBuilder {
     pub(crate) template_sync_config: ::std::option::Option<crate::types::TemplateSyncConfig>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DeleteTemplateSyncConfigOutputBuilder {
         self
     }
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
-    pub fn set_template_sync_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateSyncConfig>,
-    ) -> Self {
+    pub fn set_template_sync_config(mut self, input: ::std::option::Option<crate::types::TemplateSyncConfig>) -> Self {
         self.template_sync_config = input;
         self
     }
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
-    pub fn get_template_sync_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplateSyncConfig> {
+    pub fn get_template_sync_config(&self) -> &::std::option::Option<crate::types::TemplateSyncConfig> {
         &self.template_sync_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl DeleteTemplateSyncConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteTemplateSyncConfigOutput`](crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput {
+    pub fn build(self) -> crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput {
         crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput {
             template_sync_config: self.template_sync_config,
             _request_id: self._request_id,

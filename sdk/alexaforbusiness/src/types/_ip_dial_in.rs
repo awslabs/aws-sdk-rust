@@ -30,9 +30,7 @@ impl IpDialIn {
 
 /// A builder for [`IpDialIn`](crate::types::IpDialIn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpDialInBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) comms_protocol: ::std::option::Option<crate::types::CommsProtocol>,
@@ -58,10 +56,7 @@ impl IpDialInBuilder {
         self
     }
     /// <p>The protocol, including SIP, SIPS, and H323.</p>
-    pub fn set_comms_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::CommsProtocol>,
-    ) -> Self {
+    pub fn set_comms_protocol(mut self, input: ::std::option::Option<crate::types::CommsProtocol>) -> Self {
         self.comms_protocol = input;
         self
     }

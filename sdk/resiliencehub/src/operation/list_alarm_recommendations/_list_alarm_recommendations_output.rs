@@ -5,8 +5,7 @@
 pub struct ListAlarmRecommendationsOutput {
     /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
     #[doc(hidden)]
-    pub alarm_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>>,
+    pub alarm_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAlarmRecommendationsOutput {
 }
 impl ListAlarmRecommendationsOutput {
     /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
-    pub fn alarm_recommendations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AlarmRecommendation]> {
+    pub fn alarm_recommendations(&self) -> ::std::option::Option<&[crate::types::AlarmRecommendation]> {
         self.alarm_recommendations.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAlarmRecommendationsOutput {
 }
 impl ListAlarmRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAlarmRecommendationsOutput`](crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_alarm_recommendations::builders::ListAlarmRecommendationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_alarm_recommendations::builders::ListAlarmRecommendationsOutputBuilder {
         crate::operation::list_alarm_recommendations::builders::ListAlarmRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAlarmRecommendationsOutput`](crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAlarmRecommendationsOutputBuilder {
-    pub(crate) alarm_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>>,
+    pub(crate) alarm_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListAlarmRecommendationsOutputBuilder {
         self
     }
     /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
-    pub fn set_alarm_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>>,
-    ) -> Self {
+    pub fn set_alarm_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>>) -> Self {
         self.alarm_recommendations = input;
         self
     }
     /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
-    pub fn get_alarm_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>> {
+    pub fn get_alarm_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>> {
         &self.alarm_recommendations
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -99,9 +86,7 @@ impl ListAlarmRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAlarmRecommendationsOutput`](crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput {
+    pub fn build(self) -> crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput {
         crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput {
             alarm_recommendations: self.alarm_recommendations,
             next_token: self.next_token,

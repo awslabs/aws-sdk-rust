@@ -15,8 +15,7 @@ pub struct EnvironmentResourceDescription {
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     /// <p>The Auto Scaling launch configurations in use by this environment.</p>
     #[doc(hidden)]
-    pub launch_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>,
+    pub launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>,
     /// <p>The Amazon EC2 launch templates in use by this environment.</p>
     #[doc(hidden)]
     pub launch_templates: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplate>>,
@@ -44,9 +43,7 @@ impl EnvironmentResourceDescription {
         self.instances.as_deref()
     }
     /// <p>The Auto Scaling launch configurations in use by this environment.</p>
-    pub fn launch_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LaunchConfiguration]> {
+    pub fn launch_configurations(&self) -> ::std::option::Option<&[crate::types::LaunchConfiguration]> {
         self.launch_configurations.as_deref()
     }
     /// <p>The Amazon EC2 launch templates in use by this environment.</p>
@@ -75,36 +72,25 @@ impl EnvironmentResourceDescription {
 
 /// A builder for [`EnvironmentResourceDescription`](crate::types::EnvironmentResourceDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentResourceDescriptionBuilder {
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
-    pub(crate) auto_scaling_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
+    pub(crate) auto_scaling_groups: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
-    pub(crate) launch_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>,
-    pub(crate) launch_templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplate>>,
+    pub(crate) launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>,
+    pub(crate) launch_templates: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplate>>,
     pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
     pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
     pub(crate) queues: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>,
 }
 impl EnvironmentResourceDescriptionBuilder {
     /// <p>The name of the environment.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -124,17 +110,12 @@ impl EnvironmentResourceDescriptionBuilder {
         self
     }
     /// <p> The <code>AutoScalingGroups</code> used by this environment. </p>
-    pub fn set_auto_scaling_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
-    ) -> Self {
+    pub fn set_auto_scaling_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>) -> Self {
         self.auto_scaling_groups = input;
         self
     }
     /// <p> The <code>AutoScalingGroups</code> used by this environment. </p>
-    pub fn get_auto_scaling_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>> {
+    pub fn get_auto_scaling_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>> {
         &self.auto_scaling_groups
     }
     /// Appends an item to `instances`.
@@ -149,10 +130,7 @@ impl EnvironmentResourceDescriptionBuilder {
         self
     }
     /// <p>The Amazon EC2 instances used by this environment.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
         self.instances = input;
         self
     }
@@ -172,17 +150,12 @@ impl EnvironmentResourceDescriptionBuilder {
         self
     }
     /// <p>The Auto Scaling launch configurations in use by this environment.</p>
-    pub fn set_launch_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>,
-    ) -> Self {
+    pub fn set_launch_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>>) -> Self {
         self.launch_configurations = input;
         self
     }
     /// <p>The Auto Scaling launch configurations in use by this environment.</p>
-    pub fn get_launch_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>> {
+    pub fn get_launch_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchConfiguration>> {
         &self.launch_configurations
     }
     /// Appends an item to `launch_templates`.
@@ -197,17 +170,12 @@ impl EnvironmentResourceDescriptionBuilder {
         self
     }
     /// <p>The Amazon EC2 launch templates in use by this environment.</p>
-    pub fn set_launch_templates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplate>>,
-    ) -> Self {
+    pub fn set_launch_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplate>>) -> Self {
         self.launch_templates = input;
         self
     }
     /// <p>The Amazon EC2 launch templates in use by this environment.</p>
-    pub fn get_launch_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplate>> {
+    pub fn get_launch_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplate>> {
         &self.launch_templates
     }
     /// Appends an item to `load_balancers`.
@@ -222,17 +190,12 @@ impl EnvironmentResourceDescriptionBuilder {
         self
     }
     /// <p>The LoadBalancers in use by this environment.</p>
-    pub fn set_load_balancers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
-    ) -> Self {
+    pub fn set_load_balancers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>) -> Self {
         self.load_balancers = input;
         self
     }
     /// <p>The LoadBalancers in use by this environment.</p>
-    pub fn get_load_balancers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
+    pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
         &self.load_balancers
     }
     /// Appends an item to `triggers`.
@@ -247,10 +210,7 @@ impl EnvironmentResourceDescriptionBuilder {
         self
     }
     /// <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
-    pub fn set_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
-    ) -> Self {
+    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>) -> Self {
         self.triggers = input;
         self
     }
@@ -270,10 +230,7 @@ impl EnvironmentResourceDescriptionBuilder {
         self
     }
     /// <p>The queues used by this environment.</p>
-    pub fn set_queues(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>,
-    ) -> Self {
+    pub fn set_queues(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>) -> Self {
         self.queues = input;
         self
     }

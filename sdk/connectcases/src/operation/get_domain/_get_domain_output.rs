@@ -20,12 +20,7 @@ pub struct GetDomainOutput {
     pub domain_status: ::std::option::Option<crate::types::DomainStatus>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl GetDomainOutput {
@@ -50,14 +45,7 @@ impl GetDomainOutput {
         self.domain_status.as_ref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
 }
@@ -75,21 +63,14 @@ impl GetDomainOutput {
 
 /// A builder for [`GetDomainOutput`](crate::operation::get_domain::GetDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) domain_status: ::std::option::Option<crate::types::DomainStatus>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl GetDomainOutputBuilder {
@@ -141,10 +122,7 @@ impl GetDomainOutputBuilder {
         self
     }
     /// <p>The timestamp when the Cases domain was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -158,10 +136,7 @@ impl GetDomainOutputBuilder {
         self
     }
     /// <p>The status of the Cases domain.</p>
-    pub fn set_domain_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainStatus>,
-    ) -> Self {
+    pub fn set_domain_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
         self.domain_status = input;
         self
     }
@@ -174,11 +149,7 @@ impl GetDomainOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.tags = ::std::option::Option::Some(hash_map);
@@ -187,12 +158,7 @@ impl GetDomainOutputBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn set_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::option::Option<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     ) -> Self {
         self.tags = input;
         self
@@ -200,12 +166,7 @@ impl GetDomainOutputBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn get_tags(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

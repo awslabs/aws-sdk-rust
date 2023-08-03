@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteLoadBalancerOutput {
 }
 impl DeleteLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerOutput`](crate::operation::delete_load_balancer::DeleteLoadBalancerOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_load_balancer::builders::DeleteLoadBalancerOutputBuilder {
+    pub fn builder() -> crate::operation::delete_load_balancer::builders::DeleteLoadBalancerOutputBuilder {
         crate::operation::delete_load_balancer::builders::DeleteLoadBalancerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLoadBalancerOutput`](crate::operation::delete_load_balancer::DeleteLoadBalancerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLoadBalancerOutputBuilder {
     _request_id: Option<String>,
 }

@@ -10,10 +10,7 @@ impl ModifyTargetGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_target_group::ModifyTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_target_group::ModifyTargetGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_target_group::ModifyTargetGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_target_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ModifyTargetGroupFluentBuilder {
         }
     }
     /// Access the ModifyTargetGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_target_group::builders::ModifyTargetGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_target_group::builders::ModifyTargetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ModifyTargetGroupFluentBuilder {
             crate::operation::modify_target_group::ModifyTargetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_target_group::ModifyTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_target_group::ModifyTargetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ModifyTargetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ModifyTargetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_target_group::ModifyTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_target_group::ModifyTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_target_group::ModifyTargetGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ModifyTargetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_target_group::ModifyTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_target_group::ModifyTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_target_group::ModifyTargetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl ModifyTargetGroupFluentBuilder {
             crate::operation::modify_target_group::ModifyTargetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_target_group::ModifyTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_target_group::ModifyTargetGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_group_arn(input);
         self
     }
@@ -148,10 +126,7 @@ impl ModifyTargetGroupFluentBuilder {
         self
     }
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    pub fn set_health_check_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolEnum>,
-    ) -> Self {
+    pub fn set_health_check_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
         self.inner = self.inner.set_health_check_protocol(input);
         self
     }
@@ -160,18 +135,12 @@ impl ModifyTargetGroupFluentBuilder {
         self.inner.get_health_check_protocol()
     }
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
-    pub fn health_check_port(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_check_port(input.into());
         self
     }
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
-    pub fn set_health_check_port(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_health_check_port(input);
         self
     }
@@ -182,20 +151,14 @@ impl ModifyTargetGroupFluentBuilder {
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn health_check_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_check_path(input.into());
         self
     }
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn set_health_check_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_health_check_path(input);
         self
     }

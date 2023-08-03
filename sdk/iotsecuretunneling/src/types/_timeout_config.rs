@@ -23,9 +23,7 @@ impl TimeoutConfig {
 
 /// A builder for [`TimeoutConfig`](crate::types::TimeoutConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeoutConfigBuilder {
     pub(crate) max_lifetime_timeout_minutes: ::std::option::Option<i32>,
 }

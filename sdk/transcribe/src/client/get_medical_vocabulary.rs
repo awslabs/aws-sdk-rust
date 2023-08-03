@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`failure_reason(Option<String>)`](crate::operation::get_medical_vocabulary::GetMedicalVocabularyOutput::failure_reason): <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the custom medical vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     ///   - [`download_uri(Option<String>)`](crate::operation::get_medical_vocabulary::GetMedicalVocabularyOutput::download_uri): <p>The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
     /// - On failure, responds with [`SdkError<GetMedicalVocabularyError>`](crate::operation::get_medical_vocabulary::GetMedicalVocabularyError)
-    pub fn get_medical_vocabulary(
-        &self,
-    ) -> crate::operation::get_medical_vocabulary::builders::GetMedicalVocabularyFluentBuilder {
-        crate::operation::get_medical_vocabulary::builders::GetMedicalVocabularyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_medical_vocabulary(&self) -> crate::operation::get_medical_vocabulary::builders::GetMedicalVocabularyFluentBuilder {
+        crate::operation::get_medical_vocabulary::builders::GetMedicalVocabularyFluentBuilder::new(self.handle.clone())
     }
 }

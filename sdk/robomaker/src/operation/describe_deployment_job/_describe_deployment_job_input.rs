@@ -18,18 +18,14 @@ impl DescribeDeploymentJobInput {
 }
 impl DescribeDeploymentJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeDeploymentJobInput`](crate::operation::describe_deployment_job::DescribeDeploymentJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_deployment_job::builders::DescribeDeploymentJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_deployment_job::builders::DescribeDeploymentJobInputBuilder {
         crate::operation::describe_deployment_job::builders::DescribeDeploymentJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDeploymentJobInput`](crate::operation::describe_deployment_job::DescribeDeploymentJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeploymentJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }
@@ -51,12 +47,8 @@ impl DescribeDeploymentJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeploymentJobInput`](crate::operation::describe_deployment_job::DescribeDeploymentJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_deployment_job::DescribeDeploymentJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_deployment_job::DescribeDeploymentJobInput { job: self.job },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_deployment_job::DescribeDeploymentJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_deployment_job::DescribeDeploymentJobInput { job: self.job })
     }
 }

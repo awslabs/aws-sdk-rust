@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifyVolumeAttributeOutput {
 }
 impl ModifyVolumeAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVolumeAttributeOutput`](crate::operation::modify_volume_attribute::ModifyVolumeAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeOutputBuilder {
         crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVolumeAttributeOutput`](crate::operation::modify_volume_attribute::ModifyVolumeAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVolumeAttributeOutputBuilder {
     _request_id: Option<String>,
 }

@@ -23,9 +23,7 @@ impl CreateTemplateInput {
 
 /// A builder for [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTemplateInputBuilder {
     pub(crate) template: ::std::option::Option<crate::types::Template>,
 }
@@ -47,12 +45,7 @@ impl CreateTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_template::CreateTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_template::CreateTemplateInput {
-            template: self.template,
-        })
+    ) -> ::std::result::Result<crate::operation::create_template::CreateTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_template::CreateTemplateInput { template: self.template })
     }
 }

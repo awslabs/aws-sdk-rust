@@ -29,18 +29,14 @@ impl ListSimulationJobBatchesInput {
 }
 impl ListSimulationJobBatchesInput {
     /// Creates a new builder-style object to manufacture [`ListSimulationJobBatchesInput`](crate::operation::list_simulation_job_batches::ListSimulationJobBatchesInput).
-    pub fn builder(
-    ) -> crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesInputBuilder {
         crate::operation::list_simulation_job_batches::builders::ListSimulationJobBatchesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSimulationJobBatchesInput`](crate::operation::list_simulation_job_batches::ListSimulationJobBatchesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSimulationJobBatchesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -87,10 +83,7 @@ impl ListSimulationJobBatchesInputBuilder {
         self
     }
     /// <p>Optional filters to limit results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -105,12 +98,10 @@ impl ListSimulationJobBatchesInputBuilder {
         crate::operation::list_simulation_job_batches::ListSimulationJobBatchesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_simulation_job_batches::ListSimulationJobBatchesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_simulation_job_batches::ListSimulationJobBatchesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+        })
     }
 }

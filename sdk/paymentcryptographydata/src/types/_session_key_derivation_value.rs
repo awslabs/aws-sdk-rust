@@ -21,9 +21,7 @@ pub enum SessionKeyDerivationValue {
 impl SessionKeyDerivationValue {
     /// Tries to convert the enum instance into [`ApplicationCryptogram`](crate::types::SessionKeyDerivationValue::ApplicationCryptogram), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_application_cryptogram(
-        &self,
-    ) -> ::std::result::Result<&::std::string::String, &Self> {
+    pub fn as_application_cryptogram(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let SessionKeyDerivationValue::ApplicationCryptogram(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -36,9 +34,7 @@ impl SessionKeyDerivationValue {
     }
     /// Tries to convert the enum instance into [`ApplicationTransactionCounter`](crate::types::SessionKeyDerivationValue::ApplicationTransactionCounter), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_application_transaction_counter(
-        &self,
-    ) -> ::std::result::Result<&::std::string::String, &Self> {
+    pub fn as_application_transaction_counter(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let SessionKeyDerivationValue::ApplicationTransactionCounter(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

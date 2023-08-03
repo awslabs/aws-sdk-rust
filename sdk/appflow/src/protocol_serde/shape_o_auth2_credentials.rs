@@ -18,10 +18,7 @@ pub fn ser_o_auth2_credentials(
     if let Some(var_5) = &input.o_auth_request {
         #[allow(unused_mut)]
         let mut object_6 = object.key("oAuthRequest").start_object();
-        crate::protocol_serde::shape_connector_o_auth_request::ser_connector_o_auth_request(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_connector_o_auth_request::ser_connector_o_auth_request(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

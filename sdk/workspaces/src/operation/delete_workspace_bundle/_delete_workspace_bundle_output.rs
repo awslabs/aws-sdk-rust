@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteWorkspaceBundleOutput {
 }
 impl DeleteWorkspaceBundleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceBundleOutput`](crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_workspace_bundle::builders::DeleteWorkspaceBundleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_workspace_bundle::builders::DeleteWorkspaceBundleOutputBuilder {
         crate::operation::delete_workspace_bundle::builders::DeleteWorkspaceBundleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorkspaceBundleOutput`](crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceBundleOutputBuilder {
     _request_id: Option<String>,
 }

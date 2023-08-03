@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateLicenseOutput`](crate::operation::associate_license::AssociateLicenseOutput) with field(s):
     ///   - [`workspace(Option<WorkspaceDescription>)`](crate::operation::associate_license::AssociateLicenseOutput::workspace): <p>A structure containing data about the workspace.</p>
     /// - On failure, responds with [`SdkError<AssociateLicenseError>`](crate::operation::associate_license::AssociateLicenseError)
-    pub fn associate_license(
-        &self,
-    ) -> crate::operation::associate_license::builders::AssociateLicenseFluentBuilder {
-        crate::operation::associate_license::builders::AssociateLicenseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_license(&self) -> crate::operation::associate_license::builders::AssociateLicenseFluentBuilder {
+        crate::operation::associate_license::builders::AssociateLicenseFluentBuilder::new(self.handle.clone())
     }
 }

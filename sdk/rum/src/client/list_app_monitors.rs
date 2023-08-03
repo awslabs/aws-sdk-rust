@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_monitors::ListAppMonitorsOutput::next_token): <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     ///   - [`app_monitor_summaries(Option<Vec<AppMonitorSummary>>)`](crate::operation::list_app_monitors::ListAppMonitorsOutput::app_monitor_summaries): <p>An array of structures that contain information about the returned app monitors.</p>
     /// - On failure, responds with [`SdkError<ListAppMonitorsError>`](crate::operation::list_app_monitors::ListAppMonitorsError)
-    pub fn list_app_monitors(
-        &self,
-    ) -> crate::operation::list_app_monitors::builders::ListAppMonitorsFluentBuilder {
-        crate::operation::list_app_monitors::builders::ListAppMonitorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_app_monitors(&self) -> crate::operation::list_app_monitors::builders::ListAppMonitorsFluentBuilder {
+        crate::operation::list_app_monitors::builders::ListAppMonitorsFluentBuilder::new(self.handle.clone())
     }
 }

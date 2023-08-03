@@ -22,16 +22,14 @@ impl RejectClientVpcConnectionInput {
 }
 impl RejectClientVpcConnectionInput {
     /// Creates a new builder-style object to manufacture [`RejectClientVpcConnectionInput`](crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput).
-    pub fn builder() -> crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionInputBuilder{
+    pub fn builder() -> crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionInputBuilder {
         crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`RejectClientVpcConnectionInput`](crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectClientVpcConnectionInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_connection_arn: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl RejectClientVpcConnectionInputBuilder {
         &self.cluster_arn
     }
     /// <p>The VPC connection ARN.</p>
-    pub fn vpc_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The VPC connection ARN.</p>
-    pub fn set_vpc_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_connection_arn = input;
         self
     }
@@ -78,11 +70,9 @@ impl RejectClientVpcConnectionInputBuilder {
         crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput {
-                cluster_arn: self.cluster_arn,
-                vpc_connection_arn: self.vpc_connection_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput {
+            cluster_arn: self.cluster_arn,
+            vpc_connection_arn: self.vpc_connection_arn,
+        })
     }
 }

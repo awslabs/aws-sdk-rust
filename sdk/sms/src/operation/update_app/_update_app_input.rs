@@ -57,9 +57,7 @@ impl UpdateAppInput {
 
 /// A builder for [`UpdateAppInput`](crate::operation::update_app::UpdateAppInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAppInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -137,17 +135,12 @@ impl UpdateAppInputBuilder {
         self
     }
     /// <p>The server groups in the application to update.</p>
-    pub fn set_server_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>>,
-    ) -> Self {
+    pub fn set_server_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>>) -> Self {
         self.server_groups = input;
         self
     }
     /// <p>The server groups in the application to update.</p>
-    pub fn get_server_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>> {
+    pub fn get_server_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>> {
         &self.server_groups
     }
     /// Appends an item to `tags`.
@@ -162,10 +155,7 @@ impl UpdateAppInputBuilder {
         self
     }
     /// <p>The tags to associate with the application.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -174,12 +164,7 @@ impl UpdateAppInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UpdateAppInput`](crate::operation::update_app::UpdateAppInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_app::UpdateAppInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_app::UpdateAppInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_app::UpdateAppInput {
             app_id: self.app_id,
             name: self.name,

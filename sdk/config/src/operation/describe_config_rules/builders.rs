@@ -37,9 +37,7 @@ impl DescribeConfigRulesFluentBuilder {
         }
     }
     /// Access the DescribeConfigRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_config_rules::builders::DescribeConfigRulesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_config_rules::builders::DescribeConfigRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeConfigRulesFluentBuilder {
             crate::operation::describe_config_rules::DescribeConfigRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_config_rules::DescribeConfigRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_config_rules::DescribeConfigRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeConfigRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeConfigRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_config_rules::DescribeConfigRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_config_rules::DescribeConfigRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_config_rules::DescribeConfigRulesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeConfigRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_config_rules::DescribeConfigRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_config_rules::DescribeConfigRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_config_rules::DescribeConfigRulesError>,
     > {
         self.send_middleware().await
     }
@@ -116,47 +105,32 @@ impl DescribeConfigRulesFluentBuilder {
             crate::operation::describe_config_rules::DescribeConfigRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_config_rules::DescribeConfigRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_config_rules::DescribeConfigRulesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_config_rules::paginator::DescribeConfigRulesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_config_rules::paginator::DescribeConfigRulesPaginator {
-        crate::operation::describe_config_rules::paginator::DescribeConfigRulesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_config_rules::paginator::DescribeConfigRulesPaginator {
+        crate::operation::describe_config_rules::paginator::DescribeConfigRulesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ConfigRuleNames`.
     ///
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
     ///
     /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
-    pub fn config_rule_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_rule_names(input.into());
         self
     }
     /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
-    pub fn set_config_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_config_rule_names(input);
         self
     }
     /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
-    pub fn get_config_rule_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_config_rule_names()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -179,10 +153,7 @@ impl DescribeConfigRulesFluentBuilder {
         self
     }
     /// <p>Returns a list of Detective or Proactive Config rules. By default, this API returns an unfiltered list. For more information on Detective or Proactive Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html"> <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribeConfigRulesFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DescribeConfigRulesFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

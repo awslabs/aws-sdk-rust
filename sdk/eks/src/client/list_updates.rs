@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`update_ids(Option<Vec<String>>)`](crate::operation::list_updates::ListUpdatesOutput::update_ids): <p>A list of all the updates for the specified cluster and Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_updates::ListUpdatesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code> request. When the results of a <code>ListUpdates</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListUpdatesError>`](crate::operation::list_updates::ListUpdatesError)
-    pub fn list_updates(
-        &self,
-    ) -> crate::operation::list_updates::builders::ListUpdatesFluentBuilder {
+    pub fn list_updates(&self) -> crate::operation::list_updates::builders::ListUpdatesFluentBuilder {
         crate::operation::list_updates::builders::ListUpdatesFluentBuilder::new(self.handle.clone())
     }
 }

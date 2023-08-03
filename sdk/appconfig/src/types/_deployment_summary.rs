@@ -93,9 +93,7 @@ impl DeploymentSummary {
 
 /// A builder for [`DeploymentSummary`](crate::types::DeploymentSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentSummaryBuilder {
     pub(crate) deployment_number: ::std::option::Option<i32>,
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
@@ -125,18 +123,12 @@ impl DeploymentSummaryBuilder {
         &self.deployment_number
     }
     /// <p>The name of the configuration.</p>
-    pub fn configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration.</p>
-    pub fn set_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_name = input;
         self
     }
@@ -145,18 +137,12 @@ impl DeploymentSummaryBuilder {
         &self.configuration_name
     }
     /// <p>The version of the configuration.</p>
-    pub fn configuration_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the configuration.</p>
-    pub fn set_configuration_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_version = input;
         self
     }
@@ -184,10 +170,7 @@ impl DeploymentSummaryBuilder {
         self
     }
     /// <p>The algorithm used to define how percentage grows over time.</p>
-    pub fn set_growth_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GrowthType>,
-    ) -> Self {
+    pub fn set_growth_type(mut self, input: ::std::option::Option<crate::types::GrowthType>) -> Self {
         self.growth_type = input;
         self
     }
@@ -229,10 +212,7 @@ impl DeploymentSummaryBuilder {
         self
     }
     /// <p>The state of the deployment.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::DeploymentState>) -> Self {
         self.state = input;
         self
     }
@@ -260,10 +240,7 @@ impl DeploymentSummaryBuilder {
         self
     }
     /// <p>Time the deployment started.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -277,10 +254,7 @@ impl DeploymentSummaryBuilder {
         self
     }
     /// <p>Time the deployment completed.</p>
-    pub fn set_completed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_at = input;
         self
     }

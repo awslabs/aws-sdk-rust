@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`children(Option<Vec<Child>>)`](crate::operation::list_children::ListChildrenOutput::children): <p>The list of children of the specified parent container.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_children::ListChildrenOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListChildrenError>`](crate::operation::list_children::ListChildrenError)
-    pub fn list_children(
-        &self,
-    ) -> crate::operation::list_children::builders::ListChildrenFluentBuilder {
-        crate::operation::list_children::builders::ListChildrenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_children(&self) -> crate::operation::list_children::builders::ListChildrenFluentBuilder {
+        crate::operation::list_children::builders::ListChildrenFluentBuilder::new(self.handle.clone())
     }
 }

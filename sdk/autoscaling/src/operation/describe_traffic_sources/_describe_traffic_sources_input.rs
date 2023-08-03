@@ -48,18 +48,14 @@ impl DescribeTrafficSourcesInput {
 }
 impl DescribeTrafficSourcesInput {
     /// Creates a new builder-style object to manufacture [`DescribeTrafficSourcesInput`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesInputBuilder {
         crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrafficSourcesInput`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrafficSourcesInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_source_type: ::std::option::Option<::std::string::String>,
@@ -68,18 +64,12 @@ pub struct DescribeTrafficSourcesInputBuilder {
 }
 impl DescribeTrafficSourcesInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -94,10 +84,7 @@ impl DescribeTrafficSourcesInputBuilder {
     /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li>
     /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li>
     /// </ul>
-    pub fn traffic_source_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_source_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -108,10 +95,7 @@ impl DescribeTrafficSourcesInputBuilder {
     /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li>
     /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li>
     /// </ul>
-    pub fn set_traffic_source_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_source_type = input;
         self
     }
@@ -156,17 +140,13 @@ impl DescribeTrafficSourcesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTrafficSourcesInput`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                traffic_source_type: self.traffic_source_type,
-                next_token: self.next_token,
-                max_records: self.max_records,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput {
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            traffic_source_type: self.traffic_source_type,
+            next_token: self.next_token,
+            max_records: self.max_records,
+        })
     }
 }

@@ -15,33 +15,25 @@ impl EnableOrganizationAdminAccountInput {
 }
 impl EnableOrganizationAdminAccountInput {
     /// Creates a new builder-style object to manufacture [`EnableOrganizationAdminAccountInput`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput).
-    pub fn builder() -> crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountInputBuilder{
+    pub fn builder() -> crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountInputBuilder {
         crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableOrganizationAdminAccountInput`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableOrganizationAdminAccountInputBuilder {
     pub(crate) admin_account_id: ::std::option::Option<::std::string::String>,
 }
 impl EnableOrganizationAdminAccountInputBuilder {
     /// <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
-    pub fn admin_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
-    pub fn set_admin_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_account_id = input;
         self
     }
@@ -56,11 +48,8 @@ impl EnableOrganizationAdminAccountInputBuilder {
         crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput {
-                admin_account_id: self.admin_account_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput {
+            admin_account_id: self.admin_account_id,
+        })
     }
 }

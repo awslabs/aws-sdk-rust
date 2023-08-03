@@ -35,9 +35,7 @@ impl ListFacetNamesOutput {
 
 /// A builder for [`ListFacetNamesOutput`](crate::operation::list_facet_names::ListFacetNamesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFacetNamesOutputBuilder {
     pub(crate) facet_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListFacetNamesOutputBuilder {
         self
     }
     /// <p>The names of facets that exist within the schema.</p>
-    pub fn set_facet_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_facet_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.facet_names = input;
         self
     }
     /// <p>The names of facets that exist within the schema.</p>
-    pub fn get_facet_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_facet_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.facet_names
     }
     /// <p>The pagination token.</p>

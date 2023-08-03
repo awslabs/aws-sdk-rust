@@ -10,10 +10,7 @@ impl AddPermissionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_permission::AddPermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_permission::AddPermissionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_permission::AddPermissionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_permission();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl AddPermissionFluentBuilder {
         }
     }
     /// Access the AddPermission as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_permission::builders::AddPermissionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_permission::builders::AddPermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl AddPermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -124,10 +116,7 @@ impl AddPermissionFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -139,10 +128,7 @@ impl AddPermissionFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }
@@ -217,18 +203,12 @@ impl AddPermissionFluentBuilder {
         self.inner.get_source_arn()
     }
     /// <p>For Amazon Web Service, the ID of the Amazon Web Services account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the specified account owns the resource. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.</p>
-    pub fn source_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_account(input.into());
         self
     }
     /// <p>For Amazon Web Service, the ID of the Amazon Web Services account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the specified account owns the resource. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.</p>
-    pub fn set_source_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_account(input);
         self
     }
@@ -237,18 +217,12 @@ impl AddPermissionFluentBuilder {
         self.inner.get_source_account()
     }
     /// <p>For Alexa Smart Home functions, a token that the invoker must supply.</p>
-    pub fn event_source_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_source_token(input.into());
         self
     }
     /// <p>For Alexa Smart Home functions, a token that the invoker must supply.</p>
-    pub fn set_event_source_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_source_token(input);
         self
     }
@@ -285,18 +259,12 @@ impl AddPermissionFluentBuilder {
         self.inner.get_revision_id()
     }
     /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
-    pub fn principal_org_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_org_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_org_id(input.into());
         self
     }
     /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
-    pub fn set_principal_org_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_org_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_org_id(input);
         self
     }
@@ -310,17 +278,12 @@ impl AddPermissionFluentBuilder {
         self
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn set_function_url_auth_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionUrlAuthType>,
-    ) -> Self {
+    pub fn set_function_url_auth_type(mut self, input: ::std::option::Option<crate::types::FunctionUrlAuthType>) -> Self {
         self.inner = self.inner.set_function_url_auth_type(input);
         self
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn get_function_url_auth_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::FunctionUrlAuthType> {
+    pub fn get_function_url_auth_type(&self) -> &::std::option::Option<crate::types::FunctionUrlAuthType> {
         self.inner.get_function_url_auth_type()
     }
 }

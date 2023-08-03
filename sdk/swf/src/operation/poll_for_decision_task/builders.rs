@@ -50,9 +50,7 @@ impl PollForDecisionTaskFluentBuilder {
         }
     }
     /// Access the PollForDecisionTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::poll_for_decision_task::builders::PollForDecisionTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::poll_for_decision_task::builders::PollForDecisionTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +62,7 @@ impl PollForDecisionTaskFluentBuilder {
             crate::operation::poll_for_decision_task::PollForDecisionTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::poll_for_decision_task::PollForDecisionTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::poll_for_decision_task::PollForDecisionTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +72,7 @@ impl PollForDecisionTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +81,7 @@ impl PollForDecisionTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::poll_for_decision_task::PollForDecisionTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::poll_for_decision_task::PollForDecisionTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::poll_for_decision_task::PollForDecisionTaskError>,
     > {
         let op = self
             .inner
@@ -113,9 +104,7 @@ impl PollForDecisionTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::poll_for_decision_task::PollForDecisionTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::poll_for_decision_task::PollForDecisionTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::poll_for_decision_task::PollForDecisionTaskError>,
     > {
         self.send_middleware().await
     }
@@ -129,22 +118,15 @@ impl PollForDecisionTaskFluentBuilder {
             crate::operation::poll_for_decision_task::PollForDecisionTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::poll_for_decision_task::PollForDecisionTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::poll_for_decision_task::PollForDecisionTaskError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::poll_for_decision_task::paginator::PollForDecisionTaskPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::poll_for_decision_task::paginator::PollForDecisionTaskPaginator {
-        crate::operation::poll_for_decision_task::paginator::PollForDecisionTaskPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::poll_for_decision_task::paginator::PollForDecisionTaskPaginator {
+        crate::operation::poll_for_decision_task::paginator::PollForDecisionTaskPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the domain containing the task lists to poll.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -195,10 +177,7 @@ impl PollForDecisionTaskFluentBuilder {
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
@@ -206,10 +185,7 @@ impl PollForDecisionTaskFluentBuilder {
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }
@@ -257,10 +233,7 @@ impl PollForDecisionTaskFluentBuilder {
         self
     }
     /// <p>When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter is set to <code>false</code>.</p>
-    pub fn set_start_at_previous_started_event(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_start_at_previous_started_event(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_start_at_previous_started_event(input);
         self
     }

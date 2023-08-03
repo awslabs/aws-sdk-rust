@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateScheduledActionOutput {
 }
 impl UpdateScheduledActionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateScheduledActionOutput`](crate::operation::update_scheduled_action::UpdateScheduledActionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_scheduled_action::builders::UpdateScheduledActionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_scheduled_action::builders::UpdateScheduledActionOutputBuilder {
         crate::operation::update_scheduled_action::builders::UpdateScheduledActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateScheduledActionOutput`](crate::operation::update_scheduled_action::UpdateScheduledActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateScheduledActionOutputBuilder {
     pub(crate) scheduled_action: ::std::option::Option<crate::types::ScheduledAction>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateScheduledActionOutputBuilder {
         self
     }
     /// <p>Information about the rescheduled action.</p>
-    pub fn set_scheduled_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledAction>,
-    ) -> Self {
+    pub fn set_scheduled_action(mut self, input: ::std::option::Option<crate::types::ScheduledAction>) -> Self {
         self.scheduled_action = input;
         self
     }

@@ -100,9 +100,7 @@ impl WorkspaceBundle {
 
 /// A builder for [`WorkspaceBundle`](crate::types::WorkspaceBundle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkspaceBundleBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -194,10 +192,7 @@ impl WorkspaceBundleBuilder {
         self
     }
     /// <p>The size of the root volume.</p>
-    pub fn set_root_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::RootStorage>,
-    ) -> Self {
+    pub fn set_root_storage(mut self, input: ::std::option::Option<crate::types::RootStorage>) -> Self {
         self.root_storage = input;
         self
     }
@@ -211,10 +206,7 @@ impl WorkspaceBundleBuilder {
         self
     }
     /// <p>The size of the user volume.</p>
-    pub fn set_user_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::UserStorage>,
-    ) -> Self {
+    pub fn set_user_storage(mut self, input: ::std::option::Option<crate::types::UserStorage>) -> Self {
         self.user_storage = input;
         self
     }
@@ -228,10 +220,7 @@ impl WorkspaceBundleBuilder {
         self
     }
     /// <p>The compute type of the bundle. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
-    pub fn set_compute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeType>,
-    ) -> Self {
+    pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.compute_type = input;
         self
     }
@@ -245,10 +234,7 @@ impl WorkspaceBundleBuilder {
         self
     }
     /// <p>The last time that the bundle was updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -262,10 +248,7 @@ impl WorkspaceBundleBuilder {
         self
     }
     /// <p>The time when the bundle was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -279,10 +262,7 @@ impl WorkspaceBundleBuilder {
         self
     }
     /// <p>The state of the WorkSpace bundle.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceBundleState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkspaceBundleState>) -> Self {
         self.state = input;
         self
     }
@@ -296,10 +276,7 @@ impl WorkspaceBundleBuilder {
         self
     }
     /// <p>The type of WorkSpace bundle.</p>
-    pub fn set_bundle_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BundleType>,
-    ) -> Self {
+    pub fn set_bundle_type(mut self, input: ::std::option::Option<crate::types::BundleType>) -> Self {
         self.bundle_type = input;
         self
     }

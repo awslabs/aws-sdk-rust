@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetRelationalDatabaseSnapshotOutput`](crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotOutput) with field(s):
     ///   - [`relational_database_snapshot(Option<RelationalDatabaseSnapshot>)`](crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotOutput::relational_database_snapshot): <p>An object describing the specified database snapshot.</p>
     /// - On failure, responds with [`SdkError<GetRelationalDatabaseSnapshotError>`](crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError)
-    pub fn get_relational_database_snapshot(&self) -> crate::operation::get_relational_database_snapshot::builders::GetRelationalDatabaseSnapshotFluentBuilder{
+    pub fn get_relational_database_snapshot(
+        &self,
+    ) -> crate::operation::get_relational_database_snapshot::builders::GetRelationalDatabaseSnapshotFluentBuilder {
         crate::operation::get_relational_database_snapshot::builders::GetRelationalDatabaseSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

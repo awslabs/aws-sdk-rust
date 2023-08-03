@@ -22,18 +22,14 @@ impl ListAutomationRulesInput {
 }
 impl ListAutomationRulesInput {
     /// Creates a new builder-style object to manufacture [`ListAutomationRulesInput`](crate::operation::list_automation_rules::ListAutomationRulesInput).
-    pub fn builder(
-    ) -> crate::operation::list_automation_rules::builders::ListAutomationRulesInputBuilder {
-        crate::operation::list_automation_rules::builders::ListAutomationRulesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_automation_rules::builders::ListAutomationRulesInputBuilder {
+        crate::operation::list_automation_rules::builders::ListAutomationRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAutomationRulesInput`](crate::operation::list_automation_rules::ListAutomationRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAutomationRulesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,15 +66,11 @@ impl ListAutomationRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListAutomationRulesInput`](crate::operation::list_automation_rules::ListAutomationRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_automation_rules::ListAutomationRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_automation_rules::ListAutomationRulesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_automation_rules::ListAutomationRulesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_automation_rules::ListAutomationRulesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -14,9 +14,7 @@ pub struct InstanceDefinition {
 }
 impl InstanceDefinition {
     /// <p>An Amazon EC2 instance type designation.</p>
-    pub fn instance_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GameServerGroupInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::GameServerGroupInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Instance weighting that indicates how much this instance type contributes to the total capacity of a game server group. Instance weights are used by Amazon GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify the most cost-effective options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. Default value is "1".</p>
@@ -33,9 +31,7 @@ impl InstanceDefinition {
 
 /// A builder for [`InstanceDefinition`](crate::types::InstanceDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceDefinitionBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::GameServerGroupInstanceType>,
     pub(crate) weighted_capacity: ::std::option::Option<::std::string::String>,
@@ -47,32 +43,21 @@ impl InstanceDefinitionBuilder {
         self
     }
     /// <p>An Amazon EC2 instance type designation.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServerGroupInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::GameServerGroupInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>An Amazon EC2 instance type designation.</p>
-    pub fn get_instance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::GameServerGroupInstanceType> {
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::GameServerGroupInstanceType> {
         &self.instance_type
     }
     /// <p>Instance weighting that indicates how much this instance type contributes to the total capacity of a game server group. Instance weights are used by Amazon GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify the most cost-effective options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. Default value is "1".</p>
-    pub fn weighted_capacity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn weighted_capacity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.weighted_capacity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Instance weighting that indicates how much this instance type contributes to the total capacity of a game server group. Instance weights are used by Amazon GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify the most cost-effective options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. Default value is "1".</p>
-    pub fn set_weighted_capacity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_weighted_capacity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.weighted_capacity = input;
         self
     }

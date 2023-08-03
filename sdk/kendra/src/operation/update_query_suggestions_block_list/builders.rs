@@ -5,16 +5,16 @@ pub use crate::operation::update_query_suggestions_block_list::_update_query_sug
 
 impl UpdateQuerySuggestionsBlockListInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_query_suggestions_block_list();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -30,7 +30,7 @@ impl UpdateQuerySuggestionsBlockListInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQuerySuggestionsBlockListFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListInputBuilder,
+    inner: crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListInputBuilder,
 }
 impl UpdateQuerySuggestionsBlockListFluentBuilder {
     /// Creates a new `UpdateQuerySuggestionsBlockList`.
@@ -41,15 +41,20 @@ impl UpdateQuerySuggestionsBlockListFluentBuilder {
         }
     }
     /// Access the UpdateQuerySuggestionsBlockList as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockList, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockList,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -58,16 +63,17 @@ impl UpdateQuerySuggestionsBlockListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListError>,
+    > {
         let op = self
             .inner
             .build()
@@ -85,17 +91,26 @@ impl UpdateQuerySuggestionsBlockListFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockList, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockList,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the index for the block list.</p>
@@ -164,10 +179,7 @@ impl UpdateQuerySuggestionsBlockListFluentBuilder {
     /// <p>The S3 path where your block list text file sits in S3.</p>
     /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>
     /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.</p>
-    pub fn set_source_s3_path(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Path>,
-    ) -> Self {
+    pub fn set_source_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
         self.inner = self.inner.set_source_s3_path(input);
         self
     }

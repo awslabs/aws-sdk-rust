@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`content(RawMessageContent)`](crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder::content) / [`set_content(Option<RawMessageContent>)`](crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder::set_content): <p>Describes the raw message content of the updated email message.</p>
     /// - On success, responds with [`PutRawMessageContentOutput`](crate::operation::put_raw_message_content::PutRawMessageContentOutput)
     /// - On failure, responds with [`SdkError<PutRawMessageContentError>`](crate::operation::put_raw_message_content::PutRawMessageContentError)
-    pub fn put_raw_message_content(
-        &self,
-    ) -> crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder
-    {
-        crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_raw_message_content(&self) -> crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder {
+        crate::operation::put_raw_message_content::builders::PutRawMessageContentFluentBuilder::new(self.handle.clone())
     }
 }

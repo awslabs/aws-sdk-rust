@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`DisassociateEnclaveCertificateIamRoleOutput`](crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<DisassociateEnclaveCertificateIamRoleError>`](crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleError)
-    pub fn disassociate_enclave_certificate_iam_role(&self) -> crate::operation::disassociate_enclave_certificate_iam_role::builders::DisassociateEnclaveCertificateIamRoleFluentBuilder{
-        crate::operation::disassociate_enclave_certificate_iam_role::builders::DisassociateEnclaveCertificateIamRoleFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_enclave_certificate_iam_role(
+        &self,
+    ) -> crate::operation::disassociate_enclave_certificate_iam_role::builders::DisassociateEnclaveCertificateIamRoleFluentBuilder {
+        crate::operation::disassociate_enclave_certificate_iam_role::builders::DisassociateEnclaveCertificateIamRoleFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

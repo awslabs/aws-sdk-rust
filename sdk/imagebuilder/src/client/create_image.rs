@@ -17,9 +17,7 @@ impl super::Client {
     ///   - [`client_token(Option<String>)`](crate::operation::create_image::CreateImageOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
     ///   - [`image_build_version_arn(Option<String>)`](crate::operation::create_image::CreateImageOutput::image_build_version_arn): <p>The Amazon Resource Name (ARN) of the image that this request created.</p>
     /// - On failure, responds with [`SdkError<CreateImageError>`](crate::operation::create_image::CreateImageError)
-    pub fn create_image(
-        &self,
-    ) -> crate::operation::create_image::builders::CreateImageFluentBuilder {
+    pub fn create_image(&self) -> crate::operation::create_image::builders::CreateImageFluentBuilder {
         crate::operation::create_image::builders::CreateImageFluentBuilder::new(self.handle.clone())
     }
 }

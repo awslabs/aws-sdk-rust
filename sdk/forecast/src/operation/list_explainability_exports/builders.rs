@@ -27,7 +27,7 @@ impl ListExplainabilityExportsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListExplainabilityExportsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_explainability_exports::builders::ListExplainabilityExportsInputBuilder,
+    inner: crate::operation::list_explainability_exports::builders::ListExplainabilityExportsInputBuilder,
 }
 impl ListExplainabilityExportsFluentBuilder {
     /// Creates a new `ListExplainabilityExports`.
@@ -38,7 +38,7 @@ impl ListExplainabilityExportsFluentBuilder {
         }
     }
     /// Access the ListExplainabilityExports as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_explainability_exports::builders::ListExplainabilityExportsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_explainability_exports::builders::ListExplainabilityExportsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListExplainabilityExportsFluentBuilder {
             crate::operation::list_explainability_exports::ListExplainabilityExports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_explainability_exports::ListExplainabilityExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_explainability_exports::ListExplainabilityExportsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListExplainabilityExportsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListExplainabilityExportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_explainability_exports::ListExplainabilityExportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_explainability_exports::ListExplainabilityExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_explainability_exports::ListExplainabilityExportsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListExplainabilityExportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_explainability_exports::ListExplainabilityExportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_explainability_exports::ListExplainabilityExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_explainability_exports::ListExplainabilityExportsError>,
     > {
         self.send_middleware().await
     }
@@ -115,19 +106,14 @@ impl ListExplainabilityExportsFluentBuilder {
             crate::operation::list_explainability_exports::ListExplainabilityExports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_explainability_exports::ListExplainabilityExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_explainability_exports::ListExplainabilityExportsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_explainability_exports::paginator::ListExplainabilityExportsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_explainability_exports::paginator::ListExplainabilityExportsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_explainability_exports::paginator::ListExplainabilityExportsPaginator {
         crate::operation::list_explainability_exports::paginator::ListExplainabilityExportsPaginator::new(self.handle, self.inner)
     }
     /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
@@ -180,10 +166,7 @@ impl ListExplainabilityExportsFluentBuilder {
     /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
     /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`errors(Option<Vec<BatchGetDocumentStatusResponseError>>)`](crate::operation::batch_get_document_status::BatchGetDocumentStatusOutput::errors): <p>A list of documents that Amazon Kendra couldn't get the status for. The list includes the ID of the document and the reason that the status couldn't be found.</p>
     ///   - [`document_status_list(Option<Vec<Status>>)`](crate::operation::batch_get_document_status::BatchGetDocumentStatusOutput::document_status_list): <p>The status of documents. The status indicates if the document is waiting to be indexed, is in the process of indexing, has completed indexing, or failed indexing. If a document failed indexing, the status provides the reason why.</p>
     /// - On failure, responds with [`SdkError<BatchGetDocumentStatusError>`](crate::operation::batch_get_document_status::BatchGetDocumentStatusError)
-    pub fn batch_get_document_status(
-        &self,
-    ) -> crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusFluentBuilder
-    {
+    pub fn batch_get_document_status(&self) -> crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusFluentBuilder {
         crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusFluentBuilder::new(self.handle.clone())
     }
 }

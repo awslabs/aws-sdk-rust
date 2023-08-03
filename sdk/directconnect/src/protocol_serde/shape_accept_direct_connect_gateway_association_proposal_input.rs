@@ -10,22 +10,15 @@ pub fn ser_accept_direct_connect_gateway_association_proposal_input(
         object.key("proposalId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.associated_gateway_owner_account {
-        object
-            .key("associatedGatewayOwnerAccount")
-            .string(var_3.as_str());
+        object.key("associatedGatewayOwnerAccount").string(var_3.as_str());
     }
     if let Some(var_4) = &input.override_allowed_prefixes_to_direct_connect_gateway {
-        let mut array_5 = object
-            .key("overrideAllowedPrefixesToDirectConnectGateway")
-            .start_array();
+        let mut array_5 = object.key("overrideAllowedPrefixesToDirectConnectGateway").start_array();
         for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_route_filter_prefix::ser_route_filter_prefix(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_route_filter_prefix::ser_route_filter_prefix(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

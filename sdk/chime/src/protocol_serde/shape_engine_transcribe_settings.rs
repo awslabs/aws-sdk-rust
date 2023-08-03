@@ -19,17 +19,13 @@ pub fn ser_engine_transcribe_settings(
         object.key("Region").string(var_5.as_str());
     }
     if let Some(var_6) = &input.enable_partial_results_stabilization {
-        object
-            .key("EnablePartialResultsStabilization")
-            .boolean(*var_6);
+        object.key("EnablePartialResultsStabilization").boolean(*var_6);
     }
     if let Some(var_7) = &input.partial_results_stability {
         object.key("PartialResultsStability").string(var_7.as_str());
     }
     if let Some(var_8) = &input.content_identification_type {
-        object
-            .key("ContentIdentificationType")
-            .string(var_8.as_str());
+        object.key("ContentIdentificationType").string(var_8.as_str());
     }
     if let Some(var_9) = &input.content_redaction_type {
         object.key("ContentRedactionType").string(var_9.as_str());

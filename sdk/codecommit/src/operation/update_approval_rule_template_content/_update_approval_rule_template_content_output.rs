@@ -10,9 +10,7 @@ pub struct UpdateApprovalRuleTemplateContentOutput {
 }
 impl UpdateApprovalRuleTemplateContentOutput {
     /// <p>Returns information about an approval rule template.</p>
-    pub fn approval_rule_template(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApprovalRuleTemplate> {
+    pub fn approval_rule_template(&self) -> ::std::option::Option<&crate::types::ApprovalRuleTemplate> {
         self.approval_rule_template.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateApprovalRuleTemplateContentOutp
 }
 impl UpdateApprovalRuleTemplateContentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateContentOutput`](crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentOutput).
-    pub fn builder() -> crate::operation::update_approval_rule_template_content::builders::UpdateApprovalRuleTemplateContentOutputBuilder{
+    pub fn builder() -> crate::operation::update_approval_rule_template_content::builders::UpdateApprovalRuleTemplateContentOutputBuilder {
         crate::operation::update_approval_rule_template_content::builders::UpdateApprovalRuleTemplateContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApprovalRuleTemplateContentOutput`](crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateContentOutputBuilder {
     pub(crate) approval_rule_template: ::std::option::Option<crate::types::ApprovalRuleTemplate>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl UpdateApprovalRuleTemplateContentOutputBuilder {
         self
     }
     /// <p>Returns information about an approval rule template.</p>
-    pub fn set_approval_rule_template(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalRuleTemplate>,
-    ) -> Self {
+    pub fn set_approval_rule_template(mut self, input: ::std::option::Option<crate::types::ApprovalRuleTemplate>) -> Self {
         self.approval_rule_template = input;
         self
     }
     /// <p>Returns information about an approval rule template.</p>
-    pub fn get_approval_rule_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApprovalRuleTemplate> {
+    pub fn get_approval_rule_template(&self) -> &::std::option::Option<crate::types::ApprovalRuleTemplate> {
         &self.approval_rule_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,10 +58,9 @@ impl UpdateApprovalRuleTemplateContentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateApprovalRuleTemplateContentOutput`](crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentOutput).
-    pub fn build(self) -> crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentOutput{
+    pub fn build(self) -> crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentOutput {
         crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentOutput {
-            approval_rule_template: self.approval_rule_template
-            ,
+            approval_rule_template: self.approval_rule_template,
             _request_id: self._request_id,
         }
     }

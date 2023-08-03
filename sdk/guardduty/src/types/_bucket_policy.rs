@@ -30,9 +30,7 @@ impl BucketPolicy {
 
 /// A builder for [`BucketPolicy`](crate::types::BucketPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketPolicyBuilder {
     pub(crate) allows_public_read_access: ::std::option::Option<bool>,
     pub(crate) allows_public_write_access: ::std::option::Option<bool>,

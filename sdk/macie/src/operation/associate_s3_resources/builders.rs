@@ -37,9 +37,7 @@ impl AssociateS3ResourcesFluentBuilder {
         }
     }
     /// Access the AssociateS3Resources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_s3_resources::builders::AssociateS3ResourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_s3_resources::builders::AssociateS3ResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl AssociateS3ResourcesFluentBuilder {
             crate::operation::associate_s3_resources::AssociateS3Resources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_s3_resources::AssociateS3ResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_s3_resources::AssociateS3ResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl AssociateS3ResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl AssociateS3ResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_s3_resources::AssociateS3ResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_s3_resources::AssociateS3ResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_s3_resources::AssociateS3ResourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl AssociateS3ResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_s3_resources::AssociateS3ResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_s3_resources::AssociateS3ResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_s3_resources::AssociateS3ResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl AssociateS3ResourcesFluentBuilder {
             crate::operation::associate_s3_resources::AssociateS3Resources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_s3_resources::AssociateS3ResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_s3_resources::AssociateS3ResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>
-    pub fn member_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_account_id(input.into());
         self
     }
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>
-    pub fn set_member_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_account_id(input);
         self
     }
@@ -152,17 +133,12 @@ impl AssociateS3ResourcesFluentBuilder {
         self
     }
     /// <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.</p>
-    pub fn set_s3_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>,
-    ) -> Self {
+    pub fn set_s3_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>) -> Self {
         self.inner = self.inner.set_s3_resources(input);
         self
     }
     /// <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.</p>
-    pub fn get_s3_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>> {
+    pub fn get_s3_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>> {
         self.inner.get_s3_resources()
     }
 }

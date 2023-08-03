@@ -10,10 +10,7 @@ impl StartBatchJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_batch_job::StartBatchJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_batch_job::StartBatchJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_batch_job::StartBatchJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_batch_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartBatchJobFluentBuilder {
         }
     }
     /// Access the StartBatchJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_batch_job::builders::StartBatchJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_batch_job::builders::StartBatchJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl StartBatchJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl StartBatchJobFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the application associated with this batch job.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier of the application associated with this batch job.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -140,17 +126,12 @@ impl StartBatchJobFluentBuilder {
         self
     }
     /// <p>The unique identifier of the batch job.</p>
-    pub fn set_batch_job_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchJobIdentifier>,
-    ) -> Self {
+    pub fn set_batch_job_identifier(mut self, input: ::std::option::Option<crate::types::BatchJobIdentifier>) -> Self {
         self.inner = self.inner.set_batch_job_identifier(input);
         self
     }
     /// <p>The unique identifier of the batch job.</p>
-    pub fn get_batch_job_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchJobIdentifier> {
+    pub fn get_batch_job_identifier(&self) -> &::std::option::Option<crate::types::BatchJobIdentifier> {
         self.inner.get_batch_job_identifier()
     }
     /// Adds a key-value pair to `jobParams`.
@@ -158,30 +139,17 @@ impl StartBatchJobFluentBuilder {
     /// To override the contents of this collection use [`set_job_params`](Self::set_job_params).
     ///
     /// <p>The collection of batch job parameters. For details about limits for keys and values, see <a href="https://www.ibm.com/docs/en/workload-automation/9.3.0?topic=zos-coding-variables-in-jcl">Coding variables in JCL</a>.</p>
-    pub fn job_params(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_params(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_params(k.into(), v.into());
         self
     }
     /// <p>The collection of batch job parameters. For details about limits for keys and values, see <a href="https://www.ibm.com/docs/en/workload-automation/9.3.0?topic=zos-coding-variables-in-jcl">Coding variables in JCL</a>.</p>
-    pub fn set_job_params(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_job_params(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_params(input);
         self
     }
     /// <p>The collection of batch job parameters. For details about limits for keys and values, see <a href="https://www.ibm.com/docs/en/workload-automation/9.3.0?topic=zos-coding-variables-in-jcl">Coding variables in JCL</a>.</p>
-    pub fn get_job_params(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_job_params(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_job_params()
     }
 }

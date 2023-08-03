@@ -10,10 +10,7 @@ impl AssociateElasticIpInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_elastic_ip::AssociateElasticIpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_elastic_ip::AssociateElasticIpError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_elastic_ip::AssociateElasticIpError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_elastic_ip();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl AssociateElasticIpFluentBuilder {
         }
     }
     /// Access the AssociateElasticIp as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_elastic_ip::builders::AssociateElasticIpInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_elastic_ip::builders::AssociateElasticIpInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl AssociateElasticIpFluentBuilder {
             crate::operation::associate_elastic_ip::AssociateElasticIp,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_elastic_ip::AssociateElasticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_elastic_ip::AssociateElasticIpError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl AssociateElasticIpFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl AssociateElasticIpFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_elastic_ip::AssociateElasticIpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_elastic_ip::AssociateElasticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_elastic_ip::AssociateElasticIpError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl AssociateElasticIpFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_elastic_ip::AssociateElasticIpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_elastic_ip::AssociateElasticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_elastic_ip::AssociateElasticIpError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl AssociateElasticIpFluentBuilder {
             crate::operation::associate_elastic_ip::AssociateElasticIp,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_elastic_ip::AssociateElasticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_elastic_ip::AssociateElasticIpError>,
     > {
         self.customize_middleware().await
     }

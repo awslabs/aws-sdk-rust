@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteTransitGatewayRouteOutput`](crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteOutput) with field(s):
     ///   - [`route(Option<TransitGatewayRoute>)`](crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteOutput::route): <p>Information about the route.</p>
     /// - On failure, responds with [`SdkError<DeleteTransitGatewayRouteError>`](crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteError)
-    pub fn delete_transit_gateway_route(&self) -> crate::operation::delete_transit_gateway_route::builders::DeleteTransitGatewayRouteFluentBuilder{
+    pub fn delete_transit_gateway_route(&self) -> crate::operation::delete_transit_gateway_route::builders::DeleteTransitGatewayRouteFluentBuilder {
         crate::operation::delete_transit_gateway_route::builders::DeleteTransitGatewayRouteFluentBuilder::new(self.handle.clone())
     }
 }

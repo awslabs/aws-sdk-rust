@@ -22,9 +22,7 @@ impl InferRxNormInput {
 
 /// A builder for [`InferRxNormInput`](crate::operation::infer_rx_norm::InferRxNormInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferRxNormInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl InferRxNormInputBuilder {
         &self.text
     }
     /// Consumes the builder and constructs a [`InferRxNormInput`](crate::operation::infer_rx_norm::InferRxNormInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::infer_rx_norm::InferRxNormInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::infer_rx_norm::InferRxNormInput {
-            text: self.text,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::infer_rx_norm::InferRxNormInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::infer_rx_norm::InferRxNormInput { text: self.text })
     }
 }

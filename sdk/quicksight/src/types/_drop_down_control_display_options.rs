@@ -12,14 +12,11 @@ pub struct DropDownControlDisplayOptions {
     pub title_options: ::std::option::Option<crate::types::LabelOptions>,
     /// <p>The configuration of info icon label options.</p>
     #[doc(hidden)]
-    pub info_icon_label_options:
-        ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
+    pub info_icon_label_options: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl DropDownControlDisplayOptions {
     /// <p>The configuration of the <code>Select all</code> options in a dropdown control.</p>
-    pub fn select_all_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ListControlSelectAllOptions> {
+    pub fn select_all_options(&self) -> ::std::option::Option<&crate::types::ListControlSelectAllOptions> {
         self.select_all_options.as_ref()
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
@@ -27,9 +24,7 @@ impl DropDownControlDisplayOptions {
         self.title_options.as_ref()
     }
     /// <p>The configuration of info icon label options.</p>
-    pub fn info_icon_label_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SheetControlInfoIconLabelOptions> {
+    pub fn info_icon_label_options(&self) -> ::std::option::Option<&crate::types::SheetControlInfoIconLabelOptions> {
         self.info_icon_label_options.as_ref()
     }
 }
@@ -42,14 +37,11 @@ impl DropDownControlDisplayOptions {
 
 /// A builder for [`DropDownControlDisplayOptions`](crate::types::DropDownControlDisplayOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DropDownControlDisplayOptionsBuilder {
     pub(crate) select_all_options: ::std::option::Option<crate::types::ListControlSelectAllOptions>,
     pub(crate) title_options: ::std::option::Option<crate::types::LabelOptions>,
-    pub(crate) info_icon_label_options:
-        ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
+    pub(crate) info_icon_label_options: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl DropDownControlDisplayOptionsBuilder {
     /// <p>The configuration of the <code>Select all</code> options in a dropdown control.</p>
@@ -58,17 +50,12 @@ impl DropDownControlDisplayOptionsBuilder {
         self
     }
     /// <p>The configuration of the <code>Select all</code> options in a dropdown control.</p>
-    pub fn set_select_all_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ListControlSelectAllOptions>,
-    ) -> Self {
+    pub fn set_select_all_options(mut self, input: ::std::option::Option<crate::types::ListControlSelectAllOptions>) -> Self {
         self.select_all_options = input;
         self
     }
     /// <p>The configuration of the <code>Select all</code> options in a dropdown control.</p>
-    pub fn get_select_all_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListControlSelectAllOptions> {
+    pub fn get_select_all_options(&self) -> &::std::option::Option<crate::types::ListControlSelectAllOptions> {
         &self.select_all_options
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
@@ -77,10 +64,7 @@ impl DropDownControlDisplayOptionsBuilder {
         self
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn set_title_options(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelOptions>,
-    ) -> Self {
+    pub fn set_title_options(mut self, input: ::std::option::Option<crate::types::LabelOptions>) -> Self {
         self.title_options = input;
         self
     }
@@ -89,25 +73,17 @@ impl DropDownControlDisplayOptionsBuilder {
         &self.title_options
     }
     /// <p>The configuration of info icon label options.</p>
-    pub fn info_icon_label_options(
-        mut self,
-        input: crate::types::SheetControlInfoIconLabelOptions,
-    ) -> Self {
+    pub fn info_icon_label_options(mut self, input: crate::types::SheetControlInfoIconLabelOptions) -> Self {
         self.info_icon_label_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of info icon label options.</p>
-    pub fn set_info_icon_label_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
-    ) -> Self {
+    pub fn set_info_icon_label_options(mut self, input: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>) -> Self {
         self.info_icon_label_options = input;
         self
     }
     /// <p>The configuration of info icon label options.</p>
-    pub fn get_info_icon_label_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::SheetControlInfoIconLabelOptions> {
+    pub fn get_info_icon_label_options(&self) -> &::std::option::Option<crate::types::SheetControlInfoIconLabelOptions> {
         &self.info_icon_label_options
     }
     /// Consumes the builder and constructs a [`DropDownControlDisplayOptions`](crate::types::DropDownControlDisplayOptions).

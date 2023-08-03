@@ -36,17 +36,14 @@ impl DisassociateUserInput {
 }
 impl DisassociateUserInput {
     /// Creates a new builder-style object to manufacture [`DisassociateUserInput`](crate::operation::disassociate_user::DisassociateUserInput).
-    pub fn builder() -> crate::operation::disassociate_user::builders::DisassociateUserInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_user::builders::DisassociateUserInputBuilder {
         crate::operation::disassociate_user::builders::DisassociateUserInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateUserInput`](crate::operation::disassociate_user::DisassociateUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateUserInputBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -88,10 +85,7 @@ impl DisassociateUserInputBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.identity_provider = input;
         self
     }
@@ -116,10 +110,7 @@ impl DisassociateUserInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateUserInput`](crate::operation::disassociate_user::DisassociateUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_user::DisassociateUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::disassociate_user::DisassociateUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_user::DisassociateUserInput {
             username: self.username,
             instance_id: self.instance_id,

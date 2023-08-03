@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisableDomainAutoRenewOutput {
 }
 impl DisableDomainAutoRenewOutput {
     /// Creates a new builder-style object to manufacture [`DisableDomainAutoRenewOutput`](crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewOutput).
-    pub fn builder(
-    ) -> crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewOutputBuilder {
         crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableDomainAutoRenewOutput`](crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableDomainAutoRenewOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DisableDomainAutoRenewOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableDomainAutoRenewOutput`](crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewOutput {
+    pub fn build(self) -> crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewOutput {
         crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewOutput {
             _request_id: self._request_id,
         }

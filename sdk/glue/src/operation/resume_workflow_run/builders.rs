@@ -10,10 +10,7 @@ impl ResumeWorkflowRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::resume_workflow_run::ResumeWorkflowRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resume_workflow_run::ResumeWorkflowRunError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resume_workflow_run::ResumeWorkflowRunError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.resume_workflow_run();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ResumeWorkflowRunFluentBuilder {
         }
     }
     /// Access the ResumeWorkflowRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::resume_workflow_run::builders::ResumeWorkflowRunInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::resume_workflow_run::builders::ResumeWorkflowRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ResumeWorkflowRunFluentBuilder {
             crate::operation::resume_workflow_run::ResumeWorkflowRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resume_workflow_run::ResumeWorkflowRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resume_workflow_run::ResumeWorkflowRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ResumeWorkflowRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ResumeWorkflowRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resume_workflow_run::ResumeWorkflowRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resume_workflow_run::ResumeWorkflowRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resume_workflow_run::ResumeWorkflowRunError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ResumeWorkflowRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resume_workflow_run::ResumeWorkflowRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resume_workflow_run::ResumeWorkflowRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resume_workflow_run::ResumeWorkflowRunError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ResumeWorkflowRunFluentBuilder {
             crate::operation::resume_workflow_run::ResumeWorkflowRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resume_workflow_run::ResumeWorkflowRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resume_workflow_run::ResumeWorkflowRunError>,
     > {
         self.customize_middleware().await
     }
@@ -160,10 +144,7 @@ impl ResumeWorkflowRunFluentBuilder {
         self
     }
     /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
-    pub fn set_node_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_node_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_node_ids(input);
         self
     }

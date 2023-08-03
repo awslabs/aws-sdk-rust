@@ -28,9 +28,7 @@ impl DeleteMembersOutput {
 
 /// A builder for [`DeleteMembersOutput`](crate::operation::delete_members::DeleteMembersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMembersOutputBuilder {
     pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl DeleteMembersOutputBuilder {
         self
     }
     /// <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the account ID and the email address.</p>
-    pub fn set_unprocessed_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
-    ) -> Self {
+    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Result>>) -> Self {
         self.unprocessed_accounts = input;
         self
     }
     /// <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the account ID and the email address.</p>
-    pub fn get_unprocessed_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Result>> {
+    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Result>> {
         &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

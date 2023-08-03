@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StartTimerFailedCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for StartTimerFailedCause {
             "OPERATION_NOT_PERMITTED" => StartTimerFailedCause::OperationNotPermitted,
             "TIMER_CREATION_RATE_EXCEEDED" => StartTimerFailedCause::TimerCreationRateExceeded,
             "TIMER_ID_ALREADY_IN_USE" => StartTimerFailedCause::TimerIdAlreadyInUse,
-            other => StartTimerFailedCause::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => StartTimerFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

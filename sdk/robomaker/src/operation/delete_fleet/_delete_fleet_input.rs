@@ -25,9 +25,7 @@ impl DeleteFleetInput {
 
 /// A builder for [`DeleteFleetInput`](crate::operation::delete_fleet::DeleteFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFleetInputBuilder {
     pub(crate) fleet: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +45,7 @@ impl DeleteFleetInputBuilder {
         &self.fleet
     }
     /// Consumes the builder and constructs a [`DeleteFleetInput`](crate::operation::delete_fleet::DeleteFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_fleet::DeleteFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_fleet::DeleteFleetInput {
-            fleet: self.fleet,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_fleet::DeleteFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_fleet::DeleteFleetInput { fleet: self.fleet })
     }
 }

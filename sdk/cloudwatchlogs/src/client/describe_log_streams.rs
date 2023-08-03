@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`log_streams(Option<Vec<LogStream>>)`](crate::operation::describe_log_streams::DescribeLogStreamsOutput::log_streams): <p>The log streams.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_log_streams::DescribeLogStreamsOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<DescribeLogStreamsError>`](crate::operation::describe_log_streams::DescribeLogStreamsError)
-    pub fn describe_log_streams(
-        &self,
-    ) -> crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder {
-        crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_log_streams(&self) -> crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder {
+        crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::new(self.handle.clone())
     }
 }

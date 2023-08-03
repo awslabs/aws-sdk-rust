@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`pool_name(impl ::std::convert::Into<String>)`](crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolFluentBuilder::pool_name) / [`set_pool_name(Option<String>)`](crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolFluentBuilder::set_pool_name): <p>The name of the dedicated IP pool that you want to delete.</p>
     /// - On success, responds with [`DeleteDedicatedIpPoolOutput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolOutput)
     /// - On failure, responds with [`SdkError<DeleteDedicatedIpPoolError>`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolError)
-    pub fn delete_dedicated_ip_pool(
-        &self,
-    ) -> crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolFluentBuilder
-    {
+    pub fn delete_dedicated_ip_pool(&self) -> crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolFluentBuilder {
         crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolFluentBuilder::new(self.handle.clone())
     }
 }

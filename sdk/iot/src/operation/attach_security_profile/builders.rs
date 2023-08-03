@@ -38,10 +38,7 @@ impl AttachSecurityProfileFluentBuilder {
         }
     }
     /// Access the AttachSecurityProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::attach_security_profile::builders::AttachSecurityProfileInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::attach_security_profile::builders::AttachSecurityProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl AttachSecurityProfileFluentBuilder {
             crate::operation::attach_security_profile::AttachSecurityProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_security_profile::AttachSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_security_profile::AttachSecurityProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl AttachSecurityProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl AttachSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_security_profile::AttachSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_security_profile::AttachSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_security_profile::AttachSecurityProfileError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl AttachSecurityProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_security_profile::AttachSecurityProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_security_profile::AttachSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_security_profile::AttachSecurityProfileError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl AttachSecurityProfileFluentBuilder {
             crate::operation::attach_security_profile::AttachSecurityProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_security_profile::AttachSecurityProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_security_profile::AttachSecurityProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The security profile that is attached.</p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_name(input.into());
         self
     }
     /// <p>The security profile that is attached.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_profile_name(input);
         self
     }
@@ -145,18 +125,12 @@ impl AttachSecurityProfileFluentBuilder {
         self.inner.get_security_profile_name()
     }
     /// <p>The ARN of the target (thing group) to which the security profile is attached.</p>
-    pub fn security_profile_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_target_arn(input.into());
         self
     }
     /// <p>The ARN of the target (thing group) to which the security profile is attached.</p>
-    pub fn set_security_profile_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_profile_target_arn(input);
         self
     }

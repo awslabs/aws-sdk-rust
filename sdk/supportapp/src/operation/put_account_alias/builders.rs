@@ -10,10 +10,7 @@ impl PutAccountAliasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_account_alias::PutAccountAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_alias::PutAccountAliasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_alias::PutAccountAliasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_account_alias();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutAccountAliasFluentBuilder {
         }
     }
     /// Access the PutAccountAlias as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_account_alias::builders::PutAccountAliasInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_account_alias::builders::PutAccountAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutAccountAliasFluentBuilder {
             crate::operation::put_account_alias::PutAccountAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_alias::PutAccountAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_alias::PutAccountAliasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutAccountAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutAccountAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_alias::PutAccountAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_alias::PutAccountAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_alias::PutAccountAliasError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutAccountAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_alias::PutAccountAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_alias::PutAccountAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_alias::PutAccountAliasError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl PutAccountAliasFluentBuilder {
             crate::operation::put_account_alias::PutAccountAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_alias::PutAccountAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_alias::PutAccountAliasError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An alias or short name for an Amazon Web Services account.</p>
-    pub fn account_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_alias(input.into());
         self
     }
     /// <p>An alias or short name for an Amazon Web Services account.</p>
-    pub fn set_account_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_account_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_alias(input);
         self
     }

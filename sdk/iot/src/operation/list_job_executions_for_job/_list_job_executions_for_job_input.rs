@@ -36,18 +36,14 @@ impl ListJobExecutionsForJobInput {
 }
 impl ListJobExecutionsForJobInput {
     /// Creates a new builder-style object to manufacture [`ListJobExecutionsForJobInput`](crate::operation::list_job_executions_for_job::ListJobExecutionsForJobInput).
-    pub fn builder(
-    ) -> crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobInputBuilder {
         crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobInputBuilder::default()
     }
 }
 
 /// A builder for [`ListJobExecutionsForJobInput`](crate::operation::list_job_executions_for_job::ListJobExecutionsForJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobExecutionsForJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::JobExecutionStatus>,
@@ -75,10 +71,7 @@ impl ListJobExecutionsForJobInputBuilder {
         self
     }
     /// <p>The status of the job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -121,13 +114,11 @@ impl ListJobExecutionsForJobInputBuilder {
         crate::operation::list_job_executions_for_job::ListJobExecutionsForJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_job_executions_for_job::ListJobExecutionsForJobInput {
-                job_id: self.job_id,
-                status: self.status,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_job_executions_for_job::ListJobExecutionsForJobInput {
+            job_id: self.job_id,
+            status: self.status,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

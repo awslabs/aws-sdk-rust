@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`job_queue_name(Option<String>)`](crate::operation::create_job_queue::CreateJobQueueOutput::job_queue_name): <p>The name of the job queue.</p>
     ///   - [`job_queue_arn(Option<String>)`](crate::operation::create_job_queue::CreateJobQueueOutput::job_queue_arn): <p>The Amazon Resource Name (ARN) of the job queue.</p>
     /// - On failure, responds with [`SdkError<CreateJobQueueError>`](crate::operation::create_job_queue::CreateJobQueueError)
-    pub fn create_job_queue(
-        &self,
-    ) -> crate::operation::create_job_queue::builders::CreateJobQueueFluentBuilder {
-        crate::operation::create_job_queue::builders::CreateJobQueueFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_job_queue(&self) -> crate::operation::create_job_queue::builders::CreateJobQueueFluentBuilder {
+        crate::operation::create_job_queue::builders::CreateJobQueueFluentBuilder::new(self.handle.clone())
     }
 }

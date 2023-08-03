@@ -8,9 +8,7 @@ pub struct StartWorkflowRunInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The workflow run properties for the new workflow run.</p>
     #[doc(hidden)]
-    pub run_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartWorkflowRunInput {
     /// <p>The name of the workflow to start.</p>
@@ -18,32 +16,23 @@ impl StartWorkflowRunInput {
         self.name.as_deref()
     }
     /// <p>The workflow run properties for the new workflow run.</p>
-    pub fn run_properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn run_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.run_properties.as_ref()
     }
 }
 impl StartWorkflowRunInput {
     /// Creates a new builder-style object to manufacture [`StartWorkflowRunInput`](crate::operation::start_workflow_run::StartWorkflowRunInput).
-    pub fn builder() -> crate::operation::start_workflow_run::builders::StartWorkflowRunInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_workflow_run::builders::StartWorkflowRunInputBuilder {
         crate::operation::start_workflow_run::builders::StartWorkflowRunInputBuilder::default()
     }
 }
 
 /// A builder for [`StartWorkflowRunInput`](crate::operation::start_workflow_run::StartWorkflowRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartWorkflowRunInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) run_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartWorkflowRunInputBuilder {
     /// <p>The name of the workflow to start.</p>
@@ -78,33 +67,22 @@ impl StartWorkflowRunInputBuilder {
     /// <p>The workflow run properties for the new workflow run.</p>
     pub fn set_run_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.run_properties = input;
         self
     }
     /// <p>The workflow run properties for the new workflow run.</p>
-    pub fn get_run_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_run_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.run_properties
     }
     /// Consumes the builder and constructs a [`StartWorkflowRunInput`](crate::operation::start_workflow_run::StartWorkflowRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_workflow_run::StartWorkflowRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_workflow_run::StartWorkflowRunInput {
-                name: self.name,
-                run_properties: self.run_properties,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_workflow_run::StartWorkflowRunInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_workflow_run::StartWorkflowRunInput {
+            name: self.name,
+            run_properties: self.run_properties,
+        })
     }
 }

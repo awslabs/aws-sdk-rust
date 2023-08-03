@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`log_level(LogLevel)`](crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelFluentBuilder::log_level) / [`set_log_level(Option<LogLevel>)`](crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelFluentBuilder::set_log_level): <p>The log level.</p>
     /// - On success, responds with [`SetV2LoggingLevelOutput`](crate::operation::set_v2_logging_level::SetV2LoggingLevelOutput)
     /// - On failure, responds with [`SdkError<SetV2LoggingLevelError>`](crate::operation::set_v2_logging_level::SetV2LoggingLevelError)
-    pub fn set_v2_logging_level(
-        &self,
-    ) -> crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelFluentBuilder {
-        crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_v2_logging_level(&self) -> crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelFluentBuilder {
+        crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelFluentBuilder::new(self.handle.clone())
     }
 }

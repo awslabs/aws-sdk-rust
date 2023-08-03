@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeScalingActivitiesOutput {
 }
 impl DescribeScalingActivitiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingActivitiesOutput`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput).
-    pub fn builder() -> crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesOutputBuilder {
         crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScalingActivitiesOutput`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalingActivitiesOutputBuilder {
-    pub(crate) scaling_activities:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScalingActivity>>,
+    pub(crate) scaling_activities: ::std::option::Option<::std::vec::Vec<crate::types::ScalingActivity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeScalingActivitiesOutputBuilder {
         self
     }
     /// <p>A list of scaling activity objects.</p>
-    pub fn set_scaling_activities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingActivity>>,
-    ) -> Self {
+    pub fn set_scaling_activities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingActivity>>) -> Self {
         self.scaling_activities = input;
         self
     }
     /// <p>A list of scaling activity objects.</p>
-    pub fn get_scaling_activities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingActivity>> {
+    pub fn get_scaling_activities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingActivity>> {
         &self.scaling_activities
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
@@ -94,9 +86,7 @@ impl DescribeScalingActivitiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeScalingActivitiesOutput`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput {
+    pub fn build(self) -> crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput {
         crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput {
             scaling_activities: self.scaling_activities,
             next_token: self.next_token,

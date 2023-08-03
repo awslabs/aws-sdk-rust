@@ -93,9 +93,7 @@ impl WorkflowExecutionMetadata {
 
 /// A builder for [`WorkflowExecutionMetadata`](crate::types::WorkflowExecutionMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowExecutionMetadataBuilder {
     pub(crate) workflow_build_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_execution_id: ::std::option::Option<::std::string::String>,
@@ -111,18 +109,12 @@ pub struct WorkflowExecutionMetadataBuilder {
 }
 impl WorkflowExecutionMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource build version that ran.</p>
-    pub fn workflow_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow resource build version that ran.</p>
-    pub fn set_workflow_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_build_version_arn = input;
         self
     }
@@ -131,18 +123,12 @@ impl WorkflowExecutionMetadataBuilder {
         &self.workflow_build_version_arn
     }
     /// <p>Unique identifier that Image Builder assigns to keep track of runtime resources each time it runs a workflow.</p>
-    pub fn workflow_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier that Image Builder assigns to keep track of runtime resources each time it runs a workflow.</p>
-    pub fn set_workflow_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_execution_id = input;
         self
     }
@@ -170,10 +156,7 @@ impl WorkflowExecutionMetadataBuilder {
         self
     }
     /// <p>The current runtime status for this workflow.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionStatus>) -> Self {
         self.status = input;
         self
     }

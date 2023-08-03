@@ -26,13 +26,11 @@ impl DeleteMediaCapturePipelineInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_DeleteMediaCapturePipeline.html">DeleteMediaCapturePipeline</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by DeleteMediaCapturePipeline in the Amazon Chime SDK Media Pipelines Namespace"
-)]
+#[deprecated(note = "Replaced by DeleteMediaCapturePipeline in the Amazon Chime SDK Media Pipelines Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMediaCapturePipelineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_media_capture_pipeline::builders::DeleteMediaCapturePipelineInputBuilder,
+    inner: crate::operation::delete_media_capture_pipeline::builders::DeleteMediaCapturePipelineInputBuilder,
 }
 impl DeleteMediaCapturePipelineFluentBuilder {
     /// Creates a new `DeleteMediaCapturePipeline`.
@@ -43,7 +41,7 @@ impl DeleteMediaCapturePipelineFluentBuilder {
         }
     }
     /// Access the DeleteMediaCapturePipeline as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_media_capture_pipeline::builders::DeleteMediaCapturePipelineInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_media_capture_pipeline::builders::DeleteMediaCapturePipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl DeleteMediaCapturePipelineFluentBuilder {
             crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl DeleteMediaCapturePipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl DeleteMediaCapturePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl DeleteMediaCapturePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +109,17 @@ impl DeleteMediaCapturePipelineFluentBuilder {
             crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the media capture pipeline being deleted. </p>
-    pub fn media_pipeline_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.media_pipeline_id(input.into());
         self
     }
     /// <p>The ID of the media capture pipeline being deleted. </p>
-    pub fn set_media_pipeline_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_media_pipeline_id(input);
         self
     }

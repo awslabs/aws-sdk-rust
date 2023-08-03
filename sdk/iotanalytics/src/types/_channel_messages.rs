@@ -27,9 +27,7 @@ impl ChannelMessages {
 
 /// A builder for [`ChannelMessages`](crate::types::ChannelMessages).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelMessagesBuilder {
     pub(crate) s3_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -50,10 +48,7 @@ impl ChannelMessagesBuilder {
     /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your channel messages.</p>
     /// <p>You must use the full path for the key.</p>
     /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code> </p>
-    pub fn set_s3_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_s3_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.s3_paths = input;
         self
     }
@@ -65,8 +60,6 @@ impl ChannelMessagesBuilder {
     }
     /// Consumes the builder and constructs a [`ChannelMessages`](crate::types::ChannelMessages).
     pub fn build(self) -> crate::types::ChannelMessages {
-        crate::types::ChannelMessages {
-            s3_paths: self.s3_paths,
-        }
+        crate::types::ChannelMessages { s3_paths: self.s3_paths }
     }
 }

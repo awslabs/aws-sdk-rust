@@ -6,10 +6,7 @@ pub fn ser_aggregation_sort_configuration(
     if let Some(var_1) = &input.column {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Column").start_object();
-        crate::protocol_serde::shape_column_identifier::ser_column_identifier(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.sort_direction {
@@ -18,10 +15,7 @@ pub fn ser_aggregation_sort_configuration(
     if let Some(var_4) = &input.aggregation_function {
         #[allow(unused_mut)]
         let mut object_5 = object.key("AggregationFunction").start_object();
-        crate::protocol_serde::shape_aggregation_function::ser_aggregation_function(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_aggregation_function::ser_aggregation_function(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())
@@ -29,69 +23,47 @@ pub fn ser_aggregation_sort_configuration(
 
 pub(crate) fn de_aggregation_sort_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AggregationSortConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AggregationSortConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AggregationSortConfigurationBuilder::default();
+            let mut builder = crate::types::builders::AggregationSortConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Column" => {
-                                builder = builder.set_column(
-                                    crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?
-                                );
-                            }
-                            "SortDirection" => {
-                                builder = builder.set_sort_direction(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::SortDirection::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "AggregationFunction" => {
-                                builder = builder.set_aggregation_function(
-                                    crate::protocol_serde::shape_aggregation_function::de_aggregation_function(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Column" => {
+                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
                         }
-                    }
+                        "SortDirection" => {
+                            builder = builder.set_sort_direction(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SortDirection::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "AggregationFunction" => {
+                            builder =
+                                builder.set_aggregation_function(crate::protocol_serde::shape_aggregation_function::de_aggregation_function(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

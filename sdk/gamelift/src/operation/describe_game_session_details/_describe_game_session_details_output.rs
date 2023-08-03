@@ -5,8 +5,7 @@
 pub struct DescribeGameSessionDetailsOutput {
     /// <p>A collection of properties for each game session that matches the request.</p>
     #[doc(hidden)]
-    pub game_session_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::GameSessionDetail>>,
+    pub game_session_details: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionDetail>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeGameSessionDetailsOutput {
 }
 impl DescribeGameSessionDetailsOutput {
     /// <p>A collection of properties for each game session that matches the request.</p>
-    pub fn game_session_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GameSessionDetail]> {
+    pub fn game_session_details(&self) -> ::std::option::Option<&[crate::types::GameSessionDetail]> {
         self.game_session_details.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeGameSessionDetailsOutput {
 }
 impl DescribeGameSessionDetailsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionDetailsOutput`](crate::operation::describe_game_session_details::DescribeGameSessionDetailsOutput).
-    pub fn builder() -> crate::operation::describe_game_session_details::builders::DescribeGameSessionDetailsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_game_session_details::builders::DescribeGameSessionDetailsOutputBuilder {
         crate::operation::describe_game_session_details::builders::DescribeGameSessionDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGameSessionDetailsOutput`](crate::operation::describe_game_session_details::DescribeGameSessionDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGameSessionDetailsOutputBuilder {
-    pub(crate) game_session_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::GameSessionDetail>>,
+    pub(crate) game_session_details: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeGameSessionDetailsOutputBuilder {
         self
     }
     /// <p>A collection of properties for each game session that matches the request.</p>
-    pub fn set_game_session_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionDetail>>,
-    ) -> Self {
+    pub fn set_game_session_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionDetail>>) -> Self {
         self.game_session_details = input;
         self
     }
     /// <p>A collection of properties for each game session that matches the request.</p>
-    pub fn get_game_session_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSessionDetail>> {
+    pub fn get_game_session_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSessionDetail>> {
         &self.game_session_details
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -97,9 +86,7 @@ impl DescribeGameSessionDetailsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeGameSessionDetailsOutput`](crate::operation::describe_game_session_details::DescribeGameSessionDetailsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_game_session_details::DescribeGameSessionDetailsOutput {
+    pub fn build(self) -> crate::operation::describe_game_session_details::DescribeGameSessionDetailsOutput {
         crate::operation::describe_game_session_details::DescribeGameSessionDetailsOutput {
             game_session_details: self.game_session_details,
             next_token: self.next_token,

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`portfolio_details(Option<Vec<PortfolioDetail>>)`](crate::operation::list_portfolios::ListPortfoliosOutput::portfolio_details): <p>Information about the portfolios.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_portfolios::ListPortfoliosOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListPortfoliosError>`](crate::operation::list_portfolios::ListPortfoliosError)
-    pub fn list_portfolios(
-        &self,
-    ) -> crate::operation::list_portfolios::builders::ListPortfoliosFluentBuilder {
-        crate::operation::list_portfolios::builders::ListPortfoliosFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_portfolios(&self) -> crate::operation::list_portfolios::builders::ListPortfoliosFluentBuilder {
+        crate::operation::list_portfolios::builders::ListPortfoliosFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`configuration_set_name(Option<String>)`](crate::operation::delete_default_message_type::DeleteDefaultMessageTypeOutput::configuration_set_name): <p>The name of the configuration set.</p>
     ///   - [`message_type(Option<MessageType>)`](crate::operation::delete_default_message_type::DeleteDefaultMessageTypeOutput::message_type): <p>The current message type for the configuration set.</p>
     /// - On failure, responds with [`SdkError<DeleteDefaultMessageTypeError>`](crate::operation::delete_default_message_type::DeleteDefaultMessageTypeError)
-    pub fn delete_default_message_type(&self) -> crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeFluentBuilder{
+    pub fn delete_default_message_type(&self) -> crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeFluentBuilder {
         crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeFluentBuilder::new(self.handle.clone())
     }
 }

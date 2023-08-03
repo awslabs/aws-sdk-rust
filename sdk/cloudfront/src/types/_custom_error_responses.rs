@@ -35,9 +35,7 @@ impl CustomErrorResponses {
 
 /// A builder for [`CustomErrorResponses`](crate::types::CustomErrorResponses).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomErrorResponsesBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::CustomErrorResponse>>,
@@ -69,17 +67,12 @@ impl CustomErrorResponsesBuilder {
         self
     }
     /// <p>A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for which you want to specify a custom error page and/or a caching duration. </p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomErrorResponse>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomErrorResponse>>) -> Self {
         self.items = input;
         self
     }
     /// <p>A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for which you want to specify a custom error page and/or a caching duration. </p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomErrorResponse>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomErrorResponse>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`CustomErrorResponses`](crate::types::CustomErrorResponses).

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StartCrawlerScheduleOutput {
 }
 impl StartCrawlerScheduleOutput {
     /// Creates a new builder-style object to manufacture [`StartCrawlerScheduleOutput`](crate::operation::start_crawler_schedule::StartCrawlerScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleOutputBuilder {
+    pub fn builder() -> crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleOutputBuilder {
         crate::operation::start_crawler_schedule::builders::StartCrawlerScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartCrawlerScheduleOutput`](crate::operation::start_crawler_schedule::StartCrawlerScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartCrawlerScheduleOutputBuilder {
     _request_id: Option<String>,
 }

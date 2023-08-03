@@ -36,9 +36,7 @@ impl ListUploadsOutput {
 
 /// A builder for [`ListUploadsOutput`](crate::operation::list_uploads::ListUploadsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUploadsOutputBuilder {
     pub(crate) uploads: ::std::option::Option<::std::vec::Vec<crate::types::Upload>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListUploadsOutputBuilder {
         self
     }
     /// <p>Information about the uploads.</p>
-    pub fn set_uploads(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Upload>>,
-    ) -> Self {
+    pub fn set_uploads(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Upload>>) -> Self {
         self.uploads = input;
         self
     }

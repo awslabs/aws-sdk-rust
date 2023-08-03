@@ -22,9 +22,7 @@ impl StopFlowInput {
 
 /// A builder for [`StopFlowInput`](crate::operation::stop_flow::StopFlowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopFlowInputBuilder {
     pub(crate) flow_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl StopFlowInputBuilder {
         &self.flow_name
     }
     /// Consumes the builder and constructs a [`StopFlowInput`](crate::operation::stop_flow::StopFlowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_flow::StopFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_flow::StopFlowInput {
-            flow_name: self.flow_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_flow::StopFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_flow::StopFlowInput { flow_name: self.flow_name })
     }
 }

@@ -23,9 +23,7 @@ impl DeploymentStageStatusSummary {
         self.stage_name.as_deref()
     }
     /// <p>Configuration of the devices in the stage.</p>
-    pub fn device_selection_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeviceSelectionConfig> {
+    pub fn device_selection_config(&self) -> ::std::option::Option<&crate::types::DeviceSelectionConfig> {
         self.device_selection_config.as_ref()
     }
     /// <p>Configuration of the deployment details.</p>
@@ -46,9 +44,7 @@ impl DeploymentStageStatusSummary {
 
 /// A builder for [`DeploymentStageStatusSummary`](crate::types::DeploymentStageStatusSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentStageStatusSummaryBuilder {
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_selection_config: ::std::option::Option<crate::types::DeviceSelectionConfig>,
@@ -76,17 +72,12 @@ impl DeploymentStageStatusSummaryBuilder {
         self
     }
     /// <p>Configuration of the devices in the stage.</p>
-    pub fn set_device_selection_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceSelectionConfig>,
-    ) -> Self {
+    pub fn set_device_selection_config(mut self, input: ::std::option::Option<crate::types::DeviceSelectionConfig>) -> Self {
         self.device_selection_config = input;
         self
     }
     /// <p>Configuration of the devices in the stage.</p>
-    pub fn get_device_selection_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceSelectionConfig> {
+    pub fn get_device_selection_config(&self) -> &::std::option::Option<crate::types::DeviceSelectionConfig> {
         &self.device_selection_config
     }
     /// <p>Configuration of the deployment details.</p>
@@ -95,17 +86,12 @@ impl DeploymentStageStatusSummaryBuilder {
         self
     }
     /// <p>Configuration of the deployment details.</p>
-    pub fn set_deployment_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgeDeploymentConfig>,
-    ) -> Self {
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::EdgeDeploymentConfig>) -> Self {
         self.deployment_config = input;
         self
     }
     /// <p>Configuration of the deployment details.</p>
-    pub fn get_deployment_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::EdgeDeploymentConfig> {
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::EdgeDeploymentConfig> {
         &self.deployment_config
     }
     /// <p>General status of the current state.</p>
@@ -114,17 +100,12 @@ impl DeploymentStageStatusSummaryBuilder {
         self
     }
     /// <p>General status of the current state.</p>
-    pub fn set_deployment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgeDeploymentStatus>,
-    ) -> Self {
+    pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::EdgeDeploymentStatus>) -> Self {
         self.deployment_status = input;
         self
     }
     /// <p>General status of the current state.</p>
-    pub fn get_deployment_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::EdgeDeploymentStatus> {
+    pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::EdgeDeploymentStatus> {
         &self.deployment_status
     }
     /// Consumes the builder and constructs a [`DeploymentStageStatusSummary`](crate::types::DeploymentStageStatusSummary).

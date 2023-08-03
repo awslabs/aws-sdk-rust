@@ -15,34 +15,25 @@ impl DeleteHumanTaskUiInput {
 }
 impl DeleteHumanTaskUiInput {
     /// Creates a new builder-style object to manufacture [`DeleteHumanTaskUiInput`](crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput).
-    pub fn builder(
-    ) -> crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiInputBuilder {
+    pub fn builder() -> crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiInputBuilder {
         crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteHumanTaskUiInput`](crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHumanTaskUiInputBuilder {
     pub(crate) human_task_ui_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHumanTaskUiInputBuilder {
     /// <p>The name of the human task user interface (work task template) you want to delete.</p>
-    pub fn human_task_ui_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_task_ui_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the human task user interface (work task template) you want to delete.</p>
-    pub fn set_human_task_ui_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_task_ui_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_task_ui_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteHumanTaskUiInputBuilder {
     /// Consumes the builder and constructs a [`DeleteHumanTaskUiInput`](crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput {
-                human_task_ui_name: self.human_task_ui_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput {
+            human_task_ui_name: self.human_task_ui_name,
+        })
     }
 }

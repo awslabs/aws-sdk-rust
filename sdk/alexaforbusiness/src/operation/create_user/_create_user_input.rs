@@ -57,9 +57,7 @@ impl CreateUserInput {
 
 /// A builder for [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) first_name: ::std::option::Option<::std::string::String>,
@@ -126,18 +124,12 @@ impl CreateUserInputBuilder {
         &self.email
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -157,10 +149,7 @@ impl CreateUserInputBuilder {
         self
     }
     /// <p>The tags for the user.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -169,12 +158,7 @@ impl CreateUserInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_user::CreateUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
             user_id: self.user_id,
             first_name: self.first_name,

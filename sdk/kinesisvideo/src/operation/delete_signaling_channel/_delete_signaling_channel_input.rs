@@ -22,18 +22,14 @@ impl DeleteSignalingChannelInput {
 }
 impl DeleteSignalingChannelInput {
     /// Creates a new builder-style object to manufacture [`DeleteSignalingChannelInput`](crate::operation::delete_signaling_channel::DeleteSignalingChannelInput).
-    pub fn builder(
-    ) -> crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelInputBuilder {
         crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSignalingChannelInput`](crate::operation::delete_signaling_channel::DeleteSignalingChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSignalingChannelInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DeleteSignalingChannelInputBuilder {
         &self.channel_arn
     }
     /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }
@@ -76,15 +66,11 @@ impl DeleteSignalingChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSignalingChannelInput`](crate::operation::delete_signaling_channel::DeleteSignalingChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_signaling_channel::DeleteSignalingChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_signaling_channel::DeleteSignalingChannelInput {
-                channel_arn: self.channel_arn,
-                current_version: self.current_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_signaling_channel::DeleteSignalingChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_signaling_channel::DeleteSignalingChannelInput {
+            channel_arn: self.channel_arn,
+            current_version: self.current_version,
+        })
     }
 }

@@ -9,101 +9,114 @@ pub fn de_remove_layer_version_permission_http_error(
     crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ResourceNotFoundException" => {
+            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "PreconditionFailedException" => crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::PreconditionFailedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "PreconditionFailedException" => {
+            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PreconditionFailedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(_response_body, output).map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "TooManyRequestsException" => crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled(
+                                "Failed to parse retryAfterSeconds from header `Retry-After",
+                            )
+                        })?,
                     );
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ServiceException" => crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::ServiceException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output).map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InvalidParameterValueException" => crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidParameterValueException" => {
+            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::generic(generic),
     })
 }
 
@@ -119,9 +132,7 @@ pub fn de_remove_layer_version_permission_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

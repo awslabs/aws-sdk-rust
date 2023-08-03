@@ -36,10 +36,7 @@ pub fn ser_import_resources_to_draft_app_version_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_terraform_source::ser_terraform_source(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_terraform_source::ser_terraform_source(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }

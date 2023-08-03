@@ -20,17 +20,10 @@ pub struct GetProfileObjectTypeTemplateOutput {
     pub source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     #[doc(hidden)]
-    pub fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>,
-    >,
+    pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
     #[doc(hidden)]
-    pub keys: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ObjectTypeKey>,
-        >,
-    >,
+    pub keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
     _request_id: Option<String>,
 }
 impl GetProfileObjectTypeTemplateOutput {
@@ -55,22 +48,11 @@ impl GetProfileObjectTypeTemplateOutput {
         self.source_last_updated_timestamp_format.as_deref()
     }
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn fields(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>,
-    > {
+    pub fn fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>> {
         self.fields.as_ref()
     }
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn keys(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ObjectTypeKey>,
-        >,
-    > {
+    pub fn keys(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>> {
         self.keys.as_ref()
     }
 }
@@ -81,31 +63,22 @@ impl ::aws_http::request_id::RequestId for GetProfileObjectTypeTemplateOutput {
 }
 impl GetProfileObjectTypeTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetProfileObjectTypeTemplateOutput`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateOutput).
-    pub fn builder() -> crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateOutputBuilder {
         crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetProfileObjectTypeTemplateOutput`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProfileObjectTypeTemplateOutputBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_object: ::std::option::Option<::std::string::String>,
     pub(crate) allow_profile_creation: ::std::option::Option<bool>,
     pub(crate) source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
-    pub(crate) fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>,
-    >,
-    pub(crate) keys: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ObjectTypeKey>,
-        >,
-    >,
+    pub(crate) fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
+    pub(crate) keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
     _request_id: Option<String>,
 }
 impl GetProfileObjectTypeTemplateOutputBuilder {
@@ -138,18 +111,12 @@ impl GetProfileObjectTypeTemplateOutputBuilder {
         &self.source_name
     }
     /// <p>The source of the object template.</p>
-    pub fn source_object(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_object = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source of the object template.</p>
-    pub fn set_source_object(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_object = input;
         self
     }
@@ -172,25 +139,17 @@ impl GetProfileObjectTypeTemplateOutputBuilder {
         &self.allow_profile_creation
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
-    pub fn source_last_updated_timestamp_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_last_updated_timestamp_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_last_updated_timestamp_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
-    pub fn set_source_last_updated_timestamp_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_last_updated_timestamp_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_last_updated_timestamp_format = input;
         self
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
-    pub fn get_source_last_updated_timestamp_format(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_last_updated_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_last_updated_timestamp_format
     }
     /// Adds a key-value pair to `fields`.
@@ -198,11 +157,7 @@ impl GetProfileObjectTypeTemplateOutputBuilder {
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn fields(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ObjectTypeField,
-    ) -> Self {
+    pub fn fields(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ObjectTypeField) -> Self {
         let mut hash_map = self.fields.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.fields = ::std::option::Option::Some(hash_map);
@@ -211,19 +166,13 @@ impl GetProfileObjectTypeTemplateOutputBuilder {
     /// <p>A map of the name and ObjectType field.</p>
     pub fn set_fields(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
     ) -> Self {
         self.fields = input;
         self
     }
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>,
-    > {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>> {
         &self.fields
     }
     /// Adds a key-value pair to `keys`.
@@ -231,11 +180,7 @@ impl GetProfileObjectTypeTemplateOutputBuilder {
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
     ///
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn keys(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<crate::types::ObjectTypeKey>,
-    ) -> Self {
+    pub fn keys(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::ObjectTypeKey>) -> Self {
         let mut hash_map = self.keys.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.keys = ::std::option::Option::Some(hash_map);
@@ -244,12 +189,7 @@ impl GetProfileObjectTypeTemplateOutputBuilder {
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
     pub fn set_keys(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::ObjectTypeKey>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
     ) -> Self {
         self.keys = input;
         self
@@ -257,12 +197,7 @@ impl GetProfileObjectTypeTemplateOutputBuilder {
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
     pub fn get_keys(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::ObjectTypeKey>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>> {
         &self.keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -275,10 +210,7 @@ impl GetProfileObjectTypeTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetProfileObjectTypeTemplateOutput`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateOutput
-    {
+    pub fn build(self) -> crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateOutput {
         crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateOutput {
             template_id: self.template_id,
             source_name: self.source_name,

@@ -30,8 +30,7 @@ pub struct Result {
     /// <p>The language code of the dominant language identified in your stream.</p>
     /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
     #[doc(hidden)]
-    pub language_identification:
-        ::std::option::Option<::std::vec::Vec<crate::types::LanguageWithScore>>,
+    pub language_identification: ::std::option::Option<::std::vec::Vec<crate::types::LanguageWithScore>>,
 }
 impl Result {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
@@ -65,9 +64,7 @@ impl Result {
     }
     /// <p>The language code of the dominant language identified in your stream.</p>
     /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
-    pub fn language_identification(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LanguageWithScore]> {
+    pub fn language_identification(&self) -> ::std::option::Option<&[crate::types::LanguageWithScore]> {
         self.language_identification.as_deref()
     }
 }
@@ -80,9 +77,7 @@ impl Result {
 
 /// A builder for [`Result`](crate::types::Result).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultBuilder {
     pub(crate) result_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<f64>,
@@ -91,8 +86,7 @@ pub struct ResultBuilder {
     pub(crate) alternatives: ::std::option::Option<::std::vec::Vec<crate::types::Alternative>>,
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
-    pub(crate) language_identification:
-        ::std::option::Option<::std::vec::Vec<crate::types::LanguageWithScore>>,
+    pub(crate) language_identification: ::std::option::Option<::std::vec::Vec<crate::types::LanguageWithScore>>,
 }
 impl ResultBuilder {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
@@ -166,17 +160,12 @@ impl ResultBuilder {
         self
     }
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    pub fn set_alternatives(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Alternative>>,
-    ) -> Self {
+    pub fn set_alternatives(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alternative>>) -> Self {
         self.alternatives = input;
         self
     }
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    pub fn get_alternatives(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Alternative>> {
+    pub fn get_alternatives(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Alternative>> {
         &self.alternatives
     }
     /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
@@ -199,10 +188,7 @@ impl ResultBuilder {
         self
     }
     /// <p>The language code that represents the language spoken in your audio stream.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -224,18 +210,13 @@ impl ResultBuilder {
     }
     /// <p>The language code of the dominant language identified in your stream.</p>
     /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
-    pub fn set_language_identification(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageWithScore>>,
-    ) -> Self {
+    pub fn set_language_identification(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageWithScore>>) -> Self {
         self.language_identification = input;
         self
     }
     /// <p>The language code of the dominant language identified in your stream.</p>
     /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
-    pub fn get_language_identification(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageWithScore>> {
+    pub fn get_language_identification(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageWithScore>> {
         &self.language_identification
     }
     /// Consumes the builder and constructs a [`Result`](crate::types::Result).

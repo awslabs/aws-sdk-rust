@@ -30,9 +30,7 @@ impl ImageLocation {
 
 /// A builder for [`ImageLocation`](crate::types::ImageLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageLocationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
@@ -68,9 +66,6 @@ impl ImageLocationBuilder {
     }
     /// Consumes the builder and constructs a [`ImageLocation`](crate::types::ImageLocation).
     pub fn build(self) -> crate::types::ImageLocation {
-        crate::types::ImageLocation {
-            id: self.id,
-            url: self.url,
-        }
+        crate::types::ImageLocation { id: self.id, url: self.url }
     }
 }

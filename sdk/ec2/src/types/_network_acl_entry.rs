@@ -72,9 +72,7 @@ impl NetworkAclEntry {
 
 /// A builder for [`NetworkAclEntry`](crate::types::NetworkAclEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkAclEntryBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) egress: ::std::option::Option<bool>,
@@ -120,10 +118,7 @@ impl NetworkAclEntryBuilder {
         self
     }
     /// <p>ICMP protocol: The ICMP type and code.</p>
-    pub fn set_icmp_type_code(
-        mut self,
-        input: ::std::option::Option<crate::types::IcmpTypeCode>,
-    ) -> Self {
+    pub fn set_icmp_type_code(mut self, input: ::std::option::Option<crate::types::IcmpTypeCode>) -> Self {
         self.icmp_type_code = input;
         self
     }
@@ -132,18 +127,12 @@ impl NetworkAclEntryBuilder {
         &self.icmp_type_code
     }
     /// <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
-    pub fn ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
-    pub fn set_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_cidr_block = input;
         self
     }
@@ -185,10 +174,7 @@ impl NetworkAclEntryBuilder {
         self
     }
     /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
-    pub fn set_rule_action(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleAction>,
-    ) -> Self {
+    pub fn set_rule_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.rule_action = input;
         self
     }

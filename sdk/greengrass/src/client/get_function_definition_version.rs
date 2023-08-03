@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_function_definition_version::GetFunctionDefinitionVersionOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     ///   - [`version(Option<String>)`](crate::operation::get_function_definition_version::GetFunctionDefinitionVersionOutput::version): The version of the function definition version.
     /// - On failure, responds with [`SdkError<GetFunctionDefinitionVersionError>`](crate::operation::get_function_definition_version::GetFunctionDefinitionVersionError)
-    pub fn get_function_definition_version(&self) -> crate::operation::get_function_definition_version::builders::GetFunctionDefinitionVersionFluentBuilder{
+    pub fn get_function_definition_version(
+        &self,
+    ) -> crate::operation::get_function_definition_version::builders::GetFunctionDefinitionVersionFluentBuilder {
         crate::operation::get_function_definition_version::builders::GetFunctionDefinitionVersionFluentBuilder::new(self.handle.clone())
     }
 }

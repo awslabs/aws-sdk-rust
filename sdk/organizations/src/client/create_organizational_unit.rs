@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateOrganizationalUnitOutput`](crate::operation::create_organizational_unit::CreateOrganizationalUnitOutput) with field(s):
     ///   - [`organizational_unit(Option<OrganizationalUnit>)`](crate::operation::create_organizational_unit::CreateOrganizationalUnitOutput::organizational_unit): <p>A structure that contains details about the newly created OU.</p>
     /// - On failure, responds with [`SdkError<CreateOrganizationalUnitError>`](crate::operation::create_organizational_unit::CreateOrganizationalUnitError)
-    pub fn create_organizational_unit(
-        &self,
-    ) -> crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitFluentBuilder
-    {
+    pub fn create_organizational_unit(&self) -> crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitFluentBuilder {
         crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitFluentBuilder::new(self.handle.clone())
     }
 }

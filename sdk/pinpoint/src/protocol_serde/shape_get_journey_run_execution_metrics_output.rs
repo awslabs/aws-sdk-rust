@@ -5,7 +5,10 @@ pub(crate) fn de_journey_run_execution_metrics_response_payload(
     ::std::option::Option<crate::types::JourneyRunExecutionMetricsResponse>,
     crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetricsError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_journey_run_execution_metrics_response::de_journey_run_execution_metrics_response_payload(body).map_err(crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetricsError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_journey_run_execution_metrics_response::de_journey_run_execution_metrics_response_payload(body)
+                .map_err(crate::operation::get_journey_run_execution_metrics::GetJourneyRunExecutionMetricsError::unhandled)
+        })
+        .transpose()
 }

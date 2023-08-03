@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`resource_details(Option<Vec<ResourceDetail>>)`](crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput::resource_details): <p>Information about the resources.</p>
     ///   - [`page_token(Option<String>)`](crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput::page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     /// - On failure, responds with [`SdkError<ListResourcesForTagOptionError>`](crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionError)
-    pub fn list_resources_for_tag_option(&self) -> crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionFluentBuilder{
+    pub fn list_resources_for_tag_option(&self) -> crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionFluentBuilder {
         crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionFluentBuilder::new(self.handle.clone())
     }
 }

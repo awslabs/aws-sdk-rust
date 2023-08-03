@@ -16,9 +16,7 @@ pub struct Application {
     pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
     #[doc(hidden)]
-    pub additional_info: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Application {
     /// <p>The name of the application.</p>
@@ -34,11 +32,7 @@ impl Application {
         self.args.as_deref()
     }
     /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
-    pub fn additional_info(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn additional_info(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_info.as_ref()
     }
 }
@@ -51,16 +45,12 @@ impl Application {
 
 /// A builder for [`Application`](crate::types::Application).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) additional_info: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ApplicationBuilder {
     /// <p>The name of the application.</p>
@@ -103,10 +93,7 @@ impl ApplicationBuilder {
         self
     }
     /// <p>Arguments for Amazon EMR to pass to the application.</p>
-    pub fn set_args(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.args = input;
         self
     }
@@ -132,19 +119,13 @@ impl ApplicationBuilder {
     /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
     pub fn set_additional_info(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.additional_info = input;
         self
     }
     /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
-    pub fn get_additional_info(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_additional_info(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_info
     }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetSerialConsoleAccessStatusOutput`](crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput) with field(s):
     ///   - [`serial_console_access_enabled(Option<bool>)`](crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput::serial_console_access_enabled): <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     /// - On failure, responds with [`SdkError<GetSerialConsoleAccessStatusError>`](crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusError)
-    pub fn get_serial_console_access_status(&self) -> crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusFluentBuilder{
+    pub fn get_serial_console_access_status(
+        &self,
+    ) -> crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusFluentBuilder {
         crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusFluentBuilder::new(self.handle.clone())
     }
 }

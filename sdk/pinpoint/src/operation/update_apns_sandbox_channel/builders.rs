@@ -26,7 +26,7 @@ impl UpdateApnsSandboxChannelInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApnsSandboxChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_apns_sandbox_channel::builders::UpdateApnsSandboxChannelInputBuilder,
+    inner: crate::operation::update_apns_sandbox_channel::builders::UpdateApnsSandboxChannelInputBuilder,
 }
 impl UpdateApnsSandboxChannelFluentBuilder {
     /// Creates a new `UpdateApnsSandboxChannel`.
@@ -37,7 +37,7 @@ impl UpdateApnsSandboxChannelFluentBuilder {
         }
     }
     /// Access the UpdateApnsSandboxChannel as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_apns_sandbox_channel::builders::UpdateApnsSandboxChannelInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_apns_sandbox_channel::builders::UpdateApnsSandboxChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateApnsSandboxChannelFluentBuilder {
             crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateApnsSandboxChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateApnsSandboxChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateApnsSandboxChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError>,
     > {
         self.send_middleware().await
     }
@@ -114,47 +105,31 @@ impl UpdateApnsSandboxChannelFluentBuilder {
             crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-    pub fn apns_sandbox_channel_request(
-        mut self,
-        input: crate::types::ApnsSandboxChannelRequest,
-    ) -> Self {
+    pub fn apns_sandbox_channel_request(mut self, input: crate::types::ApnsSandboxChannelRequest) -> Self {
         self.inner = self.inner.apns_sandbox_channel_request(input);
         self
     }
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-    pub fn set_apns_sandbox_channel_request(
-        mut self,
-        input: ::std::option::Option<crate::types::ApnsSandboxChannelRequest>,
-    ) -> Self {
+    pub fn set_apns_sandbox_channel_request(mut self, input: ::std::option::Option<crate::types::ApnsSandboxChannelRequest>) -> Self {
         self.inner = self.inner.set_apns_sandbox_channel_request(input);
         self
     }
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
-    pub fn get_apns_sandbox_channel_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApnsSandboxChannelRequest> {
+    pub fn get_apns_sandbox_channel_request(&self) -> &::std::option::Option<crate::types::ApnsSandboxChannelRequest> {
         self.inner.get_apns_sandbox_channel_request()
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

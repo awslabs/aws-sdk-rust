@@ -19,17 +19,14 @@ impl GetPatchBaselineInput {
 }
 impl GetPatchBaselineInput {
     /// Creates a new builder-style object to manufacture [`GetPatchBaselineInput`](crate::operation::get_patch_baseline::GetPatchBaselineInput).
-    pub fn builder() -> crate::operation::get_patch_baseline::builders::GetPatchBaselineInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_patch_baseline::builders::GetPatchBaselineInputBuilder {
         crate::operation::get_patch_baseline::builders::GetPatchBaselineInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPatchBaselineInput`](crate::operation::get_patch_baseline::GetPatchBaselineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPatchBaselineInputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
 }
@@ -57,14 +54,9 @@ impl GetPatchBaselineInputBuilder {
     /// Consumes the builder and constructs a [`GetPatchBaselineInput`](crate::operation::get_patch_baseline::GetPatchBaselineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_patch_baseline::GetPatchBaselineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_patch_baseline::GetPatchBaselineInput {
-                baseline_id: self.baseline_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_patch_baseline::GetPatchBaselineInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_patch_baseline::GetPatchBaselineInput {
+            baseline_id: self.baseline_id,
+        })
     }
 }

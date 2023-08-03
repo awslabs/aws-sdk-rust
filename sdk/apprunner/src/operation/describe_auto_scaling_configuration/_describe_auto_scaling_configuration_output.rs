@@ -10,9 +10,7 @@ pub struct DescribeAutoScalingConfigurationOutput {
 }
 impl DescribeAutoScalingConfigurationOutput {
     /// <p>A full description of the App Runner auto scaling configuration that you specified in this request.</p>
-    pub fn auto_scaling_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoScalingConfiguration> {
+    pub fn auto_scaling_configuration(&self) -> ::std::option::Option<&crate::types::AutoScalingConfiguration> {
         self.auto_scaling_configuration.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeAutoScalingConfigurationOutpu
 }
 impl DescribeAutoScalingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoScalingConfigurationOutput`](crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_auto_scaling_configuration::builders::DescribeAutoScalingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_auto_scaling_configuration::builders::DescribeAutoScalingConfigurationOutputBuilder {
         crate::operation::describe_auto_scaling_configuration::builders::DescribeAutoScalingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAutoScalingConfigurationOutput`](crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutoScalingConfigurationOutputBuilder {
-    pub(crate) auto_scaling_configuration:
-        ::std::option::Option<crate::types::AutoScalingConfiguration>,
+    pub(crate) auto_scaling_configuration: ::std::option::Option<crate::types::AutoScalingConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeAutoScalingConfigurationOutputBuilder {
     /// <p>A full description of the App Runner auto scaling configuration that you specified in this request.</p>
-    pub fn auto_scaling_configuration(
-        mut self,
-        input: crate::types::AutoScalingConfiguration,
-    ) -> Self {
+    pub fn auto_scaling_configuration(mut self, input: crate::types::AutoScalingConfiguration) -> Self {
         self.auto_scaling_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A full description of the App Runner auto scaling configuration that you specified in this request.</p>
-    pub fn set_auto_scaling_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingConfiguration>,
-    ) -> Self {
+    pub fn set_auto_scaling_configuration(mut self, input: ::std::option::Option<crate::types::AutoScalingConfiguration>) -> Self {
         self.auto_scaling_configuration = input;
         self
     }
     /// <p>A full description of the App Runner auto scaling configuration that you specified in this request.</p>
-    pub fn get_auto_scaling_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingConfiguration> {
+    pub fn get_auto_scaling_configuration(&self) -> &::std::option::Option<crate::types::AutoScalingConfiguration> {
         &self.auto_scaling_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,13 +58,9 @@ impl DescribeAutoScalingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAutoScalingConfigurationOutput`](crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationOutput {
         crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationOutput {
-            auto_scaling_configuration: self.auto_scaling_configuration
-            ,
+            auto_scaling_configuration: self.auto_scaling_configuration,
             _request_id: self._request_id,
         }
     }

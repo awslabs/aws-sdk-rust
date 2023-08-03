@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`event_bus_name(impl ::std::convert::Into<String>)`](crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::event_bus_name) / [`set_event_bus_name(Option<String>)`](crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::set_event_bus_name): <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
     /// - On success, responds with [`RemovePermissionOutput`](crate::operation::remove_permission::RemovePermissionOutput)
     /// - On failure, responds with [`SdkError<RemovePermissionError>`](crate::operation::remove_permission::RemovePermissionError)
-    pub fn remove_permission(
-        &self,
-    ) -> crate::operation::remove_permission::builders::RemovePermissionFluentBuilder {
-        crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_permission(&self) -> crate::operation::remove_permission::builders::RemovePermissionFluentBuilder {
+        crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`results(Option<Vec<Evaluation>>)`](crate::operation::describe_evaluations::DescribeEvaluationsOutput::results): <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_evaluations::DescribeEvaluationsOutput::next_token): <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
     /// - On failure, responds with [`SdkError<DescribeEvaluationsError>`](crate::operation::describe_evaluations::DescribeEvaluationsError)
-    pub fn describe_evaluations(
-        &self,
-    ) -> crate::operation::describe_evaluations::builders::DescribeEvaluationsFluentBuilder {
-        crate::operation::describe_evaluations::builders::DescribeEvaluationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_evaluations(&self) -> crate::operation::describe_evaluations::builders::DescribeEvaluationsFluentBuilder {
+        crate::operation::describe_evaluations::builders::DescribeEvaluationsFluentBuilder::new(self.handle.clone())
     }
 }

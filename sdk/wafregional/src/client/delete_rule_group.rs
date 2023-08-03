@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteRuleGroupOutput`](crate::operation::delete_rule_group::DeleteRuleGroupOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::delete_rule_group::DeleteRuleGroupOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteRuleGroupError>`](crate::operation::delete_rule_group::DeleteRuleGroupError)
-    pub fn delete_rule_group(
-        &self,
-    ) -> crate::operation::delete_rule_group::builders::DeleteRuleGroupFluentBuilder {
-        crate::operation::delete_rule_group::builders::DeleteRuleGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_rule_group(&self) -> crate::operation::delete_rule_group::builders::DeleteRuleGroupFluentBuilder {
+        crate::operation::delete_rule_group::builders::DeleteRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

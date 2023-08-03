@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for RotateEncryptionKeyOutput {
 }
 impl RotateEncryptionKeyOutput {
     /// Creates a new builder-style object to manufacture [`RotateEncryptionKeyOutput`](crate::operation::rotate_encryption_key::RotateEncryptionKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyOutputBuilder {
-        crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyOutputBuilder {
+        crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`RotateEncryptionKeyOutput`](crate::operation::rotate_encryption_key::RotateEncryptionKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RotateEncryptionKeyOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,

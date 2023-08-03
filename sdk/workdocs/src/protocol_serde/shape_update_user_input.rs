@@ -7,9 +7,7 @@ pub fn ser_update_user_input(
         object.key("GivenName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.grant_poweruser_privileges {
-        object
-            .key("GrantPoweruserPrivileges")
-            .string(var_2.as_str());
+        object.key("GrantPoweruserPrivileges").string(var_2.as_str());
     }
     if let Some(var_3) = &input.locale {
         object.key("Locale").string(var_3.as_str());
@@ -17,10 +15,7 @@ pub fn ser_update_user_input(
     if let Some(var_4) = &input.storage_rule {
         #[allow(unused_mut)]
         let mut object_5 = object.key("StorageRule").start_object();
-        crate::protocol_serde::shape_storage_rule_type::ser_storage_rule_type(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_storage_rule_type::ser_storage_rule_type(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.surname {

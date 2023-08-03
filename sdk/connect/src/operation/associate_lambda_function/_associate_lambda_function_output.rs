@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateLambdaFunctionOutput {
 }
 impl AssociateLambdaFunctionOutput {
     /// Creates a new builder-style object to manufacture [`AssociateLambdaFunctionOutput`](crate::operation::associate_lambda_function::AssociateLambdaFunctionOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_lambda_function::builders::AssociateLambdaFunctionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_lambda_function::builders::AssociateLambdaFunctionOutputBuilder {
         crate::operation::associate_lambda_function::builders::AssociateLambdaFunctionOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateLambdaFunctionOutput`](crate::operation::associate_lambda_function::AssociateLambdaFunctionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateLambdaFunctionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl AssociateLambdaFunctionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateLambdaFunctionOutput`](crate::operation::associate_lambda_function::AssociateLambdaFunctionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_lambda_function::AssociateLambdaFunctionOutput {
+    pub fn build(self) -> crate::operation::associate_lambda_function::AssociateLambdaFunctionOutput {
         crate::operation::associate_lambda_function::AssociateLambdaFunctionOutput {
             _request_id: self._request_id,
         }

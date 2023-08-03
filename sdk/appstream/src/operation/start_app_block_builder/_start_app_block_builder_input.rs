@@ -15,17 +15,14 @@ impl StartAppBlockBuilderInput {
 }
 impl StartAppBlockBuilderInput {
     /// Creates a new builder-style object to manufacture [`StartAppBlockBuilderInput`](crate::operation::start_app_block_builder::StartAppBlockBuilderInput).
-    pub fn builder(
-    ) -> crate::operation::start_app_block_builder::builders::StartAppBlockBuilderInputBuilder {
+    pub fn builder() -> crate::operation::start_app_block_builder::builders::StartAppBlockBuilderInputBuilder {
         crate::operation::start_app_block_builder::builders::StartAppBlockBuilderInputBuilder::default()
     }
 }
 
 /// A builder for [`StartAppBlockBuilderInput`](crate::operation::start_app_block_builder::StartAppBlockBuilderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartAppBlockBuilderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,8 @@ impl StartAppBlockBuilderInputBuilder {
     /// Consumes the builder and constructs a [`StartAppBlockBuilderInput`](crate::operation::start_app_block_builder::StartAppBlockBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_app_block_builder::StartAppBlockBuilderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_app_block_builder::StartAppBlockBuilderInput {
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_app_block_builder::StartAppBlockBuilderInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_app_block_builder::StartAppBlockBuilderInput { name: self.name })
     }
 }

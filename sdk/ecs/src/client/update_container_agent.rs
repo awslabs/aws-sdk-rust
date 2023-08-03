@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateContainerAgentOutput`](crate::operation::update_container_agent::UpdateContainerAgentOutput) with field(s):
     ///   - [`container_instance(Option<ContainerInstance>)`](crate::operation::update_container_agent::UpdateContainerAgentOutput::container_instance): <p>The container instance that the container agent was updated for.</p>
     /// - On failure, responds with [`SdkError<UpdateContainerAgentError>`](crate::operation::update_container_agent::UpdateContainerAgentError)
-    pub fn update_container_agent(
-        &self,
-    ) -> crate::operation::update_container_agent::builders::UpdateContainerAgentFluentBuilder {
-        crate::operation::update_container_agent::builders::UpdateContainerAgentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_container_agent(&self) -> crate::operation::update_container_agent::builders::UpdateContainerAgentFluentBuilder {
+        crate::operation::update_container_agent::builders::UpdateContainerAgentFluentBuilder::new(self.handle.clone())
     }
 }

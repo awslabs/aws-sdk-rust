@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionFluentBuilder::set_instance_id): <p>The ID of the instance.</p>
     /// - On success, responds with [`CompleteLifecycleActionOutput`](crate::operation::complete_lifecycle_action::CompleteLifecycleActionOutput)
     /// - On failure, responds with [`SdkError<CompleteLifecycleActionError>`](crate::operation::complete_lifecycle_action::CompleteLifecycleActionError)
-    pub fn complete_lifecycle_action(
-        &self,
-    ) -> crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionFluentBuilder
-    {
+    pub fn complete_lifecycle_action(&self) -> crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionFluentBuilder {
         crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionFluentBuilder::new(self.handle.clone())
     }
 }

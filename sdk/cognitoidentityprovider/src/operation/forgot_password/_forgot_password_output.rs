@@ -11,9 +11,7 @@ pub struct ForgotPasswordOutput {
 }
 impl ForgotPasswordOutput {
     /// <p>The code delivery details returned by the server in response to the request to reset a password.</p>
-    pub fn code_delivery_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CodeDeliveryDetailsType> {
+    pub fn code_delivery_details(&self) -> ::std::option::Option<&crate::types::CodeDeliveryDetailsType> {
         self.code_delivery_details.as_ref()
     }
 }
@@ -31,9 +29,7 @@ impl ForgotPasswordOutput {
 
 /// A builder for [`ForgotPasswordOutput`](crate::operation::forgot_password::ForgotPasswordOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ForgotPasswordOutputBuilder {
     pub(crate) code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     _request_id: Option<String>,
@@ -45,17 +41,12 @@ impl ForgotPasswordOutputBuilder {
         self
     }
     /// <p>The code delivery details returned by the server in response to the request to reset a password.</p>
-    pub fn set_code_delivery_details(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
-    ) -> Self {
+    pub fn set_code_delivery_details(mut self, input: ::std::option::Option<crate::types::CodeDeliveryDetailsType>) -> Self {
         self.code_delivery_details = input;
         self
     }
     /// <p>The code delivery details returned by the server in response to the request to reset a password.</p>
-    pub fn get_code_delivery_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodeDeliveryDetailsType> {
+    pub fn get_code_delivery_details(&self) -> &::std::option::Option<crate::types::CodeDeliveryDetailsType> {
         &self.code_delivery_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

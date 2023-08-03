@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateDistributionOutput {
 }
 impl UpdateDistributionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDistributionOutput`](crate::operation::update_distribution::UpdateDistributionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_distribution::builders::UpdateDistributionOutputBuilder {
+    pub fn builder() -> crate::operation::update_distribution::builders::UpdateDistributionOutputBuilder {
         crate::operation::update_distribution::builders::UpdateDistributionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDistributionOutput`](crate::operation::update_distribution::UpdateDistributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDistributionOutputBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,

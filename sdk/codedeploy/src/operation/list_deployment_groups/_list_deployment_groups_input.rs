@@ -23,35 +23,26 @@ impl ListDeploymentGroupsInput {
 }
 impl ListDeploymentGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentGroupsInput`](crate::operation::list_deployment_groups::ListDeploymentGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_deployment_groups::builders::ListDeploymentGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_deployment_groups::builders::ListDeploymentGroupsInputBuilder {
         crate::operation::list_deployment_groups::builders::ListDeploymentGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeploymentGroupsInput`](crate::operation::list_deployment_groups::ListDeploymentGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentGroupsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDeploymentGroupsInputBuilder {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -76,15 +67,11 @@ impl ListDeploymentGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeploymentGroupsInput`](crate::operation::list_deployment_groups::ListDeploymentGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_deployment_groups::ListDeploymentGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_deployment_groups::ListDeploymentGroupsInput {
-                application_name: self.application_name,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_deployment_groups::ListDeploymentGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_deployment_groups::ListDeploymentGroupsInput {
+            application_name: self.application_name,
+            next_token: self.next_token,
+        })
     }
 }

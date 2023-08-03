@@ -21,9 +21,7 @@ pub struct OrganizationEventDetails {
     pub event_description: ::std::option::Option<crate::types::EventDescription>,
     /// <p>Additional metadata about the event.</p>
     #[doc(hidden)]
-    pub event_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub event_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OrganizationEventDetails {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
@@ -45,11 +43,7 @@ impl OrganizationEventDetails {
         self.event_description.as_ref()
     }
     /// <p>Additional metadata about the event.</p>
-    pub fn event_metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn event_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.event_metadata.as_ref()
     }
 }
@@ -62,31 +56,21 @@ impl OrganizationEventDetails {
 
 /// A builder for [`OrganizationEventDetails`](crate::types::OrganizationEventDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationEventDetailsBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) event: ::std::option::Option<crate::types::Event>,
     pub(crate) event_description: ::std::option::Option<crate::types::EventDescription>,
-    pub(crate) event_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) event_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OrganizationEventDetailsBuilder {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -132,10 +116,7 @@ impl OrganizationEventDetailsBuilder {
         self
     }
     /// <p>The detailed description of the event. Included in the information returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation.</p>
-    pub fn set_event_description(
-        mut self,
-        input: ::std::option::Option<crate::types::EventDescription>,
-    ) -> Self {
+    pub fn set_event_description(mut self, input: ::std::option::Option<crate::types::EventDescription>) -> Self {
         self.event_description = input;
         self
     }
@@ -161,19 +142,13 @@ impl OrganizationEventDetailsBuilder {
     /// <p>Additional metadata about the event.</p>
     pub fn set_event_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.event_metadata = input;
         self
     }
     /// <p>Additional metadata about the event.</p>
-    pub fn get_event_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_event_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.event_metadata
     }
     /// Consumes the builder and constructs a [`OrganizationEventDetails`](crate::types::OrganizationEventDetails).

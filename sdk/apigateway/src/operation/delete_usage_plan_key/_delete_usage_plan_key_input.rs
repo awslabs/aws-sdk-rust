@@ -23,35 +23,26 @@ impl DeleteUsagePlanKeyInput {
 }
 impl DeleteUsagePlanKeyInput {
     /// Creates a new builder-style object to manufacture [`DeleteUsagePlanKeyInput`](crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyInputBuilder {
+    pub fn builder() -> crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyInputBuilder {
         crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUsagePlanKeyInput`](crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUsagePlanKeyInputBuilder {
     pub(crate) usage_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUsagePlanKeyInputBuilder {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.</p>
-    pub fn usage_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.</p>
-    pub fn set_usage_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_plan_id = input;
         self
     }
@@ -76,15 +67,11 @@ impl DeleteUsagePlanKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUsagePlanKeyInput`](crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyInput {
-                usage_plan_id: self.usage_plan_id,
-                key_id: self.key_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyInput {
+            usage_plan_id: self.usage_plan_id,
+            key_id: self.key_id,
+        })
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ListAttachedLinksItem>>)`](crate::operation::list_attached_links::ListAttachedLinksOutput::items): <p>An array of structures that contain the information about the attached links.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_attached_links::ListAttachedLinksOutput::next_token): <p>The token to use when requesting the next set of links.</p>
     /// - On failure, responds with [`SdkError<ListAttachedLinksError>`](crate::operation::list_attached_links::ListAttachedLinksError)
-    pub fn list_attached_links(
-        &self,
-    ) -> crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder {
-        crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_attached_links(&self) -> crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder {
+        crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder::new(self.handle.clone())
     }
 }

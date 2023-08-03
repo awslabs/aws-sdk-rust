@@ -15,17 +15,14 @@ impl GetJobUnlockCodeInput {
 }
 impl GetJobUnlockCodeInput {
     /// Creates a new builder-style object to manufacture [`GetJobUnlockCodeInput`](crate::operation::get_job_unlock_code::GetJobUnlockCodeInput).
-    pub fn builder() -> crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeInputBuilder {
         crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeInputBuilder::default()
     }
 }
 
 /// A builder for [`GetJobUnlockCodeInput`](crate::operation::get_job_unlock_code::GetJobUnlockCodeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobUnlockCodeInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl GetJobUnlockCodeInputBuilder {
     /// Consumes the builder and constructs a [`GetJobUnlockCodeInput`](crate::operation::get_job_unlock_code::GetJobUnlockCodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_job_unlock_code::GetJobUnlockCodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_job_unlock_code::GetJobUnlockCodeInput {
-                job_id: self.job_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_job_unlock_code::GetJobUnlockCodeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_job_unlock_code::GetJobUnlockCodeInput { job_id: self.job_id })
     }
 }

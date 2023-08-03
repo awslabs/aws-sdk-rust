@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeVcenterClientsOutput {
 }
 impl DescribeVcenterClientsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVcenterClientsOutput`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsOutputBuilder {
         crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVcenterClientsOutput`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVcenterClientsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::VcenterClient>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeVcenterClientsOutputBuilder {
         self
     }
     /// <p>List of items returned by DescribeVcenterClients.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VcenterClient>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VcenterClient>>) -> Self {
         self.items = input;
         self
     }
     /// <p>List of items returned by DescribeVcenterClients.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VcenterClient>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VcenterClient>> {
         &self.items
     }
     /// <p>Next pagination token returned from DescribeVcenterClients.</p>

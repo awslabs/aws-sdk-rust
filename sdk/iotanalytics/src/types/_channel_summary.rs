@@ -49,9 +49,7 @@ impl ChannelSummary {
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub fn last_message_arrival_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_message_arrival_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_message_arrival_time.as_ref()
     }
 }
@@ -64,9 +62,7 @@ impl ChannelSummary {
 
 /// A builder for [`ChannelSummary`](crate::types::ChannelSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelSummaryBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_storage: ::std::option::Option<crate::types::ChannelStorageSummary>,
@@ -96,17 +92,12 @@ impl ChannelSummaryBuilder {
         self
     }
     /// <p>Where channel data is stored.</p>
-    pub fn set_channel_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelStorageSummary>,
-    ) -> Self {
+    pub fn set_channel_storage(mut self, input: ::std::option::Option<crate::types::ChannelStorageSummary>) -> Self {
         self.channel_storage = input;
         self
     }
     /// <p>Where channel data is stored.</p>
-    pub fn get_channel_storage(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelStorageSummary> {
+    pub fn get_channel_storage(&self) -> &::std::option::Option<crate::types::ChannelStorageSummary> {
         &self.channel_storage
     }
     /// <p>The status of the channel.</p>
@@ -129,10 +120,7 @@ impl ChannelSummaryBuilder {
         self
     }
     /// <p>When the channel was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -146,10 +134,7 @@ impl ChannelSummaryBuilder {
         self
     }
     /// <p>The last time the channel was updated.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }
@@ -167,19 +152,14 @@ impl ChannelSummaryBuilder {
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub fn set_last_message_arrival_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_message_arrival_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_message_arrival_time = input;
         self
     }
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub fn get_last_message_arrival_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_message_arrival_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_message_arrival_time
     }
     /// Consumes the builder and constructs a [`ChannelSummary`](crate::types::ChannelSummary).

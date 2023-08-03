@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`platform_branch_summary_list(Option<Vec<PlatformBranchSummary>>)`](crate::operation::list_platform_branches::ListPlatformBranchesOutput::platform_branch_summary_list): <p>Summary information about the platform branches.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_platform_branches::ListPlatformBranchesOutput::next_token): <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
     /// - On failure, responds with [`SdkError<ListPlatformBranchesError>`](crate::operation::list_platform_branches::ListPlatformBranchesError)
-    pub fn list_platform_branches(
-        &self,
-    ) -> crate::operation::list_platform_branches::builders::ListPlatformBranchesFluentBuilder {
-        crate::operation::list_platform_branches::builders::ListPlatformBranchesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_platform_branches(&self) -> crate::operation::list_platform_branches::builders::ListPlatformBranchesFluentBuilder {
+        crate::operation::list_platform_branches::builders::ListPlatformBranchesFluentBuilder::new(self.handle.clone())
     }
 }

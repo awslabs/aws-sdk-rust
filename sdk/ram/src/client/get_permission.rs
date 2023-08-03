@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetPermissionOutput`](crate::operation::get_permission::GetPermissionOutput) with field(s):
     ///   - [`permission(Option<ResourceSharePermissionDetail>)`](crate::operation::get_permission::GetPermissionOutput::permission): <p>An object with details about the permission.</p>
     /// - On failure, responds with [`SdkError<GetPermissionError>`](crate::operation::get_permission::GetPermissionError)
-    pub fn get_permission(
-        &self,
-    ) -> crate::operation::get_permission::builders::GetPermissionFluentBuilder {
-        crate::operation::get_permission::builders::GetPermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_permission(&self) -> crate::operation::get_permission::builders::GetPermissionFluentBuilder {
+        crate::operation::get_permission::builders::GetPermissionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`action_name(impl ::std::convert::Into<String>)`](crate::operation::delete_mitigation_action::builders::DeleteMitigationActionFluentBuilder::action_name) / [`set_action_name(Option<String>)`](crate::operation::delete_mitigation_action::builders::DeleteMitigationActionFluentBuilder::set_action_name): <p>The name of the mitigation action that you want to delete.</p>
     /// - On success, responds with [`DeleteMitigationActionOutput`](crate::operation::delete_mitigation_action::DeleteMitigationActionOutput)
     /// - On failure, responds with [`SdkError<DeleteMitigationActionError>`](crate::operation::delete_mitigation_action::DeleteMitigationActionError)
-    pub fn delete_mitigation_action(
-        &self,
-    ) -> crate::operation::delete_mitigation_action::builders::DeleteMitigationActionFluentBuilder
-    {
+    pub fn delete_mitigation_action(&self) -> crate::operation::delete_mitigation_action::builders::DeleteMitigationActionFluentBuilder {
         crate::operation::delete_mitigation_action::builders::DeleteMitigationActionFluentBuilder::new(self.handle.clone())
     }
 }

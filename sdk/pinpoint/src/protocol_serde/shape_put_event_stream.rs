@@ -4,148 +4,125 @@ pub fn de_put_event_stream_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::put_event_stream::PutEventStreamOutput,
-    crate::operation::put_event_stream::PutEventStreamError,
-> {
+) -> std::result::Result<crate::operation::put_event_stream::PutEventStreamOutput, crate::operation::put_event_stream::PutEventStreamError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::put_event_stream::PutEventStreamError::unhandled(generic))
-        }
+        None => return Err(crate::operation::put_event_stream::PutEventStreamError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::operation::put_event_stream::PutEventStreamError::BadRequestException({
+        "BadRequestException" => crate::operation::put_event_stream::PutEventStreamError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ForbiddenException" => {
-            crate::operation::put_event_stream::PutEventStreamError::ForbiddenException({
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => crate::operation::put_event_stream::PutEventStreamError::ForbiddenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalServerErrorException" => {
-            crate::operation::put_event_stream::PutEventStreamError::InternalServerErrorException({
+                let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServerErrorException" => crate::operation::put_event_stream::PutEventStreamError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
-                        );
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output).map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "MethodNotAllowedException" => {
-            crate::operation::put_event_stream::PutEventStreamError::MethodNotAllowedException({
+                let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MethodNotAllowedException" => crate::operation::put_event_stream::PutEventStreamError::MethodNotAllowedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::MethodNotAllowedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_method_not_allowed_exception::de_method_not_allowed_exception_json_err(_response_body, output).map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "NotFoundException" => {
-            crate::operation::put_event_stream::PutEventStreamError::NotFoundException({
+                let mut output = crate::types::error::builders::MethodNotAllowedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_method_not_allowed_exception::de_method_not_allowed_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => crate::operation::put_event_stream::PutEventStreamError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::NotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output).map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "PayloadTooLargeException" => {
-            crate::operation::put_event_stream::PutEventStreamError::PayloadTooLargeException({
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "PayloadTooLargeException" => crate::operation::put_event_stream::PutEventStreamError::PayloadTooLargeException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::PayloadTooLargeExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_payload_too_large_exception::de_payload_too_large_exception_json_err(_response_body, output).map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "TooManyRequestsException" => {
-            crate::operation::put_event_stream::PutEventStreamError::TooManyRequestsException({
+                let mut output = crate::types::error::builders::PayloadTooLargeExceptionBuilder::default();
+                output = crate::protocol_serde::shape_payload_too_large_exception::de_payload_too_large_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::put_event_stream::PutEventStreamError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::put_event_stream::PutEventStreamError::generic(generic),
     })
 }
@@ -155,22 +132,14 @@ pub fn de_put_event_stream_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::put_event_stream::PutEventStreamOutput,
-    crate::operation::put_event_stream::PutEventStreamError,
-> {
+) -> std::result::Result<crate::operation::put_event_stream::PutEventStreamOutput, crate::operation::put_event_stream::PutEventStreamError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::put_event_stream::builders::PutEventStreamOutputBuilder::default();
-        output = output.set_event_stream(
-            crate::protocol_serde::shape_put_event_stream_output::de_event_stream_payload(
-                _response_body,
-            )?,
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::put_event_stream::builders::PutEventStreamOutputBuilder::default();
+        output = output.set_event_stream(crate::protocol_serde::shape_put_event_stream_output::de_event_stream_payload(
+            _response_body,
+        )?);
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

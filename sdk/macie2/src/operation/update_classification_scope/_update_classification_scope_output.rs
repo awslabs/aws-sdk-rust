@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateClassificationScopeOutput {
 }
 impl UpdateClassificationScopeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateClassificationScopeOutput`](crate::operation::update_classification_scope::UpdateClassificationScopeOutput).
-    pub fn builder() -> crate::operation::update_classification_scope::builders::UpdateClassificationScopeOutputBuilder{
+    pub fn builder() -> crate::operation::update_classification_scope::builders::UpdateClassificationScopeOutputBuilder {
         crate::operation::update_classification_scope::builders::UpdateClassificationScopeOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateClassificationScopeOutput`](crate::operation::update_classification_scope::UpdateClassificationScopeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClassificationScopeOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateClassificationScopeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateClassificationScopeOutput`](crate::operation::update_classification_scope::UpdateClassificationScopeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_classification_scope::UpdateClassificationScopeOutput {
+    pub fn build(self) -> crate::operation::update_classification_scope::UpdateClassificationScopeOutput {
         crate::operation::update_classification_scope::UpdateClassificationScopeOutput {
             _request_id: self._request_id,
         }

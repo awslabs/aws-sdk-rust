@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetJobUnlockCodeOutput {
 }
 impl GetJobUnlockCodeOutput {
     /// Creates a new builder-style object to manufacture [`GetJobUnlockCodeOutput`](crate::operation::get_job_unlock_code::GetJobUnlockCodeOutput).
-    pub fn builder(
-    ) -> crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeOutputBuilder {
+    pub fn builder() -> crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeOutputBuilder {
         crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetJobUnlockCodeOutput`](crate::operation::get_job_unlock_code::GetJobUnlockCodeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobUnlockCodeOutputBuilder {
     pub(crate) unlock_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

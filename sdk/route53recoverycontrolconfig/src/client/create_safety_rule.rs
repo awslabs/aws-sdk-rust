@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`assertion_rule(Option<AssertionRule>)`](crate::operation::create_safety_rule::CreateSafetyRuleOutput::assertion_rule): <p>The assertion rule created.</p>
     ///   - [`gating_rule(Option<GatingRule>)`](crate::operation::create_safety_rule::CreateSafetyRuleOutput::gating_rule): <p>The gating rule created.</p>
     /// - On failure, responds with [`SdkError<CreateSafetyRuleError>`](crate::operation::create_safety_rule::CreateSafetyRuleError)
-    pub fn create_safety_rule(
-        &self,
-    ) -> crate::operation::create_safety_rule::builders::CreateSafetyRuleFluentBuilder {
-        crate::operation::create_safety_rule::builders::CreateSafetyRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_safety_rule(&self) -> crate::operation::create_safety_rule::builders::CreateSafetyRuleFluentBuilder {
+        crate::operation::create_safety_rule::builders::CreateSafetyRuleFluentBuilder::new(self.handle.clone())
     }
 }

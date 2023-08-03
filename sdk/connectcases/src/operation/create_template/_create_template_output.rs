@@ -35,9 +35,7 @@ impl CreateTemplateOutput {
 
 /// A builder for [`CreateTemplateOutput`](crate::operation::create_template::CreateTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTemplateOutputBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,

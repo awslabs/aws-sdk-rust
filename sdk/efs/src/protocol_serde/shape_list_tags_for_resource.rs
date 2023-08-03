@@ -9,100 +9,77 @@ pub fn de_list_tags_for_resource_http_error(
     crate::operation::list_tags_for_resource::ListTagsForResourceError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessPointNotFound" => {
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessPointNotFound(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::AccessPointNotFoundBuilder::default();
-                        output = crate::protocol_serde::shape_access_point_not_found::de_access_point_not_found_json_err(_response_body, output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "BadRequest" => {
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::BadRequest({
+        "AccessPointNotFound" => crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessPointNotFound({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BadRequestBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(_response_body, output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "FileSystemNotFound" => {
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::FileSystemNotFound(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::FileSystemNotFoundBuilder::default();
-                        output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(_response_body, output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "InternalServerError" => {
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerError(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::InternalServerErrorBuilder::default();
-                        output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
+                let mut output = crate::types::error::builders::AccessPointNotFoundBuilder::default();
+                output = crate::protocol_serde::shape_access_point_not_found::de_access_point_not_found_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "BadRequest" => crate::operation::list_tags_for_resource::ListTagsForResourceError::BadRequest({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BadRequestBuilder::default();
+                output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "FileSystemNotFound" => crate::operation::list_tags_for_resource::ListTagsForResourceError::FileSystemNotFound({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::FileSystemNotFoundBuilder::default();
+                output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServerError" => crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerError({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::list_tags_for_resource::ListTagsForResourceError::generic(generic),
     })
 }
@@ -119,14 +96,9 @@ pub fn de_list_tags_for_resource_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder::default();
-        output = crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource(_response_body, output)
+            .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -138,48 +110,37 @@ pub(crate) fn de_list_tags_for_resource(
     crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "NextToken" => {
-                        builder = builder.set_next_token(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "NextToken" => {
+                    builder = builder.set_next_token(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "Tags" => {
-                        builder =
-                            builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    );
                 }
-            }
+                "Tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

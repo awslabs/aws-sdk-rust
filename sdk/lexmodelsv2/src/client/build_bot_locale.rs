@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`bot_locale_status(Option<BotLocaleStatus>)`](crate::operation::build_bot_locale::BuildBotLocaleOutput::bot_locale_status): <p>The bot's build status. When the status is <code>ReadyExpressTesting</code> you can test the bot using the utterances defined for the intents and slot types. When the status is <code>Built</code>, the bot is ready for use and can be tested using any utterance.</p>
     ///   - [`last_build_submitted_date_time(Option<DateTime>)`](crate::operation::build_bot_locale::BuildBotLocaleOutput::last_build_submitted_date_time): <p>A timestamp indicating the date and time that the bot was last built for this locale.</p>
     /// - On failure, responds with [`SdkError<BuildBotLocaleError>`](crate::operation::build_bot_locale::BuildBotLocaleError)
-    pub fn build_bot_locale(
-        &self,
-    ) -> crate::operation::build_bot_locale::builders::BuildBotLocaleFluentBuilder {
-        crate::operation::build_bot_locale::builders::BuildBotLocaleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn build_bot_locale(&self) -> crate::operation::build_bot_locale::builders::BuildBotLocaleFluentBuilder {
+        crate::operation::build_bot_locale::builders::BuildBotLocaleFluentBuilder::new(self.handle.clone())
     }
 }

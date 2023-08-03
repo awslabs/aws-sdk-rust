@@ -26,9 +26,7 @@ impl ImageRepository {
         self.image_configuration.as_ref()
     }
     /// <p>The type of the image repository. This reflects the repository provider and whether the repository is private or public.</p>
-    pub fn image_repository_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImageRepositoryType> {
+    pub fn image_repository_type(&self) -> ::std::option::Option<&crate::types::ImageRepositoryType> {
         self.image_repository_type.as_ref()
     }
 }
@@ -41,9 +39,7 @@ impl ImageRepository {
 
 /// A builder for [`ImageRepository`](crate::types::ImageRepository).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageRepositoryBuilder {
     pub(crate) image_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
@@ -52,19 +48,13 @@ pub struct ImageRepositoryBuilder {
 impl ImageRepositoryBuilder {
     /// <p>The identifier of an image.</p>
     /// <p>For an image in Amazon Elastic Container Registry (Amazon ECR), this is an image name. For the image name format, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an image</a> in the <i>Amazon ECR User Guide</i>.</p>
-    pub fn image_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of an image.</p>
     /// <p>For an image in Amazon Elastic Container Registry (Amazon ECR), this is an image name. For the image name format, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an image</a> in the <i>Amazon ECR User Guide</i>.</p>
-    pub fn set_image_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_identifier = input;
         self
     }
@@ -79,17 +69,12 @@ impl ImageRepositoryBuilder {
         self
     }
     /// <p>Configuration for running the identified image.</p>
-    pub fn set_image_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageConfiguration>,
-    ) -> Self {
+    pub fn set_image_configuration(mut self, input: ::std::option::Option<crate::types::ImageConfiguration>) -> Self {
         self.image_configuration = input;
         self
     }
     /// <p>Configuration for running the identified image.</p>
-    pub fn get_image_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageConfiguration> {
+    pub fn get_image_configuration(&self) -> &::std::option::Option<crate::types::ImageConfiguration> {
         &self.image_configuration
     }
     /// <p>The type of the image repository. This reflects the repository provider and whether the repository is private or public.</p>
@@ -98,17 +83,12 @@ impl ImageRepositoryBuilder {
         self
     }
     /// <p>The type of the image repository. This reflects the repository provider and whether the repository is private or public.</p>
-    pub fn set_image_repository_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageRepositoryType>,
-    ) -> Self {
+    pub fn set_image_repository_type(mut self, input: ::std::option::Option<crate::types::ImageRepositoryType>) -> Self {
         self.image_repository_type = input;
         self
     }
     /// <p>The type of the image repository. This reflects the repository provider and whether the repository is private or public.</p>
-    pub fn get_image_repository_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageRepositoryType> {
+    pub fn get_image_repository_type(&self) -> &::std::option::Option<crate::types::ImageRepositoryType> {
         &self.image_repository_type
     }
     /// Consumes the builder and constructs a [`ImageRepository`](crate::types::ImageRepository).

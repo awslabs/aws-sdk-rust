@@ -60,9 +60,7 @@ impl RefreshFrequency {
 
 /// A builder for [`RefreshFrequency`](crate::types::RefreshFrequency).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RefreshFrequencyBuilder {
     pub(crate) interval: ::std::option::Option<crate::types::RefreshInterval>,
     pub(crate) refresh_on_day: ::std::option::Option<crate::types::ScheduleRefreshOnEntity>,
@@ -92,10 +90,7 @@ impl RefreshFrequencyBuilder {
     /// <li> <p> <code>WEEKLY</code>: The dataset refreshes every week.</p> </li>
     /// <li> <p> <code>MONTHLY</code>: The dataset refreshes every month.</p> </li>
     /// </ul>
-    pub fn set_interval(
-        mut self,
-        input: ::std::option::Option<crate::types::RefreshInterval>,
-    ) -> Self {
+    pub fn set_interval(mut self, input: ::std::option::Option<crate::types::RefreshInterval>) -> Self {
         self.interval = input;
         self
     }
@@ -117,17 +112,12 @@ impl RefreshFrequencyBuilder {
         self
     }
     /// <p>The day of the week that you want to schedule the refresh on. This value is required for weekly and monthly refresh intervals.</p>
-    pub fn set_refresh_on_day(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleRefreshOnEntity>,
-    ) -> Self {
+    pub fn set_refresh_on_day(mut self, input: ::std::option::Option<crate::types::ScheduleRefreshOnEntity>) -> Self {
         self.refresh_on_day = input;
         self
     }
     /// <p>The day of the week that you want to schedule the refresh on. This value is required for weekly and monthly refresh intervals.</p>
-    pub fn get_refresh_on_day(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleRefreshOnEntity> {
+    pub fn get_refresh_on_day(&self) -> &::std::option::Option<crate::types::ScheduleRefreshOnEntity> {
         &self.refresh_on_day
     }
     /// <p>The timezone that you want the refresh schedule to use. The timezone ID must match a corresponding ID found on <code>java.util.time.getAvailableIDs()</code>.</p>
@@ -145,18 +135,12 @@ impl RefreshFrequencyBuilder {
         &self.timezone
     }
     /// <p>The time of day that you want the datset to refresh. This value is expressed in HH:MM format. This field is not required for schedules that refresh hourly.</p>
-    pub fn time_of_the_day(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn time_of_the_day(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_of_the_day = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time of day that you want the datset to refresh. This value is expressed in HH:MM format. This field is not required for schedules that refresh hourly.</p>
-    pub fn set_time_of_the_day(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_time_of_the_day(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_of_the_day = input;
         self
     }

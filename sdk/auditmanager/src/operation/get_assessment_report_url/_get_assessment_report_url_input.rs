@@ -22,36 +22,26 @@ impl GetAssessmentReportUrlInput {
 }
 impl GetAssessmentReportUrlInput {
     /// Creates a new builder-style object to manufacture [`GetAssessmentReportUrlInput`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput).
-    pub fn builder(
-    ) -> crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlInputBuilder {
         crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssessmentReportUrlInput`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssessmentReportUrlInputBuilder {
     pub(crate) assessment_report_id: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAssessmentReportUrlInputBuilder {
     /// <p> The unique identifier for the assessment report. </p>
-    pub fn assessment_report_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_report_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the assessment report. </p>
-    pub fn set_assessment_report_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_report_id = input;
         self
     }
@@ -60,18 +50,12 @@ impl GetAssessmentReportUrlInputBuilder {
         &self.assessment_report_id
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -86,11 +70,9 @@ impl GetAssessmentReportUrlInputBuilder {
         crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput {
-                assessment_report_id: self.assessment_report_id,
-                assessment_id: self.assessment_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput {
+            assessment_report_id: self.assessment_report_id,
+            assessment_id: self.assessment_id,
+        })
     }
 }

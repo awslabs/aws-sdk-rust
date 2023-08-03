@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`date_created(Option<DateTime>)`](crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideOutput::date_created): <p>The date the override was first created.</p>
     ///   - [`date_modified(Option<DateTime>)`](crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideOutput::date_modified): <p>The date the description was last modified.</p>
     /// - On failure, responds with [`SdkError<GetMobileDeviceAccessOverrideError>`](crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError)
-    pub fn get_mobile_device_access_override(&self) -> crate::operation::get_mobile_device_access_override::builders::GetMobileDeviceAccessOverrideFluentBuilder{
+    pub fn get_mobile_device_access_override(
+        &self,
+    ) -> crate::operation::get_mobile_device_access_override::builders::GetMobileDeviceAccessOverrideFluentBuilder {
         crate::operation::get_mobile_device_access_override::builders::GetMobileDeviceAccessOverrideFluentBuilder::new(self.handle.clone())
     }
 }

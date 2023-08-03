@@ -10,10 +10,7 @@ impl CreateJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_job::CreateJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_job::CreateJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_job();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateJobFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_job::CreateJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_job::CreateJob, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateJobFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_job::CreateJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_job::CreateJob, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError>,
     > {
         self.customize_middleware().await
@@ -118,17 +106,12 @@ impl CreateJobFluentBuilder {
         self
     }
     /// Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
-    pub fn set_acceleration_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AccelerationSettings>,
-    ) -> Self {
+    pub fn set_acceleration_settings(mut self, input: ::std::option::Option<crate::types::AccelerationSettings>) -> Self {
         self.inner = self.inner.set_acceleration_settings(input);
         self
     }
     /// Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
-    pub fn get_acceleration_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccelerationSettings> {
+    pub fn get_acceleration_settings(&self) -> &::std::option::Option<crate::types::AccelerationSettings> {
         self.inner.get_acceleration_settings()
     }
     /// Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will appear on the billing report unsorted.
@@ -137,32 +120,21 @@ impl CreateJobFluentBuilder {
         self
     }
     /// Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will appear on the billing report unsorted.
-    pub fn set_billing_tags_source(
-        mut self,
-        input: ::std::option::Option<crate::types::BillingTagsSource>,
-    ) -> Self {
+    pub fn set_billing_tags_source(mut self, input: ::std::option::Option<crate::types::BillingTagsSource>) -> Self {
         self.inner = self.inner.set_billing_tags_source(input);
         self
     }
     /// Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will appear on the billing report unsorted.
-    pub fn get_billing_tags_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::BillingTagsSource> {
+    pub fn get_billing_tags_source(&self) -> &::std::option::Option<crate::types::BillingTagsSource> {
         self.inner.get_billing_tags_source()
     }
     /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -180,17 +152,12 @@ impl CreateJobFluentBuilder {
         self
     }
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
-    pub fn set_hop_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
-    ) -> Self {
+    pub fn set_hop_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>) -> Self {
         self.inner = self.inner.set_hop_destinations(input);
         self
     }
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
-    pub fn get_hop_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HopDestination>> {
+    pub fn get_hop_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HopDestination>> {
         self.inner.get_hop_destinations()
     }
     /// Optional. When you create a job, you can either specify a job template or specify the transcoding settings individually.
@@ -269,17 +236,12 @@ impl CreateJobFluentBuilder {
         self
     }
     /// Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
-    pub fn set_simulate_reserved_queue(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulateReservedQueue>,
-    ) -> Self {
+    pub fn set_simulate_reserved_queue(mut self, input: ::std::option::Option<crate::types::SimulateReservedQueue>) -> Self {
         self.inner = self.inner.set_simulate_reserved_queue(input);
         self
     }
     /// Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
-    pub fn get_simulate_reserved_queue(
-        &self,
-    ) -> &::std::option::Option<crate::types::SimulateReservedQueue> {
+    pub fn get_simulate_reserved_queue(&self) -> &::std::option::Option<crate::types::SimulateReservedQueue> {
         self.inner.get_simulate_reserved_queue()
     }
     /// Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
@@ -288,17 +250,12 @@ impl CreateJobFluentBuilder {
         self
     }
     /// Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    pub fn set_status_update_interval(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusUpdateInterval>,
-    ) -> Self {
+    pub fn set_status_update_interval(mut self, input: ::std::option::Option<crate::types::StatusUpdateInterval>) -> Self {
         self.inner = self.inner.set_status_update_interval(input);
         self
     }
     /// Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    pub fn get_status_update_interval(
-        &self,
-    ) -> &::std::option::Option<crate::types::StatusUpdateInterval> {
+    pub fn get_status_update_interval(&self) -> &::std::option::Option<crate::types::StatusUpdateInterval> {
         self.inner.get_status_update_interval()
     }
     /// Adds a key-value pair to `Tags`.
@@ -306,30 +263,17 @@ impl CreateJobFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations and workflows.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations and workflows.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations and workflows.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// Adds a key-value pair to `UserMetadata`.
@@ -337,30 +281,20 @@ impl CreateJobFluentBuilder {
     /// To override the contents of this collection use [`set_user_metadata`](Self::set_user_metadata).
     ///
     /// Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we recommend that you use standard AWS tags.
-    pub fn user_metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_metadata(k.into(), v.into());
         self
     }
     /// Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we recommend that you use standard AWS tags.
     pub fn set_user_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_user_metadata(input);
         self
     }
     /// Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we recommend that you use standard AWS tags.
-    pub fn get_user_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_user_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_user_metadata()
     }
 }

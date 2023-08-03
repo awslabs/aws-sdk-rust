@@ -29,18 +29,14 @@ impl ListWorldExportJobsInput {
 }
 impl ListWorldExportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListWorldExportJobsInput`](crate::operation::list_world_export_jobs::ListWorldExportJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_world_export_jobs::builders::ListWorldExportJobsInputBuilder {
-        crate::operation::list_world_export_jobs::builders::ListWorldExportJobsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_world_export_jobs::builders::ListWorldExportJobsInputBuilder {
+        crate::operation::list_world_export_jobs::builders::ListWorldExportJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorldExportJobsInput`](crate::operation::list_world_export_jobs::ListWorldExportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorldExportJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -87,10 +83,7 @@ impl ListWorldExportJobsInputBuilder {
         self
     }
     /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -101,16 +94,12 @@ impl ListWorldExportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListWorldExportJobsInput`](crate::operation::list_world_export_jobs::ListWorldExportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_world_export_jobs::ListWorldExportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_world_export_jobs::ListWorldExportJobsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_world_export_jobs::ListWorldExportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_world_export_jobs::ListWorldExportJobsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+        })
     }
 }

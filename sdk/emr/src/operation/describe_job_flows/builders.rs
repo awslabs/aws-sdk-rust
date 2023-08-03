@@ -10,10 +10,7 @@ impl DescribeJobFlowsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_job_flows::DescribeJobFlowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_flows::DescribeJobFlowsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_flows::DescribeJobFlowsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_job_flows();
         fluent_builder.inner = self;
@@ -46,9 +43,7 @@ impl DescribeJobFlowsFluentBuilder {
         }
     }
     /// Access the DescribeJobFlows as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_job_flows::builders::DescribeJobFlowsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_job_flows::builders::DescribeJobFlowsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +55,7 @@ impl DescribeJobFlowsFluentBuilder {
             crate::operation::describe_job_flows::DescribeJobFlows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_flows::DescribeJobFlowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_flows::DescribeJobFlowsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +65,7 @@ impl DescribeJobFlowsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +74,7 @@ impl DescribeJobFlowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_job_flows::DescribeJobFlowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_flows::DescribeJobFlowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_flows::DescribeJobFlowsError>,
     > {
         let op = self
             .inner
@@ -109,9 +97,7 @@ impl DescribeJobFlowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_job_flows::DescribeJobFlowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_flows::DescribeJobFlowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_flows::DescribeJobFlowsError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +111,7 @@ impl DescribeJobFlowsFluentBuilder {
             crate::operation::describe_job_flows::DescribeJobFlows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_flows::DescribeJobFlowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_flows::DescribeJobFlowsError>,
     > {
         self.customize_middleware().await
     }
@@ -137,10 +121,7 @@ impl DescribeJobFlowsFluentBuilder {
         self
     }
     /// <p>Return only job flows created after this date and time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
@@ -154,10 +135,7 @@ impl DescribeJobFlowsFluentBuilder {
         self
     }
     /// <p>Return only job flows created before this date and time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }
@@ -175,17 +153,12 @@ impl DescribeJobFlowsFluentBuilder {
         self
     }
     /// <p>Return only job flows whose job flow ID is contained in this list.</p>
-    pub fn set_job_flow_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_flow_ids(input);
         self
     }
     /// <p>Return only job flows whose job flow ID is contained in this list.</p>
-    pub fn get_job_flow_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_job_flow_ids()
     }
     /// Appends an item to `JobFlowStates`.
@@ -198,17 +171,12 @@ impl DescribeJobFlowsFluentBuilder {
         self
     }
     /// <p>Return only job flows whose state is contained in this list.</p>
-    pub fn set_job_flow_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>>,
-    ) -> Self {
+    pub fn set_job_flow_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>>) -> Self {
         self.inner = self.inner.set_job_flow_states(input);
         self
     }
     /// <p>Return only job flows whose state is contained in this list.</p>
-    pub fn get_job_flow_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>> {
+    pub fn get_job_flow_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>> {
         self.inner.get_job_flow_states()
     }
 }

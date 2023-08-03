@@ -37,9 +37,7 @@ impl Region {
 
 /// A builder for [`Region`](crate::types::Region).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegionBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl RegionBuilder {
         &self.region_name
     }
     /// <p>The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and <code>not-opted-in</code>.</p>
-    pub fn opt_in_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_in_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_in_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and <code>not-opted-in</code>.</p>
-    pub fn set_opt_in_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_in_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_in_status = input;
         self
     }

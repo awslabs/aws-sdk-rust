@@ -29,17 +29,14 @@ impl ListRecipeVersionsInput {
 }
 impl ListRecipeVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListRecipeVersionsInput`](crate::operation::list_recipe_versions::ListRecipeVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_recipe_versions::builders::ListRecipeVersionsInputBuilder {
+    pub fn builder() -> crate::operation::list_recipe_versions::builders::ListRecipeVersionsInputBuilder {
         crate::operation::list_recipe_versions::builders::ListRecipeVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecipeVersionsInput`](crate::operation::list_recipe_versions::ListRecipeVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecipeVersionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl ListRecipeVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListRecipeVersionsInput`](crate::operation::list_recipe_versions::ListRecipeVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_recipe_versions::ListRecipeVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_recipe_versions::ListRecipeVersionsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_recipe_versions::ListRecipeVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_recipe_versions::ListRecipeVersionsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            name: self.name,
+        })
     }
 }

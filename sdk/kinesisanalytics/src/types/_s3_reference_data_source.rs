@@ -38,9 +38,7 @@ impl S3ReferenceDataSource {
 
 /// A builder for [`S3ReferenceDataSource`](crate::types::S3ReferenceDataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ReferenceDataSourceBuilder {
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) file_key: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl S3ReferenceDataSourceBuilder {
         &self.file_key
     }
     /// <p>ARN of the IAM role that the service can assume to read data on your behalf. This role must have permission for the <code>s3:GetObject</code> action on the object and trust policy that allows Amazon Kinesis Analytics service principal to assume this role.</p>
-    pub fn reference_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the IAM role that the service can assume to read data on your behalf. This role must have permission for the <code>s3:GetObject</code> action on the object and trust policy that allows Amazon Kinesis Analytics service principal to assume this role.</p>
-    pub fn set_reference_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_role_arn = input;
         self
     }

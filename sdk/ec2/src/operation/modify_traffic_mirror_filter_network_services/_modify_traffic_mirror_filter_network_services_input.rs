@@ -8,12 +8,10 @@ pub struct ModifyTrafficMirrorFilterNetworkServicesInput {
     pub traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The network service, for example Amazon DNS, that you want to mirror.</p>
     #[doc(hidden)]
-    pub add_network_services:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
+    pub add_network_services: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
     /// <p>The network service, for example Amazon DNS, that you no longer want to mirror.</p>
     #[doc(hidden)]
-    pub remove_network_services:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
+    pub remove_network_services: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
@@ -24,15 +22,11 @@ impl ModifyTrafficMirrorFilterNetworkServicesInput {
         self.traffic_mirror_filter_id.as_deref()
     }
     /// <p>The network service, for example Amazon DNS, that you want to mirror.</p>
-    pub fn add_network_services(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrafficMirrorNetworkService]> {
+    pub fn add_network_services(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorNetworkService]> {
         self.add_network_services.as_deref()
     }
     /// <p>The network service, for example Amazon DNS, that you no longer want to mirror.</p>
-    pub fn remove_network_services(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrafficMirrorNetworkService]> {
+    pub fn remove_network_services(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorNetworkService]> {
         self.remove_network_services.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -42,38 +36,29 @@ impl ModifyTrafficMirrorFilterNetworkServicesInput {
 }
 impl ModifyTrafficMirrorFilterNetworkServicesInput {
     /// Creates a new builder-style object to manufacture [`ModifyTrafficMirrorFilterNetworkServicesInput`](crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesInput).
-    pub fn builder() -> crate::operation::modify_traffic_mirror_filter_network_services::builders::ModifyTrafficMirrorFilterNetworkServicesInputBuilder{
+    pub fn builder() -> crate::operation::modify_traffic_mirror_filter_network_services::builders::ModifyTrafficMirrorFilterNetworkServicesInputBuilder
+    {
         crate::operation::modify_traffic_mirror_filter_network_services::builders::ModifyTrafficMirrorFilterNetworkServicesInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyTrafficMirrorFilterNetworkServicesInput`](crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyTrafficMirrorFilterNetworkServicesInputBuilder {
     pub(crate) traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
-    pub(crate) add_network_services:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
-    pub(crate) remove_network_services:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
+    pub(crate) add_network_services: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
+    pub(crate) remove_network_services: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl ModifyTrafficMirrorFilterNetworkServicesInputBuilder {
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn traffic_mirror_filter_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_filter_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn set_traffic_mirror_filter_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_mirror_filter_id = input;
         self
     }
@@ -86,27 +71,19 @@ impl ModifyTrafficMirrorFilterNetworkServicesInputBuilder {
     /// To override the contents of this collection use [`set_add_network_services`](Self::set_add_network_services).
     ///
     /// <p>The network service, for example Amazon DNS, that you want to mirror.</p>
-    pub fn add_network_services(
-        mut self,
-        input: crate::types::TrafficMirrorNetworkService,
-    ) -> Self {
+    pub fn add_network_services(mut self, input: crate::types::TrafficMirrorNetworkService) -> Self {
         let mut v = self.add_network_services.unwrap_or_default();
         v.push(input);
         self.add_network_services = ::std::option::Option::Some(v);
         self
     }
     /// <p>The network service, for example Amazon DNS, that you want to mirror.</p>
-    pub fn set_add_network_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
-    ) -> Self {
+    pub fn set_add_network_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>) -> Self {
         self.add_network_services = input;
         self
     }
     /// <p>The network service, for example Amazon DNS, that you want to mirror.</p>
-    pub fn get_add_network_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>> {
+    pub fn get_add_network_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>> {
         &self.add_network_services
     }
     /// Appends an item to `remove_network_services`.
@@ -114,27 +91,19 @@ impl ModifyTrafficMirrorFilterNetworkServicesInputBuilder {
     /// To override the contents of this collection use [`set_remove_network_services`](Self::set_remove_network_services).
     ///
     /// <p>The network service, for example Amazon DNS, that you no longer want to mirror.</p>
-    pub fn remove_network_services(
-        mut self,
-        input: crate::types::TrafficMirrorNetworkService,
-    ) -> Self {
+    pub fn remove_network_services(mut self, input: crate::types::TrafficMirrorNetworkService) -> Self {
         let mut v = self.remove_network_services.unwrap_or_default();
         v.push(input);
         self.remove_network_services = ::std::option::Option::Some(v);
         self
     }
     /// <p>The network service, for example Amazon DNS, that you no longer want to mirror.</p>
-    pub fn set_remove_network_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
-    ) -> Self {
+    pub fn set_remove_network_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>) -> Self {
         self.remove_network_services = input;
         self
     }
     /// <p>The network service, for example Amazon DNS, that you no longer want to mirror.</p>
-    pub fn get_remove_network_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>> {
+    pub fn get_remove_network_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>> {
         &self.remove_network_services
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -152,18 +121,19 @@ impl ModifyTrafficMirrorFilterNetworkServicesInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyTrafficMirrorFilterNetworkServicesInput`](crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesInput {
-                traffic_mirror_filter_id: self.traffic_mirror_filter_id
-                ,
-                add_network_services: self.add_network_services
-                ,
-                remove_network_services: self.remove_network_services
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                traffic_mirror_filter_id: self.traffic_mirror_filter_id,
+                add_network_services: self.add_network_services,
+                remove_network_services: self.remove_network_services,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

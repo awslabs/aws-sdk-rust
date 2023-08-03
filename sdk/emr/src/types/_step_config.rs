@@ -53,9 +53,7 @@ impl StepConfig {
 
 /// A builder for [`StepConfig`](crate::types::StepConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StepConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) action_on_failure: ::std::option::Option<crate::types::ActionOnFailure>,
@@ -98,10 +96,7 @@ impl StepConfigBuilder {
     /// </ul>
     /// <p>If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code> or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails with a message that the <code>ActionOnFailure</code> setting is not valid.</p>
     /// <p>If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while a step is running, the <code>ActionOnFailure</code> parameter may not behave as you expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>, pending steps and the running step are not canceled; for a step that fails with this parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
-    pub fn set_action_on_failure(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionOnFailure>,
-    ) -> Self {
+    pub fn set_action_on_failure(mut self, input: ::std::option::Option<crate::types::ActionOnFailure>) -> Self {
         self.action_on_failure = input;
         self
     }
@@ -123,10 +118,7 @@ impl StepConfigBuilder {
         self
     }
     /// <p>The JAR file used for the step.</p>
-    pub fn set_hadoop_jar_step(
-        mut self,
-        input: ::std::option::Option<crate::types::HadoopJarStepConfig>,
-    ) -> Self {
+    pub fn set_hadoop_jar_step(mut self, input: ::std::option::Option<crate::types::HadoopJarStepConfig>) -> Self {
         self.hadoop_jar_step = input;
         self
     }

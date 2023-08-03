@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_transcription_jobs::ListTranscriptionJobsOutput::next_token): <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     ///   - [`transcription_job_summaries(Option<Vec<TranscriptionJobSummary>>)`](crate::operation::list_transcription_jobs::ListTranscriptionJobsOutput::transcription_job_summaries): <p>Provides a summary of information about each result.</p>
     /// - On failure, responds with [`SdkError<ListTranscriptionJobsError>`](crate::operation::list_transcription_jobs::ListTranscriptionJobsError)
-    pub fn list_transcription_jobs(
-        &self,
-    ) -> crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsFluentBuilder
-    {
-        crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_transcription_jobs(&self) -> crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsFluentBuilder {
+        crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsFluentBuilder::new(self.handle.clone())
     }
 }

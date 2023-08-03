@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateChannelMessageOutput {
 }
 impl UpdateChannelMessageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelMessageOutput`](crate::operation::update_channel_message::UpdateChannelMessageOutput).
-    pub fn builder(
-    ) -> crate::operation::update_channel_message::builders::UpdateChannelMessageOutputBuilder {
+    pub fn builder() -> crate::operation::update_channel_message::builders::UpdateChannelMessageOutputBuilder {
         crate::operation::update_channel_message::builders::UpdateChannelMessageOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateChannelMessageOutput`](crate::operation::update_channel_message::UpdateChannelMessageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateChannelMessageOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,

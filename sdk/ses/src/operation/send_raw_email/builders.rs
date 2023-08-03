@@ -10,10 +10,7 @@ impl SendRawEmailInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_raw_email::SendRawEmailOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_raw_email::SendRawEmailError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_raw_email::SendRawEmailError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_raw_email();
         fluent_builder.inner = self;
@@ -61,9 +58,7 @@ impl SendRawEmailFluentBuilder {
         }
     }
     /// Access the SendRawEmail as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_raw_email::builders::SendRawEmailInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_raw_email::builders::SendRawEmailInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -85,10 +80,7 @@ impl SendRawEmailFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -171,17 +163,12 @@ impl SendRawEmailFluentBuilder {
         self
     }
     /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
     }
     /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_destinations()
     }
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
@@ -212,10 +199,7 @@ impl SendRawEmailFluentBuilder {
     /// , must not exceed 1,000 characters.
     /// </crlf></p> </li>
     /// </ul>
-    pub fn set_raw_message(
-        mut self,
-        input: ::std::option::Option<crate::types::RawMessage>,
-    ) -> Self {
+    pub fn set_raw_message(mut self, input: ::std::option::Option<crate::types::RawMessage>) -> Self {
         self.inner = self.inner.set_raw_message(input);
         self
     }
@@ -288,10 +272,7 @@ impl SendRawEmailFluentBuilder {
     /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p> <note>
     /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
-    pub fn return_path_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn return_path_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.return_path_arn(input.into());
         self
     }
@@ -300,10 +281,7 @@ impl SendRawEmailFluentBuilder {
     /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p> <note>
     /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
-    pub fn set_return_path_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_return_path_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_return_path_arn(input);
         self
     }
@@ -325,10 +303,7 @@ impl SendRawEmailFluentBuilder {
         self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -337,18 +312,12 @@ impl SendRawEmailFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }

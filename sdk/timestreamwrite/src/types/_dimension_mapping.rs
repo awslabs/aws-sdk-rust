@@ -30,27 +30,19 @@ impl DimensionMapping {
 
 /// A builder for [`DimensionMapping`](crate::types::DimensionMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionMappingBuilder {
     pub(crate) source_column: ::std::option::Option<::std::string::String>,
     pub(crate) destination_column: ::std::option::Option<::std::string::String>,
 }
 impl DimensionMappingBuilder {
     /// <p></p>
-    pub fn source_column(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_column = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_source_column(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_column = input;
         self
     }
@@ -59,18 +51,12 @@ impl DimensionMappingBuilder {
         &self.source_column
     }
     /// <p> </p>
-    pub fn destination_column(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_column = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> </p>
-    pub fn set_destination_column(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_column = input;
         self
     }

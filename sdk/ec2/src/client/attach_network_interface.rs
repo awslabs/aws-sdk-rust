@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`attachment_id(Option<String>)`](crate::operation::attach_network_interface::AttachNetworkInterfaceOutput::attachment_id): <p>The ID of the network interface attachment.</p>
     ///   - [`network_card_index(Option<i32>)`](crate::operation::attach_network_interface::AttachNetworkInterfaceOutput::network_card_index): <p>The index of the network card.</p>
     /// - On failure, responds with [`SdkError<AttachNetworkInterfaceError>`](crate::operation::attach_network_interface::AttachNetworkInterfaceError)
-    pub fn attach_network_interface(
-        &self,
-    ) -> crate::operation::attach_network_interface::builders::AttachNetworkInterfaceFluentBuilder
-    {
+    pub fn attach_network_interface(&self) -> crate::operation::attach_network_interface::builders::AttachNetworkInterfaceFluentBuilder {
         crate::operation::attach_network_interface::builders::AttachNetworkInterfaceFluentBuilder::new(self.handle.clone())
     }
 }

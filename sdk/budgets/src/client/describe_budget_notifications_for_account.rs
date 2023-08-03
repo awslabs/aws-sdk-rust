@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`budget_notifications_for_account(Option<Vec<BudgetNotificationsForAccount>>)`](crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput::budget_notifications_for_account): <p> A list of budget names and associated notifications for an account. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput::next_token): <p> A generic string.</p>
     /// - On failure, responds with [`SdkError<DescribeBudgetNotificationsForAccountError>`](crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError)
-    pub fn describe_budget_notifications_for_account(&self) -> crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountFluentBuilder{
-        crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountFluentBuilder::new(self.handle.clone())
+    pub fn describe_budget_notifications_for_account(
+        &self,
+    ) -> crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountFluentBuilder {
+        crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

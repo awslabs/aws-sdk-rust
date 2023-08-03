@@ -37,9 +37,7 @@ impl UpgradeAppliedSchemaFluentBuilder {
         }
     }
     /// Access the UpgradeAppliedSchema as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpgradeAppliedSchemaFluentBuilder {
             crate::operation::upgrade_applied_schema::UpgradeAppliedSchema,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpgradeAppliedSchemaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpgradeAppliedSchemaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpgradeAppliedSchemaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpgradeAppliedSchemaFluentBuilder {
             crate::operation::upgrade_applied_schema::UpgradeAppliedSchema,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The revision of the published schema to upgrade the directory to.</p>
-    pub fn published_schema_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn published_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.published_schema_arn(input.into());
         self
     }
     /// <p>The revision of the published schema to upgrade the directory to.</p>
-    pub fn set_published_schema_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_published_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_published_schema_arn(input);
         self
     }
@@ -143,18 +124,12 @@ impl UpgradeAppliedSchemaFluentBuilder {
         self.inner.get_published_schema_arn()
     }
     /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }

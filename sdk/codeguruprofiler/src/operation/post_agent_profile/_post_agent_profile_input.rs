@@ -45,17 +45,14 @@ impl PostAgentProfileInput {
 }
 impl PostAgentProfileInput {
     /// Creates a new builder-style object to manufacture [`PostAgentProfileInput`](crate::operation::post_agent_profile::PostAgentProfileInput).
-    pub fn builder() -> crate::operation::post_agent_profile::builders::PostAgentProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::post_agent_profile::builders::PostAgentProfileInputBuilder {
         crate::operation::post_agent_profile::builders::PostAgentProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`PostAgentProfileInput`](crate::operation::post_agent_profile::PostAgentProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PostAgentProfileInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) agent_profile: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -64,18 +61,12 @@ pub struct PostAgentProfileInputBuilder {
 }
 impl PostAgentProfileInputBuilder {
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profiling_group_name = input;
         self
     }
@@ -89,10 +80,7 @@ impl PostAgentProfileInputBuilder {
         self
     }
     /// <p> The submitted profiling data. </p>
-    pub fn set_agent_profile(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_agent_profile(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.agent_profile = input;
         self
     }
@@ -101,18 +89,12 @@ impl PostAgentProfileInputBuilder {
         &self.agent_profile
     }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
-    pub fn profile_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
-    pub fn set_profile_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_token = input;
         self
     }
@@ -149,17 +131,12 @@ impl PostAgentProfileInputBuilder {
     /// Consumes the builder and constructs a [`PostAgentProfileInput`](crate::operation::post_agent_profile::PostAgentProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::post_agent_profile::PostAgentProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::post_agent_profile::PostAgentProfileInput {
-                profiling_group_name: self.profiling_group_name,
-                agent_profile: self.agent_profile,
-                profile_token: self.profile_token,
-                content_type: self.content_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::post_agent_profile::PostAgentProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::post_agent_profile::PostAgentProfileInput {
+            profiling_group_name: self.profiling_group_name,
+            agent_profile: self.agent_profile,
+            profile_token: self.profile_token,
+            content_type: self.content_type,
+        })
     }
 }

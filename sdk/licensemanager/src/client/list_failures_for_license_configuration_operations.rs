@@ -10,7 +10,10 @@ impl super::Client {
     ///   - [`license_operation_failure_list(Option<Vec<LicenseOperationFailure>>)`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput::license_operation_failure_list): <p>License configuration operations that failed.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListFailuresForLicenseConfigurationOperationsError>`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError)
-    pub fn list_failures_for_license_configuration_operations(&self) -> crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsFluentBuilder{
+    pub fn list_failures_for_license_configuration_operations(
+        &self,
+    ) -> crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsFluentBuilder
+    {
         crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsFluentBuilder::new(self.handle.clone())
     }
 }

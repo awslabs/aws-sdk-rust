@@ -13,15 +13,11 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
     /// <p>Information about the local gateway route table virtual interface group association.</p>
     pub fn local_gateway_route_table_virtual_interface_group_association(
         &self,
-    ) -> ::std::option::Option<&crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>
-    {
-        self.local_gateway_route_table_virtual_interface_group_association
-            .as_ref()
+    ) -> ::std::option::Option<&crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation> {
+        self.local_gateway_route_table_virtual_interface_group_association.as_ref()
     }
 }
-impl ::aws_http::request_id::RequestId
-    for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput
-{
+impl ::aws_http::request_id::RequestId for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -35,9 +31,7 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
 
 /// A builder for [`CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput`](crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder {
     pub(crate) local_gateway_route_table_virtual_interface_group_association:
         ::std::option::Option<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
@@ -49,16 +43,13 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder {
         mut self,
         input: crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
     ) -> Self {
-        self.local_gateway_route_table_virtual_interface_group_association =
-            ::std::option::Option::Some(input);
+        self.local_gateway_route_table_virtual_interface_group_association = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the local gateway route table virtual interface group association.</p>
     pub fn set_local_gateway_route_table_virtual_interface_group_association(
         mut self,
-        input: ::std::option::Option<
-            crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
-        >,
+        input: ::std::option::Option<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
     ) -> Self {
         self.local_gateway_route_table_virtual_interface_group_association = input;
         self
@@ -66,8 +57,7 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder {
     /// <p>Information about the local gateway route table virtual interface group association.</p>
     pub fn get_local_gateway_route_table_virtual_interface_group_association(
         &self,
-    ) -> &::std::option::Option<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>
-    {
+    ) -> &::std::option::Option<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation> {
         &self.local_gateway_route_table_virtual_interface_group_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

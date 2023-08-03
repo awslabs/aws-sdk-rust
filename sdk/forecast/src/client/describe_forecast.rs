@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::describe_forecast::DescribeForecastOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
     ///   - [`time_series_selector(Option<TimeSeriesSelector>)`](crate::operation::describe_forecast::DescribeForecastOutput::time_series_selector): <p>The time series to include in the forecast.</p>
     /// - On failure, responds with [`SdkError<DescribeForecastError>`](crate::operation::describe_forecast::DescribeForecastError)
-    pub fn describe_forecast(
-        &self,
-    ) -> crate::operation::describe_forecast::builders::DescribeForecastFluentBuilder {
-        crate::operation::describe_forecast::builders::DescribeForecastFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_forecast(&self) -> crate::operation::describe_forecast::builders::DescribeForecastFluentBuilder {
+        crate::operation::describe_forecast::builders::DescribeForecastFluentBuilder::new(self.handle.clone())
     }
 }

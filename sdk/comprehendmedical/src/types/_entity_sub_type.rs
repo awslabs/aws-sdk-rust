@@ -81,13 +81,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EntitySubType {
     #[allow(missing_docs)] // documentation missing in model
@@ -231,9 +225,7 @@ impl ::std::convert::From<&str> for EntitySubType {
             "TOBACCO_USE" => EntitySubType::TobaccoUse,
             "TREATMENT_NAME" => EntitySubType::TreatmentName,
             "URL" => EntitySubType::Url,
-            other => {
-                EntitySubType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => EntitySubType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

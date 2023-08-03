@@ -6,10 +6,7 @@ pub fn ser_update_multiplex_program_input(
     if let Some(var_1) = &input.multiplex_program_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("multiplexProgramSettings").start_object();
-        crate::protocol_serde::shape_multiplex_program_settings::ser_multiplex_program_settings(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_multiplex_program_settings::ser_multiplex_program_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

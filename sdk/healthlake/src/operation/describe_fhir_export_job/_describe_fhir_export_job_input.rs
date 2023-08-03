@@ -22,18 +22,14 @@ impl DescribeFhirExportJobInput {
 }
 impl DescribeFhirExportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeFhirExportJobInput`](crate::operation::describe_fhir_export_job::DescribeFhirExportJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fhir_export_job::builders::DescribeFhirExportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fhir_export_job::builders::DescribeFhirExportJobInputBuilder {
         crate::operation::describe_fhir_export_job::builders::DescribeFhirExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFhirExportJobInput`](crate::operation::describe_fhir_export_job::DescribeFhirExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFhirExportJobInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl DescribeFhirExportJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFhirExportJobInput`](crate::operation::describe_fhir_export_job::DescribeFhirExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fhir_export_job::DescribeFhirExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fhir_export_job::DescribeFhirExportJobInput {
-                datastore_id: self.datastore_id,
-                job_id: self.job_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_fhir_export_job::DescribeFhirExportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_fhir_export_job::DescribeFhirExportJobInput {
+            datastore_id: self.datastore_id,
+            job_id: self.job_id,
+        })
     }
 }

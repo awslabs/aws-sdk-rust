@@ -28,9 +28,7 @@ impl GetAssistantOutput {
 
 /// A builder for [`GetAssistantOutput`](crate::operation::get_assistant::GetAssistantOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssistantOutputBuilder {
     pub(crate) assistant: ::std::option::Option<crate::types::AssistantData>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetAssistantOutputBuilder {
         self
     }
     /// <p>Information about the assistant.</p>
-    pub fn set_assistant(
-        mut self,
-        input: ::std::option::Option<crate::types::AssistantData>,
-    ) -> Self {
+    pub fn set_assistant(mut self, input: ::std::option::Option<crate::types::AssistantData>) -> Self {
         self.assistant = input;
         self
     }

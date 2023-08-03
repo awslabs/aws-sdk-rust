@@ -26,7 +26,7 @@ impl ModifyVerifiedAccessGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_verified_access_group::builders::ModifyVerifiedAccessGroupInputBuilder,
+    inner: crate::operation::modify_verified_access_group::builders::ModifyVerifiedAccessGroupInputBuilder,
 }
 impl ModifyVerifiedAccessGroupFluentBuilder {
     /// Creates a new `ModifyVerifiedAccessGroup`.
@@ -37,7 +37,7 @@ impl ModifyVerifiedAccessGroupFluentBuilder {
         }
     }
     /// Access the ModifyVerifiedAccessGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_verified_access_group::builders::ModifyVerifiedAccessGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_verified_access_group::builders::ModifyVerifiedAccessGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyVerifiedAccessGroupFluentBuilder {
             crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyVerifiedAccessGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyVerifiedAccessGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyVerifiedAccessGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ModifyVerifiedAccessGroupFluentBuilder {
             crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Verified Access group.</p>
-    pub fn verified_access_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.verified_access_group_id(input.into());
         self
     }
     /// <p>The ID of the Verified Access group.</p>
-    pub fn set_verified_access_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_verified_access_group_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl ModifyVerifiedAccessGroupFluentBuilder {
         self.inner.get_verified_access_group_id()
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn verified_access_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.verified_access_instance_id(input.into());
         self
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_verified_access_instance_id(input);
         self
     }

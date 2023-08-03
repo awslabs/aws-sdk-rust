@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateIncidentRecordOutput {
 }
 impl UpdateIncidentRecordOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIncidentRecordOutput`](crate::operation::update_incident_record::UpdateIncidentRecordOutput).
-    pub fn builder(
-    ) -> crate::operation::update_incident_record::builders::UpdateIncidentRecordOutputBuilder {
+    pub fn builder() -> crate::operation::update_incident_record::builders::UpdateIncidentRecordOutputBuilder {
         crate::operation::update_incident_record::builders::UpdateIncidentRecordOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIncidentRecordOutput`](crate::operation::update_incident_record::UpdateIncidentRecordOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIncidentRecordOutputBuilder {
     _request_id: Option<String>,
 }

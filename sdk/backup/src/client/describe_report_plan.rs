@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeReportPlanOutput`](crate::operation::describe_report_plan::DescribeReportPlanOutput) with field(s):
     ///   - [`report_plan(Option<ReportPlan>)`](crate::operation::describe_report_plan::DescribeReportPlanOutput::report_plan): <p>Returns details about the report plan that is specified by its name. These details include the report plan's Amazon Resource Name (ARN), description, settings, delivery channel, deployment status, creation time, and last attempted and successful run times.</p>
     /// - On failure, responds with [`SdkError<DescribeReportPlanError>`](crate::operation::describe_report_plan::DescribeReportPlanError)
-    pub fn describe_report_plan(
-        &self,
-    ) -> crate::operation::describe_report_plan::builders::DescribeReportPlanFluentBuilder {
-        crate::operation::describe_report_plan::builders::DescribeReportPlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_report_plan(&self) -> crate::operation::describe_report_plan::builders::DescribeReportPlanFluentBuilder {
+        crate::operation::describe_report_plan::builders::DescribeReportPlanFluentBuilder::new(self.handle.clone())
     }
 }

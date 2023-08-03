@@ -33,7 +33,9 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput::tags): <p>The tags associated with the virtual interface.</p>
     ///   - [`site_link_enabled(Option<bool>)`](crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput::site_link_enabled): <p>Indicates whether SiteLink is enabled.</p>
     /// - On failure, responds with [`SdkError<CreatePrivateVirtualInterfaceError>`](crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError)
-    pub fn create_private_virtual_interface(&self) -> crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceFluentBuilder{
+    pub fn create_private_virtual_interface(
+        &self,
+    ) -> crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceFluentBuilder {
         crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceFluentBuilder::new(self.handle.clone())
     }
 }

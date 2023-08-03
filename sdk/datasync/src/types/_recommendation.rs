@@ -10,9 +10,7 @@ pub struct Recommendation {
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about how you can set up a recommended Amazon Web Services storage service.</p>
     #[doc(hidden)]
-    pub storage_configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub storage_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The estimated monthly cost of the recommended Amazon Web Services storage service.</p>
     #[doc(hidden)]
     pub estimated_monthly_storage_cost: ::std::option::Option<::std::string::String>,
@@ -23,11 +21,7 @@ impl Recommendation {
         self.storage_type.as_deref()
     }
     /// <p>Information about how you can set up a recommended Amazon Web Services storage service.</p>
-    pub fn storage_configuration(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn storage_configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.storage_configuration.as_ref()
     }
     /// <p>The estimated monthly cost of the recommended Amazon Web Services storage service.</p>
@@ -44,14 +38,10 @@ impl Recommendation {
 
 /// A builder for [`Recommendation`](crate::types::Recommendation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationBuilder {
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) storage_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) estimated_monthly_storage_cost: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationBuilder {
@@ -87,41 +77,27 @@ impl RecommendationBuilder {
     /// <p>Information about how you can set up a recommended Amazon Web Services storage service.</p>
     pub fn set_storage_configuration(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.storage_configuration = input;
         self
     }
     /// <p>Information about how you can set up a recommended Amazon Web Services storage service.</p>
-    pub fn get_storage_configuration(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_storage_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.storage_configuration
     }
     /// <p>The estimated monthly cost of the recommended Amazon Web Services storage service.</p>
-    pub fn estimated_monthly_storage_cost(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn estimated_monthly_storage_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_monthly_storage_cost = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The estimated monthly cost of the recommended Amazon Web Services storage service.</p>
-    pub fn set_estimated_monthly_storage_cost(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_estimated_monthly_storage_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_monthly_storage_cost = input;
         self
     }
     /// <p>The estimated monthly cost of the recommended Amazon Web Services storage service.</p>
-    pub fn get_estimated_monthly_storage_cost(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_estimated_monthly_storage_cost(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_monthly_storage_cost
     }
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).

@@ -38,13 +38,7 @@
 /// Use Profile to set the MPEG-2 profile for the video output.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Mpeg2CodecProfile {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Mpeg2CodecProfile {
         match s {
             "MAIN" => Mpeg2CodecProfile::Main,
             "PROFILE_422" => Mpeg2CodecProfile::Profile422,
-            other => {
-                Mpeg2CodecProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Mpeg2CodecProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

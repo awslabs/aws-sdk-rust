@@ -30,9 +30,7 @@ impl Location {
 
 /// A builder for [`Location`](crate::types::Location).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocationBuilder {
     pub(crate) path: ::std::option::Option<::std::vec::Vec<crate::types::PathElement>>,
     pub(crate) span: ::std::option::Option<crate::types::Span>,
@@ -50,10 +48,7 @@ impl LocationBuilder {
         self
     }
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
-    pub fn set_path(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PathElement>>,
-    ) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PathElement>>) -> Self {
         self.path = input;
         self
     }

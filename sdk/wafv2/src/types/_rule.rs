@@ -115,9 +115,7 @@ impl Rule {
 
 /// A builder for [`Rule`](crate::types::Rule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
@@ -216,10 +214,7 @@ impl RuleBuilder {
     /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
     /// </note>
-    pub fn set_override_action(
-        mut self,
-        input: ::std::option::Option<crate::types::OverrideAction>,
-    ) -> Self {
+    pub fn set_override_action(mut self, input: ::std::option::Option<crate::types::OverrideAction>) -> Self {
         self.override_action = input;
         self
     }
@@ -260,10 +255,7 @@ impl RuleBuilder {
     /// <li> <p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p> </li>
     /// </ul>
     /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
-    pub fn set_rule_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
-    ) -> Self {
+    pub fn set_rule_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Label>>) -> Self {
         self.rule_labels = input;
         self
     }
@@ -286,10 +278,7 @@ impl RuleBuilder {
         self
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn set_visibility_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VisibilityConfig>,
-    ) -> Self {
+    pub fn set_visibility_config(mut self, input: ::std::option::Option<crate::types::VisibilityConfig>) -> Self {
         self.visibility_config = input;
         self
     }
@@ -303,10 +292,7 @@ impl RuleBuilder {
         self
     }
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the <code>CAPTCHA</code> configuration that's defined for the web ACL. </p>
-    pub fn set_captcha_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptchaConfig>,
-    ) -> Self {
+    pub fn set_captcha_config(mut self, input: ::std::option::Option<crate::types::CaptchaConfig>) -> Self {
         self.captcha_config = input;
         self
     }
@@ -320,10 +306,7 @@ impl RuleBuilder {
         self
     }
     /// <p>Specifies how WAF should handle <code>Challenge</code> evaluations. If you don't specify this, WAF uses the challenge configuration that's defined for the web ACL. </p>
-    pub fn set_challenge_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ChallengeConfig>,
-    ) -> Self {
+    pub fn set_challenge_config(mut self, input: ::std::option::Option<crate::types::ChallengeConfig>) -> Self {
         self.challenge_config = input;
         self
     }

@@ -15,10 +15,7 @@ pub fn ser_put_resource_attributes_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_resource_attribute::ser_resource_attribute(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_resource_attribute::ser_resource_attribute(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

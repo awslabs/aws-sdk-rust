@@ -39,13 +39,7 @@
 /// Burn In Alignment
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BurnInAlignment {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for BurnInAlignment {
             "CENTERED" => BurnInAlignment::Centered,
             "LEFT" => BurnInAlignment::Left,
             "SMART" => BurnInAlignment::Smart,
-            other => {
-                BurnInAlignment::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => BurnInAlignment::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

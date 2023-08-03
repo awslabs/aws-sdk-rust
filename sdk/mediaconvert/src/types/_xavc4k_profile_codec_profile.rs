@@ -38,13 +38,7 @@
 /// Specify the codec profile for this output. Choose High, 8-bit, 4:2:0 (HIGH) or High, 10-bit, 4:2:2 (HIGH_422). These profiles are specified in ITU-T H.264.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Xavc4kProfileCodecProfile {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Xavc4kProfileCodecProfile {
         match s {
             "HIGH" => Xavc4kProfileCodecProfile::High,
             "HIGH_422" => Xavc4kProfileCodecProfile::High422,
-            other => Xavc4kProfileCodecProfile::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Xavc4kProfileCodecProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

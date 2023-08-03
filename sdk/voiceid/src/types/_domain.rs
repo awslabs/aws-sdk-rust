@@ -21,8 +21,7 @@ pub struct Domain {
     pub domain_status: ::std::option::Option<crate::types::DomainStatus>,
     /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration:
-        ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>The timestamp of when the domain was created.</p>
     #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -31,8 +30,7 @@ pub struct Domain {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
     #[doc(hidden)]
-    pub server_side_encryption_update_details:
-        ::std::option::Option<crate::types::ServerSideEncryptionUpdateDetails>,
+    pub server_side_encryption_update_details: ::std::option::Option<crate::types::ServerSideEncryptionUpdateDetails>,
     /// <p>The watchlist details of a domain. Contains the default watchlist ID of the domain.</p>
     #[doc(hidden)]
     pub watchlist_details: ::std::option::Option<crate::types::WatchlistDetails>,
@@ -59,9 +57,7 @@ impl Domain {
         self.domain_status.as_ref()
     }
     /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
-    pub fn server_side_encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
@@ -73,9 +69,7 @@ impl Domain {
         self.updated_at.as_ref()
     }
     /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
-    pub fn server_side_encryption_update_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServerSideEncryptionUpdateDetails> {
+    pub fn server_side_encryption_update_details(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionUpdateDetails> {
         self.server_side_encryption_update_details.as_ref()
     }
     /// <p>The watchlist details of a domain. Contains the default watchlist ID of the domain.</p>
@@ -91,16 +85,10 @@ impl ::std::fmt::Debug for Domain {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("domain_status", &self.domain_status);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
+        formatter.field("server_side_encryption_configuration", &self.server_side_encryption_configuration);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
-        formatter.field(
-            "server_side_encryption_update_details",
-            &self.server_side_encryption_update_details,
-        );
+        formatter.field("server_side_encryption_update_details", &self.server_side_encryption_update_details);
         formatter.field("watchlist_details", &self.watchlist_details);
         formatter.finish()
     }
@@ -121,12 +109,10 @@ pub struct DomainBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) domain_status: ::std::option::Option<crate::types::DomainStatus>,
-    pub(crate) server_side_encryption_configuration:
-        ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) server_side_encryption_update_details:
-        ::std::option::Option<crate::types::ServerSideEncryptionUpdateDetails>,
+    pub(crate) server_side_encryption_update_details: ::std::option::Option<crate::types::ServerSideEncryptionUpdateDetails>,
     pub(crate) watchlist_details: ::std::option::Option<crate::types::WatchlistDetails>,
 }
 impl DomainBuilder {
@@ -192,10 +178,7 @@ impl DomainBuilder {
         self
     }
     /// <p>The current status of the domain.</p>
-    pub fn set_domain_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainStatus>,
-    ) -> Self {
+    pub fn set_domain_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
         self.domain_status = input;
         self
     }
@@ -204,25 +187,17 @@ impl DomainBuilder {
         &self.domain_status
     }
     /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
-    pub fn server_side_encryption_configuration(
-        mut self,
-        input: crate::types::ServerSideEncryptionConfiguration,
-    ) -> Self {
+    pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.server_side_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
-    pub fn set_server_side_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
         self.server_side_encryption_configuration = input;
         self
     }
     /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
-    pub fn get_server_side_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+    pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
         &self.server_side_encryption_configuration
     }
     /// <p>The timestamp of when the domain was created.</p>
@@ -231,10 +206,7 @@ impl DomainBuilder {
         self
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -248,10 +220,7 @@ impl DomainBuilder {
         self
     }
     /// <p>The timestamp of when the domain was last update.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -260,10 +229,7 @@ impl DomainBuilder {
         &self.updated_at
     }
     /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
-    pub fn server_side_encryption_update_details(
-        mut self,
-        input: crate::types::ServerSideEncryptionUpdateDetails,
-    ) -> Self {
+    pub fn server_side_encryption_update_details(mut self, input: crate::types::ServerSideEncryptionUpdateDetails) -> Self {
         self.server_side_encryption_update_details = ::std::option::Option::Some(input);
         self
     }
@@ -276,9 +242,7 @@ impl DomainBuilder {
         self
     }
     /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
-    pub fn get_server_side_encryption_update_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerSideEncryptionUpdateDetails> {
+    pub fn get_server_side_encryption_update_details(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionUpdateDetails> {
         &self.server_side_encryption_update_details
     }
     /// <p>The watchlist details of a domain. Contains the default watchlist ID of the domain.</p>
@@ -287,10 +251,7 @@ impl DomainBuilder {
         self
     }
     /// <p>The watchlist details of a domain. Contains the default watchlist ID of the domain.</p>
-    pub fn set_watchlist_details(
-        mut self,
-        input: ::std::option::Option<crate::types::WatchlistDetails>,
-    ) -> Self {
+    pub fn set_watchlist_details(mut self, input: ::std::option::Option<crate::types::WatchlistDetails>) -> Self {
         self.watchlist_details = input;
         self
     }
@@ -322,16 +283,10 @@ impl ::std::fmt::Debug for DomainBuilder {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("domain_status", &self.domain_status);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
+        formatter.field("server_side_encryption_configuration", &self.server_side_encryption_configuration);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
-        formatter.field(
-            "server_side_encryption_update_details",
-            &self.server_side_encryption_update_details,
-        );
+        formatter.field("server_side_encryption_update_details", &self.server_side_encryption_update_details);
         formatter.field("watchlist_details", &self.watchlist_details);
         formatter.finish()
     }

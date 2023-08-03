@@ -120,9 +120,7 @@ impl TextTransformation {
 
 /// A builder for [`TextTransformation`](crate::types::TextTransformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TextTransformationBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) r#type: ::std::option::Option<crate::types::TextTransformationType>,
@@ -238,10 +236,7 @@ impl TextTransformationBuilder {
     /// <p> <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
     /// <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code> encoding. If the code is in the full-width ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
     /// <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode. This helps input normalization, and minimizing false-positives and false-negatives for non-English languages.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TextTransformationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TextTransformationType>) -> Self {
         self.r#type = input;
         self
     }

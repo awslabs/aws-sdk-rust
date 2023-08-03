@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CopyDbClusterSnapshotOutput`](crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput) with field(s):
     ///   - [`db_cluster_snapshot(Option<DbClusterSnapshot>)`](crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput::db_cluster_snapshot): <p>Contains the details for an Amazon RDS DB cluster snapshot</p>  <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     /// - On failure, responds with [`SdkError<CopyDBClusterSnapshotError>`](crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError)
-    pub fn copy_db_cluster_snapshot(
-        &self,
-    ) -> crate::operation::copy_db_cluster_snapshot::builders::CopyDBClusterSnapshotFluentBuilder
-    {
+    pub fn copy_db_cluster_snapshot(&self) -> crate::operation::copy_db_cluster_snapshot::builders::CopyDBClusterSnapshotFluentBuilder {
         crate::operation::copy_db_cluster_snapshot::builders::CopyDBClusterSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

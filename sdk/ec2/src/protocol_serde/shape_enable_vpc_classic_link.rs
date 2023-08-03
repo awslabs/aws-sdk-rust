@@ -9,12 +9,8 @@ pub fn de_enable_vpc_classic_link_http_error(
     crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError::generic(generic))
@@ -32,14 +28,9 @@ pub fn de_enable_vpc_classic_link_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkOutputBuilder::default();
-        output = crate::protocol_serde::shape_enable_vpc_classic_link::de_enable_vpc_classic_link(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_enable_vpc_classic_link::de_enable_vpc_classic_link(_response_body, output)
+            .map_err(crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -48,10 +39,7 @@ pub fn de_enable_vpc_classic_link_http_response_with_props(
 pub fn de_enable_vpc_classic_link(
     inp: &[u8],
     mut builder: crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkOutputBuilder,
-) -> Result<
-    crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

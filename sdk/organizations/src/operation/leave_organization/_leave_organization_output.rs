@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for LeaveOrganizationOutput {
 }
 impl LeaveOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`LeaveOrganizationOutput`](crate::operation::leave_organization::LeaveOrganizationOutput).
-    pub fn builder(
-    ) -> crate::operation::leave_organization::builders::LeaveOrganizationOutputBuilder {
+    pub fn builder() -> crate::operation::leave_organization::builders::LeaveOrganizationOutputBuilder {
         crate::operation::leave_organization::builders::LeaveOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`LeaveOrganizationOutput`](crate::operation::leave_organization::LeaveOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LeaveOrganizationOutputBuilder {
     _request_id: Option<String>,
 }

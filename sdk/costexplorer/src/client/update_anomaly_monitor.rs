@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAnomalyMonitorOutput`](crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput) with field(s):
     ///   - [`monitor_arn(Option<String>)`](crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput::monitor_arn): <p>A cost anomaly monitor ARN. </p>
     /// - On failure, responds with [`SdkError<UpdateAnomalyMonitorError>`](crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError)
-    pub fn update_anomaly_monitor(
-        &self,
-    ) -> crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorFluentBuilder {
-        crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_anomaly_monitor(&self) -> crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorFluentBuilder {
+        crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl MessageAttributeValue {
 
 /// A builder for [`MessageAttributeValue`](crate::types::MessageAttributeValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageAttributeValueBuilder {
     pub(crate) string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,27 +33,19 @@ impl MessageAttributeValueBuilder {
     /// To override the contents of this collection use [`set_string_values`](Self::set_string_values).
     ///
     /// <p>The strings in a message attribute value.</p>
-    pub fn string_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn string_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.string_values.unwrap_or_default();
         v.push(input.into());
         self.string_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The strings in a message attribute value.</p>
-    pub fn set_string_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_string_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.string_values = input;
         self
     }
     /// <p>The strings in a message attribute value.</p>
-    pub fn get_string_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_string_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.string_values
     }
     /// Consumes the builder and constructs a [`MessageAttributeValue`](crate::types::MessageAttributeValue).

@@ -23,12 +23,9 @@ impl PredictiveScalingCustomizedScalingMetric {
 
 /// A builder for [`PredictiveScalingCustomizedScalingMetric`](crate::types::PredictiveScalingCustomizedScalingMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictiveScalingCustomizedScalingMetricBuilder {
-    pub(crate) metric_data_queries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
+    pub(crate) metric_data_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
 }
 impl PredictiveScalingCustomizedScalingMetricBuilder {
     /// Appends an item to `metric_data_queries`.
@@ -43,17 +40,12 @@ impl PredictiveScalingCustomizedScalingMetricBuilder {
         self
     }
     /// <p>One or more metric data queries to provide the data points for a scaling metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
-    pub fn set_metric_data_queries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
-    ) -> Self {
+    pub fn set_metric_data_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>) -> Self {
         self.metric_data_queries = input;
         self
     }
     /// <p>One or more metric data queries to provide the data points for a scaling metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
-    pub fn get_metric_data_queries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>> {
+    pub fn get_metric_data_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>> {
         &self.metric_data_queries
     }
     /// Consumes the builder and constructs a [`PredictiveScalingCustomizedScalingMetric`](crate::types::PredictiveScalingCustomizedScalingMetric).

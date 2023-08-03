@@ -31,17 +31,14 @@ impl ListFleetsForVehicleInput {
 }
 impl ListFleetsForVehicleInput {
     /// Creates a new builder-style object to manufacture [`ListFleetsForVehicleInput`](crate::operation::list_fleets_for_vehicle::ListFleetsForVehicleInput).
-    pub fn builder(
-    ) -> crate::operation::list_fleets_for_vehicle::builders::ListFleetsForVehicleInputBuilder {
+    pub fn builder() -> crate::operation::list_fleets_for_vehicle::builders::ListFleetsForVehicleInputBuilder {
         crate::operation::list_fleets_for_vehicle::builders::ListFleetsForVehicleInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFleetsForVehicleInput`](crate::operation::list_fleets_for_vehicle::ListFleetsForVehicleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFleetsForVehicleInputBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,16 +93,12 @@ impl ListFleetsForVehicleInputBuilder {
     /// Consumes the builder and constructs a [`ListFleetsForVehicleInput`](crate::operation::list_fleets_for_vehicle::ListFleetsForVehicleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_fleets_for_vehicle::ListFleetsForVehicleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_fleets_for_vehicle::ListFleetsForVehicleInput {
-                vehicle_name: self.vehicle_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_fleets_for_vehicle::ListFleetsForVehicleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_fleets_for_vehicle::ListFleetsForVehicleInput {
+            vehicle_name: self.vehicle_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

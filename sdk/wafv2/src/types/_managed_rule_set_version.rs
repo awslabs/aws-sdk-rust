@@ -69,9 +69,7 @@ impl ManagedRuleSetVersion {
 
 /// A builder for [`ManagedRuleSetVersion`](crate::types::ManagedRuleSetVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedRuleSetVersionBuilder {
     pub(crate) associated_rule_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) capacity: ::std::option::Option<i64>,
@@ -82,18 +80,12 @@ pub struct ManagedRuleSetVersionBuilder {
 }
 impl ManagedRuleSetVersionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define the published version of your managed rule group. </p>
-    pub fn associated_rule_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define the published version of your managed rule group. </p>
-    pub fn set_associated_rule_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_associated_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_rule_group_arn = input;
         self
     }
@@ -140,10 +132,7 @@ impl ManagedRuleSetVersionBuilder {
     }
     /// <p>The time that you first published this version. </p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub fn set_publish_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_publish_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.publish_timestamp = input;
         self
     }
@@ -160,18 +149,13 @@ impl ManagedRuleSetVersionBuilder {
     }
     /// <p>The last time that you updated this version. </p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub fn set_last_update_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_timestamp = input;
         self
     }
     /// <p>The last time that you updated this version. </p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub fn get_last_update_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_update_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_timestamp
     }
     /// <p>The time that this version is set to expire.</p>
@@ -182,10 +166,7 @@ impl ManagedRuleSetVersionBuilder {
     }
     /// <p>The time that this version is set to expire.</p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub fn set_expiry_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiry_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiry_timestamp = input;
         self
     }

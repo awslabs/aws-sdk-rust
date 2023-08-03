@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`distribution(Distribution)`](crate::operation::put_subscription_filter::builders::PutSubscriptionFilterFluentBuilder::distribution) / [`set_distribution(Option<Distribution>)`](crate::operation::put_subscription_filter::builders::PutSubscriptionFilterFluentBuilder::set_distribution): <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis data stream. </p>
     /// - On success, responds with [`PutSubscriptionFilterOutput`](crate::operation::put_subscription_filter::PutSubscriptionFilterOutput)
     /// - On failure, responds with [`SdkError<PutSubscriptionFilterError>`](crate::operation::put_subscription_filter::PutSubscriptionFilterError)
-    pub fn put_subscription_filter(
-        &self,
-    ) -> crate::operation::put_subscription_filter::builders::PutSubscriptionFilterFluentBuilder
-    {
-        crate::operation::put_subscription_filter::builders::PutSubscriptionFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_subscription_filter(&self) -> crate::operation::put_subscription_filter::builders::PutSubscriptionFilterFluentBuilder {
+        crate::operation::put_subscription_filter::builders::PutSubscriptionFilterFluentBuilder::new(self.handle.clone())
     }
 }

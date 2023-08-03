@@ -45,9 +45,7 @@ impl ExcludePeriodConfiguration {
 
 /// A builder for [`ExcludePeriodConfiguration`](crate::types::ExcludePeriodConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExcludePeriodConfigurationBuilder {
     pub(crate) amount: ::std::option::Option<i32>,
     pub(crate) granularity: ::std::option::Option<crate::types::TimeGranularity>,
@@ -74,10 +72,7 @@ impl ExcludePeriodConfigurationBuilder {
         self
     }
     /// <p>The granularity or unit (day, month, year) of the exclude period.</p>
-    pub fn set_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeGranularity>,
-    ) -> Self {
+    pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::TimeGranularity>) -> Self {
         self.granularity = input;
         self
     }

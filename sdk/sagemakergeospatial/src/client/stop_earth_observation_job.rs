@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Earth Observation job being stopped.</p>
     /// - On success, responds with [`StopEarthObservationJobOutput`](crate::operation::stop_earth_observation_job::StopEarthObservationJobOutput)
     /// - On failure, responds with [`SdkError<StopEarthObservationJobError>`](crate::operation::stop_earth_observation_job::StopEarthObservationJobError)
-    pub fn stop_earth_observation_job(
-        &self,
-    ) -> crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobFluentBuilder
-    {
+    pub fn stop_earth_observation_job(&self) -> crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobFluentBuilder {
         crate::operation::stop_earth_observation_job::builders::StopEarthObservationJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,17 +29,14 @@ impl GetIntentVersionsInput {
 }
 impl GetIntentVersionsInput {
     /// Creates a new builder-style object to manufacture [`GetIntentVersionsInput`](crate::operation::get_intent_versions::GetIntentVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_intent_versions::builders::GetIntentVersionsInputBuilder {
+    pub fn builder() -> crate::operation::get_intent_versions::builders::GetIntentVersionsInputBuilder {
         crate::operation::get_intent_versions::builders::GetIntentVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIntentVersionsInput`](crate::operation::get_intent_versions::GetIntentVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIntentVersionsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl GetIntentVersionsInputBuilder {
     /// Consumes the builder and constructs a [`GetIntentVersionsInput`](crate::operation::get_intent_versions::GetIntentVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_intent_versions::GetIntentVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_intent_versions::GetIntentVersionsInput {
-                name: self.name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_intent_versions::GetIntentVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_intent_versions::GetIntentVersionsInput {
+            name: self.name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

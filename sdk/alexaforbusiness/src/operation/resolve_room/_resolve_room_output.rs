@@ -11,8 +11,7 @@ pub struct ResolveRoomOutput {
     pub room_name: ::std::option::Option<::std::string::String>,
     /// <p>Response to get the room profile request. Required.</p>
     #[doc(hidden)]
-    pub room_skill_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoomSkillParameter>>,
+    pub room_skill_parameters: ::std::option::Option<::std::vec::Vec<crate::types::RoomSkillParameter>>,
     _request_id: Option<String>,
 }
 impl ResolveRoomOutput {
@@ -25,9 +24,7 @@ impl ResolveRoomOutput {
         self.room_name.as_deref()
     }
     /// <p>Response to get the room profile request. Required.</p>
-    pub fn room_skill_parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RoomSkillParameter]> {
+    pub fn room_skill_parameters(&self) -> ::std::option::Option<&[crate::types::RoomSkillParameter]> {
         self.room_skill_parameters.as_deref()
     }
 }
@@ -45,14 +42,11 @@ impl ResolveRoomOutput {
 
 /// A builder for [`ResolveRoomOutput`](crate::operation::resolve_room::ResolveRoomOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolveRoomOutputBuilder {
     pub(crate) room_arn: ::std::option::Option<::std::string::String>,
     pub(crate) room_name: ::std::option::Option<::std::string::String>,
-    pub(crate) room_skill_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoomSkillParameter>>,
+    pub(crate) room_skill_parameters: ::std::option::Option<::std::vec::Vec<crate::types::RoomSkillParameter>>,
     _request_id: Option<String>,
 }
 impl ResolveRoomOutputBuilder {
@@ -96,17 +90,12 @@ impl ResolveRoomOutputBuilder {
         self
     }
     /// <p>Response to get the room profile request. Required.</p>
-    pub fn set_room_skill_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoomSkillParameter>>,
-    ) -> Self {
+    pub fn set_room_skill_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoomSkillParameter>>) -> Self {
         self.room_skill_parameters = input;
         self
     }
     /// <p>Response to get the room profile request. Required.</p>
-    pub fn get_room_skill_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoomSkillParameter>> {
+    pub fn get_room_skill_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoomSkillParameter>> {
         &self.room_skill_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

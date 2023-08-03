@@ -30,27 +30,19 @@ impl AudioSilenceFailoverSettings {
 
 /// A builder for [`AudioSilenceFailoverSettings`](crate::types::AudioSilenceFailoverSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioSilenceFailoverSettingsBuilder {
     pub(crate) audio_selector_name: ::std::option::Option<::std::string::String>,
     pub(crate) audio_silence_threshold_msec: ::std::option::Option<i32>,
 }
 impl AudioSilenceFailoverSettingsBuilder {
     /// The name of the audio selector in the input that MediaLive should monitor to detect silence. Select your most important rendition. If you didn't create an audio selector in this input, leave blank.
-    pub fn audio_selector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audio_selector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audio_selector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the audio selector in the input that MediaLive should monitor to detect silence. Select your most important rendition. If you didn't create an audio selector in this input, leave blank.
-    pub fn set_audio_selector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audio_selector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audio_selector_name = input;
         self
     }

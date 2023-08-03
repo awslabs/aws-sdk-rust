@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for SetIdentityDkimEnabledOutput {
 }
 impl SetIdentityDkimEnabledOutput {
     /// Creates a new builder-style object to manufacture [`SetIdentityDkimEnabledOutput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput).
-    pub fn builder(
-    ) -> crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledOutputBuilder {
         crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetIdentityDkimEnabledOutput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetIdentityDkimEnabledOutputBuilder {
     _request_id: Option<String>,
 }
@@ -39,9 +35,7 @@ impl SetIdentityDkimEnabledOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetIdentityDkimEnabledOutput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput {
+    pub fn build(self) -> crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput {
         crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput {
             _request_id: self._request_id,
         }

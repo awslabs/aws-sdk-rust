@@ -23,9 +23,7 @@ impl StatePersistenceConfigurations {
 
 /// A builder for [`StatePersistenceConfigurations`](crate::types::StatePersistenceConfigurations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatePersistenceConfigurationsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

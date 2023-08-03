@@ -5,8 +5,7 @@
 pub struct GetOriginRequestPolicyConfigOutput {
     /// <p>The origin request policy configuration.</p>
     #[doc(hidden)]
-    pub origin_request_policy_config:
-        ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
+    pub origin_request_policy_config: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
     /// <p>The current version of the origin request policy.</p>
     #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetOriginRequestPolicyConfigOutput {
 }
 impl GetOriginRequestPolicyConfigOutput {
     /// <p>The origin request policy configuration.</p>
-    pub fn origin_request_policy_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginRequestPolicyConfig> {
+    pub fn origin_request_policy_config(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyConfig> {
         self.origin_request_policy_config.as_ref()
     }
     /// <p>The current version of the origin request policy.</p>
@@ -31,43 +28,32 @@ impl ::aws_http::request_id::RequestId for GetOriginRequestPolicyConfigOutput {
 }
 impl GetOriginRequestPolicyConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetOriginRequestPolicyConfigOutput`](crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigOutput).
-    pub fn builder() -> crate::operation::get_origin_request_policy_config::builders::GetOriginRequestPolicyConfigOutputBuilder{
+    pub fn builder() -> crate::operation::get_origin_request_policy_config::builders::GetOriginRequestPolicyConfigOutputBuilder {
         crate::operation::get_origin_request_policy_config::builders::GetOriginRequestPolicyConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetOriginRequestPolicyConfigOutput`](crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOriginRequestPolicyConfigOutputBuilder {
-    pub(crate) origin_request_policy_config:
-        ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
+    pub(crate) origin_request_policy_config: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetOriginRequestPolicyConfigOutputBuilder {
     /// <p>The origin request policy configuration.</p>
-    pub fn origin_request_policy_config(
-        mut self,
-        input: crate::types::OriginRequestPolicyConfig,
-    ) -> Self {
+    pub fn origin_request_policy_config(mut self, input: crate::types::OriginRequestPolicyConfig) -> Self {
         self.origin_request_policy_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The origin request policy configuration.</p>
-    pub fn set_origin_request_policy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
-    ) -> Self {
+    pub fn set_origin_request_policy_config(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyConfig>) -> Self {
         self.origin_request_policy_config = input;
         self
     }
     /// <p>The origin request policy configuration.</p>
-    pub fn get_origin_request_policy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginRequestPolicyConfig> {
+    pub fn get_origin_request_policy_config(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyConfig> {
         &self.origin_request_policy_config
     }
     /// <p>The current version of the origin request policy.</p>
@@ -94,10 +80,7 @@ impl GetOriginRequestPolicyConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetOriginRequestPolicyConfigOutput`](crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigOutput
-    {
+    pub fn build(self) -> crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigOutput {
         crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigOutput {
             origin_request_policy_config: self.origin_request_policy_config,
             e_tag: self.e_tag,

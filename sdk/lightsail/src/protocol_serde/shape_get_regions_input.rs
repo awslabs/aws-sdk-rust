@@ -7,9 +7,7 @@ pub fn ser_get_regions_input(
         object.key("includeAvailabilityZones").boolean(*var_1);
     }
     if let Some(var_2) = &input.include_relational_database_availability_zones {
-        object
-            .key("includeRelationalDatabaseAvailabilityZones")
-            .boolean(*var_2);
+        object.key("includeRelationalDatabaseAvailabilityZones").boolean(*var_2);
     }
     Ok(())
 }

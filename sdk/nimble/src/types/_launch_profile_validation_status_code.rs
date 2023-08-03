@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LaunchProfileValidationStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -78,17 +72,21 @@ pub enum LaunchProfileValidationStatusCode {
 impl ::std::convert::From<&str> for LaunchProfileValidationStatusCode {
     fn from(s: &str) -> Self {
         match s {
-                        "VALIDATION_FAILED_INTERNAL_SERVER_ERROR" => LaunchProfileValidationStatusCode::ValidationFailedInternalServerError,
-"VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY" => LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory,
-"VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION" => LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation,
-"VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION" => LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation,
-"VALIDATION_FAILED_SUBNET_NOT_FOUND" => LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound,
-"VALIDATION_FAILED_UNAUTHORIZED" => LaunchProfileValidationStatusCode::ValidationFailedUnauthorized,
-"VALIDATION_IN_PROGRESS" => LaunchProfileValidationStatusCode::ValidationInProgress,
-"VALIDATION_NOT_STARTED" => LaunchProfileValidationStatusCode::ValidationNotStarted,
-"VALIDATION_SUCCESS" => LaunchProfileValidationStatusCode::ValidationSuccess,
-other => LaunchProfileValidationStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
+            "VALIDATION_FAILED_INTERNAL_SERVER_ERROR" => LaunchProfileValidationStatusCode::ValidationFailedInternalServerError,
+            "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY" => LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory,
+            "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION" => {
+                LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation
+            }
+            "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION" => {
+                LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation
+            }
+            "VALIDATION_FAILED_SUBNET_NOT_FOUND" => LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound,
+            "VALIDATION_FAILED_UNAUTHORIZED" => LaunchProfileValidationStatusCode::ValidationFailedUnauthorized,
+            "VALIDATION_IN_PROGRESS" => LaunchProfileValidationStatusCode::ValidationInProgress,
+            "VALIDATION_NOT_STARTED" => LaunchProfileValidationStatusCode::ValidationNotStarted,
+            "VALIDATION_SUCCESS" => LaunchProfileValidationStatusCode::ValidationSuccess,
+            other => LaunchProfileValidationStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
     }
 }
 impl ::std::str::FromStr for LaunchProfileValidationStatusCode {
@@ -102,17 +100,21 @@ impl LaunchProfileValidationStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-    LaunchProfileValidationStatusCode::ValidationFailedInternalServerError => "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
-    LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory => "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY",
-    LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation => "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION",
-    LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation => "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION",
-    LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound => "VALIDATION_FAILED_SUBNET_NOT_FOUND",
-    LaunchProfileValidationStatusCode::ValidationFailedUnauthorized => "VALIDATION_FAILED_UNAUTHORIZED",
-    LaunchProfileValidationStatusCode::ValidationInProgress => "VALIDATION_IN_PROGRESS",
-    LaunchProfileValidationStatusCode::ValidationNotStarted => "VALIDATION_NOT_STARTED",
-    LaunchProfileValidationStatusCode::ValidationSuccess => "VALIDATION_SUCCESS",
-    LaunchProfileValidationStatusCode::Unknown(value) => value.as_str()
-}
+            LaunchProfileValidationStatusCode::ValidationFailedInternalServerError => "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
+            LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory => "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY",
+            LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation => {
+                "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION"
+            }
+            LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation => {
+                "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION"
+            }
+            LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound => "VALIDATION_FAILED_SUBNET_NOT_FOUND",
+            LaunchProfileValidationStatusCode::ValidationFailedUnauthorized => "VALIDATION_FAILED_UNAUTHORIZED",
+            LaunchProfileValidationStatusCode::ValidationInProgress => "VALIDATION_IN_PROGRESS",
+            LaunchProfileValidationStatusCode::ValidationNotStarted => "VALIDATION_NOT_STARTED",
+            LaunchProfileValidationStatusCode::ValidationSuccess => "VALIDATION_SUCCESS",
+            LaunchProfileValidationStatusCode::Unknown(value) => value.as_str(),
+        }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {

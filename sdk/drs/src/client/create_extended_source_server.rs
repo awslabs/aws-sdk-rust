@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`CreateExtendedSourceServerOutput`](crate::operation::create_extended_source_server::CreateExtendedSourceServerOutput) with field(s):
     ///   - [`source_server(Option<SourceServer>)`](crate::operation::create_extended_source_server::CreateExtendedSourceServerOutput::source_server): <p>Created extended source server.</p>
     /// - On failure, responds with [`SdkError<CreateExtendedSourceServerError>`](crate::operation::create_extended_source_server::CreateExtendedSourceServerError)
-    pub fn create_extended_source_server(&self) -> crate::operation::create_extended_source_server::builders::CreateExtendedSourceServerFluentBuilder{
+    pub fn create_extended_source_server(
+        &self,
+    ) -> crate::operation::create_extended_source_server::builders::CreateExtendedSourceServerFluentBuilder {
         crate::operation::create_extended_source_server::builders::CreateExtendedSourceServerFluentBuilder::new(self.handle.clone())
     }
 }

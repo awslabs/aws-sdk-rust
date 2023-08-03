@@ -24,36 +24,26 @@ impl UpdateTaskExecutionInput {
 }
 impl UpdateTaskExecutionInput {
     /// Creates a new builder-style object to manufacture [`UpdateTaskExecutionInput`](crate::operation::update_task_execution::UpdateTaskExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::update_task_execution::builders::UpdateTaskExecutionInputBuilder {
-        crate::operation::update_task_execution::builders::UpdateTaskExecutionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_task_execution::builders::UpdateTaskExecutionInputBuilder {
+        crate::operation::update_task_execution::builders::UpdateTaskExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTaskExecutionInput`](crate::operation::update_task_execution::UpdateTaskExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTaskExecutionInputBuilder {
     pub(crate) task_execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) options: ::std::option::Option<crate::types::Options>,
 }
 impl UpdateTaskExecutionInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're updating.</p>
-    pub fn task_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're updating.</p>
-    pub fn set_task_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_execution_arn = input;
         self
     }
@@ -81,15 +71,11 @@ impl UpdateTaskExecutionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTaskExecutionInput`](crate::operation::update_task_execution::UpdateTaskExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_task_execution::UpdateTaskExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_task_execution::UpdateTaskExecutionInput {
-                task_execution_arn: self.task_execution_arn,
-                options: self.options,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_task_execution::UpdateTaskExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_task_execution::UpdateTaskExecutionInput {
+            task_execution_arn: self.task_execution_arn,
+            options: self.options,
+        })
     }
 }

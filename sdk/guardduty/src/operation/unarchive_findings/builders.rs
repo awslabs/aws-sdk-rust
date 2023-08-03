@@ -10,10 +10,7 @@ impl UnarchiveFindingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::unarchive_findings::UnarchiveFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unarchive_findings::UnarchiveFindingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unarchive_findings::UnarchiveFindingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.unarchive_findings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UnarchiveFindingsFluentBuilder {
         }
     }
     /// Access the UnarchiveFindings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::unarchive_findings::builders::UnarchiveFindingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::unarchive_findings::builders::UnarchiveFindingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UnarchiveFindingsFluentBuilder {
             crate::operation::unarchive_findings::UnarchiveFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unarchive_findings::UnarchiveFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unarchive_findings::UnarchiveFindingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UnarchiveFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UnarchiveFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unarchive_findings::UnarchiveFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unarchive_findings::UnarchiveFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unarchive_findings::UnarchiveFindingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UnarchiveFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unarchive_findings::UnarchiveFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unarchive_findings::UnarchiveFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unarchive_findings::UnarchiveFindingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UnarchiveFindingsFluentBuilder {
             crate::operation::unarchive_findings::UnarchiveFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unarchive_findings::UnarchiveFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unarchive_findings::UnarchiveFindingsError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +130,12 @@ impl UnarchiveFindingsFluentBuilder {
         self
     }
     /// <p>The IDs of the findings to unarchive.</p>
-    pub fn set_finding_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_finding_ids(input);
         self
     }
     /// <p>The IDs of the findings to unarchive.</p>
-    pub fn get_finding_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_finding_ids()
     }
 }

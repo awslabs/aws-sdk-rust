@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateUserSettingsOutput {
 }
 impl DisassociateUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateUserSettingsOutput`](crate::operation::disassociate_user_settings::DisassociateUserSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsOutputBuilder {
         crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateUserSettingsOutput`](crate::operation::disassociate_user_settings::DisassociateUserSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateUserSettingsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DisassociateUserSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateUserSettingsOutput`](crate::operation::disassociate_user_settings::DisassociateUserSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_user_settings::DisassociateUserSettingsOutput {
+    pub fn build(self) -> crate::operation::disassociate_user_settings::DisassociateUserSettingsOutput {
         crate::operation::disassociate_user_settings::DisassociateUserSettingsOutput {
             _request_id: self._request_id,
         }

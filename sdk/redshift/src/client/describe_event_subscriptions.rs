@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     ///   - [`event_subscriptions_list(Option<Vec<EventSubscription>>)`](crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput::event_subscriptions_list): <p>A list of event subscriptions.</p>
     /// - On failure, responds with [`SdkError<DescribeEventSubscriptionsError>`](crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError)
-    pub fn describe_event_subscriptions(&self) -> crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsFluentBuilder{
+    pub fn describe_event_subscriptions(&self) -> crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsFluentBuilder {
         crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsFluentBuilder::new(self.handle.clone())
     }
 }

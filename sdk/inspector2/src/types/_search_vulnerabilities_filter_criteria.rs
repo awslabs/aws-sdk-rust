@@ -23,9 +23,7 @@ impl SearchVulnerabilitiesFilterCriteria {
 
 /// A builder for [`SearchVulnerabilitiesFilterCriteria`](crate::types::SearchVulnerabilitiesFilterCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchVulnerabilitiesFilterCriteriaBuilder {
     pub(crate) vulnerability_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,27 +33,19 @@ impl SearchVulnerabilitiesFilterCriteriaBuilder {
     /// To override the contents of this collection use [`set_vulnerability_ids`](Self::set_vulnerability_ids).
     ///
     /// <p>The IDs for specific vulnerabilities.</p>
-    pub fn vulnerability_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vulnerability_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vulnerability_ids.unwrap_or_default();
         v.push(input.into());
         self.vulnerability_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs for specific vulnerabilities.</p>
-    pub fn set_vulnerability_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vulnerability_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vulnerability_ids = input;
         self
     }
     /// <p>The IDs for specific vulnerabilities.</p>
-    pub fn get_vulnerability_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vulnerability_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vulnerability_ids
     }
     /// Consumes the builder and constructs a [`SearchVulnerabilitiesFilterCriteria`](crate::types::SearchVulnerabilitiesFilterCriteria).

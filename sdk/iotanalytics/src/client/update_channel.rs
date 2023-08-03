@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`retention_period(RetentionPeriod)`](crate::operation::update_channel::builders::UpdateChannelFluentBuilder::retention_period) / [`set_retention_period(Option<RetentionPeriod>)`](crate::operation::update_channel::builders::UpdateChannelFluentBuilder::set_retention_period): <p>How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
     /// - On success, responds with [`UpdateChannelOutput`](crate::operation::update_channel::UpdateChannelOutput)
     /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::operation::update_channel::UpdateChannelError)
-    pub fn update_channel(
-        &self,
-    ) -> crate::operation::update_channel::builders::UpdateChannelFluentBuilder {
-        crate::operation::update_channel::builders::UpdateChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_channel(&self) -> crate::operation::update_channel::builders::UpdateChannelFluentBuilder {
+        crate::operation::update_channel::builders::UpdateChannelFluentBuilder::new(self.handle.clone())
     }
 }

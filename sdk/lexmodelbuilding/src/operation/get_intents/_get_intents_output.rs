@@ -35,9 +35,7 @@ impl GetIntentsOutput {
 
 /// A builder for [`GetIntentsOutput`](crate::operation::get_intents::GetIntentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIntentsOutputBuilder {
     pub(crate) intents: ::std::option::Option<::std::vec::Vec<crate::types::IntentMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetIntentsOutputBuilder {
         self
     }
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    pub fn set_intents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IntentMetadata>>,
-    ) -> Self {
+    pub fn set_intents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntentMetadata>>) -> Self {
         self.intents = input;
         self
     }
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    pub fn get_intents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IntentMetadata>> {
+    pub fn get_intents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntentMetadata>> {
         &self.intents
     }
     /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents. </p>

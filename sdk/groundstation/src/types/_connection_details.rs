@@ -30,9 +30,7 @@ impl ConnectionDetails {
 
 /// A builder for [`ConnectionDetails`](crate::types::ConnectionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionDetailsBuilder {
     pub(crate) socket_address: ::std::option::Option<crate::types::SocketAddress>,
     pub(crate) mtu: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl ConnectionDetailsBuilder {
         self
     }
     /// <p>A socket address.</p>
-    pub fn set_socket_address(
-        mut self,
-        input: ::std::option::Option<crate::types::SocketAddress>,
-    ) -> Self {
+    pub fn set_socket_address(mut self, input: ::std::option::Option<crate::types::SocketAddress>) -> Self {
         self.socket_address = input;
         self
     }

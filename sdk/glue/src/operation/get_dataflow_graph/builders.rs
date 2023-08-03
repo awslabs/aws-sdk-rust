@@ -10,10 +10,7 @@ impl GetDataflowGraphInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_dataflow_graph::GetDataflowGraphOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataflow_graph::GetDataflowGraphError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dataflow_graph::GetDataflowGraphError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_dataflow_graph();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetDataflowGraphFluentBuilder {
         }
     }
     /// Access the GetDataflowGraph as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_dataflow_graph::builders::GetDataflowGraphInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_dataflow_graph::builders::GetDataflowGraphInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetDataflowGraphFluentBuilder {
             crate::operation::get_dataflow_graph::GetDataflowGraph,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataflow_graph::GetDataflowGraphError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dataflow_graph::GetDataflowGraphError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetDataflowGraphFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetDataflowGraphFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dataflow_graph::GetDataflowGraphOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataflow_graph::GetDataflowGraphError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dataflow_graph::GetDataflowGraphError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetDataflowGraphFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dataflow_graph::GetDataflowGraphOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataflow_graph::GetDataflowGraphError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dataflow_graph::GetDataflowGraphError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetDataflowGraphFluentBuilder {
             crate::operation::get_dataflow_graph::GetDataflowGraph,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataflow_graph::GetDataflowGraphError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dataflow_graph::GetDataflowGraphError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Python script to transform.</p>
-    pub fn python_script(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn python_script(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.python_script(input.into());
         self
     }
     /// <p>The Python script to transform.</p>
-    pub fn set_python_script(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_python_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_python_script(input);
         self
     }

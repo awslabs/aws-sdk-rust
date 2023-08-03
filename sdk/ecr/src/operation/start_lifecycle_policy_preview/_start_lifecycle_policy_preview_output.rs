@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for StartLifecyclePolicyPreviewOutput {
 }
 impl StartLifecyclePolicyPreviewOutput {
     /// Creates a new builder-style object to manufacture [`StartLifecyclePolicyPreviewOutput`](crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewOutput).
-    pub fn builder() -> crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewOutputBuilder{
+    pub fn builder() -> crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewOutputBuilder {
         crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartLifecyclePolicyPreviewOutput`](crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartLifecyclePolicyPreviewOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl StartLifecyclePolicyPreviewOutputBuilder {
         &self.registry_id
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -95,18 +87,12 @@ impl StartLifecyclePolicyPreviewOutputBuilder {
         &self.repository_name
     }
     /// <p>The JSON repository policy text.</p>
-    pub fn lifecycle_policy_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_policy_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON repository policy text.</p>
-    pub fn set_lifecycle_policy_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_policy_text = input;
         self
     }
@@ -120,10 +106,7 @@ impl StartLifecyclePolicyPreviewOutputBuilder {
         self
     }
     /// <p>The status of the lifecycle policy preview request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecyclePolicyPreviewStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyPreviewStatus>) -> Self {
         self.status = input;
         self
     }
@@ -141,9 +124,7 @@ impl StartLifecyclePolicyPreviewOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartLifecyclePolicyPreviewOutput`](crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewOutput {
+    pub fn build(self) -> crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewOutput {
         crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewOutput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

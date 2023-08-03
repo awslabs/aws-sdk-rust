@@ -100,16 +100,13 @@ pub struct WriteGetObjectResponseInput {
     pub missing_meta: ::std::option::Option<i32>,
     /// <p>A map of metadata to store with the object in S3.</p>
     #[doc(hidden)]
-    pub metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
     #[doc(hidden)]
     pub object_lock_mode: ::std::option::Option<crate::types::ObjectLockMode>,
     /// <p>Indicates whether an object stored in Amazon S3 has an active legal hold.</p>
     #[doc(hidden)]
-    pub object_lock_legal_hold_status:
-        ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
+    pub object_lock_legal_hold_status: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
     /// <p>The date and time when Object Lock is configured to expire.</p>
     #[doc(hidden)]
     pub object_lock_retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -274,11 +271,7 @@ impl WriteGetObjectResponseInput {
         self.missing_meta
     }
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
     /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
@@ -286,15 +279,11 @@ impl WriteGetObjectResponseInput {
         self.object_lock_mode.as_ref()
     }
     /// <p>Indicates whether an object stored in Amazon S3 has an active legal hold.</p>
-    pub fn object_lock_legal_hold_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ObjectLockLegalHoldStatus> {
+    pub fn object_lock_legal_hold_status(&self) -> ::std::option::Option<&crate::types::ObjectLockLegalHoldStatus> {
         self.object_lock_legal_hold_status.as_ref()
     }
     /// <p>The date and time when Object Lock is configured to expire.</p>
-    pub fn object_lock_retain_until_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn object_lock_retain_until_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.object_lock_retain_until_date.as_ref()
     }
     /// <p>The count of parts this object has.</p>
@@ -314,9 +303,7 @@ impl WriteGetObjectResponseInput {
         self.restore.as_deref()
     }
     /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
-    pub fn server_side_encryption(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServerSideEncryption> {
+    pub fn server_side_encryption(&self) -> ::std::option::Option<&crate::types::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
     /// <p>Encryption algorithm used if server-side encryption with a customer-provided encryption key was specified for object stored in Amazon S3.</p>
@@ -378,14 +365,8 @@ impl ::std::fmt::Debug for WriteGetObjectResponseInput {
         formatter.field("missing_meta", &self.missing_meta);
         formatter.field("metadata", &self.metadata);
         formatter.field("object_lock_mode", &self.object_lock_mode);
-        formatter.field(
-            "object_lock_legal_hold_status",
-            &self.object_lock_legal_hold_status,
-        );
-        formatter.field(
-            "object_lock_retain_until_date",
-            &self.object_lock_retain_until_date,
-        );
+        formatter.field("object_lock_legal_hold_status", &self.object_lock_legal_hold_status);
+        formatter.field("object_lock_retain_until_date", &self.object_lock_retain_until_date);
         formatter.field("parts_count", &self.parts_count);
         formatter.field("replication_status", &self.replication_status);
         formatter.field("request_charged", &self.request_charged);
@@ -403,9 +384,7 @@ impl ::std::fmt::Debug for WriteGetObjectResponseInput {
 }
 impl WriteGetObjectResponseInput {
     /// Creates a new builder-style object to manufacture [`WriteGetObjectResponseInput`](crate::operation::write_get_object_response::WriteGetObjectResponseInput).
-    pub fn builder(
-    ) -> crate::operation::write_get_object_response::builders::WriteGetObjectResponseInputBuilder
-    {
+    pub fn builder() -> crate::operation::write_get_object_response::builders::WriteGetObjectResponseInputBuilder {
         crate::operation::write_get_object_response::builders::WriteGetObjectResponseInputBuilder::default()
     }
 }
@@ -438,12 +417,9 @@ pub struct WriteGetObjectResponseInputBuilder {
     pub(crate) expiration: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) missing_meta: ::std::option::Option<i32>,
-    pub(crate) metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) object_lock_mode: ::std::option::Option<crate::types::ObjectLockMode>,
-    pub(crate) object_lock_legal_hold_status:
-        ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
+    pub(crate) object_lock_legal_hold_status: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
     pub(crate) object_lock_retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) parts_count: ::std::option::Option<i32>,
     pub(crate) replication_status: ::std::option::Option<crate::types::ReplicationStatus>,
@@ -460,18 +436,12 @@ pub struct WriteGetObjectResponseInputBuilder {
 }
 impl WriteGetObjectResponseInputBuilder {
     /// <p>Route prefix to the HTTP URL generated.</p>
-    pub fn request_route(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_route(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_route = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Route prefix to the HTTP URL generated.</p>
-    pub fn set_request_route(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_route(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_route = input;
         self
     }
@@ -480,18 +450,12 @@ impl WriteGetObjectResponseInputBuilder {
         &self.request_route
     }
     /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end user <code>GetObject</code> request.</p>
-    pub fn request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end user <code>GetObject</code> request.</p>
-    pub fn set_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_token = input;
         self
     }
@@ -505,10 +469,7 @@ impl WriteGetObjectResponseInputBuilder {
         self
     }
     /// <p>The object data.</p>
-    pub fn set_body(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
@@ -597,10 +558,7 @@ impl WriteGetObjectResponseInputBuilder {
     /// <code>GetObject</code> call. Cannot be used with a successful
     /// <code>StatusCode</code> header or when the transformed object is provided in body.
     /// </message></p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
@@ -609,10 +567,7 @@ impl WriteGetObjectResponseInputBuilder {
     /// <code>GetObject</code> call. Cannot be used with a successful
     /// <code>StatusCode</code> header or when the transformed object is provided in body.
     /// </message></p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -625,18 +580,12 @@ impl WriteGetObjectResponseInputBuilder {
         &self.error_message
     }
     /// <p>Indicates that a range of bytes was specified.</p>
-    pub fn accept_ranges(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_ranges(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_ranges = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates that a range of bytes was specified.</p>
-    pub fn set_accept_ranges(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_ranges(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_ranges = input;
         self
     }
@@ -645,18 +594,12 @@ impl WriteGetObjectResponseInputBuilder {
         &self.accept_ranges
     }
     /// <p>Specifies caching behavior along the request/reply chain.</p>
-    pub fn cache_control(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_control = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies caching behavior along the request/reply chain.</p>
-    pub fn set_cache_control(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_control = input;
         self
     }
@@ -665,18 +608,12 @@ impl WriteGetObjectResponseInputBuilder {
         &self.cache_control
     }
     /// <p>Specifies presentational information for the object.</p>
-    pub fn content_disposition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_disposition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_disposition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies presentational information for the object.</p>
-    pub fn set_content_disposition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_disposition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_disposition = input;
         self
     }
@@ -685,18 +622,12 @@ impl WriteGetObjectResponseInputBuilder {
         &self.content_disposition
     }
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
-    pub fn content_encoding(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_encoding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_encoding = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
-    pub fn set_content_encoding(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_encoding = input;
         self
     }
@@ -705,18 +636,12 @@ impl WriteGetObjectResponseInputBuilder {
         &self.content_encoding
     }
     /// <p>The language the content is in.</p>
-    pub fn content_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_language = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The language the content is in.</p>
-    pub fn set_content_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_language = input;
         self
     }
@@ -739,18 +664,12 @@ impl WriteGetObjectResponseInputBuilder {
         &self.content_length
     }
     /// <p>The portion of the object returned in the response.</p>
-    pub fn content_range(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The portion of the object returned in the response.</p>
-    pub fn set_content_range(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_range = input;
         self
     }
@@ -775,20 +694,14 @@ impl WriteGetObjectResponseInputBuilder {
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32 checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
     /// <p></p>
-    pub fn checksum_crc32(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn checksum_crc32(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum_crc32 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32 checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
     /// <p></p>
-    pub fn set_checksum_crc32(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_checksum_crc32(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum_crc32 = input;
         self
     }
@@ -800,19 +713,13 @@ impl WriteGetObjectResponseInputBuilder {
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32C checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
-    pub fn checksum_crc32_c(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn checksum_crc32_c(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum_crc32_c = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32C checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
-    pub fn set_checksum_crc32_c(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_checksum_crc32_c(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum_crc32_c = input;
         self
     }
@@ -823,19 +730,13 @@ impl WriteGetObjectResponseInputBuilder {
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
-    pub fn checksum_sha1(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn checksum_sha1(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum_sha1 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
-    pub fn set_checksum_sha1(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_checksum_sha1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum_sha1 = input;
         self
     }
@@ -846,19 +747,13 @@ impl WriteGetObjectResponseInputBuilder {
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 256-bit SHA-256 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
-    pub fn checksum_sha256(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn checksum_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum_sha256 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 256-bit SHA-256 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
-    pub fn set_checksum_sha256(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_checksum_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum_sha256 = input;
         self
     }
@@ -901,10 +796,7 @@ impl WriteGetObjectResponseInputBuilder {
         self
     }
     /// <p>The date and time at which the object is no longer cacheable.</p>
-    pub fn set_expires(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires = input;
         self
     }
@@ -932,10 +824,7 @@ impl WriteGetObjectResponseInputBuilder {
         self
     }
     /// <p>The date and time that the object was last modified.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }
@@ -962,32 +851,19 @@ impl WriteGetObjectResponseInputBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
@@ -996,10 +872,7 @@ impl WriteGetObjectResponseInputBuilder {
         self
     }
     /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
-    pub fn set_object_lock_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLockMode>,
-    ) -> Self {
+    pub fn set_object_lock_mode(mut self, input: ::std::option::Option<crate::types::ObjectLockMode>) -> Self {
         self.object_lock_mode = input;
         self
     }
@@ -1008,25 +881,17 @@ impl WriteGetObjectResponseInputBuilder {
         &self.object_lock_mode
     }
     /// <p>Indicates whether an object stored in Amazon S3 has an active legal hold.</p>
-    pub fn object_lock_legal_hold_status(
-        mut self,
-        input: crate::types::ObjectLockLegalHoldStatus,
-    ) -> Self {
+    pub fn object_lock_legal_hold_status(mut self, input: crate::types::ObjectLockLegalHoldStatus) -> Self {
         self.object_lock_legal_hold_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether an object stored in Amazon S3 has an active legal hold.</p>
-    pub fn set_object_lock_legal_hold_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
-    ) -> Self {
+    pub fn set_object_lock_legal_hold_status(mut self, input: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>) -> Self {
         self.object_lock_legal_hold_status = input;
         self
     }
     /// <p>Indicates whether an object stored in Amazon S3 has an active legal hold.</p>
-    pub fn get_object_lock_legal_hold_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectLockLegalHoldStatus> {
+    pub fn get_object_lock_legal_hold_status(&self) -> &::std::option::Option<crate::types::ObjectLockLegalHoldStatus> {
         &self.object_lock_legal_hold_status
     }
     /// <p>The date and time when Object Lock is configured to expire.</p>
@@ -1035,17 +900,12 @@ impl WriteGetObjectResponseInputBuilder {
         self
     }
     /// <p>The date and time when Object Lock is configured to expire.</p>
-    pub fn set_object_lock_retain_until_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_object_lock_retain_until_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.object_lock_retain_until_date = input;
         self
     }
     /// <p>The date and time when Object Lock is configured to expire.</p>
-    pub fn get_object_lock_retain_until_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_object_lock_retain_until_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.object_lock_retain_until_date
     }
     /// <p>The count of parts this object has.</p>
@@ -1068,17 +928,12 @@ impl WriteGetObjectResponseInputBuilder {
         self
     }
     /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
-    pub fn set_replication_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationStatus>,
-    ) -> Self {
+    pub fn set_replication_status(mut self, input: ::std::option::Option<crate::types::ReplicationStatus>) -> Self {
         self.replication_status = input;
         self
     }
     /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
-    pub fn get_replication_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationStatus> {
+    pub fn get_replication_status(&self) -> &::std::option::Option<crate::types::ReplicationStatus> {
         &self.replication_status
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -1087,10 +942,7 @@ impl WriteGetObjectResponseInputBuilder {
         self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    pub fn set_request_charged(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestCharged>,
-    ) -> Self {
+    pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
         self.request_charged = input;
         self
     }
@@ -1118,32 +970,21 @@ impl WriteGetObjectResponseInputBuilder {
         self
     }
     /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
-    pub fn set_server_side_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerSideEncryption>,
-    ) -> Self {
+    pub fn set_server_side_encryption(mut self, input: ::std::option::Option<crate::types::ServerSideEncryption>) -> Self {
         self.server_side_encryption = input;
         self
     }
     /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
-    pub fn get_server_side_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerSideEncryption> {
+    pub fn get_server_side_encryption(&self) -> &::std::option::Option<crate::types::ServerSideEncryption> {
         &self.server_side_encryption
     }
     /// <p>Encryption algorithm used if server-side encryption with a customer-provided encryption key was specified for object stored in Amazon S3.</p>
-    pub fn sse_customer_algorithm(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_customer_algorithm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sse_customer_algorithm = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Encryption algorithm used if server-side encryption with a customer-provided encryption key was specified for object stored in Amazon S3.</p>
-    pub fn set_sse_customer_algorithm(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_customer_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sse_customer_algorithm = input;
         self
     }
@@ -1152,18 +993,12 @@ impl WriteGetObjectResponseInputBuilder {
         &self.sse_customer_algorithm
     }
     /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
-    pub fn ssekms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssekms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssekms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
-    pub fn set_ssekms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssekms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssekms_key_id = input;
         self
     }
@@ -1172,18 +1007,12 @@ impl WriteGetObjectResponseInputBuilder {
         &self.ssekms_key_id
     }
     /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data using server-side encryption with customer-provided encryption keys (SSE-C)</a>.</p>
-    pub fn sse_customer_key_md5(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_customer_key_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sse_customer_key_md5 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data using server-side encryption with customer-provided encryption keys (SSE-C)</a>.</p>
-    pub fn set_sse_customer_key_md5(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_customer_key_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sse_customer_key_md5 = input;
         self
     }
@@ -1199,10 +1028,7 @@ impl WriteGetObjectResponseInputBuilder {
     }
     /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
-    pub fn set_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageClass>,
-    ) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::StorageClass>) -> Self {
         self.storage_class = input;
         self
     }
@@ -1260,50 +1086,48 @@ impl WriteGetObjectResponseInputBuilder {
         crate::operation::write_get_object_response::WriteGetObjectResponseInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::write_get_object_response::WriteGetObjectResponseInput {
-                request_route: self.request_route,
-                request_token: self.request_token,
-                body: self.body.unwrap_or_default(),
-                status_code: self.status_code,
-                error_code: self.error_code,
-                error_message: self.error_message,
-                accept_ranges: self.accept_ranges,
-                cache_control: self.cache_control,
-                content_disposition: self.content_disposition,
-                content_encoding: self.content_encoding,
-                content_language: self.content_language,
-                content_length: self.content_length,
-                content_range: self.content_range,
-                content_type: self.content_type,
-                checksum_crc32: self.checksum_crc32,
-                checksum_crc32_c: self.checksum_crc32_c,
-                checksum_sha1: self.checksum_sha1,
-                checksum_sha256: self.checksum_sha256,
-                delete_marker: self.delete_marker,
-                e_tag: self.e_tag,
-                expires: self.expires,
-                expiration: self.expiration,
-                last_modified: self.last_modified,
-                missing_meta: self.missing_meta,
-                metadata: self.metadata,
-                object_lock_mode: self.object_lock_mode,
-                object_lock_legal_hold_status: self.object_lock_legal_hold_status,
-                object_lock_retain_until_date: self.object_lock_retain_until_date,
-                parts_count: self.parts_count,
-                replication_status: self.replication_status,
-                request_charged: self.request_charged,
-                restore: self.restore,
-                server_side_encryption: self.server_side_encryption,
-                sse_customer_algorithm: self.sse_customer_algorithm,
-                ssekms_key_id: self.ssekms_key_id,
-                sse_customer_key_md5: self.sse_customer_key_md5,
-                storage_class: self.storage_class,
-                tag_count: self.tag_count,
-                version_id: self.version_id,
-                bucket_key_enabled: self.bucket_key_enabled,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::write_get_object_response::WriteGetObjectResponseInput {
+            request_route: self.request_route,
+            request_token: self.request_token,
+            body: self.body.unwrap_or_default(),
+            status_code: self.status_code,
+            error_code: self.error_code,
+            error_message: self.error_message,
+            accept_ranges: self.accept_ranges,
+            cache_control: self.cache_control,
+            content_disposition: self.content_disposition,
+            content_encoding: self.content_encoding,
+            content_language: self.content_language,
+            content_length: self.content_length,
+            content_range: self.content_range,
+            content_type: self.content_type,
+            checksum_crc32: self.checksum_crc32,
+            checksum_crc32_c: self.checksum_crc32_c,
+            checksum_sha1: self.checksum_sha1,
+            checksum_sha256: self.checksum_sha256,
+            delete_marker: self.delete_marker,
+            e_tag: self.e_tag,
+            expires: self.expires,
+            expiration: self.expiration,
+            last_modified: self.last_modified,
+            missing_meta: self.missing_meta,
+            metadata: self.metadata,
+            object_lock_mode: self.object_lock_mode,
+            object_lock_legal_hold_status: self.object_lock_legal_hold_status,
+            object_lock_retain_until_date: self.object_lock_retain_until_date,
+            parts_count: self.parts_count,
+            replication_status: self.replication_status,
+            request_charged: self.request_charged,
+            restore: self.restore,
+            server_side_encryption: self.server_side_encryption,
+            sse_customer_algorithm: self.sse_customer_algorithm,
+            ssekms_key_id: self.ssekms_key_id,
+            sse_customer_key_md5: self.sse_customer_key_md5,
+            storage_class: self.storage_class,
+            tag_count: self.tag_count,
+            version_id: self.version_id,
+            bucket_key_enabled: self.bucket_key_enabled,
+        })
     }
 }
 impl ::std::fmt::Debug for WriteGetObjectResponseInputBuilder {
@@ -1335,14 +1159,8 @@ impl ::std::fmt::Debug for WriteGetObjectResponseInputBuilder {
         formatter.field("missing_meta", &self.missing_meta);
         formatter.field("metadata", &self.metadata);
         formatter.field("object_lock_mode", &self.object_lock_mode);
-        formatter.field(
-            "object_lock_legal_hold_status",
-            &self.object_lock_legal_hold_status,
-        );
-        formatter.field(
-            "object_lock_retain_until_date",
-            &self.object_lock_retain_until_date,
-        );
+        formatter.field("object_lock_legal_hold_status", &self.object_lock_legal_hold_status);
+        formatter.field("object_lock_retain_until_date", &self.object_lock_retain_until_date);
         formatter.field("parts_count", &self.parts_count);
         formatter.field("replication_status", &self.replication_status);
         formatter.field("request_charged", &self.request_charged);

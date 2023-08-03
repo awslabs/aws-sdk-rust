@@ -29,18 +29,14 @@ impl GetRoomSkillParameterInput {
 }
 impl GetRoomSkillParameterInput {
     /// Creates a new builder-style object to manufacture [`GetRoomSkillParameterInput`](crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput).
-    pub fn builder(
-    ) -> crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterInputBuilder {
         crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRoomSkillParameterInput`](crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRoomSkillParameterInputBuilder {
     pub(crate) room_arn: ::std::option::Option<::std::string::String>,
     pub(crate) skill_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +72,12 @@ impl GetRoomSkillParameterInputBuilder {
         &self.skill_id
     }
     /// <p>The room skill parameter key for which to get details. Required.</p>
-    pub fn parameter_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The room skill parameter key for which to get details. Required.</p>
-    pub fn set_parameter_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_key = input;
         self
     }
@@ -98,16 +88,12 @@ impl GetRoomSkillParameterInputBuilder {
     /// Consumes the builder and constructs a [`GetRoomSkillParameterInput`](crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput {
-                room_arn: self.room_arn,
-                skill_id: self.skill_id,
-                parameter_key: self.parameter_key,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput {
+            room_arn: self.room_arn,
+            skill_id: self.skill_id,
+            parameter_key: self.parameter_key,
+        })
     }
 }

@@ -12,21 +12,16 @@ pub struct AwsEc2NetworkInterfaceDetails {
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Security groups for the network interface.</p>
     #[doc(hidden)]
-    pub security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceSecurityGroup>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceSecurityGroup>>,
     /// <p>Indicates whether traffic to or from the instance is validated.</p>
     #[doc(hidden)]
     pub source_dest_check: bool,
     /// <p>The IPv6 addresses associated with the network interface.</p>
     #[doc(hidden)]
-    pub ip_v6_addresses: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail>,
-    >,
+    pub ip_v6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail>>,
     /// <p>The private IPv4 addresses associated with the network interface.</p>
     #[doc(hidden)]
-    pub private_ip_addresses: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail>,
-    >,
+    pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail>>,
     /// <p>The public DNS name of the network interface.</p>
     #[doc(hidden)]
     pub public_dns_name: ::std::option::Option<::std::string::String>,
@@ -36,9 +31,7 @@ pub struct AwsEc2NetworkInterfaceDetails {
 }
 impl AwsEc2NetworkInterfaceDetails {
     /// <p>The network interface attachment.</p>
-    pub fn attachment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2NetworkInterfaceAttachment> {
+    pub fn attachment(&self) -> ::std::option::Option<&crate::types::AwsEc2NetworkInterfaceAttachment> {
         self.attachment.as_ref()
     }
     /// <p>The ID of the network interface.</p>
@@ -46,9 +39,7 @@ impl AwsEc2NetworkInterfaceDetails {
         self.network_interface_id.as_deref()
     }
     /// <p>Security groups for the network interface.</p>
-    pub fn security_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEc2NetworkInterfaceSecurityGroup]> {
+    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::AwsEc2NetworkInterfaceSecurityGroup]> {
         self.security_groups.as_deref()
     }
     /// <p>Indicates whether traffic to or from the instance is validated.</p>
@@ -56,15 +47,11 @@ impl AwsEc2NetworkInterfaceDetails {
         self.source_dest_check
     }
     /// <p>The IPv6 addresses associated with the network interface.</p>
-    pub fn ip_v6_addresses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail]> {
+    pub fn ip_v6_addresses(&self) -> ::std::option::Option<&[crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail]> {
         self.ip_v6_addresses.as_deref()
     }
     /// <p>The private IPv4 addresses associated with the network interface.</p>
-    pub fn private_ip_addresses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail]> {
+    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail]> {
         self.private_ip_addresses.as_deref()
     }
     /// <p>The public DNS name of the network interface.</p>
@@ -85,21 +72,14 @@ impl AwsEc2NetworkInterfaceDetails {
 
 /// A builder for [`AwsEc2NetworkInterfaceDetails`](crate::types::AwsEc2NetworkInterfaceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkInterfaceDetailsBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::AwsEc2NetworkInterfaceAttachment>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
-    pub(crate) security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceSecurityGroup>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceSecurityGroup>>,
     pub(crate) source_dest_check: ::std::option::Option<bool>,
-    pub(crate) ip_v6_addresses: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail>,
-    >,
-    pub(crate) private_ip_addresses: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail>,
-    >,
+    pub(crate) ip_v6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail>>,
+    pub(crate) private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail>>,
     pub(crate) public_dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,
 }
@@ -110,32 +90,21 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
         self
     }
     /// <p>The network interface attachment.</p>
-    pub fn set_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEc2NetworkInterfaceAttachment>,
-    ) -> Self {
+    pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::AwsEc2NetworkInterfaceAttachment>) -> Self {
         self.attachment = input;
         self
     }
     /// <p>The network interface attachment.</p>
-    pub fn get_attachment(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2NetworkInterfaceAttachment> {
+    pub fn get_attachment(&self) -> &::std::option::Option<crate::types::AwsEc2NetworkInterfaceAttachment> {
         &self.attachment
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -148,30 +117,19 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>Security groups for the network interface.</p>
-    pub fn security_groups(
-        mut self,
-        input: crate::types::AwsEc2NetworkInterfaceSecurityGroup,
-    ) -> Self {
+    pub fn security_groups(mut self, input: crate::types::AwsEc2NetworkInterfaceSecurityGroup) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input);
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>Security groups for the network interface.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceSecurityGroup>,
-        >,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceSecurityGroup>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>Security groups for the network interface.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceSecurityGroup>>
-    {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceSecurityGroup>> {
         &self.security_groups
     }
     /// <p>Indicates whether traffic to or from the instance is validated.</p>
@@ -193,10 +151,7 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
     /// To override the contents of this collection use [`set_ip_v6_addresses`](Self::set_ip_v6_addresses).
     ///
     /// <p>The IPv6 addresses associated with the network interface.</p>
-    pub fn ip_v6_addresses(
-        mut self,
-        input: crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail,
-    ) -> Self {
+    pub fn ip_v6_addresses(mut self, input: crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail) -> Self {
         let mut v = self.ip_v6_addresses.unwrap_or_default();
         v.push(input);
         self.ip_v6_addresses = ::std::option::Option::Some(v);
@@ -205,19 +160,13 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
     /// <p>The IPv6 addresses associated with the network interface.</p>
     pub fn set_ip_v6_addresses(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail>>,
     ) -> Self {
         self.ip_v6_addresses = input;
         self
     }
     /// <p>The IPv6 addresses associated with the network interface.</p>
-    pub fn get_ip_v6_addresses(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail>,
-    > {
+    pub fn get_ip_v6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail>> {
         &self.ip_v6_addresses
     }
     /// Appends an item to `private_ip_addresses`.
@@ -225,10 +174,7 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
     ///
     /// <p>The private IPv4 addresses associated with the network interface.</p>
-    pub fn private_ip_addresses(
-        mut self,
-        input: crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail,
-    ) -> Self {
+    pub fn private_ip_addresses(mut self, input: crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail) -> Self {
         let mut v = self.private_ip_addresses.unwrap_or_default();
         v.push(input);
         self.private_ip_addresses = ::std::option::Option::Some(v);
@@ -237,34 +183,22 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
     /// <p>The private IPv4 addresses associated with the network interface.</p>
     pub fn set_private_ip_addresses(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail>>,
     ) -> Self {
         self.private_ip_addresses = input;
         self
     }
     /// <p>The private IPv4 addresses associated with the network interface.</p>
-    pub fn get_private_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail>,
-    > {
+    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail>> {
         &self.private_ip_addresses
     }
     /// <p>The public DNS name of the network interface.</p>
-    pub fn public_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public DNS name of the network interface.</p>
-    pub fn set_public_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_dns_name = input;
         self
     }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for StartDataIngestionJobOutput {
 }
 impl StartDataIngestionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDataIngestionJobOutput`](crate::operation::start_data_ingestion_job::StartDataIngestionJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobOutputBuilder {
         crate::operation::start_data_ingestion_job::builders::StartDataIngestionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDataIngestionJobOutput`](crate::operation::start_data_ingestion_job::StartDataIngestionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDataIngestionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::IngestionJobStatus>,
@@ -66,10 +62,7 @@ impl StartDataIngestionJobOutputBuilder {
         self
     }
     /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionJobStatus>) -> Self {
         self.status = input;
         self
     }

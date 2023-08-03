@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`outputs(Option<Vec<StepOutput>>)`](crate::operation::get_template_step::GetTemplateStepOutput::outputs): <p>The outputs of the step.</p>
     ///   - [`step_automation_configuration(Option<StepAutomationConfiguration>)`](crate::operation::get_template_step::GetTemplateStepOutput::step_automation_configuration): <p>The custom script to run tests on source or target environments.</p>
     /// - On failure, responds with [`SdkError<GetTemplateStepError>`](crate::operation::get_template_step::GetTemplateStepError)
-    pub fn get_template_step(
-        &self,
-    ) -> crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder {
-        crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_template_step(&self) -> crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder {
+        crate::operation::get_template_step::builders::GetTemplateStepFluentBuilder::new(self.handle.clone())
     }
 }

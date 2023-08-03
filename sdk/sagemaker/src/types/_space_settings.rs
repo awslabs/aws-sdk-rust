@@ -13,15 +13,11 @@ pub struct SpaceSettings {
 }
 impl SpaceSettings {
     /// <p>The JupyterServer app settings.</p>
-    pub fn jupyter_server_app_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JupyterServerAppSettings> {
+    pub fn jupyter_server_app_settings(&self) -> ::std::option::Option<&crate::types::JupyterServerAppSettings> {
         self.jupyter_server_app_settings.as_ref()
     }
     /// <p>The KernelGateway app settings.</p>
-    pub fn kernel_gateway_app_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KernelGatewayAppSettings> {
+    pub fn kernel_gateway_app_settings(&self) -> ::std::option::Option<&crate::types::KernelGatewayAppSettings> {
         self.kernel_gateway_app_settings.as_ref()
     }
 }
@@ -34,58 +30,38 @@ impl SpaceSettings {
 
 /// A builder for [`SpaceSettings`](crate::types::SpaceSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpaceSettingsBuilder {
-    pub(crate) jupyter_server_app_settings:
-        ::std::option::Option<crate::types::JupyterServerAppSettings>,
-    pub(crate) kernel_gateway_app_settings:
-        ::std::option::Option<crate::types::KernelGatewayAppSettings>,
+    pub(crate) jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
+    pub(crate) kernel_gateway_app_settings: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
 }
 impl SpaceSettingsBuilder {
     /// <p>The JupyterServer app settings.</p>
-    pub fn jupyter_server_app_settings(
-        mut self,
-        input: crate::types::JupyterServerAppSettings,
-    ) -> Self {
+    pub fn jupyter_server_app_settings(mut self, input: crate::types::JupyterServerAppSettings) -> Self {
         self.jupyter_server_app_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The JupyterServer app settings.</p>
-    pub fn set_jupyter_server_app_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::JupyterServerAppSettings>,
-    ) -> Self {
+    pub fn set_jupyter_server_app_settings(mut self, input: ::std::option::Option<crate::types::JupyterServerAppSettings>) -> Self {
         self.jupyter_server_app_settings = input;
         self
     }
     /// <p>The JupyterServer app settings.</p>
-    pub fn get_jupyter_server_app_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::JupyterServerAppSettings> {
+    pub fn get_jupyter_server_app_settings(&self) -> &::std::option::Option<crate::types::JupyterServerAppSettings> {
         &self.jupyter_server_app_settings
     }
     /// <p>The KernelGateway app settings.</p>
-    pub fn kernel_gateway_app_settings(
-        mut self,
-        input: crate::types::KernelGatewayAppSettings,
-    ) -> Self {
+    pub fn kernel_gateway_app_settings(mut self, input: crate::types::KernelGatewayAppSettings) -> Self {
         self.kernel_gateway_app_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The KernelGateway app settings.</p>
-    pub fn set_kernel_gateway_app_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
-    ) -> Self {
+    pub fn set_kernel_gateway_app_settings(mut self, input: ::std::option::Option<crate::types::KernelGatewayAppSettings>) -> Self {
         self.kernel_gateway_app_settings = input;
         self
     }
     /// <p>The KernelGateway app settings.</p>
-    pub fn get_kernel_gateway_app_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::KernelGatewayAppSettings> {
+    pub fn get_kernel_gateway_app_settings(&self) -> &::std::option::Option<crate::types::KernelGatewayAppSettings> {
         &self.kernel_gateway_app_settings
     }
     /// Consumes the builder and constructs a [`SpaceSettings`](crate::types::SpaceSettings).

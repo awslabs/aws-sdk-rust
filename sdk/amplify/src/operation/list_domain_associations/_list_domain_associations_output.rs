@@ -6,8 +6,7 @@
 pub struct ListDomainAssociationsOutput {
     /// <p> A list of domain associations. </p>
     #[doc(hidden)]
-    pub domain_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DomainAssociation>>,
+    pub domain_associations: ::std::option::Option<::std::vec::Vec<crate::types::DomainAssociation>>,
     /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -30,21 +29,16 @@ impl ::aws_http::request_id::RequestId for ListDomainAssociationsOutput {
 }
 impl ListDomainAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainAssociationsOutput`](crate::operation::list_domain_associations::ListDomainAssociationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_domain_associations::builders::ListDomainAssociationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_domain_associations::builders::ListDomainAssociationsOutputBuilder {
         crate::operation::list_domain_associations::builders::ListDomainAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDomainAssociationsOutput`](crate::operation::list_domain_associations::ListDomainAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainAssociationsOutputBuilder {
-    pub(crate) domain_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DomainAssociation>>,
+    pub(crate) domain_associations: ::std::option::Option<::std::vec::Vec<crate::types::DomainAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +55,12 @@ impl ListDomainAssociationsOutputBuilder {
         self
     }
     /// <p> A list of domain associations. </p>
-    pub fn set_domain_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainAssociation>>,
-    ) -> Self {
+    pub fn set_domain_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainAssociation>>) -> Self {
         self.domain_associations = input;
         self
     }
     /// <p> A list of domain associations. </p>
-    pub fn get_domain_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainAssociation>> {
+    pub fn get_domain_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainAssociation>> {
         &self.domain_associations
     }
     /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>

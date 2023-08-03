@@ -39,10 +39,7 @@ impl CreateDataIntegrationFluentBuilder {
         }
     }
     /// Access the CreateDataIntegration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_data_integration::builders::CreateDataIntegrationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_data_integration::builders::CreateDataIntegrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl CreateDataIntegrationFluentBuilder {
             crate::operation::create_data_integration::CreateDataIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_integration::CreateDataIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_integration::CreateDataIntegrationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl CreateDataIntegrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl CreateDataIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_integration::CreateDataIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_integration::CreateDataIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_integration::CreateDataIntegrationError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl CreateDataIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_integration::CreateDataIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_integration::CreateDataIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_integration::CreateDataIntegrationError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl CreateDataIntegrationFluentBuilder {
             crate::operation::create_data_integration::CreateDataIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_integration::CreateDataIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_integration::CreateDataIntegrationError>,
     > {
         self.customize_middleware().await
     }
@@ -187,17 +173,12 @@ impl CreateDataIntegrationFluentBuilder {
         self
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    pub fn set_schedule_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleConfiguration>,
-    ) -> Self {
+    pub fn set_schedule_config(mut self, input: ::std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
         self.inner = self.inner.set_schedule_config(input);
         self
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    pub fn get_schedule_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
+    pub fn get_schedule_config(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
         self.inner.get_schedule_config()
     }
     /// Adds a key-value pair to `Tags`.
@@ -205,30 +186,17 @@ impl CreateDataIntegrationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -251,17 +219,12 @@ impl CreateDataIntegrationFluentBuilder {
         self
     }
     /// <p>The configuration for what files should be pulled from the source.</p>
-    pub fn set_file_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FileConfiguration>,
-    ) -> Self {
+    pub fn set_file_configuration(mut self, input: ::std::option::Option<crate::types::FileConfiguration>) -> Self {
         self.inner = self.inner.set_file_configuration(input);
         self
     }
     /// <p>The configuration for what files should be pulled from the source.</p>
-    pub fn get_file_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FileConfiguration> {
+    pub fn get_file_configuration(&self) -> &::std::option::Option<crate::types::FileConfiguration> {
         self.inner.get_file_configuration()
     }
     /// Adds a key-value pair to `ObjectConfiguration`.
@@ -272,10 +235,7 @@ impl CreateDataIntegrationFluentBuilder {
     pub fn object_configuration(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::string::String>,
-        >,
+        v: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.object_configuration(k.into(), v);
         self
@@ -286,10 +246,7 @@ impl CreateDataIntegrationFluentBuilder {
         input: ::std::option::Option<
             ::std::collections::HashMap<
                 ::std::string::String,
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::vec::Vec<::std::string::String>,
-                >,
+                ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
             >,
         >,
     ) -> Self {
@@ -302,10 +259,7 @@ impl CreateDataIntegrationFluentBuilder {
     ) -> &::std::option::Option<
         ::std::collections::HashMap<
             ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
         >,
     > {
         self.inner.get_object_configuration()

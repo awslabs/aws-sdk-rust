@@ -55,10 +55,7 @@ impl ::std::fmt::Debug for PipeSourceManagedStreamingKafkaParameters {
         formatter.field("topic_name", &"*** Sensitive Data Redacted ***");
         formatter.field("starting_position", &self.starting_position);
         formatter.field("batch_size", &self.batch_size);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
+        formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
         formatter.field("consumer_group_id", &"*** Sensitive Data Redacted ***");
         formatter.field("credentials", &self.credentials);
         formatter.finish()
@@ -103,10 +100,7 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
         self
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn set_starting_position(
-        mut self,
-        input: ::std::option::Option<crate::types::MskStartPosition>,
-    ) -> Self {
+    pub fn set_starting_position(mut self, input: ::std::option::Option<crate::types::MskStartPosition>) -> Self {
         self.starting_position = input;
         self
     }
@@ -134,10 +128,7 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn set_maximum_batching_window_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_batching_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_batching_window_in_seconds = input;
         self
     }
@@ -146,18 +137,12 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
         &self.maximum_batching_window_in_seconds
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn consumer_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumer_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn set_consumer_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_consumer_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.consumer_group_id = input;
         self
     }
@@ -171,10 +156,7 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
         self
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::MskAccessCredentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::MskAccessCredentials>) -> Self {
         self.credentials = input;
         self
     }
@@ -200,10 +182,7 @@ impl ::std::fmt::Debug for PipeSourceManagedStreamingKafkaParametersBuilder {
         formatter.field("topic_name", &"*** Sensitive Data Redacted ***");
         formatter.field("starting_position", &self.starting_position);
         formatter.field("batch_size", &self.batch_size);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
+        formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
         formatter.field("consumer_group_id", &"*** Sensitive Data Redacted ***");
         formatter.field("credentials", &self.credentials);
         formatter.finish()

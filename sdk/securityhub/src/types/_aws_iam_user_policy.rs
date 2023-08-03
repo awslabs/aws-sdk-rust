@@ -23,9 +23,7 @@ impl AwsIamUserPolicy {
 
 /// A builder for [`AwsIamUserPolicy`](crate::types::AwsIamUserPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIamUserPolicyBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
 }

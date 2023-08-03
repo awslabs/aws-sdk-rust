@@ -45,15 +45,12 @@ impl ValidStorageOptions {
 
 /// A builder for [`ValidStorageOptions`](crate::types::ValidStorageOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidStorageOptionsBuilder {
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) storage_size: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     pub(crate) provisioned_iops: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
-    pub(crate) iops_to_storage_ratio:
-        ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
+    pub(crate) iops_to_storage_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
 }
 impl ValidStorageOptionsBuilder {
     /// <p>The valid storage types for your DB instance. For example, gp2, io1.</p>
@@ -82,10 +79,7 @@ impl ValidStorageOptionsBuilder {
         self
     }
     /// <p>The valid range of storage in gibibytes. For example, 100 to 16384.</p>
-    pub fn set_storage_size(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
-    ) -> Self {
+    pub fn set_storage_size(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Range>>) -> Self {
         self.storage_size = input;
         self
     }
@@ -105,17 +99,12 @@ impl ValidStorageOptionsBuilder {
         self
     }
     /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
-    pub fn set_provisioned_iops(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
-    ) -> Self {
+    pub fn set_provisioned_iops(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Range>>) -> Self {
         self.provisioned_iops = input;
         self
     }
     /// <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
-    pub fn get_provisioned_iops(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+    pub fn get_provisioned_iops(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
         &self.provisioned_iops
     }
     /// Appends an item to `iops_to_storage_ratio`.
@@ -130,17 +119,12 @@ impl ValidStorageOptionsBuilder {
         self
     }
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
-    pub fn set_iops_to_storage_ratio(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
-    ) -> Self {
+    pub fn set_iops_to_storage_ratio(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>) -> Self {
         self.iops_to_storage_ratio = input;
         self
     }
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
-    pub fn get_iops_to_storage_ratio(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>> {
+    pub fn get_iops_to_storage_ratio(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>> {
         &self.iops_to_storage_ratio
     }
     /// Consumes the builder and constructs a [`ValidStorageOptions`](crate::types::ValidStorageOptions).

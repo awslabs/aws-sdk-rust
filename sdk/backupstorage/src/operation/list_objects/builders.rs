@@ -10,10 +10,7 @@ impl ListObjectsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_objects::ListObjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_objects::ListObjectsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_objects::ListObjectsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_objects();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListObjectsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_objects::ListObjects,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_objects::ListObjects, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_objects::ListObjectsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListObjectsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListObjectsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_objects::ListObjects,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_objects::ListObjects, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_objects::ListObjectsError>,
     > {
         self.customize_middleware().await
@@ -116,24 +104,15 @@ impl ListObjectsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_objects::paginator::ListObjectsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_objects::paginator::ListObjectsPaginator {
-        crate::operation::list_objects::paginator::ListObjectsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_objects::paginator::ListObjectsPaginator::new(self.handle, self.inner)
     }
     /// Storage job id
-    pub fn storage_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_job_id(input.into());
         self
     }
     /// Storage job id
-    pub fn set_storage_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_job_id(input);
         self
     }
@@ -142,18 +121,12 @@ impl ListObjectsFluentBuilder {
         self.inner.get_storage_job_id()
     }
     /// Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
-    pub fn starting_object_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_object_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.starting_object_name(input.into());
         self
     }
     /// Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
-    pub fn set_starting_object_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_starting_object_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_starting_object_name(input);
         self
     }
@@ -162,18 +135,12 @@ impl ListObjectsFluentBuilder {
         self.inner.get_starting_object_name()
     }
     /// Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
-    pub fn starting_object_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_object_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.starting_object_prefix(input.into());
         self
     }
     /// Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
-    pub fn set_starting_object_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_starting_object_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_starting_object_prefix(input);
         self
     }
@@ -215,10 +182,7 @@ impl ListObjectsFluentBuilder {
         self
     }
     /// (Optional) Created before filter
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }
@@ -232,10 +196,7 @@ impl ListObjectsFluentBuilder {
         self
     }
     /// (Optional) Created after filter
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }

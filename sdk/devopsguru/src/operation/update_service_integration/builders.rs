@@ -26,7 +26,7 @@ impl UpdateServiceIntegrationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceIntegrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_service_integration::builders::UpdateServiceIntegrationInputBuilder,
+    inner: crate::operation::update_service_integration::builders::UpdateServiceIntegrationInputBuilder,
 }
 impl UpdateServiceIntegrationFluentBuilder {
     /// Creates a new `UpdateServiceIntegration`.
@@ -37,10 +37,7 @@ impl UpdateServiceIntegrationFluentBuilder {
         }
     }
     /// Access the UpdateServiceIntegration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_service_integration::builders::UpdateServiceIntegrationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_service_integration::builders::UpdateServiceIntegrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateServiceIntegrationFluentBuilder {
             crate::operation::update_service_integration::UpdateServiceIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_integration::UpdateServiceIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_integration::UpdateServiceIntegrationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateServiceIntegrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateServiceIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_integration::UpdateServiceIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_integration::UpdateServiceIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_integration::UpdateServiceIntegrationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateServiceIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_integration::UpdateServiceIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_integration::UpdateServiceIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_integration::UpdateServiceIntegrationError>,
     > {
         self.send_middleware().await
     }
@@ -117,32 +105,22 @@ impl UpdateServiceIntegrationFluentBuilder {
             crate::operation::update_service_integration::UpdateServiceIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_integration::UpdateServiceIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_integration::UpdateServiceIntegrationError>,
     > {
         self.customize_middleware().await
     }
     /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
-    pub fn service_integration(
-        mut self,
-        input: crate::types::UpdateServiceIntegrationConfig,
-    ) -> Self {
+    pub fn service_integration(mut self, input: crate::types::UpdateServiceIntegrationConfig) -> Self {
         self.inner = self.inner.service_integration(input);
         self
     }
     /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
-    pub fn set_service_integration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateServiceIntegrationConfig>,
-    ) -> Self {
+    pub fn set_service_integration(mut self, input: ::std::option::Option<crate::types::UpdateServiceIntegrationConfig>) -> Self {
         self.inner = self.inner.set_service_integration(input);
         self
     }
     /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
-    pub fn get_service_integration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateServiceIntegrationConfig> {
+    pub fn get_service_integration(&self) -> &::std::option::Option<crate::types::UpdateServiceIntegrationConfig> {
         self.inner.get_service_integration()
     }
 }

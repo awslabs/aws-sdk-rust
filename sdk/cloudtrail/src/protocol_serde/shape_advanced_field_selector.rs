@@ -65,17 +65,9 @@ pub fn ser_advanced_field_selector(
 
 pub(crate) fn de_advanced_field_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AdvancedFieldSelector>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AdvancedFieldSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -85,65 +77,46 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Field" => {
-                                builder = builder.set_field(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Field" => {
+                            builder = builder.set_field(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Equals" => {
-                                builder = builder.set_equals(
-                                    crate::protocol_serde::shape_operator::de_operator(tokens)?,
-                                );
-                            }
-                            "StartsWith" => {
-                                builder = builder.set_starts_with(
-                                    crate::protocol_serde::shape_operator::de_operator(tokens)?,
-                                );
-                            }
-                            "EndsWith" => {
-                                builder = builder.set_ends_with(
-                                    crate::protocol_serde::shape_operator::de_operator(tokens)?,
-                                );
-                            }
-                            "NotEquals" => {
-                                builder = builder.set_not_equals(
-                                    crate::protocol_serde::shape_operator::de_operator(tokens)?,
-                                );
-                            }
-                            "NotStartsWith" => {
-                                builder = builder.set_not_starts_with(
-                                    crate::protocol_serde::shape_operator::de_operator(tokens)?,
-                                );
-                            }
-                            "NotEndsWith" => {
-                                builder = builder.set_not_ends_with(
-                                    crate::protocol_serde::shape_operator::de_operator(tokens)?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "Equals" => {
+                            builder = builder.set_equals(crate::protocol_serde::shape_operator::de_operator(tokens)?);
+                        }
+                        "StartsWith" => {
+                            builder = builder.set_starts_with(crate::protocol_serde::shape_operator::de_operator(tokens)?);
+                        }
+                        "EndsWith" => {
+                            builder = builder.set_ends_with(crate::protocol_serde::shape_operator::de_operator(tokens)?);
+                        }
+                        "NotEquals" => {
+                            builder = builder.set_not_equals(crate::protocol_serde::shape_operator::de_operator(tokens)?);
+                        }
+                        "NotStartsWith" => {
+                            builder = builder.set_not_starts_with(crate::protocol_serde::shape_operator::de_operator(tokens)?);
+                        }
+                        "NotEndsWith" => {
+                            builder = builder.set_not_ends_with(crate::protocol_serde::shape_operator::de_operator(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

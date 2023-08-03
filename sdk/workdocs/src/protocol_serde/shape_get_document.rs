@@ -2,8 +2,7 @@
 pub fn ser_get_document_headers(
     input: &crate::operation::get_document::GetDocumentInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.authentication_token {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_get_document_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "authentication_token",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
             builder = builder.header("Authentication", header_value);
@@ -28,148 +24,131 @@ pub fn de_get_document_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_document::GetDocumentOutput,
-    crate::operation::get_document::GetDocumentError,
-> {
+) -> std::result::Result<crate::operation::get_document::GetDocumentOutput, crate::operation::get_document::GetDocumentError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::get_document::GetDocumentError::unhandled(
-                generic,
-            ))
-        }
+        None => return Err(crate::operation::get_document::GetDocumentError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityNotExistsException" => {
-            crate::operation::get_document::GetDocumentError::EntityNotExistsException({
+        "EntityNotExistsException" => crate::operation::get_document::GetDocumentError::EntityNotExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::EntityNotExistsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_entity_not_exists_exception::de_entity_not_exists_exception_json_err(_response_body, output).map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "FailedDependencyException" => {
-            crate::operation::get_document::GetDocumentError::FailedDependencyException({
+                let mut output = crate::types::error::builders::EntityNotExistsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_entity_not_exists_exception::de_entity_not_exists_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "FailedDependencyException" => crate::operation::get_document::GetDocumentError::FailedDependencyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::FailedDependencyExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_failed_dependency_exception::de_failed_dependency_exception_json_err(_response_body, output).map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidArgumentException" => {
-            crate::operation::get_document::GetDocumentError::InvalidArgumentException({
+                let mut output = crate::types::error::builders::FailedDependencyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_failed_dependency_exception::de_failed_dependency_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArgumentException" => crate::operation::get_document::GetDocumentError::InvalidArgumentException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output).map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidPasswordException" => {
-            crate::operation::get_document::GetDocumentError::InvalidPasswordException({
+                let mut output = crate::types::error::builders::InvalidArgumentExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidPasswordException" => crate::operation::get_document::GetDocumentError::InvalidPasswordException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidPasswordExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_password_exception::de_invalid_password_exception_json_err(_response_body, output).map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::operation::get_document::GetDocumentError::ServiceUnavailableException({
+                let mut output = crate::types::error::builders::InvalidPasswordExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_password_exception::de_invalid_password_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::get_document::GetDocumentError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
-                        );
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "UnauthorizedOperationException" => {
-            crate::operation::get_document::GetDocumentError::UnauthorizedOperationException({
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedOperationException" => crate::operation::get_document::GetDocumentError::UnauthorizedOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedOperationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_operation_exception::de_unauthorized_operation_exception_json_err(_response_body, output).map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "UnauthorizedResourceAccessException" => {
-            crate::operation::get_document::GetDocumentError::UnauthorizedResourceAccessException({
+                let mut output = crate::types::error::builders::UnauthorizedOperationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_operation_exception::de_unauthorized_operation_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedResourceAccessException" => crate::operation::get_document::GetDocumentError::UnauthorizedResourceAccessException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedResourceAccessExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_resource_access_exception::de_unauthorized_resource_access_exception_json_err(_response_body, output).map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::UnauthorizedResourceAccessExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_resource_access_exception::de_unauthorized_resource_access_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::get_document::GetDocumentError::generic(generic),
     })
 }
@@ -179,19 +158,13 @@ pub fn de_get_document_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_document::GetDocumentOutput,
-    crate::operation::get_document::GetDocumentError,
-> {
+) -> std::result::Result<crate::operation::get_document::GetDocumentOutput, crate::operation::get_document::GetDocumentError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::get_document::builders::GetDocumentOutputBuilder::default();
+        let mut output = crate::operation::get_document::builders::GetDocumentOutputBuilder::default();
         output = crate::protocol_serde::shape_get_document::de_get_document(_response_body, output)
             .map_err(crate::operation::get_document::GetDocumentError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -199,51 +172,34 @@ pub fn de_get_document_http_response_with_props(
 pub(crate) fn de_get_document(
     value: &[u8],
     mut builder: crate::operation::get_document::builders::GetDocumentOutputBuilder,
-) -> Result<
-    crate::operation::get_document::builders::GetDocumentOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+) -> Result<crate::operation::get_document::builders::GetDocumentOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "CustomMetadata" => {
-                        builder = builder.set_custom_metadata(
-                            crate::protocol_serde::shape_custom_metadata_map::de_custom_metadata_map(tokens)?
-                        );
-                    }
-                    "Metadata" => {
-                        builder = builder.set_metadata(
-                            crate::protocol_serde::shape_document_metadata::de_document_metadata(
-                                tokens,
-                            )?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "CustomMetadata" => {
+                    builder = builder.set_custom_metadata(crate::protocol_serde::shape_custom_metadata_map::de_custom_metadata_map(tokens)?);
                 }
-            }
+                "Metadata" => {
+                    builder = builder.set_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens)?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

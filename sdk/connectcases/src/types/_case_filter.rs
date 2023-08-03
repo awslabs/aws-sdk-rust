@@ -25,9 +25,7 @@ pub enum CaseFilter {
 impl CaseFilter {
     /// Tries to convert the enum instance into [`AndAll`](crate::types::CaseFilter::AndAll), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_and_all(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<crate::types::CaseFilter>, &Self> {
+    pub fn as_and_all(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::CaseFilter>, &Self> {
         if let CaseFilter::AndAll(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -53,9 +51,7 @@ impl CaseFilter {
     }
     /// Tries to convert the enum instance into [`Not`](crate::types::CaseFilter::Not), extracting the inner [`CaseFilter`](crate::types::CaseFilter).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_not(
-        &self,
-    ) -> ::std::result::Result<&::std::boxed::Box<crate::types::CaseFilter>, &Self> {
+    pub fn as_not(&self) -> ::std::result::Result<&::std::boxed::Box<crate::types::CaseFilter>, &Self> {
         if let CaseFilter::Not(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -68,9 +64,7 @@ impl CaseFilter {
     }
     /// Tries to convert the enum instance into [`OrAll`](crate::types::CaseFilter::OrAll), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_or_all(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<crate::types::CaseFilter>, &Self> {
+    pub fn as_or_all(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::CaseFilter>, &Self> {
         if let CaseFilter::OrAll(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

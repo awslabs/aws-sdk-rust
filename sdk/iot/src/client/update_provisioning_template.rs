@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`remove_pre_provisioning_hook(bool)`](crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateFluentBuilder::remove_pre_provisioning_hook) / [`set_remove_pre_provisioning_hook(Option<bool>)`](crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateFluentBuilder::set_remove_pre_provisioning_hook): <p>Removes pre-provisioning hook template.</p>
     /// - On success, responds with [`UpdateProvisioningTemplateOutput`](crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput)
     /// - On failure, responds with [`SdkError<UpdateProvisioningTemplateError>`](crate::operation::update_provisioning_template::UpdateProvisioningTemplateError)
-    pub fn update_provisioning_template(&self) -> crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateFluentBuilder{
+    pub fn update_provisioning_template(&self) -> crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateFluentBuilder {
         crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateFluentBuilder::new(self.handle.clone())
     }
 }

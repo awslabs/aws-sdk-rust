@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`key_pair_id(Option<String>)`](crate::operation::create_key_pair::CreateKeyPairOutput::key_pair_id): <p>The ID of the key pair.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_key_pair::CreateKeyPairOutput::tags): <p>Any tags applied to the key pair.</p>
     /// - On failure, responds with [`SdkError<CreateKeyPairError>`](crate::operation::create_key_pair::CreateKeyPairError)
-    pub fn create_key_pair(
-        &self,
-    ) -> crate::operation::create_key_pair::builders::CreateKeyPairFluentBuilder {
-        crate::operation::create_key_pair::builders::CreateKeyPairFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_key_pair(&self) -> crate::operation::create_key_pair::builders::CreateKeyPairFluentBuilder {
+        crate::operation::create_key_pair::builders::CreateKeyPairFluentBuilder::new(self.handle.clone())
     }
 }

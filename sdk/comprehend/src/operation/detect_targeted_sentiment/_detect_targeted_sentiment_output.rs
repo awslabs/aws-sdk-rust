@@ -29,9 +29,7 @@ impl ::aws_http::request_id::RequestId for DetectTargetedSentimentOutput {
 }
 impl DetectTargetedSentimentOutput {
     /// Creates a new builder-style object to manufacture [`DetectTargetedSentimentOutput`](crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput).
-    pub fn builder(
-    ) -> crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentOutputBuilder {
         crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentOutputBuilder::default()
     }
 }
@@ -40,8 +38,7 @@ impl DetectTargetedSentimentOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DetectTargetedSentimentOutputBuilder {
-    pub(crate) entities:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>,
+    pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>,
     _request_id: Option<String>,
 }
 impl DetectTargetedSentimentOutputBuilder {
@@ -57,17 +54,12 @@ impl DetectTargetedSentimentOutputBuilder {
         self
     }
     /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>) -> Self {
         self.entities = input;
         self
     }
     /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
-    pub fn get_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>> {
         &self.entities
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -80,9 +72,7 @@ impl DetectTargetedSentimentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DetectTargetedSentimentOutput`](crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput {
+    pub fn build(self) -> crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput {
         crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput {
             entities: self.entities,
             _request_id: self._request_id,

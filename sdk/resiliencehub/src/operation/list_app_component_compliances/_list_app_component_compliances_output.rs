@@ -5,8 +5,7 @@
 pub struct ListAppComponentCompliancesOutput {
     /// <p>The compliances for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, compliances, costs, resiliency scores, outage scores, and more.</p>
     #[doc(hidden)]
-    pub component_compliances:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppComponentCompliance>>,
+    pub component_compliances: ::std::option::Option<::std::vec::Vec<crate::types::AppComponentCompliance>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAppComponentCompliancesOutput {
 }
 impl ListAppComponentCompliancesOutput {
     /// <p>The compliances for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, compliances, costs, resiliency scores, outage scores, and more.</p>
-    pub fn component_compliances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppComponentCompliance]> {
+    pub fn component_compliances(&self) -> ::std::option::Option<&[crate::types::AppComponentCompliance]> {
         self.component_compliances.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAppComponentCompliancesOutput {
 }
 impl ListAppComponentCompliancesOutput {
     /// Creates a new builder-style object to manufacture [`ListAppComponentCompliancesOutput`](crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput).
-    pub fn builder() -> crate::operation::list_app_component_compliances::builders::ListAppComponentCompliancesOutputBuilder{
+    pub fn builder() -> crate::operation::list_app_component_compliances::builders::ListAppComponentCompliancesOutputBuilder {
         crate::operation::list_app_component_compliances::builders::ListAppComponentCompliancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppComponentCompliancesOutput`](crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppComponentCompliancesOutputBuilder {
-    pub(crate) component_compliances:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppComponentCompliance>>,
+    pub(crate) component_compliances: ::std::option::Option<::std::vec::Vec<crate::types::AppComponentCompliance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListAppComponentCompliancesOutputBuilder {
         self
     }
     /// <p>The compliances for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, compliances, costs, resiliency scores, outage scores, and more.</p>
-    pub fn set_component_compliances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppComponentCompliance>>,
-    ) -> Self {
+    pub fn set_component_compliances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppComponentCompliance>>) -> Self {
         self.component_compliances = input;
         self
     }
     /// <p>The compliances for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, compliances, costs, resiliency scores, outage scores, and more.</p>
-    pub fn get_component_compliances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppComponentCompliance>> {
+    pub fn get_component_compliances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppComponentCompliance>> {
         &self.component_compliances
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -97,9 +86,7 @@ impl ListAppComponentCompliancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAppComponentCompliancesOutput`](crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput {
+    pub fn build(self) -> crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput {
         crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput {
             component_compliances: self.component_compliances,
             next_token: self.next_token,

@@ -8,8 +8,7 @@ pub struct ListTlsInspectionConfigurationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The TLS inspection configuration metadata objects that you've defined. Depending on your setting for max results and the number of TLS inspection configurations, this might not be the full list.</p>
     #[doc(hidden)]
-    pub tls_inspection_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>>,
+    pub tls_inspection_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>>,
     _request_id: Option<String>,
 }
 impl ListTlsInspectionConfigurationsOutput {
@@ -18,9 +17,7 @@ impl ListTlsInspectionConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The TLS inspection configuration metadata objects that you've defined. Depending on your setting for max results and the number of TLS inspection configurations, this might not be the full list.</p>
-    pub fn tls_inspection_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TlsInspectionConfigurationMetadata]> {
+    pub fn tls_inspection_configurations(&self) -> ::std::option::Option<&[crate::types::TlsInspectionConfigurationMetadata]> {
         self.tls_inspection_configurations.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListTlsInspectionConfigurationsOutput
 }
 impl ListTlsInspectionConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListTlsInspectionConfigurationsOutput`](crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_tls_inspection_configurations::builders::ListTlsInspectionConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_tls_inspection_configurations::builders::ListTlsInspectionConfigurationsOutputBuilder {
         crate::operation::list_tls_inspection_configurations::builders::ListTlsInspectionConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTlsInspectionConfigurationsOutput`](crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTlsInspectionConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tls_inspection_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>>,
+    pub(crate) tls_inspection_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>>,
     _request_id: Option<String>,
 }
 impl ListTlsInspectionConfigurationsOutputBuilder {
@@ -67,10 +61,7 @@ impl ListTlsInspectionConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_tls_inspection_configurations`](Self::set_tls_inspection_configurations).
     ///
     /// <p>The TLS inspection configuration metadata objects that you've defined. Depending on your setting for max results and the number of TLS inspection configurations, this might not be the full list.</p>
-    pub fn tls_inspection_configurations(
-        mut self,
-        input: crate::types::TlsInspectionConfigurationMetadata,
-    ) -> Self {
+    pub fn tls_inspection_configurations(mut self, input: crate::types::TlsInspectionConfigurationMetadata) -> Self {
         let mut v = self.tls_inspection_configurations.unwrap_or_default();
         v.push(input);
         self.tls_inspection_configurations = ::std::option::Option::Some(v);
@@ -79,18 +70,13 @@ impl ListTlsInspectionConfigurationsOutputBuilder {
     /// <p>The TLS inspection configuration metadata objects that you've defined. Depending on your setting for max results and the number of TLS inspection configurations, this might not be the full list.</p>
     pub fn set_tls_inspection_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>>,
     ) -> Self {
         self.tls_inspection_configurations = input;
         self
     }
     /// <p>The TLS inspection configuration metadata objects that you've defined. Depending on your setting for max results and the number of TLS inspection configurations, this might not be the full list.</p>
-    pub fn get_tls_inspection_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>>
-    {
+    pub fn get_tls_inspection_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>> {
         &self.tls_inspection_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -103,15 +89,10 @@ impl ListTlsInspectionConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTlsInspectionConfigurationsOutput`](crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsOutput {
         crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsOutput {
-            next_token: self.next_token
-            ,
-            tls_inspection_configurations: self.tls_inspection_configurations
-            ,
+            next_token: self.next_token,
+            tls_inspection_configurations: self.tls_inspection_configurations,
             _request_id: self._request_id,
         }
     }

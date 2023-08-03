@@ -37,9 +37,7 @@ impl ModifyGlobalClusterFluentBuilder {
         }
     }
     /// Access the ModifyGlobalCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_global_cluster::builders::ModifyGlobalClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_global_cluster::builders::ModifyGlobalClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ModifyGlobalClusterFluentBuilder {
             crate::operation::modify_global_cluster::ModifyGlobalCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_global_cluster::ModifyGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_global_cluster::ModifyGlobalClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ModifyGlobalClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ModifyGlobalClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_global_cluster::ModifyGlobalClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_global_cluster::ModifyGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_global_cluster::ModifyGlobalClusterError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ModifyGlobalClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_global_cluster::ModifyGlobalClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_global_cluster::ModifyGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_global_cluster::ModifyGlobalClusterError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +105,19 @@ impl ModifyGlobalClusterFluentBuilder {
             crate::operation::modify_global_cluster::ModifyGlobalCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_global_cluster::ModifyGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_global_cluster::ModifyGlobalClusterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p>
     /// <p>Constraints: Must match the identifier of an existing global database cluster.</p>
-    pub fn global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
         self
     }
     /// <p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p>
     /// <p>Constraints: Must match the identifier of an existing global database cluster.</p>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }
@@ -153,10 +134,7 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    pub fn new_global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_global_cluster_identifier(input.into());
         self
     }
@@ -168,10 +146,7 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    pub fn set_new_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_global_cluster_identifier(input);
         self
     }
@@ -183,9 +158,7 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    pub fn get_new_global_cluster_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_new_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_new_global_cluster_identifier()
     }
     /// <p>Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.</p>
@@ -204,19 +177,13 @@ impl ModifyGlobalClusterFluentBuilder {
     }
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>To list all of the available Neptune engine versions, use the following command:</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>To list all of the available Neptune engine versions, use the following command:</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }

@@ -25,9 +25,7 @@ impl WafOverrideAction {
 
 /// A builder for [`WafOverrideAction`](crate::types::WafOverrideAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WafOverrideActionBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
@@ -51,8 +49,6 @@ impl WafOverrideActionBuilder {
     }
     /// Consumes the builder and constructs a [`WafOverrideAction`](crate::types::WafOverrideAction).
     pub fn build(self) -> crate::types::WafOverrideAction {
-        crate::types::WafOverrideAction {
-            r#type: self.r#type,
-        }
+        crate::types::WafOverrideAction { r#type: self.r#type }
     }
 }

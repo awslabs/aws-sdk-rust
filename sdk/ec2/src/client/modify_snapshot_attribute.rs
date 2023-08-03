@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`ModifySnapshotAttributeOutput`](crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeOutput)
     /// - On failure, responds with [`SdkError<ModifySnapshotAttributeError>`](crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeError)
-    pub fn modify_snapshot_attribute(
-        &self,
-    ) -> crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeFluentBuilder
-    {
+    pub fn modify_snapshot_attribute(&self) -> crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeFluentBuilder {
         crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeFluentBuilder::new(self.handle.clone())
     }
 }

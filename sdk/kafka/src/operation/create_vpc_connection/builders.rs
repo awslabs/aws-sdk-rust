@@ -37,9 +37,7 @@ impl CreateVpcConnectionFluentBuilder {
         }
     }
     /// Access the CreateVpcConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_vpc_connection::builders::CreateVpcConnectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_vpc_connection::builders::CreateVpcConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateVpcConnectionFluentBuilder {
             crate::operation::create_vpc_connection::CreateVpcConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_connection::CreateVpcConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_connection::CreateVpcConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateVpcConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateVpcConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_connection::CreateVpcConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_connection::CreateVpcConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_connection::CreateVpcConnectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateVpcConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_connection::CreateVpcConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_connection::CreateVpcConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_connection::CreateVpcConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl CreateVpcConnectionFluentBuilder {
             crate::operation::create_vpc_connection::CreateVpcConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_connection::CreateVpcConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_connection::CreateVpcConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The cluster Amazon Resource Name (ARN) for the VPC connection.</p>
-    pub fn target_cluster_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_cluster_arn(input.into());
         self
     }
     /// <p>The cluster Amazon Resource Name (ARN) for the VPC connection.</p>
-    pub fn set_target_cluster_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_cluster_arn(input);
         self
     }
@@ -143,18 +124,12 @@ impl CreateVpcConnectionFluentBuilder {
         self.inner.get_target_cluster_arn()
     }
     /// <p>The authentication type of VPC connection.</p>
-    pub fn authentication(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication(input.into());
         self
     }
     /// <p>The authentication type of VPC connection.</p>
-    pub fn set_authentication(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication(input);
         self
     }
@@ -181,25 +156,17 @@ impl CreateVpcConnectionFluentBuilder {
     /// To override the contents of this collection use [`set_client_subnets`](Self::set_client_subnets).
     ///
     /// <p>The list of client subnets.</p>
-    pub fn client_subnets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_subnets(input.into());
         self
     }
     /// <p>The list of client subnets.</p>
-    pub fn set_client_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_client_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_client_subnets(input);
         self
     }
     /// <p>The list of client subnets.</p>
-    pub fn get_client_subnets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_client_subnets()
     }
     /// Appends an item to `SecurityGroups`.
@@ -207,25 +174,17 @@ impl CreateVpcConnectionFluentBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The list of security groups.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_groups(input.into());
         self
     }
     /// <p>The list of security groups.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
     }
     /// <p>The list of security groups.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_groups()
     }
     /// Adds a key-value pair to `Tags`.
@@ -233,30 +192,17 @@ impl CreateVpcConnectionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map of tags for the VPC connection.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A map of tags for the VPC connection.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A map of tags for the VPC connection.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

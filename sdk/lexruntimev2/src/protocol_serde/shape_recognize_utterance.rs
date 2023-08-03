@@ -2,8 +2,7 @@
 pub fn ser_recognize_utterance_headers(
     input: &crate::operation::recognize_utterance::RecognizeUtteranceInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.session_state {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_recognize_utterance_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "session_state",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
             builder = builder.header("x-amz-lex-session-state", header_value);
@@ -27,10 +23,7 @@ pub fn ser_recognize_utterance_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_attributes",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
             builder = builder.header("x-amz-lex-request-attributes", header_value);
@@ -43,10 +36,7 @@ pub fn ser_recognize_utterance_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_content_type",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Content-Type", header_value);
@@ -59,10 +49,7 @@ pub fn ser_recognize_utterance_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "response_content_type",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Response-Content-Type", header_value);
@@ -93,154 +80,138 @@ pub fn de_recognize_utterance_http_error(
     crate::operation::recognize_utterance::RecognizeUtteranceError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDeniedException" => crate::operation::recognize_utterance::RecognizeUtteranceError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::recognize_utterance::RecognizeUtteranceError::ResourceNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ThrottlingException" => crate::operation::recognize_utterance::RecognizeUtteranceError::ThrottlingException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "BadGatewayException" => crate::operation::recognize_utterance::RecognizeUtteranceError::BadGatewayException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output).map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::recognize_utterance::RecognizeUtteranceError::ValidationException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "DependencyFailedException" => crate::operation::recognize_utterance::RecognizeUtteranceError::DependencyFailedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DependencyFailedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_dependency_failed_exception::de_dependency_failed_exception_json_err(_response_body, output).map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DependencyFailedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_dependency_failed_exception::de_dependency_failed_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerException" => crate::operation::recognize_utterance::RecognizeUtteranceError::InternalServerException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ConflictException" => crate::operation::recognize_utterance::RecognizeUtteranceError::ConflictException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::recognize_utterance::RecognizeUtteranceError::generic(generic)
+        _ => crate::operation::recognize_utterance::RecognizeUtteranceError::generic(generic),
     })
 }
 
@@ -262,98 +233,69 @@ pub fn de_recognize_utterance_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::recognize_utterance::builders::RecognizeUtteranceOutputBuilder::default();
-        output = output.set_audio_stream(Some(
-            crate::protocol_serde::shape_recognize_utterance_output::de_audio_stream_payload(
-                _response_body,
-            )?,
-        ));
+        output = output.set_audio_stream(Some(crate::protocol_serde::shape_recognize_utterance_output::de_audio_stream_payload(
+            _response_body,
+        )?));
         output = output.set_content_type(
-            crate::protocol_serde::shape_recognize_utterance_output::de_content_type_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
-                    "Failed to parse contentType from header `Content-Type",
-                )
+            crate::protocol_serde::shape_recognize_utterance_output::de_content_type_header(_response_headers).map_err(|_| {
+                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled("Failed to parse contentType from header `Content-Type")
             })?,
         );
         output = output.set_input_mode(
-            crate::protocol_serde::shape_recognize_utterance_output::de_input_mode_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_recognize_utterance_output::de_input_mode_header(_response_headers).map_err(|_| {
                 crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
                     "Failed to parse inputMode from header `x-amz-lex-input-mode",
                 )
             })?,
         );
         output = output.set_input_transcript(
-            crate::protocol_serde::shape_recognize_utterance_output::de_input_transcript_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_recognize_utterance_output::de_input_transcript_header(_response_headers).map_err(|_| {
                 crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
                     "Failed to parse inputTranscript from header `x-amz-lex-input-transcript",
                 )
             })?,
         );
         output = output.set_interpretations(
-            crate::protocol_serde::shape_recognize_utterance_output::de_interpretations_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_recognize_utterance_output::de_interpretations_header(_response_headers).map_err(|_| {
                 crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
                     "Failed to parse interpretations from header `x-amz-lex-interpretations",
                 )
             })?,
         );
         output = output.set_messages(
-            crate::protocol_serde::shape_recognize_utterance_output::de_messages_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
-                    "Failed to parse messages from header `x-amz-lex-messages",
-                )
+            crate::protocol_serde::shape_recognize_utterance_output::de_messages_header(_response_headers).map_err(|_| {
+                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled("Failed to parse messages from header `x-amz-lex-messages")
             })?,
         );
         output = output.set_recognized_bot_member(
-            crate::protocol_serde::shape_recognize_utterance_output::de_recognized_bot_member_header(_response_headers)
-                                    .map_err(|_|crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled("Failed to parse recognizedBotMember from header `x-amz-lex-recognized-bot-member"))?
+            crate::protocol_serde::shape_recognize_utterance_output::de_recognized_bot_member_header(_response_headers).map_err(|_| {
+                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
+                    "Failed to parse recognizedBotMember from header `x-amz-lex-recognized-bot-member",
+                )
+            })?,
         );
         output = output.set_request_attributes(
-            crate::protocol_serde::shape_recognize_utterance_output::de_request_attributes_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_recognize_utterance_output::de_request_attributes_header(_response_headers).map_err(|_| {
                 crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
                     "Failed to parse requestAttributes from header `x-amz-lex-request-attributes",
                 )
             })?,
         );
         output = output.set_session_id(
-            crate::protocol_serde::shape_recognize_utterance_output::de_session_id_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_recognize_utterance_output::de_session_id_header(_response_headers).map_err(|_| {
                 crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
                     "Failed to parse sessionId from header `x-amz-lex-session-id",
                 )
             })?,
         );
         output = output.set_session_state(
-            crate::protocol_serde::shape_recognize_utterance_output::de_session_state_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_recognize_utterance_output::de_session_state_header(_response_headers).map_err(|_| {
                 crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
                     "Failed to parse sessionState from header `x-amz-lex-session-state",
                 )
             })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

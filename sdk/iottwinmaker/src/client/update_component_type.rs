@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`component_type_id(Option<String>)`](crate::operation::update_component_type::UpdateComponentTypeOutput::component_type_id): <p>The ID of the component type.</p>
     ///   - [`state(Option<State>)`](crate::operation::update_component_type::UpdateComponentTypeOutput::state): <p>The current state of the component type.</p>
     /// - On failure, responds with [`SdkError<UpdateComponentTypeError>`](crate::operation::update_component_type::UpdateComponentTypeError)
-    pub fn update_component_type(
-        &self,
-    ) -> crate::operation::update_component_type::builders::UpdateComponentTypeFluentBuilder {
-        crate::operation::update_component_type::builders::UpdateComponentTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_component_type(&self) -> crate::operation::update_component_type::builders::UpdateComponentTypeFluentBuilder {
+        crate::operation::update_component_type::builders::UpdateComponentTypeFluentBuilder::new(self.handle.clone())
     }
 }

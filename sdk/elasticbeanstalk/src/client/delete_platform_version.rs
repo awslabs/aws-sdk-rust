@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeletePlatformVersionOutput`](crate::operation::delete_platform_version::DeletePlatformVersionOutput) with field(s):
     ///   - [`platform_summary(Option<PlatformSummary>)`](crate::operation::delete_platform_version::DeletePlatformVersionOutput::platform_summary): <p>Detailed information about the version of the custom platform.</p>
     /// - On failure, responds with [`SdkError<DeletePlatformVersionError>`](crate::operation::delete_platform_version::DeletePlatformVersionError)
-    pub fn delete_platform_version(
-        &self,
-    ) -> crate::operation::delete_platform_version::builders::DeletePlatformVersionFluentBuilder
-    {
-        crate::operation::delete_platform_version::builders::DeletePlatformVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_platform_version(&self) -> crate::operation::delete_platform_version::builders::DeletePlatformVersionFluentBuilder {
+        crate::operation::delete_platform_version::builders::DeletePlatformVersionFluentBuilder::new(self.handle.clone())
     }
 }

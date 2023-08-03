@@ -10,10 +10,7 @@ impl SearchInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search::SearchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search::SearchError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl SearchFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search::Search,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::search::Search, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
     > {
         let handle = self.handle.clone();
@@ -62,20 +56,15 @@ impl SearchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search::SearchOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::search::SearchOutput, ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError>>
+    {
         let op = self
             .inner
             .build()
@@ -95,10 +84,8 @@ impl SearchFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search::SearchOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::search::SearchOutput, ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError>>
+    {
         self.send_middleware().await
     }
 
@@ -107,10 +94,7 @@ impl SearchFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search::Search,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::search::Search, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
     > {
         self.customize_middleware().await
@@ -127,10 +111,7 @@ impl SearchFluentBuilder {
         self
     }
     /// <p>The name of the SageMaker resource to search for.</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource(input);
         self
     }
@@ -144,10 +125,7 @@ impl SearchFluentBuilder {
         self
     }
     /// <p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p>
-    pub fn set_search_expression(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchExpression>,
-    ) -> Self {
+    pub fn set_search_expression(mut self, input: ::std::option::Option<crate::types::SearchExpression>) -> Self {
         self.inner = self.inner.set_search_expression(input);
         self
     }
@@ -175,10 +153,7 @@ impl SearchFluentBuilder {
         self
     }
     /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>. The default is <code>Descending</code>.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SearchSortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -215,25 +190,17 @@ impl SearchFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p> A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>
-    pub fn cross_account_filter_option(
-        mut self,
-        input: crate::types::CrossAccountFilterOption,
-    ) -> Self {
+    pub fn cross_account_filter_option(mut self, input: crate::types::CrossAccountFilterOption) -> Self {
         self.inner = self.inner.cross_account_filter_option(input);
         self
     }
     /// <p> A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>
-    pub fn set_cross_account_filter_option(
-        mut self,
-        input: ::std::option::Option<crate::types::CrossAccountFilterOption>,
-    ) -> Self {
+    pub fn set_cross_account_filter_option(mut self, input: ::std::option::Option<crate::types::CrossAccountFilterOption>) -> Self {
         self.inner = self.inner.set_cross_account_filter_option(input);
         self
     }
     /// <p> A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>
-    pub fn get_cross_account_filter_option(
-        &self,
-    ) -> &::std::option::Option<crate::types::CrossAccountFilterOption> {
+    pub fn get_cross_account_filter_option(&self) -> &::std::option::Option<crate::types::CrossAccountFilterOption> {
         self.inner.get_cross_account_filter_option()
     }
 }

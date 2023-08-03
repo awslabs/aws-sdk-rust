@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateConnectorOutput`](crate::operation::update_connector::UpdateConnectorOutput) with field(s):
     ///   - [`connector_id(Option<String>)`](crate::operation::update_connector::UpdateConnectorOutput::connector_id): <p>Returns the identifier of the connector object that you are updating.</p>
     /// - On failure, responds with [`SdkError<UpdateConnectorError>`](crate::operation::update_connector::UpdateConnectorError)
-    pub fn update_connector(
-        &self,
-    ) -> crate::operation::update_connector::builders::UpdateConnectorFluentBuilder {
-        crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_connector(&self) -> crate::operation::update_connector::builders::UpdateConnectorFluentBuilder {
+        crate::operation::update_connector::builders::UpdateConnectorFluentBuilder::new(self.handle.clone())
     }
 }

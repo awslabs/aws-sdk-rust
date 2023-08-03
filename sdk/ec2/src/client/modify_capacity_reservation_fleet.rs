@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`ModifyCapacityReservationFleetOutput`](crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<ModifyCapacityReservationFleetError>`](crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetError)
-    pub fn modify_capacity_reservation_fleet(&self) -> crate::operation::modify_capacity_reservation_fleet::builders::ModifyCapacityReservationFleetFluentBuilder{
+    pub fn modify_capacity_reservation_fleet(
+        &self,
+    ) -> crate::operation::modify_capacity_reservation_fleet::builders::ModifyCapacityReservationFleetFluentBuilder {
         crate::operation::modify_capacity_reservation_fleet::builders::ModifyCapacityReservationFleetFluentBuilder::new(self.handle.clone())
     }
 }

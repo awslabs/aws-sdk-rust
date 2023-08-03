@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`max_send_rate(f64)`](crate::operation::get_send_quota::GetSendQuotaOutput::max_send_rate): <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>   <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</p>  </note>
     ///   - [`sent_last24_hours(f64)`](crate::operation::get_send_quota::GetSendQuotaOutput::sent_last24_hours): <p>The number of emails sent during the previous 24 hours.</p>
     /// - On failure, responds with [`SdkError<GetSendQuotaError>`](crate::operation::get_send_quota::GetSendQuotaError)
-    pub fn get_send_quota(
-        &self,
-    ) -> crate::operation::get_send_quota::builders::GetSendQuotaFluentBuilder {
-        crate::operation::get_send_quota::builders::GetSendQuotaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_send_quota(&self) -> crate::operation::get_send_quota::builders::GetSendQuotaFluentBuilder {
+        crate::operation::get_send_quota::builders::GetSendQuotaFluentBuilder::new(self.handle.clone())
     }
 }

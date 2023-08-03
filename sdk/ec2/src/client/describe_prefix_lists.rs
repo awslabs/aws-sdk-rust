@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_prefix_lists::DescribePrefixListsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`prefix_lists(Option<Vec<PrefixList>>)`](crate::operation::describe_prefix_lists::DescribePrefixListsOutput::prefix_lists): <p>All available prefix lists.</p>
     /// - On failure, responds with [`SdkError<DescribePrefixListsError>`](crate::operation::describe_prefix_lists::DescribePrefixListsError)
-    pub fn describe_prefix_lists(
-        &self,
-    ) -> crate::operation::describe_prefix_lists::builders::DescribePrefixListsFluentBuilder {
-        crate::operation::describe_prefix_lists::builders::DescribePrefixListsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_prefix_lists(&self) -> crate::operation::describe_prefix_lists::builders::DescribePrefixListsFluentBuilder {
+        crate::operation::describe_prefix_lists::builders::DescribePrefixListsFluentBuilder::new(self.handle.clone())
     }
 }

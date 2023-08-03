@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`status(Option<ReadSetActivationJobStatus>)`](crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput::status): <p>The job's status.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput::creation_time): <p>When the job was created.</p>
     /// - On failure, responds with [`SdkError<StartReadSetActivationJobError>`](crate::operation::start_read_set_activation_job::StartReadSetActivationJobError)
-    pub fn start_read_set_activation_job(&self) -> crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobFluentBuilder{
+    pub fn start_read_set_activation_job(&self) -> crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobFluentBuilder {
         crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobFluentBuilder::new(self.handle.clone())
     }
 }

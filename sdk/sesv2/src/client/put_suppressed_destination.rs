@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`reason(SuppressionListReason)`](crate::operation::put_suppressed_destination::builders::PutSuppressedDestinationFluentBuilder::reason) / [`set_reason(Option<SuppressionListReason>)`](crate::operation::put_suppressed_destination::builders::PutSuppressedDestinationFluentBuilder::set_reason): <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
     /// - On success, responds with [`PutSuppressedDestinationOutput`](crate::operation::put_suppressed_destination::PutSuppressedDestinationOutput)
     /// - On failure, responds with [`SdkError<PutSuppressedDestinationError>`](crate::operation::put_suppressed_destination::PutSuppressedDestinationError)
-    pub fn put_suppressed_destination(
-        &self,
-    ) -> crate::operation::put_suppressed_destination::builders::PutSuppressedDestinationFluentBuilder
-    {
+    pub fn put_suppressed_destination(&self) -> crate::operation::put_suppressed_destination::builders::PutSuppressedDestinationFluentBuilder {
         crate::operation::put_suppressed_destination::builders::PutSuppressedDestinationFluentBuilder::new(self.handle.clone())
     }
 }

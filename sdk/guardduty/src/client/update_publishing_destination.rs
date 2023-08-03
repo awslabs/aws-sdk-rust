@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`destination_properties(DestinationProperties)`](crate::operation::update_publishing_destination::builders::UpdatePublishingDestinationFluentBuilder::destination_properties) / [`set_destination_properties(Option<DestinationProperties>)`](crate::operation::update_publishing_destination::builders::UpdatePublishingDestinationFluentBuilder::set_destination_properties): <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     /// - On success, responds with [`UpdatePublishingDestinationOutput`](crate::operation::update_publishing_destination::UpdatePublishingDestinationOutput)
     /// - On failure, responds with [`SdkError<UpdatePublishingDestinationError>`](crate::operation::update_publishing_destination::UpdatePublishingDestinationError)
-    pub fn update_publishing_destination(&self) -> crate::operation::update_publishing_destination::builders::UpdatePublishingDestinationFluentBuilder{
+    pub fn update_publishing_destination(
+        &self,
+    ) -> crate::operation::update_publishing_destination::builders::UpdatePublishingDestinationFluentBuilder {
         crate::operation::update_publishing_destination::builders::UpdatePublishingDestinationFluentBuilder::new(self.handle.clone())
     }
 }

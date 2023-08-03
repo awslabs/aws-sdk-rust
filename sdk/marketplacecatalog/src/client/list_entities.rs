@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`entity_summary_list(Option<Vec<EntitySummary>>)`](crate::operation::list_entities::ListEntitiesOutput::entity_summary_list): <p> Array of <code>EntitySummary</code> object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_entities::ListEntitiesOutput::next_token): <p>The value of the next token if it exists. Null if there is no more result.</p>
     /// - On failure, responds with [`SdkError<ListEntitiesError>`](crate::operation::list_entities::ListEntitiesError)
-    pub fn list_entities(
-        &self,
-    ) -> crate::operation::list_entities::builders::ListEntitiesFluentBuilder {
-        crate::operation::list_entities::builders::ListEntitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_entities(&self) -> crate::operation::list_entities::builders::ListEntitiesFluentBuilder {
+        crate::operation::list_entities::builders::ListEntitiesFluentBuilder::new(self.handle.clone())
     }
 }

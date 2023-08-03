@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for TerminateRecoveryInstancesOutput {
 }
 impl TerminateRecoveryInstancesOutput {
     /// Creates a new builder-style object to manufacture [`TerminateRecoveryInstancesOutput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput).
-    pub fn builder() -> crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesOutputBuilder {
         crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateRecoveryInstancesOutput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateRecoveryInstancesOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl TerminateRecoveryInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`TerminateRecoveryInstancesOutput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput {
+    pub fn build(self) -> crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput {
         crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput {
             job: self.job,
             _request_id: self._request_id,

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`successful(Option<Vec<String>>)`](crate::operation::release_hosts::ReleaseHostsOutput::successful): <p>The IDs of the Dedicated Hosts that were successfully released.</p>
     ///   - [`unsuccessful(Option<Vec<UnsuccessfulItem>>)`](crate::operation::release_hosts::ReleaseHostsOutput::unsuccessful): <p>The IDs of the Dedicated Hosts that could not be released, including an error message.</p>
     /// - On failure, responds with [`SdkError<ReleaseHostsError>`](crate::operation::release_hosts::ReleaseHostsError)
-    pub fn release_hosts(
-        &self,
-    ) -> crate::operation::release_hosts::builders::ReleaseHostsFluentBuilder {
-        crate::operation::release_hosts::builders::ReleaseHostsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn release_hosts(&self) -> crate::operation::release_hosts::builders::ReleaseHostsFluentBuilder {
+        crate::operation::release_hosts::builders::ReleaseHostsFluentBuilder::new(self.handle.clone())
     }
 }

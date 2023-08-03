@@ -37,9 +37,7 @@ impl GetDeploymentTargetFluentBuilder {
         }
     }
     /// Access the GetDeploymentTarget as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_deployment_target::builders::GetDeploymentTargetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_deployment_target::builders::GetDeploymentTargetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetDeploymentTargetFluentBuilder {
             crate::operation::get_deployment_target::GetDeploymentTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_target::GetDeploymentTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_target::GetDeploymentTargetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetDeploymentTargetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetDeploymentTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_deployment_target::GetDeploymentTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_target::GetDeploymentTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_target::GetDeploymentTargetError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetDeploymentTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_deployment_target::GetDeploymentTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_target::GetDeploymentTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_target::GetDeploymentTargetError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetDeploymentTargetFluentBuilder {
             crate::operation::get_deployment_target::GetDeploymentTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deployment_target::GetDeploymentTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deployment_target::GetDeploymentTargetError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }

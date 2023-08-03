@@ -30,9 +30,7 @@ impl RouteTableAssociationState {
 
 /// A builder for [`RouteTableAssociationState`](crate::types::RouteTableAssociationState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteTableAssociationStateBuilder {
     pub(crate) state: ::std::option::Option<crate::types::RouteTableAssociationStateCode>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
@@ -44,32 +42,21 @@ impl RouteTableAssociationStateBuilder {
         self
     }
     /// <p>The state of the association.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteTableAssociationStateCode>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::RouteTableAssociationStateCode>) -> Self {
         self.state = input;
         self
     }
     /// <p>The state of the association.</p>
-    pub fn get_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::RouteTableAssociationStateCode> {
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::RouteTableAssociationStateCode> {
         &self.state
     }
     /// <p>The status message, if applicable.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message, if applicable.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

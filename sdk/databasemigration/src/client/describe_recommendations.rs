@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_recommendations::DescribeRecommendationsOutput::next_token): <p>The unique pagination token returned for you to pass to a subsequent request. Fleet Advisor returns this token when the number of records in the response is greater than the <code>MaxRecords</code> value. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
     ///   - [`recommendations(Option<Vec<Recommendation>>)`](crate::operation::describe_recommendations::DescribeRecommendationsOutput::recommendations): <p>The list of recommendations of target engines that Fleet Advisor created for the source database.</p>
     /// - On failure, responds with [`SdkError<DescribeRecommendationsError>`](crate::operation::describe_recommendations::DescribeRecommendationsError)
-    pub fn describe_recommendations(
-        &self,
-    ) -> crate::operation::describe_recommendations::builders::DescribeRecommendationsFluentBuilder
-    {
+    pub fn describe_recommendations(&self) -> crate::operation::describe_recommendations::builders::DescribeRecommendationsFluentBuilder {
         crate::operation::describe_recommendations::builders::DescribeRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

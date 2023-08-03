@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAddressBookOutput`](crate::operation::delete_address_book::DeleteAddressBookOutput)
     /// - On failure, responds with [`SdkError<DeleteAddressBookError>`](crate::operation::delete_address_book::DeleteAddressBookError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn delete_address_book(
-        &self,
-    ) -> crate::operation::delete_address_book::builders::DeleteAddressBookFluentBuilder {
-        crate::operation::delete_address_book::builders::DeleteAddressBookFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_address_book(&self) -> crate::operation::delete_address_book::builders::DeleteAddressBookFluentBuilder {
+        crate::operation::delete_address_book::builders::DeleteAddressBookFluentBuilder::new(self.handle.clone())
     }
 }

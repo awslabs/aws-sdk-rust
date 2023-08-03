@@ -5,16 +5,16 @@ pub use crate::operation::list_elasticsearch_instance_types::_list_elasticsearch
 
 impl ListElasticsearchInstanceTypesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_elasticsearch_instance_types();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListElasticsearchInstanceTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListElasticsearchInstanceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_elasticsearch_instance_types::builders::ListElasticsearchInstanceTypesInputBuilder,
+    inner: crate::operation::list_elasticsearch_instance_types::builders::ListElasticsearchInstanceTypesInputBuilder,
 }
 impl ListElasticsearchInstanceTypesFluentBuilder {
     /// Creates a new `ListElasticsearchInstanceTypes`.
@@ -37,15 +37,20 @@ impl ListElasticsearchInstanceTypesFluentBuilder {
         }
     }
     /// Access the ListElasticsearchInstanceTypes as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_elasticsearch_instance_types::builders::ListElasticsearchInstanceTypesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_elasticsearch_instance_types::builders::ListElasticsearchInstanceTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListElasticsearchInstanceTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +87,41 @@ impl ListElasticsearchInstanceTypesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_elasticsearch_instance_types::paginator::ListElasticsearchInstanceTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_elasticsearch_instance_types::paginator::ListElasticsearchInstanceTypesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_elasticsearch_instance_types::paginator::ListElasticsearchInstanceTypesPaginator {
         crate::operation::list_elasticsearch_instance_types::paginator::ListElasticsearchInstanceTypesPaginator::new(self.handle, self.inner)
     }
     /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
-    pub fn elasticsearch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn elasticsearch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.elasticsearch_version(input.into());
         self
     }
     /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
-    pub fn set_elasticsearch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_elasticsearch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_elasticsearch_version(input);
         self
     }

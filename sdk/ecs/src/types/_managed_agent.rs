@@ -44,9 +44,7 @@ impl ManagedAgent {
 
 /// A builder for [`ManagedAgent`](crate::types::ManagedAgent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedAgentBuilder {
     pub(crate) last_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<crate::types::ManagedAgentName>,
@@ -60,10 +58,7 @@ impl ManagedAgentBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the managed agent was last started.</p>
-    pub fn set_last_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_started_at = input;
         self
     }
@@ -77,10 +72,7 @@ impl ManagedAgentBuilder {
         self
     }
     /// <p>The name of the managed agent. When the execute command feature is turned on, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedAgentName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ManagedAgentName>) -> Self {
         self.name = input;
         self
     }

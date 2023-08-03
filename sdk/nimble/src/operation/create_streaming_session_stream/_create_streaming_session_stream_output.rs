@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateStreamingSessionStreamOutput {
 }
 impl CreateStreamingSessionStreamOutput {
     /// Creates a new builder-style object to manufacture [`CreateStreamingSessionStreamOutput`](crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamOutput).
-    pub fn builder() -> crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamOutputBuilder{
+    pub fn builder() -> crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamOutputBuilder {
         crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStreamingSessionStreamOutput`](crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStreamingSessionStreamOutputBuilder {
     pub(crate) stream: ::std::option::Option<crate::types::StreamingSessionStream>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateStreamingSessionStreamOutputBuilder {
         self
     }
     /// <p>The stream.</p>
-    pub fn set_stream(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingSessionStream>,
-    ) -> Self {
+    pub fn set_stream(mut self, input: ::std::option::Option<crate::types::StreamingSessionStream>) -> Self {
         self.stream = input;
         self
     }
@@ -63,9 +58,7 @@ impl CreateStreamingSessionStreamOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateStreamingSessionStreamOutput`](crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamOutput {
+    pub fn build(self) -> crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamOutput {
         crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamOutput {
             stream: self.stream,
             _request_id: self._request_id,

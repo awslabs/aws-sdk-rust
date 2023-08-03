@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAwsDefaultServiceQuotaOutput {
 }
 impl GetAwsDefaultServiceQuotaOutput {
     /// Creates a new builder-style object to manufacture [`GetAwsDefaultServiceQuotaOutput`](crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput).
-    pub fn builder() -> crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaOutputBuilder{
+    pub fn builder() -> crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaOutputBuilder {
         crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAwsDefaultServiceQuotaOutput`](crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAwsDefaultServiceQuotaOutputBuilder {
     pub(crate) quota: ::std::option::Option<crate::types::ServiceQuota>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl GetAwsDefaultServiceQuotaOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAwsDefaultServiceQuotaOutput`](crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput {
+    pub fn build(self) -> crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput {
         crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput {
             quota: self.quota,
             _request_id: self._request_id,

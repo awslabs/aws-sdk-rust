@@ -27,7 +27,7 @@ impl ListAutoScalingConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAutoScalingConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsInputBuilder,
+    inner: crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsInputBuilder,
 }
 impl ListAutoScalingConfigurationsFluentBuilder {
     /// Creates a new `ListAutoScalingConfigurations`.
@@ -38,7 +38,7 @@ impl ListAutoScalingConfigurationsFluentBuilder {
         }
     }
     /// Access the ListAutoScalingConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListAutoScalingConfigurationsFluentBuilder {
             crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListAutoScalingConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListAutoScalingConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListAutoScalingConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -115,38 +106,28 @@ impl ListAutoScalingConfigurationsFluentBuilder {
             crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_auto_scaling_configurations::paginator::ListAutoScalingConfigurationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_auto_scaling_configurations::paginator::ListAutoScalingConfigurationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_auto_scaling_configurations::paginator::ListAutoScalingConfigurationsPaginator {
         crate::operation::list_auto_scaling_configurations::paginator::ListAutoScalingConfigurationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
-    pub fn auto_scaling_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_configuration_name(input.into());
         self
     }
     /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
-    pub fn set_auto_scaling_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_configuration_name(input);
         self
     }
     /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
-    pub fn get_auto_scaling_configuration_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_auto_scaling_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_auto_scaling_configuration_name()
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`proactive_insight(Option<ProactiveInsight>)`](crate::operation::describe_insight::DescribeInsightOutput::proactive_insight): <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
     ///   - [`reactive_insight(Option<ReactiveInsight>)`](crate::operation::describe_insight::DescribeInsightOutput::reactive_insight): <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
     /// - On failure, responds with [`SdkError<DescribeInsightError>`](crate::operation::describe_insight::DescribeInsightError)
-    pub fn describe_insight(
-        &self,
-    ) -> crate::operation::describe_insight::builders::DescribeInsightFluentBuilder {
-        crate::operation::describe_insight::builders::DescribeInsightFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_insight(&self) -> crate::operation::describe_insight::builders::DescribeInsightFluentBuilder {
+        crate::operation::describe_insight::builders::DescribeInsightFluentBuilder::new(self.handle.clone())
     }
 }

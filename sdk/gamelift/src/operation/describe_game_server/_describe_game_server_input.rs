@@ -22,35 +22,26 @@ impl DescribeGameServerInput {
 }
 impl DescribeGameServerInput {
     /// Creates a new builder-style object to manufacture [`DescribeGameServerInput`](crate::operation::describe_game_server::DescribeGameServerInput).
-    pub fn builder(
-    ) -> crate::operation::describe_game_server::builders::DescribeGameServerInputBuilder {
+    pub fn builder() -> crate::operation::describe_game_server::builders::DescribeGameServerInputBuilder {
         crate::operation::describe_game_server::builders::DescribeGameServerInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGameServerInput`](crate::operation::describe_game_server::DescribeGameServerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGameServerInputBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) game_server_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGameServerInputBuilder {
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_group_name = input;
         self
     }
@@ -59,18 +50,12 @@ impl DescribeGameServerInputBuilder {
         &self.game_server_group_name
     }
     /// <p>A custom string that uniquely identifies the game server information to be retrieved.</p>
-    pub fn game_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A custom string that uniquely identifies the game server information to be retrieved.</p>
-    pub fn set_game_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_id = input;
         self
     }
@@ -81,15 +66,10 @@ impl DescribeGameServerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGameServerInput`](crate::operation::describe_game_server::DescribeGameServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_game_server::DescribeGameServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_game_server::DescribeGameServerInput {
-                game_server_group_name: self.game_server_group_name,
-                game_server_id: self.game_server_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_game_server::DescribeGameServerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_game_server::DescribeGameServerInput {
+            game_server_group_name: self.game_server_group_name,
+            game_server_id: self.game_server_id,
+        })
     }
 }

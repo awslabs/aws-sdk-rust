@@ -52,17 +52,14 @@ impl CreateUserProfileInput {
 }
 impl CreateUserProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateUserProfileInput`](crate::operation::create_user_profile::CreateUserProfileInput).
-    pub fn builder(
-    ) -> crate::operation::create_user_profile::builders::CreateUserProfileInputBuilder {
+    pub fn builder() -> crate::operation::create_user_profile::builders::CreateUserProfileInputBuilder {
         crate::operation::create_user_profile::builders::CreateUserProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUserProfileInput`](crate::operation::create_user_profile::CreateUserProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserProfileInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_profile_name: ::std::option::Option<::std::string::String>,
@@ -87,18 +84,12 @@ impl CreateUserProfileInputBuilder {
         &self.domain_id
     }
     /// <p>A name for the UserProfile. This value is not case sensitive.</p>
-    pub fn user_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the UserProfile. This value is not case sensitive.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_profile_name = input;
         self
     }
@@ -107,40 +98,26 @@ impl CreateUserProfileInputBuilder {
         &self.user_profile_name
     }
     /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
-    pub fn single_sign_on_user_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn single_sign_on_user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.single_sign_on_user_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
-    pub fn set_single_sign_on_user_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_single_sign_on_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.single_sign_on_user_identifier = input;
         self
     }
     /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
-    pub fn get_single_sign_on_user_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_single_sign_on_user_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.single_sign_on_user_identifier
     }
     /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
-    pub fn single_sign_on_user_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn single_sign_on_user_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.single_sign_on_user_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
-    pub fn set_single_sign_on_user_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_single_sign_on_user_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.single_sign_on_user_value = input;
         self
     }
@@ -162,10 +139,7 @@ impl CreateUserProfileInputBuilder {
     }
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
     /// <p>Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -180,10 +154,7 @@ impl CreateUserProfileInputBuilder {
         self
     }
     /// <p>A collection of settings.</p>
-    pub fn set_user_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::UserSettings>,
-    ) -> Self {
+    pub fn set_user_settings(mut self, input: ::std::option::Option<crate::types::UserSettings>) -> Self {
         self.user_settings = input;
         self
     }
@@ -194,19 +165,14 @@ impl CreateUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateUserProfileInput`](crate::operation::create_user_profile::CreateUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_user_profile::CreateUserProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_user_profile::CreateUserProfileInput {
-                domain_id: self.domain_id,
-                user_profile_name: self.user_profile_name,
-                single_sign_on_user_identifier: self.single_sign_on_user_identifier,
-                single_sign_on_user_value: self.single_sign_on_user_value,
-                tags: self.tags,
-                user_settings: self.user_settings,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_user_profile::CreateUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_user_profile::CreateUserProfileInput {
+            domain_id: self.domain_id,
+            user_profile_name: self.user_profile_name,
+            single_sign_on_user_identifier: self.single_sign_on_user_identifier,
+            single_sign_on_user_value: self.single_sign_on_user_value,
+            tags: self.tags,
+            user_settings: self.user_settings,
+        })
     }
 }

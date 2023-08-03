@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetDataCellsFilterOutput {
 }
 impl GetDataCellsFilterOutput {
     /// Creates a new builder-style object to manufacture [`GetDataCellsFilterOutput`](crate::operation::get_data_cells_filter::GetDataCellsFilterOutput).
-    pub fn builder(
-    ) -> crate::operation::get_data_cells_filter::builders::GetDataCellsFilterOutputBuilder {
-        crate::operation::get_data_cells_filter::builders::GetDataCellsFilterOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_data_cells_filter::builders::GetDataCellsFilterOutputBuilder {
+        crate::operation::get_data_cells_filter::builders::GetDataCellsFilterOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataCellsFilterOutput`](crate::operation::get_data_cells_filter::GetDataCellsFilterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataCellsFilterOutputBuilder {
     pub(crate) data_cells_filter: ::std::option::Option<crate::types::DataCellsFilter>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetDataCellsFilterOutputBuilder {
         self
     }
     /// <p>A structure that describes certain columns on certain rows.</p>
-    pub fn set_data_cells_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DataCellsFilter>,
-    ) -> Self {
+    pub fn set_data_cells_filter(mut self, input: ::std::option::Option<crate::types::DataCellsFilter>) -> Self {
         self.data_cells_filter = input;
         self
     }

@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRelatedResourcesForAuditFindingOu
 }
 impl ListRelatedResourcesForAuditFindingOutput {
     /// Creates a new builder-style object to manufacture [`ListRelatedResourcesForAuditFindingOutput`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput).
-    pub fn builder() -> crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingOutputBuilder{
+    pub fn builder() -> crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingOutputBuilder {
         crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRelatedResourcesForAuditFindingOutput`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRelatedResourcesForAuditFindingOutputBuilder {
-    pub(crate) related_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>>,
+    pub(crate) related_resources: ::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListRelatedResourcesForAuditFindingOutputBuilder {
         self
     }
     /// <p>The related resources.</p>
-    pub fn set_related_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>>,
-    ) -> Self {
+    pub fn set_related_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>>) -> Self {
         self.related_resources = input;
         self
     }
     /// <p>The related resources.</p>
-    pub fn get_related_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>> {
+    pub fn get_related_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>> {
         &self.related_resources
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> for the first API call.</p>
@@ -94,12 +86,10 @@ impl ListRelatedResourcesForAuditFindingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRelatedResourcesForAuditFindingOutput`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput).
-    pub fn build(self) -> crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput{
+    pub fn build(self) -> crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput {
         crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput {
-            related_resources: self.related_resources
-            ,
-            next_token: self.next_token
-            ,
+            related_resources: self.related_resources,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

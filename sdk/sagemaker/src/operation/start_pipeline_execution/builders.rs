@@ -37,10 +37,7 @@ impl StartPipelineExecutionFluentBuilder {
         }
     }
     /// Access the StartPipelineExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_pipeline_execution::builders::StartPipelineExecutionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_pipeline_execution::builders::StartPipelineExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartPipelineExecutionFluentBuilder {
             crate::operation::start_pipeline_execution::StartPipelineExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_execution::StartPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_execution::StartPipelineExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartPipelineExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartPipelineExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_pipeline_execution::StartPipelineExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_execution::StartPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_execution::StartPipelineExecutionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartPipelineExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_pipeline_execution::StartPipelineExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_execution::StartPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_execution::StartPipelineExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl StartPipelineExecutionFluentBuilder {
             crate::operation::start_pipeline_execution::StartPipelineExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_execution::StartPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_execution::StartPipelineExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
@@ -144,25 +124,17 @@ impl StartPipelineExecutionFluentBuilder {
         self.inner.get_pipeline_name()
     }
     /// <p>The display name of the pipeline execution.</p>
-    pub fn pipeline_execution_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_execution_display_name(input.into());
         self
     }
     /// <p>The display name of the pipeline execution.</p>
-    pub fn set_pipeline_execution_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_execution_display_name(input);
         self
     }
     /// <p>The display name of the pipeline execution.</p>
-    pub fn get_pipeline_execution_display_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_pipeline_execution_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pipeline_execution_display_name()
     }
     /// Appends an item to `PipelineParameters`.
@@ -175,54 +147,35 @@ impl StartPipelineExecutionFluentBuilder {
         self
     }
     /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
-    pub fn set_pipeline_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_pipeline_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.inner = self.inner.set_pipeline_parameters(input);
         self
     }
     /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
-    pub fn get_pipeline_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_pipeline_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_pipeline_parameters()
     }
     /// <p>The description of the pipeline execution.</p>
-    pub fn pipeline_execution_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_execution_description(input.into());
         self
     }
     /// <p>The description of the pipeline execution.</p>
-    pub fn set_pipeline_execution_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_execution_description(input);
         self
     }
     /// <p>The description of the pipeline execution.</p>
-    pub fn get_pipeline_execution_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_pipeline_execution_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pipeline_execution_description()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -231,47 +184,31 @@ impl StartPipelineExecutionFluentBuilder {
         self.inner.get_client_request_token()
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
-    pub fn parallelism_configuration(
-        mut self,
-        input: crate::types::ParallelismConfiguration,
-    ) -> Self {
+    pub fn parallelism_configuration(mut self, input: crate::types::ParallelismConfiguration) -> Self {
         self.inner = self.inner.parallelism_configuration(input);
         self
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
-    pub fn set_parallelism_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelismConfiguration>,
-    ) -> Self {
+    pub fn set_parallelism_configuration(mut self, input: ::std::option::Option<crate::types::ParallelismConfiguration>) -> Self {
         self.inner = self.inner.set_parallelism_configuration(input);
         self
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
-    pub fn get_parallelism_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
+    pub fn get_parallelism_configuration(&self) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
         self.inner.get_parallelism_configuration()
     }
     /// <p>The selective execution configuration applied to the pipeline run.</p>
-    pub fn selective_execution_config(
-        mut self,
-        input: crate::types::SelectiveExecutionConfig,
-    ) -> Self {
+    pub fn selective_execution_config(mut self, input: crate::types::SelectiveExecutionConfig) -> Self {
         self.inner = self.inner.selective_execution_config(input);
         self
     }
     /// <p>The selective execution configuration applied to the pipeline run.</p>
-    pub fn set_selective_execution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
-    ) -> Self {
+    pub fn set_selective_execution_config(mut self, input: ::std::option::Option<crate::types::SelectiveExecutionConfig>) -> Self {
         self.inner = self.inner.set_selective_execution_config(input);
         self
     }
     /// <p>The selective execution configuration applied to the pipeline run.</p>
-    pub fn get_selective_execution_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::SelectiveExecutionConfig> {
+    pub fn get_selective_execution_config(&self) -> &::std::option::Option<crate::types::SelectiveExecutionConfig> {
         self.inner.get_selective_execution_config()
     }
 }

@@ -37,10 +37,7 @@ impl CreateLoggerDefinitionFluentBuilder {
         }
     }
     /// Access the CreateLoggerDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_logger_definition::builders::CreateLoggerDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_logger_definition::builders::CreateLoggerDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateLoggerDefinitionFluentBuilder {
             crate::operation::create_logger_definition::CreateLoggerDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logger_definition::CreateLoggerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logger_definition::CreateLoggerDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateLoggerDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateLoggerDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_logger_definition::CreateLoggerDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logger_definition::CreateLoggerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logger_definition::CreateLoggerDefinitionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateLoggerDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_logger_definition::CreateLoggerDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logger_definition::CreateLoggerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logger_definition::CreateLoggerDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateLoggerDefinitionFluentBuilder {
             crate::operation::create_logger_definition::CreateLoggerDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_logger_definition::CreateLoggerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_logger_definition::CreateLoggerDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.amzn_client_token(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
@@ -149,17 +129,12 @@ impl CreateLoggerDefinitionFluentBuilder {
         self
     }
     /// Information about the initial version of the logger definition.
-    pub fn set_initial_version(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggerDefinitionVersion>,
-    ) -> Self {
+    pub fn set_initial_version(mut self, input: ::std::option::Option<crate::types::LoggerDefinitionVersion>) -> Self {
         self.inner = self.inner.set_initial_version(input);
         self
     }
     /// Information about the initial version of the logger definition.
-    pub fn get_initial_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggerDefinitionVersion> {
+    pub fn get_initial_version(&self) -> &::std::option::Option<crate::types::LoggerDefinitionVersion> {
         self.inner.get_initial_version()
     }
     /// The name of the logger definition.
@@ -181,30 +156,17 @@ impl CreateLoggerDefinitionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// Tag(s) to add to the new resource.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// Tag(s) to add to the new resource.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// Tag(s) to add to the new resource.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

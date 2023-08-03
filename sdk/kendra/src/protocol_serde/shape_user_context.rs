@@ -24,10 +24,7 @@ pub fn ser_user_context(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_data_source_group::ser_data_source_group(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_data_source_group::ser_data_source_group(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }

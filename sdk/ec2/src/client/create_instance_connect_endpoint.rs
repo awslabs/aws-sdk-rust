@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`instance_connect_endpoint(Option<Ec2InstanceConnectEndpoint>)`](crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointOutput::instance_connect_endpoint): <p>Information about the EC2 Instance Connect Endpoint.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointOutput::client_token): <p>Unique, case-sensitive idempotency token provided by the client in the the request.</p>
     /// - On failure, responds with [`SdkError<CreateInstanceConnectEndpointError>`](crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError)
-    pub fn create_instance_connect_endpoint(&self) -> crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointFluentBuilder{
+    pub fn create_instance_connect_endpoint(
+        &self,
+    ) -> crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointFluentBuilder {
         crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointFluentBuilder::new(self.handle.clone())
     }
 }

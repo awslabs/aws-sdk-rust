@@ -37,9 +37,7 @@ impl Page {
 
 /// A builder for [`Page`](crate::types::Page).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PageBuilder {
     pub(crate) line_range: ::std::option::Option<crate::types::Range>,
     pub(crate) offset_range: ::std::option::Option<crate::types::Range>,

@@ -19,9 +19,7 @@ impl DeleteSolutionOutput {
 
 /// A builder for [`DeleteSolutionOutput`](crate::operation::delete_solution::DeleteSolutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSolutionOutputBuilder {
     _request_id: Option<String>,
 }

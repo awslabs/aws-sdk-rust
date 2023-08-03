@@ -22,9 +22,7 @@ impl InviteMembersInput {
 
 /// A builder for [`InviteMembersInput`](crate::operation::invite_members::InviteMembersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InviteMembersInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,26 +39,18 @@ impl InviteMembersInputBuilder {
         self
     }
     /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members. </p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members. </p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`InviteMembersInput`](crate::operation::invite_members::InviteMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::invite_members::InviteMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::invite_members::InviteMembersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::invite_members::InviteMembersInput {
             account_ids: self.account_ids,
         })

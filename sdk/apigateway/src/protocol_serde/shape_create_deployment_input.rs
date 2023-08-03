@@ -12,10 +12,7 @@ pub fn ser_create_deployment_input(
     if let Some(var_3) = &input.canary_settings {
         #[allow(unused_mut)]
         let mut object_4 = object.key("canarySettings").start_object();
-        crate::protocol_serde::shape_deployment_canary_settings::ser_deployment_canary_settings(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_deployment_canary_settings::ser_deployment_canary_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.description {

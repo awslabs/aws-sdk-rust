@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`source_file_system_id(impl ::std::convert::Into<String>)`](crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationFluentBuilder::source_file_system_id) / [`set_source_file_system_id(Option<String>)`](crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationFluentBuilder::set_source_file_system_id): <p>The ID of the source file system in the replication configuration.</p>
     /// - On success, responds with [`DeleteReplicationConfigurationOutput`](crate::operation::delete_replication_configuration::DeleteReplicationConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteReplicationConfigurationError>`](crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError)
-    pub fn delete_replication_configuration(&self) -> crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationFluentBuilder{
+    pub fn delete_replication_configuration(
+        &self,
+    ) -> crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationFluentBuilder {
         crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

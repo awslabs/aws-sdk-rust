@@ -6,10 +6,7 @@ pub fn ser_set_user_mfa_preference_input(
     if let Some(var_1) = &input.sms_mfa_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SMSMfaSettings").start_object();
-        crate::protocol_serde::shape_sms_mfa_settings_type::ser_sms_mfa_settings_type(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_sms_mfa_settings_type::ser_sms_mfa_settings_type(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.software_token_mfa_settings {

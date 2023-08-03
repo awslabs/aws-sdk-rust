@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetConnectInstanceConfigOutput`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput) with field(s):
     ///   - [`connect_instance_config(Option<InstanceConfig>)`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput::connect_instance_config): Instance config object
     /// - On failure, responds with [`SdkError<GetConnectInstanceConfigError>`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigError)
-    pub fn get_connect_instance_config(&self) -> crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigFluentBuilder{
+    pub fn get_connect_instance_config(&self) -> crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigFluentBuilder {
         crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigFluentBuilder::new(self.handle.clone())
     }
 }

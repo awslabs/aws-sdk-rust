@@ -26,7 +26,7 @@ impl ExportEarthObservationJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportEarthObservationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder,
+    inner: crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder,
 }
 impl ExportEarthObservationJobFluentBuilder {
     /// Creates a new `ExportEarthObservationJob`.
@@ -37,7 +37,7 @@ impl ExportEarthObservationJobFluentBuilder {
         }
     }
     /// Access the ExportEarthObservationJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ExportEarthObservationJobFluentBuilder {
             crate::operation::export_earth_observation_job::ExportEarthObservationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_earth_observation_job::ExportEarthObservationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_earth_observation_job::ExportEarthObservationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ExportEarthObservationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ExportEarthObservationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_earth_observation_job::ExportEarthObservationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_earth_observation_job::ExportEarthObservationJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ExportEarthObservationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_earth_observation_job::ExportEarthObservationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_earth_observation_job::ExportEarthObservationJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ExportEarthObservationJobFluentBuilder {
             crate::operation::export_earth_observation_job::ExportEarthObservationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_earth_observation_job::ExportEarthObservationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_earth_observation_job::ExportEarthObservationJobError>,
     > {
         self.customize_middleware().await
     }
@@ -149,18 +138,12 @@ impl ExportEarthObservationJobFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
@@ -174,10 +157,7 @@ impl ExportEarthObservationJobFluentBuilder {
         self
     }
     /// <p>An object containing information about the output file.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfigInput>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfigInput>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }

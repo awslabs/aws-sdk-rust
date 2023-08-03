@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifyInstanceFleetOutput {
 }
 impl ModifyInstanceFleetOutput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceFleetOutput`](crate::operation::modify_instance_fleet::ModifyInstanceFleetOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetOutputBuilder {
-        crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetOutputBuilder {
+        crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyInstanceFleetOutput`](crate::operation::modify_instance_fleet::ModifyInstanceFleetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstanceFleetOutputBuilder {
     _request_id: Option<String>,
 }

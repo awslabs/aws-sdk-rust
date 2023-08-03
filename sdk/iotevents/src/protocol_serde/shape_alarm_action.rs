@@ -6,19 +6,13 @@ pub fn ser_alarm_action(
     if let Some(var_1) = &input.sns {
         #[allow(unused_mut)]
         let mut object_2 = object.key("sns").start_object();
-        crate::protocol_serde::shape_sns_topic_publish_action::ser_sns_topic_publish_action(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_sns_topic_publish_action::ser_sns_topic_publish_action(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.iot_topic_publish {
         #[allow(unused_mut)]
         let mut object_4 = object.key("iotTopicPublish").start_object();
-        crate::protocol_serde::shape_iot_topic_publish_action::ser_iot_topic_publish_action(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_iot_topic_publish_action::ser_iot_topic_publish_action(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.lambda {
@@ -30,10 +24,7 @@ pub fn ser_alarm_action(
     if let Some(var_7) = &input.iot_events {
         #[allow(unused_mut)]
         let mut object_8 = object.key("iotEvents").start_object();
-        crate::protocol_serde::shape_iot_events_action::ser_iot_events_action(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_iot_events_action::ser_iot_events_action(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.sqs {
@@ -51,28 +42,19 @@ pub fn ser_alarm_action(
     if let Some(var_13) = &input.dynamo_db {
         #[allow(unused_mut)]
         let mut object_14 = object.key("dynamoDB").start_object();
-        crate::protocol_serde::shape_dynamo_db_action::ser_dynamo_db_action(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_dynamo_db_action::ser_dynamo_db_action(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.dynamo_d_bv2 {
         #[allow(unused_mut)]
         let mut object_16 = object.key("dynamoDBv2").start_object();
-        crate::protocol_serde::shape_dynamo_d_bv2_action::ser_dynamo_d_bv2_action(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_dynamo_d_bv2_action::ser_dynamo_d_bv2_action(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.iot_site_wise {
         #[allow(unused_mut)]
         let mut object_18 = object.key("iotSiteWise").start_object();
-        crate::protocol_serde::shape_iot_site_wise_action::ser_iot_site_wise_action(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_iot_site_wise_action::ser_iot_site_wise_action(&mut object_18, var_17)?;
         object_18.finish();
     }
     Ok(())
@@ -80,17 +62,9 @@ pub fn ser_alarm_action(
 
 pub(crate) fn de_alarm_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AlarmAction>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AlarmAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -100,73 +74,52 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "sns" => {
-                                builder = builder.set_sns(
-                                    crate::protocol_serde::shape_sns_topic_publish_action::de_sns_topic_publish_action(tokens)?
-                                );
-                            }
-                            "iotTopicPublish" => {
-                                builder = builder.set_iot_topic_publish(
-                                    crate::protocol_serde::shape_iot_topic_publish_action::de_iot_topic_publish_action(tokens)?
-                                );
-                            }
-                            "lambda" => {
-                                builder = builder.set_lambda(
-                                    crate::protocol_serde::shape_lambda_action::de_lambda_action(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "iotEvents" => {
-                                builder = builder.set_iot_events(
-                                    crate::protocol_serde::shape_iot_events_action::de_iot_events_action(tokens)?
-                                );
-                            }
-                            "sqs" => {
-                                builder = builder.set_sqs(
-                                    crate::protocol_serde::shape_sqs_action::de_sqs_action(tokens)?,
-                                );
-                            }
-                            "firehose" => {
-                                builder = builder.set_firehose(
-                                    crate::protocol_serde::shape_firehose_action::de_firehose_action(tokens)?
-                                );
-                            }
-                            "dynamoDB" => {
-                                builder = builder.set_dynamo_db(
-                                    crate::protocol_serde::shape_dynamo_db_action::de_dynamo_db_action(tokens)?
-                                );
-                            }
-                            "dynamoDBv2" => {
-                                builder = builder.set_dynamo_d_bv2(
-                                    crate::protocol_serde::shape_dynamo_d_bv2_action::de_dynamo_d_bv2_action(tokens)?
-                                );
-                            }
-                            "iotSiteWise" => {
-                                builder = builder.set_iot_site_wise(
-                                    crate::protocol_serde::shape_iot_site_wise_action::de_iot_site_wise_action(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "sns" => {
+                            builder = builder.set_sns(crate::protocol_serde::shape_sns_topic_publish_action::de_sns_topic_publish_action(
+                                tokens,
+                            )?);
                         }
-                    }
+                        "iotTopicPublish" => {
+                            builder = builder.set_iot_topic_publish(
+                                crate::protocol_serde::shape_iot_topic_publish_action::de_iot_topic_publish_action(tokens)?,
+                            );
+                        }
+                        "lambda" => {
+                            builder = builder.set_lambda(crate::protocol_serde::shape_lambda_action::de_lambda_action(tokens)?);
+                        }
+                        "iotEvents" => {
+                            builder = builder.set_iot_events(crate::protocol_serde::shape_iot_events_action::de_iot_events_action(tokens)?);
+                        }
+                        "sqs" => {
+                            builder = builder.set_sqs(crate::protocol_serde::shape_sqs_action::de_sqs_action(tokens)?);
+                        }
+                        "firehose" => {
+                            builder = builder.set_firehose(crate::protocol_serde::shape_firehose_action::de_firehose_action(tokens)?);
+                        }
+                        "dynamoDB" => {
+                            builder = builder.set_dynamo_db(crate::protocol_serde::shape_dynamo_db_action::de_dynamo_db_action(tokens)?);
+                        }
+                        "dynamoDBv2" => {
+                            builder = builder.set_dynamo_d_bv2(crate::protocol_serde::shape_dynamo_d_bv2_action::de_dynamo_d_bv2_action(tokens)?);
+                        }
+                        "iotSiteWise" => {
+                            builder = builder.set_iot_site_wise(crate::protocol_serde::shape_iot_site_wise_action::de_iot_site_wise_action(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

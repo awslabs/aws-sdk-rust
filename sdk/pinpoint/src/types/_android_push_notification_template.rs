@@ -89,9 +89,7 @@ impl AndroidPushNotificationTemplate {
 
 /// A builder for [`AndroidPushNotificationTemplate`](crate::types::AndroidPushNotificationTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AndroidPushNotificationTemplateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
@@ -148,18 +146,12 @@ impl AndroidPushNotificationTemplateBuilder {
         &self.body
     }
     /// <p>The URL of the large icon image to display in the content view of a push notification that's based on the message template.</p>
-    pub fn image_icon_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_icon_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_icon_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the large icon image to display in the content view of a push notification that's based on the message template.</p>
-    pub fn set_image_icon_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_icon_url = input;
         self
     }
@@ -196,18 +188,12 @@ impl AndroidPushNotificationTemplateBuilder {
         &self.raw_content
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of a push notification that's based on the message template.</p>
-    pub fn small_image_icon_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn small_image_icon_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.small_image_icon_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of a push notification that's based on the message template.</p>
-    pub fn set_small_image_icon_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_small_image_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.small_image_icon_url = input;
         self
     }

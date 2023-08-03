@@ -11,8 +11,7 @@ pub struct GetInstanceTypesFromInstanceRequirementsInput {
     pub architecture_types: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
     /// <p>The virtualization type.</p>
     #[doc(hidden)]
-    pub virtualization_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
+    pub virtualization_types: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
     /// <p>The attributes required for the instance types.</p>
     #[doc(hidden)]
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
@@ -33,15 +32,11 @@ impl GetInstanceTypesFromInstanceRequirementsInput {
         self.architecture_types.as_deref()
     }
     /// <p>The virtualization type.</p>
-    pub fn virtualization_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VirtualizationType]> {
+    pub fn virtualization_types(&self) -> ::std::option::Option<&[crate::types::VirtualizationType]> {
         self.virtualization_types.as_deref()
     }
     /// <p>The attributes required for the instance types.</p>
-    pub fn instance_requirements(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceRequirementsRequest> {
+    pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirementsRequest> {
         self.instance_requirements.as_ref()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -55,24 +50,20 @@ impl GetInstanceTypesFromInstanceRequirementsInput {
 }
 impl GetInstanceTypesFromInstanceRequirementsInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceTypesFromInstanceRequirementsInput`](crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput).
-    pub fn builder() -> crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsInputBuilder{
+    pub fn builder() -> crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsInputBuilder
+    {
         crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceTypesFromInstanceRequirementsInput`](crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceTypesFromInstanceRequirementsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) architecture_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
-    pub(crate) virtualization_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
-    pub(crate) instance_requirements:
-        ::std::option::Option<crate::types::InstanceRequirementsRequest>,
+    pub(crate) architecture_types: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
+    pub(crate) virtualization_types: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
+    pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -103,17 +94,12 @@ impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
         self
     }
     /// <p>The processor architecture type.</p>
-    pub fn set_architecture_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
-    ) -> Self {
+    pub fn set_architecture_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>) -> Self {
         self.architecture_types = input;
         self
     }
     /// <p>The processor architecture type.</p>
-    pub fn get_architecture_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>> {
+    pub fn get_architecture_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>> {
         &self.architecture_types
     }
     /// Appends an item to `virtualization_types`.
@@ -128,39 +114,26 @@ impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
         self
     }
     /// <p>The virtualization type.</p>
-    pub fn set_virtualization_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
-    ) -> Self {
+    pub fn set_virtualization_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>) -> Self {
         self.virtualization_types = input;
         self
     }
     /// <p>The virtualization type.</p>
-    pub fn get_virtualization_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>> {
+    pub fn get_virtualization_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>> {
         &self.virtualization_types
     }
     /// <p>The attributes required for the instance types.</p>
-    pub fn instance_requirements(
-        mut self,
-        input: crate::types::InstanceRequirementsRequest,
-    ) -> Self {
+    pub fn instance_requirements(mut self, input: crate::types::InstanceRequirementsRequest) -> Self {
         self.instance_requirements = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attributes required for the instance types.</p>
-    pub fn set_instance_requirements(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
-    ) -> Self {
+    pub fn set_instance_requirements(mut self, input: ::std::option::Option<crate::types::InstanceRequirementsRequest>) -> Self {
         self.instance_requirements = input;
         self
     }
     /// <p>The attributes required for the instance types.</p>
-    pub fn get_instance_requirements(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceRequirementsRequest> {
+    pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirementsRequest> {
         &self.instance_requirements
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -192,22 +165,21 @@ impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetInstanceTypesFromInstanceRequirementsInput`](crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsInput {
-                dry_run: self.dry_run
-                ,
-                architecture_types: self.architecture_types
-                ,
-                virtualization_types: self.virtualization_types
-                ,
-                instance_requirements: self.instance_requirements
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                dry_run: self.dry_run,
+                architecture_types: self.architecture_types,
+                virtualization_types: self.virtualization_types,
+                instance_requirements: self.instance_requirements,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

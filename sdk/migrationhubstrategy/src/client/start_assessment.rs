@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartAssessmentOutput`](crate::operation::start_assessment::StartAssessmentOutput) with field(s):
     ///   - [`assessment_id(Option<String>)`](crate::operation::start_assessment::StartAssessmentOutput::assessment_id): <p> The ID of the assessment. </p>
     /// - On failure, responds with [`SdkError<StartAssessmentError>`](crate::operation::start_assessment::StartAssessmentError)
-    pub fn start_assessment(
-        &self,
-    ) -> crate::operation::start_assessment::builders::StartAssessmentFluentBuilder {
-        crate::operation::start_assessment::builders::StartAssessmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_assessment(&self) -> crate::operation::start_assessment::builders::StartAssessmentFluentBuilder {
+        crate::operation::start_assessment::builders::StartAssessmentFluentBuilder::new(self.handle.clone())
     }
 }

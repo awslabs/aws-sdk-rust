@@ -13,10 +13,7 @@ pub fn ser_get_item_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = object_3.key(key_4.as_str()).start_object();
-                crate::protocol_serde::shape_attribute_value::ser_attribute_value(
-                    &mut object_6,
-                    value_5,
-                )?;
+                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_6, value_5)?;
                 object_6.finish();
             }
         }

@@ -18,17 +18,14 @@ impl ::aws_http::request_id::RequestId for PutBucketWebsiteOutput {
 }
 impl PutBucketWebsiteOutput {
     /// Creates a new builder-style object to manufacture [`PutBucketWebsiteOutput`](crate::operation::put_bucket_website::PutBucketWebsiteOutput).
-    pub fn builder() -> crate::operation::put_bucket_website::builders::PutBucketWebsiteOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_bucket_website::builders::PutBucketWebsiteOutputBuilder {
         crate::operation::put_bucket_website::builders::PutBucketWebsiteOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutBucketWebsiteOutput`](crate::operation::put_bucket_website::PutBucketWebsiteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketWebsiteOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
@@ -39,10 +36,7 @@ impl PutBucketWebsiteOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }

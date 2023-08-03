@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`builds_deleted(Option<Vec<String>>)`](crate::operation::batch_delete_builds::BatchDeleteBuildsOutput::builds_deleted): <p>The IDs of the builds that were successfully deleted.</p>
     ///   - [`builds_not_deleted(Option<Vec<BuildNotDeleted>>)`](crate::operation::batch_delete_builds::BatchDeleteBuildsOutput::builds_not_deleted): <p>Information about any builds that could not be successfully deleted.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteBuildsError>`](crate::operation::batch_delete_builds::BatchDeleteBuildsError)
-    pub fn batch_delete_builds(
-        &self,
-    ) -> crate::operation::batch_delete_builds::builders::BatchDeleteBuildsFluentBuilder {
-        crate::operation::batch_delete_builds::builders::BatchDeleteBuildsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_delete_builds(&self) -> crate::operation::batch_delete_builds::builders::BatchDeleteBuildsFluentBuilder {
+        crate::operation::batch_delete_builds::builders::BatchDeleteBuildsFluentBuilder::new(self.handle.clone())
     }
 }

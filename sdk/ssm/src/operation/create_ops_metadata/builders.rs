@@ -10,10 +10,7 @@ impl CreateOpsMetadataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_ops_metadata::CreateOpsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ops_metadata::CreateOpsMetadataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ops_metadata::CreateOpsMetadataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_ops_metadata();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateOpsMetadataFluentBuilder {
         }
     }
     /// Access the CreateOpsMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_ops_metadata::builders::CreateOpsMetadataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_ops_metadata::builders::CreateOpsMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateOpsMetadataFluentBuilder {
             crate::operation::create_ops_metadata::CreateOpsMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ops_metadata::CreateOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ops_metadata::CreateOpsMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateOpsMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateOpsMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ops_metadata::CreateOpsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ops_metadata::CreateOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ops_metadata::CreateOpsMetadataError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateOpsMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ops_metadata::CreateOpsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ops_metadata::CreateOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ops_metadata::CreateOpsMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateOpsMetadataFluentBuilder {
             crate::operation::create_ops_metadata::CreateOpsMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ops_metadata::CreateOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ops_metadata::CreateOpsMetadataError>,
     > {
         self.customize_middleware().await
     }
@@ -141,30 +125,20 @@ impl CreateOpsMetadataFluentBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>Metadata for a new Application Manager application. </p>
-    pub fn metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::MetadataValue,
-    ) -> Self {
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetadataValue) -> Self {
         self.inner = self.inner.metadata(k.into(), v);
         self
     }
     /// <p>Metadata for a new Application Manager application. </p>
     pub fn set_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     ) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
     }
     /// <p>Metadata for a new Application Manager application. </p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-    > {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
         self.inner.get_metadata()
     }
     /// Appends an item to `Tags`.
@@ -185,10 +159,7 @@ impl CreateOpsMetadataFluentBuilder {
     /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
     /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

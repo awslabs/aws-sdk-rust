@@ -10,10 +10,7 @@ impl ListBillingGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_billing_groups::ListBillingGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_billing_groups::ListBillingGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_billing_groups::ListBillingGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_billing_groups();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListBillingGroupsFluentBuilder {
         }
     }
     /// Access the ListBillingGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_billing_groups::builders::ListBillingGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_billing_groups::builders::ListBillingGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListBillingGroupsFluentBuilder {
             crate::operation::list_billing_groups::ListBillingGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_billing_groups::ListBillingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_billing_groups::ListBillingGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListBillingGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListBillingGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_billing_groups::ListBillingGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_billing_groups::ListBillingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_billing_groups::ListBillingGroupsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListBillingGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_billing_groups::ListBillingGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_billing_groups::ListBillingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_billing_groups::ListBillingGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListBillingGroupsFluentBuilder {
             crate::operation::list_billing_groups::ListBillingGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_billing_groups::ListBillingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_billing_groups::ListBillingGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_billing_groups::paginator::ListBillingGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_billing_groups::paginator::ListBillingGroupsPaginator {
-        crate::operation::list_billing_groups::paginator::ListBillingGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_billing_groups::paginator::ListBillingGroupsPaginator {
+        crate::operation::list_billing_groups::paginator::ListBillingGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -163,18 +142,12 @@ impl ListBillingGroupsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>Limit the results to billing groups whose names have the given prefix.</p>
-    pub fn name_prefix_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_prefix_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_prefix_filter(input.into());
         self
     }
     /// <p>Limit the results to billing groups whose names have the given prefix.</p>
-    pub fn set_name_prefix_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_prefix_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_prefix_filter(input);
         self
     }

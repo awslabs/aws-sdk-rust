@@ -58,9 +58,7 @@ impl AlarmHistoryItem {
 
 /// A builder for [`AlarmHistoryItem`](crate::types::AlarmHistoryItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmHistoryItemBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_type: ::std::option::Option<crate::types::AlarmType>,
@@ -104,10 +102,7 @@ impl AlarmHistoryItemBuilder {
         self
     }
     /// <p>The time stamp for the alarm history item.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -121,10 +116,7 @@ impl AlarmHistoryItemBuilder {
         self
     }
     /// <p>The type of alarm history item.</p>
-    pub fn set_history_item_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HistoryItemType>,
-    ) -> Self {
+    pub fn set_history_item_type(mut self, input: ::std::option::Option<crate::types::HistoryItemType>) -> Self {
         self.history_item_type = input;
         self
     }
@@ -133,18 +125,12 @@ impl AlarmHistoryItemBuilder {
         &self.history_item_type
     }
     /// <p>A summary of the alarm history, in text format.</p>
-    pub fn history_summary(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn history_summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.history_summary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A summary of the alarm history, in text format.</p>
-    pub fn set_history_summary(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_history_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.history_summary = input;
         self
     }

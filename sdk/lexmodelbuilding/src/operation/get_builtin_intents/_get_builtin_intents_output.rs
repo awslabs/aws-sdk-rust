@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetBuiltinIntentsOutput {
 }
 impl GetBuiltinIntentsOutput {
     /// Creates a new builder-style object to manufacture [`GetBuiltinIntentsOutput`](crate::operation::get_builtin_intents::GetBuiltinIntentsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_builtin_intents::builders::GetBuiltinIntentsOutputBuilder {
+    pub fn builder() -> crate::operation::get_builtin_intents::builders::GetBuiltinIntentsOutputBuilder {
         crate::operation::get_builtin_intents::builders::GetBuiltinIntentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBuiltinIntentsOutput`](crate::operation::get_builtin_intents::GetBuiltinIntentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBuiltinIntentsOutputBuilder {
     pub(crate) intents: ::std::option::Option<::std::vec::Vec<crate::types::BuiltinIntentMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetBuiltinIntentsOutputBuilder {
         self
     }
     /// <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
-    pub fn set_intents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BuiltinIntentMetadata>>,
-    ) -> Self {
+    pub fn set_intents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BuiltinIntentMetadata>>) -> Self {
         self.intents = input;
         self
     }
     /// <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
-    pub fn get_intents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuiltinIntentMetadata>> {
+    pub fn get_intents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BuiltinIntentMetadata>> {
         &self.intents
     }
     /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>

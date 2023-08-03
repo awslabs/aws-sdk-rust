@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetAccessPreviewOutput`](crate::operation::get_access_preview::GetAccessPreviewOutput) with field(s):
     ///   - [`access_preview(Option<AccessPreview>)`](crate::operation::get_access_preview::GetAccessPreviewOutput::access_preview): <p>An object that contains information about the access preview.</p>
     /// - On failure, responds with [`SdkError<GetAccessPreviewError>`](crate::operation::get_access_preview::GetAccessPreviewError)
-    pub fn get_access_preview(
-        &self,
-    ) -> crate::operation::get_access_preview::builders::GetAccessPreviewFluentBuilder {
-        crate::operation::get_access_preview::builders::GetAccessPreviewFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_access_preview(&self) -> crate::operation::get_access_preview::builders::GetAccessPreviewFluentBuilder {
+        crate::operation::get_access_preview::builders::GetAccessPreviewFluentBuilder::new(self.handle.clone())
     }
 }

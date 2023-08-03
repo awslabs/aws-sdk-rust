@@ -36,9 +36,7 @@ impl UntagStreamInput {
 
 /// A builder for [`UntagStreamInput`](crate::operation::untag_stream::UntagStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagStreamInputBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
@@ -85,26 +83,16 @@ impl UntagStreamInputBuilder {
         self
     }
     /// <p>A list of the keys of the tags that you want to remove.</p>
-    pub fn set_tag_key_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_key_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_key_list = input;
         self
     }
     /// <p>A list of the keys of the tags that you want to remove.</p>
-    pub fn get_tag_key_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_key_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_key_list
     }
     /// Consumes the builder and constructs a [`UntagStreamInput`](crate::operation::untag_stream::UntagStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::untag_stream::UntagStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_stream::UntagStreamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_stream::UntagStreamInput {
             stream_arn: self.stream_arn,
             stream_name: self.stream_name,

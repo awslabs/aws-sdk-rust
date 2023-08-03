@@ -64,18 +64,14 @@ impl CreateEdgePackagingJobInput {
 }
 impl CreateEdgePackagingJobInput {
     /// Creates a new builder-style object to manufacture [`CreateEdgePackagingJobInput`](crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput).
-    pub fn builder(
-    ) -> crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder {
         crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEdgePackagingJobInput`](crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEdgePackagingJobInputBuilder {
     pub(crate) edge_packaging_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) compilation_job_name: ::std::option::Option<::std::string::String>,
@@ -88,18 +84,12 @@ pub struct CreateEdgePackagingJobInputBuilder {
 }
 impl CreateEdgePackagingJobInputBuilder {
     /// <p>The name of the edge packaging job.</p>
-    pub fn edge_packaging_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_packaging_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_packaging_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the edge packaging job.</p>
-    pub fn set_edge_packaging_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_packaging_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_packaging_job_name = input;
         self
     }
@@ -108,18 +98,12 @@ impl CreateEdgePackagingJobInputBuilder {
         &self.edge_packaging_job_name
     }
     /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
-    pub fn compilation_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compilation_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compilation_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
-    pub fn set_compilation_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compilation_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compilation_job_name = input;
         self
     }
@@ -142,18 +126,12 @@ impl CreateEdgePackagingJobInputBuilder {
         &self.model_name
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the model.</p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version = input;
         self
     }
@@ -181,10 +159,7 @@ impl CreateEdgePackagingJobInputBuilder {
         self
     }
     /// <p>Provides information about the output location for the packaged model.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgeOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::EdgeOutputConfig>) -> Self {
         self.output_config = input;
         self
     }
@@ -218,10 +193,7 @@ impl CreateEdgePackagingJobInputBuilder {
         self
     }
     /// <p>Creates tags for the packaging job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -236,17 +208,15 @@ impl CreateEdgePackagingJobInputBuilder {
         crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput {
-                edge_packaging_job_name: self.edge_packaging_job_name,
-                compilation_job_name: self.compilation_job_name,
-                model_name: self.model_name,
-                model_version: self.model_version,
-                role_arn: self.role_arn,
-                output_config: self.output_config,
-                resource_key: self.resource_key,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput {
+            edge_packaging_job_name: self.edge_packaging_job_name,
+            compilation_job_name: self.compilation_job_name,
+            model_name: self.model_name,
+            model_version: self.model_version,
+            role_arn: self.role_arn,
+            output_config: self.output_config,
+            resource_key: self.resource_key,
+            tags: self.tags,
+        })
     }
 }

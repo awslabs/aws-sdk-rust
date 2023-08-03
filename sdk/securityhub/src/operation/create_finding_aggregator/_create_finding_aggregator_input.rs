@@ -38,18 +38,14 @@ impl CreateFindingAggregatorInput {
 }
 impl CreateFindingAggregatorInput {
     /// Creates a new builder-style object to manufacture [`CreateFindingAggregatorInput`](crate::operation::create_finding_aggregator::CreateFindingAggregatorInput).
-    pub fn builder(
-    ) -> crate::operation::create_finding_aggregator::builders::CreateFindingAggregatorInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_finding_aggregator::builders::CreateFindingAggregatorInputBuilder {
         crate::operation::create_finding_aggregator::builders::CreateFindingAggregatorInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFindingAggregatorInput`](crate::operation::create_finding_aggregator::CreateFindingAggregatorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFindingAggregatorInputBuilder {
     pub(crate) region_linking_mode: ::std::option::Option<::std::string::String>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,10 +59,7 @@ impl CreateFindingAggregatorInputBuilder {
     /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
     /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
-    pub fn region_linking_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn region_linking_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_linking_mode = ::std::option::Option::Some(input.into());
         self
     }
@@ -78,10 +71,7 @@ impl CreateFindingAggregatorInputBuilder {
     /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
     /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
-    pub fn set_region_linking_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_region_linking_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_linking_mode = input;
         self
     }
@@ -110,10 +100,7 @@ impl CreateFindingAggregatorInputBuilder {
     }
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
     /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region. </p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
@@ -129,11 +116,9 @@ impl CreateFindingAggregatorInputBuilder {
         crate::operation::create_finding_aggregator::CreateFindingAggregatorInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_finding_aggregator::CreateFindingAggregatorInput {
-                region_linking_mode: self.region_linking_mode,
-                regions: self.regions,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_finding_aggregator::CreateFindingAggregatorInput {
+            region_linking_mode: self.region_linking_mode,
+            regions: self.regions,
+        })
     }
 }

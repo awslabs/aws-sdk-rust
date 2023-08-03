@@ -23,9 +23,7 @@ impl StringDatasetParameterDefaultValues {
 
 /// A builder for [`StringDatasetParameterDefaultValues`](crate::types::StringDatasetParameterDefaultValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StringDatasetParameterDefaultValuesBuilder {
     pub(crate) static_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,27 +33,19 @@ impl StringDatasetParameterDefaultValuesBuilder {
     /// To override the contents of this collection use [`set_static_values`](Self::set_static_values).
     ///
     /// <p>A list of static default values for a given string parameter.</p>
-    pub fn static_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn static_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.static_values.unwrap_or_default();
         v.push(input.into());
         self.static_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of static default values for a given string parameter.</p>
-    pub fn set_static_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_static_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.static_values = input;
         self
     }
     /// <p>A list of static default values for a given string parameter.</p>
-    pub fn get_static_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_static_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.static_values
     }
     /// Consumes the builder and constructs a [`StringDatasetParameterDefaultValues`](crate::types::StringDatasetParameterDefaultValues).

@@ -117,9 +117,7 @@ impl ImpactedLocation {
 
 /// A builder for [`ImpactedLocation`](crate::types::ImpactedLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImpactedLocationBuilder {
     pub(crate) as_name: ::std::option::Option<::std::string::String>,
     pub(crate) as_number: ::std::option::Option<i64>,
@@ -267,18 +265,12 @@ impl ImpactedLocationBuilder {
         &self.country_code
     }
     /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available. </p>
-    pub fn subdivision_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subdivision_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subdivision_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available. </p>
-    pub fn set_subdivision_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subdivision_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subdivision_code = input;
         self
     }
@@ -287,18 +279,12 @@ impl ImpactedLocationBuilder {
         &self.subdivision_code
     }
     /// <p>The service location where the health event is located.</p>
-    pub fn service_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service location where the health event is located.</p>
-    pub fn set_service_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_location = input;
         self
     }
@@ -312,10 +298,7 @@ impl ImpactedLocationBuilder {
         self
     }
     /// <p>The status of the health event at an impacted location.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthEventStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::HealthEventStatus>) -> Self {
         self.status = input;
         self
     }
@@ -329,10 +312,7 @@ impl ImpactedLocationBuilder {
         self
     }
     /// <p>The cause of the impairment. There are two types of network impairments: Amazon Web Services network issues or internet issues. Internet issues are typically a problem with a network provider, like an internet service provider (ISP).</p>
-    pub fn set_caused_by(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkImpairment>,
-    ) -> Self {
+    pub fn set_caused_by(mut self, input: ::std::option::Option<crate::types::NetworkImpairment>) -> Self {
         self.caused_by = input;
         self
     }
@@ -346,10 +326,7 @@ impl ImpactedLocationBuilder {
         self
     }
     /// <p>The calculated health at a specific location.</p>
-    pub fn set_internet_health(
-        mut self,
-        input: ::std::option::Option<crate::types::InternetHealth>,
-    ) -> Self {
+    pub fn set_internet_health(mut self, input: ::std::option::Option<crate::types::InternetHealth>) -> Self {
         self.internet_health = input;
         self
     }

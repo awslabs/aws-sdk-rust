@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeProtectionGroupOutput`](crate::operation::describe_protection_group::DescribeProtectionGroupOutput) with field(s):
     ///   - [`protection_group(Option<ProtectionGroup>)`](crate::operation::describe_protection_group::DescribeProtectionGroupOutput::protection_group): <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
     /// - On failure, responds with [`SdkError<DescribeProtectionGroupError>`](crate::operation::describe_protection_group::DescribeProtectionGroupError)
-    pub fn describe_protection_group(
-        &self,
-    ) -> crate::operation::describe_protection_group::builders::DescribeProtectionGroupFluentBuilder
-    {
+    pub fn describe_protection_group(&self) -> crate::operation::describe_protection_group::builders::DescribeProtectionGroupFluentBuilder {
         crate::operation::describe_protection_group::builders::DescribeProtectionGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,16 +44,14 @@ impl ListResourcesForTagOptionInput {
 }
 impl ListResourcesForTagOptionInput {
     /// Creates a new builder-style object to manufacture [`ListResourcesForTagOptionInput`](crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionInput).
-    pub fn builder() -> crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionInputBuilder{
+    pub fn builder() -> crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionInputBuilder {
         crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourcesForTagOptionInput`](crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourcesForTagOptionInputBuilder {
     pub(crate) tag_option_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct ListResourcesForTagOptionInputBuilder {
 }
 impl ListResourcesForTagOptionInputBuilder {
     /// <p>The TagOption identifier.</p>
-    pub fn tag_option_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tag_option_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_option_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The TagOption identifier.</p>
-    pub fn set_tag_option_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tag_option_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_option_id = input;
         self
     }
@@ -86,10 +78,7 @@ impl ListResourcesForTagOptionInputBuilder {
     /// <li> <p> <code>Portfolio</code> </p> </li>
     /// <li> <p> <code>Product</code> </p> </li>
     /// </ul>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -98,10 +87,7 @@ impl ListResourcesForTagOptionInputBuilder {
     /// <li> <p> <code>Portfolio</code> </p> </li>
     /// <li> <p> <code>Product</code> </p> </li>
     /// </ul>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -148,13 +134,11 @@ impl ListResourcesForTagOptionInputBuilder {
         crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionInput {
-                tag_option_id: self.tag_option_id,
-                resource_type: self.resource_type,
-                page_size: self.page_size,
-                page_token: self.page_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionInput {
+            tag_option_id: self.tag_option_id,
+            resource_type: self.resource_type,
+            page_size: self.page_size,
+            page_token: self.page_token,
+        })
     }
 }

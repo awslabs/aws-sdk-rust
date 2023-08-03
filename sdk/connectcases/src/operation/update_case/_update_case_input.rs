@@ -36,9 +36,7 @@ impl UpdateCaseInput {
 
 /// A builder for [`UpdateCaseInput`](crate::operation::update_case::UpdateCaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCaseInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl UpdateCaseInputBuilder {
         self
     }
     /// <p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>) -> Self {
         self.fields = input;
         self
     }
@@ -97,12 +92,7 @@ impl UpdateCaseInputBuilder {
         &self.fields
     }
     /// Consumes the builder and constructs a [`UpdateCaseInput`](crate::operation::update_case::UpdateCaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_case::UpdateCaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_case::UpdateCaseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_case::UpdateCaseInput {
             domain_id: self.domain_id,
             case_id: self.case_id,

@@ -31,25 +31,20 @@ impl GetSchemaVersionInput {
         self.schema_version_id.as_deref()
     }
     /// <p>The version number of the schema.</p>
-    pub fn schema_version_number(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SchemaVersionNumber> {
+    pub fn schema_version_number(&self) -> ::std::option::Option<&crate::types::SchemaVersionNumber> {
         self.schema_version_number.as_ref()
     }
 }
 impl GetSchemaVersionInput {
     /// Creates a new builder-style object to manufacture [`GetSchemaVersionInput`](crate::operation::get_schema_version::GetSchemaVersionInput).
-    pub fn builder() -> crate::operation::get_schema_version::builders::GetSchemaVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schema_version::builders::GetSchemaVersionInputBuilder {
         crate::operation::get_schema_version::builders::GetSchemaVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSchemaVersionInput`](crate::operation::get_schema_version::GetSchemaVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaVersionInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) schema_version_id: ::std::option::Option<::std::string::String>,
@@ -83,18 +78,12 @@ impl GetSchemaVersionInputBuilder {
         &self.schema_id
     }
     /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version_id = input;
         self
     }
@@ -108,32 +97,22 @@ impl GetSchemaVersionInputBuilder {
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn set_schema_version_number(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionNumber>,
-    ) -> Self {
+    pub fn set_schema_version_number(mut self, input: ::std::option::Option<crate::types::SchemaVersionNumber>) -> Self {
         self.schema_version_number = input;
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn get_schema_version_number(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+    pub fn get_schema_version_number(&self) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
         &self.schema_version_number
     }
     /// Consumes the builder and constructs a [`GetSchemaVersionInput`](crate::operation::get_schema_version::GetSchemaVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_schema_version::GetSchemaVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_schema_version::GetSchemaVersionInput {
-                schema_id: self.schema_id,
-                schema_version_id: self.schema_version_id,
-                schema_version_number: self.schema_version_number,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_schema_version::GetSchemaVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_schema_version::GetSchemaVersionInput {
+            schema_id: self.schema_id,
+            schema_version_id: self.schema_version_id,
+            schema_version_number: self.schema_version_number,
+        })
     }
 }

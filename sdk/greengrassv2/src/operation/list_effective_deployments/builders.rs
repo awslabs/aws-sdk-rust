@@ -26,7 +26,7 @@ impl ListEffectiveDeploymentsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEffectiveDeploymentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsInputBuilder,
+    inner: crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsInputBuilder,
 }
 impl ListEffectiveDeploymentsFluentBuilder {
     /// Creates a new `ListEffectiveDeployments`.
@@ -37,10 +37,7 @@ impl ListEffectiveDeploymentsFluentBuilder {
         }
     }
     /// Access the ListEffectiveDeployments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListEffectiveDeploymentsFluentBuilder {
             crate::operation::list_effective_deployments::ListEffectiveDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_effective_deployments::ListEffectiveDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_effective_deployments::ListEffectiveDeploymentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListEffectiveDeploymentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListEffectiveDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_effective_deployments::ListEffectiveDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_effective_deployments::ListEffectiveDeploymentsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListEffectiveDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_effective_deployments::ListEffectiveDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_effective_deployments::ListEffectiveDeploymentsError>,
     > {
         self.send_middleware().await
     }
@@ -117,34 +105,23 @@ impl ListEffectiveDeploymentsFluentBuilder {
             crate::operation::list_effective_deployments::ListEffectiveDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_effective_deployments::ListEffectiveDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_effective_deployments::ListEffectiveDeploymentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_effective_deployments::paginator::ListEffectiveDeploymentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_effective_deployments::paginator::ListEffectiveDeploymentsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_effective_deployments::paginator::ListEffectiveDeploymentsPaginator {
         crate::operation::list_effective_deployments::paginator::ListEffectiveDeploymentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn core_device_thing_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_device_thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_device_thing_name(input.into());
         self
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn set_core_device_thing_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_device_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_device_thing_name(input);
         self
     }

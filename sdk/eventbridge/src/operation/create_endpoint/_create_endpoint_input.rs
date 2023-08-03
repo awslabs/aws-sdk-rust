@@ -61,9 +61,7 @@ impl CreateEndpointInput {
 
 /// A builder for [`CreateEndpointInput`](crate::operation::create_endpoint::CreateEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEndpointInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -107,10 +105,7 @@ impl CreateEndpointInputBuilder {
         self
     }
     /// <p>Configure the routing policy, including the health check and secondary Region..</p>
-    pub fn set_routing_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingConfig>,
-    ) -> Self {
+    pub fn set_routing_config(mut self, input: ::std::option::Option<crate::types::RoutingConfig>) -> Self {
         self.routing_config = input;
         self
     }
@@ -124,17 +119,12 @@ impl CreateEndpointInputBuilder {
         self
     }
     /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
-    pub fn set_replication_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfig>,
-    ) -> Self {
+    pub fn set_replication_config(mut self, input: ::std::option::Option<crate::types::ReplicationConfig>) -> Self {
         self.replication_config = input;
         self
     }
     /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
-    pub fn get_replication_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfig> {
+    pub fn get_replication_config(&self) -> &::std::option::Option<crate::types::ReplicationConfig> {
         &self.replication_config
     }
     /// Appends an item to `event_buses`.
@@ -153,19 +143,14 @@ impl CreateEndpointInputBuilder {
     /// <p>Define the event buses used. </p> <important>
     /// <p>The names of the event buses must be identical in each Region.</p>
     /// </important>
-    pub fn set_event_buses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>,
-    ) -> Self {
+    pub fn set_event_buses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>) -> Self {
         self.event_buses = input;
         self
     }
     /// <p>Define the event buses used. </p> <important>
     /// <p>The names of the event buses must be identical in each Region.</p>
     /// </important>
-    pub fn get_event_buses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
+    pub fn get_event_buses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
         &self.event_buses
     }
     /// <p>The ARN of the role used for replication.</p>
@@ -185,10 +170,7 @@ impl CreateEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateEndpointInput`](crate::operation::create_endpoint::CreateEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_endpoint::CreateEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_endpoint::CreateEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_endpoint::CreateEndpointInput {
             name: self.name,
             description: self.description,

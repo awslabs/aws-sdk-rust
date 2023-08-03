@@ -201,9 +201,7 @@ pub(crate) fn lens_get_rest_apis_output_items(
 
 pub(crate) fn lens_get_usage_output_items(
     input: crate::operation::get_usage::GetUsageOutput,
-) -> ::std::option::Option<
-    ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::vec::Vec<i64>>>,
-> {
+) -> ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::vec::Vec<i64>>>> {
     let input = match input.items {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

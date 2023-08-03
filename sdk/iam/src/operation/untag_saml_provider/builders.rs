@@ -10,10 +10,7 @@ impl UntagSamlProviderInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::untag_saml_provider::UntagSamlProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_saml_provider::UntagSAMLProviderError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_saml_provider::UntagSAMLProviderError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.untag_saml_provider();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UntagSAMLProviderFluentBuilder {
         }
     }
     /// Access the UntagSAMLProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::untag_saml_provider::builders::UntagSamlProviderInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::untag_saml_provider::builders::UntagSamlProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UntagSAMLProviderFluentBuilder {
             crate::operation::untag_saml_provider::UntagSAMLProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_saml_provider::UntagSAMLProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_saml_provider::UntagSAMLProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UntagSAMLProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UntagSAMLProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::untag_saml_provider::UntagSamlProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_saml_provider::UntagSAMLProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_saml_provider::UntagSAMLProviderError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UntagSAMLProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::untag_saml_provider::UntagSamlProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_saml_provider::UntagSAMLProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_saml_provider::UntagSAMLProviderError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +102,19 @@ impl UntagSAMLProviderFluentBuilder {
             crate::operation::untag_saml_provider::UntagSAMLProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_saml_provider::UntagSAMLProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_saml_provider::UntagSAMLProviderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the SAML identity provider in IAM from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn saml_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn saml_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.saml_provider_arn(input.into());
         self
     }
     /// <p>The ARN of the SAML identity provider in IAM from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_saml_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_saml_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_saml_provider_arn(input);
         self
     }
@@ -155,10 +133,7 @@ impl UntagSAMLProviderFluentBuilder {
         self
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified SAML identity provider.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }

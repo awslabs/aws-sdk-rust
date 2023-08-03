@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartRecoveryOutput`](crate::operation::start_recovery::StartRecoveryOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::operation::start_recovery::StartRecoveryOutput::job): <p>The Recovery Job.</p>
     /// - On failure, responds with [`SdkError<StartRecoveryError>`](crate::operation::start_recovery::StartRecoveryError)
-    pub fn start_recovery(
-        &self,
-    ) -> crate::operation::start_recovery::builders::StartRecoveryFluentBuilder {
-        crate::operation::start_recovery::builders::StartRecoveryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_recovery(&self) -> crate::operation::start_recovery::builders::StartRecoveryFluentBuilder {
+        crate::operation::start_recovery::builders::StartRecoveryFluentBuilder::new(self.handle.clone())
     }
 }

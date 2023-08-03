@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartProductSubscriptionOutput`](crate::operation::start_product_subscription::StartProductSubscriptionOutput) with field(s):
     ///   - [`product_user_summary(Option<ProductUserSummary>)`](crate::operation::start_product_subscription::StartProductSubscriptionOutput::product_user_summary): <p>Metadata that describes the start product subscription operation.</p>
     /// - On failure, responds with [`SdkError<StartProductSubscriptionError>`](crate::operation::start_product_subscription::StartProductSubscriptionError)
-    pub fn start_product_subscription(
-        &self,
-    ) -> crate::operation::start_product_subscription::builders::StartProductSubscriptionFluentBuilder
-    {
+    pub fn start_product_subscription(&self) -> crate::operation::start_product_subscription::builders::StartProductSubscriptionFluentBuilder {
         crate::operation::start_product_subscription::builders::StartProductSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

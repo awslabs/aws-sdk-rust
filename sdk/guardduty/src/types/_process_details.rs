@@ -107,9 +107,7 @@ impl ProcessDetails {
 
 /// A builder for [`ProcessDetails`](crate::types::ProcessDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) executable_path: ::std::option::Option<::std::string::String>,
@@ -141,18 +139,12 @@ impl ProcessDetailsBuilder {
         &self.name
     }
     /// <p>The absolute path of the process executable file.</p>
-    pub fn executable_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn executable_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.executable_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The absolute path of the process executable file.</p>
-    pub fn set_executable_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_executable_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.executable_path = input;
         self
     }
@@ -161,18 +153,12 @@ impl ProcessDetailsBuilder {
         &self.executable_path
     }
     /// <p>The <code>SHA256</code> hash of the process executable.</p>
-    pub fn executable_sha256(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn executable_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.executable_sha256 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>SHA256</code> hash of the process executable.</p>
-    pub fn set_executable_sha256(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_executable_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.executable_sha256 = input;
         self
     }
@@ -228,10 +214,7 @@ impl ProcessDetailsBuilder {
         self
     }
     /// <p>The time when the process started. This is in UTC format.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -321,17 +304,12 @@ impl ProcessDetailsBuilder {
         self
     }
     /// <p>Information about the process's lineage.</p>
-    pub fn set_lineage(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LineageObject>>,
-    ) -> Self {
+    pub fn set_lineage(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LineageObject>>) -> Self {
         self.lineage = input;
         self
     }
     /// <p>Information about the process's lineage.</p>
-    pub fn get_lineage(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LineageObject>> {
+    pub fn get_lineage(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LineageObject>> {
         &self.lineage
     }
     /// Consumes the builder and constructs a [`ProcessDetails`](crate::types::ProcessDetails).

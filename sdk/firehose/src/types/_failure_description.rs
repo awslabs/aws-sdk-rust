@@ -30,9 +30,7 @@ impl FailureDescription {
 
 /// A builder for [`FailureDescription`](crate::types::FailureDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailureDescriptionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DeliveryStreamFailureType>,
     pub(crate) details: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl FailureDescriptionBuilder {
         self
     }
     /// <p>The type of error that caused the failure.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryStreamFailureType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DeliveryStreamFailureType>) -> Self {
         self.r#type = input;
         self
     }

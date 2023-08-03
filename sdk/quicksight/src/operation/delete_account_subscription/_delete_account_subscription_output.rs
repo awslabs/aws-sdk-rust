@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteAccountSubscriptionOutput {
 }
 impl DeleteAccountSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountSubscriptionOutput`](crate::operation::delete_account_subscription::DeleteAccountSubscriptionOutput).
-    pub fn builder() -> crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionOutputBuilder {
         crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccountSubscriptionOutput`](crate::operation::delete_account_subscription::DeleteAccountSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccountSubscriptionOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -82,9 +80,7 @@ impl DeleteAccountSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAccountSubscriptionOutput`](crate::operation::delete_account_subscription::DeleteAccountSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_account_subscription::DeleteAccountSubscriptionOutput {
+    pub fn build(self) -> crate::operation::delete_account_subscription::DeleteAccountSubscriptionOutput {
         crate::operation::delete_account_subscription::DeleteAccountSubscriptionOutput {
             request_id: self.request_id,
             status: self.status.unwrap_or_default(),

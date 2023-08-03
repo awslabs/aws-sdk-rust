@@ -30,27 +30,19 @@ impl ErrorInfo {
 
 /// A builder for [`ErrorInfo`](crate::types::ErrorInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorInfoBuilder {
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) error_type: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl ErrorInfoBuilder {
     /// <p>Specifies the error message that appears if a flow fails. </p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the error message that appears if a flow fails. </p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -64,10 +56,7 @@ impl ErrorInfoBuilder {
         self
     }
     /// <p>Specifies the type of error.</p>
-    pub fn set_error_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorDetails>,
-    ) -> Self {
+    pub fn set_error_type(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
         self.error_type = input;
         self
     }

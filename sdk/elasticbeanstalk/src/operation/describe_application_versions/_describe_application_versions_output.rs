@@ -6,8 +6,7 @@
 pub struct DescribeApplicationVersionsOutput {
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
     #[doc(hidden)]
-    pub application_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>>,
+    pub application_versions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>>,
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct DescribeApplicationVersionsOutput {
 }
 impl DescribeApplicationVersionsOutput {
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
-    pub fn application_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationVersionDescription]> {
+    pub fn application_versions(&self) -> ::std::option::Option<&[crate::types::ApplicationVersionDescription]> {
         self.application_versions.as_deref()
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
@@ -32,19 +29,16 @@ impl ::aws_http::request_id::RequestId for DescribeApplicationVersionsOutput {
 }
 impl DescribeApplicationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionsOutput`](crate::operation::describe_application_versions::DescribeApplicationVersionsOutput).
-    pub fn builder() -> crate::operation::describe_application_versions::builders::DescribeApplicationVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_application_versions::builders::DescribeApplicationVersionsOutputBuilder {
         crate::operation::describe_application_versions::builders::DescribeApplicationVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationVersionsOutput`](crate::operation::describe_application_versions::DescribeApplicationVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationVersionsOutputBuilder {
-    pub(crate) application_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>>,
+    pub(crate) application_versions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,27 +48,19 @@ impl DescribeApplicationVersionsOutputBuilder {
     /// To override the contents of this collection use [`set_application_versions`](Self::set_application_versions).
     ///
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
-    pub fn application_versions(
-        mut self,
-        input: crate::types::ApplicationVersionDescription,
-    ) -> Self {
+    pub fn application_versions(mut self, input: crate::types::ApplicationVersionDescription) -> Self {
         let mut v = self.application_versions.unwrap_or_default();
         v.push(input);
         self.application_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
-    pub fn set_application_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>>,
-    ) -> Self {
+    pub fn set_application_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>>) -> Self {
         self.application_versions = input;
         self
     }
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
-    pub fn get_application_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>> {
+    pub fn get_application_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>> {
         &self.application_versions
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
@@ -101,9 +87,7 @@ impl DescribeApplicationVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeApplicationVersionsOutput`](crate::operation::describe_application_versions::DescribeApplicationVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_application_versions::DescribeApplicationVersionsOutput {
+    pub fn build(self) -> crate::operation::describe_application_versions::DescribeApplicationVersionsOutput {
         crate::operation::describe_application_versions::DescribeApplicationVersionsOutput {
             application_versions: self.application_versions,
             next_token: self.next_token,

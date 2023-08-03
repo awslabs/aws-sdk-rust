@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`status(Option<VerifySoftwareTokenResponseType>)`](crate::operation::verify_software_token::VerifySoftwareTokenOutput::status): <p>The status of the verify software token.</p>
     ///   - [`session(Option<String>)`](crate::operation::verify_software_token::VerifySoftwareTokenOutput::session): <p>The session that should be passed both ways in challenge-response calls to the service.</p>
     /// - On failure, responds with [`SdkError<VerifySoftwareTokenError>`](crate::operation::verify_software_token::VerifySoftwareTokenError)
-    pub fn verify_software_token(
-        &self,
-    ) -> crate::operation::verify_software_token::builders::VerifySoftwareTokenFluentBuilder {
-        crate::operation::verify_software_token::builders::VerifySoftwareTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn verify_software_token(&self) -> crate::operation::verify_software_token::builders::VerifySoftwareTokenFluentBuilder {
+        crate::operation::verify_software_token::builders::VerifySoftwareTokenFluentBuilder::new(self.handle.clone())
     }
 }

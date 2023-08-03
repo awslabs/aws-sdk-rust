@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ListAttendeeTagsOutput {
 }
 impl ListAttendeeTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListAttendeeTagsOutput`](crate::operation::list_attendee_tags::ListAttendeeTagsOutput).
-    pub fn builder() -> crate::operation::list_attendee_tags::builders::ListAttendeeTagsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_attendee_tags::builders::ListAttendeeTagsOutputBuilder {
         crate::operation::list_attendee_tags::builders::ListAttendeeTagsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAttendeeTagsOutput`](crate::operation::list_attendee_tags::ListAttendeeTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttendeeTagsOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
@@ -49,10 +46,7 @@ impl ListAttendeeTagsOutputBuilder {
         self
     }
     /// <p>A list of tag key-value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

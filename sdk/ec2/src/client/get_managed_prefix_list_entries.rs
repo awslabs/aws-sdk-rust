@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`entries(Option<Vec<PrefixListEntry>>)`](crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesOutput::entries): <p>Information about the prefix list entries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetManagedPrefixListEntriesError>`](crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesError)
-    pub fn get_managed_prefix_list_entries(&self) -> crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesFluentBuilder{
+    pub fn get_managed_prefix_list_entries(
+        &self,
+    ) -> crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesFluentBuilder {
         crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesFluentBuilder::new(self.handle.clone())
     }
 }

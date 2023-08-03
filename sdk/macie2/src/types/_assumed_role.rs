@@ -51,9 +51,7 @@ impl AssumedRole {
 
 /// A builder for [`AssumedRole`](crate::types::AssumedRole).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssumedRoleBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct AssumedRoleBuilder {
 }
 impl AssumedRoleBuilder {
     /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
-    pub fn access_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
-    pub fn set_access_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_key_id = input;
         self
     }
@@ -130,10 +122,7 @@ impl AssumedRoleBuilder {
         self
     }
     /// <p>The details of the session that was created for the credentials, including the entity that issued the session.</p>
-    pub fn set_session_context(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionContext>,
-    ) -> Self {
+    pub fn set_session_context(mut self, input: ::std::option::Option<crate::types::SessionContext>) -> Self {
         self.session_context = input;
         self
     }

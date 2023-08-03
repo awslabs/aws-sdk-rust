@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteUserByPrincipalIdOutput {
 }
 impl DeleteUserByPrincipalIdOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserByPrincipalIdOutput`](crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdOutputBuilder {
         crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUserByPrincipalIdOutput`](crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUserByPrincipalIdOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -84,9 +80,7 @@ impl DeleteUserByPrincipalIdOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteUserByPrincipalIdOutput`](crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdOutput {
+    pub fn build(self) -> crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdOutput {
         crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdOutput {
             request_id: self.request_id,
             status: self.status.unwrap_or_default(),

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`lo_ra_wan(Option<LoRaWanMulticastGet>)`](crate::operation::get_multicast_group::GetMulticastGroupOutput::lo_ra_wan): <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_multicast_group::GetMulticastGroupOutput::created_at): <p>Created at timestamp for the resource.</p>
     /// - On failure, responds with [`SdkError<GetMulticastGroupError>`](crate::operation::get_multicast_group::GetMulticastGroupError)
-    pub fn get_multicast_group(
-        &self,
-    ) -> crate::operation::get_multicast_group::builders::GetMulticastGroupFluentBuilder {
-        crate::operation::get_multicast_group::builders::GetMulticastGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_multicast_group(&self) -> crate::operation::get_multicast_group::builders::GetMulticastGroupFluentBuilder {
+        crate::operation::get_multicast_group::builders::GetMulticastGroupFluentBuilder::new(self.handle.clone())
     }
 }

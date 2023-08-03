@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`certificates(Vec<Certificate>)`](crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesFluentBuilder::certificates) / [`set_certificates(Option<Vec<Certificate>>)`](crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesFluentBuilder::set_certificates): <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
     /// - On success, responds with [`RemoveListenerCertificatesOutput`](crate::operation::remove_listener_certificates::RemoveListenerCertificatesOutput)
     /// - On failure, responds with [`SdkError<RemoveListenerCertificatesError>`](crate::operation::remove_listener_certificates::RemoveListenerCertificatesError)
-    pub fn remove_listener_certificates(&self) -> crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesFluentBuilder{
+    pub fn remove_listener_certificates(&self) -> crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesFluentBuilder {
         crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesFluentBuilder::new(self.handle.clone())
     }
 }

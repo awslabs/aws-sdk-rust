@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateBlueprintOutput`](crate::operation::update_blueprint::UpdateBlueprintOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::update_blueprint::UpdateBlueprintOutput::name): <p>Returns the name of the blueprint that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateBlueprintError>`](crate::operation::update_blueprint::UpdateBlueprintError)
-    pub fn update_blueprint(
-        &self,
-    ) -> crate::operation::update_blueprint::builders::UpdateBlueprintFluentBuilder {
-        crate::operation::update_blueprint::builders::UpdateBlueprintFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_blueprint(&self) -> crate::operation::update_blueprint::builders::UpdateBlueprintFluentBuilder {
+        crate::operation::update_blueprint::builders::UpdateBlueprintFluentBuilder::new(self.handle.clone())
     }
 }

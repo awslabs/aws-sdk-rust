@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AddFacetToObjectOutput {
 }
 impl AddFacetToObjectOutput {
     /// Creates a new builder-style object to manufacture [`AddFacetToObjectOutput`](crate::operation::add_facet_to_object::AddFacetToObjectOutput).
-    pub fn builder(
-    ) -> crate::operation::add_facet_to_object::builders::AddFacetToObjectOutputBuilder {
+    pub fn builder() -> crate::operation::add_facet_to_object::builders::AddFacetToObjectOutputBuilder {
         crate::operation::add_facet_to_object::builders::AddFacetToObjectOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddFacetToObjectOutput`](crate::operation::add_facet_to_object::AddFacetToObjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddFacetToObjectOutputBuilder {
     _request_id: Option<String>,
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::associate_certificate::builders::AssociateCertificateFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::associate_certificate::builders::AssociateCertificateFluentBuilder::set_arn): The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
     /// - On success, responds with [`AssociateCertificateOutput`](crate::operation::associate_certificate::AssociateCertificateOutput)
     /// - On failure, responds with [`SdkError<AssociateCertificateError>`](crate::operation::associate_certificate::AssociateCertificateError)
-    pub fn associate_certificate(
-        &self,
-    ) -> crate::operation::associate_certificate::builders::AssociateCertificateFluentBuilder {
-        crate::operation::associate_certificate::builders::AssociateCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_certificate(&self) -> crate::operation::associate_certificate::builders::AssociateCertificateFluentBuilder {
+        crate::operation::associate_certificate::builders::AssociateCertificateFluentBuilder::new(self.handle.clone())
     }
 }

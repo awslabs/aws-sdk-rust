@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`use_defaults(Option<bool>)`](crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapOutput::use_defaults): <p>You can use this operation to select default (username and clientID) attribute mappings.</p>
     ///   - [`principal_tags(Option<HashMap<String, String>>)`](crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapOutput::principal_tags): <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
     /// - On failure, responds with [`SdkError<SetPrincipalTagAttributeMapError>`](crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapError)
-    pub fn set_principal_tag_attribute_map(&self) -> crate::operation::set_principal_tag_attribute_map::builders::SetPrincipalTagAttributeMapFluentBuilder{
+    pub fn set_principal_tag_attribute_map(
+        &self,
+    ) -> crate::operation::set_principal_tag_attribute_map::builders::SetPrincipalTagAttributeMapFluentBuilder {
         crate::operation::set_principal_tag_attribute_map::builders::SetPrincipalTagAttributeMapFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,9 +16,7 @@ pub fn ser_merge_pull_request_by_squash_input(
         object.key("conflictDetailLevel").string(var_4.as_str());
     }
     if let Some(var_5) = &input.conflict_resolution_strategy {
-        object
-            .key("conflictResolutionStrategy")
-            .string(var_5.as_str());
+        object.key("conflictResolutionStrategy").string(var_5.as_str());
     }
     if let Some(var_6) = &input.commit_message {
         object.key("commitMessage").string(var_6.as_str());
@@ -30,17 +28,12 @@ pub fn ser_merge_pull_request_by_squash_input(
         object.key("email").string(var_8.as_str());
     }
     if input.keep_empty_folders {
-        object
-            .key("keepEmptyFolders")
-            .boolean(input.keep_empty_folders);
+        object.key("keepEmptyFolders").boolean(input.keep_empty_folders);
     }
     if let Some(var_9) = &input.conflict_resolution {
         #[allow(unused_mut)]
         let mut object_10 = object.key("conflictResolution").start_object();
-        crate::protocol_serde::shape_conflict_resolution::ser_conflict_resolution(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_conflict_resolution::ser_conflict_resolution(&mut object_10, var_9)?;
         object_10.finish();
     }
     Ok(())

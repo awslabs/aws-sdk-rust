@@ -58,9 +58,7 @@ impl VgwTelemetry {
 
 /// A builder for [`VgwTelemetry`](crate::types::VgwTelemetry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VgwTelemetryBuilder {
     pub(crate) accepted_route_count: ::std::option::Option<i32>,
     pub(crate) last_status_change: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -90,10 +88,7 @@ impl VgwTelemetryBuilder {
         self
     }
     /// <p>The date and time of the last change in status.</p>
-    pub fn set_last_status_change(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_status_change(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_status_change = input;
         self
     }
@@ -102,18 +97,12 @@ impl VgwTelemetryBuilder {
         &self.last_status_change
     }
     /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    pub fn outside_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outside_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outside_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    pub fn set_outside_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outside_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outside_ip_address = input;
         self
     }
@@ -127,10 +116,7 @@ impl VgwTelemetryBuilder {
         self
     }
     /// <p>The status of the VPN tunnel.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TelemetryStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TelemetryStatus>) -> Self {
         self.status = input;
         self
     }
@@ -139,18 +125,12 @@ impl VgwTelemetryBuilder {
         &self.status
     }
     /// <p>If an error occurs, a description of the error.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an error occurs, a description of the error.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -159,18 +139,12 @@ impl VgwTelemetryBuilder {
         &self.status_message
     }
     /// <p>The Amazon Resource Name (ARN) of the VPN tunnel endpoint certificate.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the VPN tunnel endpoint certificate.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }

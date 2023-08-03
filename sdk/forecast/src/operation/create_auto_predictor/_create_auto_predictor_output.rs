@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateAutoPredictorOutput {
 }
 impl CreateAutoPredictorOutput {
     /// Creates a new builder-style object to manufacture [`CreateAutoPredictorOutput`](crate::operation::create_auto_predictor::CreateAutoPredictorOutput).
-    pub fn builder(
-    ) -> crate::operation::create_auto_predictor::builders::CreateAutoPredictorOutputBuilder {
-        crate::operation::create_auto_predictor::builders::CreateAutoPredictorOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_auto_predictor::builders::CreateAutoPredictorOutputBuilder {
+        crate::operation::create_auto_predictor::builders::CreateAutoPredictorOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAutoPredictorOutput`](crate::operation::create_auto_predictor::CreateAutoPredictorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAutoPredictorOutputBuilder {
     pub(crate) predictor_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateAutoPredictorOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
-    pub fn predictor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
-    pub fn set_predictor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_arn = input;
         self
     }

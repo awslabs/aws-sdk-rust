@@ -8,8 +8,7 @@ pub struct GetTransitGatewayConnectPeerAssociationsInput {
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more transit gateway Connect peer Amazon Resource Names (ARNs).</p>
     #[doc(hidden)]
-    pub transit_gateway_connect_peer_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub transit_gateway_connect_peer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of results to return.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -23,9 +22,7 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
         self.global_network_id.as_deref()
     }
     /// <p>One or more transit gateway Connect peer Amazon Resource Names (ARNs).</p>
-    pub fn transit_gateway_connect_peer_arns(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn transit_gateway_connect_peer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.transit_gateway_connect_peer_arns.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -39,37 +36,29 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
 }
 impl GetTransitGatewayConnectPeerAssociationsInput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayConnectPeerAssociationsInput`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsInput).
-    pub fn builder() -> crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsInputBuilder
+    {
         crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTransitGatewayConnectPeerAssociationsInput`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayConnectPeerAssociationsInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
-    pub(crate) transit_gateway_connect_peer_arns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) transit_gateway_connect_peer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetTransitGatewayConnectPeerAssociationsInputBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -82,27 +71,19 @@ impl GetTransitGatewayConnectPeerAssociationsInputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_connect_peer_arns`](Self::set_transit_gateway_connect_peer_arns).
     ///
     /// <p>One or more transit gateway Connect peer Amazon Resource Names (ARNs).</p>
-    pub fn transit_gateway_connect_peer_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_connect_peer_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.transit_gateway_connect_peer_arns.unwrap_or_default();
         v.push(input.into());
         self.transit_gateway_connect_peer_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more transit gateway Connect peer Amazon Resource Names (ARNs).</p>
-    pub fn set_transit_gateway_connect_peer_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_transit_gateway_connect_peer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.transit_gateway_connect_peer_arns = input;
         self
     }
     /// <p>One or more transit gateway Connect peer Amazon Resource Names (ARNs).</p>
-    pub fn get_transit_gateway_connect_peer_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_transit_gateway_connect_peer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.transit_gateway_connect_peer_arns
     }
     /// <p>The maximum number of results to return.</p>
@@ -134,18 +115,19 @@ impl GetTransitGatewayConnectPeerAssociationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayConnectPeerAssociationsInput`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsInput {
-                global_network_id: self.global_network_id
-                ,
-                transit_gateway_connect_peer_arns: self.transit_gateway_connect_peer_arns
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                global_network_id: self.global_network_id,
+                transit_gateway_connect_peer_arns: self.transit_gateway_connect_peer_arns,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPermissionSetsOutput {
 }
 impl ListPermissionSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionSetsOutput`](crate::operation::list_permission_sets::ListPermissionSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_permission_sets::builders::ListPermissionSetsOutputBuilder {
+    pub fn builder() -> crate::operation::list_permission_sets::builders::ListPermissionSetsOutputBuilder {
         crate::operation::list_permission_sets::builders::ListPermissionSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPermissionSetsOutput`](crate::operation::list_permission_sets::ListPermissionSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionSetsOutputBuilder {
     pub(crate) permission_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,27 +47,19 @@ impl ListPermissionSetsOutputBuilder {
     /// To override the contents of this collection use [`set_permission_sets`](Self::set_permission_sets).
     ///
     /// <p>Defines the level of access on an AWS account.</p>
-    pub fn permission_sets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_sets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.permission_sets.unwrap_or_default();
         v.push(input.into());
         self.permission_sets = ::std::option::Option::Some(v);
         self
     }
     /// <p>Defines the level of access on an AWS account.</p>
-    pub fn set_permission_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_permission_sets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.permission_sets = input;
         self
     }
     /// <p>Defines the level of access on an AWS account.</p>
-    pub fn get_permission_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_permission_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.permission_sets
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>

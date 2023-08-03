@@ -10,10 +10,7 @@ impl DescribeImagesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_images::DescribeImagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_images::DescribeImagesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_images::DescribeImagesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_images();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeImagesFluentBuilder {
         }
     }
     /// Access the DescribeImages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_images::builders::DescribeImagesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_images::builders::DescribeImagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl DescribeImagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -119,13 +111,8 @@ impl DescribeImagesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_images::paginator::DescribeImagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_images::paginator::DescribeImagesPaginator {
-        crate::operation::describe_images::paginator::DescribeImagesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_images::paginator::DescribeImagesPaginator {
+        crate::operation::describe_images::paginator::DescribeImagesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,18 +129,12 @@ impl DescribeImagesFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The repository that contains the images to describe.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The repository that contains the images to describe.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -171,17 +152,12 @@ impl DescribeImagesFluentBuilder {
         self
     }
     /// <p>The list of image IDs for the requested repository.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>) -> Self {
         self.inner = self.inner.set_image_ids(input);
         self
     }
     /// <p>The list of image IDs for the requested repository.</p>
-    pub fn get_image_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
         self.inner.get_image_ids()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
@@ -218,10 +194,7 @@ impl DescribeImagesFluentBuilder {
         self
     }
     /// <p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribeImagesFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DescribeImagesFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

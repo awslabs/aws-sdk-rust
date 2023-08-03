@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for ModifySpotFleetRequestOutput {
 }
 impl ModifySpotFleetRequestOutput {
     /// Creates a new builder-style object to manufacture [`ModifySpotFleetRequestOutput`](crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestOutputBuilder {
         crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifySpotFleetRequestOutput`](crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifySpotFleetRequestOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -63,9 +59,7 @@ impl ModifySpotFleetRequestOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifySpotFleetRequestOutput`](crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestOutput {
+    pub fn build(self) -> crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestOutput {
         crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestOutput {
             r#return: self.r#return,
             _request_id: self._request_id,

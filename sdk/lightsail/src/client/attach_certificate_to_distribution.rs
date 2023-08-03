@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`AttachCertificateToDistributionOutput`](crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput::operation): <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<AttachCertificateToDistributionError>`](crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError)
-    pub fn attach_certificate_to_distribution(&self) -> crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionFluentBuilder{
+    pub fn attach_certificate_to_distribution(
+        &self,
+    ) -> crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionFluentBuilder {
         crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionFluentBuilder::new(self.handle.clone())
     }
 }

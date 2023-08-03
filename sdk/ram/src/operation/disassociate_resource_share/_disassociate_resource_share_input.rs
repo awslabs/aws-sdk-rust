@@ -67,16 +67,14 @@ impl DisassociateResourceShareInput {
 }
 impl DisassociateResourceShareInput {
     /// Creates a new builder-style object to manufacture [`DisassociateResourceShareInput`](crate::operation::disassociate_resource_share::DisassociateResourceShareInput).
-    pub fn builder() -> crate::operation::disassociate_resource_share::builders::DisassociateResourceShareInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_resource_share::builders::DisassociateResourceShareInputBuilder {
         crate::operation::disassociate_resource_share::builders::DisassociateResourceShareInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateResourceShareInput`](crate::operation::disassociate_resource_share::DisassociateResourceShareInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateResourceShareInputBuilder {
     pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -86,18 +84,12 @@ pub struct DisassociateResourceShareInputBuilder {
 }
 impl DisassociateResourceShareInputBuilder {
     /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to remove resources or principals from.</p>
-    pub fn resource_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to remove resources or principals from.</p>
-    pub fn set_resource_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_share_arn = input;
         self
     }
@@ -110,27 +102,19 @@ impl DisassociateResourceShareInputBuilder {
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals associated with the resource share.</p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals associated with the resource share.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_arns = input;
         self
     }
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals associated with the resource share.</p>
-    pub fn get_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_arns
     }
     /// Appends an item to `principals`.
@@ -165,10 +149,7 @@ impl DisassociateResourceShareInputBuilder {
     /// </ul> <note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.principals = input;
         self
     }
@@ -218,10 +199,7 @@ impl DisassociateResourceShareInputBuilder {
         self
     }
     /// <p>Specifies from which source accounts the service principal no longer has access to the resources in this resource share.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sources = input;
         self
     }
@@ -236,14 +214,12 @@ impl DisassociateResourceShareInputBuilder {
         crate::operation::disassociate_resource_share::DisassociateResourceShareInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_resource_share::DisassociateResourceShareInput {
-                resource_share_arn: self.resource_share_arn,
-                resource_arns: self.resource_arns,
-                principals: self.principals,
-                client_token: self.client_token,
-                sources: self.sources,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_resource_share::DisassociateResourceShareInput {
+            resource_share_arn: self.resource_share_arn,
+            resource_arns: self.resource_arns,
+            principals: self.principals,
+            client_token: self.client_token,
+            sources: self.sources,
+        })
     }
 }

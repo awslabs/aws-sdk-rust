@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NetworkInterfaceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for NetworkInterfaceStatus {
             "available" => NetworkInterfaceStatus::Available,
             "detaching" => NetworkInterfaceStatus::Detaching,
             "in-use" => NetworkInterfaceStatus::InUse,
-            other => NetworkInterfaceStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NetworkInterfaceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl NetworkInterfaceStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "associated",
-            "attaching",
-            "available",
-            "detaching",
-            "in-use",
-        ]
+        &["associated", "attaching", "available", "detaching", "in-use"]
     }
 }
 impl ::std::convert::AsRef<str> for NetworkInterfaceStatus {

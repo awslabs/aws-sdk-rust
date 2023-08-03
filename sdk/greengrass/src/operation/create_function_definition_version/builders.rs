@@ -5,16 +5,16 @@ pub use crate::operation::create_function_definition_version::_create_function_d
 
 impl CreateFunctionDefinitionVersionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_function_definition_version();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateFunctionDefinitionVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFunctionDefinitionVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_function_definition_version::builders::CreateFunctionDefinitionVersionInputBuilder,
+    inner: crate::operation::create_function_definition_version::builders::CreateFunctionDefinitionVersionInputBuilder,
 }
 impl CreateFunctionDefinitionVersionFluentBuilder {
     /// Creates a new `CreateFunctionDefinitionVersion`.
@@ -37,15 +37,20 @@ impl CreateFunctionDefinitionVersionFluentBuilder {
         }
     }
     /// Access the CreateFunctionDefinitionVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_function_definition_version::builders::CreateFunctionDefinitionVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_function_definition_version::builders::CreateFunctionDefinitionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_function_definition_version::CreateFunctionDefinitionVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl CreateFunctionDefinitionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl CreateFunctionDefinitionVersionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_function_definition_version::CreateFunctionDefinitionVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionError>,
+    > {
         self.customize_middleware().await
     }
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.amzn_client_token(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
@@ -120,32 +129,21 @@ impl CreateFunctionDefinitionVersionFluentBuilder {
         self
     }
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-    pub fn set_default_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionDefaultConfig>,
-    ) -> Self {
+    pub fn set_default_config(mut self, input: ::std::option::Option<crate::types::FunctionDefaultConfig>) -> Self {
         self.inner = self.inner.set_default_config(input);
         self
     }
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-    pub fn get_default_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::FunctionDefaultConfig> {
+    pub fn get_default_config(&self) -> &::std::option::Option<crate::types::FunctionDefaultConfig> {
         self.inner.get_default_config()
     }
     /// The ID of the Lambda function definition.
-    pub fn function_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_definition_id(input.into());
         self
     }
     /// The ID of the Lambda function definition.
-    pub fn set_function_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_definition_id(input);
         self
     }
@@ -163,10 +161,7 @@ impl CreateFunctionDefinitionVersionFluentBuilder {
         self
     }
     /// A list of Lambda functions in this function definition version.
-    pub fn set_functions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Function>>,
-    ) -> Self {
+    pub fn set_functions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Function>>) -> Self {
         self.inner = self.inner.set_functions(input);
         self
     }

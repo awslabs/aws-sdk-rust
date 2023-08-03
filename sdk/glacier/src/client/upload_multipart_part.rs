@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UploadMultipartPartOutput`](crate::operation::upload_multipart_part::UploadMultipartPartOutput) with field(s):
     ///   - [`checksum(Option<String>)`](crate::operation::upload_multipart_part::UploadMultipartPartOutput::checksum): <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
     /// - On failure, responds with [`SdkError<UploadMultipartPartError>`](crate::operation::upload_multipart_part::UploadMultipartPartError)
-    pub fn upload_multipart_part(
-        &self,
-    ) -> crate::operation::upload_multipart_part::builders::UploadMultipartPartFluentBuilder {
-        crate::operation::upload_multipart_part::builders::UploadMultipartPartFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn upload_multipart_part(&self) -> crate::operation::upload_multipart_part::builders::UploadMultipartPartFluentBuilder {
+        crate::operation::upload_multipart_part::builders::UploadMultipartPartFluentBuilder::new(self.handle.clone())
     }
 }

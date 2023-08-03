@@ -81,9 +81,7 @@ impl CaptionFormat {
 
 /// A builder for [`CaptionFormat`](crate::types::CaptionFormat).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaptionFormatBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) pattern: ::std::option::Option<::std::string::String>,
@@ -190,10 +188,7 @@ impl CaptionFormatBuilder {
         self
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your caption formats.</p>
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::Encryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
         self.encryption = input;
         self
     }

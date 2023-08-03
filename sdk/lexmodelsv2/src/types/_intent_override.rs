@@ -9,9 +9,7 @@ pub struct IntentOverride {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.</p>
     #[doc(hidden)]
-    pub slots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>,
-    >,
+    pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>>,
 }
 impl IntentOverride {
     /// <p>The name of the intent. Only required when you're switching intents.</p>
@@ -19,11 +17,7 @@ impl IntentOverride {
         self.name.as_deref()
     }
     /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.</p>
-    pub fn slots(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>,
-    > {
+    pub fn slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>> {
         self.slots.as_ref()
     }
 }
@@ -36,14 +30,10 @@ impl IntentOverride {
 
 /// A builder for [`IntentOverride`](crate::types::IntentOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentOverrideBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) slots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>,
-    >,
+    pub(crate) slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>>,
 }
 impl IntentOverrideBuilder {
     /// <p>The name of the intent. Only required when you're switching intents.</p>
@@ -65,11 +55,7 @@ impl IntentOverrideBuilder {
     /// To override the contents of this collection use [`set_slots`](Self::set_slots).
     ///
     /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.</p>
-    pub fn slots(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::SlotValueOverride,
-    ) -> Self {
+    pub fn slots(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SlotValueOverride) -> Self {
         let mut hash_map = self.slots.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.slots = ::std::option::Option::Some(hash_map);
@@ -78,19 +64,13 @@ impl IntentOverrideBuilder {
     /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.</p>
     pub fn set_slots(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>>,
     ) -> Self {
         self.slots = input;
         self
     }
     /// <p>A map of all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden.</p>
-    pub fn get_slots(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>,
-    > {
+    pub fn get_slots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SlotValueOverride>> {
         &self.slots
     }
     /// Consumes the builder and constructs a [`IntentOverride`](crate::types::IntentOverride).

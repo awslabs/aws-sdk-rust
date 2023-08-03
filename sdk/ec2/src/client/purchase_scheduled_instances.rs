@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`PurchaseScheduledInstancesOutput`](crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesOutput) with field(s):
     ///   - [`scheduled_instance_set(Option<Vec<ScheduledInstance>>)`](crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesOutput::scheduled_instance_set): <p>Information about the Scheduled Instances.</p>
     /// - On failure, responds with [`SdkError<PurchaseScheduledInstancesError>`](crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError)
-    pub fn purchase_scheduled_instances(&self) -> crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesFluentBuilder{
+    pub fn purchase_scheduled_instances(&self) -> crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesFluentBuilder {
         crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesFluentBuilder::new(self.handle.clone())
     }
 }

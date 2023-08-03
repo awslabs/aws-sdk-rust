@@ -5,8 +5,7 @@
 pub struct ListHumanLoopsOutput {
     /// <p>An array of objects that contain information about the human loops.</p>
     #[doc(hidden)]
-    pub human_loop_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::HumanLoopSummary>>,
+    pub human_loop_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HumanLoopSummary>>,
     /// <p>A token to display the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -36,12 +35,9 @@ impl ListHumanLoopsOutput {
 
 /// A builder for [`ListHumanLoopsOutput`](crate::operation::list_human_loops::ListHumanLoopsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHumanLoopsOutputBuilder {
-    pub(crate) human_loop_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::HumanLoopSummary>>,
+    pub(crate) human_loop_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HumanLoopSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListHumanLoopsOutputBuilder {
         self
     }
     /// <p>An array of objects that contain information about the human loops.</p>
-    pub fn set_human_loop_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HumanLoopSummary>>,
-    ) -> Self {
+    pub fn set_human_loop_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HumanLoopSummary>>) -> Self {
         self.human_loop_summaries = input;
         self
     }
     /// <p>An array of objects that contain information about the human loops.</p>
-    pub fn get_human_loop_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HumanLoopSummary>> {
+    pub fn get_human_loop_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HumanLoopSummary>> {
         &self.human_loop_summaries
     }
     /// <p>A token to display the next page of results.</p>

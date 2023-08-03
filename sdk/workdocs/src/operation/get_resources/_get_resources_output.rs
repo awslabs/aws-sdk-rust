@@ -42,9 +42,7 @@ impl GetResourcesOutput {
 
 /// A builder for [`GetResourcesOutput`](crate::operation::get_resources::GetResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcesOutputBuilder {
     pub(crate) folders: ::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>>,
     pub(crate) documents: ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadata>>,
@@ -64,17 +62,12 @@ impl GetResourcesOutputBuilder {
         self
     }
     /// <p>The folders in the specified folder.</p>
-    pub fn set_folders(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>>,
-    ) -> Self {
+    pub fn set_folders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>>) -> Self {
         self.folders = input;
         self
     }
     /// <p>The folders in the specified folder.</p>
-    pub fn get_folders(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>> {
+    pub fn get_folders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>> {
         &self.folders
     }
     /// Appends an item to `documents`.
@@ -89,17 +82,12 @@ impl GetResourcesOutputBuilder {
         self
     }
     /// <p>The documents in the specified collection.</p>
-    pub fn set_documents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadata>>,
-    ) -> Self {
+    pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadata>>) -> Self {
         self.documents = input;
         self
     }
     /// <p>The documents in the specified collection.</p>
-    pub fn get_documents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadata>> {
+    pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadata>> {
         &self.documents
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>

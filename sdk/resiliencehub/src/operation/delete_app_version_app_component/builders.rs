@@ -31,7 +31,7 @@ impl DeleteAppVersionAppComponentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAppVersionAppComponentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentInputBuilder,
+    inner: crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentInputBuilder,
 }
 impl DeleteAppVersionAppComponentFluentBuilder {
     /// Creates a new `DeleteAppVersionAppComponent`.
@@ -42,7 +42,7 @@ impl DeleteAppVersionAppComponentFluentBuilder {
         }
     }
     /// Access the DeleteAppVersionAppComponent as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl DeleteAppVersionAppComponentFluentBuilder {
             crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl DeleteAppVersionAppComponentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl DeleteAppVersionAppComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl DeleteAppVersionAppComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +110,7 @@ impl DeleteAppVersionAppComponentFluentBuilder {
             crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentError>,
     > {
         self.customize_middleware().await
     }

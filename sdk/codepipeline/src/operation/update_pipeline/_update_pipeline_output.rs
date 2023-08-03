@@ -29,9 +29,7 @@ impl UpdatePipelineOutput {
 
 /// A builder for [`UpdatePipelineOutput`](crate::operation::update_pipeline::UpdatePipelineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePipelineOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl UpdatePipelineOutputBuilder {
         self
     }
     /// <p>The structure of the updated pipeline.</p>
-    pub fn set_pipeline(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineDeclaration>,
-    ) -> Self {
+    pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::PipelineDeclaration>) -> Self {
         self.pipeline = input;
         self
     }

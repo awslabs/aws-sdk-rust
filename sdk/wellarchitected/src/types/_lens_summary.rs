@@ -92,9 +92,7 @@ impl LensSummary {
 
 /// A builder for [`LensSummary`](crate::types::LensSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LensSummaryBuilder {
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
@@ -193,10 +191,7 @@ impl LensSummaryBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -210,10 +205,7 @@ impl LensSummaryBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -255,10 +247,7 @@ impl LensSummaryBuilder {
         self
     }
     /// <p>The status of the lens.</p>
-    pub fn set_lens_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LensStatus>,
-    ) -> Self {
+    pub fn set_lens_status(mut self, input: ::std::option::Option<crate::types::LensStatus>) -> Self {
         self.lens_status = input;
         self
     }

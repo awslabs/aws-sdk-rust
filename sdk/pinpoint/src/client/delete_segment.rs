@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSegmentOutput`](crate::operation::delete_segment::DeleteSegmentOutput) with field(s):
     ///   - [`segment_response(Option<SegmentResponse>)`](crate::operation::delete_segment::DeleteSegmentOutput::segment_response): <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     /// - On failure, responds with [`SdkError<DeleteSegmentError>`](crate::operation::delete_segment::DeleteSegmentError)
-    pub fn delete_segment(
-        &self,
-    ) -> crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder {
-        crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_segment(&self) -> crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder {
+        crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::new(self.handle.clone())
     }
 }

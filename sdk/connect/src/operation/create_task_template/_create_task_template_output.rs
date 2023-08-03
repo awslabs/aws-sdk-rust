@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateTaskTemplateOutput {
 }
 impl CreateTaskTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateTaskTemplateOutput`](crate::operation::create_task_template::CreateTaskTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::create_task_template::builders::CreateTaskTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::create_task_template::builders::CreateTaskTemplateOutputBuilder {
         crate::operation::create_task_template::builders::CreateTaskTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTaskTemplateOutput`](crate::operation::create_task_template::CreateTaskTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTaskTemplateOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

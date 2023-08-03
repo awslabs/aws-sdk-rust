@@ -37,9 +37,7 @@ impl DisassociateProfilesFluentBuilder {
         }
     }
     /// Access the DisassociateProfiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_profiles::builders::DisassociateProfilesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_profiles::builders::DisassociateProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DisassociateProfilesFluentBuilder {
             crate::operation::disassociate_profiles::DisassociateProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_profiles::DisassociateProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_profiles::DisassociateProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DisassociateProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DisassociateProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_profiles::DisassociateProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_profiles::DisassociateProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_profiles::DisassociateProfilesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DisassociateProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_profiles::DisassociateProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_profiles::DisassociateProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_profiles::DisassociateProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DisassociateProfilesFluentBuilder {
             crate::operation::disassociate_profiles::DisassociateProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_profiles::DisassociateProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_profiles::DisassociateProfilesError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +133,12 @@ impl DisassociateProfilesFluentBuilder {
         self
     }
     /// <p>The list of profile ARNs to disassociate from the workload.</p>
-    pub fn set_profile_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_profile_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_profile_arns(input);
         self
     }
     /// <p>The list of profile ARNs to disassociate from the workload.</p>
-    pub fn get_profile_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_profile_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_profile_arns()
     }
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetDeviceMethodsOutput {
 }
 impl GetDeviceMethodsOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceMethodsOutput`](crate::operation::get_device_methods::GetDeviceMethodsOutput).
-    pub fn builder() -> crate::operation::get_device_methods::builders::GetDeviceMethodsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_device_methods::builders::GetDeviceMethodsOutputBuilder {
         crate::operation::get_device_methods::builders::GetDeviceMethodsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeviceMethodsOutput`](crate::operation::get_device_methods::GetDeviceMethodsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeviceMethodsOutputBuilder {
     pub(crate) device_methods: ::std::option::Option<::std::vec::Vec<crate::types::DeviceMethod>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl GetDeviceMethodsOutputBuilder {
         self
     }
     /// <p>List of available device APIs.</p>
-    pub fn set_device_methods(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceMethod>>,
-    ) -> Self {
+    pub fn set_device_methods(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceMethod>>) -> Self {
         self.device_methods = input;
         self
     }
     /// <p>List of available device APIs.</p>
-    pub fn get_device_methods(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceMethod>> {
+    pub fn get_device_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceMethod>> {
         &self.device_methods
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

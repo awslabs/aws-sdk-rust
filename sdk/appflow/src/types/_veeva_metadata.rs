@@ -13,9 +13,7 @@ impl VeevaMetadata {
 
 /// A builder for [`VeevaMetadata`](crate::types::VeevaMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VeevaMetadataBuilder {}
 impl VeevaMetadataBuilder {
     /// Consumes the builder and constructs a [`VeevaMetadata`](crate::types::VeevaMetadata).

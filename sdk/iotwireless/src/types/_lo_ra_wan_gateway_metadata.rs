@@ -37,9 +37,7 @@ impl LoRaWanGatewayMetadata {
 
 /// A builder for [`LoRaWanGatewayMetadata`](crate::types::LoRaWanGatewayMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanGatewayMetadataBuilder {
     pub(crate) gateway_eui: ::std::option::Option<::std::string::String>,
     pub(crate) snr: ::std::option::Option<f64>,

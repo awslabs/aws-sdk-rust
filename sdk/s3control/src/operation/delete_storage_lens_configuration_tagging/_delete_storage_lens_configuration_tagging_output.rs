@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteStorageLensConfigurationTagging
 }
 impl DeleteStorageLensConfigurationTaggingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationTaggingOutput`](crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingOutput).
-    pub fn builder() -> crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingOutputBuilder{
+    pub fn builder() -> crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingOutputBuilder {
         crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStorageLensConfigurationTaggingOutput`](crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStorageLensConfigurationTaggingOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteStorageLensConfigurationTaggingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteStorageLensConfigurationTaggingOutput`](crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingOutput).
-    pub fn build(self) -> crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingOutput{
+    pub fn build(self) -> crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingOutput {
         crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingOutput {
             _request_id: self._request_id,
         }

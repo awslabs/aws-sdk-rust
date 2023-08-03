@@ -23,9 +23,7 @@ impl Metadata {
 
 /// A builder for [`Metadata`](crate::types::Metadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetadataBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl MetadataBuilder {
     }
     /// Consumes the builder and constructs a [`Metadata`](crate::types::Metadata).
     pub fn build(self) -> crate::types::Metadata {
-        crate::types::Metadata {
-            source_arn: self.source_arn,
-        }
+        crate::types::Metadata { source_arn: self.source_arn }
     }
 }

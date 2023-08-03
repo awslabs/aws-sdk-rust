@@ -37,8 +37,7 @@ impl CreateStateMachineAliasInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStateMachineAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasInputBuilder,
+    inner: crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasInputBuilder,
 }
 impl CreateStateMachineAliasFluentBuilder {
     /// Creates a new `CreateStateMachineAlias`.
@@ -49,10 +48,7 @@ impl CreateStateMachineAliasFluentBuilder {
         }
     }
     /// Access the CreateStateMachineAlias as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +60,7 @@ impl CreateStateMachineAliasFluentBuilder {
             crate::operation::create_state_machine_alias::CreateStateMachineAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_state_machine_alias::CreateStateMachineAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_state_machine_alias::CreateStateMachineAliasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +70,7 @@ impl CreateStateMachineAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +79,7 @@ impl CreateStateMachineAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_state_machine_alias::CreateStateMachineAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_state_machine_alias::CreateStateMachineAliasError>,
     > {
         let op = self
             .inner
@@ -113,9 +102,7 @@ impl CreateStateMachineAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_state_machine_alias::CreateStateMachineAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_state_machine_alias::CreateStateMachineAliasError>,
     > {
         self.send_middleware().await
     }
@@ -129,9 +116,7 @@ impl CreateStateMachineAliasFluentBuilder {
             crate::operation::create_state_machine_alias::CreateStateMachineAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_state_machine_alias::CreateStateMachineAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_state_machine_alias::CreateStateMachineAliasError>,
     > {
         self.customize_middleware().await
     }
@@ -171,25 +156,17 @@ impl CreateStateMachineAliasFluentBuilder {
     /// To override the contents of this collection use [`set_routing_configuration`](Self::set_routing_configuration).
     ///
     /// <p>The routing configuration of a state machine alias. The routing configuration shifts execution traffic between two state machine versions. <code>routingConfiguration</code> contains an array of <code>RoutingConfig</code> objects that specify up to two state machine versions. Step Functions then randomly choses which version to run an execution with based on the weight assigned to each <code>RoutingConfig</code>.</p>
-    pub fn routing_configuration(
-        mut self,
-        input: crate::types::RoutingConfigurationListItem,
-    ) -> Self {
+    pub fn routing_configuration(mut self, input: crate::types::RoutingConfigurationListItem) -> Self {
         self.inner = self.inner.routing_configuration(input);
         self
     }
     /// <p>The routing configuration of a state machine alias. The routing configuration shifts execution traffic between two state machine versions. <code>routingConfiguration</code> contains an array of <code>RoutingConfig</code> objects that specify up to two state machine versions. Step Functions then randomly choses which version to run an execution with based on the weight assigned to each <code>RoutingConfig</code>.</p>
-    pub fn set_routing_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>,
-    ) -> Self {
+    pub fn set_routing_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>>) -> Self {
         self.inner = self.inner.set_routing_configuration(input);
         self
     }
     /// <p>The routing configuration of a state machine alias. The routing configuration shifts execution traffic between two state machine versions. <code>routingConfiguration</code> contains an array of <code>RoutingConfig</code> objects that specify up to two state machine versions. Step Functions then randomly choses which version to run an execution with based on the weight assigned to each <code>RoutingConfig</code>.</p>
-    pub fn get_routing_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>> {
+    pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>> {
         self.inner.get_routing_configuration()
     }
 }

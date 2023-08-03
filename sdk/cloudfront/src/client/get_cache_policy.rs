@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`cache_policy(Option<CachePolicy>)`](crate::operation::get_cache_policy::GetCachePolicyOutput::cache_policy): <p>The cache policy.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_cache_policy::GetCachePolicyOutput::e_tag): <p>The current version of the cache policy.</p>
     /// - On failure, responds with [`SdkError<GetCachePolicyError>`](crate::operation::get_cache_policy::GetCachePolicyError)
-    pub fn get_cache_policy(
-        &self,
-    ) -> crate::operation::get_cache_policy::builders::GetCachePolicyFluentBuilder {
-        crate::operation::get_cache_policy::builders::GetCachePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_cache_policy(&self) -> crate::operation::get_cache_policy::builders::GetCachePolicyFluentBuilder {
+        crate::operation::get_cache_policy::builders::GetCachePolicyFluentBuilder::new(self.handle.clone())
     }
 }

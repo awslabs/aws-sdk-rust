@@ -7,27 +7,19 @@ pub fn ser_update_replication_set_action(
         crate::types::UpdateReplicationSetAction::AddRegionAction(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_4.key("addRegionAction").start_object();
-            crate::protocol_serde::shape_add_region_action::ser_add_region_action(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_add_region_action::ser_add_region_action(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::UpdateReplicationSetAction::DeleteRegionAction(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_4.key("deleteRegionAction").start_object();
-            crate::protocol_serde::shape_delete_region_action::ser_delete_region_action(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_delete_region_action::ser_delete_region_action(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::UpdateReplicationSetAction::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "UpdateReplicationSetAction",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "UpdateReplicationSetAction",
+            ))
         }
     }
     Ok(())

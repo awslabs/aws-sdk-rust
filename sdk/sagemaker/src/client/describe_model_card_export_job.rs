@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`failure_reason(Option<String>)`](crate::operation::describe_model_card_export_job::DescribeModelCardExportJobOutput::failure_reason): <p>The failure reason if the model export job fails.</p>
     ///   - [`export_artifacts(Option<ModelCardExportArtifacts>)`](crate::operation::describe_model_card_export_job::DescribeModelCardExportJobOutput::export_artifacts): <p>The exported model card artifacts.</p>
     /// - On failure, responds with [`SdkError<DescribeModelCardExportJobError>`](crate::operation::describe_model_card_export_job::DescribeModelCardExportJobError)
-    pub fn describe_model_card_export_job(&self) -> crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobFluentBuilder{
+    pub fn describe_model_card_export_job(
+        &self,
+    ) -> crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobFluentBuilder {
         crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobFluentBuilder::new(self.handle.clone())
     }
 }

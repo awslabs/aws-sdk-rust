@@ -26,7 +26,7 @@ impl ExportVectorEnrichmentJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportVectorEnrichmentJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobInputBuilder,
+    inner: crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobInputBuilder,
 }
 impl ExportVectorEnrichmentJobFluentBuilder {
     /// Creates a new `ExportVectorEnrichmentJob`.
@@ -37,7 +37,7 @@ impl ExportVectorEnrichmentJobFluentBuilder {
         }
     }
     /// Access the ExportVectorEnrichmentJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ExportVectorEnrichmentJobFluentBuilder {
             crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ExportVectorEnrichmentJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ExportVectorEnrichmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ExportVectorEnrichmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ExportVectorEnrichmentJobFluentBuilder {
             crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobError>,
     > {
         self.customize_middleware().await
     }
@@ -149,18 +138,12 @@ impl ExportVectorEnrichmentJobFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
@@ -169,25 +152,17 @@ impl ExportVectorEnrichmentJobFluentBuilder {
         self.inner.get_execution_role_arn()
     }
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
-    pub fn output_config(
-        mut self,
-        input: crate::types::ExportVectorEnrichmentJobOutputConfig,
-    ) -> Self {
+    pub fn output_config(mut self, input: crate::types::ExportVectorEnrichmentJobOutputConfig) -> Self {
         self.inner = self.inner.output_config(input);
         self
     }
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
-    pub fn get_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig> {
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig> {
         self.inner.get_output_config()
     }
 }

@@ -37,8 +37,7 @@ pub struct PutMetricStreamInput {
     /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
     /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
     #[doc(hidden)]
-    pub statistics_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>>,
+    pub statistics_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>>,
     /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
     #[doc(hidden)]
     pub include_linked_accounts_metrics: ::std::option::Option<bool>,
@@ -84,9 +83,7 @@ impl PutMetricStreamInput {
     }
     /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
     /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
-    pub fn statistics_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MetricStreamStatisticsConfiguration]> {
+    pub fn statistics_configurations(&self) -> ::std::option::Option<&[crate::types::MetricStreamStatisticsConfiguration]> {
         self.statistics_configurations.as_deref()
     }
     /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
@@ -103,21 +100,16 @@ impl PutMetricStreamInput {
 
 /// A builder for [`PutMetricStreamInput`](crate::operation::put_metric_stream::PutMetricStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMetricStreamInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) include_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>,
-    pub(crate) exclude_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>,
+    pub(crate) include_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>,
+    pub(crate) exclude_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>,
     pub(crate) firehose_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) output_format: ::std::option::Option<crate::types::MetricStreamOutputFormat>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) statistics_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>>,
+    pub(crate) statistics_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>>,
     pub(crate) include_linked_accounts_metrics: ::std::option::Option<bool>,
 }
 impl PutMetricStreamInputBuilder {
@@ -155,18 +147,13 @@ impl PutMetricStreamInputBuilder {
     }
     /// <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p>
     /// <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same operation.</p>
-    pub fn set_include_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>,
-    ) -> Self {
+    pub fn set_include_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>) -> Self {
         self.include_filters = input;
         self
     }
     /// <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p>
     /// <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same operation.</p>
-    pub fn get_include_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>> {
+    pub fn get_include_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>> {
         &self.include_filters
     }
     /// Appends an item to `exclude_filters`.
@@ -183,18 +170,13 @@ impl PutMetricStreamInputBuilder {
     }
     /// <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p>
     /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same operation.</p>
-    pub fn set_exclude_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>,
-    ) -> Self {
+    pub fn set_exclude_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>) -> Self {
         self.exclude_filters = input;
         self
     }
     /// <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p>
     /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same operation.</p>
-    pub fn get_exclude_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>> {
+    pub fn get_exclude_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>> {
         &self.exclude_filters
     }
     /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
@@ -243,17 +225,12 @@ impl PutMetricStreamInputBuilder {
         self
     }
     /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricStreamOutputFormat>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::MetricStreamOutputFormat>) -> Self {
         self.output_format = input;
         self
     }
     /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
-    pub fn get_output_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricStreamOutputFormat> {
+    pub fn get_output_format(&self) -> &::std::option::Option<crate::types::MetricStreamOutputFormat> {
         &self.output_format
     }
     /// Appends an item to `tags`.
@@ -272,10 +249,7 @@ impl PutMetricStreamInputBuilder {
     /// <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an existing metric stream, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -291,10 +265,7 @@ impl PutMetricStreamInputBuilder {
     ///
     /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
     /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
-    pub fn statistics_configurations(
-        mut self,
-        input: crate::types::MetricStreamStatisticsConfiguration,
-    ) -> Self {
+    pub fn statistics_configurations(mut self, input: crate::types::MetricStreamStatisticsConfiguration) -> Self {
         let mut v = self.statistics_configurations.unwrap_or_default();
         v.push(input);
         self.statistics_configurations = ::std::option::Option::Some(v);
@@ -304,19 +275,14 @@ impl PutMetricStreamInputBuilder {
     /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
     pub fn set_statistics_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>>,
     ) -> Self {
         self.statistics_configurations = input;
         self
     }
     /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
     /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
-    pub fn get_statistics_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>>
-    {
+    pub fn get_statistics_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>> {
         &self.statistics_configurations
     }
     /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
@@ -325,10 +291,7 @@ impl PutMetricStreamInputBuilder {
         self
     }
     /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
-    pub fn set_include_linked_accounts_metrics(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_include_linked_accounts_metrics(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_linked_accounts_metrics = input;
         self
     }
@@ -339,10 +302,7 @@ impl PutMetricStreamInputBuilder {
     /// Consumes the builder and constructs a [`PutMetricStreamInput`](crate::operation::put_metric_stream::PutMetricStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_metric_stream::PutMetricStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_metric_stream::PutMetricStreamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metric_stream::PutMetricStreamInput {
             name: self.name,
             include_filters: self.include_filters,

@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for CreatePolicyStoreOutput {
 }
 impl CreatePolicyStoreOutput {
     /// Creates a new builder-style object to manufacture [`CreatePolicyStoreOutput`](crate::operation::create_policy_store::CreatePolicyStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::create_policy_store::builders::CreatePolicyStoreOutputBuilder {
+    pub fn builder() -> crate::operation::create_policy_store::builders::CreatePolicyStoreOutputBuilder {
         crate::operation::create_policy_store::builders::CreatePolicyStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePolicyStoreOutput`](crate::operation::create_policy_store::CreatePolicyStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePolicyStoreOutputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -62,18 +59,12 @@ pub struct CreatePolicyStoreOutputBuilder {
 }
 impl CreatePolicyStoreOutputBuilder {
     /// <p>The unique ID of the new policy store.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the new policy store.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -101,10 +92,7 @@ impl CreatePolicyStoreOutputBuilder {
         self
     }
     /// <p>The date and time the policy store was originally created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -118,10 +106,7 @@ impl CreatePolicyStoreOutputBuilder {
         self
     }
     /// <p>The date and time the policy store was last updated.</p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }

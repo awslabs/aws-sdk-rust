@@ -36,9 +36,7 @@ impl UpdateWorkflowInput {
 
 /// A builder for [`UpdateWorkflowInput`](crate::operation::update_workflow::UpdateWorkflowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkflowInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl UpdateWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkflowInput`](crate::operation::update_workflow::UpdateWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_workflow::UpdateWorkflowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_workflow::UpdateWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workflow::UpdateWorkflowInput {
             id: self.id,
             name: self.name,

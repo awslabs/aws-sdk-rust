@@ -43,16 +43,14 @@ impl ::aws_http::request_id::RequestId for ApplyEnvironmentManagedActionOutput {
 }
 impl ApplyEnvironmentManagedActionOutput {
     /// Creates a new builder-style object to manufacture [`ApplyEnvironmentManagedActionOutput`](crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionOutput).
-    pub fn builder() -> crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionOutputBuilder{
+    pub fn builder() -> crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionOutputBuilder {
         crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ApplyEnvironmentManagedActionOutput`](crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplyEnvironmentManagedActionOutputBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_description: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl ApplyEnvironmentManagedActionOutputBuilder {
         &self.action_id
     }
     /// <p>A description of the managed action.</p>
-    pub fn action_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the managed action.</p>
-    pub fn set_action_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_action_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_description = input;
         self
     }
@@ -101,10 +93,7 @@ impl ApplyEnvironmentManagedActionOutputBuilder {
         self
     }
     /// <p>The type of managed action.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
         self.action_type = input;
         self
     }
@@ -136,10 +125,7 @@ impl ApplyEnvironmentManagedActionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ApplyEnvironmentManagedActionOutput`](crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionOutput
-    {
+    pub fn build(self) -> crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionOutput {
         crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionOutput {
             action_id: self.action_id,
             action_description: self.action_description,

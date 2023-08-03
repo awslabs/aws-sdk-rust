@@ -13,7 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAnomalySubscriptionOutput`](crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionOutput) with field(s):
     ///   - [`subscription_arn(Option<String>)`](crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionOutput::subscription_arn): <p>A cost anomaly subscription ARN. </p>
     /// - On failure, responds with [`SdkError<UpdateAnomalySubscriptionError>`](crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError)
-    pub fn update_anomaly_subscription(&self) -> crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionFluentBuilder{
+    pub fn update_anomaly_subscription(&self) -> crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionFluentBuilder {
         crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

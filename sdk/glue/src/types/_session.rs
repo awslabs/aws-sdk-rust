@@ -27,9 +27,7 @@ pub struct Session {
     pub command: ::std::option::Option<crate::types::SessionCommand>,
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     #[doc(hidden)]
-    pub default_arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub default_arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The number of connections used for the session.</p>
     #[doc(hidden)]
     pub connections: ::std::option::Option<crate::types::ConnectionsList>,
@@ -76,11 +74,7 @@ impl Session {
         self.command.as_ref()
     }
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
-    pub fn default_arguments(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn default_arguments(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.default_arguments.as_ref()
     }
     /// <p>The number of connections used for the session.</p>
@@ -113,9 +107,7 @@ impl Session {
 
 /// A builder for [`Session`](crate::types::Session).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SessionBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -124,9 +116,7 @@ pub struct SessionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
     pub(crate) command: ::std::option::Option<crate::types::SessionCommand>,
-    pub(crate) default_arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) default_arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) connections: ::std::option::Option<crate::types::ConnectionsList>,
     pub(crate) progress: ::std::option::Option<f64>,
     pub(crate) max_capacity: ::std::option::Option<f64>,
@@ -154,10 +144,7 @@ impl SessionBuilder {
         self
     }
     /// <p>The time and date when the session was created.</p>
-    pub fn set_created_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_on = input;
         self
     }
@@ -180,18 +167,12 @@ impl SessionBuilder {
         &self.status
     }
     /// <p>The error message displayed during the session.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message displayed during the session.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -233,10 +214,7 @@ impl SessionBuilder {
         self
     }
     /// <p>The command object.See SessionCommand.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionCommand>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<crate::types::SessionCommand>) -> Self {
         self.command = input;
         self
     }
@@ -262,19 +240,13 @@ impl SessionBuilder {
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     pub fn set_default_arguments(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.default_arguments = input;
         self
     }
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
-    pub fn get_default_arguments(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_default_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.default_arguments
     }
     /// <p>The number of connections used for the session.</p>
@@ -283,10 +255,7 @@ impl SessionBuilder {
         self
     }
     /// <p>The number of connections used for the session.</p>
-    pub fn set_connections(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionsList>,
-    ) -> Self {
+    pub fn set_connections(mut self, input: ::std::option::Option<crate::types::ConnectionsList>) -> Self {
         self.connections = input;
         self
     }
@@ -323,18 +292,12 @@ impl SessionBuilder {
         &self.max_capacity
     }
     /// <p>The name of the SecurityConfiguration structure to be used with the session.</p>
-    pub fn security_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SecurityConfiguration structure to be used with the session.</p>
-    pub fn set_security_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_configuration = input;
         self
     }

@@ -25,17 +25,14 @@ impl DisassociateWebAclInput {
 }
 impl DisassociateWebAclInput {
     /// Creates a new builder-style object to manufacture [`DisassociateWebAclInput`](crate::operation::disassociate_web_acl::DisassociateWebAclInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_web_acl::builders::DisassociateWebAclInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_web_acl::builders::DisassociateWebAclInputBuilder {
         crate::operation::disassociate_web_acl::builders::DisassociateWebAclInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateWebAclInput`](crate::operation::disassociate_web_acl::DisassociateWebAclInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateWebAclInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -72,14 +69,9 @@ impl DisassociateWebAclInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateWebAclInput`](crate::operation::disassociate_web_acl::DisassociateWebAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_web_acl::DisassociateWebAclInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_web_acl::DisassociateWebAclInput {
-                resource_arn: self.resource_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_web_acl::DisassociateWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::disassociate_web_acl::DisassociateWebAclInput {
+            resource_arn: self.resource_arn,
+        })
     }
 }

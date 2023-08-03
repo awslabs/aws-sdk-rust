@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for AssociatePricingRulesOutput {
 }
 impl AssociatePricingRulesOutput {
     /// Creates a new builder-style object to manufacture [`AssociatePricingRulesOutput`](crate::operation::associate_pricing_rules::AssociatePricingRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_pricing_rules::builders::AssociatePricingRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_pricing_rules::builders::AssociatePricingRulesOutputBuilder {
         crate::operation::associate_pricing_rules::builders::AssociatePricingRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociatePricingRulesOutput`](crate::operation::associate_pricing_rules::AssociatePricingRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatePricingRulesOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

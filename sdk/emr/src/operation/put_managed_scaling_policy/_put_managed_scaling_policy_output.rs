@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutManagedScalingPolicyOutput {
 }
 impl PutManagedScalingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutManagedScalingPolicyOutput`](crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyOutputBuilder {
         crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutManagedScalingPolicyOutput`](crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutManagedScalingPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl PutManagedScalingPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutManagedScalingPolicyOutput`](crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyOutput {
+    pub fn build(self) -> crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyOutput {
         crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyOutput {
             _request_id: self._request_id,
         }

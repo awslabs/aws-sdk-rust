@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`failed_entry_count(i32)`](crate::operation::remove_targets::RemoveTargetsOutput::failed_entry_count): <p>The number of failed entries.</p>
     ///   - [`failed_entries(Option<Vec<RemoveTargetsResultEntry>>)`](crate::operation::remove_targets::RemoveTargetsOutput::failed_entries): <p>The failed target entries.</p>
     /// - On failure, responds with [`SdkError<RemoveTargetsError>`](crate::operation::remove_targets::RemoveTargetsError)
-    pub fn remove_targets(
-        &self,
-    ) -> crate::operation::remove_targets::builders::RemoveTargetsFluentBuilder {
-        crate::operation::remove_targets::builders::RemoveTargetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_targets(&self) -> crate::operation::remove_targets::builders::RemoveTargetsFluentBuilder {
+        crate::operation::remove_targets::builders::RemoveTargetsFluentBuilder::new(self.handle.clone())
     }
 }

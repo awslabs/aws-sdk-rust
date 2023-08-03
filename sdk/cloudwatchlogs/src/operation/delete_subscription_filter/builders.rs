@@ -26,7 +26,7 @@ impl DeleteSubscriptionFilterInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSubscriptionFilterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterInputBuilder,
+    inner: crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterInputBuilder,
 }
 impl DeleteSubscriptionFilterFluentBuilder {
     /// Creates a new `DeleteSubscriptionFilter`.
@@ -37,10 +37,7 @@ impl DeleteSubscriptionFilterFluentBuilder {
         }
     }
     /// Access the DeleteSubscriptionFilter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteSubscriptionFilterFluentBuilder {
             crate::operation::delete_subscription_filter::DeleteSubscriptionFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteSubscriptionFilterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteSubscriptionFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_subscription_filter::DeleteSubscriptionFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteSubscriptionFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_subscription_filter::DeleteSubscriptionFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteSubscriptionFilterFluentBuilder {
             crate::operation::delete_subscription_filter::DeleteSubscriptionFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }

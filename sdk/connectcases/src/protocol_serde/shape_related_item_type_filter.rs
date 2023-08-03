@@ -17,11 +17,9 @@ pub fn ser_related_item_type_filter(
             object_2.finish();
         }
         crate::types::RelatedItemTypeFilter::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "RelatedItemTypeFilter",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "RelatedItemTypeFilter",
+            ))
         }
     }
     Ok(())

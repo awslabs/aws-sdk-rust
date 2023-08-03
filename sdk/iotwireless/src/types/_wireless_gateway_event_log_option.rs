@@ -31,9 +31,7 @@ impl WirelessGatewayEventLogOption {
 
 /// A builder for [`WirelessGatewayEventLogOption`](crate::types::WirelessGatewayEventLogOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WirelessGatewayEventLogOptionBuilder {
     pub(crate) event: ::std::option::Option<crate::types::WirelessGatewayEvent>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
@@ -45,10 +43,7 @@ impl WirelessGatewayEventLogOptionBuilder {
         self
     }
     /// <p>The event for a log message, if the log message is tied to a wireless gateway.</p>
-    pub fn set_event(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessGatewayEvent>,
-    ) -> Self {
+    pub fn set_event(mut self, input: ::std::option::Option<crate::types::WirelessGatewayEvent>) -> Self {
         self.event = input;
         self
     }

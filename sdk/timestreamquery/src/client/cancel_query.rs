@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CancelQueryOutput`](crate::operation::cancel_query::CancelQueryOutput) with field(s):
     ///   - [`cancellation_message(Option<String>)`](crate::operation::cancel_query::CancelQueryOutput::cancellation_message): <p> A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued. </p>
     /// - On failure, responds with [`SdkError<CancelQueryError>`](crate::operation::cancel_query::CancelQueryError)
-    pub fn cancel_query(
-        &self,
-    ) -> crate::operation::cancel_query::builders::CancelQueryFluentBuilder {
+    pub fn cancel_query(&self) -> crate::operation::cancel_query::builders::CancelQueryFluentBuilder {
         crate::operation::cancel_query::builders::CancelQueryFluentBuilder::new(self.handle.clone())
     }
 }

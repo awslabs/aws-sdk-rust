@@ -29,9 +29,7 @@ impl GetAppsInput {
 
 /// A builder for [`GetAppsInput`](crate::operation::get_apps::GetAppsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppsInputBuilder {
     pub(crate) page_size: ::std::option::Option<::std::string::String>,
     pub(crate) token: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetAppsInputBuilder {
         &self.token
     }
     /// Consumes the builder and constructs a [`GetAppsInput`](crate::operation::get_apps::GetAppsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_apps::GetAppsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_apps::GetAppsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_apps::GetAppsInput {
             page_size: self.page_size,
             token: self.token,

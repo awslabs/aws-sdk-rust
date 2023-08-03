@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSamplingRuleOutput`](crate::operation::delete_sampling_rule::DeleteSamplingRuleOutput) with field(s):
     ///   - [`sampling_rule_record(Option<SamplingRuleRecord>)`](crate::operation::delete_sampling_rule::DeleteSamplingRuleOutput::sampling_rule_record): <p>The deleted rule definition and metadata.</p>
     /// - On failure, responds with [`SdkError<DeleteSamplingRuleError>`](crate::operation::delete_sampling_rule::DeleteSamplingRuleError)
-    pub fn delete_sampling_rule(
-        &self,
-    ) -> crate::operation::delete_sampling_rule::builders::DeleteSamplingRuleFluentBuilder {
-        crate::operation::delete_sampling_rule::builders::DeleteSamplingRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_sampling_rule(&self) -> crate::operation::delete_sampling_rule::builders::DeleteSamplingRuleFluentBuilder {
+        crate::operation::delete_sampling_rule::builders::DeleteSamplingRuleFluentBuilder::new(self.handle.clone())
     }
 }

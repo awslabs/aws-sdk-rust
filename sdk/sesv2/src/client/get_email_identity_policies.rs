@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetEmailIdentityPoliciesOutput`](crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput) with field(s):
     ///   - [`policies(Option<HashMap<String, String>>)`](crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput::policies): <p>A map of policy names to policies.</p>
     /// - On failure, responds with [`SdkError<GetEmailIdentityPoliciesError>`](crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError)
-    pub fn get_email_identity_policies(&self) -> crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesFluentBuilder{
+    pub fn get_email_identity_policies(&self) -> crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesFluentBuilder {
         crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl GetEventPredictionMetadataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEventPredictionMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_event_prediction_metadata::builders::GetEventPredictionMetadataInputBuilder,
+    inner: crate::operation::get_event_prediction_metadata::builders::GetEventPredictionMetadataInputBuilder,
 }
 impl GetEventPredictionMetadataFluentBuilder {
     /// Creates a new `GetEventPredictionMetadata`.
@@ -37,7 +37,7 @@ impl GetEventPredictionMetadataFluentBuilder {
         }
     }
     /// Access the GetEventPredictionMetadata as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_event_prediction_metadata::builders::GetEventPredictionMetadataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_event_prediction_metadata::builders::GetEventPredictionMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetEventPredictionMetadataFluentBuilder {
             crate::operation::get_event_prediction_metadata::GetEventPredictionMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetEventPredictionMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetEventPredictionMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetEventPredictionMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetEventPredictionMetadataFluentBuilder {
             crate::operation::get_event_prediction_metadata::GetEventPredictionMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl GetEventPredictionMetadataFluentBuilder {
         self.inner.get_event_id()
     }
     /// <p> The event type associated with the detector specified for the prediction. </p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_type_name(input.into());
         self
     }
     /// <p> The event type associated with the detector specified for the prediction. </p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
@@ -169,18 +152,12 @@ impl GetEventPredictionMetadataFluentBuilder {
         self.inner.get_detector_id()
     }
     /// <p> The detector version ID. </p>
-    pub fn detector_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_version_id(input.into());
         self
     }
     /// <p> The detector version ID. </p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_version_id(input);
         self
     }
@@ -190,19 +167,13 @@ impl GetEventPredictionMetadataFluentBuilder {
     }
     /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
-    pub fn prediction_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prediction_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prediction_timestamp(input.into());
         self
     }
     /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
-    pub fn set_prediction_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prediction_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prediction_timestamp(input);
         self
     }

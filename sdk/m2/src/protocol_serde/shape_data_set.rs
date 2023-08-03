@@ -12,10 +12,7 @@ pub fn ser_data_set(
     if let Some(var_3) = &input.dataset_org {
         #[allow(unused_mut)]
         let mut object_4 = object.key("datasetOrg").start_object();
-        crate::protocol_serde::shape_dataset_org_attributes::ser_dataset_org_attributes(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_dataset_org_attributes::ser_dataset_org_attributes(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.relative_path {

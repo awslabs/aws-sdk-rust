@@ -11,9 +11,7 @@ pub struct DescribeLoadBalancerAttributesOutput {
 }
 impl DescribeLoadBalancerAttributesOutput {
     /// <p>Information about the load balancer attributes.</p>
-    pub fn load_balancer_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoadBalancerAttributes> {
+    pub fn load_balancer_attributes(&self) -> ::std::option::Option<&crate::types::LoadBalancerAttributes> {
         self.load_balancer_attributes.as_ref()
     }
 }
@@ -24,19 +22,16 @@ impl ::aws_http::request_id::RequestId for DescribeLoadBalancerAttributesOutput 
 }
 impl DescribeLoadBalancerAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerAttributesOutput`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesOutput).
-    pub fn builder() -> crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesOutputBuilder {
         crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoadBalancerAttributesOutput`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancerAttributesOutputBuilder {
-    pub(crate) load_balancer_attributes:
-        ::std::option::Option<crate::types::LoadBalancerAttributes>,
+    pub(crate) load_balancer_attributes: ::std::option::Option<crate::types::LoadBalancerAttributes>,
     _request_id: Option<String>,
 }
 impl DescribeLoadBalancerAttributesOutputBuilder {
@@ -46,17 +41,12 @@ impl DescribeLoadBalancerAttributesOutputBuilder {
         self
     }
     /// <p>Information about the load balancer attributes.</p>
-    pub fn set_load_balancer_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerAttributes>,
-    ) -> Self {
+    pub fn set_load_balancer_attributes(mut self, input: ::std::option::Option<crate::types::LoadBalancerAttributes>) -> Self {
         self.load_balancer_attributes = input;
         self
     }
     /// <p>Information about the load balancer attributes.</p>
-    pub fn get_load_balancer_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoadBalancerAttributes> {
+    pub fn get_load_balancer_attributes(&self) -> &::std::option::Option<crate::types::LoadBalancerAttributes> {
         &self.load_balancer_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -69,10 +59,7 @@ impl DescribeLoadBalancerAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLoadBalancerAttributesOutput`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesOutput {
         crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesOutput {
             load_balancer_attributes: self.load_balancer_attributes,
             _request_id: self._request_id,

@@ -23,9 +23,7 @@ impl DescribeFleetMetadataInputBuilder {
 /// Fluent builder constructing a request to `DescribeFleetMetadata`.
 ///
 /// <p>Provides basic information for the specified fleet, excluding identity provider, networking, and device configuration details.</p>
-#[deprecated(
-    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-)]
+#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -40,10 +38,7 @@ impl DescribeFleetMetadataFluentBuilder {
         }
     }
     /// Access the DescribeFleetMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl DescribeFleetMetadataFluentBuilder {
             crate::operation::describe_fleet_metadata::DescribeFleetMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_metadata::DescribeFleetMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_metadata::DescribeFleetMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl DescribeFleetMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl DescribeFleetMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_metadata::DescribeFleetMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_metadata::DescribeFleetMetadataError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl DescribeFleetMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_metadata::DescribeFleetMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_metadata::DescribeFleetMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl DescribeFleetMetadataFluentBuilder {
             crate::operation::describe_fleet_metadata::DescribeFleetMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_metadata::DescribeFleetMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_metadata::DescribeFleetMetadataError>,
     > {
         self.customize_middleware().await
     }

@@ -36,9 +36,7 @@ impl UpdateWorkspaceInput {
 
 /// A builder for [`UpdateWorkspaceInput`](crate::operation::update_workspace::UpdateWorkspaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl UpdateWorkspaceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkspaceInput`](crate::operation::update_workspace::UpdateWorkspaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_workspace::UpdateWorkspaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_workspace::UpdateWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workspace::UpdateWorkspaceInput {
             workspace_id: self.workspace_id,
             description: self.description,

@@ -21,9 +21,7 @@ impl SignUpOutput {
         self.user_confirmed
     }
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
-    pub fn code_delivery_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CodeDeliveryDetailsType> {
+    pub fn code_delivery_details(&self) -> ::std::option::Option<&crate::types::CodeDeliveryDetailsType> {
         self.code_delivery_details.as_ref()
     }
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
@@ -45,9 +43,7 @@ impl SignUpOutput {
 
 /// A builder for [`SignUpOutput`](crate::operation::sign_up::SignUpOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignUpOutputBuilder {
     pub(crate) user_confirmed: ::std::option::Option<bool>,
     pub(crate) code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
@@ -75,17 +71,12 @@ impl SignUpOutputBuilder {
         self
     }
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
-    pub fn set_code_delivery_details(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
-    ) -> Self {
+    pub fn set_code_delivery_details(mut self, input: ::std::option::Option<crate::types::CodeDeliveryDetailsType>) -> Self {
         self.code_delivery_details = input;
         self
     }
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
-    pub fn get_code_delivery_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodeDeliveryDetailsType> {
+    pub fn get_code_delivery_details(&self) -> &::std::option::Option<crate::types::CodeDeliveryDetailsType> {
         &self.code_delivery_details
     }
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>

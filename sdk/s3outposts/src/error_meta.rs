@@ -34,32 +34,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint::CreateEndpointError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_endpoint::CreateEndpointError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint::CreateEndpointError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint::CreateEndpointError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -69,59 +53,27 @@ where
 impl From<crate::operation::create_endpoint::CreateEndpointError> for Error {
     fn from(err: crate::operation::create_endpoint::CreateEndpointError) -> Self {
         match err {
-            crate::operation::create_endpoint::CreateEndpointError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::create_endpoint::CreateEndpointError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::create_endpoint::CreateEndpointError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::create_endpoint::CreateEndpointError::OutpostOfflineException(
-                inner,
-            ) => Error::OutpostOfflineException(inner),
-            crate::operation::create_endpoint::CreateEndpointError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::create_endpoint::CreateEndpointError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::create_endpoint::CreateEndpointError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::create_endpoint::CreateEndpointError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::create_endpoint::CreateEndpointError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_endpoint::CreateEndpointError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_endpoint::CreateEndpointError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_endpoint::CreateEndpointError::OutpostOfflineException(inner) => Error::OutpostOfflineException(inner),
+            crate::operation::create_endpoint::CreateEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_endpoint::CreateEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_endpoint::CreateEndpointError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_endpoint::CreateEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_endpoint::DeleteEndpointError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_endpoint::DeleteEndpointError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_endpoint::DeleteEndpointError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_endpoint::DeleteEndpointError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -131,56 +83,26 @@ where
 impl From<crate::operation::delete_endpoint::DeleteEndpointError> for Error {
     fn from(err: crate::operation::delete_endpoint::DeleteEndpointError) -> Self {
         match err {
-            crate::operation::delete_endpoint::DeleteEndpointError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::delete_endpoint::DeleteEndpointError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::delete_endpoint::DeleteEndpointError::OutpostOfflineException(
-                inner,
-            ) => Error::OutpostOfflineException(inner),
-            crate::operation::delete_endpoint::DeleteEndpointError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_endpoint::DeleteEndpointError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::delete_endpoint::DeleteEndpointError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::delete_endpoint::DeleteEndpointError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_endpoint::DeleteEndpointError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::OutpostOfflineException(inner) => Error::OutpostOfflineException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_endpoint::DeleteEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_endpoints::ListEndpointsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_endpoints::ListEndpointsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_endpoints::ListEndpointsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_endpoints::ListEndpointsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -190,53 +112,25 @@ where
 impl From<crate::operation::list_endpoints::ListEndpointsError> for Error {
     fn from(err: crate::operation::list_endpoints::ListEndpointsError) -> Self {
         match err {
-            crate::operation::list_endpoints::ListEndpointsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_endpoints::ListEndpointsError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::list_endpoints::ListEndpointsError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_endpoints::ListEndpointsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::list_endpoints::ListEndpointsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::list_endpoints::ListEndpointsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_endpoints::ListEndpointsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_endpoints::ListEndpointsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_endpoints::ListEndpointsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_endpoints::ListEndpointsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_endpoints::ListEndpointsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_endpoints::ListEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -254,32 +148,16 @@ impl From<crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error> for 
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_endpoints::ListSharedEndpointsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_shared_endpoints::ListSharedEndpointsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_endpoints::ListSharedEndpointsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_shared_endpoints::ListSharedEndpointsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -290,8 +168,12 @@ impl From<crate::operation::list_shared_endpoints::ListSharedEndpointsError> for
     fn from(err: crate::operation::list_shared_endpoints::ListSharedEndpointsError) -> Self {
         match err {
             crate::operation::list_shared_endpoints::ListSharedEndpointsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_shared_endpoints::ListSharedEndpointsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_shared_endpoints::ListSharedEndpointsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_shared_endpoints::ListSharedEndpointsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_shared_endpoints::ListSharedEndpointsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_shared_endpoints::ListSharedEndpointsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_shared_endpoints::ListSharedEndpointsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_shared_endpoints::ListSharedEndpointsError::Unhandled(inner) => Error::Unhandled(inner),

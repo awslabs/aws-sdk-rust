@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`workbook_cursor(i64)`](crate::operation::batch_delete_table_rows::BatchDeleteTableRowsOutput::workbook_cursor): <p>The updated workbook cursor after deleting the rows from the table.</p>
     ///   - [`failed_batch_items(Option<Vec<FailedBatchItem>>)`](crate::operation::batch_delete_table_rows::BatchDeleteTableRowsOutput::failed_batch_items): <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
     /// - On failure, responds with [`SdkError<BatchDeleteTableRowsError>`](crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError)
-    pub fn batch_delete_table_rows(
-        &self,
-    ) -> crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsFluentBuilder
-    {
-        crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_delete_table_rows(&self) -> crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsFluentBuilder {
+        crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsFluentBuilder::new(self.handle.clone())
     }
 }

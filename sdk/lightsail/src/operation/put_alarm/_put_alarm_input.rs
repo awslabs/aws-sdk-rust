@@ -164,9 +164,7 @@ impl PutAlarmInput {
 
 /// A builder for [`PutAlarmInput`](crate::operation::put_alarm::PutAlarmInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAlarmInputBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<crate::types::MetricName>,
@@ -176,10 +174,8 @@ pub struct PutAlarmInputBuilder {
     pub(crate) evaluation_periods: ::std::option::Option<i32>,
     pub(crate) datapoints_to_alarm: ::std::option::Option<i32>,
     pub(crate) treat_missing_data: ::std::option::Option<crate::types::TreatMissingData>,
-    pub(crate) contact_protocols:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
-    pub(crate) notification_triggers:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>,
+    pub(crate) contact_protocols: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
+    pub(crate) notification_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>,
     pub(crate) notification_enabled: ::std::option::Option<bool>,
 }
 impl PutAlarmInputBuilder {
@@ -219,10 +215,7 @@ impl PutAlarmInputBuilder {
     /// <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p> </li>
     /// </ul>
     /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricName>,
-    ) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::MetricName>) -> Self {
         self.metric_name = input;
         self
     }
@@ -240,19 +233,13 @@ impl PutAlarmInputBuilder {
     }
     /// <p>The name of the Lightsail resource that will be monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
-    pub fn monitored_resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitored_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitored_resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Lightsail resource that will be monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
-    pub fn set_monitored_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitored_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitored_resource_name = input;
         self
     }
@@ -267,17 +254,12 @@ impl PutAlarmInputBuilder {
         self
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold. The specified statistic value is used as the first operand.</p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.comparison_operator = input;
         self
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold. The specified statistic value is used as the first operand.</p>
-    pub fn get_comparison_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         &self.comparison_operator
     }
     /// <p>The value against which the specified statistic is compared.</p>
@@ -353,10 +335,7 @@ impl PutAlarmInputBuilder {
     /// <li> <p> <code>missing</code> - Missing data is treated as missing.</p> </li>
     /// </ul>
     /// <p>If <code>treatMissingData</code> is not specified, the default behavior of <code>missing</code> is used.</p>
-    pub fn set_treat_missing_data(
-        mut self,
-        input: ::std::option::Option<crate::types::TreatMissingData>,
-    ) -> Self {
+    pub fn set_treat_missing_data(mut self, input: ::std::option::Option<crate::types::TreatMissingData>) -> Self {
         self.treat_missing_data = input;
         self
     }
@@ -390,10 +369,7 @@ impl PutAlarmInputBuilder {
     /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
     /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
     /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
-    pub fn set_contact_protocols(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
-    ) -> Self {
+    pub fn set_contact_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>) -> Self {
         self.contact_protocols = input;
         self
     }
@@ -401,9 +377,7 @@ impl PutAlarmInputBuilder {
     /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
     /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
     /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
-    pub fn get_contact_protocols(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>> {
+    pub fn get_contact_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>> {
         &self.contact_protocols
     }
     /// Appends an item to `notification_triggers`.
@@ -442,10 +416,7 @@ impl PutAlarmInputBuilder {
     /// <li> <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p> </li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
-    pub fn set_notification_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>,
-    ) -> Self {
+    pub fn set_notification_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>) -> Self {
         self.notification_triggers = input;
         self
     }
@@ -462,9 +433,7 @@ impl PutAlarmInputBuilder {
     /// <li> <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p> </li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
-    pub fn get_notification_triggers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmState>> {
+    pub fn get_notification_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmState>> {
         &self.notification_triggers
     }
     /// <p>Indicates whether the alarm is enabled.</p>
@@ -485,12 +454,7 @@ impl PutAlarmInputBuilder {
         &self.notification_enabled
     }
     /// Consumes the builder and constructs a [`PutAlarmInput`](crate::operation::put_alarm::PutAlarmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_alarm::PutAlarmInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_alarm::PutAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_alarm::PutAlarmInput {
             alarm_name: self.alarm_name,
             metric_name: self.metric_name,

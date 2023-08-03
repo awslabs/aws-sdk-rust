@@ -26,12 +26,9 @@ impl QueryStringConditionConfig {
 
 /// A builder for [`QueryStringConditionConfig`](crate::types::QueryStringConditionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryStringConditionConfigBuilder {
-    pub(crate) values:
-        ::std::option::Option<::std::vec::Vec<crate::types::QueryStringKeyValuePair>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::QueryStringKeyValuePair>>,
 }
 impl QueryStringConditionConfigBuilder {
     /// Appends an item to `values`.
@@ -48,24 +45,17 @@ impl QueryStringConditionConfigBuilder {
     }
     /// <p>The key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
     /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueryStringKeyValuePair>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryStringKeyValuePair>>) -> Self {
         self.values = input;
         self
     }
     /// <p>The key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
     /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryStringKeyValuePair>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryStringKeyValuePair>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`QueryStringConditionConfig`](crate::types::QueryStringConditionConfig).
     pub fn build(self) -> crate::types::QueryStringConditionConfig {
-        crate::types::QueryStringConditionConfig {
-            values: self.values,
-        }
+        crate::types::QueryStringConditionConfig { values: self.values }
     }
 }

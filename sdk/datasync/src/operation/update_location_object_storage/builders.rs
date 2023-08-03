@@ -26,7 +26,7 @@ impl UpdateLocationObjectStorageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLocationObjectStorageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageInputBuilder,
+    inner: crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageInputBuilder,
 }
 impl UpdateLocationObjectStorageFluentBuilder {
     /// Creates a new `UpdateLocationObjectStorage`.
@@ -37,7 +37,7 @@ impl UpdateLocationObjectStorageFluentBuilder {
         }
     }
     /// Access the UpdateLocationObjectStorage as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateLocationObjectStorageFluentBuilder {
             crate::operation::update_location_object_storage::UpdateLocationObjectStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_object_storage::UpdateLocationObjectStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_object_storage::UpdateLocationObjectStorageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateLocationObjectStorageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateLocationObjectStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_location_object_storage::UpdateLocationObjectStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_object_storage::UpdateLocationObjectStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_object_storage::UpdateLocationObjectStorageError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateLocationObjectStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_location_object_storage::UpdateLocationObjectStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_object_storage::UpdateLocationObjectStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_object_storage::UpdateLocationObjectStorageError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateLocationObjectStorageFluentBuilder {
             crate::operation::update_location_object_storage::UpdateLocationObjectStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_object_storage::UpdateLocationObjectStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_object_storage::UpdateLocationObjectStorageError>,
     > {
         self.customize_middleware().await
     }
@@ -154,17 +143,12 @@ impl UpdateLocationObjectStorageFluentBuilder {
         self
     }
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    pub fn set_server_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectStorageServerProtocol>,
-    ) -> Self {
+    pub fn set_server_protocol(mut self, input: ::std::option::Option<crate::types::ObjectStorageServerProtocol>) -> Self {
         self.inner = self.inner.set_server_protocol(input);
         self
     }
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    pub fn get_server_protocol(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectStorageServerProtocol> {
+    pub fn get_server_protocol(&self) -> &::std::option::Option<crate::types::ObjectStorageServerProtocol> {
         self.inner.get_server_protocol()
     }
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
@@ -219,10 +203,7 @@ impl UpdateLocationObjectStorageFluentBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
@@ -240,10 +221,7 @@ impl UpdateLocationObjectStorageFluentBuilder {
     /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     /// <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
-    pub fn set_server_certificate(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_server_certificate(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_server_certificate(input);
         self
     }

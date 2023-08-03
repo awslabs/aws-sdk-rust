@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteTrafficMirrorFilterRuleOutput`](crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleOutput) with field(s):
     ///   - [`traffic_mirror_filter_rule_id(Option<String>)`](crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleOutput::traffic_mirror_filter_rule_id): <p>The ID of the deleted Traffic Mirror rule.</p>
     /// - On failure, responds with [`SdkError<DeleteTrafficMirrorFilterRuleError>`](crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleError)
-    pub fn delete_traffic_mirror_filter_rule(&self) -> crate::operation::delete_traffic_mirror_filter_rule::builders::DeleteTrafficMirrorFilterRuleFluentBuilder{
+    pub fn delete_traffic_mirror_filter_rule(
+        &self,
+    ) -> crate::operation::delete_traffic_mirror_filter_rule::builders::DeleteTrafficMirrorFilterRuleFluentBuilder {
         crate::operation::delete_traffic_mirror_filter_rule::builders::DeleteTrafficMirrorFilterRuleFluentBuilder::new(self.handle.clone())
     }
 }

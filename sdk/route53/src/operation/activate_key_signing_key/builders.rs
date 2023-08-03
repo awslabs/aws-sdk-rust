@@ -37,10 +37,7 @@ impl ActivateKeySigningKeyFluentBuilder {
         }
     }
     /// Access the ActivateKeySigningKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::activate_key_signing_key::builders::ActivateKeySigningKeyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::activate_key_signing_key::builders::ActivateKeySigningKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ActivateKeySigningKeyFluentBuilder {
             crate::operation::activate_key_signing_key::ActivateKeySigningKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_key_signing_key::ActivateKeySigningKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_key_signing_key::ActivateKeySigningKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ActivateKeySigningKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ActivateKeySigningKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_key_signing_key::ActivateKeySigningKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_key_signing_key::ActivateKeySigningKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_key_signing_key::ActivateKeySigningKeyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ActivateKeySigningKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_key_signing_key::ActivateKeySigningKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_key_signing_key::ActivateKeySigningKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_key_signing_key::ActivateKeySigningKeyError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl ActivateKeySigningKeyFluentBuilder {
             crate::operation::activate_key_signing_key::ActivateKeySigningKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_key_signing_key::ActivateKeySigningKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_key_signing_key::ActivateKeySigningKeyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
         self
     }
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }

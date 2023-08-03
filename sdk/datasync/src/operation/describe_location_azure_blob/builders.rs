@@ -26,7 +26,7 @@ impl DescribeLocationAzureBlobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLocationAzureBlobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobInputBuilder,
+    inner: crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobInputBuilder,
 }
 impl DescribeLocationAzureBlobFluentBuilder {
     /// Creates a new `DescribeLocationAzureBlob`.
@@ -37,7 +37,7 @@ impl DescribeLocationAzureBlobFluentBuilder {
         }
     }
     /// Access the DescribeLocationAzureBlob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeLocationAzureBlobFluentBuilder {
             crate::operation::describe_location_azure_blob::DescribeLocationAzureBlob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeLocationAzureBlobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeLocationAzureBlobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeLocationAzureBlobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeLocationAzureBlobFluentBuilder {
             crate::operation::describe_location_azure_blob::DescribeLocationAzureBlob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError>,
     > {
         self.customize_middleware().await
     }

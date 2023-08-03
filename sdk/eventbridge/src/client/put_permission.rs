@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::put_permission::builders::PutPermissionFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_permission::builders::PutPermissionFluentBuilder::set_policy): <p>A JSON string that describes the permission policy statement. You can include a <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
     /// - On success, responds with [`PutPermissionOutput`](crate::operation::put_permission::PutPermissionOutput)
     /// - On failure, responds with [`SdkError<PutPermissionError>`](crate::operation::put_permission::PutPermissionError)
-    pub fn put_permission(
-        &self,
-    ) -> crate::operation::put_permission::builders::PutPermissionFluentBuilder {
-        crate::operation::put_permission::builders::PutPermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_permission(&self) -> crate::operation::put_permission::builders::PutPermissionFluentBuilder {
+        crate::operation::put_permission::builders::PutPermissionFluentBuilder::new(self.handle.clone())
     }
 }

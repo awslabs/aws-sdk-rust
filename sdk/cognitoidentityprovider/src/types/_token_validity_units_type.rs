@@ -37,9 +37,7 @@ impl TokenValidityUnitsType {
 
 /// A builder for [`TokenValidityUnitsType`](crate::types::TokenValidityUnitsType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TokenValidityUnitsTypeBuilder {
     pub(crate) access_token: ::std::option::Option<crate::types::TimeUnitsType>,
     pub(crate) id_token: ::std::option::Option<crate::types::TimeUnitsType>,
@@ -52,10 +50,7 @@ impl TokenValidityUnitsTypeBuilder {
         self
     }
     /// <p> A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time unit is hours.</p>
-    pub fn set_access_token(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeUnitsType>,
-    ) -> Self {
+    pub fn set_access_token(mut self, input: ::std::option::Option<crate::types::TimeUnitsType>) -> Self {
         self.access_token = input;
         self
     }
@@ -69,10 +64,7 @@ impl TokenValidityUnitsTypeBuilder {
         self
     }
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is hours.</p>
-    pub fn set_id_token(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeUnitsType>,
-    ) -> Self {
+    pub fn set_id_token(mut self, input: ::std::option::Option<crate::types::TimeUnitsType>) -> Self {
         self.id_token = input;
         self
     }
@@ -86,10 +78,7 @@ impl TokenValidityUnitsTypeBuilder {
         self
     }
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code> time unit is days.</p>
-    pub fn set_refresh_token(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeUnitsType>,
-    ) -> Self {
+    pub fn set_refresh_token(mut self, input: ::std::option::Option<crate::types::TimeUnitsType>) -> Self {
         self.refresh_token = input;
         self
     }

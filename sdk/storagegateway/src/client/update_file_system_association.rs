@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateFileSystemAssociationOutput`](crate::operation::update_file_system_association::UpdateFileSystemAssociationOutput) with field(s):
     ///   - [`file_system_association_arn(Option<String>)`](crate::operation::update_file_system_association::UpdateFileSystemAssociationOutput::file_system_association_arn): <p>The ARN of the updated file system association.</p>
     /// - On failure, responds with [`SdkError<UpdateFileSystemAssociationError>`](crate::operation::update_file_system_association::UpdateFileSystemAssociationError)
-    pub fn update_file_system_association(&self) -> crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationFluentBuilder{
+    pub fn update_file_system_association(
+        &self,
+    ) -> crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationFluentBuilder {
         crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationFluentBuilder::new(self.handle.clone())
     }
 }

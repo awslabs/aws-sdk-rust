@@ -50,9 +50,7 @@ impl ResourceSpec {
 
 /// A builder for [`ResourceSpec`](crate::types::ResourceSpec).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceSpecBuilder {
     pub(crate) sage_maker_image_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sage_maker_image_version_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ pub struct ResourceSpecBuilder {
 }
 impl ResourceSpecBuilder {
     /// <p>The ARN of the SageMaker image that the image version belongs to.</p>
-    pub fn sage_maker_image_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sage_maker_image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sage_maker_image_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the SageMaker image that the image version belongs to.</p>
-    pub fn set_sage_maker_image_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sage_maker_image_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sage_maker_image_arn = input;
         self
     }
@@ -81,25 +73,17 @@ impl ResourceSpecBuilder {
         &self.sage_maker_image_arn
     }
     /// <p>The ARN of the image version created on the instance.</p>
-    pub fn sage_maker_image_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sage_maker_image_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sage_maker_image_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the image version created on the instance.</p>
-    pub fn set_sage_maker_image_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sage_maker_image_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sage_maker_image_version_arn = input;
         self
     }
     /// <p>The ARN of the image version created on the instance.</p>
-    pub fn get_sage_maker_image_version_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_sage_maker_image_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.sage_maker_image_version_arn
     }
     /// <p>The instance type that the image version runs on.</p> <note>
@@ -114,10 +98,7 @@ impl ResourceSpecBuilder {
     /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
     /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
     /// </note>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AppInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::AppInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -129,18 +110,12 @@ impl ResourceSpecBuilder {
         &self.instance_type
     }
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
-    pub fn lifecycle_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
-    pub fn set_lifecycle_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_config_arn = input;
         self
     }

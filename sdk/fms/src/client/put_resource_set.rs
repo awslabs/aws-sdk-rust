@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`resource_set(Option<ResourceSet>)`](crate::operation::put_resource_set::PutResourceSetOutput::resource_set): <p>Details about the resource set.</p>
     ///   - [`resource_set_arn(Option<String>)`](crate::operation::put_resource_set::PutResourceSetOutput::resource_set_arn): <p>The Amazon Resource Name (ARN) of the resource set.</p>
     /// - On failure, responds with [`SdkError<PutResourceSetError>`](crate::operation::put_resource_set::PutResourceSetError)
-    pub fn put_resource_set(
-        &self,
-    ) -> crate::operation::put_resource_set::builders::PutResourceSetFluentBuilder {
-        crate::operation::put_resource_set::builders::PutResourceSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_resource_set(&self) -> crate::operation::put_resource_set::builders::PutResourceSetFluentBuilder {
+        crate::operation::put_resource_set::builders::PutResourceSetFluentBuilder::new(self.handle.clone())
     }
 }

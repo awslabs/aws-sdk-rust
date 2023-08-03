@@ -57,9 +57,7 @@ impl ListQueriesInput {
 
 /// A builder for [`ListQueriesInput`](crate::operation::list_queries::ListQueriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueriesInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ pub struct ListQueriesInputBuilder {
 }
 impl ListQueriesInputBuilder {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
-    pub fn event_data_store(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
-    pub fn set_event_data_store(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data_store = input;
         self
     }
@@ -123,10 +115,7 @@ impl ListQueriesInputBuilder {
         self
     }
     /// <p>Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -140,10 +129,7 @@ impl ListQueriesInputBuilder {
         self
     }
     /// <p>Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -157,10 +143,7 @@ impl ListQueriesInputBuilder {
         self
     }
     /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
-    pub fn set_query_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryStatus>,
-    ) -> Self {
+    pub fn set_query_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
         self.query_status = input;
         self
     }
@@ -169,12 +152,7 @@ impl ListQueriesInputBuilder {
         &self.query_status
     }
     /// Consumes the builder and constructs a [`ListQueriesInput`](crate::operation::list_queries::ListQueriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_queries::ListQueriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_queries::ListQueriesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_queries::ListQueriesInput {
             event_data_store: self.event_data_store,
             next_token: self.next_token,

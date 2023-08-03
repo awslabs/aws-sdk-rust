@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`server_id(impl ::std::convert::Into<String>)`](crate::operation::delete_server::builders::DeleteServerFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::delete_server::builders::DeleteServerFluentBuilder::set_server_id): <p>A unique system-assigned identifier for a server instance.</p>
     /// - On success, responds with [`DeleteServerOutput`](crate::operation::delete_server::DeleteServerOutput)
     /// - On failure, responds with [`SdkError<DeleteServerError>`](crate::operation::delete_server::DeleteServerError)
-    pub fn delete_server(
-        &self,
-    ) -> crate::operation::delete_server::builders::DeleteServerFluentBuilder {
-        crate::operation::delete_server::builders::DeleteServerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_server(&self) -> crate::operation::delete_server::builders::DeleteServerFluentBuilder {
+        crate::operation::delete_server::builders::DeleteServerFluentBuilder::new(self.handle.clone())
     }
 }

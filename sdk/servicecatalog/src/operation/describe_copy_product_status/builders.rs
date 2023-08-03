@@ -26,7 +26,7 @@ impl DescribeCopyProductStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCopyProductStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusInputBuilder,
+    inner: crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusInputBuilder,
 }
 impl DescribeCopyProductStatusFluentBuilder {
     /// Creates a new `DescribeCopyProductStatus`.
@@ -37,7 +37,7 @@ impl DescribeCopyProductStatusFluentBuilder {
         }
     }
     /// Access the DescribeCopyProductStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeCopyProductStatusFluentBuilder {
             crate::operation::describe_copy_product_status::DescribeCopyProductStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_copy_product_status::DescribeCopyProductStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_copy_product_status::DescribeCopyProductStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeCopyProductStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeCopyProductStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_copy_product_status::DescribeCopyProductStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_copy_product_status::DescribeCopyProductStatusError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeCopyProductStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_copy_product_status::DescribeCopyProductStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_copy_product_status::DescribeCopyProductStatusError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeCopyProductStatusFluentBuilder {
             crate::operation::describe_copy_product_status::DescribeCopyProductStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_copy_product_status::DescribeCopyProductStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_copy_product_status::DescribeCopyProductStatusError>,
     > {
         self.customize_middleware().await
     }
@@ -125,10 +114,7 @@ impl DescribeCopyProductStatusFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -137,10 +123,7 @@ impl DescribeCopyProductStatusFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -153,18 +136,12 @@ impl DescribeCopyProductStatusFluentBuilder {
         self.inner.get_accept_language()
     }
     /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
-    pub fn copy_product_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn copy_product_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.copy_product_token(input.into());
         self
     }
     /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
-    pub fn set_copy_product_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_copy_product_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_copy_product_token(input);
         self
     }

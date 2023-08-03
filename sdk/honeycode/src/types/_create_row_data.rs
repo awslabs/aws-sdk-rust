@@ -9,9 +9,7 @@ pub struct CreateRowData {
     pub batch_item_id: ::std::option::Option<::std::string::String>,
     /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
     #[doc(hidden)]
-    pub cells_to_create: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CellInput>,
-    >,
+    pub cells_to_create: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CellInput>>,
 }
 impl CreateRowData {
     /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
@@ -19,11 +17,7 @@ impl CreateRowData {
         self.batch_item_id.as_deref()
     }
     /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    pub fn cells_to_create(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::CellInput>,
-    > {
+    pub fn cells_to_create(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CellInput>> {
         self.cells_to_create.as_ref()
     }
 }
@@ -36,29 +30,19 @@ impl CreateRowData {
 
 /// A builder for [`CreateRowData`](crate::types::CreateRowData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRowDataBuilder {
     pub(crate) batch_item_id: ::std::option::Option<::std::string::String>,
-    pub(crate) cells_to_create: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CellInput>,
-    >,
+    pub(crate) cells_to_create: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CellInput>>,
 }
 impl CreateRowDataBuilder {
     /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
-    pub fn batch_item_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_item_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An external identifier that represents the single row that is being created as part of the BatchCreateTableRows request. This can be any string that you can use to identify the row in the request. The BatchCreateTableRows API puts the batch item id in the results to allow you to link data in the request to data in the results. </p>
-    pub fn set_batch_item_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_item_id = input;
         self
     }
@@ -71,11 +55,7 @@ impl CreateRowDataBuilder {
     /// To override the contents of this collection use [`set_cells_to_create`](Self::set_cells_to_create).
     ///
     /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    pub fn cells_to_create(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::CellInput,
-    ) -> Self {
+    pub fn cells_to_create(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CellInput) -> Self {
         let mut hash_map = self.cells_to_create.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.cells_to_create = ::std::option::Option::Some(hash_map);
@@ -84,19 +64,13 @@ impl CreateRowDataBuilder {
     /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
     pub fn set_cells_to_create(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::CellInput>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CellInput>>,
     ) -> Self {
         self.cells_to_create = input;
         self
     }
     /// <p> A map representing the cells to create in the new row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    pub fn get_cells_to_create(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CellInput>,
-    > {
+    pub fn get_cells_to_create(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CellInput>> {
         &self.cells_to_create
     }
     /// Consumes the builder and constructs a [`CreateRowData`](crate::types::CreateRowData).

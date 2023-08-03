@@ -10,10 +10,7 @@ impl RestartAppServerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::restart_app_server::RestartAppServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restart_app_server::RestartAppServerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restart_app_server::RestartAppServerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.restart_app_server();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RestartAppServerFluentBuilder {
         }
     }
     /// Access the RestartAppServer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::restart_app_server::builders::RestartAppServerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::restart_app_server::builders::RestartAppServerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RestartAppServerFluentBuilder {
             crate::operation::restart_app_server::RestartAppServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restart_app_server::RestartAppServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restart_app_server::RestartAppServerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RestartAppServerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RestartAppServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restart_app_server::RestartAppServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restart_app_server::RestartAppServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restart_app_server::RestartAppServerError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RestartAppServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restart_app_server::RestartAppServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restart_app_server::RestartAppServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restart_app_server::RestartAppServerError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +102,19 @@ impl RestartAppServerFluentBuilder {
             crate::operation::restart_app_server::RestartAppServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restart_app_server::RestartAppServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restart_app_server::RestartAppServerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the environment to restart the server for.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>The ID of the environment to restart the server for.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -147,19 +125,13 @@ impl RestartAppServerFluentBuilder {
     }
     /// <p>The name of the environment to restart the server for.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the environment to restart the server for.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }

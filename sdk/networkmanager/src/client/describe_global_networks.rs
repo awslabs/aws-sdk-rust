@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`global_networks(Option<Vec<GlobalNetwork>>)`](crate::operation::describe_global_networks::DescribeGlobalNetworksOutput::global_networks): <p>Information about the global networks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_global_networks::DescribeGlobalNetworksOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<DescribeGlobalNetworksError>`](crate::operation::describe_global_networks::DescribeGlobalNetworksError)
-    pub fn describe_global_networks(
-        &self,
-    ) -> crate::operation::describe_global_networks::builders::DescribeGlobalNetworksFluentBuilder
-    {
+    pub fn describe_global_networks(&self) -> crate::operation::describe_global_networks::builders::DescribeGlobalNetworksFluentBuilder {
         crate::operation::describe_global_networks::builders::DescribeGlobalNetworksFluentBuilder::new(self.handle.clone())
     }
 }

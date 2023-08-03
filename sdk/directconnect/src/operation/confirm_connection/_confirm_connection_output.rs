@@ -43,17 +43,14 @@ impl ::aws_http::request_id::RequestId for ConfirmConnectionOutput {
 }
 impl ConfirmConnectionOutput {
     /// Creates a new builder-style object to manufacture [`ConfirmConnectionOutput`](crate::operation::confirm_connection::ConfirmConnectionOutput).
-    pub fn builder(
-    ) -> crate::operation::confirm_connection::builders::ConfirmConnectionOutputBuilder {
+    pub fn builder() -> crate::operation::confirm_connection::builders::ConfirmConnectionOutputBuilder {
         crate::operation::confirm_connection::builders::ConfirmConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ConfirmConnectionOutput`](crate::operation::confirm_connection::ConfirmConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmConnectionOutputBuilder {
     pub(crate) connection_state: ::std::option::Option<crate::types::ConnectionState>,
     _request_id: Option<String>,
@@ -87,10 +84,7 @@ impl ConfirmConnectionOutputBuilder {
     /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
-    pub fn set_connection_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionState>,
-    ) -> Self {
+    pub fn set_connection_state(mut self, input: ::std::option::Option<crate::types::ConnectionState>) -> Self {
         self.connection_state = input;
         self
     }

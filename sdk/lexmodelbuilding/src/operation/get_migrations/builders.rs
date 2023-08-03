@@ -10,10 +10,7 @@ impl GetMigrationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_migrations::GetMigrationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_migrations::GetMigrationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_migrations::GetMigrationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_migrations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetMigrationsFluentBuilder {
         }
     }
     /// Access the GetMigrations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_migrations::builders::GetMigrationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_migrations::builders::GetMigrationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetMigrationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl GetMigrationsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_migrations::paginator::GetMigrationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_migrations::paginator::GetMigrationsPaginator {
-        crate::operation::get_migrations::paginator::GetMigrationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_migrations::paginator::GetMigrationsPaginator {
+        crate::operation::get_migrations::paginator::GetMigrationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
     pub fn sort_by_attribute(mut self, input: crate::types::MigrationSortAttribute) -> Self {
@@ -131,17 +118,12 @@ impl GetMigrationsFluentBuilder {
         self
     }
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
-    pub fn set_sort_by_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationSortAttribute>,
-    ) -> Self {
+    pub fn set_sort_by_attribute(mut self, input: ::std::option::Option<crate::types::MigrationSortAttribute>) -> Self {
         self.inner = self.inner.set_sort_by_attribute(input);
         self
     }
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
-    pub fn get_sort_by_attribute(
-        &self,
-    ) -> &::std::option::Option<crate::types::MigrationSortAttribute> {
+    pub fn get_sort_by_attribute(&self) -> &::std::option::Option<crate::types::MigrationSortAttribute> {
         self.inner.get_sort_by_attribute()
     }
     /// <p>The order so sort the list.</p>
@@ -150,10 +132,7 @@ impl GetMigrationsFluentBuilder {
         self
     }
     /// <p>The order so sort the list.</p>
-    pub fn set_sort_by_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrder>,
-    ) -> Self {
+    pub fn set_sort_by_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_by_order(input);
         self
     }
@@ -162,18 +141,12 @@ impl GetMigrationsFluentBuilder {
         self.inner.get_sort_by_order()
     }
     /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
-    pub fn v1_bot_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn v1_bot_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.v1_bot_name_contains(input.into());
         self
     }
     /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
-    pub fn set_v1_bot_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_v1_bot_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_v1_bot_name_contains(input);
         self
     }
@@ -187,17 +160,12 @@ impl GetMigrationsFluentBuilder {
         self
     }
     /// <p>Filters the list to contain only migrations in the specified state.</p>
-    pub fn set_migration_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationStatus>,
-    ) -> Self {
+    pub fn set_migration_status_equals(mut self, input: ::std::option::Option<crate::types::MigrationStatus>) -> Self {
         self.inner = self.inner.set_migration_status_equals(input);
         self
     }
     /// <p>Filters the list to contain only migrations in the specified state.</p>
-    pub fn get_migration_status_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::MigrationStatus> {
+    pub fn get_migration_status_equals(&self) -> &::std::option::Option<crate::types::MigrationStatus> {
         self.inner.get_migration_status_equals()
     }
     /// <p>The maximum number of migrations to return in the response. The default is 10.</p>

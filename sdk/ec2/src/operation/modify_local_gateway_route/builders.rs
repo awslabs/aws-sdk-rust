@@ -26,8 +26,7 @@ impl ModifyLocalGatewayRouteInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyLocalGatewayRouteFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder,
+    inner: crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder,
 }
 impl ModifyLocalGatewayRouteFluentBuilder {
     /// Creates a new `ModifyLocalGatewayRoute`.
@@ -38,10 +37,7 @@ impl ModifyLocalGatewayRouteFluentBuilder {
         }
     }
     /// Access the ModifyLocalGatewayRoute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ModifyLocalGatewayRouteFluentBuilder {
             crate::operation::modify_local_gateway_route::ModifyLocalGatewayRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ModifyLocalGatewayRouteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ModifyLocalGatewayRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ModifyLocalGatewayRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl ModifyLocalGatewayRouteFluentBuilder {
             crate::operation::modify_local_gateway_route::ModifyLocalGatewayRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The CIDR block used for destination matches. The value that you provide must match the CIDR of an existing route in the table.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_cidr_block(input.into());
         self
     }
     /// <p>The CIDR block used for destination matches. The value that you provide must match the CIDR of an existing route in the table.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
@@ -145,66 +124,40 @@ impl ModifyLocalGatewayRouteFluentBuilder {
         self.inner.get_destination_cidr_block()
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_gateway_route_table_id(input.into());
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_local_gateway_route_table_id(input);
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn get_local_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_local_gateway_route_table_id()
     }
     /// <p> The ID of the virtual interface group. </p>
-    pub fn local_gateway_virtual_interface_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .local_gateway_virtual_interface_group_id(input.into());
+    pub fn local_gateway_virtual_interface_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.local_gateway_virtual_interface_group_id(input.into());
         self
     }
     /// <p> The ID of the virtual interface group. </p>
-    pub fn set_local_gateway_virtual_interface_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_local_gateway_virtual_interface_group_id(input);
+    pub fn set_local_gateway_virtual_interface_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_local_gateway_virtual_interface_group_id(input);
         self
     }
     /// <p> The ID of the virtual interface group. </p>
-    pub fn get_local_gateway_virtual_interface_group_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_virtual_interface_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_local_gateway_virtual_interface_group_id()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_id(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
@@ -227,18 +180,12 @@ impl ModifyLocalGatewayRouteFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
-    pub fn destination_prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_prefix_list_id(input.into());
         self
     }
     /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
-    pub fn set_destination_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_prefix_list_id(input);
         self
     }

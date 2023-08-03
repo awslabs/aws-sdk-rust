@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeClusterSnapshotsOutput {
 }
 impl DescribeClusterSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterSnapshotsOutput`](crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsOutputBuilder {
         crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterSnapshotsOutput`](crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterSnapshotsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
@@ -73,10 +69,7 @@ impl DescribeClusterSnapshotsOutputBuilder {
         self
     }
     /// <p>A list of <code>Snapshot</code> instances. </p>
-    pub fn set_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
-    ) -> Self {
+    pub fn set_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>) -> Self {
         self.snapshots = input;
         self
     }
@@ -94,9 +87,7 @@ impl DescribeClusterSnapshotsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClusterSnapshotsOutput`](crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput {
+    pub fn build(self) -> crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput {
         crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput {
             marker: self.marker,
             snapshots: self.snapshots,

@@ -19,9 +19,7 @@ impl super::Client {
     ///   - [`revoked(bool)`](crate::operation::get_revision::GetRevisionOutput::revoked): <p>A status indicating that subscribers' access to the revision was revoked.</p>
     ///   - [`revoked_at(Option<DateTime>)`](crate::operation::get_revision::GetRevisionOutput::revoked_at): <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<GetRevisionError>`](crate::operation::get_revision::GetRevisionError)
-    pub fn get_revision(
-        &self,
-    ) -> crate::operation::get_revision::builders::GetRevisionFluentBuilder {
+    pub fn get_revision(&self) -> crate::operation::get_revision::builders::GetRevisionFluentBuilder {
         crate::operation::get_revision::builders::GetRevisionFluentBuilder::new(self.handle.clone())
     }
 }

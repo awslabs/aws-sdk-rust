@@ -35,12 +35,9 @@ impl ListAlertsOutput {
 
 /// A builder for [`ListAlertsOutput`](crate::operation::list_alerts::ListAlertsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAlertsOutputBuilder {
-    pub(crate) alert_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlertSummary>>,
+    pub(crate) alert_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AlertSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListAlertsOutputBuilder {
         self
     }
     /// <p>Contains information about an alert.</p>
-    pub fn set_alert_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlertSummary>>,
-    ) -> Self {
+    pub fn set_alert_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlertSummary>>) -> Self {
         self.alert_summary_list = input;
         self
     }
     /// <p>Contains information about an alert.</p>
-    pub fn get_alert_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlertSummary>> {
+    pub fn get_alert_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlertSummary>> {
         &self.alert_summary_list
     }
     /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>

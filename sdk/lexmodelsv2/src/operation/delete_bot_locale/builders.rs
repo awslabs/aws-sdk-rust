@@ -10,10 +10,7 @@ impl DeleteBotLocaleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_bot_locale::DeleteBotLocaleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bot_locale::DeleteBotLocaleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bot_locale::DeleteBotLocaleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_bot_locale();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteBotLocaleFluentBuilder {
         }
     }
     /// Access the DeleteBotLocale as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_bot_locale::builders::DeleteBotLocaleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_bot_locale::builders::DeleteBotLocaleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteBotLocaleFluentBuilder {
             crate::operation::delete_bot_locale::DeleteBotLocale,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bot_locale::DeleteBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bot_locale::DeleteBotLocaleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteBotLocaleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteBotLocaleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bot_locale::DeleteBotLocaleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bot_locale::DeleteBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bot_locale::DeleteBotLocaleError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteBotLocaleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bot_locale::DeleteBotLocaleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bot_locale::DeleteBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bot_locale::DeleteBotLocaleError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DeleteBotLocaleFluentBuilder {
             crate::operation::delete_bot_locale::DeleteBotLocale,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bot_locale::DeleteBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bot_locale::DeleteBotLocaleError>,
     > {
         self.customize_middleware().await
     }

@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`query_logging_configs(Option<Vec<QueryLoggingConfig>>)`](crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput::query_logging_configs): <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput::next_token): <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>  <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
     /// - On failure, responds with [`SdkError<ListQueryLoggingConfigsError>`](crate::operation::list_query_logging_configs::ListQueryLoggingConfigsError)
-    pub fn list_query_logging_configs(
-        &self,
-    ) -> crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsFluentBuilder
-    {
+    pub fn list_query_logging_configs(&self) -> crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsFluentBuilder {
         crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsFluentBuilder::new(self.handle.clone())
     }
 }

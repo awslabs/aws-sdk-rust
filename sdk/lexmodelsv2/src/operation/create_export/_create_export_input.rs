@@ -15,9 +15,7 @@ pub struct CreateExportInput {
 }
 impl CreateExportInput {
     /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
-    pub fn resource_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExportResourceSpecification> {
+    pub fn resource_specification(&self) -> ::std::option::Option<&crate::types::ExportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The file format of the bot or bot locale definition files.</p>
@@ -49,32 +47,23 @@ impl CreateExportInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateExportInputBuilder {
-    pub(crate) resource_specification:
-        ::std::option::Option<crate::types::ExportResourceSpecification>,
+    pub(crate) resource_specification: ::std::option::Option<crate::types::ExportResourceSpecification>,
     pub(crate) file_format: ::std::option::Option<crate::types::ImportExportFileFormat>,
     pub(crate) file_password: ::std::option::Option<::std::string::String>,
 }
 impl CreateExportInputBuilder {
     /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
-    pub fn resource_specification(
-        mut self,
-        input: crate::types::ExportResourceSpecification,
-    ) -> Self {
+    pub fn resource_specification(mut self, input: crate::types::ExportResourceSpecification) -> Self {
         self.resource_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
-    pub fn set_resource_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportResourceSpecification>,
-    ) -> Self {
+    pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ExportResourceSpecification>) -> Self {
         self.resource_specification = input;
         self
     }
     /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
-    pub fn get_resource_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportResourceSpecification> {
+    pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ExportResourceSpecification> {
         &self.resource_specification
     }
     /// <p>The file format of the bot or bot locale definition files.</p>
@@ -83,10 +72,7 @@ impl CreateExportInputBuilder {
         self
     }
     /// <p>The file format of the bot or bot locale definition files.</p>
-    pub fn set_file_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportExportFileFormat>,
-    ) -> Self {
+    pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::ImportExportFileFormat>) -> Self {
         self.file_format = input;
         self
     }
@@ -95,18 +81,12 @@ impl CreateExportInputBuilder {
         &self.file_format
     }
     /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
-    pub fn file_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
-    pub fn set_file_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_password = input;
         self
     }
@@ -115,12 +95,7 @@ impl CreateExportInputBuilder {
         &self.file_password
     }
     /// Consumes the builder and constructs a [`CreateExportInput`](crate::operation::create_export::CreateExportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_export::CreateExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_export::CreateExportInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_export::CreateExportInput {
             resource_specification: self.resource_specification,
             file_format: self.file_format,

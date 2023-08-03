@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`raster_data_collection_summaries(Option<Vec<RasterDataCollectionMetadata>>)`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput::raster_data_collection_summaries): <p>Contains summary information about the raster data collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListRasterDataCollectionsError>`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsError)
-    pub fn list_raster_data_collections(&self) -> crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsFluentBuilder{
+    pub fn list_raster_data_collections(&self) -> crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsFluentBuilder {
         crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsFluentBuilder::new(self.handle.clone())
     }
 }

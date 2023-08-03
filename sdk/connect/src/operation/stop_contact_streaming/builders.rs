@@ -37,9 +37,7 @@ impl StopContactStreamingFluentBuilder {
         }
     }
     /// Access the StopContactStreaming as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_contact_streaming::builders::StopContactStreamingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_contact_streaming::builders::StopContactStreamingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl StopContactStreamingFluentBuilder {
             crate::operation::stop_contact_streaming::StopContactStreaming,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_contact_streaming::StopContactStreamingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_contact_streaming::StopContactStreamingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl StopContactStreamingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl StopContactStreamingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_contact_streaming::StopContactStreamingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_contact_streaming::StopContactStreamingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_contact_streaming::StopContactStreamingError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl StopContactStreamingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_contact_streaming::StopContactStreamingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_contact_streaming::StopContactStreamingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_contact_streaming::StopContactStreamingError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl StopContactStreamingFluentBuilder {
             crate::operation::stop_contact_streaming::StopContactStreaming,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_contact_streaming::StopContactStreamingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_contact_streaming::StopContactStreamingError>,
     > {
         self.customize_middleware().await
     }

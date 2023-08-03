@@ -26,7 +26,7 @@ impl DescribeSubscribedWorkteamInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSubscribedWorkteamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamInputBuilder,
+    inner: crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamInputBuilder,
 }
 impl DescribeSubscribedWorkteamFluentBuilder {
     /// Creates a new `DescribeSubscribedWorkteam`.
@@ -37,7 +37,7 @@ impl DescribeSubscribedWorkteamFluentBuilder {
         }
     }
     /// Access the DescribeSubscribedWorkteam as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeSubscribedWorkteamFluentBuilder {
             crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteam,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeSubscribedWorkteamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeSubscribedWorkteamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeSubscribedWorkteamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeSubscribedWorkteamFluentBuilder {
             crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteam,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamError>,
     > {
         self.customize_middleware().await
     }

@@ -22,11 +22,7 @@ impl super::Client {
     ///   - [`user_context_policy(Option<UserContextPolicy>)`](crate::operation::describe_index::DescribeIndexOutput::user_context_policy): <p>The user context policy for the Amazon Kendra index.</p>
     ///   - [`user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::operation::describe_index::DescribeIndexOutput::user_group_resolution_configuration): <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
     /// - On failure, responds with [`SdkError<DescribeIndexError>`](crate::operation::describe_index::DescribeIndexError)
-    pub fn describe_index(
-        &self,
-    ) -> crate::operation::describe_index::builders::DescribeIndexFluentBuilder {
-        crate::operation::describe_index::builders::DescribeIndexFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_index(&self) -> crate::operation::describe_index::builders::DescribeIndexFluentBuilder {
+        crate::operation::describe_index::builders::DescribeIndexFluentBuilder::new(self.handle.clone())
     }
 }

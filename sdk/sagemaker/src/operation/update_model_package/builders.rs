@@ -10,10 +10,7 @@ impl UpdateModelPackageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_model_package::UpdateModelPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_package::UpdateModelPackageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_package::UpdateModelPackageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_model_package();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateModelPackageFluentBuilder {
         }
     }
     /// Access the UpdateModelPackage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_model_package::builders::UpdateModelPackageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_model_package::builders::UpdateModelPackageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateModelPackageFluentBuilder {
             crate::operation::update_model_package::UpdateModelPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_package::UpdateModelPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_package::UpdateModelPackageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateModelPackageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateModelPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_model_package::UpdateModelPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_package::UpdateModelPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_package::UpdateModelPackageError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateModelPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_model_package::UpdateModelPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_package::UpdateModelPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_package::UpdateModelPackageError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateModelPackageFluentBuilder {
             crate::operation::update_model_package::UpdateModelPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_package::UpdateModelPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_package::UpdateModelPackageError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    pub fn model_package_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_package_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    pub fn set_model_package_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_package_arn(input);
         self
     }
@@ -148,32 +126,21 @@ impl UpdateModelPackageFluentBuilder {
         self
     }
     /// <p>The approval status of the model.</p>
-    pub fn set_model_approval_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelApprovalStatus>,
-    ) -> Self {
+    pub fn set_model_approval_status(mut self, input: ::std::option::Option<crate::types::ModelApprovalStatus>) -> Self {
         self.inner = self.inner.set_model_approval_status(input);
         self
     }
     /// <p>The approval status of the model.</p>
-    pub fn get_model_approval_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
+    pub fn get_model_approval_status(&self) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
         self.inner.get_model_approval_status()
     }
     /// <p>A description for the approval status of the model.</p>
-    pub fn approval_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.approval_description(input.into());
         self
     }
     /// <p>A description for the approval status of the model.</p>
-    pub fn set_approval_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_approval_description(input);
         self
     }
@@ -197,9 +164,7 @@ impl UpdateModelPackageFluentBuilder {
     /// <p>The metadata properties associated with the model package versions.</p>
     pub fn set_customer_metadata_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_customer_metadata_properties(input);
         self
@@ -207,9 +172,7 @@ impl UpdateModelPackageFluentBuilder {
     /// <p>The metadata properties associated with the model package versions.</p>
     pub fn get_customer_metadata_properties(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_customer_metadata_properties()
     }
     /// Appends an item to `CustomerMetadataPropertiesToRemove`.
@@ -217,27 +180,17 @@ impl UpdateModelPackageFluentBuilder {
     /// To override the contents of this collection use [`set_customer_metadata_properties_to_remove`](Self::set_customer_metadata_properties_to_remove).
     ///
     /// <p>The metadata properties associated with the model package versions to remove.</p>
-    pub fn customer_metadata_properties_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .customer_metadata_properties_to_remove(input.into());
+    pub fn customer_metadata_properties_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.customer_metadata_properties_to_remove(input.into());
         self
     }
     /// <p>The metadata properties associated with the model package versions to remove.</p>
-    pub fn set_customer_metadata_properties_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_customer_metadata_properties_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_customer_metadata_properties_to_remove(input);
         self
     }
     /// <p>The metadata properties associated with the model package versions to remove.</p>
-    pub fn get_customer_metadata_properties_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_customer_metadata_properties_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_customer_metadata_properties_to_remove()
     }
     /// Appends an item to `AdditionalInferenceSpecificationsToAdd`.
@@ -245,31 +198,22 @@ impl UpdateModelPackageFluentBuilder {
     /// To override the contents of this collection use [`set_additional_inference_specifications_to_add`](Self::set_additional_inference_specifications_to_add).
     ///
     /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
-    pub fn additional_inference_specifications_to_add(
-        mut self,
-        input: crate::types::AdditionalInferenceSpecificationDefinition,
-    ) -> Self {
+    pub fn additional_inference_specifications_to_add(mut self, input: crate::types::AdditionalInferenceSpecificationDefinition) -> Self {
         self.inner = self.inner.additional_inference_specifications_to_add(input);
         self
     }
     /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
     pub fn set_additional_inference_specifications_to_add(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_additional_inference_specifications_to_add(input);
+        self.inner = self.inner.set_additional_inference_specifications_to_add(input);
         self
     }
     /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
     pub fn get_additional_inference_specifications_to_add(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>> {
         self.inner.get_additional_inference_specifications_to_add()
     }
 }

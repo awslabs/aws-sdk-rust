@@ -22,9 +22,7 @@ impl DeleteTriggerInput {
 
 /// A builder for [`DeleteTriggerInput`](crate::operation::delete_trigger::DeleteTriggerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTriggerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteTriggerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTriggerInput`](crate::operation::delete_trigger::DeleteTriggerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_trigger::DeleteTriggerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_trigger::DeleteTriggerInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_trigger::DeleteTriggerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_trigger::DeleteTriggerInput { name: self.name })
     }
 }

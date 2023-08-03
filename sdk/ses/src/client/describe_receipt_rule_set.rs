@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`metadata(Option<ReceiptRuleSetMetadata>)`](crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetOutput::metadata): <p>The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set was created.</p>
     ///   - [`rules(Option<Vec<ReceiptRule>>)`](crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetOutput::rules): <p>A list of the receipt rules that belong to the specified receipt rule set.</p>
     /// - On failure, responds with [`SdkError<DescribeReceiptRuleSetError>`](crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetError)
-    pub fn describe_receipt_rule_set(
-        &self,
-    ) -> crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetFluentBuilder
-    {
+    pub fn describe_receipt_rule_set(&self) -> crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetFluentBuilder {
         crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetFluentBuilder::new(self.handle.clone())
     }
 }

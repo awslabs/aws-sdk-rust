@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AdminDisableProviderForUserOutput {
 }
 impl AdminDisableProviderForUserOutput {
     /// Creates a new builder-style object to manufacture [`AdminDisableProviderForUserOutput`](crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserOutput).
-    pub fn builder() -> crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserOutputBuilder{
+    pub fn builder() -> crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserOutputBuilder {
         crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserOutputBuilder::default()
     }
 }
 
 /// A builder for [`AdminDisableProviderForUserOutput`](crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminDisableProviderForUserOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl AdminDisableProviderForUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AdminDisableProviderForUserOutput`](crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserOutput {
+    pub fn build(self) -> crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserOutput {
         crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserOutput {
             _request_id: self._request_id,
         }

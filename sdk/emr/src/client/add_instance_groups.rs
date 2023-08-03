@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`instance_group_ids(Option<Vec<String>>)`](crate::operation::add_instance_groups::AddInstanceGroupsOutput::instance_group_ids): <p>Instance group IDs of the newly created instance groups.</p>
     ///   - [`cluster_arn(Option<String>)`](crate::operation::add_instance_groups::AddInstanceGroupsOutput::cluster_arn): <p>The Amazon Resource Name of the cluster.</p>
     /// - On failure, responds with [`SdkError<AddInstanceGroupsError>`](crate::operation::add_instance_groups::AddInstanceGroupsError)
-    pub fn add_instance_groups(
-        &self,
-    ) -> crate::operation::add_instance_groups::builders::AddInstanceGroupsFluentBuilder {
-        crate::operation::add_instance_groups::builders::AddInstanceGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_instance_groups(&self) -> crate::operation::add_instance_groups::builders::AddInstanceGroupsFluentBuilder {
+        crate::operation::add_instance_groups::builders::AddInstanceGroupsFluentBuilder::new(self.handle.clone())
     }
 }

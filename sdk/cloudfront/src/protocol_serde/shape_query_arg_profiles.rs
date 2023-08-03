@@ -14,10 +14,7 @@ pub fn ser_query_arg_profiles(
         for list_item_3 in var_2 {
             {
                 let inner_writer = inner_writer.start_el("QueryArgProfile");
-                crate::protocol_serde::shape_query_arg_profile::ser_query_arg_profile(
-                    list_item_3,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_query_arg_profile::ser_query_arg_profile(list_item_3, inner_writer)?
             }
         }
     }

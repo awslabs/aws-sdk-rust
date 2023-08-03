@@ -36,16 +36,14 @@ impl DeleteLaunchProfileMemberInput {
 }
 impl DeleteLaunchProfileMemberInput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchProfileMemberInput`](crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberInput).
-    pub fn builder() -> crate::operation::delete_launch_profile_member::builders::DeleteLaunchProfileMemberInputBuilder{
+    pub fn builder() -> crate::operation::delete_launch_profile_member::builders::DeleteLaunchProfileMemberInputBuilder {
         crate::operation::delete_launch_profile_member::builders::DeleteLaunchProfileMemberInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLaunchProfileMemberInput`](crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLaunchProfileMemberInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) launch_profile_id: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl DeleteLaunchProfileMemberInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_profile_id = input;
         self
     }
@@ -122,13 +114,11 @@ impl DeleteLaunchProfileMemberInputBuilder {
         crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberInput {
-                client_token: self.client_token,
-                launch_profile_id: self.launch_profile_id,
-                principal_id: self.principal_id,
-                studio_id: self.studio_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberInput {
+            client_token: self.client_token,
+            launch_profile_id: self.launch_profile_id,
+            principal_id: self.principal_id,
+            studio_id: self.studio_id,
+        })
     }
 }

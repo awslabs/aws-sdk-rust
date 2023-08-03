@@ -30,9 +30,7 @@ impl ConfigurationStatus {
 
 /// A builder for [`ConfigurationStatus`](crate::types::ConfigurationStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ConfigurationState>,
     pub(crate) error: ::std::option::Option<crate::types::ConfigurationErrorDetails>,
@@ -44,10 +42,7 @@ impl ConfigurationStatusBuilder {
         self
     }
     /// <p>The current state of the configuration.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ConfigurationState>) -> Self {
         self.state = input;
         self
     }
@@ -61,10 +56,7 @@ impl ConfigurationStatusBuilder {
         self
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn set_error(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationErrorDetails>,
-    ) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::ConfigurationErrorDetails>) -> Self {
         self.error = input;
         self
     }

@@ -165,17 +165,14 @@ impl ::aws_http::request_id::RequestId for DescribeStatementOutput {
 }
 impl DescribeStatementOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStatementOutput`](crate::operation::describe_statement::DescribeStatementOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_statement::builders::DescribeStatementOutputBuilder {
+    pub fn builder() -> crate::operation::describe_statement::builders::DescribeStatementOutputBuilder {
         crate::operation::describe_statement::builders::DescribeStatementOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStatementOutput`](crate::operation::describe_statement::DescribeStatementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStatementOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
@@ -194,8 +191,7 @@ pub struct DescribeStatementOutputBuilder {
     pub(crate) result_size: ::std::option::Option<i64>,
     pub(crate) redshift_query_id: ::std::option::Option<i64>,
     pub(crate) query_parameters: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
-    pub(crate) sub_statements:
-        ::std::option::Option<::std::vec::Vec<crate::types::SubStatementData>>,
+    pub(crate) sub_statements: ::std::option::Option<::std::vec::Vec<crate::types::SubStatementData>>,
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -257,18 +253,12 @@ impl DescribeStatementOutputBuilder {
         &self.database
     }
     /// <p>The cluster identifier. </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier. </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -351,10 +341,7 @@ impl DescribeStatementOutputBuilder {
         self
     }
     /// <p>The date and time (UTC) when the SQL statement was submitted to run. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -368,10 +355,7 @@ impl DescribeStatementOutputBuilder {
         self
     }
     /// <p>The date and time (UTC) that the metadata for the SQL statement was last updated. An example is the time the status last changed. </p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -475,17 +459,12 @@ impl DescribeStatementOutputBuilder {
         self
     }
     /// <p>The parameters for the SQL statement.</p>
-    pub fn set_query_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
-    ) -> Self {
+    pub fn set_query_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>) -> Self {
         self.query_parameters = input;
         self
     }
     /// <p>The parameters for the SQL statement.</p>
-    pub fn get_query_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
+    pub fn get_query_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
         &self.query_parameters
     }
     /// Appends an item to `sub_statements`.
@@ -500,32 +479,21 @@ impl DescribeStatementOutputBuilder {
         self
     }
     /// <p>The SQL statements from a multiple statement run.</p>
-    pub fn set_sub_statements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubStatementData>>,
-    ) -> Self {
+    pub fn set_sub_statements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubStatementData>>) -> Self {
         self.sub_statements = input;
         self
     }
     /// <p>The SQL statements from a multiple statement run.</p>
-    pub fn get_sub_statements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubStatementData>> {
+    pub fn get_sub_statements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubStatementData>> {
         &self.sub_statements
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workgroup_name = input;
         self
     }

@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountOutput::operation_id): <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was canceled, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
     /// - On failure, responds with [`SdkError<CancelDomainTransferToAnotherAwsAccountError>`](crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountError)
-    pub fn cancel_domain_transfer_to_another_aws_account(&self) -> crate::operation::cancel_domain_transfer_to_another_aws_account::builders::CancelDomainTransferToAnotherAwsAccountFluentBuilder{
-        crate::operation::cancel_domain_transfer_to_another_aws_account::builders::CancelDomainTransferToAnotherAwsAccountFluentBuilder::new(self.handle.clone())
+    pub fn cancel_domain_transfer_to_another_aws_account(
+        &self,
+    ) -> crate::operation::cancel_domain_transfer_to_another_aws_account::builders::CancelDomainTransferToAnotherAwsAccountFluentBuilder {
+        crate::operation::cancel_domain_transfer_to_another_aws_account::builders::CancelDomainTransferToAnotherAwsAccountFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

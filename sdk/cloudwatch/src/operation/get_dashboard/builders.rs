@@ -10,10 +10,7 @@ impl GetDashboardInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_dashboard::GetDashboardOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dashboard::GetDashboardError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dashboard::GetDashboardError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_dashboard();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl GetDashboardFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_dashboard::GetDashboard,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_dashboard::GetDashboard, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_dashboard::GetDashboardError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl GetDashboardFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,27 +96,18 @@ impl GetDashboardFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_dashboard::GetDashboard,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_dashboard::GetDashboard, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_dashboard::GetDashboardError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the dashboard to be described.</p>
-    pub fn dashboard_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dashboard_name(input.into());
         self
     }
     /// <p>The name of the dashboard to be described.</p>
-    pub fn set_dashboard_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dashboard_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dashboard_name(input);
         self
     }

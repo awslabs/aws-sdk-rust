@@ -29,16 +29,14 @@ impl ListDetectorModelVersionsInput {
 }
 impl ListDetectorModelVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListDetectorModelVersionsInput`](crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput).
-    pub fn builder() -> crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsInputBuilder {
         crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDetectorModelVersionsInput`](crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDetectorModelVersionsInputBuilder {
     pub(crate) detector_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListDetectorModelVersionsInputBuilder {
 }
 impl ListDetectorModelVersionsInputBuilder {
     /// <p>The name of the detector model whose versions are returned.</p>
-    pub fn detector_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the detector model whose versions are returned.</p>
-    pub fn set_detector_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_model_name = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListDetectorModelVersionsInputBuilder {
         crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput {
-                detector_model_name: self.detector_model_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput {
+            detector_model_name: self.detector_model_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

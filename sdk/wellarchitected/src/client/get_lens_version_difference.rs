@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`latest_lens_version(Option<String>)`](crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput::latest_lens_version): <p>The latest version of the lens.</p>
     ///   - [`version_differences(Option<VersionDifferences>)`](crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput::version_differences): <p>The differences between the base and latest versions of the lens.</p>
     /// - On failure, responds with [`SdkError<GetLensVersionDifferenceError>`](crate::operation::get_lens_version_difference::GetLensVersionDifferenceError)
-    pub fn get_lens_version_difference(&self) -> crate::operation::get_lens_version_difference::builders::GetLensVersionDifferenceFluentBuilder{
+    pub fn get_lens_version_difference(&self) -> crate::operation::get_lens_version_difference::builders::GetLensVersionDifferenceFluentBuilder {
         crate::operation::get_lens_version_difference::builders::GetLensVersionDifferenceFluentBuilder::new(self.handle.clone())
     }
 }

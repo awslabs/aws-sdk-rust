@@ -10,10 +10,7 @@ impl GetPositionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_position::GetPositionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_position::GetPositionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_position::GetPositionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_position();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl GetPositionFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_position::GetPosition,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_position::GetPosition, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_position::GetPositionError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl GetPositionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,27 +98,18 @@ impl GetPositionFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_position::GetPosition,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_position::GetPosition, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_position::GetPositionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Resource identifier used to retrieve the position information.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>Resource identifier used to retrieve the position information.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
@@ -141,10 +123,7 @@ impl GetPositionFluentBuilder {
         self
     }
     /// <p>Resource type of the resource for which position information is retrieved.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PositionResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

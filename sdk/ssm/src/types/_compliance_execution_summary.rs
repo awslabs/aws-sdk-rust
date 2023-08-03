@@ -37,9 +37,7 @@ impl ComplianceExecutionSummary {
 
 /// A builder for [`ComplianceExecutionSummary`](crate::types::ComplianceExecutionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComplianceExecutionSummaryBuilder {
     pub(crate) execution_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl ComplianceExecutionSummaryBuilder {
         self
     }
     /// <p>The time the execution ran as a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
-    pub fn set_execution_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_execution_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.execution_time = input;
         self
     }
@@ -78,18 +73,12 @@ impl ComplianceExecutionSummaryBuilder {
         &self.execution_id
     }
     /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
-    pub fn execution_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
-    pub fn set_execution_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_type = input;
         self
     }

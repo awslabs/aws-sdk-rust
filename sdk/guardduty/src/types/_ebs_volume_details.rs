@@ -30,14 +30,10 @@ impl EbsVolumeDetails {
 
 /// A builder for [`EbsVolumeDetails`](crate::types::EbsVolumeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EbsVolumeDetailsBuilder {
-    pub(crate) scanned_volume_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>>,
-    pub(crate) skipped_volume_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>>,
+    pub(crate) scanned_volume_details: ::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>>,
+    pub(crate) skipped_volume_details: ::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>>,
 }
 impl EbsVolumeDetailsBuilder {
     /// Appends an item to `scanned_volume_details`.
@@ -52,17 +48,12 @@ impl EbsVolumeDetailsBuilder {
         self
     }
     /// <p>List of EBS volumes that were scanned.</p>
-    pub fn set_scanned_volume_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>>,
-    ) -> Self {
+    pub fn set_scanned_volume_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>>) -> Self {
         self.scanned_volume_details = input;
         self
     }
     /// <p>List of EBS volumes that were scanned.</p>
-    pub fn get_scanned_volume_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>> {
+    pub fn get_scanned_volume_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>> {
         &self.scanned_volume_details
     }
     /// Appends an item to `skipped_volume_details`.
@@ -77,17 +68,12 @@ impl EbsVolumeDetailsBuilder {
         self
     }
     /// <p>List of EBS volumes that were skipped from the malware scan.</p>
-    pub fn set_skipped_volume_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>>,
-    ) -> Self {
+    pub fn set_skipped_volume_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>>) -> Self {
         self.skipped_volume_details = input;
         self
     }
     /// <p>List of EBS volumes that were skipped from the malware scan.</p>
-    pub fn get_skipped_volume_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>> {
+    pub fn get_skipped_volume_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>> {
         &self.skipped_volume_details
     }
     /// Consumes the builder and constructs a [`EbsVolumeDetails`](crate::types::EbsVolumeDetails).

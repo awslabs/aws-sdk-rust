@@ -9,10 +9,7 @@ pub fn ser_put_contact_information_input(
     if let Some(var_2) = &input.contact_information {
         #[allow(unused_mut)]
         let mut object_3 = object.key("ContactInformation").start_object();
-        crate::protocol_serde::shape_contact_information::ser_contact_information(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_contact_information::ser_contact_information(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

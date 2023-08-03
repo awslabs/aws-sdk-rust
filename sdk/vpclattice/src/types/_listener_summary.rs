@@ -65,9 +65,7 @@ impl ListenerSummary {
 
 /// A builder for [`ListenerSummary`](crate::types::ListenerSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListenerSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -126,10 +124,7 @@ impl ListenerSummaryBuilder {
         self
     }
     /// <p>The listener protocol.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ListenerProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ListenerProtocol>) -> Self {
         self.protocol = input;
         self
     }
@@ -157,10 +152,7 @@ impl ListenerSummaryBuilder {
         self
     }
     /// <p>The date and time that the listener was created, specified in ISO-8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -174,10 +166,7 @@ impl ListenerSummaryBuilder {
         self
     }
     /// <p>The date and time that the listener was last updated, specified in ISO-8601 format.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

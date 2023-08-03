@@ -17,11 +17,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFileCacheOutput`](crate::operation::create_file_cache::CreateFileCacheOutput) with field(s):
     ///   - [`file_cache(Option<FileCacheCreating>)`](crate::operation::create_file_cache::CreateFileCacheOutput::file_cache): <p>A description of the cache that was created.</p>
     /// - On failure, responds with [`SdkError<CreateFileCacheError>`](crate::operation::create_file_cache::CreateFileCacheError)
-    pub fn create_file_cache(
-        &self,
-    ) -> crate::operation::create_file_cache::builders::CreateFileCacheFluentBuilder {
-        crate::operation::create_file_cache::builders::CreateFileCacheFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_file_cache(&self) -> crate::operation::create_file_cache::builders::CreateFileCacheFluentBuilder {
+        crate::operation::create_file_cache::builders::CreateFileCacheFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,16 +15,14 @@ impl DisableVpcClassicLinkDnsSupportInput {
 }
 impl DisableVpcClassicLinkDnsSupportInput {
     /// Creates a new builder-style object to manufacture [`DisableVpcClassicLinkDnsSupportInput`](crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportInput).
-    pub fn builder() -> crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportInputBuilder{
+    pub fn builder() -> crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportInputBuilder {
         crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableVpcClassicLinkDnsSupportInput`](crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableVpcClassicLinkDnsSupportInputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl DisableVpcClassicLinkDnsSupportInputBuilder {
         &self.vpc_id
     }
     /// Consumes the builder and constructs a [`DisableVpcClassicLinkDnsSupportInput`](crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportInput {
-                vpc_id: self.vpc_id
-                ,
-            }
+            crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportInput { vpc_id: self.vpc_id },
         )
     }
 }

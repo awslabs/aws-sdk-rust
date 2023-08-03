@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`contact_flow_id(Option<String>)`](crate::operation::create_contact_flow::CreateContactFlowOutput::contact_flow_id): <p>The identifier of the flow.</p>
     ///   - [`contact_flow_arn(Option<String>)`](crate::operation::create_contact_flow::CreateContactFlowOutput::contact_flow_arn): <p>The Amazon Resource Name (ARN) of the flow.</p>
     /// - On failure, responds with [`SdkError<CreateContactFlowError>`](crate::operation::create_contact_flow::CreateContactFlowError)
-    pub fn create_contact_flow(
-        &self,
-    ) -> crate::operation::create_contact_flow::builders::CreateContactFlowFluentBuilder {
-        crate::operation::create_contact_flow::builders::CreateContactFlowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_contact_flow(&self) -> crate::operation::create_contact_flow::builders::CreateContactFlowFluentBuilder {
+        crate::operation::create_contact_flow::builders::CreateContactFlowFluentBuilder::new(self.handle.clone())
     }
 }

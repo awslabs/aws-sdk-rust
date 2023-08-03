@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`domains(Option<Vec<DomainSummary>>)`](crate::operation::list_domains::ListDomainsOutput::domains): <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domains::ListDomainsOutput::next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
-    pub fn list_domains(
-        &self,
-    ) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
+    pub fn list_domains(&self) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
         crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
     }
 }

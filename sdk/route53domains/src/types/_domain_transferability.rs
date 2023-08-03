@@ -105,9 +105,7 @@ impl DomainTransferability {
 
 /// A builder for [`DomainTransferability`](crate::types::DomainTransferability).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainTransferabilityBuilder {
     pub(crate) transferable: ::std::option::Option<crate::types::Transferable>,
 }
@@ -200,10 +198,7 @@ impl DomainTransferabilityBuilder {
     /// <p>Premium domain transfer is not supported.</p>
     /// </dd>
     /// </dl>
-    pub fn set_transferable(
-        mut self,
-        input: ::std::option::Option<crate::types::Transferable>,
-    ) -> Self {
+    pub fn set_transferable(mut self, input: ::std::option::Option<crate::types::Transferable>) -> Self {
         self.transferable = input;
         self
     }

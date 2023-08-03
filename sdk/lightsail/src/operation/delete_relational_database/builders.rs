@@ -27,7 +27,7 @@ impl DeleteRelationalDatabaseInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRelationalDatabaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_relational_database::builders::DeleteRelationalDatabaseInputBuilder,
+    inner: crate::operation::delete_relational_database::builders::DeleteRelationalDatabaseInputBuilder,
 }
 impl DeleteRelationalDatabaseFluentBuilder {
     /// Creates a new `DeleteRelationalDatabase`.
@@ -38,10 +38,7 @@ impl DeleteRelationalDatabaseFluentBuilder {
         }
     }
     /// Access the DeleteRelationalDatabase as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_relational_database::builders::DeleteRelationalDatabaseInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_relational_database::builders::DeleteRelationalDatabaseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteRelationalDatabaseFluentBuilder {
             crate::operation::delete_relational_database::DeleteRelationalDatabase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_relational_database::DeleteRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_relational_database::DeleteRelationalDatabaseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteRelationalDatabaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteRelationalDatabaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_relational_database::DeleteRelationalDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_relational_database::DeleteRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_relational_database::DeleteRelationalDatabaseError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteRelationalDatabaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_relational_database::DeleteRelationalDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_relational_database::DeleteRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_relational_database::DeleteRelationalDatabaseError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DeleteRelationalDatabaseFluentBuilder {
             crate::operation::delete_relational_database::DeleteRelationalDatabase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_relational_database::DeleteRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_relational_database::DeleteRelationalDatabaseError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the database that you are deleting.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_name(input.into());
         self
     }
     /// <p>The name of the database that you are deleting.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
@@ -172,13 +152,8 @@ impl DeleteRelationalDatabaseFluentBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn final_relational_database_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .final_relational_database_snapshot_name(input.into());
+    pub fn final_relational_database_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.final_relational_database_snapshot_name(input.into());
         self
     }
     /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p> <note>
@@ -189,13 +164,8 @@ impl DeleteRelationalDatabaseFluentBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn set_final_relational_database_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_final_relational_database_snapshot_name(input);
+    pub fn set_final_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_final_relational_database_snapshot_name(input);
         self
     }
     /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p> <note>
@@ -206,9 +176,7 @@ impl DeleteRelationalDatabaseFluentBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn get_final_relational_database_snapshot_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_final_relational_database_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_final_relational_database_snapshot_name()
     }
 }

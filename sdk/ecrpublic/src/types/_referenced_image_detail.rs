@@ -57,9 +57,7 @@ impl ReferencedImageDetail {
 
 /// A builder for [`ReferencedImageDetail`](crate::types::ReferencedImageDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReferencedImageDetailBuilder {
     pub(crate) image_digest: ::std::option::Option<::std::string::String>,
     pub(crate) image_size_in_bytes: ::std::option::Option<i64>,
@@ -111,10 +109,7 @@ impl ReferencedImageDetailBuilder {
         self
     }
     /// <p>The date and time, expressed in standard JavaScript date format, which the current image tag was pushed to the repository at.</p>
-    pub fn set_image_pushed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_image_pushed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.image_pushed_at = input;
         self
     }
@@ -123,18 +118,12 @@ impl ReferencedImageDetailBuilder {
         &self.image_pushed_at
     }
     /// <p>The media type of the image manifest.</p>
-    pub fn image_manifest_media_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_manifest_media_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_manifest_media_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The media type of the image manifest.</p>
-    pub fn set_image_manifest_media_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_manifest_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_manifest_media_type = input;
         self
     }
@@ -143,18 +132,12 @@ impl ReferencedImageDetailBuilder {
         &self.image_manifest_media_type
     }
     /// <p>The artifact media type of the image.</p>
-    pub fn artifact_media_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_media_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_media_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The artifact media type of the image.</p>
-    pub fn set_artifact_media_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_media_type = input;
         self
     }

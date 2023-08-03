@@ -15,17 +15,14 @@ impl DescribeEventBusInput {
 }
 impl DescribeEventBusInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventBusInput`](crate::operation::describe_event_bus::DescribeEventBusInput).
-    pub fn builder() -> crate::operation::describe_event_bus::builders::DescribeEventBusInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_event_bus::builders::DescribeEventBusInputBuilder {
         crate::operation::describe_event_bus::builders::DescribeEventBusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventBusInput`](crate::operation::describe_event_bus::DescribeEventBusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventBusInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DescribeEventBusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventBusInput`](crate::operation::describe_event_bus::DescribeEventBusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_event_bus::DescribeEventBusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_event_bus::DescribeEventBusInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_event_bus::DescribeEventBusInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_event_bus::DescribeEventBusInput { name: self.name })
     }
 }

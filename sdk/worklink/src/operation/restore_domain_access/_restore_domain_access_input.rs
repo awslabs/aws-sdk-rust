@@ -22,18 +22,14 @@ impl RestoreDomainAccessInput {
 }
 impl RestoreDomainAccessInput {
     /// Creates a new builder-style object to manufacture [`RestoreDomainAccessInput`](crate::operation::restore_domain_access::RestoreDomainAccessInput).
-    pub fn builder(
-    ) -> crate::operation::restore_domain_access::builders::RestoreDomainAccessInputBuilder {
-        crate::operation::restore_domain_access::builders::RestoreDomainAccessInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::restore_domain_access::builders::RestoreDomainAccessInputBuilder {
+        crate::operation::restore_domain_access::builders::RestoreDomainAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreDomainAccessInput`](crate::operation::restore_domain_access::RestoreDomainAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreDomainAccessInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl RestoreDomainAccessInputBuilder {
     /// Consumes the builder and constructs a [`RestoreDomainAccessInput`](crate::operation::restore_domain_access::RestoreDomainAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_domain_access::RestoreDomainAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::restore_domain_access::RestoreDomainAccessInput {
-                fleet_arn: self.fleet_arn,
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::restore_domain_access::RestoreDomainAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::restore_domain_access::RestoreDomainAccessInput {
+            fleet_arn: self.fleet_arn,
+            domain_name: self.domain_name,
+        })
     }
 }

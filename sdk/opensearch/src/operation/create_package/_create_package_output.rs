@@ -29,9 +29,7 @@ impl CreatePackageOutput {
 
 /// A builder for [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePackageOutputBuilder {
     pub(crate) package_details: ::std::option::Option<crate::types::PackageDetails>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl CreatePackageOutputBuilder {
         self
     }
     /// <p>Basic information about an OpenSearch Service package.</p>
-    pub fn set_package_details(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageDetails>,
-    ) -> Self {
+    pub fn set_package_details(mut self, input: ::std::option::Option<crate::types::PackageDetails>) -> Self {
         self.package_details = input;
         self
     }

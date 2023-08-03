@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateReplicationJobOutput`](crate::operation::create_replication_job::CreateReplicationJobOutput) with field(s):
     ///   - [`replication_job_id(Option<String>)`](crate::operation::create_replication_job::CreateReplicationJobOutput::replication_job_id): <p>The unique identifier of the replication job.</p>
     /// - On failure, responds with [`SdkError<CreateReplicationJobError>`](crate::operation::create_replication_job::CreateReplicationJobError)
-    pub fn create_replication_job(
-        &self,
-    ) -> crate::operation::create_replication_job::builders::CreateReplicationJobFluentBuilder {
-        crate::operation::create_replication_job::builders::CreateReplicationJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_replication_job(&self) -> crate::operation::create_replication_job::builders::CreateReplicationJobFluentBuilder {
+        crate::operation::create_replication_job::builders::CreateReplicationJobFluentBuilder::new(self.handle.clone())
     }
 }

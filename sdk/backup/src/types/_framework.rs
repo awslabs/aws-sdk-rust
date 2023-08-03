@@ -60,9 +60,7 @@ impl Framework {
 
 /// A builder for [`Framework`](crate::types::Framework).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FrameworkBuilder {
     pub(crate) framework_name: ::std::option::Option<::std::string::String>,
     pub(crate) framework_arn: ::std::option::Option<::std::string::String>,
@@ -73,18 +71,12 @@ pub struct FrameworkBuilder {
 }
 impl FrameworkBuilder {
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn framework_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn set_framework_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_name = input;
         self
     }
@@ -93,18 +85,12 @@ impl FrameworkBuilder {
         &self.framework_name
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn framework_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn set_framework_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_arn = input;
         self
     }
@@ -113,18 +99,12 @@ impl FrameworkBuilder {
         &self.framework_arn
     }
     /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
-    pub fn framework_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
-    pub fn set_framework_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_description = input;
         self
     }
@@ -152,10 +132,7 @@ impl FrameworkBuilder {
         self
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -165,19 +142,13 @@ impl FrameworkBuilder {
     }
     /// <p>The deployment status of a framework. The statuses are:</p>
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
-    pub fn deployment_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment status of a framework. The statuses are:</p>
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
-    pub fn set_deployment_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_status = input;
         self
     }

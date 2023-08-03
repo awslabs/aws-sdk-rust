@@ -16,18 +16,14 @@ impl GetRemoteAccessSessionInput {
 }
 impl GetRemoteAccessSessionInput {
     /// Creates a new builder-style object to manufacture [`GetRemoteAccessSessionInput`](crate::operation::get_remote_access_session::GetRemoteAccessSessionInput).
-    pub fn builder(
-    ) -> crate::operation::get_remote_access_session::builders::GetRemoteAccessSessionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_remote_access_session::builders::GetRemoteAccessSessionInputBuilder {
         crate::operation::get_remote_access_session::builders::GetRemoteAccessSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRemoteAccessSessionInput`](crate::operation::get_remote_access_session::GetRemoteAccessSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRemoteAccessSessionInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -53,10 +49,6 @@ impl GetRemoteAccessSessionInputBuilder {
         crate::operation::get_remote_access_session::GetRemoteAccessSessionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_remote_access_session::GetRemoteAccessSessionInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_remote_access_session::GetRemoteAccessSessionInput { arn: self.arn })
     }
 }

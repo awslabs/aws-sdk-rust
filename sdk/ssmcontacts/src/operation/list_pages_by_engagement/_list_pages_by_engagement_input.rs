@@ -29,18 +29,14 @@ impl ListPagesByEngagementInput {
 }
 impl ListPagesByEngagementInput {
     /// Creates a new builder-style object to manufacture [`ListPagesByEngagementInput`](crate::operation::list_pages_by_engagement::ListPagesByEngagementInput).
-    pub fn builder(
-    ) -> crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementInputBuilder {
         crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPagesByEngagementInput`](crate::operation::list_pages_by_engagement::ListPagesByEngagementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPagesByEngagementInputBuilder {
     pub(crate) engagement_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct ListPagesByEngagementInputBuilder {
 }
 impl ListPagesByEngagementInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    pub fn engagement_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engagement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    pub fn set_engagement_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engagement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engagement_id = input;
         self
     }
@@ -98,16 +88,12 @@ impl ListPagesByEngagementInputBuilder {
     /// Consumes the builder and constructs a [`ListPagesByEngagementInput`](crate::operation::list_pages_by_engagement::ListPagesByEngagementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pages_by_engagement::ListPagesByEngagementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_pages_by_engagement::ListPagesByEngagementInput {
-                engagement_id: self.engagement_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_pages_by_engagement::ListPagesByEngagementInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_pages_by_engagement::ListPagesByEngagementInput {
+            engagement_id: self.engagement_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -19,9 +19,7 @@ impl DeleteWorkerOutput {
 
 /// A builder for [`DeleteWorkerOutput`](crate::operation::delete_worker::DeleteWorkerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkerOutputBuilder {
     _request_id: Option<String>,
 }

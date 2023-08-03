@@ -15,33 +15,25 @@ impl DeleteSubscriptionDefinitionInput {
 }
 impl DeleteSubscriptionDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriptionDefinitionInput`](crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionInput).
-    pub fn builder() -> crate::operation::delete_subscription_definition::builders::DeleteSubscriptionDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::delete_subscription_definition::builders::DeleteSubscriptionDefinitionInputBuilder {
         crate::operation::delete_subscription_definition::builders::DeleteSubscriptionDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSubscriptionDefinitionInput`](crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSubscriptionDefinitionInputBuilder {
     pub(crate) subscription_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSubscriptionDefinitionInputBuilder {
     /// The ID of the subscription definition.
-    pub fn subscription_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the subscription definition.
-    pub fn set_subscription_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_definition_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl DeleteSubscriptionDefinitionInputBuilder {
         crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionInput {
-                subscription_definition_id: self.subscription_definition_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionInput {
+            subscription_definition_id: self.subscription_definition_id,
+        })
     }
 }

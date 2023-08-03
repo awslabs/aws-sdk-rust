@@ -51,9 +51,7 @@ impl CodeSnippetResult {
 
 /// A builder for [`CodeSnippetResult`](crate::types::CodeSnippetResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeSnippetResultBuilder {
     pub(crate) finding_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_line: ::std::option::Option<i32>,
@@ -116,17 +114,12 @@ impl CodeSnippetResultBuilder {
         self
     }
     /// <p>Contains information on the retrieved code snippet.</p>
-    pub fn set_code_snippet(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeLine>>,
-    ) -> Self {
+    pub fn set_code_snippet(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeLine>>) -> Self {
         self.code_snippet = input;
         self
     }
     /// <p>Contains information on the retrieved code snippet.</p>
-    pub fn get_code_snippet(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeLine>> {
+    pub fn get_code_snippet(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeLine>> {
         &self.code_snippet
     }
     /// Appends an item to `suggested_fixes`.
@@ -141,17 +134,12 @@ impl CodeSnippetResultBuilder {
         self
     }
     /// <p>Details of a suggested code fix.</p>
-    pub fn set_suggested_fixes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>>,
-    ) -> Self {
+    pub fn set_suggested_fixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>>) -> Self {
         self.suggested_fixes = input;
         self
     }
     /// <p>Details of a suggested code fix.</p>
-    pub fn get_suggested_fixes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>> {
+    pub fn get_suggested_fixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>> {
         &self.suggested_fixes
     }
     /// Consumes the builder and constructs a [`CodeSnippetResult`](crate::types::CodeSnippetResult).

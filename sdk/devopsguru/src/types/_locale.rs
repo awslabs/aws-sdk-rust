@@ -47,13 +47,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Locale {
     #[allow(missing_docs)] // documentation missing in model
@@ -127,8 +121,7 @@ impl Locale {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DE_DE", "EN_GB", "EN_US", "ES_ES", "FR_FR", "IT_IT", "JA_JP", "KO_KR", "PT_BR",
-            "ZH_CN", "ZH_TW",
+            "DE_DE", "EN_GB", "EN_US", "ES_ES", "FR_FR", "IT_IT", "JA_JP", "KO_KR", "PT_BR", "ZH_CN", "ZH_TW",
         ]
     }
 }

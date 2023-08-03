@@ -30,17 +30,14 @@ impl UpdatePipeSourceManagedStreamingKafkaParameters {
 }
 impl UpdatePipeSourceManagedStreamingKafkaParameters {
     /// Creates a new builder-style object to manufacture [`UpdatePipeSourceManagedStreamingKafkaParameters`](crate::types::UpdatePipeSourceManagedStreamingKafkaParameters).
-    pub fn builder(
-    ) -> crate::types::builders::UpdatePipeSourceManagedStreamingKafkaParametersBuilder {
+    pub fn builder() -> crate::types::builders::UpdatePipeSourceManagedStreamingKafkaParametersBuilder {
         crate::types::builders::UpdatePipeSourceManagedStreamingKafkaParametersBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePipeSourceManagedStreamingKafkaParameters`](crate::types::UpdatePipeSourceManagedStreamingKafkaParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePipeSourceManagedStreamingKafkaParametersBuilder {
     pub(crate) batch_size: ::std::option::Option<i32>,
     pub(crate) credentials: ::std::option::Option<crate::types::MskAccessCredentials>,
@@ -67,10 +64,7 @@ impl UpdatePipeSourceManagedStreamingKafkaParametersBuilder {
         self
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::MskAccessCredentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::MskAccessCredentials>) -> Self {
         self.credentials = input;
         self
     }
@@ -84,10 +78,7 @@ impl UpdatePipeSourceManagedStreamingKafkaParametersBuilder {
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn set_maximum_batching_window_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_batching_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_batching_window_in_seconds = input;
         self
     }

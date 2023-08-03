@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelBatchJobExecutionOutput {
 }
 impl CancelBatchJobExecutionOutput {
     /// Creates a new builder-style object to manufacture [`CancelBatchJobExecutionOutput`](crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionOutputBuilder {
         crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelBatchJobExecutionOutput`](crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelBatchJobExecutionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl CancelBatchJobExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelBatchJobExecutionOutput`](crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionOutput {
+    pub fn build(self) -> crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionOutput {
         crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionOutput {
             _request_id: self._request_id,
         }

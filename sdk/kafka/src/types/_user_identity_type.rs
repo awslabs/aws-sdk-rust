@@ -38,13 +38,7 @@
 /// <p>The identity type of the requester that calls the API operation.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UserIdentityType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for UserIdentityType {
         match s {
             "AWSACCOUNT" => UserIdentityType::Awsaccount,
             "AWSSERVICE" => UserIdentityType::Awsservice,
-            other => {
-                UserIdentityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => UserIdentityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

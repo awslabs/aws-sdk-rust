@@ -55,9 +55,7 @@ impl ProjectFileSystemLocation {
 
 /// A builder for [`ProjectFileSystemLocation`](crate::types::ProjectFileSystemLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectFileSystemLocationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FileSystemType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -129,18 +127,12 @@ impl ProjectFileSystemLocationBuilder {
         &self.identifier
     }
     /// <p> The mount options for a file system created by Amazon EFS. The default mount options used by CodeBuild are <code>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-nfs-mount-settings.html">Recommended NFS Mount Options</a>. </p>
-    pub fn mount_options(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mount_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_options = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The mount options for a file system created by Amazon EFS. The default mount options used by CodeBuild are <code>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-nfs-mount-settings.html">Recommended NFS Mount Options</a>. </p>
-    pub fn set_mount_options(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mount_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_options = input;
         self
     }

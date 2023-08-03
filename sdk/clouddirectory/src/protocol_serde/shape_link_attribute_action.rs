@@ -9,10 +9,7 @@ pub fn ser_link_attribute_action(
     if let Some(var_2) = &input.attribute_update_value {
         #[allow(unused_mut)]
         let mut object_3 = object.key("AttributeUpdateValue").start_object();
-        crate::protocol_serde::shape_typed_attribute_value::ser_typed_attribute_value(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_typed_attribute_value::ser_typed_attribute_value(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

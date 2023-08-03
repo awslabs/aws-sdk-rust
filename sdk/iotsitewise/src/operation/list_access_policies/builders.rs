@@ -10,10 +10,7 @@ impl ListAccessPoliciesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_access_policies::ListAccessPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_policies::ListAccessPoliciesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_policies::ListAccessPoliciesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_access_policies();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListAccessPoliciesFluentBuilder {
         }
     }
     /// Access the ListAccessPolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListAccessPoliciesFluentBuilder {
             crate::operation::list_access_policies::ListAccessPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_policies::ListAccessPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_policies::ListAccessPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListAccessPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListAccessPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_access_policies::ListAccessPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_policies::ListAccessPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_policies::ListAccessPoliciesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListAccessPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_access_policies::ListAccessPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_policies::ListAccessPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_policies::ListAccessPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListAccessPoliciesFluentBuilder {
             crate::operation::list_access_policies::ListAccessPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_policies::ListAccessPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_policies::ListAccessPoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_access_policies::paginator::ListAccessPoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_access_policies::paginator::ListAccessPoliciesPaginator {
-        crate::operation::list_access_policies::paginator::ListAccessPoliciesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_access_policies::paginator::ListAccessPoliciesPaginator {
+        crate::operation::list_access_policies::paginator::ListAccessPoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
@@ -139,10 +118,7 @@ impl ListAccessPoliciesFluentBuilder {
         self
     }
     /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.inner = self.inner.set_identity_type(input);
         self
     }
@@ -170,10 +146,7 @@ impl ListAccessPoliciesFluentBuilder {
         self
     }
     /// <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

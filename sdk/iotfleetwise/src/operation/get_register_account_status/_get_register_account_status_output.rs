@@ -16,8 +16,7 @@ pub struct GetRegisterAccountStatusOutput {
     pub account_status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p> Information about the registered Amazon Timestream resources or errors, if any.</p>
     #[doc(hidden)]
-    pub timestream_registration_response:
-        ::std::option::Option<crate::types::TimestreamRegistrationResponse>,
+    pub timestream_registration_response: ::std::option::Option<crate::types::TimestreamRegistrationResponse>,
     /// <p> Information about the registered IAM resources or errors, if any. </p>
     #[doc(hidden)]
     pub iam_registration_response: ::std::option::Option<crate::types::IamRegistrationResponse>,
@@ -44,15 +43,11 @@ impl GetRegisterAccountStatusOutput {
         self.account_status.as_ref()
     }
     /// <p> Information about the registered Amazon Timestream resources or errors, if any.</p>
-    pub fn timestream_registration_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimestreamRegistrationResponse> {
+    pub fn timestream_registration_response(&self) -> ::std::option::Option<&crate::types::TimestreamRegistrationResponse> {
         self.timestream_registration_response.as_ref()
     }
     /// <p> Information about the registered IAM resources or errors, if any. </p>
-    pub fn iam_registration_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IamRegistrationResponse> {
+    pub fn iam_registration_response(&self) -> ::std::option::Option<&crate::types::IamRegistrationResponse> {
         self.iam_registration_response.as_ref()
     }
     /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
@@ -71,41 +66,31 @@ impl ::aws_http::request_id::RequestId for GetRegisterAccountStatusOutput {
 }
 impl GetRegisterAccountStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetRegisterAccountStatusOutput`](crate::operation::get_register_account_status::GetRegisterAccountStatusOutput).
-    pub fn builder() -> crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder {
         crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRegisterAccountStatusOutput`](crate::operation::get_register_account_status::GetRegisterAccountStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRegisterAccountStatusOutputBuilder {
     pub(crate) customer_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_status: ::std::option::Option<crate::types::RegistrationStatus>,
-    pub(crate) timestream_registration_response:
-        ::std::option::Option<crate::types::TimestreamRegistrationResponse>,
-    pub(crate) iam_registration_response:
-        ::std::option::Option<crate::types::IamRegistrationResponse>,
+    pub(crate) timestream_registration_response: ::std::option::Option<crate::types::TimestreamRegistrationResponse>,
+    pub(crate) iam_registration_response: ::std::option::Option<crate::types::IamRegistrationResponse>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetRegisterAccountStatusOutputBuilder {
     /// <p> The unique ID of the Amazon Web Services account, provided at account creation. </p>
-    pub fn customer_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of the Amazon Web Services account, provided at account creation. </p>
-    pub fn set_customer_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_account_id = input;
         self
     }
@@ -129,10 +114,7 @@ impl GetRegisterAccountStatusOutputBuilder {
     /// <li> <p> <code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p> </li>
     /// <li> <p> <code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p> </li>
     /// </ul>
-    pub fn set_account_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationStatus>,
-    ) -> Self {
+    pub fn set_account_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.account_status = input;
         self
     }
@@ -146,47 +128,31 @@ impl GetRegisterAccountStatusOutputBuilder {
         &self.account_status
     }
     /// <p> Information about the registered Amazon Timestream resources or errors, if any.</p>
-    pub fn timestream_registration_response(
-        mut self,
-        input: crate::types::TimestreamRegistrationResponse,
-    ) -> Self {
+    pub fn timestream_registration_response(mut self, input: crate::types::TimestreamRegistrationResponse) -> Self {
         self.timestream_registration_response = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about the registered Amazon Timestream resources or errors, if any.</p>
-    pub fn set_timestream_registration_response(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestreamRegistrationResponse>,
-    ) -> Self {
+    pub fn set_timestream_registration_response(mut self, input: ::std::option::Option<crate::types::TimestreamRegistrationResponse>) -> Self {
         self.timestream_registration_response = input;
         self
     }
     /// <p> Information about the registered Amazon Timestream resources or errors, if any.</p>
-    pub fn get_timestream_registration_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimestreamRegistrationResponse> {
+    pub fn get_timestream_registration_response(&self) -> &::std::option::Option<crate::types::TimestreamRegistrationResponse> {
         &self.timestream_registration_response
     }
     /// <p> Information about the registered IAM resources or errors, if any. </p>
-    pub fn iam_registration_response(
-        mut self,
-        input: crate::types::IamRegistrationResponse,
-    ) -> Self {
+    pub fn iam_registration_response(mut self, input: crate::types::IamRegistrationResponse) -> Self {
         self.iam_registration_response = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about the registered IAM resources or errors, if any. </p>
-    pub fn set_iam_registration_response(
-        mut self,
-        input: ::std::option::Option<crate::types::IamRegistrationResponse>,
-    ) -> Self {
+    pub fn set_iam_registration_response(mut self, input: ::std::option::Option<crate::types::IamRegistrationResponse>) -> Self {
         self.iam_registration_response = input;
         self
     }
     /// <p> Information about the registered IAM resources or errors, if any. </p>
-    pub fn get_iam_registration_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::IamRegistrationResponse> {
+    pub fn get_iam_registration_response(&self) -> &::std::option::Option<crate::types::IamRegistrationResponse> {
         &self.iam_registration_response
     }
     /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
@@ -195,10 +161,7 @@ impl GetRegisterAccountStatusOutputBuilder {
         self
     }
     /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -212,17 +175,12 @@ impl GetRegisterAccountStatusOutputBuilder {
         self
     }
     /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
     /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -235,9 +193,7 @@ impl GetRegisterAccountStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRegisterAccountStatusOutput`](crate::operation::get_register_account_status::GetRegisterAccountStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_register_account_status::GetRegisterAccountStatusOutput {
+    pub fn build(self) -> crate::operation::get_register_account_status::GetRegisterAccountStatusOutput {
         crate::operation::get_register_account_status::GetRegisterAccountStatusOutput {
             customer_account_id: self.customer_account_id,
             account_status: self.account_status,

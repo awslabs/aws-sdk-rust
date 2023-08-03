@@ -29,17 +29,14 @@ impl DescribeServicesInput {
 }
 impl DescribeServicesInput {
     /// Creates a new builder-style object to manufacture [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
-    pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesInputBuilder {
         crate::operation::describe_services::builders::DescribeServicesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServicesInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,10 +69,7 @@ impl DescribeServicesInputBuilder {
         self
     }
     /// <p>A list of services to describe. You may specify up to 10 services to describe in a single operation.</p>
-    pub fn set_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.services = input;
         self
     }
@@ -95,26 +89,18 @@ impl DescribeServicesInputBuilder {
         self
     }
     /// <p>Determines whether you want to see the resource tags for the service. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceField>>,
-    ) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceField>>) -> Self {
         self.include = input;
         self
     }
     /// <p>Determines whether you want to see the resource tags for the service. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn get_include(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceField>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceField>> {
         &self.include
     }
     /// Consumes the builder and constructs a [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_services::DescribeServicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_services::DescribeServicesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_services::DescribeServicesInput {
             cluster: self.cluster,
             services: self.services,

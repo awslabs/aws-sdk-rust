@@ -10,10 +10,7 @@ impl ListDatasetEntriesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_entries::ListDatasetEntriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_entries::ListDatasetEntriesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_entries::ListDatasetEntriesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_dataset_entries();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl ListDatasetEntriesFluentBuilder {
         }
     }
     /// Access the ListDatasetEntries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl ListDatasetEntriesFluentBuilder {
             crate::operation::list_dataset_entries::ListDatasetEntries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_entries::ListDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_entries::ListDatasetEntriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl ListDatasetEntriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl ListDatasetEntriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_entries::ListDatasetEntriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_entries::ListDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_entries::ListDatasetEntriesError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl ListDatasetEntriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_entries::ListDatasetEntriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_entries::ListDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_entries::ListDatasetEntriesError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +105,15 @@ impl ListDatasetEntriesFluentBuilder {
             crate::operation::list_dataset_entries::ListDatasetEntries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_entries::ListDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_entries::ListDatasetEntriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator {
-        crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator {
+        crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator::new(self.handle, self.inner)
     }
     /// <p> The Amazon Resource Name (ARN) for the dataset that you want to use. </p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,25 +134,17 @@ impl ListDatasetEntriesFluentBuilder {
     /// To override the contents of this collection use [`set_contains_labels`](Self::set_contains_labels).
     ///
     /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
-    pub fn contains_labels(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contains_labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contains_labels(input.into());
         self
     }
     /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
-    pub fn set_contains_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_contains_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_contains_labels(input);
         self
     }
     /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
-    pub fn get_contains_labels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_contains_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_contains_labels()
     }
     /// <p> Specify <code>true</code> to get only the JSON Lines where the image is labeled. Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled images. </p>
@@ -191,18 +162,12 @@ impl ListDatasetEntriesFluentBuilder {
         self.inner.get_labeled()
     }
     /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image. You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
-    pub fn source_ref_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_ref_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_ref_contains(input.into());
         self
     }
     /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image. You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
-    pub fn set_source_ref_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_ref_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_ref_contains(input);
         self
     }

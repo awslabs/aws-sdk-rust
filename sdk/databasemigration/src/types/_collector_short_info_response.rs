@@ -30,27 +30,19 @@ impl CollectorShortInfoResponse {
 
 /// A builder for [`CollectorShortInfoResponse`](crate::types::CollectorShortInfoResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CollectorShortInfoResponseBuilder {
     pub(crate) collector_referenced_id: ::std::option::Option<::std::string::String>,
     pub(crate) collector_name: ::std::option::Option<::std::string::String>,
 }
 impl CollectorShortInfoResponseBuilder {
     /// <p>The reference ID of the Fleet Advisor collector.</p>
-    pub fn collector_referenced_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collector_referenced_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collector_referenced_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reference ID of the Fleet Advisor collector.</p>
-    pub fn set_collector_referenced_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collector_referenced_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collector_referenced_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl CollectorShortInfoResponseBuilder {
         &self.collector_referenced_id
     }
     /// <p>The name of the Fleet Advisor collector.</p>
-    pub fn collector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Fleet Advisor collector.</p>
-    pub fn set_collector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collector_name = input;
         self
     }

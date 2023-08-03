@@ -6,12 +6,7 @@ impl super::Client {
     /// - On success, responds with [`CreateStorageLocationOutput`](crate::operation::create_storage_location::CreateStorageLocationOutput) with field(s):
     ///   - [`s3_bucket(Option<String>)`](crate::operation::create_storage_location::CreateStorageLocationOutput::s3_bucket): <p>The name of the Amazon S3 bucket created.</p>
     /// - On failure, responds with [`SdkError<CreateStorageLocationError>`](crate::operation::create_storage_location::CreateStorageLocationError)
-    pub fn create_storage_location(
-        &self,
-    ) -> crate::operation::create_storage_location::builders::CreateStorageLocationFluentBuilder
-    {
-        crate::operation::create_storage_location::builders::CreateStorageLocationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_storage_location(&self) -> crate::operation::create_storage_location::builders::CreateStorageLocationFluentBuilder {
+        crate::operation::create_storage_location::builders::CreateStorageLocationFluentBuilder::new(self.handle.clone())
     }
 }

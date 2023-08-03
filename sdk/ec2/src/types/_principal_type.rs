@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PrincipalType {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for PrincipalType {
             "Role" => PrincipalType::Role,
             "Service" => PrincipalType::Service,
             "User" => PrincipalType::User,
-            other => {
-                PrincipalType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => PrincipalType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl PrincipalType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Account",
-            "All",
-            "OrganizationUnit",
-            "Role",
-            "Service",
-            "User",
-        ]
+        &["Account", "All", "OrganizationUnit", "Role", "Service", "User"]
     }
 }
 impl ::std::convert::AsRef<str> for PrincipalType {

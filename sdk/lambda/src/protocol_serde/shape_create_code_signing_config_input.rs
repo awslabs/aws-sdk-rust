@@ -6,19 +6,13 @@ pub fn ser_create_code_signing_config_input(
     if let Some(var_1) = &input.allowed_publishers {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AllowedPublishers").start_object();
-        crate::protocol_serde::shape_allowed_publishers::ser_allowed_publishers(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_allowed_publishers::ser_allowed_publishers(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.code_signing_policies {
         #[allow(unused_mut)]
         let mut object_4 = object.key("CodeSigningPolicies").start_object();
-        crate::protocol_serde::shape_code_signing_policies::ser_code_signing_policies(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_code_signing_policies::ser_code_signing_policies(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.description {

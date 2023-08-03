@@ -30,18 +30,14 @@ impl AcknowledgeThirdPartyJobInput {
 }
 impl AcknowledgeThirdPartyJobInput {
     /// Creates a new builder-style object to manufacture [`AcknowledgeThirdPartyJobInput`](crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput).
-    pub fn builder(
-    ) -> crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobInputBuilder {
         crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobInputBuilder::default()
     }
 }
 
 /// A builder for [`AcknowledgeThirdPartyJobInput`](crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcknowledgeThirdPartyJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) nonce: ::std::option::Option<::std::string::String>,
@@ -97,12 +93,10 @@ impl AcknowledgeThirdPartyJobInputBuilder {
         crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput {
-                job_id: self.job_id,
-                nonce: self.nonce,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput {
+            job_id: self.job_id,
+            nonce: self.nonce,
+            client_token: self.client_token,
+        })
     }
 }

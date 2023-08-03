@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSmsAttributesOutput`](crate::operation::get_sms_attributes::GetSmsAttributesOutput) with field(s):
     ///   - [`attributes(Option<HashMap<String, String>>)`](crate::operation::get_sms_attributes::GetSmsAttributesOutput::attributes): <p>The SMS attribute names and their values.</p>
     /// - On failure, responds with [`SdkError<GetSMSAttributesError>`](crate::operation::get_sms_attributes::GetSMSAttributesError)
-    pub fn get_sms_attributes(
-        &self,
-    ) -> crate::operation::get_sms_attributes::builders::GetSMSAttributesFluentBuilder {
-        crate::operation::get_sms_attributes::builders::GetSMSAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_sms_attributes(&self) -> crate::operation::get_sms_attributes::builders::GetSMSAttributesFluentBuilder {
+        crate::operation::get_sms_attributes::builders::GetSMSAttributesFluentBuilder::new(self.handle.clone())
     }
 }

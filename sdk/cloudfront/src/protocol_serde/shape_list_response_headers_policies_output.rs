@@ -5,14 +5,15 @@ pub(crate) fn de_response_headers_policy_list_payload(
     ::std::option::Option<crate::types::ResponseHeadersPolicyList>,
     crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_list_response_headers_policies_output::de_response_headers_policy_list(body).map_err(crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_list_response_headers_policies_output::de_response_headers_policy_list(body)
+                .map_err(crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError::unhandled)
+        })
+        .transpose()
 }
 
-pub fn de_response_headers_policy_list(
-    inp: &[u8],
-) -> Result<crate::types::ResponseHeadersPolicyList, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_response_headers_policy_list(inp: &[u8]) -> Result<crate::types::ResponseHeadersPolicyList, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -23,7 +24,5 @@ pub fn de_response_headers_policy_list(
             start_el
         )));
     }
-    crate::protocol_serde::shape_response_headers_policy_list::de_response_headers_policy_list(
-        &mut decoder,
-    )
+    crate::protocol_serde::shape_response_headers_policy_list::de_response_headers_policy_list(&mut decoder)
 }

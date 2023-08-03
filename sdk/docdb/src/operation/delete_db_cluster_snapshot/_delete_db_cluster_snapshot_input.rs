@@ -18,45 +18,33 @@ impl DeleteDbClusterSnapshotInput {
 }
 impl DeleteDbClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterSnapshotInput`](crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::delete_db_cluster_snapshot::builders::DeleteDbClusterSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_db_cluster_snapshot::builders::DeleteDbClusterSnapshotInputBuilder {
         crate::operation::delete_db_cluster_snapshot::builders::DeleteDbClusterSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbClusterSnapshotInput`](crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbClusterSnapshotInputBuilder {
     pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the cluster snapshot to delete.</p>
     /// <p>Constraints: Must be the name of an existing cluster snapshot in the <code>available</code> state.</p>
-    pub fn db_cluster_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster snapshot to delete.</p>
     /// <p>Constraints: Must be the name of an existing cluster snapshot in the <code>available</code> state.</p>
-    pub fn set_db_cluster_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = input;
         self
     }
     /// <p>The identifier of the cluster snapshot to delete.</p>
     /// <p>Constraints: Must be the name of an existing cluster snapshot in the <code>available</code> state.</p>
-    pub fn get_db_cluster_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_snapshot_identifier
     }
     /// Consumes the builder and constructs a [`DeleteDbClusterSnapshotInput`](crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput).
@@ -66,10 +54,8 @@ impl DeleteDbClusterSnapshotInputBuilder {
         crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput {
-                db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput {
+            db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
+        })
     }
 }

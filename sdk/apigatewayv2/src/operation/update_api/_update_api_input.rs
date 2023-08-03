@@ -100,9 +100,7 @@ impl UpdateApiInput {
 
 /// A builder for [`UpdateApiInput`](crate::operation::update_api::UpdateApiInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApiInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) api_key_selection_expression: ::std::option::Option<::std::string::String>,
@@ -133,25 +131,17 @@ impl UpdateApiInputBuilder {
         &self.api_id
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-    pub fn api_key_selection_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_key_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key_selection_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-    pub fn set_api_key_selection_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_key_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key_selection_expression = input;
         self
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-    pub fn get_api_key_selection_expression(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_api_key_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key_selection_expression
     }
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
@@ -160,10 +150,7 @@ impl UpdateApiInputBuilder {
         self
     }
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
-    pub fn set_cors_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::Cors>,
-    ) -> Self {
+    pub fn set_cors_configuration(mut self, input: ::std::option::Option<crate::types::Cors>) -> Self {
         self.cors_configuration = input;
         self
     }
@@ -172,18 +159,12 @@ impl UpdateApiInputBuilder {
         &self.cors_configuration
     }
     /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.</p>
-    pub fn credentials_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn credentials_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credentials_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.</p>
-    pub fn set_credentials_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_credentials_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credentials_arn = input;
         self
     }
@@ -262,18 +243,12 @@ impl UpdateApiInputBuilder {
         &self.route_key
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-    pub fn route_selection_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_selection_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-    pub fn set_route_selection_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_selection_expression = input;
         self
     }
@@ -310,12 +285,7 @@ impl UpdateApiInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`UpdateApiInput`](crate::operation::update_api::UpdateApiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_api::UpdateApiInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_api::UpdateApiInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_api::UpdateApiInput {
             api_id: self.api_id,
             api_key_selection_expression: self.api_key_selection_expression,

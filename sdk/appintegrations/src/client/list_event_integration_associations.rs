@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`event_integration_associations(Option<Vec<EventIntegrationAssociation>>)`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsOutput::event_integration_associations): <p>The event integration associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListEventIntegrationAssociationsError>`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsError)
-    pub fn list_event_integration_associations(&self) -> crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder{
+    pub fn list_event_integration_associations(
+        &self,
+    ) -> crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder {
         crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

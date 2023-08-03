@@ -12,18 +12,13 @@ impl GetAccountAliasInput {
 
 /// A builder for [`GetAccountAliasInput`](crate::operation::get_account_alias::GetAccountAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccountAliasInputBuilder {}
 impl GetAccountAliasInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountAliasInput`](crate::operation::get_account_alias::GetAccountAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_account_alias::GetAccountAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_account_alias::GetAccountAliasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_account_alias::GetAccountAliasInput {})
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ListProfileObjectsItem>>)`](crate::operation::list_profile_objects::ListProfileObjectsOutput::items): <p>The list of ListProfileObject instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profile_objects::ListProfileObjectsOutput::next_token): <p>The pagination token from the previous call to ListProfileObjects.</p>
     /// - On failure, responds with [`SdkError<ListProfileObjectsError>`](crate::operation::list_profile_objects::ListProfileObjectsError)
-    pub fn list_profile_objects(
-        &self,
-    ) -> crate::operation::list_profile_objects::builders::ListProfileObjectsFluentBuilder {
-        crate::operation::list_profile_objects::builders::ListProfileObjectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_profile_objects(&self) -> crate::operation::list_profile_objects::builders::ListProfileObjectsFluentBuilder {
+        crate::operation::list_profile_objects::builders::ListProfileObjectsFluentBuilder::new(self.handle.clone())
     }
 }

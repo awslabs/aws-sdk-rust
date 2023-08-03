@@ -5,8 +5,7 @@
 pub struct ListEntityRecognizersOutput {
     /// <p>The list of properties of an entity recognizer.</p>
     #[doc(hidden)]
-    pub entity_recognizer_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerProperties>>,
+    pub entity_recognizer_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEntityRecognizersOutput {
 }
 impl ListEntityRecognizersOutput {
     /// <p>The list of properties of an entity recognizer.</p>
-    pub fn entity_recognizer_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EntityRecognizerProperties]> {
+    pub fn entity_recognizer_properties_list(&self) -> ::std::option::Option<&[crate::types::EntityRecognizerProperties]> {
         self.entity_recognizer_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEntityRecognizersOutput {
 }
 impl ListEntityRecognizersOutput {
     /// Creates a new builder-style object to manufacture [`ListEntityRecognizersOutput`](crate::operation::list_entity_recognizers::ListEntityRecognizersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_entity_recognizers::builders::ListEntityRecognizersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_entity_recognizers::builders::ListEntityRecognizersOutputBuilder {
         crate::operation::list_entity_recognizers::builders::ListEntityRecognizersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEntityRecognizersOutput`](crate::operation::list_entity_recognizers::ListEntityRecognizersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntityRecognizersOutputBuilder {
-    pub(crate) entity_recognizer_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerProperties>>,
+    pub(crate) entity_recognizer_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListEntityRecognizersOutputBuilder {
     /// To override the contents of this collection use [`set_entity_recognizer_properties_list`](Self::set_entity_recognizer_properties_list).
     ///
     /// <p>The list of properties of an entity recognizer.</p>
-    pub fn entity_recognizer_properties_list(
-        mut self,
-        input: crate::types::EntityRecognizerProperties,
-    ) -> Self {
+    pub fn entity_recognizer_properties_list(mut self, input: crate::types::EntityRecognizerProperties) -> Self {
         let mut v = self.entity_recognizer_properties_list.unwrap_or_default();
         v.push(input);
         self.entity_recognizer_properties_list = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl ListEntityRecognizersOutputBuilder {
         self
     }
     /// <p>The list of properties of an entity recognizer.</p>
-    pub fn get_entity_recognizer_properties_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerProperties>> {
+    pub fn get_entity_recognizer_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerProperties>> {
         &self.entity_recognizer_properties_list
     }
     /// <p>Identifies the next page of results to return.</p>

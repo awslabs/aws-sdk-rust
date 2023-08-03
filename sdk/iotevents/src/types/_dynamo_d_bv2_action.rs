@@ -42,9 +42,7 @@ impl DynamoDBv2Action {
 
 /// A builder for [`DynamoDBv2Action`](crate::types::DynamoDBv2Action).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DynamoDBv2ActionBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<crate::types::Payload>,

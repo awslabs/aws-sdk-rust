@@ -45,17 +45,14 @@ impl UpdateDeviceFleetInput {
 }
 impl UpdateDeviceFleetInput {
     /// Creates a new builder-style object to manufacture [`UpdateDeviceFleetInput`](crate::operation::update_device_fleet::UpdateDeviceFleetInput).
-    pub fn builder(
-    ) -> crate::operation::update_device_fleet::builders::UpdateDeviceFleetInputBuilder {
+    pub fn builder() -> crate::operation::update_device_fleet::builders::UpdateDeviceFleetInputBuilder {
         crate::operation::update_device_fleet::builders::UpdateDeviceFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDeviceFleetInput`](crate::operation::update_device_fleet::UpdateDeviceFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDeviceFleetInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -65,18 +62,12 @@ pub struct UpdateDeviceFleetInputBuilder {
 }
 impl UpdateDeviceFleetInputBuilder {
     /// <p>The name of the fleet.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -118,10 +109,7 @@ impl UpdateDeviceFleetInputBuilder {
         self
     }
     /// <p>Output configuration for storing sample data collected by the fleet.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgeOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::EdgeOutputConfig>) -> Self {
         self.output_config = input;
         self
     }
@@ -149,18 +137,13 @@ impl UpdateDeviceFleetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDeviceFleetInput`](crate::operation::update_device_fleet::UpdateDeviceFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_device_fleet::UpdateDeviceFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_device_fleet::UpdateDeviceFleetInput {
-                device_fleet_name: self.device_fleet_name,
-                role_arn: self.role_arn,
-                description: self.description,
-                output_config: self.output_config,
-                enable_iot_role_alias: self.enable_iot_role_alias,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_device_fleet::UpdateDeviceFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_device_fleet::UpdateDeviceFleetInput {
+            device_fleet_name: self.device_fleet_name,
+            role_arn: self.role_arn,
+            description: self.description,
+            output_config: self.output_config,
+            enable_iot_role_alias: self.enable_iot_role_alias,
+        })
     }
 }

@@ -29,27 +29,19 @@ impl GetKxClusterInput {
 
 /// A builder for [`GetKxClusterInput`](crate::operation::get_kx_cluster::GetKxClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKxClusterInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
 }
 impl GetKxClusterInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -74,10 +66,7 @@ impl GetKxClusterInputBuilder {
     /// Consumes the builder and constructs a [`GetKxClusterInput`](crate::operation::get_kx_cluster::GetKxClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_kx_cluster::GetKxClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_kx_cluster::GetKxClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_kx_cluster::GetKxClusterInput {
             environment_id: self.environment_id,
             cluster_name: self.cluster_name,

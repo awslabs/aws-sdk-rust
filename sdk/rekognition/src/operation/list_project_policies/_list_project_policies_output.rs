@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListProjectPoliciesOutput {
 }
 impl ListProjectPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListProjectPoliciesOutput`](crate::operation::list_project_policies::ListProjectPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_project_policies::builders::ListProjectPoliciesOutputBuilder {
-        crate::operation::list_project_policies::builders::ListProjectPoliciesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_project_policies::builders::ListProjectPoliciesOutputBuilder {
+        crate::operation::list_project_policies::builders::ListProjectPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProjectPoliciesOutput`](crate::operation::list_project_policies::ListProjectPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProjectPoliciesOutputBuilder {
-    pub(crate) project_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProjectPolicy>>,
+    pub(crate) project_policies: ::std::option::Option<::std::vec::Vec<crate::types::ProjectPolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListProjectPoliciesOutputBuilder {
         self
     }
     /// <p>A list of project policies attached to the project.</p>
-    pub fn set_project_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectPolicy>>,
-    ) -> Self {
+    pub fn set_project_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectPolicy>>) -> Self {
         self.project_policies = input;
         self
     }
     /// <p>A list of project policies attached to the project.</p>
-    pub fn get_project_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectPolicy>> {
+    pub fn get_project_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectPolicy>> {
         &self.project_policies
     }
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of project policies.</p>

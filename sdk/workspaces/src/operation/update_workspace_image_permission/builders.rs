@@ -5,16 +5,16 @@ pub use crate::operation::update_workspace_image_permission::_update_workspace_i
 
 impl UpdateWorkspaceImagePermissionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_workspace_image_permission();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -35,7 +35,7 @@ impl UpdateWorkspaceImagePermissionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceImagePermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionInputBuilder,
+    inner: crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionInputBuilder,
 }
 impl UpdateWorkspaceImagePermissionFluentBuilder {
     /// Creates a new `UpdateWorkspaceImagePermission`.
@@ -46,15 +46,20 @@ impl UpdateWorkspaceImagePermissionFluentBuilder {
         }
     }
     /// Access the UpdateWorkspaceImagePermission as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermission, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermission,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -63,16 +68,17 @@ impl UpdateWorkspaceImagePermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -90,17 +96,26 @@ impl UpdateWorkspaceImagePermissionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermission, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermission,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the image.</p>
@@ -134,20 +149,14 @@ impl UpdateWorkspaceImagePermissionFluentBuilder {
     /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
-    pub fn shared_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shared_account_id(input.into());
         self
     }
     /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
-    pub fn set_shared_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shared_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shared_account_id(input);
         self
     }

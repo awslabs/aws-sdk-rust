@@ -23,9 +23,7 @@ impl FileSystemAssociationStatusDetail {
 
 /// A builder for [`FileSystemAssociationStatusDetail`](crate::types::FileSystemAssociationStatusDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileSystemAssociationStatusDetailBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl FileSystemAssociationStatusDetailBuilder {
     }
     /// Consumes the builder and constructs a [`FileSystemAssociationStatusDetail`](crate::types::FileSystemAssociationStatusDetail).
     pub fn build(self) -> crate::types::FileSystemAssociationStatusDetail {
-        crate::types::FileSystemAssociationStatusDetail {
-            error_code: self.error_code,
-        }
+        crate::types::FileSystemAssociationStatusDetail { error_code: self.error_code }
     }
 }

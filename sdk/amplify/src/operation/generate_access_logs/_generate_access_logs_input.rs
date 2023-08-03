@@ -37,17 +37,14 @@ impl GenerateAccessLogsInput {
 }
 impl GenerateAccessLogsInput {
     /// Creates a new builder-style object to manufacture [`GenerateAccessLogsInput`](crate::operation::generate_access_logs::GenerateAccessLogsInput).
-    pub fn builder(
-    ) -> crate::operation::generate_access_logs::builders::GenerateAccessLogsInputBuilder {
+    pub fn builder() -> crate::operation::generate_access_logs::builders::GenerateAccessLogsInputBuilder {
         crate::operation::generate_access_logs::builders::GenerateAccessLogsInputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateAccessLogsInput`](crate::operation::generate_access_logs::GenerateAccessLogsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateAccessLogsInputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -61,10 +58,7 @@ impl GenerateAccessLogsInputBuilder {
         self
     }
     /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -78,10 +72,7 @@ impl GenerateAccessLogsInputBuilder {
         self
     }
     /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -120,17 +111,12 @@ impl GenerateAccessLogsInputBuilder {
     /// Consumes the builder and constructs a [`GenerateAccessLogsInput`](crate::operation::generate_access_logs::GenerateAccessLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::generate_access_logs::GenerateAccessLogsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::generate_access_logs::GenerateAccessLogsInput {
-                start_time: self.start_time,
-                end_time: self.end_time,
-                domain_name: self.domain_name,
-                app_id: self.app_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::generate_access_logs::GenerateAccessLogsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::generate_access_logs::GenerateAccessLogsInput {
+            start_time: self.start_time,
+            end_time: self.end_time,
+            domain_name: self.domain_name,
+            app_id: self.app_id,
+        })
     }
 }

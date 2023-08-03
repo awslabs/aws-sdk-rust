@@ -30,9 +30,7 @@ impl PolicyTypeSummary {
 
 /// A builder for [`PolicyTypeSummary`](crate::types::PolicyTypeSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyTypeSummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::PolicyType>,
     pub(crate) status: ::std::option::Option<crate::types::PolicyTypeStatus>,
@@ -58,10 +56,7 @@ impl PolicyTypeSummaryBuilder {
         self
     }
     /// <p>The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a root or to an OU or account in that root, it must be available in the organization and enabled for that root.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyTypeStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PolicyTypeStatus>) -> Self {
         self.status = input;
         self
     }

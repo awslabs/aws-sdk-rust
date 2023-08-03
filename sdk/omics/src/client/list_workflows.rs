@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<WorkflowListItem>>)`](crate::operation::list_workflows::ListWorkflowsOutput::items): <p>The workflows' items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workflows::ListWorkflowsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListWorkflowsError>`](crate::operation::list_workflows::ListWorkflowsError)
-    pub fn list_workflows(
-        &self,
-    ) -> crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder {
-        crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_workflows(&self) -> crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder {
+        crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(self.handle.clone())
     }
 }

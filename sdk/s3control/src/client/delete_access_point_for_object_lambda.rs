@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_access_point_for_object_lambda::builders::DeleteAccessPointForObjectLambdaFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_access_point_for_object_lambda::builders::DeleteAccessPointForObjectLambdaFluentBuilder::set_name): <p>The name of the access point you want to delete.</p>
     /// - On success, responds with [`DeleteAccessPointForObjectLambdaOutput`](crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessPointForObjectLambdaError>`](crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaError)
-    pub fn delete_access_point_for_object_lambda(&self) -> crate::operation::delete_access_point_for_object_lambda::builders::DeleteAccessPointForObjectLambdaFluentBuilder{
+    pub fn delete_access_point_for_object_lambda(
+        &self,
+    ) -> crate::operation::delete_access_point_for_object_lambda::builders::DeleteAccessPointForObjectLambdaFluentBuilder {
         crate::operation::delete_access_point_for_object_lambda::builders::DeleteAccessPointForObjectLambdaFluentBuilder::new(self.handle.clone())
     }
 }

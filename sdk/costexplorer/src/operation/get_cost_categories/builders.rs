@@ -10,10 +10,7 @@ impl GetCostCategoriesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_cost_categories::GetCostCategoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cost_categories::GetCostCategoriesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cost_categories::GetCostCategoriesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_cost_categories();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetCostCategoriesFluentBuilder {
         }
     }
     /// Access the GetCostCategories as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_cost_categories::builders::GetCostCategoriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_cost_categories::builders::GetCostCategoriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl GetCostCategoriesFluentBuilder {
             crate::operation::get_cost_categories::GetCostCategories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cost_categories::GetCostCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cost_categories::GetCostCategoriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl GetCostCategoriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl GetCostCategoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cost_categories::GetCostCategoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cost_categories::GetCostCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cost_categories::GetCostCategoriesError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl GetCostCategoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cost_categories::GetCostCategoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cost_categories::GetCostCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cost_categories::GetCostCategoriesError>,
     > {
         self.send_middleware().await
     }
@@ -118,27 +104,19 @@ impl GetCostCategoriesFluentBuilder {
             crate::operation::get_cost_categories::GetCostCategories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cost_categories::GetCostCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cost_categories::GetCostCategoriesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The value that you want to search the filter values for.</p>
     /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
-    pub fn search_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn search_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.search_string(input.into());
         self
     }
     /// <p>The value that you want to search the filter values for.</p>
     /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
-    pub fn set_search_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_search_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_search_string(input);
         self
     }
@@ -153,10 +131,7 @@ impl GetCostCategoriesFluentBuilder {
         self
     }
     /// <p>The time period of the request. </p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }
@@ -165,18 +140,12 @@ impl GetCostCategoriesFluentBuilder {
         self.inner.get_time_period()
     }
     /// <p>The unique name of the Cost Category.</p>
-    pub fn cost_category_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cost_category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cost_category_name(input.into());
         self
     }
     /// <p>The unique name of the Cost Category.</p>
-    pub fn set_cost_category_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cost_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cost_category_name(input);
         self
     }
@@ -340,10 +309,7 @@ impl GetCostCategoriesFluentBuilder {
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -360,9 +326,7 @@ impl GetCostCategoriesFluentBuilder {
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>> {
         self.inner.get_sort_by()
     }
     /// <p>This field is only used when the <code>SortBy</code> value is provided in the request.</p>
@@ -386,18 +350,12 @@ impl GetCostCategoriesFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }

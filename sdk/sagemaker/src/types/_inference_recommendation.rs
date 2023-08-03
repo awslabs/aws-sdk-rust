@@ -29,9 +29,7 @@ impl InferenceRecommendation {
         self.metrics.as_ref()
     }
     /// <p>Defines the endpoint configuration parameters.</p>
-    pub fn endpoint_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EndpointOutputConfiguration> {
+    pub fn endpoint_configuration(&self) -> ::std::option::Option<&crate::types::EndpointOutputConfiguration> {
         self.endpoint_configuration.as_ref()
     }
     /// <p>Defines the model configuration.</p>
@@ -60,13 +58,10 @@ impl InferenceRecommendation {
 
 /// A builder for [`InferenceRecommendation`](crate::types::InferenceRecommendation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceRecommendationBuilder {
     pub(crate) metrics: ::std::option::Option<crate::types::RecommendationMetrics>,
-    pub(crate) endpoint_configuration:
-        ::std::option::Option<crate::types::EndpointOutputConfiguration>,
+    pub(crate) endpoint_configuration: ::std::option::Option<crate::types::EndpointOutputConfiguration>,
     pub(crate) model_configuration: ::std::option::Option<crate::types::ModelConfiguration>,
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) invocation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -79,10 +74,7 @@ impl InferenceRecommendationBuilder {
         self
     }
     /// <p>The metrics used to decide what recommendation to make.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationMetrics>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::RecommendationMetrics>) -> Self {
         self.metrics = input;
         self
     }
@@ -91,25 +83,17 @@ impl InferenceRecommendationBuilder {
         &self.metrics
     }
     /// <p>Defines the endpoint configuration parameters.</p>
-    pub fn endpoint_configuration(
-        mut self,
-        input: crate::types::EndpointOutputConfiguration,
-    ) -> Self {
+    pub fn endpoint_configuration(mut self, input: crate::types::EndpointOutputConfiguration) -> Self {
         self.endpoint_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the endpoint configuration parameters.</p>
-    pub fn set_endpoint_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointOutputConfiguration>,
-    ) -> Self {
+    pub fn set_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::EndpointOutputConfiguration>) -> Self {
         self.endpoint_configuration = input;
         self
     }
     /// <p>Defines the endpoint configuration parameters.</p>
-    pub fn get_endpoint_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EndpointOutputConfiguration> {
+    pub fn get_endpoint_configuration(&self) -> &::std::option::Option<crate::types::EndpointOutputConfiguration> {
         &self.endpoint_configuration
     }
     /// <p>Defines the model configuration.</p>
@@ -118,32 +102,21 @@ impl InferenceRecommendationBuilder {
         self
     }
     /// <p>Defines the model configuration.</p>
-    pub fn set_model_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelConfiguration>,
-    ) -> Self {
+    pub fn set_model_configuration(mut self, input: ::std::option::Option<crate::types::ModelConfiguration>) -> Self {
         self.model_configuration = input;
         self
     }
     /// <p>Defines the model configuration.</p>
-    pub fn get_model_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelConfiguration> {
+    pub fn get_model_configuration(&self) -> &::std::option::Option<crate::types::ModelConfiguration> {
         &self.model_configuration
     }
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }
@@ -157,10 +130,7 @@ impl InferenceRecommendationBuilder {
         self
     }
     /// <p>A timestamp that shows when the benchmark completed.</p>
-    pub fn set_invocation_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_invocation_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.invocation_end_time = input;
         self
     }
@@ -174,17 +144,12 @@ impl InferenceRecommendationBuilder {
         self
     }
     /// <p>A timestamp that shows when the benchmark started.</p>
-    pub fn set_invocation_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_invocation_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.invocation_start_time = input;
         self
     }
     /// <p>A timestamp that shows when the benchmark started.</p>
-    pub fn get_invocation_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_invocation_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.invocation_start_time
     }
     /// Consumes the builder and constructs a [`InferenceRecommendation`](crate::types::InferenceRecommendation).

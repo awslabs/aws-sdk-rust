@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput::next_token): <p>The token to use to advance to the next page of recommendation summaries.</p>  <p>This value is null when there are no more pages of recommendation summaries to return.</p>
     ///   - [`recommendation_summaries(Option<Vec<RecommendationSummary>>)`](crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput::recommendation_summaries): <p>An array of objects that summarize a recommendation.</p>
     /// - On failure, responds with [`SdkError<GetRecommendationSummariesError>`](crate::operation::get_recommendation_summaries::GetRecommendationSummariesError)
-    pub fn get_recommendation_summaries(&self) -> crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesFluentBuilder{
+    pub fn get_recommendation_summaries(&self) -> crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesFluentBuilder {
         crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesFluentBuilder::new(self.handle.clone())
     }
 }

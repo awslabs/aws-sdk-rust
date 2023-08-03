@@ -23,9 +23,7 @@ impl SampleValue {
 
 /// A builder for [`SampleValue`](crate::types::SampleValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SampleValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }

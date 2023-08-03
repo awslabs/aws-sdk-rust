@@ -28,7 +28,7 @@ impl GetMedicalTranscriptionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMedicalTranscriptionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_medical_transcription_job::builders::GetMedicalTranscriptionJobInputBuilder,
+    inner: crate::operation::get_medical_transcription_job::builders::GetMedicalTranscriptionJobInputBuilder,
 }
 impl GetMedicalTranscriptionJobFluentBuilder {
     /// Creates a new `GetMedicalTranscriptionJob`.
@@ -39,7 +39,7 @@ impl GetMedicalTranscriptionJobFluentBuilder {
         }
     }
     /// Access the GetMedicalTranscriptionJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_medical_transcription_job::builders::GetMedicalTranscriptionJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_medical_transcription_job::builders::GetMedicalTranscriptionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl GetMedicalTranscriptionJobFluentBuilder {
             crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl GetMedicalTranscriptionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl GetMedicalTranscriptionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl GetMedicalTranscriptionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,32 +107,22 @@ impl GetMedicalTranscriptionJobFluentBuilder {
             crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the medical transcription job you want information about. Job names are case sensitive.</p>
-    pub fn medical_transcription_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn medical_transcription_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.medical_transcription_job_name(input.into());
         self
     }
     /// <p>The name of the medical transcription job you want information about. Job names are case sensitive.</p>
-    pub fn set_medical_transcription_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_medical_transcription_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_medical_transcription_job_name(input);
         self
     }
     /// <p>The name of the medical transcription job you want information about. Job names are case sensitive.</p>
-    pub fn get_medical_transcription_job_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_medical_transcription_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_medical_transcription_job_name()
     }
 }

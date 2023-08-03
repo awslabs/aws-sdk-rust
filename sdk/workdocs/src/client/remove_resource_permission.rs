@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`principal_type(PrincipalType)`](crate::operation::remove_resource_permission::builders::RemoveResourcePermissionFluentBuilder::principal_type) / [`set_principal_type(Option<PrincipalType>)`](crate::operation::remove_resource_permission::builders::RemoveResourcePermissionFluentBuilder::set_principal_type): <p>The principal type of the resource.</p>
     /// - On success, responds with [`RemoveResourcePermissionOutput`](crate::operation::remove_resource_permission::RemoveResourcePermissionOutput)
     /// - On failure, responds with [`SdkError<RemoveResourcePermissionError>`](crate::operation::remove_resource_permission::RemoveResourcePermissionError)
-    pub fn remove_resource_permission(
-        &self,
-    ) -> crate::operation::remove_resource_permission::builders::RemoveResourcePermissionFluentBuilder
-    {
+    pub fn remove_resource_permission(&self) -> crate::operation::remove_resource_permission::builders::RemoveResourcePermissionFluentBuilder {
         crate::operation::remove_resource_permission::builders::RemoveResourcePermissionFluentBuilder::new(self.handle.clone())
     }
 }

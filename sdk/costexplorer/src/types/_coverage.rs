@@ -20,9 +20,7 @@ impl Coverage {
         self.coverage_hours.as_ref()
     }
     /// <p>The amount of instance usage that the reservation covered, in normalized units.</p>
-    pub fn coverage_normalized_units(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CoverageNormalizedUnits> {
+    pub fn coverage_normalized_units(&self) -> ::std::option::Option<&crate::types::CoverageNormalizedUnits> {
         self.coverage_normalized_units.as_ref()
     }
     /// <p>The amount of cost that the reservation covered.</p>
@@ -39,13 +37,10 @@ impl Coverage {
 
 /// A builder for [`Coverage`](crate::types::Coverage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoverageBuilder {
     pub(crate) coverage_hours: ::std::option::Option<crate::types::CoverageHours>,
-    pub(crate) coverage_normalized_units:
-        ::std::option::Option<crate::types::CoverageNormalizedUnits>,
+    pub(crate) coverage_normalized_units: ::std::option::Option<crate::types::CoverageNormalizedUnits>,
     pub(crate) coverage_cost: ::std::option::Option<crate::types::CoverageCost>,
 }
 impl CoverageBuilder {
@@ -55,10 +50,7 @@ impl CoverageBuilder {
         self
     }
     /// <p>The amount of instance usage that the reservation covered, in hours.</p>
-    pub fn set_coverage_hours(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageHours>,
-    ) -> Self {
+    pub fn set_coverage_hours(mut self, input: ::std::option::Option<crate::types::CoverageHours>) -> Self {
         self.coverage_hours = input;
         self
     }
@@ -67,25 +59,17 @@ impl CoverageBuilder {
         &self.coverage_hours
     }
     /// <p>The amount of instance usage that the reservation covered, in normalized units.</p>
-    pub fn coverage_normalized_units(
-        mut self,
-        input: crate::types::CoverageNormalizedUnits,
-    ) -> Self {
+    pub fn coverage_normalized_units(mut self, input: crate::types::CoverageNormalizedUnits) -> Self {
         self.coverage_normalized_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of instance usage that the reservation covered, in normalized units.</p>
-    pub fn set_coverage_normalized_units(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageNormalizedUnits>,
-    ) -> Self {
+    pub fn set_coverage_normalized_units(mut self, input: ::std::option::Option<crate::types::CoverageNormalizedUnits>) -> Self {
         self.coverage_normalized_units = input;
         self
     }
     /// <p>The amount of instance usage that the reservation covered, in normalized units.</p>
-    pub fn get_coverage_normalized_units(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoverageNormalizedUnits> {
+    pub fn get_coverage_normalized_units(&self) -> &::std::option::Option<crate::types::CoverageNormalizedUnits> {
         &self.coverage_normalized_units
     }
     /// <p>The amount of cost that the reservation covered.</p>
@@ -94,10 +78,7 @@ impl CoverageBuilder {
         self
     }
     /// <p>The amount of cost that the reservation covered.</p>
-    pub fn set_coverage_cost(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageCost>,
-    ) -> Self {
+    pub fn set_coverage_cost(mut self, input: ::std::option::Option<crate::types::CoverageCost>) -> Self {
         self.coverage_cost = input;
         self
     }

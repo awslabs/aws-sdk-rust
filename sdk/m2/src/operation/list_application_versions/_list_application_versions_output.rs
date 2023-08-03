@@ -5,8 +5,7 @@
 pub struct ListApplicationVersionsOutput {
     /// <p>The list of application versions.</p>
     #[doc(hidden)]
-    pub application_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>,
+    pub application_versions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListApplicationVersionsOutput {
 }
 impl ListApplicationVersionsOutput {
     /// <p>The list of application versions.</p>
-    pub fn application_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationVersionSummary]> {
+    pub fn application_versions(&self) -> ::std::option::Option<&[crate::types::ApplicationVersionSummary]> {
         self.application_versions.as_deref()
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListApplicationVersionsOutput {
 }
 impl ListApplicationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_application_versions::builders::ListApplicationVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_application_versions::builders::ListApplicationVersionsOutputBuilder {
         crate::operation::list_application_versions::builders::ListApplicationVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationVersionsOutputBuilder {
-    pub(crate) application_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>,
+    pub(crate) application_versions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListApplicationVersionsOutputBuilder {
         self
     }
     /// <p>The list of application versions.</p>
-    pub fn set_application_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>,
-    ) -> Self {
+    pub fn set_application_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>) -> Self {
         self.application_versions = input;
         self
     }
     /// <p>The list of application versions.</p>
-    pub fn get_application_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>> {
+    pub fn get_application_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>> {
         &self.application_versions
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
@@ -99,9 +86,7 @@ impl ListApplicationVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_application_versions::ListApplicationVersionsOutput {
+    pub fn build(self) -> crate::operation::list_application_versions::ListApplicationVersionsOutput {
         crate::operation::list_application_versions::ListApplicationVersionsOutput {
             application_versions: self.application_versions,
             next_token: self.next_token,

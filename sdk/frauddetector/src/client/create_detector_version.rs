@@ -15,12 +15,7 @@ impl super::Client {
     ///   - [`detector_version_id(Option<String>)`](crate::operation::create_detector_version::CreateDetectorVersionOutput::detector_version_id): <p>The ID for the created detector. </p>
     ///   - [`status(Option<DetectorVersionStatus>)`](crate::operation::create_detector_version::CreateDetectorVersionOutput::status): <p>The status of the detector version.</p>
     /// - On failure, responds with [`SdkError<CreateDetectorVersionError>`](crate::operation::create_detector_version::CreateDetectorVersionError)
-    pub fn create_detector_version(
-        &self,
-    ) -> crate::operation::create_detector_version::builders::CreateDetectorVersionFluentBuilder
-    {
-        crate::operation::create_detector_version::builders::CreateDetectorVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_detector_version(&self) -> crate::operation::create_detector_version::builders::CreateDetectorVersionFluentBuilder {
+        crate::operation::create_detector_version::builders::CreateDetectorVersionFluentBuilder::new(self.handle.clone())
     }
 }

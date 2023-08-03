@@ -16,9 +16,7 @@ pub fn ser_start_call_analytics_job_input(
         object.key("OutputLocation").string(var_4.as_str());
     }
     if let Some(var_5) = &input.output_encryption_kms_key_id {
-        object
-            .key("OutputEncryptionKMSKeyId")
-            .string(var_5.as_str());
+        object.key("OutputEncryptionKMSKeyId").string(var_5.as_str());
     }
     if let Some(var_6) = &input.data_access_role_arn {
         object.key("DataAccessRoleArn").string(var_6.as_str());
@@ -26,10 +24,7 @@ pub fn ser_start_call_analytics_job_input(
     if let Some(var_7) = &input.settings {
         #[allow(unused_mut)]
         let mut object_8 = object.key("Settings").start_object();
-        crate::protocol_serde::shape_call_analytics_job_settings::ser_call_analytics_job_settings(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_call_analytics_job_settings::ser_call_analytics_job_settings(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.channel_definitions {
@@ -38,10 +33,7 @@ pub fn ser_start_call_analytics_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_channel_definition::ser_channel_definition(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_channel_definition::ser_channel_definition(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }

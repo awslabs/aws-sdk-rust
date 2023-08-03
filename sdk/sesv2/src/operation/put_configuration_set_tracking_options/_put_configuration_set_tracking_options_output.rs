@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for PutConfigurationSetTrackingOptionsOut
 }
 impl PutConfigurationSetTrackingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetTrackingOptionsOutput`](crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsOutput).
-    pub fn builder() -> crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsOutputBuilder {
         crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutConfigurationSetTrackingOptionsOutput`](crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutConfigurationSetTrackingOptionsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +35,7 @@ impl PutConfigurationSetTrackingOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetTrackingOptionsOutput`](crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsOutput).
-    pub fn build(self) -> crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsOutput{
+    pub fn build(self) -> crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsOutput {
         crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsOutput {
             _request_id: self._request_id,
         }

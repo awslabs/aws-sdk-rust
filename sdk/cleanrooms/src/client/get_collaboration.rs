@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetCollaborationOutput`](crate::operation::get_collaboration::GetCollaborationOutput) with field(s):
     ///   - [`collaboration(Option<Collaboration>)`](crate::operation::get_collaboration::GetCollaborationOutput::collaboration): <p>The entire collaboration for this identifier.</p>
     /// - On failure, responds with [`SdkError<GetCollaborationError>`](crate::operation::get_collaboration::GetCollaborationError)
-    pub fn get_collaboration(
-        &self,
-    ) -> crate::operation::get_collaboration::builders::GetCollaborationFluentBuilder {
-        crate::operation::get_collaboration::builders::GetCollaborationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_collaboration(&self) -> crate::operation::get_collaboration::builders::GetCollaborationFluentBuilder {
+        crate::operation::get_collaboration::builders::GetCollaborationFluentBuilder::new(self.handle.clone())
     }
 }

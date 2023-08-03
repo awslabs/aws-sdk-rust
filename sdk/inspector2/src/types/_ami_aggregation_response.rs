@@ -44,9 +44,7 @@ impl AmiAggregationResponse {
 
 /// A builder for [`AmiAggregationResponse`](crate::types::AmiAggregationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmiAggregationResponseBuilder {
     pub(crate) ami: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl AmiAggregationResponseBuilder {
         self
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
-    pub fn set_severity_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityCounts>,
-    ) -> Self {
+    pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
         self.severity_counts = input;
         self
     }

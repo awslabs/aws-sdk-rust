@@ -22,36 +22,26 @@ impl BatchGetUserAccessTasksInput {
 }
 impl BatchGetUserAccessTasksInput {
     /// Creates a new builder-style object to manufacture [`BatchGetUserAccessTasksInput`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksInputBuilder {
         crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetUserAccessTasksInput`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetUserAccessTasksInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) task_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetUserAccessTasksInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_bundle_identifier = input;
         self
     }
@@ -71,17 +61,12 @@ impl BatchGetUserAccessTasksInputBuilder {
         self
     }
     /// <p>The tasks IDs to use for the request.</p>
-    pub fn set_task_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_task_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.task_id_list = input;
         self
     }
     /// <p>The tasks IDs to use for the request.</p>
-    pub fn get_task_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_task_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.task_id_list
     }
     /// Consumes the builder and constructs a [`BatchGetUserAccessTasksInput`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksInput).
@@ -91,11 +76,9 @@ impl BatchGetUserAccessTasksInputBuilder {
         crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksInput {
-                app_bundle_identifier: self.app_bundle_identifier,
-                task_id_list: self.task_id_list,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksInput {
+            app_bundle_identifier: self.app_bundle_identifier,
+            task_id_list: self.task_id_list,
+        })
     }
 }

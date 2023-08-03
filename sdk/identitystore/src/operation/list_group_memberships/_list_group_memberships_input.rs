@@ -36,17 +36,14 @@ impl ListGroupMembershipsInput {
 }
 impl ListGroupMembershipsInput {
     /// Creates a new builder-style object to manufacture [`ListGroupMembershipsInput`](crate::operation::list_group_memberships::ListGroupMembershipsInput).
-    pub fn builder(
-    ) -> crate::operation::list_group_memberships::builders::ListGroupMembershipsInputBuilder {
+    pub fn builder() -> crate::operation::list_group_memberships::builders::ListGroupMembershipsInputBuilder {
         crate::operation::list_group_memberships::builders::ListGroupMembershipsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroupMembershipsInput`](crate::operation::list_group_memberships::ListGroupMembershipsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupMembershipsInputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct ListGroupMembershipsInputBuilder {
 }
 impl ListGroupMembershipsInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_store_id = input;
         self
     }
@@ -119,17 +110,13 @@ impl ListGroupMembershipsInputBuilder {
     /// Consumes the builder and constructs a [`ListGroupMembershipsInput`](crate::operation::list_group_memberships::ListGroupMembershipsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_group_memberships::ListGroupMembershipsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_group_memberships::ListGroupMembershipsInput {
-                identity_store_id: self.identity_store_id,
-                group_id: self.group_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_group_memberships::ListGroupMembershipsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_group_memberships::ListGroupMembershipsInput {
+            identity_store_id: self.identity_store_id,
+            group_id: self.group_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

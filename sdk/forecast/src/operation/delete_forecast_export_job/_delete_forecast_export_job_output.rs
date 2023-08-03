@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteForecastExportJobOutput {
 }
 impl DeleteForecastExportJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteForecastExportJobOutput`](crate::operation::delete_forecast_export_job::DeleteForecastExportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobOutputBuilder {
         crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteForecastExportJobOutput`](crate::operation::delete_forecast_export_job::DeleteForecastExportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteForecastExportJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteForecastExportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteForecastExportJobOutput`](crate::operation::delete_forecast_export_job::DeleteForecastExportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_forecast_export_job::DeleteForecastExportJobOutput {
+    pub fn build(self) -> crate::operation::delete_forecast_export_job::DeleteForecastExportJobOutput {
         crate::operation::delete_forecast_export_job::DeleteForecastExportJobOutput {
             _request_id: self._request_id,
         }

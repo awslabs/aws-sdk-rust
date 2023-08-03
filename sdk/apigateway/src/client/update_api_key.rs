@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`stage_keys(Option<Vec<String>>)`](crate::operation::update_api_key::UpdateApiKeyOutput::stage_keys): <p>A list of Stage resources that are associated with the ApiKey resource.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_api_key::UpdateApiKeyOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On failure, responds with [`SdkError<UpdateApiKeyError>`](crate::operation::update_api_key::UpdateApiKeyError)
-    pub fn update_api_key(
-        &self,
-    ) -> crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder {
-        crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_api_key(&self) -> crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder {
+        crate::operation::update_api_key::builders::UpdateApiKeyFluentBuilder::new(self.handle.clone())
     }
 }

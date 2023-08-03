@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeContactFlowModuleOutput {
 }
 impl DescribeContactFlowModuleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContactFlowModuleOutput`](crate::operation::describe_contact_flow_module::DescribeContactFlowModuleOutput).
-    pub fn builder() -> crate::operation::describe_contact_flow_module::builders::DescribeContactFlowModuleOutputBuilder{
+    pub fn builder() -> crate::operation::describe_contact_flow_module::builders::DescribeContactFlowModuleOutputBuilder {
         crate::operation::describe_contact_flow_module::builders::DescribeContactFlowModuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeContactFlowModuleOutput`](crate::operation::describe_contact_flow_module::DescribeContactFlowModuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeContactFlowModuleOutputBuilder {
     pub(crate) contact_flow_module: ::std::option::Option<crate::types::ContactFlowModule>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DescribeContactFlowModuleOutputBuilder {
         self
     }
     /// <p>Information about the flow module.</p>
-    pub fn set_contact_flow_module(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactFlowModule>,
-    ) -> Self {
+    pub fn set_contact_flow_module(mut self, input: ::std::option::Option<crate::types::ContactFlowModule>) -> Self {
         self.contact_flow_module = input;
         self
     }
     /// <p>Information about the flow module.</p>
-    pub fn get_contact_flow_module(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContactFlowModule> {
+    pub fn get_contact_flow_module(&self) -> &::std::option::Option<crate::types::ContactFlowModule> {
         &self.contact_flow_module
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl DescribeContactFlowModuleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeContactFlowModuleOutput`](crate::operation::describe_contact_flow_module::DescribeContactFlowModuleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_contact_flow_module::DescribeContactFlowModuleOutput {
+    pub fn build(self) -> crate::operation::describe_contact_flow_module::DescribeContactFlowModuleOutput {
         crate::operation::describe_contact_flow_module::DescribeContactFlowModuleOutput {
             contact_flow_module: self.contact_flow_module,
             _request_id: self._request_id,

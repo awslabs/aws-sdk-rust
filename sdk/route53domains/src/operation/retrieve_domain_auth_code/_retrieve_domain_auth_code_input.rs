@@ -16,18 +16,14 @@ impl RetrieveDomainAuthCodeInput {
 }
 impl RetrieveDomainAuthCodeInput {
     /// Creates a new builder-style object to manufacture [`RetrieveDomainAuthCodeInput`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeInput).
-    pub fn builder(
-    ) -> crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeInputBuilder
-    {
+    pub fn builder() -> crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeInputBuilder {
         crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeInputBuilder::default()
     }
 }
 
 /// A builder for [`RetrieveDomainAuthCodeInput`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetrieveDomainAuthCodeInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -53,10 +49,8 @@ impl RetrieveDomainAuthCodeInputBuilder {
         crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeInput {
-                domain_name: self.domain_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeInput {
+            domain_name: self.domain_name,
+        })
     }
 }

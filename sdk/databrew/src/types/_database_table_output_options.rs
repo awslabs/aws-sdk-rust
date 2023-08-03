@@ -30,9 +30,7 @@ impl DatabaseTableOutputOptions {
 
 /// A builder for [`DatabaseTableOutputOptions`](crate::types::DatabaseTableOutputOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatabaseTableOutputOptionsBuilder {
     pub(crate) temp_directory: ::std::option::Option<crate::types::S3Location>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl DatabaseTableOutputOptionsBuilder {
         self
     }
     /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can store intermediate results.</p>
-    pub fn set_temp_directory(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_temp_directory(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.temp_directory = input;
         self
     }

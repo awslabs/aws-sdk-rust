@@ -23,16 +23,14 @@ impl CreateSqlInjectionMatchSetInput {
 }
 impl CreateSqlInjectionMatchSetInput {
     /// Creates a new builder-style object to manufacture [`CreateSqlInjectionMatchSetInput`](crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetInput).
-    pub fn builder() -> crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetInputBuilder{
+    pub fn builder() -> crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetInputBuilder {
         crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSqlInjectionMatchSetInput`](crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSqlInjectionMatchSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -73,11 +71,9 @@ impl CreateSqlInjectionMatchSetInputBuilder {
         crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetInput {
-                name: self.name,
-                change_token: self.change_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetInput {
+            name: self.name,
+            change_token: self.change_token,
+        })
     }
 }

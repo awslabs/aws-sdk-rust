@@ -37,9 +37,7 @@ impl DecisionTaskCompletedEventAttributes {
 
 /// A builder for [`DecisionTaskCompletedEventAttributes`](crate::types::DecisionTaskCompletedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecisionTaskCompletedEventAttributesBuilder {
     pub(crate) execution_context: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_event_id: ::std::option::Option<i64>,
@@ -47,18 +45,12 @@ pub struct DecisionTaskCompletedEventAttributesBuilder {
 }
 impl DecisionTaskCompletedEventAttributesBuilder {
     /// <p>User defined context for the workflow execution.</p>
-    pub fn execution_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>User defined context for the workflow execution.</p>
-    pub fn set_execution_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_context = input;
         self
     }

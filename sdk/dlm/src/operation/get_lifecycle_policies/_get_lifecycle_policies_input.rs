@@ -49,22 +49,18 @@ impl GetLifecyclePoliciesInput {
 }
 impl GetLifecyclePoliciesInput {
     /// Creates a new builder-style object to manufacture [`GetLifecyclePoliciesInput`](crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesInputBuilder {
+    pub fn builder() -> crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesInputBuilder {
         crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLifecyclePoliciesInput`](crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLifecyclePoliciesInputBuilder {
     pub(crate) policy_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) state: ::std::option::Option<crate::types::GettablePolicyStateValues>,
-    pub(crate) resource_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>,
     pub(crate) target_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -81,10 +77,7 @@ impl GetLifecyclePoliciesInputBuilder {
         self
     }
     /// <p>The identifiers of the data lifecycle policies.</p>
-    pub fn set_policy_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_ids = input;
         self
     }
@@ -98,10 +91,7 @@ impl GetLifecyclePoliciesInputBuilder {
         self
     }
     /// <p>The activation state.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::GettablePolicyStateValues>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::GettablePolicyStateValues>) -> Self {
         self.state = input;
         self
     }
@@ -121,17 +111,12 @@ impl GetLifecyclePoliciesInputBuilder {
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>) -> Self {
         self.resource_types = input;
         self
     }
     /// <p>The resource type.</p>
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>> {
         &self.resource_types
     }
     /// Appends an item to `target_tags`.
@@ -148,18 +133,13 @@ impl GetLifecyclePoliciesInputBuilder {
     }
     /// <p>The target tag for a policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
-    pub fn set_target_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_tags = input;
         self
     }
     /// <p>The target tag for a policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
-    pub fn get_target_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_tags
     }
     /// Appends an item to `tags_to_add`.
@@ -178,36 +158,27 @@ impl GetLifecyclePoliciesInputBuilder {
     /// <p>The tags to add to objects created by the policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
-    pub fn set_tags_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tags_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tags_to_add = input;
         self
     }
     /// <p>The tags to add to objects created by the policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
-    pub fn get_tags_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tags_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tags_to_add
     }
     /// Consumes the builder and constructs a [`GetLifecyclePoliciesInput`](crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput {
-                policy_ids: self.policy_ids,
-                state: self.state,
-                resource_types: self.resource_types,
-                target_tags: self.target_tags,
-                tags_to_add: self.tags_to_add,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput {
+            policy_ids: self.policy_ids,
+            state: self.state,
+            resource_types: self.resource_types,
+            target_tags: self.target_tags,
+            tags_to_add: self.tags_to_add,
+        })
     }
 }

@@ -37,9 +37,7 @@ impl DescribeLocationHdfsFluentBuilder {
         }
     }
     /// Access the DescribeLocationHdfs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeLocationHdfsFluentBuilder {
             crate::operation::describe_location_hdfs::DescribeLocationHdfs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_hdfs::DescribeLocationHdfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_hdfs::DescribeLocationHdfsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeLocationHdfsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeLocationHdfsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_hdfs::DescribeLocationHdfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_hdfs::DescribeLocationHdfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_hdfs::DescribeLocationHdfsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeLocationHdfsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_hdfs::DescribeLocationHdfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_hdfs::DescribeLocationHdfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_hdfs::DescribeLocationHdfsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeLocationHdfsFluentBuilder {
             crate::operation::describe_location_hdfs::DescribeLocationHdfs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_hdfs::DescribeLocationHdfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_hdfs::DescribeLocationHdfsError>,
     > {
         self.customize_middleware().await
     }

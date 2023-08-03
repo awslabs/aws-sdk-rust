@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`backtrack_request_creation_time(Option<DateTime>)`](crate::operation::backtrack_db_cluster::BacktrackDbClusterOutput::backtrack_request_creation_time): <p>The timestamp of the time at which the backtrack was requested.</p>
     ///   - [`status(Option<String>)`](crate::operation::backtrack_db_cluster::BacktrackDbClusterOutput::status): <p>The status of the backtrack. This property returns one of the following values:</p>  <ul>   <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li>   <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li>   <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>   <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<BacktrackDBClusterError>`](crate::operation::backtrack_db_cluster::BacktrackDBClusterError)
-    pub fn backtrack_db_cluster(
-        &self,
-    ) -> crate::operation::backtrack_db_cluster::builders::BacktrackDBClusterFluentBuilder {
-        crate::operation::backtrack_db_cluster::builders::BacktrackDBClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn backtrack_db_cluster(&self) -> crate::operation::backtrack_db_cluster::builders::BacktrackDBClusterFluentBuilder {
+        crate::operation::backtrack_db_cluster::builders::BacktrackDBClusterFluentBuilder::new(self.handle.clone())
     }
 }

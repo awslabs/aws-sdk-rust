@@ -12,8 +12,7 @@ pub struct DeleteFileSystemOpenZfsConfiguration {
     pub final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>To delete a file system if there are child volumes present below the root volume, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>. If your file system has child volumes and you don't use this option, the delete request will fail.</p>
     #[doc(hidden)]
-    pub options:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileSystemOpenZfsOption>>,
+    pub options: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileSystemOpenZfsOption>>,
 }
 impl DeleteFileSystemOpenZfsConfiguration {
     /// <p>By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip taking a final backup, set this value to <code>true</code>.</p>
@@ -38,14 +37,11 @@ impl DeleteFileSystemOpenZfsConfiguration {
 
 /// A builder for [`DeleteFileSystemOpenZfsConfiguration`](crate::types::DeleteFileSystemOpenZfsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFileSystemOpenZfsConfigurationBuilder {
     pub(crate) skip_final_backup: ::std::option::Option<bool>,
     pub(crate) final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) options:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileSystemOpenZfsOption>>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileSystemOpenZfsOption>>,
 }
 impl DeleteFileSystemOpenZfsConfigurationBuilder {
     /// <p>By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip taking a final backup, set this value to <code>true</code>.</p>
@@ -74,17 +70,12 @@ impl DeleteFileSystemOpenZfsConfigurationBuilder {
         self
     }
     /// <p>A list of tags to apply to the file system's final backup.</p>
-    pub fn set_final_backup_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_final_backup_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.final_backup_tags = input;
         self
     }
     /// <p>A list of tags to apply to the file system's final backup.</p>
-    pub fn get_final_backup_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_final_backup_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.final_backup_tags
     }
     /// Appends an item to `options`.
@@ -99,17 +90,12 @@ impl DeleteFileSystemOpenZfsConfigurationBuilder {
         self
     }
     /// <p>To delete a file system if there are child volumes present below the root volume, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>. If your file system has child volumes and you don't use this option, the delete request will fail.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileSystemOpenZfsOption>>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileSystemOpenZfsOption>>) -> Self {
         self.options = input;
         self
     }
     /// <p>To delete a file system if there are child volumes present below the root volume, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>. If your file system has child volumes and you don't use this option, the delete request will fail.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFileSystemOpenZfsOption>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFileSystemOpenZfsOption>> {
         &self.options
     }
     /// Consumes the builder and constructs a [`DeleteFileSystemOpenZfsConfiguration`](crate::types::DeleteFileSystemOpenZfsConfiguration).

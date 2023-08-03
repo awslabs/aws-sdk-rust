@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`distributions(Option<Vec<LightsailDistribution>>)`](crate::operation::get_distributions::GetDistributionsOutput::distributions): <p>An array of objects that describe your distributions.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_distributions::GetDistributionsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetDistributions</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetDistributionsError>`](crate::operation::get_distributions::GetDistributionsError)
-    pub fn get_distributions(
-        &self,
-    ) -> crate::operation::get_distributions::builders::GetDistributionsFluentBuilder {
-        crate::operation::get_distributions::builders::GetDistributionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_distributions(&self) -> crate::operation::get_distributions::builders::GetDistributionsFluentBuilder {
+        crate::operation::get_distributions::builders::GetDistributionsFluentBuilder::new(self.handle.clone())
     }
 }

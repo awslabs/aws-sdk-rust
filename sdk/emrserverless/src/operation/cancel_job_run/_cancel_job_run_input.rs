@@ -29,27 +29,19 @@ impl CancelJobRunInput {
 
 /// A builder for [`CancelJobRunInput`](crate::operation::cancel_job_run::CancelJobRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelJobRunInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_run_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelJobRunInputBuilder {
     /// <p>The ID of the application on which the job run will be canceled.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application on which the job run will be canceled.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -74,10 +66,7 @@ impl CancelJobRunInputBuilder {
     /// Consumes the builder and constructs a [`CancelJobRunInput`](crate::operation::cancel_job_run::CancelJobRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_job_run::CancelJobRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::cancel_job_run::CancelJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_job_run::CancelJobRunInput {
             application_id: self.application_id,
             job_run_id: self.job_run_id,

@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`logger_definition_id(impl ::std::convert::Into<String>)`](crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionFluentBuilder::logger_definition_id) / [`set_logger_definition_id(Option<String>)`](crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionFluentBuilder::set_logger_definition_id): The ID of the logger definition.
     /// - On success, responds with [`DeleteLoggerDefinitionOutput`](crate::operation::delete_logger_definition::DeleteLoggerDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteLoggerDefinitionError>`](crate::operation::delete_logger_definition::DeleteLoggerDefinitionError)
-    pub fn delete_logger_definition(
-        &self,
-    ) -> crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionFluentBuilder
-    {
+    pub fn delete_logger_definition(&self) -> crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionFluentBuilder {
         crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

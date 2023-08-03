@@ -121,17 +121,14 @@ impl ::aws_http::request_id::RequestId for DescribeForecastOutput {
 }
 impl DescribeForecastOutput {
     /// Creates a new builder-style object to manufacture [`DescribeForecastOutput`](crate::operation::describe_forecast::DescribeForecastOutput).
-    pub fn builder() -> crate::operation::describe_forecast::builders::DescribeForecastOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_forecast::builders::DescribeForecastOutputBuilder {
         crate::operation::describe_forecast::builders::DescribeForecastOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeForecastOutput`](crate::operation::describe_forecast::DescribeForecastOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeForecastOutputBuilder {
     pub(crate) forecast_arn: ::std::option::Option<::std::string::String>,
     pub(crate) forecast_name: ::std::option::Option<::std::string::String>,
@@ -162,18 +159,12 @@ impl DescribeForecastOutputBuilder {
         &self.forecast_arn
     }
     /// <p>The name of the forecast.</p>
-    pub fn forecast_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the forecast.</p>
-    pub fn set_forecast_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forecast_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forecast_name = input;
         self
     }
@@ -186,42 +177,28 @@ impl DescribeForecastOutputBuilder {
     /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
     ///
     /// <p>The quantiles at which probabilistic forecasts were generated.</p>
-    pub fn forecast_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.forecast_types.unwrap_or_default();
         v.push(input.into());
         self.forecast_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The quantiles at which probabilistic forecasts were generated.</p>
-    pub fn set_forecast_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_forecast_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.forecast_types = input;
         self
     }
     /// <p>The quantiles at which probabilistic forecasts were generated.</p>
-    pub fn get_forecast_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.forecast_types
     }
     /// <p>The ARN of the predictor used to generate the forecast.</p>
-    pub fn predictor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the predictor used to generate the forecast.</p>
-    pub fn set_predictor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_arn = input;
         self
     }
@@ -230,18 +207,12 @@ impl DescribeForecastOutputBuilder {
         &self.predictor_arn
     }
     /// <p>The ARN of the dataset group that provided the data used to train the predictor.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the dataset group that provided the data used to train the predictor.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -255,10 +226,7 @@ impl DescribeForecastOutputBuilder {
         self
     }
     /// <p>The estimated time remaining in minutes for the forecast job to complete.</p>
-    pub fn set_estimated_time_remaining_in_minutes(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_estimated_time_remaining_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.estimated_time_remaining_in_minutes = input;
         self
     }
@@ -324,10 +292,7 @@ impl DescribeForecastOutputBuilder {
         self
     }
     /// <p>When the forecast creation task was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -355,10 +320,7 @@ impl DescribeForecastOutputBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
@@ -370,9 +332,7 @@ impl DescribeForecastOutputBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// <p>The time series to include in the forecast.</p>
@@ -381,17 +341,12 @@ impl DescribeForecastOutputBuilder {
         self
     }
     /// <p>The time series to include in the forecast.</p>
-    pub fn set_time_series_selector(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeSeriesSelector>,
-    ) -> Self {
+    pub fn set_time_series_selector(mut self, input: ::std::option::Option<crate::types::TimeSeriesSelector>) -> Self {
         self.time_series_selector = input;
         self
     }
     /// <p>The time series to include in the forecast.</p>
-    pub fn get_time_series_selector(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeSeriesSelector> {
+    pub fn get_time_series_selector(&self) -> &::std::option::Option<crate::types::TimeSeriesSelector> {
         &self.time_series_selector
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

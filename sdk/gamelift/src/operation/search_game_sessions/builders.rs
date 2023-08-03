@@ -10,10 +10,7 @@ impl SearchGameSessionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_game_sessions::SearchGameSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_game_sessions::SearchGameSessionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_game_sessions::SearchGameSessionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_game_sessions();
         fluent_builder.inner = self;
@@ -59,9 +56,7 @@ impl SearchGameSessionsFluentBuilder {
         }
     }
     /// Access the SearchGameSessions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_game_sessions::builders::SearchGameSessionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_game_sessions::builders::SearchGameSessionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl SearchGameSessionsFluentBuilder {
             crate::operation::search_game_sessions::SearchGameSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_game_sessions::SearchGameSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_game_sessions::SearchGameSessionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -85,10 +78,7 @@ impl SearchGameSessionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -97,9 +87,7 @@ impl SearchGameSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_game_sessions::SearchGameSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_game_sessions::SearchGameSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_game_sessions::SearchGameSessionsError>,
     > {
         let op = self
             .inner
@@ -122,9 +110,7 @@ impl SearchGameSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_game_sessions::SearchGameSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_game_sessions::SearchGameSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_game_sessions::SearchGameSessionsError>,
     > {
         self.send_middleware().await
     }
@@ -138,22 +124,15 @@ impl SearchGameSessionsFluentBuilder {
             crate::operation::search_game_sessions::SearchGameSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_game_sessions::SearchGameSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_game_sessions::SearchGameSessionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_game_sessions::paginator::SearchGameSessionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_game_sessions::paginator::SearchGameSessionsPaginator {
-        crate::operation::search_game_sessions::paginator::SearchGameSessionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_game_sessions::paginator::SearchGameSessionsPaginator {
+        crate::operation::search_game_sessions::paginator::SearchGameSessionsPaginator::new(self.handle, self.inner)
     }
     /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -214,10 +193,7 @@ impl SearchGameSessionsFluentBuilder {
     /// <li> <p>OR</p> </li>
     /// </ol>
     /// <p>For example, this filter expression retrieves game sessions hosting at least ten players that have an open player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>. </p>
-    pub fn filter_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_expression(input.into());
         self
     }
@@ -238,10 +214,7 @@ impl SearchGameSessionsFluentBuilder {
     /// <li> <p>OR</p> </li>
     /// </ol>
     /// <p>For example, this filter expression retrieves game sessions hosting at least ten players that have an open player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>. </p>
-    pub fn set_filter_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_expression(input);
         self
     }
@@ -271,10 +244,7 @@ impl SearchGameSessionsFluentBuilder {
     /// <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</p> </li>
     /// </ul>
     /// <p>For example, this sort expression returns the oldest active sessions first: <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value for the sort operand are returned at the end of the list.</p>
-    pub fn sort_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sort_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sort_expression(input.into());
         self
     }
@@ -284,10 +254,7 @@ impl SearchGameSessionsFluentBuilder {
     /// <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</p> </li>
     /// </ul>
     /// <p>For example, this sort expression returns the oldest active sessions first: <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value for the sort operand are returned at the end of the list.</p>
-    pub fn set_sort_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sort_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sort_expression(input);
         self
     }

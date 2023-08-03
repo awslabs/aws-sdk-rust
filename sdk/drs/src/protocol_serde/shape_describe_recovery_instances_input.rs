@@ -6,7 +6,10 @@ pub fn ser_describe_recovery_instances_input(
     if let Some(var_1) = &input.filters {
         #[allow(unused_mut)]
         let mut object_2 = object.key("filters").start_object();
-        crate::protocol_serde::shape_describe_recovery_instances_request_filters::ser_describe_recovery_instances_request_filters(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_describe_recovery_instances_request_filters::ser_describe_recovery_instances_request_filters(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     if input.max_results != 0 {

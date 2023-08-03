@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetInAppMessagesOutput`](crate::operation::get_in_app_messages::GetInAppMessagesOutput) with field(s):
     ///   - [`in_app_messages_response(Option<InAppMessagesResponse>)`](crate::operation::get_in_app_messages::GetInAppMessagesOutput::in_app_messages_response): <p>Get in-app messages response object.</p>
     /// - On failure, responds with [`SdkError<GetInAppMessagesError>`](crate::operation::get_in_app_messages::GetInAppMessagesError)
-    pub fn get_in_app_messages(
-        &self,
-    ) -> crate::operation::get_in_app_messages::builders::GetInAppMessagesFluentBuilder {
-        crate::operation::get_in_app_messages::builders::GetInAppMessagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_in_app_messages(&self) -> crate::operation::get_in_app_messages::builders::GetInAppMessagesFluentBuilder {
+        crate::operation::get_in_app_messages::builders::GetInAppMessagesFluentBuilder::new(self.handle.clone())
     }
 }

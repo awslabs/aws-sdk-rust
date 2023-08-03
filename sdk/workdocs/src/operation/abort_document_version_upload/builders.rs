@@ -26,7 +26,7 @@ impl AbortDocumentVersionUploadInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AbortDocumentVersionUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadInputBuilder,
+    inner: crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadInputBuilder,
 }
 impl AbortDocumentVersionUploadFluentBuilder {
     /// Creates a new `AbortDocumentVersionUpload`.
@@ -37,7 +37,7 @@ impl AbortDocumentVersionUploadFluentBuilder {
         }
     }
     /// Access the AbortDocumentVersionUpload as a reference.
-    pub fn as_input(&self) -> &crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AbortDocumentVersionUploadFluentBuilder {
             crate::operation::abort_document_version_upload::AbortDocumentVersionUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::abort_document_version_upload::AbortDocumentVersionUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::abort_document_version_upload::AbortDocumentVersionUploadError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AbortDocumentVersionUploadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AbortDocumentVersionUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::abort_document_version_upload::AbortDocumentVersionUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::abort_document_version_upload::AbortDocumentVersionUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::abort_document_version_upload::AbortDocumentVersionUploadError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AbortDocumentVersionUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::abort_document_version_upload::AbortDocumentVersionUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::abort_document_version_upload::AbortDocumentVersionUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::abort_document_version_upload::AbortDocumentVersionUploadError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl AbortDocumentVersionUploadFluentBuilder {
             crate::operation::abort_document_version_upload::AbortDocumentVersionUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::abort_document_version_upload::AbortDocumentVersionUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::abort_document_version_upload::AbortDocumentVersionUploadError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }

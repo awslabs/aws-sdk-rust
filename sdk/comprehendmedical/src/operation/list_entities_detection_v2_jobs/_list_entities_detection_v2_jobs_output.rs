@@ -5,8 +5,7 @@
 pub struct ListEntitiesDetectionV2JobsOutput {
     /// <p>A list containing the properties of each job returned.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,
+    pub comprehend_medical_async_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEntitiesDetectionV2JobsOutput {
 }
 impl ListEntitiesDetectionV2JobsOutput {
     /// <p>A list containing the properties of each job returned.</p>
-    pub fn comprehend_medical_async_job_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ComprehendMedicalAsyncJobProperties]> {
+    pub fn comprehend_medical_async_job_properties_list(&self) -> ::std::option::Option<&[crate::types::ComprehendMedicalAsyncJobProperties]> {
         self.comprehend_medical_async_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -31,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListEntitiesDetectionV2JobsOutput {
 }
 impl ListEntitiesDetectionV2JobsOutput {
     /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionV2JobsOutput`](crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsOutput).
-    pub fn builder() -> crate::operation::list_entities_detection_v2_jobs::builders::ListEntitiesDetectionV2JobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_entities_detection_v2_jobs::builders::ListEntitiesDetectionV2JobsOutputBuilder {
         crate::operation::list_entities_detection_v2_jobs::builders::ListEntitiesDetectionV2JobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEntitiesDetectionV2JobsOutput`](crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntitiesDetectionV2JobsOutputBuilder {
     pub(crate) comprehend_medical_async_job_properties_list:
         ::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,
@@ -53,13 +48,8 @@ impl ListEntitiesDetectionV2JobsOutputBuilder {
     /// To override the contents of this collection use [`set_comprehend_medical_async_job_properties_list`](Self::set_comprehend_medical_async_job_properties_list).
     ///
     /// <p>A list containing the properties of each job returned.</p>
-    pub fn comprehend_medical_async_job_properties_list(
-        mut self,
-        input: crate::types::ComprehendMedicalAsyncJobProperties,
-    ) -> Self {
-        let mut v = self
-            .comprehend_medical_async_job_properties_list
-            .unwrap_or_default();
+    pub fn comprehend_medical_async_job_properties_list(mut self, input: crate::types::ComprehendMedicalAsyncJobProperties) -> Self {
+        let mut v = self.comprehend_medical_async_job_properties_list.unwrap_or_default();
         v.push(input);
         self.comprehend_medical_async_job_properties_list = ::std::option::Option::Some(v);
         self
@@ -67,9 +57,7 @@ impl ListEntitiesDetectionV2JobsOutputBuilder {
     /// <p>A list containing the properties of each job returned.</p>
     pub fn set_comprehend_medical_async_job_properties_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,
     ) -> Self {
         self.comprehend_medical_async_job_properties_list = input;
         self
@@ -77,8 +65,7 @@ impl ListEntitiesDetectionV2JobsOutputBuilder {
     /// <p>A list containing the properties of each job returned.</p>
     pub fn get_comprehend_medical_async_job_properties_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>> {
         &self.comprehend_medical_async_job_properties_list
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -105,12 +92,9 @@ impl ListEntitiesDetectionV2JobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEntitiesDetectionV2JobsOutput`](crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsOutput {
+    pub fn build(self) -> crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsOutput {
         crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsOutput {
-            comprehend_medical_async_job_properties_list: self
-                .comprehend_medical_async_job_properties_list,
+            comprehend_medical_async_job_properties_list: self.comprehend_medical_async_job_properties_list,
             next_token: self.next_token,
             _request_id: self._request_id,
         }

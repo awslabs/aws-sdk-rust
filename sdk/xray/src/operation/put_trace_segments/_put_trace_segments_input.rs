@@ -15,20 +15,16 @@ impl PutTraceSegmentsInput {
 }
 impl PutTraceSegmentsInput {
     /// Creates a new builder-style object to manufacture [`PutTraceSegmentsInput`](crate::operation::put_trace_segments::PutTraceSegmentsInput).
-    pub fn builder() -> crate::operation::put_trace_segments::builders::PutTraceSegmentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_trace_segments::builders::PutTraceSegmentsInputBuilder {
         crate::operation::put_trace_segments::builders::PutTraceSegmentsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutTraceSegmentsInput`](crate::operation::put_trace_segments::PutTraceSegmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutTraceSegmentsInputBuilder {
-    pub(crate) trace_segment_documents:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) trace_segment_documents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PutTraceSegmentsInputBuilder {
     /// Appends an item to `trace_segment_documents`.
@@ -36,40 +32,27 @@ impl PutTraceSegmentsInputBuilder {
     /// To override the contents of this collection use [`set_trace_segment_documents`](Self::set_trace_segment_documents).
     ///
     /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
-    pub fn trace_segment_documents(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trace_segment_documents(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.trace_segment_documents.unwrap_or_default();
         v.push(input.into());
         self.trace_segment_documents = ::std::option::Option::Some(v);
         self
     }
     /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
-    pub fn set_trace_segment_documents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trace_segment_documents(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.trace_segment_documents = input;
         self
     }
     /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
-    pub fn get_trace_segment_documents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_trace_segment_documents(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.trace_segment_documents
     }
     /// Consumes the builder and constructs a [`PutTraceSegmentsInput`](crate::operation::put_trace_segments::PutTraceSegmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_trace_segments::PutTraceSegmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_trace_segments::PutTraceSegmentsInput {
-                trace_segment_documents: self.trace_segment_documents,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_trace_segments::PutTraceSegmentsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_trace_segments::PutTraceSegmentsInput {
+            trace_segment_documents: self.trace_segment_documents,
+        })
     }
 }

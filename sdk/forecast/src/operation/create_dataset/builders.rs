@@ -10,10 +10,7 @@ impl CreateDatasetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_dataset::CreateDatasetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset::CreateDatasetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_dataset();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl CreateDatasetFluentBuilder {
         }
     }
     /// Access the CreateDataset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -71,10 +66,7 @@ impl CreateDatasetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -161,10 +153,7 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>The dataset type. Valid values depend on the chosen <code>Domain</code>.</p>
-    pub fn set_dataset_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetType>,
-    ) -> Self {
+    pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
         self.inner = self.inner.set_dataset_type(input);
         self
     }
@@ -183,10 +172,7 @@ impl CreateDatasetFluentBuilder {
     /// <li> <p>Year - 1</p> </li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
-    pub fn data_frequency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_frequency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_frequency(input.into());
         self
     }
@@ -201,10 +187,7 @@ impl CreateDatasetFluentBuilder {
     /// <li> <p>Year - 1</p> </li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
-    pub fn set_data_frequency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_frequency(input);
         self
     }
@@ -242,10 +225,7 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.inner = self.inner.set_encryption_config(input);
         self
     }
@@ -283,10 +263,7 @@ impl CreateDatasetFluentBuilder {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

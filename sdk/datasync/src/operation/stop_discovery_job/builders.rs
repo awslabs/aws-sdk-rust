@@ -10,10 +10,7 @@ impl StopDiscoveryJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_discovery_job::StopDiscoveryJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_discovery_job::StopDiscoveryJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_discovery_job::StopDiscoveryJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_discovery_job();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl StopDiscoveryJobFluentBuilder {
         }
     }
     /// Access the StopDiscoveryJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_discovery_job::builders::StopDiscoveryJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_discovery_job::builders::StopDiscoveryJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl StopDiscoveryJobFluentBuilder {
             crate::operation::stop_discovery_job::StopDiscoveryJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_discovery_job::StopDiscoveryJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_discovery_job::StopDiscoveryJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl StopDiscoveryJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl StopDiscoveryJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_discovery_job::StopDiscoveryJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_discovery_job::StopDiscoveryJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_discovery_job::StopDiscoveryJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl StopDiscoveryJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_discovery_job::StopDiscoveryJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_discovery_job::StopDiscoveryJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_discovery_job::StopDiscoveryJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl StopDiscoveryJobFluentBuilder {
             crate::operation::stop_discovery_job::StopDiscoveryJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_discovery_job::StopDiscoveryJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_discovery_job::StopDiscoveryJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
-    pub fn discovery_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.discovery_job_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
-    pub fn set_discovery_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_discovery_job_arn(input);
         self
     }

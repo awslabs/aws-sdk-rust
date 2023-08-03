@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`lineage_group_summaries(Option<Vec<LineageGroupSummary>>)`](crate::operation::list_lineage_groups::ListLineageGroupsOutput::lineage_group_summaries): <p>A list of lineage groups and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lineage_groups::ListLineageGroupsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListLineageGroupsError>`](crate::operation::list_lineage_groups::ListLineageGroupsError)
-    pub fn list_lineage_groups(
-        &self,
-    ) -> crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder {
-        crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_lineage_groups(&self) -> crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder {
+        crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::new(self.handle.clone())
     }
 }

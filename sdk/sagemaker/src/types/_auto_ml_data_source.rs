@@ -23,9 +23,7 @@ impl AutoMlDataSource {
 
 /// A builder for [`AutoMlDataSource`](crate::types::AutoMlDataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoMlDataSourceBuilder {
     pub(crate) s3_data_source: ::std::option::Option<crate::types::AutoMls3DataSource>,
 }
@@ -36,10 +34,7 @@ impl AutoMlDataSourceBuilder {
         self
     }
     /// <p>The Amazon S3 location of the input data.</p>
-    pub fn set_s3_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMls3DataSource>,
-    ) -> Self {
+    pub fn set_s3_data_source(mut self, input: ::std::option::Option<crate::types::AutoMls3DataSource>) -> Self {
         self.s3_data_source = input;
         self
     }

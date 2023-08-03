@@ -34,9 +34,7 @@ impl ListGroupResourcesItem {
 
 /// A builder for [`ListGroupResourcesItem`](crate::types::ListGroupResourcesItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupResourcesItemBuilder {
     pub(crate) identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
     pub(crate) status: ::std::option::Option<crate::types::ResourceStatus>,
@@ -48,10 +46,7 @@ impl ListGroupResourcesItemBuilder {
         self
     }
     /// <p>A structure that contains the ARN of a resource and its resource type.</p>
-    pub fn set_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
+    pub fn set_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
         self.identifier = input;
         self
     }
@@ -69,10 +64,7 @@ impl ListGroupResourcesItemBuilder {
     /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
     /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
     /// </note>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.status = input;
         self
     }

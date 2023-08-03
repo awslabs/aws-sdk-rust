@@ -80,13 +80,7 @@
 /// </dl>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BucketOwnerAccess {
     #[allow(missing_docs)] // documentation missing in model
@@ -104,9 +98,7 @@ impl ::std::convert::From<&str> for BucketOwnerAccess {
             "FULL" => BucketOwnerAccess::Full,
             "NONE" => BucketOwnerAccess::None,
             "READ_ONLY" => BucketOwnerAccess::ReadOnly,
-            other => {
-                BucketOwnerAccess::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => BucketOwnerAccess::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

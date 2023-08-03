@@ -10,10 +10,7 @@ impl DescribePipelineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_pipeline::DescribePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_pipeline::DescribePipelineError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pipeline::DescribePipelineError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_pipeline();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribePipelineFluentBuilder {
         }
     }
     /// Access the DescribePipeline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_pipeline::builders::DescribePipelineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_pipeline::builders::DescribePipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribePipelineFluentBuilder {
             crate::operation::describe_pipeline::DescribePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_pipeline::DescribePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pipeline::DescribePipelineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribePipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_pipeline::DescribePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_pipeline::DescribePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pipeline::DescribePipelineError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_pipeline::DescribePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_pipeline::DescribePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pipeline::DescribePipelineError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribePipelineFluentBuilder {
             crate::operation::describe_pipeline::DescribePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_pipeline::DescribePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pipeline::DescribePipelineError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }

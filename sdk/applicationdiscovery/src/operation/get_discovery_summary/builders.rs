@@ -38,9 +38,7 @@ impl GetDiscoverySummaryFluentBuilder {
         }
     }
     /// Access the GetDiscoverySummary as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_discovery_summary::builders::GetDiscoverySummaryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_discovery_summary::builders::GetDiscoverySummaryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetDiscoverySummaryFluentBuilder {
             crate::operation::get_discovery_summary::GetDiscoverySummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_discovery_summary::GetDiscoverySummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_discovery_summary::GetDiscoverySummaryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetDiscoverySummaryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetDiscoverySummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_discovery_summary::GetDiscoverySummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_discovery_summary::GetDiscoverySummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_discovery_summary::GetDiscoverySummaryError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetDiscoverySummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_discovery_summary::GetDiscoverySummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_discovery_summary::GetDiscoverySummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_discovery_summary::GetDiscoverySummaryError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl GetDiscoverySummaryFluentBuilder {
             crate::operation::get_discovery_summary::GetDiscoverySummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_discovery_summary::GetDiscoverySummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_discovery_summary::GetDiscoverySummaryError>,
     > {
         self.customize_middleware().await
     }

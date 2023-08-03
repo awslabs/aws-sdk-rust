@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateAuditSuppressionOutput {
 }
 impl UpdateAuditSuppressionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAuditSuppressionOutput`](crate::operation::update_audit_suppression::UpdateAuditSuppressionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_audit_suppression::builders::UpdateAuditSuppressionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_audit_suppression::builders::UpdateAuditSuppressionOutputBuilder {
         crate::operation::update_audit_suppression::builders::UpdateAuditSuppressionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAuditSuppressionOutput`](crate::operation::update_audit_suppression::UpdateAuditSuppressionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAuditSuppressionOutputBuilder {
     _request_id: Option<String>,
 }

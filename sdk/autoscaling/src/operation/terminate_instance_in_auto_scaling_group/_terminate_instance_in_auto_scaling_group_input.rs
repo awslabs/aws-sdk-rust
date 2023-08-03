@@ -22,16 +22,14 @@ impl TerminateInstanceInAutoScalingGroupInput {
 }
 impl TerminateInstanceInAutoScalingGroupInput {
     /// Creates a new builder-style object to manufacture [`TerminateInstanceInAutoScalingGroupInput`](crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupInput).
-    pub fn builder() -> crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupInputBuilder{
+    pub fn builder() -> crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupInputBuilder {
         crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateInstanceInAutoScalingGroupInput`](crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateInstanceInAutoScalingGroupInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) should_decrement_desired_capacity: ::std::option::Option<bool>,
@@ -57,10 +55,7 @@ impl TerminateInstanceInAutoScalingGroupInputBuilder {
         self
     }
     /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling group.</p>
-    pub fn set_should_decrement_desired_capacity(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_should_decrement_desired_capacity(mut self, input: ::std::option::Option<bool>) -> Self {
         self.should_decrement_desired_capacity = input;
         self
     }
@@ -69,14 +64,17 @@ impl TerminateInstanceInAutoScalingGroupInputBuilder {
         &self.should_decrement_desired_capacity
     }
     /// Consumes the builder and constructs a [`TerminateInstanceInAutoScalingGroupInput`](crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupInput {
-                instance_id: self.instance_id
-                ,
-                should_decrement_desired_capacity: self.should_decrement_desired_capacity
-                ,
-            }
+                instance_id: self.instance_id,
+                should_decrement_desired_capacity: self.should_decrement_desired_capacity,
+            },
         )
     }
 }

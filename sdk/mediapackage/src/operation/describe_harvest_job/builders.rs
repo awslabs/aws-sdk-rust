@@ -10,10 +10,7 @@ impl DescribeHarvestJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_harvest_job::DescribeHarvestJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_harvest_job::DescribeHarvestJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_harvest_job::DescribeHarvestJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_harvest_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeHarvestJobFluentBuilder {
         }
     }
     /// Access the DescribeHarvestJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_harvest_job::builders::DescribeHarvestJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_harvest_job::builders::DescribeHarvestJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeHarvestJobFluentBuilder {
             crate::operation::describe_harvest_job::DescribeHarvestJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_harvest_job::DescribeHarvestJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_harvest_job::DescribeHarvestJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeHarvestJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeHarvestJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_harvest_job::DescribeHarvestJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_harvest_job::DescribeHarvestJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_harvest_job::DescribeHarvestJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeHarvestJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_harvest_job::DescribeHarvestJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_harvest_job::DescribeHarvestJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_harvest_job::DescribeHarvestJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeHarvestJobFluentBuilder {
             crate::operation::describe_harvest_job::DescribeHarvestJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_harvest_job::DescribeHarvestJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_harvest_job::DescribeHarvestJobError>,
     > {
         self.customize_middleware().await
     }

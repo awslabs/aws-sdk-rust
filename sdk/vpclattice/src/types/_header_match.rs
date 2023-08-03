@@ -37,9 +37,7 @@ impl HeaderMatch {
 
 /// A builder for [`HeaderMatch`](crate::types::HeaderMatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HeaderMatchBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#match: ::std::option::Option<crate::types::HeaderMatchType>,
@@ -66,10 +64,7 @@ impl HeaderMatchBuilder {
         self
     }
     /// <p>The header match type.</p>
-    pub fn set_match(
-        mut self,
-        input: ::std::option::Option<crate::types::HeaderMatchType>,
-    ) -> Self {
+    pub fn set_match(mut self, input: ::std::option::Option<crate::types::HeaderMatchType>) -> Self {
         self.r#match = input;
         self
     }

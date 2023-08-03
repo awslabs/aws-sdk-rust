@@ -30,9 +30,7 @@ impl Rule {
 
 /// A builder for [`Rule`](crate::types::Rule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) matching_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,27 +55,19 @@ impl RuleBuilder {
     /// To override the contents of this collection use [`set_matching_keys`](Self::set_matching_keys).
     ///
     /// <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have been defined in the <code>SchemaMapping</code>. Two records are considered to match according to this rule if all of the <code>MatchingKeys</code> match.</p>
-    pub fn matching_keys(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn matching_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.matching_keys.unwrap_or_default();
         v.push(input.into());
         self.matching_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have been defined in the <code>SchemaMapping</code>. Two records are considered to match according to this rule if all of the <code>MatchingKeys</code> match.</p>
-    pub fn set_matching_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_matching_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.matching_keys = input;
         self
     }
     /// <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have been defined in the <code>SchemaMapping</code>. Two records are considered to match according to this rule if all of the <code>MatchingKeys</code> match.</p>
-    pub fn get_matching_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_matching_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.matching_keys
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).

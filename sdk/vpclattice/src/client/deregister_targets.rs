@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`successful(Option<Vec<Target>>)`](crate::operation::deregister_targets::DeregisterTargetsOutput::successful): <p>The targets that were successfully deregistered.</p>
     ///   - [`unsuccessful(Option<Vec<TargetFailure>>)`](crate::operation::deregister_targets::DeregisterTargetsOutput::unsuccessful): <p>The targets that the operation couldn't deregister.</p>
     /// - On failure, responds with [`SdkError<DeregisterTargetsError>`](crate::operation::deregister_targets::DeregisterTargetsError)
-    pub fn deregister_targets(
-        &self,
-    ) -> crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder {
-        crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deregister_targets(&self) -> crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder {
+        crate::operation::deregister_targets::builders::DeregisterTargetsFluentBuilder::new(self.handle.clone())
     }
 }

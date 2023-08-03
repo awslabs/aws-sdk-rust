@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateTransitGatewayConnectPeerOutput`](crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerOutput) with field(s):
     ///   - [`transit_gateway_connect_peer_association(Option<TransitGatewayConnectPeerAssociation>)`](crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerOutput::transit_gateway_connect_peer_association): <p>The transit gateway Connect peer association.</p>
     /// - On failure, responds with [`SdkError<AssociateTransitGatewayConnectPeerError>`](crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerError)
-    pub fn associate_transit_gateway_connect_peer(&self) -> crate::operation::associate_transit_gateway_connect_peer::builders::AssociateTransitGatewayConnectPeerFluentBuilder{
+    pub fn associate_transit_gateway_connect_peer(
+        &self,
+    ) -> crate::operation::associate_transit_gateway_connect_peer::builders::AssociateTransitGatewayConnectPeerFluentBuilder {
         crate::operation::associate_transit_gateway_connect_peer::builders::AssociateTransitGatewayConnectPeerFluentBuilder::new(self.handle.clone())
     }
 }

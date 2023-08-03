@@ -51,9 +51,7 @@ impl ExperiencesSummary {
 
 /// A builder for [`ExperiencesSummary`](crate::types::ExperiencesSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperiencesSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -96,10 +94,7 @@ impl ExperiencesSummaryBuilder {
         self
     }
     /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -113,10 +108,7 @@ impl ExperiencesSummaryBuilder {
         self
     }
     /// <p>The processing status of your Amazon Kendra experience.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperienceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExperienceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -136,17 +128,12 @@ impl ExperiencesSummaryBuilder {
         self
     }
     /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>>,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>>) -> Self {
         self.endpoints = input;
         self
     }
     /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    pub fn get_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>> {
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>> {
         &self.endpoints
     }
     /// Consumes the builder and constructs a [`ExperiencesSummary`](crate::types::ExperiencesSummary).

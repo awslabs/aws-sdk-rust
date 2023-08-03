@@ -29,18 +29,14 @@ impl PutImageTagMutabilityInput {
 }
 impl PutImageTagMutabilityInput {
     /// Creates a new builder-style object to manufacture [`PutImageTagMutabilityInput`](crate::operation::put_image_tag_mutability::PutImageTagMutabilityInput).
-    pub fn builder(
-    ) -> crate::operation::put_image_tag_mutability::builders::PutImageTagMutabilityInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_image_tag_mutability::builders::PutImageTagMutabilityInputBuilder {
         crate::operation::put_image_tag_mutability::builders::PutImageTagMutabilityInputBuilder::default()
     }
 }
 
 /// A builder for [`PutImageTagMutabilityInput`](crate::operation::put_image_tag_mutability::PutImageTagMutabilityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutImageTagMutabilityInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl PutImageTagMutabilityInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository in which to update the image tag mutability settings.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository in which to update the image tag mutability settings.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -87,32 +77,23 @@ impl PutImageTagMutabilityInputBuilder {
         self
     }
     /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
-    pub fn set_image_tag_mutability(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageTagMutability>,
-    ) -> Self {
+    pub fn set_image_tag_mutability(mut self, input: ::std::option::Option<crate::types::ImageTagMutability>) -> Self {
         self.image_tag_mutability = input;
         self
     }
     /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
-    pub fn get_image_tag_mutability(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageTagMutability> {
+    pub fn get_image_tag_mutability(&self) -> &::std::option::Option<crate::types::ImageTagMutability> {
         &self.image_tag_mutability
     }
     /// Consumes the builder and constructs a [`PutImageTagMutabilityInput`](crate::operation::put_image_tag_mutability::PutImageTagMutabilityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_image_tag_mutability::PutImageTagMutabilityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_image_tag_mutability::PutImageTagMutabilityInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                image_tag_mutability: self.image_tag_mutability,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_image_tag_mutability::PutImageTagMutabilityInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_image_tag_mutability::PutImageTagMutabilityInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            image_tag_mutability: self.image_tag_mutability,
+        })
     }
 }

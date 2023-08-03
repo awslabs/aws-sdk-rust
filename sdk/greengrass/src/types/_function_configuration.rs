@@ -35,9 +35,7 @@ impl FunctionConfiguration {
         self.encoding_type.as_ref()
     }
     /// The environment configuration of the function.
-    pub fn environment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FunctionConfigurationEnvironment> {
+    pub fn environment(&self) -> ::std::option::Option<&crate::types::FunctionConfigurationEnvironment> {
         self.environment.as_ref()
     }
     /// The execution arguments.
@@ -74,9 +72,7 @@ impl FunctionConfiguration {
 
 /// A builder for [`FunctionConfiguration`](crate::types::FunctionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionConfigurationBuilder {
     pub(crate) encoding_type: ::std::option::Option<crate::types::EncodingType>,
     pub(crate) environment: ::std::option::Option<crate::types::FunctionConfigurationEnvironment>,
@@ -94,10 +90,7 @@ impl FunctionConfigurationBuilder {
         self
     }
     /// The expected encoding type of the input payload for the function. The default is ''json''.
-    pub fn set_encoding_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncodingType>,
-    ) -> Self {
+    pub fn set_encoding_type(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
         self.encoding_type = input;
         self
     }
@@ -111,17 +104,12 @@ impl FunctionConfigurationBuilder {
         self
     }
     /// The environment configuration of the function.
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionConfigurationEnvironment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::FunctionConfigurationEnvironment>) -> Self {
         self.environment = input;
         self
     }
     /// The environment configuration of the function.
-    pub fn get_environment(
-        &self,
-    ) -> &::std::option::Option<crate::types::FunctionConfigurationEnvironment> {
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::FunctionConfigurationEnvironment> {
         &self.environment
     }
     /// The execution arguments.
@@ -195,18 +183,12 @@ impl FunctionConfigurationBuilder {
         &self.timeout
     }
     /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
-    pub fn function_runtime_override(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_runtime_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_runtime_override = ::std::option::Option::Some(input.into());
         self
     }
     /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
-    pub fn set_function_runtime_override(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_runtime_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_runtime_override = input;
         self
     }

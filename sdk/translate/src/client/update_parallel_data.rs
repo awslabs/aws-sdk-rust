@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`latest_update_attempt_status(Option<ParallelDataStatus>)`](crate::operation::update_parallel_data::UpdateParallelDataOutput::latest_update_attempt_status): <p>The status of the parallel data update attempt. When the updated parallel data resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
     ///   - [`latest_update_attempt_at(Option<DateTime>)`](crate::operation::update_parallel_data::UpdateParallelDataOutput::latest_update_attempt_at): <p>The time that the most recent update was attempted.</p>
     /// - On failure, responds with [`SdkError<UpdateParallelDataError>`](crate::operation::update_parallel_data::UpdateParallelDataError)
-    pub fn update_parallel_data(
-        &self,
-    ) -> crate::operation::update_parallel_data::builders::UpdateParallelDataFluentBuilder {
-        crate::operation::update_parallel_data::builders::UpdateParallelDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_parallel_data(&self) -> crate::operation::update_parallel_data::builders::UpdateParallelDataFluentBuilder {
+        crate::operation::update_parallel_data::builders::UpdateParallelDataFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateModelVersionStatusOutput {
 }
 impl UpdateModelVersionStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateModelVersionStatusOutput`](crate::operation::update_model_version_status::UpdateModelVersionStatusOutput).
-    pub fn builder() -> crate::operation::update_model_version_status::builders::UpdateModelVersionStatusOutputBuilder{
+    pub fn builder() -> crate::operation::update_model_version_status::builders::UpdateModelVersionStatusOutputBuilder {
         crate::operation::update_model_version_status::builders::UpdateModelVersionStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateModelVersionStatusOutput`](crate::operation::update_model_version_status::UpdateModelVersionStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateModelVersionStatusOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateModelVersionStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateModelVersionStatusOutput`](crate::operation::update_model_version_status::UpdateModelVersionStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_model_version_status::UpdateModelVersionStatusOutput {
+    pub fn build(self) -> crate::operation::update_model_version_status::UpdateModelVersionStatusOutput {
         crate::operation::update_model_version_status::UpdateModelVersionStatusOutput {
             _request_id: self._request_id,
         }

@@ -10,10 +10,7 @@ impl UpdateCollaborationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_collaboration::UpdateCollaborationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_collaboration::UpdateCollaborationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_collaboration::UpdateCollaborationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_collaboration();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateCollaborationFluentBuilder {
         }
     }
     /// Access the UpdateCollaboration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_collaboration::builders::UpdateCollaborationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_collaboration::builders::UpdateCollaborationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateCollaborationFluentBuilder {
             crate::operation::update_collaboration::UpdateCollaboration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_collaboration::UpdateCollaborationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_collaboration::UpdateCollaborationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateCollaborationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateCollaborationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_collaboration::UpdateCollaborationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_collaboration::UpdateCollaborationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_collaboration::UpdateCollaborationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateCollaborationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_collaboration::UpdateCollaborationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_collaboration::UpdateCollaborationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_collaboration::UpdateCollaborationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateCollaborationFluentBuilder {
             crate::operation::update_collaboration::UpdateCollaboration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_collaboration::UpdateCollaborationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_collaboration::UpdateCollaborationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier for the collaboration.</p>
-    pub fn collaboration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collaboration_identifier(input.into());
         self
     }
     /// <p>The identifier for the collaboration.</p>
-    pub fn set_collaboration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collaboration_identifier(input);
         self
     }

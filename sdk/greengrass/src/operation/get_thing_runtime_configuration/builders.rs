@@ -26,7 +26,7 @@ impl GetThingRuntimeConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetThingRuntimeConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationInputBuilder,
+    inner: crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationInputBuilder,
 }
 impl GetThingRuntimeConfigurationFluentBuilder {
     /// Creates a new `GetThingRuntimeConfiguration`.
@@ -37,7 +37,7 @@ impl GetThingRuntimeConfigurationFluentBuilder {
         }
     }
     /// Access the GetThingRuntimeConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetThingRuntimeConfigurationFluentBuilder {
             crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetThingRuntimeConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetThingRuntimeConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetThingRuntimeConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetThingRuntimeConfigurationFluentBuilder {
             crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationError>,
     > {
         self.customize_middleware().await
     }

@@ -44,9 +44,7 @@ impl ListClustersInput {
 
 /// A builder for [`ListClustersInput`](crate::operation::list_clusters::ListClustersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClustersInputBuilder {
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -60,10 +58,7 @@ impl ListClustersInputBuilder {
         self
     }
     /// <p>The creation date and time beginning value filter for listing clusters.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -77,10 +72,7 @@ impl ListClustersInputBuilder {
         self
     }
     /// <p>The creation date and time end value filter for listing clusters.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -100,17 +92,12 @@ impl ListClustersInputBuilder {
         self
     }
     /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
-    pub fn set_cluster_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterState>>,
-    ) -> Self {
+    pub fn set_cluster_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterState>>) -> Self {
         self.cluster_states = input;
         self
     }
     /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
-    pub fn get_cluster_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterState>> {
+    pub fn get_cluster_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterState>> {
         &self.cluster_states
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -128,12 +115,7 @@ impl ListClustersInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`ListClustersInput`](crate::operation::list_clusters::ListClustersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_clusters::ListClustersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_clusters::ListClustersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_clusters::ListClustersInput {
             created_after: self.created_after,
             created_before: self.created_before,

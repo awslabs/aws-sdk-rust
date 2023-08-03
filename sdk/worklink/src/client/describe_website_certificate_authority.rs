@@ -10,10 +10,10 @@ impl super::Client {
     ///   - [`created_time(Option<DateTime>)`](crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityOutput::created_time): <p>The time that the certificate authority was added.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityOutput::display_name): <p>The certificate name to display.</p>
     /// - On failure, responds with [`SdkError<DescribeWebsiteCertificateAuthorityError>`](crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_website_certificate_authority(&self) -> crate::operation::describe_website_certificate_authority::builders::DescribeWebsiteCertificateAuthorityFluentBuilder{
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn describe_website_certificate_authority(
+        &self,
+    ) -> crate::operation::describe_website_certificate_authority::builders::DescribeWebsiteCertificateAuthorityFluentBuilder {
         crate::operation::describe_website_certificate_authority::builders::DescribeWebsiteCertificateAuthorityFluentBuilder::new(self.handle.clone())
     }
 }

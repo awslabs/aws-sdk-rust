@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`state(Option<MultiplexState>)`](crate::operation::delete_multiplex::DeleteMultiplexOutput::state): The current state of the multiplex.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::delete_multiplex::DeleteMultiplexOutput::tags): A collection of key-value pairs.
     /// - On failure, responds with [`SdkError<DeleteMultiplexError>`](crate::operation::delete_multiplex::DeleteMultiplexError)
-    pub fn delete_multiplex(
-        &self,
-    ) -> crate::operation::delete_multiplex::builders::DeleteMultiplexFluentBuilder {
-        crate::operation::delete_multiplex::builders::DeleteMultiplexFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_multiplex(&self) -> crate::operation::delete_multiplex::builders::DeleteMultiplexFluentBuilder {
+        crate::operation::delete_multiplex::builders::DeleteMultiplexFluentBuilder::new(self.handle.clone())
     }
 }

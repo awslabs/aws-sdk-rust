@@ -10,10 +10,7 @@ impl UpdateDocumentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_document::UpdateDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_document::UpdateDocumentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_document::UpdateDocumentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_document();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDocumentFluentBuilder {
         }
     }
     /// Access the UpdateDocument as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_document::builders::UpdateDocumentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_document::builders::UpdateDocumentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateDocumentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -138,17 +130,12 @@ impl UpdateDocumentFluentBuilder {
         self
     }
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>>) -> Self {
         self.inner = self.inner.set_attachments(input);
         self
     }
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    pub fn get_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>> {
         self.inner.get_attachments()
     }
     /// <p>The name of the SSM document that you want to update.</p>
@@ -196,20 +183,14 @@ impl UpdateDocumentFluentBuilder {
     /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
     /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
     /// </note>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_version(input.into());
         self
     }
     /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
     /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
     /// </note>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_version(input);
         self
     }
@@ -225,10 +206,7 @@ impl UpdateDocumentFluentBuilder {
         self
     }
     /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
-    pub fn set_document_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentFormat>,
-    ) -> Self {
+    pub fn set_document_format(mut self, input: ::std::option::Option<crate::types::DocumentFormat>) -> Self {
         self.inner = self.inner.set_document_format(input);
         self
     }

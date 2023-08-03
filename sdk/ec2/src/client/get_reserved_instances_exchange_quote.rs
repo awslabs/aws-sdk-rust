@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`target_configuration_value_set(Option<Vec<TargetReservationValue>>)`](crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteOutput::target_configuration_value_set): <p>The values of the target Convertible Reserved Instances.</p>
     ///   - [`validation_failure_reason(Option<String>)`](crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteOutput::validation_failure_reason): <p>Describes the reason why the exchange cannot be completed.</p>
     /// - On failure, responds with [`SdkError<GetReservedInstancesExchangeQuoteError>`](crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteError)
-    pub fn get_reserved_instances_exchange_quote(&self) -> crate::operation::get_reserved_instances_exchange_quote::builders::GetReservedInstancesExchangeQuoteFluentBuilder{
+    pub fn get_reserved_instances_exchange_quote(
+        &self,
+    ) -> crate::operation::get_reserved_instances_exchange_quote::builders::GetReservedInstancesExchangeQuoteFluentBuilder {
         crate::operation::get_reserved_instances_exchange_quote::builders::GetReservedInstancesExchangeQuoteFluentBuilder::new(self.handle.clone())
     }
 }

@@ -73,18 +73,14 @@ impl DescribeDhcpOptionsInput {
 }
 impl DescribeDhcpOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDhcpOptionsInput`](crate::operation::describe_dhcp_options::DescribeDhcpOptionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsInputBuilder {
-        crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsInputBuilder {
+        crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDhcpOptionsInput`](crate::operation::describe_dhcp_options::DescribeDhcpOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDhcpOptionsInputBuilder {
     pub(crate) dhcp_options_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -99,10 +95,7 @@ impl DescribeDhcpOptionsInputBuilder {
     ///
     /// <p>The IDs of one or more DHCP options sets.</p>
     /// <p>Default: Describes all your DHCP options sets.</p>
-    pub fn dhcp_options_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dhcp_options_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dhcp_options_ids.unwrap_or_default();
         v.push(input.into());
         self.dhcp_options_ids = ::std::option::Option::Some(v);
@@ -110,18 +103,13 @@ impl DescribeDhcpOptionsInputBuilder {
     }
     /// <p>The IDs of one or more DHCP options sets.</p>
     /// <p>Default: Describes all your DHCP options sets.</p>
-    pub fn set_dhcp_options_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dhcp_options_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dhcp_options_ids = input;
         self
     }
     /// <p>The IDs of one or more DHCP options sets.</p>
     /// <p>Default: Describes all your DHCP options sets.</p>
-    pub fn get_dhcp_options_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dhcp_options_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dhcp_options_ids
     }
     /// Appends an item to `filters`.
@@ -164,10 +152,7 @@ impl DescribeDhcpOptionsInputBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -234,18 +219,14 @@ impl DescribeDhcpOptionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDhcpOptionsInput`](crate::operation::describe_dhcp_options::DescribeDhcpOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_dhcp_options::DescribeDhcpOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_dhcp_options::DescribeDhcpOptionsInput {
-                dhcp_options_ids: self.dhcp_options_ids,
-                filters: self.filters,
-                dry_run: self.dry_run,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_dhcp_options::DescribeDhcpOptionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_dhcp_options::DescribeDhcpOptionsInput {
+            dhcp_options_ids: self.dhcp_options_ids,
+            filters: self.filters,
+            dry_run: self.dry_run,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

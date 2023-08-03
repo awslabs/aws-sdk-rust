@@ -23,17 +23,14 @@ impl ListDistributionsInput {
 }
 impl ListDistributionsInput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsInput`](crate::operation::list_distributions::ListDistributionsInput).
-    pub fn builder() -> crate::operation::list_distributions::builders::ListDistributionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_distributions::builders::ListDistributionsInputBuilder {
         crate::operation::list_distributions::builders::ListDistributionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDistributionsInput`](crate::operation::list_distributions::ListDistributionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributionsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -70,15 +67,10 @@ impl ListDistributionsInputBuilder {
     /// Consumes the builder and constructs a [`ListDistributionsInput`](crate::operation::list_distributions::ListDistributionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_distributions::ListDistributionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_distributions::ListDistributionsInput {
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_distributions::ListDistributionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_distributions::ListDistributionsInput {
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

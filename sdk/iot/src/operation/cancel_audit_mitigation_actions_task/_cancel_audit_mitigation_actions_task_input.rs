@@ -15,16 +15,14 @@ impl CancelAuditMitigationActionsTaskInput {
 }
 impl CancelAuditMitigationActionsTaskInput {
     /// Creates a new builder-style object to manufacture [`CancelAuditMitigationActionsTaskInput`](crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput).
-    pub fn builder() -> crate::operation::cancel_audit_mitigation_actions_task::builders::CancelAuditMitigationActionsTaskInputBuilder{
+    pub fn builder() -> crate::operation::cancel_audit_mitigation_actions_task::builders::CancelAuditMitigationActionsTaskInputBuilder {
         crate::operation::cancel_audit_mitigation_actions_task::builders::CancelAuditMitigationActionsTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelAuditMitigationActionsTaskInput`](crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelAuditMitigationActionsTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl CancelAuditMitigationActionsTaskInputBuilder {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`CancelAuditMitigationActionsTaskInput`](crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput {
-                task_id: self.task_id
-                ,
-            }
+            crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput { task_id: self.task_id },
         )
     }
 }

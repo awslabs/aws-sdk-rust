@@ -15,18 +15,14 @@ impl GetBootstrapBrokersInput {
 }
 impl GetBootstrapBrokersInput {
     /// Creates a new builder-style object to manufacture [`GetBootstrapBrokersInput`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput).
-    pub fn builder(
-    ) -> crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersInputBuilder {
-        crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersInputBuilder {
+        crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBootstrapBrokersInput`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBootstrapBrokersInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl GetBootstrapBrokersInputBuilder {
     /// Consumes the builder and constructs a [`GetBootstrapBrokersInput`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput {
-                cluster_arn: self.cluster_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput {
+            cluster_arn: self.cluster_arn,
+        })
     }
 }

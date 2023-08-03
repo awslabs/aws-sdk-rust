@@ -18,9 +18,7 @@ pub struct CancelJobExecutionInput {
     pub expected_version: ::std::option::Option<i64>,
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
     #[doc(hidden)]
-    pub status_details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub status_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CancelJobExecutionInput {
     /// <p>The ID of the job to be canceled.</p>
@@ -41,35 +39,26 @@ impl CancelJobExecutionInput {
         self.expected_version
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
-    pub fn status_details(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn status_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.status_details.as_ref()
     }
 }
 impl CancelJobExecutionInput {
     /// Creates a new builder-style object to manufacture [`CancelJobExecutionInput`](crate::operation::cancel_job_execution::CancelJobExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_job_execution::builders::CancelJobExecutionInputBuilder {
+    pub fn builder() -> crate::operation::cancel_job_execution::builders::CancelJobExecutionInputBuilder {
         crate::operation::cancel_job_execution::builders::CancelJobExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelJobExecutionInput`](crate::operation::cancel_job_execution::CancelJobExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelJobExecutionInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
     pub(crate) expected_version: ::std::option::Option<i64>,
-    pub(crate) status_details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) status_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CancelJobExecutionInputBuilder {
     /// <p>The ID of the job to be canceled.</p>
@@ -149,36 +138,25 @@ impl CancelJobExecutionInputBuilder {
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
     pub fn set_status_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.status_details = input;
         self
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
-    pub fn get_status_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_status_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.status_details
     }
     /// Consumes the builder and constructs a [`CancelJobExecutionInput`](crate::operation::cancel_job_execution::CancelJobExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_job_execution::CancelJobExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_job_execution::CancelJobExecutionInput {
-                job_id: self.job_id,
-                thing_name: self.thing_name,
-                force: self.force,
-                expected_version: self.expected_version,
-                status_details: self.status_details,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_job_execution::CancelJobExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_job_execution::CancelJobExecutionInput {
+            job_id: self.job_id,
+            thing_name: self.thing_name,
+            force: self.force,
+            expected_version: self.expected_version,
+            status_details: self.status_details,
+        })
     }
 }

@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`associations(Option<Vec<TransitGatewayRouteTableAssociation>>)`](crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsOutput::associations): <p>Information about the associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetTransitGatewayRouteTableAssociationsError>`](crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsError)
-    pub fn get_transit_gateway_route_table_associations(&self) -> crate::operation::get_transit_gateway_route_table_associations::builders::GetTransitGatewayRouteTableAssociationsFluentBuilder{
-        crate::operation::get_transit_gateway_route_table_associations::builders::GetTransitGatewayRouteTableAssociationsFluentBuilder::new(self.handle.clone())
+    pub fn get_transit_gateway_route_table_associations(
+        &self,
+    ) -> crate::operation::get_transit_gateway_route_table_associations::builders::GetTransitGatewayRouteTableAssociationsFluentBuilder {
+        crate::operation::get_transit_gateway_route_table_associations::builders::GetTransitGatewayRouteTableAssociationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

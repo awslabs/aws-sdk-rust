@@ -70,7 +70,7 @@ impl ::std::fmt::Debug for StartFraudsterRegistrationJobInput {
 }
 impl StartFraudsterRegistrationJobInput {
     /// Creates a new builder-style object to manufacture [`StartFraudsterRegistrationJobInput`](crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput).
-    pub fn builder() -> crate::operation::start_fraudster_registration_job::builders::StartFraudsterRegistrationJobInputBuilder{
+    pub fn builder() -> crate::operation::start_fraudster_registration_job::builders::StartFraudsterRegistrationJobInputBuilder {
         crate::operation::start_fraudster_registration_job::builders::StartFraudsterRegistrationJobInputBuilder::default()
     }
 }
@@ -131,18 +131,12 @@ impl StartFraudsterRegistrationJobInputBuilder {
         &self.domain_id
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -156,17 +150,12 @@ impl StartFraudsterRegistrationJobInputBuilder {
         self
     }
     /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
-    pub fn set_registration_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationConfig>,
-    ) -> Self {
+    pub fn set_registration_config(mut self, input: ::std::option::Option<crate::types::RegistrationConfig>) -> Self {
         self.registration_config = input;
         self
     }
     /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
-    pub fn get_registration_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistrationConfig> {
+    pub fn get_registration_config(&self) -> &::std::option::Option<crate::types::RegistrationConfig> {
         &self.registration_config
     }
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
@@ -175,10 +164,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
         self
     }
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
@@ -192,10 +178,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
         self
     }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
@@ -210,24 +193,15 @@ impl StartFraudsterRegistrationJobInputBuilder {
         crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput {
-                client_token: self.client_token
-                ,
-                job_name: self.job_name
-                ,
-                domain_id: self.domain_id
-                ,
-                data_access_role_arn: self.data_access_role_arn
-                ,
-                registration_config: self.registration_config
-                ,
-                input_data_config: self.input_data_config
-                ,
-                output_data_config: self.output_data_config
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput {
+            client_token: self.client_token,
+            job_name: self.job_name,
+            domain_id: self.domain_id,
+            data_access_role_arn: self.data_access_role_arn,
+            registration_config: self.registration_config,
+            input_data_config: self.input_data_config,
+            output_data_config: self.output_data_config,
+        })
     }
 }
 impl ::std::fmt::Debug for StartFraudsterRegistrationJobInputBuilder {

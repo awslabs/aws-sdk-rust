@@ -10,10 +10,7 @@ impl RegisterClientInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_client::RegisterClientOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_client::RegisterClientError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_client::RegisterClientError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_client();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RegisterClientFluentBuilder {
         }
     }
     /// Access the RegisterClient as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_client::builders::RegisterClientInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_client::builders::RegisterClientInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl RegisterClientFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -152,10 +144,7 @@ impl RegisterClientFluentBuilder {
         self
     }
     /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
-    pub fn set_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_scopes(input);
         self
     }

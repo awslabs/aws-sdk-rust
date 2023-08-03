@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DisableTopicRuleOutput {
 }
 impl DisableTopicRuleOutput {
     /// Creates a new builder-style object to manufacture [`DisableTopicRuleOutput`](crate::operation::disable_topic_rule::DisableTopicRuleOutput).
-    pub fn builder() -> crate::operation::disable_topic_rule::builders::DisableTopicRuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_topic_rule::builders::DisableTopicRuleOutputBuilder {
         crate::operation::disable_topic_rule::builders::DisableTopicRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableTopicRuleOutput`](crate::operation::disable_topic_rule::DisableTopicRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableTopicRuleOutputBuilder {
     _request_id: Option<String>,
 }

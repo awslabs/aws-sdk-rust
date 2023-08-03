@@ -35,9 +35,7 @@ impl ModifyHostsOutput {
 
 /// A builder for [`ModifyHostsOutput`](crate::operation::modify_hosts::ModifyHostsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyHostsOutputBuilder {
     pub(crate) successful: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
@@ -56,10 +54,7 @@ impl ModifyHostsOutputBuilder {
         self
     }
     /// <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
-    pub fn set_successful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_successful(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.successful = input;
         self
     }
@@ -79,17 +74,12 @@ impl ModifyHostsOutputBuilder {
         self
     }
     /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the setting you requested can be used.</p>
-    pub fn set_unsuccessful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
-    ) -> Self {
+    pub fn set_unsuccessful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>) -> Self {
         self.unsuccessful = input;
         self
     }
     /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the setting you requested can be used.</p>
-    pub fn get_unsuccessful(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>> {
+    pub fn get_unsuccessful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>> {
         &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

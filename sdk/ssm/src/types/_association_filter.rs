@@ -34,9 +34,7 @@ impl AssociationFilter {
 
 /// A builder for [`AssociationFilter`](crate::types::AssociationFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociationFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::AssociationFilterKey>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl AssociationFilterBuilder {
     /// <p>The name of the filter.</p> <note>
     /// <p> <code>InstanceId</code> has been deprecated.</p>
     /// </note>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationFilterKey>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::AssociationFilterKey>) -> Self {
         self.key = input;
         self
     }

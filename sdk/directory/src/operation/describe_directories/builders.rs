@@ -10,10 +10,7 @@ impl DescribeDirectoriesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_directories::DescribeDirectoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_directories::DescribeDirectoriesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_directories::DescribeDirectoriesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_directories();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DescribeDirectoriesFluentBuilder {
         }
     }
     /// Access the DescribeDirectories as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_directories::builders::DescribeDirectoriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_directories::builders::DescribeDirectoriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DescribeDirectoriesFluentBuilder {
             crate::operation::describe_directories::DescribeDirectories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_directories::DescribeDirectoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_directories::DescribeDirectoriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DescribeDirectoriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DescribeDirectoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_directories::DescribeDirectoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_directories::DescribeDirectoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_directories::DescribeDirectoriesError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DescribeDirectoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_directories::DescribeDirectoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_directories::DescribeDirectoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_directories::DescribeDirectoriesError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +105,15 @@ impl DescribeDirectoriesFluentBuilder {
             crate::operation::describe_directories::DescribeDirectories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_directories::DescribeDirectoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_directories::DescribeDirectoriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_directories::paginator::DescribeDirectoriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_directories::paginator::DescribeDirectoriesPaginator {
-        crate::operation::describe_directories::paginator::DescribeDirectoriesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_directories::paginator::DescribeDirectoriesPaginator {
+        crate::operation::describe_directories::paginator::DescribeDirectoriesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `DirectoryIds`.
     ///
@@ -142,27 +121,19 @@ impl DescribeDirectoriesFluentBuilder {
     ///
     /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn directory_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_ids(input.into());
         self
     }
     /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn set_directory_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_directory_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_directory_ids(input);
         self
     }
     /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn get_directory_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_directory_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_directory_ids()
     }
     /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>

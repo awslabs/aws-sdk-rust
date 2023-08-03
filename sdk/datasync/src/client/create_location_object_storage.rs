@@ -16,7 +16,9 @@ impl super::Client {
     /// - On success, responds with [`CreateLocationObjectStorageOutput`](crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput::location_arn): <p>Specifies the ARN of the object storage system location that you create.</p>
     /// - On failure, responds with [`SdkError<CreateLocationObjectStorageError>`](crate::operation::create_location_object_storage::CreateLocationObjectStorageError)
-    pub fn create_location_object_storage(&self) -> crate::operation::create_location_object_storage::builders::CreateLocationObjectStorageFluentBuilder{
+    pub fn create_location_object_storage(
+        &self,
+    ) -> crate::operation::create_location_object_storage::builders::CreateLocationObjectStorageFluentBuilder {
         crate::operation::create_location_object_storage::builders::CreateLocationObjectStorageFluentBuilder::new(self.handle.clone())
     }
 }

@@ -24,9 +24,7 @@ pub struct ProjectDescription {
     pub placement_template: ::std::option::Option<crate::types::PlacementTemplate>,
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ProjectDescription {
     /// <p>The ARN of the project.</p>
@@ -54,11 +52,7 @@ impl ProjectDescription {
         self.placement_template.as_ref()
     }
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -71,9 +65,7 @@ impl ProjectDescription {
 
 /// A builder for [`ProjectDescription`](crate::types::ProjectDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectDescriptionBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -81,9 +73,7 @@ pub struct ProjectDescriptionBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) placement_template: ::std::option::Option<crate::types::PlacementTemplate>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ProjectDescriptionBuilder {
     /// <p>The ARN of the project.</p>
@@ -134,10 +124,7 @@ impl ProjectDescriptionBuilder {
         self
     }
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -151,10 +138,7 @@ impl ProjectDescriptionBuilder {
         self
     }
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub fn set_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_date = input;
         self
     }
@@ -168,17 +152,12 @@ impl ProjectDescriptionBuilder {
         self
     }
     /// <p>An object describing the project's placement specifications.</p>
-    pub fn set_placement_template(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementTemplate>,
-    ) -> Self {
+    pub fn set_placement_template(mut self, input: ::std::option::Option<crate::types::PlacementTemplate>) -> Self {
         self.placement_template = input;
         self
     }
     /// <p>An object describing the project's placement specifications.</p>
-    pub fn get_placement_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::PlacementTemplate> {
+    pub fn get_placement_template(&self) -> &::std::option::Option<crate::types::PlacementTemplate> {
         &self.placement_template
     }
     /// Adds a key-value pair to `tags`.
@@ -186,32 +165,19 @@ impl ProjectDescriptionBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ProjectDescription`](crate::types::ProjectDescription).

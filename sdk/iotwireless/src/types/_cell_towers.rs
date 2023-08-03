@@ -51,9 +51,7 @@ impl CellTowers {
 
 /// A builder for [`CellTowers`](crate::types::CellTowers).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CellTowersBuilder {
     pub(crate) gsm: ::std::option::Option<::std::vec::Vec<crate::types::GsmObj>>,
     pub(crate) wcdma: ::std::option::Option<::std::vec::Vec<crate::types::WcdmaObj>>,
@@ -74,10 +72,7 @@ impl CellTowersBuilder {
         self
     }
     /// <p>GSM object information.</p>
-    pub fn set_gsm(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GsmObj>>,
-    ) -> Self {
+    pub fn set_gsm(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GsmObj>>) -> Self {
         self.gsm = input;
         self
     }
@@ -97,10 +92,7 @@ impl CellTowersBuilder {
         self
     }
     /// <p>WCDMA object information.</p>
-    pub fn set_wcdma(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WcdmaObj>>,
-    ) -> Self {
+    pub fn set_wcdma(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WcdmaObj>>) -> Self {
         self.wcdma = input;
         self
     }
@@ -120,10 +112,7 @@ impl CellTowersBuilder {
         self
     }
     /// <p>TD-SCDMA object information.</p>
-    pub fn set_tdscdma(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TdscdmaObj>>,
-    ) -> Self {
+    pub fn set_tdscdma(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TdscdmaObj>>) -> Self {
         self.tdscdma = input;
         self
     }
@@ -143,10 +132,7 @@ impl CellTowersBuilder {
         self
     }
     /// <p>LTE object information.</p>
-    pub fn set_lte(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LteObj>>,
-    ) -> Self {
+    pub fn set_lte(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LteObj>>) -> Self {
         self.lte = input;
         self
     }
@@ -166,10 +152,7 @@ impl CellTowersBuilder {
         self
     }
     /// <p>CDMA object information.</p>
-    pub fn set_cdma(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CdmaObj>>,
-    ) -> Self {
+    pub fn set_cdma(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CdmaObj>>) -> Self {
         self.cdma = input;
         self
     }

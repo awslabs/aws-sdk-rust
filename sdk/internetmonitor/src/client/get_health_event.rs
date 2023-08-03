@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`impact_type(Option<HealthEventImpactType>)`](crate::operation::get_health_event::GetHealthEventOutput::impact_type): <p>The type of impairment of a specific health event.</p>
     ///   - [`health_score_threshold(f64)`](crate::operation::get_health_event::GetHealthEventOutput::health_score_threshold): <p>The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.</p>
     /// - On failure, responds with [`SdkError<GetHealthEventError>`](crate::operation::get_health_event::GetHealthEventError)
-    pub fn get_health_event(
-        &self,
-    ) -> crate::operation::get_health_event::builders::GetHealthEventFluentBuilder {
-        crate::operation::get_health_event::builders::GetHealthEventFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_health_event(&self) -> crate::operation::get_health_event::builders::GetHealthEventFluentBuilder {
+        crate::operation::get_health_event::builders::GetHealthEventFluentBuilder::new(self.handle.clone())
     }
 }

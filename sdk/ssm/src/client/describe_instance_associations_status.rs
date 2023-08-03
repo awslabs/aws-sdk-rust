@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`instance_association_status_infos(Option<Vec<InstanceAssociationStatusInfo>>)`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput::instance_association_status_infos): <p>Status information about the association.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceAssociationsStatusError>`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusError)
-    pub fn describe_instance_associations_status(&self) -> crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder{
+    pub fn describe_instance_associations_status(
+        &self,
+    ) -> crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder {
         crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusFluentBuilder::new(self.handle.clone())
     }
 }

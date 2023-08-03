@@ -26,7 +26,7 @@ impl ListTestGridSessionActionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTestGridSessionActionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsInputBuilder,
+    inner: crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsInputBuilder,
 }
 impl ListTestGridSessionActionsFluentBuilder {
     /// Creates a new `ListTestGridSessionActions`.
@@ -37,7 +37,7 @@ impl ListTestGridSessionActionsFluentBuilder {
         }
     }
     /// Access the ListTestGridSessionActions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListTestGridSessionActionsFluentBuilder {
             crate::operation::list_test_grid_session_actions::ListTestGridSessionActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListTestGridSessionActionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListTestGridSessionActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListTestGridSessionActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListTestGridSessionActionsFluentBuilder {
             crate::operation::list_test_grid_session_actions::ListTestGridSessionActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_test_grid_session_actions::paginator::ListTestGridSessionActionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_test_grid_session_actions::paginator::ListTestGridSessionActionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_test_grid_session_actions::paginator::ListTestGridSessionActionsPaginator {
         crate::operation::list_test_grid_session_actions::paginator::ListTestGridSessionActionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the session to retrieve.</p>

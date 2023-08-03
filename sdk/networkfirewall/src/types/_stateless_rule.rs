@@ -34,9 +34,7 @@ impl StatelessRule {
 
 /// A builder for [`StatelessRule`](crate::types::StatelessRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatelessRuleBuilder {
     pub(crate) rule_definition: ::std::option::Option<crate::types::RuleDefinition>,
     pub(crate) priority: ::std::option::Option<i32>,
@@ -48,10 +46,7 @@ impl StatelessRuleBuilder {
         self
     }
     /// <p>Defines the stateless 5-tuple packet inspection criteria and the action to take on a packet that matches the criteria. </p>
-    pub fn set_rule_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleDefinition>,
-    ) -> Self {
+    pub fn set_rule_definition(mut self, input: ::std::option::Option<crate::types::RuleDefinition>) -> Self {
         self.rule_definition = input;
         self
     }

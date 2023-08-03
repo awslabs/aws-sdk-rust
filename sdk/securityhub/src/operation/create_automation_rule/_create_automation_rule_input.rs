@@ -5,9 +5,7 @@
 pub struct CreateAutomationRuleInput {
     /// <p> User-defined tags that help you label the purpose of a rule. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>. </p>
     #[doc(hidden)]
     pub rule_status: ::std::option::Option<crate::types::RuleStatus>,
@@ -32,11 +30,7 @@ pub struct CreateAutomationRuleInput {
 }
 impl CreateAutomationRuleInput {
     /// <p> User-defined tags that help you label the purpose of a rule. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>. </p>
@@ -70,21 +64,16 @@ impl CreateAutomationRuleInput {
 }
 impl CreateAutomationRuleInput {
     /// Creates a new builder-style object to manufacture [`CreateAutomationRuleInput`](crate::operation::create_automation_rule::CreateAutomationRuleInput).
-    pub fn builder(
-    ) -> crate::operation::create_automation_rule::builders::CreateAutomationRuleInputBuilder {
+    pub fn builder() -> crate::operation::create_automation_rule::builders::CreateAutomationRuleInputBuilder {
         crate::operation::create_automation_rule::builders::CreateAutomationRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAutomationRuleInput`](crate::operation::create_automation_rule::CreateAutomationRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAutomationRuleInputBuilder {
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) rule_status: ::std::option::Option<crate::types::RuleStatus>,
     pub(crate) rule_order: ::std::option::Option<i32>,
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
@@ -99,32 +88,19 @@ impl CreateAutomationRuleInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> User-defined tags that help you label the purpose of a rule. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> User-defined tags that help you label the purpose of a rule. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p> User-defined tags that help you label the purpose of a rule. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p> Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>. </p>
@@ -133,10 +109,7 @@ impl CreateAutomationRuleInputBuilder {
         self
     }
     /// <p> Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>. </p>
-    pub fn set_rule_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleStatus>,
-    ) -> Self {
+    pub fn set_rule_status(mut self, input: ::std::option::Option<crate::types::RuleStatus>) -> Self {
         self.rule_status = input;
         self
     }
@@ -206,17 +179,12 @@ impl CreateAutomationRuleInputBuilder {
         self
     }
     /// <p> A set of ASFF finding field attributes and corresponding expected values that Security Hub uses to filter findings. If a rule is enabled and a finding matches the conditions specified in this parameter, Security Hub applies the rule action to the finding. </p>
-    pub fn set_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::AutomationRulesFindingFilters>,
-    ) -> Self {
+    pub fn set_criteria(mut self, input: ::std::option::Option<crate::types::AutomationRulesFindingFilters>) -> Self {
         self.criteria = input;
         self
     }
     /// <p> A set of ASFF finding field attributes and corresponding expected values that Security Hub uses to filter findings. If a rule is enabled and a finding matches the conditions specified in this parameter, Security Hub applies the rule action to the finding. </p>
-    pub fn get_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutomationRulesFindingFilters> {
+    pub fn get_criteria(&self) -> &::std::option::Option<crate::types::AutomationRulesFindingFilters> {
         &self.criteria
     }
     /// Appends an item to `actions`.
@@ -231,37 +199,28 @@ impl CreateAutomationRuleInputBuilder {
         self
     }
     /// <p> One or more actions to update finding fields if a finding matches the conditions specified in <code>Criteria</code>. </p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p> One or more actions to update finding fields if a finding matches the conditions specified in <code>Criteria</code>. </p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`CreateAutomationRuleInput`](crate::operation::create_automation_rule::CreateAutomationRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_automation_rule::CreateAutomationRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_automation_rule::CreateAutomationRuleInput {
-                tags: self.tags,
-                rule_status: self.rule_status,
-                rule_order: self.rule_order,
-                rule_name: self.rule_name,
-                description: self.description,
-                is_terminal: self.is_terminal,
-                criteria: self.criteria,
-                actions: self.actions,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_automation_rule::CreateAutomationRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_automation_rule::CreateAutomationRuleInput {
+            tags: self.tags,
+            rule_status: self.rule_status,
+            rule_order: self.rule_order,
+            rule_name: self.rule_name,
+            description: self.description,
+            is_terminal: self.is_terminal,
+            criteria: self.criteria,
+            actions: self.actions,
+        })
     }
 }

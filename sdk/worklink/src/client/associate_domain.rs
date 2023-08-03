@@ -9,14 +9,8 @@ impl super::Client {
     ///   - [`acm_certificate_arn(impl ::std::convert::Into<String>)`](crate::operation::associate_domain::builders::AssociateDomainFluentBuilder::acm_certificate_arn) / [`set_acm_certificate_arn(Option<String>)`](crate::operation::associate_domain::builders::AssociateDomainFluentBuilder::set_acm_certificate_arn): <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
     /// - On success, responds with [`AssociateDomainOutput`](crate::operation::associate_domain::AssociateDomainOutput)
     /// - On failure, responds with [`SdkError<AssociateDomainError>`](crate::operation::associate_domain::AssociateDomainError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn associate_domain(
-        &self,
-    ) -> crate::operation::associate_domain::builders::AssociateDomainFluentBuilder {
-        crate::operation::associate_domain::builders::AssociateDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn associate_domain(&self) -> crate::operation::associate_domain::builders::AssociateDomainFluentBuilder {
+        crate::operation::associate_domain::builders::AssociateDomainFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateNotificationRuleOutput {
 }
 impl CreateNotificationRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateNotificationRuleOutput`](crate::operation::create_notification_rule::CreateNotificationRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::create_notification_rule::builders::CreateNotificationRuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_notification_rule::builders::CreateNotificationRuleOutputBuilder {
         crate::operation::create_notification_rule::builders::CreateNotificationRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNotificationRuleOutput`](crate::operation::create_notification_rule::CreateNotificationRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNotificationRuleOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

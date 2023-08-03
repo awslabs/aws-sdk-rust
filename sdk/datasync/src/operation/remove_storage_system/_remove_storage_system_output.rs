@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveStorageSystemOutput {
 }
 impl RemoveStorageSystemOutput {
     /// Creates a new builder-style object to manufacture [`RemoveStorageSystemOutput`](crate::operation::remove_storage_system::RemoveStorageSystemOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_storage_system::builders::RemoveStorageSystemOutputBuilder {
-        crate::operation::remove_storage_system::builders::RemoveStorageSystemOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::remove_storage_system::builders::RemoveStorageSystemOutputBuilder {
+        crate::operation::remove_storage_system::builders::RemoveStorageSystemOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveStorageSystemOutput`](crate::operation::remove_storage_system::RemoveStorageSystemOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveStorageSystemOutputBuilder {
     _request_id: Option<String>,
 }

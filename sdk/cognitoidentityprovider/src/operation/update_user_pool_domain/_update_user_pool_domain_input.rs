@@ -26,25 +26,20 @@ impl UpdateUserPoolDomainInput {
         self.user_pool_id.as_deref()
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
-    pub fn custom_domain_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomDomainConfigType> {
+    pub fn custom_domain_config(&self) -> ::std::option::Option<&crate::types::CustomDomainConfigType> {
         self.custom_domain_config.as_ref()
     }
 }
 impl UpdateUserPoolDomainInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserPoolDomainInput`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainInput).
-    pub fn builder(
-    ) -> crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainInputBuilder {
+    pub fn builder() -> crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainInputBuilder {
         crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserPoolDomainInput`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserPoolDomainInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
@@ -88,32 +83,23 @@ impl UpdateUserPoolDomainInputBuilder {
         self
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
-    pub fn set_custom_domain_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomDomainConfigType>,
-    ) -> Self {
+    pub fn set_custom_domain_config(mut self, input: ::std::option::Option<crate::types::CustomDomainConfigType>) -> Self {
         self.custom_domain_config = input;
         self
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
-    pub fn get_custom_domain_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
+    pub fn get_custom_domain_config(&self) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
         &self.custom_domain_config
     }
     /// Consumes the builder and constructs a [`UpdateUserPoolDomainInput`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_user_pool_domain::UpdateUserPoolDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_user_pool_domain::UpdateUserPoolDomainInput {
-                domain: self.domain,
-                user_pool_id: self.user_pool_id,
-                custom_domain_config: self.custom_domain_config,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_user_pool_domain::UpdateUserPoolDomainInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_user_pool_domain::UpdateUserPoolDomainInput {
+            domain: self.domain,
+            user_pool_id: self.user_pool_id,
+            custom_domain_config: self.custom_domain_config,
+        })
     }
 }

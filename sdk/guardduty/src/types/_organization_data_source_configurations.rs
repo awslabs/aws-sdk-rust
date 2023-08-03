@@ -12,8 +12,7 @@ pub struct OrganizationDataSourceConfigurations {
     pub kubernetes: ::std::option::Option<crate::types::OrganizationKubernetesConfiguration>,
     /// <p>Describes the configuration of Malware Protection for new members of the organization.</p>
     #[doc(hidden)]
-    pub malware_protection:
-        ::std::option::Option<crate::types::OrganizationMalwareProtectionConfiguration>,
+    pub malware_protection: ::std::option::Option<crate::types::OrganizationMalwareProtectionConfiguration>,
 }
 impl OrganizationDataSourceConfigurations {
     /// <p>Describes whether S3 data event logs are enabled for new members of the organization.</p>
@@ -21,15 +20,11 @@ impl OrganizationDataSourceConfigurations {
         self.s3_logs.as_ref()
     }
     /// <p>Describes the configuration of Kubernetes data sources for new members of the organization.</p>
-    pub fn kubernetes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrganizationKubernetesConfiguration> {
+    pub fn kubernetes(&self) -> ::std::option::Option<&crate::types::OrganizationKubernetesConfiguration> {
         self.kubernetes.as_ref()
     }
     /// <p>Describes the configuration of Malware Protection for new members of the organization.</p>
-    pub fn malware_protection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrganizationMalwareProtectionConfiguration> {
+    pub fn malware_protection(&self) -> ::std::option::Option<&crate::types::OrganizationMalwareProtectionConfiguration> {
         self.malware_protection.as_ref()
     }
 }
@@ -42,14 +37,11 @@ impl OrganizationDataSourceConfigurations {
 
 /// A builder for [`OrganizationDataSourceConfigurations`](crate::types::OrganizationDataSourceConfigurations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationDataSourceConfigurationsBuilder {
     pub(crate) s3_logs: ::std::option::Option<crate::types::OrganizationS3LogsConfiguration>,
     pub(crate) kubernetes: ::std::option::Option<crate::types::OrganizationKubernetesConfiguration>,
-    pub(crate) malware_protection:
-        ::std::option::Option<crate::types::OrganizationMalwareProtectionConfiguration>,
+    pub(crate) malware_protection: ::std::option::Option<crate::types::OrganizationMalwareProtectionConfiguration>,
 }
 impl OrganizationDataSourceConfigurationsBuilder {
     /// <p>Describes whether S3 data event logs are enabled for new members of the organization.</p>
@@ -58,17 +50,12 @@ impl OrganizationDataSourceConfigurationsBuilder {
         self
     }
     /// <p>Describes whether S3 data event logs are enabled for new members of the organization.</p>
-    pub fn set_s3_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationS3LogsConfiguration>,
-    ) -> Self {
+    pub fn set_s3_logs(mut self, input: ::std::option::Option<crate::types::OrganizationS3LogsConfiguration>) -> Self {
         self.s3_logs = input;
         self
     }
     /// <p>Describes whether S3 data event logs are enabled for new members of the organization.</p>
-    pub fn get_s3_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationS3LogsConfiguration> {
+    pub fn get_s3_logs(&self) -> &::std::option::Option<crate::types::OrganizationS3LogsConfiguration> {
         &self.s3_logs
     }
     /// <p>Describes the configuration of Kubernetes data sources for new members of the organization.</p>
@@ -77,39 +64,26 @@ impl OrganizationDataSourceConfigurationsBuilder {
         self
     }
     /// <p>Describes the configuration of Kubernetes data sources for new members of the organization.</p>
-    pub fn set_kubernetes(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationKubernetesConfiguration>,
-    ) -> Self {
+    pub fn set_kubernetes(mut self, input: ::std::option::Option<crate::types::OrganizationKubernetesConfiguration>) -> Self {
         self.kubernetes = input;
         self
     }
     /// <p>Describes the configuration of Kubernetes data sources for new members of the organization.</p>
-    pub fn get_kubernetes(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationKubernetesConfiguration> {
+    pub fn get_kubernetes(&self) -> &::std::option::Option<crate::types::OrganizationKubernetesConfiguration> {
         &self.kubernetes
     }
     /// <p>Describes the configuration of Malware Protection for new members of the organization.</p>
-    pub fn malware_protection(
-        mut self,
-        input: crate::types::OrganizationMalwareProtectionConfiguration,
-    ) -> Self {
+    pub fn malware_protection(mut self, input: crate::types::OrganizationMalwareProtectionConfiguration) -> Self {
         self.malware_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the configuration of Malware Protection for new members of the organization.</p>
-    pub fn set_malware_protection(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationMalwareProtectionConfiguration>,
-    ) -> Self {
+    pub fn set_malware_protection(mut self, input: ::std::option::Option<crate::types::OrganizationMalwareProtectionConfiguration>) -> Self {
         self.malware_protection = input;
         self
     }
     /// <p>Describes the configuration of Malware Protection for new members of the organization.</p>
-    pub fn get_malware_protection(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationMalwareProtectionConfiguration> {
+    pub fn get_malware_protection(&self) -> &::std::option::Option<crate::types::OrganizationMalwareProtectionConfiguration> {
         &self.malware_protection
     }
     /// Consumes the builder and constructs a [`OrganizationDataSourceConfigurations`](crate::types::OrganizationDataSourceConfigurations).

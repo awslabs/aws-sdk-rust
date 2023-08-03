@@ -36,9 +36,7 @@ impl GetListElementsInput {
 
 /// A builder for [`GetListElementsInput`](crate::operation::get_list_elements::GetListElementsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetListElementsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl GetListElementsInputBuilder {
     /// Consumes the builder and constructs a [`GetListElementsInput`](crate::operation::get_list_elements::GetListElementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_list_elements::GetListElementsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_list_elements::GetListElementsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_list_elements::GetListElementsInput {
             name: self.name,
             next_token: self.next_token,

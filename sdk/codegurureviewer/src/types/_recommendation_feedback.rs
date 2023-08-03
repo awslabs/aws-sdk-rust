@@ -60,9 +60,7 @@ impl RecommendationFeedback {
 
 /// A builder for [`RecommendationFeedback`](crate::types::RecommendationFeedback).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationFeedbackBuilder {
     pub(crate) code_review_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
@@ -73,18 +71,12 @@ pub struct RecommendationFeedbackBuilder {
 }
 impl RecommendationFeedbackBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_review_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_review_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn set_code_review_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_review_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_review_arn = input;
         self
     }
@@ -93,18 +85,12 @@ impl RecommendationFeedbackBuilder {
         &self.code_review_arn
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }
@@ -124,10 +110,7 @@ impl RecommendationFeedbackBuilder {
         self
     }
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback.</p>
-    pub fn set_reactions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Reaction>>,
-    ) -> Self {
+    pub fn set_reactions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Reaction>>) -> Self {
         self.reactions = input;
         self
     }
@@ -158,10 +141,7 @@ impl RecommendationFeedbackBuilder {
         self
     }
     /// <p>The time at which the feedback was created.</p>
-    pub fn set_created_time_stamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time_stamp = input;
         self
     }
@@ -175,17 +155,12 @@ impl RecommendationFeedbackBuilder {
         self
     }
     /// <p>The time at which the feedback was last updated.</p>
-    pub fn set_last_updated_time_stamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time_stamp = input;
         self
     }
     /// <p>The time at which the feedback was last updated.</p>
-    pub fn get_last_updated_time_stamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time_stamp
     }
     /// Consumes the builder and constructs a [`RecommendationFeedback`](crate::types::RecommendationFeedback).

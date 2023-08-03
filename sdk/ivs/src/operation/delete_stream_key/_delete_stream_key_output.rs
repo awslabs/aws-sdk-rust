@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteStreamKeyOutput {
 }
 impl DeleteStreamKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStreamKeyOutput`](crate::operation::delete_stream_key::DeleteStreamKeyOutput).
-    pub fn builder() -> crate::operation::delete_stream_key::builders::DeleteStreamKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_stream_key::builders::DeleteStreamKeyOutputBuilder {
         crate::operation::delete_stream_key::builders::DeleteStreamKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStreamKeyOutput`](crate::operation::delete_stream_key::DeleteStreamKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStreamKeyOutputBuilder {
     _request_id: Option<String>,
 }

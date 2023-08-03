@@ -30,9 +30,7 @@ impl TechnicalCueSegment {
 
 /// A builder for [`TechnicalCueSegment`](crate::types::TechnicalCueSegment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TechnicalCueSegmentBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TechnicalCueType>,
     pub(crate) confidence: ::std::option::Option<f32>,
@@ -44,10 +42,7 @@ impl TechnicalCueSegmentBuilder {
         self
     }
     /// <p>The type of the technical cue.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TechnicalCueType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TechnicalCueType>) -> Self {
         self.r#type = input;
         self
     }

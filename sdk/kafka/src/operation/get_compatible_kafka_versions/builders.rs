@@ -26,7 +26,7 @@ impl GetCompatibleKafkaVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCompatibleKafkaVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsInputBuilder,
+    inner: crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsInputBuilder,
 }
 impl GetCompatibleKafkaVersionsFluentBuilder {
     /// Creates a new `GetCompatibleKafkaVersions`.
@@ -37,7 +37,7 @@ impl GetCompatibleKafkaVersionsFluentBuilder {
         }
     }
     /// Access the GetCompatibleKafkaVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetCompatibleKafkaVersionsFluentBuilder {
             crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetCompatibleKafkaVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetCompatibleKafkaVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetCompatibleKafkaVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetCompatibleKafkaVersionsFluentBuilder {
             crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError>,
     > {
         self.customize_middleware().await
     }

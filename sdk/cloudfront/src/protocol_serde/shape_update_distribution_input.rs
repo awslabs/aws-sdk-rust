@@ -6,17 +6,14 @@ pub fn ser_distribution_config_http_payload(
         Some(t) => t,
         None => return Ok(crate::protocol_serde::rest_xml_unset_payload()),
     };
-    Ok(
-        crate::protocol_serde::shape_update_distribution_input::ser_distribution_config_payload(
-            payload,
-        )?,
-    )
+    Ok(crate::protocol_serde::shape_update_distribution_input::ser_distribution_config_payload(
+        payload,
+    )?)
 }
 
 pub fn ser_distribution_config_payload(
     input: &crate::types::DistributionConfig,
-) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

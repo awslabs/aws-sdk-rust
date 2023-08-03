@@ -10,10 +10,7 @@ impl ListTagsLogGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_tags_log_group::ListTagsLogGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_log_group::ListTagsLogGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_log_group::ListTagsLogGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_tags_log_group();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl ListTagsLogGroupFluentBuilder {
         }
     }
     /// Access the ListTagsLogGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_tags_log_group::builders::ListTagsLogGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_tags_log_group::builders::ListTagsLogGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl ListTagsLogGroupFluentBuilder {
             crate::operation::list_tags_log_group::ListTagsLogGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_log_group::ListTagsLogGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_log_group::ListTagsLogGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl ListTagsLogGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl ListTagsLogGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_log_group::ListTagsLogGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_log_group::ListTagsLogGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_log_group::ListTagsLogGroupError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl ListTagsLogGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_log_group::ListTagsLogGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_log_group::ListTagsLogGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_log_group::ListTagsLogGroupError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl ListTagsLogGroupFluentBuilder {
             crate::operation::list_tags_log_group::ListTagsLogGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_log_group::ListTagsLogGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_log_group::ListTagsLogGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }

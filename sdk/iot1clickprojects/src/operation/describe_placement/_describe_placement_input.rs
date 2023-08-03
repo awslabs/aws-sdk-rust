@@ -22,35 +22,26 @@ impl DescribePlacementInput {
 }
 impl DescribePlacementInput {
     /// Creates a new builder-style object to manufacture [`DescribePlacementInput`](crate::operation::describe_placement::DescribePlacementInput).
-    pub fn builder() -> crate::operation::describe_placement::builders::DescribePlacementInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_placement::builders::DescribePlacementInputBuilder {
         crate::operation::describe_placement::builders::DescribePlacementInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePlacementInput`](crate::operation::describe_placement::DescribePlacementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePlacementInputBuilder {
     pub(crate) placement_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribePlacementInputBuilder {
     /// <p>The name of the placement within a project.</p>
-    pub fn placement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the placement within a project.</p>
-    pub fn set_placement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.placement_name = input;
         self
     }
@@ -75,15 +66,10 @@ impl DescribePlacementInputBuilder {
     /// Consumes the builder and constructs a [`DescribePlacementInput`](crate::operation::describe_placement::DescribePlacementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_placement::DescribePlacementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_placement::DescribePlacementInput {
-                placement_name: self.placement_name,
-                project_name: self.project_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_placement::DescribePlacementInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_placement::DescribePlacementInput {
+            placement_name: self.placement_name,
+            project_name: self.project_name,
+        })
     }
 }

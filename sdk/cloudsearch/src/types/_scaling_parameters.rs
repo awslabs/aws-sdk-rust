@@ -16,9 +16,7 @@ pub struct ScalingParameters {
 }
 impl ScalingParameters {
     /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
-    pub fn desired_instance_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PartitionInstanceType> {
+    pub fn desired_instance_type(&self) -> ::std::option::Option<&crate::types::PartitionInstanceType> {
         self.desired_instance_type.as_ref()
     }
     /// <p>The number of replicas you want to preconfigure for each index partition.</p>
@@ -39,9 +37,7 @@ impl ScalingParameters {
 
 /// A builder for [`ScalingParameters`](crate::types::ScalingParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScalingParametersBuilder {
     pub(crate) desired_instance_type: ::std::option::Option<crate::types::PartitionInstanceType>,
     pub(crate) desired_replication_count: ::std::option::Option<i32>,
@@ -54,17 +50,12 @@ impl ScalingParametersBuilder {
         self
     }
     /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
-    pub fn set_desired_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PartitionInstanceType>,
-    ) -> Self {
+    pub fn set_desired_instance_type(mut self, input: ::std::option::Option<crate::types::PartitionInstanceType>) -> Self {
         self.desired_instance_type = input;
         self
     }
     /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
-    pub fn get_desired_instance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::PartitionInstanceType> {
+    pub fn get_desired_instance_type(&self) -> &::std::option::Option<crate::types::PartitionInstanceType> {
         &self.desired_instance_type
     }
     /// <p>The number of replicas you want to preconfigure for each index partition.</p>

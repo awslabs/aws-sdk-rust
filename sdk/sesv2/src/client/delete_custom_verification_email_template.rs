@@ -6,7 +6,11 @@ impl super::Client {
     ///   - [`template_name(impl ::std::convert::Into<String>)`](crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateFluentBuilder::set_template_name): <p>The name of the custom verification email template that you want to delete.</p>
     /// - On success, responds with [`DeleteCustomVerificationEmailTemplateOutput`](crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteCustomVerificationEmailTemplateError>`](crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateError)
-    pub fn delete_custom_verification_email_template(&self) -> crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateFluentBuilder{
-        crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateFluentBuilder::new(self.handle.clone())
+    pub fn delete_custom_verification_email_template(
+        &self,
+    ) -> crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateFluentBuilder {
+        crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

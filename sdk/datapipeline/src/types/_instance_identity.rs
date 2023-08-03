@@ -32,9 +32,7 @@ impl InstanceIdentity {
 
 /// A builder for [`InstanceIdentity`](crate::types::InstanceIdentity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceIdentityBuilder {
     pub(crate) document: ::std::option::Option<::std::string::String>,
     pub(crate) signature: ::std::option::Option<::std::string::String>,

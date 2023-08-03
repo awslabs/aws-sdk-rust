@@ -54,9 +54,7 @@ impl ListImagesInput {
 
 /// A builder for [`ListImagesInput`](crate::operation::list_images::ListImagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImagesInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -80,18 +78,12 @@ impl ListImagesInputBuilder {
         &self.registry_id
     }
     /// <p>The repository with image IDs to be listed.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository with image IDs to be listed.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -139,10 +131,7 @@ impl ListImagesInputBuilder {
         self
     }
     /// <p>The filter key and value with which to filter your <code>ListImages</code> results.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListImagesFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListImagesFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -151,12 +140,7 @@ impl ListImagesInputBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`ListImagesInput`](crate::operation::list_images::ListImagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_images::ListImagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_images::ListImagesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_images::ListImagesInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

@@ -27,7 +27,7 @@ impl UpdateSigningCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSigningCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_signing_certificate::builders::UpdateSigningCertificateInputBuilder,
+    inner: crate::operation::update_signing_certificate::builders::UpdateSigningCertificateInputBuilder,
 }
 impl UpdateSigningCertificateFluentBuilder {
     /// Creates a new `UpdateSigningCertificate`.
@@ -38,10 +38,7 @@ impl UpdateSigningCertificateFluentBuilder {
         }
     }
     /// Access the UpdateSigningCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_signing_certificate::builders::UpdateSigningCertificateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_signing_certificate::builders::UpdateSigningCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UpdateSigningCertificateFluentBuilder {
             crate::operation::update_signing_certificate::UpdateSigningCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signing_certificate::UpdateSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_signing_certificate::UpdateSigningCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UpdateSigningCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UpdateSigningCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_signing_certificate::UpdateSigningCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signing_certificate::UpdateSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_signing_certificate::UpdateSigningCertificateError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UpdateSigningCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_signing_certificate::UpdateSigningCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signing_certificate::UpdateSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_signing_certificate::UpdateSigningCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl UpdateSigningCertificateFluentBuilder {
             crate::operation::update_signing_certificate::UpdateSigningCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signing_certificate::UpdateSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_signing_certificate::UpdateSigningCertificateError>,
     > {
         self.customize_middleware().await
     }
@@ -143,19 +129,13 @@ impl UpdateSigningCertificateFluentBuilder {
     }
     /// <p>The ID of the signing certificate you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_id(input.into());
         self
     }
     /// <p>The ID of the signing certificate you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_id(input);
         self
     }

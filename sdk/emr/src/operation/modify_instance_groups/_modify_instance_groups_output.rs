@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifyInstanceGroupsOutput {
 }
 impl ModifyInstanceGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceGroupsOutput`](crate::operation::modify_instance_groups::ModifyInstanceGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsOutputBuilder {
         crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyInstanceGroupsOutput`](crate::operation::modify_instance_groups::ModifyInstanceGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstanceGroupsOutputBuilder {
     _request_id: Option<String>,
 }

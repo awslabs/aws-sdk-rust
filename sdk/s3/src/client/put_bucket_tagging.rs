@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl ::std::convert::Into<String>)`](crate::operation::put_bucket_tagging::builders::PutBucketTaggingFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::put_bucket_tagging::builders::PutBucketTaggingFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     /// - On success, responds with [`PutBucketTaggingOutput`](crate::operation::put_bucket_tagging::PutBucketTaggingOutput)
     /// - On failure, responds with [`SdkError<PutBucketTaggingError>`](crate::operation::put_bucket_tagging::PutBucketTaggingError)
-    pub fn put_bucket_tagging(
-        &self,
-    ) -> crate::operation::put_bucket_tagging::builders::PutBucketTaggingFluentBuilder {
-        crate::operation::put_bucket_tagging::builders::PutBucketTaggingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_bucket_tagging(&self) -> crate::operation::put_bucket_tagging::builders::PutBucketTaggingFluentBuilder {
+        crate::operation::put_bucket_tagging::builders::PutBucketTaggingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AttachManagedPolicyToPermissionSetOut
 }
 impl AttachManagedPolicyToPermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`AttachManagedPolicyToPermissionSetOutput`](crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetOutput).
-    pub fn builder() -> crate::operation::attach_managed_policy_to_permission_set::builders::AttachManagedPolicyToPermissionSetOutputBuilder{
+    pub fn builder() -> crate::operation::attach_managed_policy_to_permission_set::builders::AttachManagedPolicyToPermissionSetOutputBuilder {
         crate::operation::attach_managed_policy_to_permission_set::builders::AttachManagedPolicyToPermissionSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachManagedPolicyToPermissionSetOutput`](crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachManagedPolicyToPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl AttachManagedPolicyToPermissionSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AttachManagedPolicyToPermissionSetOutput`](crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetOutput).
-    pub fn build(self) -> crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetOutput{
+    pub fn build(self) -> crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetOutput {
         crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetOutput {
             _request_id: self._request_id,
         }

@@ -32,10 +32,7 @@ pub fn ser_list_utterance_analytics_data_input(
     if let Some(var_8) = &input.sort_by {
         #[allow(unused_mut)]
         let mut object_9 = object.key("sortBy").start_object();
-        crate::protocol_serde::shape_utterance_data_sort_by::ser_utterance_data_sort_by(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_utterance_data_sort_by::ser_utterance_data_sort_by(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.start_date_time {

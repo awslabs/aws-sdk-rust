@@ -28,7 +28,7 @@ impl DeleteUserPermissionsBoundaryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUserPermissionsBoundaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryInputBuilder,
+    inner: crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryInputBuilder,
 }
 impl DeleteUserPermissionsBoundaryFluentBuilder {
     /// Creates a new `DeleteUserPermissionsBoundary`.
@@ -39,7 +39,7 @@ impl DeleteUserPermissionsBoundaryFluentBuilder {
         }
     }
     /// Access the DeleteUserPermissionsBoundary as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DeleteUserPermissionsBoundaryFluentBuilder {
             crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DeleteUserPermissionsBoundaryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DeleteUserPermissionsBoundaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DeleteUserPermissionsBoundaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DeleteUserPermissionsBoundaryFluentBuilder {
             crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryError>,
     > {
         self.customize_middleware().await
     }

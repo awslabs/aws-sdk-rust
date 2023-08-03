@@ -44,9 +44,7 @@ impl CompositeModelProperty {
 
 /// A builder for [`CompositeModelProperty`](crate::types::CompositeModelProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompositeModelPropertyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl CompositeModelPropertyBuilder {
         self
     }
     /// <p>Contains asset property information.</p>
-    pub fn set_asset_property(
-        mut self,
-        input: ::std::option::Option<crate::types::Property>,
-    ) -> Self {
+    pub fn set_asset_property(mut self, input: ::std::option::Option<crate::types::Property>) -> Self {
         self.asset_property = input;
         self
     }

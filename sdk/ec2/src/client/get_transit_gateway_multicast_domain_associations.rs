@@ -13,7 +13,12 @@ impl super::Client {
     ///   - [`multicast_domain_associations(Option<Vec<TransitGatewayMulticastDomainAssociation>>)`](crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsOutput::multicast_domain_associations): <p>Information about the multicast domain associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetTransitGatewayMulticastDomainAssociationsError>`](crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsError)
-    pub fn get_transit_gateway_multicast_domain_associations(&self) -> crate::operation::get_transit_gateway_multicast_domain_associations::builders::GetTransitGatewayMulticastDomainAssociationsFluentBuilder{
-        crate::operation::get_transit_gateway_multicast_domain_associations::builders::GetTransitGatewayMulticastDomainAssociationsFluentBuilder::new(self.handle.clone())
+    pub fn get_transit_gateway_multicast_domain_associations(
+        &self,
+    ) -> crate::operation::get_transit_gateway_multicast_domain_associations::builders::GetTransitGatewayMulticastDomainAssociationsFluentBuilder
+    {
+        crate::operation::get_transit_gateway_multicast_domain_associations::builders::GetTransitGatewayMulticastDomainAssociationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

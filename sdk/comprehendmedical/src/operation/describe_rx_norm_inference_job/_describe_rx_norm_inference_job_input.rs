@@ -15,16 +15,14 @@ impl DescribeRxNormInferenceJobInput {
 }
 impl DescribeRxNormInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeRxNormInferenceJobInput`](crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobInput).
-    pub fn builder() -> crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobInputBuilder {
         crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRxNormInferenceJobInput`](crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRxNormInferenceJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DescribeRxNormInferenceJobInputBuilder {
         crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobInput { job_id: self.job_id })
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteHsmConfigurationOutput {
 }
 impl DeleteHsmConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHsmConfigurationOutput`](crate::operation::delete_hsm_configuration::DeleteHsmConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationOutputBuilder {
         crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteHsmConfigurationOutput`](crate::operation::delete_hsm_configuration::DeleteHsmConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHsmConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

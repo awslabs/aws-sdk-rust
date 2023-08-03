@@ -49,7 +49,9 @@ impl super::Client {
     /// - On success, responds with [`RestoreDbInstanceToPointInTimeOutput`](crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput::db_instance): <p>Contains the details of an Amazon RDS DB instance.</p>  <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     /// - On failure, responds with [`SdkError<RestoreDBInstanceToPointInTimeError>`](crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError)
-    pub fn restore_db_instance_to_point_in_time(&self) -> crate::operation::restore_db_instance_to_point_in_time::builders::RestoreDBInstanceToPointInTimeFluentBuilder{
+    pub fn restore_db_instance_to_point_in_time(
+        &self,
+    ) -> crate::operation::restore_db_instance_to_point_in_time::builders::RestoreDBInstanceToPointInTimeFluentBuilder {
         crate::operation::restore_db_instance_to_point_in_time::builders::RestoreDBInstanceToPointInTimeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`calculated_attribute_name(impl ::std::convert::Into<String>)`](crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionFluentBuilder::calculated_attribute_name) / [`set_calculated_attribute_name(Option<String>)`](crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionFluentBuilder::set_calculated_attribute_name): <p>The unique name of the calculated attribute.</p>
     /// - On success, responds with [`DeleteCalculatedAttributeDefinitionOutput`](crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteCalculatedAttributeDefinitionError>`](crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError)
-    pub fn delete_calculated_attribute_definition(&self) -> crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionFluentBuilder{
+    pub fn delete_calculated_attribute_definition(
+        &self,
+    ) -> crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionFluentBuilder {
         crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

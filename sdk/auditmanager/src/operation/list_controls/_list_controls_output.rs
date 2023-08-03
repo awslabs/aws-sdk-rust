@@ -5,8 +5,7 @@
 pub struct ListControlsOutput {
     /// <p> A list of metadata that the <code>ListControls</code> API returns for each control.</p>
     #[doc(hidden)]
-    pub control_metadata_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ControlMetadata>>,
+    pub control_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::ControlMetadata>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -36,12 +35,9 @@ impl ListControlsOutput {
 
 /// A builder for [`ListControlsOutput`](crate::operation::list_controls::ListControlsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListControlsOutputBuilder {
-    pub(crate) control_metadata_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ControlMetadata>>,
+    pub(crate) control_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::ControlMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListControlsOutputBuilder {
         self
     }
     /// <p> A list of metadata that the <code>ListControls</code> API returns for each control.</p>
-    pub fn set_control_metadata_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ControlMetadata>>,
-    ) -> Self {
+    pub fn set_control_metadata_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlMetadata>>) -> Self {
         self.control_metadata_list = input;
         self
     }
     /// <p> A list of metadata that the <code>ListControls</code> API returns for each control.</p>
-    pub fn get_control_metadata_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlMetadata>> {
+    pub fn get_control_metadata_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlMetadata>> {
         &self.control_metadata_list
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>

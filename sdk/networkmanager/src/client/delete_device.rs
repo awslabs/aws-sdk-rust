@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDeviceOutput`](crate::operation::delete_device::DeleteDeviceOutput) with field(s):
     ///   - [`device(Option<Device>)`](crate::operation::delete_device::DeleteDeviceOutput::device): <p>Information about the device.</p>
     /// - On failure, responds with [`SdkError<DeleteDeviceError>`](crate::operation::delete_device::DeleteDeviceError)
-    pub fn delete_device(
-        &self,
-    ) -> crate::operation::delete_device::builders::DeleteDeviceFluentBuilder {
-        crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_device(&self) -> crate::operation::delete_device::builders::DeleteDeviceFluentBuilder {
+        crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::new(self.handle.clone())
     }
 }

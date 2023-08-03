@@ -88,18 +88,12 @@ impl UploadArchiveInputBuilder {
         &self.account_id
     }
     /// <p>The optional description of the archive you are uploading.</p>
-    pub fn archive_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn archive_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archive_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The optional description of the archive you are uploading.</p>
-    pub fn set_archive_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_archive_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.archive_description = input;
         self
     }
@@ -127,10 +121,7 @@ impl UploadArchiveInputBuilder {
         self
     }
     /// <p>The data to upload.</p>
-    pub fn set_body(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
@@ -141,10 +132,7 @@ impl UploadArchiveInputBuilder {
     /// Consumes the builder and constructs a [`UploadArchiveInput`](crate::operation::upload_archive::UploadArchiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::upload_archive::UploadArchiveInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::upload_archive::UploadArchiveInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::upload_archive::UploadArchiveInput {
             vault_name: self.vault_name,
             account_id: self.account_id,

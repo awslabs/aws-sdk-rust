@@ -12,16 +12,13 @@ pub struct MetricsSummary {
     pub open_findings: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
     /// <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding categories with the most open findings in an account.</p>
     #[doc(hidden)]
-    pub categories_with_most_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::CategoryWithFindingNum>>,
+    pub categories_with_most_findings: ::std::option::Option<::std::vec::Vec<crate::types::CategoryWithFindingNum>>,
     /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open critical findings in an account.</p>
     #[doc(hidden)]
-    pub scans_with_most_open_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>>,
+    pub scans_with_most_open_findings: ::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>>,
     /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open findings in an account.</p>
     #[doc(hidden)]
-    pub scans_with_most_open_critical_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>>,
+    pub scans_with_most_open_critical_findings: ::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>>,
 }
 impl MetricsSummary {
     /// <p>The date from which the metrics summary information was retrieved.</p>
@@ -29,27 +26,19 @@ impl MetricsSummary {
         self.date.as_ref()
     }
     /// <p>The number of open findings of each severity in an account.</p>
-    pub fn open_findings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FindingMetricsValuePerSeverity> {
+    pub fn open_findings(&self) -> ::std::option::Option<&crate::types::FindingMetricsValuePerSeverity> {
         self.open_findings.as_ref()
     }
     /// <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding categories with the most open findings in an account.</p>
-    pub fn categories_with_most_findings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CategoryWithFindingNum]> {
+    pub fn categories_with_most_findings(&self) -> ::std::option::Option<&[crate::types::CategoryWithFindingNum]> {
         self.categories_with_most_findings.as_deref()
     }
     /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open critical findings in an account.</p>
-    pub fn scans_with_most_open_findings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ScanNameWithFindingNum]> {
+    pub fn scans_with_most_open_findings(&self) -> ::std::option::Option<&[crate::types::ScanNameWithFindingNum]> {
         self.scans_with_most_open_findings.as_deref()
     }
     /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open findings in an account.</p>
-    pub fn scans_with_most_open_critical_findings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ScanNameWithFindingNum]> {
+    pub fn scans_with_most_open_critical_findings(&self) -> ::std::option::Option<&[crate::types::ScanNameWithFindingNum]> {
         self.scans_with_most_open_critical_findings.as_deref()
     }
 }
@@ -62,18 +51,13 @@ impl MetricsSummary {
 
 /// A builder for [`MetricsSummary`](crate::types::MetricsSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricsSummaryBuilder {
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) open_findings: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
-    pub(crate) categories_with_most_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::CategoryWithFindingNum>>,
-    pub(crate) scans_with_most_open_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>>,
-    pub(crate) scans_with_most_open_critical_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>>,
+    pub(crate) categories_with_most_findings: ::std::option::Option<::std::vec::Vec<crate::types::CategoryWithFindingNum>>,
+    pub(crate) scans_with_most_open_findings: ::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>>,
+    pub(crate) scans_with_most_open_critical_findings: ::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>>,
 }
 impl MetricsSummaryBuilder {
     /// <p>The date from which the metrics summary information was retrieved.</p>
@@ -96,17 +80,12 @@ impl MetricsSummaryBuilder {
         self
     }
     /// <p>The number of open findings of each severity in an account.</p>
-    pub fn set_open_findings(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,
-    ) -> Self {
+    pub fn set_open_findings(mut self, input: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>) -> Self {
         self.open_findings = input;
         self
     }
     /// <p>The number of open findings of each severity in an account.</p>
-    pub fn get_open_findings(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
+    pub fn get_open_findings(&self) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
         &self.open_findings
     }
     /// Appends an item to `categories_with_most_findings`.
@@ -114,27 +93,19 @@ impl MetricsSummaryBuilder {
     /// To override the contents of this collection use [`set_categories_with_most_findings`](Self::set_categories_with_most_findings).
     ///
     /// <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding categories with the most open findings in an account.</p>
-    pub fn categories_with_most_findings(
-        mut self,
-        input: crate::types::CategoryWithFindingNum,
-    ) -> Self {
+    pub fn categories_with_most_findings(mut self, input: crate::types::CategoryWithFindingNum) -> Self {
         let mut v = self.categories_with_most_findings.unwrap_or_default();
         v.push(input);
         self.categories_with_most_findings = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding categories with the most open findings in an account.</p>
-    pub fn set_categories_with_most_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CategoryWithFindingNum>>,
-    ) -> Self {
+    pub fn set_categories_with_most_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CategoryWithFindingNum>>) -> Self {
         self.categories_with_most_findings = input;
         self
     }
     /// <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding categories with the most open findings in an account.</p>
-    pub fn get_categories_with_most_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CategoryWithFindingNum>> {
+    pub fn get_categories_with_most_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CategoryWithFindingNum>> {
         &self.categories_with_most_findings
     }
     /// Appends an item to `scans_with_most_open_findings`.
@@ -142,27 +113,19 @@ impl MetricsSummaryBuilder {
     /// To override the contents of this collection use [`set_scans_with_most_open_findings`](Self::set_scans_with_most_open_findings).
     ///
     /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open critical findings in an account.</p>
-    pub fn scans_with_most_open_findings(
-        mut self,
-        input: crate::types::ScanNameWithFindingNum,
-    ) -> Self {
+    pub fn scans_with_most_open_findings(mut self, input: crate::types::ScanNameWithFindingNum) -> Self {
         let mut v = self.scans_with_most_open_findings.unwrap_or_default();
         v.push(input);
         self.scans_with_most_open_findings = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open critical findings in an account.</p>
-    pub fn set_scans_with_most_open_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>>,
-    ) -> Self {
+    pub fn set_scans_with_most_open_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>>) -> Self {
         self.scans_with_most_open_findings = input;
         self
     }
     /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open critical findings in an account.</p>
-    pub fn get_scans_with_most_open_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>> {
+    pub fn get_scans_with_most_open_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>> {
         &self.scans_with_most_open_findings
     }
     /// Appends an item to `scans_with_most_open_critical_findings`.
@@ -170,13 +133,8 @@ impl MetricsSummaryBuilder {
     /// To override the contents of this collection use [`set_scans_with_most_open_critical_findings`](Self::set_scans_with_most_open_critical_findings).
     ///
     /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open findings in an account.</p>
-    pub fn scans_with_most_open_critical_findings(
-        mut self,
-        input: crate::types::ScanNameWithFindingNum,
-    ) -> Self {
-        let mut v = self
-            .scans_with_most_open_critical_findings
-            .unwrap_or_default();
+    pub fn scans_with_most_open_critical_findings(mut self, input: crate::types::ScanNameWithFindingNum) -> Self {
+        let mut v = self.scans_with_most_open_critical_findings.unwrap_or_default();
         v.push(input);
         self.scans_with_most_open_critical_findings = ::std::option::Option::Some(v);
         self
@@ -190,9 +148,7 @@ impl MetricsSummaryBuilder {
         self
     }
     /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open findings in an account.</p>
-    pub fn get_scans_with_most_open_critical_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>> {
+    pub fn get_scans_with_most_open_critical_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>> {
         &self.scans_with_most_open_critical_findings
     }
     /// Consumes the builder and constructs a [`MetricsSummary`](crate::types::MetricsSummary).

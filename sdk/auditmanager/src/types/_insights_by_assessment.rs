@@ -70,9 +70,7 @@ impl InsightsByAssessment {
 
 /// A builder for [`InsightsByAssessment`](crate::types::InsightsByAssessment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsightsByAssessmentBuilder {
     pub(crate) noncompliant_evidence_count: ::std::option::Option<i32>,
     pub(crate) compliant_evidence_count: ::std::option::Option<i32>,
@@ -132,22 +130,16 @@ impl InsightsByAssessmentBuilder {
     }
     /// <p>The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
     pub fn assessment_controls_count_by_noncompliant_evidence(mut self, input: i32) -> Self {
-        self.assessment_controls_count_by_noncompliant_evidence =
-            ::std::option::Option::Some(input);
+        self.assessment_controls_count_by_noncompliant_evidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
-    pub fn set_assessment_controls_count_by_noncompliant_evidence(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_assessment_controls_count_by_noncompliant_evidence(mut self, input: ::std::option::Option<i32>) -> Self {
         self.assessment_controls_count_by_noncompliant_evidence = input;
         self
     }
     /// <p>The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
-    pub fn get_assessment_controls_count_by_noncompliant_evidence(
-        &self,
-    ) -> &::std::option::Option<i32> {
+    pub fn get_assessment_controls_count_by_noncompliant_evidence(&self) -> &::std::option::Option<i32> {
         &self.assessment_controls_count_by_noncompliant_evidence
     }
     /// <p>The total number of controls in the assessment. </p>
@@ -156,10 +148,7 @@ impl InsightsByAssessmentBuilder {
         self
     }
     /// <p>The total number of controls in the assessment. </p>
-    pub fn set_total_assessment_controls_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_total_assessment_controls_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_assessment_controls_count = input;
         self
     }
@@ -173,10 +162,7 @@ impl InsightsByAssessmentBuilder {
         self
     }
     /// <p>The time when the assessment insights were last updated.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }
@@ -190,8 +176,7 @@ impl InsightsByAssessmentBuilder {
             noncompliant_evidence_count: self.noncompliant_evidence_count,
             compliant_evidence_count: self.compliant_evidence_count,
             inconclusive_evidence_count: self.inconclusive_evidence_count,
-            assessment_controls_count_by_noncompliant_evidence: self
-                .assessment_controls_count_by_noncompliant_evidence,
+            assessment_controls_count_by_noncompliant_evidence: self.assessment_controls_count_by_noncompliant_evidence,
             total_assessment_controls_count: self.total_assessment_controls_count,
             last_updated: self.last_updated,
         }

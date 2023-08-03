@@ -73,16 +73,14 @@ impl DescribeVpcEndpointServicesInput {
 }
 impl DescribeVpcEndpointServicesInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointServicesInput`](crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesInput).
-    pub fn builder() -> crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesInputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesInputBuilder {
         crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcEndpointServicesInput`](crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointServicesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -110,27 +108,19 @@ impl DescribeVpcEndpointServicesInputBuilder {
     /// To override the contents of this collection use [`set_service_names`](Self::set_service_names).
     ///
     /// <p>The service names.</p>
-    pub fn service_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.service_names.unwrap_or_default();
         v.push(input.into());
         self.service_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The service names.</p>
-    pub fn set_service_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_service_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.service_names = input;
         self
     }
     /// <p>The service names.</p>
-    pub fn get_service_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.service_names
     }
     /// Appends an item to `filters`.
@@ -173,10 +163,7 @@ impl DescribeVpcEndpointServicesInputBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -236,14 +223,12 @@ impl DescribeVpcEndpointServicesInputBuilder {
         crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesInput {
-                dry_run: self.dry_run,
-                service_names: self.service_names,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesInput {
+            dry_run: self.dry_run,
+            service_names: self.service_names,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

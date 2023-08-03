@@ -11,14 +11,10 @@ pub struct SubmitContactEvaluationInput {
     pub evaluation_id: ::std::option::Option<::std::string::String>,
     /// <p>A map of question identifiers to answer value.</p>
     #[doc(hidden)]
-    pub answers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>,
-    >,
+    pub answers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>>,
     /// <p>A map of question identifiers to note value.</p>
     #[doc(hidden)]
-    pub notes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>,
-    >,
+    pub notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>>,
 }
 impl SubmitContactEvaluationInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -30,45 +26,29 @@ impl SubmitContactEvaluationInput {
         self.evaluation_id.as_deref()
     }
     /// <p>A map of question identifiers to answer value.</p>
-    pub fn answers(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>,
-    > {
+    pub fn answers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>> {
         self.answers.as_ref()
     }
     /// <p>A map of question identifiers to note value.</p>
-    pub fn notes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>,
-    > {
+    pub fn notes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>> {
         self.notes.as_ref()
     }
 }
 impl SubmitContactEvaluationInput {
     /// Creates a new builder-style object to manufacture [`SubmitContactEvaluationInput`](crate::operation::submit_contact_evaluation::SubmitContactEvaluationInput).
-    pub fn builder(
-    ) -> crate::operation::submit_contact_evaluation::builders::SubmitContactEvaluationInputBuilder
-    {
+    pub fn builder() -> crate::operation::submit_contact_evaluation::builders::SubmitContactEvaluationInputBuilder {
         crate::operation::submit_contact_evaluation::builders::SubmitContactEvaluationInputBuilder::default()
     }
 }
 
 /// A builder for [`SubmitContactEvaluationInput`](crate::operation::submit_contact_evaluation::SubmitContactEvaluationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubmitContactEvaluationInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
-    pub(crate) answers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>,
-    >,
-    pub(crate) notes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>,
-    >,
+    pub(crate) answers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>>,
+    pub(crate) notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>>,
 }
 impl SubmitContactEvaluationInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -86,18 +66,12 @@ impl SubmitContactEvaluationInputBuilder {
         &self.instance_id
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_id = input;
         self
     }
@@ -110,11 +84,7 @@ impl SubmitContactEvaluationInputBuilder {
     /// To override the contents of this collection use [`set_answers`](Self::set_answers).
     ///
     /// <p>A map of question identifiers to answer value.</p>
-    pub fn answers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::EvaluationAnswerInput,
-    ) -> Self {
+    pub fn answers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::EvaluationAnswerInput) -> Self {
         let mut hash_map = self.answers.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.answers = ::std::option::Option::Some(hash_map);
@@ -123,19 +93,13 @@ impl SubmitContactEvaluationInputBuilder {
     /// <p>A map of question identifiers to answer value.</p>
     pub fn set_answers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>>,
     ) -> Self {
         self.answers = input;
         self
     }
     /// <p>A map of question identifiers to answer value.</p>
-    pub fn get_answers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>,
-    > {
+    pub fn get_answers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationAnswerInput>> {
         &self.answers
     }
     /// Adds a key-value pair to `notes`.
@@ -143,11 +107,7 @@ impl SubmitContactEvaluationInputBuilder {
     /// To override the contents of this collection use [`set_notes`](Self::set_notes).
     ///
     /// <p>A map of question identifiers to note value.</p>
-    pub fn notes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::EvaluationNote,
-    ) -> Self {
+    pub fn notes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::EvaluationNote) -> Self {
         let mut hash_map = self.notes.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.notes = ::std::option::Option::Some(hash_map);
@@ -156,19 +116,13 @@ impl SubmitContactEvaluationInputBuilder {
     /// <p>A map of question identifiers to note value.</p>
     pub fn set_notes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>>,
     ) -> Self {
         self.notes = input;
         self
     }
     /// <p>A map of question identifiers to note value.</p>
-    pub fn get_notes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>,
-    > {
+    pub fn get_notes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationNote>> {
         &self.notes
     }
     /// Consumes the builder and constructs a [`SubmitContactEvaluationInput`](crate::operation::submit_contact_evaluation::SubmitContactEvaluationInput).
@@ -178,13 +132,11 @@ impl SubmitContactEvaluationInputBuilder {
         crate::operation::submit_contact_evaluation::SubmitContactEvaluationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::submit_contact_evaluation::SubmitContactEvaluationInput {
-                instance_id: self.instance_id,
-                evaluation_id: self.evaluation_id,
-                answers: self.answers,
-                notes: self.notes,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::submit_contact_evaluation::SubmitContactEvaluationInput {
+            instance_id: self.instance_id,
+            evaluation_id: self.evaluation_id,
+            answers: self.answers,
+            notes: self.notes,
+        })
     }
 }

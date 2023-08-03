@@ -41,9 +41,7 @@ impl InstanceConfiguration {
 
 /// A builder for [`InstanceConfiguration`](crate::types::InstanceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceConfigurationBuilder {
     pub(crate) cpu: ::std::option::Option<::std::string::String>,
     pub(crate) memory: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl InstanceConfigurationBuilder {
         &self.memory
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
-    pub fn instance_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
-    pub fn set_instance_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_role_arn = input;
         self
     }

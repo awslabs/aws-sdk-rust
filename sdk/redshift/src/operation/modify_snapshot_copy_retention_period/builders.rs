@@ -5,16 +5,16 @@ pub use crate::operation::modify_snapshot_copy_retention_period::_modify_snapsho
 
 impl ModifySnapshotCopyRetentionPeriodInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.modify_snapshot_copy_retention_period();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ModifySnapshotCopyRetentionPeriodInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifySnapshotCopyRetentionPeriodFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodInputBuilder,
+    inner: crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodInputBuilder,
 }
 impl ModifySnapshotCopyRetentionPeriodFluentBuilder {
     /// Creates a new `ModifySnapshotCopyRetentionPeriod`.
@@ -37,15 +37,20 @@ impl ModifySnapshotCopyRetentionPeriodFluentBuilder {
         }
     }
     /// Access the ModifySnapshotCopyRetentionPeriod as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriod, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriod,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ModifySnapshotCopyRetentionPeriodFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,34 +87,37 @@ impl ModifySnapshotCopyRetentionPeriodFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriod, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriod,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }

@@ -37,10 +37,7 @@ impl EnableAddressTransferFluentBuilder {
         }
     }
     /// Access the EnableAddressTransfer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_address_transfer::builders::EnableAddressTransferInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::enable_address_transfer::builders::EnableAddressTransferInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl EnableAddressTransferFluentBuilder {
             crate::operation::enable_address_transfer::EnableAddressTransfer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_address_transfer::EnableAddressTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_address_transfer::EnableAddressTransferError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl EnableAddressTransferFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl EnableAddressTransferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_address_transfer::EnableAddressTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_address_transfer::EnableAddressTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_address_transfer::EnableAddressTransferError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl EnableAddressTransferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_address_transfer::EnableAddressTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_address_transfer::EnableAddressTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_address_transfer::EnableAddressTransferError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl EnableAddressTransferFluentBuilder {
             crate::operation::enable_address_transfer::EnableAddressTransfer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_address_transfer::EnableAddressTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_address_transfer::EnableAddressTransferError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allocation_id(input.into());
         self
     }
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_allocation_id(input);
         self
     }
@@ -144,18 +124,12 @@ impl EnableAddressTransferFluentBuilder {
         self.inner.get_allocation_id()
     }
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
-    pub fn transfer_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transfer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transfer_account_id(input.into());
         self
     }
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
-    pub fn set_transfer_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transfer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transfer_account_id(input);
         self
     }

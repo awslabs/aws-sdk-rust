@@ -36,9 +36,7 @@ impl GetStagesInput {
 
 /// A builder for [`GetStagesInput`](crate::operation::get_stages::GetStagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStagesInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl GetStagesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetStagesInput`](crate::operation::get_stages::GetStagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_stages::GetStagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_stages::GetStagesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stages::GetStagesInput {
             api_id: self.api_id,
             max_results: self.max_results,

@@ -37,10 +37,7 @@ impl BatchAssociateResourceFluentBuilder {
         }
     }
     /// Access the BatchAssociateResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_associate_resource::builders::BatchAssociateResourceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_associate_resource::builders::BatchAssociateResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl BatchAssociateResourceFluentBuilder {
             crate::operation::batch_associate_resource::BatchAssociateResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_associate_resource::BatchAssociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_resource::BatchAssociateResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl BatchAssociateResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl BatchAssociateResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_associate_resource::BatchAssociateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_associate_resource::BatchAssociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_resource::BatchAssociateResourceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl BatchAssociateResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_associate_resource::BatchAssociateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_associate_resource::BatchAssociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_resource::BatchAssociateResourceError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl BatchAssociateResourceFluentBuilder {
             crate::operation::batch_associate_resource::BatchAssociateResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_associate_resource::BatchAssociateResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_resource::BatchAssociateResourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
-    pub fn resource_set_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_set_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
-    pub fn set_resource_set_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_set_identifier(input);
         self
     }
@@ -153,10 +133,7 @@ impl BatchAssociateResourceFluentBuilder {
         self
     }
     /// <p>The uniform resource identifiers (URIs) of resources that should be associated to the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_items(input);
         self
     }

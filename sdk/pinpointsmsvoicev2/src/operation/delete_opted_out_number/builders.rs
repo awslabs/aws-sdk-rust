@@ -39,10 +39,7 @@ impl DeleteOptedOutNumberFluentBuilder {
         }
     }
     /// Access the DeleteOptedOutNumber as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_opted_out_number::builders::DeleteOptedOutNumberInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_opted_out_number::builders::DeleteOptedOutNumberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DeleteOptedOutNumberFluentBuilder {
             crate::operation::delete_opted_out_number::DeleteOptedOutNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_opted_out_number::DeleteOptedOutNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_opted_out_number::DeleteOptedOutNumberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DeleteOptedOutNumberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DeleteOptedOutNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_opted_out_number::DeleteOptedOutNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_opted_out_number::DeleteOptedOutNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_opted_out_number::DeleteOptedOutNumberError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DeleteOptedOutNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_opted_out_number::DeleteOptedOutNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_opted_out_number::DeleteOptedOutNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_opted_out_number::DeleteOptedOutNumberError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl DeleteOptedOutNumberFluentBuilder {
             crate::operation::delete_opted_out_number::DeleteOptedOutNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_opted_out_number::DeleteOptedOutNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_opted_out_number::DeleteOptedOutNumberError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opt_out_list_name(input.into());
         self
     }
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
@@ -146,18 +126,12 @@ impl DeleteOptedOutNumberFluentBuilder {
         self.inner.get_opt_out_list_name()
     }
     /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
-    pub fn opted_out_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opted_out_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opted_out_number(input.into());
         self
     }
     /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
-    pub fn set_opted_out_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opted_out_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_opted_out_number(input);
         self
     }

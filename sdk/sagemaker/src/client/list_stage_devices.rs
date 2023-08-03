@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`device_deployment_summaries(Option<Vec<DeviceDeploymentSummary>>)`](crate::operation::list_stage_devices::ListStageDevicesOutput::device_deployment_summaries): <p>List of summaries of devices allocated to the stage.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stage_devices::ListStageDevicesOutput::next_token): <p>The token to use when calling the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListStageDevicesError>`](crate::operation::list_stage_devices::ListStageDevicesError)
-    pub fn list_stage_devices(
-        &self,
-    ) -> crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder {
-        crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_stage_devices(&self) -> crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder {
+        crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::new(self.handle.clone())
     }
 }

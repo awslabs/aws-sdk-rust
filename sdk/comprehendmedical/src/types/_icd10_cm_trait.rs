@@ -30,9 +30,7 @@ impl Icd10CmTrait {
 
 /// A builder for [`Icd10CmTrait`](crate::types::Icd10CmTrait).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Icd10CmTraitBuilder {
     pub(crate) name: ::std::option::Option<crate::types::Icd10CmTraitName>,
     pub(crate) score: ::std::option::Option<f32>,
@@ -44,10 +42,7 @@ impl Icd10CmTraitBuilder {
         self
     }
     /// <p>Provides a name or contextual description about the trait.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::Icd10CmTraitName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::Icd10CmTraitName>) -> Self {
         self.name = input;
         self
     }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`phone_number_id(Option<String>)`](crate::operation::claim_phone_number::ClaimPhoneNumberOutput::phone_number_id): <p>A unique identifier for the phone number.</p>
     ///   - [`phone_number_arn(Option<String>)`](crate::operation::claim_phone_number::ClaimPhoneNumberOutput::phone_number_arn): <p>The Amazon Resource Name (ARN) of the phone number.</p>
     /// - On failure, responds with [`SdkError<ClaimPhoneNumberError>`](crate::operation::claim_phone_number::ClaimPhoneNumberError)
-    pub fn claim_phone_number(
-        &self,
-    ) -> crate::operation::claim_phone_number::builders::ClaimPhoneNumberFluentBuilder {
-        crate::operation::claim_phone_number::builders::ClaimPhoneNumberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn claim_phone_number(&self) -> crate::operation::claim_phone_number::builders::ClaimPhoneNumberFluentBuilder {
+        crate::operation::claim_phone_number::builders::ClaimPhoneNumberFluentBuilder::new(self.handle.clone())
     }
 }

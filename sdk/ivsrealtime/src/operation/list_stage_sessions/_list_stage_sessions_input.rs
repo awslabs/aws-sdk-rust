@@ -29,17 +29,14 @@ impl ListStageSessionsInput {
 }
 impl ListStageSessionsInput {
     /// Creates a new builder-style object to manufacture [`ListStageSessionsInput`](crate::operation::list_stage_sessions::ListStageSessionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_stage_sessions::builders::ListStageSessionsInputBuilder {
+    pub fn builder() -> crate::operation::list_stage_sessions::builders::ListStageSessionsInputBuilder {
         crate::operation::list_stage_sessions::builders::ListStageSessionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStageSessionsInput`](crate::operation::list_stage_sessions::ListStageSessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStageSessionsInputBuilder {
     pub(crate) stage_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl ListStageSessionsInputBuilder {
     /// Consumes the builder and constructs a [`ListStageSessionsInput`](crate::operation::list_stage_sessions::ListStageSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_stage_sessions::ListStageSessionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_stage_sessions::ListStageSessionsInput {
-                stage_arn: self.stage_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_stage_sessions::ListStageSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_stage_sessions::ListStageSessionsInput {
+            stage_arn: self.stage_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

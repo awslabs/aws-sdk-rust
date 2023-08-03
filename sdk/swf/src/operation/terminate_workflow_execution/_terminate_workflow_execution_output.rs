@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for TerminateWorkflowExecutionOutput {
 }
 impl TerminateWorkflowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`TerminateWorkflowExecutionOutput`](crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput).
-    pub fn builder() -> crate::operation::terminate_workflow_execution::builders::TerminateWorkflowExecutionOutputBuilder{
+    pub fn builder() -> crate::operation::terminate_workflow_execution::builders::TerminateWorkflowExecutionOutputBuilder {
         crate::operation::terminate_workflow_execution::builders::TerminateWorkflowExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateWorkflowExecutionOutput`](crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateWorkflowExecutionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl TerminateWorkflowExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`TerminateWorkflowExecutionOutput`](crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput {
+    pub fn build(self) -> crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput {
         crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput {
             _request_id: self._request_id,
         }

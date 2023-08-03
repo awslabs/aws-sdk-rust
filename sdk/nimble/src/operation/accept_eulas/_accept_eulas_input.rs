@@ -36,9 +36,7 @@ impl AcceptEulasInput {
 
 /// A builder for [`AcceptEulasInput`](crate::operation::accept_eulas::AcceptEulasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptEulasInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) eula_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,10 +69,7 @@ impl AcceptEulasInputBuilder {
         self
     }
     /// <p>The EULA ID.</p>
-    pub fn set_eula_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_eula_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.eula_ids = input;
         self
     }
@@ -97,12 +92,7 @@ impl AcceptEulasInputBuilder {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`AcceptEulasInput`](crate::operation::accept_eulas::AcceptEulasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_eulas::AcceptEulasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_eulas::AcceptEulasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_eulas::AcceptEulasInput {
             client_token: self.client_token,
             eula_ids: self.eula_ids,

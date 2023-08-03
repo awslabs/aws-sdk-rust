@@ -38,13 +38,7 @@
 /// For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the setting Signal processing notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M2tsScte35Source {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for M2tsScte35Source {
         match s {
             "NONE" => M2tsScte35Source::None,
             "PASSTHROUGH" => M2tsScte35Source::Passthrough,
-            other => {
-                M2tsScte35Source::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => M2tsScte35Source::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -37,9 +37,7 @@ impl DeviceUnderTest {
 
 /// A builder for [`DeviceUnderTest`](crate::types::DeviceUnderTest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceUnderTestBuilder {
     pub(crate) thing_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl DeviceUnderTestBuilder {
         &self.thing_arn
     }
     /// <p>Lists device's certificate ARN.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lists device's certificate ARN.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -81,18 +73,12 @@ impl DeviceUnderTestBuilder {
         &self.certificate_arn
     }
     /// <p>Lists device's role ARN.</p>
-    pub fn device_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lists device's role ARN.</p>
-    pub fn set_device_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_role_arn = input;
         self
     }

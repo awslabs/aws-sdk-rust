@@ -12,12 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateConfiguredTableOutput`](crate::operation::create_configured_table::CreateConfiguredTableOutput) with field(s):
     ///   - [`configured_table(Option<ConfiguredTable>)`](crate::operation::create_configured_table::CreateConfiguredTableOutput::configured_table): <p>The created configured table.</p>
     /// - On failure, responds with [`SdkError<CreateConfiguredTableError>`](crate::operation::create_configured_table::CreateConfiguredTableError)
-    pub fn create_configured_table(
-        &self,
-    ) -> crate::operation::create_configured_table::builders::CreateConfiguredTableFluentBuilder
-    {
-        crate::operation::create_configured_table::builders::CreateConfiguredTableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_configured_table(&self) -> crate::operation::create_configured_table::builders::CreateConfiguredTableFluentBuilder {
+        crate::operation::create_configured_table::builders::CreateConfiguredTableFluentBuilder::new(self.handle.clone())
     }
 }

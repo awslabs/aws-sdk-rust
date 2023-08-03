@@ -26,8 +26,7 @@ impl ListFindingAggregationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFindingAggregationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_finding_aggregations::builders::ListFindingAggregationsInputBuilder,
+    inner: crate::operation::list_finding_aggregations::builders::ListFindingAggregationsInputBuilder,
 }
 impl ListFindingAggregationsFluentBuilder {
     /// Creates a new `ListFindingAggregations`.
@@ -38,10 +37,7 @@ impl ListFindingAggregationsFluentBuilder {
         }
     }
     /// Access the ListFindingAggregations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_finding_aggregations::builders::ListFindingAggregationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_finding_aggregations::builders::ListFindingAggregationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListFindingAggregationsFluentBuilder {
             crate::operation::list_finding_aggregations::ListFindingAggregations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_finding_aggregations::ListFindingAggregationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_finding_aggregations::ListFindingAggregationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListFindingAggregationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListFindingAggregationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_finding_aggregations::ListFindingAggregationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_finding_aggregations::ListFindingAggregationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_finding_aggregations::ListFindingAggregationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListFindingAggregationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_finding_aggregations::ListFindingAggregationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_finding_aggregations::ListFindingAggregationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_finding_aggregations::ListFindingAggregationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListFindingAggregationsFluentBuilder {
             crate::operation::list_finding_aggregations::ListFindingAggregations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_finding_aggregations::ListFindingAggregationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_finding_aggregations::ListFindingAggregationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_finding_aggregations::paginator::ListFindingAggregationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_finding_aggregations::paginator::ListFindingAggregationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_finding_aggregations::paginator::ListFindingAggregationsPaginator {
         crate::operation::list_finding_aggregations::paginator::ListFindingAggregationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The type of the aggregation request.</p>
@@ -139,10 +121,7 @@ impl ListFindingAggregationsFluentBuilder {
         self
     }
     /// <p>The type of the aggregation request.</p>
-    pub fn set_aggregation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationType>,
-    ) -> Self {
+    pub fn set_aggregation_type(mut self, input: ::std::option::Option<crate::types::AggregationType>) -> Self {
         self.inner = self.inner.set_aggregation_type(input);
         self
     }
@@ -188,17 +167,12 @@ impl ListFindingAggregationsFluentBuilder {
         self
     }
     /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         self.inner.get_account_ids()
     }
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
@@ -207,17 +181,12 @@ impl ListFindingAggregationsFluentBuilder {
         self
     }
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
-    pub fn set_aggregation_request(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationRequest>,
-    ) -> Self {
+    pub fn set_aggregation_request(mut self, input: ::std::option::Option<crate::types::AggregationRequest>) -> Self {
         self.inner = self.inner.set_aggregation_request(input);
         self
     }
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
-    pub fn get_aggregation_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregationRequest> {
+    pub fn get_aggregation_request(&self) -> &::std::option::Option<crate::types::AggregationRequest> {
         self.inner.get_aggregation_request()
     }
 }

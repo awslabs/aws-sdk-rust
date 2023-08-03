@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetDirectoryOutput`](crate::operation::get_directory::GetDirectoryOutput) with field(s):
     ///   - [`directory(Option<Directory>)`](crate::operation::get_directory::GetDirectoryOutput::directory): <p>Metadata about the directory.</p>
     /// - On failure, responds with [`SdkError<GetDirectoryError>`](crate::operation::get_directory::GetDirectoryError)
-    pub fn get_directory(
-        &self,
-    ) -> crate::operation::get_directory::builders::GetDirectoryFluentBuilder {
-        crate::operation::get_directory::builders::GetDirectoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_directory(&self) -> crate::operation::get_directory::builders::GetDirectoryFluentBuilder {
+        crate::operation::get_directory::builders::GetDirectoryFluentBuilder::new(self.handle.clone())
     }
 }

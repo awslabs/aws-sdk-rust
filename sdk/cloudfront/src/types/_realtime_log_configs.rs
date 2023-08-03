@@ -51,9 +51,7 @@ impl RealtimeLogConfigs {
 
 /// A builder for [`RealtimeLogConfigs`](crate::types::RealtimeLogConfigs).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RealtimeLogConfigsBuilder {
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeLogConfig>>,
@@ -88,17 +86,12 @@ impl RealtimeLogConfigsBuilder {
         self
     }
     /// <p>Contains the list of real-time log configurations.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeLogConfig>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeLogConfig>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Contains the list of real-time log configurations.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RealtimeLogConfig>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RealtimeLogConfig>> {
         &self.items
     }
     /// <p>A flag that indicates whether there are more real-time log configurations than are contained in this list.</p>

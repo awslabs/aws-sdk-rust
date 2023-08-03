@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`delegated_administrators(Option<Vec<DelegatedAdministrator>>)`](crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput::delegated_administrators): <p>The list of delegated administrators in your organization.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListDelegatedAdministratorsError>`](crate::operation::list_delegated_administrators::ListDelegatedAdministratorsError)
-    pub fn list_delegated_administrators(&self) -> crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsFluentBuilder{
+    pub fn list_delegated_administrators(
+        &self,
+    ) -> crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsFluentBuilder {
         crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsFluentBuilder::new(self.handle.clone())
     }
 }

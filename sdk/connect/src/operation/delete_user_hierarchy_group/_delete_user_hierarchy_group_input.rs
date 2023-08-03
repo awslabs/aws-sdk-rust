@@ -22,36 +22,26 @@ impl DeleteUserHierarchyGroupInput {
 }
 impl DeleteUserHierarchyGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteUserHierarchyGroupInput`](crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_user_hierarchy_group::builders::DeleteUserHierarchyGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_user_hierarchy_group::builders::DeleteUserHierarchyGroupInputBuilder {
         crate::operation::delete_user_hierarchy_group::builders::DeleteUserHierarchyGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUserHierarchyGroupInput`](crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUserHierarchyGroupInputBuilder {
     pub(crate) hierarchy_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserHierarchyGroupInputBuilder {
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn hierarchy_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hierarchy_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn set_hierarchy_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hierarchy_group_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl DeleteUserHierarchyGroupInputBuilder {
         crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupInput {
-                hierarchy_group_id: self.hierarchy_group_id,
-                instance_id: self.instance_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupInput {
+            hierarchy_group_id: self.hierarchy_group_id,
+            instance_id: self.instance_id,
+        })
     }
 }

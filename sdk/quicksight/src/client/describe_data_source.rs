@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::describe_data_source::DescribeDataSourceOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_data_source::DescribeDataSourceOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeDataSourceError>`](crate::operation::describe_data_source::DescribeDataSourceError)
-    pub fn describe_data_source(
-        &self,
-    ) -> crate::operation::describe_data_source::builders::DescribeDataSourceFluentBuilder {
-        crate::operation::describe_data_source::builders::DescribeDataSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_data_source(&self) -> crate::operation::describe_data_source::builders::DescribeDataSourceFluentBuilder {
+        crate::operation::describe_data_source::builders::DescribeDataSourceFluentBuilder::new(self.handle.clone())
     }
 }

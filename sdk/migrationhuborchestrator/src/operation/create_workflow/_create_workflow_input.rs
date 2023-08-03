@@ -17,17 +17,13 @@ pub struct CreateWorkflowInput {
     pub application_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The input parameters required to create a migration workflow.</p>
     #[doc(hidden)]
-    pub input_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
-    >,
+    pub input_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
     /// <p>The servers on which a step will be run.</p>
     #[doc(hidden)]
     pub step_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to add on a migration workflow.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorkflowInput {
     /// <p>The name of the migration workflow.</p>
@@ -47,11 +43,7 @@ impl CreateWorkflowInput {
         self.application_configuration_id.as_deref()
     }
     /// <p>The input parameters required to create a migration workflow.</p>
-    pub fn input_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
-    > {
+    pub fn input_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::StepInput>> {
         self.input_parameters.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
@@ -59,11 +51,7 @@ impl CreateWorkflowInput {
         self.step_targets.as_deref()
     }
     /// <p>The tags to add on a migration workflow.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -73,10 +61,7 @@ impl ::std::fmt::Debug for CreateWorkflowInput {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("template_id", &self.template_id);
-        formatter.field(
-            "application_configuration_id",
-            &self.application_configuration_id,
-        );
+        formatter.field("application_configuration_id", &self.application_configuration_id);
         formatter.field("input_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("step_targets", &self.step_targets);
         formatter.field("tags", &self.tags);
@@ -98,13 +83,9 @@ pub struct CreateWorkflowInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_configuration_id: ::std::option::Option<::std::string::String>,
-    pub(crate) input_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
-    >,
+    pub(crate) input_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
     pub(crate) step_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorkflowInputBuilder {
     /// <p>The name of the migration workflow.</p>
@@ -150,25 +131,17 @@ impl CreateWorkflowInputBuilder {
         &self.template_id
     }
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
-    pub fn application_configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
-    pub fn set_application_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_configuration_id = input;
         self
     }
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
-    pub fn get_application_configuration_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_application_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_configuration_id
     }
     /// Adds a key-value pair to `input_parameters`.
@@ -176,11 +149,7 @@ impl CreateWorkflowInputBuilder {
     /// To override the contents of this collection use [`set_input_parameters`](Self::set_input_parameters).
     ///
     /// <p>The input parameters required to create a migration workflow.</p>
-    pub fn input_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::StepInput,
-    ) -> Self {
+    pub fn input_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::StepInput) -> Self {
         let mut hash_map = self.input_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.input_parameters = ::std::option::Option::Some(hash_map);
@@ -189,19 +158,13 @@ impl CreateWorkflowInputBuilder {
     /// <p>The input parameters required to create a migration workflow.</p>
     pub fn set_input_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
     ) -> Self {
         self.input_parameters = input;
         self
     }
     /// <p>The input parameters required to create a migration workflow.</p>
-    pub fn get_input_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
-    > {
+    pub fn get_input_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>> {
         &self.input_parameters
     }
     /// Appends an item to `step_targets`.
@@ -216,17 +179,12 @@ impl CreateWorkflowInputBuilder {
         self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn set_step_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_step_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.step_targets = input;
         self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn get_step_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_step_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.step_targets
     }
     /// Adds a key-value pair to `tags`.
@@ -234,41 +192,25 @@ impl CreateWorkflowInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to add on a migration workflow.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to add on a migration workflow.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to add on a migration workflow.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workflow::CreateWorkflowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workflow::CreateWorkflowInput {
             name: self.name,
             description: self.description,
@@ -286,10 +228,7 @@ impl ::std::fmt::Debug for CreateWorkflowInputBuilder {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("template_id", &self.template_id);
-        formatter.field(
-            "application_configuration_id",
-            &self.application_configuration_id,
-        );
+        formatter.field("application_configuration_id", &self.application_configuration_id);
         formatter.field("input_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("step_targets", &self.step_targets);
         formatter.field("tags", &self.tags);

@@ -37,16 +37,14 @@ impl ::aws_http::request_id::RequestId for UpdateManagedRuleSetVersionExpiryDate
 }
 impl UpdateManagedRuleSetVersionExpiryDateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateManagedRuleSetVersionExpiryDateOutput`](crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateOutput).
-    pub fn builder() -> crate::operation::update_managed_rule_set_version_expiry_date::builders::UpdateManagedRuleSetVersionExpiryDateOutputBuilder{
+    pub fn builder() -> crate::operation::update_managed_rule_set_version_expiry_date::builders::UpdateManagedRuleSetVersionExpiryDateOutputBuilder {
         crate::operation::update_managed_rule_set_version_expiry_date::builders::UpdateManagedRuleSetVersionExpiryDateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateManagedRuleSetVersionExpiryDateOutput`](crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateManagedRuleSetVersionExpiryDateOutputBuilder {
     pub(crate) expiring_version: ::std::option::Option<::std::string::String>,
     pub(crate) expiry_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -55,18 +53,12 @@ pub struct UpdateManagedRuleSetVersionExpiryDateOutputBuilder {
 }
 impl UpdateManagedRuleSetVersionExpiryDateOutputBuilder {
     /// <p>The version that is set to expire. </p>
-    pub fn expiring_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expiring_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expiring_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version that is set to expire. </p>
-    pub fn set_expiring_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expiring_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expiring_version = input;
         self
     }
@@ -82,10 +74,7 @@ impl UpdateManagedRuleSetVersionExpiryDateOutputBuilder {
     }
     /// <p>The time that the version will expire. </p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub fn set_expiry_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiry_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiry_timestamp = input;
         self
     }
@@ -95,18 +84,12 @@ impl UpdateManagedRuleSetVersionExpiryDateOutputBuilder {
         &self.expiry_timestamp
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn next_lock_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_lock_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_lock_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn set_next_lock_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_lock_token = input;
         self
     }
@@ -124,14 +107,11 @@ impl UpdateManagedRuleSetVersionExpiryDateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateManagedRuleSetVersionExpiryDateOutput`](crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateOutput).
-    pub fn build(self) -> crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateOutput{
+    pub fn build(self) -> crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateOutput {
         crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateOutput {
-            expiring_version: self.expiring_version
-            ,
-            expiry_timestamp: self.expiry_timestamp
-            ,
-            next_lock_token: self.next_lock_token
-            ,
+            expiring_version: self.expiring_version,
+            expiry_timestamp: self.expiry_timestamp,
+            next_lock_token: self.next_lock_token,
             _request_id: self._request_id,
         }
     }

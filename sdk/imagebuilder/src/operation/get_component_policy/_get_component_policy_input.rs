@@ -15,34 +15,25 @@ impl GetComponentPolicyInput {
 }
 impl GetComponentPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetComponentPolicyInput`](crate::operation::get_component_policy::GetComponentPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_component_policy::builders::GetComponentPolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_component_policy::builders::GetComponentPolicyInputBuilder {
         crate::operation::get_component_policy::builders::GetComponentPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetComponentPolicyInput`](crate::operation::get_component_policy::GetComponentPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComponentPolicyInputBuilder {
     pub(crate) component_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetComponentPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
-    pub fn component_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
-    pub fn set_component_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetComponentPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetComponentPolicyInput`](crate::operation::get_component_policy::GetComponentPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_component_policy::GetComponentPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_component_policy::GetComponentPolicyInput {
-                component_arn: self.component_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_component_policy::GetComponentPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_component_policy::GetComponentPolicyInput {
+            component_arn: self.component_arn,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl UpdateAssessmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_assessment::UpdateAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment::UpdateAssessmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment::UpdateAssessmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_assessment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateAssessmentFluentBuilder {
         }
     }
     /// Access the UpdateAssessment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_assessment::builders::UpdateAssessmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_assessment::builders::UpdateAssessmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateAssessmentFluentBuilder {
             crate::operation::update_assessment::UpdateAssessment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment::UpdateAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment::UpdateAssessmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateAssessmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateAssessmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assessment::UpdateAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment::UpdateAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment::UpdateAssessmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateAssessmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assessment::UpdateAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment::UpdateAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment::UpdateAssessmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateAssessmentFluentBuilder {
             crate::operation::update_assessment::UpdateAssessment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment::UpdateAssessmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment::UpdateAssessmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl UpdateAssessmentFluentBuilder {
         self.inner.get_assessment_id()
     }
     /// <p> The name of the assessment to be updated. </p>
-    pub fn assessment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_name(input.into());
         self
     }
     /// <p> The name of the assessment to be updated. </p>
-    pub fn set_assessment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_name(input);
         self
     }
@@ -163,18 +135,12 @@ impl UpdateAssessmentFluentBuilder {
         self.inner.get_assessment_name()
     }
     /// <p> The description of the assessment. </p>
-    pub fn assessment_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_description(input.into());
         self
     }
     /// <p> The description of the assessment. </p>
-    pub fn set_assessment_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_description(input);
         self
     }
@@ -197,25 +163,17 @@ impl UpdateAssessmentFluentBuilder {
         self.inner.get_scope()
     }
     /// <p> The assessment report storage destination for the assessment that's being updated. </p>
-    pub fn assessment_reports_destination(
-        mut self,
-        input: crate::types::AssessmentReportsDestination,
-    ) -> Self {
+    pub fn assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
         self.inner = self.inner.assessment_reports_destination(input);
         self
     }
     /// <p> The assessment report storage destination for the assessment that's being updated. </p>
-    pub fn set_assessment_reports_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentReportsDestination>,
-    ) -> Self {
+    pub fn set_assessment_reports_destination(mut self, input: ::std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
         self.inner = self.inner.set_assessment_reports_destination(input);
         self
     }
     /// <p> The assessment report storage destination for the assessment that's being updated. </p>
-    pub fn get_assessment_reports_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
+    pub fn get_assessment_reports_destination(&self) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
         self.inner.get_assessment_reports_destination()
     }
     /// Appends an item to `roles`.
@@ -228,10 +186,7 @@ impl UpdateAssessmentFluentBuilder {
         self
     }
     /// <p> The list of roles for the assessment. </p>
-    pub fn set_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
-    ) -> Self {
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
         self.inner = self.inner.set_roles(input);
         self
     }

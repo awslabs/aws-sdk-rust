@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ConfigurationProfileSummary>>)`](crate::operation::list_configuration_profiles::ListConfigurationProfilesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_configuration_profiles::ListConfigurationProfilesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListConfigurationProfilesError>`](crate::operation::list_configuration_profiles::ListConfigurationProfilesError)
-    pub fn list_configuration_profiles(&self) -> crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder{
+    pub fn list_configuration_profiles(&self) -> crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder {
         crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder::new(self.handle.clone())
     }
 }

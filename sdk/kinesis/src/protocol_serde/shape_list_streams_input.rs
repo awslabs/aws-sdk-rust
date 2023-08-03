@@ -10,9 +10,7 @@ pub fn ser_list_streams_input(
         );
     }
     if let Some(var_2) = &input.exclusive_start_stream_name {
-        object
-            .key("ExclusiveStartStreamName")
-            .string(var_2.as_str());
+        object.key("ExclusiveStartStreamName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.next_token {
         object.key("NextToken").string(var_3.as_str());

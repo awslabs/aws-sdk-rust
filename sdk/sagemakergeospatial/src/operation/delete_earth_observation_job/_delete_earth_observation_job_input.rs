@@ -15,16 +15,14 @@ impl DeleteEarthObservationJobInput {
 }
 impl DeleteEarthObservationJobInput {
     /// Creates a new builder-style object to manufacture [`DeleteEarthObservationJobInput`](crate::operation::delete_earth_observation_job::DeleteEarthObservationJobInput).
-    pub fn builder() -> crate::operation::delete_earth_observation_job::builders::DeleteEarthObservationJobInputBuilder{
+    pub fn builder() -> crate::operation::delete_earth_observation_job::builders::DeleteEarthObservationJobInputBuilder {
         crate::operation::delete_earth_observation_job::builders::DeleteEarthObservationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEarthObservationJobInput`](crate::operation::delete_earth_observation_job::DeleteEarthObservationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEarthObservationJobInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DeleteEarthObservationJobInputBuilder {
         crate::operation::delete_earth_observation_job::DeleteEarthObservationJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_earth_observation_job::DeleteEarthObservationJobInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_earth_observation_job::DeleteEarthObservationJobInput { arn: self.arn })
     }
 }

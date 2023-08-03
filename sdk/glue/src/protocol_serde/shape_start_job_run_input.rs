@@ -43,10 +43,7 @@ pub fn ser_start_job_run_input(
     if let Some(var_11) = &input.notification_property {
         #[allow(unused_mut)]
         let mut object_12 = object.key("NotificationProperty").start_object();
-        crate::protocol_serde::shape_notification_property::ser_notification_property(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_notification_property::ser_notification_property(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.worker_type {

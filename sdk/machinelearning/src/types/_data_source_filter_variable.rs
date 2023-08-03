@@ -69,13 +69,7 @@
 /// The variable names should match the variable names in the <code>DataSource</code>.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DataSourceFilterVariable {
     #[allow(missing_docs)] // documentation missing in model
@@ -102,9 +96,7 @@ impl ::std::convert::From<&str> for DataSourceFilterVariable {
             "LastUpdatedAt" => DataSourceFilterVariable::LastUpdatedAt,
             "Name" => DataSourceFilterVariable::Name,
             "Status" => DataSourceFilterVariable::Status,
-            other => DataSourceFilterVariable::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DataSourceFilterVariable::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -130,14 +122,7 @@ impl DataSourceFilterVariable {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CreatedAt",
-            "DataLocationS3",
-            "IAMUser",
-            "LastUpdatedAt",
-            "Name",
-            "Status",
-        ]
+        &["CreatedAt", "DataLocationS3", "IAMUser", "LastUpdatedAt", "Name", "Status"]
     }
 }
 impl ::std::convert::AsRef<str> for DataSourceFilterVariable {

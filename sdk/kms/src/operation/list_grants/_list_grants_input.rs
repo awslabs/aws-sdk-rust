@@ -66,9 +66,7 @@ impl ListGrantsInput {
 
 /// A builder for [`ListGrantsInput`](crate::operation::list_grants::ListGrantsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGrantsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -158,18 +156,12 @@ impl ListGrantsInputBuilder {
         &self.grant_id
     }
     /// <p>Returns only grants where the specified principal is the grantee principal for the grant.</p>
-    pub fn grantee_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grantee_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grantee_principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns only grants where the specified principal is the grantee principal for the grant.</p>
-    pub fn set_grantee_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grantee_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grantee_principal = input;
         self
     }
@@ -178,12 +170,7 @@ impl ListGrantsInputBuilder {
         &self.grantee_principal
     }
     /// Consumes the builder and constructs a [`ListGrantsInput`](crate::operation::list_grants::ListGrantsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_grants::ListGrantsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_grants::ListGrantsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_grants::ListGrantsInput {
             limit: self.limit,
             marker: self.marker,

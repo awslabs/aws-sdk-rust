@@ -5,8 +5,7 @@
 pub struct ListAccessPointsForObjectLambdaOutput {
     /// <p>Returns list of Object Lambda Access Points.</p>
     #[doc(hidden)]
-    pub object_lambda_access_point_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaAccessPoint>>,
+    pub object_lambda_access_point_list: ::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaAccessPoint>>,
     /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAccessPointsForObjectLambdaOutput {
 }
 impl ListAccessPointsForObjectLambdaOutput {
     /// <p>Returns list of Object Lambda Access Points.</p>
-    pub fn object_lambda_access_point_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ObjectLambdaAccessPoint]> {
+    pub fn object_lambda_access_point_list(&self) -> ::std::option::Option<&[crate::types::ObjectLambdaAccessPoint]> {
         self.object_lambda_access_point_list.as_deref()
     }
     /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAccessPointsForObjectLambdaOutput
 }
 impl ListAccessPointsForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPointsForObjectLambdaOutput`](crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput).
-    pub fn builder() -> crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaOutputBuilder{
+    pub fn builder() -> crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaOutputBuilder {
         crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessPointsForObjectLambdaOutput`](crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessPointsForObjectLambdaOutputBuilder {
-    pub(crate) object_lambda_access_point_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaAccessPoint>>,
+    pub(crate) object_lambda_access_point_list: ::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaAccessPoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListAccessPointsForObjectLambdaOutputBuilder {
     /// To override the contents of this collection use [`set_object_lambda_access_point_list`](Self::set_object_lambda_access_point_list).
     ///
     /// <p>Returns list of Object Lambda Access Points.</p>
-    pub fn object_lambda_access_point_list(
-        mut self,
-        input: crate::types::ObjectLambdaAccessPoint,
-    ) -> Self {
+    pub fn object_lambda_access_point_list(mut self, input: crate::types::ObjectLambdaAccessPoint) -> Self {
         let mut v = self.object_lambda_access_point_list.unwrap_or_default();
         v.push(input);
         self.object_lambda_access_point_list = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListAccessPointsForObjectLambdaOutputBuilder {
         self
     }
     /// <p>Returns list of Object Lambda Access Points.</p>
-    pub fn get_object_lambda_access_point_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaAccessPoint>> {
+    pub fn get_object_lambda_access_point_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaAccessPoint>> {
         &self.object_lambda_access_point_list
     }
     /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
@@ -100,15 +89,10 @@ impl ListAccessPointsForObjectLambdaOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccessPointsForObjectLambdaOutput`](crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput
-    {
+    pub fn build(self) -> crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput {
         crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput {
-            object_lambda_access_point_list: self.object_lambda_access_point_list
-            ,
-            next_token: self.next_token
-            ,
+            object_lambda_access_point_list: self.object_lambda_access_point_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

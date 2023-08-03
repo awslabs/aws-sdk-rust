@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy_id(impl ::std::convert::Into<String>)`](crate::operation::delete_resource_policy::builders::DeleteResourcePolicyFluentBuilder::policy_id) / [`set_policy_id(Option<String>)`](crate::operation::delete_resource_policy::builders::DeleteResourcePolicyFluentBuilder::set_policy_id): <p>The ID of the resource policy you're deleting.</p>
     /// - On success, responds with [`DeleteResourcePolicyOutput`](crate::operation::delete_resource_policy::DeleteResourcePolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteResourcePolicyError>`](crate::operation::delete_resource_policy::DeleteResourcePolicyError)
-    pub fn delete_resource_policy(
-        &self,
-    ) -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyFluentBuilder {
-        crate::operation::delete_resource_policy::builders::DeleteResourcePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_resource_policy(&self) -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyFluentBuilder {
+        crate::operation::delete_resource_policy::builders::DeleteResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

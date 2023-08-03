@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateInstanceAttributeOutput {
 }
 impl UpdateInstanceAttributeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceAttributeOutput`](crate::operation::update_instance_attribute::UpdateInstanceAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeOutputBuilder {
         crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateInstanceAttributeOutput`](crate::operation::update_instance_attribute::UpdateInstanceAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInstanceAttributeOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateInstanceAttributeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateInstanceAttributeOutput`](crate::operation::update_instance_attribute::UpdateInstanceAttributeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_instance_attribute::UpdateInstanceAttributeOutput {
+    pub fn build(self) -> crate::operation::update_instance_attribute::UpdateInstanceAttributeOutput {
         crate::operation::update_instance_attribute::UpdateInstanceAttributeOutput {
             _request_id: self._request_id,
         }

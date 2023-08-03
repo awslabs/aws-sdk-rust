@@ -18,8 +18,7 @@ pub struct Order {
     pub network_site_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tracking information of the order.</p>
     #[doc(hidden)]
-    pub tracking_information:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrackingInformation>>,
+    pub tracking_information: ::std::option::Option<::std::vec::Vec<crate::types::TrackingInformation>>,
     /// <p>The acknowledgement status of the order.</p>
     #[doc(hidden)]
     pub acknowledgment_status: ::std::option::Option<crate::types::AcknowledgmentStatus>,
@@ -28,8 +27,7 @@ pub struct Order {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of the network resources placed in the order.</p>
     #[doc(hidden)]
-    pub ordered_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrderedResourceDefinition>>,
+    pub ordered_resources: ::std::option::Option<::std::vec::Vec<crate::types::OrderedResourceDefinition>>,
 }
 impl Order {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
@@ -49,15 +47,11 @@ impl Order {
         self.network_site_arn.as_deref()
     }
     /// <p>The tracking information of the order.</p>
-    pub fn tracking_information(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrackingInformation]> {
+    pub fn tracking_information(&self) -> ::std::option::Option<&[crate::types::TrackingInformation]> {
         self.tracking_information.as_deref()
     }
     /// <p>The acknowledgement status of the order.</p>
-    pub fn acknowledgment_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AcknowledgmentStatus> {
+    pub fn acknowledgment_status(&self) -> ::std::option::Option<&crate::types::AcknowledgmentStatus> {
         self.acknowledgment_status.as_ref()
     }
     /// <p>The creation time of the order.</p>
@@ -65,9 +59,7 @@ impl Order {
         self.created_at.as_ref()
     }
     /// <p>A list of the network resources placed in the order.</p>
-    pub fn ordered_resources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OrderedResourceDefinition]> {
+    pub fn ordered_resources(&self) -> ::std::option::Option<&[crate::types::OrderedResourceDefinition]> {
         self.ordered_resources.as_deref()
     }
 }
@@ -80,20 +72,16 @@ impl Order {
 
 /// A builder for [`Order`](crate::types::Order).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrderBuilder {
     pub(crate) order_arn: ::std::option::Option<::std::string::String>,
     pub(crate) shipping_address: ::std::option::Option<crate::types::Address>,
     pub(crate) network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_site_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tracking_information:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrackingInformation>>,
+    pub(crate) tracking_information: ::std::option::Option<::std::vec::Vec<crate::types::TrackingInformation>>,
     pub(crate) acknowledgment_status: ::std::option::Option<crate::types::AcknowledgmentStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) ordered_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrderedResourceDefinition>>,
+    pub(crate) ordered_resources: ::std::option::Option<::std::vec::Vec<crate::types::OrderedResourceDefinition>>,
 }
 impl OrderBuilder {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
@@ -116,10 +104,7 @@ impl OrderBuilder {
         self
     }
     /// <p>The shipping address of the order.</p>
-    pub fn set_shipping_address(
-        mut self,
-        input: ::std::option::Option<crate::types::Address>,
-    ) -> Self {
+    pub fn set_shipping_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.shipping_address = input;
         self
     }
@@ -142,18 +127,12 @@ impl OrderBuilder {
         &self.network_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the network site associated with this order.</p>
-    pub fn network_site_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site associated with this order.</p>
-    pub fn set_network_site_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_site_arn = input;
         self
     }
@@ -173,17 +152,12 @@ impl OrderBuilder {
         self
     }
     /// <p>The tracking information of the order.</p>
-    pub fn set_tracking_information(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrackingInformation>>,
-    ) -> Self {
+    pub fn set_tracking_information(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrackingInformation>>) -> Self {
         self.tracking_information = input;
         self
     }
     /// <p>The tracking information of the order.</p>
-    pub fn get_tracking_information(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrackingInformation>> {
+    pub fn get_tracking_information(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrackingInformation>> {
         &self.tracking_information
     }
     /// <p>The acknowledgement status of the order.</p>
@@ -192,17 +166,12 @@ impl OrderBuilder {
         self
     }
     /// <p>The acknowledgement status of the order.</p>
-    pub fn set_acknowledgment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AcknowledgmentStatus>,
-    ) -> Self {
+    pub fn set_acknowledgment_status(mut self, input: ::std::option::Option<crate::types::AcknowledgmentStatus>) -> Self {
         self.acknowledgment_status = input;
         self
     }
     /// <p>The acknowledgement status of the order.</p>
-    pub fn get_acknowledgment_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AcknowledgmentStatus> {
+    pub fn get_acknowledgment_status(&self) -> &::std::option::Option<crate::types::AcknowledgmentStatus> {
         &self.acknowledgment_status
     }
     /// <p>The creation time of the order.</p>
@@ -211,10 +180,7 @@ impl OrderBuilder {
         self
     }
     /// <p>The creation time of the order.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -234,17 +200,12 @@ impl OrderBuilder {
         self
     }
     /// <p>A list of the network resources placed in the order.</p>
-    pub fn set_ordered_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OrderedResourceDefinition>>,
-    ) -> Self {
+    pub fn set_ordered_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrderedResourceDefinition>>) -> Self {
         self.ordered_resources = input;
         self
     }
     /// <p>A list of the network resources placed in the order.</p>
-    pub fn get_ordered_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderedResourceDefinition>> {
+    pub fn get_ordered_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderedResourceDefinition>> {
         &self.ordered_resources
     }
     /// Consumes the builder and constructs a [`Order`](crate::types::Order).

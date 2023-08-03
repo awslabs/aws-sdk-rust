@@ -37,10 +37,7 @@ impl DescribeSecurityGroupsFluentBuilder {
         }
     }
     /// Access the DescribeSecurityGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_security_groups::builders::DescribeSecurityGroupsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_security_groups::builders::DescribeSecurityGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeSecurityGroupsFluentBuilder {
             crate::operation::describe_security_groups::DescribeSecurityGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_groups::DescribeSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_groups::DescribeSecurityGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeSecurityGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeSecurityGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_security_groups::DescribeSecurityGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_groups::DescribeSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_groups::DescribeSecurityGroupsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeSecurityGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_security_groups::DescribeSecurityGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_groups::DescribeSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_groups::DescribeSecurityGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl DescribeSecurityGroupsFluentBuilder {
             crate::operation::describe_security_groups::DescribeSecurityGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_security_groups::DescribeSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_security_groups::DescribeSecurityGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_security_groups::paginator::DescribeSecurityGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_security_groups::paginator::DescribeSecurityGroupsPaginator
-    {
-        crate::operation::describe_security_groups::paginator::DescribeSecurityGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_security_groups::paginator::DescribeSecurityGroupsPaginator {
+        crate::operation::describe_security_groups::paginator::DescribeSecurityGroupsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -211,10 +191,7 @@ impl DescribeSecurityGroupsFluentBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC specified when the security group was created.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -267,10 +244,7 @@ impl DescribeSecurityGroupsFluentBuilder {
     }
     /// <p>The IDs of the security groups. Required for security groups in a nondefault VPC.</p>
     /// <p>Default: Describes all of your security groups.</p>
-    pub fn set_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_group_ids(input);
         self
     }
@@ -291,18 +265,13 @@ impl DescribeSecurityGroupsFluentBuilder {
     }
     /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
-    pub fn set_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_group_names(input);
         self
     }
     /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
-    pub fn get_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_group_names()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

@@ -26,8 +26,7 @@ impl GetUserDefinedFunctionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetUserDefinedFunctionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsInputBuilder,
+    inner: crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsInputBuilder,
 }
 impl GetUserDefinedFunctionsFluentBuilder {
     /// Creates a new `GetUserDefinedFunctions`.
@@ -38,10 +37,7 @@ impl GetUserDefinedFunctionsFluentBuilder {
         }
     }
     /// Access the GetUserDefinedFunctions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetUserDefinedFunctionsFluentBuilder {
             crate::operation::get_user_defined_functions::GetUserDefinedFunctions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_user_defined_functions::GetUserDefinedFunctionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_defined_functions::GetUserDefinedFunctionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetUserDefinedFunctionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetUserDefinedFunctionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_user_defined_functions::GetUserDefinedFunctionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_defined_functions::GetUserDefinedFunctionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetUserDefinedFunctionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_user_defined_functions::GetUserDefinedFunctionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_defined_functions::GetUserDefinedFunctionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl GetUserDefinedFunctionsFluentBuilder {
             crate::operation::get_user_defined_functions::GetUserDefinedFunctions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_user_defined_functions::GetUserDefinedFunctionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_defined_functions::GetUserDefinedFunctionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_user_defined_functions::paginator::GetUserDefinedFunctionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_user_defined_functions::paginator::GetUserDefinedFunctionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::get_user_defined_functions::paginator::GetUserDefinedFunctionsPaginator {
         crate::operation::get_user_defined_functions::paginator::GetUserDefinedFunctionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -148,18 +130,12 @@ impl GetUserDefinedFunctionsFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }

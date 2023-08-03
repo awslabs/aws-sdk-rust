@@ -28,9 +28,7 @@ impl RollbackStackOutput {
 
 /// A builder for [`RollbackStackOutput`](crate::operation::rollback_stack::RollbackStackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RollbackStackOutputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

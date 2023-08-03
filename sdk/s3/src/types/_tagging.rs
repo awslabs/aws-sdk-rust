@@ -23,9 +23,7 @@ impl Tagging {
 
 /// A builder for [`Tagging`](crate::types::Tagging).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaggingBuilder {
     pub(crate) tag_set: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -42,10 +40,7 @@ impl TaggingBuilder {
         self
     }
     /// <p>A collection for a set of tags</p>
-    pub fn set_tag_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tag_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_set = input;
         self
     }
@@ -55,8 +50,6 @@ impl TaggingBuilder {
     }
     /// Consumes the builder and constructs a [`Tagging`](crate::types::Tagging).
     pub fn build(self) -> crate::types::Tagging {
-        crate::types::Tagging {
-            tag_set: self.tag_set,
-        }
+        crate::types::Tagging { tag_set: self.tag_set }
     }
 }

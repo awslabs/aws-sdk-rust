@@ -5,16 +5,16 @@ pub use crate::operation::put_third_party_job_failure_result::_put_third_party_j
 
 impl PutThirdPartyJobFailureResultInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_third_party_job_failure_result();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl PutThirdPartyJobFailureResultInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutThirdPartyJobFailureResultFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_third_party_job_failure_result::builders::PutThirdPartyJobFailureResultInputBuilder,
+    inner: crate::operation::put_third_party_job_failure_result::builders::PutThirdPartyJobFailureResultInputBuilder,
 }
 impl PutThirdPartyJobFailureResultFluentBuilder {
     /// Creates a new `PutThirdPartyJobFailureResult`.
@@ -37,15 +37,20 @@ impl PutThirdPartyJobFailureResultFluentBuilder {
         }
     }
     /// Access the PutThirdPartyJobFailureResult as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_third_party_job_failure_result::builders::PutThirdPartyJobFailureResultInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_third_party_job_failure_result::builders::PutThirdPartyJobFailureResultInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResult, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResult,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl PutThirdPartyJobFailureResultFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl PutThirdPartyJobFailureResultFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResult, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResult,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
@@ -128,10 +143,7 @@ impl PutThirdPartyJobFailureResultFluentBuilder {
         self
     }
     /// <p>Represents information about failure details.</p>
-    pub fn set_failure_details(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureDetails>,
-    ) -> Self {
+    pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::FailureDetails>) -> Self {
         self.inner = self.inner.set_failure_details(input);
         self
     }

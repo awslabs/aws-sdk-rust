@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteDataSetRefreshPropertiesError>`](crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesError)
-    pub fn delete_data_set_refresh_properties(&self) -> crate::operation::delete_data_set_refresh_properties::builders::DeleteDataSetRefreshPropertiesFluentBuilder{
+    pub fn delete_data_set_refresh_properties(
+        &self,
+    ) -> crate::operation::delete_data_set_refresh_properties::builders::DeleteDataSetRefreshPropertiesFluentBuilder {
         crate::operation::delete_data_set_refresh_properties::builders::DeleteDataSetRefreshPropertiesFluentBuilder::new(self.handle.clone())
     }
 }

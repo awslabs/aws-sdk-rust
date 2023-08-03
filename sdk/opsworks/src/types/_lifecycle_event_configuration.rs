@@ -23,9 +23,7 @@ impl LifecycleEventConfiguration {
 
 /// A builder for [`LifecycleEventConfiguration`](crate::types::LifecycleEventConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifecycleEventConfigurationBuilder {
     pub(crate) shutdown: ::std::option::Option<crate::types::ShutdownEventConfiguration>,
 }
@@ -36,10 +34,7 @@ impl LifecycleEventConfigurationBuilder {
         self
     }
     /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
-    pub fn set_shutdown(
-        mut self,
-        input: ::std::option::Option<crate::types::ShutdownEventConfiguration>,
-    ) -> Self {
+    pub fn set_shutdown(mut self, input: ::std::option::Option<crate::types::ShutdownEventConfiguration>) -> Self {
         self.shutdown = input;
         self
     }
@@ -49,8 +44,6 @@ impl LifecycleEventConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`LifecycleEventConfiguration`](crate::types::LifecycleEventConfiguration).
     pub fn build(self) -> crate::types::LifecycleEventConfiguration {
-        crate::types::LifecycleEventConfiguration {
-            shutdown: self.shutdown,
-        }
+        crate::types::LifecycleEventConfiguration { shutdown: self.shutdown }
     }
 }

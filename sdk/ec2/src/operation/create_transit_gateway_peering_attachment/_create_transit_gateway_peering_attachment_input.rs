@@ -17,8 +17,7 @@ pub struct CreateTransitGatewayPeeringAttachmentInput {
     pub peer_region: ::std::option::Option<::std::string::String>,
     /// <p>Requests a transit gateway peering attachment.</p>
     #[doc(hidden)]
-    pub options:
-        ::std::option::Option<crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions>,
+    pub options: ::std::option::Option<crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions>,
     /// <p>The tags to apply to the transit gateway peering attachment.</p>
     #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
@@ -44,10 +43,7 @@ impl CreateTransitGatewayPeeringAttachmentInput {
         self.peer_region.as_deref()
     }
     /// <p>Requests a transit gateway peering attachment.</p>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions>
-    {
+    pub fn options(&self) -> ::std::option::Option<&crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions> {
         self.options.as_ref()
     }
     /// <p>The tags to apply to the transit gateway peering attachment.</p>
@@ -61,41 +57,31 @@ impl CreateTransitGatewayPeeringAttachmentInput {
 }
 impl CreateTransitGatewayPeeringAttachmentInput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayPeeringAttachmentInput`](crate::operation::create_transit_gateway_peering_attachment::CreateTransitGatewayPeeringAttachmentInput).
-    pub fn builder() -> crate::operation::create_transit_gateway_peering_attachment::builders::CreateTransitGatewayPeeringAttachmentInputBuilder{
+    pub fn builder() -> crate::operation::create_transit_gateway_peering_attachment::builders::CreateTransitGatewayPeeringAttachmentInputBuilder {
         crate::operation::create_transit_gateway_peering_attachment::builders::CreateTransitGatewayPeeringAttachmentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTransitGatewayPeeringAttachmentInput`](crate::operation::create_transit_gateway_peering_attachment::CreateTransitGatewayPeeringAttachmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayPeeringAttachmentInputBuilder {
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_region: ::std::option::Option<::std::string::String>,
-    pub(crate) options:
-        ::std::option::Option<crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) options: ::std::option::Option<crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateTransitGatewayPeeringAttachmentInputBuilder {
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }
@@ -104,18 +90,12 @@ impl CreateTransitGatewayPeeringAttachmentInputBuilder {
         &self.transit_gateway_id
     }
     /// <p>The ID of the peer transit gateway with which to create the peering attachment.</p>
-    pub fn peer_transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn peer_transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the peer transit gateway with which to create the peering attachment.</p>
-    pub fn set_peer_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_peer_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_transit_gateway_id = input;
         self
     }
@@ -124,18 +104,12 @@ impl CreateTransitGatewayPeeringAttachmentInputBuilder {
         &self.peer_transit_gateway_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the peer transit gateway.</p>
-    pub fn peer_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn peer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the peer transit gateway.</p>
-    pub fn set_peer_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_peer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_account_id = input;
         self
     }
@@ -158,28 +132,17 @@ impl CreateTransitGatewayPeeringAttachmentInputBuilder {
         &self.peer_region
     }
     /// <p>Requests a transit gateway peering attachment.</p>
-    pub fn options(
-        mut self,
-        input: crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions,
-    ) -> Self {
+    pub fn options(mut self, input: crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Requests a transit gateway peering attachment.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions,
-        >,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions>) -> Self {
         self.options = input;
         self
     }
     /// <p>Requests a transit gateway peering attachment.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions>
-    {
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions> {
         &self.options
     }
     /// Appends an item to `tag_specifications`.
@@ -194,17 +157,12 @@ impl CreateTransitGatewayPeeringAttachmentInputBuilder {
         self
     }
     /// <p>The tags to apply to the transit gateway peering attachment.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the transit gateway peering attachment.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -222,24 +180,22 @@ impl CreateTransitGatewayPeeringAttachmentInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayPeeringAttachmentInput`](crate::operation::create_transit_gateway_peering_attachment::CreateTransitGatewayPeeringAttachmentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_transit_gateway_peering_attachment::CreateTransitGatewayPeeringAttachmentInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_transit_gateway_peering_attachment::CreateTransitGatewayPeeringAttachmentInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_transit_gateway_peering_attachment::CreateTransitGatewayPeeringAttachmentInput {
-                transit_gateway_id: self.transit_gateway_id
-                ,
-                peer_transit_gateway_id: self.peer_transit_gateway_id
-                ,
-                peer_account_id: self.peer_account_id
-                ,
-                peer_region: self.peer_region
-                ,
-                options: self.options
-                ,
-                tag_specifications: self.tag_specifications
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_id: self.transit_gateway_id,
+                peer_transit_gateway_id: self.peer_transit_gateway_id,
+                peer_account_id: self.peer_account_id,
+                peer_region: self.peer_region,
+                options: self.options,
+                tag_specifications: self.tag_specifications,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

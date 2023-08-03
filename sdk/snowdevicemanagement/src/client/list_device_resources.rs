@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`resources(Option<Vec<ResourceSummary>>)`](crate::operation::list_device_resources::ListDeviceResourcesOutput::resources): <p>A structure defining the resource's type, Amazon Resource Name (ARN), and ID.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_resources::ListDeviceResourcesOutput::next_token): <p>A pagination token to continue to the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListDeviceResourcesError>`](crate::operation::list_device_resources::ListDeviceResourcesError)
-    pub fn list_device_resources(
-        &self,
-    ) -> crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder {
-        crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_device_resources(&self) -> crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder {
+        crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder::new(self.handle.clone())
     }
 }

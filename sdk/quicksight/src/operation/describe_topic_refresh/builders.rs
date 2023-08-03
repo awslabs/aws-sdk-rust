@@ -37,9 +37,7 @@ impl DescribeTopicRefreshFluentBuilder {
         }
     }
     /// Access the DescribeTopicRefresh as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeTopicRefreshFluentBuilder {
             crate::operation::describe_topic_refresh::DescribeTopicRefresh,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_topic_refresh::DescribeTopicRefreshError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_topic_refresh::DescribeTopicRefreshError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeTopicRefreshFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeTopicRefreshFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_topic_refresh::DescribeTopicRefreshOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_topic_refresh::DescribeTopicRefreshError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_topic_refresh::DescribeTopicRefreshError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeTopicRefreshFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_topic_refresh::DescribeTopicRefreshOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_topic_refresh::DescribeTopicRefreshError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_topic_refresh::DescribeTopicRefreshError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeTopicRefreshFluentBuilder {
             crate::operation::describe_topic_refresh::DescribeTopicRefresh,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_topic_refresh::DescribeTopicRefreshError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_topic_refresh::DescribeTopicRefreshError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

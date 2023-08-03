@@ -76,9 +76,7 @@ impl GreengrassConfiguration {
 
 /// A builder for [`GreengrassConfiguration`](crate::types::GreengrassConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GreengrassConfigurationBuilder {
     pub(crate) compiler_options: ::std::option::Option<::std::string::String>,
     pub(crate) target_device: ::std::option::Option<crate::types::TargetDevice>,
@@ -92,19 +90,13 @@ pub struct GreengrassConfigurationBuilder {
 impl GreengrassConfigurationBuilder {
     /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
     /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide. </p>
-    pub fn compiler_options(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compiler_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compiler_options = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
     /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide. </p>
-    pub fn set_compiler_options(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compiler_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compiler_options = input;
         self
     }
@@ -119,10 +111,7 @@ impl GreengrassConfigurationBuilder {
         self
     }
     /// <p>The target device for the model. Currently the only supported value is <code>jetson_xavier</code>. If you specify <code>TargetDevice</code>, you can't specify <code>TargetPlatform</code>. </p>
-    pub fn set_target_device(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetDevice>,
-    ) -> Self {
+    pub fn set_target_device(mut self, input: ::std::option::Option<crate::types::TargetDevice>) -> Self {
         self.target_device = input;
         self
     }
@@ -136,10 +125,7 @@ impl GreengrassConfigurationBuilder {
         self
     }
     /// <p>The target platform for the model. If you specify <code>TargetPlatform</code>, you can't specify <code>TargetDevice</code>. </p>
-    pub fn set_target_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetPlatform>,
-    ) -> Self {
+    pub fn set_target_platform(mut self, input: ::std::option::Option<crate::types::TargetPlatform>) -> Self {
         self.target_platform = input;
         self
     }
@@ -153,10 +139,7 @@ impl GreengrassConfigurationBuilder {
         self
     }
     /// <p> An S3 location in which Lookout for Vision stores the component artifacts. </p>
-    pub fn set_s3_output_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_s3_output_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.s3_output_location = input;
         self
     }
@@ -165,18 +148,12 @@ impl GreengrassConfigurationBuilder {
         &self.s3_output_location
     }
     /// <p> A name for the AWS IoT Greengrass component. </p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A name for the AWS IoT Greengrass component. </p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -185,18 +162,12 @@ impl GreengrassConfigurationBuilder {
         &self.component_name
     }
     /// <p>A Version for the AWS IoT Greengrass component. If you don't provide a value, a default value of <code> <i>Model Version</i>.0.0</code> is used. </p>
-    pub fn component_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A Version for the AWS IoT Greengrass component. If you don't provide a value, a default value of <code> <i>Model Version</i>.0.0</code> is used. </p>
-    pub fn set_component_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_version = input;
         self
     }
@@ -205,18 +176,12 @@ impl GreengrassConfigurationBuilder {
         &self.component_version
     }
     /// <p> A description for the AWS IoT Greengrass component. </p>
-    pub fn component_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A description for the AWS IoT Greengrass component. </p>
-    pub fn set_component_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_description = input;
         self
     }
@@ -236,10 +201,7 @@ impl GreengrassConfigurationBuilder {
         self
     }
     /// <p> A set of tags (key-value pairs) that you want to attach to the AWS IoT Greengrass component. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateServiceIntegrationOutput {
 }
 impl UpdateServiceIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceIntegrationOutput`](crate::operation::update_service_integration::UpdateServiceIntegrationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_service_integration::builders::UpdateServiceIntegrationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_service_integration::builders::UpdateServiceIntegrationOutputBuilder {
         crate::operation::update_service_integration::builders::UpdateServiceIntegrationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServiceIntegrationOutput`](crate::operation::update_service_integration::UpdateServiceIntegrationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceIntegrationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateServiceIntegrationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateServiceIntegrationOutput`](crate::operation::update_service_integration::UpdateServiceIntegrationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_service_integration::UpdateServiceIntegrationOutput {
+    pub fn build(self) -> crate::operation::update_service_integration::UpdateServiceIntegrationOutput {
         crate::operation::update_service_integration::UpdateServiceIntegrationOutput {
             _request_id: self._request_id,
         }

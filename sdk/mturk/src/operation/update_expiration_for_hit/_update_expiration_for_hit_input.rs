@@ -22,18 +22,14 @@ impl UpdateExpirationForHitInput {
 }
 impl UpdateExpirationForHitInput {
     /// Creates a new builder-style object to manufacture [`UpdateExpirationForHitInput`](crate::operation::update_expiration_for_hit::UpdateExpirationForHitInput).
-    pub fn builder(
-    ) -> crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitInputBuilder {
         crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateExpirationForHitInput`](crate::operation::update_expiration_for_hit::UpdateExpirationForHitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateExpirationForHitInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) expire_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -59,10 +55,7 @@ impl UpdateExpirationForHitInputBuilder {
         self
     }
     /// <p> The date and time at which you want the HIT to expire </p>
-    pub fn set_expire_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expire_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expire_at = input;
         self
     }
@@ -77,11 +70,9 @@ impl UpdateExpirationForHitInputBuilder {
         crate::operation::update_expiration_for_hit::UpdateExpirationForHitInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_expiration_for_hit::UpdateExpirationForHitInput {
-                hit_id: self.hit_id,
-                expire_at: self.expire_at,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_expiration_for_hit::UpdateExpirationForHitInput {
+            hit_id: self.hit_id,
+            expire_at: self.expire_at,
+        })
     }
 }

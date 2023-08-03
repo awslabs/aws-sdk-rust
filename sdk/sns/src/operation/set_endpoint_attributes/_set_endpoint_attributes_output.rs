@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SetEndpointAttributesOutput {
 }
 impl SetEndpointAttributesOutput {
     /// Creates a new builder-style object to manufacture [`SetEndpointAttributesOutput`](crate::operation::set_endpoint_attributes::SetEndpointAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::set_endpoint_attributes::builders::SetEndpointAttributesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_endpoint_attributes::builders::SetEndpointAttributesOutputBuilder {
         crate::operation::set_endpoint_attributes::builders::SetEndpointAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetEndpointAttributesOutput`](crate::operation::set_endpoint_attributes::SetEndpointAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetEndpointAttributesOutputBuilder {
     _request_id: Option<String>,
 }

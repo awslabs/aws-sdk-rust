@@ -70,15 +70,12 @@ impl ConflictException {
 
 /// A builder for [`ConflictException`](crate::types::error::ConflictException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConflictExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
-    pub(crate) dependent_entities:
-        ::std::option::Option<::std::vec::Vec<crate::types::DependentEntity>>,
+    pub(crate) dependent_entities: ::std::option::Option<::std::vec::Vec<crate::types::DependentEntity>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ConflictExceptionBuilder {
@@ -111,18 +108,12 @@ impl ConflictExceptionBuilder {
         &self.resource_id
     }
     /// Type of the resource in use
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// Type of the resource in use
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -142,17 +133,12 @@ impl ConflictExceptionBuilder {
         self
     }
     /// List of dependent entities containing information on relation type and resourceArns linked to the resource in use
-    pub fn set_dependent_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DependentEntity>>,
-    ) -> Self {
+    pub fn set_dependent_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DependentEntity>>) -> Self {
         self.dependent_entities = input;
         self
     }
     /// List of dependent entities containing information on relation type and resourceArns linked to the resource in use
-    pub fn get_dependent_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DependentEntity>> {
+    pub fn get_dependent_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DependentEntity>> {
         &self.dependent_entities
     }
     /// Sets error metadata
@@ -162,10 +148,7 @@ impl ConflictExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

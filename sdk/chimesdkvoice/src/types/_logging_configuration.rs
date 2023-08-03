@@ -30,9 +30,7 @@ impl LoggingConfiguration {
 
 /// A builder for [`LoggingConfiguration`](crate::types::LoggingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingConfigurationBuilder {
     pub(crate) enable_sip_logs: ::std::option::Option<bool>,
     pub(crate) enable_media_metric_logs: ::std::option::Option<bool>,

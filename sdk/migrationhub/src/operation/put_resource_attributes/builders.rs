@@ -44,10 +44,7 @@ impl PutResourceAttributesFluentBuilder {
         }
     }
     /// Access the PutResourceAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_resource_attributes::builders::PutResourceAttributesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_resource_attributes::builders::PutResourceAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +56,7 @@ impl PutResourceAttributesFluentBuilder {
             crate::operation::put_resource_attributes::PutResourceAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_attributes::PutResourceAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resource_attributes::PutResourceAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +66,7 @@ impl PutResourceAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +75,7 @@ impl PutResourceAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_resource_attributes::PutResourceAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_attributes::PutResourceAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resource_attributes::PutResourceAttributesError>,
     > {
         let op = self
             .inner
@@ -108,9 +98,7 @@ impl PutResourceAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_resource_attributes::PutResourceAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_attributes::PutResourceAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resource_attributes::PutResourceAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -124,25 +112,17 @@ impl PutResourceAttributesFluentBuilder {
             crate::operation::put_resource_attributes::PutResourceAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_attributes::PutResourceAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resource_attributes::PutResourceAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.progress_update_stream(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_progress_update_stream(input);
         self
     }
@@ -151,18 +131,12 @@ impl PutResourceAttributesFluentBuilder {
         self.inner.get_progress_update_stream()
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.migration_task_name(input.into());
         self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_migration_task_name(input);
         self
     }
@@ -194,10 +168,7 @@ impl PutResourceAttributesFluentBuilder {
     /// <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li>
     /// </ul>
     /// </important>
-    pub fn set_resource_attribute_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
-    ) -> Self {
+    pub fn set_resource_attribute_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>) -> Self {
         self.inner = self.inner.set_resource_attribute_list(input);
         self
     }
@@ -209,9 +180,7 @@ impl PutResourceAttributesFluentBuilder {
     /// <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li>
     /// </ul>
     /// </important>
-    pub fn get_resource_attribute_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>> {
+    pub fn get_resource_attribute_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>> {
         self.inner.get_resource_attribute_list()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>

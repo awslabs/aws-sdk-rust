@@ -37,10 +37,7 @@ impl ListMonitoredResourcesFluentBuilder {
         }
     }
     /// Access the ListMonitoredResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_monitored_resources::builders::ListMonitoredResourcesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_monitored_resources::builders::ListMonitoredResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListMonitoredResourcesFluentBuilder {
             crate::operation::list_monitored_resources::ListMonitoredResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_monitored_resources::ListMonitoredResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_monitored_resources::ListMonitoredResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListMonitoredResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListMonitoredResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_monitored_resources::ListMonitoredResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_monitored_resources::ListMonitoredResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_monitored_resources::ListMonitoredResourcesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListMonitoredResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_monitored_resources::ListMonitoredResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_monitored_resources::ListMonitoredResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_monitored_resources::ListMonitoredResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListMonitoredResourcesFluentBuilder {
             crate::operation::list_monitored_resources::ListMonitoredResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_monitored_resources::ListMonitoredResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_monitored_resources::ListMonitoredResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_monitored_resources::paginator::ListMonitoredResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_monitored_resources::paginator::ListMonitoredResourcesPaginator
-    {
-        crate::operation::list_monitored_resources::paginator::ListMonitoredResourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_monitored_resources::paginator::ListMonitoredResourcesPaginator {
+        crate::operation::list_monitored_resources::paginator::ListMonitoredResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
     pub fn filters(mut self, input: crate::types::ListMonitoredResourcesFilters) -> Self {
@@ -141,17 +121,12 @@ impl ListMonitoredResourcesFluentBuilder {
         self
     }
     /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListMonitoredResourcesFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListMonitoredResourcesFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListMonitoredResourcesFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListMonitoredResourcesFilters> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>

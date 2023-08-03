@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListUsageLimitsOutput {
 }
 impl ListUsageLimitsOutput {
     /// Creates a new builder-style object to manufacture [`ListUsageLimitsOutput`](crate::operation::list_usage_limits::ListUsageLimitsOutput).
-    pub fn builder() -> crate::operation::list_usage_limits::builders::ListUsageLimitsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_usage_limits::builders::ListUsageLimitsOutputBuilder {
         crate::operation::list_usage_limits::builders::ListUsageLimitsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUsageLimitsOutput`](crate::operation::list_usage_limits::ListUsageLimitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUsageLimitsOutputBuilder {
     pub(crate) usage_limits: ::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListUsageLimitsOutputBuilder {
         self
     }
     /// <p>An array of returned usage limit objects.</p>
-    pub fn set_usage_limits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>>,
-    ) -> Self {
+    pub fn set_usage_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>>) -> Self {
         self.usage_limits = input;
         self
     }
     /// <p>An array of returned usage limit objects.</p>
-    pub fn get_usage_limits(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>> {
+    pub fn get_usage_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>> {
         &self.usage_limits
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>

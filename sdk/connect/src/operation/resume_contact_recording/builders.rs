@@ -38,10 +38,7 @@ impl ResumeContactRecordingFluentBuilder {
         }
     }
     /// Access the ResumeContactRecording as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::resume_contact_recording::builders::ResumeContactRecordingInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::resume_contact_recording::builders::ResumeContactRecordingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ResumeContactRecordingFluentBuilder {
             crate::operation::resume_contact_recording::ResumeContactRecording,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resume_contact_recording::ResumeContactRecordingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resume_contact_recording::ResumeContactRecordingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ResumeContactRecordingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ResumeContactRecordingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resume_contact_recording::ResumeContactRecordingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resume_contact_recording::ResumeContactRecordingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resume_contact_recording::ResumeContactRecordingError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ResumeContactRecordingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resume_contact_recording::ResumeContactRecordingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resume_contact_recording::ResumeContactRecordingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resume_contact_recording::ResumeContactRecordingError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl ResumeContactRecordingFluentBuilder {
             crate::operation::resume_contact_recording::ResumeContactRecording,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resume_contact_recording::ResumeContactRecordingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resume_contact_recording::ResumeContactRecordingError>,
     > {
         self.customize_middleware().await
     }
@@ -153,18 +139,12 @@ impl ResumeContactRecordingFluentBuilder {
         self.inner.get_contact_id()
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn initial_contact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initial_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.initial_contact_id(input.into());
         self
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn set_initial_contact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initial_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_initial_contact_id(input);
         self
     }

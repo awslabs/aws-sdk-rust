@@ -9,7 +9,10 @@ pub fn ser_complete_multipart_read_set_upload_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_complete_read_set_upload_part_list_item::ser_complete_read_set_upload_part_list_item(&mut object_4, item_3)?;
+                crate::protocol_serde::shape_complete_read_set_upload_part_list_item::ser_complete_read_set_upload_part_list_item(
+                    &mut object_4,
+                    item_3,
+                )?;
                 object_4.finish();
             }
         }

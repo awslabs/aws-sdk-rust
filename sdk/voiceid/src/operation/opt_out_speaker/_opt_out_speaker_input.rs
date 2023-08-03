@@ -74,10 +74,7 @@ impl OptOutSpeakerInputBuilder {
     /// Consumes the builder and constructs a [`OptOutSpeakerInput`](crate::operation::opt_out_speaker::OptOutSpeakerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::opt_out_speaker::OptOutSpeakerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::opt_out_speaker::OptOutSpeakerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::opt_out_speaker::OptOutSpeakerInput {
             domain_id: self.domain_id,
             speaker_id: self.speaker_id,

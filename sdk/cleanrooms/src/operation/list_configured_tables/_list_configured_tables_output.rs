@@ -5,8 +5,7 @@
 pub struct ListConfiguredTablesOutput {
     /// <p>The configured tables listed by the request.</p>
     #[doc(hidden)]
-    pub configured_table_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableSummary>>,
+    pub configured_table_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableSummary>>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListConfiguredTablesOutput {
 }
 impl ListConfiguredTablesOutput {
     /// <p>The configured tables listed by the request.</p>
-    pub fn configured_table_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConfiguredTableSummary]> {
+    pub fn configured_table_summaries(&self) -> ::std::option::Option<&[crate::types::ConfiguredTableSummary]> {
         self.configured_table_summaries.as_deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListConfiguredTablesOutput {
 }
 impl ListConfiguredTablesOutput {
     /// Creates a new builder-style object to manufacture [`ListConfiguredTablesOutput`](crate::operation::list_configured_tables::ListConfiguredTablesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_configured_tables::builders::ListConfiguredTablesOutputBuilder {
+    pub fn builder() -> crate::operation::list_configured_tables::builders::ListConfiguredTablesOutputBuilder {
         crate::operation::list_configured_tables::builders::ListConfiguredTablesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListConfiguredTablesOutput`](crate::operation::list_configured_tables::ListConfiguredTablesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfiguredTablesOutputBuilder {
-    pub(crate) configured_table_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableSummary>>,
+    pub(crate) configured_table_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,27 +47,19 @@ impl ListConfiguredTablesOutputBuilder {
     /// To override the contents of this collection use [`set_configured_table_summaries`](Self::set_configured_table_summaries).
     ///
     /// <p>The configured tables listed by the request.</p>
-    pub fn configured_table_summaries(
-        mut self,
-        input: crate::types::ConfiguredTableSummary,
-    ) -> Self {
+    pub fn configured_table_summaries(mut self, input: crate::types::ConfiguredTableSummary) -> Self {
         let mut v = self.configured_table_summaries.unwrap_or_default();
         v.push(input);
         self.configured_table_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>The configured tables listed by the request.</p>
-    pub fn set_configured_table_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableSummary>>,
-    ) -> Self {
+    pub fn set_configured_table_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableSummary>>) -> Self {
         self.configured_table_summaries = input;
         self
     }
     /// <p>The configured tables listed by the request.</p>
-    pub fn get_configured_table_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableSummary>> {
+    pub fn get_configured_table_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableSummary>> {
         &self.configured_table_summaries
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>

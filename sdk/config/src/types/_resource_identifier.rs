@@ -44,9 +44,7 @@ impl ResourceIdentifier {
 
 /// A builder for [`ResourceIdentifier`](crate::types::ResourceIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceIdentifierBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl ResourceIdentifierBuilder {
         self
     }
     /// <p>The type of resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -86,18 +81,12 @@ impl ResourceIdentifierBuilder {
         &self.resource_id
     }
     /// <p>The custom name of the resource (if available).</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom name of the resource (if available).</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -111,17 +100,12 @@ impl ResourceIdentifierBuilder {
         self
     }
     /// <p>The time that the resource was deleted.</p>
-    pub fn set_resource_deletion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_resource_deletion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.resource_deletion_time = input;
         self
     }
     /// <p>The time that the resource was deleted.</p>
-    pub fn get_resource_deletion_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_resource_deletion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.resource_deletion_time
     }
     /// Consumes the builder and constructs a [`ResourceIdentifier`](crate::types::ResourceIdentifier).

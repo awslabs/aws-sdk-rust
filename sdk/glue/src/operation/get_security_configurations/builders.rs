@@ -26,7 +26,7 @@ impl GetSecurityConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSecurityConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_security_configurations::builders::GetSecurityConfigurationsInputBuilder,
+    inner: crate::operation::get_security_configurations::builders::GetSecurityConfigurationsInputBuilder,
 }
 impl GetSecurityConfigurationsFluentBuilder {
     /// Creates a new `GetSecurityConfigurations`.
@@ -37,7 +37,7 @@ impl GetSecurityConfigurationsFluentBuilder {
         }
     }
     /// Access the GetSecurityConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_security_configurations::builders::GetSecurityConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_security_configurations::builders::GetSecurityConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetSecurityConfigurationsFluentBuilder {
             crate::operation::get_security_configurations::GetSecurityConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_security_configurations::GetSecurityConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_security_configurations::GetSecurityConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetSecurityConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetSecurityConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_security_configurations::GetSecurityConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_security_configurations::GetSecurityConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_security_configurations::GetSecurityConfigurationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetSecurityConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_security_configurations::GetSecurityConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_security_configurations::GetSecurityConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_security_configurations::GetSecurityConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl GetSecurityConfigurationsFluentBuilder {
             crate::operation::get_security_configurations::GetSecurityConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_security_configurations::GetSecurityConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_security_configurations::GetSecurityConfigurationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_security_configurations::paginator::GetSecurityConfigurationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_security_configurations::paginator::GetSecurityConfigurationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::get_security_configurations::paginator::GetSecurityConfigurationsPaginator {
         crate::operation::get_security_configurations::paginator::GetSecurityConfigurationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to return.</p>

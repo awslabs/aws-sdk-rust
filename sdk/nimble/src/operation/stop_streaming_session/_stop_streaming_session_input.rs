@@ -30,25 +30,20 @@ impl StopStreamingSessionInput {
         self.studio_id.as_deref()
     }
     /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
-    pub fn volume_retention_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VolumeRetentionMode> {
+    pub fn volume_retention_mode(&self) -> ::std::option::Option<&crate::types::VolumeRetentionMode> {
         self.volume_retention_mode.as_ref()
     }
 }
 impl StopStreamingSessionInput {
     /// Creates a new builder-style object to manufacture [`StopStreamingSessionInput`](crate::operation::stop_streaming_session::StopStreamingSessionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_streaming_session::builders::StopStreamingSessionInputBuilder {
+    pub fn builder() -> crate::operation::stop_streaming_session::builders::StopStreamingSessionInputBuilder {
         crate::operation::stop_streaming_session::builders::StopStreamingSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopStreamingSessionInput`](crate::operation::stop_streaming_session::StopStreamingSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopStreamingSessionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
@@ -104,33 +99,24 @@ impl StopStreamingSessionInputBuilder {
         self
     }
     /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
-    pub fn set_volume_retention_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeRetentionMode>,
-    ) -> Self {
+    pub fn set_volume_retention_mode(mut self, input: ::std::option::Option<crate::types::VolumeRetentionMode>) -> Self {
         self.volume_retention_mode = input;
         self
     }
     /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
-    pub fn get_volume_retention_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::VolumeRetentionMode> {
+    pub fn get_volume_retention_mode(&self) -> &::std::option::Option<crate::types::VolumeRetentionMode> {
         &self.volume_retention_mode
     }
     /// Consumes the builder and constructs a [`StopStreamingSessionInput`](crate::operation::stop_streaming_session::StopStreamingSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_streaming_session::StopStreamingSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_streaming_session::StopStreamingSessionInput {
-                client_token: self.client_token,
-                session_id: self.session_id,
-                studio_id: self.studio_id,
-                volume_retention_mode: self.volume_retention_mode,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_streaming_session::StopStreamingSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_streaming_session::StopStreamingSessionInput {
+            client_token: self.client_token,
+            session_id: self.session_id,
+            studio_id: self.studio_id,
+            volume_retention_mode: self.volume_retention_mode,
+        })
     }
 }

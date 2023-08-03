@@ -47,13 +47,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DataReplicationInitiationStepName {
     #[allow(missing_docs)] // documentation missing in model
@@ -85,29 +79,17 @@ impl ::std::convert::From<&str> for DataReplicationInitiationStepName {
     fn from(s: &str) -> Self {
         match s {
             "ATTACH_STAGING_DISKS" => DataReplicationInitiationStepName::AttachStagingDisks,
-            "AUTHENTICATE_WITH_SERVICE" => {
-                DataReplicationInitiationStepName::AuthenticateWithService
-            }
+            "AUTHENTICATE_WITH_SERVICE" => DataReplicationInitiationStepName::AuthenticateWithService,
             "BOOT_REPLICATION_SERVER" => DataReplicationInitiationStepName::BootReplicationServer,
-            "CONNECT_AGENT_TO_REPLICATION_SERVER" => {
-                DataReplicationInitiationStepName::ConnectAgentToReplicationServer
-            }
+            "CONNECT_AGENT_TO_REPLICATION_SERVER" => DataReplicationInitiationStepName::ConnectAgentToReplicationServer,
             "CREATE_SECURITY_GROUP" => DataReplicationInitiationStepName::CreateSecurityGroup,
             "CREATE_STAGING_DISKS" => DataReplicationInitiationStepName::CreateStagingDisks,
-            "DOWNLOAD_REPLICATION_SOFTWARE" => {
-                DataReplicationInitiationStepName::DownloadReplicationSoftware
-            }
-            "LAUNCH_REPLICATION_SERVER" => {
-                DataReplicationInitiationStepName::LaunchReplicationServer
-            }
-            "PAIR_REPLICATION_SERVER_WITH_AGENT" => {
-                DataReplicationInitiationStepName::PairReplicationServerWithAgent
-            }
+            "DOWNLOAD_REPLICATION_SOFTWARE" => DataReplicationInitiationStepName::DownloadReplicationSoftware,
+            "LAUNCH_REPLICATION_SERVER" => DataReplicationInitiationStepName::LaunchReplicationServer,
+            "PAIR_REPLICATION_SERVER_WITH_AGENT" => DataReplicationInitiationStepName::PairReplicationServerWithAgent,
             "START_DATA_TRANSFER" => DataReplicationInitiationStepName::StartDataTransfer,
             "WAIT" => DataReplicationInitiationStepName::Wait,
-            other => DataReplicationInitiationStepName::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => DataReplicationInitiationStepName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -123,24 +105,14 @@ impl DataReplicationInitiationStepName {
     pub fn as_str(&self) -> &str {
         match self {
             DataReplicationInitiationStepName::AttachStagingDisks => "ATTACH_STAGING_DISKS",
-            DataReplicationInitiationStepName::AuthenticateWithService => {
-                "AUTHENTICATE_WITH_SERVICE"
-            }
+            DataReplicationInitiationStepName::AuthenticateWithService => "AUTHENTICATE_WITH_SERVICE",
             DataReplicationInitiationStepName::BootReplicationServer => "BOOT_REPLICATION_SERVER",
-            DataReplicationInitiationStepName::ConnectAgentToReplicationServer => {
-                "CONNECT_AGENT_TO_REPLICATION_SERVER"
-            }
+            DataReplicationInitiationStepName::ConnectAgentToReplicationServer => "CONNECT_AGENT_TO_REPLICATION_SERVER",
             DataReplicationInitiationStepName::CreateSecurityGroup => "CREATE_SECURITY_GROUP",
             DataReplicationInitiationStepName::CreateStagingDisks => "CREATE_STAGING_DISKS",
-            DataReplicationInitiationStepName::DownloadReplicationSoftware => {
-                "DOWNLOAD_REPLICATION_SOFTWARE"
-            }
-            DataReplicationInitiationStepName::LaunchReplicationServer => {
-                "LAUNCH_REPLICATION_SERVER"
-            }
-            DataReplicationInitiationStepName::PairReplicationServerWithAgent => {
-                "PAIR_REPLICATION_SERVER_WITH_AGENT"
-            }
+            DataReplicationInitiationStepName::DownloadReplicationSoftware => "DOWNLOAD_REPLICATION_SOFTWARE",
+            DataReplicationInitiationStepName::LaunchReplicationServer => "LAUNCH_REPLICATION_SERVER",
+            DataReplicationInitiationStepName::PairReplicationServerWithAgent => "PAIR_REPLICATION_SERVER_WITH_AGENT",
             DataReplicationInitiationStepName::StartDataTransfer => "START_DATA_TRANSFER",
             DataReplicationInitiationStepName::Wait => "WAIT",
             DataReplicationInitiationStepName::Unknown(value) => value.as_str(),

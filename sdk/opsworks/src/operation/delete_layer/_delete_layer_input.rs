@@ -22,9 +22,7 @@ impl DeleteLayerInput {
 
 /// A builder for [`DeleteLayerInput`](crate::operation::delete_layer::DeleteLayerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLayerInputBuilder {
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteLayerInputBuilder {
         &self.layer_id
     }
     /// Consumes the builder and constructs a [`DeleteLayerInput`](crate::operation::delete_layer::DeleteLayerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_layer::DeleteLayerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_layer::DeleteLayerInput {
-            layer_id: self.layer_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_layer::DeleteLayerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_layer::DeleteLayerInput { layer_id: self.layer_id })
     }
 }

@@ -38,10 +38,8 @@ impl ::std::fmt::Debug for DescribeRootFoldersInput {
 }
 impl DescribeRootFoldersInput {
     /// Creates a new builder-style object to manufacture [`DescribeRootFoldersInput`](crate::operation::describe_root_folders::DescribeRootFoldersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_root_folders::builders::DescribeRootFoldersInputBuilder {
-        crate::operation::describe_root_folders::builders::DescribeRootFoldersInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_root_folders::builders::DescribeRootFoldersInputBuilder {
+        crate::operation::describe_root_folders::builders::DescribeRootFoldersInputBuilder::default()
     }
 }
 
@@ -55,18 +53,12 @@ pub struct DescribeRootFoldersInputBuilder {
 }
 impl DescribeRootFoldersInputBuilder {
     /// <p>Amazon WorkDocs authentication token.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -105,17 +97,13 @@ impl DescribeRootFoldersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRootFoldersInput`](crate::operation::describe_root_folders::DescribeRootFoldersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_root_folders::DescribeRootFoldersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_root_folders::DescribeRootFoldersInput {
-                authentication_token: self.authentication_token,
-                limit: self.limit,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_root_folders::DescribeRootFoldersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_root_folders::DescribeRootFoldersInput {
+            authentication_token: self.authentication_token,
+            limit: self.limit,
+            marker: self.marker,
+        })
     }
 }
 impl ::std::fmt::Debug for DescribeRootFoldersInputBuilder {

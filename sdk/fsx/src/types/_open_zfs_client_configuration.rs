@@ -38,9 +38,7 @@ impl OpenZfsClientConfiguration {
 
 /// A builder for [`OpenZfsClientConfiguration`](crate::types::OpenZfsClientConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpenZfsClientConfigurationBuilder {
     pub(crate) clients: ::std::option::Option<::std::string::String>,
     pub(crate) options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -80,10 +78,7 @@ impl OpenZfsClientConfigurationBuilder {
     /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
     /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li>
     /// </ul>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.options = input;
         self
     }

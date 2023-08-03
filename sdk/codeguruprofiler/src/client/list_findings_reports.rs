@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`findings_report_summaries(Option<Vec<FindingsReportSummary>>)`](crate::operation::list_findings_reports::ListFindingsReportsOutput::findings_report_summaries): <p>The list of analysis results summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_findings_reports::ListFindingsReportsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListFindingsReports</code> request. When the results of a <code>ListFindingsReports</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListFindingsReportsError>`](crate::operation::list_findings_reports::ListFindingsReportsError)
-    pub fn list_findings_reports(
-        &self,
-    ) -> crate::operation::list_findings_reports::builders::ListFindingsReportsFluentBuilder {
-        crate::operation::list_findings_reports::builders::ListFindingsReportsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_findings_reports(&self) -> crate::operation::list_findings_reports::builders::ListFindingsReportsFluentBuilder {
+        crate::operation::list_findings_reports::builders::ListFindingsReportsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,16 +22,14 @@ impl DescribeWorkspacesConnectionStatusInput {
 }
 impl DescribeWorkspacesConnectionStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspacesConnectionStatusInput`](crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput).
-    pub fn builder() -> crate::operation::describe_workspaces_connection_status::builders::DescribeWorkspacesConnectionStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_workspaces_connection_status::builders::DescribeWorkspacesConnectionStatusInputBuilder {
         crate::operation::describe_workspaces_connection_status::builders::DescribeWorkspacesConnectionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspacesConnectionStatusInput`](crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspacesConnectionStatusInputBuilder {
     pub(crate) workspace_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -42,27 +40,19 @@ impl DescribeWorkspacesConnectionStatusInputBuilder {
     /// To override the contents of this collection use [`set_workspace_ids`](Self::set_workspace_ids).
     ///
     /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-    pub fn workspace_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workspace_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.workspace_ids.unwrap_or_default();
         v.push(input.into());
         self.workspace_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_workspace_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_workspace_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.workspace_ids = input;
         self
     }
     /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-    pub fn get_workspace_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_workspace_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.workspace_ids
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
@@ -80,14 +70,17 @@ impl DescribeWorkspacesConnectionStatusInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeWorkspacesConnectionStatusInput`](crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput {
-                workspace_ids: self.workspace_ids
-                ,
-                next_token: self.next_token
-                ,
-            }
+                workspace_ids: self.workspace_ids,
+                next_token: self.next_token,
+            },
         )
     }
 }

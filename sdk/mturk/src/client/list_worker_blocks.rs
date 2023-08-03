@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`num_results(Option<i32>)`](crate::operation::list_worker_blocks::ListWorkerBlocksOutput::num_results): <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
     ///   - [`worker_blocks(Option<Vec<WorkerBlock>>)`](crate::operation::list_worker_blocks::ListWorkerBlocksOutput::worker_blocks): <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
     /// - On failure, responds with [`SdkError<ListWorkerBlocksError>`](crate::operation::list_worker_blocks::ListWorkerBlocksError)
-    pub fn list_worker_blocks(
-        &self,
-    ) -> crate::operation::list_worker_blocks::builders::ListWorkerBlocksFluentBuilder {
-        crate::operation::list_worker_blocks::builders::ListWorkerBlocksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_worker_blocks(&self) -> crate::operation::list_worker_blocks::builders::ListWorkerBlocksFluentBuilder {
+        crate::operation::list_worker_blocks::builders::ListWorkerBlocksFluentBuilder::new(self.handle.clone())
     }
 }

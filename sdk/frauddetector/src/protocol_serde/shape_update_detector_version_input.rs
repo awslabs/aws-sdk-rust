@@ -39,10 +39,7 @@ pub fn ser_update_detector_version_input(
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_model_version::ser_model_version(
-                    &mut object_14,
-                    item_13,
-                )?;
+                crate::protocol_serde::shape_model_version::ser_model_version(&mut object_14, item_13)?;
                 object_14.finish();
             }
         }

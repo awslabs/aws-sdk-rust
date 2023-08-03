@@ -5,8 +5,7 @@
 pub struct ListBatchInferenceJobsOutput {
     /// <p>A list containing information on each job that is returned.</p>
     #[doc(hidden)]
-    pub batch_inference_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchInferenceJobSummary>>,
+    pub batch_inference_jobs: ::std::option::Option<::std::vec::Vec<crate::types::BatchInferenceJobSummary>>,
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListBatchInferenceJobsOutput {
 }
 impl ListBatchInferenceJobsOutput {
     /// <p>A list containing information on each job that is returned.</p>
-    pub fn batch_inference_jobs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchInferenceJobSummary]> {
+    pub fn batch_inference_jobs(&self) -> ::std::option::Option<&[crate::types::BatchInferenceJobSummary]> {
         self.batch_inference_jobs.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListBatchInferenceJobsOutput {
 }
 impl ListBatchInferenceJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListBatchInferenceJobsOutput`](crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsOutputBuilder {
         crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBatchInferenceJobsOutput`](crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBatchInferenceJobsOutputBuilder {
-    pub(crate) batch_inference_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchInferenceJobSummary>>,
+    pub(crate) batch_inference_jobs: ::std::option::Option<::std::vec::Vec<crate::types::BatchInferenceJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListBatchInferenceJobsOutputBuilder {
         self
     }
     /// <p>A list containing information on each job that is returned.</p>
-    pub fn set_batch_inference_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchInferenceJobSummary>>,
-    ) -> Self {
+    pub fn set_batch_inference_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchInferenceJobSummary>>) -> Self {
         self.batch_inference_jobs = input;
         self
     }
     /// <p>A list containing information on each job that is returned.</p>
-    pub fn get_batch_inference_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchInferenceJobSummary>> {
+    pub fn get_batch_inference_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchInferenceJobSummary>> {
         &self.batch_inference_jobs
     }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
@@ -99,9 +86,7 @@ impl ListBatchInferenceJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListBatchInferenceJobsOutput`](crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput {
+    pub fn build(self) -> crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput {
         crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput {
             batch_inference_jobs: self.batch_inference_jobs,
             next_token: self.next_token,

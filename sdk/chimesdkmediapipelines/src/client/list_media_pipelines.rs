@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`media_pipelines(Option<Vec<MediaPipelineSummary>>)`](crate::operation::list_media_pipelines::ListMediaPipelinesOutput::media_pipelines): <p>The media pipeline objects in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_media_pipelines::ListMediaPipelinesOutput::next_token): <p>The token used to retrieve the next page of results. </p>
     /// - On failure, responds with [`SdkError<ListMediaPipelinesError>`](crate::operation::list_media_pipelines::ListMediaPipelinesError)
-    pub fn list_media_pipelines(
-        &self,
-    ) -> crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder {
-        crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_media_pipelines(&self) -> crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder {
+        crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder::new(self.handle.clone())
     }
 }

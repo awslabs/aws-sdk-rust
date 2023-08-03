@@ -28,9 +28,7 @@ impl DeleteTokenOutput {
 
 /// A builder for [`DeleteTokenOutput`](crate::operation::delete_token::DeleteTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTokenOutputBuilder {
     pub(crate) is_success: ::std::option::Option<bool>,
     _request_id: Option<String>,

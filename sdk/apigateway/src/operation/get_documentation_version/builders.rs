@@ -26,8 +26,7 @@ impl GetDocumentationVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDocumentationVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_documentation_version::builders::GetDocumentationVersionInputBuilder,
+    inner: crate::operation::get_documentation_version::builders::GetDocumentationVersionInputBuilder,
 }
 impl GetDocumentationVersionFluentBuilder {
     /// Creates a new `GetDocumentationVersion`.
@@ -38,10 +37,7 @@ impl GetDocumentationVersionFluentBuilder {
         }
     }
     /// Access the GetDocumentationVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_documentation_version::builders::GetDocumentationVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_documentation_version::builders::GetDocumentationVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetDocumentationVersionFluentBuilder {
             crate::operation::get_documentation_version::GetDocumentationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_documentation_version::GetDocumentationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_documentation_version::GetDocumentationVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetDocumentationVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetDocumentationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_documentation_version::GetDocumentationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_documentation_version::GetDocumentationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_documentation_version::GetDocumentationVersionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetDocumentationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_documentation_version::GetDocumentationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_documentation_version::GetDocumentationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_documentation_version::GetDocumentationVersionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetDocumentationVersionFluentBuilder {
             crate::operation::get_documentation_version::GetDocumentationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_documentation_version::GetDocumentationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_documentation_version::GetDocumentationVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl GetDocumentationVersionFluentBuilder {
         self.inner.get_rest_api_id()
     }
     /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
-    pub fn documentation_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documentation_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.documentation_version(input.into());
         self
     }
     /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
-    pub fn set_documentation_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documentation_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_documentation_version(input);
         self
     }

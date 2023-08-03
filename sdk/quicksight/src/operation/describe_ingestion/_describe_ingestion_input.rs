@@ -29,17 +29,14 @@ impl DescribeIngestionInput {
 }
 impl DescribeIngestionInput {
     /// Creates a new builder-style object to manufacture [`DescribeIngestionInput`](crate::operation::describe_ingestion::DescribeIngestionInput).
-    pub fn builder() -> crate::operation::describe_ingestion::builders::DescribeIngestionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_ingestion::builders::DescribeIngestionInputBuilder {
         crate::operation::describe_ingestion::builders::DescribeIngestionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIngestionInput`](crate::operation::describe_ingestion::DescribeIngestionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIngestionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct DescribeIngestionInputBuilder {
 }
 impl DescribeIngestionInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -97,16 +88,11 @@ impl DescribeIngestionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIngestionInput`](crate::operation::describe_ingestion::DescribeIngestionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ingestion::DescribeIngestionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_ingestion::DescribeIngestionInput {
-                aws_account_id: self.aws_account_id,
-                data_set_id: self.data_set_id,
-                ingestion_id: self.ingestion_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_ingestion::DescribeIngestionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_ingestion::DescribeIngestionInput {
+            aws_account_id: self.aws_account_id,
+            data_set_id: self.data_set_id,
+            ingestion_id: self.ingestion_id,
+        })
     }
 }

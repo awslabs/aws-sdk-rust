@@ -29,17 +29,14 @@ impl ListPermissionSetsInput {
 }
 impl ListPermissionSetsInput {
     /// Creates a new builder-style object to manufacture [`ListPermissionSetsInput`](crate::operation::list_permission_sets::ListPermissionSetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_permission_sets::builders::ListPermissionSetsInputBuilder {
+    pub fn builder() -> crate::operation::list_permission_sets::builders::ListPermissionSetsInputBuilder {
         crate::operation::list_permission_sets::builders::ListPermissionSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPermissionSetsInput`](crate::operation::list_permission_sets::ListPermissionSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionSetsInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl ListPermissionSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListPermissionSetsInput`](crate::operation::list_permission_sets::ListPermissionSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_permission_sets::ListPermissionSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_permission_sets::ListPermissionSetsInput {
-                instance_arn: self.instance_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_permission_sets::ListPermissionSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_permission_sets::ListPermissionSetsInput {
+            instance_arn: self.instance_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

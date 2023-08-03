@@ -48,9 +48,7 @@ impl ListAutoMlJobsInput {
         self.last_modified_time_after.as_ref()
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn last_modified_time_before(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>Request a list of jobs, using a search filter for name.</p>
@@ -87,9 +85,7 @@ impl ListAutoMlJobsInput {
 
 /// A builder for [`ListAutoMlJobsInput`](crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAutoMlJobsInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -109,10 +105,7 @@ impl ListAutoMlJobsInputBuilder {
         self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -126,10 +119,7 @@ impl ListAutoMlJobsInputBuilder {
         self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -143,17 +133,12 @@ impl ListAutoMlJobsInputBuilder {
         self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_after = input;
         self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_after
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
@@ -162,32 +147,21 @@ impl ListAutoMlJobsInputBuilder {
         self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_before = input;
         self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_before
     }
     /// <p>Request a list of jobs, using a search filter for name.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Request a list of jobs, using a search filter for name.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -201,10 +175,7 @@ impl ListAutoMlJobsInputBuilder {
         self
     }
     /// <p>Request a list of jobs, using a filter for status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlJobStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::AutoMlJobStatus>) -> Self {
         self.status_equals = input;
         self
     }
@@ -218,10 +189,7 @@ impl ListAutoMlJobsInputBuilder {
         self
     }
     /// <p>The sort order for the results. The default is <code>Descending</code>.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::AutoMlSortOrder>) -> Self {
         self.sort_order = input;
         self
     }
@@ -274,10 +242,7 @@ impl ListAutoMlJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListAutoMlJobsInput`](crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput {
             creation_time_after: self.creation_time_after,
             creation_time_before: self.creation_time_before,

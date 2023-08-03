@@ -44,59 +44,40 @@ impl NotebookInstanceLifecycleConfigSummary {
 
 /// A builder for [`NotebookInstanceLifecycleConfigSummary`](crate::types::NotebookInstanceLifecycleConfigSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotebookInstanceLifecycleConfigSummaryBuilder {
-    pub(crate) notebook_instance_lifecycle_config_name:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) notebook_instance_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl NotebookInstanceLifecycleConfigSummaryBuilder {
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn set_notebook_instance_lifecycle_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_instance_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_name = input;
         self
     }
     /// <p>The name of the lifecycle configuration.</p>
-    pub fn get_notebook_instance_lifecycle_config_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_notebook_instance_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_instance_lifecycle_config_name
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_lifecycle_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    pub fn set_notebook_instance_lifecycle_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_instance_lifecycle_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    pub fn get_notebook_instance_lifecycle_config_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_notebook_instance_lifecycle_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_instance_lifecycle_config_arn
     }
     /// <p>A timestamp that tells when the lifecycle configuration was created.</p>
@@ -105,10 +86,7 @@ impl NotebookInstanceLifecycleConfigSummaryBuilder {
         self
     }
     /// <p>A timestamp that tells when the lifecycle configuration was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -122,10 +100,7 @@ impl NotebookInstanceLifecycleConfigSummaryBuilder {
         self
     }
     /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

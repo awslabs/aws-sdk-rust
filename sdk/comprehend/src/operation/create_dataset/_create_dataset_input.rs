@@ -43,9 +43,7 @@ impl CreateDatasetInput {
         self.description.as_deref()
     }
     /// <p>Information about the input data configuration. The type of input data varies based on the format of the input and whether the data is for a classifier model or an entity recognition model.</p>
-    pub fn input_data_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DatasetInputDataConfig> {
+    pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::DatasetInputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
@@ -66,9 +64,7 @@ impl CreateDatasetInput {
 
 /// A builder for [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDatasetInputBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
@@ -113,10 +109,7 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p>The dataset type. You can specify that the data in a dataset is for training the model or for testing the model.</p>
-    pub fn set_dataset_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetType>,
-    ) -> Self {
+    pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
         self.dataset_type = input;
         self
     }
@@ -144,32 +137,21 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p>Information about the input data configuration. The type of input data varies based on the format of the input and whether the data is for a classifier model or an entity recognition model.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetInputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::DatasetInputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
     /// <p>Information about the input data configuration. The type of input data varies based on the format of the input and whether the data is for a classifier model or an entity recognition model.</p>
-    pub fn get_input_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatasetInputDataConfig> {
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::DatasetInputDataConfig> {
         &self.input_data_config
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -189,10 +171,7 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p>Tags for the dataset.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -203,10 +182,7 @@ impl CreateDatasetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_dataset::CreateDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_dataset::CreateDatasetInput {
             flywheel_arn: self.flywheel_arn,
             dataset_name: self.dataset_name,

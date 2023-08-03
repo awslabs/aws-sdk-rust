@@ -37,9 +37,7 @@ impl BucketLevelPermissions {
 
 /// A builder for [`BucketLevelPermissions`](crate::types::BucketLevelPermissions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketLevelPermissionsBuilder {
     pub(crate) access_control_list: ::std::option::Option<crate::types::AccessControlList>,
     pub(crate) block_public_access: ::std::option::Option<crate::types::BlockPublicAccess>,
@@ -52,17 +50,12 @@ impl BucketLevelPermissionsBuilder {
         self
     }
     /// <p>The permissions settings of the access control list (ACL) for the bucket. This value is null if an ACL hasn't been defined for the bucket.</p>
-    pub fn set_access_control_list(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessControlList>,
-    ) -> Self {
+    pub fn set_access_control_list(mut self, input: ::std::option::Option<crate::types::AccessControlList>) -> Self {
         self.access_control_list = input;
         self
     }
     /// <p>The permissions settings of the access control list (ACL) for the bucket. This value is null if an ACL hasn't been defined for the bucket.</p>
-    pub fn get_access_control_list(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessControlList> {
+    pub fn get_access_control_list(&self) -> &::std::option::Option<crate::types::AccessControlList> {
         &self.access_control_list
     }
     /// <p>The block public access settings for the bucket.</p>
@@ -71,17 +64,12 @@ impl BucketLevelPermissionsBuilder {
         self
     }
     /// <p>The block public access settings for the bucket.</p>
-    pub fn set_block_public_access(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockPublicAccess>,
-    ) -> Self {
+    pub fn set_block_public_access(mut self, input: ::std::option::Option<crate::types::BlockPublicAccess>) -> Self {
         self.block_public_access = input;
         self
     }
     /// <p>The block public access settings for the bucket.</p>
-    pub fn get_block_public_access(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlockPublicAccess> {
+    pub fn get_block_public_access(&self) -> &::std::option::Option<crate::types::BlockPublicAccess> {
         &self.block_public_access
     }
     /// <p>The permissions settings of the bucket policy for the bucket. This value is null if a bucket policy hasn't been defined for the bucket.</p>
@@ -90,10 +78,7 @@ impl BucketLevelPermissionsBuilder {
         self
     }
     /// <p>The permissions settings of the bucket policy for the bucket. This value is null if a bucket policy hasn't been defined for the bucket.</p>
-    pub fn set_bucket_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketPolicy>,
-    ) -> Self {
+    pub fn set_bucket_policy(mut self, input: ::std::option::Option<crate::types::BucketPolicy>) -> Self {
         self.bucket_policy = input;
         self
     }

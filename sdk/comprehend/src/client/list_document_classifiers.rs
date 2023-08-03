@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`document_classifier_properties_list(Option<Vec<DocumentClassifierProperties>>)`](crate::operation::list_document_classifiers::ListDocumentClassifiersOutput::document_classifier_properties_list): <p>A list containing the properties of each job returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_document_classifiers::ListDocumentClassifiersOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListDocumentClassifiersError>`](crate::operation::list_document_classifiers::ListDocumentClassifiersError)
-    pub fn list_document_classifiers(
-        &self,
-    ) -> crate::operation::list_document_classifiers::builders::ListDocumentClassifiersFluentBuilder
-    {
+    pub fn list_document_classifiers(&self) -> crate::operation::list_document_classifiers::builders::ListDocumentClassifiersFluentBuilder {
         crate::operation::list_document_classifiers::builders::ListDocumentClassifiersFluentBuilder::new(self.handle.clone())
     }
 }

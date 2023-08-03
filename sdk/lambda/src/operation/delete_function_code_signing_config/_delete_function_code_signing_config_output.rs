@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteFunctionCodeSigningConfigOutput
 }
 impl DeleteFunctionCodeSigningConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionCodeSigningConfigOutput`](crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigOutput).
-    pub fn builder() -> crate::operation::delete_function_code_signing_config::builders::DeleteFunctionCodeSigningConfigOutputBuilder{
+    pub fn builder() -> crate::operation::delete_function_code_signing_config::builders::DeleteFunctionCodeSigningConfigOutputBuilder {
         crate::operation::delete_function_code_signing_config::builders::DeleteFunctionCodeSigningConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFunctionCodeSigningConfigOutput`](crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFunctionCodeSigningConfigOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteFunctionCodeSigningConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteFunctionCodeSigningConfigOutput`](crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigOutput
-    {
+    pub fn build(self) -> crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigOutput {
         crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigOutput {
             _request_id: self._request_id,
         }

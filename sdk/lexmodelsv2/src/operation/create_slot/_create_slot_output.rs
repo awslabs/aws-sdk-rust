@@ -62,9 +62,7 @@ impl CreateSlotOutput {
         self.slot_type_id.as_deref()
     }
     /// <p>The value elicitation settings specified for the slot.</p>
-    pub fn value_elicitation_setting(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SlotValueElicitationSetting> {
+    pub fn value_elicitation_setting(&self) -> ::std::option::Option<&crate::types::SlotValueElicitationSetting> {
         self.value_elicitation_setting.as_ref()
     }
     /// <p>Indicates whether the slot is configured to obfuscate values in Amazon CloudWatch logs.</p>
@@ -92,9 +90,7 @@ impl CreateSlotOutput {
         self.creation_date_time.as_ref()
     }
     /// <p>Indicates whether the slot returns multiple values in one response.</p>
-    pub fn multiple_values_setting(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultipleValuesSetting> {
+    pub fn multiple_values_setting(&self) -> ::std::option::Option<&crate::types::MultipleValuesSetting> {
         self.multiple_values_setting.as_ref()
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
@@ -116,16 +112,13 @@ impl CreateSlotOutput {
 
 /// A builder for [`CreateSlotOutput`](crate::operation::create_slot::CreateSlotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSlotOutputBuilder {
     pub(crate) slot_id: ::std::option::Option<::std::string::String>,
     pub(crate) slot_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) slot_type_id: ::std::option::Option<::std::string::String>,
-    pub(crate) value_elicitation_setting:
-        ::std::option::Option<crate::types::SlotValueElicitationSetting>,
+    pub(crate) value_elicitation_setting: ::std::option::Option<crate::types::SlotValueElicitationSetting>,
     pub(crate) obfuscation_setting: ::std::option::Option<crate::types::ObfuscationSetting>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -194,25 +187,17 @@ impl CreateSlotOutputBuilder {
         &self.slot_type_id
     }
     /// <p>The value elicitation settings specified for the slot.</p>
-    pub fn value_elicitation_setting(
-        mut self,
-        input: crate::types::SlotValueElicitationSetting,
-    ) -> Self {
+    pub fn value_elicitation_setting(mut self, input: crate::types::SlotValueElicitationSetting) -> Self {
         self.value_elicitation_setting = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value elicitation settings specified for the slot.</p>
-    pub fn set_value_elicitation_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotValueElicitationSetting>,
-    ) -> Self {
+    pub fn set_value_elicitation_setting(mut self, input: ::std::option::Option<crate::types::SlotValueElicitationSetting>) -> Self {
         self.value_elicitation_setting = input;
         self
     }
     /// <p>The value elicitation settings specified for the slot.</p>
-    pub fn get_value_elicitation_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::SlotValueElicitationSetting> {
+    pub fn get_value_elicitation_setting(&self) -> &::std::option::Option<crate::types::SlotValueElicitationSetting> {
         &self.value_elicitation_setting
     }
     /// <p>Indicates whether the slot is configured to obfuscate values in Amazon CloudWatch logs.</p>
@@ -221,17 +206,12 @@ impl CreateSlotOutputBuilder {
         self
     }
     /// <p>Indicates whether the slot is configured to obfuscate values in Amazon CloudWatch logs.</p>
-    pub fn set_obfuscation_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::ObfuscationSetting>,
-    ) -> Self {
+    pub fn set_obfuscation_setting(mut self, input: ::std::option::Option<crate::types::ObfuscationSetting>) -> Self {
         self.obfuscation_setting = input;
         self
     }
     /// <p>Indicates whether the slot is configured to obfuscate values in Amazon CloudWatch logs.</p>
-    pub fn get_obfuscation_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObfuscationSetting> {
+    pub fn get_obfuscation_setting(&self) -> &::std::option::Option<crate::types::ObfuscationSetting> {
         &self.obfuscation_setting
     }
     /// <p>The unique identifier of the bot associated with the slot.</p>
@@ -296,10 +276,7 @@ impl CreateSlotOutputBuilder {
         self
     }
     /// <p>The timestamp of the date and time that the slot was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -313,17 +290,12 @@ impl CreateSlotOutputBuilder {
         self
     }
     /// <p>Indicates whether the slot returns multiple values in one response.</p>
-    pub fn set_multiple_values_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::MultipleValuesSetting>,
-    ) -> Self {
+    pub fn set_multiple_values_setting(mut self, input: ::std::option::Option<crate::types::MultipleValuesSetting>) -> Self {
         self.multiple_values_setting = input;
         self
     }
     /// <p>Indicates whether the slot returns multiple values in one response.</p>
-    pub fn get_multiple_values_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultipleValuesSetting> {
+    pub fn get_multiple_values_setting(&self) -> &::std::option::Option<crate::types::MultipleValuesSetting> {
         &self.multiple_values_setting
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
@@ -332,10 +304,7 @@ impl CreateSlotOutputBuilder {
         self
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    pub fn set_sub_slot_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::SubSlotSetting>,
-    ) -> Self {
+    pub fn set_sub_slot_setting(mut self, input: ::std::option::Option<crate::types::SubSlotSetting>) -> Self {
         self.sub_slot_setting = input;
         self
     }

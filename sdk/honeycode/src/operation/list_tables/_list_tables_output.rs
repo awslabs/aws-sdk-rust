@@ -42,9 +42,7 @@ impl ListTablesOutput {
 
 /// A builder for [`ListTablesOutput`](crate::operation::list_tables::ListTablesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTablesOutputBuilder {
     pub(crate) tables: ::std::option::Option<::std::vec::Vec<crate::types::Table>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,10 +62,7 @@ impl ListTablesOutputBuilder {
         self
     }
     /// <p> The list of tables in the workbook. </p>
-    pub fn set_tables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Table>>,
-    ) -> Self {
+    pub fn set_tables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Table>>) -> Self {
         self.tables = input;
         self
     }

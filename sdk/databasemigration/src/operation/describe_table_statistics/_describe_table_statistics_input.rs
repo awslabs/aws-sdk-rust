@@ -45,18 +45,14 @@ impl DescribeTableStatisticsInput {
 }
 impl DescribeTableStatisticsInput {
     /// Creates a new builder-style object to manufacture [`DescribeTableStatisticsInput`](crate::operation::describe_table_statistics::DescribeTableStatisticsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_table_statistics::builders::DescribeTableStatisticsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_table_statistics::builders::DescribeTableStatisticsInputBuilder {
         crate::operation::describe_table_statistics::builders::DescribeTableStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTableStatisticsInput`](crate::operation::describe_table_statistics::DescribeTableStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTableStatisticsInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -65,18 +61,12 @@ pub struct DescribeTableStatisticsInputBuilder {
 }
 impl DescribeTableStatisticsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_arn = input;
         self
     }
@@ -134,10 +124,7 @@ impl DescribeTableStatisticsInputBuilder {
     /// <p>Filters applied to table statistics.</p>
     /// <p>Valid filter names: schema-name | table-name | table-state</p>
     /// <p>A combination of filters creates an AND condition where each record matches all specified filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -154,13 +141,11 @@ impl DescribeTableStatisticsInputBuilder {
         crate::operation::describe_table_statistics::DescribeTableStatisticsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_table_statistics::DescribeTableStatisticsInput {
-                replication_task_arn: self.replication_task_arn,
-                max_records: self.max_records,
-                marker: self.marker,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_table_statistics::DescribeTableStatisticsInput {
+            replication_task_arn: self.replication_task_arn,
+            max_records: self.max_records,
+            marker: self.marker,
+            filters: self.filters,
+        })
     }
 }

@@ -37,7 +37,7 @@ impl DeleteSqlInjectionMatchSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSqlInjectionMatchSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_sql_injection_match_set::builders::DeleteSqlInjectionMatchSetInputBuilder,
+    inner: crate::operation::delete_sql_injection_match_set::builders::DeleteSqlInjectionMatchSetInputBuilder,
 }
 impl DeleteSqlInjectionMatchSetFluentBuilder {
     /// Creates a new `DeleteSqlInjectionMatchSet`.
@@ -48,7 +48,7 @@ impl DeleteSqlInjectionMatchSetFluentBuilder {
         }
     }
     /// Access the DeleteSqlInjectionMatchSet as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_sql_injection_match_set::builders::DeleteSqlInjectionMatchSetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_sql_injection_match_set::builders::DeleteSqlInjectionMatchSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +60,7 @@ impl DeleteSqlInjectionMatchSetFluentBuilder {
             crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +70,7 @@ impl DeleteSqlInjectionMatchSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +79,7 @@ impl DeleteSqlInjectionMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError>,
     > {
         let op = self
             .inner
@@ -109,9 +102,7 @@ impl DeleteSqlInjectionMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError>,
     > {
         self.send_middleware().await
     }
@@ -125,25 +116,17 @@ impl DeleteSqlInjectionMatchSetFluentBuilder {
             crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sql_injection_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sql_injection_match_set_id(input.into());
         self
     }
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn set_sql_injection_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sql_injection_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sql_injection_match_set_id(input);
         self
     }

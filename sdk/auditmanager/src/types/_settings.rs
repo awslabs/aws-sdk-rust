@@ -12,8 +12,7 @@ pub struct Settings {
     pub sns_topic: ::std::option::Option<::std::string::String>,
     /// <p>The default S3 destination bucket for storing assessment reports.</p>
     #[doc(hidden)]
-    pub default_assessment_reports_destination:
-        ::std::option::Option<crate::types::AssessmentReportsDestination>,
+    pub default_assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
     /// <p> The designated default audit owners. </p>
     #[doc(hidden)]
     pub default_process_owners: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
@@ -40,9 +39,7 @@ impl Settings {
         self.sns_topic.as_deref()
     }
     /// <p>The default S3 destination bucket for storing assessment reports.</p>
-    pub fn default_assessment_reports_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AssessmentReportsDestination> {
+    pub fn default_assessment_reports_destination(&self) -> ::std::option::Option<&crate::types::AssessmentReportsDestination> {
         self.default_assessment_reports_destination.as_ref()
     }
     /// <p> The designated default audit owners. </p>
@@ -54,21 +51,15 @@ impl Settings {
         self.kms_key.as_deref()
     }
     /// <p>The current evidence finder status and event data store details.</p>
-    pub fn evidence_finder_enablement(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EvidenceFinderEnablement> {
+    pub fn evidence_finder_enablement(&self) -> ::std::option::Option<&crate::types::EvidenceFinderEnablement> {
         self.evidence_finder_enablement.as_ref()
     }
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
-    pub fn deregistration_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeregistrationPolicy> {
+    pub fn deregistration_policy(&self) -> ::std::option::Option<&crate::types::DeregistrationPolicy> {
         self.deregistration_policy.as_ref()
     }
     /// <p>The default S3 destination bucket for storing evidence finder exports.</p>
-    pub fn default_export_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DefaultExportDestination> {
+    pub fn default_export_destination(&self) -> ::std::option::Option<&crate::types::DefaultExportDestination> {
         self.default_export_destination.as_ref()
     }
 }
@@ -81,21 +72,16 @@ impl Settings {
 
 /// A builder for [`Settings`](crate::types::Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SettingsBuilder {
     pub(crate) is_aws_org_enabled: ::std::option::Option<bool>,
     pub(crate) sns_topic: ::std::option::Option<::std::string::String>,
-    pub(crate) default_assessment_reports_destination:
-        ::std::option::Option<crate::types::AssessmentReportsDestination>,
+    pub(crate) default_assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
     pub(crate) default_process_owners: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
-    pub(crate) evidence_finder_enablement:
-        ::std::option::Option<crate::types::EvidenceFinderEnablement>,
+    pub(crate) evidence_finder_enablement: ::std::option::Option<crate::types::EvidenceFinderEnablement>,
     pub(crate) deregistration_policy: ::std::option::Option<crate::types::DeregistrationPolicy>,
-    pub(crate) default_export_destination:
-        ::std::option::Option<crate::types::DefaultExportDestination>,
+    pub(crate) default_export_destination: ::std::option::Option<crate::types::DefaultExportDestination>,
 }
 impl SettingsBuilder {
     /// <p> Specifies whether Organizations is enabled. </p>
@@ -127,25 +113,17 @@ impl SettingsBuilder {
         &self.sns_topic
     }
     /// <p>The default S3 destination bucket for storing assessment reports.</p>
-    pub fn default_assessment_reports_destination(
-        mut self,
-        input: crate::types::AssessmentReportsDestination,
-    ) -> Self {
+    pub fn default_assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
         self.default_assessment_reports_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default S3 destination bucket for storing assessment reports.</p>
-    pub fn set_default_assessment_reports_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentReportsDestination>,
-    ) -> Self {
+    pub fn set_default_assessment_reports_destination(mut self, input: ::std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
         self.default_assessment_reports_destination = input;
         self
     }
     /// <p>The default S3 destination bucket for storing assessment reports.</p>
-    pub fn get_default_assessment_reports_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
+    pub fn get_default_assessment_reports_destination(&self) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
         &self.default_assessment_reports_destination
     }
     /// Appends an item to `default_process_owners`.
@@ -160,17 +138,12 @@ impl SettingsBuilder {
         self
     }
     /// <p> The designated default audit owners. </p>
-    pub fn set_default_process_owners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
-    ) -> Self {
+    pub fn set_default_process_owners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
         self.default_process_owners = input;
         self
     }
     /// <p> The designated default audit owners. </p>
-    pub fn get_default_process_owners(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
+    pub fn get_default_process_owners(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
         &self.default_process_owners
     }
     /// <p> The KMS key details. </p>
@@ -188,25 +161,17 @@ impl SettingsBuilder {
         &self.kms_key
     }
     /// <p>The current evidence finder status and event data store details.</p>
-    pub fn evidence_finder_enablement(
-        mut self,
-        input: crate::types::EvidenceFinderEnablement,
-    ) -> Self {
+    pub fn evidence_finder_enablement(mut self, input: crate::types::EvidenceFinderEnablement) -> Self {
         self.evidence_finder_enablement = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current evidence finder status and event data store details.</p>
-    pub fn set_evidence_finder_enablement(
-        mut self,
-        input: ::std::option::Option<crate::types::EvidenceFinderEnablement>,
-    ) -> Self {
+    pub fn set_evidence_finder_enablement(mut self, input: ::std::option::Option<crate::types::EvidenceFinderEnablement>) -> Self {
         self.evidence_finder_enablement = input;
         self
     }
     /// <p>The current evidence finder status and event data store details.</p>
-    pub fn get_evidence_finder_enablement(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvidenceFinderEnablement> {
+    pub fn get_evidence_finder_enablement(&self) -> &::std::option::Option<crate::types::EvidenceFinderEnablement> {
         &self.evidence_finder_enablement
     }
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
@@ -215,39 +180,26 @@ impl SettingsBuilder {
         self
     }
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
-    pub fn set_deregistration_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::DeregistrationPolicy>,
-    ) -> Self {
+    pub fn set_deregistration_policy(mut self, input: ::std::option::Option<crate::types::DeregistrationPolicy>) -> Self {
         self.deregistration_policy = input;
         self
     }
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
-    pub fn get_deregistration_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeregistrationPolicy> {
+    pub fn get_deregistration_policy(&self) -> &::std::option::Option<crate::types::DeregistrationPolicy> {
         &self.deregistration_policy
     }
     /// <p>The default S3 destination bucket for storing evidence finder exports.</p>
-    pub fn default_export_destination(
-        mut self,
-        input: crate::types::DefaultExportDestination,
-    ) -> Self {
+    pub fn default_export_destination(mut self, input: crate::types::DefaultExportDestination) -> Self {
         self.default_export_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default S3 destination bucket for storing evidence finder exports.</p>
-    pub fn set_default_export_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultExportDestination>,
-    ) -> Self {
+    pub fn set_default_export_destination(mut self, input: ::std::option::Option<crate::types::DefaultExportDestination>) -> Self {
         self.default_export_destination = input;
         self
     }
     /// <p>The default S3 destination bucket for storing evidence finder exports.</p>
-    pub fn get_default_export_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultExportDestination> {
+    pub fn get_default_export_destination(&self) -> &::std::option::Option<crate::types::DefaultExportDestination> {
         &self.default_export_destination
     }
     /// Consumes the builder and constructs a [`Settings`](crate::types::Settings).

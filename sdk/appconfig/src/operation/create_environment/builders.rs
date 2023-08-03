@@ -10,10 +10,7 @@ impl CreateEnvironmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_environment::CreateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_environment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateEnvironmentFluentBuilder {
         }
     }
     /// Access the CreateEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateEnvironmentFluentBuilder {
             crate::operation::create_environment::CreateEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment::CreateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment::CreateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateEnvironmentFluentBuilder {
             crate::operation::create_environment::CreateEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -180,10 +158,7 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-    pub fn set_monitors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>,
-    ) -> Self {
+    pub fn set_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>) -> Self {
         self.inner = self.inner.set_monitors(input);
         self
     }
@@ -196,30 +171,17 @@ impl CreateEnvironmentFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

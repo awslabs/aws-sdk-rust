@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateNamespaceOutput`](crate::operation::update_namespace::UpdateNamespaceOutput) with field(s):
     ///   - [`namespace(Option<Namespace>)`](crate::operation::update_namespace::UpdateNamespaceOutput::namespace): <p>A list of tag instances.</p>
     /// - On failure, responds with [`SdkError<UpdateNamespaceError>`](crate::operation::update_namespace::UpdateNamespaceError)
-    pub fn update_namespace(
-        &self,
-    ) -> crate::operation::update_namespace::builders::UpdateNamespaceFluentBuilder {
-        crate::operation::update_namespace::builders::UpdateNamespaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_namespace(&self) -> crate::operation::update_namespace::builders::UpdateNamespaceFluentBuilder {
+        crate::operation::update_namespace::builders::UpdateNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

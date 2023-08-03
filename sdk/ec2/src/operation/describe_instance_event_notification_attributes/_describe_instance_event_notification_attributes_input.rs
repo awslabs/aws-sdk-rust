@@ -15,16 +15,16 @@ impl DescribeInstanceEventNotificationAttributesInput {
 }
 impl DescribeInstanceEventNotificationAttributesInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceEventNotificationAttributesInput`](crate::operation::describe_instance_event_notification_attributes::DescribeInstanceEventNotificationAttributesInput).
-    pub fn builder() -> crate::operation::describe_instance_event_notification_attributes::builders::DescribeInstanceEventNotificationAttributesInputBuilder{
-        crate::operation::describe_instance_event_notification_attributes::builders::DescribeInstanceEventNotificationAttributesInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_instance_event_notification_attributes::builders::DescribeInstanceEventNotificationAttributesInputBuilder {
+        crate::operation::describe_instance_event_notification_attributes::builders::DescribeInstanceEventNotificationAttributesInputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`DescribeInstanceEventNotificationAttributesInput`](crate::operation::describe_instance_event_notification_attributes::DescribeInstanceEventNotificationAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceEventNotificationAttributesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -44,12 +44,16 @@ impl DescribeInstanceEventNotificationAttributesInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeInstanceEventNotificationAttributesInput`](crate::operation::describe_instance_event_notification_attributes::DescribeInstanceEventNotificationAttributesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_instance_event_notification_attributes::DescribeInstanceEventNotificationAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_event_notification_attributes::DescribeInstanceEventNotificationAttributesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_instance_event_notification_attributes::DescribeInstanceEventNotificationAttributesInput {
-                dry_run: self.dry_run
-                ,
-            }
+                dry_run: self.dry_run,
+            },
         )
     }
 }

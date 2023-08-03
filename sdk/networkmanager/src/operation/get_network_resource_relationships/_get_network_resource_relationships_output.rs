@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetNetworkResourceRelationshipsOutput
 }
 impl GetNetworkResourceRelationshipsOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkResourceRelationshipsOutput`](crate::operation::get_network_resource_relationships::GetNetworkResourceRelationshipsOutput).
-    pub fn builder() -> crate::operation::get_network_resource_relationships::builders::GetNetworkResourceRelationshipsOutputBuilder{
+    pub fn builder() -> crate::operation::get_network_resource_relationships::builders::GetNetworkResourceRelationshipsOutputBuilder {
         crate::operation::get_network_resource_relationships::builders::GetNetworkResourceRelationshipsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetNetworkResourceRelationshipsOutput`](crate::operation::get_network_resource_relationships::GetNetworkResourceRelationshipsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNetworkResourceRelationshipsOutputBuilder {
     pub(crate) relationships: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetNetworkResourceRelationshipsOutputBuilder {
         self
     }
     /// <p>The resource relationships.</p>
-    pub fn set_relationships(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
-    ) -> Self {
+    pub fn set_relationships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>) -> Self {
         self.relationships = input;
         self
     }
     /// <p>The resource relationships.</p>
-    pub fn get_relationships(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Relationship>> {
+    pub fn get_relationships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Relationship>> {
         &self.relationships
     }
     /// <p>The token for the next page of results.</p>
@@ -93,15 +86,10 @@ impl GetNetworkResourceRelationshipsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetNetworkResourceRelationshipsOutput`](crate::operation::get_network_resource_relationships::GetNetworkResourceRelationshipsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_network_resource_relationships::GetNetworkResourceRelationshipsOutput
-    {
+    pub fn build(self) -> crate::operation::get_network_resource_relationships::GetNetworkResourceRelationshipsOutput {
         crate::operation::get_network_resource_relationships::GetNetworkResourceRelationshipsOutput {
-            relationships: self.relationships
-            ,
-            next_token: self.next_token
-            ,
+            relationships: self.relationships,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

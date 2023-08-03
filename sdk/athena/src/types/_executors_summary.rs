@@ -70,9 +70,7 @@ impl ExecutorsSummary {
 
 /// A builder for [`ExecutorsSummary`](crate::types::ExecutorsSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutorsSummaryBuilder {
     pub(crate) executor_id: ::std::option::Option<::std::string::String>,
     pub(crate) executor_type: ::std::option::Option<crate::types::ExecutorType>,
@@ -102,10 +100,7 @@ impl ExecutorsSummaryBuilder {
         self
     }
     /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
-    pub fn set_executor_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutorType>,
-    ) -> Self {
+    pub fn set_executor_type(mut self, input: ::std::option::Option<crate::types::ExecutorType>) -> Self {
         self.executor_type = input;
         self
     }
@@ -159,10 +154,7 @@ impl ExecutorsSummaryBuilder {
     /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
     /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
     /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
-    pub fn set_executor_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutorState>,
-    ) -> Self {
+    pub fn set_executor_state(mut self, input: ::std::option::Option<crate::types::ExecutorState>) -> Self {
         self.executor_state = input;
         self
     }

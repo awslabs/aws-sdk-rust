@@ -37,10 +37,7 @@ impl DisconnectParticipantFluentBuilder {
         }
     }
     /// Access the DisconnectParticipant as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disconnect_participant::builders::DisconnectParticipantInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disconnect_participant::builders::DisconnectParticipantInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DisconnectParticipantFluentBuilder {
             crate::operation::disconnect_participant::DisconnectParticipant,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_participant::DisconnectParticipantError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_participant::DisconnectParticipantError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DisconnectParticipantFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DisconnectParticipantFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disconnect_participant::DisconnectParticipantOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_participant::DisconnectParticipantError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_participant::DisconnectParticipantError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DisconnectParticipantFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disconnect_participant::DisconnectParticipantOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_participant::DisconnectParticipantError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_participant::DisconnectParticipantError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DisconnectParticipantFluentBuilder {
             crate::operation::disconnect_participant::DisconnectParticipant,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disconnect_participant::DisconnectParticipantError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disconnect_participant::DisconnectParticipantError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DisconnectParticipantFluentBuilder {
         self.inner.get_stage_arn()
     }
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    pub fn participant_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.participant_id(input.into());
         self
     }
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    pub fn set_participant_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_participant_id(input);
         self
     }

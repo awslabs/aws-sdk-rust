@@ -121,9 +121,7 @@ impl ServiceSummary {
     /// </ul> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
-    pub fn health_check_custom_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HealthCheckCustomConfig> {
+    pub fn health_check_custom_config(&self) -> ::std::option::Option<&crate::types::HealthCheckCustomConfig> {
         self.health_check_custom_config.as_ref()
     }
     /// <p>The date and time that the service was created.</p>
@@ -140,9 +138,7 @@ impl ServiceSummary {
 
 /// A builder for [`ServiceSummary`](crate::types::ServiceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -152,8 +148,7 @@ pub struct ServiceSummaryBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) dns_config: ::std::option::Option<crate::types::DnsConfig>,
     pub(crate) health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
-    pub(crate) health_check_custom_config:
-        ::std::option::Option<crate::types::HealthCheckCustomConfig>,
+    pub(crate) health_check_custom_config: ::std::option::Option<crate::types::HealthCheckCustomConfig>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ServiceSummaryBuilder {
@@ -321,17 +316,12 @@ impl ServiceSummaryBuilder {
         self
     }
     /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
-    pub fn set_health_check_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckConfig>,
-    ) -> Self {
+    pub fn set_health_check_config(mut self, input: ::std::option::Option<crate::types::HealthCheckConfig>) -> Self {
         self.health_check_config = input;
         self
     }
     /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
-    pub fn get_health_check_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthCheckConfig> {
+    pub fn get_health_check_config(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
         &self.health_check_config
     }
     /// <p>Information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p>
@@ -341,10 +331,7 @@ impl ServiceSummaryBuilder {
     /// </ul> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
-    pub fn health_check_custom_config(
-        mut self,
-        input: crate::types::HealthCheckCustomConfig,
-    ) -> Self {
+    pub fn health_check_custom_config(mut self, input: crate::types::HealthCheckCustomConfig) -> Self {
         self.health_check_custom_config = ::std::option::Option::Some(input);
         self
     }
@@ -355,10 +342,7 @@ impl ServiceSummaryBuilder {
     /// </ul> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
-    pub fn set_health_check_custom_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckCustomConfig>,
-    ) -> Self {
+    pub fn set_health_check_custom_config(mut self, input: ::std::option::Option<crate::types::HealthCheckCustomConfig>) -> Self {
         self.health_check_custom_config = input;
         self
     }
@@ -369,9 +353,7 @@ impl ServiceSummaryBuilder {
     /// </ul> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
-    pub fn get_health_check_custom_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthCheckCustomConfig> {
+    pub fn get_health_check_custom_config(&self) -> &::std::option::Option<crate::types::HealthCheckCustomConfig> {
         &self.health_check_custom_config
     }
     /// <p>The date and time that the service was created.</p>
@@ -380,10 +362,7 @@ impl ServiceSummaryBuilder {
         self
     }
     /// <p>The date and time that the service was created.</p>
-    pub fn set_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }

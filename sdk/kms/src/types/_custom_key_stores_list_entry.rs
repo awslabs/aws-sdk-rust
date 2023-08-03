@@ -145,9 +145,7 @@ impl CustomKeyStoresListEntry {
     /// </ul> </li>
     /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li>
     /// </ul>
-    pub fn connection_error_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectionErrorCodeType> {
+    pub fn connection_error_code(&self) -> ::std::option::Option<&crate::types::ConnectionErrorCodeType> {
         self.connection_error_code.as_ref()
     }
     /// <p>The date and time when the custom key store was created.</p>
@@ -155,16 +153,12 @@ impl CustomKeyStoresListEntry {
         self.creation_date.as_ref()
     }
     /// <p>Indicates the type of the custom key store. <code>AWS_CLOUDHSM</code> indicates a custom key store backed by an CloudHSM cluster. <code>EXTERNAL_KEY_STORE</code> indicates a custom key store backed by an external key store proxy and external key manager outside of Amazon Web Services.</p>
-    pub fn custom_key_store_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomKeyStoreType> {
+    pub fn custom_key_store_type(&self) -> ::std::option::Option<&crate::types::CustomKeyStoreType> {
         self.custom_key_store_type.as_ref()
     }
     /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p>
     /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
-    pub fn xks_proxy_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::XksProxyConfigurationType> {
+    pub fn xks_proxy_configuration(&self) -> ::std::option::Option<&crate::types::XksProxyConfigurationType> {
         self.xks_proxy_configuration.as_ref()
     }
 }
@@ -177,9 +171,7 @@ impl CustomKeyStoresListEntry {
 
 /// A builder for [`CustomKeyStoresListEntry`](crate::types::CustomKeyStoresListEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomKeyStoresListEntryBuilder {
     pub(crate) custom_key_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) custom_key_store_name: ::std::option::Option<::std::string::String>,
@@ -189,23 +181,16 @@ pub struct CustomKeyStoresListEntryBuilder {
     pub(crate) connection_error_code: ::std::option::Option<crate::types::ConnectionErrorCodeType>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) custom_key_store_type: ::std::option::Option<crate::types::CustomKeyStoreType>,
-    pub(crate) xks_proxy_configuration:
-        ::std::option::Option<crate::types::XksProxyConfigurationType>,
+    pub(crate) xks_proxy_configuration: ::std::option::Option<crate::types::XksProxyConfigurationType>,
 }
 impl CustomKeyStoresListEntryBuilder {
     /// <p>A unique identifier for the custom key store.</p>
-    pub fn custom_key_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_key_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the custom key store.</p>
-    pub fn set_custom_key_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_key_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_key_store_id = input;
         self
     }
@@ -214,18 +199,12 @@ impl CustomKeyStoresListEntryBuilder {
         &self.custom_key_store_id
     }
     /// <p>The user-specified friendly name for the custom key store.</p>
-    pub fn custom_key_store_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_key_store_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_key_store_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-specified friendly name for the custom key store.</p>
-    pub fn set_custom_key_store_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_key_store_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_key_store_name = input;
         self
     }
@@ -234,18 +213,12 @@ impl CustomKeyStoresListEntryBuilder {
         &self.custom_key_store_name
     }
     /// <p>A unique identifier for the CloudHSM cluster that is associated with an CloudHSM key store. This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
-    pub fn cloud_hsm_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_hsm_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_hsm_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the CloudHSM cluster that is associated with an CloudHSM key store. This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
-    pub fn set_cloud_hsm_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_hsm_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_hsm_cluster_id = input;
         self
     }
@@ -255,19 +228,13 @@ impl CustomKeyStoresListEntryBuilder {
     }
     /// <p>The trust anchor certificate of the CloudHSM cluster associated with an CloudHSM key store. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
     /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
-    pub fn trust_anchor_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_anchor_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_anchor_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The trust anchor certificate of the CloudHSM cluster associated with an CloudHSM key store. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
     /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
-    pub fn set_trust_anchor_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_anchor_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_anchor_certificate = input;
         self
     }
@@ -288,10 +255,7 @@ impl CustomKeyStoresListEntryBuilder {
     /// <p>You can create and use KMS keys in your custom key stores only when its <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
     /// <p>The <code>ConnectionState</code> value is <code>DISCONNECTED</code> only if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that the backing key store is reachable and active. For an CloudHSM key store, verify that its associated CloudHSM cluster is active and contains at least one active HSM. For an external key store, verify that the external key store proxy and external key manager are connected and enabled.</p>
     /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a custom key store</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn set_connection_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionStateType>,
-    ) -> Self {
+    pub fn set_connection_state(mut self, input: ::std::option::Option<crate::types::ConnectionStateType>) -> Self {
         self.connection_state = input;
         self
     }
@@ -299,9 +263,7 @@ impl CustomKeyStoresListEntryBuilder {
     /// <p>You can create and use KMS keys in your custom key stores only when its <code>ConnectionState</code> is <code>CONNECTED</code>.</p>
     /// <p>The <code>ConnectionState</code> value is <code>DISCONNECTED</code> only if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that the backing key store is reachable and active. For an CloudHSM key store, verify that its associated CloudHSM cluster is active and contains at least one active HSM. For an external key store, verify that the external key store proxy and external key manager are connected and enabled.</p>
     /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a custom key store</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn get_connection_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectionStateType> {
+    pub fn get_connection_state(&self) -> &::std::option::Option<crate::types::ConnectionStateType> {
         &self.connection_state
     }
     /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>.</p>
@@ -392,10 +354,7 @@ impl CustomKeyStoresListEntryBuilder {
     /// </ul> </li>
     /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li>
     /// </ul>
-    pub fn set_connection_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionErrorCodeType>,
-    ) -> Self {
+    pub fn set_connection_error_code(mut self, input: ::std::option::Option<crate::types::ConnectionErrorCodeType>) -> Self {
         self.connection_error_code = input;
         self
     }
@@ -441,9 +400,7 @@ impl CustomKeyStoresListEntryBuilder {
     /// </ul> </li>
     /// <li> <p> <code>XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND</code> — KMS can't find the VPC endpoint service that it uses to communicate with the external key store proxy. Verify that the <code>XksProxyVpcEndpointServiceName</code> is correct and the KMS service principal has service consumer permissions on the Amazon VPC endpoint service.</p> </li>
     /// </ul>
-    pub fn get_connection_error_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectionErrorCodeType> {
+    pub fn get_connection_error_code(&self) -> &::std::option::Option<crate::types::ConnectionErrorCodeType> {
         &self.connection_error_code
     }
     /// <p>The date and time when the custom key store was created.</p>
@@ -452,10 +409,7 @@ impl CustomKeyStoresListEntryBuilder {
         self
     }
     /// <p>The date and time when the custom key store was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -469,42 +423,29 @@ impl CustomKeyStoresListEntryBuilder {
         self
     }
     /// <p>Indicates the type of the custom key store. <code>AWS_CLOUDHSM</code> indicates a custom key store backed by an CloudHSM cluster. <code>EXTERNAL_KEY_STORE</code> indicates a custom key store backed by an external key store proxy and external key manager outside of Amazon Web Services.</p>
-    pub fn set_custom_key_store_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomKeyStoreType>,
-    ) -> Self {
+    pub fn set_custom_key_store_type(mut self, input: ::std::option::Option<crate::types::CustomKeyStoreType>) -> Self {
         self.custom_key_store_type = input;
         self
     }
     /// <p>Indicates the type of the custom key store. <code>AWS_CLOUDHSM</code> indicates a custom key store backed by an CloudHSM cluster. <code>EXTERNAL_KEY_STORE</code> indicates a custom key store backed by an external key store proxy and external key manager outside of Amazon Web Services.</p>
-    pub fn get_custom_key_store_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomKeyStoreType> {
+    pub fn get_custom_key_store_type(&self) -> &::std::option::Option<crate::types::CustomKeyStoreType> {
         &self.custom_key_store_type
     }
     /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p>
     /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
-    pub fn xks_proxy_configuration(
-        mut self,
-        input: crate::types::XksProxyConfigurationType,
-    ) -> Self {
+    pub fn xks_proxy_configuration(mut self, input: crate::types::XksProxyConfigurationType) -> Self {
         self.xks_proxy_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p>
     /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
-    pub fn set_xks_proxy_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::XksProxyConfigurationType>,
-    ) -> Self {
+    pub fn set_xks_proxy_configuration(mut self, input: ::std::option::Option<crate::types::XksProxyConfigurationType>) -> Self {
         self.xks_proxy_configuration = input;
         self
     }
     /// <p>Configuration settings for the external key store proxy (XKS proxy). The external key store proxy translates KMS requests into a format that your external key manager can understand. The proxy configuration includes connection information that KMS requires.</p>
     /// <p>This field appears only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
-    pub fn get_xks_proxy_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::XksProxyConfigurationType> {
+    pub fn get_xks_proxy_configuration(&self) -> &::std::option::Option<crate::types::XksProxyConfigurationType> {
         &self.xks_proxy_configuration
     }
     /// Consumes the builder and constructs a [`CustomKeyStoresListEntry`](crate::types::CustomKeyStoresListEntry).

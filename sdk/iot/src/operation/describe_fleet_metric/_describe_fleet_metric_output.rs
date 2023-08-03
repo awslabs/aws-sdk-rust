@@ -105,18 +105,14 @@ impl ::aws_http::request_id::RequestId for DescribeFleetMetricOutput {
 }
 impl DescribeFleetMetricOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetMetricOutput`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_fleet_metric::builders::DescribeFleetMetricOutputBuilder {
-        crate::operation::describe_fleet_metric::builders::DescribeFleetMetricOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_fleet_metric::builders::DescribeFleetMetricOutputBuilder {
+        crate::operation::describe_fleet_metric::builders::DescribeFleetMetricOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetMetricOutput`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetMetricOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
@@ -168,10 +164,7 @@ impl DescribeFleetMetricOutputBuilder {
         self
     }
     /// <p>The type of the aggregation query.</p>
-    pub fn set_aggregation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationType>,
-    ) -> Self {
+    pub fn set_aggregation_type(mut self, input: ::std::option::Option<crate::types::AggregationType>) -> Self {
         self.aggregation_type = input;
         self
     }
@@ -194,18 +187,12 @@ impl DescribeFleetMetricOutputBuilder {
         &self.period
     }
     /// <p>The field to aggregate.</p>
-    pub fn aggregation_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aggregation_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aggregation_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field to aggregate.</p>
-    pub fn set_aggregation_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aggregation_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aggregation_field = input;
         self
     }
@@ -228,18 +215,12 @@ impl DescribeFleetMetricOutputBuilder {
         &self.description
     }
     /// <p>The query version.</p>
-    pub fn query_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query version.</p>
-    pub fn set_query_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_version = input;
         self
     }
@@ -267,10 +248,7 @@ impl DescribeFleetMetricOutputBuilder {
         self
     }
     /// <p>The date when the fleet metric is created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -284,10 +262,7 @@ impl DescribeFleetMetricOutputBuilder {
         self
     }
     /// <p>The date when the fleet metric is last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }

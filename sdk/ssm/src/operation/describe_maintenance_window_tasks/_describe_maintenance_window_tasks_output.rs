@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeMaintenanceWindowTasksOutput 
 }
 impl DescribeMaintenanceWindowTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowTasksOutput`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput).
-    pub fn builder() -> crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksOutputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksOutputBuilder {
         crate::operation::describe_maintenance_window_tasks::builders::DescribeMaintenanceWindowTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMaintenanceWindowTasksOutput`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowTasksOutputBuilder {
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowTask>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeMaintenanceWindowTasksOutputBuilder {
         self
     }
     /// <p>Information about the tasks in the maintenance window.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowTask>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowTask>>) -> Self {
         self.tasks = input;
         self
     }
     /// <p>Information about the tasks in the maintenance window.</p>
-    pub fn get_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowTask>> {
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowTask>> {
         &self.tasks
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -93,10 +86,7 @@ impl DescribeMaintenanceWindowTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowTasksOutput`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput
-    {
+    pub fn build(self) -> crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput {
         crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput {
             tasks: self.tasks,
             next_token: self.next_token,

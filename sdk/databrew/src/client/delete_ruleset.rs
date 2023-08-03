@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteRulesetOutput`](crate::operation::delete_ruleset::DeleteRulesetOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_ruleset::DeleteRulesetOutput::name): <p>The name of the deleted ruleset.</p>
     /// - On failure, responds with [`SdkError<DeleteRulesetError>`](crate::operation::delete_ruleset::DeleteRulesetError)
-    pub fn delete_ruleset(
-        &self,
-    ) -> crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder {
-        crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_ruleset(&self) -> crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder {
+        crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder::new(self.handle.clone())
     }
 }

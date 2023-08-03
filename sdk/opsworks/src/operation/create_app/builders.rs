@@ -10,10 +10,7 @@ impl CreateAppInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_app::CreateAppOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app::CreateAppError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_app();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl CreateAppFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_app::CreateApp,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_app::CreateApp, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl CreateAppFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl CreateAppFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_app::CreateApp,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_app::CreateApp, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
     > {
         self.customize_middleware().await
@@ -179,17 +167,12 @@ impl CreateAppFluentBuilder {
         self
     }
     /// <p>The app's data source.</p>
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
-    ) -> Self {
+    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>) -> Self {
         self.inner = self.inner.set_data_sources(input);
         self
     }
     /// <p>The app's data source.</p>
-    pub fn get_data_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
         self.inner.get_data_sources()
     }
     /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
@@ -230,10 +213,7 @@ impl CreateAppFluentBuilder {
         self
     }
     /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
-    pub fn set_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_domains(input);
         self
     }
@@ -261,10 +241,7 @@ impl CreateAppFluentBuilder {
         self
     }
     /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
-    pub fn set_ssl_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SslConfiguration>,
-    ) -> Self {
+    pub fn set_ssl_configuration(mut self, input: ::std::option::Option<crate::types::SslConfiguration>) -> Self {
         self.inner = self.inner.set_ssl_configuration(input);
         self
     }
@@ -277,30 +254,20 @@ impl CreateAppFluentBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
-    pub fn attributes(
-        mut self,
-        k: crate::types::AppAttributesKeys,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: crate::types::AppAttributesKeys, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k, v.into());
         self
     }
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
     pub fn set_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::AppAttributesKeys, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::AppAttributesKeys, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::AppAttributesKeys, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::AppAttributesKeys, ::std::string::String>> {
         self.inner.get_attributes()
     }
     /// Appends an item to `Environment`.
@@ -319,10 +286,7 @@ impl CreateAppFluentBuilder {
     /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }
@@ -330,9 +294,7 @@ impl CreateAppFluentBuilder {
     /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
-    pub fn get_environment(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
         self.inner.get_environment()
     }
 }

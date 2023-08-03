@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CopyBackupToRegionOutput`](crate::operation::copy_backup_to_region::CopyBackupToRegionOutput) with field(s):
     ///   - [`destination_backup(Option<DestinationBackup>)`](crate::operation::copy_backup_to_region::CopyBackupToRegionOutput::destination_backup): <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p>  <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <code>DescribeBackups</code> operation on the backup that will be copied to the destination region.</p>
     /// - On failure, responds with [`SdkError<CopyBackupToRegionError>`](crate::operation::copy_backup_to_region::CopyBackupToRegionError)
-    pub fn copy_backup_to_region(
-        &self,
-    ) -> crate::operation::copy_backup_to_region::builders::CopyBackupToRegionFluentBuilder {
-        crate::operation::copy_backup_to_region::builders::CopyBackupToRegionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn copy_backup_to_region(&self) -> crate::operation::copy_backup_to_region::builders::CopyBackupToRegionFluentBuilder {
+        crate::operation::copy_backup_to_region::builders::CopyBackupToRegionFluentBuilder::new(self.handle.clone())
     }
 }

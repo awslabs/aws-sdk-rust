@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`bridge_arn(Option<String>)`](crate::operation::update_bridge_source::UpdateBridgeSourceOutput::bridge_arn): The Amazon Resource Number (ARN) of the bridge.
     ///   - [`source(Option<BridgeSource>)`](crate::operation::update_bridge_source::UpdateBridgeSourceOutput::source): The bridge's source.
     /// - On failure, responds with [`SdkError<UpdateBridgeSourceError>`](crate::operation::update_bridge_source::UpdateBridgeSourceError)
-    pub fn update_bridge_source(
-        &self,
-    ) -> crate::operation::update_bridge_source::builders::UpdateBridgeSourceFluentBuilder {
-        crate::operation::update_bridge_source::builders::UpdateBridgeSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_bridge_source(&self) -> crate::operation::update_bridge_source::builders::UpdateBridgeSourceFluentBuilder {
+        crate::operation::update_bridge_source::builders::UpdateBridgeSourceFluentBuilder::new(self.handle.clone())
     }
 }

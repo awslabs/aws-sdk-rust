@@ -26,7 +26,7 @@ impl UpdateApplicationSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder,
+    inner: crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder,
 }
 impl UpdateApplicationSettingsFluentBuilder {
     /// Creates a new `UpdateApplicationSettings`.
@@ -37,7 +37,7 @@ impl UpdateApplicationSettingsFluentBuilder {
         }
     }
     /// Access the UpdateApplicationSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateApplicationSettingsFluentBuilder {
             crate::operation::update_application_settings::UpdateApplicationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application_settings::UpdateApplicationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application_settings::UpdateApplicationSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateApplicationSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateApplicationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application_settings::UpdateApplicationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application_settings::UpdateApplicationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application_settings::UpdateApplicationSettingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateApplicationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application_settings::UpdateApplicationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application_settings::UpdateApplicationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application_settings::UpdateApplicationSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateApplicationSettingsFluentBuilder {
             crate::operation::update_application_settings::UpdateApplicationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application_settings::UpdateApplicationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application_settings::UpdateApplicationSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The ID of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -145,25 +128,17 @@ impl UpdateApplicationSettingsFluentBuilder {
     /// To override the contents of this collection use [`set_credentials_to_add_or_update`](Self::set_credentials_to_add_or_update).
     ///
     /// <p>The credentials to be added or updated.</p>
-    pub fn credentials_to_add_or_update(
-        mut self,
-        input: crate::types::ApplicationCredential,
-    ) -> Self {
+    pub fn credentials_to_add_or_update(mut self, input: crate::types::ApplicationCredential) -> Self {
         self.inner = self.inner.credentials_to_add_or_update(input);
         self
     }
     /// <p>The credentials to be added or updated.</p>
-    pub fn set_credentials_to_add_or_update(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
-    ) -> Self {
+    pub fn set_credentials_to_add_or_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>) -> Self {
         self.inner = self.inner.set_credentials_to_add_or_update(input);
         self
     }
     /// <p>The credentials to be added or updated.</p>
-    pub fn get_credentials_to_add_or_update(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+    pub fn get_credentials_to_add_or_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
         self.inner.get_credentials_to_add_or_update()
     }
     /// Appends an item to `CredentialsToRemove`.
@@ -176,17 +151,12 @@ impl UpdateApplicationSettingsFluentBuilder {
         self
     }
     /// <p>The credentials to be removed.</p>
-    pub fn set_credentials_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
-    ) -> Self {
+    pub fn set_credentials_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>) -> Self {
         self.inner = self.inner.set_credentials_to_remove(input);
         self
     }
     /// <p>The credentials to be removed.</p>
-    pub fn get_credentials_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+    pub fn get_credentials_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
         self.inner.get_credentials_to_remove()
     }
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
@@ -195,10 +165,7 @@ impl UpdateApplicationSettingsFluentBuilder {
         self
     }
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
-    pub fn set_backint(
-        mut self,
-        input: ::std::option::Option<crate::types::BackintConfig>,
-    ) -> Self {
+    pub fn set_backint(mut self, input: ::std::option::Option<crate::types::BackintConfig>) -> Self {
         self.inner = self.inner.set_backint(input);
         self
     }

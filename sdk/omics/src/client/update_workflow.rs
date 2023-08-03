@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_description): <p>A description for the workflow.</p>
     /// - On success, responds with [`UpdateWorkflowOutput`](crate::operation::update_workflow::UpdateWorkflowOutput)
     /// - On failure, responds with [`SdkError<UpdateWorkflowError>`](crate::operation::update_workflow::UpdateWorkflowError)
-    pub fn update_workflow(
-        &self,
-    ) -> crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder {
-        crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_workflow(&self) -> crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder {
+        crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

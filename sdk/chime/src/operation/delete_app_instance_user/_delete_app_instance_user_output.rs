@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAppInstanceUserOutput {
 }
 impl DeleteAppInstanceUserOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppInstanceUserOutput`](crate::operation::delete_app_instance_user::DeleteAppInstanceUserOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserOutputBuilder {
         crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppInstanceUserOutput`](crate::operation::delete_app_instance_user::DeleteAppInstanceUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppInstanceUserOutputBuilder {
     _request_id: Option<String>,
 }

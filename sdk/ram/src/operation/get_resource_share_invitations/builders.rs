@@ -26,7 +26,7 @@ impl GetResourceShareInvitationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourceShareInvitationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsInputBuilder,
+    inner: crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsInputBuilder,
 }
 impl GetResourceShareInvitationsFluentBuilder {
     /// Creates a new `GetResourceShareInvitations`.
@@ -37,7 +37,7 @@ impl GetResourceShareInvitationsFluentBuilder {
         }
     }
     /// Access the GetResourceShareInvitations as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetResourceShareInvitationsFluentBuilder {
             crate::operation::get_resource_share_invitations::GetResourceShareInvitations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetResourceShareInvitationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetResourceShareInvitationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetResourceShareInvitationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl GetResourceShareInvitationsFluentBuilder {
             crate::operation::get_resource_share_invitations::GetResourceShareInvitations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator {
         crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `resourceShareInvitationArns`.
@@ -131,25 +120,17 @@ impl GetResourceShareInvitationsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_share_invitation_arns`](Self::set_resource_share_invitation_arns).
     ///
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
-    pub fn resource_share_invitation_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_invitation_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_share_invitation_arns(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
-    pub fn set_resource_share_invitation_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_share_invitation_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_share_invitation_arns(input);
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
-    pub fn get_resource_share_invitation_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share_invitation_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_share_invitation_arns()
     }
     /// Appends an item to `resourceShareArns`.
@@ -157,25 +138,17 @@ impl GetResourceShareInvitationsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
     ///
     /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
-    pub fn resource_share_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_share_arns(input.into());
         self
     }
     /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
-    pub fn set_resource_share_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_share_arns(input);
         self
     }
     /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
-    pub fn get_resource_share_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_share_arns()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>

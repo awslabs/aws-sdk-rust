@@ -30,9 +30,7 @@ impl PlacementConstraint {
 
 /// A builder for [`PlacementConstraint`](crate::types::PlacementConstraint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlacementConstraintBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::PlacementConstraintType>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl PlacementConstraintBuilder {
         self
     }
     /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular group is running on a different container instance. Use memberOf to restrict the selection to a group of valid candidates. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementConstraintType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PlacementConstraintType>) -> Self {
         self.r#type = input;
         self
     }

@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateTestGridProjectOutput`](crate::operation::update_test_grid_project::UpdateTestGridProjectOutput) with field(s):
     ///   - [`test_grid_project(Option<TestGridProject>)`](crate::operation::update_test_grid_project::UpdateTestGridProjectOutput::test_grid_project): <p>The project, including updated information.</p>
     /// - On failure, responds with [`SdkError<UpdateTestGridProjectError>`](crate::operation::update_test_grid_project::UpdateTestGridProjectError)
-    pub fn update_test_grid_project(
-        &self,
-    ) -> crate::operation::update_test_grid_project::builders::UpdateTestGridProjectFluentBuilder
-    {
+    pub fn update_test_grid_project(&self) -> crate::operation::update_test_grid_project::builders::UpdateTestGridProjectFluentBuilder {
         crate::operation::update_test_grid_project::builders::UpdateTestGridProjectFluentBuilder::new(self.handle.clone())
     }
 }

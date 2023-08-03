@@ -26,7 +26,7 @@ impl BatchDisassociateUserStackInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDisassociateUserStackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackInputBuilder,
+    inner: crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackInputBuilder,
 }
 impl BatchDisassociateUserStackFluentBuilder {
     /// Creates a new `BatchDisassociateUserStack`.
@@ -37,7 +37,7 @@ impl BatchDisassociateUserStackFluentBuilder {
         }
     }
     /// Access the BatchDisassociateUserStack as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchDisassociateUserStackFluentBuilder {
             crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStack,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchDisassociateUserStackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchDisassociateUserStackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchDisassociateUserStackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchDisassociateUserStackFluentBuilder {
             crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStack,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackError>,
     > {
         self.customize_middleware().await
     }
@@ -130,17 +119,12 @@ impl BatchDisassociateUserStackFluentBuilder {
         self
     }
     /// <p>The list of UserStackAssociation objects.</p>
-    pub fn set_user_stack_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>>,
-    ) -> Self {
+    pub fn set_user_stack_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>>) -> Self {
         self.inner = self.inner.set_user_stack_associations(input);
         self
     }
     /// <p>The list of UserStackAssociation objects.</p>
-    pub fn get_user_stack_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>> {
+    pub fn get_user_stack_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>> {
         self.inner.get_user_stack_associations()
     }
 }

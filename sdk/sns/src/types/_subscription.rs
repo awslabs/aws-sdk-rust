@@ -51,9 +51,7 @@ impl Subscription {
 
 /// A builder for [`Subscription`](crate::types::Subscription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscriptionBuilder {
     pub(crate) subscription_arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct SubscriptionBuilder {
 }
 impl SubscriptionBuilder {
     /// <p>The subscription's ARN.</p>
-    pub fn subscription_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subscription's ARN.</p>
-    pub fn set_subscription_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_arn = input;
         self
     }

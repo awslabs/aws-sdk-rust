@@ -52,9 +52,7 @@ impl BounceAction {
 
 /// A builder for [`BounceAction`](crate::types::BounceAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BounceActionBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) smtp_reply_code: ::std::option::Option<::std::string::String>,
@@ -78,18 +76,12 @@ impl BounceActionBuilder {
         &self.topic_arn
     }
     /// <p>The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
-    pub fn smtp_reply_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn smtp_reply_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.smtp_reply_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
-    pub fn set_smtp_reply_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_smtp_reply_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.smtp_reply_code = input;
         self
     }

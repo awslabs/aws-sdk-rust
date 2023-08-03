@@ -26,7 +26,7 @@ impl ListNotificationChannelsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListNotificationChannelsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_notification_channels::builders::ListNotificationChannelsInputBuilder,
+    inner: crate::operation::list_notification_channels::builders::ListNotificationChannelsInputBuilder,
 }
 impl ListNotificationChannelsFluentBuilder {
     /// Creates a new `ListNotificationChannels`.
@@ -37,10 +37,7 @@ impl ListNotificationChannelsFluentBuilder {
         }
     }
     /// Access the ListNotificationChannels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_notification_channels::builders::ListNotificationChannelsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_notification_channels::builders::ListNotificationChannelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListNotificationChannelsFluentBuilder {
             crate::operation::list_notification_channels::ListNotificationChannels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notification_channels::ListNotificationChannelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notification_channels::ListNotificationChannelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListNotificationChannelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListNotificationChannelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_notification_channels::ListNotificationChannelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notification_channels::ListNotificationChannelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notification_channels::ListNotificationChannelsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListNotificationChannelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_notification_channels::ListNotificationChannelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notification_channels::ListNotificationChannelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notification_channels::ListNotificationChannelsError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl ListNotificationChannelsFluentBuilder {
             crate::operation::list_notification_channels::ListNotificationChannels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notification_channels::ListNotificationChannelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notification_channels::ListNotificationChannelsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_notification_channels::paginator::ListNotificationChannelsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_notification_channels::paginator::ListNotificationChannelsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_notification_channels::paginator::ListNotificationChannelsPaginator {
         crate::operation::list_notification_channels::paginator::ListNotificationChannelsPaginator::new(self.handle, self.inner)
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>

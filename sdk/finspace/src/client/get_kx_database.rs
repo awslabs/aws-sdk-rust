@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`num_changesets(i32)`](crate::operation::get_kx_database::GetKxDatabaseOutput::num_changesets): <p>The total number of changesets in the database.</p>
     ///   - [`num_files(i32)`](crate::operation::get_kx_database::GetKxDatabaseOutput::num_files): <p>The total number of files in the database.</p>
     /// - On failure, responds with [`SdkError<GetKxDatabaseError>`](crate::operation::get_kx_database::GetKxDatabaseError)
-    pub fn get_kx_database(
-        &self,
-    ) -> crate::operation::get_kx_database::builders::GetKxDatabaseFluentBuilder {
-        crate::operation::get_kx_database::builders::GetKxDatabaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_kx_database(&self) -> crate::operation::get_kx_database::builders::GetKxDatabaseFluentBuilder {
+        crate::operation::get_kx_database::builders::GetKxDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

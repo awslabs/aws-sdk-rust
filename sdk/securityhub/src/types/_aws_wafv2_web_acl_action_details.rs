@@ -30,9 +30,7 @@ impl AwsWafv2WebAclActionDetails {
 
 /// A builder for [`AwsWafv2WebAclActionDetails`](crate::types::AwsWafv2WebAclActionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafv2WebAclActionDetailsBuilder {
     pub(crate) allow: ::std::option::Option<crate::types::AwsWafv2ActionAllowDetails>,
     pub(crate) block: ::std::option::Option<crate::types::AwsWafv2ActionBlockDetails>,
@@ -44,10 +42,7 @@ impl AwsWafv2WebAclActionDetailsBuilder {
         self
     }
     /// <p> Specifies that WAF should allow requests by default. </p>
-    pub fn set_allow(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafv2ActionAllowDetails>,
-    ) -> Self {
+    pub fn set_allow(mut self, input: ::std::option::Option<crate::types::AwsWafv2ActionAllowDetails>) -> Self {
         self.allow = input;
         self
     }
@@ -61,10 +56,7 @@ impl AwsWafv2WebAclActionDetailsBuilder {
         self
     }
     /// <p> Specifies that WAF should block requests by default. </p>
-    pub fn set_block(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafv2ActionBlockDetails>,
-    ) -> Self {
+    pub fn set_block(mut self, input: ::std::option::Option<crate::types::AwsWafv2ActionBlockDetails>) -> Self {
         self.block = input;
         self
     }

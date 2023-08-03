@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::start_suite_run::StartSuiteRunOutput::created_at): <p>Starts a Device Advisor test suite run based on suite create time.</p>
     ///   - [`endpoint(Option<String>)`](crate::operation::start_suite_run::StartSuiteRunOutput::endpoint): <p>The response of an Device Advisor test endpoint.</p>
     /// - On failure, responds with [`SdkError<StartSuiteRunError>`](crate::operation::start_suite_run::StartSuiteRunError)
-    pub fn start_suite_run(
-        &self,
-    ) -> crate::operation::start_suite_run::builders::StartSuiteRunFluentBuilder {
-        crate::operation::start_suite_run::builders::StartSuiteRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_suite_run(&self) -> crate::operation::start_suite_run::builders::StartSuiteRunFluentBuilder {
+        crate::operation::start_suite_run::builders::StartSuiteRunFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,17 +29,14 @@ impl UnsubscribeFromEventInput {
 }
 impl UnsubscribeFromEventInput {
     /// Creates a new builder-style object to manufacture [`UnsubscribeFromEventInput`](crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput).
-    pub fn builder(
-    ) -> crate::operation::unsubscribe_from_event::builders::UnsubscribeFromEventInputBuilder {
+    pub fn builder() -> crate::operation::unsubscribe_from_event::builders::UnsubscribeFromEventInputBuilder {
         crate::operation::unsubscribe_from_event::builders::UnsubscribeFromEventInputBuilder::default()
     }
 }
 
 /// A builder for [`UnsubscribeFromEventInput`](crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsubscribeFromEventInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event: ::std::option::Option<crate::types::InspectorEvent>,
@@ -91,16 +88,12 @@ impl UnsubscribeFromEventInputBuilder {
     /// Consumes the builder and constructs a [`UnsubscribeFromEventInput`](crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput {
-                resource_arn: self.resource_arn,
-                event: self.event,
-                topic_arn: self.topic_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput {
+            resource_arn: self.resource_arn,
+            event: self.event,
+            topic_arn: self.topic_arn,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl PutSessionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_session::PutSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_session::PutSessionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_session();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl PutSessionFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_session::PutSession,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_session::PutSession, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl PutSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl PutSessionFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_session::PutSession,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_session::PutSession, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError>,
     > {
         self.customize_middleware().await
@@ -178,10 +166,7 @@ impl PutSessionFluentBuilder {
         self
     }
     /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
         self.inner = self.inner.set_messages(input);
         self
     }
@@ -195,10 +180,7 @@ impl PutSessionFluentBuilder {
         self
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
-    pub fn set_session_state(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionState>,
-    ) -> Self {
+    pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
         self.inner = self.inner.set_session_state(input);
         self
     }
@@ -224,30 +206,21 @@ impl PutSessionFluentBuilder {
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn set_request_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_request_attributes(input);
         self
     }
     /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    pub fn get_request_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_request_attributes()
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
     /// <ul>
     /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
     /// </ul>
-    pub fn response_content_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_content_type(input.into());
         self
     }
@@ -255,10 +228,7 @@ impl PutSessionFluentBuilder {
     /// <ul>
     /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
     /// </ul>
-    pub fn set_response_content_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_response_content_type(input);
         self
     }

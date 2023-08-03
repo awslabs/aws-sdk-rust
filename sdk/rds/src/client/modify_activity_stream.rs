@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`engine_native_audit_fields_included(Option<bool>)`](crate::operation::modify_activity_stream::ModifyActivityStreamOutput::engine_native_audit_fields_included): <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
     ///   - [`policy_status(Option<ActivityStreamPolicyStatus>)`](crate::operation::modify_activity_stream::ModifyActivityStreamOutput::policy_status): <p>The status of the modification to the policy state of the database activity stream.</p>
     /// - On failure, responds with [`SdkError<ModifyActivityStreamError>`](crate::operation::modify_activity_stream::ModifyActivityStreamError)
-    pub fn modify_activity_stream(
-        &self,
-    ) -> crate::operation::modify_activity_stream::builders::ModifyActivityStreamFluentBuilder {
-        crate::operation::modify_activity_stream::builders::ModifyActivityStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_activity_stream(&self) -> crate::operation::modify_activity_stream::builders::ModifyActivityStreamFluentBuilder {
+        crate::operation::modify_activity_stream::builders::ModifyActivityStreamFluentBuilder::new(self.handle.clone())
     }
 }

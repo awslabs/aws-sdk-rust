@@ -23,9 +23,7 @@ impl DistributeDataset {
 
 /// A builder for [`DistributeDataset`](crate::types::DistributeDataset).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DistributeDatasetBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

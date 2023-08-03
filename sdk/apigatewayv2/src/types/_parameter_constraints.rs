@@ -23,9 +23,7 @@ impl ParameterConstraints {
 
 /// A builder for [`ParameterConstraints`](crate::types::ParameterConstraints).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterConstraintsBuilder {
     pub(crate) required: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl ParameterConstraintsBuilder {
     }
     /// Consumes the builder and constructs a [`ParameterConstraints`](crate::types::ParameterConstraints).
     pub fn build(self) -> crate::types::ParameterConstraints {
-        crate::types::ParameterConstraints {
-            required: self.required,
-        }
+        crate::types::ParameterConstraints { required: self.required }
     }
 }

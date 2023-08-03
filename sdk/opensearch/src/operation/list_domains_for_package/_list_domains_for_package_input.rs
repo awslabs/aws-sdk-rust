@@ -30,18 +30,14 @@ impl ListDomainsForPackageInput {
 }
 impl ListDomainsForPackageInput {
     /// Creates a new builder-style object to manufacture [`ListDomainsForPackageInput`](crate::operation::list_domains_for_package::ListDomainsForPackageInput).
-    pub fn builder(
-    ) -> crate::operation::list_domains_for_package::builders::ListDomainsForPackageInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_domains_for_package::builders::ListDomainsForPackageInputBuilder {
         crate::operation::list_domains_for_package::builders::ListDomainsForPackageInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDomainsForPackageInput`](crate::operation::list_domains_for_package::ListDomainsForPackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainsForPackageInputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -93,16 +89,12 @@ impl ListDomainsForPackageInputBuilder {
     /// Consumes the builder and constructs a [`ListDomainsForPackageInput`](crate::operation::list_domains_for_package::ListDomainsForPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_domains_for_package::ListDomainsForPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_domains_for_package::ListDomainsForPackageInput {
-                package_id: self.package_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_domains_for_package::ListDomainsForPackageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_domains_for_package::ListDomainsForPackageInput {
+            package_id: self.package_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -26,7 +26,7 @@ impl UpdatePhoneNumberSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePhoneNumberSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsInputBuilder,
+    inner: crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsInputBuilder,
 }
 impl UpdatePhoneNumberSettingsFluentBuilder {
     /// Creates a new `UpdatePhoneNumberSettings`.
@@ -37,7 +37,7 @@ impl UpdatePhoneNumberSettingsFluentBuilder {
         }
     }
     /// Access the UpdatePhoneNumberSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdatePhoneNumberSettingsFluentBuilder {
             crate::operation::update_phone_number_settings::UpdatePhoneNumberSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdatePhoneNumberSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdatePhoneNumberSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdatePhoneNumberSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdatePhoneNumberSettingsFluentBuilder {
             crate::operation::update_phone_number_settings::UpdatePhoneNumberSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsError>,
     > {
         self.customize_middleware().await
     }

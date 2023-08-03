@@ -10,10 +10,7 @@ impl DescribeObjectsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_objects::DescribeObjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_objects::DescribeObjectsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_objects::DescribeObjectsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_objects();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl DescribeObjectsFluentBuilder {
         }
     }
     /// Access the DescribeObjects as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_objects::builders::DescribeObjectsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_objects::builders::DescribeObjectsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl DescribeObjectsFluentBuilder {
             crate::operation::describe_objects::DescribeObjects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_objects::DescribeObjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_objects::DescribeObjectsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl DescribeObjectsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl DescribeObjectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_objects::DescribeObjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_objects::DescribeObjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_objects::DescribeObjectsError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl DescribeObjectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_objects::DescribeObjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_objects::DescribeObjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_objects::DescribeObjectsError>,
     > {
         self.send_middleware().await
     }
@@ -123,22 +109,15 @@ impl DescribeObjectsFluentBuilder {
             crate::operation::describe_objects::DescribeObjects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_objects::DescribeObjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_objects::DescribeObjectsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_objects::paginator::DescribeObjectsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_objects::paginator::DescribeObjectsPaginator {
-        crate::operation::describe_objects::paginator::DescribeObjectsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_objects::paginator::DescribeObjectsPaginator {
+        crate::operation::describe_objects::paginator::DescribeObjectsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the pipeline that contains the object definitions.</p>
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,10 +143,7 @@ impl DescribeObjectsFluentBuilder {
         self
     }
     /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
-    pub fn set_object_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_object_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_object_ids(input);
         self
     }

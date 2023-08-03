@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::set_name): <p>The name of the fleet.</p>
     /// - On success, responds with [`DeleteFleetOutput`](crate::operation::delete_fleet::DeleteFleetOutput)
     /// - On failure, responds with [`SdkError<DeleteFleetError>`](crate::operation::delete_fleet::DeleteFleetError)
-    pub fn delete_fleet(
-        &self,
-    ) -> crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder {
+    pub fn delete_fleet(&self) -> crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder {
         crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::new(self.handle.clone())
     }
 }

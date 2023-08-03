@@ -22,9 +22,7 @@ impl GetWorkspaceInput {
 
 /// A builder for [`GetWorkspaceInput`](crate::operation::get_workspace::GetWorkspaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkspaceInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetWorkspaceInputBuilder {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`GetWorkspaceInput`](crate::operation::get_workspace::GetWorkspaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_workspace::GetWorkspaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workspace::GetWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workspace::GetWorkspaceInput {
             workspace_id: self.workspace_id,
         })

@@ -30,9 +30,7 @@ impl OutputBand {
 
 /// A builder for [`OutputBand`](crate::types::OutputBand).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputBandBuilder {
     pub(crate) band_name: ::std::option::Option<::std::string::String>,
     pub(crate) output_data_type: ::std::option::Option<crate::types::OutputType>,
@@ -58,10 +56,7 @@ impl OutputBandBuilder {
         self
     }
     /// <p>The datatype of the output band.</p>
-    pub fn set_output_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputType>,
-    ) -> Self {
+    pub fn set_output_data_type(mut self, input: ::std::option::Option<crate::types::OutputType>) -> Self {
         self.output_data_type = input;
         self
     }

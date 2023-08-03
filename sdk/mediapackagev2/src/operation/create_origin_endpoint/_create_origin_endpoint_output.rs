@@ -35,17 +35,13 @@ pub struct CreateOriginEndpointOutput {
     pub startover_window_seconds: ::std::option::Option<i32>,
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
     #[doc(hidden)]
-    pub hls_manifests:
-        ::std::option::Option<::std::vec::Vec<crate::types::GetHlsManifestConfiguration>>,
+    pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
     #[doc(hidden)]
-    pub low_latency_hls_manifests:
-        ::std::option::Option<::std::vec::Vec<crate::types::GetLowLatencyHlsManifestConfiguration>>,
+    pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetLowLatencyHlsManifestConfiguration>>,
     /// <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateOriginEndpointOutput {
@@ -90,23 +86,15 @@ impl CreateOriginEndpointOutput {
         self.startover_window_seconds
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn hls_manifests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GetHlsManifestConfiguration]> {
+    pub fn hls_manifests(&self) -> ::std::option::Option<&[crate::types::GetHlsManifestConfiguration]> {
         self.hls_manifests.as_deref()
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn low_latency_hls_manifests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GetLowLatencyHlsManifestConfiguration]> {
+    pub fn low_latency_hls_manifests(&self) -> ::std::option::Option<&[crate::types::GetLowLatencyHlsManifestConfiguration]> {
         self.low_latency_hls_manifests.as_deref()
     }
     /// <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -117,17 +105,14 @@ impl ::aws_http::request_id::RequestId for CreateOriginEndpointOutput {
 }
 impl CreateOriginEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateOriginEndpointOutput`](crate::operation::create_origin_endpoint::CreateOriginEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::create_origin_endpoint::builders::CreateOriginEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::create_origin_endpoint::builders::CreateOriginEndpointOutputBuilder {
         crate::operation::create_origin_endpoint::builders::CreateOriginEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOriginEndpointOutput`](crate::operation::create_origin_endpoint::CreateOriginEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOriginEndpointOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
@@ -139,13 +124,9 @@ pub struct CreateOriginEndpointOutputBuilder {
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) startover_window_seconds: ::std::option::Option<i32>,
-    pub(crate) hls_manifests:
-        ::std::option::Option<::std::vec::Vec<crate::types::GetHlsManifestConfiguration>>,
-    pub(crate) low_latency_hls_manifests:
-        ::std::option::Option<::std::vec::Vec<crate::types::GetLowLatencyHlsManifestConfiguration>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetHlsManifestConfiguration>>,
+    pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetLowLatencyHlsManifestConfiguration>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateOriginEndpointOutputBuilder {
@@ -164,18 +145,12 @@ impl CreateOriginEndpointOutputBuilder {
         &self.arn
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_group_name = input;
         self
     }
@@ -198,18 +173,12 @@ impl CreateOriginEndpointOutputBuilder {
         &self.channel_name
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
-    pub fn origin_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
-    pub fn set_origin_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_endpoint_name = input;
         self
     }
@@ -223,10 +192,7 @@ impl CreateOriginEndpointOutputBuilder {
         self
     }
     /// <p>The type of container attached to this origin endpoint.</p>
-    pub fn set_container_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerType>,
-    ) -> Self {
+    pub fn set_container_type(mut self, input: ::std::option::Option<crate::types::ContainerType>) -> Self {
         self.container_type = input;
         self
     }
@@ -254,10 +220,7 @@ impl CreateOriginEndpointOutputBuilder {
         self
     }
     /// <p>The date and time the origin endpoint was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -271,10 +234,7 @@ impl CreateOriginEndpointOutputBuilder {
         self
     }
     /// <p>The date and time the origin endpoint was modified.</p>
-    pub fn set_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_at = input;
         self
     }
@@ -322,17 +282,12 @@ impl CreateOriginEndpointOutputBuilder {
         self
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn set_hls_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GetHlsManifestConfiguration>>,
-    ) -> Self {
+    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetHlsManifestConfiguration>>) -> Self {
         self.hls_manifests = input;
         self
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn get_hls_manifests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetHlsManifestConfiguration>> {
+    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetHlsManifestConfiguration>> {
         &self.hls_manifests
     }
     /// Appends an item to `low_latency_hls_manifests`.
@@ -340,10 +295,7 @@ impl CreateOriginEndpointOutputBuilder {
     /// To override the contents of this collection use [`set_low_latency_hls_manifests`](Self::set_low_latency_hls_manifests).
     ///
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn low_latency_hls_manifests(
-        mut self,
-        input: crate::types::GetLowLatencyHlsManifestConfiguration,
-    ) -> Self {
+    pub fn low_latency_hls_manifests(mut self, input: crate::types::GetLowLatencyHlsManifestConfiguration) -> Self {
         let mut v = self.low_latency_hls_manifests.unwrap_or_default();
         v.push(input);
         self.low_latency_hls_manifests = ::std::option::Option::Some(v);
@@ -352,18 +304,13 @@ impl CreateOriginEndpointOutputBuilder {
     /// <p>A low-latency HLS manifest configuration.</p>
     pub fn set_low_latency_hls_manifests(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::GetLowLatencyHlsManifestConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GetLowLatencyHlsManifestConfiguration>>,
     ) -> Self {
         self.low_latency_hls_manifests = input;
         self
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn get_low_latency_hls_manifests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetLowLatencyHlsManifestConfiguration>>
-    {
+    pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetLowLatencyHlsManifestConfiguration>> {
         &self.low_latency_hls_manifests
     }
     /// Adds a key-value pair to `tags`.
@@ -371,32 +318,19 @@ impl CreateOriginEndpointOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

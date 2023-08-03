@@ -68,9 +68,7 @@ impl DescribeBatchPredictionsInput {
     /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
     /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn filter_variable(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchPredictionFilterVariable> {
+    pub fn filter_variable(&self) -> ::std::option::Option<&crate::types::BatchPredictionFilterVariable> {
         self.filter_variable.as_ref()
     }
     /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
@@ -127,18 +125,14 @@ impl DescribeBatchPredictionsInput {
 }
 impl DescribeBatchPredictionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeBatchPredictionsInput`](crate::operation::describe_batch_predictions::DescribeBatchPredictionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_batch_predictions::builders::DescribeBatchPredictionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_batch_predictions::builders::DescribeBatchPredictionsInputBuilder {
         crate::operation::describe_batch_predictions::builders::DescribeBatchPredictionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBatchPredictionsInput`](crate::operation::describe_batch_predictions::DescribeBatchPredictionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBatchPredictionsInputBuilder {
     pub(crate) filter_variable: ::std::option::Option<crate::types::BatchPredictionFilterVariable>,
     pub(crate) eq: ::std::option::Option<::std::string::String>,
@@ -177,10 +171,7 @@ impl DescribeBatchPredictionsInputBuilder {
     /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
     /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn set_filter_variable(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchPredictionFilterVariable>,
-    ) -> Self {
+    pub fn set_filter_variable(mut self, input: ::std::option::Option<crate::types::BatchPredictionFilterVariable>) -> Self {
         self.filter_variable = input;
         self
     }
@@ -194,9 +185,7 @@ impl DescribeBatchPredictionsInputBuilder {
     /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
     /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
     /// </ul>
-    pub fn get_filter_variable(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchPredictionFilterVariable> {
+    pub fn get_filter_variable(&self) -> &::std::option::Option<crate::types::BatchPredictionFilterVariable> {
         &self.filter_variable
     }
     /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
@@ -379,20 +368,18 @@ impl DescribeBatchPredictionsInputBuilder {
         crate::operation::describe_batch_predictions::DescribeBatchPredictionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_batch_predictions::DescribeBatchPredictionsInput {
-                filter_variable: self.filter_variable,
-                eq: self.eq,
-                gt: self.gt,
-                lt: self.lt,
-                ge: self.ge,
-                le: self.le,
-                ne: self.ne,
-                prefix: self.prefix,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_batch_predictions::DescribeBatchPredictionsInput {
+            filter_variable: self.filter_variable,
+            eq: self.eq,
+            gt: self.gt,
+            lt: self.lt,
+            ge: self.ge,
+            le: self.le,
+            ne: self.ne,
+            prefix: self.prefix,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }

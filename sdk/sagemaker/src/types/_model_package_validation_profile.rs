@@ -18,9 +18,7 @@ impl ModelPackageValidationProfile {
         self.profile_name.as_deref()
     }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job used for the validation of the model package.</p>
-    pub fn transform_job_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransformJobDefinition> {
+    pub fn transform_job_definition(&self) -> ::std::option::Option<&crate::types::TransformJobDefinition> {
         self.transform_job_definition.as_ref()
     }
 }
@@ -33,13 +31,10 @@ impl ModelPackageValidationProfile {
 
 /// A builder for [`ModelPackageValidationProfile`](crate::types::ModelPackageValidationProfile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelPackageValidationProfileBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
-    pub(crate) transform_job_definition:
-        ::std::option::Option<crate::types::TransformJobDefinition>,
+    pub(crate) transform_job_definition: ::std::option::Option<crate::types::TransformJobDefinition>,
 }
 impl ModelPackageValidationProfileBuilder {
     /// <p>The name of the profile for the model package.</p>
@@ -62,17 +57,12 @@ impl ModelPackageValidationProfileBuilder {
         self
     }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job used for the validation of the model package.</p>
-    pub fn set_transform_job_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformJobDefinition>,
-    ) -> Self {
+    pub fn set_transform_job_definition(mut self, input: ::std::option::Option<crate::types::TransformJobDefinition>) -> Self {
         self.transform_job_definition = input;
         self
     }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job used for the validation of the model package.</p>
-    pub fn get_transform_job_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransformJobDefinition> {
+    pub fn get_transform_job_definition(&self) -> &::std::option::Option<crate::types::TransformJobDefinition> {
         &self.transform_job_definition
     }
     /// Consumes the builder and constructs a [`ModelPackageValidationProfile`](crate::types::ModelPackageValidationProfile).

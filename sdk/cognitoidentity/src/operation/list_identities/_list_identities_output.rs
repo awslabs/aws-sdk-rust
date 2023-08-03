@@ -43,30 +43,21 @@ impl ListIdentitiesOutput {
 
 /// A builder for [`ListIdentitiesOutput`](crate::operation::list_identities::ListIdentitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentitiesOutputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
-    pub(crate) identities:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityDescription>>,
+    pub(crate) identities: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListIdentitiesOutputBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -86,17 +77,12 @@ impl ListIdentitiesOutputBuilder {
         self
     }
     /// <p>An object containing a set of identities and associated mappings.</p>
-    pub fn set_identities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDescription>>,
-    ) -> Self {
+    pub fn set_identities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDescription>>) -> Self {
         self.identities = input;
         self
     }
     /// <p>An object containing a set of identities and associated mappings.</p>
-    pub fn get_identities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityDescription>> {
+    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityDescription>> {
         &self.identities
     }
     /// <p>A pagination token.</p>

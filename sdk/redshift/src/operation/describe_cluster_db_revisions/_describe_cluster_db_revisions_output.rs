@@ -8,8 +8,7 @@ pub struct DescribeClusterDbRevisionsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of revisions.</p>
     #[doc(hidden)]
-    pub cluster_db_revisions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>>,
+    pub cluster_db_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterDbRevisionsOutput {
@@ -18,9 +17,7 @@ impl DescribeClusterDbRevisionsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of revisions.</p>
-    pub fn cluster_db_revisions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ClusterDbRevision]> {
+    pub fn cluster_db_revisions(&self) -> ::std::option::Option<&[crate::types::ClusterDbRevision]> {
         self.cluster_db_revisions.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeClusterDbRevisionsOutput {
 }
 impl DescribeClusterDbRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterDbRevisionsOutput`](crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput).
-    pub fn builder() -> crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsOutputBuilder {
         crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterDbRevisionsOutput`](crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterDbRevisionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) cluster_db_revisions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>>,
+    pub(crate) cluster_db_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterDbRevisionsOutputBuilder {
@@ -74,17 +68,12 @@ impl DescribeClusterDbRevisionsOutputBuilder {
         self
     }
     /// <p>A list of revisions.</p>
-    pub fn set_cluster_db_revisions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>>,
-    ) -> Self {
+    pub fn set_cluster_db_revisions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>>) -> Self {
         self.cluster_db_revisions = input;
         self
     }
     /// <p>A list of revisions.</p>
-    pub fn get_cluster_db_revisions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>> {
+    pub fn get_cluster_db_revisions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>> {
         &self.cluster_db_revisions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl DescribeClusterDbRevisionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClusterDbRevisionsOutput`](crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput {
+    pub fn build(self) -> crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput {
         crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput {
             marker: self.marker,
             cluster_db_revisions: self.cluster_db_revisions,

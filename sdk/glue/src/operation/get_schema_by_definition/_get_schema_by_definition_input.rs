@@ -30,18 +30,14 @@ impl GetSchemaByDefinitionInput {
 }
 impl GetSchemaByDefinitionInput {
     /// Creates a new builder-style object to manufacture [`GetSchemaByDefinitionInput`](crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::get_schema_by_definition::builders::GetSchemaByDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schema_by_definition::builders::GetSchemaByDefinitionInputBuilder {
         crate::operation::get_schema_by_definition::builders::GetSchemaByDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSchemaByDefinitionInput`](crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaByDefinitionInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) schema_definition: ::std::option::Option<::std::string::String>,
@@ -74,18 +70,12 @@ impl GetSchemaByDefinitionInputBuilder {
         &self.schema_id
     }
     /// <p>The definition of the schema for which schema details are required.</p>
-    pub fn schema_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The definition of the schema for which schema details are required.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_definition = input;
         self
     }
@@ -96,15 +86,11 @@ impl GetSchemaByDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`GetSchemaByDefinitionInput`](crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput {
-                schema_id: self.schema_id,
-                schema_definition: self.schema_definition,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput {
+            schema_id: self.schema_id,
+            schema_definition: self.schema_definition,
+        })
     }
 }

@@ -15,18 +15,14 @@ impl StopStreamProcessorInput {
 }
 impl StopStreamProcessorInput {
     /// Creates a new builder-style object to manufacture [`StopStreamProcessorInput`](crate::operation::stop_stream_processor::StopStreamProcessorInput).
-    pub fn builder(
-    ) -> crate::operation::stop_stream_processor::builders::StopStreamProcessorInputBuilder {
-        crate::operation::stop_stream_processor::builders::StopStreamProcessorInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::stop_stream_processor::builders::StopStreamProcessorInputBuilder {
+        crate::operation::stop_stream_processor::builders::StopStreamProcessorInputBuilder::default()
     }
 }
 
 /// A builder for [`StopStreamProcessorInput`](crate::operation::stop_stream_processor::StopStreamProcessorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopStreamProcessorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl StopStreamProcessorInputBuilder {
     /// Consumes the builder and constructs a [`StopStreamProcessorInput`](crate::operation::stop_stream_processor::StopStreamProcessorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_stream_processor::StopStreamProcessorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_stream_processor::StopStreamProcessorInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_stream_processor::StopStreamProcessorInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_stream_processor::StopStreamProcessorInput { name: self.name })
     }
 }

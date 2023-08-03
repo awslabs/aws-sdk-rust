@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeMatchmakingOutput {
 }
 impl DescribeMatchmakingOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMatchmakingOutput`](crate::operation::describe_matchmaking::DescribeMatchmakingOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_matchmaking::builders::DescribeMatchmakingOutputBuilder {
-        crate::operation::describe_matchmaking::builders::DescribeMatchmakingOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_matchmaking::builders::DescribeMatchmakingOutputBuilder {
+        crate::operation::describe_matchmaking::builders::DescribeMatchmakingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMatchmakingOutput`](crate::operation::describe_matchmaking::DescribeMatchmakingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMatchmakingOutputBuilder {
     pub(crate) ticket_list: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingTicket>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl DescribeMatchmakingOutputBuilder {
         self
     }
     /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
-    pub fn set_ticket_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingTicket>>,
-    ) -> Self {
+    pub fn set_ticket_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingTicket>>) -> Self {
         self.ticket_list = input;
         self
     }
     /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
-    pub fn get_ticket_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchmakingTicket>> {
+    pub fn get_ticket_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchmakingTicket>> {
         &self.ticket_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

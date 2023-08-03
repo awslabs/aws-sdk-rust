@@ -38,18 +38,14 @@ impl RestoreSnapshotTierInput {
 }
 impl RestoreSnapshotTierInput {
     /// Creates a new builder-style object to manufacture [`RestoreSnapshotTierInput`](crate::operation::restore_snapshot_tier::RestoreSnapshotTierInput).
-    pub fn builder(
-    ) -> crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierInputBuilder {
-        crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierInputBuilder {
+        crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierInputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreSnapshotTierInput`](crate::operation::restore_snapshot_tier::RestoreSnapshotTierInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreSnapshotTierInputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) temporary_restore_days: ::std::option::Option<i32>,
@@ -119,17 +115,13 @@ impl RestoreSnapshotTierInputBuilder {
     /// Consumes the builder and constructs a [`RestoreSnapshotTierInput`](crate::operation::restore_snapshot_tier::RestoreSnapshotTierInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_snapshot_tier::RestoreSnapshotTierInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::restore_snapshot_tier::RestoreSnapshotTierInput {
-                snapshot_id: self.snapshot_id,
-                temporary_restore_days: self.temporary_restore_days,
-                permanent_restore: self.permanent_restore,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::restore_snapshot_tier::RestoreSnapshotTierInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::restore_snapshot_tier::RestoreSnapshotTierInput {
+            snapshot_id: self.snapshot_id,
+            temporary_restore_days: self.temporary_restore_days,
+            permanent_restore: self.permanent_restore,
+            dry_run: self.dry_run,
+        })
     }
 }

@@ -118,17 +118,13 @@ pub fn ser_oracle_settings(
         object.key("SecurityDbEncryption").string(var_30.as_str());
     }
     if let Some(var_31) = &input.security_db_encryption_name {
-        object
-            .key("SecurityDbEncryptionName")
-            .string(var_31.as_str());
+        object.key("SecurityDbEncryptionName").string(var_31.as_str());
     }
     if let Some(var_32) = &input.server_name {
         object.key("ServerName").string(var_32.as_str());
     }
     if let Some(var_33) = &input.spatial_data_option_to_geo_json_function_name {
-        object
-            .key("SpatialDataOptionToGeoJsonFunctionName")
-            .string(var_33.as_str());
+        object.key("SpatialDataOptionToGeoJsonFunctionName").string(var_33.as_str());
     }
     if let Some(var_34) = &input.standby_delay_time {
         object.key("StandbyDelayTime").number(
@@ -149,22 +145,16 @@ pub fn ser_oracle_settings(
         object.key("UseLogminerReader").boolean(*var_38);
     }
     if let Some(var_39) = &input.secrets_manager_access_role_arn {
-        object
-            .key("SecretsManagerAccessRoleArn")
-            .string(var_39.as_str());
+        object.key("SecretsManagerAccessRoleArn").string(var_39.as_str());
     }
     if let Some(var_40) = &input.secrets_manager_secret_id {
         object.key("SecretsManagerSecretId").string(var_40.as_str());
     }
     if let Some(var_41) = &input.secrets_manager_oracle_asm_access_role_arn {
-        object
-            .key("SecretsManagerOracleAsmAccessRoleArn")
-            .string(var_41.as_str());
+        object.key("SecretsManagerOracleAsmAccessRoleArn").string(var_41.as_str());
     }
     if let Some(var_42) = &input.secrets_manager_oracle_asm_secret_id {
-        object
-            .key("SecretsManagerOracleAsmSecretId")
-            .string(var_42.as_str());
+        object.key("SecretsManagerOracleAsmSecretId").string(var_42.as_str());
     }
     if let Some(var_43) = &input.trim_space_in_char {
         object.key("TrimSpaceInChar").boolean(*var_43);
@@ -183,17 +173,9 @@ pub fn ser_oracle_settings(
 
 pub(crate) fn de_oracle_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::OracleSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::OracleSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -203,382 +185,263 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AddSupplementalLogging" => {
-                            builder = builder.set_add_supplemental_logging(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder =
+                                builder.set_add_supplemental_logging(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ArchivedLogDestId" => {
                             builder = builder.set_archived_log_dest_id(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "AdditionalArchivedLogDestId" => {
                             builder = builder.set_additional_archived_log_dest_id(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "ExtraArchivedLogDestIds" => {
-                            builder = builder.set_extra_archived_log_dest_ids(
-                                crate::protocol_serde::shape_integer_list::de_integer_list(tokens)?,
-                            );
+                            builder = builder.set_extra_archived_log_dest_ids(crate::protocol_serde::shape_integer_list::de_integer_list(tokens)?);
                         }
                         "AllowSelectNestedTables" => {
-                            builder = builder.set_allow_select_nested_tables(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder =
+                                builder.set_allow_select_nested_tables(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ParallelAsmReadThreads" => {
                             builder = builder.set_parallel_asm_read_threads(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "ReadAheadBlocks" => {
                             builder = builder.set_read_ahead_blocks(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "AccessAlternateDirectly" => {
-                            builder = builder.set_access_alternate_directly(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder =
+                                builder.set_access_alternate_directly(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "UseAlternateFolderForOnline" => {
-                            builder = builder.set_use_alternate_folder_for_online(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder
+                                .set_use_alternate_folder_for_online(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "OraclePathPrefix" => {
                             builder = builder.set_oracle_path_prefix(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "UsePathPrefix" => {
                             builder = builder.set_use_path_prefix(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "ReplacePathPrefix" => {
-                            builder = builder.set_replace_path_prefix(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_replace_path_prefix(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "EnableHomogenousTablespace" => {
-                            builder = builder.set_enable_homogenous_tablespace(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder =
+                                builder.set_enable_homogenous_tablespace(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "DirectPathNoLog" => {
-                            builder = builder.set_direct_path_no_log(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_direct_path_no_log(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ArchivedLogsOnly" => {
-                            builder = builder.set_archived_logs_only(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_archived_logs_only(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "AsmPassword" => {
                             builder = builder.set_asm_password(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "AsmServer" => {
                             builder = builder.set_asm_server(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "AsmUser" => {
                             builder = builder.set_asm_user(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "CharLengthSemantics" => {
                             builder = builder.set_char_length_semantics(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::CharLengthSemantics::from(u.as_ref())
-                                    })
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CharLengthSemantics::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "DatabaseName" => {
                             builder = builder.set_database_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "DirectPathParallelLoad" => {
-                            builder = builder.set_direct_path_parallel_load(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder =
+                                builder.set_direct_path_parallel_load(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "FailTasksOnLobTruncation" => {
-                            builder = builder.set_fail_tasks_on_lob_truncation(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder =
+                                builder.set_fail_tasks_on_lob_truncation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "NumberDatatypeScale" => {
                             builder = builder.set_number_datatype_scale(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "Password" => {
                             builder = builder.set_password(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "Port" => {
                             builder = builder.set_port(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "ReadTableSpaceName" => {
-                            builder = builder.set_read_table_space_name(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_read_table_space_name(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "RetryInterval" => {
                             builder = builder.set_retry_interval(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "SecurityDbEncryption" => {
                             builder = builder.set_security_db_encryption(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "SecurityDbEncryptionName" => {
                             builder = builder.set_security_db_encryption_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "ServerName" => {
                             builder = builder.set_server_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "SpatialDataOptionToGeoJsonFunctionName" => {
                             builder = builder.set_spatial_data_option_to_geo_json_function_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "StandbyDelayTime" => {
                             builder = builder.set_standby_delay_time(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "Username" => {
                             builder = builder.set_username(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "UseBFile" => {
-                            builder = builder.set_use_b_file(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_use_b_file(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "UseDirectPathFullLoad" => {
-                            builder = builder.set_use_direct_path_full_load(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder =
+                                builder.set_use_direct_path_full_load(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "UseLogminerReader" => {
-                            builder = builder.set_use_logminer_reader(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_use_logminer_reader(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "SecretsManagerAccessRoleArn" => {
                             builder = builder.set_secrets_manager_access_role_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "SecretsManagerSecretId" => {
                             builder = builder.set_secrets_manager_secret_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "SecretsManagerOracleAsmAccessRoleArn" => {
                             builder = builder.set_secrets_manager_oracle_asm_access_role_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "SecretsManagerOracleAsmSecretId" => {
                             builder = builder.set_secrets_manager_oracle_asm_secret_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "TrimSpaceInChar" => {
-                            builder = builder.set_trim_space_in_char(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_trim_space_in_char(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ConvertTimestampWithZoneToUTC" => {
-                            builder = builder.set_convert_timestamp_with_zone_to_utc(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder
+                                .set_convert_timestamp_with_zone_to_utc(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "OpenTransactionWindow" => {
                             builder = builder.set_open_transaction_window(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListThingsInBillingGroupOutput {
 }
 impl ListThingsInBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`ListThingsInBillingGroupOutput`](crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput).
-    pub fn builder() -> crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupOutputBuilder{
+    pub fn builder() -> crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupOutputBuilder {
         crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListThingsInBillingGroupOutput`](crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingsInBillingGroupOutputBuilder {
     pub(crate) things: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListThingsInBillingGroupOutputBuilder {
         self
     }
     /// <p>A list of things in the billing group.</p>
-    pub fn set_things(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_things(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.things = input;
         self
     }
@@ -91,9 +86,7 @@ impl ListThingsInBillingGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListThingsInBillingGroupOutput`](crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput {
+    pub fn build(self) -> crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput {
         crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput {
             things: self.things,
             next_token: self.next_token,

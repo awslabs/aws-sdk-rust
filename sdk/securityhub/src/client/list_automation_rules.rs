@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`automation_rules_metadata(Option<Vec<AutomationRulesMetadata>>)`](crate::operation::list_automation_rules::ListAutomationRulesOutput::automation_rules_metadata): <p> Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_automation_rules::ListAutomationRulesOutput::next_token): <p> A pagination token for the response. </p>
     /// - On failure, responds with [`SdkError<ListAutomationRulesError>`](crate::operation::list_automation_rules::ListAutomationRulesError)
-    pub fn list_automation_rules(
-        &self,
-    ) -> crate::operation::list_automation_rules::builders::ListAutomationRulesFluentBuilder {
-        crate::operation::list_automation_rules::builders::ListAutomationRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_automation_rules(&self) -> crate::operation::list_automation_rules::builders::ListAutomationRulesFluentBuilder {
+        crate::operation::list_automation_rules::builders::ListAutomationRulesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl UpdateOriginAccessControlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateOriginAccessControlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_origin_access_control::builders::UpdateOriginAccessControlInputBuilder,
+    inner: crate::operation::update_origin_access_control::builders::UpdateOriginAccessControlInputBuilder,
 }
 impl UpdateOriginAccessControlFluentBuilder {
     /// Creates a new `UpdateOriginAccessControl`.
@@ -37,7 +37,7 @@ impl UpdateOriginAccessControlFluentBuilder {
         }
     }
     /// Access the UpdateOriginAccessControl as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_origin_access_control::builders::UpdateOriginAccessControlInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_origin_access_control::builders::UpdateOriginAccessControlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateOriginAccessControlFluentBuilder {
             crate::operation::update_origin_access_control::UpdateOriginAccessControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_origin_access_control::UpdateOriginAccessControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_origin_access_control::UpdateOriginAccessControlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateOriginAccessControlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateOriginAccessControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_origin_access_control::UpdateOriginAccessControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_origin_access_control::UpdateOriginAccessControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_origin_access_control::UpdateOriginAccessControlError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateOriginAccessControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_origin_access_control::UpdateOriginAccessControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_origin_access_control::UpdateOriginAccessControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_origin_access_control::UpdateOriginAccessControlError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl UpdateOriginAccessControlFluentBuilder {
             crate::operation::update_origin_access_control::UpdateOriginAccessControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_origin_access_control::UpdateOriginAccessControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_origin_access_control::UpdateOriginAccessControlError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An origin access control.</p>
-    pub fn origin_access_control_config(
-        mut self,
-        input: crate::types::OriginAccessControlConfig,
-    ) -> Self {
+    pub fn origin_access_control_config(mut self, input: crate::types::OriginAccessControlConfig) -> Self {
         self.inner = self.inner.origin_access_control_config(input);
         self
     }
     /// <p>An origin access control.</p>
-    pub fn set_origin_access_control_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginAccessControlConfig>,
-    ) -> Self {
+    pub fn set_origin_access_control_config(mut self, input: ::std::option::Option<crate::types::OriginAccessControlConfig>) -> Self {
         self.inner = self.inner.set_origin_access_control_config(input);
         self
     }
     /// <p>An origin access control.</p>
-    pub fn get_origin_access_control_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginAccessControlConfig> {
+    pub fn get_origin_access_control_config(&self) -> &::std::option::Option<crate::types::OriginAccessControlConfig> {
         self.inner.get_origin_access_control_config()
     }
     /// <p>The unique identifier of the origin access control that you are updating.</p>

@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for GetLifecyclePolicyOutput {
 }
 impl GetLifecyclePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyOutput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyOutputBuilder {
+    pub fn builder() -> crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyOutputBuilder {
         crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLifecyclePolicyOutput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -76,18 +73,12 @@ impl GetLifecyclePolicyOutputBuilder {
         &self.registry_id
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -96,18 +87,12 @@ impl GetLifecyclePolicyOutputBuilder {
         &self.repository_name
     }
     /// <p>The JSON lifecycle policy text.</p>
-    pub fn lifecycle_policy_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_policy_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON lifecycle policy text.</p>
-    pub fn set_lifecycle_policy_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_policy_text = input;
         self
     }
@@ -121,10 +106,7 @@ impl GetLifecyclePolicyOutputBuilder {
         self
     }
     /// <p>The time stamp of the last time that the lifecycle policy was run.</p>
-    pub fn set_last_evaluated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_evaluated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_evaluated_at = input;
         self
     }

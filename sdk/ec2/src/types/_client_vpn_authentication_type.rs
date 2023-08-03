@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ClientVpnAuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -61,13 +55,9 @@ impl ::std::convert::From<&str> for ClientVpnAuthenticationType {
     fn from(s: &str) -> Self {
         match s {
             "certificate-authentication" => ClientVpnAuthenticationType::CertificateAuthentication,
-            "directory-service-authentication" => {
-                ClientVpnAuthenticationType::DirectoryServiceAuthentication
-            }
+            "directory-service-authentication" => ClientVpnAuthenticationType::DirectoryServiceAuthentication,
             "federated-authentication" => ClientVpnAuthenticationType::FederatedAuthentication,
-            other => ClientVpnAuthenticationType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ClientVpnAuthenticationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -83,9 +73,7 @@ impl ClientVpnAuthenticationType {
     pub fn as_str(&self) -> &str {
         match self {
             ClientVpnAuthenticationType::CertificateAuthentication => "certificate-authentication",
-            ClientVpnAuthenticationType::DirectoryServiceAuthentication => {
-                "directory-service-authentication"
-            }
+            ClientVpnAuthenticationType::DirectoryServiceAuthentication => "directory-service-authentication",
             ClientVpnAuthenticationType::FederatedAuthentication => "federated-authentication",
             ClientVpnAuthenticationType::Unknown(value) => value.as_str(),
         }

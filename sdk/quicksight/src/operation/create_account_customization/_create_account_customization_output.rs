@@ -37,9 +37,7 @@ impl CreateAccountCustomizationOutput {
         self.namespace.as_deref()
     }
     /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. </p>
-    pub fn account_customization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccountCustomization> {
+    pub fn account_customization(&self) -> ::std::option::Option<&crate::types::AccountCustomization> {
         self.account_customization.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -58,16 +56,14 @@ impl ::aws_http::request_id::RequestId for CreateAccountCustomizationOutput {
 }
 impl CreateAccountCustomizationOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccountCustomizationOutput`](crate::operation::create_account_customization::CreateAccountCustomizationOutput).
-    pub fn builder() -> crate::operation::create_account_customization::builders::CreateAccountCustomizationOutputBuilder{
+    pub fn builder() -> crate::operation::create_account_customization::builders::CreateAccountCustomizationOutputBuilder {
         crate::operation::create_account_customization::builders::CreateAccountCustomizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccountCustomizationOutput`](crate::operation::create_account_customization::CreateAccountCustomizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccountCustomizationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
@@ -93,18 +89,12 @@ impl CreateAccountCustomizationOutputBuilder {
         &self.arn
     }
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -132,17 +122,12 @@ impl CreateAccountCustomizationOutputBuilder {
         self
     }
     /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. </p>
-    pub fn set_account_customization(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountCustomization>,
-    ) -> Self {
+    pub fn set_account_customization(mut self, input: ::std::option::Option<crate::types::AccountCustomization>) -> Self {
         self.account_customization = input;
         self
     }
     /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. </p>
-    pub fn get_account_customization(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountCustomization> {
+    pub fn get_account_customization(&self) -> &::std::option::Option<crate::types::AccountCustomization> {
         &self.account_customization
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -183,9 +168,7 @@ impl CreateAccountCustomizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAccountCustomizationOutput`](crate::operation::create_account_customization::CreateAccountCustomizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_account_customization::CreateAccountCustomizationOutput {
+    pub fn build(self) -> crate::operation::create_account_customization::CreateAccountCustomizationOutput {
         crate::operation::create_account_customization::CreateAccountCustomizationOutput {
             arn: self.arn,
             aws_account_id: self.aws_account_id,

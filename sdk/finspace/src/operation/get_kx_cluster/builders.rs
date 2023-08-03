@@ -10,10 +10,7 @@ impl GetKxClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_kx_cluster::GetKxClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_cluster::GetKxClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_kx_cluster::GetKxClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_kx_cluster();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetKxClusterFluentBuilder {
         }
     }
     /// Access the GetKxCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_kx_cluster::builders::GetKxClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_kx_cluster::builders::GetKxClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetKxClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl GetKxClusterFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }

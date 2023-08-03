@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`replication_groups(Option<Vec<String>>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::replication_groups): <p>A list of replication groups that the user group can access.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the user group.</p>
     /// - On failure, responds with [`SdkError<DeleteUserGroupError>`](crate::operation::delete_user_group::DeleteUserGroupError)
-    pub fn delete_user_group(
-        &self,
-    ) -> crate::operation::delete_user_group::builders::DeleteUserGroupFluentBuilder {
-        crate::operation::delete_user_group::builders::DeleteUserGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_user_group(&self) -> crate::operation::delete_user_group::builders::DeleteUserGroupFluentBuilder {
+        crate::operation::delete_user_group::builders::DeleteUserGroupFluentBuilder::new(self.handle.clone())
     }
 }

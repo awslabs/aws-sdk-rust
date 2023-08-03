@@ -37,9 +37,7 @@ impl AutoMlSecurityConfig {
 
 /// A builder for [`AutoMlSecurityConfig`](crate::types::AutoMlSecurityConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoMlSecurityConfigBuilder {
     pub(crate) volume_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable_inter_container_traffic_encryption: ::std::option::Option<bool>,
@@ -47,18 +45,12 @@ pub struct AutoMlSecurityConfigBuilder {
 }
 impl AutoMlSecurityConfigBuilder {
     /// <p>The key used to encrypt stored data.</p>
-    pub fn volume_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key used to encrypt stored data.</p>
-    pub fn set_volume_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_kms_key_id = input;
         self
     }
@@ -72,10 +64,7 @@ impl AutoMlSecurityConfigBuilder {
         self
     }
     /// <p>Whether to use traffic encryption between the container layers.</p>
-    pub fn set_enable_inter_container_traffic_encryption(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_inter_container_traffic_encryption(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_inter_container_traffic_encryption = input;
         self
     }
@@ -101,9 +90,7 @@ impl AutoMlSecurityConfigBuilder {
     pub fn build(self) -> crate::types::AutoMlSecurityConfig {
         crate::types::AutoMlSecurityConfig {
             volume_kms_key_id: self.volume_kms_key_id,
-            enable_inter_container_traffic_encryption: self
-                .enable_inter_container_traffic_encryption
-                .unwrap_or_default(),
+            enable_inter_container_traffic_encryption: self.enable_inter_container_traffic_encryption.unwrap_or_default(),
             vpc_config: self.vpc_config,
         }
     }

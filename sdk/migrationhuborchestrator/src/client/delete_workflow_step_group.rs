@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder::set_id): <p>The ID of the step group you want to delete.</p>
     /// - On success, responds with [`DeleteWorkflowStepGroupOutput`](crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkflowStepGroupError>`](crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupError)
-    pub fn delete_workflow_step_group(
-        &self,
-    ) -> crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder
-    {
+    pub fn delete_workflow_step_group(&self) -> crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder {
         crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder::new(self.handle.clone())
     }
 }

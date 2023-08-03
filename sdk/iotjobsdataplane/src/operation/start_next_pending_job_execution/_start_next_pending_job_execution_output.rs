@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartNextPendingJobExecutionOutput {
 }
 impl StartNextPendingJobExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartNextPendingJobExecutionOutput`](crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput).
-    pub fn builder() -> crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionOutputBuilder{
+    pub fn builder() -> crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionOutputBuilder {
         crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartNextPendingJobExecutionOutput`](crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartNextPendingJobExecutionOutputBuilder {
     pub(crate) execution: ::std::option::Option<crate::types::JobExecution>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StartNextPendingJobExecutionOutputBuilder {
         self
     }
     /// <p>A JobExecution object.</p>
-    pub fn set_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecution>,
-    ) -> Self {
+    pub fn set_execution(mut self, input: ::std::option::Option<crate::types::JobExecution>) -> Self {
         self.execution = input;
         self
     }
@@ -63,10 +58,7 @@ impl StartNextPendingJobExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartNextPendingJobExecutionOutput`](crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput
-    {
+    pub fn build(self) -> crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput {
         crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput {
             execution: self.execution,
             _request_id: self._request_id,

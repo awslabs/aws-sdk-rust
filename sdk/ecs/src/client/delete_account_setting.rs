@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAccountSettingOutput`](crate::operation::delete_account_setting::DeleteAccountSettingOutput) with field(s):
     ///   - [`setting(Option<Setting>)`](crate::operation::delete_account_setting::DeleteAccountSettingOutput::setting): <p>The account setting for the specified principal ARN.</p>
     /// - On failure, responds with [`SdkError<DeleteAccountSettingError>`](crate::operation::delete_account_setting::DeleteAccountSettingError)
-    pub fn delete_account_setting(
-        &self,
-    ) -> crate::operation::delete_account_setting::builders::DeleteAccountSettingFluentBuilder {
-        crate::operation::delete_account_setting::builders::DeleteAccountSettingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_account_setting(&self) -> crate::operation::delete_account_setting::builders::DeleteAccountSettingFluentBuilder {
+        crate::operation::delete_account_setting::builders::DeleteAccountSettingFluentBuilder::new(self.handle.clone())
     }
 }

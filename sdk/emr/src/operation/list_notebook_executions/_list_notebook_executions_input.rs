@@ -74,18 +74,14 @@ impl ListNotebookExecutionsInput {
 }
 impl ListNotebookExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListNotebookExecutionsInput`](crate::operation::list_notebook_executions::ListNotebookExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_notebook_executions::builders::ListNotebookExecutionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_notebook_executions::builders::ListNotebookExecutionsInputBuilder {
         crate::operation::list_notebook_executions::builders::ListNotebookExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListNotebookExecutionsInput`](crate::operation::list_notebook_executions::ListNotebookExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotebookExecutionsInputBuilder {
     pub(crate) editor_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::NotebookExecutionStatus>,
@@ -139,10 +135,7 @@ impl ListNotebookExecutionsInputBuilder {
     /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
     /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NotebookExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::NotebookExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -205,18 +198,12 @@ impl ListNotebookExecutionsInputBuilder {
         &self.marker
     }
     /// <p>The unique ID of the execution engine.</p>
-    pub fn execution_engine_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_engine_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_engine_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the execution engine.</p>
-    pub fn set_execution_engine_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_engine_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_engine_id = input;
         self
     }
@@ -227,19 +214,15 @@ impl ListNotebookExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListNotebookExecutionsInput`](crate::operation::list_notebook_executions::ListNotebookExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_notebook_executions::ListNotebookExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_notebook_executions::ListNotebookExecutionsInput {
-                editor_id: self.editor_id,
-                status: self.status,
-                from: self.from,
-                to: self.to,
-                marker: self.marker,
-                execution_engine_id: self.execution_engine_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_notebook_executions::ListNotebookExecutionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_notebook_executions::ListNotebookExecutionsInput {
+            editor_id: self.editor_id,
+            status: self.status,
+            from: self.from,
+            to: self.to,
+            marker: self.marker,
+            execution_engine_id: self.execution_engine_id,
+        })
     }
 }

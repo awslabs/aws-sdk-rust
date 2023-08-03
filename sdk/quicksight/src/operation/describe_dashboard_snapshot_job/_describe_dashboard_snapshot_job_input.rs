@@ -29,16 +29,14 @@ impl DescribeDashboardSnapshotJobInput {
 }
 impl DescribeDashboardSnapshotJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardSnapshotJobInput`](crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobInput).
-    pub fn builder() -> crate::operation::describe_dashboard_snapshot_job::builders::DescribeDashboardSnapshotJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_dashboard_snapshot_job::builders::DescribeDashboardSnapshotJobInputBuilder {
         crate::operation::describe_dashboard_snapshot_job::builders::DescribeDashboardSnapshotJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDashboardSnapshotJobInput`](crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDashboardSnapshotJobInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DescribeDashboardSnapshotJobInputBuilder {
 }
 impl DescribeDashboardSnapshotJobInputBuilder {
     /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -80,18 +72,12 @@ impl DescribeDashboardSnapshotJobInputBuilder {
         &self.dashboard_id
     }
     /// <p>The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn snapshot_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn set_snapshot_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_job_id = input;
         self
     }
@@ -106,12 +92,10 @@ impl DescribeDashboardSnapshotJobInputBuilder {
         crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobInput {
-                aws_account_id: self.aws_account_id,
-                dashboard_id: self.dashboard_id,
-                snapshot_job_id: self.snapshot_job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobInput {
+            aws_account_id: self.aws_account_id,
+            dashboard_id: self.dashboard_id,
+            snapshot_job_id: self.snapshot_job_id,
+        })
     }
 }

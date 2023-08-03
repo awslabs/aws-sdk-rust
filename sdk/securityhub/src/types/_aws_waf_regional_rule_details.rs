@@ -12,9 +12,7 @@ pub struct AwsWafRegionalRuleDetails {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
     #[doc(hidden)]
-    pub predicate_list: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsWafRegionalRulePredicateListDetails>,
-    >,
+    pub predicate_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRulePredicateListDetails>>,
     /// <p>The ID of the rule. </p>
     #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
@@ -29,9 +27,7 @@ impl AwsWafRegionalRuleDetails {
         self.name.as_deref()
     }
     /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
-    pub fn predicate_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsWafRegionalRulePredicateListDetails]> {
+    pub fn predicate_list(&self) -> ::std::option::Option<&[crate::types::AwsWafRegionalRulePredicateListDetails]> {
         self.predicate_list.as_deref()
     }
     /// <p>The ID of the rule. </p>
@@ -48,15 +44,11 @@ impl AwsWafRegionalRuleDetails {
 
 /// A builder for [`AwsWafRegionalRuleDetails`](crate::types::AwsWafRegionalRuleDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafRegionalRuleDetailsBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) predicate_list: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsWafRegionalRulePredicateListDetails>,
-    >,
+    pub(crate) predicate_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRulePredicateListDetails>>,
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRegionalRuleDetailsBuilder {
@@ -93,30 +85,19 @@ impl AwsWafRegionalRuleDetailsBuilder {
     /// To override the contents of this collection use [`set_predicate_list`](Self::set_predicate_list).
     ///
     /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
-    pub fn predicate_list(
-        mut self,
-        input: crate::types::AwsWafRegionalRulePredicateListDetails,
-    ) -> Self {
+    pub fn predicate_list(mut self, input: crate::types::AwsWafRegionalRulePredicateListDetails) -> Self {
         let mut v = self.predicate_list.unwrap_or_default();
         v.push(input);
         self.predicate_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
-    pub fn set_predicate_list(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsWafRegionalRulePredicateListDetails>,
-        >,
-    ) -> Self {
+    pub fn set_predicate_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRulePredicateListDetails>>) -> Self {
         self.predicate_list = input;
         self
     }
     /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
-    pub fn get_predicate_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRulePredicateListDetails>>
-    {
+    pub fn get_predicate_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRulePredicateListDetails>> {
         &self.predicate_list
     }
     /// <p>The ID of the rule. </p>

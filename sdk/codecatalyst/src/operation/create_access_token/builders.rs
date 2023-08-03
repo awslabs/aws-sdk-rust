@@ -10,10 +10,7 @@ impl CreateAccessTokenInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_access_token::CreateAccessTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_token::CreateAccessTokenError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_token::CreateAccessTokenError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_access_token();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateAccessTokenFluentBuilder {
         }
     }
     /// Access the CreateAccessToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_access_token::builders::CreateAccessTokenInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_access_token::builders::CreateAccessTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateAccessTokenFluentBuilder {
             crate::operation::create_access_token::CreateAccessToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_token::CreateAccessTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_token::CreateAccessTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateAccessTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateAccessTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_token::CreateAccessTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_token::CreateAccessTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_token::CreateAccessTokenError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateAccessTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_token::CreateAccessTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_token::CreateAccessTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_token::CreateAccessTokenError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateAccessTokenFluentBuilder {
             crate::operation::create_access_token::CreateAccessToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_token::CreateAccessTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_token::CreateAccessTokenError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl CreateAccessTokenFluentBuilder {
         self
     }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn set_expires_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_expires_time(input);
         self
     }

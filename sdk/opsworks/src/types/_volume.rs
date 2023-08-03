@@ -128,9 +128,7 @@ impl Volume {
 
 /// A builder for [`Volume`](crate::types::Volume).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeBuilder {
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_volume_id: ::std::option::Option<::std::string::String>,
@@ -163,18 +161,12 @@ impl VolumeBuilder {
         &self.volume_id
     }
     /// <p>The Amazon EC2 volume ID.</p>
-    pub fn ec2_volume_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_volume_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 volume ID.</p>
-    pub fn set_ec2_volume_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_volume_id = input;
         self
     }
@@ -197,18 +189,12 @@ impl VolumeBuilder {
         &self.name
     }
     /// <p>The RAID array ID.</p>
-    pub fn raid_array_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn raid_array_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.raid_array_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The RAID array ID.</p>
-    pub fn set_raid_array_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_raid_array_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.raid_array_id = input;
         self
     }
@@ -301,18 +287,12 @@ impl VolumeBuilder {
         &self.region
     }
     /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }

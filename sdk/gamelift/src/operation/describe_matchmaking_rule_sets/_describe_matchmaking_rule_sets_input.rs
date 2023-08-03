@@ -29,16 +29,14 @@ impl DescribeMatchmakingRuleSetsInput {
 }
 impl DescribeMatchmakingRuleSetsInput {
     /// Creates a new builder-style object to manufacture [`DescribeMatchmakingRuleSetsInput`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsInput).
-    pub fn builder() -> crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsInputBuilder{
+    pub fn builder() -> crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsInputBuilder {
         crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMatchmakingRuleSetsInput`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMatchmakingRuleSetsInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -57,10 +55,7 @@ impl DescribeMatchmakingRuleSetsInputBuilder {
         self
     }
     /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -103,12 +98,10 @@ impl DescribeMatchmakingRuleSetsInputBuilder {
         crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsInput {
-                names: self.names,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsInput {
+            names: self.names,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

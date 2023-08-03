@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::send_ssh_public_key::SendSshPublicKeyOutput::request_id): <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
     ///   - [`success(bool)`](crate::operation::send_ssh_public_key::SendSshPublicKeyOutput::success): <p>Is true if the request succeeds and an error otherwise.</p>
     /// - On failure, responds with [`SdkError<SendSSHPublicKeyError>`](crate::operation::send_ssh_public_key::SendSSHPublicKeyError)
-    pub fn send_ssh_public_key(
-        &self,
-    ) -> crate::operation::send_ssh_public_key::builders::SendSSHPublicKeyFluentBuilder {
-        crate::operation::send_ssh_public_key::builders::SendSSHPublicKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_ssh_public_key(&self) -> crate::operation::send_ssh_public_key::builders::SendSSHPublicKeyFluentBuilder {
+        crate::operation::send_ssh_public_key::builders::SendSSHPublicKeyFluentBuilder::new(self.handle.clone())
     }
 }

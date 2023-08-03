@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelWorldGenerationJobOutput {
 }
 impl CancelWorldGenerationJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelWorldGenerationJobOutput`](crate::operation::cancel_world_generation_job::CancelWorldGenerationJobOutput).
-    pub fn builder() -> crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobOutputBuilder {
         crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelWorldGenerationJobOutput`](crate::operation::cancel_world_generation_job::CancelWorldGenerationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelWorldGenerationJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CancelWorldGenerationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelWorldGenerationJobOutput`](crate::operation::cancel_world_generation_job::CancelWorldGenerationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_world_generation_job::CancelWorldGenerationJobOutput {
+    pub fn build(self) -> crate::operation::cancel_world_generation_job::CancelWorldGenerationJobOutput {
         crate::operation::cancel_world_generation_job::CancelWorldGenerationJobOutput {
             _request_id: self._request_id,
         }

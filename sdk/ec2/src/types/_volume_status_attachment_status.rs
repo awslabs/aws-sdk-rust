@@ -30,27 +30,19 @@ impl VolumeStatusAttachmentStatus {
 
 /// A builder for [`VolumeStatusAttachmentStatus`](crate::types::VolumeStatusAttachmentStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeStatusAttachmentStatusBuilder {
     pub(crate) io_performance: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
 impl VolumeStatusAttachmentStatusBuilder {
     /// <p>The maximum IOPS supported by the attached instance.</p>
-    pub fn io_performance(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn io_performance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.io_performance = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum IOPS supported by the attached instance.</p>
-    pub fn set_io_performance(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_io_performance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.io_performance = input;
         self
     }

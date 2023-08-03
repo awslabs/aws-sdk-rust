@@ -49,9 +49,7 @@ impl ListTokensInput {
 
 /// A builder for [`ListTokensInput`](crate::operation::list_tokens::ListTokensInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTokensInputBuilder {
     pub(crate) token_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -71,10 +69,7 @@ impl ListTokensInputBuilder {
         self
     }
     /// <p>Token IDs.</p>
-    pub fn set_token_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_token_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.token_ids = input;
         self
     }
@@ -100,10 +95,7 @@ impl ListTokensInputBuilder {
     /// <ul>
     /// <li> <p> <code>LicenseArns</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -143,12 +135,7 @@ impl ListTokensInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTokensInput`](crate::operation::list_tokens::ListTokensInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tokens::ListTokensInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tokens::ListTokensInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tokens::ListTokensInput {
             token_ids: self.token_ids,
             filters: self.filters,

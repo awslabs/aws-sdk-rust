@@ -21,10 +21,7 @@ pub fn ser_aws_ec2_network_acl_entry(
     if let Some(var_5) = &input.port_range {
         #[allow(unused_mut)]
         let mut object_6 = object.key("PortRange").start_object();
-        crate::protocol_serde::shape_port_range_from_to::ser_port_range_from_to(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_port_range_from_to::ser_port_range_from_to(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.protocol {
@@ -44,17 +41,9 @@ pub fn ser_aws_ec2_network_acl_entry(
 
 pub(crate) fn de_aws_ec2_network_acl_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsEc2NetworkAclEntry>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsEc2NetworkAclEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -64,90 +53,65 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "CidrBlock" => {
-                                builder = builder.set_cidr_block(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "CidrBlock" => {
+                            builder = builder.set_cidr_block(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Egress" => {
-                                builder = builder.set_egress(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "IcmpTypeCode" => {
-                                builder = builder.set_icmp_type_code(
-                                    crate::protocol_serde::shape_icmp_type_code::de_icmp_type_code(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "Ipv6CidrBlock" => {
-                                builder = builder.set_ipv6_cidr_block(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "Egress" => {
+                            builder = builder.set_egress(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "IcmpTypeCode" => {
+                            builder = builder.set_icmp_type_code(crate::protocol_serde::shape_icmp_type_code::de_icmp_type_code(tokens)?);
+                        }
+                        "Ipv6CidrBlock" => {
+                            builder = builder.set_ipv6_cidr_block(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "PortRange" => {
-                                builder = builder.set_port_range(
-                                    crate::protocol_serde::shape_port_range_from_to::de_port_range_from_to(tokens)?
-                                );
-                            }
-                            "Protocol" => {
-                                builder = builder.set_protocol(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "PortRange" => {
+                            builder = builder.set_port_range(crate::protocol_serde::shape_port_range_from_to::de_port_range_from_to(tokens)?);
+                        }
+                        "Protocol" => {
+                            builder = builder.set_protocol(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "RuleAction" => {
-                                builder = builder.set_rule_action(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "RuleAction" => {
+                            builder = builder.set_rule_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "RuleNumber" => {
-                                builder = builder.set_rule_number(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "RuleNumber" => {
+                            builder = builder.set_rule_number(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

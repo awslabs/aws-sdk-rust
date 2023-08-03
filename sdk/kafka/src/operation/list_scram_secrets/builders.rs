@@ -10,10 +10,7 @@ impl ListScramSecretsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_scram_secrets::ListScramSecretsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scram_secrets::ListScramSecretsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scram_secrets::ListScramSecretsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_scram_secrets();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListScramSecretsFluentBuilder {
         }
     }
     /// Access the ListScramSecrets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_scram_secrets::builders::ListScramSecretsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_scram_secrets::builders::ListScramSecretsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListScramSecretsFluentBuilder {
             crate::operation::list_scram_secrets::ListScramSecrets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scram_secrets::ListScramSecretsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scram_secrets::ListScramSecretsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListScramSecretsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListScramSecretsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_scram_secrets::ListScramSecretsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scram_secrets::ListScramSecretsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scram_secrets::ListScramSecretsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListScramSecretsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_scram_secrets::ListScramSecretsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scram_secrets::ListScramSecretsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scram_secrets::ListScramSecretsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListScramSecretsFluentBuilder {
             crate::operation::list_scram_secrets::ListScramSecrets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scram_secrets::ListScramSecretsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scram_secrets::ListScramSecretsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_scram_secrets::paginator::ListScramSecretsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_scram_secrets::paginator::ListScramSecretsPaginator {
-        crate::operation::list_scram_secrets::paginator::ListScramSecretsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_scram_secrets::paginator::ListScramSecretsPaginator {
+        crate::operation::list_scram_secrets::paginator::ListScramSecretsPaginator::new(self.handle, self.inner)
     }
     /// <p>The arn of the cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -18,37 +18,25 @@ pub fn ser_metric_source(
     if let Some(var_5) = &input.cloud_watch_config {
         #[allow(unused_mut)]
         let mut object_6 = object.key("CloudWatchConfig").start_object();
-        crate::protocol_serde::shape_cloud_watch_config::ser_cloud_watch_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_cloud_watch_config::ser_cloud_watch_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.rds_source_config {
         #[allow(unused_mut)]
         let mut object_8 = object.key("RDSSourceConfig").start_object();
-        crate::protocol_serde::shape_rds_source_config::ser_rds_source_config(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_rds_source_config::ser_rds_source_config(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.redshift_source_config {
         #[allow(unused_mut)]
         let mut object_10 = object.key("RedshiftSourceConfig").start_object();
-        crate::protocol_serde::shape_redshift_source_config::ser_redshift_source_config(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_redshift_source_config::ser_redshift_source_config(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.athena_source_config {
         #[allow(unused_mut)]
         let mut object_12 = object.key("AthenaSourceConfig").start_object();
-        crate::protocol_serde::shape_athena_source_config::ser_athena_source_config(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_athena_source_config::ser_athena_source_config(&mut object_12, var_11)?;
         object_12.finish();
     }
     Ok(())
@@ -56,17 +44,9 @@ pub fn ser_metric_source(
 
 pub(crate) fn de_metric_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::MetricSource>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::MetricSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -76,56 +56,41 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "S3SourceConfig" => {
-                                builder = builder.set_s3_source_config(
-                                    crate::protocol_serde::shape_s3_source_config::de_s3_source_config(tokens)?
-                                );
-                            }
-                            "AppFlowConfig" => {
-                                builder = builder.set_app_flow_config(
-                                    crate::protocol_serde::shape_app_flow_config::de_app_flow_config(tokens)?
-                                );
-                            }
-                            "CloudWatchConfig" => {
-                                builder = builder.set_cloud_watch_config(
-                                    crate::protocol_serde::shape_cloud_watch_config::de_cloud_watch_config(tokens)?
-                                );
-                            }
-                            "RDSSourceConfig" => {
-                                builder = builder.set_rds_source_config(
-                                    crate::protocol_serde::shape_rds_source_config::de_rds_source_config(tokens)?
-                                );
-                            }
-                            "RedshiftSourceConfig" => {
-                                builder = builder.set_redshift_source_config(
-                                    crate::protocol_serde::shape_redshift_source_config::de_redshift_source_config(tokens)?
-                                );
-                            }
-                            "AthenaSourceConfig" => {
-                                builder = builder.set_athena_source_config(
-                                    crate::protocol_serde::shape_athena_source_config::de_athena_source_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "S3SourceConfig" => {
+                            builder = builder.set_s3_source_config(crate::protocol_serde::shape_s3_source_config::de_s3_source_config(tokens)?);
                         }
-                    }
+                        "AppFlowConfig" => {
+                            builder = builder.set_app_flow_config(crate::protocol_serde::shape_app_flow_config::de_app_flow_config(tokens)?);
+                        }
+                        "CloudWatchConfig" => {
+                            builder = builder.set_cloud_watch_config(crate::protocol_serde::shape_cloud_watch_config::de_cloud_watch_config(tokens)?);
+                        }
+                        "RDSSourceConfig" => {
+                            builder = builder.set_rds_source_config(crate::protocol_serde::shape_rds_source_config::de_rds_source_config(tokens)?);
+                        }
+                        "RedshiftSourceConfig" => {
+                            builder = builder
+                                .set_redshift_source_config(crate::protocol_serde::shape_redshift_source_config::de_redshift_source_config(tokens)?);
+                        }
+                        "AthenaSourceConfig" => {
+                            builder =
+                                builder.set_athena_source_config(crate::protocol_serde::shape_athena_source_config::de_athena_source_config(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

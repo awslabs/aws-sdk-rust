@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`validation_domain(impl ::std::convert::Into<String>)`](crate::operation::resend_validation_email::builders::ResendValidationEmailFluentBuilder::validation_domain) / [`set_validation_domain(Option<String>)`](crate::operation::resend_validation_email::builders::ResendValidationEmailFluentBuilder::set_validation_domain): <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>  <ul>   <li> <p>admin@subdomain.example.com</p> </li>   <li> <p>administrator@subdomain.example.com</p> </li>   <li> <p>hostmaster@subdomain.example.com</p> </li>   <li> <p>postmaster@subdomain.example.com</p> </li>   <li> <p>webmaster@subdomain.example.com</p> </li>  </ul>
     /// - On success, responds with [`ResendValidationEmailOutput`](crate::operation::resend_validation_email::ResendValidationEmailOutput)
     /// - On failure, responds with [`SdkError<ResendValidationEmailError>`](crate::operation::resend_validation_email::ResendValidationEmailError)
-    pub fn resend_validation_email(
-        &self,
-    ) -> crate::operation::resend_validation_email::builders::ResendValidationEmailFluentBuilder
-    {
-        crate::operation::resend_validation_email::builders::ResendValidationEmailFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn resend_validation_email(&self) -> crate::operation::resend_validation_email::builders::ResendValidationEmailFluentBuilder {
+        crate::operation::resend_validation_email::builders::ResendValidationEmailFluentBuilder::new(self.handle.clone())
     }
 }

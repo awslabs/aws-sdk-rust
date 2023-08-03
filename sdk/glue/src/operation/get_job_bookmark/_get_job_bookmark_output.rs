@@ -28,9 +28,7 @@ impl GetJobBookmarkOutput {
 
 /// A builder for [`GetJobBookmarkOutput`](crate::operation::get_job_bookmark::GetJobBookmarkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobBookmarkOutputBuilder {
     pub(crate) job_bookmark_entry: ::std::option::Option<crate::types::JobBookmarkEntry>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetJobBookmarkOutputBuilder {
         self
     }
     /// <p>A structure that defines a point that a job can resume processing.</p>
-    pub fn set_job_bookmark_entry(
-        mut self,
-        input: ::std::option::Option<crate::types::JobBookmarkEntry>,
-    ) -> Self {
+    pub fn set_job_bookmark_entry(mut self, input: ::std::option::Option<crate::types::JobBookmarkEntry>) -> Self {
         self.job_bookmark_entry = input;
         self
     }

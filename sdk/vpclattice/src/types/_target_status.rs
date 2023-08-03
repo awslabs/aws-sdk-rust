@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TargetStatus {
     /// The target is deregistering and connection draining is in process.
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for TargetStatus {
             "UNAVAILABLE" => TargetStatus::Unavailable,
             "UNHEALTHY" => TargetStatus::Unhealthy,
             "UNUSED" => TargetStatus::Unused,
-            other => {
-                TargetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => TargetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl TargetStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DRAINING",
-            "HEALTHY",
-            "INITIAL",
-            "UNAVAILABLE",
-            "UNHEALTHY",
-            "UNUSED",
-        ]
+        &["DRAINING", "HEALTHY", "INITIAL", "UNAVAILABLE", "UNHEALTHY", "UNUSED"]
     }
 }
 impl ::std::convert::AsRef<str> for TargetStatus {

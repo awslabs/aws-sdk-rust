@@ -10,10 +10,7 @@ impl GetResolverConfigInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_config::GetResolverConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_config::GetResolverConfigError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_config::GetResolverConfigError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_resolver_config();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetResolverConfigFluentBuilder {
         }
     }
     /// Access the GetResolverConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_resolver_config::builders::GetResolverConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_resolver_config::builders::GetResolverConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetResolverConfigFluentBuilder {
             crate::operation::get_resolver_config::GetResolverConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_config::GetResolverConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_config::GetResolverConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetResolverConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetResolverConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_config::GetResolverConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_config::GetResolverConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_config::GetResolverConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetResolverConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_config::GetResolverConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_config::GetResolverConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_config::GetResolverConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetResolverConfigFluentBuilder {
             crate::operation::get_resolver_config::GetResolverConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_config::GetResolverConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_config::GetResolverConfigError>,
     > {
         self.customize_middleware().await
     }

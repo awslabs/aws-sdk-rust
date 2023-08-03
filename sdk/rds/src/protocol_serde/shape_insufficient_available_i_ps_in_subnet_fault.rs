@@ -3,10 +3,7 @@
 pub fn de_insufficient_available_i_ps_in_subnet_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InsufficientAvailableIPsInSubnetFaultBuilder,
-) -> Result<
-    crate::types::error::builders::InsufficientAvailableIPsInSubnetFaultBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::InsufficientAvailableIPsInSubnetFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

@@ -10,10 +10,7 @@ impl GrantPermissionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::grant_permissions::GrantPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::grant_permissions::GrantPermissionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::grant_permissions::GrantPermissionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.grant_permissions();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GrantPermissionsFluentBuilder {
         }
     }
     /// Access the GrantPermissions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::grant_permissions::builders::GrantPermissionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::grant_permissions::builders::GrantPermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GrantPermissionsFluentBuilder {
             crate::operation::grant_permissions::GrantPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::grant_permissions::GrantPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::grant_permissions::GrantPermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GrantPermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GrantPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::grant_permissions::GrantPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::grant_permissions::GrantPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::grant_permissions::GrantPermissionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GrantPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::grant_permissions::GrantPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::grant_permissions::GrantPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::grant_permissions::GrantPermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl GrantPermissionsFluentBuilder {
             crate::operation::grant_permissions::GrantPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::grant_permissions::GrantPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::grant_permissions::GrantPermissionsError>,
     > {
         self.customize_middleware().await
     }
@@ -145,10 +129,7 @@ impl GrantPermissionsFluentBuilder {
     }
     /// <p>The principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles, and they are defined by their principal type and their ARN.</p>
     /// <p>Note that if you define a resource with a particular ARN, then later delete, and recreate a resource with that same ARN, the resource maintains the permissions already granted. </p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakePrincipal>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::DataLakePrincipal>) -> Self {
         self.inner = self.inner.set_principal(input);
         self
     }
@@ -181,17 +162,12 @@ impl GrantPermissionsFluentBuilder {
         self
     }
     /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
     /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         self.inner.get_permissions()
     }
     /// Appends an item to `PermissionsWithGrantOption`.
@@ -204,17 +180,12 @@ impl GrantPermissionsFluentBuilder {
         self
     }
     /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
-    pub fn set_permissions_with_grant_option(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions_with_grant_option(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.inner = self.inner.set_permissions_with_grant_option(input);
         self
     }
     /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
-    pub fn get_permissions_with_grant_option(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions_with_grant_option(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         self.inner.get_permissions_with_grant_option()
     }
 }

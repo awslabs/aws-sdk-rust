@@ -29,17 +29,14 @@ impl GetTableMetadataInput {
 }
 impl GetTableMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetTableMetadataInput`](crate::operation::get_table_metadata::GetTableMetadataInput).
-    pub fn builder() -> crate::operation::get_table_metadata::builders::GetTableMetadataInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_table_metadata::builders::GetTableMetadataInputBuilder {
         crate::operation::get_table_metadata::builders::GetTableMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTableMetadataInput`](crate::operation::get_table_metadata::GetTableMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTableMetadataInputBuilder {
     pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl GetTableMetadataInputBuilder {
         &self.catalog_name
     }
     /// <p>The name of the database that contains the table metadata to return.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database that contains the table metadata to return.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -97,16 +88,11 @@ impl GetTableMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetTableMetadataInput`](crate::operation::get_table_metadata::GetTableMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_table_metadata::GetTableMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_table_metadata::GetTableMetadataInput {
-                catalog_name: self.catalog_name,
-                database_name: self.database_name,
-                table_name: self.table_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_table_metadata::GetTableMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_table_metadata::GetTableMetadataInput {
+            catalog_name: self.catalog_name,
+            database_name: self.database_name,
+            table_name: self.table_name,
+        })
     }
 }

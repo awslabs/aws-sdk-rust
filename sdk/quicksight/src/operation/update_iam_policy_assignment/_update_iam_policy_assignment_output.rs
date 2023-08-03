@@ -14,9 +14,7 @@ pub struct UpdateIamPolicyAssignmentOutput {
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
     #[doc(hidden)]
-    pub identities: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub identities: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
@@ -47,11 +45,7 @@ impl UpdateIamPolicyAssignmentOutput {
         self.policy_arn.as_deref()
     }
     /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
-    pub fn identities(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn identities(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.identities.as_ref()
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
@@ -79,23 +73,19 @@ impl ::aws_http::request_id::RequestId for UpdateIamPolicyAssignmentOutput {
 }
 impl UpdateIamPolicyAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIamPolicyAssignmentOutput`](crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentOutput).
-    pub fn builder() -> crate::operation::update_iam_policy_assignment::builders::UpdateIamPolicyAssignmentOutputBuilder{
+    pub fn builder() -> crate::operation::update_iam_policy_assignment::builders::UpdateIamPolicyAssignmentOutputBuilder {
         crate::operation::update_iam_policy_assignment::builders::UpdateIamPolicyAssignmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIamPolicyAssignmentOutput`](crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIamPolicyAssignmentOutputBuilder {
     pub(crate) assignment_name: ::std::option::Option<::std::string::String>,
     pub(crate) assignment_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) identities: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) identities: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -103,18 +93,12 @@ pub struct UpdateIamPolicyAssignmentOutputBuilder {
 }
 impl UpdateIamPolicyAssignmentOutputBuilder {
     /// <p>The name of the assignment or rule.</p>
-    pub fn assignment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the assignment or rule.</p>
-    pub fn set_assignment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assignment_name = input;
         self
     }
@@ -123,18 +107,12 @@ impl UpdateIamPolicyAssignmentOutputBuilder {
         &self.assignment_name
     }
     /// <p>The ID of the assignment.</p>
-    pub fn assignment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the assignment.</p>
-    pub fn set_assignment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assignment_id = input;
         self
     }
@@ -161,11 +139,7 @@ impl UpdateIamPolicyAssignmentOutputBuilder {
     /// To override the contents of this collection use [`set_identities`](Self::set_identities).
     ///
     /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
-    pub fn identities(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn identities(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.identities.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.identities = ::std::option::Option::Some(hash_map);
@@ -174,12 +148,7 @@ impl UpdateIamPolicyAssignmentOutputBuilder {
     /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
     pub fn set_identities(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.identities = input;
         self
@@ -187,9 +156,7 @@ impl UpdateIamPolicyAssignmentOutputBuilder {
     /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
     pub fn get_identities(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.identities
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
@@ -208,10 +175,7 @@ impl UpdateIamPolicyAssignmentOutputBuilder {
     /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
     /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
-    pub fn set_assignment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssignmentStatus>,
-    ) -> Self {
+    pub fn set_assignment_status(mut self, input: ::std::option::Option<crate::types::AssignmentStatus>) -> Self {
         self.assignment_status = input;
         self
     }
@@ -262,9 +226,7 @@ impl UpdateIamPolicyAssignmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateIamPolicyAssignmentOutput`](crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentOutput {
+    pub fn build(self) -> crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentOutput {
         crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentOutput {
             assignment_name: self.assignment_name,
             assignment_id: self.assignment_id,

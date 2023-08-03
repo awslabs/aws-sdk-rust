@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`admin_scope(Option<AdminScope>)`](crate::operation::get_admin_scope::GetAdminScopeOutput::admin_scope): <p>Contains details about the administrative scope of the requested account.</p>
     ///   - [`status(Option<OrganizationStatus>)`](crate::operation::get_admin_scope::GetAdminScopeOutput::status): <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>  <ul>   <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li>   <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li>   <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>   <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetAdminScopeError>`](crate::operation::get_admin_scope::GetAdminScopeError)
-    pub fn get_admin_scope(
-        &self,
-    ) -> crate::operation::get_admin_scope::builders::GetAdminScopeFluentBuilder {
-        crate::operation::get_admin_scope::builders::GetAdminScopeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_admin_scope(&self) -> crate::operation::get_admin_scope::builders::GetAdminScopeFluentBuilder {
+        crate::operation::get_admin_scope::builders::GetAdminScopeFluentBuilder::new(self.handle.clone())
     }
 }

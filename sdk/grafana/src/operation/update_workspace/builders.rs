@@ -10,10 +10,7 @@ impl UpdateWorkspaceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_workspace::UpdateWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace::UpdateWorkspaceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace::UpdateWorkspaceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_workspace();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl UpdateWorkspaceFluentBuilder {
         }
     }
     /// Access the UpdateWorkspace as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_workspace::builders::UpdateWorkspaceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_workspace::builders::UpdateWorkspaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl UpdateWorkspaceFluentBuilder {
             crate::operation::update_workspace::UpdateWorkspace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace::UpdateWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace::UpdateWorkspaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl UpdateWorkspaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl UpdateWorkspaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_workspace::UpdateWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace::UpdateWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace::UpdateWorkspaceError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl UpdateWorkspaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_workspace::UpdateWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace::UpdateWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace::UpdateWorkspaceError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl UpdateWorkspaceFluentBuilder {
             crate::operation::update_workspace::UpdateWorkspace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace::UpdateWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace::UpdateWorkspaceError>,
     > {
         self.customize_middleware().await
     }
@@ -130,32 +114,21 @@ impl UpdateWorkspaceFluentBuilder {
         self
     }
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
-    pub fn set_account_access_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountAccessType>,
-    ) -> Self {
+    pub fn set_account_access_type(mut self, input: ::std::option::Option<crate::types::AccountAccessType>) -> Self {
         self.inner = self.inner.set_account_access_type(input);
         self
     }
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
-    pub fn get_account_access_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountAccessType> {
+    pub fn get_account_access_type(&self) -> &::std::option::Option<crate::types::AccountAccessType> {
         self.inner.get_account_access_type()
     }
     /// <p>The name of an IAM role that already exists to use to access resources through Organizations. This can only be used with a workspace that has the <code>permissionType</code> set to <code>CUSTOMER_MANAGED</code>.</p>
-    pub fn organization_role_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_role_name(input.into());
         self
     }
     /// <p>The name of an IAM role that already exists to use to access resources through Organizations. This can only be used with a workspace that has the <code>permissionType</code> set to <code>CUSTOMER_MANAGED</code>.</p>
-    pub fn set_organization_role_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_role_name(input);
         self
     }
@@ -179,10 +152,7 @@ impl UpdateWorkspaceFluentBuilder {
     /// <p>Do not use this to convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do not include this parameter if you want to leave the workspace as <code>SERVICE_MANAGED</code>.</p>
     /// <p>You can convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using the Amazon Managed Grafana console. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing permissions for data sources and notification channels</a>.</p>
     /// </note>
-    pub fn set_permission_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionType>,
-    ) -> Self {
+    pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::PermissionType>) -> Self {
         self.inner = self.inner.set_permission_type(input);
         self
     }
@@ -196,18 +166,12 @@ impl UpdateWorkspaceFluentBuilder {
         self.inner.get_permission_type()
     }
     /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
     /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
@@ -225,32 +189,21 @@ impl UpdateWorkspaceFluentBuilder {
         self
     }
     /// <p>This parameter is for internal use only, and should not be used.</p>
-    pub fn set_workspace_data_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceType>>,
-    ) -> Self {
+    pub fn set_workspace_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceType>>) -> Self {
         self.inner = self.inner.set_workspace_data_sources(input);
         self
     }
     /// <p>This parameter is for internal use only, and should not be used.</p>
-    pub fn get_workspace_data_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceType>> {
+    pub fn get_workspace_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceType>> {
         self.inner.get_workspace_data_sources()
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-    pub fn workspace_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workspace_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_description(input.into());
         self
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-    pub fn set_workspace_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workspace_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_description(input);
         self
     }
@@ -273,18 +226,12 @@ impl UpdateWorkspaceFluentBuilder {
         self.inner.get_workspace_id()
     }
     /// <p>A new name for the workspace to update.</p>
-    pub fn workspace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_name(input.into());
         self
     }
     /// <p>A new name for the workspace to update.</p>
-    pub fn set_workspace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_name(input);
         self
     }
@@ -297,10 +244,7 @@ impl UpdateWorkspaceFluentBuilder {
     /// To override the contents of this collection use [`set_workspace_notification_destinations`](Self::set_workspace_notification_destinations).
     ///
     /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
-    pub fn workspace_notification_destinations(
-        mut self,
-        input: crate::types::NotificationDestinationType,
-    ) -> Self {
+    pub fn workspace_notification_destinations(mut self, input: crate::types::NotificationDestinationType) -> Self {
         self.inner = self.inner.workspace_notification_destinations(input);
         self
     }
@@ -313,9 +257,7 @@ impl UpdateWorkspaceFluentBuilder {
         self
     }
     /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
-    pub fn get_workspace_notification_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>> {
+    pub fn get_workspace_notification_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>> {
         self.inner.get_workspace_notification_destinations()
     }
     /// Appends an item to `workspaceOrganizationalUnits`.
@@ -323,40 +265,26 @@ impl UpdateWorkspaceFluentBuilder {
     /// To override the contents of this collection use [`set_workspace_organizational_units`](Self::set_workspace_organizational_units).
     ///
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    pub fn workspace_organizational_units(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workspace_organizational_units(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_organizational_units(input.into());
         self
     }
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    pub fn set_workspace_organizational_units(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_workspace_organizational_units(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_workspace_organizational_units(input);
         self
     }
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    pub fn get_workspace_organizational_units(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_workspace_organizational_units(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_workspace_organizational_units()
     }
     /// <p>Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace accesses, such as data sources and notification channels. If this workspace has <code>permissionType</code> <code>CUSTOMER_MANAGED</code>, then this role is required.</p>
-    pub fn workspace_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workspace_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_role_arn(input.into());
         self
     }
     /// <p>Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace accesses, such as data sources and notification channels. If this workspace has <code>permissionType</code> <code>CUSTOMER_MANAGED</code>, then this role is required.</p>
-    pub fn set_workspace_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workspace_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_role_arn(input);
         self
     }
@@ -370,10 +298,7 @@ impl UpdateWorkspaceFluentBuilder {
         self
     }
     /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.inner = self.inner.set_vpc_configuration(input);
         self
     }
@@ -401,29 +326,21 @@ impl UpdateWorkspaceFluentBuilder {
     /// <p>The configuration settings for network access to your workspace.</p>
     /// <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization will still be required.</p>
     /// <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
-    pub fn network_access_control(
-        mut self,
-        input: crate::types::NetworkAccessConfiguration,
-    ) -> Self {
+    pub fn network_access_control(mut self, input: crate::types::NetworkAccessConfiguration) -> Self {
         self.inner = self.inner.network_access_control(input);
         self
     }
     /// <p>The configuration settings for network access to your workspace.</p>
     /// <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization will still be required.</p>
     /// <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
-    pub fn set_network_access_control(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
-    ) -> Self {
+    pub fn set_network_access_control(mut self, input: ::std::option::Option<crate::types::NetworkAccessConfiguration>) -> Self {
         self.inner = self.inner.set_network_access_control(input);
         self
     }
     /// <p>The configuration settings for network access to your workspace.</p>
     /// <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization will still be required.</p>
     /// <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
-    pub fn get_network_access_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkAccessConfiguration> {
+    pub fn get_network_access_control(&self) -> &::std::option::Option<crate::types::NetworkAccessConfiguration> {
         self.inner.get_network_access_control()
     }
     /// <p>Whether to remove the network access configuration from the workspace.</p>
@@ -436,10 +353,7 @@ impl UpdateWorkspaceFluentBuilder {
     /// <p>Whether to remove the network access configuration from the workspace.</p>
     /// <p>Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.</p>
     /// <p>If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
-    pub fn set_remove_network_access_configuration(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_remove_network_access_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_remove_network_access_configuration(input);
         self
     }

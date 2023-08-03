@@ -23,26 +23,18 @@ impl PropertyNameQuery {
 
 /// A builder for [`PropertyNameQuery`](crate::types::PropertyNameQuery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyNameQueryBuilder {
     pub(crate) property_name_hint: ::std::option::Option<::std::string::String>,
 }
 impl PropertyNameQueryBuilder {
     /// <p>Text that begins a property's name.</p>
-    pub fn property_name_hint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_name_hint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_name_hint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Text that begins a property's name.</p>
-    pub fn set_property_name_hint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_name_hint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_name_hint = input;
         self
     }

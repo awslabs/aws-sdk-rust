@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateResourceServerOutput {
 }
 impl UpdateResourceServerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceServerOutput`](crate::operation::update_resource_server::UpdateResourceServerOutput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_server::builders::UpdateResourceServerOutputBuilder {
+    pub fn builder() -> crate::operation::update_resource_server::builders::UpdateResourceServerOutputBuilder {
         crate::operation::update_resource_server::builders::UpdateResourceServerOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourceServerOutput`](crate::operation::update_resource_server::UpdateResourceServerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceServerOutputBuilder {
     pub(crate) resource_server: ::std::option::Option<crate::types::ResourceServerType>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateResourceServerOutputBuilder {
         self
     }
     /// <p>The resource server.</p>
-    pub fn set_resource_server(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceServerType>,
-    ) -> Self {
+    pub fn set_resource_server(mut self, input: ::std::option::Option<crate::types::ResourceServerType>) -> Self {
         self.resource_server = input;
         self
     }

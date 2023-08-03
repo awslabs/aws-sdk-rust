@@ -64,9 +64,7 @@ impl ListObjectsInput {
 
 /// A builder for [`ListObjectsInput`](crate::operation::list_objects::ListObjectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObjectsInputBuilder {
     pub(crate) storage_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) starting_object_name: ::std::option::Option<::std::string::String>,
@@ -78,18 +76,12 @@ pub struct ListObjectsInputBuilder {
 }
 impl ListObjectsInputBuilder {
     /// Storage job id
-    pub fn storage_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Storage job id
-    pub fn set_storage_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_job_id = input;
         self
     }
@@ -98,18 +90,12 @@ impl ListObjectsInputBuilder {
         &self.storage_job_id
     }
     /// Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
-    pub fn starting_object_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_object_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.starting_object_name = ::std::option::Option::Some(input.into());
         self
     }
     /// Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
-    pub fn set_starting_object_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_starting_object_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.starting_object_name = input;
         self
     }
@@ -118,18 +104,12 @@ impl ListObjectsInputBuilder {
         &self.starting_object_name
     }
     /// Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
-    pub fn starting_object_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_object_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.starting_object_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
-    pub fn set_starting_object_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_starting_object_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.starting_object_prefix = input;
         self
     }
@@ -171,10 +151,7 @@ impl ListObjectsInputBuilder {
         self
     }
     /// (Optional) Created before filter
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -188,10 +165,7 @@ impl ListObjectsInputBuilder {
         self
     }
     /// (Optional) Created after filter
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -200,12 +174,7 @@ impl ListObjectsInputBuilder {
         &self.created_after
     }
     /// Consumes the builder and constructs a [`ListObjectsInput`](crate::operation::list_objects::ListObjectsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_objects::ListObjectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_objects::ListObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_objects::ListObjectsInput {
             storage_job_id: self.storage_job_id,
             starting_object_name: self.starting_object_name,

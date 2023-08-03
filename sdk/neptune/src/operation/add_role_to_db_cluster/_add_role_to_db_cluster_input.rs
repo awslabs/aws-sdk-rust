@@ -29,18 +29,14 @@ impl AddRoleToDbClusterInput {
 }
 impl AddRoleToDbClusterInput {
     /// Creates a new builder-style object to manufacture [`AddRoleToDbClusterInput`](crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput).
-    pub fn builder(
-    ) -> crate::operation::add_role_to_db_cluster::builders::AddRoleToDbClusterInputBuilder {
-        crate::operation::add_role_to_db_cluster::builders::AddRoleToDbClusterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::add_role_to_db_cluster::builders::AddRoleToDbClusterInputBuilder {
+        crate::operation::add_role_to_db_cluster::builders::AddRoleToDbClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`AddRoleToDbClusterInput`](crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddRoleToDbClusterInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct AddRoleToDbClusterInputBuilder {
 }
 impl AddRoleToDbClusterInputBuilder {
     /// <p>The name of the DB cluster to associate the IAM role with.</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB cluster to associate the IAM role with.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -98,16 +88,12 @@ impl AddRoleToDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`AddRoleToDbClusterInput`](crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput {
-                db_cluster_identifier: self.db_cluster_identifier,
-                role_arn: self.role_arn,
-                feature_name: self.feature_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput {
+            db_cluster_identifier: self.db_cluster_identifier,
+            role_arn: self.role_arn,
+            feature_name: self.feature_name,
+        })
     }
 }

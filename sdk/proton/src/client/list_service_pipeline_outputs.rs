@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsOutput::next_token): <p>A token that indicates the location of the next output in the array of outputs, after the current requested list of outputs.</p>
     ///   - [`outputs(Option<Vec<Output>>)`](crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsOutput::outputs): <p>An array of service pipeline Infrastructure as Code (IaC) outputs.</p>
     /// - On failure, responds with [`SdkError<ListServicePipelineOutputsError>`](crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsError)
-    pub fn list_service_pipeline_outputs(&self) -> crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsFluentBuilder{
+    pub fn list_service_pipeline_outputs(
+        &self,
+    ) -> crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsFluentBuilder {
         crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsFluentBuilder::new(self.handle.clone())
     }
 }

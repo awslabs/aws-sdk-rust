@@ -22,9 +22,7 @@ impl CreateAddressInput {
 
 /// A builder for [`CreateAddressInput`](crate::operation::create_address::CreateAddressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAddressInputBuilder {
     pub(crate) address: ::std::option::Option<crate::types::Address>,
 }
@@ -46,12 +44,7 @@ impl CreateAddressInputBuilder {
     /// Consumes the builder and constructs a [`CreateAddressInput`](crate::operation::create_address::CreateAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_address::CreateAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_address::CreateAddressInput {
-            address: self.address,
-        })
+    ) -> ::std::result::Result<crate::operation::create_address::CreateAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_address::CreateAddressInput { address: self.address })
     }
 }

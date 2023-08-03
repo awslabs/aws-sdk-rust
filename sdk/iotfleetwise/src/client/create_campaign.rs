@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_campaign::CreateCampaignOutput::name): <p>The name of the created campaign.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_campaign::CreateCampaignOutput::arn): <p> The ARN of the created campaign. </p>
     /// - On failure, responds with [`SdkError<CreateCampaignError>`](crate::operation::create_campaign::CreateCampaignError)
-    pub fn create_campaign(
-        &self,
-    ) -> crate::operation::create_campaign::builders::CreateCampaignFluentBuilder {
-        crate::operation::create_campaign::builders::CreateCampaignFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_campaign(&self) -> crate::operation::create_campaign::builders::CreateCampaignFluentBuilder {
+        crate::operation::create_campaign::builders::CreateCampaignFluentBuilder::new(self.handle.clone())
     }
 }

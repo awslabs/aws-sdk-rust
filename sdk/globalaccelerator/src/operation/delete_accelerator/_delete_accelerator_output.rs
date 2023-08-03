@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAcceleratorOutput {
 }
 impl DeleteAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAcceleratorOutput`](crate::operation::delete_accelerator::DeleteAcceleratorOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_accelerator::builders::DeleteAcceleratorOutputBuilder {
+    pub fn builder() -> crate::operation::delete_accelerator::builders::DeleteAcceleratorOutputBuilder {
         crate::operation::delete_accelerator::builders::DeleteAcceleratorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAcceleratorOutput`](crate::operation::delete_accelerator::DeleteAcceleratorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAcceleratorOutputBuilder {
     _request_id: Option<String>,
 }

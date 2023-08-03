@@ -54,15 +54,12 @@ impl Root {
 
 /// A builder for [`Root`](crate::types::Root).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RootBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
+    pub(crate) policy_types: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
 }
 impl RootBuilder {
     /// <p>The unique identifier (ID) for the root.</p>
@@ -132,19 +129,14 @@ impl RootBuilder {
     /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
     /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
     /// </note>
-    pub fn set_policy_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
-    ) -> Self {
+    pub fn set_policy_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>) -> Self {
         self.policy_types = input;
         self
     }
     /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
     /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
     /// </note>
-    pub fn get_policy_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>> {
+    pub fn get_policy_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>> {
         &self.policy_types
     }
     /// Consumes the builder and constructs a [`Root`](crate::types::Root).

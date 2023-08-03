@@ -8,8 +8,7 @@ pub struct ListCollaborationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of collaborations.</p>
     #[doc(hidden)]
-    pub collaboration_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CollaborationSummary>>,
+    pub collaboration_list: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationSummary>>,
     _request_id: Option<String>,
 }
 impl ListCollaborationsOutput {
@@ -18,9 +17,7 @@ impl ListCollaborationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of collaborations.</p>
-    pub fn collaboration_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CollaborationSummary]> {
+    pub fn collaboration_list(&self) -> ::std::option::Option<&[crate::types::CollaborationSummary]> {
         self.collaboration_list.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListCollaborationsOutput {
 }
 impl ListCollaborationsOutput {
     /// Creates a new builder-style object to manufacture [`ListCollaborationsOutput`](crate::operation::list_collaborations::ListCollaborationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_collaborations::builders::ListCollaborationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_collaborations::builders::ListCollaborationsOutputBuilder {
         crate::operation::list_collaborations::builders::ListCollaborationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCollaborationsOutput`](crate::operation::list_collaborations::ListCollaborationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCollaborationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) collaboration_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CollaborationSummary>>,
+    pub(crate) collaboration_list: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationSummary>>,
     _request_id: Option<String>,
 }
 impl ListCollaborationsOutputBuilder {
@@ -75,17 +68,12 @@ impl ListCollaborationsOutputBuilder {
         self
     }
     /// <p>The list of collaborations.</p>
-    pub fn set_collaboration_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationSummary>>,
-    ) -> Self {
+    pub fn set_collaboration_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationSummary>>) -> Self {
         self.collaboration_list = input;
         self
     }
     /// <p>The list of collaborations.</p>
-    pub fn get_collaboration_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollaborationSummary>> {
+    pub fn get_collaboration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollaborationSummary>> {
         &self.collaboration_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

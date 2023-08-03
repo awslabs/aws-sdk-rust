@@ -30,9 +30,7 @@ impl ConnectionState {
 
 /// A builder for [`ConnectionState`](crate::types::ConnectionState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ConnectionStatus>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,10 +42,7 @@ impl ConnectionStateBuilder {
         self
     }
     /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -61,10 +56,7 @@ impl ConnectionStateBuilder {
         self
     }
     /// <p>The last time the connection status was updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

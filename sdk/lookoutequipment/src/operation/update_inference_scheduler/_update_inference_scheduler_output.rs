@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateInferenceSchedulerOutput {
 }
 impl UpdateInferenceSchedulerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInferenceSchedulerOutput`](crate::operation::update_inference_scheduler::UpdateInferenceSchedulerOutput).
-    pub fn builder(
-    ) -> crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerOutputBuilder {
         crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateInferenceSchedulerOutput`](crate::operation::update_inference_scheduler::UpdateInferenceSchedulerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInferenceSchedulerOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateInferenceSchedulerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateInferenceSchedulerOutput`](crate::operation::update_inference_scheduler::UpdateInferenceSchedulerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_inference_scheduler::UpdateInferenceSchedulerOutput {
+    pub fn build(self) -> crate::operation::update_inference_scheduler::UpdateInferenceSchedulerOutput {
         crate::operation::update_inference_scheduler::UpdateInferenceSchedulerOutput {
             _request_id: self._request_id,
         }

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`snapshot_creation_timestamp(DateTime)`](crate::operation::delete_application_snapshot::builders::DeleteApplicationSnapshotFluentBuilder::snapshot_creation_timestamp) / [`set_snapshot_creation_timestamp(Option<DateTime>)`](crate::operation::delete_application_snapshot::builders::DeleteApplicationSnapshotFluentBuilder::set_snapshot_creation_timestamp): <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
     /// - On success, responds with [`DeleteApplicationSnapshotOutput`](crate::operation::delete_application_snapshot::DeleteApplicationSnapshotOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationSnapshotError>`](crate::operation::delete_application_snapshot::DeleteApplicationSnapshotError)
-    pub fn delete_application_snapshot(&self) -> crate::operation::delete_application_snapshot::builders::DeleteApplicationSnapshotFluentBuilder{
+    pub fn delete_application_snapshot(&self) -> crate::operation::delete_application_snapshot::builders::DeleteApplicationSnapshotFluentBuilder {
         crate::operation::delete_application_snapshot::builders::DeleteApplicationSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

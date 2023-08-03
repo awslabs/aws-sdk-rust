@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`retention_period(Option<RetentionPeriod>)`](crate::operation::put_storage_configuration::PutStorageConfigurationOutput::retention_period): <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
     ///   - [`configuration_status(Option<ConfigurationStatus>)`](crate::operation::put_storage_configuration::PutStorageConfigurationOutput::configuration_status): <p>Contains current status information for the configuration.</p>
     /// - On failure, responds with [`SdkError<PutStorageConfigurationError>`](crate::operation::put_storage_configuration::PutStorageConfigurationError)
-    pub fn put_storage_configuration(
-        &self,
-    ) -> crate::operation::put_storage_configuration::builders::PutStorageConfigurationFluentBuilder
-    {
+    pub fn put_storage_configuration(&self) -> crate::operation::put_storage_configuration::builders::PutStorageConfigurationFluentBuilder {
         crate::operation::put_storage_configuration::builders::PutStorageConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

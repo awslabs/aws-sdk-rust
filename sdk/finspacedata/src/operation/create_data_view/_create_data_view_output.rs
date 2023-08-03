@@ -36,9 +36,7 @@ impl CreateDataViewOutput {
 
 /// A builder for [`CreateDataViewOutput`](crate::operation::create_data_view::CreateDataViewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataViewOutputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_view_id: ::std::option::Option<::std::string::String>,

@@ -72,17 +72,14 @@ impl ::aws_http::request_id::RequestId for DescribeHumanLoopOutput {
 }
 impl DescribeHumanLoopOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHumanLoopOutput`](crate::operation::describe_human_loop::DescribeHumanLoopOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_human_loop::builders::DescribeHumanLoopOutputBuilder {
+    pub fn builder() -> crate::operation::describe_human_loop::builders::DescribeHumanLoopOutputBuilder {
         crate::operation::describe_human_loop::builders::DescribeHumanLoopOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHumanLoopOutput`](crate::operation::describe_human_loop::DescribeHumanLoopOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHumanLoopOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
@@ -101,10 +98,7 @@ impl DescribeHumanLoopOutputBuilder {
         self
     }
     /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -113,18 +107,12 @@ impl DescribeHumanLoopOutputBuilder {
         &self.creation_time
     }
     /// <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -155,10 +143,7 @@ impl DescribeHumanLoopOutputBuilder {
         self
     }
     /// <p>The status of the human loop. </p>
-    pub fn set_human_loop_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopStatus>,
-    ) -> Self {
+    pub fn set_human_loop_status(mut self, input: ::std::option::Option<crate::types::HumanLoopStatus>) -> Self {
         self.human_loop_status = input;
         self
     }
@@ -167,18 +152,12 @@ impl DescribeHumanLoopOutputBuilder {
         &self.human_loop_status
     }
     /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
-    pub fn human_loop_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
-    pub fn set_human_loop_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_loop_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_loop_name = input;
         self
     }
@@ -187,18 +166,12 @@ impl DescribeHumanLoopOutputBuilder {
         &self.human_loop_name
     }
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
-    pub fn human_loop_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_loop_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
-    pub fn set_human_loop_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_loop_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_loop_arn = input;
         self
     }
@@ -207,18 +180,12 @@ impl DescribeHumanLoopOutputBuilder {
         &self.human_loop_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
-    pub fn flow_definition_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
-    pub fn set_flow_definition_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_definition_arn = input;
         self
     }
@@ -232,10 +199,7 @@ impl DescribeHumanLoopOutputBuilder {
         self
     }
     /// <p>An object that contains information about the output of the human loop.</p>
-    pub fn set_human_loop_output(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopOutput>,
-    ) -> Self {
+    pub fn set_human_loop_output(mut self, input: ::std::option::Option<crate::types::HumanLoopOutput>) -> Self {
         self.human_loop_output = input;
         self
     }

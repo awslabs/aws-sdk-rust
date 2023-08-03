@@ -30,9 +30,7 @@ impl StackInstanceFilter {
 
 /// A builder for [`StackInstanceFilter`](crate::types::StackInstanceFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackInstanceFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::StackInstanceFilterName>,
     pub(crate) values: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl StackInstanceFilterBuilder {
         self
     }
     /// <p>The type of filter to apply.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::StackInstanceFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::StackInstanceFilterName>) -> Self {
         self.name = input;
         self
     }

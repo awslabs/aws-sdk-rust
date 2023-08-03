@@ -35,9 +35,7 @@ impl ListReadSetsOutput {
 
 /// A builder for [`ListReadSetsOutput`](crate::operation::list_read_sets::ListReadSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReadSetsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) read_sets: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetListItem>>,
@@ -70,17 +68,12 @@ impl ListReadSetsOutputBuilder {
         self
     }
     /// <p>A list of read sets.</p>
-    pub fn set_read_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetListItem>>,
-    ) -> Self {
+    pub fn set_read_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetListItem>>) -> Self {
         self.read_sets = input;
         self
     }
     /// <p>A list of read sets.</p>
-    pub fn get_read_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadSetListItem>> {
+    pub fn get_read_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadSetListItem>> {
         &self.read_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

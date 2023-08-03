@@ -30,9 +30,7 @@ impl DetectorModelDefinition {
 
 /// A builder for [`DetectorModelDefinition`](crate::types::DetectorModelDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectorModelDefinitionBuilder {
     pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::State>>,
     pub(crate) initial_state_name: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl DetectorModelDefinitionBuilder {
         self
     }
     /// <p>Information about the states of the detector.</p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::State>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::State>>) -> Self {
         self.states = input;
         self
     }
@@ -62,18 +57,12 @@ impl DetectorModelDefinitionBuilder {
         &self.states
     }
     /// <p>The state that is entered at the creation of each detector (instance).</p>
-    pub fn initial_state_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initial_state_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_state_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state that is entered at the creation of each detector (instance).</p>
-    pub fn set_initial_state_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initial_state_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initial_state_name = input;
         self
     }

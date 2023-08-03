@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for DescribeOrganizationHealthOutput {
 }
 impl DescribeOrganizationHealthOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationHealthOutput`](crate::operation::describe_organization_health::DescribeOrganizationHealthOutput).
-    pub fn builder() -> crate::operation::describe_organization_health::builders::DescribeOrganizationHealthOutputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_health::builders::DescribeOrganizationHealthOutputBuilder {
         crate::operation::describe_organization_health::builders::DescribeOrganizationHealthOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationHealthOutput`](crate::operation::describe_organization_health::DescribeOrganizationHealthOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationHealthOutputBuilder {
     pub(crate) open_reactive_insights: ::std::option::Option<i32>,
     pub(crate) open_proactive_insights: ::std::option::Option<i32>,
@@ -126,9 +124,7 @@ impl DescribeOrganizationHealthOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationHealthOutput`](crate::operation::describe_organization_health::DescribeOrganizationHealthOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_organization_health::DescribeOrganizationHealthOutput {
+    pub fn build(self) -> crate::operation::describe_organization_health::DescribeOrganizationHealthOutput {
         crate::operation::describe_organization_health::DescribeOrganizationHealthOutput {
             open_reactive_insights: self.open_reactive_insights.unwrap_or_default(),
             open_proactive_insights: self.open_proactive_insights.unwrap_or_default(),

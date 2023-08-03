@@ -58,9 +58,7 @@ impl ControlMetadata {
 
 /// A builder for [`ControlMetadata`](crate::types::ControlMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ControlMetadataBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -113,18 +111,12 @@ impl ControlMetadataBuilder {
         &self.name
     }
     /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
-    pub fn control_sources(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_sources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_sources = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
-    pub fn set_control_sources(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_sources(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_sources = input;
         self
     }
@@ -138,10 +130,7 @@ impl ControlMetadataBuilder {
         self
     }
     /// <p> The time when the control was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -155,10 +144,7 @@ impl ControlMetadataBuilder {
         self
     }
     /// <p> The time when the control was most recently updated. </p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

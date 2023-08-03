@@ -39,11 +39,7 @@ impl super::Client {
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::create_dev_endpoint::CreateDevEndpointOutput::created_timestamp): <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
     ///   - [`arguments(Option<HashMap<String, String>>)`](crate::operation::create_dev_endpoint::CreateDevEndpointOutput::arguments): <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>  <p>Valid arguments are:</p>  <ul>   <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>  </ul>  <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     /// - On failure, responds with [`SdkError<CreateDevEndpointError>`](crate::operation::create_dev_endpoint::CreateDevEndpointError)
-    pub fn create_dev_endpoint(
-        &self,
-    ) -> crate::operation::create_dev_endpoint::builders::CreateDevEndpointFluentBuilder {
-        crate::operation::create_dev_endpoint::builders::CreateDevEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_dev_endpoint(&self) -> crate::operation::create_dev_endpoint::builders::CreateDevEndpointFluentBuilder {
+        crate::operation::create_dev_endpoint::builders::CreateDevEndpointFluentBuilder::new(self.handle.clone())
     }
 }

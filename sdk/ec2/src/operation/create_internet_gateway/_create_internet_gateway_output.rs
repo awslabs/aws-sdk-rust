@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateInternetGatewayOutput {
 }
 impl CreateInternetGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateInternetGatewayOutput`](crate::operation::create_internet_gateway::CreateInternetGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::create_internet_gateway::builders::CreateInternetGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_internet_gateway::builders::CreateInternetGatewayOutputBuilder {
         crate::operation::create_internet_gateway::builders::CreateInternetGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInternetGatewayOutput`](crate::operation::create_internet_gateway::CreateInternetGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInternetGatewayOutputBuilder {
     pub(crate) internet_gateway: ::std::option::Option<crate::types::InternetGateway>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateInternetGatewayOutputBuilder {
         self
     }
     /// <p>Information about the internet gateway.</p>
-    pub fn set_internet_gateway(
-        mut self,
-        input: ::std::option::Option<crate::types::InternetGateway>,
-    ) -> Self {
+    pub fn set_internet_gateway(mut self, input: ::std::option::Option<crate::types::InternetGateway>) -> Self {
         self.internet_gateway = input;
         self
     }

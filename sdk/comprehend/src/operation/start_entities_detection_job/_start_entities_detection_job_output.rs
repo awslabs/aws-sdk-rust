@@ -84,16 +84,14 @@ impl ::aws_http::request_id::RequestId for StartEntitiesDetectionJobOutput {
 }
 impl StartEntitiesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionJobOutput`](crate::operation::start_entities_detection_job::StartEntitiesDetectionJobOutput).
-    pub fn builder() -> crate::operation::start_entities_detection_job::builders::StartEntitiesDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::start_entities_detection_job::builders::StartEntitiesDetectionJobOutputBuilder {
         crate::operation::start_entities_detection_job::builders::StartEntitiesDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartEntitiesDetectionJobOutput`](crate::operation::start_entities_detection_job::StartEntitiesDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartEntitiesDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
@@ -208,18 +206,12 @@ impl StartEntitiesDetectionJobOutputBuilder {
         &self.job_status
     }
     /// <p>The ARN of the custom entity recognition model.</p>
-    pub fn entity_recognizer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_recognizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_recognizer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the custom entity recognition model.</p>
-    pub fn set_entity_recognizer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entity_recognizer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_recognizer_arn = input;
         self
     }
@@ -237,9 +229,7 @@ impl StartEntitiesDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartEntitiesDetectionJobOutput`](crate::operation::start_entities_detection_job::StartEntitiesDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_entities_detection_job::StartEntitiesDetectionJobOutput {
+    pub fn build(self) -> crate::operation::start_entities_detection_job::StartEntitiesDetectionJobOutput {
         crate::operation::start_entities_detection_job::StartEntitiesDetectionJobOutput {
             job_id: self.job_id,
             job_arn: self.job_arn,

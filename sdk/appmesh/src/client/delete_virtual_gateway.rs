@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteVirtualGatewayOutput`](crate::operation::delete_virtual_gateway::DeleteVirtualGatewayOutput) with field(s):
     ///   - [`virtual_gateway(Option<VirtualGatewayData>)`](crate::operation::delete_virtual_gateway::DeleteVirtualGatewayOutput::virtual_gateway): <p>The virtual gateway that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteVirtualGatewayError>`](crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError)
-    pub fn delete_virtual_gateway(
-        &self,
-    ) -> crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayFluentBuilder {
-        crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_virtual_gateway(&self) -> crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayFluentBuilder {
+        crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayFluentBuilder::new(self.handle.clone())
     }
 }

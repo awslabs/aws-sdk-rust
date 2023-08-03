@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput::name): <p>The name of the template: automated-sensitive-data-discovery.</p>
     ///   - [`sensitivity_inspection_template_id(Option<String>)`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput::sensitivity_inspection_template_id): <p>The unique identifier for the template.</p>
     /// - On failure, responds with [`SdkError<GetSensitivityInspectionTemplateError>`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateError)
-    pub fn get_sensitivity_inspection_template(&self) -> crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateFluentBuilder{
+    pub fn get_sensitivity_inspection_template(
+        &self,
+    ) -> crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateFluentBuilder {
         crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,9 +29,7 @@ impl AllocateHostsOutput {
 
 /// A builder for [`AllocateHostsOutput`](crate::operation::allocate_hosts::AllocateHostsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllocateHostsOutputBuilder {
     pub(crate) host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -49,10 +47,7 @@ impl AllocateHostsOutputBuilder {
         self
     }
     /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
-    pub fn set_host_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_host_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.host_ids = input;
         self
     }

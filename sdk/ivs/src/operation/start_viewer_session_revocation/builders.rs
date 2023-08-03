@@ -26,7 +26,7 @@ impl StartViewerSessionRevocationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartViewerSessionRevocationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_viewer_session_revocation::builders::StartViewerSessionRevocationInputBuilder,
+    inner: crate::operation::start_viewer_session_revocation::builders::StartViewerSessionRevocationInputBuilder,
 }
 impl StartViewerSessionRevocationFluentBuilder {
     /// Creates a new `StartViewerSessionRevocation`.
@@ -37,7 +37,7 @@ impl StartViewerSessionRevocationFluentBuilder {
         }
     }
     /// Access the StartViewerSessionRevocation as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_viewer_session_revocation::builders::StartViewerSessionRevocationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_viewer_session_revocation::builders::StartViewerSessionRevocationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartViewerSessionRevocationFluentBuilder {
             crate::operation::start_viewer_session_revocation::StartViewerSessionRevocation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartViewerSessionRevocationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartViewerSessionRevocationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartViewerSessionRevocationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StartViewerSessionRevocationFluentBuilder {
             crate::operation::start_viewer_session_revocation::StartViewerSessionRevocation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError>,
     > {
         self.customize_middleware().await
     }
@@ -150,24 +139,16 @@ impl StartViewerSessionRevocationFluentBuilder {
     }
     /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
     pub fn viewer_session_versions_less_than_or_equal_to(mut self, input: i32) -> Self {
-        self.inner = self
-            .inner
-            .viewer_session_versions_less_than_or_equal_to(input);
+        self.inner = self.inner.viewer_session_versions_less_than_or_equal_to(input);
         self
     }
     /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
-    pub fn set_viewer_session_versions_less_than_or_equal_to(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_viewer_session_versions_less_than_or_equal_to(input);
+    pub fn set_viewer_session_versions_less_than_or_equal_to(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_viewer_session_versions_less_than_or_equal_to(input);
         self
     }
     /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
     pub fn get_viewer_session_versions_less_than_or_equal_to(&self) -> &::std::option::Option<i32> {
-        self.inner
-            .get_viewer_session_versions_less_than_or_equal_to()
+        self.inner.get_viewer_session_versions_less_than_or_equal_to()
     }
 }

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeviceAvailability {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for DeviceAvailability {
             "BUSY" => DeviceAvailability::Busy,
             "HIGHLY_AVAILABLE" => DeviceAvailability::HighlyAvailable,
             "TEMPORARY_NOT_AVAILABLE" => DeviceAvailability::TemporaryNotAvailable,
-            other => DeviceAvailability::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DeviceAvailability::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl DeviceAvailability {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE",
-            "BUSY",
-            "HIGHLY_AVAILABLE",
-            "TEMPORARY_NOT_AVAILABLE",
-        ]
+        &["AVAILABLE", "BUSY", "HIGHLY_AVAILABLE", "TEMPORARY_NOT_AVAILABLE"]
     }
 }
 impl ::std::convert::AsRef<str> for DeviceAvailability {

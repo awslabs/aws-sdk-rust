@@ -10,10 +10,7 @@ impl ListRotationShiftsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_rotation_shifts::ListRotationShiftsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rotation_shifts::ListRotationShiftsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rotation_shifts::ListRotationShiftsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_rotation_shifts();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListRotationShiftsFluentBuilder {
         }
     }
     /// Access the ListRotationShifts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_rotation_shifts::builders::ListRotationShiftsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_rotation_shifts::builders::ListRotationShiftsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListRotationShiftsFluentBuilder {
             crate::operation::list_rotation_shifts::ListRotationShifts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rotation_shifts::ListRotationShiftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rotation_shifts::ListRotationShiftsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListRotationShiftsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListRotationShiftsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rotation_shifts::ListRotationShiftsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rotation_shifts::ListRotationShiftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rotation_shifts::ListRotationShiftsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListRotationShiftsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rotation_shifts::ListRotationShiftsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rotation_shifts::ListRotationShiftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rotation_shifts::ListRotationShiftsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListRotationShiftsFluentBuilder {
             crate::operation::list_rotation_shifts::ListRotationShifts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rotation_shifts::ListRotationShiftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rotation_shifts::ListRotationShiftsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_rotation_shifts::paginator::ListRotationShiftsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_rotation_shifts::paginator::ListRotationShiftsPaginator {
-        crate::operation::list_rotation_shifts::paginator::ListRotationShiftsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_rotation_shifts::paginator::ListRotationShiftsPaginator {
+        crate::operation::list_rotation_shifts::paginator::ListRotationShiftsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
     pub fn rotation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,10 +132,7 @@ impl ListRotationShiftsFluentBuilder {
         self
     }
     /// <p>The date and time for the beginning of the time range to list shifts for.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -170,10 +146,7 @@ impl ListRotationShiftsFluentBuilder {
         self
     }
     /// <p>The date and time for the end of the time range to list shifts for.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

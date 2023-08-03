@@ -10,10 +10,7 @@ impl GetClipInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_clip::GetClipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_clip::GetClipError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_clip::GetClipError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_clip();
         fluent_builder.inner = self;
@@ -55,10 +52,7 @@ impl GetClipFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_clip::GetClip,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_clip::GetClip, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_clip::GetClipError>,
     > {
         let handle = self.handle.clone();
@@ -69,20 +63,15 @@ impl GetClipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_clip::GetClipOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_clip::GetClipError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_clip::GetClipOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_clip::GetClipError>>
+    {
         let op = self
             .inner
             .build()
@@ -102,10 +91,8 @@ impl GetClipFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_clip::GetClipOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_clip::GetClipError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_clip::GetClipOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_clip::GetClipError>>
+    {
         self.send_middleware().await
     }
 
@@ -114,10 +101,7 @@ impl GetClipFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_clip::GetClip,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_clip::GetClip, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_clip::GetClipError>,
     > {
         self.customize_middleware().await
@@ -162,17 +146,12 @@ impl GetClipFluentBuilder {
         self
     }
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
-    pub fn set_clip_fragment_selector(
-        mut self,
-        input: ::std::option::Option<crate::types::ClipFragmentSelector>,
-    ) -> Self {
+    pub fn set_clip_fragment_selector(mut self, input: ::std::option::Option<crate::types::ClipFragmentSelector>) -> Self {
         self.inner = self.inner.set_clip_fragment_selector(input);
         self
     }
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
-    pub fn get_clip_fragment_selector(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClipFragmentSelector> {
+    pub fn get_clip_fragment_selector(&self) -> &::std::option::Option<crate::types::ClipFragmentSelector> {
         self.inner.get_clip_fragment_selector()
     }
 }

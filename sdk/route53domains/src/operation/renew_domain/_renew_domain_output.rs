@@ -28,9 +28,7 @@ impl RenewDomainOutput {
 
 /// A builder for [`RenewDomainOutput`](crate::operation::renew_domain::RenewDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RenewDomainOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

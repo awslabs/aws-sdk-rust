@@ -17,10 +17,7 @@ impl TooManyDistributionsWithSingleFunctionArn {
 }
 impl ::std::fmt::Display for TooManyDistributionsWithSingleFunctionArn {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "TooManyDistributionsWithSingleFunctionArn [TooManyDistributionsWithSingleFunctionARN]"
-        )?;
+        ::std::write!(f, "TooManyDistributionsWithSingleFunctionArn [TooManyDistributionsWithSingleFunctionARN]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -30,34 +27,27 @@ impl ::std::fmt::Display for TooManyDistributionsWithSingleFunctionArn {
     }
 }
 impl ::std::error::Error for TooManyDistributionsWithSingleFunctionArn {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TooManyDistributionsWithSingleFunctionArn
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TooManyDistributionsWithSingleFunctionArn {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyDistributionsWithSingleFunctionArn
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyDistributionsWithSingleFunctionArn {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl TooManyDistributionsWithSingleFunctionArn {
     /// Creates a new builder-style object to manufacture [`TooManyDistributionsWithSingleFunctionArn`](crate::types::error::TooManyDistributionsWithSingleFunctionArn).
-    pub fn builder(
-    ) -> crate::types::error::builders::TooManyDistributionsWithSingleFunctionArnBuilder {
+    pub fn builder() -> crate::types::error::builders::TooManyDistributionsWithSingleFunctionArnBuilder {
         crate::types::error::builders::TooManyDistributionsWithSingleFunctionArnBuilder::default()
     }
 }
 
 /// A builder for [`TooManyDistributionsWithSingleFunctionArn`](crate::types::error::TooManyDistributionsWithSingleFunctionArn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooManyDistributionsWithSingleFunctionArnBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -84,10 +74,7 @@ impl TooManyDistributionsWithSingleFunctionArnBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

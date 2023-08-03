@@ -30,9 +30,7 @@ impl SetFileModeEntry {
 
 /// A builder for [`SetFileModeEntry`](crate::types::SetFileModeEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetFileModeEntryBuilder {
     pub(crate) file_path: ::std::option::Option<::std::string::String>,
     pub(crate) file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
@@ -58,10 +56,7 @@ impl SetFileModeEntryBuilder {
         self
     }
     /// <p>The file mode for the file.</p>
-    pub fn set_file_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::FileModeTypeEnum>,
-    ) -> Self {
+    pub fn set_file_mode(mut self, input: ::std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
         self.file_mode = input;
         self
     }

@@ -51,9 +51,7 @@ impl Fragment {
 
 /// A builder for [`Fragment`](crate::types::Fragment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FragmentBuilder {
     pub(crate) fragment_number: ::std::option::Option<::std::string::String>,
     pub(crate) fragment_size_in_bytes: ::std::option::Option<i64>,
@@ -63,18 +61,12 @@ pub struct FragmentBuilder {
 }
 impl FragmentBuilder {
     /// <p>The unique identifier of the fragment. This value monotonically increases based on the ingestion order.</p>
-    pub fn fragment_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fragment_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fragment_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the fragment. This value monotonically increases based on the ingestion order.</p>
-    pub fn set_fragment_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fragment_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fragment_number = input;
         self
     }
@@ -102,10 +94,7 @@ impl FragmentBuilder {
         self
     }
     /// <p>The timestamp from the producer corresponding to the fragment.</p>
-    pub fn set_producer_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_producer_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.producer_timestamp = input;
         self
     }
@@ -119,10 +108,7 @@ impl FragmentBuilder {
         self
     }
     /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
-    pub fn set_server_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_server_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.server_timestamp = input;
         self
     }
@@ -136,10 +122,7 @@ impl FragmentBuilder {
         self
     }
     /// <p>The playback duration or other time value associated with the fragment.</p>
-    pub fn set_fragment_length_in_milliseconds(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_fragment_length_in_milliseconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.fragment_length_in_milliseconds = input;
         self
     }
@@ -154,9 +137,7 @@ impl FragmentBuilder {
             fragment_size_in_bytes: self.fragment_size_in_bytes.unwrap_or_default(),
             producer_timestamp: self.producer_timestamp,
             server_timestamp: self.server_timestamp,
-            fragment_length_in_milliseconds: self
-                .fragment_length_in_milliseconds
-                .unwrap_or_default(),
+            fragment_length_in_milliseconds: self.fragment_length_in_milliseconds.unwrap_or_default(),
         }
     }
 }

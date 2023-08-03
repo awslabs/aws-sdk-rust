@@ -35,12 +35,9 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
 
 /// A builder for [`ListAssociatedApprovalRuleTemplatesForRepositoryOutput`](crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedApprovalRuleTemplatesForRepositoryOutputBuilder {
-    pub(crate) approval_rule_template_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) approval_rule_template_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,27 +47,19 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryOutputBuilder {
     /// To override the contents of this collection use [`set_approval_rule_template_names`](Self::set_approval_rule_template_names).
     ///
     /// <p>The names of all approval rule templates associated with the repository.</p>
-    pub fn approval_rule_template_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.approval_rule_template_names.unwrap_or_default();
         v.push(input.into());
         self.approval_rule_template_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of all approval rule templates associated with the repository.</p>
-    pub fn set_approval_rule_template_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_approval_rule_template_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.approval_rule_template_names = input;
         self
     }
     /// <p>The names of all approval rule templates associated with the repository.</p>
-    pub fn get_approval_rule_template_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_approval_rule_template_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.approval_rule_template_names
     }
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
@@ -97,12 +86,12 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssociatedApprovalRuleTemplatesForRepositoryOutput`](crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryOutput).
-    pub fn build(self) -> crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
         crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
-            approval_rule_template_names: self.approval_rule_template_names
-            ,
-            next_token: self.next_token
-            ,
+            approval_rule_template_names: self.approval_rule_template_names,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`savings_plans_utilizations_by_time(Option<Vec<SavingsPlansUtilizationByTime>>)`](crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationOutput::savings_plans_utilizations_by_time): <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
     ///   - [`total(Option<SavingsPlansUtilizationAggregates>)`](crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationOutput::total): <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
     /// - On failure, responds with [`SdkError<GetSavingsPlansUtilizationError>`](crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError)
-    pub fn get_savings_plans_utilization(&self) -> crate::operation::get_savings_plans_utilization::builders::GetSavingsPlansUtilizationFluentBuilder{
+    pub fn get_savings_plans_utilization(
+        &self,
+    ) -> crate::operation::get_savings_plans_utilization::builders::GetSavingsPlansUtilizationFluentBuilder {
         crate::operation::get_savings_plans_utilization::builders::GetSavingsPlansUtilizationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteImagePermissionsOutput {
 }
 impl DeleteImagePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteImagePermissionsOutput`](crate::operation::delete_image_permissions::DeleteImagePermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_image_permissions::builders::DeleteImagePermissionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_image_permissions::builders::DeleteImagePermissionsOutputBuilder {
         crate::operation::delete_image_permissions::builders::DeleteImagePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteImagePermissionsOutput`](crate::operation::delete_image_permissions::DeleteImagePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImagePermissionsOutputBuilder {
     _request_id: Option<String>,
 }

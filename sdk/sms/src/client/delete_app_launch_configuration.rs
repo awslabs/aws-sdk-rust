@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationFluentBuilder::set_app_id): <p>The ID of the application.</p>
     /// - On success, responds with [`DeleteAppLaunchConfigurationOutput`](crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteAppLaunchConfigurationError>`](crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError)
-    pub fn delete_app_launch_configuration(&self) -> crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationFluentBuilder{
+    pub fn delete_app_launch_configuration(
+        &self,
+    ) -> crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationFluentBuilder {
         crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

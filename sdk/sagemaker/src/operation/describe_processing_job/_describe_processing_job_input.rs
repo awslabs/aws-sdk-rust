@@ -15,35 +15,25 @@ impl DescribeProcessingJobInput {
 }
 impl DescribeProcessingJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeProcessingJobInput`](crate::operation::describe_processing_job::DescribeProcessingJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_processing_job::builders::DescribeProcessingJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_processing_job::builders::DescribeProcessingJobInputBuilder {
         crate::operation::describe_processing_job::builders::DescribeProcessingJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProcessingJobInput`](crate::operation::describe_processing_job::DescribeProcessingJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProcessingJobInputBuilder {
     pub(crate) processing_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProcessingJobInputBuilder {
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn processing_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn processing_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processing_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn set_processing_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_processing_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.processing_job_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DescribeProcessingJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeProcessingJobInput`](crate::operation::describe_processing_job::DescribeProcessingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_processing_job::DescribeProcessingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_processing_job::DescribeProcessingJobInput {
-                processing_job_name: self.processing_job_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_processing_job::DescribeProcessingJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_processing_job::DescribeProcessingJobInput {
+            processing_job_name: self.processing_job_name,
+        })
     }
 }

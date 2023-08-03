@@ -12,10 +12,7 @@ pub fn ser_add_draft_app_version_resource_mappings_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_resource_mapping::ser_resource_mapping(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_resource_mapping::ser_resource_mapping(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

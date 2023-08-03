@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetBucketLoggingOutput`](crate::operation::get_bucket_logging::GetBucketLoggingOutput) with field(s):
     ///   - [`logging_enabled(Option<LoggingEnabled>)`](crate::operation::get_bucket_logging::GetBucketLoggingOutput::logging_enabled): <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
     /// - On failure, responds with [`SdkError<GetBucketLoggingError>`](crate::operation::get_bucket_logging::GetBucketLoggingError)
-    pub fn get_bucket_logging(
-        &self,
-    ) -> crate::operation::get_bucket_logging::builders::GetBucketLoggingFluentBuilder {
-        crate::operation::get_bucket_logging::builders::GetBucketLoggingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bucket_logging(&self) -> crate::operation::get_bucket_logging::builders::GetBucketLoggingFluentBuilder {
+        crate::operation::get_bucket_logging::builders::GetBucketLoggingFluentBuilder::new(self.handle.clone())
     }
 }

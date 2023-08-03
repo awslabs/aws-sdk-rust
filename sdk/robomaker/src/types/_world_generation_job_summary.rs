@@ -153,9 +153,7 @@ impl WorldGenerationJobSummary {
 
 /// A builder for [`WorldGenerationJobSummary`](crate::types::WorldGenerationJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorldGenerationJobSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) template: ::std::option::Option<::std::string::String>,
@@ -200,10 +198,7 @@ impl WorldGenerationJobSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -305,10 +300,7 @@ impl WorldGenerationJobSummaryBuilder {
     /// <p>The world generator job is being cancelled.</p>
     /// </dd>
     /// </dl>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorldGenerationJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorldGenerationJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -366,10 +358,7 @@ impl WorldGenerationJobSummaryBuilder {
         self
     }
     /// <p>Information about the world count.</p>
-    pub fn set_world_count(
-        mut self,
-        input: ::std::option::Option<crate::types::WorldCount>,
-    ) -> Self {
+    pub fn set_world_count(mut self, input: ::std::option::Option<crate::types::WorldCount>) -> Self {
         self.world_count = input;
         self
     }

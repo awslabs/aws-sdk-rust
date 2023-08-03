@@ -51,9 +51,7 @@ impl PitPolicyRule {
 
 /// A builder for [`PitPolicyRule`](crate::types::PitPolicyRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PitPolicyRuleBuilder {
     pub(crate) rule_id: ::std::option::Option<i64>,
     pub(crate) units: ::std::option::Option<crate::types::PitPolicyRuleUnits>,
@@ -82,10 +80,7 @@ impl PitPolicyRuleBuilder {
         self
     }
     /// <p>The units used to measure the interval and retentionDuration.</p>
-    pub fn set_units(
-        mut self,
-        input: ::std::option::Option<crate::types::PitPolicyRuleUnits>,
-    ) -> Self {
+    pub fn set_units(mut self, input: ::std::option::Option<crate::types::PitPolicyRuleUnits>) -> Self {
         self.units = input;
         self
     }

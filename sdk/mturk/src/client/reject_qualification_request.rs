@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`reason(impl ::std::convert::Into<String>)`](crate::operation::reject_qualification_request::builders::RejectQualificationRequestFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::reject_qualification_request::builders::RejectQualificationRequestFluentBuilder::set_reason): <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
     /// - On success, responds with [`RejectQualificationRequestOutput`](crate::operation::reject_qualification_request::RejectQualificationRequestOutput)
     /// - On failure, responds with [`SdkError<RejectQualificationRequestError>`](crate::operation::reject_qualification_request::RejectQualificationRequestError)
-    pub fn reject_qualification_request(&self) -> crate::operation::reject_qualification_request::builders::RejectQualificationRequestFluentBuilder{
+    pub fn reject_qualification_request(&self) -> crate::operation::reject_qualification_request::builders::RejectQualificationRequestFluentBuilder {
         crate::operation::reject_qualification_request::builders::RejectQualificationRequestFluentBuilder::new(self.handle.clone())
     }
 }

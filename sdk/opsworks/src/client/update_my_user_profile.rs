@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`ssh_public_key(impl ::std::convert::Into<String>)`](crate::operation::update_my_user_profile::builders::UpdateMyUserProfileFluentBuilder::ssh_public_key) / [`set_ssh_public_key(Option<String>)`](crate::operation::update_my_user_profile::builders::UpdateMyUserProfileFluentBuilder::set_ssh_public_key): <p>The user's SSH public key.</p>
     /// - On success, responds with [`UpdateMyUserProfileOutput`](crate::operation::update_my_user_profile::UpdateMyUserProfileOutput)
     /// - On failure, responds with [`SdkError<UpdateMyUserProfileError>`](crate::operation::update_my_user_profile::UpdateMyUserProfileError)
-    pub fn update_my_user_profile(
-        &self,
-    ) -> crate::operation::update_my_user_profile::builders::UpdateMyUserProfileFluentBuilder {
-        crate::operation::update_my_user_profile::builders::UpdateMyUserProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_my_user_profile(&self) -> crate::operation::update_my_user_profile::builders::UpdateMyUserProfileFluentBuilder {
+        crate::operation::update_my_user_profile::builders::UpdateMyUserProfileFluentBuilder::new(self.handle.clone())
     }
 }

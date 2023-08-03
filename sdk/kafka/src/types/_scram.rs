@@ -23,9 +23,7 @@ impl Scram {
 
 /// A builder for [`Scram`](crate::types::Scram).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScramBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl ScramBuilder {
     }
     /// Consumes the builder and constructs a [`Scram`](crate::types::Scram).
     pub fn build(self) -> crate::types::Scram {
-        crate::types::Scram {
-            enabled: self.enabled,
-        }
+        crate::types::Scram { enabled: self.enabled }
     }
 }

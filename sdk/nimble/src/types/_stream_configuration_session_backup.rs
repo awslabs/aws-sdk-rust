@@ -32,9 +32,7 @@ impl StreamConfigurationSessionBackup {
 
 /// A builder for [`StreamConfigurationSessionBackup`](crate::types::StreamConfigurationSessionBackup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamConfigurationSessionBackupBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::SessionBackupMode>,
     pub(crate) max_backups_to_retain: ::std::option::Option<i32>,
@@ -48,10 +46,7 @@ impl StreamConfigurationSessionBackupBuilder {
     }
     /// <p>Specifies how artists sessions are backed up.</p>
     /// <p>Configures backups for streaming sessions launched with this launch profile. The default value is <code>DEACTIVATED</code>, which means that backups are deactivated. To allow backups, set this value to <code>AUTOMATIC</code>.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionBackupMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::SessionBackupMode>) -> Self {
         self.mode = input;
         self
     }

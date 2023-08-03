@@ -28,9 +28,7 @@ impl CreateHitTypeOutput {
 
 /// A builder for [`CreateHitTypeOutput`](crate::operation::create_hit_type::CreateHitTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHitTypeOutputBuilder {
     pub(crate) hit_type_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

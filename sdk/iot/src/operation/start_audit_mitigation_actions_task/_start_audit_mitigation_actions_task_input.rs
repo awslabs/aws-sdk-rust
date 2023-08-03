@@ -11,9 +11,8 @@ pub struct StartAuditMitigationActionsTaskInput {
     pub target: ::std::option::Option<crate::types::AuditMitigationActionsTaskTarget>,
     /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
     #[doc(hidden)]
-    pub audit_check_to_actions_mapping: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub audit_check_to_actions_mapping:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.</p>
     #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -30,9 +29,7 @@ impl StartAuditMitigationActionsTaskInput {
     /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
     pub fn audit_check_to_actions_mapping(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.audit_check_to_actions_mapping.as_ref()
     }
     /// <p>Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.</p>
@@ -42,22 +39,19 @@ impl StartAuditMitigationActionsTaskInput {
 }
 impl StartAuditMitigationActionsTaskInput {
     /// Creates a new builder-style object to manufacture [`StartAuditMitigationActionsTaskInput`](crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskInput).
-    pub fn builder() -> crate::operation::start_audit_mitigation_actions_task::builders::StartAuditMitigationActionsTaskInputBuilder{
+    pub fn builder() -> crate::operation::start_audit_mitigation_actions_task::builders::StartAuditMitigationActionsTaskInputBuilder {
         crate::operation::start_audit_mitigation_actions_task::builders::StartAuditMitigationActionsTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`StartAuditMitigationActionsTaskInput`](crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartAuditMitigationActionsTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<crate::types::AuditMitigationActionsTaskTarget>,
-    pub(crate) audit_check_to_actions_mapping: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) audit_check_to_actions_mapping:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl StartAuditMitigationActionsTaskInputBuilder {
@@ -81,17 +75,12 @@ impl StartAuditMitigationActionsTaskInputBuilder {
         self
     }
     /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditMitigationActionsTaskTarget>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::AuditMitigationActionsTaskTarget>) -> Self {
         self.target = input;
         self
     }
     /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
-    pub fn get_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskTarget> {
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskTarget> {
         &self.target
     }
     /// Adds a key-value pair to `audit_check_to_actions_mapping`.
@@ -112,12 +101,7 @@ impl StartAuditMitigationActionsTaskInputBuilder {
     /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
     pub fn set_audit_check_to_actions_mapping(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.audit_check_to_actions_mapping = input;
         self
@@ -125,24 +109,16 @@ impl StartAuditMitigationActionsTaskInputBuilder {
     /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
     pub fn get_audit_check_to_actions_mapping(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.audit_check_to_actions_mapping
     }
     /// <p>Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -159,15 +135,11 @@ impl StartAuditMitigationActionsTaskInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskInput {
-                task_id: self.task_id
-                ,
-                target: self.target
-                ,
-                audit_check_to_actions_mapping: self.audit_check_to_actions_mapping
-                ,
-                client_request_token: self.client_request_token
-                ,
-            }
+                task_id: self.task_id,
+                target: self.target,
+                audit_check_to_actions_mapping: self.audit_check_to_actions_mapping,
+                client_request_token: self.client_request_token,
+            },
         )
     }
 }

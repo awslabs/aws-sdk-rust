@@ -9,10 +9,7 @@ pub fn ser_update_pipeline_input(
     if let Some(var_2) = &input.content_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("ContentConfig").start_object();
-        crate::protocol_serde::shape_pipeline_output_config::ser_pipeline_output_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_pipeline_output_config::ser_pipeline_output_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.input_bucket {
@@ -33,10 +30,7 @@ pub fn ser_update_pipeline_input(
     if let Some(var_9) = &input.thumbnail_config {
         #[allow(unused_mut)]
         let mut object_10 = object.key("ThumbnailConfig").start_object();
-        crate::protocol_serde::shape_pipeline_output_config::ser_pipeline_output_config(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_pipeline_output_config::ser_pipeline_output_config(&mut object_10, var_9)?;
         object_10.finish();
     }
     Ok(())

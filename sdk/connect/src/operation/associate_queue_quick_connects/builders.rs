@@ -27,7 +27,7 @@ impl AssociateQueueQuickConnectsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateQueueQuickConnectsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_queue_quick_connects::builders::AssociateQueueQuickConnectsInputBuilder,
+    inner: crate::operation::associate_queue_quick_connects::builders::AssociateQueueQuickConnectsInputBuilder,
 }
 impl AssociateQueueQuickConnectsFluentBuilder {
     /// Creates a new `AssociateQueueQuickConnects`.
@@ -38,7 +38,7 @@ impl AssociateQueueQuickConnectsFluentBuilder {
         }
     }
     /// Access the AssociateQueueQuickConnects as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_queue_quick_connects::builders::AssociateQueueQuickConnectsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_queue_quick_connects::builders::AssociateQueueQuickConnectsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl AssociateQueueQuickConnectsFluentBuilder {
             crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl AssociateQueueQuickConnectsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl AssociateQueueQuickConnectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl AssociateQueueQuickConnectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl AssociateQueueQuickConnectsFluentBuilder {
             crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsError>,
     > {
         self.customize_middleware().await
     }
@@ -154,25 +143,17 @@ impl AssociateQueueQuickConnectsFluentBuilder {
     /// To override the contents of this collection use [`set_quick_connect_ids`](Self::set_quick_connect_ids).
     ///
     /// <p>The quick connects to associate with this queue.</p>
-    pub fn quick_connect_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quick_connect_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.quick_connect_ids(input.into());
         self
     }
     /// <p>The quick connects to associate with this queue.</p>
-    pub fn set_quick_connect_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_quick_connect_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_quick_connect_ids(input);
         self
     }
     /// <p>The quick connects to associate with this queue.</p>
-    pub fn get_quick_connect_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_quick_connect_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_quick_connect_ids()
     }
 }

@@ -10,10 +10,7 @@ impl CreateQueueInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_queue::CreateQueueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_queue::CreateQueueError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_queue::CreateQueueError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_queue();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateQueueFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_queue::CreateQueue,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_queue::CreateQueue, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_queue::CreateQueueError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateQueueFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateQueueFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_queue::CreateQueue,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_queue::CreateQueue, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_queue::CreateQueueError>,
     > {
         self.customize_middleware().await
@@ -146,10 +134,7 @@ impl CreateQueueFluentBuilder {
         self
     }
     /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the API to create a queue, the default is on-demand.
-    pub fn set_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.inner = self.inner.set_pricing_plan(input);
         self
     }
@@ -158,25 +143,17 @@ impl CreateQueueFluentBuilder {
         self.inner.get_pricing_plan()
     }
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
-    pub fn reservation_plan_settings(
-        mut self,
-        input: crate::types::ReservationPlanSettings,
-    ) -> Self {
+    pub fn reservation_plan_settings(mut self, input: crate::types::ReservationPlanSettings) -> Self {
         self.inner = self.inner.reservation_plan_settings(input);
         self
     }
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
-    pub fn set_reservation_plan_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationPlanSettings>,
-    ) -> Self {
+    pub fn set_reservation_plan_settings(mut self, input: ::std::option::Option<crate::types::ReservationPlanSettings>) -> Self {
         self.inner = self.inner.set_reservation_plan_settings(input);
         self
     }
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
-    pub fn get_reservation_plan_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservationPlanSettings> {
+    pub fn get_reservation_plan_settings(&self) -> &::std::option::Option<crate::types::ReservationPlanSettings> {
         self.inner.get_reservation_plan_settings()
     }
     /// Initial state of the queue. If you create a paused queue, then jobs in that queue won't begin.
@@ -198,30 +175,17 @@ impl CreateQueueFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

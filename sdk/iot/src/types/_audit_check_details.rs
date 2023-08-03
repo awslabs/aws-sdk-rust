@@ -65,9 +65,7 @@ impl AuditCheckDetails {
 
 /// A builder for [`AuditCheckDetails`](crate::types::AuditCheckDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuditCheckDetailsBuilder {
     pub(crate) check_run_status: ::std::option::Option<crate::types::AuditCheckRunStatus>,
     pub(crate) check_compliant: ::std::option::Option<bool>,
@@ -84,17 +82,12 @@ impl AuditCheckDetailsBuilder {
         self
     }
     /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
-    pub fn set_check_run_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditCheckRunStatus>,
-    ) -> Self {
+    pub fn set_check_run_status(mut self, input: ::std::option::Option<crate::types::AuditCheckRunStatus>) -> Self {
         self.check_run_status = input;
         self
     }
     /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
-    pub fn get_check_run_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuditCheckRunStatus> {
+    pub fn get_check_run_status(&self) -> &::std::option::Option<crate::types::AuditCheckRunStatus> {
         &self.check_run_status
     }
     /// <p>True if the check is complete and found all resources compliant.</p>
@@ -145,10 +138,7 @@ impl AuditCheckDetailsBuilder {
         self
     }
     /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
-    pub fn set_suppressed_non_compliant_resources_count(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_suppressed_non_compliant_resources_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.suppressed_non_compliant_resources_count = input;
         self
     }

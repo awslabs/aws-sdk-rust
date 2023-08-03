@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPermissionSetsProvisionedToAccoun
 }
 impl ListPermissionSetsProvisionedToAccountOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionSetsProvisionedToAccountOutput`](crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput).
-    pub fn builder() -> crate::operation::list_permission_sets_provisioned_to_account::builders::ListPermissionSetsProvisionedToAccountOutputBuilder{
+    pub fn builder() -> crate::operation::list_permission_sets_provisioned_to_account::builders::ListPermissionSetsProvisionedToAccountOutputBuilder {
         crate::operation::list_permission_sets_provisioned_to_account::builders::ListPermissionSetsProvisionedToAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPermissionSetsProvisionedToAccountOutput`](crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionSetsProvisionedToAccountOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) permission_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,27 +61,19 @@ impl ListPermissionSetsProvisionedToAccountOutputBuilder {
     /// To override the contents of this collection use [`set_permission_sets`](Self::set_permission_sets).
     ///
     /// <p>Defines the level of access that an AWS account has.</p>
-    pub fn permission_sets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_sets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.permission_sets.unwrap_or_default();
         v.push(input.into());
         self.permission_sets = ::std::option::Option::Some(v);
         self
     }
     /// <p>Defines the level of access that an AWS account has.</p>
-    pub fn set_permission_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_permission_sets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.permission_sets = input;
         self
     }
     /// <p>Defines the level of access that an AWS account has.</p>
-    pub fn get_permission_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_permission_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.permission_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -96,12 +86,10 @@ impl ListPermissionSetsProvisionedToAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPermissionSetsProvisionedToAccountOutput`](crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput).
-    pub fn build(self) -> crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput{
+    pub fn build(self) -> crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput {
         crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput {
-            next_token: self.next_token
-            ,
-            permission_sets: self.permission_sets
-            ,
+            next_token: self.next_token,
+            permission_sets: self.permission_sets,
             _request_id: self._request_id,
         }
     }

@@ -37,8 +37,7 @@ impl ::aws_http::request_id::RequestId for CreateWebLoginTokenOutput {
 }
 impl CreateWebLoginTokenOutput {
     /// Creates a new builder-style object to manufacture [`CreateWebLoginTokenOutput`](crate::operation::create_web_login_token::CreateWebLoginTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::create_web_login_token::builders::CreateWebLoginTokenOutputBuilder {
+    pub fn builder() -> crate::operation::create_web_login_token::builders::CreateWebLoginTokenOutputBuilder {
         crate::operation::create_web_login_token::builders::CreateWebLoginTokenOutputBuilder::default()
     }
 }
@@ -67,18 +66,12 @@ impl CreateWebLoginTokenOutputBuilder {
         &self.web_token
     }
     /// <p>The Airflow web server hostname for the environment.</p>
-    pub fn web_server_hostname(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn web_server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_server_hostname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Airflow web server hostname for the environment.</p>
-    pub fn set_web_server_hostname(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_web_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_server_hostname = input;
         self
     }

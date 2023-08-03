@@ -37,9 +37,7 @@ impl DeleteSourceLocationFluentBuilder {
         }
     }
     /// Access the DeleteSourceLocation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_source_location::builders::DeleteSourceLocationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_source_location::builders::DeleteSourceLocationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteSourceLocationFluentBuilder {
             crate::operation::delete_source_location::DeleteSourceLocation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_source_location::DeleteSourceLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_source_location::DeleteSourceLocationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteSourceLocationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteSourceLocationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_source_location::DeleteSourceLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_source_location::DeleteSourceLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_source_location::DeleteSourceLocationError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteSourceLocationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_source_location::DeleteSourceLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_source_location::DeleteSourceLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_source_location::DeleteSourceLocationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteSourceLocationFluentBuilder {
             crate::operation::delete_source_location::DeleteSourceLocation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_source_location::DeleteSourceLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_source_location::DeleteSourceLocationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_location_name(input.into());
         self
     }
     /// <p>The name of the source location.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
     }

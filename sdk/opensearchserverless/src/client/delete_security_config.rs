@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_security_config::builders::DeleteSecurityConfigFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_security_config::builders::DeleteSecurityConfigFluentBuilder::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     /// - On success, responds with [`DeleteSecurityConfigOutput`](crate::operation::delete_security_config::DeleteSecurityConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteSecurityConfigError>`](crate::operation::delete_security_config::DeleteSecurityConfigError)
-    pub fn delete_security_config(
-        &self,
-    ) -> crate::operation::delete_security_config::builders::DeleteSecurityConfigFluentBuilder {
-        crate::operation::delete_security_config::builders::DeleteSecurityConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_security_config(&self) -> crate::operation::delete_security_config::builders::DeleteSecurityConfigFluentBuilder {
+        crate::operation::delete_security_config::builders::DeleteSecurityConfigFluentBuilder::new(self.handle.clone())
     }
 }

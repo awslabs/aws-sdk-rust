@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetSdkTypesOutput`](crate::operation::get_sdk_types::GetSdkTypesOutput) with field(s):
     ///   - [`items(Option<Vec<SdkType>>)`](crate::operation::get_sdk_types::GetSdkTypesOutput::items): <p>The current page of elements from this collection.</p>
     /// - On failure, responds with [`SdkError<GetSdkTypesError>`](crate::operation::get_sdk_types::GetSdkTypesError)
-    pub fn get_sdk_types(
-        &self,
-    ) -> crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder {
-        crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_sdk_types(&self) -> crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder {
+        crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder::new(self.handle.clone())
     }
 }

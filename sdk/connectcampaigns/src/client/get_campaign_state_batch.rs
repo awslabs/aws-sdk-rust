@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`successful_requests(Option<Vec<SuccessfulCampaignStateResponse>>)`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchOutput::successful_requests): List of successful response of campaign state
     ///   - [`failed_requests(Option<Vec<FailedCampaignStateResponse>>)`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchOutput::failed_requests): List of failed requests of campaign state
     /// - On failure, responds with [`SdkError<GetCampaignStateBatchError>`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchError)
-    pub fn get_campaign_state_batch(
-        &self,
-    ) -> crate::operation::get_campaign_state_batch::builders::GetCampaignStateBatchFluentBuilder
-    {
+    pub fn get_campaign_state_batch(&self) -> crate::operation::get_campaign_state_batch::builders::GetCampaignStateBatchFluentBuilder {
         crate::operation::get_campaign_state_batch::builders::GetCampaignStateBatchFluentBuilder::new(self.handle.clone())
     }
 }

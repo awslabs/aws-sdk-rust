@@ -10,9 +10,7 @@ pub struct GetResolverDnssecConfigOutput {
 }
 impl GetResolverDnssecConfigOutput {
     /// <p>The information about a configuration for DNSSEC validation.</p>
-    pub fn resolver_dnssec_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResolverDnssecConfig> {
+    pub fn resolver_dnssec_config(&self) -> ::std::option::Option<&crate::types::ResolverDnssecConfig> {
         self.resolver_dnssec_config.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetResolverDnssecConfigOutput {
 }
 impl GetResolverDnssecConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverDnssecConfigOutput`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigOutputBuilder {
         crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResolverDnssecConfigOutput`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResolverDnssecConfigOutputBuilder {
     pub(crate) resolver_dnssec_config: ::std::option::Option<crate::types::ResolverDnssecConfig>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl GetResolverDnssecConfigOutputBuilder {
         self
     }
     /// <p>The information about a configuration for DNSSEC validation.</p>
-    pub fn set_resolver_dnssec_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverDnssecConfig>,
-    ) -> Self {
+    pub fn set_resolver_dnssec_config(mut self, input: ::std::option::Option<crate::types::ResolverDnssecConfig>) -> Self {
         self.resolver_dnssec_config = input;
         self
     }
     /// <p>The information about a configuration for DNSSEC validation.</p>
-    pub fn get_resolver_dnssec_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResolverDnssecConfig> {
+    pub fn get_resolver_dnssec_config(&self) -> &::std::option::Option<crate::types::ResolverDnssecConfig> {
         &self.resolver_dnssec_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -69,9 +58,7 @@ impl GetResolverDnssecConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetResolverDnssecConfigOutput`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigOutput {
+    pub fn build(self) -> crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigOutput {
         crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigOutput {
             resolver_dnssec_config: self.resolver_dnssec_config,
             _request_id: self._request_id,

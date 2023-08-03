@@ -30,9 +30,7 @@ impl NielsenConfiguration {
 
 /// A builder for [`NielsenConfiguration`](crate::types::NielsenConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NielsenConfigurationBuilder {
     pub(crate) breakout_code: ::std::option::Option<i32>,
     pub(crate) distributor_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl NielsenConfigurationBuilder {
         &self.breakout_code
     }
     /// Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
-    pub fn distributor_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distributor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distributor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
-    pub fn set_distributor_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distributor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distributor_id = input;
         self
     }

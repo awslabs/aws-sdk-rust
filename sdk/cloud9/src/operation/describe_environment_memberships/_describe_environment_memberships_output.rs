@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeEnvironmentMembershipsOutput 
 }
 impl DescribeEnvironmentMembershipsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentMembershipsOutput`](crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput).
-    pub fn builder() -> crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsOutputBuilder {
         crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEnvironmentMembershipsOutput`](crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentMembershipsOutputBuilder {
     pub(crate) memberships: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentMember>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeEnvironmentMembershipsOutputBuilder {
         self
     }
     /// <p>Information about the environment members for the environment.</p>
-    pub fn set_memberships(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentMember>>,
-    ) -> Self {
+    pub fn set_memberships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentMember>>) -> Self {
         self.memberships = input;
         self
     }
     /// <p>Information about the environment members for the environment.</p>
-    pub fn get_memberships(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentMember>> {
+    pub fn get_memberships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentMember>> {
         &self.memberships
     }
     /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
@@ -93,10 +86,7 @@ impl DescribeEnvironmentMembershipsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentMembershipsOutput`](crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput {
         crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput {
             memberships: self.memberships,
             next_token: self.next_token,

@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`authentication_type(AuthenticationType)`](crate::operation::disable_user::builders::DisableUserFluentBuilder::authentication_type) / [`set_authentication_type(Option<AuthenticationType>)`](crate::operation::disable_user::builders::DisableUserFluentBuilder::set_authentication_type): <p>The authentication type for the user. You must specify USERPOOL.</p>
     /// - On success, responds with [`DisableUserOutput`](crate::operation::disable_user::DisableUserOutput)
     /// - On failure, responds with [`SdkError<DisableUserError>`](crate::operation::disable_user::DisableUserError)
-    pub fn disable_user(
-        &self,
-    ) -> crate::operation::disable_user::builders::DisableUserFluentBuilder {
+    pub fn disable_user(&self) -> crate::operation::disable_user::builders::DisableUserFluentBuilder {
         crate::operation::disable_user::builders::DisableUserFluentBuilder::new(self.handle.clone())
     }
 }

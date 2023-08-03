@@ -27,11 +27,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateProjectOutput`](crate::operation::update_project::UpdateProjectOutput) with field(s):
     ///   - [`project(Option<Project>)`](crate::operation::update_project::UpdateProjectOutput::project): <p>Information about the build project that was changed.</p>
     /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::operation::update_project::UpdateProjectError)
-    pub fn update_project(
-        &self,
-    ) -> crate::operation::update_project::builders::UpdateProjectFluentBuilder {
-        crate::operation::update_project::builders::UpdateProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_project(&self) -> crate::operation::update_project::builders::UpdateProjectFluentBuilder {
+        crate::operation::update_project::builders::UpdateProjectFluentBuilder::new(self.handle.clone())
     }
 }

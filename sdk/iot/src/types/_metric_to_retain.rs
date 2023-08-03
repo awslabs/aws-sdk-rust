@@ -30,9 +30,7 @@ impl MetricToRetain {
 
 /// A builder for [`MetricToRetain`](crate::types::MetricToRetain).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricToRetainBuilder {
     pub(crate) metric: ::std::option::Option<::std::string::String>,
     pub(crate) metric_dimension: ::std::option::Option<crate::types::MetricDimension>,
@@ -58,10 +56,7 @@ impl MetricToRetainBuilder {
         self
     }
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
-    pub fn set_metric_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricDimension>,
-    ) -> Self {
+    pub fn set_metric_dimension(mut self, input: ::std::option::Option<crate::types::MetricDimension>) -> Self {
         self.metric_dimension = input;
         self
     }

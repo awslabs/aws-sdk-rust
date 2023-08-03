@@ -37,9 +37,7 @@ impl LaunchDetails {
 
 /// A builder for [`LaunchDetails`](crate::types::LaunchDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchDetailsBuilder {
     pub(crate) latest_launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl LaunchDetailsBuilder {
         self
     }
     /// <p>The latest time that this application was launched successfully.</p>
-    pub fn set_latest_launch_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_launch_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_launch_time = input;
         self
     }

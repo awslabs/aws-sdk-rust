@@ -50,16 +50,14 @@ impl DescribeReservedNodesOfferingsInput {
 }
 impl DescribeReservedNodesOfferingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedNodesOfferingsInput`](crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsInput).
-    pub fn builder() -> crate::operation::describe_reserved_nodes_offerings::builders::DescribeReservedNodesOfferingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_nodes_offerings::builders::DescribeReservedNodesOfferingsInputBuilder {
         crate::operation::describe_reserved_nodes_offerings::builders::DescribeReservedNodesOfferingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedNodesOfferingsInput`](crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedNodesOfferingsInputBuilder {
     pub(crate) reserved_nodes_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ pub struct DescribeReservedNodesOfferingsInputBuilder {
 }
 impl DescribeReservedNodesOfferingsInputBuilder {
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
-    pub fn reserved_nodes_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_nodes_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_nodes_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
-    pub fn set_reserved_nodes_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_nodes_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_nodes_offering_id = input;
         self
     }
@@ -118,18 +110,12 @@ impl DescribeReservedNodesOfferingsInputBuilder {
         &self.duration
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
-    pub fn offering_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_type = input;
         self
     }
@@ -172,21 +158,13 @@ impl DescribeReservedNodesOfferingsInputBuilder {
         crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsInput {
-                reserved_nodes_offering_id: self.reserved_nodes_offering_id
-                ,
-                node_type: self.node_type
-                ,
-                duration: self.duration
-                ,
-                offering_type: self.offering_type
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsInput {
+            reserved_nodes_offering_id: self.reserved_nodes_offering_id,
+            node_type: self.node_type,
+            duration: self.duration,
+            offering_type: self.offering_type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

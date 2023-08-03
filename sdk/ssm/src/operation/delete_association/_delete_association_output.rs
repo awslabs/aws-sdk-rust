@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAssociationOutput {
 }
 impl DeleteAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAssociationOutput`](crate::operation::delete_association::DeleteAssociationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_association::builders::DeleteAssociationOutputBuilder {
+    pub fn builder() -> crate::operation::delete_association::builders::DeleteAssociationOutputBuilder {
         crate::operation::delete_association::builders::DeleteAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAssociationOutput`](crate::operation::delete_association::DeleteAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssociationOutputBuilder {
     _request_id: Option<String>,
 }

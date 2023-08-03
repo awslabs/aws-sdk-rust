@@ -50,9 +50,7 @@ impl ListRoomsInput {
 
 /// A builder for [`ListRoomsInput`](crate::operation::list_rooms::ListRoomsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoomsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -104,18 +102,12 @@ impl ListRoomsInputBuilder {
         &self.max_results
     }
     /// <p>Filters the list to match the specified message review handler URI.</p>
-    pub fn message_review_handler_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn message_review_handler_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_review_handler_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters the list to match the specified message review handler URI.</p>
-    pub fn set_message_review_handler_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_message_review_handler_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_review_handler_uri = input;
         self
     }
@@ -124,34 +116,21 @@ impl ListRoomsInputBuilder {
         &self.message_review_handler_uri
     }
     /// <p>Logging-configuration identifier.</p>
-    pub fn logging_configuration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logging_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logging_configuration_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Logging-configuration identifier.</p>
-    pub fn set_logging_configuration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logging_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logging_configuration_identifier = input;
         self
     }
     /// <p>Logging-configuration identifier.</p>
-    pub fn get_logging_configuration_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_logging_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.logging_configuration_identifier
     }
     /// Consumes the builder and constructs a [`ListRoomsInput`](crate::operation::list_rooms::ListRoomsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_rooms::ListRoomsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rooms::ListRoomsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rooms::ListRoomsInput {
             name: self.name,
             next_token: self.next_token,

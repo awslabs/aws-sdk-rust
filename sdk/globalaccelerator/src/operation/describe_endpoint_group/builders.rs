@@ -37,10 +37,7 @@ impl DescribeEndpointGroupFluentBuilder {
         }
     }
     /// Access the DescribeEndpointGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeEndpointGroupFluentBuilder {
             crate::operation::describe_endpoint_group::DescribeEndpointGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_group::DescribeEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_group::DescribeEndpointGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeEndpointGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeEndpointGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint_group::DescribeEndpointGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_group::DescribeEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_group::DescribeEndpointGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeEndpointGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint_group::DescribeEndpointGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_group::DescribeEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_group::DescribeEndpointGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeEndpointGroupFluentBuilder {
             crate::operation::describe_endpoint_group::DescribeEndpointGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_group::DescribeEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_group::DescribeEndpointGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_group_arn(input);
         self
     }

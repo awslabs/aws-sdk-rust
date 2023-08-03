@@ -10,10 +10,7 @@ impl CreateInvalidationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_invalidation::CreateInvalidationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_invalidation::CreateInvalidationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_invalidation::CreateInvalidationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_invalidation();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateInvalidationFluentBuilder {
         }
     }
     /// Access the CreateInvalidation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_invalidation::builders::CreateInvalidationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_invalidation::builders::CreateInvalidationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateInvalidationFluentBuilder {
             crate::operation::create_invalidation::CreateInvalidation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_invalidation::CreateInvalidationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_invalidation::CreateInvalidationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateInvalidationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateInvalidationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_invalidation::CreateInvalidationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_invalidation::CreateInvalidationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_invalidation::CreateInvalidationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateInvalidationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_invalidation::CreateInvalidationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_invalidation::CreateInvalidationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_invalidation::CreateInvalidationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateInvalidationFluentBuilder {
             crate::operation::create_invalidation::CreateInvalidation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_invalidation::CreateInvalidationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_invalidation::CreateInvalidationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The distribution's id.</p>
-    pub fn distribution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_id(input.into());
         self
     }
     /// <p>The distribution's id.</p>
-    pub fn set_distribution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_id(input);
         self
     }
@@ -148,17 +126,12 @@ impl CreateInvalidationFluentBuilder {
         self
     }
     /// <p>The batch information for the invalidation.</p>
-    pub fn set_invalidation_batch(
-        mut self,
-        input: ::std::option::Option<crate::types::InvalidationBatch>,
-    ) -> Self {
+    pub fn set_invalidation_batch(mut self, input: ::std::option::Option<crate::types::InvalidationBatch>) -> Self {
         self.inner = self.inner.set_invalidation_batch(input);
         self
     }
     /// <p>The batch information for the invalidation.</p>
-    pub fn get_invalidation_batch(
-        &self,
-    ) -> &::std::option::Option<crate::types::InvalidationBatch> {
+    pub fn get_invalidation_batch(&self) -> &::std::option::Option<crate::types::InvalidationBatch> {
         self.inner.get_invalidation_batch()
     }
 }

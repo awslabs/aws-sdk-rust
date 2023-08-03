@@ -48,9 +48,7 @@ impl InventoryDeletionStatusItem {
         self.last_status_message.as_deref()
     }
     /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn deletion_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InventoryDeletionSummary> {
+    pub fn deletion_summary(&self) -> ::std::option::Option<&crate::types::InventoryDeletionSummary> {
         self.deletion_summary.as_ref()
     }
     /// <p>The UTC timestamp of when the last status report.</p>
@@ -67,9 +65,7 @@ impl InventoryDeletionStatusItem {
 
 /// A builder for [`InventoryDeletionStatusItem`](crate::types::InventoryDeletionStatusItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryDeletionStatusItemBuilder {
     pub(crate) deletion_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -114,10 +110,7 @@ impl InventoryDeletionStatusItemBuilder {
         self
     }
     /// <p>The UTC timestamp when the delete operation started.</p>
-    pub fn set_deletion_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deletion_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deletion_start_time = input;
         self
     }
@@ -131,10 +124,7 @@ impl InventoryDeletionStatusItemBuilder {
         self
     }
     /// <p>The status of the operation. Possible values are InProgress and Complete.</p>
-    pub fn set_last_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InventoryDeletionStatus>,
-    ) -> Self {
+    pub fn set_last_status(mut self, input: ::std::option::Option<crate::types::InventoryDeletionStatus>) -> Self {
         self.last_status = input;
         self
     }
@@ -143,18 +133,12 @@ impl InventoryDeletionStatusItemBuilder {
         &self.last_status
     }
     /// <p>Information about the status.</p>
-    pub fn last_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the status.</p>
-    pub fn set_last_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_status_message = input;
         self
     }
@@ -168,17 +152,12 @@ impl InventoryDeletionStatusItemBuilder {
         self
     }
     /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_deletion_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::InventoryDeletionSummary>,
-    ) -> Self {
+    pub fn set_deletion_summary(mut self, input: ::std::option::Option<crate::types::InventoryDeletionSummary>) -> Self {
         self.deletion_summary = input;
         self
     }
     /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn get_deletion_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::InventoryDeletionSummary> {
+    pub fn get_deletion_summary(&self) -> &::std::option::Option<crate::types::InventoryDeletionSummary> {
         &self.deletion_summary
     }
     /// <p>The UTC timestamp of when the last status report.</p>
@@ -187,17 +166,12 @@ impl InventoryDeletionStatusItemBuilder {
         self
     }
     /// <p>The UTC timestamp of when the last status report.</p>
-    pub fn set_last_status_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_status_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_status_update_time = input;
         self
     }
     /// <p>The UTC timestamp of when the last status report.</p>
-    pub fn get_last_status_update_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_status_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_status_update_time
     }
     /// Consumes the builder and constructs a [`InventoryDeletionStatusItem`](crate::types::InventoryDeletionStatusItem).

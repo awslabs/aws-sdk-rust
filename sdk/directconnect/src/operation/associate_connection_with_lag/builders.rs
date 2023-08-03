@@ -28,7 +28,7 @@ impl AssociateConnectionWithLagInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateConnectionWithLagFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagInputBuilder,
+    inner: crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagInputBuilder,
 }
 impl AssociateConnectionWithLagFluentBuilder {
     /// Creates a new `AssociateConnectionWithLag`.
@@ -39,7 +39,7 @@ impl AssociateConnectionWithLagFluentBuilder {
         }
     }
     /// Access the AssociateConnectionWithLag as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl AssociateConnectionWithLagFluentBuilder {
             crate::operation::associate_connection_with_lag::AssociateConnectionWithLag,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_connection_with_lag::AssociateConnectionWithLagError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_connection_with_lag::AssociateConnectionWithLagError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl AssociateConnectionWithLagFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl AssociateConnectionWithLagFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_connection_with_lag::AssociateConnectionWithLagOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_connection_with_lag::AssociateConnectionWithLagError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_connection_with_lag::AssociateConnectionWithLagError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl AssociateConnectionWithLagFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_connection_with_lag::AssociateConnectionWithLagOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_connection_with_lag::AssociateConnectionWithLagError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_connection_with_lag::AssociateConnectionWithLagError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl AssociateConnectionWithLagFluentBuilder {
             crate::operation::associate_connection_with_lag::AssociateConnectionWithLag,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_connection_with_lag::AssociateConnectionWithLagError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_connection_with_lag::AssociateConnectionWithLagError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }

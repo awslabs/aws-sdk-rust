@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`spot_instance_requests(Option<Vec<SpotInstanceRequest>>)`](crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput::spot_instance_requests): <p>The Spot Instance requests.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeSpotInstanceRequestsError>`](crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError)
-    pub fn describe_spot_instance_requests(&self) -> crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsFluentBuilder{
+    pub fn describe_spot_instance_requests(
+        &self,
+    ) -> crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsFluentBuilder {
         crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsFluentBuilder::new(self.handle.clone())
     }
 }

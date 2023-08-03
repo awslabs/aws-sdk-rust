@@ -38,9 +38,7 @@ impl DescribeRootFoldersFluentBuilder {
         }
     }
     /// Access the DescribeRootFolders as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_root_folders::builders::DescribeRootFoldersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_root_folders::builders::DescribeRootFoldersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeRootFoldersFluentBuilder {
             crate::operation::describe_root_folders::DescribeRootFolders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_root_folders::DescribeRootFoldersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_root_folders::DescribeRootFoldersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeRootFoldersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeRootFoldersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_root_folders::DescribeRootFoldersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_root_folders::DescribeRootFoldersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_root_folders::DescribeRootFoldersError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeRootFoldersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_root_folders::DescribeRootFoldersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_root_folders::DescribeRootFoldersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_root_folders::DescribeRootFoldersError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +106,23 @@ impl DescribeRootFoldersFluentBuilder {
             crate::operation::describe_root_folders::DescribeRootFolders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_root_folders::DescribeRootFoldersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_root_folders::DescribeRootFoldersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_root_folders::paginator::DescribeRootFoldersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_root_folders::paginator::DescribeRootFoldersPaginator {
-        crate::operation::describe_root_folders::paginator::DescribeRootFoldersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_root_folders::paginator::DescribeRootFoldersPaginator {
+        crate::operation::describe_root_folders::paginator::DescribeRootFoldersPaginator::new(self.handle, self.inner)
     }
     /// <p>Amazon WorkDocs authentication token.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }

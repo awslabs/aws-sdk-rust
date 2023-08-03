@@ -26,7 +26,7 @@ impl GetServiceSyncBlockerSummaryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceSyncBlockerSummaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryInputBuilder,
+    inner: crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryInputBuilder,
 }
 impl GetServiceSyncBlockerSummaryFluentBuilder {
     /// Creates a new `GetServiceSyncBlockerSummary`.
@@ -37,7 +37,7 @@ impl GetServiceSyncBlockerSummaryFluentBuilder {
         }
     }
     /// Access the GetServiceSyncBlockerSummary as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetServiceSyncBlockerSummaryFluentBuilder {
             crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetServiceSyncBlockerSummaryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetServiceSyncBlockerSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetServiceSyncBlockerSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetServiceSyncBlockerSummaryFluentBuilder {
             crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl GetServiceSyncBlockerSummaryFluentBuilder {
         self.inner.get_service_name()
     }
     /// <p>The name of the service instance that you want to get the service sync blocker summary for. If given bothe the instance name and the service name, only the instance is blocked.</p>
-    pub fn service_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_instance_name(input.into());
         self
     }
     /// <p>The name of the service instance that you want to get the service sync blocker summary for. If given bothe the instance name and the service name, only the instance is blocked.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_instance_name(input);
         self
     }

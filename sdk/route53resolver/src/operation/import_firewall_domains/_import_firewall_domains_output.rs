@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for ImportFirewallDomainsOutput {
 }
 impl ImportFirewallDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ImportFirewallDomainsOutput`](crate::operation::import_firewall_domains::ImportFirewallDomainsOutput).
-    pub fn builder(
-    ) -> crate::operation::import_firewall_domains::builders::ImportFirewallDomainsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::import_firewall_domains::builders::ImportFirewallDomainsOutputBuilder {
         crate::operation::import_firewall_domains::builders::ImportFirewallDomainsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportFirewallDomainsOutput`](crate::operation::import_firewall_domains::ImportFirewallDomainsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportFirewallDomainsOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -96,10 +92,7 @@ impl ImportFirewallDomainsOutputBuilder {
         self
     }
     /// <p>Status of the import request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallDomainListStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FirewallDomainListStatus>) -> Self {
         self.status = input;
         self
     }
@@ -108,18 +101,12 @@ impl ImportFirewallDomainsOutputBuilder {
         &self.status
     }
     /// <p>Additional information about the status of the list, if available.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional information about the status of the list, if available.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

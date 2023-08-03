@@ -21,19 +21,16 @@ impl ::aws_http::request_id::RequestId for ModifyTargetGroupAttributesOutput {
 }
 impl ModifyTargetGroupAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyTargetGroupAttributesOutput`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput).
-    pub fn builder() -> crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesOutputBuilder {
         crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyTargetGroupAttributesOutput`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyTargetGroupAttributesOutputBuilder {
-    pub(crate) attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>,
     _request_id: Option<String>,
 }
 impl ModifyTargetGroupAttributesOutputBuilder {
@@ -49,17 +46,12 @@ impl ModifyTargetGroupAttributesOutputBuilder {
         self
     }
     /// <p>Information about the attributes.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>Information about the attributes.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>> {
         &self.attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +64,7 @@ impl ModifyTargetGroupAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyTargetGroupAttributesOutput`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput {
+    pub fn build(self) -> crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput {
         crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput {
             attributes: self.attributes,
             _request_id: self._request_id,

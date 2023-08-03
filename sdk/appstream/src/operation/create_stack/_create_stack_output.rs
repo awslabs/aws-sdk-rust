@@ -28,9 +28,7 @@ impl CreateStackOutput {
 
 /// A builder for [`CreateStackOutput`](crate::operation::create_stack::CreateStackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStackOutputBuilder {
     pub(crate) stack: ::std::option::Option<crate::types::Stack>,
     _request_id: Option<String>,

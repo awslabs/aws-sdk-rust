@@ -23,24 +23,20 @@ impl GetResourceEventConfigurationInput {
         self.identifier_type.as_ref()
     }
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
-    pub fn partner_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EventNotificationPartnerType> {
+    pub fn partner_type(&self) -> ::std::option::Option<&crate::types::EventNotificationPartnerType> {
         self.partner_type.as_ref()
     }
 }
 impl GetResourceEventConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetResourceEventConfigurationInput`](crate::operation::get_resource_event_configuration::GetResourceEventConfigurationInput).
-    pub fn builder() -> crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationInputBuilder {
         crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceEventConfigurationInput`](crate::operation::get_resource_event_configuration::GetResourceEventConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceEventConfigurationInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier_type: ::std::option::Option<crate::types::IdentifierType>,
@@ -67,10 +63,7 @@ impl GetResourceEventConfigurationInputBuilder {
         self
     }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-    pub fn set_identifier_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentifierType>,
-    ) -> Self {
+    pub fn set_identifier_type(mut self, input: ::std::option::Option<crate::types::IdentifierType>) -> Self {
         self.identifier_type = input;
         self
     }
@@ -84,17 +77,12 @@ impl GetResourceEventConfigurationInputBuilder {
         self
     }
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
-    pub fn set_partner_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EventNotificationPartnerType>,
-    ) -> Self {
+    pub fn set_partner_type(mut self, input: ::std::option::Option<crate::types::EventNotificationPartnerType>) -> Self {
         self.partner_type = input;
         self
     }
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
-    pub fn get_partner_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventNotificationPartnerType> {
+    pub fn get_partner_type(&self) -> &::std::option::Option<crate::types::EventNotificationPartnerType> {
         &self.partner_type
     }
     /// Consumes the builder and constructs a [`GetResourceEventConfigurationInput`](crate::operation::get_resource_event_configuration::GetResourceEventConfigurationInput).
@@ -104,15 +92,10 @@ impl GetResourceEventConfigurationInputBuilder {
         crate::operation::get_resource_event_configuration::GetResourceEventConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resource_event_configuration::GetResourceEventConfigurationInput {
-                identifier: self.identifier
-                ,
-                identifier_type: self.identifier_type
-                ,
-                partner_type: self.partner_type
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_resource_event_configuration::GetResourceEventConfigurationInput {
+            identifier: self.identifier,
+            identifier_type: self.identifier_type,
+            partner_type: self.partner_type,
+        })
     }
 }

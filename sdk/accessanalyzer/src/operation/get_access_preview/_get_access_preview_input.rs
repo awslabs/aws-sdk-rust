@@ -22,35 +22,26 @@ impl GetAccessPreviewInput {
 }
 impl GetAccessPreviewInput {
     /// Creates a new builder-style object to manufacture [`GetAccessPreviewInput`](crate::operation::get_access_preview::GetAccessPreviewInput).
-    pub fn builder() -> crate::operation::get_access_preview::builders::GetAccessPreviewInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_access_preview::builders::GetAccessPreviewInputBuilder {
         crate::operation::get_access_preview::builders::GetAccessPreviewInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccessPreviewInput`](crate::operation::get_access_preview::GetAccessPreviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessPreviewInputBuilder {
     pub(crate) access_preview_id: ::std::option::Option<::std::string::String>,
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetAccessPreviewInputBuilder {
     /// <p>The unique ID for the access preview.</p>
-    pub fn access_preview_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_preview_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_preview_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the access preview.</p>
-    pub fn set_access_preview_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_preview_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_preview_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl GetAccessPreviewInputBuilder {
     /// Consumes the builder and constructs a [`GetAccessPreviewInput`](crate::operation::get_access_preview::GetAccessPreviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_access_preview::GetAccessPreviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_access_preview::GetAccessPreviewInput {
-                access_preview_id: self.access_preview_id,
-                analyzer_arn: self.analyzer_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_access_preview::GetAccessPreviewInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_access_preview::GetAccessPreviewInput {
+            access_preview_id: self.access_preview_id,
+            analyzer_arn: self.analyzer_arn,
+        })
     }
 }

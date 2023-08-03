@@ -27,34 +27,27 @@ impl ::std::fmt::Display for InvalidCustomSesConfigurationException {
     }
 }
 impl ::std::error::Error for InvalidCustomSesConfigurationException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidCustomSesConfigurationException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidCustomSesConfigurationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidCustomSesConfigurationException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidCustomSesConfigurationException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidCustomSesConfigurationException {
     /// Creates a new builder-style object to manufacture [`InvalidCustomSesConfigurationException`](crate::types::error::InvalidCustomSesConfigurationException).
-    pub fn builder() -> crate::types::error::builders::InvalidCustomSesConfigurationExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::InvalidCustomSesConfigurationExceptionBuilder {
         crate::types::error::builders::InvalidCustomSesConfigurationExceptionBuilder::default()
     }
 }
 
 /// A builder for [`InvalidCustomSesConfigurationException`](crate::types::error::InvalidCustomSesConfigurationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidCustomSesConfigurationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl InvalidCustomSesConfigurationExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

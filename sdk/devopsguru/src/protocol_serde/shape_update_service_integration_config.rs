@@ -18,7 +18,10 @@ pub fn ser_update_service_integration_config(
     if let Some(var_5) = &input.kms_server_side_encryption {
         #[allow(unused_mut)]
         let mut object_6 = object.key("KMSServerSideEncryption").start_object();
-        crate::protocol_serde::shape_kms_server_side_encryption_integration_config::ser_kms_server_side_encryption_integration_config(&mut object_6, var_5)?;
+        crate::protocol_serde::shape_kms_server_side_encryption_integration_config::ser_kms_server_side_encryption_integration_config(
+            &mut object_6,
+            var_5,
+        )?;
         object_6.finish();
     }
     Ok(())

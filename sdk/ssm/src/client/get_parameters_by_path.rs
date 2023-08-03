@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`parameters(Option<Vec<Parameter>>)`](crate::operation::get_parameters_by_path::GetParametersByPathOutput::parameters): <p>A list of parameters found in the specified hierarchy.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_parameters_by_path::GetParametersByPathOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<GetParametersByPathError>`](crate::operation::get_parameters_by_path::GetParametersByPathError)
-    pub fn get_parameters_by_path(
-        &self,
-    ) -> crate::operation::get_parameters_by_path::builders::GetParametersByPathFluentBuilder {
-        crate::operation::get_parameters_by_path::builders::GetParametersByPathFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_parameters_by_path(&self) -> crate::operation::get_parameters_by_path::builders::GetParametersByPathFluentBuilder {
+        crate::operation::get_parameters_by_path::builders::GetParametersByPathFluentBuilder::new(self.handle.clone())
     }
 }

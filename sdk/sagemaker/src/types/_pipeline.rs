@@ -90,9 +90,7 @@ impl Pipeline {
         self.last_modified_by.as_ref()
     }
     /// <p>The parallelism configuration applied to the pipeline.</p>
-    pub fn parallelism_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
+    pub fn parallelism_configuration(&self) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
         self.parallelism_configuration.as_ref()
     }
     /// <p>A list of tags that apply to the pipeline.</p>
@@ -109,9 +107,7 @@ impl Pipeline {
 
 /// A builder for [`Pipeline`](crate::types::Pipeline).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineBuilder {
     pub(crate) pipeline_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
@@ -124,8 +120,7 @@ pub struct PipelineBuilder {
     pub(crate) last_run_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
-    pub(crate) parallelism_configuration:
-        ::std::option::Option<crate::types::ParallelismConfiguration>,
+    pub(crate) parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PipelineBuilder {
@@ -144,18 +139,12 @@ impl PipelineBuilder {
         &self.pipeline_arn
     }
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -164,18 +153,12 @@ impl PipelineBuilder {
         &self.pipeline_name
     }
     /// <p>The display name of the pipeline.</p>
-    pub fn pipeline_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the pipeline.</p>
-    pub fn set_pipeline_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_display_name = input;
         self
     }
@@ -184,18 +167,12 @@ impl PipelineBuilder {
         &self.pipeline_display_name
     }
     /// <p>The description of the pipeline.</p>
-    pub fn pipeline_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the pipeline.</p>
-    pub fn set_pipeline_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_description = input;
         self
     }
@@ -223,10 +200,7 @@ impl PipelineBuilder {
         self
     }
     /// <p>The status of the pipeline.</p>
-    pub fn set_pipeline_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineStatus>,
-    ) -> Self {
+    pub fn set_pipeline_status(mut self, input: ::std::option::Option<crate::types::PipelineStatus>) -> Self {
         self.pipeline_status = input;
         self
     }
@@ -240,10 +214,7 @@ impl PipelineBuilder {
         self
     }
     /// <p>The creation time of the pipeline.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -257,10 +228,7 @@ impl PipelineBuilder {
         self
     }
     /// <p>The time that the pipeline was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -274,10 +242,7 @@ impl PipelineBuilder {
         self
     }
     /// <p>The time when the pipeline was last run.</p>
-    pub fn set_last_run_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_run_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_run_time = input;
         self
     }
@@ -291,10 +256,7 @@ impl PipelineBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
@@ -308,10 +270,7 @@ impl PipelineBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -320,25 +279,17 @@ impl PipelineBuilder {
         &self.last_modified_by
     }
     /// <p>The parallelism configuration applied to the pipeline.</p>
-    pub fn parallelism_configuration(
-        mut self,
-        input: crate::types::ParallelismConfiguration,
-    ) -> Self {
+    pub fn parallelism_configuration(mut self, input: crate::types::ParallelismConfiguration) -> Self {
         self.parallelism_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parallelism configuration applied to the pipeline.</p>
-    pub fn set_parallelism_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelismConfiguration>,
-    ) -> Self {
+    pub fn set_parallelism_configuration(mut self, input: ::std::option::Option<crate::types::ParallelismConfiguration>) -> Self {
         self.parallelism_configuration = input;
         self
     }
     /// <p>The parallelism configuration applied to the pipeline.</p>
-    pub fn get_parallelism_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
+    pub fn get_parallelism_configuration(&self) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
         &self.parallelism_configuration
     }
     /// Appends an item to `tags`.
@@ -353,10 +304,7 @@ impl PipelineBuilder {
         self
     }
     /// <p>A list of tags that apply to the pipeline.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

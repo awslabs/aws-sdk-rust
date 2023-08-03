@@ -26,8 +26,7 @@ impl ListAccessControlRulesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAccessControlRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_access_control_rules::builders::ListAccessControlRulesInputBuilder,
+    inner: crate::operation::list_access_control_rules::builders::ListAccessControlRulesInputBuilder,
 }
 impl ListAccessControlRulesFluentBuilder {
     /// Creates a new `ListAccessControlRules`.
@@ -38,10 +37,7 @@ impl ListAccessControlRulesFluentBuilder {
         }
     }
     /// Access the ListAccessControlRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_access_control_rules::builders::ListAccessControlRulesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_access_control_rules::builders::ListAccessControlRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListAccessControlRulesFluentBuilder {
             crate::operation::list_access_control_rules::ListAccessControlRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_control_rules::ListAccessControlRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_control_rules::ListAccessControlRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListAccessControlRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListAccessControlRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_access_control_rules::ListAccessControlRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_control_rules::ListAccessControlRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_control_rules::ListAccessControlRulesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListAccessControlRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_access_control_rules::ListAccessControlRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_control_rules::ListAccessControlRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_control_rules::ListAccessControlRulesError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl ListAccessControlRulesFluentBuilder {
             crate::operation::list_access_control_rules::ListAccessControlRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_control_rules::ListAccessControlRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_control_rules::ListAccessControlRulesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier for the organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier for the organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

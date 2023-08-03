@@ -36,17 +36,14 @@ impl ::aws_http::request_id::RequestId for ListAccountAliasesOutput {
 }
 impl ListAccountAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountAliasesOutput`](crate::operation::list_account_aliases::ListAccountAliasesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_account_aliases::builders::ListAccountAliasesOutputBuilder {
+    pub fn builder() -> crate::operation::list_account_aliases::builders::ListAccountAliasesOutputBuilder {
         crate::operation::list_account_aliases::builders::ListAccountAliasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountAliasesOutput`](crate::operation::list_account_aliases::ListAccountAliasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountAliasesOutputBuilder {
     pub(crate) account_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
@@ -59,27 +56,19 @@ impl ListAccountAliasesOutputBuilder {
     /// To override the contents of this collection use [`set_account_aliases`](Self::set_account_aliases).
     ///
     /// <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per account.</p>
-    pub fn account_aliases(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_aliases.unwrap_or_default();
         v.push(input.into());
         self.account_aliases = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per account.</p>
-    pub fn set_account_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_aliases = input;
         self
     }
     /// <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per account.</p>
-    pub fn get_account_aliases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_aliases
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>

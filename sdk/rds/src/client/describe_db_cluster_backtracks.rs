@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput::marker): <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
     ///   - [`db_cluster_backtracks(Option<Vec<DbClusterBacktrack>>)`](crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput::db_cluster_backtracks): <p>Contains a list of backtracks for the user.</p>
     /// - On failure, responds with [`SdkError<DescribeDBClusterBacktracksError>`](crate::operation::describe_db_cluster_backtracks::DescribeDBClusterBacktracksError)
-    pub fn describe_db_cluster_backtracks(&self) -> crate::operation::describe_db_cluster_backtracks::builders::DescribeDBClusterBacktracksFluentBuilder{
+    pub fn describe_db_cluster_backtracks(
+        &self,
+    ) -> crate::operation::describe_db_cluster_backtracks::builders::DescribeDBClusterBacktracksFluentBuilder {
         crate::operation::describe_db_cluster_backtracks::builders::DescribeDBClusterBacktracksFluentBuilder::new(self.handle.clone())
     }
 }

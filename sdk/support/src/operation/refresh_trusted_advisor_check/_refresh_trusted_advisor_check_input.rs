@@ -20,16 +20,14 @@ impl RefreshTrustedAdvisorCheckInput {
 }
 impl RefreshTrustedAdvisorCheckInput {
     /// Creates a new builder-style object to manufacture [`RefreshTrustedAdvisorCheckInput`](crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput).
-    pub fn builder() -> crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckInputBuilder{
+    pub fn builder() -> crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckInputBuilder {
         crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckInputBuilder::default()
     }
 }
 
 /// A builder for [`RefreshTrustedAdvisorCheckInput`](crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RefreshTrustedAdvisorCheckInputBuilder {
     pub(crate) check_id: ::std::option::Option<::std::string::String>,
 }
@@ -61,10 +59,6 @@ impl RefreshTrustedAdvisorCheckInputBuilder {
         crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput {
-                check_id: self.check_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput { check_id: self.check_id })
     }
 }

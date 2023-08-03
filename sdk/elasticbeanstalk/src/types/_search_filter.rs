@@ -40,9 +40,7 @@ impl SearchFilter {
 
 /// A builder for [`SearchFilter`](crate::types::SearchFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchFilterBuilder {
     pub(crate) attribute: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<::std::string::String>,
@@ -89,10 +87,7 @@ impl SearchFilterBuilder {
         self
     }
     /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

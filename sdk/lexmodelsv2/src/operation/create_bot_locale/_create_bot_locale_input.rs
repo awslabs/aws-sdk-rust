@@ -71,9 +71,7 @@ impl CreateBotLocaleInput {
 
 /// A builder for [`CreateBotLocaleInput`](crate::operation::create_bot_locale::CreateBotLocaleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBotLocaleInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -159,10 +157,7 @@ impl CreateBotLocaleInputBuilder {
     /// <li> <p>IntentB</p> </li>
     /// <li> <p>IntentC</p> </li>
     /// </ul>
-    pub fn set_nlu_intent_confidence_threshold(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_nlu_intent_confidence_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.nlu_intent_confidence_threshold = input;
         self
     }
@@ -183,10 +178,7 @@ impl CreateBotLocaleInputBuilder {
         self
     }
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
-    pub fn set_voice_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceSettings>,
-    ) -> Self {
+    pub fn set_voice_settings(mut self, input: ::std::option::Option<crate::types::VoiceSettings>) -> Self {
         self.voice_settings = input;
         self
     }
@@ -197,10 +189,7 @@ impl CreateBotLocaleInputBuilder {
     /// Consumes the builder and constructs a [`CreateBotLocaleInput`](crate::operation::create_bot_locale::CreateBotLocaleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_bot_locale::CreateBotLocaleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_bot_locale::CreateBotLocaleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bot_locale::CreateBotLocaleInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

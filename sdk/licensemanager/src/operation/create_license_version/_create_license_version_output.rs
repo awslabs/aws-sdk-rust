@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateLicenseVersionOutput {
 }
 impl CreateLicenseVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseVersionOutput`](crate::operation::create_license_version::CreateLicenseVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_license_version::builders::CreateLicenseVersionOutputBuilder {
+    pub fn builder() -> crate::operation::create_license_version::builders::CreateLicenseVersionOutputBuilder {
         crate::operation::create_license_version::builders::CreateLicenseVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLicenseVersionOutput`](crate::operation::create_license_version::CreateLicenseVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLicenseVersionOutputBuilder {
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,

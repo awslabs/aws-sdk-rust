@@ -50,9 +50,7 @@ impl GetAccountOutput {
 
 /// A builder for [`GetAccountOutput`](crate::operation::get_account::GetAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccountOutputBuilder {
     pub(crate) cloudwatch_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) throttle_settings: ::std::option::Option<crate::types::ThrottleSettings>,
@@ -62,18 +60,12 @@ pub struct GetAccountOutputBuilder {
 }
 impl GetAccountOutputBuilder {
     /// <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
-    pub fn cloudwatch_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloudwatch_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloudwatch_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
-    pub fn set_cloudwatch_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloudwatch_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloudwatch_role_arn = input;
         self
     }
@@ -87,10 +79,7 @@ impl GetAccountOutputBuilder {
         self
     }
     /// <p>Specifies the API request limits configured for the current Account.</p>
-    pub fn set_throttle_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ThrottleSettings>,
-    ) -> Self {
+    pub fn set_throttle_settings(mut self, input: ::std::option::Option<crate::types::ThrottleSettings>) -> Self {
         self.throttle_settings = input;
         self
     }
@@ -110,10 +99,7 @@ impl GetAccountOutputBuilder {
         self
     }
     /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.features = input;
         self
     }
@@ -122,18 +108,12 @@ impl GetAccountOutputBuilder {
         &self.features
     }
     /// <p>The version of the API keys used for the account.</p>
-    pub fn api_key_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_key_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the API keys used for the account.</p>
-    pub fn set_api_key_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_key_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key_version = input;
         self
     }

@@ -67,9 +67,7 @@ impl UpdateTaskInput {
 
 /// A builder for [`UpdateTaskInput`](crate::operation::update_task::UpdateTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTaskInputBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) options: ::std::option::Option<crate::types::Options>,
@@ -123,17 +121,12 @@ impl UpdateTaskInputBuilder {
         self
     }
     /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn set_excludes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    ) -> Self {
+    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.excludes = input;
         self
     }
     /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn get_excludes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.excludes
     }
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
@@ -142,10 +135,7 @@ impl UpdateTaskInputBuilder {
         self
     }
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskSchedule>,
-    ) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::TaskSchedule>) -> Self {
         self.schedule = input;
         self
     }
@@ -168,18 +158,12 @@ impl UpdateTaskInputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
-    pub fn cloud_watch_log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
-    pub fn set_cloud_watch_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = input;
         self
     }
@@ -199,26 +183,16 @@ impl UpdateTaskInputBuilder {
         self
     }
     /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn set_includes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    ) -> Self {
+    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.includes = input;
         self
     }
     /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn get_includes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.includes
     }
     /// Consumes the builder and constructs a [`UpdateTaskInput`](crate::operation::update_task::UpdateTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_task::UpdateTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_task::UpdateTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_task::UpdateTaskInput {
             task_arn: self.task_arn,
             options: self.options,

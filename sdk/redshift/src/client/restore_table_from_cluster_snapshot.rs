@@ -15,7 +15,9 @@ impl super::Client {
     /// - On success, responds with [`RestoreTableFromClusterSnapshotOutput`](crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput) with field(s):
     ///   - [`table_restore_status(Option<TableRestoreStatus>)`](crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput::table_restore_status): <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
     /// - On failure, responds with [`SdkError<RestoreTableFromClusterSnapshotError>`](crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError)
-    pub fn restore_table_from_cluster_snapshot(&self) -> crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotFluentBuilder{
+    pub fn restore_table_from_cluster_snapshot(
+        &self,
+    ) -> crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotFluentBuilder {
         crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

@@ -35,9 +35,7 @@ impl ListDirectoriesOutput {
 
 /// A builder for [`ListDirectoriesOutput`](crate::operation::list_directories::ListDirectoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDirectoriesOutputBuilder {
     pub(crate) directories: ::std::option::Option<::std::vec::Vec<crate::types::Directory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListDirectoriesOutputBuilder {
         self
     }
     /// <p>Lists all directories that are associated with your account in pagination fashion.</p>
-    pub fn set_directories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Directory>>,
-    ) -> Self {
+    pub fn set_directories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Directory>>) -> Self {
         self.directories = input;
         self
     }
     /// <p>Lists all directories that are associated with your account in pagination fashion.</p>
-    pub fn get_directories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Directory>> {
+    pub fn get_directories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Directory>> {
         &self.directories
     }
     /// <p>The pagination token.</p>

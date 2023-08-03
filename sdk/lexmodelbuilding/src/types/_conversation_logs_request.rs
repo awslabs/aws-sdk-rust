@@ -30,12 +30,9 @@ impl ConversationLogsRequest {
 
 /// A builder for [`ConversationLogsRequest`](crate::types::ConversationLogsRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConversationLogsRequestBuilder {
-    pub(crate) log_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsRequest>>,
+    pub(crate) log_settings: ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsRequest>>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ConversationLogsRequestBuilder {
@@ -51,17 +48,12 @@ impl ConversationLogsRequestBuilder {
         self
     }
     /// <p>The settings for your conversation logs. You can log the conversation text, conversation audio, or both.</p>
-    pub fn set_log_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsRequest>>,
-    ) -> Self {
+    pub fn set_log_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsRequest>>) -> Self {
         self.log_settings = input;
         self
     }
     /// <p>The settings for your conversation logs. You can log the conversation text, conversation audio, or both.</p>
-    pub fn get_log_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSettingsRequest>> {
+    pub fn get_log_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSettingsRequest>> {
         &self.log_settings
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access permission for the AWS KMS key used for encrypting audio logs. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM Role and Policy for Conversation Logs</a>.</p>

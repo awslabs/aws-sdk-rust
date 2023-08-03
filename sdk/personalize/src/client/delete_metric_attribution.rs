@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`metric_attribution_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionFluentBuilder::metric_attribution_arn) / [`set_metric_attribution_arn(Option<String>)`](crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionFluentBuilder::set_metric_attribution_arn): <p>The metric attribution's Amazon Resource Name (ARN).</p>
     /// - On success, responds with [`DeleteMetricAttributionOutput`](crate::operation::delete_metric_attribution::DeleteMetricAttributionOutput)
     /// - On failure, responds with [`SdkError<DeleteMetricAttributionError>`](crate::operation::delete_metric_attribution::DeleteMetricAttributionError)
-    pub fn delete_metric_attribution(
-        &self,
-    ) -> crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionFluentBuilder
-    {
+    pub fn delete_metric_attribution(&self) -> crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionFluentBuilder {
         crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionFluentBuilder::new(self.handle.clone())
     }
 }

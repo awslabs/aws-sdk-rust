@@ -30,27 +30,19 @@ impl ConformancePackInputParameter {
 
 /// A builder for [`ConformancePackInputParameter`](crate::types::ConformancePackInputParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConformancePackInputParameterBuilder {
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl ConformancePackInputParameterBuilder {
     /// <p>One part of a key-value pair.</p>
-    pub fn parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One part of a key-value pair.</p>
-    pub fn set_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl ConformancePackInputParameterBuilder {
         &self.parameter_name
     }
     /// <p>Another part of the key-value pair. </p>
-    pub fn parameter_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Another part of the key-value pair. </p>
-    pub fn set_parameter_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_value = input;
         self
     }

@@ -26,8 +26,7 @@ impl GetAssistantAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssistantAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_assistant_association::builders::GetAssistantAssociationInputBuilder,
+    inner: crate::operation::get_assistant_association::builders::GetAssistantAssociationInputBuilder,
 }
 impl GetAssistantAssociationFluentBuilder {
     /// Creates a new `GetAssistantAssociation`.
@@ -38,10 +37,7 @@ impl GetAssistantAssociationFluentBuilder {
         }
     }
     /// Access the GetAssistantAssociation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_assistant_association::builders::GetAssistantAssociationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_assistant_association::builders::GetAssistantAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetAssistantAssociationFluentBuilder {
             crate::operation::get_assistant_association::GetAssistantAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_assistant_association::GetAssistantAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_assistant_association::GetAssistantAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetAssistantAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetAssistantAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_assistant_association::GetAssistantAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_assistant_association::GetAssistantAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_assistant_association::GetAssistantAssociationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetAssistantAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_assistant_association::GetAssistantAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_assistant_association::GetAssistantAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_assistant_association::GetAssistantAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl GetAssistantAssociationFluentBuilder {
             crate::operation::get_assistant_association::GetAssistantAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_assistant_association::GetAssistantAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_assistant_association::GetAssistantAssociationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assistant_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assistant_association_id(input.into());
         self
     }
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_assistant_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assistant_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assistant_association_id(input);
         self
     }

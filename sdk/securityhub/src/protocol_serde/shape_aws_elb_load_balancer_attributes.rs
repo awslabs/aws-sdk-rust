@@ -24,7 +24,10 @@ pub fn ser_aws_elb_load_balancer_attributes(
     if let Some(var_7) = &input.cross_zone_load_balancing {
         #[allow(unused_mut)]
         let mut object_8 = object.key("CrossZoneLoadBalancing").start_object();
-        crate::protocol_serde::shape_aws_elb_load_balancer_cross_zone_load_balancing::ser_aws_elb_load_balancer_cross_zone_load_balancing(&mut object_8, var_7)?;
+        crate::protocol_serde::shape_aws_elb_load_balancer_cross_zone_load_balancing::ser_aws_elb_load_balancer_cross_zone_load_balancing(
+            &mut object_8,
+            var_7,
+        )?;
         object_8.finish();
     }
     if let Some(var_9) = &input.additional_attributes {
@@ -33,7 +36,10 @@ pub fn ser_aws_elb_load_balancer_attributes(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_aws_elb_load_balancer_additional_attribute::ser_aws_elb_load_balancer_additional_attribute(&mut object_12, item_11)?;
+                crate::protocol_serde::shape_aws_elb_load_balancer_additional_attribute::ser_aws_elb_load_balancer_additional_attribute(
+                    &mut object_12,
+                    item_11,
+                )?;
                 object_12.finish();
             }
         }
@@ -44,24 +50,15 @@ pub fn ser_aws_elb_load_balancer_attributes(
 
 pub(crate) fn de_aws_elb_load_balancer_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsElbLoadBalancerAttributes>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsElbLoadBalancerAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AwsElbLoadBalancerAttributesBuilder::default();
+            let mut builder = crate::types::builders::AwsElbLoadBalancerAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -69,7 +66,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "AccessLog" => {
                                 builder = builder.set_access_log(
-                                    crate::protocol_serde::shape_aws_elb_load_balancer_access_log::de_aws_elb_load_balancer_access_log(tokens)?
+                                    crate::protocol_serde::shape_aws_elb_load_balancer_access_log::de_aws_elb_load_balancer_access_log(tokens)?,
                                 );
                             }
                             "ConnectionDraining" => {
@@ -96,20 +93,17 @@ where
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

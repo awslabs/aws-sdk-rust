@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`assistant_id(impl ::std::convert::Into<String>)`](crate::operation::delete_assistant::builders::DeleteAssistantFluentBuilder::assistant_id) / [`set_assistant_id(Option<String>)`](crate::operation::delete_assistant::builders::DeleteAssistantFluentBuilder::set_assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// - On success, responds with [`DeleteAssistantOutput`](crate::operation::delete_assistant::DeleteAssistantOutput)
     /// - On failure, responds with [`SdkError<DeleteAssistantError>`](crate::operation::delete_assistant::DeleteAssistantError)
-    pub fn delete_assistant(
-        &self,
-    ) -> crate::operation::delete_assistant::builders::DeleteAssistantFluentBuilder {
-        crate::operation::delete_assistant::builders::DeleteAssistantFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_assistant(&self) -> crate::operation::delete_assistant::builders::DeleteAssistantFluentBuilder {
+        crate::operation::delete_assistant::builders::DeleteAssistantFluentBuilder::new(self.handle.clone())
     }
 }

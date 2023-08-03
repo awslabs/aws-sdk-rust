@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutWorkflowRunPropertiesOutput {
 }
 impl PutWorkflowRunPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`PutWorkflowRunPropertiesOutput`](crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesOutput).
-    pub fn builder() -> crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesOutputBuilder{
+    pub fn builder() -> crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesOutputBuilder {
         crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutWorkflowRunPropertiesOutput`](crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutWorkflowRunPropertiesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl PutWorkflowRunPropertiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutWorkflowRunPropertiesOutput`](crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesOutput {
+    pub fn build(self) -> crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesOutput {
         crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesOutput {
             _request_id: self._request_id,
         }

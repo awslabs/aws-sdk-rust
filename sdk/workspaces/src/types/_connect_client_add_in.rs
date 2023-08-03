@@ -44,9 +44,7 @@ impl ConnectClientAddIn {
 
 /// A builder for [`ConnectClientAddIn`](crate::types::ConnectClientAddIn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectClientAddInBuilder {
     pub(crate) add_in_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

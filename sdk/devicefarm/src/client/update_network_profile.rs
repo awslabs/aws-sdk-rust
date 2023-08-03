@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateNetworkProfileOutput`](crate::operation::update_network_profile::UpdateNetworkProfileOutput) with field(s):
     ///   - [`network_profile(Option<NetworkProfile>)`](crate::operation::update_network_profile::UpdateNetworkProfileOutput::network_profile): <p>A list of the available network profiles.</p>
     /// - On failure, responds with [`SdkError<UpdateNetworkProfileError>`](crate::operation::update_network_profile::UpdateNetworkProfileError)
-    pub fn update_network_profile(
-        &self,
-    ) -> crate::operation::update_network_profile::builders::UpdateNetworkProfileFluentBuilder {
-        crate::operation::update_network_profile::builders::UpdateNetworkProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_network_profile(&self) -> crate::operation::update_network_profile::builders::UpdateNetworkProfileFluentBuilder {
+        crate::operation::update_network_profile::builders::UpdateNetworkProfileFluentBuilder::new(self.handle.clone())
     }
 }

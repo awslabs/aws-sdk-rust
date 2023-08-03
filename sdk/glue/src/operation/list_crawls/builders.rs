@@ -10,10 +10,7 @@ impl ListCrawlsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_crawls::ListCrawlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_crawls::ListCrawlsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_crawls::ListCrawlsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_crawls();
         fluent_builder.inner = self;
@@ -52,10 +49,7 @@ impl ListCrawlsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_crawls::ListCrawls,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_crawls::ListCrawls, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_crawls::ListCrawlsError>,
     > {
         let handle = self.handle.clone();
@@ -66,10 +60,7 @@ impl ListCrawlsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -111,10 +102,7 @@ impl ListCrawlsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_crawls::ListCrawls,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_crawls::ListCrawls, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_crawls::ListCrawlsError>,
     > {
         self.customize_middleware().await
@@ -157,17 +145,12 @@ impl ListCrawlsFluentBuilder {
         self
     }
     /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CrawlsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrawlsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CrawlsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrawlsFilter>> {
         self.inner.get_filters()
     }
     /// <p>A continuation token, if this is a continuation call.</p>

@@ -19,9 +19,7 @@ impl DeleteRegistryOutput {
 
 /// A builder for [`DeleteRegistryOutput`](crate::operation::delete_registry::DeleteRegistryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRegistryOutputBuilder {
     _request_id: Option<String>,
 }

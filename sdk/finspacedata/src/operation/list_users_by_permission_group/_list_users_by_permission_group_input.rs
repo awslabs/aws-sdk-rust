@@ -29,16 +29,14 @@ impl ListUsersByPermissionGroupInput {
 }
 impl ListUsersByPermissionGroupInput {
     /// Creates a new builder-style object to manufacture [`ListUsersByPermissionGroupInput`](crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupInput).
-    pub fn builder() -> crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupInputBuilder{
+    pub fn builder() -> crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupInputBuilder {
         crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ListUsersByPermissionGroupInput`](crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUsersByPermissionGroupInputBuilder {
     pub(crate) permission_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListUsersByPermissionGroupInputBuilder {
 }
 impl ListUsersByPermissionGroupInputBuilder {
     /// <p>The unique identifier for the permission group.</p>
-    pub fn permission_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the permission group.</p>
-    pub fn set_permission_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_group_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListUsersByPermissionGroupInputBuilder {
         crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupInput {
-                permission_group_id: self.permission_group_id,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupInput {
+            permission_group_id: self.permission_group_id,
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+        })
     }
 }

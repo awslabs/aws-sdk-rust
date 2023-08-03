@@ -93,25 +93,21 @@ impl SynthesizeSpeechInput {
 }
 impl SynthesizeSpeechInput {
     /// Creates a new builder-style object to manufacture [`SynthesizeSpeechInput`](crate::operation::synthesize_speech::SynthesizeSpeechInput).
-    pub fn builder() -> crate::operation::synthesize_speech::builders::SynthesizeSpeechInputBuilder
-    {
+    pub fn builder() -> crate::operation::synthesize_speech::builders::SynthesizeSpeechInputBuilder {
         crate::operation::synthesize_speech::builders::SynthesizeSpeechInputBuilder::default()
     }
 }
 
 /// A builder for [`SynthesizeSpeechInput`](crate::operation::synthesize_speech::SynthesizeSpeechInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SynthesizeSpeechInputBuilder {
     pub(crate) engine: ::std::option::Option<crate::types::Engine>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) lexicon_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) output_format: ::std::option::Option<crate::types::OutputFormat>,
     pub(crate) sample_rate: ::std::option::Option<::std::string::String>,
-    pub(crate) speech_mark_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>,
+    pub(crate) speech_mark_types: ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) text_type: ::std::option::Option<crate::types::TextType>,
     pub(crate) voice_id: ::std::option::Option<crate::types::VoiceId>,
@@ -160,10 +156,7 @@ impl SynthesizeSpeechInputBuilder {
     }
     /// <p>Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
     /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -177,27 +170,19 @@ impl SynthesizeSpeechInputBuilder {
     /// To override the contents of this collection use [`set_lexicon_names`](Self::set_lexicon_names).
     ///
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
-    pub fn lexicon_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lexicon_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lexicon_names.unwrap_or_default();
         v.push(input.into());
         self.lexicon_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
-    pub fn set_lexicon_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_lexicon_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.lexicon_names = input;
         self
     }
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
-    pub fn get_lexicon_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lexicon_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.lexicon_names
     }
     /// <p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
@@ -208,10 +193,7 @@ impl SynthesizeSpeechInputBuilder {
     }
     /// <p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
     /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputFormat>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.output_format = input;
         self
     }
@@ -252,17 +234,12 @@ impl SynthesizeSpeechInputBuilder {
         self
     }
     /// <p>The type of speech marks returned for the input text.</p>
-    pub fn set_speech_mark_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>,
-    ) -> Self {
+    pub fn set_speech_mark_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>) -> Self {
         self.speech_mark_types = input;
         self
     }
     /// <p>The type of speech marks returned for the input text.</p>
-    pub fn get_speech_mark_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>> {
+    pub fn get_speech_mark_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>> {
         &self.speech_mark_types
     }
     /// <p> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. </p>
@@ -310,10 +287,7 @@ impl SynthesizeSpeechInputBuilder {
     /// Consumes the builder and constructs a [`SynthesizeSpeechInput`](crate::operation::synthesize_speech::SynthesizeSpeechInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::synthesize_speech::SynthesizeSpeechInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::synthesize_speech::SynthesizeSpeechInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::synthesize_speech::SynthesizeSpeechInput {
             engine: self.engine,
             language_code: self.language_code,

@@ -12,9 +12,7 @@ pub struct StartQueryPlanningInput {
 }
 impl StartQueryPlanningInput {
     /// <p>A structure containing information about the query plan.</p>
-    pub fn query_planning_context(
-        &self,
-    ) -> ::std::option::Option<&crate::types::QueryPlanningContext> {
+    pub fn query_planning_context(&self) -> ::std::option::Option<&crate::types::QueryPlanningContext> {
         self.query_planning_context.as_ref()
     }
     /// <p>A PartiQL query statement used as an input to the planner service.</p>
@@ -32,8 +30,7 @@ impl ::std::fmt::Debug for StartQueryPlanningInput {
 }
 impl StartQueryPlanningInput {
     /// Creates a new builder-style object to manufacture [`StartQueryPlanningInput`](crate::operation::start_query_planning::StartQueryPlanningInput).
-    pub fn builder(
-    ) -> crate::operation::start_query_planning::builders::StartQueryPlanningInputBuilder {
+    pub fn builder() -> crate::operation::start_query_planning::builders::StartQueryPlanningInputBuilder {
         crate::operation::start_query_planning::builders::StartQueryPlanningInputBuilder::default()
     }
 }
@@ -52,17 +49,12 @@ impl StartQueryPlanningInputBuilder {
         self
     }
     /// <p>A structure containing information about the query plan.</p>
-    pub fn set_query_planning_context(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryPlanningContext>,
-    ) -> Self {
+    pub fn set_query_planning_context(mut self, input: ::std::option::Option<crate::types::QueryPlanningContext>) -> Self {
         self.query_planning_context = input;
         self
     }
     /// <p>A structure containing information about the query plan.</p>
-    pub fn get_query_planning_context(
-        &self,
-    ) -> &::std::option::Option<crate::types::QueryPlanningContext> {
+    pub fn get_query_planning_context(&self) -> &::std::option::Option<crate::types::QueryPlanningContext> {
         &self.query_planning_context
     }
     /// <p>A PartiQL query statement used as an input to the planner service.</p>
@@ -82,16 +74,11 @@ impl StartQueryPlanningInputBuilder {
     /// Consumes the builder and constructs a [`StartQueryPlanningInput`](crate::operation::start_query_planning::StartQueryPlanningInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_query_planning::StartQueryPlanningInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_query_planning::StartQueryPlanningInput {
-                query_planning_context: self.query_planning_context,
-                query_string: self.query_string,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_query_planning::StartQueryPlanningInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_query_planning::StartQueryPlanningInput {
+            query_planning_context: self.query_planning_context,
+            query_string: self.query_string,
+        })
     }
 }
 impl ::std::fmt::Debug for StartQueryPlanningInputBuilder {

@@ -23,18 +23,14 @@ impl ::aws_http::request_id::RequestId for RestoreDbInstanceFromS3Output {
 }
 impl RestoreDbInstanceFromS3Output {
     /// Creates a new builder-style object to manufacture [`RestoreDbInstanceFromS3Output`](crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output).
-    pub fn builder(
-    ) -> crate::operation::restore_db_instance_from_s3::builders::RestoreDbInstanceFromS3OutputBuilder
-    {
+    pub fn builder() -> crate::operation::restore_db_instance_from_s3::builders::RestoreDbInstanceFromS3OutputBuilder {
         crate::operation::restore_db_instance_from_s3::builders::RestoreDbInstanceFromS3OutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreDbInstanceFromS3Output`](crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreDbInstanceFromS3OutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,
@@ -48,10 +44,7 @@ impl RestoreDbInstanceFromS3OutputBuilder {
     }
     /// <p>Contains the details of an Amazon RDS DB instance.</p>
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn set_db_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::DbInstance>,
-    ) -> Self {
+    pub fn set_db_instance(mut self, input: ::std::option::Option<crate::types::DbInstance>) -> Self {
         self.db_instance = input;
         self
     }
@@ -70,9 +63,7 @@ impl RestoreDbInstanceFromS3OutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreDbInstanceFromS3Output`](crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output {
+    pub fn build(self) -> crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output {
         crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output {
             db_instance: self.db_instance,
             _request_id: self._request_id,

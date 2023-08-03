@@ -41,9 +41,7 @@ impl DeleteIdentityPolicyFluentBuilder {
         }
     }
     /// Access the DeleteIdentityPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl DeleteIdentityPolicyFluentBuilder {
             crate::operation::delete_identity_policy::DeleteIdentityPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_identity_policy::DeleteIdentityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_identity_policy::DeleteIdentityPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl DeleteIdentityPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl DeleteIdentityPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_identity_policy::DeleteIdentityPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_identity_policy::DeleteIdentityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_identity_policy::DeleteIdentityPolicyError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl DeleteIdentityPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_identity_policy::DeleteIdentityPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_identity_policy::DeleteIdentityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_identity_policy::DeleteIdentityPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +109,7 @@ impl DeleteIdentityPolicyFluentBuilder {
             crate::operation::delete_identity_policy::DeleteIdentityPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_identity_policy::DeleteIdentityPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_identity_policy::DeleteIdentityPolicyError>,
     > {
         self.customize_middleware().await
     }

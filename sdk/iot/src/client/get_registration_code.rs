@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetRegistrationCodeOutput`](crate::operation::get_registration_code::GetRegistrationCodeOutput) with field(s):
     ///   - [`registration_code(Option<String>)`](crate::operation::get_registration_code::GetRegistrationCodeOutput::registration_code): <p>The CA certificate registration code.</p>
     /// - On failure, responds with [`SdkError<GetRegistrationCodeError>`](crate::operation::get_registration_code::GetRegistrationCodeError)
-    pub fn get_registration_code(
-        &self,
-    ) -> crate::operation::get_registration_code::builders::GetRegistrationCodeFluentBuilder {
-        crate::operation::get_registration_code::builders::GetRegistrationCodeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_registration_code(&self) -> crate::operation::get_registration_code::builders::GetRegistrationCodeFluentBuilder {
+        crate::operation::get_registration_code::builders::GetRegistrationCodeFluentBuilder::new(self.handle.clone())
     }
 }

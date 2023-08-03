@@ -29,9 +29,7 @@ impl GetDataSourceInput {
 
 /// A builder for [`GetDataSourceInput`](crate::operation::get_data_source::GetDataSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataSourceInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl GetDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`GetDataSourceInput`](crate::operation::get_data_source::GetDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_source::GetDataSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_data_source::GetDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_data_source::GetDataSourceInput {
             api_id: self.api_id,
             name: self.name,

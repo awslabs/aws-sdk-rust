@@ -22,16 +22,14 @@ impl ListBusinessReportSchedulesInput {
 }
 impl ListBusinessReportSchedulesInput {
     /// Creates a new builder-style object to manufacture [`ListBusinessReportSchedulesInput`](crate::operation::list_business_report_schedules::ListBusinessReportSchedulesInput).
-    pub fn builder() -> crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesInputBuilder{
+    pub fn builder() -> crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesInputBuilder {
         crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBusinessReportSchedulesInput`](crate::operation::list_business_report_schedules::ListBusinessReportSchedulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBusinessReportSchedulesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -72,11 +70,9 @@ impl ListBusinessReportSchedulesInputBuilder {
         crate::operation::list_business_report_schedules::ListBusinessReportSchedulesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_business_report_schedules::ListBusinessReportSchedulesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_business_report_schedules::ListBusinessReportSchedulesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

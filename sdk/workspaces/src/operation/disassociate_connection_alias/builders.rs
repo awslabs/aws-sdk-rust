@@ -28,7 +28,7 @@ impl DisassociateConnectionAliasInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateConnectionAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasInputBuilder,
+    inner: crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasInputBuilder,
 }
 impl DisassociateConnectionAliasFluentBuilder {
     /// Creates a new `DisassociateConnectionAlias`.
@@ -39,7 +39,7 @@ impl DisassociateConnectionAliasFluentBuilder {
         }
     }
     /// Access the DisassociateConnectionAlias as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DisassociateConnectionAliasFluentBuilder {
             crate::operation::disassociate_connection_alias::DisassociateConnectionAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connection_alias::DisassociateConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connection_alias::DisassociateConnectionAliasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DisassociateConnectionAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DisassociateConnectionAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_connection_alias::DisassociateConnectionAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connection_alias::DisassociateConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connection_alias::DisassociateConnectionAliasError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DisassociateConnectionAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_connection_alias::DisassociateConnectionAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connection_alias::DisassociateConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connection_alias::DisassociateConnectionAliasError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DisassociateConnectionAliasFluentBuilder {
             crate::operation::disassociate_connection_alias::DisassociateConnectionAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connection_alias::DisassociateConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connection_alias::DisassociateConnectionAliasError>,
     > {
         self.customize_middleware().await
     }

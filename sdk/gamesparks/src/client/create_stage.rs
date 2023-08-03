@@ -12,9 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateStageOutput`](crate::operation::create_stage::CreateStageOutput) with field(s):
     ///   - [`stage(Option<StageDetails>)`](crate::operation::create_stage::CreateStageOutput::stage): <p>Properties that describe the stage.</p>
     /// - On failure, responds with [`SdkError<CreateStageError>`](crate::operation::create_stage::CreateStageError)
-    pub fn create_stage(
-        &self,
-    ) -> crate::operation::create_stage::builders::CreateStageFluentBuilder {
+    pub fn create_stage(&self) -> crate::operation::create_stage::builders::CreateStageFluentBuilder {
         crate::operation::create_stage::builders::CreateStageFluentBuilder::new(self.handle.clone())
     }
 }

@@ -31,9 +31,7 @@ impl RegionOfInterest {
 
 /// A builder for [`RegionOfInterest`](crate::types::RegionOfInterest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegionOfInterestBuilder {
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     pub(crate) polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
@@ -45,10 +43,7 @@ impl RegionOfInterestBuilder {
         self
     }
     /// <p>The box representing a region of interest on screen.</p>
-    pub fn set_bounding_box(
-        mut self,
-        input: ::std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
+    pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
         self.bounding_box = input;
         self
     }
@@ -68,10 +63,7 @@ impl RegionOfInterestBuilder {
         self
     }
     /// <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest. </p>
-    pub fn set_polygon(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
-    ) -> Self {
+    pub fn set_polygon(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Point>>) -> Self {
         self.polygon = input;
         self
     }

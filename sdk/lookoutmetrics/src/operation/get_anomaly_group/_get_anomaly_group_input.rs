@@ -29,27 +29,19 @@ impl GetAnomalyGroupInput {
 
 /// A builder for [`GetAnomalyGroupInput`](crate::operation::get_anomaly_group::GetAnomalyGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAnomalyGroupInputBuilder {
     pub(crate) anomaly_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetAnomalyGroupInputBuilder {
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn set_anomaly_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_group_id = input;
         self
     }
@@ -58,18 +50,12 @@ impl GetAnomalyGroupInputBuilder {
         &self.anomaly_group_id
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_detector_arn = input;
         self
     }
@@ -80,10 +66,7 @@ impl GetAnomalyGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetAnomalyGroupInput`](crate::operation::get_anomaly_group::GetAnomalyGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_anomaly_group::GetAnomalyGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_anomaly_group::GetAnomalyGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_anomaly_group::GetAnomalyGroupInput {
             anomaly_group_id: self.anomaly_group_id,
             anomaly_detector_arn: self.anomaly_detector_arn,

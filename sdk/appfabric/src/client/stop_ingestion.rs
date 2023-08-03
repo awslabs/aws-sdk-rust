@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`app_bundle_identifier(impl ::std::convert::Into<String>)`](crate::operation::stop_ingestion::builders::StopIngestionFluentBuilder::app_bundle_identifier) / [`set_app_bundle_identifier(Option<String>)`](crate::operation::stop_ingestion::builders::StopIngestionFluentBuilder::set_app_bundle_identifier): <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     /// - On success, responds with [`StopIngestionOutput`](crate::operation::stop_ingestion::StopIngestionOutput)
     /// - On failure, responds with [`SdkError<StopIngestionError>`](crate::operation::stop_ingestion::StopIngestionError)
-    pub fn stop_ingestion(
-        &self,
-    ) -> crate::operation::stop_ingestion::builders::StopIngestionFluentBuilder {
-        crate::operation::stop_ingestion::builders::StopIngestionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_ingestion(&self) -> crate::operation::stop_ingestion::builders::StopIngestionFluentBuilder {
+        crate::operation::stop_ingestion::builders::StopIngestionFluentBuilder::new(self.handle.clone())
     }
 }

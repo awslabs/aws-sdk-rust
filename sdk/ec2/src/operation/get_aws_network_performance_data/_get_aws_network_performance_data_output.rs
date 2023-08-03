@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetAwsNetworkPerformanceDataOutput {
 }
 impl GetAwsNetworkPerformanceDataOutput {
     /// Creates a new builder-style object to manufacture [`GetAwsNetworkPerformanceDataOutput`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput).
-    pub fn builder() -> crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataOutputBuilder{
+    pub fn builder() -> crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataOutputBuilder {
         crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAwsNetworkPerformanceDataOutput`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAwsNetworkPerformanceDataOutputBuilder {
     pub(crate) data_responses: ::std::option::Option<::std::vec::Vec<crate::types::DataResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetAwsNetworkPerformanceDataOutputBuilder {
         self
     }
     /// <p>The list of data responses.</p>
-    pub fn set_data_responses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataResponse>>,
-    ) -> Self {
+    pub fn set_data_responses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataResponse>>) -> Self {
         self.data_responses = input;
         self
     }
     /// <p>The list of data responses.</p>
-    pub fn get_data_responses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataResponse>> {
+    pub fn get_data_responses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataResponse>> {
         &self.data_responses
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -93,10 +86,7 @@ impl GetAwsNetworkPerformanceDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAwsNetworkPerformanceDataOutput`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput
-    {
+    pub fn build(self) -> crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput {
         crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput {
             data_responses: self.data_responses,
             next_token: self.next_token,

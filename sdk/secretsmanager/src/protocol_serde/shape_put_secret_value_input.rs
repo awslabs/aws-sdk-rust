@@ -10,9 +10,7 @@ pub fn ser_put_secret_value_input(
         object.key("ClientRequestToken").string(var_2.as_str());
     }
     if let Some(var_3) = &input.secret_binary {
-        object
-            .key("SecretBinary")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_3));
+        object.key("SecretBinary").string_unchecked(&::aws_smithy_types::base64::encode(var_3));
     }
     if let Some(var_4) = &input.secret_string {
         object.key("SecretString").string(var_4.as_str());

@@ -51,17 +51,14 @@ impl ::aws_http::request_id::RequestId for ListHostedZonesOutput {
 }
 impl ListHostedZonesOutput {
     /// Creates a new builder-style object to manufacture [`ListHostedZonesOutput`](crate::operation::list_hosted_zones::ListHostedZonesOutput).
-    pub fn builder() -> crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder {
         crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListHostedZonesOutput`](crate::operation::list_hosted_zones::ListHostedZonesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHostedZonesOutputBuilder {
     pub(crate) hosted_zones: ::std::option::Option<::std::vec::Vec<crate::types::HostedZone>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -83,17 +80,12 @@ impl ListHostedZonesOutputBuilder {
         self
     }
     /// <p>A complex type that contains general information about the hosted zone.</p>
-    pub fn set_hosted_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HostedZone>>,
-    ) -> Self {
+    pub fn set_hosted_zones(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HostedZone>>) -> Self {
         self.hosted_zones = input;
         self
     }
     /// <p>A complex type that contains general information about the hosted zone.</p>
-    pub fn get_hosted_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HostedZone>> {
+    pub fn get_hosted_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HostedZone>> {
         &self.hosted_zones
     }
     /// <p>For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>

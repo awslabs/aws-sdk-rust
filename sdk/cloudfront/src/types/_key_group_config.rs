@@ -38,9 +38,7 @@ impl KeyGroupConfig {
 
 /// A builder for [`KeyGroupConfig`](crate::types::KeyGroupConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyGroupConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -73,10 +71,7 @@ impl KeyGroupConfigBuilder {
         self
     }
     /// <p>A list of the identifiers of the public keys in the key group.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.items = input;
         self
     }

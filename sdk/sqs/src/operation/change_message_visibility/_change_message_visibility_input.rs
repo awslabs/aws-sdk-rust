@@ -31,18 +31,14 @@ impl ChangeMessageVisibilityInput {
 }
 impl ChangeMessageVisibilityInput {
     /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityInput`](crate::operation::change_message_visibility::ChangeMessageVisibilityInput).
-    pub fn builder(
-    ) -> crate::operation::change_message_visibility::builders::ChangeMessageVisibilityInputBuilder
-    {
+    pub fn builder() -> crate::operation::change_message_visibility::builders::ChangeMessageVisibilityInputBuilder {
         crate::operation::change_message_visibility::builders::ChangeMessageVisibilityInputBuilder::default()
     }
 }
 
 /// A builder for [`ChangeMessageVisibilityInput`](crate::operation::change_message_visibility::ChangeMessageVisibilityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeMessageVisibilityInputBuilder {
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) receipt_handle: ::std::option::Option<::std::string::String>,
@@ -67,18 +63,12 @@ impl ChangeMessageVisibilityInputBuilder {
         &self.queue_url
     }
     /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
-    pub fn receipt_handle(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn receipt_handle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.receipt_handle = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
-    pub fn set_receipt_handle(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_receipt_handle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.receipt_handle = input;
         self
     }
@@ -107,12 +97,10 @@ impl ChangeMessageVisibilityInputBuilder {
         crate::operation::change_message_visibility::ChangeMessageVisibilityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::change_message_visibility::ChangeMessageVisibilityInput {
-                queue_url: self.queue_url,
-                receipt_handle: self.receipt_handle,
-                visibility_timeout: self.visibility_timeout,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::change_message_visibility::ChangeMessageVisibilityInput {
+            queue_url: self.queue_url,
+            receipt_handle: self.receipt_handle,
+            visibility_timeout: self.visibility_timeout,
+        })
     }
 }

@@ -22,16 +22,15 @@ impl DisassociateMulticastGroupFromFuotaTaskInput {
 }
 impl DisassociateMulticastGroupFromFuotaTaskInput {
     /// Creates a new builder-style object to manufacture [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskInput).
-    pub fn builder() -> crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskInputBuilder
+    {
         crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateMulticastGroupFromFuotaTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) multicast_group_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +51,12 @@ impl DisassociateMulticastGroupFromFuotaTaskInputBuilder {
         &self.id
     }
     /// <p>The ID of the multicast group.</p>
-    pub fn multicast_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multicast_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multicast_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the multicast group.</p>
-    pub fn set_multicast_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_multicast_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.multicast_group_id = input;
         self
     }
@@ -72,14 +65,17 @@ impl DisassociateMulticastGroupFromFuotaTaskInputBuilder {
         &self.multicast_group_id
     }
     /// Consumes the builder and constructs a [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskInput {
-                id: self.id
-                ,
-                multicast_group_id: self.multicast_group_id
-                ,
-            }
+                id: self.id,
+                multicast_group_id: self.multicast_group_id,
+            },
         )
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateSecurityKeyOutput`](crate::operation::associate_security_key::AssociateSecurityKeyOutput) with field(s):
     ///   - [`association_id(Option<String>)`](crate::operation::associate_security_key::AssociateSecurityKeyOutput::association_id): <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     /// - On failure, responds with [`SdkError<AssociateSecurityKeyError>`](crate::operation::associate_security_key::AssociateSecurityKeyError)
-    pub fn associate_security_key(
-        &self,
-    ) -> crate::operation::associate_security_key::builders::AssociateSecurityKeyFluentBuilder {
-        crate::operation::associate_security_key::builders::AssociateSecurityKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_security_key(&self) -> crate::operation::associate_security_key::builders::AssociateSecurityKeyFluentBuilder {
+        crate::operation::associate_security_key::builders::AssociateSecurityKeyFluentBuilder::new(self.handle.clone())
     }
 }

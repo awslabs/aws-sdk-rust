@@ -54,10 +54,7 @@ pub fn ser_create_fleet_input(
     if let Some(var_15) = &input.domain_join_info {
         #[allow(unused_mut)]
         let mut object_16 = object.key("DomainJoinInfo").start_object();
-        crate::protocol_serde::shape_domain_join_info::ser_domain_join_info(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_domain_join_info::ser_domain_join_info(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.tags {

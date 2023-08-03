@@ -5,16 +5,16 @@ pub use crate::operation::get_service_linked_role_deletion_status::_get_service_
 
 impl GetServiceLinkedRoleDeletionStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_service_linked_role_deletion_status();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetServiceLinkedRoleDeletionStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceLinkedRoleDeletionStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusInputBuilder,
+    inner: crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusInputBuilder,
 }
 impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
     /// Creates a new `GetServiceLinkedRoleDeletionStatus`.
@@ -37,15 +37,20 @@ impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
         }
     }
     /// Access the GetServiceLinkedRoleDeletionStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/
@@ -102,10 +117,7 @@ impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
     /// <task-uuid></task-uuid>
     /// </role-name>
     /// </service-principal-name></code>.</p>
-    pub fn deletion_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deletion_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deletion_task_id(input.into());
         self
     }
@@ -117,10 +129,7 @@ impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
     /// <task-uuid></task-uuid>
     /// </role-name>
     /// </service-principal-name></code>.</p>
-    pub fn set_deletion_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deletion_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deletion_task_id(input);
         self
     }

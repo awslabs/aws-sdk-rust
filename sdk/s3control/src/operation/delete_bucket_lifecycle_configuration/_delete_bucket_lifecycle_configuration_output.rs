@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteBucketLifecycleConfigurationOut
 }
 impl DeleteBucketLifecycleConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketLifecycleConfigurationOutput`](crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_bucket_lifecycle_configuration::builders::DeleteBucketLifecycleConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_bucket_lifecycle_configuration::builders::DeleteBucketLifecycleConfigurationOutputBuilder {
         crate::operation::delete_bucket_lifecycle_configuration::builders::DeleteBucketLifecycleConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBucketLifecycleConfigurationOutput`](crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBucketLifecycleConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteBucketLifecycleConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteBucketLifecycleConfigurationOutput`](crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationOutput{
+    pub fn build(self) -> crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationOutput {
         crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationOutput {
             _request_id: self._request_id,
         }

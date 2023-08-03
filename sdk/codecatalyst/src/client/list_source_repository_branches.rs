@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     ///   - [`items(Option<Vec<ListSourceRepositoryBranchesItem>>)`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput::items): <p>Information about the source branches.</p>
     /// - On failure, responds with [`SdkError<ListSourceRepositoryBranchesError>`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesError)
-    pub fn list_source_repository_branches(&self) -> crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesFluentBuilder{
+    pub fn list_source_repository_branches(
+        &self,
+    ) -> crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesFluentBuilder {
         crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesFluentBuilder::new(self.handle.clone())
     }
 }

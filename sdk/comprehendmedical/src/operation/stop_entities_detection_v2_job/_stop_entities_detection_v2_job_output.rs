@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StopEntitiesDetectionV2JobOutput {
 }
 impl StopEntitiesDetectionV2JobOutput {
     /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionV2JobOutput`](crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobOutput).
-    pub fn builder() -> crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobOutputBuilder{
+    pub fn builder() -> crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobOutputBuilder {
         crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopEntitiesDetectionV2JobOutput`](crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopEntitiesDetectionV2JobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl StopEntitiesDetectionV2JobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopEntitiesDetectionV2JobOutput`](crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobOutput {
+    pub fn build(self) -> crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobOutput {
         crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobOutput {
             job_id: self.job_id,
             _request_id: self._request_id,

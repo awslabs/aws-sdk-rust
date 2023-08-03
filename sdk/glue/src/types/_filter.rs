@@ -44,9 +44,7 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -80,10 +78,7 @@ impl FilterBuilder {
         self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
@@ -97,17 +92,12 @@ impl FilterBuilder {
         self
     }
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
-    pub fn set_logical_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterLogicalOperator>,
-    ) -> Self {
+    pub fn set_logical_operator(mut self, input: ::std::option::Option<crate::types::FilterLogicalOperator>) -> Self {
         self.logical_operator = input;
         self
     }
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
-    pub fn get_logical_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilterLogicalOperator> {
+    pub fn get_logical_operator(&self) -> &::std::option::Option<crate::types::FilterLogicalOperator> {
         &self.logical_operator
     }
     /// Appends an item to `filters`.
@@ -122,17 +112,12 @@ impl FilterBuilder {
         self
     }
     /// <p>Specifies a filter expression.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Specifies a filter expression.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).

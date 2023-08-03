@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeCodeCoveragesOutput {
 }
 impl DescribeCodeCoveragesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCodeCoveragesOutput`](crate::operation::describe_code_coverages::DescribeCodeCoveragesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesOutputBuilder {
         crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCodeCoveragesOutput`](crate::operation::describe_code_coverages::DescribeCodeCoveragesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCodeCoveragesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) code_coverages: ::std::option::Option<::std::vec::Vec<crate::types::CodeCoverage>>,
@@ -72,17 +68,12 @@ impl DescribeCodeCoveragesOutputBuilder {
         self
     }
     /// <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
-    pub fn set_code_coverages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeCoverage>>,
-    ) -> Self {
+    pub fn set_code_coverages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeCoverage>>) -> Self {
         self.code_coverages = input;
         self
     }
     /// <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
-    pub fn get_code_coverages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeCoverage>> {
+    pub fn get_code_coverages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeCoverage>> {
         &self.code_coverages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

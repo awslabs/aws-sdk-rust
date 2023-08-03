@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`session_id(impl ::std::convert::Into<String>)`](crate::operation::delete_utterances::builders::DeleteUtterancesFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::delete_utterances::builders::DeleteUtterancesFluentBuilder::set_session_id): <p>The unique identifier of the session with the user. The ID is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
     /// - On success, responds with [`DeleteUtterancesOutput`](crate::operation::delete_utterances::DeleteUtterancesOutput)
     /// - On failure, responds with [`SdkError<DeleteUtterancesError>`](crate::operation::delete_utterances::DeleteUtterancesError)
-    pub fn delete_utterances(
-        &self,
-    ) -> crate::operation::delete_utterances::builders::DeleteUtterancesFluentBuilder {
-        crate::operation::delete_utterances::builders::DeleteUtterancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_utterances(&self) -> crate::operation::delete_utterances::builders::DeleteUtterancesFluentBuilder {
+        crate::operation::delete_utterances::builders::DeleteUtterancesFluentBuilder::new(self.handle.clone())
     }
 }

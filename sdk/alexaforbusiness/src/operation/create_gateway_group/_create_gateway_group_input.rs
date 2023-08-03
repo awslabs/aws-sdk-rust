@@ -36,17 +36,14 @@ impl CreateGatewayGroupInput {
 }
 impl CreateGatewayGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateGatewayGroupInput`](crate::operation::create_gateway_group::CreateGatewayGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_gateway_group::builders::CreateGatewayGroupInputBuilder {
+    pub fn builder() -> crate::operation::create_gateway_group::builders::CreateGatewayGroupInputBuilder {
         crate::operation::create_gateway_group::builders::CreateGatewayGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGatewayGroupInput`](crate::operation::create_gateway_group::CreateGatewayGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGatewayGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -83,18 +80,12 @@ impl CreateGatewayGroupInputBuilder {
         &self.description
     }
     /// <p> A unique, user-specified identifier for the request that ensures idempotency.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A unique, user-specified identifier for the request that ensures idempotency.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -114,10 +105,7 @@ impl CreateGatewayGroupInputBuilder {
         self
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -128,17 +116,12 @@ impl CreateGatewayGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateGatewayGroupInput`](crate::operation::create_gateway_group::CreateGatewayGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_gateway_group::CreateGatewayGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_gateway_group::CreateGatewayGroupInput {
-                name: self.name,
-                description: self.description,
-                client_request_token: self.client_request_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_gateway_group::CreateGatewayGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_gateway_group::CreateGatewayGroupInput {
+            name: self.name,
+            description: self.description,
+            client_request_token: self.client_request_token,
+            tags: self.tags,
+        })
     }
 }

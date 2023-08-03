@@ -27,35 +27,27 @@ impl ::std::fmt::Display for InvalidLifecycleEventHookExecutionIdException {
     }
 }
 impl ::std::error::Error for InvalidLifecycleEventHookExecutionIdException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidLifecycleEventHookExecutionIdException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidLifecycleEventHookExecutionIdException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidLifecycleEventHookExecutionIdException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidLifecycleEventHookExecutionIdException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidLifecycleEventHookExecutionIdException {
     /// Creates a new builder-style object to manufacture [`InvalidLifecycleEventHookExecutionIdException`](crate::types::error::InvalidLifecycleEventHookExecutionIdException).
-    pub fn builder(
-    ) -> crate::types::error::builders::InvalidLifecycleEventHookExecutionIdExceptionBuilder {
-        crate::types::error::builders::InvalidLifecycleEventHookExecutionIdExceptionBuilder::default(
-        )
+    pub fn builder() -> crate::types::error::builders::InvalidLifecycleEventHookExecutionIdExceptionBuilder {
+        crate::types::error::builders::InvalidLifecycleEventHookExecutionIdExceptionBuilder::default()
     }
 }
 
 /// A builder for [`InvalidLifecycleEventHookExecutionIdException`](crate::types::error::InvalidLifecycleEventHookExecutionIdException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidLifecycleEventHookExecutionIdExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,10 +74,7 @@ impl InvalidLifecycleEventHookExecutionIdExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

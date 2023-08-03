@@ -2,8 +2,7 @@
 pub fn ser_get_object_headers(
     input: &crate::operation::get_object::GetObjectInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.range {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_get_object_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "range",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Range", header_value);
@@ -26,16 +22,10 @@ pub fn ser_get_object_headers(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_object_op_response(
     op_response: &mut ::aws_smithy_http::operation::Response,
-) -> ::std::result::Result<
-    crate::operation::get_object::GetObjectOutput,
-    crate::operation::get_object::GetObjectError,
-> {
+) -> ::std::result::Result<crate::operation::get_object::GetObjectOutput, crate::operation::get_object::GetObjectError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
-    crate::protocol_serde::shape_get_object::de_get_object_http_response_with_props(
-        response,
-        &properties,
-    )
+    crate::protocol_serde::shape_get_object::de_get_object_http_response_with_props(response, &properties)
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -43,81 +33,65 @@ pub fn de_get_object_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_object::GetObjectOutput,
-    crate::operation::get_object::GetObjectError,
-> {
+) -> std::result::Result<crate::operation::get_object::GetObjectOutput, crate::operation::get_object::GetObjectError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_object::GetObjectError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_object::GetObjectError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::get_object::GetObjectError::unhandled(
-                generic,
-            ))
-        }
+        None => return Err(crate::operation::get_object::GetObjectError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ContainerNotFoundException" => {
-            crate::operation::get_object::GetObjectError::ContainerNotFoundException({
+        "ContainerNotFoundException" => crate::operation::get_object::GetObjectError::ContainerNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ContainerNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_container_not_found_exception::de_container_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_object::GetObjectError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalServerError" => {
-            crate::operation::get_object::GetObjectError::InternalServerError({
+                let mut output = crate::types::error::builders::ContainerNotFoundExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_container_not_found_exception::de_container_not_found_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_object::GetObjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServerError" => crate::operation::get_object::GetObjectError::InternalServerError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalServerErrorBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output).map_err(crate::operation::get_object::GetObjectError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ObjectNotFoundException" => {
-            crate::operation::get_object::GetObjectError::ObjectNotFoundException({
+                let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output)
+                    .map_err(crate::operation::get_object::GetObjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ObjectNotFoundException" => crate::operation::get_object::GetObjectError::ObjectNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ObjectNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_object_not_found_exception::de_object_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_object::GetObjectError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::ObjectNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_object_not_found_exception::de_object_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_object::GetObjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "RequestedRangeNotSatisfiableException" => {
             crate::operation::get_object::GetObjectError::RequestedRangeNotSatisfiableException({
                 #[allow(unused_mut)]
@@ -143,10 +117,7 @@ pub fn de_get_object_http_error(
 pub fn de_get_object_http_response_with_props(
     response: &mut ::http::Response<::aws_smithy_http::body::SdkBody>,
     properties: &::aws_smithy_http::property_bag::PropertyBag,
-) -> std::result::Result<
-    crate::operation::get_object::GetObjectOutput,
-    crate::operation::get_object::GetObjectError,
-> {
+) -> std::result::Result<crate::operation::get_object::GetObjectOutput, crate::operation::get_object::GetObjectError> {
     let mut _response_body = ::aws_smithy_http::body::SdkBody::taken();
     std::mem::swap(&mut _response_body, response.body_mut());
     let _response_body = &mut _response_body;
@@ -156,71 +127,33 @@ pub fn de_get_object_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_object::builders::GetObjectOutputBuilder::default();
-        output = output.set_body(Some(
-            crate::protocol_serde::shape_get_object_output::de_body_payload(_response_body)?,
-        ));
+        output = output.set_body(Some(crate::protocol_serde::shape_get_object_output::de_body_payload(_response_body)?));
         output = output.set_cache_control(
-            crate::protocol_serde::shape_get_object_output::de_cache_control_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::get_object::GetObjectError::unhandled(
-                    "Failed to parse CacheControl from header `Cache-Control",
-                )
-            })?,
+            crate::protocol_serde::shape_get_object_output::de_cache_control_header(_response_headers)
+                .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse CacheControl from header `Cache-Control"))?,
         );
         output = output.set_content_length(
-            crate::protocol_serde::shape_get_object_output::de_content_length_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::get_object::GetObjectError::unhandled(
-                    "Failed to parse ContentLength from header `Content-Length",
-                )
-            })?,
+            crate::protocol_serde::shape_get_object_output::de_content_length_header(_response_headers)
+                .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse ContentLength from header `Content-Length"))?,
         );
         output = output.set_content_range(
-            crate::protocol_serde::shape_get_object_output::de_content_range_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::get_object::GetObjectError::unhandled(
-                    "Failed to parse ContentRange from header `Content-Range",
-                )
-            })?,
+            crate::protocol_serde::shape_get_object_output::de_content_range_header(_response_headers)
+                .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse ContentRange from header `Content-Range"))?,
         );
         output = output.set_content_type(
-            crate::protocol_serde::shape_get_object_output::de_content_type_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::get_object::GetObjectError::unhandled(
-                    "Failed to parse ContentType from header `Content-Type",
-                )
-            })?,
+            crate::protocol_serde::shape_get_object_output::de_content_type_header(_response_headers)
+                .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse ContentType from header `Content-Type"))?,
         );
         output = output.set_e_tag(
             crate::protocol_serde::shape_get_object_output::de_e_tag_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::get_object::GetObjectError::unhandled(
-                        "Failed to parse ETag from header `ETag",
-                    )
-                })?,
+                .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse ETag from header `ETag"))?,
         );
         output = output.set_last_modified(
-            crate::protocol_serde::shape_get_object_output::de_last_modified_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::get_object::GetObjectError::unhandled(
-                    "Failed to parse LastModified from header `Last-Modified",
-                )
-            })?,
+            crate::protocol_serde::shape_get_object_output::de_last_modified_header(_response_headers)
+                .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse LastModified from header `Last-Modified"))?,
         );
         output = output.set_status_code(Some(_response_status as _));
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

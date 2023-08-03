@@ -23,9 +23,7 @@ impl DataStorage {
 
 /// A builder for [`DataStorage`](crate::types::DataStorage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataStorageBuilder {
     pub(crate) cw_log: ::std::option::Option<crate::types::CwLog>,
 }
@@ -46,8 +44,6 @@ impl DataStorageBuilder {
     }
     /// Consumes the builder and constructs a [`DataStorage`](crate::types::DataStorage).
     pub fn build(self) -> crate::types::DataStorage {
-        crate::types::DataStorage {
-            cw_log: self.cw_log,
-        }
+        crate::types::DataStorage { cw_log: self.cw_log }
     }
 }

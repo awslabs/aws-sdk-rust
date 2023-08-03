@@ -20,10 +20,7 @@ pub fn ser_get_trace_summaries_input(
     if let Some(var_5) = &input.sampling_strategy {
         #[allow(unused_mut)]
         let mut object_6 = object.key("SamplingStrategy").start_object();
-        crate::protocol_serde::shape_sampling_strategy::ser_sampling_strategy(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_sampling_strategy::ser_sampling_strategy(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.start_time {

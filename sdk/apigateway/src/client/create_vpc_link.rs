@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::create_vpc_link::CreateVpcLinkOutput::status_message): <p>A description about the VPC link status.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_vpc_link::CreateVpcLinkOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On failure, responds with [`SdkError<CreateVpcLinkError>`](crate::operation::create_vpc_link::CreateVpcLinkError)
-    pub fn create_vpc_link(
-        &self,
-    ) -> crate::operation::create_vpc_link::builders::CreateVpcLinkFluentBuilder {
-        crate::operation::create_vpc_link::builders::CreateVpcLinkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_vpc_link(&self) -> crate::operation::create_vpc_link::builders::CreateVpcLinkFluentBuilder {
+        crate::operation::create_vpc_link::builders::CreateVpcLinkFluentBuilder::new(self.handle.clone())
     }
 }

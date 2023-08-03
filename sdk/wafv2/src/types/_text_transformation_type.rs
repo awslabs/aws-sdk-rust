@@ -57,13 +57,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TextTransformationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -135,9 +129,7 @@ impl ::std::convert::From<&str> for TextTransformationType {
             "URL_DECODE" => TextTransformationType::UrlDecode,
             "URL_DECODE_UNI" => TextTransformationType::UrlDecodeUni,
             "UTF8_TO_UNICODE" => TextTransformationType::Utf8ToUnicode,
-            other => TextTransformationType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TextTransformationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

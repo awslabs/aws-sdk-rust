@@ -37,9 +37,7 @@ impl S3BucketConfiguration {
 
 /// A builder for [`S3BucketConfiguration`](crate::types::S3BucketConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3BucketConfigurationBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_prefix: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl S3BucketConfigurationBuilder {
         &self.bucket_name
     }
     /// <p>The prefix of the Amazon S3 bucket that the generated snapshots are stored in.</p>
-    pub fn bucket_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix of the Amazon S3 bucket that the generated snapshots are stored in.</p>
-    pub fn set_bucket_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_prefix = input;
         self
     }
@@ -81,18 +73,12 @@ impl S3BucketConfigurationBuilder {
         &self.bucket_prefix
     }
     /// <p>The region that the Amazon S3 bucket is located in. The bucket must be located in the same region that the <code>StartDashboardSnapshotJob</code> API call is made.</p>
-    pub fn bucket_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The region that the Amazon S3 bucket is located in. The bucket must be located in the same region that the <code>StartDashboardSnapshotJob</code> API call is made.</p>
-    pub fn set_bucket_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_region = input;
         self
     }

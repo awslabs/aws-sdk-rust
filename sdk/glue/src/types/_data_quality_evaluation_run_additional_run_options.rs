@@ -23,17 +23,14 @@ impl DataQualityEvaluationRunAdditionalRunOptions {
 }
 impl DataQualityEvaluationRunAdditionalRunOptions {
     /// Creates a new builder-style object to manufacture [`DataQualityEvaluationRunAdditionalRunOptions`](crate::types::DataQualityEvaluationRunAdditionalRunOptions).
-    pub fn builder() -> crate::types::builders::DataQualityEvaluationRunAdditionalRunOptionsBuilder
-    {
+    pub fn builder() -> crate::types::builders::DataQualityEvaluationRunAdditionalRunOptionsBuilder {
         crate::types::builders::DataQualityEvaluationRunAdditionalRunOptionsBuilder::default()
     }
 }
 
 /// A builder for [`DataQualityEvaluationRunAdditionalRunOptions`](crate::types::DataQualityEvaluationRunAdditionalRunOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataQualityEvaluationRunAdditionalRunOptionsBuilder {
     pub(crate) cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     pub(crate) results_s3_prefix: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ impl DataQualityEvaluationRunAdditionalRunOptionsBuilder {
         &self.cloud_watch_metrics_enabled
     }
     /// <p>Prefix for Amazon S3 to store results.</p>
-    pub fn results_s3_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn results_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.results_s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Prefix for Amazon S3 to store results.</p>
-    pub fn set_results_s3_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_results_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.results_s3_prefix = input;
         self
     }

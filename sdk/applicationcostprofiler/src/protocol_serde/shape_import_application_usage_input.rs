@@ -6,10 +6,7 @@ pub fn ser_import_application_usage_input(
     if let Some(var_1) = &input.source_s3_location {
         #[allow(unused_mut)]
         let mut object_2 = object.key("sourceS3Location").start_object();
-        crate::protocol_serde::shape_source_s3_location::ser_source_s3_location(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_source_s3_location::ser_source_s3_location(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

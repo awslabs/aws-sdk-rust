@@ -23,7 +23,7 @@ impl super::Client {
     ///   - [`cutoff_behavior(Option<MaintenanceWindowTaskCutoffBehavior>)`](crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput::cutoff_behavior): <p>The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently running task invocations continue, but no new task invocations are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
     ///   - [`alarm_configuration(Option<AlarmConfiguration>)`](crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput::alarm_configuration): <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
     /// - On failure, responds with [`SdkError<GetMaintenanceWindowTaskError>`](crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError)
-    pub fn get_maintenance_window_task(&self) -> crate::operation::get_maintenance_window_task::builders::GetMaintenanceWindowTaskFluentBuilder{
+    pub fn get_maintenance_window_task(&self) -> crate::operation::get_maintenance_window_task::builders::GetMaintenanceWindowTaskFluentBuilder {
         crate::operation::get_maintenance_window_task::builders::GetMaintenanceWindowTaskFluentBuilder::new(self.handle.clone())
     }
 }

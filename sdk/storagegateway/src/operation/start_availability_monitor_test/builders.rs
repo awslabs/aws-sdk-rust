@@ -28,7 +28,7 @@ impl StartAvailabilityMonitorTestInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAvailabilityMonitorTestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_availability_monitor_test::builders::StartAvailabilityMonitorTestInputBuilder,
+    inner: crate::operation::start_availability_monitor_test::builders::StartAvailabilityMonitorTestInputBuilder,
 }
 impl StartAvailabilityMonitorTestFluentBuilder {
     /// Creates a new `StartAvailabilityMonitorTest`.
@@ -39,7 +39,7 @@ impl StartAvailabilityMonitorTestFluentBuilder {
         }
     }
     /// Access the StartAvailabilityMonitorTest as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_availability_monitor_test::builders::StartAvailabilityMonitorTestInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_availability_monitor_test::builders::StartAvailabilityMonitorTestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl StartAvailabilityMonitorTestFluentBuilder {
             crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl StartAvailabilityMonitorTestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl StartAvailabilityMonitorTestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl StartAvailabilityMonitorTestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl StartAvailabilityMonitorTestFluentBuilder {
             crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestError>,
     > {
         self.customize_middleware().await
     }

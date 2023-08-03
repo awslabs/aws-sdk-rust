@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`group_id(Option<String>)`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput::group_id): <p>The identifier for a group in the identity store.</p>
     ///   - [`member_id(Option<MemberId>)`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput::member_id): <p>An object containing the identifier of a group member.</p>
     /// - On failure, responds with [`SdkError<DescribeGroupMembershipError>`](crate::operation::describe_group_membership::DescribeGroupMembershipError)
-    pub fn describe_group_membership(
-        &self,
-    ) -> crate::operation::describe_group_membership::builders::DescribeGroupMembershipFluentBuilder
-    {
+    pub fn describe_group_membership(&self) -> crate::operation::describe_group_membership::builders::DescribeGroupMembershipFluentBuilder {
         crate::operation::describe_group_membership::builders::DescribeGroupMembershipFluentBuilder::new(self.handle.clone())
     }
 }

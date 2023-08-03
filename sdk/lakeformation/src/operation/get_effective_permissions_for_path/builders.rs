@@ -5,16 +5,16 @@ pub use crate::operation::get_effective_permissions_for_path::_get_effective_per
 
 impl GetEffectivePermissionsForPathInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_effective_permissions_for_path();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetEffectivePermissionsForPathInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEffectivePermissionsForPathFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathInputBuilder,
+    inner: crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathInputBuilder,
 }
 impl GetEffectivePermissionsForPathFluentBuilder {
     /// Creates a new `GetEffectivePermissionsForPath`.
@@ -37,15 +37,20 @@ impl GetEffectivePermissionsForPathFluentBuilder {
         }
     }
     /// Access the GetEffectivePermissionsForPath as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPath, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPath,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl GetEffectivePermissionsForPathFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl GetEffectivePermissionsForPathFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPath, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPath,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_effective_permissions_for_path::paginator::GetEffectivePermissionsForPathPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_effective_permissions_for_path::paginator::GetEffectivePermissionsForPathPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_effective_permissions_for_path::paginator::GetEffectivePermissionsForPathPaginator {
         crate::operation::get_effective_permissions_for_path::paginator::GetEffectivePermissionsForPathPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>

@@ -10,10 +10,7 @@ impl DescribeLogStreamsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_log_streams::DescribeLogStreamsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_log_streams::DescribeLogStreamsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_log_streams::DescribeLogStreamsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_log_streams();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DescribeLogStreamsFluentBuilder {
         }
     }
     /// Access the DescribeLogStreams as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_log_streams::builders::DescribeLogStreamsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_log_streams::builders::DescribeLogStreamsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DescribeLogStreamsFluentBuilder {
             crate::operation::describe_log_streams::DescribeLogStreams,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_log_streams::DescribeLogStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_log_streams::DescribeLogStreamsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DescribeLogStreamsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DescribeLogStreamsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_log_streams::DescribeLogStreamsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_log_streams::DescribeLogStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_log_streams::DescribeLogStreamsError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DescribeLogStreamsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_log_streams::DescribeLogStreamsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_log_streams::DescribeLogStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_log_streams::DescribeLogStreamsError>,
     > {
         self.send_middleware().await
     }
@@ -119,40 +105,27 @@ impl DescribeLogStreamsFluentBuilder {
             crate::operation::describe_log_streams::DescribeLogStreams,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_log_streams::DescribeLogStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_log_streams::DescribeLogStreamsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_log_streams::paginator::DescribeLogStreamsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_log_streams::paginator::DescribeLogStreamsPaginator {
-        crate::operation::describe_log_streams::paginator::DescribeLogStreamsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_log_streams::paginator::DescribeLogStreamsPaginator {
+        crate::operation::describe_log_streams::paginator::DescribeLogStreamsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the log group.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
@@ -165,20 +138,14 @@ impl DescribeLogStreamsFluentBuilder {
     /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
-    pub fn log_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_identifier(input.into());
         self
     }
     /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
-    pub fn set_log_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_identifier(input);
         self
     }
@@ -190,19 +157,13 @@ impl DescribeLogStreamsFluentBuilder {
     }
     /// <p>The prefix to match.</p>
     /// <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.</p>
-    pub fn log_stream_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_stream_name_prefix(input.into());
         self
     }
     /// <p>The prefix to match.</p>
     /// <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.</p>
-    pub fn set_log_stream_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_stream_name_prefix(input);
         self
     }

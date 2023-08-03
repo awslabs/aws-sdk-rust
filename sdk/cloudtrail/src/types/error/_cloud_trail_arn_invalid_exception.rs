@@ -21,10 +21,7 @@ impl CloudTrailArnInvalidException {
 }
 impl ::std::fmt::Display for CloudTrailArnInvalidException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "CloudTrailArnInvalidException [CloudTrailARNInvalidException]"
-        )?;
+        ::std::write!(f, "CloudTrailArnInvalidException [CloudTrailARNInvalidException]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -54,9 +51,7 @@ impl CloudTrailArnInvalidException {
 
 /// A builder for [`CloudTrailArnInvalidException`](crate::types::error::CloudTrailArnInvalidException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudTrailArnInvalidExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -83,10 +78,7 @@ impl CloudTrailArnInvalidExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

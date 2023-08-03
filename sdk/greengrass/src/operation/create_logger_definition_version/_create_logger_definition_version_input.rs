@@ -29,16 +29,14 @@ impl CreateLoggerDefinitionVersionInput {
 }
 impl CreateLoggerDefinitionVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateLoggerDefinitionVersionInput`](crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput).
-    pub fn builder() -> crate::operation::create_logger_definition_version::builders::CreateLoggerDefinitionVersionInputBuilder{
+    pub fn builder() -> crate::operation::create_logger_definition_version::builders::CreateLoggerDefinitionVersionInputBuilder {
         crate::operation::create_logger_definition_version::builders::CreateLoggerDefinitionVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLoggerDefinitionVersionInput`](crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLoggerDefinitionVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) logger_definition_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct CreateLoggerDefinitionVersionInputBuilder {
 }
 impl CreateLoggerDefinitionVersionInputBuilder {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amzn_client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amzn_client_token = input;
         self
     }
@@ -66,18 +58,12 @@ impl CreateLoggerDefinitionVersionInputBuilder {
         &self.amzn_client_token
     }
     /// The ID of the logger definition.
-    pub fn logger_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logger_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logger_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the logger definition.
-    pub fn set_logger_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logger_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logger_definition_id = input;
         self
     }
@@ -97,10 +83,7 @@ impl CreateLoggerDefinitionVersionInputBuilder {
         self
     }
     /// A list of loggers.
-    pub fn set_loggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>,
-    ) -> Self {
+    pub fn set_loggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>) -> Self {
         self.loggers = input;
         self
     }
@@ -115,15 +98,10 @@ impl CreateLoggerDefinitionVersionInputBuilder {
         crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput {
-                amzn_client_token: self.amzn_client_token
-                ,
-                logger_definition_id: self.logger_definition_id
-                ,
-                loggers: self.loggers
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput {
+            amzn_client_token: self.amzn_client_token,
+            logger_definition_id: self.logger_definition_id,
+            loggers: self.loggers,
+        })
     }
 }

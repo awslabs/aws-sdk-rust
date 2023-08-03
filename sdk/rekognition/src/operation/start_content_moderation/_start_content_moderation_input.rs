@@ -33,9 +33,7 @@ impl StartContentModerationInput {
         self.client_request_token.as_deref()
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
-    pub fn notification_channel(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationChannel> {
+    pub fn notification_channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
@@ -45,18 +43,14 @@ impl StartContentModerationInput {
 }
 impl StartContentModerationInput {
     /// Creates a new builder-style object to manufacture [`StartContentModerationInput`](crate::operation::start_content_moderation::StartContentModerationInput).
-    pub fn builder(
-    ) -> crate::operation::start_content_moderation::builders::StartContentModerationInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_content_moderation::builders::StartContentModerationInputBuilder {
         crate::operation::start_content_moderation::builders::StartContentModerationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartContentModerationInput`](crate::operation::start_content_moderation::StartContentModerationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartContentModerationInputBuilder {
     pub(crate) video: ::std::option::Option<crate::types::Video>,
     pub(crate) min_confidence: ::std::option::Option<f32>,
@@ -94,18 +88,12 @@ impl StartContentModerationInputBuilder {
         &self.min_confidence
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -119,17 +107,12 @@ impl StartContentModerationInputBuilder {
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
-    pub fn set_notification_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.notification_channel = input;
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
-    pub fn get_notification_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+    pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         &self.notification_channel
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
@@ -149,18 +132,14 @@ impl StartContentModerationInputBuilder {
     /// Consumes the builder and constructs a [`StartContentModerationInput`](crate::operation::start_content_moderation::StartContentModerationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_content_moderation::StartContentModerationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_content_moderation::StartContentModerationInput {
-                video: self.video,
-                min_confidence: self.min_confidence,
-                client_request_token: self.client_request_token,
-                notification_channel: self.notification_channel,
-                job_tag: self.job_tag,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_content_moderation::StartContentModerationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_content_moderation::StartContentModerationInput {
+            video: self.video,
+            min_confidence: self.min_confidence,
+            client_request_token: self.client_request_token,
+            notification_channel: self.notification_channel,
+            job_tag: self.job_tag,
+        })
     }
 }

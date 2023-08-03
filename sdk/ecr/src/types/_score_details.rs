@@ -23,9 +23,7 @@ impl ScoreDetails {
 
 /// A builder for [`ScoreDetails`](crate::types::ScoreDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScoreDetailsBuilder {
     pub(crate) cvss: ::std::option::Option<crate::types::CvssScoreDetails>,
 }
@@ -36,10 +34,7 @@ impl ScoreDetailsBuilder {
         self
     }
     /// <p>An object that contains details about the CVSS score given to a finding.</p>
-    pub fn set_cvss(
-        mut self,
-        input: ::std::option::Option<crate::types::CvssScoreDetails>,
-    ) -> Self {
+    pub fn set_cvss(mut self, input: ::std::option::Option<crate::types::CvssScoreDetails>) -> Self {
         self.cvss = input;
         self
     }

@@ -27,7 +27,7 @@ impl UpdateEventConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEventConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_event_configurations::builders::UpdateEventConfigurationsInputBuilder,
+    inner: crate::operation::update_event_configurations::builders::UpdateEventConfigurationsInputBuilder,
 }
 impl UpdateEventConfigurationsFluentBuilder {
     /// Creates a new `UpdateEventConfigurations`.
@@ -38,7 +38,7 @@ impl UpdateEventConfigurationsFluentBuilder {
         }
     }
     /// Access the UpdateEventConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_event_configurations::builders::UpdateEventConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_event_configurations::builders::UpdateEventConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateEventConfigurationsFluentBuilder {
             crate::operation::update_event_configurations::UpdateEventConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_configurations::UpdateEventConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_configurations::UpdateEventConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateEventConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateEventConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_configurations::UpdateEventConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_configurations::UpdateEventConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_configurations::UpdateEventConfigurationsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateEventConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_configurations::UpdateEventConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_configurations::UpdateEventConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_configurations::UpdateEventConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl UpdateEventConfigurationsFluentBuilder {
             crate::operation::update_event_configurations::UpdateEventConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_configurations::UpdateEventConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_configurations::UpdateEventConfigurationsError>,
     > {
         self.customize_middleware().await
     }
@@ -126,20 +115,14 @@ impl UpdateEventConfigurationsFluentBuilder {
     /// To override the contents of this collection use [`set_event_configurations`](Self::set_event_configurations).
     ///
     /// <p>The new event configuration values.</p>
-    pub fn event_configurations(
-        mut self,
-        k: crate::types::EventType,
-        v: crate::types::Configuration,
-    ) -> Self {
+    pub fn event_configurations(mut self, k: crate::types::EventType, v: crate::types::Configuration) -> Self {
         self.inner = self.inner.event_configurations(k, v);
         self
     }
     /// <p>The new event configuration values.</p>
     pub fn set_event_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
     ) -> Self {
         self.inner = self.inner.set_event_configurations(input);
         self
@@ -147,9 +130,7 @@ impl UpdateEventConfigurationsFluentBuilder {
     /// <p>The new event configuration values.</p>
     pub fn get_event_configurations(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>> {
         self.inner.get_event_configurations()
     }
 }

@@ -27,8 +27,7 @@ pub struct ConfiguredTable {
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
     #[doc(hidden)]
-    pub analysis_rule_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
+    pub analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
     /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
     #[doc(hidden)]
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
@@ -66,9 +65,7 @@ impl ConfiguredTable {
         self.update_time.as_ref()
     }
     /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
-    pub fn analysis_rule_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConfiguredTableAnalysisRuleType]> {
+    pub fn analysis_rule_types(&self) -> ::std::option::Option<&[crate::types::ConfiguredTableAnalysisRuleType]> {
         self.analysis_rule_types.as_deref()
     }
     /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
@@ -89,9 +86,7 @@ impl ConfiguredTable {
 
 /// A builder for [`ConfiguredTable`](crate::types::ConfiguredTable).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfiguredTableBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -100,8 +95,7 @@ pub struct ConfiguredTableBuilder {
     pub(crate) table_reference: ::std::option::Option<crate::types::TableReference>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) analysis_rule_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
+    pub(crate) analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
     pub(crate) analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
     pub(crate) allowed_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -168,10 +162,7 @@ impl ConfiguredTableBuilder {
         self
     }
     /// <p>The Glue table that this configured table represents.</p>
-    pub fn set_table_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::TableReference>,
-    ) -> Self {
+    pub fn set_table_reference(mut self, input: ::std::option::Option<crate::types::TableReference>) -> Self {
         self.table_reference = input;
         self
     }
@@ -185,10 +176,7 @@ impl ConfiguredTableBuilder {
         self
     }
     /// <p>The time the configured table was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -202,10 +190,7 @@ impl ConfiguredTableBuilder {
         self
     }
     /// <p>The time the configured table was last updated</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -218,30 +203,19 @@ impl ConfiguredTableBuilder {
     /// To override the contents of this collection use [`set_analysis_rule_types`](Self::set_analysis_rule_types).
     ///
     /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
-    pub fn analysis_rule_types(
-        mut self,
-        input: crate::types::ConfiguredTableAnalysisRuleType,
-    ) -> Self {
+    pub fn analysis_rule_types(mut self, input: crate::types::ConfiguredTableAnalysisRuleType) -> Self {
         let mut v = self.analysis_rule_types.unwrap_or_default();
         v.push(input);
         self.analysis_rule_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
-    pub fn set_analysis_rule_types(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>,
-        >,
-    ) -> Self {
+    pub fn set_analysis_rule_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>) -> Self {
         self.analysis_rule_types = input;
         self
     }
     /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
-    pub fn get_analysis_rule_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>
-    {
+    pub fn get_analysis_rule_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>> {
         &self.analysis_rule_types
     }
     /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
@@ -250,10 +224,7 @@ impl ConfiguredTableBuilder {
         self
     }
     /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn set_analysis_method(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisMethod>,
-    ) -> Self {
+    pub fn set_analysis_method(mut self, input: ::std::option::Option<crate::types::AnalysisMethod>) -> Self {
         self.analysis_method = input;
         self
     }
@@ -266,27 +237,19 @@ impl ConfiguredTableBuilder {
     /// To override the contents of this collection use [`set_allowed_columns`](Self::set_allowed_columns).
     ///
     /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
-    pub fn allowed_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_columns.unwrap_or_default();
         v.push(input.into());
         self.allowed_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
-    pub fn set_allowed_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_columns = input;
         self
     }
     /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
-    pub fn get_allowed_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_columns
     }
     /// Consumes the builder and constructs a [`ConfiguredTable`](crate::types::ConfiguredTable).

@@ -10,10 +10,7 @@ impl DescribeModelCardInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_model_card::DescribeModelCardOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_card::DescribeModelCardError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_card::DescribeModelCardError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_model_card();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeModelCardFluentBuilder {
         }
     }
     /// Access the DescribeModelCard as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_model_card::builders::DescribeModelCardInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_model_card::builders::DescribeModelCardInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeModelCardFluentBuilder {
             crate::operation::describe_model_card::DescribeModelCard,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_card::DescribeModelCardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_card::DescribeModelCardError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeModelCardFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeModelCardFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_card::DescribeModelCardOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_card::DescribeModelCardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_card::DescribeModelCardError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeModelCardFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_card::DescribeModelCardOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_card::DescribeModelCardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_card::DescribeModelCardError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribeModelCardFluentBuilder {
             crate::operation::describe_model_card::DescribeModelCard,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_card::DescribeModelCardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_card::DescribeModelCardError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the model card to describe.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_card_name(input.into());
         self
     }
     /// <p>The name of the model card to describe.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_card_name(input);
         self
     }

@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`network_interfaces(Option<Vec<NetworkInterface>>)`](crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesOutput::network_interfaces): <p> A list of information about network interfaces. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesOutput::next_token): <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     /// - On failure, responds with [`SdkError<ListDecoderManifestNetworkInterfacesError>`](crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesError)
-    pub fn list_decoder_manifest_network_interfaces(&self) -> crate::operation::list_decoder_manifest_network_interfaces::builders::ListDecoderManifestNetworkInterfacesFluentBuilder{
-        crate::operation::list_decoder_manifest_network_interfaces::builders::ListDecoderManifestNetworkInterfacesFluentBuilder::new(self.handle.clone())
+    pub fn list_decoder_manifest_network_interfaces(
+        &self,
+    ) -> crate::operation::list_decoder_manifest_network_interfaces::builders::ListDecoderManifestNetworkInterfacesFluentBuilder {
+        crate::operation::list_decoder_manifest_network_interfaces::builders::ListDecoderManifestNetworkInterfacesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

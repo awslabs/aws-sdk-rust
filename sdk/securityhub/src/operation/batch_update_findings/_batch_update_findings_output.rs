@@ -5,25 +5,19 @@
 pub struct BatchUpdateFindingsOutput {
     /// <p>The list of findings that were updated successfully.</p>
     #[doc(hidden)]
-    pub processed_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
+    pub processed_findings: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
     /// <p>The list of findings that were not updated.</p>
     #[doc(hidden)]
-    pub unprocessed_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateFindingsUnprocessedFinding>>,
+    pub unprocessed_findings: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateFindingsUnprocessedFinding>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateFindingsOutput {
     /// <p>The list of findings that were updated successfully.</p>
-    pub fn processed_findings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsSecurityFindingIdentifier]> {
+    pub fn processed_findings(&self) -> ::std::option::Option<&[crate::types::AwsSecurityFindingIdentifier]> {
         self.processed_findings.as_deref()
     }
     /// <p>The list of findings that were not updated.</p>
-    pub fn unprocessed_findings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchUpdateFindingsUnprocessedFinding]> {
+    pub fn unprocessed_findings(&self) -> ::std::option::Option<&[crate::types::BatchUpdateFindingsUnprocessedFinding]> {
         self.unprocessed_findings.as_deref()
     }
 }
@@ -34,23 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchUpdateFindingsOutput {
 }
 impl BatchUpdateFindingsOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateFindingsOutput`](crate::operation::batch_update_findings::BatchUpdateFindingsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_findings::builders::BatchUpdateFindingsOutputBuilder {
-        crate::operation::batch_update_findings::builders::BatchUpdateFindingsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_update_findings::builders::BatchUpdateFindingsOutputBuilder {
+        crate::operation::batch_update_findings::builders::BatchUpdateFindingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateFindingsOutput`](crate::operation::batch_update_findings::BatchUpdateFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateFindingsOutputBuilder {
-    pub(crate) processed_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
-    pub(crate) unprocessed_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateFindingsUnprocessedFinding>>,
+    pub(crate) processed_findings: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
+    pub(crate) unprocessed_findings: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateFindingsUnprocessedFinding>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateFindingsOutputBuilder {
@@ -66,17 +54,12 @@ impl BatchUpdateFindingsOutputBuilder {
         self
     }
     /// <p>The list of findings that were updated successfully.</p>
-    pub fn set_processed_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
-    ) -> Self {
+    pub fn set_processed_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>) -> Self {
         self.processed_findings = input;
         self
     }
     /// <p>The list of findings that were updated successfully.</p>
-    pub fn get_processed_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>> {
+    pub fn get_processed_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>> {
         &self.processed_findings
     }
     /// Appends an item to `unprocessed_findings`.
@@ -84,10 +67,7 @@ impl BatchUpdateFindingsOutputBuilder {
     /// To override the contents of this collection use [`set_unprocessed_findings`](Self::set_unprocessed_findings).
     ///
     /// <p>The list of findings that were not updated.</p>
-    pub fn unprocessed_findings(
-        mut self,
-        input: crate::types::BatchUpdateFindingsUnprocessedFinding,
-    ) -> Self {
+    pub fn unprocessed_findings(mut self, input: crate::types::BatchUpdateFindingsUnprocessedFinding) -> Self {
         let mut v = self.unprocessed_findings.unwrap_or_default();
         v.push(input);
         self.unprocessed_findings = ::std::option::Option::Some(v);
@@ -96,18 +76,13 @@ impl BatchUpdateFindingsOutputBuilder {
     /// <p>The list of findings that were not updated.</p>
     pub fn set_unprocessed_findings(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchUpdateFindingsUnprocessedFinding>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateFindingsUnprocessedFinding>>,
     ) -> Self {
         self.unprocessed_findings = input;
         self
     }
     /// <p>The list of findings that were not updated.</p>
-    pub fn get_unprocessed_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateFindingsUnprocessedFinding>>
-    {
+    pub fn get_unprocessed_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateFindingsUnprocessedFinding>> {
         &self.unprocessed_findings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -19,9 +19,7 @@ impl UntagStreamOutput {
 
 /// A builder for [`UntagStreamOutput`](crate::operation::untag_stream::UntagStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagStreamOutputBuilder {
     _request_id: Option<String>,
 }

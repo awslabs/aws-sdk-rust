@@ -9,283 +9,310 @@ pub fn de_modify_replication_group_http_error(
     crate::operation::modify_replication_group::ModifyReplicationGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code =
-        match generic.code() {
-            Some(code) => code,
-            None => return Err(
-                crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled(
-                    generic,
-                ),
-            ),
-        };
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled(
+                generic,
+            ))
+        }
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CacheClusterNotFound" => crate::operation::modify_replication_group::ModifyReplicationGroupError::CacheClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CacheClusterNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cache_cluster_not_found_fault::de_cache_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CacheClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cache_cluster_not_found_fault::de_cache_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "CacheParameterGroupNotFound" => crate::operation::modify_replication_group::ModifyReplicationGroupError::CacheParameterGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CacheParameterGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cache_parameter_group_not_found_fault::de_cache_parameter_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CacheParameterGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cache_parameter_group_not_found_fault::de_cache_parameter_group_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "CacheSecurityGroupNotFound" => crate::operation::modify_replication_group::ModifyReplicationGroupError::CacheSecurityGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CacheSecurityGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cache_security_group_not_found_fault::de_cache_security_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CacheSecurityGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cache_security_group_not_found_fault::de_cache_security_group_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InsufficientCacheClusterCapacity" => crate::operation::modify_replication_group::ModifyReplicationGroupError::InsufficientCacheClusterCapacityFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InsufficientCacheClusterCapacity" => {
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::InsufficientCacheClusterCapacityFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientCacheClusterCapacityFaultBuilder::default();
-                    output = crate::protocol_serde::shape_insufficient_cache_cluster_capacity_fault::de_insufficient_cache_cluster_capacity_fault_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_insufficient_cache_cluster_capacity_fault::de_insufficient_cache_cluster_capacity_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidCacheClusterState" => crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidCacheClusterStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidCacheClusterStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_cache_cluster_state_fault::de_invalid_cache_cluster_state_fault_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidCacheClusterStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_cache_cluster_state_fault::de_invalid_cache_cluster_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InvalidCacheSecurityGroupState" => crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidCacheSecurityGroupStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidCacheSecurityGroupState" => {
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidCacheSecurityGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidCacheSecurityGroupStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_cache_security_group_state_fault::de_invalid_cache_security_group_state_fault_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_invalid_cache_security_group_state_fault::de_invalid_cache_security_group_state_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidKMSKeyFault" => crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidKmsKeyFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidKmsKeyFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_kms_key_fault::de_invalid_kms_key_fault_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidKmsKeyFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_kms_key_fault::de_invalid_kms_key_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InvalidParameterCombination" => crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidParameterCombinationException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidParameterCombination" => {
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidParameterCombinationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidParameterValue" => crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidParameterValueException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InvalidReplicationGroupState" => crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidReplicationGroupStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidReplicationGroupState" => {
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidReplicationGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidReplicationGroupStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidUserGroupState" => crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidUserGroupStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidUserGroupStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_user_group_state_fault::de_invalid_user_group_state_fault_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidUserGroupStateFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_user_group_state_fault::de_invalid_user_group_state_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidVPCNetworkStateFault" => crate::operation::modify_replication_group::ModifyReplicationGroupError::InvalidVpcNetworkStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidVpcNetworkStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidVpcNetworkStateFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NodeQuotaForClusterExceeded" => crate::operation::modify_replication_group::ModifyReplicationGroupError::NodeQuotaForClusterExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NodeQuotaForClusterExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_node_quota_for_cluster_exceeded_fault::de_node_quota_for_cluster_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NodeQuotaForClusterExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_node_quota_for_cluster_exceeded_fault::de_node_quota_for_cluster_exceeded_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "NodeQuotaForCustomerExceeded" => crate::operation::modify_replication_group::ModifyReplicationGroupError::NodeQuotaForCustomerExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "NodeQuotaForCustomerExceeded" => {
+            crate::operation::modify_replication_group::ModifyReplicationGroupError::NodeQuotaForCustomerExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NodeQuotaForCustomerExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_node_quota_for_customer_exceeded_fault::de_node_quota_for_customer_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_node_quota_for_customer_exceeded_fault::de_node_quota_for_customer_exceeded_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ReplicationGroupNotFoundFault" => crate::operation::modify_replication_group::ModifyReplicationGroupError::ReplicationGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ReplicationGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ReplicationGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UserGroupNotFound" => crate::operation::modify_replication_group::ModifyReplicationGroupError::UserGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UserGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_user_group_not_found_fault::de_user_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UserGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_user_group_not_found_fault::de_user_group_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::modify_replication_group::ModifyReplicationGroupError::generic(generic)
+        _ => crate::operation::modify_replication_group::ModifyReplicationGroupError::generic(generic),
     })
 }
 
@@ -301,17 +328,9 @@ pub fn de_modify_replication_group_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::modify_replication_group::builders::ModifyReplicationGroupOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_modify_replication_group::de_modify_replication_group(
-                _response_body,
-                output,
-            )
-            .map_err(
-                crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled,
-            )?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_modify_replication_group::de_modify_replication_group(_response_body, output)
+            .map_err(crate::operation::modify_replication_group::ModifyReplicationGroupError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -320,10 +339,7 @@ pub fn de_modify_replication_group_http_response_with_props(
 pub fn de_modify_replication_group(
     inp: &[u8],
     mut builder: crate::operation::modify_replication_group::builders::ModifyReplicationGroupOutputBuilder,
-) -> Result<
-    crate::operation::modify_replication_group::builders::ModifyReplicationGroupOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::modify_replication_group::builders::ModifyReplicationGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -13,9 +13,7 @@ pub struct RouteAnalysisPath {
 }
 impl RouteAnalysisPath {
     /// <p>The status of the analysis at completion.</p>
-    pub fn completion_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RouteAnalysisCompletion> {
+    pub fn completion_status(&self) -> ::std::option::Option<&crate::types::RouteAnalysisCompletion> {
         self.completion_status.as_ref()
     }
     /// <p>The route analysis path.</p>
@@ -32,9 +30,7 @@ impl RouteAnalysisPath {
 
 /// A builder for [`RouteAnalysisPath`](crate::types::RouteAnalysisPath).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteAnalysisPathBuilder {
     pub(crate) completion_status: ::std::option::Option<crate::types::RouteAnalysisCompletion>,
     pub(crate) path: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
@@ -46,17 +42,12 @@ impl RouteAnalysisPathBuilder {
         self
     }
     /// <p>The status of the analysis at completion.</p>
-    pub fn set_completion_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteAnalysisCompletion>,
-    ) -> Self {
+    pub fn set_completion_status(mut self, input: ::std::option::Option<crate::types::RouteAnalysisCompletion>) -> Self {
         self.completion_status = input;
         self
     }
     /// <p>The status of the analysis at completion.</p>
-    pub fn get_completion_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RouteAnalysisCompletion> {
+    pub fn get_completion_status(&self) -> &::std::option::Option<crate::types::RouteAnalysisCompletion> {
         &self.completion_status
     }
     /// Appends an item to `path`.
@@ -71,10 +62,7 @@ impl RouteAnalysisPathBuilder {
         self
     }
     /// <p>The route analysis path.</p>
-    pub fn set_path(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
-    ) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>) -> Self {
         self.path = input;
         self
     }

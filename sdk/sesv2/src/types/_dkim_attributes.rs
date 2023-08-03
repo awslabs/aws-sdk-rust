@@ -67,27 +67,19 @@ impl DkimAttributes {
     /// <li> <p> <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
     /// <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
-    pub fn signing_attributes_origin(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DkimSigningAttributesOrigin> {
+    pub fn signing_attributes_origin(&self) -> ::std::option::Option<&crate::types::DkimSigningAttributesOrigin> {
         self.signing_attributes_origin.as_ref()
     }
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
-    pub fn next_signing_key_length(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DkimSigningKeyLength> {
+    pub fn next_signing_key_length(&self) -> ::std::option::Option<&crate::types::DkimSigningKeyLength> {
         self.next_signing_key_length.as_ref()
     }
     /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
-    pub fn current_signing_key_length(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DkimSigningKeyLength> {
+    pub fn current_signing_key_length(&self) -> ::std::option::Option<&crate::types::DkimSigningKeyLength> {
         self.current_signing_key_length.as_ref()
     }
     /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
-    pub fn last_key_generation_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_key_generation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_key_generation_timestamp.as_ref()
     }
 }
@@ -100,18 +92,14 @@ impl DkimAttributes {
 
 /// A builder for [`DkimAttributes`](crate::types::DkimAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DkimAttributesBuilder {
     pub(crate) signing_enabled: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<crate::types::DkimStatus>,
     pub(crate) tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) signing_attributes_origin:
-        ::std::option::Option<crate::types::DkimSigningAttributesOrigin>,
+    pub(crate) signing_attributes_origin: ::std::option::Option<crate::types::DkimSigningAttributesOrigin>,
     pub(crate) next_signing_key_length: ::std::option::Option<crate::types::DkimSigningKeyLength>,
-    pub(crate) current_signing_key_length:
-        ::std::option::Option<crate::types::DkimSigningKeyLength>,
+    pub(crate) current_signing_key_length: ::std::option::Option<crate::types::DkimSigningKeyLength>,
     pub(crate) last_key_generation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DkimAttributesBuilder {
@@ -180,10 +168,7 @@ impl DkimAttributesBuilder {
     /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
     /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector for the public key.</p>
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
-    pub fn set_tokens(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tokens(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tokens = input;
         self
     }
@@ -198,10 +183,7 @@ impl DkimAttributesBuilder {
     /// <li> <p> <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
     /// <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
-    pub fn signing_attributes_origin(
-        mut self,
-        input: crate::types::DkimSigningAttributesOrigin,
-    ) -> Self {
+    pub fn signing_attributes_origin(mut self, input: crate::types::DkimSigningAttributesOrigin) -> Self {
         self.signing_attributes_origin = ::std::option::Option::Some(input);
         self
     }
@@ -210,10 +192,7 @@ impl DkimAttributesBuilder {
     /// <li> <p> <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
     /// <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
-    pub fn set_signing_attributes_origin(
-        mut self,
-        input: ::std::option::Option<crate::types::DkimSigningAttributesOrigin>,
-    ) -> Self {
+    pub fn set_signing_attributes_origin(mut self, input: ::std::option::Option<crate::types::DkimSigningAttributesOrigin>) -> Self {
         self.signing_attributes_origin = input;
         self
     }
@@ -222,9 +201,7 @@ impl DkimAttributesBuilder {
     /// <li> <p> <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
     /// <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
-    pub fn get_signing_attributes_origin(
-        &self,
-    ) -> &::std::option::Option<crate::types::DkimSigningAttributesOrigin> {
+    pub fn get_signing_attributes_origin(&self) -> &::std::option::Option<crate::types::DkimSigningAttributesOrigin> {
         &self.signing_attributes_origin
     }
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
@@ -233,17 +210,12 @@ impl DkimAttributesBuilder {
         self
     }
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
-    pub fn set_next_signing_key_length(
-        mut self,
-        input: ::std::option::Option<crate::types::DkimSigningKeyLength>,
-    ) -> Self {
+    pub fn set_next_signing_key_length(mut self, input: ::std::option::Option<crate::types::DkimSigningKeyLength>) -> Self {
         self.next_signing_key_length = input;
         self
     }
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
-    pub fn get_next_signing_key_length(
-        &self,
-    ) -> &::std::option::Option<crate::types::DkimSigningKeyLength> {
+    pub fn get_next_signing_key_length(&self) -> &::std::option::Option<crate::types::DkimSigningKeyLength> {
         &self.next_signing_key_length
     }
     /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
@@ -252,17 +224,12 @@ impl DkimAttributesBuilder {
         self
     }
     /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
-    pub fn set_current_signing_key_length(
-        mut self,
-        input: ::std::option::Option<crate::types::DkimSigningKeyLength>,
-    ) -> Self {
+    pub fn set_current_signing_key_length(mut self, input: ::std::option::Option<crate::types::DkimSigningKeyLength>) -> Self {
         self.current_signing_key_length = input;
         self
     }
     /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
-    pub fn get_current_signing_key_length(
-        &self,
-    ) -> &::std::option::Option<crate::types::DkimSigningKeyLength> {
+    pub fn get_current_signing_key_length(&self) -> &::std::option::Option<crate::types::DkimSigningKeyLength> {
         &self.current_signing_key_length
     }
     /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
@@ -271,17 +238,12 @@ impl DkimAttributesBuilder {
         self
     }
     /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
-    pub fn set_last_key_generation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_key_generation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_key_generation_timestamp = input;
         self
     }
     /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
-    pub fn get_last_key_generation_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_key_generation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_key_generation_timestamp
     }
     /// Consumes the builder and constructs a [`DkimAttributes`](crate::types::DkimAttributes).

@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeScheduledActionsOutput {
 }
 impl DescribeScheduledActionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledActionsOutput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsOutputBuilder {
         crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScheduledActionsOutput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScheduledActionsOutputBuilder {
-    pub(crate) scheduled_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>>,
+    pub(crate) scheduled_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeScheduledActionsOutputBuilder {
         self
     }
     /// <p>Information about the scheduled actions.</p>
-    pub fn set_scheduled_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>>,
-    ) -> Self {
+    pub fn set_scheduled_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>>) -> Self {
         self.scheduled_actions = input;
         self
     }
     /// <p>Information about the scheduled actions.</p>
-    pub fn get_scheduled_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>> {
+    pub fn get_scheduled_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>> {
         &self.scheduled_actions
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
@@ -96,9 +86,7 @@ impl DescribeScheduledActionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeScheduledActionsOutput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput {
+    pub fn build(self) -> crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput {
         crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput {
             scheduled_actions: self.scheduled_actions,
             next_token: self.next_token,

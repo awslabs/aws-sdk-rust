@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for GetRepositoryPolicyOutput {
 }
 impl GetRepositoryPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetRepositoryPolicyOutput`](crate::operation::get_repository_policy::GetRepositoryPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_repository_policy::builders::GetRepositoryPolicyOutputBuilder {
-        crate::operation::get_repository_policy::builders::GetRepositoryPolicyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_repository_policy::builders::GetRepositoryPolicyOutputBuilder {
+        crate::operation::get_repository_policy::builders::GetRepositoryPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRepositoryPolicyOutput`](crate::operation::get_repository_policy::GetRepositoryPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRepositoryPolicyOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +65,12 @@ impl GetRepositoryPolicyOutputBuilder {
         &self.registry_id
     }
     /// <p>The repository name that's associated with the request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name that's associated with the request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }

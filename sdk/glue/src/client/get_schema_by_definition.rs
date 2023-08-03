@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`status(Option<SchemaVersionStatus>)`](crate::operation::get_schema_by_definition::GetSchemaByDefinitionOutput::status): <p>The status of the schema version.</p>
     ///   - [`created_time(Option<String>)`](crate::operation::get_schema_by_definition::GetSchemaByDefinitionOutput::created_time): <p>The date and time the schema was created.</p>
     /// - On failure, responds with [`SdkError<GetSchemaByDefinitionError>`](crate::operation::get_schema_by_definition::GetSchemaByDefinitionError)
-    pub fn get_schema_by_definition(
-        &self,
-    ) -> crate::operation::get_schema_by_definition::builders::GetSchemaByDefinitionFluentBuilder
-    {
+    pub fn get_schema_by_definition(&self) -> crate::operation::get_schema_by_definition::builders::GetSchemaByDefinitionFluentBuilder {
         crate::operation::get_schema_by_definition::builders::GetSchemaByDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

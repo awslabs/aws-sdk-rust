@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     ///   - [`export_jobs(Option<Vec<ExportReadSetJobDetail>>)`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput::export_jobs): <p>A list of jobs.</p>
     /// - On failure, responds with [`SdkError<ListReadSetExportJobsError>`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsError)
-    pub fn list_read_set_export_jobs(
-        &self,
-    ) -> crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder
-    {
+    pub fn list_read_set_export_jobs(&self) -> crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder {
         crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::new(self.handle.clone())
     }
 }

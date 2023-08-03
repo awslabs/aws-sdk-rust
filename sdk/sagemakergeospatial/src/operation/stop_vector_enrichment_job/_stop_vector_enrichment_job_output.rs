@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StopVectorEnrichmentJobOutput {
 }
 impl StopVectorEnrichmentJobOutput {
     /// Creates a new builder-style object to manufacture [`StopVectorEnrichmentJobOutput`](crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobOutputBuilder {
         crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopVectorEnrichmentJobOutput`](crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopVectorEnrichmentJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl StopVectorEnrichmentJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopVectorEnrichmentJobOutput`](crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput {
+    pub fn build(self) -> crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput {
         crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput {
             _request_id: self._request_id,
         }

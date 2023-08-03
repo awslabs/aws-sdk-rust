@@ -30,9 +30,7 @@ impl RedactedEwsAvailabilityProvider {
 
 /// A builder for [`RedactedEwsAvailabilityProvider`](crate::types::RedactedEwsAvailabilityProvider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedactedEwsAvailabilityProviderBuilder {
     pub(crate) ews_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) ews_username: ::std::option::Option<::std::string::String>,

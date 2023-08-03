@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeNotificationsForBudgetOutput 
 }
 impl DescribeNotificationsForBudgetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationsForBudgetOutput`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetOutput).
-    pub fn builder() -> crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetOutputBuilder{
+    pub fn builder() -> crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetOutputBuilder {
         crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNotificationsForBudgetOutput`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNotificationsForBudgetOutputBuilder {
     pub(crate) notifications: ::std::option::Option<::std::vec::Vec<crate::types::Notification>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl DescribeNotificationsForBudgetOutputBuilder {
         self
     }
     /// <p>A list of notifications that are associated with a budget.</p>
-    pub fn set_notifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Notification>>,
-    ) -> Self {
+    pub fn set_notifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Notification>>) -> Self {
         self.notifications = input;
         self
     }
     /// <p>A list of notifications that are associated with a budget.</p>
-    pub fn get_notifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Notification>> {
+    pub fn get_notifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Notification>> {
         &self.notifications
     }
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
@@ -94,10 +87,7 @@ impl DescribeNotificationsForBudgetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNotificationsForBudgetOutput`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetOutput
-    {
+    pub fn build(self) -> crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetOutput {
         crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetOutput {
             notifications: self.notifications,
             next_token: self.next_token,

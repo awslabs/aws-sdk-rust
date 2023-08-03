@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`entitlement_arn(Option<String>)`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementOutput::entitlement_arn): The ARN of the entitlement that was revoked.
     ///   - [`flow_arn(Option<String>)`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementOutput::flow_arn): The ARN of the flow that the entitlement was revoked from.
     /// - On failure, responds with [`SdkError<RevokeFlowEntitlementError>`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementError)
-    pub fn revoke_flow_entitlement(
-        &self,
-    ) -> crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder
-    {
-        crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn revoke_flow_entitlement(&self) -> crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder {
+        crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder::new(self.handle.clone())
     }
 }

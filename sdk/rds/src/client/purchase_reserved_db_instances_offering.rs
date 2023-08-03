@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`PurchaseReservedDbInstancesOfferingOutput`](crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingOutput) with field(s):
     ///   - [`reserved_db_instance(Option<ReservedDbInstance>)`](crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingOutput::reserved_db_instance): <p>This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions.</p>
     /// - On failure, responds with [`SdkError<PurchaseReservedDBInstancesOfferingError>`](crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDBInstancesOfferingError)
-    pub fn purchase_reserved_db_instances_offering(&self) -> crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDBInstancesOfferingFluentBuilder{
-        crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDBInstancesOfferingFluentBuilder::new(self.handle.clone())
+    pub fn purchase_reserved_db_instances_offering(
+        &self,
+    ) -> crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDBInstancesOfferingFluentBuilder {
+        crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDBInstancesOfferingFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

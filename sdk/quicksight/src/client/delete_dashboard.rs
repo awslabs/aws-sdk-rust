@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`dashboard_id(Option<String>)`](crate::operation::delete_dashboard::DeleteDashboardOutput::dashboard_id): <p>The ID of the dashboard.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::delete_dashboard::DeleteDashboardOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<DeleteDashboardError>`](crate::operation::delete_dashboard::DeleteDashboardError)
-    pub fn delete_dashboard(
-        &self,
-    ) -> crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder {
-        crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_dashboard(&self) -> crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder {
+        crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder::new(self.handle.clone())
     }
 }

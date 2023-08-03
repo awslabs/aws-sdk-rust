@@ -25,18 +25,14 @@ impl DeleteBasePathMappingInput {
 }
 impl DeleteBasePathMappingInput {
     /// Creates a new builder-style object to manufacture [`DeleteBasePathMappingInput`](crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput).
-    pub fn builder(
-    ) -> crate::operation::delete_base_path_mapping::builders::DeleteBasePathMappingInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_base_path_mapping::builders::DeleteBasePathMappingInputBuilder {
         crate::operation::delete_base_path_mapping::builders::DeleteBasePathMappingInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBasePathMappingInput`](crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBasePathMappingInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) base_path: ::std::option::Option<::std::string::String>,
@@ -76,15 +72,11 @@ impl DeleteBasePathMappingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBasePathMappingInput`](crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput {
-                domain_name: self.domain_name,
-                base_path: self.base_path,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput {
+            domain_name: self.domain_name,
+            base_path: self.base_path,
+        })
     }
 }

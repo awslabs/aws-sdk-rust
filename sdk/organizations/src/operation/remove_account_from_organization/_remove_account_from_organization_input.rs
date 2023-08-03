@@ -17,16 +17,14 @@ impl RemoveAccountFromOrganizationInput {
 }
 impl RemoveAccountFromOrganizationInput {
     /// Creates a new builder-style object to manufacture [`RemoveAccountFromOrganizationInput`](crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput).
-    pub fn builder() -> crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationInputBuilder{
+    pub fn builder() -> crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationInputBuilder {
         crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveAccountFromOrganizationInput`](crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveAccountFromOrganizationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -55,11 +53,8 @@ impl RemoveAccountFromOrganizationInputBuilder {
         crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput {
-                account_id: self.account_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput {
+            account_id: self.account_id,
+        })
     }
 }

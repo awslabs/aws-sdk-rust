@@ -37,9 +37,7 @@ impl FileInformation {
 
 /// A builder for [`FileInformation`](crate::types::FileInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileInformationBuilder {
     pub(crate) total_parts: ::std::option::Option<i32>,
     pub(crate) part_size: ::std::option::Option<i64>,

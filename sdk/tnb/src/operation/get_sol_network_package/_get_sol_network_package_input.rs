@@ -15,17 +15,14 @@ impl GetSolNetworkPackageInput {
 }
 impl GetSolNetworkPackageInput {
     /// Creates a new builder-style object to manufacture [`GetSolNetworkPackageInput`](crate::operation::get_sol_network_package::GetSolNetworkPackageInput).
-    pub fn builder(
-    ) -> crate::operation::get_sol_network_package::builders::GetSolNetworkPackageInputBuilder {
+    pub fn builder() -> crate::operation::get_sol_network_package::builders::GetSolNetworkPackageInputBuilder {
         crate::operation::get_sol_network_package::builders::GetSolNetworkPackageInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSolNetworkPackageInput`](crate::operation::get_sol_network_package::GetSolNetworkPackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolNetworkPackageInputBuilder {
     pub(crate) nsd_info_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,10 @@ impl GetSolNetworkPackageInputBuilder {
     /// Consumes the builder and constructs a [`GetSolNetworkPackageInput`](crate::operation::get_sol_network_package::GetSolNetworkPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sol_network_package::GetSolNetworkPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_sol_network_package::GetSolNetworkPackageInput {
-                nsd_info_id: self.nsd_info_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_sol_network_package::GetSolNetworkPackageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_sol_network_package::GetSolNetworkPackageInput {
+            nsd_info_id: self.nsd_info_id,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl AutoTuneOptionsStatus {
 
 /// A builder for [`AutoTuneOptionsStatus`](crate::types::AutoTuneOptionsStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoTuneOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::AutoTuneOptions>,
     pub(crate) status: ::std::option::Option<crate::types::AutoTuneStatus>,
@@ -44,10 +42,7 @@ impl AutoTuneOptionsStatusBuilder {
         self
     }
     /// <p>Auto-Tune settings for updating a domain.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoTuneOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::AutoTuneOptions>) -> Self {
         self.options = input;
         self
     }
@@ -61,10 +56,7 @@ impl AutoTuneOptionsStatusBuilder {
         self
     }
     /// <p>The current status of Auto-Tune for a domain.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoTuneStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AutoTuneStatus>) -> Self {
         self.status = input;
         self
     }

@@ -5,16 +5,16 @@ pub use crate::operation::record_lifecycle_action_heartbeat::_record_lifecycle_a
 
 impl RecordLifecycleActionHeartbeatInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.record_lifecycle_action_heartbeat();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -36,7 +36,7 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RecordLifecycleActionHeartbeatFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatInputBuilder,
+    inner: crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatInputBuilder,
 }
 impl RecordLifecycleActionHeartbeatFluentBuilder {
     /// Creates a new `RecordLifecycleActionHeartbeat`.
@@ -47,15 +47,20 @@ impl RecordLifecycleActionHeartbeatFluentBuilder {
         }
     }
     /// Access the RecordLifecycleActionHeartbeat as a reference.
-    pub fn as_input(&self) -> &crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeat, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeat,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -64,16 +69,17 @@ impl RecordLifecycleActionHeartbeatFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatOutput, ::aws_smithy_http::result::SdkError<crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatError>,
+    > {
         let op = self
             .inner
             .build()
@@ -91,32 +97,35 @@ impl RecordLifecycleActionHeartbeatFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatOutput, ::aws_smithy_http::result::SdkError<crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeat, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeat,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the lifecycle hook.</p>
-    pub fn lifecycle_hook_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_hook_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lifecycle_hook_name(input.into());
         self
     }
     /// <p>The name of the lifecycle hook.</p>
-    pub fn set_lifecycle_hook_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_hook_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lifecycle_hook_name(input);
         self
     }
@@ -125,18 +134,12 @@ impl RecordLifecycleActionHeartbeatFluentBuilder {
         self.inner.get_lifecycle_hook_name()
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -145,18 +148,12 @@ impl RecordLifecycleActionHeartbeatFluentBuilder {
         self.inner.get_auto_scaling_group_name()
     }
     /// <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when you created the lifecycle hook.</p>
-    pub fn lifecycle_action_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_action_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lifecycle_action_token(input.into());
         self
     }
     /// <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when you created the lifecycle hook.</p>
-    pub fn set_lifecycle_action_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_action_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lifecycle_action_token(input);
         self
     }

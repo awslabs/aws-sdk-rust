@@ -71,16 +71,14 @@ impl ListMonitoringAlertHistoryInput {
 }
 impl ListMonitoringAlertHistoryInput {
     /// Creates a new builder-style object to manufacture [`ListMonitoringAlertHistoryInput`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryInput).
-    pub fn builder() -> crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryInputBuilder{
+    pub fn builder() -> crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryInputBuilder {
         crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMonitoringAlertHistoryInput`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitoringAlertHistoryInputBuilder {
     pub(crate) monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     pub(crate) monitoring_alert_name: ::std::option::Option<::std::string::String>,
@@ -94,18 +92,12 @@ pub struct ListMonitoringAlertHistoryInputBuilder {
 }
 impl ListMonitoringAlertHistoryInputBuilder {
     /// <p>The name of a monitoring schedule.</p>
-    pub fn monitoring_schedule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a monitoring schedule.</p>
-    pub fn set_monitoring_schedule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_schedule_name = input;
         self
     }
@@ -114,18 +106,12 @@ impl ListMonitoringAlertHistoryInputBuilder {
         &self.monitoring_schedule_name
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn monitoring_alert_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_alert_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_alert_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn set_monitoring_alert_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_alert_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_alert_name = input;
         self
     }
@@ -139,17 +125,12 @@ impl ListMonitoringAlertHistoryInputBuilder {
         self
     }
     /// <p>The field used to sort results. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringAlertHistorySortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::MonitoringAlertHistorySortKey>) -> Self {
         self.sort_by = input;
         self
     }
     /// <p>The field used to sort results. The default is <code>CreationTime</code>.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringAlertHistorySortKey> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::MonitoringAlertHistorySortKey> {
         &self.sort_by
     }
     /// <p>The sort order, whether <code>Ascending</code> or <code>Descending</code>, of the alert history. The default is <code>Descending</code>.</p>
@@ -200,10 +181,7 @@ impl ListMonitoringAlertHistoryInputBuilder {
         self
     }
     /// <p>A filter that returns only alerts created on or before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -217,10 +195,7 @@ impl ListMonitoringAlertHistoryInputBuilder {
         self
     }
     /// <p>A filter that returns only alerts created on or after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -234,10 +209,7 @@ impl ListMonitoringAlertHistoryInputBuilder {
         self
     }
     /// <p>A filter that retrieves only alerts with a specific status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringAlertStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::MonitoringAlertStatus>) -> Self {
         self.status_equals = input;
         self
     }
@@ -252,18 +224,16 @@ impl ListMonitoringAlertHistoryInputBuilder {
         crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryInput {
-                monitoring_schedule_name: self.monitoring_schedule_name,
-                monitoring_alert_name: self.monitoring_alert_name,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                creation_time_before: self.creation_time_before,
-                creation_time_after: self.creation_time_after,
-                status_equals: self.status_equals,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryInput {
+            monitoring_schedule_name: self.monitoring_schedule_name,
+            monitoring_alert_name: self.monitoring_alert_name,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            creation_time_before: self.creation_time_before,
+            creation_time_after: self.creation_time_after,
+            status_equals: self.status_equals,
+        })
     }
 }

@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`error_message(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::error_message): <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_application::DescribeApplicationOutput::tags): <p>A set of key/value pairs that you can use to manage the web application resource.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationError>`](crate::operation::describe_application::DescribeApplicationError)
-    pub fn describe_application(
-        &self,
-    ) -> crate::operation::describe_application::builders::DescribeApplicationFluentBuilder {
-        crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_application(&self) -> crate::operation::describe_application::builders::DescribeApplicationFluentBuilder {
+        crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::new(self.handle.clone())
     }
 }

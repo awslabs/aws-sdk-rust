@@ -51,9 +51,7 @@ impl RemoteIpDetails {
 
 /// A builder for [`RemoteIpDetails`](crate::types::RemoteIpDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoteIpDetailsBuilder {
     pub(crate) city: ::std::option::Option<crate::types::City>,
     pub(crate) country: ::std::option::Option<crate::types::Country>,
@@ -96,10 +94,7 @@ impl RemoteIpDetailsBuilder {
         self
     }
     /// <p>The location information of the remote IP address.</p>
-    pub fn set_geo_location(
-        mut self,
-        input: ::std::option::Option<crate::types::GeoLocation>,
-    ) -> Self {
+    pub fn set_geo_location(mut self, input: ::std::option::Option<crate::types::GeoLocation>) -> Self {
         self.geo_location = input;
         self
     }
@@ -108,18 +103,12 @@ impl RemoteIpDetailsBuilder {
         &self.geo_location
     }
     /// <p>The IPv4 remote address of the connection.</p>
-    pub fn ip_address_v4(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_address_v4(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address_v4 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 remote address of the connection.</p>
-    pub fn set_ip_address_v4(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_address_v4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address_v4 = input;
         self
     }
@@ -133,10 +122,7 @@ impl RemoteIpDetailsBuilder {
         self
     }
     /// <p>The ISP organization information of the remote IP address.</p>
-    pub fn set_organization(
-        mut self,
-        input: ::std::option::Option<crate::types::Organization>,
-    ) -> Self {
+    pub fn set_organization(mut self, input: ::std::option::Option<crate::types::Organization>) -> Self {
         self.organization = input;
         self
     }

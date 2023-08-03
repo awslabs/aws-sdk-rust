@@ -74,9 +74,7 @@ impl SegmentationDescriptor {
 
 /// A builder for [`SegmentationDescriptor`](crate::types::SegmentationDescriptor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentationDescriptorBuilder {
     pub(crate) segmentation_event_id: ::std::option::Option<i32>,
     pub(crate) segmentation_upid_type: ::std::option::Option<i32>,
@@ -117,18 +115,12 @@ impl SegmentationDescriptorBuilder {
         &self.segmentation_upid_type
     }
     /// <p>The Upid to assign to the <code>segmentation_descriptor.segmentation_upid</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The value must be a hexadecimal string containing only the characters 0 though 9 and A through F. The default value is "" (an empty string).</p>
-    pub fn segmentation_upid(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn segmentation_upid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segmentation_upid = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Upid to assign to the <code>segmentation_descriptor.segmentation_upid</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The value must be a hexadecimal string containing only the characters 0 though 9 and A through F. The default value is "" (an empty string).</p>
-    pub fn set_segmentation_upid(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_segmentation_upid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segmentation_upid = input;
         self
     }

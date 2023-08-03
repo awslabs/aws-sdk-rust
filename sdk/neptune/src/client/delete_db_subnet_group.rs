@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`db_subnet_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_db_subnet_group::builders::DeleteDBSubnetGroupFluentBuilder::db_subnet_group_name) / [`set_db_subnet_group_name(Option<String>)`](crate::operation::delete_db_subnet_group::builders::DeleteDBSubnetGroupFluentBuilder::set_db_subnet_group_name): <p>The name of the database subnet group to delete.</p> <note>   <p>You can't delete the default subnet group.</p>  </note>  <p>Constraints:</p>  <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>  <p>Example: <code>mySubnetgroup</code> </p>
     /// - On success, responds with [`DeleteDbSubnetGroupOutput`](crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteDBSubnetGroupError>`](crate::operation::delete_db_subnet_group::DeleteDBSubnetGroupError)
-    pub fn delete_db_subnet_group(
-        &self,
-    ) -> crate::operation::delete_db_subnet_group::builders::DeleteDBSubnetGroupFluentBuilder {
-        crate::operation::delete_db_subnet_group::builders::DeleteDBSubnetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_db_subnet_group(&self) -> crate::operation::delete_db_subnet_group::builders::DeleteDBSubnetGroupFluentBuilder {
+        crate::operation::delete_db_subnet_group::builders::DeleteDBSubnetGroupFluentBuilder::new(self.handle.clone())
     }
 }

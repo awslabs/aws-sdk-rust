@@ -27,7 +27,7 @@ impl GetSystemTemplateRevisionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSystemTemplateRevisionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_system_template_revisions::builders::GetSystemTemplateRevisionsInputBuilder,
+    inner: crate::operation::get_system_template_revisions::builders::GetSystemTemplateRevisionsInputBuilder,
 }
 impl GetSystemTemplateRevisionsFluentBuilder {
     /// Creates a new `GetSystemTemplateRevisions`.
@@ -38,7 +38,7 @@ impl GetSystemTemplateRevisionsFluentBuilder {
         }
     }
     /// Access the GetSystemTemplateRevisions as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_system_template_revisions::builders::GetSystemTemplateRevisionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_system_template_revisions::builders::GetSystemTemplateRevisionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetSystemTemplateRevisionsFluentBuilder {
             crate::operation::get_system_template_revisions::GetSystemTemplateRevisions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetSystemTemplateRevisionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetSystemTemplateRevisionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetSystemTemplateRevisionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsError>,
     > {
         self.send_middleware().await
     }
@@ -115,16 +106,14 @@ impl GetSystemTemplateRevisionsFluentBuilder {
             crate::operation::get_system_template_revisions::GetSystemTemplateRevisions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_system_template_revisions::paginator::GetSystemTemplateRevisionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_system_template_revisions::paginator::GetSystemTemplateRevisionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_system_template_revisions::paginator::GetSystemTemplateRevisionsPaginator {
         crate::operation::get_system_template_revisions::paginator::GetSystemTemplateRevisionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the system template.</p>

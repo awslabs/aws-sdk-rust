@@ -120,7 +120,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForSuggestionsInput {
 }
 impl SearchPlaceIndexForSuggestionsInput {
     /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForSuggestionsInput`](crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsInput).
-    pub fn builder() -> crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsInputBuilder{
+    pub fn builder() -> crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsInputBuilder {
         crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsInputBuilder::default()
     }
 }
@@ -240,10 +240,7 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     /// <ul>
     /// <li> <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
-    pub fn filter_countries(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_countries(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_countries.unwrap_or_default();
         v.push(input.into());
         self.filter_countries = ::std::option::Option::Some(v);
@@ -253,10 +250,7 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     /// <ul>
     /// <li> <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
-    pub fn set_filter_countries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_countries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_countries = input;
         self
     }
@@ -264,9 +258,7 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     /// <ul>
     /// <li> <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
-    pub fn get_filter_countries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_countries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_countries
     }
     /// <p>An optional parameter. The maximum number of results returned per request. </p>
@@ -318,10 +310,7 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     ///
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn filter_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_categories.unwrap_or_default();
         v.push(input.into());
         self.filter_categories = ::std::option::Option::Some(v);
@@ -329,18 +318,13 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     }
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn set_filter_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_categories = input;
         self
     }
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn get_filter_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_categories
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
@@ -366,25 +350,16 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsInput {
-                index_name: self.index_name
-                ,
-                text: self.text
-                ,
-                bias_position: self.bias_position
-                ,
-                filter_b_box: self.filter_b_box
-                ,
-                filter_countries: self.filter_countries
-                ,
-                max_results: self.max_results
-                ,
-                language: self.language
-                ,
-                filter_categories: self.filter_categories
-                ,
-                key: self.key
-                ,
-            }
+                index_name: self.index_name,
+                text: self.text,
+                bias_position: self.bias_position,
+                filter_b_box: self.filter_b_box,
+                filter_countries: self.filter_countries,
+                max_results: self.max_results,
+                language: self.language,
+                filter_categories: self.filter_categories,
+                key: self.key,
+            },
         )
     }
 }

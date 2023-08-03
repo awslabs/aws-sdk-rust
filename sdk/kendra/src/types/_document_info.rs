@@ -54,9 +54,7 @@ impl DocumentInfo {
 
 /// A builder for [`DocumentInfo`](crate::types::DocumentInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentInfoBuilder {
     pub(crate) document_id: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
@@ -112,10 +110,7 @@ impl DocumentInfoBuilder {
     /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
     /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
     /// </ul>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>) -> Self {
         self.attributes = input;
         self
     }
@@ -132,9 +127,7 @@ impl DocumentInfoBuilder {
     /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
     /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
     /// </ul>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`DocumentInfo`](crate::types::DocumentInfo).

@@ -19,8 +19,7 @@ pub struct BaselineOverride {
     pub approved_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation.</p>
     #[doc(hidden)]
-    pub approved_patches_compliance_level:
-        ::std::option::Option<crate::types::PatchComplianceLevel>,
+    pub approved_patches_compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     #[doc(hidden)]
@@ -54,9 +53,7 @@ impl BaselineOverride {
         self.approved_patches.as_deref()
     }
     /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation.</p>
-    pub fn approved_patches_compliance_level(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PatchComplianceLevel> {
+    pub fn approved_patches_compliance_level(&self) -> ::std::option::Option<&crate::types::PatchComplianceLevel> {
         self.approved_patches_compliance_level.as_ref()
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
@@ -86,16 +83,13 @@ impl BaselineOverride {
 
 /// A builder for [`BaselineOverride`](crate::types::BaselineOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BaselineOverrideBuilder {
     pub(crate) operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     pub(crate) global_filters: ::std::option::Option<crate::types::PatchFilterGroup>,
     pub(crate) approval_rules: ::std::option::Option<crate::types::PatchRuleGroup>,
     pub(crate) approved_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) approved_patches_compliance_level:
-        ::std::option::Option<crate::types::PatchComplianceLevel>,
+    pub(crate) approved_patches_compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,
     pub(crate) rejected_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) rejected_patches_action: ::std::option::Option<crate::types::PatchAction>,
     pub(crate) approved_patches_enable_non_security: ::std::option::Option<bool>,
@@ -108,10 +102,7 @@ impl BaselineOverrideBuilder {
         self
     }
     /// <p>The operating system rule used by the patch baseline override.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
@@ -125,10 +116,7 @@ impl BaselineOverrideBuilder {
         self
     }
     /// <p>A set of patch filters, typically used for approval rules.</p>
-    pub fn set_global_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchFilterGroup>,
-    ) -> Self {
+    pub fn set_global_filters(mut self, input: ::std::option::Option<crate::types::PatchFilterGroup>) -> Self {
         self.global_filters = input;
         self
     }
@@ -142,10 +130,7 @@ impl BaselineOverrideBuilder {
         self
     }
     /// <p>A set of rules defining the approval rules for a patch baseline.</p>
-    pub fn set_approval_rules(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchRuleGroup>,
-    ) -> Self {
+    pub fn set_approval_rules(mut self, input: ::std::option::Option<crate::types::PatchRuleGroup>) -> Self {
         self.approval_rules = input;
         self
     }
@@ -159,10 +144,7 @@ impl BaselineOverrideBuilder {
     ///
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn approved_patches(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approved_patches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.approved_patches.unwrap_or_default();
         v.push(input.into());
         self.approved_patches = ::std::option::Option::Some(v);
@@ -170,40 +152,27 @@ impl BaselineOverrideBuilder {
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_approved_patches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_approved_patches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.approved_patches = input;
         self
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn get_approved_patches(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_approved_patches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.approved_patches
     }
     /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation.</p>
-    pub fn approved_patches_compliance_level(
-        mut self,
-        input: crate::types::PatchComplianceLevel,
-    ) -> Self {
+    pub fn approved_patches_compliance_level(mut self, input: crate::types::PatchComplianceLevel) -> Self {
         self.approved_patches_compliance_level = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation.</p>
-    pub fn set_approved_patches_compliance_level(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchComplianceLevel>,
-    ) -> Self {
+    pub fn set_approved_patches_compliance_level(mut self, input: ::std::option::Option<crate::types::PatchComplianceLevel>) -> Self {
         self.approved_patches_compliance_level = input;
         self
     }
     /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation.</p>
-    pub fn get_approved_patches_compliance_level(
-        &self,
-    ) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
+    pub fn get_approved_patches_compliance_level(&self) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
         &self.approved_patches_compliance_level
     }
     /// Appends an item to `rejected_patches`.
@@ -212,10 +181,7 @@ impl BaselineOverrideBuilder {
     ///
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn rejected_patches(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rejected_patches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rejected_patches.unwrap_or_default();
         v.push(input.into());
         self.rejected_patches = ::std::option::Option::Some(v);
@@ -223,18 +189,13 @@ impl BaselineOverrideBuilder {
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_rejected_patches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rejected_patches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.rejected_patches = input;
         self
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn get_rejected_patches(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rejected_patches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.rejected_patches
     }
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
@@ -243,10 +204,7 @@ impl BaselineOverrideBuilder {
         self
     }
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
-    pub fn set_rejected_patches_action(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchAction>,
-    ) -> Self {
+    pub fn set_rejected_patches_action(mut self, input: ::std::option::Option<crate::types::PatchAction>) -> Self {
         self.rejected_patches_action = input;
         self
     }
@@ -260,10 +218,7 @@ impl BaselineOverrideBuilder {
         self
     }
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
-    pub fn set_approved_patches_enable_non_security(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_approved_patches_enable_non_security(mut self, input: ::std::option::Option<bool>) -> Self {
         self.approved_patches_enable_non_security = input;
         self
     }
@@ -283,17 +238,12 @@ impl BaselineOverrideBuilder {
         self
     }
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchSource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchSource>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`BaselineOverride`](crate::types::BaselineOverride).
@@ -306,9 +256,7 @@ impl BaselineOverrideBuilder {
             approved_patches_compliance_level: self.approved_patches_compliance_level,
             rejected_patches: self.rejected_patches,
             rejected_patches_action: self.rejected_patches_action,
-            approved_patches_enable_non_security: self
-                .approved_patches_enable_non_security
-                .unwrap_or_default(),
+            approved_patches_enable_non_security: self.approved_patches_enable_non_security.unwrap_or_default(),
             sources: self.sources,
         }
     }

@@ -27,34 +27,27 @@ impl ::std::fmt::Display for InvalidGitHubAccountTokenNameException {
     }
 }
 impl ::std::error::Error for InvalidGitHubAccountTokenNameException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidGitHubAccountTokenNameException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidGitHubAccountTokenNameException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidGitHubAccountTokenNameException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidGitHubAccountTokenNameException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidGitHubAccountTokenNameException {
     /// Creates a new builder-style object to manufacture [`InvalidGitHubAccountTokenNameException`](crate::types::error::InvalidGitHubAccountTokenNameException).
-    pub fn builder() -> crate::types::error::builders::InvalidGitHubAccountTokenNameExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::InvalidGitHubAccountTokenNameExceptionBuilder {
         crate::types::error::builders::InvalidGitHubAccountTokenNameExceptionBuilder::default()
     }
 }
 
 /// A builder for [`InvalidGitHubAccountTokenNameException`](crate::types::error::InvalidGitHubAccountTokenNameException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidGitHubAccountTokenNameExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl InvalidGitHubAccountTokenNameExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

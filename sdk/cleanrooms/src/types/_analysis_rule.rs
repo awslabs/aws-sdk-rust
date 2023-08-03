@@ -58,9 +58,7 @@ impl AnalysisRule {
 
 /// A builder for [`AnalysisRule`](crate::types::AnalysisRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisRuleBuilder {
     pub(crate) collaboration_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::AnalysisRuleType>,
@@ -71,18 +69,12 @@ pub struct AnalysisRuleBuilder {
 }
 impl AnalysisRuleBuilder {
     /// <p>The unique ID for the associated collaboration.</p>
-    pub fn collaboration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the associated collaboration.</p>
-    pub fn set_collaboration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_id = input;
         self
     }
@@ -96,10 +88,7 @@ impl AnalysisRuleBuilder {
         self
     }
     /// <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisRuleType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AnalysisRuleType>) -> Self {
         self.r#type = input;
         self
     }
@@ -127,10 +116,7 @@ impl AnalysisRuleBuilder {
         self
     }
     /// <p>The time the analysis rule was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -144,10 +130,7 @@ impl AnalysisRuleBuilder {
         self
     }
     /// <p>The time the analysis rule was last updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -161,10 +144,7 @@ impl AnalysisRuleBuilder {
         self
     }
     /// <p>A policy that describes the associated data usage limitations.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisRulePolicy>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::AnalysisRulePolicy>) -> Self {
         self.policy = input;
         self
     }

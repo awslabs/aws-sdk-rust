@@ -15,10 +15,7 @@ pub fn ser_update_firewall_encryption_configuration_input(
     if let Some(var_4) = &input.encryption_configuration {
         #[allow(unused_mut)]
         let mut object_5 = object.key("EncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

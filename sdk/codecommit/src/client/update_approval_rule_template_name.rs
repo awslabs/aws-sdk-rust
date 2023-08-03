@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateApprovalRuleTemplateNameOutput`](crate::operation::update_approval_rule_template_name::UpdateApprovalRuleTemplateNameOutput) with field(s):
     ///   - [`approval_rule_template(Option<ApprovalRuleTemplate>)`](crate::operation::update_approval_rule_template_name::UpdateApprovalRuleTemplateNameOutput::approval_rule_template): <p>The structure and content of the updated approval rule template.</p>
     /// - On failure, responds with [`SdkError<UpdateApprovalRuleTemplateNameError>`](crate::operation::update_approval_rule_template_name::UpdateApprovalRuleTemplateNameError)
-    pub fn update_approval_rule_template_name(&self) -> crate::operation::update_approval_rule_template_name::builders::UpdateApprovalRuleTemplateNameFluentBuilder{
+    pub fn update_approval_rule_template_name(
+        &self,
+    ) -> crate::operation::update_approval_rule_template_name::builders::UpdateApprovalRuleTemplateNameFluentBuilder {
         crate::operation::update_approval_rule_template_name::builders::UpdateApprovalRuleTemplateNameFluentBuilder::new(self.handle.clone())
     }
 }

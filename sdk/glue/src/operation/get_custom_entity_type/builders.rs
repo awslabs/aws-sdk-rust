@@ -37,9 +37,7 @@ impl GetCustomEntityTypeFluentBuilder {
         }
     }
     /// Access the GetCustomEntityType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetCustomEntityTypeFluentBuilder {
             crate::operation::get_custom_entity_type::GetCustomEntityType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_custom_entity_type::GetCustomEntityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_custom_entity_type::GetCustomEntityTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetCustomEntityTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetCustomEntityTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_custom_entity_type::GetCustomEntityTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_custom_entity_type::GetCustomEntityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_custom_entity_type::GetCustomEntityTypeError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetCustomEntityTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_custom_entity_type::GetCustomEntityTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_custom_entity_type::GetCustomEntityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_custom_entity_type::GetCustomEntityTypeError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetCustomEntityTypeFluentBuilder {
             crate::operation::get_custom_entity_type::GetCustomEntityType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_custom_entity_type::GetCustomEntityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_custom_entity_type::GetCustomEntityTypeError>,
     > {
         self.customize_middleware().await
     }

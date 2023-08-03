@@ -30,10 +30,8 @@ impl ::std::fmt::Debug for BatchDetectEntitiesInput {
 }
 impl BatchDetectEntitiesInput {
     /// Creates a new builder-style object to manufacture [`BatchDetectEntitiesInput`](crate::operation::batch_detect_entities::BatchDetectEntitiesInput).
-    pub fn builder(
-    ) -> crate::operation::batch_detect_entities::builders::BatchDetectEntitiesInputBuilder {
-        crate::operation::batch_detect_entities::builders::BatchDetectEntitiesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_detect_entities::builders::BatchDetectEntitiesInputBuilder {
+        crate::operation::batch_detect_entities::builders::BatchDetectEntitiesInputBuilder::default()
     }
 }
 
@@ -57,10 +55,7 @@ impl BatchDetectEntitiesInputBuilder {
         self
     }
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
-    pub fn set_text_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_text_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.text_list = input;
         self
     }
@@ -74,10 +69,7 @@ impl BatchDetectEntitiesInputBuilder {
         self
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -88,16 +80,12 @@ impl BatchDetectEntitiesInputBuilder {
     /// Consumes the builder and constructs a [`BatchDetectEntitiesInput`](crate::operation::batch_detect_entities::BatchDetectEntitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_detect_entities::BatchDetectEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_detect_entities::BatchDetectEntitiesInput {
-                text_list: self.text_list,
-                language_code: self.language_code,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_detect_entities::BatchDetectEntitiesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_detect_entities::BatchDetectEntitiesInput {
+            text_list: self.text_list,
+            language_code: self.language_code,
+        })
     }
 }
 impl ::std::fmt::Debug for BatchDetectEntitiesInputBuilder {

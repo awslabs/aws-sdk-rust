@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`created_date(Option<DateTime>)`](crate::operation::create_documentation_version::CreateDocumentationVersionOutput::created_date): <p>The date when the API documentation snapshot is created.</p>
     ///   - [`description(Option<String>)`](crate::operation::create_documentation_version::CreateDocumentationVersionOutput::description): <p>The description of the API documentation snapshot.</p>
     /// - On failure, responds with [`SdkError<CreateDocumentationVersionError>`](crate::operation::create_documentation_version::CreateDocumentationVersionError)
-    pub fn create_documentation_version(&self) -> crate::operation::create_documentation_version::builders::CreateDocumentationVersionFluentBuilder{
+    pub fn create_documentation_version(&self) -> crate::operation::create_documentation_version::builders::CreateDocumentationVersionFluentBuilder {
         crate::operation::create_documentation_version::builders::CreateDocumentationVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeMigrationTaskOutput`](crate::operation::describe_migration_task::DescribeMigrationTaskOutput) with field(s):
     ///   - [`migration_task(Option<MigrationTask>)`](crate::operation::describe_migration_task::DescribeMigrationTaskOutput::migration_task): <p>Object encapsulating information about the migration task.</p>
     /// - On failure, responds with [`SdkError<DescribeMigrationTaskError>`](crate::operation::describe_migration_task::DescribeMigrationTaskError)
-    pub fn describe_migration_task(
-        &self,
-    ) -> crate::operation::describe_migration_task::builders::DescribeMigrationTaskFluentBuilder
-    {
-        crate::operation::describe_migration_task::builders::DescribeMigrationTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_migration_task(&self) -> crate::operation::describe_migration_task::builders::DescribeMigrationTaskFluentBuilder {
+        crate::operation::describe_migration_task::builders::DescribeMigrationTaskFluentBuilder::new(self.handle.clone())
     }
 }

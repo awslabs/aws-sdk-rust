@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum IpamDiscoveryFailureCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for IpamDiscoveryFailureCode {
             "assume-role-failure" => IpamDiscoveryFailureCode::AssumeRoleFailure,
             "throttling-failure" => IpamDiscoveryFailureCode::ThrottlingFailure,
             "unauthorized-failure" => IpamDiscoveryFailureCode::UnauthorizedFailure,
-            other => IpamDiscoveryFailureCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => IpamDiscoveryFailureCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl IpamDiscoveryFailureCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "assume-role-failure",
-            "throttling-failure",
-            "unauthorized-failure",
-        ]
+        &["assume-role-failure", "throttling-failure", "unauthorized-failure"]
     }
 }
 impl ::std::convert::AsRef<str> for IpamDiscoveryFailureCode {

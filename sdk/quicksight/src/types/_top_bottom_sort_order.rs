@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TopBottomSortOrder {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for TopBottomSortOrder {
         match s {
             "ABSOLUTE_DIFFERENCE" => TopBottomSortOrder::AbsoluteDifference,
             "PERCENT_DIFFERENCE" => TopBottomSortOrder::PercentDifference,
-            other => TopBottomSortOrder::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TopBottomSortOrder::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

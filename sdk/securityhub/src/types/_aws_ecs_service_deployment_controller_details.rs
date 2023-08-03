@@ -29,9 +29,7 @@ impl AwsEcsServiceDeploymentControllerDetails {
 
 /// A builder for [`AwsEcsServiceDeploymentControllerDetails`](crate::types::AwsEcsServiceDeploymentControllerDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsServiceDeploymentControllerDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
@@ -61,8 +59,6 @@ impl AwsEcsServiceDeploymentControllerDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsEcsServiceDeploymentControllerDetails`](crate::types::AwsEcsServiceDeploymentControllerDetails).
     pub fn build(self) -> crate::types::AwsEcsServiceDeploymentControllerDetails {
-        crate::types::AwsEcsServiceDeploymentControllerDetails {
-            r#type: self.r#type,
-        }
+        crate::types::AwsEcsServiceDeploymentControllerDetails { r#type: self.r#type }
     }
 }

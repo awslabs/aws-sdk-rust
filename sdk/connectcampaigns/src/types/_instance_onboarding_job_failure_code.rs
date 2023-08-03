@@ -42,13 +42,7 @@
 /// Enumeration of the possible failure codes for instance onboarding job
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstanceOnboardingJobFailureCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,19 +63,13 @@ pub enum InstanceOnboardingJobFailureCode {
 impl ::std::convert::From<&str> for InstanceOnboardingJobFailureCode {
     fn from(s: &str) -> Self {
         match s {
-            "EVENT_BRIDGE_ACCESS_DENIED" => {
-                InstanceOnboardingJobFailureCode::EventBridgeAccessDenied
-            }
-            "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED" => {
-                InstanceOnboardingJobFailureCode::EventBridgeManagedRuleLimitExceeded
-            }
+            "EVENT_BRIDGE_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::EventBridgeAccessDenied,
+            "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED" => InstanceOnboardingJobFailureCode::EventBridgeManagedRuleLimitExceeded,
             "IAM_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::IamAccessDenied,
             "INTERNAL_FAILURE" => InstanceOnboardingJobFailureCode::InternalFailure,
             "KMS_ACCESS_DENIED" => InstanceOnboardingJobFailureCode::KmsAccessDenied,
             "KMS_KEY_NOT_FOUND" => InstanceOnboardingJobFailureCode::KmsKeyNotFound,
-            other => InstanceOnboardingJobFailureCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => InstanceOnboardingJobFailureCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -96,12 +84,8 @@ impl InstanceOnboardingJobFailureCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            InstanceOnboardingJobFailureCode::EventBridgeAccessDenied => {
-                "EVENT_BRIDGE_ACCESS_DENIED"
-            }
-            InstanceOnboardingJobFailureCode::EventBridgeManagedRuleLimitExceeded => {
-                "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED"
-            }
+            InstanceOnboardingJobFailureCode::EventBridgeAccessDenied => "EVENT_BRIDGE_ACCESS_DENIED",
+            InstanceOnboardingJobFailureCode::EventBridgeManagedRuleLimitExceeded => "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED",
             InstanceOnboardingJobFailureCode::IamAccessDenied => "IAM_ACCESS_DENIED",
             InstanceOnboardingJobFailureCode::InternalFailure => "INTERNAL_FAILURE",
             InstanceOnboardingJobFailureCode::KmsAccessDenied => "KMS_ACCESS_DENIED",

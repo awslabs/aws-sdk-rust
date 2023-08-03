@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`organization_status(Option<OrganizationStatus>)`](crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusOutput::organization_status): <p>Displays the status of an Amazon Web Services Organization.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListOrganizationServiceAccessStatusError>`](crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusError)
-    pub fn list_organization_service_access_status(&self) -> crate::operation::list_organization_service_access_status::builders::ListOrganizationServiceAccessStatusFluentBuilder{
-        crate::operation::list_organization_service_access_status::builders::ListOrganizationServiceAccessStatusFluentBuilder::new(self.handle.clone())
+    pub fn list_organization_service_access_status(
+        &self,
+    ) -> crate::operation::list_organization_service_access_status::builders::ListOrganizationServiceAccessStatusFluentBuilder {
+        crate::operation::list_organization_service_access_status::builders::ListOrganizationServiceAccessStatusFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

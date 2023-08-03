@@ -32,9 +32,7 @@ impl InstanceCreditSpecification {
 
 /// A builder for [`InstanceCreditSpecification`](crate::types::InstanceCreditSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceCreditSpecificationBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) cpu_credits: ::std::option::Option<::std::string::String>,

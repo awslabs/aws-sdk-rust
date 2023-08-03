@@ -53,9 +53,7 @@ impl PatchRule {
 
 /// A builder for [`PatchRule`](crate::types::PatchRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PatchRuleBuilder {
     pub(crate) patch_filter_group: ::std::option::Option<crate::types::PatchFilterGroup>,
     pub(crate) compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,
@@ -70,10 +68,7 @@ impl PatchRuleBuilder {
         self
     }
     /// <p>The patch filter group that defines the criteria for the rule.</p>
-    pub fn set_patch_filter_group(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchFilterGroup>,
-    ) -> Self {
+    pub fn set_patch_filter_group(mut self, input: ::std::option::Option<crate::types::PatchFilterGroup>) -> Self {
         self.patch_filter_group = input;
         self
     }
@@ -87,17 +82,12 @@ impl PatchRuleBuilder {
         self
     }
     /// <p>A compliance severity level for all approved patches in a patch baseline.</p>
-    pub fn set_compliance_level(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchComplianceLevel>,
-    ) -> Self {
+    pub fn set_compliance_level(mut self, input: ::std::option::Option<crate::types::PatchComplianceLevel>) -> Self {
         self.compliance_level = input;
         self
     }
     /// <p>A compliance severity level for all approved patches in a patch baseline.</p>
-    pub fn get_compliance_level(
-        &self,
-    ) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
+    pub fn get_compliance_level(&self) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
         &self.compliance_level
     }
     /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released. Not supported on Debian Server or Ubuntu Server.</p>
@@ -116,19 +106,13 @@ impl PatchRuleBuilder {
     }
     /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
     /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
-    pub fn approve_until_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approve_until_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approve_until_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
     /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
-    pub fn set_approve_until_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approve_until_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approve_until_date = input;
         self
     }

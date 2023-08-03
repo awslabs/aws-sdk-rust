@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for TerminateInstanceInAutoScalingGroupOu
 }
 impl TerminateInstanceInAutoScalingGroupOutput {
     /// Creates a new builder-style object to manufacture [`TerminateInstanceInAutoScalingGroupOutput`](crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput).
-    pub fn builder() -> crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupOutputBuilder{
+    pub fn builder() -> crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupOutputBuilder {
         crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateInstanceInAutoScalingGroupOutput`](crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateInstanceInAutoScalingGroupOutputBuilder {
     pub(crate) activity: ::std::option::Option<crate::types::Activity>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl TerminateInstanceInAutoScalingGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`TerminateInstanceInAutoScalingGroupOutput`](crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput).
-    pub fn build(self) -> crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput{
+    pub fn build(self) -> crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput {
         crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput {
-            activity: self.activity
-            ,
+            activity: self.activity,
             _request_id: self._request_id,
         }
     }

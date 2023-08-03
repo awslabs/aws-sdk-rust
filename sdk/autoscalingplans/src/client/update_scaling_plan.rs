@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`scaling_instructions(Vec<ScalingInstruction>)`](crate::operation::update_scaling_plan::builders::UpdateScalingPlanFluentBuilder::scaling_instructions) / [`set_scaling_instructions(Option<Vec<ScalingInstruction>>)`](crate::operation::update_scaling_plan::builders::UpdateScalingPlanFluentBuilder::set_scaling_instructions): <p>The scaling instructions.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
     /// - On success, responds with [`UpdateScalingPlanOutput`](crate::operation::update_scaling_plan::UpdateScalingPlanOutput)
     /// - On failure, responds with [`SdkError<UpdateScalingPlanError>`](crate::operation::update_scaling_plan::UpdateScalingPlanError)
-    pub fn update_scaling_plan(
-        &self,
-    ) -> crate::operation::update_scaling_plan::builders::UpdateScalingPlanFluentBuilder {
-        crate::operation::update_scaling_plan::builders::UpdateScalingPlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_scaling_plan(&self) -> crate::operation::update_scaling_plan::builders::UpdateScalingPlanFluentBuilder {
+        crate::operation::update_scaling_plan::builders::UpdateScalingPlanFluentBuilder::new(self.handle.clone())
     }
 }

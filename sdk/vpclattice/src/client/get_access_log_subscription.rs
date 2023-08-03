@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput::created_at): <p>The date and time that the access log subscription was created, specified in ISO-8601 format.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput::last_updated_at): <p>The date and time that the access log subscription was last updated, specified in ISO-8601 format.</p>
     /// - On failure, responds with [`SdkError<GetAccessLogSubscriptionError>`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionError)
-    pub fn get_access_log_subscription(&self) -> crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder{
+    pub fn get_access_log_subscription(&self) -> crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder {
         crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`health_check_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_health_check::builders::DisassociateHealthCheckFluentBuilder::health_check_arn) / [`set_health_check_arn(Option<String>)`](crate::operation::disassociate_health_check::builders::DisassociateHealthCheckFluentBuilder::set_health_check_arn): <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
     /// - On success, responds with [`DisassociateHealthCheckOutput`](crate::operation::disassociate_health_check::DisassociateHealthCheckOutput)
     /// - On failure, responds with [`SdkError<DisassociateHealthCheckError>`](crate::operation::disassociate_health_check::DisassociateHealthCheckError)
-    pub fn disassociate_health_check(
-        &self,
-    ) -> crate::operation::disassociate_health_check::builders::DisassociateHealthCheckFluentBuilder
-    {
+    pub fn disassociate_health_check(&self) -> crate::operation::disassociate_health_check::builders::DisassociateHealthCheckFluentBuilder {
         crate::operation::disassociate_health_check::builders::DisassociateHealthCheckFluentBuilder::new(self.handle.clone())
     }
 }

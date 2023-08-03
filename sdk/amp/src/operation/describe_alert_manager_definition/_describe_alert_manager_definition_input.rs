@@ -16,16 +16,14 @@ impl DescribeAlertManagerDefinitionInput {
 }
 impl DescribeAlertManagerDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeAlertManagerDefinitionInput`](crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionInput).
-    pub fn builder() -> crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionInputBuilder {
         crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAlertManagerDefinitionInput`](crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlertManagerDefinitionInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }
@@ -51,11 +49,8 @@ impl DescribeAlertManagerDefinitionInputBuilder {
         crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionInput {
-                workspace_id: self.workspace_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionInput {
+            workspace_id: self.workspace_id,
+        })
     }
 }

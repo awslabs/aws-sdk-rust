@@ -5,10 +5,7 @@ pub fn parse_http_error_metadata(
     _response_status: u16,
     response_headers: &::http::HeaderMap,
     response_body: &[u8],
-) -> Result<
-    ::aws_smithy_types::error::metadata::Builder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
+) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
@@ -46,10 +43,7 @@ pub(crate) mod shape_start_stream_transcription_output;
 
 pub fn parse_event_stream_error_metadata(
     payload: &::bytes::Bytes,
-) -> Result<
-    ::aws_smithy_types::error::metadata::Builder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
+) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     // Note: HeaderMap::new() doesn't allocate
     crate::json_errors::parse_error_metadata(payload, &::http::HeaderMap::new())
 }

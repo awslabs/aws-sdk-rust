@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`delegations(Option<Vec<Delegation>>)`](crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentOutput::delegations): <p> The delegations that are associated with the assessment. </p>
     ///   - [`errors(Option<Vec<BatchCreateDelegationByAssessmentError>>)`](crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentOutput::errors): <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
     /// - On failure, responds with [`SdkError<BatchCreateDelegationByAssessmentError>`](crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentError)
-    pub fn batch_create_delegation_by_assessment(&self) -> crate::operation::batch_create_delegation_by_assessment::builders::BatchCreateDelegationByAssessmentFluentBuilder{
+    pub fn batch_create_delegation_by_assessment(
+        &self,
+    ) -> crate::operation::batch_create_delegation_by_assessment::builders::BatchCreateDelegationByAssessmentFluentBuilder {
         crate::operation::batch_create_delegation_by_assessment::builders::BatchCreateDelegationByAssessmentFluentBuilder::new(self.handle.clone())
     }
 }

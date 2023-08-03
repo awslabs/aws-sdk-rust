@@ -10,10 +10,7 @@ impl CreateBotVersionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_bot_version::CreateBotVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bot_version::CreateBotVersionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bot_version::CreateBotVersionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_bot_version();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateBotVersionFluentBuilder {
         }
     }
     /// Access the CreateBotVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_bot_version::builders::CreateBotVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_bot_version::builders::CreateBotVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateBotVersionFluentBuilder {
             crate::operation::create_bot_version::CreateBotVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bot_version::CreateBotVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bot_version::CreateBotVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateBotVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateBotVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_bot_version::CreateBotVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bot_version::CreateBotVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bot_version::CreateBotVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateBotVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_bot_version::CreateBotVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bot_version::CreateBotVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bot_version::CreateBotVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateBotVersionFluentBuilder {
             crate::operation::create_bot_version::CreateBotVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bot_version::CreateBotVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bot_version::CreateBotVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -167,12 +151,7 @@ impl CreateBotVersionFluentBuilder {
     /// <p>Specifies the locales that Amazon Lex adds to this version. You can choose the <code>Draft</code> version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.</p>
     pub fn set_bot_version_locale_specification(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::BotVersionLocaleDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>>,
     ) -> Self {
         self.inner = self.inner.set_bot_version_locale_specification(input);
         self
@@ -180,9 +159,7 @@ impl CreateBotVersionFluentBuilder {
     /// <p>Specifies the locales that Amazon Lex adds to this version. You can choose the <code>Draft</code> version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.</p>
     pub fn get_bot_version_locale_specification(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>> {
         self.inner.get_bot_version_locale_specification()
     }
 }

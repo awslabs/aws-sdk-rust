@@ -12,10 +12,7 @@ pub fn ser_create_gateway_route_input(
     if let Some(var_3) = &input.spec {
         #[allow(unused_mut)]
         let mut object_4 = object.key("spec").start_object();
-        crate::protocol_serde::shape_gateway_route_spec::ser_gateway_route_spec(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_gateway_route_spec::ser_gateway_route_spec(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.tags {

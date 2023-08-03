@@ -20,9 +20,7 @@ impl EthernetStatus {
         self.ip_address.as_deref()
     }
     /// <p>The device's connection status.</p>
-    pub fn connection_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkConnectionStatus> {
+    pub fn connection_status(&self) -> ::std::option::Option<&crate::types::NetworkConnectionStatus> {
         self.connection_status.as_ref()
     }
     /// <p>The device's physical address.</p>
@@ -39,9 +37,7 @@ impl EthernetStatus {
 
 /// A builder for [`EthernetStatus`](crate::types::EthernetStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EthernetStatusBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) connection_status: ::std::option::Option<crate::types::NetworkConnectionStatus>,
@@ -68,17 +64,12 @@ impl EthernetStatusBuilder {
         self
     }
     /// <p>The device's connection status.</p>
-    pub fn set_connection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkConnectionStatus>,
-    ) -> Self {
+    pub fn set_connection_status(mut self, input: ::std::option::Option<crate::types::NetworkConnectionStatus>) -> Self {
         self.connection_status = input;
         self
     }
     /// <p>The device's connection status.</p>
-    pub fn get_connection_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkConnectionStatus> {
+    pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::NetworkConnectionStatus> {
         &self.connection_status
     }
     /// <p>The device's physical address.</p>

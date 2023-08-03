@@ -5,8 +5,7 @@
 pub struct ListEntitiesDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub entities_detection_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntitiesDetectionJobProperties>>,
+    pub entities_detection_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::EntitiesDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEntitiesDetectionJobsOutput {
 }
 impl ListEntitiesDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn entities_detection_job_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EntitiesDetectionJobProperties]> {
+    pub fn entities_detection_job_properties_list(&self) -> ::std::option::Option<&[crate::types::EntitiesDetectionJobProperties]> {
         self.entities_detection_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEntitiesDetectionJobsOutput {
 }
 impl ListEntitiesDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionJobsOutput`](crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsOutput).
-    pub fn builder() -> crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsOutputBuilder {
         crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEntitiesDetectionJobsOutput`](crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntitiesDetectionJobsOutputBuilder {
-    pub(crate) entities_detection_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntitiesDetectionJobProperties>>,
+    pub(crate) entities_detection_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::EntitiesDetectionJobProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +47,8 @@ impl ListEntitiesDetectionJobsOutputBuilder {
     /// To override the contents of this collection use [`set_entities_detection_job_properties_list`](Self::set_entities_detection_job_properties_list).
     ///
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn entities_detection_job_properties_list(
-        mut self,
-        input: crate::types::EntitiesDetectionJobProperties,
-    ) -> Self {
-        let mut v = self
-            .entities_detection_job_properties_list
-            .unwrap_or_default();
+    pub fn entities_detection_job_properties_list(mut self, input: crate::types::EntitiesDetectionJobProperties) -> Self {
+        let mut v = self.entities_detection_job_properties_list.unwrap_or_default();
         v.push(input);
         self.entities_detection_job_properties_list = ::std::option::Option::Some(v);
         self
@@ -102,9 +91,7 @@ impl ListEntitiesDetectionJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEntitiesDetectionJobsOutput`](crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsOutput {
+    pub fn build(self) -> crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsOutput {
         crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsOutput {
             entities_detection_job_properties_list: self.entities_detection_job_properties_list,
             next_token: self.next_token,

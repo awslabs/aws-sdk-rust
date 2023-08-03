@@ -43,17 +43,14 @@ impl UpdateEnvironmentInput {
 }
 impl UpdateEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
-    pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder {
         crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +60,12 @@ pub struct UpdateEnvironmentInputBuilder {
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -83,18 +74,12 @@ impl UpdateEnvironmentInputBuilder {
         &self.application_id
     }
     /// <p>The environment ID.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The environment ID.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -142,10 +127,7 @@ impl UpdateEnvironmentInputBuilder {
         self
     }
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-    pub fn set_monitors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>,
-    ) -> Self {
+    pub fn set_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>) -> Self {
         self.monitors = input;
         self
     }
@@ -156,18 +138,13 @@ impl UpdateEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_environment::UpdateEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_environment::UpdateEnvironmentInput {
-                application_id: self.application_id,
-                environment_id: self.environment_id,
-                name: self.name,
-                description: self.description,
-                monitors: self.monitors,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentInput {
+            application_id: self.application_id,
+            environment_id: self.environment_id,
+            name: self.name,
+            description: self.description,
+            monitors: self.monitors,
+        })
     }
 }

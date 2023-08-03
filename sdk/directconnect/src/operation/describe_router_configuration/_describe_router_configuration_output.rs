@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for DescribeRouterConfigurationOutput {
 }
 impl DescribeRouterConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRouterConfigurationOutput`](crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_router_configuration::builders::DescribeRouterConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_router_configuration::builders::DescribeRouterConfigurationOutputBuilder {
         crate::operation::describe_router_configuration::builders::DescribeRouterConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRouterConfigurationOutput`](crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRouterConfigurationOutputBuilder {
     pub(crate) customer_router_config: ::std::option::Option<::std::string::String>,
     pub(crate) router: ::std::option::Option<crate::types::RouterType>,
@@ -61,18 +59,12 @@ pub struct DescribeRouterConfigurationOutputBuilder {
 }
 impl DescribeRouterConfigurationOutputBuilder {
     /// <p>The customer router configuration.</p>
-    pub fn customer_router_config(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_router_config(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_router_config = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer router configuration.</p>
-    pub fn set_customer_router_config(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_router_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_router_config = input;
         self
     }
@@ -95,18 +87,12 @@ impl DescribeRouterConfigurationOutputBuilder {
         &self.router
     }
     /// <p>The ID assigned to the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_interface_id = input;
         self
     }
@@ -115,18 +101,12 @@ impl DescribeRouterConfigurationOutputBuilder {
         &self.virtual_interface_id
     }
     /// <p>Provides the details about a virtual interface's router.</p>
-    pub fn virtual_interface_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the details about a virtual interface's router.</p>
-    pub fn set_virtual_interface_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_interface_name = input;
         self
     }
@@ -144,9 +124,7 @@ impl DescribeRouterConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRouterConfigurationOutput`](crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput {
+    pub fn build(self) -> crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput {
         crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput {
             customer_router_config: self.customer_router_config,
             router: self.router,

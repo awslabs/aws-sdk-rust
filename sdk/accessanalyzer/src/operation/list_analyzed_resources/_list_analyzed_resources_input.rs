@@ -37,18 +37,14 @@ impl ListAnalyzedResourcesInput {
 }
 impl ListAnalyzedResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListAnalyzedResourcesInput`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesInputBuilder {
         crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAnalyzedResourcesInput`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnalyzedResourcesInputBuilder {
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -76,10 +72,7 @@ impl ListAnalyzedResourcesInputBuilder {
         self
     }
     /// <p>The type of resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -118,17 +111,13 @@ impl ListAnalyzedResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListAnalyzedResourcesInput`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput {
-                analyzer_arn: self.analyzer_arn,
-                resource_type: self.resource_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput {
+            analyzer_arn: self.analyzer_arn,
+            resource_type: self.resource_type,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

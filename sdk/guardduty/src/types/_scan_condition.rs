@@ -23,9 +23,7 @@ impl ScanCondition {
 
 /// A builder for [`ScanCondition`](crate::types::ScanCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScanConditionBuilder {
     pub(crate) map_equals: ::std::option::Option<::std::vec::Vec<crate::types::ScanConditionPair>>,
 }
@@ -42,23 +40,16 @@ impl ScanConditionBuilder {
         self
     }
     /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
-    pub fn set_map_equals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScanConditionPair>>,
-    ) -> Self {
+    pub fn set_map_equals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanConditionPair>>) -> Self {
         self.map_equals = input;
         self
     }
     /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
-    pub fn get_map_equals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanConditionPair>> {
+    pub fn get_map_equals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanConditionPair>> {
         &self.map_equals
     }
     /// Consumes the builder and constructs a [`ScanCondition`](crate::types::ScanCondition).
     pub fn build(self) -> crate::types::ScanCondition {
-        crate::types::ScanCondition {
-            map_equals: self.map_equals,
-        }
+        crate::types::ScanCondition { map_equals: self.map_equals }
     }
 }

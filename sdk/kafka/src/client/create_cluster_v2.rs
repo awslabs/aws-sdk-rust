@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`state(Option<ClusterState>)`](crate::operation::create_cluster_v2::CreateClusterV2Output::state): <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
     ///   - [`cluster_type(Option<ClusterType>)`](crate::operation::create_cluster_v2::CreateClusterV2Output::cluster_type): <p>The type of the cluster. The possible states are PROVISIONED or SERVERLESS.</p>
     /// - On failure, responds with [`SdkError<CreateClusterV2Error>`](crate::operation::create_cluster_v2::CreateClusterV2Error)
-    pub fn create_cluster_v2(
-        &self,
-    ) -> crate::operation::create_cluster_v2::builders::CreateClusterV2FluentBuilder {
-        crate::operation::create_cluster_v2::builders::CreateClusterV2FluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_cluster_v2(&self) -> crate::operation::create_cluster_v2::builders::CreateClusterV2FluentBuilder {
+        crate::operation::create_cluster_v2::builders::CreateClusterV2FluentBuilder::new(self.handle.clone())
     }
 }

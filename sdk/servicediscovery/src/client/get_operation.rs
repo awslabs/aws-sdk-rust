@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetOperationOutput`](crate::operation::get_operation::GetOperationOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::get_operation::GetOperationOutput::operation): <p>A complex type that contains information about the operation.</p>
     /// - On failure, responds with [`SdkError<GetOperationError>`](crate::operation::get_operation::GetOperationError)
-    pub fn get_operation(
-        &self,
-    ) -> crate::operation::get_operation::builders::GetOperationFluentBuilder {
-        crate::operation::get_operation::builders::GetOperationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_operation(&self) -> crate::operation::get_operation::builders::GetOperationFluentBuilder {
+        crate::operation::get_operation::builders::GetOperationFluentBuilder::new(self.handle.clone())
     }
 }

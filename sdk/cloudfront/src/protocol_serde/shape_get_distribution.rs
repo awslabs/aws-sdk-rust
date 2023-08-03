@@ -4,26 +4,15 @@ pub fn de_get_distribution_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_distribution::GetDistributionOutput,
-    crate::operation::get_distribution::GetDistributionError,
-> {
+) -> std::result::Result<crate::operation::get_distribution::GetDistributionOutput, crate::operation::get_distribution::GetDistributionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_distribution::GetDistributionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_distribution::GetDistributionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::get_distribution::GetDistributionError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::get_distribution::GetDistributionError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
@@ -33,11 +22,8 @@ pub fn de_get_distribution_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
-                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::get_distribution::GetDistributionError::unhandled)?;
+                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_distribution::GetDistributionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -46,23 +32,21 @@ pub fn de_get_distribution_http_error(
             }
             tmp
         }),
-        "NoSuchDistribution" => {
-            crate::operation::get_distribution::GetDistributionError::NoSuchDistribution({
+        "NoSuchDistribution" => crate::operation::get_distribution::GetDistributionError::NoSuchDistribution({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::NoSuchDistributionBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(_response_body, output).map_err(crate::operation::get_distribution::GetDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::NoSuchDistributionBuilder::default();
+                output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_distribution::GetDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::get_distribution::GetDistributionError::generic(generic),
     })
 }
@@ -72,32 +56,18 @@ pub fn de_get_distribution_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_distribution::GetDistributionOutput,
-    crate::operation::get_distribution::GetDistributionError,
-> {
+) -> std::result::Result<crate::operation::get_distribution::GetDistributionOutput, crate::operation::get_distribution::GetDistributionError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::get_distribution::builders::GetDistributionOutputBuilder::default();
-        output = output.set_distribution(
-            crate::protocol_serde::shape_get_distribution_output::de_distribution_payload(
-                _response_body,
-            )?,
-        );
+        let mut output = crate::operation::get_distribution::builders::GetDistributionOutputBuilder::default();
+        output = output.set_distribution(crate::protocol_serde::shape_get_distribution_output::de_distribution_payload(
+            _response_body,
+        )?);
         output = output.set_e_tag(
-            crate::protocol_serde::shape_get_distribution_output::de_e_tag_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::get_distribution::GetDistributionError::unhandled(
-                    "Failed to parse ETag from header `ETag",
-                )
-            })?,
+            crate::protocol_serde::shape_get_distribution_output::de_e_tag_header(_response_headers)
+                .map_err(|_| crate::operation::get_distribution::GetDistributionError::unhandled("Failed to parse ETag from header `ETag"))?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

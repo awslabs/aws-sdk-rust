@@ -10,10 +10,7 @@ impl DescribeMultiplexInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_multiplex::DescribeMultiplexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_multiplex::DescribeMultiplexError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_multiplex::DescribeMultiplexError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_multiplex();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeMultiplexFluentBuilder {
         }
     }
     /// Access the DescribeMultiplex as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_multiplex::builders::DescribeMultiplexInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_multiplex::builders::DescribeMultiplexInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeMultiplexFluentBuilder {
             crate::operation::describe_multiplex::DescribeMultiplex,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_multiplex::DescribeMultiplexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_multiplex::DescribeMultiplexError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeMultiplexFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeMultiplexFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_multiplex::DescribeMultiplexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_multiplex::DescribeMultiplexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_multiplex::DescribeMultiplexError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeMultiplexFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_multiplex::DescribeMultiplexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_multiplex::DescribeMultiplexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_multiplex::DescribeMultiplexError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeMultiplexFluentBuilder {
             crate::operation::describe_multiplex::DescribeMultiplex,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_multiplex::DescribeMultiplexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_multiplex::DescribeMultiplexError>,
     > {
         self.customize_middleware().await
     }

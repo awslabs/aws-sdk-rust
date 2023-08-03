@@ -29,9 +29,7 @@ impl GetRunInput {
 
 /// A builder for [`GetRunInput`](crate::operation::get_run::GetRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRunInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) export: ::std::option::Option<::std::vec::Vec<crate::types::RunExport>>,
@@ -63,10 +61,7 @@ impl GetRunInputBuilder {
         self
     }
     /// <p>The run's export format.</p>
-    pub fn set_export(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RunExport>>,
-    ) -> Self {
+    pub fn set_export(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RunExport>>) -> Self {
         self.export = input;
         self
     }
@@ -75,12 +70,7 @@ impl GetRunInputBuilder {
         &self.export
     }
     /// Consumes the builder and constructs a [`GetRunInput`](crate::operation::get_run::GetRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_run::GetRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_run::GetRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_run::GetRunInput {
             id: self.id,
             export: self.export,

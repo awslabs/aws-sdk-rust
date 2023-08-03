@@ -26,7 +26,7 @@ impl BatchDisassociateScramSecretInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDisassociateScramSecretFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_disassociate_scram_secret::builders::BatchDisassociateScramSecretInputBuilder,
+    inner: crate::operation::batch_disassociate_scram_secret::builders::BatchDisassociateScramSecretInputBuilder,
 }
 impl BatchDisassociateScramSecretFluentBuilder {
     /// Creates a new `BatchDisassociateScramSecret`.
@@ -37,7 +37,7 @@ impl BatchDisassociateScramSecretFluentBuilder {
         }
     }
     /// Access the BatchDisassociateScramSecret as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_disassociate_scram_secret::builders::BatchDisassociateScramSecretInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_disassociate_scram_secret::builders::BatchDisassociateScramSecretInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchDisassociateScramSecretFluentBuilder {
             crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecret,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchDisassociateScramSecretFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchDisassociateScramSecretFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchDisassociateScramSecretFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchDisassociateScramSecretFluentBuilder {
             crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecret,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretError>,
     > {
         self.customize_middleware().await
     }
@@ -139,25 +128,17 @@ impl BatchDisassociateScramSecretFluentBuilder {
     /// To override the contents of this collection use [`set_secret_arn_list`](Self::set_secret_arn_list).
     ///
     /// <p>List of AWS Secrets Manager secret ARNs.</p>
-    pub fn secret_arn_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secret_arn_list(input.into());
         self
     }
     /// <p>List of AWS Secrets Manager secret ARNs.</p>
-    pub fn set_secret_arn_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_secret_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_secret_arn_list(input);
         self
     }
     /// <p>List of AWS Secrets Manager secret ARNs.</p>
-    pub fn get_secret_arn_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_secret_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_secret_arn_list()
     }
 }

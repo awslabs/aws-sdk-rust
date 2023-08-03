@@ -35,9 +35,7 @@ impl ListContainersOutput {
 
 /// A builder for [`ListContainersOutput`](crate::operation::list_containers::ListContainersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContainersOutputBuilder {
     pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListContainersOutputBuilder {
         self
     }
     /// <p>The names of the containers.</p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
-    ) -> Self {
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Container>>) -> Self {
         self.containers = input;
         self
     }
     /// <p>The names of the containers.</p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Container>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Container>> {
         &self.containers
     }
     /// <p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>

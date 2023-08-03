@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateCreatedArtifactOutput {
 }
 impl AssociateCreatedArtifactOutput {
     /// Creates a new builder-style object to manufacture [`AssociateCreatedArtifactOutput`](crate::operation::associate_created_artifact::AssociateCreatedArtifactOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactOutputBuilder {
         crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateCreatedArtifactOutput`](crate::operation::associate_created_artifact::AssociateCreatedArtifactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateCreatedArtifactOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl AssociateCreatedArtifactOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateCreatedArtifactOutput`](crate::operation::associate_created_artifact::AssociateCreatedArtifactOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_created_artifact::AssociateCreatedArtifactOutput {
+    pub fn build(self) -> crate::operation::associate_created_artifact::AssociateCreatedArtifactOutput {
         crate::operation::associate_created_artifact::AssociateCreatedArtifactOutput {
             _request_id: self._request_id,
         }

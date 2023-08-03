@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`successful(Option<Vec<ChangeMessageVisibilityBatchResultEntry>>)`](crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput::successful): <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
     ///   - [`failed(Option<Vec<BatchResultErrorEntry>>)`](crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput::failed): <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
     /// - On failure, responds with [`SdkError<ChangeMessageVisibilityBatchError>`](crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError)
-    pub fn change_message_visibility_batch(&self) -> crate::operation::change_message_visibility_batch::builders::ChangeMessageVisibilityBatchFluentBuilder{
+    pub fn change_message_visibility_batch(
+        &self,
+    ) -> crate::operation::change_message_visibility_batch::builders::ChangeMessageVisibilityBatchFluentBuilder {
         crate::operation::change_message_visibility_batch::builders::ChangeMessageVisibilityBatchFluentBuilder::new(self.handle.clone())
     }
 }

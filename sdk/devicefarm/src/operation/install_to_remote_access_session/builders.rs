@@ -26,7 +26,7 @@ impl InstallToRemoteAccessSessionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InstallToRemoteAccessSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionInputBuilder,
+    inner: crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionInputBuilder,
 }
 impl InstallToRemoteAccessSessionFluentBuilder {
     /// Creates a new `InstallToRemoteAccessSession`.
@@ -37,7 +37,7 @@ impl InstallToRemoteAccessSessionFluentBuilder {
         }
     }
     /// Access the InstallToRemoteAccessSession as a reference.
-    pub fn as_input(&self) -> &crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl InstallToRemoteAccessSessionFluentBuilder {
             crate::operation::install_to_remote_access_session::InstallToRemoteAccessSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl InstallToRemoteAccessSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl InstallToRemoteAccessSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl InstallToRemoteAccessSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl InstallToRemoteAccessSessionFluentBuilder {
             crate::operation::install_to_remote_access_session::InstallToRemoteAccessSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
-    pub fn remote_access_session_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_access_session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remote_access_session_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
-    pub fn set_remote_access_session_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_access_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_remote_access_session_arn(input);
         self
     }

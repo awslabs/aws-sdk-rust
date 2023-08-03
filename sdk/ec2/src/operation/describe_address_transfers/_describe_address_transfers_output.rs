@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeAddressTransfersOutput {
 }
 impl DescribeAddressTransfersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAddressTransfersOutput`](crate::operation::describe_address_transfers::DescribeAddressTransfersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_address_transfers::builders::DescribeAddressTransfersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_address_transfers::builders::DescribeAddressTransfersOutputBuilder {
         crate::operation::describe_address_transfers::builders::DescribeAddressTransfersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAddressTransfersOutput`](crate::operation::describe_address_transfers::DescribeAddressTransfersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddressTransfersOutputBuilder {
-    pub(crate) address_transfers:
-        ::std::option::Option<::std::vec::Vec<crate::types::AddressTransfer>>,
+    pub(crate) address_transfers: ::std::option::Option<::std::vec::Vec<crate::types::AddressTransfer>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeAddressTransfersOutputBuilder {
         self
     }
     /// <p>The Elastic IP address transfer.</p>
-    pub fn set_address_transfers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddressTransfer>>,
-    ) -> Self {
+    pub fn set_address_transfers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddressTransfer>>) -> Self {
         self.address_transfers = input;
         self
     }
     /// <p>The Elastic IP address transfer.</p>
-    pub fn get_address_transfers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddressTransfer>> {
+    pub fn get_address_transfers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddressTransfer>> {
         &self.address_transfers
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -96,9 +86,7 @@ impl DescribeAddressTransfersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAddressTransfersOutput`](crate::operation::describe_address_transfers::DescribeAddressTransfersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_address_transfers::DescribeAddressTransfersOutput {
+    pub fn build(self) -> crate::operation::describe_address_transfers::DescribeAddressTransfersOutput {
         crate::operation::describe_address_transfers::DescribeAddressTransfersOutput {
             address_transfers: self.address_transfers,
             next_token: self.next_token,

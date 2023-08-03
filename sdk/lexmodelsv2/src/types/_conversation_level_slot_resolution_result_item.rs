@@ -37,9 +37,7 @@ impl ConversationLevelSlotResolutionResultItem {
 
 /// A builder for [`ConversationLevelSlotResolutionResultItem`](crate::types::ConversationLevelSlotResolutionResultItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConversationLevelSlotResolutionResultItemBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
     pub(crate) slot_name: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl ConversationLevelSlotResolutionResultItemBuilder {
         self
     }
     /// <p>The number of matching slots used in the slots listings for the slot resolution evaluation.</p>
-    pub fn set_match_result(
-        mut self,
-        input: ::std::option::Option<crate::types::TestResultMatchStatus>,
-    ) -> Self {
+    pub fn set_match_result(mut self, input: ::std::option::Option<crate::types::TestResultMatchStatus>) -> Self {
         self.match_result = input;
         self
     }

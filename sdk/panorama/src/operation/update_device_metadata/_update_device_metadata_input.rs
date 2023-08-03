@@ -22,17 +22,14 @@ impl UpdateDeviceMetadataInput {
 }
 impl UpdateDeviceMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateDeviceMetadataInput`](crate::operation::update_device_metadata::UpdateDeviceMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::update_device_metadata::builders::UpdateDeviceMetadataInputBuilder {
+    pub fn builder() -> crate::operation::update_device_metadata::builders::UpdateDeviceMetadataInputBuilder {
         crate::operation::update_device_metadata::builders::UpdateDeviceMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDeviceMetadataInput`](crate::operation::update_device_metadata::UpdateDeviceMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDeviceMetadataInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl UpdateDeviceMetadataInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDeviceMetadataInput`](crate::operation::update_device_metadata::UpdateDeviceMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_device_metadata::UpdateDeviceMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_device_metadata::UpdateDeviceMetadataInput {
-                device_id: self.device_id,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_device_metadata::UpdateDeviceMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_device_metadata::UpdateDeviceMetadataInput {
+            device_id: self.device_id,
+            description: self.description,
+        })
     }
 }

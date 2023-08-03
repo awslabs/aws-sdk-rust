@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum JobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for JobErrorCode {
             "RESOURCE_NOT_FOUND_ERROR" => JobErrorCode::ResourceNotFoundError,
             "SERVICE_ERROR" => JobErrorCode::ServiceError,
             "SERVICE_QUOTA_EXCEEDED_ERROR" => JobErrorCode::ServiceQuotaExceededError,
-            other => {
-                JobErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => JobErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

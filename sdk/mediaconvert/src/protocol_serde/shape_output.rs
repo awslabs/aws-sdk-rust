@@ -9,10 +9,7 @@ pub fn ser_output(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_audio_description::ser_audio_description(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_audio_description::ser_audio_description(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_output(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_caption_description::ser_caption_description(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_caption_description::ser_caption_description(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -36,10 +30,7 @@ pub fn ser_output(
     if let Some(var_9) = &input.container_settings {
         #[allow(unused_mut)]
         let mut object_10 = object.key("containerSettings").start_object();
-        crate::protocol_serde::shape_container_settings::ser_container_settings(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_container_settings::ser_container_settings(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.extension {
@@ -60,10 +51,7 @@ pub fn ser_output(
     if let Some(var_16) = &input.video_description {
         #[allow(unused_mut)]
         let mut object_17 = object.key("videoDescription").start_object();
-        crate::protocol_serde::shape_video_description::ser_video_description(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_video_description::ser_video_description(&mut object_17, var_16)?;
         object_17.finish();
     }
     Ok(())
@@ -73,12 +61,7 @@ pub(crate) fn de_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Output>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -88,78 +71,61 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "audioDescriptions" => {
-                                builder = builder.set_audio_descriptions(
-                                    crate::protocol_serde::shape___list_of_audio_description::de___list_of_audio_description(tokens)?
-                                );
-                            }
-                            "captionDescriptions" => {
-                                builder = builder.set_caption_descriptions(
-                                    crate::protocol_serde::shape___list_of_caption_description::de___list_of_caption_description(tokens)?
-                                );
-                            }
-                            "containerSettings" => {
-                                builder = builder.set_container_settings(
-                                    crate::protocol_serde::shape_container_settings::de_container_settings(tokens)?
-                                );
-                            }
-                            "extension" => {
-                                builder = builder.set_extension(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "nameModifier" => {
-                                builder = builder.set_name_modifier(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "outputSettings" => {
-                                builder = builder.set_output_settings(
-                                    crate::protocol_serde::shape_output_settings::de_output_settings(tokens)?
-                                );
-                            }
-                            "preset" => {
-                                builder = builder.set_preset(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "videoDescription" => {
-                                builder = builder.set_video_description(
-                                    crate::protocol_serde::shape_video_description::de_video_description(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "audioDescriptions" => {
+                            builder = builder.set_audio_descriptions(
+                                crate::protocol_serde::shape___list_of_audio_description::de___list_of_audio_description(tokens)?,
+                            );
                         }
-                    }
+                        "captionDescriptions" => {
+                            builder = builder.set_caption_descriptions(
+                                crate::protocol_serde::shape___list_of_caption_description::de___list_of_caption_description(tokens)?,
+                            );
+                        }
+                        "containerSettings" => {
+                            builder = builder.set_container_settings(crate::protocol_serde::shape_container_settings::de_container_settings(tokens)?);
+                        }
+                        "extension" => {
+                            builder = builder.set_extension(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "nameModifier" => {
+                            builder = builder.set_name_modifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "outputSettings" => {
+                            builder = builder.set_output_settings(crate::protocol_serde::shape_output_settings::de_output_settings(tokens)?);
+                        }
+                        "preset" => {
+                            builder = builder.set_preset(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "videoDescription" => {
+                            builder = builder.set_video_description(crate::protocol_serde::shape_video_description::de_video_description(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -49,9 +49,7 @@ impl RouteMatrixEntryError {
 
 /// A builder for [`RouteMatrixEntryError`](crate::types::RouteMatrixEntryError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteMatrixEntryErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::RouteMatrixErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -63,10 +61,7 @@ impl RouteMatrixEntryErrorBuilder {
         self
     }
     /// <p>The type of error which occurred for the route calculation.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteMatrixErrorCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::RouteMatrixErrorCode>) -> Self {
         self.code = input;
         self
     }

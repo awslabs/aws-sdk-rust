@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSimulationApplicationOutput {
 }
 impl DeleteSimulationApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSimulationApplicationOutput`](crate::operation::delete_simulation_application::DeleteSimulationApplicationOutput).
-    pub fn builder() -> crate::operation::delete_simulation_application::builders::DeleteSimulationApplicationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_simulation_application::builders::DeleteSimulationApplicationOutputBuilder {
         crate::operation::delete_simulation_application::builders::DeleteSimulationApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSimulationApplicationOutput`](crate::operation::delete_simulation_application::DeleteSimulationApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSimulationApplicationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteSimulationApplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSimulationApplicationOutput`](crate::operation::delete_simulation_application::DeleteSimulationApplicationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_simulation_application::DeleteSimulationApplicationOutput {
+    pub fn build(self) -> crate::operation::delete_simulation_application::DeleteSimulationApplicationOutput {
         crate::operation::delete_simulation_application::DeleteSimulationApplicationOutput {
             _request_id: self._request_id,
         }

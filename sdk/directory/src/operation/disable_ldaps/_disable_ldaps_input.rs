@@ -29,9 +29,7 @@ impl DisableLdapsInput {
 
 /// A builder for [`DisableLdapsInput`](crate::operation::disable_ldaps::DisableLdapsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableLdapsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::LdapsType>,
@@ -66,12 +64,7 @@ impl DisableLdapsInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`DisableLdapsInput`](crate::operation::disable_ldaps::DisableLdapsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_ldaps::DisableLdapsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_ldaps::DisableLdapsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_ldaps::DisableLdapsInput {
             directory_id: self.directory_id,
             r#type: self.r#type,

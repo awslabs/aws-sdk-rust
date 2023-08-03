@@ -23,9 +23,7 @@ impl ReplicationConfig {
 
 /// A builder for [`ReplicationConfig`](crate::types::ReplicationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationConfigBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ReplicationState>,
 }
@@ -36,10 +34,7 @@ impl ReplicationConfigBuilder {
         self
     }
     /// <p>The state of event replication.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ReplicationState>) -> Self {
         self.state = input;
         self
     }

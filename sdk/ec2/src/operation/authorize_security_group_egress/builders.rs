@@ -30,7 +30,7 @@ impl AuthorizeSecurityGroupEgressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AuthorizeSecurityGroupEgressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressInputBuilder,
+    inner: crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressInputBuilder,
 }
 impl AuthorizeSecurityGroupEgressFluentBuilder {
     /// Creates a new `AuthorizeSecurityGroupEgress`.
@@ -41,7 +41,7 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
         }
     }
     /// Access the AuthorizeSecurityGroupEgress as a reference.
-    pub fn as_input(&self) -> &crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
             crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
             crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError>,
     > {
         self.customize_middleware().await
     }
@@ -162,17 +151,12 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
         self
     }
     /// <p>The sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in the same set of permissions.</p>
-    pub fn set_ip_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
-    ) -> Self {
+    pub fn set_ip_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.inner = self.inner.set_ip_permissions(input);
         self
     }
     /// <p>The sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in the same set of permissions.</p>
-    pub fn get_ip_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+    pub fn get_ip_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         self.inner.get_ip_permissions()
     }
     /// Appends an item to `TagSpecifications`.
@@ -185,17 +169,12 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
         self
     }
     /// <p>The tags applied to the security group rule.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags applied to the security group rule.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
@@ -255,18 +234,12 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
         self.inner.get_to_port()
     }
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
-    pub fn source_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_security_group_name(input.into());
         self
     }
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
-    pub fn set_source_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_security_group_name(input);
         self
     }
@@ -275,25 +248,17 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
         self.inner.get_source_security_group_name()
     }
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
-    pub fn source_security_group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_security_group_owner_id(input.into());
         self
     }
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
-    pub fn set_source_security_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_security_group_owner_id(input);
         self
     }
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
-    pub fn get_source_security_group_owner_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_security_group_owner_id()
     }
 }

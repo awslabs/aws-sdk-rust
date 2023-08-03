@@ -36,17 +36,14 @@ impl SearchDashboardsInput {
 }
 impl SearchDashboardsInput {
     /// Creates a new builder-style object to manufacture [`SearchDashboardsInput`](crate::operation::search_dashboards::SearchDashboardsInput).
-    pub fn builder() -> crate::operation::search_dashboards::builders::SearchDashboardsInputBuilder
-    {
+    pub fn builder() -> crate::operation::search_dashboards::builders::SearchDashboardsInputBuilder {
         crate::operation::search_dashboards::builders::SearchDashboardsInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchDashboardsInput`](crate::operation::search_dashboards::SearchDashboardsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchDashboardsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSearchFilter>>,
@@ -55,18 +52,12 @@ pub struct SearchDashboardsInputBuilder {
 }
 impl SearchDashboardsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -86,17 +77,12 @@ impl SearchDashboardsInputBuilder {
         self
     }
     /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSearchFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSearchFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardSearchFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardSearchFilter>> {
         &self.filters
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -130,10 +116,7 @@ impl SearchDashboardsInputBuilder {
     /// Consumes the builder and constructs a [`SearchDashboardsInput`](crate::operation::search_dashboards::SearchDashboardsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_dashboards::SearchDashboardsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::search_dashboards::SearchDashboardsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_dashboards::SearchDashboardsInput {
             aws_account_id: self.aws_account_id,
             filters: self.filters,

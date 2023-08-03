@@ -26,9 +26,7 @@ impl PutBucketMetricsConfigurationInput {
         self.id.as_deref()
     }
     /// <p>Specifies the metrics configuration.</p>
-    pub fn metrics_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MetricsConfiguration> {
+    pub fn metrics_configuration(&self) -> ::std::option::Option<&crate::types::MetricsConfiguration> {
         self.metrics_configuration.as_ref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
@@ -38,16 +36,14 @@ impl PutBucketMetricsConfigurationInput {
 }
 impl PutBucketMetricsConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutBucketMetricsConfigurationInput`](crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationInput).
-    pub fn builder() -> crate::operation::put_bucket_metrics_configuration::builders::PutBucketMetricsConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_bucket_metrics_configuration::builders::PutBucketMetricsConfigurationInputBuilder {
         crate::operation::put_bucket_metrics_configuration::builders::PutBucketMetricsConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutBucketMetricsConfigurationInput`](crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketMetricsConfigurationInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -89,32 +85,21 @@ impl PutBucketMetricsConfigurationInputBuilder {
         self
     }
     /// <p>Specifies the metrics configuration.</p>
-    pub fn set_metrics_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricsConfiguration>,
-    ) -> Self {
+    pub fn set_metrics_configuration(mut self, input: ::std::option::Option<crate::types::MetricsConfiguration>) -> Self {
         self.metrics_configuration = input;
         self
     }
     /// <p>Specifies the metrics configuration.</p>
-    pub fn get_metrics_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricsConfiguration> {
+    pub fn get_metrics_configuration(&self) -> &::std::option::Option<crate::types::MetricsConfiguration> {
         &self.metrics_configuration
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -129,17 +114,11 @@ impl PutBucketMetricsConfigurationInputBuilder {
         crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationInput {
-                bucket: self.bucket
-                ,
-                id: self.id
-                ,
-                metrics_configuration: self.metrics_configuration
-                ,
-                expected_bucket_owner: self.expected_bucket_owner
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationInput {
+            bucket: self.bucket,
+            id: self.id,
+            metrics_configuration: self.metrics_configuration,
+            expected_bucket_owner: self.expected_bucket_owner,
+        })
     }
 }

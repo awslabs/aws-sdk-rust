@@ -5,15 +5,12 @@
 pub struct DeregisterInstanceEventNotificationAttributesOutput {
     /// <p>The resulting set of tag keys.</p>
     #[doc(hidden)]
-    pub instance_tag_attribute:
-        ::std::option::Option<crate::types::InstanceTagNotificationAttribute>,
+    pub instance_tag_attribute: ::std::option::Option<crate::types::InstanceTagNotificationAttribute>,
     _request_id: Option<String>,
 }
 impl DeregisterInstanceEventNotificationAttributesOutput {
     /// <p>The resulting set of tag keys.</p>
-    pub fn instance_tag_attribute(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceTagNotificationAttribute> {
+    pub fn instance_tag_attribute(&self) -> ::std::option::Option<&crate::types::InstanceTagNotificationAttribute> {
         self.instance_tag_attribute.as_ref()
     }
 }
@@ -24,42 +21,33 @@ impl ::aws_http::request_id::RequestId for DeregisterInstanceEventNotificationAt
 }
 impl DeregisterInstanceEventNotificationAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterInstanceEventNotificationAttributesOutput`](crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesOutput).
-    pub fn builder() -> crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesOutputBuilder
+    {
         crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterInstanceEventNotificationAttributesOutput`](crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterInstanceEventNotificationAttributesOutputBuilder {
-    pub(crate) instance_tag_attribute:
-        ::std::option::Option<crate::types::InstanceTagNotificationAttribute>,
+    pub(crate) instance_tag_attribute: ::std::option::Option<crate::types::InstanceTagNotificationAttribute>,
     _request_id: Option<String>,
 }
 impl DeregisterInstanceEventNotificationAttributesOutputBuilder {
     /// <p>The resulting set of tag keys.</p>
-    pub fn instance_tag_attribute(
-        mut self,
-        input: crate::types::InstanceTagNotificationAttribute,
-    ) -> Self {
+    pub fn instance_tag_attribute(mut self, input: crate::types::InstanceTagNotificationAttribute) -> Self {
         self.instance_tag_attribute = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resulting set of tag keys.</p>
-    pub fn set_instance_tag_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceTagNotificationAttribute>,
-    ) -> Self {
+    pub fn set_instance_tag_attribute(mut self, input: ::std::option::Option<crate::types::InstanceTagNotificationAttribute>) -> Self {
         self.instance_tag_attribute = input;
         self
     }
     /// <p>The resulting set of tag keys.</p>
-    pub fn get_instance_tag_attribute(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceTagNotificationAttribute> {
+    pub fn get_instance_tag_attribute(&self) -> &::std::option::Option<crate::types::InstanceTagNotificationAttribute> {
         &self.instance_tag_attribute
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +60,9 @@ impl DeregisterInstanceEventNotificationAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterInstanceEventNotificationAttributesOutput`](crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesOutput).
-    pub fn build(self) -> crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesOutput{
+    pub fn build(self) -> crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesOutput {
         crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesOutput {
-            instance_tag_attribute: self.instance_tag_attribute
-            ,
+            instance_tag_attribute: self.instance_tag_attribute,
             _request_id: self._request_id,
         }
     }

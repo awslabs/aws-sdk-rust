@@ -40,13 +40,7 @@
 /// VBR Quality Level - Only used if rate_control_mode is VBR.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AacVbrQuality {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for AacVbrQuality {
             "LOW" => AacVbrQuality::Low,
             "MEDIUM_HIGH" => AacVbrQuality::MediumHigh,
             "MEDIUM_LOW" => AacVbrQuality::MediumLow,
-            other => {
-                AacVbrQuality::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AacVbrQuality::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

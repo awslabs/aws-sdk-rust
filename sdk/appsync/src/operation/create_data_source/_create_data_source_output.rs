@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateDataSourceOutput {
 }
 impl CreateDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataSourceOutput`](crate::operation::create_data_source::CreateDataSourceOutput).
-    pub fn builder() -> crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder {
         crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataSourceOutput`](crate::operation::create_data_source::CreateDataSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataSourceOutputBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateDataSourceOutputBuilder {
         self
     }
     /// <p>The <code>DataSource</code> object.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }

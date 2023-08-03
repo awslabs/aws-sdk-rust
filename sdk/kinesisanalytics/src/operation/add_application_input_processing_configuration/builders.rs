@@ -5,16 +5,16 @@ pub use crate::operation::add_application_input_processing_configuration::_add_a
 
 impl AddApplicationInputProcessingConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.add_application_input_processing_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddApplicationInputProcessingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder,
+    inner: crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder,
 }
 impl AddApplicationInputProcessingConfigurationFluentBuilder {
     /// Creates a new `AddApplicationInputProcessingConfiguration`.
@@ -40,15 +40,24 @@ impl AddApplicationInputProcessingConfigurationFluentBuilder {
         }
     }
     /// Access the AddApplicationInputProcessingConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +66,19 @@ impl AddApplicationInputProcessingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -84,32 +96,39 @@ impl AddApplicationInputProcessingConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>Name of the application to which you want to add the input processing configuration.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>Name of the application to which you want to add the input processing configuration.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -146,25 +165,17 @@ impl AddApplicationInputProcessingConfigurationFluentBuilder {
         self.inner.get_input_id()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to add to the application.</p>
-    pub fn input_processing_configuration(
-        mut self,
-        input: crate::types::InputProcessingConfiguration,
-    ) -> Self {
+    pub fn input_processing_configuration(mut self, input: crate::types::InputProcessingConfiguration) -> Self {
         self.inner = self.inner.input_processing_configuration(input);
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to add to the application.</p>
-    pub fn set_input_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InputProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_input_processing_configuration(mut self, input: ::std::option::Option<crate::types::InputProcessingConfiguration>) -> Self {
         self.inner = self.inner.set_input_processing_configuration(input);
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to add to the application.</p>
-    pub fn get_input_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
+    pub fn get_input_processing_configuration(&self) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
         self.inner.get_input_processing_configuration()
     }
 }

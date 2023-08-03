@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`membership_id(impl ::std::convert::Into<String>)`](crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder::membership_id) / [`set_membership_id(Option<String>)`](crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder::set_membership_id): <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
     /// - On success, responds with [`DeleteGroupMembershipOutput`](crate::operation::delete_group_membership::DeleteGroupMembershipOutput)
     /// - On failure, responds with [`SdkError<DeleteGroupMembershipError>`](crate::operation::delete_group_membership::DeleteGroupMembershipError)
-    pub fn delete_group_membership(
-        &self,
-    ) -> crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder
-    {
-        crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_group_membership(&self) -> crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder {
+        crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder::new(self.handle.clone())
     }
 }

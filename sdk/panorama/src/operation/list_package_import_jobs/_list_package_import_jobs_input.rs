@@ -22,18 +22,14 @@ impl ListPackageImportJobsInput {
 }
 impl ListPackageImportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListPackageImportJobsInput`](crate::operation::list_package_import_jobs::ListPackageImportJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_package_import_jobs::builders::ListPackageImportJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_package_import_jobs::builders::ListPackageImportJobsInputBuilder {
         crate::operation::list_package_import_jobs::builders::ListPackageImportJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPackageImportJobsInput`](crate::operation::list_package_import_jobs::ListPackageImportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackageImportJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,15 +66,11 @@ impl ListPackageImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListPackageImportJobsInput`](crate::operation::list_package_import_jobs::ListPackageImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_package_import_jobs::ListPackageImportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_package_import_jobs::ListPackageImportJobsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_package_import_jobs::ListPackageImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_package_import_jobs::ListPackageImportJobsInput {
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+        })
     }
 }

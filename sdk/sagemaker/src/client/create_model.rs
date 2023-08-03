@@ -14,9 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateModelOutput`](crate::operation::create_model::CreateModelOutput) with field(s):
     ///   - [`model_arn(Option<String>)`](crate::operation::create_model::CreateModelOutput::model_arn): <p>The ARN of the model created in SageMaker.</p>
     /// - On failure, responds with [`SdkError<CreateModelError>`](crate::operation::create_model::CreateModelError)
-    pub fn create_model(
-        &self,
-    ) -> crate::operation::create_model::builders::CreateModelFluentBuilder {
+    pub fn create_model(&self) -> crate::operation::create_model::builders::CreateModelFluentBuilder {
         crate::operation::create_model::builders::CreateModelFluentBuilder::new(self.handle.clone())
     }
 }

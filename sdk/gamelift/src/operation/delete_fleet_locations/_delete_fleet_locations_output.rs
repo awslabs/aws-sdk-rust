@@ -41,17 +41,14 @@ impl ::aws_http::request_id::RequestId for DeleteFleetLocationsOutput {
 }
 impl DeleteFleetLocationsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetLocationsOutput`](crate::operation::delete_fleet_locations::DeleteFleetLocationsOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsOutputBuilder {
+    pub fn builder() -> crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsOutputBuilder {
         crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFleetLocationsOutput`](crate::operation::delete_fleet_locations::DeleteFleetLocationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFleetLocationsOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
@@ -108,17 +105,12 @@ impl DeleteFleetLocationsOutputBuilder {
         self
     }
     /// <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
-    pub fn set_location_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocationState>>,
-    ) -> Self {
+    pub fn set_location_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationState>>) -> Self {
         self.location_states = input;
         self
     }
     /// <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
-    pub fn get_location_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationState>> {
+    pub fn get_location_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationState>> {
         &self.location_states
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

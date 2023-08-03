@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`global_table_name(Option<String>)`](crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput::global_table_name): <p>The name of the global table.</p>
     ///   - [`replica_settings(Option<Vec<ReplicaSettingsDescription>>)`](crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput::replica_settings): <p>The Region-specific settings for the global table.</p>
     /// - On failure, responds with [`SdkError<UpdateGlobalTableSettingsError>`](crate::operation::update_global_table_settings::UpdateGlobalTableSettingsError)
-    pub fn update_global_table_settings(&self) -> crate::operation::update_global_table_settings::builders::UpdateGlobalTableSettingsFluentBuilder{
+    pub fn update_global_table_settings(&self) -> crate::operation::update_global_table_settings::builders::UpdateGlobalTableSettingsFluentBuilder {
         crate::operation::update_global_table_settings::builders::UpdateGlobalTableSettingsFluentBuilder::new(self.handle.clone())
     }
 }

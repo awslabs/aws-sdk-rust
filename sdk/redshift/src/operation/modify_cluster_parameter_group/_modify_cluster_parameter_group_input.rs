@@ -27,34 +27,26 @@ impl ModifyClusterParameterGroupInput {
 }
 impl ModifyClusterParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterParameterGroupInput`](crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupInput).
-    pub fn builder() -> crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupInputBuilder{
+    pub fn builder() -> crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupInputBuilder {
         crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyClusterParameterGroupInput`](crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClusterParameterGroupInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl ModifyClusterParameterGroupInputBuilder {
     /// <p>The name of the parameter group to be modified.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter group to be modified.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
@@ -78,19 +70,14 @@ impl ModifyClusterParameterGroupInputBuilder {
     /// <p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p>
     /// <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p>
     /// <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ModifyClusterParameterGroupInput`](crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupInput).
@@ -100,11 +87,9 @@ impl ModifyClusterParameterGroupInputBuilder {
         crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupInput {
-                parameter_group_name: self.parameter_group_name,
-                parameters: self.parameters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupInput {
+            parameter_group_name: self.parameter_group_name,
+            parameters: self.parameters,
+        })
     }
 }

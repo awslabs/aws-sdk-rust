@@ -22,34 +22,26 @@ impl CreateVpcPeeringAuthorizationInput {
 }
 impl CreateVpcPeeringAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`CreateVpcPeeringAuthorizationInput`](crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationInput).
-    pub fn builder() -> crate::operation::create_vpc_peering_authorization::builders::CreateVpcPeeringAuthorizationInputBuilder{
+    pub fn builder() -> crate::operation::create_vpc_peering_authorization::builders::CreateVpcPeeringAuthorizationInputBuilder {
         crate::operation::create_vpc_peering_authorization::builders::CreateVpcPeeringAuthorizationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcPeeringAuthorizationInput`](crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcPeeringAuthorizationInputBuilder {
     pub(crate) game_lift_aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateVpcPeeringAuthorizationInputBuilder {
     /// <p>A unique identifier for the Amazon Web Services account that you use to manage your Amazon GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-    pub fn game_lift_aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_lift_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_lift_aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the Amazon Web Services account that you use to manage your Amazon GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-    pub fn set_game_lift_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_lift_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_lift_aws_account_id = input;
         self
     }
@@ -78,13 +70,9 @@ impl CreateVpcPeeringAuthorizationInputBuilder {
         crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationInput {
-                game_lift_aws_account_id: self.game_lift_aws_account_id
-                ,
-                peer_vpc_id: self.peer_vpc_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationInput {
+            game_lift_aws_account_id: self.game_lift_aws_account_id,
+            peer_vpc_id: self.peer_vpc_id,
+        })
     }
 }

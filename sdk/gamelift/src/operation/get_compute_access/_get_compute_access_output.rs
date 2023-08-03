@@ -73,8 +73,7 @@ impl ::aws_http::request_id::RequestId for GetComputeAccessOutput {
 }
 impl GetComputeAccessOutput {
     /// Creates a new builder-style object to manufacture [`GetComputeAccessOutput`](crate::operation::get_compute_access::GetComputeAccessOutput).
-    pub fn builder() -> crate::operation::get_compute_access::builders::GetComputeAccessOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_compute_access::builders::GetComputeAccessOutputBuilder {
         crate::operation::get_compute_access::builders::GetComputeAccessOutputBuilder::default()
     }
 }
@@ -171,10 +170,7 @@ impl GetComputeAccessOutputBuilder {
         self
     }
     /// <p>The access credentials for the compute resource.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsCredentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::AwsCredentials>) -> Self {
         self.credentials = input;
         self
     }

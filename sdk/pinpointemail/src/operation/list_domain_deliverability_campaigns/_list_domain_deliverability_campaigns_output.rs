@@ -6,8 +6,7 @@
 pub struct ListDomainDeliverabilityCampaignsOutput {
     /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
     #[doc(hidden)]
-    pub domain_deliverability_campaigns:
-        ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityCampaign>>,
+    pub domain_deliverability_campaigns: ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityCampaign>>,
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListDomainDeliverabilityCampaignsOutput {
 }
 impl ListDomainDeliverabilityCampaignsOutput {
     /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
-    pub fn domain_deliverability_campaigns(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DomainDeliverabilityCampaign]> {
+    pub fn domain_deliverability_campaigns(&self) -> ::std::option::Option<&[crate::types::DomainDeliverabilityCampaign]> {
         self.domain_deliverability_campaigns.as_deref()
     }
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
@@ -32,19 +29,16 @@ impl ::aws_http::request_id::RequestId for ListDomainDeliverabilityCampaignsOutp
 }
 impl ListDomainDeliverabilityCampaignsOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainDeliverabilityCampaignsOutput`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput).
-    pub fn builder() -> crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsOutputBuilder{
+    pub fn builder() -> crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsOutputBuilder {
         crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDomainDeliverabilityCampaignsOutput`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainDeliverabilityCampaignsOutputBuilder {
-    pub(crate) domain_deliverability_campaigns:
-        ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityCampaign>>,
+    pub(crate) domain_deliverability_campaigns: ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityCampaign>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,10 +48,7 @@ impl ListDomainDeliverabilityCampaignsOutputBuilder {
     /// To override the contents of this collection use [`set_domain_deliverability_campaigns`](Self::set_domain_deliverability_campaigns).
     ///
     /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
-    pub fn domain_deliverability_campaigns(
-        mut self,
-        input: crate::types::DomainDeliverabilityCampaign,
-    ) -> Self {
+    pub fn domain_deliverability_campaigns(mut self, input: crate::types::DomainDeliverabilityCampaign) -> Self {
         let mut v = self.domain_deliverability_campaigns.unwrap_or_default();
         v.push(input);
         self.domain_deliverability_campaigns = ::std::option::Option::Some(v);
@@ -72,9 +63,7 @@ impl ListDomainDeliverabilityCampaignsOutputBuilder {
         self
     }
     /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
-    pub fn get_domain_deliverability_campaigns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityCampaign>> {
+    pub fn get_domain_deliverability_campaigns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityCampaign>> {
         &self.domain_deliverability_campaigns
     }
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
@@ -101,12 +90,10 @@ impl ListDomainDeliverabilityCampaignsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDomainDeliverabilityCampaignsOutput`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput).
-    pub fn build(self) -> crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput{
+    pub fn build(self) -> crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput {
         crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput {
-            domain_deliverability_campaigns: self.domain_deliverability_campaigns
-            ,
-            next_token: self.next_token
-            ,
+            domain_deliverability_campaigns: self.domain_deliverability_campaigns,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

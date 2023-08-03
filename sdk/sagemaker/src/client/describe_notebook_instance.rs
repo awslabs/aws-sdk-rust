@@ -28,10 +28,7 @@ impl super::Client {
     ///   - [`platform_identifier(Option<String>)`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceOutput::platform_identifier): <p>The platform identifier of the notebook instance runtime environment.</p>
     ///   - [`instance_metadata_service_configuration(Option<InstanceMetadataServiceConfiguration>)`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceOutput::instance_metadata_service_configuration): <p>Information on the IMDS configuration of the notebook instance</p>
     /// - On failure, responds with [`SdkError<DescribeNotebookInstanceError>`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceError)
-    pub fn describe_notebook_instance(
-        &self,
-    ) -> crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceFluentBuilder
-    {
+    pub fn describe_notebook_instance(&self) -> crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceFluentBuilder {
         crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteStudioLifecycleConfigOutput {
 }
 impl DeleteStudioLifecycleConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStudioLifecycleConfigOutput`](crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigOutput).
-    pub fn builder() -> crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigOutputBuilder{
+    pub fn builder() -> crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigOutputBuilder {
         crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStudioLifecycleConfigOutput`](crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStudioLifecycleConfigOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteStudioLifecycleConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteStudioLifecycleConfigOutput`](crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigOutput {
+    pub fn build(self) -> crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigOutput {
         crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigOutput {
             _request_id: self._request_id,
         }

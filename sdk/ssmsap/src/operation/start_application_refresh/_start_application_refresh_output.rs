@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartApplicationRefreshOutput {
 }
 impl StartApplicationRefreshOutput {
     /// Creates a new builder-style object to manufacture [`StartApplicationRefreshOutput`](crate::operation::start_application_refresh::StartApplicationRefreshOutput).
-    pub fn builder(
-    ) -> crate::operation::start_application_refresh::builders::StartApplicationRefreshOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_application_refresh::builders::StartApplicationRefreshOutputBuilder {
         crate::operation::start_application_refresh::builders::StartApplicationRefreshOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartApplicationRefreshOutput`](crate::operation::start_application_refresh::StartApplicationRefreshOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartApplicationRefreshOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl StartApplicationRefreshOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartApplicationRefreshOutput`](crate::operation::start_application_refresh::StartApplicationRefreshOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_application_refresh::StartApplicationRefreshOutput {
+    pub fn build(self) -> crate::operation::start_application_refresh::StartApplicationRefreshOutput {
         crate::operation::start_application_refresh::StartApplicationRefreshOutput {
             operation_id: self.operation_id,
             _request_id: self._request_id,

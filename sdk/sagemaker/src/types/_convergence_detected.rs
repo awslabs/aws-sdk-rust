@@ -10,9 +10,7 @@ pub struct ConvergenceDetected {
 }
 impl ConvergenceDetected {
     /// <p>A flag to stop a tuning job once AMT has detected that the job has converged.</p>
-    pub fn complete_on_convergence(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CompleteOnConvergence> {
+    pub fn complete_on_convergence(&self) -> ::std::option::Option<&crate::types::CompleteOnConvergence> {
         self.complete_on_convergence.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl ConvergenceDetected {
 
 /// A builder for [`ConvergenceDetected`](crate::types::ConvergenceDetected).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConvergenceDetectedBuilder {
     pub(crate) complete_on_convergence: ::std::option::Option<crate::types::CompleteOnConvergence>,
 }
@@ -38,17 +34,12 @@ impl ConvergenceDetectedBuilder {
         self
     }
     /// <p>A flag to stop a tuning job once AMT has detected that the job has converged.</p>
-    pub fn set_complete_on_convergence(
-        mut self,
-        input: ::std::option::Option<crate::types::CompleteOnConvergence>,
-    ) -> Self {
+    pub fn set_complete_on_convergence(mut self, input: ::std::option::Option<crate::types::CompleteOnConvergence>) -> Self {
         self.complete_on_convergence = input;
         self
     }
     /// <p>A flag to stop a tuning job once AMT has detected that the job has converged.</p>
-    pub fn get_complete_on_convergence(
-        &self,
-    ) -> &::std::option::Option<crate::types::CompleteOnConvergence> {
+    pub fn get_complete_on_convergence(&self) -> &::std::option::Option<crate::types::CompleteOnConvergence> {
         &self.complete_on_convergence
     }
     /// Consumes the builder and constructs a [`ConvergenceDetected`](crate::types::ConvergenceDetected).

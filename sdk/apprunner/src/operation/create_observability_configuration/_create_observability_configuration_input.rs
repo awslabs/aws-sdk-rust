@@ -35,16 +35,14 @@ impl CreateObservabilityConfigurationInput {
 }
 impl CreateObservabilityConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateObservabilityConfigurationInput`](crate::operation::create_observability_configuration::CreateObservabilityConfigurationInput).
-    pub fn builder() -> crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationInputBuilder {
         crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateObservabilityConfigurationInput`](crate::operation::create_observability_configuration::CreateObservabilityConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateObservabilityConfigurationInputBuilder {
     pub(crate) observability_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) trace_configuration: ::std::option::Option<crate::types::TraceConfiguration>,
@@ -55,10 +53,7 @@ impl CreateObservabilityConfigurationInputBuilder {
     /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
     /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
-    pub fn observability_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn observability_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.observability_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -66,10 +61,7 @@ impl CreateObservabilityConfigurationInputBuilder {
     /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
     /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
-    pub fn set_observability_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_observability_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.observability_configuration_name = input;
         self
     }
@@ -77,9 +69,7 @@ impl CreateObservabilityConfigurationInputBuilder {
     /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
     /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
-    pub fn get_observability_configuration_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_observability_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.observability_configuration_name
     }
     /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
@@ -88,17 +78,12 @@ impl CreateObservabilityConfigurationInputBuilder {
         self
     }
     /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
-    pub fn set_trace_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TraceConfiguration>,
-    ) -> Self {
+    pub fn set_trace_configuration(mut self, input: ::std::option::Option<crate::types::TraceConfiguration>) -> Self {
         self.trace_configuration = input;
         self
     }
     /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
-    pub fn get_trace_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TraceConfiguration> {
+    pub fn get_trace_configuration(&self) -> &::std::option::Option<crate::types::TraceConfiguration> {
         &self.trace_configuration
     }
     /// Appends an item to `tags`.
@@ -113,10 +98,7 @@ impl CreateObservabilityConfigurationInputBuilder {
         self
     }
     /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -133,13 +115,10 @@ impl CreateObservabilityConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_observability_configuration::CreateObservabilityConfigurationInput {
-                observability_configuration_name: self.observability_configuration_name
-                ,
-                trace_configuration: self.trace_configuration
-                ,
-                tags: self.tags
-                ,
-            }
+                observability_configuration_name: self.observability_configuration_name,
+                trace_configuration: self.trace_configuration,
+                tags: self.tags,
+            },
         )
     }
 }

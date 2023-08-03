@@ -44,9 +44,7 @@ impl IamActionDefinition {
 
 /// A builder for [`IamActionDefinition`](crate::types::IamActionDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IamActionDefinitionBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -80,10 +78,7 @@ impl IamActionDefinitionBuilder {
         self
     }
     /// <p>A list of roles to be attached. There must be at least one role. </p>
-    pub fn set_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.roles = input;
         self
     }
@@ -103,10 +98,7 @@ impl IamActionDefinitionBuilder {
         self
     }
     /// <p>A list of groups to be attached. There must be at least one group. </p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groups = input;
         self
     }
@@ -126,10 +118,7 @@ impl IamActionDefinitionBuilder {
         self
     }
     /// <p>A list of users to be attached. There must be at least one user. </p>
-    pub fn set_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.users = input;
         self
     }

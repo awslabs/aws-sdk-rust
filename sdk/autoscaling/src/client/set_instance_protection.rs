@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`protected_from_scale_in(bool)`](crate::operation::set_instance_protection::builders::SetInstanceProtectionFluentBuilder::protected_from_scale_in) / [`set_protected_from_scale_in(Option<bool>)`](crate::operation::set_instance_protection::builders::SetInstanceProtectionFluentBuilder::set_protected_from_scale_in): <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
     /// - On success, responds with [`SetInstanceProtectionOutput`](crate::operation::set_instance_protection::SetInstanceProtectionOutput)
     /// - On failure, responds with [`SdkError<SetInstanceProtectionError>`](crate::operation::set_instance_protection::SetInstanceProtectionError)
-    pub fn set_instance_protection(
-        &self,
-    ) -> crate::operation::set_instance_protection::builders::SetInstanceProtectionFluentBuilder
-    {
-        crate::operation::set_instance_protection::builders::SetInstanceProtectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_instance_protection(&self) -> crate::operation::set_instance_protection::builders::SetInstanceProtectionFluentBuilder {
+        crate::operation::set_instance_protection::builders::SetInstanceProtectionFluentBuilder::new(self.handle.clone())
     }
 }

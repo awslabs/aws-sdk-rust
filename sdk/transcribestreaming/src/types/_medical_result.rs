@@ -61,16 +61,13 @@ impl MedicalResult {
 
 /// A builder for [`MedicalResult`](crate::types::MedicalResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MedicalResultBuilder {
     pub(crate) result_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<f64>,
     pub(crate) end_time: ::std::option::Option<f64>,
     pub(crate) is_partial: ::std::option::Option<bool>,
-    pub(crate) alternatives:
-        ::std::option::Option<::std::vec::Vec<crate::types::MedicalAlternative>>,
+    pub(crate) alternatives: ::std::option::Option<::std::vec::Vec<crate::types::MedicalAlternative>>,
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
 }
 impl MedicalResultBuilder {
@@ -145,17 +142,12 @@ impl MedicalResultBuilder {
         self
     }
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    pub fn set_alternatives(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalAlternative>>,
-    ) -> Self {
+    pub fn set_alternatives(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalAlternative>>) -> Self {
         self.alternatives = input;
         self
     }
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    pub fn get_alternatives(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalAlternative>> {
+    pub fn get_alternatives(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalAlternative>> {
         &self.alternatives
     }
     /// <p>Indicates the channel identified for the <code>Result</code>.</p>

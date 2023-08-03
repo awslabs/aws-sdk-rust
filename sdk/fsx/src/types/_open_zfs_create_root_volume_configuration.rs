@@ -20,8 +20,7 @@ pub struct OpenZfsCreateRootVolumeConfiguration {
     pub nfs_exports: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
     #[doc(hidden)]
-    pub user_and_group_quotas:
-        ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
+    pub user_and_group_quotas: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
     #[doc(hidden)]
     pub copy_tags_to_snapshots: ::std::option::Option<bool>,
@@ -40,9 +39,7 @@ impl OpenZfsCreateRootVolumeConfiguration {
     /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
     /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
-    pub fn data_compression_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OpenZfsDataCompressionType> {
+    pub fn data_compression_type(&self) -> ::std::option::Option<&crate::types::OpenZfsDataCompressionType> {
         self.data_compression_type.as_ref()
     }
     /// <p>The configuration object for mounting a file system.</p>
@@ -50,9 +47,7 @@ impl OpenZfsCreateRootVolumeConfiguration {
         self.nfs_exports.as_deref()
     }
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    pub fn user_and_group_quotas(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OpenZfsUserOrGroupQuota]> {
+    pub fn user_and_group_quotas(&self) -> ::std::option::Option<&[crate::types::OpenZfsUserOrGroupQuota]> {
         self.user_and_group_quotas.as_deref()
     }
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
@@ -73,16 +68,12 @@ impl OpenZfsCreateRootVolumeConfiguration {
 
 /// A builder for [`OpenZfsCreateRootVolumeConfiguration`](crate::types::OpenZfsCreateRootVolumeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpenZfsCreateRootVolumeConfigurationBuilder {
     pub(crate) record_size_ki_b: ::std::option::Option<i32>,
-    pub(crate) data_compression_type:
-        ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
+    pub(crate) data_compression_type: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
     pub(crate) nfs_exports: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
-    pub(crate) user_and_group_quotas:
-        ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
+    pub(crate) user_and_group_quotas: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
     pub(crate) copy_tags_to_snapshots: ::std::option::Option<bool>,
     pub(crate) read_only: ::std::option::Option<bool>,
 }
@@ -107,10 +98,7 @@ impl OpenZfsCreateRootVolumeConfigurationBuilder {
     /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
     /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
-    pub fn data_compression_type(
-        mut self,
-        input: crate::types::OpenZfsDataCompressionType,
-    ) -> Self {
+    pub fn data_compression_type(mut self, input: crate::types::OpenZfsDataCompressionType) -> Self {
         self.data_compression_type = ::std::option::Option::Some(input);
         self
     }
@@ -120,10 +108,7 @@ impl OpenZfsCreateRootVolumeConfigurationBuilder {
     /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
     /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
-    pub fn set_data_compression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
-    ) -> Self {
+    pub fn set_data_compression_type(mut self, input: ::std::option::Option<crate::types::OpenZfsDataCompressionType>) -> Self {
         self.data_compression_type = input;
         self
     }
@@ -133,9 +118,7 @@ impl OpenZfsCreateRootVolumeConfigurationBuilder {
     /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
     /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
-    pub fn get_data_compression_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OpenZfsDataCompressionType> {
+    pub fn get_data_compression_type(&self) -> &::std::option::Option<crate::types::OpenZfsDataCompressionType> {
         &self.data_compression_type
     }
     /// Appends an item to `nfs_exports`.
@@ -150,17 +133,12 @@ impl OpenZfsCreateRootVolumeConfigurationBuilder {
         self
     }
     /// <p>The configuration object for mounting a file system.</p>
-    pub fn set_nfs_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
-    ) -> Self {
+    pub fn set_nfs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>) -> Self {
         self.nfs_exports = input;
         self
     }
     /// <p>The configuration object for mounting a file system.</p>
-    pub fn get_nfs_exports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>> {
+    pub fn get_nfs_exports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>> {
         &self.nfs_exports
     }
     /// Appends an item to `user_and_group_quotas`.
@@ -175,17 +153,12 @@ impl OpenZfsCreateRootVolumeConfigurationBuilder {
         self
     }
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    pub fn set_user_and_group_quotas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
-    ) -> Self {
+    pub fn set_user_and_group_quotas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>) -> Self {
         self.user_and_group_quotas = input;
         self
     }
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    pub fn get_user_and_group_quotas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>> {
+    pub fn get_user_and_group_quotas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>> {
         &self.user_and_group_quotas
     }
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>

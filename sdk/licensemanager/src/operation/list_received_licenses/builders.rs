@@ -37,9 +37,7 @@ impl ListReceivedLicensesFluentBuilder {
         }
     }
     /// Access the ListReceivedLicenses as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_received_licenses::builders::ListReceivedLicensesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_received_licenses::builders::ListReceivedLicensesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListReceivedLicensesFluentBuilder {
             crate::operation::list_received_licenses::ListReceivedLicenses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_received_licenses::ListReceivedLicensesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_received_licenses::ListReceivedLicensesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListReceivedLicensesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListReceivedLicensesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_received_licenses::ListReceivedLicensesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_received_licenses::ListReceivedLicensesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_received_licenses::ListReceivedLicensesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListReceivedLicensesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_received_licenses::ListReceivedLicensesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_received_licenses::ListReceivedLicensesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_received_licenses::ListReceivedLicensesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ListReceivedLicensesFluentBuilder {
             crate::operation::list_received_licenses::ListReceivedLicenses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_received_licenses::ListReceivedLicensesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_received_licenses::ListReceivedLicensesError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +119,12 @@ impl ListReceivedLicensesFluentBuilder {
         self
     }
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
-    pub fn set_license_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_license_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_license_arns(input);
         self
     }
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
-    pub fn get_license_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_license_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_license_arns()
     }
     /// Appends an item to `Filters`.
@@ -169,10 +151,7 @@ impl ListReceivedLicensesFluentBuilder {
     /// <li> <p> <code>IssuerName</code> </p> </li>
     /// <li> <p> <code>Beneficiary</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

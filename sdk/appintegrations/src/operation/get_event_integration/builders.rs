@@ -37,9 +37,7 @@ impl GetEventIntegrationFluentBuilder {
         }
     }
     /// Access the GetEventIntegration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_event_integration::builders::GetEventIntegrationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_event_integration::builders::GetEventIntegrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetEventIntegrationFluentBuilder {
             crate::operation::get_event_integration::GetEventIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_integration::GetEventIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_integration::GetEventIntegrationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetEventIntegrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetEventIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_event_integration::GetEventIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_integration::GetEventIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_integration::GetEventIntegrationError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetEventIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_event_integration::GetEventIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_integration::GetEventIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_integration::GetEventIntegrationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetEventIntegrationFluentBuilder {
             crate::operation::get_event_integration::GetEventIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_event_integration::GetEventIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_event_integration::GetEventIntegrationError>,
     > {
         self.customize_middleware().await
     }

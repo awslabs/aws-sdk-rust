@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteImageOutput`](crate::operation::delete_image::DeleteImageOutput) with field(s):
     ///   - [`image(Option<Image>)`](crate::operation::delete_image::DeleteImageOutput::image): <p>Information about the image.</p>
     /// - On failure, responds with [`SdkError<DeleteImageError>`](crate::operation::delete_image::DeleteImageError)
-    pub fn delete_image(
-        &self,
-    ) -> crate::operation::delete_image::builders::DeleteImageFluentBuilder {
+    pub fn delete_image(&self) -> crate::operation::delete_image::builders::DeleteImageFluentBuilder {
         crate::operation::delete_image::builders::DeleteImageFluentBuilder::new(self.handle.clone())
     }
 }

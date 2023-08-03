@@ -31,27 +31,19 @@ impl FSxWindowsFileServerAuthorizationConfig {
 
 /// A builder for [`FSxWindowsFileServerAuthorizationConfig`](crate::types::FSxWindowsFileServerAuthorizationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FSxWindowsFileServerAuthorizationConfigBuilder {
     pub(crate) credentials_parameter: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,
 }
 impl FSxWindowsFileServerAuthorizationConfigBuilder {
     /// <p>The authorization credential option to use. The authorization credential options can be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the stored credentials.</p>
-    pub fn credentials_parameter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn credentials_parameter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credentials_parameter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorization credential option to use. The authorization credential options can be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the stored credentials.</p>
-    pub fn set_credentials_parameter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_credentials_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credentials_parameter = input;
         self
     }

@@ -31,9 +31,7 @@ impl CreateDetectorModelInput {
         self.detector_model_name.as_deref()
     }
     /// <p>Information that defines how the detectors operate.</p>
-    pub fn detector_model_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DetectorModelDefinition> {
+    pub fn detector_model_definition(&self) -> ::std::option::Option<&crate::types::DetectorModelDefinition> {
         self.detector_model_definition.as_ref()
     }
     /// <p>A brief description of the detector model.</p>
@@ -59,22 +57,17 @@ impl CreateDetectorModelInput {
 }
 impl CreateDetectorModelInput {
     /// Creates a new builder-style object to manufacture [`CreateDetectorModelInput`](crate::operation::create_detector_model::CreateDetectorModelInput).
-    pub fn builder(
-    ) -> crate::operation::create_detector_model::builders::CreateDetectorModelInputBuilder {
-        crate::operation::create_detector_model::builders::CreateDetectorModelInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_detector_model::builders::CreateDetectorModelInputBuilder {
+        crate::operation::create_detector_model::builders::CreateDetectorModelInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDetectorModelInput`](crate::operation::create_detector_model::CreateDetectorModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDetectorModelInputBuilder {
     pub(crate) detector_model_name: ::std::option::Option<::std::string::String>,
-    pub(crate) detector_model_definition:
-        ::std::option::Option<crate::types::DetectorModelDefinition>,
+    pub(crate) detector_model_definition: ::std::option::Option<crate::types::DetectorModelDefinition>,
     pub(crate) detector_model_description: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -83,18 +76,12 @@ pub struct CreateDetectorModelInputBuilder {
 }
 impl CreateDetectorModelInputBuilder {
     /// <p>The name of the detector model.</p>
-    pub fn detector_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the detector model.</p>
-    pub fn set_detector_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_model_name = input;
         self
     }
@@ -103,40 +90,26 @@ impl CreateDetectorModelInputBuilder {
         &self.detector_model_name
     }
     /// <p>Information that defines how the detectors operate.</p>
-    pub fn detector_model_definition(
-        mut self,
-        input: crate::types::DetectorModelDefinition,
-    ) -> Self {
+    pub fn detector_model_definition(mut self, input: crate::types::DetectorModelDefinition) -> Self {
         self.detector_model_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information that defines how the detectors operate.</p>
-    pub fn set_detector_model_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectorModelDefinition>,
-    ) -> Self {
+    pub fn set_detector_model_definition(mut self, input: ::std::option::Option<crate::types::DetectorModelDefinition>) -> Self {
         self.detector_model_definition = input;
         self
     }
     /// <p>Information that defines how the detectors operate.</p>
-    pub fn get_detector_model_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetectorModelDefinition> {
+    pub fn get_detector_model_definition(&self) -> &::std::option::Option<crate::types::DetectorModelDefinition> {
         &self.detector_model_definition
     }
     /// <p>A brief description of the detector model.</p>
-    pub fn detector_model_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A brief description of the detector model.</p>
-    pub fn set_detector_model_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_model_description = input;
         self
     }
@@ -184,10 +157,7 @@ impl CreateDetectorModelInputBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the detector model.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -201,10 +171,7 @@ impl CreateDetectorModelInputBuilder {
         self
     }
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
-    pub fn set_evaluation_method(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationMethod>,
-    ) -> Self {
+    pub fn set_evaluation_method(mut self, input: ::std::option::Option<crate::types::EvaluationMethod>) -> Self {
         self.evaluation_method = input;
         self
     }
@@ -215,20 +182,16 @@ impl CreateDetectorModelInputBuilder {
     /// Consumes the builder and constructs a [`CreateDetectorModelInput`](crate::operation::create_detector_model::CreateDetectorModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_detector_model::CreateDetectorModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_detector_model::CreateDetectorModelInput {
-                detector_model_name: self.detector_model_name,
-                detector_model_definition: self.detector_model_definition,
-                detector_model_description: self.detector_model_description,
-                key: self.key,
-                role_arn: self.role_arn,
-                tags: self.tags,
-                evaluation_method: self.evaluation_method,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_detector_model::CreateDetectorModelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_detector_model::CreateDetectorModelInput {
+            detector_model_name: self.detector_model_name,
+            detector_model_definition: self.detector_model_definition,
+            detector_model_description: self.detector_model_description,
+            key: self.key,
+            role_arn: self.role_arn,
+            tags: self.tags,
+            evaluation_method: self.evaluation_method,
+        })
     }
 }

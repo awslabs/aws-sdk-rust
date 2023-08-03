@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`BatchPutFieldOptionsOutput`](crate::operation::batch_put_field_options::BatchPutFieldOptionsOutput) with field(s):
     ///   - [`errors(Option<Vec<FieldOptionError>>)`](crate::operation::batch_put_field_options::BatchPutFieldOptionsOutput::errors): <p>A list of field errors. </p>
     /// - On failure, responds with [`SdkError<BatchPutFieldOptionsError>`](crate::operation::batch_put_field_options::BatchPutFieldOptionsError)
-    pub fn batch_put_field_options(
-        &self,
-    ) -> crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsFluentBuilder
-    {
-        crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_put_field_options(&self) -> crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsFluentBuilder {
+        crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsFluentBuilder::new(self.handle.clone())
     }
 }

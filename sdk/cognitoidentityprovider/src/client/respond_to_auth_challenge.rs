@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`challenge_parameters(Option<HashMap<String, String>>)`](crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput::challenge_parameters): <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
     ///   - [`authentication_result(Option<AuthenticationResultType>)`](crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput::authentication_result): <p>The result returned by the server in response to the request to respond to the authentication challenge.</p>
     /// - On failure, responds with [`SdkError<RespondToAuthChallengeError>`](crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError)
-    pub fn respond_to_auth_challenge(
-        &self,
-    ) -> crate::operation::respond_to_auth_challenge::builders::RespondToAuthChallengeFluentBuilder
-    {
+    pub fn respond_to_auth_challenge(&self) -> crate::operation::respond_to_auth_challenge::builders::RespondToAuthChallengeFluentBuilder {
         crate::operation::respond_to_auth_challenge::builders::RespondToAuthChallengeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRegexPatternSetOutput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput) with field(s):
     ///   - [`summary(Option<RegexPatternSetSummary>)`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput::summary): <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
     /// - On failure, responds with [`SdkError<CreateRegexPatternSetError>`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetError)
-    pub fn create_regex_pattern_set(
-        &self,
-    ) -> crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetFluentBuilder
-    {
+    pub fn create_regex_pattern_set(&self) -> crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetFluentBuilder {
         crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetFluentBuilder::new(self.handle.clone())
     }
 }

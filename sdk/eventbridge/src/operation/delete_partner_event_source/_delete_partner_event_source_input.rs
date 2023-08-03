@@ -22,18 +22,14 @@ impl DeletePartnerEventSourceInput {
 }
 impl DeletePartnerEventSourceInput {
     /// Creates a new builder-style object to manufacture [`DeletePartnerEventSourceInput`](crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput).
-    pub fn builder(
-    ) -> crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceInputBuilder {
         crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePartnerEventSourceInput`](crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePartnerEventSourceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl DeletePartnerEventSourceInputBuilder {
         crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput {
-                name: self.name,
-                account: self.account,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput {
+            name: self.name,
+            account: self.account,
+        })
     }
 }

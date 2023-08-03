@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`deployment_arn(Option<String>)`](crate::operation::reset_deployments::ResetDeploymentsOutput::deployment_arn): The ARN of the deployment.
     ///   - [`deployment_id(Option<String>)`](crate::operation::reset_deployments::ResetDeploymentsOutput::deployment_id): The ID of the deployment.
     /// - On failure, responds with [`SdkError<ResetDeploymentsError>`](crate::operation::reset_deployments::ResetDeploymentsError)
-    pub fn reset_deployments(
-        &self,
-    ) -> crate::operation::reset_deployments::builders::ResetDeploymentsFluentBuilder {
-        crate::operation::reset_deployments::builders::ResetDeploymentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reset_deployments(&self) -> crate::operation::reset_deployments::builders::ResetDeploymentsFluentBuilder {
+        crate::operation::reset_deployments::builders::ResetDeploymentsFluentBuilder::new(self.handle.clone())
     }
 }

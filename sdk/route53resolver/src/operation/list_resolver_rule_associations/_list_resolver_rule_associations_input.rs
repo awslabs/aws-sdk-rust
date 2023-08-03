@@ -35,16 +35,14 @@ impl ListResolverRuleAssociationsInput {
 }
 impl ListResolverRuleAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListResolverRuleAssociationsInput`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsInput).
-    pub fn builder() -> crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsInputBuilder {
         crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolverRuleAssociationsInput`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverRuleAssociationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -98,10 +96,7 @@ impl ListResolverRuleAssociationsInputBuilder {
     /// <p>An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with the same VPC ID.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -118,12 +113,10 @@ impl ListResolverRuleAssociationsInputBuilder {
         crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filters: self.filters,
+        })
     }
 }

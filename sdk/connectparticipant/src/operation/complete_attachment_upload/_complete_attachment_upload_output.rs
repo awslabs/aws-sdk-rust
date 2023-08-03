@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CompleteAttachmentUploadOutput {
 }
 impl CompleteAttachmentUploadOutput {
     /// Creates a new builder-style object to manufacture [`CompleteAttachmentUploadOutput`](crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput).
-    pub fn builder(
-    ) -> crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadOutputBuilder
-    {
+    pub fn builder() -> crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadOutputBuilder {
         crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadOutputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteAttachmentUploadOutput`](crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteAttachmentUploadOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl CompleteAttachmentUploadOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CompleteAttachmentUploadOutput`](crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput {
+    pub fn build(self) -> crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput {
         crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput {
             _request_id: self._request_id,
         }

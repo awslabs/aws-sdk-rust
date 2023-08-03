@@ -53,13 +53,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CapacityReservationInstancePlatform {
     #[allow(missing_docs)] // documentation missing in model
@@ -102,48 +96,24 @@ pub enum CapacityReservationInstancePlatform {
 impl ::std::convert::From<&str> for CapacityReservationInstancePlatform {
     fn from(s: &str) -> Self {
         match s {
-            "Linux with SQL Server Enterprise" => {
-                CapacityReservationInstancePlatform::LinuxWithSqlServerEnterprise
-            }
-            "Linux with SQL Server Standard" => {
-                CapacityReservationInstancePlatform::LinuxWithSqlServerStandard
-            }
-            "Linux with SQL Server Web" => {
-                CapacityReservationInstancePlatform::LinuxWithSqlServerWeb
-            }
+            "Linux with SQL Server Enterprise" => CapacityReservationInstancePlatform::LinuxWithSqlServerEnterprise,
+            "Linux with SQL Server Standard" => CapacityReservationInstancePlatform::LinuxWithSqlServerStandard,
+            "Linux with SQL Server Web" => CapacityReservationInstancePlatform::LinuxWithSqlServerWeb,
             "Linux/UNIX" => CapacityReservationInstancePlatform::LinuxUnix,
             "RHEL with HA" => CapacityReservationInstancePlatform::RhelWithHa,
-            "RHEL with HA and SQL Server Enterprise" => {
-                CapacityReservationInstancePlatform::RhelWithHaAndSqlServerEnterprise
-            }
-            "RHEL with HA and SQL Server Standard" => {
-                CapacityReservationInstancePlatform::RhelWithHaAndSqlServerStandard
-            }
-            "RHEL with SQL Server Enterprise" => {
-                CapacityReservationInstancePlatform::RhelWithSqlServerEnterprise
-            }
-            "RHEL with SQL Server Standard" => {
-                CapacityReservationInstancePlatform::RhelWithSqlServerStandard
-            }
+            "RHEL with HA and SQL Server Enterprise" => CapacityReservationInstancePlatform::RhelWithHaAndSqlServerEnterprise,
+            "RHEL with HA and SQL Server Standard" => CapacityReservationInstancePlatform::RhelWithHaAndSqlServerStandard,
+            "RHEL with SQL Server Enterprise" => CapacityReservationInstancePlatform::RhelWithSqlServerEnterprise,
+            "RHEL with SQL Server Standard" => CapacityReservationInstancePlatform::RhelWithSqlServerStandard,
             "RHEL with SQL Server Web" => CapacityReservationInstancePlatform::RhelWithSqlServerWeb,
-            "Red Hat Enterprise Linux" => {
-                CapacityReservationInstancePlatform::RedHatEnterpriseLinux
-            }
+            "Red Hat Enterprise Linux" => CapacityReservationInstancePlatform::RedHatEnterpriseLinux,
             "SUSE Linux" => CapacityReservationInstancePlatform::SuseLinux,
             "Windows" => CapacityReservationInstancePlatform::Windows,
             "Windows with SQL Server" => CapacityReservationInstancePlatform::WindowsWithSqlServer,
-            "Windows with SQL Server Enterprise" => {
-                CapacityReservationInstancePlatform::WindowsWithSqlServerEnterprise
-            }
-            "Windows with SQL Server Standard" => {
-                CapacityReservationInstancePlatform::WindowsWithSqlServerStandard
-            }
-            "Windows with SQL Server Web" => {
-                CapacityReservationInstancePlatform::WindowsWithSqlServerWeb
-            }
-            other => CapacityReservationInstancePlatform::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "Windows with SQL Server Enterprise" => CapacityReservationInstancePlatform::WindowsWithSqlServerEnterprise,
+            "Windows with SQL Server Standard" => CapacityReservationInstancePlatform::WindowsWithSqlServerStandard,
+            "Windows with SQL Server Web" => CapacityReservationInstancePlatform::WindowsWithSqlServerWeb,
+            other => CapacityReservationInstancePlatform::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -158,45 +128,23 @@ impl CapacityReservationInstancePlatform {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            CapacityReservationInstancePlatform::LinuxWithSqlServerEnterprise => {
-                "Linux with SQL Server Enterprise"
-            }
-            CapacityReservationInstancePlatform::LinuxWithSqlServerStandard => {
-                "Linux with SQL Server Standard"
-            }
-            CapacityReservationInstancePlatform::LinuxWithSqlServerWeb => {
-                "Linux with SQL Server Web"
-            }
+            CapacityReservationInstancePlatform::LinuxWithSqlServerEnterprise => "Linux with SQL Server Enterprise",
+            CapacityReservationInstancePlatform::LinuxWithSqlServerStandard => "Linux with SQL Server Standard",
+            CapacityReservationInstancePlatform::LinuxWithSqlServerWeb => "Linux with SQL Server Web",
             CapacityReservationInstancePlatform::LinuxUnix => "Linux/UNIX",
             CapacityReservationInstancePlatform::RhelWithHa => "RHEL with HA",
-            CapacityReservationInstancePlatform::RhelWithHaAndSqlServerEnterprise => {
-                "RHEL with HA and SQL Server Enterprise"
-            }
-            CapacityReservationInstancePlatform::RhelWithHaAndSqlServerStandard => {
-                "RHEL with HA and SQL Server Standard"
-            }
-            CapacityReservationInstancePlatform::RhelWithSqlServerEnterprise => {
-                "RHEL with SQL Server Enterprise"
-            }
-            CapacityReservationInstancePlatform::RhelWithSqlServerStandard => {
-                "RHEL with SQL Server Standard"
-            }
+            CapacityReservationInstancePlatform::RhelWithHaAndSqlServerEnterprise => "RHEL with HA and SQL Server Enterprise",
+            CapacityReservationInstancePlatform::RhelWithHaAndSqlServerStandard => "RHEL with HA and SQL Server Standard",
+            CapacityReservationInstancePlatform::RhelWithSqlServerEnterprise => "RHEL with SQL Server Enterprise",
+            CapacityReservationInstancePlatform::RhelWithSqlServerStandard => "RHEL with SQL Server Standard",
             CapacityReservationInstancePlatform::RhelWithSqlServerWeb => "RHEL with SQL Server Web",
-            CapacityReservationInstancePlatform::RedHatEnterpriseLinux => {
-                "Red Hat Enterprise Linux"
-            }
+            CapacityReservationInstancePlatform::RedHatEnterpriseLinux => "Red Hat Enterprise Linux",
             CapacityReservationInstancePlatform::SuseLinux => "SUSE Linux",
             CapacityReservationInstancePlatform::Windows => "Windows",
             CapacityReservationInstancePlatform::WindowsWithSqlServer => "Windows with SQL Server",
-            CapacityReservationInstancePlatform::WindowsWithSqlServerEnterprise => {
-                "Windows with SQL Server Enterprise"
-            }
-            CapacityReservationInstancePlatform::WindowsWithSqlServerStandard => {
-                "Windows with SQL Server Standard"
-            }
-            CapacityReservationInstancePlatform::WindowsWithSqlServerWeb => {
-                "Windows with SQL Server Web"
-            }
+            CapacityReservationInstancePlatform::WindowsWithSqlServerEnterprise => "Windows with SQL Server Enterprise",
+            CapacityReservationInstancePlatform::WindowsWithSqlServerStandard => "Windows with SQL Server Standard",
+            CapacityReservationInstancePlatform::WindowsWithSqlServerWeb => "Windows with SQL Server Web",
             CapacityReservationInstancePlatform::Unknown(value) => value.as_str(),
         }
     }

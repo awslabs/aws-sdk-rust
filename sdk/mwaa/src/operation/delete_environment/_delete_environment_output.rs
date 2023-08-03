@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteEnvironmentOutput {
 }
 impl DeleteEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder {
         crate::operation::delete_environment::builders::DeleteEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentOutputBuilder {
     _request_id: Option<String>,
 }

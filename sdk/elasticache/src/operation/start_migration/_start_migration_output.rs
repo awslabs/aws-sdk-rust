@@ -28,9 +28,7 @@ impl StartMigrationOutput {
 
 /// A builder for [`StartMigrationOutput`](crate::operation::start_migration::StartMigrationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMigrationOutputBuilder {
     pub(crate) replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StartMigrationOutputBuilder {
         self
     }
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn set_replication_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationGroup>,
-    ) -> Self {
+    pub fn set_replication_group(mut self, input: ::std::option::Option<crate::types::ReplicationGroup>) -> Self {
         self.replication_group = input;
         self
     }

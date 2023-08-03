@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePackagingConfigurationOutput {
 }
 impl DeletePackagingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeletePackagingConfigurationOutput`](crate::operation::delete_packaging_configuration::DeletePackagingConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_packaging_configuration::builders::DeletePackagingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_packaging_configuration::builders::DeletePackagingConfigurationOutputBuilder {
         crate::operation::delete_packaging_configuration::builders::DeletePackagingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePackagingConfigurationOutput`](crate::operation::delete_packaging_configuration::DeletePackagingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePackagingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeletePackagingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeletePackagingConfigurationOutput`](crate::operation::delete_packaging_configuration::DeletePackagingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_packaging_configuration::DeletePackagingConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_packaging_configuration::DeletePackagingConfigurationOutput {
         crate::operation::delete_packaging_configuration::DeletePackagingConfigurationOutput {
             _request_id: self._request_id,
         }

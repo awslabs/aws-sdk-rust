@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociateUserOutput`](crate::operation::disassociate_user::DisassociateUserOutput) with field(s):
     ///   - [`instance_user_summary(Option<InstanceUserSummary>)`](crate::operation::disassociate_user::DisassociateUserOutput::instance_user_summary): <p>Metadata that describes the associate user operation.</p>
     /// - On failure, responds with [`SdkError<DisassociateUserError>`](crate::operation::disassociate_user::DisassociateUserError)
-    pub fn disassociate_user(
-        &self,
-    ) -> crate::operation::disassociate_user::builders::DisassociateUserFluentBuilder {
-        crate::operation::disassociate_user::builders::DisassociateUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_user(&self) -> crate::operation::disassociate_user::builders::DisassociateUserFluentBuilder {
+        crate::operation::disassociate_user::builders::DisassociateUserFluentBuilder::new(self.handle.clone())
     }
 }

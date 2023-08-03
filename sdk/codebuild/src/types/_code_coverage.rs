@@ -88,9 +88,7 @@ impl CodeCoverage {
 
 /// A builder for [`CodeCoverage`](crate::types::CodeCoverage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeCoverageBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) report_arn: ::std::option::Option<::std::string::String>,
@@ -236,10 +234,7 @@ impl CodeCoverageBuilder {
         self
     }
     /// <p>The date and time that the tests were run.</p>
-    pub fn set_expired(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expired(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expired = input;
         self
     }

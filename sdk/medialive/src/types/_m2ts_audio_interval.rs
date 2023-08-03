@@ -38,13 +38,7 @@
 /// M2ts Audio Interval
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M2tsAudioInterval {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for M2tsAudioInterval {
         match s {
             "VIDEO_AND_FIXED_INTERVALS" => M2tsAudioInterval::VideoAndFixedIntervals,
             "VIDEO_INTERVAL" => M2tsAudioInterval::VideoInterval,
-            other => {
-                M2tsAudioInterval::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => M2tsAudioInterval::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

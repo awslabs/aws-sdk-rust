@@ -37,9 +37,7 @@ impl S3OutputLocation {
 
 /// A builder for [`S3OutputLocation`](crate::types::S3OutputLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3OutputLocationBuilder {
     pub(crate) output_s3_region: ::std::option::Option<::std::string::String>,
     pub(crate) output_s3_bucket_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct S3OutputLocationBuilder {
 }
 impl S3OutputLocationBuilder {
     /// <p>The Amazon Web Services Region of the S3 bucket.</p>
-    pub fn output_s3_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region of the S3 bucket.</p>
-    pub fn set_output_s3_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_region = input;
         self
     }
@@ -67,18 +59,12 @@ impl S3OutputLocationBuilder {
         &self.output_s3_region
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn output_s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn set_output_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_bucket_name = input;
         self
     }
@@ -87,18 +73,12 @@ impl S3OutputLocationBuilder {
         &self.output_s3_bucket_name
     }
     /// <p>The S3 bucket subfolder.</p>
-    pub fn output_s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 bucket subfolder.</p>
-    pub fn set_output_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_key_prefix = input;
         self
     }

@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSourceCredentialsOutput`](crate::operation::delete_source_credentials::DeleteSourceCredentialsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_source_credentials::DeleteSourceCredentialsOutput::arn): <p> The Amazon Resource Name (ARN) of the token. </p>
     /// - On failure, responds with [`SdkError<DeleteSourceCredentialsError>`](crate::operation::delete_source_credentials::DeleteSourceCredentialsError)
-    pub fn delete_source_credentials(
-        &self,
-    ) -> crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsFluentBuilder
-    {
+    pub fn delete_source_credentials(&self) -> crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsFluentBuilder {
         crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsFluentBuilder::new(self.handle.clone())
     }
 }

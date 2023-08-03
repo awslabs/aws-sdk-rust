@@ -26,7 +26,7 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartPiiEntitiesDetectionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_pii_entities_detection_job::builders::StartPiiEntitiesDetectionJobInputBuilder,
+    inner: crate::operation::start_pii_entities_detection_job::builders::StartPiiEntitiesDetectionJobInputBuilder,
 }
 impl StartPiiEntitiesDetectionJobFluentBuilder {
     /// Creates a new `StartPiiEntitiesDetectionJob`.
@@ -37,7 +37,7 @@ impl StartPiiEntitiesDetectionJobFluentBuilder {
         }
     }
     /// Access the StartPiiEntitiesDetectionJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_pii_entities_detection_job::builders::StartPiiEntitiesDetectionJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_pii_entities_detection_job::builders::StartPiiEntitiesDetectionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartPiiEntitiesDetectionJobFluentBuilder {
             crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartPiiEntitiesDetectionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartPiiEntitiesDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartPiiEntitiesDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StartPiiEntitiesDetectionJobFluentBuilder {
             crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl StartPiiEntitiesDetectionJobFluentBuilder {
         self
     }
     /// <p>The input properties for a PII entities detection job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
@@ -143,10 +129,7 @@ impl StartPiiEntitiesDetectionJobFluentBuilder {
         self
     }
     /// <p>Provides conﬁguration parameters for the output of PII entity detection jobs.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
@@ -160,10 +143,7 @@ impl StartPiiEntitiesDetectionJobFluentBuilder {
         self
     }
     /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::PiiEntitiesDetectionMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::PiiEntitiesDetectionMode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
     }
@@ -179,10 +159,7 @@ impl StartPiiEntitiesDetectionJobFluentBuilder {
     }
     /// <p>Provides configuration parameters for PII entity redaction.</p>
     /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
-    pub fn set_redaction_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RedactionConfig>,
-    ) -> Self {
+    pub fn set_redaction_config(mut self, input: ::std::option::Option<crate::types::RedactionConfig>) -> Self {
         self.inner = self.inner.set_redaction_config(input);
         self
     }
@@ -192,18 +169,12 @@ impl StartPiiEntitiesDetectionJobFluentBuilder {
         self.inner.get_redaction_config()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
@@ -231,10 +202,7 @@ impl StartPiiEntitiesDetectionJobFluentBuilder {
         self
     }
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -243,18 +211,12 @@ impl StartPiiEntitiesDetectionJobFluentBuilder {
         self.inner.get_language_code()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -272,10 +234,7 @@ impl StartPiiEntitiesDetectionJobFluentBuilder {
         self
     }
     /// <p>Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

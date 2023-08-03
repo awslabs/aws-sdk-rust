@@ -27,8 +27,7 @@ pub struct OptionGroupOptionSetting {
     pub is_required: bool,
     /// <p>The minimum DB engine version required for the corresponding allowed value for this option setting.</p>
     #[doc(hidden)]
-    pub minimum_engine_version_per_allowed_value:
-        ::std::option::Option<::std::vec::Vec<crate::types::MinimumEngineVersionPerAllowedValue>>,
+    pub minimum_engine_version_per_allowed_value: ::std::option::Option<::std::vec::Vec<crate::types::MinimumEngineVersionPerAllowedValue>>,
 }
 impl OptionGroupOptionSetting {
     /// <p>The name of the option group option.</p>
@@ -60,9 +59,7 @@ impl OptionGroupOptionSetting {
         self.is_required
     }
     /// <p>The minimum DB engine version required for the corresponding allowed value for this option setting.</p>
-    pub fn minimum_engine_version_per_allowed_value(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MinimumEngineVersionPerAllowedValue]> {
+    pub fn minimum_engine_version_per_allowed_value(&self) -> ::std::option::Option<&[crate::types::MinimumEngineVersionPerAllowedValue]> {
         self.minimum_engine_version_per_allowed_value.as_deref()
     }
 }
@@ -75,9 +72,7 @@ impl OptionGroupOptionSetting {
 
 /// A builder for [`OptionGroupOptionSetting`](crate::types::OptionGroupOptionSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OptionGroupOptionSettingBuilder {
     pub(crate) setting_name: ::std::option::Option<::std::string::String>,
     pub(crate) setting_description: ::std::option::Option<::std::string::String>,
@@ -86,8 +81,7 @@ pub struct OptionGroupOptionSettingBuilder {
     pub(crate) allowed_values: ::std::option::Option<::std::string::String>,
     pub(crate) is_modifiable: ::std::option::Option<bool>,
     pub(crate) is_required: ::std::option::Option<bool>,
-    pub(crate) minimum_engine_version_per_allowed_value:
-        ::std::option::Option<::std::vec::Vec<crate::types::MinimumEngineVersionPerAllowedValue>>,
+    pub(crate) minimum_engine_version_per_allowed_value: ::std::option::Option<::std::vec::Vec<crate::types::MinimumEngineVersionPerAllowedValue>>,
 }
 impl OptionGroupOptionSettingBuilder {
     /// <p>The name of the option group option.</p>
@@ -105,18 +99,12 @@ impl OptionGroupOptionSettingBuilder {
         &self.setting_name
     }
     /// <p>The description of the option group option.</p>
-    pub fn setting_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn setting_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.setting_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the option group option.</p>
-    pub fn set_setting_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_setting_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.setting_description = input;
         self
     }
@@ -125,18 +113,12 @@ impl OptionGroupOptionSettingBuilder {
         &self.setting_description
     }
     /// <p>The default value for the option group option.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value for the option group option.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }
@@ -159,18 +141,12 @@ impl OptionGroupOptionSettingBuilder {
         &self.apply_type
     }
     /// <p>Indicates the acceptable values for the option group option.</p>
-    pub fn allowed_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_values = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the acceptable values for the option group option.</p>
-    pub fn set_allowed_values(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_values = input;
         self
     }
@@ -211,13 +187,8 @@ impl OptionGroupOptionSettingBuilder {
     /// To override the contents of this collection use [`set_minimum_engine_version_per_allowed_value`](Self::set_minimum_engine_version_per_allowed_value).
     ///
     /// <p>The minimum DB engine version required for the corresponding allowed value for this option setting.</p>
-    pub fn minimum_engine_version_per_allowed_value(
-        mut self,
-        input: crate::types::MinimumEngineVersionPerAllowedValue,
-    ) -> Self {
-        let mut v = self
-            .minimum_engine_version_per_allowed_value
-            .unwrap_or_default();
+    pub fn minimum_engine_version_per_allowed_value(mut self, input: crate::types::MinimumEngineVersionPerAllowedValue) -> Self {
+        let mut v = self.minimum_engine_version_per_allowed_value.unwrap_or_default();
         v.push(input);
         self.minimum_engine_version_per_allowed_value = ::std::option::Option::Some(v);
         self
@@ -225,9 +196,7 @@ impl OptionGroupOptionSettingBuilder {
     /// <p>The minimum DB engine version required for the corresponding allowed value for this option setting.</p>
     pub fn set_minimum_engine_version_per_allowed_value(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::MinimumEngineVersionPerAllowedValue>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MinimumEngineVersionPerAllowedValue>>,
     ) -> Self {
         self.minimum_engine_version_per_allowed_value = input;
         self
@@ -235,8 +204,7 @@ impl OptionGroupOptionSettingBuilder {
     /// <p>The minimum DB engine version required for the corresponding allowed value for this option setting.</p>
     pub fn get_minimum_engine_version_per_allowed_value(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MinimumEngineVersionPerAllowedValue>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MinimumEngineVersionPerAllowedValue>> {
         &self.minimum_engine_version_per_allowed_value
     }
     /// Consumes the builder and constructs a [`OptionGroupOptionSetting`](crate::types::OptionGroupOptionSetting).

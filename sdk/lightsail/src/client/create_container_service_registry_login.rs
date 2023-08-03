@@ -6,7 +6,11 @@ impl super::Client {
     /// - On success, responds with [`CreateContainerServiceRegistryLoginOutput`](crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginOutput) with field(s):
     ///   - [`registry_login(Option<ContainerServiceRegistryLogin>)`](crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginOutput::registry_login): <p>An object that describes the log in information for the container service registry of your Lightsail account.</p>
     /// - On failure, responds with [`SdkError<CreateContainerServiceRegistryLoginError>`](crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError)
-    pub fn create_container_service_registry_login(&self) -> crate::operation::create_container_service_registry_login::builders::CreateContainerServiceRegistryLoginFluentBuilder{
-        crate::operation::create_container_service_registry_login::builders::CreateContainerServiceRegistryLoginFluentBuilder::new(self.handle.clone())
+    pub fn create_container_service_registry_login(
+        &self,
+    ) -> crate::operation::create_container_service_registry_login::builders::CreateContainerServiceRegistryLoginFluentBuilder {
+        crate::operation::create_container_service_registry_login::builders::CreateContainerServiceRegistryLoginFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

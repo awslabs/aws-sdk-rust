@@ -49,22 +49,19 @@ impl ::aws_http::request_id::RequestId for DescribeFolderResolvedPermissionsOutp
 }
 impl DescribeFolderResolvedPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFolderResolvedPermissionsOutput`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput).
-    pub fn builder() -> crate::operation::describe_folder_resolved_permissions::builders::DescribeFolderResolvedPermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_folder_resolved_permissions::builders::DescribeFolderResolvedPermissionsOutputBuilder {
         crate::operation::describe_folder_resolved_permissions::builders::DescribeFolderResolvedPermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFolderResolvedPermissionsOutput`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFolderResolvedPermissionsOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) folder_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -123,17 +120,12 @@ impl DescribeFolderResolvedPermissionsOutputBuilder {
         self
     }
     /// <p>Information about the permissions for the folder.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>Information about the permissions for the folder.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -160,19 +152,13 @@ impl DescribeFolderResolvedPermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFolderResolvedPermissionsOutput`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput).
-    pub fn build(self) -> crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput{
+    pub fn build(self) -> crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput {
         crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsOutput {
-            status: self.status
-                .unwrap_or_default()
-            ,
-            folder_id: self.folder_id
-            ,
-            arn: self.arn
-            ,
-            permissions: self.permissions
-            ,
-            request_id: self.request_id
-            ,
+            status: self.status.unwrap_or_default(),
+            folder_id: self.folder_id,
+            arn: self.arn,
+            permissions: self.permissions,
+            request_id: self.request_id,
             _request_id: self._request_id,
         }
     }

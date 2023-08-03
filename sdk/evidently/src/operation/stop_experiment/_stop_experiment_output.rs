@@ -28,9 +28,7 @@ impl StopExperimentOutput {
 
 /// A builder for [`StopExperimentOutput`](crate::operation::stop_experiment::StopExperimentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopExperimentOutputBuilder {
     pub(crate) ended_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StopExperimentOutputBuilder {
         self
     }
     /// <p>The date and time that the experiment stopped.</p>
-    pub fn set_ended_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_ended_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_time = input;
         self
     }

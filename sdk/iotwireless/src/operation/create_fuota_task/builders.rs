@@ -10,10 +10,7 @@ impl CreateFuotaTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_fuota_task::CreateFuotaTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fuota_task::CreateFuotaTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fuota_task::CreateFuotaTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_fuota_task();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateFuotaTaskFluentBuilder {
         }
     }
     /// Access the CreateFuotaTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_fuota_task::builders::CreateFuotaTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_fuota_task::builders::CreateFuotaTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateFuotaTaskFluentBuilder {
             crate::operation::create_fuota_task::CreateFuotaTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fuota_task::CreateFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fuota_task::CreateFuotaTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateFuotaTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateFuotaTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fuota_task::CreateFuotaTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fuota_task::CreateFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fuota_task::CreateFuotaTaskError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateFuotaTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fuota_task::CreateFuotaTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fuota_task::CreateFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fuota_task::CreateFuotaTaskError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateFuotaTaskFluentBuilder {
             crate::operation::create_fuota_task::CreateFuotaTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fuota_task::CreateFuotaTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fuota_task::CreateFuotaTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl CreateFuotaTaskFluentBuilder {
         self.inner.get_description()
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -176,10 +154,7 @@ impl CreateFuotaTaskFluentBuilder {
         self
     }
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanFuotaTask>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanFuotaTask>) -> Self {
         self.inner = self.inner.set_lo_ra_wan(input);
         self
     }
@@ -188,18 +163,12 @@ impl CreateFuotaTaskFluentBuilder {
         self.inner.get_lo_ra_wan()
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_image(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firmware_update_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firmware_update_image(input.into());
         self
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    pub fn set_firmware_update_image(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firmware_update_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firmware_update_image(input);
         self
     }
@@ -208,18 +177,12 @@ impl CreateFuotaTaskFluentBuilder {
         self.inner.get_firmware_update_image()
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firmware_update_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firmware_update_role(input.into());
         self
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-    pub fn set_firmware_update_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firmware_update_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firmware_update_role(input);
         self
     }
@@ -237,10 +200,7 @@ impl CreateFuotaTaskFluentBuilder {
         self
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

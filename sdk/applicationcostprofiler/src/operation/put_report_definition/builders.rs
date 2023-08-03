@@ -37,9 +37,7 @@ impl PutReportDefinitionFluentBuilder {
         }
     }
     /// Access the PutReportDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_report_definition::builders::PutReportDefinitionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_report_definition::builders::PutReportDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl PutReportDefinitionFluentBuilder {
             crate::operation::put_report_definition::PutReportDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_report_definition::PutReportDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_report_definition::PutReportDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl PutReportDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl PutReportDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_report_definition::PutReportDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_report_definition::PutReportDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_report_definition::PutReportDefinitionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl PutReportDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_report_definition::PutReportDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_report_definition::PutReportDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_report_definition::PutReportDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl PutReportDefinitionFluentBuilder {
             crate::operation::put_report_definition::PutReportDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_report_definition::PutReportDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_report_definition::PutReportDefinitionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl PutReportDefinitionFluentBuilder {
         self.inner.get_report_id()
     }
     /// <p>Required. Description of the report.</p>
-    pub fn report_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_description(input.into());
         self
     }
     /// <p>Required. Description of the report.</p>
-    pub fn set_report_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_report_description(input);
         self
     }
@@ -162,10 +143,7 @@ impl PutReportDefinitionFluentBuilder {
         self
     }
     /// <p>Required. The cadence to generate the report.</p>
-    pub fn set_report_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportFrequency>,
-    ) -> Self {
+    pub fn set_report_frequency(mut self, input: ::std::option::Option<crate::types::ReportFrequency>) -> Self {
         self.inner = self.inner.set_report_frequency(input);
         self
     }
@@ -193,10 +171,7 @@ impl PutReportDefinitionFluentBuilder {
         self
     }
     /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-    pub fn set_destination_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_destination_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.inner = self.inner.set_destination_s3_location(input);
         self
     }

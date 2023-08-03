@@ -26,7 +26,7 @@ impl AdminUpdateAuthEventFeedbackInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminUpdateAuthEventFeedbackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::admin_update_auth_event_feedback::builders::AdminUpdateAuthEventFeedbackInputBuilder,
+    inner: crate::operation::admin_update_auth_event_feedback::builders::AdminUpdateAuthEventFeedbackInputBuilder,
 }
 impl AdminUpdateAuthEventFeedbackFluentBuilder {
     /// Creates a new `AdminUpdateAuthEventFeedback`.
@@ -37,7 +37,7 @@ impl AdminUpdateAuthEventFeedbackFluentBuilder {
         }
     }
     /// Access the AdminUpdateAuthEventFeedback as a reference.
-    pub fn as_input(&self) -> &crate::operation::admin_update_auth_event_feedback::builders::AdminUpdateAuthEventFeedbackInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::admin_update_auth_event_feedback::builders::AdminUpdateAuthEventFeedbackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AdminUpdateAuthEventFeedbackFluentBuilder {
             crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AdminUpdateAuthEventFeedbackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AdminUpdateAuthEventFeedbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AdminUpdateAuthEventFeedbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AdminUpdateAuthEventFeedbackFluentBuilder {
             crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackError>,
     > {
         self.customize_middleware().await
     }
@@ -168,10 +157,7 @@ impl AdminUpdateAuthEventFeedbackFluentBuilder {
         self
     }
     /// <p>The authentication event feedback value.</p>
-    pub fn set_feedback_value(
-        mut self,
-        input: ::std::option::Option<crate::types::FeedbackValueType>,
-    ) -> Self {
+    pub fn set_feedback_value(mut self, input: ::std::option::Option<crate::types::FeedbackValueType>) -> Self {
         self.inner = self.inner.set_feedback_value(input);
         self
     }

@@ -5,16 +5,16 @@ pub use crate::operation::disassociate_multicast_group_from_fuota_task::_disasso
 
 impl DisassociateMulticastGroupFromFuotaTaskInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.disassociate_multicast_group_from_fuota_task();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DisassociateMulticastGroupFromFuotaTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateMulticastGroupFromFuotaTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskInputBuilder,
+    inner: crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskInputBuilder,
 }
 impl DisassociateMulticastGroupFromFuotaTaskFluentBuilder {
     /// Creates a new `DisassociateMulticastGroupFromFuotaTask`.
@@ -37,15 +37,24 @@ impl DisassociateMulticastGroupFromFuotaTaskFluentBuilder {
         }
     }
     /// Access the DisassociateMulticastGroupFromFuotaTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTask, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTask,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl DisassociateMulticastGroupFromFuotaTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl DisassociateMulticastGroupFromFuotaTaskFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTask, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTask,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of a FUOTA task.</p>
@@ -109,18 +134,12 @@ impl DisassociateMulticastGroupFromFuotaTaskFluentBuilder {
         self.inner.get_id()
     }
     /// <p>The ID of the multicast group.</p>
-    pub fn multicast_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multicast_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.multicast_group_id(input.into());
         self
     }
     /// <p>The ID of the multicast group.</p>
-    pub fn set_multicast_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_multicast_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_multicast_group_id(input);
         self
     }

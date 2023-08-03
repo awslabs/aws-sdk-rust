@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for ListOnPremisesInstancesOutput {
 }
 impl ListOnPremisesInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListOnPremisesInstancesOutput`](crate::operation::list_on_premises_instances::ListOnPremisesInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesOutputBuilder {
         crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOnPremisesInstancesOutput`](crate::operation::list_on_premises_instances::ListOnPremisesInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOnPremisesInstancesOutputBuilder {
     pub(crate) instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,27 +48,19 @@ impl ListOnPremisesInstancesOutputBuilder {
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
     ///
     /// <p>The list of matching on-premises instance names.</p>
-    pub fn instance_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_names.unwrap_or_default();
         v.push(input.into());
         self.instance_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of matching on-premises instance names.</p>
-    pub fn set_instance_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_names = input;
         self
     }
     /// <p>The list of matching on-premises instance names.</p>
-    pub fn get_instance_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_names
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
@@ -99,9 +87,7 @@ impl ListOnPremisesInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListOnPremisesInstancesOutput`](crate::operation::list_on_premises_instances::ListOnPremisesInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_on_premises_instances::ListOnPremisesInstancesOutput {
+    pub fn build(self) -> crate::operation::list_on_premises_instances::ListOnPremisesInstancesOutput {
         crate::operation::list_on_premises_instances::ListOnPremisesInstancesOutput {
             instance_names: self.instance_names,
             next_token: self.next_token,

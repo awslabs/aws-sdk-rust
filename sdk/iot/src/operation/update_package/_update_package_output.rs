@@ -19,9 +19,7 @@ impl UpdatePackageOutput {
 
 /// A builder for [`UpdatePackageOutput`](crate::operation::update_package::UpdatePackageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePackageOutputBuilder {
     _request_id: Option<String>,
 }

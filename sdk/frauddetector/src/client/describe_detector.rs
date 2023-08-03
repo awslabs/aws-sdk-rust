@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_detector::DescribeDetectorOutput::next_token): <p>The next token to be used for subsequent requests.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_detector::DescribeDetectorOutput::arn): <p>The detector ARN.</p>
     /// - On failure, responds with [`SdkError<DescribeDetectorError>`](crate::operation::describe_detector::DescribeDetectorError)
-    pub fn describe_detector(
-        &self,
-    ) -> crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder {
-        crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_detector(&self) -> crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder {
+        crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder::new(self.handle.clone())
     }
 }

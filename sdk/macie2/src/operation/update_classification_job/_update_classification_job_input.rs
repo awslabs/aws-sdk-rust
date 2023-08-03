@@ -32,18 +32,14 @@ impl UpdateClassificationJobInput {
 }
 impl UpdateClassificationJobInput {
     /// Creates a new builder-style object to manufacture [`UpdateClassificationJobInput`](crate::operation::update_classification_job::UpdateClassificationJobInput).
-    pub fn builder(
-    ) -> crate::operation::update_classification_job::builders::UpdateClassificationJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_classification_job::builders::UpdateClassificationJobInputBuilder {
         crate::operation::update_classification_job::builders::UpdateClassificationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateClassificationJobInput`](crate::operation::update_classification_job::UpdateClassificationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClassificationJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -99,11 +95,9 @@ impl UpdateClassificationJobInputBuilder {
         crate::operation::update_classification_job::UpdateClassificationJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_classification_job::UpdateClassificationJobInput {
-                job_id: self.job_id,
-                job_status: self.job_status,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_classification_job::UpdateClassificationJobInput {
+            job_id: self.job_id,
+            job_status: self.job_status,
+        })
     }
 }

@@ -77,9 +77,7 @@ impl CreateLocationHdfsInput {
         self.qop_configuration.as_ref()
     }
     /// <p>The type of authentication used to determine the identity of the user. </p>
-    pub fn authentication_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HdfsAuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::HdfsAuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The user name used to identify the client on the host operating system. </p> <note>
@@ -117,17 +115,14 @@ impl CreateLocationHdfsInput {
 }
 impl CreateLocationHdfsInput {
     /// Creates a new builder-style object to manufacture [`CreateLocationHdfsInput`](crate::operation::create_location_hdfs::CreateLocationHdfsInput).
-    pub fn builder(
-    ) -> crate::operation::create_location_hdfs::builders::CreateLocationHdfsInputBuilder {
+    pub fn builder() -> crate::operation::create_location_hdfs::builders::CreateLocationHdfsInputBuilder {
         crate::operation::create_location_hdfs::builders::CreateLocationHdfsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationHdfsInput`](crate::operation::create_location_hdfs::CreateLocationHdfsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationHdfsInputBuilder {
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
     pub(crate) name_nodes: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>,
@@ -170,17 +165,12 @@ impl CreateLocationHdfsInputBuilder {
         self
     }
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-    pub fn set_name_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>,
-    ) -> Self {
+    pub fn set_name_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>) -> Self {
         self.name_nodes = input;
         self
     }
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-    pub fn get_name_nodes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>> {
+    pub fn get_name_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>> {
         &self.name_nodes
     }
     /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
@@ -212,18 +202,12 @@ impl CreateLocationHdfsInputBuilder {
         &self.replication_factor
     }
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
-    pub fn kms_key_provider_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kms_key_provider_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_provider_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
-    pub fn set_kms_key_provider_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kms_key_provider_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_provider_uri = input;
         self
     }
@@ -237,10 +221,7 @@ impl CreateLocationHdfsInputBuilder {
         self
     }
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter assumes the same value. </p>
-    pub fn set_qop_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::QopConfiguration>,
-    ) -> Self {
+    pub fn set_qop_configuration(mut self, input: ::std::option::Option<crate::types::QopConfiguration>) -> Self {
         self.qop_configuration = input;
         self
     }
@@ -254,17 +235,12 @@ impl CreateLocationHdfsInputBuilder {
         self
     }
     /// <p>The type of authentication used to determine the identity of the user. </p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HdfsAuthenticationType>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::HdfsAuthenticationType>) -> Self {
         self.authentication_type = input;
         self
     }
     /// <p>The type of authentication used to determine the identity of the user. </p>
-    pub fn get_authentication_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::HdfsAuthenticationType> {
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::HdfsAuthenticationType> {
         &self.authentication_type
     }
     /// <p>The user name used to identify the client on the host operating system. </p> <note>
@@ -290,20 +266,14 @@ impl CreateLocationHdfsInputBuilder {
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
     /// </note>
-    pub fn kerberos_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kerberos_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kerberos_principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
     /// </note>
-    pub fn set_kerberos_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kerberos_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kerberos_principal = input;
         self
     }
@@ -323,10 +293,7 @@ impl CreateLocationHdfsInputBuilder {
     /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
     /// </note>
-    pub fn set_kerberos_keytab(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_kerberos_keytab(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.kerberos_keytab = input;
         self
     }
@@ -346,10 +313,7 @@ impl CreateLocationHdfsInputBuilder {
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
     /// </note>
-    pub fn set_kerberos_krb5_conf(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_kerberos_krb5_conf(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.kerberos_krb5_conf = input;
         self
     }
@@ -371,10 +335,7 @@ impl CreateLocationHdfsInputBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS cluster.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
@@ -394,10 +355,7 @@ impl CreateLocationHdfsInputBuilder {
         self
     }
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.tags = input;
         self
     }
@@ -408,26 +366,21 @@ impl CreateLocationHdfsInputBuilder {
     /// Consumes the builder and constructs a [`CreateLocationHdfsInput`](crate::operation::create_location_hdfs::CreateLocationHdfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_location_hdfs::CreateLocationHdfsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_location_hdfs::CreateLocationHdfsInput {
-                subdirectory: self.subdirectory,
-                name_nodes: self.name_nodes,
-                block_size: self.block_size,
-                replication_factor: self.replication_factor,
-                kms_key_provider_uri: self.kms_key_provider_uri,
-                qop_configuration: self.qop_configuration,
-                authentication_type: self.authentication_type,
-                simple_user: self.simple_user,
-                kerberos_principal: self.kerberos_principal,
-                kerberos_keytab: self.kerberos_keytab,
-                kerberos_krb5_conf: self.kerberos_krb5_conf,
-                agent_arns: self.agent_arns,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_location_hdfs::CreateLocationHdfsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_location_hdfs::CreateLocationHdfsInput {
+            subdirectory: self.subdirectory,
+            name_nodes: self.name_nodes,
+            block_size: self.block_size,
+            replication_factor: self.replication_factor,
+            kms_key_provider_uri: self.kms_key_provider_uri,
+            qop_configuration: self.qop_configuration,
+            authentication_type: self.authentication_type,
+            simple_user: self.simple_user,
+            kerberos_principal: self.kerberos_principal,
+            kerberos_keytab: self.kerberos_keytab,
+            kerberos_krb5_conf: self.kerberos_krb5_conf,
+            agent_arns: self.agent_arns,
+            tags: self.tags,
+        })
     }
 }

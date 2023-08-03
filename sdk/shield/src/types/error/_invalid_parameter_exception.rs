@@ -63,14 +63,11 @@ impl InvalidParameterException {
 
 /// A builder for [`InvalidParameterException`](crate::types::error::InvalidParameterException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidParameterExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
-    pub(crate) fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidParameterExceptionBuilder {
@@ -94,10 +91,7 @@ impl InvalidParameterExceptionBuilder {
         self
     }
     /// <p>Additional information about the exception.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationExceptionReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ValidationExceptionReason>) -> Self {
         self.reason = input;
         self
     }
@@ -117,17 +111,12 @@ impl InvalidParameterExceptionBuilder {
         self
     }
     /// <p>Fields that caused the exception.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>) -> Self {
         self.fields = input;
         self
     }
     /// <p>Fields that caused the exception.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>> {
         &self.fields
     }
     /// Sets error metadata
@@ -137,10 +126,7 @@ impl InvalidParameterExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -207,9 +207,7 @@ impl Job {
 
 /// A builder for [`Job`](crate::types::Job).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -339,10 +337,7 @@ impl JobBuilder {
         self
     }
     /// <p>When the job was created.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -380,10 +375,7 @@ impl JobBuilder {
     /// <li> <p>COMPLETED</p> </li>
     /// <li> <p>STOPPING</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -429,10 +421,7 @@ impl JobBuilder {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionResult>,
-    ) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::ExecutionResult>) -> Self {
         self.result = input;
         self
     }
@@ -456,10 +445,7 @@ impl JobBuilder {
         self
     }
     /// <p>The job's start time.</p>
-    pub fn set_started(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started = input;
         self
     }
@@ -473,10 +459,7 @@ impl JobBuilder {
         self
     }
     /// <p>The job's stop time.</p>
-    pub fn set_stopped(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stopped(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stopped = input;
         self
     }
@@ -546,10 +529,7 @@ impl JobBuilder {
         self
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the job.</p>
-    pub fn set_device_minutes(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceMinutes>,
-    ) -> Self {
+    pub fn set_device_minutes(mut self, input: ::std::option::Option<crate::types::DeviceMinutes>) -> Self {
         self.device_minutes = input;
         self
     }
@@ -558,18 +538,12 @@ impl JobBuilder {
         &self.device_minutes
     }
     /// <p>The endpoint for streaming device video.</p>
-    pub fn video_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn video_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.video_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint for streaming device video.</p>
-    pub fn set_video_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_video_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.video_endpoint = input;
         self
     }

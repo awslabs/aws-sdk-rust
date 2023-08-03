@@ -6,39 +6,30 @@
 pub struct CreateCloudFrontOriginAccessIdentityInput {
     /// <p>The current configuration information for the identity.</p>
     #[doc(hidden)]
-    pub cloud_front_origin_access_identity_config:
-        ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
+    pub cloud_front_origin_access_identity_config: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
 }
 impl CreateCloudFrontOriginAccessIdentityInput {
     /// <p>The current configuration information for the identity.</p>
-    pub fn cloud_front_origin_access_identity_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudFrontOriginAccessIdentityConfig> {
+    pub fn cloud_front_origin_access_identity_config(&self) -> ::std::option::Option<&crate::types::CloudFrontOriginAccessIdentityConfig> {
         self.cloud_front_origin_access_identity_config.as_ref()
     }
 }
 impl CreateCloudFrontOriginAccessIdentityInput {
     /// Creates a new builder-style object to manufacture [`CreateCloudFrontOriginAccessIdentityInput`](crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput).
-    pub fn builder() -> crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityInputBuilder{
+    pub fn builder() -> crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityInputBuilder {
         crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCloudFrontOriginAccessIdentityInput`](crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCloudFrontOriginAccessIdentityInputBuilder {
-    pub(crate) cloud_front_origin_access_identity_config:
-        ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
+    pub(crate) cloud_front_origin_access_identity_config: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
 }
 impl CreateCloudFrontOriginAccessIdentityInputBuilder {
     /// <p>The current configuration information for the identity.</p>
-    pub fn cloud_front_origin_access_identity_config(
-        mut self,
-        input: crate::types::CloudFrontOriginAccessIdentityConfig,
-    ) -> Self {
+    pub fn cloud_front_origin_access_identity_config(mut self, input: crate::types::CloudFrontOriginAccessIdentityConfig) -> Self {
         self.cloud_front_origin_access_identity_config = ::std::option::Option::Some(input);
         self
     }
@@ -51,18 +42,20 @@ impl CreateCloudFrontOriginAccessIdentityInputBuilder {
         self
     }
     /// <p>The current configuration information for the identity.</p>
-    pub fn get_cloud_front_origin_access_identity_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig> {
+    pub fn get_cloud_front_origin_access_identity_config(&self) -> &::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig> {
         &self.cloud_front_origin_access_identity_config
     }
     /// Consumes the builder and constructs a [`CreateCloudFrontOriginAccessIdentityInput`](crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput {
-                cloud_front_origin_access_identity_config: self.cloud_front_origin_access_identity_config
-                ,
-            }
+                cloud_front_origin_access_identity_config: self.cloud_front_origin_access_identity_config,
+            },
         )
     }
 }

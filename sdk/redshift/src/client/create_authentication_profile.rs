@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`authentication_profile_name(Option<String>)`](crate::operation::create_authentication_profile::CreateAuthenticationProfileOutput::authentication_profile_name): <p>The name of the authentication profile that was created.</p>
     ///   - [`authentication_profile_content(Option<String>)`](crate::operation::create_authentication_profile::CreateAuthenticationProfileOutput::authentication_profile_content): <p>The content of the authentication profile in JSON format.</p>
     /// - On failure, responds with [`SdkError<CreateAuthenticationProfileError>`](crate::operation::create_authentication_profile::CreateAuthenticationProfileError)
-    pub fn create_authentication_profile(&self) -> crate::operation::create_authentication_profile::builders::CreateAuthenticationProfileFluentBuilder{
+    pub fn create_authentication_profile(
+        &self,
+    ) -> crate::operation::create_authentication_profile::builders::CreateAuthenticationProfileFluentBuilder {
         crate::operation::create_authentication_profile::builders::CreateAuthenticationProfileFluentBuilder::new(self.handle.clone())
     }
 }

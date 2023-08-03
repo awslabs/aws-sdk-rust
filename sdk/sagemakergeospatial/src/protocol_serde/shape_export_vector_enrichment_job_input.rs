@@ -15,7 +15,10 @@ pub fn ser_export_vector_enrichment_job_input(
     if let Some(var_4) = &input.output_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("OutputConfig").start_object();
-        crate::protocol_serde::shape_export_vector_enrichment_job_output_config::ser_export_vector_enrichment_job_output_config(&mut object_5, var_4)?;
+        crate::protocol_serde::shape_export_vector_enrichment_job_output_config::ser_export_vector_enrichment_job_output_config(
+            &mut object_5,
+            var_4,
+        )?;
         object_5.finish();
     }
     Ok(())

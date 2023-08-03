@@ -17,11 +17,9 @@ pub fn ser_virtual_service_provider(
             object_2.finish();
         }
         crate::types::VirtualServiceProvider::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "VirtualServiceProvider",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "VirtualServiceProvider",
+            ))
         }
     }
     Ok(())
@@ -29,17 +27,9 @@ pub fn ser_virtual_service_provider(
 
 pub(crate) fn de_virtual_service_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::VirtualServiceProvider>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::VirtualServiceProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -49,47 +39,39 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "virtualNode" => {
-                                Some(crate::types::VirtualServiceProvider::VirtualNode(
-                                    crate::protocol_serde::shape_virtual_node_service_provider::de_virtual_node_service_provider(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'virtualNode' cannot be null"))?
-                                ))
-                            }
-                            "virtualRouter" => {
-                                Some(crate::types::VirtualServiceProvider::VirtualRouter(
-                                    crate::protocol_serde::shape_virtual_router_service_provider::de_virtual_router_service_provider(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'virtualRouter' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::VirtualServiceProvider::Unknown)
-                                                                    }
-                        };
+                        "virtualNode" => Some(crate::types::VirtualServiceProvider::VirtualNode(
+                            crate::protocol_serde::shape_virtual_node_service_provider::de_virtual_node_service_provider(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'virtualNode' cannot be null"),
+                            )?,
+                        )),
+                        "virtualRouter" => Some(crate::types::VirtualServiceProvider::VirtualRouter(
+                            crate::protocol_serde::shape_virtual_router_service_provider::de_virtual_router_service_provider(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'virtualRouter' cannot be null"),
+                            )?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::VirtualServiceProvider::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

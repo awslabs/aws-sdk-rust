@@ -5,18 +5,14 @@
 pub struct DisassociateAdminAccountInput {}
 impl DisassociateAdminAccountInput {
     /// Creates a new builder-style object to manufacture [`DisassociateAdminAccountInput`](crate::operation::disassociate_admin_account::DisassociateAdminAccountInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountInputBuilder {
         crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateAdminAccountInput`](crate::operation::disassociate_admin_account::DisassociateAdminAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateAdminAccountInputBuilder {}
 impl DisassociateAdminAccountInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateAdminAccountInput`](crate::operation::disassociate_admin_account::DisassociateAdminAccountInput).
@@ -26,8 +22,6 @@ impl DisassociateAdminAccountInputBuilder {
         crate::operation::disassociate_admin_account::DisassociateAdminAccountInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_admin_account::DisassociateAdminAccountInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_admin_account::DisassociateAdminAccountInput {})
     }
 }

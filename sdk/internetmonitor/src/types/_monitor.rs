@@ -31,9 +31,7 @@ impl Monitor {
         self.status.as_ref()
     }
     /// <p>The health of data processing for the monitor.</p>
-    pub fn processing_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MonitorProcessingStatusCode> {
+    pub fn processing_status(&self) -> ::std::option::Option<&crate::types::MonitorProcessingStatusCode> {
         self.processing_status.as_ref()
     }
 }
@@ -46,9 +44,7 @@ impl Monitor {
 
 /// A builder for [`Monitor`](crate::types::Monitor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitorBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
@@ -90,10 +86,7 @@ impl MonitorBuilder {
         self
     }
     /// <p>The status of a monitor.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitorConfigState>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MonitorConfigState>) -> Self {
         self.status = input;
         self
     }
@@ -107,17 +100,12 @@ impl MonitorBuilder {
         self
     }
     /// <p>The health of data processing for the monitor.</p>
-    pub fn set_processing_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitorProcessingStatusCode>,
-    ) -> Self {
+    pub fn set_processing_status(mut self, input: ::std::option::Option<crate::types::MonitorProcessingStatusCode>) -> Self {
         self.processing_status = input;
         self
     }
     /// <p>The health of data processing for the monitor.</p>
-    pub fn get_processing_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitorProcessingStatusCode> {
+    pub fn get_processing_status(&self) -> &::std::option::Option<crate::types::MonitorProcessingStatusCode> {
         &self.processing_status
     }
     /// Consumes the builder and constructs a [`Monitor`](crate::types::Monitor).

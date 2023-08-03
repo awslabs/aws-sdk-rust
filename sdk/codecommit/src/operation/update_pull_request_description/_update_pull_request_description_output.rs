@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdatePullRequestDescriptionOutput {
 }
 impl UpdatePullRequestDescriptionOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestDescriptionOutput`](crate::operation::update_pull_request_description::UpdatePullRequestDescriptionOutput).
-    pub fn builder() -> crate::operation::update_pull_request_description::builders::UpdatePullRequestDescriptionOutputBuilder{
+    pub fn builder() -> crate::operation::update_pull_request_description::builders::UpdatePullRequestDescriptionOutputBuilder {
         crate::operation::update_pull_request_description::builders::UpdatePullRequestDescriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePullRequestDescriptionOutput`](crate::operation::update_pull_request_description::UpdatePullRequestDescriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePullRequestDescriptionOutputBuilder {
     pub(crate) pull_request: ::std::option::Option<crate::types::PullRequest>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdatePullRequestDescriptionOutputBuilder {
         self
     }
     /// <p>Information about the updated pull request.</p>
-    pub fn set_pull_request(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequest>,
-    ) -> Self {
+    pub fn set_pull_request(mut self, input: ::std::option::Option<crate::types::PullRequest>) -> Self {
         self.pull_request = input;
         self
     }
@@ -63,9 +58,7 @@ impl UpdatePullRequestDescriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdatePullRequestDescriptionOutput`](crate::operation::update_pull_request_description::UpdatePullRequestDescriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_pull_request_description::UpdatePullRequestDescriptionOutput {
+    pub fn build(self) -> crate::operation::update_pull_request_description::UpdatePullRequestDescriptionOutput {
         crate::operation::update_pull_request_description::UpdatePullRequestDescriptionOutput {
             pull_request: self.pull_request,
             _request_id: self._request_id,

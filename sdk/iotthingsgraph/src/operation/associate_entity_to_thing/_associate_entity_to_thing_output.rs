@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateEntityToThingOutput {
 }
 impl AssociateEntityToThingOutput {
     /// Creates a new builder-style object to manufacture [`AssociateEntityToThingOutput`](crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingOutputBuilder {
         crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateEntityToThingOutput`](crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateEntityToThingOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl AssociateEntityToThingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateEntityToThingOutput`](crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput {
+    pub fn build(self) -> crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput {
         crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput {
             _request_id: self._request_id,
         }

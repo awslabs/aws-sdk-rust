@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`datastore_status(Option<DatastoreStatus>)`](crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput::datastore_status): <p>The status of the FHIR data store.</p>
     ///   - [`datastore_endpoint(Option<String>)`](crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput::datastore_endpoint): <p>The AWS endpoint for the created data store.</p>
     /// - On failure, responds with [`SdkError<CreateFHIRDatastoreError>`](crate::operation::create_fhir_datastore::CreateFHIRDatastoreError)
-    pub fn create_fhir_datastore(
-        &self,
-    ) -> crate::operation::create_fhir_datastore::builders::CreateFHIRDatastoreFluentBuilder {
-        crate::operation::create_fhir_datastore::builders::CreateFHIRDatastoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_fhir_datastore(&self) -> crate::operation::create_fhir_datastore::builders::CreateFHIRDatastoreFluentBuilder {
+        crate::operation::create_fhir_datastore::builders::CreateFHIRDatastoreFluentBuilder::new(self.handle.clone())
     }
 }

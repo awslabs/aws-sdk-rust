@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::start_crawler::builders::StartCrawlerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_crawler::builders::StartCrawlerFluentBuilder::set_name): <p>Name of the crawler to start.</p>
     /// - On success, responds with [`StartCrawlerOutput`](crate::operation::start_crawler::StartCrawlerOutput)
     /// - On failure, responds with [`SdkError<StartCrawlerError>`](crate::operation::start_crawler::StartCrawlerError)
-    pub fn start_crawler(
-        &self,
-    ) -> crate::operation::start_crawler::builders::StartCrawlerFluentBuilder {
-        crate::operation::start_crawler::builders::StartCrawlerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_crawler(&self) -> crate::operation::start_crawler::builders::StartCrawlerFluentBuilder {
+        crate::operation::start_crawler::builders::StartCrawlerFluentBuilder::new(self.handle.clone())
     }
 }

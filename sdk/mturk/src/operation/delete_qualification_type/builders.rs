@@ -29,8 +29,7 @@ impl DeleteQualificationTypeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteQualificationTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_qualification_type::builders::DeleteQualificationTypeInputBuilder,
+    inner: crate::operation::delete_qualification_type::builders::DeleteQualificationTypeInputBuilder,
 }
 impl DeleteQualificationTypeFluentBuilder {
     /// Creates a new `DeleteQualificationType`.
@@ -41,10 +40,7 @@ impl DeleteQualificationTypeFluentBuilder {
         }
     }
     /// Access the DeleteQualificationType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_qualification_type::builders::DeleteQualificationTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_qualification_type::builders::DeleteQualificationTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl DeleteQualificationTypeFluentBuilder {
             crate::operation::delete_qualification_type::DeleteQualificationType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_qualification_type::DeleteQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_qualification_type::DeleteQualificationTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl DeleteQualificationTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl DeleteQualificationTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_qualification_type::DeleteQualificationTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_qualification_type::DeleteQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_qualification_type::DeleteQualificationTypeError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl DeleteQualificationTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_qualification_type::DeleteQualificationTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_qualification_type::DeleteQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_qualification_type::DeleteQualificationTypeError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +108,17 @@ impl DeleteQualificationTypeFluentBuilder {
             crate::operation::delete_qualification_type::DeleteQualificationType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_qualification_type::DeleteQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_qualification_type::DeleteQualificationTypeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the QualificationType to dispose.</p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qualification_type_id(input.into());
         self
     }
     /// <p>The ID of the QualificationType to dispose.</p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qualification_type_id(input);
         self
     }

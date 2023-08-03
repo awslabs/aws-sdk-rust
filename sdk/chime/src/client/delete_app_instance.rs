@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAppInstanceOutput`](crate::operation::delete_app_instance::DeleteAppInstanceOutput)
     /// - On failure, responds with [`SdkError<DeleteAppInstanceError>`](crate::operation::delete_app_instance::DeleteAppInstanceError)
     #[deprecated(note = "Replaced by DeleteAppInstance in the Amazon Chime SDK Identity Namespace")]
-    pub fn delete_app_instance(
-        &self,
-    ) -> crate::operation::delete_app_instance::builders::DeleteAppInstanceFluentBuilder {
-        crate::operation::delete_app_instance::builders::DeleteAppInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_app_instance(&self) -> crate::operation::delete_app_instance::builders::DeleteAppInstanceFluentBuilder {
+        crate::operation::delete_app_instance::builders::DeleteAppInstanceFluentBuilder::new(self.handle.clone())
     }
 }

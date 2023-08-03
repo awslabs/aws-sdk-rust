@@ -30,9 +30,7 @@ impl BatchRestrictions {
 
 /// A builder for [`BatchRestrictions`](crate::types::BatchRestrictions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchRestrictionsBuilder {
     pub(crate) maximum_builds_allowed: ::std::option::Option<i32>,
     pub(crate) compute_types_allowed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,27 +55,19 @@ impl BatchRestrictionsBuilder {
     /// To override the contents of this collection use [`set_compute_types_allowed`](Self::set_compute_types_allowed).
     ///
     /// <p>An array of strings that specify the compute types that are allowed for the batch build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild User Guide</i> for these values. </p>
-    pub fn compute_types_allowed(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compute_types_allowed(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.compute_types_allowed.unwrap_or_default();
         v.push(input.into());
         self.compute_types_allowed = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of strings that specify the compute types that are allowed for the batch build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild User Guide</i> for these values. </p>
-    pub fn set_compute_types_allowed(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_compute_types_allowed(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.compute_types_allowed = input;
         self
     }
     /// <p>An array of strings that specify the compute types that are allowed for the batch build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild User Guide</i> for these values. </p>
-    pub fn get_compute_types_allowed(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_compute_types_allowed(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.compute_types_allowed
     }
     /// Consumes the builder and constructs a [`BatchRestrictions`](crate::types::BatchRestrictions).

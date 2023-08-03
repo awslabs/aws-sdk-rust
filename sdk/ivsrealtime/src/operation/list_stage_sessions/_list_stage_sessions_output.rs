@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListStageSessionsOutput {
 }
 impl ListStageSessionsOutput {
     /// Creates a new builder-style object to manufacture [`ListStageSessionsOutput`](crate::operation::list_stage_sessions::ListStageSessionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_stage_sessions::builders::ListStageSessionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_stage_sessions::builders::ListStageSessionsOutputBuilder {
         crate::operation::list_stage_sessions::builders::ListStageSessionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStageSessionsOutput`](crate::operation::list_stage_sessions::ListStageSessionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStageSessionsOutputBuilder {
-    pub(crate) stage_sessions:
-        ::std::option::Option<::std::vec::Vec<crate::types::StageSessionSummary>>,
+    pub(crate) stage_sessions: ::std::option::Option<::std::vec::Vec<crate::types::StageSessionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListStageSessionsOutputBuilder {
         self
     }
     /// <p>List of matching stage sessions.</p>
-    pub fn set_stage_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StageSessionSummary>>,
-    ) -> Self {
+    pub fn set_stage_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StageSessionSummary>>) -> Self {
         self.stage_sessions = input;
         self
     }
     /// <p>List of matching stage sessions.</p>
-    pub fn get_stage_sessions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StageSessionSummary>> {
+    pub fn get_stage_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StageSessionSummary>> {
         &self.stage_sessions
     }
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>

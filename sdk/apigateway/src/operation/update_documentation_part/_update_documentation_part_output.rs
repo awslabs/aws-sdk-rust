@@ -36,18 +36,14 @@ impl ::aws_http::request_id::RequestId for UpdateDocumentationPartOutput {
 }
 impl UpdateDocumentationPartOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentationPartOutput`](crate::operation::update_documentation_part::UpdateDocumentationPartOutput).
-    pub fn builder(
-    ) -> crate::operation::update_documentation_part::builders::UpdateDocumentationPartOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_documentation_part::builders::UpdateDocumentationPartOutputBuilder {
         crate::operation::update_documentation_part::builders::UpdateDocumentationPartOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDocumentationPartOutput`](crate::operation::update_documentation_part::UpdateDocumentationPartOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDocumentationPartOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<crate::types::DocumentationPartLocation>,
@@ -75,10 +71,7 @@ impl UpdateDocumentationPartOutputBuilder {
         self
     }
     /// <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentationPartLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::DocumentationPartLocation>) -> Self {
         self.location = input;
         self
     }
@@ -110,9 +103,7 @@ impl UpdateDocumentationPartOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDocumentationPartOutput`](crate::operation::update_documentation_part::UpdateDocumentationPartOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_documentation_part::UpdateDocumentationPartOutput {
+    pub fn build(self) -> crate::operation::update_documentation_part::UpdateDocumentationPartOutput {
         crate::operation::update_documentation_part::UpdateDocumentationPartOutput {
             id: self.id,
             location: self.location,

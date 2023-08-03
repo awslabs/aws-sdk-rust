@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`policy_names(Vec<String>)`](crate::operation::set_load_balancer_policies_of_listener::builders::SetLoadBalancerPoliciesOfListenerFluentBuilder::policy_names) / [`set_policy_names(Option<Vec<String>>)`](crate::operation::set_load_balancer_policies_of_listener::builders::SetLoadBalancerPoliciesOfListenerFluentBuilder::set_policy_names): <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
     /// - On success, responds with [`SetLoadBalancerPoliciesOfListenerOutput`](crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerOutput)
     /// - On failure, responds with [`SdkError<SetLoadBalancerPoliciesOfListenerError>`](crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerError)
-    pub fn set_load_balancer_policies_of_listener(&self) -> crate::operation::set_load_balancer_policies_of_listener::builders::SetLoadBalancerPoliciesOfListenerFluentBuilder{
+    pub fn set_load_balancer_policies_of_listener(
+        &self,
+    ) -> crate::operation::set_load_balancer_policies_of_listener::builders::SetLoadBalancerPoliciesOfListenerFluentBuilder {
         crate::operation::set_load_balancer_policies_of_listener::builders::SetLoadBalancerPoliciesOfListenerFluentBuilder::new(self.handle.clone())
     }
 }

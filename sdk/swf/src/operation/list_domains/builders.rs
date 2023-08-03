@@ -10,10 +10,7 @@ impl ListDomainsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_domains::ListDomainsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_domains::ListDomainsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_domains::ListDomainsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_domains();
         fluent_builder.inner = self;
@@ -55,10 +52,7 @@ impl ListDomainsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_domains::ListDomains,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_domains::ListDomains, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_domains::ListDomainsError>,
     > {
         let handle = self.handle.clone();
@@ -69,10 +63,7 @@ impl ListDomainsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -114,10 +105,7 @@ impl ListDomainsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_domains::ListDomains,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_domains::ListDomains, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_domains::ListDomainsError>,
     > {
         self.customize_middleware().await
@@ -126,26 +114,17 @@ impl ListDomainsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_domains::paginator::ListDomainsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_domains::paginator::ListDomainsPaginator {
-        crate::operation::list_domains::paginator::ListDomainsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_domains::paginator::ListDomainsPaginator::new(self.handle, self.inner)
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }
@@ -160,17 +139,12 @@ impl ListDomainsFluentBuilder {
         self
     }
     /// <p>Specifies the registration status of the domains to list.</p>
-    pub fn set_registration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationStatus>,
-    ) -> Self {
+    pub fn set_registration_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.inner = self.inner.set_registration_status(input);
         self
     }
     /// <p>Specifies the registration status of the domains to list.</p>
-    pub fn get_registration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+    pub fn get_registration_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         self.inner.get_registration_status()
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>

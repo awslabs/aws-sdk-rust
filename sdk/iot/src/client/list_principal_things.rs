@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`things(Option<Vec<String>>)`](crate::operation::list_principal_things::ListPrincipalThingsOutput::things): <p>The things.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_principal_things::ListPrincipalThingsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListPrincipalThingsError>`](crate::operation::list_principal_things::ListPrincipalThingsError)
-    pub fn list_principal_things(
-        &self,
-    ) -> crate::operation::list_principal_things::builders::ListPrincipalThingsFluentBuilder {
-        crate::operation::list_principal_things::builders::ListPrincipalThingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_principal_things(&self) -> crate::operation::list_principal_things::builders::ListPrincipalThingsFluentBuilder {
+        crate::operation::list_principal_things::builders::ListPrincipalThingsFluentBuilder::new(self.handle.clone())
     }
 }

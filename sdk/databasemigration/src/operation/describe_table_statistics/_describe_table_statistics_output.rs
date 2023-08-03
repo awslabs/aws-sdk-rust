@@ -36,39 +36,28 @@ impl ::aws_http::request_id::RequestId for DescribeTableStatisticsOutput {
 }
 impl DescribeTableStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTableStatisticsOutput`](crate::operation::describe_table_statistics::DescribeTableStatisticsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_table_statistics::builders::DescribeTableStatisticsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_table_statistics::builders::DescribeTableStatisticsOutputBuilder {
         crate::operation::describe_table_statistics::builders::DescribeTableStatisticsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTableStatisticsOutput`](crate::operation::describe_table_statistics::DescribeTableStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTableStatisticsOutputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) table_statistics:
-        ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>,
+    pub(crate) table_statistics: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTableStatisticsOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_arn = input;
         self
     }
@@ -88,17 +77,12 @@ impl DescribeTableStatisticsOutputBuilder {
         self
     }
     /// <p>The table statistics.</p>
-    pub fn set_table_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>,
-    ) -> Self {
+    pub fn set_table_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>) -> Self {
         self.table_statistics = input;
         self
     }
     /// <p>The table statistics.</p>
-    pub fn get_table_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>> {
+    pub fn get_table_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>> {
         &self.table_statistics
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -125,9 +109,7 @@ impl DescribeTableStatisticsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTableStatisticsOutput`](crate::operation::describe_table_statistics::DescribeTableStatisticsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_table_statistics::DescribeTableStatisticsOutput {
+    pub fn build(self) -> crate::operation::describe_table_statistics::DescribeTableStatisticsOutput {
         crate::operation::describe_table_statistics::DescribeTableStatisticsOutput {
             replication_task_arn: self.replication_task_arn,
             table_statistics: self.table_statistics,

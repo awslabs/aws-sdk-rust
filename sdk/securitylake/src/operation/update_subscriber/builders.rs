@@ -10,10 +10,7 @@ impl UpdateSubscriberInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_subscriber::UpdateSubscriberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subscriber::UpdateSubscriberError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_subscriber::UpdateSubscriberError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_subscriber();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateSubscriberFluentBuilder {
         }
     }
     /// Access the UpdateSubscriber as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_subscriber::builders::UpdateSubscriberInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_subscriber::builders::UpdateSubscriberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateSubscriberFluentBuilder {
             crate::operation::update_subscriber::UpdateSubscriber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subscriber::UpdateSubscriberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_subscriber::UpdateSubscriberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateSubscriberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateSubscriberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_subscriber::UpdateSubscriberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subscriber::UpdateSubscriberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_subscriber::UpdateSubscriberError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateSubscriberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_subscriber::UpdateSubscriberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subscriber::UpdateSubscriberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_subscriber::UpdateSubscriberError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateSubscriberFluentBuilder {
             crate::operation::update_subscriber::UpdateSubscriber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subscriber::UpdateSubscriberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_subscriber::UpdateSubscriberError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A value created by Security Lake that uniquely identifies your subscription.</p>
-    pub fn subscriber_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscriber_id(input.into());
         self
     }
     /// <p>A value created by Security Lake that uniquely identifies your subscription.</p>
-    pub fn set_subscriber_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscriber_id(input);
         self
     }
@@ -148,10 +126,7 @@ impl UpdateSubscriberFluentBuilder {
         self
     }
     /// <p>The AWS identity used to access your data.</p>
-    pub fn set_subscriber_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsIdentity>,
-    ) -> Self {
+    pub fn set_subscriber_identity(mut self, input: ::std::option::Option<crate::types::AwsIdentity>) -> Self {
         self.inner = self.inner.set_subscriber_identity(input);
         self
     }
@@ -160,18 +135,12 @@ impl UpdateSubscriberFluentBuilder {
         self.inner.get_subscriber_identity()
     }
     /// <p>The name of the Security Lake account subscriber.</p>
-    pub fn subscriber_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscriber_name(input.into());
         self
     }
     /// <p>The name of the Security Lake account subscriber.</p>
-    pub fn set_subscriber_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscriber_name(input);
         self
     }
@@ -180,18 +149,12 @@ impl UpdateSubscriberFluentBuilder {
         self.inner.get_subscriber_name()
     }
     /// <p>The description of the Security Lake account subscriber.</p>
-    pub fn subscriber_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscriber_description(input.into());
         self
     }
     /// <p>The description of the Security Lake account subscriber.</p>
-    pub fn set_subscriber_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscriber_description(input);
         self
     }
@@ -209,17 +172,12 @@ impl UpdateSubscriberFluentBuilder {
         self
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
         self.inner.get_sources()
     }
 }

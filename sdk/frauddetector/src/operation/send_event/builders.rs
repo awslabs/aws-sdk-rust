@@ -10,10 +10,7 @@ impl SendEventInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_event::SendEventOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_event::SendEventError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_event::SendEventError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_event();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl SendEventFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::send_event::SendEvent,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::send_event::SendEvent, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::send_event::SendEventError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl SendEventFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl SendEventFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::send_event::SendEvent,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::send_event::SendEvent, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::send_event::SendEventError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl SendEventFluentBuilder {
         self.inner.get_event_id()
     }
     /// <p>The event type name of the event.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_type_name(input.into());
         self
     }
     /// <p>The event type name of the event.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
@@ -147,18 +129,12 @@ impl SendEventFluentBuilder {
         self.inner.get_event_type_name()
     }
     /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    pub fn event_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_timestamp(input.into());
         self
     }
     /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    pub fn set_event_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_timestamp(input);
         self
     }
@@ -182,34 +158,22 @@ impl SendEventFluentBuilder {
     /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
     pub fn set_event_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_event_variables(input);
         self
     }
     /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
-    pub fn get_event_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_event_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_event_variables()
     }
     /// <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
-    pub fn assigned_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assigned_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assigned_label(input.into());
         self
     }
     /// <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
-    pub fn set_assigned_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assigned_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assigned_label(input);
         self
     }
@@ -218,18 +182,12 @@ impl SendEventFluentBuilder {
         self.inner.get_assigned_label()
     }
     /// <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
-    pub fn label_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_timestamp(input.into());
         self
     }
     /// <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
-    pub fn set_label_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_timestamp(input);
         self
     }
@@ -247,10 +205,7 @@ impl SendEventFluentBuilder {
         self
     }
     /// <p>An array of entities.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>) -> Self {
         self.inner = self.inner.set_entities(input);
         self
     }

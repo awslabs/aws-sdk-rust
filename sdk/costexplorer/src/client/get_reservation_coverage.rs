@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`total(Option<Coverage>)`](crate::operation::get_reservation_coverage::GetReservationCoverageOutput::total): <p>The total amount of instance usage that a reservation covered.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_reservation_coverage::GetReservationCoverageOutput::next_page_token): <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     /// - On failure, responds with [`SdkError<GetReservationCoverageError>`](crate::operation::get_reservation_coverage::GetReservationCoverageError)
-    pub fn get_reservation_coverage(
-        &self,
-    ) -> crate::operation::get_reservation_coverage::builders::GetReservationCoverageFluentBuilder
-    {
+    pub fn get_reservation_coverage(&self) -> crate::operation::get_reservation_coverage::builders::GetReservationCoverageFluentBuilder {
         crate::operation::get_reservation_coverage::builders::GetReservationCoverageFluentBuilder::new(self.handle.clone())
     }
 }

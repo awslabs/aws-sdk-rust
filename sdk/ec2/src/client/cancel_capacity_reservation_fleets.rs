@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`successful_fleet_cancellations(Option<Vec<CapacityReservationFleetCancellationState>>)`](crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsOutput::successful_fleet_cancellations): <p>Information about the Capacity Reservation Fleets that were successfully cancelled.</p>
     ///   - [`failed_fleet_cancellations(Option<Vec<FailedCapacityReservationFleetCancellationResult>>)`](crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsOutput::failed_fleet_cancellations): <p>Information about the Capacity Reservation Fleets that could not be cancelled.</p>
     /// - On failure, responds with [`SdkError<CancelCapacityReservationFleetsError>`](crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsError)
-    pub fn cancel_capacity_reservation_fleets(&self) -> crate::operation::cancel_capacity_reservation_fleets::builders::CancelCapacityReservationFleetsFluentBuilder{
+    pub fn cancel_capacity_reservation_fleets(
+        &self,
+    ) -> crate::operation::cancel_capacity_reservation_fleets::builders::CancelCapacityReservationFleetsFluentBuilder {
         crate::operation::cancel_capacity_reservation_fleets::builders::CancelCapacityReservationFleetsFluentBuilder::new(self.handle.clone())
     }
 }

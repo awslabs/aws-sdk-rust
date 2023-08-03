@@ -10,10 +10,7 @@ impl CreateFeatureGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_feature_group::CreateFeatureGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_feature_group::CreateFeatureGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_feature_group::CreateFeatureGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_feature_group();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateFeatureGroupFluentBuilder {
         }
     }
     /// Access the CreateFeatureGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_feature_group::builders::CreateFeatureGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_feature_group::builders::CreateFeatureGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateFeatureGroupFluentBuilder {
             crate::operation::create_feature_group::CreateFeatureGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_feature_group::CreateFeatureGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_feature_group::CreateFeatureGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateFeatureGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateFeatureGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_feature_group::CreateFeatureGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_feature_group::CreateFeatureGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_feature_group::CreateFeatureGroupError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateFeatureGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_feature_group::CreateFeatureGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_feature_group::CreateFeatureGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_feature_group::CreateFeatureGroupError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl CreateFeatureGroupFluentBuilder {
             crate::operation::create_feature_group::CreateFeatureGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_feature_group::CreateFeatureGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_feature_group::CreateFeatureGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +114,7 @@ impl CreateFeatureGroupFluentBuilder {
     /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
     /// <li> <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed. </p> </li>
     /// </ul>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
@@ -142,10 +123,7 @@ impl CreateFeatureGroupFluentBuilder {
     /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
     /// <li> <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed. </p> </li>
     /// </ul>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }
@@ -164,10 +142,7 @@ impl CreateFeatureGroupFluentBuilder {
     /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
     /// <li> <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p> </li>
     /// </ul>
-    pub fn record_identifier_feature_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_identifier_feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.record_identifier_feature_name(input.into());
         self
     }
@@ -178,10 +153,7 @@ impl CreateFeatureGroupFluentBuilder {
     /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
     /// <li> <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p> </li>
     /// </ul>
-    pub fn set_record_identifier_feature_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_record_identifier_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_record_identifier_feature_name(input);
         self
     }
@@ -192,9 +164,7 @@ impl CreateFeatureGroupFluentBuilder {
     /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
     /// <li> <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p> </li>
     /// </ul>
-    pub fn get_record_identifier_feature_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_record_identifier_feature_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_record_identifier_feature_name()
     }
     /// <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code> in a <code>FeatureGroup</code>.</p>
@@ -204,10 +174,7 @@ impl CreateFeatureGroupFluentBuilder {
     /// <li> <p> <code>Fractional</code>: <code>EventTime</code> feature values must be a Unix timestamp in seconds.</p> </li>
     /// <li> <p> <code>String</code>: <code>EventTime</code> feature values must be an ISO-8601 string in the format. The following formats are supported <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year, month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>, and if applicable, <code>SSS</code> represent the hour, month, second and milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p> </li>
     /// </ul>
-    pub fn event_time_feature_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_time_feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_time_feature_name(input.into());
         self
     }
@@ -218,10 +185,7 @@ impl CreateFeatureGroupFluentBuilder {
     /// <li> <p> <code>Fractional</code>: <code>EventTime</code> feature values must be a Unix timestamp in seconds.</p> </li>
     /// <li> <p> <code>String</code>: <code>EventTime</code> feature values must be an ISO-8601 string in the format. The following formats are supported <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year, month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>, and if applicable, <code>SSS</code> represent the hour, month, second and milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p> </li>
     /// </ul>
-    pub fn set_event_time_feature_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_time_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_time_feature_name(input);
         self
     }
@@ -251,10 +215,7 @@ impl CreateFeatureGroupFluentBuilder {
     /// <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>
     /// <p> <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code> </p>
     /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
-    pub fn set_feature_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
-    ) -> Self {
+    pub fn set_feature_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>) -> Self {
         self.inner = self.inner.set_feature_definitions(input);
         self
     }
@@ -262,9 +223,7 @@ impl CreateFeatureGroupFluentBuilder {
     /// <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>
     /// <p> <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code> </p>
     /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
-    pub fn get_feature_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>> {
+    pub fn get_feature_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>> {
         self.inner.get_feature_definitions()
     }
     /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.</p>
@@ -277,19 +236,14 @@ impl CreateFeatureGroupFluentBuilder {
     /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.</p>
     /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the <code>OnlineStore</code>.</p>
     /// <p>The default value is <code>False</code>.</p>
-    pub fn set_online_store_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OnlineStoreConfig>,
-    ) -> Self {
+    pub fn set_online_store_config(mut self, input: ::std::option::Option<crate::types::OnlineStoreConfig>) -> Self {
         self.inner = self.inner.set_online_store_config(input);
         self
     }
     /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.</p>
     /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the <code>OnlineStore</code>.</p>
     /// <p>The default value is <code>False</code>.</p>
-    pub fn get_online_store_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnlineStoreConfig> {
+    pub fn get_online_store_config(&self) -> &::std::option::Option<crate::types::OnlineStoreConfig> {
         self.inner.get_online_store_config()
     }
     /// <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to specify:</p>
@@ -312,10 +266,7 @@ impl CreateFeatureGroupFluentBuilder {
     /// <li> <p>Format for the offline store table. Supported formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p> </li>
     /// </ul>
     /// <p>To learn more about this parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html">OfflineStoreConfig</a>.</p>
-    pub fn set_offline_store_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OfflineStoreConfig>,
-    ) -> Self {
+    pub fn set_offline_store_config(mut self, input: ::std::option::Option<crate::types::OfflineStoreConfig>) -> Self {
         self.inner = self.inner.set_offline_store_config(input);
         self
     }
@@ -327,9 +278,7 @@ impl CreateFeatureGroupFluentBuilder {
     /// <li> <p>Format for the offline store table. Supported formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p> </li>
     /// </ul>
     /// <p>To learn more about this parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html">OfflineStoreConfig</a>.</p>
-    pub fn get_offline_store_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OfflineStoreConfig> {
+    pub fn get_offline_store_config(&self) -> &::std::option::Option<crate::types::OfflineStoreConfig> {
         self.inner.get_offline_store_config()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
@@ -370,10 +319,7 @@ impl CreateFeatureGroupFluentBuilder {
         self
     }
     /// <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

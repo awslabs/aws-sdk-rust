@@ -12,14 +12,8 @@ impl super::Client {
     ///   - [`domain_status(Option<DomainStatus>)`](crate::operation::describe_domain::DescribeDomainOutput::domain_status): <p>The current state for the domain.</p>
     ///   - [`acm_certificate_arn(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::acm_certificate_arn): <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::operation::describe_domain::DescribeDomainError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_domain(
-        &self,
-    ) -> crate::operation::describe_domain::builders::DescribeDomainFluentBuilder {
-        crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn describe_domain(&self) -> crate::operation::describe_domain::builders::DescribeDomainFluentBuilder {
+        crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::new(self.handle.clone())
     }
 }

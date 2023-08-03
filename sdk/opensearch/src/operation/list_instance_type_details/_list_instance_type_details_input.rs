@@ -50,18 +50,14 @@ impl ListInstanceTypeDetailsInput {
 }
 impl ListInstanceTypeDetailsInput {
     /// Creates a new builder-style object to manufacture [`ListInstanceTypeDetailsInput`](crate::operation::list_instance_type_details::ListInstanceTypeDetailsInput).
-    pub fn builder(
-    ) -> crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsInputBuilder {
         crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstanceTypeDetailsInput`](crate::operation::list_instance_type_details::ListInstanceTypeDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceTypeDetailsInputBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -72,18 +68,12 @@ pub struct ListInstanceTypeDetailsInputBuilder {
 }
 impl ListInstanceTypeDetailsInputBuilder {
     /// <p>The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -148,18 +138,12 @@ impl ListInstanceTypeDetailsInputBuilder {
         &self.retrieve_a_zs
     }
     /// <p>An optional parameter that lists information for a given instance type.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional parameter that lists information for a given instance type.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -174,15 +158,13 @@ impl ListInstanceTypeDetailsInputBuilder {
         crate::operation::list_instance_type_details::ListInstanceTypeDetailsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_instance_type_details::ListInstanceTypeDetailsInput {
-                engine_version: self.engine_version,
-                domain_name: self.domain_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                retrieve_a_zs: self.retrieve_a_zs,
-                instance_type: self.instance_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_instance_type_details::ListInstanceTypeDetailsInput {
+            engine_version: self.engine_version,
+            domain_name: self.domain_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            retrieve_a_zs: self.retrieve_a_zs,
+            instance_type: self.instance_type,
+        })
     }
 }

@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`exceptions(Option<Vec<DataLakeException>>)`](crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsOutput::exceptions): <p>Lists the failures that cannot be retried in the current Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsOutput::next_token): <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>  <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     /// - On failure, responds with [`SdkError<ListDataLakeExceptionsError>`](crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsError)
-    pub fn list_data_lake_exceptions(
-        &self,
-    ) -> crate::operation::list_data_lake_exceptions::builders::ListDataLakeExceptionsFluentBuilder
-    {
+    pub fn list_data_lake_exceptions(&self) -> crate::operation::list_data_lake_exceptions::builders::ListDataLakeExceptionsFluentBuilder {
         crate::operation::list_data_lake_exceptions::builders::ListDataLakeExceptionsFluentBuilder::new(self.handle.clone())
     }
 }

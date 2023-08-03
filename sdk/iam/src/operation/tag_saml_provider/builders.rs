@@ -10,10 +10,7 @@ impl TagSamlProviderInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::tag_saml_provider::TagSamlProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_saml_provider::TagSAMLProviderError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_saml_provider::TagSAMLProviderError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.tag_saml_provider();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl TagSAMLProviderFluentBuilder {
         }
     }
     /// Access the TagSAMLProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::tag_saml_provider::builders::TagSamlProviderInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::tag_saml_provider::builders::TagSamlProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl TagSAMLProviderFluentBuilder {
             crate::operation::tag_saml_provider::TagSAMLProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_saml_provider::TagSAMLProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_saml_provider::TagSAMLProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl TagSAMLProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl TagSAMLProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::tag_saml_provider::TagSamlProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_saml_provider::TagSAMLProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_saml_provider::TagSAMLProviderError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl TagSAMLProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::tag_saml_provider::TagSamlProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_saml_provider::TagSAMLProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_saml_provider::TagSAMLProviderError>,
     > {
         self.send_middleware().await
     }
@@ -126,27 +112,19 @@ impl TagSAMLProviderFluentBuilder {
             crate::operation::tag_saml_provider::TagSAMLProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_saml_provider::TagSAMLProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_saml_provider::TagSAMLProviderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the SAML identity provider in IAM to which you want to add tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn saml_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn saml_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.saml_provider_arn(input.into());
         self
     }
     /// <p>The ARN of the SAML identity provider in IAM to which you want to add tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_saml_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_saml_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_saml_provider_arn(input);
         self
     }
@@ -165,10 +143,7 @@ impl TagSAMLProviderFluentBuilder {
         self
     }
     /// <p>The list of tags that you want to attach to the SAML identity provider in IAM. Each tag consists of a key name and an associated value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

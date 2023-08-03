@@ -22,16 +22,14 @@ impl ListSuggestedResiliencyPoliciesInput {
 }
 impl ListSuggestedResiliencyPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListSuggestedResiliencyPoliciesInput`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesInput).
-    pub fn builder() -> crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesInputBuilder{
+    pub fn builder() -> crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesInputBuilder {
         crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSuggestedResiliencyPoliciesInput`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSuggestedResiliencyPoliciesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -74,11 +72,9 @@ impl ListSuggestedResiliencyPoliciesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

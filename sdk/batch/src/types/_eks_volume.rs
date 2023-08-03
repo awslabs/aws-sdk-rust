@@ -44,9 +44,7 @@ impl EksVolume {
 
 /// A builder for [`EksVolume`](crate::types::EksVolume).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksVolumeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) host_path: ::std::option::Option<crate::types::EksHostPath>,
@@ -74,10 +72,7 @@ impl EksVolumeBuilder {
         self
     }
     /// <p>Specifies the configuration of a Kubernetes <code>hostPath</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn set_host_path(
-        mut self,
-        input: ::std::option::Option<crate::types::EksHostPath>,
-    ) -> Self {
+    pub fn set_host_path(mut self, input: ::std::option::Option<crate::types::EksHostPath>) -> Self {
         self.host_path = input;
         self
     }
@@ -91,10 +86,7 @@ impl EksVolumeBuilder {
         self
     }
     /// <p>Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn set_empty_dir(
-        mut self,
-        input: ::std::option::Option<crate::types::EksEmptyDir>,
-    ) -> Self {
+    pub fn set_empty_dir(mut self, input: ::std::option::Option<crate::types::EksEmptyDir>) -> Self {
         self.empty_dir = input;
         self
     }

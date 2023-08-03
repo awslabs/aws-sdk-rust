@@ -72,15 +72,12 @@ impl SidewalkDevice {
 
 /// A builder for [`SidewalkDevice`](crate::types::SidewalkDevice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SidewalkDeviceBuilder {
     pub(crate) amazon_id: ::std::option::Option<::std::string::String>,
     pub(crate) sidewalk_id: ::std::option::Option<::std::string::String>,
     pub(crate) sidewalk_manufacturing_sn: ::std::option::Option<::std::string::String>,
-    pub(crate) device_certificates:
-        ::std::option::Option<::std::vec::Vec<crate::types::CertificateList>>,
+    pub(crate) device_certificates: ::std::option::Option<::std::vec::Vec<crate::types::CertificateList>>,
     pub(crate) private_keys: ::std::option::Option<::std::vec::Vec<crate::types::CertificateList>>,
     pub(crate) device_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
@@ -116,18 +113,12 @@ impl SidewalkDeviceBuilder {
         &self.sidewalk_id
     }
     /// <p>The Sidewalk manufacturing series number.</p>
-    pub fn sidewalk_manufacturing_sn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sidewalk_manufacturing_sn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sidewalk_manufacturing_sn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Sidewalk manufacturing series number.</p>
-    pub fn set_sidewalk_manufacturing_sn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sidewalk_manufacturing_sn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sidewalk_manufacturing_sn = input;
         self
     }
@@ -147,17 +138,12 @@ impl SidewalkDeviceBuilder {
         self
     }
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
-    pub fn set_device_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateList>>,
-    ) -> Self {
+    pub fn set_device_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateList>>) -> Self {
         self.device_certificates = input;
         self
     }
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
-    pub fn get_device_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateList>> {
+    pub fn get_device_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateList>> {
         &self.device_certificates
     }
     /// Appends an item to `private_keys`.
@@ -172,32 +158,21 @@ impl SidewalkDeviceBuilder {
         self
     }
     /// <p>The Sidewalk device private keys that will be used for onboarding the device.</p>
-    pub fn set_private_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateList>>,
-    ) -> Self {
+    pub fn set_private_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateList>>) -> Self {
         self.private_keys = input;
         self
     }
     /// <p>The Sidewalk device private keys that will be used for onboarding the device.</p>
-    pub fn get_private_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateList>> {
+    pub fn get_private_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateList>> {
         &self.private_keys
     }
     /// <p>The ID of the Sidewalk device profile.</p>
-    pub fn device_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Sidewalk device profile.</p>
-    pub fn set_device_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_profile_id = input;
         self
     }
@@ -206,18 +181,12 @@ impl SidewalkDeviceBuilder {
         &self.device_profile_id
     }
     /// <p>The ID of the Sidewalk device profile.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Sidewalk device profile.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -231,10 +200,7 @@ impl SidewalkDeviceBuilder {
         self
     }
     /// <p>The Sidewalk device status, such as provisioned or registered.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessDeviceSidewalkStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WirelessDeviceSidewalkStatus>) -> Self {
         self.status = input;
         self
     }

@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`configuration_set_name(Option<String>)`](crate::operation::create_event_destination::CreateEventDestinationOutput::configuration_set_name): <p>The name of the configuration set.</p>
     ///   - [`event_destination(Option<EventDestination>)`](crate::operation::create_event_destination::CreateEventDestinationOutput::event_destination): <p>The details of the destination where events are logged.</p>
     /// - On failure, responds with [`SdkError<CreateEventDestinationError>`](crate::operation::create_event_destination::CreateEventDestinationError)
-    pub fn create_event_destination(
-        &self,
-    ) -> crate::operation::create_event_destination::builders::CreateEventDestinationFluentBuilder
-    {
+    pub fn create_event_destination(&self) -> crate::operation::create_event_destination::builders::CreateEventDestinationFluentBuilder {
         crate::operation::create_event_destination::builders::CreateEventDestinationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,16 +36,14 @@ impl TerminateClientVpnConnectionsInput {
 }
 impl TerminateClientVpnConnectionsInput {
     /// Creates a new builder-style object to manufacture [`TerminateClientVpnConnectionsInput`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsInput).
-    pub fn builder() -> crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsInputBuilder{
+    pub fn builder() -> crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsInputBuilder {
         crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateClientVpnConnectionsInput`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateClientVpnConnectionsInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct TerminateClientVpnConnectionsInputBuilder {
 }
 impl TerminateClientVpnConnectionsInputBuilder {
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -74,18 +66,12 @@ impl TerminateClientVpnConnectionsInputBuilder {
         &self.client_vpn_endpoint_id
     }
     /// <p>The ID of the client connection to be terminated.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the client connection to be terminated.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -128,17 +114,11 @@ impl TerminateClientVpnConnectionsInputBuilder {
         crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsInput {
-                client_vpn_endpoint_id: self.client_vpn_endpoint_id
-                ,
-                connection_id: self.connection_id
-                ,
-                username: self.username
-                ,
-                dry_run: self.dry_run
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsInput {
+            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
+            connection_id: self.connection_id,
+            username: self.username,
+            dry_run: self.dry_run,
+        })
     }
 }

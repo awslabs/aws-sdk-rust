@@ -22,18 +22,14 @@ impl StartRecommendationsInput {
 }
 impl StartRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`StartRecommendationsInput`](crate::operation::start_recommendations::StartRecommendationsInput).
-    pub fn builder(
-    ) -> crate::operation::start_recommendations::builders::StartRecommendationsInputBuilder {
-        crate::operation::start_recommendations::builders::StartRecommendationsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_recommendations::builders::StartRecommendationsInputBuilder {
+        crate::operation::start_recommendations::builders::StartRecommendationsInputBuilder::default()
     }
 }
 
 /// A builder for [`StartRecommendationsInput`](crate::operation::start_recommendations::StartRecommendationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRecommendationsInputBuilder {
     pub(crate) database_id: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<crate::types::RecommendationSettings>,
@@ -59,10 +55,7 @@ impl StartRecommendationsInputBuilder {
         self
     }
     /// <p>The settings in JSON format that Fleet Advisor uses to determine target engine recommendations. These parameters include target instance sizing and availability and durability settings. For target instance sizing, Fleet Advisor supports the following two options: total capacity and resource utilization. For availability and durability, Fleet Advisor supports the following two options: production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::RecommendationSettings>) -> Self {
         self.settings = input;
         self
     }
@@ -73,15 +66,11 @@ impl StartRecommendationsInputBuilder {
     /// Consumes the builder and constructs a [`StartRecommendationsInput`](crate::operation::start_recommendations::StartRecommendationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_recommendations::StartRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_recommendations::StartRecommendationsInput {
-                database_id: self.database_id,
-                settings: self.settings,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_recommendations::StartRecommendationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_recommendations::StartRecommendationsInput {
+            database_id: self.database_id,
+            settings: self.settings,
+        })
     }
 }

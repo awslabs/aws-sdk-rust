@@ -19,10 +19,7 @@ pub fn ser_response_headers_policy_server_timing_headers_config(
 
 pub fn de_response_headers_policy_server_timing_headers_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::ResponseHeadersPolicyServerTimingHeadersConfig,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::ResponseHeadersPolicyServerTimingHeadersConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicyServerTimingHeadersConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

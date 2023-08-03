@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeInstanceAttributeOutput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput) with field(s):
     ///   - [`attribute(Option<Attribute>)`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput::attribute): <p>The type of attribute.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceAttributeError>`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeError)
-    pub fn describe_instance_attribute(&self) -> crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeFluentBuilder{
+    pub fn describe_instance_attribute(&self) -> crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeFluentBuilder {
         crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeFluentBuilder::new(self.handle.clone())
     }
 }

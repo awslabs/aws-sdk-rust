@@ -23,9 +23,7 @@ impl ResourceDetails {
 
 /// A builder for [`ResourceDetails`](crate::types::ResourceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDetailsBuilder {
     pub(crate) ec2_resource_details: ::std::option::Option<crate::types::Ec2ResourceDetails>,
 }
@@ -36,17 +34,12 @@ impl ResourceDetailsBuilder {
         self
     }
     /// <p>Details for the Amazon EC2 resource.</p>
-    pub fn set_ec2_resource_details(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2ResourceDetails>,
-    ) -> Self {
+    pub fn set_ec2_resource_details(mut self, input: ::std::option::Option<crate::types::Ec2ResourceDetails>) -> Self {
         self.ec2_resource_details = input;
         self
     }
     /// <p>Details for the Amazon EC2 resource.</p>
-    pub fn get_ec2_resource_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::Ec2ResourceDetails> {
+    pub fn get_ec2_resource_details(&self) -> &::std::option::Option<crate::types::Ec2ResourceDetails> {
         &self.ec2_resource_details
     }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).

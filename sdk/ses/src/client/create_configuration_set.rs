@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`configuration_set(ConfigurationSet)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::configuration_set) / [`set_configuration_set(Option<ConfigurationSet>)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::set_configuration_set): <p>A data structure that contains the name of the configuration set.</p>
     /// - On success, responds with [`CreateConfigurationSetOutput`](crate::operation::create_configuration_set::CreateConfigurationSetOutput)
     /// - On failure, responds with [`SdkError<CreateConfigurationSetError>`](crate::operation::create_configuration_set::CreateConfigurationSetError)
-    pub fn create_configuration_set(
-        &self,
-    ) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder
-    {
+    pub fn create_configuration_set(&self) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder {
         crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::new(self.handle.clone())
     }
 }

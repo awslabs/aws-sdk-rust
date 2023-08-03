@@ -31,18 +31,14 @@ impl ListVehiclesInFleetInput {
 }
 impl ListVehiclesInFleetInput {
     /// Creates a new builder-style object to manufacture [`ListVehiclesInFleetInput`](crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput).
-    pub fn builder(
-    ) -> crate::operation::list_vehicles_in_fleet::builders::ListVehiclesInFleetInputBuilder {
-        crate::operation::list_vehicles_in_fleet::builders::ListVehiclesInFleetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_vehicles_in_fleet::builders::ListVehiclesInFleetInputBuilder {
+        crate::operation::list_vehicles_in_fleet::builders::ListVehiclesInFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVehiclesInFleetInput`](crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVehiclesInFleetInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -97,16 +93,12 @@ impl ListVehiclesInFleetInputBuilder {
     /// Consumes the builder and constructs a [`ListVehiclesInFleetInput`](crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput {
-                fleet_id: self.fleet_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput {
+            fleet_id: self.fleet_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

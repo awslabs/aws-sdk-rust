@@ -23,26 +23,18 @@ impl BatchDetachFromIndexResponse {
 
 /// A builder for [`BatchDetachFromIndexResponse`](crate::types::BatchDetachFromIndexResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDetachFromIndexResponseBuilder {
     pub(crate) detached_object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchDetachFromIndexResponseBuilder {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
-    pub fn detached_object_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detached_object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detached_object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
-    pub fn set_detached_object_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detached_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detached_object_identifier = input;
         self
     }

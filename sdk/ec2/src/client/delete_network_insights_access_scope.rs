@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteNetworkInsightsAccessScopeOutput`](crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScopeOutput) with field(s):
     ///   - [`network_insights_access_scope_id(Option<String>)`](crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScopeOutput::network_insights_access_scope_id): <p>The ID of the Network Access Scope.</p>
     /// - On failure, responds with [`SdkError<DeleteNetworkInsightsAccessScopeError>`](crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScopeError)
-    pub fn delete_network_insights_access_scope(&self) -> crate::operation::delete_network_insights_access_scope::builders::DeleteNetworkInsightsAccessScopeFluentBuilder{
+    pub fn delete_network_insights_access_scope(
+        &self,
+    ) -> crate::operation::delete_network_insights_access_scope::builders::DeleteNetworkInsightsAccessScopeFluentBuilder {
         crate::operation::delete_network_insights_access_scope::builders::DeleteNetworkInsightsAccessScopeFluentBuilder::new(self.handle.clone())
     }
 }

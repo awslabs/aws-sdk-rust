@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSpeechSynthesisTasksOutput {
 }
 impl ListSpeechSynthesisTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListSpeechSynthesisTasksOutput`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput).
-    pub fn builder() -> crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksOutputBuilder{
+    pub fn builder() -> crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksOutputBuilder {
         crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSpeechSynthesisTasksOutput`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSpeechSynthesisTasksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) synthesis_tasks: ::std::option::Option<::std::vec::Vec<crate::types::SynthesisTask>>,
@@ -70,17 +68,12 @@ impl ListSpeechSynthesisTasksOutputBuilder {
         self
     }
     /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
-    pub fn set_synthesis_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SynthesisTask>>,
-    ) -> Self {
+    pub fn set_synthesis_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SynthesisTask>>) -> Self {
         self.synthesis_tasks = input;
         self
     }
     /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
-    pub fn get_synthesis_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SynthesisTask>> {
+    pub fn get_synthesis_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SynthesisTask>> {
         &self.synthesis_tasks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,9 +86,7 @@ impl ListSpeechSynthesisTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSpeechSynthesisTasksOutput`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput {
+    pub fn build(self) -> crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput {
         crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput {
             next_token: self.next_token,
             synthesis_tasks: self.synthesis_tasks,

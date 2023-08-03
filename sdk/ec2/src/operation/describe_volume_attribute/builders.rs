@@ -27,8 +27,7 @@ impl DescribeVolumeAttributeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVolumeAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeInputBuilder,
+    inner: crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeInputBuilder,
 }
 impl DescribeVolumeAttributeFluentBuilder {
     /// Creates a new `DescribeVolumeAttribute`.
@@ -39,10 +38,7 @@ impl DescribeVolumeAttributeFluentBuilder {
         }
     }
     /// Access the DescribeVolumeAttribute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DescribeVolumeAttributeFluentBuilder {
             crate::operation::describe_volume_attribute::DescribeVolumeAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volume_attribute::DescribeVolumeAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volume_attribute::DescribeVolumeAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DescribeVolumeAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DescribeVolumeAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_volume_attribute::DescribeVolumeAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volume_attribute::DescribeVolumeAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volume_attribute::DescribeVolumeAttributeError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DescribeVolumeAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_volume_attribute::DescribeVolumeAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volume_attribute::DescribeVolumeAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volume_attribute::DescribeVolumeAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl DescribeVolumeAttributeFluentBuilder {
             crate::operation::describe_volume_attribute::DescribeVolumeAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volume_attribute::DescribeVolumeAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volume_attribute::DescribeVolumeAttributeError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +116,7 @@ impl DescribeVolumeAttributeFluentBuilder {
         self
     }
     /// <p>The attribute of the volume. This parameter is required.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::VolumeAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }

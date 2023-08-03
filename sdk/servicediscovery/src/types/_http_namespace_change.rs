@@ -23,9 +23,7 @@ impl HttpNamespaceChange {
 
 /// A builder for [`HttpNamespaceChange`](crate::types::HttpNamespaceChange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpNamespaceChangeBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }

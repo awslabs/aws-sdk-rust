@@ -26,7 +26,7 @@ impl TerminateRecoveryInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateRecoveryInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder,
+    inner: crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder,
 }
 impl TerminateRecoveryInstancesFluentBuilder {
     /// Creates a new `TerminateRecoveryInstances`.
@@ -37,7 +37,7 @@ impl TerminateRecoveryInstancesFluentBuilder {
         }
     }
     /// Access the TerminateRecoveryInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl TerminateRecoveryInstancesFluentBuilder {
             crate::operation::terminate_recovery_instances::TerminateRecoveryInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl TerminateRecoveryInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl TerminateRecoveryInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl TerminateRecoveryInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl TerminateRecoveryInstancesFluentBuilder {
             crate::operation::terminate_recovery_instances::TerminateRecoveryInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -125,25 +114,17 @@ impl TerminateRecoveryInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_recovery_instance_i_ds`](Self::set_recovery_instance_i_ds).
     ///
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn recovery_instance_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_instance_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recovery_instance_i_ds(input.into());
         self
     }
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn set_recovery_instance_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_recovery_instance_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_recovery_instance_i_ds(input);
         self
     }
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn get_recovery_instance_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recovery_instance_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_recovery_instance_i_ds()
     }
 }

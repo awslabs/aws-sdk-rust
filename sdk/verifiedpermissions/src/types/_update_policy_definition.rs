@@ -21,9 +21,7 @@ impl UpdatePolicyDefinition {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Static`](crate::types::UpdatePolicyDefinition::Static), extracting the inner [`UpdateStaticPolicyDefinition`](crate::types::UpdateStaticPolicyDefinition).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_static(
-        &self,
-    ) -> ::std::result::Result<&crate::types::UpdateStaticPolicyDefinition, &Self> {
+    pub fn as_static(&self) -> ::std::result::Result<&crate::types::UpdateStaticPolicyDefinition, &Self> {
         if let UpdatePolicyDefinition::Static(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

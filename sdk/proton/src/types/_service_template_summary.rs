@@ -132,10 +132,7 @@ impl ServiceTemplateSummaryBuilder {
         self
     }
     /// <p>The time when the service template was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -149,10 +146,7 @@ impl ServiceTemplateSummaryBuilder {
         self
     }
     /// <p>The time when the service template was last modified.</p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_at = input;
         self
     }
@@ -189,18 +183,12 @@ impl ServiceTemplateSummaryBuilder {
         &self.description
     }
     /// <p>The recommended version of the service template.</p>
-    pub fn recommended_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommended_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommended_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommended version of the service template.</p>
-    pub fn set_recommended_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommended_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommended_version = input;
         self
     }
@@ -214,10 +202,7 @@ impl ServiceTemplateSummaryBuilder {
         self
     }
     /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service pipeline <i>isn't</i> included in the service template.</p>
-    pub fn set_pipeline_provisioning(
-        mut self,
-        input: ::std::option::Option<crate::types::Provisioning>,
-    ) -> Self {
+    pub fn set_pipeline_provisioning(mut self, input: ::std::option::Option<crate::types::Provisioning>) -> Self {
         self.pipeline_provisioning = input;
         self
     }

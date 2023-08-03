@@ -37,9 +37,7 @@ impl DetectorState {
 
 /// A builder for [`DetectorState`](crate::types::DetectorState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectorStateBuilder {
     pub(crate) state_name: ::std::option::Option<::std::string::String>,
     pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>,
@@ -72,10 +70,7 @@ impl DetectorStateBuilder {
         self
     }
     /// <p>The current values of the detector's variables.</p>
-    pub fn set_variables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>,
-    ) -> Self {
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>) -> Self {
         self.variables = input;
         self
     }
@@ -95,10 +90,7 @@ impl DetectorStateBuilder {
         self
     }
     /// <p>The current state of the detector's timers.</p>
-    pub fn set_timers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Timer>>,
-    ) -> Self {
+    pub fn set_timers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Timer>>) -> Self {
         self.timers = input;
         self
     }

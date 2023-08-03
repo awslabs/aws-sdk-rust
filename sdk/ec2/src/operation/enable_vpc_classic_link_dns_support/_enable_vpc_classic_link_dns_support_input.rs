@@ -15,16 +15,14 @@ impl EnableVpcClassicLinkDnsSupportInput {
 }
 impl EnableVpcClassicLinkDnsSupportInput {
     /// Creates a new builder-style object to manufacture [`EnableVpcClassicLinkDnsSupportInput`](crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput).
-    pub fn builder() -> crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportInputBuilder{
+    pub fn builder() -> crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportInputBuilder {
         crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableVpcClassicLinkDnsSupportInput`](crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableVpcClassicLinkDnsSupportInputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,6 @@ impl EnableVpcClassicLinkDnsSupportInputBuilder {
         crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput {
-                vpc_id: self.vpc_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput { vpc_id: self.vpc_id })
     }
 }

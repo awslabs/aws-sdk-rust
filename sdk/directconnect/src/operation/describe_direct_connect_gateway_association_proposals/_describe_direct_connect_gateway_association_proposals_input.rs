@@ -45,16 +45,16 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
 }
 impl DescribeDirectConnectGatewayAssociationProposalsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationProposalsInput`](crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsInput).
-    pub fn builder() -> crate::operation::describe_direct_connect_gateway_association_proposals::builders::DescribeDirectConnectGatewayAssociationProposalsInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_direct_connect_gateway_association_proposals::builders::DescribeDirectConnectGatewayAssociationProposalsInputBuilder
+    {
         crate::operation::describe_direct_connect_gateway_association_proposals::builders::DescribeDirectConnectGatewayAssociationProposalsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDirectConnectGatewayAssociationProposalsInput`](crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAssociationProposalsInputBuilder {
     pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) proposal_id: ::std::option::Option<::std::string::String>,
@@ -64,18 +64,12 @@ pub struct DescribeDirectConnectGatewayAssociationProposalsInputBuilder {
 }
 impl DescribeDirectConnectGatewayAssociationProposalsInputBuilder {
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = input;
         self
     }
@@ -98,18 +92,12 @@ impl DescribeDirectConnectGatewayAssociationProposalsInputBuilder {
         &self.proposal_id
     }
     /// <p>The ID of the associated gateway.</p>
-    pub fn associated_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the associated gateway.</p>
-    pub fn set_associated_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_associated_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_gateway_id = input;
         self
     }
@@ -149,20 +137,20 @@ impl DescribeDirectConnectGatewayAssociationProposalsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAssociationProposalsInput`](crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsInput {
-                direct_connect_gateway_id: self.direct_connect_gateway_id
-                ,
-                proposal_id: self.proposal_id
-                ,
-                associated_gateway_id: self.associated_gateway_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                direct_connect_gateway_id: self.direct_connect_gateway_id,
+                proposal_id: self.proposal_id,
+                associated_gateway_id: self.associated_gateway_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

@@ -28,16 +28,14 @@ impl BatchDeleteDevicePositionHistoryInput {
 }
 impl BatchDeleteDevicePositionHistoryInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteDevicePositionHistoryInput`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput).
-    pub fn builder() -> crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryInputBuilder{
+    pub fn builder() -> crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryInputBuilder {
         crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteDevicePositionHistoryInput`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteDevicePositionHistoryInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -75,10 +73,7 @@ impl BatchDeleteDevicePositionHistoryInputBuilder {
     /// <ul>
     /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
     /// </ul>
-    pub fn set_device_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_device_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.device_ids = input;
         self
     }
@@ -90,14 +85,17 @@ impl BatchDeleteDevicePositionHistoryInputBuilder {
         &self.device_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteDevicePositionHistoryInput`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput {
-                tracker_name: self.tracker_name
-                ,
-                device_ids: self.device_ids
-                ,
-            }
+                tracker_name: self.tracker_name,
+                device_ids: self.device_ids,
+            },
         )
     }
 }

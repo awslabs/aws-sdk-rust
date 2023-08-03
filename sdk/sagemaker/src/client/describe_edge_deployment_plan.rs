@@ -19,7 +19,9 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanOutput::creation_time): <p>The time when the edge deployment plan was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanOutput::last_modified_time): <p>The time when the edge deployment plan was last updated.</p>
     /// - On failure, responds with [`SdkError<DescribeEdgeDeploymentPlanError>`](crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanError)
-    pub fn describe_edge_deployment_plan(&self) -> crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanFluentBuilder{
+    pub fn describe_edge_deployment_plan(
+        &self,
+    ) -> crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanFluentBuilder {
         crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanFluentBuilder::new(self.handle.clone())
     }
 }

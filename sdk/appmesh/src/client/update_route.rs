@@ -12,9 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRouteOutput`](crate::operation::update_route::UpdateRouteOutput) with field(s):
     ///   - [`route(Option<RouteData>)`](crate::operation::update_route::UpdateRouteOutput::route): <p>A full description of the route that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateRouteError>`](crate::operation::update_route::UpdateRouteError)
-    pub fn update_route(
-        &self,
-    ) -> crate::operation::update_route::builders::UpdateRouteFluentBuilder {
+    pub fn update_route(&self) -> crate::operation::update_route::builders::UpdateRouteFluentBuilder {
         crate::operation::update_route::builders::UpdateRouteFluentBuilder::new(self.handle.clone())
     }
 }

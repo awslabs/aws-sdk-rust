@@ -51,31 +51,22 @@ impl ClusterSecurityGroup {
 
 /// A builder for [`ClusterSecurityGroup`](crate::types::ClusterSecurityGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterSecurityGroupBuilder {
     pub(crate) cluster_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) ec2_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>,
+    pub(crate) ec2_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>,
     pub(crate) ip_ranges: ::std::option::Option<::std::vec::Vec<crate::types::IpRange>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ClusterSecurityGroupBuilder {
     /// <p>The name of the cluster security group to which the operation was applied.</p>
-    pub fn cluster_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster security group to which the operation was applied.</p>
-    pub fn set_cluster_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_security_group_name = input;
         self
     }
@@ -109,17 +100,12 @@ impl ClusterSecurityGroupBuilder {
         self
     }
     /// <p>A list of EC2 security groups that are permitted to access clusters associated with this cluster security group.</p>
-    pub fn set_ec2_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>,
-    ) -> Self {
+    pub fn set_ec2_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>) -> Self {
         self.ec2_security_groups = input;
         self
     }
     /// <p>A list of EC2 security groups that are permitted to access clusters associated with this cluster security group.</p>
-    pub fn get_ec2_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>> {
+    pub fn get_ec2_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>> {
         &self.ec2_security_groups
     }
     /// Appends an item to `ip_ranges`.
@@ -134,10 +120,7 @@ impl ClusterSecurityGroupBuilder {
         self
     }
     /// <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters associated with this cluster security group.</p>
-    pub fn set_ip_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRange>>,
-    ) -> Self {
+    pub fn set_ip_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRange>>) -> Self {
         self.ip_ranges = input;
         self
     }
@@ -157,10 +140,7 @@ impl ClusterSecurityGroupBuilder {
         self
     }
     /// <p>The list of tags for the cluster security group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

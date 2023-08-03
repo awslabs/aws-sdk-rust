@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DisableSnapshotCopyOutput {
 }
 impl DisableSnapshotCopyOutput {
     /// Creates a new builder-style object to manufacture [`DisableSnapshotCopyOutput`](crate::operation::disable_snapshot_copy::DisableSnapshotCopyOutput).
-    pub fn builder(
-    ) -> crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyOutputBuilder {
-        crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyOutputBuilder {
+        crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableSnapshotCopyOutput`](crate::operation::disable_snapshot_copy::DisableSnapshotCopyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableSnapshotCopyOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,

@@ -16,9 +16,7 @@ impl super::Client {
     ///   - [`routing_config(Option<AliasRoutingConfiguration>)`](crate::operation::create_alias::CreateAliasOutput::routing_config): <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
     ///   - [`revision_id(Option<String>)`](crate::operation::create_alias::CreateAliasOutput::revision_id): <p>A unique identifier that changes when you update the alias.</p>
     /// - On failure, responds with [`SdkError<CreateAliasError>`](crate::operation::create_alias::CreateAliasError)
-    pub fn create_alias(
-        &self,
-    ) -> crate::operation::create_alias::builders::CreateAliasFluentBuilder {
+    pub fn create_alias(&self) -> crate::operation::create_alias::builders::CreateAliasFluentBuilder {
         crate::operation::create_alias::builders::CreateAliasFluentBuilder::new(self.handle.clone())
     }
 }

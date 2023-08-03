@@ -31,8 +31,7 @@ impl AddCommunicationToCaseInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddCommunicationToCaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::add_communication_to_case::builders::AddCommunicationToCaseInputBuilder,
+    inner: crate::operation::add_communication_to_case::builders::AddCommunicationToCaseInputBuilder,
 }
 impl AddCommunicationToCaseFluentBuilder {
     /// Creates a new `AddCommunicationToCase`.
@@ -43,10 +42,7 @@ impl AddCommunicationToCaseFluentBuilder {
         }
     }
     /// Access the AddCommunicationToCase as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_communication_to_case::builders::AddCommunicationToCaseInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::add_communication_to_case::builders::AddCommunicationToCaseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +54,7 @@ impl AddCommunicationToCaseFluentBuilder {
             crate::operation::add_communication_to_case::AddCommunicationToCase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_communication_to_case::AddCommunicationToCaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_communication_to_case::AddCommunicationToCaseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +64,7 @@ impl AddCommunicationToCaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +73,7 @@ impl AddCommunicationToCaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_communication_to_case::AddCommunicationToCaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_communication_to_case::AddCommunicationToCaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_communication_to_case::AddCommunicationToCaseError>,
     > {
         let op = self
             .inner
@@ -107,9 +96,7 @@ impl AddCommunicationToCaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_communication_to_case::AddCommunicationToCaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_communication_to_case::AddCommunicationToCaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_communication_to_case::AddCommunicationToCaseError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +110,7 @@ impl AddCommunicationToCaseFluentBuilder {
             crate::operation::add_communication_to_case::AddCommunicationToCase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_communication_to_case::AddCommunicationToCaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_communication_to_case::AddCommunicationToCaseError>,
     > {
         self.customize_middleware().await
     }
@@ -144,18 +129,12 @@ impl AddCommunicationToCaseFluentBuilder {
         self.inner.get_case_id()
     }
     /// <p>The body of an email communication to add to the support case.</p>
-    pub fn communication_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn communication_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.communication_body(input.into());
         self
     }
     /// <p>The body of an email communication to add to the support case.</p>
-    pub fn set_communication_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_communication_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_communication_body(input);
         self
     }
@@ -168,40 +147,26 @@ impl AddCommunicationToCaseFluentBuilder {
     /// To override the contents of this collection use [`set_cc_email_addresses`](Self::set_cc_email_addresses).
     ///
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
-    pub fn cc_email_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cc_email_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cc_email_addresses(input.into());
         self
     }
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
-    pub fn set_cc_email_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cc_email_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cc_email_addresses(input);
         self
     }
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
-    pub fn get_cc_email_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cc_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cc_email_addresses()
     }
     /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
-    pub fn attachment_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attachment_set_id(input.into());
         self
     }
     /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
-    pub fn set_attachment_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attachment_set_id(input);
         self
     }

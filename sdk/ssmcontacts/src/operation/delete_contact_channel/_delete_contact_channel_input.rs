@@ -15,34 +15,25 @@ impl DeleteContactChannelInput {
 }
 impl DeleteContactChannelInput {
     /// Creates a new builder-style object to manufacture [`DeleteContactChannelInput`](crate::operation::delete_contact_channel::DeleteContactChannelInput).
-    pub fn builder(
-    ) -> crate::operation::delete_contact_channel::builders::DeleteContactChannelInputBuilder {
+    pub fn builder() -> crate::operation::delete_contact_channel::builders::DeleteContactChannelInputBuilder {
         crate::operation::delete_contact_channel::builders::DeleteContactChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteContactChannelInput`](crate::operation::delete_contact_channel::DeleteContactChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteContactChannelInputBuilder {
     pub(crate) contact_channel_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteContactChannelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn set_contact_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_channel_id = input;
         self
     }
@@ -53,14 +44,10 @@ impl DeleteContactChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContactChannelInput`](crate::operation::delete_contact_channel::DeleteContactChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_contact_channel::DeleteContactChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_contact_channel::DeleteContactChannelInput {
-                contact_channel_id: self.contact_channel_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_contact_channel::DeleteContactChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_contact_channel::DeleteContactChannelInput {
+            contact_channel_id: self.contact_channel_id,
+        })
     }
 }

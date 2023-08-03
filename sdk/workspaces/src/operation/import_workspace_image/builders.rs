@@ -37,9 +37,7 @@ impl ImportWorkspaceImageFluentBuilder {
         }
     }
     /// Access the ImportWorkspaceImage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_workspace_image::builders::ImportWorkspaceImageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_workspace_image::builders::ImportWorkspaceImageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ImportWorkspaceImageFluentBuilder {
             crate::operation::import_workspace_image::ImportWorkspaceImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_workspace_image::ImportWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_workspace_image::ImportWorkspaceImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ImportWorkspaceImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ImportWorkspaceImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_workspace_image::ImportWorkspaceImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_workspace_image::ImportWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_workspace_image::ImportWorkspaceImageError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ImportWorkspaceImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_workspace_image::ImportWorkspaceImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_workspace_image::ImportWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_workspace_image::ImportWorkspaceImageError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ImportWorkspaceImageFluentBuilder {
             crate::operation::import_workspace_image::ImportWorkspaceImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_workspace_image::ImportWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_workspace_image::ImportWorkspaceImageError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +127,7 @@ impl ImportWorkspaceImageFluentBuilder {
     /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
-    pub fn ingestion_process(
-        mut self,
-        input: crate::types::WorkspaceImageIngestionProcess,
-    ) -> Self {
+    pub fn ingestion_process(mut self, input: crate::types::WorkspaceImageIngestionProcess) -> Self {
         self.inner = self.inner.ingestion_process(input);
         self
     }
@@ -151,10 +135,7 @@ impl ImportWorkspaceImageFluentBuilder {
     /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
-    pub fn set_ingestion_process(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceImageIngestionProcess>,
-    ) -> Self {
+    pub fn set_ingestion_process(mut self, input: ::std::option::Option<crate::types::WorkspaceImageIngestionProcess>) -> Self {
         self.inner = self.inner.set_ingestion_process(input);
         self
     }
@@ -162,9 +143,7 @@ impl ImportWorkspaceImageFluentBuilder {
     /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p> <note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
-    pub fn get_ingestion_process(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkspaceImageIngestionProcess> {
+    pub fn get_ingestion_process(&self) -> &::std::option::Option<crate::types::WorkspaceImageIngestionProcess> {
         self.inner.get_ingestion_process()
     }
     /// <p>The name of the WorkSpace image.</p>
@@ -182,18 +161,12 @@ impl ImportWorkspaceImageFluentBuilder {
         self.inner.get_image_name()
     }
     /// <p>The description of the WorkSpace image.</p>
-    pub fn image_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_description(input.into());
         self
     }
     /// <p>The description of the WorkSpace image.</p>
-    pub fn set_image_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_description(input);
         self
     }
@@ -211,10 +184,7 @@ impl ImportWorkspaceImageFluentBuilder {
         self
     }
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -242,10 +212,7 @@ impl ImportWorkspaceImageFluentBuilder {
     /// <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
         self.inner = self.inner.set_applications(input);
         self
     }
@@ -255,9 +222,7 @@ impl ImportWorkspaceImageFluentBuilder {
     /// <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         self.inner.get_applications()
     }
 }

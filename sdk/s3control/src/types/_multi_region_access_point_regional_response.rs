@@ -30,9 +30,7 @@ impl MultiRegionAccessPointRegionalResponse {
 
 /// A builder for [`MultiRegionAccessPointRegionalResponse`](crate::types::MultiRegionAccessPointRegionalResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiRegionAccessPointRegionalResponseBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) request_status: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl MultiRegionAccessPointRegionalResponseBuilder {
         &self.name
     }
     /// <p>The current status of the Multi-Region Access Point in this Region.</p>
-    pub fn request_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current status of the Multi-Region Access Point in this Region.</p>
-    pub fn set_request_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_status = input;
         self
     }

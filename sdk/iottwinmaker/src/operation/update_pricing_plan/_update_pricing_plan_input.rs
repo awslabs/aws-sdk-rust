@@ -22,17 +22,14 @@ impl UpdatePricingPlanInput {
 }
 impl UpdatePricingPlanInput {
     /// Creates a new builder-style object to manufacture [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
-    pub fn builder(
-    ) -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanInputBuilder {
+    pub fn builder() -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanInputBuilder {
         crate::operation::update_pricing_plan::builders::UpdatePricingPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePricingPlanInputBuilder {
     pub(crate) pricing_mode: ::std::option::Option<crate::types::PricingMode>,
     pub(crate) bundle_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +41,7 @@ impl UpdatePricingPlanInputBuilder {
         self
     }
     /// <p>The pricing mode.</p>
-    pub fn set_pricing_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingMode>,
-    ) -> Self {
+    pub fn set_pricing_mode(mut self, input: ::std::option::Option<crate::types::PricingMode>) -> Self {
         self.pricing_mode = input;
         self
     }
@@ -67,31 +61,21 @@ impl UpdatePricingPlanInputBuilder {
         self
     }
     /// <p>The bundle names.</p>
-    pub fn set_bundle_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bundle_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.bundle_names = input;
         self
     }
     /// <p>The bundle names.</p>
-    pub fn get_bundle_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bundle_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.bundle_names
     }
     /// Consumes the builder and constructs a [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pricing_plan::UpdatePricingPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_pricing_plan::UpdatePricingPlanInput {
-                pricing_mode: self.pricing_mode,
-                bundle_names: self.bundle_names,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_pricing_plan::UpdatePricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_pricing_plan::UpdatePricingPlanInput {
+            pricing_mode: self.pricing_mode,
+            bundle_names: self.bundle_names,
+        })
     }
 }

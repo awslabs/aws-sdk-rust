@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateIdentityProviderOutput`](crate::operation::create_identity_provider::CreateIdentityProviderOutput) with field(s):
     ///   - [`identity_provider_arn(Option<String>)`](crate::operation::create_identity_provider::CreateIdentityProviderOutput::identity_provider_arn): <p>The ARN of the identity provider.</p>
     /// - On failure, responds with [`SdkError<CreateIdentityProviderError>`](crate::operation::create_identity_provider::CreateIdentityProviderError)
-    pub fn create_identity_provider(
-        &self,
-    ) -> crate::operation::create_identity_provider::builders::CreateIdentityProviderFluentBuilder
-    {
+    pub fn create_identity_provider(&self) -> crate::operation::create_identity_provider::builders::CreateIdentityProviderFluentBuilder {
         crate::operation::create_identity_provider::builders::CreateIdentityProviderFluentBuilder::new(self.handle.clone())
     }
 }

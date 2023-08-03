@@ -38,10 +38,7 @@ impl DeleteAppBlockBuilderFluentBuilder {
         }
     }
     /// Access the DeleteAppBlockBuilder as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_app_block_builder::builders::DeleteAppBlockBuilderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_app_block_builder::builders::DeleteAppBlockBuilderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteAppBlockBuilderFluentBuilder {
             crate::operation::delete_app_block_builder::DeleteAppBlockBuilder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteAppBlockBuilderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteAppBlockBuilderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_block_builder::DeleteAppBlockBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteAppBlockBuilderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_block_builder::DeleteAppBlockBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DeleteAppBlockBuilderFluentBuilder {
             crate::operation::delete_app_block_builder::DeleteAppBlockBuilder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_block_builder::DeleteAppBlockBuilderError>,
     > {
         self.customize_middleware().await
     }

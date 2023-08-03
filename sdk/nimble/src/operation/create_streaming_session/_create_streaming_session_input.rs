@@ -23,9 +23,7 @@ pub struct CreateStreamingSessionInput {
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateStreamingSessionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
@@ -53,28 +51,20 @@ impl CreateStreamingSessionInput {
         self.studio_id.as_deref()
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateStreamingSessionInput {
     /// Creates a new builder-style object to manufacture [`CreateStreamingSessionInput`](crate::operation::create_streaming_session::CreateStreamingSessionInput).
-    pub fn builder(
-    ) -> crate::operation::create_streaming_session::builders::CreateStreamingSessionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_streaming_session::builders::CreateStreamingSessionInputBuilder {
         crate::operation::create_streaming_session::builders::CreateStreamingSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStreamingSessionInput`](crate::operation::create_streaming_session::CreateStreamingSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStreamingSessionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_instance_type: ::std::option::Option<crate::types::StreamingInstanceType>,
@@ -82,9 +72,7 @@ pub struct CreateStreamingSessionInputBuilder {
     pub(crate) owned_by: ::std::option::Option<::std::string::String>,
     pub(crate) streaming_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateStreamingSessionInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
@@ -107,32 +95,21 @@ impl CreateStreamingSessionInputBuilder {
         self
     }
     /// <p>The EC2 Instance type used for the streaming session.</p>
-    pub fn set_ec2_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingInstanceType>,
-    ) -> Self {
+    pub fn set_ec2_instance_type(mut self, input: ::std::option::Option<crate::types::StreamingInstanceType>) -> Self {
         self.ec2_instance_type = input;
         self
     }
     /// <p>The EC2 Instance type used for the streaming session.</p>
-    pub fn get_ec2_instance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamingInstanceType> {
+    pub fn get_ec2_instance_type(&self) -> &::std::option::Option<crate::types::StreamingInstanceType> {
         &self.ec2_instance_type
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_profile_id = input;
         self
     }
@@ -155,18 +132,12 @@ impl CreateStreamingSessionInputBuilder {
         &self.owned_by
     }
     /// <p>The ID of the streaming image.</p>
-    pub fn streaming_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn streaming_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the streaming image.</p>
-    pub fn set_streaming_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_streaming_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.streaming_image_id = input;
         self
     }
@@ -193,51 +164,34 @@ impl CreateStreamingSessionInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStreamingSessionInput`](crate::operation::create_streaming_session::CreateStreamingSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_streaming_session::CreateStreamingSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_streaming_session::CreateStreamingSessionInput {
-                client_token: self.client_token,
-                ec2_instance_type: self.ec2_instance_type,
-                launch_profile_id: self.launch_profile_id,
-                owned_by: self.owned_by,
-                streaming_image_id: self.streaming_image_id,
-                studio_id: self.studio_id,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_streaming_session::CreateStreamingSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_streaming_session::CreateStreamingSessionInput {
+            client_token: self.client_token,
+            ec2_instance_type: self.ec2_instance_type,
+            launch_profile_id: self.launch_profile_id,
+            owned_by: self.owned_by,
+            streaming_image_id: self.streaming_image_id,
+            studio_id: self.studio_id,
+            tags: self.tags,
+        })
     }
 }

@@ -39,10 +39,7 @@ impl BatchGetTokenBalanceFluentBuilder {
         }
     }
     /// Access the BatchGetTokenBalance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl BatchGetTokenBalanceFluentBuilder {
             crate::operation::batch_get_token_balance::BatchGetTokenBalance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_token_balance::BatchGetTokenBalanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_token_balance::BatchGetTokenBalanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl BatchGetTokenBalanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl BatchGetTokenBalanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_token_balance::BatchGetTokenBalanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_token_balance::BatchGetTokenBalanceError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl BatchGetTokenBalanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_token_balance::BatchGetTokenBalanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_token_balance::BatchGetTokenBalanceError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl BatchGetTokenBalanceFluentBuilder {
             crate::operation::batch_get_token_balance::BatchGetTokenBalance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_token_balance::BatchGetTokenBalanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_token_balance::BatchGetTokenBalanceError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +116,7 @@ impl BatchGetTokenBalanceFluentBuilder {
     /// To override the contents of this collection use [`set_get_token_balance_inputs`](Self::set_get_token_balance_inputs).
     ///
     /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
-    pub fn get_token_balance_inputs(
-        mut self,
-        input: crate::types::BatchGetTokenBalanceInputItem,
-    ) -> Self {
+    pub fn get_token_balance_inputs(mut self, input: crate::types::BatchGetTokenBalanceInputItem) -> Self {
         self.inner = self.inner.get_token_balance_inputs(input);
         self
     }
@@ -146,9 +129,7 @@ impl BatchGetTokenBalanceFluentBuilder {
         self
     }
     /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
-    pub fn get_get_token_balance_inputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>> {
+    pub fn get_get_token_balance_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>> {
         self.inner.get_get_token_balance_inputs()
     }
 }

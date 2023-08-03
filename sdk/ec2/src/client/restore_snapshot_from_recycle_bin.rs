@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`volume_id(Option<String>)`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput::volume_id): <p>The ID of the volume that was used to create the snapshot.</p>
     ///   - [`volume_size(Option<i32>)`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput::volume_size): <p>The size of the volume, in GiB.</p>
     /// - On failure, responds with [`SdkError<RestoreSnapshotFromRecycleBinError>`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinError)
-    pub fn restore_snapshot_from_recycle_bin(&self) -> crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinFluentBuilder{
+    pub fn restore_snapshot_from_recycle_bin(
+        &self,
+    ) -> crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinFluentBuilder {
         crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl AccountState {
 
 /// A builder for [`AccountState`](crate::types::AccountState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountStateBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::State>,
@@ -80,10 +78,7 @@ impl AccountStateBuilder {
         self
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
-    pub fn set_resource_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceState>,
-    ) -> Self {
+    pub fn set_resource_state(mut self, input: ::std::option::Option<crate::types::ResourceState>) -> Self {
         self.resource_state = input;
         self
     }

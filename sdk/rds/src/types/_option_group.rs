@@ -93,9 +93,7 @@ impl OptionGroup {
 
 /// A builder for [`OptionGroup`](crate::types::OptionGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OptionGroupBuilder {
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) option_group_description: ::std::option::Option<::std::string::String>,
@@ -111,18 +109,12 @@ pub struct OptionGroupBuilder {
 }
 impl OptionGroupBuilder {
     /// <p>Specifies the name of the option group.</p>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the option group.</p>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_group_name = input;
         self
     }
@@ -131,18 +123,12 @@ impl OptionGroupBuilder {
         &self.option_group_name
     }
     /// <p>Provides a description of the option group.</p>
-    pub fn option_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides a description of the option group.</p>
-    pub fn set_option_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_group_description = input;
         self
     }
@@ -165,18 +151,12 @@ impl OptionGroupBuilder {
         &self.engine_name
     }
     /// <p>Indicates the major engine version associated with this option group.</p>
-    pub fn major_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the major engine version associated with this option group.</p>
-    pub fn set_major_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.major_engine_version = input;
         self
     }
@@ -196,10 +176,7 @@ impl OptionGroupBuilder {
         self
     }
     /// <p>Indicates what options are available in the option group.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Option>>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Option>>) -> Self {
         self.options = input;
         self
     }
@@ -213,10 +190,7 @@ impl OptionGroupBuilder {
         self
     }
     /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances.</p>
-    pub fn set_allows_vpc_and_non_vpc_instance_memberships(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_allows_vpc_and_non_vpc_instance_memberships(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allows_vpc_and_non_vpc_instance_memberships = input;
         self
     }
@@ -239,18 +213,12 @@ impl OptionGroupBuilder {
         &self.vpc_id
     }
     /// <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
-    pub fn option_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
-    pub fn set_option_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_group_arn = input;
         self
     }
@@ -259,18 +227,12 @@ impl OptionGroupBuilder {
         &self.option_group_arn
     }
     /// <p>Specifies the name of the option group from which this option group is copied.</p>
-    pub fn source_option_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_option_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_option_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the option group from which this option group is copied.</p>
-    pub fn set_source_option_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_option_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_option_group = input;
         self
     }
@@ -279,18 +241,12 @@ impl OptionGroupBuilder {
         &self.source_option_group
     }
     /// <p>Specifies the Amazon Web Services account ID for the option group from which this option group is copied.</p>
-    pub fn source_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Web Services account ID for the option group from which this option group is copied.</p>
-    pub fn set_source_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_account_id = input;
         self
     }
@@ -304,10 +260,7 @@ impl OptionGroupBuilder {
         self
     }
     /// <p>Indicates when the option group was copied.</p>
-    pub fn set_copy_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_copy_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.copy_timestamp = input;
         self
     }
@@ -323,9 +276,7 @@ impl OptionGroupBuilder {
             engine_name: self.engine_name,
             major_engine_version: self.major_engine_version,
             options: self.options,
-            allows_vpc_and_non_vpc_instance_memberships: self
-                .allows_vpc_and_non_vpc_instance_memberships
-                .unwrap_or_default(),
+            allows_vpc_and_non_vpc_instance_memberships: self.allows_vpc_and_non_vpc_instance_memberships.unwrap_or_default(),
             vpc_id: self.vpc_id,
             option_group_arn: self.option_group_arn,
             source_option_group: self.source_option_group,

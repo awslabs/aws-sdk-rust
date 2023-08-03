@@ -20,15 +20,11 @@ impl BatchGetAssetPropertyValueSkippedEntry {
         self.entry_id.as_deref()
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
-    pub fn completion_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchEntryCompletionStatus> {
+    pub fn completion_status(&self) -> ::std::option::Option<&crate::types::BatchEntryCompletionStatus> {
         self.completion_status.as_ref()
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
-    pub fn error_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchGetAssetPropertyValueErrorInfo> {
+    pub fn error_info(&self) -> ::std::option::Option<&crate::types::BatchGetAssetPropertyValueErrorInfo> {
         self.error_info.as_ref()
     }
 }
@@ -41,9 +37,7 @@ impl BatchGetAssetPropertyValueSkippedEntry {
 
 /// A builder for [`BatchGetAssetPropertyValueSkippedEntry`](crate::types::BatchGetAssetPropertyValueSkippedEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueSkippedEntryBuilder {
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
     pub(crate) completion_status: ::std::option::Option<crate::types::BatchEntryCompletionStatus>,
@@ -70,17 +64,12 @@ impl BatchGetAssetPropertyValueSkippedEntryBuilder {
         self
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
-    pub fn set_completion_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchEntryCompletionStatus>,
-    ) -> Self {
+    pub fn set_completion_status(mut self, input: ::std::option::Option<crate::types::BatchEntryCompletionStatus>) -> Self {
         self.completion_status = input;
         self
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
-    pub fn get_completion_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchEntryCompletionStatus> {
+    pub fn get_completion_status(&self) -> &::std::option::Option<crate::types::BatchEntryCompletionStatus> {
         &self.completion_status
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
@@ -89,17 +78,12 @@ impl BatchGetAssetPropertyValueSkippedEntryBuilder {
         self
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
-    pub fn set_error_info(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchGetAssetPropertyValueErrorInfo>,
-    ) -> Self {
+    pub fn set_error_info(mut self, input: ::std::option::Option<crate::types::BatchGetAssetPropertyValueErrorInfo>) -> Self {
         self.error_info = input;
         self
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
-    pub fn get_error_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchGetAssetPropertyValueErrorInfo> {
+    pub fn get_error_info(&self) -> &::std::option::Option<crate::types::BatchGetAssetPropertyValueErrorInfo> {
         &self.error_info
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueSkippedEntry`](crate::types::BatchGetAssetPropertyValueSkippedEntry).

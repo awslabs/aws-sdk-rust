@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for ListProfileTimesOutput {
 }
 impl ListProfileTimesOutput {
     /// Creates a new builder-style object to manufacture [`ListProfileTimesOutput`](crate::operation::list_profile_times::ListProfileTimesOutput).
-    pub fn builder() -> crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder {
         crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfileTimesOutput`](crate::operation::list_profile_times::ListProfileTimesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileTimesOutputBuilder {
     pub(crate) profile_times: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTime>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,12 @@ impl ListProfileTimesOutputBuilder {
         self
     }
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
-    pub fn set_profile_times(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTime>>,
-    ) -> Self {
+    pub fn set_profile_times(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTime>>) -> Self {
         self.profile_times = input;
         self
     }
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
-    pub fn get_profile_times(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileTime>> {
+    pub fn get_profile_times(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileTime>> {
         &self.profile_times
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>

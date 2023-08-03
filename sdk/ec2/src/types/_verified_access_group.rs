@@ -79,9 +79,7 @@ impl VerifiedAccessGroup {
 
 /// A builder for [`VerifiedAccessGroup`](crate::types::VerifiedAccessGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifiedAccessGroupBuilder {
     pub(crate) verified_access_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,
@@ -95,18 +93,12 @@ pub struct VerifiedAccessGroupBuilder {
 }
 impl VerifiedAccessGroupBuilder {
     /// <p>The ID of the Verified Access group.</p>
-    pub fn verified_access_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Verified Access group.</p>
-    pub fn set_verified_access_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verified_access_group_id = input;
         self
     }
@@ -115,18 +107,12 @@ impl VerifiedAccessGroupBuilder {
         &self.verified_access_group_id
     }
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn verified_access_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verified_access_instance_id = input;
         self
     }
@@ -163,18 +149,12 @@ impl VerifiedAccessGroupBuilder {
         &self.owner
     }
     /// <p>The ARN of the Verified Access group.</p>
-    pub fn verified_access_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Verified Access group.</p>
-    pub fn set_verified_access_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verified_access_group_arn = input;
         self
     }
@@ -183,18 +163,12 @@ impl VerifiedAccessGroupBuilder {
         &self.verified_access_group_arn
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_time = input;
         self
     }
@@ -203,18 +177,12 @@ impl VerifiedAccessGroupBuilder {
         &self.creation_time
     }
     /// <p>The last updated time.</p>
-    pub fn last_updated_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last updated time.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -223,18 +191,12 @@ impl VerifiedAccessGroupBuilder {
         &self.last_updated_time
     }
     /// <p>The deletion time.</p>
-    pub fn deletion_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deletion_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deletion_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deletion time.</p>
-    pub fn set_deletion_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deletion_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deletion_time = input;
         self
     }
@@ -254,10 +216,7 @@ impl VerifiedAccessGroupBuilder {
         self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

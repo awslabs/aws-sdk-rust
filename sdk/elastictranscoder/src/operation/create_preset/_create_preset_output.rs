@@ -36,9 +36,7 @@ impl CreatePresetOutput {
 
 /// A builder for [`CreatePresetOutput`](crate::operation::create_preset::CreatePresetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePresetOutputBuilder {
     pub(crate) preset: ::std::option::Option<crate::types::Preset>,
     pub(crate) warning: ::std::option::Option<::std::string::String>,

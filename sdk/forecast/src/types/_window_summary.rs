@@ -60,9 +60,7 @@ impl WindowSummary {
 
 /// A builder for [`WindowSummary`](crate::types::WindowSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WindowSummaryBuilder {
     pub(crate) test_window_start: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) test_window_end: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -77,10 +75,7 @@ impl WindowSummaryBuilder {
         self
     }
     /// <p>The timestamp that defines the start of the window.</p>
-    pub fn set_test_window_start(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_test_window_start(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.test_window_start = input;
         self
     }
@@ -94,10 +89,7 @@ impl WindowSummaryBuilder {
         self
     }
     /// <p>The timestamp that defines the end of the window.</p>
-    pub fn set_test_window_end(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_test_window_end(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.test_window_end = input;
         self
     }
@@ -133,10 +125,7 @@ impl WindowSummaryBuilder {
     /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
     /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
     /// </ul>
-    pub fn set_evaluation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationType>,
-    ) -> Self {
+    pub fn set_evaluation_type(mut self, input: ::std::option::Option<crate::types::EvaluationType>) -> Self {
         self.evaluation_type = input;
         self
     }

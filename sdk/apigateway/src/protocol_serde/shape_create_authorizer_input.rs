@@ -22,9 +22,7 @@ pub fn ser_create_authorizer_input(
         object.key("identitySource").string(var_5.as_str());
     }
     if let Some(var_6) = &input.identity_validation_expression {
-        object
-            .key("identityValidationExpression")
-            .string(var_6.as_str());
+        object.key("identityValidationExpression").string(var_6.as_str());
     }
     if let Some(var_7) = &input.name {
         object.key("name").string(var_7.as_str());

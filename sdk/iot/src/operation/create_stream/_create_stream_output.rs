@@ -49,9 +49,7 @@ impl CreateStreamOutput {
 
 /// A builder for [`CreateStreamOutput`](crate::operation::create_stream::CreateStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStreamOutputBuilder {
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,

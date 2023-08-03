@@ -10,10 +10,7 @@ impl ListCoreDevicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_core_devices::ListCoreDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_devices::ListCoreDevicesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_devices::ListCoreDevicesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_core_devices();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl ListCoreDevicesFluentBuilder {
         }
     }
     /// Access the ListCoreDevices as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_core_devices::builders::ListCoreDevicesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_core_devices::builders::ListCoreDevicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl ListCoreDevicesFluentBuilder {
             crate::operation::list_core_devices::ListCoreDevices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_devices::ListCoreDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_devices::ListCoreDevicesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl ListCoreDevicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl ListCoreDevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_core_devices::ListCoreDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_devices::ListCoreDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_devices::ListCoreDevicesError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl ListCoreDevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_core_devices::ListCoreDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_devices::ListCoreDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_devices::ListCoreDevicesError>,
     > {
         self.send_middleware().await
     }
@@ -126,36 +112,23 @@ impl ListCoreDevicesFluentBuilder {
             crate::operation::list_core_devices::ListCoreDevices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_core_devices::ListCoreDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_core_devices::ListCoreDevicesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_core_devices::paginator::ListCoreDevicesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_core_devices::paginator::ListCoreDevicesPaginator {
-        crate::operation::list_core_devices::paginator::ListCoreDevicesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_core_devices::paginator::ListCoreDevicesPaginator {
+        crate::operation::list_core_devices::paginator::ListCoreDevicesPaginator::new(self.handle, self.inner)
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
-    pub fn thing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_group_arn(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
-    pub fn set_thing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_group_arn(input);
         self
     }
@@ -177,10 +150,7 @@ impl ListCoreDevicesFluentBuilder {
     /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
     /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CoreDeviceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CoreDeviceStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

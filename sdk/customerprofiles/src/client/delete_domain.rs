@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDomainOutput`](crate::operation::delete_domain::DeleteDomainOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::operation::delete_domain::DeleteDomainOutput::message): <p>A message that indicates the delete request is done.</p>
     /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::operation::delete_domain::DeleteDomainError)
-    pub fn delete_domain(
-        &self,
-    ) -> crate::operation::delete_domain::builders::DeleteDomainFluentBuilder {
-        crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_domain(&self) -> crate::operation::delete_domain::builders::DeleteDomainFluentBuilder {
+        crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::new(self.handle.clone())
     }
 }

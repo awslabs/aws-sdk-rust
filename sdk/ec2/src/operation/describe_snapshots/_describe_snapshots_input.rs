@@ -101,24 +101,20 @@ impl DescribeSnapshotsInput {
 }
 impl DescribeSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
-    pub fn builder() -> crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
         crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) owner_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) restorable_by_user_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) restorable_by_user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -177,10 +173,7 @@ impl DescribeSnapshotsInputBuilder {
     /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
     /// <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -249,10 +242,7 @@ impl DescribeSnapshotsInputBuilder {
         self
     }
     /// <p>Scopes the results to snapshots with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.</p>
-    pub fn set_owner_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_owner_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.owner_ids = input;
         self
     }
@@ -265,27 +255,19 @@ impl DescribeSnapshotsInputBuilder {
     /// To override the contents of this collection use [`set_restorable_by_user_ids`](Self::set_restorable_by_user_ids).
     ///
     /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    pub fn restorable_by_user_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn restorable_by_user_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.restorable_by_user_ids.unwrap_or_default();
         v.push(input.into());
         self.restorable_by_user_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    pub fn set_restorable_by_user_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_restorable_by_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.restorable_by_user_ids = input;
         self
     }
     /// <p>The IDs of the Amazon Web Services accounts that can create volumes from the snapshot.</p>
-    pub fn get_restorable_by_user_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_restorable_by_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.restorable_by_user_ids
     }
     /// Appends an item to `snapshot_ids`.
@@ -302,18 +284,13 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>The snapshot IDs.</p>
     /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    pub fn set_snapshot_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.snapshot_ids = input;
         self
     }
     /// <p>The snapshot IDs.</p>
     /// <p>Default: Describes the snapshots for which you have create volume permissions.</p>
-    pub fn get_snapshot_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.snapshot_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -333,20 +310,15 @@ impl DescribeSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_snapshots::DescribeSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_snapshots::DescribeSnapshotsInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                owner_ids: self.owner_ids,
-                restorable_by_user_ids: self.restorable_by_user_ids,
-                snapshot_ids: self.snapshot_ids,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_snapshots::DescribeSnapshotsInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            owner_ids: self.owner_ids,
+            restorable_by_user_ids: self.restorable_by_user_ids,
+            snapshot_ids: self.snapshot_ids,
+            dry_run: self.dry_run,
+        })
     }
 }

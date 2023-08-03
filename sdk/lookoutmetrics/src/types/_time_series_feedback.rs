@@ -30,27 +30,19 @@ impl TimeSeriesFeedback {
 
 /// A builder for [`TimeSeriesFeedback`](crate::types::TimeSeriesFeedback).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeSeriesFeedbackBuilder {
     pub(crate) time_series_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_anomaly: ::std::option::Option<bool>,
 }
 impl TimeSeriesFeedbackBuilder {
     /// <p>The ID of the metric.</p>
-    pub fn time_series_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn time_series_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_series_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the metric.</p>
-    pub fn set_time_series_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_time_series_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_series_id = input;
         self
     }

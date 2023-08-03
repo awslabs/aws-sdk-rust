@@ -8,8 +8,7 @@ pub struct BatchGetSecurityControlsOutput {
     pub security_controls: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControl>>,
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned. </p>
     #[doc(hidden)]
-    pub unprocessed_ids:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedSecurityControl>>,
+    pub unprocessed_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedSecurityControl>>,
     _request_id: Option<String>,
 }
 impl BatchGetSecurityControlsOutput {
@@ -18,9 +17,7 @@ impl BatchGetSecurityControlsOutput {
         self.security_controls.as_deref()
     }
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned. </p>
-    pub fn unprocessed_ids(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedSecurityControl]> {
+    pub fn unprocessed_ids(&self) -> ::std::option::Option<&[crate::types::UnprocessedSecurityControl]> {
         self.unprocessed_ids.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetSecurityControlsOutput {
 }
 impl BatchGetSecurityControlsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetSecurityControlsOutput`](crate::operation::batch_get_security_controls::BatchGetSecurityControlsOutput).
-    pub fn builder() -> crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsOutputBuilder{
+    pub fn builder() -> crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsOutputBuilder {
         crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetSecurityControlsOutput`](crate::operation::batch_get_security_controls::BatchGetSecurityControlsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetSecurityControlsOutputBuilder {
-    pub(crate) security_controls:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityControl>>,
-    pub(crate) unprocessed_ids:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedSecurityControl>>,
+    pub(crate) security_controls: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControl>>,
+    pub(crate) unprocessed_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedSecurityControl>>,
     _request_id: Option<String>,
 }
 impl BatchGetSecurityControlsOutputBuilder {
@@ -61,17 +54,12 @@ impl BatchGetSecurityControlsOutputBuilder {
         self
     }
     /// <p> An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>. </p>
-    pub fn set_security_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControl>>,
-    ) -> Self {
+    pub fn set_security_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControl>>) -> Self {
         self.security_controls = input;
         self
     }
     /// <p> An array that returns the identifier, Amazon Resource Name (ARN), and other details about a security control. The same information is returned whether the request includes <code>SecurityControlId</code> or <code>SecurityControlArn</code>. </p>
-    pub fn get_security_controls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityControl>> {
+    pub fn get_security_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityControl>> {
         &self.security_controls
     }
     /// Appends an item to `unprocessed_ids`.
@@ -86,17 +74,12 @@ impl BatchGetSecurityControlsOutputBuilder {
         self
     }
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned. </p>
-    pub fn set_unprocessed_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedSecurityControl>>,
-    ) -> Self {
+    pub fn set_unprocessed_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedSecurityControl>>) -> Self {
         self.unprocessed_ids = input;
         self
     }
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which details cannot be returned. </p>
-    pub fn get_unprocessed_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedSecurityControl>> {
+    pub fn get_unprocessed_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedSecurityControl>> {
         &self.unprocessed_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -109,9 +92,7 @@ impl BatchGetSecurityControlsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetSecurityControlsOutput`](crate::operation::batch_get_security_controls::BatchGetSecurityControlsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_security_controls::BatchGetSecurityControlsOutput {
+    pub fn build(self) -> crate::operation::batch_get_security_controls::BatchGetSecurityControlsOutput {
         crate::operation::batch_get_security_controls::BatchGetSecurityControlsOutput {
             security_controls: self.security_controls,
             unprocessed_ids: self.unprocessed_ids,

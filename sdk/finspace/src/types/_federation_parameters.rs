@@ -21,9 +21,7 @@ pub struct FederationParameters {
     pub federation_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to the attribute definition in which user email is set. For example, name would be <code>Email</code> and value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>. Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
     #[doc(hidden)]
-    pub attribute_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attribute_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FederationParameters {
     /// <p>SAML 2.0 Metadata document from identity provider (IdP).</p>
@@ -47,11 +45,7 @@ impl FederationParameters {
         self.federation_provider_name.as_deref()
     }
     /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to the attribute definition in which user email is set. For example, name would be <code>Email</code> and value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>. Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
-    pub fn attribute_map(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attribute_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attribute_map.as_ref()
     }
 }
@@ -64,33 +58,23 @@ impl FederationParameters {
 
 /// A builder for [`FederationParameters`](crate::types::FederationParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FederationParametersBuilder {
     pub(crate) saml_metadata_document: ::std::option::Option<::std::string::String>,
     pub(crate) saml_metadata_url: ::std::option::Option<::std::string::String>,
     pub(crate) application_call_back_url: ::std::option::Option<::std::string::String>,
     pub(crate) federation_urn: ::std::option::Option<::std::string::String>,
     pub(crate) federation_provider_name: ::std::option::Option<::std::string::String>,
-    pub(crate) attribute_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) attribute_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FederationParametersBuilder {
     /// <p>SAML 2.0 Metadata document from identity provider (IdP).</p>
-    pub fn saml_metadata_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn saml_metadata_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.saml_metadata_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>SAML 2.0 Metadata document from identity provider (IdP).</p>
-    pub fn set_saml_metadata_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_saml_metadata_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.saml_metadata_document = input;
         self
     }
@@ -99,18 +83,12 @@ impl FederationParametersBuilder {
         &self.saml_metadata_document
     }
     /// <p>Provide the metadata URL from your SAML 2.0 compliant identity provider (IdP).</p>
-    pub fn saml_metadata_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn saml_metadata_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.saml_metadata_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provide the metadata URL from your SAML 2.0 compliant identity provider (IdP).</p>
-    pub fn set_saml_metadata_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_saml_metadata_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.saml_metadata_url = input;
         self
     }
@@ -119,18 +97,12 @@ impl FederationParametersBuilder {
         &self.saml_metadata_url
     }
     /// <p>The redirect or sign-in URL that should be entered into the SAML 2.0 compliant identity provider configuration (IdP).</p>
-    pub fn application_call_back_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_call_back_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_call_back_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The redirect or sign-in URL that should be entered into the SAML 2.0 compliant identity provider configuration (IdP).</p>
-    pub fn set_application_call_back_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_call_back_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_call_back_url = input;
         self
     }
@@ -139,18 +111,12 @@ impl FederationParametersBuilder {
         &self.application_call_back_url
     }
     /// <p>The Uniform Resource Name (URN). Also referred as Service Provider URN or Audience URI or Service Provider Entity ID.</p>
-    pub fn federation_urn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn federation_urn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.federation_urn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Uniform Resource Name (URN). Also referred as Service Provider URN or Audience URI or Service Provider Entity ID.</p>
-    pub fn set_federation_urn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_federation_urn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.federation_urn = input;
         self
     }
@@ -159,18 +125,12 @@ impl FederationParametersBuilder {
         &self.federation_urn
     }
     /// <p>Name of the identity provider (IdP).</p>
-    pub fn federation_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn federation_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.federation_provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the identity provider (IdP).</p>
-    pub fn set_federation_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_federation_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.federation_provider_name = input;
         self
     }
@@ -183,11 +143,7 @@ impl FederationParametersBuilder {
     /// To override the contents of this collection use [`set_attribute_map`](Self::set_attribute_map).
     ///
     /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to the attribute definition in which user email is set. For example, name would be <code>Email</code> and value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>. Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
-    pub fn attribute_map(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attribute_map.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attribute_map = ::std::option::Option::Some(hash_map);
@@ -196,19 +152,13 @@ impl FederationParametersBuilder {
     /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to the attribute definition in which user email is set. For example, name would be <code>Email</code> and value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>. Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
     pub fn set_attribute_map(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.attribute_map = input;
         self
     }
     /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to the attribute definition in which user email is set. For example, name would be <code>Email</code> and value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>. Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
-    pub fn get_attribute_map(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attribute_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attribute_map
     }
     /// Consumes the builder and constructs a [`FederationParameters`](crate::types::FederationParameters).

@@ -5,16 +5,16 @@ pub use crate::operation::create_simulation_application_version::_create_simulat
 
 impl CreateSimulationApplicationVersionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_simulation_application_version();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateSimulationApplicationVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSimulationApplicationVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionInputBuilder,
+    inner: crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionInputBuilder,
 }
 impl CreateSimulationApplicationVersionFluentBuilder {
     /// Creates a new `CreateSimulationApplicationVersion`.
@@ -37,15 +37,20 @@ impl CreateSimulationApplicationVersionFluentBuilder {
         }
     }
     /// Access the CreateSimulationApplicationVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_simulation_application_version::CreateSimulationApplicationVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl CreateSimulationApplicationVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl CreateSimulationApplicationVersionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_simulation_application_version::CreateSimulationApplicationVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The application information for the simulation application.</p>
@@ -109,18 +124,12 @@ impl CreateSimulationApplicationVersionFluentBuilder {
         self.inner.get_application()
     }
     /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    pub fn current_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_revision_id(input.into());
         self
     }
     /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    pub fn set_current_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_revision_id(input);
         self
     }
@@ -138,10 +147,7 @@ impl CreateSimulationApplicationVersionFluentBuilder {
         self
     }
     /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
-    pub fn set_s3_etags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_s3_etags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_s3_etags(input);
         self
     }

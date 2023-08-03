@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_schemas::SearchSchemasOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     ///   - [`schemas(Option<Vec<SearchSchemaSummary>>)`](crate::operation::search_schemas::SearchSchemasOutput::schemas): <p>An array of SearchSchemaSummary information.</p>
     /// - On failure, responds with [`SdkError<SearchSchemasError>`](crate::operation::search_schemas::SearchSchemasError)
-    pub fn search_schemas(
-        &self,
-    ) -> crate::operation::search_schemas::builders::SearchSchemasFluentBuilder {
-        crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_schemas(&self) -> crate::operation::search_schemas::builders::SearchSchemasFluentBuilder {
+        crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::new(self.handle.clone())
     }
 }

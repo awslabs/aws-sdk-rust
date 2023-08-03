@@ -35,9 +35,7 @@ impl PolicyDefinition {
     }
     /// Tries to convert the enum instance into [`TemplateLinked`](crate::types::PolicyDefinition::TemplateLinked), extracting the inner [`TemplateLinkedPolicyDefinition`](crate::types::TemplateLinkedPolicyDefinition).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_template_linked(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TemplateLinkedPolicyDefinition, &Self> {
+    pub fn as_template_linked(&self) -> ::std::result::Result<&crate::types::TemplateLinkedPolicyDefinition, &Self> {
         if let PolicyDefinition::TemplateLinked(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetMetricDataV2Output {
 }
 impl GetMetricDataV2Output {
     /// Creates a new builder-style object to manufacture [`GetMetricDataV2Output`](crate::operation::get_metric_data_v2::GetMetricDataV2Output).
-    pub fn builder() -> crate::operation::get_metric_data_v2::builders::GetMetricDataV2OutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_metric_data_v2::builders::GetMetricDataV2OutputBuilder {
         crate::operation::get_metric_data_v2::builders::GetMetricDataV2OutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMetricDataV2Output`](crate::operation::get_metric_data_v2::GetMetricDataV2Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMetricDataV2OutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) metric_results: ::std::option::Option<::std::vec::Vec<crate::types::MetricResultV2>>,
@@ -71,17 +68,12 @@ impl GetMetricDataV2OutputBuilder {
         self
     }
     /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned. </p>
-    pub fn set_metric_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricResultV2>>,
-    ) -> Self {
+    pub fn set_metric_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricResultV2>>) -> Self {
         self.metric_results = input;
         self
     }
     /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned. </p>
-    pub fn get_metric_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricResultV2>> {
+    pub fn get_metric_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricResultV2>> {
         &self.metric_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

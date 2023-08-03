@@ -5,16 +5,16 @@ pub use crate::operation::update_connection_alias_permission::_update_connection
 
 impl UpdateConnectionAliasPermissionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_connection_alias_permission();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -31,7 +31,7 @@ impl UpdateConnectionAliasPermissionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConnectionAliasPermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionInputBuilder,
+    inner: crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionInputBuilder,
 }
 impl UpdateConnectionAliasPermissionFluentBuilder {
     /// Creates a new `UpdateConnectionAliasPermission`.
@@ -42,15 +42,20 @@ impl UpdateConnectionAliasPermissionFluentBuilder {
         }
     }
     /// Access the UpdateConnectionAliasPermission as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermission, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermission,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -59,16 +64,17 @@ impl UpdateConnectionAliasPermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -86,17 +92,26 @@ impl UpdateConnectionAliasPermissionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermission, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermission,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the connection alias that you want to update permissions for.</p>
@@ -114,25 +129,17 @@ impl UpdateConnectionAliasPermissionFluentBuilder {
         self.inner.get_alias_id()
     }
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
-    pub fn connection_alias_permission(
-        mut self,
-        input: crate::types::ConnectionAliasPermission,
-    ) -> Self {
+    pub fn connection_alias_permission(mut self, input: crate::types::ConnectionAliasPermission) -> Self {
         self.inner = self.inner.connection_alias_permission(input);
         self
     }
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
-    pub fn set_connection_alias_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionAliasPermission>,
-    ) -> Self {
+    pub fn set_connection_alias_permission(mut self, input: ::std::option::Option<crate::types::ConnectionAliasPermission>) -> Self {
         self.inner = self.inner.set_connection_alias_permission(input);
         self
     }
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
-    pub fn get_connection_alias_permission(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectionAliasPermission> {
+    pub fn get_connection_alias_permission(&self) -> &::std::option::Option<crate::types::ConnectionAliasPermission> {
         self.inner.get_connection_alias_permission()
     }
 }

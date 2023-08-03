@@ -51,9 +51,7 @@ impl LocalGateway {
 
 /// A builder for [`LocalGateway`](crate::types::LocalGateway).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocalGatewayBuilder {
     pub(crate) local_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct LocalGatewayBuilder {
 }
 impl LocalGatewayBuilder {
     /// <p>The ID of the local gateway.</p>
-    pub fn local_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn set_local_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_id = input;
         self
     }
@@ -136,10 +128,7 @@ impl LocalGatewayBuilder {
         self
     }
     /// <p>The tags assigned to the local gateway.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

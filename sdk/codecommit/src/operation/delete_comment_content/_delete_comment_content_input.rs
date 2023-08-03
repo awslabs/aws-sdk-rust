@@ -15,17 +15,14 @@ impl DeleteCommentContentInput {
 }
 impl DeleteCommentContentInput {
     /// Creates a new builder-style object to manufacture [`DeleteCommentContentInput`](crate::operation::delete_comment_content::DeleteCommentContentInput).
-    pub fn builder(
-    ) -> crate::operation::delete_comment_content::builders::DeleteCommentContentInputBuilder {
+    pub fn builder() -> crate::operation::delete_comment_content::builders::DeleteCommentContentInputBuilder {
         crate::operation::delete_comment_content::builders::DeleteCommentContentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCommentContentInput`](crate::operation::delete_comment_content::DeleteCommentContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCommentContentInputBuilder {
     pub(crate) comment_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,8 @@ impl DeleteCommentContentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCommentContentInput`](crate::operation::delete_comment_content::DeleteCommentContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_comment_content::DeleteCommentContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_comment_content::DeleteCommentContentInput {
-                comment_id: self.comment_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_comment_content::DeleteCommentContentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_comment_content::DeleteCommentContentInput { comment_id: self.comment_id })
     }
 }

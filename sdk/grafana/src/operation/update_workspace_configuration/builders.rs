@@ -26,7 +26,7 @@ impl UpdateWorkspaceConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationInputBuilder,
+    inner: crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationInputBuilder,
 }
 impl UpdateWorkspaceConfigurationFluentBuilder {
     /// Creates a new `UpdateWorkspaceConfiguration`.
@@ -37,7 +37,7 @@ impl UpdateWorkspaceConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateWorkspaceConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateWorkspaceConfigurationFluentBuilder {
             crate::operation::update_workspace_configuration::UpdateWorkspaceConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateWorkspaceConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateWorkspaceConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateWorkspaceConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateWorkspaceConfigurationFluentBuilder {
             crate::operation::update_workspace_configuration::UpdateWorkspaceConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    pub fn configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration(input.into());
         self
     }
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
@@ -157,20 +140,14 @@ impl UpdateWorkspaceConfigurationFluentBuilder {
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
     /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
-    pub fn grafana_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grafana_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grafana_version(input.into());
         self
     }
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
     /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
-    pub fn set_grafana_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grafana_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grafana_version(input);
         self
     }

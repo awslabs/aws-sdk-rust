@@ -37,9 +37,7 @@ impl InventoryDeletionSummaryItem {
 
 /// A builder for [`InventoryDeletionSummaryItem`](crate::types::InventoryDeletionSummaryItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryDeletionSummaryItemBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,

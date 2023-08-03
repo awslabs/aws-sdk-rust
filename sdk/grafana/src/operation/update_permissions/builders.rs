@@ -10,10 +10,7 @@ impl UpdatePermissionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_permissions::UpdatePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_permissions::UpdatePermissionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_permissions::UpdatePermissionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_permissions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdatePermissionsFluentBuilder {
         }
     }
     /// Access the UpdatePermissions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_permissions::builders::UpdatePermissionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_permissions::builders::UpdatePermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdatePermissionsFluentBuilder {
             crate::operation::update_permissions::UpdatePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_permissions::UpdatePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_permissions::UpdatePermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdatePermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdatePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_permissions::UpdatePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_permissions::UpdatePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_permissions::UpdatePermissionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdatePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_permissions::UpdatePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_permissions::UpdatePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_permissions::UpdatePermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdatePermissionsFluentBuilder {
             crate::operation::update_permissions::UpdatePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_permissions::UpdatePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_permissions::UpdatePermissionsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +116,12 @@ impl UpdatePermissionsFluentBuilder {
         self
     }
     /// <p>An array of structures that contain the permission updates to make.</p>
-    pub fn set_update_instruction_batch(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInstruction>>,
-    ) -> Self {
+    pub fn set_update_instruction_batch(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInstruction>>) -> Self {
         self.inner = self.inner.set_update_instruction_batch(input);
         self
     }
     /// <p>An array of structures that contain the permission updates to make.</p>
-    pub fn get_update_instruction_batch(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateInstruction>> {
+    pub fn get_update_instruction_batch(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateInstruction>> {
         self.inner.get_update_instruction_batch()
     }
     /// <p>The ID of the workspace to update.</p>

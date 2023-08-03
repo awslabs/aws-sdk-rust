@@ -10,10 +10,7 @@ impl DescribeExclusionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_exclusions::DescribeExclusionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_exclusions::DescribeExclusionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_exclusions::DescribeExclusionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_exclusions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeExclusionsFluentBuilder {
         }
     }
     /// Access the DescribeExclusions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_exclusions::builders::DescribeExclusionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_exclusions::builders::DescribeExclusionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeExclusionsFluentBuilder {
             crate::operation::describe_exclusions::DescribeExclusions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_exclusions::DescribeExclusionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_exclusions::DescribeExclusionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeExclusionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeExclusionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_exclusions::DescribeExclusionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_exclusions::DescribeExclusionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_exclusions::DescribeExclusionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeExclusionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_exclusions::DescribeExclusionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_exclusions::DescribeExclusionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_exclusions::DescribeExclusionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeExclusionsFluentBuilder {
             crate::operation::describe_exclusions::DescribeExclusions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_exclusions::DescribeExclusionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_exclusions::DescribeExclusionsError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +111,17 @@ impl DescribeExclusionsFluentBuilder {
     /// To override the contents of this collection use [`set_exclusion_arns`](Self::set_exclusion_arns).
     ///
     /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
-    pub fn exclusion_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusion_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.exclusion_arns(input.into());
         self
     }
     /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
-    pub fn set_exclusion_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_exclusion_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_exclusion_arns(input);
         self
     }
     /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
-    pub fn get_exclusion_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exclusion_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_exclusion_arns()
     }
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>

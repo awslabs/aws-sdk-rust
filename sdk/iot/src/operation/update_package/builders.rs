@@ -10,10 +10,7 @@ impl UpdatePackageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_package::UpdatePackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_package::UpdatePackageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_package::UpdatePackageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_package();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdatePackageFluentBuilder {
         }
     }
     /// Access the UpdatePackage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_package::builders::UpdatePackageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_package::builders::UpdatePackageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl UpdatePackageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -145,19 +137,13 @@ impl UpdatePackageFluentBuilder {
     }
     /// <p>The name of the default package version.</p>
     /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
-    pub fn default_version_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_version_name(input.into());
         self
     }
     /// <p>The name of the default package version.</p>
     /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
-    pub fn set_default_version_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_version_name(input);
         self
     }

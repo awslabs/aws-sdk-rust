@@ -15,10 +15,7 @@ pub fn ser_create_data_source_input(
     if let Some(var_4) = &input.configuration {
         #[allow(unused_mut)]
         let mut object_5 = object.key("Configuration").start_object();
-        crate::protocol_serde::shape_data_source_configuration::ser_data_source_configuration(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_data_source_configuration::ser_data_source_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.vpc_configuration {
@@ -56,9 +53,7 @@ pub fn ser_create_data_source_input(
     }
     if let Some(var_17) = &input.custom_document_enrichment_configuration {
         #[allow(unused_mut)]
-        let mut object_18 = object
-            .key("CustomDocumentEnrichmentConfiguration")
-            .start_object();
+        let mut object_18 = object.key("CustomDocumentEnrichmentConfiguration").start_object();
         crate::protocol_serde::shape_custom_document_enrichment_configuration::ser_custom_document_enrichment_configuration(&mut object_18, var_17)?;
         object_18.finish();
     }

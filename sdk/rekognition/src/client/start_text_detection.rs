@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`StartTextDetectionOutput`](crate::operation::start_text_detection::StartTextDetectionOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_text_detection::StartTextDetectionOutput::job_id): <p>Identifier for the text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetTextDetection</code>.</p>
     /// - On failure, responds with [`SdkError<StartTextDetectionError>`](crate::operation::start_text_detection::StartTextDetectionError)
-    pub fn start_text_detection(
-        &self,
-    ) -> crate::operation::start_text_detection::builders::StartTextDetectionFluentBuilder {
-        crate::operation::start_text_detection::builders::StartTextDetectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_text_detection(&self) -> crate::operation::start_text_detection::builders::StartTextDetectionFluentBuilder {
+        crate::operation::start_text_detection::builders::StartTextDetectionFluentBuilder::new(self.handle.clone())
     }
 }

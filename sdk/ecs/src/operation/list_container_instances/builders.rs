@@ -37,10 +37,7 @@ impl ListContainerInstancesFluentBuilder {
         }
     }
     /// Access the ListContainerInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_container_instances::builders::ListContainerInstancesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_container_instances::builders::ListContainerInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListContainerInstancesFluentBuilder {
             crate::operation::list_container_instances::ListContainerInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_container_instances::ListContainerInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_container_instances::ListContainerInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListContainerInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListContainerInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_container_instances::ListContainerInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_container_instances::ListContainerInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_container_instances::ListContainerInstancesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListContainerInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_container_instances::ListContainerInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_container_instances::ListContainerInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_container_instances::ListContainerInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListContainerInstancesFluentBuilder {
             crate::operation::list_container_instances::ListContainerInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_container_instances::ListContainerInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_container_instances::ListContainerInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_container_instances::paginator::ListContainerInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_container_instances::paginator::ListContainerInstancesPaginator
-    {
-        crate::operation::list_container_instances::paginator::ListContainerInstancesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_container_instances::paginator::ListContainerInstancesPaginator {
+        crate::operation::list_container_instances::paginator::ListContainerInstancesPaginator::new(self.handle, self.inner)
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to list. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -203,10 +183,7 @@ impl ListContainerInstancesFluentBuilder {
         self
     }
     /// <p>Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the results include only container instances that have been set to <code>DRAINING</code> using <code>UpdateContainerInstancesState</code>. If you don't specify this parameter, the default is to include container instances set to all states other than <code>INACTIVE</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerInstanceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContainerInstanceStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

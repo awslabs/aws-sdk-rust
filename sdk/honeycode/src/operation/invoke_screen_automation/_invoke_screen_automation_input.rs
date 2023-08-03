@@ -17,9 +17,7 @@ pub struct InvokeScreenAutomationInput {
     pub screen_automation_id: ::std::option::Option<::std::string::String>,
     /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
     #[doc(hidden)]
-    pub variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::VariableValue>,
-    >,
+    pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
     /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
     #[doc(hidden)]
     pub row_id: ::std::option::Option<::std::string::String>,
@@ -46,11 +44,7 @@ impl InvokeScreenAutomationInput {
         self.screen_automation_id.as_deref()
     }
     /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
-    pub fn variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::VariableValue>,
-    > {
+    pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::VariableValue>> {
         self.variables.as_ref()
     }
     /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
@@ -78,9 +72,7 @@ impl ::std::fmt::Debug for InvokeScreenAutomationInput {
 }
 impl InvokeScreenAutomationInput {
     /// Creates a new builder-style object to manufacture [`InvokeScreenAutomationInput`](crate::operation::invoke_screen_automation::InvokeScreenAutomationInput).
-    pub fn builder(
-    ) -> crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationInputBuilder
-    {
+    pub fn builder() -> crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationInputBuilder {
         crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationInputBuilder::default()
     }
 }
@@ -93,9 +85,7 @@ pub struct InvokeScreenAutomationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) screen_id: ::std::option::Option<::std::string::String>,
     pub(crate) screen_automation_id: ::std::option::Option<::std::string::String>,
-    pub(crate) variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::VariableValue>,
-    >,
+    pub(crate) variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
     pub(crate) row_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
@@ -143,18 +133,12 @@ impl InvokeScreenAutomationInputBuilder {
         &self.screen_id
     }
     /// <p>The ID of the automation action to be performed.</p>
-    pub fn screen_automation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn screen_automation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.screen_automation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the automation action to be performed.</p>
-    pub fn set_screen_automation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_screen_automation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.screen_automation_id = input;
         self
     }
@@ -167,11 +151,7 @@ impl InvokeScreenAutomationInputBuilder {
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
     /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
-    pub fn variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::VariableValue,
-    ) -> Self {
+    pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::VariableValue) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.variables = ::std::option::Option::Some(hash_map);
@@ -180,19 +160,13 @@ impl InvokeScreenAutomationInputBuilder {
     /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
     pub fn set_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::VariableValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
     ) -> Self {
         self.variables = input;
         self
     }
     /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
-    pub fn get_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::VariableValue>,
-    > {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>> {
         &self.variables
     }
     /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
@@ -211,19 +185,13 @@ impl InvokeScreenAutomationInputBuilder {
     }
     /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -235,21 +203,17 @@ impl InvokeScreenAutomationInputBuilder {
     /// Consumes the builder and constructs a [`InvokeScreenAutomationInput`](crate::operation::invoke_screen_automation::InvokeScreenAutomationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::invoke_screen_automation::InvokeScreenAutomationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::invoke_screen_automation::InvokeScreenAutomationInput {
-                workbook_id: self.workbook_id,
-                app_id: self.app_id,
-                screen_id: self.screen_id,
-                screen_automation_id: self.screen_automation_id,
-                variables: self.variables,
-                row_id: self.row_id,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::invoke_screen_automation::InvokeScreenAutomationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::invoke_screen_automation::InvokeScreenAutomationInput {
+            workbook_id: self.workbook_id,
+            app_id: self.app_id,
+            screen_id: self.screen_id,
+            screen_automation_id: self.screen_automation_id,
+            variables: self.variables,
+            row_id: self.row_id,
+            client_request_token: self.client_request_token,
+        })
     }
 }
 impl ::std::fmt::Debug for InvokeScreenAutomationInputBuilder {

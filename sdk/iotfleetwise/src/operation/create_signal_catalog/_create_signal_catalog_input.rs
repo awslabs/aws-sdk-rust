@@ -36,18 +36,14 @@ impl CreateSignalCatalogInput {
 }
 impl CreateSignalCatalogInput {
     /// Creates a new builder-style object to manufacture [`CreateSignalCatalogInput`](crate::operation::create_signal_catalog::CreateSignalCatalogInput).
-    pub fn builder(
-    ) -> crate::operation::create_signal_catalog::builders::CreateSignalCatalogInputBuilder {
-        crate::operation::create_signal_catalog::builders::CreateSignalCatalogInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_signal_catalog::builders::CreateSignalCatalogInputBuilder {
+        crate::operation::create_signal_catalog::builders::CreateSignalCatalogInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSignalCatalogInput`](crate::operation::create_signal_catalog::CreateSignalCatalogInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSignalCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -95,10 +91,7 @@ impl CreateSignalCatalogInputBuilder {
         self
     }
     /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
-    pub fn set_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
-    ) -> Self {
+    pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.nodes = input;
         self
     }
@@ -118,10 +111,7 @@ impl CreateSignalCatalogInputBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the signal catalog.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -132,17 +122,13 @@ impl CreateSignalCatalogInputBuilder {
     /// Consumes the builder and constructs a [`CreateSignalCatalogInput`](crate::operation::create_signal_catalog::CreateSignalCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_signal_catalog::CreateSignalCatalogInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_signal_catalog::CreateSignalCatalogInput {
-                name: self.name,
-                description: self.description,
-                nodes: self.nodes,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_signal_catalog::CreateSignalCatalogInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_signal_catalog::CreateSignalCatalogInput {
+            name: self.name,
+            description: self.description,
+            nodes: self.nodes,
+            tags: self.tags,
+        })
     }
 }

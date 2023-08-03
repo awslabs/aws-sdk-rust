@@ -2,8 +2,7 @@
 /// Paginator for [`ListWorldGenerationJobs`](crate::operation::list_world_generation_jobs::ListWorldGenerationJobs)
 pub struct ListWorldGenerationJobsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
-    builder:
-        crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsInputBuilder,
+    builder: crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsInputBuilder,
     stop_on_duplicate_token: bool,
 }
 
@@ -48,9 +47,7 @@ impl ListWorldGenerationJobsPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -60,10 +57,7 @@ impl ListWorldGenerationJobsPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -88,15 +82,9 @@ impl ListWorldGenerationJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_list_world_generation_jobs_output_next_token(
-                                    resp,
-                                );
+                            let new_token = crate::lens::reflens_list_world_generation_jobs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.next_token.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.next_token = new_token.cloned();

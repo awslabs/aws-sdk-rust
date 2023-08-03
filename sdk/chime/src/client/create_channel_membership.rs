@@ -11,13 +11,8 @@ impl super::Client {
     ///   - [`channel_arn(Option<String>)`](crate::operation::create_channel_membership::CreateChannelMembershipOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`member(Option<Identity>)`](crate::operation::create_channel_membership::CreateChannelMembershipOutput::member): <p>The ARN and metadata of the member being added.</p>
     /// - On failure, responds with [`SdkError<CreateChannelMembershipError>`](crate::operation::create_channel_membership::CreateChannelMembershipError)
-    #[deprecated(
-        note = "Replaced by CreateChannelMembership in the Amazon Chime SDK Messaging Namespace"
-    )]
-    pub fn create_channel_membership(
-        &self,
-    ) -> crate::operation::create_channel_membership::builders::CreateChannelMembershipFluentBuilder
-    {
+    #[deprecated(note = "Replaced by CreateChannelMembership in the Amazon Chime SDK Messaging Namespace")]
+    pub fn create_channel_membership(&self) -> crate::operation::create_channel_membership::builders::CreateChannelMembershipFluentBuilder {
         crate::operation::create_channel_membership::builders::CreateChannelMembershipFluentBuilder::new(self.handle.clone())
     }
 }

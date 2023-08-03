@@ -45,16 +45,14 @@ impl ::aws_http::request_id::RequestId for GetOperationsForResourceOutput {
 }
 impl GetOperationsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetOperationsForResourceOutput`](crate::operation::get_operations_for_resource::GetOperationsForResourceOutput).
-    pub fn builder() -> crate::operation::get_operations_for_resource::builders::GetOperationsForResourceOutputBuilder{
+    pub fn builder() -> crate::operation::get_operations_for_resource::builders::GetOperationsForResourceOutputBuilder {
         crate::operation::get_operations_for_resource::builders::GetOperationsForResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetOperationsForResourceOutput`](crate::operation::get_operations_for_resource::GetOperationsForResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOperationsForResourceOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     pub(crate) next_page_count: ::std::option::Option<::std::string::String>,
@@ -74,27 +72,19 @@ impl GetOperationsForResourceOutputBuilder {
         self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
-    ) -> Self {
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>) -> Self {
         self.operations = input;
         self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn get_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
         &self.operations
     }
     /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
     /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
     /// </note>
     #[deprecated]
-    pub fn next_page_count(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_count(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_count = ::std::option::Option::Some(input.into());
         self
     }
@@ -102,10 +92,7 @@ impl GetOperationsForResourceOutputBuilder {
     /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
     /// </note>
     #[deprecated]
-    pub fn set_next_page_count(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_count(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_count = input;
         self
     }
@@ -119,20 +106,14 @@ impl GetOperationsForResourceOutputBuilder {
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -152,9 +133,7 @@ impl GetOperationsForResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetOperationsForResourceOutput`](crate::operation::get_operations_for_resource::GetOperationsForResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_operations_for_resource::GetOperationsForResourceOutput {
+    pub fn build(self) -> crate::operation::get_operations_for_resource::GetOperationsForResourceOutput {
         crate::operation::get_operations_for_resource::GetOperationsForResourceOutput {
             operations: self.operations,
             next_page_count: self.next_page_count,

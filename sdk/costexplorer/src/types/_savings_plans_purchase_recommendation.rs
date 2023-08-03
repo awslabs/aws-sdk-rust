@@ -21,13 +21,10 @@ pub struct SavingsPlansPurchaseRecommendation {
     pub lookback_period_in_days: ::std::option::Option<crate::types::LookbackPeriodInDays>,
     /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
     #[doc(hidden)]
-    pub savings_plans_purchase_recommendation_details: ::std::option::Option<
-        ::std::vec::Vec<crate::types::SavingsPlansPurchaseRecommendationDetail>,
-    >,
+    pub savings_plans_purchase_recommendation_details: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansPurchaseRecommendationDetail>>,
     /// <p>Summary metrics for your Savings Plans Recommendations. </p>
     #[doc(hidden)]
-    pub savings_plans_purchase_recommendation_summary:
-        ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationSummary>,
+    pub savings_plans_purchase_recommendation_summary: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationSummary>,
 }
 impl SavingsPlansPurchaseRecommendation {
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
@@ -35,9 +32,7 @@ impl SavingsPlansPurchaseRecommendation {
         self.account_scope.as_ref()
     }
     /// <p>The requested Savings Plans recommendation type.</p>
-    pub fn savings_plans_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SupportedSavingsPlansType> {
+    pub fn savings_plans_type(&self) -> ::std::option::Option<&crate::types::SupportedSavingsPlansType> {
         self.savings_plans_type.as_ref()
     }
     /// <p>The Savings Plans recommendation term in years. It's used to generate the recommendation.</p>
@@ -49,22 +44,15 @@ impl SavingsPlansPurchaseRecommendation {
         self.payment_option.as_ref()
     }
     /// <p>The lookback period in days that's used to generate the recommendation.</p>
-    pub fn lookback_period_in_days(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LookbackPeriodInDays> {
+    pub fn lookback_period_in_days(&self) -> ::std::option::Option<&crate::types::LookbackPeriodInDays> {
         self.lookback_period_in_days.as_ref()
     }
     /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
-    pub fn savings_plans_purchase_recommendation_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SavingsPlansPurchaseRecommendationDetail]> {
-        self.savings_plans_purchase_recommendation_details
-            .as_deref()
+    pub fn savings_plans_purchase_recommendation_details(&self) -> ::std::option::Option<&[crate::types::SavingsPlansPurchaseRecommendationDetail]> {
+        self.savings_plans_purchase_recommendation_details.as_deref()
     }
     /// <p>Summary metrics for your Savings Plans Recommendations. </p>
-    pub fn savings_plans_purchase_recommendation_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SavingsPlansPurchaseRecommendationSummary> {
+    pub fn savings_plans_purchase_recommendation_summary(&self) -> ::std::option::Option<&crate::types::SavingsPlansPurchaseRecommendationSummary> {
         self.savings_plans_purchase_recommendation_summary.as_ref()
     }
 }
@@ -77,20 +65,16 @@ impl SavingsPlansPurchaseRecommendation {
 
 /// A builder for [`SavingsPlansPurchaseRecommendation`](crate::types::SavingsPlansPurchaseRecommendation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SavingsPlansPurchaseRecommendationBuilder {
     pub(crate) account_scope: ::std::option::Option<crate::types::AccountScope>,
     pub(crate) savings_plans_type: ::std::option::Option<crate::types::SupportedSavingsPlansType>,
     pub(crate) term_in_years: ::std::option::Option<crate::types::TermInYears>,
     pub(crate) payment_option: ::std::option::Option<crate::types::PaymentOption>,
     pub(crate) lookback_period_in_days: ::std::option::Option<crate::types::LookbackPeriodInDays>,
-    pub(crate) savings_plans_purchase_recommendation_details: ::std::option::Option<
-        ::std::vec::Vec<crate::types::SavingsPlansPurchaseRecommendationDetail>,
-    >,
-    pub(crate) savings_plans_purchase_recommendation_summary:
-        ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationSummary>,
+    pub(crate) savings_plans_purchase_recommendation_details:
+        ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansPurchaseRecommendationDetail>>,
+    pub(crate) savings_plans_purchase_recommendation_summary: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationSummary>,
 }
 impl SavingsPlansPurchaseRecommendationBuilder {
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
@@ -99,10 +83,7 @@ impl SavingsPlansPurchaseRecommendationBuilder {
         self
     }
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
-    pub fn set_account_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountScope>,
-    ) -> Self {
+    pub fn set_account_scope(mut self, input: ::std::option::Option<crate::types::AccountScope>) -> Self {
         self.account_scope = input;
         self
     }
@@ -116,17 +97,12 @@ impl SavingsPlansPurchaseRecommendationBuilder {
         self
     }
     /// <p>The requested Savings Plans recommendation type.</p>
-    pub fn set_savings_plans_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SupportedSavingsPlansType>,
-    ) -> Self {
+    pub fn set_savings_plans_type(mut self, input: ::std::option::Option<crate::types::SupportedSavingsPlansType>) -> Self {
         self.savings_plans_type = input;
         self
     }
     /// <p>The requested Savings Plans recommendation type.</p>
-    pub fn get_savings_plans_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::SupportedSavingsPlansType> {
+    pub fn get_savings_plans_type(&self) -> &::std::option::Option<crate::types::SupportedSavingsPlansType> {
         &self.savings_plans_type
     }
     /// <p>The Savings Plans recommendation term in years. It's used to generate the recommendation.</p>
@@ -135,10 +111,7 @@ impl SavingsPlansPurchaseRecommendationBuilder {
         self
     }
     /// <p>The Savings Plans recommendation term in years. It's used to generate the recommendation.</p>
-    pub fn set_term_in_years(
-        mut self,
-        input: ::std::option::Option<crate::types::TermInYears>,
-    ) -> Self {
+    pub fn set_term_in_years(mut self, input: ::std::option::Option<crate::types::TermInYears>) -> Self {
         self.term_in_years = input;
         self
     }
@@ -152,10 +125,7 @@ impl SavingsPlansPurchaseRecommendationBuilder {
         self
     }
     /// <p>The payment option that's used to generate the recommendation.</p>
-    pub fn set_payment_option(
-        mut self,
-        input: ::std::option::Option<crate::types::PaymentOption>,
-    ) -> Self {
+    pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::PaymentOption>) -> Self {
         self.payment_option = input;
         self
     }
@@ -169,17 +139,12 @@ impl SavingsPlansPurchaseRecommendationBuilder {
         self
     }
     /// <p>The lookback period in days that's used to generate the recommendation.</p>
-    pub fn set_lookback_period_in_days(
-        mut self,
-        input: ::std::option::Option<crate::types::LookbackPeriodInDays>,
-    ) -> Self {
+    pub fn set_lookback_period_in_days(mut self, input: ::std::option::Option<crate::types::LookbackPeriodInDays>) -> Self {
         self.lookback_period_in_days = input;
         self
     }
     /// <p>The lookback period in days that's used to generate the recommendation.</p>
-    pub fn get_lookback_period_in_days(
-        &self,
-    ) -> &::std::option::Option<crate::types::LookbackPeriodInDays> {
+    pub fn get_lookback_period_in_days(&self) -> &::std::option::Option<crate::types::LookbackPeriodInDays> {
         &self.lookback_period_in_days
     }
     /// Appends an item to `savings_plans_purchase_recommendation_details`.
@@ -187,13 +152,8 @@ impl SavingsPlansPurchaseRecommendationBuilder {
     /// To override the contents of this collection use [`set_savings_plans_purchase_recommendation_details`](Self::set_savings_plans_purchase_recommendation_details).
     ///
     /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
-    pub fn savings_plans_purchase_recommendation_details(
-        mut self,
-        input: crate::types::SavingsPlansPurchaseRecommendationDetail,
-    ) -> Self {
-        let mut v = self
-            .savings_plans_purchase_recommendation_details
-            .unwrap_or_default();
+    pub fn savings_plans_purchase_recommendation_details(mut self, input: crate::types::SavingsPlansPurchaseRecommendationDetail) -> Self {
+        let mut v = self.savings_plans_purchase_recommendation_details.unwrap_or_default();
         v.push(input);
         self.savings_plans_purchase_recommendation_details = ::std::option::Option::Some(v);
         self
@@ -201,9 +161,7 @@ impl SavingsPlansPurchaseRecommendationBuilder {
     /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
     pub fn set_savings_plans_purchase_recommendation_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::SavingsPlansPurchaseRecommendationDetail>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansPurchaseRecommendationDetail>>,
     ) -> Self {
         self.savings_plans_purchase_recommendation_details = input;
         self
@@ -211,16 +169,11 @@ impl SavingsPlansPurchaseRecommendationBuilder {
     /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
     pub fn get_savings_plans_purchase_recommendation_details(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::SavingsPlansPurchaseRecommendationDetail>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansPurchaseRecommendationDetail>> {
         &self.savings_plans_purchase_recommendation_details
     }
     /// <p>Summary metrics for your Savings Plans Recommendations. </p>
-    pub fn savings_plans_purchase_recommendation_summary(
-        mut self,
-        input: crate::types::SavingsPlansPurchaseRecommendationSummary,
-    ) -> Self {
+    pub fn savings_plans_purchase_recommendation_summary(mut self, input: crate::types::SavingsPlansPurchaseRecommendationSummary) -> Self {
         self.savings_plans_purchase_recommendation_summary = ::std::option::Option::Some(input);
         self
     }
@@ -246,10 +199,8 @@ impl SavingsPlansPurchaseRecommendationBuilder {
             term_in_years: self.term_in_years,
             payment_option: self.payment_option,
             lookback_period_in_days: self.lookback_period_in_days,
-            savings_plans_purchase_recommendation_details: self
-                .savings_plans_purchase_recommendation_details,
-            savings_plans_purchase_recommendation_summary: self
-                .savings_plans_purchase_recommendation_summary,
+            savings_plans_purchase_recommendation_details: self.savings_plans_purchase_recommendation_details,
+            savings_plans_purchase_recommendation_summary: self.savings_plans_purchase_recommendation_summary,
         }
     }
 }

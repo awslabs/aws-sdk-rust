@@ -24,9 +24,7 @@ impl OrderedResourceDefinition {
         self.count
     }
     /// <p>The duration and renewal status of the commitment period for each radio unit in the order. Does not show details if the resource type is DEVICE_IDENTIFIER.</p>
-    pub fn commitment_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CommitmentConfiguration> {
+    pub fn commitment_configuration(&self) -> ::std::option::Option<&crate::types::CommitmentConfiguration> {
         self.commitment_configuration.as_ref()
     }
 }
@@ -39,14 +37,11 @@ impl OrderedResourceDefinition {
 
 /// A builder for [`OrderedResourceDefinition`](crate::types::OrderedResourceDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrderedResourceDefinitionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::NetworkResourceDefinitionType>,
     pub(crate) count: ::std::option::Option<i32>,
-    pub(crate) commitment_configuration:
-        ::std::option::Option<crate::types::CommitmentConfiguration>,
+    pub(crate) commitment_configuration: ::std::option::Option<crate::types::CommitmentConfiguration>,
 }
 impl OrderedResourceDefinitionBuilder {
     /// <p>The type of network resource in the order.</p>
@@ -55,10 +50,7 @@ impl OrderedResourceDefinitionBuilder {
         self
     }
     /// <p>The type of network resource in the order.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkResourceDefinitionType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NetworkResourceDefinitionType>) -> Self {
         self.r#type = input;
         self
     }
@@ -81,25 +73,17 @@ impl OrderedResourceDefinitionBuilder {
         &self.count
     }
     /// <p>The duration and renewal status of the commitment period for each radio unit in the order. Does not show details if the resource type is DEVICE_IDENTIFIER.</p>
-    pub fn commitment_configuration(
-        mut self,
-        input: crate::types::CommitmentConfiguration,
-    ) -> Self {
+    pub fn commitment_configuration(mut self, input: crate::types::CommitmentConfiguration) -> Self {
         self.commitment_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The duration and renewal status of the commitment period for each radio unit in the order. Does not show details if the resource type is DEVICE_IDENTIFIER.</p>
-    pub fn set_commitment_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CommitmentConfiguration>,
-    ) -> Self {
+    pub fn set_commitment_configuration(mut self, input: ::std::option::Option<crate::types::CommitmentConfiguration>) -> Self {
         self.commitment_configuration = input;
         self
     }
     /// <p>The duration and renewal status of the commitment period for each radio unit in the order. Does not show details if the resource type is DEVICE_IDENTIFIER.</p>
-    pub fn get_commitment_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CommitmentConfiguration> {
+    pub fn get_commitment_configuration(&self) -> &::std::option::Option<crate::types::CommitmentConfiguration> {
         &self.commitment_configuration
     }
     /// Consumes the builder and constructs a [`OrderedResourceDefinition`](crate::types::OrderedResourceDefinition).

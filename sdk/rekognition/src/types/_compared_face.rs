@@ -65,9 +65,7 @@ impl ComparedFace {
 
 /// A builder for [`ComparedFace`](crate::types::ComparedFace).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComparedFaceBuilder {
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     pub(crate) confidence: ::std::option::Option<f32>,
@@ -84,10 +82,7 @@ impl ComparedFaceBuilder {
         self
     }
     /// <p>Bounding box of the face.</p>
-    pub fn set_bounding_box(
-        mut self,
-        input: ::std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
+    pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
         self.bounding_box = input;
         self
     }
@@ -121,10 +116,7 @@ impl ComparedFaceBuilder {
         self
     }
     /// <p>An array of facial landmarks.</p>
-    pub fn set_landmarks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Landmark>>,
-    ) -> Self {
+    pub fn set_landmarks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Landmark>>) -> Self {
         self.landmarks = input;
         self
     }
@@ -172,10 +164,7 @@ impl ComparedFaceBuilder {
         self
     }
     /// <p> The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
-    pub fn set_emotions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Emotion>>,
-    ) -> Self {
+    pub fn set_emotions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Emotion>>) -> Self {
         self.emotions = input;
         self
     }

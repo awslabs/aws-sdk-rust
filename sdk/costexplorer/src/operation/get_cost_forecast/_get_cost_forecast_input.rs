@@ -118,9 +118,7 @@ impl GetCostForecastInput {
 
 /// A builder for [`GetCostForecastInput`](crate::operation::get_cost_forecast::GetCostForecastInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCostForecastInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) metric: ::std::option::Option<crate::types::Metric>,
@@ -135,10 +133,7 @@ impl GetCostForecastInputBuilder {
         self
     }
     /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.time_period = input;
         self
     }
@@ -192,10 +187,7 @@ impl GetCostForecastInputBuilder {
     }
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn set_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::Granularity>,
-    ) -> Self {
+    pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
         self.granularity = input;
         self
     }
@@ -310,10 +302,7 @@ impl GetCostForecastInputBuilder {
     /// Consumes the builder and constructs a [`GetCostForecastInput`](crate::operation::get_cost_forecast::GetCostForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cost_forecast::GetCostForecastInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_cost_forecast::GetCostForecastInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cost_forecast::GetCostForecastInput {
             time_period: self.time_period,
             metric: self.metric,

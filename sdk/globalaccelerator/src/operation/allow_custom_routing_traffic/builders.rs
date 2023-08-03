@@ -27,7 +27,7 @@ impl AllowCustomRoutingTrafficInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AllowCustomRoutingTrafficFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::allow_custom_routing_traffic::builders::AllowCustomRoutingTrafficInputBuilder,
+    inner: crate::operation::allow_custom_routing_traffic::builders::AllowCustomRoutingTrafficInputBuilder,
 }
 impl AllowCustomRoutingTrafficFluentBuilder {
     /// Creates a new `AllowCustomRoutingTraffic`.
@@ -38,7 +38,7 @@ impl AllowCustomRoutingTrafficFluentBuilder {
         }
     }
     /// Access the AllowCustomRoutingTraffic as a reference.
-    pub fn as_input(&self) -> &crate::operation::allow_custom_routing_traffic::builders::AllowCustomRoutingTrafficInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::allow_custom_routing_traffic::builders::AllowCustomRoutingTrafficInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl AllowCustomRoutingTrafficFluentBuilder {
             crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTraffic,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl AllowCustomRoutingTrafficFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl AllowCustomRoutingTrafficFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl AllowCustomRoutingTrafficFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl AllowCustomRoutingTrafficFluentBuilder {
             crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTraffic,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_group_arn(input);
         self
     }
@@ -161,27 +144,19 @@ impl AllowCustomRoutingTrafficFluentBuilder {
     ///
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
     /// <p> <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
-    pub fn destination_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_addresses(input.into());
         self
     }
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
     /// <p> <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
-    pub fn set_destination_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_destination_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_destination_addresses(input);
         self
     }
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
     /// <p> <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
-    pub fn get_destination_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destination_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_destination_addresses()
     }
     /// Appends an item to `DestinationPorts`.
@@ -194,10 +169,7 @@ impl AllowCustomRoutingTrafficFluentBuilder {
         self
     }
     /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
-    pub fn set_destination_ports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_destination_ports(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.inner = self.inner.set_destination_ports(input);
         self
     }

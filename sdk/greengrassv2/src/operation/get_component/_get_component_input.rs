@@ -29,9 +29,7 @@ impl GetComponentInput {
 
 /// A builder for [`GetComponentInput`](crate::operation::get_component::GetComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComponentInputBuilder {
     pub(crate) recipe_output_format: ::std::option::Option<crate::types::RecipeOutputFormat>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -43,17 +41,12 @@ impl GetComponentInputBuilder {
         self
     }
     /// <p>The format of the recipe.</p>
-    pub fn set_recipe_output_format(
-        mut self,
-        input: ::std::option::Option<crate::types::RecipeOutputFormat>,
-    ) -> Self {
+    pub fn set_recipe_output_format(mut self, input: ::std::option::Option<crate::types::RecipeOutputFormat>) -> Self {
         self.recipe_output_format = input;
         self
     }
     /// <p>The format of the recipe.</p>
-    pub fn get_recipe_output_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecipeOutputFormat> {
+    pub fn get_recipe_output_format(&self) -> &::std::option::Option<crate::types::RecipeOutputFormat> {
         &self.recipe_output_format
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
@@ -71,12 +64,7 @@ impl GetComponentInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetComponentInput`](crate::operation::get_component::GetComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_component::GetComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_component::GetComponentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_component::GetComponentInput {
             recipe_output_format: self.recipe_output_format,
             arn: self.arn,

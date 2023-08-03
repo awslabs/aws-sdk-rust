@@ -43,24 +43,20 @@ impl UpdateTableObjectsInput {
 }
 impl UpdateTableObjectsInput {
     /// Creates a new builder-style object to manufacture [`UpdateTableObjectsInput`](crate::operation::update_table_objects::UpdateTableObjectsInput).
-    pub fn builder(
-    ) -> crate::operation::update_table_objects::builders::UpdateTableObjectsInputBuilder {
+    pub fn builder() -> crate::operation::update_table_objects::builders::UpdateTableObjectsInputBuilder {
         crate::operation::update_table_objects::builders::UpdateTableObjectsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTableObjectsInput`](crate::operation::update_table_objects::UpdateTableObjectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTableObjectsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
-    pub(crate) write_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::WriteOperation>>,
+    pub(crate) write_operations: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperation>>,
 }
 impl UpdateTableObjectsInputBuilder {
     /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
@@ -78,18 +74,12 @@ impl UpdateTableObjectsInputBuilder {
         &self.catalog_id
     }
     /// <p>The database containing the governed table to update.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database containing the governed table to update.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -112,18 +102,12 @@ impl UpdateTableObjectsInputBuilder {
         &self.table_name
     }
     /// <p>The transaction at which to do the write.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction at which to do the write.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
@@ -143,34 +127,24 @@ impl UpdateTableObjectsInputBuilder {
         self
     }
     /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
-    pub fn set_write_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperation>>,
-    ) -> Self {
+    pub fn set_write_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperation>>) -> Self {
         self.write_operations = input;
         self
     }
     /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
-    pub fn get_write_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WriteOperation>> {
+    pub fn get_write_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WriteOperation>> {
         &self.write_operations
     }
     /// Consumes the builder and constructs a [`UpdateTableObjectsInput`](crate::operation::update_table_objects::UpdateTableObjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_table_objects::UpdateTableObjectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_table_objects::UpdateTableObjectsInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                transaction_id: self.transaction_id,
-                write_operations: self.write_operations,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_table_objects::UpdateTableObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_table_objects::UpdateTableObjectsInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            transaction_id: self.transaction_id,
+            write_operations: self.write_operations,
+        })
     }
 }

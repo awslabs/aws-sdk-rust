@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListOrganizationAdminAccountsOutput {
 }
 impl ListOrganizationAdminAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationAdminAccountsOutput`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput).
-    pub fn builder() -> crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsOutputBuilder{
+    pub fn builder() -> crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsOutputBuilder {
         crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOrganizationAdminAccountsOutput`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOrganizationAdminAccountsOutputBuilder {
     pub(crate) administrators: ::std::option::Option<::std::vec::Vec<crate::types::Administrator>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListOrganizationAdminAccountsOutputBuilder {
         self
     }
     /// <p>The list of Detective administrator accounts.</p>
-    pub fn set_administrators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Administrator>>,
-    ) -> Self {
+    pub fn set_administrators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Administrator>>) -> Self {
         self.administrators = input;
         self
     }
     /// <p>The list of Detective administrator accounts.</p>
-    pub fn get_administrators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Administrator>> {
+    pub fn get_administrators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Administrator>> {
         &self.administrators
     }
     /// <p>If there are more accounts remaining in the results, then this is the pagination token to use to request the next page of accounts.</p>
@@ -93,10 +86,7 @@ impl ListOrganizationAdminAccountsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListOrganizationAdminAccountsOutput`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput
-    {
+    pub fn build(self) -> crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput {
         crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput {
             administrators: self.administrators,
             next_token: self.next_token,

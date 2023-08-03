@@ -26,7 +26,7 @@ impl UpdateServiceTemplateVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceTemplateVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_service_template_version::builders::UpdateServiceTemplateVersionInputBuilder,
+    inner: crate::operation::update_service_template_version::builders::UpdateServiceTemplateVersionInputBuilder,
 }
 impl UpdateServiceTemplateVersionFluentBuilder {
     /// Creates a new `UpdateServiceTemplateVersion`.
@@ -37,7 +37,7 @@ impl UpdateServiceTemplateVersionFluentBuilder {
         }
     }
     /// Access the UpdateServiceTemplateVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_service_template_version::builders::UpdateServiceTemplateVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_service_template_version::builders::UpdateServiceTemplateVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateServiceTemplateVersionFluentBuilder {
             crate::operation::update_service_template_version::UpdateServiceTemplateVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_template_version::UpdateServiceTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_template_version::UpdateServiceTemplateVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateServiceTemplateVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateServiceTemplateVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_template_version::UpdateServiceTemplateVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_template_version::UpdateServiceTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_template_version::UpdateServiceTemplateVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateServiceTemplateVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_template_version::UpdateServiceTemplateVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_template_version::UpdateServiceTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_template_version::UpdateServiceTemplateVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateServiceTemplateVersionFluentBuilder {
             crate::operation::update_service_template_version::UpdateServiceTemplateVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_template_version::UpdateServiceTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_template_version::UpdateServiceTemplateVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the service template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl UpdateServiceTemplateVersionFluentBuilder {
         self.inner.get_template_name()
     }
     /// <p>To update a major version of a service template, include <code>major Version</code>.</p>
-    pub fn major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.major_version(input.into());
         self
     }
     /// <p>To update a major version of a service template, include <code>major Version</code>.</p>
-    pub fn set_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_major_version(input);
         self
     }
@@ -161,18 +138,12 @@ impl UpdateServiceTemplateVersionFluentBuilder {
         self.inner.get_major_version()
     }
     /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
-    pub fn minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.minor_version(input.into());
         self
     }
     /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
-    pub fn set_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_minor_version(input);
         self
     }
@@ -200,10 +171,7 @@ impl UpdateServiceTemplateVersionFluentBuilder {
         self
     }
     /// <p>The status of the service template minor version to update.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TemplateVersionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -216,28 +184,20 @@ impl UpdateServiceTemplateVersionFluentBuilder {
     /// To override the contents of this collection use [`set_compatible_environment_templates`](Self::set_compatible_environment_templates).
     ///
     /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    pub fn compatible_environment_templates(
-        mut self,
-        input: crate::types::CompatibleEnvironmentTemplateInput,
-    ) -> Self {
+    pub fn compatible_environment_templates(mut self, input: crate::types::CompatibleEnvironmentTemplateInput) -> Self {
         self.inner = self.inner.compatible_environment_templates(input);
         self
     }
     /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
     pub fn set_compatible_environment_templates(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
     ) -> Self {
         self.inner = self.inner.set_compatible_environment_templates(input);
         self
     }
     /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    pub fn get_compatible_environment_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>
-    {
+    pub fn get_compatible_environment_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>> {
         self.inner.get_compatible_environment_templates()
     }
     /// Appends an item to `supportedComponentSources`.
@@ -248,10 +208,7 @@ impl UpdateServiceTemplateVersionFluentBuilder {
     /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
     /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn supported_component_sources(
-        mut self,
-        input: crate::types::ServiceTemplateSupportedComponentSourceType,
-    ) -> Self {
+    pub fn supported_component_sources(mut self, input: crate::types::ServiceTemplateSupportedComponentSourceType) -> Self {
         self.inner = self.inner.supported_component_sources(input);
         self
     }
@@ -261,9 +218,7 @@ impl UpdateServiceTemplateVersionFluentBuilder {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn set_supported_component_sources(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>,
     ) -> Self {
         self.inner = self.inner.set_supported_component_sources(input);
         self
@@ -274,9 +229,7 @@ impl UpdateServiceTemplateVersionFluentBuilder {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn get_supported_component_sources(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>> {
         self.inner.get_supported_component_sources()
     }
 }

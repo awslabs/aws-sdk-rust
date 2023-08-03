@@ -28,8 +28,7 @@ impl UpdateContinuousBackupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateContinuousBackupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_continuous_backups::builders::UpdateContinuousBackupsInputBuilder,
+    inner: crate::operation::update_continuous_backups::builders::UpdateContinuousBackupsInputBuilder,
 }
 impl UpdateContinuousBackupsFluentBuilder {
     /// Creates a new `UpdateContinuousBackups`.
@@ -40,10 +39,7 @@ impl UpdateContinuousBackupsFluentBuilder {
         }
     }
     /// Access the UpdateContinuousBackups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_continuous_backups::builders::UpdateContinuousBackupsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_continuous_backups::builders::UpdateContinuousBackupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl UpdateContinuousBackupsFluentBuilder {
             crate::operation::update_continuous_backups::UpdateContinuousBackups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_continuous_backups::UpdateContinuousBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_continuous_backups::UpdateContinuousBackupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl UpdateContinuousBackupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl UpdateContinuousBackupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_continuous_backups::UpdateContinuousBackupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_continuous_backups::UpdateContinuousBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_continuous_backups::UpdateContinuousBackupsError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl UpdateContinuousBackupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_continuous_backups::UpdateContinuousBackupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_continuous_backups::UpdateContinuousBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_continuous_backups::UpdateContinuousBackupsError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl UpdateContinuousBackupsFluentBuilder {
             crate::operation::update_continuous_backups::UpdateContinuousBackups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_continuous_backups::UpdateContinuousBackupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_continuous_backups::UpdateContinuousBackupsError>,
     > {
         self.customize_middleware().await
     }
@@ -141,25 +126,17 @@ impl UpdateContinuousBackupsFluentBuilder {
         self.inner.get_table_name()
     }
     /// <p>Represents the settings used to enable point in time recovery.</p>
-    pub fn point_in_time_recovery_specification(
-        mut self,
-        input: crate::types::PointInTimeRecoverySpecification,
-    ) -> Self {
+    pub fn point_in_time_recovery_specification(mut self, input: crate::types::PointInTimeRecoverySpecification) -> Self {
         self.inner = self.inner.point_in_time_recovery_specification(input);
         self
     }
     /// <p>Represents the settings used to enable point in time recovery.</p>
-    pub fn set_point_in_time_recovery_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::PointInTimeRecoverySpecification>,
-    ) -> Self {
+    pub fn set_point_in_time_recovery_specification(mut self, input: ::std::option::Option<crate::types::PointInTimeRecoverySpecification>) -> Self {
         self.inner = self.inner.set_point_in_time_recovery_specification(input);
         self
     }
     /// <p>Represents the settings used to enable point in time recovery.</p>
-    pub fn get_point_in_time_recovery_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PointInTimeRecoverySpecification> {
+    pub fn get_point_in_time_recovery_specification(&self) -> &::std::option::Option<crate::types::PointInTimeRecoverySpecification> {
         self.inner.get_point_in_time_recovery_specification()
     }
 }

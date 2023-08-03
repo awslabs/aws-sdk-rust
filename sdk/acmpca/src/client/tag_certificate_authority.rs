@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::tag_certificate_authority::builders::TagCertificateAuthorityFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_certificate_authority::builders::TagCertificateAuthorityFluentBuilder::set_tags): <p>List of tags to be associated with the CA.</p>
     /// - On success, responds with [`TagCertificateAuthorityOutput`](crate::operation::tag_certificate_authority::TagCertificateAuthorityOutput)
     /// - On failure, responds with [`SdkError<TagCertificateAuthorityError>`](crate::operation::tag_certificate_authority::TagCertificateAuthorityError)
-    pub fn tag_certificate_authority(
-        &self,
-    ) -> crate::operation::tag_certificate_authority::builders::TagCertificateAuthorityFluentBuilder
-    {
+    pub fn tag_certificate_authority(&self) -> crate::operation::tag_certificate_authority::builders::TagCertificateAuthorityFluentBuilder {
         crate::operation::tag_certificate_authority::builders::TagCertificateAuthorityFluentBuilder::new(self.handle.clone())
     }
 }

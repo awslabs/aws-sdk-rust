@@ -100,15 +100,11 @@ impl TopicRuleDestinationSummary {
         self.status_reason.as_deref()
     }
     /// <p>Information about the HTTP URL.</p>
-    pub fn http_url_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HttpUrlDestinationSummary> {
+    pub fn http_url_summary(&self) -> ::std::option::Option<&crate::types::HttpUrlDestinationSummary> {
         self.http_url_summary.as_ref()
     }
     /// <p>Information about the virtual private cloud (VPC) connection.</p>
-    pub fn vpc_destination_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcDestinationSummary> {
+    pub fn vpc_destination_summary(&self) -> ::std::option::Option<&crate::types::VpcDestinationSummary> {
         self.vpc_destination_summary.as_ref()
     }
 }
@@ -121,9 +117,7 @@ impl TopicRuleDestinationSummary {
 
 /// A builder for [`TopicRuleDestinationSummary`](crate::types::TopicRuleDestinationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopicRuleDestinationSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TopicRuleDestinationStatus>,
@@ -206,10 +200,7 @@ impl TopicRuleDestinationSummaryBuilder {
     /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRuleDestinationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TopicRuleDestinationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -249,10 +240,7 @@ impl TopicRuleDestinationSummaryBuilder {
         self
     }
     /// <p>The date and time when the topic rule destination was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -266,10 +254,7 @@ impl TopicRuleDestinationSummaryBuilder {
         self
     }
     /// <p>The date and time when the topic rule destination was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -278,18 +263,12 @@ impl TopicRuleDestinationSummaryBuilder {
         &self.last_updated_at
     }
     /// <p>The reason the topic rule destination is in the current status.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason the topic rule destination is in the current status.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -303,17 +282,12 @@ impl TopicRuleDestinationSummaryBuilder {
         self
     }
     /// <p>Information about the HTTP URL.</p>
-    pub fn set_http_url_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpUrlDestinationSummary>,
-    ) -> Self {
+    pub fn set_http_url_summary(mut self, input: ::std::option::Option<crate::types::HttpUrlDestinationSummary>) -> Self {
         self.http_url_summary = input;
         self
     }
     /// <p>Information about the HTTP URL.</p>
-    pub fn get_http_url_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::HttpUrlDestinationSummary> {
+    pub fn get_http_url_summary(&self) -> &::std::option::Option<crate::types::HttpUrlDestinationSummary> {
         &self.http_url_summary
     }
     /// <p>Information about the virtual private cloud (VPC) connection.</p>
@@ -322,17 +296,12 @@ impl TopicRuleDestinationSummaryBuilder {
         self
     }
     /// <p>Information about the virtual private cloud (VPC) connection.</p>
-    pub fn set_vpc_destination_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcDestinationSummary>,
-    ) -> Self {
+    pub fn set_vpc_destination_summary(mut self, input: ::std::option::Option<crate::types::VpcDestinationSummary>) -> Self {
         self.vpc_destination_summary = input;
         self
     }
     /// <p>Information about the virtual private cloud (VPC) connection.</p>
-    pub fn get_vpc_destination_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcDestinationSummary> {
+    pub fn get_vpc_destination_summary(&self) -> &::std::option::Option<crate::types::VpcDestinationSummary> {
         &self.vpc_destination_summary
     }
     /// Consumes the builder and constructs a [`TopicRuleDestinationSummary`](crate::types::TopicRuleDestinationSummary).

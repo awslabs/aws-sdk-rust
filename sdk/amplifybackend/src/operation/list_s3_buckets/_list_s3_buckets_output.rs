@@ -35,9 +35,7 @@ impl ListS3BucketsOutput {
 
 /// A builder for [`ListS3BucketsOutput`](crate::operation::list_s3_buckets::ListS3BucketsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListS3BucketsOutputBuilder {
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListS3BucketsOutputBuilder {
         self
     }
     /// <p>The list of S3 buckets.</p>
-    pub fn set_buckets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketInfo>>,
-    ) -> Self {
+    pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketInfo>>) -> Self {
         self.buckets = input;
         self
     }
     /// <p>The list of S3 buckets.</p>
-    pub fn get_buckets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3BucketInfo>> {
+    pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3BucketInfo>> {
         &self.buckets
     }
     /// <p>Reserved for future use.</p>

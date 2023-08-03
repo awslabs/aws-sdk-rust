@@ -23,9 +23,7 @@ impl GroupIdentity {
 
 /// A builder for [`GroupIdentity`](crate::types::GroupIdentity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupIdentityBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

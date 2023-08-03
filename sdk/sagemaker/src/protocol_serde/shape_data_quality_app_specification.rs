@@ -25,14 +25,10 @@ pub fn ser_data_quality_app_specification(
         array_6.finish();
     }
     if let Some(var_8) = &input.record_preprocessor_source_uri {
-        object
-            .key("RecordPreprocessorSourceUri")
-            .string(var_8.as_str());
+        object.key("RecordPreprocessorSourceUri").string(var_8.as_str());
     }
     if let Some(var_9) = &input.post_analytics_processor_source_uri {
-        object
-            .key("PostAnalyticsProcessorSourceUri")
-            .string(var_9.as_str());
+        object.key("PostAnalyticsProcessorSourceUri").string(var_9.as_str());
     }
     if let Some(var_10) = &input.environment {
         #[allow(unused_mut)]
@@ -49,17 +45,9 @@ pub fn ser_data_quality_app_specification(
 
 pub(crate) fn de_data_quality_app_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::DataQualityAppSpecification>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::DataQualityAppSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -69,68 +57,56 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "ImageUri" => {
-                                builder = builder.set_image_uri(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ImageUri" => {
+                            builder = builder.set_image_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "ContainerEntrypoint" => {
-                                builder = builder.set_container_entrypoint(
-                                    crate::protocol_serde::shape_container_entrypoint::de_container_entrypoint(tokens)?
-                                );
-                            }
-                            "ContainerArguments" => {
-                                builder = builder.set_container_arguments(
-                                    crate::protocol_serde::shape_monitoring_container_arguments::de_monitoring_container_arguments(tokens)?
-                                );
-                            }
-                            "RecordPreprocessorSourceUri" => {
-                                builder = builder.set_record_preprocessor_source_uri(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "PostAnalyticsProcessorSourceUri" => {
-                                builder = builder.set_post_analytics_processor_source_uri(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "Environment" => {
-                                builder = builder.set_environment(
-                                    crate::protocol_serde::shape_monitoring_environment_map::de_monitoring_environment_map(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "ContainerEntrypoint" => {
+                            builder =
+                                builder.set_container_entrypoint(crate::protocol_serde::shape_container_entrypoint::de_container_entrypoint(tokens)?);
+                        }
+                        "ContainerArguments" => {
+                            builder = builder.set_container_arguments(
+                                crate::protocol_serde::shape_monitoring_container_arguments::de_monitoring_container_arguments(tokens)?,
+                            );
+                        }
+                        "RecordPreprocessorSourceUri" => {
+                            builder = builder.set_record_preprocessor_source_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "PostAnalyticsProcessorSourceUri" => {
+                            builder = builder.set_post_analytics_processor_source_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Environment" => {
+                            builder = builder.set_environment(
+                                crate::protocol_serde::shape_monitoring_environment_map::de_monitoring_environment_map(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

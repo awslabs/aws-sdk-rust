@@ -24,10 +24,7 @@ pub fn ser_bulk_email_entry(
     if let Some(var_7) = &input.replacement_email_content {
         #[allow(unused_mut)]
         let mut object_8 = object.key("ReplacementEmailContent").start_object();
-        crate::protocol_serde::shape_replacement_email_content::ser_replacement_email_content(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_replacement_email_content::ser_replacement_email_content(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())

@@ -27,8 +27,7 @@ impl UnlinkDeveloperIdentityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UnlinkDeveloperIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityInputBuilder,
+    inner: crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityInputBuilder,
 }
 impl UnlinkDeveloperIdentityFluentBuilder {
     /// Creates a new `UnlinkDeveloperIdentity`.
@@ -39,10 +38,7 @@ impl UnlinkDeveloperIdentityFluentBuilder {
         }
     }
     /// Access the UnlinkDeveloperIdentity as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl UnlinkDeveloperIdentityFluentBuilder {
             crate::operation::unlink_developer_identity::UnlinkDeveloperIdentity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl UnlinkDeveloperIdentityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl UnlinkDeveloperIdentityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl UnlinkDeveloperIdentityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl UnlinkDeveloperIdentityFluentBuilder {
             crate::operation::unlink_developer_identity::UnlinkDeveloperIdentity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityError>,
     > {
         self.customize_middleware().await
     }
@@ -140,18 +125,12 @@ impl UnlinkDeveloperIdentityFluentBuilder {
         self.inner.get_identity_id()
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }
@@ -160,18 +139,12 @@ impl UnlinkDeveloperIdentityFluentBuilder {
         self.inner.get_identity_pool_id()
     }
     /// <p>The "domain" by which Cognito will refer to your users.</p>
-    pub fn developer_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn developer_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.developer_provider_name(input.into());
         self
     }
     /// <p>The "domain" by which Cognito will refer to your users.</p>
-    pub fn set_developer_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_developer_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_developer_provider_name(input);
         self
     }
@@ -180,18 +153,12 @@ impl UnlinkDeveloperIdentityFluentBuilder {
         self.inner.get_developer_provider_name()
     }
     /// <p>A unique ID used by your backend authentication process to identify a user.</p>
-    pub fn developer_user_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn developer_user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.developer_user_identifier(input.into());
         self
     }
     /// <p>A unique ID used by your backend authentication process to identify a user.</p>
-    pub fn set_developer_user_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_developer_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_developer_user_identifier(input);
         self
     }

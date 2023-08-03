@@ -60,8 +60,7 @@ pub struct JobDescriptor {
     pub manifest_generator: ::std::option::Option<crate::types::JobManifestGenerator>,
     /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
     #[doc(hidden)]
-    pub generated_manifest_descriptor:
-        ::std::option::Option<crate::types::S3GeneratedManifestDescriptor>,
+    pub generated_manifest_descriptor: ::std::option::Option<crate::types::S3GeneratedManifestDescriptor>,
 }
 impl JobDescriptor {
     /// <p>The ID for the specified job.</p>
@@ -137,9 +136,7 @@ impl JobDescriptor {
         self.manifest_generator.as_ref()
     }
     /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
-    pub fn generated_manifest_descriptor(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3GeneratedManifestDescriptor> {
+    pub fn generated_manifest_descriptor(&self) -> ::std::option::Option<&crate::types::S3GeneratedManifestDescriptor> {
         self.generated_manifest_descriptor.as_ref()
     }
 }
@@ -152,9 +149,7 @@ impl JobDescriptor {
 
 /// A builder for [`JobDescriptor`](crate::types::JobDescriptor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobDescriptorBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) confirmation_required: ::std::option::Option<bool>,
@@ -174,8 +169,7 @@ pub struct JobDescriptorBuilder {
     pub(crate) suspended_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) suspended_cause: ::std::option::Option<::std::string::String>,
     pub(crate) manifest_generator: ::std::option::Option<crate::types::JobManifestGenerator>,
-    pub(crate) generated_manifest_descriptor:
-        ::std::option::Option<crate::types::S3GeneratedManifestDescriptor>,
+    pub(crate) generated_manifest_descriptor: ::std::option::Option<crate::types::S3GeneratedManifestDescriptor>,
 }
 impl JobDescriptorBuilder {
     /// <p>The ID for the specified job.</p>
@@ -268,10 +262,7 @@ impl JobDescriptorBuilder {
         self
     }
     /// <p>The operation that the specified job is configured to run on the objects listed in the manifest.</p>
-    pub fn set_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::JobOperation>,
-    ) -> Self {
+    pub fn set_operation(mut self, input: ::std::option::Option<crate::types::JobOperation>) -> Self {
         self.operation = input;
         self
     }
@@ -299,10 +290,7 @@ impl JobDescriptorBuilder {
         self
     }
     /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
-    pub fn set_progress_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::JobProgressSummary>,
-    ) -> Self {
+    pub fn set_progress_summary(mut self, input: ::std::option::Option<crate::types::JobProgressSummary>) -> Self {
         self.progress_summary = input;
         self
     }
@@ -311,18 +299,12 @@ impl JobDescriptorBuilder {
         &self.progress_summary
     }
     /// <p>The reason for updating the job.</p>
-    pub fn status_update_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_update_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_update_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for updating the job.</p>
-    pub fn set_status_update_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_update_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_update_reason = input;
         self
     }
@@ -342,17 +324,12 @@ impl JobDescriptorBuilder {
         self
     }
     /// <p>If the specified job failed, this field contains information describing the failure.</p>
-    pub fn set_failure_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobFailure>>,
-    ) -> Self {
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobFailure>>) -> Self {
         self.failure_reasons = input;
         self
     }
     /// <p>If the specified job failed, this field contains information describing the failure.</p>
-    pub fn get_failure_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFailure>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFailure>> {
         &self.failure_reasons
     }
     /// <p>Contains the configuration information for the job-completion report if you requested one in the <code>Create Job</code> request.</p>
@@ -375,10 +352,7 @@ impl JobDescriptorBuilder {
         self
     }
     /// <p>A timestamp indicating when this job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -392,10 +366,7 @@ impl JobDescriptorBuilder {
         self
     }
     /// <p>A timestamp indicating when this job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-    pub fn set_termination_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_termination_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.termination_date = input;
         self
     }
@@ -423,10 +394,7 @@ impl JobDescriptorBuilder {
         self
     }
     /// <p>The timestamp when this job was suspended, if it has been suspended.</p>
-    pub fn set_suspended_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_suspended_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.suspended_date = input;
         self
     }
@@ -435,18 +403,12 @@ impl JobDescriptorBuilder {
         &self.suspended_date
     }
     /// <p>The reason why the specified job was suspended. A job is only suspended if you create it through the Amazon S3 console. When you create the job, it enters the <code>Suspended</code> state to await confirmation before running. After you confirm the job, it automatically exits the <code>Suspended</code> state.</p>
-    pub fn suspended_cause(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suspended_cause(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suspended_cause = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason why the specified job was suspended. A job is only suspended if you create it through the Amazon S3 console. When you create the job, it enters the <code>Suspended</code> state to await confirmation before running. After you confirm the job, it automatically exits the <code>Suspended</code> state.</p>
-    pub fn set_suspended_cause(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suspended_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suspended_cause = input;
         self
     }
@@ -460,39 +422,26 @@ impl JobDescriptorBuilder {
         self
     }
     /// <p>The manifest generator that was used to generate a job manifest for this job.</p>
-    pub fn set_manifest_generator(
-        mut self,
-        input: ::std::option::Option<crate::types::JobManifestGenerator>,
-    ) -> Self {
+    pub fn set_manifest_generator(mut self, input: ::std::option::Option<crate::types::JobManifestGenerator>) -> Self {
         self.manifest_generator = input;
         self
     }
     /// <p>The manifest generator that was used to generate a job manifest for this job.</p>
-    pub fn get_manifest_generator(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobManifestGenerator> {
+    pub fn get_manifest_generator(&self) -> &::std::option::Option<crate::types::JobManifestGenerator> {
         &self.manifest_generator
     }
     /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
-    pub fn generated_manifest_descriptor(
-        mut self,
-        input: crate::types::S3GeneratedManifestDescriptor,
-    ) -> Self {
+    pub fn generated_manifest_descriptor(mut self, input: crate::types::S3GeneratedManifestDescriptor) -> Self {
         self.generated_manifest_descriptor = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
-    pub fn set_generated_manifest_descriptor(
-        mut self,
-        input: ::std::option::Option<crate::types::S3GeneratedManifestDescriptor>,
-    ) -> Self {
+    pub fn set_generated_manifest_descriptor(mut self, input: ::std::option::Option<crate::types::S3GeneratedManifestDescriptor>) -> Self {
         self.generated_manifest_descriptor = input;
         self
     }
     /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
-    pub fn get_generated_manifest_descriptor(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3GeneratedManifestDescriptor> {
+    pub fn get_generated_manifest_descriptor(&self) -> &::std::option::Option<crate::types::S3GeneratedManifestDescriptor> {
         &self.generated_manifest_descriptor
     }
     /// Consumes the builder and constructs a [`JobDescriptor`](crate::types::JobDescriptor).

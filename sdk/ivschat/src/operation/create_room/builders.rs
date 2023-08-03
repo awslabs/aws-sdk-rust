@@ -10,10 +10,7 @@ impl CreateRoomInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_room::CreateRoomOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_room::CreateRoomError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_room::CreateRoomError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_room();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateRoomFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_room::CreateRoom,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_room::CreateRoom, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_room::CreateRoomError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateRoomFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateRoomFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_room::CreateRoom,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_room::CreateRoom, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_room::CreateRoomError>,
     > {
         self.customize_middleware().await
@@ -132,10 +120,7 @@ impl CreateRoomFluentBuilder {
         self
     }
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
-    pub fn set_maximum_message_rate_per_second(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_message_rate_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_message_rate_per_second(input);
         self
     }
@@ -163,17 +148,12 @@ impl CreateRoomFluentBuilder {
         self
     }
     /// <p>Configuration information for optional review of messages.</p>
-    pub fn set_message_review_handler(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageReviewHandler>,
-    ) -> Self {
+    pub fn set_message_review_handler(mut self, input: ::std::option::Option<crate::types::MessageReviewHandler>) -> Self {
         self.inner = self.inner.set_message_review_handler(input);
         self
     }
     /// <p>Configuration information for optional review of messages.</p>
-    pub fn get_message_review_handler(
-        &self,
-    ) -> &::std::option::Option<crate::types::MessageReviewHandler> {
+    pub fn get_message_review_handler(&self) -> &::std::option::Option<crate::types::MessageReviewHandler> {
         self.inner.get_message_review_handler()
     }
     /// Adds a key-value pair to `tags`.
@@ -181,30 +161,17 @@ impl CreateRoomFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// Appends an item to `loggingConfigurationIdentifiers`.
@@ -212,25 +179,17 @@ impl CreateRoomFluentBuilder {
     /// To override the contents of this collection use [`set_logging_configuration_identifiers`](Self::set_logging_configuration_identifiers).
     ///
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn logging_configuration_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logging_configuration_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logging_configuration_identifiers(input.into());
         self
     }
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn set_logging_configuration_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_logging_configuration_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_logging_configuration_identifiers(input);
         self
     }
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn get_logging_configuration_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_logging_configuration_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_logging_configuration_identifiers()
     }
 }

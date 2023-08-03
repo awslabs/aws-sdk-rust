@@ -55,18 +55,14 @@ impl ListFindingsReportsInput {
 }
 impl ListFindingsReportsInput {
     /// Creates a new builder-style object to manufacture [`ListFindingsReportsInput`](crate::operation::list_findings_reports::ListFindingsReportsInput).
-    pub fn builder(
-    ) -> crate::operation::list_findings_reports::builders::ListFindingsReportsInputBuilder {
-        crate::operation::list_findings_reports::builders::ListFindingsReportsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_findings_reports::builders::ListFindingsReportsInputBuilder {
+        crate::operation::list_findings_reports::builders::ListFindingsReportsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFindingsReportsInput`](crate::operation::list_findings_reports::ListFindingsReportsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsReportsInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -77,18 +73,12 @@ pub struct ListFindingsReportsInputBuilder {
 }
 impl ListFindingsReportsInputBuilder {
     /// <p>The name of the profiling group from which to search for analysis data.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the profiling group from which to search for analysis data.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profiling_group_name = input;
         self
     }
@@ -102,10 +92,7 @@ impl ListFindingsReportsInputBuilder {
         self
     }
     /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -119,10 +106,7 @@ impl ListFindingsReportsInputBuilder {
         self
     }
     /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -181,19 +165,15 @@ impl ListFindingsReportsInputBuilder {
     /// Consumes the builder and constructs a [`ListFindingsReportsInput`](crate::operation::list_findings_reports::ListFindingsReportsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_findings_reports::ListFindingsReportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_findings_reports::ListFindingsReportsInput {
-                profiling_group_name: self.profiling_group_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                daily_reports_only: self.daily_reports_only,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_findings_reports::ListFindingsReportsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_findings_reports::ListFindingsReportsInput {
+            profiling_group_name: self.profiling_group_name,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            daily_reports_only: self.daily_reports_only,
+        })
     }
 }

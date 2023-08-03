@@ -69,19 +69,16 @@ impl DescribeNetworkInsightsPathsInput {
 }
 impl DescribeNetworkInsightsPathsInput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInsightsPathsInput`](crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsInput).
-    pub fn builder() -> crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsInputBuilder{
+    pub fn builder() -> crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsInputBuilder {
         crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkInsightsPathsInput`](crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInsightsPathsInputBuilder {
-    pub(crate) network_insights_path_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) network_insights_path_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -93,27 +90,19 @@ impl DescribeNetworkInsightsPathsInputBuilder {
     /// To override the contents of this collection use [`set_network_insights_path_ids`](Self::set_network_insights_path_ids).
     ///
     /// <p>The IDs of the paths.</p>
-    pub fn network_insights_path_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_path_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_insights_path_ids.unwrap_or_default();
         v.push(input.into());
         self.network_insights_path_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the paths.</p>
-    pub fn set_network_insights_path_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_insights_path_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_insights_path_ids = input;
         self
     }
     /// <p>The IDs of the paths.</p>
-    pub fn get_network_insights_path_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_insights_path_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_insights_path_ids
     }
     /// Appends an item to `filters`.
@@ -154,10 +143,7 @@ impl DescribeNetworkInsightsPathsInputBuilder {
     /// <li> <p>protocol - The protocol.</p> </li>
     /// <li> <p>source - The ID of the resource.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -227,14 +213,12 @@ impl DescribeNetworkInsightsPathsInputBuilder {
         crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsInput {
-                network_insights_path_ids: self.network_insights_path_ids,
-                filters: self.filters,
-                max_results: self.max_results,
-                dry_run: self.dry_run,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsInput {
+            network_insights_path_ids: self.network_insights_path_ids,
+            filters: self.filters,
+            max_results: self.max_results,
+            dry_run: self.dry_run,
+            next_token: self.next_token,
+        })
     }
 }

@@ -65,9 +65,7 @@ impl CoveredResource {
 
 /// A builder for [`CoveredResource`](crate::types::CoveredResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoveredResourceBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::CoverageResourceType>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -84,10 +82,7 @@ impl CoveredResourceBuilder {
         self
     }
     /// <p>The type of the covered resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::CoverageResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -143,10 +138,7 @@ impl CoveredResourceBuilder {
         self
     }
     /// <p>The status of the scan covering the resource.</p>
-    pub fn set_scan_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ScanStatus>,
-    ) -> Self {
+    pub fn set_scan_status(mut self, input: ::std::option::Option<crate::types::ScanStatus>) -> Self {
         self.scan_status = input;
         self
     }
@@ -160,17 +152,12 @@ impl CoveredResourceBuilder {
         self
     }
     /// <p>An object that contains details about the metadata.</p>
-    pub fn set_resource_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceScanMetadata>,
-    ) -> Self {
+    pub fn set_resource_metadata(mut self, input: ::std::option::Option<crate::types::ResourceScanMetadata>) -> Self {
         self.resource_metadata = input;
         self
     }
     /// <p>An object that contains details about the metadata.</p>
-    pub fn get_resource_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceScanMetadata> {
+    pub fn get_resource_metadata(&self) -> &::std::option::Option<crate::types::ResourceScanMetadata> {
         &self.resource_metadata
     }
     /// <p>The date and time the resource was last checked for vulnerabilities.</p>
@@ -179,10 +166,7 @@ impl CoveredResourceBuilder {
         self
     }
     /// <p>The date and time the resource was last checked for vulnerabilities.</p>
-    pub fn set_last_scanned_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_scanned_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_scanned_at = input;
         self
     }

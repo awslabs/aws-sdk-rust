@@ -30,9 +30,7 @@ impl WorkerConfigurationSummary {
         self.description.as_deref()
     }
     /// <p>The latest revision of a worker configuration.</p>
-    pub fn latest_revision(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkerConfigurationRevisionSummary> {
+    pub fn latest_revision(&self) -> ::std::option::Option<&crate::types::WorkerConfigurationRevisionSummary> {
         self.latest_revision.as_ref()
     }
     /// <p>The name of the worker configuration.</p>
@@ -53,14 +51,11 @@ impl WorkerConfigurationSummary {
 
 /// A builder for [`WorkerConfigurationSummary`](crate::types::WorkerConfigurationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkerConfigurationSummaryBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) latest_revision:
-        ::std::option::Option<crate::types::WorkerConfigurationRevisionSummary>,
+    pub(crate) latest_revision: ::std::option::Option<crate::types::WorkerConfigurationRevisionSummary>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) worker_configuration_arn: ::std::option::Option<::std::string::String>,
 }
@@ -71,10 +66,7 @@ impl WorkerConfigurationSummaryBuilder {
         self
     }
     /// <p>The time that a worker configuration was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -97,25 +89,17 @@ impl WorkerConfigurationSummaryBuilder {
         &self.description
     }
     /// <p>The latest revision of a worker configuration.</p>
-    pub fn latest_revision(
-        mut self,
-        input: crate::types::WorkerConfigurationRevisionSummary,
-    ) -> Self {
+    pub fn latest_revision(mut self, input: crate::types::WorkerConfigurationRevisionSummary) -> Self {
         self.latest_revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>The latest revision of a worker configuration.</p>
-    pub fn set_latest_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkerConfigurationRevisionSummary>,
-    ) -> Self {
+    pub fn set_latest_revision(mut self, input: ::std::option::Option<crate::types::WorkerConfigurationRevisionSummary>) -> Self {
         self.latest_revision = input;
         self
     }
     /// <p>The latest revision of a worker configuration.</p>
-    pub fn get_latest_revision(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkerConfigurationRevisionSummary> {
+    pub fn get_latest_revision(&self) -> &::std::option::Option<crate::types::WorkerConfigurationRevisionSummary> {
         &self.latest_revision
     }
     /// <p>The name of the worker configuration.</p>
@@ -133,18 +117,12 @@ impl WorkerConfigurationSummaryBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-    pub fn worker_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn worker_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-    pub fn set_worker_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_worker_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_configuration_arn = input;
         self
     }

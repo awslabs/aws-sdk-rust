@@ -10,10 +10,7 @@ impl RequestPhoneNumberInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::request_phone_number::RequestPhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_phone_number::RequestPhoneNumberError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_phone_number::RequestPhoneNumberError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.request_phone_number();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RequestPhoneNumberFluentBuilder {
         }
     }
     /// Access the RequestPhoneNumber as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RequestPhoneNumberFluentBuilder {
             crate::operation::request_phone_number::RequestPhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_phone_number::RequestPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_phone_number::RequestPhoneNumberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RequestPhoneNumberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RequestPhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::request_phone_number::RequestPhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_phone_number::RequestPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_phone_number::RequestPhoneNumberError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RequestPhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::request_phone_number::RequestPhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_phone_number::RequestPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_phone_number::RequestPhoneNumberError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl RequestPhoneNumberFluentBuilder {
             crate::operation::request_phone_number::RequestPhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_phone_number::RequestPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_phone_number::RequestPhoneNumberError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iso_country_code(input.into());
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn set_iso_country_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iso_country_code(input);
         self
     }
@@ -148,10 +126,7 @@ impl RequestPhoneNumberFluentBuilder {
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn set_message_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageType>,
-    ) -> Self {
+    pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.inner = self.inner.set_message_type(input);
         self
     }
@@ -169,17 +144,12 @@ impl RequestPhoneNumberFluentBuilder {
         self
     }
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
-    pub fn set_number_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
-    ) -> Self {
+    pub fn set_number_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>) -> Self {
         self.inner = self.inner.set_number_capabilities(input);
         self
     }
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
-    pub fn get_number_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
+    pub fn get_number_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
         self.inner.get_number_capabilities()
     }
     /// <p>The type of phone number to request.</p>
@@ -188,10 +158,7 @@ impl RequestPhoneNumberFluentBuilder {
         self
     }
     /// <p>The type of phone number to request.</p>
-    pub fn set_number_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestableNumberType>,
-    ) -> Self {
+    pub fn set_number_type(mut self, input: ::std::option::Option<crate::types::RequestableNumberType>) -> Self {
         self.inner = self.inner.set_number_type(input);
         self
     }
@@ -200,18 +167,12 @@ impl RequestPhoneNumberFluentBuilder {
         self.inner.get_number_type()
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opt_out_list_name(input.into());
         self
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
@@ -234,18 +195,12 @@ impl RequestPhoneNumberFluentBuilder {
         self.inner.get_pool_id()
     }
     /// <p>Use this field to attach your phone number for an external registration process.</p>
-    pub fn registration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registration_id(input.into());
         self
     }
     /// <p>Use this field to attach your phone number for an external registration process.</p>
-    pub fn set_registration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registration_id(input);
         self
     }
@@ -277,10 +232,7 @@ impl RequestPhoneNumberFluentBuilder {
         self
     }
     /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

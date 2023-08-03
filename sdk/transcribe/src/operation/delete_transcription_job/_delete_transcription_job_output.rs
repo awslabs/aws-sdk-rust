@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteTranscriptionJobOutput {
 }
 impl DeleteTranscriptionJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTranscriptionJobOutput`](crate::operation::delete_transcription_job::DeleteTranscriptionJobOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobOutputBuilder {
         crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTranscriptionJobOutput`](crate::operation::delete_transcription_job::DeleteTranscriptionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTranscriptionJobOutputBuilder {
     _request_id: Option<String>,
 }

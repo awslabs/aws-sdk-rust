@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`state(Option<DestinationState>)`](crate::operation::update_destination::UpdateDestinationOutput::state): State of the destination.
     ///   - [`additional_fixed_properties(Option<String>)`](crate::operation::update_destination::UpdateDestinationOutput::additional_fixed_properties): JSON document containing additional fixed properties regarding the destination
     /// - On failure, responds with [`SdkError<UpdateDestinationError>`](crate::operation::update_destination::UpdateDestinationError)
-    pub fn update_destination(
-        &self,
-    ) -> crate::operation::update_destination::builders::UpdateDestinationFluentBuilder {
-        crate::operation::update_destination::builders::UpdateDestinationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_destination(&self) -> crate::operation::update_destination::builders::UpdateDestinationFluentBuilder {
+        crate::operation::update_destination::builders::UpdateDestinationFluentBuilder::new(self.handle.clone())
     }
 }

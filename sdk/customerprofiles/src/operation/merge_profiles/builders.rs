@@ -10,10 +10,7 @@ impl MergeProfilesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::merge_profiles::MergeProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::merge_profiles::MergeProfilesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::merge_profiles::MergeProfilesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.merge_profiles();
         fluent_builder.inner = self;
@@ -53,9 +50,7 @@ impl MergeProfilesFluentBuilder {
         }
     }
     /// Access the MergeProfiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::merge_profiles::builders::MergeProfilesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::merge_profiles::builders::MergeProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -77,10 +72,7 @@ impl MergeProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -145,18 +137,12 @@ impl MergeProfilesFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>The identifier of the profile to be taken.</p>
-    pub fn main_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn main_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.main_profile_id(input.into());
         self
     }
     /// <p>The identifier of the profile to be taken.</p>
-    pub fn set_main_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_main_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_main_profile_id(input);
         self
     }
@@ -169,25 +155,17 @@ impl MergeProfilesFluentBuilder {
     /// To override the contents of this collection use [`set_profile_ids_to_be_merged`](Self::set_profile_ids_to_be_merged).
     ///
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
-    pub fn profile_ids_to_be_merged(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_ids_to_be_merged(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_ids_to_be_merged(input.into());
         self
     }
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
-    pub fn set_profile_ids_to_be_merged(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_profile_ids_to_be_merged(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_profile_ids_to_be_merged(input);
         self
     }
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
-    pub fn get_profile_ids_to_be_merged(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_profile_ids_to_be_merged(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_profile_ids_to_be_merged()
     }
     /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
@@ -196,17 +174,12 @@ impl MergeProfilesFluentBuilder {
         self
     }
     /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
-    pub fn set_field_source_profile_ids(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldSourceProfileIds>,
-    ) -> Self {
+    pub fn set_field_source_profile_ids(mut self, input: ::std::option::Option<crate::types::FieldSourceProfileIds>) -> Self {
         self.inner = self.inner.set_field_source_profile_ids(input);
         self
     }
     /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
-    pub fn get_field_source_profile_ids(
-        &self,
-    ) -> &::std::option::Option<crate::types::FieldSourceProfileIds> {
+    pub fn get_field_source_profile_ids(&self) -> &::std::option::Option<crate::types::FieldSourceProfileIds> {
         self.inner.get_field_source_profile_ids()
     }
 }

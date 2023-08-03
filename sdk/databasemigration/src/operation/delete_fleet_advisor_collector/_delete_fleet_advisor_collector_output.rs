@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteFleetAdvisorCollectorOutput {
 }
 impl DeleteFleetAdvisorCollectorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetAdvisorCollectorOutput`](crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorOutput).
-    pub fn builder() -> crate::operation::delete_fleet_advisor_collector::builders::DeleteFleetAdvisorCollectorOutputBuilder{
+    pub fn builder() -> crate::operation::delete_fleet_advisor_collector::builders::DeleteFleetAdvisorCollectorOutputBuilder {
         crate::operation::delete_fleet_advisor_collector::builders::DeleteFleetAdvisorCollectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFleetAdvisorCollectorOutput`](crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFleetAdvisorCollectorOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteFleetAdvisorCollectorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteFleetAdvisorCollectorOutput`](crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorOutput {
+    pub fn build(self) -> crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorOutput {
         crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorOutput {
             _request_id: self._request_id,
         }

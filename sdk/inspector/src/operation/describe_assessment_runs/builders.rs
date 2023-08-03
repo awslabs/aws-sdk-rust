@@ -37,10 +37,7 @@ impl DescribeAssessmentRunsFluentBuilder {
         }
     }
     /// Access the DescribeAssessmentRuns as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeAssessmentRunsFluentBuilder {
             crate::operation::describe_assessment_runs::DescribeAssessmentRuns,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_assessment_runs::DescribeAssessmentRunsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_assessment_runs::DescribeAssessmentRunsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeAssessmentRunsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeAssessmentRunsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_assessment_runs::DescribeAssessmentRunsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_assessment_runs::DescribeAssessmentRunsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeAssessmentRunsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_assessment_runs::DescribeAssessmentRunsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_assessment_runs::DescribeAssessmentRunsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeAssessmentRunsFluentBuilder {
             crate::operation::describe_assessment_runs::DescribeAssessmentRuns,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_assessment_runs::DescribeAssessmentRunsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_assessment_runs::DescribeAssessmentRunsError>,
     > {
         self.customize_middleware().await
     }
@@ -128,25 +114,17 @@ impl DescribeAssessmentRunsFluentBuilder {
     /// To override the contents of this collection use [`set_assessment_run_arns`](Self::set_assessment_run_arns).
     ///
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    pub fn assessment_run_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_run_arns(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    pub fn set_assessment_run_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_run_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_assessment_run_arns(input);
         self
     }
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    pub fn get_assessment_run_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_run_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_assessment_run_arns()
     }
 }

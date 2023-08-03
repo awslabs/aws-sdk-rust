@@ -65,9 +65,7 @@ impl MultipartUpload {
 
 /// A builder for [`MultipartUpload`](crate::types::MultipartUpload).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultipartUploadBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl MultipartUploadBuilder {
         self
     }
     /// <p>Date and time at which the multipart upload was initiated.</p>
-    pub fn set_initiated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_initiated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.initiated = input;
         self
     }
@@ -129,10 +124,7 @@ impl MultipartUploadBuilder {
         self
     }
     /// <p>The class of storage used to store the object.</p>
-    pub fn set_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageClass>,
-    ) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::StorageClass>) -> Self {
         self.storage_class = input;
         self
     }
@@ -174,17 +166,12 @@ impl MultipartUploadBuilder {
         self
     }
     /// <p>The algorithm that was used to create a checksum of the object.</p>
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::ChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
         self.checksum_algorithm = input;
         self
     }
     /// <p>The algorithm that was used to create a checksum of the object.</p>
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
         &self.checksum_algorithm
     }
     /// Consumes the builder and constructs a [`MultipartUpload`](crate::types::MultipartUpload).

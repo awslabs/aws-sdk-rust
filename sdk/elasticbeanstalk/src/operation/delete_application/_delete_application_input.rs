@@ -23,35 +23,26 @@ impl DeleteApplicationInput {
 }
 impl DeleteApplicationInput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
-    pub fn builder() -> crate::operation::delete_application::builders::DeleteApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_application::builders::DeleteApplicationInputBuilder {
         crate::operation::delete_application::builders::DeleteApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) terminate_env_by_force: ::std::option::Option<bool>,
 }
 impl DeleteApplicationInputBuilder {
     /// <p>The name of the application to delete.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application to delete.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -76,15 +67,10 @@ impl DeleteApplicationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_application::DeleteApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_application::DeleteApplicationInput {
-                application_name: self.application_name,
-                terminate_env_by_force: self.terminate_env_by_force,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_application::DeleteApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_application::DeleteApplicationInput {
+            application_name: self.application_name,
+            terminate_env_by_force: self.terminate_env_by_force,
+        })
     }
 }

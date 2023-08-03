@@ -15,33 +15,25 @@ impl GetCapacityAssignmentConfigurationInput {
 }
 impl GetCapacityAssignmentConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetCapacityAssignmentConfigurationInput`](crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationInput).
-    pub fn builder() -> crate::operation::get_capacity_assignment_configuration::builders::GetCapacityAssignmentConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_capacity_assignment_configuration::builders::GetCapacityAssignmentConfigurationInputBuilder {
         crate::operation::get_capacity_assignment_configuration::builders::GetCapacityAssignmentConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCapacityAssignmentConfigurationInput`](crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCapacityAssignmentConfigurationInputBuilder {
     pub(crate) capacity_reservation_name: ::std::option::Option<::std::string::String>,
 }
 impl GetCapacityAssignmentConfigurationInputBuilder {
     /// <p>The name of the capacity reservation to retrieve the capacity assignment configuration for.</p>
-    pub fn capacity_reservation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the capacity reservation to retrieve the capacity assignment configuration for.</p>
-    pub fn set_capacity_reservation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_name = input;
         self
     }
@@ -50,12 +42,16 @@ impl GetCapacityAssignmentConfigurationInputBuilder {
         &self.capacity_reservation_name
     }
     /// Consumes the builder and constructs a [`GetCapacityAssignmentConfigurationInput`](crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationInput {
-                capacity_reservation_name: self.capacity_reservation_name
-                ,
-            }
+                capacity_reservation_name: self.capacity_reservation_name,
+            },
         )
     }
 }

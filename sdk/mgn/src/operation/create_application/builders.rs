@@ -10,10 +10,7 @@ impl CreateApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_application::CreateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_application();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateApplicationFluentBuilder {
         }
     }
     /// Access the CreateApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_application::builders::CreateApplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_application::builders::CreateApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateApplicationFluentBuilder {
             crate::operation::create_application::CreateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_application::CreateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_application::CreateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateApplicationFluentBuilder {
             crate::operation::create_application::CreateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         self.customize_middleware().await
     }
@@ -155,30 +139,17 @@ impl CreateApplicationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Application tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Application tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Application tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>Account ID.</p>

@@ -51,16 +51,14 @@ impl ListConstraintsForPortfolioInput {
 }
 impl ListConstraintsForPortfolioInput {
     /// Creates a new builder-style object to manufacture [`ListConstraintsForPortfolioInput`](crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioInput).
-    pub fn builder() -> crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioInputBuilder{
+    pub fn builder() -> crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioInputBuilder {
         crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioInputBuilder::default()
     }
 }
 
 /// A builder for [`ListConstraintsForPortfolioInput`](crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConstraintsForPortfolioInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,
@@ -74,10 +72,7 @@ impl ListConstraintsForPortfolioInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -86,10 +81,7 @@ impl ListConstraintsForPortfolioInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -164,14 +156,12 @@ impl ListConstraintsForPortfolioInputBuilder {
         crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioInput {
-                accept_language: self.accept_language,
-                portfolio_id: self.portfolio_id,
-                product_id: self.product_id,
-                page_size: self.page_size,
-                page_token: self.page_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioInput {
+            accept_language: self.accept_language,
+            portfolio_id: self.portfolio_id,
+            product_id: self.product_id,
+            page_size: self.page_size,
+            page_token: self.page_token,
+        })
     }
 }

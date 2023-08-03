@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPendingInvitationResourcesOutput 
 }
 impl ListPendingInvitationResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListPendingInvitationResourcesOutput`](crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput).
-    pub fn builder() -> crate::operation::list_pending_invitation_resources::builders::ListPendingInvitationResourcesOutputBuilder{
+    pub fn builder() -> crate::operation::list_pending_invitation_resources::builders::ListPendingInvitationResourcesOutputBuilder {
         crate::operation::list_pending_invitation_resources::builders::ListPendingInvitationResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPendingInvitationResourcesOutput`](crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPendingInvitationResourcesOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListPendingInvitationResourcesOutputBuilder {
         self
     }
     /// <p>An array of objects that contain the information about the resources included the specified resource share.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.resources = input;
         self
     }
@@ -91,10 +86,7 @@ impl ListPendingInvitationResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPendingInvitationResourcesOutput`](crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput
-    {
+    pub fn build(self) -> crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput {
         crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput {
             resources: self.resources,
             next_token: self.next_token,

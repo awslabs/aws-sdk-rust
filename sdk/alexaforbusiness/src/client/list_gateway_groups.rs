@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_gateway_groups::ListGatewayGroupsOutput::next_token): <p>The token used to paginate though multiple pages of gateway group summaries.</p>
     /// - On failure, responds with [`SdkError<ListGatewayGroupsError>`](crate::operation::list_gateway_groups::ListGatewayGroupsError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn list_gateway_groups(
-        &self,
-    ) -> crate::operation::list_gateway_groups::builders::ListGatewayGroupsFluentBuilder {
-        crate::operation::list_gateway_groups::builders::ListGatewayGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_gateway_groups(&self) -> crate::operation::list_gateway_groups::builders::ListGatewayGroupsFluentBuilder {
+        crate::operation::list_gateway_groups::builders::ListGatewayGroupsFluentBuilder::new(self.handle.clone())
     }
 }

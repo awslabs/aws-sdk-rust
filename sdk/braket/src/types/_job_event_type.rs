@@ -47,13 +47,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum JobEventType {
     #[allow(missing_docs)] // documentation missing in model
@@ -95,9 +89,7 @@ impl ::std::convert::From<&str> for JobEventType {
             "STARTING_INSTANCE" => JobEventType::StartingInstance,
             "UPLOADING_RESULTS" => JobEventType::UploadingResults,
             "WAITING_FOR_PRIORITY" => JobEventType::WaitingForPriority,
-            other => {
-                JobEventType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => JobEventType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

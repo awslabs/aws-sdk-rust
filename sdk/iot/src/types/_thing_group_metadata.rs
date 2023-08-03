@@ -9,8 +9,7 @@ pub struct ThingGroupMetadata {
     pub parent_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The root parent thing group.</p>
     #[doc(hidden)]
-    pub root_to_parent_thing_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>,
+    pub root_to_parent_thing_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>,
     /// <p>The UNIX timestamp of when the thing group was created.</p>
     #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -21,9 +20,7 @@ impl ThingGroupMetadata {
         self.parent_group_name.as_deref()
     }
     /// <p>The root parent thing group.</p>
-    pub fn root_to_parent_thing_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GroupNameAndArn]> {
+    pub fn root_to_parent_thing_groups(&self) -> ::std::option::Option<&[crate::types::GroupNameAndArn]> {
         self.root_to_parent_thing_groups.as_deref()
     }
     /// <p>The UNIX timestamp of when the thing group was created.</p>
@@ -40,29 +37,20 @@ impl ThingGroupMetadata {
 
 /// A builder for [`ThingGroupMetadata`](crate::types::ThingGroupMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThingGroupMetadataBuilder {
     pub(crate) parent_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) root_to_parent_thing_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>,
+    pub(crate) root_to_parent_thing_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ThingGroupMetadataBuilder {
     /// <p>The parent thing group name.</p>
-    pub fn parent_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parent thing group name.</p>
-    pub fn set_parent_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_group_name = input;
         self
     }
@@ -82,17 +70,12 @@ impl ThingGroupMetadataBuilder {
         self
     }
     /// <p>The root parent thing group.</p>
-    pub fn set_root_to_parent_thing_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>,
-    ) -> Self {
+    pub fn set_root_to_parent_thing_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>) -> Self {
         self.root_to_parent_thing_groups = input;
         self
     }
     /// <p>The root parent thing group.</p>
-    pub fn get_root_to_parent_thing_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>> {
+    pub fn get_root_to_parent_thing_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>> {
         &self.root_to_parent_thing_groups
     }
     /// <p>The UNIX timestamp of when the thing group was created.</p>
@@ -101,10 +84,7 @@ impl ThingGroupMetadataBuilder {
         self
     }
     /// <p>The UNIX timestamp of when the thing group was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

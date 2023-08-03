@@ -8,8 +8,7 @@ pub struct AssociateS3ResourcesInput {
     pub member_account_id: ::std::option::Option<::std::string::String>,
     /// <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.</p>
     #[doc(hidden)]
-    pub s3_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>,
+    pub s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>,
 }
 impl AssociateS3ResourcesInput {
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>
@@ -23,36 +22,26 @@ impl AssociateS3ResourcesInput {
 }
 impl AssociateS3ResourcesInput {
     /// Creates a new builder-style object to manufacture [`AssociateS3ResourcesInput`](crate::operation::associate_s3_resources::AssociateS3ResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::associate_s3_resources::builders::AssociateS3ResourcesInputBuilder {
+    pub fn builder() -> crate::operation::associate_s3_resources::builders::AssociateS3ResourcesInputBuilder {
         crate::operation::associate_s3_resources::builders::AssociateS3ResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateS3ResourcesInput`](crate::operation::associate_s3_resources::AssociateS3ResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateS3ResourcesInputBuilder {
     pub(crate) member_account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) s3_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>,
+    pub(crate) s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>,
 }
 impl AssociateS3ResourcesInputBuilder {
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>
-    pub fn member_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>
-    pub fn set_member_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_account_id = input;
         self
     }
@@ -72,31 +61,22 @@ impl AssociateS3ResourcesInputBuilder {
         self
     }
     /// <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.</p>
-    pub fn set_s3_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>,
-    ) -> Self {
+    pub fn set_s3_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>) -> Self {
         self.s3_resources = input;
         self
     }
     /// <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.</p>
-    pub fn get_s3_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>> {
+    pub fn get_s3_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>> {
         &self.s3_resources
     }
     /// Consumes the builder and constructs a [`AssociateS3ResourcesInput`](crate::operation::associate_s3_resources::AssociateS3ResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_s3_resources::AssociateS3ResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_s3_resources::AssociateS3ResourcesInput {
-                member_account_id: self.member_account_id,
-                s3_resources: self.s3_resources,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_s3_resources::AssociateS3ResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_s3_resources::AssociateS3ResourcesInput {
+            member_account_id: self.member_account_id,
+            s3_resources: self.s3_resources,
+        })
     }
 }

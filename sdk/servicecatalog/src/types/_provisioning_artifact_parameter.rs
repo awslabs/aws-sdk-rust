@@ -45,9 +45,7 @@ impl ProvisioningArtifactParameter {
         self.description.as_deref()
     }
     /// <p>Constraints that the administrator has put on a parameter.</p>
-    pub fn parameter_constraints(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParameterConstraints> {
+    pub fn parameter_constraints(&self) -> ::std::option::Option<&crate::types::ParameterConstraints> {
         self.parameter_constraints.as_ref()
     }
 }
@@ -60,9 +58,7 @@ impl ProvisioningArtifactParameter {
 
 /// A builder for [`ProvisioningArtifactParameter`](crate::types::ProvisioningArtifactParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisioningArtifactParameterBuilder {
     pub(crate) parameter_key: ::std::option::Option<::std::string::String>,
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
@@ -73,18 +69,12 @@ pub struct ProvisioningArtifactParameterBuilder {
 }
 impl ProvisioningArtifactParameterBuilder {
     /// <p>The parameter key.</p>
-    pub fn parameter_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter key.</p>
-    pub fn set_parameter_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_key = input;
         self
     }
@@ -93,18 +83,12 @@ impl ProvisioningArtifactParameterBuilder {
         &self.parameter_key
     }
     /// <p>The default value.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }
@@ -113,18 +97,12 @@ impl ProvisioningArtifactParameterBuilder {
         &self.default_value
     }
     /// <p>The parameter type.</p>
-    pub fn parameter_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter type.</p>
-    pub fn set_parameter_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_type = input;
         self
     }
@@ -166,17 +144,12 @@ impl ProvisioningArtifactParameterBuilder {
         self
     }
     /// <p>Constraints that the administrator has put on a parameter.</p>
-    pub fn set_parameter_constraints(
-        mut self,
-        input: ::std::option::Option<crate::types::ParameterConstraints>,
-    ) -> Self {
+    pub fn set_parameter_constraints(mut self, input: ::std::option::Option<crate::types::ParameterConstraints>) -> Self {
         self.parameter_constraints = input;
         self
     }
     /// <p>Constraints that the administrator has put on a parameter.</p>
-    pub fn get_parameter_constraints(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParameterConstraints> {
+    pub fn get_parameter_constraints(&self) -> &::std::option::Option<crate::types::ParameterConstraints> {
         &self.parameter_constraints
     }
     /// Consumes the builder and constructs a [`ProvisioningArtifactParameter`](crate::types::ProvisioningArtifactParameter).

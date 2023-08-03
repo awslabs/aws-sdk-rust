@@ -15,17 +15,14 @@ impl DescribeStackSummaryInput {
 }
 impl DescribeStackSummaryInput {
     /// Creates a new builder-style object to manufacture [`DescribeStackSummaryInput`](crate::operation::describe_stack_summary::DescribeStackSummaryInput).
-    pub fn builder(
-    ) -> crate::operation::describe_stack_summary::builders::DescribeStackSummaryInputBuilder {
+    pub fn builder() -> crate::operation::describe_stack_summary::builders::DescribeStackSummaryInputBuilder {
         crate::operation::describe_stack_summary::builders::DescribeStackSummaryInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackSummaryInput`](crate::operation::describe_stack_summary::DescribeStackSummaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackSummaryInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,8 @@ impl DescribeStackSummaryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStackSummaryInput`](crate::operation::describe_stack_summary::DescribeStackSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stack_summary::DescribeStackSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_stack_summary::DescribeStackSummaryInput {
-                stack_id: self.stack_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_stack_summary::DescribeStackSummaryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_stack_summary::DescribeStackSummaryInput { stack_id: self.stack_id })
     }
 }

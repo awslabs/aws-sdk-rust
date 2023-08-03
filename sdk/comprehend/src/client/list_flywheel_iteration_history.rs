@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`flywheel_iteration_properties_list(Option<Vec<FlywheelIterationProperties>>)`](crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput::flywheel_iteration_properties_list): <p>List of flywheel iteration properties</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput::next_token): <p>Next token</p>
     /// - On failure, responds with [`SdkError<ListFlywheelIterationHistoryError>`](crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError)
-    pub fn list_flywheel_iteration_history(&self) -> crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryFluentBuilder{
+    pub fn list_flywheel_iteration_history(
+        &self,
+    ) -> crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryFluentBuilder {
         crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryFluentBuilder::new(self.handle.clone())
     }
 }

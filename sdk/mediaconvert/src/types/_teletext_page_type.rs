@@ -41,13 +41,7 @@
 /// A page type as defined in the standard ETSI EN 300 468, Table 94
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TeletextPageType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,15 +61,11 @@ impl ::std::convert::From<&str> for TeletextPageType {
     fn from(s: &str) -> Self {
         match s {
             "PAGE_TYPE_ADDL_INFO" => TeletextPageType::PageTypeAddlInfo,
-            "PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE" => {
-                TeletextPageType::PageTypeHearingImpairedSubtitle
-            }
+            "PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE" => TeletextPageType::PageTypeHearingImpairedSubtitle,
             "PAGE_TYPE_INITIAL" => TeletextPageType::PageTypeInitial,
             "PAGE_TYPE_PROGRAM_SCHEDULE" => TeletextPageType::PageTypeProgramSchedule,
             "PAGE_TYPE_SUBTITLE" => TeletextPageType::PageTypeSubtitle,
-            other => {
-                TeletextPageType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => TeletextPageType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -91,9 +81,7 @@ impl TeletextPageType {
     pub fn as_str(&self) -> &str {
         match self {
             TeletextPageType::PageTypeAddlInfo => "PAGE_TYPE_ADDL_INFO",
-            TeletextPageType::PageTypeHearingImpairedSubtitle => {
-                "PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE"
-            }
+            TeletextPageType::PageTypeHearingImpairedSubtitle => "PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE",
             TeletextPageType::PageTypeInitial => "PAGE_TYPE_INITIAL",
             TeletextPageType::PageTypeProgramSchedule => "PAGE_TYPE_PROGRAM_SCHEDULE",
             TeletextPageType::PageTypeSubtitle => "PAGE_TYPE_SUBTITLE",

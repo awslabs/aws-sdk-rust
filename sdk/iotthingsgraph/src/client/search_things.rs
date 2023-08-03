@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_things::SearchThingsOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     /// - On failure, responds with [`SdkError<SearchThingsError>`](crate::operation::search_things::SearchThingsError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn search_things(
-        &self,
-    ) -> crate::operation::search_things::builders::SearchThingsFluentBuilder {
-        crate::operation::search_things::builders::SearchThingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_things(&self) -> crate::operation::search_things::builders::SearchThingsFluentBuilder {
+        crate::operation::search_things::builders::SearchThingsFluentBuilder::new(self.handle.clone())
     }
 }

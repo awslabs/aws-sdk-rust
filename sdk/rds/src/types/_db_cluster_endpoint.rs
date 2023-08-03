@@ -93,14 +93,11 @@ impl DbClusterEndpoint {
 
 /// A builder for [`DbClusterEndpoint`](crate::types::DbClusterEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbClusterEndpointBuilder {
     pub(crate) db_cluster_endpoint_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) db_cluster_endpoint_resource_identifier:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) db_cluster_endpoint_resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_type: ::std::option::Option<::std::string::String>,
@@ -111,40 +108,26 @@ pub struct DbClusterEndpointBuilder {
 }
 impl DbClusterEndpointBuilder {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_endpoint_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_endpoint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_endpoint_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_endpoint_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_endpoint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_endpoint_identifier = input;
         self
     }
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn get_db_cluster_endpoint_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_endpoint_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_endpoint_identifier
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -153,25 +136,17 @@ impl DbClusterEndpointBuilder {
         &self.db_cluster_identifier
     }
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
-    pub fn db_cluster_endpoint_resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_endpoint_resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_endpoint_resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
-    pub fn set_db_cluster_endpoint_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_endpoint_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_endpoint_resource_identifier = input;
         self
     }
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
-    pub fn get_db_cluster_endpoint_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_endpoint_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_endpoint_resource_identifier
     }
     /// <p>The DNS address of the endpoint.</p>
@@ -203,18 +178,12 @@ impl DbClusterEndpointBuilder {
         &self.status
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
-    pub fn endpoint_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
-    pub fn set_endpoint_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_type = input;
         self
     }
@@ -223,18 +192,12 @@ impl DbClusterEndpointBuilder {
         &self.endpoint_type
     }
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-    pub fn custom_endpoint_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_endpoint_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_endpoint_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-    pub fn set_custom_endpoint_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_endpoint_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_endpoint_type = input;
         self
     }
@@ -247,27 +210,19 @@ impl DbClusterEndpointBuilder {
     /// To override the contents of this collection use [`set_static_members`](Self::set_static_members).
     ///
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn static_members(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn static_members(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.static_members.unwrap_or_default();
         v.push(input.into());
         self.static_members = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn set_static_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_static_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.static_members = input;
         self
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn get_static_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_static_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.static_members
     }
     /// Appends an item to `excluded_members`.
@@ -275,42 +230,28 @@ impl DbClusterEndpointBuilder {
     /// To override the contents of this collection use [`set_excluded_members`](Self::set_excluded_members).
     ///
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn excluded_members(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn excluded_members(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.excluded_members.unwrap_or_default();
         v.push(input.into());
         self.excluded_members = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn set_excluded_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_excluded_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.excluded_members = input;
         self
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn get_excluded_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.excluded_members
     }
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
-    pub fn db_cluster_endpoint_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
-    pub fn set_db_cluster_endpoint_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_endpoint_arn = input;
         self
     }

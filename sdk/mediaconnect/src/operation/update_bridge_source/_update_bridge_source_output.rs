@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateBridgeSourceOutput {
 }
 impl UpdateBridgeSourceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBridgeSourceOutput`](crate::operation::update_bridge_source::UpdateBridgeSourceOutput).
-    pub fn builder(
-    ) -> crate::operation::update_bridge_source::builders::UpdateBridgeSourceOutputBuilder {
+    pub fn builder() -> crate::operation::update_bridge_source::builders::UpdateBridgeSourceOutputBuilder {
         crate::operation::update_bridge_source::builders::UpdateBridgeSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBridgeSourceOutput`](crate::operation::update_bridge_source::UpdateBridgeSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBridgeSourceOutputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::BridgeSource>,

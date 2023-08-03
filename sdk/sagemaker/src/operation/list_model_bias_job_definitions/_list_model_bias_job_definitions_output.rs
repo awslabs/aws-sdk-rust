@@ -5,8 +5,7 @@
 pub struct ListModelBiasJobDefinitionsOutput {
     /// <p>A JSON array in which each element is a summary for a model bias jobs.</p>
     #[doc(hidden)]
-    pub job_definition_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>>,
+    pub job_definition_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>>,
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListModelBiasJobDefinitionsOutput {
 }
 impl ListModelBiasJobDefinitionsOutput {
     /// <p>A JSON array in which each element is a summary for a model bias jobs.</p>
-    pub fn job_definition_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MonitoringJobDefinitionSummary]> {
+    pub fn job_definition_summaries(&self) -> ::std::option::Option<&[crate::types::MonitoringJobDefinitionSummary]> {
         self.job_definition_summaries.as_deref()
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListModelBiasJobDefinitionsOutput {
 }
 impl ListModelBiasJobDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListModelBiasJobDefinitionsOutput`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput).
-    pub fn builder() -> crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsOutputBuilder {
         crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelBiasJobDefinitionsOutput`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelBiasJobDefinitionsOutputBuilder {
-    pub(crate) job_definition_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>>,
+    pub(crate) job_definition_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListModelBiasJobDefinitionsOutputBuilder {
     /// To override the contents of this collection use [`set_job_definition_summaries`](Self::set_job_definition_summaries).
     ///
     /// <p>A JSON array in which each element is a summary for a model bias jobs.</p>
-    pub fn job_definition_summaries(
-        mut self,
-        input: crate::types::MonitoringJobDefinitionSummary,
-    ) -> Self {
+    pub fn job_definition_summaries(mut self, input: crate::types::MonitoringJobDefinitionSummary) -> Self {
         let mut v = self.job_definition_summaries.unwrap_or_default();
         v.push(input);
         self.job_definition_summaries = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListModelBiasJobDefinitionsOutputBuilder {
         self
     }
     /// <p>A JSON array in which each element is a summary for a model bias jobs.</p>
-    pub fn get_job_definition_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>> {
+    pub fn get_job_definition_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>> {
         &self.job_definition_summaries
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
@@ -100,9 +89,7 @@ impl ListModelBiasJobDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListModelBiasJobDefinitionsOutput`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput {
+    pub fn build(self) -> crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput {
         crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput {
             job_definition_summaries: self.job_definition_summaries,
             next_token: self.next_token,

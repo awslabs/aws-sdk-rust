@@ -35,9 +35,7 @@ impl ListPredictorsOutput {
 
 /// A builder for [`ListPredictorsOutput`](crate::operation::list_predictors::ListPredictorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPredictorsOutputBuilder {
     pub(crate) predictors: ::std::option::Option<::std::vec::Vec<crate::types::PredictorSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListPredictorsOutputBuilder {
         self
     }
     /// <p>An array of objects that summarize each predictor's properties.</p>
-    pub fn set_predictors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PredictorSummary>>,
-    ) -> Self {
+    pub fn set_predictors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PredictorSummary>>) -> Self {
         self.predictors = input;
         self
     }
     /// <p>An array of objects that summarize each predictor's properties.</p>
-    pub fn get_predictors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictorSummary>> {
+    pub fn get_predictors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictorSummary>> {
         &self.predictors
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>

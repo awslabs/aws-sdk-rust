@@ -15,16 +15,14 @@ impl DeleteAppValidationConfigurationInput {
 }
 impl DeleteAppValidationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppValidationConfigurationInput`](crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput).
-    pub fn builder() -> crate::operation::delete_app_validation_configuration::builders::DeleteAppValidationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_app_validation_configuration::builders::DeleteAppValidationConfigurationInputBuilder {
         crate::operation::delete_app_validation_configuration::builders::DeleteAppValidationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppValidationConfigurationInput`](crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppValidationConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl DeleteAppValidationConfigurationInputBuilder {
         &self.app_id
     }
     /// Consumes the builder and constructs a [`DeleteAppValidationConfigurationInput`](crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput {
-                app_id: self.app_id
-                ,
-            }
+            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput { app_id: self.app_id },
         )
     }
 }

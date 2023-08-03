@@ -28,9 +28,7 @@ impl UpdateFlowOutput {
 
 /// A builder for [`UpdateFlowOutput`](crate::operation::update_flow::UpdateFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFlowOutputBuilder {
     pub(crate) flow: ::std::option::Option<crate::types::Flow>,
     _request_id: Option<String>,

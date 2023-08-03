@@ -23,9 +23,7 @@ impl ChannelMembershipSummary {
 
 /// A builder for [`ChannelMembershipSummary`](crate::types::ChannelMembershipSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelMembershipSummaryBuilder {
     pub(crate) member: ::std::option::Option<crate::types::Identity>,
 }
@@ -46,8 +44,6 @@ impl ChannelMembershipSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`ChannelMembershipSummary`](crate::types::ChannelMembershipSummary).
     pub fn build(self) -> crate::types::ChannelMembershipSummary {
-        crate::types::ChannelMembershipSummary {
-            member: self.member,
-        }
+        crate::types::ChannelMembershipSummary { member: self.member }
     }
 }

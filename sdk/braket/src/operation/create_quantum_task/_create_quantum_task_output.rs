@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateQuantumTaskOutput {
 }
 impl CreateQuantumTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateQuantumTaskOutput`](crate::operation::create_quantum_task::CreateQuantumTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::create_quantum_task::builders::CreateQuantumTaskOutputBuilder {
+    pub fn builder() -> crate::operation::create_quantum_task::builders::CreateQuantumTaskOutputBuilder {
         crate::operation::create_quantum_task::builders::CreateQuantumTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateQuantumTaskOutput`](crate::operation::create_quantum_task::CreateQuantumTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateQuantumTaskOutputBuilder {
     pub(crate) quantum_task_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateQuantumTaskOutputBuilder {
     /// <p>The ARN of the task created by the request.</p>
-    pub fn quantum_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the task created by the request.</p>
-    pub fn set_quantum_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quantum_task_arn = input;
         self
     }

@@ -106,9 +106,7 @@ impl Thumbnails {
 
 /// A builder for [`Thumbnails`](crate::types::Thumbnails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThumbnailsBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) interval: ::std::option::Option<::std::string::String>,
@@ -240,10 +238,7 @@ impl ThumbnailsBuilder {
     /// <li> <p> <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.</p> </li>
     /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.</p> </li>
     /// </ul>
-    pub fn sizing_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sizing_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sizing_policy = ::std::option::Option::Some(input.into());
         self
     }
@@ -256,10 +251,7 @@ impl ThumbnailsBuilder {
     /// <li> <p> <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.</p> </li>
     /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.</p> </li>
     /// </ul>
-    pub fn set_sizing_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sizing_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sizing_policy = input;
         self
     }
@@ -276,18 +268,12 @@ impl ThumbnailsBuilder {
         &self.sizing_policy
     }
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.</p>
-    pub fn padding_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn padding_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.padding_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.</p>
-    pub fn set_padding_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_padding_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.padding_policy = input;
         self
     }

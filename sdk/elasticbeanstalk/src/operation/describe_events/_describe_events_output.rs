@@ -36,9 +36,7 @@ impl DescribeEventsOutput {
 
 /// A builder for [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventsOutputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::EventDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl DescribeEventsOutputBuilder {
         self
     }
     /// <p> A list of <code>EventDescription</code>. </p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventDescription>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventDescription>>) -> Self {
         self.events = input;
         self
     }
     /// <p> A list of <code>EventDescription</code>. </p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDescription>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDescription>> {
         &self.events
     }
     /// <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>

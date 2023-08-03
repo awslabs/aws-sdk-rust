@@ -5,16 +5,16 @@ pub use crate::operation::detach_verified_access_trust_provider::_detach_verifie
 
 impl DetachVerifiedAccessTrustProviderInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.detach_verified_access_trust_provider();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DetachVerifiedAccessTrustProviderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetachVerifiedAccessTrustProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::detach_verified_access_trust_provider::builders::DetachVerifiedAccessTrustProviderInputBuilder,
+    inner: crate::operation::detach_verified_access_trust_provider::builders::DetachVerifiedAccessTrustProviderInputBuilder,
 }
 impl DetachVerifiedAccessTrustProviderFluentBuilder {
     /// Creates a new `DetachVerifiedAccessTrustProvider`.
@@ -37,15 +37,20 @@ impl DetachVerifiedAccessTrustProviderFluentBuilder {
         }
     }
     /// Access the DetachVerifiedAccessTrustProvider as a reference.
-    pub fn as_input(&self) -> &crate::operation::detach_verified_access_trust_provider::builders::DetachVerifiedAccessTrustProviderInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::detach_verified_access_trust_provider::builders::DetachVerifiedAccessTrustProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProvider, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProvider,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DetachVerifiedAccessTrustProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderOutput, ::aws_smithy_http::result::SdkError<crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl DetachVerifiedAccessTrustProviderFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderOutput, ::aws_smithy_http::result::SdkError<crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProvider, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProvider,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn verified_access_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.verified_access_instance_id(input.into());
         self
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_verified_access_instance_id(input);
         self
     }
@@ -115,25 +124,17 @@ impl DetachVerifiedAccessTrustProviderFluentBuilder {
         self.inner.get_verified_access_instance_id()
     }
     /// <p>The ID of the Verified Access trust provider.</p>
-    pub fn verified_access_trust_provider_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_trust_provider_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.verified_access_trust_provider_id(input.into());
         self
     }
     /// <p>The ID of the Verified Access trust provider.</p>
-    pub fn set_verified_access_trust_provider_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_trust_provider_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_verified_access_trust_provider_id(input);
         self
     }
     /// <p>The ID of the Verified Access trust provider.</p>
-    pub fn get_verified_access_trust_provider_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_verified_access_trust_provider_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_verified_access_trust_provider_id()
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>

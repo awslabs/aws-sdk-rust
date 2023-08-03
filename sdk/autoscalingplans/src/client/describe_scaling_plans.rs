@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`scaling_plans(Option<Vec<ScalingPlan>>)`](crate::operation::describe_scaling_plans::DescribeScalingPlansOutput::scaling_plans): <p>Information about the scaling plans.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_scaling_plans::DescribeScalingPlansOutput::next_token): <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeScalingPlansError>`](crate::operation::describe_scaling_plans::DescribeScalingPlansError)
-    pub fn describe_scaling_plans(
-        &self,
-    ) -> crate::operation::describe_scaling_plans::builders::DescribeScalingPlansFluentBuilder {
-        crate::operation::describe_scaling_plans::builders::DescribeScalingPlansFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_scaling_plans(&self) -> crate::operation::describe_scaling_plans::builders::DescribeScalingPlansFluentBuilder {
+        crate::operation::describe_scaling_plans::builders::DescribeScalingPlansFluentBuilder::new(self.handle.clone())
     }
 }

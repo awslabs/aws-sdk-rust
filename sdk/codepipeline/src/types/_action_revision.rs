@@ -37,9 +37,7 @@ impl ActionRevision {
 
 /// A builder for [`ActionRevision`](crate::types::ActionRevision).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionRevisionBuilder {
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_change_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl ActionRevisionBuilder {
         &self.revision_id
     }
     /// <p>The unique identifier of the change that set the state to this revision (for example, a deployment ID or timestamp).</p>
-    pub fn revision_change_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn revision_change_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_change_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the change that set the state to this revision (for example, a deployment ID or timestamp).</p>
-    pub fn set_revision_change_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_revision_change_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_change_id = input;
         self
     }
@@ -86,10 +78,7 @@ impl ActionRevisionBuilder {
         self
     }
     /// <p>The date and time when the most recent version of the action was created, in timestamp format.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }

@@ -51,13 +51,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DynatraceConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
@@ -111,9 +105,7 @@ impl ::std::convert::From<&str> for DynatraceConnectorOperator {
             "VALIDATE_NON_NULL" => DynatraceConnectorOperator::ValidateNonNull,
             "VALIDATE_NON_ZERO" => DynatraceConnectorOperator::ValidateNonZero,
             "VALIDATE_NUMERIC" => DynatraceConnectorOperator::ValidateNumeric,
-            other => DynatraceConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DynatraceConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

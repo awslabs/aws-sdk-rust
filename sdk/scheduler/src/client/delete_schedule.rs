@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder::set_client_token): <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
     /// - On success, responds with [`DeleteScheduleOutput`](crate::operation::delete_schedule::DeleteScheduleOutput)
     /// - On failure, responds with [`SdkError<DeleteScheduleError>`](crate::operation::delete_schedule::DeleteScheduleError)
-    pub fn delete_schedule(
-        &self,
-    ) -> crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder {
-        crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_schedule(&self) -> crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder {
+        crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,18 +29,14 @@ impl UpdateNetworkSitePlanInput {
 }
 impl UpdateNetworkSitePlanInput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkSitePlanInput`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput).
-    pub fn builder(
-    ) -> crate::operation::update_network_site_plan::builders::UpdateNetworkSitePlanInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_network_site_plan::builders::UpdateNetworkSitePlanInputBuilder {
         crate::operation::update_network_site_plan::builders::UpdateNetworkSitePlanInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNetworkSitePlanInput`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNetworkSitePlanInputBuilder {
     pub(crate) network_site_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pending_plan: ::std::option::Option<crate::types::SitePlan>,
@@ -48,18 +44,12 @@ pub struct UpdateNetworkSitePlanInputBuilder {
 }
 impl UpdateNetworkSitePlanInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn set_network_site_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_site_arn = input;
         self
     }
@@ -73,10 +63,7 @@ impl UpdateNetworkSitePlanInputBuilder {
         self
     }
     /// <p>The pending plan.</p>
-    pub fn set_pending_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::SitePlan>,
-    ) -> Self {
+    pub fn set_pending_plan(mut self, input: ::std::option::Option<crate::types::SitePlan>) -> Self {
         self.pending_plan = input;
         self
     }
@@ -101,16 +88,12 @@ impl UpdateNetworkSitePlanInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNetworkSitePlanInput`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput {
-                network_site_arn: self.network_site_arn,
-                pending_plan: self.pending_plan,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput {
+            network_site_arn: self.network_site_arn,
+            pending_plan: self.pending_plan,
+            client_token: self.client_token,
+        })
     }
 }

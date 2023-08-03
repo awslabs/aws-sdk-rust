@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for GetOriginEndpointPolicyOutput {
 }
 impl GetOriginEndpointPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetOriginEndpointPolicyOutput`](crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_origin_endpoint_policy::builders::GetOriginEndpointPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_origin_endpoint_policy::builders::GetOriginEndpointPolicyOutputBuilder {
         crate::operation::get_origin_endpoint_policy::builders::GetOriginEndpointPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetOriginEndpointPolicyOutput`](crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOriginEndpointPolicyOutputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
@@ -63,18 +59,12 @@ pub struct GetOriginEndpointPolicyOutputBuilder {
 }
 impl GetOriginEndpointPolicyOutputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_group_name = input;
         self
     }
@@ -97,18 +87,12 @@ impl GetOriginEndpointPolicyOutputBuilder {
         &self.channel_name
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
-    pub fn origin_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
-    pub fn set_origin_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_endpoint_name = input;
         self
     }
@@ -140,9 +124,7 @@ impl GetOriginEndpointPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetOriginEndpointPolicyOutput`](crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyOutput {
+    pub fn build(self) -> crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyOutput {
         crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyOutput {
             channel_group_name: self.channel_group_name,
             channel_name: self.channel_name,

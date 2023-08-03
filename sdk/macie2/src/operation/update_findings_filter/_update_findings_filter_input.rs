@@ -61,17 +61,14 @@ impl UpdateFindingsFilterInput {
 }
 impl UpdateFindingsFilterInput {
     /// Creates a new builder-style object to manufacture [`UpdateFindingsFilterInput`](crate::operation::update_findings_filter::UpdateFindingsFilterInput).
-    pub fn builder(
-    ) -> crate::operation::update_findings_filter::builders::UpdateFindingsFilterInputBuilder {
+    pub fn builder() -> crate::operation::update_findings_filter::builders::UpdateFindingsFilterInputBuilder {
         crate::operation::update_findings_filter::builders::UpdateFindingsFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFindingsFilterInput`](crate::operation::update_findings_filter::UpdateFindingsFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFindingsFilterInputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::FindingsFilterAction>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -88,10 +85,7 @@ impl UpdateFindingsFilterInputBuilder {
         self
     }
     /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingsFilterAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::FindingsFilterAction>) -> Self {
         self.action = input;
         self
     }
@@ -136,10 +130,7 @@ impl UpdateFindingsFilterInputBuilder {
         self
     }
     /// <p>The criteria to use to filter findings.</p>
-    pub fn set_finding_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
+    pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
         self.finding_criteria = input;
         self
     }
@@ -195,20 +186,16 @@ impl UpdateFindingsFilterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFindingsFilterInput`](crate::operation::update_findings_filter::UpdateFindingsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_findings_filter::UpdateFindingsFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_findings_filter::UpdateFindingsFilterInput {
-                action: self.action,
-                client_token: self.client_token,
-                description: self.description,
-                finding_criteria: self.finding_criteria,
-                id: self.id,
-                name: self.name,
-                position: self.position,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_findings_filter::UpdateFindingsFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_findings_filter::UpdateFindingsFilterInput {
+            action: self.action,
+            client_token: self.client_token,
+            description: self.description,
+            finding_criteria: self.finding_criteria,
+            id: self.id,
+            name: self.name,
+            position: self.position,
+        })
     }
 }

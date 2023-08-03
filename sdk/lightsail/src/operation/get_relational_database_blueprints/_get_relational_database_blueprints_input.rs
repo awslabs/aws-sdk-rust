@@ -17,16 +17,14 @@ impl GetRelationalDatabaseBlueprintsInput {
 }
 impl GetRelationalDatabaseBlueprintsInput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseBlueprintsInput`](crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsInput).
-    pub fn builder() -> crate::operation::get_relational_database_blueprints::builders::GetRelationalDatabaseBlueprintsInputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_blueprints::builders::GetRelationalDatabaseBlueprintsInputBuilder {
         crate::operation::get_relational_database_blueprints::builders::GetRelationalDatabaseBlueprintsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseBlueprintsInput`](crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseBlueprintsInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }
@@ -56,10 +54,7 @@ impl GetRelationalDatabaseBlueprintsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(
-            crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsInput {
-                page_token: self.page_token
-                ,
-            }
+            crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsInput { page_token: self.page_token },
         )
     }
 }

@@ -63,9 +63,7 @@ impl Permission {
 
 /// A builder for [`Permission`](crate::types::Permission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PermissionBuilder {
     pub(crate) grantee_type: ::std::option::Option<::std::string::String>,
     pub(crate) grantee: ::std::option::Option<::std::string::String>,
@@ -145,10 +143,7 @@ impl PermissionBuilder {
     /// <li> <p> <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
     /// <li> <p> <code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
     /// </ul>
-    pub fn set_access(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_access(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.access = input;
         self
     }

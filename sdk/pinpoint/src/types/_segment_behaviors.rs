@@ -23,9 +23,7 @@ impl SegmentBehaviors {
 
 /// A builder for [`SegmentBehaviors`](crate::types::SegmentBehaviors).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentBehaviorsBuilder {
     pub(crate) recency: ::std::option::Option<crate::types::RecencyDimension>,
 }
@@ -36,10 +34,7 @@ impl SegmentBehaviorsBuilder {
         self
     }
     /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
-    pub fn set_recency(
-        mut self,
-        input: ::std::option::Option<crate::types::RecencyDimension>,
-    ) -> Self {
+    pub fn set_recency(mut self, input: ::std::option::Option<crate::types::RecencyDimension>) -> Self {
         self.recency = input;
         self
     }
@@ -49,8 +44,6 @@ impl SegmentBehaviorsBuilder {
     }
     /// Consumes the builder and constructs a [`SegmentBehaviors`](crate::types::SegmentBehaviors).
     pub fn build(self) -> crate::types::SegmentBehaviors {
-        crate::types::SegmentBehaviors {
-            recency: self.recency,
-        }
+        crate::types::SegmentBehaviors { recency: self.recency }
     }
 }

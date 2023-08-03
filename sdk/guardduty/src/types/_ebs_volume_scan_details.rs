@@ -65,9 +65,7 @@ impl EbsVolumeScanDetails {
 
 /// A builder for [`EbsVolumeScanDetails`](crate::types::EbsVolumeScanDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EbsVolumeScanDetailsBuilder {
     pub(crate) scan_id: ::std::option::Option<::std::string::String>,
     pub(crate) scan_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -98,10 +96,7 @@ impl EbsVolumeScanDetailsBuilder {
         self
     }
     /// <p>Returns the start date and time of the malware scan.</p>
-    pub fn set_scan_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scan_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.scan_started_at = input;
         self
     }
@@ -115,10 +110,7 @@ impl EbsVolumeScanDetailsBuilder {
         self
     }
     /// <p>Returns the completion date and time of the malware scan.</p>
-    pub fn set_scan_completed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scan_completed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.scan_completed_at = input;
         self
     }
@@ -127,18 +119,12 @@ impl EbsVolumeScanDetailsBuilder {
         &self.scan_completed_at
     }
     /// <p>GuardDuty finding ID that triggered a malware scan.</p>
-    pub fn trigger_finding_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trigger_finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trigger_finding_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>GuardDuty finding ID that triggered a malware scan.</p>
-    pub fn set_trigger_finding_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trigger_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trigger_finding_id = input;
         self
     }
@@ -158,10 +144,7 @@ impl EbsVolumeScanDetailsBuilder {
         self
     }
     /// <p>Contains list of threat intelligence sources used to detect threats.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sources = input;
         self
     }
@@ -175,10 +158,7 @@ impl EbsVolumeScanDetailsBuilder {
         self
     }
     /// <p>Contains a complete view providing malware scan result details.</p>
-    pub fn set_scan_detections(
-        mut self,
-        input: ::std::option::Option<crate::types::ScanDetections>,
-    ) -> Self {
+    pub fn set_scan_detections(mut self, input: ::std::option::Option<crate::types::ScanDetections>) -> Self {
         self.scan_detections = input;
         self
     }

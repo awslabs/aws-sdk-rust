@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`address_book(Option<AddressBook>)`](crate::operation::get_address_book::GetAddressBookOutput::address_book): <p>The details of the requested address book.</p>
     /// - On failure, responds with [`SdkError<GetAddressBookError>`](crate::operation::get_address_book::GetAddressBookError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn get_address_book(
-        &self,
-    ) -> crate::operation::get_address_book::builders::GetAddressBookFluentBuilder {
-        crate::operation::get_address_book::builders::GetAddressBookFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_address_book(&self) -> crate::operation::get_address_book::builders::GetAddressBookFluentBuilder {
+        crate::operation::get_address_book::builders::GetAddressBookFluentBuilder::new(self.handle.clone())
     }
 }

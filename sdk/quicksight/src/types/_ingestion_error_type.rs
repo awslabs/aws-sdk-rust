@@ -81,13 +81,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum IngestionErrorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -220,9 +214,7 @@ impl ::std::convert::From<&str> for IngestionErrorType {
             "S3_FILE_INACCESSIBLE" => IngestionErrorType::S3FileInaccessible,
             "S3_MANIFEST_ERROR" => IngestionErrorType::S3ManifestError,
             "S3_UPLOADED_FILE_DELETED" => IngestionErrorType::S3UploadedFileDeleted,
-            "SOURCE_API_LIMIT_EXCEEDED_FAILURE" => {
-                IngestionErrorType::SourceApiLimitExceededFailure
-            }
+            "SOURCE_API_LIMIT_EXCEEDED_FAILURE" => IngestionErrorType::SourceApiLimitExceededFailure,
             "SOURCE_RESOURCE_LIMIT_EXCEEDED" => IngestionErrorType::SourceResourceLimitExceeded,
             "SPICE_TABLE_NOT_FOUND" => IngestionErrorType::SpiceTableNotFound,
             "SQL_EXCEPTION" => IngestionErrorType::SqlException,
@@ -230,14 +222,10 @@ impl ::std::convert::From<&str> for IngestionErrorType {
             "SQL_NUMERIC_OVERFLOW" => IngestionErrorType::SqlNumericOverflow,
             "SQL_SCHEMA_MISMATCH_ERROR" => IngestionErrorType::SqlSchemaMismatchError,
             "SQL_TABLE_NOT_FOUND" => IngestionErrorType::SqlTableNotFound,
-            "SSL_CERTIFICATE_VALIDATION_FAILURE" => {
-                IngestionErrorType::SslCertificateValidationFailure
-            }
+            "SSL_CERTIFICATE_VALIDATION_FAILURE" => IngestionErrorType::SslCertificateValidationFailure,
             "UNRESOLVABLE_HOST" => IngestionErrorType::UnresolvableHost,
             "UNROUTABLE_HOST" => IngestionErrorType::UnroutableHost,
-            other => IngestionErrorType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => IngestionErrorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -286,9 +274,7 @@ impl IngestionErrorType {
             IngestionErrorType::S3FileInaccessible => "S3_FILE_INACCESSIBLE",
             IngestionErrorType::S3ManifestError => "S3_MANIFEST_ERROR",
             IngestionErrorType::S3UploadedFileDeleted => "S3_UPLOADED_FILE_DELETED",
-            IngestionErrorType::SourceApiLimitExceededFailure => {
-                "SOURCE_API_LIMIT_EXCEEDED_FAILURE"
-            }
+            IngestionErrorType::SourceApiLimitExceededFailure => "SOURCE_API_LIMIT_EXCEEDED_FAILURE",
             IngestionErrorType::SourceResourceLimitExceeded => "SOURCE_RESOURCE_LIMIT_EXCEEDED",
             IngestionErrorType::SpiceTableNotFound => "SPICE_TABLE_NOT_FOUND",
             IngestionErrorType::SqlException => "SQL_EXCEPTION",
@@ -296,9 +282,7 @@ impl IngestionErrorType {
             IngestionErrorType::SqlNumericOverflow => "SQL_NUMERIC_OVERFLOW",
             IngestionErrorType::SqlSchemaMismatchError => "SQL_SCHEMA_MISMATCH_ERROR",
             IngestionErrorType::SqlTableNotFound => "SQL_TABLE_NOT_FOUND",
-            IngestionErrorType::SslCertificateValidationFailure => {
-                "SSL_CERTIFICATE_VALIDATION_FAILURE"
-            }
+            IngestionErrorType::SslCertificateValidationFailure => "SSL_CERTIFICATE_VALIDATION_FAILURE",
             IngestionErrorType::UnresolvableHost => "UNRESOLVABLE_HOST",
             IngestionErrorType::UnroutableHost => "UNROUTABLE_HOST",
             IngestionErrorType::Unknown(value) => value.as_str(),

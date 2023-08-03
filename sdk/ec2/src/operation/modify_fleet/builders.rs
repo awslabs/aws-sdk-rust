@@ -10,10 +10,7 @@ impl ModifyFleetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_fleet::ModifyFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_fleet::ModifyFleetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_fleet::ModifyFleetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_fleet();
         fluent_builder.inner = self;
@@ -50,10 +47,7 @@ impl ModifyFleetFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_fleet::ModifyFleet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::modify_fleet::ModifyFleet, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::modify_fleet::ModifyFleetError>,
     > {
         let handle = self.handle.clone();
@@ -64,10 +58,7 @@ impl ModifyFleetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -109,10 +100,7 @@ impl ModifyFleetFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_fleet::ModifyFleet,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::modify_fleet::ModifyFleet, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::modify_fleet::ModifyFleetError>,
     > {
         self.customize_middleware().await
@@ -133,10 +121,7 @@ impl ModifyFleetFluentBuilder {
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn excess_capacity_termination_policy(
-        mut self,
-        input: crate::types::FleetExcessCapacityTerminationPolicy,
-    ) -> Self {
+    pub fn excess_capacity_termination_policy(mut self, input: crate::types::FleetExcessCapacityTerminationPolicy) -> Self {
         self.inner = self.inner.excess_capacity_termination_policy(input);
         self
     }
@@ -151,9 +136,7 @@ impl ModifyFleetFluentBuilder {
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn get_excess_capacity_termination_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy> {
+    pub fn get_excess_capacity_termination_policy(&self) -> &::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy> {
         self.inner.get_excess_capacity_termination_policy()
     }
     /// Appends an item to `LaunchTemplateConfigs`.
@@ -161,28 +144,20 @@ impl ModifyFleetFluentBuilder {
     /// To override the contents of this collection use [`set_launch_template_configs`](Self::set_launch_template_configs).
     ///
     /// <p>The launch template and overrides.</p>
-    pub fn launch_template_configs(
-        mut self,
-        input: crate::types::FleetLaunchTemplateConfigRequest,
-    ) -> Self {
+    pub fn launch_template_configs(mut self, input: crate::types::FleetLaunchTemplateConfigRequest) -> Self {
         self.inner = self.inner.launch_template_configs(input);
         self
     }
     /// <p>The launch template and overrides.</p>
     pub fn set_launch_template_configs(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>,
     ) -> Self {
         self.inner = self.inner.set_launch_template_configs(input);
         self
     }
     /// <p>The launch template and overrides.</p>
-    pub fn get_launch_template_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>
-    {
+    pub fn get_launch_template_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>> {
         self.inner.get_launch_template_configs()
     }
     /// <p>The ID of the EC2 Fleet.</p>
@@ -200,25 +175,17 @@ impl ModifyFleetFluentBuilder {
         self.inner.get_fleet_id()
     }
     /// <p>The size of the EC2 Fleet.</p>
-    pub fn target_capacity_specification(
-        mut self,
-        input: crate::types::TargetCapacitySpecificationRequest,
-    ) -> Self {
+    pub fn target_capacity_specification(mut self, input: crate::types::TargetCapacitySpecificationRequest) -> Self {
         self.inner = self.inner.target_capacity_specification(input);
         self
     }
     /// <p>The size of the EC2 Fleet.</p>
-    pub fn set_target_capacity_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
-    ) -> Self {
+    pub fn set_target_capacity_specification(mut self, input: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>) -> Self {
         self.inner = self.inner.set_target_capacity_specification(input);
         self
     }
     /// <p>The size of the EC2 Fleet.</p>
-    pub fn get_target_capacity_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetCapacitySpecificationRequest> {
+    pub fn get_target_capacity_specification(&self) -> &::std::option::Option<crate::types::TargetCapacitySpecificationRequest> {
         self.inner.get_target_capacity_specification()
     }
     /// <p>Reserved.</p>

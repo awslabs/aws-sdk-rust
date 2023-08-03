@@ -23,18 +23,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetailsBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -69,9 +65,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetailsBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
             namespace: self.namespace,
             value: self.value,

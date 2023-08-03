@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`policy_document(Option<String>)`](crate::operation::create_policy::CreatePolicyOutput::policy_document): <p>The JSON document that describes the policy.</p>
     ///   - [`policy_version_id(Option<String>)`](crate::operation::create_policy::CreatePolicyOutput::policy_version_id): <p>The policy version ID.</p>
     /// - On failure, responds with [`SdkError<CreatePolicyError>`](crate::operation::create_policy::CreatePolicyError)
-    pub fn create_policy(
-        &self,
-    ) -> crate::operation::create_policy::builders::CreatePolicyFluentBuilder {
-        crate::operation::create_policy::builders::CreatePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_policy(&self) -> crate::operation::create_policy::builders::CreatePolicyFluentBuilder {
+        crate::operation::create_policy::builders::CreatePolicyFluentBuilder::new(self.handle.clone())
     }
 }

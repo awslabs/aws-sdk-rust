@@ -37,10 +37,7 @@ impl UpdateUserPhoneConfigFluentBuilder {
         }
     }
     /// Access the UpdateUserPhoneConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateUserPhoneConfigFluentBuilder {
             crate::operation::update_user_phone_config::UpdateUserPhoneConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_phone_config::UpdateUserPhoneConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_phone_config::UpdateUserPhoneConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateUserPhoneConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateUserPhoneConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_phone_config::UpdateUserPhoneConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_phone_config::UpdateUserPhoneConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_phone_config::UpdateUserPhoneConfigError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateUserPhoneConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_phone_config::UpdateUserPhoneConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_phone_config::UpdateUserPhoneConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_phone_config::UpdateUserPhoneConfigError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateUserPhoneConfigFluentBuilder {
             crate::operation::update_user_phone_config::UpdateUserPhoneConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_phone_config::UpdateUserPhoneConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_phone_config::UpdateUserPhoneConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +115,7 @@ impl UpdateUserPhoneConfigFluentBuilder {
         self
     }
     /// <p>Information about phone configuration settings for the user.</p>
-    pub fn set_phone_config(
-        mut self,
-        input: ::std::option::Option<crate::types::UserPhoneConfig>,
-    ) -> Self {
+    pub fn set_phone_config(mut self, input: ::std::option::Option<crate::types::UserPhoneConfig>) -> Self {
         self.inner = self.inner.set_phone_config(input);
         self
     }

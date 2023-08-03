@@ -29,9 +29,7 @@ impl super::Client {
     ///   - [`kms_key_id(Option<String>)`](crate::operation::update_trail::UpdateTrailOutput::kms_key_id): <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>  <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     ///   - [`is_organization_trail(Option<bool>)`](crate::operation::update_trail::UpdateTrailOutput::is_organization_trail): <p>Specifies whether the trail is an organization trail.</p>
     /// - On failure, responds with [`SdkError<UpdateTrailError>`](crate::operation::update_trail::UpdateTrailError)
-    pub fn update_trail(
-        &self,
-    ) -> crate::operation::update_trail::builders::UpdateTrailFluentBuilder {
+    pub fn update_trail(&self) -> crate::operation::update_trail::builders::UpdateTrailFluentBuilder {
         crate::operation::update_trail::builders::UpdateTrailFluentBuilder::new(self.handle.clone())
     }
 }

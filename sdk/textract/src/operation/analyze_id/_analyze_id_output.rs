@@ -42,12 +42,9 @@ impl AnalyzeIdOutput {
 
 /// A builder for [`AnalyzeIdOutput`](crate::operation::analyze_id::AnalyzeIdOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyzeIdOutputBuilder {
-    pub(crate) identity_documents:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocument>>,
+    pub(crate) identity_documents: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocument>>,
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) analyze_id_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -65,17 +62,12 @@ impl AnalyzeIdOutputBuilder {
         self
     }
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
-    pub fn set_identity_documents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocument>>,
-    ) -> Self {
+    pub fn set_identity_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocument>>) -> Self {
         self.identity_documents = input;
         self
     }
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
-    pub fn get_identity_documents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityDocument>> {
+    pub fn get_identity_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityDocument>> {
         &self.identity_documents
     }
     /// <p>Information about the input document.</p>
@@ -84,10 +76,7 @@ impl AnalyzeIdOutputBuilder {
         self
     }
     /// <p>Information about the input document.</p>
-    pub fn set_document_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
+    pub fn set_document_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
         self.document_metadata = input;
         self
     }
@@ -96,18 +85,12 @@ impl AnalyzeIdOutputBuilder {
         &self.document_metadata
     }
     /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
-    pub fn analyze_id_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyze_id_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyze_id_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
-    pub fn set_analyze_id_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analyze_id_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyze_id_model_version = input;
         self
     }

@@ -32,8 +32,7 @@ impl AssociateTargetsWithJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateTargetsWithJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobInputBuilder,
+    inner: crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobInputBuilder,
 }
 impl AssociateTargetsWithJobFluentBuilder {
     /// Creates a new `AssociateTargetsWithJob`.
@@ -44,10 +43,7 @@ impl AssociateTargetsWithJobFluentBuilder {
         }
     }
     /// Access the AssociateTargetsWithJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +55,7 @@ impl AssociateTargetsWithJobFluentBuilder {
             crate::operation::associate_targets_with_job::AssociateTargetsWithJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_targets_with_job::AssociateTargetsWithJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_targets_with_job::AssociateTargetsWithJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +65,7 @@ impl AssociateTargetsWithJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +74,7 @@ impl AssociateTargetsWithJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_targets_with_job::AssociateTargetsWithJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_targets_with_job::AssociateTargetsWithJobError>,
     > {
         let op = self
             .inner
@@ -108,9 +97,7 @@ impl AssociateTargetsWithJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_targets_with_job::AssociateTargetsWithJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_targets_with_job::AssociateTargetsWithJobError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +111,7 @@ impl AssociateTargetsWithJobFluentBuilder {
             crate::operation::associate_targets_with_job::AssociateTargetsWithJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_targets_with_job::AssociateTargetsWithJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_targets_with_job::AssociateTargetsWithJobError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +125,7 @@ impl AssociateTargetsWithJobFluentBuilder {
         self
     }
     /// <p>A list of thing group ARNs that define the targets of the job.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }

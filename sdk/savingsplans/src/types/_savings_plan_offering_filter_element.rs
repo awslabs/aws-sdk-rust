@@ -30,9 +30,7 @@ impl SavingsPlanOfferingFilterElement {
 
 /// A builder for [`SavingsPlanOfferingFilterElement`](crate::types::SavingsPlanOfferingFilterElement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SavingsPlanOfferingFilterElementBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SavingsPlanOfferingFilterAttribute>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,17 +42,12 @@ impl SavingsPlanOfferingFilterElementBuilder {
         self
     }
     /// <p>The filter name.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlanOfferingFilterAttribute>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::SavingsPlanOfferingFilterAttribute>) -> Self {
         self.name = input;
         self
     }
     /// <p>The filter name.</p>
-    pub fn get_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::SavingsPlanOfferingFilterAttribute> {
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SavingsPlanOfferingFilterAttribute> {
         &self.name
     }
     /// Appends an item to `values`.
@@ -69,10 +62,7 @@ impl SavingsPlanOfferingFilterElementBuilder {
         self
     }
     /// <p>The filter values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

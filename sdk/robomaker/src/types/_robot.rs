@@ -79,9 +79,7 @@ impl Robot {
 
 /// A builder for [`Robot`](crate::types::Robot).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RobotBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -151,18 +149,12 @@ impl RobotBuilder {
         &self.status
     }
     /// <p>The Greengrass group associated with the robot.</p>
-    pub fn green_grass_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn green_grass_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.green_grass_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Greengrass group associated with the robot.</p>
-    pub fn set_green_grass_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_green_grass_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.green_grass_group_id = input;
         self
     }
@@ -176,10 +168,7 @@ impl RobotBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -193,10 +182,7 @@ impl RobotBuilder {
         self
     }
     /// <p>The architecture of the robot.</p>
-    pub fn set_architecture(
-        mut self,
-        input: ::std::option::Option<crate::types::Architecture>,
-    ) -> Self {
+    pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
         self.architecture = input;
         self
     }
@@ -205,18 +191,12 @@ impl RobotBuilder {
         &self.architecture
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    pub fn last_deployment_job(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_deployment_job(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_deployment_job = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    pub fn set_last_deployment_job(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_deployment_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_deployment_job = input;
         self
     }
@@ -230,10 +210,7 @@ impl RobotBuilder {
         self
     }
     /// <p>The time of the last deployment.</p>
-    pub fn set_last_deployment_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_deployment_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_deployment_time = input;
         self
     }

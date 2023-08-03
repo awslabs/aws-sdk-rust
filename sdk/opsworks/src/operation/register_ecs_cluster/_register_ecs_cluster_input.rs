@@ -22,35 +22,26 @@ impl RegisterEcsClusterInput {
 }
 impl RegisterEcsClusterInput {
     /// Creates a new builder-style object to manufacture [`RegisterEcsClusterInput`](crate::operation::register_ecs_cluster::RegisterEcsClusterInput).
-    pub fn builder(
-    ) -> crate::operation::register_ecs_cluster::builders::RegisterEcsClusterInputBuilder {
+    pub fn builder() -> crate::operation::register_ecs_cluster::builders::RegisterEcsClusterInputBuilder {
         crate::operation::register_ecs_cluster::builders::RegisterEcsClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterEcsClusterInput`](crate::operation::register_ecs_cluster::RegisterEcsClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterEcsClusterInputBuilder {
     pub(crate) ecs_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
 }
 impl RegisterEcsClusterInputBuilder {
     /// <p>The cluster's ARN.</p>
-    pub fn ecs_cluster_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ecs_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecs_cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster's ARN.</p>
-    pub fn set_ecs_cluster_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ecs_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ecs_cluster_arn = input;
         self
     }
@@ -75,15 +66,10 @@ impl RegisterEcsClusterInputBuilder {
     /// Consumes the builder and constructs a [`RegisterEcsClusterInput`](crate::operation::register_ecs_cluster::RegisterEcsClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_ecs_cluster::RegisterEcsClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_ecs_cluster::RegisterEcsClusterInput {
-                ecs_cluster_arn: self.ecs_cluster_arn,
-                stack_id: self.stack_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_ecs_cluster::RegisterEcsClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::register_ecs_cluster::RegisterEcsClusterInput {
+            ecs_cluster_arn: self.ecs_cluster_arn,
+            stack_id: self.stack_id,
+        })
     }
 }

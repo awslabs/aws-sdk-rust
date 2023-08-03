@@ -30,9 +30,7 @@ impl SenderIdFilter {
 
 /// A builder for [`SenderIdFilter`](crate::types::SenderIdFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SenderIdFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SenderIdFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl SenderIdFilterBuilder {
         self
     }
     /// <p>The name of the attribute to filter on.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::SenderIdFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::SenderIdFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -67,10 +62,7 @@ impl SenderIdFilterBuilder {
         self
     }
     /// <p>An array of values to filter for.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

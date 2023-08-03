@@ -9,42 +9,32 @@ pub fn de_set_queue_attributes_http_error(
     crate::operation::set_queue_attributes::SetQueueAttributesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::set_queue_attributes::SetQueueAttributesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::set_queue_attributes::SetQueueAttributesError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::set_queue_attributes::SetQueueAttributesError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::set_queue_attributes::SetQueueAttributesError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidAttributeName" => {
-            crate::operation::set_queue_attributes::SetQueueAttributesError::InvalidAttributeName({
+        "InvalidAttributeName" => crate::operation::set_queue_attributes::SetQueueAttributesError::InvalidAttributeName({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidAttributeNameBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_attribute_name::de_invalid_attribute_name_xml_err(_response_body, output).map_err(crate::operation::set_queue_attributes::SetQueueAttributesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::InvalidAttributeNameBuilder::default();
+                output = crate::protocol_serde::shape_invalid_attribute_name::de_invalid_attribute_name_xml_err(_response_body, output)
+                    .map_err(crate::operation::set_queue_attributes::SetQueueAttributesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::set_queue_attributes::SetQueueAttributesError::generic(generic),
     })
 }
@@ -61,9 +51,7 @@ pub fn de_set_queue_attributes_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::set_queue_attributes::builders::SetQueueAttributesOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

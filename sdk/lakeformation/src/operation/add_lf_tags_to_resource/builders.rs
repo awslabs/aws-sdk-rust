@@ -37,9 +37,7 @@ impl AddLFTagsToResourceFluentBuilder {
         }
     }
     /// Access the AddLFTagsToResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl AddLFTagsToResourceFluentBuilder {
             crate::operation::add_lf_tags_to_resource::AddLFTagsToResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl AddLFTagsToResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl AddLFTagsToResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl AddLFTagsToResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl AddLFTagsToResourceFluentBuilder {
             crate::operation::add_lf_tags_to_resource::AddLFTagsToResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -160,10 +147,7 @@ impl AddLFTagsToResourceFluentBuilder {
         self
     }
     /// <p>The LF-tags to attach to the resource.</p>
-    pub fn set_lf_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
-    ) -> Self {
+    pub fn set_lf_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
         self.inner = self.inner.set_lf_tags(input);
         self
     }

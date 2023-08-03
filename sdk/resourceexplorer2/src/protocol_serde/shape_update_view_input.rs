@@ -15,10 +15,7 @@ pub fn ser_update_view_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_included_property::ser_included_property(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_included_property::ser_included_property(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

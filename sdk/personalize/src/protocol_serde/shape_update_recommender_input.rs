@@ -9,10 +9,7 @@ pub fn ser_update_recommender_input(
     if let Some(var_2) = &input.recommender_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("recommenderConfig").start_object();
-        crate::protocol_serde::shape_recommender_config::ser_recommender_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_recommender_config::ser_recommender_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

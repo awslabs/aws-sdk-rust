@@ -26,8 +26,7 @@ impl GetWirelessGatewayTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskInputBuilder,
+    inner: crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskInputBuilder,
 }
 impl GetWirelessGatewayTaskFluentBuilder {
     /// Creates a new `GetWirelessGatewayTask`.
@@ -38,10 +37,7 @@ impl GetWirelessGatewayTaskFluentBuilder {
         }
     }
     /// Access the GetWirelessGatewayTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetWirelessGatewayTaskFluentBuilder {
             crate::operation::get_wireless_gateway_task::GetWirelessGatewayTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetWirelessGatewayTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetWirelessGatewayTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetWirelessGatewayTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetWirelessGatewayTaskFluentBuilder {
             crate::operation::get_wireless_gateway_task::GetWirelessGatewayTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskError>,
     > {
         self.customize_middleware().await
     }

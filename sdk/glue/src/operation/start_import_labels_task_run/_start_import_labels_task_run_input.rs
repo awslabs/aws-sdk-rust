@@ -29,16 +29,14 @@ impl StartImportLabelsTaskRunInput {
 }
 impl StartImportLabelsTaskRunInput {
     /// Creates a new builder-style object to manufacture [`StartImportLabelsTaskRunInput`](crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput).
-    pub fn builder() -> crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunInputBuilder{
+    pub fn builder() -> crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunInputBuilder {
         crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunInputBuilder::default()
     }
 }
 
 /// A builder for [`StartImportLabelsTaskRunInput`](crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImportLabelsTaskRunInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_s3_path: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl StartImportLabelsTaskRunInputBuilder {
         &self.transform_id
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
-    pub fn input_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_s3_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
-    pub fn set_input_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_s3_path = input;
         self
     }
@@ -100,12 +92,10 @@ impl StartImportLabelsTaskRunInputBuilder {
         crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput {
-                transform_id: self.transform_id,
-                input_s3_path: self.input_s3_path,
-                replace_all_labels: self.replace_all_labels,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput {
+            transform_id: self.transform_id,
+            input_s3_path: self.input_s3_path,
+            replace_all_labels: self.replace_all_labels,
+        })
     }
 }

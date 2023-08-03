@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput::id): <p>The identifier of the rescore execution plan.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput::arn): <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
     /// - On failure, responds with [`SdkError<CreateRescoreExecutionPlanError>`](crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanError)
-    pub fn create_rescore_execution_plan(&self) -> crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanFluentBuilder{
+    pub fn create_rescore_execution_plan(
+        &self,
+    ) -> crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanFluentBuilder {
         crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanFluentBuilder::new(self.handle.clone())
     }
 }

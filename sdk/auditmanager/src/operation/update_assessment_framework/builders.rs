@@ -26,7 +26,7 @@ impl UpdateAssessmentFrameworkInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssessmentFrameworkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkInputBuilder,
+    inner: crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkInputBuilder,
 }
 impl UpdateAssessmentFrameworkFluentBuilder {
     /// Creates a new `UpdateAssessmentFramework`.
@@ -37,7 +37,7 @@ impl UpdateAssessmentFrameworkFluentBuilder {
         }
     }
     /// Access the UpdateAssessmentFramework as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateAssessmentFrameworkFluentBuilder {
             crate::operation::update_assessment_framework::UpdateAssessmentFramework,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateAssessmentFrameworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateAssessmentFrameworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assessment_framework::UpdateAssessmentFrameworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateAssessmentFrameworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assessment_framework::UpdateAssessmentFrameworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateAssessmentFrameworkFluentBuilder {
             crate::operation::update_assessment_framework::UpdateAssessmentFramework,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError>,
     > {
         self.customize_middleware().await
     }
@@ -163,18 +152,12 @@ impl UpdateAssessmentFrameworkFluentBuilder {
         self.inner.get_description()
     }
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
-    pub fn compliance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compliance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compliance_type(input.into());
         self
     }
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
-    pub fn set_compliance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compliance_type(input);
         self
     }
@@ -187,28 +170,17 @@ impl UpdateAssessmentFrameworkFluentBuilder {
     /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
     ///
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn control_sets(
-        mut self,
-        input: crate::types::UpdateAssessmentFrameworkControlSet,
-    ) -> Self {
+    pub fn control_sets(mut self, input: crate::types::UpdateAssessmentFrameworkControlSet) -> Self {
         self.inner = self.inner.control_sets(input);
         self
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn set_control_sets(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>,
-        >,
-    ) -> Self {
+    pub fn set_control_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>>) -> Self {
         self.inner = self.inner.set_control_sets(input);
         self
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn get_control_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>>
-    {
+    pub fn get_control_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>> {
         self.inner.get_control_sets()
     }
 }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`total_count(Option<i32>)`](crate::operation::search_contacts::SearchContactsOutput::total_count): <p>The total number of contacts returned.</p>
     /// - On failure, responds with [`SdkError<SearchContactsError>`](crate::operation::search_contacts::SearchContactsError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn search_contacts(
-        &self,
-    ) -> crate::operation::search_contacts::builders::SearchContactsFluentBuilder {
-        crate::operation::search_contacts::builders::SearchContactsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_contacts(&self) -> crate::operation::search_contacts::builders::SearchContactsFluentBuilder {
+        crate::operation::search_contacts::builders::SearchContactsFluentBuilder::new(self.handle.clone())
     }
 }

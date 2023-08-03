@@ -6,10 +6,7 @@ pub fn ser_put_email_identity_dkim_signing_attributes_input(
     if let Some(var_1) = &input.signing_attributes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SigningAttributes").start_object();
-        crate::protocol_serde::shape_dkim_signing_attributes::ser_dkim_signing_attributes(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_dkim_signing_attributes::ser_dkim_signing_attributes(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.signing_attributes_origin {

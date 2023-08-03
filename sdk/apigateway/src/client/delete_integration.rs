@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`http_method(impl ::std::convert::Into<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::http_method) / [`set_http_method(Option<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::set_http_method): <p>Specifies a delete integration request's HTTP method.</p>
     /// - On success, responds with [`DeleteIntegrationOutput`](crate::operation::delete_integration::DeleteIntegrationOutput)
     /// - On failure, responds with [`SdkError<DeleteIntegrationError>`](crate::operation::delete_integration::DeleteIntegrationError)
-    pub fn delete_integration(
-        &self,
-    ) -> crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder {
-        crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_integration(&self) -> crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder {
+        crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::new(self.handle.clone())
     }
 }

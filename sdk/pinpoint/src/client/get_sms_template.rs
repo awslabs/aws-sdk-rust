@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetSmsTemplateOutput`](crate::operation::get_sms_template::GetSmsTemplateOutput) with field(s):
     ///   - [`sms_template_response(Option<SmsTemplateResponse>)`](crate::operation::get_sms_template::GetSmsTemplateOutput::sms_template_response): <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
     /// - On failure, responds with [`SdkError<GetSmsTemplateError>`](crate::operation::get_sms_template::GetSmsTemplateError)
-    pub fn get_sms_template(
-        &self,
-    ) -> crate::operation::get_sms_template::builders::GetSmsTemplateFluentBuilder {
-        crate::operation::get_sms_template::builders::GetSmsTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_sms_template(&self) -> crate::operation::get_sms_template::builders::GetSmsTemplateFluentBuilder {
+        crate::operation::get_sms_template::builders::GetSmsTemplateFluentBuilder::new(self.handle.clone())
     }
 }

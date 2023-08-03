@@ -51,9 +51,7 @@ impl EventTopic {
 
 /// A builder for [`EventTopic`](crate::types::EventTopic).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventTopicBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_name: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl EventTopicBuilder {
         self
     }
     /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
-    pub fn set_created_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date_time = input;
         self
     }

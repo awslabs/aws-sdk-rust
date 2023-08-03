@@ -28,8 +28,7 @@ pub struct ReportInstanceStatusInput {
     /// <li> <p> <code>other</code>: [explain using the description parameter]</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub reason_codes:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>>,
+    pub reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>>,
     /// <p>The time at which the reported instance health state began.</p>
     #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -66,9 +65,7 @@ impl ReportInstanceStatusInput {
     /// <li> <p> <code>performance-other</code>: My instance is experiencing performance problems.</p> </li>
     /// <li> <p> <code>other</code>: [explain using the description parameter]</p> </li>
     /// </ul>
-    pub fn reason_codes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReportInstanceReasonCodes]> {
+    pub fn reason_codes(&self) -> ::std::option::Option<&[crate::types::ReportInstanceReasonCodes]> {
         self.reason_codes.as_deref()
     }
     /// <p>The time at which the reported instance health state began.</p>
@@ -82,24 +79,20 @@ impl ReportInstanceStatusInput {
 }
 impl ReportInstanceStatusInput {
     /// Creates a new builder-style object to manufacture [`ReportInstanceStatusInput`](crate::operation::report_instance_status::ReportInstanceStatusInput).
-    pub fn builder(
-    ) -> crate::operation::report_instance_status::builders::ReportInstanceStatusInputBuilder {
+    pub fn builder() -> crate::operation::report_instance_status::builders::ReportInstanceStatusInputBuilder {
         crate::operation::report_instance_status::builders::ReportInstanceStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`ReportInstanceStatusInput`](crate::operation::report_instance_status::ReportInstanceStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportInstanceStatusInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) reason_codes:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>>,
+    pub(crate) reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ReportStatusType>,
 }
@@ -138,10 +131,7 @@ impl ReportInstanceStatusInputBuilder {
         self
     }
     /// <p>The time at which the reported instance health state ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -161,10 +151,7 @@ impl ReportInstanceStatusInputBuilder {
         self
     }
     /// <p>The instances.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instances = input;
         self
     }
@@ -206,10 +193,7 @@ impl ReportInstanceStatusInputBuilder {
     /// <li> <p> <code>performance-other</code>: My instance is experiencing performance problems.</p> </li>
     /// <li> <p> <code>other</code>: [explain using the description parameter]</p> </li>
     /// </ul>
-    pub fn set_reason_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>>,
-    ) -> Self {
+    pub fn set_reason_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>>) -> Self {
         self.reason_codes = input;
         self
     }
@@ -225,9 +209,7 @@ impl ReportInstanceStatusInputBuilder {
     /// <li> <p> <code>performance-other</code>: My instance is experiencing performance problems.</p> </li>
     /// <li> <p> <code>other</code>: [explain using the description parameter]</p> </li>
     /// </ul>
-    pub fn get_reason_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>> {
+    pub fn get_reason_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>> {
         &self.reason_codes
     }
     /// <p>The time at which the reported instance health state began.</p>
@@ -236,10 +218,7 @@ impl ReportInstanceStatusInputBuilder {
         self
     }
     /// <p>The time at which the reported instance health state began.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -253,10 +232,7 @@ impl ReportInstanceStatusInputBuilder {
         self
     }
     /// <p>The status of all instances listed.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReportStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -267,20 +243,16 @@ impl ReportInstanceStatusInputBuilder {
     /// Consumes the builder and constructs a [`ReportInstanceStatusInput`](crate::operation::report_instance_status::ReportInstanceStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::report_instance_status::ReportInstanceStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::report_instance_status::ReportInstanceStatusInput {
-                description: self.description,
-                dry_run: self.dry_run,
-                end_time: self.end_time,
-                instances: self.instances,
-                reason_codes: self.reason_codes,
-                start_time: self.start_time,
-                status: self.status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::report_instance_status::ReportInstanceStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::report_instance_status::ReportInstanceStatusInput {
+            description: self.description,
+            dry_run: self.dry_run,
+            end_time: self.end_time,
+            instances: self.instances,
+            reason_codes: self.reason_codes,
+            start_time: self.start_time,
+            status: self.status,
+        })
     }
 }

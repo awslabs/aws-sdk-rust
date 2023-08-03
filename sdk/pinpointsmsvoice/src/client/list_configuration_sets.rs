@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`configuration_sets(Option<Vec<String>>)`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput::configuration_sets): An object that contains a list of configuration sets for your account in the current region.
     ///   - [`next_token(Option<String>)`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput::next_token): A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.
     /// - On failure, responds with [`SdkError<ListConfigurationSetsError>`](crate::operation::list_configuration_sets::ListConfigurationSetsError)
-    pub fn list_configuration_sets(
-        &self,
-    ) -> crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder
-    {
-        crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_configuration_sets(&self) -> crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder {
+        crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder::new(self.handle.clone())
     }
 }

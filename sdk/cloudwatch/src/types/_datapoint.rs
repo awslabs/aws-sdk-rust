@@ -27,8 +27,7 @@ pub struct Datapoint {
     pub unit: ::std::option::Option<crate::types::StandardUnit>,
     /// <p>The percentile statistic for the data point.</p>
     #[doc(hidden)]
-    pub extended_statistics:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub extended_statistics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
 }
 impl Datapoint {
     /// <p>The time stamp used for the data point.</p>
@@ -60,9 +59,7 @@ impl Datapoint {
         self.unit.as_ref()
     }
     /// <p>The percentile statistic for the data point.</p>
-    pub fn extended_statistics(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
+    pub fn extended_statistics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
         self.extended_statistics.as_ref()
     }
 }
@@ -75,9 +72,7 @@ impl Datapoint {
 
 /// A builder for [`Datapoint`](crate::types::Datapoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatapointBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) sample_count: ::std::option::Option<f64>,
@@ -86,8 +81,7 @@ pub struct DatapointBuilder {
     pub(crate) minimum: ::std::option::Option<f64>,
     pub(crate) maximum: ::std::option::Option<f64>,
     pub(crate) unit: ::std::option::Option<crate::types::StandardUnit>,
-    pub(crate) extended_statistics:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub(crate) extended_statistics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
 }
 impl DatapointBuilder {
     /// <p>The time stamp used for the data point.</p>
@@ -96,10 +90,7 @@ impl DatapointBuilder {
         self
     }
     /// <p>The time stamp used for the data point.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -196,28 +187,19 @@ impl DatapointBuilder {
     /// To override the contents of this collection use [`set_extended_statistics`](Self::set_extended_statistics).
     ///
     /// <p>The percentile statistic for the data point.</p>
-    pub fn extended_statistics(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: f64,
-    ) -> Self {
+    pub fn extended_statistics(mut self, k: impl ::std::convert::Into<::std::string::String>, v: f64) -> Self {
         let mut hash_map = self.extended_statistics.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.extended_statistics = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The percentile statistic for the data point.</p>
-    pub fn set_extended_statistics(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
-    ) -> Self {
+    pub fn set_extended_statistics(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>) -> Self {
         self.extended_statistics = input;
         self
     }
     /// <p>The percentile statistic for the data point.</p>
-    pub fn get_extended_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+    pub fn get_extended_statistics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
         &self.extended_statistics
     }
     /// Consumes the builder and constructs a [`Datapoint`](crate::types::Datapoint).

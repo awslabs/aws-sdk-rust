@@ -38,13 +38,7 @@
 /// When set to "standard", an I-Frame only playlist will be written out for each video output in the output group. This I-Frame only playlist will contain byte range offsets pointing to the I-frame(s) in each segment.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum IFrameOnlyPlaylistType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for IFrameOnlyPlaylistType {
         match s {
             "DISABLED" => IFrameOnlyPlaylistType::Disabled,
             "STANDARD" => IFrameOnlyPlaylistType::Standard,
-            other => IFrameOnlyPlaylistType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => IFrameOnlyPlaylistType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

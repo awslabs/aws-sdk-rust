@@ -31,9 +31,7 @@ pub struct InstanceTypeDetails {
 }
 impl InstanceTypeDetails {
     /// <p>The instance type.</p>
-    pub fn instance_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OpenSearchPartitionInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::OpenSearchPartitionInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Whether encryption at rest and node-to-node encryption are supported for the instance type.</p>
@@ -74,9 +72,7 @@ impl InstanceTypeDetails {
 
 /// A builder for [`InstanceTypeDetails`](crate::types::InstanceTypeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceTypeDetailsBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
     pub(crate) encryption_enabled: ::std::option::Option<bool>,
@@ -94,17 +90,12 @@ impl InstanceTypeDetailsBuilder {
         self
     }
     /// <p>The instance type.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The instance type.</p>
-    pub fn get_instance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
         &self.instance_type
     }
     /// <p>Whether encryption at rest and node-to-node encryption are supported for the instance type.</p>
@@ -182,27 +173,19 @@ impl InstanceTypeDetailsBuilder {
     /// To override the contents of this collection use [`set_instance_role`](Self::set_instance_role).
     ///
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
-    pub fn instance_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_role.unwrap_or_default();
         v.push(input.into());
         self.instance_role = ::std::option::Option::Some(v);
         self
     }
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
-    pub fn set_instance_role(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_role(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_role = input;
         self
     }
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
-    pub fn get_instance_role(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_role(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_role
     }
     /// Appends an item to `availability_zones`.
@@ -210,27 +193,19 @@ impl InstanceTypeDetailsBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The supported Availability Zones for the instance type.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The supported Availability Zones for the instance type.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>The supported Availability Zones for the instance type.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     /// Consumes the builder and constructs a [`InstanceTypeDetails`](crate::types::InstanceTypeDetails).

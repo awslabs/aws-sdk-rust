@@ -22,16 +22,14 @@ impl AssociateWirelessGatewayWithThingInput {
 }
 impl AssociateWirelessGatewayWithThingInput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithThingInput`](crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingInput).
-    pub fn builder() -> crate::operation::associate_wireless_gateway_with_thing::builders::AssociateWirelessGatewayWithThingInputBuilder{
+    pub fn builder() -> crate::operation::associate_wireless_gateway_with_thing::builders::AssociateWirelessGatewayWithThingInputBuilder {
         crate::operation::associate_wireless_gateway_with_thing::builders::AssociateWirelessGatewayWithThingInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateWirelessGatewayWithThingInput`](crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateWirelessGatewayWithThingInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) thing_arn: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl AssociateWirelessGatewayWithThingInputBuilder {
         &self.thing_arn
     }
     /// Consumes the builder and constructs a [`AssociateWirelessGatewayWithThingInput`](crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingInput {
-                id: self.id
-                ,
-                thing_arn: self.thing_arn
-                ,
-            }
+                id: self.id,
+                thing_arn: self.thing_arn,
+            },
         )
     }
 }

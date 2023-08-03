@@ -15,21 +15,16 @@ impl BatchUpdateDetectorInput {
 }
 impl BatchUpdateDetectorInput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateDetectorInput`](crate::operation::batch_update_detector::BatchUpdateDetectorInput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_detector::builders::BatchUpdateDetectorInputBuilder {
-        crate::operation::batch_update_detector::builders::BatchUpdateDetectorInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_update_detector::builders::BatchUpdateDetectorInputBuilder {
+        crate::operation::batch_update_detector::builders::BatchUpdateDetectorInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateDetectorInput`](crate::operation::batch_update_detector::BatchUpdateDetectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateDetectorInputBuilder {
-    pub(crate) detectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>>,
+    pub(crate) detectors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>>,
 }
 impl BatchUpdateDetectorInputBuilder {
     /// Appends an item to `detectors`.
@@ -44,30 +39,19 @@ impl BatchUpdateDetectorInputBuilder {
         self
     }
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-    pub fn set_detectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>>,
-    ) -> Self {
+    pub fn set_detectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>>) -> Self {
         self.detectors = input;
         self
     }
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-    pub fn get_detectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>> {
+    pub fn get_detectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>> {
         &self.detectors
     }
     /// Consumes the builder and constructs a [`BatchUpdateDetectorInput`](crate::operation::batch_update_detector::BatchUpdateDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_detector::BatchUpdateDetectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_update_detector::BatchUpdateDetectorInput {
-                detectors: self.detectors,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_update_detector::BatchUpdateDetectorInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_update_detector::BatchUpdateDetectorInput { detectors: self.detectors })
     }
 }

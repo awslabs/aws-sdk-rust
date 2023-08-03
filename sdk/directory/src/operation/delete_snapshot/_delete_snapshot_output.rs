@@ -29,9 +29,7 @@ impl DeleteSnapshotOutput {
 
 /// A builder for [`DeleteSnapshotOutput`](crate::operation::delete_snapshot::DeleteSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSnapshotOutputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

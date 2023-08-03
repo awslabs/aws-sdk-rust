@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`hierarchy_group_id(Option<String>)`](crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupOutput::hierarchy_group_id): <p>The identifier of the hierarchy group.</p>
     ///   - [`hierarchy_group_arn(Option<String>)`](crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupOutput::hierarchy_group_arn): <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
     /// - On failure, responds with [`SdkError<CreateUserHierarchyGroupError>`](crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupError)
-    pub fn create_user_hierarchy_group(&self) -> crate::operation::create_user_hierarchy_group::builders::CreateUserHierarchyGroupFluentBuilder{
+    pub fn create_user_hierarchy_group(&self) -> crate::operation::create_user_hierarchy_group::builders::CreateUserHierarchyGroupFluentBuilder {
         crate::operation::create_user_hierarchy_group::builders::CreateUserHierarchyGroupFluentBuilder::new(self.handle.clone())
     }
 }

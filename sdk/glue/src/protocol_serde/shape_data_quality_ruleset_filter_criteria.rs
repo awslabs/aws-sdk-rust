@@ -32,10 +32,7 @@ pub fn ser_data_quality_ruleset_filter_criteria(
     if let Some(var_7) = &input.target_table {
         #[allow(unused_mut)]
         let mut object_8 = object.key("TargetTable").start_object();
-        crate::protocol_serde::shape_data_quality_target_table::ser_data_quality_target_table(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_data_quality_target_table::ser_data_quality_target_table(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())

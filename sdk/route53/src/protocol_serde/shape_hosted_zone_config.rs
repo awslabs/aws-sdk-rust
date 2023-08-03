@@ -11,8 +11,7 @@ pub fn ser_hosted_zone_config(
     }
     if input.private_zone {
         let mut inner_writer = scope.start_el("PrivateZone").finish();
-        inner_writer
-            .data(::aws_smithy_types::primitive::Encoder::from(input.private_zone).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.private_zone).encode());
     }
     scope.finish();
     Ok(())

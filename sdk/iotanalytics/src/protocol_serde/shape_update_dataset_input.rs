@@ -9,10 +9,7 @@ pub fn ser_update_dataset_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_dataset_action::ser_dataset_action(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_dataset_action::ser_dataset_action(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -36,10 +33,7 @@ pub fn ser_update_dataset_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_late_data_rule::ser_late_data_rule(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_late_data_rule::ser_late_data_rule(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -48,10 +42,7 @@ pub fn ser_update_dataset_input(
     if let Some(var_13) = &input.retention_period {
         #[allow(unused_mut)]
         let mut object_14 = object.key("retentionPeriod").start_object();
-        crate::protocol_serde::shape_retention_period::ser_retention_period(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_retention_period::ser_retention_period(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.triggers {
@@ -60,10 +51,7 @@ pub fn ser_update_dataset_input(
             {
                 #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_dataset_trigger::ser_dataset_trigger(
-                    &mut object_18,
-                    item_17,
-                )?;
+                crate::protocol_serde::shape_dataset_trigger::ser_dataset_trigger(&mut object_18, item_17)?;
                 object_18.finish();
             }
         }
@@ -72,10 +60,7 @@ pub fn ser_update_dataset_input(
     if let Some(var_19) = &input.versioning_configuration {
         #[allow(unused_mut)]
         let mut object_20 = object.key("versioningConfiguration").start_object();
-        crate::protocol_serde::shape_versioning_configuration::ser_versioning_configuration(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_versioning_configuration::ser_versioning_configuration(&mut object_20, var_19)?;
         object_20.finish();
     }
     Ok(())

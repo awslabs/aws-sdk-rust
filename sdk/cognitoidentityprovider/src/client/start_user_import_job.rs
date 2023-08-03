@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartUserImportJobOutput`](crate::operation::start_user_import_job::StartUserImportJobOutput) with field(s):
     ///   - [`user_import_job(Option<UserImportJobType>)`](crate::operation::start_user_import_job::StartUserImportJobOutput::user_import_job): <p>The job object that represents the user import job.</p>
     /// - On failure, responds with [`SdkError<StartUserImportJobError>`](crate::operation::start_user_import_job::StartUserImportJobError)
-    pub fn start_user_import_job(
-        &self,
-    ) -> crate::operation::start_user_import_job::builders::StartUserImportJobFluentBuilder {
-        crate::operation::start_user_import_job::builders::StartUserImportJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_user_import_job(&self) -> crate::operation::start_user_import_job::builders::StartUserImportJobFluentBuilder {
+        crate::operation::start_user_import_job::builders::StartUserImportJobFluentBuilder::new(self.handle.clone())
     }
 }

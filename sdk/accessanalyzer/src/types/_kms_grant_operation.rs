@@ -50,13 +50,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum KmsGrantOperation {
     #[allow(missing_docs)] // documentation missing in model
@@ -99,9 +93,7 @@ impl ::std::convert::From<&str> for KmsGrantOperation {
             "Encrypt" => KmsGrantOperation::Encrypt,
             "GenerateDataKey" => KmsGrantOperation::GenerateDataKey,
             "GenerateDataKeyPair" => KmsGrantOperation::GenerateDataKeyPair,
-            "GenerateDataKeyPairWithoutPlaintext" => {
-                KmsGrantOperation::GenerateDataKeyPairWithoutPlaintext
-            }
+            "GenerateDataKeyPairWithoutPlaintext" => KmsGrantOperation::GenerateDataKeyPairWithoutPlaintext,
             "GenerateDataKeyWithoutPlaintext" => KmsGrantOperation::GenerateDataKeyWithoutPlaintext,
             "GetPublicKey" => KmsGrantOperation::GetPublicKey,
             "ReEncryptFrom" => KmsGrantOperation::ReencryptFrom,
@@ -109,9 +101,7 @@ impl ::std::convert::From<&str> for KmsGrantOperation {
             "RetireGrant" => KmsGrantOperation::RetireGrant,
             "Sign" => KmsGrantOperation::Sign,
             "Verify" => KmsGrantOperation::Verify,
-            other => {
-                KmsGrantOperation::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => KmsGrantOperation::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -132,9 +122,7 @@ impl KmsGrantOperation {
             KmsGrantOperation::Encrypt => "Encrypt",
             KmsGrantOperation::GenerateDataKey => "GenerateDataKey",
             KmsGrantOperation::GenerateDataKeyPair => "GenerateDataKeyPair",
-            KmsGrantOperation::GenerateDataKeyPairWithoutPlaintext => {
-                "GenerateDataKeyPairWithoutPlaintext"
-            }
+            KmsGrantOperation::GenerateDataKeyPairWithoutPlaintext => "GenerateDataKeyPairWithoutPlaintext",
             KmsGrantOperation::GenerateDataKeyWithoutPlaintext => "GenerateDataKeyWithoutPlaintext",
             KmsGrantOperation::GetPublicKey => "GetPublicKey",
             KmsGrantOperation::ReencryptFrom => "ReEncryptFrom",

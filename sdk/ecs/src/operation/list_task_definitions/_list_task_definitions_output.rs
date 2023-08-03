@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTaskDefinitionsOutput {
 }
 impl ListTaskDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTaskDefinitionsOutput`](crate::operation::list_task_definitions::ListTaskDefinitionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_task_definitions::builders::ListTaskDefinitionsOutputBuilder {
-        crate::operation::list_task_definitions::builders::ListTaskDefinitionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_task_definitions::builders::ListTaskDefinitionsOutputBuilder {
+        crate::operation::list_task_definitions::builders::ListTaskDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTaskDefinitionsOutput`](crate::operation::list_task_definitions::ListTaskDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTaskDefinitionsOutputBuilder {
     pub(crate) task_definition_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,27 +47,19 @@ impl ListTaskDefinitionsOutputBuilder {
     /// To override the contents of this collection use [`set_task_definition_arns`](Self::set_task_definition_arns).
     ///
     /// <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code> request.</p>
-    pub fn task_definition_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_definition_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.task_definition_arns.unwrap_or_default();
         v.push(input.into());
         self.task_definition_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code> request.</p>
-    pub fn set_task_definition_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_task_definition_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.task_definition_arns = input;
         self
     }
     /// <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code> request.</p>
-    pub fn get_task_definition_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_task_definition_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.task_definition_arns
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitions</code> request. When the results of a <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

@@ -26,7 +26,7 @@ impl DescribeGatewayInformationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGatewayInformationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_gateway_information::builders::DescribeGatewayInformationInputBuilder,
+    inner: crate::operation::describe_gateway_information::builders::DescribeGatewayInformationInputBuilder,
 }
 impl DescribeGatewayInformationFluentBuilder {
     /// Creates a new `DescribeGatewayInformation`.
@@ -37,7 +37,7 @@ impl DescribeGatewayInformationFluentBuilder {
         }
     }
     /// Access the DescribeGatewayInformation as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_gateway_information::builders::DescribeGatewayInformationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_gateway_information::builders::DescribeGatewayInformationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeGatewayInformationFluentBuilder {
             crate::operation::describe_gateway_information::DescribeGatewayInformation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_gateway_information::DescribeGatewayInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_information::DescribeGatewayInformationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeGatewayInformationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeGatewayInformationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_gateway_information::DescribeGatewayInformationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_gateway_information::DescribeGatewayInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_information::DescribeGatewayInformationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeGatewayInformationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_gateway_information::DescribeGatewayInformationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_gateway_information::DescribeGatewayInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_information::DescribeGatewayInformationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeGatewayInformationFluentBuilder {
             crate::operation::describe_gateway_information::DescribeGatewayInformation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_gateway_information::DescribeGatewayInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_information::DescribeGatewayInformationError>,
     > {
         self.customize_middleware().await
     }

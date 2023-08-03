@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::disable_proactive_engagement::builders::DisableProactiveEngagementFluentBuilder::send) it.
     /// - On success, responds with [`DisableProactiveEngagementOutput`](crate::operation::disable_proactive_engagement::DisableProactiveEngagementOutput)
     /// - On failure, responds with [`SdkError<DisableProactiveEngagementError>`](crate::operation::disable_proactive_engagement::DisableProactiveEngagementError)
-    pub fn disable_proactive_engagement(&self) -> crate::operation::disable_proactive_engagement::builders::DisableProactiveEngagementFluentBuilder{
+    pub fn disable_proactive_engagement(&self) -> crate::operation::disable_proactive_engagement::builders::DisableProactiveEngagementFluentBuilder {
         crate::operation::disable_proactive_engagement::builders::DisableProactiveEngagementFluentBuilder::new(self.handle.clone())
     }
 }

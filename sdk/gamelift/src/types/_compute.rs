@@ -100,9 +100,7 @@ impl Compute {
 
 /// A builder for [`Compute`](crate::types::Compute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComputeBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
@@ -208,10 +206,7 @@ impl ComputeBuilder {
         self
     }
     /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
-    pub fn set_compute_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeStatus>,
-    ) -> Self {
+    pub fn set_compute_status(mut self, input: ::std::option::Option<crate::types::ComputeStatus>) -> Self {
         self.compute_status = input;
         self
     }
@@ -239,10 +234,7 @@ impl ComputeBuilder {
         self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -256,10 +248,7 @@ impl ComputeBuilder {
         self
     }
     /// <p>The type of operating system on your compute resource.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
@@ -282,25 +271,17 @@ impl ComputeBuilder {
         &self.r#type
     }
     /// <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your game server connects to.</p>
-    pub fn game_lift_service_sdk_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_lift_service_sdk_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_lift_service_sdk_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your game server connects to.</p>
-    pub fn set_game_lift_service_sdk_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_lift_service_sdk_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_lift_service_sdk_endpoint = input;
         self
     }
     /// <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your game server connects to.</p>
-    pub fn get_game_lift_service_sdk_endpoint(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_game_lift_service_sdk_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_lift_service_sdk_endpoint
     }
     /// Consumes the builder and constructs a [`Compute`](crate::types::Compute).

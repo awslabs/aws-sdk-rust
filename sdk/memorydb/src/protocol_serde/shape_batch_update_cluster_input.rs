@@ -15,10 +15,7 @@ pub fn ser_batch_update_cluster_input(
     if let Some(var_4) = &input.service_update {
         #[allow(unused_mut)]
         let mut object_5 = object.key("ServiceUpdate").start_object();
-        crate::protocol_serde::shape_service_update_request::ser_service_update_request(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_service_update_request::ser_service_update_request(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

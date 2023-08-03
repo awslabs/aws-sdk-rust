@@ -23,9 +23,7 @@ impl VisaPin {
 
 /// A builder for [`VisaPin`](crate::types::VisaPin).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VisaPinBuilder {
     pub(crate) pin_verification_key_index: ::std::option::Option<i32>,
 }

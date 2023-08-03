@@ -98,9 +98,7 @@ impl DescribeVpcsInput {
 
 /// A builder for [`DescribeVpcsInput`](crate::operation::describe_vpcs::DescribeVpcsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -167,10 +165,7 @@ impl DescribeVpcsInputBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -215,10 +210,7 @@ impl DescribeVpcsInputBuilder {
     }
     /// <p>The IDs of the VPCs.</p>
     /// <p>Default: Describes all your VPCs.</p>
-    pub fn set_vpc_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_ids = input;
         self
     }
@@ -270,12 +262,7 @@ impl DescribeVpcsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeVpcsInput`](crate::operation::describe_vpcs::DescribeVpcsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_vpcs::DescribeVpcsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vpcs::DescribeVpcsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_vpcs::DescribeVpcsInput {
             filters: self.filters,
             vpc_ids: self.vpc_ids,

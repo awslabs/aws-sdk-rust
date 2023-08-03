@@ -10,7 +10,10 @@ impl super::Client {
     /// - On success, responds with [`DeregisterTransitGatewayMulticastGroupMembersOutput`](crate::operation::deregister_transit_gateway_multicast_group_members::DeregisterTransitGatewayMulticastGroupMembersOutput) with field(s):
     ///   - [`deregistered_multicast_group_members(Option<TransitGatewayMulticastDeregisteredGroupMembers>)`](crate::operation::deregister_transit_gateway_multicast_group_members::DeregisterTransitGatewayMulticastGroupMembersOutput::deregistered_multicast_group_members): <p>Information about the deregistered members.</p>
     /// - On failure, responds with [`SdkError<DeregisterTransitGatewayMulticastGroupMembersError>`](crate::operation::deregister_transit_gateway_multicast_group_members::DeregisterTransitGatewayMulticastGroupMembersError)
-    pub fn deregister_transit_gateway_multicast_group_members(&self) -> crate::operation::deregister_transit_gateway_multicast_group_members::builders::DeregisterTransitGatewayMulticastGroupMembersFluentBuilder{
+    pub fn deregister_transit_gateway_multicast_group_members(
+        &self,
+    ) -> crate::operation::deregister_transit_gateway_multicast_group_members::builders::DeregisterTransitGatewayMulticastGroupMembersFluentBuilder
+    {
         crate::operation::deregister_transit_gateway_multicast_group_members::builders::DeregisterTransitGatewayMulticastGroupMembersFluentBuilder::new(self.handle.clone())
     }
 }

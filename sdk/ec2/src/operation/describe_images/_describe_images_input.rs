@@ -169,9 +169,7 @@ impl DescribeImagesInput {
 
 /// A builder for [`DescribeImagesInput`](crate::operation::describe_images::DescribeImagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImagesInputBuilder {
     pub(crate) executable_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -193,10 +191,7 @@ impl DescribeImagesInputBuilder {
     /// <li> <p>If you specify <code>self</code> or your own Amazon Web Services account ID, AMIs shared with your account are returned. In addition, AMIs that are shared with the organization or OU of which you are member are also returned. </p> </li>
     /// <li> <p>If you specify <code>all</code>, all public AMIs are returned.</p> </li>
     /// </ul>
-    pub fn executable_users(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn executable_users(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.executable_users.unwrap_or_default();
         v.push(input.into());
         self.executable_users = ::std::option::Option::Some(v);
@@ -208,10 +203,7 @@ impl DescribeImagesInputBuilder {
     /// <li> <p>If you specify <code>self</code> or your own Amazon Web Services account ID, AMIs shared with your account are returned. In addition, AMIs that are shared with the organization or OU of which you are member are also returned. </p> </li>
     /// <li> <p>If you specify <code>all</code>, all public AMIs are returned.</p> </li>
     /// </ul>
-    pub fn set_executable_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_executable_users(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.executable_users = input;
         self
     }
@@ -221,9 +213,7 @@ impl DescribeImagesInputBuilder {
     /// <li> <p>If you specify <code>self</code> or your own Amazon Web Services account ID, AMIs shared with your account are returned. In addition, AMIs that are shared with the organization or OU of which you are member are also returned. </p> </li>
     /// <li> <p>If you specify <code>all</code>, all public AMIs are returned.</p> </li>
     /// </ul>
-    pub fn get_executable_users(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_executable_users(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.executable_users
     }
     /// Appends an item to `filters`.
@@ -318,10 +308,7 @@ impl DescribeImagesInputBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -383,10 +370,7 @@ impl DescribeImagesInputBuilder {
     }
     /// <p>The image IDs.</p>
     /// <p>Default: Describes all images available to you.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.image_ids = input;
         self
     }
@@ -407,10 +391,7 @@ impl DescribeImagesInputBuilder {
         self
     }
     /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
-    pub fn set_owners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.owners = input;
         self
     }
@@ -486,10 +467,7 @@ impl DescribeImagesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImagesInput`](crate::operation::describe_images::DescribeImagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_images::DescribeImagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_images::DescribeImagesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_images::DescribeImagesInput {
             executable_users: self.executable_users,
             filters: self.filters,

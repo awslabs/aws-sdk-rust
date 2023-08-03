@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeLoggingOptionsOutput {
 }
 impl DescribeLoggingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoggingOptionsOutput`](crate::operation::describe_logging_options::DescribeLoggingOptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_logging_options::builders::DescribeLoggingOptionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_logging_options::builders::DescribeLoggingOptionsOutputBuilder {
         crate::operation::describe_logging_options::builders::DescribeLoggingOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoggingOptionsOutput`](crate::operation::describe_logging_options::DescribeLoggingOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoggingOptionsOutputBuilder {
     pub(crate) logging_options: ::std::option::Option<crate::types::LoggingOptions>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeLoggingOptionsOutputBuilder {
         self
     }
     /// <p>The current settings of the AWS IoT Events logging options.</p>
-    pub fn set_logging_options(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingOptions>,
-    ) -> Self {
+    pub fn set_logging_options(mut self, input: ::std::option::Option<crate::types::LoggingOptions>) -> Self {
         self.logging_options = input;
         self
     }

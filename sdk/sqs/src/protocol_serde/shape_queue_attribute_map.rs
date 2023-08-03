@@ -31,11 +31,8 @@ pub fn de_queue_attribute_map_entry(
             _ => {}
         }
     }
-    let k =
-        k.ok_or_else(|| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing key map entry"))?;
-    let v = v.ok_or_else(|| {
-        ::aws_smithy_xml::decode::XmlDecodeError::custom("missing value map entry")
-    })?;
+    let k = k.ok_or_else(|| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing key map entry"))?;
+    let v = v.ok_or_else(|| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing value map entry"))?;
     out.insert(k, v);
     Ok(())
 }

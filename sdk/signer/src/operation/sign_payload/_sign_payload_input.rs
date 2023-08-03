@@ -43,9 +43,7 @@ impl SignPayloadInput {
 
 /// A builder for [`SignPayloadInput`](crate::operation::sign_payload::SignPayloadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignPayloadInputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_owner: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl SignPayloadInputBuilder {
         &self.profile_name
     }
     /// <p>The AWS account ID of the profile owner.</p>
-    pub fn profile_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS account ID of the profile owner.</p>
-    pub fn set_profile_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_owner = input;
         self
     }
@@ -102,18 +94,12 @@ impl SignPayloadInputBuilder {
         &self.payload
     }
     /// <p>Payload content type</p>
-    pub fn payload_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn payload_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Payload content type</p>
-    pub fn set_payload_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_payload_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payload_format = input;
         self
     }
@@ -122,12 +108,7 @@ impl SignPayloadInputBuilder {
         &self.payload_format
     }
     /// Consumes the builder and constructs a [`SignPayloadInput`](crate::operation::sign_payload::SignPayloadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::sign_payload::SignPayloadInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::sign_payload::SignPayloadInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::sign_payload::SignPayloadInput {
             profile_name: self.profile_name,
             profile_owner: self.profile_owner,

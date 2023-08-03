@@ -37,9 +37,7 @@ impl MessageTemplateType {
 
 /// A builder for [`MessageTemplateType`](crate::types::MessageTemplateType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageTemplateTypeBuilder {
     pub(crate) sms_message: ::std::option::Option<::std::string::String>,
     pub(crate) email_message: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl MessageTemplateTypeBuilder {
         &self.sms_message
     }
     /// <p>The message template for email messages. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-    pub fn email_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message template for email messages. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-    pub fn set_email_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_message = input;
         self
     }
@@ -81,18 +73,12 @@ impl MessageTemplateTypeBuilder {
         &self.email_message
     }
     /// <p>The subject line for email messages. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-    pub fn email_subject(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_subject = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subject line for email messages. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-    pub fn set_email_subject(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_subject = input;
         self
     }

@@ -23,9 +23,7 @@ impl ConnectionBasicAuthResponseParameters {
 
 /// A builder for [`ConnectionBasicAuthResponseParameters`](crate::types::ConnectionBasicAuthResponseParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionBasicAuthResponseParametersBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ConnectionBasicAuthResponseParametersBuilder {
     }
     /// Consumes the builder and constructs a [`ConnectionBasicAuthResponseParameters`](crate::types::ConnectionBasicAuthResponseParameters).
     pub fn build(self) -> crate::types::ConnectionBasicAuthResponseParameters {
-        crate::types::ConnectionBasicAuthResponseParameters {
-            username: self.username,
-        }
+        crate::types::ConnectionBasicAuthResponseParameters { username: self.username }
     }
 }

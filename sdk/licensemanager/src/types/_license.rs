@@ -89,9 +89,7 @@ impl License {
         self.entitlements.as_deref()
     }
     /// <p>Configuration for consumption of the license.</p>
-    pub fn consumption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConsumptionConfiguration> {
+    pub fn consumption_configuration(&self) -> ::std::option::Option<&crate::types::ConsumptionConfiguration> {
         self.consumption_configuration.as_ref()
     }
     /// <p>License metadata.</p>
@@ -116,9 +114,7 @@ impl License {
 
 /// A builder for [`License`](crate::types::License).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LicenseBuilder {
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
     pub(crate) license_name: ::std::option::Option<::std::string::String>,
@@ -130,8 +126,7 @@ pub struct LicenseBuilder {
     pub(crate) validity: ::std::option::Option<crate::types::DatetimeRange>,
     pub(crate) beneficiary: ::std::option::Option<::std::string::String>,
     pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
-    pub(crate) consumption_configuration:
-        ::std::option::Option<crate::types::ConsumptionConfiguration>,
+    pub(crate) consumption_configuration: ::std::option::Option<crate::types::ConsumptionConfiguration>,
     pub(crate) license_metadata: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
     pub(crate) create_time: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -241,10 +236,7 @@ impl LicenseBuilder {
         self
     }
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
-    pub fn set_validity(
-        mut self,
-        input: ::std::option::Option<crate::types::DatetimeRange>,
-    ) -> Self {
+    pub fn set_validity(mut self, input: ::std::option::Option<crate::types::DatetimeRange>) -> Self {
         self.validity = input;
         self
     }
@@ -278,39 +270,26 @@ impl LicenseBuilder {
         self
     }
     /// <p>License entitlements.</p>
-    pub fn set_entitlements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
-    ) -> Self {
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>) -> Self {
         self.entitlements = input;
         self
     }
     /// <p>License entitlements.</p>
-    pub fn get_entitlements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
         &self.entitlements
     }
     /// <p>Configuration for consumption of the license.</p>
-    pub fn consumption_configuration(
-        mut self,
-        input: crate::types::ConsumptionConfiguration,
-    ) -> Self {
+    pub fn consumption_configuration(mut self, input: crate::types::ConsumptionConfiguration) -> Self {
         self.consumption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration for consumption of the license.</p>
-    pub fn set_consumption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsumptionConfiguration>,
-    ) -> Self {
+    pub fn set_consumption_configuration(mut self, input: ::std::option::Option<crate::types::ConsumptionConfiguration>) -> Self {
         self.consumption_configuration = input;
         self
     }
     /// <p>Configuration for consumption of the license.</p>
-    pub fn get_consumption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConsumptionConfiguration> {
+    pub fn get_consumption_configuration(&self) -> &::std::option::Option<crate::types::ConsumptionConfiguration> {
         &self.consumption_configuration
     }
     /// Appends an item to `license_metadata`.
@@ -325,17 +304,12 @@ impl LicenseBuilder {
         self
     }
     /// <p>License metadata.</p>
-    pub fn set_license_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
-    ) -> Self {
+    pub fn set_license_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>) -> Self {
         self.license_metadata = input;
         self
     }
     /// <p>License metadata.</p>
-    pub fn get_license_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+    pub fn get_license_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
         &self.license_metadata
     }
     /// <p>License creation time.</p>

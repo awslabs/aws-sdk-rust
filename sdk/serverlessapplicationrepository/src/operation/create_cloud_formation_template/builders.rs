@@ -26,7 +26,7 @@ impl CreateCloudFormationTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCloudFormationTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_cloud_formation_template::builders::CreateCloudFormationTemplateInputBuilder,
+    inner: crate::operation::create_cloud_formation_template::builders::CreateCloudFormationTemplateInputBuilder,
 }
 impl CreateCloudFormationTemplateFluentBuilder {
     /// Creates a new `CreateCloudFormationTemplate`.
@@ -37,7 +37,7 @@ impl CreateCloudFormationTemplateFluentBuilder {
         }
     }
     /// Access the CreateCloudFormationTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_cloud_formation_template::builders::CreateCloudFormationTemplateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_cloud_formation_template::builders::CreateCloudFormationTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateCloudFormationTemplateFluentBuilder {
             crate::operation::create_cloud_formation_template::CreateCloudFormationTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateCloudFormationTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateCloudFormationTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateCloudFormationTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateCloudFormationTemplateFluentBuilder {
             crate::operation::create_cloud_formation_template::CreateCloudFormationTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cloud_formation_template::CreateCloudFormationTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -142,19 +125,13 @@ impl CreateCloudFormationTemplateFluentBuilder {
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_semantic_version(input);
         self
     }

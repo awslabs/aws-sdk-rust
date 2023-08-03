@@ -30,9 +30,7 @@ impl AccountHealth {
 
 /// A builder for [`AccountHealth`](crate::types::AccountHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountHealthBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) insight: ::std::option::Option<crate::types::AccountInsightHealth>,
@@ -58,10 +56,7 @@ impl AccountHealthBuilder {
         self
     }
     /// <p> Information about the health of the Amazon Web Services resources in your account, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
-    pub fn set_insight(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountInsightHealth>,
-    ) -> Self {
+    pub fn set_insight(mut self, input: ::std::option::Option<crate::types::AccountInsightHealth>) -> Self {
         self.insight = input;
         self
     }

@@ -51,9 +51,7 @@ impl Certificates {
 
 /// A builder for [`Certificates`](crate::types::Certificates).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificatesBuilder {
     pub(crate) cluster_csr: ::std::option::Option<::std::string::String>,
     pub(crate) hsm_certificate: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl CertificatesBuilder {
         &self.cluster_csr
     }
     /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
-    pub fn hsm_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
-    pub fn set_hsm_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_certificate = input;
         self
     }
@@ -97,18 +89,12 @@ impl CertificatesBuilder {
         &self.hsm_certificate
     }
     /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
-    pub fn aws_hardware_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_hardware_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_hardware_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
-    pub fn set_aws_hardware_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_hardware_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_hardware_certificate = input;
         self
     }
@@ -117,40 +103,26 @@ impl CertificatesBuilder {
         &self.aws_hardware_certificate
     }
     /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
-    pub fn manufacturer_hardware_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn manufacturer_hardware_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manufacturer_hardware_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
-    pub fn set_manufacturer_hardware_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_manufacturer_hardware_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manufacturer_hardware_certificate = input;
         self
     }
     /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
-    pub fn get_manufacturer_hardware_certificate(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_manufacturer_hardware_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.manufacturer_hardware_certificate
     }
     /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
-    pub fn cluster_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
-    pub fn set_cluster_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_certificate = input;
         self
     }

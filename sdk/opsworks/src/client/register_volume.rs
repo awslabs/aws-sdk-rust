@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterVolumeOutput`](crate::operation::register_volume::RegisterVolumeOutput) with field(s):
     ///   - [`volume_id(Option<String>)`](crate::operation::register_volume::RegisterVolumeOutput::volume_id): <p>The volume ID.</p>
     /// - On failure, responds with [`SdkError<RegisterVolumeError>`](crate::operation::register_volume::RegisterVolumeError)
-    pub fn register_volume(
-        &self,
-    ) -> crate::operation::register_volume::builders::RegisterVolumeFluentBuilder {
-        crate::operation::register_volume::builders::RegisterVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_volume(&self) -> crate::operation::register_volume::builders::RegisterVolumeFluentBuilder {
+        crate::operation::register_volume::builders::RegisterVolumeFluentBuilder::new(self.handle.clone())
     }
 }

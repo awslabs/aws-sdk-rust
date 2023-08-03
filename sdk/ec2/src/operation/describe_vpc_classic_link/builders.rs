@@ -29,8 +29,7 @@ impl DescribeVpcClassicLinkInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVpcClassicLinkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkInputBuilder,
+    inner: crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkInputBuilder,
 }
 impl DescribeVpcClassicLinkFluentBuilder {
     /// Creates a new `DescribeVpcClassicLink`.
@@ -41,10 +40,7 @@ impl DescribeVpcClassicLinkFluentBuilder {
         }
     }
     /// Access the DescribeVpcClassicLink as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl DescribeVpcClassicLinkFluentBuilder {
             crate::operation::describe_vpc_classic_link::DescribeVpcClassicLink,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl DescribeVpcClassicLinkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl DescribeVpcClassicLinkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl DescribeVpcClassicLinkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +108,7 @@ impl DescribeVpcClassicLinkFluentBuilder {
             crate::operation::describe_vpc_classic_link::DescribeVpcClassicLink,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkError>,
     > {
         self.customize_middleware().await
     }
@@ -159,10 +144,7 @@ impl DescribeVpcClassicLinkFluentBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -205,10 +187,7 @@ impl DescribeVpcClassicLinkFluentBuilder {
         self
     }
     /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
-    pub fn set_vpc_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_ids(input);
         self
     }

@@ -37,27 +37,19 @@ impl PutMetricPolicyInput {
 
 /// A builder for [`PutMetricPolicyInput`](crate::operation::put_metric_policy::PutMetricPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMetricPolicyInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_policy: ::std::option::Option<crate::types::MetricPolicy>,
 }
 impl PutMetricPolicyInputBuilder {
     /// <p>The name of the container that you want to add the metric policy to.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container that you want to add the metric policy to.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -79,10 +71,7 @@ impl PutMetricPolicyInputBuilder {
     /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
     /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
     /// </ul>
-    pub fn set_metric_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricPolicy>,
-    ) -> Self {
+    pub fn set_metric_policy(mut self, input: ::std::option::Option<crate::types::MetricPolicy>) -> Self {
         self.metric_policy = input;
         self
     }
@@ -97,10 +86,7 @@ impl PutMetricPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutMetricPolicyInput`](crate::operation::put_metric_policy::PutMetricPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_metric_policy::PutMetricPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_metric_policy::PutMetricPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metric_policy::PutMetricPolicyInput {
             container_name: self.container_name,
             metric_policy: self.metric_policy,

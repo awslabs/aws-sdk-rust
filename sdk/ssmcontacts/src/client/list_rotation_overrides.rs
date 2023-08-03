@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`rotation_overrides(Option<Vec<RotationOverride>>)`](crate::operation::list_rotation_overrides::ListRotationOverridesOutput::rotation_overrides): <p>A list of rotation overrides in the specified time range.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rotation_overrides::ListRotationOverridesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListRotationOverridesError>`](crate::operation::list_rotation_overrides::ListRotationOverridesError)
-    pub fn list_rotation_overrides(
-        &self,
-    ) -> crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder
-    {
-        crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_rotation_overrides(&self) -> crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder {
+        crate::operation::list_rotation_overrides::builders::ListRotationOverridesFluentBuilder::new(self.handle.clone())
     }
 }

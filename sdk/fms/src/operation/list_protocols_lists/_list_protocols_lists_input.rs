@@ -31,17 +31,14 @@ impl ListProtocolsListsInput {
 }
 impl ListProtocolsListsInput {
     /// Creates a new builder-style object to manufacture [`ListProtocolsListsInput`](crate::operation::list_protocols_lists::ListProtocolsListsInput).
-    pub fn builder(
-    ) -> crate::operation::list_protocols_lists::builders::ListProtocolsListsInputBuilder {
+    pub fn builder() -> crate::operation::list_protocols_lists::builders::ListProtocolsListsInputBuilder {
         crate::operation::list_protocols_lists::builders::ListProtocolsListsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProtocolsListsInput`](crate::operation::list_protocols_lists::ListProtocolsListsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProtocolsListsInputBuilder {
     pub(crate) default_lists: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,16 +93,11 @@ impl ListProtocolsListsInputBuilder {
     /// Consumes the builder and constructs a [`ListProtocolsListsInput`](crate::operation::list_protocols_lists::ListProtocolsListsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_protocols_lists::ListProtocolsListsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_protocols_lists::ListProtocolsListsInput {
-                default_lists: self.default_lists,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_protocols_lists::ListProtocolsListsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_protocols_lists::ListProtocolsListsInput {
+            default_lists: self.default_lists,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

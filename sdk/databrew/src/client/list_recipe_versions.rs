@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_recipe_versions::ListRecipeVersionsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     ///   - [`recipes(Option<Vec<Recipe>>)`](crate::operation::list_recipe_versions::ListRecipeVersionsOutput::recipes): <p>A list of versions for the specified recipe.</p>
     /// - On failure, responds with [`SdkError<ListRecipeVersionsError>`](crate::operation::list_recipe_versions::ListRecipeVersionsError)
-    pub fn list_recipe_versions(
-        &self,
-    ) -> crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder {
-        crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_recipe_versions(&self) -> crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder {
+        crate::operation::list_recipe_versions::builders::ListRecipeVersionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl LambdaAvailabilityProvider {
 
 /// A builder for [`LambdaAvailabilityProvider`](crate::types::LambdaAvailabilityProvider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaAvailabilityProviderBuilder {
     pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl LambdaAvailabilityProviderBuilder {
     }
     /// Consumes the builder and constructs a [`LambdaAvailabilityProvider`](crate::types::LambdaAvailabilityProvider).
     pub fn build(self) -> crate::types::LambdaAvailabilityProvider {
-        crate::types::LambdaAvailabilityProvider {
-            lambda_arn: self.lambda_arn,
-        }
+        crate::types::LambdaAvailabilityProvider { lambda_arn: self.lambda_arn }
     }
 }

@@ -37,9 +37,7 @@ impl SuggestModel {
 
 /// A builder for [`SuggestModel`](crate::types::SuggestModel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuggestModelBuilder {
     pub(crate) query: ::std::option::Option<::std::string::String>,
     pub(crate) found: ::std::option::Option<i64>,
@@ -86,17 +84,12 @@ impl SuggestModelBuilder {
         self
     }
     /// <p>The documents that match the query string.</p>
-    pub fn set_suggestions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionMatch>>,
-    ) -> Self {
+    pub fn set_suggestions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionMatch>>) -> Self {
         self.suggestions = input;
         self
     }
     /// <p>The documents that match the query string.</p>
-    pub fn get_suggestions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestionMatch>> {
+    pub fn get_suggestions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestionMatch>> {
         &self.suggestions
     }
     /// Consumes the builder and constructs a [`SuggestModel`](crate::types::SuggestModel).

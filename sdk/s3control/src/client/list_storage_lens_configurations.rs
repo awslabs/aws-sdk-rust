@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput::next_token): <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
     ///   - [`storage_lens_configuration_list(Option<Vec<ListStorageLensConfigurationEntry>>)`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput::storage_lens_configuration_list): <p>A list of S3 Storage Lens configurations.</p>
     /// - On failure, responds with [`SdkError<ListStorageLensConfigurationsError>`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsError)
-    pub fn list_storage_lens_configurations(&self) -> crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsFluentBuilder{
+    pub fn list_storage_lens_configurations(
+        &self,
+    ) -> crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsFluentBuilder {
         crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

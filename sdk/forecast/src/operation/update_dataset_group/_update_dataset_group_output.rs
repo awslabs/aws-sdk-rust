@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDatasetGroupOutput {
 }
 impl UpdateDatasetGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDatasetGroupOutput`](crate::operation::update_dataset_group::UpdateDatasetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_dataset_group::builders::UpdateDatasetGroupOutputBuilder {
+    pub fn builder() -> crate::operation::update_dataset_group::builders::UpdateDatasetGroupOutputBuilder {
         crate::operation::update_dataset_group::builders::UpdateDatasetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDatasetGroupOutput`](crate::operation::update_dataset_group::UpdateDatasetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatasetGroupOutputBuilder {
     _request_id: Option<String>,
 }

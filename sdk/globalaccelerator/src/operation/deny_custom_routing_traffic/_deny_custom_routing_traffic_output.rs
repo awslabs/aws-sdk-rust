@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DenyCustomRoutingTrafficOutput {
 }
 impl DenyCustomRoutingTrafficOutput {
     /// Creates a new builder-style object to manufacture [`DenyCustomRoutingTrafficOutput`](crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficOutput).
-    pub fn builder() -> crate::operation::deny_custom_routing_traffic::builders::DenyCustomRoutingTrafficOutputBuilder{
+    pub fn builder() -> crate::operation::deny_custom_routing_traffic::builders::DenyCustomRoutingTrafficOutputBuilder {
         crate::operation::deny_custom_routing_traffic::builders::DenyCustomRoutingTrafficOutputBuilder::default()
     }
 }
 
 /// A builder for [`DenyCustomRoutingTrafficOutput`](crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DenyCustomRoutingTrafficOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DenyCustomRoutingTrafficOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DenyCustomRoutingTrafficOutput`](crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficOutput {
+    pub fn build(self) -> crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficOutput {
         crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficOutput {
             _request_id: self._request_id,
         }

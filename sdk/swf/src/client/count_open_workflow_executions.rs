@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`count(i32)`](crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsOutput::count): <p>The number of workflow executions.</p>
     ///   - [`truncated(bool)`](crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsOutput::truncated): <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     /// - On failure, responds with [`SdkError<CountOpenWorkflowExecutionsError>`](crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsError)
-    pub fn count_open_workflow_executions(&self) -> crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsFluentBuilder{
+    pub fn count_open_workflow_executions(
+        &self,
+    ) -> crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsFluentBuilder {
         crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

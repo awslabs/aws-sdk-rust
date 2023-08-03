@@ -41,18 +41,14 @@ impl DescribeDbSecurityGroupsInput {
 }
 impl DescribeDbSecurityGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbSecurityGroupsInput`](crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_security_groups::builders::DescribeDbSecurityGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_db_security_groups::builders::DescribeDbSecurityGroupsInputBuilder {
         crate::operation::describe_db_security_groups::builders::DescribeDbSecurityGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbSecurityGroupsInput`](crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbSecurityGroupsInputBuilder {
     pub(crate) db_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -61,18 +57,12 @@ pub struct DescribeDbSecurityGroupsInputBuilder {
 }
 impl DescribeDbSecurityGroupsInputBuilder {
     /// <p>The name of the DB security group to return details for.</p>
-    pub fn db_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB security group to return details for.</p>
-    pub fn set_db_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_security_group_name = input;
         self
     }
@@ -92,10 +82,7 @@ impl DescribeDbSecurityGroupsInputBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -144,13 +131,11 @@ impl DescribeDbSecurityGroupsInputBuilder {
         crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsInput {
-                db_security_group_name: self.db_security_group_name,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsInput {
+            db_security_group_name: self.db_security_group_name,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

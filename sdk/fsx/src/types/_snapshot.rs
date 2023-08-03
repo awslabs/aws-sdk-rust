@@ -36,8 +36,7 @@ pub struct Snapshot {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
     #[doc(hidden)]
-    pub administrative_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
+    pub administrative_actions: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
 }
 impl Snapshot {
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -71,9 +70,7 @@ impl Snapshot {
         self.lifecycle.as_ref()
     }
     /// <p>Describes why a resource lifecycle state changed.</p>
-    pub fn lifecycle_transition_reason(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LifecycleTransitionReason> {
+    pub fn lifecycle_transition_reason(&self) -> ::std::option::Option<&crate::types::LifecycleTransitionReason> {
         self.lifecycle_transition_reason.as_ref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -81,9 +78,7 @@ impl Snapshot {
         self.tags.as_deref()
     }
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
-    pub fn administrative_actions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdministrativeAction]> {
+    pub fn administrative_actions(&self) -> ::std::option::Option<&[crate::types::AdministrativeAction]> {
         self.administrative_actions.as_deref()
     }
 }
@@ -96,9 +91,7 @@ impl Snapshot {
 
 /// A builder for [`Snapshot`](crate::types::Snapshot).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
@@ -106,11 +99,9 @@ pub struct SnapshotBuilder {
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::SnapshotLifecycle>,
-    pub(crate) lifecycle_transition_reason:
-        ::std::option::Option<crate::types::LifecycleTransitionReason>,
+    pub(crate) lifecycle_transition_reason: ::std::option::Option<crate::types::LifecycleTransitionReason>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) administrative_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
+    pub(crate) administrative_actions: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
 }
 impl SnapshotBuilder {
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -175,10 +166,7 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -204,10 +192,7 @@ impl SnapshotBuilder {
     /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting the snapshot.</p> </li>
     /// <li> <p> <code>AVAILABLE</code> - The snapshot is fully available.</p> </li>
     /// </ul>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::SnapshotLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
@@ -222,25 +207,17 @@ impl SnapshotBuilder {
         &self.lifecycle
     }
     /// <p>Describes why a resource lifecycle state changed.</p>
-    pub fn lifecycle_transition_reason(
-        mut self,
-        input: crate::types::LifecycleTransitionReason,
-    ) -> Self {
+    pub fn lifecycle_transition_reason(mut self, input: crate::types::LifecycleTransitionReason) -> Self {
         self.lifecycle_transition_reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes why a resource lifecycle state changed.</p>
-    pub fn set_lifecycle_transition_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecycleTransitionReason>,
-    ) -> Self {
+    pub fn set_lifecycle_transition_reason(mut self, input: ::std::option::Option<crate::types::LifecycleTransitionReason>) -> Self {
         self.lifecycle_transition_reason = input;
         self
     }
     /// <p>Describes why a resource lifecycle state changed.</p>
-    pub fn get_lifecycle_transition_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::LifecycleTransitionReason> {
+    pub fn get_lifecycle_transition_reason(&self) -> &::std::option::Option<crate::types::LifecycleTransitionReason> {
         &self.lifecycle_transition_reason
     }
     /// Appends an item to `tags`.
@@ -255,10 +232,7 @@ impl SnapshotBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -278,17 +252,12 @@ impl SnapshotBuilder {
         self
     }
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
-    pub fn set_administrative_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
-    ) -> Self {
+    pub fn set_administrative_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>) -> Self {
         self.administrative_actions = input;
         self
     }
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
-    pub fn get_administrative_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>> {
+    pub fn get_administrative_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>> {
         &self.administrative_actions
     }
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).

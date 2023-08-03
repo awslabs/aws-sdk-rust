@@ -26,7 +26,7 @@ impl BatchDescribeSimulationJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDescribeSimulationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobInputBuilder,
+    inner: crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobInputBuilder,
 }
 impl BatchDescribeSimulationJobFluentBuilder {
     /// Creates a new `BatchDescribeSimulationJob`.
@@ -37,7 +37,7 @@ impl BatchDescribeSimulationJobFluentBuilder {
         }
     }
     /// Access the BatchDescribeSimulationJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchDescribeSimulationJobFluentBuilder {
             crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchDescribeSimulationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchDescribeSimulationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchDescribeSimulationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchDescribeSimulationJobFluentBuilder {
             crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +119,7 @@ impl BatchDescribeSimulationJobFluentBuilder {
         self
     }
     /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_jobs(input);
         self
     }

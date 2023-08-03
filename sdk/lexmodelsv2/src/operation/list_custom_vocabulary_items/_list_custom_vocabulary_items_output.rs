@@ -14,8 +14,7 @@ pub struct ListCustomVocabularyItemsOutput {
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
     #[doc(hidden)]
-    pub custom_vocabulary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>,
+    pub custom_vocabulary_items: ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>,
     /// <p>The nextToken identifier to the list custom vocabulary response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -35,9 +34,7 @@ impl ListCustomVocabularyItemsOutput {
         self.locale_id.as_deref()
     }
     /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
-    pub fn custom_vocabulary_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CustomVocabularyItem]> {
+    pub fn custom_vocabulary_items(&self) -> ::std::option::Option<&[crate::types::CustomVocabularyItem]> {
         self.custom_vocabulary_items.as_deref()
     }
     /// <p>The nextToken identifier to the list custom vocabulary response.</p>
@@ -52,22 +49,19 @@ impl ::aws_http::request_id::RequestId for ListCustomVocabularyItemsOutput {
 }
 impl ListCustomVocabularyItemsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomVocabularyItemsOutput`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput).
-    pub fn builder() -> crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsOutputBuilder{
+    pub fn builder() -> crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsOutputBuilder {
         crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomVocabularyItemsOutput`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomVocabularyItemsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_vocabulary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>,
+    pub(crate) custom_vocabulary_items: ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -126,17 +120,12 @@ impl ListCustomVocabularyItemsOutputBuilder {
         self
     }
     /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
-    pub fn set_custom_vocabulary_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>,
-    ) -> Self {
+    pub fn set_custom_vocabulary_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>) -> Self {
         self.custom_vocabulary_items = input;
         self
     }
     /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
-    pub fn get_custom_vocabulary_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>> {
+    pub fn get_custom_vocabulary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>> {
         &self.custom_vocabulary_items
     }
     /// <p>The nextToken identifier to the list custom vocabulary response.</p>
@@ -163,9 +152,7 @@ impl ListCustomVocabularyItemsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCustomVocabularyItemsOutput`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput {
+    pub fn build(self) -> crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput {
         crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

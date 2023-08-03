@@ -28,7 +28,7 @@ impl GetDevicePositionHistoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDevicePositionHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_device_position_history::builders::GetDevicePositionHistoryInputBuilder,
+    inner: crate::operation::get_device_position_history::builders::GetDevicePositionHistoryInputBuilder,
 }
 impl GetDevicePositionHistoryFluentBuilder {
     /// Creates a new `GetDevicePositionHistory`.
@@ -39,7 +39,7 @@ impl GetDevicePositionHistoryFluentBuilder {
         }
     }
     /// Access the GetDevicePositionHistory as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_device_position_history::builders::GetDevicePositionHistoryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_device_position_history::builders::GetDevicePositionHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl GetDevicePositionHistoryFluentBuilder {
             crate::operation::get_device_position_history::GetDevicePositionHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_position_history::GetDevicePositionHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_position_history::GetDevicePositionHistoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl GetDevicePositionHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl GetDevicePositionHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_position_history::GetDevicePositionHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_position_history::GetDevicePositionHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_position_history::GetDevicePositionHistoryError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl GetDevicePositionHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_position_history::GetDevicePositionHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_position_history::GetDevicePositionHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_position_history::GetDevicePositionHistoryError>,
     > {
         self.send_middleware().await
     }
@@ -116,19 +107,14 @@ impl GetDevicePositionHistoryFluentBuilder {
             crate::operation::get_device_position_history::GetDevicePositionHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_position_history::GetDevicePositionHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_position_history::GetDevicePositionHistoryError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_device_position_history::paginator::GetDevicePositionHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_device_position_history::paginator::GetDevicePositionHistoryPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::get_device_position_history::paginator::GetDevicePositionHistoryPaginator {
         crate::operation::get_device_position_history::paginator::GetDevicePositionHistoryPaginator::new(self.handle, self.inner)
     }
     /// <p>The tracker resource receiving the request for the device position history.</p>
@@ -190,10 +176,7 @@ impl GetDevicePositionHistoryFluentBuilder {
     /// <ul>
     /// <li> <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p> </li>
     /// </ul>
-    pub fn set_start_time_inclusive(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time_inclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time_inclusive(input);
         self
     }
@@ -219,10 +202,7 @@ impl GetDevicePositionHistoryFluentBuilder {
     /// <ul>
     /// <li> <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p> </li>
     /// </ul>
-    pub fn set_end_time_exclusive(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time_exclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time_exclusive(input);
         self
     }

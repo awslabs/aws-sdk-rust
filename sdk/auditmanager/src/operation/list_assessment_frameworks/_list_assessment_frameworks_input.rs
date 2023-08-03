@@ -29,18 +29,14 @@ impl ListAssessmentFrameworksInput {
 }
 impl ListAssessmentFrameworksInput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentFrameworksInput`](crate::operation::list_assessment_frameworks::ListAssessmentFrameworksInput).
-    pub fn builder(
-    ) -> crate::operation::list_assessment_frameworks::builders::ListAssessmentFrameworksInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assessment_frameworks::builders::ListAssessmentFrameworksInputBuilder {
         crate::operation::list_assessment_frameworks::builders::ListAssessmentFrameworksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentFrameworksInput`](crate::operation::list_assessment_frameworks::ListAssessmentFrameworksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentFrameworksInputBuilder {
     pub(crate) framework_type: ::std::option::Option<crate::types::FrameworkType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,10 +49,7 @@ impl ListAssessmentFrameworksInputBuilder {
         self
     }
     /// <p> The type of framework, such as a standard framework or a custom framework. </p>
-    pub fn set_framework_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FrameworkType>,
-    ) -> Self {
+    pub fn set_framework_type(mut self, input: ::std::option::Option<crate::types::FrameworkType>) -> Self {
         self.framework_type = input;
         self
     }
@@ -99,12 +92,10 @@ impl ListAssessmentFrameworksInputBuilder {
         crate::operation::list_assessment_frameworks::ListAssessmentFrameworksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_assessment_frameworks::ListAssessmentFrameworksInput {
-                framework_type: self.framework_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_assessment_frameworks::ListAssessmentFrameworksInput {
+            framework_type: self.framework_type,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

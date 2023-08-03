@@ -10,10 +10,7 @@ impl ListSecretsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_secrets::ListSecretsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_secrets::ListSecretsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_secrets::ListSecretsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_secrets();
         fluent_builder.inner = self;
@@ -51,10 +48,7 @@ impl ListSecretsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_secrets::ListSecrets,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_secrets::ListSecrets, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_secrets::ListSecretsError>,
     > {
         let handle = self.handle.clone();
@@ -65,10 +59,7 @@ impl ListSecretsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -110,10 +101,7 @@ impl ListSecretsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_secrets::ListSecrets,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_secrets::ListSecrets, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_secrets::ListSecretsError>,
     > {
         self.customize_middleware().await
@@ -122,10 +110,7 @@ impl ListSecretsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_secrets::paginator::ListSecretsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_secrets::paginator::ListSecretsPaginator {
-        crate::operation::list_secrets::paginator::ListSecretsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_secrets::paginator::ListSecretsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't included.</p>
     pub fn include_planned_deletion(mut self, input: bool) -> Self {
@@ -182,10 +167,7 @@ impl ListSecretsFluentBuilder {
         self
     }
     /// <p>The filters to apply to the list of secrets.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -199,10 +181,7 @@ impl ListSecretsFluentBuilder {
         self
     }
     /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }

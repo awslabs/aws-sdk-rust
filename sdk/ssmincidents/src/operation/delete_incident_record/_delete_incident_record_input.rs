@@ -15,17 +15,14 @@ impl DeleteIncidentRecordInput {
 }
 impl DeleteIncidentRecordInput {
     /// Creates a new builder-style object to manufacture [`DeleteIncidentRecordInput`](crate::operation::delete_incident_record::DeleteIncidentRecordInput).
-    pub fn builder(
-    ) -> crate::operation::delete_incident_record::builders::DeleteIncidentRecordInputBuilder {
+    pub fn builder() -> crate::operation::delete_incident_record::builders::DeleteIncidentRecordInputBuilder {
         crate::operation::delete_incident_record::builders::DeleteIncidentRecordInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIncidentRecordInput`](crate::operation::delete_incident_record::DeleteIncidentRecordInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIncidentRecordInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,8 @@ impl DeleteIncidentRecordInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIncidentRecordInput`](crate::operation::delete_incident_record::DeleteIncidentRecordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_incident_record::DeleteIncidentRecordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_incident_record::DeleteIncidentRecordInput { arn: self.arn },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_incident_record::DeleteIncidentRecordInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_incident_record::DeleteIncidentRecordInput { arn: self.arn })
     }
 }

@@ -10,10 +10,7 @@ impl CreateSnapshotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_snapshot::CreateSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot::CreateSnapshotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot::CreateSnapshotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_snapshot();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateSnapshotFluentBuilder {
         }
     }
     /// Access the CreateSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_snapshot::builders::CreateSnapshotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_snapshot::builders::CreateSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl CreateSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,18 +109,12 @@ impl CreateSnapshotFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_group_id(input.into());
         self
     }
     /// <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }
@@ -137,18 +123,12 @@ impl CreateSnapshotFluentBuilder {
         self.inner.get_replication_group_id()
     }
     /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
-    pub fn cache_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_cluster_id(input.into());
         self
     }
     /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
-    pub fn set_cache_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_cluster_id(input);
         self
     }
@@ -157,18 +137,12 @@ impl CreateSnapshotFluentBuilder {
         self.inner.get_cache_cluster_id()
     }
     /// <p>A name for the snapshot being created.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_name(input.into());
         self
     }
     /// <p>A name for the snapshot being created.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_name(input);
         self
     }
@@ -200,10 +174,7 @@ impl CreateSnapshotFluentBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -79,9 +79,7 @@ impl OptionSetting {
 
 /// A builder for [`OptionSetting`](crate::types::OptionSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OptionSettingBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -123,18 +121,12 @@ impl OptionSettingBuilder {
         &self.value
     }
     /// <p>The default value of the option setting.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value of the option setting.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }
@@ -185,18 +177,12 @@ impl OptionSettingBuilder {
         &self.data_type
     }
     /// <p>The allowed values of the option setting.</p>
-    pub fn allowed_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_values = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The allowed values of the option setting.</p>
-    pub fn set_allowed_values(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_values = input;
         self
     }

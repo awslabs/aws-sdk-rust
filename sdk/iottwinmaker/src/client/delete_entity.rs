@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteEntityOutput`](crate::operation::delete_entity::DeleteEntityOutput) with field(s):
     ///   - [`state(Option<State>)`](crate::operation::delete_entity::DeleteEntityOutput::state): <p>The current state of the deleted entity.</p>
     /// - On failure, responds with [`SdkError<DeleteEntityError>`](crate::operation::delete_entity::DeleteEntityError)
-    pub fn delete_entity(
-        &self,
-    ) -> crate::operation::delete_entity::builders::DeleteEntityFluentBuilder {
-        crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_entity(&self) -> crate::operation::delete_entity::builders::DeleteEntityFluentBuilder {
+        crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::new(self.handle.clone())
     }
 }

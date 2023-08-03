@@ -32,9 +32,7 @@ pub struct GetAnnotationStoreOutput {
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The store's tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The store's parsing options.</p>
     #[doc(hidden)]
     pub store_options: ::std::option::Option<crate::types::StoreOptions>,
@@ -87,11 +85,7 @@ impl GetAnnotationStoreOutput {
         self.update_time.as_ref()
     }
     /// <p>The store's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The store's parsing options.</p>
@@ -118,17 +112,14 @@ impl ::aws_http::request_id::RequestId for GetAnnotationStoreOutput {
 }
 impl GetAnnotationStoreOutput {
     /// Creates a new builder-style object to manufacture [`GetAnnotationStoreOutput`](crate::operation::get_annotation_store::GetAnnotationStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::get_annotation_store::builders::GetAnnotationStoreOutputBuilder {
+    pub fn builder() -> crate::operation::get_annotation_store::builders::GetAnnotationStoreOutputBuilder {
         crate::operation::get_annotation_store::builders::GetAnnotationStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAnnotationStoreOutput`](crate::operation::get_annotation_store::GetAnnotationStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAnnotationStoreOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,
@@ -139,9 +130,7 @@ pub struct GetAnnotationStoreOutputBuilder {
     pub(crate) sse_config: ::std::option::Option<crate::types::SseConfig>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) store_options: ::std::option::Option<crate::types::StoreOptions>,
     pub(crate) store_format: ::std::option::Option<crate::types::StoreFormat>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
@@ -169,10 +158,7 @@ impl GetAnnotationStoreOutputBuilder {
         self
     }
     /// <p>The store's genome reference.</p>
-    pub fn set_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceItem>,
-    ) -> Self {
+    pub fn set_reference(mut self, input: ::std::option::Option<crate::types::ReferenceItem>) -> Self {
         self.reference = input;
         self
     }
@@ -256,10 +242,7 @@ impl GetAnnotationStoreOutputBuilder {
         self
     }
     /// <p>When the store was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -273,10 +256,7 @@ impl GetAnnotationStoreOutputBuilder {
         self
     }
     /// <p>When the store was updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -289,32 +269,19 @@ impl GetAnnotationStoreOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The store's tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The store's tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The store's tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The store's parsing options.</p>
@@ -323,10 +290,7 @@ impl GetAnnotationStoreOutputBuilder {
         self
     }
     /// <p>The store's parsing options.</p>
-    pub fn set_store_options(
-        mut self,
-        input: ::std::option::Option<crate::types::StoreOptions>,
-    ) -> Self {
+    pub fn set_store_options(mut self, input: ::std::option::Option<crate::types::StoreOptions>) -> Self {
         self.store_options = input;
         self
     }
@@ -340,10 +304,7 @@ impl GetAnnotationStoreOutputBuilder {
         self
     }
     /// <p>The store's annotation file format.</p>
-    pub fn set_store_format(
-        mut self,
-        input: ::std::option::Option<crate::types::StoreFormat>,
-    ) -> Self {
+    pub fn set_store_format(mut self, input: ::std::option::Option<crate::types::StoreFormat>) -> Self {
         self.store_format = input;
         self
     }
@@ -352,18 +313,12 @@ impl GetAnnotationStoreOutputBuilder {
         &self.store_format
     }
     /// <p>A status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

@@ -22,9 +22,7 @@ impl GetAssessmentInput {
 
 /// A builder for [`GetAssessmentInput`](crate::operation::get_assessment::GetAssessmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssessmentInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`GetAssessmentInput`](crate::operation::get_assessment::GetAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_assessment::GetAssessmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_assessment::GetAssessmentInput {
-            id: self.id,
-        })
+    ) -> ::std::result::Result<crate::operation::get_assessment::GetAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_assessment::GetAssessmentInput { id: self.id })
     }
 }

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ExecutionStatus {
             "EXCEPTION" => ExecutionStatus::Exception,
             "HANDLING_EXCEPTION" => ExecutionStatus::HandlingException,
             "IN_PROGRESS" => ExecutionStatus::InProgress,
-            other => {
-                ExecutionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ExecutionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ExecutionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED",
-            "EXCEPTION",
-            "HANDLING_EXCEPTION",
-            "IN_PROGRESS",
-        ]
+        &["COMPLETED", "EXCEPTION", "HANDLING_EXCEPTION", "IN_PROGRESS"]
     }
 }
 impl ::std::convert::AsRef<str> for ExecutionStatus {

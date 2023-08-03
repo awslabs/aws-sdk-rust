@@ -5,8 +5,7 @@
 pub struct ListPlaceIndexesOutput {
     /// <p>Lists the place index resources that exist in your Amazon Web Services account</p>
     #[doc(hidden)]
-    pub entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListPlaceIndexesResponseEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::ListPlaceIndexesResponseEntry>>,
     /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPlaceIndexesOutput {
 }
 impl ListPlaceIndexesOutput {
     /// Creates a new builder-style object to manufacture [`ListPlaceIndexesOutput`](crate::operation::list_place_indexes::ListPlaceIndexesOutput).
-    pub fn builder() -> crate::operation::list_place_indexes::builders::ListPlaceIndexesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_place_indexes::builders::ListPlaceIndexesOutputBuilder {
         crate::operation::list_place_indexes::builders::ListPlaceIndexesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPlaceIndexesOutput`](crate::operation::list_place_indexes::ListPlaceIndexesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlaceIndexesOutputBuilder {
-    pub(crate) entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListPlaceIndexesResponseEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::ListPlaceIndexesResponseEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListPlaceIndexesOutputBuilder {
         self
     }
     /// <p>Lists the place index resources that exist in your Amazon Web Services account</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListPlaceIndexesResponseEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListPlaceIndexesResponseEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>Lists the place index resources that exist in your Amazon Web Services account</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListPlaceIndexesResponseEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListPlaceIndexesResponseEntry>> {
         &self.entries
     }
     /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>

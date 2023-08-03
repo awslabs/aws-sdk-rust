@@ -37,9 +37,7 @@ impl RetryStageExecutionFluentBuilder {
         }
     }
     /// Access the RetryStageExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::retry_stage_execution::builders::RetryStageExecutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::retry_stage_execution::builders::RetryStageExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl RetryStageExecutionFluentBuilder {
             crate::operation::retry_stage_execution::RetryStageExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_stage_execution::RetryStageExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retry_stage_execution::RetryStageExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl RetryStageExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl RetryStageExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retry_stage_execution::RetryStageExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_stage_execution::RetryStageExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retry_stage_execution::RetryStageExecutionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl RetryStageExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retry_stage_execution::RetryStageExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_stage_execution::RetryStageExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retry_stage_execution::RetryStageExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl RetryStageExecutionFluentBuilder {
             crate::operation::retry_stage_execution::RetryStageExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retry_stage_execution::RetryStageExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retry_stage_execution::RetryStageExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the pipeline that contains the failed stage.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of the pipeline that contains the failed stage.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
@@ -157,18 +138,12 @@ impl RetryStageExecutionFluentBuilder {
         self.inner.get_stage_name()
     }
     /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
-    pub fn pipeline_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_execution_id(input.into());
         self
     }
     /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
-    pub fn set_pipeline_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_execution_id(input);
         self
     }
@@ -182,10 +157,7 @@ impl RetryStageExecutionFluentBuilder {
         self
     }
     /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
-    pub fn set_retry_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::StageRetryMode>,
-    ) -> Self {
+    pub fn set_retry_mode(mut self, input: ::std::option::Option<crate::types::StageRetryMode>) -> Self {
         self.inner = self.inner.set_retry_mode(input);
         self
     }

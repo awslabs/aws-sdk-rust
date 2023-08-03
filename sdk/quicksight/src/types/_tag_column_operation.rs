@@ -34,9 +34,7 @@ impl TagColumnOperation {
 
 /// A builder for [`TagColumnOperation`](crate::types::TagColumnOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagColumnOperationBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::ColumnTag>>,
@@ -72,10 +70,7 @@ impl TagColumnOperationBuilder {
     /// <p>The dataset column tag, currently only used for geospatial type tagging.</p> <note>
     /// <p>This is not tags for the Amazon Web Services tagging feature.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnTag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnTag>>) -> Self {
         self.tags = input;
         self
     }

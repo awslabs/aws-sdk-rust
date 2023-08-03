@@ -38,10 +38,7 @@ impl ImportApplicationUsageFluentBuilder {
         }
     }
     /// Access the ImportApplicationUsage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_application_usage::builders::ImportApplicationUsageInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::import_application_usage::builders::ImportApplicationUsageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ImportApplicationUsageFluentBuilder {
             crate::operation::import_application_usage::ImportApplicationUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_application_usage::ImportApplicationUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_application_usage::ImportApplicationUsageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ImportApplicationUsageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ImportApplicationUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_application_usage::ImportApplicationUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_application_usage::ImportApplicationUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_application_usage::ImportApplicationUsageError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ImportApplicationUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_application_usage::ImportApplicationUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_application_usage::ImportApplicationUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_application_usage::ImportApplicationUsageError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl ImportApplicationUsageFluentBuilder {
             crate::operation::import_application_usage::ImportApplicationUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_application_usage::ImportApplicationUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_application_usage::ImportApplicationUsageError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +116,7 @@ impl ImportApplicationUsageFluentBuilder {
         self
     }
     /// <p>Amazon S3 location to import application usage data from.</p>
-    pub fn set_source_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceS3Location>,
-    ) -> Self {
+    pub fn set_source_s3_location(mut self, input: ::std::option::Option<crate::types::SourceS3Location>) -> Self {
         self.inner = self.inner.set_source_s3_location(input);
         self
     }

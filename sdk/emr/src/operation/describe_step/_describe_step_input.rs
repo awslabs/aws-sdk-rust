@@ -30,9 +30,7 @@ impl DescribeStepInput {
 
 /// A builder for [`DescribeStepInput`](crate::operation::describe_step::DescribeStepInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStepInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_id: ::std::option::Option<::std::string::String>,
@@ -67,12 +65,7 @@ impl DescribeStepInputBuilder {
         &self.step_id
     }
     /// Consumes the builder and constructs a [`DescribeStepInput`](crate::operation::describe_step::DescribeStepInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_step::DescribeStepInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_step::DescribeStepInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_step::DescribeStepInput {
             cluster_id: self.cluster_id,
             step_id: self.step_id,

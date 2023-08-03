@@ -35,9 +35,7 @@ impl IndexFacesOutput {
     /// <li> <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform image correction for images. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p> </li>
     /// </ul>
     /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face detection model by calling <code>DescribeCollection</code>. </p>
-    pub fn orientation_correction(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrientationCorrection> {
+    pub fn orientation_correction(&self) -> ::std::option::Option<&crate::types::OrientationCorrection> {
         self.orientation_correction.as_ref()
     }
     /// <p>The version number of the face detection model that's associated with the input collection (<code>CollectionId</code>).</p>
@@ -63,9 +61,7 @@ impl IndexFacesOutput {
 
 /// A builder for [`IndexFacesOutput`](crate::operation::index_faces::IndexFacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IndexFacesOutputBuilder {
     pub(crate) face_records: ::std::option::Option<::std::vec::Vec<crate::types::FaceRecord>>,
     pub(crate) orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
@@ -86,17 +82,12 @@ impl IndexFacesOutputBuilder {
         self
     }
     /// <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide. </p>
-    pub fn set_face_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FaceRecord>>,
-    ) -> Self {
+    pub fn set_face_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FaceRecord>>) -> Self {
         self.face_records = input;
         self
     }
     /// <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide. </p>
-    pub fn get_face_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceRecord>> {
+    pub fn get_face_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceRecord>> {
         &self.face_records
     }
     /// <p>If your collection is associated with a face detection model that's later than version 3.0, the value of <code>OrientationCorrection</code> is always null and no orientation information is returned.</p>
@@ -117,10 +108,7 @@ impl IndexFacesOutputBuilder {
     /// <li> <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform image correction for images. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p> </li>
     /// </ul>
     /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face detection model by calling <code>DescribeCollection</code>. </p>
-    pub fn set_orientation_correction(
-        mut self,
-        input: ::std::option::Option<crate::types::OrientationCorrection>,
-    ) -> Self {
+    pub fn set_orientation_correction(mut self, input: ::std::option::Option<crate::types::OrientationCorrection>) -> Self {
         self.orientation_correction = input;
         self
     }
@@ -131,24 +119,16 @@ impl IndexFacesOutputBuilder {
     /// <li> <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform image correction for images. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p> </li>
     /// </ul>
     /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face detection model by calling <code>DescribeCollection</code>. </p>
-    pub fn get_orientation_correction(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrientationCorrection> {
+    pub fn get_orientation_correction(&self) -> &::std::option::Option<crate::types::OrientationCorrection> {
         &self.orientation_correction
     }
     /// <p>The version number of the face detection model that's associated with the input collection (<code>CollectionId</code>).</p>
-    pub fn face_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn face_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.face_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the face detection model that's associated with the input collection (<code>CollectionId</code>).</p>
-    pub fn set_face_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_face_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.face_model_version = input;
         self
     }
@@ -168,17 +148,12 @@ impl IndexFacesOutputBuilder {
         self
     }
     /// <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
-    pub fn set_unindexed_faces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnindexedFace>>,
-    ) -> Self {
+    pub fn set_unindexed_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnindexedFace>>) -> Self {
         self.unindexed_faces = input;
         self
     }
     /// <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
-    pub fn get_unindexed_faces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnindexedFace>> {
+    pub fn get_unindexed_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnindexedFace>> {
         &self.unindexed_faces
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -140,9 +140,7 @@ impl ProjectSource {
         self.git_clone_depth
     }
     /// <p> Information about the Git submodules configuration for the build project. </p>
-    pub fn git_submodules_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GitSubmodulesConfig> {
+    pub fn git_submodules_config(&self) -> ::std::option::Option<&crate::types::GitSubmodulesConfig> {
         self.git_submodules_config.as_ref()
     }
     /// <p>The buildspec file declaration to use for the builds in this build project.</p>
@@ -184,9 +182,7 @@ impl ProjectSource {
 
 /// A builder for [`ProjectSource`](crate::types::ProjectSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectSourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SourceType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -377,17 +373,12 @@ impl ProjectSourceBuilder {
         self
     }
     /// <p> Information about the Git submodules configuration for the build project. </p>
-    pub fn set_git_submodules_config(
-        mut self,
-        input: ::std::option::Option<crate::types::GitSubmodulesConfig>,
-    ) -> Self {
+    pub fn set_git_submodules_config(mut self, input: ::std::option::Option<crate::types::GitSubmodulesConfig>) -> Self {
         self.git_submodules_config = input;
         self
     }
     /// <p> Information about the Git submodules configuration for the build project. </p>
-    pub fn get_git_submodules_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::GitSubmodulesConfig> {
+    pub fn get_git_submodules_config(&self) -> &::std::option::Option<crate::types::GitSubmodulesConfig> {
         &self.git_submodules_config
     }
     /// <p>The buildspec file declaration to use for the builds in this build project.</p>
@@ -453,17 +444,12 @@ impl ProjectSourceBuilder {
         self
     }
     /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
-    pub fn set_build_status_config(
-        mut self,
-        input: ::std::option::Option<crate::types::BuildStatusConfig>,
-    ) -> Self {
+    pub fn set_build_status_config(mut self, input: ::std::option::Option<crate::types::BuildStatusConfig>) -> Self {
         self.build_status_config = input;
         self
     }
     /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
-    pub fn get_build_status_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::BuildStatusConfig> {
+    pub fn get_build_status_config(&self) -> &::std::option::Option<crate::types::BuildStatusConfig> {
         &self.build_status_config
     }
     /// <p>Enable this flag to ignore SSL warnings while connecting to the project source code.</p>
@@ -481,18 +467,12 @@ impl ProjectSourceBuilder {
         &self.insecure_ssl
     }
     /// <p>An identifier for this project source. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
-    pub fn source_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier for this project source. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
-    pub fn set_source_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_identifier = input;
         self
     }

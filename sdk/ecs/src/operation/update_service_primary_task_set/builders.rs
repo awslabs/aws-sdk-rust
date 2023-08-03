@@ -26,7 +26,7 @@ impl UpdateServicePrimaryTaskSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServicePrimaryTaskSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_service_primary_task_set::builders::UpdateServicePrimaryTaskSetInputBuilder,
+    inner: crate::operation::update_service_primary_task_set::builders::UpdateServicePrimaryTaskSetInputBuilder,
 }
 impl UpdateServicePrimaryTaskSetFluentBuilder {
     /// Creates a new `UpdateServicePrimaryTaskSet`.
@@ -37,7 +37,7 @@ impl UpdateServicePrimaryTaskSetFluentBuilder {
         }
     }
     /// Access the UpdateServicePrimaryTaskSet as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_service_primary_task_set::builders::UpdateServicePrimaryTaskSetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_service_primary_task_set::builders::UpdateServicePrimaryTaskSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateServicePrimaryTaskSetFluentBuilder {
             crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateServicePrimaryTaskSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateServicePrimaryTaskSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateServicePrimaryTaskSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateServicePrimaryTaskSetFluentBuilder {
             crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetError>,
     > {
         self.customize_middleware().await
     }
@@ -149,18 +138,12 @@ impl UpdateServicePrimaryTaskSetFluentBuilder {
         self.inner.get_service()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the deployment.</p>
-    pub fn primary_task_set(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_task_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.primary_task_set(input.into());
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the deployment.</p>
-    pub fn set_primary_task_set(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_task_set(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_primary_task_set(input);
         self
     }

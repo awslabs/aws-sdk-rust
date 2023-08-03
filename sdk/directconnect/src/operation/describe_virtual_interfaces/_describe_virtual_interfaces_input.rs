@@ -22,34 +22,26 @@ impl DescribeVirtualInterfacesInput {
 }
 impl DescribeVirtualInterfacesInput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualInterfacesInput`](crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesInput).
-    pub fn builder() -> crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesInputBuilder{
+    pub fn builder() -> crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesInputBuilder {
         crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVirtualInterfacesInput`](crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVirtualInterfacesInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeVirtualInterfacesInputBuilder {
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -58,18 +50,12 @@ impl DescribeVirtualInterfacesInputBuilder {
         &self.connection_id
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_interface_id = input;
         self
     }
@@ -84,11 +70,9 @@ impl DescribeVirtualInterfacesInputBuilder {
         crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesInput {
-                connection_id: self.connection_id,
-                virtual_interface_id: self.virtual_interface_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesInput {
+            connection_id: self.connection_id,
+            virtual_interface_id: self.virtual_interface_id,
+        })
     }
 }

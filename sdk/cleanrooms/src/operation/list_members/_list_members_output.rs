@@ -35,13 +35,10 @@ impl ListMembersOutput {
 
 /// A builder for [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMembersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) member_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>>,
+    pub(crate) member_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>>,
     _request_id: Option<String>,
 }
 impl ListMembersOutputBuilder {
@@ -71,17 +68,12 @@ impl ListMembersOutputBuilder {
         self
     }
     /// <p>The list of members returned by the ListMembers operation.</p>
-    pub fn set_member_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>>,
-    ) -> Self {
+    pub fn set_member_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>>) -> Self {
         self.member_summaries = input;
         self
     }
     /// <p>The list of members returned by the ListMembers operation.</p>
-    pub fn get_member_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>> {
+    pub fn get_member_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>> {
         &self.member_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

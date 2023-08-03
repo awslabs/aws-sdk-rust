@@ -48,16 +48,14 @@ impl DescribeClusterSubnetGroupsInput {
 }
 impl DescribeClusterSubnetGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterSubnetGroupsInput`](crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsInput).
-    pub fn builder() -> crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsInputBuilder {
         crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterSubnetGroupsInput`](crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterSubnetGroupsInputBuilder {
     pub(crate) cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -67,18 +65,12 @@ pub struct DescribeClusterSubnetGroupsInputBuilder {
 }
 impl DescribeClusterSubnetGroupsInputBuilder {
     /// <p>The name of the cluster subnet group for which information is requested.</p>
-    pub fn cluster_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster subnet group for which information is requested.</p>
-    pub fn set_cluster_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_subnet_group_name = input;
         self
     }
@@ -132,10 +124,7 @@ impl DescribeClusterSubnetGroupsInputBuilder {
         self
     }
     /// <p>A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -155,10 +144,7 @@ impl DescribeClusterSubnetGroupsInputBuilder {
         self
     }
     /// <p>A tag value or values for which you want to return all matching cluster subnet groups that are associated with the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_values = input;
         self
     }
@@ -173,14 +159,12 @@ impl DescribeClusterSubnetGroupsInputBuilder {
         crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsInput {
-                cluster_subnet_group_name: self.cluster_subnet_group_name,
-                max_records: self.max_records,
-                marker: self.marker,
-                tag_keys: self.tag_keys,
-                tag_values: self.tag_values,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsInput {
+            cluster_subnet_group_name: self.cluster_subnet_group_name,
+            max_records: self.max_records,
+            marker: self.marker,
+            tag_keys: self.tag_keys,
+            tag_values: self.tag_values,
+        })
     }
 }

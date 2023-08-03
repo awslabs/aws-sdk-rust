@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`compilation_job_summaries(Option<Vec<CompilationJobSummary>>)`](crate::operation::list_compilation_jobs::ListCompilationJobsOutput::compilation_job_summaries): <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_compilation_jobs::ListCompilationJobsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this <code>NextToken</code>. To retrieve the next set of model compilation jobs, use this token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListCompilationJobsError>`](crate::operation::list_compilation_jobs::ListCompilationJobsError)
-    pub fn list_compilation_jobs(
-        &self,
-    ) -> crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder {
-        crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_compilation_jobs(&self) -> crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder {
+        crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::new(self.handle.clone())
     }
 }

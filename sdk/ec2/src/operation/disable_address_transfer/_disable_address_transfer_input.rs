@@ -22,36 +22,26 @@ impl DisableAddressTransferInput {
 }
 impl DisableAddressTransferInput {
     /// Creates a new builder-style object to manufacture [`DisableAddressTransferInput`](crate::operation::disable_address_transfer::DisableAddressTransferInput).
-    pub fn builder(
-    ) -> crate::operation::disable_address_transfer::builders::DisableAddressTransferInputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_address_transfer::builders::DisableAddressTransferInputBuilder {
         crate::operation::disable_address_transfer::builders::DisableAddressTransferInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableAddressTransferInput`](crate::operation::disable_address_transfer::DisableAddressTransferInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableAddressTransferInputBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DisableAddressTransferInputBuilder {
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allocation_id = input;
         self
     }
@@ -76,15 +66,11 @@ impl DisableAddressTransferInputBuilder {
     /// Consumes the builder and constructs a [`DisableAddressTransferInput`](crate::operation::disable_address_transfer::DisableAddressTransferInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_address_transfer::DisableAddressTransferInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_address_transfer::DisableAddressTransferInput {
-                allocation_id: self.allocation_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disable_address_transfer::DisableAddressTransferInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disable_address_transfer::DisableAddressTransferInput {
+            allocation_id: self.allocation_id,
+            dry_run: self.dry_run,
+        })
     }
 }

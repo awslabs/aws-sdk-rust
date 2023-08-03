@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`ModifySpotFleetRequestOutput`](crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestOutput::return): <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
     /// - On failure, responds with [`SdkError<ModifySpotFleetRequestError>`](crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestError)
-    pub fn modify_spot_fleet_request(
-        &self,
-    ) -> crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestFluentBuilder
-    {
+    pub fn modify_spot_fleet_request(&self) -> crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestFluentBuilder {
         crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestFluentBuilder::new(self.handle.clone())
     }
 }

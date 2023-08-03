@@ -221,10 +221,7 @@ impl ::std::fmt::Debug for PostContentOutput {
         formatter.field("dialog_state", &self.dialog_state);
         formatter.field("slot_to_elicit", &self.slot_to_elicit);
         formatter.field("input_transcript", &self.input_transcript);
-        formatter.field(
-            "encoded_input_transcript",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("encoded_input_transcript", &"*** Sensitive Data Redacted ***");
         formatter.field("audio_stream", &self.audio_stream);
         formatter.field("bot_version", &self.bot_version);
         formatter.field("session_id", &self.session_id);
@@ -300,19 +297,13 @@ impl PostContentOutputBuilder {
     }
     /// <p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0.</p>
     /// <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex. </p>
-    pub fn nlu_intent_confidence(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nlu_intent_confidence(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nlu_intent_confidence = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0.</p>
     /// <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex. </p>
-    pub fn set_nlu_intent_confidence(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nlu_intent_confidence(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nlu_intent_confidence = input;
         self
     }
@@ -323,19 +314,13 @@ impl PostContentOutputBuilder {
     }
     /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
     /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
-    pub fn alternative_intents(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alternative_intents(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alternative_intents = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
     /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
-    pub fn set_alternative_intents(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alternative_intents(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alternative_intents = input;
         self
     }
@@ -362,18 +347,12 @@ impl PostContentOutputBuilder {
         &self.slots
     }
     /// <p> Map of key/value pairs representing the session-specific context information. </p>
-    pub fn session_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_attributes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Map of key/value pairs representing the session-specific context information. </p>
-    pub fn set_session_attributes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_attributes = input;
         self
     }
@@ -383,19 +362,13 @@ impl PostContentOutputBuilder {
     }
     /// <p>The sentiment expressed in an utterance.</p>
     /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
-    pub fn sentiment_response(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sentiment_response(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sentiment_response = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sentiment expressed in an utterance.</p>
     /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
-    pub fn set_sentiment_response(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sentiment_response(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sentiment_response = input;
         self
     }
@@ -444,10 +417,7 @@ impl PostContentOutputBuilder {
     /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
     /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
     /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
-    pub fn encoded_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encoded_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encoded_message = ::std::option::Option::Some(input.into());
         self
     }
@@ -456,10 +426,7 @@ impl PostContentOutputBuilder {
     /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
     /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
     /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
-    pub fn set_encoded_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encoded_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encoded_message = input;
         self
     }
@@ -489,10 +456,7 @@ impl PostContentOutputBuilder {
     /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
     /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
     /// </ul>
-    pub fn set_message_format(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageFormatType>,
-    ) -> Self {
+    pub fn set_message_format(mut self, input: ::std::option::Option<crate::types::MessageFormatType>) -> Self {
         self.message_format = input;
         self
     }
@@ -528,10 +492,7 @@ impl PostContentOutputBuilder {
     /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the request. </p> </li>
     /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons, including that the user does not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or if the Lambda function fails to fulfill the intent. </p> </li>
     /// </ul>
-    pub fn set_dialog_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogState>,
-    ) -> Self {
+    pub fn set_dialog_state(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.dialog_state = input;
         self
     }
@@ -548,18 +509,12 @@ impl PostContentOutputBuilder {
         &self.dialog_state
     }
     /// <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
-    pub fn slot_to_elicit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn slot_to_elicit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_to_elicit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
-    pub fn set_slot_to_elicit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_slot_to_elicit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_to_elicit = input;
         self
     }
@@ -573,10 +528,7 @@ impl PostContentOutputBuilder {
     #[deprecated(
         note = "The inputTranscript field is deprecated, use the encodedInputTranscript field instead. The inputTranscript field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
     )]
-    pub fn input_transcript(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_transcript(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_transcript = ::std::option::Option::Some(input.into());
         self
     }
@@ -586,10 +538,7 @@ impl PostContentOutputBuilder {
     #[deprecated(
         note = "The inputTranscript field is deprecated, use the encodedInputTranscript field instead. The inputTranscript field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
     )]
-    pub fn set_input_transcript(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_transcript(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_transcript = input;
         self
     }
@@ -605,20 +554,14 @@ impl PostContentOutputBuilder {
     /// <p>The text used to process the request.</p>
     /// <p>If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
     /// <p>The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
-    pub fn encoded_input_transcript(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encoded_input_transcript(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encoded_input_transcript = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text used to process the request.</p>
     /// <p>If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
     /// <p>The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
-    pub fn set_encoded_input_transcript(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encoded_input_transcript(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encoded_input_transcript = input;
         self
     }
@@ -634,17 +577,12 @@ impl PostContentOutputBuilder {
         self
     }
     /// <p>The prompt (or statement) to convey to the user. This is based on the bot configuration and context. For example, if Amazon Lex did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex sends that message in the response. </p>
-    pub fn set_audio_stream(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.audio_stream = input;
         self
     }
     /// <p>The prompt (or statement) to convey to the user. This is based on the bot configuration and context. For example, if Amazon Lex did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex sends that message in the response. </p>
-    pub fn get_audio_stream(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.audio_stream
     }
     /// <p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>
@@ -677,19 +615,13 @@ impl PostContentOutputBuilder {
     }
     /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
-    pub fn active_contexts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_contexts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_contexts = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
-    pub fn set_active_contexts(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_contexts = input;
         self
     }
@@ -748,10 +680,7 @@ impl ::std::fmt::Debug for PostContentOutputBuilder {
         formatter.field("dialog_state", &self.dialog_state);
         formatter.field("slot_to_elicit", &self.slot_to_elicit);
         formatter.field("input_transcript", &self.input_transcript);
-        formatter.field(
-            "encoded_input_transcript",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("encoded_input_transcript", &"*** Sensitive Data Redacted ***");
         formatter.field("audio_stream", &self.audio_stream);
         formatter.field("bot_version", &self.bot_version);
         formatter.field("session_id", &self.session_id);

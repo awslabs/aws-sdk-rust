@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::update_theme_permissions::UpdateThemePermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::update_theme_permissions::UpdateThemePermissionsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<UpdateThemePermissionsError>`](crate::operation::update_theme_permissions::UpdateThemePermissionsError)
-    pub fn update_theme_permissions(
-        &self,
-    ) -> crate::operation::update_theme_permissions::builders::UpdateThemePermissionsFluentBuilder
-    {
+    pub fn update_theme_permissions(&self) -> crate::operation::update_theme_permissions::builders::UpdateThemePermissionsFluentBuilder {
         crate::operation::update_theme_permissions::builders::UpdateThemePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

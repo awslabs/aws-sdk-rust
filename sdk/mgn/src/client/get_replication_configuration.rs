@@ -23,7 +23,9 @@ impl super::Client {
     ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::staging_area_tags): <p>Replication Configuration Staging Area tags.</p>
     ///   - [`use_fips_endpoint(Option<bool>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::use_fips_endpoint): <p>Replication Configuration use Fips Endpoint.</p>
     /// - On failure, responds with [`SdkError<GetReplicationConfigurationError>`](crate::operation::get_replication_configuration::GetReplicationConfigurationError)
-    pub fn get_replication_configuration(&self) -> crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder{
+    pub fn get_replication_configuration(
+        &self,
+    ) -> crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder {
         crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

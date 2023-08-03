@@ -44,17 +44,14 @@ impl UpdateBackendJobInput {
 }
 impl UpdateBackendJobInput {
     /// Creates a new builder-style object to manufacture [`UpdateBackendJobInput`](crate::operation::update_backend_job::UpdateBackendJobInput).
-    pub fn builder() -> crate::operation::update_backend_job::builders::UpdateBackendJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_backend_job::builders::UpdateBackendJobInputBuilder {
         crate::operation::update_backend_job::builders::UpdateBackendJobInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBackendJobInput`](crate::operation::update_backend_job::UpdateBackendJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBackendJobInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,
@@ -78,18 +75,12 @@ impl UpdateBackendJobInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_name = input;
         self
     }
@@ -142,18 +133,13 @@ impl UpdateBackendJobInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBackendJobInput`](crate::operation::update_backend_job::UpdateBackendJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_backend_job::UpdateBackendJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_backend_job::UpdateBackendJobInput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                job_id: self.job_id,
-                operation: self.operation,
-                status: self.status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_backend_job::UpdateBackendJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_backend_job::UpdateBackendJobInput {
+            app_id: self.app_id,
+            backend_environment_name: self.backend_environment_name,
+            job_id: self.job_id,
+            operation: self.operation,
+            status: self.status,
+        })
     }
 }

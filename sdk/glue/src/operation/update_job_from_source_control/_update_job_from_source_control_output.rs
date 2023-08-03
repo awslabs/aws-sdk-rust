@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateJobFromSourceControlOutput {
 }
 impl UpdateJobFromSourceControlOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJobFromSourceControlOutput`](crate::operation::update_job_from_source_control::UpdateJobFromSourceControlOutput).
-    pub fn builder() -> crate::operation::update_job_from_source_control::builders::UpdateJobFromSourceControlOutputBuilder{
+    pub fn builder() -> crate::operation::update_job_from_source_control::builders::UpdateJobFromSourceControlOutputBuilder {
         crate::operation::update_job_from_source_control::builders::UpdateJobFromSourceControlOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateJobFromSourceControlOutput`](crate::operation::update_job_from_source_control::UpdateJobFromSourceControlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJobFromSourceControlOutputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl UpdateJobFromSourceControlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateJobFromSourceControlOutput`](crate::operation::update_job_from_source_control::UpdateJobFromSourceControlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_job_from_source_control::UpdateJobFromSourceControlOutput {
+    pub fn build(self) -> crate::operation::update_job_from_source_control::UpdateJobFromSourceControlOutput {
         crate::operation::update_job_from_source_control::UpdateJobFromSourceControlOutput {
             job_name: self.job_name,
             _request_id: self._request_id,

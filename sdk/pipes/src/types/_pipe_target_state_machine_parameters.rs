@@ -10,9 +10,7 @@ pub struct PipeTargetStateMachineParameters {
 }
 impl PipeTargetStateMachineParameters {
     /// <p>Specify whether to wait for the state machine to finish or not.</p>
-    pub fn invocation_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PipeTargetInvocationType> {
+    pub fn invocation_type(&self) -> ::std::option::Option<&crate::types::PipeTargetInvocationType> {
         self.invocation_type.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl PipeTargetStateMachineParameters {
 
 /// A builder for [`PipeTargetStateMachineParameters`](crate::types::PipeTargetStateMachineParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipeTargetStateMachineParametersBuilder {
     pub(crate) invocation_type: ::std::option::Option<crate::types::PipeTargetInvocationType>,
 }
@@ -38,17 +34,12 @@ impl PipeTargetStateMachineParametersBuilder {
         self
     }
     /// <p>Specify whether to wait for the state machine to finish or not.</p>
-    pub fn set_invocation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeTargetInvocationType>,
-    ) -> Self {
+    pub fn set_invocation_type(mut self, input: ::std::option::Option<crate::types::PipeTargetInvocationType>) -> Self {
         self.invocation_type = input;
         self
     }
     /// <p>Specify whether to wait for the state machine to finish or not.</p>
-    pub fn get_invocation_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipeTargetInvocationType> {
+    pub fn get_invocation_type(&self) -> &::std::option::Option<crate::types::PipeTargetInvocationType> {
         &self.invocation_type
     }
     /// Consumes the builder and constructs a [`PipeTargetStateMachineParameters`](crate::types::PipeTargetStateMachineParameters).

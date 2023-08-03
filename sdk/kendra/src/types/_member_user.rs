@@ -23,9 +23,7 @@ impl MemberUser {
 
 /// A builder for [`MemberUser`](crate::types::MemberUser).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberUserBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl MemberUserBuilder {
     }
     /// Consumes the builder and constructs a [`MemberUser`](crate::types::MemberUser).
     pub fn build(self) -> crate::types::MemberUser {
-        crate::types::MemberUser {
-            user_id: self.user_id,
-        }
+        crate::types::MemberUser { user_id: self.user_id }
     }
 }

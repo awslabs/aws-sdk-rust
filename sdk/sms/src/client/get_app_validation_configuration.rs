@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`app_validation_configurations(Option<Vec<AppValidationConfiguration>>)`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationOutput::app_validation_configurations): <p>The configuration for application validation.</p>
     ///   - [`server_group_validation_configurations(Option<Vec<ServerGroupValidationConfiguration>>)`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationOutput::server_group_validation_configurations): <p>The configuration for instance validation.</p>
     /// - On failure, responds with [`SdkError<GetAppValidationConfigurationError>`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError)
-    pub fn get_app_validation_configuration(&self) -> crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationFluentBuilder{
+    pub fn get_app_validation_configuration(
+        &self,
+    ) -> crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationFluentBuilder {
         crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

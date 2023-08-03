@@ -23,19 +23,14 @@ pub fn ser_mitigation_action_params(
     }
     if let Some(var_7) = &input.replace_default_policy_version_params {
         #[allow(unused_mut)]
-        let mut object_8 = object
-            .key("replaceDefaultPolicyVersionParams")
-            .start_object();
+        let mut object_8 = object.key("replaceDefaultPolicyVersionParams").start_object();
         crate::protocol_serde::shape_replace_default_policy_version_params::ser_replace_default_policy_version_params(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.enable_io_t_logging_params {
         #[allow(unused_mut)]
         let mut object_10 = object.key("enableIoTLoggingParams").start_object();
-        crate::protocol_serde::shape_enable_io_t_logging_params::ser_enable_io_t_logging_params(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_enable_io_t_logging_params::ser_enable_io_t_logging_params(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.publish_finding_to_sns_params {
@@ -49,17 +44,9 @@ pub fn ser_mitigation_action_params(
 
 pub(crate) fn de_mitigation_action_params<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::MitigationActionParams>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::MitigationActionParams>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -69,56 +56,51 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "updateDeviceCertificateParams" => {
-                                builder = builder.set_update_device_certificate_params(
-                                    crate::protocol_serde::shape_update_device_certificate_params::de_update_device_certificate_params(tokens)?
-                                );
-                            }
-                            "updateCACertificateParams" => {
-                                builder = builder.set_update_ca_certificate_params(
-                                    crate::protocol_serde::shape_update_ca_certificate_params::de_update_ca_certificate_params(tokens)?
-                                );
-                            }
-                            "addThingsToThingGroupParams" => {
-                                builder = builder.set_add_things_to_thing_group_params(
-                                    crate::protocol_serde::shape_add_things_to_thing_group_params::de_add_things_to_thing_group_params(tokens)?
-                                );
-                            }
-                            "replaceDefaultPolicyVersionParams" => {
-                                builder = builder.set_replace_default_policy_version_params(
-                                    crate::protocol_serde::shape_replace_default_policy_version_params::de_replace_default_policy_version_params(tokens)?
-                                );
-                            }
-                            "enableIoTLoggingParams" => {
-                                builder = builder.set_enable_io_t_logging_params(
-                                    crate::protocol_serde::shape_enable_io_t_logging_params::de_enable_io_t_logging_params(tokens)?
-                                );
-                            }
-                            "publishFindingToSnsParams" => {
-                                builder = builder.set_publish_finding_to_sns_params(
-                                    crate::protocol_serde::shape_publish_finding_to_sns_params::de_publish_finding_to_sns_params(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "updateDeviceCertificateParams" => {
+                            builder = builder.set_update_device_certificate_params(
+                                crate::protocol_serde::shape_update_device_certificate_params::de_update_device_certificate_params(tokens)?,
+                            );
                         }
-                    }
+                        "updateCACertificateParams" => {
+                            builder = builder.set_update_ca_certificate_params(
+                                crate::protocol_serde::shape_update_ca_certificate_params::de_update_ca_certificate_params(tokens)?,
+                            );
+                        }
+                        "addThingsToThingGroupParams" => {
+                            builder = builder.set_add_things_to_thing_group_params(
+                                crate::protocol_serde::shape_add_things_to_thing_group_params::de_add_things_to_thing_group_params(tokens)?,
+                            );
+                        }
+                        "replaceDefaultPolicyVersionParams" => {
+                            builder = builder.set_replace_default_policy_version_params(
+                                crate::protocol_serde::shape_replace_default_policy_version_params::de_replace_default_policy_version_params(tokens)?,
+                            );
+                        }
+                        "enableIoTLoggingParams" => {
+                            builder = builder.set_enable_io_t_logging_params(
+                                crate::protocol_serde::shape_enable_io_t_logging_params::de_enable_io_t_logging_params(tokens)?,
+                            );
+                        }
+                        "publishFindingToSnsParams" => {
+                            builder = builder.set_publish_finding_to_sns_params(
+                                crate::protocol_serde::shape_publish_finding_to_sns_params::de_publish_finding_to_sns_params(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

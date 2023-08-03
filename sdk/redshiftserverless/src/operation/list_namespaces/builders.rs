@@ -10,10 +10,7 @@ impl ListNamespacesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_namespaces::ListNamespacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_namespaces::ListNamespacesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_namespaces::ListNamespacesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_namespaces();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListNamespacesFluentBuilder {
         }
     }
     /// Access the ListNamespaces as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_namespaces::builders::ListNamespacesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_namespaces::builders::ListNamespacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListNamespacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListNamespacesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_namespaces::paginator::ListNamespacesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_namespaces::paginator::ListNamespacesPaginator {
-        crate::operation::list_namespaces::paginator::ListNamespacesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_namespaces::paginator::ListNamespacesPaginator {
+        crate::operation::list_namespaces::paginator::ListNamespacesPaginator::new(self.handle, self.inner)
     }
     /// <p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns results in the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

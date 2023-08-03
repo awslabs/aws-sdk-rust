@@ -30,17 +30,14 @@ impl PurchaseOfferingInput {
 }
 impl PurchaseOfferingInput {
     /// Creates a new builder-style object to manufacture [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
-    pub fn builder() -> crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder
-    {
+    pub fn builder() -> crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder {
         crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseOfferingInputBuilder {
     pub(crate) offering_arn: ::std::option::Option<::std::string::String>,
     pub(crate) reservation_name: ::std::option::Option<::std::string::String>,
@@ -62,18 +59,12 @@ impl PurchaseOfferingInputBuilder {
         &self.offering_arn
     }
     /// The name that you want to use for the reservation.
-    pub fn reservation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name that you want to use for the reservation.
-    pub fn set_reservation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reservation_name = input;
         self
     }
@@ -98,10 +89,7 @@ impl PurchaseOfferingInputBuilder {
     /// Consumes the builder and constructs a [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::purchase_offering::PurchaseOfferingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::purchase_offering::PurchaseOfferingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::purchase_offering::PurchaseOfferingInput {
             offering_arn: self.offering_arn,
             reservation_name: self.reservation_name,

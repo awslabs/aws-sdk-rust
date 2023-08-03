@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`SendDataToMulticastGroupOutput`](crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupOutput) with field(s):
     ///   - [`message_id(Option<String>)`](crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupOutput::message_id): <p>ID of a multicast group message.</p>
     /// - On failure, responds with [`SdkError<SendDataToMulticastGroupError>`](crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupError)
-    pub fn send_data_to_multicast_group(&self) -> crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupFluentBuilder{
+    pub fn send_data_to_multicast_group(&self) -> crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupFluentBuilder {
         crate::operation::send_data_to_multicast_group::builders::SendDataToMulticastGroupFluentBuilder::new(self.handle.clone())
     }
 }

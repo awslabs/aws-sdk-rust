@@ -22,35 +22,26 @@ impl ::aws_http::request_id::RequestId for GenerateDataSetOutput {
 }
 impl GenerateDataSetOutput {
     /// Creates a new builder-style object to manufacture [`GenerateDataSetOutput`](crate::operation::generate_data_set::GenerateDataSetOutput).
-    pub fn builder() -> crate::operation::generate_data_set::builders::GenerateDataSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::generate_data_set::builders::GenerateDataSetOutputBuilder {
         crate::operation::generate_data_set::builders::GenerateDataSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateDataSetOutput`](crate::operation::generate_data_set::GenerateDataSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateDataSetOutputBuilder {
     pub(crate) data_set_request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GenerateDataSetOutputBuilder {
     /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.
-    pub fn data_set_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_set_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.
-    pub fn set_data_set_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_request_id = input;
         self
     }

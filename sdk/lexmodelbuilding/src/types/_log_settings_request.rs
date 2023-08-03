@@ -44,9 +44,7 @@ impl LogSettingsRequest {
 
 /// A builder for [`LogSettingsRequest`](crate::types::LogSettingsRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogSettingsRequestBuilder {
     pub(crate) log_type: ::std::option::Option<crate::types::LogType>,
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
@@ -74,10 +72,7 @@ impl LogSettingsRequestBuilder {
         self
     }
     /// <p>Where the logs will be delivered. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.destination = input;
         self
     }

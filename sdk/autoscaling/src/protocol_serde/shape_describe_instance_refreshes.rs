@@ -9,56 +9,52 @@ pub fn de_describe_instance_refreshes_http_error(
     crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => {
+            return Err(crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError::unhandled(
+                generic,
+            ))
+        }
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidNextToken" => crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError::InvalidNextToken({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidNextTokenBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(_response_body, output).map_err(crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidNextTokenBuilder::default();
+                output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(_response_body, output)
+                    .map_err(crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceContention" => crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError::ResourceContentionFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
-                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(_response_body, output).map_err(crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
+                output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError::generic(generic)
+        _ => crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError::generic(generic),
     })
 }
 
@@ -74,10 +70,9 @@ pub fn de_describe_instance_refreshes_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesOutputBuilder::default();
-        output = crate::protocol_serde::shape_describe_instance_refreshes::de_describe_instance_refreshes(_response_body, output).map_err(crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_describe_instance_refreshes::de_describe_instance_refreshes(_response_body, output)
+            .map_err(crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -86,10 +81,8 @@ pub fn de_describe_instance_refreshes_http_response_with_props(
 pub fn de_describe_instance_refreshes(
     inp: &[u8],
     mut builder: crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesOutputBuilder,
-) -> Result<
-    crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

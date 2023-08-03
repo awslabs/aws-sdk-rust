@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`transform_job_name(impl ::std::convert::Into<String>)`](crate::operation::stop_transform_job::builders::StopTransformJobFluentBuilder::transform_job_name) / [`set_transform_job_name(Option<String>)`](crate::operation::stop_transform_job::builders::StopTransformJobFluentBuilder::set_transform_job_name): <p>The name of the batch transform job to stop.</p>
     /// - On success, responds with [`StopTransformJobOutput`](crate::operation::stop_transform_job::StopTransformJobOutput)
     /// - On failure, responds with [`SdkError<StopTransformJobError>`](crate::operation::stop_transform_job::StopTransformJobError)
-    pub fn stop_transform_job(
-        &self,
-    ) -> crate::operation::stop_transform_job::builders::StopTransformJobFluentBuilder {
-        crate::operation::stop_transform_job::builders::StopTransformJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_transform_job(&self) -> crate::operation::stop_transform_job::builders::StopTransformJobFluentBuilder {
+        crate::operation::stop_transform_job::builders::StopTransformJobFluentBuilder::new(self.handle.clone())
     }
 }

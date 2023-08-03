@@ -11,9 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateThemeOutput`](crate::operation::update_theme::UpdateThemeOutput) with field(s):
     ///   - [`entity(Option<Theme>)`](crate::operation::update_theme::UpdateThemeOutput::entity): <p>Describes the configuration of the updated theme.</p>
     /// - On failure, responds with [`SdkError<UpdateThemeError>`](crate::operation::update_theme::UpdateThemeError)
-    pub fn update_theme(
-        &self,
-    ) -> crate::operation::update_theme::builders::UpdateThemeFluentBuilder {
+    pub fn update_theme(&self) -> crate::operation::update_theme::builders::UpdateThemeFluentBuilder {
         crate::operation::update_theme::builders::UpdateThemeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl S3RepositoryDetails {
 
 /// A builder for [`S3RepositoryDetails`](crate::types::S3RepositoryDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3RepositoryDetailsBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) code_artifacts: ::std::option::Option<crate::types::CodeArtifacts>,
@@ -58,10 +56,7 @@ impl S3RepositoryDetailsBuilder {
         self
     }
     /// <p>A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
-    pub fn set_code_artifacts(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeArtifacts>,
-    ) -> Self {
+    pub fn set_code_artifacts(mut self, input: ::std::option::Option<crate::types::CodeArtifacts>) -> Self {
         self.code_artifacts = input;
         self
     }

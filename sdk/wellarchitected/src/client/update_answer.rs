@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`lens_arn(Option<String>)`](crate::operation::update_answer::UpdateAnswerOutput::lens_arn): <p>The ARN for the lens.</p>
     ///   - [`answer(Option<Answer>)`](crate::operation::update_answer::UpdateAnswerOutput::answer): <p>An answer of the question.</p>
     /// - On failure, responds with [`SdkError<UpdateAnswerError>`](crate::operation::update_answer::UpdateAnswerError)
-    pub fn update_answer(
-        &self,
-    ) -> crate::operation::update_answer::builders::UpdateAnswerFluentBuilder {
-        crate::operation::update_answer::builders::UpdateAnswerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_answer(&self) -> crate::operation::update_answer::builders::UpdateAnswerFluentBuilder {
+        crate::operation::update_answer::builders::UpdateAnswerFluentBuilder::new(self.handle.clone())
     }
 }

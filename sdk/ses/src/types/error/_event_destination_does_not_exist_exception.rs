@@ -43,34 +43,27 @@ impl ::std::fmt::Display for EventDestinationDoesNotExistException {
     }
 }
 impl ::std::error::Error for EventDestinationDoesNotExistException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::EventDestinationDoesNotExistException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::EventDestinationDoesNotExistException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for EventDestinationDoesNotExistException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for EventDestinationDoesNotExistException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl EventDestinationDoesNotExistException {
     /// Creates a new builder-style object to manufacture [`EventDestinationDoesNotExistException`](crate::types::error::EventDestinationDoesNotExistException).
-    pub fn builder() -> crate::types::error::builders::EventDestinationDoesNotExistExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::EventDestinationDoesNotExistExceptionBuilder {
         crate::types::error::builders::EventDestinationDoesNotExistExceptionBuilder::default()
     }
 }
 
 /// A builder for [`EventDestinationDoesNotExistException`](crate::types::error::EventDestinationDoesNotExistException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventDestinationDoesNotExistExceptionBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_destination_name: ::std::option::Option<::std::string::String>,
@@ -79,18 +72,12 @@ pub struct EventDestinationDoesNotExistExceptionBuilder {
 }
 impl EventDestinationDoesNotExistExceptionBuilder {
     /// <p>Indicates that the configuration set does not exist.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates that the configuration set does not exist.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -99,18 +86,12 @@ impl EventDestinationDoesNotExistExceptionBuilder {
         &self.configuration_set_name
     }
     /// <p>Indicates that the event destination does not exist.</p>
-    pub fn event_destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates that the event destination does not exist.</p>
-    pub fn set_event_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_destination_name = input;
         self
     }
@@ -139,10 +120,7 @@ impl EventDestinationDoesNotExistExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

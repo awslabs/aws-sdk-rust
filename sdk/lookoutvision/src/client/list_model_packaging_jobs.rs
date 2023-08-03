@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`model_packaging_jobs(Option<Vec<ModelPackagingJobMetadata>>)`](crate::operation::list_model_packaging_jobs::ListModelPackagingJobsOutput::model_packaging_jobs): <p> A list of the model packaging jobs created for the specified Amazon Lookout for Vision project. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_packaging_jobs::ListModelPackagingJobsOutput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListModelPackagingJobsError>`](crate::operation::list_model_packaging_jobs::ListModelPackagingJobsError)
-    pub fn list_model_packaging_jobs(
-        &self,
-    ) -> crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsFluentBuilder
-    {
+    pub fn list_model_packaging_jobs(&self) -> crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsFluentBuilder {
         crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsFluentBuilder::new(self.handle.clone())
     }
 }

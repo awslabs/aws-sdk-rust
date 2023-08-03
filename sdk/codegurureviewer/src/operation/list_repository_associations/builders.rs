@@ -26,7 +26,7 @@ impl ListRepositoryAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRepositoryAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_repository_associations::builders::ListRepositoryAssociationsInputBuilder,
+    inner: crate::operation::list_repository_associations::builders::ListRepositoryAssociationsInputBuilder,
 }
 impl ListRepositoryAssociationsFluentBuilder {
     /// Creates a new `ListRepositoryAssociations`.
@@ -37,7 +37,7 @@ impl ListRepositoryAssociationsFluentBuilder {
         }
     }
     /// Access the ListRepositoryAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_repository_associations::builders::ListRepositoryAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_repository_associations::builders::ListRepositoryAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListRepositoryAssociationsFluentBuilder {
             crate::operation::list_repository_associations::ListRepositoryAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_repository_associations::ListRepositoryAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_repository_associations::ListRepositoryAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListRepositoryAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListRepositoryAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_repository_associations::ListRepositoryAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_repository_associations::ListRepositoryAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_repository_associations::ListRepositoryAssociationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListRepositoryAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_repository_associations::ListRepositoryAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_repository_associations::ListRepositoryAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_repository_associations::ListRepositoryAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListRepositoryAssociationsFluentBuilder {
             crate::operation::list_repository_associations::ListRepositoryAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_repository_associations::ListRepositoryAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_repository_associations::ListRepositoryAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator {
         crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ProviderTypes`.
@@ -136,17 +125,12 @@ impl ListRepositoryAssociationsFluentBuilder {
         self
     }
     /// <p>List of provider types to use as a filter.</p>
-    pub fn set_provider_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>,
-    ) -> Self {
+    pub fn set_provider_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>) -> Self {
         self.inner = self.inner.set_provider_types(input);
         self
     }
     /// <p>List of provider types to use as a filter.</p>
-    pub fn get_provider_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderType>> {
+    pub fn get_provider_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderType>> {
         self.inner.get_provider_types()
     }
     /// Appends an item to `States`.
@@ -187,10 +171,7 @@ impl ListRepositoryAssociationsFluentBuilder {
     /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
     /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
     /// </ul>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>>) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
@@ -209,9 +190,7 @@ impl ListRepositoryAssociationsFluentBuilder {
     /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
     /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
     /// </ul>
-    pub fn get_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>> {
         self.inner.get_states()
     }
     /// Appends an item to `Names`.
@@ -224,10 +203,7 @@ impl ListRepositoryAssociationsFluentBuilder {
         self
     }
     /// <p>List of repository names to use as a filter.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }
@@ -245,10 +221,7 @@ impl ListRepositoryAssociationsFluentBuilder {
         self
     }
     /// <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository. </p>
-    pub fn set_owners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_owners(input);
         self
     }

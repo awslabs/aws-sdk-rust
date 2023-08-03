@@ -37,9 +37,7 @@ impl DeleteSecurityConfigFluentBuilder {
         }
     }
     /// Access the DeleteSecurityConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_security_config::builders::DeleteSecurityConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_security_config::builders::DeleteSecurityConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteSecurityConfigFluentBuilder {
             crate::operation::delete_security_config::DeleteSecurityConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_security_config::DeleteSecurityConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_security_config::DeleteSecurityConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteSecurityConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteSecurityConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_security_config::DeleteSecurityConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_security_config::DeleteSecurityConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_security_config::DeleteSecurityConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteSecurityConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_security_config::DeleteSecurityConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_security_config::DeleteSecurityConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_security_config::DeleteSecurityConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteSecurityConfigFluentBuilder {
             crate::operation::delete_security_config::DeleteSecurityConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_security_config::DeleteSecurityConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_security_config::DeleteSecurityConfigError>,
     > {
         self.customize_middleware().await
     }

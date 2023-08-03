@@ -23,9 +23,7 @@ impl ScheduledInstancesMonitoring {
 
 /// A builder for [`ScheduledInstancesMonitoring`](crate::types::ScheduledInstancesMonitoring).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledInstancesMonitoringBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl ScheduledInstancesMonitoringBuilder {
     }
     /// Consumes the builder and constructs a [`ScheduledInstancesMonitoring`](crate::types::ScheduledInstancesMonitoring).
     pub fn build(self) -> crate::types::ScheduledInstancesMonitoring {
-        crate::types::ScheduledInstancesMonitoring {
-            enabled: self.enabled,
-        }
+        crate::types::ScheduledInstancesMonitoring { enabled: self.enabled }
     }
 }

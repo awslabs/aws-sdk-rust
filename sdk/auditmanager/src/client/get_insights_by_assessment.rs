@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetInsightsByAssessmentOutput`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput) with field(s):
     ///   - [`insights(Option<InsightsByAssessment>)`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput::insights): <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
     /// - On failure, responds with [`SdkError<GetInsightsByAssessmentError>`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentError)
-    pub fn get_insights_by_assessment(
-        &self,
-    ) -> crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentFluentBuilder
-    {
+    pub fn get_insights_by_assessment(&self) -> crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentFluentBuilder {
         crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentFluentBuilder::new(self.handle.clone())
     }
 }

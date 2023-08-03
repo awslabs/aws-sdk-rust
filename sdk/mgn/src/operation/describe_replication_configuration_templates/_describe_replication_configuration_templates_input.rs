@@ -5,8 +5,7 @@
 pub struct DescribeReplicationConfigurationTemplatesInput {
     /// <p>Request to describe Replication Configuration template by template IDs.</p>
     #[doc(hidden)]
-    pub replication_configuration_template_i_ds:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replication_configuration_template_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Request to describe Replication Configuration template by max results.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -16,9 +15,7 @@ pub struct DescribeReplicationConfigurationTemplatesInput {
 }
 impl DescribeReplicationConfigurationTemplatesInput {
     /// <p>Request to describe Replication Configuration template by template IDs.</p>
-    pub fn replication_configuration_template_i_ds(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn replication_configuration_template_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.replication_configuration_template_i_ds.as_deref()
     }
     /// <p>Request to describe Replication Configuration template by max results.</p>
@@ -32,19 +29,17 @@ impl DescribeReplicationConfigurationTemplatesInput {
 }
 impl DescribeReplicationConfigurationTemplatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationConfigurationTemplatesInput`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput).
-    pub fn builder() -> crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesInputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesInputBuilder
+    {
         crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationConfigurationTemplatesInput`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationTemplatesInputBuilder {
-    pub(crate) replication_configuration_template_i_ds:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replication_configuration_template_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -54,29 +49,19 @@ impl DescribeReplicationConfigurationTemplatesInputBuilder {
     /// To override the contents of this collection use [`set_replication_configuration_template_i_ds`](Self::set_replication_configuration_template_i_ds).
     ///
     /// <p>Request to describe Replication Configuration template by template IDs.</p>
-    pub fn replication_configuration_template_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .replication_configuration_template_i_ds
-            .unwrap_or_default();
+    pub fn replication_configuration_template_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.replication_configuration_template_i_ds.unwrap_or_default();
         v.push(input.into());
         self.replication_configuration_template_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>Request to describe Replication Configuration template by template IDs.</p>
-    pub fn set_replication_configuration_template_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_replication_configuration_template_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.replication_configuration_template_i_ds = input;
         self
     }
     /// <p>Request to describe Replication Configuration template by template IDs.</p>
-    pub fn get_replication_configuration_template_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_configuration_template_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replication_configuration_template_i_ds
     }
     /// <p>Request to describe Replication Configuration template by max results.</p>
@@ -108,17 +93,18 @@ impl DescribeReplicationConfigurationTemplatesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeReplicationConfigurationTemplatesInput`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput {
-                replication_configuration_template_i_ds: self.replication_configuration_template_i_ds
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                replication_configuration_template_i_ds: self.replication_configuration_template_i_ds,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }

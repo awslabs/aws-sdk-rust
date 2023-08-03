@@ -14,7 +14,7 @@ impl super::Client {
     /// - On success, responds with [`StartGameSessionPlacementOutput`](crate::operation::start_game_session_placement::StartGameSessionPlacementOutput) with field(s):
     ///   - [`game_session_placement(Option<GameSessionPlacement>)`](crate::operation::start_game_session_placement::StartGameSessionPlacementOutput::game_session_placement): <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status. </p>
     /// - On failure, responds with [`SdkError<StartGameSessionPlacementError>`](crate::operation::start_game_session_placement::StartGameSessionPlacementError)
-    pub fn start_game_session_placement(&self) -> crate::operation::start_game_session_placement::builders::StartGameSessionPlacementFluentBuilder{
+    pub fn start_game_session_placement(&self) -> crate::operation::start_game_session_placement::builders::StartGameSessionPlacementFluentBuilder {
         crate::operation::start_game_session_placement::builders::StartGameSessionPlacementFluentBuilder::new(self.handle.clone())
     }
 }

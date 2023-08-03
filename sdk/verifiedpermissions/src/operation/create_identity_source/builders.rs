@@ -44,9 +44,7 @@ impl CreateIdentitySourceFluentBuilder {
         }
     }
     /// Access the CreateIdentitySource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_identity_source::builders::CreateIdentitySourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_identity_source::builders::CreateIdentitySourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +56,7 @@ impl CreateIdentitySourceFluentBuilder {
             crate::operation::create_identity_source::CreateIdentitySource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_source::CreateIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_identity_source::CreateIdentitySourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +66,7 @@ impl CreateIdentitySourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +75,7 @@ impl CreateIdentitySourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_identity_source::CreateIdentitySourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_source::CreateIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_identity_source::CreateIdentitySourceError>,
     > {
         let op = self
             .inner
@@ -107,9 +98,7 @@ impl CreateIdentitySourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_identity_source::CreateIdentitySourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_source::CreateIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_identity_source::CreateIdentitySourceError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +112,7 @@ impl CreateIdentitySourceFluentBuilder {
             crate::operation::create_identity_source::CreateIdentitySource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_identity_source::CreateIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_identity_source::CreateIdentitySourceError>,
     > {
         self.customize_middleware().await
     }
@@ -150,18 +137,12 @@ impl CreateIdentitySourceFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
@@ -181,10 +162,7 @@ impl CreateIdentitySourceFluentBuilder {
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>UserPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::Configuration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::Configuration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
@@ -196,18 +174,12 @@ impl CreateIdentitySourceFluentBuilder {
         self.inner.get_configuration()
     }
     /// <p>Specifies the namespace and data type of the principals generated for identities authenticated by the new identity source.</p>
-    pub fn principal_entity_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_entity_type(input.into());
         self
     }
     /// <p>Specifies the namespace and data type of the principals generated for identities authenticated by the new identity source.</p>
-    pub fn set_principal_entity_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_entity_type(input);
         self
     }

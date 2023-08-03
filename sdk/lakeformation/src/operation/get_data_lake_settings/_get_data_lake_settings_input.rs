@@ -15,18 +15,14 @@ impl GetDataLakeSettingsInput {
 }
 impl GetDataLakeSettingsInput {
     /// Creates a new builder-style object to manufacture [`GetDataLakeSettingsInput`](crate::operation::get_data_lake_settings::GetDataLakeSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::get_data_lake_settings::builders::GetDataLakeSettingsInputBuilder {
-        crate::operation::get_data_lake_settings::builders::GetDataLakeSettingsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_data_lake_settings::builders::GetDataLakeSettingsInputBuilder {
+        crate::operation::get_data_lake_settings::builders::GetDataLakeSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataLakeSettingsInput`](crate::operation::get_data_lake_settings::GetDataLakeSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataLakeSettingsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl GetDataLakeSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetDataLakeSettingsInput`](crate::operation::get_data_lake_settings::GetDataLakeSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_lake_settings::GetDataLakeSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_data_lake_settings::GetDataLakeSettingsInput {
-                catalog_id: self.catalog_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_data_lake_settings::GetDataLakeSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_data_lake_settings::GetDataLakeSettingsInput { catalog_id: self.catalog_id })
     }
 }

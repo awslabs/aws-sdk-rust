@@ -27,7 +27,7 @@ impl CreateLoadBalancerPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyInputBuilder,
+    inner: crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyInputBuilder,
 }
 impl CreateLoadBalancerPolicyFluentBuilder {
     /// Creates a new `CreateLoadBalancerPolicy`.
@@ -38,7 +38,7 @@ impl CreateLoadBalancerPolicyFluentBuilder {
         }
     }
     /// Access the CreateLoadBalancerPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateLoadBalancerPolicyFluentBuilder {
             crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateLoadBalancerPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateLoadBalancerPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateLoadBalancerPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl CreateLoadBalancerPolicyFluentBuilder {
             crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
@@ -156,18 +139,12 @@ impl CreateLoadBalancerPolicyFluentBuilder {
         self.inner.get_policy_name()
     }
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
-    pub fn policy_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_type_name(input.into());
         self
     }
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
-    pub fn set_policy_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_type_name(input);
         self
     }
@@ -185,17 +162,12 @@ impl CreateLoadBalancerPolicyFluentBuilder {
         self
     }
     /// <p>The policy attributes.</p>
-    pub fn set_policy_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>>,
-    ) -> Self {
+    pub fn set_policy_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>>) -> Self {
         self.inner = self.inner.set_policy_attributes(input);
         self
     }
     /// <p>The policy attributes.</p>
-    pub fn get_policy_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>> {
+    pub fn get_policy_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>> {
         self.inner.get_policy_attributes()
     }
 }

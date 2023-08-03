@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`studio_lifecycle_config_content(Option<String>)`](crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigOutput::studio_lifecycle_config_content): <p>The content of your Studio Lifecycle Configuration script.</p>
     ///   - [`studio_lifecycle_config_app_type(Option<StudioLifecycleConfigAppType>)`](crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigOutput::studio_lifecycle_config_app_type): <p>The App type that the Lifecycle Configuration is attached to.</p>
     /// - On failure, responds with [`SdkError<DescribeStudioLifecycleConfigError>`](crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigError)
-    pub fn describe_studio_lifecycle_config(&self) -> crate::operation::describe_studio_lifecycle_config::builders::DescribeStudioLifecycleConfigFluentBuilder{
+    pub fn describe_studio_lifecycle_config(
+        &self,
+    ) -> crate::operation::describe_studio_lifecycle_config::builders::DescribeStudioLifecycleConfigFluentBuilder {
         crate::operation::describe_studio_lifecycle_config::builders::DescribeStudioLifecycleConfigFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,10 +37,7 @@ impl ListWorkflowExecutionsFluentBuilder {
         }
     }
     /// Access the ListWorkflowExecutions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_workflow_executions::builders::ListWorkflowExecutionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_workflow_executions::builders::ListWorkflowExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListWorkflowExecutionsFluentBuilder {
             crate::operation::list_workflow_executions::ListWorkflowExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_executions::ListWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_executions::ListWorkflowExecutionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListWorkflowExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListWorkflowExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_workflow_executions::ListWorkflowExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_executions::ListWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_executions::ListWorkflowExecutionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListWorkflowExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_workflow_executions::ListWorkflowExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_executions::ListWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_executions::ListWorkflowExecutionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListWorkflowExecutionsFluentBuilder {
             crate::operation::list_workflow_executions::ListWorkflowExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workflow_executions::ListWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workflow_executions::ListWorkflowExecutionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_workflow_executions::paginator::ListWorkflowExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_workflow_executions::paginator::ListWorkflowExecutionsPaginator
-    {
-        crate::operation::list_workflow_executions::paginator::ListWorkflowExecutionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_workflow_executions::paginator::ListWorkflowExecutionsPaginator {
+        crate::operation::list_workflow_executions::paginator::ListWorkflowExecutionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -164,18 +144,12 @@ impl ListWorkflowExecutionsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>List all workflow runtime instances for the specified image build version resource ARN.</p>
-    pub fn image_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_build_version_arn(input.into());
         self
     }
     /// <p>List all workflow runtime instances for the specified image build version resource ARN.</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_build_version_arn(input);
         self
     }

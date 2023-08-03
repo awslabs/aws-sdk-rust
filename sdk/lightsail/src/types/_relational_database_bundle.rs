@@ -79,9 +79,7 @@ impl RelationalDatabaseBundle {
 
 /// A builder for [`RelationalDatabaseBundle`](crate::types::RelationalDatabaseBundle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelationalDatabaseBundleBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

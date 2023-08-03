@@ -32,20 +32,16 @@ impl ::aws_http::request_id::RequestId for BatchUpdateVehicleOutput {
 }
 impl BatchUpdateVehicleOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateVehicleOutput`](crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleOutputBuilder {
+    pub fn builder() -> crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleOutputBuilder {
         crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateVehicleOutput`](crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateVehicleOutputBuilder {
-    pub(crate) vehicles:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>>,
+    pub(crate) vehicles: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleError>>,
     _request_id: Option<String>,
 }
@@ -66,19 +62,14 @@ impl BatchUpdateVehicleOutputBuilder {
     /// <p> A list of information about the batch of updated vehicles. </p> <note>
     /// <p>This list contains only unique IDs for the vehicles that were updated.</p>
     /// </note>
-    pub fn set_vehicles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>>,
-    ) -> Self {
+    pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>>) -> Self {
         self.vehicles = input;
         self
     }
     /// <p> A list of information about the batch of updated vehicles. </p> <note>
     /// <p>This list contains only unique IDs for the vehicles that were updated.</p>
     /// </note>
-    pub fn get_vehicles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>> {
+    pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>> {
         &self.vehicles
     }
     /// Appends an item to `errors`.
@@ -93,17 +84,12 @@ impl BatchUpdateVehicleOutputBuilder {
         self
     }
     /// <p>A list of information about errors returned while updating a batch of vehicles, or, if there aren't any errors, an empty list.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>A list of information about errors returned while updating a batch of vehicles, or, if there aren't any errors, an empty list.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

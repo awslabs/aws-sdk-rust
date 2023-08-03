@@ -22,16 +22,14 @@ impl DeleteContinuousDeploymentPolicyInput {
 }
 impl DeleteContinuousDeploymentPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteContinuousDeploymentPolicyInput`](crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput).
-    pub fn builder() -> crate::operation::delete_continuous_deployment_policy::builders::DeleteContinuousDeploymentPolicyInputBuilder{
+    pub fn builder() -> crate::operation::delete_continuous_deployment_policy::builders::DeleteContinuousDeploymentPolicyInputBuilder {
         crate::operation::delete_continuous_deployment_policy::builders::DeleteContinuousDeploymentPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteContinuousDeploymentPolicyInput`](crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteContinuousDeploymentPolicyInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DeleteContinuousDeploymentPolicyInputBuilder {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`DeleteContinuousDeploymentPolicyInput`](crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput {
-                id: self.id
-                ,
-                if_match: self.if_match
-                ,
-            }
+                id: self.id,
+                if_match: self.if_match,
+            },
         )
     }
 }

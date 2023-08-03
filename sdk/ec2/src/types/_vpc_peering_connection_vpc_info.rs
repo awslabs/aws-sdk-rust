@@ -18,8 +18,7 @@ pub struct VpcPeeringConnectionVpcInfo {
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the VPC peering connection options for the accepter or requester VPC.</p>
     #[doc(hidden)]
-    pub peering_options:
-        ::std::option::Option<crate::types::VpcPeeringConnectionOptionsDescription>,
+    pub peering_options: ::std::option::Option<crate::types::VpcPeeringConnectionOptionsDescription>,
     /// <p>The ID of the VPC.</p>
     #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
@@ -45,9 +44,7 @@ impl VpcPeeringConnectionVpcInfo {
         self.owner_id.as_deref()
     }
     /// <p>Information about the VPC peering connection options for the accepter or requester VPC.</p>
-    pub fn peering_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcPeeringConnectionOptionsDescription> {
+    pub fn peering_options(&self) -> ::std::option::Option<&crate::types::VpcPeeringConnectionOptionsDescription> {
         self.peering_options.as_ref()
     }
     /// <p>The ID of the VPC.</p>
@@ -68,17 +65,13 @@ impl VpcPeeringConnectionVpcInfo {
 
 /// A builder for [`VpcPeeringConnectionVpcInfo`](crate::types::VpcPeeringConnectionVpcInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcPeeringConnectionVpcInfoBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
-    pub(crate) ipv6_cidr_block_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlock>>,
+    pub(crate) ipv6_cidr_block_set: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlock>>,
     pub(crate) cidr_block_set: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlock>>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
-    pub(crate) peering_options:
-        ::std::option::Option<crate::types::VpcPeeringConnectionOptionsDescription>,
+    pub(crate) peering_options: ::std::option::Option<crate::types::VpcPeeringConnectionOptionsDescription>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
 }
@@ -109,17 +102,12 @@ impl VpcPeeringConnectionVpcInfoBuilder {
         self
     }
     /// <p>The IPv6 CIDR block for the VPC.</p>
-    pub fn set_ipv6_cidr_block_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlock>>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_block_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlock>>) -> Self {
         self.ipv6_cidr_block_set = input;
         self
     }
     /// <p>The IPv6 CIDR block for the VPC.</p>
-    pub fn get_ipv6_cidr_block_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlock>> {
+    pub fn get_ipv6_cidr_block_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlock>> {
         &self.ipv6_cidr_block_set
     }
     /// Appends an item to `cidr_block_set`.
@@ -134,17 +122,12 @@ impl VpcPeeringConnectionVpcInfoBuilder {
         self
     }
     /// <p>Information about the IPv4 CIDR blocks for the VPC.</p>
-    pub fn set_cidr_block_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlock>>,
-    ) -> Self {
+    pub fn set_cidr_block_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlock>>) -> Self {
         self.cidr_block_set = input;
         self
     }
     /// <p>Information about the IPv4 CIDR blocks for the VPC.</p>
-    pub fn get_cidr_block_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrBlock>> {
+    pub fn get_cidr_block_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrBlock>> {
         &self.cidr_block_set
     }
     /// <p>The ID of the Amazon Web Services account that owns the VPC.</p>
@@ -162,25 +145,17 @@ impl VpcPeeringConnectionVpcInfoBuilder {
         &self.owner_id
     }
     /// <p>Information about the VPC peering connection options for the accepter or requester VPC.</p>
-    pub fn peering_options(
-        mut self,
-        input: crate::types::VpcPeeringConnectionOptionsDescription,
-    ) -> Self {
+    pub fn peering_options(mut self, input: crate::types::VpcPeeringConnectionOptionsDescription) -> Self {
         self.peering_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the VPC peering connection options for the accepter or requester VPC.</p>
-    pub fn set_peering_options(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcPeeringConnectionOptionsDescription>,
-    ) -> Self {
+    pub fn set_peering_options(mut self, input: ::std::option::Option<crate::types::VpcPeeringConnectionOptionsDescription>) -> Self {
         self.peering_options = input;
         self
     }
     /// <p>Information about the VPC peering connection options for the accepter or requester VPC.</p>
-    pub fn get_peering_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcPeeringConnectionOptionsDescription> {
+    pub fn get_peering_options(&self) -> &::std::option::Option<crate::types::VpcPeeringConnectionOptionsDescription> {
         &self.peering_options
     }
     /// <p>The ID of the VPC.</p>

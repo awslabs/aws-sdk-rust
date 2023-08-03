@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`domain_package_details_list(Option<Vec<DomainPackageDetails>>)`](crate::operation::list_domains_for_package::ListDomainsForPackageOutput::domain_package_details_list): <p>List of <code>DomainPackageDetails</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domains_for_package::ListDomainsForPackageOutput::next_token): (undocumented)
     /// - On failure, responds with [`SdkError<ListDomainsForPackageError>`](crate::operation::list_domains_for_package::ListDomainsForPackageError)
-    pub fn list_domains_for_package(
-        &self,
-    ) -> crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder
-    {
+    pub fn list_domains_for_package(&self) -> crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder {
         crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl DescribeTestSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_test_set::DescribeTestSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_set::DescribeTestSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_set::DescribeTestSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_test_set();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeTestSetFluentBuilder {
         }
     }
     /// Access the DescribeTestSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_test_set::builders::DescribeTestSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_test_set::builders::DescribeTestSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeTestSetFluentBuilder {
             crate::operation::describe_test_set::DescribeTestSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_set::DescribeTestSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_set::DescribeTestSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeTestSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeTestSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_test_set::DescribeTestSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_set::DescribeTestSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_set::DescribeTestSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeTestSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_test_set::DescribeTestSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_set::DescribeTestSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_set::DescribeTestSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeTestSetFluentBuilder {
             crate::operation::describe_test_set::DescribeTestSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_set::DescribeTestSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_set::DescribeTestSetError>,
     > {
         self.customize_middleware().await
     }

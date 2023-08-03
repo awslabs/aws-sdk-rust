@@ -13,9 +13,7 @@ impl HoneycodeConnectorProfileProperties {
 
 /// A builder for [`HoneycodeConnectorProfileProperties`](crate::types::HoneycodeConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HoneycodeConnectorProfilePropertiesBuilder {}
 impl HoneycodeConnectorProfilePropertiesBuilder {
     /// Consumes the builder and constructs a [`HoneycodeConnectorProfileProperties`](crate::types::HoneycodeConnectorProfileProperties).

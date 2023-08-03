@@ -37,9 +37,7 @@ impl ListDataViewsInput {
 
 /// A builder for [`ListDataViewsInput`](crate::operation::list_data_views::ListDataViewsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataViewsInputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,10 +89,7 @@ impl ListDataViewsInputBuilder {
     /// Consumes the builder and constructs a [`ListDataViewsInput`](crate::operation::list_data_views::ListDataViewsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_data_views::ListDataViewsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_data_views::ListDataViewsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_data_views::ListDataViewsInput {
             dataset_id: self.dataset_id,
             next_token: self.next_token,

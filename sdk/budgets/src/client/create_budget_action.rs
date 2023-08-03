@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`budget_name(Option<String>)`](crate::operation::create_budget_action::CreateBudgetActionOutput::budget_name): <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     ///   - [`action_id(Option<String>)`](crate::operation::create_budget_action::CreateBudgetActionOutput::action_id): <p> A system-generated universally unique identifier (UUID) for the action. </p>
     /// - On failure, responds with [`SdkError<CreateBudgetActionError>`](crate::operation::create_budget_action::CreateBudgetActionError)
-    pub fn create_budget_action(
-        &self,
-    ) -> crate::operation::create_budget_action::builders::CreateBudgetActionFluentBuilder {
-        crate::operation::create_budget_action::builders::CreateBudgetActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_budget_action(&self) -> crate::operation::create_budget_action::builders::CreateBudgetActionFluentBuilder {
+        crate::operation::create_budget_action::builders::CreateBudgetActionFluentBuilder::new(self.handle.clone())
     }
 }

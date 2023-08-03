@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput::tags): <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.</p>
     ///   - [`has_more_tags(Option<bool>)`](crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput::has_more_tags): <p>If this is <code>true</code> in the response, more tags are available. To list the remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned and call <code>ListTagsForDeliveryStream</code> again.</p>
     /// - On failure, responds with [`SdkError<ListTagsForDeliveryStreamError>`](crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamError)
-    pub fn list_tags_for_delivery_stream(&self) -> crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamFluentBuilder{
+    pub fn list_tags_for_delivery_stream(&self) -> crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamFluentBuilder {
         crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamFluentBuilder::new(self.handle.clone())
     }
 }

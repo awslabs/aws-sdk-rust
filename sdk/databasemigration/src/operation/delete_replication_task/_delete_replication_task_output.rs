@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteReplicationTaskOutput {
 }
 impl DeleteReplicationTaskOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationTaskOutput`](crate::operation::delete_replication_task::DeleteReplicationTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_replication_task::builders::DeleteReplicationTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_replication_task::builders::DeleteReplicationTaskOutputBuilder {
         crate::operation::delete_replication_task::builders::DeleteReplicationTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReplicationTaskOutput`](crate::operation::delete_replication_task::DeleteReplicationTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReplicationTaskOutputBuilder {
     pub(crate) replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl DeleteReplicationTaskOutputBuilder {
         self
     }
     /// <p>The deleted replication task.</p>
-    pub fn set_replication_task(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationTask>,
-    ) -> Self {
+    pub fn set_replication_task(mut self, input: ::std::option::Option<crate::types::ReplicationTask>) -> Self {
         self.replication_task = input;
         self
     }

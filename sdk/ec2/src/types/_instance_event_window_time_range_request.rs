@@ -44,9 +44,7 @@ impl InstanceEventWindowTimeRangeRequest {
 
 /// A builder for [`InstanceEventWindowTimeRangeRequest`](crate::types::InstanceEventWindowTimeRangeRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceEventWindowTimeRangeRequestBuilder {
     pub(crate) start_week_day: ::std::option::Option<crate::types::WeekDay>,
     pub(crate) start_hour: ::std::option::Option<i32>,
@@ -60,10 +58,7 @@ impl InstanceEventWindowTimeRangeRequestBuilder {
         self
     }
     /// <p>The day on which the time range begins.</p>
-    pub fn set_start_week_day(
-        mut self,
-        input: ::std::option::Option<crate::types::WeekDay>,
-    ) -> Self {
+    pub fn set_start_week_day(mut self, input: ::std::option::Option<crate::types::WeekDay>) -> Self {
         self.start_week_day = input;
         self
     }

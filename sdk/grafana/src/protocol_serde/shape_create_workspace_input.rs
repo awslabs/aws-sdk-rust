@@ -52,10 +52,7 @@ pub fn ser_create_workspace_input(
     if let Some(var_17) = &input.vpc_configuration {
         #[allow(unused_mut)]
         let mut object_18 = object.key("vpcConfiguration").start_object();
-        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.workspace_data_sources {
@@ -74,9 +71,7 @@ pub fn ser_create_workspace_input(
         object.key("workspaceName").string(var_23.as_str());
     }
     if let Some(var_24) = &input.workspace_notification_destinations {
-        let mut array_25 = object
-            .key("workspaceNotificationDestinations")
-            .start_array();
+        let mut array_25 = object.key("workspaceNotificationDestinations").start_array();
         for item_26 in var_24 {
             {
                 array_25.value().string(item_26.as_str());

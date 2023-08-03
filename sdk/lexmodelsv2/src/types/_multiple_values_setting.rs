@@ -27,9 +27,7 @@ impl MultipleValuesSetting {
 
 /// A builder for [`MultipleValuesSetting`](crate::types::MultipleValuesSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultipleValuesSettingBuilder {
     pub(crate) allow_multiple_values: ::std::option::Option<bool>,
 }

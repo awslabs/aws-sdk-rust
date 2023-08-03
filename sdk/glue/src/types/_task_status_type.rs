@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TaskStatusType {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for TaskStatusType {
             "STOPPING" => TaskStatusType::Stopping,
             "SUCCEEDED" => TaskStatusType::Succeeded,
             "TIMEOUT" => TaskStatusType::Timeout,
-            other => {
-                TaskStatusType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => TaskStatusType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl TaskStatusType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED",
-            "RUNNING",
-            "STARTING",
-            "STOPPED",
-            "STOPPING",
-            "SUCCEEDED",
-            "TIMEOUT",
-        ]
+        &["FAILED", "RUNNING", "STARTING", "STOPPED", "STOPPING", "SUCCEEDED", "TIMEOUT"]
     }
 }
 impl ::std::convert::AsRef<str> for TaskStatusType {

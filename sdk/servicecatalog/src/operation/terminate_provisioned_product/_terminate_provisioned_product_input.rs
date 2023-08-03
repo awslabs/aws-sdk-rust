@@ -58,16 +58,14 @@ impl TerminateProvisionedProductInput {
 }
 impl TerminateProvisionedProductInput {
     /// Creates a new builder-style object to manufacture [`TerminateProvisionedProductInput`](crate::operation::terminate_provisioned_product::TerminateProvisionedProductInput).
-    pub fn builder() -> crate::operation::terminate_provisioned_product::builders::TerminateProvisionedProductInputBuilder{
+    pub fn builder() -> crate::operation::terminate_provisioned_product::builders::TerminateProvisionedProductInputBuilder {
         crate::operation::terminate_provisioned_product::builders::TerminateProvisionedProductInputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateProvisionedProductInput`](crate::operation::terminate_provisioned_product::TerminateProvisionedProductInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateProvisionedProductInputBuilder {
     pub(crate) provisioned_product_name: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_product_id: ::std::option::Option<::std::string::String>,
@@ -78,18 +76,12 @@ pub struct TerminateProvisionedProductInputBuilder {
 }
 impl TerminateProvisionedProductInputBuilder {
     /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-    pub fn provisioned_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-    pub fn set_provisioned_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_name = input;
         self
     }
@@ -98,18 +90,12 @@ impl TerminateProvisionedProductInputBuilder {
         &self.provisioned_product_name
     }
     /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-    pub fn provisioned_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-    pub fn set_provisioned_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_id = input;
         self
     }
@@ -118,18 +104,12 @@ impl TerminateProvisionedProductInputBuilder {
         &self.provisioned_product_id
     }
     /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
-    pub fn terminate_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn terminate_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.terminate_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
-    pub fn set_terminate_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_terminate_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.terminate_token = input;
         self
     }
@@ -156,10 +136,7 @@ impl TerminateProvisionedProductInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -168,10 +145,7 @@ impl TerminateProvisionedProductInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -204,15 +178,13 @@ impl TerminateProvisionedProductInputBuilder {
         crate::operation::terminate_provisioned_product::TerminateProvisionedProductInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::terminate_provisioned_product::TerminateProvisionedProductInput {
-                provisioned_product_name: self.provisioned_product_name,
-                provisioned_product_id: self.provisioned_product_id,
-                terminate_token: self.terminate_token,
-                ignore_errors: self.ignore_errors,
-                accept_language: self.accept_language,
-                retain_physical_resources: self.retain_physical_resources,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::terminate_provisioned_product::TerminateProvisionedProductInput {
+            provisioned_product_name: self.provisioned_product_name,
+            provisioned_product_id: self.provisioned_product_id,
+            terminate_token: self.terminate_token,
+            ignore_errors: self.ignore_errors,
+            accept_language: self.accept_language,
+            retain_physical_resources: self.retain_physical_resources,
+        })
     }
 }

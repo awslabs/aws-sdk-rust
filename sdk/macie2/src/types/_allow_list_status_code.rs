@@ -44,13 +44,7 @@
 /// <p>Indicates the current status of an allow list. Depending on the type of criteria that the list specifies, possible values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AllowListStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for AllowListStatusCode {
             "S3_THROTTLED" => AllowListStatusCode::S3Throttled,
             "S3_USER_ACCESS_DENIED" => AllowListStatusCode::S3UserAccessDenied,
             "UNKNOWN_ERROR" => AllowListStatusCode::UnknownError,
-            other => AllowListStatusCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AllowListStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

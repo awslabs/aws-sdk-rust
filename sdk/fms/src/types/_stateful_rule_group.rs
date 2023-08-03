@@ -35,9 +35,7 @@ impl StatefulRuleGroup {
         self.priority
     }
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
-    pub fn r#override(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkFirewallStatefulRuleGroupOverride> {
+    pub fn r#override(&self) -> ::std::option::Option<&crate::types::NetworkFirewallStatefulRuleGroupOverride> {
         self.r#override.as_ref()
     }
 }
@@ -50,30 +48,21 @@ impl StatefulRuleGroup {
 
 /// A builder for [`StatefulRuleGroup`](crate::types::StatefulRuleGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatefulRuleGroupBuilder {
     pub(crate) rule_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
-    pub(crate) r#override:
-        ::std::option::Option<crate::types::NetworkFirewallStatefulRuleGroupOverride>,
+    pub(crate) r#override: ::std::option::Option<crate::types::NetworkFirewallStatefulRuleGroupOverride>,
 }
 impl StatefulRuleGroupBuilder {
     /// <p>The name of the rule group.</p>
-    pub fn rule_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the rule group.</p>
-    pub fn set_rule_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_name = input;
         self
     }
@@ -116,25 +105,17 @@ impl StatefulRuleGroupBuilder {
         &self.priority
     }
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
-    pub fn r#override(
-        mut self,
-        input: crate::types::NetworkFirewallStatefulRuleGroupOverride,
-    ) -> Self {
+    pub fn r#override(mut self, input: crate::types::NetworkFirewallStatefulRuleGroupOverride) -> Self {
         self.r#override = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
-    pub fn set_override(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkFirewallStatefulRuleGroupOverride>,
-    ) -> Self {
+    pub fn set_override(mut self, input: ::std::option::Option<crate::types::NetworkFirewallStatefulRuleGroupOverride>) -> Self {
         self.r#override = input;
         self
     }
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
-    pub fn get_override(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkFirewallStatefulRuleGroupOverride> {
+    pub fn get_override(&self) -> &::std::option::Option<crate::types::NetworkFirewallStatefulRuleGroupOverride> {
         &self.r#override
     }
     /// Consumes the builder and constructs a [`StatefulRuleGroup`](crate::types::StatefulRuleGroup).

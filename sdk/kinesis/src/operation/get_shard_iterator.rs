@@ -29,27 +29,16 @@ impl GetShardIteratorInput {
             .set_operation_type(::std::option::Option::Some("data".to_string()))
             .set_stream_arn(self.stream_arn.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::get_shard_iterator::GetShardIteratorInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -58,20 +47,13 @@ impl GetShardIteratorInput {
             fn update_http_builder(
                 input: &crate::operation::get_shard_iterator::GetShardIteratorInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
-            builder = ::aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                ::http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = ::aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 ::http::header::HeaderName::from_static("x-amz-target"),
@@ -81,15 +63,9 @@ impl GetShardIteratorInput {
         };
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = ::aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_get_shard_iterator::ser_get_shard_iterator_input(&self)?,
-        );
+        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_get_shard_iterator::ser_get_shard_iterator_input(&self)?);
         if let ::std::option::Option::Some(content_length) = body.content_length() {
-            request = ::aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                ::http::header::CONTENT_LENGTH,
-                content_length,
-            );
+            request = ::aws_smithy_http::header::set_request_header_if_absent(request, ::http::header::CONTENT_LENGTH, content_length);
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -97,14 +73,10 @@ impl GetShardIteratorInput {
         if let ::std::option::Option::Some(params) = params {
             request.properties_mut().insert(params);
         }
-        request
-            .properties_mut()
-            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
+        request.properties_mut().insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -113,29 +85,16 @@ impl GetShardIteratorInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::get_shard_iterator::GetShardIterator::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "GetShardIterator",
-            "kinesis",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::get_shard_iterator::GetShardIterator::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("GetShardIterator", "kinesis"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -162,9 +121,7 @@ impl ::aws_smithy_http::response::ParseStrictResponse for GetShardIterator {
         let body = response.body().as_ref();
         ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
         if !success && status != 200 {
-            crate::protocol_serde::shape_get_shard_iterator::de_get_shard_iterator_http_error(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_shard_iterator::de_get_shard_iterator_http_error(status, headers, body)
         } else {
             crate::protocol_serde::shape_get_shard_iterator::de_get_shard_iterator_http_response_with_props(status, headers, body)
         }
@@ -185,9 +142,7 @@ pub enum GetShardIteratorError {
     /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ProvisionedThroughputExceededException(
-        crate::types::error::ProvisionedThroughputExceededException,
-    ),
+    ProvisionedThroughputExceededException(crate::types::error::ProvisionedThroughputExceededException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>The requested resource could not be found. The stream might not be specified correctly.</p>
@@ -197,9 +152,7 @@ pub enum GetShardIteratorError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for GetShardIteratorError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -223,27 +176,15 @@ impl ::std::fmt::Display for GetShardIteratorError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetShardIteratorError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::AccessDeniedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ProvisionedThroughputExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidArgumentException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ResourceNotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ProvisionedThroughputExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::get_shard_iterator::GetShardIteratorError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::get_shard_iterator::GetShardIteratorError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -259,27 +200,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for GetShardIteratorError {
 impl GetShardIteratorError {
     /// Creates the `GetShardIteratorError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `GetShardIteratorError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,
@@ -316,9 +244,7 @@ impl ::std::error::Error for GetShardIteratorError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ProvisionedThroughputExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::ProvisionedThroughputExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArgumentException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),

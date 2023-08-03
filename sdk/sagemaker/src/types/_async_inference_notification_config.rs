@@ -14,8 +14,7 @@ pub struct AsyncInferenceNotificationConfig {
     /// <p>The inference response is included only if the response size is less than or equal to 128 KB.</p>
     /// </note>
     #[doc(hidden)]
-    pub include_inference_response_in:
-        ::std::option::Option<::std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
+    pub include_inference_response_in: ::std::option::Option<::std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
 }
 impl AsyncInferenceNotificationConfig {
     /// <p>Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.</p>
@@ -29,9 +28,7 @@ impl AsyncInferenceNotificationConfig {
     /// <p>The Amazon SNS topics where you want the inference response to be included.</p> <note>
     /// <p>The inference response is included only if the response size is less than or equal to 128 KB.</p>
     /// </note>
-    pub fn include_inference_response_in(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AsyncNotificationTopicTypes]> {
+    pub fn include_inference_response_in(&self) -> ::std::option::Option<&[crate::types::AsyncNotificationTopicTypes]> {
         self.include_inference_response_in.as_deref()
     }
 }
@@ -44,29 +41,20 @@ impl AsyncInferenceNotificationConfig {
 
 /// A builder for [`AsyncInferenceNotificationConfig`](crate::types::AsyncInferenceNotificationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AsyncInferenceNotificationConfigBuilder {
     pub(crate) success_topic: ::std::option::Option<::std::string::String>,
     pub(crate) error_topic: ::std::option::Option<::std::string::String>,
-    pub(crate) include_inference_response_in:
-        ::std::option::Option<::std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
+    pub(crate) include_inference_response_in: ::std::option::Option<::std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
 }
 impl AsyncInferenceNotificationConfigBuilder {
     /// <p>Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.</p>
-    pub fn success_topic(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn success_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.success_topic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.</p>
-    pub fn set_success_topic(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_success_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.success_topic = input;
         self
     }
@@ -95,10 +83,7 @@ impl AsyncInferenceNotificationConfigBuilder {
     /// <p>The Amazon SNS topics where you want the inference response to be included.</p> <note>
     /// <p>The inference response is included only if the response size is less than or equal to 128 KB.</p>
     /// </note>
-    pub fn include_inference_response_in(
-        mut self,
-        input: crate::types::AsyncNotificationTopicTypes,
-    ) -> Self {
+    pub fn include_inference_response_in(mut self, input: crate::types::AsyncNotificationTopicTypes) -> Self {
         let mut v = self.include_inference_response_in.unwrap_or_default();
         v.push(input);
         self.include_inference_response_in = ::std::option::Option::Some(v);
@@ -117,9 +102,7 @@ impl AsyncInferenceNotificationConfigBuilder {
     /// <p>The Amazon SNS topics where you want the inference response to be included.</p> <note>
     /// <p>The inference response is included only if the response size is less than or equal to 128 KB.</p>
     /// </note>
-    pub fn get_include_inference_response_in(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AsyncNotificationTopicTypes>> {
+    pub fn get_include_inference_response_in(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AsyncNotificationTopicTypes>> {
         &self.include_inference_response_in
     }
     /// Consumes the builder and constructs a [`AsyncInferenceNotificationConfig`](crate::types::AsyncInferenceNotificationConfig).

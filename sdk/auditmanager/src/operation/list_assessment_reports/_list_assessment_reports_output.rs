@@ -5,8 +5,7 @@
 pub struct ListAssessmentReportsOutput {
     /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
     #[doc(hidden)]
-    pub assessment_reports:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportMetadata>>,
+    pub assessment_reports: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportMetadata>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAssessmentReportsOutput {
 }
 impl ListAssessmentReportsOutput {
     /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
-    pub fn assessment_reports(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssessmentReportMetadata]> {
+    pub fn assessment_reports(&self) -> ::std::option::Option<&[crate::types::AssessmentReportMetadata]> {
         self.assessment_reports.as_deref()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAssessmentReportsOutput {
 }
 impl ListAssessmentReportsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentReportsOutput`](crate::operation::list_assessment_reports::ListAssessmentReportsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_assessment_reports::builders::ListAssessmentReportsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assessment_reports::builders::ListAssessmentReportsOutputBuilder {
         crate::operation::list_assessment_reports::builders::ListAssessmentReportsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentReportsOutput`](crate::operation::list_assessment_reports::ListAssessmentReportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentReportsOutputBuilder {
-    pub(crate) assessment_reports:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportMetadata>>,
+    pub(crate) assessment_reports: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListAssessmentReportsOutputBuilder {
         self
     }
     /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
-    pub fn set_assessment_reports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportMetadata>>,
-    ) -> Self {
+    pub fn set_assessment_reports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportMetadata>>) -> Self {
         self.assessment_reports = input;
         self
     }
     /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
-    pub fn get_assessment_reports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportMetadata>> {
+    pub fn get_assessment_reports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportMetadata>> {
         &self.assessment_reports
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>

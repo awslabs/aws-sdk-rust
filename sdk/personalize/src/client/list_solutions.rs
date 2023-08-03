@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`solutions(Option<Vec<SolutionSummary>>)`](crate::operation::list_solutions::ListSolutionsOutput::solutions): <p>A list of the current solutions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_solutions::ListSolutionsOutput::next_token): <p>A token for getting the next set of solutions (if they exist).</p>
     /// - On failure, responds with [`SdkError<ListSolutionsError>`](crate::operation::list_solutions::ListSolutionsError)
-    pub fn list_solutions(
-        &self,
-    ) -> crate::operation::list_solutions::builders::ListSolutionsFluentBuilder {
-        crate::operation::list_solutions::builders::ListSolutionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_solutions(&self) -> crate::operation::list_solutions::builders::ListSolutionsFluentBuilder {
+        crate::operation::list_solutions::builders::ListSolutionsFluentBuilder::new(self.handle.clone())
     }
 }

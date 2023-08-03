@@ -14,13 +14,10 @@ pub struct CreateParticipantTokenInput {
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Set of capabilities that the user is allowed to perform in the stage. Default: <code>PUBLISH, SUBSCRIBE</code>.</p>
     #[doc(hidden)]
-    pub capabilities:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>,
+    pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>,
 }
 impl CreateParticipantTokenInput {
     /// <p>ARN of the stage to which this token is scoped.</p>
@@ -36,43 +33,30 @@ impl CreateParticipantTokenInput {
         self.user_id.as_deref()
     }
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>Set of capabilities that the user is allowed to perform in the stage. Default: <code>PUBLISH, SUBSCRIBE</code>.</p>
-    pub fn capabilities(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ParticipantTokenCapability]> {
+    pub fn capabilities(&self) -> ::std::option::Option<&[crate::types::ParticipantTokenCapability]> {
         self.capabilities.as_deref()
     }
 }
 impl CreateParticipantTokenInput {
     /// Creates a new builder-style object to manufacture [`CreateParticipantTokenInput`](crate::operation::create_participant_token::CreateParticipantTokenInput).
-    pub fn builder(
-    ) -> crate::operation::create_participant_token::builders::CreateParticipantTokenInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_participant_token::builders::CreateParticipantTokenInputBuilder {
         crate::operation::create_participant_token::builders::CreateParticipantTokenInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateParticipantTokenInput`](crate::operation::create_participant_token::CreateParticipantTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateParticipantTokenInputBuilder {
     pub(crate) stage_arn: ::std::option::Option<::std::string::String>,
     pub(crate) duration: ::std::option::Option<i32>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) capabilities:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>,
 }
 impl CreateParticipantTokenInputBuilder {
     /// <p>ARN of the stage to which this token is scoped.</p>
@@ -122,32 +106,19 @@ impl CreateParticipantTokenInputBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Appends an item to `capabilities`.
@@ -162,34 +133,25 @@ impl CreateParticipantTokenInputBuilder {
         self
     }
     /// <p>Set of capabilities that the user is allowed to perform in the stage. Default: <code>PUBLISH, SUBSCRIBE</code>.</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>) -> Self {
         self.capabilities = input;
         self
     }
     /// <p>Set of capabilities that the user is allowed to perform in the stage. Default: <code>PUBLISH, SUBSCRIBE</code>.</p>
-    pub fn get_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>> {
         &self.capabilities
     }
     /// Consumes the builder and constructs a [`CreateParticipantTokenInput`](crate::operation::create_participant_token::CreateParticipantTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_participant_token::CreateParticipantTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_participant_token::CreateParticipantTokenInput {
-                stage_arn: self.stage_arn,
-                duration: self.duration.unwrap_or_default(),
-                user_id: self.user_id,
-                attributes: self.attributes,
-                capabilities: self.capabilities,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_participant_token::CreateParticipantTokenInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_participant_token::CreateParticipantTokenInput {
+            stage_arn: self.stage_arn,
+            duration: self.duration.unwrap_or_default(),
+            user_id: self.user_id,
+            attributes: self.attributes,
+            capabilities: self.capabilities,
+        })
     }
 }

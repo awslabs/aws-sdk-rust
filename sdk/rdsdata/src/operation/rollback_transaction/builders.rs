@@ -10,10 +10,7 @@ impl RollbackTransactionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::rollback_transaction::RollbackTransactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rollback_transaction::RollbackTransactionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rollback_transaction::RollbackTransactionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.rollback_transaction();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RollbackTransactionFluentBuilder {
         }
     }
     /// Access the RollbackTransaction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::rollback_transaction::builders::RollbackTransactionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::rollback_transaction::builders::RollbackTransactionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RollbackTransactionFluentBuilder {
             crate::operation::rollback_transaction::RollbackTransaction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rollback_transaction::RollbackTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rollback_transaction::RollbackTransactionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RollbackTransactionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RollbackTransactionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::rollback_transaction::RollbackTransactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rollback_transaction::RollbackTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rollback_transaction::RollbackTransactionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RollbackTransactionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::rollback_transaction::RollbackTransactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rollback_transaction::RollbackTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rollback_transaction::RollbackTransactionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl RollbackTransactionFluentBuilder {
             crate::operation::rollback_transaction::RollbackTransaction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rollback_transaction::RollbackTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rollback_transaction::RollbackTransactionError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl RollbackTransactionFluentBuilder {
         self.inner.get_secret_arn()
     }
     /// <p>The identifier of the transaction to roll back.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
     /// <p>The identifier of the transaction to roll back.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }

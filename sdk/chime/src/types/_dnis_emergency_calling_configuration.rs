@@ -54,18 +54,12 @@ pub struct DnisEmergencyCallingConfigurationBuilder {
 }
 impl DnisEmergencyCallingConfigurationBuilder {
     /// <p>The DNIS phone number to route emergency calls to, in E.164 format.</p>
-    pub fn emergency_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn emergency_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.emergency_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNIS phone number to route emergency calls to, in E.164 format.</p>
-    pub fn set_emergency_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_emergency_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.emergency_phone_number = input;
         self
     }
@@ -74,18 +68,12 @@ impl DnisEmergencyCallingConfigurationBuilder {
         &self.emergency_phone_number
     }
     /// <p>The DNIS phone number to route test emergency calls to, in E.164 format.</p>
-    pub fn test_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNIS phone number to route test emergency calls to, in E.164 format.</p>
-    pub fn set_test_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_phone_number = input;
         self
     }
@@ -94,18 +82,12 @@ impl DnisEmergencyCallingConfigurationBuilder {
         &self.test_phone_number
     }
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
-    pub fn calling_country(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calling_country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calling_country = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
-    pub fn set_calling_country(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calling_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calling_country = input;
         self
     }

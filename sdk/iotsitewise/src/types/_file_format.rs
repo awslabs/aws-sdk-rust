@@ -23,9 +23,7 @@ impl FileFormat {
 
 /// A builder for [`FileFormat`](crate::types::FileFormat).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileFormatBuilder {
     pub(crate) csv: ::std::option::Option<crate::types::Csv>,
 }

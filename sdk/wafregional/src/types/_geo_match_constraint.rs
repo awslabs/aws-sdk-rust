@@ -34,9 +34,7 @@ impl GeoMatchConstraint {
 
 /// A builder for [`GeoMatchConstraint`](crate::types::GeoMatchConstraint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeoMatchConstraintBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::GeoMatchConstraintType>,
     pub(crate) value: ::std::option::Option<crate::types::GeoMatchConstraintValue>,
@@ -48,10 +46,7 @@ impl GeoMatchConstraintBuilder {
         self
     }
     /// <p>The type of geographical area you want AWS WAF to search for. Currently <code>Country</code> is the only valid value.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GeoMatchConstraintType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::GeoMatchConstraintType>) -> Self {
         self.r#type = input;
         self
     }
@@ -65,10 +60,7 @@ impl GeoMatchConstraintBuilder {
         self
     }
     /// <p>The country that you want AWS WAF to search for.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::GeoMatchConstraintValue>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::GeoMatchConstraintValue>) -> Self {
         self.value = input;
         self
     }

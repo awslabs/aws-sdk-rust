@@ -10,10 +10,7 @@ impl CreateEnvironmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_environment::CreateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_environment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateEnvironmentFluentBuilder {
         }
     }
     /// Access the CreateEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateEnvironmentFluentBuilder {
             crate::operation::create_environment::CreateEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment::CreateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment::CreateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateEnvironmentFluentBuilder {
             crate::operation::create_environment::CreateEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl CreateEnvironmentFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The type of instance for the runtime environment.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_type(input.into());
         self
     }
     /// <p>The type of instance for the runtime environment.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
@@ -176,10 +154,7 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>The engine type for the runtime environment.</p>
-    pub fn set_engine_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineType>,
-    ) -> Self {
+    pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
         self.inner = self.inner.set_engine_type(input);
         self
     }
@@ -188,18 +163,12 @@ impl CreateEnvironmentFluentBuilder {
         self.inner.get_engine_type()
     }
     /// <p>The version of the engine type for the runtime environment.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The version of the engine type for the runtime environment.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -217,10 +186,7 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>The list of subnets associated with the VPC for this runtime environment.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -233,25 +199,17 @@ impl CreateEnvironmentFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The list of security groups for the VPC associated with this runtime environment.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>The list of security groups for the VPC associated with this runtime environment.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>The list of security groups for the VPC associated with this runtime environment.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// Appends an item to `storageConfigurations`.
@@ -264,17 +222,12 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>Optional. The storage configurations for this runtime environment.</p>
-    pub fn set_storage_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>>,
-    ) -> Self {
+    pub fn set_storage_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>>) -> Self {
         self.inner = self.inner.set_storage_configurations(input);
         self
     }
     /// <p>Optional. The storage configurations for this runtime environment.</p>
-    pub fn get_storage_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>> {
+    pub fn get_storage_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>> {
         self.inner.get_storage_configurations()
     }
     /// <p>Specifies whether the runtime environment is publicly accessible.</p>
@@ -297,17 +250,12 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>The details of a high availability configuration for this runtime environment.</p>
-    pub fn set_high_availability_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HighAvailabilityConfig>,
-    ) -> Self {
+    pub fn set_high_availability_config(mut self, input: ::std::option::Option<crate::types::HighAvailabilityConfig>) -> Self {
         self.inner = self.inner.set_high_availability_config(input);
         self
     }
     /// <p>The details of a high availability configuration for this runtime environment.</p>
-    pub fn get_high_availability_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HighAvailabilityConfig> {
+    pub fn get_high_availability_config(&self) -> &::std::option::Option<crate::types::HighAvailabilityConfig> {
         self.inner.get_high_availability_config()
     }
     /// Adds a key-value pair to `tags`.
@@ -315,52 +263,31 @@ impl CreateEnvironmentFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the runtime environment.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags for the runtime environment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags for the runtime environment.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_maintenance_window()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create an environment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>

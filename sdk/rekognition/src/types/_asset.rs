@@ -10,9 +10,7 @@ pub struct Asset {
 }
 impl Asset {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
-    pub fn ground_truth_manifest(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GroundTruthManifest> {
+    pub fn ground_truth_manifest(&self) -> ::std::option::Option<&crate::types::GroundTruthManifest> {
         self.ground_truth_manifest.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl Asset {
 
 /// A builder for [`Asset`](crate::types::Asset).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBuilder {
     pub(crate) ground_truth_manifest: ::std::option::Option<crate::types::GroundTruthManifest>,
 }
@@ -38,17 +34,12 @@ impl AssetBuilder {
         self
     }
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
-    pub fn set_ground_truth_manifest(
-        mut self,
-        input: ::std::option::Option<crate::types::GroundTruthManifest>,
-    ) -> Self {
+    pub fn set_ground_truth_manifest(mut self, input: ::std::option::Option<crate::types::GroundTruthManifest>) -> Self {
         self.ground_truth_manifest = input;
         self
     }
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
-    pub fn get_ground_truth_manifest(
-        &self,
-    ) -> &::std::option::Option<crate::types::GroundTruthManifest> {
+    pub fn get_ground_truth_manifest(&self) -> &::std::option::Option<crate::types::GroundTruthManifest> {
         &self.ground_truth_manifest
     }
     /// Consumes the builder and constructs a [`Asset`](crate::types::Asset).

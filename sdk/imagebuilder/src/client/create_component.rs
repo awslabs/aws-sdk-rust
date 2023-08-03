@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`client_token(Option<String>)`](crate::operation::create_component::CreateComponentOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
     ///   - [`component_build_version_arn(Option<String>)`](crate::operation::create_component::CreateComponentOutput::component_build_version_arn): <p>The Amazon Resource Name (ARN) of the component that this request created.</p>
     /// - On failure, responds with [`SdkError<CreateComponentError>`](crate::operation::create_component::CreateComponentError)
-    pub fn create_component(
-        &self,
-    ) -> crate::operation::create_component::builders::CreateComponentFluentBuilder {
-        crate::operation::create_component::builders::CreateComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_component(&self) -> crate::operation::create_component::builders::CreateComponentFluentBuilder {
+        crate::operation::create_component::builders::CreateComponentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeDomainAutoTunesOutput {
 }
 impl DescribeDomainAutoTunesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainAutoTunesOutput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesOutputBuilder {
         crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDomainAutoTunesOutput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainAutoTunesOutputBuilder {
     pub(crate) auto_tunes: ::std::option::Option<::std::vec::Vec<crate::types::AutoTune>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl DescribeDomainAutoTunesOutputBuilder {
         self
     }
     /// <p>The list of setting adjustments that Auto-Tune has made to the domain.</p>
-    pub fn set_auto_tunes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoTune>>,
-    ) -> Self {
+    pub fn set_auto_tunes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoTune>>) -> Self {
         self.auto_tunes = input;
         self
     }
     /// <p>The list of setting adjustments that Auto-Tune has made to the domain.</p>
-    pub fn get_auto_tunes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoTune>> {
+    pub fn get_auto_tunes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoTune>> {
         &self.auto_tunes
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -96,9 +87,7 @@ impl DescribeDomainAutoTunesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDomainAutoTunesOutput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput {
+    pub fn build(self) -> crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput {
         crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput {
             auto_tunes: self.auto_tunes,
             next_token: self.next_token,

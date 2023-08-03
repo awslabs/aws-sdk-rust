@@ -15,18 +15,14 @@ impl DescribeVirtualClusterInput {
 }
 impl DescribeVirtualClusterInput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualClusterInput`](crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput).
-    pub fn builder(
-    ) -> crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterInputBuilder {
         crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVirtualClusterInput`](crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVirtualClusterInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl DescribeVirtualClusterInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVirtualClusterInput`](crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput { id: self.id })
     }
 }

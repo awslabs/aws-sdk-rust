@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDhcpOptionsOutput`](crate::operation::create_dhcp_options::CreateDhcpOptionsOutput) with field(s):
     ///   - [`dhcp_options(Option<DhcpOptions>)`](crate::operation::create_dhcp_options::CreateDhcpOptionsOutput::dhcp_options): <p>A set of DHCP options.</p>
     /// - On failure, responds with [`SdkError<CreateDhcpOptionsError>`](crate::operation::create_dhcp_options::CreateDhcpOptionsError)
-    pub fn create_dhcp_options(
-        &self,
-    ) -> crate::operation::create_dhcp_options::builders::CreateDhcpOptionsFluentBuilder {
-        crate::operation::create_dhcp_options::builders::CreateDhcpOptionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_dhcp_options(&self) -> crate::operation::create_dhcp_options::builders::CreateDhcpOptionsFluentBuilder {
+        crate::operation::create_dhcp_options::builders::CreateDhcpOptionsFluentBuilder::new(self.handle.clone())
     }
 }

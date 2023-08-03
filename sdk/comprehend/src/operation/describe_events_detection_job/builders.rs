@@ -26,7 +26,7 @@ impl DescribeEventsDetectionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEventsDetectionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobInputBuilder,
+    inner: crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobInputBuilder,
 }
 impl DescribeEventsDetectionJobFluentBuilder {
     /// Creates a new `DescribeEventsDetectionJob`.
@@ -37,7 +37,7 @@ impl DescribeEventsDetectionJobFluentBuilder {
         }
     }
     /// Access the DescribeEventsDetectionJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeEventsDetectionJobFluentBuilder {
             crate::operation::describe_events_detection_job::DescribeEventsDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_events_detection_job::DescribeEventsDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_events_detection_job::DescribeEventsDetectionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeEventsDetectionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeEventsDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_events_detection_job::DescribeEventsDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_events_detection_job::DescribeEventsDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_events_detection_job::DescribeEventsDetectionJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeEventsDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_events_detection_job::DescribeEventsDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_events_detection_job::DescribeEventsDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_events_detection_job::DescribeEventsDetectionJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeEventsDetectionJobFluentBuilder {
             crate::operation::describe_events_detection_job::DescribeEventsDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_events_detection_job::DescribeEventsDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_events_detection_job::DescribeEventsDetectionJobError>,
     > {
         self.customize_middleware().await
     }

@@ -26,13 +26,11 @@ impl CreateSipMediaApplicationInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateSipMediaApplication.html">CreateSipMediaApplication</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by CreateSipMediaApplication in the Amazon Chime SDK Voice Namespace"
-)]
+#[deprecated(note = "Replaced by CreateSipMediaApplication in the Amazon Chime SDK Voice Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSipMediaApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder,
+    inner: crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder,
 }
 impl CreateSipMediaApplicationFluentBuilder {
     /// Creates a new `CreateSipMediaApplication`.
@@ -43,7 +41,7 @@ impl CreateSipMediaApplicationFluentBuilder {
         }
     }
     /// Access the CreateSipMediaApplication as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl CreateSipMediaApplicationFluentBuilder {
             crate::operation::create_sip_media_application::CreateSipMediaApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_media_application::CreateSipMediaApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl CreateSipMediaApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl CreateSipMediaApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_media_application::CreateSipMediaApplicationError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl CreateSipMediaApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_media_application::CreateSipMediaApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +109,7 @@ impl CreateSipMediaApplicationFluentBuilder {
             crate::operation::create_sip_media_application::CreateSipMediaApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_media_application::CreateSipMediaApplicationError>,
     > {
         self.customize_middleware().await
     }
@@ -164,17 +151,12 @@ impl CreateSipMediaApplicationFluentBuilder {
         self
     }
     /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>) -> Self {
         self.inner = self.inner.set_endpoints(input);
         self
     }
     /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
-    pub fn get_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>> {
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>> {
         self.inner.get_endpoints()
     }
 }

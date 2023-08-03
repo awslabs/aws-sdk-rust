@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_mailbox_export_job::builders::CancelMailboxExportJobFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::cancel_mailbox_export_job::builders::CancelMailboxExportJobFluentBuilder::set_organization_id): <p>The organization ID.</p>
     /// - On success, responds with [`CancelMailboxExportJobOutput`](crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobOutput)
     /// - On failure, responds with [`SdkError<CancelMailboxExportJobError>`](crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError)
-    pub fn cancel_mailbox_export_job(
-        &self,
-    ) -> crate::operation::cancel_mailbox_export_job::builders::CancelMailboxExportJobFluentBuilder
-    {
+    pub fn cancel_mailbox_export_job(&self) -> crate::operation::cancel_mailbox_export_job::builders::CancelMailboxExportJobFluentBuilder {
         crate::operation::cancel_mailbox_export_job::builders::CancelMailboxExportJobFluentBuilder::new(self.handle.clone())
     }
 }

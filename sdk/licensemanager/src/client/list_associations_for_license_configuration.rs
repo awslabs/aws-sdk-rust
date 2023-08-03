@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`license_configuration_associations(Option<Vec<LicenseConfigurationAssociation>>)`](crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput::license_configuration_associations): <p>Information about the associations for the license configuration.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListAssociationsForLicenseConfigurationError>`](crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError)
-    pub fn list_associations_for_license_configuration(&self) -> crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationFluentBuilder{
-        crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn list_associations_for_license_configuration(
+        &self,
+    ) -> crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationFluentBuilder {
+        crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

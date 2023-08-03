@@ -85,17 +85,14 @@ impl ::aws_http::request_id::RequestId for CreateAccessPointOutput {
 }
 impl CreateAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPointOutput`](crate::operation::create_access_point::CreateAccessPointOutput).
-    pub fn builder(
-    ) -> crate::operation::create_access_point::builders::CreateAccessPointOutputBuilder {
+    pub fn builder() -> crate::operation::create_access_point::builders::CreateAccessPointOutputBuilder {
         crate::operation::create_access_point::builders::CreateAccessPointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessPointOutput`](crate::operation::create_access_point::CreateAccessPointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessPointOutputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -150,10 +147,7 @@ impl CreateAccessPointOutputBuilder {
         self
     }
     /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -162,18 +156,12 @@ impl CreateAccessPointOutputBuilder {
         &self.tags
     }
     /// <p>The ID of the access point, assigned by Amazon EFS.</p>
-    pub fn access_point_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the access point, assigned by Amazon EFS.</p>
-    pub fn set_access_point_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_point_id = input;
         self
     }
@@ -182,18 +170,12 @@ impl CreateAccessPointOutputBuilder {
         &self.access_point_id
     }
     /// <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
-    pub fn access_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
-    pub fn set_access_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_point_arn = input;
         self
     }
@@ -202,18 +184,12 @@ impl CreateAccessPointOutputBuilder {
         &self.access_point_arn
     }
     /// <p>The ID of the EFS file system that the access point applies to.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the EFS file system that the access point applies to.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -241,10 +217,7 @@ impl CreateAccessPointOutputBuilder {
         self
     }
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
-    pub fn set_root_directory(
-        mut self,
-        input: ::std::option::Option<crate::types::RootDirectory>,
-    ) -> Self {
+    pub fn set_root_directory(mut self, input: ::std::option::Option<crate::types::RootDirectory>) -> Self {
         self.root_directory = input;
         self
     }
@@ -272,10 +245,7 @@ impl CreateAccessPointOutputBuilder {
         self
     }
     /// <p>Identifies the lifecycle phase of the access point.</p>
-    pub fn set_life_cycle_state(
-        mut self,
-        input: ::std::option::Option<crate::types::LifeCycleState>,
-    ) -> Self {
+    pub fn set_life_cycle_state(mut self, input: ::std::option::Option<crate::types::LifeCycleState>) -> Self {
         self.life_cycle_state = input;
         self
     }

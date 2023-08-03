@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`comprehend_medical_async_job_properties_list(Option<Vec<ComprehendMedicalAsyncJobProperties>>)`](crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput::comprehend_medical_async_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListICD10CMInferenceJobsError>`](crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError)
-    pub fn list_icd10_cm_inference_jobs(&self) -> crate::operation::list_icd10_cm_inference_jobs::builders::ListICD10CMInferenceJobsFluentBuilder{
+    pub fn list_icd10_cm_inference_jobs(&self) -> crate::operation::list_icd10_cm_inference_jobs::builders::ListICD10CMInferenceJobsFluentBuilder {
         crate::operation::list_icd10_cm_inference_jobs::builders::ListICD10CMInferenceJobsFluentBuilder::new(self.handle.clone())
     }
 }

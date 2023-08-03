@@ -52,9 +52,7 @@ impl ListNodesInput {
 
 /// A builder for [`ListNodesInput`](crate::operation::list_nodes::ListNodesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNodesInputBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_id: ::std::option::Option<::std::string::String>,
@@ -137,12 +135,7 @@ impl ListNodesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListNodesInput`](crate::operation::list_nodes::ListNodesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_nodes::ListNodesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_nodes::ListNodesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_nodes::ListNodesInput {
             network_id: self.network_id,
             member_id: self.member_id,

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSegmentOutput`](crate::operation::create_segment::CreateSegmentOutput) with field(s):
     ///   - [`segment_response(Option<SegmentResponse>)`](crate::operation::create_segment::CreateSegmentOutput::segment_response): <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     /// - On failure, responds with [`SdkError<CreateSegmentError>`](crate::operation::create_segment::CreateSegmentError)
-    pub fn create_segment(
-        &self,
-    ) -> crate::operation::create_segment::builders::CreateSegmentFluentBuilder {
-        crate::operation::create_segment::builders::CreateSegmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_segment(&self) -> crate::operation::create_segment::builders::CreateSegmentFluentBuilder {
+        crate::operation::create_segment::builders::CreateSegmentFluentBuilder::new(self.handle.clone())
     }
 }

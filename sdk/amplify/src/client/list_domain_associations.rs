@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`domain_associations(Option<Vec<DomainAssociation>>)`](crate::operation::list_domain_associations::ListDomainAssociationsOutput::domain_associations): <p> A list of domain associations. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domain_associations::ListDomainAssociationsOutput::next_token): <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     /// - On failure, responds with [`SdkError<ListDomainAssociationsError>`](crate::operation::list_domain_associations::ListDomainAssociationsError)
-    pub fn list_domain_associations(
-        &self,
-    ) -> crate::operation::list_domain_associations::builders::ListDomainAssociationsFluentBuilder
-    {
+    pub fn list_domain_associations(&self) -> crate::operation::list_domain_associations::builders::ListDomainAssociationsFluentBuilder {
         crate::operation::list_domain_associations::builders::ListDomainAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

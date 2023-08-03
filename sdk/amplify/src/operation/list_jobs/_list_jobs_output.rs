@@ -36,9 +36,7 @@ impl ListJobsOutput {
 
 /// A builder for [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobsOutputBuilder {
     pub(crate) job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListJobsOutputBuilder {
         self
     }
     /// <p> The result structure for the list job result request. </p>
-    pub fn set_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
-    ) -> Self {
+    pub fn set_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>) -> Self {
         self.job_summaries = input;
         self
     }
     /// <p> The result structure for the list job result request. </p>
-    pub fn get_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
+    pub fn get_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
         &self.job_summaries
     }
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>

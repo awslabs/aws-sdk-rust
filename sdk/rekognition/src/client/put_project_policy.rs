@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`PutProjectPolicyOutput`](crate::operation::put_project_policy::PutProjectPolicyOutput) with field(s):
     ///   - [`policy_revision_id(Option<String>)`](crate::operation::put_project_policy::PutProjectPolicyOutput::policy_revision_id): <p>The ID of the project policy.</p>
     /// - On failure, responds with [`SdkError<PutProjectPolicyError>`](crate::operation::put_project_policy::PutProjectPolicyError)
-    pub fn put_project_policy(
-        &self,
-    ) -> crate::operation::put_project_policy::builders::PutProjectPolicyFluentBuilder {
-        crate::operation::put_project_policy::builders::PutProjectPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_project_policy(&self) -> crate::operation::put_project_policy::builders::PutProjectPolicyFluentBuilder {
+        crate::operation::put_project_policy::builders::PutProjectPolicyFluentBuilder::new(self.handle.clone())
     }
 }

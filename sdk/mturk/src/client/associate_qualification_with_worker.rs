@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`send_notification(bool)`](crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerFluentBuilder::send_notification) / [`set_send_notification(Option<bool>)`](crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerFluentBuilder::set_send_notification): <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
     /// - On success, responds with [`AssociateQualificationWithWorkerOutput`](crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput)
     /// - On failure, responds with [`SdkError<AssociateQualificationWithWorkerError>`](crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerError)
-    pub fn associate_qualification_with_worker(&self) -> crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerFluentBuilder{
+    pub fn associate_qualification_with_worker(
+        &self,
+    ) -> crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerFluentBuilder {
         crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateChannelFlowOutput`](crate::operation::update_channel_flow::UpdateChannelFlowOutput) with field(s):
     ///   - [`channel_flow_arn(Option<String>)`](crate::operation::update_channel_flow::UpdateChannelFlowOutput::channel_flow_arn): <p>The ARN of the channel flow.</p>
     /// - On failure, responds with [`SdkError<UpdateChannelFlowError>`](crate::operation::update_channel_flow::UpdateChannelFlowError)
-    pub fn update_channel_flow(
-        &self,
-    ) -> crate::operation::update_channel_flow::builders::UpdateChannelFlowFluentBuilder {
-        crate::operation::update_channel_flow::builders::UpdateChannelFlowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_channel_flow(&self) -> crate::operation::update_channel_flow::builders::UpdateChannelFlowFluentBuilder {
+        crate::operation::update_channel_flow::builders::UpdateChannelFlowFluentBuilder::new(self.handle.clone())
     }
 }

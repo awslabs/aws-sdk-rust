@@ -122,10 +122,7 @@ impl UpdateSecretInputBuilder {
     /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.</p>
     /// </note>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
@@ -133,10 +130,7 @@ impl UpdateSecretInputBuilder {
     /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.</p>
     /// </note>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -197,10 +191,7 @@ impl UpdateSecretInputBuilder {
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter. </p>
     /// <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both.</p>
     /// <p>You can't access this parameter in the Secrets Manager console.</p>
-    pub fn set_secret_binary(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_secret_binary(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.secret_binary = input;
         self
     }
@@ -212,19 +203,13 @@ impl UpdateSecretInputBuilder {
     }
     /// <p>The text data to encrypt and store in the new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value. </p>
     /// <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. </p>
-    pub fn secret_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text data to encrypt and store in the new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value. </p>
     /// <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. </p>
-    pub fn set_secret_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_string = input;
         self
     }
@@ -234,12 +219,7 @@ impl UpdateSecretInputBuilder {
         &self.secret_string
     }
     /// Consumes the builder and constructs a [`UpdateSecretInput`](crate::operation::update_secret::UpdateSecretInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_secret::UpdateSecretInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_secret::UpdateSecretInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_secret::UpdateSecretInput {
             secret_id: self.secret_id,
             client_request_token: self.client_request_token,

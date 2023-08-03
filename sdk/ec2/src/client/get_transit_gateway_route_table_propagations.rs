@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`transit_gateway_route_table_propagations(Option<Vec<TransitGatewayRouteTablePropagation>>)`](crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput::transit_gateway_route_table_propagations): <p>Information about the route table propagations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetTransitGatewayRouteTablePropagationsError>`](crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsError)
-    pub fn get_transit_gateway_route_table_propagations(&self) -> crate::operation::get_transit_gateway_route_table_propagations::builders::GetTransitGatewayRouteTablePropagationsFluentBuilder{
-        crate::operation::get_transit_gateway_route_table_propagations::builders::GetTransitGatewayRouteTablePropagationsFluentBuilder::new(self.handle.clone())
+    pub fn get_transit_gateway_route_table_propagations(
+        &self,
+    ) -> crate::operation::get_transit_gateway_route_table_propagations::builders::GetTransitGatewayRouteTablePropagationsFluentBuilder {
+        crate::operation::get_transit_gateway_route_table_propagations::builders::GetTransitGatewayRouteTablePropagationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

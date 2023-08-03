@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetTestGridSessionOutput`](crate::operation::get_test_grid_session::GetTestGridSessionOutput) with field(s):
     ///   - [`test_grid_session(Option<TestGridSession>)`](crate::operation::get_test_grid_session::GetTestGridSessionOutput::test_grid_session): <p>The <code>TestGridSession</code> that was requested.</p>
     /// - On failure, responds with [`SdkError<GetTestGridSessionError>`](crate::operation::get_test_grid_session::GetTestGridSessionError)
-    pub fn get_test_grid_session(
-        &self,
-    ) -> crate::operation::get_test_grid_session::builders::GetTestGridSessionFluentBuilder {
-        crate::operation::get_test_grid_session::builders::GetTestGridSessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_test_grid_session(&self) -> crate::operation::get_test_grid_session::builders::GetTestGridSessionFluentBuilder {
+        crate::operation::get_test_grid_session::builders::GetTestGridSessionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,9 +44,7 @@ impl CanaryTimeline {
 
 /// A builder for [`CanaryTimeline`](crate::types::CanaryTimeline).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CanaryTimelineBuilder {
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -60,10 +58,7 @@ impl CanaryTimelineBuilder {
         self
     }
     /// <p>The date and time the canary was created.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -77,10 +72,7 @@ impl CanaryTimelineBuilder {
         self
     }
     /// <p>The date and time the canary was most recently modified.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }
@@ -94,10 +86,7 @@ impl CanaryTimelineBuilder {
         self
     }
     /// <p>The date and time that the canary's most recent run started.</p>
-    pub fn set_last_started(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_started(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_started = input;
         self
     }
@@ -111,10 +100,7 @@ impl CanaryTimelineBuilder {
         self
     }
     /// <p>The date and time that the canary's most recent run ended.</p>
-    pub fn set_last_stopped(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_stopped(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_stopped = input;
         self
     }

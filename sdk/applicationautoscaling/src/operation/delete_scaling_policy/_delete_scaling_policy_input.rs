@@ -120,18 +120,14 @@ impl DeleteScalingPolicyInput {
 }
 impl DeleteScalingPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteScalingPolicyInput`](crate::operation::delete_scaling_policy::DeleteScalingPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyInputBuilder {
-        crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyInputBuilder {
+        crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteScalingPolicyInput`](crate::operation::delete_scaling_policy::DeleteScalingPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteScalingPolicyInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
@@ -159,10 +155,7 @@ impl DeleteScalingPolicyInputBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.service_namespace = input;
         self
     }
@@ -293,10 +286,7 @@ impl DeleteScalingPolicyInputBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
         self
     }
@@ -324,25 +314,19 @@ impl DeleteScalingPolicyInputBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
     }
     /// Consumes the builder and constructs a [`DeleteScalingPolicyInput`](crate::operation::delete_scaling_policy::DeleteScalingPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_scaling_policy::DeleteScalingPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_scaling_policy::DeleteScalingPolicyInput {
-                policy_name: self.policy_name,
-                service_namespace: self.service_namespace,
-                resource_id: self.resource_id,
-                scalable_dimension: self.scalable_dimension,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_scaling_policy::DeleteScalingPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_scaling_policy::DeleteScalingPolicyInput {
+            policy_name: self.policy_name,
+            service_namespace: self.service_namespace,
+            resource_id: self.resource_id,
+            scalable_dimension: self.scalable_dimension,
+        })
     }
 }

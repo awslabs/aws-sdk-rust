@@ -35,9 +35,7 @@ impl ListEventBusesOutput {
 
 /// A builder for [`ListEventBusesOutput`](crate::operation::list_event_buses::ListEventBusesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventBusesOutputBuilder {
     pub(crate) event_buses: ::std::option::Option<::std::vec::Vec<crate::types::EventBus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListEventBusesOutputBuilder {
         self
     }
     /// <p>This list of event buses.</p>
-    pub fn set_event_buses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventBus>>,
-    ) -> Self {
+    pub fn set_event_buses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventBus>>) -> Self {
         self.event_buses = input;
         self
     }
     /// <p>This list of event buses.</p>
-    pub fn get_event_buses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventBus>> {
+    pub fn get_event_buses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventBus>> {
         &self.event_buses
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>

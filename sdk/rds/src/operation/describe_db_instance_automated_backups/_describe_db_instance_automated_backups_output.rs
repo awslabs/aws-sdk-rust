@@ -9,8 +9,7 @@ pub struct DescribeDbInstanceAutomatedBackupsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
     #[doc(hidden)]
-    pub db_instance_automated_backups:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackup>>,
+    pub db_instance_automated_backups: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackup>>,
     _request_id: Option<String>,
 }
 impl DescribeDbInstanceAutomatedBackupsOutput {
@@ -19,9 +18,7 @@ impl DescribeDbInstanceAutomatedBackupsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
-    pub fn db_instance_automated_backups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DbInstanceAutomatedBackup]> {
+    pub fn db_instance_automated_backups(&self) -> ::std::option::Option<&[crate::types::DbInstanceAutomatedBackup]> {
         self.db_instance_automated_backups.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeDbInstanceAutomatedBackupsOut
 }
 impl DescribeDbInstanceAutomatedBackupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbInstanceAutomatedBackupsOutput`](crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsOutput).
-    pub fn builder() -> crate::operation::describe_db_instance_automated_backups::builders::DescribeDbInstanceAutomatedBackupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_db_instance_automated_backups::builders::DescribeDbInstanceAutomatedBackupsOutputBuilder {
         crate::operation::describe_db_instance_automated_backups::builders::DescribeDbInstanceAutomatedBackupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbInstanceAutomatedBackupsOutput`](crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbInstanceAutomatedBackupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) db_instance_automated_backups:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackup>>,
+    pub(crate) db_instance_automated_backups: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackup>>,
     _request_id: Option<String>,
 }
 impl DescribeDbInstanceAutomatedBackupsOutputBuilder {
@@ -68,10 +62,7 @@ impl DescribeDbInstanceAutomatedBackupsOutputBuilder {
     /// To override the contents of this collection use [`set_db_instance_automated_backups`](Self::set_db_instance_automated_backups).
     ///
     /// <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
-    pub fn db_instance_automated_backups(
-        mut self,
-        input: crate::types::DbInstanceAutomatedBackup,
-    ) -> Self {
+    pub fn db_instance_automated_backups(mut self, input: crate::types::DbInstanceAutomatedBackup) -> Self {
         let mut v = self.db_instance_automated_backups.unwrap_or_default();
         v.push(input);
         self.db_instance_automated_backups = ::std::option::Option::Some(v);
@@ -86,9 +77,7 @@ impl DescribeDbInstanceAutomatedBackupsOutputBuilder {
         self
     }
     /// <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
-    pub fn get_db_instance_automated_backups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackup>> {
+    pub fn get_db_instance_automated_backups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackup>> {
         &self.db_instance_automated_backups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,12 +90,10 @@ impl DescribeDbInstanceAutomatedBackupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDbInstanceAutomatedBackupsOutput`](crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsOutput).
-    pub fn build(self) -> crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsOutput{
+    pub fn build(self) -> crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsOutput {
         crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsOutput {
-            marker: self.marker
-            ,
-            db_instance_automated_backups: self.db_instance_automated_backups
-            ,
+            marker: self.marker,
+            db_instance_automated_backups: self.db_instance_automated_backups,
             _request_id: self._request_id,
         }
     }

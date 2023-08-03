@@ -23,18 +23,14 @@ impl DeleteVaultNotificationsInput {
 }
 impl DeleteVaultNotificationsInput {
     /// Creates a new builder-style object to manufacture [`DeleteVaultNotificationsInput`](crate::operation::delete_vault_notifications::DeleteVaultNotificationsInput).
-    pub fn builder(
-    ) -> crate::operation::delete_vault_notifications::builders::DeleteVaultNotificationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vault_notifications::builders::DeleteVaultNotificationsInputBuilder {
         crate::operation::delete_vault_notifications::builders::DeleteVaultNotificationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVaultNotificationsInput`](crate::operation::delete_vault_notifications::DeleteVaultNotificationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVaultNotificationsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -75,11 +71,9 @@ impl DeleteVaultNotificationsInputBuilder {
         crate::operation::delete_vault_notifications::DeleteVaultNotificationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_vault_notifications::DeleteVaultNotificationsInput {
-                account_id: self.account_id,
-                vault_name: self.vault_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_vault_notifications::DeleteVaultNotificationsInput {
+            account_id: self.account_id,
+            vault_name: self.vault_name,
+        })
     }
 }

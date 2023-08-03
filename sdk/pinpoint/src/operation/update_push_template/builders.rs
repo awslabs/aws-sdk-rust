@@ -10,10 +10,7 @@ impl UpdatePushTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_push_template::UpdatePushTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_push_template::UpdatePushTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_push_template::UpdatePushTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_push_template();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdatePushTemplateFluentBuilder {
         }
     }
     /// Access the UpdatePushTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_push_template::builders::UpdatePushTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_push_template::builders::UpdatePushTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdatePushTemplateFluentBuilder {
             crate::operation::update_push_template::UpdatePushTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_push_template::UpdatePushTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_push_template::UpdatePushTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdatePushTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdatePushTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_push_template::UpdatePushTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_push_template::UpdatePushTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_push_template::UpdatePushTemplateError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdatePushTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_push_template::UpdatePushTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_push_template::UpdatePushTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_push_template::UpdatePushTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdatePushTemplateFluentBuilder {
             crate::operation::update_push_template::UpdatePushTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_push_template::UpdatePushTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_push_template::UpdatePushTemplateError>,
     > {
         self.customize_middleware().await
     }
@@ -140,40 +124,26 @@ impl UpdatePushTemplateFluentBuilder {
         self.inner.get_create_new_version()
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    pub fn push_notification_template_request(
-        mut self,
-        input: crate::types::PushNotificationTemplateRequest,
-    ) -> Self {
+    pub fn push_notification_template_request(mut self, input: crate::types::PushNotificationTemplateRequest) -> Self {
         self.inner = self.inner.push_notification_template_request(input);
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    pub fn set_push_notification_template_request(
-        mut self,
-        input: ::std::option::Option<crate::types::PushNotificationTemplateRequest>,
-    ) -> Self {
+    pub fn set_push_notification_template_request(mut self, input: ::std::option::Option<crate::types::PushNotificationTemplateRequest>) -> Self {
         self.inner = self.inner.set_push_notification_template_request(input);
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    pub fn get_push_notification_template_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::PushNotificationTemplateRequest> {
+    pub fn get_push_notification_template_request(&self) -> &::std::option::Option<crate::types::PushNotificationTemplateRequest> {
         self.inner.get_push_notification_template_request()
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }

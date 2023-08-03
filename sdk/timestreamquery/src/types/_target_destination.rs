@@ -10,9 +10,7 @@ pub struct TargetDestination {
 }
 impl TargetDestination {
     /// <p>Query result destination details for Timestream data source.</p>
-    pub fn timestream_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimestreamDestination> {
+    pub fn timestream_destination(&self) -> ::std::option::Option<&crate::types::TimestreamDestination> {
         self.timestream_destination.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl TargetDestination {
 
 /// A builder for [`TargetDestination`](crate::types::TargetDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetDestinationBuilder {
     pub(crate) timestream_destination: ::std::option::Option<crate::types::TimestreamDestination>,
 }
@@ -38,17 +34,12 @@ impl TargetDestinationBuilder {
         self
     }
     /// <p>Query result destination details for Timestream data source.</p>
-    pub fn set_timestream_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestreamDestination>,
-    ) -> Self {
+    pub fn set_timestream_destination(mut self, input: ::std::option::Option<crate::types::TimestreamDestination>) -> Self {
         self.timestream_destination = input;
         self
     }
     /// <p>Query result destination details for Timestream data source.</p>
-    pub fn get_timestream_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimestreamDestination> {
+    pub fn get_timestream_destination(&self) -> &::std::option::Option<crate::types::TimestreamDestination> {
         &self.timestream_destination
     }
     /// Consumes the builder and constructs a [`TargetDestination`](crate::types::TargetDestination).

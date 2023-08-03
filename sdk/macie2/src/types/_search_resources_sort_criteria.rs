@@ -13,9 +13,7 @@ pub struct SearchResourcesSortCriteria {
 }
 impl SearchResourcesSortCriteria {
     /// <p>The property to sort the results by.</p>
-    pub fn attribute_name(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SearchResourcesSortAttributeName> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&crate::types::SearchResourcesSortAttributeName> {
         self.attribute_name.as_ref()
     }
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
@@ -32,12 +30,9 @@ impl SearchResourcesSortCriteria {
 
 /// A builder for [`SearchResourcesSortCriteria`](crate::types::SearchResourcesSortCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchResourcesSortCriteriaBuilder {
-    pub(crate) attribute_name:
-        ::std::option::Option<crate::types::SearchResourcesSortAttributeName>,
+    pub(crate) attribute_name: ::std::option::Option<crate::types::SearchResourcesSortAttributeName>,
     pub(crate) order_by: ::std::option::Option<crate::types::OrderBy>,
 }
 impl SearchResourcesSortCriteriaBuilder {
@@ -47,17 +42,12 @@ impl SearchResourcesSortCriteriaBuilder {
         self
     }
     /// <p>The property to sort the results by.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchResourcesSortAttributeName>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<crate::types::SearchResourcesSortAttributeName>) -> Self {
         self.attribute_name = input;
         self
     }
     /// <p>The property to sort the results by.</p>
-    pub fn get_attribute_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::SearchResourcesSortAttributeName> {
+    pub fn get_attribute_name(&self) -> &::std::option::Option<crate::types::SearchResourcesSortAttributeName> {
         &self.attribute_name
     }
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>

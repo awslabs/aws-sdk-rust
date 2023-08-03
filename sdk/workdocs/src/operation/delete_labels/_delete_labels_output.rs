@@ -19,9 +19,7 @@ impl DeleteLabelsOutput {
 
 /// A builder for [`DeleteLabelsOutput`](crate::operation::delete_labels::DeleteLabelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLabelsOutputBuilder {
     _request_id: Option<String>,
 }

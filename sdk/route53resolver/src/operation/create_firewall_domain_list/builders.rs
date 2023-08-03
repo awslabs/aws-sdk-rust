@@ -26,7 +26,7 @@ impl CreateFirewallDomainListInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFirewallDomainListFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_firewall_domain_list::builders::CreateFirewallDomainListInputBuilder,
+    inner: crate::operation::create_firewall_domain_list::builders::CreateFirewallDomainListInputBuilder,
 }
 impl CreateFirewallDomainListFluentBuilder {
     /// Creates a new `CreateFirewallDomainList`.
@@ -37,7 +37,7 @@ impl CreateFirewallDomainListFluentBuilder {
         }
     }
     /// Access the CreateFirewallDomainList as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_firewall_domain_list::builders::CreateFirewallDomainListInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_firewall_domain_list::builders::CreateFirewallDomainListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateFirewallDomainListFluentBuilder {
             crate::operation::create_firewall_domain_list::CreateFirewallDomainList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_firewall_domain_list::CreateFirewallDomainListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_firewall_domain_list::CreateFirewallDomainListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateFirewallDomainListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateFirewallDomainListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_firewall_domain_list::CreateFirewallDomainListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_firewall_domain_list::CreateFirewallDomainListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_firewall_domain_list::CreateFirewallDomainListError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateFirewallDomainListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_firewall_domain_list::CreateFirewallDomainListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_firewall_domain_list::CreateFirewallDomainListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_firewall_domain_list::CreateFirewallDomainListError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateFirewallDomainListFluentBuilder {
             crate::operation::create_firewall_domain_list::CreateFirewallDomainList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_firewall_domain_list::CreateFirewallDomainListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_firewall_domain_list::CreateFirewallDomainListError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
@@ -164,10 +147,7 @@ impl CreateFirewallDomainListFluentBuilder {
         self
     }
     /// <p>A list of the tag keys and values that you want to associate with the domain list. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

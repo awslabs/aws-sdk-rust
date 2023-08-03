@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`StopSourceNetworkReplicationOutput`](crate::operation::stop_source_network_replication::StopSourceNetworkReplicationOutput) with field(s):
     ///   - [`source_network(Option<SourceNetwork>)`](crate::operation::stop_source_network_replication::StopSourceNetworkReplicationOutput::source_network): <p>Source Network which was requested to stop replication.</p>
     /// - On failure, responds with [`SdkError<StopSourceNetworkReplicationError>`](crate::operation::stop_source_network_replication::StopSourceNetworkReplicationError)
-    pub fn stop_source_network_replication(&self) -> crate::operation::stop_source_network_replication::builders::StopSourceNetworkReplicationFluentBuilder{
+    pub fn stop_source_network_replication(
+        &self,
+    ) -> crate::operation::stop_source_network_replication::builders::StopSourceNetworkReplicationFluentBuilder {
         crate::operation::stop_source_network_replication::builders::StopSourceNetworkReplicationFluentBuilder::new(self.handle.clone())
     }
 }

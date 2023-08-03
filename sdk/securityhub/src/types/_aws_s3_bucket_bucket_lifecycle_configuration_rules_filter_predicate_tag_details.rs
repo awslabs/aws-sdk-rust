@@ -23,16 +23,14 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails {
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails {
     /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails).
-    pub fn builder() -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetailsBuilder {
         crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetailsBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -67,9 +65,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetailsBuilde
         &self.value
     }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails {
+    pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails {
             key: self.key,
             value: self.value,

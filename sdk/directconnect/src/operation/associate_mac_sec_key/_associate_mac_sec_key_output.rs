@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for AssociateMacSecKeyOutput {
 }
 impl AssociateMacSecKeyOutput {
     /// Creates a new builder-style object to manufacture [`AssociateMacSecKeyOutput`](crate::operation::associate_mac_sec_key::AssociateMacSecKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_mac_sec_key::builders::AssociateMacSecKeyOutputBuilder {
-        crate::operation::associate_mac_sec_key::builders::AssociateMacSecKeyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::associate_mac_sec_key::builders::AssociateMacSecKeyOutputBuilder {
+        crate::operation::associate_mac_sec_key::builders::AssociateMacSecKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateMacSecKeyOutput`](crate::operation::associate_mac_sec_key::AssociateMacSecKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateMacSecKeyOutputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
@@ -47,18 +43,12 @@ pub struct AssociateMacSecKeyOutputBuilder {
 }
 impl AssociateMacSecKeyOutputBuilder {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -78,17 +68,12 @@ impl AssociateMacSecKeyOutputBuilder {
         self
     }
     /// <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
-    pub fn set_mac_sec_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
-    ) -> Self {
+    pub fn set_mac_sec_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>) -> Self {
         self.mac_sec_keys = input;
         self
     }
     /// <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
-    pub fn get_mac_sec_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
+    pub fn get_mac_sec_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
         &self.mac_sec_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`lens_aliases(Vec<String>)`](crate::operation::associate_lenses::builders::AssociateLensesFluentBuilder::lens_aliases) / [`set_lens_aliases(Option<Vec<String>>)`](crate::operation::associate_lenses::builders::AssociateLensesFluentBuilder::set_lens_aliases): <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>  <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
     /// - On success, responds with [`AssociateLensesOutput`](crate::operation::associate_lenses::AssociateLensesOutput)
     /// - On failure, responds with [`SdkError<AssociateLensesError>`](crate::operation::associate_lenses::AssociateLensesError)
-    pub fn associate_lenses(
-        &self,
-    ) -> crate::operation::associate_lenses::builders::AssociateLensesFluentBuilder {
-        crate::operation::associate_lenses::builders::AssociateLensesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_lenses(&self) -> crate::operation::associate_lenses::builders::AssociateLensesFluentBuilder {
+        crate::operation::associate_lenses::builders::AssociateLensesFluentBuilder::new(self.handle.clone())
     }
 }

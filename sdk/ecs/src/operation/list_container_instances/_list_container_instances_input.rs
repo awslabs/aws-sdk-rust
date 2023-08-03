@@ -47,18 +47,14 @@ impl ListContainerInstancesInput {
 }
 impl ListContainerInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListContainerInstancesInput`](crate::operation::list_container_instances::ListContainerInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::list_container_instances::builders::ListContainerInstancesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_container_instances::builders::ListContainerInstancesInputBuilder {
         crate::operation::list_container_instances::builders::ListContainerInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListContainerInstancesInput`](crate::operation::list_container_instances::ListContainerInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContainerInstancesInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<::std::string::String>,
@@ -135,10 +131,7 @@ impl ListContainerInstancesInputBuilder {
         self
     }
     /// <p>Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the results include only container instances that have been set to <code>DRAINING</code> using <code>UpdateContainerInstancesState</code>. If you don't specify this parameter, the default is to include container instances set to all states other than <code>INACTIVE</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerInstanceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContainerInstanceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -149,18 +142,14 @@ impl ListContainerInstancesInputBuilder {
     /// Consumes the builder and constructs a [`ListContainerInstancesInput`](crate::operation::list_container_instances::ListContainerInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_container_instances::ListContainerInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_container_instances::ListContainerInstancesInput {
-                cluster: self.cluster,
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                status: self.status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_container_instances::ListContainerInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_container_instances::ListContainerInstancesInput {
+            cluster: self.cluster,
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            status: self.status,
+        })
     }
 }

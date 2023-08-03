@@ -6,14 +6,11 @@
 pub struct ScalingTrigger {
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
     #[doc(hidden)]
-    pub cloud_watch_alarm_definition:
-        ::std::option::Option<crate::types::CloudWatchAlarmDefinition>,
+    pub cloud_watch_alarm_definition: ::std::option::Option<crate::types::CloudWatchAlarmDefinition>,
 }
 impl ScalingTrigger {
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
-    pub fn cloud_watch_alarm_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchAlarmDefinition> {
+    pub fn cloud_watch_alarm_definition(&self) -> ::std::option::Option<&crate::types::CloudWatchAlarmDefinition> {
         self.cloud_watch_alarm_definition.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl ScalingTrigger {
 
 /// A builder for [`ScalingTrigger`](crate::types::ScalingTrigger).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScalingTriggerBuilder {
-    pub(crate) cloud_watch_alarm_definition:
-        ::std::option::Option<crate::types::CloudWatchAlarmDefinition>,
+    pub(crate) cloud_watch_alarm_definition: ::std::option::Option<crate::types::CloudWatchAlarmDefinition>,
 }
 impl ScalingTriggerBuilder {
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
-    pub fn cloud_watch_alarm_definition(
-        mut self,
-        input: crate::types::CloudWatchAlarmDefinition,
-    ) -> Self {
+    pub fn cloud_watch_alarm_definition(mut self, input: crate::types::CloudWatchAlarmDefinition) -> Self {
         self.cloud_watch_alarm_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
-    pub fn set_cloud_watch_alarm_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchAlarmDefinition>,
-    ) -> Self {
+    pub fn set_cloud_watch_alarm_definition(mut self, input: ::std::option::Option<crate::types::CloudWatchAlarmDefinition>) -> Self {
         self.cloud_watch_alarm_definition = input;
         self
     }
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
-    pub fn get_cloud_watch_alarm_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchAlarmDefinition> {
+    pub fn get_cloud_watch_alarm_definition(&self) -> &::std::option::Option<crate::types::CloudWatchAlarmDefinition> {
         &self.cloud_watch_alarm_definition
     }
     /// Consumes the builder and constructs a [`ScalingTrigger`](crate::types::ScalingTrigger).

@@ -4,9 +4,7 @@ pub fn ser_image(
     input: &crate::types::Image,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.bytes {
-        object
-            .key("Bytes")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+        object.key("Bytes").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
     if let Some(var_2) = &input.s3_object {
         #[allow(unused_mut)]

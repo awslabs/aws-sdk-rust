@@ -10,10 +10,7 @@ impl CreateTagsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_tags::CreateTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_tags::CreateTagsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_tags::CreateTagsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_tags();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl CreateTagsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_tags::CreateTags,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_tags::CreateTags, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_tags::CreateTagsError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl CreateTagsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl CreateTagsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_tags::CreateTags,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_tags::CreateTags, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_tags::CreateTagsError>,
     > {
         self.customize_middleware().await
@@ -119,25 +107,17 @@ impl CreateTagsFluentBuilder {
     /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
     ///
     /// <p>A list of configuration items that you want to tag.</p>
-    pub fn configuration_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_ids(input.into());
         self
     }
     /// <p>A list of configuration items that you want to tag.</p>
-    pub fn set_configuration_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_configuration_ids(input);
         self
     }
     /// <p>A list of configuration items that you want to tag.</p>
-    pub fn get_configuration_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_configuration_ids()
     }
     /// Appends an item to `tags`.
@@ -152,10 +132,7 @@ impl CreateTagsFluentBuilder {
     }
     /// <p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

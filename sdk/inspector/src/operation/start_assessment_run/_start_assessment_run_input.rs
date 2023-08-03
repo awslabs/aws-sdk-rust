@@ -22,35 +22,26 @@ impl StartAssessmentRunInput {
 }
 impl StartAssessmentRunInput {
     /// Creates a new builder-style object to manufacture [`StartAssessmentRunInput`](crate::operation::start_assessment_run::StartAssessmentRunInput).
-    pub fn builder(
-    ) -> crate::operation::start_assessment_run::builders::StartAssessmentRunInputBuilder {
+    pub fn builder() -> crate::operation::start_assessment_run::builders::StartAssessmentRunInputBuilder {
         crate::operation::start_assessment_run::builders::StartAssessmentRunInputBuilder::default()
     }
 }
 
 /// A builder for [`StartAssessmentRunInput`](crate::operation::start_assessment_run::StartAssessmentRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartAssessmentRunInputBuilder {
     pub(crate) assessment_template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_run_name: ::std::option::Option<::std::string::String>,
 }
 impl StartAssessmentRunInputBuilder {
     /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
-    pub fn assessment_template_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_template_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
-    pub fn set_assessment_template_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_template_arn = input;
         self
     }
@@ -59,18 +50,12 @@ impl StartAssessmentRunInputBuilder {
         &self.assessment_template_arn
     }
     /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
-    pub fn assessment_run_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_run_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
-    pub fn set_assessment_run_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_run_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_run_name = input;
         self
     }
@@ -81,15 +66,10 @@ impl StartAssessmentRunInputBuilder {
     /// Consumes the builder and constructs a [`StartAssessmentRunInput`](crate::operation::start_assessment_run::StartAssessmentRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_assessment_run::StartAssessmentRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_assessment_run::StartAssessmentRunInput {
-                assessment_template_arn: self.assessment_template_arn,
-                assessment_run_name: self.assessment_run_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_assessment_run::StartAssessmentRunInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_assessment_run::StartAssessmentRunInput {
+            assessment_template_arn: self.assessment_template_arn,
+            assessment_run_name: self.assessment_run_name,
+        })
     }
 }

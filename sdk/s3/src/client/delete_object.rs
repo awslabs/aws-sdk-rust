@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`version_id(Option<String>)`](crate::operation::delete_object::DeleteObjectOutput::version_id): <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p>
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::delete_object::DeleteObjectOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     /// - On failure, responds with [`SdkError<DeleteObjectError>`](crate::operation::delete_object::DeleteObjectError)
-    pub fn delete_object(
-        &self,
-    ) -> crate::operation::delete_object::builders::DeleteObjectFluentBuilder {
-        crate::operation::delete_object::builders::DeleteObjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_object(&self) -> crate::operation::delete_object::builders::DeleteObjectFluentBuilder {
+        crate::operation::delete_object::builders::DeleteObjectFluentBuilder::new(self.handle.clone())
     }
 }

@@ -58,9 +58,7 @@ impl CsvFormatDescriptor {
 
 /// A builder for [`CsvFormatDescriptor`](crate::types::CsvFormatDescriptor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CsvFormatDescriptorBuilder {
     pub(crate) file_compression: ::std::option::Option<crate::types::CsvFileCompression>,
     pub(crate) charset: ::std::option::Option<::std::string::String>,
@@ -76,10 +74,7 @@ impl CsvFormatDescriptorBuilder {
         self
     }
     /// <p>The level of compression of the source CSV file.</p>
-    pub fn set_file_compression(
-        mut self,
-        input: ::std::option::Option<crate::types::CsvFileCompression>,
-    ) -> Self {
+    pub fn set_file_compression(mut self, input: ::std::option::Option<crate::types::CsvFileCompression>) -> Self {
         self.file_compression = input;
         self
     }
@@ -141,17 +136,12 @@ impl CsvFormatDescriptorBuilder {
         self
     }
     /// <p>A list of the source CSV file's headers, if any.</p>
-    pub fn set_header_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_header_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.header_list = input;
         self
     }
     /// <p>A list of the source CSV file's headers, if any.</p>
-    pub fn get_header_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_header_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.header_list
     }
     /// <p>The character used as a quote character.</p>

@@ -35,17 +35,9 @@ pub fn ser_revision_location(
 
 pub(crate) fn de_revision_location<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::RevisionLocation>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::RevisionLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -55,61 +47,40 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "revisionType" => {
-                                builder = builder.set_revision_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::RevisionLocationType::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "revisionType" => {
+                            builder = builder.set_revision_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RevisionLocationType::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "s3Location" => {
-                                builder = builder.set_s3_location(
-                                    crate::protocol_serde::shape_s3_location::de_s3_location(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "gitHubLocation" => {
-                                builder = builder.set_git_hub_location(
-                                    crate::protocol_serde::shape_git_hub_location::de_git_hub_location(tokens)?
-                                );
-                            }
-                            "string" => {
-                                builder = builder.set_string(
-                                    crate::protocol_serde::shape_raw_string::de_raw_string(tokens)?,
-                                );
-                            }
-                            "appSpecContent" => {
-                                builder = builder.set_app_spec_content(
-                                    crate::protocol_serde::shape_app_spec_content::de_app_spec_content(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "s3Location" => {
+                            builder = builder.set_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
+                        }
+                        "gitHubLocation" => {
+                            builder = builder.set_git_hub_location(crate::protocol_serde::shape_git_hub_location::de_git_hub_location(tokens)?);
+                        }
+                        "string" => {
+                            builder = builder.set_string(crate::protocol_serde::shape_raw_string::de_raw_string(tokens)?);
+                        }
+                        "appSpecContent" => {
+                            builder = builder.set_app_spec_content(crate::protocol_serde::shape_app_spec_content::de_app_spec_content(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -38,13 +38,7 @@
 /// Controls whether to include the ES Rate field in the PES header.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M2tsEsRateInPes {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for M2tsEsRateInPes {
         match s {
             "EXCLUDE" => M2tsEsRateInPes::Exclude,
             "INCLUDE" => M2tsEsRateInPes::Include,
-            other => {
-                M2tsEsRateInPes::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => M2tsEsRateInPes::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -54,9 +54,7 @@ impl ListKeyPoliciesInput {
 
 /// A builder for [`ListKeyPoliciesInput`](crate::operation::list_key_policies::ListKeyPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKeyPoliciesInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -135,10 +133,7 @@ impl ListKeyPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListKeyPoliciesInput`](crate::operation::list_key_policies::ListKeyPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_key_policies::ListKeyPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_key_policies::ListKeyPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_key_policies::ListKeyPoliciesInput {
             key_id: self.key_id,
             limit: self.limit,

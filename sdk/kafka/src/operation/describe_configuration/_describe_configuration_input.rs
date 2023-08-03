@@ -15,17 +15,14 @@ impl DescribeConfigurationInput {
 }
 impl DescribeConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationInput`](crate::operation::describe_configuration::DescribeConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_configuration::builders::DescribeConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::describe_configuration::builders::DescribeConfigurationInputBuilder {
         crate::operation::describe_configuration::builders::DescribeConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationInput`](crate::operation::describe_configuration::DescribeConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,8 @@ impl DescribeConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeConfigurationInput`](crate::operation::describe_configuration::DescribeConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_configuration::DescribeConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_configuration::DescribeConfigurationInput { arn: self.arn },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_configuration::DescribeConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_configuration::DescribeConfigurationInput { arn: self.arn })
     }
 }

@@ -55,18 +55,14 @@ impl DescribeFastLaunchImagesInput {
 }
 impl DescribeFastLaunchImagesInput {
     /// Creates a new builder-style object to manufacture [`DescribeFastLaunchImagesInput`](crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fast_launch_images::builders::DescribeFastLaunchImagesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fast_launch_images::builders::DescribeFastLaunchImagesInputBuilder {
         crate::operation::describe_fast_launch_images::builders::DescribeFastLaunchImagesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFastLaunchImagesInput`](crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFastLaunchImagesInputBuilder {
     pub(crate) image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -87,10 +83,7 @@ impl DescribeFastLaunchImagesInputBuilder {
         self
     }
     /// <p>Details for one or more Windows AMI image IDs.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.image_ids = input;
         self
     }
@@ -122,10 +115,7 @@ impl DescribeFastLaunchImagesInputBuilder {
     /// <li> <p> <code>owner-id</code> - The owner ID for the pre-provisioning resource.</p> </li>
     /// <li> <p> <code>state</code> - The current state of fast launching for the Windows AMI.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -188,14 +178,12 @@ impl DescribeFastLaunchImagesInputBuilder {
         crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesInput {
-                image_ids: self.image_ids,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesInput {
+            image_ids: self.image_ids,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            dry_run: self.dry_run,
+        })
     }
 }

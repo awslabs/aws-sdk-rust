@@ -33,7 +33,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::associate_virtual_interface::AssociateVirtualInterfaceOutput::tags): <p>The tags associated with the virtual interface.</p>
     ///   - [`site_link_enabled(Option<bool>)`](crate::operation::associate_virtual_interface::AssociateVirtualInterfaceOutput::site_link_enabled): <p>Indicates whether SiteLink is enabled.</p>
     /// - On failure, responds with [`SdkError<AssociateVirtualInterfaceError>`](crate::operation::associate_virtual_interface::AssociateVirtualInterfaceError)
-    pub fn associate_virtual_interface(&self) -> crate::operation::associate_virtual_interface::builders::AssociateVirtualInterfaceFluentBuilder{
+    pub fn associate_virtual_interface(&self) -> crate::operation::associate_virtual_interface::builders::AssociateVirtualInterfaceFluentBuilder {
         crate::operation::associate_virtual_interface::builders::AssociateVirtualInterfaceFluentBuilder::new(self.handle.clone())
     }
 }

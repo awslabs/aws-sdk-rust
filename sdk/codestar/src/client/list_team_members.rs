@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`team_members(Option<Vec<TeamMember>>)`](crate::operation::list_team_members::ListTeamMembersOutput::team_members): <p>A list of team member objects for the project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_team_members::ListTeamMembersOutput::next_token): <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     /// - On failure, responds with [`SdkError<ListTeamMembersError>`](crate::operation::list_team_members::ListTeamMembersError)
-    pub fn list_team_members(
-        &self,
-    ) -> crate::operation::list_team_members::builders::ListTeamMembersFluentBuilder {
-        crate::operation::list_team_members::builders::ListTeamMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_team_members(&self) -> crate::operation::list_team_members::builders::ListTeamMembersFluentBuilder {
+        crate::operation::list_team_members::builders::ListTeamMembersFluentBuilder::new(self.handle.clone())
     }
 }

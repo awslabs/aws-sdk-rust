@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput::next_token): <p>The token to include in another request to get the next page of items. If there are no additional items to return, the string is empty.</p>
     ///   - [`stale_security_group_set(Option<Vec<StaleSecurityGroup>>)`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput::stale_security_group_set): <p>Information about the stale security groups.</p>
     /// - On failure, responds with [`SdkError<DescribeStaleSecurityGroupsError>`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsError)
-    pub fn describe_stale_security_groups(&self) -> crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder{
+    pub fn describe_stale_security_groups(
+        &self,
+    ) -> crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder {
         crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder::new(self.handle.clone())
     }
 }

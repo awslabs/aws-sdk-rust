@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVpcPeeringAuthorizationOutput {
 }
 impl DeleteVpcPeeringAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcPeeringAuthorizationOutput`](crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationOutput).
-    pub fn builder() -> crate::operation::delete_vpc_peering_authorization::builders::DeleteVpcPeeringAuthorizationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_vpc_peering_authorization::builders::DeleteVpcPeeringAuthorizationOutputBuilder {
         crate::operation::delete_vpc_peering_authorization::builders::DeleteVpcPeeringAuthorizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpcPeeringAuthorizationOutput`](crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcPeeringAuthorizationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteVpcPeeringAuthorizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVpcPeeringAuthorizationOutput`](crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationOutput {
         crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationOutput {
             _request_id: self._request_id,
         }

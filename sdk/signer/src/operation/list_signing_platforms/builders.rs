@@ -37,9 +37,7 @@ impl ListSigningPlatformsFluentBuilder {
         }
     }
     /// Access the ListSigningPlatforms as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_signing_platforms::builders::ListSigningPlatformsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_signing_platforms::builders::ListSigningPlatformsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListSigningPlatformsFluentBuilder {
             crate::operation::list_signing_platforms::ListSigningPlatforms,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_platforms::ListSigningPlatformsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_platforms::ListSigningPlatformsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListSigningPlatformsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListSigningPlatformsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_signing_platforms::ListSigningPlatformsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_platforms::ListSigningPlatformsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_platforms::ListSigningPlatformsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListSigningPlatformsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_signing_platforms::ListSigningPlatformsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_platforms::ListSigningPlatformsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_platforms::ListSigningPlatformsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListSigningPlatformsFluentBuilder {
             crate::operation::list_signing_platforms::ListSigningPlatforms,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signing_platforms::ListSigningPlatformsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signing_platforms::ListSigningPlatformsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_signing_platforms::paginator::ListSigningPlatformsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_signing_platforms::paginator::ListSigningPlatformsPaginator {
-        crate::operation::list_signing_platforms::paginator::ListSigningPlatformsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_signing_platforms::paginator::ListSigningPlatformsPaginator {
+        crate::operation::list_signing_platforms::paginator::ListSigningPlatformsPaginator::new(self.handle, self.inner)
     }
     /// <p>The category type of a signing platform.</p>
     pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

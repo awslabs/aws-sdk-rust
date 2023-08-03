@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TranscodePreset {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,13 +51,9 @@ pub enum TranscodePreset {
 impl ::std::convert::From<&str> for TranscodePreset {
     fn from(s: &str) -> Self {
         match s {
-            "CONSTRAINED_BANDWIDTH_DELIVERY" => {
-                TranscodePreset::ConstrainedBandwidthTranscodePreset
-            }
+            "CONSTRAINED_BANDWIDTH_DELIVERY" => TranscodePreset::ConstrainedBandwidthTranscodePreset,
             "HIGHER_BANDWIDTH_DELIVERY" => TranscodePreset::HigherBandwidthTranscodePreset,
-            other => {
-                TranscodePreset::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => TranscodePreset::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -78,19 +68,14 @@ impl TranscodePreset {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            TranscodePreset::ConstrainedBandwidthTranscodePreset => {
-                "CONSTRAINED_BANDWIDTH_DELIVERY"
-            }
+            TranscodePreset::ConstrainedBandwidthTranscodePreset => "CONSTRAINED_BANDWIDTH_DELIVERY",
             TranscodePreset::HigherBandwidthTranscodePreset => "HIGHER_BANDWIDTH_DELIVERY",
             TranscodePreset::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONSTRAINED_BANDWIDTH_DELIVERY",
-            "HIGHER_BANDWIDTH_DELIVERY",
-        ]
+        &["CONSTRAINED_BANDWIDTH_DELIVERY", "HIGHER_BANDWIDTH_DELIVERY"]
     }
 }
 impl ::std::convert::AsRef<str> for TranscodePreset {

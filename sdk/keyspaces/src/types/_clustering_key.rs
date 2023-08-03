@@ -30,9 +30,7 @@ impl ClusteringKey {
 
 /// A builder for [`ClusteringKey`](crate::types::ClusteringKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusteringKeyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) order_by: ::std::option::Option<crate::types::SortOrder>,

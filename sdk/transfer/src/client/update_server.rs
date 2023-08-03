@@ -20,11 +20,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateServerOutput`](crate::operation::update_server::UpdateServerOutput) with field(s):
     ///   - [`server_id(Option<String>)`](crate::operation::update_server::UpdateServerOutput::server_id): <p>A system-assigned unique identifier for a server that the Transfer Family user is assigned to.</p>
     /// - On failure, responds with [`SdkError<UpdateServerError>`](crate::operation::update_server::UpdateServerError)
-    pub fn update_server(
-        &self,
-    ) -> crate::operation::update_server::builders::UpdateServerFluentBuilder {
-        crate::operation::update_server::builders::UpdateServerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_server(&self) -> crate::operation::update_server::builders::UpdateServerFluentBuilder {
+        crate::operation::update_server::builders::UpdateServerFluentBuilder::new(self.handle.clone())
     }
 }

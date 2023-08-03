@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_sdk_type::GetSdkTypeOutput::description): <p>The description of an SdkType.</p>
     ///   - [`configuration_properties(Option<Vec<SdkConfigurationProperty>>)`](crate::operation::get_sdk_type::GetSdkTypeOutput::configuration_properties): <p>A list of configuration properties of an SdkType.</p>
     /// - On failure, responds with [`SdkError<GetSdkTypeError>`](crate::operation::get_sdk_type::GetSdkTypeError)
-    pub fn get_sdk_type(
-        &self,
-    ) -> crate::operation::get_sdk_type::builders::GetSdkTypeFluentBuilder {
+    pub fn get_sdk_type(&self) -> crate::operation::get_sdk_type::builders::GetSdkTypeFluentBuilder {
         crate::operation::get_sdk_type::builders::GetSdkTypeFluentBuilder::new(self.handle.clone())
     }
 }

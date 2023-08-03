@@ -17,9 +17,7 @@ impl NetworkInputSettings {
         self.hls_input_settings.as_ref()
     }
     /// Check HTTPS server certificates. When set to checkCryptographyOnly, cryptography in the certificate will be checked, but not the server's name. Certain subdomains (notably S3 buckets that use dots in the bucket name) do not strictly match the corresponding certificate's wildcard pattern and would otherwise cause the event to error. This setting is ignored for protocols that do not use https.
-    pub fn server_validation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkInputServerValidation> {
+    pub fn server_validation(&self) -> ::std::option::Option<&crate::types::NetworkInputServerValidation> {
         self.server_validation.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl NetworkInputSettings {
 
 /// A builder for [`NetworkInputSettings`](crate::types::NetworkInputSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkInputSettingsBuilder {
     pub(crate) hls_input_settings: ::std::option::Option<crate::types::HlsInputSettings>,
     pub(crate) server_validation: ::std::option::Option<crate::types::NetworkInputServerValidation>,
@@ -46,10 +42,7 @@ impl NetworkInputSettingsBuilder {
         self
     }
     /// Specifies HLS input settings when the uri is for a HLS manifest.
-    pub fn set_hls_input_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsInputSettings>,
-    ) -> Self {
+    pub fn set_hls_input_settings(mut self, input: ::std::option::Option<crate::types::HlsInputSettings>) -> Self {
         self.hls_input_settings = input;
         self
     }
@@ -63,17 +56,12 @@ impl NetworkInputSettingsBuilder {
         self
     }
     /// Check HTTPS server certificates. When set to checkCryptographyOnly, cryptography in the certificate will be checked, but not the server's name. Certain subdomains (notably S3 buckets that use dots in the bucket name) do not strictly match the corresponding certificate's wildcard pattern and would otherwise cause the event to error. This setting is ignored for protocols that do not use https.
-    pub fn set_server_validation(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInputServerValidation>,
-    ) -> Self {
+    pub fn set_server_validation(mut self, input: ::std::option::Option<crate::types::NetworkInputServerValidation>) -> Self {
         self.server_validation = input;
         self
     }
     /// Check HTTPS server certificates. When set to checkCryptographyOnly, cryptography in the certificate will be checked, but not the server's name. Certain subdomains (notably S3 buckets that use dots in the bucket name) do not strictly match the corresponding certificate's wildcard pattern and would otherwise cause the event to error. This setting is ignored for protocols that do not use https.
-    pub fn get_server_validation(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkInputServerValidation> {
+    pub fn get_server_validation(&self) -> &::std::option::Option<crate::types::NetworkInputServerValidation> {
         &self.server_validation
     }
     /// Consumes the builder and constructs a [`NetworkInputSettings`](crate::types::NetworkInputSettings).

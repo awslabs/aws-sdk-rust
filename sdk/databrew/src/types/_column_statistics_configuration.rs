@@ -30,9 +30,7 @@ impl ColumnStatisticsConfiguration {
 
 /// A builder for [`ColumnStatisticsConfiguration`](crate::types::ColumnStatisticsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnStatisticsConfigurationBuilder {
     pub(crate) selectors: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>>,
     pub(crate) statistics: ::std::option::Option<crate::types::StatisticsConfiguration>,
@@ -50,17 +48,12 @@ impl ColumnStatisticsConfigurationBuilder {
         self
     }
     /// <p>List of column selectors. Selectors can be used to select columns from the dataset. When selectors are undefined, configuration will be applied to all supported columns. </p>
-    pub fn set_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>>,
-    ) -> Self {
+    pub fn set_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>>) -> Self {
         self.selectors = input;
         self
     }
     /// <p>List of column selectors. Selectors can be used to select columns from the dataset. When selectors are undefined, configuration will be applied to all supported columns. </p>
-    pub fn get_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>> {
+    pub fn get_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>> {
         &self.selectors
     }
     /// <p>Configuration for evaluations. Statistics can be used to select evaluations and override parameters of evaluations. </p>
@@ -69,10 +62,7 @@ impl ColumnStatisticsConfigurationBuilder {
         self
     }
     /// <p>Configuration for evaluations. Statistics can be used to select evaluations and override parameters of evaluations. </p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::StatisticsConfiguration>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::StatisticsConfiguration>) -> Self {
         self.statistics = input;
         self
     }

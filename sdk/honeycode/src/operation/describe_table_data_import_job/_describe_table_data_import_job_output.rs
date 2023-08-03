@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for DescribeTableDataImportJobOutput {
 }
 impl DescribeTableDataImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTableDataImportJobOutput`](crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput).
-    pub fn builder() -> crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobOutputBuilder {
         crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTableDataImportJobOutput`](crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTableDataImportJobOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::TableDataImportJobStatus>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -66,10 +64,7 @@ impl DescribeTableDataImportJobOutputBuilder {
         self
     }
     /// <p> The current status of the import job. </p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TableDataImportJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::TableDataImportJobStatus>) -> Self {
         self.job_status = input;
         self
     }
@@ -97,17 +92,12 @@ impl DescribeTableDataImportJobOutputBuilder {
         self
     }
     /// <p> The metadata about the job that was submitted for import. </p>
-    pub fn set_job_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::TableDataImportJobMetadata>,
-    ) -> Self {
+    pub fn set_job_metadata(mut self, input: ::std::option::Option<crate::types::TableDataImportJobMetadata>) -> Self {
         self.job_metadata = input;
         self
     }
     /// <p> The metadata about the job that was submitted for import. </p>
-    pub fn get_job_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableDataImportJobMetadata> {
+    pub fn get_job_metadata(&self) -> &::std::option::Option<crate::types::TableDataImportJobMetadata> {
         &self.job_metadata
     }
     /// <p> If job status is failed, error code to understand reason for the failure. </p>
@@ -134,9 +124,7 @@ impl DescribeTableDataImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTableDataImportJobOutput`](crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput {
+    pub fn build(self) -> crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput {
         crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput {
             job_status: self.job_status,
             message: self.message,

@@ -12,9 +12,7 @@ pub struct Toolchain {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
     #[doc(hidden)]
-    pub stack_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub stack_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Toolchain {
     /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
@@ -26,11 +24,7 @@ impl Toolchain {
         self.role_arn.as_deref()
     }
     /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
-    pub fn stack_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn stack_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.stack_parameters.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl Toolchain {
 
 /// A builder for [`Toolchain`](crate::types::Toolchain).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ToolchainBuilder {
     pub(crate) source: ::std::option::Option<crate::types::ToolchainSource>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) stack_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) stack_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ToolchainBuilder {
     /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
@@ -60,10 +50,7 @@ impl ToolchainBuilder {
         self
     }
     /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ToolchainSource>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ToolchainSource>) -> Self {
         self.source = input;
         self
     }
@@ -103,19 +90,13 @@ impl ToolchainBuilder {
     /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
     pub fn set_stack_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.stack_parameters = input;
         self
     }
     /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
-    pub fn get_stack_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_stack_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.stack_parameters
     }
     /// Consumes the builder and constructs a [`Toolchain`](crate::types::Toolchain).

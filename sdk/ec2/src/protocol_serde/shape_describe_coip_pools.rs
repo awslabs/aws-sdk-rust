@@ -4,17 +4,11 @@ pub fn de_describe_coip_pools_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::describe_coip_pools::DescribeCoipPoolsOutput,
-    crate::operation::describe_coip_pools::DescribeCoipPoolsError,
-> {
+) -> std::result::Result<crate::operation::describe_coip_pools::DescribeCoipPoolsOutput, crate::operation::describe_coip_pools::DescribeCoipPoolsError>
+{
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::describe_coip_pools::DescribeCoipPoolsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_coip_pools::DescribeCoipPoolsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::describe_coip_pools::DescribeCoipPoolsError::generic(generic))
@@ -25,21 +19,14 @@ pub fn de_describe_coip_pools_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::describe_coip_pools::DescribeCoipPoolsOutput,
-    crate::operation::describe_coip_pools::DescribeCoipPoolsError,
-> {
+) -> std::result::Result<crate::operation::describe_coip_pools::DescribeCoipPoolsOutput, crate::operation::describe_coip_pools::DescribeCoipPoolsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_coip_pools::builders::DescribeCoipPoolsOutputBuilder::default();
-        output = crate::protocol_serde::shape_describe_coip_pools::de_describe_coip_pools(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::describe_coip_pools::DescribeCoipPoolsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_describe_coip_pools::de_describe_coip_pools(_response_body, output)
+            .map_err(crate::operation::describe_coip_pools::DescribeCoipPoolsError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -48,10 +35,7 @@ pub fn de_describe_coip_pools_http_response_with_props(
 pub fn de_describe_coip_pools(
     inp: &[u8],
     mut builder: crate::operation::describe_coip_pools::builders::DescribeCoipPoolsOutputBuilder,
-) -> Result<
-    crate::operation::describe_coip_pools::builders::DescribeCoipPoolsOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::describe_coip_pools::builders::DescribeCoipPoolsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

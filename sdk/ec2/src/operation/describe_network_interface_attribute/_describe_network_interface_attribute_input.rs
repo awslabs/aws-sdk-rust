@@ -30,16 +30,14 @@ impl DescribeNetworkInterfaceAttributeInput {
 }
 impl DescribeNetworkInterfaceAttributeInput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInterfaceAttributeInput`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeInput).
-    pub fn builder() -> crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeInputBuilder{
+    pub fn builder() -> crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeInputBuilder {
         crate::operation::describe_network_interface_attribute::builders::DescribeNetworkInterfaceAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkInterfaceAttributeInput`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfaceAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::NetworkInterfaceAttribute>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -52,10 +50,7 @@ impl DescribeNetworkInterfaceAttributeInputBuilder {
         self
     }
     /// <p>The attribute of the network interface. This parameter is required.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInterfaceAttribute>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceAttribute>) -> Self {
         self.attribute = input;
         self
     }
@@ -78,18 +73,12 @@ impl DescribeNetworkInterfaceAttributeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -98,16 +87,18 @@ impl DescribeNetworkInterfaceAttributeInputBuilder {
         &self.network_interface_id
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInterfaceAttributeInput`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeInput {
-                attribute: self.attribute
-                ,
-                dry_run: self.dry_run
-                ,
-                network_interface_id: self.network_interface_id
-                ,
-            }
+                attribute: self.attribute,
+                dry_run: self.dry_run,
+                network_interface_id: self.network_interface_id,
+            },
         )
     }
 }

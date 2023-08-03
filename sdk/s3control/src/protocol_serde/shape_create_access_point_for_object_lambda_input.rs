@@ -7,10 +7,7 @@ pub fn ser_create_access_point_for_object_lambda_input_input(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.configuration {
         let inner_writer = scope.start_el("Configuration");
-        crate::protocol_serde::shape_object_lambda_configuration::ser_object_lambda_configuration(
-            var_1,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_object_lambda_configuration::ser_object_lambda_configuration(var_1, inner_writer)?
     }
     scope.finish();
     Ok(())

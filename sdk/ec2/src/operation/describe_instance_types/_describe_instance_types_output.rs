@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeInstanceTypesOutput {
 }
 impl DescribeInstanceTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceTypesOutput`](crate::operation::describe_instance_types::DescribeInstanceTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_instance_types::builders::DescribeInstanceTypesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instance_types::builders::DescribeInstanceTypesOutputBuilder {
         crate::operation::describe_instance_types::builders::DescribeInstanceTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceTypesOutput`](crate::operation::describe_instance_types::DescribeInstanceTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypesOutputBuilder {
-    pub(crate) instance_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfo>>,
+    pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeInstanceTypesOutputBuilder {
         self
     }
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_instance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfo>>,
-    ) -> Self {
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfo>>) -> Self {
         self.instance_types = input;
         self
     }
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn get_instance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfo>> {
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfo>> {
         &self.instance_types
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>

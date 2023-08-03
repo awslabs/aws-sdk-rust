@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`records(Option<Vec<FindingHistoryRecord>>)`](crate::operation::get_finding_history::GetFindingHistoryOutput::records): <p> A list of events that altered the specified finding during the specified time period. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_finding_history::GetFindingHistoryOutput::next_token): <p> A token for pagination purposes. Provide this token in the subsequent request to <code>GetFindingsHistory</code> to get up to an additional 100 results of history for the same finding that you specified in your initial request. </p>
     /// - On failure, responds with [`SdkError<GetFindingHistoryError>`](crate::operation::get_finding_history::GetFindingHistoryError)
-    pub fn get_finding_history(
-        &self,
-    ) -> crate::operation::get_finding_history::builders::GetFindingHistoryFluentBuilder {
-        crate::operation::get_finding_history::builders::GetFindingHistoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_finding_history(&self) -> crate::operation::get_finding_history::builders::GetFindingHistoryFluentBuilder {
+        crate::operation::get_finding_history::builders::GetFindingHistoryFluentBuilder::new(self.handle.clone())
     }
 }

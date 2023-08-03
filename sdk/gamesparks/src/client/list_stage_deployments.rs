@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`stage_deployments(Option<Vec<StageDeploymentSummary>>)`](crate::operation::list_stage_deployments::ListStageDeploymentsOutput::stage_deployments): <p> A list of stage deployment summaries. You can use the deployment IDs in the <code>UpdateStageDeployment</code> and <code>GetStageDeployment</code> actions. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stage_deployments::ListStageDeploymentsOutput::next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
     /// - On failure, responds with [`SdkError<ListStageDeploymentsError>`](crate::operation::list_stage_deployments::ListStageDeploymentsError)
-    pub fn list_stage_deployments(
-        &self,
-    ) -> crate::operation::list_stage_deployments::builders::ListStageDeploymentsFluentBuilder {
-        crate::operation::list_stage_deployments::builders::ListStageDeploymentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_stage_deployments(&self) -> crate::operation::list_stage_deployments::builders::ListStageDeploymentsFluentBuilder {
+        crate::operation::list_stage_deployments::builders::ListStageDeploymentsFluentBuilder::new(self.handle.clone())
     }
 }

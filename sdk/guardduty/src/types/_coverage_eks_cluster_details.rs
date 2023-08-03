@@ -44,9 +44,7 @@ impl CoverageEksClusterDetails {
 
 /// A builder for [`CoverageEksClusterDetails`](crate::types::CoverageEksClusterDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoverageEksClusterDetailsBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) covered_nodes: ::std::option::Option<i64>,
@@ -102,10 +100,7 @@ impl CoverageEksClusterDetailsBuilder {
         self
     }
     /// <p>Information about the installed EKS add-on.</p>
-    pub fn set_addon_details(
-        mut self,
-        input: ::std::option::Option<crate::types::AddonDetails>,
-    ) -> Self {
+    pub fn set_addon_details(mut self, input: ::std::option::Option<crate::types::AddonDetails>) -> Self {
         self.addon_details = input;
         self
     }

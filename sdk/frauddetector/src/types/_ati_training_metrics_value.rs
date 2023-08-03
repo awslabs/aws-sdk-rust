@@ -6,8 +6,7 @@
 pub struct AtiTrainingMetricsValue {
     /// <p> The model's performance metrics data points. </p>
     #[doc(hidden)]
-    pub metric_data_points:
-        ::std::option::Option<::std::vec::Vec<crate::types::AtiMetricDataPoint>>,
+    pub metric_data_points: ::std::option::Option<::std::vec::Vec<crate::types::AtiMetricDataPoint>>,
     /// <p> The model's overall performance scores. </p>
     #[doc(hidden)]
     pub model_performance: ::std::option::Option<crate::types::AtiModelPerformance>,
@@ -31,12 +30,9 @@ impl AtiTrainingMetricsValue {
 
 /// A builder for [`AtiTrainingMetricsValue`](crate::types::AtiTrainingMetricsValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AtiTrainingMetricsValueBuilder {
-    pub(crate) metric_data_points:
-        ::std::option::Option<::std::vec::Vec<crate::types::AtiMetricDataPoint>>,
+    pub(crate) metric_data_points: ::std::option::Option<::std::vec::Vec<crate::types::AtiMetricDataPoint>>,
     pub(crate) model_performance: ::std::option::Option<crate::types::AtiModelPerformance>,
 }
 impl AtiTrainingMetricsValueBuilder {
@@ -52,17 +48,12 @@ impl AtiTrainingMetricsValueBuilder {
         self
     }
     /// <p> The model's performance metrics data points. </p>
-    pub fn set_metric_data_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AtiMetricDataPoint>>,
-    ) -> Self {
+    pub fn set_metric_data_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AtiMetricDataPoint>>) -> Self {
         self.metric_data_points = input;
         self
     }
     /// <p> The model's performance metrics data points. </p>
-    pub fn get_metric_data_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AtiMetricDataPoint>> {
+    pub fn get_metric_data_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AtiMetricDataPoint>> {
         &self.metric_data_points
     }
     /// <p> The model's overall performance scores. </p>
@@ -71,17 +62,12 @@ impl AtiTrainingMetricsValueBuilder {
         self
     }
     /// <p> The model's overall performance scores. </p>
-    pub fn set_model_performance(
-        mut self,
-        input: ::std::option::Option<crate::types::AtiModelPerformance>,
-    ) -> Self {
+    pub fn set_model_performance(mut self, input: ::std::option::Option<crate::types::AtiModelPerformance>) -> Self {
         self.model_performance = input;
         self
     }
     /// <p> The model's overall performance scores. </p>
-    pub fn get_model_performance(
-        &self,
-    ) -> &::std::option::Option<crate::types::AtiModelPerformance> {
+    pub fn get_model_performance(&self) -> &::std::option::Option<crate::types::AtiModelPerformance> {
         &self.model_performance
     }
     /// Consumes the builder and constructs a [`AtiTrainingMetricsValue`](crate::types::AtiTrainingMetricsValue).

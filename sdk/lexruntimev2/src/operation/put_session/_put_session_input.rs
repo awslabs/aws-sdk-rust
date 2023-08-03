@@ -24,9 +24,7 @@ pub struct PutSessionInput {
     /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     #[doc(hidden)]
-    pub request_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
     /// <ul>
     /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
@@ -61,11 +59,7 @@ impl PutSessionInput {
     }
     /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    pub fn request_attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn request_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.request_attributes.as_ref()
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
@@ -85,9 +79,7 @@ impl PutSessionInput {
 
 /// A builder for [`PutSessionInput`](crate::operation::put_session::PutSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSessionInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias_id: ::std::option::Option<::std::string::String>,
@@ -95,9 +87,7 @@ pub struct PutSessionInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     pub(crate) session_state: ::std::option::Option<crate::types::SessionState>,
-    pub(crate) request_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) response_content_type: ::std::option::Option<::std::string::String>,
 }
 impl PutSessionInputBuilder {
@@ -169,10 +159,7 @@ impl PutSessionInputBuilder {
         self
     }
     /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
         self.messages = input;
         self
     }
@@ -186,10 +173,7 @@ impl PutSessionInputBuilder {
         self
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
-    pub fn set_session_state(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionState>,
-    ) -> Self {
+    pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
         self.session_state = input;
         self
     }
@@ -217,30 +201,21 @@ impl PutSessionInputBuilder {
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn set_request_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.request_attributes = input;
         self
     }
     /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    pub fn get_request_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.request_attributes
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
     /// <ul>
     /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
     /// </ul>
-    pub fn response_content_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_content_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -248,10 +223,7 @@ impl PutSessionInputBuilder {
     /// <ul>
     /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
     /// </ul>
-    pub fn set_response_content_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_content_type = input;
         self
     }
@@ -263,12 +235,7 @@ impl PutSessionInputBuilder {
         &self.response_content_type
     }
     /// Consumes the builder and constructs a [`PutSessionInput`](crate::operation::put_session::PutSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_session::PutSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_session::PutSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_session::PutSessionInput {
             bot_id: self.bot_id,
             bot_alias_id: self.bot_alias_id,

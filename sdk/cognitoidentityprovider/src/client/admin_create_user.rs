@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`AdminCreateUserOutput`](crate::operation::admin_create_user::AdminCreateUserOutput) with field(s):
     ///   - [`user(Option<UserType>)`](crate::operation::admin_create_user::AdminCreateUserOutput::user): <p>The newly created user.</p>
     /// - On failure, responds with [`SdkError<AdminCreateUserError>`](crate::operation::admin_create_user::AdminCreateUserError)
-    pub fn admin_create_user(
-        &self,
-    ) -> crate::operation::admin_create_user::builders::AdminCreateUserFluentBuilder {
-        crate::operation::admin_create_user::builders::AdminCreateUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn admin_create_user(&self) -> crate::operation::admin_create_user::builders::AdminCreateUserFluentBuilder {
+        crate::operation::admin_create_user::builders::AdminCreateUserFluentBuilder::new(self.handle.clone())
     }
 }

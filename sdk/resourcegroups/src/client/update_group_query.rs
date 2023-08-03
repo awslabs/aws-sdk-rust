@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateGroupQueryOutput`](crate::operation::update_group_query::UpdateGroupQueryOutput) with field(s):
     ///   - [`group_query(Option<GroupQuery>)`](crate::operation::update_group_query::UpdateGroupQueryOutput::group_query): <p>The updated resource query associated with the resource group after the update.</p>
     /// - On failure, responds with [`SdkError<UpdateGroupQueryError>`](crate::operation::update_group_query::UpdateGroupQueryError)
-    pub fn update_group_query(
-        &self,
-    ) -> crate::operation::update_group_query::builders::UpdateGroupQueryFluentBuilder {
-        crate::operation::update_group_query::builders::UpdateGroupQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_group_query(&self) -> crate::operation::update_group_query::builders::UpdateGroupQueryFluentBuilder {
+        crate::operation::update_group_query::builders::UpdateGroupQueryFluentBuilder::new(self.handle.clone())
     }
 }

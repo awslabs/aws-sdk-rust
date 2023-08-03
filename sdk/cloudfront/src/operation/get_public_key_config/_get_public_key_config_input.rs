@@ -15,17 +15,14 @@ impl GetPublicKeyConfigInput {
 }
 impl GetPublicKeyConfigInput {
     /// Creates a new builder-style object to manufacture [`GetPublicKeyConfigInput`](crate::operation::get_public_key_config::GetPublicKeyConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_public_key_config::builders::GetPublicKeyConfigInputBuilder {
+    pub fn builder() -> crate::operation::get_public_key_config::builders::GetPublicKeyConfigInputBuilder {
         crate::operation::get_public_key_config::builders::GetPublicKeyConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPublicKeyConfigInput`](crate::operation::get_public_key_config::GetPublicKeyConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPublicKeyConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,8 @@ impl GetPublicKeyConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetPublicKeyConfigInput`](crate::operation::get_public_key_config::GetPublicKeyConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_public_key_config::GetPublicKeyConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_public_key_config::GetPublicKeyConfigInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::get_public_key_config::GetPublicKeyConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_public_key_config::GetPublicKeyConfigInput { id: self.id })
     }
 }

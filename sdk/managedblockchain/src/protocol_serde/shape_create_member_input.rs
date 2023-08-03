@@ -12,10 +12,7 @@ pub fn ser_create_member_input(
     if let Some(var_3) = &input.member_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("MemberConfiguration").start_object();
-        crate::protocol_serde::shape_member_configuration::ser_member_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_member_configuration::ser_member_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

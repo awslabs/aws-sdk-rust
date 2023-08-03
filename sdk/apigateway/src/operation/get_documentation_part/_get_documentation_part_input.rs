@@ -23,17 +23,14 @@ impl GetDocumentationPartInput {
 }
 impl GetDocumentationPartInput {
     /// Creates a new builder-style object to manufacture [`GetDocumentationPartInput`](crate::operation::get_documentation_part::GetDocumentationPartInput).
-    pub fn builder(
-    ) -> crate::operation::get_documentation_part::builders::GetDocumentationPartInputBuilder {
+    pub fn builder() -> crate::operation::get_documentation_part::builders::GetDocumentationPartInputBuilder {
         crate::operation::get_documentation_part::builders::GetDocumentationPartInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDocumentationPartInput`](crate::operation::get_documentation_part::GetDocumentationPartInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDocumentationPartInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) documentation_part_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ impl GetDocumentationPartInputBuilder {
         &self.rest_api_id
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn documentation_part_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documentation_part_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.documentation_part_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_documentation_part_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documentation_part_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.documentation_part_id = input;
         self
     }
@@ -76,15 +67,11 @@ impl GetDocumentationPartInputBuilder {
     /// Consumes the builder and constructs a [`GetDocumentationPartInput`](crate::operation::get_documentation_part::GetDocumentationPartInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_documentation_part::GetDocumentationPartInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_documentation_part::GetDocumentationPartInput {
-                rest_api_id: self.rest_api_id,
-                documentation_part_id: self.documentation_part_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_documentation_part::GetDocumentationPartInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_documentation_part::GetDocumentationPartInput {
+            rest_api_id: self.rest_api_id,
+            documentation_part_id: self.documentation_part_id,
+        })
     }
 }

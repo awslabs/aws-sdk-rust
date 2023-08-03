@@ -32,8 +32,7 @@ pub struct TimeRangeFilter {
     pub null_option: ::std::option::Option<crate::types::FilterNullOption>,
     /// <p>The exclude period of the time range filter.</p>
     #[doc(hidden)]
-    pub exclude_period_configuration:
-        ::std::option::Option<crate::types::ExcludePeriodConfiguration>,
+    pub exclude_period_configuration: ::std::option::Option<crate::types::ExcludePeriodConfiguration>,
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     #[doc(hidden)]
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
@@ -56,15 +55,11 @@ impl TimeRangeFilter {
         self.include_maximum
     }
     /// <p>The minimum value for the filter value range.</p>
-    pub fn range_minimum_value(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimeRangeFilterValue> {
+    pub fn range_minimum_value(&self) -> ::std::option::Option<&crate::types::TimeRangeFilterValue> {
         self.range_minimum_value.as_ref()
     }
     /// <p>The maximum value for the filter value range.</p>
-    pub fn range_maximum_value(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimeRangeFilterValue> {
+    pub fn range_maximum_value(&self) -> ::std::option::Option<&crate::types::TimeRangeFilterValue> {
         self.range_maximum_value.as_ref()
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
@@ -77,9 +72,7 @@ impl TimeRangeFilter {
         self.null_option.as_ref()
     }
     /// <p>The exclude period of the time range filter.</p>
-    pub fn exclude_period_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExcludePeriodConfiguration> {
+    pub fn exclude_period_configuration(&self) -> ::std::option::Option<&crate::types::ExcludePeriodConfiguration> {
         self.exclude_period_configuration.as_ref()
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
@@ -96,9 +89,7 @@ impl TimeRangeFilter {
 
 /// A builder for [`TimeRangeFilter`](crate::types::TimeRangeFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeRangeFilterBuilder {
     pub(crate) filter_id: ::std::option::Option<::std::string::String>,
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
@@ -107,8 +98,7 @@ pub struct TimeRangeFilterBuilder {
     pub(crate) range_minimum_value: ::std::option::Option<crate::types::TimeRangeFilterValue>,
     pub(crate) range_maximum_value: ::std::option::Option<crate::types::TimeRangeFilterValue>,
     pub(crate) null_option: ::std::option::Option<crate::types::FilterNullOption>,
-    pub(crate) exclude_period_configuration:
-        ::std::option::Option<crate::types::ExcludePeriodConfiguration>,
+    pub(crate) exclude_period_configuration: ::std::option::Option<crate::types::ExcludePeriodConfiguration>,
     pub(crate) time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
 }
 impl TimeRangeFilterBuilder {
@@ -132,10 +122,7 @@ impl TimeRangeFilterBuilder {
         self
     }
     /// <p>The column that the filter is applied to.</p>
-    pub fn set_column(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
+    pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
         self.column = input;
         self
     }
@@ -177,17 +164,12 @@ impl TimeRangeFilterBuilder {
         self
     }
     /// <p>The minimum value for the filter value range.</p>
-    pub fn set_range_minimum_value(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeRangeFilterValue>,
-    ) -> Self {
+    pub fn set_range_minimum_value(mut self, input: ::std::option::Option<crate::types::TimeRangeFilterValue>) -> Self {
         self.range_minimum_value = input;
         self
     }
     /// <p>The minimum value for the filter value range.</p>
-    pub fn get_range_minimum_value(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeRangeFilterValue> {
+    pub fn get_range_minimum_value(&self) -> &::std::option::Option<crate::types::TimeRangeFilterValue> {
         &self.range_minimum_value
     }
     /// <p>The maximum value for the filter value range.</p>
@@ -196,17 +178,12 @@ impl TimeRangeFilterBuilder {
         self
     }
     /// <p>The maximum value for the filter value range.</p>
-    pub fn set_range_maximum_value(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeRangeFilterValue>,
-    ) -> Self {
+    pub fn set_range_maximum_value(mut self, input: ::std::option::Option<crate::types::TimeRangeFilterValue>) -> Self {
         self.range_maximum_value = input;
         self
     }
     /// <p>The maximum value for the filter value range.</p>
-    pub fn get_range_maximum_value(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeRangeFilterValue> {
+    pub fn get_range_maximum_value(&self) -> &::std::option::Option<crate::types::TimeRangeFilterValue> {
         &self.range_maximum_value
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
@@ -225,10 +202,7 @@ impl TimeRangeFilterBuilder {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    pub fn set_null_option(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterNullOption>,
-    ) -> Self {
+    pub fn set_null_option(mut self, input: ::std::option::Option<crate::types::FilterNullOption>) -> Self {
         self.null_option = input;
         self
     }
@@ -242,25 +216,17 @@ impl TimeRangeFilterBuilder {
         &self.null_option
     }
     /// <p>The exclude period of the time range filter.</p>
-    pub fn exclude_period_configuration(
-        mut self,
-        input: crate::types::ExcludePeriodConfiguration,
-    ) -> Self {
+    pub fn exclude_period_configuration(mut self, input: crate::types::ExcludePeriodConfiguration) -> Self {
         self.exclude_period_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The exclude period of the time range filter.</p>
-    pub fn set_exclude_period_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExcludePeriodConfiguration>,
-    ) -> Self {
+    pub fn set_exclude_period_configuration(mut self, input: ::std::option::Option<crate::types::ExcludePeriodConfiguration>) -> Self {
         self.exclude_period_configuration = input;
         self
     }
     /// <p>The exclude period of the time range filter.</p>
-    pub fn get_exclude_period_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExcludePeriodConfiguration> {
+    pub fn get_exclude_period_configuration(&self) -> &::std::option::Option<crate::types::ExcludePeriodConfiguration> {
         &self.exclude_period_configuration
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
@@ -269,10 +235,7 @@ impl TimeRangeFilterBuilder {
         self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn set_time_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeGranularity>,
-    ) -> Self {
+    pub fn set_time_granularity(mut self, input: ::std::option::Option<crate::types::TimeGranularity>) -> Self {
         self.time_granularity = input;
         self
     }

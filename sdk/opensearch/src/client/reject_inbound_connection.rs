@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`RejectInboundConnectionOutput`](crate::operation::reject_inbound_connection::RejectInboundConnectionOutput) with field(s):
     ///   - [`connection(Option<InboundConnection>)`](crate::operation::reject_inbound_connection::RejectInboundConnectionOutput::connection): <p>Contains details about the rejected inbound connection.</p>
     /// - On failure, responds with [`SdkError<RejectInboundConnectionError>`](crate::operation::reject_inbound_connection::RejectInboundConnectionError)
-    pub fn reject_inbound_connection(
-        &self,
-    ) -> crate::operation::reject_inbound_connection::builders::RejectInboundConnectionFluentBuilder
-    {
+    pub fn reject_inbound_connection(&self) -> crate::operation::reject_inbound_connection::builders::RejectInboundConnectionFluentBuilder {
         crate::operation::reject_inbound_connection::builders::RejectInboundConnectionFluentBuilder::new(self.handle.clone())
     }
 }

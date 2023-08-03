@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`active_names(Option<Vec<String>>)`](crate::operation::get_active_names::GetActiveNamesOutput::active_names): <p>The list of active names returned by the get active names request.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_active_names::GetActiveNamesOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetActiveNamesError>`](crate::operation::get_active_names::GetActiveNamesError)
-    pub fn get_active_names(
-        &self,
-    ) -> crate::operation::get_active_names::builders::GetActiveNamesFluentBuilder {
-        crate::operation::get_active_names::builders::GetActiveNamesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_active_names(&self) -> crate::operation::get_active_names::builders::GetActiveNamesFluentBuilder {
+        crate::operation::get_active_names::builders::GetActiveNamesFluentBuilder::new(self.handle.clone())
     }
 }

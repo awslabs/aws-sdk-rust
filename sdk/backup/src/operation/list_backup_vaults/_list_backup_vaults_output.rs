@@ -5,8 +5,7 @@
 pub struct ListBackupVaultsOutput {
     /// <p>An array of backup vault list members containing vault metadata, including Amazon Resource Name (ARN), display name, creation date, number of saved recovery points, and encryption information if the resources saved in the backup vault are encrypted.</p>
     #[doc(hidden)]
-    pub backup_vault_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultListMember>>,
+    pub backup_vault_list: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultListMember>>,
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListBackupVaultsOutput {
 }
 impl ListBackupVaultsOutput {
     /// <p>An array of backup vault list members containing vault metadata, including Amazon Resource Name (ARN), display name, creation date, number of saved recovery points, and encryption information if the resources saved in the backup vault are encrypted.</p>
-    pub fn backup_vault_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BackupVaultListMember]> {
+    pub fn backup_vault_list(&self) -> ::std::option::Option<&[crate::types::BackupVaultListMember]> {
         self.backup_vault_list.as_deref()
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListBackupVaultsOutput {
 }
 impl ListBackupVaultsOutput {
     /// Creates a new builder-style object to manufacture [`ListBackupVaultsOutput`](crate::operation::list_backup_vaults::ListBackupVaultsOutput).
-    pub fn builder() -> crate::operation::list_backup_vaults::builders::ListBackupVaultsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_backup_vaults::builders::ListBackupVaultsOutputBuilder {
         crate::operation::list_backup_vaults::builders::ListBackupVaultsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBackupVaultsOutput`](crate::operation::list_backup_vaults::ListBackupVaultsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackupVaultsOutputBuilder {
-    pub(crate) backup_vault_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultListMember>>,
+    pub(crate) backup_vault_list: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultListMember>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListBackupVaultsOutputBuilder {
         self
     }
     /// <p>An array of backup vault list members containing vault metadata, including Amazon Resource Name (ARN), display name, creation date, number of saved recovery points, and encryption information if the resources saved in the backup vault are encrypted.</p>
-    pub fn set_backup_vault_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultListMember>>,
-    ) -> Self {
+    pub fn set_backup_vault_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultListMember>>) -> Self {
         self.backup_vault_list = input;
         self
     }
     /// <p>An array of backup vault list members containing vault metadata, including Amazon Resource Name (ARN), display name, creation date, number of saved recovery points, and encryption information if the resources saved in the backup vault are encrypted.</p>
-    pub fn get_backup_vault_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupVaultListMember>> {
+    pub fn get_backup_vault_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupVaultListMember>> {
         &self.backup_vault_list
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>

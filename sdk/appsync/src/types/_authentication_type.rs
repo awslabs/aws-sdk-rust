@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for AuthenticationType {
             "AWS_IAM" => AuthenticationType::AwsIam,
             "AWS_LAMBDA" => AuthenticationType::AwsLambda,
             "OPENID_CONNECT" => AuthenticationType::OpenidConnect,
-            other => AuthenticationType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AuthenticationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl AuthenticationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AMAZON_COGNITO_USER_POOLS",
-            "API_KEY",
-            "AWS_IAM",
-            "AWS_LAMBDA",
-            "OPENID_CONNECT",
-        ]
+        &["AMAZON_COGNITO_USER_POOLS", "API_KEY", "AWS_IAM", "AWS_LAMBDA", "OPENID_CONNECT"]
     }
 }
 impl ::std::convert::AsRef<str> for AuthenticationType {

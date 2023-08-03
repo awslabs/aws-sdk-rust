@@ -30,9 +30,7 @@ impl VcfOptions {
 
 /// A builder for [`VcfOptions`](crate::types::VcfOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VcfOptionsBuilder {
     pub(crate) ignore_qual_field: ::std::option::Option<bool>,
     pub(crate) ignore_filter_field: ::std::option::Option<bool>,

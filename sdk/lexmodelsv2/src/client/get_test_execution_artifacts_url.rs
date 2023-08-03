@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`test_execution_id(Option<String>)`](crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput::test_execution_id): <p>The unique identifier of the completed test execution.</p>
     ///   - [`download_artifacts_url(Option<String>)`](crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput::download_artifacts_url): <p>The pre-signed Amazon S3 URL to download completed test execution.</p>
     /// - On failure, responds with [`SdkError<GetTestExecutionArtifactsUrlError>`](crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError)
-    pub fn get_test_execution_artifacts_url(&self) -> crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlFluentBuilder{
+    pub fn get_test_execution_artifacts_url(
+        &self,
+    ) -> crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlFluentBuilder {
         crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlFluentBuilder::new(self.handle.clone())
     }
 }

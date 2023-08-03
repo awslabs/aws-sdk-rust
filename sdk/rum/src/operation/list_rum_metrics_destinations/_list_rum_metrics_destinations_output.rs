@@ -5,8 +5,7 @@
 pub struct ListRumMetricsDestinationsOutput {
     /// <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
     #[doc(hidden)]
-    pub destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricDestinationSummary>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::MetricDestinationSummary>>,
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRumMetricsDestinationsOutput {
 }
 impl ListRumMetricsDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRumMetricsDestinationsOutput`](crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsOutput).
-    pub fn builder() -> crate::operation::list_rum_metrics_destinations::builders::ListRumMetricsDestinationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_rum_metrics_destinations::builders::ListRumMetricsDestinationsOutputBuilder {
         crate::operation::list_rum_metrics_destinations::builders::ListRumMetricsDestinationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRumMetricsDestinationsOutput`](crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRumMetricsDestinationsOutputBuilder {
-    pub(crate) destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricDestinationSummary>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::MetricDestinationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListRumMetricsDestinationsOutputBuilder {
         self
     }
     /// <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDestinationSummary>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDestinationSummary>>) -> Self {
         self.destinations = input;
         self
     }
     /// <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDestinationSummary>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDestinationSummary>> {
         &self.destinations
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
@@ -95,9 +86,7 @@ impl ListRumMetricsDestinationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRumMetricsDestinationsOutput`](crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsOutput {
+    pub fn build(self) -> crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsOutput {
         crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsOutput {
             destinations: self.destinations,
             next_token: self.next_token,

@@ -12,10 +12,7 @@ pub fn ser_update_workteam_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_member_definition::ser_member_definition(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_member_definition::ser_member_definition(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -27,10 +24,7 @@ pub fn ser_update_workteam_input(
     if let Some(var_7) = &input.notification_configuration {
         #[allow(unused_mut)]
         let mut object_8 = object.key("NotificationConfiguration").start_object();
-        crate::protocol_serde::shape_notification_configuration::ser_notification_configuration(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_notification_configuration::ser_notification_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())

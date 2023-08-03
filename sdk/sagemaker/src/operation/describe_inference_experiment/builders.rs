@@ -26,7 +26,7 @@ impl DescribeInferenceExperimentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInferenceExperimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentInputBuilder,
+    inner: crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentInputBuilder,
 }
 impl DescribeInferenceExperimentFluentBuilder {
     /// Creates a new `DescribeInferenceExperiment`.
@@ -37,7 +37,7 @@ impl DescribeInferenceExperimentFluentBuilder {
         }
     }
     /// Access the DescribeInferenceExperiment as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeInferenceExperimentFluentBuilder {
             crate::operation::describe_inference_experiment::DescribeInferenceExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inference_experiment::DescribeInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inference_experiment::DescribeInferenceExperimentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeInferenceExperimentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeInferenceExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_inference_experiment::DescribeInferenceExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inference_experiment::DescribeInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inference_experiment::DescribeInferenceExperimentError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeInferenceExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_inference_experiment::DescribeInferenceExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inference_experiment::DescribeInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inference_experiment::DescribeInferenceExperimentError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeInferenceExperimentFluentBuilder {
             crate::operation::describe_inference_experiment::DescribeInferenceExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_inference_experiment::DescribeInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_inference_experiment::DescribeInferenceExperimentError>,
     > {
         self.customize_middleware().await
     }

@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DocumentClassifierDocumentTypeFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -58,12 +52,8 @@ impl ::std::convert::From<&str> for DocumentClassifierDocumentTypeFormat {
     fn from(s: &str) -> Self {
         match s {
             "PLAIN_TEXT_DOCUMENT" => DocumentClassifierDocumentTypeFormat::PlainTextDocument,
-            "SEMI_STRUCTURED_DOCUMENT" => {
-                DocumentClassifierDocumentTypeFormat::SemiStructuredDocument
-            }
-            other => DocumentClassifierDocumentTypeFormat::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "SEMI_STRUCTURED_DOCUMENT" => DocumentClassifierDocumentTypeFormat::SemiStructuredDocument,
+            other => DocumentClassifierDocumentTypeFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -79,9 +69,7 @@ impl DocumentClassifierDocumentTypeFormat {
     pub fn as_str(&self) -> &str {
         match self {
             DocumentClassifierDocumentTypeFormat::PlainTextDocument => "PLAIN_TEXT_DOCUMENT",
-            DocumentClassifierDocumentTypeFormat::SemiStructuredDocument => {
-                "SEMI_STRUCTURED_DOCUMENT"
-            }
+            DocumentClassifierDocumentTypeFormat::SemiStructuredDocument => "SEMI_STRUCTURED_DOCUMENT",
             DocumentClassifierDocumentTypeFormat::Unknown(value) => value.as_str(),
         }
     }

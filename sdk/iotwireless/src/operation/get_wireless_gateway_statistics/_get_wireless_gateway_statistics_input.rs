@@ -15,33 +15,25 @@ impl GetWirelessGatewayStatisticsInput {
 }
 impl GetWirelessGatewayStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayStatisticsInput`](crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput).
-    pub fn builder() -> crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsInputBuilder{
+    pub fn builder() -> crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsInputBuilder {
         crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessGatewayStatisticsInput`](crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayStatisticsInputBuilder {
     pub(crate) wireless_gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWirelessGatewayStatisticsInputBuilder {
     /// <p>The ID of the wireless gateway for which to get the data.</p>
-    pub fn wireless_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wireless_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wireless_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the wireless gateway for which to get the data.</p>
-    pub fn set_wireless_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_wireless_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wireless_gateway_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl GetWirelessGatewayStatisticsInputBuilder {
         crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput {
-                wireless_gateway_id: self.wireless_gateway_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput {
+            wireless_gateway_id: self.wireless_gateway_id,
+        })
     }
 }

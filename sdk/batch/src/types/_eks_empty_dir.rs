@@ -58,9 +58,7 @@ impl EksEmptyDir {
 
 /// A builder for [`EksEmptyDir`](crate::types::EksEmptyDir).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksEmptyDirBuilder {
     pub(crate) medium: ::std::option::Option<::std::string::String>,
     pub(crate) size_limit: ::std::option::Option<::std::string::String>,

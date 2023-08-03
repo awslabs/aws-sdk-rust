@@ -10,10 +10,7 @@ impl GetAppInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_app::GetAppOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app::GetAppError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_app();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetAppFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_app::GetApp,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_app::GetApp, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError>,
     > {
         let handle = self.handle.clone();
@@ -59,20 +53,15 @@ impl GetAppFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_app::GetAppOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_app::GetAppOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError>>
+    {
         let op = self
             .inner
             .build()
@@ -92,10 +81,8 @@ impl GetAppFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_app::GetAppOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_app::GetAppOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError>>
+    {
         self.send_middleware().await
     }
 
@@ -104,27 +91,18 @@ impl GetAppFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_app::GetApp,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_app::GetApp, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

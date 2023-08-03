@@ -75,9 +75,7 @@ impl UpdateAgreementInput {
 
 /// A builder for [`UpdateAgreementInput`](crate::operation::update_agreement::UpdateAgreementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAgreementInputBuilder {
     pub(crate) agreement_id: ::std::option::Option<::std::string::String>,
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
@@ -137,10 +135,7 @@ impl UpdateAgreementInputBuilder {
         self
     }
     /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AgreementStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -150,19 +145,13 @@ impl UpdateAgreementInputBuilder {
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     /// <p>To change the local profile identifier, provide a new value here.</p>
-    pub fn local_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     /// <p>To change the local profile identifier, provide a new value here.</p>
-    pub fn set_local_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_profile_id = input;
         self
     }
@@ -172,18 +161,12 @@ impl UpdateAgreementInputBuilder {
         &self.local_profile_id
     }
     /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
-    pub fn partner_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partner_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
-    pub fn set_partner_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partner_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partner_profile_id = input;
         self
     }
@@ -192,18 +175,12 @@ impl UpdateAgreementInputBuilder {
         &self.partner_profile_id
     }
     /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
-    pub fn base_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn base_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
-    pub fn set_base_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_base_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_directory = input;
         self
     }
@@ -231,10 +208,7 @@ impl UpdateAgreementInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAgreementInput`](crate::operation::update_agreement::UpdateAgreementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_agreement::UpdateAgreementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_agreement::UpdateAgreementInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_agreement::UpdateAgreementInput {
             agreement_id: self.agreement_id,
             server_id: self.server_id,

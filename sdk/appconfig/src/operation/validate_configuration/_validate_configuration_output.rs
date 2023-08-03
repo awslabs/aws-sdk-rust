@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ValidateConfigurationOutput {
 }
 impl ValidateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ValidateConfigurationOutput`](crate::operation::validate_configuration::ValidateConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::validate_configuration::builders::ValidateConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::validate_configuration::builders::ValidateConfigurationOutputBuilder {
         crate::operation::validate_configuration::builders::ValidateConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ValidateConfigurationOutput`](crate::operation::validate_configuration::ValidateConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -35,9 +35,7 @@ impl GetPricingPlanOutput {
 
 /// A builder for [`GetPricingPlanOutput`](crate::operation::get_pricing_plan::GetPricingPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPricingPlanOutputBuilder {
     pub(crate) current_pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     pub(crate) pending_pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
@@ -50,10 +48,7 @@ impl GetPricingPlanOutputBuilder {
         self
     }
     /// <p>The chosen pricing plan for the current billing cycle.</p>
-    pub fn set_current_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    pub fn set_current_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.current_pricing_plan = input;
         self
     }
@@ -67,10 +62,7 @@ impl GetPricingPlanOutputBuilder {
         self
     }
     /// <p>The pending pricing plan.</p>
-    pub fn set_pending_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    pub fn set_pending_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.pending_pricing_plan = input;
         self
     }

@@ -22,16 +22,14 @@ impl DeleteQuerySuggestionsBlockListInput {
 }
 impl DeleteQuerySuggestionsBlockListInput {
     /// Creates a new builder-style object to manufacture [`DeleteQuerySuggestionsBlockListInput`](crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListInput).
-    pub fn builder() -> crate::operation::delete_query_suggestions_block_list::builders::DeleteQuerySuggestionsBlockListInputBuilder{
+    pub fn builder() -> crate::operation::delete_query_suggestions_block_list::builders::DeleteQuerySuggestionsBlockListInputBuilder {
         crate::operation::delete_query_suggestions_block_list::builders::DeleteQuerySuggestionsBlockListInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteQuerySuggestionsBlockListInput`](crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQuerySuggestionsBlockListInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -74,11 +72,9 @@ impl DeleteQuerySuggestionsBlockListInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListInput {
-                index_id: self.index_id
-                ,
-                id: self.id
-                ,
-            }
+                index_id: self.index_id,
+                id: self.id,
+            },
         )
     }
 }

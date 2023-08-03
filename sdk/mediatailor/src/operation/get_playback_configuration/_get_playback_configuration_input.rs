@@ -15,18 +15,14 @@ impl GetPlaybackConfigurationInput {
 }
 impl GetPlaybackConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetPlaybackConfigurationInput`](crate::operation::get_playback_configuration::GetPlaybackConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationInputBuilder {
         crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPlaybackConfigurationInput`](crate::operation::get_playback_configuration::GetPlaybackConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPlaybackConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetPlaybackConfigurationInputBuilder {
         crate::operation::get_playback_configuration::GetPlaybackConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_playback_configuration::GetPlaybackConfigurationInput {
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_playback_configuration::GetPlaybackConfigurationInput { name: self.name })
     }
 }

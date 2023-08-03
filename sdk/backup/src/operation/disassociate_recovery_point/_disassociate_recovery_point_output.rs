@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateRecoveryPointOutput {
 }
 impl DisassociateRecoveryPointOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateRecoveryPointOutput`](crate::operation::disassociate_recovery_point::DisassociateRecoveryPointOutput).
-    pub fn builder() -> crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointOutputBuilder {
         crate::operation::disassociate_recovery_point::builders::DisassociateRecoveryPointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateRecoveryPointOutput`](crate::operation::disassociate_recovery_point::DisassociateRecoveryPointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateRecoveryPointOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateRecoveryPointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateRecoveryPointOutput`](crate::operation::disassociate_recovery_point::DisassociateRecoveryPointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_recovery_point::DisassociateRecoveryPointOutput {
+    pub fn build(self) -> crate::operation::disassociate_recovery_point::DisassociateRecoveryPointOutput {
         crate::operation::disassociate_recovery_point::DisassociateRecoveryPointOutput {
             _request_id: self._request_id,
         }

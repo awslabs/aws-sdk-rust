@@ -49,13 +49,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ScalarFunctions {
     #[allow(missing_docs)] // documentation missing in model
@@ -103,9 +97,7 @@ impl ::std::convert::From<&str> for ScalarFunctions {
             "SQRT" => ScalarFunctions::Sqrt,
             "TRUNC" => ScalarFunctions::Trunc,
             "UPPER" => ScalarFunctions::Upper,
-            other => {
-                ScalarFunctions::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ScalarFunctions::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -139,8 +131,7 @@ impl ScalarFunctions {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ABS", "CAST", "CEILING", "COALESCE", "FLOOR", "LN", "LOG", "LOWER", "ROUND", "RTRIM",
-            "SQRT", "TRUNC", "UPPER",
+            "ABS", "CAST", "CEILING", "COALESCE", "FLOOR", "LN", "LOG", "LOWER", "ROUND", "RTRIM", "SQRT", "TRUNC", "UPPER",
         ]
     }
 }

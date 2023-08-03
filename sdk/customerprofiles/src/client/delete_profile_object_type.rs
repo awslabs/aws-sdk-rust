@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteProfileObjectTypeOutput`](crate::operation::delete_profile_object_type::DeleteProfileObjectTypeOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::operation::delete_profile_object_type::DeleteProfileObjectTypeOutput::message): <p>A message that indicates the delete request is done.</p>
     /// - On failure, responds with [`SdkError<DeleteProfileObjectTypeError>`](crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError)
-    pub fn delete_profile_object_type(
-        &self,
-    ) -> crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeFluentBuilder
-    {
+    pub fn delete_profile_object_type(&self) -> crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeFluentBuilder {
         crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeFluentBuilder::new(self.handle.clone())
     }
 }

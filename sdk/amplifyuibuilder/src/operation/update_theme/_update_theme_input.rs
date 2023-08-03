@@ -50,9 +50,7 @@ impl UpdateThemeInput {
 
 /// A builder for [`UpdateThemeInput`](crate::operation::update_theme::UpdateThemeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThemeInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl UpdateThemeInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -129,10 +121,7 @@ impl UpdateThemeInputBuilder {
         self
     }
     /// <p>The configuration of the updated theme.</p>
-    pub fn set_updated_theme(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateThemeData>,
-    ) -> Self {
+    pub fn set_updated_theme(mut self, input: ::std::option::Option<crate::types::UpdateThemeData>) -> Self {
         self.updated_theme = input;
         self
     }
@@ -141,12 +130,7 @@ impl UpdateThemeInputBuilder {
         &self.updated_theme
     }
     /// Consumes the builder and constructs a [`UpdateThemeInput`](crate::operation::update_theme::UpdateThemeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_theme::UpdateThemeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_theme::UpdateThemeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_theme::UpdateThemeInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

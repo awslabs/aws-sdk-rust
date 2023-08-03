@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetBucketReplicationOutput`](crate::operation::get_bucket_replication::GetBucketReplicationOutput) with field(s):
     ///   - [`replication_configuration(Option<ReplicationConfiguration>)`](crate::operation::get_bucket_replication::GetBucketReplicationOutput::replication_configuration): <p>A container for one or more replication rules. A replication configuration must have at least one rule and you can add up to 100 rules. The maximum size of a replication configuration is 128 KB.</p>
     /// - On failure, responds with [`SdkError<GetBucketReplicationError>`](crate::operation::get_bucket_replication::GetBucketReplicationError)
-    pub fn get_bucket_replication(
-        &self,
-    ) -> crate::operation::get_bucket_replication::builders::GetBucketReplicationFluentBuilder {
-        crate::operation::get_bucket_replication::builders::GetBucketReplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bucket_replication(&self) -> crate::operation::get_bucket_replication::builders::GetBucketReplicationFluentBuilder {
+        crate::operation::get_bucket_replication::builders::GetBucketReplicationFluentBuilder::new(self.handle.clone())
     }
 }

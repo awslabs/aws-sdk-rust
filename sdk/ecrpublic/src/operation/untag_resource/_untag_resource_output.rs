@@ -19,9 +19,7 @@ impl UntagResourceOutput {
 
 /// A builder for [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagResourceOutputBuilder {
     _request_id: Option<String>,
 }

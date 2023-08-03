@@ -10,10 +10,7 @@ impl DeregisterResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::deregister_resource::DeregisterResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_resource::DeregisterResourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_resource::DeregisterResourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.deregister_resource();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeregisterResourceFluentBuilder {
         }
     }
     /// Access the DeregisterResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_resource::builders::DeregisterResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::deregister_resource::builders::DeregisterResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeregisterResourceFluentBuilder {
             crate::operation::deregister_resource::DeregisterResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_resource::DeregisterResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_resource::DeregisterResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeregisterResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeregisterResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_resource::DeregisterResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_resource::DeregisterResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_resource::DeregisterResourceError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeregisterResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_resource::DeregisterResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_resource::DeregisterResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_resource::DeregisterResourceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DeregisterResourceFluentBuilder {
             crate::operation::deregister_resource::DeregisterResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_resource::DeregisterResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_resource::DeregisterResourceError>,
     > {
         self.customize_middleware().await
     }

@@ -27,35 +27,27 @@ impl ::std::fmt::Display for MaximumConflictResolutionEntriesExceededException {
     }
 }
 impl ::std::error::Error for MaximumConflictResolutionEntriesExceededException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::MaximumConflictResolutionEntriesExceededException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::MaximumConflictResolutionEntriesExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for MaximumConflictResolutionEntriesExceededException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MaximumConflictResolutionEntriesExceededException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl MaximumConflictResolutionEntriesExceededException {
     /// Creates a new builder-style object to manufacture [`MaximumConflictResolutionEntriesExceededException`](crate::types::error::MaximumConflictResolutionEntriesExceededException).
-    pub fn builder(
-    ) -> crate::types::error::builders::MaximumConflictResolutionEntriesExceededExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::MaximumConflictResolutionEntriesExceededExceptionBuilder {
         crate::types::error::builders::MaximumConflictResolutionEntriesExceededExceptionBuilder::default()
     }
 }
 
 /// A builder for [`MaximumConflictResolutionEntriesExceededException`](crate::types::error::MaximumConflictResolutionEntriesExceededException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MaximumConflictResolutionEntriesExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,10 +74,7 @@ impl MaximumConflictResolutionEntriesExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -22,16 +22,14 @@ impl ListDelegatedAdminAccountsInput {
 }
 impl ListDelegatedAdminAccountsInput {
     /// Creates a new builder-style object to manufacture [`ListDelegatedAdminAccountsInput`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsInput).
-    pub fn builder() -> crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsInputBuilder{
+    pub fn builder() -> crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsInputBuilder {
         crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDelegatedAdminAccountsInput`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDelegatedAdminAccountsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl ListDelegatedAdminAccountsInputBuilder {
         crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -28,14 +28,11 @@ impl UpdateChannelReadMarkerInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannelReadMarker.html">UpdateChannelReadMarker</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by UpdateChannelReadMarker in the Amazon Chime SDK Messaging Namespace"
-)]
+#[deprecated(note = "Replaced by UpdateChannelReadMarker in the Amazon Chime SDK Messaging Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateChannelReadMarkerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerInputBuilder,
+    inner: crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerInputBuilder,
 }
 impl UpdateChannelReadMarkerFluentBuilder {
     /// Creates a new `UpdateChannelReadMarker`.
@@ -46,10 +43,7 @@ impl UpdateChannelReadMarkerFluentBuilder {
         }
     }
     /// Access the UpdateChannelReadMarker as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +55,7 @@ impl UpdateChannelReadMarkerFluentBuilder {
             crate::operation::update_channel_read_marker::UpdateChannelReadMarker,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel_read_marker::UpdateChannelReadMarkerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel_read_marker::UpdateChannelReadMarkerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +65,7 @@ impl UpdateChannelReadMarkerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +74,7 @@ impl UpdateChannelReadMarkerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel_read_marker::UpdateChannelReadMarkerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel_read_marker::UpdateChannelReadMarkerError>,
     > {
         let op = self
             .inner
@@ -110,9 +97,7 @@ impl UpdateChannelReadMarkerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel_read_marker::UpdateChannelReadMarkerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel_read_marker::UpdateChannelReadMarkerError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +111,7 @@ impl UpdateChannelReadMarkerFluentBuilder {
             crate::operation::update_channel_read_marker::UpdateChannelReadMarker,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel_read_marker::UpdateChannelReadMarkerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel_read_marker::UpdateChannelReadMarkerError>,
     > {
         self.customize_middleware().await
     }

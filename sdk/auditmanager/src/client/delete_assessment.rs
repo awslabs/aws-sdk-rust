@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`assessment_id(impl ::std::convert::Into<String>)`](crate::operation::delete_assessment::builders::DeleteAssessmentFluentBuilder::assessment_id) / [`set_assessment_id(Option<String>)`](crate::operation::delete_assessment::builders::DeleteAssessmentFluentBuilder::set_assessment_id): <p> The identifier for the assessment. </p>
     /// - On success, responds with [`DeleteAssessmentOutput`](crate::operation::delete_assessment::DeleteAssessmentOutput)
     /// - On failure, responds with [`SdkError<DeleteAssessmentError>`](crate::operation::delete_assessment::DeleteAssessmentError)
-    pub fn delete_assessment(
-        &self,
-    ) -> crate::operation::delete_assessment::builders::DeleteAssessmentFluentBuilder {
-        crate::operation::delete_assessment::builders::DeleteAssessmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_assessment(&self) -> crate::operation::delete_assessment::builders::DeleteAssessmentFluentBuilder {
+        crate::operation::delete_assessment::builders::DeleteAssessmentFluentBuilder::new(self.handle.clone())
     }
 }

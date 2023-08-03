@@ -12,9 +12,7 @@ pub struct CreateInAppTemplateInput {
 }
 impl CreateInAppTemplateInput {
     /// <p>InApp Template Request.</p>
-    pub fn in_app_template_request(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InAppTemplateRequest> {
+    pub fn in_app_template_request(&self) -> ::std::option::Option<&crate::types::InAppTemplateRequest> {
         self.in_app_template_request.as_ref()
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -24,18 +22,14 @@ impl CreateInAppTemplateInput {
 }
 impl CreateInAppTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateInAppTemplateInput`](crate::operation::create_in_app_template::CreateInAppTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::create_in_app_template::builders::CreateInAppTemplateInputBuilder {
-        crate::operation::create_in_app_template::builders::CreateInAppTemplateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_in_app_template::builders::CreateInAppTemplateInputBuilder {
+        crate::operation::create_in_app_template::builders::CreateInAppTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInAppTemplateInput`](crate::operation::create_in_app_template::CreateInAppTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInAppTemplateInputBuilder {
     pub(crate) in_app_template_request: ::std::option::Option<crate::types::InAppTemplateRequest>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
@@ -47,32 +41,21 @@ impl CreateInAppTemplateInputBuilder {
         self
     }
     /// <p>InApp Template Request.</p>
-    pub fn set_in_app_template_request(
-        mut self,
-        input: ::std::option::Option<crate::types::InAppTemplateRequest>,
-    ) -> Self {
+    pub fn set_in_app_template_request(mut self, input: ::std::option::Option<crate::types::InAppTemplateRequest>) -> Self {
         self.in_app_template_request = input;
         self
     }
     /// <p>InApp Template Request.</p>
-    pub fn get_in_app_template_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::InAppTemplateRequest> {
+    pub fn get_in_app_template_request(&self) -> &::std::option::Option<crate::types::InAppTemplateRequest> {
         &self.in_app_template_request
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -83,15 +66,11 @@ impl CreateInAppTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateInAppTemplateInput`](crate::operation::create_in_app_template::CreateInAppTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_in_app_template::CreateInAppTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_in_app_template::CreateInAppTemplateInput {
-                in_app_template_request: self.in_app_template_request,
-                template_name: self.template_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_in_app_template::CreateInAppTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_in_app_template::CreateInAppTemplateInput {
+            in_app_template_request: self.in_app_template_request,
+            template_name: self.template_name,
+        })
     }
 }

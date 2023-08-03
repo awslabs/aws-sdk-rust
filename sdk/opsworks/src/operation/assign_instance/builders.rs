@@ -10,10 +10,7 @@ impl AssignInstanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::assign_instance::AssignInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assign_instance::AssignInstanceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assign_instance::AssignInstanceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.assign_instance();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl AssignInstanceFluentBuilder {
         }
     }
     /// Access the AssignInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::assign_instance::builders::AssignInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::assign_instance::builders::AssignInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -67,10 +62,7 @@ impl AssignInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -144,10 +136,7 @@ impl AssignInstanceFluentBuilder {
         self
     }
     /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
-    pub fn set_layer_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_layer_ids(input);
         self
     }

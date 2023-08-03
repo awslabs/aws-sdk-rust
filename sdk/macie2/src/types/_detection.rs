@@ -58,9 +58,7 @@ impl Detection {
 
 /// A builder for [`Detection`](crate::types::Detection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectionBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i64>,
@@ -146,10 +144,7 @@ impl DetectionBuilder {
         self
     }
     /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataIdentifierType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataIdentifierType>) -> Self {
         self.r#type = input;
         self
     }

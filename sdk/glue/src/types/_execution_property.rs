@@ -23,9 +23,7 @@ impl ExecutionProperty {
 
 /// A builder for [`ExecutionProperty`](crate::types::ExecutionProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutionPropertyBuilder {
     pub(crate) max_concurrent_runs: ::std::option::Option<i32>,
 }

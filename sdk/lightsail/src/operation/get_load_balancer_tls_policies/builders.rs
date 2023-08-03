@@ -27,7 +27,7 @@ impl GetLoadBalancerTlsPoliciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLoadBalancerTlsPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_load_balancer_tls_policies::builders::GetLoadBalancerTlsPoliciesInputBuilder,
+    inner: crate::operation::get_load_balancer_tls_policies::builders::GetLoadBalancerTlsPoliciesInputBuilder,
 }
 impl GetLoadBalancerTlsPoliciesFluentBuilder {
     /// Creates a new `GetLoadBalancerTlsPolicies`.
@@ -38,7 +38,7 @@ impl GetLoadBalancerTlsPoliciesFluentBuilder {
         }
     }
     /// Access the GetLoadBalancerTlsPolicies as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_load_balancer_tls_policies::builders::GetLoadBalancerTlsPoliciesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_load_balancer_tls_policies::builders::GetLoadBalancerTlsPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetLoadBalancerTlsPoliciesFluentBuilder {
             crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetLoadBalancerTlsPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetLoadBalancerTlsPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetLoadBalancerTlsPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetLoadBalancerTlsPoliciesFluentBuilder {
             crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError>,
     > {
         self.customize_middleware().await
     }

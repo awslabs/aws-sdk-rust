@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateFindingsFeedbackOutput {
 }
 impl UpdateFindingsFeedbackOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFindingsFeedbackOutput`](crate::operation::update_findings_feedback::UpdateFindingsFeedbackOutput).
-    pub fn builder(
-    ) -> crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackOutputBuilder {
         crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFindingsFeedbackOutput`](crate::operation::update_findings_feedback::UpdateFindingsFeedbackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFindingsFeedbackOutputBuilder {
     _request_id: Option<String>,
 }

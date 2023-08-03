@@ -37,9 +37,7 @@ impl DeleteRouteSettingsFluentBuilder {
         }
     }
     /// Access the DeleteRouteSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_route_settings::builders::DeleteRouteSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_route_settings::builders::DeleteRouteSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteRouteSettingsFluentBuilder {
             crate::operation::delete_route_settings::DeleteRouteSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_settings::DeleteRouteSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_settings::DeleteRouteSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteRouteSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteRouteSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_route_settings::DeleteRouteSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_settings::DeleteRouteSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_settings::DeleteRouteSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteRouteSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_route_settings::DeleteRouteSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_settings::DeleteRouteSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_settings::DeleteRouteSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteRouteSettingsFluentBuilder {
             crate::operation::delete_route_settings::DeleteRouteSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_settings::DeleteRouteSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_settings::DeleteRouteSettingsError>,
     > {
         self.customize_middleware().await
     }

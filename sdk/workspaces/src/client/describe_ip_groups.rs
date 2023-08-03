@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`result(Option<Vec<WorkspacesIpGroup>>)`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput::result): <p>Information about the IP access control groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<DescribeIpGroupsError>`](crate::operation::describe_ip_groups::DescribeIpGroupsError)
-    pub fn describe_ip_groups(
-        &self,
-    ) -> crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder {
-        crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ip_groups(&self) -> crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder {
+        crate::operation::describe_ip_groups::builders::DescribeIpGroupsFluentBuilder::new(self.handle.clone())
     }
 }

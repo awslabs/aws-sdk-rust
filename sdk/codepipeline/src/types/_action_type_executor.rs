@@ -50,9 +50,7 @@ impl ActionTypeExecutor {
 
 /// A builder for [`ActionTypeExecutor`](crate::types::ActionTypeExecutor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionTypeExecutorBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::ExecutorConfiguration>,
     pub(crate) r#type: ::std::option::Option<crate::types::ExecutorType>,
@@ -66,10 +64,7 @@ impl ActionTypeExecutorBuilder {
         self
     }
     /// <p>The action configuration properties for the action type. These properties are specified in the action definition when the action type is created.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutorConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ExecutorConfiguration>) -> Self {
         self.configuration = input;
         self
     }
@@ -95,10 +90,7 @@ impl ActionTypeExecutorBuilder {
     /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
     /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
     /// </note>
-    pub fn policy_statements_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_statements_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_statements_template = ::std::option::Option::Some(input.into());
         self
     }
@@ -106,10 +98,7 @@ impl ActionTypeExecutorBuilder {
     /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
     /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
     /// </note>
-    pub fn set_policy_statements_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_statements_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_statements_template = input;
         self
     }

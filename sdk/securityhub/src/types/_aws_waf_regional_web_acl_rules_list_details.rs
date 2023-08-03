@@ -9,8 +9,7 @@ pub struct AwsWafRegionalWebAclRulesListDetails {
     pub action: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListActionDetails>,
     /// <p>Overrides the rule evaluation result in the rule group. </p>
     #[doc(hidden)]
-    pub override_action:
-        ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails>,
+    pub override_action: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails>,
     /// <p>The order in which WAF evaluates the rules in a web ACL. </p>
     #[doc(hidden)]
     pub priority: i32,
@@ -23,16 +22,11 @@ pub struct AwsWafRegionalWebAclRulesListDetails {
 }
 impl AwsWafRegionalWebAclRulesListDetails {
     /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
-    pub fn action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsWafRegionalWebAclRulesListActionDetails> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::AwsWafRegionalWebAclRulesListActionDetails> {
         self.action.as_ref()
     }
     /// <p>Overrides the rule evaluation result in the rule group. </p>
-    pub fn override_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails>
-    {
+    pub fn override_action(&self) -> ::std::option::Option<&crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails> {
         self.override_action.as_ref()
     }
     /// <p>The order in which WAF evaluates the rules in a web ACL. </p>
@@ -57,64 +51,41 @@ impl AwsWafRegionalWebAclRulesListDetails {
 
 /// A builder for [`AwsWafRegionalWebAclRulesListDetails`](crate::types::AwsWafRegionalWebAclRulesListDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafRegionalWebAclRulesListDetailsBuilder {
-    pub(crate) action:
-        ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListActionDetails>,
-    pub(crate) override_action:
-        ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails>,
+    pub(crate) action: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListActionDetails>,
+    pub(crate) override_action: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRegionalWebAclRulesListDetailsBuilder {
     /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
-    pub fn action(
-        mut self,
-        input: crate::types::AwsWafRegionalWebAclRulesListActionDetails,
-    ) -> Self {
+    pub fn action(mut self, input: crate::types::AwsWafRegionalWebAclRulesListActionDetails) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListActionDetails>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListActionDetails>) -> Self {
         self.action = input;
         self
     }
     /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
-    pub fn get_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListActionDetails> {
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListActionDetails> {
         &self.action
     }
     /// <p>Overrides the rule evaluation result in the rule group. </p>
-    pub fn override_action(
-        mut self,
-        input: crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails,
-    ) -> Self {
+    pub fn override_action(mut self, input: crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails) -> Self {
         self.override_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Overrides the rule evaluation result in the rule group. </p>
-    pub fn set_override_action(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails,
-        >,
-    ) -> Self {
+    pub fn set_override_action(mut self, input: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails>) -> Self {
         self.override_action = input;
         self
     }
     /// <p>Overrides the rule evaluation result in the rule group. </p>
-    pub fn get_override_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails>
-    {
+    pub fn get_override_action(&self) -> &::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails> {
         &self.override_action
     }
     /// <p>The order in which WAF evaluates the rules in a web ACL. </p>

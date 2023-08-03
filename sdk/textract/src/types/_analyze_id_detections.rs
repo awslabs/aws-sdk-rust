@@ -37,9 +37,7 @@ impl AnalyzeIdDetections {
 
 /// A builder for [`AnalyzeIdDetections`](crate::types::AnalyzeIdDetections).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyzeIdDetectionsBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) normalized_value: ::std::option::Option<crate::types::NormalizedValue>,
@@ -66,10 +64,7 @@ impl AnalyzeIdDetectionsBuilder {
         self
     }
     /// <p>Only returned for dates, returns the type of value detected and the date written in a more machine readable way.</p>
-    pub fn set_normalized_value(
-        mut self,
-        input: ::std::option::Option<crate::types::NormalizedValue>,
-    ) -> Self {
+    pub fn set_normalized_value(mut self, input: ::std::option::Option<crate::types::NormalizedValue>) -> Self {
         self.normalized_value = input;
         self
     }

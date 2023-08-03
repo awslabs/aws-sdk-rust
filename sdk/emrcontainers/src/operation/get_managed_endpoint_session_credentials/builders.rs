@@ -5,16 +5,16 @@ pub use crate::operation::get_managed_endpoint_session_credentials::_get_managed
 
 impl GetManagedEndpointSessionCredentialsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_managed_endpoint_session_credentials();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetManagedEndpointSessionCredentialsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetManagedEndpointSessionCredentialsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsInputBuilder,
+    inner: crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsInputBuilder,
 }
 impl GetManagedEndpointSessionCredentialsFluentBuilder {
     /// Creates a new `GetManagedEndpointSessionCredentials`.
@@ -37,15 +37,22 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
         }
     }
     /// Access the GetManagedEndpointSessionCredentials as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentials, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentials,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +89,35 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentials, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentials,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the managed endpoint for which the request is submitted. </p>
-    pub fn endpoint_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_identifier(input.into());
         self
     }
     /// <p>The ARN of the managed endpoint for which the request is submitted. </p>
-    pub fn set_endpoint_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_identifier(input);
         self
     }
@@ -115,18 +126,12 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
         self.inner.get_endpoint_identifier()
     }
     /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>
-    pub fn virtual_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_cluster_identifier(input.into());
         self
     }
     /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>
-    pub fn set_virtual_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_cluster_identifier(input);
         self
     }
@@ -135,18 +140,12 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
         self.inner.get_virtual_cluster_identifier()
     }
     /// <p>The IAM Execution Role ARN that will be used by the job run. </p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p>The IAM Execution Role ARN that will be used by the job run. </p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
@@ -155,18 +154,12 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
         self.inner.get_execution_role_arn()
     }
     /// <p>Type of the token requested. Currently supported and default value of this field is “TOKEN.”</p>
-    pub fn credential_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn credential_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.credential_type(input.into());
         self
     }
     /// <p>Type of the token requested. Currently supported and default value of this field is “TOKEN.”</p>
-    pub fn set_credential_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_credential_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_credential_type(input);
         self
     }

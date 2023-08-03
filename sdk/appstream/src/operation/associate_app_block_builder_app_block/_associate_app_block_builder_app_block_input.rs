@@ -22,34 +22,26 @@ impl AssociateAppBlockBuilderAppBlockInput {
 }
 impl AssociateAppBlockBuilderAppBlockInput {
     /// Creates a new builder-style object to manufacture [`AssociateAppBlockBuilderAppBlockInput`](crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockInput).
-    pub fn builder() -> crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockInputBuilder{
+    pub fn builder() -> crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockInputBuilder {
         crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateAppBlockBuilderAppBlockInput`](crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateAppBlockBuilderAppBlockInputBuilder {
     pub(crate) app_block_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_block_builder_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateAppBlockBuilderAppBlockInputBuilder {
     /// <p>The ARN of the app block.</p>
-    pub fn app_block_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_block_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the app block.</p>
-    pub fn set_app_block_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_block_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_block_arn = input;
         self
     }
@@ -58,18 +50,12 @@ impl AssociateAppBlockBuilderAppBlockInputBuilder {
         &self.app_block_arn
     }
     /// <p>The name of the app block builder.</p>
-    pub fn app_block_builder_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_block_builder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_builder_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the app block builder.</p>
-    pub fn set_app_block_builder_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_block_builder_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_block_builder_name = input;
         self
     }
@@ -78,14 +64,17 @@ impl AssociateAppBlockBuilderAppBlockInputBuilder {
         &self.app_block_builder_name
     }
     /// Consumes the builder and constructs a [`AssociateAppBlockBuilderAppBlockInput`](crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockInput {
-                app_block_arn: self.app_block_arn
-                ,
-                app_block_builder_name: self.app_block_builder_name
-                ,
-            }
+                app_block_arn: self.app_block_arn,
+                app_block_builder_name: self.app_block_builder_name,
+            },
         )
     }
 }

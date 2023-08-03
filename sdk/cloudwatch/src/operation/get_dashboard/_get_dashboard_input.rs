@@ -22,26 +22,18 @@ impl GetDashboardInput {
 
 /// A builder for [`GetDashboardInput`](crate::operation::get_dashboard::GetDashboardInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDashboardInputBuilder {
     pub(crate) dashboard_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDashboardInputBuilder {
     /// <p>The name of the dashboard to be described.</p>
-    pub fn dashboard_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dashboard to be described.</p>
-    pub fn set_dashboard_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dashboard_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_name = input;
         self
     }
@@ -50,12 +42,7 @@ impl GetDashboardInputBuilder {
         &self.dashboard_name
     }
     /// Consumes the builder and constructs a [`GetDashboardInput`](crate::operation::get_dashboard::GetDashboardInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_dashboard::GetDashboardInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_dashboard::GetDashboardInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_dashboard::GetDashboardInput {
             dashboard_name: self.dashboard_name,
         })

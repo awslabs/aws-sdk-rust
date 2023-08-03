@@ -30,9 +30,7 @@ impl InterpolationParameters {
 
 /// A builder for [`InterpolationParameters`](crate::types::InterpolationParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InterpolationParametersBuilder {
     pub(crate) interpolation_type: ::std::option::Option<crate::types::InterpolationType>,
     pub(crate) interval_in_seconds: ::std::option::Option<i64>,
@@ -44,17 +42,12 @@ impl InterpolationParametersBuilder {
         self
     }
     /// <p>The interpolation type.</p>
-    pub fn set_interpolation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InterpolationType>,
-    ) -> Self {
+    pub fn set_interpolation_type(mut self, input: ::std::option::Option<crate::types::InterpolationType>) -> Self {
         self.interpolation_type = input;
         self
     }
     /// <p>The interpolation type.</p>
-    pub fn get_interpolation_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InterpolationType> {
+    pub fn get_interpolation_type(&self) -> &::std::option::Option<crate::types::InterpolationType> {
         &self.interpolation_type
     }
     /// <p>The interpolation time interval in seconds.</p>

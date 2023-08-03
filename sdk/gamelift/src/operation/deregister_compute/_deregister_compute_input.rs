@@ -22,17 +22,14 @@ impl DeregisterComputeInput {
 }
 impl DeregisterComputeInput {
     /// Creates a new builder-style object to manufacture [`DeregisterComputeInput`](crate::operation::deregister_compute::DeregisterComputeInput).
-    pub fn builder() -> crate::operation::deregister_compute::builders::DeregisterComputeInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_compute::builders::DeregisterComputeInputBuilder {
         crate::operation::deregister_compute::builders::DeregisterComputeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterComputeInput`](crate::operation::deregister_compute::DeregisterComputeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterComputeInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) compute_name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl DeregisterComputeInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterComputeInput`](crate::operation::deregister_compute::DeregisterComputeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_compute::DeregisterComputeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::deregister_compute::DeregisterComputeInput {
-                fleet_id: self.fleet_id,
-                compute_name: self.compute_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::deregister_compute::DeregisterComputeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::deregister_compute::DeregisterComputeInput {
+            fleet_id: self.fleet_id,
+            compute_name: self.compute_name,
+        })
     }
 }

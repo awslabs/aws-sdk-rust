@@ -15,8 +15,7 @@ pub struct InvalidRequestException {
     pub required_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The request included parameters that cannot be provided together.</p>
     #[doc(hidden)]
-    pub mutually_exclusive_parameters:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub mutually_exclusive_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidRequestException {
@@ -71,15 +70,12 @@ impl InvalidRequestException {
 
 /// A builder for [`InvalidRequestException`](crate::types::error::InvalidRequestException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidRequestExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) required_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) mutually_exclusive_parameters:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) mutually_exclusive_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidRequestExceptionBuilder {
@@ -116,27 +112,19 @@ impl InvalidRequestExceptionBuilder {
     /// To override the contents of this collection use [`set_required_parameters`](Self::set_required_parameters).
     ///
     /// <p>The request omitted one or more required parameters.</p>
-    pub fn required_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn required_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.required_parameters.unwrap_or_default();
         v.push(input.into());
         self.required_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The request omitted one or more required parameters.</p>
-    pub fn set_required_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_required_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.required_parameters = input;
         self
     }
     /// <p>The request omitted one or more required parameters.</p>
-    pub fn get_required_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_required_parameters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.required_parameters
     }
     /// Appends an item to `mutually_exclusive_parameters`.
@@ -144,27 +132,19 @@ impl InvalidRequestExceptionBuilder {
     /// To override the contents of this collection use [`set_mutually_exclusive_parameters`](Self::set_mutually_exclusive_parameters).
     ///
     /// <p>The request included parameters that cannot be provided together.</p>
-    pub fn mutually_exclusive_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mutually_exclusive_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.mutually_exclusive_parameters.unwrap_or_default();
         v.push(input.into());
         self.mutually_exclusive_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The request included parameters that cannot be provided together.</p>
-    pub fn set_mutually_exclusive_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_mutually_exclusive_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.mutually_exclusive_parameters = input;
         self
     }
     /// <p>The request included parameters that cannot be provided together.</p>
-    pub fn get_mutually_exclusive_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_mutually_exclusive_parameters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.mutually_exclusive_parameters
     }
     /// Sets error metadata
@@ -174,10 +154,7 @@ impl InvalidRequestExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -10,10 +10,7 @@ impl ListInvalidationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_invalidations::ListInvalidationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_invalidations::ListInvalidationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_invalidations::ListInvalidationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_invalidations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListInvalidationsFluentBuilder {
         }
     }
     /// Access the ListInvalidations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_invalidations::builders::ListInvalidationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_invalidations::builders::ListInvalidationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListInvalidationsFluentBuilder {
             crate::operation::list_invalidations::ListInvalidations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_invalidations::ListInvalidationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_invalidations::ListInvalidationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListInvalidationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListInvalidationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_invalidations::ListInvalidationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_invalidations::ListInvalidationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_invalidations::ListInvalidationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListInvalidationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_invalidations::ListInvalidationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_invalidations::ListInvalidationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_invalidations::ListInvalidationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListInvalidationsFluentBuilder {
             crate::operation::list_invalidations::ListInvalidations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_invalidations::ListInvalidationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_invalidations::ListInvalidationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_invalidations::paginator::ListInvalidationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_invalidations::paginator::ListInvalidationsPaginator {
-        crate::operation::list_invalidations::paginator::ListInvalidationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_invalidations::paginator::ListInvalidationsPaginator {
+        crate::operation::list_invalidations::paginator::ListInvalidationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The distribution's ID.</p>
-    pub fn distribution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_id(input.into());
         self
     }
     /// <p>The distribution's ID.</p>
-    pub fn set_distribution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_id(input);
         self
     }

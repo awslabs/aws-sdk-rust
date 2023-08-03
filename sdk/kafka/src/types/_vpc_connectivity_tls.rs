@@ -23,9 +23,7 @@ impl VpcConnectivityTls {
 
 /// A builder for [`VpcConnectivityTls`](crate::types::VpcConnectivityTls).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcConnectivityTlsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl VpcConnectivityTlsBuilder {
     }
     /// Consumes the builder and constructs a [`VpcConnectivityTls`](crate::types::VpcConnectivityTls).
     pub fn build(self) -> crate::types::VpcConnectivityTls {
-        crate::types::VpcConnectivityTls {
-            enabled: self.enabled,
-        }
+        crate::types::VpcConnectivityTls { enabled: self.enabled }
     }
 }

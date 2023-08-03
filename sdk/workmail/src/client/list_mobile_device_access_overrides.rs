@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`overrides(Option<Vec<MobileDeviceAccessOverride>>)`](crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput::overrides): <p>The list of mobile device access overrides that exist for the specified WorkMail organization and user.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput::next_token): <p>The token to use to retrieve the next page of results. The value is “null” when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListMobileDeviceAccessOverridesError>`](crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError)
-    pub fn list_mobile_device_access_overrides(&self) -> crate::operation::list_mobile_device_access_overrides::builders::ListMobileDeviceAccessOverridesFluentBuilder{
+    pub fn list_mobile_device_access_overrides(
+        &self,
+    ) -> crate::operation::list_mobile_device_access_overrides::builders::ListMobileDeviceAccessOverridesFluentBuilder {
         crate::operation::list_mobile_device_access_overrides::builders::ListMobileDeviceAccessOverridesFluentBuilder::new(self.handle.clone())
     }
 }

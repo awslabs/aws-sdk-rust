@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteContactEvaluationOutput {
 }
 impl DeleteContactEvaluationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContactEvaluationOutput`](crate::operation::delete_contact_evaluation::DeleteContactEvaluationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationOutputBuilder {
         crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteContactEvaluationOutput`](crate::operation::delete_contact_evaluation::DeleteContactEvaluationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteContactEvaluationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteContactEvaluationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteContactEvaluationOutput`](crate::operation::delete_contact_evaluation::DeleteContactEvaluationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_contact_evaluation::DeleteContactEvaluationOutput {
+    pub fn build(self) -> crate::operation::delete_contact_evaluation::DeleteContactEvaluationOutput {
         crate::operation::delete_contact_evaluation::DeleteContactEvaluationOutput {
             _request_id: self._request_id,
         }

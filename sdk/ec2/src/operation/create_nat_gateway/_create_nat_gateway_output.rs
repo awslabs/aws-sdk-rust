@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateNatGatewayOutput {
 }
 impl CreateNatGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateNatGatewayOutput`](crate::operation::create_nat_gateway::CreateNatGatewayOutput).
-    pub fn builder() -> crate::operation::create_nat_gateway::builders::CreateNatGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_nat_gateway::builders::CreateNatGatewayOutputBuilder {
         crate::operation::create_nat_gateway::builders::CreateNatGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNatGatewayOutput`](crate::operation::create_nat_gateway::CreateNatGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNatGatewayOutputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) nat_gateway: ::std::option::Option<crate::types::NatGateway>,
@@ -65,10 +62,7 @@ impl CreateNatGatewayOutputBuilder {
         self
     }
     /// <p>Information about the NAT gateway.</p>
-    pub fn set_nat_gateway(
-        mut self,
-        input: ::std::option::Option<crate::types::NatGateway>,
-    ) -> Self {
+    pub fn set_nat_gateway(mut self, input: ::std::option::Option<crate::types::NatGateway>) -> Self {
         self.nat_gateway = input;
         self
     }

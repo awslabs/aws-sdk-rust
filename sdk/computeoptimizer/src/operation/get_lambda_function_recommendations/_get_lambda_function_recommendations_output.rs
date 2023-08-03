@@ -9,8 +9,7 @@ pub struct GetLambdaFunctionRecommendationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe function recommendations.</p>
     #[doc(hidden)]
-    pub lambda_function_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendation>>,
+    pub lambda_function_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendation>>,
     _request_id: Option<String>,
 }
 impl GetLambdaFunctionRecommendationsOutput {
@@ -20,9 +19,7 @@ impl GetLambdaFunctionRecommendationsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that describe function recommendations.</p>
-    pub fn lambda_function_recommendations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LambdaFunctionRecommendation]> {
+    pub fn lambda_function_recommendations(&self) -> ::std::option::Option<&[crate::types::LambdaFunctionRecommendation]> {
         self.lambda_function_recommendations.as_deref()
     }
 }
@@ -33,20 +30,17 @@ impl ::aws_http::request_id::RequestId for GetLambdaFunctionRecommendationsOutpu
 }
 impl GetLambdaFunctionRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetLambdaFunctionRecommendationsOutput`](crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput).
-    pub fn builder() -> crate::operation::get_lambda_function_recommendations::builders::GetLambdaFunctionRecommendationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_lambda_function_recommendations::builders::GetLambdaFunctionRecommendationsOutputBuilder {
         crate::operation::get_lambda_function_recommendations::builders::GetLambdaFunctionRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLambdaFunctionRecommendationsOutput`](crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLambdaFunctionRecommendationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) lambda_function_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendation>>,
+    pub(crate) lambda_function_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendation>>,
     _request_id: Option<String>,
 }
 impl GetLambdaFunctionRecommendationsOutputBuilder {
@@ -72,10 +66,7 @@ impl GetLambdaFunctionRecommendationsOutputBuilder {
     /// To override the contents of this collection use [`set_lambda_function_recommendations`](Self::set_lambda_function_recommendations).
     ///
     /// <p>An array of objects that describe function recommendations.</p>
-    pub fn lambda_function_recommendations(
-        mut self,
-        input: crate::types::LambdaFunctionRecommendation,
-    ) -> Self {
+    pub fn lambda_function_recommendations(mut self, input: crate::types::LambdaFunctionRecommendation) -> Self {
         let mut v = self.lambda_function_recommendations.unwrap_or_default();
         v.push(input);
         self.lambda_function_recommendations = ::std::option::Option::Some(v);
@@ -90,9 +81,7 @@ impl GetLambdaFunctionRecommendationsOutputBuilder {
         self
     }
     /// <p>An array of objects that describe function recommendations.</p>
-    pub fn get_lambda_function_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendation>> {
+    pub fn get_lambda_function_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendation>> {
         &self.lambda_function_recommendations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -105,15 +94,10 @@ impl GetLambdaFunctionRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetLambdaFunctionRecommendationsOutput`](crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput
-    {
+    pub fn build(self) -> crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput {
         crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput {
-            next_token: self.next_token
-            ,
-            lambda_function_recommendations: self.lambda_function_recommendations
-            ,
+            next_token: self.next_token,
+            lambda_function_recommendations: self.lambda_function_recommendations,
             _request_id: self._request_id,
         }
     }

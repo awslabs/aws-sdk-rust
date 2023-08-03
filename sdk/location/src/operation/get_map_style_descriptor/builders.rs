@@ -38,10 +38,7 @@ impl GetMapStyleDescriptorFluentBuilder {
         }
     }
     /// Access the GetMapStyleDescriptor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl GetMapStyleDescriptorFluentBuilder {
             crate::operation::get_map_style_descriptor::GetMapStyleDescriptor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl GetMapStyleDescriptorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl GetMapStyleDescriptorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_map_style_descriptor::GetMapStyleDescriptorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl GetMapStyleDescriptorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_map_style_descriptor::GetMapStyleDescriptorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl GetMapStyleDescriptorFluentBuilder {
             crate::operation::get_map_style_descriptor::GetMapStyleDescriptor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError>,
     > {
         self.customize_middleware().await
     }

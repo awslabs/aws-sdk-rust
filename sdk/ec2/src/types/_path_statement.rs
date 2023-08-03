@@ -13,9 +13,7 @@ pub struct PathStatement {
 }
 impl PathStatement {
     /// <p>The packet header statement.</p>
-    pub fn packet_header_statement(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PacketHeaderStatement> {
+    pub fn packet_header_statement(&self) -> ::std::option::Option<&crate::types::PacketHeaderStatement> {
         self.packet_header_statement.as_ref()
     }
     /// <p>The resource statement.</p>
@@ -32,9 +30,7 @@ impl PathStatement {
 
 /// A builder for [`PathStatement`](crate::types::PathStatement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PathStatementBuilder {
     pub(crate) packet_header_statement: ::std::option::Option<crate::types::PacketHeaderStatement>,
     pub(crate) resource_statement: ::std::option::Option<crate::types::ResourceStatement>,
@@ -46,17 +42,12 @@ impl PathStatementBuilder {
         self
     }
     /// <p>The packet header statement.</p>
-    pub fn set_packet_header_statement(
-        mut self,
-        input: ::std::option::Option<crate::types::PacketHeaderStatement>,
-    ) -> Self {
+    pub fn set_packet_header_statement(mut self, input: ::std::option::Option<crate::types::PacketHeaderStatement>) -> Self {
         self.packet_header_statement = input;
         self
     }
     /// <p>The packet header statement.</p>
-    pub fn get_packet_header_statement(
-        &self,
-    ) -> &::std::option::Option<crate::types::PacketHeaderStatement> {
+    pub fn get_packet_header_statement(&self) -> &::std::option::Option<crate::types::PacketHeaderStatement> {
         &self.packet_header_statement
     }
     /// <p>The resource statement.</p>
@@ -65,17 +56,12 @@ impl PathStatementBuilder {
         self
     }
     /// <p>The resource statement.</p>
-    pub fn set_resource_statement(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatement>,
-    ) -> Self {
+    pub fn set_resource_statement(mut self, input: ::std::option::Option<crate::types::ResourceStatement>) -> Self {
         self.resource_statement = input;
         self
     }
     /// <p>The resource statement.</p>
-    pub fn get_resource_statement(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceStatement> {
+    pub fn get_resource_statement(&self) -> &::std::option::Option<crate::types::ResourceStatement> {
         &self.resource_statement
     }
     /// Consumes the builder and constructs a [`PathStatement`](crate::types::PathStatement).

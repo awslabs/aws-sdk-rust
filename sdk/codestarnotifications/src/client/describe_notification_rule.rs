@@ -17,10 +17,7 @@ impl super::Client {
     ///   - [`last_modified_timestamp(Option<DateTime>)`](crate::operation::describe_notification_rule::DescribeNotificationRuleOutput::last_modified_timestamp): <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_notification_rule::DescribeNotificationRuleOutput::tags): <p>The tags associated with the notification rule.</p>
     /// - On failure, responds with [`SdkError<DescribeNotificationRuleError>`](crate::operation::describe_notification_rule::DescribeNotificationRuleError)
-    pub fn describe_notification_rule(
-        &self,
-    ) -> crate::operation::describe_notification_rule::builders::DescribeNotificationRuleFluentBuilder
-    {
+    pub fn describe_notification_rule(&self) -> crate::operation::describe_notification_rule::builders::DescribeNotificationRuleFluentBuilder {
         crate::operation::describe_notification_rule::builders::DescribeNotificationRuleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -35,13 +35,10 @@ impl RescoreOutput {
 
 /// A builder for [`RescoreOutput`](crate::operation::rescore::RescoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RescoreOutputBuilder {
     pub(crate) rescore_id: ::std::option::Option<::std::string::String>,
-    pub(crate) result_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::RescoreResultItem>>,
+    pub(crate) result_items: ::std::option::Option<::std::vec::Vec<crate::types::RescoreResultItem>>,
     _request_id: Option<String>,
 }
 impl RescoreOutputBuilder {
@@ -71,17 +68,12 @@ impl RescoreOutputBuilder {
         self
     }
     /// <p>A list of result items for documents with new relevancy scores. The results are in descending order.</p>
-    pub fn set_result_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RescoreResultItem>>,
-    ) -> Self {
+    pub fn set_result_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RescoreResultItem>>) -> Self {
         self.result_items = input;
         self
     }
     /// <p>A list of result items for documents with new relevancy scores. The results are in descending order.</p>
-    pub fn get_result_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RescoreResultItem>> {
+    pub fn get_result_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RescoreResultItem>> {
         &self.result_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

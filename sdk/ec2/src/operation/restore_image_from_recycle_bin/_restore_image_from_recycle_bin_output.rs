@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for RestoreImageFromRecycleBinOutput {
 }
 impl RestoreImageFromRecycleBinOutput {
     /// Creates a new builder-style object to manufacture [`RestoreImageFromRecycleBinOutput`](crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinOutput).
-    pub fn builder() -> crate::operation::restore_image_from_recycle_bin::builders::RestoreImageFromRecycleBinOutputBuilder{
+    pub fn builder() -> crate::operation::restore_image_from_recycle_bin::builders::RestoreImageFromRecycleBinOutputBuilder {
         crate::operation::restore_image_from_recycle_bin::builders::RestoreImageFromRecycleBinOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreImageFromRecycleBinOutput`](crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreImageFromRecycleBinOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl RestoreImageFromRecycleBinOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreImageFromRecycleBinOutput`](crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinOutput {
+    pub fn build(self) -> crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinOutput {
         crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinOutput {
             r#return: self.r#return,
             _request_id: self._request_id,

@@ -34,9 +34,7 @@ impl ResponseAction {
 
 /// A builder for [`ResponseAction`](crate::types::ResponseAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseActionBuilder {
     pub(crate) block: ::std::option::Option<crate::types::BlockAction>,
     pub(crate) count: ::std::option::Option<crate::types::CountAction>,

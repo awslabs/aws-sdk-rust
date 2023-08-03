@@ -71,9 +71,7 @@ impl RecommendationMetrics {
 
 /// A builder for [`RecommendationMetrics`](crate::types::RecommendationMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationMetricsBuilder {
     pub(crate) cost_per_hour: ::std::option::Option<f32>,
     pub(crate) cost_per_inference: ::std::option::Option<f32>,

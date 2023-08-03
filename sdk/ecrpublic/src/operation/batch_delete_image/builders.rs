@@ -10,10 +10,7 @@ impl BatchDeleteImageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_image::BatchDeleteImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_image::BatchDeleteImageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_image::BatchDeleteImageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_delete_image();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl BatchDeleteImageFluentBuilder {
         }
     }
     /// Access the BatchDeleteImage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_delete_image::builders::BatchDeleteImageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_delete_image::builders::BatchDeleteImageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl BatchDeleteImageFluentBuilder {
             crate::operation::batch_delete_image::BatchDeleteImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_image::BatchDeleteImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_image::BatchDeleteImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl BatchDeleteImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl BatchDeleteImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_image::BatchDeleteImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_image::BatchDeleteImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_image::BatchDeleteImageError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl BatchDeleteImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_image::BatchDeleteImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_image::BatchDeleteImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_image::BatchDeleteImageError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl BatchDeleteImageFluentBuilder {
             crate::operation::batch_delete_image::BatchDeleteImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_image::BatchDeleteImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_image::BatchDeleteImageError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +123,12 @@ impl BatchDeleteImageFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The repository in a public registry that contains the image to delete.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The repository in a public registry that contains the image to delete.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -168,17 +146,12 @@ impl BatchDeleteImageFluentBuilder {
         self
     }
     /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>) -> Self {
         self.inner = self.inner.set_image_ids(input);
         self
     }
     /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    pub fn get_image_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
         self.inner.get_image_ids()
     }
 }

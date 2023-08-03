@@ -10,9 +10,7 @@ pub struct IngestionInputConfiguration {
 }
 impl IngestionInputConfiguration {
     /// <p>The location information for the S3 bucket used for input data for the data ingestion. </p>
-    pub fn s3_input_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IngestionS3InputConfiguration> {
+    pub fn s3_input_configuration(&self) -> ::std::option::Option<&crate::types::IngestionS3InputConfiguration> {
         self.s3_input_configuration.as_ref()
     }
 }
@@ -25,34 +23,23 @@ impl IngestionInputConfiguration {
 
 /// A builder for [`IngestionInputConfiguration`](crate::types::IngestionInputConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngestionInputConfigurationBuilder {
-    pub(crate) s3_input_configuration:
-        ::std::option::Option<crate::types::IngestionS3InputConfiguration>,
+    pub(crate) s3_input_configuration: ::std::option::Option<crate::types::IngestionS3InputConfiguration>,
 }
 impl IngestionInputConfigurationBuilder {
     /// <p>The location information for the S3 bucket used for input data for the data ingestion. </p>
-    pub fn s3_input_configuration(
-        mut self,
-        input: crate::types::IngestionS3InputConfiguration,
-    ) -> Self {
+    pub fn s3_input_configuration(mut self, input: crate::types::IngestionS3InputConfiguration) -> Self {
         self.s3_input_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location information for the S3 bucket used for input data for the data ingestion. </p>
-    pub fn set_s3_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionS3InputConfiguration>,
-    ) -> Self {
+    pub fn set_s3_input_configuration(mut self, input: ::std::option::Option<crate::types::IngestionS3InputConfiguration>) -> Self {
         self.s3_input_configuration = input;
         self
     }
     /// <p>The location information for the S3 bucket used for input data for the data ingestion. </p>
-    pub fn get_s3_input_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngestionS3InputConfiguration> {
+    pub fn get_s3_input_configuration(&self) -> &::std::option::Option<crate::types::IngestionS3InputConfiguration> {
         &self.s3_input_configuration
     }
     /// Consumes the builder and constructs a [`IngestionInputConfiguration`](crate::types::IngestionInputConfiguration).

@@ -77,17 +77,14 @@ impl ListTypeVersionsInput {
 }
 impl ListTypeVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListTypeVersionsInput`](crate::operation::list_type_versions::ListTypeVersionsInput).
-    pub fn builder() -> crate::operation::list_type_versions::builders::ListTypeVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_type_versions::builders::ListTypeVersionsInputBuilder {
         crate::operation::list_type_versions::builders::ListTypeVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTypeVersionsInput`](crate::operation::list_type_versions::ListTypeVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTypeVersionsInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RegistryType>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -195,10 +192,7 @@ impl ListTypeVersionsInputBuilder {
     /// <li> <p> <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
     /// <p>The default is <code>LIVE</code>.</p>
-    pub fn set_deprecated_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeprecatedStatus>,
-    ) -> Self {
+    pub fn set_deprecated_status(mut self, input: ::std::option::Option<crate::types::DeprecatedStatus>) -> Self {
         self.deprecated_status = input;
         self
     }
@@ -232,20 +226,15 @@ impl ListTypeVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTypeVersionsInput`](crate::operation::list_type_versions::ListTypeVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_type_versions::ListTypeVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_type_versions::ListTypeVersionsInput {
-                r#type: self.r#type,
-                type_name: self.type_name,
-                arn: self.arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                deprecated_status: self.deprecated_status,
-                publisher_id: self.publisher_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_type_versions::ListTypeVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_type_versions::ListTypeVersionsInput {
+            r#type: self.r#type,
+            type_name: self.type_name,
+            arn: self.arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            deprecated_status: self.deprecated_status,
+            publisher_id: self.publisher_id,
+        })
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteEarthObservationJobOutput {
 }
 impl DeleteEarthObservationJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEarthObservationJobOutput`](crate::operation::delete_earth_observation_job::DeleteEarthObservationJobOutput).
-    pub fn builder() -> crate::operation::delete_earth_observation_job::builders::DeleteEarthObservationJobOutputBuilder{
+    pub fn builder() -> crate::operation::delete_earth_observation_job::builders::DeleteEarthObservationJobOutputBuilder {
         crate::operation::delete_earth_observation_job::builders::DeleteEarthObservationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEarthObservationJobOutput`](crate::operation::delete_earth_observation_job::DeleteEarthObservationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEarthObservationJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteEarthObservationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteEarthObservationJobOutput`](crate::operation::delete_earth_observation_job::DeleteEarthObservationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_earth_observation_job::DeleteEarthObservationJobOutput {
+    pub fn build(self) -> crate::operation::delete_earth_observation_job::DeleteEarthObservationJobOutput {
         crate::operation::delete_earth_observation_job::DeleteEarthObservationJobOutput {
             _request_id: self._request_id,
         }

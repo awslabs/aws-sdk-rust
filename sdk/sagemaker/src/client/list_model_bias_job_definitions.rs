@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`job_definition_summaries(Option<Vec<MonitoringJobDefinitionSummary>>)`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput::job_definition_summaries): <p>A JSON array in which each element is a summary for a model bias jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListModelBiasJobDefinitionsError>`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsError)
-    pub fn list_model_bias_job_definitions(&self) -> crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder{
+    pub fn list_model_bias_job_definitions(
+        &self,
+    ) -> crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder {
         crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

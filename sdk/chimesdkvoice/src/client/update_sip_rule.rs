@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSipRuleOutput`](crate::operation::update_sip_rule::UpdateSipRuleOutput) with field(s):
     ///   - [`sip_rule(Option<SipRule>)`](crate::operation::update_sip_rule::UpdateSipRuleOutput::sip_rule): <p>The updated SIP rule details.</p>
     /// - On failure, responds with [`SdkError<UpdateSipRuleError>`](crate::operation::update_sip_rule::UpdateSipRuleError)
-    pub fn update_sip_rule(
-        &self,
-    ) -> crate::operation::update_sip_rule::builders::UpdateSipRuleFluentBuilder {
-        crate::operation::update_sip_rule::builders::UpdateSipRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_sip_rule(&self) -> crate::operation::update_sip_rule::builders::UpdateSipRuleFluentBuilder {
+        crate::operation::update_sip_rule::builders::UpdateSipRuleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListComplianceItemsOutput {
 }
 impl ListComplianceItemsOutput {
     /// Creates a new builder-style object to manufacture [`ListComplianceItemsOutput`](crate::operation::list_compliance_items::ListComplianceItemsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_compliance_items::builders::ListComplianceItemsOutputBuilder {
-        crate::operation::list_compliance_items::builders::ListComplianceItemsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_compliance_items::builders::ListComplianceItemsOutputBuilder {
+        crate::operation::list_compliance_items::builders::ListComplianceItemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListComplianceItemsOutput`](crate::operation::list_compliance_items::ListComplianceItemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComplianceItemsOutputBuilder {
-    pub(crate) compliance_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComplianceItem>>,
+    pub(crate) compliance_items: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListComplianceItemsOutputBuilder {
         self
     }
     /// <p>A list of compliance information for the specified resource ID. </p>
-    pub fn set_compliance_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceItem>>,
-    ) -> Self {
+    pub fn set_compliance_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceItem>>) -> Self {
         self.compliance_items = input;
         self
     }
     /// <p>A list of compliance information for the specified resource ID. </p>
-    pub fn get_compliance_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceItem>> {
+    pub fn get_compliance_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceItem>> {
         &self.compliance_items
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>

@@ -10,10 +10,7 @@ impl ListPeeringsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_peerings::ListPeeringsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_peerings::ListPeeringsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_peerings::ListPeeringsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_peerings();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListPeeringsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_peerings::ListPeerings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_peerings::ListPeerings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_peerings::ListPeeringsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListPeeringsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListPeeringsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_peerings::ListPeerings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_peerings::ListPeerings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_peerings::ListPeeringsError>,
     > {
         self.customize_middleware().await
@@ -115,27 +103,16 @@ impl ListPeeringsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_peerings::paginator::ListPeeringsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_peerings::paginator::ListPeeringsPaginator {
-        crate::operation::list_peerings::paginator::ListPeeringsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_peerings::paginator::ListPeeringsPaginator {
+        crate::operation::list_peerings::paginator::ListPeeringsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }
@@ -149,10 +126,7 @@ impl ListPeeringsFluentBuilder {
         self
     }
     /// <p>Returns a list of a peering requests.</p>
-    pub fn set_peering_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PeeringType>,
-    ) -> Self {
+    pub fn set_peering_type(mut self, input: ::std::option::Option<crate::types::PeeringType>) -> Self {
         self.inner = self.inner.set_peering_type(input);
         self
     }
@@ -161,18 +135,12 @@ impl ListPeeringsFluentBuilder {
         self.inner.get_peering_type()
     }
     /// <p>Returns a list edge locations for the </p>
-    pub fn edge_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.edge_location(input.into());
         self
     }
     /// <p>Returns a list edge locations for the </p>
-    pub fn set_edge_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_edge_location(input);
         self
     }

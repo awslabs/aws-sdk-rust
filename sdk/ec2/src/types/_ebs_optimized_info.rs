@@ -58,9 +58,7 @@ impl EbsOptimizedInfo {
 
 /// A builder for [`EbsOptimizedInfo`](crate::types::EbsOptimizedInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EbsOptimizedInfoBuilder {
     pub(crate) baseline_bandwidth_in_mbps: ::std::option::Option<i32>,
     pub(crate) baseline_throughput_in_m_bps: ::std::option::Option<f64>,

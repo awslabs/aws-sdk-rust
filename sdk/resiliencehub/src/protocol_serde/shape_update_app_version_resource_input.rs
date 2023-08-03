@@ -43,10 +43,7 @@ pub fn ser_update_app_version_resource_input(
     if let Some(var_14) = &input.logical_resource_id {
         #[allow(unused_mut)]
         let mut object_15 = object.key("logicalResourceId").start_object();
-        crate::protocol_serde::shape_logical_resource_id::ser_logical_resource_id(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_logical_resource_id::ser_logical_resource_id(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.physical_resource_id {

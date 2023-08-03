@@ -31,32 +31,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fhir_datastore::CreateFHIRDatastoreError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_fhir_datastore::CreateFHIRDatastoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fhir_datastore::CreateFHIRDatastoreError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_fhir_datastore::CreateFHIRDatastoreError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -67,39 +51,25 @@ impl From<crate::operation::create_fhir_datastore::CreateFHIRDatastoreError> for
     fn from(err: crate::operation::create_fhir_datastore::CreateFHIRDatastoreError) -> Self {
         match err {
             crate::operation::create_fhir_datastore::CreateFHIRDatastoreError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_fhir_datastore::CreateFHIRDatastoreError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_fhir_datastore::CreateFHIRDatastoreError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::create_fhir_datastore::CreateFHIRDatastoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_fhir_datastore::CreateFHIRDatastoreError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_fhir_datastore::CreateFHIRDatastoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -111,40 +81,28 @@ impl From<crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError> for
         match err {
             crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -154,40 +112,28 @@ where
 impl From<crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError> for Error {
     fn from(err: crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError) -> Self {
         match err {
-            crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -197,40 +143,28 @@ where
 impl From<crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError> for Error {
     fn from(err: crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError) -> Self {
         match err {
-            crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -240,40 +174,28 @@ where
 impl From<crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError> for Error {
     fn from(err: crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError) -> Self {
         match err {
-            crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_datastores::ListFHIRDatastoresError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_fhir_datastores::ListFHIRDatastoresError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_datastores::ListFHIRDatastoresError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_fhir_datastores::ListFHIRDatastoresError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -290,32 +212,16 @@ impl From<crate::operation::list_fhir_datastores::ListFHIRDatastoresError> for E
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -327,39 +233,25 @@ impl From<crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError> for 
         match err {
             crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_import_jobs::ListFHIRImportJobsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_fhir_import_jobs::ListFHIRImportJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_import_jobs::ListFHIRImportJobsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_fhir_import_jobs::ListFHIRImportJobsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -371,39 +263,25 @@ impl From<crate::operation::list_fhir_import_jobs::ListFHIRImportJobsError> for 
         match err {
             crate::operation::list_fhir_import_jobs::ListFHIRImportJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_fhir_import_jobs::ListFHIRImportJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_fhir_import_jobs::ListFHIRImportJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_fhir_import_jobs::ListFHIRImportJobsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_fhir_import_jobs::ListFHIRImportJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_fhir_import_jobs::ListFHIRImportJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_fhir_import_jobs::ListFHIRImportJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -413,38 +291,24 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fhir_export_job::StartFHIRExportJobError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_fhir_export_job::StartFHIRExportJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fhir_export_job::StartFHIRExportJobError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_fhir_export_job::StartFHIRExportJobError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -456,39 +320,25 @@ impl From<crate::operation::start_fhir_export_job::StartFHIRExportJobError> for 
         match err {
             crate::operation::start_fhir_export_job::StartFHIRExportJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::start_fhir_export_job::StartFHIRExportJobError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::start_fhir_export_job::StartFHIRExportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_fhir_export_job::StartFHIRExportJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::start_fhir_export_job::StartFHIRExportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_fhir_export_job::StartFHIRExportJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_fhir_export_job::StartFHIRExportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fhir_import_job::StartFHIRImportJobError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_fhir_import_job::StartFHIRImportJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fhir_import_job::StartFHIRImportJobError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_fhir_import_job::StartFHIRImportJobError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -500,35 +350,25 @@ impl From<crate::operation::start_fhir_import_job::StartFHIRImportJobError> for 
         match err {
             crate::operation::start_fhir_import_job::StartFHIRImportJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::start_fhir_import_job::StartFHIRImportJobError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::start_fhir_import_job::StartFHIRImportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_fhir_import_job::StartFHIRImportJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::start_fhir_import_job::StartFHIRImportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_fhir_import_job::StartFHIRImportJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_fhir_import_job::StartFHIRImportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_resource::TagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -538,44 +378,22 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -585,15 +403,9 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

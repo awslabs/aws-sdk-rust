@@ -32,9 +32,7 @@ impl DukptEncryptionAttributes {
         self.mode.as_ref()
     }
     /// <p>The key type encrypted using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code> </p>
-    pub fn dukpt_key_derivation_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DukptDerivationType> {
+    pub fn dukpt_key_derivation_type(&self) -> ::std::option::Option<&crate::types::DukptDerivationType> {
         self.dukpt_key_derivation_type.as_ref()
     }
     /// <p>The type of use of DUKPT, which can be incoming data decryption, outgoing data encryption, or both.</p>
@@ -76,18 +74,12 @@ pub struct DukptEncryptionAttributesBuilder {
 }
 impl DukptEncryptionAttributesBuilder {
     /// <p>The unique identifier known as Key Serial Number (KSN) that comes from an encrypting device using DUKPT encryption method. The KSN is derived from the encrypting device unique identifier and an internal transaction counter.</p>
-    pub fn key_serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier known as Key Serial Number (KSN) that comes from an encrypting device using DUKPT encryption method. The KSN is derived from the encrypting device unique identifier and an internal transaction counter.</p>
-    pub fn set_key_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_serial_number = input;
         self
     }
@@ -103,10 +95,7 @@ impl DukptEncryptionAttributesBuilder {
     }
     /// <p>The block cipher mode of operation. Block ciphers are designed to encrypt a block of data of fixed size, for example, 128 bits. The size of the input block is usually same as the size of the encrypted output block, while the key length can be different. A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.</p>
     /// <p>The default is CBC.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DukptEncryptionMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::DukptEncryptionMode>) -> Self {
         self.mode = input;
         self
     }
@@ -121,17 +110,12 @@ impl DukptEncryptionAttributesBuilder {
         self
     }
     /// <p>The key type encrypted using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code> </p>
-    pub fn set_dukpt_key_derivation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DukptDerivationType>,
-    ) -> Self {
+    pub fn set_dukpt_key_derivation_type(mut self, input: ::std::option::Option<crate::types::DukptDerivationType>) -> Self {
         self.dukpt_key_derivation_type = input;
         self
     }
     /// <p>The key type encrypted using DUKPT from a Base Derivation Key (BDK) and Key Serial Number (KSN). This must be less than or equal to the strength of the BDK. For example, you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code> or <code>TDES_2KEY</code> </p>
-    pub fn get_dukpt_key_derivation_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DukptDerivationType> {
+    pub fn get_dukpt_key_derivation_type(&self) -> &::std::option::Option<crate::types::DukptDerivationType> {
         &self.dukpt_key_derivation_type
     }
     /// <p>The type of use of DUKPT, which can be incoming data decryption, outgoing data encryption, or both.</p>
@@ -140,10 +124,7 @@ impl DukptEncryptionAttributesBuilder {
         self
     }
     /// <p>The type of use of DUKPT, which can be incoming data decryption, outgoing data encryption, or both.</p>
-    pub fn set_dukpt_key_variant(
-        mut self,
-        input: ::std::option::Option<crate::types::DukptKeyVariant>,
-    ) -> Self {
+    pub fn set_dukpt_key_variant(mut self, input: ::std::option::Option<crate::types::DukptKeyVariant>) -> Self {
         self.dukpt_key_variant = input;
         self
     }
@@ -152,18 +133,12 @@ impl DukptEncryptionAttributesBuilder {
         &self.dukpt_key_variant
     }
     /// <p>An input to cryptographic primitive used to provide the intial state. Typically the <code>InitializationVector</code> must have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If you don't provide a value, Amazon Web Services Payment Cryptography generates a random value.</p>
-    pub fn initialization_vector(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initialization_vector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initialization_vector = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An input to cryptographic primitive used to provide the intial state. Typically the <code>InitializationVector</code> must have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If you don't provide a value, Amazon Web Services Payment Cryptography generates a random value.</p>
-    pub fn set_initialization_vector(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initialization_vector = input;
         self
     }

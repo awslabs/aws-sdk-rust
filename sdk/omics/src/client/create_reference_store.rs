@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`sse_config(Option<SseConfig>)`](crate::operation::create_reference_store::CreateReferenceStoreOutput::sse_config): <p>The store's SSE settings.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::create_reference_store::CreateReferenceStoreOutput::creation_time): <p>When the store was created.</p>
     /// - On failure, responds with [`SdkError<CreateReferenceStoreError>`](crate::operation::create_reference_store::CreateReferenceStoreError)
-    pub fn create_reference_store(
-        &self,
-    ) -> crate::operation::create_reference_store::builders::CreateReferenceStoreFluentBuilder {
-        crate::operation::create_reference_store::builders::CreateReferenceStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_reference_store(&self) -> crate::operation::create_reference_store::builders::CreateReferenceStoreFluentBuilder {
+        crate::operation::create_reference_store::builders::CreateReferenceStoreFluentBuilder::new(self.handle.clone())
     }
 }

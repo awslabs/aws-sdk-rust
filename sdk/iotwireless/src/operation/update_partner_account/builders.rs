@@ -37,9 +37,7 @@ impl UpdatePartnerAccountFluentBuilder {
         }
     }
     /// Access the UpdatePartnerAccount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_partner_account::builders::UpdatePartnerAccountInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_partner_account::builders::UpdatePartnerAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdatePartnerAccountFluentBuilder {
             crate::operation::update_partner_account::UpdatePartnerAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_partner_account::UpdatePartnerAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_partner_account::UpdatePartnerAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdatePartnerAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdatePartnerAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_partner_account::UpdatePartnerAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_partner_account::UpdatePartnerAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_partner_account::UpdatePartnerAccountError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdatePartnerAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_partner_account::UpdatePartnerAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_partner_account::UpdatePartnerAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_partner_account::UpdatePartnerAccountError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdatePartnerAccountFluentBuilder {
             crate::operation::update_partner_account::UpdatePartnerAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_partner_account::UpdatePartnerAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_partner_account::UpdatePartnerAccountError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl UpdatePartnerAccountFluentBuilder {
         self
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkUpdateAccount>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkUpdateAccount>) -> Self {
         self.inner = self.inner.set_sidewalk(input);
         self
     }
@@ -140,18 +124,12 @@ impl UpdatePartnerAccountFluentBuilder {
         self.inner.get_sidewalk()
     }
     /// <p>The ID of the partner account to update.</p>
-    pub fn partner_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.partner_account_id(input.into());
         self
     }
     /// <p>The ID of the partner account to update.</p>
-    pub fn set_partner_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_partner_account_id(input);
         self
     }
@@ -165,10 +143,7 @@ impl UpdatePartnerAccountFluentBuilder {
         self
     }
     /// <p>The partner type.</p>
-    pub fn set_partner_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PartnerType>,
-    ) -> Self {
+    pub fn set_partner_type(mut self, input: ::std::option::Option<crate::types::PartnerType>) -> Self {
         self.inner = self.inner.set_partner_type(input);
         self
     }

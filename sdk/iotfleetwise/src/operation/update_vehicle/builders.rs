@@ -10,10 +10,7 @@ impl UpdateVehicleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_vehicle::UpdateVehicleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vehicle::UpdateVehicleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vehicle::UpdateVehicleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_vehicle();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateVehicleFluentBuilder {
         }
     }
     /// Access the UpdateVehicle as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_vehicle::builders::UpdateVehicleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_vehicle::builders::UpdateVehicleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateVehicleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl UpdateVehicleFluentBuilder {
         self.inner.get_vehicle_name()
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
-    pub fn model_manifest_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_manifest_arn(input.into());
         self
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
-    pub fn set_model_manifest_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_manifest_arn(input);
         self
     }
@@ -149,18 +135,12 @@ impl UpdateVehicleFluentBuilder {
         self.inner.get_model_manifest_arn()
     }
     /// <p>The ARN of the decoder manifest associated with this vehicle.</p>
-    pub fn decoder_manifest_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn decoder_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.decoder_manifest_arn(input.into());
         self
     }
     /// <p>The ARN of the decoder manifest associated with this vehicle.</p>
-    pub fn set_decoder_manifest_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_decoder_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_decoder_manifest_arn(input);
         self
     }
@@ -174,32 +154,19 @@ impl UpdateVehicleFluentBuilder {
     ///
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
     /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
     /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
     /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
     /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
@@ -210,10 +177,7 @@ impl UpdateVehicleFluentBuilder {
     }
     /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
     /// <p>This is required if attributes are present in the input.</p>
-    pub fn set_attribute_update_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateMode>,
-    ) -> Self {
+    pub fn set_attribute_update_mode(mut self, input: ::std::option::Option<crate::types::UpdateMode>) -> Self {
         self.inner = self.inner.set_attribute_update_mode(input);
         self
     }

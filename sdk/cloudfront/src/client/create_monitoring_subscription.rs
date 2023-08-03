@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`CreateMonitoringSubscriptionOutput`](crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionOutput) with field(s):
     ///   - [`monitoring_subscription(Option<MonitoringSubscription>)`](crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionOutput::monitoring_subscription): <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     /// - On failure, responds with [`SdkError<CreateMonitoringSubscriptionError>`](crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError)
-    pub fn create_monitoring_subscription(&self) -> crate::operation::create_monitoring_subscription::builders::CreateMonitoringSubscriptionFluentBuilder{
+    pub fn create_monitoring_subscription(
+        &self,
+    ) -> crate::operation::create_monitoring_subscription::builders::CreateMonitoringSubscriptionFluentBuilder {
         crate::operation::create_monitoring_subscription::builders::CreateMonitoringSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

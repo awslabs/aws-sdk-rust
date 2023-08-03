@@ -26,7 +26,7 @@ impl AssociateOpsItemRelatedItemInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateOpsItemRelatedItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_ops_item_related_item::builders::AssociateOpsItemRelatedItemInputBuilder,
+    inner: crate::operation::associate_ops_item_related_item::builders::AssociateOpsItemRelatedItemInputBuilder,
 }
 impl AssociateOpsItemRelatedItemFluentBuilder {
     /// Creates a new `AssociateOpsItemRelatedItem`.
@@ -37,7 +37,7 @@ impl AssociateOpsItemRelatedItemFluentBuilder {
         }
     }
     /// Access the AssociateOpsItemRelatedItem as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_ops_item_related_item::builders::AssociateOpsItemRelatedItemInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_ops_item_related_item::builders::AssociateOpsItemRelatedItemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateOpsItemRelatedItemFluentBuilder {
             crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateOpsItemRelatedItemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateOpsItemRelatedItemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateOpsItemRelatedItemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AssociateOpsItemRelatedItemFluentBuilder {
             crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl AssociateOpsItemRelatedItemFluentBuilder {
         self.inner.get_ops_item_id()
     }
     /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
-    pub fn association_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_type(input.into());
         self
     }
     /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
-    pub fn set_association_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_type(input);
         self
     }
@@ -157,20 +140,14 @@ impl AssociateOpsItemRelatedItemFluentBuilder {
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
     /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
     /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
     /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
     /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

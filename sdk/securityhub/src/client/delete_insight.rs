@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteInsightOutput`](crate::operation::delete_insight::DeleteInsightOutput) with field(s):
     ///   - [`insight_arn(Option<String>)`](crate::operation::delete_insight::DeleteInsightOutput::insight_arn): <p>The ARN of the insight that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteInsightError>`](crate::operation::delete_insight::DeleteInsightError)
-    pub fn delete_insight(
-        &self,
-    ) -> crate::operation::delete_insight::builders::DeleteInsightFluentBuilder {
-        crate::operation::delete_insight::builders::DeleteInsightFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_insight(&self) -> crate::operation::delete_insight::builders::DeleteInsightFluentBuilder {
+        crate::operation::delete_insight::builders::DeleteInsightFluentBuilder::new(self.handle.clone())
     }
 }

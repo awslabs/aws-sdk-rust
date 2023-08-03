@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeClustersOutput {
 }
 impl DescribeClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClustersOutput`](crate::operation::describe_clusters::DescribeClustersOutput).
-    pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersOutputBuilder {
         crate::operation::describe_clusters::builders::DescribeClustersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClustersOutput`](crate::operation::describe_clusters::DescribeClustersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClustersOutputBuilder {
     pub(crate) clusters: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
@@ -57,10 +54,7 @@ impl DescribeClustersOutputBuilder {
         self
     }
     /// <p>The list of clusters.</p>
-    pub fn set_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
-    ) -> Self {
+    pub fn set_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>) -> Self {
         self.clusters = input;
         self
     }
@@ -80,10 +74,7 @@ impl DescribeClustersOutputBuilder {
         self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
         self.failures = input;
         self
     }

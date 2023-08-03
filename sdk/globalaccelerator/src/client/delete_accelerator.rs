@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`accelerator_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_accelerator::builders::DeleteAcceleratorFluentBuilder::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::operation::delete_accelerator::builders::DeleteAcceleratorFluentBuilder::set_accelerator_arn): <p>The Amazon Resource Name (ARN) of an accelerator.</p>
     /// - On success, responds with [`DeleteAcceleratorOutput`](crate::operation::delete_accelerator::DeleteAcceleratorOutput)
     /// - On failure, responds with [`SdkError<DeleteAcceleratorError>`](crate::operation::delete_accelerator::DeleteAcceleratorError)
-    pub fn delete_accelerator(
-        &self,
-    ) -> crate::operation::delete_accelerator::builders::DeleteAcceleratorFluentBuilder {
-        crate::operation::delete_accelerator::builders::DeleteAcceleratorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_accelerator(&self) -> crate::operation::delete_accelerator::builders::DeleteAcceleratorFluentBuilder {
+        crate::operation::delete_accelerator::builders::DeleteAcceleratorFluentBuilder::new(self.handle.clone())
     }
 }

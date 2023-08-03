@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`version(i64)`](crate::operation::put_parameter::PutParameterOutput::version): <p>The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system returns the latest parameter value when a parameter is called.</p>
     ///   - [`tier(Option<ParameterTier>)`](crate::operation::put_parameter::PutParameterOutput::tier): <p>The tier assigned to the parameter.</p>
     /// - On failure, responds with [`SdkError<PutParameterError>`](crate::operation::put_parameter::PutParameterError)
-    pub fn put_parameter(
-        &self,
-    ) -> crate::operation::put_parameter::builders::PutParameterFluentBuilder {
-        crate::operation::put_parameter::builders::PutParameterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_parameter(&self) -> crate::operation::put_parameter::builders::PutParameterFluentBuilder {
+        crate::operation::put_parameter::builders::PutParameterFluentBuilder::new(self.handle.clone())
     }
 }

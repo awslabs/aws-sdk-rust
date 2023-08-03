@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeVolumesOutput`](crate::operation::describe_volumes::DescribeVolumesOutput) with field(s):
     ///   - [`volumes(Option<Vec<Volume>>)`](crate::operation::describe_volumes::DescribeVolumesOutput::volumes): <p>An array of volume IDs.</p>
     /// - On failure, responds with [`SdkError<DescribeVolumesError>`](crate::operation::describe_volumes::DescribeVolumesError)
-    pub fn describe_volumes(
-        &self,
-    ) -> crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder {
-        crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_volumes(&self) -> crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder {
+        crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::new(self.handle.clone())
     }
 }

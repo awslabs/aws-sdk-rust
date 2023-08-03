@@ -50,9 +50,7 @@ impl ListFragmentsInput {
 
 /// A builder for [`ListFragmentsInput`](crate::operation::list_fragments::ListFragmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFragmentsInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -123,10 +121,7 @@ impl ListFragmentsInputBuilder {
         self
     }
     /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
-    pub fn set_fragment_selector(
-        mut self,
-        input: ::std::option::Option<crate::types::FragmentSelector>,
-    ) -> Self {
+    pub fn set_fragment_selector(mut self, input: ::std::option::Option<crate::types::FragmentSelector>) -> Self {
         self.fragment_selector = input;
         self
     }
@@ -137,10 +132,7 @@ impl ListFragmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListFragmentsInput`](crate::operation::list_fragments::ListFragmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_fragments::ListFragmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_fragments::ListFragmentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_fragments::ListFragmentsInput {
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,

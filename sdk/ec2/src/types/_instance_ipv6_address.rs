@@ -23,9 +23,7 @@ impl InstanceIpv6Address {
 
 /// A builder for [`InstanceIpv6Address`](crate::types::InstanceIpv6Address).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceIpv6AddressBuilder {
     pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
 }

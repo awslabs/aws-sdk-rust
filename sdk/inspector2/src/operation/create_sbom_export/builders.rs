@@ -10,10 +10,7 @@ impl CreateSbomExportInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_sbom_export::CreateSbomExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sbom_export::CreateSbomExportError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sbom_export::CreateSbomExportError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_sbom_export();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateSbomExportFluentBuilder {
         }
     }
     /// Access the CreateSbomExport as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_sbom_export::builders::CreateSbomExportInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_sbom_export::builders::CreateSbomExportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateSbomExportFluentBuilder {
             crate::operation::create_sbom_export::CreateSbomExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sbom_export::CreateSbomExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sbom_export::CreateSbomExportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateSbomExportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateSbomExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sbom_export::CreateSbomExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sbom_export::CreateSbomExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sbom_export::CreateSbomExportError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateSbomExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sbom_export::CreateSbomExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sbom_export::CreateSbomExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sbom_export::CreateSbomExportError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateSbomExportFluentBuilder {
             crate::operation::create_sbom_export::CreateSbomExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sbom_export::CreateSbomExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sbom_export::CreateSbomExportError>,
     > {
         self.customize_middleware().await
     }
@@ -128,17 +112,12 @@ impl CreateSbomExportFluentBuilder {
         self
     }
     /// <p>The resource filter criteria for the software bill of materials (SBOM) report.</p>
-    pub fn set_resource_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceFilterCriteria>,
-    ) -> Self {
+    pub fn set_resource_filter_criteria(mut self, input: ::std::option::Option<crate::types::ResourceFilterCriteria>) -> Self {
         self.inner = self.inner.set_resource_filter_criteria(input);
         self
     }
     /// <p>The resource filter criteria for the software bill of materials (SBOM) report.</p>
-    pub fn get_resource_filter_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceFilterCriteria> {
+    pub fn get_resource_filter_criteria(&self) -> &::std::option::Option<crate::types::ResourceFilterCriteria> {
         self.inner.get_resource_filter_criteria()
     }
     /// <p>The output format for the software bill of materials (SBOM) report.</p>
@@ -147,10 +126,7 @@ impl CreateSbomExportFluentBuilder {
         self
     }
     /// <p>The output format for the software bill of materials (SBOM) report.</p>
-    pub fn set_report_format(
-        mut self,
-        input: ::std::option::Option<crate::types::SbomReportFormat>,
-    ) -> Self {
+    pub fn set_report_format(mut self, input: ::std::option::Option<crate::types::SbomReportFormat>) -> Self {
         self.inner = self.inner.set_report_format(input);
         self
     }
@@ -164,10 +140,7 @@ impl CreateSbomExportFluentBuilder {
         self
     }
     /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.inner = self.inner.set_s3_destination(input);
         self
     }

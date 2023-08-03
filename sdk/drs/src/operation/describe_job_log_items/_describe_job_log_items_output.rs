@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeJobLogItemsOutput {
 }
 impl DescribeJobLogItemsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobLogItemsOutput`](crate::operation::describe_job_log_items::DescribeJobLogItemsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_job_log_items::builders::DescribeJobLogItemsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_job_log_items::builders::DescribeJobLogItemsOutputBuilder {
         crate::operation::describe_job_log_items::builders::DescribeJobLogItemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeJobLogItemsOutput`](crate::operation::describe_job_log_items::DescribeJobLogItemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobLogItemsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::JobLog>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl DescribeJobLogItemsOutputBuilder {
         self
     }
     /// <p>An array of Job log items.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobLog>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobLog>>) -> Self {
         self.items = input;
         self
     }

@@ -10,10 +10,7 @@ impl EvaluateExpressionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::evaluate_expression::EvaluateExpressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_expression::EvaluateExpressionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_expression::EvaluateExpressionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.evaluate_expression();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl EvaluateExpressionFluentBuilder {
         }
     }
     /// Access the EvaluateExpression as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::evaluate_expression::builders::EvaluateExpressionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::evaluate_expression::builders::EvaluateExpressionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl EvaluateExpressionFluentBuilder {
             crate::operation::evaluate_expression::EvaluateExpression,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_expression::EvaluateExpressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_expression::EvaluateExpressionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl EvaluateExpressionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl EvaluateExpressionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::evaluate_expression::EvaluateExpressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_expression::EvaluateExpressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_expression::EvaluateExpressionError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl EvaluateExpressionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::evaluate_expression::EvaluateExpressionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_expression::EvaluateExpressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_expression::EvaluateExpressionError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl EvaluateExpressionFluentBuilder {
             crate::operation::evaluate_expression::EvaluateExpression,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_expression::EvaluateExpressionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_expression::EvaluateExpressionError>,
     > {
         self.customize_middleware().await
     }

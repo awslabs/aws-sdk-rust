@@ -10,10 +10,7 @@ impl ModifyVpcAttributeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_vpc_attribute::ModifyVpcAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_vpc_attribute::ModifyVpcAttributeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_attribute::ModifyVpcAttributeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_vpc_attribute();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ModifyVpcAttributeFluentBuilder {
         }
     }
     /// Access the ModifyVpcAttribute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ModifyVpcAttributeFluentBuilder {
             crate::operation::modify_vpc_attribute::ModifyVpcAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_vpc_attribute::ModifyVpcAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_attribute::ModifyVpcAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ModifyVpcAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ModifyVpcAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_vpc_attribute::ModifyVpcAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_vpc_attribute::ModifyVpcAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_attribute::ModifyVpcAttributeError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ModifyVpcAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_vpc_attribute::ModifyVpcAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_vpc_attribute::ModifyVpcAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_attribute::ModifyVpcAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ModifyVpcAttributeFluentBuilder {
             crate::operation::modify_vpc_attribute::ModifyVpcAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_vpc_attribute::ModifyVpcAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_attribute::ModifyVpcAttributeError>,
     > {
         self.customize_middleware().await
     }
@@ -130,18 +114,13 @@ impl ModifyVpcAttributeFluentBuilder {
     }
     /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
     /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.</p>
-    pub fn set_enable_dns_hostnames(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_enable_dns_hostnames(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.inner = self.inner.set_enable_dns_hostnames(input);
         self
     }
     /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
     /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.</p>
-    pub fn get_enable_dns_hostnames(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_enable_dns_hostnames(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         self.inner.get_enable_dns_hostnames()
     }
     /// <p>Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled.</p>
@@ -152,18 +131,13 @@ impl ModifyVpcAttributeFluentBuilder {
     }
     /// <p>Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled.</p>
     /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute.</p>
-    pub fn set_enable_dns_support(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_enable_dns_support(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.inner = self.inner.set_enable_dns_support(input);
         self
     }
     /// <p>Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled.</p>
     /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute.</p>
-    pub fn get_enable_dns_support(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_enable_dns_support(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         self.inner.get_enable_dns_support()
     }
     /// <p>The ID of the VPC.</p>
@@ -181,25 +155,17 @@ impl ModifyVpcAttributeFluentBuilder {
         self.inner.get_vpc_id()
     }
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
-    pub fn enable_network_address_usage_metrics(
-        mut self,
-        input: crate::types::AttributeBooleanValue,
-    ) -> Self {
+    pub fn enable_network_address_usage_metrics(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.inner = self.inner.enable_network_address_usage_metrics(input);
         self
     }
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
-    pub fn set_enable_network_address_usage_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_enable_network_address_usage_metrics(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.inner = self.inner.set_enable_network_address_usage_metrics(input);
         self
     }
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
-    pub fn get_enable_network_address_usage_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_enable_network_address_usage_metrics(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         self.inner.get_enable_network_address_usage_metrics()
     }
 }

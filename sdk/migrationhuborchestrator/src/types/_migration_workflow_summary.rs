@@ -86,9 +86,7 @@ impl MigrationWorkflowSummary {
 
 /// A builder for [`MigrationWorkflowSummary`](crate::types::MigrationWorkflowSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MigrationWorkflowSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -145,25 +143,17 @@ impl MigrationWorkflowSummaryBuilder {
         &self.template_id
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn ads_application_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ads_application_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ads_application_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn set_ads_application_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ads_application_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ads_application_configuration_name = input;
         self
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn get_ads_application_configuration_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_ads_application_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.ads_application_configuration_name
     }
     /// <p>The status of the migration workflow.</p>
@@ -172,10 +162,7 @@ impl MigrationWorkflowSummaryBuilder {
         self
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>) -> Self {
         self.status = input;
         self
     }
@@ -189,10 +176,7 @@ impl MigrationWorkflowSummaryBuilder {
         self
     }
     /// <p>The time at which the migration workflow was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -206,10 +190,7 @@ impl MigrationWorkflowSummaryBuilder {
         self
     }
     /// <p>The time at which the migration workflow ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -218,18 +199,12 @@ impl MigrationWorkflowSummaryBuilder {
         &self.end_time
     }
     /// <p>The status message of the migration workflow.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message of the migration workflow.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

@@ -22,34 +22,26 @@ impl CancelCapacityReservationInput {
 }
 impl CancelCapacityReservationInput {
     /// Creates a new builder-style object to manufacture [`CancelCapacityReservationInput`](crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput).
-    pub fn builder() -> crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationInputBuilder{
+    pub fn builder() -> crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationInputBuilder {
         crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelCapacityReservationInput`](crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelCapacityReservationInputBuilder {
     pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CancelCapacityReservationInputBuilder {
     /// <p>The ID of the Capacity Reservation to be cancelled.</p>
-    pub fn capacity_reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation to be cancelled.</p>
-    pub fn set_capacity_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl CancelCapacityReservationInputBuilder {
         crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput {
-                capacity_reservation_id: self.capacity_reservation_id,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput {
+            capacity_reservation_id: self.capacity_reservation_id,
+            dry_run: self.dry_run,
+        })
     }
 }

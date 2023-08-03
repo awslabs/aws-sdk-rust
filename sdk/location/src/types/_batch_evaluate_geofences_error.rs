@@ -37,9 +37,7 @@ impl BatchEvaluateGeofencesError {
 
 /// A builder for [`BatchEvaluateGeofencesError`](crate::types::BatchEvaluateGeofencesError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchEvaluateGeofencesErrorBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -66,10 +64,7 @@ impl BatchEvaluateGeofencesErrorBuilder {
         self
     }
     /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn set_sample_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_sample_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.sample_time = input;
         self
     }

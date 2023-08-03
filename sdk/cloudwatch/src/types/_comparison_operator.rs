@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,15 +69,11 @@ impl ::std::convert::From<&str> for ComparisonOperator {
             "GreaterThanOrEqualToThreshold" => ComparisonOperator::GreaterThanOrEqualToThreshold,
             "GreaterThanThreshold" => ComparisonOperator::GreaterThanThreshold,
             "GreaterThanUpperThreshold" => ComparisonOperator::GreaterThanUpperThreshold,
-            "LessThanLowerOrGreaterThanUpperThreshold" => {
-                ComparisonOperator::LessThanLowerOrGreaterThanUpperThreshold
-            }
+            "LessThanLowerOrGreaterThanUpperThreshold" => ComparisonOperator::LessThanLowerOrGreaterThanUpperThreshold,
             "LessThanLowerThreshold" => ComparisonOperator::LessThanLowerThreshold,
             "LessThanOrEqualToThreshold" => ComparisonOperator::LessThanOrEqualToThreshold,
             "LessThanThreshold" => ComparisonOperator::LessThanThreshold,
-            other => ComparisonOperator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ComparisonOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -101,9 +91,7 @@ impl ComparisonOperator {
             ComparisonOperator::GreaterThanOrEqualToThreshold => "GreaterThanOrEqualToThreshold",
             ComparisonOperator::GreaterThanThreshold => "GreaterThanThreshold",
             ComparisonOperator::GreaterThanUpperThreshold => "GreaterThanUpperThreshold",
-            ComparisonOperator::LessThanLowerOrGreaterThanUpperThreshold => {
-                "LessThanLowerOrGreaterThanUpperThreshold"
-            }
+            ComparisonOperator::LessThanLowerOrGreaterThanUpperThreshold => "LessThanLowerOrGreaterThanUpperThreshold",
             ComparisonOperator::LessThanLowerThreshold => "LessThanLowerThreshold",
             ComparisonOperator::LessThanOrEqualToThreshold => "LessThanOrEqualToThreshold",
             ComparisonOperator::LessThanThreshold => "LessThanThreshold",

@@ -31,9 +31,7 @@ impl AggregatedLogOddsMetric {
 
 /// A builder for [`AggregatedLogOddsMetric`](crate::types::AggregatedLogOddsMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregatedLogOddsMetricBuilder {
     pub(crate) variable_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) aggregated_variables_importance: ::std::option::Option<f32>,
@@ -44,27 +42,19 @@ impl AggregatedLogOddsMetricBuilder {
     /// To override the contents of this collection use [`set_variable_names`](Self::set_variable_names).
     ///
     /// <p> The names of all the variables. </p>
-    pub fn variable_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn variable_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.variable_names.unwrap_or_default();
         v.push(input.into());
         self.variable_names = ::std::option::Option::Some(v);
         self
     }
     /// <p> The names of all the variables. </p>
-    pub fn set_variable_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_variable_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.variable_names = input;
         self
     }
     /// <p> The names of all the variables. </p>
-    pub fn get_variable_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_variable_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.variable_names
     }
     /// <p> The relative importance of the variables in the list to the other event variable. </p>
@@ -73,10 +63,7 @@ impl AggregatedLogOddsMetricBuilder {
         self
     }
     /// <p> The relative importance of the variables in the list to the other event variable. </p>
-    pub fn set_aggregated_variables_importance(
-        mut self,
-        input: ::std::option::Option<f32>,
-    ) -> Self {
+    pub fn set_aggregated_variables_importance(mut self, input: ::std::option::Option<f32>) -> Self {
         self.aggregated_variables_importance = input;
         self
     }

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeEventsForOrganizationOutput {
 }
 impl DescribeEventsForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventsForOrganizationOutput`](crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput).
-    pub fn builder() -> crate::operation::describe_events_for_organization::builders::DescribeEventsForOrganizationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_events_for_organization::builders::DescribeEventsForOrganizationOutputBuilder {
         crate::operation::describe_events_for_organization::builders::DescribeEventsForOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventsForOrganizationOutput`](crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventsForOrganizationOutputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeEventsForOrganizationOutputBuilder {
         self
     }
     /// <p>The events that match the specified filter criteria.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationEvent>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationEvent>>) -> Self {
         self.events = input;
         self
     }
     /// <p>The events that match the specified filter criteria.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationEvent>> {
         &self.events
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
@@ -93,10 +86,7 @@ impl DescribeEventsForOrganizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEventsForOrganizationOutput`](crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput
-    {
+    pub fn build(self) -> crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput {
         crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput {
             events: self.events,
             next_token: self.next_token,

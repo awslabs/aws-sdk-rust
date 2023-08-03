@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListOriginEndpointsOutput {
 }
 impl ListOriginEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListOriginEndpointsOutput`](crate::operation::list_origin_endpoints::ListOriginEndpointsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_origin_endpoints::builders::ListOriginEndpointsOutputBuilder {
-        crate::operation::list_origin_endpoints::builders::ListOriginEndpointsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_origin_endpoints::builders::ListOriginEndpointsOutputBuilder {
+        crate::operation::list_origin_endpoints::builders::ListOriginEndpointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOriginEndpointsOutput`](crate::operation::list_origin_endpoints::ListOriginEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOriginEndpointsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) origin_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::OriginEndpoint>>,
+    pub(crate) origin_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::OriginEndpoint>>,
     _request_id: Option<String>,
 }
 impl ListOriginEndpointsOutputBuilder {
@@ -73,17 +68,12 @@ impl ListOriginEndpointsOutputBuilder {
         self
     }
     /// A list of OriginEndpoint records.
-    pub fn set_origin_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OriginEndpoint>>,
-    ) -> Self {
+    pub fn set_origin_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OriginEndpoint>>) -> Self {
         self.origin_endpoints = input;
         self
     }
     /// A list of OriginEndpoint records.
-    pub fn get_origin_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginEndpoint>> {
+    pub fn get_origin_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginEndpoint>> {
         &self.origin_endpoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

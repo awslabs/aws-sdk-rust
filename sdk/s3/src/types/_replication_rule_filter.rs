@@ -30,9 +30,7 @@ pub enum ReplicationRuleFilter {
 impl ReplicationRuleFilter {
     /// Tries to convert the enum instance into [`And`](crate::types::ReplicationRuleFilter::And), extracting the inner [`ReplicationRuleAndOperator`](crate::types::ReplicationRuleAndOperator).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_and(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ReplicationRuleAndOperator, &Self> {
+    pub fn as_and(&self) -> ::std::result::Result<&crate::types::ReplicationRuleAndOperator, &Self> {
         if let ReplicationRuleFilter::And(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

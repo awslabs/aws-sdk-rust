@@ -5,15 +5,12 @@
 pub struct DescribeEntitiesDetectionJobOutput {
     /// <p>An object that contains the properties associated with an entities detection job.</p>
     #[doc(hidden)]
-    pub entities_detection_job_properties:
-        ::std::option::Option<crate::types::EntitiesDetectionJobProperties>,
+    pub entities_detection_job_properties: ::std::option::Option<crate::types::EntitiesDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeEntitiesDetectionJobOutput {
     /// <p>An object that contains the properties associated with an entities detection job.</p>
-    pub fn entities_detection_job_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EntitiesDetectionJobProperties> {
+    pub fn entities_detection_job_properties(&self) -> ::std::option::Option<&crate::types::EntitiesDetectionJobProperties> {
         self.entities_detection_job_properties.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeEntitiesDetectionJobOutput {
 }
 impl DescribeEntitiesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionJobOutput`](crate::operation::describe_entities_detection_job::DescribeEntitiesDetectionJobOutput).
-    pub fn builder() -> crate::operation::describe_entities_detection_job::builders::DescribeEntitiesDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_entities_detection_job::builders::DescribeEntitiesDetectionJobOutputBuilder {
         crate::operation::describe_entities_detection_job::builders::DescribeEntitiesDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEntitiesDetectionJobOutput`](crate::operation::describe_entities_detection_job::DescribeEntitiesDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEntitiesDetectionJobOutputBuilder {
-    pub(crate) entities_detection_job_properties:
-        ::std::option::Option<crate::types::EntitiesDetectionJobProperties>,
+    pub(crate) entities_detection_job_properties: ::std::option::Option<crate::types::EntitiesDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeEntitiesDetectionJobOutputBuilder {
     /// <p>An object that contains the properties associated with an entities detection job.</p>
-    pub fn entities_detection_job_properties(
-        mut self,
-        input: crate::types::EntitiesDetectionJobProperties,
-    ) -> Self {
+    pub fn entities_detection_job_properties(mut self, input: crate::types::EntitiesDetectionJobProperties) -> Self {
         self.entities_detection_job_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the properties associated with an entities detection job.</p>
-    pub fn set_entities_detection_job_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::EntitiesDetectionJobProperties>,
-    ) -> Self {
+    pub fn set_entities_detection_job_properties(mut self, input: ::std::option::Option<crate::types::EntitiesDetectionJobProperties>) -> Self {
         self.entities_detection_job_properties = input;
         self
     }
     /// <p>An object that contains the properties associated with an entities detection job.</p>
-    pub fn get_entities_detection_job_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::EntitiesDetectionJobProperties> {
+    pub fn get_entities_detection_job_properties(&self) -> &::std::option::Option<crate::types::EntitiesDetectionJobProperties> {
         &self.entities_detection_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +58,7 @@ impl DescribeEntitiesDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEntitiesDetectionJobOutput`](crate::operation::describe_entities_detection_job::DescribeEntitiesDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_entities_detection_job::DescribeEntitiesDetectionJobOutput {
+    pub fn build(self) -> crate::operation::describe_entities_detection_job::DescribeEntitiesDetectionJobOutput {
         crate::operation::describe_entities_detection_job::DescribeEntitiesDetectionJobOutput {
             entities_detection_job_properties: self.entities_detection_job_properties,
             _request_id: self._request_id,

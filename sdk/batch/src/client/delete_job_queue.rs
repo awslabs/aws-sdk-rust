@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`job_queue(impl ::std::convert::Into<String>)`](crate::operation::delete_job_queue::builders::DeleteJobQueueFluentBuilder::job_queue) / [`set_job_queue(Option<String>)`](crate::operation::delete_job_queue::builders::DeleteJobQueueFluentBuilder::set_job_queue): <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
     /// - On success, responds with [`DeleteJobQueueOutput`](crate::operation::delete_job_queue::DeleteJobQueueOutput)
     /// - On failure, responds with [`SdkError<DeleteJobQueueError>`](crate::operation::delete_job_queue::DeleteJobQueueError)
-    pub fn delete_job_queue(
-        &self,
-    ) -> crate::operation::delete_job_queue::builders::DeleteJobQueueFluentBuilder {
-        crate::operation::delete_job_queue::builders::DeleteJobQueueFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_job_queue(&self) -> crate::operation::delete_job_queue::builders::DeleteJobQueueFluentBuilder {
+        crate::operation::delete_job_queue::builders::DeleteJobQueueFluentBuilder::new(self.handle.clone())
     }
 }

@@ -17,8 +17,7 @@ pub struct GetLaunchConfigurationOutput {
     pub launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
     /// <p>Launch configuration Target instance type right sizing method.</p>
     #[doc(hidden)]
-    pub target_instance_type_right_sizing_method:
-        ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
+    pub target_instance_type_right_sizing_method: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy Private IP during Launch Configuration.</p>
     #[doc(hidden)]
     pub copy_private_ip: ::std::option::Option<bool>,
@@ -60,9 +59,7 @@ impl GetLaunchConfigurationOutput {
         self.launch_disposition.as_ref()
     }
     /// <p>Launch configuration Target instance type right sizing method.</p>
-    pub fn target_instance_type_right_sizing_method(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetInstanceTypeRightSizingMethod> {
+    pub fn target_instance_type_right_sizing_method(&self) -> ::std::option::Option<&crate::types::TargetInstanceTypeRightSizingMethod> {
         self.target_instance_type_right_sizing_method.as_ref()
     }
     /// <p>Copy Private IP during Launch Configuration.</p>
@@ -101,25 +98,20 @@ impl ::aws_http::request_id::RequestId for GetLaunchConfigurationOutput {
 }
 impl GetLaunchConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetLaunchConfigurationOutput`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_launch_configuration::builders::GetLaunchConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_launch_configuration::builders::GetLaunchConfigurationOutputBuilder {
         crate::operation::get_launch_configuration::builders::GetLaunchConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLaunchConfigurationOutput`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLaunchConfigurationOutputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_launch_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
-    pub(crate) target_instance_type_right_sizing_method:
-        ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
+    pub(crate) target_instance_type_right_sizing_method: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     pub(crate) copy_private_ip: ::std::option::Option<bool>,
     pub(crate) copy_tags: ::std::option::Option<bool>,
     pub(crate) licensing: ::std::option::Option<crate::types::Licensing>,
@@ -131,18 +123,12 @@ pub struct GetLaunchConfigurationOutputBuilder {
 }
 impl GetLaunchConfigurationOutputBuilder {
     /// <p>Launch configuration Source Server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Launch configuration Source Server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -165,18 +151,12 @@ impl GetLaunchConfigurationOutputBuilder {
         &self.name
     }
     /// <p>Launch configuration EC2 Launch template ID.</p>
-    pub fn ec2_launch_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_launch_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_launch_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Launch configuration EC2 Launch template ID.</p>
-    pub fn set_ec2_launch_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_launch_template_id = input;
         self
     }
@@ -190,24 +170,16 @@ impl GetLaunchConfigurationOutputBuilder {
         self
     }
     /// <p>Launch disposition for launch configuration.</p>
-    pub fn set_launch_disposition(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchDisposition>,
-    ) -> Self {
+    pub fn set_launch_disposition(mut self, input: ::std::option::Option<crate::types::LaunchDisposition>) -> Self {
         self.launch_disposition = input;
         self
     }
     /// <p>Launch disposition for launch configuration.</p>
-    pub fn get_launch_disposition(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchDisposition> {
+    pub fn get_launch_disposition(&self) -> &::std::option::Option<crate::types::LaunchDisposition> {
         &self.launch_disposition
     }
     /// <p>Launch configuration Target instance type right sizing method.</p>
-    pub fn target_instance_type_right_sizing_method(
-        mut self,
-        input: crate::types::TargetInstanceTypeRightSizingMethod,
-    ) -> Self {
+    pub fn target_instance_type_right_sizing_method(mut self, input: crate::types::TargetInstanceTypeRightSizingMethod) -> Self {
         self.target_instance_type_right_sizing_method = ::std::option::Option::Some(input);
         self
     }
@@ -220,9 +192,7 @@ impl GetLaunchConfigurationOutputBuilder {
         self
     }
     /// <p>Launch configuration Target instance type right sizing method.</p>
-    pub fn get_target_instance_type_right_sizing_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
+    pub fn get_target_instance_type_right_sizing_method(&self) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
         &self.target_instance_type_right_sizing_method
     }
     /// <p>Copy Private IP during Launch Configuration.</p>
@@ -287,17 +257,12 @@ impl GetLaunchConfigurationOutputBuilder {
         self
     }
     /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
-    pub fn set_post_launch_actions(
-        mut self,
-        input: ::std::option::Option<crate::types::PostLaunchActions>,
-    ) -> Self {
+    pub fn set_post_launch_actions(mut self, input: ::std::option::Option<crate::types::PostLaunchActions>) -> Self {
         self.post_launch_actions = input;
         self
     }
     /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
-    pub fn get_post_launch_actions(
-        &self,
-    ) -> &::std::option::Option<crate::types::PostLaunchActions> {
+    pub fn get_post_launch_actions(&self) -> &::std::option::Option<crate::types::PostLaunchActions> {
         &self.post_launch_actions
     }
     /// <p>Enable map auto tagging.</p>
@@ -315,18 +280,12 @@ impl GetLaunchConfigurationOutputBuilder {
         &self.enable_map_auto_tagging
     }
     /// <p>Map auto tagging MPE ID.</p>
-    pub fn map_auto_tagging_mpe_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn map_auto_tagging_mpe_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_auto_tagging_mpe_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Map auto tagging MPE ID.</p>
-    pub fn set_map_auto_tagging_mpe_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_map_auto_tagging_mpe_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.map_auto_tagging_mpe_id = input;
         self
     }

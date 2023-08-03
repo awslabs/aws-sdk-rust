@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`status(Option<MacieStatus>)`](crate::operation::get_macie_session::GetMacieSessionOutput::status): <p>The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_macie_session::GetMacieSessionOutput::updated_at): <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
     /// - On failure, responds with [`SdkError<GetMacieSessionError>`](crate::operation::get_macie_session::GetMacieSessionError)
-    pub fn get_macie_session(
-        &self,
-    ) -> crate::operation::get_macie_session::builders::GetMacieSessionFluentBuilder {
-        crate::operation::get_macie_session::builders::GetMacieSessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_macie_session(&self) -> crate::operation::get_macie_session::builders::GetMacieSessionFluentBuilder {
+        crate::operation::get_macie_session::builders::GetMacieSessionFluentBuilder::new(self.handle.clone())
     }
 }

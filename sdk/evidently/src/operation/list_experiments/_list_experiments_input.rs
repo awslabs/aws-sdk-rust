@@ -43,9 +43,7 @@ impl ListExperimentsInput {
 
 /// A builder for [`ListExperimentsInput`](crate::operation::list_experiments::ListExperimentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExperimentsInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -101,10 +99,7 @@ impl ListExperimentsInputBuilder {
         self
     }
     /// <p>Use this optional parameter to limit the returned results to only the experiments with the status that you specify here.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExperimentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -115,10 +110,7 @@ impl ListExperimentsInputBuilder {
     /// Consumes the builder and constructs a [`ListExperimentsInput`](crate::operation::list_experiments::ListExperimentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_experiments::ListExperimentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_experiments::ListExperimentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_experiments::ListExperimentsInput {
             project: self.project,
             max_results: self.max_results,

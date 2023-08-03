@@ -10,10 +10,7 @@ impl CreateUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_user::CreateUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user::CreateUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_user();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl CreateUserFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_user::CreateUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_user::CreateUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl CreateUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl CreateUserFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_user::CreateUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_user::CreateUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
     > {
         self.customize_middleware().await
@@ -147,10 +135,7 @@ impl CreateUserFluentBuilder {
         self
     }
     /// <p>The information about the identity of the user.</p>
-    pub fn set_identity_info(
-        mut self,
-        input: ::std::option::Option<crate::types::UserIdentityInfo>,
-    ) -> Self {
+    pub fn set_identity_info(mut self, input: ::std::option::Option<crate::types::UserIdentityInfo>) -> Self {
         self.inner = self.inner.set_identity_info(input);
         self
     }
@@ -164,10 +149,7 @@ impl CreateUserFluentBuilder {
         self
     }
     /// <p>The phone settings for the user.</p>
-    pub fn set_phone_config(
-        mut self,
-        input: ::std::option::Option<crate::types::UserPhoneConfig>,
-    ) -> Self {
+    pub fn set_phone_config(mut self, input: ::std::option::Option<crate::types::UserPhoneConfig>) -> Self {
         self.inner = self.inner.set_phone_config(input);
         self
     }
@@ -177,19 +159,13 @@ impl CreateUserFluentBuilder {
     }
     /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p>
     /// <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p>
-    pub fn directory_user_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_user_id(input.into());
         self
     }
     /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p>
     /// <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p>
-    pub fn set_directory_user_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_user_id(input);
         self
     }
@@ -203,40 +179,26 @@ impl CreateUserFluentBuilder {
     /// To override the contents of this collection use [`set_security_profile_ids`](Self::set_security_profile_ids).
     ///
     /// <p>The identifier of the security profile for the user.</p>
-    pub fn security_profile_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_ids(input.into());
         self
     }
     /// <p>The identifier of the security profile for the user.</p>
-    pub fn set_security_profile_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_profile_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_profile_ids(input);
         self
     }
     /// <p>The identifier of the security profile for the user.</p>
-    pub fn get_security_profile_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_profile_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_profile_ids()
     }
     /// <p>The identifier of the routing profile for the user.</p>
-    pub fn routing_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.routing_profile_id(input.into());
         self
     }
     /// <p>The identifier of the routing profile for the user.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_routing_profile_id(input);
         self
     }
@@ -245,18 +207,12 @@ impl CreateUserFluentBuilder {
         self.inner.get_routing_profile_id()
     }
     /// <p>The identifier of the hierarchy group for the user.</p>
-    pub fn hierarchy_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hierarchy_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hierarchy_group_id(input.into());
         self
     }
     /// <p>The identifier of the hierarchy group for the user.</p>
-    pub fn set_hierarchy_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hierarchy_group_id(input);
         self
     }
@@ -283,30 +239,17 @@ impl CreateUserFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

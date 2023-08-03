@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAssociationStatusOutput`](crate::operation::update_association_status::UpdateAssociationStatusOutput) with field(s):
     ///   - [`association_description(Option<AssociationDescription>)`](crate::operation::update_association_status::UpdateAssociationStatusOutput::association_description): <p>Information about the association.</p>
     /// - On failure, responds with [`SdkError<UpdateAssociationStatusError>`](crate::operation::update_association_status::UpdateAssociationStatusError)
-    pub fn update_association_status(
-        &self,
-    ) -> crate::operation::update_association_status::builders::UpdateAssociationStatusFluentBuilder
-    {
+    pub fn update_association_status(&self) -> crate::operation::update_association_status::builders::UpdateAssociationStatusFluentBuilder {
         crate::operation::update_association_status::builders::UpdateAssociationStatusFluentBuilder::new(self.handle.clone())
     }
 }

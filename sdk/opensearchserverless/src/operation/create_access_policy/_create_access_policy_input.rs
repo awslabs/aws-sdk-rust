@@ -43,17 +43,14 @@ impl CreateAccessPolicyInput {
 }
 impl CreateAccessPolicyInput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPolicyInput`](crate::operation::create_access_policy::CreateAccessPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::create_access_policy::builders::CreateAccessPolicyInputBuilder {
+    pub fn builder() -> crate::operation::create_access_policy::builders::CreateAccessPolicyInputBuilder {
         crate::operation::create_access_policy::builders::CreateAccessPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessPolicyInput`](crate::operation::create_access_policy::CreateAccessPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessPolicyInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -68,10 +65,7 @@ impl CreateAccessPolicyInputBuilder {
         self
     }
     /// <p>The type of policy.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessPolicyType>) -> Self {
         self.r#type = input;
         self
     }
@@ -138,18 +132,13 @@ impl CreateAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateAccessPolicyInput`](crate::operation::create_access_policy::CreateAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_access_policy::CreateAccessPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_access_policy::CreateAccessPolicyInput {
-                r#type: self.r#type,
-                name: self.name,
-                description: self.description,
-                policy: self.policy,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_access_policy::CreateAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_access_policy::CreateAccessPolicyInput {
+            r#type: self.r#type,
+            name: self.name,
+            description: self.description,
+            policy: self.policy,
+            client_token: self.client_token,
+        })
     }
 }

@@ -18,9 +18,7 @@ pub struct InputSecurityGroup {
     pub state: ::std::option::Option<crate::types::InputSecurityGroupState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// Whitelist rules and their sync status
     #[doc(hidden)]
     pub whitelist_rules: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRule>>,
@@ -43,11 +41,7 @@ impl InputSecurityGroup {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// Whitelist rules and their sync status
@@ -64,19 +58,14 @@ impl InputSecurityGroup {
 
 /// A builder for [`InputSecurityGroup`](crate::types::InputSecurityGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputSecurityGroupBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) state: ::std::option::Option<crate::types::InputSecurityGroupState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) whitelist_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRule>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) whitelist_rules: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRule>>,
 }
 impl InputSecurityGroupBuilder {
     /// Unique ARN of Input Security Group
@@ -119,10 +108,7 @@ impl InputSecurityGroupBuilder {
         self
     }
     /// The list of inputs currently using this Input Security Group.
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
@@ -136,10 +122,7 @@ impl InputSecurityGroupBuilder {
         self
     }
     /// The current state of the Input Security Group.
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InputSecurityGroupState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::InputSecurityGroupState>) -> Self {
         self.state = input;
         self
     }
@@ -152,32 +135,19 @@ impl InputSecurityGroupBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `whitelist_rules`.
@@ -192,17 +162,12 @@ impl InputSecurityGroupBuilder {
         self
     }
     /// Whitelist rules and their sync status
-    pub fn set_whitelist_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRule>>,
-    ) -> Self {
+    pub fn set_whitelist_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRule>>) -> Self {
         self.whitelist_rules = input;
         self
     }
     /// Whitelist rules and their sync status
-    pub fn get_whitelist_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRule>> {
+    pub fn get_whitelist_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRule>> {
         &self.whitelist_rules
     }
     /// Consumes the builder and constructs a [`InputSecurityGroup`](crate::types::InputSecurityGroup).

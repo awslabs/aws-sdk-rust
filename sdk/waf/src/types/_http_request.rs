@@ -70,9 +70,7 @@ impl HttpRequest {
 
 /// A builder for [`HttpRequest`](crate::types::HttpRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpRequestBuilder {
     pub(crate) client_ip: ::std::option::Option<::std::string::String>,
     pub(crate) country: ::std::option::Option<::std::string::String>,
@@ -176,10 +174,7 @@ impl HttpRequestBuilder {
         self
     }
     /// <p>A complex type that contains two values for each header in the sampled web request: the name of the header and the value of the header.</p>
-    pub fn set_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>>,
-    ) -> Self {
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>>) -> Self {
         self.headers = input;
         self
     }

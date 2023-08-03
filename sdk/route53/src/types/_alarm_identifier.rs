@@ -44,9 +44,7 @@ impl AlarmIdentifier {
 
 /// A builder for [`AlarmIdentifier`](crate::types::AlarmIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmIdentifierBuilder {
     pub(crate) region: ::std::option::Option<crate::types::CloudWatchRegion>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl AlarmIdentifierBuilder {
     }
     /// <p>For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.</p>
     /// <p>For the current list of CloudWatch regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/cw_region.html">Amazon CloudWatch endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_region(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchRegion>,
-    ) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<crate::types::CloudWatchRegion>) -> Self {
         self.region = input;
         self
     }

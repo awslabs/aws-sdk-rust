@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeScalingParametersOutput`](crate::operation::describe_scaling_parameters::DescribeScalingParametersOutput) with field(s):
     ///   - [`scaling_parameters(Option<ScalingParametersStatus>)`](crate::operation::describe_scaling_parameters::DescribeScalingParametersOutput::scaling_parameters): <p>The status and configuration of a search domain's scaling parameters. </p>
     /// - On failure, responds with [`SdkError<DescribeScalingParametersError>`](crate::operation::describe_scaling_parameters::DescribeScalingParametersError)
-    pub fn describe_scaling_parameters(&self) -> crate::operation::describe_scaling_parameters::builders::DescribeScalingParametersFluentBuilder{
+    pub fn describe_scaling_parameters(&self) -> crate::operation::describe_scaling_parameters::builders::DescribeScalingParametersFluentBuilder {
         crate::operation::describe_scaling_parameters::builders::DescribeScalingParametersFluentBuilder::new(self.handle.clone())
     }
 }

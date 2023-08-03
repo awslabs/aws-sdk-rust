@@ -56,16 +56,14 @@ impl ::aws_http::request_id::RequestId for GetMaintenanceWindowExecutionOutput {
 }
 impl GetMaintenanceWindowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowExecutionOutput`](crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionOutput).
-    pub fn builder() -> crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionOutputBuilder{
+    pub fn builder() -> crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionOutputBuilder {
         crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMaintenanceWindowExecutionOutput`](crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMaintenanceWindowExecutionOutputBuilder {
     pub(crate) window_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -77,18 +75,12 @@ pub struct GetMaintenanceWindowExecutionOutputBuilder {
 }
 impl GetMaintenanceWindowExecutionOutputBuilder {
     /// <p>The ID of the maintenance window execution.</p>
-    pub fn window_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the maintenance window execution.</p>
-    pub fn set_window_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_execution_id = input;
         self
     }
@@ -108,10 +100,7 @@ impl GetMaintenanceWindowExecutionOutputBuilder {
         self
     }
     /// <p>The ID of the task executions from the maintenance window execution.</p>
-    pub fn set_task_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.task_ids = input;
         self
     }
@@ -125,32 +114,21 @@ impl GetMaintenanceWindowExecutionOutputBuilder {
         self
     }
     /// <p>The status of the maintenance window execution.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the maintenance window execution.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
         &self.status
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
-    pub fn status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_details = input;
         self
     }
@@ -164,10 +142,7 @@ impl GetMaintenanceWindowExecutionOutputBuilder {
         self
     }
     /// <p>The time the maintenance window started running.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -181,10 +156,7 @@ impl GetMaintenanceWindowExecutionOutputBuilder {
         self
     }
     /// <p>The time the maintenance window finished running.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -202,10 +174,7 @@ impl GetMaintenanceWindowExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMaintenanceWindowExecutionOutput`](crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionOutput
-    {
+    pub fn build(self) -> crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionOutput {
         crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionOutput {
             window_execution_id: self.window_execution_id,
             task_ids: self.task_ids,

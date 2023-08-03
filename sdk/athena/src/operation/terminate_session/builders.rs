@@ -10,10 +10,7 @@ impl TerminateSessionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::terminate_session::TerminateSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_session::TerminateSessionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_session::TerminateSessionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.terminate_session();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl TerminateSessionFluentBuilder {
         }
     }
     /// Access the TerminateSession as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::terminate_session::builders::TerminateSessionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::terminate_session::builders::TerminateSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl TerminateSessionFluentBuilder {
             crate::operation::terminate_session::TerminateSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_session::TerminateSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_session::TerminateSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl TerminateSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl TerminateSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_session::TerminateSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_session::TerminateSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_session::TerminateSessionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl TerminateSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_session::TerminateSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_session::TerminateSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_session::TerminateSessionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl TerminateSessionFluentBuilder {
             crate::operation::terminate_session::TerminateSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_session::TerminateSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_session::TerminateSessionError>,
     > {
         self.customize_middleware().await
     }

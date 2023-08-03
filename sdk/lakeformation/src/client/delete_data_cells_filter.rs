@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_data_cells_filter::builders::DeleteDataCellsFilterFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_data_cells_filter::builders::DeleteDataCellsFilterFluentBuilder::set_name): <p>The name given by the user to the data filter cell.</p>
     /// - On success, responds with [`DeleteDataCellsFilterOutput`](crate::operation::delete_data_cells_filter::DeleteDataCellsFilterOutput)
     /// - On failure, responds with [`SdkError<DeleteDataCellsFilterError>`](crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError)
-    pub fn delete_data_cells_filter(
-        &self,
-    ) -> crate::operation::delete_data_cells_filter::builders::DeleteDataCellsFilterFluentBuilder
-    {
+    pub fn delete_data_cells_filter(&self) -> crate::operation::delete_data_cells_filter::builders::DeleteDataCellsFilterFluentBuilder {
         crate::operation::delete_data_cells_filter::builders::DeleteDataCellsFilterFluentBuilder::new(self.handle.clone())
     }
 }

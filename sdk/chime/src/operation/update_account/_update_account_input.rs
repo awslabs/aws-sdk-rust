@@ -36,9 +36,7 @@ impl UpdateAccountInput {
 
 /// A builder for [`UpdateAccountInput`](crate::operation::update_account::UpdateAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -79,10 +77,7 @@ impl UpdateAccountInputBuilder {
         self
     }
     /// <p>The default license applied when you add users to an Amazon Chime account.</p>
-    pub fn set_default_license(
-        mut self,
-        input: ::std::option::Option<crate::types::License>,
-    ) -> Self {
+    pub fn set_default_license(mut self, input: ::std::option::Option<crate::types::License>) -> Self {
         self.default_license = input;
         self
     }
@@ -93,10 +88,7 @@ impl UpdateAccountInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAccountInput`](crate::operation::update_account::UpdateAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_account::UpdateAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_account::UpdateAccountInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_account::UpdateAccountInput {
             account_id: self.account_id,
             name: self.name,

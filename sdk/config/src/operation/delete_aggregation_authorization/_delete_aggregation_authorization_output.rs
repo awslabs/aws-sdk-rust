@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAggregationAuthorizationOutput 
 }
 impl DeleteAggregationAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAggregationAuthorizationOutput`](crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationOutput).
-    pub fn builder() -> crate::operation::delete_aggregation_authorization::builders::DeleteAggregationAuthorizationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_aggregation_authorization::builders::DeleteAggregationAuthorizationOutputBuilder {
         crate::operation::delete_aggregation_authorization::builders::DeleteAggregationAuthorizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAggregationAuthorizationOutput`](crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAggregationAuthorizationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteAggregationAuthorizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAggregationAuthorizationOutput`](crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationOutput {
         crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationOutput {
             _request_id: self._request_id,
         }

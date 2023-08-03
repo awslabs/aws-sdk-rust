@@ -30,9 +30,7 @@ impl TableCellConditionalFormatting {
 
 /// A builder for [`TableCellConditionalFormatting`](crate::types::TableCellConditionalFormatting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableCellConditionalFormattingBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) text_format: ::std::option::Option<crate::types::TextConditionalFormat>,
@@ -58,10 +56,7 @@ impl TableCellConditionalFormattingBuilder {
         self
     }
     /// <p>The text format of the cell for conditional formatting.</p>
-    pub fn set_text_format(
-        mut self,
-        input: ::std::option::Option<crate::types::TextConditionalFormat>,
-    ) -> Self {
+    pub fn set_text_format(mut self, input: ::std::option::Option<crate::types::TextConditionalFormat>) -> Self {
         self.text_format = input;
         self
     }

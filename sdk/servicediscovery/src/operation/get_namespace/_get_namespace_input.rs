@@ -22,9 +22,7 @@ impl GetNamespaceInput {
 
 /// A builder for [`GetNamespaceInput`](crate::operation::get_namespace::GetNamespaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNamespaceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetNamespaceInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetNamespaceInput`](crate::operation::get_namespace::GetNamespaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_namespace::GetNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_namespace::GetNamespaceInput {
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_namespace::GetNamespaceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_namespace::GetNamespaceInput { id: self.id })
     }
 }

@@ -51,9 +51,7 @@ impl FindingMetricsValuePerSeverity {
 
 /// A builder for [`FindingMetricsValuePerSeverity`](crate::types::FindingMetricsValuePerSeverity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingMetricsValuePerSeverityBuilder {
     pub(crate) info: ::std::option::Option<f64>,
     pub(crate) low: ::std::option::Option<f64>,

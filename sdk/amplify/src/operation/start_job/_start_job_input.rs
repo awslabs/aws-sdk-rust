@@ -72,9 +72,7 @@ impl StartJobInput {
 
 /// A builder for [`StartJobInput`](crate::operation::start_job::StartJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartJobInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,
@@ -171,18 +169,12 @@ impl StartJobInputBuilder {
         &self.commit_id
     }
     /// <p> The commit message from a third-party repository provider for the job. </p>
-    pub fn commit_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn commit_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The commit message from a third-party repository provider for the job. </p>
-    pub fn set_commit_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_message = input;
         self
     }
@@ -196,10 +188,7 @@ impl StartJobInputBuilder {
         self
     }
     /// <p> The commit date and time for the job. </p>
-    pub fn set_commit_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_commit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.commit_time = input;
         self
     }
@@ -208,12 +197,7 @@ impl StartJobInputBuilder {
         &self.commit_time
     }
     /// Consumes the builder and constructs a [`StartJobInput`](crate::operation::start_job::StartJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_job::StartJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_job::StartJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_job::StartJobInput {
             app_id: self.app_id,
             branch_name: self.branch_name,

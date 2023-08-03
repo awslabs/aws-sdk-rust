@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDbSnapshotOutput`](crate::operation::create_db_snapshot::CreateDbSnapshotOutput) with field(s):
     ///   - [`db_snapshot(Option<DbSnapshot>)`](crate::operation::create_db_snapshot::CreateDbSnapshotOutput::db_snapshot): <p>Contains the details of an Amazon RDS DB snapshot.</p>  <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
     /// - On failure, responds with [`SdkError<CreateDBSnapshotError>`](crate::operation::create_db_snapshot::CreateDBSnapshotError)
-    pub fn create_db_snapshot(
-        &self,
-    ) -> crate::operation::create_db_snapshot::builders::CreateDBSnapshotFluentBuilder {
-        crate::operation::create_db_snapshot::builders::CreateDBSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_db_snapshot(&self) -> crate::operation::create_db_snapshot::builders::CreateDBSnapshotFluentBuilder {
+        crate::operation::create_db_snapshot::builders::CreateDBSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

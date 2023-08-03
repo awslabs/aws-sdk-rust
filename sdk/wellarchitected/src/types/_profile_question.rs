@@ -65,15 +65,12 @@ impl ProfileQuestion {
 
 /// A builder for [`ProfileQuestion`](crate::types::ProfileQuestion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfileQuestionBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) question_title: ::std::option::Option<::std::string::String>,
     pub(crate) question_description: ::std::option::Option<::std::string::String>,
-    pub(crate) question_choices:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileChoice>>,
+    pub(crate) question_choices: ::std::option::Option<::std::vec::Vec<crate::types::ProfileChoice>>,
     pub(crate) selected_choice_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) min_selected_choices: ::std::option::Option<i32>,
     pub(crate) max_selected_choices: ::std::option::Option<i32>,
@@ -94,18 +91,12 @@ impl ProfileQuestionBuilder {
         &self.question_id
     }
     /// <p>The title of the question.</p>
-    pub fn question_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn question_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the question.</p>
-    pub fn set_question_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_question_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_title = input;
         self
     }
@@ -114,18 +105,12 @@ impl ProfileQuestionBuilder {
         &self.question_title
     }
     /// <p>The description of the question.</p>
-    pub fn question_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn question_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the question.</p>
-    pub fn set_question_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_question_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_description = input;
         self
     }
@@ -145,17 +130,12 @@ impl ProfileQuestionBuilder {
         self
     }
     /// <p>The question choices.</p>
-    pub fn set_question_choices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileChoice>>,
-    ) -> Self {
+    pub fn set_question_choices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileChoice>>) -> Self {
         self.question_choices = input;
         self
     }
     /// <p>The question choices.</p>
-    pub fn get_question_choices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileChoice>> {
+    pub fn get_question_choices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileChoice>> {
         &self.question_choices
     }
     /// Appends an item to `selected_choice_ids`.
@@ -163,27 +143,19 @@ impl ProfileQuestionBuilder {
     /// To override the contents of this collection use [`set_selected_choice_ids`](Self::set_selected_choice_ids).
     ///
     /// <p>The selected choices.</p>
-    pub fn selected_choice_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selected_choice_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.selected_choice_ids.unwrap_or_default();
         v.push(input.into());
         self.selected_choice_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The selected choices.</p>
-    pub fn set_selected_choice_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_selected_choice_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.selected_choice_ids = input;
         self
     }
     /// <p>The selected choices.</p>
-    pub fn get_selected_choice_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_choice_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.selected_choice_ids
     }
     /// <p>The minimum number of selected choices.</p>

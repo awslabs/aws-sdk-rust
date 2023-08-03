@@ -6,8 +6,7 @@
 pub struct SnapshotAnonymousUserRedacted {
     /// <p>The tag keys for the <code>RowLevelPermissionTags</code>.</p>
     #[doc(hidden)]
-    pub row_level_permission_tag_keys:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub row_level_permission_tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SnapshotAnonymousUserRedacted {
     /// <p>The tag keys for the <code>RowLevelPermissionTags</code>.</p>
@@ -24,12 +23,9 @@ impl SnapshotAnonymousUserRedacted {
 
 /// A builder for [`SnapshotAnonymousUserRedacted`](crate::types::SnapshotAnonymousUserRedacted).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotAnonymousUserRedactedBuilder {
-    pub(crate) row_level_permission_tag_keys:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) row_level_permission_tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SnapshotAnonymousUserRedactedBuilder {
     /// Appends an item to `row_level_permission_tag_keys`.
@@ -37,27 +33,19 @@ impl SnapshotAnonymousUserRedactedBuilder {
     /// To override the contents of this collection use [`set_row_level_permission_tag_keys`](Self::set_row_level_permission_tag_keys).
     ///
     /// <p>The tag keys for the <code>RowLevelPermissionTags</code>.</p>
-    pub fn row_level_permission_tag_keys(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn row_level_permission_tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.row_level_permission_tag_keys.unwrap_or_default();
         v.push(input.into());
         self.row_level_permission_tag_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tag keys for the <code>RowLevelPermissionTags</code>.</p>
-    pub fn set_row_level_permission_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_row_level_permission_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.row_level_permission_tag_keys = input;
         self
     }
     /// <p>The tag keys for the <code>RowLevelPermissionTags</code>.</p>
-    pub fn get_row_level_permission_tag_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_row_level_permission_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.row_level_permission_tag_keys
     }
     /// Consumes the builder and constructs a [`SnapshotAnonymousUserRedacted`](crate::types::SnapshotAnonymousUserRedacted).

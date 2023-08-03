@@ -5,16 +5,16 @@ pub use crate::operation::update_application_layer_automatic_response::_update_a
 
 impl UpdateApplicationLayerAutomaticResponseInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_application_layer_automatic_response();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateApplicationLayerAutomaticResponseInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationLayerAutomaticResponseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseInputBuilder,
+    inner: crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseInputBuilder,
 }
 impl UpdateApplicationLayerAutomaticResponseFluentBuilder {
     /// Creates a new `UpdateApplicationLayerAutomaticResponse`.
@@ -37,15 +37,24 @@ impl UpdateApplicationLayerAutomaticResponseFluentBuilder {
         }
     }
     /// Access the UpdateApplicationLayerAutomaticResponse as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponse, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponse,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl UpdateApplicationLayerAutomaticResponseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl UpdateApplicationLayerAutomaticResponseFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponse, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponse,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN (Amazon Resource Name) of the resource.</p>
@@ -114,10 +139,7 @@ impl UpdateApplicationLayerAutomaticResponseFluentBuilder {
         self
     }
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::ResponseAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }

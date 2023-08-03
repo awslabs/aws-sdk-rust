@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_ip_sets::ListIpSetsOutput::next_marker): <p>To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
     ///   - [`ip_sets(Option<Vec<IpSetSummary>>)`](crate::operation::list_ip_sets::ListIpSetsOutput::ip_sets): <p>An array of <code>IPSetSummary</code> objects.</p>
     /// - On failure, responds with [`SdkError<ListIPSetsError>`](crate::operation::list_ip_sets::ListIPSetsError)
-    pub fn list_ip_sets(
-        &self,
-    ) -> crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder {
+    pub fn list_ip_sets(&self) -> crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder {
         crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder::new(self.handle.clone())
     }
 }

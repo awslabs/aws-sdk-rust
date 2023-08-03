@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteOriginEndpointPolicyOutput {
 }
 impl DeleteOriginEndpointPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOriginEndpointPolicyOutput`](crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyOutput).
-    pub fn builder() -> crate::operation::delete_origin_endpoint_policy::builders::DeleteOriginEndpointPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::delete_origin_endpoint_policy::builders::DeleteOriginEndpointPolicyOutputBuilder {
         crate::operation::delete_origin_endpoint_policy::builders::DeleteOriginEndpointPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOriginEndpointPolicyOutput`](crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOriginEndpointPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteOriginEndpointPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteOriginEndpointPolicyOutput`](crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyOutput {
+    pub fn build(self) -> crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyOutput {
         crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyOutput {
             _request_id: self._request_id,
         }

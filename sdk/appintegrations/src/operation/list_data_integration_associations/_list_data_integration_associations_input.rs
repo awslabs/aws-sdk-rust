@@ -29,16 +29,14 @@ impl ListDataIntegrationAssociationsInput {
 }
 impl ListDataIntegrationAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListDataIntegrationAssociationsInput`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsInput).
-    pub fn builder() -> crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsInputBuilder {
         crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataIntegrationAssociationsInput`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataIntegrationAssociationsInputBuilder {
     pub(crate) data_integration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListDataIntegrationAssociationsInputBuilder {
 }
 impl ListDataIntegrationAssociationsInputBuilder {
     /// <p>A unique identifier for the DataIntegration.</p>
-    pub fn data_integration_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_integration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_integration_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the DataIntegration.</p>
-    pub fn set_data_integration_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_integration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_integration_identifier = input;
         self
     }
@@ -102,13 +94,10 @@ impl ListDataIntegrationAssociationsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsInput {
-                data_integration_identifier: self.data_integration_identifier
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                data_integration_identifier: self.data_integration_identifier,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

@@ -27,8 +27,7 @@ impl DeleteVaultAccessPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVaultAccessPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_vault_access_policy::builders::DeleteVaultAccessPolicyInputBuilder,
+    inner: crate::operation::delete_vault_access_policy::builders::DeleteVaultAccessPolicyInputBuilder,
 }
 impl DeleteVaultAccessPolicyFluentBuilder {
     /// Creates a new `DeleteVaultAccessPolicy`.
@@ -39,10 +38,7 @@ impl DeleteVaultAccessPolicyFluentBuilder {
         }
     }
     /// Access the DeleteVaultAccessPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_vault_access_policy::builders::DeleteVaultAccessPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_vault_access_policy::builders::DeleteVaultAccessPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DeleteVaultAccessPolicyFluentBuilder {
             crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DeleteVaultAccessPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DeleteVaultAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DeleteVaultAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl DeleteVaultAccessPolicyFluentBuilder {
             crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError>,
     > {
         self.customize_middleware().await
     }

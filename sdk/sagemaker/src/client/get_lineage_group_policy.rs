@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`lineage_group_arn(Option<String>)`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     ///   - [`resource_policy(Option<String>)`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyOutput::resource_policy): <p>The resource policy that gives access to the lineage group in another account.</p>
     /// - On failure, responds with [`SdkError<GetLineageGroupPolicyError>`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyError)
-    pub fn get_lineage_group_policy(
-        &self,
-    ) -> crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyFluentBuilder
-    {
+    pub fn get_lineage_group_policy(&self) -> crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyFluentBuilder {
         crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyFluentBuilder::new(self.handle.clone())
     }
 }

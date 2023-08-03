@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DisassociateFraudsterOutput {
 }
 impl DisassociateFraudsterOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateFraudsterOutput`](crate::operation::disassociate_fraudster::DisassociateFraudsterOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_fraudster::builders::DisassociateFraudsterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_fraudster::builders::DisassociateFraudsterOutputBuilder {
         crate::operation::disassociate_fraudster::builders::DisassociateFraudsterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateFraudsterOutput`](crate::operation::disassociate_fraudster::DisassociateFraudsterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateFraudsterOutputBuilder {
     pub(crate) fraudster: ::std::option::Option<crate::types::Fraudster>,
     _request_id: Option<String>,

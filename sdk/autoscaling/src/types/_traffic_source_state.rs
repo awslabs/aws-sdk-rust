@@ -76,9 +76,7 @@ impl TrafficSourceState {
 
 /// A builder for [`TrafficSourceState`](crate::types::TrafficSourceState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrafficSourceStateBuilder {
     pub(crate) traffic_source: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,
@@ -88,19 +86,13 @@ pub struct TrafficSourceStateBuilder {
 impl TrafficSourceStateBuilder {
     /// <p>This is replaced by <code>Identifier</code>.</p>
     #[deprecated(note = "TrafficSource has been replaced by Identifier")]
-    pub fn traffic_source(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is replaced by <code>Identifier</code>.</p>
     #[deprecated(note = "TrafficSource has been replaced by Identifier")]
-    pub fn set_traffic_source(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_source = input;
         self
     }

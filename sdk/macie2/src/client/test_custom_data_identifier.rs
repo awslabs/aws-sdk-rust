@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`TestCustomDataIdentifierOutput`](crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput) with field(s):
     ///   - [`match_count(Option<i32>)`](crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput::match_count): <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
     /// - On failure, responds with [`SdkError<TestCustomDataIdentifierError>`](crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError)
-    pub fn test_custom_data_identifier(&self) -> crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierFluentBuilder{
+    pub fn test_custom_data_identifier(&self) -> crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierFluentBuilder {
         crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierFluentBuilder::new(self.handle.clone())
     }
 }

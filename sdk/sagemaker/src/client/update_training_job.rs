@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateTrainingJobOutput`](crate::operation::update_training_job::UpdateTrainingJobOutput) with field(s):
     ///   - [`training_job_arn(Option<String>)`](crate::operation::update_training_job::UpdateTrainingJobOutput::training_job_arn): <p>The Amazon Resource Name (ARN) of the training job.</p>
     /// - On failure, responds with [`SdkError<UpdateTrainingJobError>`](crate::operation::update_training_job::UpdateTrainingJobError)
-    pub fn update_training_job(
-        &self,
-    ) -> crate::operation::update_training_job::builders::UpdateTrainingJobFluentBuilder {
-        crate::operation::update_training_job::builders::UpdateTrainingJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_training_job(&self) -> crate::operation::update_training_job::builders::UpdateTrainingJobFluentBuilder {
+        crate::operation::update_training_job::builders::UpdateTrainingJobFluentBuilder::new(self.handle.clone())
     }
 }

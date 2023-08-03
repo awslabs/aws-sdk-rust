@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`gateways(Option<Vec<Gateway>>)`](crate::operation::list_gateways::ListGatewaysOutput::gateways): <p>A list of your gateways.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_gateways::ListGatewaysOutput::next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     /// - On failure, responds with [`SdkError<ListGatewaysError>`](crate::operation::list_gateways::ListGatewaysError)
-    pub fn list_gateways(
-        &self,
-    ) -> crate::operation::list_gateways::builders::ListGatewaysFluentBuilder {
-        crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_gateways(&self) -> crate::operation::list_gateways::builders::ListGatewaysFluentBuilder {
+        crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::new(self.handle.clone())
     }
 }

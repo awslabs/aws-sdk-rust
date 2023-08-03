@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteEventSubscriptionOutput {
 }
 impl DeleteEventSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventSubscriptionOutput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionOutputBuilder {
         crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEventSubscriptionOutput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEventSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteEventSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteEventSubscriptionOutput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput {
+    pub fn build(self) -> crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput {
         crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput {
             _request_id: self._request_id,
         }

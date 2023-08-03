@@ -5,8 +5,7 @@
 pub struct ListFindingsMetricsOutput {
     /// <p>A list of <code>AccountFindingsMetric</code> objects retrieved from the specified time interval.</p>
     #[doc(hidden)]
-    pub findings_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountFindingsMetric>>,
+    pub findings_metrics: ::std::option::Option<::std::vec::Vec<crate::types::AccountFindingsMetric>>,
     /// <p>A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListFindingsMetricsOutput {
 }
 impl ListFindingsMetricsOutput {
     /// <p>A list of <code>AccountFindingsMetric</code> objects retrieved from the specified time interval.</p>
-    pub fn findings_metrics(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AccountFindingsMetric]> {
+    pub fn findings_metrics(&self) -> ::std::option::Option<&[crate::types::AccountFindingsMetric]> {
         self.findings_metrics.as_deref()
     }
     /// <p>A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. </p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListFindingsMetricsOutput {
 }
 impl ListFindingsMetricsOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingsMetricsOutput`](crate::operation::list_findings_metrics::ListFindingsMetricsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_findings_metrics::builders::ListFindingsMetricsOutputBuilder {
-        crate::operation::list_findings_metrics::builders::ListFindingsMetricsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_findings_metrics::builders::ListFindingsMetricsOutputBuilder {
+        crate::operation::list_findings_metrics::builders::ListFindingsMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFindingsMetricsOutput`](crate::operation::list_findings_metrics::ListFindingsMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsMetricsOutputBuilder {
-    pub(crate) findings_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountFindingsMetric>>,
+    pub(crate) findings_metrics: ::std::option::Option<::std::vec::Vec<crate::types::AccountFindingsMetric>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListFindingsMetricsOutputBuilder {
         self
     }
     /// <p>A list of <code>AccountFindingsMetric</code> objects retrieved from the specified time interval.</p>
-    pub fn set_findings_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountFindingsMetric>>,
-    ) -> Self {
+    pub fn set_findings_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountFindingsMetric>>) -> Self {
         self.findings_metrics = input;
         self
     }
     /// <p>A list of <code>AccountFindingsMetric</code> objects retrieved from the specified time interval.</p>
-    pub fn get_findings_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountFindingsMetric>> {
+    pub fn get_findings_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountFindingsMetric>> {
         &self.findings_metrics
     }
     /// <p>A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. </p>

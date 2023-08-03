@@ -9,75 +9,73 @@ pub fn de_create_storage_location_http_error(
     crate::operation::create_storage_location::CreateStorageLocationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_storage_location::CreateStorageLocationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_storage_location::CreateStorageLocationError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code =
-        match generic.code() {
-            Some(code) => code,
-            None => return Err(
-                crate::operation::create_storage_location::CreateStorageLocationError::unhandled(
-                    generic,
-                ),
-            ),
-        };
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::operation::create_storage_location::CreateStorageLocationError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::operation::create_storage_location::CreateStorageLocationError::InsufficientPrivilegesException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InsufficientPrivilegesException" => {
+            crate::operation::create_storage_location::CreateStorageLocationError::InsufficientPrivilegesException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(_response_body, output).map_err(crate::operation::create_storage_location::CreateStorageLocationError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_storage_location::CreateStorageLocationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "S3SubscriptionRequiredException" => crate::operation::create_storage_location::CreateStorageLocationError::S3SubscriptionRequiredException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "S3SubscriptionRequiredException" => {
+            crate::operation::create_storage_location::CreateStorageLocationError::S3SubscriptionRequiredException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::S3SubscriptionRequiredExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_s3_subscription_required_exception::de_s3_subscription_required_exception_xml_err(_response_body, output).map_err(crate::operation::create_storage_location::CreateStorageLocationError::unhandled)?;
+                    output = crate::protocol_serde::shape_s3_subscription_required_exception::de_s3_subscription_required_exception_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_storage_location::CreateStorageLocationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "TooManyBucketsException" => crate::operation::create_storage_location::CreateStorageLocationError::TooManyBucketsException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyBucketsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_buckets_exception::de_too_many_buckets_exception_xml_err(_response_body, output).map_err(crate::operation::create_storage_location::CreateStorageLocationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyBucketsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_buckets_exception::de_too_many_buckets_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_storage_location::CreateStorageLocationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_storage_location::CreateStorageLocationError::generic(generic)
+        _ => crate::operation::create_storage_location::CreateStorageLocationError::generic(generic),
     })
 }
 
@@ -93,16 +91,9 @@ pub fn de_create_storage_location_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_storage_location::builders::CreateStorageLocationOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_storage_location::de_create_storage_location(
-            _response_body,
-            output,
-        )
-        .map_err(
-            crate::operation::create_storage_location::CreateStorageLocationError::unhandled,
-        )?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_create_storage_location::de_create_storage_location(_response_body, output)
+            .map_err(crate::operation::create_storage_location::CreateStorageLocationError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -111,10 +102,7 @@ pub fn de_create_storage_location_http_response_with_props(
 pub fn de_create_storage_location(
     inp: &[u8],
     mut builder: crate::operation::create_storage_location::builders::CreateStorageLocationOutputBuilder,
-) -> Result<
-    crate::operation::create_storage_location::builders::CreateStorageLocationOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::create_storage_location::builders::CreateStorageLocationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

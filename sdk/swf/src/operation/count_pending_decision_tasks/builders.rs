@@ -34,7 +34,7 @@ impl CountPendingDecisionTasksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CountPendingDecisionTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::count_pending_decision_tasks::builders::CountPendingDecisionTasksInputBuilder,
+    inner: crate::operation::count_pending_decision_tasks::builders::CountPendingDecisionTasksInputBuilder,
 }
 impl CountPendingDecisionTasksFluentBuilder {
     /// Creates a new `CountPendingDecisionTasks`.
@@ -45,7 +45,7 @@ impl CountPendingDecisionTasksFluentBuilder {
         }
     }
     /// Access the CountPendingDecisionTasks as a reference.
-    pub fn as_input(&self) -> &crate::operation::count_pending_decision_tasks::builders::CountPendingDecisionTasksInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::count_pending_decision_tasks::builders::CountPendingDecisionTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl CountPendingDecisionTasksFluentBuilder {
             crate::operation::count_pending_decision_tasks::CountPendingDecisionTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl CountPendingDecisionTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl CountPendingDecisionTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl CountPendingDecisionTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +113,7 @@ impl CountPendingDecisionTasksFluentBuilder {
             crate::operation::count_pending_decision_tasks::CountPendingDecisionTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError>,
     > {
         self.customize_middleware().await
     }

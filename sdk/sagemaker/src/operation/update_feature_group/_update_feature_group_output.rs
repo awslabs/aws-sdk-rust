@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateFeatureGroupOutput {
 }
 impl UpdateFeatureGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFeatureGroupOutput`](crate::operation::update_feature_group::UpdateFeatureGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_feature_group::builders::UpdateFeatureGroupOutputBuilder {
+    pub fn builder() -> crate::operation::update_feature_group::builders::UpdateFeatureGroupOutputBuilder {
         crate::operation::update_feature_group::builders::UpdateFeatureGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFeatureGroupOutput`](crate::operation::update_feature_group::UpdateFeatureGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFeatureGroupOutputBuilder {
     pub(crate) feature_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateFeatureGroupOutputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>
-    pub fn feature_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>
-    pub fn set_feature_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_arn = input;
         self
     }

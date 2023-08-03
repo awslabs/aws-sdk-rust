@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`invitation_id(impl ::std::convert::Into<String>)`](crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationFluentBuilder::invitation_id) / [`set_invitation_id(Option<String>)`](crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationFluentBuilder::set_invitation_id): <p>The value that is used to validate the administrator account to the member account.</p>
     /// - On success, responds with [`AcceptAdministratorInvitationOutput`](crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationOutput)
     /// - On failure, responds with [`SdkError<AcceptAdministratorInvitationError>`](crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationError)
-    pub fn accept_administrator_invitation(&self) -> crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationFluentBuilder{
+    pub fn accept_administrator_invitation(
+        &self,
+    ) -> crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationFluentBuilder {
         crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationFluentBuilder::new(self.handle.clone())
     }
 }

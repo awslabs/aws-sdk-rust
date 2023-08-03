@@ -15,40 +15,30 @@ impl DescribeHyperParameterTuningJobInput {
 }
 impl DescribeHyperParameterTuningJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeHyperParameterTuningJobInput`](crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobInput).
-    pub fn builder() -> crate::operation::describe_hyper_parameter_tuning_job::builders::DescribeHyperParameterTuningJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_hyper_parameter_tuning_job::builders::DescribeHyperParameterTuningJobInputBuilder {
         crate::operation::describe_hyper_parameter_tuning_job::builders::DescribeHyperParameterTuningJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHyperParameterTuningJobInput`](crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHyperParameterTuningJobInputBuilder {
     pub(crate) hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHyperParameterTuningJobInputBuilder {
     /// <p>The name of the tuning job.</p>
-    pub fn hyper_parameter_tuning_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hyper_parameter_tuning_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the tuning job.</p>
-    pub fn set_hyper_parameter_tuning_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hyper_parameter_tuning_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_name = input;
         self
     }
     /// <p>The name of the tuning job.</p>
-    pub fn get_hyper_parameter_tuning_job_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hyper_parameter_tuning_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.hyper_parameter_tuning_job_name
     }
     /// Consumes the builder and constructs a [`DescribeHyperParameterTuningJobInput`](crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobInput).
@@ -60,9 +50,8 @@ impl DescribeHyperParameterTuningJobInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobInput {
-                hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name
-                ,
-            }
+                hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name,
+            },
         )
     }
 }

@@ -23,9 +23,7 @@ impl DescribeImagesFilter {
 
 /// A builder for [`DescribeImagesFilter`](crate::types::DescribeImagesFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImagesFilterBuilder {
     pub(crate) tag_status: ::std::option::Option<crate::types::TagStatus>,
 }
@@ -46,8 +44,6 @@ impl DescribeImagesFilterBuilder {
     }
     /// Consumes the builder and constructs a [`DescribeImagesFilter`](crate::types::DescribeImagesFilter).
     pub fn build(self) -> crate::types::DescribeImagesFilter {
-        crate::types::DescribeImagesFilter {
-            tag_status: self.tag_status,
-        }
+        crate::types::DescribeImagesFilter { tag_status: self.tag_status }
     }
 }

@@ -9,12 +9,10 @@ pub struct EnableEnhancedMonitoringOutput {
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>
     #[doc(hidden)]
-    pub current_shard_level_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
+    pub current_shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     /// <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
     #[doc(hidden)]
-    pub desired_shard_level_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
+    pub desired_shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     /// <p>The ARN of the stream.</p>
     #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
@@ -26,15 +24,11 @@ impl EnableEnhancedMonitoringOutput {
         self.stream_name.as_deref()
     }
     /// <p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>
-    pub fn current_shard_level_metrics(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MetricsName]> {
+    pub fn current_shard_level_metrics(&self) -> ::std::option::Option<&[crate::types::MetricsName]> {
         self.current_shard_level_metrics.as_deref()
     }
     /// <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
-    pub fn desired_shard_level_metrics(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MetricsName]> {
+    pub fn desired_shard_level_metrics(&self) -> ::std::option::Option<&[crate::types::MetricsName]> {
         self.desired_shard_level_metrics.as_deref()
     }
     /// <p>The ARN of the stream.</p>
@@ -49,24 +43,18 @@ impl ::aws_http::request_id::RequestId for EnableEnhancedMonitoringOutput {
 }
 impl EnableEnhancedMonitoringOutput {
     /// Creates a new builder-style object to manufacture [`EnableEnhancedMonitoringOutput`](crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringOutput).
-    pub fn builder(
-    ) -> crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringOutputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringOutputBuilder {
         crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableEnhancedMonitoringOutput`](crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableEnhancedMonitoringOutputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
-    pub(crate) current_shard_level_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
-    pub(crate) desired_shard_level_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
+    pub(crate) current_shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
+    pub(crate) desired_shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -97,17 +85,12 @@ impl EnableEnhancedMonitoringOutputBuilder {
         self
     }
     /// <p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>
-    pub fn set_current_shard_level_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
-    ) -> Self {
+    pub fn set_current_shard_level_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>) -> Self {
         self.current_shard_level_metrics = input;
         self
     }
     /// <p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>
-    pub fn get_current_shard_level_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
+    pub fn get_current_shard_level_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
         &self.current_shard_level_metrics
     }
     /// Appends an item to `desired_shard_level_metrics`.
@@ -122,17 +105,12 @@ impl EnableEnhancedMonitoringOutputBuilder {
         self
     }
     /// <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
-    pub fn set_desired_shard_level_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
-    ) -> Self {
+    pub fn set_desired_shard_level_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>) -> Self {
         self.desired_shard_level_metrics = input;
         self
     }
     /// <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
-    pub fn get_desired_shard_level_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
+    pub fn get_desired_shard_level_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
         &self.desired_shard_level_metrics
     }
     /// <p>The ARN of the stream.</p>
@@ -159,9 +137,7 @@ impl EnableEnhancedMonitoringOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableEnhancedMonitoringOutput`](crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringOutput {
+    pub fn build(self) -> crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringOutput {
         crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringOutput {
             stream_name: self.stream_name,
             current_shard_level_metrics: self.current_shard_level_metrics,

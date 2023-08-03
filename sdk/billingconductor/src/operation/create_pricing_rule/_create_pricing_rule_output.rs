@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreatePricingRuleOutput {
 }
 impl CreatePricingRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreatePricingRuleOutput`](crate::operation::create_pricing_rule::CreatePricingRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::create_pricing_rule::builders::CreatePricingRuleOutputBuilder {
+    pub fn builder() -> crate::operation::create_pricing_rule::builders::CreatePricingRuleOutputBuilder {
         crate::operation::create_pricing_rule::builders::CreatePricingRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePricingRuleOutput`](crate::operation::create_pricing_rule::CreatePricingRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePricingRuleOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

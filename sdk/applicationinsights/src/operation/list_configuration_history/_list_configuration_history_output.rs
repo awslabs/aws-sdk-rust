@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListConfigurationHistoryOutput {
 }
 impl ListConfigurationHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationHistoryOutput`](crate::operation::list_configuration_history::ListConfigurationHistoryOutput).
-    pub fn builder(
-    ) -> crate::operation::list_configuration_history::builders::ListConfigurationHistoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_configuration_history::builders::ListConfigurationHistoryOutputBuilder {
         crate::operation::list_configuration_history::builders::ListConfigurationHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListConfigurationHistoryOutput`](crate::operation::list_configuration_history::ListConfigurationHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfigurationHistoryOutputBuilder {
     pub(crate) event_list: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListConfigurationHistoryOutputBuilder {
         self
     }
     /// <p> The list of configuration events and their corresponding details. </p>
-    pub fn set_event_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationEvent>>,
-    ) -> Self {
+    pub fn set_event_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationEvent>>) -> Self {
         self.event_list = input;
         self
     }
     /// <p> The list of configuration events and their corresponding details. </p>
-    pub fn get_event_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationEvent>> {
+    pub fn get_event_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationEvent>> {
         &self.event_list
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -95,9 +86,7 @@ impl ListConfigurationHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListConfigurationHistoryOutput`](crate::operation::list_configuration_history::ListConfigurationHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_configuration_history::ListConfigurationHistoryOutput {
+    pub fn build(self) -> crate::operation::list_configuration_history::ListConfigurationHistoryOutput {
         crate::operation::list_configuration_history::ListConfigurationHistoryOutput {
             event_list: self.event_list,
             next_token: self.next_token,

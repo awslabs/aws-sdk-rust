@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`label(Option<String>)`](crate::operation::get_metric_statistics::GetMetricStatisticsOutput::label): <p>A label for the specified metric.</p>
     ///   - [`datapoints(Option<Vec<Datapoint>>)`](crate::operation::get_metric_statistics::GetMetricStatisticsOutput::datapoints): <p>The data points for the specified metric.</p>
     /// - On failure, responds with [`SdkError<GetMetricStatisticsError>`](crate::operation::get_metric_statistics::GetMetricStatisticsError)
-    pub fn get_metric_statistics(
-        &self,
-    ) -> crate::operation::get_metric_statistics::builders::GetMetricStatisticsFluentBuilder {
-        crate::operation::get_metric_statistics::builders::GetMetricStatisticsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_metric_statistics(&self) -> crate::operation::get_metric_statistics::builders::GetMetricStatisticsFluentBuilder {
+        crate::operation::get_metric_statistics::builders::GetMetricStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ pub fn ser_update_stack_input(
         object.key("ServiceRoleArn").string(var_7.as_str());
     }
     if let Some(var_8) = &input.default_instance_profile_arn {
-        object
-            .key("DefaultInstanceProfileArn")
-            .string(var_8.as_str());
+        object.key("DefaultInstanceProfileArn").string(var_8.as_str());
     }
     if let Some(var_9) = &input.default_os {
         object.key("DefaultOs").string(var_9.as_str());
@@ -34,9 +32,7 @@ pub fn ser_update_stack_input(
         object.key("HostnameTheme").string(var_10.as_str());
     }
     if let Some(var_11) = &input.default_availability_zone {
-        object
-            .key("DefaultAvailabilityZone")
-            .string(var_11.as_str());
+        object.key("DefaultAvailabilityZone").string(var_11.as_str());
     }
     if let Some(var_12) = &input.default_subnet_id {
         object.key("DefaultSubnetId").string(var_12.as_str());
@@ -47,19 +43,13 @@ pub fn ser_update_stack_input(
     if let Some(var_14) = &input.configuration_manager {
         #[allow(unused_mut)]
         let mut object_15 = object.key("ConfigurationManager").start_object();
-        crate::protocol_serde::shape_stack_configuration_manager::ser_stack_configuration_manager(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_stack_configuration_manager::ser_stack_configuration_manager(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.chef_configuration {
         #[allow(unused_mut)]
         let mut object_17 = object.key("ChefConfiguration").start_object();
-        crate::protocol_serde::shape_chef_configuration::ser_chef_configuration(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_chef_configuration::ser_chef_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.use_custom_cookbooks {

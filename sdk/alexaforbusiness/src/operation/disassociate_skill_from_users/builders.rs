@@ -27,7 +27,7 @@ impl DisassociateSkillFromUsersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateSkillFromUsersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersInputBuilder,
+    inner: crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersInputBuilder,
 }
 impl DisassociateSkillFromUsersFluentBuilder {
     /// Creates a new `DisassociateSkillFromUsers`.
@@ -38,7 +38,7 @@ impl DisassociateSkillFromUsersFluentBuilder {
         }
     }
     /// Access the DisassociateSkillFromUsers as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DisassociateSkillFromUsersFluentBuilder {
             crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DisassociateSkillFromUsersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DisassociateSkillFromUsersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DisassociateSkillFromUsersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DisassociateSkillFromUsersFluentBuilder {
             crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersError>,
     > {
         self.customize_middleware().await
     }

@@ -44,31 +44,22 @@ impl ByteMatchSet {
 
 /// A builder for [`ByteMatchSet`](crate::types::ByteMatchSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ByteMatchSetBuilder {
     pub(crate) byte_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) byte_match_tuples:
-        ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchTuple>>,
+    pub(crate) byte_match_tuples: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchTuple>>,
 }
 impl ByteMatchSetBuilder {
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
     /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn byte_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn byte_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.byte_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
     /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn set_byte_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_byte_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.byte_match_set_id = input;
         self
     }
@@ -103,17 +94,12 @@ impl ByteMatchSetBuilder {
         self
     }
     /// <p>Specifies the bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.</p>
-    pub fn set_byte_match_tuples(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchTuple>>,
-    ) -> Self {
+    pub fn set_byte_match_tuples(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchTuple>>) -> Self {
         self.byte_match_tuples = input;
         self
     }
     /// <p>Specifies the bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.</p>
-    pub fn get_byte_match_tuples(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ByteMatchTuple>> {
+    pub fn get_byte_match_tuples(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ByteMatchTuple>> {
         &self.byte_match_tuples
     }
     /// Consumes the builder and constructs a [`ByteMatchSet`](crate::types::ByteMatchSet).

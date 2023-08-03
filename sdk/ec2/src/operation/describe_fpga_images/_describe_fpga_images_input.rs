@@ -88,17 +88,14 @@ impl DescribeFpgaImagesInput {
 }
 impl DescribeFpgaImagesInput {
     /// Creates a new builder-style object to manufacture [`DescribeFpgaImagesInput`](crate::operation::describe_fpga_images::DescribeFpgaImagesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fpga_images::builders::DescribeFpgaImagesInputBuilder {
+    pub fn builder() -> crate::operation::describe_fpga_images::builders::DescribeFpgaImagesInputBuilder {
         crate::operation::describe_fpga_images::builders::DescribeFpgaImagesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFpgaImagesInput`](crate::operation::describe_fpga_images::DescribeFpgaImagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFpgaImagesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) fpga_image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -127,27 +124,19 @@ impl DescribeFpgaImagesInputBuilder {
     /// To override the contents of this collection use [`set_fpga_image_ids`](Self::set_fpga_image_ids).
     ///
     /// <p>The AFI IDs.</p>
-    pub fn fpga_image_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.fpga_image_ids.unwrap_or_default();
         v.push(input.into());
         self.fpga_image_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The AFI IDs.</p>
-    pub fn set_fpga_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fpga_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.fpga_image_ids = input;
         self
     }
     /// <p>The AFI IDs.</p>
-    pub fn get_fpga_image_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_fpga_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.fpga_image_ids
     }
     /// Appends an item to `owners`.
@@ -162,10 +151,7 @@ impl DescribeFpgaImagesInputBuilder {
         self
     }
     /// <p>Filters the AFI by owner. Specify an Amazon Web Services account ID, <code>self</code> (owner is the sender of the request), or an Amazon Web Services owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code>).</p>
-    pub fn set_owners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.owners = input;
         self
     }
@@ -223,10 +209,7 @@ impl DescribeFpgaImagesInputBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>update-time</code> - The time of the most recent update.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -284,19 +267,14 @@ impl DescribeFpgaImagesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFpgaImagesInput`](crate::operation::describe_fpga_images::DescribeFpgaImagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fpga_images::DescribeFpgaImagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fpga_images::DescribeFpgaImagesInput {
-                dry_run: self.dry_run,
-                fpga_image_ids: self.fpga_image_ids,
-                owners: self.owners,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_fpga_images::DescribeFpgaImagesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_fpga_images::DescribeFpgaImagesInput {
+            dry_run: self.dry_run,
+            fpga_image_ids: self.fpga_image_ids,
+            owners: self.owners,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

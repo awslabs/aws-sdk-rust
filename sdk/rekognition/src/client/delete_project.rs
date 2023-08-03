@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput) with field(s):
     ///   - [`status(Option<ProjectStatus>)`](crate::operation::delete_project::DeleteProjectOutput::status): <p>The current status of the delete project operation.</p>
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::operation::delete_project::DeleteProjectError)
-    pub fn delete_project(
-        &self,
-    ) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {
-        crate::operation::delete_project::builders::DeleteProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_project(&self) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {
+        crate::operation::delete_project::builders::DeleteProjectFluentBuilder::new(self.handle.clone())
     }
 }

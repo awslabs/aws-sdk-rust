@@ -36,18 +36,14 @@ impl GetRepositorySyncStatusInput {
 }
 impl GetRepositorySyncStatusInput {
     /// Creates a new builder-style object to manufacture [`GetRepositorySyncStatusInput`](crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusInputBuilder {
         crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRepositorySyncStatusInput`](crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRepositorySyncStatusInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
@@ -56,18 +52,12 @@ pub struct GetRepositorySyncStatusInputBuilder {
 }
 impl GetRepositorySyncStatusInputBuilder {
     /// <p>The repository name.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -81,17 +71,12 @@ impl GetRepositorySyncStatusInputBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_repository_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.repository_provider = input;
         self
     }
     /// <p>The repository provider.</p>
-    pub fn get_repository_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+    pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
         &self.repository_provider
     }
     /// <p>The repository branch.</p>
@@ -129,13 +114,11 @@ impl GetRepositorySyncStatusInputBuilder {
         crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput {
-                repository_name: self.repository_name,
-                repository_provider: self.repository_provider,
-                branch: self.branch,
-                sync_type: self.sync_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput {
+            repository_name: self.repository_name,
+            repository_provider: self.repository_provider,
+            branch: self.branch,
+            sync_type: self.sync_type,
+        })
     }
 }

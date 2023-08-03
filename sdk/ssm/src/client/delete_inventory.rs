@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`type_name(Option<String>)`](crate::operation::delete_inventory::DeleteInventoryOutput::type_name): <p>The name of the inventory data type specified in the request.</p>
     ///   - [`deletion_summary(Option<InventoryDeletionSummary>)`](crate::operation::delete_inventory::DeleteInventoryOutput::deletion_summary): <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<DeleteInventoryError>`](crate::operation::delete_inventory::DeleteInventoryError)
-    pub fn delete_inventory(
-        &self,
-    ) -> crate::operation::delete_inventory::builders::DeleteInventoryFluentBuilder {
-        crate::operation::delete_inventory::builders::DeleteInventoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_inventory(&self) -> crate::operation::delete_inventory::builders::DeleteInventoryFluentBuilder {
+        crate::operation::delete_inventory::builders::DeleteInventoryFluentBuilder::new(self.handle.clone())
     }
 }

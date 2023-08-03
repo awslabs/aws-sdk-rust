@@ -5,8 +5,7 @@
 pub struct ListRealtimeContactAnalysisSegmentsOutput {
     /// <p>An analyzed transcript or category.</p>
     #[doc(hidden)]
-    pub segments:
-        ::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>>,
+    pub segments: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>>,
     /// <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>
     /// <ul>
     /// <li> <p>There are more segments so another call is required to get them.</p> </li>
@@ -19,9 +18,7 @@ pub struct ListRealtimeContactAnalysisSegmentsOutput {
 }
 impl ListRealtimeContactAnalysisSegmentsOutput {
     /// <p>An analyzed transcript or category.</p>
-    pub fn segments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RealtimeContactAnalysisSegment]> {
+    pub fn segments(&self) -> ::std::option::Option<&[crate::types::RealtimeContactAnalysisSegment]> {
         self.segments.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>
@@ -41,19 +38,16 @@ impl ::aws_http::request_id::RequestId for ListRealtimeContactAnalysisSegmentsOu
 }
 impl ListRealtimeContactAnalysisSegmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListRealtimeContactAnalysisSegmentsOutput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsOutput).
-    pub fn builder() -> crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsOutputBuilder{
+    pub fn builder() -> crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsOutputBuilder {
         crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRealtimeContactAnalysisSegmentsOutput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRealtimeContactAnalysisSegmentsOutputBuilder {
-    pub(crate) segments:
-        ::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>>,
+    pub(crate) segments: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -70,17 +64,12 @@ impl ListRealtimeContactAnalysisSegmentsOutputBuilder {
         self
     }
     /// <p>An analyzed transcript or category.</p>
-    pub fn set_segments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>>,
-    ) -> Self {
+    pub fn set_segments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>>) -> Self {
         self.segments = input;
         self
     }
     /// <p>An analyzed transcript or category.</p>
-    pub fn get_segments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>> {
+    pub fn get_segments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>> {
         &self.segments
     }
     /// <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>
@@ -122,12 +111,10 @@ impl ListRealtimeContactAnalysisSegmentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRealtimeContactAnalysisSegmentsOutput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsOutput).
-    pub fn build(self) -> crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsOutput{
+    pub fn build(self) -> crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsOutput {
         crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsOutput {
-            segments: self.segments
-            ,
-            next_token: self.next_token
-            ,
+            segments: self.segments,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

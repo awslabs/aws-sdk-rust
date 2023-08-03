@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SessionKeyDerivationMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for SessionKeyDerivationMode {
             "EMV_COMMON_SESSION_KEY" => SessionKeyDerivationMode::EmvCommonSessionKey,
             "MASTERCARD_SESSION_KEY" => SessionKeyDerivationMode::MastercardSessionKey,
             "VISA" => SessionKeyDerivationMode::Visa,
-            other => SessionKeyDerivationMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SessionKeyDerivationMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl SessionKeyDerivationMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AMEX",
-            "EMV2000",
-            "EMV_COMMON_SESSION_KEY",
-            "MASTERCARD_SESSION_KEY",
-            "VISA",
-        ]
+        &["AMEX", "EMV2000", "EMV_COMMON_SESSION_KEY", "MASTERCARD_SESSION_KEY", "VISA"]
     }
 }
 impl ::std::convert::AsRef<str> for SessionKeyDerivationMode {

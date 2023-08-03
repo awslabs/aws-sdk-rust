@@ -18,10 +18,7 @@ pub fn ser_list_user_associations_input(
     if let Some(var_5) = &input.identity_provider {
         #[allow(unused_mut)]
         let mut object_6 = object.key("IdentityProvider").start_object();
-        crate::protocol_serde::shape_identity_provider::ser_identity_provider(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_identity_provider::ser_identity_provider(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.instance_id {

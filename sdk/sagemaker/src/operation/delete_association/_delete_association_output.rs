@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteAssociationOutput {
 }
 impl DeleteAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAssociationOutput`](crate::operation::delete_association::DeleteAssociationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_association::builders::DeleteAssociationOutputBuilder {
+    pub fn builder() -> crate::operation::delete_association::builders::DeleteAssociationOutputBuilder {
         crate::operation::delete_association::builders::DeleteAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAssociationOutput`](crate::operation::delete_association::DeleteAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssociationOutputBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
@@ -60,18 +57,12 @@ impl DeleteAssociationOutputBuilder {
         &self.source_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }

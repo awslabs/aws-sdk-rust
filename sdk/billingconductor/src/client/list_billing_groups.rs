@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`billing_groups(Option<Vec<BillingGroupListElement>>)`](crate::operation::list_billing_groups::ListBillingGroupsOutput::billing_groups): <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_billing_groups::ListBillingGroupsOutput::next_token): <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     /// - On failure, responds with [`SdkError<ListBillingGroupsError>`](crate::operation::list_billing_groups::ListBillingGroupsError)
-    pub fn list_billing_groups(
-        &self,
-    ) -> crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder {
-        crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_billing_groups(&self) -> crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder {
+        crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::new(self.handle.clone())
     }
 }

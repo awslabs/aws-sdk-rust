@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDatasourcePackagesOutput {
 }
 impl UpdateDatasourcePackagesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDatasourcePackagesOutput`](crate::operation::update_datasource_packages::UpdateDatasourcePackagesOutput).
-    pub fn builder(
-    ) -> crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesOutputBuilder {
         crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDatasourcePackagesOutput`](crate::operation::update_datasource_packages::UpdateDatasourcePackagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatasourcePackagesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateDatasourcePackagesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDatasourcePackagesOutput`](crate::operation::update_datasource_packages::UpdateDatasourcePackagesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_datasource_packages::UpdateDatasourcePackagesOutput {
+    pub fn build(self) -> crate::operation::update_datasource_packages::UpdateDatasourcePackagesOutput {
         crate::operation::update_datasource_packages::UpdateDatasourcePackagesOutput {
             _request_id: self._request_id,
         }

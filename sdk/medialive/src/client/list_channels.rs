@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`channels(Option<Vec<ChannelSummary>>)`](crate::operation::list_channels::ListChannelsOutput::channels): Placeholder documentation for __listOfChannelSummary
     ///   - [`next_token(Option<String>)`](crate::operation::list_channels::ListChannelsOutput::next_token): Placeholder documentation for __string
     /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::operation::list_channels::ListChannelsError)
-    pub fn list_channels(
-        &self,
-    ) -> crate::operation::list_channels::builders::ListChannelsFluentBuilder {
-        crate::operation::list_channels::builders::ListChannelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_channels(&self) -> crate::operation::list_channels::builders::ListChannelsFluentBuilder {
+        crate::operation::list_channels::builders::ListChannelsFluentBuilder::new(self.handle.clone())
     }
 }

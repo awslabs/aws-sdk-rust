@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`delete_source_bundle(bool)`](crate::operation::delete_application_version::builders::DeleteApplicationVersionFluentBuilder::delete_source_bundle) / [`set_delete_source_bundle(Option<bool>)`](crate::operation::delete_application_version::builders::DeleteApplicationVersionFluentBuilder::set_delete_source_bundle): <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
     /// - On success, responds with [`DeleteApplicationVersionOutput`](crate::operation::delete_application_version::DeleteApplicationVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationVersionError>`](crate::operation::delete_application_version::DeleteApplicationVersionError)
-    pub fn delete_application_version(
-        &self,
-    ) -> crate::operation::delete_application_version::builders::DeleteApplicationVersionFluentBuilder
-    {
+    pub fn delete_application_version(&self) -> crate::operation::delete_application_version::builders::DeleteApplicationVersionFluentBuilder {
         crate::operation::delete_application_version::builders::DeleteApplicationVersionFluentBuilder::new(self.handle.clone())
     }
 }

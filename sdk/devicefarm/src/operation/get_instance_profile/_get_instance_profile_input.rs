@@ -15,17 +15,14 @@ impl GetInstanceProfileInput {
 }
 impl GetInstanceProfileInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceProfileInput`](crate::operation::get_instance_profile::GetInstanceProfileInput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_profile::builders::GetInstanceProfileInputBuilder {
+    pub fn builder() -> crate::operation::get_instance_profile::builders::GetInstanceProfileInputBuilder {
         crate::operation::get_instance_profile::builders::GetInstanceProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceProfileInput`](crate::operation::get_instance_profile::GetInstanceProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceProfileInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl GetInstanceProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceProfileInput`](crate::operation::get_instance_profile::GetInstanceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_instance_profile::GetInstanceProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_instance_profile::GetInstanceProfileInput { arn: self.arn },
-        )
+    ) -> ::std::result::Result<crate::operation::get_instance_profile::GetInstanceProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_instance_profile::GetInstanceProfileInput { arn: self.arn })
     }
 }

@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_stage::builders::DeleteStageFluentBuilder::set_arn): <p>ARN of the stage to be deleted.</p>
     /// - On success, responds with [`DeleteStageOutput`](crate::operation::delete_stage::DeleteStageOutput)
     /// - On failure, responds with [`SdkError<DeleteStageError>`](crate::operation::delete_stage::DeleteStageError)
-    pub fn delete_stage(
-        &self,
-    ) -> crate::operation::delete_stage::builders::DeleteStageFluentBuilder {
+    pub fn delete_stage(&self) -> crate::operation::delete_stage::builders::DeleteStageFluentBuilder {
         crate::operation::delete_stage::builders::DeleteStageFluentBuilder::new(self.handle.clone())
     }
 }

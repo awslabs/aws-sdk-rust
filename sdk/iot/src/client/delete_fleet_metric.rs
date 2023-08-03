@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`expected_version(i64)`](crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder::expected_version) / [`set_expected_version(Option<i64>)`](crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder::set_expected_version): <p>The expected version of the fleet metric to delete.</p>
     /// - On success, responds with [`DeleteFleetMetricOutput`](crate::operation::delete_fleet_metric::DeleteFleetMetricOutput)
     /// - On failure, responds with [`SdkError<DeleteFleetMetricError>`](crate::operation::delete_fleet_metric::DeleteFleetMetricError)
-    pub fn delete_fleet_metric(
-        &self,
-    ) -> crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder {
-        crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_fleet_metric(&self) -> crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder {
+        crate::operation::delete_fleet_metric::builders::DeleteFleetMetricFluentBuilder::new(self.handle.clone())
     }
 }

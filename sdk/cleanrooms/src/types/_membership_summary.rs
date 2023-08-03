@@ -93,9 +93,7 @@ impl MembershipSummary {
 
 /// A builder for [`MembershipSummary`](crate::types::MembershipSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MembershipSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -107,8 +105,7 @@ pub struct MembershipSummaryBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::MembershipStatus>,
-    pub(crate) member_abilities:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
 }
 impl MembershipSummaryBuilder {
     /// <p>The unique ID for the membership's collaboration.</p>
@@ -140,18 +137,12 @@ impl MembershipSummaryBuilder {
         &self.arn
     }
     /// <p>The unique ARN for the membership's associated collaboration.</p>
-    pub fn collaboration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ARN for the membership's associated collaboration.</p>
-    pub fn set_collaboration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_arn = input;
         self
     }
@@ -160,18 +151,12 @@ impl MembershipSummaryBuilder {
         &self.collaboration_arn
     }
     /// <p>The unique ID for the membership's collaboration.</p>
-    pub fn collaboration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the membership's collaboration.</p>
-    pub fn set_collaboration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_id = input;
         self
     }
@@ -180,62 +165,40 @@ impl MembershipSummaryBuilder {
         &self.collaboration_id
     }
     /// <p>The identifier of the Amazon Web Services principal that created the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub fn collaboration_creator_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_creator_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_creator_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Amazon Web Services principal that created the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub fn set_collaboration_creator_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_creator_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_creator_account_id = input;
         self
     }
     /// <p>The identifier of the Amazon Web Services principal that created the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub fn get_collaboration_creator_account_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_collaboration_creator_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaboration_creator_account_id
     }
     /// <p>The display name of the collaboration creator.</p>
-    pub fn collaboration_creator_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_creator_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_creator_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the collaboration creator.</p>
-    pub fn set_collaboration_creator_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_creator_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_creator_display_name = input;
         self
     }
     /// <p>The display name of the collaboration creator.</p>
-    pub fn get_collaboration_creator_display_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_collaboration_creator_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaboration_creator_display_name
     }
     /// <p>The name for the membership's collaboration.</p>
-    pub fn collaboration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the membership's collaboration.</p>
-    pub fn set_collaboration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_name = input;
         self
     }
@@ -249,10 +212,7 @@ impl MembershipSummaryBuilder {
         self
     }
     /// <p>The time when the membership was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -266,10 +226,7 @@ impl MembershipSummaryBuilder {
         self
     }
     /// <p>The time the membership metadata was last updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -283,10 +240,7 @@ impl MembershipSummaryBuilder {
         self
     }
     /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MembershipStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MembershipStatus>) -> Self {
         self.status = input;
         self
     }
@@ -306,17 +260,12 @@ impl MembershipSummaryBuilder {
         self
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn set_member_abilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
-    ) -> Self {
+    pub fn set_member_abilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>) -> Self {
         self.member_abilities = input;
         self
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn get_member_abilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
+    pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         &self.member_abilities
     }
     /// Consumes the builder and constructs a [`MembershipSummary`](crate::types::MembershipSummary).

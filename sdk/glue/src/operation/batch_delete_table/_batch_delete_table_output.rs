@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for BatchDeleteTableOutput {
 }
 impl BatchDeleteTableOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteTableOutput`](crate::operation::batch_delete_table::BatchDeleteTableOutput).
-    pub fn builder() -> crate::operation::batch_delete_table::builders::BatchDeleteTableOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_delete_table::builders::BatchDeleteTableOutputBuilder {
         crate::operation::batch_delete_table::builders::BatchDeleteTableOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteTableOutput`](crate::operation::batch_delete_table::BatchDeleteTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteTableOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::TableError>>,
     _request_id: Option<String>,
@@ -49,10 +46,7 @@ impl BatchDeleteTableOutputBuilder {
         self
     }
     /// <p>A list of errors encountered in attempting to delete the specified tables.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableError>>) -> Self {
         self.errors = input;
         self
     }

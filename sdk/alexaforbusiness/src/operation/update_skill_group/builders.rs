@@ -10,10 +10,7 @@ impl UpdateSkillGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_skill_group::UpdateSkillGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_skill_group::UpdateSkillGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_skill_group::UpdateSkillGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_skill_group();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateSkillGroupFluentBuilder {
         }
     }
     /// Access the UpdateSkillGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_skill_group::builders::UpdateSkillGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_skill_group::builders::UpdateSkillGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateSkillGroupFluentBuilder {
             crate::operation::update_skill_group::UpdateSkillGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_skill_group::UpdateSkillGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_skill_group::UpdateSkillGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateSkillGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateSkillGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_skill_group::UpdateSkillGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_skill_group::UpdateSkillGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_skill_group::UpdateSkillGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateSkillGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_skill_group::UpdateSkillGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_skill_group::UpdateSkillGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_skill_group::UpdateSkillGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl UpdateSkillGroupFluentBuilder {
             crate::operation::update_skill_group::UpdateSkillGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_skill_group::UpdateSkillGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_skill_group::UpdateSkillGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the skill group to update. </p>
-    pub fn skill_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.skill_group_arn(input.into());
         self
     }
     /// <p>The ARN of the skill group to update. </p>
-    pub fn set_skill_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_skill_group_arn(input);
         self
     }
@@ -144,18 +122,12 @@ impl UpdateSkillGroupFluentBuilder {
         self.inner.get_skill_group_arn()
     }
     /// <p>The updated name for the skill group.</p>
-    pub fn skill_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.skill_group_name(input.into());
         self
     }
     /// <p>The updated name for the skill group.</p>
-    pub fn set_skill_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_skill_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_skill_group_name(input);
         self
     }

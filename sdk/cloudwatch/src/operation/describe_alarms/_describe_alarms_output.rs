@@ -42,12 +42,9 @@ impl DescribeAlarmsOutput {
 
 /// A builder for [`DescribeAlarmsOutput`](crate::operation::describe_alarms::DescribeAlarmsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlarmsOutputBuilder {
-    pub(crate) composite_alarms:
-        ::std::option::Option<::std::vec::Vec<crate::types::CompositeAlarm>>,
+    pub(crate) composite_alarms: ::std::option::Option<::std::vec::Vec<crate::types::CompositeAlarm>>,
     pub(crate) metric_alarms: ::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -65,17 +62,12 @@ impl DescribeAlarmsOutputBuilder {
         self
     }
     /// <p>The information about any composite alarms returned by the operation.</p>
-    pub fn set_composite_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CompositeAlarm>>,
-    ) -> Self {
+    pub fn set_composite_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CompositeAlarm>>) -> Self {
         self.composite_alarms = input;
         self
     }
     /// <p>The information about any composite alarms returned by the operation.</p>
-    pub fn get_composite_alarms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CompositeAlarm>> {
+    pub fn get_composite_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompositeAlarm>> {
         &self.composite_alarms
     }
     /// Appends an item to `metric_alarms`.
@@ -90,17 +82,12 @@ impl DescribeAlarmsOutputBuilder {
         self
     }
     /// <p>The information about any metric alarms returned by the operation.</p>
-    pub fn set_metric_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>>,
-    ) -> Self {
+    pub fn set_metric_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>>) -> Self {
         self.metric_alarms = input;
         self
     }
     /// <p>The information about any metric alarms returned by the operation.</p>
-    pub fn get_metric_alarms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>> {
+    pub fn get_metric_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>> {
         &self.metric_alarms
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>

@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CopyFpgaImageOutput`](crate::operation::copy_fpga_image::CopyFpgaImageOutput) with field(s):
     ///   - [`fpga_image_id(Option<String>)`](crate::operation::copy_fpga_image::CopyFpgaImageOutput::fpga_image_id): <p>The ID of the new AFI.</p>
     /// - On failure, responds with [`SdkError<CopyFpgaImageError>`](crate::operation::copy_fpga_image::CopyFpgaImageError)
-    pub fn copy_fpga_image(
-        &self,
-    ) -> crate::operation::copy_fpga_image::builders::CopyFpgaImageFluentBuilder {
-        crate::operation::copy_fpga_image::builders::CopyFpgaImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn copy_fpga_image(&self) -> crate::operation::copy_fpga_image::builders::CopyFpgaImageFluentBuilder {
+        crate::operation::copy_fpga_image::builders::CopyFpgaImageFluentBuilder::new(self.handle.clone())
     }
 }

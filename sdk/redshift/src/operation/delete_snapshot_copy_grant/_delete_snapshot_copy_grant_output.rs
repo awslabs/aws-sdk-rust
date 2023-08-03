@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSnapshotCopyGrantOutput {
 }
 impl DeleteSnapshotCopyGrantOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSnapshotCopyGrantOutput`](crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_snapshot_copy_grant::builders::DeleteSnapshotCopyGrantOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_snapshot_copy_grant::builders::DeleteSnapshotCopyGrantOutputBuilder {
         crate::operation::delete_snapshot_copy_grant::builders::DeleteSnapshotCopyGrantOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSnapshotCopyGrantOutput`](crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSnapshotCopyGrantOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteSnapshotCopyGrantOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSnapshotCopyGrantOutput`](crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantOutput {
+    pub fn build(self) -> crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantOutput {
         crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantOutput {
             _request_id: self._request_id,
         }

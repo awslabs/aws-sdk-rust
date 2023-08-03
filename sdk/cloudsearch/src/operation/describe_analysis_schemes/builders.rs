@@ -26,8 +26,7 @@ impl DescribeAnalysisSchemesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAnalysisSchemesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesInputBuilder,
+    inner: crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesInputBuilder,
 }
 impl DescribeAnalysisSchemesFluentBuilder {
     /// Creates a new `DescribeAnalysisSchemes`.
@@ -38,10 +37,7 @@ impl DescribeAnalysisSchemesFluentBuilder {
         }
     }
     /// Access the DescribeAnalysisSchemes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeAnalysisSchemesFluentBuilder {
             crate::operation::describe_analysis_schemes::DescribeAnalysisSchemes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeAnalysisSchemesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeAnalysisSchemesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeAnalysisSchemesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DescribeAnalysisSchemesFluentBuilder {
             crate::operation::describe_analysis_schemes::DescribeAnalysisSchemes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError>,
     > {
         self.customize_middleware().await
     }
@@ -143,25 +128,17 @@ impl DescribeAnalysisSchemesFluentBuilder {
     /// To override the contents of this collection use [`set_analysis_scheme_names`](Self::set_analysis_scheme_names).
     ///
     /// <p>The analysis schemes you want to describe.</p>
-    pub fn analysis_scheme_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analysis_scheme_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analysis_scheme_names(input.into());
         self
     }
     /// <p>The analysis schemes you want to describe.</p>
-    pub fn set_analysis_scheme_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_analysis_scheme_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_analysis_scheme_names(input);
         self
     }
     /// <p>The analysis schemes you want to describe.</p>
-    pub fn get_analysis_scheme_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_analysis_scheme_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_analysis_scheme_names()
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>

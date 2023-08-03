@@ -15,17 +15,14 @@ impl DeletePricingPlanInput {
 }
 impl DeletePricingPlanInput {
     /// Creates a new builder-style object to manufacture [`DeletePricingPlanInput`](crate::operation::delete_pricing_plan::DeletePricingPlanInput).
-    pub fn builder(
-    ) -> crate::operation::delete_pricing_plan::builders::DeletePricingPlanInputBuilder {
+    pub fn builder() -> crate::operation::delete_pricing_plan::builders::DeletePricingPlanInputBuilder {
         crate::operation::delete_pricing_plan::builders::DeletePricingPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePricingPlanInput`](crate::operation::delete_pricing_plan::DeletePricingPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePricingPlanInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DeletePricingPlanInputBuilder {
     /// Consumes the builder and constructs a [`DeletePricingPlanInput`](crate::operation::delete_pricing_plan::DeletePricingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_pricing_plan::DeletePricingPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_pricing_plan::DeletePricingPlanInput { arn: self.arn },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_pricing_plan::DeletePricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_pricing_plan::DeletePricingPlanInput { arn: self.arn })
     }
 }

@@ -30,9 +30,7 @@ impl EventBridgeConfiguration {
 
 /// A builder for [`EventBridgeConfiguration`](crate::types::EventBridgeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventBridgeConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) included_data: ::std::option::Option<crate::types::EventIncludedData>,
@@ -58,10 +56,7 @@ impl EventBridgeConfigurationBuilder {
         self
     }
     /// <p>Details of what case and related item data is published through the case event stream.</p>
-    pub fn set_included_data(
-        mut self,
-        input: ::std::option::Option<crate::types::EventIncludedData>,
-    ) -> Self {
+    pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::EventIncludedData>) -> Self {
         self.included_data = input;
         self
     }

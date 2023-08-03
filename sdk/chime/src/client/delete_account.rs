@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_account::builders::DeleteAccountFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_account::builders::DeleteAccountFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
     /// - On success, responds with [`DeleteAccountOutput`](crate::operation::delete_account::DeleteAccountOutput)
     /// - On failure, responds with [`SdkError<DeleteAccountError>`](crate::operation::delete_account::DeleteAccountError)
-    pub fn delete_account(
-        &self,
-    ) -> crate::operation::delete_account::builders::DeleteAccountFluentBuilder {
-        crate::operation::delete_account::builders::DeleteAccountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_account(&self) -> crate::operation::delete_account::builders::DeleteAccountFluentBuilder {
+        crate::operation::delete_account::builders::DeleteAccountFluentBuilder::new(self.handle.clone())
     }
 }

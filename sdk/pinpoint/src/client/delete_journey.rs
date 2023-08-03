@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteJourneyOutput`](crate::operation::delete_journey::DeleteJourneyOutput) with field(s):
     ///   - [`journey_response(Option<JourneyResponse>)`](crate::operation::delete_journey::DeleteJourneyOutput::journey_response): <p>Provides information about the status, configuration, and other settings for a journey.</p>
     /// - On failure, responds with [`SdkError<DeleteJourneyError>`](crate::operation::delete_journey::DeleteJourneyError)
-    pub fn delete_journey(
-        &self,
-    ) -> crate::operation::delete_journey::builders::DeleteJourneyFluentBuilder {
-        crate::operation::delete_journey::builders::DeleteJourneyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_journey(&self) -> crate::operation::delete_journey::builders::DeleteJourneyFluentBuilder {
+        crate::operation::delete_journey::builders::DeleteJourneyFluentBuilder::new(self.handle.clone())
     }
 }

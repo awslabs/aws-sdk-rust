@@ -121,9 +121,7 @@ impl AssessmentFrameworkShareRequest {
 
 /// A builder for [`AssessmentFrameworkShareRequest`](crate::types::AssessmentFrameworkShareRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentFrameworkShareRequestBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) framework_id: ::std::option::Option<::std::string::String>,
@@ -171,18 +169,12 @@ impl AssessmentFrameworkShareRequestBuilder {
         &self.framework_id
     }
     /// <p> The name of the custom framework that the share request is for. </p>
-    pub fn framework_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the custom framework that the share request is for. </p>
-    pub fn set_framework_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_name = input;
         self
     }
@@ -191,18 +183,12 @@ impl AssessmentFrameworkShareRequestBuilder {
         &self.framework_name
     }
     /// <p>The description of the shared custom framework.</p>
-    pub fn framework_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the shared custom framework.</p>
-    pub fn set_framework_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_description = input;
         self
     }
@@ -216,10 +202,7 @@ impl AssessmentFrameworkShareRequestBuilder {
         self
     }
     /// <p> The status of the share request. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareRequestStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareRequestStatus>) -> Self {
         self.status = input;
         self
     }
@@ -228,18 +211,12 @@ impl AssessmentFrameworkShareRequestBuilder {
         &self.status
     }
     /// <p> The Amazon Web Services account of the sender. </p>
-    pub fn source_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Web Services account of the sender. </p>
-    pub fn set_source_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_account = input;
         self
     }
@@ -248,18 +225,12 @@ impl AssessmentFrameworkShareRequestBuilder {
         &self.source_account
     }
     /// <p> The Amazon Web Services account of the recipient. </p>
-    pub fn destination_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Web Services account of the recipient. </p>
-    pub fn set_destination_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_account = input;
         self
     }
@@ -268,18 +239,12 @@ impl AssessmentFrameworkShareRequestBuilder {
         &self.destination_account
     }
     /// <p> The Amazon Web Services Region of the recipient. </p>
-    pub fn destination_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Web Services Region of the recipient. </p>
-    pub fn set_destination_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_region = input;
         self
     }
@@ -293,10 +258,7 @@ impl AssessmentFrameworkShareRequestBuilder {
         self
     }
     /// <p> The time when the share request expires. </p>
-    pub fn set_expiration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_time = input;
         self
     }
@@ -310,10 +272,7 @@ impl AssessmentFrameworkShareRequestBuilder {
         self
     }
     /// <p> The time when the share request was created. </p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -327,10 +286,7 @@ impl AssessmentFrameworkShareRequestBuilder {
         self
     }
     /// <p> Specifies when the share request was last updated. </p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }
@@ -381,18 +337,12 @@ impl AssessmentFrameworkShareRequestBuilder {
         &self.custom_controls_count
     }
     /// <p>The compliance type that the shared custom framework supports, such as CIS or HIPAA.</p>
-    pub fn compliance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compliance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The compliance type that the shared custom framework supports, such as CIS or HIPAA.</p>
-    pub fn set_compliance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compliance_type = input;
         self
     }

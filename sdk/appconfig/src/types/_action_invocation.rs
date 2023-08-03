@@ -65,9 +65,7 @@ impl ActionInvocation {
 
 /// A builder for [`ActionInvocation`](crate::types::ActionInvocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionInvocationBuilder {
     pub(crate) extension_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct ActionInvocationBuilder {
 }
 impl ActionInvocationBuilder {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn extension_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extension_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn set_extension_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extension_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extension_identifier = input;
         self
     }
@@ -141,18 +133,12 @@ impl ActionInvocationBuilder {
         &self.role_arn
     }
     /// <p>The error message when an extension invocation fails.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message when an extension invocation fails.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -175,18 +161,12 @@ impl ActionInvocationBuilder {
         &self.error_code
     }
     /// <p>A system-generated ID for this invocation.</p>
-    pub fn invocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A system-generated ID for this invocation.</p>
-    pub fn set_invocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invocation_id = input;
         self
     }

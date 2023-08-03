@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`device_id(impl ::std::convert::Into<String>)`](crate::operation::unsubscribe_from_dataset::builders::UnsubscribeFromDatasetFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::unsubscribe_from_dataset::builders::UnsubscribeFromDatasetFluentBuilder::set_device_id): <p>The unique ID generated for this device by Cognito.</p>
     /// - On success, responds with [`UnsubscribeFromDatasetOutput`](crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetOutput)
     /// - On failure, responds with [`SdkError<UnsubscribeFromDatasetError>`](crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError)
-    pub fn unsubscribe_from_dataset(
-        &self,
-    ) -> crate::operation::unsubscribe_from_dataset::builders::UnsubscribeFromDatasetFluentBuilder
-    {
+    pub fn unsubscribe_from_dataset(&self) -> crate::operation::unsubscribe_from_dataset::builders::UnsubscribeFromDatasetFluentBuilder {
         crate::operation::unsubscribe_from_dataset::builders::UnsubscribeFromDatasetFluentBuilder::new(self.handle.clone())
     }
 }

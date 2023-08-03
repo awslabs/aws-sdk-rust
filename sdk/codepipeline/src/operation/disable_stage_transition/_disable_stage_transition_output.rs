@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisableStageTransitionOutput {
 }
 impl DisableStageTransitionOutput {
     /// Creates a new builder-style object to manufacture [`DisableStageTransitionOutput`](crate::operation::disable_stage_transition::DisableStageTransitionOutput).
-    pub fn builder(
-    ) -> crate::operation::disable_stage_transition::builders::DisableStageTransitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_stage_transition::builders::DisableStageTransitionOutputBuilder {
         crate::operation::disable_stage_transition::builders::DisableStageTransitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableStageTransitionOutput`](crate::operation::disable_stage_transition::DisableStageTransitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableStageTransitionOutputBuilder {
     _request_id: Option<String>,
 }

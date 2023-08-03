@@ -26,7 +26,7 @@ impl GetTransitGatewayPeeringInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTransitGatewayPeeringFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringInputBuilder,
+    inner: crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringInputBuilder,
 }
 impl GetTransitGatewayPeeringFluentBuilder {
     /// Creates a new `GetTransitGatewayPeering`.
@@ -37,7 +37,7 @@ impl GetTransitGatewayPeeringFluentBuilder {
         }
     }
     /// Access the GetTransitGatewayPeering as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetTransitGatewayPeeringFluentBuilder {
             crate::operation::get_transit_gateway_peering::GetTransitGatewayPeering,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetTransitGatewayPeeringFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetTransitGatewayPeeringFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetTransitGatewayPeeringFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetTransitGatewayPeeringFluentBuilder {
             crate::operation::get_transit_gateway_peering::GetTransitGatewayPeering,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringError>,
     > {
         self.customize_middleware().await
     }

@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`resource_identifier_summaries(Option<Vec<ResourceIdentifierSummary>>)`](crate::operation::get_template_summary::GetTemplateSummaryOutput::resource_identifier_summaries): <p>A list of resource identifier summaries that describe the target resources of an import operation and the properties you can provide during the import to identify the target resources. For example, <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
     ///   - [`warnings(Option<Warnings>)`](crate::operation::get_template_summary::GetTemplateSummaryOutput::warnings): <p>An object containing any warnings returned.</p>
     /// - On failure, responds with [`SdkError<GetTemplateSummaryError>`](crate::operation::get_template_summary::GetTemplateSummaryError)
-    pub fn get_template_summary(
-        &self,
-    ) -> crate::operation::get_template_summary::builders::GetTemplateSummaryFluentBuilder {
-        crate::operation::get_template_summary::builders::GetTemplateSummaryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_template_summary(&self) -> crate::operation::get_template_summary::builders::GetTemplateSummaryFluentBuilder {
+        crate::operation::get_template_summary::builders::GetTemplateSummaryFluentBuilder::new(self.handle.clone())
     }
 }

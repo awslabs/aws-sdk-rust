@@ -50,18 +50,14 @@ impl AssociateTrunkInterfaceInput {
 }
 impl AssociateTrunkInterfaceInput {
     /// Creates a new builder-style object to manufacture [`AssociateTrunkInterfaceInput`](crate::operation::associate_trunk_interface::AssociateTrunkInterfaceInput).
-    pub fn builder(
-    ) -> crate::operation::associate_trunk_interface::builders::AssociateTrunkInterfaceInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_trunk_interface::builders::AssociateTrunkInterfaceInputBuilder {
         crate::operation::associate_trunk_interface::builders::AssociateTrunkInterfaceInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTrunkInterfaceInput`](crate::operation::associate_trunk_interface::AssociateTrunkInterfaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTrunkInterfaceInputBuilder {
     pub(crate) branch_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) trunk_interface_id: ::std::option::Option<::std::string::String>,
@@ -72,18 +68,12 @@ pub struct AssociateTrunkInterfaceInputBuilder {
 }
 impl AssociateTrunkInterfaceInputBuilder {
     /// <p>The ID of the branch network interface.</p>
-    pub fn branch_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn branch_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the branch network interface.</p>
-    pub fn set_branch_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_branch_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_interface_id = input;
         self
     }
@@ -92,18 +82,12 @@ impl AssociateTrunkInterfaceInputBuilder {
         &self.branch_interface_id
     }
     /// <p>The ID of the trunk network interface.</p>
-    pub fn trunk_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trunk_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trunk_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the trunk network interface.</p>
-    pub fn set_trunk_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trunk_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trunk_interface_id = input;
         self
     }
@@ -174,15 +158,13 @@ impl AssociateTrunkInterfaceInputBuilder {
         crate::operation::associate_trunk_interface::AssociateTrunkInterfaceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_trunk_interface::AssociateTrunkInterfaceInput {
-                branch_interface_id: self.branch_interface_id,
-                trunk_interface_id: self.trunk_interface_id,
-                vlan_id: self.vlan_id,
-                gre_key: self.gre_key,
-                client_token: self.client_token,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_trunk_interface::AssociateTrunkInterfaceInput {
+            branch_interface_id: self.branch_interface_id,
+            trunk_interface_id: self.trunk_interface_id,
+            vlan_id: self.vlan_id,
+            gre_key: self.gre_key,
+            client_token: self.client_token,
+            dry_run: self.dry_run,
+        })
     }
 }

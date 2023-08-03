@@ -10,10 +10,7 @@ impl BatchDetectSyntaxInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_detect_syntax::BatchDetectSyntaxOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_syntax::BatchDetectSyntaxError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_syntax::BatchDetectSyntaxError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_detect_syntax();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchDetectSyntaxFluentBuilder {
         }
     }
     /// Access the BatchDetectSyntax as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_detect_syntax::builders::BatchDetectSyntaxInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_detect_syntax::builders::BatchDetectSyntaxInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchDetectSyntaxFluentBuilder {
             crate::operation::batch_detect_syntax::BatchDetectSyntax,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_syntax::BatchDetectSyntaxError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_syntax::BatchDetectSyntaxError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchDetectSyntaxFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchDetectSyntaxFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_detect_syntax::BatchDetectSyntaxOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_syntax::BatchDetectSyntaxError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_syntax::BatchDetectSyntaxError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchDetectSyntaxFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_detect_syntax::BatchDetectSyntaxOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_syntax::BatchDetectSyntaxError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_syntax::BatchDetectSyntaxError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchDetectSyntaxFluentBuilder {
             crate::operation::batch_detect_syntax::BatchDetectSyntax,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_syntax::BatchDetectSyntaxError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_syntax::BatchDetectSyntaxError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl BatchDetectSyntaxFluentBuilder {
         self
     }
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size for each document is 5 KB.</p>
-    pub fn set_text_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_text_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_text_list(input);
         self
     }
@@ -149,10 +130,7 @@ impl BatchDetectSyntaxFluentBuilder {
         self
     }
     /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::SyntaxLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::SyntaxLanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }

@@ -18,7 +18,11 @@ impl super::Client {
     ///   - [`recommendations(Option<Vec<ReservationPurchaseRecommendation>>)`](crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput::recommendations): <p>Recommendations for reservations to purchase.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput::next_page_token): <p>The pagination token for the next set of retrievable results.</p>
     /// - On failure, responds with [`SdkError<GetReservationPurchaseRecommendationError>`](crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError)
-    pub fn get_reservation_purchase_recommendation(&self) -> crate::operation::get_reservation_purchase_recommendation::builders::GetReservationPurchaseRecommendationFluentBuilder{
-        crate::operation::get_reservation_purchase_recommendation::builders::GetReservationPurchaseRecommendationFluentBuilder::new(self.handle.clone())
+    pub fn get_reservation_purchase_recommendation(
+        &self,
+    ) -> crate::operation::get_reservation_purchase_recommendation::builders::GetReservationPurchaseRecommendationFluentBuilder {
+        crate::operation::get_reservation_purchase_recommendation::builders::GetReservationPurchaseRecommendationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

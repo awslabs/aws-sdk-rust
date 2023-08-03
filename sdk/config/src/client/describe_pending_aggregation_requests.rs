@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`pending_aggregation_requests(Option<Vec<PendingAggregationRequest>>)`](crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsOutput::pending_aggregation_requests): <p>Returns a PendingAggregationRequests object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<DescribePendingAggregationRequestsError>`](crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError)
-    pub fn describe_pending_aggregation_requests(&self) -> crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsFluentBuilder{
+    pub fn describe_pending_aggregation_requests(
+        &self,
+    ) -> crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsFluentBuilder {
         crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsFluentBuilder::new(self.handle.clone())
     }
 }

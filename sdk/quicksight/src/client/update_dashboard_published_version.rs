@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<UpdateDashboardPublishedVersionError>`](crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionError)
-    pub fn update_dashboard_published_version(&self) -> crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionFluentBuilder{
+    pub fn update_dashboard_published_version(
+        &self,
+    ) -> crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionFluentBuilder {
         crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionFluentBuilder::new(self.handle.clone())
     }
 }

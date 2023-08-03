@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`external_metrics_preference(ExternalMetricsPreference)`](crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesFluentBuilder::external_metrics_preference) / [`set_external_metrics_preference(Option<ExternalMetricsPreference>)`](crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesFluentBuilder::set_external_metrics_preference): <p>The provider of the external metrics recommendation preference to create or update.</p>  <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>  <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
     /// - On success, responds with [`PutRecommendationPreferencesOutput`](crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput)
     /// - On failure, responds with [`SdkError<PutRecommendationPreferencesError>`](crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError)
-    pub fn put_recommendation_preferences(&self) -> crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesFluentBuilder{
+    pub fn put_recommendation_preferences(
+        &self,
+    ) -> crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesFluentBuilder {
         crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesFluentBuilder::new(self.handle.clone())
     }
 }

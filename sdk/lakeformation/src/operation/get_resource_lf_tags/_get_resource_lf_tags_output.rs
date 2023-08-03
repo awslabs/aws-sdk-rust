@@ -35,22 +35,18 @@ impl ::aws_http::request_id::RequestId for GetResourceLfTagsOutput {
 }
 impl GetResourceLfTagsOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceLfTagsOutput`](crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsOutputBuilder {
+    pub fn builder() -> crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsOutputBuilder {
         crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceLfTagsOutput`](crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceLfTagsOutputBuilder {
     pub(crate) lf_tag_on_database: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
     pub(crate) lf_tags_on_table: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
-    pub(crate) lf_tags_on_columns:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnLfTag>>,
+    pub(crate) lf_tags_on_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLfTag>>,
     _request_id: Option<String>,
 }
 impl GetResourceLfTagsOutputBuilder {
@@ -66,17 +62,12 @@ impl GetResourceLfTagsOutputBuilder {
         self
     }
     /// <p>A list of LF-tags applied to a database resource.</p>
-    pub fn set_lf_tag_on_database(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
-    ) -> Self {
+    pub fn set_lf_tag_on_database(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
         self.lf_tag_on_database = input;
         self
     }
     /// <p>A list of LF-tags applied to a database resource.</p>
-    pub fn get_lf_tag_on_database(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+    pub fn get_lf_tag_on_database(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
         &self.lf_tag_on_database
     }
     /// Appends an item to `lf_tags_on_table`.
@@ -91,17 +82,12 @@ impl GetResourceLfTagsOutputBuilder {
         self
     }
     /// <p>A list of LF-tags applied to a table resource.</p>
-    pub fn set_lf_tags_on_table(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
-    ) -> Self {
+    pub fn set_lf_tags_on_table(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
         self.lf_tags_on_table = input;
         self
     }
     /// <p>A list of LF-tags applied to a table resource.</p>
-    pub fn get_lf_tags_on_table(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+    pub fn get_lf_tags_on_table(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
         &self.lf_tags_on_table
     }
     /// Appends an item to `lf_tags_on_columns`.
@@ -116,17 +102,12 @@ impl GetResourceLfTagsOutputBuilder {
         self
     }
     /// <p>A list of LF-tags applied to a column resource.</p>
-    pub fn set_lf_tags_on_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLfTag>>,
-    ) -> Self {
+    pub fn set_lf_tags_on_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLfTag>>) -> Self {
         self.lf_tags_on_columns = input;
         self
     }
     /// <p>A list of LF-tags applied to a column resource.</p>
-    pub fn get_lf_tags_on_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnLfTag>> {
+    pub fn get_lf_tags_on_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnLfTag>> {
         &self.lf_tags_on_columns
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`thing_group_arn(Option<String>)`](crate::operation::create_thing_group::CreateThingGroupOutput::thing_group_arn): <p>The thing group ARN.</p>
     ///   - [`thing_group_id(Option<String>)`](crate::operation::create_thing_group::CreateThingGroupOutput::thing_group_id): <p>The thing group ID.</p>
     /// - On failure, responds with [`SdkError<CreateThingGroupError>`](crate::operation::create_thing_group::CreateThingGroupError)
-    pub fn create_thing_group(
-        &self,
-    ) -> crate::operation::create_thing_group::builders::CreateThingGroupFluentBuilder {
-        crate::operation::create_thing_group::builders::CreateThingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_thing_group(&self) -> crate::operation::create_thing_group::builders::CreateThingGroupFluentBuilder {
+        crate::operation::create_thing_group::builders::CreateThingGroupFluentBuilder::new(self.handle.clone())
     }
 }

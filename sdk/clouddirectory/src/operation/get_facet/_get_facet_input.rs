@@ -29,9 +29,7 @@ impl GetFacetInput {
 
 /// A builder for [`GetFacetInput`](crate::operation::get_facet::GetFacetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFacetInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetFacetInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetFacetInput`](crate::operation::get_facet::GetFacetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_facet::GetFacetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_facet::GetFacetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_facet::GetFacetInput {
             schema_arn: self.schema_arn,
             name: self.name,

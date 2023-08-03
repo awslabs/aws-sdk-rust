@@ -58,9 +58,7 @@ impl SwitchoverDetail {
 
 /// A builder for [`SwitchoverDetail`](crate::types::SwitchoverDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SwitchoverDetailBuilder {
     pub(crate) source_member: ::std::option::Option<::std::string::String>,
     pub(crate) target_member: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ pub struct SwitchoverDetailBuilder {
 }
 impl SwitchoverDetailBuilder {
     /// <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
-    pub fn source_member(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_member(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_member = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
-    pub fn set_source_member(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_member(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_member = input;
         self
     }
@@ -88,18 +80,12 @@ impl SwitchoverDetailBuilder {
         &self.source_member
     }
     /// <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
-    pub fn target_member(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_member(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_member = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
-    pub fn set_target_member(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_member(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_member = input;
         self
     }

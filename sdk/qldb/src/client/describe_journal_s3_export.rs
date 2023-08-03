@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeJournalS3ExportOutput`](crate::operation::describe_journal_s3_export::DescribeJournalS3ExportOutput) with field(s):
     ///   - [`export_description(Option<JournalS3ExportDescription>)`](crate::operation::describe_journal_s3_export::DescribeJournalS3ExportOutput::export_description): <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
     /// - On failure, responds with [`SdkError<DescribeJournalS3ExportError>`](crate::operation::describe_journal_s3_export::DescribeJournalS3ExportError)
-    pub fn describe_journal_s3_export(
-        &self,
-    ) -> crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportFluentBuilder
-    {
+    pub fn describe_journal_s3_export(&self) -> crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportFluentBuilder {
         crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportFluentBuilder::new(self.handle.clone())
     }
 }

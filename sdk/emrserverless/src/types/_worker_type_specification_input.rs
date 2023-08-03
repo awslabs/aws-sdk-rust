@@ -10,9 +10,7 @@ pub struct WorkerTypeSpecificationInput {
 }
 impl WorkerTypeSpecificationInput {
     /// <p>The image configuration for a worker type.</p>
-    pub fn image_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImageConfigurationInput> {
+    pub fn image_configuration(&self) -> ::std::option::Option<&crate::types::ImageConfigurationInput> {
         self.image_configuration.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl WorkerTypeSpecificationInput {
 
 /// A builder for [`WorkerTypeSpecificationInput`](crate::types::WorkerTypeSpecificationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkerTypeSpecificationInputBuilder {
     pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfigurationInput>,
 }
@@ -38,17 +34,12 @@ impl WorkerTypeSpecificationInputBuilder {
         self
     }
     /// <p>The image configuration for a worker type.</p>
-    pub fn set_image_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageConfigurationInput>,
-    ) -> Self {
+    pub fn set_image_configuration(mut self, input: ::std::option::Option<crate::types::ImageConfigurationInput>) -> Self {
         self.image_configuration = input;
         self
     }
     /// <p>The image configuration for a worker type.</p>
-    pub fn get_image_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageConfigurationInput> {
+    pub fn get_image_configuration(&self) -> &::std::option::Option<crate::types::ImageConfigurationInput> {
         &self.image_configuration
     }
     /// Consumes the builder and constructs a [`WorkerTypeSpecificationInput`](crate::types::WorkerTypeSpecificationInput).

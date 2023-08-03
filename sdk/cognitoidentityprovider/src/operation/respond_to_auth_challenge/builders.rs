@@ -29,8 +29,7 @@ impl RespondToAuthChallengeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RespondToAuthChallengeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::respond_to_auth_challenge::builders::RespondToAuthChallengeInputBuilder,
+    inner: crate::operation::respond_to_auth_challenge::builders::RespondToAuthChallengeInputBuilder,
 }
 impl RespondToAuthChallengeFluentBuilder {
     /// Creates a new `RespondToAuthChallenge`.
@@ -41,10 +40,7 @@ impl RespondToAuthChallengeFluentBuilder {
         }
     }
     /// Access the RespondToAuthChallenge as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::respond_to_auth_challenge::builders::RespondToAuthChallengeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::respond_to_auth_challenge::builders::RespondToAuthChallengeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl RespondToAuthChallengeFluentBuilder {
             crate::operation::respond_to_auth_challenge::RespondToAuthChallenge,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl RespondToAuthChallengeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl RespondToAuthChallengeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl RespondToAuthChallengeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +108,7 @@ impl RespondToAuthChallengeFluentBuilder {
             crate::operation::respond_to_auth_challenge::RespondToAuthChallenge,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError>,
     > {
         self.customize_middleware().await
     }
@@ -149,10 +134,7 @@ impl RespondToAuthChallengeFluentBuilder {
     }
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
     /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
-    pub fn set_challenge_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ChallengeNameType>,
-    ) -> Self {
+    pub fn set_challenge_name(mut self, input: ::std::option::Option<crate::types::ChallengeNameType>) -> Self {
         self.inner = self.inner.set_challenge_name(input);
         self
     }
@@ -221,9 +203,7 @@ impl RespondToAuthChallengeFluentBuilder {
     /// </ul>
     pub fn set_challenge_responses(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_challenge_responses(input);
         self
@@ -244,11 +224,7 @@ impl RespondToAuthChallengeFluentBuilder {
     /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
     /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
     /// </ul>
-    pub fn get_challenge_responses(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_challenge_responses(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_challenge_responses()
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code> calls.</p>
@@ -257,17 +233,12 @@ impl RespondToAuthChallengeFluentBuilder {
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code> calls.</p>
-    pub fn set_analytics_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMetadataType>,
-    ) -> Self {
+    pub fn set_analytics_metadata(mut self, input: ::std::option::Option<crate::types::AnalyticsMetadataType>) -> Self {
         self.inner = self.inner.set_analytics_metadata(input);
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code> calls.</p>
-    pub fn get_analytics_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
+    pub fn get_analytics_metadata(&self) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
         self.inner.get_analytics_metadata()
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
@@ -276,17 +247,12 @@ impl RespondToAuthChallengeFluentBuilder {
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn set_user_context_data(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContextDataType>,
-    ) -> Self {
+    pub fn set_user_context_data(mut self, input: ::std::option::Option<crate::types::UserContextDataType>) -> Self {
         self.inner = self.inner.set_user_context_data(input);
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn get_user_context_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserContextDataType> {
+    pub fn get_user_context_data(&self) -> &::std::option::Option<crate::types::UserContextDataType> {
         self.inner.get_user_context_data()
     }
     /// Adds a key-value pair to `ClientMetadata`.
@@ -323,9 +289,7 @@ impl RespondToAuthChallengeFluentBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_client_metadata(input);
         self
@@ -340,11 +304,7 @@ impl RespondToAuthChallengeFluentBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_client_metadata()
     }
 }

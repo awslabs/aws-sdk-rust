@@ -37,9 +37,7 @@ impl CreatePartitionIndexFluentBuilder {
         }
     }
     /// Access the CreatePartitionIndex as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_partition_index::builders::CreatePartitionIndexInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_partition_index::builders::CreatePartitionIndexInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreatePartitionIndexFluentBuilder {
             crate::operation::create_partition_index::CreatePartitionIndex,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_partition_index::CreatePartitionIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_partition_index::CreatePartitionIndexError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreatePartitionIndexFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreatePartitionIndexFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_partition_index::CreatePartitionIndexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_partition_index::CreatePartitionIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_partition_index::CreatePartitionIndexError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreatePartitionIndexFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_partition_index::CreatePartitionIndexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_partition_index::CreatePartitionIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_partition_index::CreatePartitionIndexError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreatePartitionIndexFluentBuilder {
             crate::operation::create_partition_index::CreatePartitionIndex,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_partition_index::CreatePartitionIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_partition_index::CreatePartitionIndexError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl CreatePartitionIndexFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>Specifies the name of a database in which you want to create a partition index.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>Specifies the name of a database in which you want to create a partition index.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -176,10 +157,7 @@ impl CreatePartitionIndexFluentBuilder {
         self
     }
     /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
-    pub fn set_partition_index(
-        mut self,
-        input: ::std::option::Option<crate::types::PartitionIndex>,
-    ) -> Self {
+    pub fn set_partition_index(mut self, input: ::std::option::Option<crate::types::PartitionIndex>) -> Self {
         self.inner = self.inner.set_partition_index(input);
         self
     }

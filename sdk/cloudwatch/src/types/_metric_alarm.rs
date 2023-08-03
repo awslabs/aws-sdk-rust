@@ -107,9 +107,7 @@ impl MetricAlarm {
         self.alarm_description.as_deref()
     }
     /// <p>The time stamp of the last update to the alarm configuration.</p>
-    pub fn alarm_configuration_updated_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn alarm_configuration_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.alarm_configuration_updated_timestamp.as_ref()
     }
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
@@ -210,9 +208,7 @@ impl MetricAlarm {
         self.evaluation_state.as_ref()
     }
     /// <p>The date and time that the alarm's <code>StateValue</code> most recently changed.</p>
-    pub fn state_transitioned_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn state_transitioned_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.state_transitioned_timestamp.as_ref()
     }
 }
@@ -225,20 +221,16 @@ impl MetricAlarm {
 
 /// A builder for [`MetricAlarm`](crate::types::MetricAlarm).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricAlarmBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_arn: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_description: ::std::option::Option<::std::string::String>,
-    pub(crate) alarm_configuration_updated_timestamp:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) alarm_configuration_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) actions_enabled: ::std::option::Option<bool>,
     pub(crate) ok_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) alarm_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) insufficient_data_actions:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) insufficient_data_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) state_value: ::std::option::Option<crate::types::StateValue>,
     pub(crate) state_reason: ::std::option::Option<::std::string::String>,
     pub(crate) state_reason_data: ::std::option::Option<::std::string::String>,
@@ -291,18 +283,12 @@ impl MetricAlarmBuilder {
         &self.alarm_arn
     }
     /// <p>The description of the alarm.</p>
-    pub fn alarm_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the alarm.</p>
-    pub fn set_alarm_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_description = input;
         self
     }
@@ -311,25 +297,17 @@ impl MetricAlarmBuilder {
         &self.alarm_description
     }
     /// <p>The time stamp of the last update to the alarm configuration.</p>
-    pub fn alarm_configuration_updated_timestamp(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn alarm_configuration_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.alarm_configuration_updated_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time stamp of the last update to the alarm configuration.</p>
-    pub fn set_alarm_configuration_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_alarm_configuration_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.alarm_configuration_updated_timestamp = input;
         self
     }
     /// <p>The time stamp of the last update to the alarm configuration.</p>
-    pub fn get_alarm_configuration_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_alarm_configuration_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.alarm_configuration_updated_timestamp
     }
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
@@ -358,10 +336,7 @@ impl MetricAlarmBuilder {
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn set_ok_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ok_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ok_actions = input;
         self
     }
@@ -374,27 +349,19 @@ impl MetricAlarmBuilder {
     /// To override the contents of this collection use [`set_alarm_actions`](Self::set_alarm_actions).
     ///
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn alarm_actions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alarm_actions.unwrap_or_default();
         v.push(input.into());
         self.alarm_actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn set_alarm_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_alarm_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.alarm_actions = input;
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn get_alarm_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alarm_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.alarm_actions
     }
     /// Appends an item to `insufficient_data_actions`.
@@ -402,27 +369,19 @@ impl MetricAlarmBuilder {
     /// To override the contents of this collection use [`set_insufficient_data_actions`](Self::set_insufficient_data_actions).
     ///
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn insufficient_data_actions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn insufficient_data_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.insufficient_data_actions.unwrap_or_default();
         v.push(input.into());
         self.insufficient_data_actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn set_insufficient_data_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_insufficient_data_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.insufficient_data_actions = input;
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn get_insufficient_data_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_insufficient_data_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.insufficient_data_actions
     }
     /// <p>The state value for the alarm.</p>
@@ -431,10 +390,7 @@ impl MetricAlarmBuilder {
         self
     }
     /// <p>The state value for the alarm.</p>
-    pub fn set_state_value(
-        mut self,
-        input: ::std::option::Option<crate::types::StateValue>,
-    ) -> Self {
+    pub fn set_state_value(mut self, input: ::std::option::Option<crate::types::StateValue>) -> Self {
         self.state_value = input;
         self
     }
@@ -457,18 +413,12 @@ impl MetricAlarmBuilder {
         &self.state_reason
     }
     /// <p>An explanation for the alarm state, in JSON format.</p>
-    pub fn state_reason_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_reason_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_reason_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An explanation for the alarm state, in JSON format.</p>
-    pub fn set_state_reason_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_reason_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_reason_data = input;
         self
     }
@@ -482,17 +432,12 @@ impl MetricAlarmBuilder {
         self
     }
     /// <p>The time stamp of the last update to the value of either the <code>StateValue</code> or <code>EvaluationState</code> parameters.</p>
-    pub fn set_state_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_state_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.state_updated_timestamp = input;
         self
     }
     /// <p>The time stamp of the last update to the value of either the <code>StateValue</code> or <code>EvaluationState</code> parameters.</p>
-    pub fn get_state_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_state_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.state_updated_timestamp
     }
     /// <p>The name of the metric associated with the alarm, if this is an alarm based on a single metric.</p>
@@ -538,18 +483,12 @@ impl MetricAlarmBuilder {
         &self.statistic
     }
     /// <p>The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.</p>
-    pub fn extended_statistic(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extended_statistic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extended_statistic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.</p>
-    pub fn set_extended_statistic(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extended_statistic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extended_statistic = input;
         self
     }
@@ -569,17 +508,12 @@ impl MetricAlarmBuilder {
         self
     }
     /// <p>The dimensions for the metric associated with the alarm.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The dimensions for the metric associated with the alarm.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
         &self.dimensions
     }
     /// <p>The period, in seconds, over which the statistic is applied.</p>
@@ -658,34 +592,23 @@ impl MetricAlarmBuilder {
         self
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.comparison_operator = input;
         self
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
-    pub fn get_comparison_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         &self.comparison_operator
     }
     /// <p>Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring how CloudWatch alarms treat missing data</a>.</p>
     /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
-    pub fn treat_missing_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn treat_missing_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.treat_missing_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring how CloudWatch alarms treat missing data</a>.</p>
     /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
-    pub fn set_treat_missing_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_treat_missing_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.treat_missing_data = input;
         self
     }
@@ -695,25 +618,17 @@ impl MetricAlarmBuilder {
         &self.treat_missing_data
     }
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available.</p>
-    pub fn evaluate_low_sample_count_percentile(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluate_low_sample_count_percentile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluate_low_sample_count_percentile = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available.</p>
-    pub fn set_evaluate_low_sample_count_percentile(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluate_low_sample_count_percentile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluate_low_sample_count_percentile = input;
         self
     }
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available.</p>
-    pub fn get_evaluate_low_sample_count_percentile(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_evaluate_low_sample_count_percentile(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluate_low_sample_count_percentile
     }
     /// Appends an item to `metrics`.
@@ -728,32 +643,21 @@ impl MetricAlarmBuilder {
         self
     }
     /// <p>An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the alarm watches. This expression by designated by having <code>ReturnData</code> set to true.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>) -> Self {
         self.metrics = input;
         self
     }
     /// <p>An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the alarm watches. This expression by designated by having <code>ReturnData</code> set to true.</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>> {
         &self.metrics
     }
     /// <p>In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm.</p>
-    pub fn threshold_metric_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn threshold_metric_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.threshold_metric_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm.</p>
-    pub fn set_threshold_metric_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_threshold_metric_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.threshold_metric_id = input;
         self
     }
@@ -767,10 +671,7 @@ impl MetricAlarmBuilder {
         self
     }
     /// <p>If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being evaluated based on only partial data. This happens if the query used for the alarm returns more than 10,000 metrics. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create alarms on Metrics Insights queries</a>.</p>
-    pub fn set_evaluation_state(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationState>,
-    ) -> Self {
+    pub fn set_evaluation_state(mut self, input: ::std::option::Option<crate::types::EvaluationState>) -> Self {
         self.evaluation_state = input;
         self
     }
@@ -784,17 +685,12 @@ impl MetricAlarmBuilder {
         self
     }
     /// <p>The date and time that the alarm's <code>StateValue</code> most recently changed.</p>
-    pub fn set_state_transitioned_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_state_transitioned_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.state_transitioned_timestamp = input;
         self
     }
     /// <p>The date and time that the alarm's <code>StateValue</code> most recently changed.</p>
-    pub fn get_state_transitioned_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_state_transitioned_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.state_transitioned_timestamp
     }
     /// Consumes the builder and constructs a [`MetricAlarm`](crate::types::MetricAlarm).

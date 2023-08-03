@@ -30,9 +30,7 @@ impl DefaultExportDestination {
 
 /// A builder for [`DefaultExportDestination`](crate::types::DefaultExportDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultExportDestinationBuilder {
     pub(crate) destination_type: ::std::option::Option<crate::types::ExportDestinationType>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
@@ -44,17 +42,12 @@ impl DefaultExportDestinationBuilder {
         self
     }
     /// <p>The destination type, such as Amazon S3.</p>
-    pub fn set_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportDestinationType>,
-    ) -> Self {
+    pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::ExportDestinationType>) -> Self {
         self.destination_type = input;
         self
     }
     /// <p>The destination type, such as Amazon S3.</p>
-    pub fn get_destination_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportDestinationType> {
+    pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::ExportDestinationType> {
         &self.destination_type
     }
     /// <p>The destination bucket where Audit Manager stores exported files.</p>

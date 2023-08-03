@@ -17,8 +17,7 @@ pub struct SlotValueSelectionSetting {
     pub regex_filter: ::std::option::Option<crate::types::SlotValueRegexFilter>,
     /// <p>Provides settings that enable advanced recognition settings for slot values. You can use this to enable using slot values as a custom vocabulary for recognizing user utterances.</p>
     #[doc(hidden)]
-    pub advanced_recognition_setting:
-        ::std::option::Option<crate::types::AdvancedRecognitionSetting>,
+    pub advanced_recognition_setting: ::std::option::Option<crate::types::AdvancedRecognitionSetting>,
 }
 impl SlotValueSelectionSetting {
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
@@ -27,9 +26,7 @@ impl SlotValueSelectionSetting {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    pub fn resolution_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SlotValueResolutionStrategy> {
+    pub fn resolution_strategy(&self) -> ::std::option::Option<&crate::types::SlotValueResolutionStrategy> {
         self.resolution_strategy.as_ref()
     }
     /// <p>A regular expression used to validate the value of a slot.</p>
@@ -37,9 +34,7 @@ impl SlotValueSelectionSetting {
         self.regex_filter.as_ref()
     }
     /// <p>Provides settings that enable advanced recognition settings for slot values. You can use this to enable using slot values as a custom vocabulary for recognizing user utterances.</p>
-    pub fn advanced_recognition_setting(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AdvancedRecognitionSetting> {
+    pub fn advanced_recognition_setting(&self) -> ::std::option::Option<&crate::types::AdvancedRecognitionSetting> {
         self.advanced_recognition_setting.as_ref()
     }
 }
@@ -52,15 +47,11 @@ impl SlotValueSelectionSetting {
 
 /// A builder for [`SlotValueSelectionSetting`](crate::types::SlotValueSelectionSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotValueSelectionSettingBuilder {
-    pub(crate) resolution_strategy:
-        ::std::option::Option<crate::types::SlotValueResolutionStrategy>,
+    pub(crate) resolution_strategy: ::std::option::Option<crate::types::SlotValueResolutionStrategy>,
     pub(crate) regex_filter: ::std::option::Option<crate::types::SlotValueRegexFilter>,
-    pub(crate) advanced_recognition_setting:
-        ::std::option::Option<crate::types::AdvancedRecognitionSetting>,
+    pub(crate) advanced_recognition_setting: ::std::option::Option<crate::types::AdvancedRecognitionSetting>,
 }
 impl SlotValueSelectionSettingBuilder {
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
@@ -79,10 +70,7 @@ impl SlotValueSelectionSettingBuilder {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    pub fn set_resolution_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotValueResolutionStrategy>,
-    ) -> Self {
+    pub fn set_resolution_strategy(mut self, input: ::std::option::Option<crate::types::SlotValueResolutionStrategy>) -> Self {
         self.resolution_strategy = input;
         self
     }
@@ -92,9 +80,7 @@ impl SlotValueSelectionSettingBuilder {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    pub fn get_resolution_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::SlotValueResolutionStrategy> {
+    pub fn get_resolution_strategy(&self) -> &::std::option::Option<crate::types::SlotValueResolutionStrategy> {
         &self.resolution_strategy
     }
     /// <p>A regular expression used to validate the value of a slot.</p>
@@ -103,10 +89,7 @@ impl SlotValueSelectionSettingBuilder {
         self
     }
     /// <p>A regular expression used to validate the value of a slot.</p>
-    pub fn set_regex_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotValueRegexFilter>,
-    ) -> Self {
+    pub fn set_regex_filter(mut self, input: ::std::option::Option<crate::types::SlotValueRegexFilter>) -> Self {
         self.regex_filter = input;
         self
     }
@@ -115,25 +98,17 @@ impl SlotValueSelectionSettingBuilder {
         &self.regex_filter
     }
     /// <p>Provides settings that enable advanced recognition settings for slot values. You can use this to enable using slot values as a custom vocabulary for recognizing user utterances.</p>
-    pub fn advanced_recognition_setting(
-        mut self,
-        input: crate::types::AdvancedRecognitionSetting,
-    ) -> Self {
+    pub fn advanced_recognition_setting(mut self, input: crate::types::AdvancedRecognitionSetting) -> Self {
         self.advanced_recognition_setting = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides settings that enable advanced recognition settings for slot values. You can use this to enable using slot values as a custom vocabulary for recognizing user utterances.</p>
-    pub fn set_advanced_recognition_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::AdvancedRecognitionSetting>,
-    ) -> Self {
+    pub fn set_advanced_recognition_setting(mut self, input: ::std::option::Option<crate::types::AdvancedRecognitionSetting>) -> Self {
         self.advanced_recognition_setting = input;
         self
     }
     /// <p>Provides settings that enable advanced recognition settings for slot values. You can use this to enable using slot values as a custom vocabulary for recognizing user utterances.</p>
-    pub fn get_advanced_recognition_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdvancedRecognitionSetting> {
+    pub fn get_advanced_recognition_setting(&self) -> &::std::option::Option<crate::types::AdvancedRecognitionSetting> {
         &self.advanced_recognition_setting
     }
     /// Consumes the builder and constructs a [`SlotValueSelectionSetting`](crate::types::SlotValueSelectionSetting).

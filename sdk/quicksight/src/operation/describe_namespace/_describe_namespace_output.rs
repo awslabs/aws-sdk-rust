@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeNamespaceOutput {
 }
 impl DescribeNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNamespaceOutput`](crate::operation::describe_namespace::DescribeNamespaceOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_namespace::builders::DescribeNamespaceOutputBuilder {
+    pub fn builder() -> crate::operation::describe_namespace::builders::DescribeNamespaceOutputBuilder {
         crate::operation::describe_namespace::builders::DescribeNamespaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNamespaceOutput`](crate::operation::describe_namespace::DescribeNamespaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNamespaceOutputBuilder {
     pub(crate) namespace: ::std::option::Option<crate::types::NamespaceInfoV2>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -59,10 +56,7 @@ impl DescribeNamespaceOutputBuilder {
         self
     }
     /// <p>The information about the namespace that you're describing. The response includes the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in the process of being created. For incomplete namespaces, this API operation lists the namespace error types and messages associated with the creation process.</p>
-    pub fn set_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::NamespaceInfoV2>,
-    ) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<crate::types::NamespaceInfoV2>) -> Self {
         self.namespace = input;
         self
     }

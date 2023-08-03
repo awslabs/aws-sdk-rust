@@ -64,18 +64,14 @@ impl ListBatchJobExecutionsInput {
 }
 impl ListBatchJobExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListBatchJobExecutionsInput`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder {
         crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBatchJobExecutionsInput`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBatchJobExecutionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -116,18 +112,12 @@ impl ListBatchJobExecutionsInputBuilder {
         &self.max_results
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -140,27 +130,19 @@ impl ListBatchJobExecutionsInputBuilder {
     /// To override the contents of this collection use [`set_execution_ids`](Self::set_execution_ids).
     ///
     /// <p>The unique identifier of each batch job execution.</p>
-    pub fn execution_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.execution_ids.unwrap_or_default();
         v.push(input.into());
         self.execution_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The unique identifier of each batch job execution.</p>
-    pub fn set_execution_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_execution_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.execution_ids = input;
         self
     }
     /// <p>The unique identifier of each batch job execution.</p>
-    pub fn get_execution_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_execution_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.execution_ids
     }
     /// <p>The name of each batch job execution.</p>
@@ -183,10 +165,7 @@ impl ListBatchJobExecutionsInputBuilder {
         self
     }
     /// <p>The status of the batch job executions.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchJobExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::BatchJobExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -200,10 +179,7 @@ impl ListBatchJobExecutionsInputBuilder {
         self
     }
     /// <p>The time after which the batch job executions started.</p>
-    pub fn set_started_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_after = input;
         self
     }
@@ -217,10 +193,7 @@ impl ListBatchJobExecutionsInputBuilder {
         self
     }
     /// <p>The time before the batch job executions started.</p>
-    pub fn set_started_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_before = input;
         self
     }
@@ -235,17 +208,15 @@ impl ListBatchJobExecutionsInputBuilder {
         crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                application_id: self.application_id,
-                execution_ids: self.execution_ids,
-                job_name: self.job_name,
-                status: self.status,
-                started_after: self.started_after,
-                started_before: self.started_before,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            application_id: self.application_id,
+            execution_ids: self.execution_ids,
+            job_name: self.job_name,
+            status: self.status,
+            started_after: self.started_after,
+            started_before: self.started_before,
+        })
     }
 }

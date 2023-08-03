@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateIdentityProviderOutput {
 }
 impl CreateIdentityProviderOutput {
     /// Creates a new builder-style object to manufacture [`CreateIdentityProviderOutput`](crate::operation::create_identity_provider::CreateIdentityProviderOutput).
-    pub fn builder(
-    ) -> crate::operation::create_identity_provider::builders::CreateIdentityProviderOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_identity_provider::builders::CreateIdentityProviderOutputBuilder {
         crate::operation::create_identity_provider::builders::CreateIdentityProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateIdentityProviderOutput`](crate::operation::create_identity_provider::CreateIdentityProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIdentityProviderOutputBuilder {
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProviderType>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateIdentityProviderOutputBuilder {
         self
     }
     /// <p>The newly created IdP object.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderType>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProviderType>) -> Self {
         self.identity_provider = input;
         self
     }
     /// <p>The newly created IdP object.</p>
-    pub fn get_identity_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderType> {
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProviderType> {
         &self.identity_provider
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

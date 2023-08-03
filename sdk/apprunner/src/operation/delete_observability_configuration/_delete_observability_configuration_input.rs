@@ -17,43 +17,33 @@ impl DeleteObservabilityConfigurationInput {
 }
 impl DeleteObservabilityConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteObservabilityConfigurationInput`](crate::operation::delete_observability_configuration::DeleteObservabilityConfigurationInput).
-    pub fn builder() -> crate::operation::delete_observability_configuration::builders::DeleteObservabilityConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_observability_configuration::builders::DeleteObservabilityConfigurationInputBuilder {
         crate::operation::delete_observability_configuration::builders::DeleteObservabilityConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteObservabilityConfigurationInput`](crate::operation::delete_observability_configuration::DeleteObservabilityConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteObservabilityConfigurationInputBuilder {
     pub(crate) observability_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteObservabilityConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want to delete.</p>
     /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
-    pub fn observability_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn observability_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.observability_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want to delete.</p>
     /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
-    pub fn set_observability_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_observability_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.observability_configuration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want to delete.</p>
     /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
-    pub fn get_observability_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_observability_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.observability_configuration_arn
     }
     /// Consumes the builder and constructs a [`DeleteObservabilityConfigurationInput`](crate::operation::delete_observability_configuration::DeleteObservabilityConfigurationInput).
@@ -65,9 +55,8 @@ impl DeleteObservabilityConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_observability_configuration::DeleteObservabilityConfigurationInput {
-                observability_configuration_arn: self.observability_configuration_arn
-                ,
-            }
+                observability_configuration_arn: self.observability_configuration_arn,
+            },
         )
     }
 }

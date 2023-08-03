@@ -98,9 +98,7 @@ impl GetHealthEventOutput {
 
 /// A builder for [`GetHealthEventOutput`](crate::operation::get_health_event::GetHealthEventOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHealthEventOutputBuilder {
     pub(crate) event_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
@@ -108,8 +106,7 @@ pub struct GetHealthEventOutputBuilder {
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) impacted_locations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>>,
+    pub(crate) impacted_locations: ::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>>,
     pub(crate) status: ::std::option::Option<crate::types::HealthEventStatus>,
     pub(crate) percent_of_total_traffic_impacted: ::std::option::Option<f64>,
     pub(crate) impact_type: ::std::option::Option<crate::types::HealthEventImpactType>,
@@ -151,10 +148,7 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The time when a health event started.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -168,10 +162,7 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The time when a health event was resolved. If the health event is still active, the end time is not set.</p>
-    pub fn set_ended_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self
     }
@@ -185,10 +176,7 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The time when a health event was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -202,10 +190,7 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The time when a health event was last updated or recalculated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -225,17 +210,12 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The locations affected by a health event.</p>
-    pub fn set_impacted_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>>,
-    ) -> Self {
+    pub fn set_impacted_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>>) -> Self {
         self.impacted_locations = input;
         self
     }
     /// <p>The locations affected by a health event.</p>
-    pub fn get_impacted_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>> {
+    pub fn get_impacted_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>> {
         &self.impacted_locations
     }
     /// <p>The status of a health event.</p>
@@ -244,10 +224,7 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The status of a health event.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthEventStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::HealthEventStatus>) -> Self {
         self.status = input;
         self
     }
@@ -261,10 +238,7 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The impact on total traffic that a health event has.</p>
-    pub fn set_percent_of_total_traffic_impacted(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_percent_of_total_traffic_impacted(mut self, input: ::std::option::Option<f64>) -> Self {
         self.percent_of_total_traffic_impacted = input;
         self
     }
@@ -278,10 +252,7 @@ impl GetHealthEventOutputBuilder {
         self
     }
     /// <p>The type of impairment of a specific health event.</p>
-    pub fn set_impact_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthEventImpactType>,
-    ) -> Self {
+    pub fn set_impact_type(mut self, input: ::std::option::Option<crate::types::HealthEventImpactType>) -> Self {
         self.impact_type = input;
         self
     }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_policy_stores::ListPolicyStoresOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     ///   - [`policy_stores(Option<Vec<PolicyStoreItem>>)`](crate::operation::list_policy_stores::ListPolicyStoresOutput::policy_stores): <p>The list of policy stores in the account.</p>
     /// - On failure, responds with [`SdkError<ListPolicyStoresError>`](crate::operation::list_policy_stores::ListPolicyStoresError)
-    pub fn list_policy_stores(
-        &self,
-    ) -> crate::operation::list_policy_stores::builders::ListPolicyStoresFluentBuilder {
-        crate::operation::list_policy_stores::builders::ListPolicyStoresFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_policy_stores(&self) -> crate::operation::list_policy_stores::builders::ListPolicyStoresFluentBuilder {
+        crate::operation::list_policy_stores::builders::ListPolicyStoresFluentBuilder::new(self.handle.clone())
     }
 }

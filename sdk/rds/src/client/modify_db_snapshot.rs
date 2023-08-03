@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyDbSnapshotOutput`](crate::operation::modify_db_snapshot::ModifyDbSnapshotOutput) with field(s):
     ///   - [`db_snapshot(Option<DbSnapshot>)`](crate::operation::modify_db_snapshot::ModifyDbSnapshotOutput::db_snapshot): <p>Contains the details of an Amazon RDS DB snapshot.</p>  <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
     /// - On failure, responds with [`SdkError<ModifyDBSnapshotError>`](crate::operation::modify_db_snapshot::ModifyDBSnapshotError)
-    pub fn modify_db_snapshot(
-        &self,
-    ) -> crate::operation::modify_db_snapshot::builders::ModifyDBSnapshotFluentBuilder {
-        crate::operation::modify_db_snapshot::builders::ModifyDBSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_db_snapshot(&self) -> crate::operation::modify_db_snapshot::builders::ModifyDBSnapshotFluentBuilder {
+        crate::operation::modify_db_snapshot::builders::ModifyDBSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

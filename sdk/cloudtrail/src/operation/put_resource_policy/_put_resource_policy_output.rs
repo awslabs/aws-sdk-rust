@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for PutResourcePolicyOutput {
 }
 impl PutResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::operation::put_resource_policy::PutResourcePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder {
+    pub fn builder() -> crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder {
         crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutResourcePolicyOutput`](crate::operation::put_resource_policy::PutResourcePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutResourcePolicyOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_policy: ::std::option::Option<::std::string::String>,
@@ -60,18 +57,12 @@ impl PutResourcePolicyOutputBuilder {
         &self.resource_arn
     }
     /// <p> The JSON-formatted string of the Amazon Web Services resource-based policy attached to the CloudTrail channel. </p>
-    pub fn resource_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The JSON-formatted string of the Amazon Web Services resource-based policy attached to the CloudTrail channel. </p>
-    pub fn set_resource_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_policy = input;
         self
     }

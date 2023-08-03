@@ -10,10 +10,7 @@ impl ListStudioMembersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_studio_members::ListStudioMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_studio_members::ListStudioMembersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_studio_members::ListStudioMembersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_studio_members();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ListStudioMembersFluentBuilder {
         }
     }
     /// Access the ListStudioMembers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_studio_members::builders::ListStudioMembersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_studio_members::builders::ListStudioMembersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ListStudioMembersFluentBuilder {
             crate::operation::list_studio_members::ListStudioMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_studio_members::ListStudioMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_studio_members::ListStudioMembersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ListStudioMembersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ListStudioMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_studio_members::ListStudioMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_studio_members::ListStudioMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_studio_members::ListStudioMembersError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ListStudioMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_studio_members::ListStudioMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_studio_members::ListStudioMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_studio_members::ListStudioMembersError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl ListStudioMembersFluentBuilder {
             crate::operation::list_studio_members::ListStudioMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_studio_members::ListStudioMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_studio_members::ListStudioMembersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_studio_members::paginator::ListStudioMembersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_studio_members::paginator::ListStudioMembersPaginator {
-        crate::operation::list_studio_members::paginator::ListStudioMembersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_studio_members::paginator::ListStudioMembersPaginator {
+        crate::operation::list_studio_members::paginator::ListStudioMembersPaginator::new(self.handle, self.inner)
     }
     /// <p>The max number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {

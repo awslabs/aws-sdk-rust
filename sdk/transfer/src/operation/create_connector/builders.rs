@@ -10,10 +10,7 @@ impl CreateConnectorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_connector::CreateConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connector::CreateConnectorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connector::CreateConnectorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_connector();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateConnectorFluentBuilder {
         }
     }
     /// Access the CreateConnector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_connector::builders::CreateConnectorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_connector::builders::CreateConnectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CreateConnectorFluentBuilder {
             crate::operation::create_connector::CreateConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connector::CreateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connector::CreateConnectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CreateConnectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CreateConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connector::CreateConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connector::CreateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connector::CreateConnectorError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CreateConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connector::CreateConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connector::CreateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connector::CreateConnectorError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl CreateConnectorFluentBuilder {
             crate::operation::create_connector::CreateConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connector::CreateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connector::CreateConnectorError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +128,7 @@ impl CreateConnectorFluentBuilder {
         self
     }
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
-    pub fn set_as2_config(
-        mut self,
-        input: ::std::option::Option<crate::types::As2ConnectorConfig>,
-    ) -> Self {
+    pub fn set_as2_config(mut self, input: ::std::option::Option<crate::types::As2ConnectorConfig>) -> Self {
         self.inner = self.inner.set_as2_config(input);
         self
     }
@@ -196,10 +177,7 @@ impl CreateConnectorFluentBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -213,10 +191,7 @@ impl CreateConnectorFluentBuilder {
         self
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
-    pub fn set_sftp_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SftpConnectorConfig>,
-    ) -> Self {
+    pub fn set_sftp_config(mut self, input: ::std::option::Option<crate::types::SftpConnectorConfig>) -> Self {
         self.inner = self.inner.set_sftp_config(input);
         self
     }

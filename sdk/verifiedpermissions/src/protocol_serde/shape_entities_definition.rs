@@ -10,21 +10,16 @@ pub fn ser_entities_definition(
                 {
                     #[allow(unused_mut)]
                     let mut object_3 = array_1.value().start_object();
-                    crate::protocol_serde::shape_entity_item::ser_entity_item(
-                        &mut object_3,
-                        item_2,
-                    )?;
+                    crate::protocol_serde::shape_entity_item::ser_entity_item(&mut object_3, item_2)?;
                     object_3.finish();
                 }
             }
             array_1.finish();
         }
         crate::types::EntitiesDefinition::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "EntitiesDefinition",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "EntitiesDefinition",
+            ))
         }
     }
     Ok(())

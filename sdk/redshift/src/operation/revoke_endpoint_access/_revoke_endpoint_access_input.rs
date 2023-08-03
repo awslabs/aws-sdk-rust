@@ -36,17 +36,14 @@ impl RevokeEndpointAccessInput {
 }
 impl RevokeEndpointAccessInput {
     /// Creates a new builder-style object to manufacture [`RevokeEndpointAccessInput`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput).
-    pub fn builder(
-    ) -> crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessInputBuilder {
+    pub fn builder() -> crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessInputBuilder {
         crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeEndpointAccessInput`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeEndpointAccessInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct RevokeEndpointAccessInputBuilder {
 }
 impl RevokeEndpointAccessInputBuilder {
     /// <p>The cluster to revoke access from.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster to revoke access from.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -100,10 +91,7 @@ impl RevokeEndpointAccessInputBuilder {
         self
     }
     /// <p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>
-    pub fn set_vpc_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_ids = input;
         self
     }
@@ -128,17 +116,13 @@ impl RevokeEndpointAccessInputBuilder {
     /// Consumes the builder and constructs a [`RevokeEndpointAccessInput`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput {
-                cluster_identifier: self.cluster_identifier,
-                account: self.account,
-                vpc_ids: self.vpc_ids,
-                force: self.force.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput {
+            cluster_identifier: self.cluster_identifier,
+            account: self.account,
+            vpc_ids: self.vpc_ids,
+            force: self.force.unwrap_or_default(),
+        })
     }
 }

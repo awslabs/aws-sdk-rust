@@ -37,9 +37,7 @@ impl UserTurnOutputSpecification {
 
 /// A builder for [`UserTurnOutputSpecification`](crate::types::UserTurnOutputSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserTurnOutputSpecificationBuilder {
     pub(crate) intent: ::std::option::Option<crate::types::UserTurnIntentOutput>,
     pub(crate) active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
@@ -52,10 +50,7 @@ impl UserTurnOutputSpecificationBuilder {
         self
     }
     /// <p>Contains information about the intent.</p>
-    pub fn set_intent(
-        mut self,
-        input: ::std::option::Option<crate::types::UserTurnIntentOutput>,
-    ) -> Self {
+    pub fn set_intent(mut self, input: ::std::option::Option<crate::types::UserTurnIntentOutput>) -> Self {
         self.intent = input;
         self
     }
@@ -75,17 +70,12 @@ impl UserTurnOutputSpecificationBuilder {
         self
     }
     /// <p>The contexts that are active in the turn.</p>
-    pub fn set_active_contexts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
-    ) -> Self {
+    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>) -> Self {
         self.active_contexts = input;
         self
     }
     /// <p>The contexts that are active in the turn.</p>
-    pub fn get_active_contexts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
+    pub fn get_active_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
         &self.active_contexts
     }
     /// <p>The transcript that is output for the user turn by the test execution.</p>

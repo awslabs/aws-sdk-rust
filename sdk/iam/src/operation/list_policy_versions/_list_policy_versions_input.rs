@@ -33,17 +33,14 @@ impl ListPolicyVersionsInput {
 }
 impl ListPolicyVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListPolicyVersionsInput`](crate::operation::list_policy_versions::ListPolicyVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_policy_versions::builders::ListPolicyVersionsInputBuilder {
+    pub fn builder() -> crate::operation::list_policy_versions::builders::ListPolicyVersionsInputBuilder {
         crate::operation::list_policy_versions::builders::ListPolicyVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPolicyVersionsInput`](crate::operation::list_policy_versions::ListPolicyVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPolicyVersionsInputBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -101,16 +98,11 @@ impl ListPolicyVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPolicyVersionsInput`](crate::operation::list_policy_versions::ListPolicyVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_policy_versions::ListPolicyVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_policy_versions::ListPolicyVersionsInput {
-                policy_arn: self.policy_arn,
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_policy_versions::ListPolicyVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_policy_versions::ListPolicyVersionsInput {
+            policy_arn: self.policy_arn,
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

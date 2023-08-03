@@ -42,9 +42,7 @@ impl ListAssociatedAssetsFluentBuilder {
         }
     }
     /// Access the ListAssociatedAssets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_associated_assets::builders::ListAssociatedAssetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_associated_assets::builders::ListAssociatedAssetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl ListAssociatedAssetsFluentBuilder {
             crate::operation::list_associated_assets::ListAssociatedAssets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_assets::ListAssociatedAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_assets::ListAssociatedAssetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl ListAssociatedAssetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl ListAssociatedAssetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_associated_assets::ListAssociatedAssetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_assets::ListAssociatedAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_assets::ListAssociatedAssetsError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl ListAssociatedAssetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_associated_assets::ListAssociatedAssetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_assets::ListAssociatedAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_assets::ListAssociatedAssetsError>,
     > {
         self.send_middleware().await
     }
@@ -121,22 +110,15 @@ impl ListAssociatedAssetsFluentBuilder {
             crate::operation::list_associated_assets::ListAssociatedAssets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associated_assets::ListAssociatedAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associated_assets::ListAssociatedAssetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_associated_assets::paginator::ListAssociatedAssetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_associated_assets::paginator::ListAssociatedAssetsPaginator {
-        crate::operation::list_associated_assets::paginator::ListAssociatedAssetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_associated_assets::paginator::ListAssociatedAssetsPaginator {
+        crate::operation::list_associated_assets::paginator::ListAssociatedAssetsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the asset to query.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,10 +167,7 @@ impl ListAssociatedAssetsFluentBuilder {
     /// <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
     /// </ul>
     /// <p>Default: <code>CHILD</code> </p>
-    pub fn set_traversal_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::TraversalDirection>,
-    ) -> Self {
+    pub fn set_traversal_direction(mut self, input: ::std::option::Option<crate::types::TraversalDirection>) -> Self {
         self.inner = self.inner.set_traversal_direction(input);
         self
     }
@@ -198,9 +177,7 @@ impl ListAssociatedAssetsFluentBuilder {
     /// <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
     /// </ul>
     /// <p>Default: <code>CHILD</code> </p>
-    pub fn get_traversal_direction(
-        &self,
-    ) -> &::std::option::Option<crate::types::TraversalDirection> {
+    pub fn get_traversal_direction(&self) -> &::std::option::Option<crate::types::TraversalDirection> {
         self.inner.get_traversal_direction()
     }
     /// <p>The token to be used for the next set of paginated results.</p>

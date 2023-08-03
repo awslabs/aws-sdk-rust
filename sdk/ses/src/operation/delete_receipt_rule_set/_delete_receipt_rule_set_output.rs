@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteReceiptRuleSetOutput {
 }
 impl DeleteReceiptRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReceiptRuleSetOutput`](crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_receipt_rule_set::builders::DeleteReceiptRuleSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_receipt_rule_set::builders::DeleteReceiptRuleSetOutputBuilder {
         crate::operation::delete_receipt_rule_set::builders::DeleteReceiptRuleSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReceiptRuleSetOutput`](crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReceiptRuleSetOutputBuilder {
     _request_id: Option<String>,
 }

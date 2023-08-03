@@ -35,9 +35,7 @@ impl UpdateEntityOutput {
 
 /// A builder for [`UpdateEntityOutput`](crate::operation::update_entity::UpdateEntityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEntityOutputBuilder {
     pub(crate) update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) state: ::std::option::Option<crate::types::State>,
@@ -50,10 +48,7 @@ impl UpdateEntityOutputBuilder {
         self
     }
     /// <p>The date and time when the entity was last updated.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date_time = input;
         self
     }

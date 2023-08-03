@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateIpAccessSettingsOutput`](crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput) with field(s):
     ///   - [`ip_access_settings_arn(Option<String>)`](crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput::ip_access_settings_arn): <p>The ARN of the IP access settings resource.</p>
     /// - On failure, responds with [`SdkError<CreateIpAccessSettingsError>`](crate::operation::create_ip_access_settings::CreateIpAccessSettingsError)
-    pub fn create_ip_access_settings(
-        &self,
-    ) -> crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsFluentBuilder
-    {
+    pub fn create_ip_access_settings(&self) -> crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsFluentBuilder {
         crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsFluentBuilder::new(self.handle.clone())
     }
 }

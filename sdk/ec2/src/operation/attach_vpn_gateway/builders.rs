@@ -10,10 +10,7 @@ impl AttachVpnGatewayInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_vpn_gateway::AttachVpnGatewayError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.attach_vpn_gateway();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl AttachVpnGatewayFluentBuilder {
         }
     }
     /// Access the AttachVpnGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl AttachVpnGatewayFluentBuilder {
             crate::operation::attach_vpn_gateway::AttachVpnGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_vpn_gateway::AttachVpnGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl AttachVpnGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl AttachVpnGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_vpn_gateway::AttachVpnGatewayError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl AttachVpnGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_vpn_gateway::AttachVpnGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl AttachVpnGatewayFluentBuilder {
             crate::operation::attach_vpn_gateway::AttachVpnGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_vpn_gateway::AttachVpnGatewayError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +122,12 @@ impl AttachVpnGatewayFluentBuilder {
         self.inner.get_vpc_id()
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn vpn_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpn_gateway_id(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn set_vpn_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpn_gateway_id(input);
         self
     }

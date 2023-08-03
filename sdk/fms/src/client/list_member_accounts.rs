@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`member_accounts(Option<Vec<String>>)`](crate::operation::list_member_accounts::ListMemberAccountsOutput::member_accounts): <p>An array of account IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_member_accounts::ListMemberAccountsOutput::next_token): <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     /// - On failure, responds with [`SdkError<ListMemberAccountsError>`](crate::operation::list_member_accounts::ListMemberAccountsError)
-    pub fn list_member_accounts(
-        &self,
-    ) -> crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder {
-        crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_member_accounts(&self) -> crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder {
+        crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder::new(self.handle.clone())
     }
 }

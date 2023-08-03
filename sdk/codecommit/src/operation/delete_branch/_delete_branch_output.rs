@@ -29,9 +29,7 @@ impl DeleteBranchOutput {
 
 /// A builder for [`DeleteBranchOutput`](crate::operation::delete_branch::DeleteBranchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBranchOutputBuilder {
     pub(crate) deleted_branch: ::std::option::Option<crate::types::BranchInfo>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl DeleteBranchOutputBuilder {
         self
     }
     /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
-    pub fn set_deleted_branch(
-        mut self,
-        input: ::std::option::Option<crate::types::BranchInfo>,
-    ) -> Self {
+    pub fn set_deleted_branch(mut self, input: ::std::option::Option<crate::types::BranchInfo>) -> Self {
         self.deleted_branch = input;
         self
     }

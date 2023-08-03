@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`PutVoiceConnectorStreamingConfigurationOutput`](crate::operation::put_voice_connector_streaming_configuration::PutVoiceConnectorStreamingConfigurationOutput) with field(s):
     ///   - [`streaming_configuration(Option<StreamingConfiguration>)`](crate::operation::put_voice_connector_streaming_configuration::PutVoiceConnectorStreamingConfigurationOutput::streaming_configuration): <p>The updated streaming settings.</p>
     /// - On failure, responds with [`SdkError<PutVoiceConnectorStreamingConfigurationError>`](crate::operation::put_voice_connector_streaming_configuration::PutVoiceConnectorStreamingConfigurationError)
-    pub fn put_voice_connector_streaming_configuration(&self) -> crate::operation::put_voice_connector_streaming_configuration::builders::PutVoiceConnectorStreamingConfigurationFluentBuilder{
-        crate::operation::put_voice_connector_streaming_configuration::builders::PutVoiceConnectorStreamingConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn put_voice_connector_streaming_configuration(
+        &self,
+    ) -> crate::operation::put_voice_connector_streaming_configuration::builders::PutVoiceConnectorStreamingConfigurationFluentBuilder {
+        crate::operation::put_voice_connector_streaming_configuration::builders::PutVoiceConnectorStreamingConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`status(Option<ChannelMessageStatusStructure>)`](crate::operation::update_channel_message::UpdateChannelMessageOutput::status): <p>The status of the message update.</p>
     ///   - [`sub_channel_id(Option<String>)`](crate::operation::update_channel_message::UpdateChannelMessageOutput::sub_channel_id): <p>The ID of the SubChannel in the response.</p>
     /// - On failure, responds with [`SdkError<UpdateChannelMessageError>`](crate::operation::update_channel_message::UpdateChannelMessageError)
-    pub fn update_channel_message(
-        &self,
-    ) -> crate::operation::update_channel_message::builders::UpdateChannelMessageFluentBuilder {
-        crate::operation::update_channel_message::builders::UpdateChannelMessageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_channel_message(&self) -> crate::operation::update_channel_message::builders::UpdateChannelMessageFluentBuilder {
+        crate::operation::update_channel_message::builders::UpdateChannelMessageFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSnapshotOutput`](crate::operation::delete_snapshot::DeleteSnapshotOutput) with field(s):
     ///   - [`snapshot_id(Option<String>)`](crate::operation::delete_snapshot::DeleteSnapshotOutput::snapshot_id): <p>The identifier of the directory snapshot that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteSnapshotError>`](crate::operation::delete_snapshot::DeleteSnapshotError)
-    pub fn delete_snapshot(
-        &self,
-    ) -> crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder {
-        crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_snapshot(&self) -> crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder {
+        crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

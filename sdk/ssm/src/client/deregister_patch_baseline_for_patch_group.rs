@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`baseline_id(Option<String>)`](crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupOutput::baseline_id): <p>The ID of the patch baseline the patch group was deregistered from.</p>
     ///   - [`patch_group(Option<String>)`](crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupOutput::patch_group): <p>The name of the patch group deregistered from the patch baseline.</p>
     /// - On failure, responds with [`SdkError<DeregisterPatchBaselineForPatchGroupError>`](crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupError)
-    pub fn deregister_patch_baseline_for_patch_group(&self) -> crate::operation::deregister_patch_baseline_for_patch_group::builders::DeregisterPatchBaselineForPatchGroupFluentBuilder{
-        crate::operation::deregister_patch_baseline_for_patch_group::builders::DeregisterPatchBaselineForPatchGroupFluentBuilder::new(self.handle.clone())
+    pub fn deregister_patch_baseline_for_patch_group(
+        &self,
+    ) -> crate::operation::deregister_patch_baseline_for_patch_group::builders::DeregisterPatchBaselineForPatchGroupFluentBuilder {
+        crate::operation::deregister_patch_baseline_for_patch_group::builders::DeregisterPatchBaselineForPatchGroupFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

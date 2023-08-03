@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NoSuchEntityErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -76,20 +70,14 @@ impl ::std::convert::From<&str> for NoSuchEntityErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "ASSESSMENT_RUN_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentRunDoesNotExist,
-            "ASSESSMENT_TARGET_DOES_NOT_EXIST" => {
-                NoSuchEntityErrorCode::AssessmentTargetDoesNotExist
-            }
-            "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST" => {
-                NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist
-            }
+            "ASSESSMENT_TARGET_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentTargetDoesNotExist,
+            "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist,
             "FINDING_DOES_NOT_EXIST" => NoSuchEntityErrorCode::FindingDoesNotExist,
             "IAM_ROLE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::IamRoleDoesNotExist,
             "RESOURCE_GROUP_DOES_NOT_EXIST" => NoSuchEntityErrorCode::ResourceGroupDoesNotExist,
             "RULES_PACKAGE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::RulesPackageDoesNotExist,
             "SNS_TOPIC_DOES_NOT_EXIST" => NoSuchEntityErrorCode::SnsTopicDoesNotExist,
-            other => NoSuchEntityErrorCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NoSuchEntityErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -105,12 +93,8 @@ impl NoSuchEntityErrorCode {
     pub fn as_str(&self) -> &str {
         match self {
             NoSuchEntityErrorCode::AssessmentRunDoesNotExist => "ASSESSMENT_RUN_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::AssessmentTargetDoesNotExist => {
-                "ASSESSMENT_TARGET_DOES_NOT_EXIST"
-            }
-            NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist => {
-                "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST"
-            }
+            NoSuchEntityErrorCode::AssessmentTargetDoesNotExist => "ASSESSMENT_TARGET_DOES_NOT_EXIST",
+            NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist => "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST",
             NoSuchEntityErrorCode::FindingDoesNotExist => "FINDING_DOES_NOT_EXIST",
             NoSuchEntityErrorCode::IamRoleDoesNotExist => "IAM_ROLE_DOES_NOT_EXIST",
             NoSuchEntityErrorCode::ResourceGroupDoesNotExist => "RESOURCE_GROUP_DOES_NOT_EXIST",

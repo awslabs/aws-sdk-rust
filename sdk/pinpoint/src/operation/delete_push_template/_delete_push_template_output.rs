@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeletePushTemplateOutput {
 }
 impl DeletePushTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeletePushTemplateOutput`](crate::operation::delete_push_template::DeletePushTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_push_template::builders::DeletePushTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::delete_push_template::builders::DeletePushTemplateOutputBuilder {
         crate::operation::delete_push_template::builders::DeletePushTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePushTemplateOutput`](crate::operation::delete_push_template::DeletePushTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePushTemplateOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeletePushTemplateOutputBuilder {
         self
     }
     /// <p>Provides information about an API request or response.</p>
-    pub fn set_message_body(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageBody>,
-    ) -> Self {
+    pub fn set_message_body(mut self, input: ::std::option::Option<crate::types::MessageBody>) -> Self {
         self.message_body = input;
         self
     }

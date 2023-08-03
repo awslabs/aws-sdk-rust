@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`failure_details(FailureDetails)`](crate::operation::put_job_failure_result::builders::PutJobFailureResultFluentBuilder::failure_details) / [`set_failure_details(Option<FailureDetails>)`](crate::operation::put_job_failure_result::builders::PutJobFailureResultFluentBuilder::set_failure_details): <p>The details about the failure of a job.</p>
     /// - On success, responds with [`PutJobFailureResultOutput`](crate::operation::put_job_failure_result::PutJobFailureResultOutput)
     /// - On failure, responds with [`SdkError<PutJobFailureResultError>`](crate::operation::put_job_failure_result::PutJobFailureResultError)
-    pub fn put_job_failure_result(
-        &self,
-    ) -> crate::operation::put_job_failure_result::builders::PutJobFailureResultFluentBuilder {
-        crate::operation::put_job_failure_result::builders::PutJobFailureResultFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_job_failure_result(&self) -> crate::operation::put_job_failure_result::builders::PutJobFailureResultFluentBuilder {
+        crate::operation::put_job_failure_result::builders::PutJobFailureResultFluentBuilder::new(self.handle.clone())
     }
 }

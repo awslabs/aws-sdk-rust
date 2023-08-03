@@ -20,11 +20,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateClusterOutput`](crate::operation::update_cluster::UpdateClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::update_cluster::UpdateClusterOutput::cluster): <p>The updated cluster</p>
     /// - On failure, responds with [`SdkError<UpdateClusterError>`](crate::operation::update_cluster::UpdateClusterError)
-    pub fn update_cluster(
-        &self,
-    ) -> crate::operation::update_cluster::builders::UpdateClusterFluentBuilder {
-        crate::operation::update_cluster::builders::UpdateClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_cluster(&self) -> crate::operation::update_cluster::builders::UpdateClusterFluentBuilder {
+        crate::operation::update_cluster::builders::UpdateClusterFluentBuilder::new(self.handle.clone())
     }
 }

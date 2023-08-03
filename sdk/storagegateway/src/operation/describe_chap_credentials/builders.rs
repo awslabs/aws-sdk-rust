@@ -26,8 +26,7 @@ impl DescribeChapCredentialsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeChapCredentialsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_chap_credentials::builders::DescribeChapCredentialsInputBuilder,
+    inner: crate::operation::describe_chap_credentials::builders::DescribeChapCredentialsInputBuilder,
 }
 impl DescribeChapCredentialsFluentBuilder {
     /// Creates a new `DescribeChapCredentials`.
@@ -38,10 +37,7 @@ impl DescribeChapCredentialsFluentBuilder {
         }
     }
     /// Access the DescribeChapCredentials as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_chap_credentials::builders::DescribeChapCredentialsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_chap_credentials::builders::DescribeChapCredentialsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeChapCredentialsFluentBuilder {
             crate::operation::describe_chap_credentials::DescribeChapCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_chap_credentials::DescribeChapCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_chap_credentials::DescribeChapCredentialsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeChapCredentialsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeChapCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_chap_credentials::DescribeChapCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_chap_credentials::DescribeChapCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_chap_credentials::DescribeChapCredentialsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeChapCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_chap_credentials::DescribeChapCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_chap_credentials::DescribeChapCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_chap_credentials::DescribeChapCredentialsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DescribeChapCredentialsFluentBuilder {
             crate::operation::describe_chap_credentials::DescribeChapCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_chap_credentials::DescribeChapCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_chap_credentials::DescribeChapCredentialsError>,
     > {
         self.customize_middleware().await
     }

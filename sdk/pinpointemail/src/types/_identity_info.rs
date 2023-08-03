@@ -49,9 +49,7 @@ impl IdentityInfo {
 
 /// A builder for [`IdentityInfo`](crate::types::IdentityInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentityInfoBuilder {
     pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
     pub(crate) identity_name: ::std::option::Option<::std::string::String>,
@@ -74,10 +72,7 @@ impl IdentityInfoBuilder {
     /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li>
     /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li>
     /// </ul>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.identity_type = input;
         self
     }
@@ -91,18 +86,12 @@ impl IdentityInfoBuilder {
         &self.identity_type
     }
     /// <p>The address or domain of the identity.</p>
-    pub fn identity_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The address or domain of the identity.</p>
-    pub fn set_identity_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_name = input;
         self
     }

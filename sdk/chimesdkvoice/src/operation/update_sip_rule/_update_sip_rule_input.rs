@@ -14,8 +14,7 @@ pub struct UpdateSipRuleInput {
     pub disabled: ::std::option::Option<bool>,
     /// <p>The new list of target applications.</p>
     #[doc(hidden)]
-    pub target_applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
+    pub target_applications: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
 }
 impl UpdateSipRuleInput {
     /// <p>The SIP rule ID.</p>
@@ -31,9 +30,7 @@ impl UpdateSipRuleInput {
         self.disabled
     }
     /// <p>The new list of target applications.</p>
-    pub fn target_applications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SipRuleTargetApplication]> {
+    pub fn target_applications(&self) -> ::std::option::Option<&[crate::types::SipRuleTargetApplication]> {
         self.target_applications.as_deref()
     }
 }
@@ -46,15 +43,12 @@ impl UpdateSipRuleInput {
 
 /// A builder for [`UpdateSipRuleInput`](crate::operation::update_sip_rule::UpdateSipRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSipRuleInputBuilder {
     pub(crate) sip_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) disabled: ::std::option::Option<bool>,
-    pub(crate) target_applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
+    pub(crate) target_applications: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
 }
 impl UpdateSipRuleInputBuilder {
     /// <p>The SIP rule ID.</p>
@@ -111,26 +105,18 @@ impl UpdateSipRuleInputBuilder {
         self
     }
     /// <p>The new list of target applications.</p>
-    pub fn set_target_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
-    ) -> Self {
+    pub fn set_target_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>) -> Self {
         self.target_applications = input;
         self
     }
     /// <p>The new list of target applications.</p>
-    pub fn get_target_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>> {
+    pub fn get_target_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>> {
         &self.target_applications
     }
     /// Consumes the builder and constructs a [`UpdateSipRuleInput`](crate::operation::update_sip_rule::UpdateSipRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_sip_rule::UpdateSipRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_sip_rule::UpdateSipRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_sip_rule::UpdateSipRuleInput {
             sip_rule_id: self.sip_rule_id,
             name: self.name,

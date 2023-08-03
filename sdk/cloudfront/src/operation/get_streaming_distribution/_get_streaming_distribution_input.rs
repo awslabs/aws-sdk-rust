@@ -16,18 +16,14 @@ impl GetStreamingDistributionInput {
 }
 impl GetStreamingDistributionInput {
     /// Creates a new builder-style object to manufacture [`GetStreamingDistributionInput`](crate::operation::get_streaming_distribution::GetStreamingDistributionInput).
-    pub fn builder(
-    ) -> crate::operation::get_streaming_distribution::builders::GetStreamingDistributionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_streaming_distribution::builders::GetStreamingDistributionInputBuilder {
         crate::operation::get_streaming_distribution::builders::GetStreamingDistributionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetStreamingDistributionInput`](crate::operation::get_streaming_distribution::GetStreamingDistributionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStreamingDistributionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -53,10 +49,6 @@ impl GetStreamingDistributionInputBuilder {
         crate::operation::get_streaming_distribution::GetStreamingDistributionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_streaming_distribution::GetStreamingDistributionInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_streaming_distribution::GetStreamingDistributionInput { id: self.id })
     }
 }

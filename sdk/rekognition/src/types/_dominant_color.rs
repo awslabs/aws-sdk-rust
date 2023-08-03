@@ -65,9 +65,7 @@ impl DominantColor {
 
 /// A builder for [`DominantColor`](crate::types::DominantColor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DominantColorBuilder {
     pub(crate) red: ::std::option::Option<i32>,
     pub(crate) blue: ::std::option::Option<i32>,
@@ -149,18 +147,12 @@ impl DominantColorBuilder {
         &self.css_color
     }
     /// <p>One of 12 simplified color names applied to a dominant color.</p>
-    pub fn simplified_color(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn simplified_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.simplified_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of 12 simplified color names applied to a dominant color.</p>
-    pub fn set_simplified_color(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_simplified_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.simplified_color = input;
         self
     }

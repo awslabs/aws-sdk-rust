@@ -24,9 +24,7 @@ pub struct PolicyComplianceStatus {
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
     #[doc(hidden)]
-    pub issue_info_map: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>,
-    >,
+    pub issue_info_map: ::std::option::Option<::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>>,
 }
 impl PolicyComplianceStatus {
     /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
@@ -54,11 +52,7 @@ impl PolicyComplianceStatus {
         self.last_updated.as_ref()
     }
     /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
-    pub fn issue_info_map(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>,
-    > {
+    pub fn issue_info_map(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>> {
         self.issue_info_map.as_ref()
     }
 }
@@ -71,20 +65,15 @@ impl PolicyComplianceStatus {
 
 /// A builder for [`PolicyComplianceStatus`](crate::types::PolicyComplianceStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyComplianceStatusBuilder {
     pub(crate) policy_owner: ::std::option::Option<::std::string::String>,
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) member_account: ::std::option::Option<::std::string::String>,
-    pub(crate) evaluation_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
+    pub(crate) evaluation_results: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) issue_info_map: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>,
-    >,
+    pub(crate) issue_info_map: ::std::option::Option<::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>>,
 }
 impl PolicyComplianceStatusBuilder {
     /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
@@ -130,18 +119,12 @@ impl PolicyComplianceStatusBuilder {
         &self.policy_name
     }
     /// <p>The member account ID.</p>
-    pub fn member_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The member account ID.</p>
-    pub fn set_member_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_account = input;
         self
     }
@@ -161,17 +144,12 @@ impl PolicyComplianceStatusBuilder {
         self
     }
     /// <p>An array of <code>EvaluationResult</code> objects.</p>
-    pub fn set_evaluation_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
-    ) -> Self {
+    pub fn set_evaluation_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>) -> Self {
         self.evaluation_results = input;
         self
     }
     /// <p>An array of <code>EvaluationResult</code> objects.</p>
-    pub fn get_evaluation_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
+    pub fn get_evaluation_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
         &self.evaluation_results
     }
     /// <p>Timestamp of the last update to the <code>EvaluationResult</code> objects.</p>
@@ -180,10 +158,7 @@ impl PolicyComplianceStatusBuilder {
         self
     }
     /// <p>Timestamp of the last update to the <code>EvaluationResult</code> objects.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }
@@ -196,11 +171,7 @@ impl PolicyComplianceStatusBuilder {
     /// To override the contents of this collection use [`set_issue_info_map`](Self::set_issue_info_map).
     ///
     /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
-    pub fn issue_info_map(
-        mut self,
-        k: crate::types::DependentServiceName,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn issue_info_map(mut self, k: crate::types::DependentServiceName, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.issue_info_map.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.issue_info_map = ::std::option::Option::Some(hash_map);
@@ -209,9 +180,7 @@ impl PolicyComplianceStatusBuilder {
     /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
     pub fn set_issue_info_map(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>>,
     ) -> Self {
         self.issue_info_map = input;
         self
@@ -219,9 +188,7 @@ impl PolicyComplianceStatusBuilder {
     /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
     pub fn get_issue_info_map(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>> {
         &self.issue_info_map
     }
     /// Consumes the builder and constructs a [`PolicyComplianceStatus`](crate::types::PolicyComplianceStatus).

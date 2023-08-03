@@ -15,33 +15,25 @@ impl DeleteDirectConnectGatewayInput {
 }
 impl DeleteDirectConnectGatewayInput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayInput`](crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput).
-    pub fn builder() -> crate::operation::delete_direct_connect_gateway::builders::DeleteDirectConnectGatewayInputBuilder{
+    pub fn builder() -> crate::operation::delete_direct_connect_gateway::builders::DeleteDirectConnectGatewayInputBuilder {
         crate::operation::delete_direct_connect_gateway::builders::DeleteDirectConnectGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDirectConnectGatewayInput`](crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayInputBuilder {
     pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDirectConnectGatewayInputBuilder {
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl DeleteDirectConnectGatewayInputBuilder {
         crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput {
-                direct_connect_gateway_id: self.direct_connect_gateway_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput {
+            direct_connect_gateway_id: self.direct_connect_gateway_id,
+        })
     }
 }

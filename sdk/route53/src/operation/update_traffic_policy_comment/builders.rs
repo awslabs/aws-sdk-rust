@@ -26,7 +26,7 @@ impl UpdateTrafficPolicyCommentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTrafficPolicyCommentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentInputBuilder,
+    inner: crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentInputBuilder,
 }
 impl UpdateTrafficPolicyCommentFluentBuilder {
     /// Creates a new `UpdateTrafficPolicyComment`.
@@ -37,7 +37,7 @@ impl UpdateTrafficPolicyCommentFluentBuilder {
         }
     }
     /// Access the UpdateTrafficPolicyComment as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateTrafficPolicyCommentFluentBuilder {
             crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyComment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateTrafficPolicyCommentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateTrafficPolicyCommentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateTrafficPolicyCommentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateTrafficPolicyCommentFluentBuilder {
             crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyComment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentError>,
     > {
         self.customize_middleware().await
     }

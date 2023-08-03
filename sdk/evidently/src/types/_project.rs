@@ -45,9 +45,7 @@ pub struct Project {
     pub app_config_resource: ::std::option::Option<crate::types::ProjectAppConfigResource>,
     /// <p>The list of tag keys and values associated with this project.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Project {
     /// <p>The name or ARN of the project.</p>
@@ -99,17 +97,11 @@ impl Project {
         self.data_delivery.as_ref()
     }
     /// <p>This structure defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
-    pub fn app_config_resource(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProjectAppConfigResource> {
+    pub fn app_config_resource(&self) -> ::std::option::Option<&crate::types::ProjectAppConfigResource> {
         self.app_config_resource.as_ref()
     }
     /// <p>The list of tag keys and values associated with this project.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -122,9 +114,7 @@ impl Project {
 
 /// A builder for [`Project`](crate::types::Project).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -139,9 +129,7 @@ pub struct ProjectBuilder {
     pub(crate) active_experiment_count: ::std::option::Option<i64>,
     pub(crate) data_delivery: ::std::option::Option<crate::types::ProjectDataDelivery>,
     pub(crate) app_config_resource: ::std::option::Option<crate::types::ProjectAppConfigResource>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ProjectBuilder {
     /// <p>The name or ARN of the project.</p>
@@ -206,10 +194,7 @@ impl ProjectBuilder {
         self
     }
     /// <p>The date and time that the project is created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -223,10 +208,7 @@ impl ProjectBuilder {
         self
     }
     /// <p>The date and time that the project was most recently updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -310,10 +292,7 @@ impl ProjectBuilder {
         self
     }
     /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
-    pub fn set_data_delivery(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectDataDelivery>,
-    ) -> Self {
+    pub fn set_data_delivery(mut self, input: ::std::option::Option<crate::types::ProjectDataDelivery>) -> Self {
         self.data_delivery = input;
         self
     }
@@ -327,17 +306,12 @@ impl ProjectBuilder {
         self
     }
     /// <p>This structure defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
-    pub fn set_app_config_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectAppConfigResource>,
-    ) -> Self {
+    pub fn set_app_config_resource(mut self, input: ::std::option::Option<crate::types::ProjectAppConfigResource>) -> Self {
         self.app_config_resource = input;
         self
     }
     /// <p>This structure defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
-    pub fn get_app_config_resource(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProjectAppConfigResource> {
+    pub fn get_app_config_resource(&self) -> &::std::option::Option<crate::types::ProjectAppConfigResource> {
         &self.app_config_resource
     }
     /// Adds a key-value pair to `tags`.
@@ -345,32 +319,19 @@ impl ProjectBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of tag keys and values associated with this project.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of tag keys and values associated with this project.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The list of tag keys and values associated with this project.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Project`](crate::types::Project).

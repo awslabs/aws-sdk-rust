@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`object_identifiers(Option<Vec<String>>)`](crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput::object_identifiers): <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListPolicyAttachmentsError>`](crate::operation::list_policy_attachments::ListPolicyAttachmentsError)
-    pub fn list_policy_attachments(
-        &self,
-    ) -> crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder
-    {
-        crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_policy_attachments(&self) -> crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder {
+        crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::new(self.handle.clone())
     }
 }

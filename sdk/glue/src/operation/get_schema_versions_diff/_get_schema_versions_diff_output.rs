@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetSchemaVersionsDiffOutput {
 }
 impl GetSchemaVersionsDiffOutput {
     /// Creates a new builder-style object to manufacture [`GetSchemaVersionsDiffOutput`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffOutput).
-    pub fn builder(
-    ) -> crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffOutputBuilder {
         crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSchemaVersionsDiffOutput`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaVersionsDiffOutputBuilder {
     pub(crate) diff: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

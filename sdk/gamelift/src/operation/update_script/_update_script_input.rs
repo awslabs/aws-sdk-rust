@@ -52,9 +52,7 @@ impl UpdateScriptInput {
 
 /// A builder for [`UpdateScriptInput`](crate::operation::update_script::UpdateScriptInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateScriptInputBuilder {
     pub(crate) script_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -111,10 +109,7 @@ impl UpdateScriptInputBuilder {
         self
     }
     /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
-    pub fn set_storage_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.storage_location = input;
         self
     }
@@ -140,12 +135,7 @@ impl UpdateScriptInputBuilder {
         &self.zip_file
     }
     /// Consumes the builder and constructs a [`UpdateScriptInput`](crate::operation::update_script::UpdateScriptInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_script::UpdateScriptInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_script::UpdateScriptInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_script::UpdateScriptInput {
             script_id: self.script_id,
             name: self.name,

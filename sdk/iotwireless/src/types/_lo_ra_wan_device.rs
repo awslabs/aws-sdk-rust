@@ -72,9 +72,7 @@ impl LoRaWanDevice {
 
 /// A builder for [`LoRaWanDevice`](crate::types::LoRaWanDevice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanDeviceBuilder {
     pub(crate) dev_eui: ::std::option::Option<::std::string::String>,
     pub(crate) device_profile_id: ::std::option::Option<::std::string::String>,
@@ -101,18 +99,12 @@ impl LoRaWanDeviceBuilder {
         &self.dev_eui
     }
     /// <p>The ID of the device profile for the new wireless device.</p>
-    pub fn device_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the device profile for the new wireless device.</p>
-    pub fn set_device_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_profile_id = input;
         self
     }
@@ -121,18 +113,12 @@ impl LoRaWanDeviceBuilder {
         &self.device_profile_id
     }
     /// <p>The ID of the service profile.</p>
-    pub fn service_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the service profile.</p>
-    pub fn set_service_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_profile_id = input;
         self
     }

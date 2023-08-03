@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstanceState {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for InstanceState {
             "PROVISIONING" => InstanceState::Provisioning,
             "RUNNING" => InstanceState::Running,
             "TERMINATED" => InstanceState::Terminated,
-            other => {
-                InstanceState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => InstanceState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl InstanceState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWAITING_FULFILLMENT",
-            "BOOTSTRAPPING",
-            "PROVISIONING",
-            "RUNNING",
-            "TERMINATED",
-        ]
+        &["AWAITING_FULFILLMENT", "BOOTSTRAPPING", "PROVISIONING", "RUNNING", "TERMINATED"]
     }
 }
 impl ::std::convert::AsRef<str> for InstanceState {

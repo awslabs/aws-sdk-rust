@@ -15,16 +15,14 @@ impl DescribeLocationFsxWindowsInput {
 }
 impl DescribeLocationFsxWindowsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxWindowsInput`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsInput).
-    pub fn builder() -> crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsInputBuilder{
+    pub fn builder() -> crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsInputBuilder {
         crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationFsxWindowsInput`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationFsxWindowsInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl DescribeLocationFsxWindowsInputBuilder {
         crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsInput {
-                location_arn: self.location_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsInput {
+            location_arn: self.location_arn,
+        })
     }
 }

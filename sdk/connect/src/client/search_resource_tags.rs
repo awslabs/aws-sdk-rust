@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<TagSet>>)`](crate::operation::search_resource_tags::SearchResourceTagsOutput::tags): <p>A list of tags used in the Amazon Connect instance.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_resource_tags::SearchResourceTagsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<SearchResourceTagsError>`](crate::operation::search_resource_tags::SearchResourceTagsError)
-    pub fn search_resource_tags(
-        &self,
-    ) -> crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder {
-        crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_resource_tags(&self) -> crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder {
+        crate::operation::search_resource_tags::builders::SearchResourceTagsFluentBuilder::new(self.handle.clone())
     }
 }

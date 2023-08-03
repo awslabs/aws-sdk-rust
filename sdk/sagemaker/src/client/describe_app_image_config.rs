@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_app_image_config::DescribeAppImageConfigOutput::last_modified_time): <p>When the AppImageConfig was last modified.</p>
     ///   - [`kernel_gateway_image_config(Option<KernelGatewayImageConfig>)`](crate::operation::describe_app_image_config::DescribeAppImageConfigOutput::kernel_gateway_image_config): <p>The configuration of a KernelGateway app.</p>
     /// - On failure, responds with [`SdkError<DescribeAppImageConfigError>`](crate::operation::describe_app_image_config::DescribeAppImageConfigError)
-    pub fn describe_app_image_config(
-        &self,
-    ) -> crate::operation::describe_app_image_config::builders::DescribeAppImageConfigFluentBuilder
-    {
+    pub fn describe_app_image_config(&self) -> crate::operation::describe_app_image_config::builders::DescribeAppImageConfigFluentBuilder {
         crate::operation::describe_app_image_config::builders::DescribeAppImageConfigFluentBuilder::new(self.handle.clone())
     }
 }

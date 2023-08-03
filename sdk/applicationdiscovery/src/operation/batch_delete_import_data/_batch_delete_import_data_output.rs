@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchDeleteImportDataOutput {
 }
 impl BatchDeleteImportDataOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteImportDataOutput`](crate::operation::batch_delete_import_data::BatchDeleteImportDataOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataOutputBuilder {
         crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteImportDataOutput`](crate::operation::batch_delete_import_data::BatchDeleteImportDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteImportDataOutputBuilder {
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteImportDataError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteImportDataError>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteImportDataOutputBuilder {
@@ -51,17 +46,12 @@ impl BatchDeleteImportDataOutputBuilder {
         self
     }
     /// <p>Error messages returned for each import task that you deleted as a response for this command.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteImportDataError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteImportDataError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Error messages returned for each import task that you deleted as a response for this command.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteImportDataError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteImportDataError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

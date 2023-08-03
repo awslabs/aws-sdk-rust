@@ -30,9 +30,7 @@ impl DateInterval {
 
 /// A builder for [`DateInterval`](crate::types::DateInterval).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DateIntervalBuilder {
     pub(crate) start: ::std::option::Option<::std::string::String>,
     pub(crate) end: ::std::option::Option<::std::string::String>,

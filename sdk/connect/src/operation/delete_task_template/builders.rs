@@ -10,10 +10,7 @@ impl DeleteTaskTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_task_template::DeleteTaskTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_task_template::DeleteTaskTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_task_template::DeleteTaskTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_task_template();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteTaskTemplateFluentBuilder {
         }
     }
     /// Access the DeleteTaskTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_task_template::builders::DeleteTaskTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_task_template::builders::DeleteTaskTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteTaskTemplateFluentBuilder {
             crate::operation::delete_task_template::DeleteTaskTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_task_template::DeleteTaskTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_task_template::DeleteTaskTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteTaskTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteTaskTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_task_template::DeleteTaskTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_task_template::DeleteTaskTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_task_template::DeleteTaskTemplateError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteTaskTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_task_template::DeleteTaskTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_task_template::DeleteTaskTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_task_template::DeleteTaskTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteTaskTemplateFluentBuilder {
             crate::operation::delete_task_template::DeleteTaskTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_task_template::DeleteTaskTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_task_template::DeleteTaskTemplateError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DeleteTaskTemplateFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn task_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_template_id(input.into());
         self
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn set_task_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_template_id(input);
         self
     }

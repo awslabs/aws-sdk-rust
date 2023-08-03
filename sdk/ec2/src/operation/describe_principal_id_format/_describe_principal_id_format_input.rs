@@ -36,16 +36,14 @@ impl DescribePrincipalIdFormatInput {
 }
 impl DescribePrincipalIdFormatInput {
     /// Creates a new builder-style object to manufacture [`DescribePrincipalIdFormatInput`](crate::operation::describe_principal_id_format::DescribePrincipalIdFormatInput).
-    pub fn builder() -> crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatInputBuilder{
+    pub fn builder() -> crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatInputBuilder {
         crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePrincipalIdFormatInput`](crate::operation::describe_principal_id_format::DescribePrincipalIdFormatInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePrincipalIdFormatInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -79,10 +77,7 @@ impl DescribePrincipalIdFormatInputBuilder {
         self
     }
     /// <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources = input;
         self
     }
@@ -125,13 +120,11 @@ impl DescribePrincipalIdFormatInputBuilder {
         crate::operation::describe_principal_id_format::DescribePrincipalIdFormatInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_principal_id_format::DescribePrincipalIdFormatInput {
-                dry_run: self.dry_run,
-                resources: self.resources,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_principal_id_format::DescribePrincipalIdFormatInput {
+            dry_run: self.dry_run,
+            resources: self.resources,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

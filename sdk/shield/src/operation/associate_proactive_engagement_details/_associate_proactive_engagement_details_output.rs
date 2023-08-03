@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateProactiveEngagementDetailsOu
 }
 impl AssociateProactiveEngagementDetailsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateProactiveEngagementDetailsOutput`](crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsOutput).
-    pub fn builder() -> crate::operation::associate_proactive_engagement_details::builders::AssociateProactiveEngagementDetailsOutputBuilder{
+    pub fn builder() -> crate::operation::associate_proactive_engagement_details::builders::AssociateProactiveEngagementDetailsOutputBuilder {
         crate::operation::associate_proactive_engagement_details::builders::AssociateProactiveEngagementDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateProactiveEngagementDetailsOutput`](crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateProactiveEngagementDetailsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl AssociateProactiveEngagementDetailsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateProactiveEngagementDetailsOutput`](crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsOutput).
-    pub fn build(self) -> crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsOutput{
+    pub fn build(self) -> crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsOutput {
         crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsOutput {
             _request_id: self._request_id,
         }

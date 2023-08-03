@@ -16,34 +16,25 @@ impl DeleteIdentityPoolInput {
 }
 impl DeleteIdentityPoolInput {
     /// Creates a new builder-style object to manufacture [`DeleteIdentityPoolInput`](crate::operation::delete_identity_pool::DeleteIdentityPoolInput).
-    pub fn builder(
-    ) -> crate::operation::delete_identity_pool::builders::DeleteIdentityPoolInputBuilder {
+    pub fn builder() -> crate::operation::delete_identity_pool::builders::DeleteIdentityPoolInputBuilder {
         crate::operation::delete_identity_pool::builders::DeleteIdentityPoolInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIdentityPoolInput`](crate::operation::delete_identity_pool::DeleteIdentityPoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIdentityPoolInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteIdentityPoolInputBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -54,14 +45,9 @@ impl DeleteIdentityPoolInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIdentityPoolInput`](crate::operation::delete_identity_pool::DeleteIdentityPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_identity_pool::DeleteIdentityPoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_identity_pool::DeleteIdentityPoolInput {
-                identity_pool_id: self.identity_pool_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_identity_pool::DeleteIdentityPoolInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_identity_pool::DeleteIdentityPoolInput {
+            identity_pool_id: self.identity_pool_id,
+        })
     }
 }

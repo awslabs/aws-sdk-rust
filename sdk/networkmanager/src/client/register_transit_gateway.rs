@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterTransitGatewayOutput`](crate::operation::register_transit_gateway::RegisterTransitGatewayOutput) with field(s):
     ///   - [`transit_gateway_registration(Option<TransitGatewayRegistration>)`](crate::operation::register_transit_gateway::RegisterTransitGatewayOutput::transit_gateway_registration): <p>Information about the transit gateway registration.</p>
     /// - On failure, responds with [`SdkError<RegisterTransitGatewayError>`](crate::operation::register_transit_gateway::RegisterTransitGatewayError)
-    pub fn register_transit_gateway(
-        &self,
-    ) -> crate::operation::register_transit_gateway::builders::RegisterTransitGatewayFluentBuilder
-    {
+    pub fn register_transit_gateway(&self) -> crate::operation::register_transit_gateway::builders::RegisterTransitGatewayFluentBuilder {
         crate::operation::register_transit_gateway::builders::RegisterTransitGatewayFluentBuilder::new(self.handle.clone())
     }
 }

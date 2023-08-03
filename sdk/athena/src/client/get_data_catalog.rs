@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetDataCatalogOutput`](crate::operation::get_data_catalog::GetDataCatalogOutput) with field(s):
     ///   - [`data_catalog(Option<DataCatalog>)`](crate::operation::get_data_catalog::GetDataCatalogOutput::data_catalog): <p>The data catalog returned.</p>
     /// - On failure, responds with [`SdkError<GetDataCatalogError>`](crate::operation::get_data_catalog::GetDataCatalogError)
-    pub fn get_data_catalog(
-        &self,
-    ) -> crate::operation::get_data_catalog::builders::GetDataCatalogFluentBuilder {
-        crate::operation::get_data_catalog::builders::GetDataCatalogFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_data_catalog(&self) -> crate::operation::get_data_catalog::builders::GetDataCatalogFluentBuilder {
+        crate::operation::get_data_catalog::builders::GetDataCatalogFluentBuilder::new(self.handle.clone())
     }
 }

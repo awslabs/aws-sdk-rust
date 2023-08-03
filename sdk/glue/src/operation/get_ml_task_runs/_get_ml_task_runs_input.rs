@@ -50,9 +50,7 @@ impl GetMlTaskRunsInput {
 
 /// A builder for [`GetMlTaskRunsInput`](crate::operation::get_ml_task_runs::GetMlTaskRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMlTaskRunsInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -109,10 +107,7 @@ impl GetMlTaskRunsInputBuilder {
         self
     }
     /// <p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskRunFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TaskRunFilterCriteria>) -> Self {
         self.filter = input;
         self
     }
@@ -126,10 +121,7 @@ impl GetMlTaskRunsInputBuilder {
         self
     }
     /// <p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p>
-    pub fn set_sort(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskRunSortCriteria>,
-    ) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::TaskRunSortCriteria>) -> Self {
         self.sort = input;
         self
     }
@@ -140,10 +132,7 @@ impl GetMlTaskRunsInputBuilder {
     /// Consumes the builder and constructs a [`GetMlTaskRunsInput`](crate::operation::get_ml_task_runs::GetMlTaskRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ml_task_runs::GetMlTaskRunsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_ml_task_runs::GetMlTaskRunsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ml_task_runs::GetMlTaskRunsInput {
             transform_id: self.transform_id,
             next_token: self.next_token,

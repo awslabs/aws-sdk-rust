@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`created_date(Option<DateTime>)`](crate::operation::create_policy_template::CreatePolicyTemplateOutput::created_date): <p>The date and time the policy template was originally created.</p>
     ///   - [`last_updated_date(Option<DateTime>)`](crate::operation::create_policy_template::CreatePolicyTemplateOutput::last_updated_date): <p>The date and time the policy template was most recently updated.</p>
     /// - On failure, responds with [`SdkError<CreatePolicyTemplateError>`](crate::operation::create_policy_template::CreatePolicyTemplateError)
-    pub fn create_policy_template(
-        &self,
-    ) -> crate::operation::create_policy_template::builders::CreatePolicyTemplateFluentBuilder {
-        crate::operation::create_policy_template::builders::CreatePolicyTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_policy_template(&self) -> crate::operation::create_policy_template::builders::CreatePolicyTemplateFluentBuilder {
+        crate::operation::create_policy_template::builders::CreatePolicyTemplateFluentBuilder::new(self.handle.clone())
     }
 }

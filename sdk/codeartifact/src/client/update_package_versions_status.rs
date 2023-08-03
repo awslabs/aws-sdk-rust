@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`successful_versions(Option<HashMap<String, SuccessfulPackageVersionInfo>>)`](crate::operation::update_package_versions_status::UpdatePackageVersionsStatusOutput::successful_versions): <p> A list of <code>PackageVersionError</code> objects, one for each package version with a status that failed to update. </p>
     ///   - [`failed_versions(Option<HashMap<String, PackageVersionError>>)`](crate::operation::update_package_versions_status::UpdatePackageVersionsStatusOutput::failed_versions): <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package version with a status that successfully updated. </p>
     /// - On failure, responds with [`SdkError<UpdatePackageVersionsStatusError>`](crate::operation::update_package_versions_status::UpdatePackageVersionsStatusError)
-    pub fn update_package_versions_status(&self) -> crate::operation::update_package_versions_status::builders::UpdatePackageVersionsStatusFluentBuilder{
+    pub fn update_package_versions_status(
+        &self,
+    ) -> crate::operation::update_package_versions_status::builders::UpdatePackageVersionsStatusFluentBuilder {
         crate::operation::update_package_versions_status::builders::UpdatePackageVersionsStatusFluentBuilder::new(self.handle.clone())
     }
 }

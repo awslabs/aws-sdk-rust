@@ -10,10 +10,7 @@ impl ListCommandsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_commands::ListCommandsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_commands::ListCommandsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_commands::ListCommandsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_commands();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListCommandsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_commands::ListCommands,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_commands::ListCommands, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_commands::ListCommandsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListCommandsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListCommandsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_commands::ListCommands,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_commands::ListCommands, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_commands::ListCommandsError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListCommandsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_commands::paginator::ListCommandsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_commands::paginator::ListCommandsPaginator {
-        crate::operation::list_commands::paginator::ListCommandsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_commands::paginator::ListCommandsPaginator {
+        crate::operation::list_commands::paginator::ListCommandsPaginator::new(self.handle, self.inner)
     }
     /// <p>(Optional) If provided, lists only the specified command.</p>
     pub fn command_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -195,17 +178,12 @@ impl ListCommandsFluentBuilder {
         self
     }
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
         self.inner.get_filters()
     }
 }

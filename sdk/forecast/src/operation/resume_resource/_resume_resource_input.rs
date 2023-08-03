@@ -22,9 +22,7 @@ impl ResumeResourceInput {
 
 /// A builder for [`ResumeResourceInput`](crate::operation::resume_resource::ResumeResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl ResumeResourceInputBuilder {
     /// Consumes the builder and constructs a [`ResumeResourceInput`](crate::operation::resume_resource::ResumeResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::resume_resource::ResumeResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::resume_resource::ResumeResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::resume_resource::ResumeResourceInput {
             resource_arn: self.resource_arn,
         })

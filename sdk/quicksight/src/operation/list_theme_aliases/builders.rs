@@ -10,10 +10,7 @@ impl ListThemeAliasesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_theme_aliases::ListThemeAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_theme_aliases::ListThemeAliasesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_theme_aliases::ListThemeAliasesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_theme_aliases();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListThemeAliasesFluentBuilder {
         }
     }
     /// Access the ListThemeAliases as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_theme_aliases::builders::ListThemeAliasesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_theme_aliases::builders::ListThemeAliasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListThemeAliasesFluentBuilder {
             crate::operation::list_theme_aliases::ListThemeAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_theme_aliases::ListThemeAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_theme_aliases::ListThemeAliasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListThemeAliasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListThemeAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_theme_aliases::ListThemeAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_theme_aliases::ListThemeAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_theme_aliases::ListThemeAliasesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListThemeAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_theme_aliases::ListThemeAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_theme_aliases::ListThemeAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_theme_aliases::ListThemeAliasesError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl ListThemeAliasesFluentBuilder {
             crate::operation::list_theme_aliases::ListThemeAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_theme_aliases::ListThemeAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_theme_aliases::ListThemeAliasesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the theme aliases that you're listing.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the theme aliases that you're listing.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

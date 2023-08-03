@@ -10,10 +10,7 @@ impl DescribeLoaInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_loa::DescribeLoaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_loa::DescribeLoaError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_loa::DescribeLoaError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_loa();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl DescribeLoaFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_loa::DescribeLoa,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::describe_loa::DescribeLoa, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_loa::DescribeLoaError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl DescribeLoaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,27 +96,18 @@ impl DescribeLoaFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_loa::DescribeLoa,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::describe_loa::DescribeLoa, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_loa::DescribeLoaError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of a connection, LAG, or interconnect.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of a connection, LAG, or interconnect.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
@@ -134,18 +116,12 @@ impl DescribeLoaFluentBuilder {
         self.inner.get_connection_id()
     }
     /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_name(input.into());
         self
     }
     /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
     }
@@ -159,10 +135,7 @@ impl DescribeLoaFluentBuilder {
         self
     }
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
-    pub fn set_loa_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LoaContentType>,
-    ) -> Self {
+    pub fn set_loa_content_type(mut self, input: ::std::option::Option<crate::types::LoaContentType>) -> Self {
         self.inner = self.inner.set_loa_content_type(input);
         self
     }

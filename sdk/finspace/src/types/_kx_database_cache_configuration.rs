@@ -36,9 +36,7 @@ impl KxDatabaseCacheConfiguration {
 
 /// A builder for [`KxDatabaseCacheConfiguration`](crate::types::KxDatabaseCacheConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KxDatabaseCacheConfigurationBuilder {
     pub(crate) cache_type: ::std::option::Option<::std::string::String>,
     pub(crate) db_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -79,10 +77,7 @@ impl KxDatabaseCacheConfigurationBuilder {
         self
     }
     /// <p>Specifies the portions of database that will be loaded into the cache for access.</p>
-    pub fn set_db_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_db_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.db_paths = input;
         self
     }

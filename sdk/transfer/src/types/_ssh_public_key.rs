@@ -39,9 +39,7 @@ impl SshPublicKey {
 
 /// A builder for [`SshPublicKey`](crate::types::SshPublicKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SshPublicKeyBuilder {
     pub(crate) date_imported: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ssh_public_key_body: ::std::option::Option<::std::string::String>,
@@ -54,10 +52,7 @@ impl SshPublicKeyBuilder {
         self
     }
     /// <p>Specifies the date that the public key was added to the Transfer Family user.</p>
-    pub fn set_date_imported(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_imported(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_imported = input;
         self
     }
@@ -67,19 +62,13 @@ impl SshPublicKeyBuilder {
     }
     /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    pub fn ssh_public_key_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    pub fn set_ssh_public_key_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_public_key_body = input;
         self
     }
@@ -89,18 +78,12 @@ impl SshPublicKeyBuilder {
         &self.ssh_public_key_body
     }
     /// <p>Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.</p>
-    pub fn ssh_public_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.</p>
-    pub fn set_ssh_public_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_public_key_id = input;
         self
     }

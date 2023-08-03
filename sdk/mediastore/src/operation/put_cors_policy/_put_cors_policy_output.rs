@@ -19,9 +19,7 @@ impl PutCorsPolicyOutput {
 
 /// A builder for [`PutCorsPolicyOutput`](crate::operation::put_cors_policy::PutCorsPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutCorsPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -22,9 +22,7 @@ impl ListInstanceStorageConfigsInput {
         self.instance_id.as_deref()
     }
     /// <p>A valid resource type.</p>
-    pub fn resource_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceStorageResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::InstanceStorageResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -38,16 +36,14 @@ impl ListInstanceStorageConfigsInput {
 }
 impl ListInstanceStorageConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListInstanceStorageConfigsInput`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsInput).
-    pub fn builder() -> crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsInputBuilder{
+    pub fn builder() -> crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsInputBuilder {
         crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstanceStorageConfigsInput`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceStorageConfigsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::InstanceStorageResourceType>,
@@ -75,17 +71,12 @@ impl ListInstanceStorageConfigsInputBuilder {
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStorageResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::InstanceStorageResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
         &self.resource_type
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -123,13 +114,11 @@ impl ListInstanceStorageConfigsInputBuilder {
         crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsInput {
-                instance_id: self.instance_id,
-                resource_type: self.resource_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsInput {
+            instance_id: self.instance_id,
+            resource_type: self.resource_type,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

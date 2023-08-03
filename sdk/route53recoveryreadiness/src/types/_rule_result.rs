@@ -44,9 +44,7 @@ impl RuleResult {
 
 /// A builder for [`RuleResult`](crate::types::RuleResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleResultBuilder {
     pub(crate) last_checked_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
@@ -60,17 +58,12 @@ impl RuleResultBuilder {
         self
     }
     /// <p>The time the resource was last checked for readiness, in ISO-8601 format, UTC.</p>
-    pub fn set_last_checked_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_checked_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_checked_timestamp = input;
         self
     }
     /// <p>The time the resource was last checked for readiness, in ISO-8601 format, UTC.</p>
-    pub fn get_last_checked_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_checked_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_checked_timestamp
     }
     /// Appends an item to `messages`.
@@ -85,10 +78,7 @@ impl RuleResultBuilder {
         self
     }
     /// <p>Details about the resource's readiness.</p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
         self.messages = input;
         self
     }

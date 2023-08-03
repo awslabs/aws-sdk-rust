@@ -10,10 +10,7 @@ impl RegisterPublisherInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_publisher::RegisterPublisherOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_publisher::RegisterPublisherError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_publisher::RegisterPublisherError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_publisher();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl RegisterPublisherFluentBuilder {
         }
     }
     /// Access the RegisterPublisher as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_publisher::builders::RegisterPublisherInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_publisher::builders::RegisterPublisherInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl RegisterPublisherFluentBuilder {
             crate::operation::register_publisher::RegisterPublisher,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_publisher::RegisterPublisherError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_publisher::RegisterPublisherError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl RegisterPublisherFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl RegisterPublisherFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_publisher::RegisterPublisherOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_publisher::RegisterPublisherError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_publisher::RegisterPublisherError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl RegisterPublisherFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_publisher::RegisterPublisherOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_publisher::RegisterPublisherError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_publisher::RegisterPublisherError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl RegisterPublisherFluentBuilder {
             crate::operation::register_publisher::RegisterPublisher,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_publisher::RegisterPublisherError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_publisher::RegisterPublisherError>,
     > {
         self.customize_middleware().await
     }
@@ -143,19 +127,13 @@ impl RegisterPublisherFluentBuilder {
     }
     /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon Resource Name (ARN) for your connection to that account.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-    pub fn connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_arn(input.into());
         self
     }
     /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon Resource Name (ARN) for your connection to that account.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-    pub fn set_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_arn(input);
         self
     }

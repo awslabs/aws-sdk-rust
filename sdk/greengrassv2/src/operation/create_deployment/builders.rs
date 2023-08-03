@@ -10,10 +10,7 @@ impl CreateDeploymentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_deployment();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateDeploymentFluentBuilder {
         }
     }
     /// Access the CreateDeployment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateDeploymentFluentBuilder {
             crate::operation::create_deployment::CreateDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl CreateDeploymentFluentBuilder {
             crate::operation::create_deployment::CreateDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         self.customize_middleware().await
     }
@@ -140,18 +124,12 @@ impl CreateDeploymentFluentBuilder {
         self.inner.get_target_arn()
     }
     /// <p>The name of the deployment.</p>
-    pub fn deployment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_name(input.into());
         self
     }
     /// <p>The name of the deployment.</p>
-    pub fn set_deployment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_name(input);
         self
     }
@@ -164,23 +142,14 @@ impl CreateDeploymentFluentBuilder {
     /// To override the contents of this collection use [`set_components`](Self::set_components).
     ///
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
-    pub fn components(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentDeploymentSpecification,
-    ) -> Self {
+    pub fn components(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentDeploymentSpecification) -> Self {
         self.inner = self.inner.components(k.into(), v);
         self
     }
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     pub fn set_components(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::ComponentDeploymentSpecification,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>>,
     ) -> Self {
         self.inner = self.inner.set_components(input);
         self
@@ -188,34 +157,21 @@ impl CreateDeploymentFluentBuilder {
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     pub fn get_components(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentDeploymentSpecification,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>> {
         self.inner.get_components()
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    pub fn iot_job_configuration(
-        mut self,
-        input: crate::types::DeploymentIoTJobConfiguration,
-    ) -> Self {
+    pub fn iot_job_configuration(mut self, input: crate::types::DeploymentIoTJobConfiguration) -> Self {
         self.inner = self.inner.iot_job_configuration(input);
         self
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    pub fn set_iot_job_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>,
-    ) -> Self {
+    pub fn set_iot_job_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>) -> Self {
         self.inner = self.inner.set_iot_job_configuration(input);
         self
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    pub fn get_iot_job_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentIoTJobConfiguration> {
+    pub fn get_iot_job_configuration(&self) -> &::std::option::Option<crate::types::DeploymentIoTJobConfiguration> {
         self.inner.get_iot_job_configuration()
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
@@ -224,32 +180,21 @@ impl CreateDeploymentFluentBuilder {
         self
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
-    pub fn set_deployment_policies(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentPolicies>,
-    ) -> Self {
+    pub fn set_deployment_policies(mut self, input: ::std::option::Option<crate::types::DeploymentPolicies>) -> Self {
         self.inner = self.inner.set_deployment_policies(input);
         self
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
-    pub fn get_deployment_policies(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentPolicies> {
+    pub fn get_deployment_policies(&self) -> &::std::option::Option<crate::types::DeploymentPolicies> {
         self.inner.get_deployment_policies()
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn parent_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_target_arn(input.into());
         self
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn set_parent_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_target_arn(input);
         self
     }
@@ -262,30 +207,17 @@ impl CreateDeploymentFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>

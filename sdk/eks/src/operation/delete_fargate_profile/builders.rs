@@ -39,9 +39,7 @@ impl DeleteFargateProfileFluentBuilder {
         }
     }
     /// Access the DeleteFargateProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_fargate_profile::builders::DeleteFargateProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_fargate_profile::builders::DeleteFargateProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DeleteFargateProfileFluentBuilder {
             crate::operation::delete_fargate_profile::DeleteFargateProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fargate_profile::DeleteFargateProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fargate_profile::DeleteFargateProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DeleteFargateProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DeleteFargateProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_fargate_profile::DeleteFargateProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fargate_profile::DeleteFargateProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fargate_profile::DeleteFargateProfileError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DeleteFargateProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_fargate_profile::DeleteFargateProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fargate_profile::DeleteFargateProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fargate_profile::DeleteFargateProfileError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl DeleteFargateProfileFluentBuilder {
             crate::operation::delete_fargate_profile::DeleteFargateProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_fargate_profile::DeleteFargateProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fargate_profile::DeleteFargateProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +126,12 @@ impl DeleteFargateProfileFluentBuilder {
         self.inner.get_cluster_name()
     }
     /// <p>The name of the Fargate profile to delete.</p>
-    pub fn fargate_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fargate_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fargate_profile_name(input.into());
         self
     }
     /// <p>The name of the Fargate profile to delete.</p>
-    pub fn set_fargate_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fargate_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fargate_profile_name(input);
         self
     }

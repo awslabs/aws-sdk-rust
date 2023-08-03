@@ -30,7 +30,7 @@ impl ::std::fmt::Debug for ListRasterDataCollectionsInput {
 }
 impl ListRasterDataCollectionsInput {
     /// Creates a new builder-style object to manufacture [`ListRasterDataCollectionsInput`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsInput).
-    pub fn builder() -> crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsInputBuilder{
+    pub fn builder() -> crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsInputBuilder {
         crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsInputBuilder::default()
     }
 }
@@ -78,12 +78,10 @@ impl ListRasterDataCollectionsInputBuilder {
         crate::operation::list_raster_data_collections::ListRasterDataCollectionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_raster_data_collections::ListRasterDataCollectionsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_raster_data_collections::ListRasterDataCollectionsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
 impl ::std::fmt::Debug for ListRasterDataCollectionsInputBuilder {

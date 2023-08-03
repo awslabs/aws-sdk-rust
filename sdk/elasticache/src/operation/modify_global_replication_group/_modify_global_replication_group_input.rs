@@ -57,16 +57,14 @@ impl ModifyGlobalReplicationGroupInput {
 }
 impl ModifyGlobalReplicationGroupInput {
     /// Creates a new builder-style object to manufacture [`ModifyGlobalReplicationGroupInput`](crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput).
-    pub fn builder() -> crate::operation::modify_global_replication_group::builders::ModifyGlobalReplicationGroupInputBuilder{
+    pub fn builder() -> crate::operation::modify_global_replication_group::builders::ModifyGlobalReplicationGroupInputBuilder {
         crate::operation::modify_global_replication_group::builders::ModifyGlobalReplicationGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyGlobalReplicationGroupInput`](crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyGlobalReplicationGroupInputBuilder {
     pub(crate) global_replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) apply_immediately: ::std::option::Option<bool>,
@@ -78,18 +76,12 @@ pub struct ModifyGlobalReplicationGroupInputBuilder {
 }
 impl ModifyGlobalReplicationGroupInputBuilder {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_replication_group_id = input;
         self
     }
@@ -112,18 +104,12 @@ impl ModifyGlobalReplicationGroupInputBuilder {
         &self.apply_immediately
     }
     /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
-    pub fn cache_node_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
-    pub fn set_cache_node_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_node_type = input;
         self
     }
@@ -132,18 +118,12 @@ impl ModifyGlobalReplicationGroupInputBuilder {
         &self.cache_node_type
     }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -152,18 +132,12 @@ impl ModifyGlobalReplicationGroupInputBuilder {
         &self.engine_version
     }
     /// <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
-    pub fn cache_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
-    pub fn set_cache_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_parameter_group_name = input;
         self
     }
@@ -172,25 +146,17 @@ impl ModifyGlobalReplicationGroupInputBuilder {
         &self.cache_parameter_group_name
     }
     /// <p>A description of the Global datastore</p>
-    pub fn global_replication_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the Global datastore</p>
-    pub fn set_global_replication_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_replication_group_description = input;
         self
     }
     /// <p>A description of the Global datastore</p>
-    pub fn get_global_replication_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_global_replication_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_replication_group_description
     }
     /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
@@ -214,16 +180,14 @@ impl ModifyGlobalReplicationGroupInputBuilder {
         crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput {
-                global_replication_group_id: self.global_replication_group_id,
-                apply_immediately: self.apply_immediately.unwrap_or_default(),
-                cache_node_type: self.cache_node_type,
-                engine_version: self.engine_version,
-                cache_parameter_group_name: self.cache_parameter_group_name,
-                global_replication_group_description: self.global_replication_group_description,
-                automatic_failover_enabled: self.automatic_failover_enabled,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput {
+            global_replication_group_id: self.global_replication_group_id,
+            apply_immediately: self.apply_immediately.unwrap_or_default(),
+            cache_node_type: self.cache_node_type,
+            engine_version: self.engine_version,
+            cache_parameter_group_name: self.cache_parameter_group_name,
+            global_replication_group_description: self.global_replication_group_description,
+            automatic_failover_enabled: self.automatic_failover_enabled,
+        })
     }
 }

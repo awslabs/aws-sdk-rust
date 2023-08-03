@@ -5,9 +5,7 @@
 pub struct ListAssessmentControlInsightsByControlDomainOutput {
     /// <p>The assessment control analytics data that the <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
     #[doc(hidden)]
-    pub control_insights_by_assessment: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ControlInsightsMetadataByAssessmentItem>,
-    >,
+    pub control_insights_by_assessment: ::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataByAssessmentItem>>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +13,7 @@ pub struct ListAssessmentControlInsightsByControlDomainOutput {
 }
 impl ListAssessmentControlInsightsByControlDomainOutput {
     /// <p>The assessment control analytics data that the <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
-    pub fn control_insights_by_assessment(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ControlInsightsMetadataByAssessmentItem]> {
+    pub fn control_insights_by_assessment(&self) -> ::std::option::Option<&[crate::types::ControlInsightsMetadataByAssessmentItem]> {
         self.control_insights_by_assessment.as_deref()
     }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
@@ -32,20 +28,18 @@ impl ::aws_http::request_id::RequestId for ListAssessmentControlInsightsByContro
 }
 impl ListAssessmentControlInsightsByControlDomainOutput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentControlInsightsByControlDomainOutput`](crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainOutput).
-    pub fn builder() -> crate::operation::list_assessment_control_insights_by_control_domain::builders::ListAssessmentControlInsightsByControlDomainOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::list_assessment_control_insights_by_control_domain::builders::ListAssessmentControlInsightsByControlDomainOutputBuilder
+    {
         crate::operation::list_assessment_control_insights_by_control_domain::builders::ListAssessmentControlInsightsByControlDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentControlInsightsByControlDomainOutput`](crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentControlInsightsByControlDomainOutputBuilder {
-    pub(crate) control_insights_by_assessment: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ControlInsightsMetadataByAssessmentItem>,
-    >,
+    pub(crate) control_insights_by_assessment: ::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataByAssessmentItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +49,7 @@ impl ListAssessmentControlInsightsByControlDomainOutputBuilder {
     /// To override the contents of this collection use [`set_control_insights_by_assessment`](Self::set_control_insights_by_assessment).
     ///
     /// <p>The assessment control analytics data that the <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
-    pub fn control_insights_by_assessment(
-        mut self,
-        input: crate::types::ControlInsightsMetadataByAssessmentItem,
-    ) -> Self {
+    pub fn control_insights_by_assessment(mut self, input: crate::types::ControlInsightsMetadataByAssessmentItem) -> Self {
         let mut v = self.control_insights_by_assessment.unwrap_or_default();
         v.push(input);
         self.control_insights_by_assessment = ::std::option::Option::Some(v);
@@ -67,9 +58,7 @@ impl ListAssessmentControlInsightsByControlDomainOutputBuilder {
     /// <p>The assessment control analytics data that the <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
     pub fn set_control_insights_by_assessment(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ControlInsightsMetadataByAssessmentItem>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataByAssessmentItem>>,
     ) -> Self {
         self.control_insights_by_assessment = input;
         self
@@ -77,9 +66,7 @@ impl ListAssessmentControlInsightsByControlDomainOutputBuilder {
     /// <p>The assessment control analytics data that the <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
     pub fn get_control_insights_by_assessment(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::ControlInsightsMetadataByAssessmentItem>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataByAssessmentItem>> {
         &self.control_insights_by_assessment
     }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
@@ -106,12 +93,10 @@ impl ListAssessmentControlInsightsByControlDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssessmentControlInsightsByControlDomainOutput`](crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainOutput).
-    pub fn build(self) -> crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainOutput{
+    pub fn build(self) -> crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainOutput {
         crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainOutput {
-            control_insights_by_assessment: self.control_insights_by_assessment
-            ,
-            next_token: self.next_token
-            ,
+            control_insights_by_assessment: self.control_insights_by_assessment,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

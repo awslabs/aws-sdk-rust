@@ -29,18 +29,14 @@ impl GetBatchPredictionJobsInput {
 }
 impl GetBatchPredictionJobsInput {
     /// Creates a new builder-style object to manufacture [`GetBatchPredictionJobsInput`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsInput).
-    pub fn builder(
-    ) -> crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsInputBuilder {
         crate::operation::get_batch_prediction_jobs::builders::GetBatchPredictionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBatchPredictionJobsInput`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBatchPredictionJobsInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -96,12 +92,10 @@ impl GetBatchPredictionJobsInputBuilder {
         crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsInput {
+            job_id: self.job_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`quick_connect_ids(Vec<String>)`](crate::operation::associate_queue_quick_connects::builders::AssociateQueueQuickConnectsFluentBuilder::quick_connect_ids) / [`set_quick_connect_ids(Option<Vec<String>>)`](crate::operation::associate_queue_quick_connects::builders::AssociateQueueQuickConnectsFluentBuilder::set_quick_connect_ids): <p>The quick connects to associate with this queue.</p>
     /// - On success, responds with [`AssociateQueueQuickConnectsOutput`](crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsOutput)
     /// - On failure, responds with [`SdkError<AssociateQueueQuickConnectsError>`](crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsError)
-    pub fn associate_queue_quick_connects(&self) -> crate::operation::associate_queue_quick_connects::builders::AssociateQueueQuickConnectsFluentBuilder{
+    pub fn associate_queue_quick_connects(
+        &self,
+    ) -> crate::operation::associate_queue_quick_connects::builders::AssociateQueueQuickConnectsFluentBuilder {
         crate::operation::associate_queue_quick_connects::builders::AssociateQueueQuickConnectsFluentBuilder::new(self.handle.clone())
     }
 }

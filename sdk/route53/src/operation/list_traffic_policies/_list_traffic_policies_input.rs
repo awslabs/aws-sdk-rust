@@ -25,18 +25,14 @@ impl ListTrafficPoliciesInput {
 }
 impl ListTrafficPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListTrafficPoliciesInput`](crate::operation::list_traffic_policies::ListTrafficPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_traffic_policies::builders::ListTrafficPoliciesInputBuilder {
-        crate::operation::list_traffic_policies::builders::ListTrafficPoliciesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_traffic_policies::builders::ListTrafficPoliciesInputBuilder {
+        crate::operation::list_traffic_policies::builders::ListTrafficPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrafficPoliciesInput`](crate::operation::list_traffic_policies::ListTrafficPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrafficPoliciesInputBuilder {
     pub(crate) traffic_policy_id_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -44,19 +40,13 @@ pub struct ListTrafficPoliciesInputBuilder {
 impl ListTrafficPoliciesInputBuilder {
     /// <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the <code>TrafficPolicyIdMarker</code> parameter.</p>
     /// <p>If you have more traffic policies than the value of <code>MaxItems</code>, <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code> traffic policies. To get the next group of policies, submit another request to <code>ListTrafficPolicies</code>. For the value of <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code> that was returned in the previous response.</p>
-    pub fn traffic_policy_id_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_policy_id_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_policy_id_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the <code>TrafficPolicyIdMarker</code> parameter.</p>
     /// <p>If you have more traffic policies than the value of <code>MaxItems</code>, <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code> traffic policies. To get the next group of policies, submit another request to <code>ListTrafficPolicies</code>. For the value of <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code> that was returned in the previous response.</p>
-    pub fn set_traffic_policy_id_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_policy_id_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_policy_id_marker = input;
         self
     }
@@ -82,15 +72,11 @@ impl ListTrafficPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListTrafficPoliciesInput`](crate::operation::list_traffic_policies::ListTrafficPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_traffic_policies::ListTrafficPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_traffic_policies::ListTrafficPoliciesInput {
-                traffic_policy_id_marker: self.traffic_policy_id_marker,
-                max_items: self.max_items,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_traffic_policies::ListTrafficPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_traffic_policies::ListTrafficPoliciesInput {
+            traffic_policy_id_marker: self.traffic_policy_id_marker,
+            max_items: self.max_items,
+        })
     }
 }

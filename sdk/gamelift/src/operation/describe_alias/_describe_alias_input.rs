@@ -22,9 +22,7 @@ impl DescribeAliasInput {
 
 /// A builder for [`DescribeAliasInput`](crate::operation::describe_alias::DescribeAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAliasInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeAliasInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAliasInput`](crate::operation::describe_alias::DescribeAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_alias::DescribeAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_alias::DescribeAliasInput {
-            alias_id: self.alias_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_alias::DescribeAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_alias::DescribeAliasInput { alias_id: self.alias_id })
     }
 }

@@ -29,17 +29,14 @@ impl StopContactStreamingInput {
 }
 impl StopContactStreamingInput {
     /// Creates a new builder-style object to manufacture [`StopContactStreamingInput`](crate::operation::stop_contact_streaming::StopContactStreamingInput).
-    pub fn builder(
-    ) -> crate::operation::stop_contact_streaming::builders::StopContactStreamingInputBuilder {
+    pub fn builder() -> crate::operation::stop_contact_streaming::builders::StopContactStreamingInputBuilder {
         crate::operation::stop_contact_streaming::builders::StopContactStreamingInputBuilder::default()
     }
 }
 
 /// A builder for [`StopContactStreamingInput`](crate::operation::stop_contact_streaming::StopContactStreamingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopContactStreamingInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl StopContactStreamingInputBuilder {
     /// Consumes the builder and constructs a [`StopContactStreamingInput`](crate::operation::stop_contact_streaming::StopContactStreamingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_contact_streaming::StopContactStreamingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_contact_streaming::StopContactStreamingInput {
-                instance_id: self.instance_id,
-                contact_id: self.contact_id,
-                streaming_id: self.streaming_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_contact_streaming::StopContactStreamingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_contact_streaming::StopContactStreamingInput {
+            instance_id: self.instance_id,
+            contact_id: self.contact_id,
+            streaming_id: self.streaming_id,
+        })
     }
 }

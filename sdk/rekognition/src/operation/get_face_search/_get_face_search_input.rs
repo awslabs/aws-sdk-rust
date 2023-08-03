@@ -43,9 +43,7 @@ impl GetFaceSearchInput {
 
 /// A builder for [`GetFaceSearchInput`](crate::operation::get_face_search::GetFaceSearchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFaceSearchInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -101,10 +99,7 @@ impl GetFaceSearchInputBuilder {
         self
     }
     /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::FaceSearchSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::FaceSearchSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -115,10 +110,7 @@ impl GetFaceSearchInputBuilder {
     /// Consumes the builder and constructs a [`GetFaceSearchInput`](crate::operation::get_face_search::GetFaceSearchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_face_search::GetFaceSearchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_face_search::GetFaceSearchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_face_search::GetFaceSearchInput {
             job_id: self.job_id,
             max_results: self.max_results,

@@ -8,8 +8,7 @@ pub struct ListStorageLensConfigurationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of S3 Storage Lens configurations.</p>
     #[doc(hidden)]
-    pub storage_lens_configuration_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>>,
+    pub storage_lens_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>>,
     _request_id: Option<String>,
 }
 impl ListStorageLensConfigurationsOutput {
@@ -18,9 +17,7 @@ impl ListStorageLensConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of S3 Storage Lens configurations.</p>
-    pub fn storage_lens_configuration_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListStorageLensConfigurationEntry]> {
+    pub fn storage_lens_configuration_list(&self) -> ::std::option::Option<&[crate::types::ListStorageLensConfigurationEntry]> {
         self.storage_lens_configuration_list.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListStorageLensConfigurationsOutput {
 }
 impl ListStorageLensConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListStorageLensConfigurationsOutput`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsOutputBuilder {
         crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStorageLensConfigurationsOutput`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStorageLensConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_lens_configuration_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>>,
+    pub(crate) storage_lens_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>>,
     _request_id: Option<String>,
 }
 impl ListStorageLensConfigurationsOutputBuilder {
@@ -67,10 +61,7 @@ impl ListStorageLensConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_storage_lens_configuration_list`](Self::set_storage_lens_configuration_list).
     ///
     /// <p>A list of S3 Storage Lens configurations.</p>
-    pub fn storage_lens_configuration_list(
-        mut self,
-        input: crate::types::ListStorageLensConfigurationEntry,
-    ) -> Self {
+    pub fn storage_lens_configuration_list(mut self, input: crate::types::ListStorageLensConfigurationEntry) -> Self {
         let mut v = self.storage_lens_configuration_list.unwrap_or_default();
         v.push(input);
         self.storage_lens_configuration_list = ::std::option::Option::Some(v);
@@ -79,18 +70,13 @@ impl ListStorageLensConfigurationsOutputBuilder {
     /// <p>A list of S3 Storage Lens configurations.</p>
     pub fn set_storage_lens_configuration_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>>,
     ) -> Self {
         self.storage_lens_configuration_list = input;
         self
     }
     /// <p>A list of S3 Storage Lens configurations.</p>
-    pub fn get_storage_lens_configuration_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>>
-    {
+    pub fn get_storage_lens_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>> {
         &self.storage_lens_configuration_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -103,10 +89,7 @@ impl ListStorageLensConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStorageLensConfigurationsOutput`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput {
         crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput {
             next_token: self.next_token,
             storage_lens_configuration_list: self.storage_lens_configuration_list,

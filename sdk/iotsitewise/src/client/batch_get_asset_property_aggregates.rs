@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`skipped_entries(Option<Vec<BatchGetAssetPropertyAggregatesSkippedEntry>>)`](crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesOutput::skipped_entries): <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<BatchGetAssetPropertyAggregatesError>`](crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesError)
-    pub fn batch_get_asset_property_aggregates(&self) -> crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesFluentBuilder{
+    pub fn batch_get_asset_property_aggregates(
+        &self,
+    ) -> crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesFluentBuilder {
         crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesFluentBuilder::new(self.handle.clone())
     }
 }

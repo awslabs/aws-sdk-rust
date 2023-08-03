@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`event_sources(EventSourcesConfig)`](crate::operation::update_event_sources_config::builders::UpdateEventSourcesConfigFluentBuilder::event_sources) / [`set_event_sources(Option<EventSourcesConfig>)`](crate::operation::update_event_sources_config::builders::UpdateEventSourcesConfigFluentBuilder::set_event_sources): <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
     /// - On success, responds with [`UpdateEventSourcesConfigOutput`](crate::operation::update_event_sources_config::UpdateEventSourcesConfigOutput)
     /// - On failure, responds with [`SdkError<UpdateEventSourcesConfigError>`](crate::operation::update_event_sources_config::UpdateEventSourcesConfigError)
-    pub fn update_event_sources_config(&self) -> crate::operation::update_event_sources_config::builders::UpdateEventSourcesConfigFluentBuilder{
+    pub fn update_event_sources_config(&self) -> crate::operation::update_event_sources_config::builders::UpdateEventSourcesConfigFluentBuilder {
         crate::operation::update_event_sources_config::builders::UpdateEventSourcesConfigFluentBuilder::new(self.handle.clone())
     }
 }

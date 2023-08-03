@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSecurityKeysOutput {
 }
 impl ListSecurityKeysOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityKeysOutput`](crate::operation::list_security_keys::ListSecurityKeysOutput).
-    pub fn builder() -> crate::operation::list_security_keys::builders::ListSecurityKeysOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_security_keys::builders::ListSecurityKeysOutputBuilder {
         crate::operation::list_security_keys::builders::ListSecurityKeysOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityKeysOutput`](crate::operation::list_security_keys::ListSecurityKeysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityKeysOutputBuilder {
     pub(crate) security_keys: ::std::option::Option<::std::vec::Vec<crate::types::SecurityKey>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListSecurityKeysOutputBuilder {
         self
     }
     /// <p>The security keys.</p>
-    pub fn set_security_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityKey>>,
-    ) -> Self {
+    pub fn set_security_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityKey>>) -> Self {
         self.security_keys = input;
         self
     }
     /// <p>The security keys.</p>
-    pub fn get_security_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityKey>> {
+    pub fn get_security_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityKey>> {
         &self.security_keys
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

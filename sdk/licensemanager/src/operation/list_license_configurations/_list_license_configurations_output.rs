@@ -5,8 +5,7 @@
 pub struct ListLicenseConfigurationsOutput {
     /// <p>Information about the license configurations.</p>
     #[doc(hidden)]
-    pub license_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfiguration>>,
+    pub license_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfiguration>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListLicenseConfigurationsOutput {
 }
 impl ListLicenseConfigurationsOutput {
     /// <p>Information about the license configurations.</p>
-    pub fn license_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LicenseConfiguration]> {
+    pub fn license_configurations(&self) -> ::std::option::Option<&[crate::types::LicenseConfiguration]> {
         self.license_configurations.as_deref()
     }
     /// <p>Token for the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListLicenseConfigurationsOutput {
 }
 impl ListLicenseConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListLicenseConfigurationsOutput`](crate::operation::list_license_configurations::ListLicenseConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_license_configurations::builders::ListLicenseConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_license_configurations::builders::ListLicenseConfigurationsOutputBuilder {
         crate::operation::list_license_configurations::builders::ListLicenseConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLicenseConfigurationsOutput`](crate::operation::list_license_configurations::ListLicenseConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLicenseConfigurationsOutputBuilder {
-    pub(crate) license_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfiguration>>,
+    pub(crate) license_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListLicenseConfigurationsOutputBuilder {
         self
     }
     /// <p>Information about the license configurations.</p>
-    pub fn set_license_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfiguration>>,
-    ) -> Self {
+    pub fn set_license_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfiguration>>) -> Self {
         self.license_configurations = input;
         self
     }
     /// <p>Information about the license configurations.</p>
-    pub fn get_license_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseConfiguration>> {
+    pub fn get_license_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseConfiguration>> {
         &self.license_configurations
     }
     /// <p>Token for the next set of results.</p>
@@ -97,9 +86,7 @@ impl ListLicenseConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListLicenseConfigurationsOutput`](crate::operation::list_license_configurations::ListLicenseConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_license_configurations::ListLicenseConfigurationsOutput {
+    pub fn build(self) -> crate::operation::list_license_configurations::ListLicenseConfigurationsOutput {
         crate::operation::list_license_configurations::ListLicenseConfigurationsOutput {
             license_configurations: self.license_configurations,
             next_token: self.next_token,

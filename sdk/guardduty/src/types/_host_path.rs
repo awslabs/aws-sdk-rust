@@ -23,9 +23,7 @@ impl HostPath {
 
 /// A builder for [`HostPath`](crate::types::HostPath).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HostPathBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
 }

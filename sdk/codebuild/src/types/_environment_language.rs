@@ -30,9 +30,7 @@ impl EnvironmentLanguage {
 
 /// A builder for [`EnvironmentLanguage`](crate::types::EnvironmentLanguage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentLanguageBuilder {
     pub(crate) language: ::std::option::Option<crate::types::LanguageType>,
     pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentImage>>,
@@ -44,10 +42,7 @@ impl EnvironmentLanguageBuilder {
         self
     }
     /// <p>The programming language for the Docker images.</p>
-    pub fn set_language(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageType>,
-    ) -> Self {
+    pub fn set_language(mut self, input: ::std::option::Option<crate::types::LanguageType>) -> Self {
         self.language = input;
         self
     }
@@ -67,17 +62,12 @@ impl EnvironmentLanguageBuilder {
         self
     }
     /// <p>The list of Docker images that are related by the specified programming language.</p>
-    pub fn set_images(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentImage>>,
-    ) -> Self {
+    pub fn set_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentImage>>) -> Self {
         self.images = input;
         self
     }
     /// <p>The list of Docker images that are related by the specified programming language.</p>
-    pub fn get_images(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentImage>> {
+    pub fn get_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentImage>> {
         &self.images
     }
     /// Consumes the builder and constructs a [`EnvironmentLanguage`](crate::types::EnvironmentLanguage).

@@ -43,16 +43,14 @@ impl PurchaseReservedDbInstancesOfferingInput {
 }
 impl PurchaseReservedDbInstancesOfferingInput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedDbInstancesOfferingInput`](crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingInput).
-    pub fn builder() -> crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDbInstancesOfferingInputBuilder{
+    pub fn builder() -> crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDbInstancesOfferingInputBuilder {
         crate::operation::purchase_reserved_db_instances_offering::builders::PurchaseReservedDbInstancesOfferingInputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseReservedDbInstancesOfferingInput`](crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseReservedDbInstancesOfferingInputBuilder {
     pub(crate) reserved_db_instances_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_db_instance_id: ::std::option::Option<::std::string::String>,
@@ -62,44 +60,30 @@ pub struct PurchaseReservedDbInstancesOfferingInputBuilder {
 impl PurchaseReservedDbInstancesOfferingInputBuilder {
     /// <p>The ID of the Reserved DB instance offering to purchase.</p>
     /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    pub fn reserved_db_instances_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_db_instances_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_db_instances_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Reserved DB instance offering to purchase.</p>
     /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    pub fn set_reserved_db_instances_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_db_instances_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_db_instances_offering_id = input;
         self
     }
     /// <p>The ID of the Reserved DB instance offering to purchase.</p>
     /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
-    pub fn get_reserved_db_instances_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_db_instances_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_db_instances_offering_id
     }
     /// <p>Customer-specified identifier to track this reservation.</p>
     /// <p>Example: myreservationID</p>
-    pub fn reserved_db_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_db_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_db_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Customer-specified identifier to track this reservation.</p>
     /// <p>Example: myreservationID</p>
-    pub fn set_reserved_db_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_db_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_db_instance_id = input;
         self
     }
@@ -137,10 +121,7 @@ impl PurchaseReservedDbInstancesOfferingInputBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -149,18 +130,19 @@ impl PurchaseReservedDbInstancesOfferingInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PurchaseReservedDbInstancesOfferingInput`](crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingInput {
-                reserved_db_instances_offering_id: self.reserved_db_instances_offering_id
-                ,
-                reserved_db_instance_id: self.reserved_db_instance_id
-                ,
-                db_instance_count: self.db_instance_count
-                ,
-                tags: self.tags
-                ,
-            }
+                reserved_db_instances_offering_id: self.reserved_db_instances_offering_id,
+                reserved_db_instance_id: self.reserved_db_instance_id,
+                db_instance_count: self.db_instance_count,
+                tags: self.tags,
+            },
         )
     }
 }

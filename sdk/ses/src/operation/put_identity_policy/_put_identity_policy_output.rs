@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for PutIdentityPolicyOutput {
 }
 impl PutIdentityPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutIdentityPolicyOutput`](crate::operation::put_identity_policy::PutIdentityPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_identity_policy::builders::PutIdentityPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::put_identity_policy::builders::PutIdentityPolicyOutputBuilder {
         crate::operation::put_identity_policy::builders::PutIdentityPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutIdentityPolicyOutput`](crate::operation::put_identity_policy::PutIdentityPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutIdentityPolicyOutputBuilder {
     _request_id: Option<String>,
 }

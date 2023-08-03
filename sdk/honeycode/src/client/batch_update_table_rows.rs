@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`workbook_cursor(i64)`](crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput::workbook_cursor): <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
     ///   - [`failed_batch_items(Option<Vec<FailedBatchItem>>)`](crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput::failed_batch_items): <p> The list of batch items in the request that could not be updated in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated. </p>
     /// - On failure, responds with [`SdkError<BatchUpdateTableRowsError>`](crate::operation::batch_update_table_rows::BatchUpdateTableRowsError)
-    pub fn batch_update_table_rows(
-        &self,
-    ) -> crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsFluentBuilder
-    {
-        crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_update_table_rows(&self) -> crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsFluentBuilder {
+        crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsFluentBuilder::new(self.handle.clone())
     }
 }

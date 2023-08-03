@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateUserIdentityInfoOutput {
 }
 impl UpdateUserIdentityInfoOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserIdentityInfoOutput`](crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput).
-    pub fn builder(
-    ) -> crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoOutputBuilder {
         crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserIdentityInfoOutput`](crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserIdentityInfoOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateUserIdentityInfoOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateUserIdentityInfoOutput`](crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput {
+    pub fn build(self) -> crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput {
         crate::operation::update_user_identity_info::UpdateUserIdentityInfoOutput {
             _request_id: self._request_id,
         }

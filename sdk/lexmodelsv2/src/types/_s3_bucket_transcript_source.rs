@@ -51,9 +51,7 @@ impl S3BucketTranscriptSource {
 
 /// A builder for [`S3BucketTranscriptSource`](crate::types::S3BucketTranscriptSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3BucketTranscriptSourceBuilder {
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) path_format: ::std::option::Option<crate::types::PathFormat>,
@@ -63,18 +61,12 @@ pub struct S3BucketTranscriptSourceBuilder {
 }
 impl S3BucketTranscriptSourceBuilder {
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -88,10 +80,7 @@ impl S3BucketTranscriptSourceBuilder {
         self
     }
     /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
-    pub fn set_path_format(
-        mut self,
-        input: ::std::option::Option<crate::types::PathFormat>,
-    ) -> Self {
+    pub fn set_path_format(mut self, input: ::std::option::Option<crate::types::PathFormat>) -> Self {
         self.path_format = input;
         self
     }
@@ -105,10 +94,7 @@ impl S3BucketTranscriptSourceBuilder {
         self
     }
     /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
-    pub fn set_transcript_format(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptFormat>,
-    ) -> Self {
+    pub fn set_transcript_format(mut self, input: ::std::option::Option<crate::types::TranscriptFormat>) -> Self {
         self.transcript_format = input;
         self
     }
@@ -122,10 +108,7 @@ impl S3BucketTranscriptSourceBuilder {
         self
     }
     /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
-    pub fn set_transcript_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptFilter>,
-    ) -> Self {
+    pub fn set_transcript_filter(mut self, input: ::std::option::Option<crate::types::TranscriptFilter>) -> Self {
         self.transcript_filter = input;
         self
     }

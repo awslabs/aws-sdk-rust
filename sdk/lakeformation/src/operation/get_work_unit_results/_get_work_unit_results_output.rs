@@ -21,10 +21,8 @@ impl ::aws_http::request_id::RequestId for GetWorkUnitResultsOutput {
 }
 impl GetWorkUnitResultsOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkUnitResultsOutput`](crate::operation::get_work_unit_results::GetWorkUnitResultsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_work_unit_results::builders::GetWorkUnitResultsOutputBuilder {
-        crate::operation::get_work_unit_results::builders::GetWorkUnitResultsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_work_unit_results::builders::GetWorkUnitResultsOutputBuilder {
+        crate::operation::get_work_unit_results::builders::GetWorkUnitResultsOutputBuilder::default()
     }
 }
 
@@ -42,17 +40,12 @@ impl GetWorkUnitResultsOutputBuilder {
         self
     }
     /// <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream of Apache Arrow v1.0 messages.</p>
-    pub fn set_result_stream(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_result_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.result_stream = input;
         self
     }
     /// <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream of Apache Arrow v1.0 messages.</p>
-    pub fn get_result_stream(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_result_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.result_stream
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -16,17 +16,14 @@ impl DescribeLocationS3Input {
 }
 impl DescribeLocationS3Input {
     /// Creates a new builder-style object to manufacture [`DescribeLocationS3Input`](crate::operation::describe_location_s3::DescribeLocationS3Input).
-    pub fn builder(
-    ) -> crate::operation::describe_location_s3::builders::DescribeLocationS3InputBuilder {
+    pub fn builder() -> crate::operation::describe_location_s3::builders::DescribeLocationS3InputBuilder {
         crate::operation::describe_location_s3::builders::DescribeLocationS3InputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationS3Input`](crate::operation::describe_location_s3::DescribeLocationS3Input).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationS3InputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +45,9 @@ impl DescribeLocationS3InputBuilder {
     /// Consumes the builder and constructs a [`DescribeLocationS3Input`](crate::operation::describe_location_s3::DescribeLocationS3Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_location_s3::DescribeLocationS3Input,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_location_s3::DescribeLocationS3Input {
-                location_arn: self.location_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_location_s3::DescribeLocationS3Input, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_location_s3::DescribeLocationS3Input {
+            location_arn: self.location_arn,
+        })
     }
 }

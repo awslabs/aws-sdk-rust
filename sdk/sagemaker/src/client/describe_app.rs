@@ -22,9 +22,7 @@ impl super::Client {
     ///   - [`resource_spec(Option<ResourceSpec>)`](crate::operation::describe_app::DescribeAppOutput::resource_spec): <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     ///   - [`space_name(Option<String>)`](crate::operation::describe_app::DescribeAppOutput::space_name): <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
     /// - On failure, responds with [`SdkError<DescribeAppError>`](crate::operation::describe_app::DescribeAppError)
-    pub fn describe_app(
-        &self,
-    ) -> crate::operation::describe_app::builders::DescribeAppFluentBuilder {
+    pub fn describe_app(&self) -> crate::operation::describe_app::builders::DescribeAppFluentBuilder {
         crate::operation::describe_app::builders::DescribeAppFluentBuilder::new(self.handle.clone())
     }
 }

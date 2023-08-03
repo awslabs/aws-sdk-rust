@@ -5,8 +5,7 @@
 pub struct SearchResourcesOutput {
     /// <p>The ARNs and resource types of resources that are members of the group that you specified.</p>
     #[doc(hidden)]
-    pub resource_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
+    pub resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -22,9 +21,7 @@ pub struct SearchResourcesOutput {
 }
 impl SearchResourcesOutput {
     /// <p>The ARNs and resource types of resources that are members of the group that you specified.</p>
-    pub fn resource_identifiers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceIdentifier]> {
+    pub fn resource_identifiers(&self) -> ::std::option::Option<&[crate::types::ResourceIdentifier]> {
         self.resource_identifiers.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
@@ -55,12 +52,9 @@ impl SearchResourcesOutput {
 
 /// A builder for [`SearchResourcesOutput`](crate::operation::search_resources::SearchResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchResourcesOutputBuilder {
-    pub(crate) resource_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
+    pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) query_errors: ::std::option::Option<::std::vec::Vec<crate::types::QueryError>>,
     _request_id: Option<String>,
@@ -78,17 +72,12 @@ impl SearchResourcesOutputBuilder {
         self
     }
     /// <p>The ARNs and resource types of resources that are members of the group that you specified.</p>
-    pub fn set_resource_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
-    ) -> Self {
+    pub fn set_resource_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>) -> Self {
         self.resource_identifiers = input;
         self
     }
     /// <p>The ARNs and resource types of resources that are members of the group that you specified.</p>
-    pub fn get_resource_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>> {
+    pub fn get_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>> {
         &self.resource_identifiers
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
@@ -127,10 +116,7 @@ impl SearchResourcesOutputBuilder {
     /// <li> <p> <code>CLOUDFORMATION_STACK_INACTIVE</code> </p> </li>
     /// <li> <p> <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li>
     /// </ul>
-    pub fn set_query_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueryError>>,
-    ) -> Self {
+    pub fn set_query_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryError>>) -> Self {
         self.query_errors = input;
         self
     }
@@ -140,9 +126,7 @@ impl SearchResourcesOutputBuilder {
     /// <li> <p> <code>CLOUDFORMATION_STACK_INACTIVE</code> </p> </li>
     /// <li> <p> <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li>
     /// </ul>
-    pub fn get_query_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryError>> {
+    pub fn get_query_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryError>> {
         &self.query_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

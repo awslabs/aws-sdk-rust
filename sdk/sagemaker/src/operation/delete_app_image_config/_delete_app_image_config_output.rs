@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAppImageConfigOutput {
 }
 impl DeleteAppImageConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppImageConfigOutput`](crate::operation::delete_app_image_config::DeleteAppImageConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_app_image_config::builders::DeleteAppImageConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_app_image_config::builders::DeleteAppImageConfigOutputBuilder {
         crate::operation::delete_app_image_config::builders::DeleteAppImageConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppImageConfigOutput`](crate::operation::delete_app_image_config::DeleteAppImageConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppImageConfigOutputBuilder {
     _request_id: Option<String>,
 }

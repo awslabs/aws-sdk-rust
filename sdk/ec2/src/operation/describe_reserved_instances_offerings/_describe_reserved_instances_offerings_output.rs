@@ -6,8 +6,7 @@
 pub struct DescribeReservedInstancesOfferingsOutput {
     /// <p>A list of Reserved Instances offerings.</p>
     #[doc(hidden)]
-    pub reserved_instances_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesOffering>>,
+    pub reserved_instances_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesOffering>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct DescribeReservedInstancesOfferingsOutput {
 }
 impl DescribeReservedInstancesOfferingsOutput {
     /// <p>A list of Reserved Instances offerings.</p>
-    pub fn reserved_instances_offerings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReservedInstancesOffering]> {
+    pub fn reserved_instances_offerings(&self) -> ::std::option::Option<&[crate::types::ReservedInstancesOffering]> {
         self.reserved_instances_offerings.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -32,19 +29,16 @@ impl ::aws_http::request_id::RequestId for DescribeReservedInstancesOfferingsOut
 }
 impl DescribeReservedInstancesOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedInstancesOfferingsOutput`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput).
-    pub fn builder() -> crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsOutputBuilder {
         crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedInstancesOfferingsOutput`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesOfferingsOutputBuilder {
-    pub(crate) reserved_instances_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesOffering>>,
+    pub(crate) reserved_instances_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesOffering>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,10 +48,7 @@ impl DescribeReservedInstancesOfferingsOutputBuilder {
     /// To override the contents of this collection use [`set_reserved_instances_offerings`](Self::set_reserved_instances_offerings).
     ///
     /// <p>A list of Reserved Instances offerings.</p>
-    pub fn reserved_instances_offerings(
-        mut self,
-        input: crate::types::ReservedInstancesOffering,
-    ) -> Self {
+    pub fn reserved_instances_offerings(mut self, input: crate::types::ReservedInstancesOffering) -> Self {
         let mut v = self.reserved_instances_offerings.unwrap_or_default();
         v.push(input);
         self.reserved_instances_offerings = ::std::option::Option::Some(v);
@@ -72,9 +63,7 @@ impl DescribeReservedInstancesOfferingsOutputBuilder {
         self
     }
     /// <p>A list of Reserved Instances offerings.</p>
-    pub fn get_reserved_instances_offerings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesOffering>> {
+    pub fn get_reserved_instances_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesOffering>> {
         &self.reserved_instances_offerings
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -101,12 +90,10 @@ impl DescribeReservedInstancesOfferingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReservedInstancesOfferingsOutput`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput).
-    pub fn build(self) -> crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput{
+    pub fn build(self) -> crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput {
         crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput {
-            reserved_instances_offerings: self.reserved_instances_offerings
-            ,
-            next_token: self.next_token
-            ,
+            reserved_instances_offerings: self.reserved_instances_offerings,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

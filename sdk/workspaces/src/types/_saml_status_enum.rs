@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SamlStatusEnum {
     #[allow(missing_docs)] // documentation missing in model
@@ -62,12 +56,8 @@ impl ::std::convert::From<&str> for SamlStatusEnum {
         match s {
             "DISABLED" => SamlStatusEnum::Disabled,
             "ENABLED" => SamlStatusEnum::Enabled,
-            "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK" => {
-                SamlStatusEnum::EnabledWithDirectoryLoginFallback
-            }
-            other => {
-                SamlStatusEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK" => SamlStatusEnum::EnabledWithDirectoryLoginFallback,
+            other => SamlStatusEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -84,19 +74,13 @@ impl SamlStatusEnum {
         match self {
             SamlStatusEnum::Disabled => "DISABLED",
             SamlStatusEnum::Enabled => "ENABLED",
-            SamlStatusEnum::EnabledWithDirectoryLoginFallback => {
-                "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK"
-            }
+            SamlStatusEnum::EnabledWithDirectoryLoginFallback => "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK",
             SamlStatusEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED",
-            "ENABLED",
-            "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK",
-        ]
+        &["DISABLED", "ENABLED", "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK"]
     }
 }
 impl ::std::convert::AsRef<str> for SamlStatusEnum {

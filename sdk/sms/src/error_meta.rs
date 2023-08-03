@@ -49,24 +49,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -76,53 +68,25 @@ where
 impl From<crate::operation::create_app::CreateAppError> for Error {
     fn from(err: crate::operation::create_app::CreateAppError) -> Self {
         match err {
-            crate::operation::create_app::CreateAppError::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::operation::create_app::CreateAppError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::create_app::CreateAppError::MissingRequiredParameterException(
-                inner,
-            ) => Error::MissingRequiredParameterException(inner),
-            crate::operation::create_app::CreateAppError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::operation::create_app::CreateAppError::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::operation::create_app::CreateAppError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::create_app::CreateAppError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::create_app::CreateAppError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_app::CreateAppError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::create_app::CreateAppError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::create_app::CreateAppError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::create_app::CreateAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_job::CreateReplicationJobError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_replication_job::CreateReplicationJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_job::CreateReplicationJobError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_replication_job::CreateReplicationJobError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -133,36 +97,44 @@ impl From<crate::operation::create_replication_job::CreateReplicationJobError> f
     fn from(err: crate::operation::create_replication_job::CreateReplicationJobError) -> Self {
         match err {
             crate::operation::create_replication_job::CreateReplicationJobError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::create_replication_job::CreateReplicationJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::create_replication_job::CreateReplicationJobError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::create_replication_job::CreateReplicationJobError::NoConnectorsAvailableException(inner) => Error::NoConnectorsAvailableException(inner),
-            crate::operation::create_replication_job::CreateReplicationJobError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::create_replication_job::CreateReplicationJobError::ReplicationJobAlreadyExistsException(inner) => Error::ReplicationJobAlreadyExistsException(inner),
-            crate::operation::create_replication_job::CreateReplicationJobError::ServerCannotBeReplicatedException(inner) => Error::ServerCannotBeReplicatedException(inner),
-            crate::operation::create_replication_job::CreateReplicationJobError::TemporarilyUnavailableException(inner) => Error::TemporarilyUnavailableException(inner),
-            crate::operation::create_replication_job::CreateReplicationJobError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::create_replication_job::CreateReplicationJobError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_replication_job::CreateReplicationJobError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::create_replication_job::CreateReplicationJobError::NoConnectorsAvailableException(inner) => {
+                Error::NoConnectorsAvailableException(inner)
+            }
+            crate::operation::create_replication_job::CreateReplicationJobError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::create_replication_job::CreateReplicationJobError::ReplicationJobAlreadyExistsException(inner) => {
+                Error::ReplicationJobAlreadyExistsException(inner)
+            }
+            crate::operation::create_replication_job::CreateReplicationJobError::ServerCannotBeReplicatedException(inner) => {
+                Error::ServerCannotBeReplicatedException(inner)
+            }
+            crate::operation::create_replication_job::CreateReplicationJobError::TemporarilyUnavailableException(inner) => {
+                Error::TemporarilyUnavailableException(inner)
+            }
+            crate::operation::create_replication_job::CreateReplicationJobError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::create_replication_job::CreateReplicationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_app::DeleteAppError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_app::DeleteAppError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::delete_app::DeleteAppError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_app::DeleteAppError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -172,151 +144,147 @@ where
 impl From<crate::operation::delete_app::DeleteAppError> for Error {
     fn from(err: crate::operation::delete_app::DeleteAppError) -> Self {
         match err {
-            crate::operation::delete_app::DeleteAppError::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::operation::delete_app::DeleteAppError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::delete_app::DeleteAppError::MissingRequiredParameterException(
-                inner,
-            ) => Error::MissingRequiredParameterException(inner),
-            crate::operation::delete_app::DeleteAppError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::operation::delete_app::DeleteAppError::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::operation::delete_app::DeleteAppError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_app::DeleteAppError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::delete_app::DeleteAppError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_app::DeleteAppError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::delete_app::DeleteAppError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::delete_app::DeleteAppError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::delete_app::DeleteAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError,
-    ) -> Self {
+impl From<crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError> for Error {
+    fn from(err: crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError) -> Self {
         match err {
             crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError> for Error {
     fn from(err: crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError) -> Self {
         match err {
-            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::InternalError(inner) => {
+                Error::InternalError(inner)
+            }
+            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::MissingRequiredParameterException(
+                inner,
+            ) => Error::MissingRequiredParameterException(inner),
+            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
+            crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError> for Error {
     fn from(err: crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError) -> Self {
         match err {
-            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::InternalError(inner) => {
+                Error::InternalError(inner)
+            }
+            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::MissingRequiredParameterException(
+                inner,
+            ) => Error::MissingRequiredParameterException(inner),
+            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_job::DeleteReplicationJobError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_replication_job::DeleteReplicationJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_job::DeleteReplicationJobError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_job::DeleteReplicationJobError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -326,41 +294,35 @@ where
 impl From<crate::operation::delete_replication_job::DeleteReplicationJobError> for Error {
     fn from(err: crate::operation::delete_replication_job::DeleteReplicationJobError) -> Self {
         match err {
-            crate::operation::delete_replication_job::DeleteReplicationJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::delete_replication_job::DeleteReplicationJobError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::delete_replication_job::DeleteReplicationJobError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::delete_replication_job::DeleteReplicationJobError::ReplicationJobNotFoundException(inner) => Error::ReplicationJobNotFoundException(inner),
-            crate::operation::delete_replication_job::DeleteReplicationJobError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::delete_replication_job::DeleteReplicationJobError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_replication_job::DeleteReplicationJobError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::delete_replication_job::DeleteReplicationJobError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::delete_replication_job::DeleteReplicationJobError::ReplicationJobNotFoundException(inner) => {
+                Error::ReplicationJobNotFoundException(inner)
+            }
+            crate::operation::delete_replication_job::DeleteReplicationJobError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::delete_replication_job::DeleteReplicationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_server_catalog::DeleteServerCatalogError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_server_catalog::DeleteServerCatalogError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_server_catalog::DeleteServerCatalogError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_server_catalog::DeleteServerCatalogError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -370,40 +332,32 @@ where
 impl From<crate::operation::delete_server_catalog::DeleteServerCatalogError> for Error {
     fn from(err: crate::operation::delete_server_catalog::DeleteServerCatalogError) -> Self {
         match err {
-            crate::operation::delete_server_catalog::DeleteServerCatalogError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::delete_server_catalog::DeleteServerCatalogError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::delete_server_catalog::DeleteServerCatalogError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::delete_server_catalog::DeleteServerCatalogError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::delete_server_catalog::DeleteServerCatalogError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_server_catalog::DeleteServerCatalogError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::delete_server_catalog::DeleteServerCatalogError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::delete_server_catalog::DeleteServerCatalogError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::delete_server_catalog::DeleteServerCatalogError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connector::DisassociateConnectorError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disassociate_connector::DisassociateConnectorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connector::DisassociateConnectorError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connector::DisassociateConnectorError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -413,40 +367,32 @@ where
 impl From<crate::operation::disassociate_connector::DisassociateConnectorError> for Error {
     fn from(err: crate::operation::disassociate_connector::DisassociateConnectorError) -> Self {
         match err {
-            crate::operation::disassociate_connector::DisassociateConnectorError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::disassociate_connector::DisassociateConnectorError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::disassociate_connector::DisassociateConnectorError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::disassociate_connector::DisassociateConnectorError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::disassociate_connector::DisassociateConnectorError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::disassociate_connector::DisassociateConnectorError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::disassociate_connector::DisassociateConnectorError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::disassociate_connector::DisassociateConnectorError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::disassociate_connector::DisassociateConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_change_set::GenerateChangeSetError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::generate_change_set::GenerateChangeSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_change_set::GenerateChangeSetError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::generate_change_set::GenerateChangeSetError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -457,40 +403,32 @@ impl From<crate::operation::generate_change_set::GenerateChangeSetError> for Err
     fn from(err: crate::operation::generate_change_set::GenerateChangeSetError) -> Self {
         match err {
             crate::operation::generate_change_set::GenerateChangeSetError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::generate_change_set::GenerateChangeSetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::generate_change_set::GenerateChangeSetError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::generate_change_set::GenerateChangeSetError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::generate_change_set::GenerateChangeSetError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::generate_change_set::GenerateChangeSetError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::generate_change_set::GenerateChangeSetError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::generate_change_set::GenerateChangeSetError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::generate_change_set::GenerateChangeSetError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::generate_change_set::GenerateChangeSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_template::GenerateTemplateError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::generate_template::GenerateTemplateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_template::GenerateTemplateError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::generate_template::GenerateTemplateError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -502,31 +440,29 @@ impl From<crate::operation::generate_template::GenerateTemplateError> for Error 
         match err {
             crate::operation::generate_template::GenerateTemplateError::InternalError(inner) => Error::InternalError(inner),
             crate::operation::generate_template::GenerateTemplateError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::generate_template::GenerateTemplateError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::generate_template::GenerateTemplateError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::generate_template::GenerateTemplateError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::generate_template::GenerateTemplateError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::generate_template::GenerateTemplateError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::generate_template::GenerateTemplateError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::generate_template::GenerateTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_app::GetAppError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -536,176 +472,142 @@ where
 impl From<crate::operation::get_app::GetAppError> for Error {
     fn from(err: crate::operation::get_app::GetAppError) -> Self {
         match err {
-            crate::operation::get_app::GetAppError::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::operation::get_app::GetAppError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_app::GetAppError::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::operation::get_app::GetAppError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::operation::get_app::GetAppError::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
+            crate::operation::get_app::GetAppError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::get_app::GetAppError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_app::GetAppError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::get_app::GetAppError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::get_app::GetAppError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
             crate::operation::get_app::GetAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError,
-    ) -> Self {
+impl From<crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError> for Error {
+    fn from(err: crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError) -> Self {
         match err {
             crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError>
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError, R>>
     for Error
-{
-    fn from(
-        err: crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError,
-    ) -> Self {
-        match err {
-            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError,
-            R,
-        >,
-    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError,
-    ) -> Self {
+impl From<crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError> for Error {
+    fn from(err: crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError) -> Self {
         match err {
-            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::InternalError(inner) => {
+                Error::InternalError(inner)
+            }
+            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
+            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_validation_output::GetAppValidationOutputError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_validation_output::GetAppValidationOutputError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError> for Error {
+    fn from(err: crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError) -> Self {
+        match err {
+            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::InternalError(inner) => {
+                Error::InternalError(inner)
+            }
+            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
+            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_app_validation_output::GetAppValidationOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_app_validation_output::GetAppValidationOutputError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -716,40 +618,32 @@ impl From<crate::operation::get_app_validation_output::GetAppValidationOutputErr
     fn from(err: crate::operation::get_app_validation_output::GetAppValidationOutputError) -> Self {
         match err {
             crate::operation::get_app_validation_output::GetAppValidationOutputError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::get_app_validation_output::GetAppValidationOutputError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::get_app_validation_output::GetAppValidationOutputError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::get_app_validation_output::GetAppValidationOutputError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::get_app_validation_output::GetAppValidationOutputError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::get_app_validation_output::GetAppValidationOutputError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_app_validation_output::GetAppValidationOutputError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::get_app_validation_output::GetAppValidationOutputError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::get_app_validation_output::GetAppValidationOutputError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::get_app_validation_output::GetAppValidationOutputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connectors::GetConnectorsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_connectors::GetConnectorsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connectors::GetConnectorsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_connectors::GetConnectorsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -759,37 +653,23 @@ where
 impl From<crate::operation::get_connectors::GetConnectorsError> for Error {
     fn from(err: crate::operation::get_connectors::GetConnectorsError) -> Self {
         match err {
-            crate::operation::get_connectors::GetConnectorsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::get_connectors::GetConnectorsError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::get_connectors::GetConnectorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_replication_jobs::GetReplicationJobsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_replication_jobs::GetReplicationJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_replication_jobs::GetReplicationJobsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_replication_jobs::GetReplicationJobsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -799,39 +679,29 @@ where
 impl From<crate::operation::get_replication_jobs::GetReplicationJobsError> for Error {
     fn from(err: crate::operation::get_replication_jobs::GetReplicationJobsError) -> Self {
         match err {
-            crate::operation::get_replication_jobs::GetReplicationJobsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::get_replication_jobs::GetReplicationJobsError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::get_replication_jobs::GetReplicationJobsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::get_replication_jobs::GetReplicationJobsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_replication_jobs::GetReplicationJobsError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::get_replication_jobs::GetReplicationJobsError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::get_replication_jobs::GetReplicationJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_replication_runs::GetReplicationRunsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_replication_runs::GetReplicationRunsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_replication_runs::GetReplicationRunsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_replication_runs::GetReplicationRunsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -841,31 +711,29 @@ where
 impl From<crate::operation::get_replication_runs::GetReplicationRunsError> for Error {
     fn from(err: crate::operation::get_replication_runs::GetReplicationRunsError) -> Self {
         match err {
-            crate::operation::get_replication_runs::GetReplicationRunsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::get_replication_runs::GetReplicationRunsError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::get_replication_runs::GetReplicationRunsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::get_replication_runs::GetReplicationRunsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_replication_runs::GetReplicationRunsError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::get_replication_runs::GetReplicationRunsError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::get_replication_runs::GetReplicationRunsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_servers::GetServersError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_servers::GetServersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::get_servers::GetServersError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_servers::GetServersError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -875,50 +743,26 @@ where
 impl From<crate::operation::get_servers::GetServersError> for Error {
     fn from(err: crate::operation::get_servers::GetServersError) -> Self {
         match err {
-            crate::operation::get_servers::GetServersError::InternalError(inner) => {
-                Error::InternalError(inner)
+            crate::operation::get_servers::GetServersError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::get_servers::GetServersError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_servers::GetServersError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
             }
-            crate::operation::get_servers::GetServersError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_servers::GetServersError::MissingRequiredParameterException(
-                inner,
-            ) => Error::MissingRequiredParameterException(inner),
-            crate::operation::get_servers::GetServersError::UnauthorizedOperationException(
-                inner,
-            ) => Error::UnauthorizedOperationException(inner),
-            crate::operation::get_servers::GetServersError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_servers::GetServersError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::get_servers::GetServersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_app_catalog::ImportAppCatalogError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::import_app_catalog::ImportAppCatalogError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::import_app_catalog::ImportAppCatalogError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::import_app_catalog::ImportAppCatalogError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -930,39 +774,29 @@ impl From<crate::operation::import_app_catalog::ImportAppCatalogError> for Error
         match err {
             crate::operation::import_app_catalog::ImportAppCatalogError::InternalError(inner) => Error::InternalError(inner),
             crate::operation::import_app_catalog::ImportAppCatalogError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::import_app_catalog::ImportAppCatalogError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::import_app_catalog::ImportAppCatalogError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::import_app_catalog::ImportAppCatalogError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::import_app_catalog::ImportAppCatalogError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::import_app_catalog::ImportAppCatalogError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::import_app_catalog::ImportAppCatalogError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::import_app_catalog::ImportAppCatalogError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_server_catalog::ImportServerCatalogError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::import_server_catalog::ImportServerCatalogError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::import_server_catalog::ImportServerCatalogError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::import_server_catalog::ImportServerCatalogError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -972,33 +806,35 @@ where
 impl From<crate::operation::import_server_catalog::ImportServerCatalogError> for Error {
     fn from(err: crate::operation::import_server_catalog::ImportServerCatalogError) -> Self {
         match err {
-            crate::operation::import_server_catalog::ImportServerCatalogError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::import_server_catalog::ImportServerCatalogError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::import_server_catalog::ImportServerCatalogError::NoConnectorsAvailableException(inner) => Error::NoConnectorsAvailableException(inner),
-            crate::operation::import_server_catalog::ImportServerCatalogError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::import_server_catalog::ImportServerCatalogError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::import_server_catalog::ImportServerCatalogError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::import_server_catalog::ImportServerCatalogError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::import_server_catalog::ImportServerCatalogError::NoConnectorsAvailableException(inner) => {
+                Error::NoConnectorsAvailableException(inner)
+            }
+            crate::operation::import_server_catalog::ImportServerCatalogError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::import_server_catalog::ImportServerCatalogError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::import_server_catalog::ImportServerCatalogError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::launch_app::LaunchAppError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::launch_app::LaunchAppError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::launch_app::LaunchAppError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::launch_app::LaunchAppError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1008,45 +844,25 @@ where
 impl From<crate::operation::launch_app::LaunchAppError> for Error {
     fn from(err: crate::operation::launch_app::LaunchAppError) -> Self {
         match err {
-            crate::operation::launch_app::LaunchAppError::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::operation::launch_app::LaunchAppError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::launch_app::LaunchAppError::MissingRequiredParameterException(
-                inner,
-            ) => Error::MissingRequiredParameterException(inner),
-            crate::operation::launch_app::LaunchAppError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::operation::launch_app::LaunchAppError::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::operation::launch_app::LaunchAppError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::launch_app::LaunchAppError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::launch_app::LaunchAppError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::launch_app::LaunchAppError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::launch_app::LaunchAppError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::launch_app::LaunchAppError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::launch_app::LaunchAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_apps::ListAppsError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_apps::ListAppsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::list_apps::ListAppsError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_apps::ListAppsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1056,224 +872,178 @@ where
 impl From<crate::operation::list_apps::ListAppsError> for Error {
     fn from(err: crate::operation::list_apps::ListAppsError) -> Self {
         match err {
-            crate::operation::list_apps::ListAppsError::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::operation::list_apps::ListAppsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::list_apps::ListAppsError::MissingRequiredParameterException(
-                inner,
-            ) => Error::MissingRequiredParameterException(inner),
-            crate::operation::list_apps::ListAppsError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::operation::list_apps::ListAppsError::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
+            crate::operation::list_apps::ListAppsError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::list_apps::ListAppsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_apps::ListAppsError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::list_apps::ListAppsError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::list_apps::ListAppsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
             crate::operation::list_apps::ListAppsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::notify_app_validation_output::NotifyAppValidationOutputError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::notify_app_validation_output::NotifyAppValidationOutputError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::notify_app_validation_output::NotifyAppValidationOutputError>
-    for Error
-{
-    fn from(
-        err: crate::operation::notify_app_validation_output::NotifyAppValidationOutputError,
-    ) -> Self {
+impl From<crate::operation::notify_app_validation_output::NotifyAppValidationOutputError> for Error {
+    fn from(err: crate::operation::notify_app_validation_output::NotifyAppValidationOutputError) -> Self {
         match err {
             crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::notify_app_validation_output::NotifyAppValidationOutputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError,
-    ) -> Self {
+impl From<crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError> for Error {
+    fn from(err: crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError) -> Self {
         match err {
             crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError>
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError, R>>
     for Error
-{
-    fn from(
-        err: crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError,
-    ) -> Self {
-        match err {
-            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError,
-            R,
-        >,
-    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError,
-    ) -> Self {
+impl From<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError> for Error {
+    fn from(err: crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError) -> Self {
         match err {
-            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::InternalError(inner) => {
+                Error::InternalError(inner)
+            }
+            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
+            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_app_replication::StartAppReplicationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::start_app_replication::StartAppReplicationError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError> for Error {
+    fn from(err: crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError) -> Self {
+        match err {
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::InternalError(inner) => {
+                Error::InternalError(inner)
+            }
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_app_replication::StartAppReplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_app_replication::StartAppReplicationError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1284,137 +1054,113 @@ impl From<crate::operation::start_app_replication::StartAppReplicationError> for
     fn from(err: crate::operation::start_app_replication::StartAppReplicationError) -> Self {
         match err {
             crate::operation::start_app_replication::StartAppReplicationError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::start_app_replication::StartAppReplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::start_app_replication::StartAppReplicationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::start_app_replication::StartAppReplicationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::start_app_replication::StartAppReplicationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::start_app_replication::StartAppReplicationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_app_replication::StartAppReplicationError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::start_app_replication::StartAppReplicationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::start_app_replication::StartAppReplicationError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::start_app_replication::StartAppReplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError,
-    ) -> Self {
+impl From<crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError> for Error {
+    fn from(err: crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError) -> Self {
         match err {
             crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError>
-    for Error
-{
-    fn from(
-        err: crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError,
-    ) -> Self {
+impl From<crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError> for Error {
+    fn from(err: crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError) -> Self {
         match err {
-            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
-            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::ReplicationRunLimitExceededException(inner) => Error::ReplicationRunLimitExceededException(inner),
-            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::ReplicationRunLimitExceededException(inner) => {
+                Error::ReplicationRunLimitExceededException(inner)
+            }
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_app_replication::StopAppReplicationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::stop_app_replication::StopAppReplicationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_app_replication::StopAppReplicationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::stop_app_replication::StopAppReplicationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1425,36 +1171,32 @@ impl From<crate::operation::stop_app_replication::StopAppReplicationError> for E
     fn from(err: crate::operation::stop_app_replication::StopAppReplicationError) -> Self {
         match err {
             crate::operation::stop_app_replication::StopAppReplicationError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::stop_app_replication::StopAppReplicationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::stop_app_replication::StopAppReplicationError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::stop_app_replication::StopAppReplicationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::stop_app_replication::StopAppReplicationError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::stop_app_replication::StopAppReplicationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::stop_app_replication::StopAppReplicationError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::stop_app_replication::StopAppReplicationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::stop_app_replication::StopAppReplicationError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::stop_app_replication::StopAppReplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::terminate_app::TerminateAppError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::terminate_app::TerminateAppError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_app::TerminateAppError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::terminate_app::TerminateAppError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1466,31 +1208,25 @@ impl From<crate::operation::terminate_app::TerminateAppError> for Error {
         match err {
             crate::operation::terminate_app::TerminateAppError::InternalError(inner) => Error::InternalError(inner),
             crate::operation::terminate_app::TerminateAppError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::terminate_app::TerminateAppError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::terminate_app::TerminateAppError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
             crate::operation::terminate_app::TerminateAppError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::operation::terminate_app::TerminateAppError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
             crate::operation::terminate_app::TerminateAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_app::UpdateAppError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_app::UpdateAppError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::update_app::UpdateAppError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_app::UpdateAppError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1500,53 +1236,25 @@ where
 impl From<crate::operation::update_app::UpdateAppError> for Error {
     fn from(err: crate::operation::update_app::UpdateAppError) -> Self {
         match err {
-            crate::operation::update_app::UpdateAppError::InternalError(inner) => {
-                Error::InternalError(inner)
-            }
-            crate::operation::update_app::UpdateAppError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::update_app::UpdateAppError::MissingRequiredParameterException(
-                inner,
-            ) => Error::MissingRequiredParameterException(inner),
-            crate::operation::update_app::UpdateAppError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::operation::update_app::UpdateAppError::UnauthorizedOperationException(inner) => {
-                Error::UnauthorizedOperationException(inner)
-            }
-            crate::operation::update_app::UpdateAppError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::update_app::UpdateAppError::InternalError(inner) => Error::InternalError(inner),
+            crate::operation::update_app::UpdateAppError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_app::UpdateAppError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::update_app::UpdateAppError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::update_app::UpdateAppError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::update_app::UpdateAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_replication_job::UpdateReplicationJobError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_replication_job::UpdateReplicationJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_replication_job::UpdateReplicationJobError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_replication_job::UpdateReplicationJobError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1557,13 +1265,27 @@ impl From<crate::operation::update_replication_job::UpdateReplicationJobError> f
     fn from(err: crate::operation::update_replication_job::UpdateReplicationJobError) -> Self {
         match err {
             crate::operation::update_replication_job::UpdateReplicationJobError::InternalError(inner) => Error::InternalError(inner),
-            crate::operation::update_replication_job::UpdateReplicationJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::update_replication_job::UpdateReplicationJobError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::operation::update_replication_job::UpdateReplicationJobError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::operation::update_replication_job::UpdateReplicationJobError::ReplicationJobNotFoundException(inner) => Error::ReplicationJobNotFoundException(inner),
-            crate::operation::update_replication_job::UpdateReplicationJobError::ServerCannotBeReplicatedException(inner) => Error::ServerCannotBeReplicatedException(inner),
-            crate::operation::update_replication_job::UpdateReplicationJobError::TemporarilyUnavailableException(inner) => Error::TemporarilyUnavailableException(inner),
-            crate::operation::update_replication_job::UpdateReplicationJobError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::operation::update_replication_job::UpdateReplicationJobError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_replication_job::UpdateReplicationJobError::MissingRequiredParameterException(inner) => {
+                Error::MissingRequiredParameterException(inner)
+            }
+            crate::operation::update_replication_job::UpdateReplicationJobError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::update_replication_job::UpdateReplicationJobError::ReplicationJobNotFoundException(inner) => {
+                Error::ReplicationJobNotFoundException(inner)
+            }
+            crate::operation::update_replication_job::UpdateReplicationJobError::ServerCannotBeReplicatedException(inner) => {
+                Error::ServerCannotBeReplicatedException(inner)
+            }
+            crate::operation::update_replication_job::UpdateReplicationJobError::TemporarilyUnavailableException(inner) => {
+                Error::TemporarilyUnavailableException(inner)
+            }
+            crate::operation::update_replication_job::UpdateReplicationJobError::UnauthorizedOperationException(inner) => {
+                Error::UnauthorizedOperationException(inner)
+            }
             crate::operation::update_replication_job::UpdateReplicationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

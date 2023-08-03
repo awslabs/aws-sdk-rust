@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DefineExpressionOutput`](crate::operation::define_expression::DefineExpressionOutput) with field(s):
     ///   - [`expression(Option<ExpressionStatus>)`](crate::operation::define_expression::DefineExpressionOutput::expression): <p>The value of an <code>Expression</code> and its current status.</p>
     /// - On failure, responds with [`SdkError<DefineExpressionError>`](crate::operation::define_expression::DefineExpressionError)
-    pub fn define_expression(
-        &self,
-    ) -> crate::operation::define_expression::builders::DefineExpressionFluentBuilder {
-        crate::operation::define_expression::builders::DefineExpressionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn define_expression(&self) -> crate::operation::define_expression::builders::DefineExpressionFluentBuilder {
+        crate::operation::define_expression::builders::DefineExpressionFluentBuilder::new(self.handle.clone())
     }
 }

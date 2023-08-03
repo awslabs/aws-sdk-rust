@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`services(Option<Vec<Service>>)`](crate::operation::get_trace_graph::GetTraceGraphOutput::services): <p>The services that have processed one of the specified requests.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_trace_graph::GetTraceGraphOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<GetTraceGraphError>`](crate::operation::get_trace_graph::GetTraceGraphError)
-    pub fn get_trace_graph(
-        &self,
-    ) -> crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder {
-        crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_trace_graph(&self) -> crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder {
+        crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::new(self.handle.clone())
     }
 }

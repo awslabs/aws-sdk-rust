@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigFluentBuilder::set_id): <p>The ID of the configuration that you want to delete. </p>
     /// - On success, responds with [`DeleteQueryLoggingConfigOutput`](crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteQueryLoggingConfigError>`](crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError)
-    pub fn delete_query_logging_config(&self) -> crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigFluentBuilder{
+    pub fn delete_query_logging_config(&self) -> crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigFluentBuilder {
         crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigFluentBuilder::new(self.handle.clone())
     }
 }

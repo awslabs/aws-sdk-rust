@@ -65,9 +65,7 @@ impl BotSummary {
 
 /// A builder for [`BotSummary`](crate::types::BotSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BotSummaryBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
@@ -135,18 +133,12 @@ impl BotSummaryBuilder {
         &self.bot_status
     }
     /// <p>The latest numerical version in use for the bot.</p>
-    pub fn latest_bot_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_bot_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The latest numerical version in use for the bot.</p>
-    pub fn set_latest_bot_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_bot_version = input;
         self
     }
@@ -160,17 +152,12 @@ impl BotSummaryBuilder {
         self
     }
     /// <p>The date and time that the bot was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time that the bot was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>The type of the bot.</p>

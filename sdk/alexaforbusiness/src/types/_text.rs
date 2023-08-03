@@ -30,9 +30,7 @@ impl Text {
 
 /// A builder for [`Text`](crate::types::Text).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TextBuilder {
     pub(crate) locale: ::std::option::Option<crate::types::Locale>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

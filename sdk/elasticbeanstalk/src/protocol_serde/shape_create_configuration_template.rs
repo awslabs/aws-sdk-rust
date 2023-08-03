@@ -9,65 +9,69 @@ pub fn de_create_configuration_template_http_error(
     crate::operation::create_configuration_template::CreateConfigurationTemplateError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_configuration_template::CreateConfigurationTemplateError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_configuration_template::CreateConfigurationTemplateError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::create_configuration_template::CreateConfigurationTemplateError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::create_configuration_template::CreateConfigurationTemplateError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::operation::create_configuration_template::CreateConfigurationTemplateError::InsufficientPrivilegesException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InsufficientPrivilegesException" => {
+            crate::operation::create_configuration_template::CreateConfigurationTemplateError::InsufficientPrivilegesException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(_response_body, output).map_err(crate::operation::create_configuration_template::CreateConfigurationTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_configuration_template::CreateConfigurationTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "TooManyBucketsException" => crate::operation::create_configuration_template::CreateConfigurationTemplateError::TooManyBucketsException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyBucketsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_buckets_exception::de_too_many_buckets_exception_xml_err(_response_body, output).map_err(crate::operation::create_configuration_template::CreateConfigurationTemplateError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyBucketsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_buckets_exception::de_too_many_buckets_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_configuration_template::CreateConfigurationTemplateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "TooManyConfigurationTemplatesException" => crate::operation::create_configuration_template::CreateConfigurationTemplateError::TooManyConfigurationTemplatesException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "TooManyConfigurationTemplatesException" => {
+            crate::operation::create_configuration_template::CreateConfigurationTemplateError::TooManyConfigurationTemplatesException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyConfigurationTemplatesExceptionBuilder::default();
                     output = crate::protocol_serde::shape_too_many_configuration_templates_exception::de_too_many_configuration_templates_exception_xml_err(_response_body, output).map_err(crate::operation::create_configuration_template::CreateConfigurationTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::create_configuration_template::CreateConfigurationTemplateError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::create_configuration_template::CreateConfigurationTemplateError::generic(generic),
     })
 }
 
@@ -83,16 +87,21 @@ pub fn de_create_configuration_template_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_configuration_template::builders::CreateConfigurationTemplateOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_configuration_template::de_create_configuration_template(_response_body, output).map_err(crate::operation::create_configuration_template::CreateConfigurationTemplateError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_create_configuration_template::de_create_configuration_template(_response_body, output)
+            .map_err(crate::operation::create_configuration_template::CreateConfigurationTemplateError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_create_configuration_template(inp: &[u8], mut builder: crate::operation::create_configuration_template::builders::CreateConfigurationTemplateOutputBuilder) -> Result<crate::operation::create_configuration_template::builders::CreateConfigurationTemplateOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_create_configuration_template(
+    inp: &[u8],
+    mut builder: crate::operation::create_configuration_template::builders::CreateConfigurationTemplateOutputBuilder,
+) -> Result<
+    crate::operation::create_configuration_template::builders::CreateConfigurationTemplateOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

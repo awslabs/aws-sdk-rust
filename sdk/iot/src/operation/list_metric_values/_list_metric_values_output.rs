@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListMetricValuesOutput {
 }
 impl ListMetricValuesOutput {
     /// Creates a new builder-style object to manufacture [`ListMetricValuesOutput`](crate::operation::list_metric_values::ListMetricValuesOutput).
-    pub fn builder() -> crate::operation::list_metric_values::builders::ListMetricValuesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_metric_values::builders::ListMetricValuesOutputBuilder {
         crate::operation::list_metric_values::builders::ListMetricValuesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMetricValuesOutput`](crate::operation::list_metric_values::ListMetricValuesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMetricValuesOutputBuilder {
     pub(crate) metric_datum_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListMetricValuesOutputBuilder {
         self
     }
     /// <p>The data the thing reports for the metric during the specified time period.</p>
-    pub fn set_metric_datum_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
-    ) -> Self {
+    pub fn set_metric_datum_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>) -> Self {
         self.metric_datum_list = input;
         self
     }
     /// <p>The data the thing reports for the metric during the specified time period.</p>
-    pub fn get_metric_datum_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
+    pub fn get_metric_datum_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
         &self.metric_datum_list
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>

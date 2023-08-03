@@ -54,7 +54,7 @@ impl ::std::fmt::Debug for NotifyResourceDeploymentStatusChangeInput {
 }
 impl NotifyResourceDeploymentStatusChangeInput {
     /// Creates a new builder-style object to manufacture [`NotifyResourceDeploymentStatusChangeInput`](crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput).
-    pub fn builder() -> crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder{
+    pub fn builder() -> crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder {
         crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder::default()
     }
 }
@@ -90,10 +90,7 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
         self
     }
     /// <p>The status of your provisioned resource.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDeploymentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceDeploymentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -113,10 +110,7 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
         self
     }
     /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
         self.outputs = input;
         self
     }
@@ -125,18 +119,12 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
         &self.outputs
     }
     /// <p>The deployment ID for your provisioned resource.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment ID for your provisioned resource.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -145,18 +133,12 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
         &self.deployment_id
     }
     /// <p>The deployment status message for your provisioned resource.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment status message for your provisioned resource.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -165,20 +147,20 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
         &self.status_message
     }
     /// Consumes the builder and constructs a [`NotifyResourceDeploymentStatusChangeInput`](crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput {
-                resource_arn: self.resource_arn
-                ,
-                status: self.status
-                ,
-                outputs: self.outputs
-                ,
-                deployment_id: self.deployment_id
-                ,
-                status_message: self.status_message
-                ,
-            }
+                resource_arn: self.resource_arn,
+                status: self.status,
+                outputs: self.outputs,
+                deployment_id: self.deployment_id,
+                status_message: self.status_message,
+            },
         )
     }
 }

@@ -30,9 +30,7 @@ impl IoTJobRateIncreaseCriteria {
 
 /// A builder for [`IoTJobRateIncreaseCriteria`](crate::types::IoTJobRateIncreaseCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IoTJobRateIncreaseCriteriaBuilder {
     pub(crate) number_of_notified_things: ::std::option::Option<i32>,
     pub(crate) number_of_succeeded_things: ::std::option::Option<i32>,

@@ -46,9 +46,7 @@ impl ListParentsInput {
 
 /// A builder for [`ListParentsInput`](crate::operation::list_parents::ListParentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListParentsInputBuilder {
     pub(crate) child_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -113,12 +111,7 @@ impl ListParentsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListParentsInput`](crate::operation::list_parents::ListParentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_parents::ListParentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_parents::ListParentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_parents::ListParentsInput {
             child_id: self.child_id,
             next_token: self.next_token,

@@ -21,16 +21,16 @@ impl ::aws_http::request_id::RequestId for ImportClientVpnClientCertificateRevoc
 }
 impl ImportClientVpnClientCertificateRevocationListOutput {
     /// Creates a new builder-style object to manufacture [`ImportClientVpnClientCertificateRevocationListOutput`](crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListOutput).
-    pub fn builder() -> crate::operation::import_client_vpn_client_certificate_revocation_list::builders::ImportClientVpnClientCertificateRevocationListOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::import_client_vpn_client_certificate_revocation_list::builders::ImportClientVpnClientCertificateRevocationListOutputBuilder
+    {
         crate::operation::import_client_vpn_client_certificate_revocation_list::builders::ImportClientVpnClientCertificateRevocationListOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportClientVpnClientCertificateRevocationListOutput`](crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportClientVpnClientCertificateRevocationListOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +60,11 @@ impl ImportClientVpnClientCertificateRevocationListOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ImportClientVpnClientCertificateRevocationListOutput`](crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListOutput).
-    pub fn build(self) -> crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListOutput {
         crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListOutput {
-            r#return: self.r#return
-            ,
+            r#return: self.r#return,
             _request_id: self._request_id,
         }
     }

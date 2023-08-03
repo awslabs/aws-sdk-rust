@@ -26,7 +26,7 @@ impl UpdateEnvironmentMembershipInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipInputBuilder,
+    inner: crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipInputBuilder,
 }
 impl UpdateEnvironmentMembershipFluentBuilder {
     /// Creates a new `UpdateEnvironmentMembership`.
@@ -37,7 +37,7 @@ impl UpdateEnvironmentMembershipFluentBuilder {
         }
     }
     /// Access the UpdateEnvironmentMembership as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateEnvironmentMembershipFluentBuilder {
             crate::operation::update_environment_membership::UpdateEnvironmentMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment_membership::UpdateEnvironmentMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateEnvironmentMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateEnvironmentMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment_membership::UpdateEnvironmentMembershipError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateEnvironmentMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment_membership::UpdateEnvironmentMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateEnvironmentMembershipFluentBuilder {
             crate::operation::update_environment_membership::UpdateEnvironmentMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment_membership::UpdateEnvironmentMembershipError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the environment for the environment member whose settings you want to change.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>The ID of the environment for the environment member whose settings you want to change.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -168,10 +151,7 @@ impl UpdateEnvironmentMembershipFluentBuilder {
     /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberPermissions>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::MemberPermissions>) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }

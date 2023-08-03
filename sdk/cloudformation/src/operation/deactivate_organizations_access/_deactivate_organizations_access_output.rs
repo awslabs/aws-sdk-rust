@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeactivateOrganizationsAccessOutput {
 }
 impl DeactivateOrganizationsAccessOutput {
     /// Creates a new builder-style object to manufacture [`DeactivateOrganizationsAccessOutput`](crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessOutput).
-    pub fn builder() -> crate::operation::deactivate_organizations_access::builders::DeactivateOrganizationsAccessOutputBuilder{
+    pub fn builder() -> crate::operation::deactivate_organizations_access::builders::DeactivateOrganizationsAccessOutputBuilder {
         crate::operation::deactivate_organizations_access::builders::DeactivateOrganizationsAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeactivateOrganizationsAccessOutput`](crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeactivateOrganizationsAccessOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeactivateOrganizationsAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeactivateOrganizationsAccessOutput`](crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessOutput
-    {
+    pub fn build(self) -> crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessOutput {
         crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessOutput {
             _request_id: self._request_id,
         }

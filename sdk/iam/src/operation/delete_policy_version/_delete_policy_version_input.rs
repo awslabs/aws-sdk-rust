@@ -28,18 +28,14 @@ impl DeletePolicyVersionInput {
 }
 impl DeletePolicyVersionInput {
     /// Creates a new builder-style object to manufacture [`DeletePolicyVersionInput`](crate::operation::delete_policy_version::DeletePolicyVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_policy_version::builders::DeletePolicyVersionInputBuilder {
-        crate::operation::delete_policy_version::builders::DeletePolicyVersionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_policy_version::builders::DeletePolicyVersionInputBuilder {
+        crate::operation::delete_policy_version::builders::DeletePolicyVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePolicyVersionInput`](crate::operation::delete_policy_version::DeletePolicyVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePolicyVersionInputBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
@@ -85,15 +81,11 @@ impl DeletePolicyVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeletePolicyVersionInput`](crate::operation::delete_policy_version::DeletePolicyVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_policy_version::DeletePolicyVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_policy_version::DeletePolicyVersionInput {
-                policy_arn: self.policy_arn,
-                version_id: self.version_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_policy_version::DeletePolicyVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_policy_version::DeletePolicyVersionInput {
+            policy_arn: self.policy_arn,
+            version_id: self.version_id,
+        })
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateUpdatedImageOutput {
 }
 impl CreateUpdatedImageOutput {
     /// Creates a new builder-style object to manufacture [`CreateUpdatedImageOutput`](crate::operation::create_updated_image::CreateUpdatedImageOutput).
-    pub fn builder(
-    ) -> crate::operation::create_updated_image::builders::CreateUpdatedImageOutputBuilder {
+    pub fn builder() -> crate::operation::create_updated_image::builders::CreateUpdatedImageOutputBuilder {
         crate::operation::create_updated_image::builders::CreateUpdatedImageOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUpdatedImageOutput`](crate::operation::create_updated_image::CreateUpdatedImageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUpdatedImageOutputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) can_update_image: ::std::option::Option<bool>,

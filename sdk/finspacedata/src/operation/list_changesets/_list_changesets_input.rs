@@ -37,9 +37,7 @@ impl ListChangesetsInput {
 
 /// A builder for [`ListChangesetsInput`](crate::operation::list_changesets::ListChangesetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChangesetsInputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,10 +89,7 @@ impl ListChangesetsInputBuilder {
     /// Consumes the builder and constructs a [`ListChangesetsInput`](crate::operation::list_changesets::ListChangesetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_changesets::ListChangesetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_changesets::ListChangesetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_changesets::ListChangesetsInput {
             dataset_id: self.dataset_id,
             max_results: self.max_results,

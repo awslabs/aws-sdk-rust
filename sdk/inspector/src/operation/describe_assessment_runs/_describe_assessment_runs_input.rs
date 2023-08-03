@@ -15,18 +15,14 @@ impl DescribeAssessmentRunsInput {
 }
 impl DescribeAssessmentRunsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAssessmentRunsInput`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsInputBuilder {
         crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAssessmentRunsInput`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssessmentRunsInputBuilder {
     pub(crate) assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,40 +32,28 @@ impl DescribeAssessmentRunsInputBuilder {
     /// To override the contents of this collection use [`set_assessment_run_arns`](Self::set_assessment_run_arns).
     ///
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    pub fn assessment_run_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_run_arns.unwrap_or_default();
         v.push(input.into());
         self.assessment_run_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    pub fn set_assessment_run_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_run_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.assessment_run_arns = input;
         self
     }
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    pub fn get_assessment_run_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_run_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.assessment_run_arns
     }
     /// Consumes the builder and constructs a [`DescribeAssessmentRunsInput`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput {
-                assessment_run_arns: self.assessment_run_arns,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput {
+            assessment_run_arns: self.assessment_run_arns,
+        })
     }
 }

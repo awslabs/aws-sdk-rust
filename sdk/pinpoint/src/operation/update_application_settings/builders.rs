@@ -26,7 +26,7 @@ impl UpdateApplicationSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder,
+    inner: crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder,
 }
 impl UpdateApplicationSettingsFluentBuilder {
     /// Creates a new `UpdateApplicationSettings`.
@@ -37,7 +37,7 @@ impl UpdateApplicationSettingsFluentBuilder {
         }
     }
     /// Access the UpdateApplicationSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateApplicationSettingsFluentBuilder {
             crate::operation::update_application_settings::UpdateApplicationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application_settings::UpdateApplicationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application_settings::UpdateApplicationSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateApplicationSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateApplicationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application_settings::UpdateApplicationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application_settings::UpdateApplicationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application_settings::UpdateApplicationSettingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateApplicationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application_settings::UpdateApplicationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application_settings::UpdateApplicationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application_settings::UpdateApplicationSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateApplicationSettingsFluentBuilder {
             crate::operation::update_application_settings::UpdateApplicationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application_settings::UpdateApplicationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application_settings::UpdateApplicationSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -141,25 +124,17 @@ impl UpdateApplicationSettingsFluentBuilder {
         self.inner.get_application_id()
     }
     /// <p>Specifies the default settings for an application.</p>
-    pub fn write_application_settings_request(
-        mut self,
-        input: crate::types::WriteApplicationSettingsRequest,
-    ) -> Self {
+    pub fn write_application_settings_request(mut self, input: crate::types::WriteApplicationSettingsRequest) -> Self {
         self.inner = self.inner.write_application_settings_request(input);
         self
     }
     /// <p>Specifies the default settings for an application.</p>
-    pub fn set_write_application_settings_request(
-        mut self,
-        input: ::std::option::Option<crate::types::WriteApplicationSettingsRequest>,
-    ) -> Self {
+    pub fn set_write_application_settings_request(mut self, input: ::std::option::Option<crate::types::WriteApplicationSettingsRequest>) -> Self {
         self.inner = self.inner.set_write_application_settings_request(input);
         self
     }
     /// <p>Specifies the default settings for an application.</p>
-    pub fn get_write_application_settings_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::WriteApplicationSettingsRequest> {
+    pub fn get_write_application_settings_request(&self) -> &::std::option::Option<crate::types::WriteApplicationSettingsRequest> {
         self.inner.get_write_application_settings_request()
     }
 }

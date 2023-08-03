@@ -26,7 +26,7 @@ impl ListAssistantAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssistantAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_assistant_associations::builders::ListAssistantAssociationsInputBuilder,
+    inner: crate::operation::list_assistant_associations::builders::ListAssistantAssociationsInputBuilder,
 }
 impl ListAssistantAssociationsFluentBuilder {
     /// Creates a new `ListAssistantAssociations`.
@@ -37,7 +37,7 @@ impl ListAssistantAssociationsFluentBuilder {
         }
     }
     /// Access the ListAssistantAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_assistant_associations::builders::ListAssistantAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_assistant_associations::builders::ListAssistantAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListAssistantAssociationsFluentBuilder {
             crate::operation::list_assistant_associations::ListAssistantAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assistant_associations::ListAssistantAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assistant_associations::ListAssistantAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListAssistantAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListAssistantAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assistant_associations::ListAssistantAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assistant_associations::ListAssistantAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assistant_associations::ListAssistantAssociationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListAssistantAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assistant_associations::ListAssistantAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assistant_associations::ListAssistantAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assistant_associations::ListAssistantAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListAssistantAssociationsFluentBuilder {
             crate::operation::list_assistant_associations::ListAssistantAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assistant_associations::ListAssistantAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assistant_associations::ListAssistantAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_assistant_associations::paginator::ListAssistantAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_assistant_associations::paginator::ListAssistantAssociationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_assistant_associations::paginator::ListAssistantAssociationsPaginator {
         crate::operation::list_assistant_associations::paginator::ListAssistantAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>

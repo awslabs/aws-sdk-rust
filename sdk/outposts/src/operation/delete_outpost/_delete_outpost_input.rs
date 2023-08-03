@@ -22,9 +22,7 @@ impl DeleteOutpostInput {
 
 /// A builder for [`DeleteOutpostInput`](crate::operation::delete_outpost::DeleteOutpostInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOutpostInputBuilder {
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteOutpostInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOutpostInput`](crate::operation::delete_outpost::DeleteOutpostInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_outpost::DeleteOutpostInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_outpost::DeleteOutpostInput {
-            outpost_id: self.outpost_id,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_outpost::DeleteOutpostInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_outpost::DeleteOutpostInput { outpost_id: self.outpost_id })
     }
 }

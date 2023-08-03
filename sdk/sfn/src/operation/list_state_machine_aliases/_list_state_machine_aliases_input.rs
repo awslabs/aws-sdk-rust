@@ -33,18 +33,14 @@ impl ListStateMachineAliasesInput {
 }
 impl ListStateMachineAliasesInput {
     /// Creates a new builder-style object to manufacture [`ListStateMachineAliasesInput`](crate::operation::list_state_machine_aliases::ListStateMachineAliasesInput).
-    pub fn builder(
-    ) -> crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesInputBuilder {
         crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStateMachineAliasesInput`](crate::operation::list_state_machine_aliases::ListStateMachineAliasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStateMachineAliasesInputBuilder {
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,19 +49,13 @@ pub struct ListStateMachineAliasesInputBuilder {
 impl ListStateMachineAliasesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine for which you want to list aliases.</p>
     /// <p>If you specify a state machine version ARN, this API returns a list of aliases for that version.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine for which you want to list aliases.</p>
     /// <p>If you specify a state machine version ARN, this API returns a list of aliases for that version.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_arn = input;
         self
     }
@@ -112,12 +102,10 @@ impl ListStateMachineAliasesInputBuilder {
         crate::operation::list_state_machine_aliases::ListStateMachineAliasesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_state_machine_aliases::ListStateMachineAliasesInput {
-                state_machine_arn: self.state_machine_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_state_machine_aliases::ListStateMachineAliasesInput {
+            state_machine_arn: self.state_machine_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

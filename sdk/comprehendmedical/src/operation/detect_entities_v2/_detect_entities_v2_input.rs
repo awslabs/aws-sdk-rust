@@ -15,17 +15,14 @@ impl DetectEntitiesV2Input {
 }
 impl DetectEntitiesV2Input {
     /// Creates a new builder-style object to manufacture [`DetectEntitiesV2Input`](crate::operation::detect_entities_v2::DetectEntitiesV2Input).
-    pub fn builder() -> crate::operation::detect_entities_v2::builders::DetectEntitiesV2InputBuilder
-    {
+    pub fn builder() -> crate::operation::detect_entities_v2::builders::DetectEntitiesV2InputBuilder {
         crate::operation::detect_entities_v2::builders::DetectEntitiesV2InputBuilder::default()
     }
 }
 
 /// A builder for [`DetectEntitiesV2Input`](crate::operation::detect_entities_v2::DetectEntitiesV2Input).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectEntitiesV2InputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DetectEntitiesV2InputBuilder {
     /// Consumes the builder and constructs a [`DetectEntitiesV2Input`](crate::operation::detect_entities_v2::DetectEntitiesV2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_entities_v2::DetectEntitiesV2Input,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detect_entities_v2::DetectEntitiesV2Input { text: self.text },
-        )
+    ) -> ::std::result::Result<crate::operation::detect_entities_v2::DetectEntitiesV2Input, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::detect_entities_v2::DetectEntitiesV2Input { text: self.text })
     }
 }

@@ -37,9 +37,7 @@ impl InstanceHardware {
 
 /// A builder for [`InstanceHardware`](crate::types::InstanceHardware).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceHardwareBuilder {
     pub(crate) cpu_count: ::std::option::Option<i32>,
     pub(crate) disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
@@ -72,10 +70,7 @@ impl InstanceHardwareBuilder {
         self
     }
     /// <p>The disks attached to the instance.</p>
-    pub fn set_disks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
-    ) -> Self {
+    pub fn set_disks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>) -> Self {
         self.disks = input;
         self
     }

@@ -10,10 +10,7 @@ impl AcceptPageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::accept_page::AcceptPageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_page::AcceptPageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_page::AcceptPageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.accept_page();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl AcceptPageFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::accept_page::AcceptPage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::accept_page::AcceptPage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::accept_page::AcceptPageError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl AcceptPageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl AcceptPageFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::accept_page::AcceptPage,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::accept_page::AcceptPage, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::accept_page::AcceptPageError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl AcceptPageFluentBuilder {
         self.inner.get_page_id()
     }
     /// <p>The ARN of the contact channel.</p>
-    pub fn contact_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_channel_id(input.into());
         self
     }
     /// <p>The ARN of the contact channel.</p>
-    pub fn set_contact_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_channel_id(input);
         self
     }
@@ -152,10 +134,7 @@ impl AcceptPageFluentBuilder {
         self
     }
     /// <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
-    pub fn set_accept_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AcceptType>,
-    ) -> Self {
+    pub fn set_accept_type(mut self, input: ::std::option::Option<crate::types::AcceptType>) -> Self {
         self.inner = self.inner.set_accept_type(input);
         self
     }
@@ -199,18 +178,13 @@ impl AcceptPageFluentBuilder {
     }
     /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
     /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
-    pub fn set_accept_code_validation(
-        mut self,
-        input: ::std::option::Option<crate::types::AcceptCodeValidation>,
-    ) -> Self {
+    pub fn set_accept_code_validation(mut self, input: ::std::option::Option<crate::types::AcceptCodeValidation>) -> Self {
         self.inner = self.inner.set_accept_code_validation(input);
         self
     }
     /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
     /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
-    pub fn get_accept_code_validation(
-        &self,
-    ) -> &::std::option::Option<crate::types::AcceptCodeValidation> {
+    pub fn get_accept_code_validation(&self) -> &::std::option::Option<crate::types::AcceptCodeValidation> {
         self.inner.get_accept_code_validation()
     }
 }

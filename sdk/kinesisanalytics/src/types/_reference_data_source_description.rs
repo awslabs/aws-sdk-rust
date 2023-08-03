@@ -12,8 +12,7 @@ pub struct ReferenceDataSourceDescription {
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application reference table.</p>
     #[doc(hidden)]
-    pub s3_reference_data_source_description:
-        ::std::option::Option<crate::types::S3ReferenceDataSourceDescription>,
+    pub s3_reference_data_source_description: ::std::option::Option<crate::types::S3ReferenceDataSourceDescription>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     #[doc(hidden)]
     pub reference_schema: ::std::option::Option<crate::types::SourceSchema>,
@@ -28,9 +27,7 @@ impl ReferenceDataSourceDescription {
         self.table_name.as_deref()
     }
     /// <p>Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application reference table.</p>
-    pub fn s3_reference_data_source_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3ReferenceDataSourceDescription> {
+    pub fn s3_reference_data_source_description(&self) -> ::std::option::Option<&crate::types::S3ReferenceDataSourceDescription> {
         self.s3_reference_data_source_description.as_ref()
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
@@ -47,14 +44,11 @@ impl ReferenceDataSourceDescription {
 
 /// A builder for [`ReferenceDataSourceDescription`](crate::types::ReferenceDataSourceDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReferenceDataSourceDescriptionBuilder {
     pub(crate) reference_id: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) s3_reference_data_source_description:
-        ::std::option::Option<crate::types::S3ReferenceDataSourceDescription>,
+    pub(crate) s3_reference_data_source_description: ::std::option::Option<crate::types::S3ReferenceDataSourceDescription>,
     pub(crate) reference_schema: ::std::option::Option<crate::types::SourceSchema>,
 }
 impl ReferenceDataSourceDescriptionBuilder {
@@ -87,25 +81,17 @@ impl ReferenceDataSourceDescriptionBuilder {
         &self.table_name
     }
     /// <p>Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application reference table.</p>
-    pub fn s3_reference_data_source_description(
-        mut self,
-        input: crate::types::S3ReferenceDataSourceDescription,
-    ) -> Self {
+    pub fn s3_reference_data_source_description(mut self, input: crate::types::S3ReferenceDataSourceDescription) -> Self {
         self.s3_reference_data_source_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application reference table.</p>
-    pub fn set_s3_reference_data_source_description(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ReferenceDataSourceDescription>,
-    ) -> Self {
+    pub fn set_s3_reference_data_source_description(mut self, input: ::std::option::Option<crate::types::S3ReferenceDataSourceDescription>) -> Self {
         self.s3_reference_data_source_description = input;
         self
     }
     /// <p>Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application reference table.</p>
-    pub fn get_s3_reference_data_source_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3ReferenceDataSourceDescription> {
+    pub fn get_s3_reference_data_source_description(&self) -> &::std::option::Option<crate::types::S3ReferenceDataSourceDescription> {
         &self.s3_reference_data_source_description
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
@@ -114,10 +100,7 @@ impl ReferenceDataSourceDescriptionBuilder {
         self
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
-    pub fn set_reference_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceSchema>,
-    ) -> Self {
+    pub fn set_reference_schema(mut self, input: ::std::option::Option<crate::types::SourceSchema>) -> Self {
         self.reference_schema = input;
         self
     }

@@ -29,9 +29,7 @@ impl ConfigureAgentOutput {
 
 /// A builder for [`ConfigureAgentOutput`](crate::operation::configure_agent::ConfigureAgentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigureAgentOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::AgentConfiguration>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl ConfigureAgentOutputBuilder {
         self
     }
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data. </p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AgentConfiguration>) -> Self {
         self.configuration = input;
         self
     }

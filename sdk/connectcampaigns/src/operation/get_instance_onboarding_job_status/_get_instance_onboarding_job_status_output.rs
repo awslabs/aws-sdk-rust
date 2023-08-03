@@ -6,15 +6,12 @@
 pub struct GetInstanceOnboardingJobStatusOutput {
     /// Instance onboarding job status object
     #[doc(hidden)]
-    pub connect_instance_onboarding_job_status:
-        ::std::option::Option<crate::types::InstanceOnboardingJobStatus>,
+    pub connect_instance_onboarding_job_status: ::std::option::Option<crate::types::InstanceOnboardingJobStatus>,
     _request_id: Option<String>,
 }
 impl GetInstanceOnboardingJobStatusOutput {
     /// Instance onboarding job status object
-    pub fn connect_instance_onboarding_job_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceOnboardingJobStatus> {
+    pub fn connect_instance_onboarding_job_status(&self) -> ::std::option::Option<&crate::types::InstanceOnboardingJobStatus> {
         self.connect_instance_onboarding_job_status.as_ref()
     }
 }
@@ -25,42 +22,31 @@ impl ::aws_http::request_id::RequestId for GetInstanceOnboardingJobStatusOutput 
 }
 impl GetInstanceOnboardingJobStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceOnboardingJobStatusOutput`](crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusOutput).
-    pub fn builder() -> crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusOutputBuilder {
         crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceOnboardingJobStatusOutput`](crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceOnboardingJobStatusOutputBuilder {
-    pub(crate) connect_instance_onboarding_job_status:
-        ::std::option::Option<crate::types::InstanceOnboardingJobStatus>,
+    pub(crate) connect_instance_onboarding_job_status: ::std::option::Option<crate::types::InstanceOnboardingJobStatus>,
     _request_id: Option<String>,
 }
 impl GetInstanceOnboardingJobStatusOutputBuilder {
     /// Instance onboarding job status object
-    pub fn connect_instance_onboarding_job_status(
-        mut self,
-        input: crate::types::InstanceOnboardingJobStatus,
-    ) -> Self {
+    pub fn connect_instance_onboarding_job_status(mut self, input: crate::types::InstanceOnboardingJobStatus) -> Self {
         self.connect_instance_onboarding_job_status = ::std::option::Option::Some(input);
         self
     }
     /// Instance onboarding job status object
-    pub fn set_connect_instance_onboarding_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceOnboardingJobStatus>,
-    ) -> Self {
+    pub fn set_connect_instance_onboarding_job_status(mut self, input: ::std::option::Option<crate::types::InstanceOnboardingJobStatus>) -> Self {
         self.connect_instance_onboarding_job_status = input;
         self
     }
     /// Instance onboarding job status object
-    pub fn get_connect_instance_onboarding_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceOnboardingJobStatus> {
+    pub fn get_connect_instance_onboarding_job_status(&self) -> &::std::option::Option<crate::types::InstanceOnboardingJobStatus> {
         &self.connect_instance_onboarding_job_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,10 +59,7 @@ impl GetInstanceOnboardingJobStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetInstanceOnboardingJobStatusOutput`](crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusOutput
-    {
+    pub fn build(self) -> crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusOutput {
         crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusOutput {
             connect_instance_onboarding_job_status: self.connect_instance_onboarding_job_status,
             _request_id: self._request_id,

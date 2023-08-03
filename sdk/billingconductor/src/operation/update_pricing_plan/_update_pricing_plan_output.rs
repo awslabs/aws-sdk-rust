@@ -61,8 +61,7 @@ impl ::aws_http::request_id::RequestId for UpdatePricingPlanOutput {
 }
 impl UpdatePricingPlanOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePricingPlanOutput`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput).
-    pub fn builder(
-    ) -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanOutputBuilder {
+    pub fn builder() -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanOutputBuilder {
         crate::operation::update_pricing_plan::builders::UpdatePricingPlanOutputBuilder::default()
     }
 }

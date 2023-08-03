@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SpotAllocationStrategy {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,15 +61,11 @@ impl ::std::convert::From<&str> for SpotAllocationStrategy {
     fn from(s: &str) -> Self {
         match s {
             "capacity-optimized" => SpotAllocationStrategy::CapacityOptimized,
-            "capacity-optimized-prioritized" => {
-                SpotAllocationStrategy::CapacityOptimizedPrioritized
-            }
+            "capacity-optimized-prioritized" => SpotAllocationStrategy::CapacityOptimizedPrioritized,
             "diversified" => SpotAllocationStrategy::Diversified,
             "lowest-price" => SpotAllocationStrategy::LowestPrice,
             "price-capacity-optimized" => SpotAllocationStrategy::PriceCapacityOptimized,
-            other => SpotAllocationStrategy::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SpotAllocationStrategy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -91,9 +81,7 @@ impl SpotAllocationStrategy {
     pub fn as_str(&self) -> &str {
         match self {
             SpotAllocationStrategy::CapacityOptimized => "capacity-optimized",
-            SpotAllocationStrategy::CapacityOptimizedPrioritized => {
-                "capacity-optimized-prioritized"
-            }
+            SpotAllocationStrategy::CapacityOptimizedPrioritized => "capacity-optimized-prioritized",
             SpotAllocationStrategy::Diversified => "diversified",
             SpotAllocationStrategy::LowestPrice => "lowest-price",
             SpotAllocationStrategy::PriceCapacityOptimized => "price-capacity-optimized",

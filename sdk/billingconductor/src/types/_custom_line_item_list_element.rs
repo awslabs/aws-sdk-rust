@@ -45,9 +45,7 @@ impl CustomLineItemListElement {
         self.name.as_deref()
     }
     /// <p>A <code>ListCustomLineItemChargeDetails</code> that describes the charge details of a custom line item.</p>
-    pub fn charge_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ListCustomLineItemChargeDetails> {
+    pub fn charge_details(&self) -> ::std::option::Option<&crate::types::ListCustomLineItemChargeDetails> {
         self.charge_details.as_ref()
     }
     /// <p>The custom line item's charge value currency. Only one of the valid values can be used.</p>
@@ -152,17 +150,12 @@ impl CustomLineItemListElementBuilder {
         self
     }
     /// <p>A <code>ListCustomLineItemChargeDetails</code> that describes the charge details of a custom line item.</p>
-    pub fn set_charge_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ListCustomLineItemChargeDetails>,
-    ) -> Self {
+    pub fn set_charge_details(mut self, input: ::std::option::Option<crate::types::ListCustomLineItemChargeDetails>) -> Self {
         self.charge_details = input;
         self
     }
     /// <p>A <code>ListCustomLineItemChargeDetails</code> that describes the charge details of a custom line item.</p>
-    pub fn get_charge_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListCustomLineItemChargeDetails> {
+    pub fn get_charge_details(&self) -> &::std::option::Option<crate::types::ListCustomLineItemChargeDetails> {
         &self.charge_details
     }
     /// <p>The custom line item's charge value currency. Only one of the valid values can be used.</p>
@@ -171,10 +164,7 @@ impl CustomLineItemListElementBuilder {
         self
     }
     /// <p>The custom line item's charge value currency. Only one of the valid values can be used.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CurrencyCode>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCode>) -> Self {
         self.currency_code = input;
         self
     }
@@ -211,18 +201,12 @@ impl CustomLineItemListElementBuilder {
         &self.product_code
     }
     /// <p>The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to.</p>
-    pub fn billing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to.</p>
-    pub fn set_billing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_arn = input;
         self
     }

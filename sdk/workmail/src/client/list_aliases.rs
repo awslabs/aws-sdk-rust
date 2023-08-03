@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`aliases(Option<Vec<String>>)`](crate::operation::list_aliases::ListAliasesOutput::aliases): <p>The entity's paginated aliases.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_aliases::ListAliasesOutput::next_token): <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListAliasesError>`](crate::operation::list_aliases::ListAliasesError)
-    pub fn list_aliases(
-        &self,
-    ) -> crate::operation::list_aliases::builders::ListAliasesFluentBuilder {
+    pub fn list_aliases(&self) -> crate::operation::list_aliases::builders::ListAliasesFluentBuilder {
         crate::operation::list_aliases::builders::ListAliasesFluentBuilder::new(self.handle.clone())
     }
 }

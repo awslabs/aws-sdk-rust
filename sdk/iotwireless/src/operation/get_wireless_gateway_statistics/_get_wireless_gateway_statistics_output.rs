@@ -39,16 +39,14 @@ impl ::aws_http::request_id::RequestId for GetWirelessGatewayStatisticsOutput {
 }
 impl GetWirelessGatewayStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayStatisticsOutput`](crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsOutput).
-    pub fn builder() -> crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsOutputBuilder{
+    pub fn builder() -> crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsOutputBuilder {
         crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessGatewayStatisticsOutput`](crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayStatisticsOutputBuilder {
     pub(crate) wireless_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_uplink_received_at: ::std::option::Option<::std::string::String>,
@@ -57,18 +55,12 @@ pub struct GetWirelessGatewayStatisticsOutputBuilder {
 }
 impl GetWirelessGatewayStatisticsOutputBuilder {
     /// <p>The ID of the wireless gateway.</p>
-    pub fn wireless_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wireless_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wireless_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the wireless gateway.</p>
-    pub fn set_wireless_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_wireless_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wireless_gateway_id = input;
         self
     }
@@ -79,20 +71,14 @@ impl GetWirelessGatewayStatisticsOutputBuilder {
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
-    pub fn last_uplink_received_at(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_uplink_received_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_uplink_received_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
-    pub fn set_last_uplink_received_at(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_uplink_received_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_uplink_received_at = input;
         self
     }
@@ -108,10 +94,7 @@ impl GetWirelessGatewayStatisticsOutputBuilder {
         self
     }
     /// <p>The connection status of the wireless gateway.</p>
-    pub fn set_connection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionStatus>,
-    ) -> Self {
+    pub fn set_connection_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatus>) -> Self {
         self.connection_status = input;
         self
     }
@@ -129,9 +112,7 @@ impl GetWirelessGatewayStatisticsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetWirelessGatewayStatisticsOutput`](crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsOutput {
+    pub fn build(self) -> crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsOutput {
         crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsOutput {
             wireless_gateway_id: self.wireless_gateway_id,
             last_uplink_received_at: self.last_uplink_received_at,

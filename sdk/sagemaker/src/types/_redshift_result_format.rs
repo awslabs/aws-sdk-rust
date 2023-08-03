@@ -38,13 +38,7 @@
 /// <p>The data storage format for Redshift query results.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RedshiftResultFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for RedshiftResultFormat {
         match s {
             "CSV" => RedshiftResultFormat::Csv,
             "PARQUET" => RedshiftResultFormat::Parquet,
-            other => RedshiftResultFormat::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RedshiftResultFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

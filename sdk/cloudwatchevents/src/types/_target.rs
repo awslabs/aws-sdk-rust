@@ -50,8 +50,7 @@ pub struct Target {
     /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
     /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
     #[doc(hidden)]
-    pub sage_maker_pipeline_parameters:
-        ::std::option::Option<crate::types::SageMakerPipelineParameters>,
+    pub sage_maker_pipeline_parameters: ::std::option::Option<crate::types::SageMakerPipelineParameters>,
     /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
     #[doc(hidden)]
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
@@ -89,9 +88,7 @@ impl Target {
         self.kinesis_parameters.as_ref()
     }
     /// <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>
-    pub fn run_command_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RunCommandParameters> {
+    pub fn run_command_parameters(&self) -> ::std::option::Option<&crate::types::RunCommandParameters> {
         self.run_command_parameters.as_ref()
     }
     /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
@@ -114,16 +111,12 @@ impl Target {
     }
     /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
     /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
-    pub fn redshift_data_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RedshiftDataParameters> {
+    pub fn redshift_data_parameters(&self) -> ::std::option::Option<&crate::types::RedshiftDataParameters> {
         self.redshift_data_parameters.as_ref()
     }
     /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
     /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
-    pub fn sage_maker_pipeline_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SageMakerPipelineParameters> {
+    pub fn sage_maker_pipeline_parameters(&self) -> ::std::option::Option<&crate::types::SageMakerPipelineParameters> {
         self.sage_maker_pipeline_parameters.as_ref()
     }
     /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
@@ -144,9 +137,7 @@ impl Target {
 
 /// A builder for [`Target`](crate::types::Target).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -160,10 +151,8 @@ pub struct TargetBuilder {
     pub(crate) batch_parameters: ::std::option::Option<crate::types::BatchParameters>,
     pub(crate) sqs_parameters: ::std::option::Option<crate::types::SqsParameters>,
     pub(crate) http_parameters: ::std::option::Option<crate::types::HttpParameters>,
-    pub(crate) redshift_data_parameters:
-        ::std::option::Option<crate::types::RedshiftDataParameters>,
-    pub(crate) sage_maker_pipeline_parameters:
-        ::std::option::Option<crate::types::SageMakerPipelineParameters>,
+    pub(crate) redshift_data_parameters: ::std::option::Option<crate::types::RedshiftDataParameters>,
+    pub(crate) sage_maker_pipeline_parameters: ::std::option::Option<crate::types::SageMakerPipelineParameters>,
     pub(crate) dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     pub(crate) retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
 }
@@ -244,10 +233,7 @@ impl TargetBuilder {
         self
     }
     /// <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>
-    pub fn set_input_transformer(
-        mut self,
-        input: ::std::option::Option<crate::types::InputTransformer>,
-    ) -> Self {
+    pub fn set_input_transformer(mut self, input: ::std::option::Option<crate::types::InputTransformer>) -> Self {
         self.input_transformer = input;
         self
     }
@@ -261,17 +247,12 @@ impl TargetBuilder {
         self
     }
     /// <p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
-    pub fn set_kinesis_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisParameters>,
-    ) -> Self {
+    pub fn set_kinesis_parameters(mut self, input: ::std::option::Option<crate::types::KinesisParameters>) -> Self {
         self.kinesis_parameters = input;
         self
     }
     /// <p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
-    pub fn get_kinesis_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisParameters> {
+    pub fn get_kinesis_parameters(&self) -> &::std::option::Option<crate::types::KinesisParameters> {
         &self.kinesis_parameters
     }
     /// <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>
@@ -280,17 +261,12 @@ impl TargetBuilder {
         self
     }
     /// <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>
-    pub fn set_run_command_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::RunCommandParameters>,
-    ) -> Self {
+    pub fn set_run_command_parameters(mut self, input: ::std::option::Option<crate::types::RunCommandParameters>) -> Self {
         self.run_command_parameters = input;
         self
     }
     /// <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>
-    pub fn get_run_command_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::RunCommandParameters> {
+    pub fn get_run_command_parameters(&self) -> &::std::option::Option<crate::types::RunCommandParameters> {
         &self.run_command_parameters
     }
     /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
@@ -299,10 +275,7 @@ impl TargetBuilder {
         self
     }
     /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
-    pub fn set_ecs_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::EcsParameters>,
-    ) -> Self {
+    pub fn set_ecs_parameters(mut self, input: ::std::option::Option<crate::types::EcsParameters>) -> Self {
         self.ecs_parameters = input;
         self
     }
@@ -316,10 +289,7 @@ impl TargetBuilder {
         self
     }
     /// <p>If the event target is an Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User Guide</i>.</p>
-    pub fn set_batch_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchParameters>,
-    ) -> Self {
+    pub fn set_batch_parameters(mut self, input: ::std::option::Option<crate::types::BatchParameters>) -> Self {
         self.batch_parameters = input;
         self
     }
@@ -335,10 +305,7 @@ impl TargetBuilder {
     }
     /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
     /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
-    pub fn set_sqs_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::SqsParameters>,
-    ) -> Self {
+    pub fn set_sqs_parameters(mut self, input: ::std::option::Option<crate::types::SqsParameters>) -> Self {
         self.sqs_parameters = input;
         self
     }
@@ -355,10 +322,7 @@ impl TargetBuilder {
     }
     /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
     /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
-    pub fn set_http_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpParameters>,
-    ) -> Self {
+    pub fn set_http_parameters(mut self, input: ::std::option::Option<crate::types::HttpParameters>) -> Self {
         self.http_parameters = input;
         self
     }
@@ -375,43 +339,30 @@ impl TargetBuilder {
     }
     /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
     /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
-    pub fn set_redshift_data_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::RedshiftDataParameters>,
-    ) -> Self {
+    pub fn set_redshift_data_parameters(mut self, input: ::std::option::Option<crate::types::RedshiftDataParameters>) -> Self {
         self.redshift_data_parameters = input;
         self
     }
     /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
     /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
-    pub fn get_redshift_data_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::RedshiftDataParameters> {
+    pub fn get_redshift_data_parameters(&self) -> &::std::option::Option<crate::types::RedshiftDataParameters> {
         &self.redshift_data_parameters
     }
     /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
     /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
-    pub fn sage_maker_pipeline_parameters(
-        mut self,
-        input: crate::types::SageMakerPipelineParameters,
-    ) -> Self {
+    pub fn sage_maker_pipeline_parameters(mut self, input: crate::types::SageMakerPipelineParameters) -> Self {
         self.sage_maker_pipeline_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
     /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
-    pub fn set_sage_maker_pipeline_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::SageMakerPipelineParameters>,
-    ) -> Self {
+    pub fn set_sage_maker_pipeline_parameters(mut self, input: ::std::option::Option<crate::types::SageMakerPipelineParameters>) -> Self {
         self.sage_maker_pipeline_parameters = input;
         self
     }
     /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
     /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
-    pub fn get_sage_maker_pipeline_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::SageMakerPipelineParameters> {
+    pub fn get_sage_maker_pipeline_parameters(&self) -> &::std::option::Option<crate::types::SageMakerPipelineParameters> {
         &self.sage_maker_pipeline_parameters
     }
     /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
@@ -420,10 +371,7 @@ impl TargetBuilder {
         self
     }
     /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
-    pub fn set_dead_letter_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeadLetterConfig>,
-    ) -> Self {
+    pub fn set_dead_letter_config(mut self, input: ::std::option::Option<crate::types::DeadLetterConfig>) -> Self {
         self.dead_letter_config = input;
         self
     }
@@ -437,10 +385,7 @@ impl TargetBuilder {
         self
     }
     /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
-    pub fn set_retry_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::RetryPolicy>,
-    ) -> Self {
+    pub fn set_retry_policy(mut self, input: ::std::option::Option<crate::types::RetryPolicy>) -> Self {
         self.retry_policy = input;
         self
     }

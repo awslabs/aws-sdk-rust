@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`authentication_token(impl ::std::convert::Into<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::create_labels::builders::CreateLabelsFluentBuilder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     /// - On success, responds with [`CreateLabelsOutput`](crate::operation::create_labels::CreateLabelsOutput)
     /// - On failure, responds with [`SdkError<CreateLabelsError>`](crate::operation::create_labels::CreateLabelsError)
-    pub fn create_labels(
-        &self,
-    ) -> crate::operation::create_labels::builders::CreateLabelsFluentBuilder {
-        crate::operation::create_labels::builders::CreateLabelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_labels(&self) -> crate::operation::create_labels::builders::CreateLabelsFluentBuilder {
+        crate::operation::create_labels::builders::CreateLabelsFluentBuilder::new(self.handle.clone())
     }
 }

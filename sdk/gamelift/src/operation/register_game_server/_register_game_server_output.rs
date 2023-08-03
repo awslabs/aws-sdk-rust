@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for RegisterGameServerOutput {
 }
 impl RegisterGameServerOutput {
     /// Creates a new builder-style object to manufacture [`RegisterGameServerOutput`](crate::operation::register_game_server::RegisterGameServerOutput).
-    pub fn builder(
-    ) -> crate::operation::register_game_server::builders::RegisterGameServerOutputBuilder {
+    pub fn builder() -> crate::operation::register_game_server::builders::RegisterGameServerOutputBuilder {
         crate::operation::register_game_server::builders::RegisterGameServerOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterGameServerOutput`](crate::operation::register_game_server::RegisterGameServerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterGameServerOutputBuilder {
     pub(crate) game_server: ::std::option::Option<crate::types::GameServer>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl RegisterGameServerOutputBuilder {
         self
     }
     /// <p>Object that describes the newly registered game server.</p>
-    pub fn set_game_server(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServer>,
-    ) -> Self {
+    pub fn set_game_server(mut self, input: ::std::option::Option<crate::types::GameServer>) -> Self {
         self.game_server = input;
         self
     }

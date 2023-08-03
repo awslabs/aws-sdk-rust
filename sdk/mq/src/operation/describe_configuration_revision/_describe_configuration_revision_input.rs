@@ -22,34 +22,26 @@ impl DescribeConfigurationRevisionInput {
 }
 impl DescribeConfigurationRevisionInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationRevisionInput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput).
-    pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionInputBuilder{
+    pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionInputBuilder {
         crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationRevisionInput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRevisionInputBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_revision: ::std::option::Option<::std::string::String>,
 }
 impl DescribeConfigurationRevisionInputBuilder {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn set_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_id = input;
         self
     }
@@ -58,18 +50,12 @@ impl DescribeConfigurationRevisionInputBuilder {
         &self.configuration_id
     }
     /// <p>The revision of the configuration.</p>
-    pub fn configuration_revision(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_revision = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The revision of the configuration.</p>
-    pub fn set_configuration_revision(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_revision = input;
         self
     }
@@ -84,11 +70,9 @@ impl DescribeConfigurationRevisionInputBuilder {
         crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput {
-                configuration_id: self.configuration_id,
-                configuration_revision: self.configuration_revision,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput {
+            configuration_id: self.configuration_id,
+            configuration_revision: self.configuration_revision,
+        })
     }
 }

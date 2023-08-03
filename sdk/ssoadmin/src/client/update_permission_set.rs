@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`relay_state(impl ::std::convert::Into<String>)`](crate::operation::update_permission_set::builders::UpdatePermissionSetFluentBuilder::relay_state) / [`set_relay_state(Option<String>)`](crate::operation::update_permission_set::builders::UpdatePermissionSetFluentBuilder::set_relay_state): <p>Used to redirect users within the application during the federation authentication process.</p>
     /// - On success, responds with [`UpdatePermissionSetOutput`](crate::operation::update_permission_set::UpdatePermissionSetOutput)
     /// - On failure, responds with [`SdkError<UpdatePermissionSetError>`](crate::operation::update_permission_set::UpdatePermissionSetError)
-    pub fn update_permission_set(
-        &self,
-    ) -> crate::operation::update_permission_set::builders::UpdatePermissionSetFluentBuilder {
-        crate::operation::update_permission_set::builders::UpdatePermissionSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_permission_set(&self) -> crate::operation::update_permission_set::builders::UpdatePermissionSetFluentBuilder {
+        crate::operation::update_permission_set::builders::UpdatePermissionSetFluentBuilder::new(self.handle.clone())
     }
 }

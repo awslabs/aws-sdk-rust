@@ -6,10 +6,7 @@ pub fn ser_update_backend_storage_resource_config(
     if let Some(var_1) = &input.permissions {
         #[allow(unused_mut)]
         let mut object_2 = object.key("permissions").start_object();
-        crate::protocol_serde::shape_backend_storage_permissions::ser_backend_storage_permissions(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_backend_storage_permissions::ser_backend_storage_permissions(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.service_name {

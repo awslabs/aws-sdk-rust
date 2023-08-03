@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetSshPublicKeyOutput`](crate::operation::get_ssh_public_key::GetSshPublicKeyOutput) with field(s):
     ///   - [`ssh_public_key(Option<SshPublicKey>)`](crate::operation::get_ssh_public_key::GetSshPublicKeyOutput::ssh_public_key): <p>A structure containing details about the SSH public key.</p>
     /// - On failure, responds with [`SdkError<GetSSHPublicKeyError>`](crate::operation::get_ssh_public_key::GetSSHPublicKeyError)
-    pub fn get_ssh_public_key(
-        &self,
-    ) -> crate::operation::get_ssh_public_key::builders::GetSSHPublicKeyFluentBuilder {
-        crate::operation::get_ssh_public_key::builders::GetSSHPublicKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_ssh_public_key(&self) -> crate::operation::get_ssh_public_key::builders::GetSSHPublicKeyFluentBuilder {
+        crate::operation::get_ssh_public_key::builders::GetSSHPublicKeyFluentBuilder::new(self.handle.clone())
     }
 }

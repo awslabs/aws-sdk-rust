@@ -26,13 +26,11 @@ impl CreateSipMediaApplicationCallInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateSipMediaApplicationCall.html">CreateSipMediaApplicationCall</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by CreateSipMediaApplicationCall in the Amazon Chime SDK Voice Namespace"
-)]
+#[deprecated(note = "Replaced by CreateSipMediaApplicationCall in the Amazon Chime SDK Voice Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSipMediaApplicationCallFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallInputBuilder,
+    inner: crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallInputBuilder,
 }
 impl CreateSipMediaApplicationCallFluentBuilder {
     /// Creates a new `CreateSipMediaApplicationCall`.
@@ -43,7 +41,7 @@ impl CreateSipMediaApplicationCallFluentBuilder {
         }
     }
     /// Access the CreateSipMediaApplicationCall as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl CreateSipMediaApplicationCallFluentBuilder {
             crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCall,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl CreateSipMediaApplicationCallFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl CreateSipMediaApplicationCallFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl CreateSipMediaApplicationCallFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +109,17 @@ impl CreateSipMediaApplicationCallFluentBuilder {
             crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCall,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.</p>
-    pub fn from_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.from_phone_number(input.into());
         self
     }
     /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.</p>
-    pub fn set_from_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_from_phone_number(input);
         self
     }
@@ -147,18 +128,12 @@ impl CreateSipMediaApplicationCallFluentBuilder {
         self.inner.get_from_phone_number()
     }
     /// <p>The phone number that the service should call.</p>
-    pub fn to_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn to_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.to_phone_number(input.into());
         self
     }
     /// <p>The phone number that the service should call.</p>
-    pub fn set_to_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_to_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_to_phone_number(input);
         self
     }
@@ -167,18 +142,12 @@ impl CreateSipMediaApplicationCallFluentBuilder {
         self.inner.get_to_phone_number()
     }
     /// <p>The ID of the SIP media application.</p>
-    pub fn sip_media_application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sip_media_application_id(input.into());
         self
     }
     /// <p>The ID of the SIP media application.</p>
-    pub fn set_sip_media_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sip_media_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
     }
@@ -191,30 +160,20 @@ impl CreateSipMediaApplicationCallFluentBuilder {
     /// To override the contents of this collection use [`set_sip_headers`](Self::set_sip_headers).
     ///
     /// <p>The SIP headers added to an outbound call leg.</p>
-    pub fn sip_headers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sip_headers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sip_headers(k.into(), v.into());
         self
     }
     /// <p>The SIP headers added to an outbound call leg.</p>
     pub fn set_sip_headers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_sip_headers(input);
         self
     }
     /// <p>The SIP headers added to an outbound call leg.</p>
-    pub fn get_sip_headers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_sip_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_sip_headers()
     }
 }

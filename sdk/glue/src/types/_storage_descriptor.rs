@@ -36,9 +36,7 @@ pub struct StorageDescriptor {
     pub sort_columns: ::std::option::Option<::std::vec::Vec<crate::types::Order>>,
     /// <p>The user-supplied properties in key-value form.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The information about values that appear frequently in a column (skewed values).</p>
     #[doc(hidden)]
     pub skewed_info: ::std::option::Option<crate::types::SkewedInfo>,
@@ -92,11 +90,7 @@ impl StorageDescriptor {
         self.sort_columns.as_deref()
     }
     /// <p>The user-supplied properties in key-value form.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The information about values that appear frequently in a column (skewed values).</p>
@@ -122,9 +116,7 @@ impl StorageDescriptor {
 
 /// A builder for [`StorageDescriptor`](crate::types::StorageDescriptor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageDescriptorBuilder {
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -136,9 +128,7 @@ pub struct StorageDescriptorBuilder {
     pub(crate) serde_info: ::std::option::Option<crate::types::SerDeInfo>,
     pub(crate) bucket_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) sort_columns: ::std::option::Option<::std::vec::Vec<crate::types::Order>>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) skewed_info: ::std::option::Option<crate::types::SkewedInfo>,
     pub(crate) stored_as_sub_directories: ::std::option::Option<bool>,
     pub(crate) schema_reference: ::std::option::Option<crate::types::SchemaReference>,
@@ -156,10 +146,7 @@ impl StorageDescriptorBuilder {
         self
     }
     /// <p>A list of the <code>Columns</code> in the table.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
-    ) -> Self {
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>) -> Self {
         self.columns = input;
         self
     }
@@ -186,27 +173,19 @@ impl StorageDescriptorBuilder {
     /// To override the contents of this collection use [`set_additional_locations`](Self::set_additional_locations).
     ///
     /// <p>A list of locations that point to the path where a Delta table is located.</p>
-    pub fn additional_locations(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_locations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.additional_locations.unwrap_or_default();
         v.push(input.into());
         self.additional_locations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of locations that point to the path where a Delta table is located.</p>
-    pub fn set_additional_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.additional_locations = input;
         self
     }
     /// <p>A list of locations that point to the path where a Delta table is located.</p>
-    pub fn get_additional_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_locations
     }
     /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
@@ -224,18 +203,12 @@ impl StorageDescriptorBuilder {
         &self.input_format
     }
     /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
-    pub fn output_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_format = input;
         self
     }
@@ -290,27 +263,19 @@ impl StorageDescriptorBuilder {
     /// To override the contents of this collection use [`set_bucket_columns`](Self::set_bucket_columns).
     ///
     /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
-    pub fn bucket_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bucket_columns.unwrap_or_default();
         v.push(input.into());
         self.bucket_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
-    pub fn set_bucket_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bucket_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.bucket_columns = input;
         self
     }
     /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
-    pub fn get_bucket_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bucket_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.bucket_columns
     }
     /// Appends an item to `sort_columns`.
@@ -325,10 +290,7 @@ impl StorageDescriptorBuilder {
         self
     }
     /// <p>A list specifying the sort order of each bucket in the table.</p>
-    pub fn set_sort_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Order>>,
-    ) -> Self {
+    pub fn set_sort_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Order>>) -> Self {
         self.sort_columns = input;
         self
     }
@@ -341,32 +303,19 @@ impl StorageDescriptorBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The user-supplied properties in key-value form.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The user-supplied properties in key-value form.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The user-supplied properties in key-value form.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// <p>The information about values that appear frequently in a column (skewed values).</p>
@@ -375,10 +324,7 @@ impl StorageDescriptorBuilder {
         self
     }
     /// <p>The information about values that appear frequently in a column (skewed values).</p>
-    pub fn set_skewed_info(
-        mut self,
-        input: ::std::option::Option<crate::types::SkewedInfo>,
-    ) -> Self {
+    pub fn set_skewed_info(mut self, input: ::std::option::Option<crate::types::SkewedInfo>) -> Self {
         self.skewed_info = input;
         self
     }
@@ -408,10 +354,7 @@ impl StorageDescriptorBuilder {
     }
     /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
     /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
-    pub fn set_schema_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaReference>,
-    ) -> Self {
+    pub fn set_schema_reference(mut self, input: ::std::option::Option<crate::types::SchemaReference>) -> Self {
         self.schema_reference = input;
         self
     }

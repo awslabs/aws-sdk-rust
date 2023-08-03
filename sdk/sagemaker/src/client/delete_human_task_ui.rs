@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`human_task_ui_name(impl ::std::convert::Into<String>)`](crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiFluentBuilder::human_task_ui_name) / [`set_human_task_ui_name(Option<String>)`](crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiFluentBuilder::set_human_task_ui_name): <p>The name of the human task user interface (work task template) you want to delete.</p>
     /// - On success, responds with [`DeleteHumanTaskUiOutput`](crate::operation::delete_human_task_ui::DeleteHumanTaskUiOutput)
     /// - On failure, responds with [`SdkError<DeleteHumanTaskUiError>`](crate::operation::delete_human_task_ui::DeleteHumanTaskUiError)
-    pub fn delete_human_task_ui(
-        &self,
-    ) -> crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiFluentBuilder {
-        crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_human_task_ui(&self) -> crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiFluentBuilder {
+        crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiFluentBuilder::new(self.handle.clone())
     }
 }

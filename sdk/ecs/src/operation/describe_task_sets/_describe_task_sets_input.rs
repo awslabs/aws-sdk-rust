@@ -36,17 +36,14 @@ impl DescribeTaskSetsInput {
 }
 impl DescribeTaskSetsInput {
     /// Creates a new builder-style object to manufacture [`DescribeTaskSetsInput`](crate::operation::describe_task_sets::DescribeTaskSetsInput).
-    pub fn builder() -> crate::operation::describe_task_sets::builders::DescribeTaskSetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_task_sets::builders::DescribeTaskSetsInputBuilder {
         crate::operation::describe_task_sets::builders::DescribeTaskSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTaskSetsInput`](crate::operation::describe_task_sets::DescribeTaskSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTaskSetsInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) service: ::std::option::Option<::std::string::String>,
@@ -94,10 +91,7 @@ impl DescribeTaskSetsInputBuilder {
         self
     }
     /// <p>The ID or full Amazon Resource Name (ARN) of task sets to describe.</p>
-    pub fn set_task_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_task_sets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.task_sets = input;
         self
     }
@@ -117,33 +111,23 @@ impl DescribeTaskSetsInputBuilder {
         self
     }
     /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskSetField>>,
-    ) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskSetField>>) -> Self {
         self.include = input;
         self
     }
     /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn get_include(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskSetField>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskSetField>> {
         &self.include
     }
     /// Consumes the builder and constructs a [`DescribeTaskSetsInput`](crate::operation::describe_task_sets::DescribeTaskSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_task_sets::DescribeTaskSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_task_sets::DescribeTaskSetsInput {
-                cluster: self.cluster,
-                service: self.service,
-                task_sets: self.task_sets,
-                include: self.include,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_task_sets::DescribeTaskSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_task_sets::DescribeTaskSetsInput {
+            cluster: self.cluster,
+            service: self.service,
+            task_sets: self.task_sets,
+            include: self.include,
+        })
     }
 }

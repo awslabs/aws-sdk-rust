@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`version_status(DocumentVersionStatus)`](crate::operation::update_document_version::builders::UpdateDocumentVersionFluentBuilder::version_status) / [`set_version_status(Option<DocumentVersionStatus>)`](crate::operation::update_document_version::builders::UpdateDocumentVersionFluentBuilder::set_version_status): <p>The status of the version.</p>
     /// - On success, responds with [`UpdateDocumentVersionOutput`](crate::operation::update_document_version::UpdateDocumentVersionOutput)
     /// - On failure, responds with [`SdkError<UpdateDocumentVersionError>`](crate::operation::update_document_version::UpdateDocumentVersionError)
-    pub fn update_document_version(
-        &self,
-    ) -> crate::operation::update_document_version::builders::UpdateDocumentVersionFluentBuilder
-    {
-        crate::operation::update_document_version::builders::UpdateDocumentVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_document_version(&self) -> crate::operation::update_document_version::builders::UpdateDocumentVersionFluentBuilder {
+        crate::operation::update_document_version::builders::UpdateDocumentVersionFluentBuilder::new(self.handle.clone())
     }
 }

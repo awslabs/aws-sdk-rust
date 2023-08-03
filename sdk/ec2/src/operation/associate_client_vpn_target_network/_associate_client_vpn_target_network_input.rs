@@ -36,16 +36,14 @@ impl AssociateClientVpnTargetNetworkInput {
 }
 impl AssociateClientVpnTargetNetworkInput {
     /// Creates a new builder-style object to manufacture [`AssociateClientVpnTargetNetworkInput`](crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkInput).
-    pub fn builder() -> crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkInputBuilder{
+    pub fn builder() -> crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkInputBuilder {
         crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateClientVpnTargetNetworkInput`](crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateClientVpnTargetNetworkInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct AssociateClientVpnTargetNetworkInputBuilder {
 }
 impl AssociateClientVpnTargetNetworkInputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -124,15 +116,11 @@ impl AssociateClientVpnTargetNetworkInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkInput {
-                client_vpn_endpoint_id: self.client_vpn_endpoint_id
-                ,
-                subnet_id: self.subnet_id
-                ,
-                client_token: self.client_token
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                client_vpn_endpoint_id: self.client_vpn_endpoint_id,
+                subnet_id: self.subnet_id,
+                client_token: self.client_token,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

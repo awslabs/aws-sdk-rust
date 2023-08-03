@@ -27,7 +27,7 @@ impl ListInstanceProfilesForRoleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInstanceProfilesForRoleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_instance_profiles_for_role::builders::ListInstanceProfilesForRoleInputBuilder,
+    inner: crate::operation::list_instance_profiles_for_role::builders::ListInstanceProfilesForRoleInputBuilder,
 }
 impl ListInstanceProfilesForRoleFluentBuilder {
     /// Creates a new `ListInstanceProfilesForRole`.
@@ -38,7 +38,7 @@ impl ListInstanceProfilesForRoleFluentBuilder {
         }
     }
     /// Access the ListInstanceProfilesForRole as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_instance_profiles_for_role::builders::ListInstanceProfilesForRoleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_instance_profiles_for_role::builders::ListInstanceProfilesForRoleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListInstanceProfilesForRoleFluentBuilder {
             crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRole,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListInstanceProfilesForRoleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListInstanceProfilesForRoleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListInstanceProfilesForRoleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleError>,
     > {
         self.send_middleware().await
     }
@@ -115,16 +106,14 @@ impl ListInstanceProfilesForRoleFluentBuilder {
             crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRole,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_instance_profiles_for_role::paginator::ListInstanceProfilesForRolePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_instance_profiles_for_role::paginator::ListInstanceProfilesForRolePaginator{
+    pub fn into_paginator(self) -> crate::operation::list_instance_profiles_for_role::paginator::ListInstanceProfilesForRolePaginator {
         crate::operation::list_instance_profiles_for_role::paginator::ListInstanceProfilesForRolePaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the role to list instance profiles for.</p>

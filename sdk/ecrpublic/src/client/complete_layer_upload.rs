@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`upload_id(Option<String>)`](crate::operation::complete_layer_upload::CompleteLayerUploadOutput::upload_id): <p>The upload ID that's associated with the layer.</p>
     ///   - [`layer_digest(Option<String>)`](crate::operation::complete_layer_upload::CompleteLayerUploadOutput::layer_digest): <p>The <code>sha256</code> digest of the image layer.</p>
     /// - On failure, responds with [`SdkError<CompleteLayerUploadError>`](crate::operation::complete_layer_upload::CompleteLayerUploadError)
-    pub fn complete_layer_upload(
-        &self,
-    ) -> crate::operation::complete_layer_upload::builders::CompleteLayerUploadFluentBuilder {
-        crate::operation::complete_layer_upload::builders::CompleteLayerUploadFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn complete_layer_upload(&self) -> crate::operation::complete_layer_upload::builders::CompleteLayerUploadFluentBuilder {
+        crate::operation::complete_layer_upload::builders::CompleteLayerUploadFluentBuilder::new(self.handle.clone())
     }
 }

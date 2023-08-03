@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`FailoverDbClusterOutput`](crate::operation::failover_db_cluster::FailoverDbClusterOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::failover_db_cluster::FailoverDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     /// - On failure, responds with [`SdkError<FailoverDBClusterError>`](crate::operation::failover_db_cluster::FailoverDBClusterError)
-    pub fn failover_db_cluster(
-        &self,
-    ) -> crate::operation::failover_db_cluster::builders::FailoverDBClusterFluentBuilder {
-        crate::operation::failover_db_cluster::builders::FailoverDBClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn failover_db_cluster(&self) -> crate::operation::failover_db_cluster::builders::FailoverDBClusterFluentBuilder {
+        crate::operation::failover_db_cluster::builders::FailoverDBClusterFluentBuilder::new(self.handle.clone())
     }
 }

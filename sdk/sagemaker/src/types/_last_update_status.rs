@@ -30,9 +30,7 @@ impl LastUpdateStatus {
 
 /// A builder for [`LastUpdateStatus`](crate::types::LastUpdateStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LastUpdateStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LastUpdateStatusValue>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl LastUpdateStatusBuilder {
         self
     }
     /// <p>A value that indicates whether the update was made successful.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LastUpdateStatusValue>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::LastUpdateStatusValue>) -> Self {
         self.status = input;
         self
     }
@@ -56,18 +51,12 @@ impl LastUpdateStatusBuilder {
         &self.status
     }
     /// <p>If the update wasn't successful, indicates the reason why it failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the update wasn't successful, indicates the reason why it failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

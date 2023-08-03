@@ -14,7 +14,9 @@ impl super::Client {
     /// - On success, responds with [`CreateDataRepositoryAssociationOutput`](crate::operation::create_data_repository_association::CreateDataRepositoryAssociationOutput) with field(s):
     ///   - [`association(Option<DataRepositoryAssociation>)`](crate::operation::create_data_repository_association::CreateDataRepositoryAssociationOutput::association): <p>The response object returned after the data repository association is created.</p>
     /// - On failure, responds with [`SdkError<CreateDataRepositoryAssociationError>`](crate::operation::create_data_repository_association::CreateDataRepositoryAssociationError)
-    pub fn create_data_repository_association(&self) -> crate::operation::create_data_repository_association::builders::CreateDataRepositoryAssociationFluentBuilder{
+    pub fn create_data_repository_association(
+        &self,
+    ) -> crate::operation::create_data_repository_association::builders::CreateDataRepositoryAssociationFluentBuilder {
         crate::operation::create_data_repository_association::builders::CreateDataRepositoryAssociationFluentBuilder::new(self.handle.clone())
     }
 }

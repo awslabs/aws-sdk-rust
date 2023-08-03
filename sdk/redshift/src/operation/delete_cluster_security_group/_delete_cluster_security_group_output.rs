@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteClusterSecurityGroupOutput {
 }
 impl DeleteClusterSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteClusterSecurityGroupOutput`](crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupOutput).
-    pub fn builder() -> crate::operation::delete_cluster_security_group::builders::DeleteClusterSecurityGroupOutputBuilder{
+    pub fn builder() -> crate::operation::delete_cluster_security_group::builders::DeleteClusterSecurityGroupOutputBuilder {
         crate::operation::delete_cluster_security_group::builders::DeleteClusterSecurityGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteClusterSecurityGroupOutput`](crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClusterSecurityGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteClusterSecurityGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteClusterSecurityGroupOutput`](crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupOutput {
+    pub fn build(self) -> crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupOutput {
         crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupOutput {
             _request_id: self._request_id,
         }

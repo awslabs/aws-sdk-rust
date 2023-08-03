@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`accounts(Option<Vec<AccountFreeTrialInfo>>)`](crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysOutput::accounts): <p>The member accounts which were included in a request and were processed successfully.</p>
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysOutput::unprocessed_accounts): <p>The member account that was included in a request but for which the request could not be processed.</p>
     /// - On failure, responds with [`SdkError<GetRemainingFreeTrialDaysError>`](crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysError)
-    pub fn get_remaining_free_trial_days(&self) -> crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysFluentBuilder{
+    pub fn get_remaining_free_trial_days(&self) -> crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysFluentBuilder {
         crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,10 +28,7 @@ impl WafInvalidPermissionPolicyException {
 }
 impl ::std::fmt::Display for WafInvalidPermissionPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "WafInvalidPermissionPolicyException [WAFInvalidPermissionPolicyException]"
-        )?;
+        ::std::write!(f, "WafInvalidPermissionPolicyException [WAFInvalidPermissionPolicyException]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -41,17 +38,13 @@ impl ::std::fmt::Display for WafInvalidPermissionPolicyException {
     }
 }
 impl ::std::error::Error for WafInvalidPermissionPolicyException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::WafInvalidPermissionPolicyException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::WafInvalidPermissionPolicyException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for WafInvalidPermissionPolicyException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for WafInvalidPermissionPolicyException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -65,9 +58,7 @@ impl WafInvalidPermissionPolicyException {
 
 /// A builder for [`WafInvalidPermissionPolicyException`](crate::types::error::WafInvalidPermissionPolicyException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WafInvalidPermissionPolicyExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -94,10 +85,7 @@ impl WafInvalidPermissionPolicyExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

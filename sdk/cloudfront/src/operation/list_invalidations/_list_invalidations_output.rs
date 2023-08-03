@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for ListInvalidationsOutput {
 }
 impl ListInvalidationsOutput {
     /// Creates a new builder-style object to manufacture [`ListInvalidationsOutput`](crate::operation::list_invalidations::ListInvalidationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_invalidations::builders::ListInvalidationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_invalidations::builders::ListInvalidationsOutputBuilder {
         crate::operation::list_invalidations::builders::ListInvalidationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInvalidationsOutput`](crate::operation::list_invalidations::ListInvalidationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInvalidationsOutputBuilder {
     pub(crate) invalidation_list: ::std::option::Option<crate::types::InvalidationList>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl ListInvalidationsOutputBuilder {
         self
     }
     /// <p>Information about invalidation batches.</p>
-    pub fn set_invalidation_list(
-        mut self,
-        input: ::std::option::Option<crate::types::InvalidationList>,
-    ) -> Self {
+    pub fn set_invalidation_list(mut self, input: ::std::option::Option<crate::types::InvalidationList>) -> Self {
         self.invalidation_list = input;
         self
     }

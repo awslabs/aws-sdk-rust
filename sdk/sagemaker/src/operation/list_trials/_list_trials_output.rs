@@ -35,9 +35,7 @@ impl ListTrialsOutput {
 
 /// A builder for [`ListTrialsOutput`](crate::operation::list_trials::ListTrialsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrialsOutputBuilder {
     pub(crate) trial_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrialSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListTrialsOutputBuilder {
         self
     }
     /// <p>A list of the summaries of your trials.</p>
-    pub fn set_trial_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrialSummary>>,
-    ) -> Self {
+    pub fn set_trial_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrialSummary>>) -> Self {
         self.trial_summaries = input;
         self
     }
     /// <p>A list of the summaries of your trials.</p>
-    pub fn get_trial_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrialSummary>> {
+    pub fn get_trial_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrialSummary>> {
         &self.trial_summaries
     }
     /// <p>A token for getting the next set of trials, if there are any.</p>

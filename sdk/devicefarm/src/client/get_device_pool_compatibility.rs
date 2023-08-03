@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`compatible_devices(Option<Vec<DevicePoolCompatibilityResult>>)`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityOutput::compatible_devices): <p>Information about compatible devices.</p>
     ///   - [`incompatible_devices(Option<Vec<DevicePoolCompatibilityResult>>)`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityOutput::incompatible_devices): <p>Information about incompatible devices.</p>
     /// - On failure, responds with [`SdkError<GetDevicePoolCompatibilityError>`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityError)
-    pub fn get_device_pool_compatibility(&self) -> crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityFluentBuilder{
+    pub fn get_device_pool_compatibility(
+        &self,
+    ) -> crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityFluentBuilder {
         crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityFluentBuilder::new(self.handle.clone())
     }
 }

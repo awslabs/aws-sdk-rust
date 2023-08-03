@@ -12,19 +12,13 @@ pub fn ser_auto_ml_job_config(
     if let Some(var_3) = &input.security_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("SecurityConfig").start_object();
-        crate::protocol_serde::shape_auto_ml_security_config::ser_auto_ml_security_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_auto_ml_security_config::ser_auto_ml_security_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.data_split_config {
         #[allow(unused_mut)]
         let mut object_6 = object.key("DataSplitConfig").start_object();
-        crate::protocol_serde::shape_auto_ml_data_split_config::ser_auto_ml_data_split_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_auto_ml_data_split_config::ser_auto_ml_data_split_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.candidate_generation_config {
@@ -41,17 +35,9 @@ pub fn ser_auto_ml_job_config(
 
 pub(crate) fn de_auto_ml_job_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AutoMlJobConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AutoMlJobConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -61,58 +47,47 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "CompletionCriteria" => {
-                                builder = builder.set_completion_criteria(
-                                    crate::protocol_serde::shape_auto_ml_job_completion_criteria::de_auto_ml_job_completion_criteria(tokens)?
-                                );
-                            }
-                            "SecurityConfig" => {
-                                builder = builder.set_security_config(
-                                    crate::protocol_serde::shape_auto_ml_security_config::de_auto_ml_security_config(tokens)?
-                                );
-                            }
-                            "DataSplitConfig" => {
-                                builder = builder.set_data_split_config(
-                                    crate::protocol_serde::shape_auto_ml_data_split_config::de_auto_ml_data_split_config(tokens)?
-                                );
-                            }
-                            "CandidateGenerationConfig" => {
-                                builder = builder.set_candidate_generation_config(
-                                    crate::protocol_serde::shape_auto_ml_candidate_generation_config::de_auto_ml_candidate_generation_config(tokens)?
-                                );
-                            }
-                            "Mode" => {
-                                builder = builder.set_mode(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::AutoMlMode::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "CompletionCriteria" => {
+                            builder = builder.set_completion_criteria(
+                                crate::protocol_serde::shape_auto_ml_job_completion_criteria::de_auto_ml_job_completion_criteria(tokens)?,
+                            );
                         }
-                    }
+                        "SecurityConfig" => {
+                            builder = builder
+                                .set_security_config(crate::protocol_serde::shape_auto_ml_security_config::de_auto_ml_security_config(tokens)?);
+                        }
+                        "DataSplitConfig" => {
+                            builder = builder.set_data_split_config(
+                                crate::protocol_serde::shape_auto_ml_data_split_config::de_auto_ml_data_split_config(tokens)?,
+                            );
+                        }
+                        "CandidateGenerationConfig" => {
+                            builder = builder.set_candidate_generation_config(
+                                crate::protocol_serde::shape_auto_ml_candidate_generation_config::de_auto_ml_candidate_generation_config(tokens)?,
+                            );
+                        }
+                        "Mode" => {
+                            builder = builder.set_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AutoMlMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

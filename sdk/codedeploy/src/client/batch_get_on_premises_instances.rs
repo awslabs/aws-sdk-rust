@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`BatchGetOnPremisesInstancesOutput`](crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesOutput) with field(s):
     ///   - [`instance_infos(Option<Vec<InstanceInfo>>)`](crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesOutput::instance_infos): <p>Information about the on-premises instances.</p>
     /// - On failure, responds with [`SdkError<BatchGetOnPremisesInstancesError>`](crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesError)
-    pub fn batch_get_on_premises_instances(&self) -> crate::operation::batch_get_on_premises_instances::builders::BatchGetOnPremisesInstancesFluentBuilder{
+    pub fn batch_get_on_premises_instances(
+        &self,
+    ) -> crate::operation::batch_get_on_premises_instances::builders::BatchGetOnPremisesInstancesFluentBuilder {
         crate::operation::batch_get_on_premises_instances::builders::BatchGetOnPremisesInstancesFluentBuilder::new(self.handle.clone())
     }
 }

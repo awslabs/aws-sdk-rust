@@ -22,16 +22,14 @@ impl DescribeNotificationConfigurationInput {
 }
 impl DescribeNotificationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationConfigurationInput`](crate::operation::describe_notification_configuration::DescribeNotificationConfigurationInput).
-    pub fn builder() -> crate::operation::describe_notification_configuration::builders::DescribeNotificationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_notification_configuration::builders::DescribeNotificationConfigurationInputBuilder {
         crate::operation::describe_notification_configuration::builders::DescribeNotificationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNotificationConfigurationInput`](crate::operation::describe_notification_configuration::DescribeNotificationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNotificationConfigurationInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DescribeNotificationConfigurationInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`DescribeNotificationConfigurationInput`](crate::operation::describe_notification_configuration::DescribeNotificationConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_notification_configuration::DescribeNotificationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_notification_configuration::DescribeNotificationConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_notification_configuration::DescribeNotificationConfigurationInput {
-                stream_name: self.stream_name
-                ,
-                stream_arn: self.stream_arn
-                ,
-            }
+                stream_name: self.stream_name,
+                stream_arn: self.stream_arn,
+            },
         )
     }
 }

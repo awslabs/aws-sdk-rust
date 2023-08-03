@@ -5,8 +5,7 @@
 pub struct ListFlywheelIterationHistoryOutput {
     /// <p>List of flywheel iteration properties</p>
     #[doc(hidden)]
-    pub flywheel_iteration_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FlywheelIterationProperties>>,
+    pub flywheel_iteration_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::FlywheelIterationProperties>>,
     /// <p>Next token</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListFlywheelIterationHistoryOutput {
 }
 impl ListFlywheelIterationHistoryOutput {
     /// <p>List of flywheel iteration properties</p>
-    pub fn flywheel_iteration_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FlywheelIterationProperties]> {
+    pub fn flywheel_iteration_properties_list(&self) -> ::std::option::Option<&[crate::types::FlywheelIterationProperties]> {
         self.flywheel_iteration_properties_list.as_deref()
     }
     /// <p>Next token</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListFlywheelIterationHistoryOutput {
 }
 impl ListFlywheelIterationHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListFlywheelIterationHistoryOutput`](crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput).
-    pub fn builder() -> crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryOutputBuilder{
+    pub fn builder() -> crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryOutputBuilder {
         crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFlywheelIterationHistoryOutput`](crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFlywheelIterationHistoryOutputBuilder {
-    pub(crate) flywheel_iteration_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FlywheelIterationProperties>>,
+    pub(crate) flywheel_iteration_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::FlywheelIterationProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListFlywheelIterationHistoryOutputBuilder {
     /// To override the contents of this collection use [`set_flywheel_iteration_properties_list`](Self::set_flywheel_iteration_properties_list).
     ///
     /// <p>List of flywheel iteration properties</p>
-    pub fn flywheel_iteration_properties_list(
-        mut self,
-        input: crate::types::FlywheelIterationProperties,
-    ) -> Self {
+    pub fn flywheel_iteration_properties_list(mut self, input: crate::types::FlywheelIterationProperties) -> Self {
         let mut v = self.flywheel_iteration_properties_list.unwrap_or_default();
         v.push(input);
         self.flywheel_iteration_properties_list = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListFlywheelIterationHistoryOutputBuilder {
         self
     }
     /// <p>List of flywheel iteration properties</p>
-    pub fn get_flywheel_iteration_properties_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FlywheelIterationProperties>> {
+    pub fn get_flywheel_iteration_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlywheelIterationProperties>> {
         &self.flywheel_iteration_properties_list
     }
     /// <p>Next token</p>
@@ -100,9 +89,7 @@ impl ListFlywheelIterationHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFlywheelIterationHistoryOutput`](crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput {
+    pub fn build(self) -> crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput {
         crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput {
             flywheel_iteration_properties_list: self.flywheel_iteration_properties_list,
             next_token: self.next_token,

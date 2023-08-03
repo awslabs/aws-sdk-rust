@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTagsOfResourceOutput {
 }
 impl ListTagsOfResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsOfResourceOutput`](crate::operation::list_tags_of_resource::ListTagsOfResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_of_resource::builders::ListTagsOfResourceOutputBuilder {
-        crate::operation::list_tags_of_resource::builders::ListTagsOfResourceOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_tags_of_resource::builders::ListTagsOfResourceOutputBuilder {
+        crate::operation::list_tags_of_resource::builders::ListTagsOfResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsOfResourceOutput`](crate::operation::list_tags_of_resource::ListTagsOfResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsOfResourceOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListTagsOfResourceOutputBuilder {
         self
     }
     /// <p>The tags currently associated with the Amazon DynamoDB resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

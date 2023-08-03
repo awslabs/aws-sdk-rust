@@ -40,17 +40,14 @@ impl ListTokenBalancesInput {
 }
 impl ListTokenBalancesInput {
     /// Creates a new builder-style object to manufacture [`ListTokenBalancesInput`](crate::operation::list_token_balances::ListTokenBalancesInput).
-    pub fn builder(
-    ) -> crate::operation::list_token_balances::builders::ListTokenBalancesInputBuilder {
+    pub fn builder() -> crate::operation::list_token_balances::builders::ListTokenBalancesInputBuilder {
         crate::operation::list_token_balances::builders::ListTokenBalancesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTokenBalancesInput`](crate::operation::list_token_balances::ListTokenBalancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTokenBalancesInputBuilder {
     pub(crate) owner_filter: ::std::option::Option<crate::types::OwnerFilter>,
     pub(crate) token_filter: ::std::option::Option<crate::types::TokenFilter>,
@@ -64,10 +61,7 @@ impl ListTokenBalancesInputBuilder {
         self
     }
     /// <p>The contract or wallet address on the blockchain network by which to filter the request. You must specify the <code>address</code> property of the <code>ownerFilter</code> when listing balances of tokens owned by the address.</p>
-    pub fn set_owner_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::OwnerFilter>,
-    ) -> Self {
+    pub fn set_owner_filter(mut self, input: ::std::option::Option<crate::types::OwnerFilter>) -> Self {
         self.owner_filter = input;
         self
     }
@@ -85,10 +79,7 @@ impl ListTokenBalancesInputBuilder {
     /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the contractAddress property of this container when listing tokens minted by a contract.</p> <note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
-    pub fn set_token_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TokenFilter>,
-    ) -> Self {
+    pub fn set_token_filter(mut self, input: ::std::option::Option<crate::types::TokenFilter>) -> Self {
         self.token_filter = input;
         self
     }
@@ -129,17 +120,12 @@ impl ListTokenBalancesInputBuilder {
     /// Consumes the builder and constructs a [`ListTokenBalancesInput`](crate::operation::list_token_balances::ListTokenBalancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_token_balances::ListTokenBalancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_token_balances::ListTokenBalancesInput {
-                owner_filter: self.owner_filter,
-                token_filter: self.token_filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_token_balances::ListTokenBalancesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_token_balances::ListTokenBalancesInput {
+            owner_filter: self.owner_filter,
+            token_filter: self.token_filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

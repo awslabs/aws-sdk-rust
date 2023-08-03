@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`origin_request_policy_config(Option<OriginRequestPolicyConfig>)`](crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigOutput::origin_request_policy_config): <p>The origin request policy configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigOutput::e_tag): <p>The current version of the origin request policy.</p>
     /// - On failure, responds with [`SdkError<GetOriginRequestPolicyConfigError>`](crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError)
-    pub fn get_origin_request_policy_config(&self) -> crate::operation::get_origin_request_policy_config::builders::GetOriginRequestPolicyConfigFluentBuilder{
+    pub fn get_origin_request_policy_config(
+        &self,
+    ) -> crate::operation::get_origin_request_policy_config::builders::GetOriginRequestPolicyConfigFluentBuilder {
         crate::operation::get_origin_request_policy_config::builders::GetOriginRequestPolicyConfigFluentBuilder::new(self.handle.clone())
     }
 }

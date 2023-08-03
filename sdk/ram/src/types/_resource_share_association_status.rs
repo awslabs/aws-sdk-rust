@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceShareAssociationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ResourceShareAssociationStatus {
             "DISASSOCIATED" => ResourceShareAssociationStatus::Disassociated,
             "DISASSOCIATING" => ResourceShareAssociationStatus::Disassociating,
             "FAILED" => ResourceShareAssociationStatus::Failed,
-            other => ResourceShareAssociationStatus::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ResourceShareAssociationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ResourceShareAssociationStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSOCIATED",
-            "ASSOCIATING",
-            "DISASSOCIATED",
-            "DISASSOCIATING",
-            "FAILED",
-        ]
+        &["ASSOCIATED", "ASSOCIATING", "DISASSOCIATED", "DISASSOCIATING", "FAILED"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceShareAssociationStatus {

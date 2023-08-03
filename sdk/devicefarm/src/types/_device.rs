@@ -185,9 +185,7 @@ impl Device {
 
 /// A builder for [`Device`](crate::types::Device).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -298,10 +296,7 @@ impl DeviceBuilder {
     /// <li> <p>PHONE</p> </li>
     /// <li> <p>TABLET</p> </li>
     /// </ul>
-    pub fn set_form_factor(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceFormFactor>,
-    ) -> Self {
+    pub fn set_form_factor(mut self, input: ::std::option::Option<crate::types::DeviceFormFactor>) -> Self {
         self.form_factor = input;
         self
     }
@@ -330,10 +325,7 @@ impl DeviceBuilder {
     /// <li> <p>ANDROID</p> </li>
     /// <li> <p>IOS</p> </li>
     /// </ul>
-    pub fn set_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::DevicePlatform>,
-    ) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::DevicePlatform>) -> Self {
         self.platform = input;
         self
     }
@@ -380,10 +372,7 @@ impl DeviceBuilder {
         self
     }
     /// <p>The resolution of the device.</p>
-    pub fn set_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::Resolution>,
-    ) -> Self {
+    pub fn set_resolution(mut self, input: ::std::option::Option<crate::types::Resolution>) -> Self {
         self.resolution = input;
         self
     }
@@ -532,17 +521,12 @@ impl DeviceBuilder {
         self
     }
     /// <p>The instances that belong to this device.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>>) -> Self {
         self.instances = input;
         self
     }
     /// <p>The instances that belong to this device.</p>
-    pub fn get_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>> {
         &self.instances
     }
     /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
@@ -551,10 +535,7 @@ impl DeviceBuilder {
         self
     }
     /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
-    pub fn set_availability(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceAvailability>,
-    ) -> Self {
+    pub fn set_availability(mut self, input: ::std::option::Option<crate::types::DeviceAvailability>) -> Self {
         self.availability = input;
         self
     }

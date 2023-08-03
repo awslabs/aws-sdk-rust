@@ -72,9 +72,7 @@ impl ChangeSetSummaryListItem {
 
 /// A builder for [`ChangeSetSummaryListItem`](crate::types::ChangeSetSummaryListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeSetSummaryListItemBuilder {
     pub(crate) change_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_set_arn: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct ChangeSetSummaryListItemBuilder {
 }
 impl ChangeSetSummaryListItemBuilder {
     /// <p>The unique identifier for a change set.</p>
-    pub fn change_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for a change set.</p>
-    pub fn set_change_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_id = input;
         self
     }
@@ -107,18 +99,12 @@ impl ChangeSetSummaryListItemBuilder {
         &self.change_set_id
     }
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-    pub fn change_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-    pub fn set_change_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_arn = input;
         self
     }
@@ -127,18 +113,12 @@ impl ChangeSetSummaryListItemBuilder {
         &self.change_set_arn
     }
     /// <p>The non-unique name for the change set.</p>
-    pub fn change_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The non-unique name for the change set.</p>
-    pub fn set_change_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_name = input;
         self
     }
@@ -193,27 +173,19 @@ impl ChangeSetSummaryListItemBuilder {
     /// To override the contents of this collection use [`set_entity_id_list`](Self::set_entity_id_list).
     ///
     /// <p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
-    pub fn entity_id_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entity_id_list.unwrap_or_default();
         v.push(input.into());
         self.entity_id_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
-    pub fn set_entity_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_entity_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.entity_id_list = input;
         self
     }
     /// <p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
-    pub fn get_entity_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.entity_id_list
     }
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
@@ -222,10 +194,7 @@ impl ChangeSetSummaryListItemBuilder {
         self
     }
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureCode>,
-    ) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::FailureCode>) -> Self {
         self.failure_code = input;
         self
     }

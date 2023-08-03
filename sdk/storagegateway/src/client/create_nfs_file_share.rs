@@ -27,11 +27,7 @@ impl super::Client {
     /// - On success, responds with [`CreateNfsFileShareOutput`](crate::operation::create_nfs_file_share::CreateNfsFileShareOutput) with field(s):
     ///   - [`file_share_arn(Option<String>)`](crate::operation::create_nfs_file_share::CreateNfsFileShareOutput::file_share_arn): <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
     /// - On failure, responds with [`SdkError<CreateNFSFileShareError>`](crate::operation::create_nfs_file_share::CreateNFSFileShareError)
-    pub fn create_nfs_file_share(
-        &self,
-    ) -> crate::operation::create_nfs_file_share::builders::CreateNFSFileShareFluentBuilder {
-        crate::operation::create_nfs_file_share::builders::CreateNFSFileShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_nfs_file_share(&self) -> crate::operation::create_nfs_file_share::builders::CreateNFSFileShareFluentBuilder {
+        crate::operation::create_nfs_file_share::builders::CreateNFSFileShareFluentBuilder::new(self.handle.clone())
     }
 }

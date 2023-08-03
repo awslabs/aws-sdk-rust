@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdatePhoneNumberOutput {
 }
 impl UpdatePhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberOutput`](crate::operation::update_phone_number::UpdatePhoneNumberOutput).
-    pub fn builder(
-    ) -> crate::operation::update_phone_number::builders::UpdatePhoneNumberOutputBuilder {
+    pub fn builder() -> crate::operation::update_phone_number::builders::UpdatePhoneNumberOutputBuilder {
         crate::operation::update_phone_number::builders::UpdatePhoneNumberOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePhoneNumberOutput`](crate::operation::update_phone_number::UpdatePhoneNumberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePhoneNumberOutputBuilder {
     pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
     pub(crate) phone_number_arn: ::std::option::Option<::std::string::String>,
@@ -46,18 +43,12 @@ pub struct UpdatePhoneNumberOutputBuilder {
 }
 impl UpdatePhoneNumberOutputBuilder {
     /// <p>A unique identifier for the phone number.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the phone number.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_id = input;
         self
     }
@@ -66,18 +57,12 @@ impl UpdatePhoneNumberOutputBuilder {
         &self.phone_number_id
     }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
-    pub fn phone_number_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
-    pub fn set_phone_number_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_arn = input;
         self
     }

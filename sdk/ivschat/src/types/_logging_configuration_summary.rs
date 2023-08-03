@@ -27,9 +27,7 @@ pub struct LoggingConfigurationSummary {
     pub state: ::std::option::Option<crate::types::LoggingConfigurationState>,
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl LoggingConfigurationSummary {
     /// <p>Logging-configuration ARN.</p>
@@ -53,9 +51,7 @@ impl LoggingConfigurationSummary {
         self.name.as_deref()
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged.</p>
-    pub fn destination_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
+    pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
     /// <p>The state of the logging configuration. When this is <code>ACTIVE</code>, the configuration is ready for logging chat content.</p>
@@ -63,11 +59,7 @@ impl LoggingConfigurationSummary {
         self.state.as_ref()
     }
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -80,21 +72,16 @@ impl LoggingConfigurationSummary {
 
 /// A builder for [`LoggingConfigurationSummary`](crate::types::LoggingConfigurationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingConfigurationSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) destination_configuration:
-        ::std::option::Option<crate::types::DestinationConfiguration>,
+    pub(crate) destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     pub(crate) state: ::std::option::Option<crate::types::LoggingConfigurationState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl LoggingConfigurationSummaryBuilder {
     /// <p>Logging-configuration ARN.</p>
@@ -131,10 +118,7 @@ impl LoggingConfigurationSummaryBuilder {
         self
     }
     /// <p>Time when the logging configuration was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -148,10 +132,7 @@ impl LoggingConfigurationSummaryBuilder {
         self
     }
     /// <p>Time of the logging configuration’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -174,25 +155,17 @@ impl LoggingConfigurationSummaryBuilder {
         &self.name
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged.</p>
-    pub fn destination_configuration(
-        mut self,
-        input: crate::types::DestinationConfiguration,
-    ) -> Self {
+    pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged.</p>
-    pub fn set_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
         self.destination_configuration = input;
         self
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged.</p>
-    pub fn get_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+    pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         &self.destination_configuration
     }
     /// <p>The state of the logging configuration. When this is <code>ACTIVE</code>, the configuration is ready for logging chat content.</p>
@@ -201,10 +174,7 @@ impl LoggingConfigurationSummaryBuilder {
         self
     }
     /// <p>The state of the logging configuration. When this is <code>ACTIVE</code>, the configuration is ready for logging chat content.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfigurationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::LoggingConfigurationState>) -> Self {
         self.state = input;
         self
     }
@@ -217,32 +187,19 @@ impl LoggingConfigurationSummaryBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`LoggingConfigurationSummary`](crate::types::LoggingConfigurationSummary).

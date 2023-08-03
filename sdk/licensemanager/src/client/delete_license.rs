@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`status(Option<LicenseDeletionStatus>)`](crate::operation::delete_license::DeleteLicenseOutput::status): <p>License status.</p>
     ///   - [`deletion_date(Option<String>)`](crate::operation::delete_license::DeleteLicenseOutput::deletion_date): <p>Date when the license is deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteLicenseError>`](crate::operation::delete_license::DeleteLicenseError)
-    pub fn delete_license(
-        &self,
-    ) -> crate::operation::delete_license::builders::DeleteLicenseFluentBuilder {
-        crate::operation::delete_license::builders::DeleteLicenseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_license(&self) -> crate::operation::delete_license::builders::DeleteLicenseFluentBuilder {
+        crate::operation::delete_license::builders::DeleteLicenseFluentBuilder::new(self.handle.clone())
     }
 }

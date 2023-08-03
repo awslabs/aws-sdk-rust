@@ -23,24 +23,22 @@ impl ModifyVpcEndpointServicePayerResponsibilityInput {
         self.service_id.as_deref()
     }
     /// <p>The entity that is responsible for the endpoint costs. The default is the endpoint owner. If you set the payer responsibility to the service owner, you cannot set it back to the endpoint owner.</p>
-    pub fn payer_responsibility(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PayerResponsibility> {
+    pub fn payer_responsibility(&self) -> ::std::option::Option<&crate::types::PayerResponsibility> {
         self.payer_responsibility.as_ref()
     }
 }
 impl ModifyVpcEndpointServicePayerResponsibilityInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointServicePayerResponsibilityInput`](crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityInput).
-    pub fn builder() -> crate::operation::modify_vpc_endpoint_service_payer_responsibility::builders::ModifyVpcEndpointServicePayerResponsibilityInputBuilder{
-        crate::operation::modify_vpc_endpoint_service_payer_responsibility::builders::ModifyVpcEndpointServicePayerResponsibilityInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::modify_vpc_endpoint_service_payer_responsibility::builders::ModifyVpcEndpointServicePayerResponsibilityInputBuilder {
+        crate::operation::modify_vpc_endpoint_service_payer_responsibility::builders::ModifyVpcEndpointServicePayerResponsibilityInputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`ModifyVpcEndpointServicePayerResponsibilityInput`](crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointServicePayerResponsibilityInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
@@ -81,30 +79,27 @@ impl ModifyVpcEndpointServicePayerResponsibilityInputBuilder {
         self
     }
     /// <p>The entity that is responsible for the endpoint costs. The default is the endpoint owner. If you set the payer responsibility to the service owner, you cannot set it back to the endpoint owner.</p>
-    pub fn set_payer_responsibility(
-        mut self,
-        input: ::std::option::Option<crate::types::PayerResponsibility>,
-    ) -> Self {
+    pub fn set_payer_responsibility(mut self, input: ::std::option::Option<crate::types::PayerResponsibility>) -> Self {
         self.payer_responsibility = input;
         self
     }
     /// <p>The entity that is responsible for the endpoint costs. The default is the endpoint owner. If you set the payer responsibility to the service owner, you cannot set it back to the endpoint owner.</p>
-    pub fn get_payer_responsibility(
-        &self,
-    ) -> &::std::option::Option<crate::types::PayerResponsibility> {
+    pub fn get_payer_responsibility(&self) -> &::std::option::Option<crate::types::PayerResponsibility> {
         &self.payer_responsibility
     }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointServicePayerResponsibilityInput`](crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityInput {
-                dry_run: self.dry_run
-                ,
-                service_id: self.service_id
-                ,
-                payer_responsibility: self.payer_responsibility
-                ,
-            }
+                dry_run: self.dry_run,
+                service_id: self.service_id,
+                payer_responsibility: self.payer_responsibility,
+            },
         )
     }
 }

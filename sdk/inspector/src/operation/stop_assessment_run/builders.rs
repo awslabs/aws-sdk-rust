@@ -10,10 +10,7 @@ impl StopAssessmentRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_assessment_run::StopAssessmentRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_assessment_run::StopAssessmentRunError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_assessment_run::StopAssessmentRunError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_assessment_run();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StopAssessmentRunFluentBuilder {
         }
     }
     /// Access the StopAssessmentRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_assessment_run::builders::StopAssessmentRunInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_assessment_run::builders::StopAssessmentRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StopAssessmentRunFluentBuilder {
             crate::operation::stop_assessment_run::StopAssessmentRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_assessment_run::StopAssessmentRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_assessment_run::StopAssessmentRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StopAssessmentRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StopAssessmentRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_assessment_run::StopAssessmentRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_assessment_run::StopAssessmentRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_assessment_run::StopAssessmentRunError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StopAssessmentRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_assessment_run::StopAssessmentRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_assessment_run::StopAssessmentRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_assessment_run::StopAssessmentRunError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StopAssessmentRunFluentBuilder {
             crate::operation::stop_assessment_run::StopAssessmentRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_assessment_run::StopAssessmentRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_assessment_run::StopAssessmentRunError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the assessment run that you want to stop.</p>
-    pub fn assessment_run_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_run_arn(input.into());
         self
     }
     /// <p>The ARN of the assessment run that you want to stop.</p>
-    pub fn set_assessment_run_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_run_arn(input);
         self
     }
@@ -148,10 +126,7 @@ impl StopAssessmentRunFluentBuilder {
         self
     }
     /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
-    pub fn set_stop_action(
-        mut self,
-        input: ::std::option::Option<crate::types::StopAction>,
-    ) -> Self {
+    pub fn set_stop_action(mut self, input: ::std::option::Option<crate::types::StopAction>) -> Self {
         self.inner = self.inner.set_stop_action(input);
         self
     }

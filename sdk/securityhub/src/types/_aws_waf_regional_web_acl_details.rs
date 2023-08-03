@@ -15,8 +15,7 @@ pub struct AwsWafRegionalWebAclDetails {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule. </p>
     #[doc(hidden)]
-    pub rules_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalWebAclRulesListDetails>>,
+    pub rules_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalWebAclRulesListDetails>>,
     /// <p>The ID of the web ACL. </p>
     #[doc(hidden)]
     pub web_acl_id: ::std::option::Option<::std::string::String>,
@@ -35,9 +34,7 @@ impl AwsWafRegionalWebAclDetails {
         self.name.as_deref()
     }
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule. </p>
-    pub fn rules_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsWafRegionalWebAclRulesListDetails]> {
+    pub fn rules_list(&self) -> ::std::option::Option<&[crate::types::AwsWafRegionalWebAclRulesListDetails]> {
         self.rules_list.as_deref()
     }
     /// <p>The ID of the web ACL. </p>
@@ -54,31 +51,22 @@ impl AwsWafRegionalWebAclDetails {
 
 /// A builder for [`AwsWafRegionalWebAclDetails`](crate::types::AwsWafRegionalWebAclDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafRegionalWebAclDetailsBuilder {
     pub(crate) default_action: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) rules_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalWebAclRulesListDetails>>,
+    pub(crate) rules_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalWebAclRulesListDetails>>,
     pub(crate) web_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRegionalWebAclDetailsBuilder {
     /// <p>The action to perform if none of the rules contained in the web ACL match. </p>
-    pub fn default_action(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action to perform if none of the rules contained in the web ACL match. </p>
-    pub fn set_default_action(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_action = input;
         self
     }
@@ -126,20 +114,12 @@ impl AwsWafRegionalWebAclDetailsBuilder {
         self
     }
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule. </p>
-    pub fn set_rules_list(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsWafRegionalWebAclRulesListDetails>,
-        >,
-    ) -> Self {
+    pub fn set_rules_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalWebAclRulesListDetails>>) -> Self {
         self.rules_list = input;
         self
     }
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule. </p>
-    pub fn get_rules_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalWebAclRulesListDetails>>
-    {
+    pub fn get_rules_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalWebAclRulesListDetails>> {
         &self.rules_list
     }
     /// <p>The ID of the web ACL. </p>

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`gateway_arn(Option<String>)`](crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     ///   - [`bandwidth_rate_limit_intervals(Option<Vec<BandwidthRateLimitInterval>>)`](crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleOutput::bandwidth_rate_limit_intervals): <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
     /// - On failure, responds with [`SdkError<GetBandwidthRateLimitScheduleError>`](crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleError)
-    pub fn get_bandwidth_rate_limit_schedule(&self) -> crate::operation::get_bandwidth_rate_limit_schedule::builders::GetBandwidthRateLimitScheduleFluentBuilder{
+    pub fn get_bandwidth_rate_limit_schedule(
+        &self,
+    ) -> crate::operation::get_bandwidth_rate_limit_schedule::builders::GetBandwidthRateLimitScheduleFluentBuilder {
         crate::operation::get_bandwidth_rate_limit_schedule::builders::GetBandwidthRateLimitScheduleFluentBuilder::new(self.handle.clone())
     }
 }

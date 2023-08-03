@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`control_finding_generator(ControlFindingGenerator)`](crate::operation::enable_security_hub::builders::EnableSecurityHubFluentBuilder::control_finding_generator) / [`set_control_finding_generator(Option<ControlFindingGenerator>)`](crate::operation::enable_security_hub::builders::EnableSecurityHubFluentBuilder::set_control_finding_generator): <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>  <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>  <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
     /// - On success, responds with [`EnableSecurityHubOutput`](crate::operation::enable_security_hub::EnableSecurityHubOutput)
     /// - On failure, responds with [`SdkError<EnableSecurityHubError>`](crate::operation::enable_security_hub::EnableSecurityHubError)
-    pub fn enable_security_hub(
-        &self,
-    ) -> crate::operation::enable_security_hub::builders::EnableSecurityHubFluentBuilder {
-        crate::operation::enable_security_hub::builders::EnableSecurityHubFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn enable_security_hub(&self) -> crate::operation::enable_security_hub::builders::EnableSecurityHubFluentBuilder {
+        crate::operation::enable_security_hub::builders::EnableSecurityHubFluentBuilder::new(self.handle.clone())
     }
 }

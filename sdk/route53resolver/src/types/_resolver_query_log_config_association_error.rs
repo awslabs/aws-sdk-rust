@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResolverQueryLogConfigAssociationError {
     #[allow(missing_docs)] // documentation missing in model
@@ -65,13 +59,9 @@ impl ::std::convert::From<&str> for ResolverQueryLogConfigAssociationError {
         match s {
             "ACCESS_DENIED" => ResolverQueryLogConfigAssociationError::AccessDenied,
             "DESTINATION_NOT_FOUND" => ResolverQueryLogConfigAssociationError::DestinationNotFound,
-            "INTERNAL_SERVICE_ERROR" => {
-                ResolverQueryLogConfigAssociationError::InternalServiceError
-            }
+            "INTERNAL_SERVICE_ERROR" => ResolverQueryLogConfigAssociationError::InternalServiceError,
             "NONE" => ResolverQueryLogConfigAssociationError::None,
-            other => ResolverQueryLogConfigAssociationError::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ResolverQueryLogConfigAssociationError::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,21 +78,14 @@ impl ResolverQueryLogConfigAssociationError {
         match self {
             ResolverQueryLogConfigAssociationError::AccessDenied => "ACCESS_DENIED",
             ResolverQueryLogConfigAssociationError::DestinationNotFound => "DESTINATION_NOT_FOUND",
-            ResolverQueryLogConfigAssociationError::InternalServiceError => {
-                "INTERNAL_SERVICE_ERROR"
-            }
+            ResolverQueryLogConfigAssociationError::InternalServiceError => "INTERNAL_SERVICE_ERROR",
             ResolverQueryLogConfigAssociationError::None => "NONE",
             ResolverQueryLogConfigAssociationError::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED",
-            "DESTINATION_NOT_FOUND",
-            "INTERNAL_SERVICE_ERROR",
-            "NONE",
-        ]
+        &["ACCESS_DENIED", "DESTINATION_NOT_FOUND", "INTERNAL_SERVICE_ERROR", "NONE"]
     }
 }
 impl ::std::convert::AsRef<str> for ResolverQueryLogConfigAssociationError {

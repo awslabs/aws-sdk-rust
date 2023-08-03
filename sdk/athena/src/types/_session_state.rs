@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SessionState {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for SessionState {
             "IDLE" => SessionState::Idle,
             "TERMINATED" => SessionState::Terminated,
             "TERMINATING" => SessionState::Terminating,
-            other => {
-                SessionState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SessionState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -113,16 +105,7 @@ impl SessionState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BUSY",
-            "CREATED",
-            "CREATING",
-            "DEGRADED",
-            "FAILED",
-            "IDLE",
-            "TERMINATED",
-            "TERMINATING",
-        ]
+        &["BUSY", "CREATED", "CREATING", "DEGRADED", "FAILED", "IDLE", "TERMINATED", "TERMINATING"]
     }
 }
 impl ::std::convert::AsRef<str> for SessionState {

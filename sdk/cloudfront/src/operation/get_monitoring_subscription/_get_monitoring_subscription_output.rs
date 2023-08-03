@@ -10,9 +10,7 @@ pub struct GetMonitoringSubscriptionOutput {
 }
 impl GetMonitoringSubscriptionOutput {
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    pub fn monitoring_subscription(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MonitoringSubscription> {
+    pub fn monitoring_subscription(&self) -> ::std::option::Option<&crate::types::MonitoringSubscription> {
         self.monitoring_subscription.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetMonitoringSubscriptionOutput {
 }
 impl GetMonitoringSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`GetMonitoringSubscriptionOutput`](crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionOutput).
-    pub fn builder() -> crate::operation::get_monitoring_subscription::builders::GetMonitoringSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::get_monitoring_subscription::builders::GetMonitoringSubscriptionOutputBuilder {
         crate::operation::get_monitoring_subscription::builders::GetMonitoringSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMonitoringSubscriptionOutput`](crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMonitoringSubscriptionOutputBuilder {
     pub(crate) monitoring_subscription: ::std::option::Option<crate::types::MonitoringSubscription>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetMonitoringSubscriptionOutputBuilder {
         self
     }
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    pub fn set_monitoring_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringSubscription>,
-    ) -> Self {
+    pub fn set_monitoring_subscription(mut self, input: ::std::option::Option<crate::types::MonitoringSubscription>) -> Self {
         self.monitoring_subscription = input;
         self
     }
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    pub fn get_monitoring_subscription(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringSubscription> {
+    pub fn get_monitoring_subscription(&self) -> &::std::option::Option<crate::types::MonitoringSubscription> {
         &self.monitoring_subscription
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl GetMonitoringSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMonitoringSubscriptionOutput`](crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionOutput {
+    pub fn build(self) -> crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionOutput {
         crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionOutput {
             monitoring_subscription: self.monitoring_subscription,
             _request_id: self._request_id,

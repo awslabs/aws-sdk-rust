@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for TagOpenIdConnectProviderOutput {
 }
 impl TagOpenIdConnectProviderOutput {
     /// Creates a new builder-style object to manufacture [`TagOpenIdConnectProviderOutput`](crate::operation::tag_open_id_connect_provider::TagOpenIdConnectProviderOutput).
-    pub fn builder() -> crate::operation::tag_open_id_connect_provider::builders::TagOpenIdConnectProviderOutputBuilder{
+    pub fn builder() -> crate::operation::tag_open_id_connect_provider::builders::TagOpenIdConnectProviderOutputBuilder {
         crate::operation::tag_open_id_connect_provider::builders::TagOpenIdConnectProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`TagOpenIdConnectProviderOutput`](crate::operation::tag_open_id_connect_provider::TagOpenIdConnectProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagOpenIdConnectProviderOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl TagOpenIdConnectProviderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`TagOpenIdConnectProviderOutput`](crate::operation::tag_open_id_connect_provider::TagOpenIdConnectProviderOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::tag_open_id_connect_provider::TagOpenIdConnectProviderOutput {
+    pub fn build(self) -> crate::operation::tag_open_id_connect_provider::TagOpenIdConnectProviderOutput {
         crate::operation::tag_open_id_connect_provider::TagOpenIdConnectProviderOutput {
             _request_id: self._request_id,
         }

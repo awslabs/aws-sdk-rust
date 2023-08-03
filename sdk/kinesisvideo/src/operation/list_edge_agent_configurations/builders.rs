@@ -27,7 +27,7 @@ impl ListEdgeAgentConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEdgeAgentConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_edge_agent_configurations::builders::ListEdgeAgentConfigurationsInputBuilder,
+    inner: crate::operation::list_edge_agent_configurations::builders::ListEdgeAgentConfigurationsInputBuilder,
 }
 impl ListEdgeAgentConfigurationsFluentBuilder {
     /// Creates a new `ListEdgeAgentConfigurations`.
@@ -38,7 +38,7 @@ impl ListEdgeAgentConfigurationsFluentBuilder {
         }
     }
     /// Access the ListEdgeAgentConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_edge_agent_configurations::builders::ListEdgeAgentConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_edge_agent_configurations::builders::ListEdgeAgentConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListEdgeAgentConfigurationsFluentBuilder {
             crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListEdgeAgentConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListEdgeAgentConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListEdgeAgentConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -115,31 +106,23 @@ impl ListEdgeAgentConfigurationsFluentBuilder {
             crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_edge_agent_configurations::paginator::ListEdgeAgentConfigurationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_edge_agent_configurations::paginator::ListEdgeAgentConfigurationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_edge_agent_configurations::paginator::ListEdgeAgentConfigurationsPaginator {
         crate::operation::list_edge_agent_configurations::paginator::ListEdgeAgentConfigurationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The "Internet of Things (IoT) Thing" Arn of the edge agent.</p>
-    pub fn hub_device_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hub_device_arn(input.into());
         self
     }
     /// <p>The "Internet of Things (IoT) Thing" Arn of the edge agent.</p>
-    pub fn set_hub_device_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hub_device_arn(input);
         self
     }

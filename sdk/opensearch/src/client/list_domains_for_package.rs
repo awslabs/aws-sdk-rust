@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`domain_package_details_list(Option<Vec<DomainPackageDetails>>)`](crate::operation::list_domains_for_package::ListDomainsForPackageOutput::domain_package_details_list): <p>Information about all domains associated with a package.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domains_for_package::ListDomainsForPackageOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListDomainsForPackageError>`](crate::operation::list_domains_for_package::ListDomainsForPackageError)
-    pub fn list_domains_for_package(
-        &self,
-    ) -> crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder
-    {
+    pub fn list_domains_for_package(&self) -> crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder {
         crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder::new(self.handle.clone())
     }
 }

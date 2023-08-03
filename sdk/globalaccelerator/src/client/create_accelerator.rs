@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAcceleratorOutput`](crate::operation::create_accelerator::CreateAcceleratorOutput) with field(s):
     ///   - [`accelerator(Option<Accelerator>)`](crate::operation::create_accelerator::CreateAcceleratorOutput::accelerator): <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
     /// - On failure, responds with [`SdkError<CreateAcceleratorError>`](crate::operation::create_accelerator::CreateAcceleratorError)
-    pub fn create_accelerator(
-        &self,
-    ) -> crate::operation::create_accelerator::builders::CreateAcceleratorFluentBuilder {
-        crate::operation::create_accelerator::builders::CreateAcceleratorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_accelerator(&self) -> crate::operation::create_accelerator::builders::CreateAcceleratorFluentBuilder {
+        crate::operation::create_accelerator::builders::CreateAcceleratorFluentBuilder::new(self.handle.clone())
     }
 }

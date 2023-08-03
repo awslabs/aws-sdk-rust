@@ -22,35 +22,26 @@ impl DeleteAccessPolicyInput {
 }
 impl DeleteAccessPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPolicyInput`](crate::operation::delete_access_policy::DeleteAccessPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_access_policy::builders::DeleteAccessPolicyInputBuilder {
+    pub fn builder() -> crate::operation::delete_access_policy::builders::DeleteAccessPolicyInputBuilder {
         crate::operation::delete_access_policy::builders::DeleteAccessPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessPolicyInput`](crate::operation::delete_access_policy::DeleteAccessPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessPolicyInputBuilder {
     pub(crate) access_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAccessPolicyInputBuilder {
     /// <p>The ID of the access policy to be deleted.</p>
-    pub fn access_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the access policy to be deleted.</p>
-    pub fn set_access_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_policy_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl DeleteAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccessPolicyInput`](crate::operation::delete_access_policy::DeleteAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_access_policy::DeleteAccessPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_access_policy::DeleteAccessPolicyInput {
-                access_policy_id: self.access_policy_id,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_access_policy::DeleteAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_access_policy::DeleteAccessPolicyInput {
+            access_policy_id: self.access_policy_id,
+            client_token: self.client_token,
+        })
     }
 }

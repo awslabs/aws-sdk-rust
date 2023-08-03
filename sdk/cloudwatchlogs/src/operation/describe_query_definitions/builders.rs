@@ -27,7 +27,7 @@ impl DescribeQueryDefinitionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeQueryDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_query_definitions::builders::DescribeQueryDefinitionsInputBuilder,
+    inner: crate::operation::describe_query_definitions::builders::DescribeQueryDefinitionsInputBuilder,
 }
 impl DescribeQueryDefinitionsFluentBuilder {
     /// Creates a new `DescribeQueryDefinitions`.
@@ -38,10 +38,7 @@ impl DescribeQueryDefinitionsFluentBuilder {
         }
     }
     /// Access the DescribeQueryDefinitions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_query_definitions::builders::DescribeQueryDefinitionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_query_definitions::builders::DescribeQueryDefinitionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeQueryDefinitionsFluentBuilder {
             crate::operation::describe_query_definitions::DescribeQueryDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_query_definitions::DescribeQueryDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_query_definitions::DescribeQueryDefinitionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeQueryDefinitionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeQueryDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_query_definitions::DescribeQueryDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_query_definitions::DescribeQueryDefinitionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeQueryDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_query_definitions::DescribeQueryDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_query_definitions::DescribeQueryDefinitionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,32 +106,22 @@ impl DescribeQueryDefinitionsFluentBuilder {
             crate::operation::describe_query_definitions::DescribeQueryDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_query_definitions::DescribeQueryDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_query_definitions::DescribeQueryDefinitionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
-    pub fn query_definition_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_definition_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_definition_name_prefix(input.into());
         self
     }
     /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
-    pub fn set_query_definition_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_definition_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_definition_name_prefix(input);
         self
     }
     /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
-    pub fn get_query_definition_name_prefix(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_query_definition_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_definition_name_prefix()
     }
     /// <p>Limits the number of returned query definitions to the specified number.</p>

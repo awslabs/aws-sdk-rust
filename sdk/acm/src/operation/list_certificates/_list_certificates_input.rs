@@ -5,8 +5,7 @@
 pub struct ListCertificatesInput {
     /// <p>Filter the certificate list by status value.</p>
     #[doc(hidden)]
-    pub certificate_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
+    pub certificate_statuses: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     #[doc(hidden)]
     pub includes: ::std::option::Option<crate::types::Filters>,
@@ -25,9 +24,7 @@ pub struct ListCertificatesInput {
 }
 impl ListCertificatesInput {
     /// <p>Filter the certificate list by status value.</p>
-    pub fn certificate_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CertificateStatus]> {
+    pub fn certificate_statuses(&self) -> ::std::option::Option<&[crate::types::CertificateStatus]> {
         self.certificate_statuses.as_deref()
     }
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
@@ -53,20 +50,16 @@ impl ListCertificatesInput {
 }
 impl ListCertificatesInput {
     /// Creates a new builder-style object to manufacture [`ListCertificatesInput`](crate::operation::list_certificates::ListCertificatesInput).
-    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesInputBuilder {
         crate::operation::list_certificates::builders::ListCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCertificatesInput`](crate::operation::list_certificates::ListCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCertificatesInputBuilder {
-    pub(crate) certificate_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
+    pub(crate) certificate_statuses: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
     pub(crate) includes: ::std::option::Option<crate::types::Filters>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -86,17 +79,12 @@ impl ListCertificatesInputBuilder {
         self
     }
     /// <p>Filter the certificate list by status value.</p>
-    pub fn set_certificate_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
-    ) -> Self {
+    pub fn set_certificate_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>) -> Self {
         self.certificate_statuses = input;
         self
     }
     /// <p>Filter the certificate list by status value.</p>
-    pub fn get_certificate_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>> {
+    pub fn get_certificate_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>> {
         &self.certificate_statuses
     }
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
@@ -172,10 +160,7 @@ impl ListCertificatesInputBuilder {
     /// Consumes the builder and constructs a [`ListCertificatesInput`](crate::operation::list_certificates::ListCertificatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_certificates::ListCertificatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_certificates::ListCertificatesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_certificates::ListCertificatesInput {
             certificate_statuses: self.certificate_statuses,
             includes: self.includes,

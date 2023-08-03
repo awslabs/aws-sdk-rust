@@ -4,17 +4,12 @@ pub fn ser_batch_transform_input(
     input: &crate::types::BatchTransformInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.data_captured_destination_s3_uri {
-        object
-            .key("DataCapturedDestinationS3Uri")
-            .string(var_1.as_str());
+        object.key("DataCapturedDestinationS3Uri").string(var_1.as_str());
     }
     if let Some(var_2) = &input.dataset_format {
         #[allow(unused_mut)]
         let mut object_3 = object.key("DatasetFormat").start_object();
-        crate::protocol_serde::shape_monitoring_dataset_format::ser_monitoring_dataset_format(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_monitoring_dataset_format::ser_monitoring_dataset_format(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.local_path {
@@ -52,17 +47,9 @@ pub fn ser_batch_transform_input(
 
 pub(crate) fn de_batch_transform_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::BatchTransformInput>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::BatchTransformInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -72,130 +59,94 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DataCapturedDestinationS3Uri" => {
-                                builder = builder.set_data_captured_destination_s3_uri(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DataCapturedDestinationS3Uri" => {
+                            builder = builder.set_data_captured_destination_s3_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "DatasetFormat" => {
-                                builder = builder.set_dataset_format(
-                                    crate::protocol_serde::shape_monitoring_dataset_format::de_monitoring_dataset_format(tokens)?
-                                );
-                            }
-                            "LocalPath" => {
-                                builder = builder.set_local_path(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "S3InputMode" => {
-                                builder = builder.set_s3_input_mode(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::ProcessingS3InputMode::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "S3DataDistributionType" => {
-                                builder = builder.set_s3_data_distribution_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::ProcessingS3DataDistributionType::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "FeaturesAttribute" => {
-                                builder = builder.set_features_attribute(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "InferenceAttribute" => {
-                                builder = builder.set_inference_attribute(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "ProbabilityAttribute" => {
-                                builder = builder.set_probability_attribute(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "ProbabilityThresholdAttribute" => {
-                                builder = builder.set_probability_threshold_attribute(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|v| v.to_f64_lossy()),
-                                );
-                            }
-                            "StartTimeOffset" => {
-                                builder = builder.set_start_time_offset(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "EndTimeOffset" => {
-                                builder = builder.set_end_time_offset(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "DatasetFormat" => {
+                            builder = builder.set_dataset_format(
+                                crate::protocol_serde::shape_monitoring_dataset_format::de_monitoring_dataset_format(tokens)?,
+                            );
+                        }
+                        "LocalPath" => {
+                            builder = builder.set_local_path(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "S3InputMode" => {
+                            builder = builder.set_s3_input_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ProcessingS3InputMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "S3DataDistributionType" => {
+                            builder = builder.set_s3_data_distribution_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ProcessingS3DataDistributionType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "FeaturesAttribute" => {
+                            builder = builder.set_features_attribute(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "InferenceAttribute" => {
+                            builder = builder.set_inference_attribute(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ProbabilityAttribute" => {
+                            builder = builder.set_probability_attribute(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ProbabilityThresholdAttribute" => {
+                            builder = builder.set_probability_threshold_attribute(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "StartTimeOffset" => {
+                            builder = builder.set_start_time_offset(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "EndTimeOffset" => {
+                            builder = builder.set_end_time_offset(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

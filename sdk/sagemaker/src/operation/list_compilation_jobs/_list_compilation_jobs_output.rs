@@ -5,8 +5,7 @@
 pub struct ListCompilationJobsOutput {
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job. </p>
     #[doc(hidden)]
-    pub compilation_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::CompilationJobSummary>>,
+    pub compilation_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CompilationJobSummary>>,
     /// <p>If the response is truncated, Amazon SageMaker returns this <code>NextToken</code>. To retrieve the next set of model compilation jobs, use this token in the next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListCompilationJobsOutput {
 }
 impl ListCompilationJobsOutput {
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job. </p>
-    pub fn compilation_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CompilationJobSummary]> {
+    pub fn compilation_job_summaries(&self) -> ::std::option::Option<&[crate::types::CompilationJobSummary]> {
         self.compilation_job_summaries.as_deref()
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this <code>NextToken</code>. To retrieve the next set of model compilation jobs, use this token in the next request.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCompilationJobsOutput {
 }
 impl ListCompilationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListCompilationJobsOutput`](crate::operation::list_compilation_jobs::ListCompilationJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_compilation_jobs::builders::ListCompilationJobsOutputBuilder {
-        crate::operation::list_compilation_jobs::builders::ListCompilationJobsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_compilation_jobs::builders::ListCompilationJobsOutputBuilder {
+        crate::operation::list_compilation_jobs::builders::ListCompilationJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCompilationJobsOutput`](crate::operation::list_compilation_jobs::ListCompilationJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCompilationJobsOutputBuilder {
-    pub(crate) compilation_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::CompilationJobSummary>>,
+    pub(crate) compilation_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CompilationJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListCompilationJobsOutputBuilder {
         self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job. </p>
-    pub fn set_compilation_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CompilationJobSummary>>,
-    ) -> Self {
+    pub fn set_compilation_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CompilationJobSummary>>) -> Self {
         self.compilation_job_summaries = input;
         self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job. </p>
-    pub fn get_compilation_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CompilationJobSummary>> {
+    pub fn get_compilation_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompilationJobSummary>> {
         &self.compilation_job_summaries
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this <code>NextToken</code>. To retrieve the next set of model compilation jobs, use this token in the next request.</p>

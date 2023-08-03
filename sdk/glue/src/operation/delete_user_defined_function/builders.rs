@@ -26,7 +26,7 @@ impl DeleteUserDefinedFunctionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUserDefinedFunctionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionInputBuilder,
+    inner: crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionInputBuilder,
 }
 impl DeleteUserDefinedFunctionFluentBuilder {
     /// Creates a new `DeleteUserDefinedFunction`.
@@ -37,7 +37,7 @@ impl DeleteUserDefinedFunctionFluentBuilder {
         }
     }
     /// Access the DeleteUserDefinedFunction as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteUserDefinedFunctionFluentBuilder {
             crate::operation::delete_user_defined_function::DeleteUserDefinedFunction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteUserDefinedFunctionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteUserDefinedFunctionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteUserDefinedFunctionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteUserDefinedFunctionFluentBuilder {
             crate::operation::delete_user_defined_function::DeleteUserDefinedFunction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DeleteUserDefinedFunctionFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The name of the catalog database where the function is located.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the catalog database where the function is located.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -155,18 +138,12 @@ impl DeleteUserDefinedFunctionFluentBuilder {
         self.inner.get_database_name()
     }
     /// <p>The name of the function definition to be deleted.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
     /// <p>The name of the function definition to be deleted.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }

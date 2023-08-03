@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateLogPatternOutput {
 }
 impl CreateLogPatternOutput {
     /// Creates a new builder-style object to manufacture [`CreateLogPatternOutput`](crate::operation::create_log_pattern::CreateLogPatternOutput).
-    pub fn builder() -> crate::operation::create_log_pattern::builders::CreateLogPatternOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_log_pattern::builders::CreateLogPatternOutputBuilder {
         crate::operation::create_log_pattern::builders::CreateLogPatternOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLogPatternOutput`](crate::operation::create_log_pattern::CreateLogPatternOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLogPatternOutputBuilder {
     pub(crate) log_pattern: ::std::option::Option<crate::types::LogPattern>,
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
@@ -51,10 +48,7 @@ impl CreateLogPatternOutputBuilder {
         self
     }
     /// <p>The successfully created log pattern.</p>
-    pub fn set_log_pattern(
-        mut self,
-        input: ::std::option::Option<crate::types::LogPattern>,
-    ) -> Self {
+    pub fn set_log_pattern(mut self, input: ::std::option::Option<crate::types::LogPattern>) -> Self {
         self.log_pattern = input;
         self
     }
@@ -63,18 +57,12 @@ impl CreateLogPatternOutputBuilder {
         &self.log_pattern
     }
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }

@@ -26,9 +26,7 @@ impl ValidateSolFunctionPackageContentMetadata {
 
 /// A builder for [`ValidateSolFunctionPackageContentMetadata`](crate::types::ValidateSolFunctionPackageContentMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateSolFunctionPackageContentMetadataBuilder {
     pub(crate) vnfd: ::std::option::Option<crate::types::FunctionArtifactMeta>,
 }
@@ -41,10 +39,7 @@ impl ValidateSolFunctionPackageContentMetadataBuilder {
     }
     /// <p>Metadata for function package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
-    pub fn set_vnfd(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionArtifactMeta>,
-    ) -> Self {
+    pub fn set_vnfd(mut self, input: ::std::option::Option<crate::types::FunctionArtifactMeta>) -> Self {
         self.vnfd = input;
         self
     }

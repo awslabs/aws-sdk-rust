@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`repositories(Option<Vec<Repository>>)`](crate::operation::describe_repositories::DescribeRepositoriesOutput::repositories): <p>A list of repository objects corresponding to valid repositories.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_repositories::DescribeRepositoriesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeRepositoriesError>`](crate::operation::describe_repositories::DescribeRepositoriesError)
-    pub fn describe_repositories(
-        &self,
-    ) -> crate::operation::describe_repositories::builders::DescribeRepositoriesFluentBuilder {
-        crate::operation::describe_repositories::builders::DescribeRepositoriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_repositories(&self) -> crate::operation::describe_repositories::builders::DescribeRepositoriesFluentBuilder {
+        crate::operation::describe_repositories::builders::DescribeRepositoriesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMethodResponseOutput {
 }
 impl DeleteMethodResponseOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMethodResponseOutput`](crate::operation::delete_method_response::DeleteMethodResponseOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_method_response::builders::DeleteMethodResponseOutputBuilder {
+    pub fn builder() -> crate::operation::delete_method_response::builders::DeleteMethodResponseOutputBuilder {
         crate::operation::delete_method_response::builders::DeleteMethodResponseOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMethodResponseOutput`](crate::operation::delete_method_response::DeleteMethodResponseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMethodResponseOutputBuilder {
     _request_id: Option<String>,
 }

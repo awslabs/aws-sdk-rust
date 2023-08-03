@@ -31,9 +31,7 @@ impl ResponseHeadersPolicyContentSecurityPolicy {
 
 /// A builder for [`ResponseHeadersPolicyContentSecurityPolicy`](crate::types::ResponseHeadersPolicyContentSecurityPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyContentSecurityPolicyBuilder {
     pub(crate) r#override: ::std::option::Option<bool>,
     pub(crate) content_security_policy: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ impl ResponseHeadersPolicyContentSecurityPolicyBuilder {
         &self.r#override
     }
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
-    pub fn content_security_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_security_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_security_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
-    pub fn set_content_security_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_security_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_security_policy = input;
         self
     }

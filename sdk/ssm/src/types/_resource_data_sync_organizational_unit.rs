@@ -23,26 +23,18 @@ impl ResourceDataSyncOrganizationalUnit {
 
 /// A builder for [`ResourceDataSyncOrganizationalUnit`](crate::types::ResourceDataSyncOrganizationalUnit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDataSyncOrganizationalUnitBuilder {
     pub(crate) organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDataSyncOrganizationalUnitBuilder {
     /// <p>The Organizations unit ID data source for the sync.</p>
-    pub fn organizational_unit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organizational_unit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Organizations unit ID data source for the sync.</p>
-    pub fn set_organizational_unit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organizational_unit_id = input;
         self
     }

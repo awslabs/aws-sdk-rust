@@ -30,9 +30,7 @@ impl Target {
 
 /// A builder for [`Target`](crate::types::Target).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetBuilder {
     pub(crate) channel_target_info: ::std::option::Option<crate::types::ChannelTargetInfo>,
     pub(crate) contact_target_info: ::std::option::Option<crate::types::ContactTargetInfo>,
@@ -44,17 +42,12 @@ impl TargetBuilder {
         self
     }
     /// <p>Information about the contact channel Incident Manager is engaging.</p>
-    pub fn set_channel_target_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelTargetInfo>,
-    ) -> Self {
+    pub fn set_channel_target_info(mut self, input: ::std::option::Option<crate::types::ChannelTargetInfo>) -> Self {
         self.channel_target_info = input;
         self
     }
     /// <p>Information about the contact channel Incident Manager is engaging.</p>
-    pub fn get_channel_target_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelTargetInfo> {
+    pub fn get_channel_target_info(&self) -> &::std::option::Option<crate::types::ChannelTargetInfo> {
         &self.channel_target_info
     }
     /// <p>Information about the contact that Incident Manager is engaging.</p>
@@ -63,17 +56,12 @@ impl TargetBuilder {
         self
     }
     /// <p>Information about the contact that Incident Manager is engaging.</p>
-    pub fn set_contact_target_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactTargetInfo>,
-    ) -> Self {
+    pub fn set_contact_target_info(mut self, input: ::std::option::Option<crate::types::ContactTargetInfo>) -> Self {
         self.contact_target_info = input;
         self
     }
     /// <p>Information about the contact that Incident Manager is engaging.</p>
-    pub fn get_contact_target_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContactTargetInfo> {
+    pub fn get_contact_target_info(&self) -> &::std::option::Option<crate::types::ContactTargetInfo> {
         &self.contact_target_info
     }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).

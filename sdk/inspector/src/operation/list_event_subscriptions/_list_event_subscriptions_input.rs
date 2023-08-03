@@ -29,18 +29,14 @@ impl ListEventSubscriptionsInput {
 }
 impl ListEventSubscriptionsInput {
     /// Creates a new builder-style object to manufacture [`ListEventSubscriptionsInput`](crate::operation::list_event_subscriptions::ListEventSubscriptionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsInputBuilder {
         crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventSubscriptionsInput`](crate::operation::list_event_subscriptions::ListEventSubscriptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventSubscriptionsInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListEventSubscriptionsInputBuilder {
     /// Consumes the builder and constructs a [`ListEventSubscriptionsInput`](crate::operation::list_event_subscriptions::ListEventSubscriptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_event_subscriptions::ListEventSubscriptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_event_subscriptions::ListEventSubscriptionsInput {
-                resource_arn: self.resource_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_event_subscriptions::ListEventSubscriptionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_event_subscriptions::ListEventSubscriptionsInput {
+            resource_arn: self.resource_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

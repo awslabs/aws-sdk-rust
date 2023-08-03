@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`telemetry_endpoint(Option<String>)`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput::telemetry_endpoint): <p>The telemetry endpoint for the Amazon ECS agent.</p>
     ///   - [`service_connect_endpoint(Option<String>)`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput::service_connect_endpoint): <p>The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// - On failure, responds with [`SdkError<DiscoverPollEndpointError>`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointError)
-    pub fn discover_poll_endpoint(
-        &self,
-    ) -> crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointFluentBuilder {
-        crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn discover_poll_endpoint(&self) -> crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointFluentBuilder {
+        crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointFluentBuilder::new(self.handle.clone())
     }
 }

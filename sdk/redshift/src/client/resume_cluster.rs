@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ResumeClusterOutput`](crate::operation::resume_cluster::ResumeClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::resume_cluster::ResumeClusterOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<ResumeClusterError>`](crate::operation::resume_cluster::ResumeClusterError)
-    pub fn resume_cluster(
-        &self,
-    ) -> crate::operation::resume_cluster::builders::ResumeClusterFluentBuilder {
-        crate::operation::resume_cluster::builders::ResumeClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn resume_cluster(&self) -> crate::operation::resume_cluster::builders::ResumeClusterFluentBuilder {
+        crate::operation::resume_cluster::builders::ResumeClusterFluentBuilder::new(self.handle.clone())
     }
 }

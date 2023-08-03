@@ -5,15 +5,12 @@
 pub struct DescribeDocumentClassificationJobOutput {
     /// <p>An object that describes the properties associated with the document classification job.</p>
     #[doc(hidden)]
-    pub document_classification_job_properties:
-        ::std::option::Option<crate::types::DocumentClassificationJobProperties>,
+    pub document_classification_job_properties: ::std::option::Option<crate::types::DocumentClassificationJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeDocumentClassificationJobOutput {
     /// <p>An object that describes the properties associated with the document classification job.</p>
-    pub fn document_classification_job_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentClassificationJobProperties> {
+    pub fn document_classification_job_properties(&self) -> ::std::option::Option<&crate::types::DocumentClassificationJobProperties> {
         self.document_classification_job_properties.as_ref()
     }
 }
@@ -24,27 +21,21 @@ impl ::aws_http::request_id::RequestId for DescribeDocumentClassificationJobOutp
 }
 impl DescribeDocumentClassificationJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentClassificationJobOutput`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobOutput).
-    pub fn builder() -> crate::operation::describe_document_classification_job::builders::DescribeDocumentClassificationJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_document_classification_job::builders::DescribeDocumentClassificationJobOutputBuilder {
         crate::operation::describe_document_classification_job::builders::DescribeDocumentClassificationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDocumentClassificationJobOutput`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDocumentClassificationJobOutputBuilder {
-    pub(crate) document_classification_job_properties:
-        ::std::option::Option<crate::types::DocumentClassificationJobProperties>,
+    pub(crate) document_classification_job_properties: ::std::option::Option<crate::types::DocumentClassificationJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeDocumentClassificationJobOutputBuilder {
     /// <p>An object that describes the properties associated with the document classification job.</p>
-    pub fn document_classification_job_properties(
-        mut self,
-        input: crate::types::DocumentClassificationJobProperties,
-    ) -> Self {
+    pub fn document_classification_job_properties(mut self, input: crate::types::DocumentClassificationJobProperties) -> Self {
         self.document_classification_job_properties = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +48,7 @@ impl DescribeDocumentClassificationJobOutputBuilder {
         self
     }
     /// <p>An object that describes the properties associated with the document classification job.</p>
-    pub fn get_document_classification_job_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentClassificationJobProperties> {
+    pub fn get_document_classification_job_properties(&self) -> &::std::option::Option<crate::types::DocumentClassificationJobProperties> {
         &self.document_classification_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +61,9 @@ impl DescribeDocumentClassificationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDocumentClassificationJobOutput`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobOutput).
-    pub fn build(self) -> crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobOutput{
+    pub fn build(self) -> crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobOutput {
         crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobOutput {
-            document_classification_job_properties: self.document_classification_job_properties
-            ,
+            document_classification_job_properties: self.document_classification_job_properties,
             _request_id: self._request_id,
         }
     }

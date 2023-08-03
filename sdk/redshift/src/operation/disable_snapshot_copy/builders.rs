@@ -38,9 +38,7 @@ impl DisableSnapshotCopyFluentBuilder {
         }
     }
     /// Access the DisableSnapshotCopy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DisableSnapshotCopyFluentBuilder {
             crate::operation::disable_snapshot_copy::DisableSnapshotCopy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_snapshot_copy::DisableSnapshotCopyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_snapshot_copy::DisableSnapshotCopyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DisableSnapshotCopyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DisableSnapshotCopyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_snapshot_copy::DisableSnapshotCopyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_snapshot_copy::DisableSnapshotCopyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_snapshot_copy::DisableSnapshotCopyError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DisableSnapshotCopyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_snapshot_copy::DisableSnapshotCopyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_snapshot_copy::DisableSnapshotCopyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_snapshot_copy::DisableSnapshotCopyError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +106,19 @@ impl DisableSnapshotCopyFluentBuilder {
             crate::operation::disable_snapshot_copy::DisableSnapshotCopy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_snapshot_copy::DisableSnapshotCopyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_snapshot_copy::DisableSnapshotCopyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }

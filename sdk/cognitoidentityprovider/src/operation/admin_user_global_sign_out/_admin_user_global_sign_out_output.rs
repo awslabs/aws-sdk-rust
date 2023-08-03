@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for AdminUserGlobalSignOutOutput {
 }
 impl AdminUserGlobalSignOutOutput {
     /// Creates a new builder-style object to manufacture [`AdminUserGlobalSignOutOutput`](crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutOutput).
-    pub fn builder(
-    ) -> crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutOutputBuilder
-    {
+    pub fn builder() -> crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutOutputBuilder {
         crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutOutputBuilder::default()
     }
 }
 
 /// A builder for [`AdminUserGlobalSignOutOutput`](crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminUserGlobalSignOutOutputBuilder {
     _request_id: Option<String>,
 }
@@ -39,9 +35,7 @@ impl AdminUserGlobalSignOutOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AdminUserGlobalSignOutOutput`](crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutOutput {
+    pub fn build(self) -> crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutOutput {
         crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutOutput {
             _request_id: self._request_id,
         }

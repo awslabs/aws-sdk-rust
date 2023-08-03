@@ -35,9 +35,7 @@ impl GetBulkPublishDetailsOutput {
         self.bulk_publish_start_time.as_ref()
     }
     /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-    pub fn bulk_publish_complete_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn bulk_publish_complete_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.bulk_publish_complete_time.as_ref()
     }
     /// Status of the last bulk publish operation, valid values are:
@@ -60,18 +58,14 @@ impl ::aws_http::request_id::RequestId for GetBulkPublishDetailsOutput {
 }
 impl GetBulkPublishDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetBulkPublishDetailsOutput`](crate::operation::get_bulk_publish_details::GetBulkPublishDetailsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_bulk_publish_details::builders::GetBulkPublishDetailsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_bulk_publish_details::builders::GetBulkPublishDetailsOutputBuilder {
         crate::operation::get_bulk_publish_details::builders::GetBulkPublishDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBulkPublishDetailsOutput`](crate::operation::get_bulk_publish_details::GetBulkPublishDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBulkPublishDetailsOutputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) bulk_publish_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -82,18 +76,12 @@ pub struct GetBulkPublishDetailsOutputBuilder {
 }
 impl GetBulkPublishDetailsOutputBuilder {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -107,17 +95,12 @@ impl GetBulkPublishDetailsOutputBuilder {
         self
     }
     /// The date/time at which the last bulk publish was initiated.
-    pub fn set_bulk_publish_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_bulk_publish_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.bulk_publish_start_time = input;
         self
     }
     /// The date/time at which the last bulk publish was initiated.
-    pub fn get_bulk_publish_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_bulk_publish_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.bulk_publish_start_time
     }
     /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
@@ -126,17 +109,12 @@ impl GetBulkPublishDetailsOutputBuilder {
         self
     }
     /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-    pub fn set_bulk_publish_complete_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_bulk_publish_complete_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.bulk_publish_complete_time = input;
         self
     }
     /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-    pub fn get_bulk_publish_complete_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_bulk_publish_complete_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.bulk_publish_complete_time
     }
     /// Status of the last bulk publish operation, valid values are:
@@ -153,10 +131,7 @@ impl GetBulkPublishDetailsOutputBuilder {
     /// <p>IN_PROGRESS - Data is being published to the configured stream</p>
     /// <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p>
     /// <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
-    pub fn set_bulk_publish_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BulkPublishStatus>,
-    ) -> Self {
+    pub fn set_bulk_publish_status(mut self, input: ::std::option::Option<crate::types::BulkPublishStatus>) -> Self {
         self.bulk_publish_status = input;
         self
     }
@@ -165,24 +140,16 @@ impl GetBulkPublishDetailsOutputBuilder {
     /// <p>IN_PROGRESS - Data is being published to the configured stream</p>
     /// <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p>
     /// <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
-    pub fn get_bulk_publish_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::BulkPublishStatus> {
+    pub fn get_bulk_publish_status(&self) -> &::std::option::Option<crate::types::BulkPublishStatus> {
         &self.bulk_publish_status
     }
     /// If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
-    pub fn failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
-    pub fn set_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_message = input;
         self
     }

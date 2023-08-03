@@ -28,9 +28,7 @@ impl QuerySchemaVersionMetadataInput {
         self.schema_id.as_ref()
     }
     /// <p>The version number of the schema.</p>
-    pub fn schema_version_number(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SchemaVersionNumber> {
+    pub fn schema_version_number(&self) -> ::std::option::Option<&crate::types::SchemaVersionNumber> {
         self.schema_version_number.as_ref()
     }
     /// <p>The unique version ID of the schema version.</p>
@@ -52,22 +50,19 @@ impl QuerySchemaVersionMetadataInput {
 }
 impl QuerySchemaVersionMetadataInput {
     /// Creates a new builder-style object to manufacture [`QuerySchemaVersionMetadataInput`](crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataInput).
-    pub fn builder() -> crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataInputBuilder{
+    pub fn builder() -> crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataInputBuilder {
         crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`QuerySchemaVersionMetadataInput`](crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QuerySchemaVersionMetadataInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) schema_version_number: ::std::option::Option<crate::types::SchemaVersionNumber>,
     pub(crate) schema_version_id: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetadataKeyValuePair>>,
+    pub(crate) metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::MetadataKeyValuePair>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -92,32 +87,21 @@ impl QuerySchemaVersionMetadataInputBuilder {
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn set_schema_version_number(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionNumber>,
-    ) -> Self {
+    pub fn set_schema_version_number(mut self, input: ::std::option::Option<crate::types::SchemaVersionNumber>) -> Self {
         self.schema_version_number = input;
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn get_schema_version_number(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+    pub fn get_schema_version_number(&self) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
         &self.schema_version_number
     }
     /// <p>The unique version ID of the schema version.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique version ID of the schema version.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version_id = input;
         self
     }
@@ -137,17 +121,12 @@ impl QuerySchemaVersionMetadataInputBuilder {
         self
     }
     /// <p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>
-    pub fn set_metadata_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetadataKeyValuePair>>,
-    ) -> Self {
+    pub fn set_metadata_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetadataKeyValuePair>>) -> Self {
         self.metadata_list = input;
         self
     }
     /// <p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>
-    pub fn get_metadata_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataKeyValuePair>> {
+    pub fn get_metadata_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataKeyValuePair>> {
         &self.metadata_list
     }
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
@@ -185,15 +164,13 @@ impl QuerySchemaVersionMetadataInputBuilder {
         crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataInput {
-                schema_id: self.schema_id,
-                schema_version_number: self.schema_version_number,
-                schema_version_id: self.schema_version_id,
-                metadata_list: self.metadata_list,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataInput {
+            schema_id: self.schema_id,
+            schema_version_number: self.schema_version_number,
+            schema_version_id: self.schema_version_id,
+            metadata_list: self.metadata_list,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

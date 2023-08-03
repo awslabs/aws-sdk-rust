@@ -27,7 +27,7 @@ impl AssumeDecoratedRoleWithSamlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssumeDecoratedRoleWithSAMLFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::assume_decorated_role_with_saml::builders::AssumeDecoratedRoleWithSamlInputBuilder,
+    inner: crate::operation::assume_decorated_role_with_saml::builders::AssumeDecoratedRoleWithSamlInputBuilder,
 }
 impl AssumeDecoratedRoleWithSAMLFluentBuilder {
     /// Creates a new `AssumeDecoratedRoleWithSAML`.
@@ -38,7 +38,7 @@ impl AssumeDecoratedRoleWithSAMLFluentBuilder {
         }
     }
     /// Access the AssumeDecoratedRoleWithSAML as a reference.
-    pub fn as_input(&self) -> &crate::operation::assume_decorated_role_with_saml::builders::AssumeDecoratedRoleWithSamlInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::assume_decorated_role_with_saml::builders::AssumeDecoratedRoleWithSamlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl AssumeDecoratedRoleWithSAMLFluentBuilder {
             crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAML,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAMLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAMLError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl AssumeDecoratedRoleWithSAMLFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl AssumeDecoratedRoleWithSAMLFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAMLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAMLError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl AssumeDecoratedRoleWithSAMLFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAMLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAMLError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl AssumeDecoratedRoleWithSAMLFluentBuilder {
             crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAML,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAMLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAMLError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
-    pub fn saml_assertion(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn saml_assertion(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.saml_assertion(input.into());
         self
     }
     /// <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
-    pub fn set_saml_assertion(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_saml_assertion(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_saml_assertion(input);
         self
     }
@@ -156,18 +139,12 @@ impl AssumeDecoratedRoleWithSAMLFluentBuilder {
         self.inner.get_role_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_arn(input);
         self
     }

@@ -74,9 +74,7 @@ impl DataCellsFilter {
 
 /// A builder for [`DataCellsFilter`](crate::types::DataCellsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataCellsFilterBuilder {
     pub(crate) table_catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -89,18 +87,12 @@ pub struct DataCellsFilterBuilder {
 }
 impl DataCellsFilterBuilder {
     /// <p>The ID of the catalog to which the table belongs.</p>
-    pub fn table_catalog_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_catalog_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the catalog to which the table belongs.</p>
-    pub fn set_table_catalog_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_catalog_id = input;
         self
     }
@@ -109,18 +101,12 @@ impl DataCellsFilterBuilder {
         &self.table_catalog_id
     }
     /// <p>A database in the Glue Data Catalog.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A database in the Glue Data Catalog.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -182,17 +168,12 @@ impl DataCellsFilterBuilder {
         self
     }
     /// <p>A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.</p>
-    pub fn set_column_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_column_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.column_names = input;
         self
     }
     /// <p>A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.</p>
-    pub fn get_column_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_column_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.column_names
     }
     /// <p>A wildcard with exclusions.</p>
@@ -203,10 +184,7 @@ impl DataCellsFilterBuilder {
     }
     /// <p>A wildcard with exclusions.</p>
     /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
-    pub fn set_column_wildcard(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnWildcard>,
-    ) -> Self {
+    pub fn set_column_wildcard(mut self, input: ::std::option::Option<crate::types::ColumnWildcard>) -> Self {
         self.column_wildcard = input;
         self
     }

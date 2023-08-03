@@ -10,10 +10,7 @@ impl CreateNetworkSiteInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_network_site::CreateNetworkSiteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_site::CreateNetworkSiteError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_site::CreateNetworkSiteError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_network_site();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateNetworkSiteFluentBuilder {
         }
     }
     /// Access the CreateNetworkSite as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_network_site::builders::CreateNetworkSiteInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_network_site::builders::CreateNetworkSiteInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateNetworkSiteFluentBuilder {
             crate::operation::create_network_site::CreateNetworkSite,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_site::CreateNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_site::CreateNetworkSiteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateNetworkSiteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateNetworkSiteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_network_site::CreateNetworkSiteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_site::CreateNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_site::CreateNetworkSiteError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateNetworkSiteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_network_site::CreateNetworkSiteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_site::CreateNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_site::CreateNetworkSiteError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateNetworkSiteFluentBuilder {
             crate::operation::create_network_site::CreateNetworkSite,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_site::CreateNetworkSiteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_site::CreateNetworkSiteError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the site. You can't change the name after you create the site.</p>
-    pub fn network_site_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_site_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_site_name(input.into());
         self
     }
     /// <p>The name of the site. You can't change the name after you create the site.</p>
-    pub fn set_network_site_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_site_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_site_name(input);
         self
     }
@@ -176,10 +154,7 @@ impl CreateNetworkSiteFluentBuilder {
         self
     }
     /// <p>Information about the pending plan for this site.</p>
-    pub fn set_pending_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::SitePlan>,
-    ) -> Self {
+    pub fn set_pending_plan(mut self, input: ::std::option::Option<crate::types::SitePlan>) -> Self {
         self.inner = self.inner.set_pending_plan(input);
         self
     }
@@ -202,18 +177,12 @@ impl CreateNetworkSiteFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The Availability Zone that is the parent of this site. You can't change the Availability Zone after you create the site.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// <p>The Availability Zone that is the parent of this site. You can't change the Availability Zone after you create the site.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
@@ -222,18 +191,12 @@ impl CreateNetworkSiteFluentBuilder {
         self.inner.get_availability_zone()
     }
     /// <p>The ID of the Availability Zone that is the parent of this site. You can't change the Availability Zone after you create the site.</p>
-    pub fn availability_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone_id(input.into());
         self
     }
     /// <p>The ID of the Availability Zone that is the parent of this site. You can't change the Availability Zone after you create the site.</p>
-    pub fn set_availability_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone_id(input);
         self
     }
@@ -246,30 +209,17 @@ impl CreateNetworkSiteFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags to apply to the network site. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> The tags to apply to the network site. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> The tags to apply to the network site. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

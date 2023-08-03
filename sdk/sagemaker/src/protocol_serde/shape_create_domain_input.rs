@@ -43,17 +43,13 @@ pub fn ser_create_domain_input(
         object.key("AppNetworkAccessType").string(var_13.as_str());
     }
     if let Some(var_14) = &input.home_efs_file_system_kms_key_id {
-        object
-            .key("HomeEfsFileSystemKmsKeyId")
-            .string(var_14.as_str());
+        object.key("HomeEfsFileSystemKmsKeyId").string(var_14.as_str());
     }
     if let Some(var_15) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_15.as_str());
     }
     if let Some(var_16) = &input.app_security_group_management {
-        object
-            .key("AppSecurityGroupManagement")
-            .string(var_16.as_str());
+        object.key("AppSecurityGroupManagement").string(var_16.as_str());
     }
     if let Some(var_17) = &input.domain_settings {
         #[allow(unused_mut)]
@@ -64,10 +60,7 @@ pub fn ser_create_domain_input(
     if let Some(var_19) = &input.default_space_settings {
         #[allow(unused_mut)]
         let mut object_20 = object.key("DefaultSpaceSettings").start_object();
-        crate::protocol_serde::shape_default_space_settings::ser_default_space_settings(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_default_space_settings::ser_default_space_settings(&mut object_20, var_19)?;
         object_20.finish();
     }
     Ok(())

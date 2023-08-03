@@ -21,41 +21,31 @@ impl ::aws_http::request_id::RequestId for CreateNotebookInstanceLifecycleConfig
 }
 impl CreateNotebookInstanceLifecycleConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateNotebookInstanceLifecycleConfigOutput`](crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput).
-    pub fn builder() -> crate::operation::create_notebook_instance_lifecycle_config::builders::CreateNotebookInstanceLifecycleConfigOutputBuilder{
+    pub fn builder() -> crate::operation::create_notebook_instance_lifecycle_config::builders::CreateNotebookInstanceLifecycleConfigOutputBuilder {
         crate::operation::create_notebook_instance_lifecycle_config::builders::CreateNotebookInstanceLifecycleConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNotebookInstanceLifecycleConfigOutput`](crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNotebookInstanceLifecycleConfigOutputBuilder {
     pub(crate) notebook_instance_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateNotebookInstanceLifecycleConfigOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_lifecycle_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    pub fn set_notebook_instance_lifecycle_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_instance_lifecycle_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    pub fn get_notebook_instance_lifecycle_config_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_notebook_instance_lifecycle_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_instance_lifecycle_config_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,10 +58,9 @@ impl CreateNotebookInstanceLifecycleConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateNotebookInstanceLifecycleConfigOutput`](crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput).
-    pub fn build(self) -> crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput{
+    pub fn build(self) -> crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput {
         crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput {
-            notebook_instance_lifecycle_config_arn: self.notebook_instance_lifecycle_config_arn
-            ,
+            notebook_instance_lifecycle_config_arn: self.notebook_instance_lifecycle_config_arn,
             _request_id: self._request_id,
         }
     }

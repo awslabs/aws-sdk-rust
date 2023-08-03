@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListStreamingSessionsOutput {
 }
 impl ListStreamingSessionsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamingSessionsOutput`](crate::operation::list_streaming_sessions::ListStreamingSessionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_streaming_sessions::builders::ListStreamingSessionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_streaming_sessions::builders::ListStreamingSessionsOutputBuilder {
         crate::operation::list_streaming_sessions::builders::ListStreamingSessionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStreamingSessionsOutput`](crate::operation::list_streaming_sessions::ListStreamingSessionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamingSessionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) sessions: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSession>>,
@@ -72,17 +68,12 @@ impl ListStreamingSessionsOutputBuilder {
         self
     }
     /// <p>A collection of streaming sessions.</p>
-    pub fn set_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSession>>,
-    ) -> Self {
+    pub fn set_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSession>>) -> Self {
         self.sessions = input;
         self
     }
     /// <p>A collection of streaming sessions.</p>
-    pub fn get_sessions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingSession>> {
+    pub fn get_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingSession>> {
         &self.sessions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

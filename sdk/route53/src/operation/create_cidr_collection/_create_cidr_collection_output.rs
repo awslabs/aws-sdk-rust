@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateCidrCollectionOutput {
 }
 impl CreateCidrCollectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateCidrCollectionOutput`](crate::operation::create_cidr_collection::CreateCidrCollectionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_cidr_collection::builders::CreateCidrCollectionOutputBuilder {
+    pub fn builder() -> crate::operation::create_cidr_collection::builders::CreateCidrCollectionOutputBuilder {
         crate::operation::create_cidr_collection::builders::CreateCidrCollectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCidrCollectionOutput`](crate::operation::create_cidr_collection::CreateCidrCollectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCidrCollectionOutputBuilder {
     pub(crate) collection: ::std::option::Option<crate::types::CidrCollection>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -51,10 +48,7 @@ impl CreateCidrCollectionOutputBuilder {
         self
     }
     /// <p>A complex type that contains information about the CIDR collection.</p>
-    pub fn set_collection(
-        mut self,
-        input: ::std::option::Option<crate::types::CidrCollection>,
-    ) -> Self {
+    pub fn set_collection(mut self, input: ::std::option::Option<crate::types::CidrCollection>) -> Self {
         self.collection = input;
         self
     }

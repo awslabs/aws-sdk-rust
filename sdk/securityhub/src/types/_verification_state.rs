@@ -40,13 +40,7 @@
 /// _Note: `VerificationState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum VerificationState {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for VerificationState {
             "FALSE_POSITIVE" => VerificationState::FalsePositive,
             "TRUE_POSITIVE" => VerificationState::TruePositive,
             "UNKNOWN" => VerificationState::UnknownValue,
-            other => {
-                VerificationState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => VerificationState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl VerificationState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BENIGN_POSITIVE",
-            "FALSE_POSITIVE",
-            "TRUE_POSITIVE",
-            "UNKNOWN",
-        ]
+        &["BENIGN_POSITIVE", "FALSE_POSITIVE", "TRUE_POSITIVE", "UNKNOWN"]
     }
 }
 impl ::std::convert::AsRef<str> for VerificationState {

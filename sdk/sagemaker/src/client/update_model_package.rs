@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateModelPackageOutput`](crate::operation::update_model_package::UpdateModelPackageOutput) with field(s):
     ///   - [`model_package_arn(Option<String>)`](crate::operation::update_model_package::UpdateModelPackageOutput::model_package_arn): <p>The Amazon Resource Name (ARN) of the model.</p>
     /// - On failure, responds with [`SdkError<UpdateModelPackageError>`](crate::operation::update_model_package::UpdateModelPackageError)
-    pub fn update_model_package(
-        &self,
-    ) -> crate::operation::update_model_package::builders::UpdateModelPackageFluentBuilder {
-        crate::operation::update_model_package::builders::UpdateModelPackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_model_package(&self) -> crate::operation::update_model_package::builders::UpdateModelPackageFluentBuilder {
+        crate::operation::update_model_package::builders::UpdateModelPackageFluentBuilder::new(self.handle.clone())
     }
 }

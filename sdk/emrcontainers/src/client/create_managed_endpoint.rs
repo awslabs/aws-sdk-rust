@@ -18,12 +18,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_managed_endpoint::CreateManagedEndpointOutput::arn): <p>The output contains the ARN of the managed endpoint.</p>
     ///   - [`virtual_cluster_id(Option<String>)`](crate::operation::create_managed_endpoint::CreateManagedEndpointOutput::virtual_cluster_id): <p>The output contains the ID of the virtual cluster.</p>
     /// - On failure, responds with [`SdkError<CreateManagedEndpointError>`](crate::operation::create_managed_endpoint::CreateManagedEndpointError)
-    pub fn create_managed_endpoint(
-        &self,
-    ) -> crate::operation::create_managed_endpoint::builders::CreateManagedEndpointFluentBuilder
-    {
-        crate::operation::create_managed_endpoint::builders::CreateManagedEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_managed_endpoint(&self) -> crate::operation::create_managed_endpoint::builders::CreateManagedEndpointFluentBuilder {
+        crate::operation::create_managed_endpoint::builders::CreateManagedEndpointFluentBuilder::new(self.handle.clone())
     }
 }

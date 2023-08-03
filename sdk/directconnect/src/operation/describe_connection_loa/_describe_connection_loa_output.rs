@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeConnectionLoaOutput {
 }
 impl DescribeConnectionLoaOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionLoaOutput`](crate::operation::describe_connection_loa::DescribeConnectionLoaOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_connection_loa::builders::DescribeConnectionLoaOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_connection_loa::builders::DescribeConnectionLoaOutputBuilder {
         crate::operation::describe_connection_loa::builders::DescribeConnectionLoaOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectionLoaOutput`](crate::operation::describe_connection_loa::DescribeConnectionLoaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectionLoaOutputBuilder {
     pub(crate) loa: ::std::option::Option<crate::types::Loa>,
     _request_id: Option<String>,

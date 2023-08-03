@@ -55,9 +55,7 @@ impl GetGeoLocationInput {
 
 /// A builder for [`GetGeoLocationInput`](crate::operation::get_geo_location::GetGeoLocationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGeoLocationInputBuilder {
     pub(crate) continent_code: ::std::option::Option<::std::string::String>,
     pub(crate) country_code: ::std::option::Option<::std::string::String>,
@@ -74,10 +72,7 @@ impl GetGeoLocationInputBuilder {
     /// <li> <p> <b>NA</b>: North America</p> </li>
     /// <li> <p> <b>SA</b>: South America</p> </li>
     /// </ul>
-    pub fn continent_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn continent_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continent_code = ::std::option::Option::Some(input.into());
         self
     }
@@ -91,10 +86,7 @@ impl GetGeoLocationInputBuilder {
     /// <li> <p> <b>NA</b>: North America</p> </li>
     /// <li> <p> <b>SA</b>: South America</p> </li>
     /// </ul>
-    pub fn set_continent_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_continent_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continent_code = input;
         self
     }
@@ -126,18 +118,12 @@ impl GetGeoLocationInputBuilder {
         &self.country_code
     }
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-    pub fn subdivision_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subdivision_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subdivision_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-    pub fn set_subdivision_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subdivision_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subdivision_code = input;
         self
     }
@@ -148,10 +134,7 @@ impl GetGeoLocationInputBuilder {
     /// Consumes the builder and constructs a [`GetGeoLocationInput`](crate::operation::get_geo_location::GetGeoLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_geo_location::GetGeoLocationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_geo_location::GetGeoLocationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_geo_location::GetGeoLocationInput {
             continent_code: self.continent_code,
             country_code: self.country_code,

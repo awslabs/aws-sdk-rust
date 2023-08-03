@@ -13,9 +13,7 @@ pub fn ser_describe_provisioning_artifact_input(
         object.key("ProductId").string(var_3.as_str());
     }
     if let Some(var_4) = &input.provisioning_artifact_name {
-        object
-            .key("ProvisioningArtifactName")
-            .string(var_4.as_str());
+        object.key("ProvisioningArtifactName").string(var_4.as_str());
     }
     if let Some(var_5) = &input.product_name {
         object.key("ProductName").string(var_5.as_str());
@@ -24,9 +22,7 @@ pub fn ser_describe_provisioning_artifact_input(
         object.key("Verbose").boolean(*var_6);
     }
     if let Some(var_7) = &input.include_provisioning_artifact_parameters {
-        object
-            .key("IncludeProvisioningArtifactParameters")
-            .boolean(*var_7);
+        object.key("IncludeProvisioningArtifactParameters").boolean(*var_7);
     }
     Ok(())
 }

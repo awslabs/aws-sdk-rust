@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for ValidateConfigurationSettingsOutput {
 }
 impl ValidateConfigurationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`ValidateConfigurationSettingsOutput`](crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput).
-    pub fn builder() -> crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsOutputBuilder {
         crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ValidateConfigurationSettingsOutput`](crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateConfigurationSettingsOutputBuilder {
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>,
     _request_id: Option<String>,
@@ -49,17 +47,12 @@ impl ValidateConfigurationSettingsOutputBuilder {
         self
     }
     /// <p> A list of <code>ValidationMessage</code>. </p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>) -> Self {
         self.messages = input;
         self
     }
     /// <p> A list of <code>ValidationMessage</code>. </p>
-    pub fn get_messages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>> {
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>> {
         &self.messages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +65,7 @@ impl ValidateConfigurationSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ValidateConfigurationSettingsOutput`](crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput
-    {
+    pub fn build(self) -> crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput {
         crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput {
             messages: self.messages,
             _request_id: self._request_id,

@@ -26,7 +26,7 @@ impl UpdateTopicRefreshScheduleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTopicRefreshScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_topic_refresh_schedule::builders::UpdateTopicRefreshScheduleInputBuilder,
+    inner: crate::operation::update_topic_refresh_schedule::builders::UpdateTopicRefreshScheduleInputBuilder,
 }
 impl UpdateTopicRefreshScheduleFluentBuilder {
     /// Creates a new `UpdateTopicRefreshSchedule`.
@@ -37,7 +37,7 @@ impl UpdateTopicRefreshScheduleFluentBuilder {
         }
     }
     /// Access the UpdateTopicRefreshSchedule as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_topic_refresh_schedule::builders::UpdateTopicRefreshScheduleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_topic_refresh_schedule::builders::UpdateTopicRefreshScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateTopicRefreshScheduleFluentBuilder {
             crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateTopicRefreshScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateTopicRefreshScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateTopicRefreshScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateTopicRefreshScheduleFluentBuilder {
             crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want to update.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want to update.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -174,17 +157,12 @@ impl UpdateTopicRefreshScheduleFluentBuilder {
         self
     }
     /// <p>The definition of a refresh schedule.</p>
-    pub fn set_refresh_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRefreshSchedule>,
-    ) -> Self {
+    pub fn set_refresh_schedule(mut self, input: ::std::option::Option<crate::types::TopicRefreshSchedule>) -> Self {
         self.inner = self.inner.set_refresh_schedule(input);
         self
     }
     /// <p>The definition of a refresh schedule.</p>
-    pub fn get_refresh_schedule(
-        &self,
-    ) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
+    pub fn get_refresh_schedule(&self) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
         self.inner.get_refresh_schedule()
     }
 }

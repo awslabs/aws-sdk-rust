@@ -22,17 +22,14 @@ impl RevokeDomainAccessInput {
 }
 impl RevokeDomainAccessInput {
     /// Creates a new builder-style object to manufacture [`RevokeDomainAccessInput`](crate::operation::revoke_domain_access::RevokeDomainAccessInput).
-    pub fn builder(
-    ) -> crate::operation::revoke_domain_access::builders::RevokeDomainAccessInputBuilder {
+    pub fn builder() -> crate::operation::revoke_domain_access::builders::RevokeDomainAccessInputBuilder {
         crate::operation::revoke_domain_access::builders::RevokeDomainAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeDomainAccessInput`](crate::operation::revoke_domain_access::RevokeDomainAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeDomainAccessInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl RevokeDomainAccessInputBuilder {
     /// Consumes the builder and constructs a [`RevokeDomainAccessInput`](crate::operation::revoke_domain_access::RevokeDomainAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_domain_access::RevokeDomainAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::revoke_domain_access::RevokeDomainAccessInput {
-                fleet_arn: self.fleet_arn,
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::revoke_domain_access::RevokeDomainAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::revoke_domain_access::RevokeDomainAccessInput {
+            fleet_arn: self.fleet_arn,
+            domain_name: self.domain_name,
+        })
     }
 }

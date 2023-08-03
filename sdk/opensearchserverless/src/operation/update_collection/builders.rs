@@ -10,10 +10,7 @@ impl UpdateCollectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_collection::UpdateCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_collection::UpdateCollectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_collection::UpdateCollectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_collection();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateCollectionFluentBuilder {
         }
     }
     /// Access the UpdateCollection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_collection::builders::UpdateCollectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_collection::builders::UpdateCollectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateCollectionFluentBuilder {
             crate::operation::update_collection::UpdateCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_collection::UpdateCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_collection::UpdateCollectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateCollectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_collection::UpdateCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_collection::UpdateCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_collection::UpdateCollectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateCollectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_collection::UpdateCollectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_collection::UpdateCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_collection::UpdateCollectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateCollectionFluentBuilder {
             crate::operation::update_collection::UpdateCollection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_collection::UpdateCollectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_collection::UpdateCollectionError>,
     > {
         self.customize_middleware().await
     }

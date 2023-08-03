@@ -30,9 +30,7 @@ impl ResourceAccessPolicy {
 
 /// A builder for [`ResourceAccessPolicy`](crate::types::ResourceAccessPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceAccessPolicyBuilder {
     pub(crate) permission: ::std::option::Option<crate::types::Permission>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ResourceAccessPolicyBuilder {
         self
     }
     /// The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
-    pub fn set_permission(
-        mut self,
-        input: ::std::option::Option<crate::types::Permission>,
-    ) -> Self {
+    pub fn set_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
         self.permission = input;
         self
     }

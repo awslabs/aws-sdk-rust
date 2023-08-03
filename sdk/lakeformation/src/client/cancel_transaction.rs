@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`transaction_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_transaction::builders::CancelTransactionFluentBuilder::transaction_id) / [`set_transaction_id(Option<String>)`](crate::operation::cancel_transaction::builders::CancelTransactionFluentBuilder::set_transaction_id): <p>The transaction to cancel.</p>
     /// - On success, responds with [`CancelTransactionOutput`](crate::operation::cancel_transaction::CancelTransactionOutput)
     /// - On failure, responds with [`SdkError<CancelTransactionError>`](crate::operation::cancel_transaction::CancelTransactionError)
-    pub fn cancel_transaction(
-        &self,
-    ) -> crate::operation::cancel_transaction::builders::CancelTransactionFluentBuilder {
-        crate::operation::cancel_transaction::builders::CancelTransactionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_transaction(&self) -> crate::operation::cancel_transaction::builders::CancelTransactionFluentBuilder {
+        crate::operation::cancel_transaction::builders::CancelTransactionFluentBuilder::new(self.handle.clone())
     }
 }

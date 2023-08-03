@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_fuota_task::CreateFuotaTaskOutput::arn): <p>The arn of a FUOTA task.</p>
     ///   - [`id(Option<String>)`](crate::operation::create_fuota_task::CreateFuotaTaskOutput::id): <p>The ID of a FUOTA task.</p>
     /// - On failure, responds with [`SdkError<CreateFuotaTaskError>`](crate::operation::create_fuota_task::CreateFuotaTaskError)
-    pub fn create_fuota_task(
-        &self,
-    ) -> crate::operation::create_fuota_task::builders::CreateFuotaTaskFluentBuilder {
-        crate::operation::create_fuota_task::builders::CreateFuotaTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_fuota_task(&self) -> crate::operation::create_fuota_task::builders::CreateFuotaTaskFluentBuilder {
+        crate::operation::create_fuota_task::builders::CreateFuotaTaskFluentBuilder::new(self.handle.clone())
     }
 }

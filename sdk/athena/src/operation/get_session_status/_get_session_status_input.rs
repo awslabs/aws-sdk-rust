@@ -15,17 +15,14 @@ impl GetSessionStatusInput {
 }
 impl GetSessionStatusInput {
     /// Creates a new builder-style object to manufacture [`GetSessionStatusInput`](crate::operation::get_session_status::GetSessionStatusInput).
-    pub fn builder() -> crate::operation::get_session_status::builders::GetSessionStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_session_status::builders::GetSessionStatusInputBuilder {
         crate::operation::get_session_status::builders::GetSessionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSessionStatusInput`](crate::operation::get_session_status::GetSessionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSessionStatusInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl GetSessionStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetSessionStatusInput`](crate::operation::get_session_status::GetSessionStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_session_status::GetSessionStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_session_status::GetSessionStatusInput {
-                session_id: self.session_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_session_status::GetSessionStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_session_status::GetSessionStatusInput { session_id: self.session_id })
     }
 }

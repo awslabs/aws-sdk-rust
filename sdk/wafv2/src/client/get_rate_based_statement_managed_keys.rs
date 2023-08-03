@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`managed_keys_ipv4(Option<RateBasedStatementManagedKeysIpSet>)`](crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysOutput::managed_keys_ipv4): <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
     ///   - [`managed_keys_ipv6(Option<RateBasedStatementManagedKeysIpSet>)`](crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysOutput::managed_keys_ipv6): <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
     /// - On failure, responds with [`SdkError<GetRateBasedStatementManagedKeysError>`](crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError)
-    pub fn get_rate_based_statement_managed_keys(&self) -> crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysFluentBuilder{
+    pub fn get_rate_based_statement_managed_keys(
+        &self,
+    ) -> crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysFluentBuilder {
         crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysFluentBuilder::new(self.handle.clone())
     }
 }

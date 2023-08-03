@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`more_application_resource(Option<bool>)`](crate::operation::get_application_component_details::GetApplicationComponentDetailsOutput::more_application_resource): <p> Set to true if the application component belongs to more than one application group. </p>
     ///   - [`associated_server_ids(Option<Vec<String>>)`](crate::operation::get_application_component_details::GetApplicationComponentDetailsOutput::associated_server_ids): <p> A list of the IDs of the servers on which the application component is running. </p>
     /// - On failure, responds with [`SdkError<GetApplicationComponentDetailsError>`](crate::operation::get_application_component_details::GetApplicationComponentDetailsError)
-    pub fn get_application_component_details(&self) -> crate::operation::get_application_component_details::builders::GetApplicationComponentDetailsFluentBuilder{
+    pub fn get_application_component_details(
+        &self,
+    ) -> crate::operation::get_application_component_details::builders::GetApplicationComponentDetailsFluentBuilder {
         crate::operation::get_application_component_details::builders::GetApplicationComponentDetailsFluentBuilder::new(self.handle.clone())
     }
 }

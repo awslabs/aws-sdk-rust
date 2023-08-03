@@ -22,18 +22,14 @@ impl DisassociateCustomDomainInput {
 }
 impl DisassociateCustomDomainInput {
     /// Creates a new builder-style object to manufacture [`DisassociateCustomDomainInput`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainInputBuilder {
         crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateCustomDomainInput`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateCustomDomainInputBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl DisassociateCustomDomainInputBuilder {
         crate::operation::disassociate_custom_domain::DisassociateCustomDomainInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_custom_domain::DisassociateCustomDomainInput {
-                service_arn: self.service_arn,
-                domain_name: self.domain_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_custom_domain::DisassociateCustomDomainInput {
+            service_arn: self.service_arn,
+            domain_name: self.domain_name,
+        })
     }
 }

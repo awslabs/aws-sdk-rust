@@ -30,9 +30,7 @@ impl Page {
 
 /// A builder for [`Page`](crate::types::Page).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PageBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::ValueHolder>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl PageBuilder {
         self
     }
     /// <p>A structure that contains values in multiple encoding formats.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValueHolder>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValueHolder>>) -> Self {
         self.values = input;
         self
     }
@@ -62,18 +57,12 @@ impl PageBuilder {
         &self.values
     }
     /// <p>The token of the next page.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token of the next page.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

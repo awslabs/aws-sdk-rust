@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`job_metadata(Option<JobMetadata>)`](crate::operation::describe_job::DescribeJobOutput::job_metadata): <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
     ///   - [`sub_job_metadata(Option<Vec<JobMetadata>>)`](crate::operation::describe_job::DescribeJobOutput::sub_job_metadata): <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
     /// - On failure, responds with [`SdkError<DescribeJobError>`](crate::operation::describe_job::DescribeJobError)
-    pub fn describe_job(
-        &self,
-    ) -> crate::operation::describe_job::builders::DescribeJobFluentBuilder {
+    pub fn describe_job(&self) -> crate::operation::describe_job::builders::DescribeJobFluentBuilder {
         crate::operation::describe_job::builders::DescribeJobFluentBuilder::new(self.handle.clone())
     }
 }

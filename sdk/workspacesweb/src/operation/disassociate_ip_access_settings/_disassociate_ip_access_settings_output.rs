@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateIpAccessSettingsOutput {
 }
 impl DisassociateIpAccessSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateIpAccessSettingsOutput`](crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsOutput).
-    pub fn builder() -> crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsOutputBuilder {
         crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateIpAccessSettingsOutput`](crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateIpAccessSettingsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateIpAccessSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateIpAccessSettingsOutput`](crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsOutput {
+    pub fn build(self) -> crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsOutput {
         crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsOutput {
             _request_id: self._request_id,
         }

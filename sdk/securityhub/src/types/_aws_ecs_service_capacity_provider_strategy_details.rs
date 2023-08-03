@@ -36,17 +36,14 @@ impl AwsEcsServiceCapacityProviderStrategyDetails {
 }
 impl AwsEcsServiceCapacityProviderStrategyDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::types::AwsEcsServiceCapacityProviderStrategyDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsServiceCapacityProviderStrategyDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEcsServiceCapacityProviderStrategyDetailsBuilder {
         crate::types::builders::AwsEcsServiceCapacityProviderStrategyDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::types::AwsEcsServiceCapacityProviderStrategyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsServiceCapacityProviderStrategyDetailsBuilder {
     pub(crate) base: ::std::option::Option<i32>,
     pub(crate) capacity_provider: ::std::option::Option<::std::string::String>,
@@ -71,18 +68,12 @@ impl AwsEcsServiceCapacityProviderStrategyDetailsBuilder {
         &self.base
     }
     /// <p>The short name of the capacity provider.</p>
-    pub fn capacity_provider(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_provider = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The short name of the capacity provider.</p>
-    pub fn set_capacity_provider(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_provider = input;
         self
     }

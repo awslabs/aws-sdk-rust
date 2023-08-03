@@ -22,9 +22,7 @@ impl ListLexiconsInput {
 
 /// A builder for [`ListLexiconsInput`](crate::operation::list_lexicons::ListLexiconsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLexiconsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl ListLexiconsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLexiconsInput`](crate::operation::list_lexicons::ListLexiconsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_lexicons::ListLexiconsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_lexicons::ListLexiconsInput {
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_lexicons::ListLexiconsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_lexicons::ListLexiconsInput { next_token: self.next_token })
     }
 }

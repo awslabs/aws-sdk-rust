@@ -22,16 +22,14 @@ impl DeregisterGatewayInstanceInput {
 }
 impl DeregisterGatewayInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeregisterGatewayInstanceInput`](crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceInput).
-    pub fn builder() -> crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceInputBuilder{
+    pub fn builder() -> crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceInputBuilder {
         crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterGatewayInstanceInput`](crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterGatewayInstanceInputBuilder {
     pub(crate) force: ::std::option::Option<bool>,
     pub(crate) gateway_instance_arn: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DeregisterGatewayInstanceInputBuilder {
         &self.force
     }
     /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
-    pub fn gateway_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
-    pub fn set_gateway_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_instance_arn = input;
         self
     }
@@ -78,11 +70,9 @@ impl DeregisterGatewayInstanceInputBuilder {
         crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceInput {
-                force: self.force,
-                gateway_instance_arn: self.gateway_instance_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceInput {
+            force: self.force,
+            gateway_instance_arn: self.gateway_instance_arn,
+        })
     }
 }

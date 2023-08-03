@@ -10,10 +10,7 @@ impl AnalyzeExpenseInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::analyze_expense::AnalyzeExpenseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::analyze_expense::AnalyzeExpenseError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::analyze_expense::AnalyzeExpenseError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.analyze_expense();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl AnalyzeExpenseFluentBuilder {
         }
     }
     /// Access the AnalyzeExpense as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::analyze_expense::builders::AnalyzeExpenseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::analyze_expense::builders::AnalyzeExpenseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,10 +61,7 @@ impl AnalyzeExpenseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

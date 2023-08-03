@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyDbSubnetGroupOutput {
 }
 impl ModifyDbSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbSubnetGroupOutput`](crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_db_subnet_group::builders::ModifyDbSubnetGroupOutputBuilder {
+    pub fn builder() -> crate::operation::modify_db_subnet_group::builders::ModifyDbSubnetGroupOutputBuilder {
         crate::operation::modify_db_subnet_group::builders::ModifyDbSubnetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDbSubnetGroupOutput`](crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDbSubnetGroupOutputBuilder {
     pub(crate) db_subnet_group: ::std::option::Option<crate::types::DbSubnetGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl ModifyDbSubnetGroupOutputBuilder {
         self
     }
     /// <p>Detailed information about a subnet group. </p>
-    pub fn set_db_subnet_group(
-        mut self,
-        input: ::std::option::Option<crate::types::DbSubnetGroup>,
-    ) -> Self {
+    pub fn set_db_subnet_group(mut self, input: ::std::option::Option<crate::types::DbSubnetGroup>) -> Self {
         self.db_subnet_group = input;
         self
     }

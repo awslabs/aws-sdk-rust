@@ -5,16 +5,16 @@ pub use crate::operation::list_available_managed_rule_group_versions::_list_avai
 
 impl ListAvailableManagedRuleGroupVersionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_available_managed_rule_group_versions();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListAvailableManagedRuleGroupVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsInputBuilder,
+    inner: crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsInputBuilder,
 }
 impl ListAvailableManagedRuleGroupVersionsFluentBuilder {
     /// Creates a new `ListAvailableManagedRuleGroupVersions`.
@@ -37,15 +37,22 @@ impl ListAvailableManagedRuleGroupVersionsFluentBuilder {
         }
     }
     /// Access the ListAvailableManagedRuleGroupVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl ListAvailableManagedRuleGroupVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +89,26 @@ impl ListAvailableManagedRuleGroupVersionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>

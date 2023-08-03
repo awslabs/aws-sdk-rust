@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeAppInstanceUserEndpointOutput`](crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointOutput) with field(s):
     ///   - [`app_instance_user_endpoint(Option<AppInstanceUserEndpoint>)`](crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointOutput::app_instance_user_endpoint): <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
     /// - On failure, responds with [`SdkError<DescribeAppInstanceUserEndpointError>`](crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError)
-    pub fn describe_app_instance_user_endpoint(&self) -> crate::operation::describe_app_instance_user_endpoint::builders::DescribeAppInstanceUserEndpointFluentBuilder{
+    pub fn describe_app_instance_user_endpoint(
+        &self,
+    ) -> crate::operation::describe_app_instance_user_endpoint::builders::DescribeAppInstanceUserEndpointFluentBuilder {
         crate::operation::describe_app_instance_user_endpoint::builders::DescribeAppInstanceUserEndpointFluentBuilder::new(self.handle.clone())
     }
 }

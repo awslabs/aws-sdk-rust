@@ -5,16 +5,16 @@ pub use crate::operation::start_call_analytics_stream_transcription::_start_call
 
 impl StartCallAnalyticsStreamTranscriptionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.start_call_analytics_stream_transcription();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -33,7 +33,7 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
 #[derive(::std::fmt::Debug)]
 pub struct StartCallAnalyticsStreamTranscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_call_analytics_stream_transcription::builders::StartCallAnalyticsStreamTranscriptionInputBuilder,
+    inner: crate::operation::start_call_analytics_stream_transcription::builders::StartCallAnalyticsStreamTranscriptionInputBuilder,
 }
 impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// Creates a new `StartCallAnalyticsStreamTranscription`.
@@ -44,15 +44,22 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
         }
     }
     /// Access the StartCallAnalyticsStreamTranscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_call_analytics_stream_transcription::builders::StartCallAnalyticsStreamTranscriptionInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_call_analytics_stream_transcription::builders::StartCallAnalyticsStreamTranscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscription, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscription,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -61,16 +68,17 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -88,17 +96,26 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscription, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscription,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
@@ -111,19 +128,14 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
     /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
     /// <p>For a list of languages supported with streaming Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
     /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
     /// <p>For a list of languages supported with streaming Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
-    pub fn get_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::CallAnalyticsLanguageCode> {
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::CallAnalyticsLanguageCode> {
         self.inner.get_language_code()
     }
     /// <p>The sample rate of the input audio (in hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
@@ -158,10 +170,7 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
-    pub fn set_media_encoding(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaEncoding>,
-    ) -> Self {
+    pub fn set_media_encoding(mut self, input: ::std::option::Option<crate::types::MediaEncoding>) -> Self {
         self.inner = self.inner.set_media_encoding(input);
         self
     }
@@ -178,20 +187,14 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vocabulary_name(input.into());
         self
     }
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vocabulary_name(input);
         self
     }
@@ -222,10 +225,7 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
     pub fn audio_stream(
         mut self,
-        input: ::aws_smithy_http::event_stream::EventStreamSender<
-            crate::types::AudioStream,
-            crate::types::error::AudioStreamError,
-        >,
+        input: ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>,
     ) -> Self {
         self.inner = self.inner.audio_stream(input);
         self
@@ -235,10 +235,7 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     pub fn set_audio_stream(
         mut self,
         input: ::std::option::Option<
-            ::aws_smithy_http::event_stream::EventStreamSender<
-                crate::types::AudioStream,
-                crate::types::error::AudioStreamError,
-            >,
+            ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>,
         >,
     ) -> Self {
         self.inner = self.inner.set_audio_stream(input);
@@ -248,31 +245,21 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
     pub fn get_audio_stream(
         &self,
-    ) -> &::std::option::Option<
-        ::aws_smithy_http::event_stream::EventStreamSender<
-            crate::types::AudioStream,
-            crate::types::error::AudioStreamError,
-        >,
-    > {
+    ) -> &::std::option::Option<::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>>
+    {
         self.inner.get_audio_stream()
     }
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
-    pub fn vocabulary_filter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vocabulary_filter_name(input.into());
         self
     }
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
-    pub fn set_vocabulary_filter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vocabulary_filter_name(input);
         self
     }
@@ -294,10 +281,7 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
-    pub fn set_vocabulary_filter_method(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyFilterMethod>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_method(mut self, input: ::std::option::Option<crate::types::VocabularyFilterMethod>) -> Self {
         self.inner = self.inner.set_vocabulary_filter_method(input);
         self
     }
@@ -305,28 +289,20 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
-    pub fn get_vocabulary_filter_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::VocabularyFilterMethod> {
+    pub fn get_vocabulary_filter_method(&self) -> &::std::option::Option<crate::types::VocabularyFilterMethod> {
         self.inner.get_vocabulary_filter_method()
     }
     /// <p>Specify the name of the custom language model that you want to use when processing your transcription. Note that language model names are case sensitive.</p>
     /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.</p>
-    pub fn language_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.language_model_name(input.into());
         self
     }
     /// <p>Specify the name of the custom language model that you want to use when processing your transcription. Note that language model names are case sensitive.</p>
     /// <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.</p>
-    pub fn set_language_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_language_model_name(input);
         self
     }
@@ -342,10 +318,7 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
         self
     }
     /// <p>Enables partial result stabilization for your transcription. Partial result stabilization can reduce latency in your output, but may impact accuracy. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
-    pub fn set_enable_partial_results_stabilization(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_partial_results_stabilization(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_partial_results_stabilization(input);
         self
     }
@@ -356,39 +329,28 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
-    pub fn partial_results_stability(
-        mut self,
-        input: crate::types::PartialResultsStability,
-    ) -> Self {
+    pub fn partial_results_stability(mut self, input: crate::types::PartialResultsStability) -> Self {
         self.inner = self.inner.partial_results_stability(input);
         self
     }
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
-    pub fn set_partial_results_stability(
-        mut self,
-        input: ::std::option::Option<crate::types::PartialResultsStability>,
-    ) -> Self {
+    pub fn set_partial_results_stability(mut self, input: ::std::option::Option<crate::types::PartialResultsStability>) -> Self {
         self.inner = self.inner.set_partial_results_stability(input);
         self
     }
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
-    pub fn get_partial_results_stability(
-        &self,
-    ) -> &::std::option::Option<crate::types::PartialResultsStability> {
+    pub fn get_partial_results_stability(&self) -> &::std::option::Option<crate::types::PartialResultsStability> {
         self.inner.get_partial_results_stability()
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript.</p>
     /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
-    pub fn content_identification_type(
-        mut self,
-        input: crate::types::ContentIdentificationType,
-    ) -> Self {
+    pub fn content_identification_type(mut self, input: crate::types::ContentIdentificationType) -> Self {
         self.inner = self.inner.content_identification_type(input);
         self
     }
@@ -396,10 +358,7 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
-    pub fn set_content_identification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentIdentificationType>,
-    ) -> Self {
+    pub fn set_content_identification_type(mut self, input: ::std::option::Option<crate::types::ContentIdentificationType>) -> Self {
         self.inner = self.inner.set_content_identification_type(input);
         self
     }
@@ -407,9 +366,7 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
-    pub fn get_content_identification_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentIdentificationType> {
+    pub fn get_content_identification_type(&self) -> &::std::option::Option<crate::types::ContentIdentificationType> {
         self.inner.get_content_identification_type()
     }
     /// <p>Redacts all personally identifiable information (PII) identified in your transcript.</p>
@@ -424,10 +381,7 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment.</p>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
-    pub fn set_content_redaction_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentRedactionType>,
-    ) -> Self {
+    pub fn set_content_redaction_type(mut self, input: ::std::option::Option<crate::types::ContentRedactionType>) -> Self {
         self.inner = self.inner.set_content_redaction_type(input);
         self
     }
@@ -435,28 +389,20 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment.</p>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting or identifying personally identifiable information</a>.</p>
-    pub fn get_content_redaction_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentRedactionType> {
+    pub fn get_content_redaction_type(&self) -> &::std::option::Option<crate::types::ContentRedactionType> {
         self.inner.get_content_redaction_type()
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
     /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
     /// <p>Values must be comma-separated and can include: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, or <code>ALL</code>.</p>
-    pub fn pii_entity_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pii_entity_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pii_entity_types(input.into());
         self
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
     /// <p>To include <code>PiiEntityTypes</code> in your Call Analytics request, you must also include either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
     /// <p>Values must be comma-separated and can include: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, or <code>ALL</code>.</p>
-    pub fn set_pii_entity_types(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pii_entity_types(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pii_entity_types(input);
         self
     }

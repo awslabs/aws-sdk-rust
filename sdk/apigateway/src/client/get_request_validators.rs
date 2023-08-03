@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<RequestValidator>>)`](crate::operation::get_request_validators::GetRequestValidatorsOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_request_validators::GetRequestValidatorsOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetRequestValidatorsError>`](crate::operation::get_request_validators::GetRequestValidatorsError)
-    pub fn get_request_validators(
-        &self,
-    ) -> crate::operation::get_request_validators::builders::GetRequestValidatorsFluentBuilder {
-        crate::operation::get_request_validators::builders::GetRequestValidatorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_request_validators(&self) -> crate::operation::get_request_validators::builders::GetRequestValidatorsFluentBuilder {
+        crate::operation::get_request_validators::builders::GetRequestValidatorsFluentBuilder::new(self.handle.clone())
     }
 }

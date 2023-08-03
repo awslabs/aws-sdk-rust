@@ -26,7 +26,7 @@ impl DescribeDbClusterParametersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBClusterParametersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersInputBuilder,
+    inner: crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersInputBuilder,
 }
 impl DescribeDBClusterParametersFluentBuilder {
     /// Creates a new `DescribeDBClusterParameters`.
@@ -37,7 +37,7 @@ impl DescribeDBClusterParametersFluentBuilder {
         }
     }
     /// Access the DescribeDBClusterParameters as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDBClusterParametersFluentBuilder {
             crate::operation::describe_db_cluster_parameters::DescribeDBClusterParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_parameters::DescribeDBClusterParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_parameters::DescribeDBClusterParametersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDBClusterParametersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDBClusterParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_parameters::DescribeDBClusterParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_parameters::DescribeDBClusterParametersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDBClusterParametersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_parameters::DescribeDBClusterParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_parameters::DescribeDBClusterParametersError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeDBClusterParametersFluentBuilder {
             crate::operation::describe_db_cluster_parameters::DescribeDBClusterParameters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_parameters::DescribeDBClusterParametersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_parameters::DescribeDBClusterParametersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_cluster_parameters::paginator::DescribeDbClusterParametersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_db_cluster_parameters::paginator::DescribeDbClusterParametersPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_db_cluster_parameters::paginator::DescribeDbClusterParametersPaginator {
         crate::operation::describe_db_cluster_parameters::paginator::DescribeDbClusterParametersPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of a specific cluster parameter group to return parameter details for.</p>
@@ -131,10 +120,7 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <ul>
     /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
     /// </ul>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_parameter_group_name(input.into());
         self
     }
@@ -143,10 +129,7 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <ul>
     /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
         self
     }
@@ -155,9 +138,7 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <ul>
     /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
     /// </ul>
-    pub fn get_db_cluster_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_parameter_group_name()
     }
     /// <p> A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>. </p>
@@ -184,10 +165,7 @@ impl DescribeDBClusterParametersFluentBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

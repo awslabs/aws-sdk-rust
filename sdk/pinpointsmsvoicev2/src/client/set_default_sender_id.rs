@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`configuration_set_name(Option<String>)`](crate::operation::set_default_sender_id::SetDefaultSenderIdOutput::configuration_set_name): <p>The name of the configuration set that was updated.</p>
     ///   - [`sender_id(Option<String>)`](crate::operation::set_default_sender_id::SetDefaultSenderIdOutput::sender_id): <p>The default sender ID to set for the ConfigurationSet.</p>
     /// - On failure, responds with [`SdkError<SetDefaultSenderIdError>`](crate::operation::set_default_sender_id::SetDefaultSenderIdError)
-    pub fn set_default_sender_id(
-        &self,
-    ) -> crate::operation::set_default_sender_id::builders::SetDefaultSenderIdFluentBuilder {
-        crate::operation::set_default_sender_id::builders::SetDefaultSenderIdFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_default_sender_id(&self) -> crate::operation::set_default_sender_id::builders::SetDefaultSenderIdFluentBuilder {
+        crate::operation::set_default_sender_id::builders::SetDefaultSenderIdFluentBuilder::new(self.handle.clone())
     }
 }

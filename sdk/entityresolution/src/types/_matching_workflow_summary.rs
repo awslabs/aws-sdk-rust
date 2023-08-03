@@ -44,9 +44,7 @@ impl MatchingWorkflowSummary {
 
 /// A builder for [`MatchingWorkflowSummary`](crate::types::MatchingWorkflowSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MatchingWorkflowSummaryBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_arn: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct MatchingWorkflowSummaryBuilder {
 }
 impl MatchingWorkflowSummaryBuilder {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workflow.</p>
-    pub fn set_workflow_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_name = input;
         self
     }
@@ -94,10 +86,7 @@ impl MatchingWorkflowSummaryBuilder {
         self
     }
     /// <p>The timestamp of when the workflow was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -111,10 +100,7 @@ impl MatchingWorkflowSummaryBuilder {
         self
     }
     /// <p>The timestamp of when the workflow was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

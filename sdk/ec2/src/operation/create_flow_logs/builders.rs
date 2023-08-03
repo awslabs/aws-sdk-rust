@@ -10,10 +10,7 @@ impl CreateFlowLogsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_flow_logs::CreateFlowLogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow_logs::CreateFlowLogsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow_logs::CreateFlowLogsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_flow_logs();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateFlowLogsFluentBuilder {
         }
     }
     /// Access the CreateFlowLogs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_flow_logs::builders::CreateFlowLogsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_flow_logs::builders::CreateFlowLogsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateFlowLogsFluentBuilder {
             crate::operation::create_flow_logs::CreateFlowLogs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow_logs::CreateFlowLogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow_logs::CreateFlowLogsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateFlowLogsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateFlowLogsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_flow_logs::CreateFlowLogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow_logs::CreateFlowLogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow_logs::CreateFlowLogsError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateFlowLogsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_flow_logs::CreateFlowLogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow_logs::CreateFlowLogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow_logs::CreateFlowLogsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl CreateFlowLogsFluentBuilder {
             crate::operation::create_flow_logs::CreateFlowLogs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow_logs::CreateFlowLogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow_logs::CreateFlowLogsError>,
     > {
         self.customize_middleware().await
     }
@@ -155,19 +139,13 @@ impl CreateFlowLogsFluentBuilder {
     }
     /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a CloudWatch Logs log group in your account.</p>
     /// <p>This parameter is required if the destination type is <code>cloud-watch-logs</code> and unsupported otherwise.</p>
-    pub fn deliver_logs_permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deliver_logs_permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deliver_logs_permission_arn(input.into());
         self
     }
     /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a CloudWatch Logs log group in your account.</p>
     /// <p>This parameter is required if the destination type is <code>cloud-watch-logs</code> and unsupported otherwise.</p>
-    pub fn set_deliver_logs_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deliver_logs_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deliver_logs_permission_arn(input);
         self
     }
@@ -177,18 +155,12 @@ impl CreateFlowLogsFluentBuilder {
         self.inner.get_deliver_logs_permission_arn()
     }
     /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs across accounts.</p>
-    pub fn deliver_cross_account_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deliver_cross_account_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deliver_cross_account_role(input.into());
         self
     }
     /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs across accounts.</p>
-    pub fn set_deliver_cross_account_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deliver_cross_account_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deliver_cross_account_role(input);
         self
     }
@@ -198,19 +170,13 @@ impl CreateFlowLogsFluentBuilder {
     }
     /// <p>The name of a new or existing CloudWatch Logs log group where Amazon EC2 publishes your flow logs.</p>
     /// <p>This parameter is valid only if the destination type is <code>cloud-watch-logs</code>.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of a new or existing CloudWatch Logs log group where Amazon EC2 publishes your flow logs.</p>
     /// <p>This parameter is valid only if the destination type is <code>cloud-watch-logs</code>.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
@@ -231,18 +197,13 @@ impl CreateFlowLogsFluentBuilder {
     }
     /// <p>The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the IDs of the VPCs.</p>
     /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.</p>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_ids(input);
         self
     }
     /// <p>The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the IDs of the VPCs.</p>
     /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.</p>
-    pub fn get_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_ids()
     }
     /// <p>The type of resource to monitor.</p>
@@ -251,10 +212,7 @@ impl CreateFlowLogsFluentBuilder {
         self
     }
     /// <p>The type of resource to monitor.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FlowLogsResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::FlowLogsResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -268,10 +226,7 @@ impl CreateFlowLogsFluentBuilder {
         self
     }
     /// <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not supported for transit gateway resource types. It is required for the other resource types.</p>
-    pub fn set_traffic_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficType>,
-    ) -> Self {
+    pub fn set_traffic_type(mut self, input: ::std::option::Option<crate::types::TrafficType>) -> Self {
         self.inner = self.inner.set_traffic_type(input);
         self
     }
@@ -287,18 +242,13 @@ impl CreateFlowLogsFluentBuilder {
     }
     /// <p>The type of destination for the flow log data.</p>
     /// <p>Default: <code>cloud-watch-logs</code> </p>
-    pub fn set_log_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LogDestinationType>,
-    ) -> Self {
+    pub fn set_log_destination_type(mut self, input: ::std::option::Option<crate::types::LogDestinationType>) -> Self {
         self.inner = self.inner.set_log_destination_type(input);
         self
     }
     /// <p>The type of destination for the flow log data.</p>
     /// <p>Default: <code>cloud-watch-logs</code> </p>
-    pub fn get_log_destination_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogDestinationType> {
+    pub fn get_log_destination_type(&self) -> &::std::option::Option<crate::types::LogDestinationType> {
         self.inner.get_log_destination_type()
     }
     /// <p>The destination for the flow log data. The meaning of this parameter depends on the destination type.</p>
@@ -307,10 +257,7 @@ impl CreateFlowLogsFluentBuilder {
     /// <li> <p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p> <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p> <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p> </li>
     /// <li> <p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p> <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i> </p> </li>
     /// </ul>
-    pub fn log_destination(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_destination(input.into());
         self
     }
@@ -320,10 +267,7 @@ impl CreateFlowLogsFluentBuilder {
     /// <li> <p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p> <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p> <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p> </li>
     /// <li> <p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p> <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i> </p> </li>
     /// </ul>
-    pub fn set_log_destination(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_destination(input);
         self
     }
@@ -363,17 +307,12 @@ impl CreateFlowLogsFluentBuilder {
         self
     }
     /// <p>The tags to apply to the flow logs.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the flow logs.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for transit gateway resource types.</p>
@@ -402,17 +341,12 @@ impl CreateFlowLogsFluentBuilder {
         self
     }
     /// <p>The destination options.</p>
-    pub fn set_destination_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationOptionsRequest>,
-    ) -> Self {
+    pub fn set_destination_options(mut self, input: ::std::option::Option<crate::types::DestinationOptionsRequest>) -> Self {
         self.inner = self.inner.set_destination_options(input);
         self
     }
     /// <p>The destination options.</p>
-    pub fn get_destination_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationOptionsRequest> {
+    pub fn get_destination_options(&self) -> &::std::option::Option<crate::types::DestinationOptionsRequest> {
         self.inner.get_destination_options()
     }
 }

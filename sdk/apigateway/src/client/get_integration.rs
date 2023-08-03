@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`integration_responses(Option<HashMap<String, IntegrationResponse>>)`](crate::operation::get_integration::GetIntegrationOutput::integration_responses): <p>Specifies the integration's responses.</p>
     ///   - [`tls_config(Option<TlsConfig>)`](crate::operation::get_integration::GetIntegrationOutput::tls_config): <p>Specifies the TLS configuration for an integration.</p>
     /// - On failure, responds with [`SdkError<GetIntegrationError>`](crate::operation::get_integration::GetIntegrationError)
-    pub fn get_integration(
-        &self,
-    ) -> crate::operation::get_integration::builders::GetIntegrationFluentBuilder {
-        crate::operation::get_integration::builders::GetIntegrationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_integration(&self) -> crate::operation::get_integration::builders::GetIntegrationFluentBuilder {
+        crate::operation::get_integration::builders::GetIntegrationFluentBuilder::new(self.handle.clone())
     }
 }

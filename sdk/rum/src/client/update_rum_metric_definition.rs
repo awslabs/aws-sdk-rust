@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`metric_definition_id(impl ::std::convert::Into<String>)`](crate::operation::update_rum_metric_definition::builders::UpdateRumMetricDefinitionFluentBuilder::metric_definition_id) / [`set_metric_definition_id(Option<String>)`](crate::operation::update_rum_metric_definition::builders::UpdateRumMetricDefinitionFluentBuilder::set_metric_definition_id): <p>The ID of the metric definition to update.</p>
     /// - On success, responds with [`UpdateRumMetricDefinitionOutput`](crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionOutput)
     /// - On failure, responds with [`SdkError<UpdateRumMetricDefinitionError>`](crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionError)
-    pub fn update_rum_metric_definition(&self) -> crate::operation::update_rum_metric_definition::builders::UpdateRumMetricDefinitionFluentBuilder{
+    pub fn update_rum_metric_definition(&self) -> crate::operation::update_rum_metric_definition::builders::UpdateRumMetricDefinitionFluentBuilder {
         crate::operation::update_rum_metric_definition::builders::UpdateRumMetricDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

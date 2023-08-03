@@ -30,9 +30,7 @@ impl EbsVolumesResult {
 
 /// A builder for [`EbsVolumesResult`](crate::types::EbsVolumesResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EbsVolumesResultBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl EbsVolumesResultBuilder {
         self
     }
     /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
         self.status = input;
         self
     }

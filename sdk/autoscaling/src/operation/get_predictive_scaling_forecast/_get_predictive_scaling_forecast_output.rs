@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for GetPredictiveScalingForecastOutput {
 }
 impl GetPredictiveScalingForecastOutput {
     /// Creates a new builder-style object to manufacture [`GetPredictiveScalingForecastOutput`](crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput).
-    pub fn builder() -> crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastOutputBuilder{
+    pub fn builder() -> crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastOutputBuilder {
         crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPredictiveScalingForecastOutput`](crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPredictiveScalingForecastOutputBuilder {
     pub(crate) load_forecast: ::std::option::Option<::std::vec::Vec<crate::types::LoadForecast>>,
     pub(crate) capacity_forecast: ::std::option::Option<crate::types::CapacityForecast>,
@@ -64,17 +62,12 @@ impl GetPredictiveScalingForecastOutputBuilder {
         self
     }
     /// <p>The load forecast.</p>
-    pub fn set_load_forecast(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadForecast>>,
-    ) -> Self {
+    pub fn set_load_forecast(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadForecast>>) -> Self {
         self.load_forecast = input;
         self
     }
     /// <p>The load forecast.</p>
-    pub fn get_load_forecast(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadForecast>> {
+    pub fn get_load_forecast(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadForecast>> {
         &self.load_forecast
     }
     /// <p>The capacity forecast.</p>
@@ -83,10 +76,7 @@ impl GetPredictiveScalingForecastOutputBuilder {
         self
     }
     /// <p>The capacity forecast.</p>
-    pub fn set_capacity_forecast(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityForecast>,
-    ) -> Self {
+    pub fn set_capacity_forecast(mut self, input: ::std::option::Option<crate::types::CapacityForecast>) -> Self {
         self.capacity_forecast = input;
         self
     }
@@ -100,10 +90,7 @@ impl GetPredictiveScalingForecastOutputBuilder {
         self
     }
     /// <p>The time the forecast was made.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -121,9 +108,7 @@ impl GetPredictiveScalingForecastOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPredictiveScalingForecastOutput`](crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput {
+    pub fn build(self) -> crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput {
         crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput {
             load_forecast: self.load_forecast,
             capacity_forecast: self.capacity_forecast,

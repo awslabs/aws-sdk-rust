@@ -65,9 +65,7 @@ impl SkillsStoreSkill {
 
 /// A builder for [`SkillsStoreSkill`](crate::types::SkillsStoreSkill).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SkillsStoreSkillBuilder {
     pub(crate) skill_id: ::std::option::Option<::std::string::String>,
     pub(crate) skill_name: ::std::option::Option<::std::string::String>,
@@ -107,18 +105,12 @@ impl SkillsStoreSkillBuilder {
         &self.skill_name
     }
     /// <p>Short description about the skill.</p>
-    pub fn short_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn short_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.short_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Short description about the skill.</p>
-    pub fn set_short_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.short_description = input;
         self
     }
@@ -145,27 +137,19 @@ impl SkillsStoreSkillBuilder {
     /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
     ///
     /// <p>Sample utterances that interact with the skill.</p>
-    pub fn sample_utterances(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sample_utterances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sample_utterances.unwrap_or_default();
         v.push(input.into());
         self.sample_utterances = ::std::option::Option::Some(v);
         self
     }
     /// <p>Sample utterances that interact with the skill.</p>
-    pub fn set_sample_utterances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sample_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sample_utterances = input;
         self
     }
     /// <p>Sample utterances that interact with the skill.</p>
-    pub fn get_sample_utterances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sample_utterances
     }
     /// <p>Information about the skill.</p>
@@ -174,10 +158,7 @@ impl SkillsStoreSkillBuilder {
         self
     }
     /// <p>Information about the skill.</p>
-    pub fn set_skill_details(
-        mut self,
-        input: ::std::option::Option<crate::types::SkillDetails>,
-    ) -> Self {
+    pub fn set_skill_details(mut self, input: ::std::option::Option<crate::types::SkillDetails>) -> Self {
         self.skill_details = input;
         self
     }
